@@ -10,4 +10,6 @@ echo "botocore/data" > .git/info/sparse-checkout
 git remote add -f origin git@github.com:boto/botocore.git || true
 git pull origin develop
 
-cp -r botocore/data ../src
+# cp -r botocore/data ../src
+cd ../
+npx ts-node scripts/generate-types.ts

@@ -2,7 +2,38 @@ import _ from 'lodash';
 import { KebabKeys } from './format';
 import * as model from './model';
 
-interface CloudWatchEvent {
+interface ISessionContext {
+  attributes: {
+    mfaAuthenticated: string;
+    creationDate: Date;
+  };
+}
+
+interface IUserIdentity {
+  type: string;
+  principalId: string;
+  arn: Arn;
+  accountId: string;
+  sessionContext: ISessionContext;
+}
+
+export interface IDetail {
+  eventVersion: string;
+  userIdentity: IUserIdentity;
+  eventTime: Date;
+  eventSource: string;
+  eventName: string;
+  awsRegion: string;
+  sourceIPAddress: string;
+  userAgent: string;
+  requestParameters: any;
+  responseElements: any;
+  requestID: string;
+  eventID: string;
+  eventType: string;
+}
+
+export interface ICloudWatchEvent {
   version: string;
   id: string;
   detailType: string;
@@ -11,7 +42,7 @@ interface CloudWatchEvent {
   time: string;
   region: string;
   resources: string[];
-  detail: any;
+  detail: IDetail;
 }
 
 export class Arn {
@@ -72,7 +103,7 @@ export class Arn {
     return new Arn(arn);
   }
 }
-export class ReceivedEvent {
+export class ReceivedEvent<T extends IDetail> {
   readonly version: string;
   readonly id: string;
   readonly detailType: string;
@@ -80,16 +111,16 @@ export class ReceivedEvent {
   readonly account: string;
   readonly time: Date;
   readonly region: string;
-  readonly detail: any;
+  readonly detail: T;
 
   private _resources: Arn[] = [];
-  private readonly _originalEvent: KebabKeys<CloudWatchEvent>;
+  private readonly _originalEvent: KebabKeys<ICloudWatchEvent>;
 
   get resources(): Arn[] {
     return this._resources;
   }
 
-  constructor(event: KebabKeys<CloudWatchEvent>) {
+  constructor(d: { new (event: any): T }, event: KebabKeys<ICloudWatchEvent>) {
     this._originalEvent = event;
     this.version = event.version;
     this.id = event.id;
@@ -98,7 +129,7 @@ export class ReceivedEvent {
     this.account = event.account;
     this.time = new Date(event.time);
     this.region = event.region;
-    this.detail = event.detail;
+    this.detail = new d(event.detail);
 
     console.log(model);
     this.setResources(event.resources);
