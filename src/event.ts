@@ -1,5 +1,4 @@
-import { KebabKeys } from './format';
-import { Arn, Detail, ICloudWatchEvent } from './model';
+import { Arn, CloudwatchEvent, Detail } from './model';
 
 export class Event {
   readonly version: string;
@@ -12,13 +11,13 @@ export class Event {
   readonly detail: Detail;
 
   private _resources: Arn[] = [];
-  private readonly _originalEvent: KebabKeys<ICloudWatchEvent>;
+  private readonly _originalEvent: CloudwatchEvent;
 
   get resources(): Arn[] {
     return this._resources;
   }
 
-  constructor(event: KebabKeys<ICloudWatchEvent>) {
+  constructor(event: CloudwatchEvent) {
     this._originalEvent = event;
     this.version = event.version;
     this.id = event.id;

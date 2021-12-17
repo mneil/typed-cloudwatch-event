@@ -1,3 +1,4 @@
+import { KebabKeys } from '../format';
 import { Arn } from './arn';
 import { Parameters } from './parameters';
 
@@ -43,3 +44,5 @@ export interface ICloudWatchEvent {
   resources: string[];
   detail: any;
 }
+
+export interface CloudwatchEvent extends KebabKeys<ICloudWatchEvent> {}
