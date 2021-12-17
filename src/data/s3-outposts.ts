@@ -5,16 +5,16 @@ export interface CreateEndpoint {
   readonly OutpostId: string;
   readonly SubnetId: string;
   readonly SecurityGroupId: string;
-  readonly AccessType: string;
-  readonly CustomerOwnedIpv4Pool: string;
+  readonly AccessType?: string;
+  readonly CustomerOwnedIpv4Pool?: string;
 }
 export interface DeleteEndpoint {
   readonly EndpointId: string;
   readonly OutpostId: string;
 }
 export interface ListEndpoints {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
 

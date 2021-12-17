@@ -5,19 +5,19 @@ export interface GetPersonalizedRanking {
   readonly campaignArn: string;
   readonly inputList: [];
   readonly userId: string;
-  readonly context: {[key: string]: any};
-  readonly filterArn: string;
-  readonly filterValues: {[key: string]: any};
+  readonly context?: {[key: string]: any};
+  readonly filterArn?: string;
+  readonly filterValues?: {[key: string]: any};
 }
 export interface GetRecommendations {
-  readonly campaignArn: string;
-  readonly itemId: string;
-  readonly userId: string;
-  readonly numResults: number;
-  readonly context: {[key: string]: any};
-  readonly filterArn: string;
-  readonly filterValues: {[key: string]: any};
-  readonly recommenderArn: string;
+  readonly campaignArn?: string;
+  readonly itemId?: string;
+  readonly userId?: string;
+  readonly numResults?: number;
+  readonly context?: {[key: string]: any};
+  readonly filterArn?: string;
+  readonly filterValues?: {[key: string]: any};
+  readonly recommenderArn?: string;
 }
 
 

@@ -4,37 +4,37 @@
 export interface CreateDataset {
   readonly DatasetName: string;
   readonly DatasetSchema: DatasetSchema;
-  readonly ServerSideKmsKeyId: string;
+  readonly ServerSideKmsKeyId?: string;
   readonly ClientToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateInferenceScheduler {
   readonly ModelName: string;
   readonly InferenceSchedulerName: string;
-  readonly DataDelayOffsetInMinutes: number;
+  readonly DataDelayOffsetInMinutes?: number;
   readonly DataUploadFrequency: string;
   readonly DataInputConfiguration: InferenceInputConfiguration;
   readonly DataOutputConfiguration: InferenceOutputConfiguration;
   readonly RoleArn: string;
-  readonly ServerSideKmsKeyId: string;
+  readonly ServerSideKmsKeyId?: string;
   readonly ClientToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateModel {
   readonly ModelName: string;
   readonly DatasetName: string;
-  readonly DatasetSchema: DatasetSchema;
-  readonly LabelsInputConfiguration: LabelsInputConfiguration;
+  readonly DatasetSchema?: DatasetSchema;
+  readonly LabelsInputConfiguration?: LabelsInputConfiguration;
   readonly ClientToken: string;
-  readonly TrainingDataStartTime: Date;
-  readonly TrainingDataEndTime: Date;
-  readonly EvaluationDataStartTime: Date;
-  readonly EvaluationDataEndTime: Date;
-  readonly RoleArn: string;
-  readonly DataPreProcessingConfiguration: DataPreProcessingConfiguration;
-  readonly ServerSideKmsKeyId: string;
-  readonly Tags: [];
-  readonly OffCondition: string;
+  readonly TrainingDataStartTime?: Date;
+  readonly TrainingDataEndTime?: Date;
+  readonly EvaluationDataStartTime?: Date;
+  readonly EvaluationDataEndTime?: Date;
+  readonly RoleArn?: string;
+  readonly DataPreProcessingConfiguration?: DataPreProcessingConfiguration;
+  readonly ServerSideKmsKeyId?: string;
+  readonly Tags?: [];
+  readonly OffCondition?: string;
 }
 export interface DeleteDataset {
   readonly DatasetName: string;
@@ -58,36 +58,36 @@ export interface DescribeModel {
   readonly ModelName: string;
 }
 export interface ListDataIngestionJobs {
-  readonly DatasetName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Status: string;
+  readonly DatasetName?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Status?: string;
 }
 export interface ListDatasets {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly DatasetNameBeginsWith: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly DatasetNameBeginsWith?: string;
 }
 export interface ListInferenceExecutions {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
   readonly InferenceSchedulerName: string;
-  readonly DataStartTimeAfter: Date;
-  readonly DataEndTimeBefore: Date;
-  readonly Status: string;
+  readonly DataStartTimeAfter?: Date;
+  readonly DataEndTimeBefore?: Date;
+  readonly Status?: string;
 }
 export interface ListInferenceSchedulers {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly InferenceSchedulerNameBeginsWith: string;
-  readonly ModelName: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly InferenceSchedulerNameBeginsWith?: string;
+  readonly ModelName?: string;
 }
 export interface ListModels {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Status: string;
-  readonly ModelNameBeginsWith: string;
-  readonly DatasetNameBeginsWith: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Status?: string;
+  readonly ModelNameBeginsWith?: string;
+  readonly DatasetNameBeginsWith?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -114,11 +114,11 @@ export interface UntagResource {
 }
 export interface UpdateInferenceScheduler {
   readonly InferenceSchedulerName: string;
-  readonly DataDelayOffsetInMinutes: number;
-  readonly DataUploadFrequency: string;
-  readonly DataInputConfiguration: InferenceInputConfiguration;
-  readonly DataOutputConfiguration: InferenceOutputConfiguration;
-  readonly RoleArn: string;
+  readonly DataDelayOffsetInMinutes?: number;
+  readonly DataUploadFrequency?: string;
+  readonly DataInputConfiguration?: InferenceInputConfiguration;
+  readonly DataOutputConfiguration?: InferenceOutputConfiguration;
+  readonly RoleArn?: string;
 }
 
 

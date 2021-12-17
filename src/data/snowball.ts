@@ -13,52 +13,52 @@ export interface CreateAddress {
 export interface CreateCluster {
   readonly JobType: string;
   readonly Resources: JobResource;
-  readonly OnDeviceServiceConfiguration: OnDeviceServiceConfiguration;
-  readonly Description: string;
+  readonly OnDeviceServiceConfiguration?: OnDeviceServiceConfiguration;
+  readonly Description?: string;
   readonly AddressId: string;
-  readonly KmsKeyARN: string;
+  readonly KmsKeyARN?: string;
   readonly RoleARN: string;
   readonly SnowballType: string;
   readonly ShippingOption: string;
-  readonly Notification: Notification;
-  readonly ForwardingAddressId: string;
-  readonly TaxDocuments: TaxDocuments;
-  readonly RemoteManagement: string;
+  readonly Notification?: Notification;
+  readonly ForwardingAddressId?: string;
+  readonly TaxDocuments?: TaxDocuments;
+  readonly RemoteManagement?: string;
 }
 export interface CreateJob {
-  readonly JobType: string;
-  readonly Resources: JobResource;
-  readonly OnDeviceServiceConfiguration: OnDeviceServiceConfiguration;
-  readonly Description: string;
-  readonly AddressId: string;
-  readonly KmsKeyARN: string;
-  readonly RoleARN: string;
-  readonly SnowballCapacityPreference: string;
-  readonly ShippingOption: string;
-  readonly Notification: Notification;
-  readonly ClusterId: string;
-  readonly SnowballType: string;
-  readonly ForwardingAddressId: string;
-  readonly TaxDocuments: TaxDocuments;
-  readonly DeviceConfiguration: DeviceConfiguration;
-  readonly RemoteManagement: string;
-  readonly LongTermPricingId: string;
+  readonly JobType?: string;
+  readonly Resources?: JobResource;
+  readonly OnDeviceServiceConfiguration?: OnDeviceServiceConfiguration;
+  readonly Description?: string;
+  readonly AddressId?: string;
+  readonly KmsKeyARN?: string;
+  readonly RoleARN?: string;
+  readonly SnowballCapacityPreference?: string;
+  readonly ShippingOption?: string;
+  readonly Notification?: Notification;
+  readonly ClusterId?: string;
+  readonly SnowballType?: string;
+  readonly ForwardingAddressId?: string;
+  readonly TaxDocuments?: TaxDocuments;
+  readonly DeviceConfiguration?: DeviceConfiguration;
+  readonly RemoteManagement?: string;
+  readonly LongTermPricingId?: string;
 }
 export interface CreateLongTermPricing {
   readonly LongTermPricingType: string;
-  readonly IsLongTermPricingAutoRenew: boolean;
-  readonly SnowballType: string;
+  readonly IsLongTermPricingAutoRenew?: boolean;
+  readonly SnowballType?: string;
 }
 export interface CreateReturnShippingLabel {
   readonly JobId: string;
-  readonly ShippingOption: string;
+  readonly ShippingOption?: string;
 }
 export interface DescribeAddress {
   readonly AddressId: string;
 }
 export interface DescribeAddresses {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeCluster {
   readonly ClusterId: string;
@@ -82,47 +82,47 @@ export interface GetSoftwareUpdates {
 }
 export interface ListClusterJobs {
   readonly ClusterId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListClusters {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListCompatibleImages {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListJobs {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListLongTermPricing {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface UpdateCluster {
   readonly ClusterId: string;
-  readonly RoleARN: string;
-  readonly Description: string;
-  readonly Resources: JobResource;
-  readonly OnDeviceServiceConfiguration: OnDeviceServiceConfiguration;
-  readonly AddressId: string;
-  readonly ShippingOption: string;
-  readonly Notification: Notification;
-  readonly ForwardingAddressId: string;
+  readonly RoleARN?: string;
+  readonly Description?: string;
+  readonly Resources?: JobResource;
+  readonly OnDeviceServiceConfiguration?: OnDeviceServiceConfiguration;
+  readonly AddressId?: string;
+  readonly ShippingOption?: string;
+  readonly Notification?: Notification;
+  readonly ForwardingAddressId?: string;
 }
 export interface UpdateJob {
   readonly JobId: string;
-  readonly RoleARN: string;
-  readonly Notification: Notification;
-  readonly Resources: JobResource;
-  readonly OnDeviceServiceConfiguration: OnDeviceServiceConfiguration;
-  readonly AddressId: string;
-  readonly ShippingOption: string;
-  readonly Description: string;
-  readonly SnowballCapacityPreference: string;
-  readonly ForwardingAddressId: string;
+  readonly RoleARN?: string;
+  readonly Notification?: Notification;
+  readonly Resources?: JobResource;
+  readonly OnDeviceServiceConfiguration?: OnDeviceServiceConfiguration;
+  readonly AddressId?: string;
+  readonly ShippingOption?: string;
+  readonly Description?: string;
+  readonly SnowballCapacityPreference?: string;
+  readonly ForwardingAddressId?: string;
 }
 export interface UpdateJobShipmentState {
   readonly JobId: string;
@@ -130,8 +130,8 @@ export interface UpdateJobShipmentState {
 }
 export interface UpdateLongTermPricing {
   readonly LongTermPricingId: string;
-  readonly ReplacementJob: string;
-  readonly IsLongTermPricingAutoRenew: boolean;
+  readonly ReplacementJob?: string;
+  readonly IsLongTermPricingAutoRenew?: boolean;
 }
 
 

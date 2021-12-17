@@ -5,10 +5,10 @@ export interface CancelTask {
   readonly taskId: string;
 }
 export interface CreateTask {
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly command: Command;
-  readonly description: string;
-  readonly tags: {[key: string]: any};
+  readonly description?: string;
+  readonly tags?: {[key: string]: any};
   readonly targets: [];
 }
 export interface DescribeDevice {
@@ -27,28 +27,28 @@ export interface DescribeTask {
 }
 export interface ListDeviceResources {
   readonly managedDeviceId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly type: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly type?: string;
 }
 export interface ListDevices {
-  readonly jobId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly jobId?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListExecutions {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly state: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly state?: string;
   readonly taskId: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface ListTasks {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly state: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly state?: string;
 }
 export interface TagResource {
   readonly resourceArn: string;

@@ -8,24 +8,24 @@ export interface CancelJob {
 export interface CreateComputeEnvironment {
   readonly computeEnvironmentName: string;
   readonly type: string;
-  readonly state: string;
-  readonly unmanagedvCpus: number;
-  readonly computeResources: ComputeResource;
-  readonly serviceRole: string;
-  readonly tags: {[key: string]: any};
+  readonly state?: string;
+  readonly unmanagedvCpus?: number;
+  readonly computeResources?: ComputeResource;
+  readonly serviceRole?: string;
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateJobQueue {
   readonly jobQueueName: string;
-  readonly state: string;
-  readonly schedulingPolicyArn: string;
+  readonly state?: string;
+  readonly schedulingPolicyArn?: string;
   readonly priority: number;
   readonly computeEnvironmentOrder: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateSchedulingPolicy {
   readonly name: string;
-  readonly fairsharePolicy: FairsharePolicy;
-  readonly tags: {[key: string]: any};
+  readonly fairsharePolicy?: FairsharePolicy;
+  readonly tags?: {[key: string]: any};
 }
 export interface DeleteComputeEnvironment {
   readonly computeEnvironment: string;
@@ -40,21 +40,21 @@ export interface DeregisterJobDefinition {
   readonly jobDefinition: string;
 }
 export interface DescribeComputeEnvironments {
-  readonly computeEnvironments: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly computeEnvironments?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeJobDefinitions {
-  readonly jobDefinitions: [];
-  readonly maxResults: number;
-  readonly jobDefinitionName: string;
-  readonly status: string;
-  readonly nextToken: string;
+  readonly jobDefinitions?: [];
+  readonly maxResults?: number;
+  readonly jobDefinitionName?: string;
+  readonly status?: string;
+  readonly nextToken?: string;
 }
 export interface DescribeJobQueues {
-  readonly jobQueues: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly jobQueues?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeJobs {
   readonly jobs: [];
@@ -63,17 +63,17 @@ export interface DescribeSchedulingPolicies {
   readonly arns: [];
 }
 export interface ListJobs {
-  readonly jobQueue: string;
-  readonly arrayJobId: string;
-  readonly multiNodeJobId: string;
-  readonly jobStatus: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly filters: [];
+  readonly jobQueue?: string;
+  readonly arrayJobId?: string;
+  readonly multiNodeJobId?: string;
+  readonly jobStatus?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly filters?: [];
 }
 export interface ListSchedulingPolicies {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -81,31 +81,31 @@ export interface ListTagsForResource {
 export interface RegisterJobDefinition {
   readonly jobDefinitionName: string;
   readonly type: string;
-  readonly parameters: {[key: string]: any};
-  readonly schedulingPriority: number;
-  readonly containerProperties: ContainerProperties;
-  readonly nodeProperties: NodeProperties;
-  readonly retryStrategy: RetryStrategy;
-  readonly propagateTags: boolean;
-  readonly timeout: JobTimeout;
-  readonly tags: {[key: string]: any};
-  readonly platformCapabilities: [];
+  readonly parameters?: {[key: string]: any};
+  readonly schedulingPriority?: number;
+  readonly containerProperties?: ContainerProperties;
+  readonly nodeProperties?: NodeProperties;
+  readonly retryStrategy?: RetryStrategy;
+  readonly propagateTags?: boolean;
+  readonly timeout?: JobTimeout;
+  readonly tags?: {[key: string]: any};
+  readonly platformCapabilities?: [];
 }
 export interface SubmitJob {
   readonly jobName: string;
   readonly jobQueue: string;
-  readonly shareIdentifier: string;
-  readonly schedulingPriorityOverride: number;
-  readonly arrayProperties: ArrayProperties;
-  readonly dependsOn: [];
+  readonly shareIdentifier?: string;
+  readonly schedulingPriorityOverride?: number;
+  readonly arrayProperties?: ArrayProperties;
+  readonly dependsOn?: [];
   readonly jobDefinition: string;
-  readonly parameters: {[key: string]: any};
-  readonly containerOverrides: ContainerOverrides;
-  readonly nodeOverrides: NodeOverrides;
-  readonly retryStrategy: RetryStrategy;
-  readonly propagateTags: boolean;
-  readonly timeout: JobTimeout;
-  readonly tags: {[key: string]: any};
+  readonly parameters?: {[key: string]: any};
+  readonly containerOverrides?: ContainerOverrides;
+  readonly nodeOverrides?: NodeOverrides;
+  readonly retryStrategy?: RetryStrategy;
+  readonly propagateTags?: boolean;
+  readonly timeout?: JobTimeout;
+  readonly tags?: {[key: string]: any};
 }
 export interface TagResource {
   readonly resourceArn: string;
@@ -121,21 +121,21 @@ export interface UntagResource {
 }
 export interface UpdateComputeEnvironment {
   readonly computeEnvironment: string;
-  readonly state: string;
-  readonly unmanagedvCpus: number;
-  readonly computeResources: ComputeResourceUpdate;
-  readonly serviceRole: string;
+  readonly state?: string;
+  readonly unmanagedvCpus?: number;
+  readonly computeResources?: ComputeResourceUpdate;
+  readonly serviceRole?: string;
 }
 export interface UpdateJobQueue {
   readonly jobQueue: string;
-  readonly state: string;
-  readonly schedulingPolicyArn: string;
-  readonly priority: number;
-  readonly computeEnvironmentOrder: [];
+  readonly state?: string;
+  readonly schedulingPolicyArn?: string;
+  readonly priority?: number;
+  readonly computeEnvironmentOrder?: [];
 }
 export interface UpdateSchedulingPolicy {
   readonly arn: string;
-  readonly fairsharePolicy: FairsharePolicy;
+  readonly fairsharePolicy?: FairsharePolicy;
 }
 
 

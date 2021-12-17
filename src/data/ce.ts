@@ -11,8 +11,8 @@ export interface CreateCostCategoryDefinition {
   readonly Name: string;
   readonly RuleVersion: string;
   readonly Rules: [];
-  readonly DefaultValue: string;
-  readonly SplitChargeRules: [];
+  readonly DefaultValue?: string;
+  readonly SplitChargeRules?: [];
 }
 export interface DeleteAnomalyMonitor {
   readonly MonitorArn: string;
@@ -25,161 +25,161 @@ export interface DeleteCostCategoryDefinition {
 }
 export interface DescribeCostCategoryDefinition {
   readonly CostCategoryArn: string;
-  readonly EffectiveOn: string;
+  readonly EffectiveOn?: string;
 }
 export interface GetAnomalies {
-  readonly MonitorArn: string;
+  readonly MonitorArn?: string;
   readonly DateInterval: AnomalyDateInterval;
-  readonly Feedback: string;
-  readonly TotalImpact: TotalImpactFilter;
-  readonly NextPageToken: string;
-  readonly MaxResults: number;
+  readonly Feedback?: string;
+  readonly TotalImpact?: TotalImpactFilter;
+  readonly NextPageToken?: string;
+  readonly MaxResults?: number;
 }
 export interface GetAnomalyMonitors {
-  readonly MonitorArnList: [];
-  readonly NextPageToken: string;
-  readonly MaxResults: number;
+  readonly MonitorArnList?: [];
+  readonly NextPageToken?: string;
+  readonly MaxResults?: number;
 }
 export interface GetAnomalySubscriptions {
-  readonly SubscriptionArnList: [];
-  readonly MonitorArn: string;
-  readonly NextPageToken: string;
-  readonly MaxResults: number;
+  readonly SubscriptionArnList?: [];
+  readonly MonitorArn?: string;
+  readonly NextPageToken?: string;
+  readonly MaxResults?: number;
 }
 export interface GetCostAndUsage {
   readonly TimePeriod: DateInterval;
   readonly Granularity: string;
-  readonly Filter: Expression;
+  readonly Filter?: Expression;
   readonly Metrics: [];
-  readonly GroupBy: [];
-  readonly NextPageToken: string;
+  readonly GroupBy?: [];
+  readonly NextPageToken?: string;
 }
 export interface GetCostAndUsageWithResources {
   readonly TimePeriod: DateInterval;
   readonly Granularity: string;
   readonly Filter: Expression;
-  readonly Metrics: [];
-  readonly GroupBy: [];
-  readonly NextPageToken: string;
+  readonly Metrics?: [];
+  readonly GroupBy?: [];
+  readonly NextPageToken?: string;
 }
 export interface GetCostCategories {
-  readonly SearchString: string;
+  readonly SearchString?: string;
   readonly TimePeriod: DateInterval;
-  readonly CostCategoryName: string;
-  readonly Filter: Expression;
-  readonly SortBy: [];
-  readonly MaxResults: number;
-  readonly NextPageToken: string;
+  readonly CostCategoryName?: string;
+  readonly Filter?: Expression;
+  readonly SortBy?: [];
+  readonly MaxResults?: number;
+  readonly NextPageToken?: string;
 }
 export interface GetCostForecast {
   readonly TimePeriod: DateInterval;
   readonly Metric: string;
   readonly Granularity: string;
-  readonly Filter: Expression;
-  readonly PredictionIntervalLevel: number;
+  readonly Filter?: Expression;
+  readonly PredictionIntervalLevel?: number;
 }
 export interface GetDimensionValues {
-  readonly SearchString: string;
+  readonly SearchString?: string;
   readonly TimePeriod: DateInterval;
   readonly Dimension: string;
-  readonly Context: string;
-  readonly Filter: Expression;
-  readonly SortBy: [];
-  readonly MaxResults: number;
-  readonly NextPageToken: string;
+  readonly Context?: string;
+  readonly Filter?: Expression;
+  readonly SortBy?: [];
+  readonly MaxResults?: number;
+  readonly NextPageToken?: string;
 }
 export interface GetReservationCoverage {
   readonly TimePeriod: DateInterval;
-  readonly GroupBy: [];
-  readonly Granularity: string;
-  readonly Filter: Expression;
-  readonly Metrics: [];
-  readonly NextPageToken: string;
-  readonly SortBy: SortDefinition;
-  readonly MaxResults: number;
+  readonly GroupBy?: [];
+  readonly Granularity?: string;
+  readonly Filter?: Expression;
+  readonly Metrics?: [];
+  readonly NextPageToken?: string;
+  readonly SortBy?: SortDefinition;
+  readonly MaxResults?: number;
 }
 export interface GetReservationPurchaseRecommendation {
-  readonly AccountId: string;
+  readonly AccountId?: string;
   readonly Service: string;
-  readonly Filter: Expression;
-  readonly AccountScope: string;
-  readonly LookbackPeriodInDays: string;
-  readonly TermInYears: string;
-  readonly PaymentOption: string;
-  readonly ServiceSpecification: ServiceSpecification;
-  readonly PageSize: number;
-  readonly NextPageToken: string;
+  readonly Filter?: Expression;
+  readonly AccountScope?: string;
+  readonly LookbackPeriodInDays?: string;
+  readonly TermInYears?: string;
+  readonly PaymentOption?: string;
+  readonly ServiceSpecification?: ServiceSpecification;
+  readonly PageSize?: number;
+  readonly NextPageToken?: string;
 }
 export interface GetReservationUtilization {
   readonly TimePeriod: DateInterval;
-  readonly GroupBy: [];
-  readonly Granularity: string;
-  readonly Filter: Expression;
-  readonly SortBy: SortDefinition;
-  readonly NextPageToken: string;
-  readonly MaxResults: number;
+  readonly GroupBy?: [];
+  readonly Granularity?: string;
+  readonly Filter?: Expression;
+  readonly SortBy?: SortDefinition;
+  readonly NextPageToken?: string;
+  readonly MaxResults?: number;
 }
 export interface GetRightsizingRecommendation {
-  readonly Filter: Expression;
-  readonly Configuration: RightsizingRecommendationConfiguration;
+  readonly Filter?: Expression;
+  readonly Configuration?: RightsizingRecommendationConfiguration;
   readonly Service: string;
-  readonly PageSize: number;
-  readonly NextPageToken: string;
+  readonly PageSize?: number;
+  readonly NextPageToken?: string;
 }
 export interface GetSavingsPlansCoverage {
   readonly TimePeriod: DateInterval;
-  readonly GroupBy: [];
-  readonly Granularity: string;
-  readonly Filter: Expression;
-  readonly Metrics: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly SortBy: SortDefinition;
+  readonly GroupBy?: [];
+  readonly Granularity?: string;
+  readonly Filter?: Expression;
+  readonly Metrics?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly SortBy?: SortDefinition;
 }
 export interface GetSavingsPlansPurchaseRecommendation {
   readonly SavingsPlansType: string;
   readonly TermInYears: string;
   readonly PaymentOption: string;
-  readonly AccountScope: string;
-  readonly NextPageToken: string;
-  readonly PageSize: number;
+  readonly AccountScope?: string;
+  readonly NextPageToken?: string;
+  readonly PageSize?: number;
   readonly LookbackPeriodInDays: string;
-  readonly Filter: Expression;
+  readonly Filter?: Expression;
 }
 export interface GetSavingsPlansUtilization {
   readonly TimePeriod: DateInterval;
-  readonly Granularity: string;
-  readonly Filter: Expression;
-  readonly SortBy: SortDefinition;
+  readonly Granularity?: string;
+  readonly Filter?: Expression;
+  readonly SortBy?: SortDefinition;
 }
 export interface GetSavingsPlansUtilizationDetails {
   readonly TimePeriod: DateInterval;
-  readonly Filter: Expression;
-  readonly DataType: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly SortBy: SortDefinition;
+  readonly Filter?: Expression;
+  readonly DataType?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly SortBy?: SortDefinition;
 }
 export interface GetTags {
-  readonly SearchString: string;
+  readonly SearchString?: string;
   readonly TimePeriod: DateInterval;
-  readonly TagKey: string;
-  readonly Filter: Expression;
-  readonly SortBy: [];
-  readonly MaxResults: number;
-  readonly NextPageToken: string;
+  readonly TagKey?: string;
+  readonly Filter?: Expression;
+  readonly SortBy?: [];
+  readonly MaxResults?: number;
+  readonly NextPageToken?: string;
 }
 export interface GetUsageForecast {
   readonly TimePeriod: DateInterval;
   readonly Metric: string;
   readonly Granularity: string;
-  readonly Filter: Expression;
-  readonly PredictionIntervalLevel: number;
+  readonly Filter?: Expression;
+  readonly PredictionIntervalLevel?: number;
 }
 export interface ListCostCategoryDefinitions {
-  readonly EffectiveOn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly EffectiveOn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ProvideAnomalyFeedback {
   readonly AnomalyId: string;
@@ -187,22 +187,22 @@ export interface ProvideAnomalyFeedback {
 }
 export interface UpdateAnomalyMonitor {
   readonly MonitorArn: string;
-  readonly MonitorName: string;
+  readonly MonitorName?: string;
 }
 export interface UpdateAnomalySubscription {
   readonly SubscriptionArn: string;
-  readonly Threshold: unknown;
-  readonly Frequency: string;
-  readonly MonitorArnList: [];
-  readonly Subscribers: [];
-  readonly SubscriptionName: string;
+  readonly Threshold?: unknown;
+  readonly Frequency?: string;
+  readonly MonitorArnList?: [];
+  readonly Subscribers?: [];
+  readonly SubscriptionName?: string;
 }
 export interface UpdateCostCategoryDefinition {
   readonly CostCategoryArn: string;
   readonly RuleVersion: string;
   readonly Rules: [];
-  readonly DefaultValue: string;
-  readonly SplitChargeRules: [];
+  readonly DefaultValue?: string;
+  readonly SplitChargeRules?: [];
 }
 
 

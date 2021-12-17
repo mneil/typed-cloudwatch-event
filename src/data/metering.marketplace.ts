@@ -9,14 +9,14 @@ export interface MeterUsage {
   readonly ProductCode: string;
   readonly Timestamp: Date;
   readonly UsageDimension: string;
-  readonly UsageQuantity: number;
-  readonly DryRun: boolean;
-  readonly UsageAllocations: [];
+  readonly UsageQuantity?: number;
+  readonly DryRun?: boolean;
+  readonly UsageAllocations?: [];
 }
 export interface RegisterUsage {
   readonly ProductCode: string;
   readonly PublicKeyVersion: number;
-  readonly Nonce: string;
+  readonly Nonce?: string;
 }
 export interface ResolveCustomer {
   readonly RegistrationToken: string;

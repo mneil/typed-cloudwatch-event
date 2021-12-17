@@ -30,36 +30,36 @@ export interface GetServiceQuotaIncreaseRequestFromTemplate {
 }
 export interface ListAWSDefaultServiceQuotas {
   readonly ServiceCode: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListRequestedServiceQuotaChangeHistory {
-  readonly ServiceCode: string;
-  readonly Status: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly ServiceCode?: string;
+  readonly Status?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListRequestedServiceQuotaChangeHistoryByQuota {
   readonly ServiceCode: string;
   readonly QuotaCode: string;
-  readonly Status: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Status?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListServiceQuotaIncreaseRequestsInTemplate {
-  readonly ServiceCode: string;
-  readonly AwsRegion: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly ServiceCode?: string;
+  readonly AwsRegion?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListServiceQuotas {
   readonly ServiceCode: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListServices {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;

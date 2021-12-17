@@ -5,12 +5,12 @@ export interface AcceptInvitation {
   readonly GraphArn: string;
 }
 export interface CreateGraph {
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateMembers {
   readonly GraphArn: string;
-  readonly Message: string;
-  readonly DisableEmailNotification: boolean;
+  readonly Message?: string;
+  readonly DisableEmailNotification?: boolean;
   readonly Accounts: [];
 }
 export interface DeleteGraph {
@@ -28,17 +28,17 @@ export interface GetMembers {
   readonly AccountIds: [];
 }
 export interface ListGraphs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListInvitations {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMembers {
   readonly GraphArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;

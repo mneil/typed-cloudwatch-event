@@ -8,18 +8,18 @@ export interface DescribeHumanLoop {
   readonly HumanLoopName: string;
 }
 export interface ListHumanLoops {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
   readonly FlowDefinitionArn: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface StartHumanLoop {
   readonly HumanLoopName: string;
   readonly FlowDefinitionArn: string;
   readonly HumanLoopInput: HumanLoopInput;
-  readonly DataAttributes: HumanLoopDataAttributes;
+  readonly DataAttributes?: HumanLoopDataAttributes;
 }
 export interface StopHumanLoop {
   readonly HumanLoopName: string;

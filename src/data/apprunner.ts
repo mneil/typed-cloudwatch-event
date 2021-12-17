@@ -4,28 +4,28 @@
 export interface AssociateCustomDomain {
   readonly ServiceArn: string;
   readonly DomainName: string;
-  readonly EnableWWWSubdomain: boolean;
+  readonly EnableWWWSubdomain?: boolean;
 }
 export interface CreateAutoScalingConfiguration {
   readonly AutoScalingConfigurationName: string;
-  readonly MaxConcurrency: number;
-  readonly MinSize: number;
-  readonly MaxSize: number;
-  readonly Tags: [];
+  readonly MaxConcurrency?: number;
+  readonly MinSize?: number;
+  readonly MaxSize?: number;
+  readonly Tags?: [];
 }
 export interface CreateConnection {
   readonly ConnectionName: string;
   readonly ProviderType: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateService {
   readonly ServiceName: string;
   readonly SourceConfiguration: SourceConfiguration;
-  readonly InstanceConfiguration: InstanceConfiguration;
-  readonly Tags: [];
-  readonly EncryptionConfiguration: EncryptionConfiguration;
-  readonly HealthCheckConfiguration: HealthCheckConfiguration;
-  readonly AutoScalingConfigurationArn: string;
+  readonly InstanceConfiguration?: InstanceConfiguration;
+  readonly Tags?: [];
+  readonly EncryptionConfiguration?: EncryptionConfiguration;
+  readonly HealthCheckConfiguration?: HealthCheckConfiguration;
+  readonly AutoScalingConfigurationArn?: string;
 }
 export interface DeleteAutoScalingConfiguration {
   readonly AutoScalingConfigurationArn: string;
@@ -41,8 +41,8 @@ export interface DescribeAutoScalingConfiguration {
 }
 export interface DescribeCustomDomains {
   readonly ServiceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeService {
   readonly ServiceArn: string;
@@ -52,24 +52,24 @@ export interface DisassociateCustomDomain {
   readonly DomainName: string;
 }
 export interface ListAutoScalingConfigurations {
-  readonly AutoScalingConfigurationName: string;
-  readonly LatestOnly: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly AutoScalingConfigurationName?: string;
+  readonly LatestOnly?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListConnections {
-  readonly ConnectionName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ConnectionName?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListOperations {
   readonly ServiceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListServices {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -93,10 +93,10 @@ export interface UntagResource {
 }
 export interface UpdateService {
   readonly ServiceArn: string;
-  readonly SourceConfiguration: SourceConfiguration;
-  readonly InstanceConfiguration: InstanceConfiguration;
-  readonly AutoScalingConfigurationArn: string;
-  readonly HealthCheckConfiguration: HealthCheckConfiguration;
+  readonly SourceConfiguration?: SourceConfiguration;
+  readonly InstanceConfiguration?: InstanceConfiguration;
+  readonly AutoScalingConfigurationArn?: string;
+  readonly HealthCheckConfiguration?: HealthCheckConfiguration;
 }
 
 

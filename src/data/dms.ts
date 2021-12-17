@@ -17,69 +17,69 @@ export interface CreateEndpoint {
   readonly EndpointIdentifier: string;
   readonly EndpointType: string;
   readonly EngineName: string;
-  readonly Username: string;
-  readonly Password: string;
-  readonly ServerName: string;
-  readonly Port: number;
-  readonly DatabaseName: string;
-  readonly ExtraConnectionAttributes: string;
-  readonly KmsKeyId: string;
-  readonly Tags: [];
-  readonly CertificateArn: string;
-  readonly SslMode: string;
-  readonly ServiceAccessRoleArn: string;
-  readonly ExternalTableDefinition: string;
-  readonly DynamoDbSettings: DynamoDbSettings;
-  readonly S3Settings: S3Settings;
-  readonly DmsTransferSettings: DmsTransferSettings;
-  readonly MongoDbSettings: MongoDbSettings;
-  readonly KinesisSettings: KinesisSettings;
-  readonly KafkaSettings: KafkaSettings;
-  readonly ElasticsearchSettings: ElasticsearchSettings;
-  readonly NeptuneSettings: NeptuneSettings;
-  readonly RedshiftSettings: RedshiftSettings;
-  readonly PostgreSQLSettings: PostgreSQLSettings;
-  readonly MySQLSettings: MySQLSettings;
-  readonly OracleSettings: OracleSettings;
-  readonly SybaseSettings: SybaseSettings;
-  readonly MicrosoftSQLServerSettings: MicrosoftSQLServerSettings;
-  readonly IBMDb2Settings: IBMDb2Settings;
-  readonly ResourceIdentifier: string;
-  readonly DocDbSettings: DocDbSettings;
-  readonly RedisSettings: RedisSettings;
-  readonly GcpMySQLSettings: GcpMySQLSettings;
+  readonly Username?: string;
+  readonly Password?: string;
+  readonly ServerName?: string;
+  readonly Port?: number;
+  readonly DatabaseName?: string;
+  readonly ExtraConnectionAttributes?: string;
+  readonly KmsKeyId?: string;
+  readonly Tags?: [];
+  readonly CertificateArn?: string;
+  readonly SslMode?: string;
+  readonly ServiceAccessRoleArn?: string;
+  readonly ExternalTableDefinition?: string;
+  readonly DynamoDbSettings?: DynamoDbSettings;
+  readonly S3Settings?: S3Settings;
+  readonly DmsTransferSettings?: DmsTransferSettings;
+  readonly MongoDbSettings?: MongoDbSettings;
+  readonly KinesisSettings?: KinesisSettings;
+  readonly KafkaSettings?: KafkaSettings;
+  readonly ElasticsearchSettings?: ElasticsearchSettings;
+  readonly NeptuneSettings?: NeptuneSettings;
+  readonly RedshiftSettings?: RedshiftSettings;
+  readonly PostgreSQLSettings?: PostgreSQLSettings;
+  readonly MySQLSettings?: MySQLSettings;
+  readonly OracleSettings?: OracleSettings;
+  readonly SybaseSettings?: SybaseSettings;
+  readonly MicrosoftSQLServerSettings?: MicrosoftSQLServerSettings;
+  readonly IBMDb2Settings?: IBMDb2Settings;
+  readonly ResourceIdentifier?: string;
+  readonly DocDbSettings?: DocDbSettings;
+  readonly RedisSettings?: RedisSettings;
+  readonly GcpMySQLSettings?: GcpMySQLSettings;
 }
 export interface CreateEventSubscription {
   readonly SubscriptionName: string;
   readonly SnsTopicArn: string;
-  readonly SourceType: string;
-  readonly EventCategories: [];
-  readonly SourceIds: [];
-  readonly Enabled: boolean;
-  readonly Tags: [];
+  readonly SourceType?: string;
+  readonly EventCategories?: [];
+  readonly SourceIds?: [];
+  readonly Enabled?: boolean;
+  readonly Tags?: [];
 }
 export interface CreateReplicationInstance {
   readonly ReplicationInstanceIdentifier: string;
-  readonly AllocatedStorage: number;
+  readonly AllocatedStorage?: number;
   readonly ReplicationInstanceClass: string;
-  readonly VpcSecurityGroupIds: [];
-  readonly AvailabilityZone: string;
-  readonly ReplicationSubnetGroupIdentifier: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly MultiAZ: boolean;
-  readonly EngineVersion: string;
-  readonly AutoMinorVersionUpgrade: boolean;
-  readonly Tags: [];
-  readonly KmsKeyId: string;
-  readonly PubliclyAccessible: boolean;
-  readonly DnsNameServers: string;
-  readonly ResourceIdentifier: string;
+  readonly VpcSecurityGroupIds?: [];
+  readonly AvailabilityZone?: string;
+  readonly ReplicationSubnetGroupIdentifier?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly MultiAZ?: boolean;
+  readonly EngineVersion?: string;
+  readonly AutoMinorVersionUpgrade?: boolean;
+  readonly Tags?: [];
+  readonly KmsKeyId?: string;
+  readonly PubliclyAccessible?: boolean;
+  readonly DnsNameServers?: string;
+  readonly ResourceIdentifier?: string;
 }
 export interface CreateReplicationSubnetGroup {
   readonly ReplicationSubnetGroupIdentifier: string;
   readonly ReplicationSubnetGroupDescription: string;
   readonly SubnetIds: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateReplicationTask {
   readonly ReplicationTaskIdentifier: string;
@@ -88,13 +88,13 @@ export interface CreateReplicationTask {
   readonly ReplicationInstanceArn: string;
   readonly MigrationType: string;
   readonly TableMappings: string;
-  readonly ReplicationTaskSettings: string;
-  readonly CdcStartTime: Date;
-  readonly CdcStartPosition: string;
-  readonly CdcStopPosition: string;
-  readonly Tags: [];
-  readonly TaskData: string;
-  readonly ResourceIdentifier: string;
+  readonly ReplicationTaskSettings?: string;
+  readonly CdcStartTime?: Date;
+  readonly CdcStartPosition?: string;
+  readonly CdcStopPosition?: string;
+  readonly Tags?: [];
+  readonly TaskData?: string;
+  readonly ResourceIdentifier?: string;
 }
 export interface DeleteCertificate {
   readonly CertificateArn: string;
@@ -124,200 +124,200 @@ export interface DeleteReplicationTaskAssessmentRun {
 export interface DescribeAccountAttributes {
 }
 export interface DescribeApplicableIndividualAssessments {
-  readonly ReplicationTaskArn: string;
-  readonly ReplicationInstanceArn: string;
-  readonly SourceEngineName: string;
-  readonly TargetEngineName: string;
-  readonly MigrationType: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly ReplicationTaskArn?: string;
+  readonly ReplicationInstanceArn?: string;
+  readonly SourceEngineName?: string;
+  readonly TargetEngineName?: string;
+  readonly MigrationType?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeCertificates {
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeConnections {
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeEndpointSettings {
   readonly EngineName: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeEndpointTypes {
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeEndpoints {
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeEventCategories {
-  readonly SourceType: string;
-  readonly Filters: [];
+  readonly SourceType?: string;
+  readonly Filters?: [];
 }
 export interface DescribeEventSubscriptions {
-  readonly SubscriptionName: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly SubscriptionName?: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeEvents {
-  readonly SourceIdentifier: string;
-  readonly SourceType: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Duration: number;
-  readonly EventCategories: [];
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly SourceIdentifier?: string;
+  readonly SourceType?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Duration?: number;
+  readonly EventCategories?: [];
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeOrderableReplicationInstances {
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribePendingMaintenanceActions {
-  readonly ReplicationInstanceArn: string;
-  readonly Filters: [];
-  readonly Marker: string;
-  readonly MaxRecords: number;
+  readonly ReplicationInstanceArn?: string;
+  readonly Filters?: [];
+  readonly Marker?: string;
+  readonly MaxRecords?: number;
 }
 export interface DescribeRefreshSchemasStatus {
   readonly EndpointArn: string;
 }
 export interface DescribeReplicationInstanceTaskLogs {
   readonly ReplicationInstanceArn: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeReplicationInstances {
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeReplicationSubnetGroups {
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeReplicationTaskAssessmentResults {
-  readonly ReplicationTaskArn: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly ReplicationTaskArn?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeReplicationTaskAssessmentRuns {
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeReplicationTaskIndividualAssessments {
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeReplicationTasks {
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly WithoutSettings: boolean;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly WithoutSettings?: boolean;
 }
 export interface DescribeSchemas {
   readonly EndpointArn: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 export interface DescribeTableStatistics {
   readonly ReplicationTaskArn: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly Filters: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly Filters?: [];
 }
 export interface ImportCertificate {
   readonly CertificateIdentifier: string;
-  readonly CertificatePem: string;
-  readonly CertificateWallet: unknown;
-  readonly Tags: [];
+  readonly CertificatePem?: string;
+  readonly CertificateWallet?: unknown;
+  readonly Tags?: [];
 }
 export interface ListTagsForResource {
-  readonly ResourceArn: string;
-  readonly ResourceArnList: [];
+  readonly ResourceArn?: string;
+  readonly ResourceArnList?: [];
 }
 export interface ModifyEndpoint {
   readonly EndpointArn: string;
-  readonly EndpointIdentifier: string;
-  readonly EndpointType: string;
-  readonly EngineName: string;
-  readonly Username: string;
-  readonly Password: string;
-  readonly ServerName: string;
-  readonly Port: number;
-  readonly DatabaseName: string;
-  readonly ExtraConnectionAttributes: string;
-  readonly CertificateArn: string;
-  readonly SslMode: string;
-  readonly ServiceAccessRoleArn: string;
-  readonly ExternalTableDefinition: string;
-  readonly DynamoDbSettings: DynamoDbSettings;
-  readonly S3Settings: S3Settings;
-  readonly DmsTransferSettings: DmsTransferSettings;
-  readonly MongoDbSettings: MongoDbSettings;
-  readonly KinesisSettings: KinesisSettings;
-  readonly KafkaSettings: KafkaSettings;
-  readonly ElasticsearchSettings: ElasticsearchSettings;
-  readonly NeptuneSettings: NeptuneSettings;
-  readonly RedshiftSettings: RedshiftSettings;
-  readonly PostgreSQLSettings: PostgreSQLSettings;
-  readonly MySQLSettings: MySQLSettings;
-  readonly OracleSettings: OracleSettings;
-  readonly SybaseSettings: SybaseSettings;
-  readonly MicrosoftSQLServerSettings: MicrosoftSQLServerSettings;
-  readonly IBMDb2Settings: IBMDb2Settings;
-  readonly DocDbSettings: DocDbSettings;
-  readonly RedisSettings: RedisSettings;
-  readonly ExactSettings: boolean;
-  readonly GcpMySQLSettings: GcpMySQLSettings;
+  readonly EndpointIdentifier?: string;
+  readonly EndpointType?: string;
+  readonly EngineName?: string;
+  readonly Username?: string;
+  readonly Password?: string;
+  readonly ServerName?: string;
+  readonly Port?: number;
+  readonly DatabaseName?: string;
+  readonly ExtraConnectionAttributes?: string;
+  readonly CertificateArn?: string;
+  readonly SslMode?: string;
+  readonly ServiceAccessRoleArn?: string;
+  readonly ExternalTableDefinition?: string;
+  readonly DynamoDbSettings?: DynamoDbSettings;
+  readonly S3Settings?: S3Settings;
+  readonly DmsTransferSettings?: DmsTransferSettings;
+  readonly MongoDbSettings?: MongoDbSettings;
+  readonly KinesisSettings?: KinesisSettings;
+  readonly KafkaSettings?: KafkaSettings;
+  readonly ElasticsearchSettings?: ElasticsearchSettings;
+  readonly NeptuneSettings?: NeptuneSettings;
+  readonly RedshiftSettings?: RedshiftSettings;
+  readonly PostgreSQLSettings?: PostgreSQLSettings;
+  readonly MySQLSettings?: MySQLSettings;
+  readonly OracleSettings?: OracleSettings;
+  readonly SybaseSettings?: SybaseSettings;
+  readonly MicrosoftSQLServerSettings?: MicrosoftSQLServerSettings;
+  readonly IBMDb2Settings?: IBMDb2Settings;
+  readonly DocDbSettings?: DocDbSettings;
+  readonly RedisSettings?: RedisSettings;
+  readonly ExactSettings?: boolean;
+  readonly GcpMySQLSettings?: GcpMySQLSettings;
 }
 export interface ModifyEventSubscription {
   readonly SubscriptionName: string;
-  readonly SnsTopicArn: string;
-  readonly SourceType: string;
-  readonly EventCategories: [];
-  readonly Enabled: boolean;
+  readonly SnsTopicArn?: string;
+  readonly SourceType?: string;
+  readonly EventCategories?: [];
+  readonly Enabled?: boolean;
 }
 export interface ModifyReplicationInstance {
   readonly ReplicationInstanceArn: string;
-  readonly AllocatedStorage: number;
-  readonly ApplyImmediately: boolean;
-  readonly ReplicationInstanceClass: string;
-  readonly VpcSecurityGroupIds: [];
-  readonly PreferredMaintenanceWindow: string;
-  readonly MultiAZ: boolean;
-  readonly EngineVersion: string;
-  readonly AllowMajorVersionUpgrade: boolean;
-  readonly AutoMinorVersionUpgrade: boolean;
-  readonly ReplicationInstanceIdentifier: string;
+  readonly AllocatedStorage?: number;
+  readonly ApplyImmediately?: boolean;
+  readonly ReplicationInstanceClass?: string;
+  readonly VpcSecurityGroupIds?: [];
+  readonly PreferredMaintenanceWindow?: string;
+  readonly MultiAZ?: boolean;
+  readonly EngineVersion?: string;
+  readonly AllowMajorVersionUpgrade?: boolean;
+  readonly AutoMinorVersionUpgrade?: boolean;
+  readonly ReplicationInstanceIdentifier?: string;
 }
 export interface ModifyReplicationSubnetGroup {
   readonly ReplicationSubnetGroupIdentifier: string;
-  readonly ReplicationSubnetGroupDescription: string;
+  readonly ReplicationSubnetGroupDescription?: string;
   readonly SubnetIds: [];
 }
 export interface ModifyReplicationTask {
   readonly ReplicationTaskArn: string;
-  readonly ReplicationTaskIdentifier: string;
-  readonly MigrationType: string;
-  readonly TableMappings: string;
-  readonly ReplicationTaskSettings: string;
-  readonly CdcStartTime: Date;
-  readonly CdcStartPosition: string;
-  readonly CdcStopPosition: string;
-  readonly TaskData: string;
+  readonly ReplicationTaskIdentifier?: string;
+  readonly MigrationType?: string;
+  readonly TableMappings?: string;
+  readonly ReplicationTaskSettings?: string;
+  readonly CdcStartTime?: Date;
+  readonly CdcStartPosition?: string;
+  readonly CdcStopPosition?: string;
+  readonly TaskData?: string;
 }
 export interface MoveReplicationTask {
   readonly ReplicationTaskArn: string;
@@ -325,8 +325,8 @@ export interface MoveReplicationTask {
 }
 export interface RebootReplicationInstance {
   readonly ReplicationInstanceArn: string;
-  readonly ForceFailover: boolean;
-  readonly ForcePlannedFailover: boolean;
+  readonly ForceFailover?: boolean;
+  readonly ForcePlannedFailover?: boolean;
 }
 export interface RefreshSchemas {
   readonly EndpointArn: string;
@@ -335,7 +335,7 @@ export interface RefreshSchemas {
 export interface ReloadTables {
   readonly ReplicationTaskArn: string;
   readonly TablesToReload: [];
-  readonly ReloadOption: string;
+  readonly ReloadOption?: string;
 }
 export interface RemoveTagsFromResource {
   readonly ResourceArn: string;
@@ -344,9 +344,9 @@ export interface RemoveTagsFromResource {
 export interface StartReplicationTask {
   readonly ReplicationTaskArn: string;
   readonly StartReplicationTaskType: string;
-  readonly CdcStartTime: Date;
-  readonly CdcStartPosition: string;
-  readonly CdcStopPosition: string;
+  readonly CdcStartTime?: Date;
+  readonly CdcStartPosition?: string;
+  readonly CdcStopPosition?: string;
 }
 export interface StartReplicationTaskAssessment {
   readonly ReplicationTaskArn: string;
@@ -355,12 +355,12 @@ export interface StartReplicationTaskAssessmentRun {
   readonly ReplicationTaskArn: string;
   readonly ServiceAccessRoleArn: string;
   readonly ResultLocationBucket: string;
-  readonly ResultLocationFolder: string;
-  readonly ResultEncryptionMode: string;
-  readonly ResultKmsKeyArn: string;
+  readonly ResultLocationFolder?: string;
+  readonly ResultEncryptionMode?: string;
+  readonly ResultKmsKeyArn?: string;
   readonly AssessmentRunName: string;
-  readonly IncludeOnly: [];
-  readonly Exclude: [];
+  readonly IncludeOnly?: [];
+  readonly Exclude?: [];
 }
 export interface StopReplicationTask {
   readonly ReplicationTaskArn: string;

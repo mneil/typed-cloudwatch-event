@@ -4,7 +4,7 @@
 export interface AnalyzeDocument {
   readonly Document: Document;
   readonly FeatureTypes: [];
-  readonly HumanLoopConfig: HumanLoopConfig;
+  readonly HumanLoopConfig?: HumanLoopConfig;
 }
 export interface AnalyzeExpense {
   readonly Document: Document;
@@ -17,43 +17,43 @@ export interface DetectDocumentText {
 }
 export interface GetDocumentAnalysis {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetDocumentTextDetection {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetExpenseAnalysis {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface StartDocumentAnalysis {
   readonly DocumentLocation: DocumentLocation;
   readonly FeatureTypes: [];
-  readonly ClientRequestToken: string;
-  readonly JobTag: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly OutputConfig: OutputConfig;
-  readonly KMSKeyId: string;
+  readonly ClientRequestToken?: string;
+  readonly JobTag?: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly OutputConfig?: OutputConfig;
+  readonly KMSKeyId?: string;
 }
 export interface StartDocumentTextDetection {
   readonly DocumentLocation: DocumentLocation;
-  readonly ClientRequestToken: string;
-  readonly JobTag: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly OutputConfig: OutputConfig;
-  readonly KMSKeyId: string;
+  readonly ClientRequestToken?: string;
+  readonly JobTag?: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly OutputConfig?: OutputConfig;
+  readonly KMSKeyId?: string;
 }
 export interface StartExpenseAnalysis {
   readonly DocumentLocation: DocumentLocation;
-  readonly ClientRequestToken: string;
-  readonly JobTag: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly OutputConfig: OutputConfig;
-  readonly KMSKeyId: string;
+  readonly ClientRequestToken?: string;
+  readonly JobTag?: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly OutputConfig?: OutputConfig;
+  readonly KMSKeyId?: string;
 }
 
 

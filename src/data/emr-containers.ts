@@ -11,16 +11,16 @@ export interface CreateManagedEndpoint {
   readonly type: string;
   readonly releaseLabel: string;
   readonly executionRoleArn: string;
-  readonly certificateArn: string;
-  readonly configurationOverrides: ConfigurationOverrides;
+  readonly certificateArn?: string;
+  readonly configurationOverrides?: ConfigurationOverrides;
   readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateVirtualCluster {
   readonly name: string;
   readonly containerProvider: ContainerProvider;
   readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface DeleteManagedEndpoint {
   readonly id: string;
@@ -42,43 +42,43 @@ export interface DescribeVirtualCluster {
 }
 export interface ListJobRuns {
   readonly virtualClusterId: string;
-  readonly createdBefore: Date;
-  readonly createdAfter: Date;
-  readonly name: string;
-  readonly states: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly createdBefore?: Date;
+  readonly createdAfter?: Date;
+  readonly name?: string;
+  readonly states?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListManagedEndpoints {
   readonly virtualClusterId: string;
-  readonly createdBefore: Date;
-  readonly createdAfter: Date;
-  readonly types: [];
-  readonly states: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly createdBefore?: Date;
+  readonly createdAfter?: Date;
+  readonly types?: [];
+  readonly states?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface ListVirtualClusters {
-  readonly containerProviderId: string;
-  readonly containerProviderType: string;
-  readonly createdAfter: Date;
-  readonly createdBefore: Date;
-  readonly states: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly containerProviderId?: string;
+  readonly containerProviderType?: string;
+  readonly createdAfter?: Date;
+  readonly createdBefore?: Date;
+  readonly states?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface StartJobRun {
-  readonly name: string;
+  readonly name?: string;
   readonly virtualClusterId: string;
   readonly clientToken: string;
   readonly executionRoleArn: string;
   readonly releaseLabel: string;
   readonly jobDriver: JobDriver;
-  readonly configurationOverrides: ConfigurationOverrides;
-  readonly tags: {[key: string]: any};
+  readonly configurationOverrides?: ConfigurationOverrides;
+  readonly tags?: {[key: string]: any};
 }
 export interface TagResource {
   readonly resourceArn: string;

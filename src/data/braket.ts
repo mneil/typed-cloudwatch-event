@@ -10,28 +10,28 @@ export interface CancelQuantumTask {
 }
 export interface CreateJob {
   readonly algorithmSpecification: AlgorithmSpecification;
-  readonly checkpointConfig: JobCheckpointConfig;
+  readonly checkpointConfig?: JobCheckpointConfig;
   readonly clientToken: string;
   readonly deviceConfig: DeviceConfig;
-  readonly hyperParameters: {[key: string]: any};
-  readonly inputDataConfig: [];
+  readonly hyperParameters?: {[key: string]: any};
+  readonly inputDataConfig?: [];
   readonly instanceConfig: InstanceConfig;
   readonly jobName: string;
   readonly outputDataConfig: JobOutputDataConfig;
   readonly roleArn: string;
-  readonly stoppingCondition: JobStoppingCondition;
-  readonly tags: {[key: string]: any};
+  readonly stoppingCondition?: JobStoppingCondition;
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateQuantumTask {
   readonly action: string;
   readonly clientToken: string;
   readonly deviceArn: string;
-  readonly deviceParameters: string;
-  readonly jobToken: string;
+  readonly deviceParameters?: string;
+  readonly jobToken?: string;
   readonly outputS3Bucket: string;
   readonly outputS3KeyPrefix: string;
   readonly shots: number;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface GetDevice {
   readonly deviceArn: string;
@@ -47,18 +47,18 @@ export interface ListTagsForResource {
 }
 export interface SearchDevices {
   readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface SearchJobs {
   readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface SearchQuantumTasks {
   readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface TagResource {
   readonly resourceArn: string;

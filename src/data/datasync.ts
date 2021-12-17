@@ -6,88 +6,88 @@ export interface CancelTaskExecution {
 }
 export interface CreateAgent {
   readonly ActivationKey: string;
-  readonly AgentName: string;
-  readonly Tags: [];
-  readonly VpcEndpointId: string;
-  readonly SubnetArns: [];
-  readonly SecurityGroupArns: [];
+  readonly AgentName?: string;
+  readonly Tags?: [];
+  readonly VpcEndpointId?: string;
+  readonly SubnetArns?: [];
+  readonly SecurityGroupArns?: [];
 }
 export interface CreateLocationEfs {
-  readonly Subdirectory: string;
+  readonly Subdirectory?: string;
   readonly EfsFilesystemArn: string;
   readonly Ec2Config: Ec2Config;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateLocationFsxWindows {
-  readonly Subdirectory: string;
+  readonly Subdirectory?: string;
   readonly FsxFilesystemArn: string;
   readonly SecurityGroupArns: [];
-  readonly Tags: [];
+  readonly Tags?: [];
   readonly User: string;
-  readonly Domain: string;
+  readonly Domain?: string;
   readonly Password: string;
 }
 export interface CreateLocationHdfs {
-  readonly Subdirectory: string;
+  readonly Subdirectory?: string;
   readonly NameNodes: [];
-  readonly BlockSize: number;
-  readonly ReplicationFactor: number;
-  readonly KmsKeyProviderUri: string;
-  readonly QopConfiguration: QopConfiguration;
+  readonly BlockSize?: number;
+  readonly ReplicationFactor?: number;
+  readonly KmsKeyProviderUri?: string;
+  readonly QopConfiguration?: QopConfiguration;
   readonly AuthenticationType: string;
-  readonly SimpleUser: string;
-  readonly KerberosPrincipal: string;
-  readonly KerberosKeytab: unknown;
-  readonly KerberosKrb5Conf: unknown;
+  readonly SimpleUser?: string;
+  readonly KerberosPrincipal?: string;
+  readonly KerberosKeytab?: unknown;
+  readonly KerberosKrb5Conf?: unknown;
   readonly AgentArns: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateLocationNfs {
   readonly Subdirectory: string;
   readonly ServerHostname: string;
   readonly OnPremConfig: OnPremConfig;
-  readonly MountOptions: NfsMountOptions;
-  readonly Tags: [];
+  readonly MountOptions?: NfsMountOptions;
+  readonly Tags?: [];
 }
 export interface CreateLocationObjectStorage {
   readonly ServerHostname: string;
-  readonly ServerPort: number;
-  readonly ServerProtocol: string;
-  readonly Subdirectory: string;
+  readonly ServerPort?: number;
+  readonly ServerProtocol?: string;
+  readonly Subdirectory?: string;
   readonly BucketName: string;
-  readonly AccessKey: string;
-  readonly SecretKey: string;
+  readonly AccessKey?: string;
+  readonly SecretKey?: string;
   readonly AgentArns: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateLocationS3 {
-  readonly Subdirectory: string;
+  readonly Subdirectory?: string;
   readonly S3BucketArn: string;
-  readonly S3StorageClass: string;
+  readonly S3StorageClass?: string;
   readonly S3Config: S3Config;
-  readonly AgentArns: [];
-  readonly Tags: [];
+  readonly AgentArns?: [];
+  readonly Tags?: [];
 }
 export interface CreateLocationSmb {
   readonly Subdirectory: string;
   readonly ServerHostname: string;
   readonly User: string;
-  readonly Domain: string;
+  readonly Domain?: string;
   readonly Password: string;
   readonly AgentArns: [];
-  readonly MountOptions: SmbMountOptions;
-  readonly Tags: [];
+  readonly MountOptions?: SmbMountOptions;
+  readonly Tags?: [];
 }
 export interface CreateTask {
   readonly SourceLocationArn: string;
   readonly DestinationLocationArn: string;
-  readonly CloudWatchLogGroupArn: string;
-  readonly Name: string;
-  readonly Options: Options;
-  readonly Excludes: [];
-  readonly Schedule: TaskSchedule;
-  readonly Tags: [];
-  readonly Includes: [];
+  readonly CloudWatchLogGroupArn?: string;
+  readonly Name?: string;
+  readonly Options?: Options;
+  readonly Excludes?: [];
+  readonly Schedule?: TaskSchedule;
+  readonly Tags?: [];
+  readonly Includes?: [];
 }
 export interface DeleteAgent {
   readonly AgentArn: string;
@@ -129,34 +129,34 @@ export interface DescribeTaskExecution {
   readonly TaskExecutionArn: string;
 }
 export interface ListAgents {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListLocations {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTaskExecutions {
-  readonly TaskArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly TaskArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTasks {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 export interface StartTaskExecution {
   readonly TaskArn: string;
-  readonly OverrideOptions: Options;
-  readonly Includes: [];
-  readonly Excludes: [];
+  readonly OverrideOptions?: Options;
+  readonly Includes?: [];
+  readonly Excludes?: [];
 }
 export interface TagResource {
   readonly ResourceArn: string;
@@ -168,55 +168,55 @@ export interface UntagResource {
 }
 export interface UpdateAgent {
   readonly AgentArn: string;
-  readonly Name: string;
+  readonly Name?: string;
 }
 export interface UpdateLocationHdfs {
   readonly LocationArn: string;
-  readonly Subdirectory: string;
-  readonly NameNodes: [];
-  readonly BlockSize: number;
-  readonly ReplicationFactor: number;
-  readonly KmsKeyProviderUri: string;
-  readonly QopConfiguration: QopConfiguration;
-  readonly AuthenticationType: string;
-  readonly SimpleUser: string;
-  readonly KerberosPrincipal: string;
-  readonly KerberosKeytab: unknown;
-  readonly KerberosKrb5Conf: unknown;
-  readonly AgentArns: [];
+  readonly Subdirectory?: string;
+  readonly NameNodes?: [];
+  readonly BlockSize?: number;
+  readonly ReplicationFactor?: number;
+  readonly KmsKeyProviderUri?: string;
+  readonly QopConfiguration?: QopConfiguration;
+  readonly AuthenticationType?: string;
+  readonly SimpleUser?: string;
+  readonly KerberosPrincipal?: string;
+  readonly KerberosKeytab?: unknown;
+  readonly KerberosKrb5Conf?: unknown;
+  readonly AgentArns?: [];
 }
 export interface UpdateLocationNfs {
   readonly LocationArn: string;
-  readonly Subdirectory: string;
-  readonly OnPremConfig: OnPremConfig;
-  readonly MountOptions: NfsMountOptions;
+  readonly Subdirectory?: string;
+  readonly OnPremConfig?: OnPremConfig;
+  readonly MountOptions?: NfsMountOptions;
 }
 export interface UpdateLocationObjectStorage {
   readonly LocationArn: string;
-  readonly ServerPort: number;
-  readonly ServerProtocol: string;
-  readonly Subdirectory: string;
-  readonly AccessKey: string;
-  readonly SecretKey: string;
-  readonly AgentArns: [];
+  readonly ServerPort?: number;
+  readonly ServerProtocol?: string;
+  readonly Subdirectory?: string;
+  readonly AccessKey?: string;
+  readonly SecretKey?: string;
+  readonly AgentArns?: [];
 }
 export interface UpdateLocationSmb {
   readonly LocationArn: string;
-  readonly Subdirectory: string;
-  readonly User: string;
-  readonly Domain: string;
-  readonly Password: string;
-  readonly AgentArns: [];
-  readonly MountOptions: SmbMountOptions;
+  readonly Subdirectory?: string;
+  readonly User?: string;
+  readonly Domain?: string;
+  readonly Password?: string;
+  readonly AgentArns?: [];
+  readonly MountOptions?: SmbMountOptions;
 }
 export interface UpdateTask {
   readonly TaskArn: string;
-  readonly Options: Options;
-  readonly Excludes: [];
-  readonly Schedule: TaskSchedule;
-  readonly Name: string;
-  readonly CloudWatchLogGroupArn: string;
-  readonly Includes: [];
+  readonly Options?: Options;
+  readonly Excludes?: [];
+  readonly Schedule?: TaskSchedule;
+  readonly Name?: string;
+  readonly CloudWatchLogGroupArn?: string;
+  readonly Includes?: [];
 }
 export interface UpdateTaskExecution {
   readonly TaskExecutionArn: string;

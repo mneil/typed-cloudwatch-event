@@ -3,63 +3,63 @@
  */
 export interface BatchGetTraces {
   readonly TraceIds: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface CreateGroup {
   readonly GroupName: string;
-  readonly FilterExpression: string;
-  readonly InsightsConfiguration: InsightsConfiguration;
-  readonly Tags: [];
+  readonly FilterExpression?: string;
+  readonly InsightsConfiguration?: InsightsConfiguration;
+  readonly Tags?: [];
 }
 export interface CreateSamplingRule {
   readonly SamplingRule: SamplingRule;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface DeleteGroup {
-  readonly GroupName: string;
-  readonly GroupARN: string;
+  readonly GroupName?: string;
+  readonly GroupARN?: string;
 }
 export interface DeleteSamplingRule {
-  readonly RuleName: string;
-  readonly RuleARN: string;
+  readonly RuleName?: string;
+  readonly RuleARN?: string;
 }
 export interface GetEncryptionConfig {
 }
 export interface GetGroup {
-  readonly GroupName: string;
-  readonly GroupARN: string;
+  readonly GroupName?: string;
+  readonly GroupARN?: string;
 }
 export interface GetGroups {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface GetInsight {
   readonly InsightId: string;
 }
 export interface GetInsightEvents {
   readonly InsightId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetInsightImpactGraph {
   readonly InsightId: string;
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface GetInsightSummaries {
-  readonly States: [];
-  readonly GroupARN: string;
-  readonly GroupName: string;
+  readonly States?: [];
+  readonly GroupARN?: string;
+  readonly GroupName?: string;
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetSamplingRules {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface GetSamplingStatisticSummaries {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface GetSamplingTargets {
   readonly SamplingStatisticsDocuments: [];
@@ -67,46 +67,46 @@ export interface GetSamplingTargets {
 export interface GetServiceGraph {
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly GroupName: string;
-  readonly GroupARN: string;
-  readonly NextToken: string;
+  readonly GroupName?: string;
+  readonly GroupARN?: string;
+  readonly NextToken?: string;
 }
 export interface GetTimeSeriesServiceStatistics {
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly GroupName: string;
-  readonly GroupARN: string;
-  readonly EntitySelectorExpression: string;
-  readonly Period: number;
-  readonly ForecastStatistics: boolean;
-  readonly NextToken: string;
+  readonly GroupName?: string;
+  readonly GroupARN?: string;
+  readonly EntitySelectorExpression?: string;
+  readonly Period?: number;
+  readonly ForecastStatistics?: boolean;
+  readonly NextToken?: string;
 }
 export interface GetTraceGraph {
   readonly TraceIds: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface GetTraceSummaries {
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly TimeRangeType: string;
-  readonly Sampling: boolean;
-  readonly SamplingStrategy: SamplingStrategy;
-  readonly FilterExpression: string;
-  readonly NextToken: string;
+  readonly TimeRangeType?: string;
+  readonly Sampling?: boolean;
+  readonly SamplingStrategy?: SamplingStrategy;
+  readonly FilterExpression?: string;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface PutEncryptionConfig {
-  readonly KeyId: string;
+  readonly KeyId?: string;
   readonly Type: string;
 }
 export interface PutTelemetryRecords {
   readonly TelemetryRecords: [];
-  readonly EC2InstanceId: string;
-  readonly Hostname: string;
-  readonly ResourceARN: string;
+  readonly EC2InstanceId?: string;
+  readonly Hostname?: string;
+  readonly ResourceARN?: string;
 }
 export interface PutTraceSegments {
   readonly TraceSegmentDocuments: [];
@@ -120,10 +120,10 @@ export interface UntagResource {
   readonly TagKeys: [];
 }
 export interface UpdateGroup {
-  readonly GroupName: string;
-  readonly GroupARN: string;
-  readonly FilterExpression: string;
-  readonly InsightsConfiguration: InsightsConfiguration;
+  readonly GroupName?: string;
+  readonly GroupARN?: string;
+  readonly FilterExpression?: string;
+  readonly InsightsConfiguration?: InsightsConfiguration;
 }
 export interface UpdateSamplingRule {
   readonly SamplingRuleUpdate: SamplingRuleUpdate;

@@ -5,25 +5,25 @@ export interface BatchCreateTableRows {
   readonly workbookId: string;
   readonly tableId: string;
   readonly rowsToCreate: [];
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 export interface BatchDeleteTableRows {
   readonly workbookId: string;
   readonly tableId: string;
   readonly rowIds: [];
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 export interface BatchUpdateTableRows {
   readonly workbookId: string;
   readonly tableId: string;
   readonly rowsToUpdate: [];
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 export interface BatchUpsertTableRows {
   readonly workbookId: string;
   readonly tableId: string;
   readonly rowsToUpsert: [];
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 export interface DescribeTableDataImportJob {
   readonly workbookId: string;
@@ -34,42 +34,42 @@ export interface GetScreenData {
   readonly workbookId: string;
   readonly appId: string;
   readonly screenId: string;
-  readonly variables: {[key: string]: any};
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly variables?: {[key: string]: any};
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface InvokeScreenAutomation {
   readonly workbookId: string;
   readonly appId: string;
   readonly screenId: string;
   readonly screenAutomationId: string;
-  readonly variables: {[key: string]: any};
-  readonly rowId: string;
-  readonly clientRequestToken: string;
+  readonly variables?: {[key: string]: any};
+  readonly rowId?: string;
+  readonly clientRequestToken?: string;
 }
 export interface ListTableColumns {
   readonly workbookId: string;
   readonly tableId: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListTableRows {
   readonly workbookId: string;
   readonly tableId: string;
-  readonly rowIds: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly rowIds?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTables {
   readonly workbookId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface QueryTableRows {
   readonly workbookId: string;
   readonly tableId: string;
   readonly filterFormula: Filter;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface StartTableDataImportJob {
   readonly workbookId: string;

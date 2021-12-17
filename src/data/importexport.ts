@@ -3,44 +3,44 @@
  */
 export interface CancelJob {
   readonly JobId: string;
-  readonly APIVersion: string;
+  readonly APIVersion?: string;
 }
 export interface CreateJob {
   readonly JobType: string;
   readonly Manifest: string;
-  readonly ManifestAddendum: string;
+  readonly ManifestAddendum?: string;
   readonly ValidateOnly: boolean;
-  readonly APIVersion: string;
+  readonly APIVersion?: string;
 }
 export interface GetShippingLabel {
   readonly jobIds: [];
-  readonly name: string;
-  readonly company: string;
-  readonly phoneNumber: string;
-  readonly country: string;
-  readonly stateOrProvince: string;
-  readonly city: string;
-  readonly postalCode: string;
-  readonly street1: string;
-  readonly street2: string;
-  readonly street3: string;
-  readonly APIVersion: string;
+  readonly name?: string;
+  readonly company?: string;
+  readonly phoneNumber?: string;
+  readonly country?: string;
+  readonly stateOrProvince?: string;
+  readonly city?: string;
+  readonly postalCode?: string;
+  readonly street1?: string;
+  readonly street2?: string;
+  readonly street3?: string;
+  readonly APIVersion?: string;
 }
 export interface GetStatus {
   readonly JobId: string;
-  readonly APIVersion: string;
+  readonly APIVersion?: string;
 }
 export interface ListJobs {
-  readonly MaxJobs: number;
-  readonly Marker: string;
-  readonly APIVersion: string;
+  readonly MaxJobs?: number;
+  readonly Marker?: string;
+  readonly APIVersion?: string;
 }
 export interface UpdateJob {
   readonly JobId: string;
   readonly Manifest: string;
   readonly JobType: string;
   readonly ValidateOnly: boolean;
-  readonly APIVersion: string;
+  readonly APIVersion?: string;
 }
 
 

@@ -29,7 +29,7 @@ export interface CreateReceiptFilter {
 }
 export interface CreateReceiptRule {
   readonly RuleSetName: string;
-  readonly After: string;
+  readonly After?: string;
   readonly Rule: ReceiptRule;
 }
 export interface CreateReceiptRuleSet {
@@ -78,7 +78,7 @@ export interface DescribeActiveReceiptRuleSet {
 }
 export interface DescribeConfigurationSet {
   readonly ConfigurationSetName: string;
-  readonly ConfigurationSetAttributeNames: [];
+  readonly ConfigurationSetAttributeNames?: [];
 }
 export interface DescribeReceiptRule {
   readonly RuleSetName: string;
@@ -110,17 +110,17 @@ export interface GetTemplate {
   readonly TemplateName: string;
 }
 export interface ListConfigurationSets {
-  readonly NextToken: string;
-  readonly MaxItems: number;
+  readonly NextToken?: string;
+  readonly MaxItems?: number;
 }
 export interface ListCustomVerificationEmailTemplates {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListIdentities {
-  readonly IdentityType: string;
-  readonly NextToken: string;
-  readonly MaxItems: number;
+  readonly IdentityType?: string;
+  readonly NextToken?: string;
+  readonly MaxItems?: number;
 }
 export interface ListIdentityPolicies {
   readonly Identity: string;
@@ -128,15 +128,15 @@ export interface ListIdentityPolicies {
 export interface ListReceiptFilters {
 }
 export interface ListReceiptRuleSets {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListTemplates {
-  readonly NextToken: string;
-  readonly MaxItems: number;
+  readonly NextToken?: string;
+  readonly MaxItems?: number;
 }
 export interface PutConfigurationSetDeliveryOptions {
   readonly ConfigurationSetName: string;
-  readonly DeliveryOptions: DeliveryOptions;
+  readonly DeliveryOptions?: DeliveryOptions;
 }
 export interface PutIdentityPolicy {
   readonly Identity: string;
@@ -150,65 +150,65 @@ export interface ReorderReceiptRuleSet {
 export interface SendBounce {
   readonly OriginalMessageId: string;
   readonly BounceSender: string;
-  readonly Explanation: string;
-  readonly MessageDsn: MessageDsn;
+  readonly Explanation?: string;
+  readonly MessageDsn?: MessageDsn;
   readonly BouncedRecipientInfoList: [];
-  readonly BounceSenderArn: string;
+  readonly BounceSenderArn?: string;
 }
 export interface SendBulkTemplatedEmail {
   readonly Source: string;
-  readonly SourceArn: string;
-  readonly ReplyToAddresses: [];
-  readonly ReturnPath: string;
-  readonly ReturnPathArn: string;
-  readonly ConfigurationSetName: string;
-  readonly DefaultTags: [];
+  readonly SourceArn?: string;
+  readonly ReplyToAddresses?: [];
+  readonly ReturnPath?: string;
+  readonly ReturnPathArn?: string;
+  readonly ConfigurationSetName?: string;
+  readonly DefaultTags?: [];
   readonly Template: string;
-  readonly TemplateArn: string;
-  readonly DefaultTemplateData: string;
+  readonly TemplateArn?: string;
+  readonly DefaultTemplateData?: string;
   readonly Destinations: [];
 }
 export interface SendCustomVerificationEmail {
   readonly EmailAddress: string;
   readonly TemplateName: string;
-  readonly ConfigurationSetName: string;
+  readonly ConfigurationSetName?: string;
 }
 export interface SendEmail {
   readonly Source: string;
   readonly Destination: Destination;
   readonly Message: Message;
-  readonly ReplyToAddresses: [];
-  readonly ReturnPath: string;
-  readonly SourceArn: string;
-  readonly ReturnPathArn: string;
-  readonly Tags: [];
-  readonly ConfigurationSetName: string;
+  readonly ReplyToAddresses?: [];
+  readonly ReturnPath?: string;
+  readonly SourceArn?: string;
+  readonly ReturnPathArn?: string;
+  readonly Tags?: [];
+  readonly ConfigurationSetName?: string;
 }
 export interface SendRawEmail {
-  readonly Source: string;
-  readonly Destinations: [];
+  readonly Source?: string;
+  readonly Destinations?: [];
   readonly RawMessage: RawMessage;
-  readonly FromArn: string;
-  readonly SourceArn: string;
-  readonly ReturnPathArn: string;
-  readonly Tags: [];
-  readonly ConfigurationSetName: string;
+  readonly FromArn?: string;
+  readonly SourceArn?: string;
+  readonly ReturnPathArn?: string;
+  readonly Tags?: [];
+  readonly ConfigurationSetName?: string;
 }
 export interface SendTemplatedEmail {
   readonly Source: string;
   readonly Destination: Destination;
-  readonly ReplyToAddresses: [];
-  readonly ReturnPath: string;
-  readonly SourceArn: string;
-  readonly ReturnPathArn: string;
-  readonly Tags: [];
-  readonly ConfigurationSetName: string;
+  readonly ReplyToAddresses?: [];
+  readonly ReturnPath?: string;
+  readonly SourceArn?: string;
+  readonly ReturnPathArn?: string;
+  readonly Tags?: [];
+  readonly ConfigurationSetName?: string;
   readonly Template: string;
-  readonly TemplateArn: string;
+  readonly TemplateArn?: string;
   readonly TemplateData: string;
 }
 export interface SetActiveReceiptRuleSet {
-  readonly RuleSetName: string;
+  readonly RuleSetName?: string;
 }
 export interface SetIdentityDkimEnabled {
   readonly Identity: string;
@@ -225,25 +225,25 @@ export interface SetIdentityHeadersInNotificationsEnabled {
 }
 export interface SetIdentityMailFromDomain {
   readonly Identity: string;
-  readonly MailFromDomain: string;
-  readonly BehaviorOnMXFailure: string;
+  readonly MailFromDomain?: string;
+  readonly BehaviorOnMXFailure?: string;
 }
 export interface SetIdentityNotificationTopic {
   readonly Identity: string;
   readonly NotificationType: string;
-  readonly SnsTopic: string;
+  readonly SnsTopic?: string;
 }
 export interface SetReceiptRulePosition {
   readonly RuleSetName: string;
   readonly RuleName: string;
-  readonly After: string;
+  readonly After?: string;
 }
 export interface TestRenderTemplate {
   readonly TemplateName: string;
   readonly TemplateData: string;
 }
 export interface UpdateAccountSendingEnabled {
-  readonly Enabled: boolean;
+  readonly Enabled?: boolean;
 }
 export interface UpdateConfigurationSetEventDestination {
   readonly ConfigurationSetName: string;
@@ -263,11 +263,11 @@ export interface UpdateConfigurationSetTrackingOptions {
 }
 export interface UpdateCustomVerificationEmailTemplate {
   readonly TemplateName: string;
-  readonly FromEmailAddress: string;
-  readonly TemplateSubject: string;
-  readonly TemplateContent: string;
-  readonly SuccessRedirectionURL: string;
-  readonly FailureRedirectionURL: string;
+  readonly FromEmailAddress?: string;
+  readonly TemplateSubject?: string;
+  readonly TemplateContent?: string;
+  readonly SuccessRedirectionURL?: string;
+  readonly FailureRedirectionURL?: string;
 }
 export interface UpdateReceiptRule {
   readonly RuleSetName: string;

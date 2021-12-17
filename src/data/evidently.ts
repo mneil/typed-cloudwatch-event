@@ -6,41 +6,41 @@ export interface BatchEvaluateFeature {
   readonly requests: [];
 }
 export interface CreateExperiment {
-  readonly description: string;
+  readonly description?: string;
   readonly metricGoals: [];
   readonly name: string;
-  readonly onlineAbConfig: OnlineAbConfig;
+  readonly onlineAbConfig?: OnlineAbConfig;
   readonly project: string;
-  readonly randomizationSalt: string;
-  readonly samplingRate: number;
-  readonly tags: {[key: string]: any};
+  readonly randomizationSalt?: string;
+  readonly samplingRate?: number;
+  readonly tags?: {[key: string]: any};
   readonly treatments: [];
 }
 export interface CreateFeature {
-  readonly defaultVariation: string;
-  readonly description: string;
-  readonly entityOverrides: {[key: string]: any};
-  readonly evaluationStrategy: string;
+  readonly defaultVariation?: string;
+  readonly description?: string;
+  readonly entityOverrides?: {[key: string]: any};
+  readonly evaluationStrategy?: string;
   readonly name: string;
   readonly project: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly variations: [];
 }
 export interface CreateLaunch {
-  readonly description: string;
+  readonly description?: string;
   readonly groups: [];
-  readonly metricMonitors: [];
+  readonly metricMonitors?: [];
   readonly name: string;
   readonly project: string;
-  readonly randomizationSalt: string;
-  readonly scheduledSplitsConfig: ScheduledSplitsLaunchConfig;
-  readonly tags: {[key: string]: any};
+  readonly randomizationSalt?: string;
+  readonly scheduledSplitsConfig?: ScheduledSplitsLaunchConfig;
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateProject {
-  readonly dataDelivery: ProjectDataDeliveryConfig;
-  readonly description: string;
+  readonly dataDelivery?: ProjectDataDeliveryConfig;
+  readonly description?: string;
   readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface DeleteExperiment {
   readonly experiment: string;
@@ -59,7 +59,7 @@ export interface DeleteProject {
 }
 export interface EvaluateFeature {
   readonly entityId: string;
-  readonly evaluationContext: string;
+  readonly evaluationContext?: string;
   readonly feature: string;
   readonly project: string;
 }
@@ -68,15 +68,15 @@ export interface GetExperiment {
   readonly project: string;
 }
 export interface GetExperimentResults {
-  readonly baseStat: string;
-  readonly endTime: Date;
+  readonly baseStat?: string;
+  readonly endTime?: Date;
   readonly experiment: string;
   readonly metricNames: [];
-  readonly period: number;
+  readonly period?: number;
   readonly project: string;
-  readonly reportNames: [];
-  readonly resultStats: [];
-  readonly startTime: Date;
+  readonly reportNames?: [];
+  readonly resultStats?: [];
+  readonly startTime?: Date;
   readonly treatmentNames: [];
 }
 export interface GetFeature {
@@ -91,23 +91,23 @@ export interface GetProject {
   readonly project: string;
 }
 export interface ListExperiments {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly project: string;
 }
 export interface ListFeatures {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly project: string;
 }
 export interface ListLaunches {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly project: string;
 }
 export interface ListProjects {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -126,16 +126,16 @@ export interface StartLaunch {
   readonly project: string;
 }
 export interface StopExperiment {
-  readonly desiredState: string;
+  readonly desiredState?: string;
   readonly experiment: string;
   readonly project: string;
-  readonly reason: string;
+  readonly reason?: string;
 }
 export interface StopLaunch {
-  readonly desiredState: string;
+  readonly desiredState?: string;
   readonly launch: string;
   readonly project: string;
-  readonly reason: string;
+  readonly reason?: string;
 }
 export interface TagResource {
   readonly resourceArn: string;
@@ -146,42 +146,42 @@ export interface UntagResource {
   readonly tagKeys: [];
 }
 export interface UpdateExperiment {
-  readonly description: string;
+  readonly description?: string;
   readonly experiment: string;
-  readonly metricGoals: [];
-  readonly onlineAbConfig: OnlineAbConfig;
+  readonly metricGoals?: [];
+  readonly onlineAbConfig?: OnlineAbConfig;
   readonly project: string;
-  readonly randomizationSalt: string;
-  readonly samplingRate: number;
-  readonly treatments: [];
+  readonly randomizationSalt?: string;
+  readonly samplingRate?: number;
+  readonly treatments?: [];
 }
 export interface UpdateFeature {
-  readonly addOrUpdateVariations: [];
-  readonly defaultVariation: string;
-  readonly description: string;
-  readonly entityOverrides: {[key: string]: any};
-  readonly evaluationStrategy: string;
+  readonly addOrUpdateVariations?: [];
+  readonly defaultVariation?: string;
+  readonly description?: string;
+  readonly entityOverrides?: {[key: string]: any};
+  readonly evaluationStrategy?: string;
   readonly feature: string;
   readonly project: string;
-  readonly removeVariations: [];
+  readonly removeVariations?: [];
 }
 export interface UpdateLaunch {
-  readonly description: string;
-  readonly groups: [];
+  readonly description?: string;
+  readonly groups?: [];
   readonly launch: string;
-  readonly metricMonitors: [];
+  readonly metricMonitors?: [];
   readonly project: string;
-  readonly randomizationSalt: string;
-  readonly scheduledSplitsConfig: ScheduledSplitsLaunchConfig;
+  readonly randomizationSalt?: string;
+  readonly scheduledSplitsConfig?: ScheduledSplitsLaunchConfig;
 }
 export interface UpdateProject {
-  readonly description: string;
+  readonly description?: string;
   readonly project: string;
 }
 export interface UpdateProjectDataDelivery {
-  readonly cloudWatchLogs: CloudWatchLogsDestinationConfig;
+  readonly cloudWatchLogs?: CloudWatchLogsDestinationConfig;
   readonly project: string;
-  readonly s3Destination: S3DestinationConfig;
+  readonly s3Destination?: S3DestinationConfig;
 }
 
 

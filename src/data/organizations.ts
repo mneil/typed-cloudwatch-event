@@ -14,31 +14,31 @@ export interface CancelHandshake {
 export interface CreateAccount {
   readonly Email: string;
   readonly AccountName: string;
-  readonly RoleName: string;
-  readonly IamUserAccessToBilling: string;
-  readonly Tags: [];
+  readonly RoleName?: string;
+  readonly IamUserAccessToBilling?: string;
+  readonly Tags?: [];
 }
 export interface CreateGovCloudAccount {
   readonly Email: string;
   readonly AccountName: string;
-  readonly RoleName: string;
-  readonly IamUserAccessToBilling: string;
-  readonly Tags: [];
+  readonly RoleName?: string;
+  readonly IamUserAccessToBilling?: string;
+  readonly Tags?: [];
 }
 export interface CreateOrganization {
-  readonly FeatureSet: string;
+  readonly FeatureSet?: string;
 }
 export interface CreateOrganizationalUnit {
   readonly ParentId: string;
   readonly Name: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreatePolicy {
   readonly Content: string;
   readonly Description: string;
   readonly Name: string;
   readonly Type: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface DeclineHandshake {
   readonly HandshakeId: string;
@@ -61,7 +61,7 @@ export interface DescribeCreateAccountStatus {
 }
 export interface DescribeEffectivePolicy {
   readonly PolicyType: string;
-  readonly TargetId: string;
+  readonly TargetId?: string;
 }
 export interface DescribeHandshake {
   readonly HandshakeId: string;
@@ -94,86 +94,86 @@ export interface EnablePolicyType {
 }
 export interface InviteAccountToOrganization {
   readonly Target: HandshakeParty;
-  readonly Notes: string;
-  readonly Tags: [];
+  readonly Notes?: string;
+  readonly Tags?: [];
 }
 export interface ListAWSServiceAccessForOrganization {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListAccounts {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListAccountsForParent {
   readonly ParentId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListChildren {
   readonly ParentId: string;
   readonly ChildType: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListCreateAccountStatus {
-  readonly States: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly States?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDelegatedAdministrators {
-  readonly ServicePrincipal: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly ServicePrincipal?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDelegatedServicesForAccount {
   readonly AccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListHandshakesForAccount {
-  readonly Filter: HandshakeFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: HandshakeFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListHandshakesForOrganization {
-  readonly Filter: HandshakeFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: HandshakeFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListOrganizationalUnitsForParent {
   readonly ParentId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListParents {
   readonly ChildId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPolicies {
   readonly Filter: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPoliciesForTarget {
   readonly TargetId: string;
   readonly Filter: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListRoots {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceId: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListTargetsForPolicy {
   readonly PolicyId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface MoveAccount {
   readonly AccountId: string;
@@ -197,13 +197,13 @@ export interface UntagResource {
 }
 export interface UpdateOrganizationalUnit {
   readonly OrganizationalUnitId: string;
-  readonly Name: string;
+  readonly Name?: string;
 }
 export interface UpdatePolicy {
   readonly PolicyId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Content: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Content?: string;
 }
 
 

@@ -7,19 +7,19 @@ export interface CancelContact {
 export interface CreateConfig {
   readonly configData: ConfigTypeData;
   readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateDataflowEndpointGroup {
   readonly endpointDetails: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateMissionProfile {
-  readonly contactPostPassDurationSeconds: number;
-  readonly contactPrePassDurationSeconds: number;
+  readonly contactPostPassDurationSeconds?: number;
+  readonly contactPrePassDurationSeconds?: number;
   readonly dataflowEdges: [];
   readonly minimumViableContactDurationSeconds: number;
   readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly trackingConfigArn: string;
 }
 export interface DeleteConfig {
@@ -53,35 +53,35 @@ export interface GetSatellite {
   readonly satelliteId: string;
 }
 export interface ListConfigs {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListContacts {
   readonly endTime: Date;
-  readonly groundStation: string;
-  readonly maxResults: number;
-  readonly missionProfileArn: string;
-  readonly nextToken: string;
-  readonly satelliteArn: string;
+  readonly groundStation?: string;
+  readonly maxResults?: number;
+  readonly missionProfileArn?: string;
+  readonly nextToken?: string;
+  readonly satelliteArn?: string;
   readonly startTime: Date;
   readonly statusList: [];
 }
 export interface ListDataflowEndpointGroups {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListGroundStations {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly satelliteId: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly satelliteId?: string;
 }
 export interface ListMissionProfiles {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListSatellites {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -92,7 +92,7 @@ export interface ReserveContact {
   readonly missionProfileArn: string;
   readonly satelliteArn: string;
   readonly startTime: Date;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface TagResource {
   readonly resourceArn: string;
@@ -109,13 +109,13 @@ export interface UpdateConfig {
   readonly name: string;
 }
 export interface UpdateMissionProfile {
-  readonly contactPostPassDurationSeconds: number;
-  readonly contactPrePassDurationSeconds: number;
-  readonly dataflowEdges: [];
-  readonly minimumViableContactDurationSeconds: number;
+  readonly contactPostPassDurationSeconds?: number;
+  readonly contactPrePassDurationSeconds?: number;
+  readonly dataflowEdges?: [];
+  readonly minimumViableContactDurationSeconds?: number;
   readonly missionProfileId: string;
-  readonly name: string;
-  readonly trackingConfigArn: string;
+  readonly name?: string;
+  readonly trackingConfigArn?: string;
 }
 
 

@@ -3,9 +3,9 @@
  */
 export interface GetIceServerConfig {
   readonly ChannelARN: string;
-  readonly ClientId: string;
-  readonly Service: string;
-  readonly Username: string;
+  readonly ClientId?: string;
+  readonly Service?: string;
+  readonly Username?: string;
 }
 export interface SendAlexaOfferToMaster {
   readonly ChannelARN: string;

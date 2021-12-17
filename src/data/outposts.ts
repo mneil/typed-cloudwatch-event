@@ -8,25 +8,25 @@ export interface CreateOrder {
   readonly OutpostIdentifier: string;
   readonly LineItems: [];
   readonly PaymentOption: string;
-  readonly PaymentTerm: string;
+  readonly PaymentTerm?: string;
 }
 export interface CreateOutpost {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly SiteId: string;
-  readonly AvailabilityZone: string;
-  readonly AvailabilityZoneId: string;
-  readonly Tags: {[key: string]: any};
-  readonly SupportedHardwareType: string;
+  readonly AvailabilityZone?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly SupportedHardwareType?: string;
 }
 export interface CreateSite {
   readonly Name: string;
-  readonly Description: string;
-  readonly Notes: string;
-  readonly Tags: {[key: string]: any};
-  readonly OperatingAddress: Address;
-  readonly ShippingAddress: Address;
-  readonly RackPhysicalProperties: RackPhysicalProperties;
+  readonly Description?: string;
+  readonly Notes?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly OperatingAddress?: Address;
+  readonly ShippingAddress?: Address;
+  readonly RackPhysicalProperties?: RackPhysicalProperties;
 }
 export interface DeleteOutpost {
   readonly OutpostId: string;
@@ -45,8 +45,8 @@ export interface GetOutpost {
 }
 export interface GetOutpostInstanceTypes {
   readonly OutpostId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface GetSite {
   readonly SiteId: string;
@@ -56,27 +56,27 @@ export interface GetSiteAddress {
   readonly AddressType: string;
 }
 export interface ListCatalogItems {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ItemClassFilter: [];
-  readonly SupportedStorageFilter: [];
-  readonly EC2FamilyFilter: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ItemClassFilter?: [];
+  readonly SupportedStorageFilter?: [];
+  readonly EC2FamilyFilter?: [];
 }
 export interface ListOrders {
-  readonly OutpostIdentifierFilter: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly OutpostIdentifierFilter?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListOutposts {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly LifeCycleStatusFilter: [];
-  readonly AvailabilityZoneFilter: [];
-  readonly AvailabilityZoneIdFilter: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly LifeCycleStatusFilter?: [];
+  readonly AvailabilityZoneFilter?: [];
+  readonly AvailabilityZoneIdFilter?: [];
 }
 export interface ListSites {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -91,15 +91,15 @@ export interface UntagResource {
 }
 export interface UpdateOutpost {
   readonly OutpostId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly SupportedHardwareType: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly SupportedHardwareType?: string;
 }
 export interface UpdateSite {
   readonly SiteId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Notes: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Notes?: string;
 }
 export interface UpdateSiteAddress {
   readonly SiteId: string;
@@ -108,15 +108,15 @@ export interface UpdateSiteAddress {
 }
 export interface UpdateSiteRackPhysicalProperties {
   readonly SiteId: string;
-  readonly PowerDrawKva: string;
-  readonly PowerPhase: string;
-  readonly PowerConnector: string;
-  readonly PowerFeedDrop: string;
-  readonly UplinkGbps: string;
-  readonly UplinkCount: string;
-  readonly FiberOpticCableType: string;
-  readonly OpticalStandard: string;
-  readonly MaximumSupportedWeightLbs: string;
+  readonly PowerDrawKva?: string;
+  readonly PowerPhase?: string;
+  readonly PowerConnector?: string;
+  readonly PowerFeedDrop?: string;
+  readonly UplinkGbps?: string;
+  readonly UplinkCount?: string;
+  readonly FiberOpticCableType?: string;
+  readonly OpticalStandard?: string;
+  readonly MaximumSupportedWeightLbs?: string;
 }
 
 

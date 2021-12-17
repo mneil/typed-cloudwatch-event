@@ -3,74 +3,74 @@
  */
 export interface AcceptQualificationRequest {
   readonly QualificationRequestId: string;
-  readonly IntegerValue: number;
+  readonly IntegerValue?: number;
 }
 export interface ApproveAssignment {
   readonly AssignmentId: string;
-  readonly RequesterFeedback: string;
-  readonly OverrideRejection: boolean;
+  readonly RequesterFeedback?: string;
+  readonly OverrideRejection?: boolean;
 }
 export interface AssociateQualificationWithWorker {
   readonly QualificationTypeId: string;
   readonly WorkerId: string;
-  readonly IntegerValue: number;
-  readonly SendNotification: boolean;
+  readonly IntegerValue?: number;
+  readonly SendNotification?: boolean;
 }
 export interface CreateAdditionalAssignmentsForHIT {
   readonly HITId: string;
   readonly NumberOfAdditionalAssignments: number;
-  readonly UniqueRequestToken: string;
+  readonly UniqueRequestToken?: string;
 }
 export interface CreateHIT {
-  readonly MaxAssignments: number;
-  readonly AutoApprovalDelayInSeconds: number;
+  readonly MaxAssignments?: number;
+  readonly AutoApprovalDelayInSeconds?: number;
   readonly LifetimeInSeconds: number;
   readonly AssignmentDurationInSeconds: number;
   readonly Reward: string;
   readonly Title: string;
-  readonly Keywords: string;
+  readonly Keywords?: string;
   readonly Description: string;
-  readonly Question: string;
-  readonly RequesterAnnotation: string;
-  readonly QualificationRequirements: [];
-  readonly UniqueRequestToken: string;
-  readonly AssignmentReviewPolicy: ReviewPolicy;
-  readonly HITReviewPolicy: ReviewPolicy;
-  readonly HITLayoutId: string;
-  readonly HITLayoutParameters: [];
+  readonly Question?: string;
+  readonly RequesterAnnotation?: string;
+  readonly QualificationRequirements?: [];
+  readonly UniqueRequestToken?: string;
+  readonly AssignmentReviewPolicy?: ReviewPolicy;
+  readonly HITReviewPolicy?: ReviewPolicy;
+  readonly HITLayoutId?: string;
+  readonly HITLayoutParameters?: [];
 }
 export interface CreateHITType {
-  readonly AutoApprovalDelayInSeconds: number;
+  readonly AutoApprovalDelayInSeconds?: number;
   readonly AssignmentDurationInSeconds: number;
   readonly Reward: string;
   readonly Title: string;
-  readonly Keywords: string;
+  readonly Keywords?: string;
   readonly Description: string;
-  readonly QualificationRequirements: [];
+  readonly QualificationRequirements?: [];
 }
 export interface CreateHITWithHITType {
   readonly HITTypeId: string;
-  readonly MaxAssignments: number;
+  readonly MaxAssignments?: number;
   readonly LifetimeInSeconds: number;
-  readonly Question: string;
-  readonly RequesterAnnotation: string;
-  readonly UniqueRequestToken: string;
-  readonly AssignmentReviewPolicy: ReviewPolicy;
-  readonly HITReviewPolicy: ReviewPolicy;
-  readonly HITLayoutId: string;
-  readonly HITLayoutParameters: [];
+  readonly Question?: string;
+  readonly RequesterAnnotation?: string;
+  readonly UniqueRequestToken?: string;
+  readonly AssignmentReviewPolicy?: ReviewPolicy;
+  readonly HITReviewPolicy?: ReviewPolicy;
+  readonly HITLayoutId?: string;
+  readonly HITLayoutParameters?: [];
 }
 export interface CreateQualificationType {
   readonly Name: string;
-  readonly Keywords: string;
+  readonly Keywords?: string;
   readonly Description: string;
   readonly QualificationTypeStatus: string;
-  readonly RetryDelayInSeconds: number;
-  readonly Test: string;
-  readonly AnswerKey: string;
-  readonly TestDurationInSeconds: number;
-  readonly AutoGranted: boolean;
-  readonly AutoGrantedValue: number;
+  readonly RetryDelayInSeconds?: number;
+  readonly Test?: string;
+  readonly AnswerKey?: string;
+  readonly TestDurationInSeconds?: number;
+  readonly AutoGranted?: boolean;
+  readonly AutoGrantedValue?: number;
 }
 export interface CreateWorkerBlock {
   readonly WorkerId: string;
@@ -84,12 +84,12 @@ export interface DeleteQualificationType {
 }
 export interface DeleteWorkerBlock {
   readonly WorkerId: string;
-  readonly Reason: string;
+  readonly Reason?: string;
 }
 export interface DisassociateQualificationFromWorker {
   readonly WorkerId: string;
   readonly QualificationTypeId: string;
-  readonly Reason: string;
+  readonly Reason?: string;
 }
 export interface GetAccountBalance {
 }
@@ -112,60 +112,60 @@ export interface GetQualificationType {
 }
 export interface ListAssignmentsForHIT {
   readonly HITId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly AssignmentStatuses: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly AssignmentStatuses?: [];
 }
 export interface ListBonusPayments {
-  readonly HITId: string;
-  readonly AssignmentId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly HITId?: string;
+  readonly AssignmentId?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListHITs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListHITsForQualificationType {
   readonly QualificationTypeId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListQualificationRequests {
-  readonly QualificationTypeId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly QualificationTypeId?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListQualificationTypes {
-  readonly Query: string;
+  readonly Query?: string;
   readonly MustBeRequestable: boolean;
-  readonly MustBeOwnedByCaller: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly MustBeOwnedByCaller?: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListReviewPolicyResultsForHIT {
   readonly HITId: string;
-  readonly PolicyLevels: [];
-  readonly RetrieveActions: boolean;
-  readonly RetrieveResults: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly PolicyLevels?: [];
+  readonly RetrieveActions?: boolean;
+  readonly RetrieveResults?: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListReviewableHITs {
-  readonly HITTypeId: string;
-  readonly Status: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly HITTypeId?: string;
+  readonly Status?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListWorkerBlocks {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListWorkersWithQualificationType {
   readonly QualificationTypeId: string;
-  readonly Status: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Status?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface NotifyWorkers {
   readonly Subject: string;
@@ -178,14 +178,14 @@ export interface RejectAssignment {
 }
 export interface RejectQualificationRequest {
   readonly QualificationRequestId: string;
-  readonly Reason: string;
+  readonly Reason?: string;
 }
 export interface SendBonus {
   readonly WorkerId: string;
   readonly BonusAmount: string;
   readonly AssignmentId: string;
   readonly Reason: string;
-  readonly UniqueRequestToken: string;
+  readonly UniqueRequestToken?: string;
 }
 export interface SendTestEventNotification {
   readonly Notification: NotificationSpecification;
@@ -197,7 +197,7 @@ export interface UpdateExpirationForHIT {
 }
 export interface UpdateHITReviewStatus {
   readonly HITId: string;
-  readonly Revert: boolean;
+  readonly Revert?: boolean;
 }
 export interface UpdateHITTypeOfHIT {
   readonly HITId: string;
@@ -205,19 +205,19 @@ export interface UpdateHITTypeOfHIT {
 }
 export interface UpdateNotificationSettings {
   readonly HITTypeId: string;
-  readonly Notification: NotificationSpecification;
-  readonly Active: boolean;
+  readonly Notification?: NotificationSpecification;
+  readonly Active?: boolean;
 }
 export interface UpdateQualificationType {
   readonly QualificationTypeId: string;
-  readonly Description: string;
-  readonly QualificationTypeStatus: string;
-  readonly Test: string;
-  readonly AnswerKey: string;
-  readonly TestDurationInSeconds: number;
-  readonly RetryDelayInSeconds: number;
-  readonly AutoGranted: boolean;
-  readonly AutoGrantedValue: number;
+  readonly Description?: string;
+  readonly QualificationTypeStatus?: string;
+  readonly Test?: string;
+  readonly AnswerKey?: string;
+  readonly TestDurationInSeconds?: number;
+  readonly RetryDelayInSeconds?: number;
+  readonly AutoGranted?: boolean;
+  readonly AutoGrantedValue?: number;
 }
 
 

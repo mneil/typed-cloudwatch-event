@@ -3,55 +3,55 @@
  */
 export interface DescribeAffectedAccountsForOrganization {
   readonly eventArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface DescribeAffectedEntities {
   readonly filter: EntityFilter;
-  readonly locale: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly locale?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface DescribeAffectedEntitiesForOrganization {
   readonly organizationEntityFilters: [];
-  readonly locale: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly locale?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface DescribeEntityAggregates {
-  readonly eventArns: [];
+  readonly eventArns?: [];
 }
 export interface DescribeEventAggregates {
-  readonly filter: EventFilter;
+  readonly filter?: EventFilter;
   readonly aggregateField: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeEventDetails {
   readonly eventArns: [];
-  readonly locale: string;
+  readonly locale?: string;
 }
 export interface DescribeEventDetailsForOrganization {
   readonly organizationEventDetailFilters: [];
-  readonly locale: string;
+  readonly locale?: string;
 }
 export interface DescribeEventTypes {
-  readonly filter: EventTypeFilter;
-  readonly locale: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly filter?: EventTypeFilter;
+  readonly locale?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface DescribeEvents {
-  readonly filter: EventFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly locale: string;
+  readonly filter?: EventFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly locale?: string;
 }
 export interface DescribeEventsForOrganization {
-  readonly filter: OrganizationEventFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly locale: string;
+  readonly filter?: OrganizationEventFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly locale?: string;
 }
 
 

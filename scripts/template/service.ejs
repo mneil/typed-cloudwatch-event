@@ -37,7 +37,7 @@ export interface <%= key %> {
 
   for (const [member, details] of Object.entries(shape.members)) {
   -%>
-  readonly <%- member %>: <%- toMemberType(shapes[details.shape], details.shape) %>;
+  readonly <%- member %><%- shape.required?.includes(member) ? '': '?'  %>: <%- toMemberType(shapes[details.shape], details.shape) %>;
   <%_ }; -%>
 }
 <% }; %>

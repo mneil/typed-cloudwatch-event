@@ -4,15 +4,15 @@
 export interface CompareFaces {
   readonly SourceImage: Image;
   readonly TargetImage: Image;
-  readonly SimilarityThreshold: unknown;
-  readonly QualityFilter: string;
+  readonly SimilarityThreshold?: unknown;
+  readonly QualityFilter?: string;
 }
 export interface CreateCollection {
   readonly CollectionId: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateDataset {
-  readonly DatasetSource: DatasetSource;
+  readonly DatasetSource?: DatasetSource;
   readonly DatasetType: string;
   readonly ProjectArn: string;
 }
@@ -23,10 +23,10 @@ export interface CreateProjectVersion {
   readonly ProjectArn: string;
   readonly VersionName: string;
   readonly OutputConfig: OutputConfig;
-  readonly TrainingData: TrainingData;
-  readonly TestingData: TestingData;
-  readonly Tags: {[key: string]: any};
-  readonly KmsKeyId: string;
+  readonly TrainingData?: TrainingData;
+  readonly TestingData?: TestingData;
+  readonly Tags?: {[key: string]: any};
+  readonly KmsKeyId?: string;
 }
 export interface CreateStreamProcessor {
   readonly Input: StreamProcessorInput;
@@ -34,7 +34,7 @@ export interface CreateStreamProcessor {
   readonly Name: string;
   readonly Settings: StreamProcessorSettings;
   readonly RoleArn: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface DeleteCollection {
   readonly CollectionId: string;
@@ -63,14 +63,14 @@ export interface DescribeDataset {
 }
 export interface DescribeProjectVersions {
   readonly ProjectArn: string;
-  readonly VersionNames: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly VersionNames?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeProjects {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ProjectNames: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ProjectNames?: [];
 }
 export interface DescribeStreamProcessor {
   readonly Name: string;
@@ -78,30 +78,30 @@ export interface DescribeStreamProcessor {
 export interface DetectCustomLabels {
   readonly ProjectVersionArn: string;
   readonly Image: Image;
-  readonly MaxResults: number;
-  readonly MinConfidence: unknown;
+  readonly MaxResults?: number;
+  readonly MinConfidence?: unknown;
 }
 export interface DetectFaces {
   readonly Image: Image;
-  readonly Attributes: [];
+  readonly Attributes?: [];
 }
 export interface DetectLabels {
   readonly Image: Image;
-  readonly MaxLabels: number;
-  readonly MinConfidence: unknown;
+  readonly MaxLabels?: number;
+  readonly MinConfidence?: unknown;
 }
 export interface DetectModerationLabels {
   readonly Image: Image;
-  readonly MinConfidence: unknown;
-  readonly HumanLoopConfig: HumanLoopConfig;
+  readonly MinConfidence?: unknown;
+  readonly HumanLoopConfig?: HumanLoopConfig;
 }
 export interface DetectProtectiveEquipment {
   readonly Image: Image;
-  readonly SummarizationAttributes: ProtectiveEquipmentSummarizationAttributes;
+  readonly SummarizationAttributes?: ProtectiveEquipmentSummarizationAttributes;
 }
 export interface DetectText {
   readonly Image: Image;
-  readonly Filters: DetectTextFilters;
+  readonly Filters?: DetectTextFilters;
 }
 export interface DistributeDatasetEntries {
   readonly Datasets: [];
@@ -111,83 +111,83 @@ export interface GetCelebrityInfo {
 }
 export interface GetCelebrityRecognition {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly SortBy: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly SortBy?: string;
 }
 export interface GetContentModeration {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly SortBy: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly SortBy?: string;
 }
 export interface GetFaceDetection {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetFaceSearch {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly SortBy: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly SortBy?: string;
 }
 export interface GetLabelDetection {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly SortBy: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly SortBy?: string;
 }
 export interface GetPersonTracking {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly SortBy: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly SortBy?: string;
 }
 export interface GetSegmentDetection {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetTextDetection {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface IndexFaces {
   readonly CollectionId: string;
   readonly Image: Image;
-  readonly ExternalImageId: string;
-  readonly DetectionAttributes: [];
-  readonly MaxFaces: number;
-  readonly QualityFilter: string;
+  readonly ExternalImageId?: string;
+  readonly DetectionAttributes?: [];
+  readonly MaxFaces?: number;
+  readonly QualityFilter?: string;
 }
 export interface ListCollections {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDatasetEntries {
   readonly DatasetArn: string;
-  readonly ContainsLabels: [];
-  readonly Labeled: boolean;
-  readonly SourceRefContains: string;
-  readonly HasErrors: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly ContainsLabels?: [];
+  readonly Labeled?: boolean;
+  readonly SourceRefContains?: string;
+  readonly HasErrors?: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDatasetLabels {
   readonly DatasetArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListFaces {
   readonly CollectionId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListStreamProcessors {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -198,56 +198,56 @@ export interface RecognizeCelebrities {
 export interface SearchFaces {
   readonly CollectionId: string;
   readonly FaceId: string;
-  readonly MaxFaces: number;
-  readonly FaceMatchThreshold: unknown;
+  readonly MaxFaces?: number;
+  readonly FaceMatchThreshold?: unknown;
 }
 export interface SearchFacesByImage {
   readonly CollectionId: string;
   readonly Image: Image;
-  readonly MaxFaces: number;
-  readonly FaceMatchThreshold: unknown;
-  readonly QualityFilter: string;
+  readonly MaxFaces?: number;
+  readonly FaceMatchThreshold?: unknown;
+  readonly QualityFilter?: string;
 }
 export interface StartCelebrityRecognition {
   readonly Video: Video;
-  readonly ClientRequestToken: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly JobTag: string;
+  readonly ClientRequestToken?: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly JobTag?: string;
 }
 export interface StartContentModeration {
   readonly Video: Video;
-  readonly MinConfidence: unknown;
-  readonly ClientRequestToken: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly JobTag: string;
+  readonly MinConfidence?: unknown;
+  readonly ClientRequestToken?: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly JobTag?: string;
 }
 export interface StartFaceDetection {
   readonly Video: Video;
-  readonly ClientRequestToken: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly FaceAttributes: string;
-  readonly JobTag: string;
+  readonly ClientRequestToken?: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly FaceAttributes?: string;
+  readonly JobTag?: string;
 }
 export interface StartFaceSearch {
   readonly Video: Video;
-  readonly ClientRequestToken: string;
-  readonly FaceMatchThreshold: unknown;
+  readonly ClientRequestToken?: string;
+  readonly FaceMatchThreshold?: unknown;
   readonly CollectionId: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly JobTag: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly JobTag?: string;
 }
 export interface StartLabelDetection {
   readonly Video: Video;
-  readonly ClientRequestToken: string;
-  readonly MinConfidence: unknown;
-  readonly NotificationChannel: NotificationChannel;
-  readonly JobTag: string;
+  readonly ClientRequestToken?: string;
+  readonly MinConfidence?: unknown;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly JobTag?: string;
 }
 export interface StartPersonTracking {
   readonly Video: Video;
-  readonly ClientRequestToken: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly JobTag: string;
+  readonly ClientRequestToken?: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly JobTag?: string;
 }
 export interface StartProjectVersion {
   readonly ProjectVersionArn: string;
@@ -255,10 +255,10 @@ export interface StartProjectVersion {
 }
 export interface StartSegmentDetection {
   readonly Video: Video;
-  readonly ClientRequestToken: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly JobTag: string;
-  readonly Filters: StartSegmentDetectionFilters;
+  readonly ClientRequestToken?: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly JobTag?: string;
+  readonly Filters?: StartSegmentDetectionFilters;
   readonly SegmentTypes: [];
 }
 export interface StartStreamProcessor {
@@ -266,10 +266,10 @@ export interface StartStreamProcessor {
 }
 export interface StartTextDetection {
   readonly Video: Video;
-  readonly ClientRequestToken: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly JobTag: string;
-  readonly Filters: StartTextDetectionFilters;
+  readonly ClientRequestToken?: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly JobTag?: string;
+  readonly Filters?: StartTextDetectionFilters;
 }
 export interface StopProjectVersion {
   readonly ProjectVersionArn: string;

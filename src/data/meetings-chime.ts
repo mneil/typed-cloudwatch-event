@@ -12,18 +12,18 @@ export interface CreateAttendee {
 export interface CreateMeeting {
   readonly ClientRequestToken: string;
   readonly MediaRegion: string;
-  readonly MeetingHostId: string;
+  readonly MeetingHostId?: string;
   readonly ExternalMeetingId: string;
-  readonly NotificationsConfiguration: NotificationsConfiguration;
-  readonly MeetingFeatures: MeetingFeaturesConfiguration;
+  readonly NotificationsConfiguration?: NotificationsConfiguration;
+  readonly MeetingFeatures?: MeetingFeaturesConfiguration;
 }
 export interface CreateMeetingWithAttendees {
   readonly ClientRequestToken: string;
   readonly MediaRegion: string;
-  readonly MeetingHostId: string;
+  readonly MeetingHostId?: string;
   readonly ExternalMeetingId: string;
-  readonly MeetingFeatures: MeetingFeaturesConfiguration;
-  readonly NotificationsConfiguration: NotificationsConfiguration;
+  readonly MeetingFeatures?: MeetingFeaturesConfiguration;
+  readonly NotificationsConfiguration?: NotificationsConfiguration;
   readonly Attendees: [];
 }
 export interface DeleteAttendee {
@@ -42,8 +42,8 @@ export interface GetMeeting {
 }
 export interface ListAttendees {
   readonly MeetingId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface StartMeetingTranscription {
   readonly MeetingId: string;

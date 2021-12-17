@@ -7,32 +7,32 @@ export interface BatchAssociateScramSecret {
 }
 export interface CreateCluster {
   readonly BrokerNodeGroupInfo: BrokerNodeGroupInfo;
-  readonly ClientAuthentication: ClientAuthentication;
+  readonly ClientAuthentication?: ClientAuthentication;
   readonly ClusterName: string;
-  readonly ConfigurationInfo: ConfigurationInfo;
-  readonly EncryptionInfo: EncryptionInfo;
-  readonly EnhancedMonitoring: string;
-  readonly OpenMonitoring: OpenMonitoringInfo;
+  readonly ConfigurationInfo?: ConfigurationInfo;
+  readonly EncryptionInfo?: EncryptionInfo;
+  readonly EnhancedMonitoring?: string;
+  readonly OpenMonitoring?: OpenMonitoringInfo;
   readonly KafkaVersion: string;
-  readonly LoggingInfo: LoggingInfo;
+  readonly LoggingInfo?: LoggingInfo;
   readonly NumberOfBrokerNodes: number;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateClusterV2 {
   readonly ClusterName: string;
-  readonly Tags: {[key: string]: any};
-  readonly Provisioned: ProvisionedRequest;
-  readonly Serverless: ServerlessRequest;
+  readonly Tags?: {[key: string]: any};
+  readonly Provisioned?: ProvisionedRequest;
+  readonly Serverless?: ServerlessRequest;
 }
 export interface CreateConfiguration {
-  readonly Description: string;
-  readonly KafkaVersions: [];
+  readonly Description?: string;
+  readonly KafkaVersions?: [];
   readonly Name: string;
   readonly ServerProperties: unknown;
 }
 export interface DeleteCluster {
   readonly ClusterArn: string;
-  readonly CurrentVersion: string;
+  readonly CurrentVersion?: string;
 }
 export interface DeleteConfiguration {
   readonly Arn: string;
@@ -61,46 +61,46 @@ export interface GetBootstrapBrokers {
   readonly ClusterArn: string;
 }
 export interface GetCompatibleKafkaVersions {
-  readonly ClusterArn: string;
+  readonly ClusterArn?: string;
 }
 export interface ListClusterOperations {
   readonly ClusterArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListClusters {
-  readonly ClusterNameFilter: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ClusterNameFilter?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListClustersV2 {
-  readonly ClusterNameFilter: string;
-  readonly ClusterTypeFilter: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ClusterNameFilter?: string;
+  readonly ClusterTypeFilter?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListConfigurationRevisions {
   readonly Arn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListConfigurations {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListKafkaVersions {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListNodes {
   readonly ClusterArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListScramSecrets {
   readonly ClusterArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -134,7 +134,7 @@ export interface UpdateBrokerStorage {
 }
 export interface UpdateConfiguration {
   readonly Arn: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly ServerProperties: unknown;
 }
 export interface UpdateConnectivity {
@@ -149,22 +149,22 @@ export interface UpdateClusterConfiguration {
 }
 export interface UpdateClusterKafkaVersion {
   readonly ClusterArn: string;
-  readonly ConfigurationInfo: ConfigurationInfo;
+  readonly ConfigurationInfo?: ConfigurationInfo;
   readonly CurrentVersion: string;
   readonly TargetKafkaVersion: string;
 }
 export interface UpdateMonitoring {
   readonly ClusterArn: string;
   readonly CurrentVersion: string;
-  readonly EnhancedMonitoring: string;
-  readonly OpenMonitoring: OpenMonitoringInfo;
-  readonly LoggingInfo: LoggingInfo;
+  readonly EnhancedMonitoring?: string;
+  readonly OpenMonitoring?: OpenMonitoringInfo;
+  readonly LoggingInfo?: LoggingInfo;
 }
 export interface UpdateSecurity {
-  readonly ClientAuthentication: ClientAuthentication;
+  readonly ClientAuthentication?: ClientAuthentication;
   readonly ClusterArn: string;
   readonly CurrentVersion: string;
-  readonly EncryptionInfo: EncryptionInfo;
+  readonly EncryptionInfo?: EncryptionInfo;
 }
 
 

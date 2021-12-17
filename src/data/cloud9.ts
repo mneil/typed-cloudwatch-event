@@ -3,16 +3,16 @@
  */
 export interface CreateEnvironmentEC2 {
   readonly name: string;
-  readonly description: string;
-  readonly clientRequestToken: string;
+  readonly description?: string;
+  readonly clientRequestToken?: string;
   readonly instanceType: string;
-  readonly subnetId: string;
-  readonly imageId: string;
-  readonly automaticStopTimeMinutes: number;
-  readonly ownerArn: string;
-  readonly tags: [];
-  readonly connectionType: string;
-  readonly dryRun: boolean;
+  readonly subnetId?: string;
+  readonly imageId?: string;
+  readonly automaticStopTimeMinutes?: number;
+  readonly ownerArn?: string;
+  readonly tags?: [];
+  readonly connectionType?: string;
+  readonly dryRun?: boolean;
 }
 export interface CreateEnvironmentMembership {
   readonly environmentId: string;
@@ -27,11 +27,11 @@ export interface DeleteEnvironmentMembership {
   readonly userArn: string;
 }
 export interface DescribeEnvironmentMemberships {
-  readonly userArn: string;
-  readonly environmentId: string;
-  readonly permissions: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly userArn?: string;
+  readonly environmentId?: string;
+  readonly permissions?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface DescribeEnvironmentStatus {
   readonly environmentId: string;
@@ -40,8 +40,8 @@ export interface DescribeEnvironments {
   readonly environmentIds: [];
 }
 export interface ListEnvironments {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
@@ -56,9 +56,9 @@ export interface UntagResource {
 }
 export interface UpdateEnvironment {
   readonly environmentId: string;
-  readonly name: string;
-  readonly description: string;
-  readonly managedCredentialsAction: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly managedCredentialsAction?: string;
 }
 export interface UpdateEnvironmentMembership {
   readonly environmentId: string;

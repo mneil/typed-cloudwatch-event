@@ -14,15 +14,15 @@ export interface CreateCustomActionType {
   readonly category: string;
   readonly provider: string;
   readonly version: string;
-  readonly settings: ActionTypeSettings;
-  readonly configurationProperties: [];
+  readonly settings?: ActionTypeSettings;
+  readonly configurationProperties?: [];
   readonly inputArtifactDetails: ArtifactDetails;
   readonly outputArtifactDetails: ArtifactDetails;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface CreatePipeline {
   readonly pipeline: PipelineDeclaration;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface DeleteCustomActionType {
   readonly category: string;
@@ -36,7 +36,7 @@ export interface DeleteWebhook {
   readonly name: string;
 }
 export interface DeregisterWebhookWithThirdParty {
-  readonly webhookName: string;
+  readonly webhookName?: string;
 }
 export interface DisableStageTransition {
   readonly pipelineName: string;
@@ -60,7 +60,7 @@ export interface GetJobDetails {
 }
 export interface GetPipeline {
   readonly name: string;
-  readonly version: number;
+  readonly version?: number;
 }
 export interface GetPipelineExecution {
   readonly pipelineName: string;
@@ -75,41 +75,41 @@ export interface GetThirdPartyJobDetails {
 }
 export interface ListActionExecutions {
   readonly pipelineName: string;
-  readonly filter: ActionExecutionFilter;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly filter?: ActionExecutionFilter;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListActionTypes {
-  readonly actionOwnerFilter: string;
-  readonly nextToken: string;
-  readonly regionFilter: string;
+  readonly actionOwnerFilter?: string;
+  readonly nextToken?: string;
+  readonly regionFilter?: string;
 }
 export interface ListPipelineExecutions {
   readonly pipelineName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListPipelines {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListWebhooks {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface PollForJobs {
   readonly actionTypeId: ActionTypeId;
-  readonly maxBatchSize: number;
-  readonly queryParam: {[key: string]: any};
+  readonly maxBatchSize?: number;
+  readonly queryParam?: {[key: string]: any};
 }
 export interface PollForThirdPartyJobs {
   readonly actionTypeId: ActionTypeId;
-  readonly maxBatchSize: number;
+  readonly maxBatchSize?: number;
 }
 export interface PutActionRevision {
   readonly pipelineName: string;
@@ -130,10 +130,10 @@ export interface PutJobFailureResult {
 }
 export interface PutJobSuccessResult {
   readonly jobId: string;
-  readonly currentRevision: CurrentRevision;
-  readonly continuationToken: string;
-  readonly executionDetails: ExecutionDetails;
-  readonly outputVariables: {[key: string]: any};
+  readonly currentRevision?: CurrentRevision;
+  readonly continuationToken?: string;
+  readonly executionDetails?: ExecutionDetails;
+  readonly outputVariables?: {[key: string]: any};
 }
 export interface PutThirdPartyJobFailureResult {
   readonly jobId: string;
@@ -143,16 +143,16 @@ export interface PutThirdPartyJobFailureResult {
 export interface PutThirdPartyJobSuccessResult {
   readonly jobId: string;
   readonly clientToken: string;
-  readonly currentRevision: CurrentRevision;
-  readonly continuationToken: string;
-  readonly executionDetails: ExecutionDetails;
+  readonly currentRevision?: CurrentRevision;
+  readonly continuationToken?: string;
+  readonly executionDetails?: ExecutionDetails;
 }
 export interface PutWebhook {
   readonly webhook: WebhookDefinition;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface RegisterWebhookWithThirdParty {
-  readonly webhookName: string;
+  readonly webhookName?: string;
 }
 export interface RetryStageExecution {
   readonly pipelineName: string;
@@ -162,13 +162,13 @@ export interface RetryStageExecution {
 }
 export interface StartPipelineExecution {
   readonly name: string;
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 export interface StopPipelineExecution {
   readonly pipelineName: string;
   readonly pipelineExecutionId: string;
-  readonly abandon: boolean;
-  readonly reason: string;
+  readonly abandon?: boolean;
+  readonly reason?: string;
 }
 export interface TagResource {
   readonly resourceArn: string;

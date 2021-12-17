@@ -8,31 +8,31 @@ export interface AssociateNode {
 }
 export interface CreateBackup {
   readonly ServerName: string;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 export interface CreateServer {
-  readonly AssociatePublicIpAddress: boolean;
-  readonly CustomDomain: string;
-  readonly CustomCertificate: string;
-  readonly CustomPrivateKey: string;
-  readonly DisableAutomatedBackup: boolean;
+  readonly AssociatePublicIpAddress?: boolean;
+  readonly CustomDomain?: string;
+  readonly CustomCertificate?: string;
+  readonly CustomPrivateKey?: string;
+  readonly DisableAutomatedBackup?: boolean;
   readonly Engine: string;
-  readonly EngineModel: string;
-  readonly EngineVersion: string;
-  readonly EngineAttributes: [];
-  readonly BackupRetentionCount: number;
+  readonly EngineModel?: string;
+  readonly EngineVersion?: string;
+  readonly EngineAttributes?: [];
+  readonly BackupRetentionCount?: number;
   readonly ServerName: string;
   readonly InstanceProfileArn: string;
   readonly InstanceType: string;
-  readonly KeyPair: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly PreferredBackupWindow: string;
-  readonly SecurityGroupIds: [];
+  readonly KeyPair?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly PreferredBackupWindow?: string;
+  readonly SecurityGroupIds?: [];
   readonly ServiceRoleArn: string;
-  readonly SubnetIds: [];
-  readonly Tags: [];
-  readonly BackupId: string;
+  readonly SubnetIds?: [];
+  readonly Tags?: [];
+  readonly BackupId?: string;
 }
 export interface DeleteBackup {
   readonly BackupId: string;
@@ -43,49 +43,49 @@ export interface DeleteServer {
 export interface DescribeAccountAttributes {
 }
 export interface DescribeBackups {
-  readonly BackupId: string;
-  readonly ServerName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly BackupId?: string;
+  readonly ServerName?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeEvents {
   readonly ServerName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeNodeAssociationStatus {
   readonly NodeAssociationStatusToken: string;
   readonly ServerName: string;
 }
 export interface DescribeServers {
-  readonly ServerName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly ServerName?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DisassociateNode {
   readonly ServerName: string;
   readonly NodeName: string;
-  readonly EngineAttributes: [];
+  readonly EngineAttributes?: [];
 }
 export interface ExportServerEngineAttribute {
   readonly ExportAttributeName: string;
   readonly ServerName: string;
-  readonly InputAttributes: [];
+  readonly InputAttributes?: [];
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface RestoreServer {
   readonly BackupId: string;
   readonly ServerName: string;
-  readonly InstanceType: string;
-  readonly KeyPair: string;
+  readonly InstanceType?: string;
+  readonly KeyPair?: string;
 }
 export interface StartMaintenance {
   readonly ServerName: string;
-  readonly EngineAttributes: [];
+  readonly EngineAttributes?: [];
 }
 export interface TagResource {
   readonly ResourceArn: string;
@@ -96,16 +96,16 @@ export interface UntagResource {
   readonly TagKeys: [];
 }
 export interface UpdateServer {
-  readonly DisableAutomatedBackup: boolean;
-  readonly BackupRetentionCount: number;
+  readonly DisableAutomatedBackup?: boolean;
+  readonly BackupRetentionCount?: number;
   readonly ServerName: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly PreferredBackupWindow: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly PreferredBackupWindow?: string;
 }
 export interface UpdateServerEngineAttributes {
   readonly ServerName: string;
   readonly AttributeName: string;
-  readonly AttributeValue: string;
+  readonly AttributeValue?: string;
 }
 
 

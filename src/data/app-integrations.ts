@@ -3,20 +3,20 @@
  */
 export interface CreateDataIntegration {
   readonly Name: string;
-  readonly Description: string;
-  readonly KmsKey: string;
-  readonly SourceURI: string;
-  readonly ScheduleConfig: ScheduleConfiguration;
-  readonly Tags: {[key: string]: any};
-  readonly ClientToken: string;
+  readonly Description?: string;
+  readonly KmsKey?: string;
+  readonly SourceURI?: string;
+  readonly ScheduleConfig?: ScheduleConfiguration;
+  readonly Tags?: {[key: string]: any};
+  readonly ClientToken?: string;
 }
 export interface CreateEventIntegration {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly EventFilter: EventFilter;
   readonly EventBridgeBus: string;
-  readonly ClientToken: string;
-  readonly Tags: {[key: string]: any};
+  readonly ClientToken?: string;
+  readonly Tags?: {[key: string]: any};
 }
 export interface DeleteDataIntegration {
   readonly DataIntegrationIdentifier: string;
@@ -32,21 +32,21 @@ export interface GetEventIntegration {
 }
 export interface ListDataIntegrationAssociations {
   readonly DataIntegrationIdentifier: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDataIntegrations {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListEventIntegrationAssociations {
   readonly EventIntegrationName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListEventIntegrations {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -61,12 +61,12 @@ export interface UntagResource {
 }
 export interface UpdateDataIntegration {
   readonly Identifier: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 export interface UpdateEventIntegration {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 
 

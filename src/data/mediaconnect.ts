@@ -18,15 +18,15 @@ export interface AddFlowVpcInterfaces {
   readonly VpcInterfaces: [];
 }
 export interface CreateFlow {
-  readonly AvailabilityZone: string;
-  readonly Entitlements: [];
-  readonly MediaStreams: [];
+  readonly AvailabilityZone?: string;
+  readonly Entitlements?: [];
+  readonly MediaStreams?: [];
   readonly Name: string;
-  readonly Outputs: [];
-  readonly Source: SetSourceRequest;
-  readonly SourceFailoverConfig: FailoverConfig;
-  readonly Sources: [];
-  readonly VpcInterfaces: [];
+  readonly Outputs?: [];
+  readonly Source?: SetSourceRequest;
+  readonly SourceFailoverConfig?: FailoverConfig;
+  readonly Sources?: [];
+  readonly VpcInterfaces?: [];
 }
 export interface DeleteFlow {
   readonly FlowArn: string;
@@ -45,20 +45,20 @@ export interface GrantFlowEntitlements {
   readonly FlowArn: string;
 }
 export interface ListEntitlements {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListFlows {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListOfferings {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListReservations {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -104,58 +104,58 @@ export interface UntagResource {
 }
 export interface UpdateFlow {
   readonly FlowArn: string;
-  readonly SourceFailoverConfig: UpdateFailoverConfig;
+  readonly SourceFailoverConfig?: UpdateFailoverConfig;
 }
 export interface UpdateFlowEntitlement {
-  readonly Description: string;
-  readonly Encryption: UpdateEncryption;
+  readonly Description?: string;
+  readonly Encryption?: UpdateEncryption;
   readonly EntitlementArn: string;
-  readonly EntitlementStatus: string;
+  readonly EntitlementStatus?: string;
   readonly FlowArn: string;
-  readonly Subscribers: [];
+  readonly Subscribers?: [];
 }
 export interface UpdateFlowMediaStream {
-  readonly Attributes: MediaStreamAttributesRequest;
-  readonly ClockRate: number;
-  readonly Description: string;
+  readonly Attributes?: MediaStreamAttributesRequest;
+  readonly ClockRate?: number;
+  readonly Description?: string;
   readonly FlowArn: string;
   readonly MediaStreamName: string;
-  readonly MediaStreamType: string;
-  readonly VideoFormat: string;
+  readonly MediaStreamType?: string;
+  readonly VideoFormat?: string;
 }
 export interface UpdateFlowOutput {
-  readonly CidrAllowList: [];
-  readonly Description: string;
-  readonly Destination: string;
-  readonly Encryption: UpdateEncryption;
+  readonly CidrAllowList?: [];
+  readonly Description?: string;
+  readonly Destination?: string;
+  readonly Encryption?: UpdateEncryption;
   readonly FlowArn: string;
-  readonly MaxLatency: number;
-  readonly MediaStreamOutputConfigurations: [];
-  readonly MinLatency: number;
+  readonly MaxLatency?: number;
+  readonly MediaStreamOutputConfigurations?: [];
+  readonly MinLatency?: number;
   readonly OutputArn: string;
-  readonly Port: number;
-  readonly Protocol: string;
-  readonly RemoteId: string;
-  readonly SmoothingLatency: number;
-  readonly StreamId: string;
-  readonly VpcInterfaceAttachment: VpcInterfaceAttachment;
+  readonly Port?: number;
+  readonly Protocol?: string;
+  readonly RemoteId?: string;
+  readonly SmoothingLatency?: number;
+  readonly StreamId?: string;
+  readonly VpcInterfaceAttachment?: VpcInterfaceAttachment;
 }
 export interface UpdateFlowSource {
-  readonly Decryption: UpdateEncryption;
-  readonly Description: string;
-  readonly EntitlementArn: string;
+  readonly Decryption?: UpdateEncryption;
+  readonly Description?: string;
+  readonly EntitlementArn?: string;
   readonly FlowArn: string;
-  readonly IngestPort: number;
-  readonly MaxBitrate: number;
-  readonly MaxLatency: number;
-  readonly MaxSyncBuffer: number;
-  readonly MediaStreamSourceConfigurations: [];
-  readonly MinLatency: number;
-  readonly Protocol: string;
+  readonly IngestPort?: number;
+  readonly MaxBitrate?: number;
+  readonly MaxLatency?: number;
+  readonly MaxSyncBuffer?: number;
+  readonly MediaStreamSourceConfigurations?: [];
+  readonly MinLatency?: number;
+  readonly Protocol?: string;
   readonly SourceArn: string;
-  readonly StreamId: string;
-  readonly VpcInterfaceName: string;
-  readonly WhitelistCidr: string;
+  readonly StreamId?: string;
+  readonly VpcInterfaceName?: string;
+  readonly WhitelistCidr?: string;
 }
 
 

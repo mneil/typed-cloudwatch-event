@@ -14,12 +14,12 @@ export interface BatchDescribeMergeConflicts {
   readonly destinationCommitSpecifier: string;
   readonly sourceCommitSpecifier: string;
   readonly mergeOption: string;
-  readonly maxMergeHunks: number;
-  readonly maxConflictFiles: number;
-  readonly filePaths: [];
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly nextToken: string;
+  readonly maxMergeHunks?: number;
+  readonly maxConflictFiles?: number;
+  readonly filePaths?: [];
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly nextToken?: string;
 }
 export interface BatchDisassociateApprovalRuleTemplateFromRepositories {
   readonly approvalRuleTemplateName: string;
@@ -35,7 +35,7 @@ export interface BatchGetRepositories {
 export interface CreateApprovalRuleTemplate {
   readonly approvalRuleTemplateName: string;
   readonly approvalRuleTemplateContent: string;
-  readonly approvalRuleTemplateDescription: string;
+  readonly approvalRuleTemplateDescription?: string;
 }
 export interface CreateBranch {
   readonly repositoryName: string;
@@ -45,20 +45,20 @@ export interface CreateBranch {
 export interface CreateCommit {
   readonly repositoryName: string;
   readonly branchName: string;
-  readonly parentCommitId: string;
-  readonly authorName: string;
-  readonly email: string;
-  readonly commitMessage: string;
-  readonly keepEmptyFolders: boolean;
-  readonly putFiles: [];
-  readonly deleteFiles: [];
-  readonly setFileModes: [];
+  readonly parentCommitId?: string;
+  readonly authorName?: string;
+  readonly email?: string;
+  readonly commitMessage?: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly putFiles?: [];
+  readonly deleteFiles?: [];
+  readonly setFileModes?: [];
 }
 export interface CreatePullRequest {
   readonly title: string;
-  readonly description: string;
+  readonly description?: string;
   readonly targets: [];
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 export interface CreatePullRequestApprovalRule {
   readonly pullRequestId: string;
@@ -67,21 +67,21 @@ export interface CreatePullRequestApprovalRule {
 }
 export interface CreateRepository {
   readonly repositoryName: string;
-  readonly repositoryDescription: string;
-  readonly tags: {[key: string]: any};
+  readonly repositoryDescription?: string;
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateUnreferencedMergeCommit {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
   readonly mergeOption: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly authorName: string;
-  readonly email: string;
-  readonly commitMessage: string;
-  readonly keepEmptyFolders: boolean;
-  readonly conflictResolution: ConflictResolution;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly authorName?: string;
+  readonly email?: string;
+  readonly commitMessage?: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly conflictResolution?: ConflictResolution;
 }
 export interface DeleteApprovalRuleTemplate {
   readonly approvalRuleTemplateName: string;
@@ -98,10 +98,10 @@ export interface DeleteFile {
   readonly branchName: string;
   readonly filePath: string;
   readonly parentCommitId: string;
-  readonly keepEmptyFolders: boolean;
-  readonly commitMessage: string;
-  readonly name: string;
-  readonly email: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly commitMessage?: string;
+  readonly name?: string;
+  readonly email?: string;
 }
 export interface DeletePullRequestApprovalRule {
   readonly pullRequestId: string;
@@ -115,18 +115,18 @@ export interface DescribeMergeConflicts {
   readonly destinationCommitSpecifier: string;
   readonly sourceCommitSpecifier: string;
   readonly mergeOption: string;
-  readonly maxMergeHunks: number;
+  readonly maxMergeHunks?: number;
   readonly filePath: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly nextToken: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly nextToken?: string;
 }
 export interface DescribePullRequestEvents {
   readonly pullRequestId: string;
-  readonly pullRequestEventType: string;
-  readonly actorArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly pullRequestEventType?: string;
+  readonly actorArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface DisassociateApprovalRuleTemplateFromRepository {
   readonly approvalRuleTemplateName: string;
@@ -144,32 +144,32 @@ export interface GetBlob {
   readonly blobId: string;
 }
 export interface GetBranch {
-  readonly repositoryName: string;
-  readonly branchName: string;
+  readonly repositoryName?: string;
+  readonly branchName?: string;
 }
 export interface GetComment {
   readonly commentId: string;
 }
 export interface GetCommentReactions {
   readonly commentId: string;
-  readonly reactionUserArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly reactionUserArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetCommentsForComparedCommit {
   readonly repositoryName: string;
-  readonly beforeCommitId: string;
+  readonly beforeCommitId?: string;
   readonly afterCommitId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetCommentsForPullRequest {
   readonly pullRequestId: string;
-  readonly repositoryName: string;
-  readonly beforeCommitId: string;
-  readonly afterCommitId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly repositoryName?: string;
+  readonly beforeCommitId?: string;
+  readonly afterCommitId?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetCommit {
   readonly repositoryName: string;
@@ -177,46 +177,46 @@ export interface GetCommit {
 }
 export interface GetDifferences {
   readonly repositoryName: string;
-  readonly beforeCommitSpecifier: string;
+  readonly beforeCommitSpecifier?: string;
   readonly afterCommitSpecifier: string;
-  readonly beforePath: string;
-  readonly afterPath: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly beforePath?: string;
+  readonly afterPath?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetFile {
   readonly repositoryName: string;
-  readonly commitSpecifier: string;
+  readonly commitSpecifier?: string;
   readonly filePath: string;
 }
 export interface GetFolder {
   readonly repositoryName: string;
-  readonly commitSpecifier: string;
+  readonly commitSpecifier?: string;
   readonly folderPath: string;
 }
 export interface GetMergeCommit {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
 }
 export interface GetMergeConflicts {
   readonly repositoryName: string;
   readonly destinationCommitSpecifier: string;
   readonly sourceCommitSpecifier: string;
   readonly mergeOption: string;
-  readonly conflictDetailLevel: string;
-  readonly maxConflictFiles: number;
-  readonly conflictResolutionStrategy: string;
-  readonly nextToken: string;
+  readonly conflictDetailLevel?: string;
+  readonly maxConflictFiles?: number;
+  readonly conflictResolutionStrategy?: string;
+  readonly nextToken?: string;
 }
 export interface GetMergeOptions {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
 }
 export interface GetPullRequest {
   readonly pullRequestId: string;
@@ -236,99 +236,99 @@ export interface GetRepositoryTriggers {
   readonly repositoryName: string;
 }
 export interface ListApprovalRuleTemplates {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAssociatedApprovalRuleTemplatesForRepository {
   readonly repositoryName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListBranches {
   readonly repositoryName: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListPullRequests {
   readonly repositoryName: string;
-  readonly authorArn: string;
-  readonly pullRequestStatus: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly authorArn?: string;
+  readonly pullRequestStatus?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListRepositories {
-  readonly nextToken: string;
-  readonly sortBy: string;
-  readonly order: string;
+  readonly nextToken?: string;
+  readonly sortBy?: string;
+  readonly order?: string;
 }
 export interface ListRepositoriesForApprovalRuleTemplate {
   readonly approvalRuleTemplateName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface MergeBranchesByFastForward {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
-  readonly targetBranch: string;
+  readonly targetBranch?: string;
 }
 export interface MergeBranchesBySquash {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
-  readonly targetBranch: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly authorName: string;
-  readonly email: string;
-  readonly commitMessage: string;
-  readonly keepEmptyFolders: boolean;
-  readonly conflictResolution: ConflictResolution;
+  readonly targetBranch?: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly authorName?: string;
+  readonly email?: string;
+  readonly commitMessage?: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly conflictResolution?: ConflictResolution;
 }
 export interface MergeBranchesByThreeWay {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
-  readonly targetBranch: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly authorName: string;
-  readonly email: string;
-  readonly commitMessage: string;
-  readonly keepEmptyFolders: boolean;
-  readonly conflictResolution: ConflictResolution;
+  readonly targetBranch?: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly authorName?: string;
+  readonly email?: string;
+  readonly commitMessage?: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly conflictResolution?: ConflictResolution;
 }
 export interface MergePullRequestByFastForward {
   readonly pullRequestId: string;
   readonly repositoryName: string;
-  readonly sourceCommitId: string;
+  readonly sourceCommitId?: string;
 }
 export interface MergePullRequestBySquash {
   readonly pullRequestId: string;
   readonly repositoryName: string;
-  readonly sourceCommitId: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly commitMessage: string;
-  readonly authorName: string;
-  readonly email: string;
-  readonly keepEmptyFolders: boolean;
-  readonly conflictResolution: ConflictResolution;
+  readonly sourceCommitId?: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly commitMessage?: string;
+  readonly authorName?: string;
+  readonly email?: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly conflictResolution?: ConflictResolution;
 }
 export interface MergePullRequestByThreeWay {
   readonly pullRequestId: string;
   readonly repositoryName: string;
-  readonly sourceCommitId: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly commitMessage: string;
-  readonly authorName: string;
-  readonly email: string;
-  readonly keepEmptyFolders: boolean;
-  readonly conflictResolution: ConflictResolution;
+  readonly sourceCommitId?: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly commitMessage?: string;
+  readonly authorName?: string;
+  readonly email?: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly conflictResolution?: ConflictResolution;
 }
 export interface OverridePullRequestApprovalRules {
   readonly pullRequestId: string;
@@ -337,24 +337,24 @@ export interface OverridePullRequestApprovalRules {
 }
 export interface PostCommentForComparedCommit {
   readonly repositoryName: string;
-  readonly beforeCommitId: string;
+  readonly beforeCommitId?: string;
   readonly afterCommitId: string;
-  readonly location: Location;
+  readonly location?: Location;
   readonly content: string;
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 export interface PostCommentForPullRequest {
   readonly pullRequestId: string;
   readonly repositoryName: string;
   readonly beforeCommitId: string;
   readonly afterCommitId: string;
-  readonly location: Location;
+  readonly location?: Location;
   readonly content: string;
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 export interface PostCommentReply {
   readonly inReplyTo: string;
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
   readonly content: string;
 }
 export interface PutCommentReaction {
@@ -366,11 +366,11 @@ export interface PutFile {
   readonly branchName: string;
   readonly fileContent: unknown;
   readonly filePath: string;
-  readonly fileMode: string;
-  readonly parentCommitId: string;
-  readonly commitMessage: string;
-  readonly name: string;
-  readonly email: string;
+  readonly fileMode?: string;
+  readonly parentCommitId?: string;
+  readonly commitMessage?: string;
+  readonly name?: string;
+  readonly email?: string;
 }
 export interface PutRepositoryTriggers {
   readonly repositoryName: string;
@@ -391,7 +391,7 @@ export interface UntagResource {
 export interface UpdateApprovalRuleTemplateContent {
   readonly approvalRuleTemplateName: string;
   readonly newRuleContent: string;
-  readonly existingRuleContentSha256: string;
+  readonly existingRuleContentSha256?: string;
 }
 export interface UpdateApprovalRuleTemplateDescription {
   readonly approvalRuleTemplateName: string;
@@ -412,7 +412,7 @@ export interface UpdateDefaultBranch {
 export interface UpdatePullRequestApprovalRuleContent {
   readonly pullRequestId: string;
   readonly approvalRuleName: string;
-  readonly existingRuleContentSha256: string;
+  readonly existingRuleContentSha256?: string;
   readonly newRuleContent: string;
 }
 export interface UpdatePullRequestApprovalState {
@@ -434,7 +434,7 @@ export interface UpdatePullRequestTitle {
 }
 export interface UpdateRepositoryDescription {
   readonly repositoryName: string;
-  readonly repositoryDescription: string;
+  readonly repositoryDescription?: string;
 }
 export interface UpdateRepositoryName {
   readonly oldName: string;

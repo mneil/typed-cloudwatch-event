@@ -8,7 +8,7 @@ export interface CreateDataSet {
   readonly AssetType: string;
   readonly Description: string;
   readonly Name: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateEventAction {
   readonly Action: Action;
@@ -19,9 +19,9 @@ export interface CreateJob {
   readonly Type: string;
 }
 export interface CreateRevision {
-  readonly Comment: string;
+  readonly Comment?: string;
   readonly DataSetId: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface DeleteAsset {
   readonly AssetId: string;
@@ -58,42 +58,42 @@ export interface GetRevision {
 }
 export interface ListDataSetRevisions {
   readonly DataSetId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListDataSets {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Origin: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Origin?: string;
 }
 export interface ListEventActions {
-  readonly EventSourceId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly EventSourceId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListJobs {
-  readonly DataSetId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly RevisionId: string;
+  readonly DataSetId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly RevisionId?: string;
 }
 export interface ListRevisionAssets {
   readonly DataSetId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly RevisionId: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface SendApiAsset {
-  readonly Body: string;
-  readonly QueryStringParameters: {[key: string]: any};
+  readonly Body?: string;
+  readonly QueryStringParameters?: {[key: string]: any};
   readonly AssetId: string;
   readonly DataSetId: string;
-  readonly RequestHeaders: {[key: string]: any};
-  readonly Method: string;
-  readonly Path: string;
+  readonly RequestHeaders?: {[key: string]: any};
+  readonly Method?: string;
+  readonly Path?: string;
   readonly RevisionId: string;
 }
 export interface StartJob {
@@ -115,17 +115,17 @@ export interface UpdateAsset {
 }
 export interface UpdateDataSet {
   readonly DataSetId: string;
-  readonly Description: string;
-  readonly Name: string;
+  readonly Description?: string;
+  readonly Name?: string;
 }
 export interface UpdateEventAction {
-  readonly Action: Action;
+  readonly Action?: Action;
   readonly EventActionId: string;
 }
 export interface UpdateRevision {
-  readonly Comment: string;
+  readonly Comment?: string;
   readonly DataSetId: string;
-  readonly Finalized: boolean;
+  readonly Finalized?: boolean;
   readonly RevisionId: string;
 }
 

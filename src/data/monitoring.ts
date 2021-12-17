@@ -5,12 +5,12 @@ export interface DeleteAlarms {
   readonly AlarmNames: [];
 }
 export interface DeleteAnomalyDetector {
-  readonly Namespace: string;
-  readonly MetricName: string;
-  readonly Dimensions: [];
-  readonly Stat: string;
-  readonly SingleMetricAnomalyDetector: SingleMetricAnomalyDetector;
-  readonly MetricMathAnomalyDetector: MetricMathAnomalyDetector;
+  readonly Namespace?: string;
+  readonly MetricName?: string;
+  readonly Dimensions?: [];
+  readonly Stat?: string;
+  readonly SingleMetricAnomalyDetector?: SingleMetricAnomalyDetector;
+  readonly MetricMathAnomalyDetector?: MetricMathAnomalyDetector;
 }
 export interface DeleteDashboards {
   readonly DashboardNames: [];
@@ -22,46 +22,46 @@ export interface DeleteMetricStream {
   readonly Name: string;
 }
 export interface DescribeAlarmHistory {
-  readonly AlarmName: string;
-  readonly AlarmTypes: [];
-  readonly HistoryItemType: string;
-  readonly StartDate: Date;
-  readonly EndDate: Date;
-  readonly MaxRecords: number;
-  readonly NextToken: string;
-  readonly ScanBy: string;
+  readonly AlarmName?: string;
+  readonly AlarmTypes?: [];
+  readonly HistoryItemType?: string;
+  readonly StartDate?: Date;
+  readonly EndDate?: Date;
+  readonly MaxRecords?: number;
+  readonly NextToken?: string;
+  readonly ScanBy?: string;
 }
 export interface DescribeAlarms {
-  readonly AlarmNames: [];
-  readonly AlarmNamePrefix: string;
-  readonly AlarmTypes: [];
-  readonly ChildrenOfAlarmName: string;
-  readonly ParentsOfAlarmName: string;
-  readonly StateValue: string;
-  readonly ActionPrefix: string;
-  readonly MaxRecords: number;
-  readonly NextToken: string;
+  readonly AlarmNames?: [];
+  readonly AlarmNamePrefix?: string;
+  readonly AlarmTypes?: [];
+  readonly ChildrenOfAlarmName?: string;
+  readonly ParentsOfAlarmName?: string;
+  readonly StateValue?: string;
+  readonly ActionPrefix?: string;
+  readonly MaxRecords?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeAlarmsForMetric {
   readonly MetricName: string;
   readonly Namespace: string;
-  readonly Statistic: string;
-  readonly ExtendedStatistic: string;
-  readonly Dimensions: [];
-  readonly Period: number;
-  readonly Unit: string;
+  readonly Statistic?: string;
+  readonly ExtendedStatistic?: string;
+  readonly Dimensions?: [];
+  readonly Period?: number;
+  readonly Unit?: string;
 }
 export interface DescribeAnomalyDetectors {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Namespace: string;
-  readonly MetricName: string;
-  readonly Dimensions: [];
-  readonly AnomalyDetectorTypes: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Namespace?: string;
+  readonly MetricName?: string;
+  readonly Dimensions?: [];
+  readonly AnomalyDetectorTypes?: [];
 }
 export interface DescribeInsightRules {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DisableAlarmActions {
   readonly AlarmNames: [];
@@ -83,73 +83,73 @@ export interface GetInsightRuleReport {
   readonly StartTime: Date;
   readonly EndTime: Date;
   readonly Period: number;
-  readonly MaxContributorCount: number;
-  readonly Metrics: [];
-  readonly OrderBy: string;
+  readonly MaxContributorCount?: number;
+  readonly Metrics?: [];
+  readonly OrderBy?: string;
 }
 export interface GetMetricData {
   readonly MetricDataQueries: [];
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly NextToken: string;
-  readonly ScanBy: string;
-  readonly MaxDatapoints: number;
-  readonly LabelOptions: LabelOptions;
+  readonly NextToken?: string;
+  readonly ScanBy?: string;
+  readonly MaxDatapoints?: number;
+  readonly LabelOptions?: LabelOptions;
 }
 export interface GetMetricStatistics {
   readonly Namespace: string;
   readonly MetricName: string;
-  readonly Dimensions: [];
+  readonly Dimensions?: [];
   readonly StartTime: Date;
   readonly EndTime: Date;
   readonly Period: number;
-  readonly Statistics: [];
-  readonly ExtendedStatistics: [];
-  readonly Unit: string;
+  readonly Statistics?: [];
+  readonly ExtendedStatistics?: [];
+  readonly Unit?: string;
 }
 export interface GetMetricStream {
   readonly Name: string;
 }
 export interface GetMetricWidgetImage {
   readonly MetricWidget: string;
-  readonly OutputFormat: string;
+  readonly OutputFormat?: string;
 }
 export interface ListDashboards {
-  readonly DashboardNamePrefix: string;
-  readonly NextToken: string;
+  readonly DashboardNamePrefix?: string;
+  readonly NextToken?: string;
 }
 export interface ListMetricStreams {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMetrics {
-  readonly Namespace: string;
-  readonly MetricName: string;
-  readonly Dimensions: [];
-  readonly NextToken: string;
-  readonly RecentlyActive: string;
+  readonly Namespace?: string;
+  readonly MetricName?: string;
+  readonly Dimensions?: [];
+  readonly NextToken?: string;
+  readonly RecentlyActive?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
 export interface PutAnomalyDetector {
-  readonly Namespace: string;
-  readonly MetricName: string;
-  readonly Dimensions: [];
-  readonly Stat: string;
-  readonly Configuration: AnomalyDetectorConfiguration;
-  readonly SingleMetricAnomalyDetector: SingleMetricAnomalyDetector;
-  readonly MetricMathAnomalyDetector: MetricMathAnomalyDetector;
+  readonly Namespace?: string;
+  readonly MetricName?: string;
+  readonly Dimensions?: [];
+  readonly Stat?: string;
+  readonly Configuration?: AnomalyDetectorConfiguration;
+  readonly SingleMetricAnomalyDetector?: SingleMetricAnomalyDetector;
+  readonly MetricMathAnomalyDetector?: MetricMathAnomalyDetector;
 }
 export interface PutCompositeAlarm {
-  readonly ActionsEnabled: boolean;
-  readonly AlarmActions: [];
-  readonly AlarmDescription: string;
+  readonly ActionsEnabled?: boolean;
+  readonly AlarmActions?: [];
+  readonly AlarmDescription?: string;
   readonly AlarmName: string;
   readonly AlarmRule: string;
-  readonly InsufficientDataActions: [];
-  readonly OKActions: [];
-  readonly Tags: [];
+  readonly InsufficientDataActions?: [];
+  readonly OKActions?: [];
+  readonly Tags?: [];
 }
 export interface PutDashboard {
   readonly DashboardName: string;
@@ -157,33 +157,33 @@ export interface PutDashboard {
 }
 export interface PutInsightRule {
   readonly RuleName: string;
-  readonly RuleState: string;
+  readonly RuleState?: string;
   readonly RuleDefinition: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface PutMetricAlarm {
   readonly AlarmName: string;
-  readonly AlarmDescription: string;
-  readonly ActionsEnabled: boolean;
-  readonly OKActions: [];
-  readonly AlarmActions: [];
-  readonly InsufficientDataActions: [];
-  readonly MetricName: string;
-  readonly Namespace: string;
-  readonly Statistic: string;
-  readonly ExtendedStatistic: string;
-  readonly Dimensions: [];
-  readonly Period: number;
-  readonly Unit: string;
+  readonly AlarmDescription?: string;
+  readonly ActionsEnabled?: boolean;
+  readonly OKActions?: [];
+  readonly AlarmActions?: [];
+  readonly InsufficientDataActions?: [];
+  readonly MetricName?: string;
+  readonly Namespace?: string;
+  readonly Statistic?: string;
+  readonly ExtendedStatistic?: string;
+  readonly Dimensions?: [];
+  readonly Period?: number;
+  readonly Unit?: string;
   readonly EvaluationPeriods: number;
-  readonly DatapointsToAlarm: number;
-  readonly Threshold: unknown;
+  readonly DatapointsToAlarm?: number;
+  readonly Threshold?: unknown;
   readonly ComparisonOperator: string;
-  readonly TreatMissingData: string;
-  readonly EvaluateLowSampleCountPercentile: string;
-  readonly Metrics: [];
-  readonly Tags: [];
-  readonly ThresholdMetricId: string;
+  readonly TreatMissingData?: string;
+  readonly EvaluateLowSampleCountPercentile?: string;
+  readonly Metrics?: [];
+  readonly Tags?: [];
+  readonly ThresholdMetricId?: string;
 }
 export interface PutMetricData {
   readonly Namespace: string;
@@ -191,18 +191,18 @@ export interface PutMetricData {
 }
 export interface PutMetricStream {
   readonly Name: string;
-  readonly IncludeFilters: [];
-  readonly ExcludeFilters: [];
+  readonly IncludeFilters?: [];
+  readonly ExcludeFilters?: [];
   readonly FirehoseArn: string;
   readonly RoleArn: string;
   readonly OutputFormat: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface SetAlarmState {
   readonly AlarmName: string;
   readonly StateValue: string;
   readonly StateReason: string;
-  readonly StateReasonData: string;
+  readonly StateReasonData?: string;
 }
 export interface StartMetricStreams {
   readonly Names: [];

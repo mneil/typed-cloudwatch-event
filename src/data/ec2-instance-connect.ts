@@ -9,7 +9,7 @@ export interface SendSSHPublicKey {
 }
 export interface SendSerialConsoleSSHPublicKey {
   readonly InstanceId: string;
-  readonly SerialPort: number;
+  readonly SerialPort?: number;
   readonly SSHPublicKey: string;
 }
 

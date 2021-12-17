@@ -4,8 +4,8 @@
 export interface ListRealtimeContactAnalysisSegments {
   readonly InstanceId: string;
   readonly ContactId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
 

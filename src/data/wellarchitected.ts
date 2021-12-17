@@ -13,7 +13,7 @@ export interface CreateLensShare {
 export interface CreateLensVersion {
   readonly LensAlias: string;
   readonly LensVersion: string;
-  readonly IsMajorVersion: boolean;
+  readonly IsMajorVersion?: boolean;
   readonly ClientRequestToken: string;
 }
 export interface CreateMilestone {
@@ -25,18 +25,18 @@ export interface CreateWorkload {
   readonly WorkloadName: string;
   readonly Description: string;
   readonly Environment: string;
-  readonly AccountIds: [];
-  readonly AwsRegions: [];
-  readonly NonAwsRegions: [];
-  readonly PillarPriorities: [];
-  readonly ArchitecturalDesign: string;
+  readonly AccountIds?: [];
+  readonly AwsRegions?: [];
+  readonly NonAwsRegions?: [];
+  readonly PillarPriorities?: [];
+  readonly ArchitecturalDesign?: string;
   readonly ReviewOwner: string;
-  readonly IndustryType: string;
-  readonly Industry: string;
+  readonly IndustryType?: string;
+  readonly Industry?: string;
   readonly Lenses: [];
-  readonly Notes: string;
+  readonly Notes?: string;
   readonly ClientRequestToken: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateWorkloadShare {
   readonly WorkloadId: string;
@@ -69,32 +69,32 @@ export interface DisassociateLenses {
 }
 export interface ExportLens {
   readonly LensAlias: string;
-  readonly LensVersion: string;
+  readonly LensVersion?: string;
 }
 export interface GetAnswer {
   readonly WorkloadId: string;
   readonly LensAlias: string;
   readonly QuestionId: string;
-  readonly MilestoneNumber: number;
+  readonly MilestoneNumber?: number;
 }
 export interface GetLens {
   readonly LensAlias: string;
-  readonly LensVersion: string;
+  readonly LensVersion?: string;
 }
 export interface GetLensReview {
   readonly WorkloadId: string;
   readonly LensAlias: string;
-  readonly MilestoneNumber: number;
+  readonly MilestoneNumber?: number;
 }
 export interface GetLensReviewReport {
   readonly WorkloadId: string;
   readonly LensAlias: string;
-  readonly MilestoneNumber: number;
+  readonly MilestoneNumber?: number;
 }
 export interface GetLensVersionDifference {
   readonly LensAlias: string;
-  readonly BaseLensVersion: string;
-  readonly TargetLensVersion: string;
+  readonly BaseLensVersion?: string;
+  readonly TargetLensVersion?: string;
 }
 export interface GetMilestone {
   readonly WorkloadId: string;
@@ -104,76 +104,76 @@ export interface GetWorkload {
   readonly WorkloadId: string;
 }
 export interface ImportLens {
-  readonly LensAlias: string;
+  readonly LensAlias?: string;
   readonly JSONString: string;
   readonly ClientRequestToken: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface ListAnswers {
   readonly WorkloadId: string;
   readonly LensAlias: string;
-  readonly PillarId: string;
-  readonly MilestoneNumber: number;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly PillarId?: string;
+  readonly MilestoneNumber?: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListLensReviewImprovements {
   readonly WorkloadId: string;
   readonly LensAlias: string;
-  readonly PillarId: string;
-  readonly MilestoneNumber: number;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly PillarId?: string;
+  readonly MilestoneNumber?: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListLensReviews {
   readonly WorkloadId: string;
-  readonly MilestoneNumber: number;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly MilestoneNumber?: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListLensShares {
   readonly LensAlias: string;
-  readonly SharedWithPrefix: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SharedWithPrefix?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListLenses {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly LensType: string;
-  readonly LensStatus: string;
-  readonly LensName: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly LensType?: string;
+  readonly LensStatus?: string;
+  readonly LensName?: string;
 }
 export interface ListMilestones {
   readonly WorkloadId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListNotifications {
-  readonly WorkloadId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly WorkloadId?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListShareInvitations {
-  readonly WorkloadNamePrefix: string;
-  readonly LensNamePrefix: string;
-  readonly ShareResourceType: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly WorkloadNamePrefix?: string;
+  readonly LensNamePrefix?: string;
+  readonly ShareResourceType?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly WorkloadArn: string;
 }
 export interface ListWorkloadShares {
   readonly WorkloadId: string;
-  readonly SharedWithPrefix: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SharedWithPrefix?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListWorkloads {
-  readonly WorkloadNamePrefix: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly WorkloadNamePrefix?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface TagResource {
   readonly WorkloadArn: string;
@@ -187,17 +187,17 @@ export interface UpdateAnswer {
   readonly WorkloadId: string;
   readonly LensAlias: string;
   readonly QuestionId: string;
-  readonly SelectedChoices: [];
-  readonly ChoiceUpdates: {[key: string]: any};
-  readonly Notes: string;
-  readonly IsApplicable: boolean;
-  readonly Reason: string;
+  readonly SelectedChoices?: [];
+  readonly ChoiceUpdates?: {[key: string]: any};
+  readonly Notes?: string;
+  readonly IsApplicable?: boolean;
+  readonly Reason?: string;
 }
 export interface UpdateLensReview {
   readonly WorkloadId: string;
   readonly LensAlias: string;
-  readonly LensNotes: string;
-  readonly PillarNotes: {[key: string]: any};
+  readonly LensNotes?: string;
+  readonly PillarNotes?: {[key: string]: any};
 }
 export interface UpdateShareInvitation {
   readonly ShareInvitationId: string;
@@ -205,20 +205,20 @@ export interface UpdateShareInvitation {
 }
 export interface UpdateWorkload {
   readonly WorkloadId: string;
-  readonly WorkloadName: string;
-  readonly Description: string;
-  readonly Environment: string;
-  readonly AccountIds: [];
-  readonly AwsRegions: [];
-  readonly NonAwsRegions: [];
-  readonly PillarPriorities: [];
-  readonly ArchitecturalDesign: string;
-  readonly ReviewOwner: string;
-  readonly IsReviewOwnerUpdateAcknowledged: boolean;
-  readonly IndustryType: string;
-  readonly Industry: string;
-  readonly Notes: string;
-  readonly ImprovementStatus: string;
+  readonly WorkloadName?: string;
+  readonly Description?: string;
+  readonly Environment?: string;
+  readonly AccountIds?: [];
+  readonly AwsRegions?: [];
+  readonly NonAwsRegions?: [];
+  readonly PillarPriorities?: [];
+  readonly ArchitecturalDesign?: string;
+  readonly ReviewOwner?: string;
+  readonly IsReviewOwnerUpdateAcknowledged?: boolean;
+  readonly IndustryType?: string;
+  readonly Industry?: string;
+  readonly Notes?: string;
+  readonly ImprovementStatus?: string;
 }
 export interface UpdateWorkloadShare {
   readonly ShareId: string;
@@ -229,7 +229,7 @@ export interface UpgradeLensReview {
   readonly WorkloadId: string;
   readonly LensAlias: string;
   readonly MilestoneName: string;
-  readonly ClientRequestToken: string;
+  readonly ClientRequestToken?: string;
 }
 
 

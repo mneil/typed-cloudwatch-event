@@ -12,15 +12,15 @@ export interface AssociateResource {
 }
 export interface CreateApplication {
   readonly name: string;
-  readonly description: string;
-  readonly tags: {[key: string]: any};
+  readonly description?: string;
+  readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
 export interface CreateAttributeGroup {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly attributes: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
 export interface DeleteApplication {
@@ -50,22 +50,22 @@ export interface GetAttributeGroup {
   readonly attributeGroup: string;
 }
 export interface ListApplications {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAssociatedAttributeGroups {
   readonly application: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAssociatedResources {
   readonly application: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAttributeGroups {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -84,14 +84,14 @@ export interface UntagResource {
 }
 export interface UpdateApplication {
   readonly application: string;
-  readonly name: string;
-  readonly description: string;
+  readonly name?: string;
+  readonly description?: string;
 }
 export interface UpdateAttributeGroup {
   readonly attributeGroup: string;
-  readonly name: string;
-  readonly description: string;
-  readonly attributes: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly attributes?: string;
 }
 
 

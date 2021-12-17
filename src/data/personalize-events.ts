@@ -3,7 +3,7 @@
  */
 export interface PutEvents {
   readonly trackingId: string;
-  readonly userId: string;
+  readonly userId?: string;
   readonly sessionId: string;
   readonly eventList: [];
 }

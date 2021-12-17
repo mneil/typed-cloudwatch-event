@@ -8,43 +8,43 @@ export interface AcceptMatch {
 }
 export interface ClaimGameServer {
   readonly GameServerGroupName: string;
-  readonly GameServerId: string;
-  readonly GameServerData: string;
+  readonly GameServerId?: string;
+  readonly GameServerData?: string;
 }
 export interface CreateAlias {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly RoutingStrategy: RoutingStrategy;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateBuild {
-  readonly Name: string;
-  readonly Version: string;
-  readonly StorageLocation: S3Location;
-  readonly OperatingSystem: string;
-  readonly Tags: [];
+  readonly Name?: string;
+  readonly Version?: string;
+  readonly StorageLocation?: S3Location;
+  readonly OperatingSystem?: string;
+  readonly Tags?: [];
 }
 export interface CreateFleet {
   readonly Name: string;
-  readonly Description: string;
-  readonly BuildId: string;
-  readonly ScriptId: string;
-  readonly ServerLaunchPath: string;
-  readonly ServerLaunchParameters: string;
-  readonly LogPaths: [];
+  readonly Description?: string;
+  readonly BuildId?: string;
+  readonly ScriptId?: string;
+  readonly ServerLaunchPath?: string;
+  readonly ServerLaunchParameters?: string;
+  readonly LogPaths?: [];
   readonly EC2InstanceType: string;
-  readonly EC2InboundPermissions: [];
-  readonly NewGameSessionProtectionPolicy: string;
-  readonly RuntimeConfiguration: RuntimeConfiguration;
-  readonly ResourceCreationLimitPolicy: ResourceCreationLimitPolicy;
-  readonly MetricGroups: [];
-  readonly PeerVpcAwsAccountId: string;
-  readonly PeerVpcId: string;
-  readonly FleetType: string;
-  readonly InstanceRoleArn: string;
-  readonly CertificateConfiguration: CertificateConfiguration;
-  readonly Locations: [];
-  readonly Tags: [];
+  readonly EC2InboundPermissions?: [];
+  readonly NewGameSessionProtectionPolicy?: string;
+  readonly RuntimeConfiguration?: RuntimeConfiguration;
+  readonly ResourceCreationLimitPolicy?: ResourceCreationLimitPolicy;
+  readonly MetricGroups?: [];
+  readonly PeerVpcAwsAccountId?: string;
+  readonly PeerVpcId?: string;
+  readonly FleetType?: string;
+  readonly InstanceRoleArn?: string;
+  readonly CertificateConfiguration?: CertificateConfiguration;
+  readonly Locations?: [];
+  readonly Tags?: [];
 }
 export interface CreateFleetLocations {
   readonly FleetId: string;
@@ -57,73 +57,73 @@ export interface CreateGameServerGroup {
   readonly MaxSize: number;
   readonly LaunchTemplate: LaunchTemplateSpecification;
   readonly InstanceDefinitions: [];
-  readonly AutoScalingPolicy: GameServerGroupAutoScalingPolicy;
-  readonly BalancingStrategy: string;
-  readonly GameServerProtectionPolicy: string;
-  readonly VpcSubnets: [];
-  readonly Tags: [];
+  readonly AutoScalingPolicy?: GameServerGroupAutoScalingPolicy;
+  readonly BalancingStrategy?: string;
+  readonly GameServerProtectionPolicy?: string;
+  readonly VpcSubnets?: [];
+  readonly Tags?: [];
 }
 export interface CreateGameSession {
-  readonly FleetId: string;
-  readonly AliasId: string;
+  readonly FleetId?: string;
+  readonly AliasId?: string;
   readonly MaximumPlayerSessionCount: number;
-  readonly Name: string;
-  readonly GameProperties: [];
-  readonly CreatorId: string;
-  readonly GameSessionId: string;
-  readonly IdempotencyToken: string;
-  readonly GameSessionData: string;
-  readonly Location: string;
+  readonly Name?: string;
+  readonly GameProperties?: [];
+  readonly CreatorId?: string;
+  readonly GameSessionId?: string;
+  readonly IdempotencyToken?: string;
+  readonly GameSessionData?: string;
+  readonly Location?: string;
 }
 export interface CreateGameSessionQueue {
   readonly Name: string;
-  readonly TimeoutInSeconds: number;
-  readonly PlayerLatencyPolicies: [];
-  readonly Destinations: [];
-  readonly FilterConfiguration: FilterConfiguration;
-  readonly PriorityConfiguration: PriorityConfiguration;
-  readonly CustomEventData: string;
-  readonly NotificationTarget: string;
-  readonly Tags: [];
+  readonly TimeoutInSeconds?: number;
+  readonly PlayerLatencyPolicies?: [];
+  readonly Destinations?: [];
+  readonly FilterConfiguration?: FilterConfiguration;
+  readonly PriorityConfiguration?: PriorityConfiguration;
+  readonly CustomEventData?: string;
+  readonly NotificationTarget?: string;
+  readonly Tags?: [];
 }
 export interface CreateMatchmakingConfiguration {
   readonly Name: string;
-  readonly Description: string;
-  readonly GameSessionQueueArns: [];
+  readonly Description?: string;
+  readonly GameSessionQueueArns?: [];
   readonly RequestTimeoutSeconds: number;
-  readonly AcceptanceTimeoutSeconds: number;
+  readonly AcceptanceTimeoutSeconds?: number;
   readonly AcceptanceRequired: boolean;
   readonly RuleSetName: string;
-  readonly NotificationTarget: string;
-  readonly AdditionalPlayerCount: number;
-  readonly CustomEventData: string;
-  readonly GameProperties: [];
-  readonly GameSessionData: string;
-  readonly BackfillMode: string;
-  readonly FlexMatchMode: string;
-  readonly Tags: [];
+  readonly NotificationTarget?: string;
+  readonly AdditionalPlayerCount?: number;
+  readonly CustomEventData?: string;
+  readonly GameProperties?: [];
+  readonly GameSessionData?: string;
+  readonly BackfillMode?: string;
+  readonly FlexMatchMode?: string;
+  readonly Tags?: [];
 }
 export interface CreateMatchmakingRuleSet {
   readonly Name: string;
   readonly RuleSetBody: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreatePlayerSession {
   readonly GameSessionId: string;
   readonly PlayerId: string;
-  readonly PlayerData: string;
+  readonly PlayerData?: string;
 }
 export interface CreatePlayerSessions {
   readonly GameSessionId: string;
   readonly PlayerIds: [];
-  readonly PlayerDataMap: {[key: string]: any};
+  readonly PlayerDataMap?: {[key: string]: any};
 }
 export interface CreateScript {
-  readonly Name: string;
-  readonly Version: string;
-  readonly StorageLocation: S3Location;
-  readonly ZipFile: unknown;
-  readonly Tags: [];
+  readonly Name?: string;
+  readonly Version?: string;
+  readonly StorageLocation?: S3Location;
+  readonly ZipFile?: unknown;
+  readonly Tags?: [];
 }
 export interface CreateVpcPeeringAuthorization {
   readonly GameLiftAwsAccountId: string;
@@ -149,7 +149,7 @@ export interface DeleteFleetLocations {
 }
 export interface DeleteGameServerGroup {
   readonly GameServerGroupName: string;
-  readonly DeleteOption: string;
+  readonly DeleteOption?: string;
 }
 export interface DeleteGameSessionQueue {
   readonly Name: string;
@@ -186,31 +186,31 @@ export interface DescribeBuild {
   readonly BuildId: string;
 }
 export interface DescribeEC2InstanceLimits {
-  readonly EC2InstanceType: string;
-  readonly Location: string;
+  readonly EC2InstanceType?: string;
+  readonly Location?: string;
 }
 export interface DescribeFleetAttributes {
-  readonly FleetIds: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly FleetIds?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeFleetCapacity {
-  readonly FleetIds: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly FleetIds?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeFleetEvents {
   readonly FleetId: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeFleetLocationAttributes {
   readonly FleetId: string;
-  readonly Locations: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Locations?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeFleetLocationCapacity {
   readonly FleetId: string;
@@ -222,12 +222,12 @@ export interface DescribeFleetLocationUtilization {
 }
 export interface DescribeFleetPortSettings {
   readonly FleetId: string;
-  readonly Location: string;
+  readonly Location?: string;
 }
 export interface DescribeFleetUtilization {
-  readonly FleetIds: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly FleetIds?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeGameServer {
   readonly GameServerGroupName: string;
@@ -238,74 +238,74 @@ export interface DescribeGameServerGroup {
 }
 export interface DescribeGameServerInstances {
   readonly GameServerGroupName: string;
-  readonly InstanceIds: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly InstanceIds?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeGameSessionDetails {
-  readonly FleetId: string;
-  readonly GameSessionId: string;
-  readonly AliasId: string;
-  readonly Location: string;
-  readonly StatusFilter: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly FleetId?: string;
+  readonly GameSessionId?: string;
+  readonly AliasId?: string;
+  readonly Location?: string;
+  readonly StatusFilter?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeGameSessionPlacement {
   readonly PlacementId: string;
 }
 export interface DescribeGameSessionQueues {
-  readonly Names: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Names?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeGameSessions {
-  readonly FleetId: string;
-  readonly GameSessionId: string;
-  readonly AliasId: string;
-  readonly Location: string;
-  readonly StatusFilter: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly FleetId?: string;
+  readonly GameSessionId?: string;
+  readonly AliasId?: string;
+  readonly Location?: string;
+  readonly StatusFilter?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeInstances {
   readonly FleetId: string;
-  readonly InstanceId: string;
-  readonly Limit: number;
-  readonly NextToken: string;
-  readonly Location: string;
+  readonly InstanceId?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
+  readonly Location?: string;
 }
 export interface DescribeMatchmaking {
   readonly TicketIds: [];
 }
 export interface DescribeMatchmakingConfigurations {
-  readonly Names: [];
-  readonly RuleSetName: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Names?: [];
+  readonly RuleSetName?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeMatchmakingRuleSets {
-  readonly Names: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Names?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribePlayerSessions {
-  readonly GameSessionId: string;
-  readonly PlayerId: string;
-  readonly PlayerSessionId: string;
-  readonly PlayerSessionStatusFilter: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly GameSessionId?: string;
+  readonly PlayerId?: string;
+  readonly PlayerSessionId?: string;
+  readonly PlayerSessionStatusFilter?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeRuntimeConfiguration {
   readonly FleetId: string;
 }
 export interface DescribeScalingPolicies {
   readonly FleetId: string;
-  readonly StatusFilter: string;
-  readonly Limit: number;
-  readonly NextToken: string;
-  readonly Location: string;
+  readonly StatusFilter?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
+  readonly Location?: string;
 }
 export interface DescribeScript {
   readonly ScriptId: string;
@@ -313,7 +313,7 @@ export interface DescribeScript {
 export interface DescribeVpcPeeringAuthorizations {
 }
 export interface DescribeVpcPeeringConnections {
-  readonly FleetId: string;
+  readonly FleetId?: string;
 }
 export interface GetGameSessionLogUrl {
   readonly GameSessionId: string;
@@ -323,35 +323,35 @@ export interface GetInstanceAccess {
   readonly InstanceId: string;
 }
 export interface ListAliases {
-  readonly RoutingStrategyType: string;
-  readonly Name: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly RoutingStrategyType?: string;
+  readonly Name?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface ListBuilds {
-  readonly Status: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Status?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface ListFleets {
-  readonly BuildId: string;
-  readonly ScriptId: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly BuildId?: string;
+  readonly ScriptId?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface ListGameServerGroups {
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface ListGameServers {
   readonly GameServerGroupName: string;
-  readonly SortOrder: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly SortOrder?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface ListScripts {
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
@@ -359,21 +359,21 @@ export interface ListTagsForResource {
 export interface PutScalingPolicy {
   readonly Name: string;
   readonly FleetId: string;
-  readonly ScalingAdjustment: number;
-  readonly ScalingAdjustmentType: string;
-  readonly Threshold: unknown;
-  readonly ComparisonOperator: string;
-  readonly EvaluationPeriods: number;
+  readonly ScalingAdjustment?: number;
+  readonly ScalingAdjustmentType?: string;
+  readonly Threshold?: unknown;
+  readonly ComparisonOperator?: string;
+  readonly EvaluationPeriods?: number;
   readonly MetricName: string;
-  readonly PolicyType: string;
-  readonly TargetConfiguration: TargetConfiguration;
+  readonly PolicyType?: string;
+  readonly TargetConfiguration?: TargetConfiguration;
 }
 export interface RegisterGameServer {
   readonly GameServerGroupName: string;
   readonly GameServerId: string;
   readonly InstanceId: string;
-  readonly ConnectionInfo: string;
-  readonly GameServerData: string;
+  readonly ConnectionInfo?: string;
+  readonly GameServerData?: string;
 }
 export interface RequestUploadCredentials {
   readonly BuildId: string;
@@ -386,44 +386,44 @@ export interface ResumeGameServerGroup {
   readonly ResumeActions: [];
 }
 export interface SearchGameSessions {
-  readonly FleetId: string;
-  readonly AliasId: string;
-  readonly Location: string;
-  readonly FilterExpression: string;
-  readonly SortExpression: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly FleetId?: string;
+  readonly AliasId?: string;
+  readonly Location?: string;
+  readonly FilterExpression?: string;
+  readonly SortExpression?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface StartFleetActions {
   readonly FleetId: string;
   readonly Actions: [];
-  readonly Location: string;
+  readonly Location?: string;
 }
 export interface StartGameSessionPlacement {
   readonly PlacementId: string;
   readonly GameSessionQueueName: string;
-  readonly GameProperties: [];
+  readonly GameProperties?: [];
   readonly MaximumPlayerSessionCount: number;
-  readonly GameSessionName: string;
-  readonly PlayerLatencies: [];
-  readonly DesiredPlayerSessions: [];
-  readonly GameSessionData: string;
+  readonly GameSessionName?: string;
+  readonly PlayerLatencies?: [];
+  readonly DesiredPlayerSessions?: [];
+  readonly GameSessionData?: string;
 }
 export interface StartMatchBackfill {
-  readonly TicketId: string;
+  readonly TicketId?: string;
   readonly ConfigurationName: string;
-  readonly GameSessionArn: string;
+  readonly GameSessionArn?: string;
   readonly Players: [];
 }
 export interface StartMatchmaking {
-  readonly TicketId: string;
+  readonly TicketId?: string;
   readonly ConfigurationName: string;
   readonly Players: [];
 }
 export interface StopFleetActions {
   readonly FleetId: string;
   readonly Actions: [];
-  readonly Location: string;
+  readonly Location?: string;
 }
 export interface StopGameSessionPlacement {
   readonly PlacementId: string;
@@ -445,81 +445,81 @@ export interface UntagResource {
 }
 export interface UpdateAlias {
   readonly AliasId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly RoutingStrategy: RoutingStrategy;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly RoutingStrategy?: RoutingStrategy;
 }
 export interface UpdateBuild {
   readonly BuildId: string;
-  readonly Name: string;
-  readonly Version: string;
+  readonly Name?: string;
+  readonly Version?: string;
 }
 export interface UpdateFleetAttributes {
   readonly FleetId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly NewGameSessionProtectionPolicy: string;
-  readonly ResourceCreationLimitPolicy: ResourceCreationLimitPolicy;
-  readonly MetricGroups: [];
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly NewGameSessionProtectionPolicy?: string;
+  readonly ResourceCreationLimitPolicy?: ResourceCreationLimitPolicy;
+  readonly MetricGroups?: [];
 }
 export interface UpdateFleetCapacity {
   readonly FleetId: string;
-  readonly DesiredInstances: number;
-  readonly MinSize: number;
-  readonly MaxSize: number;
-  readonly Location: string;
+  readonly DesiredInstances?: number;
+  readonly MinSize?: number;
+  readonly MaxSize?: number;
+  readonly Location?: string;
 }
 export interface UpdateFleetPortSettings {
   readonly FleetId: string;
-  readonly InboundPermissionAuthorizations: [];
-  readonly InboundPermissionRevocations: [];
+  readonly InboundPermissionAuthorizations?: [];
+  readonly InboundPermissionRevocations?: [];
 }
 export interface UpdateGameServer {
   readonly GameServerGroupName: string;
   readonly GameServerId: string;
-  readonly GameServerData: string;
-  readonly UtilizationStatus: string;
-  readonly HealthCheck: string;
+  readonly GameServerData?: string;
+  readonly UtilizationStatus?: string;
+  readonly HealthCheck?: string;
 }
 export interface UpdateGameServerGroup {
   readonly GameServerGroupName: string;
-  readonly RoleArn: string;
-  readonly InstanceDefinitions: [];
-  readonly GameServerProtectionPolicy: string;
-  readonly BalancingStrategy: string;
+  readonly RoleArn?: string;
+  readonly InstanceDefinitions?: [];
+  readonly GameServerProtectionPolicy?: string;
+  readonly BalancingStrategy?: string;
 }
 export interface UpdateGameSession {
   readonly GameSessionId: string;
-  readonly MaximumPlayerSessionCount: number;
-  readonly Name: string;
-  readonly PlayerSessionCreationPolicy: string;
-  readonly ProtectionPolicy: string;
+  readonly MaximumPlayerSessionCount?: number;
+  readonly Name?: string;
+  readonly PlayerSessionCreationPolicy?: string;
+  readonly ProtectionPolicy?: string;
 }
 export interface UpdateGameSessionQueue {
   readonly Name: string;
-  readonly TimeoutInSeconds: number;
-  readonly PlayerLatencyPolicies: [];
-  readonly Destinations: [];
-  readonly FilterConfiguration: FilterConfiguration;
-  readonly PriorityConfiguration: PriorityConfiguration;
-  readonly CustomEventData: string;
-  readonly NotificationTarget: string;
+  readonly TimeoutInSeconds?: number;
+  readonly PlayerLatencyPolicies?: [];
+  readonly Destinations?: [];
+  readonly FilterConfiguration?: FilterConfiguration;
+  readonly PriorityConfiguration?: PriorityConfiguration;
+  readonly CustomEventData?: string;
+  readonly NotificationTarget?: string;
 }
 export interface UpdateMatchmakingConfiguration {
   readonly Name: string;
-  readonly Description: string;
-  readonly GameSessionQueueArns: [];
-  readonly RequestTimeoutSeconds: number;
-  readonly AcceptanceTimeoutSeconds: number;
-  readonly AcceptanceRequired: boolean;
-  readonly RuleSetName: string;
-  readonly NotificationTarget: string;
-  readonly AdditionalPlayerCount: number;
-  readonly CustomEventData: string;
-  readonly GameProperties: [];
-  readonly GameSessionData: string;
-  readonly BackfillMode: string;
-  readonly FlexMatchMode: string;
+  readonly Description?: string;
+  readonly GameSessionQueueArns?: [];
+  readonly RequestTimeoutSeconds?: number;
+  readonly AcceptanceTimeoutSeconds?: number;
+  readonly AcceptanceRequired?: boolean;
+  readonly RuleSetName?: string;
+  readonly NotificationTarget?: string;
+  readonly AdditionalPlayerCount?: number;
+  readonly CustomEventData?: string;
+  readonly GameProperties?: [];
+  readonly GameSessionData?: string;
+  readonly BackfillMode?: string;
+  readonly FlexMatchMode?: string;
 }
 export interface UpdateRuntimeConfiguration {
   readonly FleetId: string;
@@ -527,10 +527,10 @@ export interface UpdateRuntimeConfiguration {
 }
 export interface UpdateScript {
   readonly ScriptId: string;
-  readonly Name: string;
-  readonly Version: string;
-  readonly StorageLocation: S3Location;
-  readonly ZipFile: unknown;
+  readonly Name?: string;
+  readonly Version?: string;
+  readonly StorageLocation?: S3Location;
+  readonly ZipFile?: unknown;
 }
 export interface ValidateMatchmakingRuleSet {
   readonly RuleSetBody: string;

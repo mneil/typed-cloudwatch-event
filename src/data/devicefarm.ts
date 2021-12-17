@@ -4,53 +4,53 @@
 export interface CreateDevicePool {
   readonly projectArn: string;
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly rules: [];
-  readonly maxDevices: number;
+  readonly maxDevices?: number;
 }
 export interface CreateInstanceProfile {
   readonly name: string;
-  readonly description: string;
-  readonly packageCleanup: boolean;
-  readonly excludeAppPackagesFromCleanup: [];
-  readonly rebootAfterUse: boolean;
+  readonly description?: string;
+  readonly packageCleanup?: boolean;
+  readonly excludeAppPackagesFromCleanup?: [];
+  readonly rebootAfterUse?: boolean;
 }
 export interface CreateNetworkProfile {
   readonly projectArn: string;
   readonly name: string;
-  readonly description: string;
-  readonly type: string;
-  readonly uplinkBandwidthBits: number;
-  readonly downlinkBandwidthBits: number;
-  readonly uplinkDelayMs: number;
-  readonly downlinkDelayMs: number;
-  readonly uplinkJitterMs: number;
-  readonly downlinkJitterMs: number;
-  readonly uplinkLossPercent: number;
-  readonly downlinkLossPercent: number;
+  readonly description?: string;
+  readonly type?: string;
+  readonly uplinkBandwidthBits?: number;
+  readonly downlinkBandwidthBits?: number;
+  readonly uplinkDelayMs?: number;
+  readonly downlinkDelayMs?: number;
+  readonly uplinkJitterMs?: number;
+  readonly downlinkJitterMs?: number;
+  readonly uplinkLossPercent?: number;
+  readonly downlinkLossPercent?: number;
 }
 export interface CreateProject {
   readonly name: string;
-  readonly defaultJobTimeoutMinutes: number;
+  readonly defaultJobTimeoutMinutes?: number;
 }
 export interface CreateRemoteAccessSession {
   readonly projectArn: string;
   readonly deviceArn: string;
-  readonly instanceArn: string;
-  readonly sshPublicKey: string;
-  readonly remoteDebugEnabled: boolean;
-  readonly remoteRecordEnabled: boolean;
-  readonly remoteRecordAppArn: string;
-  readonly name: string;
-  readonly clientId: string;
-  readonly configuration: CreateRemoteAccessSessionConfiguration;
-  readonly interactionMode: string;
-  readonly skipAppResign: boolean;
+  readonly instanceArn?: string;
+  readonly sshPublicKey?: string;
+  readonly remoteDebugEnabled?: boolean;
+  readonly remoteRecordEnabled?: boolean;
+  readonly remoteRecordAppArn?: string;
+  readonly name?: string;
+  readonly clientId?: string;
+  readonly configuration?: CreateRemoteAccessSessionConfiguration;
+  readonly interactionMode?: string;
+  readonly skipAppResign?: boolean;
 }
 export interface CreateTestGridProject {
   readonly name: string;
-  readonly description: string;
-  readonly vpcConfig: TestGridVpcConfig;
+  readonly description?: string;
+  readonly vpcConfig?: TestGridVpcConfig;
 }
 export interface CreateTestGridUrl {
   readonly projectArn: string;
@@ -60,13 +60,13 @@ export interface CreateUpload {
   readonly projectArn: string;
   readonly name: string;
   readonly type: string;
-  readonly contentType: string;
+  readonly contentType?: string;
 }
 export interface CreateVPCEConfiguration {
   readonly vpceConfigurationName: string;
   readonly vpceServiceName: string;
   readonly serviceDnsName: string;
-  readonly vpceConfigurationDescription: string;
+  readonly vpceConfigurationDescription?: string;
 }
 export interface DeleteDevicePool {
   readonly arn: string;
@@ -108,10 +108,10 @@ export interface GetDevicePool {
 }
 export interface GetDevicePoolCompatibility {
   readonly devicePoolArn: string;
-  readonly appArn: string;
-  readonly testType: string;
-  readonly test: ScheduleRunTest;
-  readonly configuration: ScheduleRunConfiguration;
+  readonly appArn?: string;
+  readonly testType?: string;
+  readonly test?: ScheduleRunTest;
+  readonly configuration?: ScheduleRunConfiguration;
 }
 export interface GetInstanceProfile {
   readonly arn: string;
@@ -123,7 +123,7 @@ export interface GetNetworkProfile {
   readonly arn: string;
 }
 export interface GetOfferingStatus {
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface GetProject {
   readonly arn: string;
@@ -144,9 +144,9 @@ export interface GetTestGridProject {
   readonly projectArn: string;
 }
 export interface GetTestGridSession {
-  readonly projectArn: string;
-  readonly sessionId: string;
-  readonly sessionArn: string;
+  readonly projectArn?: string;
+  readonly sessionId?: string;
+  readonly sessionArn?: string;
 }
 export interface GetUpload {
   readonly arn: string;
@@ -161,113 +161,113 @@ export interface InstallToRemoteAccessSession {
 export interface ListArtifacts {
   readonly arn: string;
   readonly type: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListDeviceInstances {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListDevicePools {
   readonly arn: string;
-  readonly type: string;
-  readonly nextToken: string;
+  readonly type?: string;
+  readonly nextToken?: string;
 }
 export interface ListDevices {
-  readonly arn: string;
-  readonly nextToken: string;
-  readonly filters: [];
+  readonly arn?: string;
+  readonly nextToken?: string;
+  readonly filters?: [];
 }
 export interface ListInstanceProfiles {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListJobs {
   readonly arn: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListNetworkProfiles {
   readonly arn: string;
-  readonly type: string;
-  readonly nextToken: string;
+  readonly type?: string;
+  readonly nextToken?: string;
 }
 export interface ListOfferingPromotions {
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListOfferingTransactions {
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListOfferings {
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListProjects {
-  readonly arn: string;
-  readonly nextToken: string;
+  readonly arn?: string;
+  readonly nextToken?: string;
 }
 export interface ListRemoteAccessSessions {
   readonly arn: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListRuns {
   readonly arn: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListSamples {
   readonly arn: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListSuites {
   readonly arn: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
 export interface ListTestGridProjects {
-  readonly maxResult: number;
-  readonly nextToken: string;
+  readonly maxResult?: number;
+  readonly nextToken?: string;
 }
 export interface ListTestGridSessionActions {
   readonly sessionArn: string;
-  readonly maxResult: number;
-  readonly nextToken: string;
+  readonly maxResult?: number;
+  readonly nextToken?: string;
 }
 export interface ListTestGridSessionArtifacts {
   readonly sessionArn: string;
-  readonly type: string;
-  readonly maxResult: number;
-  readonly nextToken: string;
+  readonly type?: string;
+  readonly maxResult?: number;
+  readonly nextToken?: string;
 }
 export interface ListTestGridSessions {
   readonly projectArn: string;
-  readonly status: string;
-  readonly creationTimeAfter: Date;
-  readonly creationTimeBefore: Date;
-  readonly endTimeAfter: Date;
-  readonly endTimeBefore: Date;
-  readonly maxResult: number;
-  readonly nextToken: string;
+  readonly status?: string;
+  readonly creationTimeAfter?: Date;
+  readonly creationTimeBefore?: Date;
+  readonly endTimeAfter?: Date;
+  readonly endTimeBefore?: Date;
+  readonly maxResult?: number;
+  readonly nextToken?: string;
 }
 export interface ListTests {
   readonly arn: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListUniqueProblems {
   readonly arn: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListUploads {
   readonly arn: string;
-  readonly type: string;
-  readonly nextToken: string;
+  readonly type?: string;
+  readonly nextToken?: string;
 }
 export interface ListVPCEConfigurations {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface PurchaseOffering {
   readonly offeringId: string;
   readonly quantity: number;
-  readonly offeringPromotionId: string;
+  readonly offeringPromotionId?: string;
 }
 export interface RenewOffering {
   readonly offeringId: string;
@@ -275,13 +275,13 @@ export interface RenewOffering {
 }
 export interface ScheduleRun {
   readonly projectArn: string;
-  readonly appArn: string;
-  readonly devicePoolArn: string;
-  readonly deviceSelectionConfiguration: DeviceSelectionConfiguration;
-  readonly name: string;
+  readonly appArn?: string;
+  readonly devicePoolArn?: string;
+  readonly deviceSelectionConfiguration?: DeviceSelectionConfiguration;
+  readonly name?: string;
   readonly test: ScheduleRunTest;
-  readonly configuration: ScheduleRunConfiguration;
-  readonly executionConfiguration: ExecutionConfiguration;
+  readonly configuration?: ScheduleRunConfiguration;
+  readonly executionConfiguration?: ExecutionConfiguration;
 }
 export interface StopJob {
   readonly arn: string;
@@ -302,62 +302,62 @@ export interface UntagResource {
 }
 export interface UpdateDeviceInstance {
   readonly arn: string;
-  readonly profileArn: string;
-  readonly labels: [];
+  readonly profileArn?: string;
+  readonly labels?: [];
 }
 export interface UpdateDevicePool {
   readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly rules: [];
-  readonly maxDevices: number;
-  readonly clearMaxDevices: boolean;
+  readonly name?: string;
+  readonly description?: string;
+  readonly rules?: [];
+  readonly maxDevices?: number;
+  readonly clearMaxDevices?: boolean;
 }
 export interface UpdateInstanceProfile {
   readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly packageCleanup: boolean;
-  readonly excludeAppPackagesFromCleanup: [];
-  readonly rebootAfterUse: boolean;
+  readonly name?: string;
+  readonly description?: string;
+  readonly packageCleanup?: boolean;
+  readonly excludeAppPackagesFromCleanup?: [];
+  readonly rebootAfterUse?: boolean;
 }
 export interface UpdateNetworkProfile {
   readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly type: string;
-  readonly uplinkBandwidthBits: number;
-  readonly downlinkBandwidthBits: number;
-  readonly uplinkDelayMs: number;
-  readonly downlinkDelayMs: number;
-  readonly uplinkJitterMs: number;
-  readonly downlinkJitterMs: number;
-  readonly uplinkLossPercent: number;
-  readonly downlinkLossPercent: number;
+  readonly name?: string;
+  readonly description?: string;
+  readonly type?: string;
+  readonly uplinkBandwidthBits?: number;
+  readonly downlinkBandwidthBits?: number;
+  readonly uplinkDelayMs?: number;
+  readonly downlinkDelayMs?: number;
+  readonly uplinkJitterMs?: number;
+  readonly downlinkJitterMs?: number;
+  readonly uplinkLossPercent?: number;
+  readonly downlinkLossPercent?: number;
 }
 export interface UpdateProject {
   readonly arn: string;
-  readonly name: string;
-  readonly defaultJobTimeoutMinutes: number;
+  readonly name?: string;
+  readonly defaultJobTimeoutMinutes?: number;
 }
 export interface UpdateTestGridProject {
   readonly projectArn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly vpcConfig: TestGridVpcConfig;
+  readonly name?: string;
+  readonly description?: string;
+  readonly vpcConfig?: TestGridVpcConfig;
 }
 export interface UpdateUpload {
   readonly arn: string;
-  readonly name: string;
-  readonly contentType: string;
-  readonly editContent: boolean;
+  readonly name?: string;
+  readonly contentType?: string;
+  readonly editContent?: boolean;
 }
 export interface UpdateVPCEConfiguration {
   readonly arn: string;
-  readonly vpceConfigurationName: string;
-  readonly vpceServiceName: string;
-  readonly serviceDnsName: string;
-  readonly vpceConfigurationDescription: string;
+  readonly vpceConfigurationName?: string;
+  readonly vpceServiceName?: string;
+  readonly serviceDnsName?: string;
+  readonly vpceConfigurationDescription?: string;
 }
 
 

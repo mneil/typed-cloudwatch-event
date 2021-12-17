@@ -10,29 +10,29 @@ export interface BatchGetQueryExecution {
 export interface CreateDataCatalog {
   readonly Name: string;
   readonly Type: string;
-  readonly Description: string;
-  readonly Parameters: {[key: string]: any};
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly Tags?: [];
 }
 export interface CreateNamedQuery {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Database: string;
   readonly QueryString: string;
-  readonly ClientRequestToken: string;
-  readonly WorkGroup: string;
+  readonly ClientRequestToken?: string;
+  readonly WorkGroup?: string;
 }
 export interface CreatePreparedStatement {
   readonly StatementName: string;
   readonly WorkGroup: string;
   readonly QueryStatement: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 export interface CreateWorkGroup {
   readonly Name: string;
-  readonly Configuration: WorkGroupConfiguration;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly Configuration?: WorkGroupConfiguration;
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 export interface DeleteDataCatalog {
   readonly Name: string;
@@ -46,7 +46,7 @@ export interface DeletePreparedStatement {
 }
 export interface DeleteWorkGroup {
   readonly WorkGroup: string;
-  readonly RecursiveDeleteOption: boolean;
+  readonly RecursiveDeleteOption?: boolean;
 }
 export interface GetDataCatalog {
   readonly Name: string;
@@ -67,8 +67,8 @@ export interface GetQueryExecution {
 }
 export interface GetQueryResults {
   readonly QueryExecutionId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface GetTableMetadata {
   readonly CatalogName: string;
@@ -79,55 +79,55 @@ export interface GetWorkGroup {
   readonly WorkGroup: string;
 }
 export interface ListDataCatalogs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDatabases {
   readonly CatalogName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListEngineVersions {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListNamedQueries {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly WorkGroup: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly WorkGroup?: string;
 }
 export interface ListPreparedStatements {
   readonly WorkGroup: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListQueryExecutions {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly WorkGroup: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly WorkGroup?: string;
 }
 export interface ListTableMetadata {
   readonly CatalogName: string;
   readonly DatabaseName: string;
-  readonly Expression: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Expression?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListWorkGroups {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface StartQueryExecution {
   readonly QueryString: string;
-  readonly ClientRequestToken: string;
-  readonly QueryExecutionContext: QueryExecutionContext;
-  readonly ResultConfiguration: ResultConfiguration;
-  readonly WorkGroup: string;
+  readonly ClientRequestToken?: string;
+  readonly QueryExecutionContext?: QueryExecutionContext;
+  readonly ResultConfiguration?: ResultConfiguration;
+  readonly WorkGroup?: string;
 }
 export interface StopQueryExecution {
   readonly QueryExecutionId: string;
@@ -143,20 +143,20 @@ export interface UntagResource {
 export interface UpdateDataCatalog {
   readonly Name: string;
   readonly Type: string;
-  readonly Description: string;
-  readonly Parameters: {[key: string]: any};
+  readonly Description?: string;
+  readonly Parameters?: {[key: string]: any};
 }
 export interface UpdatePreparedStatement {
   readonly StatementName: string;
   readonly WorkGroup: string;
   readonly QueryStatement: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 export interface UpdateWorkGroup {
   readonly WorkGroup: string;
-  readonly Description: string;
-  readonly ConfigurationUpdates: WorkGroupConfigurationUpdates;
-  readonly State: string;
+  readonly Description?: string;
+  readonly ConfigurationUpdates?: WorkGroupConfigurationUpdates;
+  readonly State?: string;
 }
 
 

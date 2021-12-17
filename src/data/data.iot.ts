@@ -3,33 +3,33 @@
  */
 export interface DeleteThingShadow {
   readonly thingName: string;
-  readonly shadowName: string;
+  readonly shadowName?: string;
 }
 export interface GetRetainedMessage {
   readonly topic: string;
 }
 export interface GetThingShadow {
   readonly thingName: string;
-  readonly shadowName: string;
+  readonly shadowName?: string;
 }
 export interface ListNamedShadowsForThing {
   readonly thingName: string;
-  readonly nextToken: string;
-  readonly pageSize: number;
+  readonly nextToken?: string;
+  readonly pageSize?: number;
 }
 export interface ListRetainedMessages {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface Publish {
   readonly topic: string;
-  readonly qos: number;
-  readonly retain: boolean;
-  readonly payload: unknown;
+  readonly qos?: number;
+  readonly retain?: boolean;
+  readonly payload?: unknown;
 }
 export interface UpdateThingShadow {
   readonly thingName: string;
-  readonly shadowName: string;
+  readonly shadowName?: string;
   readonly payload: unknown;
 }
 

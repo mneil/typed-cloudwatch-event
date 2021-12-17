@@ -8,66 +8,66 @@ export interface AssociateApi {
 export interface CreateApiCache {
   readonly apiId: string;
   readonly ttl: number;
-  readonly transitEncryptionEnabled: boolean;
-  readonly atRestEncryptionEnabled: boolean;
+  readonly transitEncryptionEnabled?: boolean;
+  readonly atRestEncryptionEnabled?: boolean;
   readonly apiCachingBehavior: string;
   readonly type: string;
 }
 export interface CreateApiKey {
   readonly apiId: string;
-  readonly description: string;
-  readonly expires: number;
+  readonly description?: string;
+  readonly expires?: number;
 }
 export interface CreateDataSource {
   readonly apiId: string;
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly type: string;
-  readonly serviceRoleArn: string;
-  readonly dynamodbConfig: DynamodbDataSourceConfig;
-  readonly lambdaConfig: LambdaDataSourceConfig;
-  readonly elasticsearchConfig: ElasticsearchDataSourceConfig;
-  readonly openSearchServiceConfig: OpenSearchServiceDataSourceConfig;
-  readonly httpConfig: HttpDataSourceConfig;
-  readonly relationalDatabaseConfig: RelationalDatabaseDataSourceConfig;
+  readonly serviceRoleArn?: string;
+  readonly dynamodbConfig?: DynamodbDataSourceConfig;
+  readonly lambdaConfig?: LambdaDataSourceConfig;
+  readonly elasticsearchConfig?: ElasticsearchDataSourceConfig;
+  readonly openSearchServiceConfig?: OpenSearchServiceDataSourceConfig;
+  readonly httpConfig?: HttpDataSourceConfig;
+  readonly relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig;
 }
 export interface CreateDomainName {
   readonly domainName: string;
   readonly certificateArn: string;
-  readonly description: string;
+  readonly description?: string;
 }
 export interface CreateFunction {
   readonly apiId: string;
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly dataSourceName: string;
-  readonly requestMappingTemplate: string;
-  readonly responseMappingTemplate: string;
+  readonly requestMappingTemplate?: string;
+  readonly responseMappingTemplate?: string;
   readonly functionVersion: string;
-  readonly syncConfig: SyncConfig;
+  readonly syncConfig?: SyncConfig;
 }
 export interface CreateGraphqlApi {
   readonly name: string;
-  readonly logConfig: LogConfig;
+  readonly logConfig?: LogConfig;
   readonly authenticationType: string;
-  readonly userPoolConfig: UserPoolConfig;
-  readonly openIDConnectConfig: OpenIDConnectConfig;
-  readonly tags: {[key: string]: any};
-  readonly additionalAuthenticationProviders: [];
-  readonly xrayEnabled: boolean;
-  readonly lambdaAuthorizerConfig: LambdaAuthorizerConfig;
+  readonly userPoolConfig?: UserPoolConfig;
+  readonly openIDConnectConfig?: OpenIDConnectConfig;
+  readonly tags?: {[key: string]: any};
+  readonly additionalAuthenticationProviders?: [];
+  readonly xrayEnabled?: boolean;
+  readonly lambdaAuthorizerConfig?: LambdaAuthorizerConfig;
 }
 export interface CreateResolver {
   readonly apiId: string;
   readonly typeName: string;
   readonly fieldName: string;
-  readonly dataSourceName: string;
-  readonly requestMappingTemplate: string;
-  readonly responseMappingTemplate: string;
-  readonly kind: string;
-  readonly pipelineConfig: PipelineConfig;
-  readonly syncConfig: SyncConfig;
-  readonly cachingConfig: CachingConfig;
+  readonly dataSourceName?: string;
+  readonly requestMappingTemplate?: string;
+  readonly responseMappingTemplate?: string;
+  readonly kind?: string;
+  readonly pipelineConfig?: PipelineConfig;
+  readonly syncConfig?: SyncConfig;
+  readonly cachingConfig?: CachingConfig;
 }
 export interface CreateType {
   readonly apiId: string;
@@ -133,7 +133,7 @@ export interface GetGraphqlApi {
 export interface GetIntrospectionSchema {
   readonly apiId: string;
   readonly format: string;
-  readonly includeDirectives: boolean;
+  readonly includeDirectives?: boolean;
 }
 export interface GetResolver {
   readonly apiId: string;
@@ -150,38 +150,38 @@ export interface GetType {
 }
 export interface ListApiKeys {
   readonly apiId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDataSources {
   readonly apiId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDomainNames {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListFunctions {
   readonly apiId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListGraphqlApis {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListResolvers {
   readonly apiId: string;
   readonly typeName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListResolversByFunction {
   readonly apiId: string;
   readonly functionId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -189,8 +189,8 @@ export interface ListTagsForResource {
 export interface ListTypes {
   readonly apiId: string;
   readonly format: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface StartSchemaCreation {
   readonly apiId: string;
@@ -213,64 +213,64 @@ export interface UpdateApiCache {
 export interface UpdateApiKey {
   readonly apiId: string;
   readonly id: string;
-  readonly description: string;
-  readonly expires: number;
+  readonly description?: string;
+  readonly expires?: number;
 }
 export interface UpdateDataSource {
   readonly apiId: string;
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly type: string;
-  readonly serviceRoleArn: string;
-  readonly dynamodbConfig: DynamodbDataSourceConfig;
-  readonly lambdaConfig: LambdaDataSourceConfig;
-  readonly elasticsearchConfig: ElasticsearchDataSourceConfig;
-  readonly openSearchServiceConfig: OpenSearchServiceDataSourceConfig;
-  readonly httpConfig: HttpDataSourceConfig;
-  readonly relationalDatabaseConfig: RelationalDatabaseDataSourceConfig;
+  readonly serviceRoleArn?: string;
+  readonly dynamodbConfig?: DynamodbDataSourceConfig;
+  readonly lambdaConfig?: LambdaDataSourceConfig;
+  readonly elasticsearchConfig?: ElasticsearchDataSourceConfig;
+  readonly openSearchServiceConfig?: OpenSearchServiceDataSourceConfig;
+  readonly httpConfig?: HttpDataSourceConfig;
+  readonly relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig;
 }
 export interface UpdateDomainName {
   readonly domainName: string;
-  readonly description: string;
+  readonly description?: string;
 }
 export interface UpdateFunction {
   readonly apiId: string;
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly functionId: string;
   readonly dataSourceName: string;
-  readonly requestMappingTemplate: string;
-  readonly responseMappingTemplate: string;
+  readonly requestMappingTemplate?: string;
+  readonly responseMappingTemplate?: string;
   readonly functionVersion: string;
-  readonly syncConfig: SyncConfig;
+  readonly syncConfig?: SyncConfig;
 }
 export interface UpdateGraphqlApi {
   readonly apiId: string;
   readonly name: string;
-  readonly logConfig: LogConfig;
-  readonly authenticationType: string;
-  readonly userPoolConfig: UserPoolConfig;
-  readonly openIDConnectConfig: OpenIDConnectConfig;
-  readonly additionalAuthenticationProviders: [];
-  readonly xrayEnabled: boolean;
-  readonly lambdaAuthorizerConfig: LambdaAuthorizerConfig;
+  readonly logConfig?: LogConfig;
+  readonly authenticationType?: string;
+  readonly userPoolConfig?: UserPoolConfig;
+  readonly openIDConnectConfig?: OpenIDConnectConfig;
+  readonly additionalAuthenticationProviders?: [];
+  readonly xrayEnabled?: boolean;
+  readonly lambdaAuthorizerConfig?: LambdaAuthorizerConfig;
 }
 export interface UpdateResolver {
   readonly apiId: string;
   readonly typeName: string;
   readonly fieldName: string;
-  readonly dataSourceName: string;
-  readonly requestMappingTemplate: string;
-  readonly responseMappingTemplate: string;
-  readonly kind: string;
-  readonly pipelineConfig: PipelineConfig;
-  readonly syncConfig: SyncConfig;
-  readonly cachingConfig: CachingConfig;
+  readonly dataSourceName?: string;
+  readonly requestMappingTemplate?: string;
+  readonly responseMappingTemplate?: string;
+  readonly kind?: string;
+  readonly pipelineConfig?: PipelineConfig;
+  readonly syncConfig?: SyncConfig;
+  readonly cachingConfig?: CachingConfig;
 }
 export interface UpdateType {
   readonly apiId: string;
   readonly typeName: string;
-  readonly definition: string;
+  readonly definition?: string;
   readonly format: string;
 }
 

@@ -15,20 +15,20 @@ export interface AuthorizeIpRules {
 }
 export interface CopyWorkspaceImage {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly SourceImageId: string;
   readonly SourceRegion: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateConnectionAlias {
   readonly ConnectionString: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateIpGroup {
   readonly GroupName: string;
-  readonly GroupDesc: string;
-  readonly UserRules: [];
-  readonly Tags: [];
+  readonly GroupDesc?: string;
+  readonly UserRules?: [];
+  readonly Tags?: [];
 }
 export interface CreateTags {
   readonly ResourceId: string;
@@ -38,7 +38,7 @@ export interface CreateUpdatedWorkspaceImage {
   readonly Name: string;
   readonly Description: string;
   readonly SourceImageId: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateWorkspaceBundle {
   readonly BundleName: string;
@@ -46,8 +46,8 @@ export interface CreateWorkspaceBundle {
   readonly ImageId: string;
   readonly ComputeType: ComputeType;
   readonly UserStorage: UserStorage;
-  readonly RootStorage: RootStorage;
-  readonly Tags: [];
+  readonly RootStorage?: RootStorage;
+  readonly Tags?: [];
 }
 export interface CreateWorkspaces {
   readonly Workspaces: [];
@@ -63,7 +63,7 @@ export interface DeleteTags {
   readonly TagKeys: [];
 }
 export interface DeleteWorkspaceBundle {
-  readonly BundleId: string;
+  readonly BundleId?: string;
 }
 export interface DeleteWorkspaceImage {
   readonly ImageId: string;
@@ -74,65 +74,65 @@ export interface DeregisterWorkspaceDirectory {
 export interface DescribeAccount {
 }
 export interface DescribeAccountModifications {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface DescribeClientProperties {
   readonly ResourceIds: [];
 }
 export interface DescribeConnectionAliasPermissions {
   readonly AliasId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeConnectionAliases {
-  readonly AliasIds: [];
-  readonly ResourceId: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly AliasIds?: [];
+  readonly ResourceId?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeIpGroups {
-  readonly GroupIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly GroupIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeTags {
   readonly ResourceId: string;
 }
 export interface DescribeWorkspaceBundles {
-  readonly BundleIds: [];
-  readonly Owner: string;
-  readonly NextToken: string;
+  readonly BundleIds?: [];
+  readonly Owner?: string;
+  readonly NextToken?: string;
 }
 export interface DescribeWorkspaceDirectories {
-  readonly DirectoryIds: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly DirectoryIds?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeWorkspaceImagePermissions {
   readonly ImageId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeWorkspaceImages {
-  readonly ImageIds: [];
-  readonly ImageType: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly ImageIds?: [];
+  readonly ImageType?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeWorkspaceSnapshots {
   readonly WorkspaceId: string;
 }
 export interface DescribeWorkspaces {
-  readonly WorkspaceIds: [];
-  readonly DirectoryId: string;
-  readonly UserName: string;
-  readonly BundleId: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly WorkspaceIds?: [];
+  readonly DirectoryId?: string;
+  readonly UserName?: string;
+  readonly BundleId?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeWorkspacesConnectionStatus {
-  readonly WorkspaceIds: [];
-  readonly NextToken: string;
+  readonly WorkspaceIds?: [];
+  readonly NextToken?: string;
 }
 export interface DisassociateConnectionAlias {
   readonly AliasId: string;
@@ -146,21 +146,21 @@ export interface ImportWorkspaceImage {
   readonly IngestionProcess: string;
   readonly ImageName: string;
   readonly ImageDescription: string;
-  readonly Tags: [];
-  readonly Applications: [];
+  readonly Tags?: [];
+  readonly Applications?: [];
 }
 export interface ListAvailableManagementCidrRanges {
   readonly ManagementCidrRangeConstraint: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface MigrateWorkspace {
   readonly SourceWorkspaceId: string;
   readonly BundleId: string;
 }
 export interface ModifyAccount {
-  readonly DedicatedTenancySupport: string;
-  readonly DedicatedTenancyManagementCidrRange: string;
+  readonly DedicatedTenancySupport?: string;
+  readonly DedicatedTenancyManagementCidrRange?: string;
 }
 export interface ModifyClientProperties {
   readonly ResourceId: string;
@@ -194,11 +194,11 @@ export interface RebuildWorkspaces {
 }
 export interface RegisterWorkspaceDirectory {
   readonly DirectoryId: string;
-  readonly SubnetIds: [];
+  readonly SubnetIds?: [];
   readonly EnableWorkDocs: boolean;
-  readonly EnableSelfService: boolean;
-  readonly Tenancy: string;
-  readonly Tags: [];
+  readonly EnableSelfService?: boolean;
+  readonly Tenancy?: string;
+  readonly Tags?: [];
 }
 export interface RestoreWorkspace {
   readonly WorkspaceId: string;
@@ -225,8 +225,8 @@ export interface UpdateRulesOfIpGroup {
   readonly UserRules: [];
 }
 export interface UpdateWorkspaceBundle {
-  readonly BundleId: string;
-  readonly ImageId: string;
+  readonly BundleId?: string;
+  readonly ImageId?: string;
 }
 export interface UpdateWorkspaceImagePermission {
   readonly ImageId: string;

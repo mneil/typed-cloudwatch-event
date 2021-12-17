@@ -3,35 +3,35 @@
  */
 export interface CreateHttpNamespace {
   readonly Name: string;
-  readonly CreatorRequestId: string;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly CreatorRequestId?: string;
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 export interface CreatePrivateDnsNamespace {
   readonly Name: string;
-  readonly CreatorRequestId: string;
-  readonly Description: string;
+  readonly CreatorRequestId?: string;
+  readonly Description?: string;
   readonly Vpc: string;
-  readonly Tags: [];
-  readonly Properties: PrivateDnsNamespaceProperties;
+  readonly Tags?: [];
+  readonly Properties?: PrivateDnsNamespaceProperties;
 }
 export interface CreatePublicDnsNamespace {
   readonly Name: string;
-  readonly CreatorRequestId: string;
-  readonly Description: string;
-  readonly Tags: [];
-  readonly Properties: PublicDnsNamespaceProperties;
+  readonly CreatorRequestId?: string;
+  readonly Description?: string;
+  readonly Tags?: [];
+  readonly Properties?: PublicDnsNamespaceProperties;
 }
 export interface CreateService {
   readonly Name: string;
-  readonly NamespaceId: string;
-  readonly CreatorRequestId: string;
-  readonly Description: string;
-  readonly DnsConfig: DnsConfig;
-  readonly HealthCheckConfig: HealthCheckConfig;
-  readonly HealthCheckCustomConfig: HealthCheckCustomConfig;
-  readonly Tags: [];
-  readonly Type: string;
+  readonly NamespaceId?: string;
+  readonly CreatorRequestId?: string;
+  readonly Description?: string;
+  readonly DnsConfig?: DnsConfig;
+  readonly HealthCheckConfig?: HealthCheckConfig;
+  readonly HealthCheckCustomConfig?: HealthCheckCustomConfig;
+  readonly Tags?: [];
+  readonly Type?: string;
 }
 export interface DeleteNamespace {
   readonly Id: string;
@@ -46,10 +46,10 @@ export interface DeregisterInstance {
 export interface DiscoverInstances {
   readonly NamespaceName: string;
   readonly ServiceName: string;
-  readonly MaxResults: number;
-  readonly QueryParameters: {[key: string]: any};
-  readonly OptionalParameters: {[key: string]: any};
-  readonly HealthStatus: string;
+  readonly MaxResults?: number;
+  readonly QueryParameters?: {[key: string]: any};
+  readonly OptionalParameters?: {[key: string]: any};
+  readonly HealthStatus?: string;
 }
 export interface GetInstance {
   readonly ServiceId: string;
@@ -57,9 +57,9 @@ export interface GetInstance {
 }
 export interface GetInstancesHealthStatus {
   readonly ServiceId: string;
-  readonly Instances: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Instances?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetNamespace {
   readonly Id: string;
@@ -72,23 +72,23 @@ export interface GetService {
 }
 export interface ListInstances {
   readonly ServiceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListNamespaces {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 export interface ListOperations {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 export interface ListServices {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
@@ -96,7 +96,7 @@ export interface ListTagsForResource {
 export interface RegisterInstance {
   readonly ServiceId: string;
   readonly InstanceId: string;
-  readonly CreatorRequestId: string;
+  readonly CreatorRequestId?: string;
   readonly Attributes: {[key: string]: any};
 }
 export interface TagResource {
@@ -109,7 +109,7 @@ export interface UntagResource {
 }
 export interface UpdateHttpNamespace {
   readonly Id: string;
-  readonly UpdaterRequestId: string;
+  readonly UpdaterRequestId?: string;
   readonly Namespace: HttpNamespaceChange;
 }
 export interface UpdateInstanceCustomHealthStatus {
@@ -119,12 +119,12 @@ export interface UpdateInstanceCustomHealthStatus {
 }
 export interface UpdatePrivateDnsNamespace {
   readonly Id: string;
-  readonly UpdaterRequestId: string;
+  readonly UpdaterRequestId?: string;
   readonly Namespace: PrivateDnsNamespaceChange;
 }
 export interface UpdatePublicDnsNamespace {
   readonly Id: string;
-  readonly UpdaterRequestId: string;
+  readonly UpdaterRequestId?: string;
   readonly Namespace: PublicDnsNamespaceChange;
 }
 export interface UpdateService {

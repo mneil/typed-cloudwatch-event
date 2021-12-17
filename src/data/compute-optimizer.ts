@@ -3,71 +3,71 @@
  */
 export interface DeleteRecommendationPreferences {
   readonly resourceType: string;
-  readonly scope: Scope;
+  readonly scope?: Scope;
   readonly recommendationPreferenceNames: [];
 }
 export interface DescribeRecommendationExportJobs {
-  readonly jobIds: [];
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly jobIds?: [];
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ExportAutoScalingGroupRecommendations {
-  readonly accountIds: [];
-  readonly filters: [];
-  readonly fieldsToExport: [];
+  readonly accountIds?: [];
+  readonly filters?: [];
+  readonly fieldsToExport?: [];
   readonly s3DestinationConfig: S3DestinationConfig;
-  readonly fileFormat: string;
-  readonly includeMemberAccounts: boolean;
-  readonly recommendationPreferences: RecommendationPreferences;
+  readonly fileFormat?: string;
+  readonly includeMemberAccounts?: boolean;
+  readonly recommendationPreferences?: RecommendationPreferences;
 }
 export interface ExportEBSVolumeRecommendations {
-  readonly accountIds: [];
-  readonly filters: [];
-  readonly fieldsToExport: [];
+  readonly accountIds?: [];
+  readonly filters?: [];
+  readonly fieldsToExport?: [];
   readonly s3DestinationConfig: S3DestinationConfig;
-  readonly fileFormat: string;
-  readonly includeMemberAccounts: boolean;
+  readonly fileFormat?: string;
+  readonly includeMemberAccounts?: boolean;
 }
 export interface ExportEC2InstanceRecommendations {
-  readonly accountIds: [];
-  readonly filters: [];
-  readonly fieldsToExport: [];
+  readonly accountIds?: [];
+  readonly filters?: [];
+  readonly fieldsToExport?: [];
   readonly s3DestinationConfig: S3DestinationConfig;
-  readonly fileFormat: string;
-  readonly includeMemberAccounts: boolean;
-  readonly recommendationPreferences: RecommendationPreferences;
+  readonly fileFormat?: string;
+  readonly includeMemberAccounts?: boolean;
+  readonly recommendationPreferences?: RecommendationPreferences;
 }
 export interface ExportLambdaFunctionRecommendations {
-  readonly accountIds: [];
-  readonly filters: [];
-  readonly fieldsToExport: [];
+  readonly accountIds?: [];
+  readonly filters?: [];
+  readonly fieldsToExport?: [];
   readonly s3DestinationConfig: S3DestinationConfig;
-  readonly fileFormat: string;
-  readonly includeMemberAccounts: boolean;
+  readonly fileFormat?: string;
+  readonly includeMemberAccounts?: boolean;
 }
 export interface GetAutoScalingGroupRecommendations {
-  readonly accountIds: [];
-  readonly autoScalingGroupArns: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filters: [];
-  readonly recommendationPreferences: RecommendationPreferences;
+  readonly accountIds?: [];
+  readonly autoScalingGroupArns?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filters?: [];
+  readonly recommendationPreferences?: RecommendationPreferences;
 }
 export interface GetEBSVolumeRecommendations {
-  readonly volumeArns: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filters: [];
-  readonly accountIds: [];
+  readonly volumeArns?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filters?: [];
+  readonly accountIds?: [];
 }
 export interface GetEC2InstanceRecommendations {
-  readonly instanceArns: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filters: [];
-  readonly accountIds: [];
-  readonly recommendationPreferences: RecommendationPreferences;
+  readonly instanceArns?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filters?: [];
+  readonly accountIds?: [];
+  readonly recommendationPreferences?: RecommendationPreferences;
 }
 export interface GetEC2RecommendationProjectedMetrics {
   readonly instanceArn: string;
@@ -75,7 +75,7 @@ export interface GetEC2RecommendationProjectedMetrics {
   readonly period: number;
   readonly startTime: Date;
   readonly endTime: Date;
-  readonly recommendationPreferences: RecommendationPreferences;
+  readonly recommendationPreferences?: RecommendationPreferences;
 }
 export interface GetEffectiveRecommendationPreferences {
   readonly resourceArn: string;
@@ -83,36 +83,36 @@ export interface GetEffectiveRecommendationPreferences {
 export interface GetEnrollmentStatus {
 }
 export interface GetEnrollmentStatusesForOrganization {
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetLambdaFunctionRecommendations {
-  readonly functionArns: [];
-  readonly accountIds: [];
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly functionArns?: [];
+  readonly accountIds?: [];
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetRecommendationPreferences {
   readonly resourceType: string;
-  readonly scope: Scope;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly scope?: Scope;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetRecommendationSummaries {
-  readonly accountIds: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly accountIds?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface PutRecommendationPreferences {
   readonly resourceType: string;
-  readonly scope: Scope;
-  readonly enhancedInfrastructureMetrics: string;
+  readonly scope?: Scope;
+  readonly enhancedInfrastructureMetrics?: string;
 }
 export interface UpdateEnrollmentStatus {
   readonly status: string;
-  readonly includeMemberAccounts: boolean;
+  readonly includeMemberAccounts?: boolean;
 }
 
 

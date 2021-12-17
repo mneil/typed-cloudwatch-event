@@ -7,14 +7,14 @@ export interface AddAttributesToFindings {
 }
 export interface CreateAssessmentTarget {
   readonly assessmentTargetName: string;
-  readonly resourceGroupArn: string;
+  readonly resourceGroupArn?: string;
 }
 export interface CreateAssessmentTemplate {
   readonly assessmentTargetArn: string;
   readonly assessmentTemplateName: string;
   readonly durationInSeconds: number;
   readonly rulesPackageArns: [];
-  readonly userAttributesForFindings: [];
+  readonly userAttributesForFindings?: [];
 }
 export interface CreateExclusionsPreview {
   readonly assessmentTemplateArn: string;
@@ -42,18 +42,18 @@ export interface DescribeAssessmentTemplates {
 }
 export interface DescribeExclusions {
   readonly exclusionArns: [];
-  readonly locale: string;
+  readonly locale?: string;
 }
 export interface DescribeFindings {
   readonly findingArns: [];
-  readonly locale: string;
+  readonly locale?: string;
 }
 export interface DescribeResourceGroups {
   readonly resourceGroupArns: [];
 }
 export interface DescribeRulesPackages {
   readonly rulesPackageArns: [];
-  readonly locale: string;
+  readonly locale?: string;
 }
 export interface GetAssessmentReport {
   readonly assessmentRunArn: string;
@@ -63,63 +63,63 @@ export interface GetAssessmentReport {
 export interface GetExclusionsPreview {
   readonly assessmentTemplateArn: string;
   readonly previewToken: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly locale: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly locale?: string;
 }
 export interface GetTelemetryMetadata {
   readonly assessmentRunArn: string;
 }
 export interface ListAssessmentRunAgents {
   readonly assessmentRunArn: string;
-  readonly filter: AgentFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly filter?: AgentFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAssessmentRuns {
-  readonly assessmentTemplateArns: [];
-  readonly filter: AssessmentRunFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly assessmentTemplateArns?: [];
+  readonly filter?: AssessmentRunFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAssessmentTargets {
-  readonly filter: AssessmentTargetFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly filter?: AssessmentTargetFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAssessmentTemplates {
-  readonly assessmentTargetArns: [];
-  readonly filter: AssessmentTemplateFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly assessmentTargetArns?: [];
+  readonly filter?: AssessmentTemplateFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListEventSubscriptions {
-  readonly resourceArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly resourceArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListExclusions {
   readonly assessmentRunArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListFindings {
-  readonly assessmentRunArns: [];
-  readonly filter: FindingFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly assessmentRunArns?: [];
+  readonly filter?: FindingFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListRulesPackages {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface PreviewAgents {
   readonly previewAgentsArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface RegisterCrossAccountAccessRole {
   readonly roleArn: string;
@@ -130,15 +130,15 @@ export interface RemoveAttributesFromFindings {
 }
 export interface SetTagsForResource {
   readonly resourceArn: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface StartAssessmentRun {
   readonly assessmentTemplateArn: string;
-  readonly assessmentRunName: string;
+  readonly assessmentRunName?: string;
 }
 export interface StopAssessmentRun {
   readonly assessmentRunArn: string;
-  readonly stopAction: string;
+  readonly stopAction?: string;
 }
 export interface SubscribeToEvent {
   readonly resourceArn: string;
@@ -153,7 +153,7 @@ export interface UnsubscribeFromEvent {
 export interface UpdateAssessmentTarget {
   readonly assessmentTargetArn: string;
   readonly assessmentTargetName: string;
-  readonly resourceGroupArn: string;
+  readonly resourceGroupArn?: string;
 }
 
 

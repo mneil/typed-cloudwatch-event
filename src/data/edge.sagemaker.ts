@@ -6,8 +6,8 @@ export interface GetDeviceRegistration {
   readonly DeviceFleetName: string;
 }
 export interface SendHeartbeat {
-  readonly AgentMetrics: [];
-  readonly Models: [];
+  readonly AgentMetrics?: [];
+  readonly Models?: [];
   readonly AgentVersion: string;
   readonly DeviceName: string;
   readonly DeviceFleetName: string;

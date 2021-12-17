@@ -3,30 +3,30 @@
  */
 export interface AssociateTeamMember {
   readonly projectId: string;
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
   readonly userArn: string;
   readonly projectRole: string;
-  readonly remoteAccessAllowed: boolean;
+  readonly remoteAccessAllowed?: boolean;
 }
 export interface CreateProject {
   readonly name: string;
   readonly id: string;
-  readonly description: string;
-  readonly clientRequestToken: string;
-  readonly sourceCode: [];
-  readonly toolchain: Toolchain;
-  readonly tags: {[key: string]: any};
+  readonly description?: string;
+  readonly clientRequestToken?: string;
+  readonly sourceCode?: [];
+  readonly toolchain?: Toolchain;
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateUserProfile {
   readonly userArn: string;
   readonly displayName: string;
   readonly emailAddress: string;
-  readonly sshPublicKey: string;
+  readonly sshPublicKey?: string;
 }
 export interface DeleteProject {
   readonly id: string;
-  readonly clientRequestToken: string;
-  readonly deleteStack: boolean;
+  readonly clientRequestToken?: string;
+  readonly deleteStack?: boolean;
 }
 export interface DeleteUserProfile {
   readonly userArn: string;
@@ -42,27 +42,27 @@ export interface DisassociateTeamMember {
   readonly userArn: string;
 }
 export interface ListProjects {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListResources {
   readonly projectId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForProject {
   readonly id: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTeamMembers {
   readonly projectId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListUserProfiles {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface TagProject {
   readonly id: string;
@@ -74,20 +74,20 @@ export interface UntagProject {
 }
 export interface UpdateProject {
   readonly id: string;
-  readonly name: string;
-  readonly description: string;
+  readonly name?: string;
+  readonly description?: string;
 }
 export interface UpdateTeamMember {
   readonly projectId: string;
   readonly userArn: string;
-  readonly projectRole: string;
-  readonly remoteAccessAllowed: boolean;
+  readonly projectRole?: string;
+  readonly remoteAccessAllowed?: boolean;
 }
 export interface UpdateUserProfile {
   readonly userArn: string;
-  readonly displayName: string;
-  readonly emailAddress: string;
-  readonly sshPublicKey: string;
+  readonly displayName?: string;
+  readonly emailAddress?: string;
+  readonly sshPublicKey?: string;
 }
 
 

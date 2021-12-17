@@ -10,30 +10,30 @@ export interface BackTestAnomalyDetector {
 export interface CreateAlert {
   readonly AlertName: string;
   readonly AlertSensitivityThreshold: number;
-  readonly AlertDescription: string;
+  readonly AlertDescription?: string;
   readonly AnomalyDetectorArn: string;
   readonly Action: Action;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateAnomalyDetector {
   readonly AnomalyDetectorName: string;
-  readonly AnomalyDetectorDescription: string;
+  readonly AnomalyDetectorDescription?: string;
   readonly AnomalyDetectorConfig: AnomalyDetectorConfig;
-  readonly KmsKeyArn: string;
-  readonly Tags: {[key: string]: any};
+  readonly KmsKeyArn?: string;
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateMetricSet {
   readonly AnomalyDetectorArn: string;
   readonly MetricSetName: string;
-  readonly MetricSetDescription: string;
+  readonly MetricSetDescription?: string;
   readonly MetricList: [];
-  readonly Offset: number;
-  readonly TimestampColumn: TimestampColumn;
-  readonly DimensionList: [];
-  readonly MetricSetFrequency: string;
+  readonly Offset?: number;
+  readonly TimestampColumn?: TimestampColumn;
+  readonly DimensionList?: [];
+  readonly MetricSetFrequency?: string;
   readonly MetricSource: MetricSource;
-  readonly Timezone: string;
-  readonly Tags: {[key: string]: any};
+  readonly Timezone?: string;
+  readonly Tags?: {[key: string]: any};
 }
 export interface DeleteAlert {
   readonly AlertArn: string;
@@ -46,9 +46,9 @@ export interface DescribeAlert {
 }
 export interface DescribeAnomalyDetectionExecutions {
   readonly AnomalyDetectorArn: string;
-  readonly Timestamp: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Timestamp?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeAnomalyDetector {
   readonly AnomalyDetectorArn: string;
@@ -63,38 +63,38 @@ export interface GetAnomalyGroup {
 export interface GetFeedback {
   readonly AnomalyDetectorArn: string;
   readonly AnomalyGroupTimeSeriesFeedback: AnomalyGroupTimeSeries;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetSampleData {
-  readonly S3SourceConfig: SampleDataS3SourceConfig;
+  readonly S3SourceConfig?: SampleDataS3SourceConfig;
 }
 export interface ListAlerts {
-  readonly AnomalyDetectorArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly AnomalyDetectorArn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListAnomalyDetectors {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListAnomalyGroupSummaries {
   readonly AnomalyDetectorArn: string;
   readonly SensitivityThreshold: number;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListAnomalyGroupTimeSeries {
   readonly AnomalyDetectorArn: string;
   readonly AnomalyGroupId: string;
   readonly MetricName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListMetricSets {
-  readonly AnomalyDetectorArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly AnomalyDetectorArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -113,19 +113,19 @@ export interface UntagResource {
 }
 export interface UpdateAnomalyDetector {
   readonly AnomalyDetectorArn: string;
-  readonly KmsKeyArn: string;
-  readonly AnomalyDetectorDescription: string;
-  readonly AnomalyDetectorConfig: AnomalyDetectorConfig;
+  readonly KmsKeyArn?: string;
+  readonly AnomalyDetectorDescription?: string;
+  readonly AnomalyDetectorConfig?: AnomalyDetectorConfig;
 }
 export interface UpdateMetricSet {
   readonly MetricSetArn: string;
-  readonly MetricSetDescription: string;
-  readonly MetricList: [];
-  readonly Offset: number;
-  readonly TimestampColumn: TimestampColumn;
-  readonly DimensionList: [];
-  readonly MetricSetFrequency: string;
-  readonly MetricSource: MetricSource;
+  readonly MetricSetDescription?: string;
+  readonly MetricList?: [];
+  readonly Offset?: number;
+  readonly TimestampColumn?: TimestampColumn;
+  readonly DimensionList?: [];
+  readonly MetricSetFrequency?: string;
+  readonly MetricSource?: MetricSource;
 }
 
 

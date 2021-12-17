@@ -7,11 +7,11 @@ export interface AssignInstance {
 }
 export interface AssignVolume {
   readonly VolumeId: string;
-  readonly InstanceId: string;
+  readonly InstanceId?: string;
 }
 export interface AssociateElasticIp {
   readonly ElasticIp: string;
-  readonly InstanceId: string;
+  readonly InstanceId?: string;
 }
 export interface AttachElasticLoadBalancer {
   readonly ElasticLoadBalancerName: string;
@@ -19,125 +19,125 @@ export interface AttachElasticLoadBalancer {
 }
 export interface CloneStack {
   readonly SourceStackId: string;
-  readonly Name: string;
-  readonly Region: string;
-  readonly VpcId: string;
-  readonly Attributes: {[key: string]: any};
+  readonly Name?: string;
+  readonly Region?: string;
+  readonly VpcId?: string;
+  readonly Attributes?: {[key: string]: any};
   readonly ServiceRoleArn: string;
-  readonly DefaultInstanceProfileArn: string;
-  readonly DefaultOs: string;
-  readonly HostnameTheme: string;
-  readonly DefaultAvailabilityZone: string;
-  readonly DefaultSubnetId: string;
-  readonly CustomJson: string;
-  readonly ConfigurationManager: StackConfigurationManager;
-  readonly ChefConfiguration: ChefConfiguration;
-  readonly UseCustomCookbooks: boolean;
-  readonly UseOpsworksSecurityGroups: boolean;
-  readonly CustomCookbooksSource: Source;
-  readonly DefaultSshKeyName: string;
-  readonly ClonePermissions: boolean;
-  readonly CloneAppIds: [];
-  readonly DefaultRootDeviceType: string;
-  readonly AgentVersion: string;
+  readonly DefaultInstanceProfileArn?: string;
+  readonly DefaultOs?: string;
+  readonly HostnameTheme?: string;
+  readonly DefaultAvailabilityZone?: string;
+  readonly DefaultSubnetId?: string;
+  readonly CustomJson?: string;
+  readonly ConfigurationManager?: StackConfigurationManager;
+  readonly ChefConfiguration?: ChefConfiguration;
+  readonly UseCustomCookbooks?: boolean;
+  readonly UseOpsworksSecurityGroups?: boolean;
+  readonly CustomCookbooksSource?: Source;
+  readonly DefaultSshKeyName?: string;
+  readonly ClonePermissions?: boolean;
+  readonly CloneAppIds?: [];
+  readonly DefaultRootDeviceType?: string;
+  readonly AgentVersion?: string;
 }
 export interface CreateApp {
   readonly StackId: string;
-  readonly Shortname: string;
+  readonly Shortname?: string;
   readonly Name: string;
-  readonly Description: string;
-  readonly DataSources: [];
+  readonly Description?: string;
+  readonly DataSources?: [];
   readonly Type: string;
-  readonly AppSource: Source;
-  readonly Domains: [];
-  readonly EnableSsl: boolean;
-  readonly SslConfiguration: SslConfiguration;
-  readonly Attributes: {[key: string]: any};
-  readonly Environment: [];
+  readonly AppSource?: Source;
+  readonly Domains?: [];
+  readonly EnableSsl?: boolean;
+  readonly SslConfiguration?: SslConfiguration;
+  readonly Attributes?: {[key: string]: any};
+  readonly Environment?: [];
 }
 export interface CreateDeployment {
   readonly StackId: string;
-  readonly AppId: string;
-  readonly InstanceIds: [];
-  readonly LayerIds: [];
+  readonly AppId?: string;
+  readonly InstanceIds?: [];
+  readonly LayerIds?: [];
   readonly Command: DeploymentCommand;
-  readonly Comment: string;
-  readonly CustomJson: string;
+  readonly Comment?: string;
+  readonly CustomJson?: string;
 }
 export interface CreateInstance {
   readonly StackId: string;
   readonly LayerIds: [];
   readonly InstanceType: string;
-  readonly AutoScalingType: string;
-  readonly Hostname: string;
-  readonly Os: string;
-  readonly AmiId: string;
-  readonly SshKeyName: string;
-  readonly AvailabilityZone: string;
-  readonly VirtualizationType: string;
-  readonly SubnetId: string;
-  readonly Architecture: string;
-  readonly RootDeviceType: string;
-  readonly BlockDeviceMappings: [];
-  readonly InstallUpdatesOnBoot: boolean;
-  readonly EbsOptimized: boolean;
-  readonly AgentVersion: string;
-  readonly Tenancy: string;
+  readonly AutoScalingType?: string;
+  readonly Hostname?: string;
+  readonly Os?: string;
+  readonly AmiId?: string;
+  readonly SshKeyName?: string;
+  readonly AvailabilityZone?: string;
+  readonly VirtualizationType?: string;
+  readonly SubnetId?: string;
+  readonly Architecture?: string;
+  readonly RootDeviceType?: string;
+  readonly BlockDeviceMappings?: [];
+  readonly InstallUpdatesOnBoot?: boolean;
+  readonly EbsOptimized?: boolean;
+  readonly AgentVersion?: string;
+  readonly Tenancy?: string;
 }
 export interface CreateLayer {
   readonly StackId: string;
   readonly Type: string;
   readonly Name: string;
   readonly Shortname: string;
-  readonly Attributes: {[key: string]: any};
-  readonly CloudWatchLogsConfiguration: CloudWatchLogsConfiguration;
-  readonly CustomInstanceProfileArn: string;
-  readonly CustomJson: string;
-  readonly CustomSecurityGroupIds: [];
-  readonly Packages: [];
-  readonly VolumeConfigurations: [];
-  readonly EnableAutoHealing: boolean;
-  readonly AutoAssignElasticIps: boolean;
-  readonly AutoAssignPublicIps: boolean;
-  readonly CustomRecipes: Recipes;
-  readonly InstallUpdatesOnBoot: boolean;
-  readonly UseEbsOptimizedInstances: boolean;
-  readonly LifecycleEventConfiguration: LifecycleEventConfiguration;
+  readonly Attributes?: {[key: string]: any};
+  readonly CloudWatchLogsConfiguration?: CloudWatchLogsConfiguration;
+  readonly CustomInstanceProfileArn?: string;
+  readonly CustomJson?: string;
+  readonly CustomSecurityGroupIds?: [];
+  readonly Packages?: [];
+  readonly VolumeConfigurations?: [];
+  readonly EnableAutoHealing?: boolean;
+  readonly AutoAssignElasticIps?: boolean;
+  readonly AutoAssignPublicIps?: boolean;
+  readonly CustomRecipes?: Recipes;
+  readonly InstallUpdatesOnBoot?: boolean;
+  readonly UseEbsOptimizedInstances?: boolean;
+  readonly LifecycleEventConfiguration?: LifecycleEventConfiguration;
 }
 export interface CreateStack {
   readonly Name: string;
   readonly Region: string;
-  readonly VpcId: string;
-  readonly Attributes: {[key: string]: any};
+  readonly VpcId?: string;
+  readonly Attributes?: {[key: string]: any};
   readonly ServiceRoleArn: string;
   readonly DefaultInstanceProfileArn: string;
-  readonly DefaultOs: string;
-  readonly HostnameTheme: string;
-  readonly DefaultAvailabilityZone: string;
-  readonly DefaultSubnetId: string;
-  readonly CustomJson: string;
-  readonly ConfigurationManager: StackConfigurationManager;
-  readonly ChefConfiguration: ChefConfiguration;
-  readonly UseCustomCookbooks: boolean;
-  readonly UseOpsworksSecurityGroups: boolean;
-  readonly CustomCookbooksSource: Source;
-  readonly DefaultSshKeyName: string;
-  readonly DefaultRootDeviceType: string;
-  readonly AgentVersion: string;
+  readonly DefaultOs?: string;
+  readonly HostnameTheme?: string;
+  readonly DefaultAvailabilityZone?: string;
+  readonly DefaultSubnetId?: string;
+  readonly CustomJson?: string;
+  readonly ConfigurationManager?: StackConfigurationManager;
+  readonly ChefConfiguration?: ChefConfiguration;
+  readonly UseCustomCookbooks?: boolean;
+  readonly UseOpsworksSecurityGroups?: boolean;
+  readonly CustomCookbooksSource?: Source;
+  readonly DefaultSshKeyName?: string;
+  readonly DefaultRootDeviceType?: string;
+  readonly AgentVersion?: string;
 }
 export interface CreateUserProfile {
   readonly IamUserArn: string;
-  readonly SshUsername: string;
-  readonly SshPublicKey: string;
-  readonly AllowSelfManagement: boolean;
+  readonly SshUsername?: string;
+  readonly SshPublicKey?: string;
+  readonly AllowSelfManagement?: boolean;
 }
 export interface DeleteApp {
   readonly AppId: string;
 }
 export interface DeleteInstance {
   readonly InstanceId: string;
-  readonly DeleteElasticIp: boolean;
-  readonly DeleteVolumes: boolean;
+  readonly DeleteElasticIp?: boolean;
+  readonly DeleteVolumes?: boolean;
 }
 export interface DeleteLayer {
   readonly LayerId: string;
@@ -164,67 +164,67 @@ export interface DeregisterVolume {
   readonly VolumeId: string;
 }
 export interface DescribeAgentVersions {
-  readonly StackId: string;
-  readonly ConfigurationManager: StackConfigurationManager;
+  readonly StackId?: string;
+  readonly ConfigurationManager?: StackConfigurationManager;
 }
 export interface DescribeApps {
-  readonly StackId: string;
-  readonly AppIds: [];
+  readonly StackId?: string;
+  readonly AppIds?: [];
 }
 export interface DescribeCommands {
-  readonly DeploymentId: string;
-  readonly InstanceId: string;
-  readonly CommandIds: [];
+  readonly DeploymentId?: string;
+  readonly InstanceId?: string;
+  readonly CommandIds?: [];
 }
 export interface DescribeDeployments {
-  readonly StackId: string;
-  readonly AppId: string;
-  readonly DeploymentIds: [];
+  readonly StackId?: string;
+  readonly AppId?: string;
+  readonly DeploymentIds?: [];
 }
 export interface DescribeEcsClusters {
-  readonly EcsClusterArns: [];
-  readonly StackId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly EcsClusterArns?: [];
+  readonly StackId?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeElasticIps {
-  readonly InstanceId: string;
-  readonly StackId: string;
-  readonly Ips: [];
+  readonly InstanceId?: string;
+  readonly StackId?: string;
+  readonly Ips?: [];
 }
 export interface DescribeElasticLoadBalancers {
-  readonly StackId: string;
-  readonly LayerIds: [];
+  readonly StackId?: string;
+  readonly LayerIds?: [];
 }
 export interface DescribeInstances {
-  readonly StackId: string;
-  readonly LayerId: string;
-  readonly InstanceIds: [];
+  readonly StackId?: string;
+  readonly LayerId?: string;
+  readonly InstanceIds?: [];
 }
 export interface DescribeLayers {
-  readonly StackId: string;
-  readonly LayerIds: [];
+  readonly StackId?: string;
+  readonly LayerIds?: [];
 }
 export interface DescribeLoadBasedAutoScaling {
   readonly LayerIds: [];
 }
 export interface DescribePermissions {
-  readonly IamUserArn: string;
-  readonly StackId: string;
+  readonly IamUserArn?: string;
+  readonly StackId?: string;
 }
 export interface DescribeRaidArrays {
-  readonly InstanceId: string;
-  readonly StackId: string;
-  readonly RaidArrayIds: [];
+  readonly InstanceId?: string;
+  readonly StackId?: string;
+  readonly RaidArrayIds?: [];
 }
 export interface DescribeRdsDbInstances {
   readonly StackId: string;
-  readonly RdsDbInstanceArns: [];
+  readonly RdsDbInstanceArns?: [];
 }
 export interface DescribeServiceErrors {
-  readonly StackId: string;
-  readonly InstanceId: string;
-  readonly ServiceErrorIds: [];
+  readonly StackId?: string;
+  readonly InstanceId?: string;
+  readonly ServiceErrorIds?: [];
 }
 export interface DescribeStackProvisioningParameters {
   readonly StackId: string;
@@ -233,19 +233,19 @@ export interface DescribeStackSummary {
   readonly StackId: string;
 }
 export interface DescribeStacks {
-  readonly StackIds: [];
+  readonly StackIds?: [];
 }
 export interface DescribeTimeBasedAutoScaling {
   readonly InstanceIds: [];
 }
 export interface DescribeUserProfiles {
-  readonly IamUserArns: [];
+  readonly IamUserArns?: [];
 }
 export interface DescribeVolumes {
-  readonly InstanceId: string;
-  readonly StackId: string;
-  readonly RaidArrayId: string;
-  readonly VolumeIds: [];
+  readonly InstanceId?: string;
+  readonly StackId?: string;
+  readonly RaidArrayId?: string;
+  readonly VolumeIds?: [];
 }
 export interface DetachElasticLoadBalancer {
   readonly ElasticLoadBalancerName: string;
@@ -259,12 +259,12 @@ export interface GetHostnameSuggestion {
 }
 export interface GrantAccess {
   readonly InstanceId: string;
-  readonly ValidForInMinutes: number;
+  readonly ValidForInMinutes?: number;
 }
 export interface ListTags {
   readonly ResourceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface RebootInstance {
   readonly InstanceId: string;
@@ -279,12 +279,12 @@ export interface RegisterElasticIp {
 }
 export interface RegisterInstance {
   readonly StackId: string;
-  readonly Hostname: string;
-  readonly PublicIp: string;
-  readonly PrivateIp: string;
-  readonly RsaPublicKey: string;
-  readonly RsaPublicKeyFingerprint: string;
-  readonly InstanceIdentity: InstanceIdentity;
+  readonly Hostname?: string;
+  readonly PublicIp?: string;
+  readonly PrivateIp?: string;
+  readonly RsaPublicKey?: string;
+  readonly RsaPublicKeyFingerprint?: string;
+  readonly InstanceIdentity?: InstanceIdentity;
 }
 export interface RegisterRdsDbInstance {
   readonly StackId: string;
@@ -293,25 +293,25 @@ export interface RegisterRdsDbInstance {
   readonly DbPassword: string;
 }
 export interface RegisterVolume {
-  readonly Ec2VolumeId: string;
+  readonly Ec2VolumeId?: string;
   readonly StackId: string;
 }
 export interface SetLoadBasedAutoScaling {
   readonly LayerId: string;
-  readonly Enable: boolean;
-  readonly UpScaling: AutoScalingThresholds;
-  readonly DownScaling: AutoScalingThresholds;
+  readonly Enable?: boolean;
+  readonly UpScaling?: AutoScalingThresholds;
+  readonly DownScaling?: AutoScalingThresholds;
 }
 export interface SetPermission {
   readonly StackId: string;
   readonly IamUserArn: string;
-  readonly AllowSsh: boolean;
-  readonly AllowSudo: boolean;
-  readonly Level: string;
+  readonly AllowSsh?: boolean;
+  readonly AllowSudo?: boolean;
+  readonly Level?: string;
 }
 export interface SetTimeBasedAutoScaling {
   readonly InstanceId: string;
-  readonly AutoScalingSchedule: WeeklyAutoScalingSchedule;
+  readonly AutoScalingSchedule?: WeeklyAutoScalingSchedule;
 }
 export interface StartInstance {
   readonly InstanceId: string;
@@ -321,7 +321,7 @@ export interface StartStack {
 }
 export interface StopInstance {
   readonly InstanceId: string;
-  readonly Force: boolean;
+  readonly Force?: boolean;
 }
 export interface StopStack {
   readonly StackId: string;
@@ -342,92 +342,92 @@ export interface UntagResource {
 }
 export interface UpdateApp {
   readonly AppId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly DataSources: [];
-  readonly Type: string;
-  readonly AppSource: Source;
-  readonly Domains: [];
-  readonly EnableSsl: boolean;
-  readonly SslConfiguration: SslConfiguration;
-  readonly Attributes: {[key: string]: any};
-  readonly Environment: [];
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly DataSources?: [];
+  readonly Type?: string;
+  readonly AppSource?: Source;
+  readonly Domains?: [];
+  readonly EnableSsl?: boolean;
+  readonly SslConfiguration?: SslConfiguration;
+  readonly Attributes?: {[key: string]: any};
+  readonly Environment?: [];
 }
 export interface UpdateElasticIp {
   readonly ElasticIp: string;
-  readonly Name: string;
+  readonly Name?: string;
 }
 export interface UpdateInstance {
   readonly InstanceId: string;
-  readonly LayerIds: [];
-  readonly InstanceType: string;
-  readonly AutoScalingType: string;
-  readonly Hostname: string;
-  readonly Os: string;
-  readonly AmiId: string;
-  readonly SshKeyName: string;
-  readonly Architecture: string;
-  readonly InstallUpdatesOnBoot: boolean;
-  readonly EbsOptimized: boolean;
-  readonly AgentVersion: string;
+  readonly LayerIds?: [];
+  readonly InstanceType?: string;
+  readonly AutoScalingType?: string;
+  readonly Hostname?: string;
+  readonly Os?: string;
+  readonly AmiId?: string;
+  readonly SshKeyName?: string;
+  readonly Architecture?: string;
+  readonly InstallUpdatesOnBoot?: boolean;
+  readonly EbsOptimized?: boolean;
+  readonly AgentVersion?: string;
 }
 export interface UpdateLayer {
   readonly LayerId: string;
-  readonly Name: string;
-  readonly Shortname: string;
-  readonly Attributes: {[key: string]: any};
-  readonly CloudWatchLogsConfiguration: CloudWatchLogsConfiguration;
-  readonly CustomInstanceProfileArn: string;
-  readonly CustomJson: string;
-  readonly CustomSecurityGroupIds: [];
-  readonly Packages: [];
-  readonly VolumeConfigurations: [];
-  readonly EnableAutoHealing: boolean;
-  readonly AutoAssignElasticIps: boolean;
-  readonly AutoAssignPublicIps: boolean;
-  readonly CustomRecipes: Recipes;
-  readonly InstallUpdatesOnBoot: boolean;
-  readonly UseEbsOptimizedInstances: boolean;
-  readonly LifecycleEventConfiguration: LifecycleEventConfiguration;
+  readonly Name?: string;
+  readonly Shortname?: string;
+  readonly Attributes?: {[key: string]: any};
+  readonly CloudWatchLogsConfiguration?: CloudWatchLogsConfiguration;
+  readonly CustomInstanceProfileArn?: string;
+  readonly CustomJson?: string;
+  readonly CustomSecurityGroupIds?: [];
+  readonly Packages?: [];
+  readonly VolumeConfigurations?: [];
+  readonly EnableAutoHealing?: boolean;
+  readonly AutoAssignElasticIps?: boolean;
+  readonly AutoAssignPublicIps?: boolean;
+  readonly CustomRecipes?: Recipes;
+  readonly InstallUpdatesOnBoot?: boolean;
+  readonly UseEbsOptimizedInstances?: boolean;
+  readonly LifecycleEventConfiguration?: LifecycleEventConfiguration;
 }
 export interface UpdateMyUserProfile {
-  readonly SshPublicKey: string;
+  readonly SshPublicKey?: string;
 }
 export interface UpdateRdsDbInstance {
   readonly RdsDbInstanceArn: string;
-  readonly DbUser: string;
-  readonly DbPassword: string;
+  readonly DbUser?: string;
+  readonly DbPassword?: string;
 }
 export interface UpdateStack {
   readonly StackId: string;
-  readonly Name: string;
-  readonly Attributes: {[key: string]: any};
-  readonly ServiceRoleArn: string;
-  readonly DefaultInstanceProfileArn: string;
-  readonly DefaultOs: string;
-  readonly HostnameTheme: string;
-  readonly DefaultAvailabilityZone: string;
-  readonly DefaultSubnetId: string;
-  readonly CustomJson: string;
-  readonly ConfigurationManager: StackConfigurationManager;
-  readonly ChefConfiguration: ChefConfiguration;
-  readonly UseCustomCookbooks: boolean;
-  readonly CustomCookbooksSource: Source;
-  readonly DefaultSshKeyName: string;
-  readonly DefaultRootDeviceType: string;
-  readonly UseOpsworksSecurityGroups: boolean;
-  readonly AgentVersion: string;
+  readonly Name?: string;
+  readonly Attributes?: {[key: string]: any};
+  readonly ServiceRoleArn?: string;
+  readonly DefaultInstanceProfileArn?: string;
+  readonly DefaultOs?: string;
+  readonly HostnameTheme?: string;
+  readonly DefaultAvailabilityZone?: string;
+  readonly DefaultSubnetId?: string;
+  readonly CustomJson?: string;
+  readonly ConfigurationManager?: StackConfigurationManager;
+  readonly ChefConfiguration?: ChefConfiguration;
+  readonly UseCustomCookbooks?: boolean;
+  readonly CustomCookbooksSource?: Source;
+  readonly DefaultSshKeyName?: string;
+  readonly DefaultRootDeviceType?: string;
+  readonly UseOpsworksSecurityGroups?: boolean;
+  readonly AgentVersion?: string;
 }
 export interface UpdateUserProfile {
   readonly IamUserArn: string;
-  readonly SshUsername: string;
-  readonly SshPublicKey: string;
-  readonly AllowSelfManagement: boolean;
+  readonly SshUsername?: string;
+  readonly SshPublicKey?: string;
+  readonly AllowSelfManagement?: boolean;
 }
 export interface UpdateVolume {
   readonly VolumeId: string;
-  readonly Name: string;
-  readonly MountPoint: string;
+  readonly Name?: string;
+  readonly MountPoint?: string;
 }
 
 

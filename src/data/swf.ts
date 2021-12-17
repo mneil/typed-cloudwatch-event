@@ -3,19 +3,19 @@
  */
 export interface CountClosedWorkflowExecutions {
   readonly domain: string;
-  readonly startTimeFilter: ExecutionTimeFilter;
-  readonly closeTimeFilter: ExecutionTimeFilter;
-  readonly executionFilter: WorkflowExecutionFilter;
-  readonly typeFilter: WorkflowTypeFilter;
-  readonly tagFilter: TagFilter;
-  readonly closeStatusFilter: CloseStatusFilter;
+  readonly startTimeFilter?: ExecutionTimeFilter;
+  readonly closeTimeFilter?: ExecutionTimeFilter;
+  readonly executionFilter?: WorkflowExecutionFilter;
+  readonly typeFilter?: WorkflowTypeFilter;
+  readonly tagFilter?: TagFilter;
+  readonly closeStatusFilter?: CloseStatusFilter;
 }
 export interface CountOpenWorkflowExecutions {
   readonly domain: string;
   readonly startTimeFilter: ExecutionTimeFilter;
-  readonly typeFilter: WorkflowTypeFilter;
-  readonly tagFilter: TagFilter;
-  readonly executionFilter: WorkflowExecutionFilter;
+  readonly typeFilter?: WorkflowTypeFilter;
+  readonly tagFilter?: TagFilter;
+  readonly executionFilter?: WorkflowExecutionFilter;
 }
 export interface CountPendingActivityTasks {
   readonly domain: string;
@@ -54,146 +54,146 @@ export interface DescribeWorkflowType {
 export interface GetWorkflowExecutionHistory {
   readonly domain: string;
   readonly execution: WorkflowExecution;
-  readonly nextPageToken: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
+  readonly nextPageToken?: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
 }
 export interface ListActivityTypes {
   readonly domain: string;
-  readonly name: string;
+  readonly name?: string;
   readonly registrationStatus: string;
-  readonly nextPageToken: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
+  readonly nextPageToken?: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
 }
 export interface ListClosedWorkflowExecutions {
   readonly domain: string;
-  readonly startTimeFilter: ExecutionTimeFilter;
-  readonly closeTimeFilter: ExecutionTimeFilter;
-  readonly executionFilter: WorkflowExecutionFilter;
-  readonly closeStatusFilter: CloseStatusFilter;
-  readonly typeFilter: WorkflowTypeFilter;
-  readonly tagFilter: TagFilter;
-  readonly nextPageToken: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
+  readonly startTimeFilter?: ExecutionTimeFilter;
+  readonly closeTimeFilter?: ExecutionTimeFilter;
+  readonly executionFilter?: WorkflowExecutionFilter;
+  readonly closeStatusFilter?: CloseStatusFilter;
+  readonly typeFilter?: WorkflowTypeFilter;
+  readonly tagFilter?: TagFilter;
+  readonly nextPageToken?: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
 }
 export interface ListDomains {
-  readonly nextPageToken: string;
+  readonly nextPageToken?: string;
   readonly registrationStatus: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
 }
 export interface ListOpenWorkflowExecutions {
   readonly domain: string;
   readonly startTimeFilter: ExecutionTimeFilter;
-  readonly typeFilter: WorkflowTypeFilter;
-  readonly tagFilter: TagFilter;
-  readonly nextPageToken: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
-  readonly executionFilter: WorkflowExecutionFilter;
+  readonly typeFilter?: WorkflowTypeFilter;
+  readonly tagFilter?: TagFilter;
+  readonly nextPageToken?: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
+  readonly executionFilter?: WorkflowExecutionFilter;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface ListWorkflowTypes {
   readonly domain: string;
-  readonly name: string;
+  readonly name?: string;
   readonly registrationStatus: string;
-  readonly nextPageToken: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
+  readonly nextPageToken?: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
 }
 export interface PollForActivityTask {
   readonly domain: string;
   readonly taskList: TaskList;
-  readonly identity: string;
+  readonly identity?: string;
 }
 export interface PollForDecisionTask {
   readonly domain: string;
   readonly taskList: TaskList;
-  readonly identity: string;
-  readonly nextPageToken: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
+  readonly identity?: string;
+  readonly nextPageToken?: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
 }
 export interface RecordActivityTaskHeartbeat {
   readonly taskToken: string;
-  readonly details: string;
+  readonly details?: string;
 }
 export interface RegisterActivityType {
   readonly domain: string;
   readonly name: string;
   readonly version: string;
-  readonly description: string;
-  readonly defaultTaskStartToCloseTimeout: string;
-  readonly defaultTaskHeartbeatTimeout: string;
-  readonly defaultTaskList: TaskList;
-  readonly defaultTaskPriority: string;
-  readonly defaultTaskScheduleToStartTimeout: string;
-  readonly defaultTaskScheduleToCloseTimeout: string;
+  readonly description?: string;
+  readonly defaultTaskStartToCloseTimeout?: string;
+  readonly defaultTaskHeartbeatTimeout?: string;
+  readonly defaultTaskList?: TaskList;
+  readonly defaultTaskPriority?: string;
+  readonly defaultTaskScheduleToStartTimeout?: string;
+  readonly defaultTaskScheduleToCloseTimeout?: string;
 }
 export interface RegisterDomain {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly workflowExecutionRetentionPeriodInDays: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface RegisterWorkflowType {
   readonly domain: string;
   readonly name: string;
   readonly version: string;
-  readonly description: string;
-  readonly defaultTaskStartToCloseTimeout: string;
-  readonly defaultExecutionStartToCloseTimeout: string;
-  readonly defaultTaskList: TaskList;
-  readonly defaultTaskPriority: string;
-  readonly defaultChildPolicy: string;
-  readonly defaultLambdaRole: string;
+  readonly description?: string;
+  readonly defaultTaskStartToCloseTimeout?: string;
+  readonly defaultExecutionStartToCloseTimeout?: string;
+  readonly defaultTaskList?: TaskList;
+  readonly defaultTaskPriority?: string;
+  readonly defaultChildPolicy?: string;
+  readonly defaultLambdaRole?: string;
 }
 export interface RequestCancelWorkflowExecution {
   readonly domain: string;
   readonly workflowId: string;
-  readonly runId: string;
+  readonly runId?: string;
 }
 export interface RespondActivityTaskCanceled {
   readonly taskToken: string;
-  readonly details: string;
+  readonly details?: string;
 }
 export interface RespondActivityTaskCompleted {
   readonly taskToken: string;
-  readonly result: string;
+  readonly result?: string;
 }
 export interface RespondActivityTaskFailed {
   readonly taskToken: string;
-  readonly reason: string;
-  readonly details: string;
+  readonly reason?: string;
+  readonly details?: string;
 }
 export interface RespondDecisionTaskCompleted {
   readonly taskToken: string;
-  readonly decisions: [];
-  readonly executionContext: string;
+  readonly decisions?: [];
+  readonly executionContext?: string;
 }
 export interface SignalWorkflowExecution {
   readonly domain: string;
   readonly workflowId: string;
-  readonly runId: string;
+  readonly runId?: string;
   readonly signalName: string;
-  readonly input: string;
+  readonly input?: string;
 }
 export interface StartWorkflowExecution {
   readonly domain: string;
   readonly workflowId: string;
   readonly workflowType: WorkflowType;
-  readonly taskList: TaskList;
-  readonly taskPriority: string;
-  readonly input: string;
-  readonly executionStartToCloseTimeout: string;
-  readonly tagList: [];
-  readonly taskStartToCloseTimeout: string;
-  readonly childPolicy: string;
-  readonly lambdaRole: string;
+  readonly taskList?: TaskList;
+  readonly taskPriority?: string;
+  readonly input?: string;
+  readonly executionStartToCloseTimeout?: string;
+  readonly tagList?: [];
+  readonly taskStartToCloseTimeout?: string;
+  readonly childPolicy?: string;
+  readonly lambdaRole?: string;
 }
 export interface TagResource {
   readonly resourceArn: string;
@@ -202,10 +202,10 @@ export interface TagResource {
 export interface TerminateWorkflowExecution {
   readonly domain: string;
   readonly workflowId: string;
-  readonly runId: string;
-  readonly reason: string;
-  readonly details: string;
-  readonly childPolicy: string;
+  readonly runId?: string;
+  readonly reason?: string;
+  readonly details?: string;
+  readonly childPolicy?: string;
 }
 export interface UndeprecateActivityType {
   readonly domain: string;

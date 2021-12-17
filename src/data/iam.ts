@@ -30,83 +30,83 @@ export interface ChangePassword {
   readonly NewPassword: string;
 }
 export interface CreateAccessKey {
-  readonly UserName: string;
+  readonly UserName?: string;
 }
 export interface CreateAccountAlias {
   readonly AccountAlias: string;
 }
 export interface CreateGroup {
-  readonly Path: string;
+  readonly Path?: string;
   readonly GroupName: string;
 }
 export interface CreateInstanceProfile {
   readonly InstanceProfileName: string;
-  readonly Path: string;
-  readonly Tags: [];
+  readonly Path?: string;
+  readonly Tags?: [];
 }
 export interface CreateLoginProfile {
   readonly UserName: string;
   readonly Password: string;
-  readonly PasswordResetRequired: boolean;
+  readonly PasswordResetRequired?: boolean;
 }
 export interface CreateOpenIDConnectProvider {
   readonly Url: string;
-  readonly ClientIDList: [];
+  readonly ClientIDList?: [];
   readonly ThumbprintList: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreatePolicy {
   readonly PolicyName: string;
-  readonly Path: string;
+  readonly Path?: string;
   readonly PolicyDocument: string;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 export interface CreatePolicyVersion {
   readonly PolicyArn: string;
   readonly PolicyDocument: string;
-  readonly SetAsDefault: boolean;
+  readonly SetAsDefault?: boolean;
 }
 export interface CreateRole {
-  readonly Path: string;
+  readonly Path?: string;
   readonly RoleName: string;
   readonly AssumeRolePolicyDocument: string;
-  readonly Description: string;
-  readonly MaxSessionDuration: number;
-  readonly PermissionsBoundary: string;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly MaxSessionDuration?: number;
+  readonly PermissionsBoundary?: string;
+  readonly Tags?: [];
 }
 export interface CreateSAMLProvider {
   readonly SAMLMetadataDocument: string;
   readonly Name: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateServiceLinkedRole {
   readonly AWSServiceName: string;
-  readonly Description: string;
-  readonly CustomSuffix: string;
+  readonly Description?: string;
+  readonly CustomSuffix?: string;
 }
 export interface CreateServiceSpecificCredential {
   readonly UserName: string;
   readonly ServiceName: string;
 }
 export interface CreateUser {
-  readonly Path: string;
+  readonly Path?: string;
   readonly UserName: string;
-  readonly PermissionsBoundary: string;
-  readonly Tags: [];
+  readonly PermissionsBoundary?: string;
+  readonly Tags?: [];
 }
 export interface CreateVirtualMFADevice {
-  readonly Path: string;
+  readonly Path?: string;
   readonly VirtualMFADeviceName: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface DeactivateMFADevice {
   readonly UserName: string;
   readonly SerialNumber: string;
 }
 export interface DeleteAccessKey {
-  readonly UserName: string;
+  readonly UserName?: string;
   readonly AccessKeyId: string;
 }
 export interface DeleteAccountAlias {
@@ -159,11 +159,11 @@ export interface DeleteServiceLinkedRole {
   readonly RoleName: string;
 }
 export interface DeleteServiceSpecificCredential {
-  readonly UserName: string;
+  readonly UserName?: string;
   readonly ServiceSpecificCredentialId: string;
 }
 export interface DeleteSigningCertificate {
-  readonly UserName: string;
+  readonly UserName?: string;
   readonly CertificateId: string;
 }
 export interface DeleteUser {
@@ -199,31 +199,31 @@ export interface EnableMFADevice {
 }
 export interface GenerateOrganizationsAccessReport {
   readonly EntityPath: string;
-  readonly OrganizationsPolicyId: string;
+  readonly OrganizationsPolicyId?: string;
 }
 export interface GenerateServiceLastAccessedDetails {
   readonly Arn: string;
-  readonly Granularity: string;
+  readonly Granularity?: string;
 }
 export interface GetAccessKeyLastUsed {
   readonly AccessKeyId: string;
 }
 export interface GetAccountAuthorizationDetails {
-  readonly Filter: [];
-  readonly MaxItems: number;
-  readonly Marker: string;
+  readonly Filter?: [];
+  readonly MaxItems?: number;
+  readonly Marker?: string;
 }
 export interface GetContextKeysForCustomPolicy {
   readonly PolicyInputList: [];
 }
 export interface GetContextKeysForPrincipalPolicy {
   readonly PolicySourceArn: string;
-  readonly PolicyInputList: [];
+  readonly PolicyInputList?: [];
 }
 export interface GetGroup {
   readonly GroupName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface GetGroupPolicy {
   readonly GroupName: string;
@@ -240,9 +240,9 @@ export interface GetOpenIDConnectProvider {
 }
 export interface GetOrganizationsAccessReport {
   readonly JobId: string;
-  readonly MaxItems: number;
-  readonly Marker: string;
-  readonly SortKey: string;
+  readonly MaxItems?: number;
+  readonly Marker?: string;
+  readonly SortKey?: string;
 }
 export interface GetPolicy {
   readonly PolicyArn: string;
@@ -271,195 +271,195 @@ export interface GetServerCertificate {
 }
 export interface GetServiceLastAccessedDetails {
   readonly JobId: string;
-  readonly MaxItems: number;
-  readonly Marker: string;
+  readonly MaxItems?: number;
+  readonly Marker?: string;
 }
 export interface GetServiceLastAccessedDetailsWithEntities {
   readonly JobId: string;
   readonly ServiceNamespace: string;
-  readonly MaxItems: number;
-  readonly Marker: string;
+  readonly MaxItems?: number;
+  readonly Marker?: string;
 }
 export interface GetServiceLinkedRoleDeletionStatus {
   readonly DeletionTaskId: string;
 }
 export interface GetUser {
-  readonly UserName: string;
+  readonly UserName?: string;
 }
 export interface GetUserPolicy {
   readonly UserName: string;
   readonly PolicyName: string;
 }
 export interface ListAccessKeys {
-  readonly UserName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly UserName?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListAccountAliases {
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListAttachedGroupPolicies {
   readonly GroupName: string;
-  readonly PathPrefix: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly PathPrefix?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListAttachedRolePolicies {
   readonly RoleName: string;
-  readonly PathPrefix: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly PathPrefix?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListAttachedUserPolicies {
   readonly UserName: string;
-  readonly PathPrefix: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly PathPrefix?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListEntitiesForPolicy {
   readonly PolicyArn: string;
-  readonly EntityFilter: string;
-  readonly PathPrefix: string;
-  readonly PolicyUsageFilter: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly EntityFilter?: string;
+  readonly PathPrefix?: string;
+  readonly PolicyUsageFilter?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListGroupPolicies {
   readonly GroupName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListGroups {
-  readonly PathPrefix: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly PathPrefix?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListGroupsForUser {
   readonly UserName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListInstanceProfileTags {
   readonly InstanceProfileName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListInstanceProfiles {
-  readonly PathPrefix: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly PathPrefix?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListInstanceProfilesForRole {
   readonly RoleName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListMFADeviceTags {
   readonly SerialNumber: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListMFADevices {
-  readonly UserName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly UserName?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListOpenIDConnectProviderTags {
   readonly OpenIDConnectProviderArn: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListOpenIDConnectProviders {
 }
 export interface ListPolicies {
-  readonly Scope: string;
-  readonly OnlyAttached: boolean;
-  readonly PathPrefix: string;
-  readonly PolicyUsageFilter: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Scope?: string;
+  readonly OnlyAttached?: boolean;
+  readonly PathPrefix?: string;
+  readonly PolicyUsageFilter?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListPoliciesGrantingServiceAccess {
-  readonly Marker: string;
+  readonly Marker?: string;
   readonly Arn: string;
   readonly ServiceNamespaces: [];
 }
 export interface ListPolicyTags {
   readonly PolicyArn: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListPolicyVersions {
   readonly PolicyArn: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListRolePolicies {
   readonly RoleName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListRoleTags {
   readonly RoleName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListRoles {
-  readonly PathPrefix: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly PathPrefix?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListSAMLProviderTags {
   readonly SAMLProviderArn: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListSAMLProviders {
 }
 export interface ListSSHPublicKeys {
-  readonly UserName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly UserName?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListServerCertificateTags {
   readonly ServerCertificateName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListServerCertificates {
-  readonly PathPrefix: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly PathPrefix?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListServiceSpecificCredentials {
-  readonly UserName: string;
-  readonly ServiceName: string;
+  readonly UserName?: string;
+  readonly ServiceName?: string;
 }
 export interface ListSigningCertificates {
-  readonly UserName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly UserName?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListUserPolicies {
   readonly UserName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListUserTags {
   readonly UserName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListUsers {
-  readonly PathPrefix: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly PathPrefix?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListVirtualMFADevices {
-  readonly AssignmentStatus: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly AssignmentStatus?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface PutGroupPolicy {
   readonly GroupName: string;
@@ -497,7 +497,7 @@ export interface RemoveUserFromGroup {
   readonly UserName: string;
 }
 export interface ResetServiceSpecificCredential {
-  readonly UserName: string;
+  readonly UserName?: string;
   readonly ServiceSpecificCredentialId: string;
 }
 export interface ResyncMFADevice {
@@ -515,30 +515,30 @@ export interface SetSecurityTokenServicePreferences {
 }
 export interface SimulateCustomPolicy {
   readonly PolicyInputList: [];
-  readonly PermissionsBoundaryPolicyInputList: [];
+  readonly PermissionsBoundaryPolicyInputList?: [];
   readonly ActionNames: [];
-  readonly ResourceArns: [];
-  readonly ResourcePolicy: string;
-  readonly ResourceOwner: string;
-  readonly CallerArn: string;
-  readonly ContextEntries: [];
-  readonly ResourceHandlingOption: string;
-  readonly MaxItems: number;
-  readonly Marker: string;
+  readonly ResourceArns?: [];
+  readonly ResourcePolicy?: string;
+  readonly ResourceOwner?: string;
+  readonly CallerArn?: string;
+  readonly ContextEntries?: [];
+  readonly ResourceHandlingOption?: string;
+  readonly MaxItems?: number;
+  readonly Marker?: string;
 }
 export interface SimulatePrincipalPolicy {
   readonly PolicySourceArn: string;
-  readonly PolicyInputList: [];
-  readonly PermissionsBoundaryPolicyInputList: [];
+  readonly PolicyInputList?: [];
+  readonly PermissionsBoundaryPolicyInputList?: [];
   readonly ActionNames: [];
-  readonly ResourceArns: [];
-  readonly ResourcePolicy: string;
-  readonly ResourceOwner: string;
-  readonly CallerArn: string;
-  readonly ContextEntries: [];
-  readonly ResourceHandlingOption: string;
-  readonly MaxItems: number;
-  readonly Marker: string;
+  readonly ResourceArns?: [];
+  readonly ResourcePolicy?: string;
+  readonly ResourceOwner?: string;
+  readonly CallerArn?: string;
+  readonly ContextEntries?: [];
+  readonly ResourceHandlingOption?: string;
+  readonly MaxItems?: number;
+  readonly Marker?: string;
 }
 export interface TagInstanceProfile {
   readonly InstanceProfileName: string;
@@ -605,20 +605,20 @@ export interface UntagUser {
   readonly TagKeys: [];
 }
 export interface UpdateAccessKey {
-  readonly UserName: string;
+  readonly UserName?: string;
   readonly AccessKeyId: string;
   readonly Status: string;
 }
 export interface UpdateAccountPasswordPolicy {
-  readonly MinimumPasswordLength: number;
-  readonly RequireSymbols: boolean;
-  readonly RequireNumbers: boolean;
-  readonly RequireUppercaseCharacters: boolean;
-  readonly RequireLowercaseCharacters: boolean;
-  readonly AllowUsersToChangePassword: boolean;
-  readonly MaxPasswordAge: number;
-  readonly PasswordReusePrevention: number;
-  readonly HardExpiry: boolean;
+  readonly MinimumPasswordLength?: number;
+  readonly RequireSymbols?: boolean;
+  readonly RequireNumbers?: boolean;
+  readonly RequireUppercaseCharacters?: boolean;
+  readonly RequireLowercaseCharacters?: boolean;
+  readonly AllowUsersToChangePassword?: boolean;
+  readonly MaxPasswordAge?: number;
+  readonly PasswordReusePrevention?: number;
+  readonly HardExpiry?: boolean;
 }
 export interface UpdateAssumeRolePolicy {
   readonly RoleName: string;
@@ -626,13 +626,13 @@ export interface UpdateAssumeRolePolicy {
 }
 export interface UpdateGroup {
   readonly GroupName: string;
-  readonly NewPath: string;
-  readonly NewGroupName: string;
+  readonly NewPath?: string;
+  readonly NewGroupName?: string;
 }
 export interface UpdateLoginProfile {
   readonly UserName: string;
-  readonly Password: string;
-  readonly PasswordResetRequired: boolean;
+  readonly Password?: string;
+  readonly PasswordResetRequired?: boolean;
 }
 export interface UpdateOpenIDConnectProviderThumbprint {
   readonly OpenIDConnectProviderArn: string;
@@ -640,8 +640,8 @@ export interface UpdateOpenIDConnectProviderThumbprint {
 }
 export interface UpdateRole {
   readonly RoleName: string;
-  readonly Description: string;
-  readonly MaxSessionDuration: number;
+  readonly Description?: string;
+  readonly MaxSessionDuration?: number;
 }
 export interface UpdateRoleDescription {
   readonly RoleName: string;
@@ -658,38 +658,38 @@ export interface UpdateSSHPublicKey {
 }
 export interface UpdateServerCertificate {
   readonly ServerCertificateName: string;
-  readonly NewPath: string;
-  readonly NewServerCertificateName: string;
+  readonly NewPath?: string;
+  readonly NewServerCertificateName?: string;
 }
 export interface UpdateServiceSpecificCredential {
-  readonly UserName: string;
+  readonly UserName?: string;
   readonly ServiceSpecificCredentialId: string;
   readonly Status: string;
 }
 export interface UpdateSigningCertificate {
-  readonly UserName: string;
+  readonly UserName?: string;
   readonly CertificateId: string;
   readonly Status: string;
 }
 export interface UpdateUser {
   readonly UserName: string;
-  readonly NewPath: string;
-  readonly NewUserName: string;
+  readonly NewPath?: string;
+  readonly NewUserName?: string;
 }
 export interface UploadSSHPublicKey {
   readonly UserName: string;
   readonly SSHPublicKeyBody: string;
 }
 export interface UploadServerCertificate {
-  readonly Path: string;
+  readonly Path?: string;
   readonly ServerCertificateName: string;
   readonly CertificateBody: string;
   readonly PrivateKey: string;
-  readonly CertificateChain: string;
-  readonly Tags: [];
+  readonly CertificateChain?: string;
+  readonly Tags?: [];
 }
 export interface UploadSigningCertificate {
-  readonly UserName: string;
+  readonly UserName?: string;
   readonly CertificateBody: string;
 }
 

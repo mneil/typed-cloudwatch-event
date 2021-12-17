@@ -3,23 +3,23 @@
  */
 export interface DescribeStream {
   readonly StreamArn: string;
-  readonly Limit: number;
-  readonly ExclusiveStartShardId: string;
+  readonly Limit?: number;
+  readonly ExclusiveStartShardId?: string;
 }
 export interface GetRecords {
   readonly ShardIterator: string;
-  readonly Limit: number;
+  readonly Limit?: number;
 }
 export interface GetShardIterator {
   readonly StreamArn: string;
   readonly ShardId: string;
   readonly ShardIteratorType: string;
-  readonly SequenceNumber: string;
+  readonly SequenceNumber?: string;
 }
 export interface ListStreams {
-  readonly TableName: string;
-  readonly Limit: number;
-  readonly ExclusiveStartStreamArn: string;
+  readonly TableName?: string;
+  readonly Limit?: number;
+  readonly ExclusiveStartStreamArn?: string;
 }
 
 

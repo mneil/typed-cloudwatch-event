@@ -9,7 +9,7 @@ export interface DescribeDevice {
 }
 export interface FinalizeDeviceClaim {
   readonly DeviceId: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface GetDeviceMethods {
   readonly DeviceId: string;
@@ -19,20 +19,20 @@ export interface InitiateDeviceClaim {
 }
 export interface InvokeDeviceMethod {
   readonly DeviceId: string;
-  readonly DeviceMethod: DeviceMethod;
-  readonly DeviceMethodParameters: string;
+  readonly DeviceMethod?: DeviceMethod;
+  readonly DeviceMethodParameters?: string;
 }
 export interface ListDeviceEvents {
   readonly DeviceId: string;
   readonly FromTimeStamp: Date;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ToTimeStamp: Date;
 }
 export interface ListDevices {
-  readonly DeviceType: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly DeviceType?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -50,7 +50,7 @@ export interface UntagResource {
 }
 export interface UpdateDeviceState {
   readonly DeviceId: string;
-  readonly Enabled: boolean;
+  readonly Enabled?: boolean;
 }
 
 

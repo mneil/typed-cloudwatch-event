@@ -3,60 +3,60 @@
  */
 export interface CreateConnectorProfile {
   readonly connectorProfileName: string;
-  readonly kmsArn: string;
+  readonly kmsArn?: string;
   readonly connectorType: string;
   readonly connectionMode: string;
   readonly connectorProfileConfig: ConnectorProfileConfig;
 }
 export interface CreateFlow {
   readonly flowName: string;
-  readonly description: string;
-  readonly kmsArn: string;
+  readonly description?: string;
+  readonly kmsArn?: string;
   readonly triggerConfig: TriggerConfig;
   readonly sourceFlowConfig: SourceFlowConfig;
   readonly destinationFlowConfigList: [];
   readonly tasks: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface DeleteConnectorProfile {
   readonly connectorProfileName: string;
-  readonly forceDelete: boolean;
+  readonly forceDelete?: boolean;
 }
 export interface DeleteFlow {
   readonly flowName: string;
-  readonly forceDelete: boolean;
+  readonly forceDelete?: boolean;
 }
 export interface DescribeConnectorEntity {
   readonly connectorEntityName: string;
-  readonly connectorType: string;
-  readonly connectorProfileName: string;
+  readonly connectorType?: string;
+  readonly connectorProfileName?: string;
 }
 export interface DescribeConnectorProfiles {
-  readonly connectorProfileNames: [];
-  readonly connectorType: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly connectorProfileNames?: [];
+  readonly connectorType?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeConnectors {
-  readonly connectorTypes: [];
-  readonly nextToken: string;
+  readonly connectorTypes?: [];
+  readonly nextToken?: string;
 }
 export interface DescribeFlow {
   readonly flowName: string;
 }
 export interface DescribeFlowExecutionRecords {
   readonly flowName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListConnectorEntities {
-  readonly connectorProfileName: string;
-  readonly connectorType: string;
-  readonly entitiesPath: string;
+  readonly connectorProfileName?: string;
+  readonly connectorType?: string;
+  readonly entitiesPath?: string;
 }
 export interface ListFlows {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -82,7 +82,7 @@ export interface UpdateConnectorProfile {
 }
 export interface UpdateFlow {
   readonly flowName: string;
-  readonly description: string;
+  readonly description?: string;
   readonly triggerConfig: TriggerConfig;
   readonly sourceFlowConfig: SourceFlowConfig;
   readonly destinationFlowConfigList: [];

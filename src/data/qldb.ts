@@ -7,10 +7,10 @@ export interface CancelJournalKinesisStream {
 }
 export interface CreateLedger {
   readonly Name: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
   readonly PermissionsMode: string;
-  readonly DeletionProtection: boolean;
-  readonly KmsKey: string;
+  readonly DeletionProtection?: boolean;
+  readonly KmsKey?: string;
 }
 export interface DeleteLedger {
   readonly Name: string;
@@ -36,7 +36,7 @@ export interface ExportJournalToS3 {
 export interface GetBlock {
   readonly Name: string;
   readonly BlockAddress: ValueHolder;
-  readonly DigestTipAddress: ValueHolder;
+  readonly DigestTipAddress?: ValueHolder;
 }
 export interface GetDigest {
   readonly Name: string;
@@ -45,25 +45,25 @@ export interface GetRevision {
   readonly Name: string;
   readonly BlockAddress: ValueHolder;
   readonly DocumentId: string;
-  readonly DigestTipAddress: ValueHolder;
+  readonly DigestTipAddress?: ValueHolder;
 }
 export interface ListJournalKinesisStreamsForLedger {
   readonly LedgerName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListJournalS3Exports {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListJournalS3ExportsForLedger {
   readonly Name: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListLedgers {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -71,9 +71,9 @@ export interface ListTagsForResource {
 export interface StreamJournalToKinesis {
   readonly LedgerName: string;
   readonly RoleArn: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
   readonly InclusiveStartTime: Date;
-  readonly ExclusiveEndTime: Date;
+  readonly ExclusiveEndTime?: Date;
   readonly KinesisConfiguration: KinesisConfiguration;
   readonly StreamName: string;
 }
@@ -87,8 +87,8 @@ export interface UntagResource {
 }
 export interface UpdateLedger {
   readonly Name: string;
-  readonly DeletionProtection: boolean;
-  readonly KmsKey: string;
+  readonly DeletionProtection?: boolean;
+  readonly KmsKey?: string;
 }
 export interface UpdateLedgerPermissionsMode {
   readonly Name: string;

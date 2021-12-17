@@ -11,8 +11,8 @@ export interface ImportApplicationUsage {
   readonly sourceS3Location: SourceS3Location;
 }
 export interface ListReportDefinitions {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface PutReportDefinition {
   readonly reportId: string;

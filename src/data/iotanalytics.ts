@@ -11,36 +11,36 @@ export interface CancelPipelineReprocessing {
 }
 export interface CreateChannel {
   readonly channelName: string;
-  readonly channelStorage: ChannelStorage;
-  readonly retentionPeriod: RetentionPeriod;
-  readonly tags: [];
+  readonly channelStorage?: ChannelStorage;
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly tags?: [];
 }
 export interface CreateDataset {
   readonly datasetName: string;
   readonly actions: [];
-  readonly triggers: [];
-  readonly contentDeliveryRules: [];
-  readonly retentionPeriod: RetentionPeriod;
-  readonly versioningConfiguration: VersioningConfiguration;
-  readonly tags: [];
-  readonly lateDataRules: [];
+  readonly triggers?: [];
+  readonly contentDeliveryRules?: [];
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly versioningConfiguration?: VersioningConfiguration;
+  readonly tags?: [];
+  readonly lateDataRules?: [];
 }
 export interface CreateDatasetContent {
   readonly datasetName: string;
-  readonly versionId: string;
+  readonly versionId?: string;
 }
 export interface CreateDatastore {
   readonly datastoreName: string;
-  readonly datastoreStorage: DatastoreStorage;
-  readonly retentionPeriod: RetentionPeriod;
-  readonly tags: [];
-  readonly fileFormatConfiguration: FileFormatConfiguration;
-  readonly datastorePartitions: DatastorePartitions;
+  readonly datastoreStorage?: DatastoreStorage;
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly tags?: [];
+  readonly fileFormatConfiguration?: FileFormatConfiguration;
+  readonly datastorePartitions?: DatastorePartitions;
 }
 export interface CreatePipeline {
   readonly pipelineName: string;
   readonly pipelineActivities: [];
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface DeleteChannel {
   readonly channelName: string;
@@ -50,7 +50,7 @@ export interface DeleteDataset {
 }
 export interface DeleteDatasetContent {
   readonly datasetName: string;
-  readonly versionId: string;
+  readonly versionId?: string;
 }
 export interface DeleteDatastore {
   readonly datastoreName: string;
@@ -60,14 +60,14 @@ export interface DeletePipeline {
 }
 export interface DescribeChannel {
   readonly channelName: string;
-  readonly includeStatistics: boolean;
+  readonly includeStatistics?: boolean;
 }
 export interface DescribeDataset {
   readonly datasetName: string;
 }
 export interface DescribeDatastore {
   readonly datastoreName: string;
-  readonly includeStatistics: boolean;
+  readonly includeStatistics?: boolean;
 }
 export interface DescribeLoggingOptions {
 }
@@ -76,30 +76,30 @@ export interface DescribePipeline {
 }
 export interface GetDatasetContent {
   readonly datasetName: string;
-  readonly versionId: string;
+  readonly versionId?: string;
 }
 export interface ListChannels {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDatasetContents {
   readonly datasetName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly scheduledOnOrAfter: Date;
-  readonly scheduledBefore: Date;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly scheduledOnOrAfter?: Date;
+  readonly scheduledBefore?: Date;
 }
 export interface ListDatasets {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDatastores {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListPipelines {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -113,15 +113,15 @@ export interface RunPipelineActivity {
 }
 export interface SampleChannelData {
   readonly channelName: string;
-  readonly maxMessages: number;
-  readonly startTime: Date;
-  readonly endTime: Date;
+  readonly maxMessages?: number;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
 }
 export interface StartPipelineReprocessing {
   readonly pipelineName: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly channelMessages: ChannelMessages;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly channelMessages?: ChannelMessages;
 }
 export interface TagResource {
   readonly resourceArn: string;
@@ -133,23 +133,23 @@ export interface UntagResource {
 }
 export interface UpdateChannel {
   readonly channelName: string;
-  readonly channelStorage: ChannelStorage;
-  readonly retentionPeriod: RetentionPeriod;
+  readonly channelStorage?: ChannelStorage;
+  readonly retentionPeriod?: RetentionPeriod;
 }
 export interface UpdateDataset {
   readonly datasetName: string;
   readonly actions: [];
-  readonly triggers: [];
-  readonly contentDeliveryRules: [];
-  readonly retentionPeriod: RetentionPeriod;
-  readonly versioningConfiguration: VersioningConfiguration;
-  readonly lateDataRules: [];
+  readonly triggers?: [];
+  readonly contentDeliveryRules?: [];
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly versioningConfiguration?: VersioningConfiguration;
+  readonly lateDataRules?: [];
 }
 export interface UpdateDatastore {
   readonly datastoreName: string;
-  readonly retentionPeriod: RetentionPeriod;
-  readonly datastoreStorage: DatastoreStorage;
-  readonly fileFormatConfiguration: FileFormatConfiguration;
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly datastoreStorage?: DatastoreStorage;
+  readonly fileFormatConfiguration?: FileFormatConfiguration;
 }
 export interface UpdatePipeline {
   readonly pipelineName: string;

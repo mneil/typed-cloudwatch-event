@@ -24,22 +24,22 @@ export interface BatchUpdateDetector {
 }
 export interface DescribeAlarm {
   readonly alarmModelName: string;
-  readonly keyValue: string;
+  readonly keyValue?: string;
 }
 export interface DescribeDetector {
   readonly detectorModelName: string;
-  readonly keyValue: string;
+  readonly keyValue?: string;
 }
 export interface ListAlarms {
   readonly alarmModelName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDetectors {
   readonly detectorModelName: string;
-  readonly stateName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly stateName?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
 

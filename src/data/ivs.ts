@@ -8,21 +8,21 @@ export interface BatchGetStreamKey {
   readonly arns: [];
 }
 export interface CreateChannel {
-  readonly authorized: boolean;
-  readonly latencyMode: string;
-  readonly name: string;
-  readonly recordingConfigurationArn: string;
-  readonly tags: {[key: string]: any};
-  readonly type: string;
+  readonly authorized?: boolean;
+  readonly latencyMode?: string;
+  readonly name?: string;
+  readonly recordingConfigurationArn?: string;
+  readonly tags?: {[key: string]: any};
+  readonly type?: string;
 }
 export interface CreateRecordingConfiguration {
   readonly destinationConfiguration: DestinationConfiguration;
-  readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly name?: string;
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateStreamKey {
   readonly channelArn: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface DeleteChannel {
   readonly arn: string;
@@ -53,41 +53,41 @@ export interface GetStreamKey {
 }
 export interface GetStreamSession {
   readonly channelArn: string;
-  readonly streamId: string;
+  readonly streamId?: string;
 }
 export interface ImportPlaybackKeyPair {
-  readonly name: string;
+  readonly name?: string;
   readonly publicKeyMaterial: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface ListChannels {
-  readonly filterByName: string;
-  readonly filterByRecordingConfigurationArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly filterByName?: string;
+  readonly filterByRecordingConfigurationArn?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListPlaybackKeyPairs {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListRecordingConfigurations {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListStreamKeys {
   readonly channelArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListStreamSessions {
   readonly channelArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListStreams {
-  readonly filterBy: StreamFilters;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly filterBy?: StreamFilters;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -109,11 +109,11 @@ export interface UntagResource {
 }
 export interface UpdateChannel {
   readonly arn: string;
-  readonly authorized: boolean;
-  readonly latencyMode: string;
-  readonly name: string;
-  readonly recordingConfigurationArn: string;
-  readonly type: string;
+  readonly authorized?: boolean;
+  readonly latencyMode?: string;
+  readonly name?: string;
+  readonly recordingConfigurationArn?: string;
+  readonly type?: string;
 }
 
 

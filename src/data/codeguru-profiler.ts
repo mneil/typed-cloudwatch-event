@@ -6,24 +6,24 @@ export interface AddNotificationChannels {
   readonly profilingGroupName: string;
 }
 export interface BatchGetFrameMetricData {
-  readonly endTime: Date;
-  readonly frameMetrics: [];
-  readonly period: string;
+  readonly endTime?: Date;
+  readonly frameMetrics?: [];
+  readonly period?: string;
   readonly profilingGroupName: string;
-  readonly startTime: Date;
-  readonly targetResolution: string;
+  readonly startTime?: Date;
+  readonly targetResolution?: string;
 }
 export interface ConfigureAgent {
-  readonly fleetInstanceId: string;
-  readonly metadata: {[key: string]: any};
+  readonly fleetInstanceId?: string;
+  readonly metadata?: {[key: string]: any};
   readonly profilingGroupName: string;
 }
 export interface CreateProfilingGroup {
-  readonly agentOrchestrationConfig: AgentOrchestrationConfig;
+  readonly agentOrchestrationConfig?: AgentOrchestrationConfig;
   readonly clientToken: string;
-  readonly computePlatform: string;
+  readonly computePlatform?: string;
   readonly profilingGroupName: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface DeleteProfilingGroup {
   readonly profilingGroupName: string;
@@ -32,9 +32,9 @@ export interface DescribeProfilingGroup {
   readonly profilingGroupName: string;
 }
 export interface GetFindingsReportAccountSummary {
-  readonly dailyReportsOnly: boolean;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly dailyReportsOnly?: boolean;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface GetNotificationConfiguration {
   readonly profilingGroupName: string;
@@ -43,40 +43,40 @@ export interface GetPolicy {
   readonly profilingGroupName: string;
 }
 export interface GetProfile {
-  readonly accept: string;
-  readonly endTime: Date;
-  readonly maxDepth: number;
-  readonly period: string;
+  readonly accept?: string;
+  readonly endTime?: Date;
+  readonly maxDepth?: number;
+  readonly period?: string;
   readonly profilingGroupName: string;
-  readonly startTime: Date;
+  readonly startTime?: Date;
 }
 export interface GetRecommendations {
   readonly endTime: Date;
-  readonly locale: string;
+  readonly locale?: string;
   readonly profilingGroupName: string;
   readonly startTime: Date;
 }
 export interface ListFindingsReports {
-  readonly dailyReportsOnly: boolean;
+  readonly dailyReportsOnly?: boolean;
   readonly endTime: Date;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly profilingGroupName: string;
   readonly startTime: Date;
 }
 export interface ListProfileTimes {
   readonly endTime: Date;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly orderBy: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly orderBy?: string;
   readonly period: string;
   readonly profilingGroupName: string;
   readonly startTime: Date;
 }
 export interface ListProfilingGroups {
-  readonly includeDescription: boolean;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly includeDescription?: boolean;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -84,14 +84,14 @@ export interface ListTagsForResource {
 export interface PostAgentProfile {
   readonly agentProfile: unknown;
   readonly contentType: string;
-  readonly profileToken: string;
+  readonly profileToken?: string;
   readonly profilingGroupName: string;
 }
 export interface PutPermission {
   readonly actionGroup: string;
   readonly principals: [];
   readonly profilingGroupName: string;
-  readonly revisionId: string;
+  readonly revisionId?: string;
 }
 export interface RemoveNotificationChannel {
   readonly channelId: string;
@@ -104,7 +104,7 @@ export interface RemovePermission {
 }
 export interface SubmitFeedback {
   readonly anomalyInstanceId: string;
-  readonly comment: string;
+  readonly comment?: string;
   readonly profilingGroupName: string;
   readonly type: string;
 }

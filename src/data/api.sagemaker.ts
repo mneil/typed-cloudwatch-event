@@ -4,7 +4,7 @@
 export interface AddAssociation {
   readonly SourceArn: string;
   readonly DestinationArn: string;
-  readonly AssociationType: string;
+  readonly AssociationType?: string;
 }
 export interface AddTags {
   readonly ResourceArn: string;
@@ -21,96 +21,96 @@ export interface CreateAction {
   readonly ActionName: string;
   readonly Source: ActionSource;
   readonly ActionType: string;
-  readonly Description: string;
-  readonly Status: string;
-  readonly Properties: {[key: string]: any};
-  readonly MetadataProperties: MetadataProperties;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly Properties?: {[key: string]: any};
+  readonly MetadataProperties?: MetadataProperties;
+  readonly Tags?: [];
 }
 export interface CreateAlgorithm {
   readonly AlgorithmName: string;
-  readonly AlgorithmDescription: string;
+  readonly AlgorithmDescription?: string;
   readonly TrainingSpecification: TrainingSpecification;
-  readonly InferenceSpecification: InferenceSpecification;
-  readonly ValidationSpecification: AlgorithmValidationSpecification;
-  readonly CertifyForMarketplace: boolean;
-  readonly Tags: [];
+  readonly InferenceSpecification?: InferenceSpecification;
+  readonly ValidationSpecification?: AlgorithmValidationSpecification;
+  readonly CertifyForMarketplace?: boolean;
+  readonly Tags?: [];
 }
 export interface CreateApp {
   readonly DomainId: string;
   readonly UserProfileName: string;
   readonly AppType: string;
   readonly AppName: string;
-  readonly Tags: [];
-  readonly ResourceSpec: ResourceSpec;
+  readonly Tags?: [];
+  readonly ResourceSpec?: ResourceSpec;
 }
 export interface CreateAppImageConfig {
   readonly AppImageConfigName: string;
-  readonly Tags: [];
-  readonly KernelGatewayImageConfig: KernelGatewayImageConfig;
+  readonly Tags?: [];
+  readonly KernelGatewayImageConfig?: KernelGatewayImageConfig;
 }
 export interface CreateArtifact {
-  readonly ArtifactName: string;
+  readonly ArtifactName?: string;
   readonly Source: ArtifactSource;
   readonly ArtifactType: string;
-  readonly Properties: {[key: string]: any};
-  readonly MetadataProperties: MetadataProperties;
-  readonly Tags: [];
+  readonly Properties?: {[key: string]: any};
+  readonly MetadataProperties?: MetadataProperties;
+  readonly Tags?: [];
 }
 export interface CreateAutoMLJob {
   readonly AutoMLJobName: string;
   readonly InputDataConfig: [];
   readonly OutputDataConfig: AutoMLOutputDataConfig;
-  readonly ProblemType: string;
-  readonly AutoMLJobObjective: AutoMLJobObjective;
-  readonly AutoMLJobConfig: AutoMLJobConfig;
+  readonly ProblemType?: string;
+  readonly AutoMLJobObjective?: AutoMLJobObjective;
+  readonly AutoMLJobConfig?: AutoMLJobConfig;
   readonly RoleArn: string;
-  readonly GenerateCandidateDefinitionsOnly: boolean;
-  readonly Tags: [];
-  readonly ModelDeployConfig: ModelDeployConfig;
+  readonly GenerateCandidateDefinitionsOnly?: boolean;
+  readonly Tags?: [];
+  readonly ModelDeployConfig?: ModelDeployConfig;
 }
 export interface CreateCodeRepository {
   readonly CodeRepositoryName: string;
   readonly GitConfig: GitConfig;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateCompilationJob {
   readonly CompilationJobName: string;
   readonly RoleArn: string;
-  readonly ModelPackageVersionArn: string;
-  readonly InputConfig: InputConfig;
+  readonly ModelPackageVersionArn?: string;
+  readonly InputConfig?: InputConfig;
   readonly OutputConfig: OutputConfig;
-  readonly VpcConfig: NeoVpcConfig;
+  readonly VpcConfig?: NeoVpcConfig;
   readonly StoppingCondition: StoppingCondition;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateContext {
   readonly ContextName: string;
   readonly Source: ContextSource;
   readonly ContextType: string;
-  readonly Description: string;
-  readonly Properties: {[key: string]: any};
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly Properties?: {[key: string]: any};
+  readonly Tags?: [];
 }
 export interface CreateDataQualityJobDefinition {
   readonly JobDefinitionName: string;
-  readonly DataQualityBaselineConfig: DataQualityBaselineConfig;
+  readonly DataQualityBaselineConfig?: DataQualityBaselineConfig;
   readonly DataQualityAppSpecification: DataQualityAppSpecification;
   readonly DataQualityJobInput: DataQualityJobInput;
   readonly DataQualityJobOutputConfig: MonitoringOutputConfig;
   readonly JobResources: MonitoringResources;
-  readonly NetworkConfig: MonitoringNetworkConfig;
+  readonly NetworkConfig?: MonitoringNetworkConfig;
   readonly RoleArn: string;
-  readonly StoppingCondition: MonitoringStoppingCondition;
-  readonly Tags: [];
+  readonly StoppingCondition?: MonitoringStoppingCondition;
+  readonly Tags?: [];
 }
 export interface CreateDeviceFleet {
   readonly DeviceFleetName: string;
-  readonly RoleArn: string;
-  readonly Description: string;
+  readonly RoleArn?: string;
+  readonly Description?: string;
   readonly OutputConfig: EdgeOutputConfig;
-  readonly Tags: [];
-  readonly EnableIotRoleAlias: boolean;
+  readonly Tags?: [];
+  readonly EnableIotRoleAlias?: boolean;
 }
 export interface CreateDomain {
   readonly DomainName: string;
@@ -118,12 +118,12 @@ export interface CreateDomain {
   readonly DefaultUserSettings: UserSettings;
   readonly SubnetIds: [];
   readonly VpcId: string;
-  readonly Tags: [];
-  readonly AppNetworkAccessType: string;
-  readonly HomeEfsFileSystemKmsKeyId: string;
-  readonly KmsKeyId: string;
-  readonly AppSecurityGroupManagement: string;
-  readonly DomainSettings: DomainSettings;
+  readonly Tags?: [];
+  readonly AppNetworkAccessType?: string;
+  readonly HomeEfsFileSystemKmsKeyId?: string;
+  readonly KmsKeyId?: string;
+  readonly AppSecurityGroupManagement?: string;
+  readonly DomainSettings?: DomainSettings;
 }
 export interface CreateEdgePackagingJob {
   readonly EdgePackagingJobName: string;
@@ -132,68 +132,68 @@ export interface CreateEdgePackagingJob {
   readonly ModelVersion: string;
   readonly RoleArn: string;
   readonly OutputConfig: EdgeOutputConfig;
-  readonly ResourceKey: string;
-  readonly Tags: [];
+  readonly ResourceKey?: string;
+  readonly Tags?: [];
 }
 export interface CreateEndpoint {
   readonly EndpointName: string;
   readonly EndpointConfigName: string;
-  readonly DeploymentConfig: DeploymentConfig;
-  readonly Tags: [];
+  readonly DeploymentConfig?: DeploymentConfig;
+  readonly Tags?: [];
 }
 export interface CreateEndpointConfig {
   readonly EndpointConfigName: string;
   readonly ProductionVariants: [];
-  readonly DataCaptureConfig: DataCaptureConfig;
-  readonly Tags: [];
-  readonly KmsKeyId: string;
-  readonly AsyncInferenceConfig: AsyncInferenceConfig;
+  readonly DataCaptureConfig?: DataCaptureConfig;
+  readonly Tags?: [];
+  readonly KmsKeyId?: string;
+  readonly AsyncInferenceConfig?: AsyncInferenceConfig;
 }
 export interface CreateExperiment {
   readonly ExperimentName: string;
-  readonly DisplayName: string;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly DisplayName?: string;
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 export interface CreateFeatureGroup {
   readonly FeatureGroupName: string;
   readonly RecordIdentifierFeatureName: string;
   readonly EventTimeFeatureName: string;
   readonly FeatureDefinitions: [];
-  readonly OnlineStoreConfig: OnlineStoreConfig;
-  readonly OfflineStoreConfig: OfflineStoreConfig;
-  readonly RoleArn: string;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly OnlineStoreConfig?: OnlineStoreConfig;
+  readonly OfflineStoreConfig?: OfflineStoreConfig;
+  readonly RoleArn?: string;
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 export interface CreateFlowDefinition {
   readonly FlowDefinitionName: string;
-  readonly HumanLoopRequestSource: HumanLoopRequestSource;
-  readonly HumanLoopActivationConfig: HumanLoopActivationConfig;
+  readonly HumanLoopRequestSource?: HumanLoopRequestSource;
+  readonly HumanLoopActivationConfig?: HumanLoopActivationConfig;
   readonly HumanLoopConfig: HumanLoopConfig;
   readonly OutputConfig: FlowDefinitionOutputConfig;
   readonly RoleArn: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateHumanTaskUi {
   readonly HumanTaskUiName: string;
   readonly UiTemplate: UiTemplate;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateHyperParameterTuningJob {
   readonly HyperParameterTuningJobName: string;
   readonly HyperParameterTuningJobConfig: HyperParameterTuningJobConfig;
-  readonly TrainingJobDefinition: HyperParameterTrainingJobDefinition;
-  readonly TrainingJobDefinitions: [];
-  readonly WarmStartConfig: HyperParameterTuningJobWarmStartConfig;
-  readonly Tags: [];
+  readonly TrainingJobDefinition?: HyperParameterTrainingJobDefinition;
+  readonly TrainingJobDefinitions?: [];
+  readonly WarmStartConfig?: HyperParameterTuningJobWarmStartConfig;
+  readonly Tags?: [];
 }
 export interface CreateImage {
-  readonly Description: string;
-  readonly DisplayName: string;
+  readonly Description?: string;
+  readonly DisplayName?: string;
   readonly ImageName: string;
   readonly RoleArn: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateImageVersion {
   readonly BaseImage: string;
@@ -205,9 +205,9 @@ export interface CreateInferenceRecommendationsJob {
   readonly JobType: string;
   readonly RoleArn: string;
   readonly InputConfig: RecommendationJobInputConfig;
-  readonly JobDescription: string;
-  readonly StoppingConditions: RecommendationJobStoppingConditions;
-  readonly Tags: [];
+  readonly JobDescription?: string;
+  readonly StoppingConditions?: RecommendationJobStoppingConditions;
+  readonly Tags?: [];
 }
 export interface CreateLabelingJob {
   readonly LabelingJobName: string;
@@ -215,234 +215,234 @@ export interface CreateLabelingJob {
   readonly InputConfig: LabelingJobInputConfig;
   readonly OutputConfig: LabelingJobOutputConfig;
   readonly RoleArn: string;
-  readonly LabelCategoryConfigS3Uri: string;
-  readonly StoppingConditions: LabelingJobStoppingConditions;
-  readonly LabelingJobAlgorithmsConfig: LabelingJobAlgorithmsConfig;
+  readonly LabelCategoryConfigS3Uri?: string;
+  readonly StoppingConditions?: LabelingJobStoppingConditions;
+  readonly LabelingJobAlgorithmsConfig?: LabelingJobAlgorithmsConfig;
   readonly HumanTaskConfig: HumanTaskConfig;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateModel {
   readonly ModelName: string;
-  readonly PrimaryContainer: ContainerDefinition;
-  readonly Containers: [];
-  readonly InferenceExecutionConfig: InferenceExecutionConfig;
+  readonly PrimaryContainer?: ContainerDefinition;
+  readonly Containers?: [];
+  readonly InferenceExecutionConfig?: InferenceExecutionConfig;
   readonly ExecutionRoleArn: string;
-  readonly Tags: [];
-  readonly VpcConfig: VpcConfig;
-  readonly EnableNetworkIsolation: boolean;
+  readonly Tags?: [];
+  readonly VpcConfig?: VpcConfig;
+  readonly EnableNetworkIsolation?: boolean;
 }
 export interface CreateModelBiasJobDefinition {
   readonly JobDefinitionName: string;
-  readonly ModelBiasBaselineConfig: ModelBiasBaselineConfig;
+  readonly ModelBiasBaselineConfig?: ModelBiasBaselineConfig;
   readonly ModelBiasAppSpecification: ModelBiasAppSpecification;
   readonly ModelBiasJobInput: ModelBiasJobInput;
   readonly ModelBiasJobOutputConfig: MonitoringOutputConfig;
   readonly JobResources: MonitoringResources;
-  readonly NetworkConfig: MonitoringNetworkConfig;
+  readonly NetworkConfig?: MonitoringNetworkConfig;
   readonly RoleArn: string;
-  readonly StoppingCondition: MonitoringStoppingCondition;
-  readonly Tags: [];
+  readonly StoppingCondition?: MonitoringStoppingCondition;
+  readonly Tags?: [];
 }
 export interface CreateModelExplainabilityJobDefinition {
   readonly JobDefinitionName: string;
-  readonly ModelExplainabilityBaselineConfig: ModelExplainabilityBaselineConfig;
+  readonly ModelExplainabilityBaselineConfig?: ModelExplainabilityBaselineConfig;
   readonly ModelExplainabilityAppSpecification: ModelExplainabilityAppSpecification;
   readonly ModelExplainabilityJobInput: ModelExplainabilityJobInput;
   readonly ModelExplainabilityJobOutputConfig: MonitoringOutputConfig;
   readonly JobResources: MonitoringResources;
-  readonly NetworkConfig: MonitoringNetworkConfig;
+  readonly NetworkConfig?: MonitoringNetworkConfig;
   readonly RoleArn: string;
-  readonly StoppingCondition: MonitoringStoppingCondition;
-  readonly Tags: [];
+  readonly StoppingCondition?: MonitoringStoppingCondition;
+  readonly Tags?: [];
 }
 export interface CreateModelPackage {
-  readonly ModelPackageName: string;
-  readonly ModelPackageGroupName: string;
-  readonly ModelPackageDescription: string;
-  readonly InferenceSpecification: InferenceSpecification;
-  readonly ValidationSpecification: ModelPackageValidationSpecification;
-  readonly SourceAlgorithmSpecification: SourceAlgorithmSpecification;
-  readonly CertifyForMarketplace: boolean;
-  readonly Tags: [];
-  readonly ModelApprovalStatus: string;
-  readonly MetadataProperties: MetadataProperties;
-  readonly ModelMetrics: ModelMetrics;
-  readonly ClientToken: string;
-  readonly CustomerMetadataProperties: {[key: string]: any};
-  readonly DriftCheckBaselines: DriftCheckBaselines;
-  readonly Domain: string;
-  readonly Task: string;
-  readonly SamplePayloadUrl: string;
-  readonly AdditionalInferenceSpecifications: [];
+  readonly ModelPackageName?: string;
+  readonly ModelPackageGroupName?: string;
+  readonly ModelPackageDescription?: string;
+  readonly InferenceSpecification?: InferenceSpecification;
+  readonly ValidationSpecification?: ModelPackageValidationSpecification;
+  readonly SourceAlgorithmSpecification?: SourceAlgorithmSpecification;
+  readonly CertifyForMarketplace?: boolean;
+  readonly Tags?: [];
+  readonly ModelApprovalStatus?: string;
+  readonly MetadataProperties?: MetadataProperties;
+  readonly ModelMetrics?: ModelMetrics;
+  readonly ClientToken?: string;
+  readonly CustomerMetadataProperties?: {[key: string]: any};
+  readonly DriftCheckBaselines?: DriftCheckBaselines;
+  readonly Domain?: string;
+  readonly Task?: string;
+  readonly SamplePayloadUrl?: string;
+  readonly AdditionalInferenceSpecifications?: [];
 }
 export interface CreateModelPackageGroup {
   readonly ModelPackageGroupName: string;
-  readonly ModelPackageGroupDescription: string;
-  readonly Tags: [];
+  readonly ModelPackageGroupDescription?: string;
+  readonly Tags?: [];
 }
 export interface CreateModelQualityJobDefinition {
   readonly JobDefinitionName: string;
-  readonly ModelQualityBaselineConfig: ModelQualityBaselineConfig;
+  readonly ModelQualityBaselineConfig?: ModelQualityBaselineConfig;
   readonly ModelQualityAppSpecification: ModelQualityAppSpecification;
   readonly ModelQualityJobInput: ModelQualityJobInput;
   readonly ModelQualityJobOutputConfig: MonitoringOutputConfig;
   readonly JobResources: MonitoringResources;
-  readonly NetworkConfig: MonitoringNetworkConfig;
+  readonly NetworkConfig?: MonitoringNetworkConfig;
   readonly RoleArn: string;
-  readonly StoppingCondition: MonitoringStoppingCondition;
-  readonly Tags: [];
+  readonly StoppingCondition?: MonitoringStoppingCondition;
+  readonly Tags?: [];
 }
 export interface CreateMonitoringSchedule {
   readonly MonitoringScheduleName: string;
   readonly MonitoringScheduleConfig: MonitoringScheduleConfig;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateNotebookInstance {
   readonly NotebookInstanceName: string;
   readonly InstanceType: string;
-  readonly SubnetId: string;
-  readonly SecurityGroupIds: [];
+  readonly SubnetId?: string;
+  readonly SecurityGroupIds?: [];
   readonly RoleArn: string;
-  readonly KmsKeyId: string;
-  readonly Tags: [];
-  readonly LifecycleConfigName: string;
-  readonly DirectInternetAccess: string;
-  readonly VolumeSizeInGB: number;
-  readonly AcceleratorTypes: [];
-  readonly DefaultCodeRepository: string;
-  readonly AdditionalCodeRepositories: [];
-  readonly RootAccess: string;
-  readonly PlatformIdentifier: string;
+  readonly KmsKeyId?: string;
+  readonly Tags?: [];
+  readonly LifecycleConfigName?: string;
+  readonly DirectInternetAccess?: string;
+  readonly VolumeSizeInGB?: number;
+  readonly AcceleratorTypes?: [];
+  readonly DefaultCodeRepository?: string;
+  readonly AdditionalCodeRepositories?: [];
+  readonly RootAccess?: string;
+  readonly PlatformIdentifier?: string;
 }
 export interface CreateNotebookInstanceLifecycleConfig {
   readonly NotebookInstanceLifecycleConfigName: string;
-  readonly OnCreate: [];
-  readonly OnStart: [];
+  readonly OnCreate?: [];
+  readonly OnStart?: [];
 }
 export interface CreatePipeline {
   readonly PipelineName: string;
-  readonly PipelineDisplayName: string;
+  readonly PipelineDisplayName?: string;
   readonly PipelineDefinition: string;
-  readonly PipelineDescription: string;
+  readonly PipelineDescription?: string;
   readonly ClientRequestToken: string;
   readonly RoleArn: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreatePresignedDomainUrl {
   readonly DomainId: string;
   readonly UserProfileName: string;
-  readonly SessionExpirationDurationInSeconds: number;
-  readonly ExpiresInSeconds: number;
+  readonly SessionExpirationDurationInSeconds?: number;
+  readonly ExpiresInSeconds?: number;
 }
 export interface CreatePresignedNotebookInstanceUrl {
   readonly NotebookInstanceName: string;
-  readonly SessionExpirationDurationInSeconds: number;
+  readonly SessionExpirationDurationInSeconds?: number;
 }
 export interface CreateProcessingJob {
-  readonly ProcessingInputs: [];
-  readonly ProcessingOutputConfig: ProcessingOutputConfig;
+  readonly ProcessingInputs?: [];
+  readonly ProcessingOutputConfig?: ProcessingOutputConfig;
   readonly ProcessingJobName: string;
   readonly ProcessingResources: ProcessingResources;
-  readonly StoppingCondition: ProcessingStoppingCondition;
+  readonly StoppingCondition?: ProcessingStoppingCondition;
   readonly AppSpecification: AppSpecification;
-  readonly Environment: {[key: string]: any};
-  readonly NetworkConfig: NetworkConfig;
+  readonly Environment?: {[key: string]: any};
+  readonly NetworkConfig?: NetworkConfig;
   readonly RoleArn: string;
-  readonly Tags: [];
-  readonly ExperimentConfig: ExperimentConfig;
+  readonly Tags?: [];
+  readonly ExperimentConfig?: ExperimentConfig;
 }
 export interface CreateProject {
   readonly ProjectName: string;
-  readonly ProjectDescription: string;
+  readonly ProjectDescription?: string;
   readonly ServiceCatalogProvisioningDetails: ServiceCatalogProvisioningDetails;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateStudioLifecycleConfig {
   readonly StudioLifecycleConfigName: string;
   readonly StudioLifecycleConfigContent: string;
   readonly StudioLifecycleConfigAppType: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateTrainingJob {
   readonly TrainingJobName: string;
-  readonly HyperParameters: {[key: string]: any};
+  readonly HyperParameters?: {[key: string]: any};
   readonly AlgorithmSpecification: AlgorithmSpecification;
   readonly RoleArn: string;
-  readonly InputDataConfig: [];
+  readonly InputDataConfig?: [];
   readonly OutputDataConfig: OutputDataConfig;
   readonly ResourceConfig: ResourceConfig;
-  readonly VpcConfig: VpcConfig;
+  readonly VpcConfig?: VpcConfig;
   readonly StoppingCondition: StoppingCondition;
-  readonly Tags: [];
-  readonly EnableNetworkIsolation: boolean;
-  readonly EnableInterContainerTrafficEncryption: boolean;
-  readonly EnableManagedSpotTraining: boolean;
-  readonly CheckpointConfig: CheckpointConfig;
-  readonly DebugHookConfig: DebugHookConfig;
-  readonly DebugRuleConfigurations: [];
-  readonly TensorBoardOutputConfig: TensorBoardOutputConfig;
-  readonly ExperimentConfig: ExperimentConfig;
-  readonly ProfilerConfig: ProfilerConfig;
-  readonly ProfilerRuleConfigurations: [];
-  readonly Environment: {[key: string]: any};
-  readonly RetryStrategy: RetryStrategy;
+  readonly Tags?: [];
+  readonly EnableNetworkIsolation?: boolean;
+  readonly EnableInterContainerTrafficEncryption?: boolean;
+  readonly EnableManagedSpotTraining?: boolean;
+  readonly CheckpointConfig?: CheckpointConfig;
+  readonly DebugHookConfig?: DebugHookConfig;
+  readonly DebugRuleConfigurations?: [];
+  readonly TensorBoardOutputConfig?: TensorBoardOutputConfig;
+  readonly ExperimentConfig?: ExperimentConfig;
+  readonly ProfilerConfig?: ProfilerConfig;
+  readonly ProfilerRuleConfigurations?: [];
+  readonly Environment?: {[key: string]: any};
+  readonly RetryStrategy?: RetryStrategy;
 }
 export interface CreateTransformJob {
   readonly TransformJobName: string;
   readonly ModelName: string;
-  readonly MaxConcurrentTransforms: number;
-  readonly ModelClientConfig: ModelClientConfig;
-  readonly MaxPayloadInMB: number;
-  readonly BatchStrategy: string;
-  readonly Environment: {[key: string]: any};
+  readonly MaxConcurrentTransforms?: number;
+  readonly ModelClientConfig?: ModelClientConfig;
+  readonly MaxPayloadInMB?: number;
+  readonly BatchStrategy?: string;
+  readonly Environment?: {[key: string]: any};
   readonly TransformInput: TransformInput;
   readonly TransformOutput: TransformOutput;
   readonly TransformResources: TransformResources;
-  readonly DataProcessing: DataProcessing;
-  readonly Tags: [];
-  readonly ExperimentConfig: ExperimentConfig;
+  readonly DataProcessing?: DataProcessing;
+  readonly Tags?: [];
+  readonly ExperimentConfig?: ExperimentConfig;
 }
 export interface CreateTrial {
   readonly TrialName: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
   readonly ExperimentName: string;
-  readonly MetadataProperties: MetadataProperties;
-  readonly Tags: [];
+  readonly MetadataProperties?: MetadataProperties;
+  readonly Tags?: [];
 }
 export interface CreateTrialComponent {
   readonly TrialComponentName: string;
-  readonly DisplayName: string;
-  readonly Status: TrialComponentStatus;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Parameters: {[key: string]: any};
-  readonly InputArtifacts: {[key: string]: any};
-  readonly OutputArtifacts: {[key: string]: any};
-  readonly MetadataProperties: MetadataProperties;
-  readonly Tags: [];
+  readonly DisplayName?: string;
+  readonly Status?: TrialComponentStatus;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Parameters?: {[key: string]: any};
+  readonly InputArtifacts?: {[key: string]: any};
+  readonly OutputArtifacts?: {[key: string]: any};
+  readonly MetadataProperties?: MetadataProperties;
+  readonly Tags?: [];
 }
 export interface CreateUserProfile {
   readonly DomainId: string;
   readonly UserProfileName: string;
-  readonly SingleSignOnUserIdentifier: string;
-  readonly SingleSignOnUserValue: string;
-  readonly Tags: [];
-  readonly UserSettings: UserSettings;
+  readonly SingleSignOnUserIdentifier?: string;
+  readonly SingleSignOnUserValue?: string;
+  readonly Tags?: [];
+  readonly UserSettings?: UserSettings;
 }
 export interface CreateWorkforce {
-  readonly CognitoConfig: CognitoConfig;
-  readonly OidcConfig: OidcConfig;
-  readonly SourceIpConfig: SourceIpConfig;
+  readonly CognitoConfig?: CognitoConfig;
+  readonly OidcConfig?: OidcConfig;
+  readonly SourceIpConfig?: SourceIpConfig;
   readonly WorkforceName: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateWorkteam {
   readonly WorkteamName: string;
-  readonly WorkforceName: string;
+  readonly WorkforceName?: string;
   readonly MemberDefinitions: [];
   readonly Description: string;
-  readonly NotificationConfiguration: NotificationConfiguration;
-  readonly Tags: [];
+  readonly NotificationConfiguration?: NotificationConfiguration;
+  readonly Tags?: [];
 }
 export interface DeleteAction {
   readonly ActionName: string;
@@ -460,8 +460,8 @@ export interface DeleteAppImageConfig {
   readonly AppImageConfigName: string;
 }
 export interface DeleteArtifact {
-  readonly ArtifactArn: string;
-  readonly Source: ArtifactSource;
+  readonly ArtifactArn?: string;
+  readonly Source?: ArtifactSource;
 }
 export interface DeleteAssociation {
   readonly SourceArn: string;
@@ -481,7 +481,7 @@ export interface DeleteDeviceFleet {
 }
 export interface DeleteDomain {
   readonly DomainId: string;
-  readonly RetentionPolicy: RetentionPolicy;
+  readonly RetentionPolicy?: RetentionPolicy;
 }
 export interface DeleteEndpoint {
   readonly EndpointName: string;
@@ -606,7 +606,7 @@ export interface DescribeDataQualityJobDefinition {
   readonly JobDefinitionName: string;
 }
 export interface DescribeDevice {
-  readonly NextToken: string;
+  readonly NextToken?: string;
   readonly DeviceName: string;
   readonly DeviceFleetName: string;
 }
@@ -630,7 +630,7 @@ export interface DescribeExperiment {
 }
 export interface DescribeFeatureGroup {
   readonly FeatureGroupName: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface DescribeFlowDefinition {
   readonly FlowDefinitionName: string;
@@ -646,7 +646,7 @@ export interface DescribeImage {
 }
 export interface DescribeImageVersion {
   readonly ImageName: string;
-  readonly Version: number;
+  readonly Version?: number;
 }
 export interface DescribeInferenceRecommendationsJob {
   readonly JobName: string;
@@ -748,567 +748,567 @@ export interface GetSagemakerServicecatalogPortfolioStatus {
 }
 export interface GetSearchSuggestions {
   readonly Resource: string;
-  readonly SuggestionQuery: SuggestionQuery;
+  readonly SuggestionQuery?: SuggestionQuery;
 }
 export interface ListActions {
-  readonly SourceUri: string;
-  readonly ActionType: string;
-  readonly CreatedAfter: Date;
-  readonly CreatedBefore: Date;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SourceUri?: string;
+  readonly ActionType?: string;
+  readonly CreatedAfter?: Date;
+  readonly CreatedBefore?: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListAlgorithms {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly NextToken: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly NextToken?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListAppImageConfigs {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly NameContains: string;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
-  readonly ModifiedTimeBefore: Date;
-  readonly ModifiedTimeAfter: Date;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly NameContains?: string;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
+  readonly ModifiedTimeBefore?: Date;
+  readonly ModifiedTimeAfter?: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListApps {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly SortOrder: string;
-  readonly SortBy: string;
-  readonly DomainIdEquals: string;
-  readonly UserProfileNameEquals: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly SortOrder?: string;
+  readonly SortBy?: string;
+  readonly DomainIdEquals?: string;
+  readonly UserProfileNameEquals?: string;
 }
 export interface ListArtifacts {
-  readonly SourceUri: string;
-  readonly ArtifactType: string;
-  readonly CreatedAfter: Date;
-  readonly CreatedBefore: Date;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SourceUri?: string;
+  readonly ArtifactType?: string;
+  readonly CreatedAfter?: Date;
+  readonly CreatedBefore?: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListAssociations {
-  readonly SourceArn: string;
-  readonly DestinationArn: string;
-  readonly SourceType: string;
-  readonly DestinationType: string;
-  readonly AssociationType: string;
-  readonly CreatedAfter: Date;
-  readonly CreatedBefore: Date;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SourceArn?: string;
+  readonly DestinationArn?: string;
+  readonly SourceType?: string;
+  readonly DestinationType?: string;
+  readonly AssociationType?: string;
+  readonly CreatedAfter?: Date;
+  readonly CreatedBefore?: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListAutoMLJobs {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly NameContains: string;
-  readonly StatusEquals: string;
-  readonly SortOrder: string;
-  readonly SortBy: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly NameContains?: string;
+  readonly StatusEquals?: string;
+  readonly SortOrder?: string;
+  readonly SortBy?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListCandidatesForAutoMLJob {
   readonly AutoMLJobName: string;
-  readonly StatusEquals: string;
-  readonly CandidateNameEquals: string;
-  readonly SortOrder: string;
-  readonly SortBy: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly StatusEquals?: string;
+  readonly CandidateNameEquals?: string;
+  readonly SortOrder?: string;
+  readonly SortBy?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListCodeRepositories {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly NextToken: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly NextToken?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListCompilationJobs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly NameContains: string;
-  readonly StatusEquals: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly NameContains?: string;
+  readonly StatusEquals?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListContexts {
-  readonly SourceUri: string;
-  readonly ContextType: string;
-  readonly CreatedAfter: Date;
-  readonly CreatedBefore: Date;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SourceUri?: string;
+  readonly ContextType?: string;
+  readonly CreatedAfter?: Date;
+  readonly CreatedBefore?: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDataQualityJobDefinitions {
-  readonly EndpointName: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
+  readonly EndpointName?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
 }
 export interface ListDeviceFleets {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly NameContains: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly NameContains?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListDevices {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly LatestHeartbeatAfter: Date;
-  readonly ModelName: string;
-  readonly DeviceFleetName: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly LatestHeartbeatAfter?: Date;
+  readonly ModelName?: string;
+  readonly DeviceFleetName?: string;
 }
 export interface ListDomains {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListEdgePackagingJobs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly NameContains: string;
-  readonly ModelNameContains: string;
-  readonly StatusEquals: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly NameContains?: string;
+  readonly ModelNameContains?: string;
+  readonly StatusEquals?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListEndpointConfigs {
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
 }
 export interface ListEndpoints {
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly StatusEquals: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly StatusEquals?: string;
 }
 export interface ListExperiments {
-  readonly CreatedAfter: Date;
-  readonly CreatedBefore: Date;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly CreatedAfter?: Date;
+  readonly CreatedBefore?: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListFeatureGroups {
-  readonly NameContains: string;
-  readonly FeatureGroupStatusEquals: string;
-  readonly OfflineStoreStatusEquals: string;
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly SortOrder: string;
-  readonly SortBy: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly NameContains?: string;
+  readonly FeatureGroupStatusEquals?: string;
+  readonly OfflineStoreStatusEquals?: string;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly SortOrder?: string;
+  readonly SortBy?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListFlowDefinitions {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListHumanTaskUis {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListHyperParameterTuningJobs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NameContains: string;
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly StatusEquals: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NameContains?: string;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly StatusEquals?: string;
 }
 export interface ListImageVersions {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
   readonly ImageName: string;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListImages {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly NextToken: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly NextToken?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListInferenceRecommendationsJobs {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly NameContains: string;
-  readonly StatusEquals: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly NameContains?: string;
+  readonly StatusEquals?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListLabelingJobs {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly NameContains: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly StatusEquals: string;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly NameContains?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly StatusEquals?: string;
 }
 export interface ListLabelingJobsForWorkteam {
   readonly WorkteamArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly JobReferenceCodeContains: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly JobReferenceCodeContains?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListLineageGroups {
-  readonly CreatedAfter: Date;
-  readonly CreatedBefore: Date;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly CreatedAfter?: Date;
+  readonly CreatedBefore?: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListModelBiasJobDefinitions {
-  readonly EndpointName: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
+  readonly EndpointName?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
 }
 export interface ListModelExplainabilityJobDefinitions {
-  readonly EndpointName: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
+  readonly EndpointName?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
 }
 export interface ListModelMetadata {
-  readonly SearchExpression: ModelMetadataSearchExpression;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SearchExpression?: ModelMetadataSearchExpression;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListModelPackageGroups {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly NextToken: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly NextToken?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListModelPackages {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly ModelApprovalStatus: string;
-  readonly ModelPackageGroupName: string;
-  readonly ModelPackageType: string;
-  readonly NextToken: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly ModelApprovalStatus?: string;
+  readonly ModelPackageGroupName?: string;
+  readonly ModelPackageType?: string;
+  readonly NextToken?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListModelQualityJobDefinitions {
-  readonly EndpointName: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
+  readonly EndpointName?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
 }
 export interface ListModels {
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
 }
 export interface ListMonitoringExecutions {
-  readonly MonitoringScheduleName: string;
-  readonly EndpointName: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ScheduledTimeBefore: Date;
-  readonly ScheduledTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly StatusEquals: string;
-  readonly MonitoringJobDefinitionName: string;
-  readonly MonitoringTypeEquals: string;
+  readonly MonitoringScheduleName?: string;
+  readonly EndpointName?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ScheduledTimeBefore?: Date;
+  readonly ScheduledTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly StatusEquals?: string;
+  readonly MonitoringJobDefinitionName?: string;
+  readonly MonitoringTypeEquals?: string;
 }
 export interface ListMonitoringSchedules {
-  readonly EndpointName: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly StatusEquals: string;
-  readonly MonitoringJobDefinitionName: string;
-  readonly MonitoringTypeEquals: string;
+  readonly EndpointName?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly StatusEquals?: string;
+  readonly MonitoringJobDefinitionName?: string;
+  readonly MonitoringTypeEquals?: string;
 }
 export interface ListNotebookInstanceLifecycleConfigs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NameContains: string;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NameContains?: string;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
 }
 export interface ListNotebookInstances {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NameContains: string;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly StatusEquals: string;
-  readonly NotebookInstanceLifecycleConfigNameContains: string;
-  readonly DefaultCodeRepositoryContains: string;
-  readonly AdditionalCodeRepositoryEquals: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NameContains?: string;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly StatusEquals?: string;
+  readonly NotebookInstanceLifecycleConfigNameContains?: string;
+  readonly DefaultCodeRepositoryContains?: string;
+  readonly AdditionalCodeRepositoryEquals?: string;
 }
 export interface ListPipelineExecutionSteps {
-  readonly PipelineExecutionArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly SortOrder: string;
+  readonly PipelineExecutionArn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly SortOrder?: string;
 }
 export interface ListPipelineExecutions {
   readonly PipelineName: string;
-  readonly CreatedAfter: Date;
-  readonly CreatedBefore: Date;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly CreatedAfter?: Date;
+  readonly CreatedBefore?: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPipelineParametersForExecution {
   readonly PipelineExecutionArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPipelines {
-  readonly PipelineNamePrefix: string;
-  readonly CreatedAfter: Date;
-  readonly CreatedBefore: Date;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly PipelineNamePrefix?: string;
+  readonly CreatedAfter?: Date;
+  readonly CreatedBefore?: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListProcessingJobs {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly NameContains: string;
-  readonly StatusEquals: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly NameContains?: string;
+  readonly StatusEquals?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListProjects {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly MaxResults: number;
-  readonly NameContains: string;
-  readonly NextToken: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
+  readonly NextToken?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListStudioLifecycleConfigs {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly NameContains: string;
-  readonly AppTypeEquals: string;
-  readonly CreationTimeBefore: Date;
-  readonly CreationTimeAfter: Date;
-  readonly ModifiedTimeBefore: Date;
-  readonly ModifiedTimeAfter: Date;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly NameContains?: string;
+  readonly AppTypeEquals?: string;
+  readonly CreationTimeBefore?: Date;
+  readonly CreationTimeAfter?: Date;
+  readonly ModifiedTimeBefore?: Date;
+  readonly ModifiedTimeAfter?: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListSubscribedWorkteams {
-  readonly NameContains: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NameContains?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTags {
   readonly ResourceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTrainingJobs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly NameContains: string;
-  readonly StatusEquals: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly NameContains?: string;
+  readonly StatusEquals?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListTrainingJobsForHyperParameterTuningJob {
   readonly HyperParameterTuningJobName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly StatusEquals: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly StatusEquals?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListTransformJobs {
-  readonly CreationTimeAfter: Date;
-  readonly CreationTimeBefore: Date;
-  readonly LastModifiedTimeAfter: Date;
-  readonly LastModifiedTimeBefore: Date;
-  readonly NameContains: string;
-  readonly StatusEquals: string;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly CreationTimeAfter?: Date;
+  readonly CreationTimeBefore?: Date;
+  readonly LastModifiedTimeAfter?: Date;
+  readonly LastModifiedTimeBefore?: Date;
+  readonly NameContains?: string;
+  readonly StatusEquals?: string;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTrialComponents {
-  readonly ExperimentName: string;
-  readonly TrialName: string;
-  readonly SourceArn: string;
-  readonly CreatedAfter: Date;
-  readonly CreatedBefore: Date;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ExperimentName?: string;
+  readonly TrialName?: string;
+  readonly SourceArn?: string;
+  readonly CreatedAfter?: Date;
+  readonly CreatedBefore?: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTrials {
-  readonly ExperimentName: string;
-  readonly TrialComponentName: string;
-  readonly CreatedAfter: Date;
-  readonly CreatedBefore: Date;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ExperimentName?: string;
+  readonly TrialComponentName?: string;
+  readonly CreatedAfter?: Date;
+  readonly CreatedBefore?: Date;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListUserProfiles {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly SortOrder: string;
-  readonly SortBy: string;
-  readonly DomainIdEquals: string;
-  readonly UserProfileNameContains: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly SortOrder?: string;
+  readonly SortBy?: string;
+  readonly DomainIdEquals?: string;
+  readonly UserProfileNameContains?: string;
 }
 export interface ListWorkforces {
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NameContains: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NameContains?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListWorkteams {
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NameContains: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NameContains?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface PutModelPackageGroupPolicy {
   readonly ModelPackageGroupName: string;
@@ -1316,23 +1316,23 @@ export interface PutModelPackageGroupPolicy {
 }
 export interface QueryLineage {
   readonly StartArns: [];
-  readonly Direction: string;
-  readonly IncludeEdges: boolean;
-  readonly Filters: QueryFilters;
-  readonly MaxDepth: number;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Direction?: string;
+  readonly IncludeEdges?: boolean;
+  readonly Filters?: QueryFilters;
+  readonly MaxDepth?: number;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface RegisterDevices {
   readonly DeviceFleetName: string;
   readonly Devices: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface RenderUiTemplate {
-  readonly UiTemplate: UiTemplate;
+  readonly UiTemplate?: UiTemplate;
   readonly Task: RenderableTask;
   readonly RoleArn: string;
-  readonly HumanTaskUiArn: string;
+  readonly HumanTaskUiArn?: string;
 }
 export interface RetryPipelineExecution {
   readonly PipelineExecutionArn: string;
@@ -1340,21 +1340,21 @@ export interface RetryPipelineExecution {
 }
 export interface Search {
   readonly Resource: string;
-  readonly SearchExpression: SearchExpression;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SearchExpression?: SearchExpression;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface SendPipelineExecutionStepFailure {
   readonly CallbackToken: string;
-  readonly FailureReason: string;
-  readonly ClientRequestToken: string;
+  readonly FailureReason?: string;
+  readonly ClientRequestToken?: string;
 }
 export interface SendPipelineExecutionStepSuccess {
   readonly CallbackToken: string;
-  readonly OutputParameters: [];
-  readonly ClientRequestToken: string;
+  readonly OutputParameters?: [];
+  readonly ClientRequestToken?: string;
 }
 export interface StartMonitoringSchedule {
   readonly MonitoringScheduleName: string;
@@ -1364,9 +1364,9 @@ export interface StartNotebookInstance {
 }
 export interface StartPipelineExecution {
   readonly PipelineName: string;
-  readonly PipelineExecutionDisplayName: string;
-  readonly PipelineParameters: [];
-  readonly PipelineExecutionDescription: string;
+  readonly PipelineExecutionDisplayName?: string;
+  readonly PipelineParameters?: [];
+  readonly PipelineExecutionDescription?: string;
   readonly ClientRequestToken: string;
 }
 export interface StopAutoMLJob {
@@ -1408,37 +1408,37 @@ export interface StopTransformJob {
 }
 export interface UpdateAction {
   readonly ActionName: string;
-  readonly Description: string;
-  readonly Status: string;
-  readonly Properties: {[key: string]: any};
-  readonly PropertiesToRemove: [];
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly Properties?: {[key: string]: any};
+  readonly PropertiesToRemove?: [];
 }
 export interface UpdateAppImageConfig {
   readonly AppImageConfigName: string;
-  readonly KernelGatewayImageConfig: KernelGatewayImageConfig;
+  readonly KernelGatewayImageConfig?: KernelGatewayImageConfig;
 }
 export interface UpdateArtifact {
   readonly ArtifactArn: string;
-  readonly ArtifactName: string;
-  readonly Properties: {[key: string]: any};
-  readonly PropertiesToRemove: [];
+  readonly ArtifactName?: string;
+  readonly Properties?: {[key: string]: any};
+  readonly PropertiesToRemove?: [];
 }
 export interface UpdateCodeRepository {
   readonly CodeRepositoryName: string;
-  readonly GitConfig: GitConfigForUpdate;
+  readonly GitConfig?: GitConfigForUpdate;
 }
 export interface UpdateContext {
   readonly ContextName: string;
-  readonly Description: string;
-  readonly Properties: {[key: string]: any};
-  readonly PropertiesToRemove: [];
+  readonly Description?: string;
+  readonly Properties?: {[key: string]: any};
+  readonly PropertiesToRemove?: [];
 }
 export interface UpdateDeviceFleet {
   readonly DeviceFleetName: string;
-  readonly RoleArn: string;
-  readonly Description: string;
+  readonly RoleArn?: string;
+  readonly Description?: string;
   readonly OutputConfig: EdgeOutputConfig;
-  readonly EnableIotRoleAlias: boolean;
+  readonly EnableIotRoleAlias?: boolean;
 }
 export interface UpdateDevices {
   readonly DeviceFleetName: string;
@@ -1446,16 +1446,16 @@ export interface UpdateDevices {
 }
 export interface UpdateDomain {
   readonly DomainId: string;
-  readonly DefaultUserSettings: UserSettings;
-  readonly DomainSettingsForUpdate: DomainSettingsForUpdate;
+  readonly DefaultUserSettings?: UserSettings;
+  readonly DomainSettingsForUpdate?: DomainSettingsForUpdate;
 }
 export interface UpdateEndpoint {
   readonly EndpointName: string;
   readonly EndpointConfigName: string;
-  readonly RetainAllVariantProperties: boolean;
-  readonly ExcludeRetainedVariantProperties: [];
-  readonly DeploymentConfig: DeploymentConfig;
-  readonly RetainDeploymentConfig: boolean;
+  readonly RetainAllVariantProperties?: boolean;
+  readonly ExcludeRetainedVariantProperties?: [];
+  readonly DeploymentConfig?: DeploymentConfig;
+  readonly RetainDeploymentConfig?: boolean;
 }
 export interface UpdateEndpointWeightsAndCapacities {
   readonly EndpointName: string;
@@ -1463,23 +1463,23 @@ export interface UpdateEndpointWeightsAndCapacities {
 }
 export interface UpdateExperiment {
   readonly ExperimentName: string;
-  readonly DisplayName: string;
-  readonly Description: string;
+  readonly DisplayName?: string;
+  readonly Description?: string;
 }
 export interface UpdateImage {
-  readonly DeleteProperties: [];
-  readonly Description: string;
-  readonly DisplayName: string;
+  readonly DeleteProperties?: [];
+  readonly Description?: string;
+  readonly DisplayName?: string;
   readonly ImageName: string;
-  readonly RoleArn: string;
+  readonly RoleArn?: string;
 }
 export interface UpdateModelPackage {
   readonly ModelPackageArn: string;
-  readonly ModelApprovalStatus: string;
-  readonly ApprovalDescription: string;
-  readonly CustomerMetadataProperties: {[key: string]: any};
-  readonly CustomerMetadataPropertiesToRemove: [];
-  readonly AdditionalInferenceSpecificationsToAdd: [];
+  readonly ModelApprovalStatus?: string;
+  readonly ApprovalDescription?: string;
+  readonly CustomerMetadataProperties?: {[key: string]: any};
+  readonly CustomerMetadataPropertiesToRemove?: [];
+  readonly AdditionalInferenceSpecificationsToAdd?: [];
 }
 export interface UpdateMonitoringSchedule {
   readonly MonitoringScheduleName: string;
@@ -1487,79 +1487,79 @@ export interface UpdateMonitoringSchedule {
 }
 export interface UpdateNotebookInstance {
   readonly NotebookInstanceName: string;
-  readonly InstanceType: string;
-  readonly RoleArn: string;
-  readonly LifecycleConfigName: string;
-  readonly DisassociateLifecycleConfig: boolean;
-  readonly VolumeSizeInGB: number;
-  readonly DefaultCodeRepository: string;
-  readonly AdditionalCodeRepositories: [];
-  readonly AcceleratorTypes: [];
-  readonly DisassociateAcceleratorTypes: boolean;
-  readonly DisassociateDefaultCodeRepository: boolean;
-  readonly DisassociateAdditionalCodeRepositories: boolean;
-  readonly RootAccess: string;
+  readonly InstanceType?: string;
+  readonly RoleArn?: string;
+  readonly LifecycleConfigName?: string;
+  readonly DisassociateLifecycleConfig?: boolean;
+  readonly VolumeSizeInGB?: number;
+  readonly DefaultCodeRepository?: string;
+  readonly AdditionalCodeRepositories?: [];
+  readonly AcceleratorTypes?: [];
+  readonly DisassociateAcceleratorTypes?: boolean;
+  readonly DisassociateDefaultCodeRepository?: boolean;
+  readonly DisassociateAdditionalCodeRepositories?: boolean;
+  readonly RootAccess?: string;
 }
 export interface UpdateNotebookInstanceLifecycleConfig {
   readonly NotebookInstanceLifecycleConfigName: string;
-  readonly OnCreate: [];
-  readonly OnStart: [];
+  readonly OnCreate?: [];
+  readonly OnStart?: [];
 }
 export interface UpdatePipeline {
   readonly PipelineName: string;
-  readonly PipelineDisplayName: string;
-  readonly PipelineDefinition: string;
-  readonly PipelineDescription: string;
-  readonly RoleArn: string;
+  readonly PipelineDisplayName?: string;
+  readonly PipelineDefinition?: string;
+  readonly PipelineDescription?: string;
+  readonly RoleArn?: string;
 }
 export interface UpdatePipelineExecution {
   readonly PipelineExecutionArn: string;
-  readonly PipelineExecutionDescription: string;
-  readonly PipelineExecutionDisplayName: string;
+  readonly PipelineExecutionDescription?: string;
+  readonly PipelineExecutionDisplayName?: string;
 }
 export interface UpdateProject {
   readonly ProjectName: string;
-  readonly ProjectDescription: string;
-  readonly ServiceCatalogProvisioningUpdateDetails: ServiceCatalogProvisioningUpdateDetails;
-  readonly Tags: [];
+  readonly ProjectDescription?: string;
+  readonly ServiceCatalogProvisioningUpdateDetails?: ServiceCatalogProvisioningUpdateDetails;
+  readonly Tags?: [];
 }
 export interface UpdateTrainingJob {
   readonly TrainingJobName: string;
-  readonly ProfilerConfig: ProfilerConfigForUpdate;
-  readonly ProfilerRuleConfigurations: [];
+  readonly ProfilerConfig?: ProfilerConfigForUpdate;
+  readonly ProfilerRuleConfigurations?: [];
 }
 export interface UpdateTrial {
   readonly TrialName: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
 }
 export interface UpdateTrialComponent {
   readonly TrialComponentName: string;
-  readonly DisplayName: string;
-  readonly Status: TrialComponentStatus;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Parameters: {[key: string]: any};
-  readonly ParametersToRemove: [];
-  readonly InputArtifacts: {[key: string]: any};
-  readonly InputArtifactsToRemove: [];
-  readonly OutputArtifacts: {[key: string]: any};
-  readonly OutputArtifactsToRemove: [];
+  readonly DisplayName?: string;
+  readonly Status?: TrialComponentStatus;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Parameters?: {[key: string]: any};
+  readonly ParametersToRemove?: [];
+  readonly InputArtifacts?: {[key: string]: any};
+  readonly InputArtifactsToRemove?: [];
+  readonly OutputArtifacts?: {[key: string]: any};
+  readonly OutputArtifactsToRemove?: [];
 }
 export interface UpdateUserProfile {
   readonly DomainId: string;
   readonly UserProfileName: string;
-  readonly UserSettings: UserSettings;
+  readonly UserSettings?: UserSettings;
 }
 export interface UpdateWorkforce {
   readonly WorkforceName: string;
-  readonly SourceIpConfig: SourceIpConfig;
-  readonly OidcConfig: OidcConfig;
+  readonly SourceIpConfig?: SourceIpConfig;
+  readonly OidcConfig?: OidcConfig;
 }
 export interface UpdateWorkteam {
   readonly WorkteamName: string;
-  readonly MemberDefinitions: [];
-  readonly Description: string;
-  readonly NotificationConfiguration: NotificationConfiguration;
+  readonly MemberDefinitions?: [];
+  readonly Description?: string;
+  readonly NotificationConfiguration?: NotificationConfiguration;
 }
 
 

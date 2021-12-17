@@ -9,18 +9,18 @@ export interface CancelExportTask {
   readonly taskId: string;
 }
 export interface CreateExportTask {
-  readonly taskName: string;
+  readonly taskName?: string;
   readonly logGroupName: string;
-  readonly logStreamNamePrefix: string;
+  readonly logStreamNamePrefix?: string;
   readonly from: number;
   readonly to: number;
   readonly destination: string;
-  readonly destinationPrefix: string;
+  readonly destinationPrefix?: string;
 }
 export interface CreateLogGroup {
   readonly logGroupName: string;
-  readonly kmsKeyId: string;
-  readonly tags: {[key: string]: any};
+  readonly kmsKeyId?: string;
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateLogStream {
   readonly logGroupName: string;
@@ -44,7 +44,7 @@ export interface DeleteQueryDefinition {
   readonly queryDefinitionId: string;
 }
 export interface DeleteResourcePolicy {
-  readonly policyName: string;
+  readonly policyName?: string;
 }
 export interface DeleteRetentionPolicy {
   readonly logGroupName: string;
@@ -54,84 +54,84 @@ export interface DeleteSubscriptionFilter {
   readonly filterName: string;
 }
 export interface DescribeDestinations {
-  readonly DestinationNamePrefix: string;
-  readonly nextToken: string;
-  readonly limit: number;
+  readonly DestinationNamePrefix?: string;
+  readonly nextToken?: string;
+  readonly limit?: number;
 }
 export interface DescribeExportTasks {
-  readonly taskId: string;
-  readonly statusCode: string;
-  readonly nextToken: string;
-  readonly limit: number;
+  readonly taskId?: string;
+  readonly statusCode?: string;
+  readonly nextToken?: string;
+  readonly limit?: number;
 }
 export interface DescribeLogGroups {
-  readonly logGroupNamePrefix: string;
-  readonly nextToken: string;
-  readonly limit: number;
+  readonly logGroupNamePrefix?: string;
+  readonly nextToken?: string;
+  readonly limit?: number;
 }
 export interface DescribeLogStreams {
   readonly logGroupName: string;
-  readonly logStreamNamePrefix: string;
-  readonly orderBy: string;
-  readonly descending: boolean;
-  readonly nextToken: string;
-  readonly limit: number;
+  readonly logStreamNamePrefix?: string;
+  readonly orderBy?: string;
+  readonly descending?: boolean;
+  readonly nextToken?: string;
+  readonly limit?: number;
 }
 export interface DescribeMetricFilters {
-  readonly logGroupName: string;
-  readonly filterNamePrefix: string;
-  readonly nextToken: string;
-  readonly limit: number;
-  readonly metricName: string;
-  readonly metricNamespace: string;
+  readonly logGroupName?: string;
+  readonly filterNamePrefix?: string;
+  readonly nextToken?: string;
+  readonly limit?: number;
+  readonly metricName?: string;
+  readonly metricNamespace?: string;
 }
 export interface DescribeQueries {
-  readonly logGroupName: string;
-  readonly status: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly logGroupName?: string;
+  readonly status?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeQueryDefinitions {
-  readonly queryDefinitionNamePrefix: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly queryDefinitionNamePrefix?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeResourcePolicies {
-  readonly nextToken: string;
-  readonly limit: number;
+  readonly nextToken?: string;
+  readonly limit?: number;
 }
 export interface DescribeSubscriptionFilters {
   readonly logGroupName: string;
-  readonly filterNamePrefix: string;
-  readonly nextToken: string;
-  readonly limit: number;
+  readonly filterNamePrefix?: string;
+  readonly nextToken?: string;
+  readonly limit?: number;
 }
 export interface DisassociateKmsKey {
   readonly logGroupName: string;
 }
 export interface FilterLogEvents {
   readonly logGroupName: string;
-  readonly logStreamNames: [];
-  readonly logStreamNamePrefix: string;
-  readonly startTime: number;
-  readonly endTime: number;
-  readonly filterPattern: string;
-  readonly nextToken: string;
-  readonly limit: number;
-  readonly interleaved: boolean;
+  readonly logStreamNames?: [];
+  readonly logStreamNamePrefix?: string;
+  readonly startTime?: number;
+  readonly endTime?: number;
+  readonly filterPattern?: string;
+  readonly nextToken?: string;
+  readonly limit?: number;
+  readonly interleaved?: boolean;
 }
 export interface GetLogEvents {
   readonly logGroupName: string;
   readonly logStreamName: string;
-  readonly startTime: number;
-  readonly endTime: number;
-  readonly nextToken: string;
-  readonly limit: number;
-  readonly startFromHead: boolean;
+  readonly startTime?: number;
+  readonly endTime?: number;
+  readonly nextToken?: string;
+  readonly limit?: number;
+  readonly startFromHead?: boolean;
 }
 export interface GetLogGroupFields {
   readonly logGroupName: string;
-  readonly time: number;
+  readonly time?: number;
 }
 export interface GetLogRecord {
   readonly logRecordPointer: string;
@@ -150,13 +150,13 @@ export interface PutDestination {
 export interface PutDestinationPolicy {
   readonly destinationName: string;
   readonly accessPolicy: string;
-  readonly forceUpdate: boolean;
+  readonly forceUpdate?: boolean;
 }
 export interface PutLogEvents {
   readonly logGroupName: string;
   readonly logStreamName: string;
   readonly logEvents: [];
-  readonly sequenceToken: string;
+  readonly sequenceToken?: string;
 }
 export interface PutMetricFilter {
   readonly logGroupName: string;
@@ -166,13 +166,13 @@ export interface PutMetricFilter {
 }
 export interface PutQueryDefinition {
   readonly name: string;
-  readonly queryDefinitionId: string;
-  readonly logGroupNames: [];
+  readonly queryDefinitionId?: string;
+  readonly logGroupNames?: [];
   readonly queryString: string;
 }
 export interface PutResourcePolicy {
-  readonly policyName: string;
-  readonly policyDocument: string;
+  readonly policyName?: string;
+  readonly policyDocument?: string;
 }
 export interface PutRetentionPolicy {
   readonly logGroupName: string;
@@ -183,16 +183,16 @@ export interface PutSubscriptionFilter {
   readonly filterName: string;
   readonly filterPattern: string;
   readonly destinationArn: string;
-  readonly roleArn: string;
-  readonly distribution: string;
+  readonly roleArn?: string;
+  readonly distribution?: string;
 }
 export interface StartQuery {
-  readonly logGroupName: string;
-  readonly logGroupNames: [];
+  readonly logGroupName?: string;
+  readonly logGroupNames?: [];
   readonly startTime: number;
   readonly endTime: number;
   readonly queryString: string;
-  readonly limit: number;
+  readonly limit?: number;
 }
 export interface StopQuery {
   readonly queryId: string;

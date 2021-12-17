@@ -3,8 +3,8 @@
  */
 export interface ActivatePipeline {
   readonly pipelineId: string;
-  readonly parameterValues: [];
-  readonly startTimestamp: Date;
+  readonly parameterValues?: [];
+  readonly startTimestamp?: Date;
 }
 export interface AddTags {
   readonly pipelineId: string;
@@ -13,12 +13,12 @@ export interface AddTags {
 export interface CreatePipeline {
   readonly name: string;
   readonly uniqueId: string;
-  readonly description: string;
-  readonly tags: [];
+  readonly description?: string;
+  readonly tags?: [];
 }
 export interface DeactivatePipeline {
   readonly pipelineId: string;
-  readonly cancelActive: boolean;
+  readonly cancelActive?: boolean;
 }
 export interface DeletePipeline {
   readonly pipelineId: string;
@@ -26,8 +26,8 @@ export interface DeletePipeline {
 export interface DescribeObjects {
   readonly pipelineId: string;
   readonly objectIds: [];
-  readonly evaluateExpressions: boolean;
-  readonly marker: string;
+  readonly evaluateExpressions?: boolean;
+  readonly marker?: string;
 }
 export interface DescribePipelines {
   readonly pipelineIds: [];
@@ -39,28 +39,28 @@ export interface EvaluateExpression {
 }
 export interface GetPipelineDefinition {
   readonly pipelineId: string;
-  readonly version: string;
+  readonly version?: string;
 }
 export interface ListPipelines {
-  readonly marker: string;
+  readonly marker?: string;
 }
 export interface PollForTask {
   readonly workerGroup: string;
-  readonly hostname: string;
-  readonly instanceIdentity: InstanceIdentity;
+  readonly hostname?: string;
+  readonly instanceIdentity?: InstanceIdentity;
 }
 export interface PutPipelineDefinition {
   readonly pipelineId: string;
   readonly pipelineObjects: [];
-  readonly parameterObjects: [];
-  readonly parameterValues: [];
+  readonly parameterObjects?: [];
+  readonly parameterValues?: [];
 }
 export interface QueryObjects {
   readonly pipelineId: string;
-  readonly query: Query;
+  readonly query?: Query;
   readonly sphere: string;
-  readonly marker: string;
-  readonly limit: number;
+  readonly marker?: string;
+  readonly limit?: number;
 }
 export interface RemoveTags {
   readonly pipelineId: string;
@@ -68,12 +68,12 @@ export interface RemoveTags {
 }
 export interface ReportTaskProgress {
   readonly taskId: string;
-  readonly fields: [];
+  readonly fields?: [];
 }
 export interface ReportTaskRunnerHeartbeat {
   readonly taskrunnerId: string;
-  readonly workerGroup: string;
-  readonly hostname: string;
+  readonly workerGroup?: string;
+  readonly hostname?: string;
 }
 export interface SetStatus {
   readonly pipelineId: string;
@@ -83,15 +83,15 @@ export interface SetStatus {
 export interface SetTaskStatus {
   readonly taskId: string;
   readonly taskStatus: string;
-  readonly errorId: string;
-  readonly errorMessage: string;
-  readonly errorStackTrace: string;
+  readonly errorId?: string;
+  readonly errorMessage?: string;
+  readonly errorStackTrace?: string;
 }
 export interface ValidatePipelineDefinition {
   readonly pipelineId: string;
   readonly pipelineObjects: [];
-  readonly parameterObjects: [];
-  readonly parameterValues: [];
+  readonly parameterObjects?: [];
+  readonly parameterValues?: [];
 }
 
 

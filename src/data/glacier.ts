@@ -13,14 +13,14 @@ export interface AbortVaultLock {
 export interface AddTagsToVault {
   readonly accountId: string;
   readonly vaultName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CompleteMultipartUpload {
   readonly accountId: string;
   readonly vaultName: string;
   readonly uploadId: string;
-  readonly archiveSize: string;
-  readonly checksum: string;
+  readonly archiveSize?: string;
+  readonly checksum?: string;
 }
 export interface CompleteVaultLock {
   readonly accountId: string;
@@ -64,7 +64,7 @@ export interface GetJobOutput {
   readonly accountId: string;
   readonly vaultName: string;
   readonly jobId: string;
-  readonly range: string;
+  readonly range?: string;
 }
 export interface GetVaultAccessPolicy {
   readonly accountId: string;
@@ -81,39 +81,39 @@ export interface GetVaultNotifications {
 export interface InitiateJob {
   readonly accountId: string;
   readonly vaultName: string;
-  readonly jobParameters: JobParameters;
+  readonly jobParameters?: JobParameters;
 }
 export interface InitiateMultipartUpload {
   readonly accountId: string;
   readonly vaultName: string;
-  readonly archiveDescription: string;
-  readonly partSize: string;
+  readonly archiveDescription?: string;
+  readonly partSize?: string;
 }
 export interface InitiateVaultLock {
   readonly accountId: string;
   readonly vaultName: string;
-  readonly policy: VaultLockPolicy;
+  readonly policy?: VaultLockPolicy;
 }
 export interface ListJobs {
   readonly accountId: string;
   readonly vaultName: string;
-  readonly limit: string;
-  readonly marker: string;
-  readonly statuscode: string;
-  readonly completed: string;
+  readonly limit?: string;
+  readonly marker?: string;
+  readonly statuscode?: string;
+  readonly completed?: string;
 }
 export interface ListMultipartUploads {
   readonly accountId: string;
   readonly vaultName: string;
-  readonly marker: string;
-  readonly limit: string;
+  readonly marker?: string;
+  readonly limit?: string;
 }
 export interface ListParts {
   readonly accountId: string;
   readonly vaultName: string;
   readonly uploadId: string;
-  readonly marker: string;
-  readonly limit: string;
+  readonly marker?: string;
+  readonly limit?: string;
 }
 export interface ListProvisionedCapacity {
   readonly accountId: string;
@@ -124,8 +124,8 @@ export interface ListTagsForVault {
 }
 export interface ListVaults {
   readonly accountId: string;
-  readonly marker: string;
-  readonly limit: string;
+  readonly marker?: string;
+  readonly limit?: string;
 }
 export interface PurchaseProvisionedCapacity {
   readonly accountId: string;
@@ -133,36 +133,36 @@ export interface PurchaseProvisionedCapacity {
 export interface RemoveTagsFromVault {
   readonly accountId: string;
   readonly vaultName: string;
-  readonly TagKeys: [];
+  readonly TagKeys?: [];
 }
 export interface SetDataRetrievalPolicy {
   readonly accountId: string;
-  readonly Policy: DataRetrievalPolicy;
+  readonly Policy?: DataRetrievalPolicy;
 }
 export interface SetVaultAccessPolicy {
   readonly accountId: string;
   readonly vaultName: string;
-  readonly policy: VaultAccessPolicy;
+  readonly policy?: VaultAccessPolicy;
 }
 export interface SetVaultNotifications {
   readonly accountId: string;
   readonly vaultName: string;
-  readonly vaultNotificationConfig: VaultNotificationConfig;
+  readonly vaultNotificationConfig?: VaultNotificationConfig;
 }
 export interface UploadArchive {
   readonly vaultName: string;
   readonly accountId: string;
-  readonly archiveDescription: string;
-  readonly checksum: string;
-  readonly body: unknown;
+  readonly archiveDescription?: string;
+  readonly checksum?: string;
+  readonly body?: unknown;
 }
 export interface UploadMultipartPart {
   readonly accountId: string;
   readonly vaultName: string;
   readonly uploadId: string;
-  readonly checksum: string;
-  readonly range: string;
-  readonly body: unknown;
+  readonly checksum?: string;
+  readonly range?: string;
+  readonly body?: unknown;
 }
 
 

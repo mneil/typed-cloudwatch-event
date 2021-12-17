@@ -4,33 +4,33 @@
 export interface CreateCluster {
   readonly ClusterName: string;
   readonly NodeType: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly ReplicationFactor: number;
-  readonly AvailabilityZones: [];
-  readonly SubnetGroupName: string;
-  readonly SecurityGroupIds: [];
-  readonly PreferredMaintenanceWindow: string;
-  readonly NotificationTopicArn: string;
+  readonly AvailabilityZones?: [];
+  readonly SubnetGroupName?: string;
+  readonly SecurityGroupIds?: [];
+  readonly PreferredMaintenanceWindow?: string;
+  readonly NotificationTopicArn?: string;
   readonly IamRoleArn: string;
-  readonly ParameterGroupName: string;
-  readonly Tags: [];
-  readonly SSESpecification: SSESpecification;
-  readonly ClusterEndpointEncryptionType: string;
+  readonly ParameterGroupName?: string;
+  readonly Tags?: [];
+  readonly SSESpecification?: SSESpecification;
+  readonly ClusterEndpointEncryptionType?: string;
 }
 export interface CreateParameterGroup {
   readonly ParameterGroupName: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 export interface CreateSubnetGroup {
   readonly SubnetGroupName: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly SubnetIds: [];
 }
 export interface DecreaseReplicationFactor {
   readonly ClusterName: string;
   readonly NewReplicationFactor: number;
-  readonly AvailabilityZones: [];
-  readonly NodeIdsToRemove: [];
+  readonly AvailabilityZones?: [];
+  readonly NodeIdsToRemove?: [];
 }
 export interface DeleteCluster {
   readonly ClusterName: string;
@@ -42,47 +42,47 @@ export interface DeleteSubnetGroup {
   readonly SubnetGroupName: string;
 }
 export interface DescribeClusters {
-  readonly ClusterNames: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ClusterNames?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeDefaultParameters {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeEvents {
-  readonly SourceName: string;
-  readonly SourceType: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Duration: number;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly SourceName?: string;
+  readonly SourceType?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Duration?: number;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeParameterGroups {
-  readonly ParameterGroupNames: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ParameterGroupNames?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeParameters {
   readonly ParameterGroupName: string;
-  readonly Source: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Source?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeSubnetGroups {
-  readonly SubnetGroupNames: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly SubnetGroupNames?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface IncreaseReplicationFactor {
   readonly ClusterName: string;
   readonly NewReplicationFactor: number;
-  readonly AvailabilityZones: [];
+  readonly AvailabilityZones?: [];
 }
 export interface ListTags {
   readonly ResourceName: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface RebootNode {
   readonly ClusterName: string;
@@ -98,12 +98,12 @@ export interface UntagResource {
 }
 export interface UpdateCluster {
   readonly ClusterName: string;
-  readonly Description: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly NotificationTopicArn: string;
-  readonly NotificationTopicStatus: string;
-  readonly ParameterGroupName: string;
-  readonly SecurityGroupIds: [];
+  readonly Description?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly NotificationTopicArn?: string;
+  readonly NotificationTopicStatus?: string;
+  readonly ParameterGroupName?: string;
+  readonly SecurityGroupIds?: [];
 }
 export interface UpdateParameterGroup {
   readonly ParameterGroupName: string;
@@ -111,8 +111,8 @@ export interface UpdateParameterGroup {
 }
 export interface UpdateSubnetGroup {
   readonly SubnetGroupName: string;
-  readonly Description: string;
-  readonly SubnetIds: [];
+  readonly Description?: string;
+  readonly SubnetIds?: [];
 }
 
 

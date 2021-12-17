@@ -77,7 +77,7 @@ export interface DeleteEmailChannel {
 }
 export interface DeleteEmailTemplate {
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface DeleteEndpoint {
   readonly ApplicationId: string;
@@ -91,7 +91,7 @@ export interface DeleteGcmChannel {
 }
 export interface DeleteInAppTemplate {
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface DeleteJourney {
   readonly ApplicationId: string;
@@ -99,7 +99,7 @@ export interface DeleteJourney {
 }
 export interface DeletePushTemplate {
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface DeleteRecommenderConfiguration {
   readonly RecommenderId: string;
@@ -113,7 +113,7 @@ export interface DeleteSmsChannel {
 }
 export interface DeleteSmsTemplate {
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface DeleteUserEndpoints {
   readonly ApplicationId: string;
@@ -124,7 +124,7 @@ export interface DeleteVoiceChannel {
 }
 export interface DeleteVoiceTemplate {
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface GetAdmChannel {
   readonly ApplicationId: string;
@@ -146,18 +146,18 @@ export interface GetApp {
 }
 export interface GetApplicationDateRangeKpi {
   readonly ApplicationId: string;
-  readonly EndTime: Date;
+  readonly EndTime?: Date;
   readonly KpiName: string;
-  readonly NextToken: string;
-  readonly PageSize: string;
-  readonly StartTime: Date;
+  readonly NextToken?: string;
+  readonly PageSize?: string;
+  readonly StartTime?: Date;
 }
 export interface GetApplicationSettings {
   readonly ApplicationId: string;
 }
 export interface GetApps {
-  readonly PageSize: string;
-  readonly Token: string;
+  readonly PageSize?: string;
+  readonly Token?: string;
 }
 export interface GetBaiduChannel {
   readonly ApplicationId: string;
@@ -169,17 +169,17 @@ export interface GetCampaign {
 export interface GetCampaignActivities {
   readonly ApplicationId: string;
   readonly CampaignId: string;
-  readonly PageSize: string;
-  readonly Token: string;
+  readonly PageSize?: string;
+  readonly Token?: string;
 }
 export interface GetCampaignDateRangeKpi {
   readonly ApplicationId: string;
   readonly CampaignId: string;
-  readonly EndTime: Date;
+  readonly EndTime?: Date;
   readonly KpiName: string;
-  readonly NextToken: string;
-  readonly PageSize: string;
-  readonly StartTime: Date;
+  readonly NextToken?: string;
+  readonly PageSize?: string;
+  readonly StartTime?: Date;
 }
 export interface GetCampaignVersion {
   readonly ApplicationId: string;
@@ -189,13 +189,13 @@ export interface GetCampaignVersion {
 export interface GetCampaignVersions {
   readonly ApplicationId: string;
   readonly CampaignId: string;
-  readonly PageSize: string;
-  readonly Token: string;
+  readonly PageSize?: string;
+  readonly Token?: string;
 }
 export interface GetCampaigns {
   readonly ApplicationId: string;
-  readonly PageSize: string;
-  readonly Token: string;
+  readonly PageSize?: string;
+  readonly Token?: string;
 }
 export interface GetChannels {
   readonly ApplicationId: string;
@@ -205,7 +205,7 @@ export interface GetEmailChannel {
 }
 export interface GetEmailTemplate {
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface GetEndpoint {
   readonly ApplicationId: string;
@@ -220,8 +220,8 @@ export interface GetExportJob {
 }
 export interface GetExportJobs {
   readonly ApplicationId: string;
-  readonly PageSize: string;
-  readonly Token: string;
+  readonly PageSize?: string;
+  readonly Token?: string;
 }
 export interface GetGcmChannel {
   readonly ApplicationId: string;
@@ -232,8 +232,8 @@ export interface GetImportJob {
 }
 export interface GetImportJobs {
   readonly ApplicationId: string;
-  readonly PageSize: string;
-  readonly Token: string;
+  readonly PageSize?: string;
+  readonly Token?: string;
 }
 export interface GetInAppMessages {
   readonly ApplicationId: string;
@@ -241,7 +241,7 @@ export interface GetInAppMessages {
 }
 export interface GetInAppTemplate {
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface GetJourney {
   readonly ApplicationId: string;
@@ -249,36 +249,36 @@ export interface GetJourney {
 }
 export interface GetJourneyDateRangeKpi {
   readonly ApplicationId: string;
-  readonly EndTime: Date;
+  readonly EndTime?: Date;
   readonly JourneyId: string;
   readonly KpiName: string;
-  readonly NextToken: string;
-  readonly PageSize: string;
-  readonly StartTime: Date;
+  readonly NextToken?: string;
+  readonly PageSize?: string;
+  readonly StartTime?: Date;
 }
 export interface GetJourneyExecutionActivityMetrics {
   readonly ApplicationId: string;
   readonly JourneyActivityId: string;
   readonly JourneyId: string;
-  readonly NextToken: string;
-  readonly PageSize: string;
+  readonly NextToken?: string;
+  readonly PageSize?: string;
 }
 export interface GetJourneyExecutionMetrics {
   readonly ApplicationId: string;
   readonly JourneyId: string;
-  readonly NextToken: string;
-  readonly PageSize: string;
+  readonly NextToken?: string;
+  readonly PageSize?: string;
 }
 export interface GetPushTemplate {
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface GetRecommenderConfiguration {
   readonly RecommenderId: string;
 }
 export interface GetRecommenderConfigurations {
-  readonly PageSize: string;
-  readonly Token: string;
+  readonly PageSize?: string;
+  readonly Token?: string;
 }
 export interface GetSegment {
   readonly ApplicationId: string;
@@ -286,15 +286,15 @@ export interface GetSegment {
 }
 export interface GetSegmentExportJobs {
   readonly ApplicationId: string;
-  readonly PageSize: string;
+  readonly PageSize?: string;
   readonly SegmentId: string;
-  readonly Token: string;
+  readonly Token?: string;
 }
 export interface GetSegmentImportJobs {
   readonly ApplicationId: string;
-  readonly PageSize: string;
+  readonly PageSize?: string;
   readonly SegmentId: string;
-  readonly Token: string;
+  readonly Token?: string;
 }
 export interface GetSegmentVersion {
   readonly ApplicationId: string;
@@ -303,21 +303,21 @@ export interface GetSegmentVersion {
 }
 export interface GetSegmentVersions {
   readonly ApplicationId: string;
-  readonly PageSize: string;
+  readonly PageSize?: string;
   readonly SegmentId: string;
-  readonly Token: string;
+  readonly Token?: string;
 }
 export interface GetSegments {
   readonly ApplicationId: string;
-  readonly PageSize: string;
-  readonly Token: string;
+  readonly PageSize?: string;
+  readonly Token?: string;
 }
 export interface GetSmsChannel {
   readonly ApplicationId: string;
 }
 export interface GetSmsTemplate {
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface GetUserEndpoints {
   readonly ApplicationId: string;
@@ -328,27 +328,27 @@ export interface GetVoiceChannel {
 }
 export interface GetVoiceTemplate {
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface ListJourneys {
   readonly ApplicationId: string;
-  readonly PageSize: string;
-  readonly Token: string;
+  readonly PageSize?: string;
+  readonly Token?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface ListTemplateVersions {
-  readonly NextToken: string;
-  readonly PageSize: string;
+  readonly NextToken?: string;
+  readonly PageSize?: string;
   readonly TemplateName: string;
   readonly TemplateType: string;
 }
 export interface ListTemplates {
-  readonly NextToken: string;
-  readonly PageSize: string;
-  readonly Prefix: string;
-  readonly TemplateType: string;
+  readonly NextToken?: string;
+  readonly PageSize?: string;
+  readonly Prefix?: string;
+  readonly TemplateType?: string;
 }
 export interface PhoneNumberValidate {
   readonly NumberValidateRequest: NumberValidateRequest;
@@ -424,10 +424,10 @@ export interface UpdateEmailChannel {
   readonly EmailChannelRequest: EmailChannelRequest;
 }
 export interface UpdateEmailTemplate {
-  readonly CreateNewVersion: boolean;
+  readonly CreateNewVersion?: boolean;
   readonly EmailTemplateRequest: EmailTemplateRequest;
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface UpdateEndpoint {
   readonly ApplicationId: string;
@@ -443,10 +443,10 @@ export interface UpdateGcmChannel {
   readonly GCMChannelRequest: GCMChannelRequest;
 }
 export interface UpdateInAppTemplate {
-  readonly CreateNewVersion: boolean;
+  readonly CreateNewVersion?: boolean;
   readonly InAppTemplateRequest: InAppTemplateRequest;
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface UpdateJourney {
   readonly ApplicationId: string;
@@ -459,10 +459,10 @@ export interface UpdateJourneyState {
   readonly JourneyStateRequest: JourneyStateRequest;
 }
 export interface UpdatePushTemplate {
-  readonly CreateNewVersion: boolean;
+  readonly CreateNewVersion?: boolean;
   readonly PushNotificationTemplateRequest: PushNotificationTemplateRequest;
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface UpdateRecommenderConfiguration {
   readonly RecommenderId: string;
@@ -478,10 +478,10 @@ export interface UpdateSmsChannel {
   readonly SMSChannelRequest: SMSChannelRequest;
 }
 export interface UpdateSmsTemplate {
-  readonly CreateNewVersion: boolean;
+  readonly CreateNewVersion?: boolean;
   readonly SMSTemplateRequest: SMSTemplateRequest;
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface UpdateTemplateActiveVersion {
   readonly TemplateActiveVersionRequest: TemplateActiveVersionRequest;
@@ -493,9 +493,9 @@ export interface UpdateVoiceChannel {
   readonly VoiceChannelRequest: VoiceChannelRequest;
 }
 export interface UpdateVoiceTemplate {
-  readonly CreateNewVersion: boolean;
+  readonly CreateNewVersion?: boolean;
   readonly TemplateName: string;
-  readonly Version: string;
+  readonly Version?: string;
   readonly VoiceTemplateRequest: VoiceTemplateRequest;
 }
 export interface VerifyOTPMessage {

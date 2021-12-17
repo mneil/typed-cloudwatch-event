@@ -7,20 +7,20 @@ export interface ConfigureLogsForPlaybackConfiguration {
 }
 export interface CreateChannel {
   readonly ChannelName: string;
-  readonly FillerSlate: SlateSource;
+  readonly FillerSlate?: SlateSource;
   readonly Outputs: [];
   readonly PlaybackMode: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreatePrefetchSchedule {
   readonly Consumption: PrefetchConsumption;
   readonly Name: string;
   readonly PlaybackConfigurationName: string;
   readonly Retrieval: PrefetchRetrieval;
-  readonly StreamId: string;
+  readonly StreamId?: string;
 }
 export interface CreateProgram {
-  readonly AdBreaks: [];
+  readonly AdBreaks?: [];
   readonly ChannelName: string;
   readonly ProgramName: string;
   readonly ScheduleConfiguration: ScheduleConfiguration;
@@ -28,16 +28,16 @@ export interface CreateProgram {
   readonly VodSourceName: string;
 }
 export interface CreateSourceLocation {
-  readonly AccessConfiguration: AccessConfiguration;
-  readonly DefaultSegmentDeliveryConfiguration: DefaultSegmentDeliveryConfiguration;
+  readonly AccessConfiguration?: AccessConfiguration;
+  readonly DefaultSegmentDeliveryConfiguration?: DefaultSegmentDeliveryConfiguration;
   readonly HttpConfiguration: HttpConfiguration;
   readonly SourceLocationName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateVodSource {
   readonly HttpPackageConfigurations: [];
   readonly SourceLocationName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
   readonly VodSourceName: string;
 }
 export interface DeleteChannel {
@@ -83,9 +83,9 @@ export interface GetChannelPolicy {
 }
 export interface GetChannelSchedule {
   readonly ChannelName: string;
-  readonly DurationMinutes: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly DurationMinutes?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetPlaybackConfiguration {
   readonly Name: string;
@@ -95,34 +95,34 @@ export interface GetPrefetchSchedule {
   readonly PlaybackConfigurationName: string;
 }
 export interface ListAlerts {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ResourceArn: string;
 }
 export interface ListChannels {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListPlaybackConfigurations {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListPrefetchSchedules {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly PlaybackConfigurationName: string;
-  readonly StreamId: string;
+  readonly StreamId?: string;
 }
 export interface ListSourceLocations {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface ListVodSources {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly SourceLocationName: string;
 }
 export interface PutChannelPolicy {
@@ -130,20 +130,20 @@ export interface PutChannelPolicy {
   readonly Policy: string;
 }
 export interface PutPlaybackConfiguration {
-  readonly AdDecisionServerUrl: string;
-  readonly AvailSuppression: AvailSuppression;
-  readonly Bumper: Bumper;
-  readonly CdnConfiguration: CdnConfiguration;
-  readonly ConfigurationAliases: {[key: string]: any};
-  readonly DashConfiguration: DashConfigurationForPut;
-  readonly LivePreRollConfiguration: LivePreRollConfiguration;
-  readonly ManifestProcessingRules: ManifestProcessingRules;
-  readonly Name: string;
-  readonly PersonalizationThresholdSeconds: number;
-  readonly SlateAdUrl: string;
-  readonly Tags: {[key: string]: any};
-  readonly TranscodeProfileName: string;
-  readonly VideoContentSourceUrl: string;
+  readonly AdDecisionServerUrl?: string;
+  readonly AvailSuppression?: AvailSuppression;
+  readonly Bumper?: Bumper;
+  readonly CdnConfiguration?: CdnConfiguration;
+  readonly ConfigurationAliases?: {[key: string]: any};
+  readonly DashConfiguration?: DashConfigurationForPut;
+  readonly LivePreRollConfiguration?: LivePreRollConfiguration;
+  readonly ManifestProcessingRules?: ManifestProcessingRules;
+  readonly Name?: string;
+  readonly PersonalizationThresholdSeconds?: number;
+  readonly SlateAdUrl?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly TranscodeProfileName?: string;
+  readonly VideoContentSourceUrl?: string;
 }
 export interface StartChannel {
   readonly ChannelName: string;
@@ -164,8 +164,8 @@ export interface UpdateChannel {
   readonly Outputs: [];
 }
 export interface UpdateSourceLocation {
-  readonly AccessConfiguration: AccessConfiguration;
-  readonly DefaultSegmentDeliveryConfiguration: DefaultSegmentDeliveryConfiguration;
+  readonly AccessConfiguration?: AccessConfiguration;
+  readonly DefaultSegmentDeliveryConfiguration?: DefaultSegmentDeliveryConfiguration;
   readonly HttpConfiguration: HttpConfiguration;
   readonly SourceLocationName: string;
 }

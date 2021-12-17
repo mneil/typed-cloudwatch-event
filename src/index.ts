@@ -40,14 +40,15 @@ const event = {
     eventType: 'AwsApiCall',
   },
 };
+
 interface IIndexable {
   [key: string]: any;
 }
-class Event {
-  readonly account: string;
-  readonly region: string;
-  readonly requestParameters;
-}
+// class Event {
+//   readonly account: string;
+//   readonly region: string;
+//   readonly requestParameters;
+// }
 
 function asEvent<T extends typeof s3>(t: T, evt: typeof event) {
   const eventName = evt.detail.eventName;

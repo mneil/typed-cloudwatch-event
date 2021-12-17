@@ -10,37 +10,37 @@ export interface GetSession {
   readonly botName: string;
   readonly botAlias: string;
   readonly userId: string;
-  readonly checkpointLabelFilter: string;
+  readonly checkpointLabelFilter?: string;
 }
 export interface PostContent {
   readonly botName: string;
   readonly botAlias: string;
   readonly userId: string;
-  readonly sessionAttributes: string;
-  readonly requestAttributes: string;
+  readonly sessionAttributes?: string;
+  readonly requestAttributes?: string;
   readonly contentType: string;
-  readonly accept: string;
+  readonly accept?: string;
   readonly inputStream: unknown;
-  readonly activeContexts: string;
+  readonly activeContexts?: string;
 }
 export interface PostText {
   readonly botName: string;
   readonly botAlias: string;
   readonly userId: string;
-  readonly sessionAttributes: {[key: string]: any};
-  readonly requestAttributes: {[key: string]: any};
+  readonly sessionAttributes?: {[key: string]: any};
+  readonly requestAttributes?: {[key: string]: any};
   readonly inputText: string;
-  readonly activeContexts: [];
+  readonly activeContexts?: [];
 }
 export interface PutSession {
   readonly botName: string;
   readonly botAlias: string;
   readonly userId: string;
-  readonly sessionAttributes: {[key: string]: any};
-  readonly dialogAction: DialogAction;
-  readonly recentIntentSummaryView: [];
-  readonly accept: string;
-  readonly activeContexts: [];
+  readonly sessionAttributes?: {[key: string]: any};
+  readonly dialogAction?: DialogAction;
+  readonly recentIntentSummaryView?: [];
+  readonly accept?: string;
+  readonly activeContexts?: [];
 }
 
 

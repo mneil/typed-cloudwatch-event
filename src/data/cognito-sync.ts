@@ -33,21 +33,21 @@ export interface GetIdentityPoolConfiguration {
 export interface ListDatasets {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListIdentityPoolUsage {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListRecords {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly DatasetName: string;
-  readonly LastSyncCount: number;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly SyncSessionToken: string;
+  readonly LastSyncCount?: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly SyncSessionToken?: string;
 }
 export interface RegisterDevice {
   readonly IdentityPoolId: string;
@@ -61,8 +61,8 @@ export interface SetCognitoEvents {
 }
 export interface SetIdentityPoolConfiguration {
   readonly IdentityPoolId: string;
-  readonly PushSync: PushSync;
-  readonly CognitoStreams: CognitoStreams;
+  readonly PushSync?: PushSync;
+  readonly CognitoStreams?: CognitoStreams;
 }
 export interface SubscribeToDataset {
   readonly IdentityPoolId: string;
@@ -80,10 +80,10 @@ export interface UpdateRecords {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly DatasetName: string;
-  readonly DeviceId: string;
-  readonly RecordPatches: [];
+  readonly DeviceId?: string;
+  readonly RecordPatches?: [];
   readonly SyncSessionToken: string;
-  readonly ClientContext: string;
+  readonly ClientContext?: string;
 }
 
 

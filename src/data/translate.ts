@@ -3,9 +3,9 @@
  */
 export interface CreateParallelData {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly ParallelDataConfig: ParallelDataConfig;
-  readonly EncryptionKey: EncryptionKey;
+  readonly EncryptionKey?: EncryptionKey;
   readonly ClientToken: string;
 }
 export interface DeleteParallelData {
@@ -22,53 +22,53 @@ export interface GetParallelData {
 }
 export interface GetTerminology {
   readonly Name: string;
-  readonly TerminologyDataFormat: string;
+  readonly TerminologyDataFormat?: string;
 }
 export interface ImportTerminology {
   readonly Name: string;
   readonly MergeStrategy: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly TerminologyData: TerminologyData;
-  readonly EncryptionKey: EncryptionKey;
+  readonly EncryptionKey?: EncryptionKey;
 }
 export interface ListParallelData {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTerminologies {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTextTranslationJobs {
-  readonly Filter: TextTranslationJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: TextTranslationJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface StartTextTranslationJob {
-  readonly JobName: string;
+  readonly JobName?: string;
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
   readonly SourceLanguageCode: string;
   readonly TargetLanguageCodes: [];
-  readonly TerminologyNames: [];
-  readonly ParallelDataNames: [];
+  readonly TerminologyNames?: [];
+  readonly ParallelDataNames?: [];
   readonly ClientToken: string;
-  readonly Settings: TranslationSettings;
+  readonly Settings?: TranslationSettings;
 }
 export interface StopTextTranslationJob {
   readonly JobId: string;
 }
 export interface TranslateText {
   readonly Text: string;
-  readonly TerminologyNames: [];
+  readonly TerminologyNames?: [];
   readonly SourceLanguageCode: string;
   readonly TargetLanguageCode: string;
-  readonly Settings: TranslationSettings;
+  readonly Settings?: TranslationSettings;
 }
 export interface UpdateParallelData {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly ParallelDataConfig: ParallelDataConfig;
   readonly ClientToken: string;
 }

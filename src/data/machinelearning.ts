@@ -8,45 +8,45 @@ export interface AddTags {
 }
 export interface CreateBatchPrediction {
   readonly BatchPredictionId: string;
-  readonly BatchPredictionName: string;
+  readonly BatchPredictionName?: string;
   readonly MLModelId: string;
   readonly BatchPredictionDataSourceId: string;
   readonly OutputUri: string;
 }
 export interface CreateDataSourceFromRDS {
   readonly DataSourceId: string;
-  readonly DataSourceName: string;
+  readonly DataSourceName?: string;
   readonly RDSData: RDSDataSpec;
   readonly RoleARN: string;
-  readonly ComputeStatistics: boolean;
+  readonly ComputeStatistics?: boolean;
 }
 export interface CreateDataSourceFromRedshift {
   readonly DataSourceId: string;
-  readonly DataSourceName: string;
+  readonly DataSourceName?: string;
   readonly DataSpec: RedshiftDataSpec;
   readonly RoleARN: string;
-  readonly ComputeStatistics: boolean;
+  readonly ComputeStatistics?: boolean;
 }
 export interface CreateDataSourceFromS3 {
   readonly DataSourceId: string;
-  readonly DataSourceName: string;
+  readonly DataSourceName?: string;
   readonly DataSpec: S3DataSpec;
-  readonly ComputeStatistics: boolean;
+  readonly ComputeStatistics?: boolean;
 }
 export interface CreateEvaluation {
   readonly EvaluationId: string;
-  readonly EvaluationName: string;
+  readonly EvaluationName?: string;
   readonly MLModelId: string;
   readonly EvaluationDataSourceId: string;
 }
 export interface CreateMLModel {
   readonly MLModelId: string;
-  readonly MLModelName: string;
+  readonly MLModelName?: string;
   readonly MLModelType: string;
-  readonly Parameters: {[key: string]: any};
+  readonly Parameters?: {[key: string]: any};
   readonly TrainingDataSourceId: string;
-  readonly Recipe: string;
-  readonly RecipeUri: string;
+  readonly Recipe?: string;
+  readonly RecipeUri?: string;
 }
 export interface CreateRealtimeEndpoint {
   readonly MLModelId: string;
@@ -72,56 +72,56 @@ export interface DeleteTags {
   readonly ResourceType: string;
 }
 export interface DescribeBatchPredictions {
-  readonly FilterVariable: string;
-  readonly EQ: string;
-  readonly GT: string;
-  readonly LT: string;
-  readonly GE: string;
-  readonly LE: string;
-  readonly NE: string;
-  readonly Prefix: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly FilterVariable?: string;
+  readonly EQ?: string;
+  readonly GT?: string;
+  readonly LT?: string;
+  readonly GE?: string;
+  readonly LE?: string;
+  readonly NE?: string;
+  readonly Prefix?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface DescribeDataSources {
-  readonly FilterVariable: string;
-  readonly EQ: string;
-  readonly GT: string;
-  readonly LT: string;
-  readonly GE: string;
-  readonly LE: string;
-  readonly NE: string;
-  readonly Prefix: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly FilterVariable?: string;
+  readonly EQ?: string;
+  readonly GT?: string;
+  readonly LT?: string;
+  readonly GE?: string;
+  readonly LE?: string;
+  readonly NE?: string;
+  readonly Prefix?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface DescribeEvaluations {
-  readonly FilterVariable: string;
-  readonly EQ: string;
-  readonly GT: string;
-  readonly LT: string;
-  readonly GE: string;
-  readonly LE: string;
-  readonly NE: string;
-  readonly Prefix: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly FilterVariable?: string;
+  readonly EQ?: string;
+  readonly GT?: string;
+  readonly LT?: string;
+  readonly GE?: string;
+  readonly LE?: string;
+  readonly NE?: string;
+  readonly Prefix?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface DescribeMLModels {
-  readonly FilterVariable: string;
-  readonly EQ: string;
-  readonly GT: string;
-  readonly LT: string;
-  readonly GE: string;
-  readonly LE: string;
-  readonly NE: string;
-  readonly Prefix: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly FilterVariable?: string;
+  readonly EQ?: string;
+  readonly GT?: string;
+  readonly LT?: string;
+  readonly GE?: string;
+  readonly LE?: string;
+  readonly NE?: string;
+  readonly Prefix?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface DescribeTags {
   readonly ResourceId: string;
@@ -132,14 +132,14 @@ export interface GetBatchPrediction {
 }
 export interface GetDataSource {
   readonly DataSourceId: string;
-  readonly Verbose: boolean;
+  readonly Verbose?: boolean;
 }
 export interface GetEvaluation {
   readonly EvaluationId: string;
 }
 export interface GetMLModel {
   readonly MLModelId: string;
-  readonly Verbose: boolean;
+  readonly Verbose?: boolean;
 }
 export interface Predict {
   readonly MLModelId: string;
@@ -160,8 +160,8 @@ export interface UpdateEvaluation {
 }
 export interface UpdateMLModel {
   readonly MLModelId: string;
-  readonly MLModelName: string;
-  readonly ScoreThreshold: unknown;
+  readonly MLModelName?: string;
+  readonly ScoreThreshold?: unknown;
 }
 
 

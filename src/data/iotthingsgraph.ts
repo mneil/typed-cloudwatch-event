@@ -4,24 +4,24 @@
 export interface AssociateEntityToThing {
   readonly thingName: string;
   readonly entityId: string;
-  readonly namespaceVersion: number;
+  readonly namespaceVersion?: number;
 }
 export interface CreateFlowTemplate {
   readonly definition: DefinitionDocument;
-  readonly compatibleNamespaceVersion: number;
+  readonly compatibleNamespaceVersion?: number;
 }
 export interface CreateSystemInstance {
-  readonly tags: [];
+  readonly tags?: [];
   readonly definition: DefinitionDocument;
   readonly target: string;
-  readonly greengrassGroupName: string;
-  readonly s3BucketName: string;
-  readonly metricsConfiguration: MetricsConfiguration;
-  readonly flowActionsRoleArn: string;
+  readonly greengrassGroupName?: string;
+  readonly s3BucketName?: string;
+  readonly metricsConfiguration?: MetricsConfiguration;
+  readonly flowActionsRoleArn?: string;
 }
 export interface CreateSystemTemplate {
   readonly definition: DefinitionDocument;
-  readonly compatibleNamespaceVersion: number;
+  readonly compatibleNamespaceVersion?: number;
 }
 export interface DeleteFlowTemplate {
   readonly id: string;
@@ -29,13 +29,13 @@ export interface DeleteFlowTemplate {
 export interface DeleteNamespace {
 }
 export interface DeleteSystemInstance {
-  readonly id: string;
+  readonly id?: string;
 }
 export interface DeleteSystemTemplate {
   readonly id: string;
 }
 export interface DeploySystemInstance {
-  readonly id: string;
+  readonly id?: string;
 }
 export interface DeprecateFlowTemplate {
   readonly id: string;
@@ -44,7 +44,7 @@ export interface DeprecateSystemTemplate {
   readonly id: string;
 }
 export interface DescribeNamespace {
-  readonly namespaceName: string;
+  readonly namespaceName?: string;
 }
 export interface DissociateEntityFromThing {
   readonly thingName: string;
@@ -52,16 +52,16 @@ export interface DissociateEntityFromThing {
 }
 export interface GetEntities {
   readonly ids: [];
-  readonly namespaceVersion: number;
+  readonly namespaceVersion?: number;
 }
 export interface GetFlowTemplate {
   readonly id: string;
-  readonly revisionNumber: number;
+  readonly revisionNumber?: number;
 }
 export interface GetFlowTemplateRevisions {
   readonly id: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetNamespaceDeletionStatus {
 }
@@ -70,68 +70,68 @@ export interface GetSystemInstance {
 }
 export interface GetSystemTemplate {
   readonly id: string;
-  readonly revisionNumber: number;
+  readonly revisionNumber?: number;
 }
 export interface GetSystemTemplateRevisions {
   readonly id: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetUploadStatus {
   readonly uploadId: string;
 }
 export interface ListFlowExecutionMessages {
   readonly flowExecutionId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
-  readonly maxResults: number;
+  readonly maxResults?: number;
   readonly resourceArn: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface SearchEntities {
   readonly entityTypes: [];
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly namespaceVersion: number;
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly namespaceVersion?: number;
 }
 export interface SearchFlowExecutions {
   readonly systemInstanceId: string;
-  readonly flowExecutionId: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly flowExecutionId?: string;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface SearchFlowTemplates {
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface SearchSystemInstances {
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface SearchSystemTemplates {
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface SearchThings {
   readonly entityId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly namespaceVersion: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly namespaceVersion?: number;
 }
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: [];
 }
 export interface UndeploySystemInstance {
-  readonly id: string;
+  readonly id?: string;
 }
 export interface UntagResource {
   readonly resourceArn: string;
@@ -140,17 +140,17 @@ export interface UntagResource {
 export interface UpdateFlowTemplate {
   readonly id: string;
   readonly definition: DefinitionDocument;
-  readonly compatibleNamespaceVersion: number;
+  readonly compatibleNamespaceVersion?: number;
 }
 export interface UpdateSystemTemplate {
   readonly id: string;
   readonly definition: DefinitionDocument;
-  readonly compatibleNamespaceVersion: number;
+  readonly compatibleNamespaceVersion?: number;
 }
 export interface UploadEntityDefinitions {
-  readonly document: DefinitionDocument;
-  readonly syncWithPublicNamespace: boolean;
-  readonly deprecateExistingEntities: boolean;
+  readonly document?: DefinitionDocument;
+  readonly syncWithPublicNamespace?: boolean;
+  readonly deprecateExistingEntities?: boolean;
 }
 
 

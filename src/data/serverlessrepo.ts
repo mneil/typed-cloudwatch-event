@@ -4,53 +4,53 @@
 export interface CreateApplication {
   readonly Author: string;
   readonly Description: string;
-  readonly HomePageUrl: string;
-  readonly Labels: [];
-  readonly LicenseBody: string;
-  readonly LicenseUrl: string;
+  readonly HomePageUrl?: string;
+  readonly Labels?: [];
+  readonly LicenseBody?: string;
+  readonly LicenseUrl?: string;
   readonly Name: string;
-  readonly ReadmeBody: string;
-  readonly ReadmeUrl: string;
-  readonly SemanticVersion: string;
-  readonly SourceCodeArchiveUrl: string;
-  readonly SourceCodeUrl: string;
-  readonly SpdxLicenseId: string;
-  readonly TemplateBody: string;
-  readonly TemplateUrl: string;
+  readonly ReadmeBody?: string;
+  readonly ReadmeUrl?: string;
+  readonly SemanticVersion?: string;
+  readonly SourceCodeArchiveUrl?: string;
+  readonly SourceCodeUrl?: string;
+  readonly SpdxLicenseId?: string;
+  readonly TemplateBody?: string;
+  readonly TemplateUrl?: string;
 }
 export interface CreateApplicationVersion {
   readonly ApplicationId: string;
   readonly SemanticVersion: string;
-  readonly SourceCodeArchiveUrl: string;
-  readonly SourceCodeUrl: string;
-  readonly TemplateBody: string;
-  readonly TemplateUrl: string;
+  readonly SourceCodeArchiveUrl?: string;
+  readonly SourceCodeUrl?: string;
+  readonly TemplateBody?: string;
+  readonly TemplateUrl?: string;
 }
 export interface CreateCloudFormationChangeSet {
   readonly ApplicationId: string;
-  readonly Capabilities: [];
-  readonly ChangeSetName: string;
-  readonly ClientToken: string;
-  readonly Description: string;
-  readonly NotificationArns: [];
-  readonly ParameterOverrides: [];
-  readonly ResourceTypes: [];
-  readonly RollbackConfiguration: RollbackConfiguration;
-  readonly SemanticVersion: string;
+  readonly Capabilities?: [];
+  readonly ChangeSetName?: string;
+  readonly ClientToken?: string;
+  readonly Description?: string;
+  readonly NotificationArns?: [];
+  readonly ParameterOverrides?: [];
+  readonly ResourceTypes?: [];
+  readonly RollbackConfiguration?: RollbackConfiguration;
+  readonly SemanticVersion?: string;
   readonly StackName: string;
-  readonly Tags: [];
-  readonly TemplateId: string;
+  readonly Tags?: [];
+  readonly TemplateId?: string;
 }
 export interface CreateCloudFormationTemplate {
   readonly ApplicationId: string;
-  readonly SemanticVersion: string;
+  readonly SemanticVersion?: string;
 }
 export interface DeleteApplication {
   readonly ApplicationId: string;
 }
 export interface GetApplication {
   readonly ApplicationId: string;
-  readonly SemanticVersion: string;
+  readonly SemanticVersion?: string;
 }
 export interface GetApplicationPolicy {
   readonly ApplicationId: string;
@@ -61,18 +61,18 @@ export interface GetCloudFormationTemplate {
 }
 export interface ListApplicationDependencies {
   readonly ApplicationId: string;
-  readonly MaxItems: number;
-  readonly NextToken: string;
-  readonly SemanticVersion: string;
+  readonly MaxItems?: number;
+  readonly NextToken?: string;
+  readonly SemanticVersion?: string;
 }
 export interface ListApplicationVersions {
   readonly ApplicationId: string;
-  readonly MaxItems: number;
-  readonly NextToken: string;
+  readonly MaxItems?: number;
+  readonly NextToken?: string;
 }
 export interface ListApplications {
-  readonly MaxItems: number;
-  readonly NextToken: string;
+  readonly MaxItems?: number;
+  readonly NextToken?: string;
 }
 export interface PutApplicationPolicy {
   readonly ApplicationId: string;
@@ -84,12 +84,12 @@ export interface UnshareApplication {
 }
 export interface UpdateApplication {
   readonly ApplicationId: string;
-  readonly Author: string;
-  readonly Description: string;
-  readonly HomePageUrl: string;
-  readonly Labels: [];
-  readonly ReadmeBody: string;
-  readonly ReadmeUrl: string;
+  readonly Author?: string;
+  readonly Description?: string;
+  readonly HomePageUrl?: string;
+  readonly Labels?: [];
+  readonly ReadmeBody?: string;
+  readonly ReadmeUrl?: string;
 }
 
 

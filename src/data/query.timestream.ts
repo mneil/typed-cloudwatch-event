@@ -9,11 +9,11 @@ export interface CreateScheduledQuery {
   readonly QueryString: string;
   readonly ScheduleConfiguration: ScheduleConfiguration;
   readonly NotificationConfiguration: NotificationConfiguration;
-  readonly TargetConfiguration: TargetConfiguration;
-  readonly ClientToken: string;
+  readonly TargetConfiguration?: TargetConfiguration;
+  readonly ClientToken?: string;
   readonly ScheduledQueryExecutionRoleArn: string;
-  readonly Tags: [];
-  readonly KmsKeyId: string;
+  readonly Tags?: [];
+  readonly KmsKeyId?: string;
   readonly ErrorReportConfiguration: ErrorReportConfiguration;
 }
 export interface DeleteScheduledQuery {
@@ -27,26 +27,26 @@ export interface DescribeScheduledQuery {
 export interface ExecuteScheduledQuery {
   readonly ScheduledQueryArn: string;
   readonly InvocationTime: Date;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 export interface ListScheduledQueries {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface PrepareQuery {
   readonly QueryString: string;
-  readonly ValidateOnly: boolean;
+  readonly ValidateOnly?: boolean;
 }
 export interface Query {
   readonly QueryString: string;
-  readonly ClientToken: string;
-  readonly NextToken: string;
-  readonly MaxRows: number;
+  readonly ClientToken?: string;
+  readonly NextToken?: string;
+  readonly MaxRows?: number;
 }
 export interface TagResource {
   readonly ResourceARN: string;

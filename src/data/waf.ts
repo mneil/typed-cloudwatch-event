@@ -19,7 +19,7 @@ export interface CreateRateBasedRule {
   readonly RateKey: string;
   readonly RateLimit: number;
   readonly ChangeToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateRegexMatchSet {
   readonly Name: string;
@@ -33,13 +33,13 @@ export interface CreateRule {
   readonly Name: string;
   readonly MetricName: string;
   readonly ChangeToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateRuleGroup {
   readonly Name: string;
   readonly MetricName: string;
   readonly ChangeToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateSizeConstraintSet {
   readonly Name: string;
@@ -54,7 +54,7 @@ export interface CreateWebACL {
   readonly MetricName: string;
   readonly DefaultAction: WafAction;
   readonly ChangeToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateWebACLMigrationStack {
   readonly WebACLId: string;
@@ -144,7 +144,7 @@ export interface GetRateBasedRule {
 }
 export interface GetRateBasedRuleManagedKeys {
   readonly RuleId: string;
-  readonly NextMarker: string;
+  readonly NextMarker?: string;
 }
 export interface GetRegexMatchSet {
   readonly RegexMatchSetId: string;
@@ -177,70 +177,70 @@ export interface GetXssMatchSet {
   readonly XssMatchSetId: string;
 }
 export interface ListActivatedRulesInRuleGroup {
-  readonly RuleGroupId: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly RuleGroupId?: string;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListByteMatchSets {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListGeoMatchSets {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListIPSets {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListLoggingConfigurations {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListRateBasedRules {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListRegexMatchSets {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListRegexPatternSets {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListRuleGroups {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListRules {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListSizeConstraintSets {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListSqlInjectionMatchSets {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListSubscribedRuleGroups {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListTagsForResource {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
   readonly ResourceARN: string;
 }
 export interface ListWebACLs {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListXssMatchSets {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface PutLoggingConfiguration {
   readonly LoggingConfiguration: LoggingConfiguration;
@@ -311,8 +311,8 @@ export interface UpdateSqlInjectionMatchSet {
 export interface UpdateWebACL {
   readonly WebACLId: string;
   readonly ChangeToken: string;
-  readonly Updates: [];
-  readonly DefaultAction: WafAction;
+  readonly Updates?: [];
+  readonly DefaultAction?: WafAction;
 }
 export interface UpdateXssMatchSet {
   readonly XssMatchSetId: string;

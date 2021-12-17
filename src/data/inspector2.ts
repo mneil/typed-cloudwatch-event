@@ -5,7 +5,7 @@ export interface AssociateMember {
   readonly accountId: string;
 }
 export interface BatchGetAccountStatus {
-  readonly accountIds: [];
+  readonly accountIds?: [];
 }
 export interface BatchGetFreeTrialInfo {
   readonly accountIds: [];
@@ -15,13 +15,13 @@ export interface CancelFindingsReport {
 }
 export interface CreateFilter {
   readonly action: string;
-  readonly description: string;
+  readonly description?: string;
   readonly filterCriteria: FilterCriteria;
   readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateFindingsReport {
-  readonly filterCriteria: FilterCriteria;
+  readonly filterCriteria?: FilterCriteria;
   readonly reportFormat: string;
   readonly s3Destination: Destination;
 }
@@ -31,8 +31,8 @@ export interface DeleteFilter {
 export interface DescribeOrganizationConfiguration {
 }
 export interface Disable {
-  readonly accountIds: [];
-  readonly resourceTypes: [];
+  readonly accountIds?: [];
+  readonly resourceTypes?: [];
 }
 export interface DisableDelegatedAdminAccount {
   readonly delegatedAdminAccountId: string;
@@ -41,72 +41,72 @@ export interface DisassociateMember {
   readonly accountId: string;
 }
 export interface Enable {
-  readonly accountIds: [];
-  readonly clientToken: string;
+  readonly accountIds?: [];
+  readonly clientToken?: string;
   readonly resourceTypes: [];
 }
 export interface EnableDelegatedAdminAccount {
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly delegatedAdminAccountId: string;
 }
 export interface GetDelegatedAdminAccount {
 }
 export interface GetFindingsReportStatus {
-  readonly reportId: string;
+  readonly reportId?: string;
 }
 export interface GetMember {
   readonly accountId: string;
 }
 export interface ListAccountPermissions {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly service: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly service?: string;
 }
 export interface ListCoverage {
-  readonly filterCriteria: CoverageFilterCriteria;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly filterCriteria?: CoverageFilterCriteria;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListCoverageStatistics {
-  readonly filterCriteria: CoverageFilterCriteria;
-  readonly groupBy: string;
-  readonly nextToken: string;
+  readonly filterCriteria?: CoverageFilterCriteria;
+  readonly groupBy?: string;
+  readonly nextToken?: string;
 }
 export interface ListDelegatedAdminAccounts {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListFilters {
-  readonly action: string;
-  readonly arns: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly action?: string;
+  readonly arns?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListFindingAggregations {
-  readonly accountIds: [];
-  readonly aggregationRequest: AggregationRequest;
+  readonly accountIds?: [];
+  readonly aggregationRequest?: AggregationRequest;
   readonly aggregationType: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListFindings {
-  readonly filterCriteria: FilterCriteria;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly sortCriteria: SortCriteria;
+  readonly filterCriteria?: FilterCriteria;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly sortCriteria?: SortCriteria;
 }
 export interface ListMembers {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly onlyAssociated: boolean;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly onlyAssociated?: boolean;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface ListUsageTotals {
-  readonly accountIds: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly accountIds?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface TagResource {
   readonly resourceArn: string;
@@ -117,11 +117,11 @@ export interface UntagResource {
   readonly tagKeys: [];
 }
 export interface UpdateFilter {
-  readonly action: string;
-  readonly description: string;
+  readonly action?: string;
+  readonly description?: string;
   readonly filterArn: string;
-  readonly filterCriteria: FilterCriteria;
-  readonly name: string;
+  readonly filterCriteria?: FilterCriteria;
+  readonly name?: string;
 }
 export interface UpdateOrganizationConfiguration {
   readonly autoEnable: AutoEnable;

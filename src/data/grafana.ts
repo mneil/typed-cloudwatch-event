@@ -8,16 +8,16 @@ export interface AssociateLicense {
 export interface CreateWorkspace {
   readonly accountAccessType: string;
   readonly authenticationProviders: [];
-  readonly clientToken: string;
-  readonly organizationRoleName: string;
+  readonly clientToken?: string;
+  readonly organizationRoleName?: string;
   readonly permissionType: string;
-  readonly stackSetName: string;
-  readonly workspaceDataSources: [];
-  readonly workspaceDescription: string;
-  readonly workspaceName: string;
-  readonly workspaceNotificationDestinations: [];
-  readonly workspaceOrganizationalUnits: [];
-  readonly workspaceRoleArn: string;
+  readonly stackSetName?: string;
+  readonly workspaceDataSources?: [];
+  readonly workspaceDescription?: string;
+  readonly workspaceName?: string;
+  readonly workspaceNotificationDestinations?: [];
+  readonly workspaceOrganizationalUnits?: [];
+  readonly workspaceRoleArn?: string;
 }
 export interface DeleteWorkspace {
   readonly workspaceId: string;
@@ -33,37 +33,37 @@ export interface DisassociateLicense {
   readonly workspaceId: string;
 }
 export interface ListPermissions {
-  readonly groupId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly userId: string;
-  readonly userType: string;
+  readonly groupId?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly userId?: string;
+  readonly userType?: string;
   readonly workspaceId: string;
 }
 export interface ListWorkspaces {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface UpdatePermissions {
   readonly updateInstructionBatch: [];
   readonly workspaceId: string;
 }
 export interface UpdateWorkspace {
-  readonly accountAccessType: string;
-  readonly organizationRoleName: string;
-  readonly permissionType: string;
-  readonly stackSetName: string;
-  readonly workspaceDataSources: [];
-  readonly workspaceDescription: string;
+  readonly accountAccessType?: string;
+  readonly organizationRoleName?: string;
+  readonly permissionType?: string;
+  readonly stackSetName?: string;
+  readonly workspaceDataSources?: [];
+  readonly workspaceDescription?: string;
   readonly workspaceId: string;
-  readonly workspaceName: string;
-  readonly workspaceNotificationDestinations: [];
-  readonly workspaceOrganizationalUnits: [];
-  readonly workspaceRoleArn: string;
+  readonly workspaceName?: string;
+  readonly workspaceNotificationDestinations?: [];
+  readonly workspaceOrganizationalUnits?: [];
+  readonly workspaceRoleArn?: string;
 }
 export interface UpdateWorkspaceAuthentication {
   readonly authenticationProviders: [];
-  readonly samlConfiguration: SamlConfiguration;
+  readonly samlConfiguration?: SamlConfiguration;
   readonly workspaceId: string;
 }
 

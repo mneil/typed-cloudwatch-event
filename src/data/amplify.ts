@@ -3,68 +3,68 @@
  */
 export interface CreateApp {
   readonly name: string;
-  readonly description: string;
-  readonly repository: string;
-  readonly platform: string;
-  readonly iamServiceRoleArn: string;
-  readonly oauthToken: string;
-  readonly accessToken: string;
-  readonly environmentVariables: {[key: string]: any};
-  readonly enableBranchAutoBuild: boolean;
-  readonly enableBranchAutoDeletion: boolean;
-  readonly enableBasicAuth: boolean;
-  readonly basicAuthCredentials: string;
-  readonly customRules: [];
-  readonly tags: {[key: string]: any};
-  readonly buildSpec: string;
-  readonly customHeaders: string;
-  readonly enableAutoBranchCreation: boolean;
-  readonly autoBranchCreationPatterns: [];
-  readonly autoBranchCreationConfig: AutoBranchCreationConfig;
+  readonly description?: string;
+  readonly repository?: string;
+  readonly platform?: string;
+  readonly iamServiceRoleArn?: string;
+  readonly oauthToken?: string;
+  readonly accessToken?: string;
+  readonly environmentVariables?: {[key: string]: any};
+  readonly enableBranchAutoBuild?: boolean;
+  readonly enableBranchAutoDeletion?: boolean;
+  readonly enableBasicAuth?: boolean;
+  readonly basicAuthCredentials?: string;
+  readonly customRules?: [];
+  readonly tags?: {[key: string]: any};
+  readonly buildSpec?: string;
+  readonly customHeaders?: string;
+  readonly enableAutoBranchCreation?: boolean;
+  readonly autoBranchCreationPatterns?: [];
+  readonly autoBranchCreationConfig?: AutoBranchCreationConfig;
 }
 export interface CreateBackendEnvironment {
   readonly appId: string;
   readonly environmentName: string;
-  readonly stackName: string;
-  readonly deploymentArtifacts: string;
+  readonly stackName?: string;
+  readonly deploymentArtifacts?: string;
 }
 export interface CreateBranch {
   readonly appId: string;
   readonly branchName: string;
-  readonly description: string;
-  readonly stage: string;
-  readonly framework: string;
-  readonly enableNotification: boolean;
-  readonly enableAutoBuild: boolean;
-  readonly environmentVariables: {[key: string]: any};
-  readonly basicAuthCredentials: string;
-  readonly enableBasicAuth: boolean;
-  readonly enablePerformanceMode: boolean;
-  readonly tags: {[key: string]: any};
-  readonly buildSpec: string;
-  readonly ttl: string;
-  readonly displayName: string;
-  readonly enablePullRequestPreview: boolean;
-  readonly pullRequestEnvironmentName: string;
-  readonly backendEnvironmentArn: string;
+  readonly description?: string;
+  readonly stage?: string;
+  readonly framework?: string;
+  readonly enableNotification?: boolean;
+  readonly enableAutoBuild?: boolean;
+  readonly environmentVariables?: {[key: string]: any};
+  readonly basicAuthCredentials?: string;
+  readonly enableBasicAuth?: boolean;
+  readonly enablePerformanceMode?: boolean;
+  readonly tags?: {[key: string]: any};
+  readonly buildSpec?: string;
+  readonly ttl?: string;
+  readonly displayName?: string;
+  readonly enablePullRequestPreview?: boolean;
+  readonly pullRequestEnvironmentName?: string;
+  readonly backendEnvironmentArn?: string;
 }
 export interface CreateDeployment {
   readonly appId: string;
   readonly branchName: string;
-  readonly fileMap: {[key: string]: any};
+  readonly fileMap?: {[key: string]: any};
 }
 export interface CreateDomainAssociation {
   readonly appId: string;
   readonly domainName: string;
-  readonly enableAutoSubDomain: boolean;
+  readonly enableAutoSubDomain?: boolean;
   readonly subDomainSettings: [];
-  readonly autoSubDomainCreationPatterns: [];
-  readonly autoSubDomainIAMRole: string;
+  readonly autoSubDomainCreationPatterns?: [];
+  readonly autoSubDomainIAMRole?: string;
 }
 export interface CreateWebhook {
   readonly appId: string;
   readonly branchName: string;
-  readonly description: string;
+  readonly description?: string;
 }
 export interface DeleteApp {
   readonly appId: string;
@@ -90,8 +90,8 @@ export interface DeleteWebhook {
   readonly webhookId: string;
 }
 export interface GenerateAccessLogs {
-  readonly startTime: Date;
-  readonly endTime: Date;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
   readonly domainName: string;
   readonly appId: string;
 }
@@ -122,61 +122,61 @@ export interface GetWebhook {
   readonly webhookId: string;
 }
 export interface ListApps {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListArtifacts {
   readonly appId: string;
   readonly branchName: string;
   readonly jobId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListBackendEnvironments {
   readonly appId: string;
-  readonly environmentName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly environmentName?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListBranches {
   readonly appId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDomainAssociations {
   readonly appId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListJobs {
   readonly appId: string;
   readonly branchName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface ListWebhooks {
   readonly appId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface StartDeployment {
   readonly appId: string;
   readonly branchName: string;
-  readonly jobId: string;
-  readonly sourceUrl: string;
+  readonly jobId?: string;
+  readonly sourceUrl?: string;
 }
 export interface StartJob {
   readonly appId: string;
   readonly branchName: string;
-  readonly jobId: string;
+  readonly jobId?: string;
   readonly jobType: string;
-  readonly jobReason: string;
-  readonly commitId: string;
-  readonly commitMessage: string;
-  readonly commitTime: Date;
+  readonly jobReason?: string;
+  readonly commitId?: string;
+  readonly commitMessage?: string;
+  readonly commitTime?: Date;
 }
 export interface StopJob {
   readonly appId: string;
@@ -193,56 +193,56 @@ export interface UntagResource {
 }
 export interface UpdateApp {
   readonly appId: string;
-  readonly name: string;
-  readonly description: string;
-  readonly platform: string;
-  readonly iamServiceRoleArn: string;
-  readonly environmentVariables: {[key: string]: any};
-  readonly enableBranchAutoBuild: boolean;
-  readonly enableBranchAutoDeletion: boolean;
-  readonly enableBasicAuth: boolean;
-  readonly basicAuthCredentials: string;
-  readonly customRules: [];
-  readonly buildSpec: string;
-  readonly customHeaders: string;
-  readonly enableAutoBranchCreation: boolean;
-  readonly autoBranchCreationPatterns: [];
-  readonly autoBranchCreationConfig: AutoBranchCreationConfig;
-  readonly repository: string;
-  readonly oauthToken: string;
-  readonly accessToken: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly platform?: string;
+  readonly iamServiceRoleArn?: string;
+  readonly environmentVariables?: {[key: string]: any};
+  readonly enableBranchAutoBuild?: boolean;
+  readonly enableBranchAutoDeletion?: boolean;
+  readonly enableBasicAuth?: boolean;
+  readonly basicAuthCredentials?: string;
+  readonly customRules?: [];
+  readonly buildSpec?: string;
+  readonly customHeaders?: string;
+  readonly enableAutoBranchCreation?: boolean;
+  readonly autoBranchCreationPatterns?: [];
+  readonly autoBranchCreationConfig?: AutoBranchCreationConfig;
+  readonly repository?: string;
+  readonly oauthToken?: string;
+  readonly accessToken?: string;
 }
 export interface UpdateBranch {
   readonly appId: string;
   readonly branchName: string;
-  readonly description: string;
-  readonly framework: string;
-  readonly stage: string;
-  readonly enableNotification: boolean;
-  readonly enableAutoBuild: boolean;
-  readonly environmentVariables: {[key: string]: any};
-  readonly basicAuthCredentials: string;
-  readonly enableBasicAuth: boolean;
-  readonly enablePerformanceMode: boolean;
-  readonly buildSpec: string;
-  readonly ttl: string;
-  readonly displayName: string;
-  readonly enablePullRequestPreview: boolean;
-  readonly pullRequestEnvironmentName: string;
-  readonly backendEnvironmentArn: string;
+  readonly description?: string;
+  readonly framework?: string;
+  readonly stage?: string;
+  readonly enableNotification?: boolean;
+  readonly enableAutoBuild?: boolean;
+  readonly environmentVariables?: {[key: string]: any};
+  readonly basicAuthCredentials?: string;
+  readonly enableBasicAuth?: boolean;
+  readonly enablePerformanceMode?: boolean;
+  readonly buildSpec?: string;
+  readonly ttl?: string;
+  readonly displayName?: string;
+  readonly enablePullRequestPreview?: boolean;
+  readonly pullRequestEnvironmentName?: string;
+  readonly backendEnvironmentArn?: string;
 }
 export interface UpdateDomainAssociation {
   readonly appId: string;
   readonly domainName: string;
-  readonly enableAutoSubDomain: boolean;
+  readonly enableAutoSubDomain?: boolean;
   readonly subDomainSettings: [];
-  readonly autoSubDomainCreationPatterns: [];
-  readonly autoSubDomainIAMRole: string;
+  readonly autoSubDomainCreationPatterns?: [];
+  readonly autoSubDomainIAMRole?: string;
 }
 export interface UpdateWebhook {
   readonly webhookId: string;
-  readonly branchName: string;
-  readonly description: string;
+  readonly branchName?: string;
+  readonly description?: string;
 }
 
 

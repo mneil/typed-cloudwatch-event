@@ -5,68 +5,68 @@ export interface AcceptInputDeviceTransfer {
   readonly InputDeviceId: string;
 }
 export interface BatchDelete {
-  readonly ChannelIds: [];
-  readonly InputIds: [];
-  readonly InputSecurityGroupIds: [];
-  readonly MultiplexIds: [];
+  readonly ChannelIds?: [];
+  readonly InputIds?: [];
+  readonly InputSecurityGroupIds?: [];
+  readonly MultiplexIds?: [];
 }
 export interface BatchStart {
-  readonly ChannelIds: [];
-  readonly MultiplexIds: [];
+  readonly ChannelIds?: [];
+  readonly MultiplexIds?: [];
 }
 export interface BatchStop {
-  readonly ChannelIds: [];
-  readonly MultiplexIds: [];
+  readonly ChannelIds?: [];
+  readonly MultiplexIds?: [];
 }
 export interface BatchUpdateSchedule {
   readonly ChannelId: string;
-  readonly Creates: BatchScheduleActionCreateRequest;
-  readonly Deletes: BatchScheduleActionDeleteRequest;
+  readonly Creates?: BatchScheduleActionCreateRequest;
+  readonly Deletes?: BatchScheduleActionDeleteRequest;
 }
 export interface CancelInputDeviceTransfer {
   readonly InputDeviceId: string;
 }
 export interface ClaimDevice {
-  readonly Id: string;
+  readonly Id?: string;
 }
 export interface CreateChannel {
-  readonly CdiInputSpecification: CdiInputSpecification;
-  readonly ChannelClass: string;
-  readonly Destinations: [];
-  readonly EncoderSettings: EncoderSettings;
-  readonly InputAttachments: [];
-  readonly InputSpecification: InputSpecification;
-  readonly LogLevel: string;
-  readonly Name: string;
-  readonly RequestId: string;
-  readonly Reserved: string;
-  readonly RoleArn: string;
-  readonly Tags: {[key: string]: any};
-  readonly Vpc: VpcOutputSettings;
+  readonly CdiInputSpecification?: CdiInputSpecification;
+  readonly ChannelClass?: string;
+  readonly Destinations?: [];
+  readonly EncoderSettings?: EncoderSettings;
+  readonly InputAttachments?: [];
+  readonly InputSpecification?: InputSpecification;
+  readonly LogLevel?: string;
+  readonly Name?: string;
+  readonly RequestId?: string;
+  readonly Reserved?: string;
+  readonly RoleArn?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Vpc?: VpcOutputSettings;
 }
 export interface CreateInput {
-  readonly Destinations: [];
-  readonly InputDevices: [];
-  readonly InputSecurityGroups: [];
-  readonly MediaConnectFlows: [];
-  readonly Name: string;
-  readonly RequestId: string;
-  readonly RoleArn: string;
-  readonly Sources: [];
-  readonly Tags: {[key: string]: any};
-  readonly Type: string;
-  readonly Vpc: InputVpcRequest;
+  readonly Destinations?: [];
+  readonly InputDevices?: [];
+  readonly InputSecurityGroups?: [];
+  readonly MediaConnectFlows?: [];
+  readonly Name?: string;
+  readonly RequestId?: string;
+  readonly RoleArn?: string;
+  readonly Sources?: [];
+  readonly Tags?: {[key: string]: any};
+  readonly Type?: string;
+  readonly Vpc?: InputVpcRequest;
 }
 export interface CreateInputSecurityGroup {
-  readonly Tags: {[key: string]: any};
-  readonly WhitelistRules: [];
+  readonly Tags?: {[key: string]: any};
+  readonly WhitelistRules?: [];
 }
 export interface CreateMultiplex {
   readonly AvailabilityZones: [];
   readonly MultiplexSettings: MultiplexSettings;
   readonly Name: string;
   readonly RequestId: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateMultiplexProgram {
   readonly MultiplexId: string;
@@ -76,12 +76,12 @@ export interface CreateMultiplexProgram {
 }
 export interface CreatePartnerInput {
   readonly InputId: string;
-  readonly RequestId: string;
-  readonly Tags: {[key: string]: any};
+  readonly RequestId?: string;
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateTags {
   readonly ResourceArn: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface DeleteChannel {
   readonly ChannelId: string;
@@ -140,75 +140,75 @@ export interface DescribeReservation {
 }
 export interface DescribeSchedule {
   readonly ChannelId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListChannels {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListInputDeviceTransfers {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly TransferType: string;
 }
 export interface ListInputDevices {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListInputSecurityGroups {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListInputs {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListMultiplexPrograms {
-  readonly MaxResults: number;
+  readonly MaxResults?: number;
   readonly MultiplexId: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListMultiplexes {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListOfferings {
-  readonly ChannelClass: string;
-  readonly ChannelConfiguration: string;
-  readonly Codec: string;
-  readonly Duration: string;
-  readonly MaxResults: number;
-  readonly MaximumBitrate: string;
-  readonly MaximumFramerate: string;
-  readonly NextToken: string;
-  readonly Resolution: string;
-  readonly ResourceType: string;
-  readonly SpecialFeature: string;
-  readonly VideoQuality: string;
+  readonly ChannelClass?: string;
+  readonly ChannelConfiguration?: string;
+  readonly Codec?: string;
+  readonly Duration?: string;
+  readonly MaxResults?: number;
+  readonly MaximumBitrate?: string;
+  readonly MaximumFramerate?: string;
+  readonly NextToken?: string;
+  readonly Resolution?: string;
+  readonly ResourceType?: string;
+  readonly SpecialFeature?: string;
+  readonly VideoQuality?: string;
 }
 export interface ListReservations {
-  readonly ChannelClass: string;
-  readonly Codec: string;
-  readonly MaxResults: number;
-  readonly MaximumBitrate: string;
-  readonly MaximumFramerate: string;
-  readonly NextToken: string;
-  readonly Resolution: string;
-  readonly ResourceType: string;
-  readonly SpecialFeature: string;
-  readonly VideoQuality: string;
+  readonly ChannelClass?: string;
+  readonly Codec?: string;
+  readonly MaxResults?: number;
+  readonly MaximumBitrate?: string;
+  readonly MaximumFramerate?: string;
+  readonly NextToken?: string;
+  readonly Resolution?: string;
+  readonly ResourceType?: string;
+  readonly SpecialFeature?: string;
+  readonly VideoQuality?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface PurchaseOffering {
   readonly Count: number;
-  readonly Name: string;
+  readonly Name?: string;
   readonly OfferingId: string;
-  readonly RequestId: string;
-  readonly Start: string;
-  readonly Tags: {[key: string]: any};
+  readonly RequestId?: string;
+  readonly Start?: string;
+  readonly Tags?: {[key: string]: any};
 }
 export interface RejectInputDeviceTransfer {
   readonly InputDeviceId: string;
@@ -227,59 +227,59 @@ export interface StopMultiplex {
 }
 export interface TransferInputDevice {
   readonly InputDeviceId: string;
-  readonly TargetCustomerId: string;
-  readonly TargetRegion: string;
-  readonly TransferMessage: string;
+  readonly TargetCustomerId?: string;
+  readonly TargetRegion?: string;
+  readonly TransferMessage?: string;
 }
 export interface UpdateChannel {
-  readonly CdiInputSpecification: CdiInputSpecification;
+  readonly CdiInputSpecification?: CdiInputSpecification;
   readonly ChannelId: string;
-  readonly Destinations: [];
-  readonly EncoderSettings: EncoderSettings;
-  readonly InputAttachments: [];
-  readonly InputSpecification: InputSpecification;
-  readonly LogLevel: string;
-  readonly Name: string;
-  readonly RoleArn: string;
+  readonly Destinations?: [];
+  readonly EncoderSettings?: EncoderSettings;
+  readonly InputAttachments?: [];
+  readonly InputSpecification?: InputSpecification;
+  readonly LogLevel?: string;
+  readonly Name?: string;
+  readonly RoleArn?: string;
 }
 export interface UpdateChannelClass {
   readonly ChannelClass: string;
   readonly ChannelId: string;
-  readonly Destinations: [];
+  readonly Destinations?: [];
 }
 export interface UpdateInput {
-  readonly Destinations: [];
-  readonly InputDevices: [];
+  readonly Destinations?: [];
+  readonly InputDevices?: [];
   readonly InputId: string;
-  readonly InputSecurityGroups: [];
-  readonly MediaConnectFlows: [];
-  readonly Name: string;
-  readonly RoleArn: string;
-  readonly Sources: [];
+  readonly InputSecurityGroups?: [];
+  readonly MediaConnectFlows?: [];
+  readonly Name?: string;
+  readonly RoleArn?: string;
+  readonly Sources?: [];
 }
 export interface UpdateInputDevice {
-  readonly HdDeviceSettings: InputDeviceConfigurableSettings;
+  readonly HdDeviceSettings?: InputDeviceConfigurableSettings;
   readonly InputDeviceId: string;
-  readonly Name: string;
-  readonly UhdDeviceSettings: InputDeviceConfigurableSettings;
+  readonly Name?: string;
+  readonly UhdDeviceSettings?: InputDeviceConfigurableSettings;
 }
 export interface UpdateInputSecurityGroup {
   readonly InputSecurityGroupId: string;
-  readonly Tags: {[key: string]: any};
-  readonly WhitelistRules: [];
+  readonly Tags?: {[key: string]: any};
+  readonly WhitelistRules?: [];
 }
 export interface UpdateMultiplex {
   readonly MultiplexId: string;
-  readonly MultiplexSettings: MultiplexSettings;
-  readonly Name: string;
+  readonly MultiplexSettings?: MultiplexSettings;
+  readonly Name?: string;
 }
 export interface UpdateMultiplexProgram {
   readonly MultiplexId: string;
-  readonly MultiplexProgramSettings: MultiplexProgramSettings;
+  readonly MultiplexProgramSettings?: MultiplexProgramSettings;
   readonly ProgramName: string;
 }
 export interface UpdateReservation {
-  readonly Name: string;
+  readonly Name?: string;
   readonly ReservationId: string;
 }
 

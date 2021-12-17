@@ -3,128 +3,128 @@
  */
 export interface AcceptResourceShareInvitation {
   readonly resourceShareInvitationArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 export interface AssociateResourceShare {
   readonly resourceShareArn: string;
-  readonly resourceArns: [];
-  readonly principals: [];
-  readonly clientToken: string;
+  readonly resourceArns?: [];
+  readonly principals?: [];
+  readonly clientToken?: string;
 }
 export interface AssociateResourceSharePermission {
   readonly resourceShareArn: string;
   readonly permissionArn: string;
-  readonly replace: boolean;
-  readonly clientToken: string;
-  readonly permissionVersion: number;
+  readonly replace?: boolean;
+  readonly clientToken?: string;
+  readonly permissionVersion?: number;
 }
 export interface CreateResourceShare {
   readonly name: string;
-  readonly resourceArns: [];
-  readonly principals: [];
-  readonly tags: [];
-  readonly allowExternalPrincipals: boolean;
-  readonly clientToken: string;
-  readonly permissionArns: [];
+  readonly resourceArns?: [];
+  readonly principals?: [];
+  readonly tags?: [];
+  readonly allowExternalPrincipals?: boolean;
+  readonly clientToken?: string;
+  readonly permissionArns?: [];
 }
 export interface DeleteResourceShare {
   readonly resourceShareArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 export interface DisassociateResourceShare {
   readonly resourceShareArn: string;
-  readonly resourceArns: [];
-  readonly principals: [];
-  readonly clientToken: string;
+  readonly resourceArns?: [];
+  readonly principals?: [];
+  readonly clientToken?: string;
 }
 export interface DisassociateResourceSharePermission {
   readonly resourceShareArn: string;
   readonly permissionArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 export interface EnableSharingWithAwsOrganization {
 }
 export interface GetPermission {
   readonly permissionArn: string;
-  readonly permissionVersion: number;
+  readonly permissionVersion?: number;
 }
 export interface GetResourcePolicies {
   readonly resourceArns: [];
-  readonly principal: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly principal?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetResourceShareAssociations {
   readonly associationType: string;
-  readonly resourceShareArns: [];
-  readonly resourceArn: string;
-  readonly principal: string;
-  readonly associationStatus: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly resourceShareArns?: [];
+  readonly resourceArn?: string;
+  readonly principal?: string;
+  readonly associationStatus?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetResourceShareInvitations {
-  readonly resourceShareInvitationArns: [];
-  readonly resourceShareArns: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly resourceShareInvitationArns?: [];
+  readonly resourceShareArns?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetResourceShares {
-  readonly resourceShareArns: [];
-  readonly resourceShareStatus: string;
+  readonly resourceShareArns?: [];
+  readonly resourceShareStatus?: string;
   readonly resourceOwner: string;
-  readonly name: string;
-  readonly tagFilters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly permissionArn: string;
+  readonly name?: string;
+  readonly tagFilters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly permissionArn?: string;
 }
 export interface ListPendingInvitationResources {
   readonly resourceShareInvitationArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly resourceRegionScope: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly resourceRegionScope?: string;
 }
 export interface ListPermissions {
-  readonly resourceType: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly resourceType?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListPrincipals {
   readonly resourceOwner: string;
-  readonly resourceArn: string;
-  readonly principals: [];
-  readonly resourceType: string;
-  readonly resourceShareArns: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly resourceArn?: string;
+  readonly principals?: [];
+  readonly resourceType?: string;
+  readonly resourceShareArns?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListResourceSharePermissions {
   readonly resourceShareArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListResourceTypes {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly resourceRegionScope: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly resourceRegionScope?: string;
 }
 export interface ListResources {
   readonly resourceOwner: string;
-  readonly principal: string;
-  readonly resourceType: string;
-  readonly resourceArns: [];
-  readonly resourceShareArns: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly resourceRegionScope: string;
+  readonly principal?: string;
+  readonly resourceType?: string;
+  readonly resourceArns?: [];
+  readonly resourceShareArns?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly resourceRegionScope?: string;
 }
 export interface PromoteResourceShareCreatedFromPolicy {
   readonly resourceShareArn: string;
 }
 export interface RejectResourceShareInvitation {
   readonly resourceShareInvitationArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 export interface TagResource {
   readonly resourceShareArn: string;
@@ -136,9 +136,9 @@ export interface UntagResource {
 }
 export interface UpdateResourceShare {
   readonly resourceShareArn: string;
-  readonly name: string;
-  readonly allowExternalPrincipals: boolean;
-  readonly clientToken: string;
+  readonly name?: string;
+  readonly allowExternalPrincipals?: boolean;
+  readonly clientToken?: string;
 }
 
 

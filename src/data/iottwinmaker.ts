@@ -7,36 +7,36 @@ export interface BatchPutPropertyValues {
 }
 export interface CreateComponentType {
   readonly componentTypeId: string;
-  readonly description: string;
-  readonly extendsFrom: [];
-  readonly functions: {[key: string]: any};
-  readonly isSingleton: boolean;
-  readonly propertyDefinitions: {[key: string]: any};
-  readonly tags: {[key: string]: any};
+  readonly description?: string;
+  readonly extendsFrom?: [];
+  readonly functions?: {[key: string]: any};
+  readonly isSingleton?: boolean;
+  readonly propertyDefinitions?: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
 export interface CreateEntity {
-  readonly components: {[key: string]: any};
-  readonly description: string;
-  readonly entityId: string;
+  readonly components?: {[key: string]: any};
+  readonly description?: string;
+  readonly entityId?: string;
   readonly entityName: string;
-  readonly parentEntityId: string;
-  readonly tags: {[key: string]: any};
+  readonly parentEntityId?: string;
+  readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
 export interface CreateScene {
-  readonly capabilities: [];
+  readonly capabilities?: [];
   readonly contentLocation: string;
-  readonly description: string;
+  readonly description?: string;
   readonly sceneId: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
 export interface CreateWorkspace {
-  readonly description: string;
+  readonly description?: string;
   readonly role: string;
   readonly s3Location: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
 export interface DeleteComponentType {
@@ -45,7 +45,7 @@ export interface DeleteComponentType {
 }
 export interface DeleteEntity {
   readonly entityId: string;
-  readonly isRecursive: boolean;
+  readonly isRecursive?: boolean;
   readonly workspaceId: string;
 }
 export interface DeleteScene {
@@ -64,22 +64,22 @@ export interface GetEntity {
   readonly workspaceId: string;
 }
 export interface GetPropertyValue {
-  readonly componentName: string;
-  readonly componentTypeId: string;
-  readonly entityId: string;
+  readonly componentName?: string;
+  readonly componentTypeId?: string;
+  readonly entityId?: string;
   readonly selectedProperties: [];
   readonly workspaceId: string;
 }
 export interface GetPropertyValueHistory {
-  readonly componentName: string;
-  readonly componentTypeId: string;
+  readonly componentName?: string;
+  readonly componentTypeId?: string;
   readonly endDateTime: Date;
-  readonly entityId: string;
-  readonly interpolation: InterpolationParameters;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly orderByTime: string;
-  readonly propertyFilters: [];
+  readonly entityId?: string;
+  readonly interpolation?: InterpolationParameters;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly orderByTime?: string;
+  readonly propertyFilters?: [];
   readonly selectedProperties: [];
   readonly startDateTime: Date;
   readonly workspaceId: string;
@@ -92,30 +92,30 @@ export interface GetWorkspace {
   readonly workspaceId: string;
 }
 export interface ListComponentTypes {
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly workspaceId: string;
 }
 export interface ListEntities {
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly workspaceId: string;
 }
 export interface ListScenes {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly workspaceId: string;
 }
 export interface ListTagsForResource {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly resourceARN: string;
 }
 export interface ListWorkspaces {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface TagResource {
   readonly resourceARN: string;
@@ -127,31 +127,31 @@ export interface UntagResource {
 }
 export interface UpdateComponentType {
   readonly componentTypeId: string;
-  readonly description: string;
-  readonly extendsFrom: [];
-  readonly functions: {[key: string]: any};
-  readonly isSingleton: boolean;
-  readonly propertyDefinitions: {[key: string]: any};
+  readonly description?: string;
+  readonly extendsFrom?: [];
+  readonly functions?: {[key: string]: any};
+  readonly isSingleton?: boolean;
+  readonly propertyDefinitions?: {[key: string]: any};
   readonly workspaceId: string;
 }
 export interface UpdateEntity {
-  readonly componentUpdates: {[key: string]: any};
-  readonly description: string;
+  readonly componentUpdates?: {[key: string]: any};
+  readonly description?: string;
   readonly entityId: string;
-  readonly entityName: string;
-  readonly parentEntityUpdate: ParentEntityUpdateRequest;
+  readonly entityName?: string;
+  readonly parentEntityUpdate?: ParentEntityUpdateRequest;
   readonly workspaceId: string;
 }
 export interface UpdateScene {
-  readonly capabilities: [];
-  readonly contentLocation: string;
-  readonly description: string;
+  readonly capabilities?: [];
+  readonly contentLocation?: string;
+  readonly description?: string;
   readonly sceneId: string;
   readonly workspaceId: string;
 }
 export interface UpdateWorkspace {
-  readonly description: string;
-  readonly role: string;
+  readonly description?: string;
+  readonly role?: string;
   readonly workspaceId: string;
 }
 

@@ -29,12 +29,12 @@ export interface AddApplicationReferenceDataSource {
 }
 export interface CreateApplication {
   readonly ApplicationName: string;
-  readonly ApplicationDescription: string;
-  readonly Inputs: [];
-  readonly Outputs: [];
-  readonly CloudWatchLoggingOptions: [];
-  readonly ApplicationCode: string;
-  readonly Tags: [];
+  readonly ApplicationDescription?: string;
+  readonly Inputs?: [];
+  readonly Outputs?: [];
+  readonly CloudWatchLoggingOptions?: [];
+  readonly ApplicationCode?: string;
+  readonly Tags?: [];
 }
 export interface DeleteApplication {
   readonly ApplicationName: string;
@@ -64,15 +64,15 @@ export interface DescribeApplication {
   readonly ApplicationName: string;
 }
 export interface DiscoverInputSchema {
-  readonly ResourceARN: string;
-  readonly RoleARN: string;
-  readonly InputStartingPositionConfiguration: InputStartingPositionConfiguration;
-  readonly S3Configuration: S3Configuration;
-  readonly InputProcessingConfiguration: InputProcessingConfiguration;
+  readonly ResourceARN?: string;
+  readonly RoleARN?: string;
+  readonly InputStartingPositionConfiguration?: InputStartingPositionConfiguration;
+  readonly S3Configuration?: S3Configuration;
+  readonly InputProcessingConfiguration?: InputProcessingConfiguration;
 }
 export interface ListApplications {
-  readonly Limit: number;
-  readonly ExclusiveStartApplicationName: string;
+  readonly Limit?: number;
+  readonly ExclusiveStartApplicationName?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;

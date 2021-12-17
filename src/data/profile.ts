@@ -10,34 +10,34 @@ export interface AddProfileKey {
 export interface CreateDomain {
   readonly DomainName: string;
   readonly DefaultExpirationDays: number;
-  readonly DefaultEncryptionKey: string;
-  readonly DeadLetterQueueUrl: string;
-  readonly Matching: MatchingRequest;
-  readonly Tags: {[key: string]: any};
+  readonly DefaultEncryptionKey?: string;
+  readonly DeadLetterQueueUrl?: string;
+  readonly Matching?: MatchingRequest;
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateProfile {
   readonly DomainName: string;
-  readonly AccountNumber: string;
-  readonly AdditionalInformation: string;
-  readonly PartyType: string;
-  readonly BusinessName: string;
-  readonly FirstName: string;
-  readonly MiddleName: string;
-  readonly LastName: string;
-  readonly BirthDate: string;
-  readonly Gender: string;
-  readonly PhoneNumber: string;
-  readonly MobilePhoneNumber: string;
-  readonly HomePhoneNumber: string;
-  readonly BusinessPhoneNumber: string;
-  readonly EmailAddress: string;
-  readonly PersonalEmailAddress: string;
-  readonly BusinessEmailAddress: string;
-  readonly Address: Address;
-  readonly ShippingAddress: Address;
-  readonly MailingAddress: Address;
-  readonly BillingAddress: Address;
-  readonly Attributes: {[key: string]: any};
+  readonly AccountNumber?: string;
+  readonly AdditionalInformation?: string;
+  readonly PartyType?: string;
+  readonly BusinessName?: string;
+  readonly FirstName?: string;
+  readonly MiddleName?: string;
+  readonly LastName?: string;
+  readonly BirthDate?: string;
+  readonly Gender?: string;
+  readonly PhoneNumber?: string;
+  readonly MobilePhoneNumber?: string;
+  readonly HomePhoneNumber?: string;
+  readonly BusinessPhoneNumber?: string;
+  readonly EmailAddress?: string;
+  readonly PersonalEmailAddress?: string;
+  readonly BusinessEmailAddress?: string;
+  readonly Address?: Address;
+  readonly ShippingAddress?: Address;
+  readonly MailingAddress?: Address;
+  readonly BillingAddress?: Address;
+  readonly Attributes?: {[key: string]: any};
 }
 export interface DeleteDomain {
   readonly DomainName: string;
@@ -83,8 +83,8 @@ export interface GetIntegration {
   readonly Uri: string;
 }
 export interface GetMatches {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
   readonly DomainName: string;
 }
 export interface GetProfileObjectType {
@@ -96,39 +96,39 @@ export interface GetProfileObjectTypeTemplate {
 }
 export interface ListAccountIntegrations {
   readonly Uri: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDomains {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListIdentityResolutionJobs {
   readonly DomainName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListIntegrations {
   readonly DomainName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListProfileObjectTypeTemplates {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListProfileObjectTypes {
   readonly DomainName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListProfileObjects {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
   readonly DomainName: string;
   readonly ObjectTypeName: string;
   readonly ProfileId: string;
-  readonly ObjectFilter: ObjectFilter;
+  readonly ObjectFilter?: ObjectFilter;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -137,14 +137,14 @@ export interface MergeProfiles {
   readonly DomainName: string;
   readonly MainProfileId: string;
   readonly ProfileIdsToBeMerged: [];
-  readonly FieldSourceProfileIds: FieldSourceProfileIds;
+  readonly FieldSourceProfileIds?: FieldSourceProfileIds;
 }
 export interface PutIntegration {
   readonly DomainName: string;
-  readonly Uri: string;
+  readonly Uri?: string;
   readonly ObjectTypeName: string;
-  readonly Tags: {[key: string]: any};
-  readonly FlowDefinition: FlowDefinition;
+  readonly Tags?: {[key: string]: any};
+  readonly FlowDefinition?: FlowDefinition;
 }
 export interface PutProfileObject {
   readonly ObjectTypeName: string;
@@ -155,18 +155,18 @@ export interface PutProfileObjectType {
   readonly DomainName: string;
   readonly ObjectTypeName: string;
   readonly Description: string;
-  readonly TemplateId: string;
-  readonly ExpirationDays: number;
-  readonly EncryptionKey: string;
-  readonly AllowProfileCreation: boolean;
-  readonly SourceLastUpdatedTimestampFormat: string;
-  readonly Fields: {[key: string]: any};
-  readonly Keys: {[key: string]: any};
-  readonly Tags: {[key: string]: any};
+  readonly TemplateId?: string;
+  readonly ExpirationDays?: number;
+  readonly EncryptionKey?: string;
+  readonly AllowProfileCreation?: boolean;
+  readonly SourceLastUpdatedTimestampFormat?: string;
+  readonly Fields?: {[key: string]: any};
+  readonly Keys?: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface SearchProfiles {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
   readonly DomainName: string;
   readonly KeyName: string;
   readonly Values: [];
@@ -181,36 +181,36 @@ export interface UntagResource {
 }
 export interface UpdateDomain {
   readonly DomainName: string;
-  readonly DefaultExpirationDays: number;
-  readonly DefaultEncryptionKey: string;
-  readonly DeadLetterQueueUrl: string;
-  readonly Matching: MatchingRequest;
-  readonly Tags: {[key: string]: any};
+  readonly DefaultExpirationDays?: number;
+  readonly DefaultEncryptionKey?: string;
+  readonly DeadLetterQueueUrl?: string;
+  readonly Matching?: MatchingRequest;
+  readonly Tags?: {[key: string]: any};
 }
 export interface UpdateProfile {
   readonly DomainName: string;
   readonly ProfileId: string;
-  readonly AdditionalInformation: string;
-  readonly AccountNumber: string;
-  readonly PartyType: string;
-  readonly BusinessName: string;
-  readonly FirstName: string;
-  readonly MiddleName: string;
-  readonly LastName: string;
-  readonly BirthDate: string;
-  readonly Gender: string;
-  readonly PhoneNumber: string;
-  readonly MobilePhoneNumber: string;
-  readonly HomePhoneNumber: string;
-  readonly BusinessPhoneNumber: string;
-  readonly EmailAddress: string;
-  readonly PersonalEmailAddress: string;
-  readonly BusinessEmailAddress: string;
-  readonly Address: UpdateAddress;
-  readonly ShippingAddress: UpdateAddress;
-  readonly MailingAddress: UpdateAddress;
-  readonly BillingAddress: UpdateAddress;
-  readonly Attributes: {[key: string]: any};
+  readonly AdditionalInformation?: string;
+  readonly AccountNumber?: string;
+  readonly PartyType?: string;
+  readonly BusinessName?: string;
+  readonly FirstName?: string;
+  readonly MiddleName?: string;
+  readonly LastName?: string;
+  readonly BirthDate?: string;
+  readonly Gender?: string;
+  readonly PhoneNumber?: string;
+  readonly MobilePhoneNumber?: string;
+  readonly HomePhoneNumber?: string;
+  readonly BusinessPhoneNumber?: string;
+  readonly EmailAddress?: string;
+  readonly PersonalEmailAddress?: string;
+  readonly BusinessEmailAddress?: string;
+  readonly Address?: UpdateAddress;
+  readonly ShippingAddress?: UpdateAddress;
+  readonly MailingAddress?: UpdateAddress;
+  readonly BillingAddress?: UpdateAddress;
+  readonly Attributes?: {[key: string]: any};
 }
 
 

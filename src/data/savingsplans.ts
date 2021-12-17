@@ -4,54 +4,54 @@
 export interface CreateSavingsPlan {
   readonly savingsPlanOfferingId: string;
   readonly commitment: string;
-  readonly upfrontPaymentAmount: string;
-  readonly purchaseTime: Date;
-  readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly upfrontPaymentAmount?: string;
+  readonly purchaseTime?: Date;
+  readonly clientToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 export interface DeleteQueuedSavingsPlan {
   readonly savingsPlanId: string;
 }
 export interface DescribeSavingsPlanRates {
   readonly savingsPlanId: string;
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface DescribeSavingsPlans {
-  readonly savingsPlanArns: [];
-  readonly savingsPlanIds: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly states: [];
-  readonly filters: [];
+  readonly savingsPlanArns?: [];
+  readonly savingsPlanIds?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly states?: [];
+  readonly filters?: [];
 }
 export interface DescribeSavingsPlansOfferingRates {
-  readonly savingsPlanOfferingIds: [];
-  readonly savingsPlanPaymentOptions: [];
-  readonly savingsPlanTypes: [];
-  readonly products: [];
-  readonly serviceCodes: [];
-  readonly usageTypes: [];
-  readonly operations: [];
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly savingsPlanOfferingIds?: [];
+  readonly savingsPlanPaymentOptions?: [];
+  readonly savingsPlanTypes?: [];
+  readonly products?: [];
+  readonly serviceCodes?: [];
+  readonly usageTypes?: [];
+  readonly operations?: [];
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface DescribeSavingsPlansOfferings {
-  readonly offeringIds: [];
-  readonly paymentOptions: [];
-  readonly productType: string;
-  readonly planTypes: [];
-  readonly durations: [];
-  readonly currencies: [];
-  readonly descriptions: [];
-  readonly serviceCodes: [];
-  readonly usageTypes: [];
-  readonly operations: [];
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly offeringIds?: [];
+  readonly paymentOptions?: [];
+  readonly productType?: string;
+  readonly planTypes?: [];
+  readonly durations?: [];
+  readonly currencies?: [];
+  readonly descriptions?: [];
+  readonly serviceCodes?: [];
+  readonly usageTypes?: [];
+  readonly operations?: [];
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;

@@ -11,50 +11,50 @@ export interface AddTags {
 }
 export interface CreateListener {
   readonly LoadBalancerArn: string;
-  readonly Protocol: string;
-  readonly Port: number;
-  readonly SslPolicy: string;
-  readonly Certificates: [];
+  readonly Protocol?: string;
+  readonly Port?: number;
+  readonly SslPolicy?: string;
+  readonly Certificates?: [];
   readonly DefaultActions: [];
-  readonly AlpnPolicy: [];
-  readonly Tags: [];
+  readonly AlpnPolicy?: [];
+  readonly Tags?: [];
 }
 export interface CreateLoadBalancer {
   readonly Name: string;
-  readonly Subnets: [];
-  readonly SubnetMappings: [];
-  readonly SecurityGroups: [];
-  readonly Scheme: string;
-  readonly Tags: [];
-  readonly Type: string;
-  readonly IpAddressType: string;
-  readonly CustomerOwnedIpv4Pool: string;
+  readonly Subnets?: [];
+  readonly SubnetMappings?: [];
+  readonly SecurityGroups?: [];
+  readonly Scheme?: string;
+  readonly Tags?: [];
+  readonly Type?: string;
+  readonly IpAddressType?: string;
+  readonly CustomerOwnedIpv4Pool?: string;
 }
 export interface CreateRule {
   readonly ListenerArn: string;
   readonly Conditions: [];
   readonly Priority: number;
   readonly Actions: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateTargetGroup {
   readonly Name: string;
-  readonly Protocol: string;
-  readonly ProtocolVersion: string;
-  readonly Port: number;
-  readonly VpcId: string;
-  readonly HealthCheckProtocol: string;
-  readonly HealthCheckPort: string;
-  readonly HealthCheckEnabled: boolean;
-  readonly HealthCheckPath: string;
-  readonly HealthCheckIntervalSeconds: number;
-  readonly HealthCheckTimeoutSeconds: number;
-  readonly HealthyThresholdCount: number;
-  readonly UnhealthyThresholdCount: number;
-  readonly Matcher: Matcher;
-  readonly TargetType: string;
-  readonly Tags: [];
-  readonly IpAddressType: string;
+  readonly Protocol?: string;
+  readonly ProtocolVersion?: string;
+  readonly Port?: number;
+  readonly VpcId?: string;
+  readonly HealthCheckProtocol?: string;
+  readonly HealthCheckPort?: string;
+  readonly HealthCheckEnabled?: boolean;
+  readonly HealthCheckPath?: string;
+  readonly HealthCheckIntervalSeconds?: number;
+  readonly HealthCheckTimeoutSeconds?: number;
+  readonly HealthyThresholdCount?: number;
+  readonly UnhealthyThresholdCount?: number;
+  readonly Matcher?: Matcher;
+  readonly TargetType?: string;
+  readonly Tags?: [];
+  readonly IpAddressType?: string;
 }
 export interface DeleteListener {
   readonly ListenerArn: string;
@@ -73,40 +73,40 @@ export interface DeregisterTargets {
   readonly Targets: [];
 }
 export interface DescribeAccountLimits {
-  readonly Marker: string;
-  readonly PageSize: number;
+  readonly Marker?: string;
+  readonly PageSize?: number;
 }
 export interface DescribeListenerCertificates {
   readonly ListenerArn: string;
-  readonly Marker: string;
-  readonly PageSize: number;
+  readonly Marker?: string;
+  readonly PageSize?: number;
 }
 export interface DescribeListeners {
-  readonly LoadBalancerArn: string;
-  readonly ListenerArns: [];
-  readonly Marker: string;
-  readonly PageSize: number;
+  readonly LoadBalancerArn?: string;
+  readonly ListenerArns?: [];
+  readonly Marker?: string;
+  readonly PageSize?: number;
 }
 export interface DescribeLoadBalancerAttributes {
   readonly LoadBalancerArn: string;
 }
 export interface DescribeLoadBalancers {
-  readonly LoadBalancerArns: [];
-  readonly Names: [];
-  readonly Marker: string;
-  readonly PageSize: number;
+  readonly LoadBalancerArns?: [];
+  readonly Names?: [];
+  readonly Marker?: string;
+  readonly PageSize?: number;
 }
 export interface DescribeRules {
-  readonly ListenerArn: string;
-  readonly RuleArns: [];
-  readonly Marker: string;
-  readonly PageSize: number;
+  readonly ListenerArn?: string;
+  readonly RuleArns?: [];
+  readonly Marker?: string;
+  readonly PageSize?: number;
 }
 export interface DescribeSSLPolicies {
-  readonly Names: [];
-  readonly Marker: string;
-  readonly PageSize: number;
-  readonly LoadBalancerType: string;
+  readonly Names?: [];
+  readonly Marker?: string;
+  readonly PageSize?: number;
+  readonly LoadBalancerType?: string;
 }
 export interface DescribeTags {
   readonly ResourceArns: [];
@@ -115,24 +115,24 @@ export interface DescribeTargetGroupAttributes {
   readonly TargetGroupArn: string;
 }
 export interface DescribeTargetGroups {
-  readonly LoadBalancerArn: string;
-  readonly TargetGroupArns: [];
-  readonly Names: [];
-  readonly Marker: string;
-  readonly PageSize: number;
+  readonly LoadBalancerArn?: string;
+  readonly TargetGroupArns?: [];
+  readonly Names?: [];
+  readonly Marker?: string;
+  readonly PageSize?: number;
 }
 export interface DescribeTargetHealth {
   readonly TargetGroupArn: string;
-  readonly Targets: [];
+  readonly Targets?: [];
 }
 export interface ModifyListener {
   readonly ListenerArn: string;
-  readonly Port: number;
-  readonly Protocol: string;
-  readonly SslPolicy: string;
-  readonly Certificates: [];
-  readonly DefaultActions: [];
-  readonly AlpnPolicy: [];
+  readonly Port?: number;
+  readonly Protocol?: string;
+  readonly SslPolicy?: string;
+  readonly Certificates?: [];
+  readonly DefaultActions?: [];
+  readonly AlpnPolicy?: [];
 }
 export interface ModifyLoadBalancerAttributes {
   readonly LoadBalancerArn: string;
@@ -140,20 +140,20 @@ export interface ModifyLoadBalancerAttributes {
 }
 export interface ModifyRule {
   readonly RuleArn: string;
-  readonly Conditions: [];
-  readonly Actions: [];
+  readonly Conditions?: [];
+  readonly Actions?: [];
 }
 export interface ModifyTargetGroup {
   readonly TargetGroupArn: string;
-  readonly HealthCheckProtocol: string;
-  readonly HealthCheckPort: string;
-  readonly HealthCheckPath: string;
-  readonly HealthCheckEnabled: boolean;
-  readonly HealthCheckIntervalSeconds: number;
-  readonly HealthCheckTimeoutSeconds: number;
-  readonly HealthyThresholdCount: number;
-  readonly UnhealthyThresholdCount: number;
-  readonly Matcher: Matcher;
+  readonly HealthCheckProtocol?: string;
+  readonly HealthCheckPort?: string;
+  readonly HealthCheckPath?: string;
+  readonly HealthCheckEnabled?: boolean;
+  readonly HealthCheckIntervalSeconds?: number;
+  readonly HealthCheckTimeoutSeconds?: number;
+  readonly HealthyThresholdCount?: number;
+  readonly UnhealthyThresholdCount?: number;
+  readonly Matcher?: Matcher;
 }
 export interface ModifyTargetGroupAttributes {
   readonly TargetGroupArn: string;
@@ -184,9 +184,9 @@ export interface SetSecurityGroups {
 }
 export interface SetSubnets {
   readonly LoadBalancerArn: string;
-  readonly Subnets: [];
-  readonly SubnetMappings: [];
-  readonly IpAddressType: string;
+  readonly Subnets?: [];
+  readonly SubnetMappings?: [];
+  readonly IpAddressType?: string;
 }
 
 

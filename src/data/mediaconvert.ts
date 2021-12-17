@@ -8,46 +8,46 @@ export interface CancelJob {
   readonly Id: string;
 }
 export interface CreateJob {
-  readonly AccelerationSettings: AccelerationSettings;
-  readonly BillingTagsSource: string;
-  readonly ClientRequestToken: string;
-  readonly HopDestinations: [];
-  readonly JobTemplate: string;
-  readonly Priority: number;
-  readonly Queue: string;
+  readonly AccelerationSettings?: AccelerationSettings;
+  readonly BillingTagsSource?: string;
+  readonly ClientRequestToken?: string;
+  readonly HopDestinations?: [];
+  readonly JobTemplate?: string;
+  readonly Priority?: number;
+  readonly Queue?: string;
   readonly Role: string;
   readonly Settings: JobSettings;
-  readonly SimulateReservedQueue: string;
-  readonly StatusUpdateInterval: string;
-  readonly Tags: {[key: string]: any};
-  readonly UserMetadata: {[key: string]: any};
+  readonly SimulateReservedQueue?: string;
+  readonly StatusUpdateInterval?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly UserMetadata?: {[key: string]: any};
 }
 export interface CreateJobTemplate {
-  readonly AccelerationSettings: AccelerationSettings;
-  readonly Category: string;
-  readonly Description: string;
-  readonly HopDestinations: [];
+  readonly AccelerationSettings?: AccelerationSettings;
+  readonly Category?: string;
+  readonly Description?: string;
+  readonly HopDestinations?: [];
   readonly Name: string;
-  readonly Priority: number;
-  readonly Queue: string;
+  readonly Priority?: number;
+  readonly Queue?: string;
   readonly Settings: JobTemplateSettings;
-  readonly StatusUpdateInterval: string;
-  readonly Tags: {[key: string]: any};
+  readonly StatusUpdateInterval?: string;
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreatePreset {
-  readonly Category: string;
-  readonly Description: string;
+  readonly Category?: string;
+  readonly Description?: string;
   readonly Name: string;
   readonly Settings: PresetSettings;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateQueue {
-  readonly Description: string;
+  readonly Description?: string;
   readonly Name: string;
-  readonly PricingPlan: string;
-  readonly ReservationPlanSettings: ReservationPlanSettings;
-  readonly Status: string;
-  readonly Tags: {[key: string]: any};
+  readonly PricingPlan?: string;
+  readonly ReservationPlanSettings?: ReservationPlanSettings;
+  readonly Status?: string;
+  readonly Tags?: {[key: string]: any};
 }
 export interface DeleteJobTemplate {
   readonly Name: string;
@@ -61,9 +61,9 @@ export interface DeleteQueue {
   readonly Name: string;
 }
 export interface DescribeEndpoints {
-  readonly MaxResults: number;
-  readonly Mode: string;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly Mode?: string;
+  readonly NextToken?: string;
 }
 export interface DisassociateCertificate {
   readonly Arn: string;
@@ -83,31 +83,31 @@ export interface GetQueue {
   readonly Name: string;
 }
 export interface ListJobTemplates {
-  readonly Category: string;
-  readonly ListBy: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Order: string;
+  readonly Category?: string;
+  readonly ListBy?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Order?: string;
 }
 export interface ListJobs {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Order: string;
-  readonly Queue: string;
-  readonly Status: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Order?: string;
+  readonly Queue?: string;
+  readonly Status?: string;
 }
 export interface ListPresets {
-  readonly Category: string;
-  readonly ListBy: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Order: string;
+  readonly Category?: string;
+  readonly ListBy?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Order?: string;
 }
 export interface ListQueues {
-  readonly ListBy: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Order: string;
+  readonly ListBy?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Order?: string;
 }
 export interface ListTagsForResource {
   readonly Arn: string;
@@ -121,30 +121,30 @@ export interface TagResource {
 }
 export interface UntagResource {
   readonly Arn: string;
-  readonly TagKeys: [];
+  readonly TagKeys?: [];
 }
 export interface UpdateJobTemplate {
-  readonly AccelerationSettings: AccelerationSettings;
-  readonly Category: string;
-  readonly Description: string;
-  readonly HopDestinations: [];
+  readonly AccelerationSettings?: AccelerationSettings;
+  readonly Category?: string;
+  readonly Description?: string;
+  readonly HopDestinations?: [];
   readonly Name: string;
-  readonly Priority: number;
-  readonly Queue: string;
-  readonly Settings: JobTemplateSettings;
-  readonly StatusUpdateInterval: string;
+  readonly Priority?: number;
+  readonly Queue?: string;
+  readonly Settings?: JobTemplateSettings;
+  readonly StatusUpdateInterval?: string;
 }
 export interface UpdatePreset {
-  readonly Category: string;
-  readonly Description: string;
+  readonly Category?: string;
+  readonly Description?: string;
   readonly Name: string;
-  readonly Settings: PresetSettings;
+  readonly Settings?: PresetSettings;
 }
 export interface UpdateQueue {
-  readonly Description: string;
+  readonly Description?: string;
   readonly Name: string;
-  readonly ReservationPlanSettings: ReservationPlanSettings;
-  readonly Status: string;
+  readonly ReservationPlanSettings?: ReservationPlanSettings;
+  readonly Status?: string;
 }
 
 

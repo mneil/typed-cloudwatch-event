@@ -9,12 +9,12 @@ export interface AssociatePhoneNumberWithUser {
 export interface AssociatePhoneNumbersWithVoiceConnector {
   readonly VoiceConnectorId: string;
   readonly E164PhoneNumbers: [];
-  readonly ForceAssociate: boolean;
+  readonly ForceAssociate?: boolean;
 }
 export interface AssociatePhoneNumbersWithVoiceConnectorGroup {
   readonly VoiceConnectorGroupId: string;
   readonly E164PhoneNumbers: [];
-  readonly ForceAssociate: boolean;
+  readonly ForceAssociate?: boolean;
 }
 export interface AssociateSigninDelegateGroupsWithAccount {
   readonly AccountId: string;
@@ -26,9 +26,9 @@ export interface BatchCreateAttendee {
 }
 export interface BatchCreateChannelMembership {
   readonly ChannelArn: string;
-  readonly Type: string;
+  readonly Type?: string;
   readonly MemberArns: [];
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface BatchCreateRoomMembership {
   readonly AccountId: string;
@@ -58,9 +58,9 @@ export interface CreateAccount {
 }
 export interface CreateAppInstance {
   readonly Name: string;
-  readonly Metadata: string;
+  readonly Metadata?: string;
   readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateAppInstanceAdmin {
   readonly AppInstanceAdminArn: string;
@@ -70,61 +70,61 @@ export interface CreateAppInstanceUser {
   readonly AppInstanceArn: string;
   readonly AppInstanceUserId: string;
   readonly Name: string;
-  readonly Metadata: string;
+  readonly Metadata?: string;
   readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateAttendee {
   readonly MeetingId: string;
   readonly ExternalUserId: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateBot {
   readonly AccountId: string;
   readonly DisplayName: string;
-  readonly Domain: string;
+  readonly Domain?: string;
 }
 export interface CreateChannel {
   readonly AppInstanceArn: string;
   readonly Name: string;
-  readonly Mode: string;
-  readonly Privacy: string;
-  readonly Metadata: string;
+  readonly Mode?: string;
+  readonly Privacy?: string;
+  readonly Metadata?: string;
   readonly ClientRequestToken: string;
-  readonly Tags: [];
-  readonly ChimeBearer: string;
+  readonly Tags?: [];
+  readonly ChimeBearer?: string;
 }
 export interface CreateChannelBan {
   readonly ChannelArn: string;
   readonly MemberArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface CreateChannelMembership {
   readonly ChannelArn: string;
   readonly MemberArn: string;
   readonly Type: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface CreateChannelModerator {
   readonly ChannelArn: string;
   readonly ChannelModeratorArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface CreateMediaCapturePipeline {
   readonly SourceType: string;
   readonly SourceArn: string;
   readonly SinkType: string;
   readonly SinkArn: string;
-  readonly ClientRequestToken: string;
-  readonly ChimeSdkMeetingConfiguration: ChimeSdkMeetingConfiguration;
+  readonly ClientRequestToken?: string;
+  readonly ChimeSdkMeetingConfiguration?: ChimeSdkMeetingConfiguration;
 }
 export interface CreateMeeting {
   readonly ClientRequestToken: string;
-  readonly ExternalMeetingId: string;
-  readonly MeetingHostId: string;
-  readonly MediaRegion: string;
-  readonly Tags: [];
-  readonly NotificationsConfiguration: MeetingNotificationConfiguration;
+  readonly ExternalMeetingId?: string;
+  readonly MeetingHostId?: string;
+  readonly MediaRegion?: string;
+  readonly Tags?: [];
+  readonly NotificationsConfiguration?: MeetingNotificationConfiguration;
 }
 export interface CreateMeetingDialOut {
   readonly MeetingId: string;
@@ -134,12 +134,12 @@ export interface CreateMeetingDialOut {
 }
 export interface CreateMeetingWithAttendees {
   readonly ClientRequestToken: string;
-  readonly ExternalMeetingId: string;
-  readonly MeetingHostId: string;
-  readonly MediaRegion: string;
-  readonly Tags: [];
-  readonly NotificationsConfiguration: MeetingNotificationConfiguration;
-  readonly Attendees: [];
+  readonly ExternalMeetingId?: string;
+  readonly MeetingHostId?: string;
+  readonly MediaRegion?: string;
+  readonly Tags?: [];
+  readonly NotificationsConfiguration?: MeetingNotificationConfiguration;
+  readonly Attendees?: [];
 }
 export interface CreatePhoneNumberOrder {
   readonly ProductType: string;
@@ -148,23 +148,23 @@ export interface CreatePhoneNumberOrder {
 export interface CreateProxySession {
   readonly VoiceConnectorId: string;
   readonly ParticipantPhoneNumbers: [];
-  readonly Name: string;
-  readonly ExpiryMinutes: number;
+  readonly Name?: string;
+  readonly ExpiryMinutes?: number;
   readonly Capabilities: [];
-  readonly NumberSelectionBehavior: string;
-  readonly GeoMatchLevel: string;
-  readonly GeoMatchParams: GeoMatchParams;
+  readonly NumberSelectionBehavior?: string;
+  readonly GeoMatchLevel?: string;
+  readonly GeoMatchParams?: GeoMatchParams;
 }
 export interface CreateRoom {
   readonly AccountId: string;
   readonly Name: string;
-  readonly ClientRequestToken: string;
+  readonly ClientRequestToken?: string;
 }
 export interface CreateRoomMembership {
   readonly AccountId: string;
   readonly RoomId: string;
   readonly MemberId: string;
-  readonly Role: string;
+  readonly Role?: string;
 }
 export interface CreateSipMediaApplication {
   readonly AwsRegion: string;
@@ -175,29 +175,29 @@ export interface CreateSipMediaApplicationCall {
   readonly FromPhoneNumber: string;
   readonly ToPhoneNumber: string;
   readonly SipMediaApplicationId: string;
-  readonly SipHeaders: {[key: string]: any};
+  readonly SipHeaders?: {[key: string]: any};
 }
 export interface CreateSipRule {
   readonly Name: string;
   readonly TriggerType: string;
   readonly TriggerValue: string;
-  readonly Disabled: boolean;
+  readonly Disabled?: boolean;
   readonly TargetApplications: [];
 }
 export interface CreateUser {
   readonly AccountId: string;
-  readonly Username: string;
-  readonly Email: string;
-  readonly UserType: string;
+  readonly Username?: string;
+  readonly Email?: string;
+  readonly UserType?: string;
 }
 export interface CreateVoiceConnector {
   readonly Name: string;
-  readonly AwsRegion: string;
+  readonly AwsRegion?: string;
   readonly RequireEncryption: boolean;
 }
 export interface CreateVoiceConnectorGroup {
   readonly Name: string;
-  readonly VoiceConnectorItems: [];
+  readonly VoiceConnectorItems?: [];
 }
 export interface DeleteAccount {
   readonly AccountId: string;
@@ -221,27 +221,27 @@ export interface DeleteAttendee {
 }
 export interface DeleteChannel {
   readonly ChannelArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface DeleteChannelBan {
   readonly ChannelArn: string;
   readonly MemberArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface DeleteChannelMembership {
   readonly ChannelArn: string;
   readonly MemberArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface DeleteChannelMessage {
   readonly ChannelArn: string;
   readonly MessageId: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface DeleteChannelModerator {
   readonly ChannelArn: string;
   readonly ChannelModeratorArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface DeleteEventsConfiguration {
   readonly AccountId: string;
@@ -312,32 +312,32 @@ export interface DescribeAppInstanceUser {
 }
 export interface DescribeChannel {
   readonly ChannelArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface DescribeChannelBan {
   readonly ChannelArn: string;
   readonly MemberArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface DescribeChannelMembership {
   readonly ChannelArn: string;
   readonly MemberArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface DescribeChannelMembershipForAppInstanceUser {
   readonly ChannelArn: string;
   readonly AppInstanceUserArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface DescribeChannelModeratedByAppInstanceUser {
   readonly ChannelArn: string;
   readonly AppInstanceUserArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface DescribeChannelModerator {
   readonly ChannelArn: string;
   readonly ChannelModeratorArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface DisassociatePhoneNumberFromUser {
   readonly AccountId: string;
@@ -378,7 +378,7 @@ export interface GetBot {
 export interface GetChannelMessage {
   readonly ChannelArn: string;
   readonly MessageId: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface GetEventsConfiguration {
   readonly AccountId: string;
@@ -456,27 +456,27 @@ export interface GetVoiceConnectorTerminationHealth {
 export interface InviteUsers {
   readonly AccountId: string;
   readonly UserEmailList: [];
-  readonly UserType: string;
+  readonly UserType?: string;
 }
 export interface ListAccounts {
-  readonly Name: string;
-  readonly UserEmail: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Name?: string;
+  readonly UserEmail?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListAppInstanceAdmins {
   readonly AppInstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListAppInstanceUsers {
   readonly AppInstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListAppInstances {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListAttendeeTags {
   readonly MeetingId: string;
@@ -484,110 +484,110 @@ export interface ListAttendeeTags {
 }
 export interface ListAttendees {
   readonly MeetingId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListBots {
   readonly AccountId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListChannelBans {
   readonly ChannelArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ChimeBearer: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ChimeBearer?: string;
 }
 export interface ListChannelMemberships {
   readonly ChannelArn: string;
-  readonly Type: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ChimeBearer: string;
+  readonly Type?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ChimeBearer?: string;
 }
 export interface ListChannelMembershipsForAppInstanceUser {
-  readonly AppInstanceUserArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ChimeBearer: string;
+  readonly AppInstanceUserArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ChimeBearer?: string;
 }
 export interface ListChannelMessages {
   readonly ChannelArn: string;
-  readonly SortOrder: string;
-  readonly NotBefore: Date;
-  readonly NotAfter: Date;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ChimeBearer: string;
+  readonly SortOrder?: string;
+  readonly NotBefore?: Date;
+  readonly NotAfter?: Date;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ChimeBearer?: string;
 }
 export interface ListChannelModerators {
   readonly ChannelArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ChimeBearer: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ChimeBearer?: string;
 }
 export interface ListChannels {
   readonly AppInstanceArn: string;
-  readonly Privacy: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ChimeBearer: string;
+  readonly Privacy?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ChimeBearer?: string;
 }
 export interface ListChannelsModeratedByAppInstanceUser {
-  readonly AppInstanceUserArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ChimeBearer: string;
+  readonly AppInstanceUserArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ChimeBearer?: string;
 }
 export interface ListMediaCapturePipelines {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMeetingTags {
   readonly MeetingId: string;
 }
 export interface ListMeetings {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPhoneNumberOrders {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPhoneNumbers {
-  readonly Status: string;
-  readonly ProductType: string;
-  readonly FilterName: string;
-  readonly FilterValue: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Status?: string;
+  readonly ProductType?: string;
+  readonly FilterName?: string;
+  readonly FilterValue?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListProxySessions {
   readonly VoiceConnectorId: string;
-  readonly Status: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Status?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListRoomMemberships {
   readonly AccountId: string;
   readonly RoomId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListRooms {
   readonly AccountId: string;
-  readonly MemberId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MemberId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListSipMediaApplications {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListSipRules {
-  readonly SipMediaApplicationId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly SipMediaApplicationId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListSupportedPhoneNumberCountries {
   readonly ProductType: string;
@@ -597,21 +597,21 @@ export interface ListTagsForResource {
 }
 export interface ListUsers {
   readonly AccountId: string;
-  readonly UserEmail: string;
-  readonly UserType: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly UserEmail?: string;
+  readonly UserType?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListVoiceConnectorGroups {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListVoiceConnectorTerminationCredentials {
   readonly VoiceConnectorId: string;
 }
 export interface ListVoiceConnectors {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface LogoutUser {
   readonly AccountId: string;
@@ -628,8 +628,8 @@ export interface PutAppInstanceStreamingConfigurations {
 export interface PutEventsConfiguration {
   readonly AccountId: string;
   readonly BotId: string;
-  readonly OutboundEventsHTTPSEndpoint: string;
-  readonly LambdaFunctionArn: string;
+  readonly OutboundEventsHTTPSEndpoint?: string;
+  readonly LambdaFunctionArn?: string;
 }
 export interface PutRetentionSettings {
   readonly AccountId: string;
@@ -637,7 +637,7 @@ export interface PutRetentionSettings {
 }
 export interface PutSipMediaApplicationLoggingConfiguration {
   readonly SipMediaApplicationId: string;
-  readonly SipMediaApplicationLoggingConfiguration: SipMediaApplicationLoggingConfiguration;
+  readonly SipMediaApplicationLoggingConfiguration?: SipMediaApplicationLoggingConfiguration;
 }
 export interface PutVoiceConnectorEmergencyCallingConfiguration {
   readonly VoiceConnectorId: string;
@@ -655,8 +655,8 @@ export interface PutVoiceConnectorProxy {
   readonly VoiceConnectorId: string;
   readonly DefaultSessionExpiryMinutes: number;
   readonly PhoneNumberPoolCountries: [];
-  readonly FallBackPhoneNumber: string;
-  readonly Disabled: boolean;
+  readonly FallBackPhoneNumber?: string;
+  readonly Disabled?: boolean;
 }
 export interface PutVoiceConnectorStreamingConfiguration {
   readonly VoiceConnectorId: string;
@@ -668,12 +668,12 @@ export interface PutVoiceConnectorTermination {
 }
 export interface PutVoiceConnectorTerminationCredentials {
   readonly VoiceConnectorId: string;
-  readonly Credentials: [];
+  readonly Credentials?: [];
 }
 export interface RedactChannelMessage {
   readonly ChannelArn: string;
   readonly MessageId: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface RedactConversationMessage {
   readonly AccountId: string;
@@ -697,23 +697,23 @@ export interface RestorePhoneNumber {
   readonly PhoneNumberId: string;
 }
 export interface SearchAvailablePhoneNumbers {
-  readonly AreaCode: string;
-  readonly City: string;
-  readonly Country: string;
-  readonly State: string;
-  readonly TollFreePrefix: string;
-  readonly PhoneNumberType: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly AreaCode?: string;
+  readonly City?: string;
+  readonly Country?: string;
+  readonly State?: string;
+  readonly TollFreePrefix?: string;
+  readonly PhoneNumberType?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface SendChannelMessage {
   readonly ChannelArn: string;
   readonly Content: string;
   readonly Type: string;
   readonly Persistence: string;
-  readonly Metadata: string;
+  readonly Metadata?: string;
   readonly ClientRequestToken: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface StartMeetingTranscription {
   readonly MeetingId: string;
@@ -750,8 +750,8 @@ export interface UntagResource {
 }
 export interface UpdateAccount {
   readonly AccountId: string;
-  readonly Name: string;
-  readonly DefaultLicense: string;
+  readonly Name?: string;
+  readonly DefaultLicense?: string;
 }
 export interface UpdateAccountSettings {
   readonly AccountId: string;
@@ -760,44 +760,44 @@ export interface UpdateAccountSettings {
 export interface UpdateAppInstance {
   readonly AppInstanceArn: string;
   readonly Name: string;
-  readonly Metadata: string;
+  readonly Metadata?: string;
 }
 export interface UpdateAppInstanceUser {
   readonly AppInstanceUserArn: string;
   readonly Name: string;
-  readonly Metadata: string;
+  readonly Metadata?: string;
 }
 export interface UpdateBot {
   readonly AccountId: string;
   readonly BotId: string;
-  readonly Disabled: boolean;
+  readonly Disabled?: boolean;
 }
 export interface UpdateChannel {
   readonly ChannelArn: string;
   readonly Name: string;
   readonly Mode: string;
-  readonly Metadata: string;
-  readonly ChimeBearer: string;
+  readonly Metadata?: string;
+  readonly ChimeBearer?: string;
 }
 export interface UpdateChannelMessage {
   readonly ChannelArn: string;
   readonly MessageId: string;
-  readonly Content: string;
-  readonly Metadata: string;
-  readonly ChimeBearer: string;
+  readonly Content?: string;
+  readonly Metadata?: string;
+  readonly ChimeBearer?: string;
 }
 export interface UpdateChannelReadMarker {
   readonly ChannelArn: string;
-  readonly ChimeBearer: string;
+  readonly ChimeBearer?: string;
 }
 export interface UpdateGlobalSettings {
-  readonly BusinessCalling: BusinessCallingSettings;
-  readonly VoiceConnector: VoiceConnectorSettings;
+  readonly BusinessCalling?: BusinessCallingSettings;
+  readonly VoiceConnector?: VoiceConnectorSettings;
 }
 export interface UpdatePhoneNumber {
   readonly PhoneNumberId: string;
-  readonly ProductType: string;
-  readonly CallingName: string;
+  readonly ProductType?: string;
+  readonly CallingName?: string;
 }
 export interface UpdatePhoneNumberSettings {
   readonly CallingName: string;
@@ -806,23 +806,23 @@ export interface UpdateProxySession {
   readonly VoiceConnectorId: string;
   readonly ProxySessionId: string;
   readonly Capabilities: [];
-  readonly ExpiryMinutes: number;
+  readonly ExpiryMinutes?: number;
 }
 export interface UpdateRoom {
   readonly AccountId: string;
   readonly RoomId: string;
-  readonly Name: string;
+  readonly Name?: string;
 }
 export interface UpdateRoomMembership {
   readonly AccountId: string;
   readonly RoomId: string;
   readonly MemberId: string;
-  readonly Role: string;
+  readonly Role?: string;
 }
 export interface UpdateSipMediaApplication {
   readonly SipMediaApplicationId: string;
-  readonly Name: string;
-  readonly Endpoints: [];
+  readonly Name?: string;
+  readonly Endpoints?: [];
 }
 export interface UpdateSipMediaApplicationCall {
   readonly SipMediaApplicationId: string;
@@ -832,15 +832,15 @@ export interface UpdateSipMediaApplicationCall {
 export interface UpdateSipRule {
   readonly SipRuleId: string;
   readonly Name: string;
-  readonly Disabled: boolean;
-  readonly TargetApplications: [];
+  readonly Disabled?: boolean;
+  readonly TargetApplications?: [];
 }
 export interface UpdateUser {
   readonly AccountId: string;
   readonly UserId: string;
-  readonly LicenseType: string;
-  readonly UserType: string;
-  readonly AlexaForBusinessMetadata: AlexaForBusinessMetadata;
+  readonly LicenseType?: string;
+  readonly UserType?: string;
+  readonly AlexaForBusinessMetadata?: AlexaForBusinessMetadata;
 }
 export interface UpdateUserSettings {
   readonly AccountId: string;

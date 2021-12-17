@@ -9,10 +9,10 @@ export interface CompleteAttachmentUpload {
 export interface CreateParticipantConnection {
   readonly Type: [];
   readonly ParticipantToken: string;
-  readonly ConnectParticipant: boolean;
+  readonly ConnectParticipant?: boolean;
 }
 export interface DisconnectParticipant {
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
   readonly ConnectionToken: string;
 }
 export interface GetAttachment {
@@ -20,24 +20,24 @@ export interface GetAttachment {
   readonly ConnectionToken: string;
 }
 export interface GetTranscript {
-  readonly ContactId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ScanDirection: string;
-  readonly SortOrder: string;
-  readonly StartPosition: StartPosition;
+  readonly ContactId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ScanDirection?: string;
+  readonly SortOrder?: string;
+  readonly StartPosition?: StartPosition;
   readonly ConnectionToken: string;
 }
 export interface SendEvent {
   readonly ContentType: string;
-  readonly Content: string;
-  readonly ClientToken: string;
+  readonly Content?: string;
+  readonly ClientToken?: string;
   readonly ConnectionToken: string;
 }
 export interface SendMessage {
   readonly ContentType: string;
   readonly Content: string;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
   readonly ConnectionToken: string;
 }
 export interface StartAttachmentUpload {

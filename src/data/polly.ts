@@ -5,10 +5,10 @@ export interface DeleteLexicon {
   readonly Name: string;
 }
 export interface DescribeVoices {
-  readonly Engine: string;
-  readonly LanguageCode: string;
-  readonly IncludeAdditionalLanguageCodes: boolean;
-  readonly NextToken: string;
+  readonly Engine?: string;
+  readonly LanguageCode?: string;
+  readonly IncludeAdditionalLanguageCodes?: boolean;
+  readonly NextToken?: string;
 }
 export interface GetLexicon {
   readonly Name: string;
@@ -17,40 +17,40 @@ export interface GetSpeechSynthesisTask {
   readonly TaskId: string;
 }
 export interface ListLexicons {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListSpeechSynthesisTasks {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Status: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Status?: string;
 }
 export interface PutLexicon {
   readonly Name: string;
   readonly Content: string;
 }
 export interface StartSpeechSynthesisTask {
-  readonly Engine: string;
-  readonly LanguageCode: string;
-  readonly LexiconNames: [];
+  readonly Engine?: string;
+  readonly LanguageCode?: string;
+  readonly LexiconNames?: [];
   readonly OutputFormat: string;
   readonly OutputS3BucketName: string;
-  readonly OutputS3KeyPrefix: string;
-  readonly SampleRate: string;
-  readonly SnsTopicArn: string;
-  readonly SpeechMarkTypes: [];
+  readonly OutputS3KeyPrefix?: string;
+  readonly SampleRate?: string;
+  readonly SnsTopicArn?: string;
+  readonly SpeechMarkTypes?: [];
   readonly Text: string;
-  readonly TextType: string;
+  readonly TextType?: string;
   readonly VoiceId: string;
 }
 export interface SynthesizeSpeech {
-  readonly Engine: string;
-  readonly LanguageCode: string;
-  readonly LexiconNames: [];
+  readonly Engine?: string;
+  readonly LanguageCode?: string;
+  readonly LexiconNames?: [];
   readonly OutputFormat: string;
-  readonly SampleRate: string;
-  readonly SpeechMarkTypes: [];
+  readonly SampleRate?: string;
+  readonly SpeechMarkTypes?: [];
   readonly Text: string;
-  readonly TextType: string;
+  readonly TextType?: string;
   readonly VoiceId: string;
 }
 

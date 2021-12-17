@@ -6,67 +6,67 @@ export interface CancelRotateSecret {
 }
 export interface CreateSecret {
   readonly Name: string;
-  readonly ClientRequestToken: string;
-  readonly Description: string;
-  readonly KmsKeyId: string;
-  readonly SecretBinary: unknown;
-  readonly SecretString: string;
-  readonly Tags: [];
-  readonly AddReplicaRegions: [];
-  readonly ForceOverwriteReplicaSecret: boolean;
+  readonly ClientRequestToken?: string;
+  readonly Description?: string;
+  readonly KmsKeyId?: string;
+  readonly SecretBinary?: unknown;
+  readonly SecretString?: string;
+  readonly Tags?: [];
+  readonly AddReplicaRegions?: [];
+  readonly ForceOverwriteReplicaSecret?: boolean;
 }
 export interface DeleteResourcePolicy {
   readonly SecretId: string;
 }
 export interface DeleteSecret {
   readonly SecretId: string;
-  readonly RecoveryWindowInDays: number;
-  readonly ForceDeleteWithoutRecovery: boolean;
+  readonly RecoveryWindowInDays?: number;
+  readonly ForceDeleteWithoutRecovery?: boolean;
 }
 export interface DescribeSecret {
   readonly SecretId: string;
 }
 export interface GetRandomPassword {
-  readonly PasswordLength: number;
-  readonly ExcludeCharacters: string;
-  readonly ExcludeNumbers: boolean;
-  readonly ExcludePunctuation: boolean;
-  readonly ExcludeUppercase: boolean;
-  readonly ExcludeLowercase: boolean;
-  readonly IncludeSpace: boolean;
-  readonly RequireEachIncludedType: boolean;
+  readonly PasswordLength?: number;
+  readonly ExcludeCharacters?: string;
+  readonly ExcludeNumbers?: boolean;
+  readonly ExcludePunctuation?: boolean;
+  readonly ExcludeUppercase?: boolean;
+  readonly ExcludeLowercase?: boolean;
+  readonly IncludeSpace?: boolean;
+  readonly RequireEachIncludedType?: boolean;
 }
 export interface GetResourcePolicy {
   readonly SecretId: string;
 }
 export interface GetSecretValue {
   readonly SecretId: string;
-  readonly VersionId: string;
-  readonly VersionStage: string;
+  readonly VersionId?: string;
+  readonly VersionStage?: string;
 }
 export interface ListSecretVersionIds {
   readonly SecretId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly IncludeDeprecated: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly IncludeDeprecated?: boolean;
 }
 export interface ListSecrets {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
-  readonly SortOrder: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
+  readonly SortOrder?: string;
 }
 export interface PutResourcePolicy {
   readonly SecretId: string;
   readonly ResourcePolicy: string;
-  readonly BlockPublicPolicy: boolean;
+  readonly BlockPublicPolicy?: boolean;
 }
 export interface PutSecretValue {
   readonly SecretId: string;
-  readonly ClientRequestToken: string;
-  readonly SecretBinary: unknown;
-  readonly SecretString: string;
-  readonly VersionStages: [];
+  readonly ClientRequestToken?: string;
+  readonly SecretBinary?: unknown;
+  readonly SecretString?: string;
+  readonly VersionStages?: [];
 }
 export interface RemoveRegionsFromReplication {
   readonly SecretId: string;
@@ -75,16 +75,16 @@ export interface RemoveRegionsFromReplication {
 export interface ReplicateSecretToRegions {
   readonly SecretId: string;
   readonly AddReplicaRegions: [];
-  readonly ForceOverwriteReplicaSecret: boolean;
+  readonly ForceOverwriteReplicaSecret?: boolean;
 }
 export interface RestoreSecret {
   readonly SecretId: string;
 }
 export interface RotateSecret {
   readonly SecretId: string;
-  readonly ClientRequestToken: string;
-  readonly RotationLambdaARN: string;
-  readonly RotationRules: RotationRulesType;
+  readonly ClientRequestToken?: string;
+  readonly RotationLambdaARN?: string;
+  readonly RotationRules?: RotationRulesType;
 }
 export interface StopReplicationToReplica {
   readonly SecretId: string;
@@ -99,20 +99,20 @@ export interface UntagResource {
 }
 export interface UpdateSecret {
   readonly SecretId: string;
-  readonly ClientRequestToken: string;
-  readonly Description: string;
-  readonly KmsKeyId: string;
-  readonly SecretBinary: unknown;
-  readonly SecretString: string;
+  readonly ClientRequestToken?: string;
+  readonly Description?: string;
+  readonly KmsKeyId?: string;
+  readonly SecretBinary?: unknown;
+  readonly SecretString?: string;
 }
 export interface UpdateSecretVersionStage {
   readonly SecretId: string;
   readonly VersionStage: string;
-  readonly RemoveFromVersionId: string;
-  readonly MoveToVersionId: string;
+  readonly RemoveFromVersionId?: string;
+  readonly MoveToVersionId?: string;
 }
 export interface ValidateResourcePolicy {
-  readonly SecretId: string;
+  readonly SecretId?: string;
   readonly ResourcePolicy: string;
 }
 

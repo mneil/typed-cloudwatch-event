@@ -62,23 +62,23 @@ export interface CreateStreamingDistributionWithTags {
 }
 export interface DeleteCachePolicy {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface DeleteCloudFrontOriginAccessIdentity {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface DeleteDistribution {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface DeleteFieldLevelEncryptionConfig {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface DeleteFieldLevelEncryptionProfile {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface DeleteFunction {
   readonly Name: string;
@@ -86,34 +86,34 @@ export interface DeleteFunction {
 }
 export interface DeleteKeyGroup {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface DeleteMonitoringSubscription {
   readonly DistributionId: string;
 }
 export interface DeleteOriginRequestPolicy {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface DeletePublicKey {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface DeleteRealtimeLogConfig {
-  readonly Name: string;
-  readonly ARN: string;
+  readonly Name?: string;
+  readonly ARN?: string;
 }
 export interface DeleteResponseHeadersPolicy {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface DeleteStreamingDistribution {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface DescribeFunction {
   readonly Name: string;
-  readonly Stage: string;
+  readonly Stage?: string;
 }
 export interface GetCachePolicy {
   readonly Id: string;
@@ -147,7 +147,7 @@ export interface GetFieldLevelEncryptionProfileConfig {
 }
 export interface GetFunction {
   readonly Name: string;
-  readonly Stage: string;
+  readonly Stage?: string;
 }
 export interface GetInvalidation {
   readonly DistributionId: string;
@@ -175,8 +175,8 @@ export interface GetPublicKeyConfig {
   readonly Id: string;
 }
 export interface GetRealtimeLogConfig {
-  readonly Name: string;
-  readonly ARN: string;
+  readonly Name?: string;
+  readonly ARN?: string;
 }
 export interface GetResponseHeadersPolicy {
   readonly Id: string;
@@ -191,98 +191,98 @@ export interface GetStreamingDistributionConfig {
   readonly Id: string;
 }
 export interface ListCachePolicies {
-  readonly Type: string;
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Type?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 export interface ListCloudFrontOriginAccessIdentities {
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 export interface ListConflictingAliases {
   readonly DistributionId: string;
   readonly Alias: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 export interface ListDistributions {
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 export interface ListDistributionsByCachePolicyId {
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
   readonly CachePolicyId: string;
 }
 export interface ListDistributionsByKeyGroup {
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
   readonly KeyGroupId: string;
 }
 export interface ListDistributionsByOriginRequestPolicyId {
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
   readonly OriginRequestPolicyId: string;
 }
 export interface ListDistributionsByRealtimeLogConfig {
-  readonly Marker: string;
-  readonly MaxItems: string;
-  readonly RealtimeLogConfigName: string;
-  readonly RealtimeLogConfigArn: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
+  readonly RealtimeLogConfigName?: string;
+  readonly RealtimeLogConfigArn?: string;
 }
 export interface ListDistributionsByResponseHeadersPolicyId {
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
   readonly ResponseHeadersPolicyId: string;
 }
 export interface ListDistributionsByWebACLId {
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
   readonly WebACLId: string;
 }
 export interface ListFieldLevelEncryptionConfigs {
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 export interface ListFieldLevelEncryptionProfiles {
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 export interface ListFunctions {
-  readonly Marker: string;
-  readonly MaxItems: string;
-  readonly Stage: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
+  readonly Stage?: string;
 }
 export interface ListInvalidations {
   readonly DistributionId: string;
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 export interface ListKeyGroups {
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 export interface ListOriginRequestPolicies {
-  readonly Type: string;
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Type?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 export interface ListPublicKeys {
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 export interface ListRealtimeLogConfigs {
-  readonly MaxItems: string;
-  readonly Marker: string;
+  readonly MaxItems?: string;
+  readonly Marker?: string;
 }
 export interface ListResponseHeadersPolicies {
-  readonly Type: string;
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Type?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 export interface ListStreamingDistributions {
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 export interface ListTagsForResource {
   readonly Resource: string;
@@ -298,7 +298,7 @@ export interface TagResource {
 export interface TestFunction {
   readonly Name: string;
   readonly IfMatch: string;
-  readonly Stage: string;
+  readonly Stage?: string;
   readonly EventObject: unknown;
 }
 export interface UntagResource {
@@ -308,27 +308,27 @@ export interface UntagResource {
 export interface UpdateCachePolicy {
   readonly CachePolicyConfig: CachePolicyConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface UpdateCloudFrontOriginAccessIdentity {
   readonly CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface UpdateDistribution {
   readonly DistributionConfig: DistributionConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface UpdateFieldLevelEncryptionConfig {
   readonly FieldLevelEncryptionConfig: FieldLevelEncryptionConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface UpdateFieldLevelEncryptionProfile {
   readonly FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface UpdateFunction {
   readonly Name: string;
@@ -339,34 +339,34 @@ export interface UpdateFunction {
 export interface UpdateKeyGroup {
   readonly KeyGroupConfig: KeyGroupConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface UpdateOriginRequestPolicy {
   readonly OriginRequestPolicyConfig: OriginRequestPolicyConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface UpdatePublicKey {
   readonly PublicKeyConfig: PublicKeyConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface UpdateRealtimeLogConfig {
-  readonly EndPoints: [];
-  readonly Fields: [];
-  readonly Name: string;
-  readonly ARN: string;
-  readonly SamplingRate: number;
+  readonly EndPoints?: [];
+  readonly Fields?: [];
+  readonly Name?: string;
+  readonly ARN?: string;
+  readonly SamplingRate?: number;
 }
 export interface UpdateResponseHeadersPolicy {
   readonly ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 export interface UpdateStreamingDistribution {
   readonly StreamingDistributionConfig: StreamingDistributionConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
 

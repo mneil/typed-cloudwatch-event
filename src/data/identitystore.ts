@@ -11,15 +11,15 @@ export interface DescribeUser {
 }
 export interface ListGroups {
   readonly IdentityStoreId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 export interface ListUsers {
   readonly IdentityStoreId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 
 

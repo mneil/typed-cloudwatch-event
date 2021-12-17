@@ -3,20 +3,20 @@
  */
 export interface CreateApplication {
   readonly applicationName: string;
-  readonly applicationDescription: string;
-  readonly clientToken: string;
+  readonly applicationDescription?: string;
+  readonly clientToken?: string;
   readonly roleArn: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface DeleteApplication {
   readonly applicationId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 export interface DescribeApplication {
   readonly applicationId: string;
 }
 export interface ListApplications {
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -31,9 +31,9 @@ export interface UntagResource {
 }
 export interface UpdateApplication {
   readonly applicationId: string;
-  readonly applicationName: string;
-  readonly applicationDescription: string;
-  readonly clientToken: string;
+  readonly applicationName?: string;
+  readonly applicationDescription?: string;
+  readonly clientToken?: string;
 }
 
 

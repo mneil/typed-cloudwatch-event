@@ -27,26 +27,26 @@ export interface CreateGroup {
 }
 export interface CreateMobileDeviceAccessRule {
   readonly OrganizationId: string;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Effect: string;
-  readonly DeviceTypes: [];
-  readonly NotDeviceTypes: [];
-  readonly DeviceModels: [];
-  readonly NotDeviceModels: [];
-  readonly DeviceOperatingSystems: [];
-  readonly NotDeviceOperatingSystems: [];
-  readonly DeviceUserAgents: [];
-  readonly NotDeviceUserAgents: [];
+  readonly DeviceTypes?: [];
+  readonly NotDeviceTypes?: [];
+  readonly DeviceModels?: [];
+  readonly NotDeviceModels?: [];
+  readonly DeviceOperatingSystems?: [];
+  readonly NotDeviceOperatingSystems?: [];
+  readonly DeviceUserAgents?: [];
+  readonly NotDeviceUserAgents?: [];
 }
 export interface CreateOrganization {
-  readonly DirectoryId: string;
+  readonly DirectoryId?: string;
   readonly Alias: string;
-  readonly ClientToken: string;
-  readonly Domains: [];
-  readonly KmsKeyArn: string;
-  readonly EnableInteroperability: boolean;
+  readonly ClientToken?: string;
+  readonly Domains?: [];
+  readonly KmsKeyArn?: string;
+  readonly EnableInteroperability?: boolean;
 }
 export interface CreateResource {
   readonly OrganizationId: string;
@@ -87,7 +87,7 @@ export interface DeleteMobileDeviceAccessRule {
   readonly MobileDeviceAccessRuleId: string;
 }
 export interface DeleteOrganization {
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
   readonly OrganizationId: string;
   readonly DeleteDirectory: boolean;
 }
@@ -162,10 +162,10 @@ export interface GetMailboxDetails {
 }
 export interface GetMobileDeviceAccessEffect {
   readonly OrganizationId: string;
-  readonly DeviceType: string;
-  readonly DeviceModel: string;
-  readonly DeviceOperatingSystem: string;
-  readonly DeviceUserAgent: string;
+  readonly DeviceType?: string;
+  readonly DeviceModel?: string;
+  readonly DeviceOperatingSystem?: string;
+  readonly DeviceUserAgent?: string;
 }
 export interface GetMobileDeviceAccessOverride {
   readonly OrganizationId: string;
@@ -178,79 +178,79 @@ export interface ListAccessControlRules {
 export interface ListAliases {
   readonly OrganizationId: string;
   readonly EntityId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListGroupMembers {
   readonly OrganizationId: string;
   readonly GroupId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListGroups {
   readonly OrganizationId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMailDomains {
   readonly OrganizationId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListMailboxExportJobs {
   readonly OrganizationId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMailboxPermissions {
   readonly OrganizationId: string;
   readonly EntityId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMobileDeviceAccessOverrides {
   readonly OrganizationId: string;
-  readonly UserId: string;
-  readonly DeviceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly UserId?: string;
+  readonly DeviceId?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMobileDeviceAccessRules {
   readonly OrganizationId: string;
 }
 export interface ListOrganizations {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListResourceDelegates {
   readonly OrganizationId: string;
   readonly ResourceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListResources {
   readonly OrganizationId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
 export interface ListUsers {
   readonly OrganizationId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface PutAccessControlRule {
   readonly Name: string;
   readonly Effect: string;
   readonly Description: string;
-  readonly IpRanges: [];
-  readonly NotIpRanges: [];
-  readonly Actions: [];
-  readonly NotActions: [];
-  readonly UserIds: [];
-  readonly NotUserIds: [];
+  readonly IpRanges?: [];
+  readonly NotIpRanges?: [];
+  readonly Actions?: [];
+  readonly NotActions?: [];
+  readonly UserIds?: [];
+  readonly NotUserIds?: [];
   readonly OrganizationId: string;
 }
 export interface PutInboundDmarcSettings {
@@ -268,17 +268,17 @@ export interface PutMobileDeviceAccessOverride {
   readonly UserId: string;
   readonly DeviceId: string;
   readonly Effect: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 export interface PutRetentionPolicy {
   readonly OrganizationId: string;
-  readonly Id: string;
+  readonly Id?: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly FolderConfigurations: [];
 }
 export interface RegisterMailDomain {
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
   readonly OrganizationId: string;
   readonly DomainName: string;
 }
@@ -296,7 +296,7 @@ export interface StartMailboxExportJob {
   readonly ClientToken: string;
   readonly OrganizationId: string;
   readonly EntityId: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly RoleArn: string;
   readonly KmsKeyArn: string;
   readonly S3BucketName: string;
@@ -323,16 +323,16 @@ export interface UpdateMobileDeviceAccessRule {
   readonly OrganizationId: string;
   readonly MobileDeviceAccessRuleId: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Effect: string;
-  readonly DeviceTypes: [];
-  readonly NotDeviceTypes: [];
-  readonly DeviceModels: [];
-  readonly NotDeviceModels: [];
-  readonly DeviceOperatingSystems: [];
-  readonly NotDeviceOperatingSystems: [];
-  readonly DeviceUserAgents: [];
-  readonly NotDeviceUserAgents: [];
+  readonly DeviceTypes?: [];
+  readonly NotDeviceTypes?: [];
+  readonly DeviceModels?: [];
+  readonly NotDeviceModels?: [];
+  readonly DeviceOperatingSystems?: [];
+  readonly NotDeviceOperatingSystems?: [];
+  readonly DeviceUserAgents?: [];
+  readonly NotDeviceUserAgents?: [];
 }
 export interface UpdatePrimaryEmailAddress {
   readonly OrganizationId: string;
@@ -342,8 +342,8 @@ export interface UpdatePrimaryEmailAddress {
 export interface UpdateResource {
   readonly OrganizationId: string;
   readonly ResourceId: string;
-  readonly Name: string;
-  readonly BookingOptions: BookingOptions;
+  readonly Name?: string;
+  readonly BookingOptions?: BookingOptions;
 }
 
 

@@ -3,7 +3,7 @@
  */
 export interface ApplyArchiveRule {
   readonly analyzerArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly ruleName: string;
 }
 export interface CancelPolicyGeneration {
@@ -11,29 +11,29 @@ export interface CancelPolicyGeneration {
 }
 export interface CreateAccessPreview {
   readonly analyzerArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly configurations: {[key: string]: any};
 }
 export interface CreateAnalyzer {
   readonly analyzerName: string;
-  readonly archiveRules: [];
-  readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly archiveRules?: [];
+  readonly clientToken?: string;
+  readonly tags?: {[key: string]: any};
   readonly type: string;
 }
 export interface CreateArchiveRule {
   readonly analyzerName: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly filter: {[key: string]: any};
   readonly ruleName: string;
 }
 export interface DeleteAnalyzer {
   readonly analyzerName: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 export interface DeleteArchiveRule {
   readonly analyzerName: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly ruleName: string;
 }
 export interface GetAccessPreview {
@@ -56,56 +56,56 @@ export interface GetFinding {
   readonly id: string;
 }
 export interface GetGeneratedPolicy {
-  readonly includeResourcePlaceholders: boolean;
-  readonly includeServiceLevelTemplate: boolean;
+  readonly includeResourcePlaceholders?: boolean;
+  readonly includeServiceLevelTemplate?: boolean;
   readonly jobId: string;
 }
 export interface ListAccessPreviewFindings {
   readonly accessPreviewId: string;
   readonly analyzerArn: string;
-  readonly filter: {[key: string]: any};
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly filter?: {[key: string]: any};
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListAccessPreviews {
   readonly analyzerArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListAnalyzedResources {
   readonly analyzerArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly resourceType: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly resourceType?: string;
 }
 export interface ListAnalyzers {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly type: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly type?: string;
 }
 export interface ListArchiveRules {
   readonly analyzerName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListFindings {
   readonly analyzerArn: string;
-  readonly filter: {[key: string]: any};
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly sort: SortCriteria;
+  readonly filter?: {[key: string]: any};
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly sort?: SortCriteria;
 }
 export interface ListPolicyGenerations {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly principalArn: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly principalArn?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface StartPolicyGeneration {
-  readonly clientToken: string;
-  readonly cloudTrailDetails: CloudTrailDetails;
+  readonly clientToken?: string;
+  readonly cloudTrailDetails?: CloudTrailDetails;
   readonly policyGenerationDetails: PolicyGenerationDetails;
 }
 export interface StartResourceScan {
@@ -122,24 +122,24 @@ export interface UntagResource {
 }
 export interface UpdateArchiveRule {
   readonly analyzerName: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly filter: {[key: string]: any};
   readonly ruleName: string;
 }
 export interface UpdateFindings {
   readonly analyzerArn: string;
-  readonly clientToken: string;
-  readonly ids: [];
-  readonly resourceArn: string;
+  readonly clientToken?: string;
+  readonly ids?: [];
+  readonly resourceArn?: string;
   readonly status: string;
 }
 export interface ValidatePolicy {
-  readonly locale: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly locale?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly policyDocument: string;
   readonly policyType: string;
-  readonly validatePolicyResourceType: string;
+  readonly validatePolicyResourceType?: string;
 }
 
 

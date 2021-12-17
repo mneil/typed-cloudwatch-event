@@ -4,7 +4,7 @@
 export interface CreateBudget {
   readonly AccountId: string;
   readonly Budget: Budget;
-  readonly NotificationsWithSubscribers: [];
+  readonly NotificationsWithSubscribers?: [];
 }
 export interface CreateBudgetAction {
   readonly AccountId: string;
@@ -62,45 +62,45 @@ export interface DescribeBudgetActionHistories {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly ActionId: string;
-  readonly TimePeriod: TimePeriod;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly TimePeriod?: TimePeriod;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeBudgetActionsForAccount {
   readonly AccountId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeBudgetActionsForBudget {
   readonly AccountId: string;
   readonly BudgetName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeBudgetPerformanceHistory {
   readonly AccountId: string;
   readonly BudgetName: string;
-  readonly TimePeriod: TimePeriod;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly TimePeriod?: TimePeriod;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeBudgets {
   readonly AccountId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeNotificationsForBudget {
   readonly AccountId: string;
   readonly BudgetName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeSubscribersForNotification {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Notification: Notification;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ExecuteBudgetAction {
   readonly AccountId: string;
@@ -116,12 +116,12 @@ export interface UpdateBudgetAction {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly ActionId: string;
-  readonly NotificationType: string;
-  readonly ActionThreshold: ActionThreshold;
-  readonly Definition: Definition;
-  readonly ExecutionRoleArn: string;
-  readonly ApprovalModel: string;
-  readonly Subscribers: [];
+  readonly NotificationType?: string;
+  readonly ActionThreshold?: ActionThreshold;
+  readonly Definition?: Definition;
+  readonly ExecutionRoleArn?: string;
+  readonly ApprovalModel?: string;
+  readonly Subscribers?: [];
 }
 export interface UpdateNotification {
   readonly AccountId: string;

@@ -3,7 +3,7 @@
  */
 export interface CloseTunnel {
   readonly tunnelId: string;
-  readonly delete: boolean;
+  readonly delete?: boolean;
 }
 export interface DescribeTunnel {
   readonly tunnelId: string;
@@ -12,15 +12,15 @@ export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface ListTunnels {
-  readonly thingName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly thingName?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface OpenTunnel {
-  readonly description: string;
-  readonly tags: [];
-  readonly destinationConfig: DestinationConfig;
-  readonly timeoutConfig: TimeoutConfig;
+  readonly description?: string;
+  readonly tags?: [];
+  readonly destinationConfig?: DestinationConfig;
+  readonly timeoutConfig?: TimeoutConfig;
 }
 export interface TagResource {
   readonly resourceArn: string;

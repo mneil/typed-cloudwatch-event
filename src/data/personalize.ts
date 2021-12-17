@@ -4,18 +4,18 @@
 export interface CreateBatchInferenceJob {
   readonly jobName: string;
   readonly solutionVersionArn: string;
-  readonly filterArn: string;
-  readonly numResults: number;
+  readonly filterArn?: string;
+  readonly numResults?: number;
   readonly jobInput: BatchInferenceJobInput;
   readonly jobOutput: BatchInferenceJobOutput;
   readonly roleArn: string;
-  readonly batchInferenceJobConfig: BatchInferenceJobConfig;
+  readonly batchInferenceJobConfig?: BatchInferenceJobConfig;
 }
 export interface CreateBatchSegmentJob {
   readonly jobName: string;
   readonly solutionVersionArn: string;
-  readonly filterArn: string;
-  readonly numResults: number;
+  readonly filterArn?: string;
+  readonly numResults?: number;
   readonly jobInput: BatchSegmentJobInput;
   readonly jobOutput: BatchSegmentJobOutput;
   readonly roleArn: string;
@@ -23,8 +23,8 @@ export interface CreateBatchSegmentJob {
 export interface CreateCampaign {
   readonly name: string;
   readonly solutionVersionArn: string;
-  readonly minProvisionedTPS: number;
-  readonly campaignConfig: CampaignConfig;
+  readonly minProvisionedTPS?: number;
+  readonly campaignConfig?: CampaignConfig;
 }
 export interface CreateDataset {
   readonly name: string;
@@ -35,15 +35,15 @@ export interface CreateDataset {
 export interface CreateDatasetExportJob {
   readonly jobName: string;
   readonly datasetArn: string;
-  readonly ingestionMode: string;
+  readonly ingestionMode?: string;
   readonly roleArn: string;
   readonly jobOutput: DatasetExportJobOutput;
 }
 export interface CreateDatasetGroup {
   readonly name: string;
-  readonly roleArn: string;
-  readonly kmsKeyArn: string;
-  readonly domain: string;
+  readonly roleArn?: string;
+  readonly kmsKeyArn?: string;
+  readonly domain?: string;
 }
 export interface CreateDatasetImportJob {
   readonly jobName: string;
@@ -64,25 +64,25 @@ export interface CreateRecommender {
   readonly name: string;
   readonly datasetGroupArn: string;
   readonly recipeArn: string;
-  readonly recommenderConfig: RecommenderConfig;
+  readonly recommenderConfig?: RecommenderConfig;
 }
 export interface CreateSchema {
   readonly name: string;
   readonly schema: string;
-  readonly domain: string;
+  readonly domain?: string;
 }
 export interface CreateSolution {
   readonly name: string;
-  readonly performHPO: boolean;
-  readonly performAutoML: boolean;
-  readonly recipeArn: string;
+  readonly performHPO?: boolean;
+  readonly performAutoML?: boolean;
+  readonly recipeArn?: string;
   readonly datasetGroupArn: string;
-  readonly eventType: string;
-  readonly solutionConfig: SolutionConfig;
+  readonly eventType?: string;
+  readonly solutionConfig?: SolutionConfig;
 }
 export interface CreateSolutionVersion {
   readonly solutionArn: string;
-  readonly trainingMode: string;
+  readonly trainingMode?: string;
 }
 export interface DeleteCampaign {
   readonly campaignArn: string;
@@ -160,82 +160,82 @@ export interface GetSolutionMetrics {
   readonly solutionVersionArn: string;
 }
 export interface ListBatchInferenceJobs {
-  readonly solutionVersionArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly solutionVersionArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListBatchSegmentJobs {
-  readonly solutionVersionArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly solutionVersionArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListCampaigns {
-  readonly solutionArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly solutionArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDatasetExportJobs {
-  readonly datasetArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly datasetArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDatasetGroups {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDatasetImportJobs {
-  readonly datasetArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly datasetArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDatasets {
-  readonly datasetGroupArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly datasetGroupArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListEventTrackers {
-  readonly datasetGroupArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly datasetGroupArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListFilters {
-  readonly datasetGroupArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly datasetGroupArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListRecipes {
-  readonly recipeProvider: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly domain: string;
+  readonly recipeProvider?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly domain?: string;
 }
 export interface ListRecommenders {
-  readonly datasetGroupArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly datasetGroupArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListSchemas {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListSolutionVersions {
-  readonly solutionArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly solutionArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListSolutions {
-  readonly datasetGroupArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly datasetGroupArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface StopSolutionVersionCreation {
   readonly solutionVersionArn: string;
 }
 export interface UpdateCampaign {
   readonly campaignArn: string;
-  readonly solutionVersionArn: string;
-  readonly minProvisionedTPS: number;
-  readonly campaignConfig: CampaignConfig;
+  readonly solutionVersionArn?: string;
+  readonly minProvisionedTPS?: number;
+  readonly campaignConfig?: CampaignConfig;
 }
 export interface UpdateRecommender {
   readonly recommenderArn: string;

@@ -31,54 +31,54 @@ export interface BatchUpdateDevicePosition {
 }
 export interface CalculateRoute {
   readonly CalculatorName: string;
-  readonly CarModeOptions: CalculateRouteCarModeOptions;
-  readonly DepartNow: boolean;
+  readonly CarModeOptions?: CalculateRouteCarModeOptions;
+  readonly DepartNow?: boolean;
   readonly DeparturePosition: [];
-  readonly DepartureTime: Date;
+  readonly DepartureTime?: Date;
   readonly DestinationPosition: [];
-  readonly DistanceUnit: string;
-  readonly IncludeLegGeometry: boolean;
-  readonly TravelMode: string;
-  readonly TruckModeOptions: CalculateRouteTruckModeOptions;
-  readonly WaypointPositions: [];
+  readonly DistanceUnit?: string;
+  readonly IncludeLegGeometry?: boolean;
+  readonly TravelMode?: string;
+  readonly TruckModeOptions?: CalculateRouteTruckModeOptions;
+  readonly WaypointPositions?: [];
 }
 export interface CreateGeofenceCollection {
   readonly CollectionName: string;
-  readonly Description: string;
-  readonly KmsKeyId: string;
+  readonly Description?: string;
+  readonly KmsKeyId?: string;
   readonly PricingPlan: string;
-  readonly PricingPlanDataSource: string;
-  readonly Tags: {[key: string]: any};
+  readonly PricingPlanDataSource?: string;
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateMap {
   readonly Configuration: MapConfiguration;
-  readonly Description: string;
+  readonly Description?: string;
   readonly MapName: string;
   readonly PricingPlan: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreatePlaceIndex {
   readonly DataSource: string;
-  readonly DataSourceConfiguration: DataSourceConfiguration;
-  readonly Description: string;
+  readonly DataSourceConfiguration?: DataSourceConfiguration;
+  readonly Description?: string;
   readonly IndexName: string;
   readonly PricingPlan: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateRouteCalculator {
   readonly CalculatorName: string;
   readonly DataSource: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly PricingPlan: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateTracker {
-  readonly Description: string;
-  readonly KmsKeyId: string;
-  readonly PositionFiltering: string;
+  readonly Description?: string;
+  readonly KmsKeyId?: string;
+  readonly PositionFiltering?: string;
   readonly PricingPlan: string;
-  readonly PricingPlanDataSource: string;
-  readonly Tags: {[key: string]: any};
+  readonly PricingPlanDataSource?: string;
+  readonly Tags?: {[key: string]: any};
   readonly TrackerName: string;
 }
 export interface DeleteGeofenceCollection {
@@ -121,9 +121,9 @@ export interface GetDevicePosition {
 }
 export interface GetDevicePositionHistory {
   readonly DeviceId: string;
-  readonly EndTimeExclusive: Date;
-  readonly NextToken: string;
-  readonly StartTimeInclusive: Date;
+  readonly EndTimeExclusive?: Date;
+  readonly NextToken?: string;
+  readonly StartTimeInclusive?: Date;
   readonly TrackerName: string;
 }
 export interface GetGeofence {
@@ -149,41 +149,41 @@ export interface GetMapTile {
   readonly Z: string;
 }
 export interface ListDevicePositions {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly TrackerName: string;
 }
 export interface ListGeofenceCollections {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListGeofences {
   readonly CollectionName: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListMaps {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListPlaceIndexes {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListRouteCalculators {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface ListTrackerConsumers {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly TrackerName: string;
 }
 export interface ListTrackers {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface PutGeofence {
   readonly CollectionName: string;
@@ -192,26 +192,26 @@ export interface PutGeofence {
 }
 export interface SearchPlaceIndexForPosition {
   readonly IndexName: string;
-  readonly Language: string;
-  readonly MaxResults: number;
+  readonly Language?: string;
+  readonly MaxResults?: number;
   readonly Position: [];
 }
 export interface SearchPlaceIndexForSuggestions {
-  readonly BiasPosition: [];
-  readonly FilterBBox: [];
-  readonly FilterCountries: [];
+  readonly BiasPosition?: [];
+  readonly FilterBBox?: [];
+  readonly FilterCountries?: [];
   readonly IndexName: string;
-  readonly Language: string;
-  readonly MaxResults: number;
+  readonly Language?: string;
+  readonly MaxResults?: number;
   readonly Text: string;
 }
 export interface SearchPlaceIndexForText {
-  readonly BiasPosition: [];
-  readonly FilterBBox: [];
-  readonly FilterCountries: [];
+  readonly BiasPosition?: [];
+  readonly FilterBBox?: [];
+  readonly FilterCountries?: [];
   readonly IndexName: string;
-  readonly Language: string;
-  readonly MaxResults: number;
+  readonly Language?: string;
+  readonly MaxResults?: number;
   readonly Text: string;
 }
 export interface TagResource {
@@ -224,31 +224,31 @@ export interface UntagResource {
 }
 export interface UpdateGeofenceCollection {
   readonly CollectionName: string;
-  readonly Description: string;
-  readonly PricingPlan: string;
-  readonly PricingPlanDataSource: string;
+  readonly Description?: string;
+  readonly PricingPlan?: string;
+  readonly PricingPlanDataSource?: string;
 }
 export interface UpdateMap {
-  readonly Description: string;
+  readonly Description?: string;
   readonly MapName: string;
-  readonly PricingPlan: string;
+  readonly PricingPlan?: string;
 }
 export interface UpdatePlaceIndex {
-  readonly DataSourceConfiguration: DataSourceConfiguration;
-  readonly Description: string;
+  readonly DataSourceConfiguration?: DataSourceConfiguration;
+  readonly Description?: string;
   readonly IndexName: string;
-  readonly PricingPlan: string;
+  readonly PricingPlan?: string;
 }
 export interface UpdateRouteCalculator {
   readonly CalculatorName: string;
-  readonly Description: string;
-  readonly PricingPlan: string;
+  readonly Description?: string;
+  readonly PricingPlan?: string;
 }
 export interface UpdateTracker {
-  readonly Description: string;
-  readonly PositionFiltering: string;
-  readonly PricingPlan: string;
-  readonly PricingPlanDataSource: string;
+  readonly Description?: string;
+  readonly PositionFiltering?: string;
+  readonly PricingPlan?: string;
+  readonly PricingPlanDataSource?: string;
   readonly TrackerName: string;
 }
 

@@ -6,17 +6,17 @@ export interface CreateLifecyclePolicy {
   readonly Description: string;
   readonly State: string;
   readonly PolicyDetails: PolicyDetails;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface DeleteLifecyclePolicy {
   readonly PolicyId: string;
 }
 export interface GetLifecyclePolicies {
-  readonly PolicyIds: [];
-  readonly State: string;
-  readonly ResourceTypes: [];
-  readonly TargetTags: [];
-  readonly TagsToAdd: [];
+  readonly PolicyIds?: [];
+  readonly State?: string;
+  readonly ResourceTypes?: [];
+  readonly TargetTags?: [];
+  readonly TagsToAdd?: [];
 }
 export interface GetLifecyclePolicy {
   readonly PolicyId: string;
@@ -34,10 +34,10 @@ export interface UntagResource {
 }
 export interface UpdateLifecyclePolicy {
   readonly PolicyId: string;
-  readonly ExecutionRoleArn: string;
-  readonly State: string;
-  readonly Description: string;
-  readonly PolicyDetails: PolicyDetails;
+  readonly ExecutionRoleArn?: string;
+  readonly State?: string;
+  readonly Description?: string;
+  readonly PolicyDetails?: PolicyDetails;
 }
 
 

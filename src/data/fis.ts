@@ -5,10 +5,10 @@ export interface CreateExperimentTemplate {
   readonly clientToken: string;
   readonly description: string;
   readonly stopConditions: [];
-  readonly targets: {[key: string]: any};
+  readonly targets?: {[key: string]: any};
   readonly actions: {[key: string]: any};
   readonly roleArn: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface DeleteExperimentTemplate {
   readonly id: string;
@@ -23,16 +23,16 @@ export interface GetExperimentTemplate {
   readonly id: string;
 }
 export interface ListActions {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListExperimentTemplates {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListExperiments {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -40,7 +40,7 @@ export interface ListTagsForResource {
 export interface StartExperiment {
   readonly clientToken: string;
   readonly experimentTemplateId: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface StopExperiment {
   readonly id: string;
@@ -51,15 +51,15 @@ export interface TagResource {
 }
 export interface UntagResource {
   readonly resourceArn: string;
-  readonly tagKeys: [];
+  readonly tagKeys?: [];
 }
 export interface UpdateExperimentTemplate {
   readonly id: string;
-  readonly description: string;
-  readonly stopConditions: [];
-  readonly targets: {[key: string]: any};
-  readonly actions: {[key: string]: any};
-  readonly roleArn: string;
+  readonly description?: string;
+  readonly stopConditions?: [];
+  readonly targets?: {[key: string]: any};
+  readonly actions?: {[key: string]: any};
+  readonly roleArn?: string;
 }
 
 

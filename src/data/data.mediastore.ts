@@ -9,20 +9,20 @@ export interface DescribeObject {
 }
 export interface GetObject {
   readonly Path: string;
-  readonly Range: string;
+  readonly Range?: string;
 }
 export interface ListItems {
-  readonly Path: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Path?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface PutObject {
   readonly Body: unknown;
   readonly Path: string;
-  readonly ContentType: string;
-  readonly CacheControl: string;
-  readonly StorageClass: string;
-  readonly UploadAvailability: string;
+  readonly ContentType?: string;
+  readonly CacheControl?: string;
+  readonly StorageClass?: string;
+  readonly UploadAvailability?: string;
 }
 
 

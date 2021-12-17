@@ -8,7 +8,7 @@ export interface StartConfigurationSession {
   readonly ApplicationIdentifier: string;
   readonly ConfigurationProfileIdentifier: string;
   readonly EnvironmentIdentifier: string;
-  readonly RequiredMinimumPollIntervalInSeconds: number;
+  readonly RequiredMinimumPollIntervalInSeconds?: number;
 }
 
 

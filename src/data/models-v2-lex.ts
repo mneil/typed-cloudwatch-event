@@ -8,53 +8,53 @@ export interface BuildBotLocale {
 }
 export interface CreateBot {
   readonly botName: string;
-  readonly description: string;
+  readonly description?: string;
   readonly roleArn: string;
   readonly dataPrivacy: DataPrivacy;
   readonly idleSessionTTLInSeconds: number;
-  readonly botTags: {[key: string]: any};
-  readonly testBotAliasTags: {[key: string]: any};
+  readonly botTags?: {[key: string]: any};
+  readonly testBotAliasTags?: {[key: string]: any};
 }
 export interface CreateBotAlias {
   readonly botAliasName: string;
-  readonly description: string;
-  readonly botVersion: string;
-  readonly botAliasLocaleSettings: {[key: string]: any};
-  readonly conversationLogSettings: ConversationLogSettings;
-  readonly sentimentAnalysisSettings: SentimentAnalysisSettings;
+  readonly description?: string;
+  readonly botVersion?: string;
+  readonly botAliasLocaleSettings?: {[key: string]: any};
+  readonly conversationLogSettings?: ConversationLogSettings;
+  readonly sentimentAnalysisSettings?: SentimentAnalysisSettings;
   readonly botId: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateBotLocale {
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
-  readonly description: string;
+  readonly description?: string;
   readonly nluIntentConfidenceThreshold: unknown;
-  readonly voiceSettings: VoiceSettings;
+  readonly voiceSettings?: VoiceSettings;
 }
 export interface CreateBotVersion {
   readonly botId: string;
-  readonly description: string;
+  readonly description?: string;
   readonly botVersionLocaleSpecification: {[key: string]: any};
 }
 export interface CreateExport {
   readonly resourceSpecification: ExportResourceSpecification;
   readonly fileFormat: string;
-  readonly filePassword: string;
+  readonly filePassword?: string;
 }
 export interface CreateIntent {
   readonly intentName: string;
-  readonly description: string;
-  readonly parentIntentSignature: string;
-  readonly sampleUtterances: [];
-  readonly dialogCodeHook: DialogCodeHookSettings;
-  readonly fulfillmentCodeHook: FulfillmentCodeHookSettings;
-  readonly intentConfirmationSetting: IntentConfirmationSetting;
-  readonly intentClosingSetting: IntentClosingSetting;
-  readonly inputContexts: [];
-  readonly outputContexts: [];
-  readonly kendraConfiguration: KendraConfiguration;
+  readonly description?: string;
+  readonly parentIntentSignature?: string;
+  readonly sampleUtterances?: [];
+  readonly dialogCodeHook?: DialogCodeHookSettings;
+  readonly fulfillmentCodeHook?: FulfillmentCodeHookSettings;
+  readonly intentConfirmationSetting?: IntentConfirmationSetting;
+  readonly intentClosingSetting?: IntentClosingSetting;
+  readonly inputContexts?: [];
+  readonly outputContexts?: [];
+  readonly kendraConfiguration?: KendraConfiguration;
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
@@ -69,42 +69,42 @@ export interface CreateResourcePolicyStatement {
   readonly effect: string;
   readonly principal: [];
   readonly action: [];
-  readonly condition: {[key: string]: any};
-  readonly expectedRevisionId: string;
+  readonly condition?: {[key: string]: any};
+  readonly expectedRevisionId?: string;
 }
 export interface CreateSlot {
   readonly slotName: string;
-  readonly description: string;
+  readonly description?: string;
   readonly slotTypeId: string;
   readonly valueElicitationSetting: SlotValueElicitationSetting;
-  readonly obfuscationSetting: ObfuscationSetting;
+  readonly obfuscationSetting?: ObfuscationSetting;
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
   readonly intentId: string;
-  readonly multipleValuesSetting: MultipleValuesSetting;
+  readonly multipleValuesSetting?: MultipleValuesSetting;
 }
 export interface CreateSlotType {
   readonly slotTypeName: string;
-  readonly description: string;
-  readonly slotTypeValues: [];
-  readonly valueSelectionSetting: SlotValueSelectionSetting;
-  readonly parentSlotTypeSignature: string;
+  readonly description?: string;
+  readonly slotTypeValues?: [];
+  readonly valueSelectionSetting?: SlotValueSelectionSetting;
+  readonly parentSlotTypeSignature?: string;
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
-  readonly externalSourceSetting: ExternalSourceSetting;
+  readonly externalSourceSetting?: ExternalSourceSetting;
 }
 export interface CreateUploadUrl {
 }
 export interface DeleteBot {
   readonly botId: string;
-  readonly skipResourceInUseCheck: boolean;
+  readonly skipResourceInUseCheck?: boolean;
 }
 export interface DeleteBotAlias {
   readonly botAliasId: string;
   readonly botId: string;
-  readonly skipResourceInUseCheck: boolean;
+  readonly skipResourceInUseCheck?: boolean;
 }
 export interface DeleteBotLocale {
   readonly botId: string;
@@ -114,7 +114,7 @@ export interface DeleteBotLocale {
 export interface DeleteBotVersion {
   readonly botId: string;
   readonly botVersion: string;
-  readonly skipResourceInUseCheck: boolean;
+  readonly skipResourceInUseCheck?: boolean;
 }
 export interface DeleteExport {
   readonly exportId: string;
@@ -130,12 +130,12 @@ export interface DeleteIntent {
 }
 export interface DeleteResourcePolicy {
   readonly resourceArn: string;
-  readonly expectedRevisionId: string;
+  readonly expectedRevisionId?: string;
 }
 export interface DeleteResourcePolicyStatement {
   readonly resourceArn: string;
   readonly statementId: string;
-  readonly expectedRevisionId: string;
+  readonly expectedRevisionId?: string;
 }
 export interface DeleteSlot {
   readonly slotId: string;
@@ -149,12 +149,12 @@ export interface DeleteSlotType {
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
-  readonly skipResourceInUseCheck: boolean;
+  readonly skipResourceInUseCheck?: boolean;
 }
 export interface DeleteUtterances {
   readonly botId: string;
-  readonly localeId: string;
-  readonly sessionId: string;
+  readonly localeId?: string;
+  readonly sessionId?: string;
 }
 export interface DescribeBot {
   readonly botId: string;
@@ -208,110 +208,110 @@ export interface DescribeSlotType {
 }
 export interface ListAggregatedUtterances {
   readonly botId: string;
-  readonly botAliasId: string;
-  readonly botVersion: string;
+  readonly botAliasId?: string;
+  readonly botVersion?: string;
   readonly localeId: string;
   readonly aggregationDuration: UtteranceAggregationDuration;
-  readonly sortBy: AggregatedUtterancesSortBy;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly sortBy?: AggregatedUtterancesSortBy;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListBotAliases {
   readonly botId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListBotLocales {
   readonly botId: string;
   readonly botVersion: string;
-  readonly sortBy: BotLocaleSortBy;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly sortBy?: BotLocaleSortBy;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListBotRecommendations {
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListBotVersions {
   readonly botId: string;
-  readonly sortBy: BotVersionSortBy;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly sortBy?: BotVersionSortBy;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListBots {
-  readonly sortBy: BotSortBy;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly sortBy?: BotSortBy;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListBuiltInIntents {
   readonly localeId: string;
-  readonly sortBy: BuiltInIntentSortBy;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly sortBy?: BuiltInIntentSortBy;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListBuiltInSlotTypes {
   readonly localeId: string;
-  readonly sortBy: BuiltInSlotTypeSortBy;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly sortBy?: BuiltInSlotTypeSortBy;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListExports {
-  readonly botId: string;
-  readonly botVersion: string;
-  readonly sortBy: ExportSortBy;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly botId?: string;
+  readonly botVersion?: string;
+  readonly sortBy?: ExportSortBy;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListImports {
-  readonly botId: string;
-  readonly botVersion: string;
-  readonly sortBy: ImportSortBy;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly botId?: string;
+  readonly botVersion?: string;
+  readonly sortBy?: ImportSortBy;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListIntents {
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
-  readonly sortBy: IntentSortBy;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly sortBy?: IntentSortBy;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListRecommendedIntents {
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
   readonly botRecommendationId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListSlotTypes {
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
-  readonly sortBy: SlotTypeSortBy;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly sortBy?: SlotTypeSortBy;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListSlots {
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
   readonly intentId: string;
-  readonly sortBy: SlotSortBy;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly sortBy?: SlotSortBy;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceARN: string;
@@ -321,23 +321,23 @@ export interface SearchAssociatedTranscripts {
   readonly botVersion: string;
   readonly localeId: string;
   readonly botRecommendationId: string;
-  readonly searchOrder: string;
+  readonly searchOrder?: string;
   readonly filters: [];
-  readonly maxResults: number;
-  readonly nextIndex: number;
+  readonly maxResults?: number;
+  readonly nextIndex?: number;
 }
 export interface StartBotRecommendation {
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
   readonly transcriptSourceSetting: TranscriptSourceSetting;
-  readonly encryptionSetting: EncryptionSetting;
+  readonly encryptionSetting?: EncryptionSetting;
 }
 export interface StartImport {
   readonly importId: string;
   readonly resourceSpecification: ImportResourceSpecification;
   readonly mergeStrategy: string;
-  readonly filePassword: string;
+  readonly filePassword?: string;
 }
 export interface TagResource {
   readonly resourceARN: string;
@@ -350,7 +350,7 @@ export interface UntagResource {
 export interface UpdateBot {
   readonly botId: string;
   readonly botName: string;
-  readonly description: string;
+  readonly description?: string;
   readonly roleArn: string;
   readonly dataPrivacy: DataPrivacy;
   readonly idleSessionTTLInSeconds: number;
@@ -358,20 +358,20 @@ export interface UpdateBot {
 export interface UpdateBotAlias {
   readonly botAliasId: string;
   readonly botAliasName: string;
-  readonly description: string;
-  readonly botVersion: string;
-  readonly botAliasLocaleSettings: {[key: string]: any};
-  readonly conversationLogSettings: ConversationLogSettings;
-  readonly sentimentAnalysisSettings: SentimentAnalysisSettings;
+  readonly description?: string;
+  readonly botVersion?: string;
+  readonly botAliasLocaleSettings?: {[key: string]: any};
+  readonly conversationLogSettings?: ConversationLogSettings;
+  readonly sentimentAnalysisSettings?: SentimentAnalysisSettings;
   readonly botId: string;
 }
 export interface UpdateBotLocale {
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
-  readonly description: string;
+  readonly description?: string;
   readonly nluIntentConfidenceThreshold: unknown;
-  readonly voiceSettings: VoiceSettings;
+  readonly voiceSettings?: VoiceSettings;
 }
 export interface UpdateBotRecommendation {
   readonly botId: string;
@@ -382,22 +382,22 @@ export interface UpdateBotRecommendation {
 }
 export interface UpdateExport {
   readonly exportId: string;
-  readonly filePassword: string;
+  readonly filePassword?: string;
 }
 export interface UpdateIntent {
   readonly intentId: string;
   readonly intentName: string;
-  readonly description: string;
-  readonly parentIntentSignature: string;
-  readonly sampleUtterances: [];
-  readonly dialogCodeHook: DialogCodeHookSettings;
-  readonly fulfillmentCodeHook: FulfillmentCodeHookSettings;
-  readonly slotPriorities: [];
-  readonly intentConfirmationSetting: IntentConfirmationSetting;
-  readonly intentClosingSetting: IntentClosingSetting;
-  readonly inputContexts: [];
-  readonly outputContexts: [];
-  readonly kendraConfiguration: KendraConfiguration;
+  readonly description?: string;
+  readonly parentIntentSignature?: string;
+  readonly sampleUtterances?: [];
+  readonly dialogCodeHook?: DialogCodeHookSettings;
+  readonly fulfillmentCodeHook?: FulfillmentCodeHookSettings;
+  readonly slotPriorities?: [];
+  readonly intentConfirmationSetting?: IntentConfirmationSetting;
+  readonly intentClosingSetting?: IntentClosingSetting;
+  readonly inputContexts?: [];
+  readonly outputContexts?: [];
+  readonly kendraConfiguration?: KendraConfiguration;
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
@@ -405,32 +405,32 @@ export interface UpdateIntent {
 export interface UpdateResourcePolicy {
   readonly resourceArn: string;
   readonly policy: string;
-  readonly expectedRevisionId: string;
+  readonly expectedRevisionId?: string;
 }
 export interface UpdateSlot {
   readonly slotId: string;
   readonly slotName: string;
-  readonly description: string;
+  readonly description?: string;
   readonly slotTypeId: string;
   readonly valueElicitationSetting: SlotValueElicitationSetting;
-  readonly obfuscationSetting: ObfuscationSetting;
+  readonly obfuscationSetting?: ObfuscationSetting;
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
   readonly intentId: string;
-  readonly multipleValuesSetting: MultipleValuesSetting;
+  readonly multipleValuesSetting?: MultipleValuesSetting;
 }
 export interface UpdateSlotType {
   readonly slotTypeId: string;
   readonly slotTypeName: string;
-  readonly description: string;
-  readonly slotTypeValues: [];
-  readonly valueSelectionSetting: SlotValueSelectionSetting;
-  readonly parentSlotTypeSignature: string;
+  readonly description?: string;
+  readonly slotTypeValues?: [];
+  readonly valueSelectionSetting?: SlotValueSelectionSetting;
+  readonly parentSlotTypeSignature?: string;
   readonly botId: string;
   readonly botVersion: string;
   readonly localeId: string;
-  readonly externalSourceSetting: ExternalSourceSetting;
+  readonly externalSourceSetting?: ExternalSourceSetting;
 }
 
 

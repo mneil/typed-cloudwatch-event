@@ -3,11 +3,11 @@
  */
 export interface CreateCertificateAuthority {
   readonly CertificateAuthorityConfiguration: CertificateAuthorityConfiguration;
-  readonly RevocationConfiguration: RevocationConfiguration;
+  readonly RevocationConfiguration?: RevocationConfiguration;
   readonly CertificateAuthorityType: string;
-  readonly IdempotencyToken: string;
-  readonly KeyStorageSecurityStandard: string;
-  readonly Tags: [];
+  readonly IdempotencyToken?: string;
+  readonly KeyStorageSecurityStandard?: string;
+  readonly Tags?: [];
 }
 export interface CreateCertificateAuthorityAuditReport {
   readonly CertificateAuthorityArn: string;
@@ -17,17 +17,17 @@ export interface CreateCertificateAuthorityAuditReport {
 export interface CreatePermission {
   readonly CertificateAuthorityArn: string;
   readonly Principal: string;
-  readonly SourceAccount: string;
+  readonly SourceAccount?: string;
   readonly Actions: [];
 }
 export interface DeleteCertificateAuthority {
   readonly CertificateAuthorityArn: string;
-  readonly PermanentDeletionTimeInDays: number;
+  readonly PermanentDeletionTimeInDays?: number;
 }
 export interface DeletePermission {
   readonly CertificateAuthorityArn: string;
   readonly Principal: string;
-  readonly SourceAccount: string;
+  readonly SourceAccount?: string;
 }
 export interface DeletePolicy {
   readonly ResourceArn: string;
@@ -55,32 +55,32 @@ export interface GetPolicy {
 export interface ImportCertificateAuthorityCertificate {
   readonly CertificateAuthorityArn: string;
   readonly Certificate: unknown;
-  readonly CertificateChain: unknown;
+  readonly CertificateChain?: unknown;
 }
 export interface IssueCertificate {
-  readonly ApiPassthrough: ApiPassthrough;
+  readonly ApiPassthrough?: ApiPassthrough;
   readonly CertificateAuthorityArn: string;
   readonly Csr: unknown;
   readonly SigningAlgorithm: string;
-  readonly TemplateArn: string;
+  readonly TemplateArn?: string;
   readonly Validity: Validity;
-  readonly ValidityNotBefore: Validity;
-  readonly IdempotencyToken: string;
+  readonly ValidityNotBefore?: Validity;
+  readonly IdempotencyToken?: string;
 }
 export interface ListCertificateAuthorities {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ResourceOwner: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ResourceOwner?: string;
 }
 export interface ListPermissions {
   readonly CertificateAuthorityArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTags {
   readonly CertificateAuthorityArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface PutPolicy {
   readonly ResourceArn: string;
@@ -104,8 +104,8 @@ export interface UntagCertificateAuthority {
 }
 export interface UpdateCertificateAuthority {
   readonly CertificateAuthorityArn: string;
-  readonly RevocationConfiguration: RevocationConfiguration;
-  readonly Status: string;
+  readonly RevocationConfiguration?: RevocationConfiguration;
+  readonly Status?: string;
 }
 
 

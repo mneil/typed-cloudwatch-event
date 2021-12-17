@@ -44,41 +44,41 @@ export interface DeleteSuggester {
 }
 export interface DescribeAnalysisSchemes {
   readonly DomainName: string;
-  readonly AnalysisSchemeNames: [];
-  readonly Deployed: boolean;
+  readonly AnalysisSchemeNames?: [];
+  readonly Deployed?: boolean;
 }
 export interface DescribeAvailabilityOptions {
   readonly DomainName: string;
-  readonly Deployed: boolean;
+  readonly Deployed?: boolean;
 }
 export interface DescribeDomainEndpointOptions {
   readonly DomainName: string;
-  readonly Deployed: boolean;
+  readonly Deployed?: boolean;
 }
 export interface DescribeDomains {
-  readonly DomainNames: [];
+  readonly DomainNames?: [];
 }
 export interface DescribeExpressions {
   readonly DomainName: string;
-  readonly ExpressionNames: [];
-  readonly Deployed: boolean;
+  readonly ExpressionNames?: [];
+  readonly Deployed?: boolean;
 }
 export interface DescribeIndexFields {
   readonly DomainName: string;
-  readonly FieldNames: [];
-  readonly Deployed: boolean;
+  readonly FieldNames?: [];
+  readonly Deployed?: boolean;
 }
 export interface DescribeScalingParameters {
   readonly DomainName: string;
 }
 export interface DescribeServiceAccessPolicies {
   readonly DomainName: string;
-  readonly Deployed: boolean;
+  readonly Deployed?: boolean;
 }
 export interface DescribeSuggesters {
   readonly DomainName: string;
-  readonly SuggesterNames: [];
-  readonly Deployed: boolean;
+  readonly SuggesterNames?: [];
+  readonly Deployed?: boolean;
 }
 export interface IndexDocuments {
   readonly DomainName: string;

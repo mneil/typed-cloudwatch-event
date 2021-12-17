@@ -7,14 +7,14 @@ export interface GetRoleCredentials {
   readonly accessToken: string;
 }
 export interface ListAccountRoles {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
   readonly accessToken: string;
   readonly accountId: string;
 }
 export interface ListAccounts {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
   readonly accessToken: string;
 }
 export interface Logout {

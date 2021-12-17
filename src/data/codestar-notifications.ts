@@ -7,42 +7,42 @@ export interface CreateNotificationRule {
   readonly Resource: string;
   readonly Targets: [];
   readonly DetailType: string;
-  readonly ClientRequestToken: string;
-  readonly Tags: {[key: string]: any};
-  readonly Status: string;
+  readonly ClientRequestToken?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Status?: string;
 }
 export interface DeleteNotificationRule {
   readonly Arn: string;
 }
 export interface DeleteTarget {
   readonly TargetAddress: string;
-  readonly ForceUnsubscribeAll: boolean;
+  readonly ForceUnsubscribeAll?: boolean;
 }
 export interface DescribeNotificationRule {
   readonly Arn: string;
 }
 export interface ListEventTypes {
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListNotificationRules {
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly Arn: string;
 }
 export interface ListTargets {
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface Subscribe {
   readonly Arn: string;
   readonly Target: Target;
-  readonly ClientRequestToken: string;
+  readonly ClientRequestToken?: string;
 }
 export interface TagResource {
   readonly Arn: string;
@@ -58,11 +58,11 @@ export interface UntagResource {
 }
 export interface UpdateNotificationRule {
   readonly Arn: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly EventTypeIds: [];
-  readonly Targets: [];
-  readonly DetailType: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly EventTypeIds?: [];
+  readonly Targets?: [];
+  readonly DetailType?: string;
 }
 
 

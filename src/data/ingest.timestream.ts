@@ -3,15 +3,15 @@
  */
 export interface CreateDatabase {
   readonly DatabaseName: string;
-  readonly KmsKeyId: string;
-  readonly Tags: [];
+  readonly KmsKeyId?: string;
+  readonly Tags?: [];
 }
 export interface CreateTable {
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly RetentionProperties: RetentionProperties;
-  readonly Tags: [];
-  readonly MagneticStoreWriteProperties: MagneticStoreWriteProperties;
+  readonly RetentionProperties?: RetentionProperties;
+  readonly Tags?: [];
+  readonly MagneticStoreWriteProperties?: MagneticStoreWriteProperties;
 }
 export interface DeleteDatabase {
   readonly DatabaseName: string;
@@ -30,13 +30,13 @@ export interface DescribeTable {
   readonly TableName: string;
 }
 export interface ListDatabases {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTables {
-  readonly DatabaseName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly DatabaseName?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
@@ -56,13 +56,13 @@ export interface UpdateDatabase {
 export interface UpdateTable {
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly RetentionProperties: RetentionProperties;
-  readonly MagneticStoreWriteProperties: MagneticStoreWriteProperties;
+  readonly RetentionProperties?: RetentionProperties;
+  readonly MagneticStoreWriteProperties?: MagneticStoreWriteProperties;
 }
 export interface WriteRecords {
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly CommonAttributes: Record;
+  readonly CommonAttributes?: Record;
   readonly Records: [];
 }
 

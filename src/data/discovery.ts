@@ -10,7 +10,7 @@ export interface BatchDeleteImportData {
 }
 export interface CreateApplication {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
 }
 export interface CreateTags {
   readonly configurationIds: [];
@@ -21,42 +21,42 @@ export interface DeleteApplications {
 }
 export interface DeleteTags {
   readonly configurationIds: [];
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface DescribeAgents {
-  readonly agentIds: [];
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly agentIds?: [];
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeConfigurations {
   readonly configurationIds: [];
 }
 export interface DescribeContinuousExports {
-  readonly exportIds: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly exportIds?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeExportConfigurations {
-  readonly exportIds: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly exportIds?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeExportTasks {
-  readonly exportIds: [];
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly exportIds?: [];
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeImportTasks {
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeTags {
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DisassociateConfigurationItemsFromApplication {
   readonly applicationConfigurationId: string;
@@ -66,17 +66,17 @@ export interface GetDiscoverySummary {
 }
 export interface ListConfigurations {
   readonly configurationType: string;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly orderBy: [];
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly orderBy?: [];
 }
 export interface ListServerNeighbors {
   readonly configurationId: string;
-  readonly portInformationNeeded: boolean;
-  readonly neighborConfigurationIds: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly portInformationNeeded?: boolean;
+  readonly neighborConfigurationIds?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface StartContinuousExport {
 }
@@ -84,13 +84,13 @@ export interface StartDataCollectionByAgentIds {
   readonly agentIds: [];
 }
 export interface StartExportTask {
-  readonly exportDataFormat: [];
-  readonly filters: [];
-  readonly startTime: Date;
-  readonly endTime: Date;
+  readonly exportDataFormat?: [];
+  readonly filters?: [];
+  readonly startTime?: Date;
+  readonly endTime?: Date;
 }
 export interface StartImportTask {
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
   readonly name: string;
   readonly importUrl: string;
 }
@@ -102,8 +102,8 @@ export interface StopDataCollectionByAgentIds {
 }
 export interface UpdateApplication {
   readonly configurationId: string;
-  readonly name: string;
-  readonly description: string;
+  readonly name?: string;
+  readonly description?: string;
 }
 
 

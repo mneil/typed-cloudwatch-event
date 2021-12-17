@@ -3,15 +3,15 @@
  */
 export interface DescribeAcceleratorOfferings {
   readonly locationType: string;
-  readonly acceleratorTypes: [];
+  readonly acceleratorTypes?: [];
 }
 export interface DescribeAcceleratorTypes {
 }
 export interface DescribeAccelerators {
-  readonly acceleratorIds: [];
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly acceleratorIds?: [];
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;

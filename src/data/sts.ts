@@ -4,32 +4,32 @@
 export interface AssumeRole {
   readonly RoleArn: string;
   readonly RoleSessionName: string;
-  readonly PolicyArns: [];
-  readonly Policy: string;
-  readonly DurationSeconds: number;
-  readonly Tags: [];
-  readonly TransitiveTagKeys: [];
-  readonly ExternalId: string;
-  readonly SerialNumber: string;
-  readonly TokenCode: string;
-  readonly SourceIdentity: string;
+  readonly PolicyArns?: [];
+  readonly Policy?: string;
+  readonly DurationSeconds?: number;
+  readonly Tags?: [];
+  readonly TransitiveTagKeys?: [];
+  readonly ExternalId?: string;
+  readonly SerialNumber?: string;
+  readonly TokenCode?: string;
+  readonly SourceIdentity?: string;
 }
 export interface AssumeRoleWithSAML {
   readonly RoleArn: string;
   readonly PrincipalArn: string;
   readonly SAMLAssertion: string;
-  readonly PolicyArns: [];
-  readonly Policy: string;
-  readonly DurationSeconds: number;
+  readonly PolicyArns?: [];
+  readonly Policy?: string;
+  readonly DurationSeconds?: number;
 }
 export interface AssumeRoleWithWebIdentity {
   readonly RoleArn: string;
   readonly RoleSessionName: string;
   readonly WebIdentityToken: string;
-  readonly ProviderId: string;
-  readonly PolicyArns: [];
-  readonly Policy: string;
-  readonly DurationSeconds: number;
+  readonly ProviderId?: string;
+  readonly PolicyArns?: [];
+  readonly Policy?: string;
+  readonly DurationSeconds?: number;
 }
 export interface DecodeAuthorizationMessage {
   readonly EncodedMessage: string;
@@ -41,15 +41,15 @@ export interface GetCallerIdentity {
 }
 export interface GetFederationToken {
   readonly Name: string;
-  readonly Policy: string;
-  readonly PolicyArns: [];
-  readonly DurationSeconds: number;
-  readonly Tags: [];
+  readonly Policy?: string;
+  readonly PolicyArns?: [];
+  readonly DurationSeconds?: number;
+  readonly Tags?: [];
 }
 export interface GetSessionToken {
-  readonly DurationSeconds: number;
-  readonly SerialNumber: string;
-  readonly TokenCode: string;
+  readonly DurationSeconds?: number;
+  readonly SerialNumber?: string;
+  readonly TokenCode?: string;
 }
 
 

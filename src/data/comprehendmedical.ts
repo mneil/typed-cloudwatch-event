@@ -35,73 +35,73 @@ export interface InferSNOMEDCT {
   readonly Text: string;
 }
 export interface ListEntitiesDetectionV2Jobs {
-  readonly Filter: ComprehendMedicalAsyncJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: ComprehendMedicalAsyncJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListICD10CMInferenceJobs {
-  readonly Filter: ComprehendMedicalAsyncJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: ComprehendMedicalAsyncJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPHIDetectionJobs {
-  readonly Filter: ComprehendMedicalAsyncJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: ComprehendMedicalAsyncJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListRxNormInferenceJobs {
-  readonly Filter: ComprehendMedicalAsyncJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: ComprehendMedicalAsyncJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListSNOMEDCTInferenceJobs {
-  readonly Filter: ComprehendMedicalAsyncJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: ComprehendMedicalAsyncJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface StartEntitiesDetectionV2Job {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly ClientRequestToken: string;
-  readonly KMSKey: string;
+  readonly JobName?: string;
+  readonly ClientRequestToken?: string;
+  readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
 export interface StartICD10CMInferenceJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly ClientRequestToken: string;
-  readonly KMSKey: string;
+  readonly JobName?: string;
+  readonly ClientRequestToken?: string;
+  readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
 export interface StartPHIDetectionJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly ClientRequestToken: string;
-  readonly KMSKey: string;
+  readonly JobName?: string;
+  readonly ClientRequestToken?: string;
+  readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
 export interface StartRxNormInferenceJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly ClientRequestToken: string;
-  readonly KMSKey: string;
+  readonly JobName?: string;
+  readonly ClientRequestToken?: string;
+  readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
 export interface StartSNOMEDCTInferenceJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly ClientRequestToken: string;
-  readonly KMSKey: string;
+  readonly JobName?: string;
+  readonly ClientRequestToken?: string;
+  readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
 export interface StopEntitiesDetectionV2Job {

@@ -10,13 +10,13 @@ export interface AssociateDeviceWithPlacement {
 export interface CreatePlacement {
   readonly placementName: string;
   readonly projectName: string;
-  readonly attributes: {[key: string]: any};
+  readonly attributes?: {[key: string]: any};
 }
 export interface CreateProject {
   readonly projectName: string;
-  readonly description: string;
-  readonly placementTemplate: PlacementTemplate;
-  readonly tags: {[key: string]: any};
+  readonly description?: string;
+  readonly placementTemplate?: PlacementTemplate;
+  readonly tags?: {[key: string]: any};
 }
 export interface DeletePlacement {
   readonly placementName: string;
@@ -43,12 +43,12 @@ export interface GetDevicesInPlacement {
 }
 export interface ListPlacements {
   readonly projectName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListProjects {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -64,12 +64,12 @@ export interface UntagResource {
 export interface UpdatePlacement {
   readonly placementName: string;
   readonly projectName: string;
-  readonly attributes: {[key: string]: any};
+  readonly attributes?: {[key: string]: any};
 }
 export interface UpdateProject {
   readonly projectName: string;
-  readonly description: string;
-  readonly placementTemplate: PlacementTemplate;
+  readonly description?: string;
+  readonly placementTemplate?: PlacementTemplate;
 }
 
 

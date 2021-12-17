@@ -3,13 +3,13 @@
  */
 export interface CreateEnvironment {
   readonly name: string;
-  readonly description: string;
-  readonly kmsKeyId: string;
-  readonly tags: {[key: string]: any};
-  readonly federationMode: string;
-  readonly federationParameters: FederationParameters;
-  readonly superuserParameters: SuperuserParameters;
-  readonly dataBundles: [];
+  readonly description?: string;
+  readonly kmsKeyId?: string;
+  readonly tags?: {[key: string]: any};
+  readonly federationMode?: string;
+  readonly federationParameters?: FederationParameters;
+  readonly superuserParameters?: SuperuserParameters;
+  readonly dataBundles?: [];
 }
 export interface DeleteEnvironment {
   readonly environmentId: string;
@@ -18,8 +18,8 @@ export interface GetEnvironment {
   readonly environmentId: string;
 }
 export interface ListEnvironments {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -34,10 +34,10 @@ export interface UntagResource {
 }
 export interface UpdateEnvironment {
   readonly environmentId: string;
-  readonly name: string;
-  readonly description: string;
-  readonly federationMode: string;
-  readonly federationParameters: FederationParameters;
+  readonly name?: string;
+  readonly description?: string;
+  readonly federationMode?: string;
+  readonly federationParameters?: FederationParameters;
 }
 
 

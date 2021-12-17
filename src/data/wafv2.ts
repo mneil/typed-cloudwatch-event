@@ -12,38 +12,38 @@ export interface CheckCapacity {
 export interface CreateIPSet {
   readonly Name: string;
   readonly Scope: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly IPAddressVersion: string;
   readonly Addresses: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateRegexPatternSet {
   readonly Name: string;
   readonly Scope: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly RegularExpressionList: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateRuleGroup {
   readonly Name: string;
   readonly Scope: string;
   readonly Capacity: number;
-  readonly Description: string;
-  readonly Rules: [];
+  readonly Description?: string;
+  readonly Rules?: [];
   readonly VisibilityConfig: VisibilityConfig;
-  readonly Tags: [];
-  readonly CustomResponseBodies: {[key: string]: any};
+  readonly Tags?: [];
+  readonly CustomResponseBodies?: {[key: string]: any};
 }
 export interface CreateWebACL {
   readonly Name: string;
   readonly Scope: string;
   readonly DefaultAction: DefaultAction;
-  readonly Description: string;
-  readonly Rules: [];
+  readonly Description?: string;
+  readonly Rules?: [];
   readonly VisibilityConfig: VisibilityConfig;
-  readonly Tags: [];
-  readonly CustomResponseBodies: {[key: string]: any};
-  readonly CaptchaConfig: CaptchaConfig;
+  readonly Tags?: [];
+  readonly CustomResponseBodies?: {[key: string]: any};
+  readonly CaptchaConfig?: CaptchaConfig;
 }
 export interface DeleteFirewallManagerRuleGroups {
   readonly WebACLArn: string;
@@ -83,7 +83,7 @@ export interface DescribeManagedRuleGroup {
   readonly VendorName: string;
   readonly Name: string;
   readonly Scope: string;
-  readonly VersionName: string;
+  readonly VersionName?: string;
 }
 export interface DisassociateWebACL {
   readonly ResourceArn: string;
@@ -108,7 +108,7 @@ export interface GetRateBasedStatementManagedKeys {
   readonly Scope: string;
   readonly WebACLName: string;
   readonly WebACLId: string;
-  readonly RuleGroupRuleName: string;
+  readonly RuleGroupRuleName?: string;
   readonly RuleName: string;
 }
 export interface GetRegexPatternSet {
@@ -117,10 +117,10 @@ export interface GetRegexPatternSet {
   readonly Id: string;
 }
 export interface GetRuleGroup {
-  readonly Name: string;
-  readonly Scope: string;
-  readonly Id: string;
-  readonly ARN: string;
+  readonly Name?: string;
+  readonly Scope?: string;
+  readonly Id?: string;
+  readonly ARN?: string;
 }
 export interface GetSampledRequests {
   readonly WebAclArn: string;
@@ -141,52 +141,52 @@ export interface ListAvailableManagedRuleGroupVersions {
   readonly VendorName: string;
   readonly Name: string;
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListAvailableManagedRuleGroups {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListIPSets {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListLoggingConfigurations {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListManagedRuleSets {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListRegexPatternSets {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListResourcesForWebACL {
   readonly WebACLArn: string;
-  readonly ResourceType: string;
+  readonly ResourceType?: string;
 }
 export interface ListRuleGroups {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface ListTagsForResource {
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
   readonly ResourceARN: string;
 }
 export interface ListWebACLs {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 export interface PutLoggingConfiguration {
   readonly LoggingConfiguration: LoggingConfiguration;
@@ -196,8 +196,8 @@ export interface PutManagedRuleSetVersions {
   readonly Scope: string;
   readonly Id: string;
   readonly LockToken: string;
-  readonly RecommendedVersion: string;
-  readonly VersionsToPublish: {[key: string]: any};
+  readonly RecommendedVersion?: string;
+  readonly VersionsToPublish?: {[key: string]: any};
 }
 export interface PutPermissionPolicy {
   readonly ResourceArn: string;
@@ -215,7 +215,7 @@ export interface UpdateIPSet {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Addresses: [];
   readonly LockToken: string;
 }
@@ -231,7 +231,7 @@ export interface UpdateRegexPatternSet {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly RegularExpressionList: [];
   readonly LockToken: string;
 }
@@ -239,23 +239,23 @@ export interface UpdateRuleGroup {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
-  readonly Description: string;
-  readonly Rules: [];
+  readonly Description?: string;
+  readonly Rules?: [];
   readonly VisibilityConfig: VisibilityConfig;
   readonly LockToken: string;
-  readonly CustomResponseBodies: {[key: string]: any};
+  readonly CustomResponseBodies?: {[key: string]: any};
 }
 export interface UpdateWebACL {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
   readonly DefaultAction: DefaultAction;
-  readonly Description: string;
-  readonly Rules: [];
+  readonly Description?: string;
+  readonly Rules?: [];
   readonly VisibilityConfig: VisibilityConfig;
   readonly LockToken: string;
-  readonly CustomResponseBodies: {[key: string]: any};
-  readonly CaptchaConfig: CaptchaConfig;
+  readonly CustomResponseBodies?: {[key: string]: any};
+  readonly CaptchaConfig?: CaptchaConfig;
 }
 
 

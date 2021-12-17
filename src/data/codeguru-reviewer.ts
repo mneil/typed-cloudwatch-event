@@ -3,15 +3,15 @@
  */
 export interface AssociateRepository {
   readonly Repository: Repository;
-  readonly ClientRequestToken: string;
-  readonly Tags: {[key: string]: any};
-  readonly KMSKeyDetails: KMSKeyDetails;
+  readonly ClientRequestToken?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly KMSKeyDetails?: KMSKeyDetails;
 }
 export interface CreateCodeReview {
   readonly Name: string;
   readonly RepositoryAssociationArn: string;
   readonly Type: CodeReviewType;
-  readonly ClientRequestToken: string;
+  readonly ClientRequestToken?: string;
 }
 export interface DescribeCodeReview {
   readonly CodeReviewArn: string;
@@ -19,7 +19,7 @@ export interface DescribeCodeReview {
 export interface DescribeRecommendationFeedback {
   readonly CodeReviewArn: string;
   readonly RecommendationId: string;
-  readonly UserId: string;
+  readonly UserId?: string;
 }
 export interface DescribeRepositoryAssociation {
   readonly AssociationArn: string;
@@ -28,32 +28,32 @@ export interface DisassociateRepository {
   readonly AssociationArn: string;
 }
 export interface ListCodeReviews {
-  readonly ProviderTypes: [];
-  readonly States: [];
-  readonly RepositoryNames: [];
+  readonly ProviderTypes?: [];
+  readonly States?: [];
+  readonly RepositoryNames?: [];
   readonly Type: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListRecommendationFeedback {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
   readonly CodeReviewArn: string;
-  readonly UserIds: [];
-  readonly RecommendationIds: [];
+  readonly UserIds?: [];
+  readonly RecommendationIds?: [];
 }
 export interface ListRecommendations {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
   readonly CodeReviewArn: string;
 }
 export interface ListRepositoryAssociations {
-  readonly ProviderTypes: [];
-  readonly States: [];
-  readonly Names: [];
-  readonly Owners: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ProviderTypes?: [];
+  readonly States?: [];
+  readonly Names?: [];
+  readonly Owners?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;

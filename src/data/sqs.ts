@@ -18,8 +18,8 @@ export interface ChangeMessageVisibilityBatch {
 }
 export interface CreateQueue {
   readonly QueueName: string;
-  readonly Attributes: {[key: string]: any};
-  readonly tags: {[key: string]: any};
+  readonly Attributes?: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface DeleteMessage {
   readonly QueueUrl: string;
@@ -34,36 +34,36 @@ export interface DeleteQueue {
 }
 export interface GetQueueAttributes {
   readonly QueueUrl: string;
-  readonly AttributeNames: [];
+  readonly AttributeNames?: [];
 }
 export interface GetQueueUrl {
   readonly QueueName: string;
-  readonly QueueOwnerAWSAccountId: string;
+  readonly QueueOwnerAWSAccountId?: string;
 }
 export interface ListDeadLetterSourceQueues {
   readonly QueueUrl: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListQueueTags {
   readonly QueueUrl: string;
 }
 export interface ListQueues {
-  readonly QueueNamePrefix: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly QueueNamePrefix?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface PurgeQueue {
   readonly QueueUrl: string;
 }
 export interface ReceiveMessage {
   readonly QueueUrl: string;
-  readonly AttributeNames: [];
-  readonly MessageAttributeNames: [];
-  readonly MaxNumberOfMessages: number;
-  readonly VisibilityTimeout: number;
-  readonly WaitTimeSeconds: number;
-  readonly ReceiveRequestAttemptId: string;
+  readonly AttributeNames?: [];
+  readonly MessageAttributeNames?: [];
+  readonly MaxNumberOfMessages?: number;
+  readonly VisibilityTimeout?: number;
+  readonly WaitTimeSeconds?: number;
+  readonly ReceiveRequestAttemptId?: string;
 }
 export interface RemovePermission {
   readonly QueueUrl: string;
@@ -72,11 +72,11 @@ export interface RemovePermission {
 export interface SendMessage {
   readonly QueueUrl: string;
   readonly MessageBody: string;
-  readonly DelaySeconds: number;
-  readonly MessageAttributes: {[key: string]: any};
-  readonly MessageSystemAttributes: {[key: string]: any};
-  readonly MessageDeduplicationId: string;
-  readonly MessageGroupId: string;
+  readonly DelaySeconds?: number;
+  readonly MessageAttributes?: {[key: string]: any};
+  readonly MessageSystemAttributes?: {[key: string]: any};
+  readonly MessageDeduplicationId?: string;
+  readonly MessageGroupId?: string;
 }
 export interface SendMessageBatch {
   readonly QueueUrl: string;

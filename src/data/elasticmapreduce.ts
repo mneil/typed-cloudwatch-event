@@ -20,7 +20,7 @@ export interface AddTags {
 export interface CancelSteps {
   readonly ClusterId: string;
   readonly StepIds: [];
-  readonly StepCancellationOption: string;
+  readonly StepCancellationOption?: string;
 }
 export interface CreateSecurityConfiguration {
   readonly Name: string;
@@ -28,23 +28,23 @@ export interface CreateSecurityConfiguration {
 }
 export interface CreateStudio {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly AuthMode: string;
   readonly VpcId: string;
   readonly SubnetIds: [];
   readonly ServiceRole: string;
-  readonly UserRole: string;
+  readonly UserRole?: string;
   readonly WorkspaceSecurityGroupId: string;
   readonly EngineSecurityGroupId: string;
   readonly DefaultS3Location: string;
-  readonly IdpAuthUrl: string;
-  readonly IdpRelayStateParameterName: string;
-  readonly Tags: [];
+  readonly IdpAuthUrl?: string;
+  readonly IdpRelayStateParameterName?: string;
+  readonly Tags?: [];
 }
 export interface CreateStudioSessionMapping {
   readonly StudioId: string;
-  readonly IdentityId: string;
-  readonly IdentityName: string;
+  readonly IdentityId?: string;
+  readonly IdentityName?: string;
   readonly IdentityType: string;
   readonly SessionPolicyArn: string;
 }
@@ -56,26 +56,26 @@ export interface DeleteStudio {
 }
 export interface DeleteStudioSessionMapping {
   readonly StudioId: string;
-  readonly IdentityId: string;
-  readonly IdentityName: string;
+  readonly IdentityId?: string;
+  readonly IdentityName?: string;
   readonly IdentityType: string;
 }
 export interface DescribeCluster {
   readonly ClusterId: string;
 }
 export interface DescribeJobFlows {
-  readonly CreatedAfter: Date;
-  readonly CreatedBefore: Date;
-  readonly JobFlowIds: [];
-  readonly JobFlowStates: [];
+  readonly CreatedAfter?: Date;
+  readonly CreatedBefore?: Date;
+  readonly JobFlowIds?: [];
+  readonly JobFlowStates?: [];
 }
 export interface DescribeNotebookExecution {
   readonly NotebookExecutionId: string;
 }
 export interface DescribeReleaseLabel {
-  readonly ReleaseLabel: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly ReleaseLabel?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeSecurityConfiguration {
   readonly Name: string;
@@ -97,77 +97,77 @@ export interface GetManagedScalingPolicy {
 }
 export interface GetStudioSessionMapping {
   readonly StudioId: string;
-  readonly IdentityId: string;
-  readonly IdentityName: string;
+  readonly IdentityId?: string;
+  readonly IdentityName?: string;
   readonly IdentityType: string;
 }
 export interface ListBootstrapActions {
   readonly ClusterId: string;
-  readonly Marker: string;
+  readonly Marker?: string;
 }
 export interface ListClusters {
-  readonly CreatedAfter: Date;
-  readonly CreatedBefore: Date;
-  readonly ClusterStates: [];
-  readonly Marker: string;
+  readonly CreatedAfter?: Date;
+  readonly CreatedBefore?: Date;
+  readonly ClusterStates?: [];
+  readonly Marker?: string;
 }
 export interface ListInstanceFleets {
   readonly ClusterId: string;
-  readonly Marker: string;
+  readonly Marker?: string;
 }
 export interface ListInstanceGroups {
   readonly ClusterId: string;
-  readonly Marker: string;
+  readonly Marker?: string;
 }
 export interface ListInstances {
   readonly ClusterId: string;
-  readonly InstanceGroupId: string;
-  readonly InstanceGroupTypes: [];
-  readonly InstanceFleetId: string;
-  readonly InstanceFleetType: string;
-  readonly InstanceStates: [];
-  readonly Marker: string;
+  readonly InstanceGroupId?: string;
+  readonly InstanceGroupTypes?: [];
+  readonly InstanceFleetId?: string;
+  readonly InstanceFleetType?: string;
+  readonly InstanceStates?: [];
+  readonly Marker?: string;
 }
 export interface ListNotebookExecutions {
-  readonly EditorId: string;
-  readonly Status: string;
-  readonly From: Date;
-  readonly To: Date;
-  readonly Marker: string;
+  readonly EditorId?: string;
+  readonly Status?: string;
+  readonly From?: Date;
+  readonly To?: Date;
+  readonly Marker?: string;
 }
 export interface ListReleaseLabels {
-  readonly Filters: ReleaseLabelFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filters?: ReleaseLabelFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListSecurityConfigurations {
-  readonly Marker: string;
+  readonly Marker?: string;
 }
 export interface ListSteps {
   readonly ClusterId: string;
-  readonly StepStates: [];
-  readonly StepIds: [];
-  readonly Marker: string;
+  readonly StepStates?: [];
+  readonly StepIds?: [];
+  readonly Marker?: string;
 }
 export interface ListStudioSessionMappings {
-  readonly StudioId: string;
-  readonly IdentityType: string;
-  readonly Marker: string;
+  readonly StudioId?: string;
+  readonly IdentityType?: string;
+  readonly Marker?: string;
 }
 export interface ListStudios {
-  readonly Marker: string;
+  readonly Marker?: string;
 }
 export interface ModifyCluster {
   readonly ClusterId: string;
-  readonly StepConcurrencyLevel: number;
+  readonly StepConcurrencyLevel?: number;
 }
 export interface ModifyInstanceFleet {
   readonly ClusterId: string;
   readonly InstanceFleet: InstanceFleetModifyConfig;
 }
 export interface ModifyInstanceGroups {
-  readonly ClusterId: string;
-  readonly InstanceGroups: [];
+  readonly ClusterId?: string;
+  readonly InstanceGroups?: [];
 }
 export interface PutAutoScalingPolicy {
   readonly ClusterId: string;
@@ -176,7 +176,7 @@ export interface PutAutoScalingPolicy {
 }
 export interface PutAutoTerminationPolicy {
   readonly ClusterId: string;
-  readonly AutoTerminationPolicy: AutoTerminationPolicy;
+  readonly AutoTerminationPolicy?: AutoTerminationPolicy;
 }
 export interface PutBlockPublicAccessConfiguration {
   readonly BlockPublicAccessConfiguration: BlockPublicAccessConfiguration;
@@ -201,33 +201,33 @@ export interface RemoveTags {
 }
 export interface RunJobFlow {
   readonly Name: string;
-  readonly LogUri: string;
-  readonly LogEncryptionKmsKeyId: string;
-  readonly AdditionalInfo: string;
-  readonly AmiVersion: string;
-  readonly ReleaseLabel: string;
+  readonly LogUri?: string;
+  readonly LogEncryptionKmsKeyId?: string;
+  readonly AdditionalInfo?: string;
+  readonly AmiVersion?: string;
+  readonly ReleaseLabel?: string;
   readonly Instances: JobFlowInstancesConfig;
-  readonly Steps: [];
-  readonly BootstrapActions: [];
-  readonly SupportedProducts: [];
-  readonly NewSupportedProducts: [];
-  readonly Applications: [];
-  readonly Configurations: [];
-  readonly VisibleToAllUsers: boolean;
-  readonly JobFlowRole: string;
-  readonly ServiceRole: string;
-  readonly Tags: [];
-  readonly SecurityConfiguration: string;
-  readonly AutoScalingRole: string;
-  readonly ScaleDownBehavior: string;
-  readonly CustomAmiId: string;
-  readonly EbsRootVolumeSize: number;
-  readonly RepoUpgradeOnBoot: string;
-  readonly KerberosAttributes: KerberosAttributes;
-  readonly StepConcurrencyLevel: number;
-  readonly ManagedScalingPolicy: ManagedScalingPolicy;
-  readonly PlacementGroupConfigs: [];
-  readonly AutoTerminationPolicy: AutoTerminationPolicy;
+  readonly Steps?: [];
+  readonly BootstrapActions?: [];
+  readonly SupportedProducts?: [];
+  readonly NewSupportedProducts?: [];
+  readonly Applications?: [];
+  readonly Configurations?: [];
+  readonly VisibleToAllUsers?: boolean;
+  readonly JobFlowRole?: string;
+  readonly ServiceRole?: string;
+  readonly Tags?: [];
+  readonly SecurityConfiguration?: string;
+  readonly AutoScalingRole?: string;
+  readonly ScaleDownBehavior?: string;
+  readonly CustomAmiId?: string;
+  readonly EbsRootVolumeSize?: number;
+  readonly RepoUpgradeOnBoot?: string;
+  readonly KerberosAttributes?: KerberosAttributes;
+  readonly StepConcurrencyLevel?: number;
+  readonly ManagedScalingPolicy?: ManagedScalingPolicy;
+  readonly PlacementGroupConfigs?: [];
+  readonly AutoTerminationPolicy?: AutoTerminationPolicy;
 }
 export interface SetTerminationProtection {
   readonly JobFlowIds: [];
@@ -240,12 +240,12 @@ export interface SetVisibleToAllUsers {
 export interface StartNotebookExecution {
   readonly EditorId: string;
   readonly RelativePath: string;
-  readonly NotebookExecutionName: string;
-  readonly NotebookParams: string;
+  readonly NotebookExecutionName?: string;
+  readonly NotebookParams?: string;
   readonly ExecutionEngine: ExecutionEngineConfig;
   readonly ServiceRole: string;
-  readonly NotebookInstanceSecurityGroupId: string;
-  readonly Tags: [];
+  readonly NotebookInstanceSecurityGroupId?: string;
+  readonly Tags?: [];
 }
 export interface StopNotebookExecution {
   readonly NotebookExecutionId: string;
@@ -255,15 +255,15 @@ export interface TerminateJobFlows {
 }
 export interface UpdateStudio {
   readonly StudioId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly SubnetIds: [];
-  readonly DefaultS3Location: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly SubnetIds?: [];
+  readonly DefaultS3Location?: string;
 }
 export interface UpdateStudioSessionMapping {
   readonly StudioId: string;
-  readonly IdentityId: string;
-  readonly IdentityName: string;
+  readonly IdentityId?: string;
+  readonly IdentityName?: string;
   readonly IdentityType: string;
   readonly SessionPolicyArn: string;
 }

@@ -4,13 +4,13 @@
 export interface CreateIdentityPool {
   readonly IdentityPoolName: string;
   readonly AllowUnauthenticatedIdentities: boolean;
-  readonly AllowClassicFlow: boolean;
-  readonly SupportedLoginProviders: {[key: string]: any};
-  readonly DeveloperProviderName: string;
-  readonly OpenIdConnectProviderARNs: [];
-  readonly CognitoIdentityProviders: [];
-  readonly SamlProviderARNs: [];
-  readonly IdentityPoolTags: {[key: string]: any};
+  readonly AllowClassicFlow?: boolean;
+  readonly SupportedLoginProviders?: {[key: string]: any};
+  readonly DeveloperProviderName?: string;
+  readonly OpenIdConnectProviderARNs?: [];
+  readonly CognitoIdentityProviders?: [];
+  readonly SamlProviderARNs?: [];
+  readonly IdentityPoolTags?: {[key: string]: any};
 }
 export interface DeleteIdentities {
   readonly IdentityIdsToDelete: [];
@@ -26,27 +26,27 @@ export interface DescribeIdentityPool {
 }
 export interface GetCredentialsForIdentity {
   readonly IdentityId: string;
-  readonly Logins: {[key: string]: any};
-  readonly CustomRoleArn: string;
+  readonly Logins?: {[key: string]: any};
+  readonly CustomRoleArn?: string;
 }
 export interface GetId {
-  readonly AccountId: string;
+  readonly AccountId?: string;
   readonly IdentityPoolId: string;
-  readonly Logins: {[key: string]: any};
+  readonly Logins?: {[key: string]: any};
 }
 export interface GetIdentityPoolRoles {
   readonly IdentityPoolId: string;
 }
 export interface GetOpenIdToken {
   readonly IdentityId: string;
-  readonly Logins: {[key: string]: any};
+  readonly Logins?: {[key: string]: any};
 }
 export interface GetOpenIdTokenForDeveloperIdentity {
   readonly IdentityPoolId: string;
-  readonly IdentityId: string;
+  readonly IdentityId?: string;
   readonly Logins: {[key: string]: any};
-  readonly PrincipalTags: {[key: string]: any};
-  readonly TokenDuration: number;
+  readonly PrincipalTags?: {[key: string]: any};
+  readonly TokenDuration?: number;
 }
 export interface GetPrincipalTagAttributeMap {
   readonly IdentityPoolId: string;
@@ -55,22 +55,22 @@ export interface GetPrincipalTagAttributeMap {
 export interface ListIdentities {
   readonly IdentityPoolId: string;
   readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly HideDisabled: boolean;
+  readonly NextToken?: string;
+  readonly HideDisabled?: boolean;
 }
 export interface ListIdentityPools {
   readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface LookupDeveloperIdentity {
   readonly IdentityPoolId: string;
-  readonly IdentityId: string;
-  readonly DeveloperUserIdentifier: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly IdentityId?: string;
+  readonly DeveloperUserIdentifier?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface MergeDeveloperIdentities {
   readonly SourceUserIdentifier: string;
@@ -81,13 +81,13 @@ export interface MergeDeveloperIdentities {
 export interface SetIdentityPoolRoles {
   readonly IdentityPoolId: string;
   readonly Roles: {[key: string]: any};
-  readonly RoleMappings: {[key: string]: any};
+  readonly RoleMappings?: {[key: string]: any};
 }
 export interface SetPrincipalTagAttributeMap {
   readonly IdentityPoolId: string;
   readonly IdentityProviderName: string;
-  readonly UseDefaults: boolean;
-  readonly PrincipalTags: {[key: string]: any};
+  readonly UseDefaults?: boolean;
+  readonly PrincipalTags?: {[key: string]: any};
 }
 export interface TagResource {
   readonly ResourceArn: string;
@@ -112,13 +112,13 @@ export interface UpdateIdentityPool {
   readonly IdentityPoolId: string;
   readonly IdentityPoolName: string;
   readonly AllowUnauthenticatedIdentities: boolean;
-  readonly AllowClassicFlow: boolean;
-  readonly SupportedLoginProviders: {[key: string]: any};
-  readonly DeveloperProviderName: string;
-  readonly OpenIdConnectProviderARNs: [];
-  readonly CognitoIdentityProviders: [];
-  readonly SamlProviderARNs: [];
-  readonly IdentityPoolTags: {[key: string]: any};
+  readonly AllowClassicFlow?: boolean;
+  readonly SupportedLoginProviders?: {[key: string]: any};
+  readonly DeveloperProviderName?: string;
+  readonly OpenIdConnectProviderARNs?: [];
+  readonly CognitoIdentityProviders?: [];
+  readonly SamlProviderARNs?: [];
+  readonly IdentityPoolTags?: {[key: string]: any};
 }
 
 

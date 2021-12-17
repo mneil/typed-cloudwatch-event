@@ -3,11 +3,11 @@
  */
 export interface AcceptPage {
   readonly PageId: string;
-  readonly ContactChannelId: string;
+  readonly ContactChannelId?: string;
   readonly AcceptType: string;
-  readonly Note: string;
+  readonly Note?: string;
   readonly AcceptCode: string;
-  readonly AcceptCodeValidation: string;
+  readonly AcceptCodeValidation?: string;
 }
 export interface ActivateContactChannel {
   readonly ContactChannelId: string;
@@ -15,19 +15,19 @@ export interface ActivateContactChannel {
 }
 export interface CreateContact {
   readonly Alias: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
   readonly Type: string;
   readonly Plan: Plan;
-  readonly Tags: [];
-  readonly IdempotencyToken: string;
+  readonly Tags?: [];
+  readonly IdempotencyToken?: string;
 }
 export interface CreateContactChannel {
   readonly ContactId: string;
   readonly Name: string;
   readonly Type: string;
   readonly DeliveryAddress: ContactChannelAddress;
-  readonly DeferActivation: boolean;
-  readonly IdempotencyToken: string;
+  readonly DeferActivation?: boolean;
+  readonly IdempotencyToken?: string;
 }
 export interface DeactivateContactChannel {
   readonly ContactChannelId: string;
@@ -55,35 +55,35 @@ export interface GetContactPolicy {
 }
 export interface ListContactChannels {
   readonly ContactId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListContacts {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly AliasPrefix: string;
-  readonly Type: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly AliasPrefix?: string;
+  readonly Type?: string;
 }
 export interface ListEngagements {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly IncidentId: string;
-  readonly TimeRangeValue: TimeRange;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly IncidentId?: string;
+  readonly TimeRangeValue?: TimeRange;
 }
 export interface ListPageReceipts {
   readonly PageId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPagesByContact {
   readonly ContactId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPagesByEngagement {
   readonly EngagementId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
@@ -100,14 +100,14 @@ export interface StartEngagement {
   readonly Sender: string;
   readonly Subject: string;
   readonly Content: string;
-  readonly PublicSubject: string;
-  readonly PublicContent: string;
-  readonly IncidentId: string;
-  readonly IdempotencyToken: string;
+  readonly PublicSubject?: string;
+  readonly PublicContent?: string;
+  readonly IncidentId?: string;
+  readonly IdempotencyToken?: string;
 }
 export interface StopEngagement {
   readonly EngagementId: string;
-  readonly Reason: string;
+  readonly Reason?: string;
 }
 export interface TagResource {
   readonly ResourceARN: string;
@@ -119,13 +119,13 @@ export interface UntagResource {
 }
 export interface UpdateContact {
   readonly ContactId: string;
-  readonly DisplayName: string;
-  readonly Plan: Plan;
+  readonly DisplayName?: string;
+  readonly Plan?: Plan;
 }
 export interface UpdateContactChannel {
   readonly ContactChannelId: string;
-  readonly Name: string;
-  readonly DeliveryAddress: ContactChannelAddress;
+  readonly Name?: string;
+  readonly DeliveryAddress?: ContactChannelAddress;
 }
 
 

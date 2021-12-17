@@ -4,27 +4,27 @@
 export interface DescribeJobExecution {
   readonly jobId: string;
   readonly thingName: string;
-  readonly includeJobDocument: boolean;
-  readonly executionNumber: number;
+  readonly includeJobDocument?: boolean;
+  readonly executionNumber?: number;
 }
 export interface GetPendingJobExecutions {
   readonly thingName: string;
 }
 export interface StartNextPendingJobExecution {
   readonly thingName: string;
-  readonly statusDetails: {[key: string]: any};
-  readonly stepTimeoutInMinutes: number;
+  readonly statusDetails?: {[key: string]: any};
+  readonly stepTimeoutInMinutes?: number;
 }
 export interface UpdateJobExecution {
   readonly jobId: string;
   readonly thingName: string;
   readonly status: string;
-  readonly statusDetails: {[key: string]: any};
-  readonly stepTimeoutInMinutes: number;
-  readonly expectedVersion: number;
-  readonly includeJobExecutionState: boolean;
-  readonly includeJobDocument: boolean;
-  readonly executionNumber: number;
+  readonly statusDetails?: {[key: string]: any};
+  readonly stepTimeoutInMinutes?: number;
+  readonly expectedVersion?: number;
+  readonly includeJobExecutionState?: boolean;
+  readonly includeJobDocument?: boolean;
+  readonly executionNumber?: number;
 }
 
 

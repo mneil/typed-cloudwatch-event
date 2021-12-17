@@ -9,29 +9,29 @@ export interface CancelReplay {
 }
 export interface CreateApiDestination {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly ConnectionArn: string;
   readonly InvocationEndpoint: string;
   readonly HttpMethod: string;
-  readonly InvocationRateLimitPerSecond: number;
+  readonly InvocationRateLimitPerSecond?: number;
 }
 export interface CreateArchive {
   readonly ArchiveName: string;
   readonly EventSourceArn: string;
-  readonly Description: string;
-  readonly EventPattern: string;
-  readonly RetentionDays: number;
+  readonly Description?: string;
+  readonly EventPattern?: string;
+  readonly RetentionDays?: number;
 }
 export interface CreateConnection {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly AuthorizationType: string;
   readonly AuthParameters: CreateConnectionAuthRequestParameters;
 }
 export interface CreateEventBus {
   readonly Name: string;
-  readonly EventSourceName: string;
-  readonly Tags: [];
+  readonly EventSourceName?: string;
+  readonly Tags?: [];
 }
 export interface CreatePartnerEventSource {
   readonly Name: string;
@@ -61,8 +61,8 @@ export interface DeletePartnerEventSource {
 }
 export interface DeleteRule {
   readonly Name: string;
-  readonly EventBusName: string;
-  readonly Force: boolean;
+  readonly EventBusName?: string;
+  readonly Force?: boolean;
 }
 export interface DescribeApiDestination {
   readonly Name: string;
@@ -74,7 +74,7 @@ export interface DescribeConnection {
   readonly Name: string;
 }
 export interface DescribeEventBus {
-  readonly Name: string;
+  readonly Name?: string;
 }
 export interface DescribeEventSource {
   readonly Name: string;
@@ -87,82 +87,82 @@ export interface DescribeReplay {
 }
 export interface DescribeRule {
   readonly Name: string;
-  readonly EventBusName: string;
+  readonly EventBusName?: string;
 }
 export interface DisableRule {
   readonly Name: string;
-  readonly EventBusName: string;
+  readonly EventBusName?: string;
 }
 export interface EnableRule {
   readonly Name: string;
-  readonly EventBusName: string;
+  readonly EventBusName?: string;
 }
 export interface ListApiDestinations {
-  readonly NamePrefix: string;
-  readonly ConnectionArn: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NamePrefix?: string;
+  readonly ConnectionArn?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListArchives {
-  readonly NamePrefix: string;
-  readonly EventSourceArn: string;
-  readonly State: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NamePrefix?: string;
+  readonly EventSourceArn?: string;
+  readonly State?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListConnections {
-  readonly NamePrefix: string;
-  readonly ConnectionState: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NamePrefix?: string;
+  readonly ConnectionState?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListEventBuses {
-  readonly NamePrefix: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NamePrefix?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListEventSources {
-  readonly NamePrefix: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NamePrefix?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListPartnerEventSourceAccounts {
   readonly EventSourceName: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListPartnerEventSources {
   readonly NamePrefix: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListReplays {
-  readonly NamePrefix: string;
-  readonly State: string;
-  readonly EventSourceArn: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NamePrefix?: string;
+  readonly State?: string;
+  readonly EventSourceArn?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListRuleNamesByTarget {
   readonly TargetArn: string;
-  readonly EventBusName: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly EventBusName?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListRules {
-  readonly NamePrefix: string;
-  readonly EventBusName: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NamePrefix?: string;
+  readonly EventBusName?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
 export interface ListTargetsByRule {
   readonly Rule: string;
-  readonly EventBusName: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly EventBusName?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface PutEvents {
   readonly Entries: [];
@@ -171,42 +171,42 @@ export interface PutPartnerEvents {
   readonly Entries: [];
 }
 export interface PutPermission {
-  readonly EventBusName: string;
-  readonly Action: string;
-  readonly Principal: string;
-  readonly StatementId: string;
-  readonly Condition: Condition;
-  readonly Policy: string;
+  readonly EventBusName?: string;
+  readonly Action?: string;
+  readonly Principal?: string;
+  readonly StatementId?: string;
+  readonly Condition?: Condition;
+  readonly Policy?: string;
 }
 export interface PutRule {
   readonly Name: string;
-  readonly ScheduleExpression: string;
-  readonly EventPattern: string;
-  readonly State: string;
-  readonly Description: string;
-  readonly RoleArn: string;
-  readonly Tags: [];
-  readonly EventBusName: string;
+  readonly ScheduleExpression?: string;
+  readonly EventPattern?: string;
+  readonly State?: string;
+  readonly Description?: string;
+  readonly RoleArn?: string;
+  readonly Tags?: [];
+  readonly EventBusName?: string;
 }
 export interface PutTargets {
   readonly Rule: string;
-  readonly EventBusName: string;
+  readonly EventBusName?: string;
   readonly Targets: [];
 }
 export interface RemovePermission {
-  readonly StatementId: string;
-  readonly RemoveAllPermissions: boolean;
-  readonly EventBusName: string;
+  readonly StatementId?: string;
+  readonly RemoveAllPermissions?: boolean;
+  readonly EventBusName?: string;
 }
 export interface RemoveTargets {
   readonly Rule: string;
-  readonly EventBusName: string;
+  readonly EventBusName?: string;
   readonly Ids: [];
-  readonly Force: boolean;
+  readonly Force?: boolean;
 }
 export interface StartReplay {
   readonly ReplayName: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly EventSourceArn: string;
   readonly EventStartTime: Date;
   readonly EventEndTime: Date;
@@ -226,23 +226,23 @@ export interface UntagResource {
 }
 export interface UpdateApiDestination {
   readonly Name: string;
-  readonly Description: string;
-  readonly ConnectionArn: string;
-  readonly InvocationEndpoint: string;
-  readonly HttpMethod: string;
-  readonly InvocationRateLimitPerSecond: number;
+  readonly Description?: string;
+  readonly ConnectionArn?: string;
+  readonly InvocationEndpoint?: string;
+  readonly HttpMethod?: string;
+  readonly InvocationRateLimitPerSecond?: number;
 }
 export interface UpdateArchive {
   readonly ArchiveName: string;
-  readonly Description: string;
-  readonly EventPattern: string;
-  readonly RetentionDays: number;
+  readonly Description?: string;
+  readonly EventPattern?: string;
+  readonly RetentionDays?: number;
 }
 export interface UpdateConnection {
   readonly Name: string;
-  readonly Description: string;
-  readonly AuthorizationType: string;
-  readonly AuthParameters: UpdateConnectionAuthRequestParameters;
+  readonly Description?: string;
+  readonly AuthorizationType?: string;
+  readonly AuthParameters?: UpdateConnectionAuthRequestParameters;
 }
 
 

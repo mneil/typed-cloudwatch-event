@@ -3,8 +3,8 @@
  */
 export interface CreateCell {
   readonly CellName: string;
-  readonly Cells: [];
-  readonly Tags: {[key: string]: any};
+  readonly Cells?: [];
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateCrossAccountAuthorization {
   readonly CrossAccountAuthorization: string;
@@ -12,18 +12,18 @@ export interface CreateCrossAccountAuthorization {
 export interface CreateReadinessCheck {
   readonly ReadinessCheckName: string;
   readonly ResourceSetName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateRecoveryGroup {
-  readonly Cells: [];
+  readonly Cells?: [];
   readonly RecoveryGroupName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateResourceSet {
   readonly ResourceSetName: string;
   readonly ResourceSetType: string;
   readonly Resources: [];
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface DeleteCell {
   readonly CellName: string;
@@ -41,8 +41,8 @@ export interface DeleteResourceSet {
   readonly ResourceSetName: string;
 }
 export interface GetArchitectureRecommendations {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly RecoveryGroupName: string;
 }
 export interface GetCell {
@@ -50,58 +50,58 @@ export interface GetCell {
 }
 export interface GetCellReadinessSummary {
   readonly CellName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetReadinessCheck {
   readonly ReadinessCheckName: string;
 }
 export interface GetReadinessCheckResourceStatus {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ReadinessCheckName: string;
   readonly ResourceIdentifier: string;
 }
 export interface GetReadinessCheckStatus {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ReadinessCheckName: string;
 }
 export interface GetRecoveryGroup {
   readonly RecoveryGroupName: string;
 }
 export interface GetRecoveryGroupReadinessSummary {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly RecoveryGroupName: string;
 }
 export interface GetResourceSet {
   readonly ResourceSetName: string;
 }
 export interface ListCells {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListCrossAccountAuthorizations {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListReadinessChecks {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListRecoveryGroups {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListResourceSets {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListRules {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ResourceType: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ResourceType?: string;
 }
 export interface ListTagsForResources {
   readonly ResourceArn: string;

@@ -17,21 +17,21 @@ export interface CancelElasticsearchServiceSoftwareUpdate {
 }
 export interface CreateElasticsearchDomain {
   readonly DomainName: string;
-  readonly ElasticsearchVersion: string;
-  readonly ElasticsearchClusterConfig: ElasticsearchClusterConfig;
-  readonly EBSOptions: EBSOptions;
-  readonly AccessPolicies: string;
-  readonly SnapshotOptions: SnapshotOptions;
-  readonly VPCOptions: VPCOptions;
-  readonly CognitoOptions: CognitoOptions;
-  readonly EncryptionAtRestOptions: EncryptionAtRestOptions;
-  readonly NodeToNodeEncryptionOptions: NodeToNodeEncryptionOptions;
-  readonly AdvancedOptions: {[key: string]: any};
-  readonly LogPublishingOptions: {[key: string]: any};
-  readonly DomainEndpointOptions: DomainEndpointOptions;
-  readonly AdvancedSecurityOptions: AdvancedSecurityOptionsInput;
-  readonly AutoTuneOptions: AutoTuneOptionsInput;
-  readonly TagList: [];
+  readonly ElasticsearchVersion?: string;
+  readonly ElasticsearchClusterConfig?: ElasticsearchClusterConfig;
+  readonly EBSOptions?: EBSOptions;
+  readonly AccessPolicies?: string;
+  readonly SnapshotOptions?: SnapshotOptions;
+  readonly VPCOptions?: VPCOptions;
+  readonly CognitoOptions?: CognitoOptions;
+  readonly EncryptionAtRestOptions?: EncryptionAtRestOptions;
+  readonly NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions;
+  readonly AdvancedOptions?: {[key: string]: any};
+  readonly LogPublishingOptions?: {[key: string]: any};
+  readonly DomainEndpointOptions?: DomainEndpointOptions;
+  readonly AdvancedSecurityOptions?: AdvancedSecurityOptionsInput;
+  readonly AutoTuneOptions?: AutoTuneOptionsInput;
+  readonly TagList?: [];
 }
 export interface CreateOutboundCrossClusterSearchConnection {
   readonly SourceDomainInfo: DomainInformation;
@@ -41,7 +41,7 @@ export interface CreateOutboundCrossClusterSearchConnection {
 export interface CreatePackage {
   readonly PackageName: string;
   readonly PackageType: string;
-  readonly PackageDescription: string;
+  readonly PackageDescription?: string;
   readonly PackageSource: PackageSource;
 }
 export interface DeleteElasticsearchDomain {
@@ -58,8 +58,8 @@ export interface DeletePackage {
 }
 export interface DescribeDomainAutoTunes {
   readonly DomainName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeElasticsearchDomain {
   readonly DomainName: string;
@@ -71,77 +71,77 @@ export interface DescribeElasticsearchDomains {
   readonly DomainNames: [];
 }
 export interface DescribeElasticsearchInstanceTypeLimits {
-  readonly DomainName: string;
+  readonly DomainName?: string;
   readonly InstanceType: string;
   readonly ElasticsearchVersion: string;
 }
 export interface DescribeInboundCrossClusterSearchConnections {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeOutboundCrossClusterSearchConnections {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribePackages {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeReservedElasticsearchInstanceOfferings {
-  readonly ReservedElasticsearchInstanceOfferingId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ReservedElasticsearchInstanceOfferingId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeReservedElasticsearchInstances {
-  readonly ReservedElasticsearchInstanceId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ReservedElasticsearchInstanceId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DissociatePackage {
   readonly PackageID: string;
   readonly DomainName: string;
 }
 export interface GetCompatibleElasticsearchVersions {
-  readonly DomainName: string;
+  readonly DomainName?: string;
 }
 export interface GetPackageVersionHistory {
   readonly PackageID: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetUpgradeHistory {
   readonly DomainName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetUpgradeStatus {
   readonly DomainName: string;
 }
 export interface ListDomainNames {
-  readonly EngineType: string;
+  readonly EngineType?: string;
 }
 export interface ListDomainsForPackage {
   readonly PackageID: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListElasticsearchInstanceTypes {
   readonly ElasticsearchVersion: string;
-  readonly DomainName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly DomainName?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListElasticsearchVersions {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListPackagesForDomain {
   readonly DomainName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTags {
   readonly ARN: string;
@@ -149,7 +149,7 @@ export interface ListTags {
 export interface PurchaseReservedElasticsearchInstanceOffering {
   readonly ReservedElasticsearchInstanceOfferingId: string;
   readonly ReservationName: string;
-  readonly InstanceCount: number;
+  readonly InstanceCount?: number;
 }
 export interface RejectInboundCrossClusterSearchConnection {
   readonly CrossClusterSearchConnectionId: string;
@@ -163,31 +163,31 @@ export interface StartElasticsearchServiceSoftwareUpdate {
 }
 export interface UpdateElasticsearchDomainConfig {
   readonly DomainName: string;
-  readonly ElasticsearchClusterConfig: ElasticsearchClusterConfig;
-  readonly EBSOptions: EBSOptions;
-  readonly SnapshotOptions: SnapshotOptions;
-  readonly VPCOptions: VPCOptions;
-  readonly CognitoOptions: CognitoOptions;
-  readonly AdvancedOptions: {[key: string]: any};
-  readonly AccessPolicies: string;
-  readonly LogPublishingOptions: {[key: string]: any};
-  readonly DomainEndpointOptions: DomainEndpointOptions;
-  readonly AdvancedSecurityOptions: AdvancedSecurityOptionsInput;
-  readonly NodeToNodeEncryptionOptions: NodeToNodeEncryptionOptions;
-  readonly EncryptionAtRestOptions: EncryptionAtRestOptions;
-  readonly AutoTuneOptions: AutoTuneOptions;
-  readonly DryRun: boolean;
+  readonly ElasticsearchClusterConfig?: ElasticsearchClusterConfig;
+  readonly EBSOptions?: EBSOptions;
+  readonly SnapshotOptions?: SnapshotOptions;
+  readonly VPCOptions?: VPCOptions;
+  readonly CognitoOptions?: CognitoOptions;
+  readonly AdvancedOptions?: {[key: string]: any};
+  readonly AccessPolicies?: string;
+  readonly LogPublishingOptions?: {[key: string]: any};
+  readonly DomainEndpointOptions?: DomainEndpointOptions;
+  readonly AdvancedSecurityOptions?: AdvancedSecurityOptionsInput;
+  readonly NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions;
+  readonly EncryptionAtRestOptions?: EncryptionAtRestOptions;
+  readonly AutoTuneOptions?: AutoTuneOptions;
+  readonly DryRun?: boolean;
 }
 export interface UpdatePackage {
   readonly PackageID: string;
   readonly PackageSource: PackageSource;
-  readonly PackageDescription: string;
-  readonly CommitMessage: string;
+  readonly PackageDescription?: string;
+  readonly CommitMessage?: string;
 }
 export interface UpgradeElasticsearchDomain {
   readonly DomainName: string;
   readonly TargetVersion: string;
-  readonly PerformCheckOnly: boolean;
+  readonly PerformCheckOnly?: boolean;
 }
 
 

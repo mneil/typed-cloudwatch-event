@@ -11,25 +11,25 @@ export interface AdvertiseByoipCidr {
 export interface AllowCustomRoutingTraffic {
   readonly EndpointGroupArn: string;
   readonly EndpointId: string;
-  readonly DestinationAddresses: [];
-  readonly DestinationPorts: [];
-  readonly AllowAllTrafficToEndpoint: boolean;
+  readonly DestinationAddresses?: [];
+  readonly DestinationPorts?: [];
+  readonly AllowAllTrafficToEndpoint?: boolean;
 }
 export interface CreateAccelerator {
   readonly Name: string;
-  readonly IpAddressType: string;
-  readonly IpAddresses: [];
-  readonly Enabled: boolean;
+  readonly IpAddressType?: string;
+  readonly IpAddresses?: [];
+  readonly Enabled?: boolean;
   readonly IdempotencyToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateCustomRoutingAccelerator {
   readonly Name: string;
-  readonly IpAddressType: string;
-  readonly IpAddresses: [];
-  readonly Enabled: boolean;
+  readonly IpAddressType?: string;
+  readonly IpAddresses?: [];
+  readonly Enabled?: boolean;
   readonly IdempotencyToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateCustomRoutingEndpointGroup {
   readonly ListenerArn: string;
@@ -45,21 +45,21 @@ export interface CreateCustomRoutingListener {
 export interface CreateEndpointGroup {
   readonly ListenerArn: string;
   readonly EndpointGroupRegion: string;
-  readonly EndpointConfigurations: [];
-  readonly TrafficDialPercentage: unknown;
-  readonly HealthCheckPort: number;
-  readonly HealthCheckProtocol: string;
-  readonly HealthCheckPath: string;
-  readonly HealthCheckIntervalSeconds: number;
-  readonly ThresholdCount: number;
+  readonly EndpointConfigurations?: [];
+  readonly TrafficDialPercentage?: unknown;
+  readonly HealthCheckPort?: number;
+  readonly HealthCheckProtocol?: string;
+  readonly HealthCheckPath?: string;
+  readonly HealthCheckIntervalSeconds?: number;
+  readonly ThresholdCount?: number;
   readonly IdempotencyToken: string;
-  readonly PortOverrides: [];
+  readonly PortOverrides?: [];
 }
 export interface CreateListener {
   readonly AcceleratorArn: string;
   readonly PortRanges: [];
   readonly Protocol: string;
-  readonly ClientAffinity: string;
+  readonly ClientAffinity?: string;
   readonly IdempotencyToken: string;
 }
 export interface DeleteAccelerator {
@@ -83,9 +83,9 @@ export interface DeleteListener {
 export interface DenyCustomRoutingTraffic {
   readonly EndpointGroupArn: string;
   readonly EndpointId: string;
-  readonly DestinationAddresses: [];
-  readonly DestinationPorts: [];
-  readonly DenyAllTrafficToEndpoint: boolean;
+  readonly DestinationAddresses?: [];
+  readonly DestinationPorts?: [];
+  readonly DenyAllTrafficToEndpoint?: boolean;
 }
 export interface DeprovisionByoipCidr {
   readonly Cidr: string;
@@ -115,48 +115,48 @@ export interface DescribeListener {
   readonly ListenerArn: string;
 }
 export interface ListAccelerators {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListByoipCidrs {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListCustomRoutingAccelerators {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListCustomRoutingEndpointGroups {
   readonly ListenerArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListCustomRoutingListeners {
   readonly AcceleratorArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListCustomRoutingPortMappings {
   readonly AcceleratorArn: string;
-  readonly EndpointGroupArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly EndpointGroupArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListCustomRoutingPortMappingsByDestination {
   readonly EndpointId: string;
   readonly DestinationAddress: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListEndpointGroups {
   readonly ListenerArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListListeners {
   readonly AcceleratorArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -179,27 +179,27 @@ export interface UntagResource {
 }
 export interface UpdateAccelerator {
   readonly AcceleratorArn: string;
-  readonly Name: string;
-  readonly IpAddressType: string;
-  readonly Enabled: boolean;
+  readonly Name?: string;
+  readonly IpAddressType?: string;
+  readonly Enabled?: boolean;
 }
 export interface UpdateAcceleratorAttributes {
   readonly AcceleratorArn: string;
-  readonly FlowLogsEnabled: boolean;
-  readonly FlowLogsS3Bucket: string;
-  readonly FlowLogsS3Prefix: string;
+  readonly FlowLogsEnabled?: boolean;
+  readonly FlowLogsS3Bucket?: string;
+  readonly FlowLogsS3Prefix?: string;
 }
 export interface UpdateCustomRoutingAccelerator {
   readonly AcceleratorArn: string;
-  readonly Name: string;
-  readonly IpAddressType: string;
-  readonly Enabled: boolean;
+  readonly Name?: string;
+  readonly IpAddressType?: string;
+  readonly Enabled?: boolean;
 }
 export interface UpdateCustomRoutingAcceleratorAttributes {
   readonly AcceleratorArn: string;
-  readonly FlowLogsEnabled: boolean;
-  readonly FlowLogsS3Bucket: string;
-  readonly FlowLogsS3Prefix: string;
+  readonly FlowLogsEnabled?: boolean;
+  readonly FlowLogsS3Bucket?: string;
+  readonly FlowLogsS3Prefix?: string;
 }
 export interface UpdateCustomRoutingListener {
   readonly ListenerArn: string;
@@ -207,20 +207,20 @@ export interface UpdateCustomRoutingListener {
 }
 export interface UpdateEndpointGroup {
   readonly EndpointGroupArn: string;
-  readonly EndpointConfigurations: [];
-  readonly TrafficDialPercentage: unknown;
-  readonly HealthCheckPort: number;
-  readonly HealthCheckProtocol: string;
-  readonly HealthCheckPath: string;
-  readonly HealthCheckIntervalSeconds: number;
-  readonly ThresholdCount: number;
-  readonly PortOverrides: [];
+  readonly EndpointConfigurations?: [];
+  readonly TrafficDialPercentage?: unknown;
+  readonly HealthCheckPort?: number;
+  readonly HealthCheckProtocol?: string;
+  readonly HealthCheckPath?: string;
+  readonly HealthCheckIntervalSeconds?: number;
+  readonly ThresholdCount?: number;
+  readonly PortOverrides?: [];
 }
 export interface UpdateListener {
   readonly ListenerArn: string;
-  readonly PortRanges: [];
-  readonly Protocol: string;
-  readonly ClientAffinity: string;
+  readonly PortRanges?: [];
+  readonly Protocol?: string;
+  readonly ClientAffinity?: string;
 }
 export interface WithdrawByoipCidr {
   readonly Cidr: string;

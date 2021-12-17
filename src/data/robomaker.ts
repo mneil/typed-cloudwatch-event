@@ -23,84 +23,84 @@ export interface CancelWorldGenerationJob {
   readonly job: string;
 }
 export interface CreateDeploymentJob {
-  readonly deploymentConfig: DeploymentConfig;
+  readonly deploymentConfig?: DeploymentConfig;
   readonly clientRequestToken: string;
   readonly fleet: string;
   readonly deploymentApplicationConfigs: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateFleet {
   readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateRobot {
   readonly name: string;
   readonly architecture: string;
   readonly greengrassGroupId: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateRobotApplication {
   readonly name: string;
-  readonly sources: [];
+  readonly sources?: [];
   readonly robotSoftwareSuite: RobotSoftwareSuite;
-  readonly tags: {[key: string]: any};
-  readonly environment: Environment;
+  readonly tags?: {[key: string]: any};
+  readonly environment?: Environment;
 }
 export interface CreateRobotApplicationVersion {
   readonly application: string;
-  readonly currentRevisionId: string;
-  readonly s3Etags: [];
-  readonly imageDigest: string;
+  readonly currentRevisionId?: string;
+  readonly s3Etags?: [];
+  readonly imageDigest?: string;
 }
 export interface CreateSimulationApplication {
   readonly name: string;
-  readonly sources: [];
+  readonly sources?: [];
   readonly simulationSoftwareSuite: SimulationSoftwareSuite;
   readonly robotSoftwareSuite: RobotSoftwareSuite;
-  readonly renderingEngine: RenderingEngine;
-  readonly tags: {[key: string]: any};
-  readonly environment: Environment;
+  readonly renderingEngine?: RenderingEngine;
+  readonly tags?: {[key: string]: any};
+  readonly environment?: Environment;
 }
 export interface CreateSimulationApplicationVersion {
   readonly application: string;
-  readonly currentRevisionId: string;
-  readonly s3Etags: [];
-  readonly imageDigest: string;
+  readonly currentRevisionId?: string;
+  readonly s3Etags?: [];
+  readonly imageDigest?: string;
 }
 export interface CreateSimulationJob {
-  readonly clientRequestToken: string;
-  readonly outputLocation: OutputLocation;
-  readonly loggingConfig: LoggingConfig;
+  readonly clientRequestToken?: string;
+  readonly outputLocation?: OutputLocation;
+  readonly loggingConfig?: LoggingConfig;
   readonly maxJobDurationInSeconds: number;
   readonly iamRole: string;
-  readonly failureBehavior: string;
-  readonly robotApplications: [];
-  readonly simulationApplications: [];
-  readonly dataSources: [];
-  readonly tags: {[key: string]: any};
-  readonly vpcConfig: VPCConfig;
-  readonly compute: Compute;
+  readonly failureBehavior?: string;
+  readonly robotApplications?: [];
+  readonly simulationApplications?: [];
+  readonly dataSources?: [];
+  readonly tags?: {[key: string]: any};
+  readonly vpcConfig?: VPCConfig;
+  readonly compute?: Compute;
 }
 export interface CreateWorldExportJob {
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
   readonly worlds: [];
   readonly outputLocation: OutputLocation;
   readonly iamRole: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface CreateWorldGenerationJob {
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
   readonly template: string;
   readonly worldCount: WorldCount;
-  readonly tags: {[key: string]: any};
-  readonly worldTags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
+  readonly worldTags?: {[key: string]: any};
 }
 export interface CreateWorldTemplate {
-  readonly clientRequestToken: string;
-  readonly name: string;
-  readonly templateBody: string;
-  readonly templateLocation: TemplateLocation;
-  readonly tags: {[key: string]: any};
+  readonly clientRequestToken?: string;
+  readonly name?: string;
+  readonly templateBody?: string;
+  readonly templateLocation?: TemplateLocation;
+  readonly tags?: {[key: string]: any};
 }
 export interface DeleteFleet {
   readonly fleet: string;
@@ -110,11 +110,11 @@ export interface DeleteRobot {
 }
 export interface DeleteRobotApplication {
   readonly application: string;
-  readonly applicationVersion: string;
+  readonly applicationVersion?: string;
 }
 export interface DeleteSimulationApplication {
   readonly application: string;
-  readonly applicationVersion: string;
+  readonly applicationVersion?: string;
 }
 export interface DeleteWorldTemplate {
   readonly template: string;
@@ -134,11 +134,11 @@ export interface DescribeRobot {
 }
 export interface DescribeRobotApplication {
   readonly application: string;
-  readonly applicationVersion: string;
+  readonly applicationVersion?: string;
 }
 export interface DescribeSimulationApplication {
   readonly application: string;
-  readonly applicationVersion: string;
+  readonly applicationVersion?: string;
 }
 export interface DescribeSimulationJob {
   readonly job: string;
@@ -159,67 +159,67 @@ export interface DescribeWorldTemplate {
   readonly template: string;
 }
 export interface GetWorldTemplateBody {
-  readonly template: string;
-  readonly generationJob: string;
+  readonly template?: string;
+  readonly generationJob?: string;
 }
 export interface ListDeploymentJobs {
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListFleets {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filters: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filters?: [];
 }
 export interface ListRobotApplications {
-  readonly versionQualifier: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filters: [];
+  readonly versionQualifier?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filters?: [];
 }
 export interface ListRobots {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filters: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filters?: [];
 }
 export interface ListSimulationApplications {
-  readonly versionQualifier: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filters: [];
+  readonly versionQualifier?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filters?: [];
 }
 export interface ListSimulationJobBatches {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filters: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filters?: [];
 }
 export interface ListSimulationJobs {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filters: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filters?: [];
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface ListWorldExportJobs {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filters: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filters?: [];
 }
 export interface ListWorldGenerationJobs {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filters: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filters?: [];
 }
 export interface ListWorldTemplates {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListWorlds {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filters: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filters?: [];
 }
 export interface RegisterRobot {
   readonly fleet: string;
@@ -229,10 +229,10 @@ export interface RestartSimulationJob {
   readonly job: string;
 }
 export interface StartSimulationJobBatch {
-  readonly clientRequestToken: string;
-  readonly batchPolicy: BatchPolicy;
+  readonly clientRequestToken?: string;
+  readonly batchPolicy?: BatchPolicy;
   readonly createSimulationJobRequests: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface SyncDeploymentJob {
   readonly clientRequestToken: string;
@@ -248,25 +248,25 @@ export interface UntagResource {
 }
 export interface UpdateRobotApplication {
   readonly application: string;
-  readonly sources: [];
+  readonly sources?: [];
   readonly robotSoftwareSuite: RobotSoftwareSuite;
-  readonly currentRevisionId: string;
-  readonly environment: Environment;
+  readonly currentRevisionId?: string;
+  readonly environment?: Environment;
 }
 export interface UpdateSimulationApplication {
   readonly application: string;
-  readonly sources: [];
+  readonly sources?: [];
   readonly simulationSoftwareSuite: SimulationSoftwareSuite;
   readonly robotSoftwareSuite: RobotSoftwareSuite;
-  readonly renderingEngine: RenderingEngine;
-  readonly currentRevisionId: string;
-  readonly environment: Environment;
+  readonly renderingEngine?: RenderingEngine;
+  readonly currentRevisionId?: string;
+  readonly environment?: Environment;
 }
 export interface UpdateWorldTemplate {
   readonly template: string;
-  readonly name: string;
-  readonly templateBody: string;
-  readonly templateLocation: TemplateLocation;
+  readonly name?: string;
+  readonly templateBody?: string;
+  readonly templateLocation?: TemplateLocation;
 }
 
 

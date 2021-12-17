@@ -20,15 +20,15 @@ export interface BatchImportFindings {
 }
 export interface BatchUpdateFindings {
   readonly FindingIdentifiers: [];
-  readonly Note: NoteUpdate;
-  readonly Severity: SeverityUpdate;
-  readonly VerificationState: string;
-  readonly Confidence: number;
-  readonly Criticality: number;
-  readonly Types: [];
-  readonly UserDefinedFields: {[key: string]: any};
-  readonly Workflow: WorkflowUpdate;
-  readonly RelatedFindings: [];
+  readonly Note?: NoteUpdate;
+  readonly Severity?: SeverityUpdate;
+  readonly VerificationState?: string;
+  readonly Confidence?: number;
+  readonly Criticality?: number;
+  readonly Types?: [];
+  readonly UserDefinedFields?: {[key: string]: any};
+  readonly Workflow?: WorkflowUpdate;
+  readonly RelatedFindings?: [];
 }
 export interface CreateActionTarget {
   readonly Name: string;
@@ -37,7 +37,7 @@ export interface CreateActionTarget {
 }
 export interface CreateFindingAggregator {
   readonly RegionLinkingMode: string;
-  readonly Regions: [];
+  readonly Regions?: [];
 }
 export interface CreateInsight {
   readonly Name: string;
@@ -66,28 +66,28 @@ export interface DeleteMembers {
   readonly AccountIds: [];
 }
 export interface DescribeActionTargets {
-  readonly ActionTargetArns: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly ActionTargetArns?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeHub {
-  readonly HubArn: string;
+  readonly HubArn?: string;
 }
 export interface DescribeOrganizationConfiguration {
 }
 export interface DescribeProducts {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ProductArn: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ProductArn?: string;
 }
 export interface DescribeStandards {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeStandardsControls {
   readonly StandardsSubscriptionArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DisableImportFindingsForProduct {
   readonly ProductSubscriptionArn: string;
@@ -111,32 +111,32 @@ export interface EnableOrganizationAdminAccount {
   readonly AdminAccountId: string;
 }
 export interface EnableSecurityHub {
-  readonly Tags: {[key: string]: any};
-  readonly EnableDefaultStandards: boolean;
+  readonly Tags?: {[key: string]: any};
+  readonly EnableDefaultStandards?: boolean;
 }
 export interface GetAdministratorAccount {
 }
 export interface GetEnabledStandards {
-  readonly StandardsSubscriptionArns: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly StandardsSubscriptionArns?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface GetFindingAggregator {
   readonly FindingAggregatorArn: string;
 }
 export interface GetFindings {
-  readonly Filters: AwsSecurityFindingFilters;
-  readonly SortCriteria: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filters?: AwsSecurityFindingFilters;
+  readonly SortCriteria?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface GetInsightResults {
   readonly InsightArn: string;
 }
 export interface GetInsights {
-  readonly InsightArns: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly InsightArns?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface GetInvitationsCount {
 }
@@ -149,25 +149,25 @@ export interface InviteMembers {
   readonly AccountIds: [];
 }
 export interface ListEnabledProductsForImport {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListFindingAggregators {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListInvitations {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListMembers {
-  readonly OnlyAssociated: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly OnlyAssociated?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListOrganizationAdminAccounts {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -182,35 +182,35 @@ export interface UntagResource {
 }
 export interface UpdateActionTarget {
   readonly ActionTargetArn: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 export interface UpdateFindingAggregator {
   readonly FindingAggregatorArn: string;
   readonly RegionLinkingMode: string;
-  readonly Regions: [];
+  readonly Regions?: [];
 }
 export interface UpdateFindings {
   readonly Filters: AwsSecurityFindingFilters;
-  readonly Note: NoteUpdate;
-  readonly RecordState: string;
+  readonly Note?: NoteUpdate;
+  readonly RecordState?: string;
 }
 export interface UpdateInsight {
   readonly InsightArn: string;
-  readonly Name: string;
-  readonly Filters: AwsSecurityFindingFilters;
-  readonly GroupByAttribute: string;
+  readonly Name?: string;
+  readonly Filters?: AwsSecurityFindingFilters;
+  readonly GroupByAttribute?: string;
 }
 export interface UpdateOrganizationConfiguration {
   readonly AutoEnable: boolean;
 }
 export interface UpdateSecurityHubConfiguration {
-  readonly AutoEnableControls: boolean;
+  readonly AutoEnableControls?: boolean;
 }
 export interface UpdateStandardsControl {
   readonly StandardsControlArn: string;
-  readonly ControlStatus: string;
-  readonly DisabledReason: string;
+  readonly ControlStatus?: string;
+  readonly DisabledReason?: string;
 }
 
 

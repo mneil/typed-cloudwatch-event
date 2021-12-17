@@ -13,15 +13,15 @@ export interface AssociateDeviceWithNetworkProfile {
   readonly NetworkProfileArn: string;
 }
 export interface AssociateDeviceWithRoom {
-  readonly DeviceArn: string;
-  readonly RoomArn: string;
+  readonly DeviceArn?: string;
+  readonly RoomArn?: string;
 }
 export interface AssociateSkillGroupWithRoom {
-  readonly SkillGroupArn: string;
-  readonly RoomArn: string;
+  readonly SkillGroupArn?: string;
+  readonly RoomArn?: string;
 }
 export interface AssociateSkillWithSkillGroup {
-  readonly SkillGroupArn: string;
+  readonly SkillGroupArn?: string;
   readonly SkillId: string;
 }
 export interface AssociateSkillWithUsers {
@@ -29,57 +29,57 @@ export interface AssociateSkillWithUsers {
 }
 export interface CreateAddressBook {
   readonly Name: string;
-  readonly Description: string;
-  readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly ClientRequestToken?: string;
+  readonly Tags?: [];
 }
 export interface CreateBusinessReportSchedule {
-  readonly ScheduleName: string;
-  readonly S3BucketName: string;
-  readonly S3KeyPrefix: string;
+  readonly ScheduleName?: string;
+  readonly S3BucketName?: string;
+  readonly S3KeyPrefix?: string;
   readonly Format: string;
   readonly ContentRange: BusinessReportContentRange;
-  readonly Recurrence: BusinessReportRecurrence;
-  readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Recurrence?: BusinessReportRecurrence;
+  readonly ClientRequestToken?: string;
+  readonly Tags?: [];
 }
 export interface CreateConferenceProvider {
   readonly ConferenceProviderName: string;
   readonly ConferenceProviderType: string;
-  readonly IPDialIn: IPDialIn;
-  readonly PSTNDialIn: PSTNDialIn;
+  readonly IPDialIn?: IPDialIn;
+  readonly PSTNDialIn?: PSTNDialIn;
   readonly MeetingSetting: MeetingSetting;
-  readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly ClientRequestToken?: string;
+  readonly Tags?: [];
 }
 export interface CreateContact {
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
   readonly FirstName: string;
-  readonly LastName: string;
-  readonly PhoneNumber: string;
-  readonly PhoneNumbers: [];
-  readonly SipAddresses: [];
-  readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly LastName?: string;
+  readonly PhoneNumber?: string;
+  readonly PhoneNumbers?: [];
+  readonly SipAddresses?: [];
+  readonly ClientRequestToken?: string;
+  readonly Tags?: [];
 }
 export interface CreateGatewayGroup {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateNetworkProfile {
   readonly NetworkProfileName: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Ssid: string;
   readonly SecurityType: string;
-  readonly EapMethod: string;
-  readonly CurrentPassword: string;
-  readonly NextPassword: string;
-  readonly CertificateAuthorityArn: string;
-  readonly TrustAnchors: [];
+  readonly EapMethod?: string;
+  readonly CurrentPassword?: string;
+  readonly NextPassword?: string;
+  readonly CertificateAuthorityArn?: string;
+  readonly TrustAnchors?: [];
   readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateProfile {
   readonly ProfileName: string;
@@ -88,36 +88,36 @@ export interface CreateProfile {
   readonly DistanceUnit: string;
   readonly TemperatureUnit: string;
   readonly WakeWord: string;
-  readonly Locale: string;
-  readonly ClientRequestToken: string;
-  readonly SetupModeDisabled: boolean;
-  readonly MaxVolumeLimit: number;
-  readonly PSTNEnabled: boolean;
-  readonly DataRetentionOptIn: boolean;
-  readonly MeetingRoomConfiguration: CreateMeetingRoomConfiguration;
-  readonly Tags: [];
+  readonly Locale?: string;
+  readonly ClientRequestToken?: string;
+  readonly SetupModeDisabled?: boolean;
+  readonly MaxVolumeLimit?: number;
+  readonly PSTNEnabled?: boolean;
+  readonly DataRetentionOptIn?: boolean;
+  readonly MeetingRoomConfiguration?: CreateMeetingRoomConfiguration;
+  readonly Tags?: [];
 }
 export interface CreateRoom {
   readonly RoomName: string;
-  readonly Description: string;
-  readonly ProfileArn: string;
-  readonly ProviderCalendarId: string;
-  readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly ProfileArn?: string;
+  readonly ProviderCalendarId?: string;
+  readonly ClientRequestToken?: string;
+  readonly Tags?: [];
 }
 export interface CreateSkillGroup {
   readonly SkillGroupName: string;
-  readonly Description: string;
-  readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly ClientRequestToken?: string;
+  readonly Tags?: [];
 }
 export interface CreateUser {
   readonly UserId: string;
-  readonly FirstName: string;
-  readonly LastName: string;
-  readonly Email: string;
-  readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly FirstName?: string;
+  readonly LastName?: string;
+  readonly Email?: string;
+  readonly ClientRequestToken?: string;
+  readonly Tags?: [];
 }
 export interface DeleteAddressBook {
   readonly AddressBookArn: string;
@@ -145,25 +145,25 @@ export interface DeleteNetworkProfile {
   readonly NetworkProfileArn: string;
 }
 export interface DeleteProfile {
-  readonly ProfileArn: string;
+  readonly ProfileArn?: string;
 }
 export interface DeleteRoom {
-  readonly RoomArn: string;
+  readonly RoomArn?: string;
 }
 export interface DeleteRoomSkillParameter {
-  readonly RoomArn: string;
+  readonly RoomArn?: string;
   readonly SkillId: string;
   readonly ParameterKey: string;
 }
 export interface DeleteSkillAuthorization {
   readonly SkillId: string;
-  readonly RoomArn: string;
+  readonly RoomArn?: string;
 }
 export interface DeleteSkillGroup {
-  readonly SkillGroupArn: string;
+  readonly SkillGroupArn?: string;
 }
 export interface DeleteUser {
-  readonly UserArn: string;
+  readonly UserArn?: string;
   readonly EnrollmentId: string;
 }
 export interface DisassociateContactFromAddressBook {
@@ -171,18 +171,18 @@ export interface DisassociateContactFromAddressBook {
   readonly AddressBookArn: string;
 }
 export interface DisassociateDeviceFromRoom {
-  readonly DeviceArn: string;
+  readonly DeviceArn?: string;
 }
 export interface DisassociateSkillFromSkillGroup {
-  readonly SkillGroupArn: string;
+  readonly SkillGroupArn?: string;
   readonly SkillId: string;
 }
 export interface DisassociateSkillFromUsers {
   readonly SkillId: string;
 }
 export interface DisassociateSkillGroupFromRoom {
-  readonly SkillGroupArn: string;
-  readonly RoomArn: string;
+  readonly SkillGroupArn?: string;
+  readonly RoomArn?: string;
 }
 export interface ForgetSmartHomeAppliances {
   readonly RoomArn: string;
@@ -199,7 +199,7 @@ export interface GetContact {
   readonly ContactArn: string;
 }
 export interface GetDevice {
-  readonly DeviceArn: string;
+  readonly DeviceArn?: string;
 }
 export interface GetGateway {
   readonly GatewayArn: string;
@@ -213,94 +213,94 @@ export interface GetNetworkProfile {
   readonly NetworkProfileArn: string;
 }
 export interface GetProfile {
-  readonly ProfileArn: string;
+  readonly ProfileArn?: string;
 }
 export interface GetRoom {
-  readonly RoomArn: string;
+  readonly RoomArn?: string;
 }
 export interface GetRoomSkillParameter {
-  readonly RoomArn: string;
+  readonly RoomArn?: string;
   readonly SkillId: string;
   readonly ParameterKey: string;
 }
 export interface GetSkillGroup {
-  readonly SkillGroupArn: string;
+  readonly SkillGroupArn?: string;
 }
 export interface ListBusinessReportSchedules {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListConferenceProviders {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDeviceEvents {
   readonly DeviceArn: string;
-  readonly EventType: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly EventType?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListGatewayGroups {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListGateways {
-  readonly GatewayGroupArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly GatewayGroupArn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListSkills {
-  readonly SkillGroupArn: string;
-  readonly EnablementType: string;
-  readonly SkillType: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SkillGroupArn?: string;
+  readonly EnablementType?: string;
+  readonly SkillType?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListSkillsStoreCategories {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListSkillsStoreSkillsByCategory {
   readonly CategoryId: number;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListSmartHomeAppliances {
   readonly RoomArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTags {
   readonly Arn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface PutConferencePreference {
   readonly ConferencePreference: ConferencePreference;
 }
 export interface PutInvitationConfiguration {
   readonly OrganizationName: string;
-  readonly ContactEmail: string;
-  readonly PrivateSkillIds: [];
+  readonly ContactEmail?: string;
+  readonly PrivateSkillIds?: [];
 }
 export interface PutRoomSkillParameter {
-  readonly RoomArn: string;
+  readonly RoomArn?: string;
   readonly SkillId: string;
   readonly RoomSkillParameter: RoomSkillParameter;
 }
 export interface PutSkillAuthorization {
   readonly AuthorizationResult: {[key: string]: any};
   readonly SkillId: string;
-  readonly RoomArn: string;
+  readonly RoomArn?: string;
 }
 export interface RegisterAVSDevice {
   readonly ClientId: string;
   readonly UserCode: string;
   readonly ProductId: string;
-  readonly DeviceSerialNumber: string;
+  readonly DeviceSerialNumber?: string;
   readonly AmazonId: string;
-  readonly RoomArn: string;
-  readonly Tags: [];
+  readonly RoomArn?: string;
+  readonly Tags?: [];
 }
 export interface RejectSkill {
   readonly SkillId: string;
@@ -310,69 +310,69 @@ export interface ResolveRoom {
   readonly SkillId: string;
 }
 export interface RevokeInvitation {
-  readonly UserArn: string;
-  readonly EnrollmentId: string;
+  readonly UserArn?: string;
+  readonly EnrollmentId?: string;
 }
 export interface SearchAddressBooks {
-  readonly Filters: [];
-  readonly SortCriteria: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filters?: [];
+  readonly SortCriteria?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface SearchContacts {
-  readonly Filters: [];
-  readonly SortCriteria: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filters?: [];
+  readonly SortCriteria?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface SearchDevices {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
-  readonly SortCriteria: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
+  readonly SortCriteria?: [];
 }
 export interface SearchNetworkProfiles {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
-  readonly SortCriteria: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
+  readonly SortCriteria?: [];
 }
 export interface SearchProfiles {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
-  readonly SortCriteria: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
+  readonly SortCriteria?: [];
 }
 export interface SearchRooms {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
-  readonly SortCriteria: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
+  readonly SortCriteria?: [];
 }
 export interface SearchSkillGroups {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
-  readonly SortCriteria: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
+  readonly SortCriteria?: [];
 }
 export interface SearchUsers {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
-  readonly SortCriteria: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
+  readonly SortCriteria?: [];
 }
 export interface SendAnnouncement {
   readonly RoomFilters: [];
   readonly Content: Content;
-  readonly TimeToLiveInSeconds: number;
+  readonly TimeToLiveInSeconds?: number;
   readonly ClientRequestToken: string;
 }
 export interface SendInvitation {
-  readonly UserArn: string;
+  readonly UserArn?: string;
 }
 export interface StartDeviceSync {
-  readonly RoomArn: string;
-  readonly DeviceArn: string;
+  readonly RoomArn?: string;
+  readonly DeviceArn?: string;
   readonly Features: [];
 }
 export interface StartSmartHomeApplianceDiscovery {
@@ -388,84 +388,84 @@ export interface UntagResource {
 }
 export interface UpdateAddressBook {
   readonly AddressBookArn: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 export interface UpdateBusinessReportSchedule {
   readonly ScheduleArn: string;
-  readonly S3BucketName: string;
-  readonly S3KeyPrefix: string;
-  readonly Format: string;
-  readonly ScheduleName: string;
-  readonly Recurrence: BusinessReportRecurrence;
+  readonly S3BucketName?: string;
+  readonly S3KeyPrefix?: string;
+  readonly Format?: string;
+  readonly ScheduleName?: string;
+  readonly Recurrence?: BusinessReportRecurrence;
 }
 export interface UpdateConferenceProvider {
   readonly ConferenceProviderArn: string;
   readonly ConferenceProviderType: string;
-  readonly IPDialIn: IPDialIn;
-  readonly PSTNDialIn: PSTNDialIn;
+  readonly IPDialIn?: IPDialIn;
+  readonly PSTNDialIn?: PSTNDialIn;
   readonly MeetingSetting: MeetingSetting;
 }
 export interface UpdateContact {
   readonly ContactArn: string;
-  readonly DisplayName: string;
-  readonly FirstName: string;
-  readonly LastName: string;
-  readonly PhoneNumber: string;
-  readonly PhoneNumbers: [];
-  readonly SipAddresses: [];
+  readonly DisplayName?: string;
+  readonly FirstName?: string;
+  readonly LastName?: string;
+  readonly PhoneNumber?: string;
+  readonly PhoneNumbers?: [];
+  readonly SipAddresses?: [];
 }
 export interface UpdateDevice {
-  readonly DeviceArn: string;
-  readonly DeviceName: string;
+  readonly DeviceArn?: string;
+  readonly DeviceName?: string;
 }
 export interface UpdateGateway {
   readonly GatewayArn: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly SoftwareVersion: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly SoftwareVersion?: string;
 }
 export interface UpdateGatewayGroup {
   readonly GatewayGroupArn: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 export interface UpdateNetworkProfile {
   readonly NetworkProfileArn: string;
-  readonly NetworkProfileName: string;
-  readonly Description: string;
-  readonly CurrentPassword: string;
-  readonly NextPassword: string;
-  readonly CertificateAuthorityArn: string;
-  readonly TrustAnchors: [];
+  readonly NetworkProfileName?: string;
+  readonly Description?: string;
+  readonly CurrentPassword?: string;
+  readonly NextPassword?: string;
+  readonly CertificateAuthorityArn?: string;
+  readonly TrustAnchors?: [];
 }
 export interface UpdateProfile {
-  readonly ProfileArn: string;
-  readonly ProfileName: string;
-  readonly IsDefault: boolean;
-  readonly Timezone: string;
-  readonly Address: string;
-  readonly DistanceUnit: string;
-  readonly TemperatureUnit: string;
-  readonly WakeWord: string;
-  readonly Locale: string;
-  readonly SetupModeDisabled: boolean;
-  readonly MaxVolumeLimit: number;
-  readonly PSTNEnabled: boolean;
-  readonly DataRetentionOptIn: boolean;
-  readonly MeetingRoomConfiguration: UpdateMeetingRoomConfiguration;
+  readonly ProfileArn?: string;
+  readonly ProfileName?: string;
+  readonly IsDefault?: boolean;
+  readonly Timezone?: string;
+  readonly Address?: string;
+  readonly DistanceUnit?: string;
+  readonly TemperatureUnit?: string;
+  readonly WakeWord?: string;
+  readonly Locale?: string;
+  readonly SetupModeDisabled?: boolean;
+  readonly MaxVolumeLimit?: number;
+  readonly PSTNEnabled?: boolean;
+  readonly DataRetentionOptIn?: boolean;
+  readonly MeetingRoomConfiguration?: UpdateMeetingRoomConfiguration;
 }
 export interface UpdateRoom {
-  readonly RoomArn: string;
-  readonly RoomName: string;
-  readonly Description: string;
-  readonly ProviderCalendarId: string;
-  readonly ProfileArn: string;
+  readonly RoomArn?: string;
+  readonly RoomName?: string;
+  readonly Description?: string;
+  readonly ProviderCalendarId?: string;
+  readonly ProfileArn?: string;
 }
 export interface UpdateSkillGroup {
-  readonly SkillGroupArn: string;
-  readonly SkillGroupName: string;
-  readonly Description: string;
+  readonly SkillGroupArn?: string;
+  readonly SkillGroupName?: string;
+  readonly Description?: string;
 }
 
 

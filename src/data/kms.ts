@@ -20,30 +20,30 @@ export interface CreateCustomKeyStore {
 export interface CreateGrant {
   readonly KeyId: string;
   readonly GranteePrincipal: string;
-  readonly RetiringPrincipal: string;
+  readonly RetiringPrincipal?: string;
   readonly Operations: [];
-  readonly Constraints: GrantConstraints;
-  readonly GrantTokens: [];
-  readonly Name: string;
+  readonly Constraints?: GrantConstraints;
+  readonly GrantTokens?: [];
+  readonly Name?: string;
 }
 export interface CreateKey {
-  readonly Policy: string;
-  readonly Description: string;
-  readonly KeyUsage: string;
-  readonly CustomerMasterKeySpec: string;
-  readonly KeySpec: string;
-  readonly Origin: string;
-  readonly CustomKeyStoreId: string;
-  readonly BypassPolicyLockoutSafetyCheck: boolean;
-  readonly Tags: [];
-  readonly MultiRegion: boolean;
+  readonly Policy?: string;
+  readonly Description?: string;
+  readonly KeyUsage?: string;
+  readonly CustomerMasterKeySpec?: string;
+  readonly KeySpec?: string;
+  readonly Origin?: string;
+  readonly CustomKeyStoreId?: string;
+  readonly BypassPolicyLockoutSafetyCheck?: boolean;
+  readonly Tags?: [];
+  readonly MultiRegion?: boolean;
 }
 export interface Decrypt {
   readonly CiphertextBlob: unknown;
-  readonly EncryptionContext: {[key: string]: any};
-  readonly GrantTokens: [];
-  readonly KeyId: string;
-  readonly EncryptionAlgorithm: string;
+  readonly EncryptionContext?: {[key: string]: any};
+  readonly GrantTokens?: [];
+  readonly KeyId?: string;
+  readonly EncryptionAlgorithm?: string;
 }
 export interface DeleteAlias {
   readonly AliasName: string;
@@ -55,14 +55,14 @@ export interface DeleteImportedKeyMaterial {
   readonly KeyId: string;
 }
 export interface DescribeCustomKeyStores {
-  readonly CustomKeyStoreId: string;
-  readonly CustomKeyStoreName: string;
-  readonly Limit: number;
-  readonly Marker: string;
+  readonly CustomKeyStoreId?: string;
+  readonly CustomKeyStoreName?: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
 }
 export interface DescribeKey {
   readonly KeyId: string;
-  readonly GrantTokens: [];
+  readonly GrantTokens?: [];
 }
 export interface DisableKey {
   readonly KeyId: string;
@@ -82,39 +82,39 @@ export interface EnableKeyRotation {
 export interface Encrypt {
   readonly KeyId: string;
   readonly Plaintext: unknown;
-  readonly EncryptionContext: {[key: string]: any};
-  readonly GrantTokens: [];
-  readonly EncryptionAlgorithm: string;
+  readonly EncryptionContext?: {[key: string]: any};
+  readonly GrantTokens?: [];
+  readonly EncryptionAlgorithm?: string;
 }
 export interface GenerateDataKey {
   readonly KeyId: string;
-  readonly EncryptionContext: {[key: string]: any};
-  readonly NumberOfBytes: number;
-  readonly KeySpec: string;
-  readonly GrantTokens: [];
+  readonly EncryptionContext?: {[key: string]: any};
+  readonly NumberOfBytes?: number;
+  readonly KeySpec?: string;
+  readonly GrantTokens?: [];
 }
 export interface GenerateDataKeyPair {
-  readonly EncryptionContext: {[key: string]: any};
+  readonly EncryptionContext?: {[key: string]: any};
   readonly KeyId: string;
   readonly KeyPairSpec: string;
-  readonly GrantTokens: [];
+  readonly GrantTokens?: [];
 }
 export interface GenerateDataKeyPairWithoutPlaintext {
-  readonly EncryptionContext: {[key: string]: any};
+  readonly EncryptionContext?: {[key: string]: any};
   readonly KeyId: string;
   readonly KeyPairSpec: string;
-  readonly GrantTokens: [];
+  readonly GrantTokens?: [];
 }
 export interface GenerateDataKeyWithoutPlaintext {
   readonly KeyId: string;
-  readonly EncryptionContext: {[key: string]: any};
-  readonly KeySpec: string;
-  readonly NumberOfBytes: number;
-  readonly GrantTokens: [];
+  readonly EncryptionContext?: {[key: string]: any};
+  readonly KeySpec?: string;
+  readonly NumberOfBytes?: number;
+  readonly GrantTokens?: [];
 }
 export interface GenerateRandom {
-  readonly NumberOfBytes: number;
-  readonly CustomKeyStoreId: string;
+  readonly NumberOfBytes?: number;
+  readonly CustomKeyStoreId?: string;
 }
 export interface GetKeyPolicy {
   readonly KeyId: string;
@@ -130,74 +130,74 @@ export interface GetParametersForImport {
 }
 export interface GetPublicKey {
   readonly KeyId: string;
-  readonly GrantTokens: [];
+  readonly GrantTokens?: [];
 }
 export interface ImportKeyMaterial {
   readonly KeyId: string;
   readonly ImportToken: unknown;
   readonly EncryptedKeyMaterial: unknown;
-  readonly ValidTo: Date;
-  readonly ExpirationModel: string;
+  readonly ValidTo?: Date;
+  readonly ExpirationModel?: string;
 }
 export interface ListAliases {
-  readonly KeyId: string;
-  readonly Limit: number;
-  readonly Marker: string;
+  readonly KeyId?: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
 }
 export interface ListGrants {
-  readonly Limit: number;
-  readonly Marker: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
   readonly KeyId: string;
-  readonly GrantId: string;
-  readonly GranteePrincipal: string;
+  readonly GrantId?: string;
+  readonly GranteePrincipal?: string;
 }
 export interface ListKeyPolicies {
   readonly KeyId: string;
-  readonly Limit: number;
-  readonly Marker: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
 }
 export interface ListKeys {
-  readonly Limit: number;
-  readonly Marker: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
 }
 export interface ListResourceTags {
   readonly KeyId: string;
-  readonly Limit: number;
-  readonly Marker: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
 }
 export interface ListRetirableGrants {
-  readonly Limit: number;
-  readonly Marker: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
   readonly RetiringPrincipal: string;
 }
 export interface PutKeyPolicy {
   readonly KeyId: string;
   readonly PolicyName: string;
   readonly Policy: string;
-  readonly BypassPolicyLockoutSafetyCheck: boolean;
+  readonly BypassPolicyLockoutSafetyCheck?: boolean;
 }
 export interface ReEncrypt {
   readonly CiphertextBlob: unknown;
-  readonly SourceEncryptionContext: {[key: string]: any};
-  readonly SourceKeyId: string;
+  readonly SourceEncryptionContext?: {[key: string]: any};
+  readonly SourceKeyId?: string;
   readonly DestinationKeyId: string;
-  readonly DestinationEncryptionContext: {[key: string]: any};
-  readonly SourceEncryptionAlgorithm: string;
-  readonly DestinationEncryptionAlgorithm: string;
-  readonly GrantTokens: [];
+  readonly DestinationEncryptionContext?: {[key: string]: any};
+  readonly SourceEncryptionAlgorithm?: string;
+  readonly DestinationEncryptionAlgorithm?: string;
+  readonly GrantTokens?: [];
 }
 export interface ReplicateKey {
   readonly KeyId: string;
   readonly ReplicaRegion: string;
-  readonly Policy: string;
-  readonly BypassPolicyLockoutSafetyCheck: boolean;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly Policy?: string;
+  readonly BypassPolicyLockoutSafetyCheck?: boolean;
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 export interface RetireGrant {
-  readonly GrantToken: string;
-  readonly KeyId: string;
-  readonly GrantId: string;
+  readonly GrantToken?: string;
+  readonly KeyId?: string;
+  readonly GrantId?: string;
 }
 export interface RevokeGrant {
   readonly KeyId: string;
@@ -205,13 +205,13 @@ export interface RevokeGrant {
 }
 export interface ScheduleKeyDeletion {
   readonly KeyId: string;
-  readonly PendingWindowInDays: number;
+  readonly PendingWindowInDays?: number;
 }
 export interface Sign {
   readonly KeyId: string;
   readonly Message: unknown;
-  readonly MessageType: string;
-  readonly GrantTokens: [];
+  readonly MessageType?: string;
+  readonly GrantTokens?: [];
   readonly SigningAlgorithm: string;
 }
 export interface TagResource {
@@ -228,9 +228,9 @@ export interface UpdateAlias {
 }
 export interface UpdateCustomKeyStore {
   readonly CustomKeyStoreId: string;
-  readonly NewCustomKeyStoreName: string;
-  readonly KeyStorePassword: string;
-  readonly CloudHsmClusterId: string;
+  readonly NewCustomKeyStoreName?: string;
+  readonly KeyStorePassword?: string;
+  readonly CloudHsmClusterId?: string;
 }
 export interface UpdateKeyDescription {
   readonly KeyId: string;
@@ -243,10 +243,10 @@ export interface UpdatePrimaryRegion {
 export interface Verify {
   readonly KeyId: string;
   readonly Message: unknown;
-  readonly MessageType: string;
+  readonly MessageType?: string;
   readonly Signature: unknown;
   readonly SigningAlgorithm: string;
-  readonly GrantTokens: [];
+  readonly GrantTokens?: [];
 }
 
 

@@ -3,16 +3,16 @@
  */
 export interface CreateActivity {
   readonly name: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface CreateStateMachine {
   readonly name: string;
   readonly definition: string;
   readonly roleArn: string;
-  readonly type: string;
-  readonly loggingConfiguration: LoggingConfiguration;
-  readonly tags: [];
-  readonly tracingConfiguration: TracingConfiguration;
+  readonly type?: string;
+  readonly loggingConfiguration?: LoggingConfiguration;
+  readonly tags?: [];
+  readonly tracingConfiguration?: TracingConfiguration;
 }
 export interface DeleteActivity {
   readonly activityArn: string;
@@ -34,36 +34,36 @@ export interface DescribeStateMachineForExecution {
 }
 export interface GetActivityTask {
   readonly activityArn: string;
-  readonly workerName: string;
+  readonly workerName?: string;
 }
 export interface GetExecutionHistory {
   readonly executionArn: string;
-  readonly maxResults: number;
-  readonly reverseOrder: boolean;
-  readonly nextToken: string;
-  readonly includeExecutionData: boolean;
+  readonly maxResults?: number;
+  readonly reverseOrder?: boolean;
+  readonly nextToken?: string;
+  readonly includeExecutionData?: boolean;
 }
 export interface ListActivities {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListExecutions {
   readonly stateMachineArn: string;
-  readonly statusFilter: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly statusFilter?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListStateMachines {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface SendTaskFailure {
   readonly taskToken: string;
-  readonly error: string;
-  readonly cause: string;
+  readonly error?: string;
+  readonly cause?: string;
 }
 export interface SendTaskHeartbeat {
   readonly taskToken: string;
@@ -74,20 +74,20 @@ export interface SendTaskSuccess {
 }
 export interface StartExecution {
   readonly stateMachineArn: string;
-  readonly name: string;
-  readonly input: string;
-  readonly traceHeader: string;
+  readonly name?: string;
+  readonly input?: string;
+  readonly traceHeader?: string;
 }
 export interface StartSyncExecution {
   readonly stateMachineArn: string;
-  readonly name: string;
-  readonly input: string;
-  readonly traceHeader: string;
+  readonly name?: string;
+  readonly input?: string;
+  readonly traceHeader?: string;
 }
 export interface StopExecution {
   readonly executionArn: string;
-  readonly error: string;
-  readonly cause: string;
+  readonly error?: string;
+  readonly cause?: string;
 }
 export interface TagResource {
   readonly resourceArn: string;
@@ -99,10 +99,10 @@ export interface UntagResource {
 }
 export interface UpdateStateMachine {
   readonly stateMachineArn: string;
-  readonly definition: string;
-  readonly roleArn: string;
-  readonly loggingConfiguration: LoggingConfiguration;
-  readonly tracingConfiguration: TracingConfiguration;
+  readonly definition?: string;
+  readonly roleArn?: string;
+  readonly loggingConfiguration?: LoggingConfiguration;
+  readonly tracingConfiguration?: TracingConfiguration;
 }
 
 

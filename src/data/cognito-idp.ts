@@ -13,18 +13,18 @@ export interface AdminAddUserToGroup {
 export interface AdminConfirmSignUp {
   readonly UserPoolId: string;
   readonly Username: string;
-  readonly ClientMetadata: {[key: string]: any};
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface AdminCreateUser {
   readonly UserPoolId: string;
   readonly Username: string;
-  readonly UserAttributes: [];
-  readonly ValidationData: [];
-  readonly TemporaryPassword: string;
-  readonly ForceAliasCreation: boolean;
-  readonly MessageAction: string;
-  readonly DesiredDeliveryMediums: [];
-  readonly ClientMetadata: {[key: string]: any};
+  readonly UserAttributes?: [];
+  readonly ValidationData?: [];
+  readonly TemporaryPassword?: string;
+  readonly ForceAliasCreation?: boolean;
+  readonly MessageAction?: string;
+  readonly DesiredDeliveryMediums?: [];
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface AdminDeleteUser {
   readonly UserPoolId: string;
@@ -65,10 +65,10 @@ export interface AdminInitiateAuth {
   readonly UserPoolId: string;
   readonly ClientId: string;
   readonly AuthFlow: string;
-  readonly AuthParameters: {[key: string]: any};
-  readonly ClientMetadata: {[key: string]: any};
-  readonly AnalyticsMetadata: AnalyticsMetadataType;
-  readonly ContextData: ContextDataType;
+  readonly AuthParameters?: {[key: string]: any};
+  readonly ClientMetadata?: {[key: string]: any};
+  readonly AnalyticsMetadata?: AnalyticsMetadataType;
+  readonly ContextData?: ContextDataType;
 }
 export interface AdminLinkProviderForUser {
   readonly UserPoolId: string;
@@ -78,20 +78,20 @@ export interface AdminLinkProviderForUser {
 export interface AdminListDevices {
   readonly UserPoolId: string;
   readonly Username: string;
-  readonly Limit: number;
-  readonly PaginationToken: string;
+  readonly Limit?: number;
+  readonly PaginationToken?: string;
 }
 export interface AdminListGroupsForUser {
   readonly Username: string;
   readonly UserPoolId: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface AdminListUserAuthEvents {
   readonly UserPoolId: string;
   readonly Username: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface AdminRemoveUserFromGroup {
   readonly UserPoolId: string;
@@ -101,21 +101,21 @@ export interface AdminRemoveUserFromGroup {
 export interface AdminResetUserPassword {
   readonly UserPoolId: string;
   readonly Username: string;
-  readonly ClientMetadata: {[key: string]: any};
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface AdminRespondToAuthChallenge {
   readonly UserPoolId: string;
   readonly ClientId: string;
   readonly ChallengeName: string;
-  readonly ChallengeResponses: {[key: string]: any};
-  readonly Session: string;
-  readonly AnalyticsMetadata: AnalyticsMetadataType;
-  readonly ContextData: ContextDataType;
-  readonly ClientMetadata: {[key: string]: any};
+  readonly ChallengeResponses?: {[key: string]: any};
+  readonly Session?: string;
+  readonly AnalyticsMetadata?: AnalyticsMetadataType;
+  readonly ContextData?: ContextDataType;
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface AdminSetUserMFAPreference {
-  readonly SMSMfaSettings: SMSMfaSettingsType;
-  readonly SoftwareTokenMfaSettings: SoftwareTokenMfaSettingsType;
+  readonly SMSMfaSettings?: SMSMfaSettingsType;
+  readonly SoftwareTokenMfaSettings?: SoftwareTokenMfaSettingsType;
   readonly Username: string;
   readonly UserPoolId: string;
 }
@@ -123,7 +123,7 @@ export interface AdminSetUserPassword {
   readonly UserPoolId: string;
   readonly Username: string;
   readonly Password: string;
-  readonly Permanent: boolean;
+  readonly Permanent?: boolean;
 }
 export interface AdminSetUserSettings {
   readonly UserPoolId: string;
@@ -140,21 +140,21 @@ export interface AdminUpdateDeviceStatus {
   readonly UserPoolId: string;
   readonly Username: string;
   readonly DeviceKey: string;
-  readonly DeviceRememberedStatus: string;
+  readonly DeviceRememberedStatus?: string;
 }
 export interface AdminUpdateUserAttributes {
   readonly UserPoolId: string;
   readonly Username: string;
   readonly UserAttributes: [];
-  readonly ClientMetadata: {[key: string]: any};
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface AdminUserGlobalSignOut {
   readonly UserPoolId: string;
   readonly Username: string;
 }
 export interface AssociateSoftwareToken {
-  readonly AccessToken: string;
-  readonly Session: string;
+  readonly AccessToken?: string;
+  readonly Session?: string;
 }
 export interface ChangePassword {
   readonly PreviousPassword: string;
@@ -164,49 +164,49 @@ export interface ChangePassword {
 export interface ConfirmDevice {
   readonly AccessToken: string;
   readonly DeviceKey: string;
-  readonly DeviceSecretVerifierConfig: DeviceSecretVerifierConfigType;
-  readonly DeviceName: string;
+  readonly DeviceSecretVerifierConfig?: DeviceSecretVerifierConfigType;
+  readonly DeviceName?: string;
 }
 export interface ConfirmForgotPassword {
   readonly ClientId: string;
-  readonly SecretHash: string;
+  readonly SecretHash?: string;
   readonly Username: string;
   readonly ConfirmationCode: string;
   readonly Password: string;
-  readonly AnalyticsMetadata: AnalyticsMetadataType;
-  readonly UserContextData: UserContextDataType;
-  readonly ClientMetadata: {[key: string]: any};
+  readonly AnalyticsMetadata?: AnalyticsMetadataType;
+  readonly UserContextData?: UserContextDataType;
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface ConfirmSignUp {
   readonly ClientId: string;
-  readonly SecretHash: string;
+  readonly SecretHash?: string;
   readonly Username: string;
   readonly ConfirmationCode: string;
-  readonly ForceAliasCreation: boolean;
-  readonly AnalyticsMetadata: AnalyticsMetadataType;
-  readonly UserContextData: UserContextDataType;
-  readonly ClientMetadata: {[key: string]: any};
+  readonly ForceAliasCreation?: boolean;
+  readonly AnalyticsMetadata?: AnalyticsMetadataType;
+  readonly UserContextData?: UserContextDataType;
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface CreateGroup {
   readonly GroupName: string;
   readonly UserPoolId: string;
-  readonly Description: string;
-  readonly RoleArn: string;
-  readonly Precedence: number;
+  readonly Description?: string;
+  readonly RoleArn?: string;
+  readonly Precedence?: number;
 }
 export interface CreateIdentityProvider {
   readonly UserPoolId: string;
   readonly ProviderName: string;
   readonly ProviderType: string;
   readonly ProviderDetails: {[key: string]: any};
-  readonly AttributeMapping: {[key: string]: any};
-  readonly IdpIdentifiers: [];
+  readonly AttributeMapping?: {[key: string]: any};
+  readonly IdpIdentifiers?: [];
 }
 export interface CreateResourceServer {
   readonly UserPoolId: string;
   readonly Identifier: string;
   readonly Name: string;
-  readonly Scopes: [];
+  readonly Scopes?: [];
 }
 export interface CreateUserImportJob {
   readonly JobName: string;
@@ -215,53 +215,53 @@ export interface CreateUserImportJob {
 }
 export interface CreateUserPool {
   readonly PoolName: string;
-  readonly Policies: UserPoolPolicyType;
-  readonly LambdaConfig: LambdaConfigType;
-  readonly AutoVerifiedAttributes: [];
-  readonly AliasAttributes: [];
-  readonly UsernameAttributes: [];
-  readonly SmsVerificationMessage: string;
-  readonly EmailVerificationMessage: string;
-  readonly EmailVerificationSubject: string;
-  readonly VerificationMessageTemplate: VerificationMessageTemplateType;
-  readonly SmsAuthenticationMessage: string;
-  readonly MfaConfiguration: string;
-  readonly DeviceConfiguration: DeviceConfigurationType;
-  readonly EmailConfiguration: EmailConfigurationType;
-  readonly SmsConfiguration: SmsConfigurationType;
-  readonly UserPoolTags: {[key: string]: any};
-  readonly AdminCreateUserConfig: AdminCreateUserConfigType;
-  readonly Schema: [];
-  readonly UserPoolAddOns: UserPoolAddOnsType;
-  readonly UsernameConfiguration: UsernameConfigurationType;
-  readonly AccountRecoverySetting: AccountRecoverySettingType;
+  readonly Policies?: UserPoolPolicyType;
+  readonly LambdaConfig?: LambdaConfigType;
+  readonly AutoVerifiedAttributes?: [];
+  readonly AliasAttributes?: [];
+  readonly UsernameAttributes?: [];
+  readonly SmsVerificationMessage?: string;
+  readonly EmailVerificationMessage?: string;
+  readonly EmailVerificationSubject?: string;
+  readonly VerificationMessageTemplate?: VerificationMessageTemplateType;
+  readonly SmsAuthenticationMessage?: string;
+  readonly MfaConfiguration?: string;
+  readonly DeviceConfiguration?: DeviceConfigurationType;
+  readonly EmailConfiguration?: EmailConfigurationType;
+  readonly SmsConfiguration?: SmsConfigurationType;
+  readonly UserPoolTags?: {[key: string]: any};
+  readonly AdminCreateUserConfig?: AdminCreateUserConfigType;
+  readonly Schema?: [];
+  readonly UserPoolAddOns?: UserPoolAddOnsType;
+  readonly UsernameConfiguration?: UsernameConfigurationType;
+  readonly AccountRecoverySetting?: AccountRecoverySettingType;
 }
 export interface CreateUserPoolClient {
   readonly UserPoolId: string;
   readonly ClientName: string;
-  readonly GenerateSecret: boolean;
-  readonly RefreshTokenValidity: number;
-  readonly AccessTokenValidity: number;
-  readonly IdTokenValidity: number;
-  readonly TokenValidityUnits: TokenValidityUnitsType;
-  readonly ReadAttributes: [];
-  readonly WriteAttributes: [];
-  readonly ExplicitAuthFlows: [];
-  readonly SupportedIdentityProviders: [];
-  readonly CallbackURLs: [];
-  readonly LogoutURLs: [];
-  readonly DefaultRedirectURI: string;
-  readonly AllowedOAuthFlows: [];
-  readonly AllowedOAuthScopes: [];
-  readonly AllowedOAuthFlowsUserPoolClient: boolean;
-  readonly AnalyticsConfiguration: AnalyticsConfigurationType;
-  readonly PreventUserExistenceErrors: string;
-  readonly EnableTokenRevocation: boolean;
+  readonly GenerateSecret?: boolean;
+  readonly RefreshTokenValidity?: number;
+  readonly AccessTokenValidity?: number;
+  readonly IdTokenValidity?: number;
+  readonly TokenValidityUnits?: TokenValidityUnitsType;
+  readonly ReadAttributes?: [];
+  readonly WriteAttributes?: [];
+  readonly ExplicitAuthFlows?: [];
+  readonly SupportedIdentityProviders?: [];
+  readonly CallbackURLs?: [];
+  readonly LogoutURLs?: [];
+  readonly DefaultRedirectURI?: string;
+  readonly AllowedOAuthFlows?: [];
+  readonly AllowedOAuthScopes?: [];
+  readonly AllowedOAuthFlowsUserPoolClient?: boolean;
+  readonly AnalyticsConfiguration?: AnalyticsConfigurationType;
+  readonly PreventUserExistenceErrors?: string;
+  readonly EnableTokenRevocation?: boolean;
 }
 export interface CreateUserPoolDomain {
   readonly Domain: string;
   readonly UserPoolId: string;
-  readonly CustomDomainConfig: CustomDomainConfigType;
+  readonly CustomDomainConfig?: CustomDomainConfigType;
 }
 export interface DeleteGroup {
   readonly GroupName: string;
@@ -303,7 +303,7 @@ export interface DescribeResourceServer {
 }
 export interface DescribeRiskConfiguration {
   readonly UserPoolId: string;
-  readonly ClientId: string;
+  readonly ClientId?: string;
 }
 export interface DescribeUserImportJob {
   readonly UserPoolId: string;
@@ -320,23 +320,23 @@ export interface DescribeUserPoolDomain {
   readonly Domain: string;
 }
 export interface ForgetDevice {
-  readonly AccessToken: string;
+  readonly AccessToken?: string;
   readonly DeviceKey: string;
 }
 export interface ForgotPassword {
   readonly ClientId: string;
-  readonly SecretHash: string;
-  readonly UserContextData: UserContextDataType;
+  readonly SecretHash?: string;
+  readonly UserContextData?: UserContextDataType;
   readonly Username: string;
-  readonly AnalyticsMetadata: AnalyticsMetadataType;
-  readonly ClientMetadata: {[key: string]: any};
+  readonly AnalyticsMetadata?: AnalyticsMetadataType;
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface GetCSVHeader {
   readonly UserPoolId: string;
 }
 export interface GetDevice {
   readonly DeviceKey: string;
-  readonly AccessToken: string;
+  readonly AccessToken?: string;
 }
 export interface GetGroup {
   readonly GroupName: string;
@@ -351,7 +351,7 @@ export interface GetSigningCertificate {
 }
 export interface GetUICustomization {
   readonly UserPoolId: string;
-  readonly ClientId: string;
+  readonly ClientId?: string;
 }
 export interface GetUser {
   readonly AccessToken: string;
@@ -359,7 +359,7 @@ export interface GetUser {
 export interface GetUserAttributeVerificationCode {
   readonly AccessToken: string;
   readonly AttributeName: string;
-  readonly ClientMetadata: {[key: string]: any};
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface GetUserPoolMfaConfig {
   readonly UserPoolId: string;
@@ -369,31 +369,31 @@ export interface GlobalSignOut {
 }
 export interface InitiateAuth {
   readonly AuthFlow: string;
-  readonly AuthParameters: {[key: string]: any};
-  readonly ClientMetadata: {[key: string]: any};
+  readonly AuthParameters?: {[key: string]: any};
+  readonly ClientMetadata?: {[key: string]: any};
   readonly ClientId: string;
-  readonly AnalyticsMetadata: AnalyticsMetadataType;
-  readonly UserContextData: UserContextDataType;
+  readonly AnalyticsMetadata?: AnalyticsMetadataType;
+  readonly UserContextData?: UserContextDataType;
 }
 export interface ListDevices {
   readonly AccessToken: string;
-  readonly Limit: number;
-  readonly PaginationToken: string;
+  readonly Limit?: number;
+  readonly PaginationToken?: string;
 }
 export interface ListGroups {
   readonly UserPoolId: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface ListIdentityProviders {
   readonly UserPoolId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListResourceServers {
   readonly UserPoolId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -401,75 +401,75 @@ export interface ListTagsForResource {
 export interface ListUserImportJobs {
   readonly UserPoolId: string;
   readonly MaxResults: number;
-  readonly PaginationToken: string;
+  readonly PaginationToken?: string;
 }
 export interface ListUserPoolClients {
   readonly UserPoolId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListUserPools {
-  readonly NextToken: string;
+  readonly NextToken?: string;
   readonly MaxResults: number;
 }
 export interface ListUsers {
   readonly UserPoolId: string;
-  readonly AttributesToGet: [];
-  readonly Limit: number;
-  readonly PaginationToken: string;
-  readonly Filter: string;
+  readonly AttributesToGet?: [];
+  readonly Limit?: number;
+  readonly PaginationToken?: string;
+  readonly Filter?: string;
 }
 export interface ListUsersInGroup {
   readonly UserPoolId: string;
   readonly GroupName: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 export interface ResendConfirmationCode {
   readonly ClientId: string;
-  readonly SecretHash: string;
-  readonly UserContextData: UserContextDataType;
+  readonly SecretHash?: string;
+  readonly UserContextData?: UserContextDataType;
   readonly Username: string;
-  readonly AnalyticsMetadata: AnalyticsMetadataType;
-  readonly ClientMetadata: {[key: string]: any};
+  readonly AnalyticsMetadata?: AnalyticsMetadataType;
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface RespondToAuthChallenge {
   readonly ClientId: string;
   readonly ChallengeName: string;
-  readonly Session: string;
-  readonly ChallengeResponses: {[key: string]: any};
-  readonly AnalyticsMetadata: AnalyticsMetadataType;
-  readonly UserContextData: UserContextDataType;
-  readonly ClientMetadata: {[key: string]: any};
+  readonly Session?: string;
+  readonly ChallengeResponses?: {[key: string]: any};
+  readonly AnalyticsMetadata?: AnalyticsMetadataType;
+  readonly UserContextData?: UserContextDataType;
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface RevokeToken {
   readonly Token: string;
   readonly ClientId: string;
-  readonly ClientSecret: string;
+  readonly ClientSecret?: string;
 }
 export interface SetRiskConfiguration {
   readonly UserPoolId: string;
-  readonly ClientId: string;
-  readonly CompromisedCredentialsRiskConfiguration: CompromisedCredentialsRiskConfigurationType;
-  readonly AccountTakeoverRiskConfiguration: AccountTakeoverRiskConfigurationType;
-  readonly RiskExceptionConfiguration: RiskExceptionConfigurationType;
+  readonly ClientId?: string;
+  readonly CompromisedCredentialsRiskConfiguration?: CompromisedCredentialsRiskConfigurationType;
+  readonly AccountTakeoverRiskConfiguration?: AccountTakeoverRiskConfigurationType;
+  readonly RiskExceptionConfiguration?: RiskExceptionConfigurationType;
 }
 export interface SetUICustomization {
   readonly UserPoolId: string;
-  readonly ClientId: string;
-  readonly CSS: string;
-  readonly ImageFile: unknown;
+  readonly ClientId?: string;
+  readonly CSS?: string;
+  readonly ImageFile?: unknown;
 }
 export interface SetUserMFAPreference {
-  readonly SMSMfaSettings: SMSMfaSettingsType;
-  readonly SoftwareTokenMfaSettings: SoftwareTokenMfaSettingsType;
+  readonly SMSMfaSettings?: SMSMfaSettingsType;
+  readonly SoftwareTokenMfaSettings?: SoftwareTokenMfaSettingsType;
   readonly AccessToken: string;
 }
 export interface SetUserPoolMfaConfig {
   readonly UserPoolId: string;
-  readonly SmsMfaConfiguration: SmsMfaConfigType;
-  readonly SoftwareTokenMfaConfiguration: SoftwareTokenMfaConfigType;
-  readonly MfaConfiguration: string;
+  readonly SmsMfaConfiguration?: SmsMfaConfigType;
+  readonly SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType;
+  readonly MfaConfiguration?: string;
 }
 export interface SetUserSettings {
   readonly AccessToken: string;
@@ -477,14 +477,14 @@ export interface SetUserSettings {
 }
 export interface SignUp {
   readonly ClientId: string;
-  readonly SecretHash: string;
+  readonly SecretHash?: string;
   readonly Username: string;
   readonly Password: string;
-  readonly UserAttributes: [];
-  readonly ValidationData: [];
-  readonly AnalyticsMetadata: AnalyticsMetadataType;
-  readonly UserContextData: UserContextDataType;
-  readonly ClientMetadata: {[key: string]: any};
+  readonly UserAttributes?: [];
+  readonly ValidationData?: [];
+  readonly AnalyticsMetadata?: AnalyticsMetadataType;
+  readonly UserContextData?: UserContextDataType;
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface StartUserImportJob {
   readonly UserPoolId: string;
@@ -512,73 +512,73 @@ export interface UpdateAuthEventFeedback {
 export interface UpdateDeviceStatus {
   readonly AccessToken: string;
   readonly DeviceKey: string;
-  readonly DeviceRememberedStatus: string;
+  readonly DeviceRememberedStatus?: string;
 }
 export interface UpdateGroup {
   readonly GroupName: string;
   readonly UserPoolId: string;
-  readonly Description: string;
-  readonly RoleArn: string;
-  readonly Precedence: number;
+  readonly Description?: string;
+  readonly RoleArn?: string;
+  readonly Precedence?: number;
 }
 export interface UpdateIdentityProvider {
   readonly UserPoolId: string;
   readonly ProviderName: string;
-  readonly ProviderDetails: {[key: string]: any};
-  readonly AttributeMapping: {[key: string]: any};
-  readonly IdpIdentifiers: [];
+  readonly ProviderDetails?: {[key: string]: any};
+  readonly AttributeMapping?: {[key: string]: any};
+  readonly IdpIdentifiers?: [];
 }
 export interface UpdateResourceServer {
   readonly UserPoolId: string;
   readonly Identifier: string;
   readonly Name: string;
-  readonly Scopes: [];
+  readonly Scopes?: [];
 }
 export interface UpdateUserAttributes {
   readonly UserAttributes: [];
   readonly AccessToken: string;
-  readonly ClientMetadata: {[key: string]: any};
+  readonly ClientMetadata?: {[key: string]: any};
 }
 export interface UpdateUserPool {
   readonly UserPoolId: string;
-  readonly Policies: UserPoolPolicyType;
-  readonly LambdaConfig: LambdaConfigType;
-  readonly AutoVerifiedAttributes: [];
-  readonly SmsVerificationMessage: string;
-  readonly EmailVerificationMessage: string;
-  readonly EmailVerificationSubject: string;
-  readonly VerificationMessageTemplate: VerificationMessageTemplateType;
-  readonly SmsAuthenticationMessage: string;
-  readonly MfaConfiguration: string;
-  readonly DeviceConfiguration: DeviceConfigurationType;
-  readonly EmailConfiguration: EmailConfigurationType;
-  readonly SmsConfiguration: SmsConfigurationType;
-  readonly UserPoolTags: {[key: string]: any};
-  readonly AdminCreateUserConfig: AdminCreateUserConfigType;
-  readonly UserPoolAddOns: UserPoolAddOnsType;
-  readonly AccountRecoverySetting: AccountRecoverySettingType;
+  readonly Policies?: UserPoolPolicyType;
+  readonly LambdaConfig?: LambdaConfigType;
+  readonly AutoVerifiedAttributes?: [];
+  readonly SmsVerificationMessage?: string;
+  readonly EmailVerificationMessage?: string;
+  readonly EmailVerificationSubject?: string;
+  readonly VerificationMessageTemplate?: VerificationMessageTemplateType;
+  readonly SmsAuthenticationMessage?: string;
+  readonly MfaConfiguration?: string;
+  readonly DeviceConfiguration?: DeviceConfigurationType;
+  readonly EmailConfiguration?: EmailConfigurationType;
+  readonly SmsConfiguration?: SmsConfigurationType;
+  readonly UserPoolTags?: {[key: string]: any};
+  readonly AdminCreateUserConfig?: AdminCreateUserConfigType;
+  readonly UserPoolAddOns?: UserPoolAddOnsType;
+  readonly AccountRecoverySetting?: AccountRecoverySettingType;
 }
 export interface UpdateUserPoolClient {
   readonly UserPoolId: string;
   readonly ClientId: string;
-  readonly ClientName: string;
-  readonly RefreshTokenValidity: number;
-  readonly AccessTokenValidity: number;
-  readonly IdTokenValidity: number;
-  readonly TokenValidityUnits: TokenValidityUnitsType;
-  readonly ReadAttributes: [];
-  readonly WriteAttributes: [];
-  readonly ExplicitAuthFlows: [];
-  readonly SupportedIdentityProviders: [];
-  readonly CallbackURLs: [];
-  readonly LogoutURLs: [];
-  readonly DefaultRedirectURI: string;
-  readonly AllowedOAuthFlows: [];
-  readonly AllowedOAuthScopes: [];
-  readonly AllowedOAuthFlowsUserPoolClient: boolean;
-  readonly AnalyticsConfiguration: AnalyticsConfigurationType;
-  readonly PreventUserExistenceErrors: string;
-  readonly EnableTokenRevocation: boolean;
+  readonly ClientName?: string;
+  readonly RefreshTokenValidity?: number;
+  readonly AccessTokenValidity?: number;
+  readonly IdTokenValidity?: number;
+  readonly TokenValidityUnits?: TokenValidityUnitsType;
+  readonly ReadAttributes?: [];
+  readonly WriteAttributes?: [];
+  readonly ExplicitAuthFlows?: [];
+  readonly SupportedIdentityProviders?: [];
+  readonly CallbackURLs?: [];
+  readonly LogoutURLs?: [];
+  readonly DefaultRedirectURI?: string;
+  readonly AllowedOAuthFlows?: [];
+  readonly AllowedOAuthScopes?: [];
+  readonly AllowedOAuthFlowsUserPoolClient?: boolean;
+  readonly AnalyticsConfiguration?: AnalyticsConfigurationType;
+  readonly PreventUserExistenceErrors?: string;
+  readonly EnableTokenRevocation?: boolean;
 }
 export interface UpdateUserPoolDomain {
   readonly Domain: string;
@@ -586,10 +586,10 @@ export interface UpdateUserPoolDomain {
   readonly CustomDomainConfig: CustomDomainConfigType;
 }
 export interface VerifySoftwareToken {
-  readonly AccessToken: string;
-  readonly Session: string;
+  readonly AccessToken?: string;
+  readonly Session?: string;
   readonly UserCode: string;
-  readonly FriendlyDeviceName: string;
+  readonly FriendlyDeviceName?: string;
 }
 export interface VerifyUserAttribute {
   readonly AccessToken: string;

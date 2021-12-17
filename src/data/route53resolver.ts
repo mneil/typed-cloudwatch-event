@@ -7,8 +7,8 @@ export interface AssociateFirewallRuleGroup {
   readonly VpcId: string;
   readonly Priority: number;
   readonly Name: string;
-  readonly MutationProtection: string;
-  readonly Tags: [];
+  readonly MutationProtection?: string;
+  readonly Tags?: [];
 }
 export interface AssociateResolverEndpointIpAddress {
   readonly ResolverEndpointId: string;
@@ -20,13 +20,13 @@ export interface AssociateResolverQueryLogConfig {
 }
 export interface AssociateResolverRule {
   readonly ResolverRuleId: string;
-  readonly Name: string;
+  readonly Name?: string;
   readonly VPCId: string;
 }
 export interface CreateFirewallDomainList {
   readonly CreatorRequestId: string;
   readonly Name: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateFirewallRule {
   readonly CreatorRequestId: string;
@@ -34,39 +34,39 @@ export interface CreateFirewallRule {
   readonly FirewallDomainListId: string;
   readonly Priority: number;
   readonly Action: string;
-  readonly BlockResponse: string;
-  readonly BlockOverrideDomain: string;
-  readonly BlockOverrideDnsType: string;
-  readonly BlockOverrideTtl: number;
+  readonly BlockResponse?: string;
+  readonly BlockOverrideDomain?: string;
+  readonly BlockOverrideDnsType?: string;
+  readonly BlockOverrideTtl?: number;
   readonly Name: string;
 }
 export interface CreateFirewallRuleGroup {
   readonly CreatorRequestId: string;
   readonly Name: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateResolverEndpoint {
   readonly CreatorRequestId: string;
-  readonly Name: string;
+  readonly Name?: string;
   readonly SecurityGroupIds: [];
   readonly Direction: string;
   readonly IpAddresses: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateResolverQueryLogConfig {
   readonly Name: string;
   readonly DestinationArn: string;
   readonly CreatorRequestId: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateResolverRule {
   readonly CreatorRequestId: string;
-  readonly Name: string;
+  readonly Name?: string;
   readonly RuleType: string;
   readonly DomainName: string;
-  readonly TargetIps: [];
-  readonly ResolverEndpointId: string;
-  readonly Tags: [];
+  readonly TargetIps?: [];
+  readonly ResolverEndpointId?: string;
+  readonly Tags?: [];
 }
 export interface DeleteFirewallDomainList {
   readonly FirewallDomainListId: string;
@@ -150,84 +150,84 @@ export interface ImportFirewallDomains {
   readonly DomainFileUrl: string;
 }
 export interface ListFirewallConfigs {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListFirewallDomainLists {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListFirewallDomains {
   readonly FirewallDomainListId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListFirewallRuleGroupAssociations {
-  readonly FirewallRuleGroupId: string;
-  readonly VpcId: string;
-  readonly Priority: number;
-  readonly Status: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly FirewallRuleGroupId?: string;
+  readonly VpcId?: string;
+  readonly Priority?: number;
+  readonly Status?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListFirewallRuleGroups {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListFirewallRules {
   readonly FirewallRuleGroupId: string;
-  readonly Priority: number;
-  readonly Action: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Priority?: number;
+  readonly Action?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListResolverConfigs {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListResolverDnssecConfigs {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 export interface ListResolverEndpointIpAddresses {
   readonly ResolverEndpointId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListResolverEndpoints {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 export interface ListResolverQueryLogConfigAssociations {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListResolverQueryLogConfigs {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
-  readonly SortBy: string;
-  readonly SortOrder: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 export interface ListResolverRuleAssociations {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 export interface ListResolverRules {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface PutFirewallRuleGroupPolicy {
   readonly Arn: string;
@@ -261,19 +261,19 @@ export interface UpdateFirewallDomains {
 export interface UpdateFirewallRule {
   readonly FirewallRuleGroupId: string;
   readonly FirewallDomainListId: string;
-  readonly Priority: number;
-  readonly Action: string;
-  readonly BlockResponse: string;
-  readonly BlockOverrideDomain: string;
-  readonly BlockOverrideDnsType: string;
-  readonly BlockOverrideTtl: number;
-  readonly Name: string;
+  readonly Priority?: number;
+  readonly Action?: string;
+  readonly BlockResponse?: string;
+  readonly BlockOverrideDomain?: string;
+  readonly BlockOverrideDnsType?: string;
+  readonly BlockOverrideTtl?: number;
+  readonly Name?: string;
 }
 export interface UpdateFirewallRuleGroupAssociation {
   readonly FirewallRuleGroupAssociationId: string;
-  readonly Priority: number;
-  readonly MutationProtection: string;
-  readonly Name: string;
+  readonly Priority?: number;
+  readonly MutationProtection?: string;
+  readonly Name?: string;
 }
 export interface UpdateResolverConfig {
   readonly ResourceId: string;
@@ -285,7 +285,7 @@ export interface UpdateResolverDnssecConfig {
 }
 export interface UpdateResolverEndpoint {
   readonly ResolverEndpointId: string;
-  readonly Name: string;
+  readonly Name?: string;
 }
 export interface UpdateResolverRule {
   readonly ResolverRuleId: string;

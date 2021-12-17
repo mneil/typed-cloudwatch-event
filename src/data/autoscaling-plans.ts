@@ -13,15 +13,15 @@ export interface DeleteScalingPlan {
 export interface DescribeScalingPlanResources {
   readonly ScalingPlanName: string;
   readonly ScalingPlanVersion: number;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeScalingPlans {
-  readonly ScalingPlanNames: [];
-  readonly ScalingPlanVersion: number;
-  readonly ApplicationSources: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ScalingPlanNames?: [];
+  readonly ScalingPlanVersion?: number;
+  readonly ApplicationSources?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetScalingPlanResourceForecastData {
   readonly ScalingPlanName: string;
@@ -36,8 +36,8 @@ export interface GetScalingPlanResourceForecastData {
 export interface UpdateScalingPlan {
   readonly ScalingPlanName: string;
   readonly ScalingPlanVersion: number;
-  readonly ApplicationSource: ApplicationSource;
-  readonly ScalingInstructions: [];
+  readonly ApplicationSource?: ApplicationSource;
+  readonly ScalingInstructions?: [];
 }
 
 

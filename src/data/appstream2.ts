@@ -19,111 +19,111 @@ export interface CopyImage {
   readonly SourceImageName: string;
   readonly DestinationImageName: string;
   readonly DestinationRegion: string;
-  readonly DestinationImageDescription: string;
+  readonly DestinationImageDescription?: string;
 }
 export interface CreateAppBlock {
   readonly Name: string;
-  readonly Description: string;
-  readonly DisplayName: string;
+  readonly Description?: string;
+  readonly DisplayName?: string;
   readonly SourceS3Location: S3Location;
   readonly SetupScriptDetails: ScriptDetails;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateApplication {
   readonly Name: string;
-  readonly DisplayName: string;
-  readonly Description: string;
+  readonly DisplayName?: string;
+  readonly Description?: string;
   readonly IconS3Location: S3Location;
   readonly LaunchPath: string;
-  readonly WorkingDirectory: string;
-  readonly LaunchParameters: string;
+  readonly WorkingDirectory?: string;
+  readonly LaunchParameters?: string;
   readonly Platforms: [];
   readonly InstanceFamilies: [];
   readonly AppBlockArn: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateDirectoryConfig {
   readonly DirectoryName: string;
   readonly OrganizationalUnitDistinguishedNames: [];
-  readonly ServiceAccountCredentials: ServiceAccountCredentials;
+  readonly ServiceAccountCredentials?: ServiceAccountCredentials;
 }
 export interface CreateFleet {
   readonly Name: string;
-  readonly ImageName: string;
-  readonly ImageArn: string;
+  readonly ImageName?: string;
+  readonly ImageArn?: string;
   readonly InstanceType: string;
-  readonly FleetType: string;
-  readonly ComputeCapacity: ComputeCapacity;
-  readonly VpcConfig: VpcConfig;
-  readonly MaxUserDurationInSeconds: number;
-  readonly DisconnectTimeoutInSeconds: number;
-  readonly Description: string;
-  readonly DisplayName: string;
-  readonly EnableDefaultInternetAccess: boolean;
-  readonly DomainJoinInfo: DomainJoinInfo;
-  readonly Tags: {[key: string]: any};
-  readonly IdleDisconnectTimeoutInSeconds: number;
-  readonly IamRoleArn: string;
-  readonly StreamView: string;
-  readonly Platform: string;
-  readonly MaxConcurrentSessions: number;
-  readonly UsbDeviceFilterStrings: [];
+  readonly FleetType?: string;
+  readonly ComputeCapacity?: ComputeCapacity;
+  readonly VpcConfig?: VpcConfig;
+  readonly MaxUserDurationInSeconds?: number;
+  readonly DisconnectTimeoutInSeconds?: number;
+  readonly Description?: string;
+  readonly DisplayName?: string;
+  readonly EnableDefaultInternetAccess?: boolean;
+  readonly DomainJoinInfo?: DomainJoinInfo;
+  readonly Tags?: {[key: string]: any};
+  readonly IdleDisconnectTimeoutInSeconds?: number;
+  readonly IamRoleArn?: string;
+  readonly StreamView?: string;
+  readonly Platform?: string;
+  readonly MaxConcurrentSessions?: number;
+  readonly UsbDeviceFilterStrings?: [];
 }
 export interface CreateImageBuilder {
   readonly Name: string;
-  readonly ImageName: string;
-  readonly ImageArn: string;
+  readonly ImageName?: string;
+  readonly ImageArn?: string;
   readonly InstanceType: string;
-  readonly Description: string;
-  readonly DisplayName: string;
-  readonly VpcConfig: VpcConfig;
-  readonly IamRoleArn: string;
-  readonly EnableDefaultInternetAccess: boolean;
-  readonly DomainJoinInfo: DomainJoinInfo;
-  readonly AppstreamAgentVersion: string;
-  readonly Tags: {[key: string]: any};
-  readonly AccessEndpoints: [];
+  readonly Description?: string;
+  readonly DisplayName?: string;
+  readonly VpcConfig?: VpcConfig;
+  readonly IamRoleArn?: string;
+  readonly EnableDefaultInternetAccess?: boolean;
+  readonly DomainJoinInfo?: DomainJoinInfo;
+  readonly AppstreamAgentVersion?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly AccessEndpoints?: [];
 }
 export interface CreateImageBuilderStreamingURL {
   readonly Name: string;
-  readonly Validity: number;
+  readonly Validity?: number;
 }
 export interface CreateStack {
   readonly Name: string;
-  readonly Description: string;
-  readonly DisplayName: string;
-  readonly StorageConnectors: [];
-  readonly RedirectURL: string;
-  readonly FeedbackURL: string;
-  readonly UserSettings: [];
-  readonly ApplicationSettings: ApplicationSettings;
-  readonly Tags: {[key: string]: any};
-  readonly AccessEndpoints: [];
-  readonly EmbedHostDomains: [];
+  readonly Description?: string;
+  readonly DisplayName?: string;
+  readonly StorageConnectors?: [];
+  readonly RedirectURL?: string;
+  readonly FeedbackURL?: string;
+  readonly UserSettings?: [];
+  readonly ApplicationSettings?: ApplicationSettings;
+  readonly Tags?: {[key: string]: any};
+  readonly AccessEndpoints?: [];
+  readonly EmbedHostDomains?: [];
 }
 export interface CreateStreamingURL {
   readonly StackName: string;
   readonly FleetName: string;
   readonly UserId: string;
-  readonly ApplicationId: string;
-  readonly Validity: number;
-  readonly SessionContext: string;
+  readonly ApplicationId?: string;
+  readonly Validity?: number;
+  readonly SessionContext?: string;
 }
 export interface CreateUpdatedImage {
   readonly existingImageName: string;
   readonly newImageName: string;
-  readonly newImageDescription: string;
-  readonly newImageDisplayName: string;
-  readonly newImageTags: {[key: string]: any};
-  readonly dryRun: boolean;
+  readonly newImageDescription?: string;
+  readonly newImageDisplayName?: string;
+  readonly newImageTags?: {[key: string]: any};
+  readonly dryRun?: boolean;
 }
 export interface CreateUsageReportSubscription {
 }
 export interface CreateUser {
   readonly UserName: string;
-  readonly MessageAction: string;
-  readonly FirstName: string;
-  readonly LastName: string;
+  readonly MessageAction?: string;
+  readonly FirstName?: string;
+  readonly LastName?: string;
   readonly AuthenticationType: string;
 }
 export interface DeleteAppBlock {
@@ -158,75 +158,75 @@ export interface DeleteUser {
   readonly AuthenticationType: string;
 }
 export interface DescribeAppBlocks {
-  readonly Arns: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Arns?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeApplicationFleetAssociations {
-  readonly FleetName: string;
-  readonly ApplicationArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly FleetName?: string;
+  readonly ApplicationArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeApplications {
-  readonly Arns: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Arns?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeDirectoryConfigs {
-  readonly DirectoryNames: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly DirectoryNames?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeFleets {
-  readonly Names: [];
-  readonly NextToken: string;
+  readonly Names?: [];
+  readonly NextToken?: string;
 }
 export interface DescribeImageBuilders {
-  readonly Names: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Names?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeImagePermissions {
   readonly Name: string;
-  readonly MaxResults: number;
-  readonly SharedAwsAccountIds: [];
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly SharedAwsAccountIds?: [];
+  readonly NextToken?: string;
 }
 export interface DescribeImages {
-  readonly Names: [];
-  readonly Arns: [];
-  readonly Type: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Names?: [];
+  readonly Arns?: [];
+  readonly Type?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeSessions {
   readonly StackName: string;
   readonly FleetName: string;
-  readonly UserId: string;
-  readonly NextToken: string;
-  readonly Limit: number;
-  readonly AuthenticationType: string;
+  readonly UserId?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
+  readonly AuthenticationType?: string;
 }
 export interface DescribeStacks {
-  readonly Names: [];
-  readonly NextToken: string;
+  readonly Names?: [];
+  readonly NextToken?: string;
 }
 export interface DescribeUsageReportSubscriptions {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeUserStackAssociations {
-  readonly StackName: string;
-  readonly UserName: string;
-  readonly AuthenticationType: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly StackName?: string;
+  readonly UserName?: string;
+  readonly AuthenticationType?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DescribeUsers {
   readonly AuthenticationType: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface DisableUser {
   readonly UserName: string;
@@ -249,11 +249,11 @@ export interface ExpireSession {
 }
 export interface ListAssociatedFleets {
   readonly StackName: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListAssociatedStacks {
   readonly FleetName: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -263,7 +263,7 @@ export interface StartFleet {
 }
 export interface StartImageBuilder {
   readonly Name: string;
-  readonly AppstreamAgentVersion: string;
+  readonly AppstreamAgentVersion?: string;
 }
 export interface StopFleet {
   readonly Name: string;
@@ -281,41 +281,41 @@ export interface UntagResource {
 }
 export interface UpdateApplication {
   readonly Name: string;
-  readonly DisplayName: string;
-  readonly Description: string;
-  readonly IconS3Location: S3Location;
-  readonly LaunchPath: string;
-  readonly WorkingDirectory: string;
-  readonly LaunchParameters: string;
-  readonly AppBlockArn: string;
-  readonly AttributesToDelete: [];
+  readonly DisplayName?: string;
+  readonly Description?: string;
+  readonly IconS3Location?: S3Location;
+  readonly LaunchPath?: string;
+  readonly WorkingDirectory?: string;
+  readonly LaunchParameters?: string;
+  readonly AppBlockArn?: string;
+  readonly AttributesToDelete?: [];
 }
 export interface UpdateDirectoryConfig {
   readonly DirectoryName: string;
-  readonly OrganizationalUnitDistinguishedNames: [];
-  readonly ServiceAccountCredentials: ServiceAccountCredentials;
+  readonly OrganizationalUnitDistinguishedNames?: [];
+  readonly ServiceAccountCredentials?: ServiceAccountCredentials;
 }
 export interface UpdateFleet {
-  readonly ImageName: string;
-  readonly ImageArn: string;
-  readonly Name: string;
-  readonly InstanceType: string;
-  readonly ComputeCapacity: ComputeCapacity;
-  readonly VpcConfig: VpcConfig;
-  readonly MaxUserDurationInSeconds: number;
-  readonly DisconnectTimeoutInSeconds: number;
-  readonly DeleteVpcConfig: boolean;
-  readonly Description: string;
-  readonly DisplayName: string;
-  readonly EnableDefaultInternetAccess: boolean;
-  readonly DomainJoinInfo: DomainJoinInfo;
-  readonly IdleDisconnectTimeoutInSeconds: number;
-  readonly AttributesToDelete: [];
-  readonly IamRoleArn: string;
-  readonly StreamView: string;
-  readonly Platform: string;
-  readonly MaxConcurrentSessions: number;
-  readonly UsbDeviceFilterStrings: [];
+  readonly ImageName?: string;
+  readonly ImageArn?: string;
+  readonly Name?: string;
+  readonly InstanceType?: string;
+  readonly ComputeCapacity?: ComputeCapacity;
+  readonly VpcConfig?: VpcConfig;
+  readonly MaxUserDurationInSeconds?: number;
+  readonly DisconnectTimeoutInSeconds?: number;
+  readonly DeleteVpcConfig?: boolean;
+  readonly Description?: string;
+  readonly DisplayName?: string;
+  readonly EnableDefaultInternetAccess?: boolean;
+  readonly DomainJoinInfo?: DomainJoinInfo;
+  readonly IdleDisconnectTimeoutInSeconds?: number;
+  readonly AttributesToDelete?: [];
+  readonly IamRoleArn?: string;
+  readonly StreamView?: string;
+  readonly Platform?: string;
+  readonly MaxConcurrentSessions?: number;
+  readonly UsbDeviceFilterStrings?: [];
 }
 export interface UpdateImagePermissions {
   readonly Name: string;
@@ -323,18 +323,18 @@ export interface UpdateImagePermissions {
   readonly ImagePermissions: ImagePermissions;
 }
 export interface UpdateStack {
-  readonly DisplayName: string;
-  readonly Description: string;
+  readonly DisplayName?: string;
+  readonly Description?: string;
   readonly Name: string;
-  readonly StorageConnectors: [];
-  readonly DeleteStorageConnectors: boolean;
-  readonly RedirectURL: string;
-  readonly FeedbackURL: string;
-  readonly AttributesToDelete: [];
-  readonly UserSettings: [];
-  readonly ApplicationSettings: ApplicationSettings;
-  readonly AccessEndpoints: [];
-  readonly EmbedHostDomains: [];
+  readonly StorageConnectors?: [];
+  readonly DeleteStorageConnectors?: boolean;
+  readonly RedirectURL?: string;
+  readonly FeedbackURL?: string;
+  readonly AttributesToDelete?: [];
+  readonly UserSettings?: [];
+  readonly ApplicationSettings?: ApplicationSettings;
+  readonly AccessEndpoints?: [];
+  readonly EmbedHostDomains?: [];
 }
 
 

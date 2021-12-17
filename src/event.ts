@@ -1,32 +1,31 @@
 import _ from 'lodash';
 import { KebabKeys } from './format';
-import * as model from './model';
 
 interface ISessionContext {
   attributes: {
     mfaAuthenticated: string;
-    creationDate: Date;
+    creationDate: string | Date;
   };
 }
 
 interface IUserIdentity {
   type: string;
   principalId: string;
-  arn: Arn;
+  arn: string | Arn;
   accountId: string;
   sessionContext: ISessionContext;
 }
 
-export interface IDetail {
+export interface IDetail<T> {
   eventVersion: string;
   userIdentity: IUserIdentity;
-  eventTime: Date;
+  eventTime: string | Date;
   eventSource: string;
   eventName: string;
   awsRegion: string;
   sourceIPAddress: string;
   userAgent: string;
-  requestParameters: any;
+  requestParameters: T;
   responseElements: any;
   requestID: string;
   eventID: string;
@@ -42,7 +41,7 @@ export interface ICloudWatchEvent {
   time: string;
   region: string;
   resources: string[];
-  detail: IDetail;
+  detail: any;
 }
 
 export class Arn {
@@ -103,15 +102,15 @@ export class Arn {
     return new Arn(arn);
   }
 }
-export class ReceivedEvent<T extends IDetail> {
+export class ReceivedEvent<T> {
   readonly version: string;
   readonly id: string;
   readonly detailType: string;
   readonly source: string;
   readonly account: string;
-  readonly time: Date;
+  readonly time: string | Date;
   readonly region: string;
-  readonly detail: T;
+  readonly detail: IDetail<T>;
 
   private _resources: Arn[] = [];
   private readonly _originalEvent: KebabKeys<ICloudWatchEvent>;
@@ -120,7 +119,7 @@ export class ReceivedEvent<T extends IDetail> {
     return this._resources;
   }
 
-  constructor(d: { new (event: any): T }, event: KebabKeys<ICloudWatchEvent>) {
+  constructor(event: KebabKeys<ICloudWatchEvent>) {
     this._originalEvent = event;
     this.version = event.version;
     this.id = event.id;
@@ -129,9 +128,8 @@ export class ReceivedEvent<T extends IDetail> {
     this.account = event.account;
     this.time = new Date(event.time);
     this.region = event.region;
-    this.detail = new d(event.detail);
+    this.detail = event.detail;
 
-    console.log(model);
     this.setResources(event.resources);
   }
 
@@ -147,86 +145,3 @@ export class ReceivedEvent<T extends IDetail> {
     return this._originalEvent;
   }
 }
-
-// Cloudtrail
-// {
-//     "version": "0",
-//     "id": "36eb8523-97d0-4518-b33d-ee3579ff19f0",
-//     "detail-type": "AWS API Call via CloudTrail",
-//     "source": "aws.s3",
-//     "account": "123456789012",
-//     "time": "2016-02-20T01:09:13Z",
-//     "region": "us-east-1",
-//     "resources": [],
-//     "detail": {
-//         "eventVersion": "1.03",
-//         "userIdentity": {
-//             "type": "Root",
-//             "principalId": "123456789012",
-//             "arn": "arn:aws:iam::123456789012:root",
-//             "accountId": "123456789012",
-//             "sessionContext": {
-//                 "attributes": {
-//                     "mfaAuthenticated": "false",
-//                     "creationDate": "2016-02-20T01:05:59Z"
-//                 }
-//             }
-//         },
-//         "eventTime": "2016-02-20T01:09:13Z",
-//         "eventSource": "s3.amazonaws.com",
-//         "eventName": "CreateBucket",
-//         "awsRegion": "us-east-1",
-//         "sourceIPAddress": "100.100.100.100",
-//         "userAgent": "[S3Console/0.4]",
-//         "requestParameters": {
-//             "bucketName": "bucket-test-iad"
-//         },
-//         "responseElements": null,
-//         "requestID": "9D767BCC3B4E7487",
-//         "eventID": "24ba271e-d595-4e66-a7fd-9c16cbf8abae",
-//         "eventType": "AwsApiCall"
-//     }
-// }
-
-// Codecommit
-// {
-//     "version": "0",
-//     "id": "01234567-EXAMPLE",
-//     "detail-type": "CodeCommit Repository State Change",
-//     "source": "aws.codecommit",
-//     "account": "123456789012",
-//     "time": "2019-06-12T10:23:43Z",
-//     "region": "us-east-2",
-//     "resources": [
-//       "arn:aws:codecommit:us-east-2:123456789012:MyDemoRepo"
-//     ],
-//     "detail": {
-//       "event": "referenceCreated",
-//       "repositoryName": "MyDemoRepo",
-//       "repositoryId": "12345678-1234-5678-abcd-12345678abcd",
-//       "referenceType": "branch",
-//       "referenceName": "myBranch",
-//       "referenceFullName": "refs/heads/myBranch",
-//       "commitId": "3e5983DESTINATION"
-//     }
-//   }
-
-// Event
-// {
-//     "version": "0",
-//     "id": "6a7e8feb-b491-4cf7-a9f1-bf3703467718",
-//     "detail-type": "EC2 Instance State-change Notification",
-//     "source": "aws.ec2",
-//     "account": "111122223333",
-//     "time": "2017-12-22T18:43:48Z",
-//     "region": "us-west-1",
-//     "resources": [
-//       "arn:aws:ec2:us-west-1:123456789012:instance/ i-1234567890abcdef0"
-//     ],
-//     "detail": {
-//       "instance-id": " i-1234567890abcdef0",
-//       "state": "terminated"
-//     }
-//   }
-
-// type KebabKeys<T> = { [K in keyof T as K extends string ? Kebab<K> : K]: T[K] };

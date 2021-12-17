@@ -4,7 +4,7 @@
 export interface AddFacetToObject {
   readonly DirectoryArn: string;
   readonly SchemaFacet: SchemaFacet;
-  readonly ObjectAttributeList: [];
+  readonly ObjectAttributeList?: [];
   readonly ObjectReference: ObjectReference;
 }
 export interface ApplySchema {
@@ -37,7 +37,7 @@ export interface AttachTypedLink {
 export interface BatchRead {
   readonly DirectoryArn: string;
   readonly Operations: [];
-  readonly ConsistencyLevel: string;
+  readonly ConsistencyLevel?: string;
 }
 export interface BatchWrite {
   readonly DirectoryArn: string;
@@ -50,23 +50,23 @@ export interface CreateDirectory {
 export interface CreateFacet {
   readonly SchemaArn: string;
   readonly Name: string;
-  readonly Attributes: [];
-  readonly ObjectType: string;
-  readonly FacetStyle: string;
+  readonly Attributes?: [];
+  readonly ObjectType?: string;
+  readonly FacetStyle?: string;
 }
 export interface CreateIndex {
   readonly DirectoryArn: string;
   readonly OrderedIndexedAttributeList: [];
   readonly IsUnique: boolean;
-  readonly ParentReference: ObjectReference;
-  readonly LinkName: string;
+  readonly ParentReference?: ObjectReference;
+  readonly LinkName?: string;
 }
 export interface CreateObject {
   readonly DirectoryArn: string;
   readonly SchemaFacets: [];
-  readonly ObjectAttributeList: [];
-  readonly ParentReference: ObjectReference;
-  readonly LinkName: string;
+  readonly ObjectAttributeList?: [];
+  readonly ParentReference?: ObjectReference;
+  readonly LinkName?: string;
 }
 export interface CreateSchema {
   readonly Name: string;
@@ -132,19 +132,19 @@ export interface GetLinkAttributes {
   readonly DirectoryArn: string;
   readonly TypedLinkSpecifier: TypedLinkSpecifier;
   readonly AttributeNames: [];
-  readonly ConsistencyLevel: string;
+  readonly ConsistencyLevel?: string;
 }
 export interface GetObjectAttributes {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly ConsistencyLevel: string;
+  readonly ConsistencyLevel?: string;
   readonly SchemaFacet: SchemaFacet;
   readonly AttributeNames: [];
 }
 export interface GetObjectInformation {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly ConsistencyLevel: string;
+  readonly ConsistencyLevel?: string;
 }
 export interface GetSchemaAsJson {
   readonly SchemaArn: string;
@@ -155,143 +155,143 @@ export interface GetTypedLinkFacetInformation {
 }
 export interface ListAppliedSchemaArns {
   readonly DirectoryArn: string;
-  readonly SchemaArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SchemaArn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListAttachedIndices {
   readonly DirectoryArn: string;
   readonly TargetReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
 }
 export interface ListDevelopmentSchemaArns {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDirectories {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly state: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly state?: string;
 }
 export interface ListFacetAttributes {
   readonly SchemaArn: string;
   readonly Name: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListFacetNames {
   readonly SchemaArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListIncomingTypedLinks {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly FilterAttributeRanges: [];
-  readonly FilterTypedLink: TypedLinkSchemaAndFacetName;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
+  readonly FilterAttributeRanges?: [];
+  readonly FilterTypedLink?: TypedLinkSchemaAndFacetName;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
 }
 export interface ListIndex {
   readonly DirectoryArn: string;
-  readonly RangesOnIndexedValues: [];
+  readonly RangesOnIndexedValues?: [];
   readonly IndexReference: ObjectReference;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ConsistencyLevel: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ConsistencyLevel?: string;
 }
 export interface ListManagedSchemaArns {
-  readonly SchemaArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SchemaArn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListObjectAttributes {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
-  readonly FacetFilter: SchemaFacet;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
+  readonly FacetFilter?: SchemaFacet;
 }
 export interface ListObjectChildren {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
 }
 export interface ListObjectParentPaths {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListObjectParents {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
-  readonly IncludeAllLinksToEachParent: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
+  readonly IncludeAllLinksToEachParent?: boolean;
 }
 export interface ListObjectPolicies {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
 }
 export interface ListOutgoingTypedLinks {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly FilterAttributeRanges: [];
-  readonly FilterTypedLink: TypedLinkSchemaAndFacetName;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
+  readonly FilterAttributeRanges?: [];
+  readonly FilterTypedLink?: TypedLinkSchemaAndFacetName;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
 }
 export interface ListPolicyAttachments {
   readonly DirectoryArn: string;
   readonly PolicyReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
 }
 export interface ListPublishedSchemaArns {
-  readonly SchemaArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SchemaArn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTypedLinkFacetAttributes {
   readonly SchemaArn: string;
   readonly Name: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTypedLinkFacetNames {
   readonly SchemaArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface LookupPolicy {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface PublishSchema {
   readonly DevelopmentSchemaArn: string;
   readonly Version: string;
-  readonly MinorVersion: string;
-  readonly Name: string;
+  readonly MinorVersion?: string;
+  readonly Name?: string;
 }
 export interface PutSchemaFromJson {
   readonly SchemaArn: string;
@@ -313,8 +313,8 @@ export interface UntagResource {
 export interface UpdateFacet {
   readonly SchemaArn: string;
   readonly Name: string;
-  readonly AttributeUpdates: [];
-  readonly ObjectType: string;
+  readonly AttributeUpdates?: [];
+  readonly ObjectType?: string;
 }
 export interface UpdateLinkAttributes {
   readonly DirectoryArn: string;
@@ -339,13 +339,13 @@ export interface UpdateTypedLinkFacet {
 export interface UpgradeAppliedSchema {
   readonly PublishedSchemaArn: string;
   readonly DirectoryArn: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 export interface UpgradePublishedSchema {
   readonly DevelopmentSchemaArn: string;
   readonly PublishedSchemaArn: string;
   readonly MinorVersion: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
 

@@ -3,34 +3,34 @@
  */
 export interface CreateBackupPlan {
   readonly BackupPlan: BackupPlanInput;
-  readonly BackupPlanTags: {[key: string]: any};
-  readonly CreatorRequestId: string;
+  readonly BackupPlanTags?: {[key: string]: any};
+  readonly CreatorRequestId?: string;
 }
 export interface CreateBackupSelection {
   readonly BackupPlanId: string;
   readonly BackupSelection: BackupSelection;
-  readonly CreatorRequestId: string;
+  readonly CreatorRequestId?: string;
 }
 export interface CreateBackupVault {
   readonly BackupVaultName: string;
-  readonly BackupVaultTags: {[key: string]: any};
-  readonly EncryptionKeyArn: string;
-  readonly CreatorRequestId: string;
+  readonly BackupVaultTags?: {[key: string]: any};
+  readonly EncryptionKeyArn?: string;
+  readonly CreatorRequestId?: string;
 }
 export interface CreateFramework {
   readonly FrameworkName: string;
-  readonly FrameworkDescription: string;
+  readonly FrameworkDescription?: string;
   readonly FrameworkControls: [];
-  readonly IdempotencyToken: string;
-  readonly FrameworkTags: {[key: string]: any};
+  readonly IdempotencyToken?: string;
+  readonly FrameworkTags?: {[key: string]: any};
 }
 export interface CreateReportPlan {
   readonly ReportPlanName: string;
-  readonly ReportPlanDescription: string;
+  readonly ReportPlanDescription?: string;
   readonly ReportDeliveryChannel: ReportDeliveryChannel;
   readonly ReportSetting: ReportSetting;
-  readonly ReportPlanTags: {[key: string]: any};
-  readonly IdempotencyToken: string;
+  readonly ReportPlanTags?: {[key: string]: any};
+  readonly IdempotencyToken?: string;
 }
 export interface DeleteBackupPlan {
   readonly BackupPlanId: string;
@@ -102,7 +102,7 @@ export interface ExportBackupPlanTemplate {
 }
 export interface GetBackupPlan {
   readonly BackupPlanId: string;
-  readonly VersionId: string;
+  readonly VersionId?: string;
 }
 export interface GetBackupPlanFromJSON {
   readonly BackupPlanTemplateJson: string;
@@ -125,107 +125,107 @@ export interface GetRecoveryPointRestoreMetadata {
   readonly RecoveryPointArn: string;
 }
 export interface ListBackupJobs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ByResourceArn: string;
-  readonly ByState: string;
-  readonly ByBackupVaultName: string;
-  readonly ByCreatedBefore: Date;
-  readonly ByCreatedAfter: Date;
-  readonly ByResourceType: string;
-  readonly ByAccountId: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ByResourceArn?: string;
+  readonly ByState?: string;
+  readonly ByBackupVaultName?: string;
+  readonly ByCreatedBefore?: Date;
+  readonly ByCreatedAfter?: Date;
+  readonly ByResourceType?: string;
+  readonly ByAccountId?: string;
 }
 export interface ListBackupPlanTemplates {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListBackupPlanVersions {
   readonly BackupPlanId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListBackupPlans {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly IncludeDeleted: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly IncludeDeleted?: boolean;
 }
 export interface ListBackupSelections {
   readonly BackupPlanId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListBackupVaults {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListCopyJobs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ByResourceArn: string;
-  readonly ByState: string;
-  readonly ByCreatedBefore: Date;
-  readonly ByCreatedAfter: Date;
-  readonly ByResourceType: string;
-  readonly ByDestinationVaultArn: string;
-  readonly ByAccountId: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ByResourceArn?: string;
+  readonly ByState?: string;
+  readonly ByCreatedBefore?: Date;
+  readonly ByCreatedAfter?: Date;
+  readonly ByResourceType?: string;
+  readonly ByDestinationVaultArn?: string;
+  readonly ByAccountId?: string;
 }
 export interface ListFrameworks {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListProtectedResources {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListRecoveryPointsByBackupVault {
   readonly BackupVaultName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ByResourceArn: string;
-  readonly ByResourceType: string;
-  readonly ByBackupPlanId: string;
-  readonly ByCreatedBefore: Date;
-  readonly ByCreatedAfter: Date;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ByResourceArn?: string;
+  readonly ByResourceType?: string;
+  readonly ByBackupPlanId?: string;
+  readonly ByCreatedBefore?: Date;
+  readonly ByCreatedAfter?: Date;
 }
 export interface ListRecoveryPointsByResource {
   readonly ResourceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListReportJobs {
-  readonly ByReportPlanName: string;
-  readonly ByCreationBefore: Date;
-  readonly ByCreationAfter: Date;
-  readonly ByStatus: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ByReportPlanName?: string;
+  readonly ByCreationBefore?: Date;
+  readonly ByCreationAfter?: Date;
+  readonly ByStatus?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListReportPlans {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListRestoreJobs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ByAccountId: string;
-  readonly ByCreatedBefore: Date;
-  readonly ByCreatedAfter: Date;
-  readonly ByStatus: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ByAccountId?: string;
+  readonly ByCreatedBefore?: Date;
+  readonly ByCreatedAfter?: Date;
+  readonly ByStatus?: string;
 }
 export interface ListTags {
   readonly ResourceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface PutBackupVaultAccessPolicy {
   readonly BackupVaultName: string;
-  readonly Policy: string;
+  readonly Policy?: string;
 }
 export interface PutBackupVaultLockConfiguration {
   readonly BackupVaultName: string;
-  readonly MinRetentionDays: number;
-  readonly MaxRetentionDays: number;
-  readonly ChangeableForDays: number;
+  readonly MinRetentionDays?: number;
+  readonly MaxRetentionDays?: number;
+  readonly ChangeableForDays?: number;
 }
 export interface PutBackupVaultNotifications {
   readonly BackupVaultName: string;
@@ -236,31 +236,31 @@ export interface StartBackupJob {
   readonly BackupVaultName: string;
   readonly ResourceArn: string;
   readonly IamRoleArn: string;
-  readonly IdempotencyToken: string;
-  readonly StartWindowMinutes: number;
-  readonly CompleteWindowMinutes: number;
-  readonly Lifecycle: Lifecycle;
-  readonly RecoveryPointTags: {[key: string]: any};
-  readonly BackupOptions: {[key: string]: any};
+  readonly IdempotencyToken?: string;
+  readonly StartWindowMinutes?: number;
+  readonly CompleteWindowMinutes?: number;
+  readonly Lifecycle?: Lifecycle;
+  readonly RecoveryPointTags?: {[key: string]: any};
+  readonly BackupOptions?: {[key: string]: any};
 }
 export interface StartCopyJob {
   readonly RecoveryPointArn: string;
   readonly SourceBackupVaultName: string;
   readonly DestinationBackupVaultArn: string;
   readonly IamRoleArn: string;
-  readonly IdempotencyToken: string;
-  readonly Lifecycle: Lifecycle;
+  readonly IdempotencyToken?: string;
+  readonly Lifecycle?: Lifecycle;
 }
 export interface StartReportJob {
   readonly ReportPlanName: string;
-  readonly IdempotencyToken: string;
+  readonly IdempotencyToken?: string;
 }
 export interface StartRestoreJob {
   readonly RecoveryPointArn: string;
   readonly Metadata: {[key: string]: any};
   readonly IamRoleArn: string;
-  readonly IdempotencyToken: string;
-  readonly ResourceType: string;
+  readonly IdempotencyToken?: string;
+  readonly ResourceType?: string;
 }
 export interface StopBackupJob {
   readonly BackupJobId: string;
@@ -279,28 +279,28 @@ export interface UpdateBackupPlan {
 }
 export interface UpdateFramework {
   readonly FrameworkName: string;
-  readonly FrameworkDescription: string;
-  readonly FrameworkControls: [];
-  readonly IdempotencyToken: string;
+  readonly FrameworkDescription?: string;
+  readonly FrameworkControls?: [];
+  readonly IdempotencyToken?: string;
 }
 export interface UpdateGlobalSettings {
-  readonly GlobalSettings: {[key: string]: any};
+  readonly GlobalSettings?: {[key: string]: any};
 }
 export interface UpdateRecoveryPointLifecycle {
   readonly BackupVaultName: string;
   readonly RecoveryPointArn: string;
-  readonly Lifecycle: Lifecycle;
+  readonly Lifecycle?: Lifecycle;
 }
 export interface UpdateRegionSettings {
-  readonly ResourceTypeOptInPreference: {[key: string]: any};
-  readonly ResourceTypeManagementPreference: {[key: string]: any};
+  readonly ResourceTypeOptInPreference?: {[key: string]: any};
+  readonly ResourceTypeManagementPreference?: {[key: string]: any};
 }
 export interface UpdateReportPlan {
   readonly ReportPlanName: string;
-  readonly ReportPlanDescription: string;
-  readonly ReportDeliveryChannel: ReportDeliveryChannel;
-  readonly ReportSetting: ReportSetting;
-  readonly IdempotencyToken: string;
+  readonly ReportPlanDescription?: string;
+  readonly ReportDeliveryChannel?: ReportDeliveryChannel;
+  readonly ReportSetting?: ReportSetting;
+  readonly IdempotencyToken?: string;
 }
 
 

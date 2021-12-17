@@ -4,14 +4,14 @@
 export interface CreateHomeRegionControl {
   readonly HomeRegion: string;
   readonly Target: Target;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 export interface DescribeHomeRegionControls {
-  readonly ControlId: string;
-  readonly HomeRegion: string;
-  readonly Target: Target;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ControlId?: string;
+  readonly HomeRegion?: string;
+  readonly Target?: Target;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetHomeRegion {
 }

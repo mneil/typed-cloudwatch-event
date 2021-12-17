@@ -3,25 +3,25 @@
  */
 export interface CreateGroup {
   readonly Name: string;
-  readonly Description: string;
-  readonly ResourceQuery: ResourceQuery;
-  readonly Tags: {[key: string]: any};
-  readonly Configuration: [];
+  readonly Description?: string;
+  readonly ResourceQuery?: ResourceQuery;
+  readonly Tags?: {[key: string]: any};
+  readonly Configuration?: [];
 }
 export interface DeleteGroup {
-  readonly GroupName: string;
-  readonly Group: string;
+  readonly GroupName?: string;
+  readonly Group?: string;
 }
 export interface GetGroup {
-  readonly GroupName: string;
-  readonly Group: string;
+  readonly GroupName?: string;
+  readonly Group?: string;
 }
 export interface GetGroupConfiguration {
-  readonly Group: string;
+  readonly Group?: string;
 }
 export interface GetGroupQuery {
-  readonly GroupName: string;
-  readonly Group: string;
+  readonly GroupName?: string;
+  readonly Group?: string;
 }
 export interface GetTags {
   readonly Arn: string;
@@ -31,25 +31,25 @@ export interface GroupResources {
   readonly ResourceArns: [];
 }
 export interface ListGroupResources {
-  readonly GroupName: string;
-  readonly Group: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly GroupName?: string;
+  readonly Group?: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListGroups {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface PutGroupConfiguration {
-  readonly Group: string;
-  readonly Configuration: [];
+  readonly Group?: string;
+  readonly Configuration?: [];
 }
 export interface SearchResources {
   readonly ResourceQuery: ResourceQuery;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface Tag {
   readonly Arn: string;
@@ -64,13 +64,13 @@ export interface Untag {
   readonly Keys: [];
 }
 export interface UpdateGroup {
-  readonly GroupName: string;
-  readonly Group: string;
-  readonly Description: string;
+  readonly GroupName?: string;
+  readonly Group?: string;
+  readonly Description?: string;
 }
 export interface UpdateGroupQuery {
-  readonly GroupName: string;
-  readonly Group: string;
+  readonly GroupName?: string;
+  readonly Group?: string;
   readonly ResourceQuery: ResourceQuery;
 }
 

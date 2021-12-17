@@ -9,7 +9,7 @@ export interface CreateGateway {
   readonly ActivationKey: string;
   readonly GatewayDisplayName: string;
   readonly GatewayType: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface DeleteGateway {
   readonly GatewayArn: string;
@@ -22,30 +22,30 @@ export interface DisassociateGatewayFromServer {
 }
 export interface ImportHypervisorConfiguration {
   readonly Host: string;
-  readonly KmsKeyArn: string;
+  readonly KmsKeyArn?: string;
   readonly Name: string;
-  readonly Password: string;
-  readonly Tags: [];
-  readonly Username: string;
+  readonly Password?: string;
+  readonly Tags?: [];
+  readonly Username?: string;
 }
 export interface ListGateways {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListHypervisors {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface ListVirtualMachines {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface PutMaintenanceStartTime {
-  readonly DayOfMonth: number;
-  readonly DayOfWeek: number;
+  readonly DayOfMonth?: number;
+  readonly DayOfWeek?: number;
   readonly GatewayArn: string;
   readonly HourOfDay: number;
   readonly MinuteOfHour: number;
@@ -57,8 +57,8 @@ export interface TagResource {
 export interface TestHypervisorConfiguration {
   readonly GatewayArn: string;
   readonly Host: string;
-  readonly Password: string;
-  readonly Username: string;
+  readonly Password?: string;
+  readonly Username?: string;
 }
 export interface UntagResource {
   readonly ResourceARN: string;
@@ -66,13 +66,13 @@ export interface UntagResource {
 }
 export interface UpdateGatewayInformation {
   readonly GatewayArn: string;
-  readonly GatewayDisplayName: string;
+  readonly GatewayDisplayName?: string;
 }
 export interface UpdateHypervisor {
-  readonly Host: string;
+  readonly Host?: string;
   readonly HypervisorArn: string;
-  readonly Password: string;
-  readonly Username: string;
+  readonly Password?: string;
+  readonly Username?: string;
 }
 
 

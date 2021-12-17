@@ -7,19 +7,19 @@ export interface DescribeDimensionKeys {
   readonly StartTime: Date;
   readonly EndTime: Date;
   readonly Metric: string;
-  readonly PeriodInSeconds: number;
+  readonly PeriodInSeconds?: number;
   readonly GroupBy: DimensionGroup;
-  readonly PartitionBy: DimensionGroup;
-  readonly Filter: {[key: string]: any};
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly PartitionBy?: DimensionGroup;
+  readonly Filter?: {[key: string]: any};
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface GetDimensionKeyDetails {
   readonly ServiceType: string;
   readonly Identifier: string;
   readonly Group: string;
   readonly GroupIdentifier: string;
-  readonly RequestedDimensions: [];
+  readonly RequestedDimensions?: [];
 }
 export interface GetResourceMetrics {
   readonly ServiceType: string;
@@ -27,9 +27,9 @@ export interface GetResourceMetrics {
   readonly MetricQueries: [];
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly PeriodInSeconds: number;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly PeriodInSeconds?: number;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
 

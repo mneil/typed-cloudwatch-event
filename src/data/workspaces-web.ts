@@ -18,45 +18,45 @@ export interface AssociateUserSettings {
   readonly userSettingsArn: string;
 }
 export interface CreateBrowserSettings {
-  readonly additionalEncryptionContext: {[key: string]: any};
+  readonly additionalEncryptionContext?: {[key: string]: any};
   readonly browserPolicy: string;
-  readonly clientToken: string;
-  readonly customerManagedKey: string;
-  readonly tags: [];
+  readonly clientToken?: string;
+  readonly customerManagedKey?: string;
+  readonly tags?: [];
 }
 export interface CreateIdentityProvider {
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly identityProviderDetails: {[key: string]: any};
   readonly identityProviderName: string;
   readonly identityProviderType: string;
   readonly portalArn: string;
 }
 export interface CreateNetworkSettings {
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly securityGroupIds: [];
   readonly subnetIds: [];
-  readonly tags: [];
+  readonly tags?: [];
   readonly vpcId: string;
 }
 export interface CreatePortal {
-  readonly additionalEncryptionContext: {[key: string]: any};
-  readonly clientToken: string;
-  readonly customerManagedKey: string;
-  readonly displayName: string;
-  readonly tags: [];
+  readonly additionalEncryptionContext?: {[key: string]: any};
+  readonly clientToken?: string;
+  readonly customerManagedKey?: string;
+  readonly displayName?: string;
+  readonly tags?: [];
 }
 export interface CreateTrustStore {
   readonly certificateList: [];
-  readonly clientToken: string;
-  readonly tags: [];
+  readonly clientToken?: string;
+  readonly tags?: [];
 }
 export interface CreateUserSettings {
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly copyAllowed: string;
   readonly downloadAllowed: string;
   readonly pasteAllowed: string;
   readonly printAllowed: string;
-  readonly tags: [];
+  readonly tags?: [];
   readonly uploadAllowed: string;
 }
 export interface DeleteBrowserSettings {
@@ -115,40 +115,40 @@ export interface GetUserSettings {
   readonly userSettingsArn: string;
 }
 export interface ListBrowserSettings {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListIdentityProviders {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly portalArn: string;
 }
 export interface ListNetworkSettings {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListPortals {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface ListTrustStoreCertificates {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly trustStoreArn: string;
 }
 export interface ListTrustStores {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListUserSettings {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface TagResource {
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly resourceArn: string;
   readonly tags: [];
 }
@@ -157,41 +157,41 @@ export interface UntagResource {
   readonly tagKeys: [];
 }
 export interface UpdateBrowserSettings {
-  readonly browserPolicy: string;
+  readonly browserPolicy?: string;
   readonly browserSettingsArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 export interface UpdateIdentityProvider {
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly identityProviderArn: string;
-  readonly identityProviderDetails: {[key: string]: any};
-  readonly identityProviderName: string;
-  readonly identityProviderType: string;
+  readonly identityProviderDetails?: {[key: string]: any};
+  readonly identityProviderName?: string;
+  readonly identityProviderType?: string;
 }
 export interface UpdateNetworkSettings {
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly networkSettingsArn: string;
-  readonly securityGroupIds: [];
-  readonly subnetIds: [];
-  readonly vpcId: string;
+  readonly securityGroupIds?: [];
+  readonly subnetIds?: [];
+  readonly vpcId?: string;
 }
 export interface UpdatePortal {
-  readonly displayName: string;
+  readonly displayName?: string;
   readonly portalArn: string;
 }
 export interface UpdateTrustStore {
-  readonly certificatesToAdd: [];
-  readonly certificatesToDelete: [];
-  readonly clientToken: string;
+  readonly certificatesToAdd?: [];
+  readonly certificatesToDelete?: [];
+  readonly clientToken?: string;
   readonly trustStoreArn: string;
 }
 export interface UpdateUserSettings {
-  readonly clientToken: string;
-  readonly copyAllowed: string;
-  readonly downloadAllowed: string;
-  readonly pasteAllowed: string;
-  readonly printAllowed: string;
-  readonly uploadAllowed: string;
+  readonly clientToken?: string;
+  readonly copyAllowed?: string;
+  readonly downloadAllowed?: string;
+  readonly pasteAllowed?: string;
+  readonly printAllowed?: string;
+  readonly uploadAllowed?: string;
   readonly userSettingsArn: string;
 }
 

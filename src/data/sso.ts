@@ -20,11 +20,11 @@ export interface CreateInstanceAccessControlAttributeConfiguration {
 }
 export interface CreatePermissionSet {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly InstanceArn: string;
-  readonly SessionDuration: string;
-  readonly RelayState: string;
-  readonly Tags: [];
+  readonly SessionDuration?: string;
+  readonly RelayState?: string;
+  readonly Tags?: [];
 }
 export interface DeleteAccountAssignment {
   readonly InstanceArn: string;
@@ -75,67 +75,67 @@ export interface GetInlinePolicyForPermissionSet {
 }
 export interface ListAccountAssignmentCreationStatus {
   readonly InstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filter: OperationStatusFilter;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filter?: OperationStatusFilter;
 }
 export interface ListAccountAssignmentDeletionStatus {
   readonly InstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filter: OperationStatusFilter;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filter?: OperationStatusFilter;
 }
 export interface ListAccountAssignments {
   readonly InstanceArn: string;
   readonly AccountId: string;
   readonly PermissionSetArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListAccountsForProvisionedPermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
-  readonly ProvisioningStatus: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ProvisioningStatus?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListInstances {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListManagedPoliciesInPermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListPermissionSetProvisioningStatus {
   readonly InstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filter: OperationStatusFilter;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filter?: OperationStatusFilter;
 }
 export interface ListPermissionSets {
   readonly InstanceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPermissionSetsProvisionedToAccount {
   readonly InstanceArn: string;
   readonly AccountId: string;
-  readonly ProvisioningStatus: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ProvisioningStatus?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly InstanceArn: string;
   readonly ResourceArn: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ProvisionPermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
-  readonly TargetId: string;
+  readonly TargetId?: string;
   readonly TargetType: string;
 }
 export interface PutInlinePolicyToPermissionSet {
@@ -160,9 +160,9 @@ export interface UpdateInstanceAccessControlAttributeConfiguration {
 export interface UpdatePermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
-  readonly Description: string;
-  readonly SessionDuration: string;
-  readonly RelayState: string;
+  readonly Description?: string;
+  readonly SessionDuration?: string;
+  readonly RelayState?: string;
 }
 
 

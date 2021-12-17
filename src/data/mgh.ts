@@ -5,21 +5,21 @@ export interface AssociateCreatedArtifact {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly CreatedArtifact: CreatedArtifact;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 export interface AssociateDiscoveredResource {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly DiscoveredResource: DiscoveredResource;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 export interface CreateProgressUpdateStream {
   readonly ProgressUpdateStreamName: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 export interface DeleteProgressUpdateStream {
   readonly ProgressUpdateStreamName: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 export interface DescribeApplicationState {
   readonly ApplicationId: string;
@@ -32,50 +32,50 @@ export interface DisassociateCreatedArtifact {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly CreatedArtifactName: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 export interface DisassociateDiscoveredResource {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly ConfigurationId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 export interface ImportMigrationTask {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 export interface ListApplicationStates {
-  readonly ApplicationIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly ApplicationIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListCreatedArtifacts {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDiscoveredResources {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMigrationTasks {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ResourceName: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ResourceName?: string;
 }
 export interface ListProgressUpdateStreams {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface NotifyApplicationState {
   readonly ApplicationId: string;
   readonly Status: string;
-  readonly UpdateDateTime: Date;
-  readonly DryRun: boolean;
+  readonly UpdateDateTime?: Date;
+  readonly DryRun?: boolean;
 }
 export interface NotifyMigrationTaskState {
   readonly ProgressUpdateStream: string;
@@ -83,13 +83,13 @@ export interface NotifyMigrationTaskState {
   readonly Task: Task;
   readonly UpdateDateTime: Date;
   readonly NextUpdateSeconds: number;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 export interface PutResourceAttributes {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly ResourceAttributeList: [];
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
 

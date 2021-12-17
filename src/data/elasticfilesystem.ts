@@ -3,27 +3,27 @@
  */
 export interface CreateAccessPoint {
   readonly ClientToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
   readonly FileSystemId: string;
-  readonly PosixUser: PosixUser;
-  readonly RootDirectory: RootDirectory;
+  readonly PosixUser?: PosixUser;
+  readonly RootDirectory?: RootDirectory;
 }
 export interface CreateFileSystem {
   readonly CreationToken: string;
-  readonly PerformanceMode: string;
-  readonly Encrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly ThroughputMode: string;
-  readonly ProvisionedThroughputInMibps: unknown;
-  readonly AvailabilityZoneName: string;
-  readonly Backup: boolean;
-  readonly Tags: [];
+  readonly PerformanceMode?: string;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly ThroughputMode?: string;
+  readonly ProvisionedThroughputInMibps?: unknown;
+  readonly AvailabilityZoneName?: string;
+  readonly Backup?: boolean;
+  readonly Tags?: [];
 }
 export interface CreateMountTarget {
   readonly FileSystemId: string;
   readonly SubnetId: string;
-  readonly IpAddress: string;
-  readonly SecurityGroups: [];
+  readonly IpAddress?: string;
+  readonly SecurityGroups?: [];
 }
 export interface CreateTags {
   readonly FileSystemId: string;
@@ -46,14 +46,14 @@ export interface DeleteTags {
   readonly TagKeys: [];
 }
 export interface DescribeAccessPoints {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly AccessPointId: string;
-  readonly FileSystemId: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly AccessPointId?: string;
+  readonly FileSystemId?: string;
 }
 export interface DescribeAccountPreferences {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeBackupPolicy {
   readonly FileSystemId: string;
@@ -62,10 +62,10 @@ export interface DescribeFileSystemPolicy {
   readonly FileSystemId: string;
 }
 export interface DescribeFileSystems {
-  readonly MaxItems: number;
-  readonly Marker: string;
-  readonly CreationToken: string;
-  readonly FileSystemId: string;
+  readonly MaxItems?: number;
+  readonly Marker?: string;
+  readonly CreationToken?: string;
+  readonly FileSystemId?: string;
 }
 export interface DescribeLifecycleConfiguration {
   readonly FileSystemId: string;
@@ -74,25 +74,25 @@ export interface DescribeMountTargetSecurityGroups {
   readonly MountTargetId: string;
 }
 export interface DescribeMountTargets {
-  readonly MaxItems: number;
-  readonly Marker: string;
-  readonly FileSystemId: string;
-  readonly MountTargetId: string;
-  readonly AccessPointId: string;
+  readonly MaxItems?: number;
+  readonly Marker?: string;
+  readonly FileSystemId?: string;
+  readonly MountTargetId?: string;
+  readonly AccessPointId?: string;
 }
 export interface DescribeTags {
-  readonly MaxItems: number;
-  readonly Marker: string;
+  readonly MaxItems?: number;
+  readonly Marker?: string;
   readonly FileSystemId: string;
 }
 export interface ListTagsForResource {
   readonly ResourceId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ModifyMountTargetSecurityGroups {
   readonly MountTargetId: string;
-  readonly SecurityGroups: [];
+  readonly SecurityGroups?: [];
 }
 export interface PutAccountPreferences {
   readonly ResourceIdType: string;
@@ -104,7 +104,7 @@ export interface PutBackupPolicy {
 export interface PutFileSystemPolicy {
   readonly FileSystemId: string;
   readonly Policy: string;
-  readonly BypassPolicyLockoutSafetyCheck: boolean;
+  readonly BypassPolicyLockoutSafetyCheck?: boolean;
 }
 export interface PutLifecycleConfiguration {
   readonly FileSystemId: string;
@@ -120,8 +120,8 @@ export interface UntagResource {
 }
 export interface UpdateFileSystem {
   readonly FileSystemId: string;
-  readonly ThroughputMode: string;
-  readonly ProvisionedThroughputInMibps: unknown;
+  readonly ThroughputMode?: string;
+  readonly ProvisionedThroughputInMibps?: unknown;
 }
 
 

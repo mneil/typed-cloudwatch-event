@@ -6,31 +6,31 @@ export interface CancelJob {
 }
 export interface CreateJob {
   readonly PipelineId: string;
-  readonly Input: JobInput;
-  readonly Inputs: [];
-  readonly Output: CreateJobOutput;
-  readonly Outputs: [];
-  readonly OutputKeyPrefix: string;
-  readonly Playlists: [];
-  readonly UserMetadata: {[key: string]: any};
+  readonly Input?: JobInput;
+  readonly Inputs?: [];
+  readonly Output?: CreateJobOutput;
+  readonly Outputs?: [];
+  readonly OutputKeyPrefix?: string;
+  readonly Playlists?: [];
+  readonly UserMetadata?: {[key: string]: any};
 }
 export interface CreatePipeline {
   readonly Name: string;
   readonly InputBucket: string;
-  readonly OutputBucket: string;
+  readonly OutputBucket?: string;
   readonly Role: string;
-  readonly AwsKmsKeyArn: string;
-  readonly Notifications: Notifications;
-  readonly ContentConfig: PipelineOutputConfig;
-  readonly ThumbnailConfig: PipelineOutputConfig;
+  readonly AwsKmsKeyArn?: string;
+  readonly Notifications?: Notifications;
+  readonly ContentConfig?: PipelineOutputConfig;
+  readonly ThumbnailConfig?: PipelineOutputConfig;
 }
 export interface CreatePreset {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Container: string;
-  readonly Video: VideoParameters;
-  readonly Audio: AudioParameters;
-  readonly Thumbnails: Thumbnails;
+  readonly Video?: VideoParameters;
+  readonly Audio?: AudioParameters;
+  readonly Thumbnails?: Thumbnails;
 }
 export interface DeletePipeline {
   readonly Id: string;
@@ -40,21 +40,21 @@ export interface DeletePreset {
 }
 export interface ListJobsByPipeline {
   readonly PipelineId: string;
-  readonly Ascending: string;
-  readonly PageToken: string;
+  readonly Ascending?: string;
+  readonly PageToken?: string;
 }
 export interface ListJobsByStatus {
   readonly Status: string;
-  readonly Ascending: string;
-  readonly PageToken: string;
+  readonly Ascending?: string;
+  readonly PageToken?: string;
 }
 export interface ListPipelines {
-  readonly Ascending: string;
-  readonly PageToken: string;
+  readonly Ascending?: string;
+  readonly PageToken?: string;
 }
 export interface ListPresets {
-  readonly Ascending: string;
-  readonly PageToken: string;
+  readonly Ascending?: string;
+  readonly PageToken?: string;
 }
 export interface ReadJob {
   readonly Id: string;
@@ -73,13 +73,13 @@ export interface TestRole {
 }
 export interface UpdatePipeline {
   readonly Id: string;
-  readonly Name: string;
-  readonly InputBucket: string;
-  readonly Role: string;
-  readonly AwsKmsKeyArn: string;
-  readonly Notifications: Notifications;
-  readonly ContentConfig: PipelineOutputConfig;
-  readonly ThumbnailConfig: PipelineOutputConfig;
+  readonly Name?: string;
+  readonly InputBucket?: string;
+  readonly Role?: string;
+  readonly AwsKmsKeyArn?: string;
+  readonly Notifications?: Notifications;
+  readonly ContentConfig?: PipelineOutputConfig;
+  readonly ThumbnailConfig?: PipelineOutputConfig;
 }
 export interface UpdatePipelineNotifications {
   readonly Id: string;

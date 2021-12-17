@@ -5,118 +5,118 @@ export interface AbortMultipartUpload {
   readonly Bucket: string;
   readonly Key: string;
   readonly UploadId: string;
-  readonly RequestPayer: string;
-  readonly ExpectedBucketOwner: string;
+  readonly RequestPayer?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface CompleteMultipartUpload {
   readonly Bucket: string;
   readonly Key: string;
-  readonly MultipartUpload: CompletedMultipartUpload;
+  readonly MultipartUpload?: CompletedMultipartUpload;
   readonly UploadId: string;
-  readonly RequestPayer: string;
-  readonly ExpectedBucketOwner: string;
+  readonly RequestPayer?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface CopyObject {
-  readonly ACL: string;
+  readonly ACL?: string;
   readonly Bucket: string;
-  readonly CacheControl: string;
-  readonly ContentDisposition: string;
-  readonly ContentEncoding: string;
-  readonly ContentLanguage: string;
-  readonly ContentType: string;
+  readonly CacheControl?: string;
+  readonly ContentDisposition?: string;
+  readonly ContentEncoding?: string;
+  readonly ContentLanguage?: string;
+  readonly ContentType?: string;
   readonly CopySource: string;
-  readonly CopySourceIfMatch: string;
-  readonly CopySourceIfModifiedSince: Date;
-  readonly CopySourceIfNoneMatch: string;
-  readonly CopySourceIfUnmodifiedSince: Date;
-  readonly Expires: Date;
-  readonly GrantFullControl: string;
-  readonly GrantRead: string;
-  readonly GrantReadACP: string;
-  readonly GrantWriteACP: string;
+  readonly CopySourceIfMatch?: string;
+  readonly CopySourceIfModifiedSince?: Date;
+  readonly CopySourceIfNoneMatch?: string;
+  readonly CopySourceIfUnmodifiedSince?: Date;
+  readonly Expires?: Date;
+  readonly GrantFullControl?: string;
+  readonly GrantRead?: string;
+  readonly GrantReadACP?: string;
+  readonly GrantWriteACP?: string;
   readonly Key: string;
-  readonly Metadata: {[key: string]: any};
-  readonly MetadataDirective: string;
-  readonly TaggingDirective: string;
-  readonly ServerSideEncryption: string;
-  readonly StorageClass: string;
-  readonly WebsiteRedirectLocation: string;
-  readonly SSECustomerAlgorithm: string;
-  readonly SSECustomerKey: string;
-  readonly SSECustomerKeyMD5: string;
-  readonly SSEKMSKeyId: string;
-  readonly SSEKMSEncryptionContext: string;
-  readonly BucketKeyEnabled: boolean;
-  readonly CopySourceSSECustomerAlgorithm: string;
-  readonly CopySourceSSECustomerKey: string;
-  readonly CopySourceSSECustomerKeyMD5: string;
-  readonly RequestPayer: string;
-  readonly Tagging: string;
-  readonly ObjectLockMode: string;
-  readonly ObjectLockRetainUntilDate: Date;
-  readonly ObjectLockLegalHoldStatus: string;
-  readonly ExpectedBucketOwner: string;
-  readonly ExpectedSourceBucketOwner: string;
+  readonly Metadata?: {[key: string]: any};
+  readonly MetadataDirective?: string;
+  readonly TaggingDirective?: string;
+  readonly ServerSideEncryption?: string;
+  readonly StorageClass?: string;
+  readonly WebsiteRedirectLocation?: string;
+  readonly SSECustomerAlgorithm?: string;
+  readonly SSECustomerKey?: string;
+  readonly SSECustomerKeyMD5?: string;
+  readonly SSEKMSKeyId?: string;
+  readonly SSEKMSEncryptionContext?: string;
+  readonly BucketKeyEnabled?: boolean;
+  readonly CopySourceSSECustomerAlgorithm?: string;
+  readonly CopySourceSSECustomerKey?: string;
+  readonly CopySourceSSECustomerKeyMD5?: string;
+  readonly RequestPayer?: string;
+  readonly Tagging?: string;
+  readonly ObjectLockMode?: string;
+  readonly ObjectLockRetainUntilDate?: Date;
+  readonly ObjectLockLegalHoldStatus?: string;
+  readonly ExpectedBucketOwner?: string;
+  readonly ExpectedSourceBucketOwner?: string;
 }
 export interface CreateBucket {
-  readonly ACL: string;
+  readonly ACL?: string;
   readonly Bucket: string;
-  readonly CreateBucketConfiguration: CreateBucketConfiguration;
-  readonly GrantFullControl: string;
-  readonly GrantRead: string;
-  readonly GrantReadACP: string;
-  readonly GrantWrite: string;
-  readonly GrantWriteACP: string;
-  readonly ObjectLockEnabledForBucket: boolean;
-  readonly ObjectOwnership: string;
+  readonly CreateBucketConfiguration?: CreateBucketConfiguration;
+  readonly GrantFullControl?: string;
+  readonly GrantRead?: string;
+  readonly GrantReadACP?: string;
+  readonly GrantWrite?: string;
+  readonly GrantWriteACP?: string;
+  readonly ObjectLockEnabledForBucket?: boolean;
+  readonly ObjectOwnership?: string;
 }
 export interface CreateMultipartUpload {
-  readonly ACL: string;
+  readonly ACL?: string;
   readonly Bucket: string;
-  readonly CacheControl: string;
-  readonly ContentDisposition: string;
-  readonly ContentEncoding: string;
-  readonly ContentLanguage: string;
-  readonly ContentType: string;
-  readonly Expires: Date;
-  readonly GrantFullControl: string;
-  readonly GrantRead: string;
-  readonly GrantReadACP: string;
-  readonly GrantWriteACP: string;
+  readonly CacheControl?: string;
+  readonly ContentDisposition?: string;
+  readonly ContentEncoding?: string;
+  readonly ContentLanguage?: string;
+  readonly ContentType?: string;
+  readonly Expires?: Date;
+  readonly GrantFullControl?: string;
+  readonly GrantRead?: string;
+  readonly GrantReadACP?: string;
+  readonly GrantWriteACP?: string;
   readonly Key: string;
-  readonly Metadata: {[key: string]: any};
-  readonly ServerSideEncryption: string;
-  readonly StorageClass: string;
-  readonly WebsiteRedirectLocation: string;
-  readonly SSECustomerAlgorithm: string;
-  readonly SSECustomerKey: string;
-  readonly SSECustomerKeyMD5: string;
-  readonly SSEKMSKeyId: string;
-  readonly SSEKMSEncryptionContext: string;
-  readonly BucketKeyEnabled: boolean;
-  readonly RequestPayer: string;
-  readonly Tagging: string;
-  readonly ObjectLockMode: string;
-  readonly ObjectLockRetainUntilDate: Date;
-  readonly ObjectLockLegalHoldStatus: string;
-  readonly ExpectedBucketOwner: string;
+  readonly Metadata?: {[key: string]: any};
+  readonly ServerSideEncryption?: string;
+  readonly StorageClass?: string;
+  readonly WebsiteRedirectLocation?: string;
+  readonly SSECustomerAlgorithm?: string;
+  readonly SSECustomerKey?: string;
+  readonly SSECustomerKeyMD5?: string;
+  readonly SSEKMSKeyId?: string;
+  readonly SSEKMSEncryptionContext?: string;
+  readonly BucketKeyEnabled?: boolean;
+  readonly RequestPayer?: string;
+  readonly Tagging?: string;
+  readonly ObjectLockMode?: string;
+  readonly ObjectLockRetainUntilDate?: Date;
+  readonly ObjectLockLegalHoldStatus?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteBucket {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteBucketAnalyticsConfiguration {
   readonly Bucket: string;
   readonly Id: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteBucketCors {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteBucketEncryption {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteBucketIntelligentTieringConfiguration {
   readonly Bucket: string;
@@ -125,84 +125,84 @@ export interface DeleteBucketIntelligentTieringConfiguration {
 export interface DeleteBucketInventoryConfiguration {
   readonly Bucket: string;
   readonly Id: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteBucketLifecycle {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteBucketMetricsConfiguration {
   readonly Bucket: string;
   readonly Id: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteBucketOwnershipControls {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteBucketPolicy {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteBucketReplication {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteBucketTagging {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteBucketWebsite {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteObject {
   readonly Bucket: string;
   readonly Key: string;
-  readonly MFA: string;
-  readonly VersionId: string;
-  readonly RequestPayer: string;
-  readonly BypassGovernanceRetention: boolean;
-  readonly ExpectedBucketOwner: string;
+  readonly MFA?: string;
+  readonly VersionId?: string;
+  readonly RequestPayer?: string;
+  readonly BypassGovernanceRetention?: boolean;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteObjectTagging {
   readonly Bucket: string;
   readonly Key: string;
-  readonly VersionId: string;
-  readonly ExpectedBucketOwner: string;
+  readonly VersionId?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeleteObjects {
   readonly Bucket: string;
   readonly Delete: Delete;
-  readonly MFA: string;
-  readonly RequestPayer: string;
-  readonly BypassGovernanceRetention: boolean;
-  readonly ExpectedBucketOwner: string;
+  readonly MFA?: string;
+  readonly RequestPayer?: string;
+  readonly BypassGovernanceRetention?: boolean;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface DeletePublicAccessBlock {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketAccelerateConfiguration {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketAcl {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketAnalyticsConfiguration {
   readonly Bucket: string;
   readonly Id: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketCors {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketEncryption {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketIntelligentTieringConfiguration {
   readonly Bucket: string;
@@ -211,257 +211,257 @@ export interface GetBucketIntelligentTieringConfiguration {
 export interface GetBucketInventoryConfiguration {
   readonly Bucket: string;
   readonly Id: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketLifecycle {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketLifecycleConfiguration {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketLocation {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketLogging {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketMetricsConfiguration {
   readonly Bucket: string;
   readonly Id: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketNotification {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketNotificationConfiguration {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketOwnershipControls {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketPolicy {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketPolicyStatus {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketReplication {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketRequestPayment {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketTagging {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketVersioning {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetBucketWebsite {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetObject {
   readonly Bucket: string;
-  readonly IfMatch: string;
-  readonly IfModifiedSince: Date;
-  readonly IfNoneMatch: string;
-  readonly IfUnmodifiedSince: Date;
+  readonly IfMatch?: string;
+  readonly IfModifiedSince?: Date;
+  readonly IfNoneMatch?: string;
+  readonly IfUnmodifiedSince?: Date;
   readonly Key: string;
-  readonly Range: string;
-  readonly ResponseCacheControl: string;
-  readonly ResponseContentDisposition: string;
-  readonly ResponseContentEncoding: string;
-  readonly ResponseContentLanguage: string;
-  readonly ResponseContentType: string;
-  readonly ResponseExpires: Date;
-  readonly VersionId: string;
-  readonly SSECustomerAlgorithm: string;
-  readonly SSECustomerKey: string;
-  readonly SSECustomerKeyMD5: string;
-  readonly RequestPayer: string;
-  readonly PartNumber: number;
-  readonly ExpectedBucketOwner: string;
+  readonly Range?: string;
+  readonly ResponseCacheControl?: string;
+  readonly ResponseContentDisposition?: string;
+  readonly ResponseContentEncoding?: string;
+  readonly ResponseContentLanguage?: string;
+  readonly ResponseContentType?: string;
+  readonly ResponseExpires?: Date;
+  readonly VersionId?: string;
+  readonly SSECustomerAlgorithm?: string;
+  readonly SSECustomerKey?: string;
+  readonly SSECustomerKeyMD5?: string;
+  readonly RequestPayer?: string;
+  readonly PartNumber?: number;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetObjectAcl {
   readonly Bucket: string;
   readonly Key: string;
-  readonly VersionId: string;
-  readonly RequestPayer: string;
-  readonly ExpectedBucketOwner: string;
+  readonly VersionId?: string;
+  readonly RequestPayer?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetObjectLegalHold {
   readonly Bucket: string;
   readonly Key: string;
-  readonly VersionId: string;
-  readonly RequestPayer: string;
-  readonly ExpectedBucketOwner: string;
+  readonly VersionId?: string;
+  readonly RequestPayer?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetObjectLockConfiguration {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetObjectRetention {
   readonly Bucket: string;
   readonly Key: string;
-  readonly VersionId: string;
-  readonly RequestPayer: string;
-  readonly ExpectedBucketOwner: string;
+  readonly VersionId?: string;
+  readonly RequestPayer?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetObjectTagging {
   readonly Bucket: string;
   readonly Key: string;
-  readonly VersionId: string;
-  readonly ExpectedBucketOwner: string;
-  readonly RequestPayer: string;
+  readonly VersionId?: string;
+  readonly ExpectedBucketOwner?: string;
+  readonly RequestPayer?: string;
 }
 export interface GetObjectTorrent {
   readonly Bucket: string;
   readonly Key: string;
-  readonly RequestPayer: string;
-  readonly ExpectedBucketOwner: string;
+  readonly RequestPayer?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface GetPublicAccessBlock {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface HeadBucket {
   readonly Bucket: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface HeadObject {
   readonly Bucket: string;
-  readonly IfMatch: string;
-  readonly IfModifiedSince: Date;
-  readonly IfNoneMatch: string;
-  readonly IfUnmodifiedSince: Date;
+  readonly IfMatch?: string;
+  readonly IfModifiedSince?: Date;
+  readonly IfNoneMatch?: string;
+  readonly IfUnmodifiedSince?: Date;
   readonly Key: string;
-  readonly Range: string;
-  readonly VersionId: string;
-  readonly SSECustomerAlgorithm: string;
-  readonly SSECustomerKey: string;
-  readonly SSECustomerKeyMD5: string;
-  readonly RequestPayer: string;
-  readonly PartNumber: number;
-  readonly ExpectedBucketOwner: string;
+  readonly Range?: string;
+  readonly VersionId?: string;
+  readonly SSECustomerAlgorithm?: string;
+  readonly SSECustomerKey?: string;
+  readonly SSECustomerKeyMD5?: string;
+  readonly RequestPayer?: string;
+  readonly PartNumber?: number;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface ListBucketAnalyticsConfigurations {
   readonly Bucket: string;
-  readonly ContinuationToken: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ContinuationToken?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface ListBucketIntelligentTieringConfigurations {
   readonly Bucket: string;
-  readonly ContinuationToken: string;
+  readonly ContinuationToken?: string;
 }
 export interface ListBucketInventoryConfigurations {
   readonly Bucket: string;
-  readonly ContinuationToken: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ContinuationToken?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface ListBucketMetricsConfigurations {
   readonly Bucket: string;
-  readonly ContinuationToken: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ContinuationToken?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface ListMultipartUploads {
   readonly Bucket: string;
-  readonly Delimiter: string;
-  readonly EncodingType: string;
-  readonly KeyMarker: string;
-  readonly MaxUploads: number;
-  readonly Prefix: string;
-  readonly UploadIdMarker: string;
-  readonly ExpectedBucketOwner: string;
+  readonly Delimiter?: string;
+  readonly EncodingType?: string;
+  readonly KeyMarker?: string;
+  readonly MaxUploads?: number;
+  readonly Prefix?: string;
+  readonly UploadIdMarker?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface ListObjectVersions {
   readonly Bucket: string;
-  readonly Delimiter: string;
-  readonly EncodingType: string;
-  readonly KeyMarker: string;
-  readonly MaxKeys: number;
-  readonly Prefix: string;
-  readonly VersionIdMarker: string;
-  readonly ExpectedBucketOwner: string;
+  readonly Delimiter?: string;
+  readonly EncodingType?: string;
+  readonly KeyMarker?: string;
+  readonly MaxKeys?: number;
+  readonly Prefix?: string;
+  readonly VersionIdMarker?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface ListObjects {
   readonly Bucket: string;
-  readonly Delimiter: string;
-  readonly EncodingType: string;
-  readonly Marker: string;
-  readonly MaxKeys: number;
-  readonly Prefix: string;
-  readonly RequestPayer: string;
-  readonly ExpectedBucketOwner: string;
+  readonly Delimiter?: string;
+  readonly EncodingType?: string;
+  readonly Marker?: string;
+  readonly MaxKeys?: number;
+  readonly Prefix?: string;
+  readonly RequestPayer?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface ListObjectsV2 {
   readonly Bucket: string;
-  readonly Delimiter: string;
-  readonly EncodingType: string;
-  readonly MaxKeys: number;
-  readonly Prefix: string;
-  readonly ContinuationToken: string;
-  readonly FetchOwner: boolean;
-  readonly StartAfter: string;
-  readonly RequestPayer: string;
-  readonly ExpectedBucketOwner: string;
+  readonly Delimiter?: string;
+  readonly EncodingType?: string;
+  readonly MaxKeys?: number;
+  readonly Prefix?: string;
+  readonly ContinuationToken?: string;
+  readonly FetchOwner?: boolean;
+  readonly StartAfter?: string;
+  readonly RequestPayer?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface ListParts {
   readonly Bucket: string;
   readonly Key: string;
-  readonly MaxParts: number;
-  readonly PartNumberMarker: number;
+  readonly MaxParts?: number;
+  readonly PartNumberMarker?: number;
   readonly UploadId: string;
-  readonly RequestPayer: string;
-  readonly ExpectedBucketOwner: string;
+  readonly RequestPayer?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketAccelerateConfiguration {
   readonly Bucket: string;
   readonly AccelerateConfiguration: AccelerateConfiguration;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketAcl {
-  readonly ACL: string;
-  readonly AccessControlPolicy: AccessControlPolicy;
+  readonly ACL?: string;
+  readonly AccessControlPolicy?: AccessControlPolicy;
   readonly Bucket: string;
-  readonly ContentMD5: string;
-  readonly GrantFullControl: string;
-  readonly GrantRead: string;
-  readonly GrantReadACP: string;
-  readonly GrantWrite: string;
-  readonly GrantWriteACP: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ContentMD5?: string;
+  readonly GrantFullControl?: string;
+  readonly GrantRead?: string;
+  readonly GrantReadACP?: string;
+  readonly GrantWrite?: string;
+  readonly GrantWriteACP?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketAnalyticsConfiguration {
   readonly Bucket: string;
   readonly Id: string;
   readonly AnalyticsConfiguration: AnalyticsConfiguration;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketCors {
   readonly Bucket: string;
   readonly CORSConfiguration: CORSConfiguration;
-  readonly ContentMD5: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ContentMD5?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketEncryption {
   readonly Bucket: string;
-  readonly ContentMD5: string;
+  readonly ContentMD5?: string;
   readonly ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketIntelligentTieringConfiguration {
   readonly Bucket: string;
@@ -472,273 +472,273 @@ export interface PutBucketInventoryConfiguration {
   readonly Bucket: string;
   readonly Id: string;
   readonly InventoryConfiguration: InventoryConfiguration;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketLifecycle {
   readonly Bucket: string;
-  readonly ContentMD5: string;
-  readonly LifecycleConfiguration: LifecycleConfiguration;
-  readonly ExpectedBucketOwner: string;
+  readonly ContentMD5?: string;
+  readonly LifecycleConfiguration?: LifecycleConfiguration;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketLifecycleConfiguration {
   readonly Bucket: string;
-  readonly LifecycleConfiguration: BucketLifecycleConfiguration;
-  readonly ExpectedBucketOwner: string;
+  readonly LifecycleConfiguration?: BucketLifecycleConfiguration;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketLogging {
   readonly Bucket: string;
   readonly BucketLoggingStatus: BucketLoggingStatus;
-  readonly ContentMD5: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ContentMD5?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketMetricsConfiguration {
   readonly Bucket: string;
   readonly Id: string;
   readonly MetricsConfiguration: MetricsConfiguration;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketNotification {
   readonly Bucket: string;
-  readonly ContentMD5: string;
+  readonly ContentMD5?: string;
   readonly NotificationConfiguration: NotificationConfigurationDeprecated;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketNotificationConfiguration {
   readonly Bucket: string;
   readonly NotificationConfiguration: NotificationConfiguration;
-  readonly ExpectedBucketOwner: string;
-  readonly SkipDestinationValidation: boolean;
+  readonly ExpectedBucketOwner?: string;
+  readonly SkipDestinationValidation?: boolean;
 }
 export interface PutBucketOwnershipControls {
   readonly Bucket: string;
-  readonly ContentMD5: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ContentMD5?: string;
+  readonly ExpectedBucketOwner?: string;
   readonly OwnershipControls: OwnershipControls;
 }
 export interface PutBucketPolicy {
   readonly Bucket: string;
-  readonly ContentMD5: string;
-  readonly ConfirmRemoveSelfBucketAccess: boolean;
+  readonly ContentMD5?: string;
+  readonly ConfirmRemoveSelfBucketAccess?: boolean;
   readonly Policy: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketReplication {
   readonly Bucket: string;
-  readonly ContentMD5: string;
+  readonly ContentMD5?: string;
   readonly ReplicationConfiguration: ReplicationConfiguration;
-  readonly Token: string;
-  readonly ExpectedBucketOwner: string;
+  readonly Token?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketRequestPayment {
   readonly Bucket: string;
-  readonly ContentMD5: string;
+  readonly ContentMD5?: string;
   readonly RequestPaymentConfiguration: RequestPaymentConfiguration;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketTagging {
   readonly Bucket: string;
-  readonly ContentMD5: string;
+  readonly ContentMD5?: string;
   readonly Tagging: Tagging;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketVersioning {
   readonly Bucket: string;
-  readonly ContentMD5: string;
-  readonly MFA: string;
+  readonly ContentMD5?: string;
+  readonly MFA?: string;
   readonly VersioningConfiguration: VersioningConfiguration;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutBucketWebsite {
   readonly Bucket: string;
-  readonly ContentMD5: string;
+  readonly ContentMD5?: string;
   readonly WebsiteConfiguration: WebsiteConfiguration;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutObject {
-  readonly ACL: string;
-  readonly Body: unknown;
+  readonly ACL?: string;
+  readonly Body?: unknown;
   readonly Bucket: string;
-  readonly CacheControl: string;
-  readonly ContentDisposition: string;
-  readonly ContentEncoding: string;
-  readonly ContentLanguage: string;
-  readonly ContentLength: number;
-  readonly ContentMD5: string;
-  readonly ContentType: string;
-  readonly Expires: Date;
-  readonly GrantFullControl: string;
-  readonly GrantRead: string;
-  readonly GrantReadACP: string;
-  readonly GrantWriteACP: string;
+  readonly CacheControl?: string;
+  readonly ContentDisposition?: string;
+  readonly ContentEncoding?: string;
+  readonly ContentLanguage?: string;
+  readonly ContentLength?: number;
+  readonly ContentMD5?: string;
+  readonly ContentType?: string;
+  readonly Expires?: Date;
+  readonly GrantFullControl?: string;
+  readonly GrantRead?: string;
+  readonly GrantReadACP?: string;
+  readonly GrantWriteACP?: string;
   readonly Key: string;
-  readonly Metadata: {[key: string]: any};
-  readonly ServerSideEncryption: string;
-  readonly StorageClass: string;
-  readonly WebsiteRedirectLocation: string;
-  readonly SSECustomerAlgorithm: string;
-  readonly SSECustomerKey: string;
-  readonly SSECustomerKeyMD5: string;
-  readonly SSEKMSKeyId: string;
-  readonly SSEKMSEncryptionContext: string;
-  readonly BucketKeyEnabled: boolean;
-  readonly RequestPayer: string;
-  readonly Tagging: string;
-  readonly ObjectLockMode: string;
-  readonly ObjectLockRetainUntilDate: Date;
-  readonly ObjectLockLegalHoldStatus: string;
-  readonly ExpectedBucketOwner: string;
+  readonly Metadata?: {[key: string]: any};
+  readonly ServerSideEncryption?: string;
+  readonly StorageClass?: string;
+  readonly WebsiteRedirectLocation?: string;
+  readonly SSECustomerAlgorithm?: string;
+  readonly SSECustomerKey?: string;
+  readonly SSECustomerKeyMD5?: string;
+  readonly SSEKMSKeyId?: string;
+  readonly SSEKMSEncryptionContext?: string;
+  readonly BucketKeyEnabled?: boolean;
+  readonly RequestPayer?: string;
+  readonly Tagging?: string;
+  readonly ObjectLockMode?: string;
+  readonly ObjectLockRetainUntilDate?: Date;
+  readonly ObjectLockLegalHoldStatus?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutObjectAcl {
-  readonly ACL: string;
-  readonly AccessControlPolicy: AccessControlPolicy;
+  readonly ACL?: string;
+  readonly AccessControlPolicy?: AccessControlPolicy;
   readonly Bucket: string;
-  readonly ContentMD5: string;
-  readonly GrantFullControl: string;
-  readonly GrantRead: string;
-  readonly GrantReadACP: string;
-  readonly GrantWrite: string;
-  readonly GrantWriteACP: string;
+  readonly ContentMD5?: string;
+  readonly GrantFullControl?: string;
+  readonly GrantRead?: string;
+  readonly GrantReadACP?: string;
+  readonly GrantWrite?: string;
+  readonly GrantWriteACP?: string;
   readonly Key: string;
-  readonly RequestPayer: string;
-  readonly VersionId: string;
-  readonly ExpectedBucketOwner: string;
+  readonly RequestPayer?: string;
+  readonly VersionId?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutObjectLegalHold {
   readonly Bucket: string;
   readonly Key: string;
-  readonly LegalHold: ObjectLockLegalHold;
-  readonly RequestPayer: string;
-  readonly VersionId: string;
-  readonly ContentMD5: string;
-  readonly ExpectedBucketOwner: string;
+  readonly LegalHold?: ObjectLockLegalHold;
+  readonly RequestPayer?: string;
+  readonly VersionId?: string;
+  readonly ContentMD5?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutObjectLockConfiguration {
   readonly Bucket: string;
-  readonly ObjectLockConfiguration: ObjectLockConfiguration;
-  readonly RequestPayer: string;
-  readonly Token: string;
-  readonly ContentMD5: string;
-  readonly ExpectedBucketOwner: string;
+  readonly ObjectLockConfiguration?: ObjectLockConfiguration;
+  readonly RequestPayer?: string;
+  readonly Token?: string;
+  readonly ContentMD5?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutObjectRetention {
   readonly Bucket: string;
   readonly Key: string;
-  readonly Retention: ObjectLockRetention;
-  readonly RequestPayer: string;
-  readonly VersionId: string;
-  readonly BypassGovernanceRetention: boolean;
-  readonly ContentMD5: string;
-  readonly ExpectedBucketOwner: string;
+  readonly Retention?: ObjectLockRetention;
+  readonly RequestPayer?: string;
+  readonly VersionId?: string;
+  readonly BypassGovernanceRetention?: boolean;
+  readonly ContentMD5?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface PutObjectTagging {
   readonly Bucket: string;
   readonly Key: string;
-  readonly VersionId: string;
-  readonly ContentMD5: string;
+  readonly VersionId?: string;
+  readonly ContentMD5?: string;
   readonly Tagging: Tagging;
-  readonly ExpectedBucketOwner: string;
-  readonly RequestPayer: string;
+  readonly ExpectedBucketOwner?: string;
+  readonly RequestPayer?: string;
 }
 export interface PutPublicAccessBlock {
   readonly Bucket: string;
-  readonly ContentMD5: string;
+  readonly ContentMD5?: string;
   readonly PublicAccessBlockConfiguration: PublicAccessBlockConfiguration;
-  readonly ExpectedBucketOwner: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface RestoreObject {
   readonly Bucket: string;
   readonly Key: string;
-  readonly VersionId: string;
-  readonly RestoreRequest: RestoreRequest;
-  readonly RequestPayer: string;
-  readonly ExpectedBucketOwner: string;
+  readonly VersionId?: string;
+  readonly RestoreRequest?: RestoreRequest;
+  readonly RequestPayer?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface SelectObjectContent {
   readonly Bucket: string;
   readonly Key: string;
-  readonly SSECustomerAlgorithm: string;
-  readonly SSECustomerKey: string;
-  readonly SSECustomerKeyMD5: string;
+  readonly SSECustomerAlgorithm?: string;
+  readonly SSECustomerKey?: string;
+  readonly SSECustomerKeyMD5?: string;
   readonly Expression: string;
   readonly ExpressionType: string;
-  readonly RequestProgress: RequestProgress;
+  readonly RequestProgress?: RequestProgress;
   readonly InputSerialization: InputSerialization;
   readonly OutputSerialization: OutputSerialization;
-  readonly ScanRange: ScanRange;
-  readonly ExpectedBucketOwner: string;
+  readonly ScanRange?: ScanRange;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface UploadPart {
-  readonly Body: unknown;
+  readonly Body?: unknown;
   readonly Bucket: string;
-  readonly ContentLength: number;
-  readonly ContentMD5: string;
+  readonly ContentLength?: number;
+  readonly ContentMD5?: string;
   readonly Key: string;
   readonly PartNumber: number;
   readonly UploadId: string;
-  readonly SSECustomerAlgorithm: string;
-  readonly SSECustomerKey: string;
-  readonly SSECustomerKeyMD5: string;
-  readonly RequestPayer: string;
-  readonly ExpectedBucketOwner: string;
+  readonly SSECustomerAlgorithm?: string;
+  readonly SSECustomerKey?: string;
+  readonly SSECustomerKeyMD5?: string;
+  readonly RequestPayer?: string;
+  readonly ExpectedBucketOwner?: string;
 }
 export interface UploadPartCopy {
   readonly Bucket: string;
   readonly CopySource: string;
-  readonly CopySourceIfMatch: string;
-  readonly CopySourceIfModifiedSince: Date;
-  readonly CopySourceIfNoneMatch: string;
-  readonly CopySourceIfUnmodifiedSince: Date;
-  readonly CopySourceRange: string;
+  readonly CopySourceIfMatch?: string;
+  readonly CopySourceIfModifiedSince?: Date;
+  readonly CopySourceIfNoneMatch?: string;
+  readonly CopySourceIfUnmodifiedSince?: Date;
+  readonly CopySourceRange?: string;
   readonly Key: string;
   readonly PartNumber: number;
   readonly UploadId: string;
-  readonly SSECustomerAlgorithm: string;
-  readonly SSECustomerKey: string;
-  readonly SSECustomerKeyMD5: string;
-  readonly CopySourceSSECustomerAlgorithm: string;
-  readonly CopySourceSSECustomerKey: string;
-  readonly CopySourceSSECustomerKeyMD5: string;
-  readonly RequestPayer: string;
-  readonly ExpectedBucketOwner: string;
-  readonly ExpectedSourceBucketOwner: string;
+  readonly SSECustomerAlgorithm?: string;
+  readonly SSECustomerKey?: string;
+  readonly SSECustomerKeyMD5?: string;
+  readonly CopySourceSSECustomerAlgorithm?: string;
+  readonly CopySourceSSECustomerKey?: string;
+  readonly CopySourceSSECustomerKeyMD5?: string;
+  readonly RequestPayer?: string;
+  readonly ExpectedBucketOwner?: string;
+  readonly ExpectedSourceBucketOwner?: string;
 }
 export interface WriteGetObjectResponse {
   readonly RequestRoute: string;
   readonly RequestToken: string;
-  readonly Body: unknown;
-  readonly StatusCode: number;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
-  readonly AcceptRanges: string;
-  readonly CacheControl: string;
-  readonly ContentDisposition: string;
-  readonly ContentEncoding: string;
-  readonly ContentLanguage: string;
-  readonly ContentLength: number;
-  readonly ContentRange: string;
-  readonly ContentType: string;
-  readonly DeleteMarker: boolean;
-  readonly ETag: string;
-  readonly Expires: Date;
-  readonly Expiration: string;
-  readonly LastModified: Date;
-  readonly MissingMeta: number;
-  readonly Metadata: {[key: string]: any};
-  readonly ObjectLockMode: string;
-  readonly ObjectLockLegalHoldStatus: string;
-  readonly ObjectLockRetainUntilDate: Date;
-  readonly PartsCount: number;
-  readonly ReplicationStatus: string;
-  readonly RequestCharged: string;
-  readonly Restore: string;
-  readonly ServerSideEncryption: string;
-  readonly SSECustomerAlgorithm: string;
-  readonly SSEKMSKeyId: string;
-  readonly SSECustomerKeyMD5: string;
-  readonly StorageClass: string;
-  readonly TagCount: number;
-  readonly VersionId: string;
-  readonly BucketKeyEnabled: boolean;
+  readonly Body?: unknown;
+  readonly StatusCode?: number;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
+  readonly AcceptRanges?: string;
+  readonly CacheControl?: string;
+  readonly ContentDisposition?: string;
+  readonly ContentEncoding?: string;
+  readonly ContentLanguage?: string;
+  readonly ContentLength?: number;
+  readonly ContentRange?: string;
+  readonly ContentType?: string;
+  readonly DeleteMarker?: boolean;
+  readonly ETag?: string;
+  readonly Expires?: Date;
+  readonly Expiration?: string;
+  readonly LastModified?: Date;
+  readonly MissingMeta?: number;
+  readonly Metadata?: {[key: string]: any};
+  readonly ObjectLockMode?: string;
+  readonly ObjectLockLegalHoldStatus?: string;
+  readonly ObjectLockRetainUntilDate?: Date;
+  readonly PartsCount?: number;
+  readonly ReplicationStatus?: string;
+  readonly RequestCharged?: string;
+  readonly Restore?: string;
+  readonly ServerSideEncryption?: string;
+  readonly SSECustomerAlgorithm?: string;
+  readonly SSEKMSKeyId?: string;
+  readonly SSECustomerKeyMD5?: string;
+  readonly StorageClass?: string;
+  readonly TagCount?: number;
+  readonly VersionId?: string;
+  readonly BucketKeyEnabled?: boolean;
 }
 
 

@@ -6,14 +6,14 @@ export interface AcceptGrant {
 }
 export interface CheckInLicense {
   readonly LicenseConsumptionToken: string;
-  readonly Beneficiary: string;
+  readonly Beneficiary?: string;
 }
 export interface CheckoutBorrowLicense {
   readonly LicenseArn: string;
   readonly Entitlements: [];
   readonly DigitalSignatureMethod: string;
-  readonly NodeId: string;
-  readonly CheckoutMetadata: [];
+  readonly NodeId?: string;
+  readonly CheckoutMetadata?: [];
   readonly ClientToken: string;
 }
 export interface CheckoutLicense {
@@ -22,8 +22,8 @@ export interface CheckoutLicense {
   readonly KeyFingerprint: string;
   readonly Entitlements: [];
   readonly ClientToken: string;
-  readonly Beneficiary: string;
-  readonly NodeId: string;
+  readonly Beneficiary?: string;
+  readonly NodeId?: string;
 }
 export interface CreateGrant {
   readonly ClientToken: string;
@@ -36,11 +36,11 @@ export interface CreateGrant {
 export interface CreateGrantVersion {
   readonly ClientToken: string;
   readonly GrantArn: string;
-  readonly GrantName: string;
-  readonly AllowedOperations: [];
-  readonly Status: string;
-  readonly StatusReason: string;
-  readonly SourceVersion: string;
+  readonly GrantName?: string;
+  readonly AllowedOperations?: [];
+  readonly Status?: string;
+  readonly StatusReason?: string;
+  readonly SourceVersion?: string;
 }
 export interface CreateLicense {
   readonly LicenseName: string;
@@ -52,19 +52,19 @@ export interface CreateLicense {
   readonly Entitlements: [];
   readonly Beneficiary: string;
   readonly ConsumptionConfiguration: ConsumptionConfiguration;
-  readonly LicenseMetadata: [];
+  readonly LicenseMetadata?: [];
   readonly ClientToken: string;
 }
 export interface CreateLicenseConfiguration {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly LicenseCountingType: string;
-  readonly LicenseCount: number;
-  readonly LicenseCountHardLimit: boolean;
-  readonly LicenseRules: [];
-  readonly Tags: [];
-  readonly DisassociateWhenNotFound: boolean;
-  readonly ProductInformationList: [];
+  readonly LicenseCount?: number;
+  readonly LicenseCountHardLimit?: boolean;
+  readonly LicenseRules?: [];
+  readonly Tags?: [];
+  readonly DisassociateWhenNotFound?: boolean;
+  readonly ProductInformationList?: [];
 }
 export interface CreateLicenseConversionTaskForResource {
   readonly ResourceArn: string;
@@ -77,8 +77,8 @@ export interface CreateLicenseManagerReportGenerator {
   readonly ReportContext: ReportContext;
   readonly ReportFrequency: ReportFrequency;
   readonly ClientToken: string;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 export interface CreateLicenseVersion {
   readonly LicenseArn: string;
@@ -87,23 +87,23 @@ export interface CreateLicenseVersion {
   readonly Issuer: Issuer;
   readonly HomeRegion: string;
   readonly Validity: DatetimeRange;
-  readonly LicenseMetadata: [];
+  readonly LicenseMetadata?: [];
   readonly Entitlements: [];
   readonly ConsumptionConfiguration: ConsumptionConfiguration;
   readonly Status: string;
   readonly ClientToken: string;
-  readonly SourceVersion: string;
+  readonly SourceVersion?: string;
 }
 export interface CreateToken {
   readonly LicenseArn: string;
-  readonly RoleArns: [];
-  readonly ExpirationInDays: number;
-  readonly TokenProperties: [];
+  readonly RoleArns?: [];
+  readonly ExpirationInDays?: number;
+  readonly TokenProperties?: [];
   readonly ClientToken: string;
 }
 export interface DeleteGrant {
   readonly GrantArn: string;
-  readonly StatusReason: string;
+  readonly StatusReason?: string;
   readonly Version: string;
 }
 export interface DeleteLicense {
@@ -121,19 +121,19 @@ export interface DeleteToken {
 }
 export interface ExtendLicenseConsumption {
   readonly LicenseConsumptionToken: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 export interface GetAccessToken {
   readonly Token: string;
-  readonly TokenProperties: [];
+  readonly TokenProperties?: [];
 }
 export interface GetGrant {
   readonly GrantArn: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface GetLicense {
   readonly LicenseArn: string;
-  readonly Version: string;
+  readonly Version?: string;
 }
 export interface GetLicenseConfiguration {
   readonly LicenseConfigurationArn: string;
@@ -151,83 +151,83 @@ export interface GetServiceSettings {
 }
 export interface ListAssociationsForLicenseConfiguration {
   readonly LicenseConfigurationArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListDistributedGrants {
-  readonly GrantArns: [];
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly GrantArns?: [];
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListFailuresForLicenseConfigurationOperations {
   readonly LicenseConfigurationArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListLicenseConfigurations {
-  readonly LicenseConfigurationArns: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+  readonly LicenseConfigurationArns?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 export interface ListLicenseConversionTasks {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 export interface ListLicenseManagerReportGenerators {
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListLicenseSpecificationsForResource {
   readonly ResourceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListLicenseVersions {
   readonly LicenseArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListLicenses {
-  readonly LicenseArns: [];
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly LicenseArns?: [];
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListReceivedGrants {
-  readonly GrantArns: [];
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly GrantArns?: [];
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListReceivedLicenses {
-  readonly LicenseArns: [];
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly LicenseArns?: [];
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListResourceInventory {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface ListTokens {
-  readonly TokenIds: [];
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly TokenIds?: [];
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListUsageForLicenseConfiguration {
   readonly LicenseConfigurationArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 export interface RejectGrant {
   readonly GrantArn: string;
@@ -242,14 +242,14 @@ export interface UntagResource {
 }
 export interface UpdateLicenseConfiguration {
   readonly LicenseConfigurationArn: string;
-  readonly LicenseConfigurationStatus: string;
-  readonly LicenseRules: [];
-  readonly LicenseCount: number;
-  readonly LicenseCountHardLimit: boolean;
-  readonly Name: string;
-  readonly Description: string;
-  readonly ProductInformationList: [];
-  readonly DisassociateWhenNotFound: boolean;
+  readonly LicenseConfigurationStatus?: string;
+  readonly LicenseRules?: [];
+  readonly LicenseCount?: number;
+  readonly LicenseCountHardLimit?: boolean;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly ProductInformationList?: [];
+  readonly DisassociateWhenNotFound?: boolean;
 }
 export interface UpdateLicenseManagerReportGenerator {
   readonly LicenseManagerReportGeneratorArn: string;
@@ -258,18 +258,18 @@ export interface UpdateLicenseManagerReportGenerator {
   readonly ReportContext: ReportContext;
   readonly ReportFrequency: ReportFrequency;
   readonly ClientToken: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 export interface UpdateLicenseSpecificationsForResource {
   readonly ResourceArn: string;
-  readonly AddLicenseSpecifications: [];
-  readonly RemoveLicenseSpecifications: [];
+  readonly AddLicenseSpecifications?: [];
+  readonly RemoveLicenseSpecifications?: [];
 }
 export interface UpdateServiceSettings {
-  readonly S3BucketArn: string;
-  readonly SnsTopicArn: string;
-  readonly OrganizationConfiguration: OrganizationConfiguration;
-  readonly EnableCrossAccountsDiscovery: boolean;
+  readonly S3BucketArn?: string;
+  readonly SnsTopicArn?: string;
+  readonly OrganizationConfiguration?: OrganizationConfiguration;
+  readonly EnableCrossAccountsDiscovery?: boolean;
 }
 
 

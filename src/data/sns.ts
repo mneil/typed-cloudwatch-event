@@ -13,7 +13,7 @@ export interface CheckIfPhoneNumberIsOptedOut {
 export interface ConfirmSubscription {
   readonly TopicArn: string;
   readonly Token: string;
-  readonly AuthenticateOnUnsubscribe: string;
+  readonly AuthenticateOnUnsubscribe?: string;
 }
 export interface CreatePlatformApplication {
   readonly Name: string;
@@ -23,17 +23,17 @@ export interface CreatePlatformApplication {
 export interface CreatePlatformEndpoint {
   readonly PlatformApplicationArn: string;
   readonly Token: string;
-  readonly CustomUserData: string;
-  readonly Attributes: {[key: string]: any};
+  readonly CustomUserData?: string;
+  readonly Attributes?: {[key: string]: any};
 }
 export interface CreateSMSSandboxPhoneNumber {
   readonly PhoneNumber: string;
-  readonly LanguageCode: string;
+  readonly LanguageCode?: string;
 }
 export interface CreateTopic {
   readonly Name: string;
-  readonly Attributes: {[key: string]: any};
-  readonly Tags: [];
+  readonly Attributes?: {[key: string]: any};
+  readonly Tags?: [];
 }
 export interface DeleteEndpoint {
   readonly EndpointArn: string;
@@ -54,7 +54,7 @@ export interface GetPlatformApplicationAttributes {
   readonly PlatformApplicationArn: string;
 }
 export interface GetSMSAttributes {
-  readonly attributes: [];
+  readonly attributes?: [];
 }
 export interface GetSMSSandboxAccountStatus {
 }
@@ -66,48 +66,48 @@ export interface GetTopicAttributes {
 }
 export interface ListEndpointsByPlatformApplication {
   readonly PlatformApplicationArn: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListOriginationNumbers {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPhoneNumbersOptedOut {
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListPlatformApplications {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListSMSSandboxPhoneNumbers {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListSubscriptions {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListSubscriptionsByTopic {
   readonly TopicArn: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface ListTopics {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface OptInPhoneNumber {
   readonly phoneNumber: string;
 }
 export interface Publish {
-  readonly TopicArn: string;
-  readonly TargetArn: string;
-  readonly PhoneNumber: string;
+  readonly TopicArn?: string;
+  readonly TargetArn?: string;
+  readonly PhoneNumber?: string;
   readonly Message: string;
-  readonly Subject: string;
-  readonly MessageStructure: string;
-  readonly MessageAttributes: {[key: string]: any};
-  readonly MessageDeduplicationId: string;
-  readonly MessageGroupId: string;
+  readonly Subject?: string;
+  readonly MessageStructure?: string;
+  readonly MessageAttributes?: {[key: string]: any};
+  readonly MessageDeduplicationId?: string;
+  readonly MessageGroupId?: string;
 }
 export interface PublishBatch {
   readonly TopicArn: string;
@@ -131,19 +131,19 @@ export interface SetSMSAttributes {
 export interface SetSubscriptionAttributes {
   readonly SubscriptionArn: string;
   readonly AttributeName: string;
-  readonly AttributeValue: string;
+  readonly AttributeValue?: string;
 }
 export interface SetTopicAttributes {
   readonly TopicArn: string;
   readonly AttributeName: string;
-  readonly AttributeValue: string;
+  readonly AttributeValue?: string;
 }
 export interface Subscribe {
   readonly TopicArn: string;
   readonly Protocol: string;
-  readonly Endpoint: string;
-  readonly Attributes: {[key: string]: any};
-  readonly ReturnSubscriptionArn: boolean;
+  readonly Endpoint?: string;
+  readonly Attributes?: {[key: string]: any};
+  readonly ReturnSubscriptionArn?: boolean;
 }
 export interface TagResource {
   readonly ResourceArn: string;

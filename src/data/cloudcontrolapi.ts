@@ -6,45 +6,45 @@ export interface CancelResourceRequest {
 }
 export interface CreateResource {
   readonly TypeName: string;
-  readonly TypeVersionId: string;
-  readonly RoleArn: string;
-  readonly ClientToken: string;
+  readonly TypeVersionId?: string;
+  readonly RoleArn?: string;
+  readonly ClientToken?: string;
   readonly DesiredState: string;
 }
 export interface DeleteResource {
   readonly TypeName: string;
-  readonly TypeVersionId: string;
-  readonly RoleArn: string;
-  readonly ClientToken: string;
+  readonly TypeVersionId?: string;
+  readonly RoleArn?: string;
+  readonly ClientToken?: string;
   readonly Identifier: string;
 }
 export interface GetResource {
   readonly TypeName: string;
-  readonly TypeVersionId: string;
-  readonly RoleArn: string;
+  readonly TypeVersionId?: string;
+  readonly RoleArn?: string;
   readonly Identifier: string;
 }
 export interface GetResourceRequestStatus {
   readonly RequestToken: string;
 }
 export interface ListResourceRequests {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ResourceRequestStatusFilter: ResourceRequestStatusFilter;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ResourceRequestStatusFilter?: ResourceRequestStatusFilter;
 }
 export interface ListResources {
   readonly TypeName: string;
-  readonly TypeVersionId: string;
-  readonly RoleArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ResourceModel: string;
+  readonly TypeVersionId?: string;
+  readonly RoleArn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ResourceModel?: string;
 }
 export interface UpdateResource {
   readonly TypeName: string;
-  readonly TypeVersionId: string;
-  readonly RoleArn: string;
-  readonly ClientToken: string;
+  readonly TypeVersionId?: string;
+  readonly RoleArn?: string;
+  readonly ClientToken?: string;
   readonly Identifier: string;
   readonly PatchDocument: string;
 }

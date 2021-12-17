@@ -8,107 +8,107 @@ export interface DescribeAccountHealth {
 }
 export interface DescribeAccountOverview {
   readonly FromTime: Date;
-  readonly ToTime: Date;
+  readonly ToTime?: Date;
 }
 export interface DescribeAnomaly {
   readonly Id: string;
-  readonly AccountId: string;
+  readonly AccountId?: string;
 }
 export interface DescribeFeedback {
-  readonly InsightId: string;
+  readonly InsightId?: string;
 }
 export interface DescribeInsight {
   readonly Id: string;
-  readonly AccountId: string;
+  readonly AccountId?: string;
 }
 export interface DescribeOrganizationHealth {
-  readonly AccountIds: [];
-  readonly OrganizationalUnitIds: [];
+  readonly AccountIds?: [];
+  readonly OrganizationalUnitIds?: [];
 }
 export interface DescribeOrganizationOverview {
   readonly FromTime: Date;
-  readonly ToTime: Date;
-  readonly AccountIds: [];
-  readonly OrganizationalUnitIds: [];
+  readonly ToTime?: Date;
+  readonly AccountIds?: [];
+  readonly OrganizationalUnitIds?: [];
 }
 export interface DescribeOrganizationResourceCollectionHealth {
   readonly OrganizationResourceCollectionType: string;
-  readonly AccountIds: [];
-  readonly OrganizationalUnitIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly AccountIds?: [];
+  readonly OrganizationalUnitIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeResourceCollectionHealth {
   readonly ResourceCollectionType: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface DescribeServiceIntegration {
 }
 export interface GetCostEstimation {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface GetResourceCollection {
   readonly ResourceCollectionType: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListAnomaliesForInsight {
   readonly InsightId: string;
-  readonly StartTimeRange: StartTimeRange;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly AccountId: string;
+  readonly StartTimeRange?: StartTimeRange;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly AccountId?: string;
 }
 export interface ListEvents {
   readonly Filters: ListEventsFilters;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly AccountId: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly AccountId?: string;
 }
 export interface ListInsights {
   readonly StatusFilter: ListInsightsStatusFilter;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListNotificationChannels {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListOrganizationInsights {
   readonly StatusFilter: ListInsightsStatusFilter;
-  readonly MaxResults: number;
-  readonly AccountIds: [];
-  readonly OrganizationalUnitIds: [];
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly AccountIds?: [];
+  readonly OrganizationalUnitIds?: [];
+  readonly NextToken?: string;
 }
 export interface ListRecommendations {
   readonly InsightId: string;
-  readonly NextToken: string;
-  readonly Locale: string;
-  readonly AccountId: string;
+  readonly NextToken?: string;
+  readonly Locale?: string;
+  readonly AccountId?: string;
 }
 export interface PutFeedback {
-  readonly InsightFeedback: InsightFeedback;
+  readonly InsightFeedback?: InsightFeedback;
 }
 export interface RemoveNotificationChannel {
   readonly Id: string;
 }
 export interface SearchInsights {
   readonly StartTimeRange: StartTimeRange;
-  readonly Filters: SearchInsightsFilters;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: SearchInsightsFilters;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly Type: string;
 }
 export interface SearchOrganizationInsights {
   readonly AccountIds: [];
   readonly StartTimeRange: StartTimeRange;
-  readonly Filters: SearchOrganizationInsightsFilters;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: SearchOrganizationInsightsFilters;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly Type: string;
 }
 export interface StartCostEstimation {
   readonly ResourceCollection: CostEstimationResourceCollectionFilter;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 export interface UpdateResourceCollection {
   readonly Action: string;

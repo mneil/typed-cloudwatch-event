@@ -10,28 +10,28 @@ export interface CreateMember {
 export interface CreateNetwork {
   readonly ClientRequestToken: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Framework: string;
   readonly FrameworkVersion: string;
-  readonly FrameworkConfiguration: NetworkFrameworkConfiguration;
+  readonly FrameworkConfiguration?: NetworkFrameworkConfiguration;
   readonly VotingPolicy: VotingPolicy;
   readonly MemberConfiguration: MemberConfiguration;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateNode {
   readonly ClientRequestToken: string;
   readonly NetworkId: string;
-  readonly MemberId: string;
+  readonly MemberId?: string;
   readonly NodeConfiguration: NodeConfiguration;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateProposal {
   readonly ClientRequestToken: string;
   readonly NetworkId: string;
   readonly MemberId: string;
   readonly Actions: ProposalActions;
-  readonly Description: string;
-  readonly Tags: {[key: string]: any};
+  readonly Description?: string;
+  readonly Tags?: {[key: string]: any};
 }
 export interface DeleteMember {
   readonly NetworkId: string;
@@ -39,7 +39,7 @@ export interface DeleteMember {
 }
 export interface DeleteNode {
   readonly NetworkId: string;
-  readonly MemberId: string;
+  readonly MemberId?: string;
   readonly NodeId: string;
 }
 export interface GetMember {
@@ -51,7 +51,7 @@ export interface GetNetwork {
 }
 export interface GetNode {
   readonly NetworkId: string;
-  readonly MemberId: string;
+  readonly MemberId?: string;
   readonly NodeId: string;
 }
 export interface GetProposal {
@@ -59,41 +59,41 @@ export interface GetProposal {
   readonly ProposalId: string;
 }
 export interface ListInvitations {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListMembers {
   readonly NetworkId: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly IsOwned: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly IsOwned?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListNetworks {
-  readonly Name: string;
-  readonly Framework: string;
-  readonly Status: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Name?: string;
+  readonly Framework?: string;
+  readonly Status?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListNodes {
   readonly NetworkId: string;
-  readonly MemberId: string;
-  readonly Status: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MemberId?: string;
+  readonly Status?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListProposalVotes {
   readonly NetworkId: string;
   readonly ProposalId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListProposals {
   readonly NetworkId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -112,13 +112,13 @@ export interface UntagResource {
 export interface UpdateMember {
   readonly NetworkId: string;
   readonly MemberId: string;
-  readonly LogPublishingConfiguration: MemberLogPublishingConfiguration;
+  readonly LogPublishingConfiguration?: MemberLogPublishingConfiguration;
 }
 export interface UpdateNode {
   readonly NetworkId: string;
-  readonly MemberId: string;
+  readonly MemberId?: string;
   readonly NodeId: string;
-  readonly LogPublishingConfiguration: NodeLogPublishingConfiguration;
+  readonly LogPublishingConfiguration?: NodeLogPublishingConfiguration;
 }
 export interface VoteOnProposal {
   readonly NetworkId: string;

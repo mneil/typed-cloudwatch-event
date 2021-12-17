@@ -3,16 +3,16 @@
  */
 export interface BatchExecuteStatement {
   readonly Statements: [];
-  readonly ReturnConsumedCapacity: string;
+  readonly ReturnConsumedCapacity?: string;
 }
 export interface BatchGetItem {
   readonly RequestItems: {[key: string]: any};
-  readonly ReturnConsumedCapacity: string;
+  readonly ReturnConsumedCapacity?: string;
 }
 export interface BatchWriteItem {
   readonly RequestItems: {[key: string]: any};
-  readonly ReturnConsumedCapacity: string;
-  readonly ReturnItemCollectionMetrics: string;
+  readonly ReturnConsumedCapacity?: string;
+  readonly ReturnItemCollectionMetrics?: string;
 }
 export interface CreateBackup {
   readonly TableName: string;
@@ -26,14 +26,14 @@ export interface CreateTable {
   readonly AttributeDefinitions: [];
   readonly TableName: string;
   readonly KeySchema: [];
-  readonly LocalSecondaryIndexes: [];
-  readonly GlobalSecondaryIndexes: [];
-  readonly BillingMode: string;
-  readonly ProvisionedThroughput: ProvisionedThroughput;
-  readonly StreamSpecification: StreamSpecification;
-  readonly SSESpecification: SSESpecification;
-  readonly Tags: [];
-  readonly TableClass: string;
+  readonly LocalSecondaryIndexes?: [];
+  readonly GlobalSecondaryIndexes?: [];
+  readonly BillingMode?: string;
+  readonly ProvisionedThroughput?: ProvisionedThroughput;
+  readonly StreamSpecification?: StreamSpecification;
+  readonly SSESpecification?: SSESpecification;
+  readonly Tags?: [];
+  readonly TableClass?: string;
 }
 export interface DeleteBackup {
   readonly BackupArn: string;
@@ -41,14 +41,14 @@ export interface DeleteBackup {
 export interface DeleteItem {
   readonly TableName: string;
   readonly Key: {[key: string]: any};
-  readonly Expected: {[key: string]: any};
-  readonly ConditionalOperator: string;
-  readonly ReturnValues: string;
-  readonly ReturnConsumedCapacity: string;
-  readonly ReturnItemCollectionMetrics: string;
-  readonly ConditionExpression: string;
-  readonly ExpressionAttributeNames: {[key: string]: any};
-  readonly ExpressionAttributeValues: {[key: string]: any};
+  readonly Expected?: {[key: string]: any};
+  readonly ConditionalOperator?: string;
+  readonly ReturnValues?: string;
+  readonly ReturnConsumedCapacity?: string;
+  readonly ReturnItemCollectionMetrics?: string;
+  readonly ConditionExpression?: string;
+  readonly ExpressionAttributeNames?: {[key: string]: any};
+  readonly ExpressionAttributeValues?: {[key: string]: any};
 }
 export interface DeleteTable {
   readonly TableName: string;
@@ -61,7 +61,7 @@ export interface DescribeContinuousBackups {
 }
 export interface DescribeContributorInsights {
   readonly TableName: string;
-  readonly IndexName: string;
+  readonly IndexName?: string;
 }
 export interface DescribeEndpoints {
 }
@@ -98,136 +98,136 @@ export interface EnableKinesisStreamingDestination {
 }
 export interface ExecuteStatement {
   readonly Statement: string;
-  readonly Parameters: [];
-  readonly ConsistentRead: boolean;
-  readonly NextToken: string;
-  readonly ReturnConsumedCapacity: string;
+  readonly Parameters?: [];
+  readonly ConsistentRead?: boolean;
+  readonly NextToken?: string;
+  readonly ReturnConsumedCapacity?: string;
 }
 export interface ExecuteTransaction {
   readonly TransactStatements: [];
-  readonly ClientRequestToken: string;
-  readonly ReturnConsumedCapacity: string;
+  readonly ClientRequestToken?: string;
+  readonly ReturnConsumedCapacity?: string;
 }
 export interface ExportTableToPointInTime {
   readonly TableArn: string;
-  readonly ExportTime: Date;
-  readonly ClientToken: string;
+  readonly ExportTime?: Date;
+  readonly ClientToken?: string;
   readonly S3Bucket: string;
-  readonly S3BucketOwner: string;
-  readonly S3Prefix: string;
-  readonly S3SseAlgorithm: string;
-  readonly S3SseKmsKeyId: string;
-  readonly ExportFormat: string;
+  readonly S3BucketOwner?: string;
+  readonly S3Prefix?: string;
+  readonly S3SseAlgorithm?: string;
+  readonly S3SseKmsKeyId?: string;
+  readonly ExportFormat?: string;
 }
 export interface GetItem {
   readonly TableName: string;
   readonly Key: {[key: string]: any};
-  readonly AttributesToGet: [];
-  readonly ConsistentRead: boolean;
-  readonly ReturnConsumedCapacity: string;
-  readonly ProjectionExpression: string;
-  readonly ExpressionAttributeNames: {[key: string]: any};
+  readonly AttributesToGet?: [];
+  readonly ConsistentRead?: boolean;
+  readonly ReturnConsumedCapacity?: string;
+  readonly ProjectionExpression?: string;
+  readonly ExpressionAttributeNames?: {[key: string]: any};
 }
 export interface ListBackups {
-  readonly TableName: string;
-  readonly Limit: number;
-  readonly TimeRangeLowerBound: Date;
-  readonly TimeRangeUpperBound: Date;
-  readonly ExclusiveStartBackupArn: string;
-  readonly BackupType: string;
+  readonly TableName?: string;
+  readonly Limit?: number;
+  readonly TimeRangeLowerBound?: Date;
+  readonly TimeRangeUpperBound?: Date;
+  readonly ExclusiveStartBackupArn?: string;
+  readonly BackupType?: string;
 }
 export interface ListContributorInsights {
-  readonly TableName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly TableName?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListExports {
-  readonly TableArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly TableArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListGlobalTables {
-  readonly ExclusiveStartGlobalTableName: string;
-  readonly Limit: number;
-  readonly RegionName: string;
+  readonly ExclusiveStartGlobalTableName?: string;
+  readonly Limit?: number;
+  readonly RegionName?: string;
 }
 export interface ListTables {
-  readonly ExclusiveStartTableName: string;
-  readonly Limit: number;
+  readonly ExclusiveStartTableName?: string;
+  readonly Limit?: number;
 }
 export interface ListTagsOfResource {
   readonly ResourceArn: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface PutItem {
   readonly TableName: string;
   readonly Item: {[key: string]: any};
-  readonly Expected: {[key: string]: any};
-  readonly ReturnValues: string;
-  readonly ReturnConsumedCapacity: string;
-  readonly ReturnItemCollectionMetrics: string;
-  readonly ConditionalOperator: string;
-  readonly ConditionExpression: string;
-  readonly ExpressionAttributeNames: {[key: string]: any};
-  readonly ExpressionAttributeValues: {[key: string]: any};
+  readonly Expected?: {[key: string]: any};
+  readonly ReturnValues?: string;
+  readonly ReturnConsumedCapacity?: string;
+  readonly ReturnItemCollectionMetrics?: string;
+  readonly ConditionalOperator?: string;
+  readonly ConditionExpression?: string;
+  readonly ExpressionAttributeNames?: {[key: string]: any};
+  readonly ExpressionAttributeValues?: {[key: string]: any};
 }
 export interface Query {
   readonly TableName: string;
-  readonly IndexName: string;
-  readonly Select: string;
-  readonly AttributesToGet: [];
-  readonly Limit: number;
-  readonly ConsistentRead: boolean;
-  readonly KeyConditions: {[key: string]: any};
-  readonly QueryFilter: {[key: string]: any};
-  readonly ConditionalOperator: string;
-  readonly ScanIndexForward: boolean;
-  readonly ExclusiveStartKey: {[key: string]: any};
-  readonly ReturnConsumedCapacity: string;
-  readonly ProjectionExpression: string;
-  readonly FilterExpression: string;
-  readonly KeyConditionExpression: string;
-  readonly ExpressionAttributeNames: {[key: string]: any};
-  readonly ExpressionAttributeValues: {[key: string]: any};
+  readonly IndexName?: string;
+  readonly Select?: string;
+  readonly AttributesToGet?: [];
+  readonly Limit?: number;
+  readonly ConsistentRead?: boolean;
+  readonly KeyConditions?: {[key: string]: any};
+  readonly QueryFilter?: {[key: string]: any};
+  readonly ConditionalOperator?: string;
+  readonly ScanIndexForward?: boolean;
+  readonly ExclusiveStartKey?: {[key: string]: any};
+  readonly ReturnConsumedCapacity?: string;
+  readonly ProjectionExpression?: string;
+  readonly FilterExpression?: string;
+  readonly KeyConditionExpression?: string;
+  readonly ExpressionAttributeNames?: {[key: string]: any};
+  readonly ExpressionAttributeValues?: {[key: string]: any};
 }
 export interface RestoreTableFromBackup {
   readonly TargetTableName: string;
   readonly BackupArn: string;
-  readonly BillingModeOverride: string;
-  readonly GlobalSecondaryIndexOverride: [];
-  readonly LocalSecondaryIndexOverride: [];
-  readonly ProvisionedThroughputOverride: ProvisionedThroughput;
-  readonly SSESpecificationOverride: SSESpecification;
+  readonly BillingModeOverride?: string;
+  readonly GlobalSecondaryIndexOverride?: [];
+  readonly LocalSecondaryIndexOverride?: [];
+  readonly ProvisionedThroughputOverride?: ProvisionedThroughput;
+  readonly SSESpecificationOverride?: SSESpecification;
 }
 export interface RestoreTableToPointInTime {
-  readonly SourceTableArn: string;
-  readonly SourceTableName: string;
+  readonly SourceTableArn?: string;
+  readonly SourceTableName?: string;
   readonly TargetTableName: string;
-  readonly UseLatestRestorableTime: boolean;
-  readonly RestoreDateTime: Date;
-  readonly BillingModeOverride: string;
-  readonly GlobalSecondaryIndexOverride: [];
-  readonly LocalSecondaryIndexOverride: [];
-  readonly ProvisionedThroughputOverride: ProvisionedThroughput;
-  readonly SSESpecificationOverride: SSESpecification;
+  readonly UseLatestRestorableTime?: boolean;
+  readonly RestoreDateTime?: Date;
+  readonly BillingModeOverride?: string;
+  readonly GlobalSecondaryIndexOverride?: [];
+  readonly LocalSecondaryIndexOverride?: [];
+  readonly ProvisionedThroughputOverride?: ProvisionedThroughput;
+  readonly SSESpecificationOverride?: SSESpecification;
 }
 export interface Scan {
   readonly TableName: string;
-  readonly IndexName: string;
-  readonly AttributesToGet: [];
-  readonly Limit: number;
-  readonly Select: string;
-  readonly ScanFilter: {[key: string]: any};
-  readonly ConditionalOperator: string;
-  readonly ExclusiveStartKey: {[key: string]: any};
-  readonly ReturnConsumedCapacity: string;
-  readonly TotalSegments: number;
-  readonly Segment: number;
-  readonly ProjectionExpression: string;
-  readonly FilterExpression: string;
-  readonly ExpressionAttributeNames: {[key: string]: any};
-  readonly ExpressionAttributeValues: {[key: string]: any};
-  readonly ConsistentRead: boolean;
+  readonly IndexName?: string;
+  readonly AttributesToGet?: [];
+  readonly Limit?: number;
+  readonly Select?: string;
+  readonly ScanFilter?: {[key: string]: any};
+  readonly ConditionalOperator?: string;
+  readonly ExclusiveStartKey?: {[key: string]: any};
+  readonly ReturnConsumedCapacity?: string;
+  readonly TotalSegments?: number;
+  readonly Segment?: number;
+  readonly ProjectionExpression?: string;
+  readonly FilterExpression?: string;
+  readonly ExpressionAttributeNames?: {[key: string]: any};
+  readonly ExpressionAttributeValues?: {[key: string]: any};
+  readonly ConsistentRead?: boolean;
 }
 export interface TagResource {
   readonly ResourceArn: string;
@@ -235,13 +235,13 @@ export interface TagResource {
 }
 export interface TransactGetItems {
   readonly TransactItems: [];
-  readonly ReturnConsumedCapacity: string;
+  readonly ReturnConsumedCapacity?: string;
 }
 export interface TransactWriteItems {
   readonly TransactItems: [];
-  readonly ReturnConsumedCapacity: string;
-  readonly ReturnItemCollectionMetrics: string;
-  readonly ClientRequestToken: string;
+  readonly ReturnConsumedCapacity?: string;
+  readonly ReturnItemCollectionMetrics?: string;
+  readonly ClientRequestToken?: string;
 }
 export interface UntagResource {
   readonly ResourceArn: string;
@@ -253,7 +253,7 @@ export interface UpdateContinuousBackups {
 }
 export interface UpdateContributorInsights {
   readonly TableName: string;
-  readonly IndexName: string;
+  readonly IndexName?: string;
   readonly ContributorInsightsAction: string;
 }
 export interface UpdateGlobalTable {
@@ -262,42 +262,42 @@ export interface UpdateGlobalTable {
 }
 export interface UpdateGlobalTableSettings {
   readonly GlobalTableName: string;
-  readonly GlobalTableBillingMode: string;
-  readonly GlobalTableProvisionedWriteCapacityUnits: number;
-  readonly GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate: AutoScalingSettingsUpdate;
-  readonly GlobalTableGlobalSecondaryIndexSettingsUpdate: [];
-  readonly ReplicaSettingsUpdate: [];
+  readonly GlobalTableBillingMode?: string;
+  readonly GlobalTableProvisionedWriteCapacityUnits?: number;
+  readonly GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate;
+  readonly GlobalTableGlobalSecondaryIndexSettingsUpdate?: [];
+  readonly ReplicaSettingsUpdate?: [];
 }
 export interface UpdateItem {
   readonly TableName: string;
   readonly Key: {[key: string]: any};
-  readonly AttributeUpdates: {[key: string]: any};
-  readonly Expected: {[key: string]: any};
-  readonly ConditionalOperator: string;
-  readonly ReturnValues: string;
-  readonly ReturnConsumedCapacity: string;
-  readonly ReturnItemCollectionMetrics: string;
-  readonly UpdateExpression: string;
-  readonly ConditionExpression: string;
-  readonly ExpressionAttributeNames: {[key: string]: any};
-  readonly ExpressionAttributeValues: {[key: string]: any};
+  readonly AttributeUpdates?: {[key: string]: any};
+  readonly Expected?: {[key: string]: any};
+  readonly ConditionalOperator?: string;
+  readonly ReturnValues?: string;
+  readonly ReturnConsumedCapacity?: string;
+  readonly ReturnItemCollectionMetrics?: string;
+  readonly UpdateExpression?: string;
+  readonly ConditionExpression?: string;
+  readonly ExpressionAttributeNames?: {[key: string]: any};
+  readonly ExpressionAttributeValues?: {[key: string]: any};
 }
 export interface UpdateTable {
-  readonly AttributeDefinitions: [];
+  readonly AttributeDefinitions?: [];
   readonly TableName: string;
-  readonly BillingMode: string;
-  readonly ProvisionedThroughput: ProvisionedThroughput;
-  readonly GlobalSecondaryIndexUpdates: [];
-  readonly StreamSpecification: StreamSpecification;
-  readonly SSESpecification: SSESpecification;
-  readonly ReplicaUpdates: [];
-  readonly TableClass: string;
+  readonly BillingMode?: string;
+  readonly ProvisionedThroughput?: ProvisionedThroughput;
+  readonly GlobalSecondaryIndexUpdates?: [];
+  readonly StreamSpecification?: StreamSpecification;
+  readonly SSESpecification?: SSESpecification;
+  readonly ReplicaUpdates?: [];
+  readonly TableClass?: string;
 }
 export interface UpdateTableReplicaAutoScaling {
-  readonly GlobalSecondaryIndexUpdates: [];
+  readonly GlobalSecondaryIndexUpdates?: [];
   readonly TableName: string;
-  readonly ProvisionedWriteCapacityAutoScalingUpdate: AutoScalingSettingsUpdate;
-  readonly ReplicaUpdates: [];
+  readonly ProvisionedWriteCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate;
+  readonly ReplicaUpdates?: [];
 }
 export interface UpdateTimeToLive {
   readonly TableName: string;

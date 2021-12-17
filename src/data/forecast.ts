@@ -3,93 +3,93 @@
  */
 export interface CreateAutoPredictor {
   readonly PredictorName: string;
-  readonly ForecastHorizon: number;
-  readonly ForecastTypes: [];
-  readonly ForecastDimensions: [];
-  readonly ForecastFrequency: string;
-  readonly DataConfig: DataConfig;
-  readonly EncryptionConfig: EncryptionConfig;
-  readonly ReferencePredictorArn: string;
-  readonly OptimizationMetric: string;
-  readonly ExplainPredictor: boolean;
-  readonly Tags: [];
+  readonly ForecastHorizon?: number;
+  readonly ForecastTypes?: [];
+  readonly ForecastDimensions?: [];
+  readonly ForecastFrequency?: string;
+  readonly DataConfig?: DataConfig;
+  readonly EncryptionConfig?: EncryptionConfig;
+  readonly ReferencePredictorArn?: string;
+  readonly OptimizationMetric?: string;
+  readonly ExplainPredictor?: boolean;
+  readonly Tags?: [];
 }
 export interface CreateDataset {
   readonly DatasetName: string;
   readonly Domain: string;
   readonly DatasetType: string;
-  readonly DataFrequency: string;
+  readonly DataFrequency?: string;
   readonly Schema: Schema;
-  readonly EncryptionConfig: EncryptionConfig;
-  readonly Tags: [];
+  readonly EncryptionConfig?: EncryptionConfig;
+  readonly Tags?: [];
 }
 export interface CreateDatasetGroup {
   readonly DatasetGroupName: string;
   readonly Domain: string;
-  readonly DatasetArns: [];
-  readonly Tags: [];
+  readonly DatasetArns?: [];
+  readonly Tags?: [];
 }
 export interface CreateDatasetImportJob {
   readonly DatasetImportJobName: string;
   readonly DatasetArn: string;
   readonly DataSource: DataSource;
-  readonly TimestampFormat: string;
-  readonly TimeZone: string;
-  readonly UseGeolocationForTimeZone: boolean;
-  readonly GeolocationFormat: string;
-  readonly Tags: [];
+  readonly TimestampFormat?: string;
+  readonly TimeZone?: string;
+  readonly UseGeolocationForTimeZone?: boolean;
+  readonly GeolocationFormat?: string;
+  readonly Tags?: [];
 }
 export interface CreateExplainability {
   readonly ExplainabilityName: string;
   readonly ResourceArn: string;
   readonly ExplainabilityConfig: ExplainabilityConfig;
-  readonly DataSource: DataSource;
-  readonly Schema: Schema;
-  readonly EnableVisualization: boolean;
-  readonly StartDateTime: string;
-  readonly EndDateTime: string;
-  readonly Tags: [];
+  readonly DataSource?: DataSource;
+  readonly Schema?: Schema;
+  readonly EnableVisualization?: boolean;
+  readonly StartDateTime?: string;
+  readonly EndDateTime?: string;
+  readonly Tags?: [];
 }
 export interface CreateExplainabilityExport {
   readonly ExplainabilityExportName: string;
   readonly ExplainabilityArn: string;
   readonly Destination: DataDestination;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateForecast {
   readonly ForecastName: string;
   readonly PredictorArn: string;
-  readonly ForecastTypes: [];
-  readonly Tags: [];
+  readonly ForecastTypes?: [];
+  readonly Tags?: [];
 }
 export interface CreateForecastExportJob {
   readonly ForecastExportJobName: string;
   readonly ForecastArn: string;
   readonly Destination: DataDestination;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreatePredictor {
   readonly PredictorName: string;
-  readonly AlgorithmArn: string;
+  readonly AlgorithmArn?: string;
   readonly ForecastHorizon: number;
-  readonly ForecastTypes: [];
-  readonly PerformAutoML: boolean;
-  readonly AutoMLOverrideStrategy: string;
-  readonly PerformHPO: boolean;
-  readonly TrainingParameters: {[key: string]: any};
-  readonly EvaluationParameters: EvaluationParameters;
-  readonly HPOConfig: HyperParameterTuningJobConfig;
+  readonly ForecastTypes?: [];
+  readonly PerformAutoML?: boolean;
+  readonly AutoMLOverrideStrategy?: string;
+  readonly PerformHPO?: boolean;
+  readonly TrainingParameters?: {[key: string]: any};
+  readonly EvaluationParameters?: EvaluationParameters;
+  readonly HPOConfig?: HyperParameterTuningJobConfig;
   readonly InputDataConfig: InputDataConfig;
   readonly FeaturizationConfig: FeaturizationConfig;
-  readonly EncryptionConfig: EncryptionConfig;
-  readonly Tags: [];
-  readonly OptimizationMetric: string;
+  readonly EncryptionConfig?: EncryptionConfig;
+  readonly Tags?: [];
+  readonly OptimizationMetric?: string;
 }
 export interface CreatePredictorBacktestExportJob {
   readonly PredictorBacktestExportJobName: string;
   readonly PredictorArn: string;
   readonly Destination: DataDestination;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface DeleteDataset {
   readonly DatasetArn: string;
@@ -155,47 +155,47 @@ export interface GetAccuracyMetrics {
   readonly PredictorArn: string;
 }
 export interface ListDatasetGroups {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDatasetImportJobs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 export interface ListDatasets {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListExplainabilities {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 export interface ListExplainabilityExports {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 export interface ListForecastExportJobs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 export interface ListForecasts {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 export interface ListPredictorBacktestExportJobs {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 export interface ListPredictors {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;

@@ -30,37 +30,37 @@ export interface ContainsPiiEntities {
 }
 export interface CreateDocumentClassifier {
   readonly DocumentClassifierName: string;
-  readonly VersionName: string;
+  readonly VersionName?: string;
   readonly DataAccessRoleArn: string;
-  readonly Tags: [];
+  readonly Tags?: [];
   readonly InputDataConfig: DocumentClassifierInputDataConfig;
-  readonly OutputDataConfig: DocumentClassifierOutputDataConfig;
-  readonly ClientRequestToken: string;
+  readonly OutputDataConfig?: DocumentClassifierOutputDataConfig;
+  readonly ClientRequestToken?: string;
   readonly LanguageCode: string;
-  readonly VolumeKmsKeyId: string;
-  readonly VpcConfig: VpcConfig;
-  readonly Mode: string;
-  readonly ModelKmsKeyId: string;
+  readonly VolumeKmsKeyId?: string;
+  readonly VpcConfig?: VpcConfig;
+  readonly Mode?: string;
+  readonly ModelKmsKeyId?: string;
 }
 export interface CreateEndpoint {
   readonly EndpointName: string;
   readonly ModelArn: string;
   readonly DesiredInferenceUnits: number;
-  readonly ClientRequestToken: string;
-  readonly Tags: [];
-  readonly DataAccessRoleArn: string;
+  readonly ClientRequestToken?: string;
+  readonly Tags?: [];
+  readonly DataAccessRoleArn?: string;
 }
 export interface CreateEntityRecognizer {
   readonly RecognizerName: string;
-  readonly VersionName: string;
+  readonly VersionName?: string;
   readonly DataAccessRoleArn: string;
-  readonly Tags: [];
+  readonly Tags?: [];
   readonly InputDataConfig: EntityRecognizerInputDataConfig;
-  readonly ClientRequestToken: string;
+  readonly ClientRequestToken?: string;
   readonly LanguageCode: string;
-  readonly VolumeKmsKeyId: string;
-  readonly VpcConfig: VpcConfig;
-  readonly ModelKmsKeyId: string;
+  readonly VolumeKmsKeyId?: string;
+  readonly VpcConfig?: VpcConfig;
+  readonly ModelKmsKeyId?: string;
 }
 export interface DeleteDocumentClassifier {
   readonly DocumentClassifierArn: string;
@@ -109,8 +109,8 @@ export interface DetectDominantLanguage {
 }
 export interface DetectEntities {
   readonly Text: string;
-  readonly LanguageCode: string;
-  readonly EndpointArn: string;
+  readonly LanguageCode?: string;
+  readonly EndpointArn?: string;
 }
 export interface DetectKeyPhrases {
   readonly Text: string;
@@ -129,157 +129,157 @@ export interface DetectSyntax {
   readonly LanguageCode: string;
 }
 export interface ListDocumentClassificationJobs {
-  readonly Filter: DocumentClassificationJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: DocumentClassificationJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDocumentClassifierSummaries {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDocumentClassifiers {
-  readonly Filter: DocumentClassifierFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: DocumentClassifierFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDominantLanguageDetectionJobs {
-  readonly Filter: DominantLanguageDetectionJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: DominantLanguageDetectionJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListEndpoints {
-  readonly Filter: EndpointFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: EndpointFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListEntitiesDetectionJobs {
-  readonly Filter: EntitiesDetectionJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: EntitiesDetectionJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListEntityRecognizerSummaries {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListEntityRecognizers {
-  readonly Filter: EntityRecognizerFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: EntityRecognizerFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListEventsDetectionJobs {
-  readonly Filter: EventsDetectionJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: EventsDetectionJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListKeyPhrasesDetectionJobs {
-  readonly Filter: KeyPhrasesDetectionJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: KeyPhrasesDetectionJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPiiEntitiesDetectionJobs {
-  readonly Filter: PiiEntitiesDetectionJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: PiiEntitiesDetectionJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListSentimentDetectionJobs {
-  readonly Filter: SentimentDetectionJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: SentimentDetectionJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface ListTopicsDetectionJobs {
-  readonly Filter: TopicsDetectionJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: TopicsDetectionJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface StartDocumentClassificationJob {
-  readonly JobName: string;
+  readonly JobName?: string;
   readonly DocumentClassifierArn: string;
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly ClientRequestToken: string;
-  readonly VolumeKmsKeyId: string;
-  readonly VpcConfig: VpcConfig;
-  readonly Tags: [];
+  readonly ClientRequestToken?: string;
+  readonly VolumeKmsKeyId?: string;
+  readonly VpcConfig?: VpcConfig;
+  readonly Tags?: [];
 }
 export interface StartDominantLanguageDetectionJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly ClientRequestToken: string;
-  readonly VolumeKmsKeyId: string;
-  readonly VpcConfig: VpcConfig;
-  readonly Tags: [];
+  readonly JobName?: string;
+  readonly ClientRequestToken?: string;
+  readonly VolumeKmsKeyId?: string;
+  readonly VpcConfig?: VpcConfig;
+  readonly Tags?: [];
 }
 export interface StartEntitiesDetectionJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly EntityRecognizerArn: string;
+  readonly JobName?: string;
+  readonly EntityRecognizerArn?: string;
   readonly LanguageCode: string;
-  readonly ClientRequestToken: string;
-  readonly VolumeKmsKeyId: string;
-  readonly VpcConfig: VpcConfig;
-  readonly Tags: [];
+  readonly ClientRequestToken?: string;
+  readonly VolumeKmsKeyId?: string;
+  readonly VpcConfig?: VpcConfig;
+  readonly Tags?: [];
 }
 export interface StartEventsDetectionJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
+  readonly JobName?: string;
   readonly LanguageCode: string;
-  readonly ClientRequestToken: string;
+  readonly ClientRequestToken?: string;
   readonly TargetEventTypes: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface StartKeyPhrasesDetectionJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
+  readonly JobName?: string;
   readonly LanguageCode: string;
-  readonly ClientRequestToken: string;
-  readonly VolumeKmsKeyId: string;
-  readonly VpcConfig: VpcConfig;
-  readonly Tags: [];
+  readonly ClientRequestToken?: string;
+  readonly VolumeKmsKeyId?: string;
+  readonly VpcConfig?: VpcConfig;
+  readonly Tags?: [];
 }
 export interface StartPiiEntitiesDetectionJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly Mode: string;
-  readonly RedactionConfig: RedactionConfig;
+  readonly RedactionConfig?: RedactionConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
+  readonly JobName?: string;
   readonly LanguageCode: string;
-  readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly ClientRequestToken?: string;
+  readonly Tags?: [];
 }
 export interface StartSentimentDetectionJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
+  readonly JobName?: string;
   readonly LanguageCode: string;
-  readonly ClientRequestToken: string;
-  readonly VolumeKmsKeyId: string;
-  readonly VpcConfig: VpcConfig;
-  readonly Tags: [];
+  readonly ClientRequestToken?: string;
+  readonly VolumeKmsKeyId?: string;
+  readonly VpcConfig?: VpcConfig;
+  readonly Tags?: [];
 }
 export interface StartTopicsDetectionJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly NumberOfTopics: number;
-  readonly ClientRequestToken: string;
-  readonly VolumeKmsKeyId: string;
-  readonly VpcConfig: VpcConfig;
-  readonly Tags: [];
+  readonly JobName?: string;
+  readonly NumberOfTopics?: number;
+  readonly ClientRequestToken?: string;
+  readonly VolumeKmsKeyId?: string;
+  readonly VpcConfig?: VpcConfig;
+  readonly Tags?: [];
 }
 export interface StopDominantLanguageDetectionJob {
   readonly JobId: string;
@@ -315,9 +315,9 @@ export interface UntagResource {
 }
 export interface UpdateEndpoint {
   readonly EndpointArn: string;
-  readonly DesiredModelArn: string;
-  readonly DesiredInferenceUnits: number;
-  readonly DesiredDataAccessRoleArn: string;
+  readonly DesiredModelArn?: string;
+  readonly DesiredInferenceUnits?: number;
+  readonly DesiredDataAccessRoleArn?: string;
 }
 
 

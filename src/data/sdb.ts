@@ -15,8 +15,8 @@ export interface CreateDomain {
 export interface DeleteAttributes {
   readonly DomainName: string;
   readonly ItemName: string;
-  readonly Attributes: [];
-  readonly Expected: UpdateCondition;
+  readonly Attributes?: [];
+  readonly Expected?: UpdateCondition;
 }
 export interface DeleteDomain {
   readonly DomainName: string;
@@ -27,23 +27,23 @@ export interface DomainMetadata {
 export interface GetAttributes {
   readonly DomainName: string;
   readonly ItemName: string;
-  readonly AttributeNames: [];
-  readonly ConsistentRead: boolean;
+  readonly AttributeNames?: [];
+  readonly ConsistentRead?: boolean;
 }
 export interface ListDomains {
-  readonly MaxNumberOfDomains: number;
-  readonly NextToken: string;
+  readonly MaxNumberOfDomains?: number;
+  readonly NextToken?: string;
 }
 export interface PutAttributes {
   readonly DomainName: string;
   readonly ItemName: string;
   readonly Attributes: [];
-  readonly Expected: UpdateCondition;
+  readonly Expected?: UpdateCondition;
 }
 export interface Select {
   readonly SelectExpression: string;
-  readonly NextToken: string;
-  readonly ConsistentRead: boolean;
+  readonly NextToken?: string;
+  readonly ConsistentRead?: boolean;
 }
 
 

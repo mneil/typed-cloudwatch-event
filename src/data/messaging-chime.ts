@@ -8,24 +8,24 @@ export interface AssociateChannelFlow {
 }
 export interface BatchCreateChannelMembership {
   readonly ChannelArn: string;
-  readonly Type: string;
+  readonly Type?: string;
   readonly MemberArns: [];
   readonly ChimeBearer: string;
 }
 export interface ChannelFlowCallback {
   readonly CallbackId: string;
   readonly ChannelArn: string;
-  readonly DeleteResource: boolean;
+  readonly DeleteResource?: boolean;
   readonly ChannelMessage: ChannelMessageCallback;
 }
 export interface CreateChannel {
   readonly AppInstanceArn: string;
   readonly Name: string;
-  readonly Mode: string;
-  readonly Privacy: string;
-  readonly Metadata: string;
+  readonly Mode?: string;
+  readonly Privacy?: string;
+  readonly Metadata?: string;
   readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
   readonly ChimeBearer: string;
 }
 export interface CreateChannelBan {
@@ -37,7 +37,7 @@ export interface CreateChannelFlow {
   readonly AppInstanceArn: string;
   readonly Processors: [];
   readonly Name: string;
-  readonly Tags: [];
+  readonly Tags?: [];
   readonly ClientRequestToken: string;
 }
 export interface CreateChannelMembership {
@@ -134,59 +134,59 @@ export interface GetMessagingSessionEndpoint {
 }
 export interface ListChannelBans {
   readonly ChannelArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ChimeBearer: string;
 }
 export interface ListChannelFlows {
   readonly AppInstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListChannelMemberships {
   readonly ChannelArn: string;
-  readonly Type: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Type?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ChimeBearer: string;
 }
 export interface ListChannelMembershipsForAppInstanceUser {
-  readonly AppInstanceUserArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly AppInstanceUserArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ChimeBearer: string;
 }
 export interface ListChannelMessages {
   readonly ChannelArn: string;
-  readonly SortOrder: string;
-  readonly NotBefore: Date;
-  readonly NotAfter: Date;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly SortOrder?: string;
+  readonly NotBefore?: Date;
+  readonly NotAfter?: Date;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ChimeBearer: string;
 }
 export interface ListChannelModerators {
   readonly ChannelArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ChimeBearer: string;
 }
 export interface ListChannels {
   readonly AppInstanceArn: string;
-  readonly Privacy: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Privacy?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ChimeBearer: string;
 }
 export interface ListChannelsAssociatedWithChannelFlow {
   readonly ChannelFlowArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListChannelsModeratedByAppInstanceUser {
-  readonly AppInstanceUserArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly AppInstanceUserArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ChimeBearer: string;
 }
 export interface ListTagsForResource {
@@ -208,11 +208,11 @@ export interface SendChannelMessage {
   readonly Content: string;
   readonly Type: string;
   readonly Persistence: string;
-  readonly Metadata: string;
+  readonly Metadata?: string;
   readonly ClientRequestToken: string;
   readonly ChimeBearer: string;
-  readonly PushNotification: PushNotificationConfiguration;
-  readonly MessageAttributes: {[key: string]: any};
+  readonly PushNotification?: PushNotificationConfiguration;
+  readonly MessageAttributes?: {[key: string]: any};
 }
 export interface TagResource {
   readonly ResourceARN: string;
@@ -226,7 +226,7 @@ export interface UpdateChannel {
   readonly ChannelArn: string;
   readonly Name: string;
   readonly Mode: string;
-  readonly Metadata: string;
+  readonly Metadata?: string;
   readonly ChimeBearer: string;
 }
 export interface UpdateChannelFlow {
@@ -237,8 +237,8 @@ export interface UpdateChannelFlow {
 export interface UpdateChannelMessage {
   readonly ChannelArn: string;
   readonly MessageId: string;
-  readonly Content: string;
-  readonly Metadata: string;
+  readonly Content?: string;
+  readonly Metadata?: string;
   readonly ChimeBearer: string;
 }
 export interface UpdateChannelReadMarker {

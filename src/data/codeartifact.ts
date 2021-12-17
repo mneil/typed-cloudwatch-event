@@ -3,215 +3,215 @@
  */
 export interface AssociateExternalConnection {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
   readonly externalConnection: string;
 }
 export interface CopyPackageVersions {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly sourceRepository: string;
   readonly destinationRepository: string;
   readonly format: string;
-  readonly namespace: string;
+  readonly namespace?: string;
   readonly package: string;
-  readonly versions: [];
-  readonly versionRevisions: {[key: string]: any};
-  readonly allowOverwrite: boolean;
-  readonly includeFromUpstream: boolean;
+  readonly versions?: [];
+  readonly versionRevisions?: {[key: string]: any};
+  readonly allowOverwrite?: boolean;
+  readonly includeFromUpstream?: boolean;
 }
 export interface CreateDomain {
   readonly domain: string;
-  readonly encryptionKey: string;
-  readonly tags: [];
+  readonly encryptionKey?: string;
+  readonly tags?: [];
 }
 export interface CreateRepository {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
-  readonly description: string;
-  readonly upstreams: [];
-  readonly tags: [];
+  readonly description?: string;
+  readonly upstreams?: [];
+  readonly tags?: [];
 }
 export interface DeleteDomain {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
 }
 export interface DeleteDomainPermissionsPolicy {
   readonly domain: string;
-  readonly domainOwner: string;
-  readonly policyRevision: string;
+  readonly domainOwner?: string;
+  readonly policyRevision?: string;
 }
 export interface DeletePackageVersions {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
   readonly format: string;
-  readonly namespace: string;
+  readonly namespace?: string;
   readonly package: string;
   readonly versions: [];
-  readonly expectedStatus: string;
+  readonly expectedStatus?: string;
 }
 export interface DeleteRepository {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
 }
 export interface DeleteRepositoryPermissionsPolicy {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
-  readonly policyRevision: string;
+  readonly policyRevision?: string;
 }
 export interface DescribeDomain {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
 }
 export interface DescribePackageVersion {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
   readonly format: string;
-  readonly namespace: string;
+  readonly namespace?: string;
   readonly package: string;
   readonly packageVersion: string;
 }
 export interface DescribeRepository {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
 }
 export interface DisassociateExternalConnection {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
   readonly externalConnection: string;
 }
 export interface DisposePackageVersions {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
   readonly format: string;
-  readonly namespace: string;
+  readonly namespace?: string;
   readonly package: string;
   readonly versions: [];
-  readonly versionRevisions: {[key: string]: any};
-  readonly expectedStatus: string;
+  readonly versionRevisions?: {[key: string]: any};
+  readonly expectedStatus?: string;
 }
 export interface GetAuthorizationToken {
   readonly domain: string;
-  readonly domainOwner: string;
-  readonly durationSeconds: number;
+  readonly domainOwner?: string;
+  readonly durationSeconds?: number;
 }
 export interface GetDomainPermissionsPolicy {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
 }
 export interface GetPackageVersionAsset {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
   readonly format: string;
-  readonly namespace: string;
+  readonly namespace?: string;
   readonly package: string;
   readonly packageVersion: string;
   readonly asset: string;
-  readonly packageVersionRevision: string;
+  readonly packageVersionRevision?: string;
 }
 export interface GetPackageVersionReadme {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
   readonly format: string;
-  readonly namespace: string;
+  readonly namespace?: string;
   readonly package: string;
   readonly packageVersion: string;
 }
 export interface GetRepositoryEndpoint {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
   readonly format: string;
 }
 export interface GetRepositoryPermissionsPolicy {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
 }
 export interface ListDomains {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListPackageVersionAssets {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
   readonly format: string;
-  readonly namespace: string;
+  readonly namespace?: string;
   readonly package: string;
   readonly packageVersion: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListPackageVersionDependencies {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
   readonly format: string;
-  readonly namespace: string;
+  readonly namespace?: string;
   readonly package: string;
   readonly packageVersion: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListPackageVersions {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
   readonly format: string;
-  readonly namespace: string;
+  readonly namespace?: string;
   readonly package: string;
-  readonly status: string;
-  readonly sortBy: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly status?: string;
+  readonly sortBy?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListPackages {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
-  readonly format: string;
-  readonly namespace: string;
-  readonly packagePrefix: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly format?: string;
+  readonly namespace?: string;
+  readonly packagePrefix?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListRepositories {
-  readonly repositoryPrefix: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly repositoryPrefix?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListRepositoriesInDomain {
   readonly domain: string;
-  readonly domainOwner: string;
-  readonly administratorAccount: string;
-  readonly repositoryPrefix: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly domainOwner?: string;
+  readonly administratorAccount?: string;
+  readonly repositoryPrefix?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface PutDomainPermissionsPolicy {
   readonly domain: string;
-  readonly domainOwner: string;
-  readonly policyRevision: string;
+  readonly domainOwner?: string;
+  readonly policyRevision?: string;
   readonly policyDocument: string;
 }
 export interface PutRepositoryPermissionsPolicy {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
-  readonly policyRevision: string;
+  readonly policyRevision?: string;
   readonly policyDocument: string;
 }
 export interface TagResource {
@@ -224,22 +224,22 @@ export interface UntagResource {
 }
 export interface UpdatePackageVersionsStatus {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
   readonly format: string;
-  readonly namespace: string;
+  readonly namespace?: string;
   readonly package: string;
   readonly versions: [];
-  readonly versionRevisions: {[key: string]: any};
-  readonly expectedStatus: string;
+  readonly versionRevisions?: {[key: string]: any};
+  readonly expectedStatus?: string;
   readonly targetStatus: string;
 }
 export interface UpdateRepository {
   readonly domain: string;
-  readonly domainOwner: string;
+  readonly domainOwner?: string;
   readonly repository: string;
-  readonly description: string;
-  readonly upstreams: [];
+  readonly description?: string;
+  readonly upstreams?: [];
 }
 
 

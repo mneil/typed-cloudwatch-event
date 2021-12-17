@@ -4,61 +4,61 @@
 export interface CreateCapacityProvider {
   readonly name: string;
   readonly autoScalingGroupProvider: AutoScalingGroupProvider;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface CreateCluster {
-  readonly clusterName: string;
-  readonly tags: [];
-  readonly settings: [];
-  readonly configuration: ClusterConfiguration;
-  readonly capacityProviders: [];
-  readonly defaultCapacityProviderStrategy: [];
+  readonly clusterName?: string;
+  readonly tags?: [];
+  readonly settings?: [];
+  readonly configuration?: ClusterConfiguration;
+  readonly capacityProviders?: [];
+  readonly defaultCapacityProviderStrategy?: [];
 }
 export interface CreateService {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly serviceName: string;
-  readonly taskDefinition: string;
-  readonly loadBalancers: [];
-  readonly serviceRegistries: [];
-  readonly desiredCount: number;
-  readonly clientToken: string;
-  readonly launchType: string;
-  readonly capacityProviderStrategy: [];
-  readonly platformVersion: string;
-  readonly role: string;
-  readonly deploymentConfiguration: DeploymentConfiguration;
-  readonly placementConstraints: [];
-  readonly placementStrategy: [];
-  readonly networkConfiguration: NetworkConfiguration;
-  readonly healthCheckGracePeriodSeconds: number;
-  readonly schedulingStrategy: string;
-  readonly deploymentController: DeploymentController;
-  readonly tags: [];
-  readonly enableECSManagedTags: boolean;
-  readonly propagateTags: string;
-  readonly enableExecuteCommand: boolean;
+  readonly taskDefinition?: string;
+  readonly loadBalancers?: [];
+  readonly serviceRegistries?: [];
+  readonly desiredCount?: number;
+  readonly clientToken?: string;
+  readonly launchType?: string;
+  readonly capacityProviderStrategy?: [];
+  readonly platformVersion?: string;
+  readonly role?: string;
+  readonly deploymentConfiguration?: DeploymentConfiguration;
+  readonly placementConstraints?: [];
+  readonly placementStrategy?: [];
+  readonly networkConfiguration?: NetworkConfiguration;
+  readonly healthCheckGracePeriodSeconds?: number;
+  readonly schedulingStrategy?: string;
+  readonly deploymentController?: DeploymentController;
+  readonly tags?: [];
+  readonly enableECSManagedTags?: boolean;
+  readonly propagateTags?: string;
+  readonly enableExecuteCommand?: boolean;
 }
 export interface CreateTaskSet {
   readonly service: string;
   readonly cluster: string;
-  readonly externalId: string;
+  readonly externalId?: string;
   readonly taskDefinition: string;
-  readonly networkConfiguration: NetworkConfiguration;
-  readonly loadBalancers: [];
-  readonly serviceRegistries: [];
-  readonly launchType: string;
-  readonly capacityProviderStrategy: [];
-  readonly platformVersion: string;
-  readonly scale: Scale;
-  readonly clientToken: string;
-  readonly tags: [];
+  readonly networkConfiguration?: NetworkConfiguration;
+  readonly loadBalancers?: [];
+  readonly serviceRegistries?: [];
+  readonly launchType?: string;
+  readonly capacityProviderStrategy?: [];
+  readonly platformVersion?: string;
+  readonly scale?: Scale;
+  readonly clientToken?: string;
+  readonly tags?: [];
 }
 export interface DeleteAccountSetting {
   readonly name: string;
-  readonly principalArn: string;
+  readonly principalArn?: string;
 }
 export interface DeleteAttributes {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly attributes: [];
 }
 export interface DeleteCapacityProvider {
@@ -68,142 +68,142 @@ export interface DeleteCluster {
   readonly cluster: string;
 }
 export interface DeleteService {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly service: string;
-  readonly force: boolean;
+  readonly force?: boolean;
 }
 export interface DeleteTaskSet {
   readonly cluster: string;
   readonly service: string;
   readonly taskSet: string;
-  readonly force: boolean;
+  readonly force?: boolean;
 }
 export interface DeregisterContainerInstance {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly containerInstance: string;
-  readonly force: boolean;
+  readonly force?: boolean;
 }
 export interface DeregisterTaskDefinition {
   readonly taskDefinition: string;
 }
 export interface DescribeCapacityProviders {
-  readonly capacityProviders: [];
-  readonly include: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly capacityProviders?: [];
+  readonly include?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeClusters {
-  readonly clusters: [];
-  readonly include: [];
+  readonly clusters?: [];
+  readonly include?: [];
 }
 export interface DescribeContainerInstances {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly containerInstances: [];
-  readonly include: [];
+  readonly include?: [];
 }
 export interface DescribeServices {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly services: [];
-  readonly include: [];
+  readonly include?: [];
 }
 export interface DescribeTaskDefinition {
   readonly taskDefinition: string;
-  readonly include: [];
+  readonly include?: [];
 }
 export interface DescribeTaskSets {
   readonly cluster: string;
   readonly service: string;
-  readonly taskSets: [];
-  readonly include: [];
+  readonly taskSets?: [];
+  readonly include?: [];
 }
 export interface DescribeTasks {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly tasks: [];
-  readonly include: [];
+  readonly include?: [];
 }
 export interface DiscoverPollEndpoint {
-  readonly containerInstance: string;
-  readonly cluster: string;
+  readonly containerInstance?: string;
+  readonly cluster?: string;
 }
 export interface ExecuteCommand {
-  readonly cluster: string;
-  readonly container: string;
+  readonly cluster?: string;
+  readonly container?: string;
   readonly command: string;
   readonly interactive: boolean;
   readonly task: string;
 }
 export interface ListAccountSettings {
-  readonly name: string;
-  readonly value: string;
-  readonly principalArn: string;
-  readonly effectiveSettings: boolean;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly name?: string;
+  readonly value?: string;
+  readonly principalArn?: string;
+  readonly effectiveSettings?: boolean;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAttributes {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly targetType: string;
-  readonly attributeName: string;
-  readonly attributeValue: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly attributeName?: string;
+  readonly attributeValue?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListClusters {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListContainerInstances {
-  readonly cluster: string;
-  readonly filter: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly status: string;
+  readonly cluster?: string;
+  readonly filter?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly status?: string;
 }
 export interface ListServices {
-  readonly cluster: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly launchType: string;
-  readonly schedulingStrategy: string;
+  readonly cluster?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly launchType?: string;
+  readonly schedulingStrategy?: string;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface ListTaskDefinitionFamilies {
-  readonly familyPrefix: string;
-  readonly status: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly familyPrefix?: string;
+  readonly status?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTaskDefinitions {
-  readonly familyPrefix: string;
-  readonly status: string;
-  readonly sort: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly familyPrefix?: string;
+  readonly status?: string;
+  readonly sort?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTasks {
-  readonly cluster: string;
-  readonly containerInstance: string;
-  readonly family: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly startedBy: string;
-  readonly serviceName: string;
-  readonly desiredStatus: string;
-  readonly launchType: string;
+  readonly cluster?: string;
+  readonly containerInstance?: string;
+  readonly family?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly startedBy?: string;
+  readonly serviceName?: string;
+  readonly desiredStatus?: string;
+  readonly launchType?: string;
 }
 export interface PutAccountSetting {
   readonly name: string;
   readonly value: string;
-  readonly principalArn: string;
+  readonly principalArn?: string;
 }
 export interface PutAccountSettingDefault {
   readonly name: string;
   readonly value: string;
 }
 export interface PutAttributes {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly attributes: [];
 }
 export interface PutClusterCapacityProviders {
@@ -212,98 +212,98 @@ export interface PutClusterCapacityProviders {
   readonly defaultCapacityProviderStrategy: [];
 }
 export interface RegisterContainerInstance {
-  readonly cluster: string;
-  readonly instanceIdentityDocument: string;
-  readonly instanceIdentityDocumentSignature: string;
-  readonly totalResources: [];
-  readonly versionInfo: VersionInfo;
-  readonly containerInstanceArn: string;
-  readonly attributes: [];
-  readonly platformDevices: [];
-  readonly tags: [];
+  readonly cluster?: string;
+  readonly instanceIdentityDocument?: string;
+  readonly instanceIdentityDocumentSignature?: string;
+  readonly totalResources?: [];
+  readonly versionInfo?: VersionInfo;
+  readonly containerInstanceArn?: string;
+  readonly attributes?: [];
+  readonly platformDevices?: [];
+  readonly tags?: [];
 }
 export interface RegisterTaskDefinition {
   readonly family: string;
-  readonly taskRoleArn: string;
-  readonly executionRoleArn: string;
-  readonly networkMode: string;
+  readonly taskRoleArn?: string;
+  readonly executionRoleArn?: string;
+  readonly networkMode?: string;
   readonly containerDefinitions: [];
-  readonly volumes: [];
-  readonly placementConstraints: [];
-  readonly requiresCompatibilities: [];
-  readonly cpu: string;
-  readonly memory: string;
-  readonly tags: [];
-  readonly pidMode: string;
-  readonly ipcMode: string;
-  readonly proxyConfiguration: ProxyConfiguration;
-  readonly inferenceAccelerators: [];
-  readonly ephemeralStorage: EphemeralStorage;
-  readonly runtimePlatform: RuntimePlatform;
+  readonly volumes?: [];
+  readonly placementConstraints?: [];
+  readonly requiresCompatibilities?: [];
+  readonly cpu?: string;
+  readonly memory?: string;
+  readonly tags?: [];
+  readonly pidMode?: string;
+  readonly ipcMode?: string;
+  readonly proxyConfiguration?: ProxyConfiguration;
+  readonly inferenceAccelerators?: [];
+  readonly ephemeralStorage?: EphemeralStorage;
+  readonly runtimePlatform?: RuntimePlatform;
 }
 export interface RunTask {
-  readonly capacityProviderStrategy: [];
-  readonly cluster: string;
-  readonly count: number;
-  readonly enableECSManagedTags: boolean;
-  readonly enableExecuteCommand: boolean;
-  readonly group: string;
-  readonly launchType: string;
-  readonly networkConfiguration: NetworkConfiguration;
-  readonly overrides: TaskOverride;
-  readonly placementConstraints: [];
-  readonly placementStrategy: [];
-  readonly platformVersion: string;
-  readonly propagateTags: string;
-  readonly referenceId: string;
-  readonly startedBy: string;
-  readonly tags: [];
+  readonly capacityProviderStrategy?: [];
+  readonly cluster?: string;
+  readonly count?: number;
+  readonly enableECSManagedTags?: boolean;
+  readonly enableExecuteCommand?: boolean;
+  readonly group?: string;
+  readonly launchType?: string;
+  readonly networkConfiguration?: NetworkConfiguration;
+  readonly overrides?: TaskOverride;
+  readonly placementConstraints?: [];
+  readonly placementStrategy?: [];
+  readonly platformVersion?: string;
+  readonly propagateTags?: string;
+  readonly referenceId?: string;
+  readonly startedBy?: string;
+  readonly tags?: [];
   readonly taskDefinition: string;
 }
 export interface StartTask {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly containerInstances: [];
-  readonly enableECSManagedTags: boolean;
-  readonly enableExecuteCommand: boolean;
-  readonly group: string;
-  readonly networkConfiguration: NetworkConfiguration;
-  readonly overrides: TaskOverride;
-  readonly propagateTags: string;
-  readonly referenceId: string;
-  readonly startedBy: string;
-  readonly tags: [];
+  readonly enableECSManagedTags?: boolean;
+  readonly enableExecuteCommand?: boolean;
+  readonly group?: string;
+  readonly networkConfiguration?: NetworkConfiguration;
+  readonly overrides?: TaskOverride;
+  readonly propagateTags?: string;
+  readonly referenceId?: string;
+  readonly startedBy?: string;
+  readonly tags?: [];
   readonly taskDefinition: string;
 }
 export interface StopTask {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly task: string;
-  readonly reason: string;
+  readonly reason?: string;
 }
 export interface SubmitAttachmentStateChanges {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly attachments: [];
 }
 export interface SubmitContainerStateChange {
-  readonly cluster: string;
-  readonly task: string;
-  readonly containerName: string;
-  readonly runtimeId: string;
-  readonly status: string;
-  readonly exitCode: number;
-  readonly reason: string;
-  readonly networkBindings: [];
+  readonly cluster?: string;
+  readonly task?: string;
+  readonly containerName?: string;
+  readonly runtimeId?: string;
+  readonly status?: string;
+  readonly exitCode?: number;
+  readonly reason?: string;
+  readonly networkBindings?: [];
 }
 export interface SubmitTaskStateChange {
-  readonly cluster: string;
-  readonly task: string;
-  readonly status: string;
-  readonly reason: string;
-  readonly containers: [];
-  readonly attachments: [];
-  readonly managedAgents: [];
-  readonly pullStartedAt: Date;
-  readonly pullStoppedAt: Date;
-  readonly executionStoppedAt: Date;
+  readonly cluster?: string;
+  readonly task?: string;
+  readonly status?: string;
+  readonly reason?: string;
+  readonly containers?: [];
+  readonly attachments?: [];
+  readonly managedAgents?: [];
+  readonly pullStartedAt?: Date;
+  readonly pullStoppedAt?: Date;
+  readonly executionStoppedAt?: Date;
 }
 export interface TagResource {
   readonly resourceArn: string;
@@ -319,36 +319,36 @@ export interface UpdateCapacityProvider {
 }
 export interface UpdateCluster {
   readonly cluster: string;
-  readonly settings: [];
-  readonly configuration: ClusterConfiguration;
+  readonly settings?: [];
+  readonly configuration?: ClusterConfiguration;
 }
 export interface UpdateClusterSettings {
   readonly cluster: string;
   readonly settings: [];
 }
 export interface UpdateContainerAgent {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly containerInstance: string;
 }
 export interface UpdateContainerInstancesState {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly containerInstances: [];
   readonly status: string;
 }
 export interface UpdateService {
-  readonly cluster: string;
+  readonly cluster?: string;
   readonly service: string;
-  readonly desiredCount: number;
-  readonly taskDefinition: string;
-  readonly capacityProviderStrategy: [];
-  readonly deploymentConfiguration: DeploymentConfiguration;
-  readonly networkConfiguration: NetworkConfiguration;
-  readonly placementConstraints: [];
-  readonly placementStrategy: [];
-  readonly platformVersion: string;
-  readonly forceNewDeployment: boolean;
-  readonly healthCheckGracePeriodSeconds: number;
-  readonly enableExecuteCommand: boolean;
+  readonly desiredCount?: number;
+  readonly taskDefinition?: string;
+  readonly capacityProviderStrategy?: [];
+  readonly deploymentConfiguration?: DeploymentConfiguration;
+  readonly networkConfiguration?: NetworkConfiguration;
+  readonly placementConstraints?: [];
+  readonly placementStrategy?: [];
+  readonly platformVersion?: string;
+  readonly forceNewDeployment?: boolean;
+  readonly healthCheckGracePeriodSeconds?: number;
+  readonly enableExecuteCommand?: boolean;
 }
 export interface UpdateServicePrimaryTaskSet {
   readonly cluster: string;

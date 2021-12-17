@@ -3,10 +3,10 @@
  */
 export interface QueryForecast {
   readonly ForecastArn: string;
-  readonly StartDate: string;
-  readonly EndDate: string;
+  readonly StartDate?: string;
+  readonly EndDate?: string;
   readonly Filters: {[key: string]: any};
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
 

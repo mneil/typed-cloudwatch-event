@@ -3,9 +3,9 @@
  */
 export interface GetEntitlements {
   readonly ProductCode: string;
-  readonly Filter: {[key: string]: any};
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filter?: {[key: string]: any};
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
 

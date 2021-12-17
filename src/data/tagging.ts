@@ -4,29 +4,29 @@
 export interface DescribeReportCreation {
 }
 export interface GetComplianceSummary {
-  readonly TargetIdFilters: [];
-  readonly RegionFilters: [];
-  readonly ResourceTypeFilters: [];
-  readonly TagKeyFilters: [];
-  readonly GroupBy: [];
-  readonly MaxResults: number;
-  readonly PaginationToken: string;
+  readonly TargetIdFilters?: [];
+  readonly RegionFilters?: [];
+  readonly ResourceTypeFilters?: [];
+  readonly TagKeyFilters?: [];
+  readonly GroupBy?: [];
+  readonly MaxResults?: number;
+  readonly PaginationToken?: string;
 }
 export interface GetResources {
-  readonly PaginationToken: string;
-  readonly TagFilters: [];
-  readonly ResourcesPerPage: number;
-  readonly TagsPerPage: number;
-  readonly ResourceTypeFilters: [];
-  readonly IncludeComplianceDetails: boolean;
-  readonly ExcludeCompliantResources: boolean;
-  readonly ResourceARNList: [];
+  readonly PaginationToken?: string;
+  readonly TagFilters?: [];
+  readonly ResourcesPerPage?: number;
+  readonly TagsPerPage?: number;
+  readonly ResourceTypeFilters?: [];
+  readonly IncludeComplianceDetails?: boolean;
+  readonly ExcludeCompliantResources?: boolean;
+  readonly ResourceARNList?: [];
 }
 export interface GetTagKeys {
-  readonly PaginationToken: string;
+  readonly PaginationToken?: string;
 }
 export interface GetTagValues {
-  readonly PaginationToken: string;
+  readonly PaginationToken?: string;
   readonly Key: string;
 }
 export interface StartReportCreation {

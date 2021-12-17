@@ -18,10 +18,10 @@ export interface PutSession {
   readonly botAliasId: string;
   readonly localeId: string;
   readonly sessionId: string;
-  readonly messages: [];
+  readonly messages?: [];
   readonly sessionState: SessionState;
-  readonly requestAttributes: {[key: string]: any};
-  readonly responseContentType: string;
+  readonly requestAttributes?: {[key: string]: any};
+  readonly responseContentType?: string;
 }
 export interface RecognizeText {
   readonly botId: string;
@@ -29,26 +29,26 @@ export interface RecognizeText {
   readonly localeId: string;
   readonly sessionId: string;
   readonly text: string;
-  readonly sessionState: SessionState;
-  readonly requestAttributes: {[key: string]: any};
+  readonly sessionState?: SessionState;
+  readonly requestAttributes?: {[key: string]: any};
 }
 export interface RecognizeUtterance {
   readonly botId: string;
   readonly botAliasId: string;
   readonly localeId: string;
   readonly sessionId: string;
-  readonly sessionState: string;
-  readonly requestAttributes: string;
+  readonly sessionState?: string;
+  readonly requestAttributes?: string;
   readonly requestContentType: string;
-  readonly responseContentType: string;
-  readonly inputStream: unknown;
+  readonly responseContentType?: string;
+  readonly inputStream?: unknown;
 }
 export interface StartConversation {
   readonly botId: string;
   readonly botAliasId: string;
   readonly localeId: string;
   readonly sessionId: string;
-  readonly conversationMode: string;
+  readonly conversationMode?: string;
   readonly requestEventStream: StartConversationRequestEventStream;
 }
 

@@ -3,43 +3,43 @@
  */
 export interface CreateApplication {
   readonly Name: string;
-  readonly Description: string;
-  readonly Tags: {[key: string]: any};
+  readonly Description?: string;
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateConfigurationProfile {
   readonly ApplicationId: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly LocationUri: string;
-  readonly RetrievalRoleArn: string;
-  readonly Validators: [];
-  readonly Tags: {[key: string]: any};
-  readonly Type: string;
+  readonly RetrievalRoleArn?: string;
+  readonly Validators?: [];
+  readonly Tags?: {[key: string]: any};
+  readonly Type?: string;
 }
 export interface CreateDeploymentStrategy {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly DeploymentDurationInMinutes: number;
-  readonly FinalBakeTimeInMinutes: number;
+  readonly FinalBakeTimeInMinutes?: number;
   readonly GrowthFactor: unknown;
-  readonly GrowthType: string;
+  readonly GrowthType?: string;
   readonly ReplicateTo: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateEnvironment {
   readonly ApplicationId: string;
   readonly Name: string;
-  readonly Description: string;
-  readonly Monitors: [];
-  readonly Tags: {[key: string]: any};
+  readonly Description?: string;
+  readonly Monitors?: [];
+  readonly Tags?: {[key: string]: any};
 }
 export interface CreateHostedConfigurationVersion {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Content: unknown;
   readonly ContentType: string;
-  readonly LatestVersionNumber: number;
+  readonly LatestVersionNumber?: number;
 }
 export interface DeleteApplication {
   readonly ApplicationId: string;
@@ -68,7 +68,7 @@ export interface GetConfiguration {
   readonly Environment: string;
   readonly Configuration: string;
   readonly ClientId: string;
-  readonly ClientConfigurationVersion: string;
+  readonly ClientConfigurationVersion?: string;
 }
 export interface GetConfigurationProfile {
   readonly ApplicationId: string;
@@ -92,35 +92,35 @@ export interface GetHostedConfigurationVersion {
   readonly VersionNumber: number;
 }
 export interface ListApplications {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListConfigurationProfiles {
   readonly ApplicationId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Type: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Type?: string;
 }
 export interface ListDeploymentStrategies {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListDeployments {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListEnvironments {
   readonly ApplicationId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListHostedConfigurationVersions {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -131,8 +131,8 @@ export interface StartDeployment {
   readonly DeploymentStrategyId: string;
   readonly ConfigurationProfileId: string;
   readonly ConfigurationVersion: string;
-  readonly Description: string;
-  readonly Tags: {[key: string]: any};
+  readonly Description?: string;
+  readonly Tags?: {[key: string]: any};
 }
 export interface StopDeployment {
   readonly ApplicationId: string;
@@ -149,31 +149,31 @@ export interface UntagResource {
 }
 export interface UpdateApplication {
   readonly ApplicationId: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 export interface UpdateConfigurationProfile {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly RetrievalRoleArn: string;
-  readonly Validators: [];
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly RetrievalRoleArn?: string;
+  readonly Validators?: [];
 }
 export interface UpdateDeploymentStrategy {
   readonly DeploymentStrategyId: string;
-  readonly Description: string;
-  readonly DeploymentDurationInMinutes: number;
-  readonly FinalBakeTimeInMinutes: number;
-  readonly GrowthFactor: unknown;
-  readonly GrowthType: string;
+  readonly Description?: string;
+  readonly DeploymentDurationInMinutes?: number;
+  readonly FinalBakeTimeInMinutes?: number;
+  readonly GrowthFactor?: unknown;
+  readonly GrowthType?: string;
 }
 export interface UpdateEnvironment {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Monitors: [];
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Monitors?: [];
 }
 export interface ValidateConfiguration {
   readonly ApplicationId: string;

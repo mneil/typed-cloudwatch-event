@@ -21,71 +21,71 @@ export interface GetRecommendationReportDetails {
   readonly id: string;
 }
 export interface GetServerDetails {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly serverId: string;
 }
 export interface GetServerStrategies {
   readonly serverId: string;
 }
 export interface ListApplicationComponents {
-  readonly applicationComponentCriteria: string;
-  readonly filterValue: string;
-  readonly groupIdFilter: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly sort: string;
+  readonly applicationComponentCriteria?: string;
+  readonly filterValue?: string;
+  readonly groupIdFilter?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly sort?: string;
 }
 export interface ListCollectors {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListImportFileTask {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListServers {
-  readonly filterValue: string;
-  readonly groupIdFilter: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly serverCriteria: string;
-  readonly sort: string;
+  readonly filterValue?: string;
+  readonly groupIdFilter?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly serverCriteria?: string;
+  readonly sort?: string;
 }
 export interface PutPortfolioPreferences {
-  readonly applicationPreferences: ApplicationPreferences;
-  readonly databasePreferences: DatabasePreferences;
-  readonly prioritizeBusinessGoals: PrioritizeBusinessGoals;
+  readonly applicationPreferences?: ApplicationPreferences;
+  readonly databasePreferences?: DatabasePreferences;
+  readonly prioritizeBusinessGoals?: PrioritizeBusinessGoals;
 }
 export interface StartAssessment {
-  readonly s3bucketForAnalysisData: string;
-  readonly s3bucketForReportData: string;
+  readonly s3bucketForAnalysisData?: string;
+  readonly s3bucketForReportData?: string;
 }
 export interface StartImportFileTask {
   readonly S3Bucket: string;
-  readonly dataSourceType: string;
-  readonly groupId: [];
+  readonly dataSourceType?: string;
+  readonly groupId?: [];
   readonly name: string;
-  readonly s3bucketForReportData: string;
+  readonly s3bucketForReportData?: string;
   readonly s3key: string;
 }
 export interface StartRecommendationReportGeneration {
-  readonly groupIdFilter: [];
-  readonly outputFormat: string;
+  readonly groupIdFilter?: [];
+  readonly outputFormat?: string;
 }
 export interface StopAssessment {
   readonly assessmentId: string;
 }
 export interface UpdateApplicationComponentConfig {
   readonly applicationComponentId: string;
-  readonly inclusionStatus: string;
-  readonly secretsManagerKey: string;
-  readonly sourceCodeList: [];
-  readonly strategyOption: StrategyOption;
+  readonly inclusionStatus?: string;
+  readonly secretsManagerKey?: string;
+  readonly sourceCodeList?: [];
+  readonly strategyOption?: StrategyOption;
 }
 export interface UpdateServerConfig {
   readonly serverId: string;
-  readonly strategyOption: StrategyOption;
+  readonly strategyOption?: StrategyOption;
 }
 
 

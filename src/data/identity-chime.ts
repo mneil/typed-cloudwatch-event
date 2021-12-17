@@ -3,9 +3,9 @@
  */
 export interface CreateAppInstance {
   readonly Name: string;
-  readonly Metadata: string;
+  readonly Metadata?: string;
   readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateAppInstanceAdmin {
   readonly AppInstanceAdminArn: string;
@@ -15,9 +15,9 @@ export interface CreateAppInstanceUser {
   readonly AppInstanceArn: string;
   readonly AppInstanceUserId: string;
   readonly Name: string;
-  readonly Metadata: string;
+  readonly Metadata?: string;
   readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface DeleteAppInstance {
   readonly AppInstanceArn: string;
@@ -52,22 +52,22 @@ export interface GetAppInstanceRetentionSettings {
 }
 export interface ListAppInstanceAdmins {
   readonly AppInstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListAppInstanceUserEndpoints {
   readonly AppInstanceUserArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListAppInstanceUsers {
   readonly AppInstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListAppInstances {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
@@ -78,12 +78,12 @@ export interface PutAppInstanceRetentionSettings {
 }
 export interface RegisterAppInstanceUserEndpoint {
   readonly AppInstanceUserArn: string;
-  readonly Name: string;
+  readonly Name?: string;
   readonly Type: string;
   readonly ResourceArn: string;
   readonly EndpointAttributes: EndpointAttributes;
   readonly ClientRequestToken: string;
-  readonly AllowMessages: string;
+  readonly AllowMessages?: string;
 }
 export interface TagResource {
   readonly ResourceARN: string;
@@ -106,8 +106,8 @@ export interface UpdateAppInstanceUser {
 export interface UpdateAppInstanceUserEndpoint {
   readonly AppInstanceUserArn: string;
   readonly EndpointId: string;
-  readonly Name: string;
-  readonly AllowMessages: string;
+  readonly Name?: string;
+  readonly AllowMessages?: string;
 }
 
 

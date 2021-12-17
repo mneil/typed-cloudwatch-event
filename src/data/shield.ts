@@ -17,15 +17,15 @@ export interface AssociateProactiveEngagementDetails {
 export interface CreateProtection {
   readonly Name: string;
   readonly ResourceArn: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateProtectionGroup {
   readonly ProtectionGroupId: string;
   readonly Aggregation: string;
   readonly Pattern: string;
-  readonly ResourceType: string;
-  readonly Members: [];
-  readonly Tags: [];
+  readonly ResourceType?: string;
+  readonly Members?: [];
+  readonly Tags?: [];
 }
 export interface CreateSubscription {
 }
@@ -47,8 +47,8 @@ export interface DescribeDRTAccess {
 export interface DescribeEmergencyContactSettings {
 }
 export interface DescribeProtection {
-  readonly ProtectionId: string;
-  readonly ResourceArn: string;
+  readonly ProtectionId?: string;
+  readonly ResourceArn?: string;
 }
 export interface DescribeProtectionGroup {
   readonly ProtectionGroupId: string;
@@ -78,24 +78,24 @@ export interface EnableProactiveEngagement {
 export interface GetSubscriptionState {
 }
 export interface ListAttacks {
-  readonly ResourceArns: [];
-  readonly StartTime: TimeRange;
-  readonly EndTime: TimeRange;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly ResourceArns?: [];
+  readonly StartTime?: TimeRange;
+  readonly EndTime?: TimeRange;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListProtectionGroups {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListProtections {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListResourcesInProtectionGroup {
   readonly ProtectionGroupId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceARN: string;
@@ -113,17 +113,17 @@ export interface UpdateApplicationLayerAutomaticResponse {
   readonly Action: ResponseAction;
 }
 export interface UpdateEmergencyContactSettings {
-  readonly EmergencyContactList: [];
+  readonly EmergencyContactList?: [];
 }
 export interface UpdateProtectionGroup {
   readonly ProtectionGroupId: string;
   readonly Aggregation: string;
   readonly Pattern: string;
-  readonly ResourceType: string;
-  readonly Members: [];
+  readonly ResourceType?: string;
+  readonly Members?: [];
 }
 export interface UpdateSubscription {
-  readonly AutoRenew: string;
+  readonly AutoRenew?: string;
 }
 
 

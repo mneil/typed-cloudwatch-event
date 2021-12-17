@@ -6,18 +6,18 @@ export interface GenerateDataSet {
   readonly dataSetPublicationDate: Date;
   readonly roleNameArn: string;
   readonly destinationS3BucketName: string;
-  readonly destinationS3Prefix: string;
+  readonly destinationS3Prefix?: string;
   readonly snsTopicArn: string;
-  readonly customerDefinedValues: {[key: string]: any};
+  readonly customerDefinedValues?: {[key: string]: any};
 }
 export interface StartSupportDataExport {
   readonly dataSetType: string;
   readonly fromDate: Date;
   readonly roleNameArn: string;
   readonly destinationS3BucketName: string;
-  readonly destinationS3Prefix: string;
+  readonly destinationS3Prefix?: string;
   readonly snsTopicArn: string;
-  readonly customerDefinedValues: {[key: string]: any};
+  readonly customerDefinedValues?: {[key: string]: any};
 }
 
 

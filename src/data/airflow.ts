@@ -5,26 +5,26 @@ export interface CreateCliToken {
   readonly Name: string;
 }
 export interface CreateEnvironment {
-  readonly AirflowConfigurationOptions: {[key: string]: any};
-  readonly AirflowVersion: string;
+  readonly AirflowConfigurationOptions?: {[key: string]: any};
+  readonly AirflowVersion?: string;
   readonly DagS3Path: string;
-  readonly EnvironmentClass: string;
+  readonly EnvironmentClass?: string;
   readonly ExecutionRoleArn: string;
-  readonly KmsKey: string;
-  readonly LoggingConfiguration: LoggingConfigurationInput;
-  readonly MaxWorkers: number;
-  readonly MinWorkers: number;
+  readonly KmsKey?: string;
+  readonly LoggingConfiguration?: LoggingConfigurationInput;
+  readonly MaxWorkers?: number;
+  readonly MinWorkers?: number;
   readonly Name: string;
   readonly NetworkConfiguration: NetworkConfiguration;
-  readonly PluginsS3ObjectVersion: string;
-  readonly PluginsS3Path: string;
-  readonly RequirementsS3ObjectVersion: string;
-  readonly RequirementsS3Path: string;
-  readonly Schedulers: number;
+  readonly PluginsS3ObjectVersion?: string;
+  readonly PluginsS3Path?: string;
+  readonly RequirementsS3ObjectVersion?: string;
+  readonly RequirementsS3Path?: string;
+  readonly Schedulers?: number;
   readonly SourceBucketArn: string;
-  readonly Tags: {[key: string]: any};
-  readonly WebserverAccessMode: string;
-  readonly WeeklyMaintenanceWindowStart: string;
+  readonly Tags?: {[key: string]: any};
+  readonly WebserverAccessMode?: string;
+  readonly WeeklyMaintenanceWindowStart?: string;
 }
 export interface CreateWebLoginToken {
   readonly Name: string;
@@ -36,8 +36,8 @@ export interface GetEnvironment {
   readonly Name: string;
 }
 export interface ListEnvironments {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -55,24 +55,24 @@ export interface UntagResource {
   readonly tagKeys: [];
 }
 export interface UpdateEnvironment {
-  readonly AirflowConfigurationOptions: {[key: string]: any};
-  readonly AirflowVersion: string;
-  readonly DagS3Path: string;
-  readonly EnvironmentClass: string;
-  readonly ExecutionRoleArn: string;
-  readonly LoggingConfiguration: LoggingConfigurationInput;
-  readonly MaxWorkers: number;
-  readonly MinWorkers: number;
+  readonly AirflowConfigurationOptions?: {[key: string]: any};
+  readonly AirflowVersion?: string;
+  readonly DagS3Path?: string;
+  readonly EnvironmentClass?: string;
+  readonly ExecutionRoleArn?: string;
+  readonly LoggingConfiguration?: LoggingConfigurationInput;
+  readonly MaxWorkers?: number;
+  readonly MinWorkers?: number;
   readonly Name: string;
-  readonly NetworkConfiguration: UpdateNetworkConfigurationInput;
-  readonly PluginsS3ObjectVersion: string;
-  readonly PluginsS3Path: string;
-  readonly RequirementsS3ObjectVersion: string;
-  readonly RequirementsS3Path: string;
-  readonly Schedulers: number;
-  readonly SourceBucketArn: string;
-  readonly WebserverAccessMode: string;
-  readonly WeeklyMaintenanceWindowStart: string;
+  readonly NetworkConfiguration?: UpdateNetworkConfigurationInput;
+  readonly PluginsS3ObjectVersion?: string;
+  readonly PluginsS3Path?: string;
+  readonly RequirementsS3ObjectVersion?: string;
+  readonly RequirementsS3Path?: string;
+  readonly Schedulers?: number;
+  readonly SourceBucketArn?: string;
+  readonly WebserverAccessMode?: string;
+  readonly WeeklyMaintenanceWindowStart?: string;
 }
 
 

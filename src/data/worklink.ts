@@ -4,24 +4,24 @@
 export interface AssociateDomain {
   readonly FleetArn: string;
   readonly DomainName: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
   readonly AcmCertificateArn: string;
 }
 export interface AssociateWebsiteAuthorizationProvider {
   readonly FleetArn: string;
   readonly AuthorizationProviderType: string;
-  readonly DomainName: string;
+  readonly DomainName?: string;
 }
 export interface AssociateWebsiteCertificateAuthority {
   readonly FleetArn: string;
   readonly Certificate: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
 }
 export interface CreateFleet {
   readonly FleetName: string;
-  readonly DisplayName: string;
-  readonly OptimizeForEndUserLocation: boolean;
-  readonly Tags: {[key: string]: any};
+  readonly DisplayName?: string;
+  readonly OptimizeForEndUserLocation?: boolean;
+  readonly Tags?: {[key: string]: any};
 }
 export interface DeleteFleet {
   readonly FleetArn: string;
@@ -67,30 +67,30 @@ export interface DisassociateWebsiteCertificateAuthority {
 }
 export interface ListDevices {
   readonly FleetArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListDomains {
   readonly FleetArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListFleets {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface ListWebsiteAuthorizationProviders {
   readonly FleetArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListWebsiteCertificateAuthorities {
   readonly FleetArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface RestoreDomainAccess {
   readonly FleetArn: string;
@@ -114,7 +114,7 @@ export interface UntagResource {
 }
 export interface UpdateAuditStreamConfiguration {
   readonly FleetArn: string;
-  readonly AuditStreamArn: string;
+  readonly AuditStreamArn?: string;
 }
 export interface UpdateCompanyNetworkConfiguration {
   readonly FleetArn: string;
@@ -124,22 +124,22 @@ export interface UpdateCompanyNetworkConfiguration {
 }
 export interface UpdateDevicePolicyConfiguration {
   readonly FleetArn: string;
-  readonly DeviceCaCertificate: string;
+  readonly DeviceCaCertificate?: string;
 }
 export interface UpdateDomainMetadata {
   readonly FleetArn: string;
   readonly DomainName: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
 }
 export interface UpdateFleetMetadata {
   readonly FleetArn: string;
-  readonly DisplayName: string;
-  readonly OptimizeForEndUserLocation: boolean;
+  readonly DisplayName?: string;
+  readonly OptimizeForEndUserLocation?: boolean;
 }
 export interface UpdateIdentityProviderConfiguration {
   readonly FleetArn: string;
   readonly IdentityProviderType: string;
-  readonly IdentityProviderSamlMetadata: string;
+  readonly IdentityProviderSamlMetadata?: string;
 }
 
 

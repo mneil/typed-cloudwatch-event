@@ -15,24 +15,24 @@ export interface DescribeEntity {
 }
 export interface ListChangeSets {
   readonly Catalog: string;
-  readonly FilterList: [];
-  readonly Sort: Sort;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly FilterList?: [];
+  readonly Sort?: Sort;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListEntities {
   readonly Catalog: string;
   readonly EntityType: string;
-  readonly FilterList: [];
-  readonly Sort: Sort;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly FilterList?: [];
+  readonly Sort?: Sort;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface StartChangeSet {
   readonly Catalog: string;
   readonly ChangeSet: [];
-  readonly ChangeSetName: string;
-  readonly ClientRequestToken: string;
+  readonly ChangeSetName?: string;
+  readonly ClientRequestToken?: string;
 }
 
 

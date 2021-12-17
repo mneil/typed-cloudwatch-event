@@ -7,7 +7,7 @@ export interface AcceptSharedDirectory {
 export interface AddIpRoutes {
   readonly DirectoryId: string;
   readonly IpRoutes: [];
-  readonly UpdateSecurityGroupForDirectoryControllers: boolean;
+  readonly UpdateSecurityGroupForDirectoryControllers?: boolean;
 }
 export interface AddRegion {
   readonly DirectoryId: string;
@@ -24,12 +24,12 @@ export interface CancelSchemaExtension {
 }
 export interface ConnectDirectory {
   readonly Name: string;
-  readonly ShortName: string;
+  readonly ShortName?: string;
   readonly Password: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Size: string;
   readonly ConnectSettings: DirectoryConnectSettings;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateAlias {
   readonly DirectoryId: string;
@@ -39,8 +39,8 @@ export interface CreateComputer {
   readonly DirectoryId: string;
   readonly ComputerName: string;
   readonly Password: string;
-  readonly OrganizationalUnitDistinguishedName: string;
-  readonly ComputerAttributes: [];
+  readonly OrganizationalUnitDistinguishedName?: string;
+  readonly ComputerAttributes?: [];
 }
 export interface CreateConditionalForwarder {
   readonly DirectoryId: string;
@@ -49,12 +49,12 @@ export interface CreateConditionalForwarder {
 }
 export interface CreateDirectory {
   readonly Name: string;
-  readonly ShortName: string;
+  readonly ShortName?: string;
   readonly Password: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Size: string;
-  readonly VpcSettings: DirectoryVpcSettings;
-  readonly Tags: [];
+  readonly VpcSettings?: DirectoryVpcSettings;
+  readonly Tags?: [];
 }
 export interface CreateLogSubscription {
   readonly DirectoryId: string;
@@ -62,25 +62,25 @@ export interface CreateLogSubscription {
 }
 export interface CreateMicrosoftAD {
   readonly Name: string;
-  readonly ShortName: string;
+  readonly ShortName?: string;
   readonly Password: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly VpcSettings: DirectoryVpcSettings;
-  readonly Edition: string;
-  readonly Tags: [];
+  readonly Edition?: string;
+  readonly Tags?: [];
 }
 export interface CreateSnapshot {
   readonly DirectoryId: string;
-  readonly Name: string;
+  readonly Name?: string;
 }
 export interface CreateTrust {
   readonly DirectoryId: string;
   readonly RemoteDomainName: string;
   readonly TrustPassword: string;
   readonly TrustDirection: string;
-  readonly TrustType: string;
-  readonly ConditionalForwarderIpAddrs: [];
-  readonly SelectiveAuth: string;
+  readonly TrustType?: string;
+  readonly ConditionalForwarderIpAddrs?: [];
+  readonly SelectiveAuth?: string;
 }
 export interface DeleteConditionalForwarder {
   readonly DirectoryId: string;
@@ -97,7 +97,7 @@ export interface DeleteSnapshot {
 }
 export interface DeleteTrust {
   readonly TrustId: string;
-  readonly DeleteAssociatedConditionalForwarder: boolean;
+  readonly DeleteAssociatedConditionalForwarder?: boolean;
 }
 export interface DeregisterCertificate {
   readonly DirectoryId: string;
@@ -113,57 +113,57 @@ export interface DescribeCertificate {
 }
 export interface DescribeClientAuthenticationSettings {
   readonly DirectoryId: string;
-  readonly Type: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly Type?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface DescribeConditionalForwarders {
   readonly DirectoryId: string;
-  readonly RemoteDomainNames: [];
+  readonly RemoteDomainNames?: [];
 }
 export interface DescribeDirectories {
-  readonly DirectoryIds: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly DirectoryIds?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface DescribeDomainControllers {
   readonly DirectoryId: string;
-  readonly DomainControllerIds: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly DomainControllerIds?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface DescribeEventTopics {
-  readonly DirectoryId: string;
-  readonly TopicNames: [];
+  readonly DirectoryId?: string;
+  readonly TopicNames?: [];
 }
 export interface DescribeLDAPSSettings {
   readonly DirectoryId: string;
-  readonly Type: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly Type?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface DescribeRegions {
   readonly DirectoryId: string;
-  readonly RegionName: string;
-  readonly NextToken: string;
+  readonly RegionName?: string;
+  readonly NextToken?: string;
 }
 export interface DescribeSharedDirectories {
   readonly OwnerDirectoryId: string;
-  readonly SharedDirectoryIds: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly SharedDirectoryIds?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface DescribeSnapshots {
-  readonly DirectoryId: string;
-  readonly SnapshotIds: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly DirectoryId?: string;
+  readonly SnapshotIds?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface DescribeTrusts {
-  readonly DirectoryId: string;
-  readonly TrustIds: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly DirectoryId?: string;
+  readonly TrustIds?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface DisableClientAuthentication {
   readonly DirectoryId: string;
@@ -178,8 +178,8 @@ export interface DisableRadius {
 }
 export interface DisableSso {
   readonly DirectoryId: string;
-  readonly UserName: string;
-  readonly Password: string;
+  readonly UserName?: string;
+  readonly Password?: string;
 }
 export interface EnableClientAuthentication {
   readonly DirectoryId: string;
@@ -195,8 +195,8 @@ export interface EnableRadius {
 }
 export interface EnableSso {
   readonly DirectoryId: string;
-  readonly UserName: string;
-  readonly Password: string;
+  readonly UserName?: string;
+  readonly Password?: string;
 }
 export interface GetDirectoryLimits {
 }
@@ -205,34 +205,34 @@ export interface GetSnapshotLimits {
 }
 export interface ListCertificates {
   readonly DirectoryId: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListIpRoutes {
   readonly DirectoryId: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListLogSubscriptions {
-  readonly DirectoryId: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly DirectoryId?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListSchemaExtensions {
   readonly DirectoryId: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceId: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 export interface RegisterCertificate {
   readonly DirectoryId: string;
   readonly CertificateData: string;
-  readonly Type: string;
-  readonly ClientCertAuthSettings: ClientCertAuthSettings;
+  readonly Type?: string;
+  readonly ClientCertAuthSettings?: ClientCertAuthSettings;
 }
 export interface RegisterEventTopic {
   readonly DirectoryId: string;
@@ -262,7 +262,7 @@ export interface RestoreFromSnapshot {
 }
 export interface ShareDirectory {
   readonly DirectoryId: string;
-  readonly ShareNotes: string;
+  readonly ShareNotes?: string;
   readonly ShareTarget: ShareTarget;
   readonly ShareMethod: string;
 }
@@ -291,7 +291,7 @@ export interface UpdateRadius {
 }
 export interface UpdateTrust {
   readonly TrustId: string;
-  readonly SelectiveAuth: string;
+  readonly SelectiveAuth?: string;
 }
 export interface VerifyTrust {
   readonly TrustId: string;

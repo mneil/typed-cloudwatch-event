@@ -12,7 +12,7 @@ export interface DeleteRecord {
 export interface GetRecord {
   readonly FeatureGroupName: string;
   readonly RecordIdentifierValueAsString: string;
-  readonly FeatureNames: [];
+  readonly FeatureNames?: [];
 }
 export interface PutRecord {
   readonly FeatureGroupName: string;

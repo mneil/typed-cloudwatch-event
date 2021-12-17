@@ -4,9 +4,9 @@
 export interface CompleteSnapshot {
   readonly SnapshotId: string;
   readonly ChangedBlocksCount: number;
-  readonly Checksum: string;
-  readonly ChecksumAlgorithm: string;
-  readonly ChecksumAggregationMethod: string;
+  readonly Checksum?: string;
+  readonly ChecksumAlgorithm?: string;
+  readonly ChecksumAggregationMethod?: string;
 }
 export interface GetSnapshotBlock {
   readonly SnapshotId: string;
@@ -14,36 +14,36 @@ export interface GetSnapshotBlock {
   readonly BlockToken: string;
 }
 export interface ListChangedBlocks {
-  readonly FirstSnapshotId: string;
+  readonly FirstSnapshotId?: string;
   readonly SecondSnapshotId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly StartingBlockIndex: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly StartingBlockIndex?: number;
 }
 export interface ListSnapshotBlocks {
   readonly SnapshotId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly StartingBlockIndex: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly StartingBlockIndex?: number;
 }
 export interface PutSnapshotBlock {
   readonly SnapshotId: string;
   readonly BlockIndex: number;
   readonly BlockData: unknown;
   readonly DataLength: number;
-  readonly Progress: number;
+  readonly Progress?: number;
   readonly Checksum: string;
   readonly ChecksumAlgorithm: string;
 }
 export interface StartSnapshot {
   readonly VolumeSize: number;
-  readonly ParentSnapshotId: string;
-  readonly Tags: [];
-  readonly Description: string;
-  readonly ClientToken: string;
-  readonly Encrypted: boolean;
-  readonly KmsKeyArn: string;
-  readonly Timeout: number;
+  readonly ParentSnapshotId?: string;
+  readonly Tags?: [];
+  readonly Description?: string;
+  readonly ClientToken?: string;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyArn?: string;
+  readonly Timeout?: number;
 }
 
 

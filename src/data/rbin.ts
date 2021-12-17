@@ -3,10 +3,10 @@
  */
 export interface CreateRule {
   readonly RetentionPeriod: RetentionPeriod;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly Tags?: [];
   readonly ResourceType: string;
-  readonly ResourceTags: [];
+  readonly ResourceTags?: [];
 }
 export interface DeleteRule {
   readonly Identifier: string;
@@ -15,10 +15,10 @@ export interface GetRule {
   readonly Identifier: string;
 }
 export interface ListRules {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ResourceType: string;
-  readonly ResourceTags: [];
+  readonly ResourceTags?: [];
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -33,10 +33,10 @@ export interface UntagResource {
 }
 export interface UpdateRule {
   readonly Identifier: string;
-  readonly RetentionPeriod: RetentionPeriod;
-  readonly Description: string;
-  readonly ResourceType: string;
-  readonly ResourceTags: [];
+  readonly RetentionPeriod?: RetentionPeriod;
+  readonly Description?: string;
+  readonly ResourceType?: string;
+  readonly ResourceTags?: [];
 }
 
 

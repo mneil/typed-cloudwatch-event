@@ -3,30 +3,30 @@
  */
 export interface CreateAlarmModel {
   readonly alarmModelName: string;
-  readonly alarmModelDescription: string;
+  readonly alarmModelDescription?: string;
   readonly roleArn: string;
-  readonly tags: [];
-  readonly key: string;
-  readonly severity: number;
+  readonly tags?: [];
+  readonly key?: string;
+  readonly severity?: number;
   readonly alarmRule: AlarmRule;
-  readonly alarmNotification: AlarmNotification;
-  readonly alarmEventActions: AlarmEventActions;
-  readonly alarmCapabilities: AlarmCapabilities;
+  readonly alarmNotification?: AlarmNotification;
+  readonly alarmEventActions?: AlarmEventActions;
+  readonly alarmCapabilities?: AlarmCapabilities;
 }
 export interface CreateDetectorModel {
   readonly detectorModelName: string;
   readonly detectorModelDefinition: DetectorModelDefinition;
-  readonly detectorModelDescription: string;
-  readonly key: string;
+  readonly detectorModelDescription?: string;
+  readonly key?: string;
   readonly roleArn: string;
-  readonly tags: [];
-  readonly evaluationMethod: string;
+  readonly tags?: [];
+  readonly evaluationMethod?: string;
 }
 export interface CreateInput {
   readonly inputName: string;
-  readonly inputDescription: string;
+  readonly inputDescription?: string;
   readonly inputDefinition: InputDefinition;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface DeleteAlarmModel {
   readonly alarmModelName: string;
@@ -39,11 +39,11 @@ export interface DeleteInput {
 }
 export interface DescribeAlarmModel {
   readonly alarmModelName: string;
-  readonly alarmModelVersion: string;
+  readonly alarmModelVersion?: string;
 }
 export interface DescribeDetectorModel {
   readonly detectorModelName: string;
-  readonly detectorModelVersion: string;
+  readonly detectorModelVersion?: string;
 }
 export interface DescribeDetectorModelAnalysis {
   readonly analysisId: string;
@@ -55,35 +55,35 @@ export interface DescribeLoggingOptions {
 }
 export interface GetDetectorModelAnalysisResults {
   readonly analysisId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAlarmModelVersions {
   readonly alarmModelName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAlarmModels {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDetectorModelVersions {
   readonly detectorModelName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDetectorModels {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListInputRoutings {
   readonly inputIdentifier: InputIdentifier;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListInputs {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
@@ -104,24 +104,24 @@ export interface UntagResource {
 }
 export interface UpdateAlarmModel {
   readonly alarmModelName: string;
-  readonly alarmModelDescription: string;
+  readonly alarmModelDescription?: string;
   readonly roleArn: string;
-  readonly severity: number;
+  readonly severity?: number;
   readonly alarmRule: AlarmRule;
-  readonly alarmNotification: AlarmNotification;
-  readonly alarmEventActions: AlarmEventActions;
-  readonly alarmCapabilities: AlarmCapabilities;
+  readonly alarmNotification?: AlarmNotification;
+  readonly alarmEventActions?: AlarmEventActions;
+  readonly alarmCapabilities?: AlarmCapabilities;
 }
 export interface UpdateDetectorModel {
   readonly detectorModelName: string;
   readonly detectorModelDefinition: DetectorModelDefinition;
-  readonly detectorModelDescription: string;
+  readonly detectorModelDescription?: string;
   readonly roleArn: string;
-  readonly evaluationMethod: string;
+  readonly evaluationMethod?: string;
 }
 export interface UpdateInput {
   readonly inputName: string;
-  readonly inputDescription: string;
+  readonly inputDescription?: string;
   readonly inputDefinition: InputDefinition;
 }
 

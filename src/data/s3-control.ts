@@ -5,8 +5,8 @@ export interface CreateAccessPoint {
   readonly AccountId: string;
   readonly Name: string;
   readonly Bucket: string;
-  readonly VpcConfiguration: VpcConfiguration;
-  readonly PublicAccessBlockConfiguration: PublicAccessBlockConfiguration;
+  readonly VpcConfiguration?: VpcConfiguration;
+  readonly PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
 }
 export interface CreateAccessPointForObjectLambda {
   readonly AccountId: string;
@@ -14,28 +14,28 @@ export interface CreateAccessPointForObjectLambda {
   readonly Configuration: ObjectLambdaConfiguration;
 }
 export interface CreateBucket {
-  readonly ACL: string;
+  readonly ACL?: string;
   readonly Bucket: string;
-  readonly CreateBucketConfiguration: CreateBucketConfiguration;
-  readonly GrantFullControl: string;
-  readonly GrantRead: string;
-  readonly GrantReadACP: string;
-  readonly GrantWrite: string;
-  readonly GrantWriteACP: string;
-  readonly ObjectLockEnabledForBucket: boolean;
-  readonly OutpostId: string;
+  readonly CreateBucketConfiguration?: CreateBucketConfiguration;
+  readonly GrantFullControl?: string;
+  readonly GrantRead?: string;
+  readonly GrantReadACP?: string;
+  readonly GrantWrite?: string;
+  readonly GrantWriteACP?: string;
+  readonly ObjectLockEnabledForBucket?: boolean;
+  readonly OutpostId?: string;
 }
 export interface CreateJob {
   readonly AccountId: string;
-  readonly ConfirmationRequired: boolean;
+  readonly ConfirmationRequired?: boolean;
   readonly Operation: JobOperation;
   readonly Report: JobReport;
   readonly ClientRequestToken: string;
   readonly Manifest: JobManifest;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Priority: number;
   readonly RoleArn: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateMultiRegionAccessPoint {
   readonly AccountId: string;
@@ -175,35 +175,35 @@ export interface GetStorageLensConfigurationTagging {
 }
 export interface ListAccessPoints {
   readonly AccountId: string;
-  readonly Bucket: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Bucket?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListAccessPointsForObjectLambda {
   readonly AccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListJobs {
   readonly AccountId: string;
-  readonly JobStatuses: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly JobStatuses?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMultiRegionAccessPoints {
   readonly AccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListRegionalBuckets {
   readonly AccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly OutpostId: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly OutpostId?: string;
 }
 export interface ListStorageLensConfigurations {
   readonly AccountId: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface PutAccessPointConfigurationForObjectLambda {
   readonly AccountId: string;
@@ -223,12 +223,12 @@ export interface PutAccessPointPolicyForObjectLambda {
 export interface PutBucketLifecycleConfiguration {
   readonly AccountId: string;
   readonly Bucket: string;
-  readonly LifecycleConfiguration: LifecycleConfiguration;
+  readonly LifecycleConfiguration?: LifecycleConfiguration;
 }
 export interface PutBucketPolicy {
   readonly AccountId: string;
   readonly Bucket: string;
-  readonly ConfirmRemoveSelfBucketAccess: boolean;
+  readonly ConfirmRemoveSelfBucketAccess?: boolean;
   readonly Policy: string;
 }
 export interface PutBucketTagging {
@@ -254,7 +254,7 @@ export interface PutStorageLensConfiguration {
   readonly ConfigId: string;
   readonly AccountId: string;
   readonly StorageLensConfiguration: StorageLensConfiguration;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface PutStorageLensConfigurationTagging {
   readonly ConfigId: string;
@@ -270,7 +270,7 @@ export interface UpdateJobStatus {
   readonly AccountId: string;
   readonly JobId: string;
   readonly RequestedJobStatus: string;
-  readonly StatusUpdateReason: string;
+  readonly StatusUpdateReason?: string;
 }
 
 

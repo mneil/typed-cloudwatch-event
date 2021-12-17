@@ -3,7 +3,7 @@
  */
 export interface CreateContainer {
   readonly ContainerName: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface DeleteContainer {
   readonly ContainerName: string;
@@ -21,7 +21,7 @@ export interface DeleteMetricPolicy {
   readonly ContainerName: string;
 }
 export interface DescribeContainer {
-  readonly ContainerName: string;
+  readonly ContainerName?: string;
 }
 export interface GetContainerPolicy {
   readonly ContainerName: string;
@@ -36,8 +36,8 @@ export interface GetMetricPolicy {
   readonly ContainerName: string;
 }
 export interface ListContainers {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly Resource: string;

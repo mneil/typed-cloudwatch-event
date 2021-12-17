@@ -3,13 +3,13 @@
  */
 export interface CreateComponent {
   readonly appId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly componentToCreate: CreateComponentData;
   readonly environmentName: string;
 }
 export interface CreateTheme {
   readonly appId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly environmentName: string;
   readonly themeToCreate: CreateThemeData;
 }
@@ -48,14 +48,14 @@ export interface GetTheme {
 export interface ListComponents {
   readonly appId: string;
   readonly environmentName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListThemes {
   readonly appId: string;
   readonly environmentName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface RefreshToken {
   readonly provider: string;
@@ -63,14 +63,14 @@ export interface RefreshToken {
 }
 export interface UpdateComponent {
   readonly appId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly environmentName: string;
   readonly id: string;
   readonly updatedComponent: UpdateComponentData;
 }
 export interface UpdateTheme {
   readonly appId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly environmentName: string;
   readonly id: string;
   readonly updatedTheme: UpdateThemeData;

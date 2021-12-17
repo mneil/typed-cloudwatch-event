@@ -3,36 +3,36 @@
  */
 export interface CreateDeliveryStream {
   readonly DeliveryStreamName: string;
-  readonly DeliveryStreamType: string;
-  readonly KinesisStreamSourceConfiguration: KinesisStreamSourceConfiguration;
-  readonly DeliveryStreamEncryptionConfigurationInput: DeliveryStreamEncryptionConfigurationInput;
-  readonly S3DestinationConfiguration: S3DestinationConfiguration;
-  readonly ExtendedS3DestinationConfiguration: ExtendedS3DestinationConfiguration;
-  readonly RedshiftDestinationConfiguration: RedshiftDestinationConfiguration;
-  readonly ElasticsearchDestinationConfiguration: ElasticsearchDestinationConfiguration;
-  readonly AmazonopensearchserviceDestinationConfiguration: AmazonopensearchserviceDestinationConfiguration;
-  readonly SplunkDestinationConfiguration: SplunkDestinationConfiguration;
-  readonly HttpEndpointDestinationConfiguration: HttpEndpointDestinationConfiguration;
-  readonly Tags: [];
+  readonly DeliveryStreamType?: string;
+  readonly KinesisStreamSourceConfiguration?: KinesisStreamSourceConfiguration;
+  readonly DeliveryStreamEncryptionConfigurationInput?: DeliveryStreamEncryptionConfigurationInput;
+  readonly S3DestinationConfiguration?: S3DestinationConfiguration;
+  readonly ExtendedS3DestinationConfiguration?: ExtendedS3DestinationConfiguration;
+  readonly RedshiftDestinationConfiguration?: RedshiftDestinationConfiguration;
+  readonly ElasticsearchDestinationConfiguration?: ElasticsearchDestinationConfiguration;
+  readonly AmazonopensearchserviceDestinationConfiguration?: AmazonopensearchserviceDestinationConfiguration;
+  readonly SplunkDestinationConfiguration?: SplunkDestinationConfiguration;
+  readonly HttpEndpointDestinationConfiguration?: HttpEndpointDestinationConfiguration;
+  readonly Tags?: [];
 }
 export interface DeleteDeliveryStream {
   readonly DeliveryStreamName: string;
-  readonly AllowForceDelete: boolean;
+  readonly AllowForceDelete?: boolean;
 }
 export interface DescribeDeliveryStream {
   readonly DeliveryStreamName: string;
-  readonly Limit: number;
-  readonly ExclusiveStartDestinationId: string;
+  readonly Limit?: number;
+  readonly ExclusiveStartDestinationId?: string;
 }
 export interface ListDeliveryStreams {
-  readonly Limit: number;
-  readonly DeliveryStreamType: string;
-  readonly ExclusiveStartDeliveryStreamName: string;
+  readonly Limit?: number;
+  readonly DeliveryStreamType?: string;
+  readonly ExclusiveStartDeliveryStreamName?: string;
 }
 export interface ListTagsForDeliveryStream {
   readonly DeliveryStreamName: string;
-  readonly ExclusiveStartTagKey: string;
-  readonly Limit: number;
+  readonly ExclusiveStartTagKey?: string;
+  readonly Limit?: number;
 }
 export interface PutRecord {
   readonly DeliveryStreamName: string;
@@ -44,7 +44,7 @@ export interface PutRecordBatch {
 }
 export interface StartDeliveryStreamEncryption {
   readonly DeliveryStreamName: string;
-  readonly DeliveryStreamEncryptionConfigurationInput: DeliveryStreamEncryptionConfigurationInput;
+  readonly DeliveryStreamEncryptionConfigurationInput?: DeliveryStreamEncryptionConfigurationInput;
 }
 export interface StopDeliveryStreamEncryption {
   readonly DeliveryStreamName: string;
@@ -61,13 +61,13 @@ export interface UpdateDestination {
   readonly DeliveryStreamName: string;
   readonly CurrentDeliveryStreamVersionId: string;
   readonly DestinationId: string;
-  readonly S3DestinationUpdate: S3DestinationUpdate;
-  readonly ExtendedS3DestinationUpdate: ExtendedS3DestinationUpdate;
-  readonly RedshiftDestinationUpdate: RedshiftDestinationUpdate;
-  readonly ElasticsearchDestinationUpdate: ElasticsearchDestinationUpdate;
-  readonly AmazonopensearchserviceDestinationUpdate: AmazonopensearchserviceDestinationUpdate;
-  readonly SplunkDestinationUpdate: SplunkDestinationUpdate;
-  readonly HttpEndpointDestinationUpdate: HttpEndpointDestinationUpdate;
+  readonly S3DestinationUpdate?: S3DestinationUpdate;
+  readonly ExtendedS3DestinationUpdate?: ExtendedS3DestinationUpdate;
+  readonly RedshiftDestinationUpdate?: RedshiftDestinationUpdate;
+  readonly ElasticsearchDestinationUpdate?: ElasticsearchDestinationUpdate;
+  readonly AmazonopensearchserviceDestinationUpdate?: AmazonopensearchserviceDestinationUpdate;
+  readonly SplunkDestinationUpdate?: SplunkDestinationUpdate;
+  readonly HttpEndpointDestinationUpdate?: HttpEndpointDestinationUpdate;
 }
 
 

@@ -19,23 +19,23 @@ export interface GetCertificate {
   readonly CertificateArn: string;
 }
 export interface ImportCertificate {
-  readonly CertificateArn: string;
+  readonly CertificateArn?: string;
   readonly Certificate: unknown;
   readonly PrivateKey: unknown;
-  readonly CertificateChain: unknown;
-  readonly Tags: [];
+  readonly CertificateChain?: unknown;
+  readonly Tags?: [];
 }
 export interface ListCertificates {
-  readonly CertificateStatuses: [];
-  readonly Includes: Filters;
-  readonly NextToken: string;
-  readonly MaxItems: number;
+  readonly CertificateStatuses?: [];
+  readonly Includes?: Filters;
+  readonly NextToken?: string;
+  readonly MaxItems?: number;
 }
 export interface ListTagsForCertificate {
   readonly CertificateArn: string;
 }
 export interface PutAccountConfiguration {
-  readonly ExpiryEvents: ExpiryEventsConfiguration;
+  readonly ExpiryEvents?: ExpiryEventsConfiguration;
   readonly IdempotencyToken: string;
 }
 export interface RemoveTagsFromCertificate {
@@ -47,13 +47,13 @@ export interface RenewCertificate {
 }
 export interface RequestCertificate {
   readonly DomainName: string;
-  readonly ValidationMethod: string;
-  readonly SubjectAlternativeNames: [];
-  readonly IdempotencyToken: string;
-  readonly DomainValidationOptions: [];
-  readonly Options: CertificateOptions;
-  readonly CertificateAuthorityArn: string;
-  readonly Tags: [];
+  readonly ValidationMethod?: string;
+  readonly SubjectAlternativeNames?: [];
+  readonly IdempotencyToken?: string;
+  readonly DomainValidationOptions?: [];
+  readonly Options?: CertificateOptions;
+  readonly CertificateAuthorityArn?: string;
+  readonly Tags?: [];
 }
 export interface ResendValidationEmail {
   readonly CertificateArn: string;

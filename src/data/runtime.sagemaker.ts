@@ -4,22 +4,22 @@
 export interface InvokeEndpoint {
   readonly EndpointName: string;
   readonly Body: unknown;
-  readonly ContentType: string;
-  readonly Accept: string;
-  readonly CustomAttributes: string;
-  readonly TargetModel: string;
-  readonly TargetVariant: string;
-  readonly TargetContainerHostname: string;
-  readonly InferenceId: string;
+  readonly ContentType?: string;
+  readonly Accept?: string;
+  readonly CustomAttributes?: string;
+  readonly TargetModel?: string;
+  readonly TargetVariant?: string;
+  readonly TargetContainerHostname?: string;
+  readonly InferenceId?: string;
 }
 export interface InvokeEndpointAsync {
   readonly EndpointName: string;
-  readonly ContentType: string;
-  readonly Accept: string;
-  readonly CustomAttributes: string;
-  readonly InferenceId: string;
+  readonly ContentType?: string;
+  readonly Accept?: string;
+  readonly CustomAttributes?: string;
+  readonly InferenceId?: string;
   readonly InputLocation: string;
-  readonly RequestTTLSeconds: number;
+  readonly RequestTTLSeconds?: number;
 }
 
 

@@ -6,15 +6,15 @@ export interface CreateToken {
   readonly clientSecret: string;
   readonly grantType: string;
   readonly deviceCode: string;
-  readonly code: string;
-  readonly refreshToken: string;
-  readonly scope: [];
-  readonly redirectUri: string;
+  readonly code?: string;
+  readonly refreshToken?: string;
+  readonly scope?: [];
+  readonly redirectUri?: string;
 }
 export interface RegisterClient {
   readonly clientName: string;
   readonly clientType: string;
-  readonly scopes: [];
+  readonly scopes?: [];
 }
 export interface StartDeviceAuthorization {
   readonly clientId: string;

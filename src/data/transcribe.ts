@@ -10,27 +10,27 @@ export interface CreateLanguageModel {
   readonly BaseModelName: string;
   readonly ModelName: string;
   readonly InputDataConfig: InputDataConfig;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateMedicalVocabulary {
   readonly VocabularyName: string;
   readonly LanguageCode: string;
   readonly VocabularyFileUri: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateVocabulary {
   readonly VocabularyName: string;
   readonly LanguageCode: string;
-  readonly Phrases: [];
-  readonly VocabularyFileUri: string;
-  readonly Tags: [];
+  readonly Phrases?: [];
+  readonly VocabularyFileUri?: string;
+  readonly Tags?: [];
 }
 export interface CreateVocabularyFilter {
   readonly VocabularyFilterName: string;
   readonly LanguageCode: string;
-  readonly Words: [];
-  readonly VocabularyFilterFileUri: string;
-  readonly Tags: [];
+  readonly Words?: [];
+  readonly VocabularyFilterFileUri?: string;
+  readonly Tags?: [];
 }
 export interface DeleteCallAnalyticsCategory {
   readonly CategoryName: string;
@@ -81,97 +81,97 @@ export interface GetVocabularyFilter {
   readonly VocabularyFilterName: string;
 }
 export interface ListCallAnalyticsCategories {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListCallAnalyticsJobs {
-  readonly Status: string;
-  readonly JobNameContains: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Status?: string;
+  readonly JobNameContains?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListLanguageModels {
-  readonly StatusEquals: string;
-  readonly NameContains: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly StatusEquals?: string;
+  readonly NameContains?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMedicalTranscriptionJobs {
-  readonly Status: string;
-  readonly JobNameContains: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Status?: string;
+  readonly JobNameContains?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMedicalVocabularies {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly StateEquals: string;
-  readonly NameContains: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly StateEquals?: string;
+  readonly NameContains?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface ListTranscriptionJobs {
-  readonly Status: string;
-  readonly JobNameContains: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Status?: string;
+  readonly JobNameContains?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListVocabularies {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly StateEquals: string;
-  readonly NameContains: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly StateEquals?: string;
+  readonly NameContains?: string;
 }
 export interface ListVocabularyFilters {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly NameContains: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
 }
 export interface StartCallAnalyticsJob {
   readonly CallAnalyticsJobName: string;
   readonly Media: Media;
-  readonly OutputLocation: string;
-  readonly OutputEncryptionKMSKeyId: string;
+  readonly OutputLocation?: string;
+  readonly OutputEncryptionKMSKeyId?: string;
   readonly DataAccessRoleArn: string;
-  readonly Settings: CallAnalyticsJobSettings;
-  readonly ChannelDefinitions: [];
+  readonly Settings?: CallAnalyticsJobSettings;
+  readonly ChannelDefinitions?: [];
 }
 export interface StartMedicalTranscriptionJob {
   readonly MedicalTranscriptionJobName: string;
   readonly LanguageCode: string;
-  readonly MediaSampleRateHertz: number;
-  readonly MediaFormat: string;
+  readonly MediaSampleRateHertz?: number;
+  readonly MediaFormat?: string;
   readonly Media: Media;
   readonly OutputBucketName: string;
-  readonly OutputKey: string;
-  readonly OutputEncryptionKMSKeyId: string;
-  readonly KMSEncryptionContext: {[key: string]: any};
-  readonly Settings: MedicalTranscriptionSetting;
-  readonly ContentIdentificationType: string;
+  readonly OutputKey?: string;
+  readonly OutputEncryptionKMSKeyId?: string;
+  readonly KMSEncryptionContext?: {[key: string]: any};
+  readonly Settings?: MedicalTranscriptionSetting;
+  readonly ContentIdentificationType?: string;
   readonly Specialty: string;
   readonly Type: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface StartTranscriptionJob {
   readonly TranscriptionJobName: string;
-  readonly LanguageCode: string;
-  readonly MediaSampleRateHertz: number;
-  readonly MediaFormat: string;
+  readonly LanguageCode?: string;
+  readonly MediaSampleRateHertz?: number;
+  readonly MediaFormat?: string;
   readonly Media: Media;
-  readonly OutputBucketName: string;
-  readonly OutputKey: string;
-  readonly OutputEncryptionKMSKeyId: string;
-  readonly KMSEncryptionContext: {[key: string]: any};
-  readonly Settings: Settings;
-  readonly ModelSettings: ModelSettings;
-  readonly JobExecutionSettings: JobExecutionSettings;
-  readonly ContentRedaction: ContentRedaction;
-  readonly IdentifyLanguage: boolean;
-  readonly LanguageOptions: [];
-  readonly Subtitles: Subtitles;
-  readonly Tags: [];
-  readonly LanguageIdSettings: {[key: string]: any};
+  readonly OutputBucketName?: string;
+  readonly OutputKey?: string;
+  readonly OutputEncryptionKMSKeyId?: string;
+  readonly KMSEncryptionContext?: {[key: string]: any};
+  readonly Settings?: Settings;
+  readonly ModelSettings?: ModelSettings;
+  readonly JobExecutionSettings?: JobExecutionSettings;
+  readonly ContentRedaction?: ContentRedaction;
+  readonly IdentifyLanguage?: boolean;
+  readonly LanguageOptions?: [];
+  readonly Subtitles?: Subtitles;
+  readonly Tags?: [];
+  readonly LanguageIdSettings?: {[key: string]: any};
 }
 export interface TagResource {
   readonly ResourceArn: string;
@@ -188,18 +188,18 @@ export interface UpdateCallAnalyticsCategory {
 export interface UpdateMedicalVocabulary {
   readonly VocabularyName: string;
   readonly LanguageCode: string;
-  readonly VocabularyFileUri: string;
+  readonly VocabularyFileUri?: string;
 }
 export interface UpdateVocabulary {
   readonly VocabularyName: string;
   readonly LanguageCode: string;
-  readonly Phrases: [];
-  readonly VocabularyFileUri: string;
+  readonly Phrases?: [];
+  readonly VocabularyFileUri?: string;
 }
 export interface UpdateVocabularyFilter {
   readonly VocabularyFilterName: string;
-  readonly Words: [];
-  readonly VocabularyFilterFileUri: string;
+  readonly Words?: [];
+  readonly VocabularyFilterFileUri?: string;
 }
 
 

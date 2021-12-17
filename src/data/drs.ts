@@ -8,13 +8,13 @@ export interface CreateReplicationConfigurationTemplate {
   readonly dataPlaneRouting: string;
   readonly defaultLargeStagingDiskType: string;
   readonly ebsEncryption: string;
-  readonly ebsEncryptionKeyArn: string;
+  readonly ebsEncryptionKeyArn?: string;
   readonly pitPolicy: [];
   readonly replicationServerInstanceType: string;
   readonly replicationServersSecurityGroupsIDs: [];
   readonly stagingAreaSubnetId: string;
   readonly stagingAreaTags: {[key: string]: any};
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly useDedicatedReplicationServer: boolean;
 }
 export interface DeleteJob {
@@ -31,35 +31,35 @@ export interface DeleteSourceServer {
 }
 export interface DescribeJobLogItems {
   readonly jobID: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeJobs {
   readonly filters: DescribeJobsRequestFilters;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeRecoveryInstances {
   readonly filters: DescribeRecoveryInstancesRequestFilters;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DescribeRecoverySnapshots {
-  readonly filters: DescribeRecoverySnapshotsRequestFilters;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly order: string;
+  readonly filters?: DescribeRecoverySnapshotsRequestFilters;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly order?: string;
   readonly sourceServerID: string;
 }
 export interface DescribeReplicationConfigurationTemplates {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly replicationConfigurationTemplateIDs: [];
 }
 export interface DescribeSourceServers {
   readonly filters: DescribeSourceServersRequestFilters;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface DisconnectRecoveryInstance {
   readonly recoveryInstanceID: string;
@@ -86,12 +86,12 @@ export interface RetryDataReplication {
 }
 export interface StartFailbackLaunch {
   readonly recoveryInstanceIDs: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface StartRecovery {
-  readonly isDrill: boolean;
+  readonly isDrill?: boolean;
   readonly sourceServers: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface StopFailback {
   readonly recoveryInstanceID: string;
@@ -108,54 +108,54 @@ export interface UntagResource {
   readonly tagKeys: [];
 }
 export interface UpdateFailbackReplicationConfiguration {
-  readonly bandwidthThrottling: number;
-  readonly name: string;
+  readonly bandwidthThrottling?: number;
+  readonly name?: string;
   readonly recoveryInstanceID: string;
-  readonly usePrivateIP: boolean;
+  readonly usePrivateIP?: boolean;
 }
 export interface UpdateLaunchConfiguration {
-  readonly copyPrivateIp: boolean;
-  readonly copyTags: boolean;
-  readonly launchDisposition: string;
-  readonly licensing: Licensing;
-  readonly name: string;
+  readonly copyPrivateIp?: boolean;
+  readonly copyTags?: boolean;
+  readonly launchDisposition?: string;
+  readonly licensing?: Licensing;
+  readonly name?: string;
   readonly sourceServerID: string;
-  readonly targetInstanceTypeRightSizingMethod: string;
+  readonly targetInstanceTypeRightSizingMethod?: string;
 }
 export interface UpdateReplicationConfiguration {
-  readonly associateDefaultSecurityGroup: boolean;
-  readonly bandwidthThrottling: number;
-  readonly createPublicIP: boolean;
-  readonly dataPlaneRouting: string;
-  readonly defaultLargeStagingDiskType: string;
-  readonly ebsEncryption: string;
-  readonly ebsEncryptionKeyArn: string;
-  readonly name: string;
-  readonly pitPolicy: [];
-  readonly replicatedDisks: [];
-  readonly replicationServerInstanceType: string;
-  readonly replicationServersSecurityGroupsIDs: [];
+  readonly associateDefaultSecurityGroup?: boolean;
+  readonly bandwidthThrottling?: number;
+  readonly createPublicIP?: boolean;
+  readonly dataPlaneRouting?: string;
+  readonly defaultLargeStagingDiskType?: string;
+  readonly ebsEncryption?: string;
+  readonly ebsEncryptionKeyArn?: string;
+  readonly name?: string;
+  readonly pitPolicy?: [];
+  readonly replicatedDisks?: [];
+  readonly replicationServerInstanceType?: string;
+  readonly replicationServersSecurityGroupsIDs?: [];
   readonly sourceServerID: string;
-  readonly stagingAreaSubnetId: string;
-  readonly stagingAreaTags: {[key: string]: any};
-  readonly useDedicatedReplicationServer: boolean;
+  readonly stagingAreaSubnetId?: string;
+  readonly stagingAreaTags?: {[key: string]: any};
+  readonly useDedicatedReplicationServer?: boolean;
 }
 export interface UpdateReplicationConfigurationTemplate {
-  readonly arn: string;
-  readonly associateDefaultSecurityGroup: boolean;
-  readonly bandwidthThrottling: number;
-  readonly createPublicIP: boolean;
-  readonly dataPlaneRouting: string;
-  readonly defaultLargeStagingDiskType: string;
-  readonly ebsEncryption: string;
-  readonly ebsEncryptionKeyArn: string;
-  readonly pitPolicy: [];
+  readonly arn?: string;
+  readonly associateDefaultSecurityGroup?: boolean;
+  readonly bandwidthThrottling?: number;
+  readonly createPublicIP?: boolean;
+  readonly dataPlaneRouting?: string;
+  readonly defaultLargeStagingDiskType?: string;
+  readonly ebsEncryption?: string;
+  readonly ebsEncryptionKeyArn?: string;
+  readonly pitPolicy?: [];
   readonly replicationConfigurationTemplateID: string;
-  readonly replicationServerInstanceType: string;
-  readonly replicationServersSecurityGroupsIDs: [];
-  readonly stagingAreaSubnetId: string;
-  readonly stagingAreaTags: {[key: string]: any};
-  readonly useDedicatedReplicationServer: boolean;
+  readonly replicationServerInstanceType?: string;
+  readonly replicationServersSecurityGroupsIDs?: [];
+  readonly stagingAreaSubnetId?: string;
+  readonly stagingAreaTags?: {[key: string]: any};
+  readonly useDedicatedReplicationServer?: boolean;
 }
 
 

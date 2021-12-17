@@ -11,7 +11,7 @@ export interface DeleteNotificationChannel {
 }
 export interface DeletePolicy {
   readonly PolicyId: string;
-  readonly DeleteAllPolicyResources: boolean;
+  readonly DeleteAllPolicyResources?: boolean;
 }
 export interface DeleteProtocolsList {
   readonly ListId: string;
@@ -22,7 +22,7 @@ export interface GetAdminAccount {
 }
 export interface GetAppsList {
   readonly ListId: string;
-  readonly DefaultList: boolean;
+  readonly DefaultList?: boolean;
 }
 export interface GetComplianceDetail {
   readonly PolicyId: string;
@@ -35,15 +35,15 @@ export interface GetPolicy {
 }
 export interface GetProtectionStatus {
   readonly PolicyId: string;
-  readonly MemberAccountId: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly MemberAccountId?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface GetProtocolsList {
   readonly ListId: string;
-  readonly DefaultList: boolean;
+  readonly DefaultList?: boolean;
 }
 export interface GetViolationDetails {
   readonly PolicyId: string;
@@ -52,26 +52,26 @@ export interface GetViolationDetails {
   readonly ResourceType: string;
 }
 export interface ListAppsLists {
-  readonly DefaultLists: boolean;
-  readonly NextToken: string;
+  readonly DefaultLists?: boolean;
+  readonly NextToken?: string;
   readonly MaxResults: number;
 }
 export interface ListComplianceStatus {
   readonly PolicyId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMemberAccounts {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPolicies {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListProtocolsLists {
-  readonly DefaultLists: boolean;
-  readonly NextToken: string;
+  readonly DefaultLists?: boolean;
+  readonly NextToken?: string;
   readonly MaxResults: number;
 }
 export interface ListTagsForResource {
@@ -79,7 +79,7 @@ export interface ListTagsForResource {
 }
 export interface PutAppsList {
   readonly AppsList: AppsListData;
-  readonly TagList: [];
+  readonly TagList?: [];
 }
 export interface PutNotificationChannel {
   readonly SnsTopicArn: string;
@@ -87,11 +87,11 @@ export interface PutNotificationChannel {
 }
 export interface PutPolicy {
   readonly Policy: Policy;
-  readonly TagList: [];
+  readonly TagList?: [];
 }
 export interface PutProtocolsList {
   readonly ProtocolsList: ProtocolsListData;
-  readonly TagList: [];
+  readonly TagList?: [];
 }
 export interface TagResource {
   readonly ResourceArn: string;

@@ -3,28 +3,28 @@
  */
 export interface AddTags {
   readonly ResourceId: string;
-  readonly TagsList: [];
+  readonly TagsList?: [];
 }
 export interface CreateTrail {
   readonly Name: string;
   readonly S3BucketName: string;
-  readonly S3KeyPrefix: string;
-  readonly SnsTopicName: string;
-  readonly IncludeGlobalServiceEvents: boolean;
-  readonly IsMultiRegionTrail: boolean;
-  readonly EnableLogFileValidation: boolean;
-  readonly CloudWatchLogsLogGroupArn: string;
-  readonly CloudWatchLogsRoleArn: string;
-  readonly KmsKeyId: string;
-  readonly IsOrganizationTrail: boolean;
-  readonly TagsList: [];
+  readonly S3KeyPrefix?: string;
+  readonly SnsTopicName?: string;
+  readonly IncludeGlobalServiceEvents?: boolean;
+  readonly IsMultiRegionTrail?: boolean;
+  readonly EnableLogFileValidation?: boolean;
+  readonly CloudWatchLogsLogGroupArn?: string;
+  readonly CloudWatchLogsRoleArn?: string;
+  readonly KmsKeyId?: string;
+  readonly IsOrganizationTrail?: boolean;
+  readonly TagsList?: [];
 }
 export interface DeleteTrail {
   readonly Name: string;
 }
 export interface DescribeTrails {
-  readonly trailNameList: [];
-  readonly includeShadowTrails: boolean;
+  readonly trailNameList?: [];
+  readonly includeShadowTrails?: boolean;
 }
 export interface GetEventSelectors {
   readonly TrailName: string;
@@ -39,29 +39,29 @@ export interface GetTrailStatus {
   readonly Name: string;
 }
 export interface ListPublicKeys {
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly NextToken: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly NextToken?: string;
 }
 export interface ListTags {
   readonly ResourceIdList: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListTrails {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface LookupEvents {
-  readonly LookupAttributes: [];
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly EventCategory: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly LookupAttributes?: [];
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly EventCategory?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface PutEventSelectors {
   readonly TrailName: string;
-  readonly EventSelectors: [];
-  readonly AdvancedEventSelectors: [];
+  readonly EventSelectors?: [];
+  readonly AdvancedEventSelectors?: [];
 }
 export interface PutInsightSelectors {
   readonly TrailName: string;
@@ -69,7 +69,7 @@ export interface PutInsightSelectors {
 }
 export interface RemoveTags {
   readonly ResourceId: string;
-  readonly TagsList: [];
+  readonly TagsList?: [];
 }
 export interface StartLogging {
   readonly Name: string;
@@ -79,16 +79,16 @@ export interface StopLogging {
 }
 export interface UpdateTrail {
   readonly Name: string;
-  readonly S3BucketName: string;
-  readonly S3KeyPrefix: string;
-  readonly SnsTopicName: string;
-  readonly IncludeGlobalServiceEvents: boolean;
-  readonly IsMultiRegionTrail: boolean;
-  readonly EnableLogFileValidation: boolean;
-  readonly CloudWatchLogsLogGroupArn: string;
-  readonly CloudWatchLogsRoleArn: string;
-  readonly KmsKeyId: string;
-  readonly IsOrganizationTrail: boolean;
+  readonly S3BucketName?: string;
+  readonly S3KeyPrefix?: string;
+  readonly SnsTopicName?: string;
+  readonly IncludeGlobalServiceEvents?: boolean;
+  readonly IsMultiRegionTrail?: boolean;
+  readonly EnableLogFileValidation?: boolean;
+  readonly CloudWatchLogsLogGroupArn?: string;
+  readonly CloudWatchLogsRoleArn?: string;
+  readonly KmsKeyId?: string;
+  readonly IsOrganizationTrail?: boolean;
 }
 
 

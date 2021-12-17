@@ -11,15 +11,15 @@ export interface CreateHapg {
 export interface CreateHsm {
   readonly SubnetId: string;
   readonly SshKey: string;
-  readonly EniIp: string;
+  readonly EniIp?: string;
   readonly IamRoleArn: string;
-  readonly ExternalId: string;
+  readonly ExternalId?: string;
   readonly SubscriptionType: string;
-  readonly ClientToken: string;
-  readonly SyslogIp: string;
+  readonly ClientToken?: string;
+  readonly SyslogIp?: string;
 }
 export interface CreateLunaClient {
-  readonly Label: string;
+  readonly Label?: string;
   readonly Certificate: string;
 }
 export interface DeleteHapg {
@@ -35,12 +35,12 @@ export interface DescribeHapg {
   readonly HapgArn: string;
 }
 export interface DescribeHsm {
-  readonly HsmArn: string;
-  readonly HsmSerialNumber: string;
+  readonly HsmArn?: string;
+  readonly HsmSerialNumber?: string;
 }
 export interface DescribeLunaClient {
-  readonly ClientArn: string;
-  readonly CertificateFingerprint: string;
+  readonly ClientArn?: string;
+  readonly CertificateFingerprint?: string;
 }
 export interface GetConfig {
   readonly ClientArn: string;
@@ -50,29 +50,29 @@ export interface GetConfig {
 export interface ListAvailableZones {
 }
 export interface ListHapgs {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListHsms {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListLunaClients {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface ModifyHapg {
   readonly HapgArn: string;
-  readonly Label: string;
-  readonly PartitionSerialList: [];
+  readonly Label?: string;
+  readonly PartitionSerialList?: [];
 }
 export interface ModifyHsm {
   readonly HsmArn: string;
-  readonly SubnetId: string;
-  readonly EniIp: string;
-  readonly IamRoleArn: string;
-  readonly ExternalId: string;
-  readonly SyslogIp: string;
+  readonly SubnetId?: string;
+  readonly EniIp?: string;
+  readonly IamRoleArn?: string;
+  readonly ExternalId?: string;
+  readonly SyslogIp?: string;
 }
 export interface ModifyLunaClient {
   readonly ClientArn: string;

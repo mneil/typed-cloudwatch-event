@@ -4,31 +4,31 @@
 export interface CreateConnector {
   readonly capacity: Capacity;
   readonly connectorConfiguration: {[key: string]: any};
-  readonly connectorDescription: string;
+  readonly connectorDescription?: string;
   readonly connectorName: string;
   readonly kafkaCluster: KafkaCluster;
   readonly kafkaClusterClientAuthentication: KafkaClusterClientAuthentication;
   readonly kafkaClusterEncryptionInTransit: KafkaClusterEncryptionInTransit;
   readonly kafkaConnectVersion: string;
-  readonly logDelivery: LogDelivery;
+  readonly logDelivery?: LogDelivery;
   readonly plugins: [];
   readonly serviceExecutionRoleArn: string;
-  readonly workerConfiguration: WorkerConfiguration;
+  readonly workerConfiguration?: WorkerConfiguration;
 }
 export interface CreateCustomPlugin {
   readonly contentType: string;
-  readonly description: string;
+  readonly description?: string;
   readonly location: CustomPluginLocation;
   readonly name: string;
 }
 export interface CreateWorkerConfiguration {
-  readonly description: string;
+  readonly description?: string;
   readonly name: string;
   readonly propertiesFileContent: string;
 }
 export interface DeleteConnector {
   readonly connectorArn: string;
-  readonly currentVersion: string;
+  readonly currentVersion?: string;
 }
 export interface DescribeConnector {
   readonly connectorArn: string;
@@ -40,17 +40,17 @@ export interface DescribeWorkerConfiguration {
   readonly workerConfigurationArn: string;
 }
 export interface ListConnectors {
-  readonly connectorNamePrefix: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly connectorNamePrefix?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListCustomPlugins {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListWorkerConfigurations {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface UpdateConnector {
   readonly capacity: CapacityUpdate;

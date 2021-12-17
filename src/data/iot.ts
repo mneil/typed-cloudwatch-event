@@ -3,26 +3,26 @@
  */
 export interface AcceptCertificateTransfer {
   readonly certificateId: string;
-  readonly setAsActive: boolean;
+  readonly setAsActive?: boolean;
 }
 export interface AddThingToBillingGroup {
-  readonly billingGroupName: string;
-  readonly billingGroupArn: string;
-  readonly thingName: string;
-  readonly thingArn: string;
+  readonly billingGroupName?: string;
+  readonly billingGroupArn?: string;
+  readonly thingName?: string;
+  readonly thingArn?: string;
 }
 export interface AddThingToThingGroup {
-  readonly thingGroupName: string;
-  readonly thingGroupArn: string;
-  readonly thingName: string;
-  readonly thingArn: string;
-  readonly overrideDynamicGroups: boolean;
+  readonly thingGroupName?: string;
+  readonly thingGroupArn?: string;
+  readonly thingName?: string;
+  readonly thingArn?: string;
+  readonly overrideDynamicGroups?: boolean;
 }
 export interface AssociateTargetsWithJob {
   readonly targets: [];
   readonly jobId: string;
-  readonly comment: string;
-  readonly namespaceId: string;
+  readonly comment?: string;
+  readonly namespaceId?: string;
 }
 export interface AttachPolicy {
   readonly policyName: string;
@@ -54,16 +54,16 @@ export interface CancelDetectMitigationActionsTask {
 }
 export interface CancelJob {
   readonly jobId: string;
-  readonly reasonCode: string;
-  readonly comment: string;
-  readonly force: boolean;
+  readonly reasonCode?: string;
+  readonly comment?: string;
+  readonly force?: boolean;
 }
 export interface CancelJobExecution {
   readonly jobId: string;
   readonly thingName: string;
-  readonly force: boolean;
-  readonly expectedVersion: number;
-  readonly statusDetails: {[key: string]: any};
+  readonly force?: boolean;
+  readonly expectedVersion?: number;
+  readonly statusDetails?: {[key: string]: any};
 }
 export interface ClearDefaultAuthorizer {
 }
@@ -73,60 +73,60 @@ export interface ConfirmTopicRuleDestination {
 export interface CreateAuditSuppression {
   readonly checkName: string;
   readonly resourceIdentifier: ResourceIdentifier;
-  readonly expirationDate: Date;
-  readonly suppressIndefinitely: boolean;
-  readonly description: string;
+  readonly expirationDate?: Date;
+  readonly suppressIndefinitely?: boolean;
+  readonly description?: string;
   readonly clientRequestToken: string;
 }
 export interface CreateAuthorizer {
   readonly authorizerName: string;
   readonly authorizerFunctionArn: string;
-  readonly tokenKeyName: string;
-  readonly tokenSigningPublicKeys: {[key: string]: any};
-  readonly status: string;
-  readonly tags: [];
-  readonly signingDisabled: boolean;
-  readonly enableCachingForHttp: boolean;
+  readonly tokenKeyName?: string;
+  readonly tokenSigningPublicKeys?: {[key: string]: any};
+  readonly status?: string;
+  readonly tags?: [];
+  readonly signingDisabled?: boolean;
+  readonly enableCachingForHttp?: boolean;
 }
 export interface CreateBillingGroup {
   readonly billingGroupName: string;
-  readonly billingGroupProperties: BillingGroupProperties;
-  readonly tags: [];
+  readonly billingGroupProperties?: BillingGroupProperties;
+  readonly tags?: [];
 }
 export interface CreateCertificateFromCsr {
   readonly certificateSigningRequest: string;
-  readonly setAsActive: boolean;
+  readonly setAsActive?: boolean;
 }
 export interface CreateCustomMetric {
   readonly metricName: string;
-  readonly displayName: string;
+  readonly displayName?: string;
   readonly metricType: string;
-  readonly tags: [];
+  readonly tags?: [];
   readonly clientRequestToken: string;
 }
 export interface CreateDimension {
   readonly name: string;
   readonly type: string;
   readonly stringValues: [];
-  readonly tags: [];
+  readonly tags?: [];
   readonly clientRequestToken: string;
 }
 export interface CreateDomainConfiguration {
   readonly domainConfigurationName: string;
-  readonly domainName: string;
-  readonly serverCertificateArns: [];
-  readonly validationCertificateArn: string;
-  readonly authorizerConfig: AuthorizerConfig;
-  readonly serviceType: string;
-  readonly tags: [];
+  readonly domainName?: string;
+  readonly serverCertificateArns?: [];
+  readonly validationCertificateArn?: string;
+  readonly authorizerConfig?: AuthorizerConfig;
+  readonly serviceType?: string;
+  readonly tags?: [];
 }
 export interface CreateDynamicThingGroup {
   readonly thingGroupName: string;
-  readonly thingGroupProperties: ThingGroupProperties;
-  readonly indexName: string;
+  readonly thingGroupProperties?: ThingGroupProperties;
+  readonly indexName?: string;
   readonly queryString: string;
-  readonly queryVersion: string;
-  readonly tags: [];
+  readonly queryVersion?: string;
+  readonly tags?: [];
 }
 export interface CreateFleetMetric {
   readonly metricName: string;
@@ -134,148 +134,148 @@ export interface CreateFleetMetric {
   readonly aggregationType: AggregationType;
   readonly period: number;
   readonly aggregationField: string;
-  readonly description: string;
-  readonly queryVersion: string;
-  readonly indexName: string;
-  readonly unit: string;
-  readonly tags: [];
+  readonly description?: string;
+  readonly queryVersion?: string;
+  readonly indexName?: string;
+  readonly unit?: string;
+  readonly tags?: [];
 }
 export interface CreateJob {
   readonly jobId: string;
   readonly targets: [];
-  readonly documentSource: string;
-  readonly document: string;
-  readonly description: string;
-  readonly presignedUrlConfig: PresignedUrlConfig;
-  readonly targetSelection: string;
-  readonly jobExecutionsRolloutConfig: JobExecutionsRolloutConfig;
-  readonly abortConfig: AbortConfig;
-  readonly timeoutConfig: TimeoutConfig;
-  readonly tags: [];
-  readonly namespaceId: string;
-  readonly jobTemplateArn: string;
-  readonly documentParameters: {[key: string]: any};
+  readonly documentSource?: string;
+  readonly document?: string;
+  readonly description?: string;
+  readonly presignedUrlConfig?: PresignedUrlConfig;
+  readonly targetSelection?: string;
+  readonly jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig;
+  readonly abortConfig?: AbortConfig;
+  readonly timeoutConfig?: TimeoutConfig;
+  readonly tags?: [];
+  readonly namespaceId?: string;
+  readonly jobTemplateArn?: string;
+  readonly documentParameters?: {[key: string]: any};
 }
 export interface CreateJobTemplate {
   readonly jobTemplateId: string;
-  readonly jobArn: string;
-  readonly documentSource: string;
-  readonly document: string;
+  readonly jobArn?: string;
+  readonly documentSource?: string;
+  readonly document?: string;
   readonly description: string;
-  readonly presignedUrlConfig: PresignedUrlConfig;
-  readonly jobExecutionsRolloutConfig: JobExecutionsRolloutConfig;
-  readonly abortConfig: AbortConfig;
-  readonly timeoutConfig: TimeoutConfig;
-  readonly tags: [];
+  readonly presignedUrlConfig?: PresignedUrlConfig;
+  readonly jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig;
+  readonly abortConfig?: AbortConfig;
+  readonly timeoutConfig?: TimeoutConfig;
+  readonly tags?: [];
 }
 export interface CreateKeysAndCertificate {
-  readonly setAsActive: boolean;
+  readonly setAsActive?: boolean;
 }
 export interface CreateMitigationAction {
   readonly actionName: string;
   readonly roleArn: string;
   readonly actionParams: MitigationActionParams;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface CreateOTAUpdate {
   readonly otaUpdateId: string;
-  readonly description: string;
+  readonly description?: string;
   readonly targets: [];
-  readonly protocols: [];
-  readonly targetSelection: string;
-  readonly awsJobExecutionsRolloutConfig: AwsJobExecutionsRolloutConfig;
-  readonly awsJobPresignedUrlConfig: AwsJobPresignedUrlConfig;
-  readonly awsJobAbortConfig: AwsJobAbortConfig;
-  readonly awsJobTimeoutConfig: AwsJobTimeoutConfig;
+  readonly protocols?: [];
+  readonly targetSelection?: string;
+  readonly awsJobExecutionsRolloutConfig?: AwsJobExecutionsRolloutConfig;
+  readonly awsJobPresignedUrlConfig?: AwsJobPresignedUrlConfig;
+  readonly awsJobAbortConfig?: AwsJobAbortConfig;
+  readonly awsJobTimeoutConfig?: AwsJobTimeoutConfig;
   readonly files: [];
   readonly roleArn: string;
-  readonly additionalParameters: {[key: string]: any};
-  readonly tags: [];
+  readonly additionalParameters?: {[key: string]: any};
+  readonly tags?: [];
 }
 export interface CreatePolicy {
   readonly policyName: string;
   readonly policyDocument: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface CreatePolicyVersion {
   readonly policyName: string;
   readonly policyDocument: string;
-  readonly setAsDefault: boolean;
+  readonly setAsDefault?: boolean;
 }
 export interface CreateProvisioningClaim {
   readonly templateName: string;
 }
 export interface CreateProvisioningTemplate {
   readonly templateName: string;
-  readonly description: string;
+  readonly description?: string;
   readonly templateBody: string;
-  readonly enabled: boolean;
+  readonly enabled?: boolean;
   readonly provisioningRoleArn: string;
-  readonly preProvisioningHook: ProvisioningHook;
-  readonly tags: [];
+  readonly preProvisioningHook?: ProvisioningHook;
+  readonly tags?: [];
 }
 export interface CreateProvisioningTemplateVersion {
   readonly templateName: string;
   readonly templateBody: string;
-  readonly setAsDefault: boolean;
+  readonly setAsDefault?: boolean;
 }
 export interface CreateRoleAlias {
   readonly roleAlias: string;
   readonly roleArn: string;
-  readonly credentialDurationSeconds: number;
-  readonly tags: [];
+  readonly credentialDurationSeconds?: number;
+  readonly tags?: [];
 }
 export interface CreateScheduledAudit {
   readonly frequency: string;
-  readonly dayOfMonth: string;
-  readonly dayOfWeek: string;
+  readonly dayOfMonth?: string;
+  readonly dayOfWeek?: string;
   readonly targetCheckNames: [];
   readonly scheduledAuditName: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface CreateSecurityProfile {
   readonly securityProfileName: string;
-  readonly securityProfileDescription: string;
-  readonly behaviors: [];
-  readonly alertTargets: {[key: string]: any};
-  readonly additionalMetricsToRetain: [];
-  readonly additionalMetricsToRetainV2: [];
-  readonly tags: [];
+  readonly securityProfileDescription?: string;
+  readonly behaviors?: [];
+  readonly alertTargets?: {[key: string]: any};
+  readonly additionalMetricsToRetain?: [];
+  readonly additionalMetricsToRetainV2?: [];
+  readonly tags?: [];
 }
 export interface CreateStream {
   readonly streamId: string;
-  readonly description: string;
+  readonly description?: string;
   readonly files: [];
   readonly roleArn: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface CreateThing {
   readonly thingName: string;
-  readonly thingTypeName: string;
-  readonly attributePayload: AttributePayload;
-  readonly billingGroupName: string;
+  readonly thingTypeName?: string;
+  readonly attributePayload?: AttributePayload;
+  readonly billingGroupName?: string;
 }
 export interface CreateThingGroup {
   readonly thingGroupName: string;
-  readonly parentGroupName: string;
-  readonly thingGroupProperties: ThingGroupProperties;
-  readonly tags: [];
+  readonly parentGroupName?: string;
+  readonly thingGroupProperties?: ThingGroupProperties;
+  readonly tags?: [];
 }
 export interface CreateThingType {
   readonly thingTypeName: string;
-  readonly thingTypeProperties: ThingTypeProperties;
-  readonly tags: [];
+  readonly thingTypeProperties?: ThingTypeProperties;
+  readonly tags?: [];
 }
 export interface CreateTopicRule {
   readonly ruleName: string;
   readonly topicRulePayload: TopicRulePayload;
-  readonly tags: string;
+  readonly tags?: string;
 }
 export interface CreateTopicRuleDestination {
   readonly destinationConfiguration: TopicRuleDestinationConfiguration;
 }
 export interface DeleteAccountAuditConfiguration {
-  readonly deleteScheduledAudits: boolean;
+  readonly deleteScheduledAudits?: boolean;
 }
 export interface DeleteAuditSuppression {
   readonly checkName: string;
@@ -286,14 +286,14 @@ export interface DeleteAuthorizer {
 }
 export interface DeleteBillingGroup {
   readonly billingGroupName: string;
-  readonly expectedVersion: number;
+  readonly expectedVersion?: number;
 }
 export interface DeleteCACertificate {
   readonly certificateId: string;
 }
 export interface DeleteCertificate {
   readonly certificateId: string;
-  readonly forceDelete: boolean;
+  readonly forceDelete?: boolean;
 }
 export interface DeleteCustomMetric {
   readonly metricName: string;
@@ -306,23 +306,23 @@ export interface DeleteDomainConfiguration {
 }
 export interface DeleteDynamicThingGroup {
   readonly thingGroupName: string;
-  readonly expectedVersion: number;
+  readonly expectedVersion?: number;
 }
 export interface DeleteFleetMetric {
   readonly metricName: string;
-  readonly expectedVersion: number;
+  readonly expectedVersion?: number;
 }
 export interface DeleteJob {
   readonly jobId: string;
-  readonly force: boolean;
-  readonly namespaceId: string;
+  readonly force?: boolean;
+  readonly namespaceId?: string;
 }
 export interface DeleteJobExecution {
   readonly jobId: string;
   readonly thingName: string;
   readonly executionNumber: number;
-  readonly force: boolean;
-  readonly namespaceId: string;
+  readonly force?: boolean;
+  readonly namespaceId?: string;
 }
 export interface DeleteJobTemplate {
   readonly jobTemplateId: string;
@@ -332,8 +332,8 @@ export interface DeleteMitigationAction {
 }
 export interface DeleteOTAUpdate {
   readonly otaUpdateId: string;
-  readonly deleteStream: boolean;
-  readonly forceDeleteAWSJob: boolean;
+  readonly deleteStream?: boolean;
+  readonly forceDeleteAWSJob?: boolean;
 }
 export interface DeletePolicy {
   readonly policyName: string;
@@ -359,18 +359,18 @@ export interface DeleteScheduledAudit {
 }
 export interface DeleteSecurityProfile {
   readonly securityProfileName: string;
-  readonly expectedVersion: number;
+  readonly expectedVersion?: number;
 }
 export interface DeleteStream {
   readonly streamId: string;
 }
 export interface DeleteThing {
   readonly thingName: string;
-  readonly expectedVersion: number;
+  readonly expectedVersion?: number;
 }
 export interface DeleteThingGroup {
   readonly thingGroupName: string;
-  readonly expectedVersion: number;
+  readonly expectedVersion?: number;
 }
 export interface DeleteThingType {
   readonly thingTypeName: string;
@@ -387,7 +387,7 @@ export interface DeleteV2LoggingLevel {
 }
 export interface DeprecateThingType {
   readonly thingTypeName: string;
-  readonly undoDeprecate: boolean;
+  readonly undoDeprecate?: boolean;
 }
 export interface DescribeAccountAuditConfiguration {
 }
@@ -431,7 +431,7 @@ export interface DescribeDomainConfiguration {
   readonly domainConfigurationName: string;
 }
 export interface DescribeEndpoint {
-  readonly endpointType: string;
+  readonly endpointType?: string;
 }
 export interface DescribeEventConfigurations {
 }
@@ -447,14 +447,14 @@ export interface DescribeJob {
 export interface DescribeJobExecution {
   readonly jobId: string;
   readonly thingName: string;
-  readonly executionNumber: number;
+  readonly executionNumber?: number;
 }
 export interface DescribeJobTemplate {
   readonly jobTemplateId: string;
 }
 export interface DescribeManagedJobTemplate {
   readonly templateName: string;
-  readonly templateVersion: string;
+  readonly templateVersion?: string;
 }
 export interface DescribeMitigationAction {
   readonly actionName: string;
@@ -513,27 +513,27 @@ export interface EnableTopicRule {
   readonly ruleName: string;
 }
 export interface GetBehaviorModelTrainingSummaries {
-  readonly securityProfileName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly securityProfileName?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface GetBucketsAggregation {
-  readonly indexName: string;
+  readonly indexName?: string;
   readonly queryString: string;
   readonly aggregationField: string;
-  readonly queryVersion: string;
+  readonly queryVersion?: string;
   readonly bucketsAggregationType: BucketsAggregationType;
 }
 export interface GetCardinality {
-  readonly indexName: string;
+  readonly indexName?: string;
   readonly queryString: string;
-  readonly aggregationField: string;
-  readonly queryVersion: string;
+  readonly aggregationField?: string;
+  readonly queryVersion?: string;
 }
 export interface GetEffectivePolicies {
-  readonly principal: string;
-  readonly cognitoIdentityPoolId: string;
-  readonly thingName: string;
+  readonly principal?: string;
+  readonly cognitoIdentityPoolId?: string;
+  readonly thingName?: string;
 }
 export interface GetIndexingConfiguration {
 }
@@ -546,11 +546,11 @@ export interface GetOTAUpdate {
   readonly otaUpdateId: string;
 }
 export interface GetPercentiles {
-  readonly indexName: string;
+  readonly indexName?: string;
   readonly queryString: string;
-  readonly aggregationField: string;
-  readonly queryVersion: string;
-  readonly percents: [];
+  readonly aggregationField?: string;
+  readonly queryVersion?: string;
+  readonly percents?: [];
 }
 export interface GetPolicy {
   readonly policyName: string;
@@ -562,10 +562,10 @@ export interface GetPolicyVersion {
 export interface GetRegistrationCode {
 }
 export interface GetStatistics {
-  readonly indexName: string;
+  readonly indexName?: string;
   readonly queryString: string;
-  readonly aggregationField: string;
-  readonly queryVersion: string;
+  readonly aggregationField?: string;
+  readonly queryVersion?: string;
 }
 export interface GetTopicRule {
   readonly ruleName: string;
@@ -576,375 +576,375 @@ export interface GetTopicRuleDestination {
 export interface GetV2LoggingOptions {
 }
 export interface ListActiveViolations {
-  readonly thingName: string;
-  readonly securityProfileName: string;
-  readonly behaviorCriteriaType: string;
-  readonly listSuppressedAlerts: boolean;
-  readonly verificationState: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly thingName?: string;
+  readonly securityProfileName?: string;
+  readonly behaviorCriteriaType?: string;
+  readonly listSuppressedAlerts?: boolean;
+  readonly verificationState?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAttachedPolicies {
   readonly target: string;
-  readonly recursive: boolean;
-  readonly marker: string;
-  readonly pageSize: number;
+  readonly recursive?: boolean;
+  readonly marker?: string;
+  readonly pageSize?: number;
 }
 export interface ListAuditFindings {
-  readonly taskId: string;
-  readonly checkName: string;
-  readonly resourceIdentifier: ResourceIdentifier;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly listSuppressedFindings: boolean;
+  readonly taskId?: string;
+  readonly checkName?: string;
+  readonly resourceIdentifier?: ResourceIdentifier;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly listSuppressedFindings?: boolean;
 }
 export interface ListAuditMitigationActionsExecutions {
   readonly taskId: string;
-  readonly actionStatus: string;
+  readonly actionStatus?: string;
   readonly findingId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListAuditMitigationActionsTasks {
-  readonly auditTaskId: string;
-  readonly findingId: string;
-  readonly taskStatus: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly auditTaskId?: string;
+  readonly findingId?: string;
+  readonly taskStatus?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly startTime: Date;
   readonly endTime: Date;
 }
 export interface ListAuditSuppressions {
-  readonly checkName: string;
-  readonly resourceIdentifier: ResourceIdentifier;
-  readonly ascendingOrder: boolean;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly checkName?: string;
+  readonly resourceIdentifier?: ResourceIdentifier;
+  readonly ascendingOrder?: boolean;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAuditTasks {
   readonly startTime: Date;
   readonly endTime: Date;
-  readonly taskType: string;
-  readonly taskStatus: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly taskType?: string;
+  readonly taskStatus?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListAuthorizers {
-  readonly pageSize: number;
-  readonly marker: string;
-  readonly ascendingOrder: boolean;
-  readonly status: string;
+  readonly pageSize?: number;
+  readonly marker?: string;
+  readonly ascendingOrder?: boolean;
+  readonly status?: string;
 }
 export interface ListBillingGroups {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly namePrefixFilter: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly namePrefixFilter?: string;
 }
 export interface ListCACertificates {
-  readonly pageSize: number;
-  readonly marker: string;
-  readonly ascendingOrder: boolean;
+  readonly pageSize?: number;
+  readonly marker?: string;
+  readonly ascendingOrder?: boolean;
 }
 export interface ListCertificates {
-  readonly pageSize: number;
-  readonly marker: string;
-  readonly ascendingOrder: boolean;
+  readonly pageSize?: number;
+  readonly marker?: string;
+  readonly ascendingOrder?: boolean;
 }
 export interface ListCertificatesByCA {
   readonly caCertificateId: string;
-  readonly pageSize: number;
-  readonly marker: string;
-  readonly ascendingOrder: boolean;
+  readonly pageSize?: number;
+  readonly marker?: string;
+  readonly ascendingOrder?: boolean;
 }
 export interface ListCustomMetrics {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDetectMitigationActionsExecutions {
-  readonly taskId: string;
-  readonly violationId: string;
-  readonly thingName: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly taskId?: string;
+  readonly violationId?: string;
+  readonly thingName?: string;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListDetectMitigationActionsTasks {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly startTime: Date;
   readonly endTime: Date;
 }
 export interface ListDimensions {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListDomainConfigurations {
-  readonly marker: string;
-  readonly pageSize: number;
-  readonly serviceType: string;
+  readonly marker?: string;
+  readonly pageSize?: number;
+  readonly serviceType?: string;
 }
 export interface ListFleetMetrics {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListIndices {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListJobExecutionsForJob {
   readonly jobId: string;
-  readonly status: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly status?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListJobExecutionsForThing {
   readonly thingName: string;
-  readonly status: string;
-  readonly namespaceId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly status?: string;
+  readonly namespaceId?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListJobTemplates {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListJobs {
-  readonly status: string;
-  readonly targetSelection: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly thingGroupName: string;
-  readonly thingGroupId: string;
-  readonly namespaceId: string;
+  readonly status?: string;
+  readonly targetSelection?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly thingGroupName?: string;
+  readonly thingGroupId?: string;
+  readonly namespaceId?: string;
 }
 export interface ListManagedJobTemplates {
-  readonly templateName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly templateName?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListMitigationActions {
-  readonly actionType: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly actionType?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListOTAUpdates {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly otaUpdateStatus: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly otaUpdateStatus?: string;
 }
 export interface ListOutgoingCertificates {
-  readonly pageSize: number;
-  readonly marker: string;
-  readonly ascendingOrder: boolean;
+  readonly pageSize?: number;
+  readonly marker?: string;
+  readonly ascendingOrder?: boolean;
 }
 export interface ListPolicies {
-  readonly marker: string;
-  readonly pageSize: number;
-  readonly ascendingOrder: boolean;
+  readonly marker?: string;
+  readonly pageSize?: number;
+  readonly ascendingOrder?: boolean;
 }
 export interface ListPolicyPrincipals {
   readonly policyName: string;
-  readonly marker: string;
-  readonly pageSize: number;
-  readonly ascendingOrder: boolean;
+  readonly marker?: string;
+  readonly pageSize?: number;
+  readonly ascendingOrder?: boolean;
 }
 export interface ListPolicyVersions {
   readonly policyName: string;
 }
 export interface ListPrincipalPolicies {
   readonly principal: string;
-  readonly marker: string;
-  readonly pageSize: number;
-  readonly ascendingOrder: boolean;
+  readonly marker?: string;
+  readonly pageSize?: number;
+  readonly ascendingOrder?: boolean;
 }
 export interface ListPrincipalThings {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
   readonly principal: string;
 }
 export interface ListProvisioningTemplateVersions {
   readonly templateName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListProvisioningTemplates {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListRoleAliases {
-  readonly pageSize: number;
-  readonly marker: string;
-  readonly ascendingOrder: boolean;
+  readonly pageSize?: number;
+  readonly marker?: string;
+  readonly ascendingOrder?: boolean;
 }
 export interface ListScheduledAudits {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListSecurityProfiles {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly dimensionName: string;
-  readonly metricName: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly dimensionName?: string;
+  readonly metricName?: string;
 }
 export interface ListSecurityProfilesForTarget {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly recursive: boolean;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly recursive?: boolean;
   readonly securityProfileTargetArn: string;
 }
 export interface ListStreams {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly ascendingOrder: boolean;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly ascendingOrder?: boolean;
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListTargetsForPolicy {
   readonly policyName: string;
-  readonly marker: string;
-  readonly pageSize: number;
+  readonly marker?: string;
+  readonly pageSize?: number;
 }
 export interface ListTargetsForSecurityProfile {
   readonly securityProfileName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListThingGroups {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly parentGroup: string;
-  readonly namePrefixFilter: string;
-  readonly recursive: boolean;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly parentGroup?: string;
+  readonly namePrefixFilter?: string;
+  readonly recursive?: boolean;
 }
 export interface ListThingGroupsForThing {
   readonly thingName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListThingPrincipals {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
   readonly thingName: string;
 }
 export interface ListThingRegistrationTaskReports {
   readonly taskId: string;
   readonly reportType: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListThingRegistrationTasks {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly status: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly status?: string;
 }
 export interface ListThingTypes {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly thingTypeName: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly thingTypeName?: string;
 }
 export interface ListThings {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly attributeName: string;
-  readonly attributeValue: string;
-  readonly thingTypeName: string;
-  readonly usePrefixAttributeValue: boolean;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly attributeName?: string;
+  readonly attributeValue?: string;
+  readonly thingTypeName?: string;
+  readonly usePrefixAttributeValue?: boolean;
 }
 export interface ListThingsInBillingGroup {
   readonly billingGroupName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListThingsInThingGroup {
   readonly thingGroupName: string;
-  readonly recursive: boolean;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly recursive?: boolean;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListTopicRuleDestinations {
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListTopicRules {
-  readonly topic: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly ruleDisabled: boolean;
+  readonly topic?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly ruleDisabled?: boolean;
 }
 export interface ListV2LoggingLevels {
-  readonly targetType: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly targetType?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListViolationEvents {
   readonly startTime: Date;
   readonly endTime: Date;
-  readonly thingName: string;
-  readonly securityProfileName: string;
-  readonly behaviorCriteriaType: string;
-  readonly listSuppressedAlerts: boolean;
-  readonly verificationState: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly thingName?: string;
+  readonly securityProfileName?: string;
+  readonly behaviorCriteriaType?: string;
+  readonly listSuppressedAlerts?: boolean;
+  readonly verificationState?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface PutVerificationStateOnViolation {
   readonly violationId: string;
   readonly verificationState: string;
-  readonly verificationStateDescription: string;
+  readonly verificationStateDescription?: string;
 }
 export interface RegisterCACertificate {
   readonly caCertificate: string;
   readonly verificationCertificate: string;
-  readonly setAsActive: boolean;
-  readonly allowAutoRegistration: boolean;
-  readonly registrationConfig: RegistrationConfig;
-  readonly tags: [];
+  readonly setAsActive?: boolean;
+  readonly allowAutoRegistration?: boolean;
+  readonly registrationConfig?: RegistrationConfig;
+  readonly tags?: [];
 }
 export interface RegisterCertificate {
   readonly certificatePem: string;
-  readonly caCertificatePem: string;
-  readonly setAsActive: boolean;
-  readonly status: string;
+  readonly caCertificatePem?: string;
+  readonly setAsActive?: boolean;
+  readonly status?: string;
 }
 export interface RegisterCertificateWithoutCA {
   readonly certificatePem: string;
-  readonly status: string;
+  readonly status?: string;
 }
 export interface RegisterThing {
   readonly templateBody: string;
-  readonly parameters: {[key: string]: any};
+  readonly parameters?: {[key: string]: any};
 }
 export interface RejectCertificateTransfer {
   readonly certificateId: string;
-  readonly rejectReason: string;
+  readonly rejectReason?: string;
 }
 export interface RemoveThingFromBillingGroup {
-  readonly billingGroupName: string;
-  readonly billingGroupArn: string;
-  readonly thingName: string;
-  readonly thingArn: string;
+  readonly billingGroupName?: string;
+  readonly billingGroupArn?: string;
+  readonly thingName?: string;
+  readonly thingArn?: string;
 }
 export interface RemoveThingFromThingGroup {
-  readonly thingGroupName: string;
-  readonly thingGroupArn: string;
-  readonly thingName: string;
-  readonly thingArn: string;
+  readonly thingGroupName?: string;
+  readonly thingGroupArn?: string;
+  readonly thingName?: string;
+  readonly thingArn?: string;
 }
 export interface ReplaceTopicRule {
   readonly ruleName: string;
   readonly topicRulePayload: TopicRulePayload;
 }
 export interface SearchIndex {
-  readonly indexName: string;
+  readonly indexName?: string;
   readonly queryString: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly queryVersion: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly queryVersion?: string;
 }
 export interface SetDefaultAuthorizer {
   readonly authorizerName: string;
@@ -961,9 +961,9 @@ export interface SetV2LoggingLevel {
   readonly logLevel: string;
 }
 export interface SetV2LoggingOptions {
-  readonly roleArn: string;
-  readonly defaultLogLevel: string;
-  readonly disableAllLogs: boolean;
+  readonly roleArn?: string;
+  readonly defaultLogLevel?: string;
+  readonly disableAllLogs?: boolean;
 }
 export interface StartAuditMitigationActionsTask {
   readonly taskId: string;
@@ -975,9 +975,9 @@ export interface StartDetectMitigationActionsTask {
   readonly taskId: string;
   readonly target: DetectMitigationActionsTaskTarget;
   readonly actions: [];
-  readonly violationEventOccurrenceRange: ViolationEventOccurrenceRange;
-  readonly includeOnlyActiveViolations: boolean;
-  readonly includeSuppressedAlerts: boolean;
+  readonly violationEventOccurrenceRange?: ViolationEventOccurrenceRange;
+  readonly includeOnlyActiveViolations?: boolean;
+  readonly includeSuppressedAlerts?: boolean;
   readonly clientRequestToken: string;
 }
 export interface StartOnDemandAuditTask {
@@ -997,61 +997,61 @@ export interface TagResource {
   readonly tags: [];
 }
 export interface TestAuthorization {
-  readonly principal: string;
-  readonly cognitoIdentityPoolId: string;
+  readonly principal?: string;
+  readonly cognitoIdentityPoolId?: string;
   readonly authInfos: [];
-  readonly clientId: string;
-  readonly policyNamesToAdd: [];
-  readonly policyNamesToSkip: [];
+  readonly clientId?: string;
+  readonly policyNamesToAdd?: [];
+  readonly policyNamesToSkip?: [];
 }
 export interface TestInvokeAuthorizer {
   readonly authorizerName: string;
-  readonly token: string;
-  readonly tokenSignature: string;
-  readonly httpContext: HttpContext;
-  readonly mqttContext: MqttContext;
-  readonly tlsContext: TlsContext;
+  readonly token?: string;
+  readonly tokenSignature?: string;
+  readonly httpContext?: HttpContext;
+  readonly mqttContext?: MqttContext;
+  readonly tlsContext?: TlsContext;
 }
 export interface TransferCertificate {
   readonly certificateId: string;
   readonly targetAwsAccount: string;
-  readonly transferMessage: string;
+  readonly transferMessage?: string;
 }
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 export interface UpdateAccountAuditConfiguration {
-  readonly roleArn: string;
-  readonly auditNotificationTargetConfigurations: {[key: string]: any};
-  readonly auditCheckConfigurations: {[key: string]: any};
+  readonly roleArn?: string;
+  readonly auditNotificationTargetConfigurations?: {[key: string]: any};
+  readonly auditCheckConfigurations?: {[key: string]: any};
 }
 export interface UpdateAuditSuppression {
   readonly checkName: string;
   readonly resourceIdentifier: ResourceIdentifier;
-  readonly expirationDate: Date;
-  readonly suppressIndefinitely: boolean;
-  readonly description: string;
+  readonly expirationDate?: Date;
+  readonly suppressIndefinitely?: boolean;
+  readonly description?: string;
 }
 export interface UpdateAuthorizer {
   readonly authorizerName: string;
-  readonly authorizerFunctionArn: string;
-  readonly tokenKeyName: string;
-  readonly tokenSigningPublicKeys: {[key: string]: any};
-  readonly status: string;
-  readonly enableCachingForHttp: boolean;
+  readonly authorizerFunctionArn?: string;
+  readonly tokenKeyName?: string;
+  readonly tokenSigningPublicKeys?: {[key: string]: any};
+  readonly status?: string;
+  readonly enableCachingForHttp?: boolean;
 }
 export interface UpdateBillingGroup {
   readonly billingGroupName: string;
   readonly billingGroupProperties: BillingGroupProperties;
-  readonly expectedVersion: number;
+  readonly expectedVersion?: number;
 }
 export interface UpdateCACertificate {
   readonly certificateId: string;
-  readonly newStatus: string;
-  readonly newAutoRegistrationStatus: string;
-  readonly registrationConfig: RegistrationConfig;
-  readonly removeAutoRegistration: boolean;
+  readonly newStatus?: string;
+  readonly newAutoRegistrationStatus?: string;
+  readonly registrationConfig?: RegistrationConfig;
+  readonly removeAutoRegistration?: boolean;
 }
 export interface UpdateCertificate {
   readonly certificateId: string;
@@ -1067,107 +1067,107 @@ export interface UpdateDimension {
 }
 export interface UpdateDomainConfiguration {
   readonly domainConfigurationName: string;
-  readonly authorizerConfig: AuthorizerConfig;
-  readonly domainConfigurationStatus: string;
-  readonly removeAuthorizerConfig: boolean;
+  readonly authorizerConfig?: AuthorizerConfig;
+  readonly domainConfigurationStatus?: string;
+  readonly removeAuthorizerConfig?: boolean;
 }
 export interface UpdateDynamicThingGroup {
   readonly thingGroupName: string;
   readonly thingGroupProperties: ThingGroupProperties;
-  readonly expectedVersion: number;
-  readonly indexName: string;
-  readonly queryString: string;
-  readonly queryVersion: string;
+  readonly expectedVersion?: number;
+  readonly indexName?: string;
+  readonly queryString?: string;
+  readonly queryVersion?: string;
 }
 export interface UpdateEventConfigurations {
-  readonly eventConfigurations: {[key: string]: any};
+  readonly eventConfigurations?: {[key: string]: any};
 }
 export interface UpdateFleetMetric {
   readonly metricName: string;
-  readonly queryString: string;
-  readonly aggregationType: AggregationType;
-  readonly period: number;
-  readonly aggregationField: string;
-  readonly description: string;
-  readonly queryVersion: string;
+  readonly queryString?: string;
+  readonly aggregationType?: AggregationType;
+  readonly period?: number;
+  readonly aggregationField?: string;
+  readonly description?: string;
+  readonly queryVersion?: string;
   readonly indexName: string;
-  readonly unit: string;
-  readonly expectedVersion: number;
+  readonly unit?: string;
+  readonly expectedVersion?: number;
 }
 export interface UpdateIndexingConfiguration {
-  readonly thingIndexingConfiguration: ThingIndexingConfiguration;
-  readonly thingGroupIndexingConfiguration: ThingGroupIndexingConfiguration;
+  readonly thingIndexingConfiguration?: ThingIndexingConfiguration;
+  readonly thingGroupIndexingConfiguration?: ThingGroupIndexingConfiguration;
 }
 export interface UpdateJob {
   readonly jobId: string;
-  readonly description: string;
-  readonly presignedUrlConfig: PresignedUrlConfig;
-  readonly jobExecutionsRolloutConfig: JobExecutionsRolloutConfig;
-  readonly abortConfig: AbortConfig;
-  readonly timeoutConfig: TimeoutConfig;
-  readonly namespaceId: string;
+  readonly description?: string;
+  readonly presignedUrlConfig?: PresignedUrlConfig;
+  readonly jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig;
+  readonly abortConfig?: AbortConfig;
+  readonly timeoutConfig?: TimeoutConfig;
+  readonly namespaceId?: string;
 }
 export interface UpdateMitigationAction {
   readonly actionName: string;
-  readonly roleArn: string;
-  readonly actionParams: MitigationActionParams;
+  readonly roleArn?: string;
+  readonly actionParams?: MitigationActionParams;
 }
 export interface UpdateProvisioningTemplate {
   readonly templateName: string;
-  readonly description: string;
-  readonly enabled: boolean;
-  readonly defaultVersionId: number;
-  readonly provisioningRoleArn: string;
-  readonly preProvisioningHook: ProvisioningHook;
-  readonly removePreProvisioningHook: boolean;
+  readonly description?: string;
+  readonly enabled?: boolean;
+  readonly defaultVersionId?: number;
+  readonly provisioningRoleArn?: string;
+  readonly preProvisioningHook?: ProvisioningHook;
+  readonly removePreProvisioningHook?: boolean;
 }
 export interface UpdateRoleAlias {
   readonly roleAlias: string;
-  readonly roleArn: string;
-  readonly credentialDurationSeconds: number;
+  readonly roleArn?: string;
+  readonly credentialDurationSeconds?: number;
 }
 export interface UpdateScheduledAudit {
-  readonly frequency: string;
-  readonly dayOfMonth: string;
-  readonly dayOfWeek: string;
-  readonly targetCheckNames: [];
+  readonly frequency?: string;
+  readonly dayOfMonth?: string;
+  readonly dayOfWeek?: string;
+  readonly targetCheckNames?: [];
   readonly scheduledAuditName: string;
 }
 export interface UpdateSecurityProfile {
   readonly securityProfileName: string;
-  readonly securityProfileDescription: string;
-  readonly behaviors: [];
-  readonly alertTargets: {[key: string]: any};
-  readonly additionalMetricsToRetain: [];
-  readonly additionalMetricsToRetainV2: [];
-  readonly deleteBehaviors: boolean;
-  readonly deleteAlertTargets: boolean;
-  readonly deleteAdditionalMetricsToRetain: boolean;
-  readonly expectedVersion: number;
+  readonly securityProfileDescription?: string;
+  readonly behaviors?: [];
+  readonly alertTargets?: {[key: string]: any};
+  readonly additionalMetricsToRetain?: [];
+  readonly additionalMetricsToRetainV2?: [];
+  readonly deleteBehaviors?: boolean;
+  readonly deleteAlertTargets?: boolean;
+  readonly deleteAdditionalMetricsToRetain?: boolean;
+  readonly expectedVersion?: number;
 }
 export interface UpdateStream {
   readonly streamId: string;
-  readonly description: string;
-  readonly files: [];
-  readonly roleArn: string;
+  readonly description?: string;
+  readonly files?: [];
+  readonly roleArn?: string;
 }
 export interface UpdateThing {
   readonly thingName: string;
-  readonly thingTypeName: string;
-  readonly attributePayload: AttributePayload;
-  readonly expectedVersion: number;
-  readonly removeThingType: boolean;
+  readonly thingTypeName?: string;
+  readonly attributePayload?: AttributePayload;
+  readonly expectedVersion?: number;
+  readonly removeThingType?: boolean;
 }
 export interface UpdateThingGroup {
   readonly thingGroupName: string;
   readonly thingGroupProperties: ThingGroupProperties;
-  readonly expectedVersion: number;
+  readonly expectedVersion?: number;
 }
 export interface UpdateThingGroupsForThing {
-  readonly thingName: string;
-  readonly thingGroupsToAdd: [];
-  readonly thingGroupsToRemove: [];
-  readonly overrideDynamicGroups: boolean;
+  readonly thingName?: string;
+  readonly thingGroupsToAdd?: [];
+  readonly thingGroupsToRemove?: [];
+  readonly overrideDynamicGroups?: boolean;
 }
 export interface UpdateTopicRuleDestination {
   readonly arn: string;

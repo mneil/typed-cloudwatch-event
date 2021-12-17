@@ -7,8 +7,8 @@ export interface AddTagsToStream {
 }
 export interface CreateStream {
   readonly StreamName: string;
-  readonly ShardCount: number;
-  readonly StreamModeDetails: StreamModeDetails;
+  readonly ShardCount?: number;
+  readonly StreamModeDetails?: StreamModeDetails;
 }
 export interface DecreaseStreamRetentionPeriod {
   readonly StreamName: string;
@@ -16,24 +16,24 @@ export interface DecreaseStreamRetentionPeriod {
 }
 export interface DeleteStream {
   readonly StreamName: string;
-  readonly EnforceConsumerDeletion: boolean;
+  readonly EnforceConsumerDeletion?: boolean;
 }
 export interface DeregisterStreamConsumer {
-  readonly StreamARN: string;
-  readonly ConsumerName: string;
-  readonly ConsumerARN: string;
+  readonly StreamARN?: string;
+  readonly ConsumerName?: string;
+  readonly ConsumerARN?: string;
 }
 export interface DescribeLimits {
 }
 export interface DescribeStream {
   readonly StreamName: string;
-  readonly Limit: number;
-  readonly ExclusiveStartShardId: string;
+  readonly Limit?: number;
+  readonly ExclusiveStartShardId?: string;
 }
 export interface DescribeStreamConsumer {
-  readonly StreamARN: string;
-  readonly ConsumerName: string;
-  readonly ConsumerARN: string;
+  readonly StreamARN?: string;
+  readonly ConsumerName?: string;
+  readonly ConsumerARN?: string;
 }
 export interface DescribeStreamSummary {
   readonly StreamName: string;
@@ -48,41 +48,41 @@ export interface EnableEnhancedMonitoring {
 }
 export interface GetRecords {
   readonly ShardIterator: string;
-  readonly Limit: number;
+  readonly Limit?: number;
 }
 export interface GetShardIterator {
   readonly StreamName: string;
   readonly ShardId: string;
   readonly ShardIteratorType: string;
-  readonly StartingSequenceNumber: string;
-  readonly Timestamp: Date;
+  readonly StartingSequenceNumber?: string;
+  readonly Timestamp?: Date;
 }
 export interface IncreaseStreamRetentionPeriod {
   readonly StreamName: string;
   readonly RetentionPeriodHours: number;
 }
 export interface ListShards {
-  readonly StreamName: string;
-  readonly NextToken: string;
-  readonly ExclusiveStartShardId: string;
-  readonly MaxResults: number;
-  readonly StreamCreationTimestamp: Date;
-  readonly ShardFilter: ShardFilter;
+  readonly StreamName?: string;
+  readonly NextToken?: string;
+  readonly ExclusiveStartShardId?: string;
+  readonly MaxResults?: number;
+  readonly StreamCreationTimestamp?: Date;
+  readonly ShardFilter?: ShardFilter;
 }
 export interface ListStreamConsumers {
   readonly StreamARN: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly StreamCreationTimestamp: Date;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly StreamCreationTimestamp?: Date;
 }
 export interface ListStreams {
-  readonly Limit: number;
-  readonly ExclusiveStartStreamName: string;
+  readonly Limit?: number;
+  readonly ExclusiveStartStreamName?: string;
 }
 export interface ListTagsForStream {
   readonly StreamName: string;
-  readonly ExclusiveStartTagKey: string;
-  readonly Limit: number;
+  readonly ExclusiveStartTagKey?: string;
+  readonly Limit?: number;
 }
 export interface MergeShards {
   readonly StreamName: string;
@@ -93,8 +93,8 @@ export interface PutRecord {
   readonly StreamName: string;
   readonly Data: unknown;
   readonly PartitionKey: string;
-  readonly ExplicitHashKey: string;
-  readonly SequenceNumberForOrdering: string;
+  readonly ExplicitHashKey?: string;
+  readonly SequenceNumberForOrdering?: string;
 }
 export interface PutRecords {
   readonly Records: [];

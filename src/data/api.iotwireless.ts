@@ -3,8 +3,8 @@
  */
 export interface AssociateAwsAccountWithPartnerAccount {
   readonly Sidewalk: SidewalkAccountInfo;
-  readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly ClientRequestToken?: string;
+  readonly Tags?: [];
 }
 export interface AssociateMulticastGroupWithFuotaTask {
   readonly Id: string;
@@ -37,54 +37,54 @@ export interface CreateDestination {
   readonly Name: string;
   readonly ExpressionType: string;
   readonly Expression: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly RoleArn: string;
-  readonly Tags: [];
-  readonly ClientRequestToken: string;
+  readonly Tags?: [];
+  readonly ClientRequestToken?: string;
 }
 export interface CreateDeviceProfile {
-  readonly Name: string;
-  readonly LoRaWAN: LoRaWANDeviceProfile;
-  readonly Tags: [];
-  readonly ClientRequestToken: string;
+  readonly Name?: string;
+  readonly LoRaWAN?: LoRaWANDeviceProfile;
+  readonly Tags?: [];
+  readonly ClientRequestToken?: string;
 }
 export interface CreateFuotaTask {
-  readonly Name: string;
-  readonly Description: string;
-  readonly ClientRequestToken: string;
-  readonly LoRaWAN: LoRaWANFuotaTask;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly ClientRequestToken?: string;
+  readonly LoRaWAN?: LoRaWANFuotaTask;
   readonly FirmwareUpdateImage: string;
   readonly FirmwareUpdateRole: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateMulticastGroup {
-  readonly Name: string;
-  readonly Description: string;
-  readonly ClientRequestToken: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly ClientRequestToken?: string;
   readonly LoRaWAN: LoRaWANMulticast;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 export interface CreateServiceProfile {
-  readonly Name: string;
-  readonly LoRaWAN: LoRaWANServiceProfile;
-  readonly Tags: [];
-  readonly ClientRequestToken: string;
+  readonly Name?: string;
+  readonly LoRaWAN?: LoRaWANServiceProfile;
+  readonly Tags?: [];
+  readonly ClientRequestToken?: string;
 }
 export interface CreateWirelessDevice {
   readonly Type: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
   readonly DestinationName: string;
-  readonly ClientRequestToken: string;
-  readonly LoRaWAN: LoRaWANDevice;
-  readonly Tags: [];
+  readonly ClientRequestToken?: string;
+  readonly LoRaWAN?: LoRaWANDevice;
+  readonly Tags?: [];
 }
 export interface CreateWirelessGateway {
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
   readonly LoRaWAN: LoRaWANGateway;
-  readonly Tags: [];
-  readonly ClientRequestToken: string;
+  readonly Tags?: [];
+  readonly ClientRequestToken?: string;
 }
 export interface CreateWirelessGatewayTask {
   readonly Id: string;
@@ -92,10 +92,10 @@ export interface CreateWirelessGatewayTask {
 }
 export interface CreateWirelessGatewayTaskDefinition {
   readonly AutoCreateTasks: boolean;
-  readonly Name: string;
-  readonly Update: UpdateWirelessGatewayTaskCreate;
-  readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Name?: string;
+  readonly Update?: UpdateWirelessGatewayTaskCreate;
+  readonly ClientRequestToken?: string;
+  readonly Tags?: [];
 }
 export interface DeleteDestination {
   readonly Name: string;
@@ -176,14 +176,14 @@ export interface GetPartnerAccount {
 export interface GetResourceEventConfiguration {
   readonly Identifier: string;
   readonly IdentifierType: string;
-  readonly PartnerType: string;
+  readonly PartnerType?: string;
 }
 export interface GetResourceLogLevel {
   readonly ResourceIdentifier: string;
   readonly ResourceType: string;
 }
 export interface GetServiceEndpoint {
-  readonly ServiceType: string;
+  readonly ServiceType?: string;
 }
 export interface GetServiceProfile {
   readonly Id: string;
@@ -215,55 +215,55 @@ export interface GetWirelessGatewayTaskDefinition {
   readonly Id: string;
 }
 export interface ListDestinations {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 export interface ListDeviceProfiles {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListFuotaTasks {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMulticastGroups {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListMulticastGroupsByFuotaTask {
   readonly Id: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListPartnerAccounts {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListServiceProfiles {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
 export interface ListWirelessDevices {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DestinationName: string;
-  readonly DeviceProfileId: string;
-  readonly ServiceProfileId: string;
-  readonly WirelessDeviceType: string;
-  readonly FuotaTaskId: string;
-  readonly MulticastGroupId: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DestinationName?: string;
+  readonly DeviceProfileId?: string;
+  readonly ServiceProfileId?: string;
+  readonly WirelessDeviceType?: string;
+  readonly FuotaTaskId?: string;
+  readonly MulticastGroupId?: string;
 }
 export interface ListWirelessGatewayTaskDefinitions {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly TaskDefinitionType: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly TaskDefinitionType?: string;
 }
 export interface ListWirelessGateways {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface PutResourceLogLevel {
   readonly ResourceIdentifier: string;
@@ -285,21 +285,21 @@ export interface SendDataToWirelessDevice {
   readonly Id: string;
   readonly TransmitMode: number;
   readonly PayloadData: string;
-  readonly WirelessMetadata: WirelessMetadata;
+  readonly WirelessMetadata?: WirelessMetadata;
 }
 export interface StartBulkAssociateWirelessDeviceWithMulticastGroup {
   readonly Id: string;
-  readonly QueryString: string;
-  readonly Tags: [];
+  readonly QueryString?: string;
+  readonly Tags?: [];
 }
 export interface StartBulkDisassociateWirelessDeviceFromMulticastGroup {
   readonly Id: string;
-  readonly QueryString: string;
-  readonly Tags: [];
+  readonly QueryString?: string;
+  readonly Tags?: [];
 }
 export interface StartFuotaTask {
   readonly Id: string;
-  readonly LoRaWAN: LoRaWANStartFuotaTask;
+  readonly LoRaWAN?: LoRaWANStartFuotaTask;
 }
 export interface StartMulticastGroupSession {
   readonly Id: string;
@@ -318,37 +318,37 @@ export interface UntagResource {
 }
 export interface UpdateDestination {
   readonly Name: string;
-  readonly ExpressionType: string;
-  readonly Expression: string;
-  readonly Description: string;
-  readonly RoleArn: string;
+  readonly ExpressionType?: string;
+  readonly Expression?: string;
+  readonly Description?: string;
+  readonly RoleArn?: string;
 }
 export interface UpdateFuotaTask {
   readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly LoRaWAN: LoRaWANFuotaTask;
-  readonly FirmwareUpdateImage: string;
-  readonly FirmwareUpdateRole: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly LoRaWAN?: LoRaWANFuotaTask;
+  readonly FirmwareUpdateImage?: string;
+  readonly FirmwareUpdateRole?: string;
 }
 export interface UpdateLogLevelsByResourceTypes {
-  readonly DefaultLogLevel: string;
-  readonly WirelessDeviceLogOptions: [];
-  readonly WirelessGatewayLogOptions: [];
+  readonly DefaultLogLevel?: string;
+  readonly WirelessDeviceLogOptions?: [];
+  readonly WirelessGatewayLogOptions?: [];
 }
 export interface UpdateMulticastGroup {
   readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly LoRaWAN: LoRaWANMulticast;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly LoRaWAN?: LoRaWANMulticast;
 }
 export interface UpdateNetworkAnalyzerConfiguration {
   readonly ConfigurationName: string;
-  readonly TraceContent: TraceContent;
-  readonly WirelessDevicesToAdd: [];
-  readonly WirelessDevicesToRemove: [];
-  readonly WirelessGatewaysToAdd: [];
-  readonly WirelessGatewaysToRemove: [];
+  readonly TraceContent?: TraceContent;
+  readonly WirelessDevicesToAdd?: [];
+  readonly WirelessDevicesToRemove?: [];
+  readonly WirelessGatewaysToAdd?: [];
+  readonly WirelessGatewaysToRemove?: [];
 }
 export interface UpdatePartnerAccount {
   readonly Sidewalk: SidewalkUpdateAccount;
@@ -358,23 +358,23 @@ export interface UpdatePartnerAccount {
 export interface UpdateResourceEventConfiguration {
   readonly Identifier: string;
   readonly IdentifierType: string;
-  readonly PartnerType: string;
-  readonly DeviceRegistrationState: DeviceRegistrationStateEventConfiguration;
-  readonly Proximity: ProximityEventConfiguration;
+  readonly PartnerType?: string;
+  readonly DeviceRegistrationState?: DeviceRegistrationStateEventConfiguration;
+  readonly Proximity?: ProximityEventConfiguration;
 }
 export interface UpdateWirelessDevice {
   readonly Id: string;
-  readonly DestinationName: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly LoRaWAN: LoRaWANUpdateDevice;
+  readonly DestinationName?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly LoRaWAN?: LoRaWANUpdateDevice;
 }
 export interface UpdateWirelessGateway {
   readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly JoinEuiFilters: [];
-  readonly NetIdFilters: [];
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly JoinEuiFilters?: [];
+  readonly NetIdFilters?: [];
 }
 
 

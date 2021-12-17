@@ -4,34 +4,34 @@
 export interface CreateDataset {
   readonly ProjectName: string;
   readonly DatasetType: string;
-  readonly DatasetSource: DatasetSource;
-  readonly ClientToken: string;
+  readonly DatasetSource?: DatasetSource;
+  readonly ClientToken?: string;
 }
 export interface CreateModel {
   readonly ProjectName: string;
-  readonly Description: string;
-  readonly ClientToken: string;
+  readonly Description?: string;
+  readonly ClientToken?: string;
   readonly OutputConfig: OutputConfig;
-  readonly KmsKeyId: string;
-  readonly Tags: [];
+  readonly KmsKeyId?: string;
+  readonly Tags?: [];
 }
 export interface CreateProject {
   readonly ProjectName: string;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 export interface DeleteDataset {
   readonly ProjectName: string;
   readonly DatasetType: string;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 export interface DeleteModel {
   readonly ProjectName: string;
   readonly ModelVersion: string;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 export interface DeleteProject {
   readonly ProjectName: string;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 export interface DescribeDataset {
   readonly ProjectName: string;
@@ -57,27 +57,27 @@ export interface DetectAnomalies {
 export interface ListDatasetEntries {
   readonly ProjectName: string;
   readonly DatasetType: string;
-  readonly Labeled: boolean;
-  readonly AnomalyClass: string;
-  readonly BeforeCreationDate: Date;
-  readonly AfterCreationDate: Date;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly SourceRefContains: string;
+  readonly Labeled?: boolean;
+  readonly AnomalyClass?: string;
+  readonly BeforeCreationDate?: Date;
+  readonly AfterCreationDate?: Date;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly SourceRefContains?: string;
 }
 export interface ListModelPackagingJobs {
   readonly ProjectName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListModels {
   readonly ProjectName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListProjects {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -86,20 +86,20 @@ export interface StartModel {
   readonly ProjectName: string;
   readonly ModelVersion: string;
   readonly MinInferenceUnits: number;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 export interface StartModelPackagingJob {
   readonly ProjectName: string;
   readonly ModelVersion: string;
-  readonly JobName: string;
+  readonly JobName?: string;
   readonly Configuration: ModelPackagingConfiguration;
-  readonly Description: string;
-  readonly ClientToken: string;
+  readonly Description?: string;
+  readonly ClientToken?: string;
 }
 export interface StopModel {
   readonly ProjectName: string;
   readonly ModelVersion: string;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 export interface TagResource {
   readonly ResourceArn: string;
@@ -113,7 +113,7 @@ export interface UpdateDatasetEntries {
   readonly ProjectName: string;
   readonly DatasetType: string;
   readonly Changes: unknown;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 
 

@@ -3,10 +3,10 @@
  */
 export interface AddProfilePermission {
   readonly profileName: string;
-  readonly profileVersion: string;
+  readonly profileVersion?: string;
   readonly action: string;
   readonly principal: string;
-  readonly revisionId: string;
+  readonly revisionId?: string;
   readonly statementId: string;
 }
 export interface CancelSigningProfile {
@@ -20,48 +20,48 @@ export interface GetSigningPlatform {
 }
 export interface GetSigningProfile {
   readonly profileName: string;
-  readonly profileOwner: string;
+  readonly profileOwner?: string;
 }
 export interface ListProfilePermissions {
   readonly profileName: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 export interface ListSigningJobs {
-  readonly status: string;
-  readonly platformId: string;
-  readonly requestedBy: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly isRevoked: boolean;
-  readonly signatureExpiresBefore: Date;
-  readonly signatureExpiresAfter: Date;
-  readonly jobInvoker: string;
+  readonly status?: string;
+  readonly platformId?: string;
+  readonly requestedBy?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly isRevoked?: boolean;
+  readonly signatureExpiresBefore?: Date;
+  readonly signatureExpiresAfter?: Date;
+  readonly jobInvoker?: string;
 }
 export interface ListSigningPlatforms {
-  readonly category: string;
-  readonly partner: string;
-  readonly target: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly category?: string;
+  readonly partner?: string;
+  readonly target?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface ListSigningProfiles {
-  readonly includeCanceled: boolean;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly platformId: string;
-  readonly statuses: [];
+  readonly includeCanceled?: boolean;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly platformId?: string;
+  readonly statuses?: [];
 }
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
 export interface PutSigningProfile {
   readonly profileName: string;
-  readonly signingMaterial: SigningMaterial;
-  readonly signatureValidityPeriod: SignatureValidityPeriod;
+  readonly signingMaterial?: SigningMaterial;
+  readonly signatureValidityPeriod?: SignatureValidityPeriod;
   readonly platformId: string;
-  readonly overrides: SigningPlatformOverrides;
-  readonly signingParameters: {[key: string]: any};
-  readonly tags: {[key: string]: any};
+  readonly overrides?: SigningPlatformOverrides;
+  readonly signingParameters?: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 export interface RemoveProfilePermission {
   readonly profileName: string;
@@ -70,7 +70,7 @@ export interface RemoveProfilePermission {
 }
 export interface RevokeSignature {
   readonly jobId: string;
-  readonly jobOwner: string;
+  readonly jobOwner?: string;
   readonly reason: string;
 }
 export interface RevokeSigningProfile {
@@ -84,7 +84,7 @@ export interface StartSigningJob {
   readonly destination: Destination;
   readonly profileName: string;
   readonly clientRequestToken: string;
-  readonly profileOwner: string;
+  readonly profileOwner?: string;
 }
 export interface TagResource {
   readonly resourceArn: string;

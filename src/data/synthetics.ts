@@ -7,36 +7,36 @@ export interface CreateCanary {
   readonly ArtifactS3Location: string;
   readonly ExecutionRoleArn: string;
   readonly Schedule: CanaryScheduleInput;
-  readonly RunConfig: CanaryRunConfigInput;
-  readonly SuccessRetentionPeriodInDays: number;
-  readonly FailureRetentionPeriodInDays: number;
+  readonly RunConfig?: CanaryRunConfigInput;
+  readonly SuccessRetentionPeriodInDays?: number;
+  readonly FailureRetentionPeriodInDays?: number;
   readonly RuntimeVersion: string;
-  readonly VpcConfig: VpcConfigInput;
-  readonly Tags: {[key: string]: any};
-  readonly ArtifactConfig: ArtifactConfigInput;
+  readonly VpcConfig?: VpcConfigInput;
+  readonly Tags?: {[key: string]: any};
+  readonly ArtifactConfig?: ArtifactConfigInput;
 }
 export interface DeleteCanary {
   readonly Name: string;
 }
 export interface DescribeCanaries {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeCanariesLastRun {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface DescribeRuntimeVersions {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface GetCanary {
   readonly Name: string;
 }
 export interface GetCanaryRuns {
   readonly Name: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ListTagsForResource {
   readonly ResourceArn: string;
@@ -57,17 +57,17 @@ export interface UntagResource {
 }
 export interface UpdateCanary {
   readonly Name: string;
-  readonly Code: CanaryCodeInput;
-  readonly ExecutionRoleArn: string;
-  readonly RuntimeVersion: string;
-  readonly Schedule: CanaryScheduleInput;
-  readonly RunConfig: CanaryRunConfigInput;
-  readonly SuccessRetentionPeriodInDays: number;
-  readonly FailureRetentionPeriodInDays: number;
-  readonly VpcConfig: VpcConfigInput;
-  readonly VisualReference: VisualReferenceInput;
-  readonly ArtifactS3Location: string;
-  readonly ArtifactConfig: ArtifactConfigInput;
+  readonly Code?: CanaryCodeInput;
+  readonly ExecutionRoleArn?: string;
+  readonly RuntimeVersion?: string;
+  readonly Schedule?: CanaryScheduleInput;
+  readonly RunConfig?: CanaryRunConfigInput;
+  readonly SuccessRetentionPeriodInDays?: number;
+  readonly FailureRetentionPeriodInDays?: number;
+  readonly VpcConfig?: VpcConfigInput;
+  readonly VisualReference?: VisualReferenceInput;
+  readonly ArtifactS3Location?: string;
+  readonly ArtifactConfig?: ArtifactConfigInput;
 }
 
 

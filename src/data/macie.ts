@@ -5,27 +5,27 @@ export interface AssociateMemberAccount {
   readonly memberAccountId: string;
 }
 export interface AssociateS3Resources {
-  readonly memberAccountId: string;
+  readonly memberAccountId?: string;
   readonly s3Resources: [];
 }
 export interface DisassociateMemberAccount {
   readonly memberAccountId: string;
 }
 export interface DisassociateS3Resources {
-  readonly memberAccountId: string;
+  readonly memberAccountId?: string;
   readonly associatedS3Resources: [];
 }
 export interface ListMemberAccounts {
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface ListS3Resources {
-  readonly memberAccountId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly memberAccountId?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface UpdateS3Resources {
-  readonly memberAccountId: string;
+  readonly memberAccountId?: string;
   readonly s3ResourcesUpdate: [];
 }
 

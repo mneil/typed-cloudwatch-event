@@ -3,15 +3,15 @@
  */
 export interface CreateBotVersion {
   readonly name: string;
-  readonly checksum: string;
+  readonly checksum?: string;
 }
 export interface CreateIntentVersion {
   readonly name: string;
-  readonly checksum: string;
+  readonly checksum?: string;
 }
 export interface CreateSlotTypeVersion {
   readonly name: string;
-  readonly checksum: string;
+  readonly checksum?: string;
 }
 export interface DeleteBot {
   readonly name: string;
@@ -57,9 +57,9 @@ export interface GetBotAlias {
 }
 export interface GetBotAliases {
   readonly botName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly nameContains: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly nameContains?: string;
 }
 export interface GetBotChannelAssociation {
   readonly name: string;
@@ -69,34 +69,34 @@ export interface GetBotChannelAssociation {
 export interface GetBotChannelAssociations {
   readonly botName: string;
   readonly botAlias: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly nameContains: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly nameContains?: string;
 }
 export interface GetBotVersions {
   readonly name: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetBots {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly nameContains: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly nameContains?: string;
 }
 export interface GetBuiltinIntent {
   readonly signature: string;
 }
 export interface GetBuiltinIntents {
-  readonly locale: string;
-  readonly signatureContains: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly locale?: string;
+  readonly signatureContains?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetBuiltinSlotTypes {
-  readonly locale: string;
-  readonly signatureContains: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly locale?: string;
+  readonly signatureContains?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetExport {
   readonly name: string;
@@ -113,24 +113,24 @@ export interface GetIntent {
 }
 export interface GetIntentVersions {
   readonly name: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetIntents {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly nameContains: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly nameContains?: string;
 }
 export interface GetMigration {
   readonly migrationId: string;
 }
 export interface GetMigrations {
-  readonly sortByAttribute: string;
-  readonly sortByOrder: string;
-  readonly v1BotNameContains: string;
-  readonly migrationStatusEquals: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly sortByAttribute?: string;
+  readonly sortByOrder?: string;
+  readonly v1BotNameContains?: string;
+  readonly migrationStatusEquals?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 export interface GetSlotType {
   readonly name: string;
@@ -138,13 +138,13 @@ export interface GetSlotType {
 }
 export interface GetSlotTypeVersions {
   readonly name: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 export interface GetSlotTypes {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly nameContains: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly nameContains?: string;
 }
 export interface GetUtterancesView {
   readonly botName: string;
@@ -156,64 +156,64 @@ export interface ListTagsForResource {
 }
 export interface PutBot {
   readonly name: string;
-  readonly description: string;
-  readonly intents: [];
-  readonly enableModelImprovements: boolean;
-  readonly nluIntentConfidenceThreshold: unknown;
-  readonly clarificationPrompt: Prompt;
-  readonly abortStatement: Statement;
-  readonly idleSessionTTLInSeconds: number;
-  readonly voiceId: string;
-  readonly checksum: string;
-  readonly processBehavior: string;
+  readonly description?: string;
+  readonly intents?: [];
+  readonly enableModelImprovements?: boolean;
+  readonly nluIntentConfidenceThreshold?: unknown;
+  readonly clarificationPrompt?: Prompt;
+  readonly abortStatement?: Statement;
+  readonly idleSessionTTLInSeconds?: number;
+  readonly voiceId?: string;
+  readonly checksum?: string;
+  readonly processBehavior?: string;
   readonly locale: string;
   readonly childDirected: boolean;
-  readonly detectSentiment: boolean;
-  readonly createVersion: boolean;
-  readonly tags: [];
+  readonly detectSentiment?: boolean;
+  readonly createVersion?: boolean;
+  readonly tags?: [];
 }
 export interface PutBotAlias {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly botVersion: string;
   readonly botName: string;
-  readonly checksum: string;
-  readonly conversationLogs: ConversationLogsRequest;
-  readonly tags: [];
+  readonly checksum?: string;
+  readonly conversationLogs?: ConversationLogsRequest;
+  readonly tags?: [];
 }
 export interface PutIntent {
   readonly name: string;
-  readonly description: string;
-  readonly slots: [];
-  readonly sampleUtterances: [];
-  readonly confirmationPrompt: Prompt;
-  readonly rejectionStatement: Statement;
-  readonly followUpPrompt: FollowUpPrompt;
-  readonly conclusionStatement: Statement;
-  readonly dialogCodeHook: CodeHook;
-  readonly fulfillmentActivity: FulfillmentActivity;
-  readonly parentIntentSignature: string;
-  readonly checksum: string;
-  readonly createVersion: boolean;
-  readonly kendraConfiguration: KendraConfiguration;
-  readonly inputContexts: [];
-  readonly outputContexts: [];
+  readonly description?: string;
+  readonly slots?: [];
+  readonly sampleUtterances?: [];
+  readonly confirmationPrompt?: Prompt;
+  readonly rejectionStatement?: Statement;
+  readonly followUpPrompt?: FollowUpPrompt;
+  readonly conclusionStatement?: Statement;
+  readonly dialogCodeHook?: CodeHook;
+  readonly fulfillmentActivity?: FulfillmentActivity;
+  readonly parentIntentSignature?: string;
+  readonly checksum?: string;
+  readonly createVersion?: boolean;
+  readonly kendraConfiguration?: KendraConfiguration;
+  readonly inputContexts?: [];
+  readonly outputContexts?: [];
 }
 export interface PutSlotType {
   readonly name: string;
-  readonly description: string;
-  readonly enumerationValues: [];
-  readonly checksum: string;
-  readonly valueSelectionStrategy: string;
-  readonly createVersion: boolean;
-  readonly parentSlotTypeSignature: string;
-  readonly slotTypeConfigurations: [];
+  readonly description?: string;
+  readonly enumerationValues?: [];
+  readonly checksum?: string;
+  readonly valueSelectionStrategy?: string;
+  readonly createVersion?: boolean;
+  readonly parentSlotTypeSignature?: string;
+  readonly slotTypeConfigurations?: [];
 }
 export interface StartImport {
   readonly payload: unknown;
   readonly resourceType: string;
   readonly mergeStrategy: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 export interface StartMigration {
   readonly v1BotName: string;

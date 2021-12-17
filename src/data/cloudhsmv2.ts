@@ -4,19 +4,19 @@
 export interface CopyBackupToRegion {
   readonly DestinationRegion: string;
   readonly BackupId: string;
-  readonly TagList: [];
+  readonly TagList?: [];
 }
 export interface CreateCluster {
-  readonly BackupRetentionPolicy: BackupRetentionPolicy;
+  readonly BackupRetentionPolicy?: BackupRetentionPolicy;
   readonly HsmType: string;
-  readonly SourceBackupId: string;
+  readonly SourceBackupId?: string;
   readonly SubnetIds: [];
-  readonly TagList: [];
+  readonly TagList?: [];
 }
 export interface CreateHsm {
   readonly ClusterId: string;
   readonly AvailabilityZone: string;
-  readonly IpAddress: string;
+  readonly IpAddress?: string;
 }
 export interface DeleteBackup {
   readonly BackupId: string;
@@ -26,20 +26,20 @@ export interface DeleteCluster {
 }
 export interface DeleteHsm {
   readonly ClusterId: string;
-  readonly HsmId: string;
-  readonly EniId: string;
-  readonly EniIp: string;
+  readonly HsmId?: string;
+  readonly EniId?: string;
+  readonly EniIp?: string;
 }
 export interface DescribeBackups {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: {[key: string]: any};
-  readonly SortAscending: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: {[key: string]: any};
+  readonly SortAscending?: boolean;
 }
 export interface DescribeClusters {
-  readonly Filters: {[key: string]: any};
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filters?: {[key: string]: any};
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface InitializeCluster {
   readonly ClusterId: string;
@@ -48,8 +48,8 @@ export interface InitializeCluster {
 }
 export interface ListTags {
   readonly ResourceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 export interface ModifyBackupAttributes {
   readonly BackupId: string;

@@ -10,8 +10,8 @@ export interface CreateBackend {
   readonly AppId: string;
   readonly AppName: string;
   readonly BackendEnvironmentName: string;
-  readonly ResourceConfig: ResourceConfig;
-  readonly ResourceName: string;
+  readonly ResourceConfig?: ResourceConfig;
+  readonly ResourceName?: string;
 }
 export interface CreateBackendAPI {
   readonly AppId: string;
@@ -27,7 +27,7 @@ export interface CreateBackendAuth {
 }
 export interface CreateBackendConfig {
   readonly AppId: string;
-  readonly BackendManagerAppId: string;
+  readonly BackendManagerAppId?: string;
 }
 export interface CreateBackendStorage {
   readonly AppId: string;
@@ -45,7 +45,7 @@ export interface DeleteBackend {
 export interface DeleteBackendAPI {
   readonly AppId: string;
   readonly BackendEnvironmentName: string;
-  readonly ResourceConfig: BackendAPIResourceConfig;
+  readonly ResourceConfig?: BackendAPIResourceConfig;
   readonly ResourceName: string;
 }
 export interface DeleteBackendAuth {
@@ -70,12 +70,12 @@ export interface GenerateBackendAPIModels {
 }
 export interface GetBackend {
   readonly AppId: string;
-  readonly BackendEnvironmentName: string;
+  readonly BackendEnvironmentName?: string;
 }
 export interface GetBackendAPI {
   readonly AppId: string;
   readonly BackendEnvironmentName: string;
-  readonly ResourceConfig: BackendAPIResourceConfig;
+  readonly ResourceConfig?: BackendAPIResourceConfig;
   readonly ResourceName: string;
 }
 export interface GetBackendAPIModels {
@@ -105,7 +105,7 @@ export interface GetToken {
 export interface ImportBackendAuth {
   readonly AppId: string;
   readonly BackendEnvironmentName: string;
-  readonly IdentityPoolId: string;
+  readonly IdentityPoolId?: string;
   readonly NativeClientId: string;
   readonly UserPoolId: string;
   readonly WebClientId: string;
@@ -113,24 +113,24 @@ export interface ImportBackendAuth {
 export interface ImportBackendStorage {
   readonly AppId: string;
   readonly BackendEnvironmentName: string;
-  readonly BucketName: string;
+  readonly BucketName?: string;
   readonly ServiceName: string;
 }
 export interface ListBackendJobs {
   readonly AppId: string;
   readonly BackendEnvironmentName: string;
-  readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Operation: string;
-  readonly Status: string;
+  readonly JobId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Operation?: string;
+  readonly Status?: string;
 }
 export interface ListS3Buckets {
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 export interface RemoveAllBackends {
   readonly AppId: string;
-  readonly CleanAmplifyApp: boolean;
+  readonly CleanAmplifyApp?: boolean;
 }
 export interface RemoveBackendConfig {
   readonly AppId: string;
@@ -138,7 +138,7 @@ export interface RemoveBackendConfig {
 export interface UpdateBackendAPI {
   readonly AppId: string;
   readonly BackendEnvironmentName: string;
-  readonly ResourceConfig: BackendAPIResourceConfig;
+  readonly ResourceConfig?: BackendAPIResourceConfig;
   readonly ResourceName: string;
 }
 export interface UpdateBackendAuth {
@@ -149,14 +149,14 @@ export interface UpdateBackendAuth {
 }
 export interface UpdateBackendConfig {
   readonly AppId: string;
-  readonly LoginAuthConfig: LoginAuthConfigReqObj;
+  readonly LoginAuthConfig?: LoginAuthConfigReqObj;
 }
 export interface UpdateBackendJob {
   readonly AppId: string;
   readonly BackendEnvironmentName: string;
   readonly JobId: string;
-  readonly Operation: string;
-  readonly Status: string;
+  readonly Operation?: string;
+  readonly Status?: string;
 }
 export interface UpdateBackendStorage {
   readonly AppId: string;
