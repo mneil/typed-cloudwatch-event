@@ -16,12 +16,14 @@ export interface CreateApi {
   readonly Target?: string;
   readonly Version?: string;
 }
+
 export interface CreateApiMapping {
   readonly ApiId: string;
   readonly ApiMappingKey?: string;
   readonly DomainName: string;
   readonly Stage: string;
 }
+
 export interface CreateAuthorizer {
   readonly ApiId: string;
   readonly AuthorizerCredentialsArn?: string;
@@ -35,17 +37,20 @@ export interface CreateAuthorizer {
   readonly JwtConfiguration?: JWTConfiguration;
   readonly Name: string;
 }
+
 export interface CreateDeployment {
   readonly ApiId: string;
   readonly Description?: string;
   readonly StageName?: string;
 }
+
 export interface CreateDomainName {
   readonly DomainName: string;
   readonly DomainNameConfigurations?: [];
   readonly MutualTlsAuthentication?: MutualTlsAuthenticationInput;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateIntegration {
   readonly ApiId: string;
   readonly ConnectionId?: string;
@@ -66,6 +71,7 @@ export interface CreateIntegration {
   readonly TimeoutInMillis?: number;
   readonly TlsConfig?: TlsConfigInput;
 }
+
 export interface CreateIntegrationResponse {
   readonly ApiId: string;
   readonly ContentHandlingStrategy?: string;
@@ -75,6 +81,7 @@ export interface CreateIntegrationResponse {
   readonly ResponseTemplates?: {[key: string]: any};
   readonly TemplateSelectionExpression?: string;
 }
+
 export interface CreateModel {
   readonly ApiId: string;
   readonly ContentType?: string;
@@ -82,6 +89,7 @@ export interface CreateModel {
   readonly Name: string;
   readonly Schema: string;
 }
+
 export interface CreateRoute {
   readonly ApiId: string;
   readonly ApiKeyRequired?: boolean;
@@ -96,6 +104,7 @@ export interface CreateRoute {
   readonly RouteResponseSelectionExpression?: string;
   readonly Target?: string;
 }
+
 export interface CreateRouteResponse {
   readonly ApiId: string;
   readonly ModelSelectionExpression?: string;
@@ -104,6 +113,7 @@ export interface CreateRouteResponse {
   readonly RouteId: string;
   readonly RouteResponseKey: string;
 }
+
 export interface CreateStage {
   readonly AccessLogSettings?: AccessLogSettings;
   readonly ApiId: string;
@@ -117,76 +127,94 @@ export interface CreateStage {
   readonly StageVariables?: {[key: string]: any};
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateVpcLink {
   readonly Name: string;
   readonly SecurityGroupIds?: [];
   readonly SubnetIds: [];
   readonly Tags?: {[key: string]: any};
 }
+
 export interface DeleteAccessLogSettings {
   readonly ApiId: string;
   readonly StageName: string;
 }
+
 export interface DeleteApi {
   readonly ApiId: string;
 }
+
 export interface DeleteApiMapping {
   readonly ApiMappingId: string;
   readonly DomainName: string;
 }
+
 export interface DeleteAuthorizer {
   readonly ApiId: string;
   readonly AuthorizerId: string;
 }
+
 export interface DeleteCorsConfiguration {
   readonly ApiId: string;
 }
+
 export interface DeleteDeployment {
   readonly ApiId: string;
   readonly DeploymentId: string;
 }
+
 export interface DeleteDomainName {
   readonly DomainName: string;
 }
+
 export interface DeleteIntegration {
   readonly ApiId: string;
   readonly IntegrationId: string;
 }
+
 export interface DeleteIntegrationResponse {
   readonly ApiId: string;
   readonly IntegrationId: string;
   readonly IntegrationResponseId: string;
 }
+
 export interface DeleteModel {
   readonly ApiId: string;
   readonly ModelId: string;
 }
+
 export interface DeleteRoute {
   readonly ApiId: string;
   readonly RouteId: string;
 }
+
 export interface DeleteRouteRequestParameter {
   readonly ApiId: string;
   readonly RequestParameterKey: string;
   readonly RouteId: string;
 }
+
 export interface DeleteRouteResponse {
   readonly ApiId: string;
   readonly RouteId: string;
   readonly RouteResponseId: string;
 }
+
 export interface DeleteRouteSettings {
   readonly ApiId: string;
   readonly RouteKey: string;
   readonly StageName: string;
 }
+
 export interface DeleteStage {
   readonly ApiId: string;
   readonly StageName: string;
 }
+
 export interface DeleteVpcLink {
   readonly VpcLinkId: string;
 }
+
 export interface ExportApi {
   readonly ApiId: string;
   readonly ExportVersion?: string;
@@ -195,142 +223,174 @@ export interface ExportApi {
   readonly Specification: string;
   readonly StageName?: string;
 }
+
 export interface ResetAuthorizersCache {
   readonly ApiId: string;
   readonly StageName: string;
 }
+
 export interface GetApi {
   readonly ApiId: string;
 }
+
 export interface GetApiMapping {
   readonly ApiMappingId: string;
   readonly DomainName: string;
 }
+
 export interface GetApiMappings {
   readonly DomainName: string;
   readonly MaxResults?: string;
   readonly NextToken?: string;
 }
+
 export interface GetApis {
   readonly MaxResults?: string;
   readonly NextToken?: string;
 }
+
 export interface GetAuthorizer {
   readonly ApiId: string;
   readonly AuthorizerId: string;
 }
+
 export interface GetAuthorizers {
   readonly ApiId: string;
   readonly MaxResults?: string;
   readonly NextToken?: string;
 }
+
 export interface GetDeployment {
   readonly ApiId: string;
   readonly DeploymentId: string;
 }
+
 export interface GetDeployments {
   readonly ApiId: string;
   readonly MaxResults?: string;
   readonly NextToken?: string;
 }
+
 export interface GetDomainName {
   readonly DomainName: string;
 }
+
 export interface GetDomainNames {
   readonly MaxResults?: string;
   readonly NextToken?: string;
 }
+
 export interface GetIntegration {
   readonly ApiId: string;
   readonly IntegrationId: string;
 }
+
 export interface GetIntegrationResponse {
   readonly ApiId: string;
   readonly IntegrationId: string;
   readonly IntegrationResponseId: string;
 }
+
 export interface GetIntegrationResponses {
   readonly ApiId: string;
   readonly IntegrationId: string;
   readonly MaxResults?: string;
   readonly NextToken?: string;
 }
+
 export interface GetIntegrations {
   readonly ApiId: string;
   readonly MaxResults?: string;
   readonly NextToken?: string;
 }
+
 export interface GetModel {
   readonly ApiId: string;
   readonly ModelId: string;
 }
+
 export interface GetModelTemplate {
   readonly ApiId: string;
   readonly ModelId: string;
 }
+
 export interface GetModels {
   readonly ApiId: string;
   readonly MaxResults?: string;
   readonly NextToken?: string;
 }
+
 export interface GetRoute {
   readonly ApiId: string;
   readonly RouteId: string;
 }
+
 export interface GetRouteResponse {
   readonly ApiId: string;
   readonly RouteId: string;
   readonly RouteResponseId: string;
 }
+
 export interface GetRouteResponses {
   readonly ApiId: string;
   readonly MaxResults?: string;
   readonly NextToken?: string;
   readonly RouteId: string;
 }
+
 export interface GetRoutes {
   readonly ApiId: string;
   readonly MaxResults?: string;
   readonly NextToken?: string;
 }
+
 export interface GetStage {
   readonly ApiId: string;
   readonly StageName: string;
 }
+
 export interface GetStages {
   readonly ApiId: string;
   readonly MaxResults?: string;
   readonly NextToken?: string;
 }
+
 export interface GetTags {
   readonly ResourceArn: string;
 }
+
 export interface GetVpcLink {
   readonly VpcLinkId: string;
 }
+
 export interface GetVpcLinks {
   readonly MaxResults?: string;
   readonly NextToken?: string;
 }
+
 export interface ImportApi {
   readonly Basepath?: string;
   readonly Body: string;
   readonly FailOnWarnings?: boolean;
 }
+
 export interface ReimportApi {
   readonly ApiId: string;
   readonly Basepath?: string;
   readonly Body: string;
   readonly FailOnWarnings?: boolean;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateApi {
   readonly ApiId: string;
   readonly ApiKeySelectionExpression?: string;
@@ -345,6 +405,7 @@ export interface UpdateApi {
   readonly Target?: string;
   readonly Version?: string;
 }
+
 export interface UpdateApiMapping {
   readonly ApiId: string;
   readonly ApiMappingId: string;
@@ -352,6 +413,7 @@ export interface UpdateApiMapping {
   readonly DomainName: string;
   readonly Stage?: string;
 }
+
 export interface UpdateAuthorizer {
   readonly ApiId: string;
   readonly AuthorizerCredentialsArn?: string;
@@ -366,16 +428,19 @@ export interface UpdateAuthorizer {
   readonly JwtConfiguration?: JWTConfiguration;
   readonly Name?: string;
 }
+
 export interface UpdateDeployment {
   readonly ApiId: string;
   readonly DeploymentId: string;
   readonly Description?: string;
 }
+
 export interface UpdateDomainName {
   readonly DomainName: string;
   readonly DomainNameConfigurations?: [];
   readonly MutualTlsAuthentication?: MutualTlsAuthenticationInput;
 }
+
 export interface UpdateIntegration {
   readonly ApiId: string;
   readonly ConnectionId?: string;
@@ -397,6 +462,7 @@ export interface UpdateIntegration {
   readonly TimeoutInMillis?: number;
   readonly TlsConfig?: TlsConfigInput;
 }
+
 export interface UpdateIntegrationResponse {
   readonly ApiId: string;
   readonly ContentHandlingStrategy?: string;
@@ -407,6 +473,7 @@ export interface UpdateIntegrationResponse {
   readonly ResponseTemplates?: {[key: string]: any};
   readonly TemplateSelectionExpression?: string;
 }
+
 export interface UpdateModel {
   readonly ApiId: string;
   readonly ContentType?: string;
@@ -415,6 +482,7 @@ export interface UpdateModel {
   readonly Name?: string;
   readonly Schema?: string;
 }
+
 export interface UpdateRoute {
   readonly ApiId: string;
   readonly ApiKeyRequired?: boolean;
@@ -430,6 +498,7 @@ export interface UpdateRoute {
   readonly RouteResponseSelectionExpression?: string;
   readonly Target?: string;
 }
+
 export interface UpdateRouteResponse {
   readonly ApiId: string;
   readonly ModelSelectionExpression?: string;
@@ -439,6 +508,7 @@ export interface UpdateRouteResponse {
   readonly RouteResponseId: string;
   readonly RouteResponseKey?: string;
 }
+
 export interface UpdateStage {
   readonly AccessLogSettings?: AccessLogSettings;
   readonly ApiId: string;
@@ -451,1654 +521,1654 @@ export interface UpdateStage {
   readonly StageName: string;
   readonly StageVariables?: {[key: string]: any};
 }
+
 export interface UpdateVpcLink {
   readonly Name?: string;
   readonly VpcLinkId: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface AccessLogSettings {
-  readonly DestinationArn: string;
-  readonly Format: string;
+export interface AccessLogSettings {
+  readonly DestinationArn?: string;
+  readonly Format?: string;
 }
 
-interface Api {
-  readonly ApiEndpoint: string;
-  readonly ApiGatewayManaged: boolean;
-  readonly ApiId: string;
-  readonly ApiKeySelectionExpression: string;
-  readonly CorsConfiguration: Cors;
-  readonly CreatedDate: Date;
-  readonly Description: string;
-  readonly DisableSchemaValidation: boolean;
-  readonly DisableExecuteApiEndpoint: boolean;
-  readonly ImportInfo: [];
+export interface Api {
+  readonly ApiEndpoint?: string;
+  readonly ApiGatewayManaged?: boolean;
+  readonly ApiId?: string;
+  readonly ApiKeySelectionExpression?: string;
+  readonly CorsConfiguration?: Cors;
+  readonly CreatedDate?: Date;
+  readonly Description?: string;
+  readonly DisableSchemaValidation?: boolean;
+  readonly DisableExecuteApiEndpoint?: boolean;
+  readonly ImportInfo?: [];
   readonly Name: string;
   readonly ProtocolType: string;
   readonly RouteSelectionExpression: string;
-  readonly Tags: {[key: string]: any};
-  readonly Version: string;
-  readonly Warnings: [];
+  readonly Tags?: {[key: string]: any};
+  readonly Version?: string;
+  readonly Warnings?: [];
 }
 
-interface ApiMapping {
+export interface ApiMapping {
   readonly ApiId: string;
-  readonly ApiMappingId: string;
-  readonly ApiMappingKey: string;
+  readonly ApiMappingId?: string;
+  readonly ApiMappingKey?: string;
   readonly Stage: string;
 }
 
-interface ApiMappings {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface ApiMappings {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface Apis {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface Apis {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface Authorizer {
-  readonly AuthorizerCredentialsArn: string;
-  readonly AuthorizerId: string;
-  readonly AuthorizerPayloadFormatVersion: string;
-  readonly AuthorizerResultTtlInSeconds: number;
-  readonly AuthorizerType: string;
-  readonly AuthorizerUri: string;
-  readonly EnableSimpleResponses: boolean;
-  readonly IdentitySource: [];
-  readonly IdentityValidationExpression: string;
-  readonly JwtConfiguration: JWTConfiguration;
+export interface Authorizer {
+  readonly AuthorizerCredentialsArn?: string;
+  readonly AuthorizerId?: string;
+  readonly AuthorizerPayloadFormatVersion?: string;
+  readonly AuthorizerResultTtlInSeconds?: number;
+  readonly AuthorizerType?: string;
+  readonly AuthorizerUri?: string;
+  readonly EnableSimpleResponses?: boolean;
+  readonly IdentitySource?: [];
+  readonly IdentityValidationExpression?: string;
+  readonly JwtConfiguration?: JWTConfiguration;
   readonly Name: string;
 }
 
-interface Authorizers {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface Authorizers {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface BadRequestException {
-  readonly Message: string;
+export interface BadRequestException {
+  readonly Message?: string;
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface Cors {
-  readonly AllowCredentials: boolean;
-  readonly AllowHeaders: [];
-  readonly AllowMethods: [];
-  readonly AllowOrigins: [];
-  readonly ExposeHeaders: [];
-  readonly MaxAge: number;
+export interface Cors {
+  readonly AllowCredentials?: boolean;
+  readonly AllowHeaders?: [];
+  readonly AllowMethods?: [];
+  readonly AllowOrigins?: [];
+  readonly ExposeHeaders?: [];
+  readonly MaxAge?: number;
 }
 
-interface CreateApiInput {
-  readonly ApiKeySelectionExpression: string;
-  readonly CorsConfiguration: Cors;
-  readonly CredentialsArn: string;
-  readonly Description: string;
-  readonly DisableSchemaValidation: boolean;
-  readonly DisableExecuteApiEndpoint: boolean;
+export interface CreateApiInput {
+  readonly ApiKeySelectionExpression?: string;
+  readonly CorsConfiguration?: Cors;
+  readonly CredentialsArn?: string;
+  readonly Description?: string;
+  readonly DisableSchemaValidation?: boolean;
+  readonly DisableExecuteApiEndpoint?: boolean;
   readonly Name: string;
   readonly ProtocolType: string;
-  readonly RouteKey: string;
-  readonly RouteSelectionExpression: string;
-  readonly Tags: {[key: string]: any};
-  readonly Target: string;
-  readonly Version: string;
+  readonly RouteKey?: string;
+  readonly RouteSelectionExpression?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Target?: string;
+  readonly Version?: string;
 }
 
-interface CreateApiMappingInput {
+export interface CreateApiMappingInput {
   readonly ApiId: string;
-  readonly ApiMappingKey: string;
+  readonly ApiMappingKey?: string;
   readonly Stage: string;
 }
 
-interface CreateApiMappingRequest {
+export interface CreateApiMappingRequest {
   readonly ApiId: string;
-  readonly ApiMappingKey: string;
+  readonly ApiMappingKey?: string;
   readonly DomainName: string;
   readonly Stage: string;
 }
 
-interface CreateApiMappingResponse {
-  readonly ApiId: string;
-  readonly ApiMappingId: string;
-  readonly ApiMappingKey: string;
-  readonly Stage: string;
+export interface CreateApiMappingResponse {
+  readonly ApiId?: string;
+  readonly ApiMappingId?: string;
+  readonly ApiMappingKey?: string;
+  readonly Stage?: string;
 }
 
-interface CreateApiRequest {
-  readonly ApiKeySelectionExpression: string;
-  readonly CorsConfiguration: Cors;
-  readonly CredentialsArn: string;
-  readonly Description: string;
-  readonly DisableSchemaValidation: boolean;
-  readonly DisableExecuteApiEndpoint: boolean;
+export interface CreateApiRequest {
+  readonly ApiKeySelectionExpression?: string;
+  readonly CorsConfiguration?: Cors;
+  readonly CredentialsArn?: string;
+  readonly Description?: string;
+  readonly DisableSchemaValidation?: boolean;
+  readonly DisableExecuteApiEndpoint?: boolean;
   readonly Name: string;
   readonly ProtocolType: string;
-  readonly RouteKey: string;
-  readonly RouteSelectionExpression: string;
-  readonly Tags: {[key: string]: any};
-  readonly Target: string;
-  readonly Version: string;
+  readonly RouteKey?: string;
+  readonly RouteSelectionExpression?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Target?: string;
+  readonly Version?: string;
 }
 
-interface CreateApiResponse {
-  readonly ApiEndpoint: string;
-  readonly ApiGatewayManaged: boolean;
-  readonly ApiId: string;
-  readonly ApiKeySelectionExpression: string;
-  readonly CorsConfiguration: Cors;
-  readonly CreatedDate: Date;
-  readonly Description: string;
-  readonly DisableSchemaValidation: boolean;
-  readonly DisableExecuteApiEndpoint: boolean;
-  readonly ImportInfo: [];
-  readonly Name: string;
-  readonly ProtocolType: string;
-  readonly RouteSelectionExpression: string;
-  readonly Tags: {[key: string]: any};
-  readonly Version: string;
-  readonly Warnings: [];
+export interface CreateApiResponse {
+  readonly ApiEndpoint?: string;
+  readonly ApiGatewayManaged?: boolean;
+  readonly ApiId?: string;
+  readonly ApiKeySelectionExpression?: string;
+  readonly CorsConfiguration?: Cors;
+  readonly CreatedDate?: Date;
+  readonly Description?: string;
+  readonly DisableSchemaValidation?: boolean;
+  readonly DisableExecuteApiEndpoint?: boolean;
+  readonly ImportInfo?: [];
+  readonly Name?: string;
+  readonly ProtocolType?: string;
+  readonly RouteSelectionExpression?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Version?: string;
+  readonly Warnings?: [];
 }
 
-interface CreateAuthorizerInput {
-  readonly AuthorizerCredentialsArn: string;
-  readonly AuthorizerPayloadFormatVersion: string;
-  readonly AuthorizerResultTtlInSeconds: number;
+export interface CreateAuthorizerInput {
+  readonly AuthorizerCredentialsArn?: string;
+  readonly AuthorizerPayloadFormatVersion?: string;
+  readonly AuthorizerResultTtlInSeconds?: number;
   readonly AuthorizerType: string;
-  readonly AuthorizerUri: string;
-  readonly EnableSimpleResponses: boolean;
+  readonly AuthorizerUri?: string;
+  readonly EnableSimpleResponses?: boolean;
   readonly IdentitySource: [];
-  readonly IdentityValidationExpression: string;
-  readonly JwtConfiguration: JWTConfiguration;
+  readonly IdentityValidationExpression?: string;
+  readonly JwtConfiguration?: JWTConfiguration;
   readonly Name: string;
 }
 
-interface CreateAuthorizerRequest {
+export interface CreateAuthorizerRequest {
   readonly ApiId: string;
-  readonly AuthorizerCredentialsArn: string;
-  readonly AuthorizerPayloadFormatVersion: string;
-  readonly AuthorizerResultTtlInSeconds: number;
+  readonly AuthorizerCredentialsArn?: string;
+  readonly AuthorizerPayloadFormatVersion?: string;
+  readonly AuthorizerResultTtlInSeconds?: number;
   readonly AuthorizerType: string;
-  readonly AuthorizerUri: string;
-  readonly EnableSimpleResponses: boolean;
+  readonly AuthorizerUri?: string;
+  readonly EnableSimpleResponses?: boolean;
   readonly IdentitySource: [];
-  readonly IdentityValidationExpression: string;
-  readonly JwtConfiguration: JWTConfiguration;
+  readonly IdentityValidationExpression?: string;
+  readonly JwtConfiguration?: JWTConfiguration;
   readonly Name: string;
 }
 
-interface CreateAuthorizerResponse {
-  readonly AuthorizerCredentialsArn: string;
-  readonly AuthorizerId: string;
-  readonly AuthorizerPayloadFormatVersion: string;
-  readonly AuthorizerResultTtlInSeconds: number;
-  readonly AuthorizerType: string;
-  readonly AuthorizerUri: string;
-  readonly EnableSimpleResponses: boolean;
-  readonly IdentitySource: [];
-  readonly IdentityValidationExpression: string;
-  readonly JwtConfiguration: JWTConfiguration;
-  readonly Name: string;
+export interface CreateAuthorizerResponse {
+  readonly AuthorizerCredentialsArn?: string;
+  readonly AuthorizerId?: string;
+  readonly AuthorizerPayloadFormatVersion?: string;
+  readonly AuthorizerResultTtlInSeconds?: number;
+  readonly AuthorizerType?: string;
+  readonly AuthorizerUri?: string;
+  readonly EnableSimpleResponses?: boolean;
+  readonly IdentitySource?: [];
+  readonly IdentityValidationExpression?: string;
+  readonly JwtConfiguration?: JWTConfiguration;
+  readonly Name?: string;
 }
 
-interface CreateDeploymentInput {
-  readonly Description: string;
-  readonly StageName: string;
+export interface CreateDeploymentInput {
+  readonly Description?: string;
+  readonly StageName?: string;
 }
 
-interface CreateDeploymentRequest {
+export interface CreateDeploymentRequest {
   readonly ApiId: string;
-  readonly Description: string;
-  readonly StageName: string;
+  readonly Description?: string;
+  readonly StageName?: string;
 }
 
-interface CreateDeploymentResponse {
-  readonly AutoDeployed: boolean;
-  readonly CreatedDate: Date;
-  readonly DeploymentId: string;
-  readonly DeploymentStatus: string;
-  readonly DeploymentStatusMessage: string;
-  readonly Description: string;
+export interface CreateDeploymentResponse {
+  readonly AutoDeployed?: boolean;
+  readonly CreatedDate?: Date;
+  readonly DeploymentId?: string;
+  readonly DeploymentStatus?: string;
+  readonly DeploymentStatusMessage?: string;
+  readonly Description?: string;
 }
 
-interface CreateDomainNameInput {
+export interface CreateDomainNameInput {
   readonly DomainName: string;
-  readonly DomainNameConfigurations: [];
-  readonly MutualTlsAuthentication: MutualTlsAuthenticationInput;
-  readonly Tags: {[key: string]: any};
+  readonly DomainNameConfigurations?: [];
+  readonly MutualTlsAuthentication?: MutualTlsAuthenticationInput;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateDomainNameRequest {
+export interface CreateDomainNameRequest {
   readonly DomainName: string;
-  readonly DomainNameConfigurations: [];
-  readonly MutualTlsAuthentication: MutualTlsAuthenticationInput;
-  readonly Tags: {[key: string]: any};
+  readonly DomainNameConfigurations?: [];
+  readonly MutualTlsAuthentication?: MutualTlsAuthenticationInput;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateDomainNameResponse {
-  readonly ApiMappingSelectionExpression: string;
-  readonly DomainName: string;
-  readonly DomainNameConfigurations: [];
-  readonly MutualTlsAuthentication: MutualTlsAuthentication;
-  readonly Tags: {[key: string]: any};
+export interface CreateDomainNameResponse {
+  readonly ApiMappingSelectionExpression?: string;
+  readonly DomainName?: string;
+  readonly DomainNameConfigurations?: [];
+  readonly MutualTlsAuthentication?: MutualTlsAuthentication;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateIntegrationInput {
-  readonly ConnectionId: string;
-  readonly ConnectionType: string;
-  readonly ContentHandlingStrategy: string;
-  readonly CredentialsArn: string;
-  readonly Description: string;
-  readonly IntegrationMethod: string;
-  readonly IntegrationSubtype: string;
+export interface CreateIntegrationInput {
+  readonly ConnectionId?: string;
+  readonly ConnectionType?: string;
+  readonly ContentHandlingStrategy?: string;
+  readonly CredentialsArn?: string;
+  readonly Description?: string;
+  readonly IntegrationMethod?: string;
+  readonly IntegrationSubtype?: string;
   readonly IntegrationType: string;
-  readonly IntegrationUri: string;
-  readonly PassthroughBehavior: string;
-  readonly PayloadFormatVersion: string;
-  readonly RequestParameters: {[key: string]: any};
-  readonly RequestTemplates: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
-  readonly TimeoutInMillis: number;
-  readonly TlsConfig: TlsConfigInput;
+  readonly IntegrationUri?: string;
+  readonly PassthroughBehavior?: string;
+  readonly PayloadFormatVersion?: string;
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RequestTemplates?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
+  readonly TimeoutInMillis?: number;
+  readonly TlsConfig?: TlsConfigInput;
 }
 
-interface CreateIntegrationRequest {
+export interface CreateIntegrationRequest {
   readonly ApiId: string;
-  readonly ConnectionId: string;
-  readonly ConnectionType: string;
-  readonly ContentHandlingStrategy: string;
-  readonly CredentialsArn: string;
-  readonly Description: string;
-  readonly IntegrationMethod: string;
-  readonly IntegrationSubtype: string;
+  readonly ConnectionId?: string;
+  readonly ConnectionType?: string;
+  readonly ContentHandlingStrategy?: string;
+  readonly CredentialsArn?: string;
+  readonly Description?: string;
+  readonly IntegrationMethod?: string;
+  readonly IntegrationSubtype?: string;
   readonly IntegrationType: string;
-  readonly IntegrationUri: string;
-  readonly PassthroughBehavior: string;
-  readonly PayloadFormatVersion: string;
-  readonly RequestParameters: {[key: string]: any};
-  readonly RequestTemplates: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
-  readonly TimeoutInMillis: number;
-  readonly TlsConfig: TlsConfigInput;
+  readonly IntegrationUri?: string;
+  readonly PassthroughBehavior?: string;
+  readonly PayloadFormatVersion?: string;
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RequestTemplates?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
+  readonly TimeoutInMillis?: number;
+  readonly TlsConfig?: TlsConfigInput;
 }
 
-interface CreateIntegrationResult {
-  readonly ApiGatewayManaged: boolean;
-  readonly ConnectionId: string;
-  readonly ConnectionType: string;
-  readonly ContentHandlingStrategy: string;
-  readonly CredentialsArn: string;
-  readonly Description: string;
-  readonly IntegrationId: string;
-  readonly IntegrationMethod: string;
-  readonly IntegrationResponseSelectionExpression: string;
-  readonly IntegrationSubtype: string;
-  readonly IntegrationType: string;
-  readonly IntegrationUri: string;
-  readonly PassthroughBehavior: string;
-  readonly PayloadFormatVersion: string;
-  readonly RequestParameters: {[key: string]: any};
-  readonly RequestTemplates: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
-  readonly TimeoutInMillis: number;
-  readonly TlsConfig: TlsConfig;
+export interface CreateIntegrationResult {
+  readonly ApiGatewayManaged?: boolean;
+  readonly ConnectionId?: string;
+  readonly ConnectionType?: string;
+  readonly ContentHandlingStrategy?: string;
+  readonly CredentialsArn?: string;
+  readonly Description?: string;
+  readonly IntegrationId?: string;
+  readonly IntegrationMethod?: string;
+  readonly IntegrationResponseSelectionExpression?: string;
+  readonly IntegrationSubtype?: string;
+  readonly IntegrationType?: string;
+  readonly IntegrationUri?: string;
+  readonly PassthroughBehavior?: string;
+  readonly PayloadFormatVersion?: string;
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RequestTemplates?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
+  readonly TimeoutInMillis?: number;
+  readonly TlsConfig?: TlsConfig;
 }
 
-interface CreateIntegrationResponseInput {
-  readonly ContentHandlingStrategy: string;
+export interface CreateIntegrationResponseInput {
+  readonly ContentHandlingStrategy?: string;
   readonly IntegrationResponseKey: string;
-  readonly ResponseParameters: {[key: string]: any};
-  readonly ResponseTemplates: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly ResponseTemplates?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
 }
 
-interface CreateIntegrationResponseRequest {
+export interface CreateIntegrationResponseRequest {
   readonly ApiId: string;
-  readonly ContentHandlingStrategy: string;
+  readonly ContentHandlingStrategy?: string;
   readonly IntegrationId: string;
   readonly IntegrationResponseKey: string;
-  readonly ResponseParameters: {[key: string]: any};
-  readonly ResponseTemplates: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly ResponseTemplates?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
 }
 
-interface CreateIntegrationResponseResponse {
-  readonly ContentHandlingStrategy: string;
-  readonly IntegrationResponseId: string;
-  readonly IntegrationResponseKey: string;
-  readonly ResponseParameters: {[key: string]: any};
-  readonly ResponseTemplates: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
+export interface CreateIntegrationResponseResponse {
+  readonly ContentHandlingStrategy?: string;
+  readonly IntegrationResponseId?: string;
+  readonly IntegrationResponseKey?: string;
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly ResponseTemplates?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
 }
 
-interface CreateModelInput {
-  readonly ContentType: string;
-  readonly Description: string;
+export interface CreateModelInput {
+  readonly ContentType?: string;
+  readonly Description?: string;
   readonly Name: string;
   readonly Schema: string;
 }
 
-interface CreateModelRequest {
+export interface CreateModelRequest {
   readonly ApiId: string;
-  readonly ContentType: string;
-  readonly Description: string;
+  readonly ContentType?: string;
+  readonly Description?: string;
   readonly Name: string;
   readonly Schema: string;
 }
 
-interface CreateModelResponse {
-  readonly ContentType: string;
-  readonly Description: string;
-  readonly ModelId: string;
-  readonly Name: string;
-  readonly Schema: string;
+export interface CreateModelResponse {
+  readonly ContentType?: string;
+  readonly Description?: string;
+  readonly ModelId?: string;
+  readonly Name?: string;
+  readonly Schema?: string;
 }
 
-interface CreateRouteInput {
-  readonly ApiKeyRequired: boolean;
-  readonly AuthorizationScopes: [];
-  readonly AuthorizationType: string;
-  readonly AuthorizerId: string;
-  readonly ModelSelectionExpression: string;
-  readonly OperationName: string;
-  readonly RequestModels: {[key: string]: any};
-  readonly RequestParameters: {[key: string]: any};
+export interface CreateRouteInput {
+  readonly ApiKeyRequired?: boolean;
+  readonly AuthorizationScopes?: [];
+  readonly AuthorizationType?: string;
+  readonly AuthorizerId?: string;
+  readonly ModelSelectionExpression?: string;
+  readonly OperationName?: string;
+  readonly RequestModels?: {[key: string]: any};
+  readonly RequestParameters?: {[key: string]: any};
   readonly RouteKey: string;
-  readonly RouteResponseSelectionExpression: string;
-  readonly Target: string;
+  readonly RouteResponseSelectionExpression?: string;
+  readonly Target?: string;
 }
 
-interface CreateRouteRequest {
+export interface CreateRouteRequest {
   readonly ApiId: string;
-  readonly ApiKeyRequired: boolean;
-  readonly AuthorizationScopes: [];
-  readonly AuthorizationType: string;
-  readonly AuthorizerId: string;
-  readonly ModelSelectionExpression: string;
-  readonly OperationName: string;
-  readonly RequestModels: {[key: string]: any};
-  readonly RequestParameters: {[key: string]: any};
+  readonly ApiKeyRequired?: boolean;
+  readonly AuthorizationScopes?: [];
+  readonly AuthorizationType?: string;
+  readonly AuthorizerId?: string;
+  readonly ModelSelectionExpression?: string;
+  readonly OperationName?: string;
+  readonly RequestModels?: {[key: string]: any};
+  readonly RequestParameters?: {[key: string]: any};
   readonly RouteKey: string;
-  readonly RouteResponseSelectionExpression: string;
-  readonly Target: string;
+  readonly RouteResponseSelectionExpression?: string;
+  readonly Target?: string;
 }
 
-interface CreateRouteResult {
-  readonly ApiGatewayManaged: boolean;
-  readonly ApiKeyRequired: boolean;
-  readonly AuthorizationScopes: [];
-  readonly AuthorizationType: string;
-  readonly AuthorizerId: string;
-  readonly ModelSelectionExpression: string;
-  readonly OperationName: string;
-  readonly RequestModels: {[key: string]: any};
-  readonly RequestParameters: {[key: string]: any};
-  readonly RouteId: string;
-  readonly RouteKey: string;
-  readonly RouteResponseSelectionExpression: string;
-  readonly Target: string;
+export interface CreateRouteResult {
+  readonly ApiGatewayManaged?: boolean;
+  readonly ApiKeyRequired?: boolean;
+  readonly AuthorizationScopes?: [];
+  readonly AuthorizationType?: string;
+  readonly AuthorizerId?: string;
+  readonly ModelSelectionExpression?: string;
+  readonly OperationName?: string;
+  readonly RequestModels?: {[key: string]: any};
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RouteId?: string;
+  readonly RouteKey?: string;
+  readonly RouteResponseSelectionExpression?: string;
+  readonly Target?: string;
 }
 
-interface CreateRouteResponseInput {
-  readonly ModelSelectionExpression: string;
-  readonly ResponseModels: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
+export interface CreateRouteResponseInput {
+  readonly ModelSelectionExpression?: string;
+  readonly ResponseModels?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
   readonly RouteResponseKey: string;
 }
 
-interface CreateRouteResponseRequest {
+export interface CreateRouteResponseRequest {
   readonly ApiId: string;
-  readonly ModelSelectionExpression: string;
-  readonly ResponseModels: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
+  readonly ModelSelectionExpression?: string;
+  readonly ResponseModels?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
   readonly RouteId: string;
   readonly RouteResponseKey: string;
 }
 
-interface CreateRouteResponseResponse {
-  readonly ModelSelectionExpression: string;
-  readonly ResponseModels: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly RouteResponseId: string;
-  readonly RouteResponseKey: string;
+export interface CreateRouteResponseResponse {
+  readonly ModelSelectionExpression?: string;
+  readonly ResponseModels?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly RouteResponseId?: string;
+  readonly RouteResponseKey?: string;
 }
 
-interface CreateStageInput {
-  readonly AccessLogSettings: AccessLogSettings;
-  readonly AutoDeploy: boolean;
-  readonly ClientCertificateId: string;
-  readonly DefaultRouteSettings: RouteSettings;
-  readonly DeploymentId: string;
-  readonly Description: string;
-  readonly RouteSettings: {[key: string]: any};
+export interface CreateStageInput {
+  readonly AccessLogSettings?: AccessLogSettings;
+  readonly AutoDeploy?: boolean;
+  readonly ClientCertificateId?: string;
+  readonly DefaultRouteSettings?: RouteSettings;
+  readonly DeploymentId?: string;
+  readonly Description?: string;
+  readonly RouteSettings?: {[key: string]: any};
   readonly StageName: string;
-  readonly StageVariables: {[key: string]: any};
-  readonly Tags: {[key: string]: any};
+  readonly StageVariables?: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateStageRequest {
-  readonly AccessLogSettings: AccessLogSettings;
+export interface CreateStageRequest {
+  readonly AccessLogSettings?: AccessLogSettings;
   readonly ApiId: string;
-  readonly AutoDeploy: boolean;
-  readonly ClientCertificateId: string;
-  readonly DefaultRouteSettings: RouteSettings;
-  readonly DeploymentId: string;
-  readonly Description: string;
-  readonly RouteSettings: {[key: string]: any};
+  readonly AutoDeploy?: boolean;
+  readonly ClientCertificateId?: string;
+  readonly DefaultRouteSettings?: RouteSettings;
+  readonly DeploymentId?: string;
+  readonly Description?: string;
+  readonly RouteSettings?: {[key: string]: any};
   readonly StageName: string;
-  readonly StageVariables: {[key: string]: any};
-  readonly Tags: {[key: string]: any};
+  readonly StageVariables?: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateStageResponse {
-  readonly AccessLogSettings: AccessLogSettings;
-  readonly ApiGatewayManaged: boolean;
-  readonly AutoDeploy: boolean;
-  readonly ClientCertificateId: string;
-  readonly CreatedDate: Date;
-  readonly DefaultRouteSettings: RouteSettings;
-  readonly DeploymentId: string;
-  readonly Description: string;
-  readonly LastDeploymentStatusMessage: string;
-  readonly LastUpdatedDate: Date;
-  readonly RouteSettings: {[key: string]: any};
-  readonly StageName: string;
-  readonly StageVariables: {[key: string]: any};
-  readonly Tags: {[key: string]: any};
+export interface CreateStageResponse {
+  readonly AccessLogSettings?: AccessLogSettings;
+  readonly ApiGatewayManaged?: boolean;
+  readonly AutoDeploy?: boolean;
+  readonly ClientCertificateId?: string;
+  readonly CreatedDate?: Date;
+  readonly DefaultRouteSettings?: RouteSettings;
+  readonly DeploymentId?: string;
+  readonly Description?: string;
+  readonly LastDeploymentStatusMessage?: string;
+  readonly LastUpdatedDate?: Date;
+  readonly RouteSettings?: {[key: string]: any};
+  readonly StageName?: string;
+  readonly StageVariables?: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateVpcLinkInput {
+export interface CreateVpcLinkInput {
   readonly Name: string;
-  readonly SecurityGroupIds: [];
+  readonly SecurityGroupIds?: [];
   readonly SubnetIds: [];
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateVpcLinkRequest {
+export interface CreateVpcLinkRequest {
   readonly Name: string;
-  readonly SecurityGroupIds: [];
+  readonly SecurityGroupIds?: [];
   readonly SubnetIds: [];
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateVpcLinkResponse {
-  readonly CreatedDate: Date;
-  readonly Name: string;
-  readonly SecurityGroupIds: [];
-  readonly SubnetIds: [];
-  readonly Tags: {[key: string]: any};
-  readonly VpcLinkId: string;
-  readonly VpcLinkStatus: string;
-  readonly VpcLinkStatusMessage: string;
-  readonly VpcLinkVersion: string;
+export interface CreateVpcLinkResponse {
+  readonly CreatedDate?: Date;
+  readonly Name?: string;
+  readonly SecurityGroupIds?: [];
+  readonly SubnetIds?: [];
+  readonly Tags?: {[key: string]: any};
+  readonly VpcLinkId?: string;
+  readonly VpcLinkStatus?: string;
+  readonly VpcLinkStatusMessage?: string;
+  readonly VpcLinkVersion?: string;
 }
 
-interface DeleteAccessLogSettingsRequest {
+export interface DeleteAccessLogSettingsRequest {
   readonly ApiId: string;
   readonly StageName: string;
 }
 
-interface DeleteApiMappingRequest {
+export interface DeleteApiMappingRequest {
   readonly ApiMappingId: string;
   readonly DomainName: string;
 }
 
-interface DeleteApiRequest {
+export interface DeleteApiRequest {
   readonly ApiId: string;
 }
 
-interface DeleteAuthorizerRequest {
+export interface DeleteAuthorizerRequest {
   readonly ApiId: string;
   readonly AuthorizerId: string;
 }
 
-interface DeleteCorsConfigurationRequest {
+export interface DeleteCorsConfigurationRequest {
   readonly ApiId: string;
 }
 
-interface DeleteDeploymentRequest {
+export interface DeleteDeploymentRequest {
   readonly ApiId: string;
   readonly DeploymentId: string;
 }
 
-interface DeleteDomainNameRequest {
+export interface DeleteDomainNameRequest {
   readonly DomainName: string;
 }
 
-interface DeleteIntegrationRequest {
+export interface DeleteIntegrationRequest {
   readonly ApiId: string;
   readonly IntegrationId: string;
 }
 
-interface DeleteIntegrationResponseRequest {
+export interface DeleteIntegrationResponseRequest {
   readonly ApiId: string;
   readonly IntegrationId: string;
   readonly IntegrationResponseId: string;
 }
 
-interface DeleteModelRequest {
+export interface DeleteModelRequest {
   readonly ApiId: string;
   readonly ModelId: string;
 }
 
-interface DeleteRouteRequest {
+export interface DeleteRouteRequest {
   readonly ApiId: string;
   readonly RouteId: string;
 }
 
-interface DeleteRouteRequestParameterRequest {
+export interface DeleteRouteRequestParameterRequest {
   readonly ApiId: string;
   readonly RequestParameterKey: string;
   readonly RouteId: string;
 }
 
-interface DeleteRouteResponseRequest {
+export interface DeleteRouteResponseRequest {
   readonly ApiId: string;
   readonly RouteId: string;
   readonly RouteResponseId: string;
 }
 
-interface DeleteRouteSettingsRequest {
+export interface DeleteRouteSettingsRequest {
   readonly ApiId: string;
   readonly RouteKey: string;
   readonly StageName: string;
 }
 
-interface DeleteStageRequest {
+export interface DeleteStageRequest {
   readonly ApiId: string;
   readonly StageName: string;
 }
 
-interface DeleteVpcLinkRequest {
+export interface DeleteVpcLinkRequest {
   readonly VpcLinkId: string;
 }
 
-interface DeleteVpcLinkResponse {
+export interface DeleteVpcLinkResponse {
 }
 
-interface Deployment {
-  readonly AutoDeployed: boolean;
-  readonly CreatedDate: Date;
-  readonly DeploymentId: string;
-  readonly DeploymentStatus: string;
-  readonly DeploymentStatusMessage: string;
-  readonly Description: string;
+export interface Deployment {
+  readonly AutoDeployed?: boolean;
+  readonly CreatedDate?: Date;
+  readonly DeploymentId?: string;
+  readonly DeploymentStatus?: string;
+  readonly DeploymentStatusMessage?: string;
+  readonly Description?: string;
 }
 
-interface Deployments {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface Deployments {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface DomainName {
-  readonly ApiMappingSelectionExpression: string;
+export interface DomainName {
+  readonly ApiMappingSelectionExpression?: string;
   readonly DomainName: string;
-  readonly DomainNameConfigurations: [];
-  readonly MutualTlsAuthentication: MutualTlsAuthentication;
-  readonly Tags: {[key: string]: any};
+  readonly DomainNameConfigurations?: [];
+  readonly MutualTlsAuthentication?: MutualTlsAuthentication;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface DomainNameConfiguration {
-  readonly ApiGatewayDomainName: string;
-  readonly CertificateArn: string;
-  readonly CertificateName: string;
-  readonly CertificateUploadDate: Date;
-  readonly DomainNameStatus: string;
-  readonly DomainNameStatusMessage: string;
-  readonly EndpointType: string;
-  readonly HostedZoneId: string;
-  readonly SecurityPolicy: string;
-  readonly OwnershipVerificationCertificateArn: string;
+export interface DomainNameConfiguration {
+  readonly ApiGatewayDomainName?: string;
+  readonly CertificateArn?: string;
+  readonly CertificateName?: string;
+  readonly CertificateUploadDate?: Date;
+  readonly DomainNameStatus?: string;
+  readonly DomainNameStatusMessage?: string;
+  readonly EndpointType?: string;
+  readonly HostedZoneId?: string;
+  readonly SecurityPolicy?: string;
+  readonly OwnershipVerificationCertificateArn?: string;
 }
 
-interface DomainNames {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface DomainNames {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface ExportApiRequest {
+export interface ExportApiRequest {
   readonly ApiId: string;
-  readonly ExportVersion: string;
-  readonly IncludeExtensions: boolean;
+  readonly ExportVersion?: string;
+  readonly IncludeExtensions?: boolean;
   readonly OutputType: string;
   readonly Specification: string;
-  readonly StageName: string;
+  readonly StageName?: string;
 }
 
-interface ExportApiResponse {
-  readonly body: unknown;
+export interface ExportApiResponse {
+  readonly body?: unknown;
 }
 
-interface ResetAuthorizersCacheRequest {
+export interface ResetAuthorizersCacheRequest {
   readonly ApiId: string;
   readonly StageName: string;
 }
 
-interface GetApiMappingRequest {
+export interface GetApiMappingRequest {
   readonly ApiMappingId: string;
   readonly DomainName: string;
 }
 
-interface GetApiMappingResponse {
-  readonly ApiId: string;
-  readonly ApiMappingId: string;
-  readonly ApiMappingKey: string;
-  readonly Stage: string;
+export interface GetApiMappingResponse {
+  readonly ApiId?: string;
+  readonly ApiMappingId?: string;
+  readonly ApiMappingKey?: string;
+  readonly Stage?: string;
 }
 
-interface GetApiMappingsRequest {
+export interface GetApiMappingsRequest {
   readonly DomainName: string;
-  readonly MaxResults: string;
-  readonly NextToken: string;
+  readonly MaxResults?: string;
+  readonly NextToken?: string;
 }
 
-interface GetApiMappingsResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface GetApiMappingsResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface GetApiRequest {
+export interface GetApiRequest {
   readonly ApiId: string;
 }
 
-interface GetApiResponse {
-  readonly ApiEndpoint: string;
-  readonly ApiGatewayManaged: boolean;
-  readonly ApiId: string;
-  readonly ApiKeySelectionExpression: string;
-  readonly CorsConfiguration: Cors;
-  readonly CreatedDate: Date;
-  readonly Description: string;
-  readonly DisableSchemaValidation: boolean;
-  readonly DisableExecuteApiEndpoint: boolean;
-  readonly ImportInfo: [];
-  readonly Name: string;
-  readonly ProtocolType: string;
-  readonly RouteSelectionExpression: string;
-  readonly Tags: {[key: string]: any};
-  readonly Version: string;
-  readonly Warnings: [];
+export interface GetApiResponse {
+  readonly ApiEndpoint?: string;
+  readonly ApiGatewayManaged?: boolean;
+  readonly ApiId?: string;
+  readonly ApiKeySelectionExpression?: string;
+  readonly CorsConfiguration?: Cors;
+  readonly CreatedDate?: Date;
+  readonly Description?: string;
+  readonly DisableSchemaValidation?: boolean;
+  readonly DisableExecuteApiEndpoint?: boolean;
+  readonly ImportInfo?: [];
+  readonly Name?: string;
+  readonly ProtocolType?: string;
+  readonly RouteSelectionExpression?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Version?: string;
+  readonly Warnings?: [];
 }
 
-interface GetApisRequest {
-  readonly MaxResults: string;
-  readonly NextToken: string;
+export interface GetApisRequest {
+  readonly MaxResults?: string;
+  readonly NextToken?: string;
 }
 
-interface GetApisResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface GetApisResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface GetAuthorizerRequest {
+export interface GetAuthorizerRequest {
   readonly ApiId: string;
   readonly AuthorizerId: string;
 }
 
-interface GetAuthorizerResponse {
-  readonly AuthorizerCredentialsArn: string;
-  readonly AuthorizerId: string;
-  readonly AuthorizerPayloadFormatVersion: string;
-  readonly AuthorizerResultTtlInSeconds: number;
-  readonly AuthorizerType: string;
-  readonly AuthorizerUri: string;
-  readonly EnableSimpleResponses: boolean;
-  readonly IdentitySource: [];
-  readonly IdentityValidationExpression: string;
-  readonly JwtConfiguration: JWTConfiguration;
-  readonly Name: string;
+export interface GetAuthorizerResponse {
+  readonly AuthorizerCredentialsArn?: string;
+  readonly AuthorizerId?: string;
+  readonly AuthorizerPayloadFormatVersion?: string;
+  readonly AuthorizerResultTtlInSeconds?: number;
+  readonly AuthorizerType?: string;
+  readonly AuthorizerUri?: string;
+  readonly EnableSimpleResponses?: boolean;
+  readonly IdentitySource?: [];
+  readonly IdentityValidationExpression?: string;
+  readonly JwtConfiguration?: JWTConfiguration;
+  readonly Name?: string;
 }
 
-interface GetAuthorizersRequest {
+export interface GetAuthorizersRequest {
   readonly ApiId: string;
-  readonly MaxResults: string;
-  readonly NextToken: string;
+  readonly MaxResults?: string;
+  readonly NextToken?: string;
 }
 
-interface GetAuthorizersResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface GetAuthorizersResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface GetDeploymentRequest {
+export interface GetDeploymentRequest {
   readonly ApiId: string;
   readonly DeploymentId: string;
 }
 
-interface GetDeploymentResponse {
-  readonly AutoDeployed: boolean;
-  readonly CreatedDate: Date;
-  readonly DeploymentId: string;
-  readonly DeploymentStatus: string;
-  readonly DeploymentStatusMessage: string;
-  readonly Description: string;
+export interface GetDeploymentResponse {
+  readonly AutoDeployed?: boolean;
+  readonly CreatedDate?: Date;
+  readonly DeploymentId?: string;
+  readonly DeploymentStatus?: string;
+  readonly DeploymentStatusMessage?: string;
+  readonly Description?: string;
 }
 
-interface GetDeploymentsRequest {
+export interface GetDeploymentsRequest {
   readonly ApiId: string;
-  readonly MaxResults: string;
-  readonly NextToken: string;
+  readonly MaxResults?: string;
+  readonly NextToken?: string;
 }
 
-interface GetDeploymentsResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface GetDeploymentsResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface GetDomainNameRequest {
+export interface GetDomainNameRequest {
   readonly DomainName: string;
 }
 
-interface GetDomainNameResponse {
-  readonly ApiMappingSelectionExpression: string;
-  readonly DomainName: string;
-  readonly DomainNameConfigurations: [];
-  readonly MutualTlsAuthentication: MutualTlsAuthentication;
-  readonly Tags: {[key: string]: any};
+export interface GetDomainNameResponse {
+  readonly ApiMappingSelectionExpression?: string;
+  readonly DomainName?: string;
+  readonly DomainNameConfigurations?: [];
+  readonly MutualTlsAuthentication?: MutualTlsAuthentication;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface GetDomainNamesRequest {
-  readonly MaxResults: string;
-  readonly NextToken: string;
+export interface GetDomainNamesRequest {
+  readonly MaxResults?: string;
+  readonly NextToken?: string;
 }
 
-interface GetDomainNamesResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface GetDomainNamesResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface GetIntegrationRequest {
+export interface GetIntegrationRequest {
   readonly ApiId: string;
   readonly IntegrationId: string;
 }
 
-interface GetIntegrationResult {
-  readonly ApiGatewayManaged: boolean;
-  readonly ConnectionId: string;
-  readonly ConnectionType: string;
-  readonly ContentHandlingStrategy: string;
-  readonly CredentialsArn: string;
-  readonly Description: string;
-  readonly IntegrationId: string;
-  readonly IntegrationMethod: string;
-  readonly IntegrationResponseSelectionExpression: string;
-  readonly IntegrationSubtype: string;
-  readonly IntegrationType: string;
-  readonly IntegrationUri: string;
-  readonly PassthroughBehavior: string;
-  readonly PayloadFormatVersion: string;
-  readonly RequestParameters: {[key: string]: any};
-  readonly RequestTemplates: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
-  readonly TimeoutInMillis: number;
-  readonly TlsConfig: TlsConfig;
+export interface GetIntegrationResult {
+  readonly ApiGatewayManaged?: boolean;
+  readonly ConnectionId?: string;
+  readonly ConnectionType?: string;
+  readonly ContentHandlingStrategy?: string;
+  readonly CredentialsArn?: string;
+  readonly Description?: string;
+  readonly IntegrationId?: string;
+  readonly IntegrationMethod?: string;
+  readonly IntegrationResponseSelectionExpression?: string;
+  readonly IntegrationSubtype?: string;
+  readonly IntegrationType?: string;
+  readonly IntegrationUri?: string;
+  readonly PassthroughBehavior?: string;
+  readonly PayloadFormatVersion?: string;
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RequestTemplates?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
+  readonly TimeoutInMillis?: number;
+  readonly TlsConfig?: TlsConfig;
 }
 
-interface GetIntegrationResponseRequest {
+export interface GetIntegrationResponseRequest {
   readonly ApiId: string;
   readonly IntegrationId: string;
   readonly IntegrationResponseId: string;
 }
 
-interface GetIntegrationResponseResponse {
-  readonly ContentHandlingStrategy: string;
-  readonly IntegrationResponseId: string;
-  readonly IntegrationResponseKey: string;
-  readonly ResponseParameters: {[key: string]: any};
-  readonly ResponseTemplates: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
+export interface GetIntegrationResponseResponse {
+  readonly ContentHandlingStrategy?: string;
+  readonly IntegrationResponseId?: string;
+  readonly IntegrationResponseKey?: string;
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly ResponseTemplates?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
 }
 
-interface GetIntegrationResponsesRequest {
+export interface GetIntegrationResponsesRequest {
   readonly ApiId: string;
   readonly IntegrationId: string;
-  readonly MaxResults: string;
-  readonly NextToken: string;
+  readonly MaxResults?: string;
+  readonly NextToken?: string;
 }
 
-interface GetIntegrationResponsesResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface GetIntegrationResponsesResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface GetIntegrationsRequest {
+export interface GetIntegrationsRequest {
   readonly ApiId: string;
-  readonly MaxResults: string;
-  readonly NextToken: string;
+  readonly MaxResults?: string;
+  readonly NextToken?: string;
 }
 
-interface GetIntegrationsResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface GetIntegrationsResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface GetModelRequest {
-  readonly ApiId: string;
-  readonly ModelId: string;
-}
-
-interface GetModelResponse {
-  readonly ContentType: string;
-  readonly Description: string;
-  readonly ModelId: string;
-  readonly Name: string;
-  readonly Schema: string;
-}
-
-interface GetModelTemplateRequest {
+export interface GetModelRequest {
   readonly ApiId: string;
   readonly ModelId: string;
 }
 
-interface GetModelTemplateResponse {
-  readonly Value: string;
+export interface GetModelResponse {
+  readonly ContentType?: string;
+  readonly Description?: string;
+  readonly ModelId?: string;
+  readonly Name?: string;
+  readonly Schema?: string;
 }
 
-interface GetModelsRequest {
+export interface GetModelTemplateRequest {
   readonly ApiId: string;
-  readonly MaxResults: string;
-  readonly NextToken: string;
+  readonly ModelId: string;
 }
 
-interface GetModelsResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface GetModelTemplateResponse {
+  readonly Value?: string;
 }
 
-interface GetRouteRequest {
+export interface GetModelsRequest {
+  readonly ApiId: string;
+  readonly MaxResults?: string;
+  readonly NextToken?: string;
+}
+
+export interface GetModelsResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
+}
+
+export interface GetRouteRequest {
   readonly ApiId: string;
   readonly RouteId: string;
 }
 
-interface GetRouteResult {
-  readonly ApiGatewayManaged: boolean;
-  readonly ApiKeyRequired: boolean;
-  readonly AuthorizationScopes: [];
-  readonly AuthorizationType: string;
-  readonly AuthorizerId: string;
-  readonly ModelSelectionExpression: string;
-  readonly OperationName: string;
-  readonly RequestModels: {[key: string]: any};
-  readonly RequestParameters: {[key: string]: any};
-  readonly RouteId: string;
-  readonly RouteKey: string;
-  readonly RouteResponseSelectionExpression: string;
-  readonly Target: string;
+export interface GetRouteResult {
+  readonly ApiGatewayManaged?: boolean;
+  readonly ApiKeyRequired?: boolean;
+  readonly AuthorizationScopes?: [];
+  readonly AuthorizationType?: string;
+  readonly AuthorizerId?: string;
+  readonly ModelSelectionExpression?: string;
+  readonly OperationName?: string;
+  readonly RequestModels?: {[key: string]: any};
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RouteId?: string;
+  readonly RouteKey?: string;
+  readonly RouteResponseSelectionExpression?: string;
+  readonly Target?: string;
 }
 
-interface GetRouteResponseRequest {
+export interface GetRouteResponseRequest {
   readonly ApiId: string;
   readonly RouteId: string;
   readonly RouteResponseId: string;
 }
 
-interface GetRouteResponseResponse {
-  readonly ModelSelectionExpression: string;
-  readonly ResponseModels: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly RouteResponseId: string;
-  readonly RouteResponseKey: string;
+export interface GetRouteResponseResponse {
+  readonly ModelSelectionExpression?: string;
+  readonly ResponseModels?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly RouteResponseId?: string;
+  readonly RouteResponseKey?: string;
 }
 
-interface GetRouteResponsesRequest {
+export interface GetRouteResponsesRequest {
   readonly ApiId: string;
-  readonly MaxResults: string;
-  readonly NextToken: string;
+  readonly MaxResults?: string;
+  readonly NextToken?: string;
   readonly RouteId: string;
 }
 
-interface GetRouteResponsesResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface GetRouteResponsesResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface GetRoutesRequest {
+export interface GetRoutesRequest {
   readonly ApiId: string;
-  readonly MaxResults: string;
-  readonly NextToken: string;
+  readonly MaxResults?: string;
+  readonly NextToken?: string;
 }
 
-interface GetRoutesResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface GetRoutesResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface GetStageRequest {
+export interface GetStageRequest {
   readonly ApiId: string;
   readonly StageName: string;
 }
 
-interface GetStageResponse {
-  readonly AccessLogSettings: AccessLogSettings;
-  readonly ApiGatewayManaged: boolean;
-  readonly AutoDeploy: boolean;
-  readonly ClientCertificateId: string;
-  readonly CreatedDate: Date;
-  readonly DefaultRouteSettings: RouteSettings;
-  readonly DeploymentId: string;
-  readonly Description: string;
-  readonly LastDeploymentStatusMessage: string;
-  readonly LastUpdatedDate: Date;
-  readonly RouteSettings: {[key: string]: any};
-  readonly StageName: string;
-  readonly StageVariables: {[key: string]: any};
-  readonly Tags: {[key: string]: any};
+export interface GetStageResponse {
+  readonly AccessLogSettings?: AccessLogSettings;
+  readonly ApiGatewayManaged?: boolean;
+  readonly AutoDeploy?: boolean;
+  readonly ClientCertificateId?: string;
+  readonly CreatedDate?: Date;
+  readonly DefaultRouteSettings?: RouteSettings;
+  readonly DeploymentId?: string;
+  readonly Description?: string;
+  readonly LastDeploymentStatusMessage?: string;
+  readonly LastUpdatedDate?: Date;
+  readonly RouteSettings?: {[key: string]: any};
+  readonly StageName?: string;
+  readonly StageVariables?: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface GetStagesRequest {
+export interface GetStagesRequest {
   readonly ApiId: string;
-  readonly MaxResults: string;
-  readonly NextToken: string;
+  readonly MaxResults?: string;
+  readonly NextToken?: string;
 }
 
-interface GetStagesResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface GetStagesResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface GetTagsRequest {
+export interface GetTagsRequest {
   readonly ResourceArn: string;
 }
 
-interface GetTagsResponse {
-  readonly Tags: {[key: string]: any};
+export interface GetTagsResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface GetVpcLinkRequest {
+export interface GetVpcLinkRequest {
   readonly VpcLinkId: string;
 }
 
-interface GetVpcLinkResponse {
-  readonly CreatedDate: Date;
-  readonly Name: string;
-  readonly SecurityGroupIds: [];
-  readonly SubnetIds: [];
-  readonly Tags: {[key: string]: any};
-  readonly VpcLinkId: string;
-  readonly VpcLinkStatus: string;
-  readonly VpcLinkStatusMessage: string;
-  readonly VpcLinkVersion: string;
+export interface GetVpcLinkResponse {
+  readonly CreatedDate?: Date;
+  readonly Name?: string;
+  readonly SecurityGroupIds?: [];
+  readonly SubnetIds?: [];
+  readonly Tags?: {[key: string]: any};
+  readonly VpcLinkId?: string;
+  readonly VpcLinkStatus?: string;
+  readonly VpcLinkStatusMessage?: string;
+  readonly VpcLinkVersion?: string;
 }
 
-interface GetVpcLinksRequest {
-  readonly MaxResults: string;
-  readonly NextToken: string;
+export interface GetVpcLinksRequest {
+  readonly MaxResults?: string;
+  readonly NextToken?: string;
 }
 
-interface GetVpcLinksResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface GetVpcLinksResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface ImportApiInput {
+export interface ImportApiInput {
   readonly Body: string;
 }
 
-interface ImportApiRequest {
-  readonly Basepath: string;
+export interface ImportApiRequest {
+  readonly Basepath?: string;
   readonly Body: string;
-  readonly FailOnWarnings: boolean;
+  readonly FailOnWarnings?: boolean;
 }
 
-interface ImportApiResponse {
-  readonly ApiEndpoint: string;
-  readonly ApiGatewayManaged: boolean;
-  readonly ApiId: string;
-  readonly ApiKeySelectionExpression: string;
-  readonly CorsConfiguration: Cors;
-  readonly CreatedDate: Date;
-  readonly Description: string;
-  readonly DisableSchemaValidation: boolean;
-  readonly DisableExecuteApiEndpoint: boolean;
-  readonly ImportInfo: [];
-  readonly Name: string;
-  readonly ProtocolType: string;
-  readonly RouteSelectionExpression: string;
-  readonly Tags: {[key: string]: any};
-  readonly Version: string;
-  readonly Warnings: [];
+export interface ImportApiResponse {
+  readonly ApiEndpoint?: string;
+  readonly ApiGatewayManaged?: boolean;
+  readonly ApiId?: string;
+  readonly ApiKeySelectionExpression?: string;
+  readonly CorsConfiguration?: Cors;
+  readonly CreatedDate?: Date;
+  readonly Description?: string;
+  readonly DisableSchemaValidation?: boolean;
+  readonly DisableExecuteApiEndpoint?: boolean;
+  readonly ImportInfo?: [];
+  readonly Name?: string;
+  readonly ProtocolType?: string;
+  readonly RouteSelectionExpression?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Version?: string;
+  readonly Warnings?: [];
 }
 
-interface Integration {
-  readonly ApiGatewayManaged: boolean;
-  readonly ConnectionId: string;
-  readonly ConnectionType: string;
-  readonly ContentHandlingStrategy: string;
-  readonly CredentialsArn: string;
-  readonly Description: string;
-  readonly IntegrationId: string;
-  readonly IntegrationMethod: string;
-  readonly IntegrationResponseSelectionExpression: string;
-  readonly IntegrationSubtype: string;
-  readonly IntegrationType: string;
-  readonly IntegrationUri: string;
-  readonly PassthroughBehavior: string;
-  readonly PayloadFormatVersion: string;
-  readonly RequestParameters: {[key: string]: any};
-  readonly RequestTemplates: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
-  readonly TimeoutInMillis: number;
-  readonly TlsConfig: TlsConfig;
+export interface Integration {
+  readonly ApiGatewayManaged?: boolean;
+  readonly ConnectionId?: string;
+  readonly ConnectionType?: string;
+  readonly ContentHandlingStrategy?: string;
+  readonly CredentialsArn?: string;
+  readonly Description?: string;
+  readonly IntegrationId?: string;
+  readonly IntegrationMethod?: string;
+  readonly IntegrationResponseSelectionExpression?: string;
+  readonly IntegrationSubtype?: string;
+  readonly IntegrationType?: string;
+  readonly IntegrationUri?: string;
+  readonly PassthroughBehavior?: string;
+  readonly PayloadFormatVersion?: string;
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RequestTemplates?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
+  readonly TimeoutInMillis?: number;
+  readonly TlsConfig?: TlsConfig;
 }
 
-interface IntegrationResponse {
-  readonly ContentHandlingStrategy: string;
-  readonly IntegrationResponseId: string;
+export interface IntegrationResponse {
+  readonly ContentHandlingStrategy?: string;
+  readonly IntegrationResponseId?: string;
   readonly IntegrationResponseKey: string;
-  readonly ResponseParameters: {[key: string]: any};
-  readonly ResponseTemplates: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly ResponseTemplates?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
 }
 
-interface IntegrationResponses {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface IntegrationResponses {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface Integrations {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface Integrations {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface JWTConfiguration {
-  readonly Audience: [];
-  readonly Issuer: string;
+export interface JWTConfiguration {
+  readonly Audience?: [];
+  readonly Issuer?: string;
 }
 
-interface LimitExceededException {
-  readonly LimitType: string;
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly LimitType?: string;
+  readonly Message?: string;
 }
 
-interface Model {
-  readonly ContentType: string;
-  readonly Description: string;
-  readonly ModelId: string;
+export interface Model {
+  readonly ContentType?: string;
+  readonly Description?: string;
+  readonly ModelId?: string;
   readonly Name: string;
-  readonly Schema: string;
+  readonly Schema?: string;
 }
 
-interface Models {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface Models {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface MutualTlsAuthentication {
-  readonly TruststoreUri: string;
-  readonly TruststoreVersion: string;
-  readonly TruststoreWarnings: [];
+export interface MutualTlsAuthentication {
+  readonly TruststoreUri?: string;
+  readonly TruststoreVersion?: string;
+  readonly TruststoreWarnings?: [];
 }
 
-interface MutualTlsAuthenticationInput {
-  readonly TruststoreUri: string;
-  readonly TruststoreVersion: string;
+export interface MutualTlsAuthenticationInput {
+  readonly TruststoreUri?: string;
+  readonly TruststoreVersion?: string;
 }
 
-interface NotFoundException {
-  readonly Message: string;
-  readonly ResourceType: string;
+export interface NotFoundException {
+  readonly Message?: string;
+  readonly ResourceType?: string;
 }
 
-interface ParameterConstraints {
-  readonly Required: boolean;
+export interface ParameterConstraints {
+  readonly Required?: boolean;
 }
 
-interface ReimportApiInput {
+export interface ReimportApiInput {
   readonly Body: string;
 }
 
-interface ReimportApiRequest {
+export interface ReimportApiRequest {
   readonly ApiId: string;
-  readonly Basepath: string;
+  readonly Basepath?: string;
   readonly Body: string;
-  readonly FailOnWarnings: boolean;
+  readonly FailOnWarnings?: boolean;
 }
 
-interface ReimportApiResponse {
-  readonly ApiEndpoint: string;
-  readonly ApiGatewayManaged: boolean;
-  readonly ApiId: string;
-  readonly ApiKeySelectionExpression: string;
-  readonly CorsConfiguration: Cors;
-  readonly CreatedDate: Date;
-  readonly Description: string;
-  readonly DisableSchemaValidation: boolean;
-  readonly DisableExecuteApiEndpoint: boolean;
-  readonly ImportInfo: [];
-  readonly Name: string;
-  readonly ProtocolType: string;
-  readonly RouteSelectionExpression: string;
-  readonly Tags: {[key: string]: any};
-  readonly Version: string;
-  readonly Warnings: [];
+export interface ReimportApiResponse {
+  readonly ApiEndpoint?: string;
+  readonly ApiGatewayManaged?: boolean;
+  readonly ApiId?: string;
+  readonly ApiKeySelectionExpression?: string;
+  readonly CorsConfiguration?: Cors;
+  readonly CreatedDate?: Date;
+  readonly Description?: string;
+  readonly DisableSchemaValidation?: boolean;
+  readonly DisableExecuteApiEndpoint?: boolean;
+  readonly ImportInfo?: [];
+  readonly Name?: string;
+  readonly ProtocolType?: string;
+  readonly RouteSelectionExpression?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Version?: string;
+  readonly Warnings?: [];
 }
 
-interface Route {
-  readonly ApiGatewayManaged: boolean;
-  readonly ApiKeyRequired: boolean;
-  readonly AuthorizationScopes: [];
-  readonly AuthorizationType: string;
-  readonly AuthorizerId: string;
-  readonly ModelSelectionExpression: string;
-  readonly OperationName: string;
-  readonly RequestModels: {[key: string]: any};
-  readonly RequestParameters: {[key: string]: any};
-  readonly RouteId: string;
+export interface Route {
+  readonly ApiGatewayManaged?: boolean;
+  readonly ApiKeyRequired?: boolean;
+  readonly AuthorizationScopes?: [];
+  readonly AuthorizationType?: string;
+  readonly AuthorizerId?: string;
+  readonly ModelSelectionExpression?: string;
+  readonly OperationName?: string;
+  readonly RequestModels?: {[key: string]: any};
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RouteId?: string;
   readonly RouteKey: string;
-  readonly RouteResponseSelectionExpression: string;
-  readonly Target: string;
+  readonly RouteResponseSelectionExpression?: string;
+  readonly Target?: string;
 }
 
-interface RouteResponse {
-  readonly ModelSelectionExpression: string;
-  readonly ResponseModels: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly RouteResponseId: string;
+export interface RouteResponse {
+  readonly ModelSelectionExpression?: string;
+  readonly ResponseModels?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly RouteResponseId?: string;
   readonly RouteResponseKey: string;
 }
 
-interface RouteResponses {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface RouteResponses {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface RouteSettings {
-  readonly DataTraceEnabled: boolean;
-  readonly DetailedMetricsEnabled: boolean;
-  readonly LoggingLevel: string;
-  readonly ThrottlingBurstLimit: number;
-  readonly ThrottlingRateLimit: unknown;
+export interface RouteSettings {
+  readonly DataTraceEnabled?: boolean;
+  readonly DetailedMetricsEnabled?: boolean;
+  readonly LoggingLevel?: string;
+  readonly ThrottlingBurstLimit?: number;
+  readonly ThrottlingRateLimit?: unknown;
 }
 
-interface Routes {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface Routes {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface Stage {
-  readonly AccessLogSettings: AccessLogSettings;
-  readonly ApiGatewayManaged: boolean;
-  readonly AutoDeploy: boolean;
-  readonly ClientCertificateId: string;
-  readonly CreatedDate: Date;
-  readonly DefaultRouteSettings: RouteSettings;
-  readonly DeploymentId: string;
-  readonly Description: string;
-  readonly LastDeploymentStatusMessage: string;
-  readonly LastUpdatedDate: Date;
-  readonly RouteSettings: {[key: string]: any};
+export interface Stage {
+  readonly AccessLogSettings?: AccessLogSettings;
+  readonly ApiGatewayManaged?: boolean;
+  readonly AutoDeploy?: boolean;
+  readonly ClientCertificateId?: string;
+  readonly CreatedDate?: Date;
+  readonly DefaultRouteSettings?: RouteSettings;
+  readonly DeploymentId?: string;
+  readonly Description?: string;
+  readonly LastDeploymentStatusMessage?: string;
+  readonly LastUpdatedDate?: Date;
+  readonly RouteSettings?: {[key: string]: any};
   readonly StageName: string;
-  readonly StageVariables: {[key: string]: any};
-  readonly Tags: {[key: string]: any};
+  readonly StageVariables?: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface Stages {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface Stages {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface TagResourceInput {
-  readonly Tags: {[key: string]: any};
+export interface TagResourceInput {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface Template {
-  readonly Value: string;
+export interface Template {
+  readonly Value?: string;
 }
 
-interface TlsConfig {
-  readonly ServerNameToVerify: string;
+export interface TlsConfig {
+  readonly ServerNameToVerify?: string;
 }
 
-interface TlsConfigInput {
-  readonly ServerNameToVerify: string;
+export interface TlsConfigInput {
+  readonly ServerNameToVerify?: string;
 }
 
-interface TooManyRequestsException {
-  readonly LimitType: string;
-  readonly Message: string;
+export interface TooManyRequestsException {
+  readonly LimitType?: string;
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UpdateApiInput {
-  readonly ApiKeySelectionExpression: string;
-  readonly CorsConfiguration: Cors;
-  readonly CredentialsArn: string;
-  readonly Description: string;
-  readonly DisableExecuteApiEndpoint: boolean;
-  readonly DisableSchemaValidation: boolean;
-  readonly Name: string;
-  readonly RouteKey: string;
-  readonly RouteSelectionExpression: string;
-  readonly Target: string;
-  readonly Version: string;
+export interface UpdateApiInput {
+  readonly ApiKeySelectionExpression?: string;
+  readonly CorsConfiguration?: Cors;
+  readonly CredentialsArn?: string;
+  readonly Description?: string;
+  readonly DisableExecuteApiEndpoint?: boolean;
+  readonly DisableSchemaValidation?: boolean;
+  readonly Name?: string;
+  readonly RouteKey?: string;
+  readonly RouteSelectionExpression?: string;
+  readonly Target?: string;
+  readonly Version?: string;
 }
 
-interface UpdateApiMappingInput {
-  readonly ApiId: string;
-  readonly ApiMappingKey: string;
-  readonly Stage: string;
+export interface UpdateApiMappingInput {
+  readonly ApiId?: string;
+  readonly ApiMappingKey?: string;
+  readonly Stage?: string;
 }
 
-interface UpdateApiMappingRequest {
-  readonly ApiId: string;
-  readonly ApiMappingId: string;
-  readonly ApiMappingKey: string;
-  readonly DomainName: string;
-  readonly Stage: string;
-}
-
-interface UpdateApiMappingResponse {
+export interface UpdateApiMappingRequest {
   readonly ApiId: string;
   readonly ApiMappingId: string;
-  readonly ApiMappingKey: string;
-  readonly Stage: string;
+  readonly ApiMappingKey?: string;
+  readonly DomainName: string;
+  readonly Stage?: string;
 }
 
-interface UpdateApiRequest {
+export interface UpdateApiMappingResponse {
+  readonly ApiId?: string;
+  readonly ApiMappingId?: string;
+  readonly ApiMappingKey?: string;
+  readonly Stage?: string;
+}
+
+export interface UpdateApiRequest {
   readonly ApiId: string;
-  readonly ApiKeySelectionExpression: string;
-  readonly CorsConfiguration: Cors;
-  readonly CredentialsArn: string;
-  readonly Description: string;
-  readonly DisableSchemaValidation: boolean;
-  readonly DisableExecuteApiEndpoint: boolean;
-  readonly Name: string;
-  readonly RouteKey: string;
-  readonly RouteSelectionExpression: string;
-  readonly Target: string;
-  readonly Version: string;
+  readonly ApiKeySelectionExpression?: string;
+  readonly CorsConfiguration?: Cors;
+  readonly CredentialsArn?: string;
+  readonly Description?: string;
+  readonly DisableSchemaValidation?: boolean;
+  readonly DisableExecuteApiEndpoint?: boolean;
+  readonly Name?: string;
+  readonly RouteKey?: string;
+  readonly RouteSelectionExpression?: string;
+  readonly Target?: string;
+  readonly Version?: string;
 }
 
-interface UpdateApiResponse {
-  readonly ApiEndpoint: string;
-  readonly ApiGatewayManaged: boolean;
+export interface UpdateApiResponse {
+  readonly ApiEndpoint?: string;
+  readonly ApiGatewayManaged?: boolean;
+  readonly ApiId?: string;
+  readonly ApiKeySelectionExpression?: string;
+  readonly CorsConfiguration?: Cors;
+  readonly CreatedDate?: Date;
+  readonly Description?: string;
+  readonly DisableSchemaValidation?: boolean;
+  readonly DisableExecuteApiEndpoint?: boolean;
+  readonly ImportInfo?: [];
+  readonly Name?: string;
+  readonly ProtocolType?: string;
+  readonly RouteSelectionExpression?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Version?: string;
+  readonly Warnings?: [];
+}
+
+export interface UpdateAuthorizerInput {
+  readonly AuthorizerCredentialsArn?: string;
+  readonly AuthorizerPayloadFormatVersion?: string;
+  readonly AuthorizerResultTtlInSeconds?: number;
+  readonly AuthorizerType?: string;
+  readonly AuthorizerUri?: string;
+  readonly EnableSimpleResponses?: boolean;
+  readonly IdentitySource?: [];
+  readonly IdentityValidationExpression?: string;
+  readonly JwtConfiguration?: JWTConfiguration;
+  readonly Name?: string;
+}
+
+export interface UpdateAuthorizerRequest {
   readonly ApiId: string;
-  readonly ApiKeySelectionExpression: string;
-  readonly CorsConfiguration: Cors;
-  readonly CreatedDate: Date;
-  readonly Description: string;
-  readonly DisableSchemaValidation: boolean;
-  readonly DisableExecuteApiEndpoint: boolean;
-  readonly ImportInfo: [];
-  readonly Name: string;
-  readonly ProtocolType: string;
-  readonly RouteSelectionExpression: string;
-  readonly Tags: {[key: string]: any};
-  readonly Version: string;
-  readonly Warnings: [];
-}
-
-interface UpdateAuthorizerInput {
-  readonly AuthorizerCredentialsArn: string;
-  readonly AuthorizerPayloadFormatVersion: string;
-  readonly AuthorizerResultTtlInSeconds: number;
-  readonly AuthorizerType: string;
-  readonly AuthorizerUri: string;
-  readonly EnableSimpleResponses: boolean;
-  readonly IdentitySource: [];
-  readonly IdentityValidationExpression: string;
-  readonly JwtConfiguration: JWTConfiguration;
-  readonly Name: string;
-}
-
-interface UpdateAuthorizerRequest {
-  readonly ApiId: string;
-  readonly AuthorizerCredentialsArn: string;
+  readonly AuthorizerCredentialsArn?: string;
   readonly AuthorizerId: string;
-  readonly AuthorizerPayloadFormatVersion: string;
-  readonly AuthorizerResultTtlInSeconds: number;
-  readonly AuthorizerType: string;
-  readonly AuthorizerUri: string;
-  readonly EnableSimpleResponses: boolean;
-  readonly IdentitySource: [];
-  readonly IdentityValidationExpression: string;
-  readonly JwtConfiguration: JWTConfiguration;
-  readonly Name: string;
+  readonly AuthorizerPayloadFormatVersion?: string;
+  readonly AuthorizerResultTtlInSeconds?: number;
+  readonly AuthorizerType?: string;
+  readonly AuthorizerUri?: string;
+  readonly EnableSimpleResponses?: boolean;
+  readonly IdentitySource?: [];
+  readonly IdentityValidationExpression?: string;
+  readonly JwtConfiguration?: JWTConfiguration;
+  readonly Name?: string;
 }
 
-interface UpdateAuthorizerResponse {
-  readonly AuthorizerCredentialsArn: string;
-  readonly AuthorizerId: string;
-  readonly AuthorizerPayloadFormatVersion: string;
-  readonly AuthorizerResultTtlInSeconds: number;
-  readonly AuthorizerType: string;
-  readonly AuthorizerUri: string;
-  readonly EnableSimpleResponses: boolean;
-  readonly IdentitySource: [];
-  readonly IdentityValidationExpression: string;
-  readonly JwtConfiguration: JWTConfiguration;
-  readonly Name: string;
+export interface UpdateAuthorizerResponse {
+  readonly AuthorizerCredentialsArn?: string;
+  readonly AuthorizerId?: string;
+  readonly AuthorizerPayloadFormatVersion?: string;
+  readonly AuthorizerResultTtlInSeconds?: number;
+  readonly AuthorizerType?: string;
+  readonly AuthorizerUri?: string;
+  readonly EnableSimpleResponses?: boolean;
+  readonly IdentitySource?: [];
+  readonly IdentityValidationExpression?: string;
+  readonly JwtConfiguration?: JWTConfiguration;
+  readonly Name?: string;
 }
 
-interface UpdateDeploymentInput {
-  readonly Description: string;
+export interface UpdateDeploymentInput {
+  readonly Description?: string;
 }
 
-interface UpdateDeploymentRequest {
+export interface UpdateDeploymentRequest {
   readonly ApiId: string;
   readonly DeploymentId: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 
-interface UpdateDeploymentResponse {
-  readonly AutoDeployed: boolean;
-  readonly CreatedDate: Date;
-  readonly DeploymentId: string;
-  readonly DeploymentStatus: string;
-  readonly DeploymentStatusMessage: string;
-  readonly Description: string;
+export interface UpdateDeploymentResponse {
+  readonly AutoDeployed?: boolean;
+  readonly CreatedDate?: Date;
+  readonly DeploymentId?: string;
+  readonly DeploymentStatus?: string;
+  readonly DeploymentStatusMessage?: string;
+  readonly Description?: string;
 }
 
-interface UpdateDomainNameInput {
-  readonly DomainNameConfigurations: [];
-  readonly MutualTlsAuthentication: MutualTlsAuthenticationInput;
+export interface UpdateDomainNameInput {
+  readonly DomainNameConfigurations?: [];
+  readonly MutualTlsAuthentication?: MutualTlsAuthenticationInput;
 }
 
-interface UpdateDomainNameRequest {
+export interface UpdateDomainNameRequest {
   readonly DomainName: string;
-  readonly DomainNameConfigurations: [];
-  readonly MutualTlsAuthentication: MutualTlsAuthenticationInput;
+  readonly DomainNameConfigurations?: [];
+  readonly MutualTlsAuthentication?: MutualTlsAuthenticationInput;
 }
 
-interface UpdateDomainNameResponse {
-  readonly ApiMappingSelectionExpression: string;
-  readonly DomainName: string;
-  readonly DomainNameConfigurations: [];
-  readonly MutualTlsAuthentication: MutualTlsAuthentication;
-  readonly Tags: {[key: string]: any};
+export interface UpdateDomainNameResponse {
+  readonly ApiMappingSelectionExpression?: string;
+  readonly DomainName?: string;
+  readonly DomainNameConfigurations?: [];
+  readonly MutualTlsAuthentication?: MutualTlsAuthentication;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface UpdateIntegrationInput {
-  readonly ConnectionId: string;
-  readonly ConnectionType: string;
-  readonly ContentHandlingStrategy: string;
-  readonly CredentialsArn: string;
-  readonly Description: string;
-  readonly IntegrationMethod: string;
-  readonly IntegrationSubtype: string;
-  readonly IntegrationType: string;
-  readonly IntegrationUri: string;
-  readonly PassthroughBehavior: string;
-  readonly PayloadFormatVersion: string;
-  readonly RequestParameters: {[key: string]: any};
-  readonly RequestTemplates: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
-  readonly TimeoutInMillis: number;
-  readonly TlsConfig: TlsConfigInput;
+export interface UpdateIntegrationInput {
+  readonly ConnectionId?: string;
+  readonly ConnectionType?: string;
+  readonly ContentHandlingStrategy?: string;
+  readonly CredentialsArn?: string;
+  readonly Description?: string;
+  readonly IntegrationMethod?: string;
+  readonly IntegrationSubtype?: string;
+  readonly IntegrationType?: string;
+  readonly IntegrationUri?: string;
+  readonly PassthroughBehavior?: string;
+  readonly PayloadFormatVersion?: string;
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RequestTemplates?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
+  readonly TimeoutInMillis?: number;
+  readonly TlsConfig?: TlsConfigInput;
 }
 
-interface UpdateIntegrationRequest {
+export interface UpdateIntegrationRequest {
   readonly ApiId: string;
-  readonly ConnectionId: string;
-  readonly ConnectionType: string;
-  readonly ContentHandlingStrategy: string;
-  readonly CredentialsArn: string;
-  readonly Description: string;
+  readonly ConnectionId?: string;
+  readonly ConnectionType?: string;
+  readonly ContentHandlingStrategy?: string;
+  readonly CredentialsArn?: string;
+  readonly Description?: string;
   readonly IntegrationId: string;
-  readonly IntegrationMethod: string;
-  readonly IntegrationSubtype: string;
-  readonly IntegrationType: string;
-  readonly IntegrationUri: string;
-  readonly PassthroughBehavior: string;
-  readonly PayloadFormatVersion: string;
-  readonly RequestParameters: {[key: string]: any};
-  readonly RequestTemplates: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
-  readonly TimeoutInMillis: number;
-  readonly TlsConfig: TlsConfigInput;
+  readonly IntegrationMethod?: string;
+  readonly IntegrationSubtype?: string;
+  readonly IntegrationType?: string;
+  readonly IntegrationUri?: string;
+  readonly PassthroughBehavior?: string;
+  readonly PayloadFormatVersion?: string;
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RequestTemplates?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
+  readonly TimeoutInMillis?: number;
+  readonly TlsConfig?: TlsConfigInput;
 }
 
-interface UpdateIntegrationResult {
-  readonly ApiGatewayManaged: boolean;
-  readonly ConnectionId: string;
-  readonly ConnectionType: string;
-  readonly ContentHandlingStrategy: string;
-  readonly CredentialsArn: string;
-  readonly Description: string;
-  readonly IntegrationId: string;
-  readonly IntegrationMethod: string;
-  readonly IntegrationResponseSelectionExpression: string;
-  readonly IntegrationSubtype: string;
-  readonly IntegrationType: string;
-  readonly IntegrationUri: string;
-  readonly PassthroughBehavior: string;
-  readonly PayloadFormatVersion: string;
-  readonly RequestParameters: {[key: string]: any};
-  readonly RequestTemplates: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
-  readonly TimeoutInMillis: number;
-  readonly TlsConfig: TlsConfig;
+export interface UpdateIntegrationResult {
+  readonly ApiGatewayManaged?: boolean;
+  readonly ConnectionId?: string;
+  readonly ConnectionType?: string;
+  readonly ContentHandlingStrategy?: string;
+  readonly CredentialsArn?: string;
+  readonly Description?: string;
+  readonly IntegrationId?: string;
+  readonly IntegrationMethod?: string;
+  readonly IntegrationResponseSelectionExpression?: string;
+  readonly IntegrationSubtype?: string;
+  readonly IntegrationType?: string;
+  readonly IntegrationUri?: string;
+  readonly PassthroughBehavior?: string;
+  readonly PayloadFormatVersion?: string;
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RequestTemplates?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
+  readonly TimeoutInMillis?: number;
+  readonly TlsConfig?: TlsConfig;
 }
 
-interface UpdateIntegrationResponseInput {
-  readonly ContentHandlingStrategy: string;
-  readonly IntegrationResponseKey: string;
-  readonly ResponseParameters: {[key: string]: any};
-  readonly ResponseTemplates: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
+export interface UpdateIntegrationResponseInput {
+  readonly ContentHandlingStrategy?: string;
+  readonly IntegrationResponseKey?: string;
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly ResponseTemplates?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
 }
 
-interface UpdateIntegrationResponseRequest {
+export interface UpdateIntegrationResponseRequest {
   readonly ApiId: string;
-  readonly ContentHandlingStrategy: string;
+  readonly ContentHandlingStrategy?: string;
   readonly IntegrationId: string;
   readonly IntegrationResponseId: string;
-  readonly IntegrationResponseKey: string;
-  readonly ResponseParameters: {[key: string]: any};
-  readonly ResponseTemplates: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
+  readonly IntegrationResponseKey?: string;
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly ResponseTemplates?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
 }
 
-interface UpdateIntegrationResponseResponse {
-  readonly ContentHandlingStrategy: string;
-  readonly IntegrationResponseId: string;
-  readonly IntegrationResponseKey: string;
-  readonly ResponseParameters: {[key: string]: any};
-  readonly ResponseTemplates: {[key: string]: any};
-  readonly TemplateSelectionExpression: string;
+export interface UpdateIntegrationResponseResponse {
+  readonly ContentHandlingStrategy?: string;
+  readonly IntegrationResponseId?: string;
+  readonly IntegrationResponseKey?: string;
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly ResponseTemplates?: {[key: string]: any};
+  readonly TemplateSelectionExpression?: string;
 }
 
-interface UpdateModelInput {
-  readonly ContentType: string;
-  readonly Description: string;
-  readonly Name: string;
-  readonly Schema: string;
+export interface UpdateModelInput {
+  readonly ContentType?: string;
+  readonly Description?: string;
+  readonly Name?: string;
+  readonly Schema?: string;
 }
 
-interface UpdateModelRequest {
+export interface UpdateModelRequest {
   readonly ApiId: string;
-  readonly ContentType: string;
-  readonly Description: string;
+  readonly ContentType?: string;
+  readonly Description?: string;
   readonly ModelId: string;
-  readonly Name: string;
-  readonly Schema: string;
+  readonly Name?: string;
+  readonly Schema?: string;
 }
 
-interface UpdateModelResponse {
-  readonly ContentType: string;
-  readonly Description: string;
-  readonly ModelId: string;
-  readonly Name: string;
-  readonly Schema: string;
+export interface UpdateModelResponse {
+  readonly ContentType?: string;
+  readonly Description?: string;
+  readonly ModelId?: string;
+  readonly Name?: string;
+  readonly Schema?: string;
 }
 
-interface UpdateRouteInput {
-  readonly ApiKeyRequired: boolean;
-  readonly AuthorizationScopes: [];
-  readonly AuthorizationType: string;
-  readonly AuthorizerId: string;
-  readonly ModelSelectionExpression: string;
-  readonly OperationName: string;
-  readonly RequestModels: {[key: string]: any};
-  readonly RequestParameters: {[key: string]: any};
-  readonly RouteKey: string;
-  readonly RouteResponseSelectionExpression: string;
-  readonly Target: string;
+export interface UpdateRouteInput {
+  readonly ApiKeyRequired?: boolean;
+  readonly AuthorizationScopes?: [];
+  readonly AuthorizationType?: string;
+  readonly AuthorizerId?: string;
+  readonly ModelSelectionExpression?: string;
+  readonly OperationName?: string;
+  readonly RequestModels?: {[key: string]: any};
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RouteKey?: string;
+  readonly RouteResponseSelectionExpression?: string;
+  readonly Target?: string;
 }
 
-interface UpdateRouteRequest {
+export interface UpdateRouteRequest {
   readonly ApiId: string;
-  readonly ApiKeyRequired: boolean;
-  readonly AuthorizationScopes: [];
-  readonly AuthorizationType: string;
-  readonly AuthorizerId: string;
-  readonly ModelSelectionExpression: string;
-  readonly OperationName: string;
-  readonly RequestModels: {[key: string]: any};
-  readonly RequestParameters: {[key: string]: any};
+  readonly ApiKeyRequired?: boolean;
+  readonly AuthorizationScopes?: [];
+  readonly AuthorizationType?: string;
+  readonly AuthorizerId?: string;
+  readonly ModelSelectionExpression?: string;
+  readonly OperationName?: string;
+  readonly RequestModels?: {[key: string]: any};
+  readonly RequestParameters?: {[key: string]: any};
   readonly RouteId: string;
-  readonly RouteKey: string;
-  readonly RouteResponseSelectionExpression: string;
-  readonly Target: string;
+  readonly RouteKey?: string;
+  readonly RouteResponseSelectionExpression?: string;
+  readonly Target?: string;
 }
 
-interface UpdateRouteResult {
-  readonly ApiGatewayManaged: boolean;
-  readonly ApiKeyRequired: boolean;
-  readonly AuthorizationScopes: [];
-  readonly AuthorizationType: string;
-  readonly AuthorizerId: string;
-  readonly ModelSelectionExpression: string;
-  readonly OperationName: string;
-  readonly RequestModels: {[key: string]: any};
-  readonly RequestParameters: {[key: string]: any};
-  readonly RouteId: string;
-  readonly RouteKey: string;
-  readonly RouteResponseSelectionExpression: string;
-  readonly Target: string;
+export interface UpdateRouteResult {
+  readonly ApiGatewayManaged?: boolean;
+  readonly ApiKeyRequired?: boolean;
+  readonly AuthorizationScopes?: [];
+  readonly AuthorizationType?: string;
+  readonly AuthorizerId?: string;
+  readonly ModelSelectionExpression?: string;
+  readonly OperationName?: string;
+  readonly RequestModels?: {[key: string]: any};
+  readonly RequestParameters?: {[key: string]: any};
+  readonly RouteId?: string;
+  readonly RouteKey?: string;
+  readonly RouteResponseSelectionExpression?: string;
+  readonly Target?: string;
 }
 
-interface UpdateRouteResponseInput {
-  readonly ModelSelectionExpression: string;
-  readonly ResponseModels: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly RouteResponseKey: string;
+export interface UpdateRouteResponseInput {
+  readonly ModelSelectionExpression?: string;
+  readonly ResponseModels?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly RouteResponseKey?: string;
 }
 
-interface UpdateRouteResponseRequest {
+export interface UpdateRouteResponseRequest {
   readonly ApiId: string;
-  readonly ModelSelectionExpression: string;
-  readonly ResponseModels: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
+  readonly ModelSelectionExpression?: string;
+  readonly ResponseModels?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
   readonly RouteId: string;
   readonly RouteResponseId: string;
-  readonly RouteResponseKey: string;
+  readonly RouteResponseKey?: string;
 }
 
-interface UpdateRouteResponseResponse {
-  readonly ModelSelectionExpression: string;
-  readonly ResponseModels: {[key: string]: any};
-  readonly ResponseParameters: {[key: string]: any};
-  readonly RouteResponseId: string;
-  readonly RouteResponseKey: string;
+export interface UpdateRouteResponseResponse {
+  readonly ModelSelectionExpression?: string;
+  readonly ResponseModels?: {[key: string]: any};
+  readonly ResponseParameters?: {[key: string]: any};
+  readonly RouteResponseId?: string;
+  readonly RouteResponseKey?: string;
 }
 
-interface UpdateStageInput {
-  readonly AccessLogSettings: AccessLogSettings;
-  readonly AutoDeploy: boolean;
-  readonly ClientCertificateId: string;
-  readonly DefaultRouteSettings: RouteSettings;
-  readonly DeploymentId: string;
-  readonly Description: string;
-  readonly RouteSettings: {[key: string]: any};
-  readonly StageVariables: {[key: string]: any};
+export interface UpdateStageInput {
+  readonly AccessLogSettings?: AccessLogSettings;
+  readonly AutoDeploy?: boolean;
+  readonly ClientCertificateId?: string;
+  readonly DefaultRouteSettings?: RouteSettings;
+  readonly DeploymentId?: string;
+  readonly Description?: string;
+  readonly RouteSettings?: {[key: string]: any};
+  readonly StageVariables?: {[key: string]: any};
 }
 
-interface UpdateStageRequest {
-  readonly AccessLogSettings: AccessLogSettings;
+export interface UpdateStageRequest {
+  readonly AccessLogSettings?: AccessLogSettings;
   readonly ApiId: string;
-  readonly AutoDeploy: boolean;
-  readonly ClientCertificateId: string;
-  readonly DefaultRouteSettings: RouteSettings;
-  readonly DeploymentId: string;
-  readonly Description: string;
-  readonly RouteSettings: {[key: string]: any};
+  readonly AutoDeploy?: boolean;
+  readonly ClientCertificateId?: string;
+  readonly DefaultRouteSettings?: RouteSettings;
+  readonly DeploymentId?: string;
+  readonly Description?: string;
+  readonly RouteSettings?: {[key: string]: any};
   readonly StageName: string;
-  readonly StageVariables: {[key: string]: any};
+  readonly StageVariables?: {[key: string]: any};
 }
 
-interface UpdateStageResponse {
-  readonly AccessLogSettings: AccessLogSettings;
-  readonly ApiGatewayManaged: boolean;
-  readonly AutoDeploy: boolean;
-  readonly ClientCertificateId: string;
-  readonly CreatedDate: Date;
-  readonly DefaultRouteSettings: RouteSettings;
-  readonly DeploymentId: string;
-  readonly Description: string;
-  readonly LastDeploymentStatusMessage: string;
-  readonly LastUpdatedDate: Date;
-  readonly RouteSettings: {[key: string]: any};
-  readonly StageName: string;
-  readonly StageVariables: {[key: string]: any};
-  readonly Tags: {[key: string]: any};
+export interface UpdateStageResponse {
+  readonly AccessLogSettings?: AccessLogSettings;
+  readonly ApiGatewayManaged?: boolean;
+  readonly AutoDeploy?: boolean;
+  readonly ClientCertificateId?: string;
+  readonly CreatedDate?: Date;
+  readonly DefaultRouteSettings?: RouteSettings;
+  readonly DeploymentId?: string;
+  readonly Description?: string;
+  readonly LastDeploymentStatusMessage?: string;
+  readonly LastUpdatedDate?: Date;
+  readonly RouteSettings?: {[key: string]: any};
+  readonly StageName?: string;
+  readonly StageVariables?: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface UpdateVpcLinkInput {
-  readonly Name: string;
+export interface UpdateVpcLinkInput {
+  readonly Name?: string;
 }
 
-interface UpdateVpcLinkRequest {
-  readonly Name: string;
+export interface UpdateVpcLinkRequest {
+  readonly Name?: string;
   readonly VpcLinkId: string;
 }
 
-interface UpdateVpcLinkResponse {
-  readonly CreatedDate: Date;
+export interface UpdateVpcLinkResponse {
+  readonly CreatedDate?: Date;
+  readonly Name?: string;
+  readonly SecurityGroupIds?: [];
+  readonly SubnetIds?: [];
+  readonly Tags?: {[key: string]: any};
+  readonly VpcLinkId?: string;
+  readonly VpcLinkStatus?: string;
+  readonly VpcLinkStatusMessage?: string;
+  readonly VpcLinkVersion?: string;
+}
+
+export interface VpcLink {
+  readonly CreatedDate?: Date;
   readonly Name: string;
   readonly SecurityGroupIds: [];
   readonly SubnetIds: [];
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
   readonly VpcLinkId: string;
-  readonly VpcLinkStatus: string;
-  readonly VpcLinkStatusMessage: string;
-  readonly VpcLinkVersion: string;
+  readonly VpcLinkStatus?: string;
+  readonly VpcLinkStatusMessage?: string;
+  readonly VpcLinkVersion?: string;
 }
 
-interface VpcLink {
-  readonly CreatedDate: Date;
-  readonly Name: string;
-  readonly SecurityGroupIds: [];
-  readonly SubnetIds: [];
-  readonly Tags: {[key: string]: any};
-  readonly VpcLinkId: string;
-  readonly VpcLinkStatus: string;
-  readonly VpcLinkStatusMessage: string;
-  readonly VpcLinkVersion: string;
+export interface VpcLinks {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface VpcLinks {
-  readonly Items: [];
-  readonly NextToken: string;
-}
 

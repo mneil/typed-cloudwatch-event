@@ -4,10 +4,12 @@
 export interface CancelJob {
   readonly jobArn: string;
 }
+
 export interface CancelQuantumTask {
   readonly clientToken: string;
   readonly quantumTaskArn: string;
 }
+
 export interface CreateJob {
   readonly algorithmSpecification: AlgorithmSpecification;
   readonly checkpointConfig?: JobCheckpointConfig;
@@ -22,6 +24,7 @@ export interface CreateJob {
   readonly stoppingCondition?: JobStoppingCondition;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateQuantumTask {
   readonly action: string;
   readonly clientToken: string;
@@ -33,132 +36,139 @@ export interface CreateQuantumTask {
   readonly shots: number;
   readonly tags?: {[key: string]: any};
 }
+
 export interface GetDevice {
   readonly deviceArn: string;
 }
+
 export interface GetJob {
   readonly jobArn: string;
 }
+
 export interface GetQuantumTask {
   readonly quantumTaskArn: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface SearchDevices {
   readonly filters: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface SearchJobs {
   readonly filters: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface SearchQuantumTasks {
   readonly filters: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-
-
-interface AccessDeniedException {
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly message?: string;
 }
 
-interface AlgorithmSpecification {
-  readonly containerImage: ContainerImage;
-  readonly scriptModeConfig: ScriptModeConfig;
+export interface AlgorithmSpecification {
+  readonly containerImage?: ContainerImage;
+  readonly scriptModeConfig?: ScriptModeConfig;
 }
 
-interface CancelJobRequest {
+export interface CancelJobRequest {
   readonly jobArn: string;
 }
 
-interface CancelJobResponse {
+export interface CancelJobResponse {
   readonly cancellationStatus: string;
   readonly jobArn: string;
 }
 
-interface CancelQuantumTaskRequest {
+export interface CancelQuantumTaskRequest {
   readonly clientToken: string;
   readonly quantumTaskArn: string;
 }
 
-interface CancelQuantumTaskResponse {
+export interface CancelQuantumTaskResponse {
   readonly cancellationStatus: string;
   readonly quantumTaskArn: string;
 }
 
-interface ConflictException {
-  readonly message: string;
+export interface ConflictException {
+  readonly message?: string;
 }
 
-interface ContainerImage {
+export interface ContainerImage {
   readonly uri: string;
 }
 
-interface CreateJobRequest {
+export interface CreateJobRequest {
   readonly algorithmSpecification: AlgorithmSpecification;
-  readonly checkpointConfig: JobCheckpointConfig;
+  readonly checkpointConfig?: JobCheckpointConfig;
   readonly clientToken: string;
   readonly deviceConfig: DeviceConfig;
-  readonly hyperParameters: {[key: string]: any};
-  readonly inputDataConfig: [];
+  readonly hyperParameters?: {[key: string]: any};
+  readonly inputDataConfig?: [];
   readonly instanceConfig: InstanceConfig;
   readonly jobName: string;
   readonly outputDataConfig: JobOutputDataConfig;
   readonly roleArn: string;
-  readonly stoppingCondition: JobStoppingCondition;
-  readonly tags: {[key: string]: any};
+  readonly stoppingCondition?: JobStoppingCondition;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateJobResponse {
+export interface CreateJobResponse {
   readonly jobArn: string;
 }
 
-interface CreateQuantumTaskRequest {
+export interface CreateQuantumTaskRequest {
   readonly action: string;
   readonly clientToken: string;
   readonly deviceArn: string;
-  readonly deviceParameters: string;
-  readonly jobToken: string;
+  readonly deviceParameters?: string;
+  readonly jobToken?: string;
   readonly outputS3Bucket: string;
   readonly outputS3KeyPrefix: string;
   readonly shots: number;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateQuantumTaskResponse {
+export interface CreateQuantumTaskResponse {
   readonly quantumTaskArn: string;
 }
 
-interface DataSource {
+export interface DataSource {
   readonly s3DataSource: S3DataSource;
 }
 
-interface DeviceConfig {
+export interface DeviceConfig {
   readonly device: string;
 }
 
-interface DeviceOfflineException {
-  readonly message: string;
+export interface DeviceOfflineException {
+  readonly message?: string;
 }
 
-interface DeviceRetiredException {
-  readonly message: string;
+export interface DeviceRetiredException {
+  readonly message?: string;
 }
 
-interface DeviceSummary {
+export interface DeviceSummary {
   readonly deviceArn: string;
   readonly deviceName: string;
   readonly deviceStatus: string;
@@ -166,11 +176,11 @@ interface DeviceSummary {
   readonly providerName: string;
 }
 
-interface GetDeviceRequest {
+export interface GetDeviceRequest {
   readonly deviceArn: string;
 }
 
-interface GetDeviceResponse {
+export interface GetDeviceResponse {
   readonly deviceArn: string;
   readonly deviceCapabilities: string;
   readonly deviceName: string;
@@ -179,206 +189,207 @@ interface GetDeviceResponse {
   readonly providerName: string;
 }
 
-interface GetJobRequest {
+export interface GetJobRequest {
   readonly jobArn: string;
 }
 
-interface GetJobResponse {
+export interface GetJobResponse {
   readonly algorithmSpecification: AlgorithmSpecification;
-  readonly billableDuration: number;
-  readonly checkpointConfig: JobCheckpointConfig;
+  readonly billableDuration?: number;
+  readonly checkpointConfig?: JobCheckpointConfig;
   readonly createdAt: Date;
-  readonly deviceConfig: DeviceConfig;
-  readonly endedAt: Date;
-  readonly events: [];
-  readonly failureReason: string;
-  readonly hyperParameters: {[key: string]: any};
-  readonly inputDataConfig: [];
+  readonly deviceConfig?: DeviceConfig;
+  readonly endedAt?: Date;
+  readonly events?: [];
+  readonly failureReason?: string;
+  readonly hyperParameters?: {[key: string]: any};
+  readonly inputDataConfig?: [];
   readonly instanceConfig: InstanceConfig;
   readonly jobArn: string;
   readonly jobName: string;
   readonly outputDataConfig: JobOutputDataConfig;
   readonly roleArn: string;
-  readonly startedAt: Date;
+  readonly startedAt?: Date;
   readonly status: string;
-  readonly stoppingCondition: JobStoppingCondition;
-  readonly tags: {[key: string]: any};
+  readonly stoppingCondition?: JobStoppingCondition;
+  readonly tags?: {[key: string]: any};
 }
 
-interface GetQuantumTaskRequest {
+export interface GetQuantumTaskRequest {
   readonly quantumTaskArn: string;
 }
 
-interface GetQuantumTaskResponse {
+export interface GetQuantumTaskResponse {
   readonly createdAt: Date;
   readonly deviceArn: string;
   readonly deviceParameters: string;
-  readonly endedAt: Date;
-  readonly failureReason: string;
-  readonly jobArn: string;
+  readonly endedAt?: Date;
+  readonly failureReason?: string;
+  readonly jobArn?: string;
   readonly outputS3Bucket: string;
   readonly outputS3Directory: string;
   readonly quantumTaskArn: string;
   readonly shots: number;
   readonly status: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface InputFileConfig {
+export interface InputFileConfig {
   readonly channelName: string;
-  readonly contentType: string;
+  readonly contentType?: string;
   readonly dataSource: DataSource;
 }
 
-interface InstanceConfig {
+export interface InstanceConfig {
   readonly instanceType: string;
   readonly volumeSizeInGb: number;
 }
 
-interface InternalServiceException {
-  readonly message: string;
+export interface InternalServiceException {
+  readonly message?: string;
 }
 
-interface JobCheckpointConfig {
-  readonly localPath: string;
+export interface JobCheckpointConfig {
+  readonly localPath?: string;
   readonly s3Uri: string;
 }
 
-interface JobEventDetails {
-  readonly eventType: string;
-  readonly message: string;
-  readonly timeOfEvent: Date;
+export interface JobEventDetails {
+  readonly eventType?: string;
+  readonly message?: string;
+  readonly timeOfEvent?: Date;
 }
 
-interface JobOutputDataConfig {
-  readonly kmsKeyId: string;
+export interface JobOutputDataConfig {
+  readonly kmsKeyId?: string;
   readonly s3Path: string;
 }
 
-interface JobStoppingCondition {
-  readonly maxRuntimeInSeconds: number;
+export interface JobStoppingCondition {
+  readonly maxRuntimeInSeconds?: number;
 }
 
-interface JobSummary {
+export interface JobSummary {
   readonly createdAt: Date;
   readonly device: string;
-  readonly endedAt: Date;
+  readonly endedAt?: Date;
   readonly jobArn: string;
   readonly jobName: string;
-  readonly startedAt: Date;
+  readonly startedAt?: Date;
   readonly status: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface QuantumTaskSummary {
+export interface QuantumTaskSummary {
   readonly createdAt: Date;
   readonly deviceArn: string;
-  readonly endedAt: Date;
+  readonly endedAt?: Date;
   readonly outputS3Bucket: string;
   readonly outputS3Directory: string;
   readonly quantumTaskArn: string;
   readonly shots: number;
   readonly status: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface S3DataSource {
+export interface S3DataSource {
   readonly s3Uri: string;
 }
 
-interface ScriptModeConfig {
-  readonly compressionType: string;
+export interface ScriptModeConfig {
+  readonly compressionType?: string;
   readonly entryPoint: string;
   readonly s3Uri: string;
 }
 
-interface SearchDevicesFilter {
+export interface SearchDevicesFilter {
   readonly name: string;
   readonly values: [];
 }
 
-interface SearchDevicesRequest {
+export interface SearchDevicesRequest {
   readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface SearchDevicesResponse {
+export interface SearchDevicesResponse {
   readonly devices: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface SearchJobsFilter {
+export interface SearchJobsFilter {
   readonly name: string;
   readonly operator: string;
   readonly values: [];
 }
 
-interface SearchJobsRequest {
+export interface SearchJobsRequest {
   readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface SearchJobsResponse {
+export interface SearchJobsResponse {
   readonly jobs: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface SearchQuantumTasksFilter {
+export interface SearchQuantumTasksFilter {
   readonly name: string;
   readonly operator: string;
   readonly values: [];
 }
 
-interface SearchQuantumTasksRequest {
+export interface SearchQuantumTasksRequest {
   readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface SearchQuantumTasksResponse {
-  readonly nextToken: string;
+export interface SearchQuantumTasksResponse {
+  readonly nextToken?: string;
   readonly quantumTasks: [];
 }
 
-interface ServiceQuotaExceededException {
-  readonly message: string;
+export interface ServiceQuotaExceededException {
+  readonly message?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
-  readonly message: string;
+export interface ThrottlingException {
+  readonly message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface ValidationException {
-  readonly message: string;
+export interface ValidationException {
+  readonly message?: string;
 }
+
 

@@ -7,76 +7,91 @@ export interface AssociateCreatedArtifact {
   readonly CreatedArtifact: CreatedArtifact;
   readonly DryRun?: boolean;
 }
+
 export interface AssociateDiscoveredResource {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly DiscoveredResource: DiscoveredResource;
   readonly DryRun?: boolean;
 }
+
 export interface CreateProgressUpdateStream {
   readonly ProgressUpdateStreamName: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteProgressUpdateStream {
   readonly ProgressUpdateStreamName: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeApplicationState {
   readonly ApplicationId: string;
 }
+
 export interface DescribeMigrationTask {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
 }
+
 export interface DisassociateCreatedArtifact {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly CreatedArtifactName: string;
   readonly DryRun?: boolean;
 }
+
 export interface DisassociateDiscoveredResource {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly ConfigurationId: string;
   readonly DryRun?: boolean;
 }
+
 export interface ImportMigrationTask {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly DryRun?: boolean;
 }
+
 export interface ListApplicationStates {
   readonly ApplicationIds?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListCreatedArtifacts {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDiscoveredResources {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListMigrationTasks {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly ResourceName?: string;
 }
+
 export interface ListProgressUpdateStreams {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface NotifyApplicationState {
   readonly ApplicationId: string;
   readonly Status: string;
   readonly UpdateDateTime?: Date;
   readonly DryRun?: boolean;
 }
+
 export interface NotifyMigrationTaskState {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
@@ -85,6 +100,7 @@ export interface NotifyMigrationTaskState {
   readonly NextUpdateSeconds: number;
   readonly DryRun?: boolean;
 }
+
 export interface PutResourceAttributes {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
@@ -92,265 +108,264 @@ export interface PutResourceAttributes {
   readonly DryRun?: boolean;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface ApplicationState {
-  readonly ApplicationId: string;
-  readonly ApplicationStatus: string;
-  readonly LastUpdatedTime: Date;
+export interface ApplicationState {
+  readonly ApplicationId?: string;
+  readonly ApplicationStatus?: string;
+  readonly LastUpdatedTime?: Date;
 }
 
-interface AssociateCreatedArtifactRequest {
+export interface AssociateCreatedArtifactRequest {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly CreatedArtifact: CreatedArtifact;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface AssociateCreatedArtifactResult {
+export interface AssociateCreatedArtifactResult {
 }
 
-interface AssociateDiscoveredResourceRequest {
+export interface AssociateDiscoveredResourceRequest {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly DiscoveredResource: DiscoveredResource;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface AssociateDiscoveredResourceResult {
+export interface AssociateDiscoveredResourceResult {
 }
 
-interface CreateProgressUpdateStreamRequest {
+export interface CreateProgressUpdateStreamRequest {
   readonly ProgressUpdateStreamName: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface CreateProgressUpdateStreamResult {
+export interface CreateProgressUpdateStreamResult {
 }
 
-interface CreatedArtifact {
+export interface CreatedArtifact {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 
-interface DeleteProgressUpdateStreamRequest {
+export interface DeleteProgressUpdateStreamRequest {
   readonly ProgressUpdateStreamName: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteProgressUpdateStreamResult {
+export interface DeleteProgressUpdateStreamResult {
 }
 
-interface DescribeApplicationStateRequest {
+export interface DescribeApplicationStateRequest {
   readonly ApplicationId: string;
 }
 
-interface DescribeApplicationStateResult {
-  readonly ApplicationStatus: string;
-  readonly LastUpdatedTime: Date;
+export interface DescribeApplicationStateResult {
+  readonly ApplicationStatus?: string;
+  readonly LastUpdatedTime?: Date;
 }
 
-interface DescribeMigrationTaskRequest {
+export interface DescribeMigrationTaskRequest {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
 }
 
-interface DescribeMigrationTaskResult {
-  readonly MigrationTask: MigrationTask;
+export interface DescribeMigrationTaskResult {
+  readonly MigrationTask?: MigrationTask;
 }
 
-interface DisassociateCreatedArtifactRequest {
+export interface DisassociateCreatedArtifactRequest {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly CreatedArtifactName: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DisassociateCreatedArtifactResult {
+export interface DisassociateCreatedArtifactResult {
 }
 
-interface DisassociateDiscoveredResourceRequest {
+export interface DisassociateDiscoveredResourceRequest {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly ConfigurationId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DisassociateDiscoveredResourceResult {
+export interface DisassociateDiscoveredResourceResult {
 }
 
-interface DiscoveredResource {
+export interface DiscoveredResource {
   readonly ConfigurationId: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 
-interface DryRunOperation {
-  readonly Message: string;
+export interface DryRunOperation {
+  readonly Message?: string;
 }
 
-interface HomeRegionNotSetException {
-  readonly Message: string;
+export interface HomeRegionNotSetException {
+  readonly Message?: string;
 }
 
-interface ImportMigrationTaskRequest {
+export interface ImportMigrationTaskRequest {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ImportMigrationTaskResult {
+export interface ImportMigrationTaskResult {
 }
 
-interface InternalServerError {
-  readonly Message: string;
+export interface InternalServerError {
+  readonly Message?: string;
 }
 
-interface InvalidInputException {
-  readonly Message: string;
+export interface InvalidInputException {
+  readonly Message?: string;
 }
 
-interface ListApplicationStatesRequest {
-  readonly ApplicationIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListApplicationStatesRequest {
+  readonly ApplicationIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListApplicationStatesResult {
-  readonly ApplicationStateList: [];
-  readonly NextToken: string;
+export interface ListApplicationStatesResult {
+  readonly ApplicationStateList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCreatedArtifactsRequest {
+export interface ListCreatedArtifactsRequest {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListCreatedArtifactsResult {
-  readonly NextToken: string;
-  readonly CreatedArtifactList: [];
+export interface ListCreatedArtifactsResult {
+  readonly NextToken?: string;
+  readonly CreatedArtifactList?: [];
 }
 
-interface ListDiscoveredResourcesRequest {
+export interface ListDiscoveredResourcesRequest {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDiscoveredResourcesResult {
-  readonly NextToken: string;
-  readonly DiscoveredResourceList: [];
+export interface ListDiscoveredResourcesResult {
+  readonly NextToken?: string;
+  readonly DiscoveredResourceList?: [];
 }
 
-interface ListMigrationTasksRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ResourceName: string;
+export interface ListMigrationTasksRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ResourceName?: string;
 }
 
-interface ListMigrationTasksResult {
-  readonly NextToken: string;
-  readonly MigrationTaskSummaryList: [];
+export interface ListMigrationTasksResult {
+  readonly NextToken?: string;
+  readonly MigrationTaskSummaryList?: [];
 }
 
-interface ListProgressUpdateStreamsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListProgressUpdateStreamsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListProgressUpdateStreamsResult {
-  readonly ProgressUpdateStreamSummaryList: [];
-  readonly NextToken: string;
+export interface ListProgressUpdateStreamsResult {
+  readonly ProgressUpdateStreamSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface MigrationTask {
-  readonly ProgressUpdateStream: string;
-  readonly MigrationTaskName: string;
-  readonly Task: Task;
-  readonly UpdateDateTime: Date;
-  readonly ResourceAttributeList: [];
+export interface MigrationTask {
+  readonly ProgressUpdateStream?: string;
+  readonly MigrationTaskName?: string;
+  readonly Task?: Task;
+  readonly UpdateDateTime?: Date;
+  readonly ResourceAttributeList?: [];
 }
 
-interface MigrationTaskSummary {
-  readonly ProgressUpdateStream: string;
-  readonly MigrationTaskName: string;
-  readonly Status: string;
-  readonly ProgressPercent: number;
-  readonly StatusDetail: string;
-  readonly UpdateDateTime: Date;
+export interface MigrationTaskSummary {
+  readonly ProgressUpdateStream?: string;
+  readonly MigrationTaskName?: string;
+  readonly Status?: string;
+  readonly ProgressPercent?: number;
+  readonly StatusDetail?: string;
+  readonly UpdateDateTime?: Date;
 }
 
-interface NotifyApplicationStateRequest {
+export interface NotifyApplicationStateRequest {
   readonly ApplicationId: string;
   readonly Status: string;
-  readonly UpdateDateTime: Date;
-  readonly DryRun: boolean;
+  readonly UpdateDateTime?: Date;
+  readonly DryRun?: boolean;
 }
 
-interface NotifyApplicationStateResult {
+export interface NotifyApplicationStateResult {
 }
 
-interface NotifyMigrationTaskStateRequest {
+export interface NotifyMigrationTaskStateRequest {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly Task: Task;
   readonly UpdateDateTime: Date;
   readonly NextUpdateSeconds: number;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface NotifyMigrationTaskStateResult {
+export interface NotifyMigrationTaskStateResult {
 }
 
-interface PolicyErrorException {
-  readonly Message: string;
+export interface PolicyErrorException {
+  readonly Message?: string;
 }
 
-interface ProgressUpdateStreamSummary {
-  readonly ProgressUpdateStreamName: string;
+export interface ProgressUpdateStreamSummary {
+  readonly ProgressUpdateStreamName?: string;
 }
 
-interface PutResourceAttributesRequest {
+export interface PutResourceAttributesRequest {
   readonly ProgressUpdateStream: string;
   readonly MigrationTaskName: string;
   readonly ResourceAttributeList: [];
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface PutResourceAttributesResult {
+export interface PutResourceAttributesResult {
 }
 
-interface ResourceAttribute {
+export interface ResourceAttribute {
   readonly Type: string;
   readonly Value: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface ServiceUnavailableException {
-  readonly Message: string;
+export interface ServiceUnavailableException {
+  readonly Message?: string;
 }
 
-interface Task {
+export interface Task {
   readonly Status: string;
-  readonly StatusDetail: string;
-  readonly ProgressPercent: number;
+  readonly StatusDetail?: string;
+  readonly ProgressPercent?: number;
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly Message: string;
-  readonly RetryAfterSeconds: number;
+  readonly RetryAfterSeconds?: number;
 }
 
-interface UnauthorizedOperation {
-  readonly Message: string;
+export interface UnauthorizedOperation {
+  readonly Message?: string;
 }
+
 

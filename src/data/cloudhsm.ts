@@ -5,9 +5,11 @@ export interface AddTagsToResource {
   readonly ResourceArn: string;
   readonly TagList: [];
 }
+
 export interface CreateHapg {
   readonly Label: string;
 }
+
 export interface CreateHsm {
   readonly SubnetId: string;
   readonly SshKey: string;
@@ -18,54 +20,69 @@ export interface CreateHsm {
   readonly ClientToken?: string;
   readonly SyslogIp?: string;
 }
+
 export interface CreateLunaClient {
   readonly Label?: string;
   readonly Certificate: string;
 }
+
 export interface DeleteHapg {
   readonly HapgArn: string;
 }
+
 export interface DeleteHsm {
   readonly HsmArn: string;
 }
+
 export interface DeleteLunaClient {
   readonly ClientArn: string;
 }
+
 export interface DescribeHapg {
   readonly HapgArn: string;
 }
+
 export interface DescribeHsm {
   readonly HsmArn?: string;
   readonly HsmSerialNumber?: string;
 }
+
 export interface DescribeLunaClient {
   readonly ClientArn?: string;
   readonly CertificateFingerprint?: string;
 }
+
 export interface GetConfig {
   readonly ClientArn: string;
   readonly ClientVersion: string;
   readonly HapgList: [];
 }
+
 export interface ListAvailableZones {
 }
+
 export interface ListHapgs {
   readonly NextToken?: string;
 }
+
 export interface ListHsms {
   readonly NextToken?: string;
 }
+
 export interface ListLunaClients {
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface ModifyHapg {
   readonly HapgArn: string;
   readonly Label?: string;
   readonly PartitionSerialList?: [];
 }
+
 export interface ModifyHsm {
   readonly HsmArn: string;
   readonly SubnetId?: string;
@@ -74,248 +91,249 @@ export interface ModifyHsm {
   readonly ExternalId?: string;
   readonly SyslogIp?: string;
 }
+
 export interface ModifyLunaClient {
   readonly ClientArn: string;
   readonly Certificate: string;
 }
+
 export interface RemoveTagsFromResource {
   readonly ResourceArn: string;
   readonly TagKeyList: [];
 }
 
-
-
-interface AddTagsToResourceRequest {
+export interface AddTagsToResourceRequest {
   readonly ResourceArn: string;
   readonly TagList: [];
 }
 
-interface AddTagsToResourceResponse {
+export interface AddTagsToResourceResponse {
   readonly Status: string;
 }
 
-interface CloudHsmInternalException {
+export interface CloudHsmInternalException {
 }
 
-interface CloudHsmServiceException {
-  readonly message: string;
-  readonly retryable: boolean;
+export interface CloudHsmServiceException {
+  readonly message?: string;
+  readonly retryable?: boolean;
 }
 
-interface CreateHapgRequest {
+export interface CreateHapgRequest {
   readonly Label: string;
 }
 
-interface CreateHapgResponse {
-  readonly HapgArn: string;
+export interface CreateHapgResponse {
+  readonly HapgArn?: string;
 }
 
-interface CreateHsmRequest {
+export interface CreateHsmRequest {
   readonly SubnetId: string;
   readonly SshKey: string;
-  readonly EniIp: string;
+  readonly EniIp?: string;
   readonly IamRoleArn: string;
-  readonly ExternalId: string;
+  readonly ExternalId?: string;
   readonly SubscriptionType: string;
-  readonly ClientToken: string;
-  readonly SyslogIp: string;
+  readonly ClientToken?: string;
+  readonly SyslogIp?: string;
 }
 
-interface CreateHsmResponse {
-  readonly HsmArn: string;
+export interface CreateHsmResponse {
+  readonly HsmArn?: string;
 }
 
-interface CreateLunaClientRequest {
-  readonly Label: string;
+export interface CreateLunaClientRequest {
+  readonly Label?: string;
   readonly Certificate: string;
 }
 
-interface CreateLunaClientResponse {
-  readonly ClientArn: string;
+export interface CreateLunaClientResponse {
+  readonly ClientArn?: string;
 }
 
-interface DeleteHapgRequest {
+export interface DeleteHapgRequest {
   readonly HapgArn: string;
 }
 
-interface DeleteHapgResponse {
+export interface DeleteHapgResponse {
   readonly Status: string;
 }
 
-interface DeleteHsmRequest {
+export interface DeleteHsmRequest {
   readonly HsmArn: string;
 }
 
-interface DeleteHsmResponse {
+export interface DeleteHsmResponse {
   readonly Status: string;
 }
 
-interface DeleteLunaClientRequest {
+export interface DeleteLunaClientRequest {
   readonly ClientArn: string;
 }
 
-interface DeleteLunaClientResponse {
+export interface DeleteLunaClientResponse {
   readonly Status: string;
 }
 
-interface DescribeHapgRequest {
+export interface DescribeHapgRequest {
   readonly HapgArn: string;
 }
 
-interface DescribeHapgResponse {
-  readonly HapgArn: string;
-  readonly HapgSerial: string;
-  readonly HsmsLastActionFailed: [];
-  readonly HsmsPendingDeletion: [];
-  readonly HsmsPendingRegistration: [];
-  readonly Label: string;
-  readonly LastModifiedTimestamp: string;
-  readonly PartitionSerialList: [];
-  readonly State: string;
+export interface DescribeHapgResponse {
+  readonly HapgArn?: string;
+  readonly HapgSerial?: string;
+  readonly HsmsLastActionFailed?: [];
+  readonly HsmsPendingDeletion?: [];
+  readonly HsmsPendingRegistration?: [];
+  readonly Label?: string;
+  readonly LastModifiedTimestamp?: string;
+  readonly PartitionSerialList?: [];
+  readonly State?: string;
 }
 
-interface DescribeHsmRequest {
-  readonly HsmArn: string;
-  readonly HsmSerialNumber: string;
+export interface DescribeHsmRequest {
+  readonly HsmArn?: string;
+  readonly HsmSerialNumber?: string;
 }
 
-interface DescribeHsmResponse {
-  readonly HsmArn: string;
-  readonly Status: string;
-  readonly StatusDetails: string;
-  readonly AvailabilityZone: string;
-  readonly EniId: string;
-  readonly EniIp: string;
-  readonly SubscriptionType: string;
-  readonly SubscriptionStartDate: string;
-  readonly SubscriptionEndDate: string;
-  readonly VpcId: string;
-  readonly SubnetId: string;
-  readonly IamRoleArn: string;
-  readonly SerialNumber: string;
-  readonly VendorName: string;
-  readonly HsmType: string;
-  readonly SoftwareVersion: string;
-  readonly SshPublicKey: string;
-  readonly SshKeyLastUpdated: string;
-  readonly ServerCertUri: string;
-  readonly ServerCertLastUpdated: string;
-  readonly Partitions: [];
+export interface DescribeHsmResponse {
+  readonly HsmArn?: string;
+  readonly Status?: string;
+  readonly StatusDetails?: string;
+  readonly AvailabilityZone?: string;
+  readonly EniId?: string;
+  readonly EniIp?: string;
+  readonly SubscriptionType?: string;
+  readonly SubscriptionStartDate?: string;
+  readonly SubscriptionEndDate?: string;
+  readonly VpcId?: string;
+  readonly SubnetId?: string;
+  readonly IamRoleArn?: string;
+  readonly SerialNumber?: string;
+  readonly VendorName?: string;
+  readonly HsmType?: string;
+  readonly SoftwareVersion?: string;
+  readonly SshPublicKey?: string;
+  readonly SshKeyLastUpdated?: string;
+  readonly ServerCertUri?: string;
+  readonly ServerCertLastUpdated?: string;
+  readonly Partitions?: [];
 }
 
-interface DescribeLunaClientRequest {
-  readonly ClientArn: string;
-  readonly CertificateFingerprint: string;
+export interface DescribeLunaClientRequest {
+  readonly ClientArn?: string;
+  readonly CertificateFingerprint?: string;
 }
 
-interface DescribeLunaClientResponse {
-  readonly ClientArn: string;
-  readonly Certificate: string;
-  readonly CertificateFingerprint: string;
-  readonly LastModifiedTimestamp: string;
-  readonly Label: string;
+export interface DescribeLunaClientResponse {
+  readonly ClientArn?: string;
+  readonly Certificate?: string;
+  readonly CertificateFingerprint?: string;
+  readonly LastModifiedTimestamp?: string;
+  readonly Label?: string;
 }
 
-interface GetConfigRequest {
+export interface GetConfigRequest {
   readonly ClientArn: string;
   readonly ClientVersion: string;
   readonly HapgList: [];
 }
 
-interface GetConfigResponse {
-  readonly ConfigType: string;
-  readonly ConfigFile: string;
-  readonly ConfigCred: string;
+export interface GetConfigResponse {
+  readonly ConfigType?: string;
+  readonly ConfigFile?: string;
+  readonly ConfigCred?: string;
 }
 
-interface InvalidRequestException {
+export interface InvalidRequestException {
 }
 
-interface ListAvailableZonesRequest {
+export interface ListAvailableZonesRequest {
 }
 
-interface ListAvailableZonesResponse {
-  readonly AZList: [];
+export interface ListAvailableZonesResponse {
+  readonly AZList?: [];
 }
 
-interface ListHapgsRequest {
-  readonly NextToken: string;
+export interface ListHapgsRequest {
+  readonly NextToken?: string;
 }
 
-interface ListHapgsResponse {
+export interface ListHapgsResponse {
   readonly HapgList: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListHsmsRequest {
-  readonly NextToken: string;
+export interface ListHsmsRequest {
+  readonly NextToken?: string;
 }
 
-interface ListHsmsResponse {
-  readonly HsmList: [];
-  readonly NextToken: string;
+export interface ListHsmsResponse {
+  readonly HsmList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListLunaClientsRequest {
-  readonly NextToken: string;
+export interface ListLunaClientsRequest {
+  readonly NextToken?: string;
 }
 
-interface ListLunaClientsResponse {
+export interface ListLunaClientsResponse {
   readonly ClientList: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
+export interface ListTagsForResourceResponse {
   readonly TagList: [];
 }
 
-interface ModifyHapgRequest {
+export interface ModifyHapgRequest {
   readonly HapgArn: string;
-  readonly Label: string;
-  readonly PartitionSerialList: [];
+  readonly Label?: string;
+  readonly PartitionSerialList?: [];
 }
 
-interface ModifyHapgResponse {
-  readonly HapgArn: string;
+export interface ModifyHapgResponse {
+  readonly HapgArn?: string;
 }
 
-interface ModifyHsmRequest {
+export interface ModifyHsmRequest {
   readonly HsmArn: string;
-  readonly SubnetId: string;
-  readonly EniIp: string;
-  readonly IamRoleArn: string;
-  readonly ExternalId: string;
-  readonly SyslogIp: string;
+  readonly SubnetId?: string;
+  readonly EniIp?: string;
+  readonly IamRoleArn?: string;
+  readonly ExternalId?: string;
+  readonly SyslogIp?: string;
 }
 
-interface ModifyHsmResponse {
-  readonly HsmArn: string;
+export interface ModifyHsmResponse {
+  readonly HsmArn?: string;
 }
 
-interface ModifyLunaClientRequest {
+export interface ModifyLunaClientRequest {
   readonly ClientArn: string;
   readonly Certificate: string;
 }
 
-interface ModifyLunaClientResponse {
-  readonly ClientArn: string;
+export interface ModifyLunaClientResponse {
+  readonly ClientArn?: string;
 }
 
-interface RemoveTagsFromResourceRequest {
+export interface RemoveTagsFromResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeyList: [];
 }
 
-interface RemoveTagsFromResourceResponse {
+export interface RemoveTagsFromResourceResponse {
   readonly Status: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
+
 

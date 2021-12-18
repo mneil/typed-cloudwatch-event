@@ -4,88 +4,108 @@
 export interface CancelJob {
   readonly JobId: string;
 }
+
 export interface CreateDataSet {
   readonly AssetType: string;
   readonly Description: string;
   readonly Name: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateEventAction {
   readonly Action: Action;
   readonly Event: Event;
 }
+
 export interface CreateJob {
   readonly Details: RequestDetails;
   readonly Type: string;
 }
+
 export interface CreateRevision {
   readonly Comment?: string;
   readonly DataSetId: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface DeleteAsset {
   readonly AssetId: string;
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
+
 export interface DeleteDataSet {
   readonly DataSetId: string;
 }
+
 export interface DeleteEventAction {
   readonly EventActionId: string;
 }
+
 export interface DeleteRevision {
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
+
 export interface GetAsset {
   readonly AssetId: string;
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
+
 export interface GetDataSet {
   readonly DataSetId: string;
 }
+
 export interface GetEventAction {
   readonly EventActionId: string;
 }
+
 export interface GetJob {
   readonly JobId: string;
 }
+
 export interface GetRevision {
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
+
 export interface ListDataSetRevisions {
   readonly DataSetId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListDataSets {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly Origin?: string;
 }
+
 export interface ListEventActions {
   readonly EventSourceId?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListJobs {
   readonly DataSetId?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly RevisionId?: string;
 }
+
 export interface ListRevisionAssets {
   readonly DataSetId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly RevisionId: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface SendApiAsset {
   readonly Body?: string;
   readonly QueryStringParameters?: {[key: string]: any};
@@ -96,32 +116,39 @@ export interface SendApiAsset {
   readonly Path?: string;
   readonly RevisionId: string;
 }
+
 export interface StartJob {
   readonly JobId: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateAsset {
   readonly AssetId: string;
   readonly DataSetId: string;
   readonly Name: string;
   readonly RevisionId: string;
 }
+
 export interface UpdateDataSet {
   readonly DataSetId: string;
   readonly Description?: string;
   readonly Name?: string;
 }
+
 export interface UpdateEventAction {
   readonly Action?: Action;
   readonly EventActionId: string;
 }
+
 export interface UpdateRevision {
   readonly Comment?: string;
   readonly DataSetId: string;
@@ -129,41 +156,39 @@ export interface UpdateRevision {
   readonly RevisionId: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly Message: string;
 }
 
-interface Action {
-  readonly ExportRevisionToS3: AutoExportRevisionToS3RequestDetails;
+export interface Action {
+  readonly ExportRevisionToS3?: AutoExportRevisionToS3RequestDetails;
 }
 
-interface ApiGatewayApiAsset {
-  readonly ApiDescription: string;
-  readonly ApiEndpoint: string;
-  readonly ApiId: string;
-  readonly ApiKey: string;
-  readonly ApiName: string;
-  readonly ApiSpecificationDownloadUrl: string;
-  readonly ApiSpecificationDownloadUrlExpiresAt: Date;
-  readonly ProtocolType: string;
-  readonly Stage: string;
+export interface ApiGatewayApiAsset {
+  readonly ApiDescription?: string;
+  readonly ApiEndpoint?: string;
+  readonly ApiId?: string;
+  readonly ApiKey?: string;
+  readonly ApiName?: string;
+  readonly ApiSpecificationDownloadUrl?: string;
+  readonly ApiSpecificationDownloadUrlExpiresAt?: Date;
+  readonly ProtocolType?: string;
+  readonly Stage?: string;
 }
 
-interface AssetDestinationEntry {
+export interface AssetDestinationEntry {
   readonly AssetId: string;
   readonly Bucket: string;
-  readonly Key: string;
+  readonly Key?: string;
 }
 
-interface AssetDetails {
-  readonly S3SnapshotAsset: S3SnapshotAsset;
-  readonly RedshiftDataShareAsset: RedshiftDataShareAsset;
-  readonly ApiGatewayApiAsset: ApiGatewayApiAsset;
+export interface AssetDetails {
+  readonly S3SnapshotAsset?: S3SnapshotAsset;
+  readonly RedshiftDataShareAsset?: RedshiftDataShareAsset;
+  readonly ApiGatewayApiAsset?: ApiGatewayApiAsset;
 }
 
-interface AssetEntry {
+export interface AssetEntry {
   readonly Arn: string;
   readonly AssetDetails: AssetDetails;
   readonly AssetType: string;
@@ -172,105 +197,105 @@ interface AssetEntry {
   readonly Id: string;
   readonly Name: string;
   readonly RevisionId: string;
-  readonly SourceId: string;
+  readonly SourceId?: string;
   readonly UpdatedAt: Date;
 }
 
-interface AssetSourceEntry {
+export interface AssetSourceEntry {
   readonly Bucket: string;
   readonly Key: string;
 }
 
-interface AutoExportRevisionDestinationEntry {
+export interface AutoExportRevisionDestinationEntry {
   readonly Bucket: string;
-  readonly KeyPattern: string;
+  readonly KeyPattern?: string;
 }
 
-interface AutoExportRevisionToS3RequestDetails {
-  readonly Encryption: ExportServerSideEncryption;
+export interface AutoExportRevisionToS3RequestDetails {
+  readonly Encryption?: ExportServerSideEncryption;
   readonly RevisionDestination: AutoExportRevisionDestinationEntry;
 }
 
-interface CancelJobRequest {
+export interface CancelJobRequest {
   readonly JobId: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly Message: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
 }
 
-interface CreateDataSetRequest {
+export interface CreateDataSetRequest {
   readonly AssetType: string;
   readonly Description: string;
   readonly Name: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateDataSetResponse {
-  readonly Arn: string;
-  readonly AssetType: string;
-  readonly CreatedAt: Date;
-  readonly Description: string;
-  readonly Id: string;
-  readonly Name: string;
-  readonly Origin: string;
-  readonly OriginDetails: OriginDetails;
-  readonly SourceId: string;
-  readonly Tags: {[key: string]: any};
-  readonly UpdatedAt: Date;
+export interface CreateDataSetResponse {
+  readonly Arn?: string;
+  readonly AssetType?: string;
+  readonly CreatedAt?: Date;
+  readonly Description?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Origin?: string;
+  readonly OriginDetails?: OriginDetails;
+  readonly SourceId?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly UpdatedAt?: Date;
 }
 
-interface CreateEventActionRequest {
+export interface CreateEventActionRequest {
   readonly Action: Action;
   readonly Event: Event;
 }
 
-interface CreateEventActionResponse {
-  readonly Action: Action;
-  readonly Arn: string;
-  readonly CreatedAt: Date;
-  readonly Event: Event;
-  readonly Id: string;
-  readonly UpdatedAt: Date;
+export interface CreateEventActionResponse {
+  readonly Action?: Action;
+  readonly Arn?: string;
+  readonly CreatedAt?: Date;
+  readonly Event?: Event;
+  readonly Id?: string;
+  readonly UpdatedAt?: Date;
 }
 
-interface CreateJobRequest {
+export interface CreateJobRequest {
   readonly Details: RequestDetails;
   readonly Type: string;
 }
 
-interface CreateJobResponse {
-  readonly Arn: string;
-  readonly CreatedAt: Date;
-  readonly Details: ResponseDetails;
-  readonly Errors: [];
-  readonly Id: string;
-  readonly State: string;
-  readonly Type: string;
-  readonly UpdatedAt: Date;
+export interface CreateJobResponse {
+  readonly Arn?: string;
+  readonly CreatedAt?: Date;
+  readonly Details?: ResponseDetails;
+  readonly Errors?: [];
+  readonly Id?: string;
+  readonly State?: string;
+  readonly Type?: string;
+  readonly UpdatedAt?: Date;
 }
 
-interface CreateRevisionRequest {
-  readonly Comment: string;
+export interface CreateRevisionRequest {
+  readonly Comment?: string;
   readonly DataSetId: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateRevisionResponse {
-  readonly Arn: string;
-  readonly Comment: string;
-  readonly CreatedAt: Date;
-  readonly DataSetId: string;
-  readonly Finalized: boolean;
-  readonly Id: string;
-  readonly SourceId: string;
-  readonly Tags: {[key: string]: any};
-  readonly UpdatedAt: Date;
+export interface CreateRevisionResponse {
+  readonly Arn?: string;
+  readonly Comment?: string;
+  readonly CreatedAt?: Date;
+  readonly DataSetId?: string;
+  readonly Finalized?: boolean;
+  readonly Id?: string;
+  readonly SourceId?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly UpdatedAt?: Date;
 }
 
-interface DataSetEntry {
+export interface DataSetEntry {
   readonly Arn: string;
   readonly AssetType: string;
   readonly CreatedAt: Date;
@@ -278,40 +303,40 @@ interface DataSetEntry {
   readonly Id: string;
   readonly Name: string;
   readonly Origin: string;
-  readonly OriginDetails: OriginDetails;
-  readonly SourceId: string;
+  readonly OriginDetails?: OriginDetails;
+  readonly SourceId?: string;
   readonly UpdatedAt: Date;
 }
 
-interface DeleteAssetRequest {
+export interface DeleteAssetRequest {
   readonly AssetId: string;
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
 
-interface DeleteDataSetRequest {
+export interface DeleteDataSetRequest {
   readonly DataSetId: string;
 }
 
-interface DeleteEventActionRequest {
+export interface DeleteEventActionRequest {
   readonly EventActionId: string;
 }
 
-interface DeleteRevisionRequest {
+export interface DeleteRevisionRequest {
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
 
-interface Details {
-  readonly ImportAssetFromSignedUrlJobErrorDetails: ImportAssetFromSignedUrlJobErrorDetails;
-  readonly ImportAssetsFromS3JobErrorDetails: [];
+export interface Details {
+  readonly ImportAssetFromSignedUrlJobErrorDetails?: ImportAssetFromSignedUrlJobErrorDetails;
+  readonly ImportAssetsFromS3JobErrorDetails?: [];
 }
 
-interface Event {
-  readonly RevisionPublished: RevisionPublished;
+export interface Event {
+  readonly RevisionPublished?: RevisionPublished;
 }
 
-interface EventActionEntry {
+export interface EventActionEntry {
   readonly Action: Action;
   readonly Arn: string;
   readonly CreatedAt: Date;
@@ -320,138 +345,138 @@ interface EventActionEntry {
   readonly UpdatedAt: Date;
 }
 
-interface ExportAssetToSignedUrlRequestDetails {
+export interface ExportAssetToSignedUrlRequestDetails {
   readonly AssetId: string;
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
 
-interface ExportAssetToSignedUrlResponseDetails {
+export interface ExportAssetToSignedUrlResponseDetails {
   readonly AssetId: string;
   readonly DataSetId: string;
   readonly RevisionId: string;
-  readonly SignedUrl: string;
-  readonly SignedUrlExpiresAt: Date;
+  readonly SignedUrl?: string;
+  readonly SignedUrlExpiresAt?: Date;
 }
 
-interface ExportAssetsToS3RequestDetails {
+export interface ExportAssetsToS3RequestDetails {
   readonly AssetDestinations: [];
   readonly DataSetId: string;
-  readonly Encryption: ExportServerSideEncryption;
+  readonly Encryption?: ExportServerSideEncryption;
   readonly RevisionId: string;
 }
 
-interface ExportAssetsToS3ResponseDetails {
+export interface ExportAssetsToS3ResponseDetails {
   readonly AssetDestinations: [];
   readonly DataSetId: string;
-  readonly Encryption: ExportServerSideEncryption;
+  readonly Encryption?: ExportServerSideEncryption;
   readonly RevisionId: string;
 }
 
-interface ExportRevisionsToS3RequestDetails {
+export interface ExportRevisionsToS3RequestDetails {
   readonly DataSetId: string;
-  readonly Encryption: ExportServerSideEncryption;
+  readonly Encryption?: ExportServerSideEncryption;
   readonly RevisionDestinations: [];
 }
 
-interface ExportRevisionsToS3ResponseDetails {
+export interface ExportRevisionsToS3ResponseDetails {
   readonly DataSetId: string;
-  readonly Encryption: ExportServerSideEncryption;
+  readonly Encryption?: ExportServerSideEncryption;
   readonly RevisionDestinations: [];
-  readonly EventActionArn: string;
+  readonly EventActionArn?: string;
 }
 
-interface ExportServerSideEncryption {
-  readonly KmsKeyArn: string;
+export interface ExportServerSideEncryption {
+  readonly KmsKeyArn?: string;
   readonly Type: string;
 }
 
-interface GetAssetRequest {
+export interface GetAssetRequest {
   readonly AssetId: string;
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
 
-interface GetAssetResponse {
-  readonly Arn: string;
-  readonly AssetDetails: AssetDetails;
-  readonly AssetType: string;
-  readonly CreatedAt: Date;
+export interface GetAssetResponse {
+  readonly Arn?: string;
+  readonly AssetDetails?: AssetDetails;
+  readonly AssetType?: string;
+  readonly CreatedAt?: Date;
+  readonly DataSetId?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly RevisionId?: string;
+  readonly SourceId?: string;
+  readonly UpdatedAt?: Date;
+}
+
+export interface GetDataSetRequest {
   readonly DataSetId: string;
-  readonly Id: string;
-  readonly Name: string;
-  readonly RevisionId: string;
-  readonly SourceId: string;
-  readonly UpdatedAt: Date;
 }
 
-interface GetDataSetRequest {
-  readonly DataSetId: string;
+export interface GetDataSetResponse {
+  readonly Arn?: string;
+  readonly AssetType?: string;
+  readonly CreatedAt?: Date;
+  readonly Description?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Origin?: string;
+  readonly OriginDetails?: OriginDetails;
+  readonly SourceId?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly UpdatedAt?: Date;
 }
 
-interface GetDataSetResponse {
-  readonly Arn: string;
-  readonly AssetType: string;
-  readonly CreatedAt: Date;
-  readonly Description: string;
-  readonly Id: string;
-  readonly Name: string;
-  readonly Origin: string;
-  readonly OriginDetails: OriginDetails;
-  readonly SourceId: string;
-  readonly Tags: {[key: string]: any};
-  readonly UpdatedAt: Date;
-}
-
-interface GetEventActionRequest {
+export interface GetEventActionRequest {
   readonly EventActionId: string;
 }
 
-interface GetEventActionResponse {
-  readonly Action: Action;
-  readonly Arn: string;
-  readonly CreatedAt: Date;
-  readonly Event: Event;
-  readonly Id: string;
-  readonly UpdatedAt: Date;
+export interface GetEventActionResponse {
+  readonly Action?: Action;
+  readonly Arn?: string;
+  readonly CreatedAt?: Date;
+  readonly Event?: Event;
+  readonly Id?: string;
+  readonly UpdatedAt?: Date;
 }
 
-interface GetJobRequest {
+export interface GetJobRequest {
   readonly JobId: string;
 }
 
-interface GetJobResponse {
-  readonly Arn: string;
-  readonly CreatedAt: Date;
-  readonly Details: ResponseDetails;
-  readonly Errors: [];
-  readonly Id: string;
-  readonly State: string;
-  readonly Type: string;
-  readonly UpdatedAt: Date;
+export interface GetJobResponse {
+  readonly Arn?: string;
+  readonly CreatedAt?: Date;
+  readonly Details?: ResponseDetails;
+  readonly Errors?: [];
+  readonly Id?: string;
+  readonly State?: string;
+  readonly Type?: string;
+  readonly UpdatedAt?: Date;
 }
 
-interface GetRevisionRequest {
+export interface GetRevisionRequest {
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
 
-interface GetRevisionResponse {
-  readonly Arn: string;
-  readonly Comment: string;
-  readonly CreatedAt: Date;
-  readonly DataSetId: string;
-  readonly Finalized: boolean;
-  readonly Id: string;
-  readonly SourceId: string;
-  readonly Tags: {[key: string]: any};
-  readonly UpdatedAt: Date;
+export interface GetRevisionResponse {
+  readonly Arn?: string;
+  readonly Comment?: string;
+  readonly CreatedAt?: Date;
+  readonly DataSetId?: string;
+  readonly Finalized?: boolean;
+  readonly Id?: string;
+  readonly SourceId?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly UpdatedAt?: Date;
 }
 
-interface ImportAssetFromApiGatewayApiRequestDetails {
-  readonly ApiDescription: string;
+export interface ImportAssetFromApiGatewayApiRequestDetails {
+  readonly ApiDescription?: string;
   readonly ApiId: string;
-  readonly ApiKey: string;
+  readonly ApiKey?: string;
   readonly ApiName: string;
   readonly ApiSpecificationMd5Hash: string;
   readonly DataSetId: string;
@@ -460,10 +485,10 @@ interface ImportAssetFromApiGatewayApiRequestDetails {
   readonly Stage: string;
 }
 
-interface ImportAssetFromApiGatewayApiResponseDetails {
-  readonly ApiDescription: string;
+export interface ImportAssetFromApiGatewayApiResponseDetails {
+  readonly ApiDescription?: string;
   readonly ApiId: string;
-  readonly ApiKey: string;
+  readonly ApiKey?: string;
   readonly ApiName: string;
   readonly ApiSpecificationMd5Hash: string;
   readonly ApiSpecificationUploadUrl: string;
@@ -474,319 +499,320 @@ interface ImportAssetFromApiGatewayApiResponseDetails {
   readonly Stage: string;
 }
 
-interface ImportAssetFromSignedUrlJobErrorDetails {
+export interface ImportAssetFromSignedUrlJobErrorDetails {
   readonly AssetName: string;
 }
 
-interface ImportAssetFromSignedUrlRequestDetails {
-  readonly AssetName: string;
-  readonly DataSetId: string;
-  readonly Md5Hash: string;
-  readonly RevisionId: string;
-}
-
-interface ImportAssetFromSignedUrlResponseDetails {
+export interface ImportAssetFromSignedUrlRequestDetails {
   readonly AssetName: string;
   readonly DataSetId: string;
   readonly Md5Hash: string;
   readonly RevisionId: string;
-  readonly SignedUrl: string;
-  readonly SignedUrlExpiresAt: Date;
 }
 
-interface ImportAssetsFromRedshiftDataSharesRequestDetails {
+export interface ImportAssetFromSignedUrlResponseDetails {
+  readonly AssetName: string;
+  readonly DataSetId: string;
+  readonly Md5Hash?: string;
+  readonly RevisionId: string;
+  readonly SignedUrl?: string;
+  readonly SignedUrlExpiresAt?: Date;
+}
+
+export interface ImportAssetsFromRedshiftDataSharesRequestDetails {
   readonly AssetSources: [];
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
 
-interface ImportAssetsFromRedshiftDataSharesResponseDetails {
+export interface ImportAssetsFromRedshiftDataSharesResponseDetails {
   readonly AssetSources: [];
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
 
-interface ImportAssetsFromS3RequestDetails {
+export interface ImportAssetsFromS3RequestDetails {
   readonly AssetSources: [];
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
 
-interface ImportAssetsFromS3ResponseDetails {
+export interface ImportAssetsFromS3ResponseDetails {
   readonly AssetSources: [];
   readonly DataSetId: string;
   readonly RevisionId: string;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly Message: string;
 }
 
-interface JobEntry {
+export interface JobEntry {
   readonly Arn: string;
   readonly CreatedAt: Date;
   readonly Details: ResponseDetails;
-  readonly Errors: [];
+  readonly Errors?: [];
   readonly Id: string;
   readonly State: string;
   readonly Type: string;
   readonly UpdatedAt: Date;
 }
 
-interface JobError {
+export interface JobError {
   readonly Code: string;
-  readonly Details: Details;
-  readonly LimitName: string;
-  readonly LimitValue: unknown;
+  readonly Details?: Details;
+  readonly LimitName?: string;
+  readonly LimitValue?: unknown;
   readonly Message: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
 }
 
-interface ListDataSetRevisionsRequest {
+export interface ListDataSetRevisionsRequest {
   readonly DataSetId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListDataSetRevisionsResponse {
-  readonly NextToken: string;
-  readonly Revisions: [];
+export interface ListDataSetRevisionsResponse {
+  readonly NextToken?: string;
+  readonly Revisions?: [];
 }
 
-interface ListDataSetsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Origin: string;
+export interface ListDataSetsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Origin?: string;
 }
 
-interface ListDataSetsResponse {
-  readonly DataSets: [];
-  readonly NextToken: string;
+export interface ListDataSetsResponse {
+  readonly DataSets?: [];
+  readonly NextToken?: string;
 }
 
-interface ListEventActionsRequest {
-  readonly EventSourceId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListEventActionsRequest {
+  readonly EventSourceId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListEventActionsResponse {
-  readonly EventActions: [];
-  readonly NextToken: string;
+export interface ListEventActionsResponse {
+  readonly EventActions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListJobsRequest {
+export interface ListJobsRequest {
+  readonly DataSetId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly RevisionId?: string;
+}
+
+export interface ListJobsResponse {
+  readonly Jobs?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListRevisionAssetsRequest {
   readonly DataSetId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly RevisionId: string;
 }
 
-interface ListJobsResponse {
-  readonly Jobs: [];
-  readonly NextToken: string;
+export interface ListRevisionAssetsResponse {
+  readonly Assets?: [];
+  readonly NextToken?: string;
 }
 
-interface ListRevisionAssetsRequest {
-  readonly DataSetId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly RevisionId: string;
-}
-
-interface ListRevisionAssetsResponse {
-  readonly Assets: [];
-  readonly NextToken: string;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface OriginDetails {
+export interface OriginDetails {
   readonly ProductId: string;
 }
 
-interface RedshiftDataShareAsset {
+export interface RedshiftDataShareAsset {
   readonly Arn: string;
 }
 
-interface RedshiftDataShareAssetSourceEntry {
+export interface RedshiftDataShareAssetSourceEntry {
   readonly DataShareArn: string;
 }
 
-interface RequestDetails {
-  readonly ExportAssetToSignedUrl: ExportAssetToSignedUrlRequestDetails;
-  readonly ExportAssetsToS3: ExportAssetsToS3RequestDetails;
-  readonly ExportRevisionsToS3: ExportRevisionsToS3RequestDetails;
-  readonly ImportAssetFromSignedUrl: ImportAssetFromSignedUrlRequestDetails;
-  readonly ImportAssetsFromS3: ImportAssetsFromS3RequestDetails;
-  readonly ImportAssetsFromRedshiftDataShares: ImportAssetsFromRedshiftDataSharesRequestDetails;
-  readonly ImportAssetFromApiGatewayApi: ImportAssetFromApiGatewayApiRequestDetails;
+export interface RequestDetails {
+  readonly ExportAssetToSignedUrl?: ExportAssetToSignedUrlRequestDetails;
+  readonly ExportAssetsToS3?: ExportAssetsToS3RequestDetails;
+  readonly ExportRevisionsToS3?: ExportRevisionsToS3RequestDetails;
+  readonly ImportAssetFromSignedUrl?: ImportAssetFromSignedUrlRequestDetails;
+  readonly ImportAssetsFromS3?: ImportAssetsFromS3RequestDetails;
+  readonly ImportAssetsFromRedshiftDataShares?: ImportAssetsFromRedshiftDataSharesRequestDetails;
+  readonly ImportAssetFromApiGatewayApi?: ImportAssetFromApiGatewayApiRequestDetails;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly Message: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
 }
 
-interface ResponseDetails {
-  readonly ExportAssetToSignedUrl: ExportAssetToSignedUrlResponseDetails;
-  readonly ExportAssetsToS3: ExportAssetsToS3ResponseDetails;
-  readonly ExportRevisionsToS3: ExportRevisionsToS3ResponseDetails;
-  readonly ImportAssetFromSignedUrl: ImportAssetFromSignedUrlResponseDetails;
-  readonly ImportAssetsFromS3: ImportAssetsFromS3ResponseDetails;
-  readonly ImportAssetsFromRedshiftDataShares: ImportAssetsFromRedshiftDataSharesResponseDetails;
-  readonly ImportAssetFromApiGatewayApi: ImportAssetFromApiGatewayApiResponseDetails;
+export interface ResponseDetails {
+  readonly ExportAssetToSignedUrl?: ExportAssetToSignedUrlResponseDetails;
+  readonly ExportAssetsToS3?: ExportAssetsToS3ResponseDetails;
+  readonly ExportRevisionsToS3?: ExportRevisionsToS3ResponseDetails;
+  readonly ImportAssetFromSignedUrl?: ImportAssetFromSignedUrlResponseDetails;
+  readonly ImportAssetsFromS3?: ImportAssetsFromS3ResponseDetails;
+  readonly ImportAssetsFromRedshiftDataShares?: ImportAssetsFromRedshiftDataSharesResponseDetails;
+  readonly ImportAssetFromApiGatewayApi?: ImportAssetFromApiGatewayApiResponseDetails;
 }
 
-interface RevisionDestinationEntry {
+export interface RevisionDestinationEntry {
   readonly Bucket: string;
-  readonly KeyPattern: string;
+  readonly KeyPattern?: string;
   readonly RevisionId: string;
 }
 
-interface RevisionEntry {
+export interface RevisionEntry {
   readonly Arn: string;
-  readonly Comment: string;
+  readonly Comment?: string;
   readonly CreatedAt: Date;
   readonly DataSetId: string;
-  readonly Finalized: boolean;
+  readonly Finalized?: boolean;
   readonly Id: string;
-  readonly SourceId: string;
+  readonly SourceId?: string;
   readonly UpdatedAt: Date;
 }
 
-interface RevisionPublished {
+export interface RevisionPublished {
   readonly DataSetId: string;
 }
 
-interface S3SnapshotAsset {
+export interface S3SnapshotAsset {
   readonly Size: unknown;
 }
 
-interface SendApiAssetRequest {
-  readonly Body: string;
-  readonly QueryStringParameters: {[key: string]: any};
+export interface SendApiAssetRequest {
+  readonly Body?: string;
+  readonly QueryStringParameters?: {[key: string]: any};
   readonly AssetId: string;
   readonly DataSetId: string;
-  readonly RequestHeaders: {[key: string]: any};
-  readonly Method: string;
-  readonly Path: string;
+  readonly RequestHeaders?: {[key: string]: any};
+  readonly Method?: string;
+  readonly Path?: string;
   readonly RevisionId: string;
 }
 
-interface SendApiAssetResponse {
-  readonly Body: string;
-  readonly ResponseHeaders: {[key: string]: any};
+export interface SendApiAssetResponse {
+  readonly Body?: string;
+  readonly ResponseHeaders?: {[key: string]: any};
 }
 
-interface ServiceLimitExceededException {
-  readonly LimitName: string;
-  readonly LimitValue: unknown;
+export interface ServiceLimitExceededException {
+  readonly LimitName?: string;
+  readonly LimitValue?: unknown;
   readonly Message: string;
 }
 
-interface StartJobRequest {
+export interface StartJobRequest {
   readonly JobId: string;
 }
 
-interface StartJobResponse {
+export interface StartJobResponse {
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly Message: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UpdateAssetRequest {
+export interface UpdateAssetRequest {
   readonly AssetId: string;
   readonly DataSetId: string;
   readonly Name: string;
   readonly RevisionId: string;
 }
 
-interface UpdateAssetResponse {
-  readonly Arn: string;
-  readonly AssetDetails: AssetDetails;
-  readonly AssetType: string;
-  readonly CreatedAt: Date;
+export interface UpdateAssetResponse {
+  readonly Arn?: string;
+  readonly AssetDetails?: AssetDetails;
+  readonly AssetType?: string;
+  readonly CreatedAt?: Date;
+  readonly DataSetId?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly RevisionId?: string;
+  readonly SourceId?: string;
+  readonly UpdatedAt?: Date;
+}
+
+export interface UpdateDataSetRequest {
   readonly DataSetId: string;
-  readonly Id: string;
-  readonly Name: string;
-  readonly RevisionId: string;
-  readonly SourceId: string;
-  readonly UpdatedAt: Date;
+  readonly Description?: string;
+  readonly Name?: string;
 }
 
-interface UpdateDataSetRequest {
-  readonly DataSetId: string;
-  readonly Description: string;
-  readonly Name: string;
+export interface UpdateDataSetResponse {
+  readonly Arn?: string;
+  readonly AssetType?: string;
+  readonly CreatedAt?: Date;
+  readonly Description?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Origin?: string;
+  readonly OriginDetails?: OriginDetails;
+  readonly SourceId?: string;
+  readonly UpdatedAt?: Date;
 }
 
-interface UpdateDataSetResponse {
-  readonly Arn: string;
-  readonly AssetType: string;
-  readonly CreatedAt: Date;
-  readonly Description: string;
-  readonly Id: string;
-  readonly Name: string;
-  readonly Origin: string;
-  readonly OriginDetails: OriginDetails;
-  readonly SourceId: string;
-  readonly UpdatedAt: Date;
-}
-
-interface UpdateEventActionRequest {
-  readonly Action: Action;
+export interface UpdateEventActionRequest {
+  readonly Action?: Action;
   readonly EventActionId: string;
 }
 
-interface UpdateEventActionResponse {
-  readonly Action: Action;
-  readonly Arn: string;
-  readonly CreatedAt: Date;
-  readonly Event: Event;
-  readonly Id: string;
-  readonly UpdatedAt: Date;
+export interface UpdateEventActionResponse {
+  readonly Action?: Action;
+  readonly Arn?: string;
+  readonly CreatedAt?: Date;
+  readonly Event?: Event;
+  readonly Id?: string;
+  readonly UpdatedAt?: Date;
 }
 
-interface UpdateRevisionRequest {
-  readonly Comment: string;
+export interface UpdateRevisionRequest {
+  readonly Comment?: string;
   readonly DataSetId: string;
-  readonly Finalized: boolean;
+  readonly Finalized?: boolean;
   readonly RevisionId: string;
 }
 
-interface UpdateRevisionResponse {
-  readonly Arn: string;
-  readonly Comment: string;
-  readonly CreatedAt: Date;
-  readonly DataSetId: string;
-  readonly Finalized: boolean;
-  readonly Id: string;
-  readonly SourceId: string;
-  readonly UpdatedAt: Date;
+export interface UpdateRevisionResponse {
+  readonly Arn?: string;
+  readonly Comment?: string;
+  readonly CreatedAt?: Date;
+  readonly DataSetId?: string;
+  readonly Finalized?: boolean;
+  readonly Id?: string;
+  readonly SourceId?: string;
+  readonly UpdatedAt?: Date;
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly Message: string;
-  readonly ExceptionCause: string;
+  readonly ExceptionCause?: string;
 }
+
 

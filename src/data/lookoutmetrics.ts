@@ -4,9 +4,11 @@
 export interface ActivateAnomalyDetector {
   readonly AnomalyDetectorArn: string;
 }
+
 export interface BackTestAnomalyDetector {
   readonly AnomalyDetectorArn: string;
 }
+
 export interface CreateAlert {
   readonly AlertName: string;
   readonly AlertSensitivityThreshold: number;
@@ -15,6 +17,7 @@ export interface CreateAlert {
   readonly Action: Action;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateAnomalyDetector {
   readonly AnomalyDetectorName: string;
   readonly AnomalyDetectorDescription?: string;
@@ -22,6 +25,7 @@ export interface CreateAnomalyDetector {
   readonly KmsKeyArn?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateMetricSet {
   readonly AnomalyDetectorArn: string;
   readonly MetricSetName: string;
@@ -35,55 +39,68 @@ export interface CreateMetricSet {
   readonly Timezone?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface DeleteAlert {
   readonly AlertArn: string;
 }
+
 export interface DeleteAnomalyDetector {
   readonly AnomalyDetectorArn: string;
 }
+
 export interface DescribeAlert {
   readonly AlertArn: string;
 }
+
 export interface DescribeAnomalyDetectionExecutions {
   readonly AnomalyDetectorArn: string;
   readonly Timestamp?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeAnomalyDetector {
   readonly AnomalyDetectorArn: string;
 }
+
 export interface DescribeMetricSet {
   readonly MetricSetArn: string;
 }
+
 export interface GetAnomalyGroup {
   readonly AnomalyGroupId: string;
   readonly AnomalyDetectorArn: string;
 }
+
 export interface GetFeedback {
   readonly AnomalyDetectorArn: string;
   readonly AnomalyGroupTimeSeriesFeedback: AnomalyGroupTimeSeries;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetSampleData {
   readonly S3SourceConfig?: SampleDataS3SourceConfig;
 }
+
 export interface ListAlerts {
   readonly AnomalyDetectorArn?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListAnomalyDetectors {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListAnomalyGroupSummaries {
   readonly AnomalyDetectorArn: string;
   readonly SensitivityThreshold: number;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListAnomalyGroupTimeSeries {
   readonly AnomalyDetectorArn: string;
   readonly AnomalyGroupId: string;
@@ -91,32 +108,39 @@ export interface ListAnomalyGroupTimeSeries {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListMetricSets {
   readonly AnomalyDetectorArn?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface PutFeedback {
   readonly AnomalyDetectorArn: string;
   readonly AnomalyGroupTimeSeriesFeedback: AnomalyGroupTimeSeriesFeedback;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateAnomalyDetector {
   readonly AnomalyDetectorArn: string;
   readonly KmsKeyArn?: string;
   readonly AnomalyDetectorDescription?: string;
   readonly AnomalyDetectorConfig?: AnomalyDetectorConfig;
 }
+
 export interface UpdateMetricSet {
   readonly MetricSetArn: string;
   readonly MetricSetDescription?: string;
@@ -128,432 +152,430 @@ export interface UpdateMetricSet {
   readonly MetricSource?: MetricSource;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly Message: string;
 }
 
-interface Action {
-  readonly SNSConfiguration: SNSConfiguration;
-  readonly LambdaConfiguration: LambdaConfiguration;
+export interface Action {
+  readonly SNSConfiguration?: SNSConfiguration;
+  readonly LambdaConfiguration?: LambdaConfiguration;
 }
 
-interface ActivateAnomalyDetectorRequest {
+export interface ActivateAnomalyDetectorRequest {
   readonly AnomalyDetectorArn: string;
 }
 
-interface ActivateAnomalyDetectorResponse {
+export interface ActivateAnomalyDetectorResponse {
 }
 
-interface Alert {
-  readonly Action: Action;
-  readonly AlertDescription: string;
-  readonly AlertArn: string;
-  readonly AnomalyDetectorArn: string;
-  readonly AlertName: string;
-  readonly AlertSensitivityThreshold: number;
-  readonly AlertType: string;
-  readonly AlertStatus: string;
-  readonly LastModificationTime: Date;
-  readonly CreationTime: Date;
+export interface Alert {
+  readonly Action?: Action;
+  readonly AlertDescription?: string;
+  readonly AlertArn?: string;
+  readonly AnomalyDetectorArn?: string;
+  readonly AlertName?: string;
+  readonly AlertSensitivityThreshold?: number;
+  readonly AlertType?: string;
+  readonly AlertStatus?: string;
+  readonly LastModificationTime?: Date;
+  readonly CreationTime?: Date;
 }
 
-interface AlertSummary {
-  readonly AlertArn: string;
-  readonly AnomalyDetectorArn: string;
-  readonly AlertName: string;
-  readonly AlertSensitivityThreshold: number;
-  readonly AlertType: string;
-  readonly AlertStatus: string;
-  readonly LastModificationTime: Date;
-  readonly CreationTime: Date;
-  readonly Tags: {[key: string]: any};
+export interface AlertSummary {
+  readonly AlertArn?: string;
+  readonly AnomalyDetectorArn?: string;
+  readonly AlertName?: string;
+  readonly AlertSensitivityThreshold?: number;
+  readonly AlertType?: string;
+  readonly AlertStatus?: string;
+  readonly LastModificationTime?: Date;
+  readonly CreationTime?: Date;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface AnomalyDetectorConfig {
-  readonly AnomalyDetectorFrequency: string;
+export interface AnomalyDetectorConfig {
+  readonly AnomalyDetectorFrequency?: string;
 }
 
-interface AnomalyDetectorConfigSummary {
-  readonly AnomalyDetectorFrequency: string;
+export interface AnomalyDetectorConfigSummary {
+  readonly AnomalyDetectorFrequency?: string;
 }
 
-interface AnomalyDetectorSummary {
-  readonly AnomalyDetectorArn: string;
-  readonly AnomalyDetectorName: string;
-  readonly AnomalyDetectorDescription: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
-  readonly Status: string;
-  readonly Tags: {[key: string]: any};
+export interface AnomalyDetectorSummary {
+  readonly AnomalyDetectorArn?: string;
+  readonly AnomalyDetectorName?: string;
+  readonly AnomalyDetectorDescription?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
+  readonly Status?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface AnomalyGroup {
-  readonly StartTime: string;
-  readonly EndTime: string;
+export interface AnomalyGroup {
+  readonly StartTime?: string;
+  readonly EndTime?: string;
+  readonly AnomalyGroupId?: string;
+  readonly AnomalyGroupScore?: unknown;
+  readonly PrimaryMetricName?: string;
+  readonly MetricLevelImpactList?: [];
+}
+
+export interface AnomalyGroupStatistics {
+  readonly EvaluationStartDate?: string;
+  readonly TotalCount?: number;
+  readonly ItemizedMetricStatsList?: [];
+}
+
+export interface AnomalyGroupSummary {
+  readonly StartTime?: string;
+  readonly EndTime?: string;
+  readonly AnomalyGroupId?: string;
+  readonly AnomalyGroupScore?: unknown;
+  readonly PrimaryMetricName?: string;
+}
+
+export interface AnomalyGroupTimeSeries {
   readonly AnomalyGroupId: string;
-  readonly AnomalyGroupScore: unknown;
-  readonly PrimaryMetricName: string;
-  readonly MetricLevelImpactList: [];
+  readonly TimeSeriesId?: string;
 }
 
-interface AnomalyGroupStatistics {
-  readonly EvaluationStartDate: string;
-  readonly TotalCount: number;
-  readonly ItemizedMetricStatsList: [];
-}
-
-interface AnomalyGroupSummary {
-  readonly StartTime: string;
-  readonly EndTime: string;
-  readonly AnomalyGroupId: string;
-  readonly AnomalyGroupScore: unknown;
-  readonly PrimaryMetricName: string;
-}
-
-interface AnomalyGroupTimeSeries {
-  readonly AnomalyGroupId: string;
-  readonly TimeSeriesId: string;
-}
-
-interface AnomalyGroupTimeSeriesFeedback {
+export interface AnomalyGroupTimeSeriesFeedback {
   readonly AnomalyGroupId: string;
   readonly TimeSeriesId: string;
   readonly IsAnomaly: boolean;
 }
 
-interface AppFlowConfig {
+export interface AppFlowConfig {
   readonly RoleArn: string;
   readonly FlowName: string;
 }
 
-interface BackTestAnomalyDetectorRequest {
+export interface BackTestAnomalyDetectorRequest {
   readonly AnomalyDetectorArn: string;
 }
 
-interface BackTestAnomalyDetectorResponse {
+export interface BackTestAnomalyDetectorResponse {
 }
 
-interface CloudWatchConfig {
+export interface CloudWatchConfig {
   readonly RoleArn: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly Message: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
 }
 
-interface ContributionMatrix {
-  readonly DimensionContributionList: [];
+export interface ContributionMatrix {
+  readonly DimensionContributionList?: [];
 }
 
-interface CreateAlertRequest {
+export interface CreateAlertRequest {
   readonly AlertName: string;
   readonly AlertSensitivityThreshold: number;
-  readonly AlertDescription: string;
+  readonly AlertDescription?: string;
   readonly AnomalyDetectorArn: string;
   readonly Action: Action;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateAlertResponse {
-  readonly AlertArn: string;
+export interface CreateAlertResponse {
+  readonly AlertArn?: string;
 }
 
-interface CreateAnomalyDetectorRequest {
+export interface CreateAnomalyDetectorRequest {
   readonly AnomalyDetectorName: string;
-  readonly AnomalyDetectorDescription: string;
+  readonly AnomalyDetectorDescription?: string;
   readonly AnomalyDetectorConfig: AnomalyDetectorConfig;
-  readonly KmsKeyArn: string;
-  readonly Tags: {[key: string]: any};
+  readonly KmsKeyArn?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateAnomalyDetectorResponse {
-  readonly AnomalyDetectorArn: string;
+export interface CreateAnomalyDetectorResponse {
+  readonly AnomalyDetectorArn?: string;
 }
 
-interface CreateMetricSetRequest {
+export interface CreateMetricSetRequest {
   readonly AnomalyDetectorArn: string;
   readonly MetricSetName: string;
-  readonly MetricSetDescription: string;
+  readonly MetricSetDescription?: string;
   readonly MetricList: [];
-  readonly Offset: number;
-  readonly TimestampColumn: TimestampColumn;
-  readonly DimensionList: [];
-  readonly MetricSetFrequency: string;
+  readonly Offset?: number;
+  readonly TimestampColumn?: TimestampColumn;
+  readonly DimensionList?: [];
+  readonly MetricSetFrequency?: string;
   readonly MetricSource: MetricSource;
-  readonly Timezone: string;
-  readonly Tags: {[key: string]: any};
+  readonly Timezone?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateMetricSetResponse {
-  readonly MetricSetArn: string;
+export interface CreateMetricSetResponse {
+  readonly MetricSetArn?: string;
 }
 
-interface CsvFormatDescriptor {
-  readonly FileCompression: string;
-  readonly Charset: string;
-  readonly ContainsHeader: boolean;
-  readonly Delimiter: string;
-  readonly HeaderList: [];
-  readonly QuoteSymbol: string;
+export interface CsvFormatDescriptor {
+  readonly FileCompression?: string;
+  readonly Charset?: string;
+  readonly ContainsHeader?: boolean;
+  readonly Delimiter?: string;
+  readonly HeaderList?: [];
+  readonly QuoteSymbol?: string;
 }
 
-interface DeleteAlertRequest {
+export interface DeleteAlertRequest {
   readonly AlertArn: string;
 }
 
-interface DeleteAlertResponse {
+export interface DeleteAlertResponse {
 }
 
-interface DeleteAnomalyDetectorRequest {
+export interface DeleteAnomalyDetectorRequest {
   readonly AnomalyDetectorArn: string;
 }
 
-interface DeleteAnomalyDetectorResponse {
+export interface DeleteAnomalyDetectorResponse {
 }
 
-interface DescribeAlertRequest {
+export interface DescribeAlertRequest {
   readonly AlertArn: string;
 }
 
-interface DescribeAlertResponse {
-  readonly Alert: Alert;
+export interface DescribeAlertResponse {
+  readonly Alert?: Alert;
 }
 
-interface DescribeAnomalyDetectionExecutionsRequest {
+export interface DescribeAnomalyDetectionExecutionsRequest {
   readonly AnomalyDetectorArn: string;
-  readonly Timestamp: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Timestamp?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeAnomalyDetectionExecutionsResponse {
-  readonly ExecutionList: [];
-  readonly NextToken: string;
+export interface DescribeAnomalyDetectionExecutionsResponse {
+  readonly ExecutionList?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeAnomalyDetectorRequest {
+export interface DescribeAnomalyDetectorRequest {
   readonly AnomalyDetectorArn: string;
 }
 
-interface DescribeAnomalyDetectorResponse {
-  readonly AnomalyDetectorArn: string;
-  readonly AnomalyDetectorName: string;
-  readonly AnomalyDetectorDescription: string;
-  readonly AnomalyDetectorConfig: AnomalyDetectorConfigSummary;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
-  readonly Status: string;
-  readonly FailureReason: string;
-  readonly KmsKeyArn: string;
+export interface DescribeAnomalyDetectorResponse {
+  readonly AnomalyDetectorArn?: string;
+  readonly AnomalyDetectorName?: string;
+  readonly AnomalyDetectorDescription?: string;
+  readonly AnomalyDetectorConfig?: AnomalyDetectorConfigSummary;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
+  readonly Status?: string;
+  readonly FailureReason?: string;
+  readonly KmsKeyArn?: string;
 }
 
-interface DescribeMetricSetRequest {
+export interface DescribeMetricSetRequest {
   readonly MetricSetArn: string;
 }
 
-interface DescribeMetricSetResponse {
-  readonly MetricSetArn: string;
-  readonly AnomalyDetectorArn: string;
-  readonly MetricSetName: string;
-  readonly MetricSetDescription: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
-  readonly Offset: number;
-  readonly MetricList: [];
-  readonly TimestampColumn: TimestampColumn;
-  readonly DimensionList: [];
-  readonly MetricSetFrequency: string;
-  readonly Timezone: string;
-  readonly MetricSource: MetricSource;
+export interface DescribeMetricSetResponse {
+  readonly MetricSetArn?: string;
+  readonly AnomalyDetectorArn?: string;
+  readonly MetricSetName?: string;
+  readonly MetricSetDescription?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
+  readonly Offset?: number;
+  readonly MetricList?: [];
+  readonly TimestampColumn?: TimestampColumn;
+  readonly DimensionList?: [];
+  readonly MetricSetFrequency?: string;
+  readonly Timezone?: string;
+  readonly MetricSource?: MetricSource;
 }
 
-interface DimensionContribution {
-  readonly DimensionName: string;
-  readonly DimensionValueContributionList: [];
+export interface DimensionContribution {
+  readonly DimensionName?: string;
+  readonly DimensionValueContributionList?: [];
 }
 
-interface DimensionNameValue {
+export interface DimensionNameValue {
   readonly DimensionName: string;
   readonly DimensionValue: string;
 }
 
-interface DimensionValueContribution {
-  readonly DimensionValue: string;
-  readonly ContributionScore: unknown;
+export interface DimensionValueContribution {
+  readonly DimensionValue?: string;
+  readonly ContributionScore?: unknown;
 }
 
-interface ExecutionStatus {
-  readonly Timestamp: string;
-  readonly Status: string;
-  readonly FailureReason: string;
+export interface ExecutionStatus {
+  readonly Timestamp?: string;
+  readonly Status?: string;
+  readonly FailureReason?: string;
 }
 
-interface FileFormatDescriptor {
-  readonly CsvFormatDescriptor: CsvFormatDescriptor;
-  readonly JsonFormatDescriptor: JsonFormatDescriptor;
+export interface FileFormatDescriptor {
+  readonly CsvFormatDescriptor?: CsvFormatDescriptor;
+  readonly JsonFormatDescriptor?: JsonFormatDescriptor;
 }
 
-interface GetAnomalyGroupRequest {
+export interface GetAnomalyGroupRequest {
   readonly AnomalyGroupId: string;
   readonly AnomalyDetectorArn: string;
 }
 
-interface GetAnomalyGroupResponse {
-  readonly AnomalyGroup: AnomalyGroup;
+export interface GetAnomalyGroupResponse {
+  readonly AnomalyGroup?: AnomalyGroup;
 }
 
-interface GetFeedbackRequest {
+export interface GetFeedbackRequest {
   readonly AnomalyDetectorArn: string;
   readonly AnomalyGroupTimeSeriesFeedback: AnomalyGroupTimeSeries;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetFeedbackResponse {
-  readonly AnomalyGroupTimeSeriesFeedback: [];
-  readonly NextToken: string;
+export interface GetFeedbackResponse {
+  readonly AnomalyGroupTimeSeriesFeedback?: [];
+  readonly NextToken?: string;
 }
 
-interface GetSampleDataRequest {
-  readonly S3SourceConfig: SampleDataS3SourceConfig;
+export interface GetSampleDataRequest {
+  readonly S3SourceConfig?: SampleDataS3SourceConfig;
 }
 
-interface GetSampleDataResponse {
-  readonly HeaderValues: [];
-  readonly SampleRows: [];
+export interface GetSampleDataResponse {
+  readonly HeaderValues?: [];
+  readonly SampleRows?: [];
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly Message: string;
 }
 
-interface ItemizedMetricStats {
-  readonly MetricName: string;
-  readonly OccurrenceCount: number;
+export interface ItemizedMetricStats {
+  readonly MetricName?: string;
+  readonly OccurrenceCount?: number;
 }
 
-interface JsonFormatDescriptor {
-  readonly FileCompression: string;
-  readonly Charset: string;
+export interface JsonFormatDescriptor {
+  readonly FileCompression?: string;
+  readonly Charset?: string;
 }
 
-interface LambdaConfiguration {
+export interface LambdaConfiguration {
   readonly RoleArn: string;
   readonly LambdaArn: string;
 }
 
-interface ListAlertsRequest {
-  readonly AnomalyDetectorArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListAlertsRequest {
+  readonly AnomalyDetectorArn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListAlertsResponse {
-  readonly AlertSummaryList: [];
-  readonly NextToken: string;
+export interface ListAlertsResponse {
+  readonly AlertSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListAnomalyDetectorsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListAnomalyDetectorsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAnomalyDetectorsResponse {
-  readonly AnomalyDetectorSummaryList: [];
-  readonly NextToken: string;
+export interface ListAnomalyDetectorsResponse {
+  readonly AnomalyDetectorSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListAnomalyGroupSummariesRequest {
+export interface ListAnomalyGroupSummariesRequest {
   readonly AnomalyDetectorArn: string;
   readonly SensitivityThreshold: number;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAnomalyGroupSummariesResponse {
-  readonly AnomalyGroupSummaryList: [];
-  readonly AnomalyGroupStatistics: AnomalyGroupStatistics;
-  readonly NextToken: string;
+export interface ListAnomalyGroupSummariesResponse {
+  readonly AnomalyGroupSummaryList?: [];
+  readonly AnomalyGroupStatistics?: AnomalyGroupStatistics;
+  readonly NextToken?: string;
 }
 
-interface ListAnomalyGroupTimeSeriesRequest {
+export interface ListAnomalyGroupTimeSeriesRequest {
   readonly AnomalyDetectorArn: string;
   readonly AnomalyGroupId: string;
   readonly MetricName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAnomalyGroupTimeSeriesResponse {
-  readonly AnomalyGroupId: string;
-  readonly MetricName: string;
-  readonly TimestampList: [];
-  readonly NextToken: string;
-  readonly TimeSeriesList: [];
+export interface ListAnomalyGroupTimeSeriesResponse {
+  readonly AnomalyGroupId?: string;
+  readonly MetricName?: string;
+  readonly TimestampList?: [];
+  readonly NextToken?: string;
+  readonly TimeSeriesList?: [];
 }
 
-interface ListMetricSetsRequest {
-  readonly AnomalyDetectorArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListMetricSetsRequest {
+  readonly AnomalyDetectorArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListMetricSetsResponse {
-  readonly MetricSetSummaryList: [];
-  readonly NextToken: string;
+export interface ListMetricSetsResponse {
+  readonly MetricSetSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface Metric {
+export interface Metric {
   readonly MetricName: string;
   readonly AggregationFunction: string;
-  readonly Namespace: string;
+  readonly Namespace?: string;
 }
 
-interface MetricLevelImpact {
-  readonly MetricName: string;
-  readonly NumTimeSeries: number;
-  readonly ContributionMatrix: ContributionMatrix;
+export interface MetricLevelImpact {
+  readonly MetricName?: string;
+  readonly NumTimeSeries?: number;
+  readonly ContributionMatrix?: ContributionMatrix;
 }
 
-interface MetricSetSummary {
-  readonly MetricSetArn: string;
-  readonly AnomalyDetectorArn: string;
-  readonly MetricSetDescription: string;
-  readonly MetricSetName: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
-  readonly Tags: {[key: string]: any};
+export interface MetricSetSummary {
+  readonly MetricSetArn?: string;
+  readonly AnomalyDetectorArn?: string;
+  readonly MetricSetDescription?: string;
+  readonly MetricSetName?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface MetricSource {
-  readonly S3SourceConfig: S3SourceConfig;
-  readonly AppFlowConfig: AppFlowConfig;
-  readonly CloudWatchConfig: CloudWatchConfig;
-  readonly RDSSourceConfig: RDSSourceConfig;
-  readonly RedshiftSourceConfig: RedshiftSourceConfig;
+export interface MetricSource {
+  readonly S3SourceConfig?: S3SourceConfig;
+  readonly AppFlowConfig?: AppFlowConfig;
+  readonly CloudWatchConfig?: CloudWatchConfig;
+  readonly RDSSourceConfig?: RDSSourceConfig;
+  readonly RedshiftSourceConfig?: RedshiftSourceConfig;
 }
 
-interface PutFeedbackRequest {
+export interface PutFeedbackRequest {
   readonly AnomalyDetectorArn: string;
   readonly AnomalyGroupTimeSeriesFeedback: AnomalyGroupTimeSeriesFeedback;
 }
 
-interface PutFeedbackResponse {
+export interface PutFeedbackResponse {
 }
 
-interface RDSSourceConfig {
+export interface RDSSourceConfig {
   readonly DBInstanceIdentifier: string;
   readonly DatabaseHost: string;
   readonly DatabasePort: number;
@@ -564,7 +586,7 @@ interface RDSSourceConfig {
   readonly VpcConfiguration: VpcConfiguration;
 }
 
-interface RedshiftSourceConfig {
+export interface RedshiftSourceConfig {
   readonly ClusterIdentifier: string;
   readonly DatabaseHost: string;
   readonly DatabasePort: number;
@@ -575,114 +597,115 @@ interface RedshiftSourceConfig {
   readonly VpcConfiguration: VpcConfiguration;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly Message: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
 }
 
-interface S3SourceConfig {
+export interface S3SourceConfig {
   readonly RoleArn: string;
-  readonly TemplatedPathList: [];
-  readonly HistoricalDataPathList: [];
-  readonly FileFormatDescriptor: FileFormatDescriptor;
+  readonly TemplatedPathList?: [];
+  readonly HistoricalDataPathList?: [];
+  readonly FileFormatDescriptor?: FileFormatDescriptor;
 }
 
-interface SNSConfiguration {
+export interface SNSConfiguration {
   readonly RoleArn: string;
   readonly SnsTopicArn: string;
 }
 
-interface SampleDataS3SourceConfig {
+export interface SampleDataS3SourceConfig {
   readonly RoleArn: string;
-  readonly TemplatedPathList: [];
-  readonly HistoricalDataPathList: [];
+  readonly TemplatedPathList?: [];
+  readonly HistoricalDataPathList?: [];
   readonly FileFormatDescriptor: FileFormatDescriptor;
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly Message: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly QuotaCode: string;
-  readonly ServiceCode: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly QuotaCode?: string;
+  readonly ServiceCode?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TimeSeries {
+export interface TimeSeries {
   readonly TimeSeriesId: string;
   readonly DimensionList: [];
   readonly MetricValueList: [];
 }
 
-interface TimeSeriesFeedback {
-  readonly TimeSeriesId: string;
-  readonly IsAnomaly: boolean;
+export interface TimeSeriesFeedback {
+  readonly TimeSeriesId?: string;
+  readonly IsAnomaly?: boolean;
 }
 
-interface TimestampColumn {
-  readonly ColumnName: string;
-  readonly ColumnFormat: string;
+export interface TimestampColumn {
+  readonly ColumnName?: string;
+  readonly ColumnFormat?: string;
 }
 
-interface TooManyRequestsException {
+export interface TooManyRequestsException {
   readonly Message: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateAnomalyDetectorRequest {
+export interface UpdateAnomalyDetectorRequest {
   readonly AnomalyDetectorArn: string;
-  readonly KmsKeyArn: string;
-  readonly AnomalyDetectorDescription: string;
-  readonly AnomalyDetectorConfig: AnomalyDetectorConfig;
+  readonly KmsKeyArn?: string;
+  readonly AnomalyDetectorDescription?: string;
+  readonly AnomalyDetectorConfig?: AnomalyDetectorConfig;
 }
 
-interface UpdateAnomalyDetectorResponse {
-  readonly AnomalyDetectorArn: string;
+export interface UpdateAnomalyDetectorResponse {
+  readonly AnomalyDetectorArn?: string;
 }
 
-interface UpdateMetricSetRequest {
+export interface UpdateMetricSetRequest {
   readonly MetricSetArn: string;
-  readonly MetricSetDescription: string;
-  readonly MetricList: [];
-  readonly Offset: number;
-  readonly TimestampColumn: TimestampColumn;
-  readonly DimensionList: [];
-  readonly MetricSetFrequency: string;
-  readonly MetricSource: MetricSource;
+  readonly MetricSetDescription?: string;
+  readonly MetricList?: [];
+  readonly Offset?: number;
+  readonly TimestampColumn?: TimestampColumn;
+  readonly DimensionList?: [];
+  readonly MetricSetFrequency?: string;
+  readonly MetricSource?: MetricSource;
 }
 
-interface UpdateMetricSetResponse {
-  readonly MetricSetArn: string;
+export interface UpdateMetricSetResponse {
+  readonly MetricSetArn?: string;
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly Message: string;
-  readonly Reason: string;
-  readonly Fields: [];
+  readonly Reason?: string;
+  readonly Fields?: [];
 }
 
-interface ValidationExceptionField {
+export interface ValidationExceptionField {
   readonly Name: string;
   readonly Message: string;
 }
 
-interface VpcConfiguration {
+export interface VpcConfiguration {
   readonly SubnetIdList: [];
   readonly SecurityGroupIdList: [];
 }
+
 

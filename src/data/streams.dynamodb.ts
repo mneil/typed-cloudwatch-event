@@ -6,155 +6,157 @@ export interface DescribeStream {
   readonly Limit?: number;
   readonly ExclusiveStartShardId?: string;
 }
+
 export interface GetRecords {
   readonly ShardIterator: string;
   readonly Limit?: number;
 }
+
 export interface GetShardIterator {
   readonly StreamArn: string;
   readonly ShardId: string;
   readonly ShardIteratorType: string;
   readonly SequenceNumber?: string;
 }
+
 export interface ListStreams {
   readonly TableName?: string;
   readonly Limit?: number;
   readonly ExclusiveStartStreamArn?: string;
 }
 
-
-
-interface AttributeValue {
-  readonly S: string;
-  readonly N: string;
-  readonly B: unknown;
-  readonly SS: [];
-  readonly NS: [];
-  readonly BS: [];
-  readonly M: {[key: string]: any};
-  readonly L: [];
-  readonly NULL: boolean;
-  readonly BOOL: boolean;
+export interface AttributeValue {
+  readonly S?: string;
+  readonly N?: string;
+  readonly B?: unknown;
+  readonly SS?: [];
+  readonly NS?: [];
+  readonly BS?: [];
+  readonly M?: {[key: string]: any};
+  readonly L?: [];
+  readonly NULL?: boolean;
+  readonly BOOL?: boolean;
 }
 
-interface DescribeStreamInput {
+export interface DescribeStreamInput {
   readonly StreamArn: string;
-  readonly Limit: number;
-  readonly ExclusiveStartShardId: string;
+  readonly Limit?: number;
+  readonly ExclusiveStartShardId?: string;
 }
 
-interface DescribeStreamOutput {
-  readonly StreamDescription: StreamDescription;
+export interface DescribeStreamOutput {
+  readonly StreamDescription?: StreamDescription;
 }
 
-interface ExpiredIteratorException {
-  readonly message: string;
+export interface ExpiredIteratorException {
+  readonly message?: string;
 }
 
-interface GetRecordsInput {
+export interface GetRecordsInput {
   readonly ShardIterator: string;
-  readonly Limit: number;
+  readonly Limit?: number;
 }
 
-interface GetRecordsOutput {
-  readonly Records: [];
-  readonly NextShardIterator: string;
+export interface GetRecordsOutput {
+  readonly Records?: [];
+  readonly NextShardIterator?: string;
 }
 
-interface GetShardIteratorInput {
+export interface GetShardIteratorInput {
   readonly StreamArn: string;
   readonly ShardId: string;
   readonly ShardIteratorType: string;
-  readonly SequenceNumber: string;
+  readonly SequenceNumber?: string;
 }
 
-interface GetShardIteratorOutput {
-  readonly ShardIterator: string;
+export interface GetShardIteratorOutput {
+  readonly ShardIterator?: string;
 }
 
-interface Identity {
-  readonly PrincipalId: string;
-  readonly Type: string;
+export interface Identity {
+  readonly PrincipalId?: string;
+  readonly Type?: string;
 }
 
-interface InternalServerError {
-  readonly message: string;
+export interface InternalServerError {
+  readonly message?: string;
 }
 
-interface KeySchemaElement {
+export interface KeySchemaElement {
   readonly AttributeName: string;
   readonly KeyType: string;
 }
 
-interface LimitExceededException {
-  readonly message: string;
+export interface LimitExceededException {
+  readonly message?: string;
 }
 
-interface ListStreamsInput {
-  readonly TableName: string;
-  readonly Limit: number;
-  readonly ExclusiveStartStreamArn: string;
+export interface ListStreamsInput {
+  readonly TableName?: string;
+  readonly Limit?: number;
+  readonly ExclusiveStartStreamArn?: string;
 }
 
-interface ListStreamsOutput {
-  readonly Streams: [];
-  readonly LastEvaluatedStreamArn: string;
+export interface ListStreamsOutput {
+  readonly Streams?: [];
+  readonly LastEvaluatedStreamArn?: string;
 }
 
-interface Record {
-  readonly eventID: string;
-  readonly eventName: string;
-  readonly eventVersion: string;
-  readonly eventSource: string;
-  readonly awsRegion: string;
-  readonly dynamodb: StreamRecord;
-  readonly userIdentity: Identity;
+export interface Record {
+  readonly eventID?: string;
+  readonly eventName?: string;
+  readonly eventVersion?: string;
+  readonly eventSource?: string;
+  readonly awsRegion?: string;
+  readonly dynamodb?: StreamRecord;
+  readonly userIdentity?: Identity;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface SequenceNumberRange {
-  readonly StartingSequenceNumber: string;
-  readonly EndingSequenceNumber: string;
+export interface SequenceNumberRange {
+  readonly StartingSequenceNumber?: string;
+  readonly EndingSequenceNumber?: string;
 }
 
-interface Shard {
-  readonly ShardId: string;
-  readonly SequenceNumberRange: SequenceNumberRange;
-  readonly ParentShardId: string;
+export interface Shard {
+  readonly ShardId?: string;
+  readonly SequenceNumberRange?: SequenceNumberRange;
+  readonly ParentShardId?: string;
 }
 
-interface Stream {
-  readonly StreamArn: string;
-  readonly TableName: string;
-  readonly StreamLabel: string;
+export interface Stream {
+  readonly StreamArn?: string;
+  readonly TableName?: string;
+  readonly StreamLabel?: string;
 }
 
-interface StreamDescription {
-  readonly StreamArn: string;
-  readonly StreamLabel: string;
-  readonly StreamStatus: string;
-  readonly StreamViewType: string;
-  readonly CreationRequestDateTime: Date;
-  readonly TableName: string;
-  readonly KeySchema: [];
-  readonly Shards: [];
-  readonly LastEvaluatedShardId: string;
+export interface StreamDescription {
+  readonly StreamArn?: string;
+  readonly StreamLabel?: string;
+  readonly StreamStatus?: string;
+  readonly StreamViewType?: string;
+  readonly CreationRequestDateTime?: Date;
+  readonly TableName?: string;
+  readonly KeySchema?: [];
+  readonly Shards?: [];
+  readonly LastEvaluatedShardId?: string;
 }
 
-interface StreamRecord {
-  readonly ApproximateCreationDateTime: Date;
-  readonly Keys: {[key: string]: any};
-  readonly NewImage: {[key: string]: any};
-  readonly OldImage: {[key: string]: any};
-  readonly SequenceNumber: string;
-  readonly SizeBytes: number;
-  readonly StreamViewType: string;
+export interface StreamRecord {
+  readonly ApproximateCreationDateTime?: Date;
+  readonly Keys?: {[key: string]: any};
+  readonly NewImage?: {[key: string]: any};
+  readonly OldImage?: {[key: string]: any};
+  readonly SequenceNumber?: string;
+  readonly SizeBytes?: number;
+  readonly StreamViewType?: string;
 }
 
-interface TrimmedDataAccessException {
-  readonly message: string;
+export interface TrimmedDataAccessException {
+  readonly message?: string;
 }
+
 

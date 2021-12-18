@@ -5,58 +5,70 @@ export interface AcceptReservedNodeExchange {
   readonly ReservedNodeId: string;
   readonly TargetReservedNodeOfferingId: string;
 }
+
 export interface AddPartner {
   readonly AccountId: string;
   readonly ClusterIdentifier: string;
   readonly DatabaseName: string;
   readonly PartnerName: string;
 }
+
 export interface AssociateDataShareConsumer {
   readonly DataShareArn: string;
   readonly AssociateEntireAccount?: boolean;
   readonly ConsumerArn?: string;
 }
+
 export interface AuthorizeClusterSecurityGroupIngress {
   readonly ClusterSecurityGroupName: string;
   readonly CIDRIP?: string;
   readonly EC2SecurityGroupName?: string;
   readonly EC2SecurityGroupOwnerId?: string;
 }
+
 export interface AuthorizeDataShare {
   readonly DataShareArn: string;
   readonly ConsumerIdentifier: string;
 }
+
 export interface AuthorizeEndpointAccess {
   readonly ClusterIdentifier?: string;
   readonly Account: string;
   readonly VpcIds?: [];
 }
+
 export interface AuthorizeSnapshotAccess {
   readonly SnapshotIdentifier: string;
   readonly SnapshotClusterIdentifier?: string;
   readonly AccountWithRestoreAccess: string;
 }
+
 export interface BatchDeleteClusterSnapshots {
   readonly Identifiers: [];
 }
+
 export interface BatchModifyClusterSnapshots {
   readonly SnapshotIdentifierList: [];
   readonly ManualSnapshotRetentionPeriod?: number;
   readonly Force?: boolean;
 }
+
 export interface CancelResize {
   readonly ClusterIdentifier: string;
 }
+
 export interface CopyClusterSnapshot {
   readonly SourceSnapshotIdentifier: string;
   readonly SourceSnapshotClusterIdentifier?: string;
   readonly TargetSnapshotIdentifier: string;
   readonly ManualSnapshotRetentionPeriod?: number;
 }
+
 export interface CreateAuthenticationProfile {
   readonly AuthenticationProfileName: string;
   readonly AuthenticationProfileContent: string;
 }
+
 export interface CreateCluster {
   readonly DBName?: string;
   readonly ClusterIdentifier: string;
@@ -92,29 +104,34 @@ export interface CreateCluster {
   readonly AquaConfigurationStatus?: string;
   readonly DefaultIamRoleArn?: string;
 }
+
 export interface CreateClusterParameterGroup {
   readonly ParameterGroupName: string;
   readonly ParameterGroupFamily: string;
   readonly Description: string;
   readonly Tags?: [];
 }
+
 export interface CreateClusterSecurityGroup {
   readonly ClusterSecurityGroupName: string;
   readonly Description: string;
   readonly Tags?: [];
 }
+
 export interface CreateClusterSnapshot {
   readonly SnapshotIdentifier: string;
   readonly ClusterIdentifier: string;
   readonly ManualSnapshotRetentionPeriod?: number;
   readonly Tags?: [];
 }
+
 export interface CreateClusterSubnetGroup {
   readonly ClusterSubnetGroupName: string;
   readonly Description: string;
   readonly SubnetIds: [];
   readonly Tags?: [];
 }
+
 export interface CreateEndpointAccess {
   readonly ClusterIdentifier?: string;
   readonly ResourceOwner?: string;
@@ -122,6 +139,7 @@ export interface CreateEndpointAccess {
   readonly SubnetGroupName: string;
   readonly VpcSecurityGroupIds?: [];
 }
+
 export interface CreateEventSubscription {
   readonly SubscriptionName: string;
   readonly SnsTopicArn: string;
@@ -132,10 +150,12 @@ export interface CreateEventSubscription {
   readonly Enabled?: boolean;
   readonly Tags?: [];
 }
+
 export interface CreateHsmClientCertificate {
   readonly HsmClientCertificateIdentifier: string;
   readonly Tags?: [];
 }
+
 export interface CreateHsmConfiguration {
   readonly HsmConfigurationIdentifier: string;
   readonly Description: string;
@@ -145,6 +165,7 @@ export interface CreateHsmConfiguration {
   readonly HsmServerPublicCertificate: string;
   readonly Tags?: [];
 }
+
 export interface CreateScheduledAction {
   readonly ScheduledActionName: string;
   readonly TargetAction: ScheduledActionType;
@@ -155,11 +176,13 @@ export interface CreateScheduledAction {
   readonly EndTime?: Date;
   readonly Enable?: boolean;
 }
+
 export interface CreateSnapshotCopyGrant {
   readonly SnapshotCopyGrantName: string;
   readonly KmsKeyId?: string;
   readonly Tags?: [];
 }
+
 export interface CreateSnapshotSchedule {
   readonly ScheduleDefinitions?: [];
   readonly ScheduleIdentifier?: string;
@@ -168,10 +191,12 @@ export interface CreateSnapshotSchedule {
   readonly DryRun?: boolean;
   readonly NextInvocations?: number;
 }
+
 export interface CreateTags {
   readonly ResourceName: string;
   readonly Tags: [];
 }
+
 export interface CreateUsageLimit {
   readonly ClusterIdentifier: string;
   readonly FeatureType: string;
@@ -181,77 +206,98 @@ export interface CreateUsageLimit {
   readonly BreachAction?: string;
   readonly Tags?: [];
 }
+
 export interface DeauthorizeDataShare {
   readonly DataShareArn: string;
   readonly ConsumerIdentifier: string;
 }
+
 export interface DeleteAuthenticationProfile {
   readonly AuthenticationProfileName: string;
 }
+
 export interface DeleteCluster {
   readonly ClusterIdentifier: string;
   readonly SkipFinalClusterSnapshot?: boolean;
   readonly FinalClusterSnapshotIdentifier?: string;
   readonly FinalClusterSnapshotRetentionPeriod?: number;
 }
+
 export interface DeleteClusterParameterGroup {
   readonly ParameterGroupName: string;
 }
+
 export interface DeleteClusterSecurityGroup {
   readonly ClusterSecurityGroupName: string;
 }
+
 export interface DeleteClusterSnapshot {
   readonly SnapshotIdentifier: string;
   readonly SnapshotClusterIdentifier?: string;
 }
+
 export interface DeleteClusterSubnetGroup {
   readonly ClusterSubnetGroupName: string;
 }
+
 export interface DeleteEndpointAccess {
   readonly EndpointName: string;
 }
+
 export interface DeleteEventSubscription {
   readonly SubscriptionName: string;
 }
+
 export interface DeleteHsmClientCertificate {
   readonly HsmClientCertificateIdentifier: string;
 }
+
 export interface DeleteHsmConfiguration {
   readonly HsmConfigurationIdentifier: string;
 }
+
 export interface DeletePartner {
   readonly AccountId: string;
   readonly ClusterIdentifier: string;
   readonly DatabaseName: string;
   readonly PartnerName: string;
 }
+
 export interface DeleteScheduledAction {
   readonly ScheduledActionName: string;
 }
+
 export interface DeleteSnapshotCopyGrant {
   readonly SnapshotCopyGrantName: string;
 }
+
 export interface DeleteSnapshotSchedule {
   readonly ScheduleIdentifier: string;
 }
+
 export interface DeleteTags {
   readonly ResourceName: string;
   readonly TagKeys: [];
 }
+
 export interface DeleteUsageLimit {
   readonly UsageLimitId: string;
 }
+
 export interface DescribeAccountAttributes {
   readonly AttributeNames?: [];
 }
+
 export interface DescribeAuthenticationProfiles {
   readonly AuthenticationProfileName?: string;
 }
+
 export interface DescribeClusterDbRevisions {
   readonly ClusterIdentifier?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeClusterParameterGroups {
   readonly ParameterGroupName?: string;
   readonly MaxRecords?: number;
@@ -259,12 +305,14 @@ export interface DescribeClusterParameterGroups {
   readonly TagKeys?: [];
   readonly TagValues?: [];
 }
+
 export interface DescribeClusterParameters {
   readonly ParameterGroupName: string;
   readonly Source?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeClusterSecurityGroups {
   readonly ClusterSecurityGroupName?: string;
   readonly MaxRecords?: number;
@@ -272,6 +320,7 @@ export interface DescribeClusterSecurityGroups {
   readonly TagKeys?: [];
   readonly TagValues?: [];
 }
+
 export interface DescribeClusterSnapshots {
   readonly ClusterIdentifier?: string;
   readonly SnapshotIdentifier?: string;
@@ -286,6 +335,7 @@ export interface DescribeClusterSnapshots {
   readonly ClusterExists?: boolean;
   readonly SortingEntities?: [];
 }
+
 export interface DescribeClusterSubnetGroups {
   readonly ClusterSubnetGroupName?: string;
   readonly MaxRecords?: number;
@@ -293,17 +343,20 @@ export interface DescribeClusterSubnetGroups {
   readonly TagKeys?: [];
   readonly TagValues?: [];
 }
+
 export interface DescribeClusterTracks {
   readonly MaintenanceTrackName?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeClusterVersions {
   readonly ClusterVersion?: string;
   readonly ClusterParameterGroupFamily?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeClusters {
   readonly ClusterIdentifier?: string;
   readonly MaxRecords?: number;
@@ -311,28 +364,33 @@ export interface DescribeClusters {
   readonly TagKeys?: [];
   readonly TagValues?: [];
 }
+
 export interface DescribeDataShares {
   readonly DataShareArn?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeDataSharesForConsumer {
   readonly ConsumerArn?: string;
   readonly Status?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeDataSharesForProducer {
   readonly ProducerArn?: string;
   readonly Status?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeDefaultClusterParameters {
   readonly ParameterGroupFamily: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeEndpointAccess {
   readonly ClusterIdentifier?: string;
   readonly ResourceOwner?: string;
@@ -341,6 +399,7 @@ export interface DescribeEndpointAccess {
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeEndpointAuthorization {
   readonly ClusterIdentifier?: string;
   readonly Account?: string;
@@ -348,9 +407,11 @@ export interface DescribeEndpointAuthorization {
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeEventCategories {
   readonly SourceType?: string;
 }
+
 export interface DescribeEventSubscriptions {
   readonly SubscriptionName?: string;
   readonly MaxRecords?: number;
@@ -358,6 +419,7 @@ export interface DescribeEventSubscriptions {
   readonly TagKeys?: [];
   readonly TagValues?: [];
 }
+
 export interface DescribeEvents {
   readonly SourceIdentifier?: string;
   readonly SourceType?: string;
@@ -367,6 +429,7 @@ export interface DescribeEvents {
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeHsmClientCertificates {
   readonly HsmClientCertificateIdentifier?: string;
   readonly MaxRecords?: number;
@@ -374,6 +437,7 @@ export interface DescribeHsmClientCertificates {
   readonly TagKeys?: [];
   readonly TagValues?: [];
 }
+
 export interface DescribeHsmConfigurations {
   readonly HsmConfigurationIdentifier?: string;
   readonly MaxRecords?: number;
@@ -381,9 +445,11 @@ export interface DescribeHsmConfigurations {
   readonly TagKeys?: [];
   readonly TagValues?: [];
 }
+
 export interface DescribeLoggingStatus {
   readonly ClusterIdentifier: string;
 }
+
 export interface DescribeNodeConfigurationOptions {
   readonly ActionType: string;
   readonly ClusterIdentifier?: string;
@@ -393,37 +459,44 @@ export interface DescribeNodeConfigurationOptions {
   readonly Marker?: string;
   readonly MaxRecords?: number;
 }
+
 export interface DescribeOrderableClusterOptions {
   readonly ClusterVersion?: string;
   readonly NodeType?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribePartners {
   readonly AccountId: string;
   readonly ClusterIdentifier: string;
   readonly DatabaseName?: string;
   readonly PartnerName?: string;
 }
+
 export interface DescribeReservedNodeExchangeStatus {
   readonly ReservedNodeId?: string;
   readonly ReservedNodeExchangeRequestId?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeReservedNodeOfferings {
   readonly ReservedNodeOfferingId?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeReservedNodes {
   readonly ReservedNodeId?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeResize {
   readonly ClusterIdentifier: string;
 }
+
 export interface DescribeScheduledActions {
   readonly ScheduledActionName?: string;
   readonly TargetActionType?: string;
@@ -434,6 +507,7 @@ export interface DescribeScheduledActions {
   readonly Marker?: string;
   readonly MaxRecords?: number;
 }
+
 export interface DescribeSnapshotCopyGrants {
   readonly SnapshotCopyGrantName?: string;
   readonly MaxRecords?: number;
@@ -441,6 +515,7 @@ export interface DescribeSnapshotCopyGrants {
   readonly TagKeys?: [];
   readonly TagValues?: [];
 }
+
 export interface DescribeSnapshotSchedules {
   readonly ClusterIdentifier?: string;
   readonly ScheduleIdentifier?: string;
@@ -449,12 +524,14 @@ export interface DescribeSnapshotSchedules {
   readonly Marker?: string;
   readonly MaxRecords?: number;
 }
+
 export interface DescribeTableRestoreStatus {
   readonly ClusterIdentifier?: string;
   readonly TableRestoreRequestId?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeTags {
   readonly ResourceName?: string;
   readonly ResourceType?: string;
@@ -463,6 +540,7 @@ export interface DescribeTags {
   readonly TagKeys?: [];
   readonly TagValues?: [];
 }
+
 export interface DescribeUsageLimits {
   readonly UsageLimitId?: string;
   readonly ClusterIdentifier?: string;
@@ -472,22 +550,27 @@ export interface DescribeUsageLimits {
   readonly TagKeys?: [];
   readonly TagValues?: [];
 }
+
 export interface DisableLogging {
   readonly ClusterIdentifier: string;
 }
+
 export interface DisableSnapshotCopy {
   readonly ClusterIdentifier: string;
 }
+
 export interface DisassociateDataShareConsumer {
   readonly DataShareArn: string;
   readonly DisassociateEntireAccount?: boolean;
   readonly ConsumerArn?: string;
 }
+
 export interface EnableLogging {
   readonly ClusterIdentifier: string;
   readonly BucketName: string;
   readonly S3KeyPrefix?: string;
 }
+
 export interface EnableSnapshotCopy {
   readonly ClusterIdentifier: string;
   readonly DestinationRegion: string;
@@ -495,6 +578,7 @@ export interface EnableSnapshotCopy {
   readonly SnapshotCopyGrantName?: string;
   readonly ManualSnapshotRetentionPeriod?: number;
 }
+
 export interface GetClusterCredentials {
   readonly DbUser: string;
   readonly DbName?: string;
@@ -503,6 +587,7 @@ export interface GetClusterCredentials {
   readonly AutoCreate?: boolean;
   readonly DbGroups?: [];
 }
+
 export interface GetReservedNodeExchangeConfigurationOptions {
   readonly ActionType: string;
   readonly ClusterIdentifier?: string;
@@ -510,19 +595,23 @@ export interface GetReservedNodeExchangeConfigurationOptions {
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface GetReservedNodeExchangeOfferings {
   readonly ReservedNodeId: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface ModifyAquaConfiguration {
   readonly ClusterIdentifier: string;
   readonly AquaConfigurationStatus?: string;
 }
+
 export interface ModifyAuthenticationProfile {
   readonly AuthenticationProfileName: string;
   readonly AuthenticationProfileContent: string;
 }
+
 export interface ModifyCluster {
   readonly ClusterIdentifier: string;
   readonly ClusterType?: string;
@@ -550,16 +639,19 @@ export interface ModifyCluster {
   readonly AvailabilityZone?: string;
   readonly Port?: number;
 }
+
 export interface ModifyClusterDbRevision {
   readonly ClusterIdentifier: string;
   readonly RevisionTarget: string;
 }
+
 export interface ModifyClusterIamRoles {
   readonly ClusterIdentifier: string;
   readonly AddIamRoles?: [];
   readonly RemoveIamRoles?: [];
   readonly DefaultIamRoleArn?: string;
 }
+
 export interface ModifyClusterMaintenance {
   readonly ClusterIdentifier: string;
   readonly DeferMaintenance?: boolean;
@@ -568,29 +660,35 @@ export interface ModifyClusterMaintenance {
   readonly DeferMaintenanceEndTime?: Date;
   readonly DeferMaintenanceDuration?: number;
 }
+
 export interface ModifyClusterParameterGroup {
   readonly ParameterGroupName: string;
   readonly Parameters: [];
 }
+
 export interface ModifyClusterSnapshot {
   readonly SnapshotIdentifier: string;
   readonly ManualSnapshotRetentionPeriod?: number;
   readonly Force?: boolean;
 }
+
 export interface ModifyClusterSnapshotSchedule {
   readonly ClusterIdentifier: string;
   readonly ScheduleIdentifier?: string;
   readonly DisassociateSchedule?: boolean;
 }
+
 export interface ModifyClusterSubnetGroup {
   readonly ClusterSubnetGroupName: string;
   readonly Description?: string;
   readonly SubnetIds: [];
 }
+
 export interface ModifyEndpointAccess {
   readonly EndpointName: string;
   readonly VpcSecurityGroupIds?: [];
 }
+
 export interface ModifyEventSubscription {
   readonly SubscriptionName: string;
   readonly SnsTopicArn?: string;
@@ -600,6 +698,7 @@ export interface ModifyEventSubscription {
   readonly Severity?: string;
   readonly Enabled?: boolean;
 }
+
 export interface ModifyScheduledAction {
   readonly ScheduledActionName: string;
   readonly TargetAction?: ScheduledActionType;
@@ -610,38 +709,47 @@ export interface ModifyScheduledAction {
   readonly EndTime?: Date;
   readonly Enable?: boolean;
 }
+
 export interface ModifySnapshotCopyRetentionPeriod {
   readonly ClusterIdentifier: string;
   readonly RetentionPeriod: number;
   readonly Manual?: boolean;
 }
+
 export interface ModifySnapshotSchedule {
   readonly ScheduleIdentifier: string;
   readonly ScheduleDefinitions: [];
 }
+
 export interface ModifyUsageLimit {
   readonly UsageLimitId: string;
   readonly Amount?: number;
   readonly BreachAction?: string;
 }
+
 export interface PauseCluster {
   readonly ClusterIdentifier: string;
 }
+
 export interface PurchaseReservedNodeOffering {
   readonly ReservedNodeOfferingId: string;
   readonly NodeCount?: number;
 }
+
 export interface RebootCluster {
   readonly ClusterIdentifier: string;
 }
+
 export interface RejectDataShare {
   readonly DataShareArn: string;
 }
+
 export interface ResetClusterParameterGroup {
   readonly ParameterGroupName: string;
   readonly ResetAllParameters?: boolean;
   readonly Parameters?: [];
 }
+
 export interface ResizeCluster {
   readonly ClusterIdentifier: string;
   readonly ClusterType?: string;
@@ -651,6 +759,7 @@ export interface ResizeCluster {
   readonly ReservedNodeId?: string;
   readonly TargetReservedNodeOfferingId?: string;
 }
+
 export interface RestoreFromClusterSnapshot {
   readonly ClusterIdentifier: string;
   readonly SnapshotIdentifier: string;
@@ -684,6 +793,7 @@ export interface RestoreFromClusterSnapshot {
   readonly ReservedNodeId?: string;
   readonly TargetReservedNodeOfferingId?: string;
 }
+
 export interface RestoreTableFromClusterSnapshot {
   readonly ClusterIdentifier: string;
   readonly SnapshotIdentifier: string;
@@ -695,29 +805,35 @@ export interface RestoreTableFromClusterSnapshot {
   readonly NewTableName: string;
   readonly EnableCaseSensitiveIdentifier?: boolean;
 }
+
 export interface ResumeCluster {
   readonly ClusterIdentifier: string;
 }
+
 export interface RevokeClusterSecurityGroupIngress {
   readonly ClusterSecurityGroupName: string;
   readonly CIDRIP?: string;
   readonly EC2SecurityGroupName?: string;
   readonly EC2SecurityGroupOwnerId?: string;
 }
+
 export interface RevokeEndpointAccess {
   readonly ClusterIdentifier?: string;
   readonly Account?: string;
   readonly VpcIds?: [];
   readonly Force?: boolean;
 }
+
 export interface RevokeSnapshotAccess {
   readonly SnapshotIdentifier: string;
   readonly SnapshotClusterIdentifier?: string;
   readonly AccountWithRestoreAccess: string;
 }
+
 export interface RotateEncryptionKey {
   readonly ClusterIdentifier: string;
 }
+
 export interface UpdatePartnerStatus {
   readonly AccountId: string;
   readonly ClusterIdentifier: string;
@@ -727,2208 +843,2207 @@ export interface UpdatePartnerStatus {
   readonly StatusMessage?: string;
 }
 
-
-
-interface AcceptReservedNodeExchangeInputMessage {
+export interface AcceptReservedNodeExchangeInputMessage {
   readonly ReservedNodeId: string;
   readonly TargetReservedNodeOfferingId: string;
 }
 
-interface AcceptReservedNodeExchangeOutputMessage {
-  readonly ExchangedReservedNode: ReservedNode;
+export interface AcceptReservedNodeExchangeOutputMessage {
+  readonly ExchangedReservedNode?: ReservedNode;
 }
 
-interface AccessToClusterDeniedFault {
+export interface AccessToClusterDeniedFault {
 }
 
-interface AccessToSnapshotDeniedFault {
+export interface AccessToSnapshotDeniedFault {
 }
 
-interface AccountAttribute {
-  readonly AttributeName: string;
-  readonly AttributeValues: [];
+export interface AccountAttribute {
+  readonly AttributeName?: string;
+  readonly AttributeValues?: [];
 }
 
-interface AccountAttributeList {
-  readonly AccountAttributes: [];
+export interface AccountAttributeList {
+  readonly AccountAttributes?: [];
 }
 
-interface AccountWithRestoreAccess {
-  readonly AccountId: string;
-  readonly AccountAlias: string;
+export interface AccountWithRestoreAccess {
+  readonly AccountId?: string;
+  readonly AccountAlias?: string;
 }
 
-interface AquaConfiguration {
-  readonly AquaStatus: string;
-  readonly AquaConfigurationStatus: string;
+export interface AquaConfiguration {
+  readonly AquaStatus?: string;
+  readonly AquaConfigurationStatus?: string;
 }
 
-interface AssociateDataShareConsumerMessage {
+export interface AssociateDataShareConsumerMessage {
   readonly DataShareArn: string;
-  readonly AssociateEntireAccount: boolean;
-  readonly ConsumerArn: string;
+  readonly AssociateEntireAccount?: boolean;
+  readonly ConsumerArn?: string;
 }
 
-interface AttributeValueTarget {
-  readonly AttributeValue: string;
+export interface AttributeValueTarget {
+  readonly AttributeValue?: string;
 }
 
-interface AuthenticationProfile {
-  readonly AuthenticationProfileName: string;
-  readonly AuthenticationProfileContent: string;
+export interface AuthenticationProfile {
+  readonly AuthenticationProfileName?: string;
+  readonly AuthenticationProfileContent?: string;
 }
 
-interface AuthenticationProfileAlreadyExistsFault {
+export interface AuthenticationProfileAlreadyExistsFault {
 }
 
-interface AuthenticationProfileNotFoundFault {
+export interface AuthenticationProfileNotFoundFault {
 }
 
-interface AuthenticationProfileQuotaExceededFault {
+export interface AuthenticationProfileQuotaExceededFault {
 }
 
-interface AuthorizationAlreadyExistsFault {
+export interface AuthorizationAlreadyExistsFault {
 }
 
-interface AuthorizationNotFoundFault {
+export interface AuthorizationNotFoundFault {
 }
 
-interface AuthorizationQuotaExceededFault {
+export interface AuthorizationQuotaExceededFault {
 }
 
-interface AuthorizeClusterSecurityGroupIngressMessage {
+export interface AuthorizeClusterSecurityGroupIngressMessage {
   readonly ClusterSecurityGroupName: string;
-  readonly CIDRIP: string;
-  readonly EC2SecurityGroupName: string;
-  readonly EC2SecurityGroupOwnerId: string;
+  readonly CIDRIP?: string;
+  readonly EC2SecurityGroupName?: string;
+  readonly EC2SecurityGroupOwnerId?: string;
 }
 
-interface AuthorizeClusterSecurityGroupIngressResult {
-  readonly ClusterSecurityGroup: ClusterSecurityGroup;
+export interface AuthorizeClusterSecurityGroupIngressResult {
+  readonly ClusterSecurityGroup?: ClusterSecurityGroup;
 }
 
-interface AuthorizeDataShareMessage {
+export interface AuthorizeDataShareMessage {
   readonly DataShareArn: string;
   readonly ConsumerIdentifier: string;
 }
 
-interface AuthorizeEndpointAccessMessage {
-  readonly ClusterIdentifier: string;
+export interface AuthorizeEndpointAccessMessage {
+  readonly ClusterIdentifier?: string;
   readonly Account: string;
-  readonly VpcIds: [];
+  readonly VpcIds?: [];
 }
 
-interface AuthorizeSnapshotAccessMessage {
+export interface AuthorizeSnapshotAccessMessage {
   readonly SnapshotIdentifier: string;
-  readonly SnapshotClusterIdentifier: string;
+  readonly SnapshotClusterIdentifier?: string;
   readonly AccountWithRestoreAccess: string;
 }
 
-interface AuthorizeSnapshotAccessResult {
-  readonly Snapshot: Snapshot;
+export interface AuthorizeSnapshotAccessResult {
+  readonly Snapshot?: Snapshot;
 }
 
-interface AvailabilityZone {
-  readonly Name: string;
-  readonly SupportedPlatforms: [];
+export interface AvailabilityZone {
+  readonly Name?: string;
+  readonly SupportedPlatforms?: [];
 }
 
-interface BatchDeleteClusterSnapshotsRequest {
+export interface BatchDeleteClusterSnapshotsRequest {
   readonly Identifiers: [];
 }
 
-interface BatchDeleteClusterSnapshotsResult {
-  readonly Resources: [];
-  readonly Errors: [];
+export interface BatchDeleteClusterSnapshotsResult {
+  readonly Resources?: [];
+  readonly Errors?: [];
 }
 
-interface BatchDeleteRequestSizeExceededFault {
+export interface BatchDeleteRequestSizeExceededFault {
 }
 
-interface BatchModifyClusterSnapshotsLimitExceededFault {
+export interface BatchModifyClusterSnapshotsLimitExceededFault {
 }
 
-interface BatchModifyClusterSnapshotsMessage {
+export interface BatchModifyClusterSnapshotsMessage {
   readonly SnapshotIdentifierList: [];
-  readonly ManualSnapshotRetentionPeriod: number;
-  readonly Force: boolean;
+  readonly ManualSnapshotRetentionPeriod?: number;
+  readonly Force?: boolean;
 }
 
-interface BatchModifyClusterSnapshotsOutputMessage {
-  readonly Resources: [];
-  readonly Errors: [];
+export interface BatchModifyClusterSnapshotsOutputMessage {
+  readonly Resources?: [];
+  readonly Errors?: [];
 }
 
-interface BucketNotFoundFault {
+export interface BucketNotFoundFault {
 }
 
-interface CancelResizeMessage {
+export interface CancelResizeMessage {
   readonly ClusterIdentifier: string;
 }
 
-interface Cluster {
-  readonly ClusterIdentifier: string;
-  readonly NodeType: string;
-  readonly ClusterStatus: string;
-  readonly ClusterAvailabilityStatus: string;
-  readonly ModifyStatus: string;
-  readonly MasterUsername: string;
-  readonly DBName: string;
-  readonly Endpoint: Endpoint;
-  readonly ClusterCreateTime: Date;
-  readonly AutomatedSnapshotRetentionPeriod: number;
-  readonly ManualSnapshotRetentionPeriod: number;
-  readonly ClusterSecurityGroups: [];
-  readonly VpcSecurityGroups: [];
-  readonly ClusterParameterGroups: [];
-  readonly ClusterSubnetGroupName: string;
-  readonly VpcId: string;
-  readonly AvailabilityZone: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly PendingModifiedValues: PendingModifiedValues;
-  readonly ClusterVersion: string;
-  readonly AllowVersionUpgrade: boolean;
-  readonly NumberOfNodes: number;
-  readonly PubliclyAccessible: boolean;
-  readonly Encrypted: boolean;
-  readonly RestoreStatus: RestoreStatus;
-  readonly DataTransferProgress: DataTransferProgress;
-  readonly HsmStatus: HsmStatus;
-  readonly ClusterSnapshotCopyStatus: ClusterSnapshotCopyStatus;
-  readonly ClusterPublicKey: string;
-  readonly ClusterNodes: [];
-  readonly ElasticIpStatus: ElasticIpStatus;
-  readonly ClusterRevisionNumber: string;
-  readonly Tags: [];
-  readonly KmsKeyId: string;
-  readonly EnhancedVpcRouting: boolean;
-  readonly IamRoles: [];
-  readonly PendingActions: [];
-  readonly MaintenanceTrackName: string;
-  readonly ElasticResizeNumberOfNodeOptions: string;
-  readonly DeferredMaintenanceWindows: [];
-  readonly SnapshotScheduleIdentifier: string;
-  readonly SnapshotScheduleState: string;
-  readonly ExpectedNextSnapshotScheduleTime: Date;
-  readonly ExpectedNextSnapshotScheduleTimeStatus: string;
-  readonly NextMaintenanceWindowStartTime: Date;
-  readonly ResizeInfo: ResizeInfo;
-  readonly AvailabilityZoneRelocationStatus: string;
-  readonly ClusterNamespaceArn: string;
-  readonly TotalStorageCapacityInMegaBytes: number;
-  readonly AquaConfiguration: AquaConfiguration;
-  readonly DefaultIamRoleArn: string;
-  readonly ReservedNodeExchangeStatus: ReservedNodeExchangeStatus;
+export interface Cluster {
+  readonly ClusterIdentifier?: string;
+  readonly NodeType?: string;
+  readonly ClusterStatus?: string;
+  readonly ClusterAvailabilityStatus?: string;
+  readonly ModifyStatus?: string;
+  readonly MasterUsername?: string;
+  readonly DBName?: string;
+  readonly Endpoint?: Endpoint;
+  readonly ClusterCreateTime?: Date;
+  readonly AutomatedSnapshotRetentionPeriod?: number;
+  readonly ManualSnapshotRetentionPeriod?: number;
+  readonly ClusterSecurityGroups?: [];
+  readonly VpcSecurityGroups?: [];
+  readonly ClusterParameterGroups?: [];
+  readonly ClusterSubnetGroupName?: string;
+  readonly VpcId?: string;
+  readonly AvailabilityZone?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly PendingModifiedValues?: PendingModifiedValues;
+  readonly ClusterVersion?: string;
+  readonly AllowVersionUpgrade?: boolean;
+  readonly NumberOfNodes?: number;
+  readonly PubliclyAccessible?: boolean;
+  readonly Encrypted?: boolean;
+  readonly RestoreStatus?: RestoreStatus;
+  readonly DataTransferProgress?: DataTransferProgress;
+  readonly HsmStatus?: HsmStatus;
+  readonly ClusterSnapshotCopyStatus?: ClusterSnapshotCopyStatus;
+  readonly ClusterPublicKey?: string;
+  readonly ClusterNodes?: [];
+  readonly ElasticIpStatus?: ElasticIpStatus;
+  readonly ClusterRevisionNumber?: string;
+  readonly Tags?: [];
+  readonly KmsKeyId?: string;
+  readonly EnhancedVpcRouting?: boolean;
+  readonly IamRoles?: [];
+  readonly PendingActions?: [];
+  readonly MaintenanceTrackName?: string;
+  readonly ElasticResizeNumberOfNodeOptions?: string;
+  readonly DeferredMaintenanceWindows?: [];
+  readonly SnapshotScheduleIdentifier?: string;
+  readonly SnapshotScheduleState?: string;
+  readonly ExpectedNextSnapshotScheduleTime?: Date;
+  readonly ExpectedNextSnapshotScheduleTimeStatus?: string;
+  readonly NextMaintenanceWindowStartTime?: Date;
+  readonly ResizeInfo?: ResizeInfo;
+  readonly AvailabilityZoneRelocationStatus?: string;
+  readonly ClusterNamespaceArn?: string;
+  readonly TotalStorageCapacityInMegaBytes?: number;
+  readonly AquaConfiguration?: AquaConfiguration;
+  readonly DefaultIamRoleArn?: string;
+  readonly ReservedNodeExchangeStatus?: ReservedNodeExchangeStatus;
 }
 
-interface ClusterAlreadyExistsFault {
+export interface ClusterAlreadyExistsFault {
 }
 
-interface ClusterAssociatedToSchedule {
-  readonly ClusterIdentifier: string;
-  readonly ScheduleAssociationState: string;
+export interface ClusterAssociatedToSchedule {
+  readonly ClusterIdentifier?: string;
+  readonly ScheduleAssociationState?: string;
 }
 
-interface ClusterCredentials {
-  readonly DbUser: string;
-  readonly DbPassword: string;
-  readonly Expiration: Date;
+export interface ClusterCredentials {
+  readonly DbUser?: string;
+  readonly DbPassword?: string;
+  readonly Expiration?: Date;
 }
 
-interface ClusterDbRevision {
-  readonly ClusterIdentifier: string;
-  readonly CurrentDatabaseRevision: string;
-  readonly DatabaseRevisionReleaseDate: Date;
-  readonly RevisionTargets: [];
+export interface ClusterDbRevision {
+  readonly ClusterIdentifier?: string;
+  readonly CurrentDatabaseRevision?: string;
+  readonly DatabaseRevisionReleaseDate?: Date;
+  readonly RevisionTargets?: [];
 }
 
-interface ClusterDbRevisionsMessage {
-  readonly Marker: string;
-  readonly ClusterDbRevisions: [];
+export interface ClusterDbRevisionsMessage {
+  readonly Marker?: string;
+  readonly ClusterDbRevisions?: [];
 }
 
-interface ClusterIamRole {
-  readonly IamRoleArn: string;
-  readonly ApplyStatus: string;
+export interface ClusterIamRole {
+  readonly IamRoleArn?: string;
+  readonly ApplyStatus?: string;
 }
 
-interface ClusterNode {
-  readonly NodeRole: string;
-  readonly PrivateIPAddress: string;
-  readonly PublicIPAddress: string;
+export interface ClusterNode {
+  readonly NodeRole?: string;
+  readonly PrivateIPAddress?: string;
+  readonly PublicIPAddress?: string;
 }
 
-interface ClusterNotFoundFault {
+export interface ClusterNotFoundFault {
 }
 
-interface ClusterOnLatestRevisionFault {
+export interface ClusterOnLatestRevisionFault {
 }
 
-interface ClusterParameterGroup {
-  readonly ParameterGroupName: string;
-  readonly ParameterGroupFamily: string;
-  readonly Description: string;
-  readonly Tags: [];
+export interface ClusterParameterGroup {
+  readonly ParameterGroupName?: string;
+  readonly ParameterGroupFamily?: string;
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 
-interface ClusterParameterGroupAlreadyExistsFault {
+export interface ClusterParameterGroupAlreadyExistsFault {
 }
 
-interface ClusterParameterGroupDetails {
-  readonly Parameters: [];
-  readonly Marker: string;
+export interface ClusterParameterGroupDetails {
+  readonly Parameters?: [];
+  readonly Marker?: string;
 }
 
-interface ClusterParameterGroupNameMessage {
-  readonly ParameterGroupName: string;
-  readonly ParameterGroupStatus: string;
+export interface ClusterParameterGroupNameMessage {
+  readonly ParameterGroupName?: string;
+  readonly ParameterGroupStatus?: string;
 }
 
-interface ClusterParameterGroupNotFoundFault {
+export interface ClusterParameterGroupNotFoundFault {
 }
 
-interface ClusterParameterGroupQuotaExceededFault {
+export interface ClusterParameterGroupQuotaExceededFault {
 }
 
-interface ClusterParameterGroupStatus {
-  readonly ParameterGroupName: string;
-  readonly ParameterApplyStatus: string;
-  readonly ClusterParameterStatusList: [];
+export interface ClusterParameterGroupStatus {
+  readonly ParameterGroupName?: string;
+  readonly ParameterApplyStatus?: string;
+  readonly ClusterParameterStatusList?: [];
 }
 
-interface ClusterParameterGroupsMessage {
-  readonly Marker: string;
-  readonly ParameterGroups: [];
+export interface ClusterParameterGroupsMessage {
+  readonly Marker?: string;
+  readonly ParameterGroups?: [];
 }
 
-interface ClusterParameterStatus {
-  readonly ParameterName: string;
-  readonly ParameterApplyStatus: string;
-  readonly ParameterApplyErrorDescription: string;
+export interface ClusterParameterStatus {
+  readonly ParameterName?: string;
+  readonly ParameterApplyStatus?: string;
+  readonly ParameterApplyErrorDescription?: string;
 }
 
-interface ClusterQuotaExceededFault {
+export interface ClusterQuotaExceededFault {
 }
 
-interface ClusterSecurityGroup {
-  readonly ClusterSecurityGroupName: string;
-  readonly Description: string;
-  readonly EC2SecurityGroups: [];
-  readonly IPRanges: [];
-  readonly Tags: [];
+export interface ClusterSecurityGroup {
+  readonly ClusterSecurityGroupName?: string;
+  readonly Description?: string;
+  readonly EC2SecurityGroups?: [];
+  readonly IPRanges?: [];
+  readonly Tags?: [];
 }
 
-interface ClusterSecurityGroupAlreadyExistsFault {
+export interface ClusterSecurityGroupAlreadyExistsFault {
 }
 
-interface ClusterSecurityGroupMembership {
-  readonly ClusterSecurityGroupName: string;
-  readonly Status: string;
+export interface ClusterSecurityGroupMembership {
+  readonly ClusterSecurityGroupName?: string;
+  readonly Status?: string;
 }
 
-interface ClusterSecurityGroupMessage {
-  readonly Marker: string;
-  readonly ClusterSecurityGroups: [];
+export interface ClusterSecurityGroupMessage {
+  readonly Marker?: string;
+  readonly ClusterSecurityGroups?: [];
 }
 
-interface ClusterSecurityGroupNotFoundFault {
+export interface ClusterSecurityGroupNotFoundFault {
 }
 
-interface ClusterSecurityGroupQuotaExceededFault {
+export interface ClusterSecurityGroupQuotaExceededFault {
 }
 
-interface ClusterSnapshotAlreadyExistsFault {
+export interface ClusterSnapshotAlreadyExistsFault {
 }
 
-interface ClusterSnapshotCopyStatus {
-  readonly DestinationRegion: string;
-  readonly RetentionPeriod: number;
-  readonly ManualSnapshotRetentionPeriod: number;
-  readonly SnapshotCopyGrantName: string;
+export interface ClusterSnapshotCopyStatus {
+  readonly DestinationRegion?: string;
+  readonly RetentionPeriod?: number;
+  readonly ManualSnapshotRetentionPeriod?: number;
+  readonly SnapshotCopyGrantName?: string;
 }
 
-interface ClusterSnapshotNotFoundFault {
+export interface ClusterSnapshotNotFoundFault {
 }
 
-interface ClusterSnapshotQuotaExceededFault {
+export interface ClusterSnapshotQuotaExceededFault {
 }
 
-interface ClusterSubnetGroup {
-  readonly ClusterSubnetGroupName: string;
-  readonly Description: string;
-  readonly VpcId: string;
-  readonly SubnetGroupStatus: string;
-  readonly Subnets: [];
-  readonly Tags: [];
+export interface ClusterSubnetGroup {
+  readonly ClusterSubnetGroupName?: string;
+  readonly Description?: string;
+  readonly VpcId?: string;
+  readonly SubnetGroupStatus?: string;
+  readonly Subnets?: [];
+  readonly Tags?: [];
 }
 
-interface ClusterSubnetGroupAlreadyExistsFault {
+export interface ClusterSubnetGroupAlreadyExistsFault {
 }
 
-interface ClusterSubnetGroupMessage {
-  readonly Marker: string;
-  readonly ClusterSubnetGroups: [];
+export interface ClusterSubnetGroupMessage {
+  readonly Marker?: string;
+  readonly ClusterSubnetGroups?: [];
 }
 
-interface ClusterSubnetGroupNotFoundFault {
+export interface ClusterSubnetGroupNotFoundFault {
 }
 
-interface ClusterSubnetGroupQuotaExceededFault {
+export interface ClusterSubnetGroupQuotaExceededFault {
 }
 
-interface ClusterSubnetQuotaExceededFault {
+export interface ClusterSubnetQuotaExceededFault {
 }
 
-interface ClusterVersion {
-  readonly ClusterVersion: string;
-  readonly ClusterParameterGroupFamily: string;
-  readonly Description: string;
+export interface ClusterVersion {
+  readonly ClusterVersion?: string;
+  readonly ClusterParameterGroupFamily?: string;
+  readonly Description?: string;
 }
 
-interface ClusterVersionsMessage {
-  readonly Marker: string;
-  readonly ClusterVersions: [];
+export interface ClusterVersionsMessage {
+  readonly Marker?: string;
+  readonly ClusterVersions?: [];
 }
 
-interface ClustersMessage {
-  readonly Marker: string;
-  readonly Clusters: [];
+export interface ClustersMessage {
+  readonly Marker?: string;
+  readonly Clusters?: [];
 }
 
-interface CopyClusterSnapshotMessage {
+export interface CopyClusterSnapshotMessage {
   readonly SourceSnapshotIdentifier: string;
-  readonly SourceSnapshotClusterIdentifier: string;
+  readonly SourceSnapshotClusterIdentifier?: string;
   readonly TargetSnapshotIdentifier: string;
-  readonly ManualSnapshotRetentionPeriod: number;
+  readonly ManualSnapshotRetentionPeriod?: number;
 }
 
-interface CopyClusterSnapshotResult {
-  readonly Snapshot: Snapshot;
+export interface CopyClusterSnapshotResult {
+  readonly Snapshot?: Snapshot;
 }
 
-interface CopyToRegionDisabledFault {
+export interface CopyToRegionDisabledFault {
 }
 
-interface CreateAuthenticationProfileMessage {
+export interface CreateAuthenticationProfileMessage {
   readonly AuthenticationProfileName: string;
   readonly AuthenticationProfileContent: string;
 }
 
-interface CreateAuthenticationProfileResult {
-  readonly AuthenticationProfileName: string;
-  readonly AuthenticationProfileContent: string;
+export interface CreateAuthenticationProfileResult {
+  readonly AuthenticationProfileName?: string;
+  readonly AuthenticationProfileContent?: string;
 }
 
-interface CreateClusterMessage {
-  readonly DBName: string;
+export interface CreateClusterMessage {
+  readonly DBName?: string;
   readonly ClusterIdentifier: string;
-  readonly ClusterType: string;
+  readonly ClusterType?: string;
   readonly NodeType: string;
   readonly MasterUsername: string;
   readonly MasterUserPassword: string;
-  readonly ClusterSecurityGroups: [];
-  readonly VpcSecurityGroupIds: [];
-  readonly ClusterSubnetGroupName: string;
-  readonly AvailabilityZone: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly ClusterParameterGroupName: string;
-  readonly AutomatedSnapshotRetentionPeriod: number;
-  readonly ManualSnapshotRetentionPeriod: number;
-  readonly Port: number;
-  readonly ClusterVersion: string;
-  readonly AllowVersionUpgrade: boolean;
-  readonly NumberOfNodes: number;
-  readonly PubliclyAccessible: boolean;
-  readonly Encrypted: boolean;
-  readonly HsmClientCertificateIdentifier: string;
-  readonly HsmConfigurationIdentifier: string;
-  readonly ElasticIp: string;
-  readonly Tags: [];
-  readonly KmsKeyId: string;
-  readonly EnhancedVpcRouting: boolean;
-  readonly AdditionalInfo: string;
-  readonly IamRoles: [];
-  readonly MaintenanceTrackName: string;
-  readonly SnapshotScheduleIdentifier: string;
-  readonly AvailabilityZoneRelocation: boolean;
-  readonly AquaConfigurationStatus: string;
-  readonly DefaultIamRoleArn: string;
+  readonly ClusterSecurityGroups?: [];
+  readonly VpcSecurityGroupIds?: [];
+  readonly ClusterSubnetGroupName?: string;
+  readonly AvailabilityZone?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly ClusterParameterGroupName?: string;
+  readonly AutomatedSnapshotRetentionPeriod?: number;
+  readonly ManualSnapshotRetentionPeriod?: number;
+  readonly Port?: number;
+  readonly ClusterVersion?: string;
+  readonly AllowVersionUpgrade?: boolean;
+  readonly NumberOfNodes?: number;
+  readonly PubliclyAccessible?: boolean;
+  readonly Encrypted?: boolean;
+  readonly HsmClientCertificateIdentifier?: string;
+  readonly HsmConfigurationIdentifier?: string;
+  readonly ElasticIp?: string;
+  readonly Tags?: [];
+  readonly KmsKeyId?: string;
+  readonly EnhancedVpcRouting?: boolean;
+  readonly AdditionalInfo?: string;
+  readonly IamRoles?: [];
+  readonly MaintenanceTrackName?: string;
+  readonly SnapshotScheduleIdentifier?: string;
+  readonly AvailabilityZoneRelocation?: boolean;
+  readonly AquaConfigurationStatus?: string;
+  readonly DefaultIamRoleArn?: string;
 }
 
-interface CreateClusterParameterGroupMessage {
+export interface CreateClusterParameterGroupMessage {
   readonly ParameterGroupName: string;
   readonly ParameterGroupFamily: string;
   readonly Description: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateClusterParameterGroupResult {
-  readonly ClusterParameterGroup: ClusterParameterGroup;
+export interface CreateClusterParameterGroupResult {
+  readonly ClusterParameterGroup?: ClusterParameterGroup;
 }
 
-interface CreateClusterResult {
-  readonly Cluster: Cluster;
+export interface CreateClusterResult {
+  readonly Cluster?: Cluster;
 }
 
-interface CreateClusterSecurityGroupMessage {
+export interface CreateClusterSecurityGroupMessage {
   readonly ClusterSecurityGroupName: string;
   readonly Description: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateClusterSecurityGroupResult {
-  readonly ClusterSecurityGroup: ClusterSecurityGroup;
+export interface CreateClusterSecurityGroupResult {
+  readonly ClusterSecurityGroup?: ClusterSecurityGroup;
 }
 
-interface CreateClusterSnapshotMessage {
+export interface CreateClusterSnapshotMessage {
   readonly SnapshotIdentifier: string;
   readonly ClusterIdentifier: string;
-  readonly ManualSnapshotRetentionPeriod: number;
-  readonly Tags: [];
+  readonly ManualSnapshotRetentionPeriod?: number;
+  readonly Tags?: [];
 }
 
-interface CreateClusterSnapshotResult {
-  readonly Snapshot: Snapshot;
+export interface CreateClusterSnapshotResult {
+  readonly Snapshot?: Snapshot;
 }
 
-interface CreateClusterSubnetGroupMessage {
+export interface CreateClusterSubnetGroupMessage {
   readonly ClusterSubnetGroupName: string;
   readonly Description: string;
   readonly SubnetIds: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateClusterSubnetGroupResult {
-  readonly ClusterSubnetGroup: ClusterSubnetGroup;
+export interface CreateClusterSubnetGroupResult {
+  readonly ClusterSubnetGroup?: ClusterSubnetGroup;
 }
 
-interface CreateEndpointAccessMessage {
-  readonly ClusterIdentifier: string;
-  readonly ResourceOwner: string;
+export interface CreateEndpointAccessMessage {
+  readonly ClusterIdentifier?: string;
+  readonly ResourceOwner?: string;
   readonly EndpointName: string;
   readonly SubnetGroupName: string;
-  readonly VpcSecurityGroupIds: [];
+  readonly VpcSecurityGroupIds?: [];
 }
 
-interface CreateEventSubscriptionMessage {
+export interface CreateEventSubscriptionMessage {
   readonly SubscriptionName: string;
   readonly SnsTopicArn: string;
-  readonly SourceType: string;
-  readonly SourceIds: [];
-  readonly EventCategories: [];
-  readonly Severity: string;
-  readonly Enabled: boolean;
-  readonly Tags: [];
+  readonly SourceType?: string;
+  readonly SourceIds?: [];
+  readonly EventCategories?: [];
+  readonly Severity?: string;
+  readonly Enabled?: boolean;
+  readonly Tags?: [];
 }
 
-interface CreateEventSubscriptionResult {
-  readonly EventSubscription: EventSubscription;
+export interface CreateEventSubscriptionResult {
+  readonly EventSubscription?: EventSubscription;
 }
 
-interface CreateHsmClientCertificateMessage {
+export interface CreateHsmClientCertificateMessage {
   readonly HsmClientCertificateIdentifier: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateHsmClientCertificateResult {
-  readonly HsmClientCertificate: HsmClientCertificate;
+export interface CreateHsmClientCertificateResult {
+  readonly HsmClientCertificate?: HsmClientCertificate;
 }
 
-interface CreateHsmConfigurationMessage {
+export interface CreateHsmConfigurationMessage {
   readonly HsmConfigurationIdentifier: string;
   readonly Description: string;
   readonly HsmIpAddress: string;
   readonly HsmPartitionName: string;
   readonly HsmPartitionPassword: string;
   readonly HsmServerPublicCertificate: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateHsmConfigurationResult {
-  readonly HsmConfiguration: HsmConfiguration;
+export interface CreateHsmConfigurationResult {
+  readonly HsmConfiguration?: HsmConfiguration;
 }
 
-interface CreateScheduledActionMessage {
+export interface CreateScheduledActionMessage {
   readonly ScheduledActionName: string;
   readonly TargetAction: ScheduledActionType;
   readonly Schedule: string;
   readonly IamRole: string;
-  readonly ScheduledActionDescription: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Enable: boolean;
+  readonly ScheduledActionDescription?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Enable?: boolean;
 }
 
-interface CreateSnapshotCopyGrantMessage {
+export interface CreateSnapshotCopyGrantMessage {
   readonly SnapshotCopyGrantName: string;
-  readonly KmsKeyId: string;
-  readonly Tags: [];
+  readonly KmsKeyId?: string;
+  readonly Tags?: [];
 }
 
-interface CreateSnapshotCopyGrantResult {
-  readonly SnapshotCopyGrant: SnapshotCopyGrant;
+export interface CreateSnapshotCopyGrantResult {
+  readonly SnapshotCopyGrant?: SnapshotCopyGrant;
 }
 
-interface CreateSnapshotScheduleMessage {
-  readonly ScheduleDefinitions: [];
-  readonly ScheduleIdentifier: string;
-  readonly ScheduleDescription: string;
-  readonly Tags: [];
-  readonly DryRun: boolean;
-  readonly NextInvocations: number;
+export interface CreateSnapshotScheduleMessage {
+  readonly ScheduleDefinitions?: [];
+  readonly ScheduleIdentifier?: string;
+  readonly ScheduleDescription?: string;
+  readonly Tags?: [];
+  readonly DryRun?: boolean;
+  readonly NextInvocations?: number;
 }
 
-interface CreateTagsMessage {
+export interface CreateTagsMessage {
   readonly ResourceName: string;
   readonly Tags: [];
 }
 
-interface CreateUsageLimitMessage {
+export interface CreateUsageLimitMessage {
   readonly ClusterIdentifier: string;
   readonly FeatureType: string;
   readonly LimitType: string;
   readonly Amount: number;
-  readonly Period: string;
-  readonly BreachAction: string;
-  readonly Tags: [];
+  readonly Period?: string;
+  readonly BreachAction?: string;
+  readonly Tags?: [];
 }
 
-interface CustomerStorageMessage {
-  readonly TotalBackupSizeInMegaBytes: unknown;
-  readonly TotalProvisionedStorageInMegaBytes: unknown;
+export interface CustomerStorageMessage {
+  readonly TotalBackupSizeInMegaBytes?: unknown;
+  readonly TotalProvisionedStorageInMegaBytes?: unknown;
 }
 
-interface DataShare {
+export interface DataShare {
+  readonly DataShareArn?: string;
+  readonly ProducerArn?: string;
+  readonly AllowPubliclyAccessibleConsumers?: boolean;
+  readonly DataShareAssociations?: [];
+}
+
+export interface DataShareAssociation {
+  readonly ConsumerIdentifier?: string;
+  readonly Status?: string;
+  readonly CreatedDate?: Date;
+  readonly StatusChangeDate?: Date;
+}
+
+export interface DataTransferProgress {
+  readonly Status?: string;
+  readonly CurrentRateInMegaBytesPerSecond?: unknown;
+  readonly TotalDataInMegaBytes?: number;
+  readonly DataTransferredInMegaBytes?: number;
+  readonly EstimatedTimeToCompletionInSeconds?: number;
+  readonly ElapsedTimeInSeconds?: number;
+}
+
+export interface DeauthorizeDataShareMessage {
   readonly DataShareArn: string;
-  readonly ProducerArn: string;
-  readonly AllowPubliclyAccessibleConsumers: boolean;
-  readonly DataShareAssociations: [];
-}
-
-interface DataShareAssociation {
-  readonly ConsumerIdentifier: string;
-  readonly Status: string;
-  readonly CreatedDate: Date;
-  readonly StatusChangeDate: Date;
-}
-
-interface DataTransferProgress {
-  readonly Status: string;
-  readonly CurrentRateInMegaBytesPerSecond: unknown;
-  readonly TotalDataInMegaBytes: number;
-  readonly DataTransferredInMegaBytes: number;
-  readonly EstimatedTimeToCompletionInSeconds: number;
-  readonly ElapsedTimeInSeconds: number;
-}
-
-interface DeauthorizeDataShareMessage {
-  readonly DataShareArn: string;
   readonly ConsumerIdentifier: string;
 }
 
-interface DefaultClusterParameters {
-  readonly ParameterGroupFamily: string;
-  readonly Marker: string;
-  readonly Parameters: [];
+export interface DefaultClusterParameters {
+  readonly ParameterGroupFamily?: string;
+  readonly Marker?: string;
+  readonly Parameters?: [];
 }
 
-interface DeferredMaintenanceWindow {
-  readonly DeferMaintenanceIdentifier: string;
-  readonly DeferMaintenanceStartTime: Date;
-  readonly DeferMaintenanceEndTime: Date;
+export interface DeferredMaintenanceWindow {
+  readonly DeferMaintenanceIdentifier?: string;
+  readonly DeferMaintenanceStartTime?: Date;
+  readonly DeferMaintenanceEndTime?: Date;
 }
 
-interface DeleteAuthenticationProfileMessage {
+export interface DeleteAuthenticationProfileMessage {
   readonly AuthenticationProfileName: string;
 }
 
-interface DeleteAuthenticationProfileResult {
-  readonly AuthenticationProfileName: string;
+export interface DeleteAuthenticationProfileResult {
+  readonly AuthenticationProfileName?: string;
 }
 
-interface DeleteClusterMessage {
+export interface DeleteClusterMessage {
   readonly ClusterIdentifier: string;
-  readonly SkipFinalClusterSnapshot: boolean;
-  readonly FinalClusterSnapshotIdentifier: string;
-  readonly FinalClusterSnapshotRetentionPeriod: number;
+  readonly SkipFinalClusterSnapshot?: boolean;
+  readonly FinalClusterSnapshotIdentifier?: string;
+  readonly FinalClusterSnapshotRetentionPeriod?: number;
 }
 
-interface DeleteClusterParameterGroupMessage {
+export interface DeleteClusterParameterGroupMessage {
   readonly ParameterGroupName: string;
 }
 
-interface DeleteClusterResult {
-  readonly Cluster: Cluster;
+export interface DeleteClusterResult {
+  readonly Cluster?: Cluster;
 }
 
-interface DeleteClusterSecurityGroupMessage {
+export interface DeleteClusterSecurityGroupMessage {
   readonly ClusterSecurityGroupName: string;
 }
 
-interface DeleteClusterSnapshotMessage {
+export interface DeleteClusterSnapshotMessage {
   readonly SnapshotIdentifier: string;
-  readonly SnapshotClusterIdentifier: string;
+  readonly SnapshotClusterIdentifier?: string;
 }
 
-interface DeleteClusterSnapshotResult {
-  readonly Snapshot: Snapshot;
+export interface DeleteClusterSnapshotResult {
+  readonly Snapshot?: Snapshot;
 }
 
-interface DeleteClusterSubnetGroupMessage {
+export interface DeleteClusterSubnetGroupMessage {
   readonly ClusterSubnetGroupName: string;
 }
 
-interface DeleteEndpointAccessMessage {
+export interface DeleteEndpointAccessMessage {
   readonly EndpointName: string;
 }
 
-interface DeleteEventSubscriptionMessage {
+export interface DeleteEventSubscriptionMessage {
   readonly SubscriptionName: string;
 }
 
-interface DeleteHsmClientCertificateMessage {
+export interface DeleteHsmClientCertificateMessage {
   readonly HsmClientCertificateIdentifier: string;
 }
 
-interface DeleteHsmConfigurationMessage {
+export interface DeleteHsmConfigurationMessage {
   readonly HsmConfigurationIdentifier: string;
 }
 
-interface DeleteScheduledActionMessage {
+export interface DeleteScheduledActionMessage {
   readonly ScheduledActionName: string;
 }
 
-interface DeleteSnapshotCopyGrantMessage {
+export interface DeleteSnapshotCopyGrantMessage {
   readonly SnapshotCopyGrantName: string;
 }
 
-interface DeleteSnapshotScheduleMessage {
+export interface DeleteSnapshotScheduleMessage {
   readonly ScheduleIdentifier: string;
 }
 
-interface DeleteTagsMessage {
+export interface DeleteTagsMessage {
   readonly ResourceName: string;
   readonly TagKeys: [];
 }
 
-interface DeleteUsageLimitMessage {
+export interface DeleteUsageLimitMessage {
   readonly UsageLimitId: string;
 }
 
-interface DependentServiceRequestThrottlingFault {
+export interface DependentServiceRequestThrottlingFault {
 }
 
-interface DependentServiceUnavailableFault {
+export interface DependentServiceUnavailableFault {
 }
 
-interface DescribeAccountAttributesMessage {
-  readonly AttributeNames: [];
+export interface DescribeAccountAttributesMessage {
+  readonly AttributeNames?: [];
 }
 
-interface DescribeAuthenticationProfilesMessage {
-  readonly AuthenticationProfileName: string;
+export interface DescribeAuthenticationProfilesMessage {
+  readonly AuthenticationProfileName?: string;
 }
 
-interface DescribeAuthenticationProfilesResult {
-  readonly AuthenticationProfiles: [];
+export interface DescribeAuthenticationProfilesResult {
+  readonly AuthenticationProfiles?: [];
 }
 
-interface DescribeClusterDbRevisionsMessage {
-  readonly ClusterIdentifier: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeClusterDbRevisionsMessage {
+  readonly ClusterIdentifier?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeClusterParameterGroupsMessage {
+export interface DescribeClusterParameterGroupsMessage {
+  readonly ParameterGroupName?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly TagKeys?: [];
+  readonly TagValues?: [];
+}
+
+export interface DescribeClusterParametersMessage {
   readonly ParameterGroupName: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly TagKeys: [];
-  readonly TagValues: [];
+  readonly Source?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeClusterParametersMessage {
-  readonly ParameterGroupName: string;
-  readonly Source: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeClusterSecurityGroupsMessage {
+  readonly ClusterSecurityGroupName?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly TagKeys?: [];
+  readonly TagValues?: [];
 }
 
-interface DescribeClusterSecurityGroupsMessage {
-  readonly ClusterSecurityGroupName: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly TagKeys: [];
-  readonly TagValues: [];
+export interface DescribeClusterSnapshotsMessage {
+  readonly ClusterIdentifier?: string;
+  readonly SnapshotIdentifier?: string;
+  readonly SnapshotType?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly OwnerAccount?: string;
+  readonly TagKeys?: [];
+  readonly TagValues?: [];
+  readonly ClusterExists?: boolean;
+  readonly SortingEntities?: [];
 }
 
-interface DescribeClusterSnapshotsMessage {
-  readonly ClusterIdentifier: string;
-  readonly SnapshotIdentifier: string;
-  readonly SnapshotType: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly OwnerAccount: string;
-  readonly TagKeys: [];
-  readonly TagValues: [];
-  readonly ClusterExists: boolean;
-  readonly SortingEntities: [];
+export interface DescribeClusterSubnetGroupsMessage {
+  readonly ClusterSubnetGroupName?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly TagKeys?: [];
+  readonly TagValues?: [];
 }
 
-interface DescribeClusterSubnetGroupsMessage {
-  readonly ClusterSubnetGroupName: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly TagKeys: [];
-  readonly TagValues: [];
+export interface DescribeClusterTracksMessage {
+  readonly MaintenanceTrackName?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeClusterTracksMessage {
-  readonly MaintenanceTrackName: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeClusterVersionsMessage {
+  readonly ClusterVersion?: string;
+  readonly ClusterParameterGroupFamily?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeClusterVersionsMessage {
-  readonly ClusterVersion: string;
-  readonly ClusterParameterGroupFamily: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeClustersMessage {
+  readonly ClusterIdentifier?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly TagKeys?: [];
+  readonly TagValues?: [];
 }
 
-interface DescribeClustersMessage {
-  readonly ClusterIdentifier: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly TagKeys: [];
-  readonly TagValues: [];
+export interface DescribeDataSharesForConsumerMessage {
+  readonly ConsumerArn?: string;
+  readonly Status?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeDataSharesForConsumerMessage {
-  readonly ConsumerArn: string;
-  readonly Status: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeDataSharesForConsumerResult {
+  readonly DataShares?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeDataSharesForConsumerResult {
-  readonly DataShares: [];
-  readonly Marker: string;
+export interface DescribeDataSharesForProducerMessage {
+  readonly ProducerArn?: string;
+  readonly Status?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeDataSharesForProducerMessage {
-  readonly ProducerArn: string;
-  readonly Status: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeDataSharesForProducerResult {
+  readonly DataShares?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeDataSharesForProducerResult {
-  readonly DataShares: [];
-  readonly Marker: string;
+export interface DescribeDataSharesMessage {
+  readonly DataShareArn?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeDataSharesMessage {
-  readonly DataShareArn: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeDataSharesResult {
+  readonly DataShares?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeDataSharesResult {
-  readonly DataShares: [];
-  readonly Marker: string;
-}
-
-interface DescribeDefaultClusterParametersMessage {
+export interface DescribeDefaultClusterParametersMessage {
   readonly ParameterGroupFamily: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeDefaultClusterParametersResult {
-  readonly DefaultClusterParameters: DefaultClusterParameters;
+export interface DescribeDefaultClusterParametersResult {
+  readonly DefaultClusterParameters?: DefaultClusterParameters;
 }
 
-interface DescribeEndpointAccessMessage {
+export interface DescribeEndpointAccessMessage {
+  readonly ClusterIdentifier?: string;
+  readonly ResourceOwner?: string;
+  readonly EndpointName?: string;
+  readonly VpcId?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+}
+
+export interface DescribeEndpointAuthorizationMessage {
+  readonly ClusterIdentifier?: string;
+  readonly Account?: string;
+  readonly Grantee?: boolean;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+}
+
+export interface DescribeEventCategoriesMessage {
+  readonly SourceType?: string;
+}
+
+export interface DescribeEventSubscriptionsMessage {
+  readonly SubscriptionName?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly TagKeys?: [];
+  readonly TagValues?: [];
+}
+
+export interface DescribeEventsMessage {
+  readonly SourceIdentifier?: string;
+  readonly SourceType?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Duration?: number;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+}
+
+export interface DescribeHsmClientCertificatesMessage {
+  readonly HsmClientCertificateIdentifier?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly TagKeys?: [];
+  readonly TagValues?: [];
+}
+
+export interface DescribeHsmConfigurationsMessage {
+  readonly HsmConfigurationIdentifier?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly TagKeys?: [];
+  readonly TagValues?: [];
+}
+
+export interface DescribeLoggingStatusMessage {
   readonly ClusterIdentifier: string;
-  readonly ResourceOwner: string;
-  readonly EndpointName: string;
-  readonly VpcId: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
 }
 
-interface DescribeEndpointAuthorizationMessage {
-  readonly ClusterIdentifier: string;
-  readonly Account: string;
-  readonly Grantee: boolean;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-}
-
-interface DescribeEventCategoriesMessage {
-  readonly SourceType: string;
-}
-
-interface DescribeEventSubscriptionsMessage {
-  readonly SubscriptionName: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly TagKeys: [];
-  readonly TagValues: [];
-}
-
-interface DescribeEventsMessage {
-  readonly SourceIdentifier: string;
-  readonly SourceType: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Duration: number;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-}
-
-interface DescribeHsmClientCertificatesMessage {
-  readonly HsmClientCertificateIdentifier: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly TagKeys: [];
-  readonly TagValues: [];
-}
-
-interface DescribeHsmConfigurationsMessage {
-  readonly HsmConfigurationIdentifier: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly TagKeys: [];
-  readonly TagValues: [];
-}
-
-interface DescribeLoggingStatusMessage {
-  readonly ClusterIdentifier: string;
-}
-
-interface DescribeNodeConfigurationOptionsMessage {
+export interface DescribeNodeConfigurationOptionsMessage {
   readonly ActionType: string;
-  readonly ClusterIdentifier: string;
-  readonly SnapshotIdentifier: string;
-  readonly OwnerAccount: string;
-  readonly Filters: [];
-  readonly Marker: string;
-  readonly MaxRecords: number;
+  readonly ClusterIdentifier?: string;
+  readonly SnapshotIdentifier?: string;
+  readonly OwnerAccount?: string;
+  readonly Filters?: [];
+  readonly Marker?: string;
+  readonly MaxRecords?: number;
 }
 
-interface DescribeOrderableClusterOptionsMessage {
-  readonly ClusterVersion: string;
-  readonly NodeType: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeOrderableClusterOptionsMessage {
+  readonly ClusterVersion?: string;
+  readonly NodeType?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribePartnersInputMessage {
+export interface DescribePartnersInputMessage {
   readonly AccountId: string;
   readonly ClusterIdentifier: string;
-  readonly DatabaseName: string;
-  readonly PartnerName: string;
+  readonly DatabaseName?: string;
+  readonly PartnerName?: string;
 }
 
-interface DescribePartnersOutputMessage {
-  readonly PartnerIntegrationInfoList: [];
+export interface DescribePartnersOutputMessage {
+  readonly PartnerIntegrationInfoList?: [];
 }
 
-interface DescribeReservedNodeExchangeStatusInputMessage {
-  readonly ReservedNodeId: string;
-  readonly ReservedNodeExchangeRequestId: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeReservedNodeExchangeStatusInputMessage {
+  readonly ReservedNodeId?: string;
+  readonly ReservedNodeExchangeRequestId?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeReservedNodeExchangeStatusOutputMessage {
-  readonly ReservedNodeExchangeStatusDetails: [];
-  readonly Marker: string;
+export interface DescribeReservedNodeExchangeStatusOutputMessage {
+  readonly ReservedNodeExchangeStatusDetails?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeReservedNodeOfferingsMessage {
-  readonly ReservedNodeOfferingId: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeReservedNodeOfferingsMessage {
+  readonly ReservedNodeOfferingId?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeReservedNodesMessage {
-  readonly ReservedNodeId: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeReservedNodesMessage {
+  readonly ReservedNodeId?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeResizeMessage {
+export interface DescribeResizeMessage {
   readonly ClusterIdentifier: string;
 }
 
-interface DescribeScheduledActionsMessage {
-  readonly ScheduledActionName: string;
-  readonly TargetActionType: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Active: boolean;
-  readonly Filters: [];
-  readonly Marker: string;
-  readonly MaxRecords: number;
+export interface DescribeScheduledActionsMessage {
+  readonly ScheduledActionName?: string;
+  readonly TargetActionType?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Active?: boolean;
+  readonly Filters?: [];
+  readonly Marker?: string;
+  readonly MaxRecords?: number;
 }
 
-interface DescribeSnapshotCopyGrantsMessage {
-  readonly SnapshotCopyGrantName: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly TagKeys: [];
-  readonly TagValues: [];
+export interface DescribeSnapshotCopyGrantsMessage {
+  readonly SnapshotCopyGrantName?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly TagKeys?: [];
+  readonly TagValues?: [];
 }
 
-interface DescribeSnapshotSchedulesMessage {
-  readonly ClusterIdentifier: string;
-  readonly ScheduleIdentifier: string;
-  readonly TagKeys: [];
-  readonly TagValues: [];
-  readonly Marker: string;
-  readonly MaxRecords: number;
+export interface DescribeSnapshotSchedulesMessage {
+  readonly ClusterIdentifier?: string;
+  readonly ScheduleIdentifier?: string;
+  readonly TagKeys?: [];
+  readonly TagValues?: [];
+  readonly Marker?: string;
+  readonly MaxRecords?: number;
 }
 
-interface DescribeSnapshotSchedulesOutputMessage {
-  readonly SnapshotSchedules: [];
-  readonly Marker: string;
+export interface DescribeSnapshotSchedulesOutputMessage {
+  readonly SnapshotSchedules?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeTableRestoreStatusMessage {
-  readonly ClusterIdentifier: string;
-  readonly TableRestoreRequestId: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeTableRestoreStatusMessage {
+  readonly ClusterIdentifier?: string;
+  readonly TableRestoreRequestId?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeTagsMessage {
-  readonly ResourceName: string;
-  readonly ResourceType: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly TagKeys: [];
-  readonly TagValues: [];
+export interface DescribeTagsMessage {
+  readonly ResourceName?: string;
+  readonly ResourceType?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly TagKeys?: [];
+  readonly TagValues?: [];
 }
 
-interface DescribeUsageLimitsMessage {
-  readonly UsageLimitId: string;
-  readonly ClusterIdentifier: string;
-  readonly FeatureType: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly TagKeys: [];
-  readonly TagValues: [];
+export interface DescribeUsageLimitsMessage {
+  readonly UsageLimitId?: string;
+  readonly ClusterIdentifier?: string;
+  readonly FeatureType?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly TagKeys?: [];
+  readonly TagValues?: [];
 }
 
-interface DisableLoggingMessage {
-  readonly ClusterIdentifier: string;
-}
-
-interface DisableSnapshotCopyMessage {
+export interface DisableLoggingMessage {
   readonly ClusterIdentifier: string;
 }
 
-interface DisableSnapshotCopyResult {
-  readonly Cluster: Cluster;
+export interface DisableSnapshotCopyMessage {
+  readonly ClusterIdentifier: string;
 }
 
-interface DisassociateDataShareConsumerMessage {
+export interface DisableSnapshotCopyResult {
+  readonly Cluster?: Cluster;
+}
+
+export interface DisassociateDataShareConsumerMessage {
   readonly DataShareArn: string;
-  readonly DisassociateEntireAccount: boolean;
-  readonly ConsumerArn: string;
+  readonly DisassociateEntireAccount?: boolean;
+  readonly ConsumerArn?: string;
 }
 
-interface EC2SecurityGroup {
-  readonly Status: string;
-  readonly EC2SecurityGroupName: string;
-  readonly EC2SecurityGroupOwnerId: string;
-  readonly Tags: [];
+export interface EC2SecurityGroup {
+  readonly Status?: string;
+  readonly EC2SecurityGroupName?: string;
+  readonly EC2SecurityGroupOwnerId?: string;
+  readonly Tags?: [];
 }
 
-interface ElasticIpStatus {
-  readonly ElasticIp: string;
-  readonly Status: string;
+export interface ElasticIpStatus {
+  readonly ElasticIp?: string;
+  readonly Status?: string;
 }
 
-interface EnableLoggingMessage {
+export interface EnableLoggingMessage {
   readonly ClusterIdentifier: string;
   readonly BucketName: string;
-  readonly S3KeyPrefix: string;
+  readonly S3KeyPrefix?: string;
 }
 
-interface EnableSnapshotCopyMessage {
+export interface EnableSnapshotCopyMessage {
   readonly ClusterIdentifier: string;
   readonly DestinationRegion: string;
-  readonly RetentionPeriod: number;
-  readonly SnapshotCopyGrantName: string;
-  readonly ManualSnapshotRetentionPeriod: number;
+  readonly RetentionPeriod?: number;
+  readonly SnapshotCopyGrantName?: string;
+  readonly ManualSnapshotRetentionPeriod?: number;
 }
 
-interface EnableSnapshotCopyResult {
-  readonly Cluster: Cluster;
+export interface EnableSnapshotCopyResult {
+  readonly Cluster?: Cluster;
 }
 
-interface Endpoint {
-  readonly Address: string;
-  readonly Port: number;
-  readonly VpcEndpoints: [];
+export interface Endpoint {
+  readonly Address?: string;
+  readonly Port?: number;
+  readonly VpcEndpoints?: [];
 }
 
-interface EndpointAccess {
-  readonly ClusterIdentifier: string;
-  readonly ResourceOwner: string;
-  readonly SubnetGroupName: string;
-  readonly EndpointStatus: string;
-  readonly EndpointName: string;
-  readonly EndpointCreateTime: Date;
-  readonly Port: number;
-  readonly Address: string;
-  readonly VpcSecurityGroups: [];
-  readonly VpcEndpoint: VpcEndpoint;
+export interface EndpointAccess {
+  readonly ClusterIdentifier?: string;
+  readonly ResourceOwner?: string;
+  readonly SubnetGroupName?: string;
+  readonly EndpointStatus?: string;
+  readonly EndpointName?: string;
+  readonly EndpointCreateTime?: Date;
+  readonly Port?: number;
+  readonly Address?: string;
+  readonly VpcSecurityGroups?: [];
+  readonly VpcEndpoint?: VpcEndpoint;
 }
 
-interface EndpointAccessList {
-  readonly EndpointAccessList: [];
-  readonly Marker: string;
+export interface EndpointAccessList {
+  readonly EndpointAccessList?: [];
+  readonly Marker?: string;
 }
 
-interface EndpointAlreadyExistsFault {
+export interface EndpointAlreadyExistsFault {
 }
 
-interface EndpointAuthorization {
-  readonly Grantor: string;
-  readonly Grantee: string;
-  readonly ClusterIdentifier: string;
-  readonly AuthorizeTime: Date;
-  readonly ClusterStatus: string;
-  readonly Status: string;
-  readonly AllowedAllVPCs: boolean;
-  readonly AllowedVPCs: [];
-  readonly EndpointCount: number;
+export interface EndpointAuthorization {
+  readonly Grantor?: string;
+  readonly Grantee?: string;
+  readonly ClusterIdentifier?: string;
+  readonly AuthorizeTime?: Date;
+  readonly ClusterStatus?: string;
+  readonly Status?: string;
+  readonly AllowedAllVPCs?: boolean;
+  readonly AllowedVPCs?: [];
+  readonly EndpointCount?: number;
 }
 
-interface EndpointAuthorizationAlreadyExistsFault {
+export interface EndpointAuthorizationAlreadyExistsFault {
 }
 
-interface EndpointAuthorizationList {
-  readonly EndpointAuthorizationList: [];
-  readonly Marker: string;
+export interface EndpointAuthorizationList {
+  readonly EndpointAuthorizationList?: [];
+  readonly Marker?: string;
 }
 
-interface EndpointAuthorizationNotFoundFault {
+export interface EndpointAuthorizationNotFoundFault {
 }
 
-interface EndpointAuthorizationsPerClusterLimitExceededFault {
+export interface EndpointAuthorizationsPerClusterLimitExceededFault {
 }
 
-interface EndpointNotFoundFault {
+export interface EndpointNotFoundFault {
 }
 
-interface EndpointsPerAuthorizationLimitExceededFault {
+export interface EndpointsPerAuthorizationLimitExceededFault {
 }
 
-interface EndpointsPerClusterLimitExceededFault {
+export interface EndpointsPerClusterLimitExceededFault {
 }
 
-interface Event {
-  readonly SourceIdentifier: string;
-  readonly SourceType: string;
-  readonly Message: string;
-  readonly EventCategories: [];
-  readonly Severity: string;
-  readonly Date: Date;
-  readonly EventId: string;
+export interface Event {
+  readonly SourceIdentifier?: string;
+  readonly SourceType?: string;
+  readonly Message?: string;
+  readonly EventCategories?: [];
+  readonly Severity?: string;
+  readonly Date?: Date;
+  readonly EventId?: string;
 }
 
-interface EventCategoriesMap {
-  readonly SourceType: string;
-  readonly Events: [];
+export interface EventCategoriesMap {
+  readonly SourceType?: string;
+  readonly Events?: [];
 }
 
-interface EventCategoriesMessage {
-  readonly EventCategoriesMapList: [];
+export interface EventCategoriesMessage {
+  readonly EventCategoriesMapList?: [];
 }
 
-interface EventInfoMap {
-  readonly EventId: string;
-  readonly EventCategories: [];
-  readonly EventDescription: string;
-  readonly Severity: string;
+export interface EventInfoMap {
+  readonly EventId?: string;
+  readonly EventCategories?: [];
+  readonly EventDescription?: string;
+  readonly Severity?: string;
 }
 
-interface EventSubscription {
-  readonly CustomerAwsId: string;
-  readonly CustSubscriptionId: string;
-  readonly SnsTopicArn: string;
-  readonly Status: string;
-  readonly SubscriptionCreationTime: Date;
-  readonly SourceType: string;
-  readonly SourceIdsList: [];
-  readonly EventCategoriesList: [];
-  readonly Severity: string;
-  readonly Enabled: boolean;
-  readonly Tags: [];
+export interface EventSubscription {
+  readonly CustomerAwsId?: string;
+  readonly CustSubscriptionId?: string;
+  readonly SnsTopicArn?: string;
+  readonly Status?: string;
+  readonly SubscriptionCreationTime?: Date;
+  readonly SourceType?: string;
+  readonly SourceIdsList?: [];
+  readonly EventCategoriesList?: [];
+  readonly Severity?: string;
+  readonly Enabled?: boolean;
+  readonly Tags?: [];
 }
 
-interface EventSubscriptionQuotaExceededFault {
+export interface EventSubscriptionQuotaExceededFault {
 }
 
-interface EventSubscriptionsMessage {
-  readonly Marker: string;
-  readonly EventSubscriptionsList: [];
+export interface EventSubscriptionsMessage {
+  readonly Marker?: string;
+  readonly EventSubscriptionsList?: [];
 }
 
-interface EventsMessage {
-  readonly Marker: string;
-  readonly Events: [];
+export interface EventsMessage {
+  readonly Marker?: string;
+  readonly Events?: [];
 }
 
-interface GetClusterCredentialsMessage {
+export interface GetClusterCredentialsMessage {
   readonly DbUser: string;
-  readonly DbName: string;
+  readonly DbName?: string;
   readonly ClusterIdentifier: string;
-  readonly DurationSeconds: number;
-  readonly AutoCreate: boolean;
-  readonly DbGroups: [];
+  readonly DurationSeconds?: number;
+  readonly AutoCreate?: boolean;
+  readonly DbGroups?: [];
 }
 
-interface GetReservedNodeExchangeConfigurationOptionsInputMessage {
+export interface GetReservedNodeExchangeConfigurationOptionsInputMessage {
   readonly ActionType: string;
-  readonly ClusterIdentifier: string;
-  readonly SnapshotIdentifier: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly ClusterIdentifier?: string;
+  readonly SnapshotIdentifier?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface GetReservedNodeExchangeConfigurationOptionsOutputMessage {
-  readonly Marker: string;
-  readonly ReservedNodeConfigurationOptionList: [];
+export interface GetReservedNodeExchangeConfigurationOptionsOutputMessage {
+  readonly Marker?: string;
+  readonly ReservedNodeConfigurationOptionList?: [];
 }
 
-interface GetReservedNodeExchangeOfferingsInputMessage {
+export interface GetReservedNodeExchangeOfferingsInputMessage {
   readonly ReservedNodeId: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface GetReservedNodeExchangeOfferingsOutputMessage {
-  readonly Marker: string;
-  readonly ReservedNodeOfferings: [];
+export interface GetReservedNodeExchangeOfferingsOutputMessage {
+  readonly Marker?: string;
+  readonly ReservedNodeOfferings?: [];
 }
 
-interface HsmClientCertificate {
-  readonly HsmClientCertificateIdentifier: string;
-  readonly HsmClientCertificatePublicKey: string;
-  readonly Tags: [];
+export interface HsmClientCertificate {
+  readonly HsmClientCertificateIdentifier?: string;
+  readonly HsmClientCertificatePublicKey?: string;
+  readonly Tags?: [];
 }
 
-interface HsmClientCertificateAlreadyExistsFault {
+export interface HsmClientCertificateAlreadyExistsFault {
 }
 
-interface HsmClientCertificateMessage {
-  readonly Marker: string;
-  readonly HsmClientCertificates: [];
+export interface HsmClientCertificateMessage {
+  readonly Marker?: string;
+  readonly HsmClientCertificates?: [];
 }
 
-interface HsmClientCertificateNotFoundFault {
+export interface HsmClientCertificateNotFoundFault {
 }
 
-interface HsmClientCertificateQuotaExceededFault {
+export interface HsmClientCertificateQuotaExceededFault {
 }
 
-interface HsmConfiguration {
-  readonly HsmConfigurationIdentifier: string;
-  readonly Description: string;
-  readonly HsmIpAddress: string;
-  readonly HsmPartitionName: string;
-  readonly Tags: [];
+export interface HsmConfiguration {
+  readonly HsmConfigurationIdentifier?: string;
+  readonly Description?: string;
+  readonly HsmIpAddress?: string;
+  readonly HsmPartitionName?: string;
+  readonly Tags?: [];
 }
 
-interface HsmConfigurationAlreadyExistsFault {
+export interface HsmConfigurationAlreadyExistsFault {
 }
 
-interface HsmConfigurationMessage {
-  readonly Marker: string;
-  readonly HsmConfigurations: [];
+export interface HsmConfigurationMessage {
+  readonly Marker?: string;
+  readonly HsmConfigurations?: [];
 }
 
-interface HsmConfigurationNotFoundFault {
+export interface HsmConfigurationNotFoundFault {
 }
 
-interface HsmConfigurationQuotaExceededFault {
+export interface HsmConfigurationQuotaExceededFault {
 }
 
-interface HsmStatus {
-  readonly HsmClientCertificateIdentifier: string;
-  readonly HsmConfigurationIdentifier: string;
-  readonly Status: string;
+export interface HsmStatus {
+  readonly HsmClientCertificateIdentifier?: string;
+  readonly HsmConfigurationIdentifier?: string;
+  readonly Status?: string;
 }
 
-interface IPRange {
-  readonly Status: string;
-  readonly CIDRIP: string;
-  readonly Tags: [];
+export interface IPRange {
+  readonly Status?: string;
+  readonly CIDRIP?: string;
+  readonly Tags?: [];
 }
 
-interface InProgressTableRestoreQuotaExceededFault {
+export interface InProgressTableRestoreQuotaExceededFault {
 }
 
-interface IncompatibleOrderableOptions {
+export interface IncompatibleOrderableOptions {
 }
 
-interface InsufficientClusterCapacityFault {
+export interface InsufficientClusterCapacityFault {
 }
 
-interface InsufficientS3BucketPolicyFault {
+export interface InsufficientS3BucketPolicyFault {
 }
 
-interface InvalidAuthenticationProfileRequestFault {
+export interface InvalidAuthenticationProfileRequestFault {
 }
 
-interface InvalidAuthorizationStateFault {
+export interface InvalidAuthorizationStateFault {
 }
 
-interface InvalidClusterParameterGroupStateFault {
+export interface InvalidClusterParameterGroupStateFault {
 }
 
-interface InvalidClusterSecurityGroupStateFault {
+export interface InvalidClusterSecurityGroupStateFault {
 }
 
-interface InvalidClusterSnapshotScheduleStateFault {
+export interface InvalidClusterSnapshotScheduleStateFault {
 }
 
-interface InvalidClusterSnapshotStateFault {
+export interface InvalidClusterSnapshotStateFault {
 }
 
-interface InvalidClusterStateFault {
+export interface InvalidClusterStateFault {
 }
 
-interface InvalidClusterSubnetGroupStateFault {
+export interface InvalidClusterSubnetGroupStateFault {
 }
 
-interface InvalidClusterSubnetStateFault {
+export interface InvalidClusterSubnetStateFault {
 }
 
-interface InvalidClusterTrackFault {
+export interface InvalidClusterTrackFault {
 }
 
-interface InvalidDataShareFault {
+export interface InvalidDataShareFault {
 }
 
-interface InvalidElasticIpFault {
+export interface InvalidElasticIpFault {
 }
 
-interface InvalidEndpointStateFault {
+export interface InvalidEndpointStateFault {
 }
 
-interface InvalidHsmClientCertificateStateFault {
+export interface InvalidHsmClientCertificateStateFault {
 }
 
-interface InvalidHsmConfigurationStateFault {
+export interface InvalidHsmConfigurationStateFault {
 }
 
-interface InvalidNamespaceFault {
+export interface InvalidNamespaceFault {
 }
 
-interface InvalidReservedNodeStateFault {
+export interface InvalidReservedNodeStateFault {
 }
 
-interface InvalidRestoreFault {
+export interface InvalidRestoreFault {
 }
 
-interface InvalidRetentionPeriodFault {
+export interface InvalidRetentionPeriodFault {
 }
 
-interface InvalidS3BucketNameFault {
+export interface InvalidS3BucketNameFault {
 }
 
-interface InvalidS3KeyPrefixFault {
+export interface InvalidS3KeyPrefixFault {
 }
 
-interface InvalidScheduleFault {
+export interface InvalidScheduleFault {
 }
 
-interface InvalidScheduledActionFault {
+export interface InvalidScheduledActionFault {
 }
 
-interface InvalidSnapshotCopyGrantStateFault {
+export interface InvalidSnapshotCopyGrantStateFault {
 }
 
-interface InvalidSubnet {
+export interface InvalidSubnet {
 }
 
-interface InvalidSubscriptionStateFault {
+export interface InvalidSubscriptionStateFault {
 }
 
-interface InvalidTableRestoreArgumentFault {
+export interface InvalidTableRestoreArgumentFault {
 }
 
-interface InvalidTagFault {
+export interface InvalidTagFault {
 }
 
-interface InvalidUsageLimitFault {
+export interface InvalidUsageLimitFault {
 }
 
-interface InvalidVPCNetworkStateFault {
+export interface InvalidVPCNetworkStateFault {
 }
 
-interface LimitExceededFault {
+export interface LimitExceededFault {
 }
 
-interface LoggingStatus {
-  readonly LoggingEnabled: boolean;
-  readonly BucketName: string;
-  readonly S3KeyPrefix: string;
-  readonly LastSuccessfulDeliveryTime: Date;
-  readonly LastFailureTime: Date;
-  readonly LastFailureMessage: string;
+export interface LoggingStatus {
+  readonly LoggingEnabled?: boolean;
+  readonly BucketName?: string;
+  readonly S3KeyPrefix?: string;
+  readonly LastSuccessfulDeliveryTime?: Date;
+  readonly LastFailureTime?: Date;
+  readonly LastFailureMessage?: string;
 }
 
-interface MaintenanceTrack {
-  readonly MaintenanceTrackName: string;
-  readonly DatabaseVersion: string;
-  readonly UpdateTargets: [];
+export interface MaintenanceTrack {
+  readonly MaintenanceTrackName?: string;
+  readonly DatabaseVersion?: string;
+  readonly UpdateTargets?: [];
 }
 
-interface ModifyAquaInputMessage {
+export interface ModifyAquaInputMessage {
   readonly ClusterIdentifier: string;
-  readonly AquaConfigurationStatus: string;
+  readonly AquaConfigurationStatus?: string;
 }
 
-interface ModifyAquaOutputMessage {
-  readonly AquaConfiguration: AquaConfiguration;
+export interface ModifyAquaOutputMessage {
+  readonly AquaConfiguration?: AquaConfiguration;
 }
 
-interface ModifyAuthenticationProfileMessage {
+export interface ModifyAuthenticationProfileMessage {
   readonly AuthenticationProfileName: string;
   readonly AuthenticationProfileContent: string;
 }
 
-interface ModifyAuthenticationProfileResult {
-  readonly AuthenticationProfileName: string;
-  readonly AuthenticationProfileContent: string;
+export interface ModifyAuthenticationProfileResult {
+  readonly AuthenticationProfileName?: string;
+  readonly AuthenticationProfileContent?: string;
 }
 
-interface ModifyClusterDbRevisionMessage {
+export interface ModifyClusterDbRevisionMessage {
   readonly ClusterIdentifier: string;
   readonly RevisionTarget: string;
 }
 
-interface ModifyClusterDbRevisionResult {
-  readonly Cluster: Cluster;
+export interface ModifyClusterDbRevisionResult {
+  readonly Cluster?: Cluster;
 }
 
-interface ModifyClusterIamRolesMessage {
+export interface ModifyClusterIamRolesMessage {
   readonly ClusterIdentifier: string;
-  readonly AddIamRoles: [];
-  readonly RemoveIamRoles: [];
-  readonly DefaultIamRoleArn: string;
+  readonly AddIamRoles?: [];
+  readonly RemoveIamRoles?: [];
+  readonly DefaultIamRoleArn?: string;
 }
 
-interface ModifyClusterIamRolesResult {
-  readonly Cluster: Cluster;
+export interface ModifyClusterIamRolesResult {
+  readonly Cluster?: Cluster;
 }
 
-interface ModifyClusterMaintenanceMessage {
+export interface ModifyClusterMaintenanceMessage {
   readonly ClusterIdentifier: string;
-  readonly DeferMaintenance: boolean;
-  readonly DeferMaintenanceIdentifier: string;
-  readonly DeferMaintenanceStartTime: Date;
-  readonly DeferMaintenanceEndTime: Date;
-  readonly DeferMaintenanceDuration: number;
+  readonly DeferMaintenance?: boolean;
+  readonly DeferMaintenanceIdentifier?: string;
+  readonly DeferMaintenanceStartTime?: Date;
+  readonly DeferMaintenanceEndTime?: Date;
+  readonly DeferMaintenanceDuration?: number;
 }
 
-interface ModifyClusterMaintenanceResult {
-  readonly Cluster: Cluster;
+export interface ModifyClusterMaintenanceResult {
+  readonly Cluster?: Cluster;
 }
 
-interface ModifyClusterMessage {
+export interface ModifyClusterMessage {
   readonly ClusterIdentifier: string;
-  readonly ClusterType: string;
-  readonly NodeType: string;
-  readonly NumberOfNodes: number;
-  readonly ClusterSecurityGroups: [];
-  readonly VpcSecurityGroupIds: [];
-  readonly MasterUserPassword: string;
-  readonly ClusterParameterGroupName: string;
-  readonly AutomatedSnapshotRetentionPeriod: number;
-  readonly ManualSnapshotRetentionPeriod: number;
-  readonly PreferredMaintenanceWindow: string;
-  readonly ClusterVersion: string;
-  readonly AllowVersionUpgrade: boolean;
-  readonly HsmClientCertificateIdentifier: string;
-  readonly HsmConfigurationIdentifier: string;
-  readonly NewClusterIdentifier: string;
-  readonly PubliclyAccessible: boolean;
-  readonly ElasticIp: string;
-  readonly EnhancedVpcRouting: boolean;
-  readonly MaintenanceTrackName: string;
-  readonly Encrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly AvailabilityZoneRelocation: boolean;
-  readonly AvailabilityZone: string;
-  readonly Port: number;
+  readonly ClusterType?: string;
+  readonly NodeType?: string;
+  readonly NumberOfNodes?: number;
+  readonly ClusterSecurityGroups?: [];
+  readonly VpcSecurityGroupIds?: [];
+  readonly MasterUserPassword?: string;
+  readonly ClusterParameterGroupName?: string;
+  readonly AutomatedSnapshotRetentionPeriod?: number;
+  readonly ManualSnapshotRetentionPeriod?: number;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly ClusterVersion?: string;
+  readonly AllowVersionUpgrade?: boolean;
+  readonly HsmClientCertificateIdentifier?: string;
+  readonly HsmConfigurationIdentifier?: string;
+  readonly NewClusterIdentifier?: string;
+  readonly PubliclyAccessible?: boolean;
+  readonly ElasticIp?: string;
+  readonly EnhancedVpcRouting?: boolean;
+  readonly MaintenanceTrackName?: string;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly AvailabilityZoneRelocation?: boolean;
+  readonly AvailabilityZone?: string;
+  readonly Port?: number;
 }
 
-interface ModifyClusterParameterGroupMessage {
+export interface ModifyClusterParameterGroupMessage {
   readonly ParameterGroupName: string;
   readonly Parameters: [];
 }
 
-interface ModifyClusterResult {
-  readonly Cluster: Cluster;
+export interface ModifyClusterResult {
+  readonly Cluster?: Cluster;
 }
 
-interface ModifyClusterSnapshotMessage {
+export interface ModifyClusterSnapshotMessage {
   readonly SnapshotIdentifier: string;
-  readonly ManualSnapshotRetentionPeriod: number;
-  readonly Force: boolean;
+  readonly ManualSnapshotRetentionPeriod?: number;
+  readonly Force?: boolean;
 }
 
-interface ModifyClusterSnapshotResult {
-  readonly Snapshot: Snapshot;
+export interface ModifyClusterSnapshotResult {
+  readonly Snapshot?: Snapshot;
 }
 
-interface ModifyClusterSnapshotScheduleMessage {
+export interface ModifyClusterSnapshotScheduleMessage {
   readonly ClusterIdentifier: string;
-  readonly ScheduleIdentifier: string;
-  readonly DisassociateSchedule: boolean;
+  readonly ScheduleIdentifier?: string;
+  readonly DisassociateSchedule?: boolean;
 }
 
-interface ModifyClusterSubnetGroupMessage {
+export interface ModifyClusterSubnetGroupMessage {
   readonly ClusterSubnetGroupName: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly SubnetIds: [];
 }
 
-interface ModifyClusterSubnetGroupResult {
-  readonly ClusterSubnetGroup: ClusterSubnetGroup;
+export interface ModifyClusterSubnetGroupResult {
+  readonly ClusterSubnetGroup?: ClusterSubnetGroup;
 }
 
-interface ModifyEndpointAccessMessage {
+export interface ModifyEndpointAccessMessage {
   readonly EndpointName: string;
-  readonly VpcSecurityGroupIds: [];
+  readonly VpcSecurityGroupIds?: [];
 }
 
-interface ModifyEventSubscriptionMessage {
+export interface ModifyEventSubscriptionMessage {
   readonly SubscriptionName: string;
-  readonly SnsTopicArn: string;
-  readonly SourceType: string;
-  readonly SourceIds: [];
-  readonly EventCategories: [];
-  readonly Severity: string;
-  readonly Enabled: boolean;
+  readonly SnsTopicArn?: string;
+  readonly SourceType?: string;
+  readonly SourceIds?: [];
+  readonly EventCategories?: [];
+  readonly Severity?: string;
+  readonly Enabled?: boolean;
 }
 
-interface ModifyEventSubscriptionResult {
-  readonly EventSubscription: EventSubscription;
+export interface ModifyEventSubscriptionResult {
+  readonly EventSubscription?: EventSubscription;
 }
 
-interface ModifyScheduledActionMessage {
+export interface ModifyScheduledActionMessage {
   readonly ScheduledActionName: string;
-  readonly TargetAction: ScheduledActionType;
-  readonly Schedule: string;
-  readonly IamRole: string;
-  readonly ScheduledActionDescription: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Enable: boolean;
+  readonly TargetAction?: ScheduledActionType;
+  readonly Schedule?: string;
+  readonly IamRole?: string;
+  readonly ScheduledActionDescription?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Enable?: boolean;
 }
 
-interface ModifySnapshotCopyRetentionPeriodMessage {
+export interface ModifySnapshotCopyRetentionPeriodMessage {
   readonly ClusterIdentifier: string;
   readonly RetentionPeriod: number;
-  readonly Manual: boolean;
+  readonly Manual?: boolean;
 }
 
-interface ModifySnapshotCopyRetentionPeriodResult {
-  readonly Cluster: Cluster;
+export interface ModifySnapshotCopyRetentionPeriodResult {
+  readonly Cluster?: Cluster;
 }
 
-interface ModifySnapshotScheduleMessage {
+export interface ModifySnapshotScheduleMessage {
   readonly ScheduleIdentifier: string;
   readonly ScheduleDefinitions: [];
 }
 
-interface ModifyUsageLimitMessage {
+export interface ModifyUsageLimitMessage {
   readonly UsageLimitId: string;
-  readonly Amount: number;
-  readonly BreachAction: string;
+  readonly Amount?: number;
+  readonly BreachAction?: string;
 }
 
-interface NetworkInterface {
-  readonly NetworkInterfaceId: string;
-  readonly SubnetId: string;
-  readonly PrivateIpAddress: string;
-  readonly AvailabilityZone: string;
+export interface NetworkInterface {
+  readonly NetworkInterfaceId?: string;
+  readonly SubnetId?: string;
+  readonly PrivateIpAddress?: string;
+  readonly AvailabilityZone?: string;
 }
 
-interface NodeConfigurationOption {
-  readonly NodeType: string;
-  readonly NumberOfNodes: number;
-  readonly EstimatedDiskUtilizationPercent: unknown;
-  readonly Mode: string;
+export interface NodeConfigurationOption {
+  readonly NodeType?: string;
+  readonly NumberOfNodes?: number;
+  readonly EstimatedDiskUtilizationPercent?: unknown;
+  readonly Mode?: string;
 }
 
-interface NodeConfigurationOptionsFilter {
-  readonly Name: string;
-  readonly Operator: string;
-  readonly Values: [];
+export interface NodeConfigurationOptionsFilter {
+  readonly Name?: string;
+  readonly Operator?: string;
+  readonly Values?: [];
 }
 
-interface NodeConfigurationOptionsMessage {
-  readonly NodeConfigurationOptionList: [];
-  readonly Marker: string;
+export interface NodeConfigurationOptionsMessage {
+  readonly NodeConfigurationOptionList?: [];
+  readonly Marker?: string;
 }
 
-interface NumberOfNodesPerClusterLimitExceededFault {
+export interface NumberOfNodesPerClusterLimitExceededFault {
 }
 
-interface NumberOfNodesQuotaExceededFault {
+export interface NumberOfNodesQuotaExceededFault {
 }
 
-interface OrderableClusterOption {
-  readonly ClusterVersion: string;
-  readonly ClusterType: string;
-  readonly NodeType: string;
-  readonly AvailabilityZones: [];
+export interface OrderableClusterOption {
+  readonly ClusterVersion?: string;
+  readonly ClusterType?: string;
+  readonly NodeType?: string;
+  readonly AvailabilityZones?: [];
 }
 
-interface OrderableClusterOptionsMessage {
-  readonly OrderableClusterOptions: [];
-  readonly Marker: string;
+export interface OrderableClusterOptionsMessage {
+  readonly OrderableClusterOptions?: [];
+  readonly Marker?: string;
 }
 
-interface Parameter {
-  readonly ParameterName: string;
-  readonly ParameterValue: string;
-  readonly Description: string;
-  readonly Source: string;
-  readonly DataType: string;
-  readonly AllowedValues: string;
-  readonly ApplyType: string;
-  readonly IsModifiable: boolean;
-  readonly MinimumEngineVersion: string;
+export interface Parameter {
+  readonly ParameterName?: string;
+  readonly ParameterValue?: string;
+  readonly Description?: string;
+  readonly Source?: string;
+  readonly DataType?: string;
+  readonly AllowedValues?: string;
+  readonly ApplyType?: string;
+  readonly IsModifiable?: boolean;
+  readonly MinimumEngineVersion?: string;
 }
 
-interface PartnerIntegrationInfo {
-  readonly DatabaseName: string;
-  readonly PartnerName: string;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
+export interface PartnerIntegrationInfo {
+  readonly DatabaseName?: string;
+  readonly PartnerName?: string;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
 }
 
-interface PartnerIntegrationInputMessage {
+export interface PartnerIntegrationInputMessage {
   readonly AccountId: string;
   readonly ClusterIdentifier: string;
   readonly DatabaseName: string;
   readonly PartnerName: string;
 }
 
-interface PartnerIntegrationOutputMessage {
-  readonly DatabaseName: string;
-  readonly PartnerName: string;
+export interface PartnerIntegrationOutputMessage {
+  readonly DatabaseName?: string;
+  readonly PartnerName?: string;
 }
 
-interface PartnerNotFoundFault {
+export interface PartnerNotFoundFault {
 }
 
-interface PauseClusterMessage {
+export interface PauseClusterMessage {
   readonly ClusterIdentifier: string;
 }
 
-interface PauseClusterResult {
-  readonly Cluster: Cluster;
+export interface PauseClusterResult {
+  readonly Cluster?: Cluster;
 }
 
-interface PendingModifiedValues {
-  readonly MasterUserPassword: string;
-  readonly NodeType: string;
-  readonly NumberOfNodes: number;
-  readonly ClusterType: string;
-  readonly ClusterVersion: string;
-  readonly AutomatedSnapshotRetentionPeriod: number;
-  readonly ClusterIdentifier: string;
-  readonly PubliclyAccessible: boolean;
-  readonly EnhancedVpcRouting: boolean;
-  readonly MaintenanceTrackName: string;
-  readonly EncryptionType: string;
+export interface PendingModifiedValues {
+  readonly MasterUserPassword?: string;
+  readonly NodeType?: string;
+  readonly NumberOfNodes?: number;
+  readonly ClusterType?: string;
+  readonly ClusterVersion?: string;
+  readonly AutomatedSnapshotRetentionPeriod?: number;
+  readonly ClusterIdentifier?: string;
+  readonly PubliclyAccessible?: boolean;
+  readonly EnhancedVpcRouting?: boolean;
+  readonly MaintenanceTrackName?: string;
+  readonly EncryptionType?: string;
 }
 
-interface PurchaseReservedNodeOfferingMessage {
+export interface PurchaseReservedNodeOfferingMessage {
   readonly ReservedNodeOfferingId: string;
-  readonly NodeCount: number;
+  readonly NodeCount?: number;
 }
 
-interface PurchaseReservedNodeOfferingResult {
-  readonly ReservedNode: ReservedNode;
+export interface PurchaseReservedNodeOfferingResult {
+  readonly ReservedNode?: ReservedNode;
 }
 
-interface RebootClusterMessage {
+export interface RebootClusterMessage {
   readonly ClusterIdentifier: string;
 }
 
-interface RebootClusterResult {
-  readonly Cluster: Cluster;
+export interface RebootClusterResult {
+  readonly Cluster?: Cluster;
 }
 
-interface RecurringCharge {
-  readonly RecurringChargeAmount: unknown;
-  readonly RecurringChargeFrequency: string;
+export interface RecurringCharge {
+  readonly RecurringChargeAmount?: unknown;
+  readonly RecurringChargeFrequency?: string;
 }
 
-interface RejectDataShareMessage {
+export interface RejectDataShareMessage {
   readonly DataShareArn: string;
 }
 
-interface ReservedNode {
-  readonly ReservedNodeId: string;
-  readonly ReservedNodeOfferingId: string;
-  readonly NodeType: string;
-  readonly StartTime: Date;
-  readonly Duration: number;
-  readonly FixedPrice: unknown;
-  readonly UsagePrice: unknown;
-  readonly CurrencyCode: string;
-  readonly NodeCount: number;
-  readonly State: string;
-  readonly OfferingType: string;
-  readonly RecurringCharges: [];
-  readonly ReservedNodeOfferingType: string;
+export interface ReservedNode {
+  readonly ReservedNodeId?: string;
+  readonly ReservedNodeOfferingId?: string;
+  readonly NodeType?: string;
+  readonly StartTime?: Date;
+  readonly Duration?: number;
+  readonly FixedPrice?: unknown;
+  readonly UsagePrice?: unknown;
+  readonly CurrencyCode?: string;
+  readonly NodeCount?: number;
+  readonly State?: string;
+  readonly OfferingType?: string;
+  readonly RecurringCharges?: [];
+  readonly ReservedNodeOfferingType?: string;
 }
 
-interface ReservedNodeAlreadyExistsFault {
+export interface ReservedNodeAlreadyExistsFault {
 }
 
-interface ReservedNodeAlreadyMigratedFault {
+export interface ReservedNodeAlreadyMigratedFault {
 }
 
-interface ReservedNodeConfigurationOption {
-  readonly SourceReservedNode: ReservedNode;
-  readonly TargetReservedNodeCount: number;
-  readonly TargetReservedNodeOffering: ReservedNodeOffering;
+export interface ReservedNodeConfigurationOption {
+  readonly SourceReservedNode?: ReservedNode;
+  readonly TargetReservedNodeCount?: number;
+  readonly TargetReservedNodeOffering?: ReservedNodeOffering;
 }
 
-interface ReservedNodeExchangeNotFoundFault {
+export interface ReservedNodeExchangeNotFoundFault {
 }
 
-interface ReservedNodeExchangeStatus {
-  readonly ReservedNodeExchangeRequestId: string;
-  readonly Status: string;
-  readonly RequestTime: Date;
-  readonly SourceReservedNodeId: string;
-  readonly SourceReservedNodeType: string;
-  readonly SourceReservedNodeCount: number;
-  readonly TargetReservedNodeOfferingId: string;
-  readonly TargetReservedNodeType: string;
-  readonly TargetReservedNodeCount: number;
+export interface ReservedNodeExchangeStatus {
+  readonly ReservedNodeExchangeRequestId?: string;
+  readonly Status?: string;
+  readonly RequestTime?: Date;
+  readonly SourceReservedNodeId?: string;
+  readonly SourceReservedNodeType?: string;
+  readonly SourceReservedNodeCount?: number;
+  readonly TargetReservedNodeOfferingId?: string;
+  readonly TargetReservedNodeType?: string;
+  readonly TargetReservedNodeCount?: number;
 }
 
-interface ReservedNodeNotFoundFault {
+export interface ReservedNodeNotFoundFault {
 }
 
-interface ReservedNodeOffering {
-  readonly ReservedNodeOfferingId: string;
-  readonly NodeType: string;
-  readonly Duration: number;
-  readonly FixedPrice: unknown;
-  readonly UsagePrice: unknown;
-  readonly CurrencyCode: string;
-  readonly OfferingType: string;
-  readonly RecurringCharges: [];
-  readonly ReservedNodeOfferingType: string;
+export interface ReservedNodeOffering {
+  readonly ReservedNodeOfferingId?: string;
+  readonly NodeType?: string;
+  readonly Duration?: number;
+  readonly FixedPrice?: unknown;
+  readonly UsagePrice?: unknown;
+  readonly CurrencyCode?: string;
+  readonly OfferingType?: string;
+  readonly RecurringCharges?: [];
+  readonly ReservedNodeOfferingType?: string;
 }
 
-interface ReservedNodeOfferingNotFoundFault {
+export interface ReservedNodeOfferingNotFoundFault {
 }
 
-interface ReservedNodeOfferingsMessage {
-  readonly Marker: string;
-  readonly ReservedNodeOfferings: [];
+export interface ReservedNodeOfferingsMessage {
+  readonly Marker?: string;
+  readonly ReservedNodeOfferings?: [];
 }
 
-interface ReservedNodeQuotaExceededFault {
+export interface ReservedNodeQuotaExceededFault {
 }
 
-interface ReservedNodesMessage {
-  readonly Marker: string;
-  readonly ReservedNodes: [];
+export interface ReservedNodesMessage {
+  readonly Marker?: string;
+  readonly ReservedNodes?: [];
 }
 
-interface ResetClusterParameterGroupMessage {
+export interface ResetClusterParameterGroupMessage {
   readonly ParameterGroupName: string;
-  readonly ResetAllParameters: boolean;
-  readonly Parameters: [];
+  readonly ResetAllParameters?: boolean;
+  readonly Parameters?: [];
 }
 
-interface ResizeClusterMessage {
+export interface ResizeClusterMessage {
   readonly ClusterIdentifier: string;
-  readonly ClusterType: string;
-  readonly NodeType: string;
-  readonly NumberOfNodes: number;
-  readonly Classic: boolean;
-  readonly ReservedNodeId: string;
-  readonly TargetReservedNodeOfferingId: string;
+  readonly ClusterType?: string;
+  readonly NodeType?: string;
+  readonly NumberOfNodes?: number;
+  readonly Classic?: boolean;
+  readonly ReservedNodeId?: string;
+  readonly TargetReservedNodeOfferingId?: string;
 }
 
-interface ResizeClusterResult {
-  readonly Cluster: Cluster;
+export interface ResizeClusterResult {
+  readonly Cluster?: Cluster;
 }
 
-interface ResizeInfo {
-  readonly ResizeType: string;
-  readonly AllowCancelResize: boolean;
+export interface ResizeInfo {
+  readonly ResizeType?: string;
+  readonly AllowCancelResize?: boolean;
 }
 
-interface ResizeNotFoundFault {
+export interface ResizeNotFoundFault {
 }
 
-interface ResizeProgressMessage {
-  readonly TargetNodeType: string;
-  readonly TargetNumberOfNodes: number;
-  readonly TargetClusterType: string;
-  readonly Status: string;
-  readonly ImportTablesCompleted: [];
-  readonly ImportTablesInProgress: [];
-  readonly ImportTablesNotStarted: [];
-  readonly AvgResizeRateInMegaBytesPerSecond: unknown;
-  readonly TotalResizeDataInMegaBytes: number;
-  readonly ProgressInMegaBytes: number;
-  readonly ElapsedTimeInSeconds: number;
-  readonly EstimatedTimeToCompletionInSeconds: number;
-  readonly ResizeType: string;
-  readonly Message: string;
-  readonly TargetEncryptionType: string;
-  readonly DataTransferProgressPercent: unknown;
+export interface ResizeProgressMessage {
+  readonly TargetNodeType?: string;
+  readonly TargetNumberOfNodes?: number;
+  readonly TargetClusterType?: string;
+  readonly Status?: string;
+  readonly ImportTablesCompleted?: [];
+  readonly ImportTablesInProgress?: [];
+  readonly ImportTablesNotStarted?: [];
+  readonly AvgResizeRateInMegaBytesPerSecond?: unknown;
+  readonly TotalResizeDataInMegaBytes?: number;
+  readonly ProgressInMegaBytes?: number;
+  readonly ElapsedTimeInSeconds?: number;
+  readonly EstimatedTimeToCompletionInSeconds?: number;
+  readonly ResizeType?: string;
+  readonly Message?: string;
+  readonly TargetEncryptionType?: string;
+  readonly DataTransferProgressPercent?: unknown;
 }
 
-interface ResourceNotFoundFault {
+export interface ResourceNotFoundFault {
 }
 
-interface RestoreFromClusterSnapshotMessage {
+export interface RestoreFromClusterSnapshotMessage {
   readonly ClusterIdentifier: string;
   readonly SnapshotIdentifier: string;
-  readonly SnapshotClusterIdentifier: string;
-  readonly Port: number;
-  readonly AvailabilityZone: string;
-  readonly AllowVersionUpgrade: boolean;
-  readonly ClusterSubnetGroupName: string;
-  readonly PubliclyAccessible: boolean;
-  readonly OwnerAccount: string;
-  readonly HsmClientCertificateIdentifier: string;
-  readonly HsmConfigurationIdentifier: string;
-  readonly ElasticIp: string;
-  readonly ClusterParameterGroupName: string;
-  readonly ClusterSecurityGroups: [];
-  readonly VpcSecurityGroupIds: [];
-  readonly PreferredMaintenanceWindow: string;
-  readonly AutomatedSnapshotRetentionPeriod: number;
-  readonly ManualSnapshotRetentionPeriod: number;
-  readonly KmsKeyId: string;
-  readonly NodeType: string;
-  readonly EnhancedVpcRouting: boolean;
-  readonly AdditionalInfo: string;
-  readonly IamRoles: [];
-  readonly MaintenanceTrackName: string;
-  readonly SnapshotScheduleIdentifier: string;
-  readonly NumberOfNodes: number;
-  readonly AvailabilityZoneRelocation: boolean;
-  readonly AquaConfigurationStatus: string;
-  readonly DefaultIamRoleArn: string;
-  readonly ReservedNodeId: string;
-  readonly TargetReservedNodeOfferingId: string;
+  readonly SnapshotClusterIdentifier?: string;
+  readonly Port?: number;
+  readonly AvailabilityZone?: string;
+  readonly AllowVersionUpgrade?: boolean;
+  readonly ClusterSubnetGroupName?: string;
+  readonly PubliclyAccessible?: boolean;
+  readonly OwnerAccount?: string;
+  readonly HsmClientCertificateIdentifier?: string;
+  readonly HsmConfigurationIdentifier?: string;
+  readonly ElasticIp?: string;
+  readonly ClusterParameterGroupName?: string;
+  readonly ClusterSecurityGroups?: [];
+  readonly VpcSecurityGroupIds?: [];
+  readonly PreferredMaintenanceWindow?: string;
+  readonly AutomatedSnapshotRetentionPeriod?: number;
+  readonly ManualSnapshotRetentionPeriod?: number;
+  readonly KmsKeyId?: string;
+  readonly NodeType?: string;
+  readonly EnhancedVpcRouting?: boolean;
+  readonly AdditionalInfo?: string;
+  readonly IamRoles?: [];
+  readonly MaintenanceTrackName?: string;
+  readonly SnapshotScheduleIdentifier?: string;
+  readonly NumberOfNodes?: number;
+  readonly AvailabilityZoneRelocation?: boolean;
+  readonly AquaConfigurationStatus?: string;
+  readonly DefaultIamRoleArn?: string;
+  readonly ReservedNodeId?: string;
+  readonly TargetReservedNodeOfferingId?: string;
 }
 
-interface RestoreFromClusterSnapshotResult {
-  readonly Cluster: Cluster;
+export interface RestoreFromClusterSnapshotResult {
+  readonly Cluster?: Cluster;
 }
 
-interface RestoreStatus {
-  readonly Status: string;
-  readonly CurrentRestoreRateInMegaBytesPerSecond: unknown;
-  readonly SnapshotSizeInMegaBytes: number;
-  readonly ProgressInMegaBytes: number;
-  readonly ElapsedTimeInSeconds: number;
-  readonly EstimatedTimeToCompletionInSeconds: number;
+export interface RestoreStatus {
+  readonly Status?: string;
+  readonly CurrentRestoreRateInMegaBytesPerSecond?: unknown;
+  readonly SnapshotSizeInMegaBytes?: number;
+  readonly ProgressInMegaBytes?: number;
+  readonly ElapsedTimeInSeconds?: number;
+  readonly EstimatedTimeToCompletionInSeconds?: number;
 }
 
-interface RestoreTableFromClusterSnapshotMessage {
+export interface RestoreTableFromClusterSnapshotMessage {
   readonly ClusterIdentifier: string;
   readonly SnapshotIdentifier: string;
   readonly SourceDatabaseName: string;
-  readonly SourceSchemaName: string;
+  readonly SourceSchemaName?: string;
   readonly SourceTableName: string;
-  readonly TargetDatabaseName: string;
-  readonly TargetSchemaName: string;
+  readonly TargetDatabaseName?: string;
+  readonly TargetSchemaName?: string;
   readonly NewTableName: string;
-  readonly EnableCaseSensitiveIdentifier: boolean;
+  readonly EnableCaseSensitiveIdentifier?: boolean;
 }
 
-interface RestoreTableFromClusterSnapshotResult {
-  readonly TableRestoreStatus: TableRestoreStatus;
+export interface RestoreTableFromClusterSnapshotResult {
+  readonly TableRestoreStatus?: TableRestoreStatus;
 }
 
-interface ResumeClusterMessage {
+export interface ResumeClusterMessage {
   readonly ClusterIdentifier: string;
 }
 
-interface ResumeClusterResult {
-  readonly Cluster: Cluster;
+export interface ResumeClusterResult {
+  readonly Cluster?: Cluster;
 }
 
-interface RevisionTarget {
-  readonly DatabaseRevision: string;
-  readonly Description: string;
-  readonly DatabaseRevisionReleaseDate: Date;
+export interface RevisionTarget {
+  readonly DatabaseRevision?: string;
+  readonly Description?: string;
+  readonly DatabaseRevisionReleaseDate?: Date;
 }
 
-interface RevokeClusterSecurityGroupIngressMessage {
+export interface RevokeClusterSecurityGroupIngressMessage {
   readonly ClusterSecurityGroupName: string;
-  readonly CIDRIP: string;
-  readonly EC2SecurityGroupName: string;
-  readonly EC2SecurityGroupOwnerId: string;
+  readonly CIDRIP?: string;
+  readonly EC2SecurityGroupName?: string;
+  readonly EC2SecurityGroupOwnerId?: string;
 }
 
-interface RevokeClusterSecurityGroupIngressResult {
-  readonly ClusterSecurityGroup: ClusterSecurityGroup;
+export interface RevokeClusterSecurityGroupIngressResult {
+  readonly ClusterSecurityGroup?: ClusterSecurityGroup;
 }
 
-interface RevokeEndpointAccessMessage {
-  readonly ClusterIdentifier: string;
-  readonly Account: string;
-  readonly VpcIds: [];
-  readonly Force: boolean;
+export interface RevokeEndpointAccessMessage {
+  readonly ClusterIdentifier?: string;
+  readonly Account?: string;
+  readonly VpcIds?: [];
+  readonly Force?: boolean;
 }
 
-interface RevokeSnapshotAccessMessage {
+export interface RevokeSnapshotAccessMessage {
   readonly SnapshotIdentifier: string;
-  readonly SnapshotClusterIdentifier: string;
+  readonly SnapshotClusterIdentifier?: string;
   readonly AccountWithRestoreAccess: string;
 }
 
-interface RevokeSnapshotAccessResult {
-  readonly Snapshot: Snapshot;
+export interface RevokeSnapshotAccessResult {
+  readonly Snapshot?: Snapshot;
 }
 
-interface RotateEncryptionKeyMessage {
+export interface RotateEncryptionKeyMessage {
   readonly ClusterIdentifier: string;
 }
 
-interface RotateEncryptionKeyResult {
-  readonly Cluster: Cluster;
+export interface RotateEncryptionKeyResult {
+  readonly Cluster?: Cluster;
 }
 
-interface SNSInvalidTopicFault {
+export interface SNSInvalidTopicFault {
 }
 
-interface SNSNoAuthorizationFault {
+export interface SNSNoAuthorizationFault {
 }
 
-interface SNSTopicArnNotFoundFault {
+export interface SNSTopicArnNotFoundFault {
 }
 
-interface ScheduleDefinitionTypeUnsupportedFault {
+export interface ScheduleDefinitionTypeUnsupportedFault {
 }
 
-interface ScheduledAction {
-  readonly ScheduledActionName: string;
-  readonly TargetAction: ScheduledActionType;
-  readonly Schedule: string;
-  readonly IamRole: string;
-  readonly ScheduledActionDescription: string;
-  readonly State: string;
-  readonly NextInvocations: [];
-  readonly StartTime: Date;
-  readonly EndTime: Date;
+export interface ScheduledAction {
+  readonly ScheduledActionName?: string;
+  readonly TargetAction?: ScheduledActionType;
+  readonly Schedule?: string;
+  readonly IamRole?: string;
+  readonly ScheduledActionDescription?: string;
+  readonly State?: string;
+  readonly NextInvocations?: [];
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
 }
 
-interface ScheduledActionAlreadyExistsFault {
+export interface ScheduledActionAlreadyExistsFault {
 }
 
-interface ScheduledActionFilter {
+export interface ScheduledActionFilter {
   readonly Name: string;
   readonly Values: [];
 }
 
-interface ScheduledActionNotFoundFault {
+export interface ScheduledActionNotFoundFault {
 }
 
-interface ScheduledActionQuotaExceededFault {
+export interface ScheduledActionQuotaExceededFault {
 }
 
-interface ScheduledActionType {
-  readonly ResizeCluster: ResizeClusterMessage;
-  readonly PauseCluster: PauseClusterMessage;
-  readonly ResumeCluster: ResumeClusterMessage;
+export interface ScheduledActionType {
+  readonly ResizeCluster?: ResizeClusterMessage;
+  readonly PauseCluster?: PauseClusterMessage;
+  readonly ResumeCluster?: ResumeClusterMessage;
 }
 
-interface ScheduledActionTypeUnsupportedFault {
+export interface ScheduledActionTypeUnsupportedFault {
 }
 
-interface ScheduledActionsMessage {
-  readonly Marker: string;
-  readonly ScheduledActions: [];
+export interface ScheduledActionsMessage {
+  readonly Marker?: string;
+  readonly ScheduledActions?: [];
 }
 
-interface Snapshot {
-  readonly SnapshotIdentifier: string;
-  readonly ClusterIdentifier: string;
-  readonly SnapshotCreateTime: Date;
-  readonly Status: string;
-  readonly Port: number;
-  readonly AvailabilityZone: string;
-  readonly ClusterCreateTime: Date;
-  readonly MasterUsername: string;
-  readonly ClusterVersion: string;
-  readonly EngineFullVersion: string;
-  readonly SnapshotType: string;
-  readonly NodeType: string;
-  readonly NumberOfNodes: number;
-  readonly DBName: string;
-  readonly VpcId: string;
-  readonly Encrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly EncryptedWithHSM: boolean;
-  readonly AccountsWithRestoreAccess: [];
-  readonly OwnerAccount: string;
-  readonly TotalBackupSizeInMegaBytes: unknown;
-  readonly ActualIncrementalBackupSizeInMegaBytes: unknown;
-  readonly BackupProgressInMegaBytes: unknown;
-  readonly CurrentBackupRateInMegaBytesPerSecond: unknown;
-  readonly EstimatedSecondsToCompletion: number;
-  readonly ElapsedTimeInSeconds: number;
-  readonly SourceRegion: string;
-  readonly Tags: [];
-  readonly RestorableNodeTypes: [];
-  readonly EnhancedVpcRouting: boolean;
-  readonly MaintenanceTrackName: string;
-  readonly ManualSnapshotRetentionPeriod: number;
-  readonly ManualSnapshotRemainingDays: number;
-  readonly SnapshotRetentionStartTime: Date;
+export interface Snapshot {
+  readonly SnapshotIdentifier?: string;
+  readonly ClusterIdentifier?: string;
+  readonly SnapshotCreateTime?: Date;
+  readonly Status?: string;
+  readonly Port?: number;
+  readonly AvailabilityZone?: string;
+  readonly ClusterCreateTime?: Date;
+  readonly MasterUsername?: string;
+  readonly ClusterVersion?: string;
+  readonly EngineFullVersion?: string;
+  readonly SnapshotType?: string;
+  readonly NodeType?: string;
+  readonly NumberOfNodes?: number;
+  readonly DBName?: string;
+  readonly VpcId?: string;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly EncryptedWithHSM?: boolean;
+  readonly AccountsWithRestoreAccess?: [];
+  readonly OwnerAccount?: string;
+  readonly TotalBackupSizeInMegaBytes?: unknown;
+  readonly ActualIncrementalBackupSizeInMegaBytes?: unknown;
+  readonly BackupProgressInMegaBytes?: unknown;
+  readonly CurrentBackupRateInMegaBytesPerSecond?: unknown;
+  readonly EstimatedSecondsToCompletion?: number;
+  readonly ElapsedTimeInSeconds?: number;
+  readonly SourceRegion?: string;
+  readonly Tags?: [];
+  readonly RestorableNodeTypes?: [];
+  readonly EnhancedVpcRouting?: boolean;
+  readonly MaintenanceTrackName?: string;
+  readonly ManualSnapshotRetentionPeriod?: number;
+  readonly ManualSnapshotRemainingDays?: number;
+  readonly SnapshotRetentionStartTime?: Date;
 }
 
-interface SnapshotCopyAlreadyDisabledFault {
+export interface SnapshotCopyAlreadyDisabledFault {
 }
 
-interface SnapshotCopyAlreadyEnabledFault {
+export interface SnapshotCopyAlreadyEnabledFault {
 }
 
-interface SnapshotCopyDisabledFault {
+export interface SnapshotCopyDisabledFault {
 }
 
-interface SnapshotCopyGrant {
-  readonly SnapshotCopyGrantName: string;
-  readonly KmsKeyId: string;
-  readonly Tags: [];
+export interface SnapshotCopyGrant {
+  readonly SnapshotCopyGrantName?: string;
+  readonly KmsKeyId?: string;
+  readonly Tags?: [];
 }
 
-interface SnapshotCopyGrantAlreadyExistsFault {
+export interface SnapshotCopyGrantAlreadyExistsFault {
 }
 
-interface SnapshotCopyGrantMessage {
-  readonly Marker: string;
-  readonly SnapshotCopyGrants: [];
+export interface SnapshotCopyGrantMessage {
+  readonly Marker?: string;
+  readonly SnapshotCopyGrants?: [];
 }
 
-interface SnapshotCopyGrantNotFoundFault {
+export interface SnapshotCopyGrantNotFoundFault {
 }
 
-interface SnapshotCopyGrantQuotaExceededFault {
+export interface SnapshotCopyGrantQuotaExceededFault {
 }
 
-interface SnapshotErrorMessage {
-  readonly SnapshotIdentifier: string;
-  readonly SnapshotClusterIdentifier: string;
-  readonly FailureCode: string;
-  readonly FailureReason: string;
+export interface SnapshotErrorMessage {
+  readonly SnapshotIdentifier?: string;
+  readonly SnapshotClusterIdentifier?: string;
+  readonly FailureCode?: string;
+  readonly FailureReason?: string;
 }
 
-interface SnapshotMessage {
-  readonly Marker: string;
-  readonly Snapshots: [];
+export interface SnapshotMessage {
+  readonly Marker?: string;
+  readonly Snapshots?: [];
 }
 
-interface SnapshotSchedule {
-  readonly ScheduleDefinitions: [];
-  readonly ScheduleIdentifier: string;
-  readonly ScheduleDescription: string;
-  readonly Tags: [];
-  readonly NextInvocations: [];
-  readonly AssociatedClusterCount: number;
-  readonly AssociatedClusters: [];
+export interface SnapshotSchedule {
+  readonly ScheduleDefinitions?: [];
+  readonly ScheduleIdentifier?: string;
+  readonly ScheduleDescription?: string;
+  readonly Tags?: [];
+  readonly NextInvocations?: [];
+  readonly AssociatedClusterCount?: number;
+  readonly AssociatedClusters?: [];
 }
 
-interface SnapshotScheduleAlreadyExistsFault {
+export interface SnapshotScheduleAlreadyExistsFault {
 }
 
-interface SnapshotScheduleNotFoundFault {
+export interface SnapshotScheduleNotFoundFault {
 }
 
-interface SnapshotScheduleQuotaExceededFault {
+export interface SnapshotScheduleQuotaExceededFault {
 }
 
-interface SnapshotScheduleUpdateInProgressFault {
+export interface SnapshotScheduleUpdateInProgressFault {
 }
 
-interface SnapshotSortingEntity {
+export interface SnapshotSortingEntity {
   readonly Attribute: string;
-  readonly SortOrder: string;
+  readonly SortOrder?: string;
 }
 
-interface SourceNotFoundFault {
+export interface SourceNotFoundFault {
 }
 
-interface Subnet {
-  readonly SubnetIdentifier: string;
-  readonly SubnetAvailabilityZone: AvailabilityZone;
-  readonly SubnetStatus: string;
+export interface Subnet {
+  readonly SubnetIdentifier?: string;
+  readonly SubnetAvailabilityZone?: AvailabilityZone;
+  readonly SubnetStatus?: string;
 }
 
-interface SubnetAlreadyInUse {
+export interface SubnetAlreadyInUse {
 }
 
-interface SubscriptionAlreadyExistFault {
+export interface SubscriptionAlreadyExistFault {
 }
 
-interface SubscriptionCategoryNotFoundFault {
+export interface SubscriptionCategoryNotFoundFault {
 }
 
-interface SubscriptionEventIdNotFoundFault {
+export interface SubscriptionEventIdNotFoundFault {
 }
 
-interface SubscriptionNotFoundFault {
+export interface SubscriptionNotFoundFault {
 }
 
-interface SubscriptionSeverityNotFoundFault {
+export interface SubscriptionSeverityNotFoundFault {
 }
 
-interface SupportedOperation {
-  readonly OperationName: string;
+export interface SupportedOperation {
+  readonly OperationName?: string;
 }
 
-interface SupportedPlatform {
-  readonly Name: string;
+export interface SupportedPlatform {
+  readonly Name?: string;
 }
 
-interface TableLimitExceededFault {
+export interface TableLimitExceededFault {
 }
 
-interface TableRestoreNotFoundFault {
+export interface TableRestoreNotFoundFault {
 }
 
-interface TableRestoreStatus {
-  readonly TableRestoreRequestId: string;
-  readonly Status: string;
-  readonly Message: string;
-  readonly RequestTime: Date;
-  readonly ProgressInMegaBytes: number;
-  readonly TotalDataInMegaBytes: number;
-  readonly ClusterIdentifier: string;
-  readonly SnapshotIdentifier: string;
-  readonly SourceDatabaseName: string;
-  readonly SourceSchemaName: string;
-  readonly SourceTableName: string;
-  readonly TargetDatabaseName: string;
-  readonly TargetSchemaName: string;
-  readonly NewTableName: string;
+export interface TableRestoreStatus {
+  readonly TableRestoreRequestId?: string;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly RequestTime?: Date;
+  readonly ProgressInMegaBytes?: number;
+  readonly TotalDataInMegaBytes?: number;
+  readonly ClusterIdentifier?: string;
+  readonly SnapshotIdentifier?: string;
+  readonly SourceDatabaseName?: string;
+  readonly SourceSchemaName?: string;
+  readonly SourceTableName?: string;
+  readonly TargetDatabaseName?: string;
+  readonly TargetSchemaName?: string;
+  readonly NewTableName?: string;
 }
 
-interface TableRestoreStatusMessage {
-  readonly TableRestoreStatusDetails: [];
-  readonly Marker: string;
+export interface TableRestoreStatusMessage {
+  readonly TableRestoreStatusDetails?: [];
+  readonly Marker?: string;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TagLimitExceededFault {
+export interface TagLimitExceededFault {
 }
 
-interface TaggedResource {
-  readonly Tag: Tag;
-  readonly ResourceName: string;
-  readonly ResourceType: string;
+export interface TaggedResource {
+  readonly Tag?: Tag;
+  readonly ResourceName?: string;
+  readonly ResourceType?: string;
 }
 
-interface TaggedResourceListMessage {
-  readonly TaggedResources: [];
-  readonly Marker: string;
+export interface TaggedResourceListMessage {
+  readonly TaggedResources?: [];
+  readonly Marker?: string;
 }
 
-interface TrackListMessage {
-  readonly MaintenanceTracks: [];
-  readonly Marker: string;
+export interface TrackListMessage {
+  readonly MaintenanceTracks?: [];
+  readonly Marker?: string;
 }
 
-interface UnauthorizedOperation {
+export interface UnauthorizedOperation {
 }
 
-interface UnauthorizedPartnerIntegrationFault {
+export interface UnauthorizedPartnerIntegrationFault {
 }
 
-interface UnknownSnapshotCopyRegionFault {
+export interface UnknownSnapshotCopyRegionFault {
 }
 
-interface UnsupportedOperationFault {
+export interface UnsupportedOperationFault {
 }
 
-interface UnsupportedOptionFault {
+export interface UnsupportedOptionFault {
 }
 
-interface UpdatePartnerStatusInputMessage {
+export interface UpdatePartnerStatusInputMessage {
   readonly AccountId: string;
   readonly ClusterIdentifier: string;
   readonly DatabaseName: string;
   readonly PartnerName: string;
   readonly Status: string;
-  readonly StatusMessage: string;
+  readonly StatusMessage?: string;
 }
 
-interface UpdateTarget {
-  readonly MaintenanceTrackName: string;
-  readonly DatabaseVersion: string;
-  readonly SupportedOperations: [];
+export interface UpdateTarget {
+  readonly MaintenanceTrackName?: string;
+  readonly DatabaseVersion?: string;
+  readonly SupportedOperations?: [];
 }
 
-interface UsageLimit {
-  readonly UsageLimitId: string;
-  readonly ClusterIdentifier: string;
-  readonly FeatureType: string;
-  readonly LimitType: string;
-  readonly Amount: number;
-  readonly Period: string;
-  readonly BreachAction: string;
-  readonly Tags: [];
+export interface UsageLimit {
+  readonly UsageLimitId?: string;
+  readonly ClusterIdentifier?: string;
+  readonly FeatureType?: string;
+  readonly LimitType?: string;
+  readonly Amount?: number;
+  readonly Period?: string;
+  readonly BreachAction?: string;
+  readonly Tags?: [];
 }
 
-interface UsageLimitAlreadyExistsFault {
+export interface UsageLimitAlreadyExistsFault {
 }
 
-interface UsageLimitList {
-  readonly UsageLimits: [];
-  readonly Marker: string;
+export interface UsageLimitList {
+  readonly UsageLimits?: [];
+  readonly Marker?: string;
 }
 
-interface UsageLimitNotFoundFault {
+export interface UsageLimitNotFoundFault {
 }
 
-interface VpcEndpoint {
-  readonly VpcEndpointId: string;
-  readonly VpcId: string;
-  readonly NetworkInterfaces: [];
+export interface VpcEndpoint {
+  readonly VpcEndpointId?: string;
+  readonly VpcId?: string;
+  readonly NetworkInterfaces?: [];
 }
 
-interface VpcSecurityGroupMembership {
-  readonly VpcSecurityGroupId: string;
-  readonly Status: string;
+export interface VpcSecurityGroupMembership {
+  readonly VpcSecurityGroupId?: string;
+  readonly Status?: string;
 }
+
 

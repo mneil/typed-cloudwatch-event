@@ -5,10 +5,12 @@ export interface AddAttributesToFindings {
   readonly findingArns: [];
   readonly attributes: [];
 }
+
 export interface CreateAssessmentTarget {
   readonly assessmentTargetName: string;
   readonly resourceGroupArn?: string;
 }
+
 export interface CreateAssessmentTemplate {
   readonly assessmentTargetArn: string;
   readonly assessmentTemplateName: string;
@@ -16,50 +18,64 @@ export interface CreateAssessmentTemplate {
   readonly rulesPackageArns: [];
   readonly userAttributesForFindings?: [];
 }
+
 export interface CreateExclusionsPreview {
   readonly assessmentTemplateArn: string;
 }
+
 export interface CreateResourceGroup {
   readonly resourceGroupTags: [];
 }
+
 export interface DeleteAssessmentRun {
   readonly assessmentRunArn: string;
 }
+
 export interface DeleteAssessmentTarget {
   readonly assessmentTargetArn: string;
 }
+
 export interface DeleteAssessmentTemplate {
   readonly assessmentTemplateArn: string;
 }
+
 export interface DescribeAssessmentRuns {
   readonly assessmentRunArns: [];
 }
+
 export interface DescribeAssessmentTargets {
   readonly assessmentTargetArns: [];
 }
+
 export interface DescribeAssessmentTemplates {
   readonly assessmentTemplateArns: [];
 }
+
 export interface DescribeExclusions {
   readonly exclusionArns: [];
   readonly locale?: string;
 }
+
 export interface DescribeFindings {
   readonly findingArns: [];
   readonly locale?: string;
 }
+
 export interface DescribeResourceGroups {
   readonly resourceGroupArns: [];
 }
+
 export interface DescribeRulesPackages {
   readonly rulesPackageArns: [];
   readonly locale?: string;
 }
+
 export interface GetAssessmentReport {
   readonly assessmentRunArn: string;
   readonly reportFileFormat: string;
   readonly reportType: string;
 }
+
 export interface GetExclusionsPreview {
   readonly assessmentTemplateArn: string;
   readonly previewToken: string;
@@ -67,141 +83,158 @@ export interface GetExclusionsPreview {
   readonly maxResults?: number;
   readonly locale?: string;
 }
+
 export interface GetTelemetryMetadata {
   readonly assessmentRunArn: string;
 }
+
 export interface ListAssessmentRunAgents {
   readonly assessmentRunArn: string;
   readonly filter?: AgentFilter;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssessmentRuns {
   readonly assessmentTemplateArns?: [];
   readonly filter?: AssessmentRunFilter;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssessmentTargets {
   readonly filter?: AssessmentTargetFilter;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssessmentTemplates {
   readonly assessmentTargetArns?: [];
   readonly filter?: AssessmentTemplateFilter;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListEventSubscriptions {
   readonly resourceArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListExclusions {
   readonly assessmentRunArn: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListFindings {
   readonly assessmentRunArns?: [];
   readonly filter?: FindingFilter;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListRulesPackages {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface PreviewAgents {
   readonly previewAgentsArn: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface RegisterCrossAccountAccessRole {
   readonly roleArn: string;
 }
+
 export interface RemoveAttributesFromFindings {
   readonly findingArns: [];
   readonly attributeKeys: [];
 }
+
 export interface SetTagsForResource {
   readonly resourceArn: string;
   readonly tags?: [];
 }
+
 export interface StartAssessmentRun {
   readonly assessmentTemplateArn: string;
   readonly assessmentRunName?: string;
 }
+
 export interface StopAssessmentRun {
   readonly assessmentRunArn: string;
   readonly stopAction?: string;
 }
+
 export interface SubscribeToEvent {
   readonly resourceArn: string;
   readonly event: string;
   readonly topicArn: string;
 }
+
 export interface UnsubscribeFromEvent {
   readonly resourceArn: string;
   readonly event: string;
   readonly topicArn: string;
 }
+
 export interface UpdateAssessmentTarget {
   readonly assessmentTargetArn: string;
   readonly assessmentTargetName: string;
   readonly resourceGroupArn?: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
   readonly errorCode: string;
   readonly canRetry: boolean;
 }
 
-interface AddAttributesToFindingsRequest {
+export interface AddAttributesToFindingsRequest {
   readonly findingArns: [];
   readonly attributes: [];
 }
 
-interface AddAttributesToFindingsResponse {
+export interface AddAttributesToFindingsResponse {
   readonly failedItems: {[key: string]: any};
 }
 
-interface AgentAlreadyRunningAssessment {
+export interface AgentAlreadyRunningAssessment {
   readonly agentId: string;
   readonly assessmentRunArn: string;
 }
 
-interface AgentFilter {
+export interface AgentFilter {
   readonly agentHealths: [];
   readonly agentHealthCodes: [];
 }
 
-interface AgentPreview {
-  readonly hostname: string;
+export interface AgentPreview {
+  readonly hostname?: string;
   readonly agentId: string;
-  readonly autoScalingGroup: string;
-  readonly agentHealth: string;
-  readonly agentVersion: string;
-  readonly operatingSystem: string;
-  readonly kernelVersion: string;
-  readonly ipv4Address: string;
+  readonly autoScalingGroup?: string;
+  readonly agentHealth?: string;
+  readonly agentVersion?: string;
+  readonly operatingSystem?: string;
+  readonly kernelVersion?: string;
+  readonly ipv4Address?: string;
 }
 
-interface AgentsAlreadyRunningAssessmentException {
+export interface AgentsAlreadyRunningAssessmentException {
   readonly message: string;
   readonly agents: [];
   readonly agentsTruncated: boolean;
   readonly canRetry: boolean;
 }
 
-interface AssessmentRun {
+export interface AssessmentRun {
   readonly arn: string;
   readonly name: string;
   readonly assessmentTemplateArn: string;
@@ -210,8 +243,8 @@ interface AssessmentRun {
   readonly rulesPackageArns: [];
   readonly userAttributesForFindings: [];
   readonly createdAt: Date;
-  readonly startedAt: Date;
-  readonly completedAt: Date;
+  readonly startedAt?: Date;
+  readonly completedAt?: Date;
   readonly stateChangedAt: Date;
   readonly dataCollected: boolean;
   readonly stateChanges: [];
@@ -219,586 +252,587 @@ interface AssessmentRun {
   readonly findingCounts: {[key: string]: any};
 }
 
-interface AssessmentRunAgent {
+export interface AssessmentRunAgent {
   readonly agentId: string;
   readonly assessmentRunArn: string;
   readonly agentHealth: string;
   readonly agentHealthCode: string;
-  readonly agentHealthDetails: string;
-  readonly autoScalingGroup: string;
+  readonly agentHealthDetails?: string;
+  readonly autoScalingGroup?: string;
   readonly telemetryMetadata: [];
 }
 
-interface AssessmentRunFilter {
-  readonly namePattern: string;
-  readonly states: [];
-  readonly durationRange: DurationRange;
-  readonly rulesPackageArns: [];
-  readonly startTimeRange: TimestampRange;
-  readonly completionTimeRange: TimestampRange;
-  readonly stateChangeTimeRange: TimestampRange;
+export interface AssessmentRunFilter {
+  readonly namePattern?: string;
+  readonly states?: [];
+  readonly durationRange?: DurationRange;
+  readonly rulesPackageArns?: [];
+  readonly startTimeRange?: TimestampRange;
+  readonly completionTimeRange?: TimestampRange;
+  readonly stateChangeTimeRange?: TimestampRange;
 }
 
-interface AssessmentRunInProgressException {
+export interface AssessmentRunInProgressException {
   readonly message: string;
   readonly assessmentRunArns: [];
   readonly assessmentRunArnsTruncated: boolean;
   readonly canRetry: boolean;
 }
 
-interface AssessmentRunNotification {
+export interface AssessmentRunNotification {
   readonly date: Date;
   readonly event: string;
-  readonly message: string;
+  readonly message?: string;
   readonly error: boolean;
-  readonly snsTopicArn: string;
-  readonly snsPublishStatusCode: string;
+  readonly snsTopicArn?: string;
+  readonly snsPublishStatusCode?: string;
 }
 
-interface AssessmentRunStateChange {
+export interface AssessmentRunStateChange {
   readonly stateChangedAt: Date;
   readonly state: string;
 }
 
-interface AssessmentTarget {
+export interface AssessmentTarget {
   readonly arn: string;
   readonly name: string;
-  readonly resourceGroupArn: string;
+  readonly resourceGroupArn?: string;
   readonly createdAt: Date;
   readonly updatedAt: Date;
 }
 
-interface AssessmentTargetFilter {
-  readonly assessmentTargetNamePattern: string;
+export interface AssessmentTargetFilter {
+  readonly assessmentTargetNamePattern?: string;
 }
 
-interface AssessmentTemplate {
+export interface AssessmentTemplate {
   readonly arn: string;
   readonly name: string;
   readonly assessmentTargetArn: string;
   readonly durationInSeconds: number;
   readonly rulesPackageArns: [];
   readonly userAttributesForFindings: [];
-  readonly lastAssessmentRunArn: string;
+  readonly lastAssessmentRunArn?: string;
   readonly assessmentRunCount: number;
   readonly createdAt: Date;
 }
 
-interface AssessmentTemplateFilter {
-  readonly namePattern: string;
-  readonly durationRange: DurationRange;
-  readonly rulesPackageArns: [];
+export interface AssessmentTemplateFilter {
+  readonly namePattern?: string;
+  readonly durationRange?: DurationRange;
+  readonly rulesPackageArns?: [];
 }
 
-interface AssetAttributes {
+export interface AssetAttributes {
   readonly schemaVersion: number;
-  readonly agentId: string;
-  readonly autoScalingGroup: string;
-  readonly amiId: string;
-  readonly hostname: string;
-  readonly ipv4Addresses: [];
-  readonly tags: [];
-  readonly networkInterfaces: [];
+  readonly agentId?: string;
+  readonly autoScalingGroup?: string;
+  readonly amiId?: string;
+  readonly hostname?: string;
+  readonly ipv4Addresses?: [];
+  readonly tags?: [];
+  readonly networkInterfaces?: [];
 }
 
-interface Attribute {
+export interface Attribute {
   readonly key: string;
-  readonly value: string;
+  readonly value?: string;
 }
 
-interface CreateAssessmentTargetRequest {
+export interface CreateAssessmentTargetRequest {
   readonly assessmentTargetName: string;
-  readonly resourceGroupArn: string;
+  readonly resourceGroupArn?: string;
 }
 
-interface CreateAssessmentTargetResponse {
+export interface CreateAssessmentTargetResponse {
   readonly assessmentTargetArn: string;
 }
 
-interface CreateAssessmentTemplateRequest {
+export interface CreateAssessmentTemplateRequest {
   readonly assessmentTargetArn: string;
   readonly assessmentTemplateName: string;
   readonly durationInSeconds: number;
   readonly rulesPackageArns: [];
-  readonly userAttributesForFindings: [];
+  readonly userAttributesForFindings?: [];
 }
 
-interface CreateAssessmentTemplateResponse {
+export interface CreateAssessmentTemplateResponse {
   readonly assessmentTemplateArn: string;
 }
 
-interface CreateExclusionsPreviewRequest {
+export interface CreateExclusionsPreviewRequest {
   readonly assessmentTemplateArn: string;
 }
 
-interface CreateExclusionsPreviewResponse {
+export interface CreateExclusionsPreviewResponse {
   readonly previewToken: string;
 }
 
-interface CreateResourceGroupRequest {
+export interface CreateResourceGroupRequest {
   readonly resourceGroupTags: [];
 }
 
-interface CreateResourceGroupResponse {
+export interface CreateResourceGroupResponse {
   readonly resourceGroupArn: string;
 }
 
-interface DeleteAssessmentRunRequest {
+export interface DeleteAssessmentRunRequest {
   readonly assessmentRunArn: string;
 }
 
-interface DeleteAssessmentTargetRequest {
+export interface DeleteAssessmentTargetRequest {
   readonly assessmentTargetArn: string;
 }
 
-interface DeleteAssessmentTemplateRequest {
+export interface DeleteAssessmentTemplateRequest {
   readonly assessmentTemplateArn: string;
 }
 
-interface DescribeAssessmentRunsRequest {
+export interface DescribeAssessmentRunsRequest {
   readonly assessmentRunArns: [];
 }
 
-interface DescribeAssessmentRunsResponse {
+export interface DescribeAssessmentRunsResponse {
   readonly assessmentRuns: [];
   readonly failedItems: {[key: string]: any};
 }
 
-interface DescribeAssessmentTargetsRequest {
+export interface DescribeAssessmentTargetsRequest {
   readonly assessmentTargetArns: [];
 }
 
-interface DescribeAssessmentTargetsResponse {
+export interface DescribeAssessmentTargetsResponse {
   readonly assessmentTargets: [];
   readonly failedItems: {[key: string]: any};
 }
 
-interface DescribeAssessmentTemplatesRequest {
+export interface DescribeAssessmentTemplatesRequest {
   readonly assessmentTemplateArns: [];
 }
 
-interface DescribeAssessmentTemplatesResponse {
+export interface DescribeAssessmentTemplatesResponse {
   readonly assessmentTemplates: [];
   readonly failedItems: {[key: string]: any};
 }
 
-interface DescribeCrossAccountAccessRoleResponse {
+export interface DescribeCrossAccountAccessRoleResponse {
   readonly roleArn: string;
   readonly valid: boolean;
   readonly registeredAt: Date;
 }
 
-interface DescribeExclusionsRequest {
+export interface DescribeExclusionsRequest {
   readonly exclusionArns: [];
-  readonly locale: string;
+  readonly locale?: string;
 }
 
-interface DescribeExclusionsResponse {
+export interface DescribeExclusionsResponse {
   readonly exclusions: {[key: string]: any};
   readonly failedItems: {[key: string]: any};
 }
 
-interface DescribeFindingsRequest {
+export interface DescribeFindingsRequest {
   readonly findingArns: [];
-  readonly locale: string;
+  readonly locale?: string;
 }
 
-interface DescribeFindingsResponse {
+export interface DescribeFindingsResponse {
   readonly findings: [];
   readonly failedItems: {[key: string]: any};
 }
 
-interface DescribeResourceGroupsRequest {
+export interface DescribeResourceGroupsRequest {
   readonly resourceGroupArns: [];
 }
 
-interface DescribeResourceGroupsResponse {
+export interface DescribeResourceGroupsResponse {
   readonly resourceGroups: [];
   readonly failedItems: {[key: string]: any};
 }
 
-interface DescribeRulesPackagesRequest {
+export interface DescribeRulesPackagesRequest {
   readonly rulesPackageArns: [];
-  readonly locale: string;
+  readonly locale?: string;
 }
 
-interface DescribeRulesPackagesResponse {
+export interface DescribeRulesPackagesResponse {
   readonly rulesPackages: [];
   readonly failedItems: {[key: string]: any};
 }
 
-interface DurationRange {
-  readonly minSeconds: number;
-  readonly maxSeconds: number;
+export interface DurationRange {
+  readonly minSeconds?: number;
+  readonly maxSeconds?: number;
 }
 
-interface EventSubscription {
+export interface EventSubscription {
   readonly event: string;
   readonly subscribedAt: Date;
 }
 
-interface Exclusion {
+export interface Exclusion {
   readonly arn: string;
   readonly title: string;
   readonly description: string;
   readonly recommendation: string;
   readonly scopes: [];
-  readonly attributes: [];
+  readonly attributes?: [];
 }
 
-interface ExclusionPreview {
+export interface ExclusionPreview {
   readonly title: string;
   readonly description: string;
   readonly recommendation: string;
   readonly scopes: [];
-  readonly attributes: [];
+  readonly attributes?: [];
 }
 
-interface FailedItemDetails {
+export interface FailedItemDetails {
   readonly failureCode: string;
   readonly retryable: boolean;
 }
 
-interface Finding {
+export interface Finding {
   readonly arn: string;
-  readonly schemaVersion: number;
-  readonly service: string;
-  readonly serviceAttributes: InspectorServiceAttributes;
-  readonly assetType: string;
-  readonly assetAttributes: AssetAttributes;
-  readonly id: string;
-  readonly title: string;
-  readonly description: string;
-  readonly recommendation: string;
-  readonly severity: string;
-  readonly numericSeverity: unknown;
-  readonly confidence: number;
-  readonly indicatorOfCompromise: boolean;
+  readonly schemaVersion?: number;
+  readonly service?: string;
+  readonly serviceAttributes?: InspectorServiceAttributes;
+  readonly assetType?: string;
+  readonly assetAttributes?: AssetAttributes;
+  readonly id?: string;
+  readonly title?: string;
+  readonly description?: string;
+  readonly recommendation?: string;
+  readonly severity?: string;
+  readonly numericSeverity?: unknown;
+  readonly confidence?: number;
+  readonly indicatorOfCompromise?: boolean;
   readonly attributes: [];
   readonly userAttributes: [];
   readonly createdAt: Date;
   readonly updatedAt: Date;
 }
 
-interface FindingFilter {
-  readonly agentIds: [];
-  readonly autoScalingGroups: [];
-  readonly ruleNames: [];
-  readonly severities: [];
-  readonly rulesPackageArns: [];
-  readonly attributes: [];
-  readonly userAttributes: [];
-  readonly creationTimeRange: TimestampRange;
+export interface FindingFilter {
+  readonly agentIds?: [];
+  readonly autoScalingGroups?: [];
+  readonly ruleNames?: [];
+  readonly severities?: [];
+  readonly rulesPackageArns?: [];
+  readonly attributes?: [];
+  readonly userAttributes?: [];
+  readonly creationTimeRange?: TimestampRange;
 }
 
-interface GetAssessmentReportRequest {
+export interface GetAssessmentReportRequest {
   readonly assessmentRunArn: string;
   readonly reportFileFormat: string;
   readonly reportType: string;
 }
 
-interface GetAssessmentReportResponse {
+export interface GetAssessmentReportResponse {
   readonly status: string;
-  readonly url: string;
+  readonly url?: string;
 }
 
-interface GetExclusionsPreviewRequest {
+export interface GetExclusionsPreviewRequest {
   readonly assessmentTemplateArn: string;
   readonly previewToken: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly locale: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly locale?: string;
 }
 
-interface GetExclusionsPreviewResponse {
+export interface GetExclusionsPreviewResponse {
   readonly previewStatus: string;
-  readonly exclusionPreviews: [];
-  readonly nextToken: string;
+  readonly exclusionPreviews?: [];
+  readonly nextToken?: string;
 }
 
-interface GetTelemetryMetadataRequest {
+export interface GetTelemetryMetadataRequest {
   readonly assessmentRunArn: string;
 }
 
-interface GetTelemetryMetadataResponse {
+export interface GetTelemetryMetadataResponse {
   readonly telemetryMetadata: [];
 }
 
-interface InspectorServiceAttributes {
+export interface InspectorServiceAttributes {
   readonly schemaVersion: number;
+  readonly assessmentRunArn?: string;
+  readonly rulesPackageArn?: string;
+}
+
+export interface InternalException {
+  readonly message: string;
+  readonly canRetry: boolean;
+}
+
+export interface InvalidCrossAccountRoleException {
+  readonly message: string;
+  readonly errorCode: string;
+  readonly canRetry: boolean;
+}
+
+export interface InvalidInputException {
+  readonly message: string;
+  readonly errorCode: string;
+  readonly canRetry: boolean;
+}
+
+export interface LimitExceededException {
+  readonly message: string;
+  readonly errorCode: string;
+  readonly canRetry: boolean;
+}
+
+export interface ListAssessmentRunAgentsRequest {
   readonly assessmentRunArn: string;
-  readonly rulesPackageArn: string;
+  readonly filter?: AgentFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface InternalException {
-  readonly message: string;
-  readonly canRetry: boolean;
-}
-
-interface InvalidCrossAccountRoleException {
-  readonly message: string;
-  readonly errorCode: string;
-  readonly canRetry: boolean;
-}
-
-interface InvalidInputException {
-  readonly message: string;
-  readonly errorCode: string;
-  readonly canRetry: boolean;
-}
-
-interface LimitExceededException {
-  readonly message: string;
-  readonly errorCode: string;
-  readonly canRetry: boolean;
-}
-
-interface ListAssessmentRunAgentsRequest {
-  readonly assessmentRunArn: string;
-  readonly filter: AgentFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
-}
-
-interface ListAssessmentRunAgentsResponse {
+export interface ListAssessmentRunAgentsResponse {
   readonly assessmentRunAgents: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAssessmentRunsRequest {
-  readonly assessmentTemplateArns: [];
-  readonly filter: AssessmentRunFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListAssessmentRunsRequest {
+  readonly assessmentTemplateArns?: [];
+  readonly filter?: AssessmentRunFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssessmentRunsResponse {
+export interface ListAssessmentRunsResponse {
   readonly assessmentRunArns: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAssessmentTargetsRequest {
-  readonly filter: AssessmentTargetFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListAssessmentTargetsRequest {
+  readonly filter?: AssessmentTargetFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssessmentTargetsResponse {
+export interface ListAssessmentTargetsResponse {
   readonly assessmentTargetArns: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAssessmentTemplatesRequest {
-  readonly assessmentTargetArns: [];
-  readonly filter: AssessmentTemplateFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListAssessmentTemplatesRequest {
+  readonly assessmentTargetArns?: [];
+  readonly filter?: AssessmentTemplateFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssessmentTemplatesResponse {
+export interface ListAssessmentTemplatesResponse {
   readonly assessmentTemplateArns: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListEventSubscriptionsRequest {
-  readonly resourceArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListEventSubscriptionsRequest {
+  readonly resourceArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListEventSubscriptionsResponse {
+export interface ListEventSubscriptionsResponse {
   readonly subscriptions: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListExclusionsRequest {
+export interface ListExclusionsRequest {
   readonly assessmentRunArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListExclusionsResponse {
+export interface ListExclusionsResponse {
   readonly exclusionArns: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListFindingsRequest {
-  readonly assessmentRunArns: [];
-  readonly filter: FindingFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListFindingsRequest {
+  readonly assessmentRunArns?: [];
+  readonly filter?: FindingFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListFindingsResponse {
+export interface ListFindingsResponse {
   readonly findingArns: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListRulesPackagesRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListRulesPackagesRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListRulesPackagesResponse {
+export interface ListRulesPackagesResponse {
   readonly rulesPackageArns: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
+export interface ListTagsForResourceResponse {
   readonly tags: [];
 }
 
-interface NetworkInterface {
-  readonly networkInterfaceId: string;
-  readonly subnetId: string;
-  readonly vpcId: string;
-  readonly privateDnsName: string;
-  readonly privateIpAddress: string;
-  readonly privateIpAddresses: [];
-  readonly publicDnsName: string;
-  readonly publicIp: string;
-  readonly ipv6Addresses: [];
-  readonly securityGroups: [];
+export interface NetworkInterface {
+  readonly networkInterfaceId?: string;
+  readonly subnetId?: string;
+  readonly vpcId?: string;
+  readonly privateDnsName?: string;
+  readonly privateIpAddress?: string;
+  readonly privateIpAddresses?: [];
+  readonly publicDnsName?: string;
+  readonly publicIp?: string;
+  readonly ipv6Addresses?: [];
+  readonly securityGroups?: [];
 }
 
-interface NoSuchEntityException {
+export interface NoSuchEntityException {
   readonly message: string;
   readonly errorCode: string;
   readonly canRetry: boolean;
 }
 
-interface PreviewAgentsRequest {
+export interface PreviewAgentsRequest {
   readonly previewAgentsArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface PreviewAgentsResponse {
+export interface PreviewAgentsResponse {
   readonly agentPreviews: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface PreviewGenerationInProgressException {
+export interface PreviewGenerationInProgressException {
   readonly message: string;
 }
 
-interface PrivateIp {
-  readonly privateDnsName: string;
-  readonly privateIpAddress: string;
+export interface PrivateIp {
+  readonly privateDnsName?: string;
+  readonly privateIpAddress?: string;
 }
 
-interface RegisterCrossAccountAccessRoleRequest {
+export interface RegisterCrossAccountAccessRoleRequest {
   readonly roleArn: string;
 }
 
-interface RemoveAttributesFromFindingsRequest {
+export interface RemoveAttributesFromFindingsRequest {
   readonly findingArns: [];
   readonly attributeKeys: [];
 }
 
-interface RemoveAttributesFromFindingsResponse {
+export interface RemoveAttributesFromFindingsResponse {
   readonly failedItems: {[key: string]: any};
 }
 
-interface ResourceGroup {
+export interface ResourceGroup {
   readonly arn: string;
   readonly tags: [];
   readonly createdAt: Date;
 }
 
-interface ResourceGroupTag {
+export interface ResourceGroupTag {
   readonly key: string;
-  readonly value: string;
+  readonly value?: string;
 }
 
-interface RulesPackage {
+export interface RulesPackage {
   readonly arn: string;
   readonly name: string;
   readonly version: string;
   readonly provider: string;
-  readonly description: string;
+  readonly description?: string;
 }
 
-interface Scope {
-  readonly key: string;
-  readonly value: string;
+export interface Scope {
+  readonly key?: string;
+  readonly value?: string;
 }
 
-interface SecurityGroup {
-  readonly groupName: string;
-  readonly groupId: string;
+export interface SecurityGroup {
+  readonly groupName?: string;
+  readonly groupId?: string;
 }
 
-interface ServiceTemporarilyUnavailableException {
+export interface ServiceTemporarilyUnavailableException {
   readonly message: string;
   readonly canRetry: boolean;
 }
 
-interface SetTagsForResourceRequest {
+export interface SetTagsForResourceRequest {
   readonly resourceArn: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface StartAssessmentRunRequest {
+export interface StartAssessmentRunRequest {
   readonly assessmentTemplateArn: string;
-  readonly assessmentRunName: string;
+  readonly assessmentRunName?: string;
 }
 
-interface StartAssessmentRunResponse {
+export interface StartAssessmentRunResponse {
   readonly assessmentRunArn: string;
 }
 
-interface StopAssessmentRunRequest {
+export interface StopAssessmentRunRequest {
   readonly assessmentRunArn: string;
-  readonly stopAction: string;
+  readonly stopAction?: string;
 }
 
-interface SubscribeToEventRequest {
+export interface SubscribeToEventRequest {
   readonly resourceArn: string;
   readonly event: string;
   readonly topicArn: string;
 }
 
-interface Subscription {
+export interface Subscription {
   readonly resourceArn: string;
   readonly topicArn: string;
   readonly eventSubscriptions: [];
 }
 
-interface Tag {
+export interface Tag {
   readonly key: string;
-  readonly value: string;
+  readonly value?: string;
 }
 
-interface TelemetryMetadata {
+export interface TelemetryMetadata {
   readonly messageType: string;
   readonly count: number;
-  readonly dataSize: number;
+  readonly dataSize?: number;
 }
 
-interface TimestampRange {
-  readonly beginDate: Date;
-  readonly endDate: Date;
+export interface TimestampRange {
+  readonly beginDate?: Date;
+  readonly endDate?: Date;
 }
 
-interface UnsubscribeFromEventRequest {
+export interface UnsubscribeFromEventRequest {
   readonly resourceArn: string;
   readonly event: string;
   readonly topicArn: string;
 }
 
-interface UnsupportedFeatureException {
+export interface UnsupportedFeatureException {
   readonly message: string;
   readonly canRetry: boolean;
 }
 
-interface UpdateAssessmentTargetRequest {
+export interface UpdateAssessmentTargetRequest {
   readonly assessmentTargetArn: string;
   readonly assessmentTargetName: string;
-  readonly resourceGroupArn: string;
+  readonly resourceGroupArn?: string;
 }
+
 

@@ -4,15 +4,18 @@
 export interface CancelContact {
   readonly contactId: string;
 }
+
 export interface CreateConfig {
   readonly configData: ConfigTypeData;
   readonly name: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateDataflowEndpointGroup {
   readonly endpointDetails: [];
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateMissionProfile {
   readonly contactPostPassDurationSeconds?: number;
   readonly contactPrePassDurationSeconds?: number;
@@ -22,40 +25,51 @@ export interface CreateMissionProfile {
   readonly tags?: {[key: string]: any};
   readonly trackingConfigArn: string;
 }
+
 export interface DeleteConfig {
   readonly configId: string;
   readonly configType: string;
 }
+
 export interface DeleteDataflowEndpointGroup {
   readonly dataflowEndpointGroupId: string;
 }
+
 export interface DeleteMissionProfile {
   readonly missionProfileId: string;
 }
+
 export interface DescribeContact {
   readonly contactId: string;
 }
+
 export interface GetConfig {
   readonly configId: string;
   readonly configType: string;
 }
+
 export interface GetDataflowEndpointGroup {
   readonly dataflowEndpointGroupId: string;
 }
+
 export interface GetMinuteUsage {
   readonly month: number;
   readonly year: number;
 }
+
 export interface GetMissionProfile {
   readonly missionProfileId: string;
 }
+
 export interface GetSatellite {
   readonly satelliteId: string;
 }
+
 export interface ListConfigs {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListContacts {
   readonly endTime: Date;
   readonly groundStation?: string;
@@ -66,26 +80,32 @@ export interface ListContacts {
   readonly startTime: Date;
   readonly statusList: [];
 }
+
 export interface ListDataflowEndpointGroups {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListGroundStations {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly satelliteId?: string;
 }
+
 export interface ListMissionProfiles {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListSatellites {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface ReserveContact {
   readonly endTime: Date;
   readonly groundStation: string;
@@ -94,20 +114,24 @@ export interface ReserveContact {
   readonly startTime: Date;
   readonly tags?: {[key: string]: any};
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateConfig {
   readonly configData: ConfigTypeData;
   readonly configId: string;
   readonly configType: string;
   readonly name: string;
 }
+
 export interface UpdateMissionProfile {
   readonly contactPostPassDurationSeconds?: number;
   readonly contactPrePassDurationSeconds?: number;
@@ -118,475 +142,474 @@ export interface UpdateMissionProfile {
   readonly trackingConfigArn?: string;
 }
 
-
-
-interface AntennaDemodDecodeDetails {
-  readonly outputNode: string;
+export interface AntennaDemodDecodeDetails {
+  readonly outputNode?: string;
 }
 
-interface AntennaDownlinkConfig {
+export interface AntennaDownlinkConfig {
   readonly spectrumConfig: SpectrumConfig;
 }
 
-interface AntennaDownlinkDemodDecodeConfig {
+export interface AntennaDownlinkDemodDecodeConfig {
   readonly decodeConfig: DecodeConfig;
   readonly demodulationConfig: DemodulationConfig;
   readonly spectrumConfig: SpectrumConfig;
 }
 
-interface AntennaUplinkConfig {
+export interface AntennaUplinkConfig {
   readonly spectrumConfig: UplinkSpectrumConfig;
   readonly targetEirp: Eirp;
-  readonly transmitDisabled: boolean;
+  readonly transmitDisabled?: boolean;
 }
 
-interface CancelContactRequest {
+export interface CancelContactRequest {
   readonly contactId: string;
 }
 
-interface ConfigDetails {
-  readonly antennaDemodDecodeDetails: AntennaDemodDecodeDetails;
-  readonly endpointDetails: EndpointDetails;
-  readonly s3RecordingDetails: S3RecordingDetails;
+export interface ConfigDetails {
+  readonly antennaDemodDecodeDetails?: AntennaDemodDecodeDetails;
+  readonly endpointDetails?: EndpointDetails;
+  readonly s3RecordingDetails?: S3RecordingDetails;
 }
 
-interface ConfigIdResponse {
-  readonly configArn: string;
-  readonly configId: string;
-  readonly configType: string;
+export interface ConfigIdResponse {
+  readonly configArn?: string;
+  readonly configId?: string;
+  readonly configType?: string;
 }
 
-interface ConfigListItem {
-  readonly configArn: string;
-  readonly configId: string;
-  readonly configType: string;
-  readonly name: string;
+export interface ConfigListItem {
+  readonly configArn?: string;
+  readonly configId?: string;
+  readonly configType?: string;
+  readonly name?: string;
 }
 
-interface ConfigTypeData {
-  readonly antennaDownlinkConfig: AntennaDownlinkConfig;
-  readonly antennaDownlinkDemodDecodeConfig: AntennaDownlinkDemodDecodeConfig;
-  readonly antennaUplinkConfig: AntennaUplinkConfig;
-  readonly dataflowEndpointConfig: DataflowEndpointConfig;
-  readonly s3RecordingConfig: S3RecordingConfig;
-  readonly trackingConfig: TrackingConfig;
-  readonly uplinkEchoConfig: UplinkEchoConfig;
+export interface ConfigTypeData {
+  readonly antennaDownlinkConfig?: AntennaDownlinkConfig;
+  readonly antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig;
+  readonly antennaUplinkConfig?: AntennaUplinkConfig;
+  readonly dataflowEndpointConfig?: DataflowEndpointConfig;
+  readonly s3RecordingConfig?: S3RecordingConfig;
+  readonly trackingConfig?: TrackingConfig;
+  readonly uplinkEchoConfig?: UplinkEchoConfig;
 }
 
-interface ContactData {
-  readonly contactId: string;
-  readonly contactStatus: string;
-  readonly endTime: Date;
-  readonly errorMessage: string;
-  readonly groundStation: string;
-  readonly maximumElevation: Elevation;
-  readonly missionProfileArn: string;
-  readonly postPassEndTime: Date;
-  readonly prePassStartTime: Date;
-  readonly region: string;
-  readonly satelliteArn: string;
-  readonly startTime: Date;
-  readonly tags: {[key: string]: any};
+export interface ContactData {
+  readonly contactId?: string;
+  readonly contactStatus?: string;
+  readonly endTime?: Date;
+  readonly errorMessage?: string;
+  readonly groundStation?: string;
+  readonly maximumElevation?: Elevation;
+  readonly missionProfileArn?: string;
+  readonly postPassEndTime?: Date;
+  readonly prePassStartTime?: Date;
+  readonly region?: string;
+  readonly satelliteArn?: string;
+  readonly startTime?: Date;
+  readonly tags?: {[key: string]: any};
 }
 
-interface ContactIdResponse {
-  readonly contactId: string;
+export interface ContactIdResponse {
+  readonly contactId?: string;
 }
 
-interface CreateConfigRequest {
+export interface CreateConfigRequest {
   readonly configData: ConfigTypeData;
   readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateDataflowEndpointGroupRequest {
+export interface CreateDataflowEndpointGroupRequest {
   readonly endpointDetails: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateMissionProfileRequest {
-  readonly contactPostPassDurationSeconds: number;
-  readonly contactPrePassDurationSeconds: number;
+export interface CreateMissionProfileRequest {
+  readonly contactPostPassDurationSeconds?: number;
+  readonly contactPrePassDurationSeconds?: number;
   readonly dataflowEdges: [];
   readonly minimumViableContactDurationSeconds: number;
   readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly trackingConfigArn: string;
 }
 
-interface DataflowDetail {
-  readonly destination: Destination;
-  readonly errorMessage: string;
-  readonly source: Source;
+export interface DataflowDetail {
+  readonly destination?: Destination;
+  readonly errorMessage?: string;
+  readonly source?: Source;
 }
 
-interface DataflowEndpoint {
-  readonly address: SocketAddress;
-  readonly mtu: number;
-  readonly name: string;
-  readonly status: string;
+export interface DataflowEndpoint {
+  readonly address?: SocketAddress;
+  readonly mtu?: number;
+  readonly name?: string;
+  readonly status?: string;
 }
 
-interface DataflowEndpointConfig {
+export interface DataflowEndpointConfig {
   readonly dataflowEndpointName: string;
-  readonly dataflowEndpointRegion: string;
+  readonly dataflowEndpointRegion?: string;
 }
 
-interface DataflowEndpointGroupIdResponse {
-  readonly dataflowEndpointGroupId: string;
+export interface DataflowEndpointGroupIdResponse {
+  readonly dataflowEndpointGroupId?: string;
 }
 
-interface DataflowEndpointListItem {
-  readonly dataflowEndpointGroupArn: string;
-  readonly dataflowEndpointGroupId: string;
+export interface DataflowEndpointListItem {
+  readonly dataflowEndpointGroupArn?: string;
+  readonly dataflowEndpointGroupId?: string;
 }
 
-interface DecodeConfig {
+export interface DecodeConfig {
   readonly unvalidatedJSON: string;
 }
 
-interface DeleteConfigRequest {
+export interface DeleteConfigRequest {
   readonly configId: string;
   readonly configType: string;
 }
 
-interface DeleteDataflowEndpointGroupRequest {
+export interface DeleteDataflowEndpointGroupRequest {
   readonly dataflowEndpointGroupId: string;
 }
 
-interface DeleteMissionProfileRequest {
+export interface DeleteMissionProfileRequest {
   readonly missionProfileId: string;
 }
 
-interface DemodulationConfig {
+export interface DemodulationConfig {
   readonly unvalidatedJSON: string;
 }
 
-interface DependencyException {
-  readonly message: string;
-  readonly parameterName: string;
+export interface DependencyException {
+  readonly message?: string;
+  readonly parameterName?: string;
 }
 
-interface DescribeContactRequest {
+export interface DescribeContactRequest {
   readonly contactId: string;
 }
 
-interface DescribeContactResponse {
-  readonly contactId: string;
-  readonly contactStatus: string;
-  readonly dataflowList: [];
-  readonly endTime: Date;
-  readonly errorMessage: string;
-  readonly groundStation: string;
-  readonly maximumElevation: Elevation;
-  readonly missionProfileArn: string;
-  readonly postPassEndTime: Date;
-  readonly prePassStartTime: Date;
-  readonly region: string;
-  readonly satelliteArn: string;
-  readonly startTime: Date;
-  readonly tags: {[key: string]: any};
+export interface DescribeContactResponse {
+  readonly contactId?: string;
+  readonly contactStatus?: string;
+  readonly dataflowList?: [];
+  readonly endTime?: Date;
+  readonly errorMessage?: string;
+  readonly groundStation?: string;
+  readonly maximumElevation?: Elevation;
+  readonly missionProfileArn?: string;
+  readonly postPassEndTime?: Date;
+  readonly prePassStartTime?: Date;
+  readonly region?: string;
+  readonly satelliteArn?: string;
+  readonly startTime?: Date;
+  readonly tags?: {[key: string]: any};
 }
 
-interface Destination {
-  readonly configDetails: ConfigDetails;
-  readonly configId: string;
-  readonly configType: string;
-  readonly dataflowDestinationRegion: string;
+export interface Destination {
+  readonly configDetails?: ConfigDetails;
+  readonly configId?: string;
+  readonly configType?: string;
+  readonly dataflowDestinationRegion?: string;
 }
 
-interface Eirp {
+export interface Eirp {
   readonly units: string;
   readonly value: unknown;
 }
 
-interface Elevation {
+export interface Elevation {
   readonly unit: string;
   readonly value: unknown;
 }
 
-interface EndpointDetails {
-  readonly endpoint: DataflowEndpoint;
-  readonly securityDetails: SecurityDetails;
+export interface EndpointDetails {
+  readonly endpoint?: DataflowEndpoint;
+  readonly securityDetails?: SecurityDetails;
 }
 
-interface Frequency {
+export interface Frequency {
   readonly units: string;
   readonly value: unknown;
 }
 
-interface FrequencyBandwidth {
+export interface FrequencyBandwidth {
   readonly units: string;
   readonly value: unknown;
 }
 
-interface GetConfigRequest {
+export interface GetConfigRequest {
   readonly configId: string;
   readonly configType: string;
 }
 
-interface GetConfigResponse {
+export interface GetConfigResponse {
   readonly configArn: string;
   readonly configData: ConfigTypeData;
   readonly configId: string;
-  readonly configType: string;
+  readonly configType?: string;
   readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface GetDataflowEndpointGroupRequest {
+export interface GetDataflowEndpointGroupRequest {
   readonly dataflowEndpointGroupId: string;
 }
 
-interface GetDataflowEndpointGroupResponse {
-  readonly dataflowEndpointGroupArn: string;
-  readonly dataflowEndpointGroupId: string;
-  readonly endpointsDetails: [];
-  readonly tags: {[key: string]: any};
+export interface GetDataflowEndpointGroupResponse {
+  readonly dataflowEndpointGroupArn?: string;
+  readonly dataflowEndpointGroupId?: string;
+  readonly endpointsDetails?: [];
+  readonly tags?: {[key: string]: any};
 }
 
-interface GetMinuteUsageRequest {
+export interface GetMinuteUsageRequest {
   readonly month: number;
   readonly year: number;
 }
 
-interface GetMinuteUsageResponse {
-  readonly estimatedMinutesRemaining: number;
-  readonly isReservedMinutesCustomer: boolean;
-  readonly totalReservedMinuteAllocation: number;
-  readonly totalScheduledMinutes: number;
-  readonly upcomingMinutesScheduled: number;
+export interface GetMinuteUsageResponse {
+  readonly estimatedMinutesRemaining?: number;
+  readonly isReservedMinutesCustomer?: boolean;
+  readonly totalReservedMinuteAllocation?: number;
+  readonly totalScheduledMinutes?: number;
+  readonly upcomingMinutesScheduled?: number;
 }
 
-interface GetMissionProfileRequest {
+export interface GetMissionProfileRequest {
   readonly missionProfileId: string;
 }
 
-interface GetMissionProfileResponse {
-  readonly contactPostPassDurationSeconds: number;
-  readonly contactPrePassDurationSeconds: number;
-  readonly dataflowEdges: [];
-  readonly minimumViableContactDurationSeconds: number;
-  readonly missionProfileArn: string;
-  readonly missionProfileId: string;
-  readonly name: string;
-  readonly region: string;
-  readonly tags: {[key: string]: any};
-  readonly trackingConfigArn: string;
+export interface GetMissionProfileResponse {
+  readonly contactPostPassDurationSeconds?: number;
+  readonly contactPrePassDurationSeconds?: number;
+  readonly dataflowEdges?: [];
+  readonly minimumViableContactDurationSeconds?: number;
+  readonly missionProfileArn?: string;
+  readonly missionProfileId?: string;
+  readonly name?: string;
+  readonly region?: string;
+  readonly tags?: {[key: string]: any};
+  readonly trackingConfigArn?: string;
 }
 
-interface GetSatelliteRequest {
+export interface GetSatelliteRequest {
   readonly satelliteId: string;
 }
 
-interface GetSatelliteResponse {
-  readonly groundStations: [];
-  readonly noradSatelliteID: number;
-  readonly satelliteArn: string;
-  readonly satelliteId: string;
+export interface GetSatelliteResponse {
+  readonly groundStations?: [];
+  readonly noradSatelliteID?: number;
+  readonly satelliteArn?: string;
+  readonly satelliteId?: string;
 }
 
-interface GroundStationData {
-  readonly groundStationId: string;
-  readonly groundStationName: string;
-  readonly region: string;
+export interface GroundStationData {
+  readonly groundStationId?: string;
+  readonly groundStationName?: string;
+  readonly region?: string;
 }
 
-interface InvalidParameterException {
-  readonly message: string;
-  readonly parameterName: string;
+export interface InvalidParameterException {
+  readonly message?: string;
+  readonly parameterName?: string;
 }
 
-interface ListConfigsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListConfigsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListConfigsResponse {
-  readonly configList: [];
-  readonly nextToken: string;
+export interface ListConfigsResponse {
+  readonly configList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListContactsRequest {
+export interface ListContactsRequest {
   readonly endTime: Date;
-  readonly groundStation: string;
-  readonly maxResults: number;
-  readonly missionProfileArn: string;
-  readonly nextToken: string;
-  readonly satelliteArn: string;
+  readonly groundStation?: string;
+  readonly maxResults?: number;
+  readonly missionProfileArn?: string;
+  readonly nextToken?: string;
+  readonly satelliteArn?: string;
   readonly startTime: Date;
   readonly statusList: [];
 }
 
-interface ListContactsResponse {
-  readonly contactList: [];
-  readonly nextToken: string;
+export interface ListContactsResponse {
+  readonly contactList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDataflowEndpointGroupsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListDataflowEndpointGroupsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListDataflowEndpointGroupsResponse {
-  readonly dataflowEndpointGroupList: [];
-  readonly nextToken: string;
+export interface ListDataflowEndpointGroupsResponse {
+  readonly dataflowEndpointGroupList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListGroundStationsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly satelliteId: string;
+export interface ListGroundStationsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly satelliteId?: string;
 }
 
-interface ListGroundStationsResponse {
-  readonly groundStationList: [];
-  readonly nextToken: string;
+export interface ListGroundStationsResponse {
+  readonly groundStationList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListMissionProfilesRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListMissionProfilesRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListMissionProfilesResponse {
-  readonly missionProfileList: [];
-  readonly nextToken: string;
+export interface ListMissionProfilesResponse {
+  readonly missionProfileList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListSatellitesRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListSatellitesRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListSatellitesResponse {
-  readonly nextToken: string;
-  readonly satellites: [];
+export interface ListSatellitesResponse {
+  readonly nextToken?: string;
+  readonly satellites?: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface MissionProfileIdResponse {
-  readonly missionProfileId: string;
+export interface MissionProfileIdResponse {
+  readonly missionProfileId?: string;
 }
 
-interface MissionProfileListItem {
-  readonly missionProfileArn: string;
-  readonly missionProfileId: string;
-  readonly name: string;
-  readonly region: string;
+export interface MissionProfileListItem {
+  readonly missionProfileArn?: string;
+  readonly missionProfileId?: string;
+  readonly name?: string;
+  readonly region?: string;
 }
 
-interface ReserveContactRequest {
+export interface ReserveContactRequest {
   readonly endTime: Date;
   readonly groundStation: string;
   readonly missionProfileArn: string;
   readonly satelliteArn: string;
   readonly startTime: Date;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface ResourceLimitExceededException {
-  readonly message: string;
-  readonly parameterName: string;
+export interface ResourceLimitExceededException {
+  readonly message?: string;
+  readonly parameterName?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface S3RecordingConfig {
+export interface S3RecordingConfig {
   readonly bucketArn: string;
-  readonly prefix: string;
+  readonly prefix?: string;
   readonly roleArn: string;
 }
 
-interface S3RecordingDetails {
-  readonly bucketArn: string;
-  readonly keyTemplate: string;
+export interface S3RecordingDetails {
+  readonly bucketArn?: string;
+  readonly keyTemplate?: string;
 }
 
-interface SatelliteListItem {
-  readonly groundStations: [];
-  readonly noradSatelliteID: number;
-  readonly satelliteArn: string;
-  readonly satelliteId: string;
+export interface SatelliteListItem {
+  readonly groundStations?: [];
+  readonly noradSatelliteID?: number;
+  readonly satelliteArn?: string;
+  readonly satelliteId?: string;
 }
 
-interface SecurityDetails {
+export interface SecurityDetails {
   readonly roleArn: string;
   readonly securityGroupIds: [];
   readonly subnetIds: [];
 }
 
-interface SocketAddress {
+export interface SocketAddress {
   readonly name: string;
   readonly port: number;
 }
 
-interface Source {
-  readonly configDetails: ConfigDetails;
-  readonly configId: string;
-  readonly configType: string;
-  readonly dataflowSourceRegion: string;
+export interface Source {
+  readonly configDetails?: ConfigDetails;
+  readonly configId?: string;
+  readonly configType?: string;
+  readonly dataflowSourceRegion?: string;
 }
 
-interface SpectrumConfig {
+export interface SpectrumConfig {
   readonly bandwidth: FrequencyBandwidth;
   readonly centerFrequency: Frequency;
-  readonly polarization: string;
+  readonly polarization?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TrackingConfig {
+export interface TrackingConfig {
   readonly autotrack: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateConfigRequest {
+export interface UpdateConfigRequest {
   readonly configData: ConfigTypeData;
   readonly configId: string;
   readonly configType: string;
   readonly name: string;
 }
 
-interface UpdateMissionProfileRequest {
-  readonly contactPostPassDurationSeconds: number;
-  readonly contactPrePassDurationSeconds: number;
-  readonly dataflowEdges: [];
-  readonly minimumViableContactDurationSeconds: number;
+export interface UpdateMissionProfileRequest {
+  readonly contactPostPassDurationSeconds?: number;
+  readonly contactPrePassDurationSeconds?: number;
+  readonly dataflowEdges?: [];
+  readonly minimumViableContactDurationSeconds?: number;
   readonly missionProfileId: string;
-  readonly name: string;
-  readonly trackingConfigArn: string;
+  readonly name?: string;
+  readonly trackingConfigArn?: string;
 }
 
-interface UplinkEchoConfig {
+export interface UplinkEchoConfig {
   readonly antennaUplinkConfigArn: string;
   readonly enabled: boolean;
 }
 
-interface UplinkSpectrumConfig {
+export interface UplinkSpectrumConfig {
   readonly centerFrequency: Frequency;
-  readonly polarization: string;
+  readonly polarization?: string;
 }
+
 

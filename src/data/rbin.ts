@@ -8,29 +8,36 @@ export interface CreateRule {
   readonly ResourceType: string;
   readonly ResourceTags?: [];
 }
+
 export interface DeleteRule {
   readonly Identifier: string;
 }
+
 export interface GetRule {
   readonly Identifier: string;
 }
+
 export interface ListRules {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly ResourceType: string;
   readonly ResourceTags?: [];
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateRule {
   readonly Identifier: string;
   readonly RetentionPeriod?: RetentionPeriod;
@@ -39,136 +46,135 @@ export interface UpdateRule {
   readonly ResourceTags?: [];
 }
 
-
-
-interface CreateRuleRequest {
+export interface CreateRuleRequest {
   readonly RetentionPeriod: RetentionPeriod;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly Tags?: [];
   readonly ResourceType: string;
-  readonly ResourceTags: [];
+  readonly ResourceTags?: [];
 }
 
-interface CreateRuleResponse {
-  readonly Identifier: string;
-  readonly RetentionPeriod: RetentionPeriod;
-  readonly Description: string;
-  readonly Tags: [];
-  readonly ResourceType: string;
-  readonly ResourceTags: [];
-  readonly Status: string;
+export interface CreateRuleResponse {
+  readonly Identifier?: string;
+  readonly RetentionPeriod?: RetentionPeriod;
+  readonly Description?: string;
+  readonly Tags?: [];
+  readonly ResourceType?: string;
+  readonly ResourceTags?: [];
+  readonly Status?: string;
 }
 
-interface DeleteRuleRequest {
-  readonly Identifier: string;
-}
-
-interface DeleteRuleResponse {
-}
-
-interface GetRuleRequest {
+export interface DeleteRuleRequest {
   readonly Identifier: string;
 }
 
-interface GetRuleResponse {
+export interface DeleteRuleResponse {
+}
+
+export interface GetRuleRequest {
   readonly Identifier: string;
-  readonly Description: string;
+}
+
+export interface GetRuleResponse {
+  readonly Identifier?: string;
+  readonly Description?: string;
+  readonly ResourceType?: string;
+  readonly RetentionPeriod?: RetentionPeriod;
+  readonly ResourceTags?: [];
+  readonly Status?: string;
+}
+
+export interface InternalServerException {
+  readonly Message?: string;
+}
+
+export interface ListRulesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ResourceType: string;
-  readonly RetentionPeriod: RetentionPeriod;
-  readonly ResourceTags: [];
-  readonly Status: string;
+  readonly ResourceTags?: [];
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface ListRulesResponse {
+  readonly Rules?: [];
+  readonly NextToken?: string;
 }
 
-interface ListRulesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ResourceType: string;
-  readonly ResourceTags: [];
-}
-
-interface ListRulesResponse {
-  readonly Rules: [];
-  readonly NextToken: string;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
-  readonly Reason: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
+  readonly Reason?: string;
 }
 
-interface ResourceTag {
+export interface ResourceTag {
   readonly ResourceTagKey: string;
-  readonly ResourceTagValue: string;
+  readonly ResourceTagValue?: string;
 }
 
-interface RetentionPeriod {
+export interface RetentionPeriod {
   readonly RetentionPeriodValue: number;
   readonly RetentionPeriodUnit: string;
 }
 
-interface RuleSummary {
-  readonly Identifier: string;
-  readonly Description: string;
-  readonly RetentionPeriod: RetentionPeriod;
+export interface RuleSummary {
+  readonly Identifier?: string;
+  readonly Description?: string;
+  readonly RetentionPeriod?: RetentionPeriod;
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
-  readonly Reason: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
+  readonly Reason?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateRuleRequest {
+export interface UpdateRuleRequest {
   readonly Identifier: string;
-  readonly RetentionPeriod: RetentionPeriod;
-  readonly Description: string;
-  readonly ResourceType: string;
-  readonly ResourceTags: [];
+  readonly RetentionPeriod?: RetentionPeriod;
+  readonly Description?: string;
+  readonly ResourceType?: string;
+  readonly ResourceTags?: [];
 }
 
-interface UpdateRuleResponse {
-  readonly Identifier: string;
-  readonly RetentionPeriod: RetentionPeriod;
-  readonly Description: string;
-  readonly ResourceType: string;
-  readonly ResourceTags: [];
-  readonly Status: string;
+export interface UpdateRuleResponse {
+  readonly Identifier?: string;
+  readonly RetentionPeriod?: RetentionPeriod;
+  readonly Description?: string;
+  readonly ResourceType?: string;
+  readonly ResourceTags?: [];
+  readonly Status?: string;
 }
 
-interface ValidationException {
-  readonly Message: string;
-  readonly Reason: string;
+export interface ValidationException {
+  readonly Message?: string;
+  readonly Reason?: string;
 }
+
 

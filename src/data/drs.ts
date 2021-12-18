@@ -17,33 +17,41 @@ export interface CreateReplicationConfigurationTemplate {
   readonly tags?: {[key: string]: any};
   readonly useDedicatedReplicationServer: boolean;
 }
+
 export interface DeleteJob {
   readonly jobID: string;
 }
+
 export interface DeleteRecoveryInstance {
   readonly recoveryInstanceID: string;
 }
+
 export interface DeleteReplicationConfigurationTemplate {
   readonly replicationConfigurationTemplateID: string;
 }
+
 export interface DeleteSourceServer {
   readonly sourceServerID: string;
 }
+
 export interface DescribeJobLogItems {
   readonly jobID: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DescribeJobs {
   readonly filters: DescribeJobsRequestFilters;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DescribeRecoveryInstances {
   readonly filters: DescribeRecoveryInstancesRequestFilters;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DescribeRecoverySnapshots {
   readonly filters?: DescribeRecoverySnapshotsRequestFilters;
   readonly maxResults?: number;
@@ -51,68 +59,86 @@ export interface DescribeRecoverySnapshots {
   readonly order?: string;
   readonly sourceServerID: string;
 }
+
 export interface DescribeReplicationConfigurationTemplates {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly replicationConfigurationTemplateIDs: [];
 }
+
 export interface DescribeSourceServers {
   readonly filters: DescribeSourceServersRequestFilters;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DisconnectRecoveryInstance {
   readonly recoveryInstanceID: string;
 }
+
 export interface DisconnectSourceServer {
   readonly sourceServerID: string;
 }
+
 export interface GetFailbackReplicationConfiguration {
   readonly recoveryInstanceID: string;
 }
+
 export interface GetLaunchConfiguration {
   readonly sourceServerID: string;
 }
+
 export interface GetReplicationConfiguration {
   readonly sourceServerID: string;
 }
+
 export interface InitializeService {
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface RetryDataReplication {
   readonly sourceServerID: string;
 }
+
 export interface StartFailbackLaunch {
   readonly recoveryInstanceIDs: [];
   readonly tags?: {[key: string]: any};
 }
+
 export interface StartRecovery {
   readonly isDrill?: boolean;
   readonly sourceServers: [];
   readonly tags?: {[key: string]: any};
 }
+
 export interface StopFailback {
   readonly recoveryInstanceID: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface TerminateRecoveryInstances {
   readonly recoveryInstanceIDs: [];
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateFailbackReplicationConfiguration {
   readonly bandwidthThrottling?: number;
   readonly name?: string;
   readonly recoveryInstanceID: string;
   readonly usePrivateIP?: boolean;
 }
+
 export interface UpdateLaunchConfiguration {
   readonly copyPrivateIp?: boolean;
   readonly copyTags?: boolean;
@@ -122,6 +148,7 @@ export interface UpdateLaunchConfiguration {
   readonly sourceServerID: string;
   readonly targetInstanceTypeRightSizingMethod?: string;
 }
+
 export interface UpdateReplicationConfiguration {
   readonly associateDefaultSecurityGroup?: boolean;
   readonly bandwidthThrottling?: number;
@@ -140,6 +167,7 @@ export interface UpdateReplicationConfiguration {
   readonly stagingAreaTags?: {[key: string]: any};
   readonly useDedicatedReplicationServer?: boolean;
 }
+
 export interface UpdateReplicationConfigurationTemplate {
   readonly arn?: string;
   readonly associateDefaultSecurityGroup?: boolean;
@@ -158,621 +186,620 @@ export interface UpdateReplicationConfigurationTemplate {
   readonly useDedicatedReplicationServer?: boolean;
 }
 
-
-
-interface AccessDeniedException {
-  readonly code: string;
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly code?: string;
+  readonly message?: string;
 }
 
-interface CPU {
-  readonly cores: number;
-  readonly modelName: string;
+export interface CPU {
+  readonly cores?: number;
+  readonly modelName?: string;
 }
 
-interface ConflictException {
-  readonly code: string;
-  readonly message: string;
-  readonly resourceId: string;
-  readonly resourceType: string;
+export interface ConflictException {
+  readonly code?: string;
+  readonly message?: string;
+  readonly resourceId?: string;
+  readonly resourceType?: string;
 }
 
-interface CreateReplicationConfigurationTemplateRequest {
+export interface CreateReplicationConfigurationTemplateRequest {
   readonly associateDefaultSecurityGroup: boolean;
   readonly bandwidthThrottling: number;
   readonly createPublicIP: boolean;
   readonly dataPlaneRouting: string;
   readonly defaultLargeStagingDiskType: string;
   readonly ebsEncryption: string;
-  readonly ebsEncryptionKeyArn: string;
+  readonly ebsEncryptionKeyArn?: string;
   readonly pitPolicy: [];
   readonly replicationServerInstanceType: string;
   readonly replicationServersSecurityGroupsIDs: [];
   readonly stagingAreaSubnetId: string;
   readonly stagingAreaTags: {[key: string]: any};
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly useDedicatedReplicationServer: boolean;
 }
 
-interface DataReplicationError {
-  readonly error: string;
-  readonly rawError: string;
+export interface DataReplicationError {
+  readonly error?: string;
+  readonly rawError?: string;
 }
 
-interface DataReplicationInfo {
-  readonly dataReplicationError: DataReplicationError;
-  readonly dataReplicationInitiation: DataReplicationInitiation;
-  readonly dataReplicationState: string;
-  readonly etaDateTime: string;
-  readonly lagDuration: string;
-  readonly replicatedDisks: [];
+export interface DataReplicationInfo {
+  readonly dataReplicationError?: DataReplicationError;
+  readonly dataReplicationInitiation?: DataReplicationInitiation;
+  readonly dataReplicationState?: string;
+  readonly etaDateTime?: string;
+  readonly lagDuration?: string;
+  readonly replicatedDisks?: [];
 }
 
-interface DataReplicationInfoReplicatedDisk {
-  readonly backloggedStorageBytes: number;
-  readonly deviceName: string;
-  readonly replicatedStorageBytes: number;
-  readonly rescannedStorageBytes: number;
-  readonly totalStorageBytes: number;
+export interface DataReplicationInfoReplicatedDisk {
+  readonly backloggedStorageBytes?: number;
+  readonly deviceName?: string;
+  readonly replicatedStorageBytes?: number;
+  readonly rescannedStorageBytes?: number;
+  readonly totalStorageBytes?: number;
 }
 
-interface DataReplicationInitiation {
-  readonly nextAttemptDateTime: string;
-  readonly startDateTime: string;
-  readonly steps: [];
+export interface DataReplicationInitiation {
+  readonly nextAttemptDateTime?: string;
+  readonly startDateTime?: string;
+  readonly steps?: [];
 }
 
-interface DataReplicationInitiationStep {
-  readonly name: string;
-  readonly status: string;
+export interface DataReplicationInitiationStep {
+  readonly name?: string;
+  readonly status?: string;
 }
 
-interface DeleteJobRequest {
+export interface DeleteJobRequest {
   readonly jobID: string;
 }
 
-interface DeleteJobResponse {
+export interface DeleteJobResponse {
 }
 
-interface DeleteRecoveryInstanceRequest {
+export interface DeleteRecoveryInstanceRequest {
   readonly recoveryInstanceID: string;
 }
 
-interface DeleteReplicationConfigurationTemplateRequest {
+export interface DeleteReplicationConfigurationTemplateRequest {
   readonly replicationConfigurationTemplateID: string;
 }
 
-interface DeleteReplicationConfigurationTemplateResponse {
+export interface DeleteReplicationConfigurationTemplateResponse {
 }
 
-interface DeleteSourceServerRequest {
+export interface DeleteSourceServerRequest {
   readonly sourceServerID: string;
 }
 
-interface DeleteSourceServerResponse {
+export interface DeleteSourceServerResponse {
 }
 
-interface DescribeJobLogItemsRequest {
+export interface DescribeJobLogItemsRequest {
   readonly jobID: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface DescribeJobLogItemsResponse {
-  readonly items: [];
-  readonly nextToken: string;
+export interface DescribeJobLogItemsResponse {
+  readonly items?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeJobsRequest {
+export interface DescribeJobsRequest {
   readonly filters: DescribeJobsRequestFilters;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface DescribeJobsRequestFilters {
-  readonly fromDate: string;
-  readonly jobIDs: [];
-  readonly toDate: string;
+export interface DescribeJobsRequestFilters {
+  readonly fromDate?: string;
+  readonly jobIDs?: [];
+  readonly toDate?: string;
 }
 
-interface DescribeJobsResponse {
-  readonly items: [];
-  readonly nextToken: string;
+export interface DescribeJobsResponse {
+  readonly items?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeRecoveryInstancesRequest {
+export interface DescribeRecoveryInstancesRequest {
   readonly filters: DescribeRecoveryInstancesRequestFilters;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface DescribeRecoveryInstancesRequestFilters {
-  readonly recoveryInstanceIDs: [];
-  readonly sourceServerIDs: [];
+export interface DescribeRecoveryInstancesRequestFilters {
+  readonly recoveryInstanceIDs?: [];
+  readonly sourceServerIDs?: [];
 }
 
-interface DescribeRecoveryInstancesResponse {
-  readonly items: [];
-  readonly nextToken: string;
+export interface DescribeRecoveryInstancesResponse {
+  readonly items?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeRecoverySnapshotsRequest {
-  readonly filters: DescribeRecoverySnapshotsRequestFilters;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly order: string;
+export interface DescribeRecoverySnapshotsRequest {
+  readonly filters?: DescribeRecoverySnapshotsRequestFilters;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly order?: string;
   readonly sourceServerID: string;
 }
 
-interface DescribeRecoverySnapshotsRequestFilters {
-  readonly fromDateTime: string;
-  readonly toDateTime: string;
+export interface DescribeRecoverySnapshotsRequestFilters {
+  readonly fromDateTime?: string;
+  readonly toDateTime?: string;
 }
 
-interface DescribeRecoverySnapshotsResponse {
-  readonly items: [];
-  readonly nextToken: string;
+export interface DescribeRecoverySnapshotsResponse {
+  readonly items?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeReplicationConfigurationTemplatesRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface DescribeReplicationConfigurationTemplatesRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly replicationConfigurationTemplateIDs: [];
 }
 
-interface DescribeReplicationConfigurationTemplatesResponse {
-  readonly items: [];
-  readonly nextToken: string;
+export interface DescribeReplicationConfigurationTemplatesResponse {
+  readonly items?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeSourceServersRequest {
+export interface DescribeSourceServersRequest {
   readonly filters: DescribeSourceServersRequestFilters;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface DescribeSourceServersRequestFilters {
-  readonly hardwareId: string;
-  readonly sourceServerIDs: [];
+export interface DescribeSourceServersRequestFilters {
+  readonly hardwareId?: string;
+  readonly sourceServerIDs?: [];
 }
 
-interface DescribeSourceServersResponse {
-  readonly items: [];
-  readonly nextToken: string;
+export interface DescribeSourceServersResponse {
+  readonly items?: [];
+  readonly nextToken?: string;
 }
 
-interface DisconnectRecoveryInstanceRequest {
+export interface DisconnectRecoveryInstanceRequest {
   readonly recoveryInstanceID: string;
 }
 
-interface DisconnectSourceServerRequest {
+export interface DisconnectSourceServerRequest {
   readonly sourceServerID: string;
 }
 
-interface Disk {
-  readonly bytes: number;
-  readonly deviceName: string;
+export interface Disk {
+  readonly bytes?: number;
+  readonly deviceName?: string;
 }
 
-interface GetFailbackReplicationConfigurationRequest {
+export interface GetFailbackReplicationConfigurationRequest {
   readonly recoveryInstanceID: string;
 }
 
-interface GetFailbackReplicationConfigurationResponse {
-  readonly bandwidthThrottling: number;
-  readonly name: string;
+export interface GetFailbackReplicationConfigurationResponse {
+  readonly bandwidthThrottling?: number;
+  readonly name?: string;
   readonly recoveryInstanceID: string;
-  readonly usePrivateIP: boolean;
+  readonly usePrivateIP?: boolean;
 }
 
-interface GetLaunchConfigurationRequest {
+export interface GetLaunchConfigurationRequest {
   readonly sourceServerID: string;
 }
 
-interface GetReplicationConfigurationRequest {
+export interface GetReplicationConfigurationRequest {
   readonly sourceServerID: string;
 }
 
-interface IdentificationHints {
-  readonly awsInstanceID: string;
-  readonly fqdn: string;
-  readonly hostname: string;
-  readonly vmWareUuid: string;
+export interface IdentificationHints {
+  readonly awsInstanceID?: string;
+  readonly fqdn?: string;
+  readonly hostname?: string;
+  readonly vmWareUuid?: string;
 }
 
-interface InitializeServiceRequest {
+export interface InitializeServiceRequest {
 }
 
-interface InitializeServiceResponse {
+export interface InitializeServiceResponse {
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
-  readonly retryAfterSeconds: number;
+  readonly retryAfterSeconds?: number;
 }
 
-interface Job {
-  readonly arn: string;
-  readonly creationDateTime: string;
-  readonly endDateTime: string;
-  readonly initiatedBy: string;
+export interface Job {
+  readonly arn?: string;
+  readonly creationDateTime?: string;
+  readonly endDateTime?: string;
+  readonly initiatedBy?: string;
   readonly jobID: string;
-  readonly participatingServers: [];
-  readonly status: string;
-  readonly tags: {[key: string]: any};
-  readonly type: string;
+  readonly participatingServers?: [];
+  readonly status?: string;
+  readonly tags?: {[key: string]: any};
+  readonly type?: string;
 }
 
-interface JobLog {
-  readonly event: string;
-  readonly eventData: JobLogEventData;
-  readonly logDateTime: string;
+export interface JobLog {
+  readonly event?: string;
+  readonly eventData?: JobLogEventData;
+  readonly logDateTime?: string;
 }
 
-interface JobLogEventData {
-  readonly conversionServerID: string;
-  readonly rawError: string;
-  readonly sourceServerID: string;
-  readonly targetInstanceID: string;
+export interface JobLogEventData {
+  readonly conversionServerID?: string;
+  readonly rawError?: string;
+  readonly sourceServerID?: string;
+  readonly targetInstanceID?: string;
 }
 
-interface LaunchConfiguration {
-  readonly copyPrivateIp: boolean;
-  readonly copyTags: boolean;
-  readonly ec2LaunchTemplateID: string;
-  readonly launchDisposition: string;
-  readonly licensing: Licensing;
-  readonly name: string;
-  readonly sourceServerID: string;
-  readonly targetInstanceTypeRightSizingMethod: string;
+export interface LaunchConfiguration {
+  readonly copyPrivateIp?: boolean;
+  readonly copyTags?: boolean;
+  readonly ec2LaunchTemplateID?: string;
+  readonly launchDisposition?: string;
+  readonly licensing?: Licensing;
+  readonly name?: string;
+  readonly sourceServerID?: string;
+  readonly targetInstanceTypeRightSizingMethod?: string;
 }
 
-interface Licensing {
-  readonly osByol: boolean;
+export interface Licensing {
+  readonly osByol?: boolean;
 }
 
-interface LifeCycle {
-  readonly addedToServiceDateTime: string;
-  readonly elapsedReplicationDuration: string;
-  readonly firstByteDateTime: string;
-  readonly lastLaunch: LifeCycleLastLaunch;
-  readonly lastSeenByServiceDateTime: string;
+export interface LifeCycle {
+  readonly addedToServiceDateTime?: string;
+  readonly elapsedReplicationDuration?: string;
+  readonly firstByteDateTime?: string;
+  readonly lastLaunch?: LifeCycleLastLaunch;
+  readonly lastSeenByServiceDateTime?: string;
 }
 
-interface LifeCycleLastLaunch {
-  readonly initiated: LifeCycleLastLaunchInitiated;
+export interface LifeCycleLastLaunch {
+  readonly initiated?: LifeCycleLastLaunchInitiated;
 }
 
-interface LifeCycleLastLaunchInitiated {
-  readonly apiCallDateTime: string;
-  readonly jobID: string;
-  readonly type: string;
+export interface LifeCycleLastLaunchInitiated {
+  readonly apiCallDateTime?: string;
+  readonly jobID?: string;
+  readonly type?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface NetworkInterface {
-  readonly ips: [];
-  readonly isPrimary: boolean;
-  readonly macAddress: string;
+export interface NetworkInterface {
+  readonly ips?: [];
+  readonly isPrimary?: boolean;
+  readonly macAddress?: string;
 }
 
-interface OS {
-  readonly fullString: string;
+export interface OS {
+  readonly fullString?: string;
 }
 
-interface PITPolicyRule {
-  readonly enabled: boolean;
+export interface PITPolicyRule {
+  readonly enabled?: boolean;
   readonly interval: number;
   readonly retentionDuration: number;
-  readonly ruleID: number;
+  readonly ruleID?: number;
   readonly units: string;
 }
 
-interface ParticipatingServer {
-  readonly launchStatus: string;
-  readonly recoveryInstanceID: string;
-  readonly sourceServerID: string;
+export interface ParticipatingServer {
+  readonly launchStatus?: string;
+  readonly recoveryInstanceID?: string;
+  readonly sourceServerID?: string;
 }
 
-interface RecoveryInstance {
-  readonly arn: string;
-  readonly dataReplicationInfo: RecoveryInstanceDataReplicationInfo;
-  readonly ec2InstanceID: string;
-  readonly ec2InstanceState: string;
-  readonly failback: RecoveryInstanceFailback;
-  readonly isDrill: boolean;
-  readonly jobID: string;
-  readonly pointInTimeSnapshotDateTime: string;
-  readonly recoveryInstanceID: string;
-  readonly recoveryInstanceProperties: RecoveryInstanceProperties;
-  readonly sourceServerID: string;
-  readonly tags: {[key: string]: any};
+export interface RecoveryInstance {
+  readonly arn?: string;
+  readonly dataReplicationInfo?: RecoveryInstanceDataReplicationInfo;
+  readonly ec2InstanceID?: string;
+  readonly ec2InstanceState?: string;
+  readonly failback?: RecoveryInstanceFailback;
+  readonly isDrill?: boolean;
+  readonly jobID?: string;
+  readonly pointInTimeSnapshotDateTime?: string;
+  readonly recoveryInstanceID?: string;
+  readonly recoveryInstanceProperties?: RecoveryInstanceProperties;
+  readonly sourceServerID?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface RecoveryInstanceDataReplicationError {
-  readonly error: string;
-  readonly rawError: string;
+export interface RecoveryInstanceDataReplicationError {
+  readonly error?: string;
+  readonly rawError?: string;
 }
 
-interface RecoveryInstanceDataReplicationInfo {
-  readonly dataReplicationError: RecoveryInstanceDataReplicationError;
-  readonly dataReplicationInitiation: RecoveryInstanceDataReplicationInitiation;
-  readonly dataReplicationState: string;
-  readonly etaDateTime: string;
-  readonly lagDuration: string;
-  readonly replicatedDisks: [];
+export interface RecoveryInstanceDataReplicationInfo {
+  readonly dataReplicationError?: RecoveryInstanceDataReplicationError;
+  readonly dataReplicationInitiation?: RecoveryInstanceDataReplicationInitiation;
+  readonly dataReplicationState?: string;
+  readonly etaDateTime?: string;
+  readonly lagDuration?: string;
+  readonly replicatedDisks?: [];
 }
 
-interface RecoveryInstanceDataReplicationInfoReplicatedDisk {
-  readonly backloggedStorageBytes: number;
-  readonly deviceName: string;
-  readonly replicatedStorageBytes: number;
-  readonly rescannedStorageBytes: number;
-  readonly totalStorageBytes: number;
+export interface RecoveryInstanceDataReplicationInfoReplicatedDisk {
+  readonly backloggedStorageBytes?: number;
+  readonly deviceName?: string;
+  readonly replicatedStorageBytes?: number;
+  readonly rescannedStorageBytes?: number;
+  readonly totalStorageBytes?: number;
 }
 
-interface RecoveryInstanceDataReplicationInitiation {
-  readonly startDateTime: string;
-  readonly steps: [];
+export interface RecoveryInstanceDataReplicationInitiation {
+  readonly startDateTime?: string;
+  readonly steps?: [];
 }
 
-interface RecoveryInstanceDataReplicationInitiationStep {
-  readonly name: string;
-  readonly status: string;
+export interface RecoveryInstanceDataReplicationInitiationStep {
+  readonly name?: string;
+  readonly status?: string;
 }
 
-interface RecoveryInstanceDisk {
-  readonly bytes: number;
-  readonly ebsVolumeID: string;
-  readonly internalDeviceName: string;
+export interface RecoveryInstanceDisk {
+  readonly bytes?: number;
+  readonly ebsVolumeID?: string;
+  readonly internalDeviceName?: string;
 }
 
-interface RecoveryInstanceFailback {
-  readonly agentLastSeenByServiceDateTime: string;
-  readonly elapsedReplicationDuration: string;
-  readonly failbackClientID: string;
-  readonly failbackClientLastSeenByServiceDateTime: string;
-  readonly failbackInitiationTime: string;
-  readonly failbackJobID: string;
-  readonly failbackToOriginalServer: boolean;
-  readonly firstByteDateTime: string;
-  readonly state: string;
+export interface RecoveryInstanceFailback {
+  readonly agentLastSeenByServiceDateTime?: string;
+  readonly elapsedReplicationDuration?: string;
+  readonly failbackClientID?: string;
+  readonly failbackClientLastSeenByServiceDateTime?: string;
+  readonly failbackInitiationTime?: string;
+  readonly failbackJobID?: string;
+  readonly failbackToOriginalServer?: boolean;
+  readonly firstByteDateTime?: string;
+  readonly state?: string;
 }
 
-interface RecoveryInstanceProperties {
-  readonly cpus: [];
-  readonly disks: [];
-  readonly identificationHints: IdentificationHints;
-  readonly lastUpdatedDateTime: string;
-  readonly networkInterfaces: [];
-  readonly os: OS;
-  readonly ramBytes: number;
+export interface RecoveryInstanceProperties {
+  readonly cpus?: [];
+  readonly disks?: [];
+  readonly identificationHints?: IdentificationHints;
+  readonly lastUpdatedDateTime?: string;
+  readonly networkInterfaces?: [];
+  readonly os?: OS;
+  readonly ramBytes?: number;
 }
 
-interface RecoverySnapshot {
-  readonly ebsSnapshots: [];
+export interface RecoverySnapshot {
+  readonly ebsSnapshots?: [];
   readonly expectedTimestamp: string;
   readonly snapshotID: string;
   readonly sourceServerID: string;
-  readonly timestamp: string;
+  readonly timestamp?: string;
 }
 
-interface ReplicationConfiguration {
-  readonly associateDefaultSecurityGroup: boolean;
-  readonly bandwidthThrottling: number;
-  readonly createPublicIP: boolean;
-  readonly dataPlaneRouting: string;
-  readonly defaultLargeStagingDiskType: string;
-  readonly ebsEncryption: string;
-  readonly ebsEncryptionKeyArn: string;
-  readonly name: string;
-  readonly pitPolicy: [];
-  readonly replicatedDisks: [];
-  readonly replicationServerInstanceType: string;
-  readonly replicationServersSecurityGroupsIDs: [];
-  readonly sourceServerID: string;
-  readonly stagingAreaSubnetId: string;
-  readonly stagingAreaTags: {[key: string]: any};
-  readonly useDedicatedReplicationServer: boolean;
+export interface ReplicationConfiguration {
+  readonly associateDefaultSecurityGroup?: boolean;
+  readonly bandwidthThrottling?: number;
+  readonly createPublicIP?: boolean;
+  readonly dataPlaneRouting?: string;
+  readonly defaultLargeStagingDiskType?: string;
+  readonly ebsEncryption?: string;
+  readonly ebsEncryptionKeyArn?: string;
+  readonly name?: string;
+  readonly pitPolicy?: [];
+  readonly replicatedDisks?: [];
+  readonly replicationServerInstanceType?: string;
+  readonly replicationServersSecurityGroupsIDs?: [];
+  readonly sourceServerID?: string;
+  readonly stagingAreaSubnetId?: string;
+  readonly stagingAreaTags?: {[key: string]: any};
+  readonly useDedicatedReplicationServer?: boolean;
 }
 
-interface ReplicationConfigurationReplicatedDisk {
-  readonly deviceName: string;
-  readonly iops: number;
-  readonly isBootDisk: boolean;
-  readonly stagingDiskType: string;
-  readonly throughput: number;
+export interface ReplicationConfigurationReplicatedDisk {
+  readonly deviceName?: string;
+  readonly iops?: number;
+  readonly isBootDisk?: boolean;
+  readonly stagingDiskType?: string;
+  readonly throughput?: number;
 }
 
-interface ReplicationConfigurationTemplate {
-  readonly arn: string;
-  readonly associateDefaultSecurityGroup: boolean;
-  readonly bandwidthThrottling: number;
-  readonly createPublicIP: boolean;
-  readonly dataPlaneRouting: string;
-  readonly defaultLargeStagingDiskType: string;
-  readonly ebsEncryption: string;
-  readonly ebsEncryptionKeyArn: string;
-  readonly pitPolicy: [];
+export interface ReplicationConfigurationTemplate {
+  readonly arn?: string;
+  readonly associateDefaultSecurityGroup?: boolean;
+  readonly bandwidthThrottling?: number;
+  readonly createPublicIP?: boolean;
+  readonly dataPlaneRouting?: string;
+  readonly defaultLargeStagingDiskType?: string;
+  readonly ebsEncryption?: string;
+  readonly ebsEncryptionKeyArn?: string;
+  readonly pitPolicy?: [];
   readonly replicationConfigurationTemplateID: string;
-  readonly replicationServerInstanceType: string;
-  readonly replicationServersSecurityGroupsIDs: [];
-  readonly stagingAreaSubnetId: string;
-  readonly stagingAreaTags: {[key: string]: any};
-  readonly tags: {[key: string]: any};
-  readonly useDedicatedReplicationServer: boolean;
+  readonly replicationServerInstanceType?: string;
+  readonly replicationServersSecurityGroupsIDs?: [];
+  readonly stagingAreaSubnetId?: string;
+  readonly stagingAreaTags?: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
+  readonly useDedicatedReplicationServer?: boolean;
 }
 
-interface ResourceNotFoundException {
-  readonly code: string;
-  readonly message: string;
-  readonly resourceId: string;
-  readonly resourceType: string;
+export interface ResourceNotFoundException {
+  readonly code?: string;
+  readonly message?: string;
+  readonly resourceId?: string;
+  readonly resourceType?: string;
 }
 
-interface RetryDataReplicationRequest {
+export interface RetryDataReplicationRequest {
   readonly sourceServerID: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly code: string;
-  readonly message: string;
-  readonly quotaCode: string;
-  readonly resourceId: string;
-  readonly resourceType: string;
-  readonly serviceCode: string;
+export interface ServiceQuotaExceededException {
+  readonly code?: string;
+  readonly message?: string;
+  readonly quotaCode?: string;
+  readonly resourceId?: string;
+  readonly resourceType?: string;
+  readonly serviceCode?: string;
 }
 
-interface SourceProperties {
-  readonly cpus: [];
-  readonly disks: [];
-  readonly identificationHints: IdentificationHints;
-  readonly lastUpdatedDateTime: string;
-  readonly networkInterfaces: [];
-  readonly os: OS;
-  readonly ramBytes: number;
-  readonly recommendedInstanceType: string;
+export interface SourceProperties {
+  readonly cpus?: [];
+  readonly disks?: [];
+  readonly identificationHints?: IdentificationHints;
+  readonly lastUpdatedDateTime?: string;
+  readonly networkInterfaces?: [];
+  readonly os?: OS;
+  readonly ramBytes?: number;
+  readonly recommendedInstanceType?: string;
 }
 
-interface SourceServer {
-  readonly arn: string;
-  readonly dataReplicationInfo: DataReplicationInfo;
-  readonly lastLaunchResult: string;
-  readonly lifeCycle: LifeCycle;
-  readonly recoveryInstanceId: string;
-  readonly sourceProperties: SourceProperties;
-  readonly sourceServerID: string;
-  readonly tags: {[key: string]: any};
+export interface SourceServer {
+  readonly arn?: string;
+  readonly dataReplicationInfo?: DataReplicationInfo;
+  readonly lastLaunchResult?: string;
+  readonly lifeCycle?: LifeCycle;
+  readonly recoveryInstanceId?: string;
+  readonly sourceProperties?: SourceProperties;
+  readonly sourceServerID?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface StartFailbackLaunchRequest {
+export interface StartFailbackLaunchRequest {
   readonly recoveryInstanceIDs: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface StartFailbackLaunchResponse {
-  readonly job: Job;
+export interface StartFailbackLaunchResponse {
+  readonly job?: Job;
 }
 
-interface StartRecoveryRequest {
-  readonly isDrill: boolean;
+export interface StartRecoveryRequest {
+  readonly isDrill?: boolean;
   readonly sourceServers: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface StartRecoveryRequestSourceServer {
-  readonly recoverySnapshotID: string;
+export interface StartRecoveryRequestSourceServer {
+  readonly recoverySnapshotID?: string;
   readonly sourceServerID: string;
 }
 
-interface StartRecoveryResponse {
-  readonly job: Job;
+export interface StartRecoveryResponse {
+  readonly job?: Job;
 }
 
-interface StopFailbackRequest {
+export interface StopFailbackRequest {
   readonly recoveryInstanceID: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TerminateRecoveryInstancesRequest {
+export interface TerminateRecoveryInstancesRequest {
   readonly recoveryInstanceIDs: [];
 }
 
-interface TerminateRecoveryInstancesResponse {
-  readonly job: Job;
+export interface TerminateRecoveryInstancesResponse {
+  readonly job?: Job;
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly message: string;
-  readonly quotaCode: string;
-  readonly retryAfterSeconds: string;
-  readonly serviceCode: string;
+  readonly quotaCode?: string;
+  readonly retryAfterSeconds?: string;
+  readonly serviceCode?: string;
 }
 
-interface UninitializedAccountException {
-  readonly code: string;
-  readonly message: string;
+export interface UninitializedAccountException {
+  readonly code?: string;
+  readonly message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UpdateFailbackReplicationConfigurationRequest {
-  readonly bandwidthThrottling: number;
-  readonly name: string;
+export interface UpdateFailbackReplicationConfigurationRequest {
+  readonly bandwidthThrottling?: number;
+  readonly name?: string;
   readonly recoveryInstanceID: string;
-  readonly usePrivateIP: boolean;
+  readonly usePrivateIP?: boolean;
 }
 
-interface UpdateLaunchConfigurationRequest {
-  readonly copyPrivateIp: boolean;
-  readonly copyTags: boolean;
-  readonly launchDisposition: string;
-  readonly licensing: Licensing;
-  readonly name: string;
+export interface UpdateLaunchConfigurationRequest {
+  readonly copyPrivateIp?: boolean;
+  readonly copyTags?: boolean;
+  readonly launchDisposition?: string;
+  readonly licensing?: Licensing;
+  readonly name?: string;
   readonly sourceServerID: string;
-  readonly targetInstanceTypeRightSizingMethod: string;
+  readonly targetInstanceTypeRightSizingMethod?: string;
 }
 
-interface UpdateReplicationConfigurationRequest {
-  readonly associateDefaultSecurityGroup: boolean;
-  readonly bandwidthThrottling: number;
-  readonly createPublicIP: boolean;
-  readonly dataPlaneRouting: string;
-  readonly defaultLargeStagingDiskType: string;
-  readonly ebsEncryption: string;
-  readonly ebsEncryptionKeyArn: string;
-  readonly name: string;
-  readonly pitPolicy: [];
-  readonly replicatedDisks: [];
-  readonly replicationServerInstanceType: string;
-  readonly replicationServersSecurityGroupsIDs: [];
+export interface UpdateReplicationConfigurationRequest {
+  readonly associateDefaultSecurityGroup?: boolean;
+  readonly bandwidthThrottling?: number;
+  readonly createPublicIP?: boolean;
+  readonly dataPlaneRouting?: string;
+  readonly defaultLargeStagingDiskType?: string;
+  readonly ebsEncryption?: string;
+  readonly ebsEncryptionKeyArn?: string;
+  readonly name?: string;
+  readonly pitPolicy?: [];
+  readonly replicatedDisks?: [];
+  readonly replicationServerInstanceType?: string;
+  readonly replicationServersSecurityGroupsIDs?: [];
   readonly sourceServerID: string;
-  readonly stagingAreaSubnetId: string;
-  readonly stagingAreaTags: {[key: string]: any};
-  readonly useDedicatedReplicationServer: boolean;
+  readonly stagingAreaSubnetId?: string;
+  readonly stagingAreaTags?: {[key: string]: any};
+  readonly useDedicatedReplicationServer?: boolean;
 }
 
-interface UpdateReplicationConfigurationTemplateRequest {
-  readonly arn: string;
-  readonly associateDefaultSecurityGroup: boolean;
-  readonly bandwidthThrottling: number;
-  readonly createPublicIP: boolean;
-  readonly dataPlaneRouting: string;
-  readonly defaultLargeStagingDiskType: string;
-  readonly ebsEncryption: string;
-  readonly ebsEncryptionKeyArn: string;
-  readonly pitPolicy: [];
+export interface UpdateReplicationConfigurationTemplateRequest {
+  readonly arn?: string;
+  readonly associateDefaultSecurityGroup?: boolean;
+  readonly bandwidthThrottling?: number;
+  readonly createPublicIP?: boolean;
+  readonly dataPlaneRouting?: string;
+  readonly defaultLargeStagingDiskType?: string;
+  readonly ebsEncryption?: string;
+  readonly ebsEncryptionKeyArn?: string;
+  readonly pitPolicy?: [];
   readonly replicationConfigurationTemplateID: string;
-  readonly replicationServerInstanceType: string;
-  readonly replicationServersSecurityGroupsIDs: [];
-  readonly stagingAreaSubnetId: string;
-  readonly stagingAreaTags: {[key: string]: any};
-  readonly useDedicatedReplicationServer: boolean;
+  readonly replicationServerInstanceType?: string;
+  readonly replicationServersSecurityGroupsIDs?: [];
+  readonly stagingAreaSubnetId?: string;
+  readonly stagingAreaTags?: {[key: string]: any};
+  readonly useDedicatedReplicationServer?: boolean;
 }
 
-interface ValidationException {
-  readonly code: string;
-  readonly fieldList: [];
-  readonly message: string;
-  readonly reason: string;
+export interface ValidationException {
+  readonly code?: string;
+  readonly fieldList?: [];
+  readonly message?: string;
+  readonly reason?: string;
 }
 
-interface ValidationExceptionField {
-  readonly message: string;
-  readonly name: string;
+export interface ValidationExceptionField {
+  readonly message?: string;
+  readonly name?: string;
 }
+
 

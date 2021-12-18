@@ -4,30 +4,37 @@
 export interface DeleteLexicon {
   readonly Name: string;
 }
+
 export interface DescribeVoices {
   readonly Engine?: string;
   readonly LanguageCode?: string;
   readonly IncludeAdditionalLanguageCodes?: boolean;
   readonly NextToken?: string;
 }
+
 export interface GetLexicon {
   readonly Name: string;
 }
+
 export interface GetSpeechSynthesisTask {
   readonly TaskId: string;
 }
+
 export interface ListLexicons {
   readonly NextToken?: string;
 }
+
 export interface ListSpeechSynthesisTasks {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly Status?: string;
 }
+
 export interface PutLexicon {
   readonly Name: string;
   readonly Content: string;
 }
+
 export interface StartSpeechSynthesisTask {
   readonly Engine?: string;
   readonly LanguageCode?: string;
@@ -42,6 +49,7 @@ export interface StartSpeechSynthesisTask {
   readonly TextType?: string;
   readonly VoiceId: string;
 }
+
 export interface SynthesizeSpeech {
   readonly Engine?: string;
   readonly LanguageCode?: string;
@@ -54,237 +62,236 @@ export interface SynthesizeSpeech {
   readonly VoiceId: string;
 }
 
-
-
-interface DeleteLexiconInput {
+export interface DeleteLexiconInput {
   readonly Name: string;
 }
 
-interface DeleteLexiconOutput {
+export interface DeleteLexiconOutput {
 }
 
-interface DescribeVoicesInput {
-  readonly Engine: string;
-  readonly LanguageCode: string;
-  readonly IncludeAdditionalLanguageCodes: boolean;
-  readonly NextToken: string;
+export interface DescribeVoicesInput {
+  readonly Engine?: string;
+  readonly LanguageCode?: string;
+  readonly IncludeAdditionalLanguageCodes?: boolean;
+  readonly NextToken?: string;
 }
 
-interface DescribeVoicesOutput {
-  readonly Voices: [];
-  readonly NextToken: string;
+export interface DescribeVoicesOutput {
+  readonly Voices?: [];
+  readonly NextToken?: string;
 }
 
-interface EngineNotSupportedException {
-  readonly message: string;
+export interface EngineNotSupportedException {
+  readonly message?: string;
 }
 
-interface GetLexiconInput {
+export interface GetLexiconInput {
   readonly Name: string;
 }
 
-interface GetLexiconOutput {
-  readonly Lexicon: Lexicon;
-  readonly LexiconAttributes: LexiconAttributes;
+export interface GetLexiconOutput {
+  readonly Lexicon?: Lexicon;
+  readonly LexiconAttributes?: LexiconAttributes;
 }
 
-interface GetSpeechSynthesisTaskInput {
+export interface GetSpeechSynthesisTaskInput {
   readonly TaskId: string;
 }
 
-interface GetSpeechSynthesisTaskOutput {
-  readonly SynthesisTask: SynthesisTask;
+export interface GetSpeechSynthesisTaskOutput {
+  readonly SynthesisTask?: SynthesisTask;
 }
 
-interface InvalidLexiconException {
-  readonly message: string;
+export interface InvalidLexiconException {
+  readonly message?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly message: string;
+export interface InvalidNextTokenException {
+  readonly message?: string;
 }
 
-interface InvalidS3BucketException {
-  readonly message: string;
+export interface InvalidS3BucketException {
+  readonly message?: string;
 }
 
-interface InvalidS3KeyException {
-  readonly message: string;
+export interface InvalidS3KeyException {
+  readonly message?: string;
 }
 
-interface InvalidSampleRateException {
-  readonly message: string;
+export interface InvalidSampleRateException {
+  readonly message?: string;
 }
 
-interface InvalidSnsTopicArnException {
-  readonly message: string;
+export interface InvalidSnsTopicArnException {
+  readonly message?: string;
 }
 
-interface InvalidSsmlException {
-  readonly message: string;
+export interface InvalidSsmlException {
+  readonly message?: string;
 }
 
-interface InvalidTaskIdException {
-  readonly message: string;
+export interface InvalidTaskIdException {
+  readonly message?: string;
 }
 
-interface LanguageNotSupportedException {
-  readonly message: string;
+export interface LanguageNotSupportedException {
+  readonly message?: string;
 }
 
-interface Lexicon {
+export interface Lexicon {
+  readonly Content?: string;
+  readonly Name?: string;
+}
+
+export interface LexiconAttributes {
+  readonly Alphabet?: string;
+  readonly LanguageCode?: string;
+  readonly LastModified?: Date;
+  readonly LexiconArn?: string;
+  readonly LexemesCount?: number;
+  readonly Size?: number;
+}
+
+export interface LexiconDescription {
+  readonly Name?: string;
+  readonly Attributes?: LexiconAttributes;
+}
+
+export interface LexiconNotFoundException {
+  readonly message?: string;
+}
+
+export interface LexiconSizeExceededException {
+  readonly message?: string;
+}
+
+export interface ListLexiconsInput {
+  readonly NextToken?: string;
+}
+
+export interface ListLexiconsOutput {
+  readonly Lexicons?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListSpeechSynthesisTasksInput {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Status?: string;
+}
+
+export interface ListSpeechSynthesisTasksOutput {
+  readonly NextToken?: string;
+  readonly SynthesisTasks?: [];
+}
+
+export interface MarksNotSupportedForFormatException {
+  readonly message?: string;
+}
+
+export interface MaxLexemeLengthExceededException {
+  readonly message?: string;
+}
+
+export interface MaxLexiconsNumberExceededException {
+  readonly message?: string;
+}
+
+export interface PutLexiconInput {
+  readonly Name: string;
   readonly Content: string;
-  readonly Name: string;
 }
 
-interface LexiconAttributes {
-  readonly Alphabet: string;
-  readonly LanguageCode: string;
-  readonly LastModified: Date;
-  readonly LexiconArn: string;
-  readonly LexemesCount: number;
-  readonly Size: number;
+export interface PutLexiconOutput {
 }
 
-interface LexiconDescription {
-  readonly Name: string;
-  readonly Attributes: LexiconAttributes;
+export interface ServiceFailureException {
+  readonly message?: string;
 }
 
-interface LexiconNotFoundException {
-  readonly message: string;
+export interface SsmlMarksNotSupportedForTextTypeException {
+  readonly message?: string;
 }
 
-interface LexiconSizeExceededException {
-  readonly message: string;
-}
-
-interface ListLexiconsInput {
-  readonly NextToken: string;
-}
-
-interface ListLexiconsOutput {
-  readonly Lexicons: [];
-  readonly NextToken: string;
-}
-
-interface ListSpeechSynthesisTasksInput {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Status: string;
-}
-
-interface ListSpeechSynthesisTasksOutput {
-  readonly NextToken: string;
-  readonly SynthesisTasks: [];
-}
-
-interface MarksNotSupportedForFormatException {
-  readonly message: string;
-}
-
-interface MaxLexemeLengthExceededException {
-  readonly message: string;
-}
-
-interface MaxLexiconsNumberExceededException {
-  readonly message: string;
-}
-
-interface PutLexiconInput {
-  readonly Name: string;
-  readonly Content: string;
-}
-
-interface PutLexiconOutput {
-}
-
-interface ServiceFailureException {
-  readonly message: string;
-}
-
-interface SsmlMarksNotSupportedForTextTypeException {
-  readonly message: string;
-}
-
-interface StartSpeechSynthesisTaskInput {
-  readonly Engine: string;
-  readonly LanguageCode: string;
-  readonly LexiconNames: [];
+export interface StartSpeechSynthesisTaskInput {
+  readonly Engine?: string;
+  readonly LanguageCode?: string;
+  readonly LexiconNames?: [];
   readonly OutputFormat: string;
   readonly OutputS3BucketName: string;
-  readonly OutputS3KeyPrefix: string;
-  readonly SampleRate: string;
-  readonly SnsTopicArn: string;
-  readonly SpeechMarkTypes: [];
+  readonly OutputS3KeyPrefix?: string;
+  readonly SampleRate?: string;
+  readonly SnsTopicArn?: string;
+  readonly SpeechMarkTypes?: [];
   readonly Text: string;
-  readonly TextType: string;
+  readonly TextType?: string;
   readonly VoiceId: string;
 }
 
-interface StartSpeechSynthesisTaskOutput {
-  readonly SynthesisTask: SynthesisTask;
+export interface StartSpeechSynthesisTaskOutput {
+  readonly SynthesisTask?: SynthesisTask;
 }
 
-interface SynthesisTask {
-  readonly Engine: string;
-  readonly TaskId: string;
-  readonly TaskStatus: string;
-  readonly TaskStatusReason: string;
-  readonly OutputUri: string;
-  readonly CreationTime: Date;
-  readonly RequestCharacters: number;
-  readonly SnsTopicArn: string;
-  readonly LexiconNames: [];
+export interface SynthesisTask {
+  readonly Engine?: string;
+  readonly TaskId?: string;
+  readonly TaskStatus?: string;
+  readonly TaskStatusReason?: string;
+  readonly OutputUri?: string;
+  readonly CreationTime?: Date;
+  readonly RequestCharacters?: number;
+  readonly SnsTopicArn?: string;
+  readonly LexiconNames?: [];
+  readonly OutputFormat?: string;
+  readonly SampleRate?: string;
+  readonly SpeechMarkTypes?: [];
+  readonly TextType?: string;
+  readonly VoiceId?: string;
+  readonly LanguageCode?: string;
+}
+
+export interface SynthesisTaskNotFoundException {
+  readonly message?: string;
+}
+
+export interface SynthesizeSpeechInput {
+  readonly Engine?: string;
+  readonly LanguageCode?: string;
+  readonly LexiconNames?: [];
   readonly OutputFormat: string;
-  readonly SampleRate: string;
-  readonly SpeechMarkTypes: [];
-  readonly TextType: string;
-  readonly VoiceId: string;
-  readonly LanguageCode: string;
-}
-
-interface SynthesisTaskNotFoundException {
-  readonly message: string;
-}
-
-interface SynthesizeSpeechInput {
-  readonly Engine: string;
-  readonly LanguageCode: string;
-  readonly LexiconNames: [];
-  readonly OutputFormat: string;
-  readonly SampleRate: string;
-  readonly SpeechMarkTypes: [];
+  readonly SampleRate?: string;
+  readonly SpeechMarkTypes?: [];
   readonly Text: string;
-  readonly TextType: string;
+  readonly TextType?: string;
   readonly VoiceId: string;
 }
 
-interface SynthesizeSpeechOutput {
-  readonly AudioStream: unknown;
-  readonly ContentType: string;
-  readonly RequestCharacters: number;
+export interface SynthesizeSpeechOutput {
+  readonly AudioStream?: unknown;
+  readonly ContentType?: string;
+  readonly RequestCharacters?: number;
 }
 
-interface TextLengthExceededException {
-  readonly message: string;
+export interface TextLengthExceededException {
+  readonly message?: string;
 }
 
-interface UnsupportedPlsAlphabetException {
-  readonly message: string;
+export interface UnsupportedPlsAlphabetException {
+  readonly message?: string;
 }
 
-interface UnsupportedPlsLanguageException {
-  readonly message: string;
+export interface UnsupportedPlsLanguageException {
+  readonly message?: string;
 }
 
-interface Voice {
-  readonly Gender: string;
-  readonly Id: string;
-  readonly LanguageCode: string;
-  readonly LanguageName: string;
-  readonly Name: string;
-  readonly AdditionalLanguageCodes: [];
-  readonly SupportedEngines: [];
+export interface Voice {
+  readonly Gender?: string;
+  readonly Id?: string;
+  readonly LanguageCode?: string;
+  readonly LanguageName?: string;
+  readonly Name?: string;
+  readonly AdditionalLanguageCodes?: [];
+  readonly SupportedEngines?: [];
 }
+
 

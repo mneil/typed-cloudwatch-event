@@ -4,12 +4,15 @@
 export interface CancelCluster {
   readonly ClusterId: string;
 }
+
 export interface CancelJob {
   readonly JobId: string;
 }
+
 export interface CreateAddress {
   readonly Address: Address;
 }
+
 export interface CreateCluster {
   readonly JobType: string;
   readonly Resources: JobResource;
@@ -25,6 +28,7 @@ export interface CreateCluster {
   readonly TaxDocuments?: TaxDocuments;
   readonly RemoteManagement?: string;
 }
+
 export interface CreateJob {
   readonly JobType?: string;
   readonly Resources?: JobResource;
@@ -44,63 +48,80 @@ export interface CreateJob {
   readonly RemoteManagement?: string;
   readonly LongTermPricingId?: string;
 }
+
 export interface CreateLongTermPricing {
   readonly LongTermPricingType: string;
   readonly IsLongTermPricingAutoRenew?: boolean;
   readonly SnowballType?: string;
 }
+
 export interface CreateReturnShippingLabel {
   readonly JobId: string;
   readonly ShippingOption?: string;
 }
+
 export interface DescribeAddress {
   readonly AddressId: string;
 }
+
 export interface DescribeAddresses {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeCluster {
   readonly ClusterId: string;
 }
+
 export interface DescribeJob {
   readonly JobId: string;
 }
+
 export interface DescribeReturnShippingLabel {
   readonly JobId: string;
 }
+
 export interface GetJobManifest {
   readonly JobId: string;
 }
+
 export interface GetJobUnlockCode {
   readonly JobId: string;
 }
+
 export interface GetSnowballUsage {
 }
+
 export interface GetSoftwareUpdates {
   readonly JobId: string;
 }
+
 export interface ListClusterJobs {
   readonly ClusterId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListClusters {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListCompatibleImages {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListJobs {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListLongTermPricing {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface UpdateCluster {
   readonly ClusterId: string;
   readonly RoleARN?: string;
@@ -112,6 +133,7 @@ export interface UpdateCluster {
   readonly Notification?: Notification;
   readonly ForwardingAddressId?: string;
 }
+
 export interface UpdateJob {
   readonly JobId: string;
   readonly RoleARN?: string;
@@ -124,518 +146,519 @@ export interface UpdateJob {
   readonly SnowballCapacityPreference?: string;
   readonly ForwardingAddressId?: string;
 }
+
 export interface UpdateJobShipmentState {
   readonly JobId: string;
   readonly ShipmentState: string;
 }
+
 export interface UpdateLongTermPricing {
   readonly LongTermPricingId: string;
   readonly ReplacementJob?: string;
   readonly IsLongTermPricingAutoRenew?: boolean;
 }
 
-
-
-interface Address {
-  readonly AddressId: string;
-  readonly Name: string;
-  readonly Company: string;
-  readonly Street1: string;
-  readonly Street2: string;
-  readonly Street3: string;
-  readonly City: string;
-  readonly StateOrProvince: string;
-  readonly PrefectureOrDistrict: string;
-  readonly Landmark: string;
-  readonly Country: string;
-  readonly PostalCode: string;
-  readonly PhoneNumber: string;
-  readonly IsRestricted: boolean;
+export interface Address {
+  readonly AddressId?: string;
+  readonly Name?: string;
+  readonly Company?: string;
+  readonly Street1?: string;
+  readonly Street2?: string;
+  readonly Street3?: string;
+  readonly City?: string;
+  readonly StateOrProvince?: string;
+  readonly PrefectureOrDistrict?: string;
+  readonly Landmark?: string;
+  readonly Country?: string;
+  readonly PostalCode?: string;
+  readonly PhoneNumber?: string;
+  readonly IsRestricted?: boolean;
 }
 
-interface CancelClusterRequest {
+export interface CancelClusterRequest {
   readonly ClusterId: string;
 }
 
-interface CancelClusterResult {
+export interface CancelClusterResult {
 }
 
-interface CancelJobRequest {
+export interface CancelJobRequest {
   readonly JobId: string;
 }
 
-interface CancelJobResult {
+export interface CancelJobResult {
 }
 
-interface ClusterLimitExceededException {
-  readonly Message: string;
+export interface ClusterLimitExceededException {
+  readonly Message?: string;
 }
 
-interface ClusterListEntry {
-  readonly ClusterId: string;
-  readonly ClusterState: string;
-  readonly CreationDate: Date;
-  readonly Description: string;
+export interface ClusterListEntry {
+  readonly ClusterId?: string;
+  readonly ClusterState?: string;
+  readonly CreationDate?: Date;
+  readonly Description?: string;
 }
 
-interface ClusterMetadata {
-  readonly ClusterId: string;
-  readonly Description: string;
-  readonly KmsKeyARN: string;
-  readonly RoleARN: string;
-  readonly ClusterState: string;
-  readonly JobType: string;
-  readonly SnowballType: string;
-  readonly CreationDate: Date;
-  readonly Resources: JobResource;
-  readonly AddressId: string;
-  readonly ShippingOption: string;
-  readonly Notification: Notification;
-  readonly ForwardingAddressId: string;
-  readonly TaxDocuments: TaxDocuments;
-  readonly OnDeviceServiceConfiguration: OnDeviceServiceConfiguration;
+export interface ClusterMetadata {
+  readonly ClusterId?: string;
+  readonly Description?: string;
+  readonly KmsKeyARN?: string;
+  readonly RoleARN?: string;
+  readonly ClusterState?: string;
+  readonly JobType?: string;
+  readonly SnowballType?: string;
+  readonly CreationDate?: Date;
+  readonly Resources?: JobResource;
+  readonly AddressId?: string;
+  readonly ShippingOption?: string;
+  readonly Notification?: Notification;
+  readonly ForwardingAddressId?: string;
+  readonly TaxDocuments?: TaxDocuments;
+  readonly OnDeviceServiceConfiguration?: OnDeviceServiceConfiguration;
 }
 
-interface CompatibleImage {
-  readonly AmiId: string;
-  readonly Name: string;
+export interface CompatibleImage {
+  readonly AmiId?: string;
+  readonly Name?: string;
 }
 
-interface ConflictException {
-  readonly ConflictResource: string;
-  readonly Message: string;
+export interface ConflictException {
+  readonly ConflictResource?: string;
+  readonly Message?: string;
 }
 
-interface CreateAddressRequest {
+export interface CreateAddressRequest {
   readonly Address: Address;
 }
 
-interface CreateAddressResult {
-  readonly AddressId: string;
+export interface CreateAddressResult {
+  readonly AddressId?: string;
 }
 
-interface CreateClusterRequest {
+export interface CreateClusterRequest {
   readonly JobType: string;
   readonly Resources: JobResource;
-  readonly OnDeviceServiceConfiguration: OnDeviceServiceConfiguration;
-  readonly Description: string;
+  readonly OnDeviceServiceConfiguration?: OnDeviceServiceConfiguration;
+  readonly Description?: string;
   readonly AddressId: string;
-  readonly KmsKeyARN: string;
+  readonly KmsKeyARN?: string;
   readonly RoleARN: string;
   readonly SnowballType: string;
   readonly ShippingOption: string;
-  readonly Notification: Notification;
-  readonly ForwardingAddressId: string;
-  readonly TaxDocuments: TaxDocuments;
-  readonly RemoteManagement: string;
+  readonly Notification?: Notification;
+  readonly ForwardingAddressId?: string;
+  readonly TaxDocuments?: TaxDocuments;
+  readonly RemoteManagement?: string;
 }
 
-interface CreateClusterResult {
-  readonly ClusterId: string;
+export interface CreateClusterResult {
+  readonly ClusterId?: string;
 }
 
-interface CreateJobRequest {
-  readonly JobType: string;
-  readonly Resources: JobResource;
-  readonly OnDeviceServiceConfiguration: OnDeviceServiceConfiguration;
-  readonly Description: string;
-  readonly AddressId: string;
-  readonly KmsKeyARN: string;
-  readonly RoleARN: string;
-  readonly SnowballCapacityPreference: string;
-  readonly ShippingOption: string;
-  readonly Notification: Notification;
-  readonly ClusterId: string;
-  readonly SnowballType: string;
-  readonly ForwardingAddressId: string;
-  readonly TaxDocuments: TaxDocuments;
-  readonly DeviceConfiguration: DeviceConfiguration;
-  readonly RemoteManagement: string;
-  readonly LongTermPricingId: string;
+export interface CreateJobRequest {
+  readonly JobType?: string;
+  readonly Resources?: JobResource;
+  readonly OnDeviceServiceConfiguration?: OnDeviceServiceConfiguration;
+  readonly Description?: string;
+  readonly AddressId?: string;
+  readonly KmsKeyARN?: string;
+  readonly RoleARN?: string;
+  readonly SnowballCapacityPreference?: string;
+  readonly ShippingOption?: string;
+  readonly Notification?: Notification;
+  readonly ClusterId?: string;
+  readonly SnowballType?: string;
+  readonly ForwardingAddressId?: string;
+  readonly TaxDocuments?: TaxDocuments;
+  readonly DeviceConfiguration?: DeviceConfiguration;
+  readonly RemoteManagement?: string;
+  readonly LongTermPricingId?: string;
 }
 
-interface CreateJobResult {
-  readonly JobId: string;
+export interface CreateJobResult {
+  readonly JobId?: string;
 }
 
-interface CreateLongTermPricingRequest {
+export interface CreateLongTermPricingRequest {
   readonly LongTermPricingType: string;
-  readonly IsLongTermPricingAutoRenew: boolean;
-  readonly SnowballType: string;
+  readonly IsLongTermPricingAutoRenew?: boolean;
+  readonly SnowballType?: string;
 }
 
-interface CreateLongTermPricingResult {
-  readonly LongTermPricingId: string;
+export interface CreateLongTermPricingResult {
+  readonly LongTermPricingId?: string;
 }
 
-interface CreateReturnShippingLabelRequest {
+export interface CreateReturnShippingLabelRequest {
   readonly JobId: string;
-  readonly ShippingOption: string;
+  readonly ShippingOption?: string;
 }
 
-interface CreateReturnShippingLabelResult {
-  readonly Status: string;
+export interface CreateReturnShippingLabelResult {
+  readonly Status?: string;
 }
 
-interface DataTransfer {
-  readonly BytesTransferred: number;
-  readonly ObjectsTransferred: number;
-  readonly TotalBytes: number;
-  readonly TotalObjects: number;
+export interface DataTransfer {
+  readonly BytesTransferred?: number;
+  readonly ObjectsTransferred?: number;
+  readonly TotalBytes?: number;
+  readonly TotalObjects?: number;
 }
 
-interface DescribeAddressRequest {
+export interface DescribeAddressRequest {
   readonly AddressId: string;
 }
 
-interface DescribeAddressResult {
-  readonly Address: Address;
+export interface DescribeAddressResult {
+  readonly Address?: Address;
 }
 
-interface DescribeAddressesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeAddressesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeAddressesResult {
-  readonly Addresses: [];
-  readonly NextToken: string;
+export interface DescribeAddressesResult {
+  readonly Addresses?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeClusterRequest {
+export interface DescribeClusterRequest {
   readonly ClusterId: string;
 }
 
-interface DescribeClusterResult {
-  readonly ClusterMetadata: ClusterMetadata;
+export interface DescribeClusterResult {
+  readonly ClusterMetadata?: ClusterMetadata;
 }
 
-interface DescribeJobRequest {
+export interface DescribeJobRequest {
   readonly JobId: string;
 }
 
-interface DescribeJobResult {
-  readonly JobMetadata: JobMetadata;
-  readonly SubJobMetadata: [];
+export interface DescribeJobResult {
+  readonly JobMetadata?: JobMetadata;
+  readonly SubJobMetadata?: [];
 }
 
-interface DescribeReturnShippingLabelRequest {
+export interface DescribeReturnShippingLabelRequest {
   readonly JobId: string;
 }
 
-interface DescribeReturnShippingLabelResult {
-  readonly Status: string;
-  readonly ExpirationDate: Date;
-  readonly ReturnShippingLabelURI: string;
+export interface DescribeReturnShippingLabelResult {
+  readonly Status?: string;
+  readonly ExpirationDate?: Date;
+  readonly ReturnShippingLabelURI?: string;
 }
 
-interface DeviceConfiguration {
-  readonly SnowconeDeviceConfiguration: SnowconeDeviceConfiguration;
+export interface DeviceConfiguration {
+  readonly SnowconeDeviceConfiguration?: SnowconeDeviceConfiguration;
 }
 
-interface Ec2AmiResource {
+export interface Ec2AmiResource {
   readonly AmiId: string;
-  readonly SnowballAmiId: string;
+  readonly SnowballAmiId?: string;
 }
 
-interface Ec2RequestFailedException {
-  readonly Message: string;
+export interface Ec2RequestFailedException {
+  readonly Message?: string;
 }
 
-interface EventTriggerDefinition {
-  readonly EventResourceARN: string;
+export interface EventTriggerDefinition {
+  readonly EventResourceARN?: string;
 }
 
-interface GetJobManifestRequest {
+export interface GetJobManifestRequest {
   readonly JobId: string;
 }
 
-interface GetJobManifestResult {
-  readonly ManifestURI: string;
+export interface GetJobManifestResult {
+  readonly ManifestURI?: string;
 }
 
-interface GetJobUnlockCodeRequest {
+export interface GetJobUnlockCodeRequest {
   readonly JobId: string;
 }
 
-interface GetJobUnlockCodeResult {
-  readonly UnlockCode: string;
+export interface GetJobUnlockCodeResult {
+  readonly UnlockCode?: string;
 }
 
-interface GetSnowballUsageRequest {
+export interface GetSnowballUsageRequest {
 }
 
-interface GetSnowballUsageResult {
-  readonly SnowballLimit: number;
-  readonly SnowballsInUse: number;
+export interface GetSnowballUsageResult {
+  readonly SnowballLimit?: number;
+  readonly SnowballsInUse?: number;
 }
 
-interface GetSoftwareUpdatesRequest {
+export interface GetSoftwareUpdatesRequest {
   readonly JobId: string;
 }
 
-interface GetSoftwareUpdatesResult {
-  readonly UpdatesURI: string;
+export interface GetSoftwareUpdatesResult {
+  readonly UpdatesURI?: string;
 }
 
-interface INDTaxDocuments {
-  readonly GSTIN: string;
+export interface INDTaxDocuments {
+  readonly GSTIN?: string;
 }
 
-interface InvalidAddressException {
-  readonly Message: string;
+export interface InvalidAddressException {
+  readonly Message?: string;
 }
 
-interface InvalidInputCombinationException {
-  readonly Message: string;
+export interface InvalidInputCombinationException {
+  readonly Message?: string;
 }
 
-interface InvalidJobStateException {
-  readonly Message: string;
+export interface InvalidJobStateException {
+  readonly Message?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly Message: string;
+export interface InvalidNextTokenException {
+  readonly Message?: string;
 }
 
-interface InvalidResourceException {
-  readonly Message: string;
-  readonly ResourceType: string;
+export interface InvalidResourceException {
+  readonly Message?: string;
+  readonly ResourceType?: string;
 }
 
-interface JobListEntry {
-  readonly JobId: string;
-  readonly JobState: string;
-  readonly IsMaster: boolean;
-  readonly JobType: string;
-  readonly SnowballType: string;
-  readonly CreationDate: Date;
-  readonly Description: string;
+export interface JobListEntry {
+  readonly JobId?: string;
+  readonly JobState?: string;
+  readonly IsMaster?: boolean;
+  readonly JobType?: string;
+  readonly SnowballType?: string;
+  readonly CreationDate?: Date;
+  readonly Description?: string;
 }
 
-interface JobLogs {
-  readonly JobCompletionReportURI: string;
-  readonly JobSuccessLogURI: string;
-  readonly JobFailureLogURI: string;
+export interface JobLogs {
+  readonly JobCompletionReportURI?: string;
+  readonly JobSuccessLogURI?: string;
+  readonly JobFailureLogURI?: string;
 }
 
-interface JobMetadata {
-  readonly JobId: string;
-  readonly JobState: string;
-  readonly JobType: string;
-  readonly SnowballType: string;
-  readonly CreationDate: Date;
-  readonly Resources: JobResource;
-  readonly Description: string;
-  readonly KmsKeyARN: string;
-  readonly RoleARN: string;
-  readonly AddressId: string;
-  readonly ShippingDetails: ShippingDetails;
-  readonly SnowballCapacityPreference: string;
-  readonly Notification: Notification;
-  readonly DataTransferProgress: DataTransfer;
-  readonly JobLogInfo: JobLogs;
+export interface JobMetadata {
+  readonly JobId?: string;
+  readonly JobState?: string;
+  readonly JobType?: string;
+  readonly SnowballType?: string;
+  readonly CreationDate?: Date;
+  readonly Resources?: JobResource;
+  readonly Description?: string;
+  readonly KmsKeyARN?: string;
+  readonly RoleARN?: string;
+  readonly AddressId?: string;
+  readonly ShippingDetails?: ShippingDetails;
+  readonly SnowballCapacityPreference?: string;
+  readonly Notification?: Notification;
+  readonly DataTransferProgress?: DataTransfer;
+  readonly JobLogInfo?: JobLogs;
+  readonly ClusterId?: string;
+  readonly ForwardingAddressId?: string;
+  readonly TaxDocuments?: TaxDocuments;
+  readonly DeviceConfiguration?: DeviceConfiguration;
+  readonly RemoteManagement?: string;
+  readonly LongTermPricingId?: string;
+  readonly OnDeviceServiceConfiguration?: OnDeviceServiceConfiguration;
+}
+
+export interface JobResource {
+  readonly S3Resources?: [];
+  readonly LambdaResources?: [];
+  readonly Ec2AmiResources?: [];
+}
+
+export interface KMSRequestFailedException {
+  readonly Message?: string;
+}
+
+export interface KeyRange {
+  readonly BeginMarker?: string;
+  readonly EndMarker?: string;
+}
+
+export interface LambdaResource {
+  readonly LambdaArn?: string;
+  readonly EventTriggers?: [];
+}
+
+export interface ListClusterJobsRequest {
   readonly ClusterId: string;
-  readonly ForwardingAddressId: string;
-  readonly TaxDocuments: TaxDocuments;
-  readonly DeviceConfiguration: DeviceConfiguration;
-  readonly RemoteManagement: string;
-  readonly LongTermPricingId: string;
-  readonly OnDeviceServiceConfiguration: OnDeviceServiceConfiguration;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface JobResource {
-  readonly S3Resources: [];
-  readonly LambdaResources: [];
-  readonly Ec2AmiResources: [];
+export interface ListClusterJobsResult {
+  readonly JobListEntries?: [];
+  readonly NextToken?: string;
 }
 
-interface KMSRequestFailedException {
-  readonly Message: string;
+export interface ListClustersRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface KeyRange {
-  readonly BeginMarker: string;
-  readonly EndMarker: string;
+export interface ListClustersResult {
+  readonly ClusterListEntries?: [];
+  readonly NextToken?: string;
 }
 
-interface LambdaResource {
-  readonly LambdaArn: string;
-  readonly EventTriggers: [];
+export interface ListCompatibleImagesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListClusterJobsRequest {
+export interface ListCompatibleImagesResult {
+  readonly CompatibleImages?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListJobsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface ListJobsResult {
+  readonly JobListEntries?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListLongTermPricingRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface ListLongTermPricingResult {
+  readonly LongTermPricingEntries?: [];
+  readonly NextToken?: string;
+}
+
+export interface LongTermPricingListEntry {
+  readonly LongTermPricingId?: string;
+  readonly LongTermPricingEndDate?: Date;
+  readonly LongTermPricingStartDate?: Date;
+  readonly LongTermPricingType?: string;
+  readonly CurrentActiveJob?: string;
+  readonly ReplacementJob?: string;
+  readonly IsLongTermPricingAutoRenew?: boolean;
+  readonly LongTermPricingStatus?: string;
+  readonly SnowballType?: string;
+  readonly JobIds?: [];
+}
+
+export interface NFSOnDeviceServiceConfiguration {
+  readonly StorageLimit?: number;
+  readonly StorageUnit?: string;
+}
+
+export interface Notification {
+  readonly SnsTopicARN?: string;
+  readonly JobStatesToNotify?: [];
+  readonly NotifyAll?: boolean;
+}
+
+export interface OnDeviceServiceConfiguration {
+  readonly NFSOnDeviceService?: NFSOnDeviceServiceConfiguration;
+  readonly TGWOnDeviceService?: TGWOnDeviceServiceConfiguration;
+}
+
+export interface ReturnShippingLabelAlreadyExistsException {
+  readonly Message?: string;
+}
+
+export interface S3Resource {
+  readonly BucketArn?: string;
+  readonly KeyRange?: KeyRange;
+  readonly TargetOnDeviceServices?: [];
+}
+
+export interface Shipment {
+  readonly Status?: string;
+  readonly TrackingNumber?: string;
+}
+
+export interface ShippingDetails {
+  readonly ShippingOption?: string;
+  readonly InboundShipment?: Shipment;
+  readonly OutboundShipment?: Shipment;
+}
+
+export interface SnowconeDeviceConfiguration {
+  readonly WirelessConnection?: WirelessConnection;
+}
+
+export interface TGWOnDeviceServiceConfiguration {
+  readonly StorageLimit?: number;
+  readonly StorageUnit?: string;
+}
+
+export interface TargetOnDeviceService {
+  readonly ServiceName?: string;
+  readonly TransferOption?: string;
+}
+
+export interface TaxDocuments {
+  readonly IND?: INDTaxDocuments;
+}
+
+export interface UnsupportedAddressException {
+  readonly Message?: string;
+}
+
+export interface UpdateClusterRequest {
   readonly ClusterId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly RoleARN?: string;
+  readonly Description?: string;
+  readonly Resources?: JobResource;
+  readonly OnDeviceServiceConfiguration?: OnDeviceServiceConfiguration;
+  readonly AddressId?: string;
+  readonly ShippingOption?: string;
+  readonly Notification?: Notification;
+  readonly ForwardingAddressId?: string;
 }
 
-interface ListClusterJobsResult {
-  readonly JobListEntries: [];
-  readonly NextToken: string;
+export interface UpdateClusterResult {
 }
 
-interface ListClustersRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface ListClustersResult {
-  readonly ClusterListEntries: [];
-  readonly NextToken: string;
-}
-
-interface ListCompatibleImagesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface ListCompatibleImagesResult {
-  readonly CompatibleImages: [];
-  readonly NextToken: string;
-}
-
-interface ListJobsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface ListJobsResult {
-  readonly JobListEntries: [];
-  readonly NextToken: string;
-}
-
-interface ListLongTermPricingRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface ListLongTermPricingResult {
-  readonly LongTermPricingEntries: [];
-  readonly NextToken: string;
-}
-
-interface LongTermPricingListEntry {
-  readonly LongTermPricingId: string;
-  readonly LongTermPricingEndDate: Date;
-  readonly LongTermPricingStartDate: Date;
-  readonly LongTermPricingType: string;
-  readonly CurrentActiveJob: string;
-  readonly ReplacementJob: string;
-  readonly IsLongTermPricingAutoRenew: boolean;
-  readonly LongTermPricingStatus: string;
-  readonly SnowballType: string;
-  readonly JobIds: [];
-}
-
-interface NFSOnDeviceServiceConfiguration {
-  readonly StorageLimit: number;
-  readonly StorageUnit: string;
-}
-
-interface Notification {
-  readonly SnsTopicARN: string;
-  readonly JobStatesToNotify: [];
-  readonly NotifyAll: boolean;
-}
-
-interface OnDeviceServiceConfiguration {
-  readonly NFSOnDeviceService: NFSOnDeviceServiceConfiguration;
-  readonly TGWOnDeviceService: TGWOnDeviceServiceConfiguration;
-}
-
-interface ReturnShippingLabelAlreadyExistsException {
-  readonly Message: string;
-}
-
-interface S3Resource {
-  readonly BucketArn: string;
-  readonly KeyRange: KeyRange;
-  readonly TargetOnDeviceServices: [];
-}
-
-interface Shipment {
-  readonly Status: string;
-  readonly TrackingNumber: string;
-}
-
-interface ShippingDetails {
-  readonly ShippingOption: string;
-  readonly InboundShipment: Shipment;
-  readonly OutboundShipment: Shipment;
-}
-
-interface SnowconeDeviceConfiguration {
-  readonly WirelessConnection: WirelessConnection;
-}
-
-interface TGWOnDeviceServiceConfiguration {
-  readonly StorageLimit: number;
-  readonly StorageUnit: string;
-}
-
-interface TargetOnDeviceService {
-  readonly ServiceName: string;
-  readonly TransferOption: string;
-}
-
-interface TaxDocuments {
-  readonly IND: INDTaxDocuments;
-}
-
-interface UnsupportedAddressException {
-  readonly Message: string;
-}
-
-interface UpdateClusterRequest {
-  readonly ClusterId: string;
-  readonly RoleARN: string;
-  readonly Description: string;
-  readonly Resources: JobResource;
-  readonly OnDeviceServiceConfiguration: OnDeviceServiceConfiguration;
-  readonly AddressId: string;
-  readonly ShippingOption: string;
-  readonly Notification: Notification;
-  readonly ForwardingAddressId: string;
-}
-
-interface UpdateClusterResult {
-}
-
-interface UpdateJobRequest {
+export interface UpdateJobRequest {
   readonly JobId: string;
-  readonly RoleARN: string;
-  readonly Notification: Notification;
-  readonly Resources: JobResource;
-  readonly OnDeviceServiceConfiguration: OnDeviceServiceConfiguration;
-  readonly AddressId: string;
-  readonly ShippingOption: string;
-  readonly Description: string;
-  readonly SnowballCapacityPreference: string;
-  readonly ForwardingAddressId: string;
+  readonly RoleARN?: string;
+  readonly Notification?: Notification;
+  readonly Resources?: JobResource;
+  readonly OnDeviceServiceConfiguration?: OnDeviceServiceConfiguration;
+  readonly AddressId?: string;
+  readonly ShippingOption?: string;
+  readonly Description?: string;
+  readonly SnowballCapacityPreference?: string;
+  readonly ForwardingAddressId?: string;
 }
 
-interface UpdateJobResult {
+export interface UpdateJobResult {
 }
 
-interface UpdateJobShipmentStateRequest {
+export interface UpdateJobShipmentStateRequest {
   readonly JobId: string;
   readonly ShipmentState: string;
 }
 
-interface UpdateJobShipmentStateResult {
+export interface UpdateJobShipmentStateResult {
 }
 
-interface UpdateLongTermPricingRequest {
+export interface UpdateLongTermPricingRequest {
   readonly LongTermPricingId: string;
-  readonly ReplacementJob: string;
-  readonly IsLongTermPricingAutoRenew: boolean;
+  readonly ReplacementJob?: string;
+  readonly IsLongTermPricingAutoRenew?: boolean;
 }
 
-interface UpdateLongTermPricingResult {
+export interface UpdateLongTermPricingResult {
 }
 
-interface WirelessConnection {
-  readonly IsWifiEnabled: boolean;
+export interface WirelessConnection {
+  readonly IsWifiEnabled?: boolean;
 }
+
 

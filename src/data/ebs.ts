@@ -8,11 +8,13 @@ export interface CompleteSnapshot {
   readonly ChecksumAlgorithm?: string;
   readonly ChecksumAggregationMethod?: string;
 }
+
 export interface GetSnapshotBlock {
   readonly SnapshotId: string;
   readonly BlockIndex: number;
   readonly BlockToken: string;
 }
+
 export interface ListChangedBlocks {
   readonly FirstSnapshotId?: string;
   readonly SecondSnapshotId: string;
@@ -20,12 +22,14 @@ export interface ListChangedBlocks {
   readonly MaxResults?: number;
   readonly StartingBlockIndex?: number;
 }
+
 export interface ListSnapshotBlocks {
   readonly SnapshotId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly StartingBlockIndex?: number;
 }
+
 export interface PutSnapshotBlock {
   readonly SnapshotId: string;
   readonly BlockIndex: number;
@@ -35,6 +39,7 @@ export interface PutSnapshotBlock {
   readonly Checksum: string;
   readonly ChecksumAlgorithm: string;
 }
+
 export interface StartSnapshot {
   readonly VolumeSize: number;
   readonly ParentSnapshotId?: string;
@@ -46,153 +51,152 @@ export interface StartSnapshot {
   readonly Timeout?: number;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
   readonly Reason: string;
 }
 
-interface Block {
-  readonly BlockIndex: number;
-  readonly BlockToken: string;
+export interface Block {
+  readonly BlockIndex?: number;
+  readonly BlockToken?: string;
 }
 
-interface ChangedBlock {
-  readonly BlockIndex: number;
-  readonly FirstBlockToken: string;
-  readonly SecondBlockToken: string;
+export interface ChangedBlock {
+  readonly BlockIndex?: number;
+  readonly FirstBlockToken?: string;
+  readonly SecondBlockToken?: string;
 }
 
-interface CompleteSnapshotRequest {
+export interface CompleteSnapshotRequest {
   readonly SnapshotId: string;
   readonly ChangedBlocksCount: number;
-  readonly Checksum: string;
-  readonly ChecksumAlgorithm: string;
-  readonly ChecksumAggregationMethod: string;
+  readonly Checksum?: string;
+  readonly ChecksumAlgorithm?: string;
+  readonly ChecksumAggregationMethod?: string;
 }
 
-interface CompleteSnapshotResponse {
-  readonly Status: string;
+export interface CompleteSnapshotResponse {
+  readonly Status?: string;
 }
 
-interface ConcurrentLimitExceededException {
-  readonly Message: string;
+export interface ConcurrentLimitExceededException {
+  readonly Message?: string;
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface GetSnapshotBlockRequest {
+export interface GetSnapshotBlockRequest {
   readonly SnapshotId: string;
   readonly BlockIndex: number;
   readonly BlockToken: string;
 }
 
-interface GetSnapshotBlockResponse {
-  readonly DataLength: number;
-  readonly BlockData: unknown;
-  readonly Checksum: string;
-  readonly ChecksumAlgorithm: string;
+export interface GetSnapshotBlockResponse {
+  readonly DataLength?: number;
+  readonly BlockData?: unknown;
+  readonly Checksum?: string;
+  readonly ChecksumAlgorithm?: string;
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface InternalServerException {
+  readonly Message?: string;
 }
 
-interface ListChangedBlocksRequest {
-  readonly FirstSnapshotId: string;
+export interface ListChangedBlocksRequest {
+  readonly FirstSnapshotId?: string;
   readonly SecondSnapshotId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly StartingBlockIndex: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly StartingBlockIndex?: number;
 }
 
-interface ListChangedBlocksResponse {
-  readonly ChangedBlocks: [];
-  readonly ExpiryTime: Date;
-  readonly VolumeSize: number;
-  readonly BlockSize: number;
-  readonly NextToken: string;
+export interface ListChangedBlocksResponse {
+  readonly ChangedBlocks?: [];
+  readonly ExpiryTime?: Date;
+  readonly VolumeSize?: number;
+  readonly BlockSize?: number;
+  readonly NextToken?: string;
 }
 
-interface ListSnapshotBlocksRequest {
+export interface ListSnapshotBlocksRequest {
   readonly SnapshotId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly StartingBlockIndex: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly StartingBlockIndex?: number;
 }
 
-interface ListSnapshotBlocksResponse {
-  readonly Blocks: [];
-  readonly ExpiryTime: Date;
-  readonly VolumeSize: number;
-  readonly BlockSize: number;
-  readonly NextToken: string;
+export interface ListSnapshotBlocksResponse {
+  readonly Blocks?: [];
+  readonly ExpiryTime?: Date;
+  readonly VolumeSize?: number;
+  readonly BlockSize?: number;
+  readonly NextToken?: string;
 }
 
-interface PutSnapshotBlockRequest {
+export interface PutSnapshotBlockRequest {
   readonly SnapshotId: string;
   readonly BlockIndex: number;
   readonly BlockData: unknown;
   readonly DataLength: number;
-  readonly Progress: number;
+  readonly Progress?: number;
   readonly Checksum: string;
   readonly ChecksumAlgorithm: string;
 }
 
-interface PutSnapshotBlockResponse {
-  readonly Checksum: string;
-  readonly ChecksumAlgorithm: string;
+export interface PutSnapshotBlockResponse {
+  readonly Checksum?: string;
+  readonly ChecksumAlgorithm?: string;
 }
 
-interface RequestThrottledException {
-  readonly Message: string;
-  readonly Reason: string;
+export interface RequestThrottledException {
+  readonly Message?: string;
+  readonly Reason?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
-  readonly Reason: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
+  readonly Reason?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
-  readonly Reason: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
+  readonly Reason?: string;
 }
 
-interface StartSnapshotRequest {
+export interface StartSnapshotRequest {
   readonly VolumeSize: number;
-  readonly ParentSnapshotId: string;
-  readonly Tags: [];
-  readonly Description: string;
-  readonly ClientToken: string;
-  readonly Encrypted: boolean;
-  readonly KmsKeyArn: string;
-  readonly Timeout: number;
+  readonly ParentSnapshotId?: string;
+  readonly Tags?: [];
+  readonly Description?: string;
+  readonly ClientToken?: string;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyArn?: string;
+  readonly Timeout?: number;
 }
 
-interface StartSnapshotResponse {
-  readonly Description: string;
-  readonly SnapshotId: string;
-  readonly OwnerId: string;
-  readonly Status: string;
-  readonly StartTime: Date;
-  readonly VolumeSize: number;
-  readonly BlockSize: number;
-  readonly Tags: [];
-  readonly ParentSnapshotId: string;
-  readonly KmsKeyArn: string;
+export interface StartSnapshotResponse {
+  readonly Description?: string;
+  readonly SnapshotId?: string;
+  readonly OwnerId?: string;
+  readonly Status?: string;
+  readonly StartTime?: Date;
+  readonly VolumeSize?: number;
+  readonly BlockSize?: number;
+  readonly Tags?: [];
+  readonly ParentSnapshotId?: string;
+  readonly KmsKeyArn?: string;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface ValidationException {
-  readonly Message: string;
-  readonly Reason: string;
+export interface ValidationException {
+  readonly Message?: string;
+  readonly Reason?: string;
 }
+
 

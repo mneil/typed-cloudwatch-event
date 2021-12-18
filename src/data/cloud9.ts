@@ -14,18 +14,22 @@ export interface CreateEnvironmentEC2 {
   readonly connectionType?: string;
   readonly dryRun?: boolean;
 }
+
 export interface CreateEnvironmentMembership {
   readonly environmentId: string;
   readonly userArn: string;
   readonly permissions: string;
 }
+
 export interface DeleteEnvironment {
   readonly environmentId: string;
 }
+
 export interface DeleteEnvironmentMembership {
   readonly environmentId: string;
   readonly userArn: string;
 }
+
 export interface DescribeEnvironmentMemberships {
   readonly userArn?: string;
   readonly environmentId?: string;
@@ -33,220 +37,227 @@ export interface DescribeEnvironmentMemberships {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DescribeEnvironmentStatus {
   readonly environmentId: string;
 }
+
 export interface DescribeEnvironments {
   readonly environmentIds: [];
 }
+
 export interface ListEnvironments {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateEnvironment {
   readonly environmentId: string;
   readonly name?: string;
   readonly description?: string;
   readonly managedCredentialsAction?: string;
 }
+
 export interface UpdateEnvironmentMembership {
   readonly environmentId: string;
   readonly userArn: string;
   readonly permissions: string;
 }
 
-
-
-interface BadRequestException {
+export interface BadRequestException {
 }
 
-interface ConcurrentAccessException {
+export interface ConcurrentAccessException {
 }
 
-interface ConflictException {
+export interface ConflictException {
 }
 
-interface CreateEnvironmentEC2Request {
+export interface CreateEnvironmentEC2Request {
   readonly name: string;
-  readonly description: string;
-  readonly clientRequestToken: string;
+  readonly description?: string;
+  readonly clientRequestToken?: string;
   readonly instanceType: string;
-  readonly subnetId: string;
-  readonly imageId: string;
-  readonly automaticStopTimeMinutes: number;
-  readonly ownerArn: string;
-  readonly tags: [];
-  readonly connectionType: string;
-  readonly dryRun: boolean;
+  readonly subnetId?: string;
+  readonly imageId?: string;
+  readonly automaticStopTimeMinutes?: number;
+  readonly ownerArn?: string;
+  readonly tags?: [];
+  readonly connectionType?: string;
+  readonly dryRun?: boolean;
 }
 
-interface CreateEnvironmentEC2Result {
-  readonly environmentId: string;
+export interface CreateEnvironmentEC2Result {
+  readonly environmentId?: string;
 }
 
-interface CreateEnvironmentMembershipRequest {
+export interface CreateEnvironmentMembershipRequest {
   readonly environmentId: string;
   readonly userArn: string;
   readonly permissions: string;
 }
 
-interface CreateEnvironmentMembershipResult {
+export interface CreateEnvironmentMembershipResult {
   readonly membership: EnvironmentMember;
 }
 
-interface DeleteEnvironmentMembershipRequest {
+export interface DeleteEnvironmentMembershipRequest {
   readonly environmentId: string;
   readonly userArn: string;
 }
 
-interface DeleteEnvironmentMembershipResult {
+export interface DeleteEnvironmentMembershipResult {
 }
 
-interface DeleteEnvironmentRequest {
+export interface DeleteEnvironmentRequest {
   readonly environmentId: string;
 }
 
-interface DeleteEnvironmentResult {
+export interface DeleteEnvironmentResult {
 }
 
-interface DescribeEnvironmentMembershipsRequest {
-  readonly userArn: string;
+export interface DescribeEnvironmentMembershipsRequest {
+  readonly userArn?: string;
+  readonly environmentId?: string;
+  readonly permissions?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+}
+
+export interface DescribeEnvironmentMembershipsResult {
+  readonly memberships?: [];
+  readonly nextToken?: string;
+}
+
+export interface DescribeEnvironmentStatusRequest {
   readonly environmentId: string;
-  readonly permissions: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
 }
 
-interface DescribeEnvironmentMembershipsResult {
-  readonly memberships: [];
-  readonly nextToken: string;
-}
-
-interface DescribeEnvironmentStatusRequest {
-  readonly environmentId: string;
-}
-
-interface DescribeEnvironmentStatusResult {
+export interface DescribeEnvironmentStatusResult {
   readonly status: string;
   readonly message: string;
 }
 
-interface DescribeEnvironmentsRequest {
+export interface DescribeEnvironmentsRequest {
   readonly environmentIds: [];
 }
 
-interface DescribeEnvironmentsResult {
-  readonly environments: [];
+export interface DescribeEnvironmentsResult {
+  readonly environments?: [];
 }
 
-interface Environment {
-  readonly id: string;
-  readonly name: string;
-  readonly description: string;
+export interface Environment {
+  readonly id?: string;
+  readonly name?: string;
+  readonly description?: string;
   readonly type: string;
-  readonly connectionType: string;
+  readonly connectionType?: string;
   readonly arn: string;
   readonly ownerArn: string;
-  readonly lifecycle: EnvironmentLifecycle;
-  readonly managedCredentialsStatus: string;
+  readonly lifecycle?: EnvironmentLifecycle;
+  readonly managedCredentialsStatus?: string;
 }
 
-interface EnvironmentLifecycle {
-  readonly status: string;
-  readonly reason: string;
-  readonly failureResource: string;
+export interface EnvironmentLifecycle {
+  readonly status?: string;
+  readonly reason?: string;
+  readonly failureResource?: string;
 }
 
-interface EnvironmentMember {
+export interface EnvironmentMember {
   readonly permissions: string;
   readonly userId: string;
   readonly userArn: string;
   readonly environmentId: string;
-  readonly lastAccess: Date;
+  readonly lastAccess?: Date;
 }
 
-interface ForbiddenException {
+export interface ForbiddenException {
 }
 
-interface InternalServerErrorException {
+export interface InternalServerErrorException {
 }
 
-interface LimitExceededException {
+export interface LimitExceededException {
 }
 
-interface ListEnvironmentsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListEnvironmentsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListEnvironmentsResult {
-  readonly nextToken: string;
-  readonly environmentIds: [];
+export interface ListEnvironmentsResult {
+  readonly nextToken?: string;
+  readonly environmentIds?: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface NotFoundException {
+export interface NotFoundException {
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TooManyRequestsException {
+export interface TooManyRequestsException {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateEnvironmentMembershipRequest {
+export interface UpdateEnvironmentMembershipRequest {
   readonly environmentId: string;
   readonly userArn: string;
   readonly permissions: string;
 }
 
-interface UpdateEnvironmentMembershipResult {
-  readonly membership: EnvironmentMember;
+export interface UpdateEnvironmentMembershipResult {
+  readonly membership?: EnvironmentMember;
 }
 
-interface UpdateEnvironmentRequest {
+export interface UpdateEnvironmentRequest {
   readonly environmentId: string;
-  readonly name: string;
-  readonly description: string;
-  readonly managedCredentialsAction: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly managedCredentialsAction?: string;
 }
 
-interface UpdateEnvironmentResult {
+export interface UpdateEnvironmentResult {
 }
+
 

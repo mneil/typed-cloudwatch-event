@@ -8,69 +8,67 @@ export interface ListRealtimeContactAnalysisSegments {
   readonly NextToken?: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly Message: string;
 }
 
-interface Categories {
+export interface Categories {
   readonly MatchedCategories: [];
   readonly MatchedDetails: {[key: string]: any};
 }
 
-interface CategoryDetails {
+export interface CategoryDetails {
   readonly PointsOfInterest: [];
 }
 
-interface CharacterOffsets {
+export interface CharacterOffsets {
   readonly BeginOffsetChar: number;
   readonly EndOffsetChar: number;
 }
 
-interface InternalServiceException {
-  readonly Message: string;
+export interface InternalServiceException {
+  readonly Message?: string;
 }
 
-interface InvalidRequestException {
-  readonly Message: string;
+export interface InvalidRequestException {
+  readonly Message?: string;
 }
 
-interface IssueDetected {
+export interface IssueDetected {
   readonly CharacterOffsets: CharacterOffsets;
 }
 
-interface ListRealtimeContactAnalysisSegmentsRequest {
+export interface ListRealtimeContactAnalysisSegmentsRequest {
   readonly InstanceId: string;
   readonly ContactId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListRealtimeContactAnalysisSegmentsResponse {
+export interface ListRealtimeContactAnalysisSegmentsResponse {
   readonly Segments: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface PointOfInterest {
+export interface PointOfInterest {
   readonly BeginOffsetMillis: number;
   readonly EndOffsetMillis: number;
 }
 
-interface RealtimeContactAnalysisSegment {
-  readonly Transcript: Transcript;
-  readonly Categories: Categories;
+export interface RealtimeContactAnalysisSegment {
+  readonly Transcript?: Transcript;
+  readonly Categories?: Categories;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
+  readonly Message?: string;
+}
+
+export interface ThrottlingException {
   readonly Message: string;
 }
 
-interface ThrottlingException {
-  readonly Message: string;
-}
-
-interface Transcript {
+export interface Transcript {
   readonly Id: string;
   readonly ParticipantId: string;
   readonly ParticipantRole: string;
@@ -78,6 +76,7 @@ interface Transcript {
   readonly BeginOffsetMillis: number;
   readonly EndOffsetMillis: number;
   readonly Sentiment: string;
-  readonly IssuesDetected: [];
+  readonly IssuesDetected?: [];
 }
+
 

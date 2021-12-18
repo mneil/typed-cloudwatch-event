@@ -10,12 +10,15 @@ export interface BatchExecuteStatement {
   readonly StatementName?: string;
   readonly WithEvent?: boolean;
 }
+
 export interface CancelStatement {
   readonly Id: string;
 }
+
 export interface DescribeStatement {
   readonly Id: string;
 }
+
 export interface DescribeTable {
   readonly ClusterIdentifier?: string;
   readonly ConnectedDatabase?: string;
@@ -27,6 +30,7 @@ export interface DescribeTable {
   readonly SecretArn?: string;
   readonly Table?: string;
 }
+
 export interface ExecuteStatement {
   readonly ClusterIdentifier?: string;
   readonly Database: string;
@@ -37,10 +41,12 @@ export interface ExecuteStatement {
   readonly StatementName?: string;
   readonly WithEvent?: boolean;
 }
+
 export interface GetStatementResult {
   readonly Id: string;
   readonly NextToken?: string;
 }
+
 export interface ListDatabases {
   readonly ClusterIdentifier?: string;
   readonly Database: string;
@@ -49,6 +55,7 @@ export interface ListDatabases {
   readonly NextToken?: string;
   readonly SecretArn?: string;
 }
+
 export interface ListSchemas {
   readonly ClusterIdentifier?: string;
   readonly ConnectedDatabase?: string;
@@ -59,6 +66,7 @@ export interface ListSchemas {
   readonly SchemaPattern?: string;
   readonly SecretArn?: string;
 }
+
 export interface ListStatements {
   readonly MaxResults?: number;
   readonly NextToken?: string;
@@ -66,6 +74,7 @@ export interface ListStatements {
   readonly StatementName?: string;
   readonly Status?: string;
 }
+
 export interface ListTables {
   readonly ClusterIdentifier?: string;
   readonly ConnectedDatabase?: string;
@@ -78,261 +87,260 @@ export interface ListTables {
   readonly TablePattern?: string;
 }
 
-
-
-interface ActiveStatementsExceededException {
-  readonly Message: string;
+export interface ActiveStatementsExceededException {
+  readonly Message?: string;
 }
 
-interface BatchExecuteStatementException {
+export interface BatchExecuteStatementException {
   readonly Message: string;
   readonly StatementId: string;
 }
 
-interface BatchExecuteStatementInput {
-  readonly ClusterIdentifier: string;
+export interface BatchExecuteStatementInput {
+  readonly ClusterIdentifier?: string;
   readonly Database: string;
-  readonly DbUser: string;
-  readonly SecretArn: string;
+  readonly DbUser?: string;
+  readonly SecretArn?: string;
   readonly Sqls: [];
-  readonly StatementName: string;
-  readonly WithEvent: boolean;
+  readonly StatementName?: string;
+  readonly WithEvent?: boolean;
 }
 
-interface BatchExecuteStatementOutput {
-  readonly ClusterIdentifier: string;
-  readonly CreatedAt: Date;
-  readonly Database: string;
-  readonly DbUser: string;
+export interface BatchExecuteStatementOutput {
+  readonly ClusterIdentifier?: string;
+  readonly CreatedAt?: Date;
+  readonly Database?: string;
+  readonly DbUser?: string;
+  readonly Id?: string;
+  readonly SecretArn?: string;
+}
+
+export interface CancelStatementRequest {
   readonly Id: string;
-  readonly SecretArn: string;
 }
 
-interface CancelStatementRequest {
-  readonly Id: string;
+export interface CancelStatementResponse {
+  readonly Status?: boolean;
 }
 
-interface CancelStatementResponse {
-  readonly Status: boolean;
+export interface ColumnMetadata {
+  readonly columnDefault?: string;
+  readonly isCaseSensitive?: boolean;
+  readonly isCurrency?: boolean;
+  readonly isSigned?: boolean;
+  readonly label?: string;
+  readonly length?: number;
+  readonly name?: string;
+  readonly nullable?: number;
+  readonly precision?: number;
+  readonly scale?: number;
+  readonly schemaName?: string;
+  readonly tableName?: string;
+  readonly typeName?: string;
 }
 
-interface ColumnMetadata {
-  readonly columnDefault: string;
-  readonly isCaseSensitive: boolean;
-  readonly isCurrency: boolean;
-  readonly isSigned: boolean;
-  readonly label: string;
-  readonly length: number;
-  readonly name: string;
-  readonly nullable: number;
-  readonly precision: number;
-  readonly scale: number;
-  readonly schemaName: string;
-  readonly tableName: string;
-  readonly typeName: string;
-}
-
-interface DatabaseConnectionException {
+export interface DatabaseConnectionException {
   readonly Message: string;
 }
 
-interface DescribeStatementRequest {
+export interface DescribeStatementRequest {
   readonly Id: string;
 }
 
-interface DescribeStatementResponse {
-  readonly ClusterIdentifier: string;
-  readonly CreatedAt: Date;
-  readonly Database: string;
-  readonly DbUser: string;
-  readonly Duration: number;
-  readonly Error: string;
-  readonly HasResultSet: boolean;
+export interface DescribeStatementResponse {
+  readonly ClusterIdentifier?: string;
+  readonly CreatedAt?: Date;
+  readonly Database?: string;
+  readonly DbUser?: string;
+  readonly Duration?: number;
+  readonly Error?: string;
+  readonly HasResultSet?: boolean;
   readonly Id: string;
-  readonly QueryParameters: [];
-  readonly QueryString: string;
-  readonly RedshiftPid: number;
-  readonly RedshiftQueryId: number;
-  readonly ResultRows: number;
-  readonly ResultSize: number;
-  readonly SecretArn: string;
-  readonly Status: string;
-  readonly SubStatements: [];
-  readonly UpdatedAt: Date;
+  readonly QueryParameters?: [];
+  readonly QueryString?: string;
+  readonly RedshiftPid?: number;
+  readonly RedshiftQueryId?: number;
+  readonly ResultRows?: number;
+  readonly ResultSize?: number;
+  readonly SecretArn?: string;
+  readonly Status?: string;
+  readonly SubStatements?: [];
+  readonly UpdatedAt?: Date;
 }
 
-interface DescribeTableRequest {
-  readonly ClusterIdentifier: string;
-  readonly ConnectedDatabase: string;
+export interface DescribeTableRequest {
+  readonly ClusterIdentifier?: string;
+  readonly ConnectedDatabase?: string;
   readonly Database: string;
-  readonly DbUser: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Schema: string;
-  readonly SecretArn: string;
-  readonly Table: string;
+  readonly DbUser?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Schema?: string;
+  readonly SecretArn?: string;
+  readonly Table?: string;
 }
 
-interface DescribeTableResponse {
-  readonly ColumnList: [];
-  readonly NextToken: string;
-  readonly TableName: string;
+export interface DescribeTableResponse {
+  readonly ColumnList?: [];
+  readonly NextToken?: string;
+  readonly TableName?: string;
 }
 
-interface ExecuteStatementException {
+export interface ExecuteStatementException {
   readonly Message: string;
   readonly StatementId: string;
 }
 
-interface ExecuteStatementInput {
-  readonly ClusterIdentifier: string;
+export interface ExecuteStatementInput {
+  readonly ClusterIdentifier?: string;
   readonly Database: string;
-  readonly DbUser: string;
-  readonly Parameters: [];
-  readonly SecretArn: string;
+  readonly DbUser?: string;
+  readonly Parameters?: [];
+  readonly SecretArn?: string;
   readonly Sql: string;
-  readonly StatementName: string;
-  readonly WithEvent: boolean;
+  readonly StatementName?: string;
+  readonly WithEvent?: boolean;
 }
 
-interface ExecuteStatementOutput {
-  readonly ClusterIdentifier: string;
-  readonly CreatedAt: Date;
-  readonly Database: string;
-  readonly DbUser: string;
+export interface ExecuteStatementOutput {
+  readonly ClusterIdentifier?: string;
+  readonly CreatedAt?: Date;
+  readonly Database?: string;
+  readonly DbUser?: string;
+  readonly Id?: string;
+  readonly SecretArn?: string;
+}
+
+export interface Field {
+  readonly blobValue?: unknown;
+  readonly booleanValue?: boolean;
+  readonly doubleValue?: unknown;
+  readonly isNull?: boolean;
+  readonly longValue?: number;
+  readonly stringValue?: string;
+}
+
+export interface GetStatementResultRequest {
   readonly Id: string;
-  readonly SecretArn: string;
+  readonly NextToken?: string;
 }
 
-interface Field {
-  readonly blobValue: unknown;
-  readonly booleanValue: boolean;
-  readonly doubleValue: unknown;
-  readonly isNull: boolean;
-  readonly longValue: number;
-  readonly stringValue: string;
-}
-
-interface GetStatementResultRequest {
-  readonly Id: string;
-  readonly NextToken: string;
-}
-
-interface GetStatementResultResponse {
-  readonly ColumnMetadata: [];
-  readonly NextToken: string;
+export interface GetStatementResultResponse {
+  readonly ColumnMetadata?: [];
+  readonly NextToken?: string;
   readonly Records: [];
-  readonly TotalNumRows: number;
+  readonly TotalNumRows?: number;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly Message: string;
 }
 
-interface ListDatabasesRequest {
-  readonly ClusterIdentifier: string;
+export interface ListDatabasesRequest {
+  readonly ClusterIdentifier?: string;
   readonly Database: string;
-  readonly DbUser: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly SecretArn: string;
+  readonly DbUser?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly SecretArn?: string;
 }
 
-interface ListDatabasesResponse {
-  readonly Databases: [];
-  readonly NextToken: string;
+export interface ListDatabasesResponse {
+  readonly Databases?: [];
+  readonly NextToken?: string;
 }
 
-interface ListSchemasRequest {
-  readonly ClusterIdentifier: string;
-  readonly ConnectedDatabase: string;
+export interface ListSchemasRequest {
+  readonly ClusterIdentifier?: string;
+  readonly ConnectedDatabase?: string;
   readonly Database: string;
-  readonly DbUser: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly SchemaPattern: string;
-  readonly SecretArn: string;
+  readonly DbUser?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly SchemaPattern?: string;
+  readonly SecretArn?: string;
 }
 
-interface ListSchemasResponse {
-  readonly NextToken: string;
-  readonly Schemas: [];
+export interface ListSchemasResponse {
+  readonly NextToken?: string;
+  readonly Schemas?: [];
 }
 
-interface ListStatementsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly RoleLevel: boolean;
-  readonly StatementName: string;
-  readonly Status: string;
+export interface ListStatementsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly RoleLevel?: boolean;
+  readonly StatementName?: string;
+  readonly Status?: string;
 }
 
-interface ListStatementsResponse {
-  readonly NextToken: string;
+export interface ListStatementsResponse {
+  readonly NextToken?: string;
   readonly Statements: [];
 }
 
-interface ListTablesRequest {
-  readonly ClusterIdentifier: string;
-  readonly ConnectedDatabase: string;
+export interface ListTablesRequest {
+  readonly ClusterIdentifier?: string;
+  readonly ConnectedDatabase?: string;
   readonly Database: string;
-  readonly DbUser: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly SchemaPattern: string;
-  readonly SecretArn: string;
-  readonly TablePattern: string;
+  readonly DbUser?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly SchemaPattern?: string;
+  readonly SecretArn?: string;
+  readonly TablePattern?: string;
 }
 
-interface ListTablesResponse {
-  readonly NextToken: string;
-  readonly Tables: [];
+export interface ListTablesResponse {
+  readonly NextToken?: string;
+  readonly Tables?: [];
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly Message: string;
   readonly ResourceId: string;
 }
 
-interface SqlParameter {
+export interface SqlParameter {
   readonly name: string;
   readonly value: string;
 }
 
-interface StatementData {
-  readonly CreatedAt: Date;
+export interface StatementData {
+  readonly CreatedAt?: Date;
   readonly Id: string;
-  readonly IsBatchStatement: boolean;
-  readonly QueryParameters: [];
-  readonly QueryString: string;
-  readonly QueryStrings: [];
-  readonly SecretArn: string;
-  readonly StatementName: string;
-  readonly Status: string;
-  readonly UpdatedAt: Date;
+  readonly IsBatchStatement?: boolean;
+  readonly QueryParameters?: [];
+  readonly QueryString?: string;
+  readonly QueryStrings?: [];
+  readonly SecretArn?: string;
+  readonly StatementName?: string;
+  readonly Status?: string;
+  readonly UpdatedAt?: Date;
 }
 
-interface SubStatementData {
-  readonly CreatedAt: Date;
-  readonly Duration: number;
-  readonly Error: string;
-  readonly HasResultSet: boolean;
+export interface SubStatementData {
+  readonly CreatedAt?: Date;
+  readonly Duration?: number;
+  readonly Error?: string;
+  readonly HasResultSet?: boolean;
   readonly Id: string;
-  readonly QueryString: string;
-  readonly RedshiftQueryId: number;
-  readonly ResultRows: number;
-  readonly ResultSize: number;
-  readonly Status: string;
-  readonly UpdatedAt: Date;
+  readonly QueryString?: string;
+  readonly RedshiftQueryId?: number;
+  readonly ResultRows?: number;
+  readonly ResultSize?: number;
+  readonly Status?: string;
+  readonly UpdatedAt?: Date;
 }
 
-interface TableMember {
-  readonly name: string;
-  readonly schema: string;
-  readonly type: string;
+export interface TableMember {
+  readonly name?: string;
+  readonly schema?: string;
+  readonly type?: string;
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

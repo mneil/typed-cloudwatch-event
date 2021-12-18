@@ -5,19 +5,24 @@ export interface AcceptAdministratorInvitation {
   readonly AdministratorId: string;
   readonly InvitationId: string;
 }
+
 export interface AcceptInvitation {
   readonly MasterId: string;
   readonly InvitationId: string;
 }
+
 export interface BatchDisableStandards {
   readonly StandardsSubscriptionArns: [];
 }
+
 export interface BatchEnableStandards {
   readonly StandardsSubscriptionRequests: [];
 }
+
 export interface BatchImportFindings {
   readonly Findings: [];
 }
+
 export interface BatchUpdateFindings {
   readonly FindingIdentifiers: [];
   readonly Note?: NoteUpdate;
@@ -30,3811 +35,3860 @@ export interface BatchUpdateFindings {
   readonly Workflow?: WorkflowUpdate;
   readonly RelatedFindings?: [];
 }
+
 export interface CreateActionTarget {
   readonly Name: string;
   readonly Description: string;
   readonly Id: string;
 }
+
 export interface CreateFindingAggregator {
   readonly RegionLinkingMode: string;
   readonly Regions?: [];
 }
+
 export interface CreateInsight {
   readonly Name: string;
   readonly Filters: AwsSecurityFindingFilters;
   readonly GroupByAttribute: string;
 }
+
 export interface CreateMembers {
   readonly AccountDetails: [];
 }
+
 export interface DeclineInvitations {
   readonly AccountIds: [];
 }
+
 export interface DeleteActionTarget {
   readonly ActionTargetArn: string;
 }
+
 export interface DeleteFindingAggregator {
   readonly FindingAggregatorArn: string;
 }
+
 export interface DeleteInsight {
   readonly InsightArn: string;
 }
+
 export interface DeleteInvitations {
   readonly AccountIds: [];
 }
+
 export interface DeleteMembers {
   readonly AccountIds: [];
 }
+
 export interface DescribeActionTargets {
   readonly ActionTargetArns?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeHub {
   readonly HubArn?: string;
 }
+
 export interface DescribeOrganizationConfiguration {
 }
+
 export interface DescribeProducts {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly ProductArn?: string;
 }
+
 export interface DescribeStandards {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeStandardsControls {
   readonly StandardsSubscriptionArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DisableImportFindingsForProduct {
   readonly ProductSubscriptionArn: string;
 }
+
 export interface DisableOrganizationAdminAccount {
   readonly AdminAccountId: string;
 }
+
 export interface DisableSecurityHub {
 }
+
 export interface DisassociateFromAdministratorAccount {
 }
+
 export interface DisassociateFromMasterAccount {
 }
+
 export interface DisassociateMembers {
   readonly AccountIds: [];
 }
+
 export interface EnableImportFindingsForProduct {
   readonly ProductArn: string;
 }
+
 export interface EnableOrganizationAdminAccount {
   readonly AdminAccountId: string;
 }
+
 export interface EnableSecurityHub {
   readonly Tags?: {[key: string]: any};
   readonly EnableDefaultStandards?: boolean;
 }
+
 export interface GetAdministratorAccount {
 }
+
 export interface GetEnabledStandards {
   readonly StandardsSubscriptionArns?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetFindingAggregator {
   readonly FindingAggregatorArn: string;
 }
+
 export interface GetFindings {
   readonly Filters?: AwsSecurityFindingFilters;
   readonly SortCriteria?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetInsightResults {
   readonly InsightArn: string;
 }
+
 export interface GetInsights {
   readonly InsightArns?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetInvitationsCount {
 }
+
 export interface GetMasterAccount {
 }
+
 export interface GetMembers {
   readonly AccountIds: [];
 }
+
 export interface InviteMembers {
   readonly AccountIds: [];
 }
+
 export interface ListEnabledProductsForImport {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListFindingAggregators {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListInvitations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListMembers {
   readonly OnlyAssociated?: boolean;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListOrganizationAdminAccounts {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateActionTarget {
   readonly ActionTargetArn: string;
   readonly Name?: string;
   readonly Description?: string;
 }
+
 export interface UpdateFindingAggregator {
   readonly FindingAggregatorArn: string;
   readonly RegionLinkingMode: string;
   readonly Regions?: [];
 }
+
 export interface UpdateFindings {
   readonly Filters: AwsSecurityFindingFilters;
   readonly Note?: NoteUpdate;
   readonly RecordState?: string;
 }
+
 export interface UpdateInsight {
   readonly InsightArn: string;
   readonly Name?: string;
   readonly Filters?: AwsSecurityFindingFilters;
   readonly GroupByAttribute?: string;
 }
+
 export interface UpdateOrganizationConfiguration {
   readonly AutoEnable: boolean;
 }
+
 export interface UpdateSecurityHubConfiguration {
   readonly AutoEnableControls?: boolean;
 }
+
 export interface UpdateStandardsControl {
   readonly StandardsControlArn: string;
   readonly ControlStatus?: string;
   readonly DisabledReason?: string;
 }
 
-
-
-interface AcceptAdministratorInvitationRequest {
+export interface AcceptAdministratorInvitationRequest {
   readonly AdministratorId: string;
   readonly InvitationId: string;
 }
 
-interface AcceptAdministratorInvitationResponse {
+export interface AcceptAdministratorInvitationResponse {
 }
 
-interface AcceptInvitationRequest {
+export interface AcceptInvitationRequest {
   readonly MasterId: string;
   readonly InvitationId: string;
 }
 
-interface AcceptInvitationResponse {
+export interface AcceptInvitationResponse {
 }
 
-interface AccessDeniedException {
-  readonly Message: string;
-  readonly Code: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
+  readonly Code?: string;
 }
 
-interface AccountDetails {
+export interface AccountDetails {
   readonly AccountId: string;
-  readonly Email: string;
+  readonly Email?: string;
 }
 
-interface Action {
-  readonly ActionType: string;
-  readonly NetworkConnectionAction: NetworkConnectionAction;
-  readonly AwsApiCallAction: AwsApiCallAction;
-  readonly DnsRequestAction: DnsRequestAction;
-  readonly PortProbeAction: PortProbeAction;
+export interface Action {
+  readonly ActionType?: string;
+  readonly NetworkConnectionAction?: NetworkConnectionAction;
+  readonly AwsApiCallAction?: AwsApiCallAction;
+  readonly DnsRequestAction?: DnsRequestAction;
+  readonly PortProbeAction?: PortProbeAction;
 }
 
-interface ActionLocalIpDetails {
-  readonly IpAddressV4: string;
+export interface ActionLocalIpDetails {
+  readonly IpAddressV4?: string;
 }
 
-interface ActionLocalPortDetails {
-  readonly Port: number;
-  readonly PortName: string;
+export interface ActionLocalPortDetails {
+  readonly Port?: number;
+  readonly PortName?: string;
 }
 
-interface ActionRemoteIpDetails {
-  readonly IpAddressV4: string;
-  readonly Organization: IpOrganizationDetails;
-  readonly Country: Country;
-  readonly City: City;
-  readonly GeoLocation: GeoLocation;
+export interface ActionRemoteIpDetails {
+  readonly IpAddressV4?: string;
+  readonly Organization?: IpOrganizationDetails;
+  readonly Country?: Country;
+  readonly City?: City;
+  readonly GeoLocation?: GeoLocation;
 }
 
-interface ActionRemotePortDetails {
-  readonly Port: number;
-  readonly PortName: string;
+export interface ActionRemotePortDetails {
+  readonly Port?: number;
+  readonly PortName?: string;
 }
 
-interface ActionTarget {
+export interface ActionTarget {
   readonly ActionTargetArn: string;
   readonly Name: string;
   readonly Description: string;
 }
 
-interface Adjustment {
-  readonly Metric: string;
-  readonly Reason: string;
-}
-
-interface AdminAccount {
-  readonly AccountId: string;
-  readonly Status: string;
-}
-
-interface AvailabilityZone {
-  readonly ZoneName: string;
-  readonly SubnetId: string;
-}
-
-interface AwsApiCallAction {
-  readonly Api: string;
-  readonly ServiceName: string;
-  readonly CallerType: string;
-  readonly RemoteIpDetails: ActionRemoteIpDetails;
-  readonly DomainDetails: AwsApiCallActionDomainDetails;
-  readonly AffectedResources: {[key: string]: any};
-  readonly FirstSeen: string;
-  readonly LastSeen: string;
-}
-
-interface AwsApiCallActionDomainDetails {
-  readonly Domain: string;
-}
-
-interface AwsApiGatewayAccessLogSettings {
-  readonly Format: string;
-  readonly DestinationArn: string;
-}
-
-interface AwsApiGatewayCanarySettings {
-  readonly PercentTraffic: unknown;
-  readonly DeploymentId: string;
-  readonly StageVariableOverrides: {[key: string]: any};
-  readonly UseStageCache: boolean;
-}
-
-interface AwsApiGatewayEndpointConfiguration {
-  readonly Types: [];
-}
-
-interface AwsApiGatewayMethodSettings {
-  readonly MetricsEnabled: boolean;
-  readonly LoggingLevel: string;
-  readonly DataTraceEnabled: boolean;
-  readonly ThrottlingBurstLimit: number;
-  readonly ThrottlingRateLimit: unknown;
-  readonly CachingEnabled: boolean;
-  readonly CacheTtlInSeconds: number;
-  readonly CacheDataEncrypted: boolean;
-  readonly RequireAuthorizationForCacheControl: boolean;
-  readonly UnauthorizedCacheControlHeaderStrategy: string;
-  readonly HttpMethod: string;
-  readonly ResourcePath: string;
-}
-
-interface AwsApiGatewayRestApiDetails {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly CreatedDate: string;
-  readonly Version: string;
-  readonly BinaryMediaTypes: [];
-  readonly MinimumCompressionSize: number;
-  readonly ApiKeySource: string;
-  readonly EndpointConfiguration: AwsApiGatewayEndpointConfiguration;
-}
-
-interface AwsApiGatewayStageDetails {
-  readonly DeploymentId: string;
-  readonly ClientCertificateId: string;
-  readonly StageName: string;
-  readonly Description: string;
-  readonly CacheClusterEnabled: boolean;
-  readonly CacheClusterSize: string;
-  readonly CacheClusterStatus: string;
-  readonly MethodSettings: [];
-  readonly Variables: {[key: string]: any};
-  readonly DocumentationVersion: string;
-  readonly AccessLogSettings: AwsApiGatewayAccessLogSettings;
-  readonly CanarySettings: AwsApiGatewayCanarySettings;
-  readonly TracingEnabled: boolean;
-  readonly CreatedDate: string;
-  readonly LastUpdatedDate: string;
-  readonly WebAclArn: string;
-}
-
-interface AwsApiGatewayV2ApiDetails {
-  readonly ApiEndpoint: string;
-  readonly ApiId: string;
-  readonly ApiKeySelectionExpression: string;
-  readonly CreatedDate: string;
-  readonly Description: string;
-  readonly Version: string;
-  readonly Name: string;
-  readonly ProtocolType: string;
-  readonly RouteSelectionExpression: string;
-  readonly CorsConfiguration: AwsCorsConfiguration;
-}
-
-interface AwsApiGatewayV2RouteSettings {
-  readonly DetailedMetricsEnabled: boolean;
-  readonly LoggingLevel: string;
-  readonly DataTraceEnabled: boolean;
-  readonly ThrottlingBurstLimit: number;
-  readonly ThrottlingRateLimit: unknown;
-}
-
-interface AwsApiGatewayV2StageDetails {
-  readonly ClientCertificateId: string;
-  readonly CreatedDate: string;
-  readonly Description: string;
-  readonly DefaultRouteSettings: AwsApiGatewayV2RouteSettings;
-  readonly DeploymentId: string;
-  readonly LastUpdatedDate: string;
-  readonly RouteSettings: AwsApiGatewayV2RouteSettings;
-  readonly StageName: string;
-  readonly StageVariables: {[key: string]: any};
-  readonly AccessLogSettings: AwsApiGatewayAccessLogSettings;
-  readonly AutoDeploy: boolean;
-  readonly LastDeploymentStatusMessage: string;
-  readonly ApiGatewayManaged: boolean;
-}
-
-interface AwsAutoScalingAutoScalingGroupDetails {
-  readonly LaunchConfigurationName: string;
-  readonly LoadBalancerNames: [];
-  readonly HealthCheckType: string;
-  readonly HealthCheckGracePeriod: number;
-  readonly CreatedTime: string;
-}
-
-interface AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
-  readonly DeviceName: string;
-  readonly Ebs: AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails;
-  readonly NoDevice: boolean;
-  readonly VirtualName: string;
-}
-
-interface AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
-  readonly DeleteOnTermination: boolean;
-  readonly Encrypted: boolean;
-  readonly Iops: number;
-  readonly SnapshotId: string;
-  readonly VolumeSize: number;
-  readonly VolumeType: string;
-}
-
-interface AwsAutoScalingLaunchConfigurationDetails {
-  readonly AssociatePublicIpAddress: boolean;
-  readonly BlockDeviceMappings: [];
-  readonly ClassicLinkVpcId: string;
-  readonly ClassicLinkVpcSecurityGroups: [];
-  readonly CreatedTime: string;
-  readonly EbsOptimized: boolean;
-  readonly IamInstanceProfile: string;
-  readonly ImageId: string;
-  readonly InstanceMonitoring: AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails;
-  readonly InstanceType: string;
-  readonly KernelId: string;
-  readonly KeyName: string;
-  readonly LaunchConfigurationName: string;
-  readonly PlacementTenancy: string;
-  readonly RamdiskId: string;
-  readonly SecurityGroups: [];
-  readonly SpotPrice: string;
-  readonly UserData: string;
-}
-
-interface AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
-  readonly Enabled: boolean;
-}
-
-interface AwsCertificateManagerCertificateDetails {
-  readonly CertificateAuthorityArn: string;
-  readonly CreatedAt: string;
-  readonly DomainName: string;
-  readonly DomainValidationOptions: [];
-  readonly ExtendedKeyUsages: [];
-  readonly FailureReason: string;
-  readonly ImportedAt: string;
-  readonly InUseBy: [];
-  readonly IssuedAt: string;
-  readonly Issuer: string;
-  readonly KeyAlgorithm: string;
-  readonly KeyUsages: [];
-  readonly NotAfter: string;
-  readonly NotBefore: string;
-  readonly Options: AwsCertificateManagerCertificateOptions;
-  readonly RenewalEligibility: string;
-  readonly RenewalSummary: AwsCertificateManagerCertificateRenewalSummary;
-  readonly Serial: string;
-  readonly SignatureAlgorithm: string;
-  readonly Status: string;
-  readonly Subject: string;
-  readonly SubjectAlternativeNames: [];
-  readonly Type: string;
+export interface Adjustment {
+  readonly Metric?: string;
+  readonly Reason?: string;
+}
+
+export interface AdminAccount {
+  readonly AccountId?: string;
+  readonly Status?: string;
+}
+
+export interface AvailabilityZone {
+  readonly ZoneName?: string;
+  readonly SubnetId?: string;
+}
+
+export interface AwsApiCallAction {
+  readonly Api?: string;
+  readonly ServiceName?: string;
+  readonly CallerType?: string;
+  readonly RemoteIpDetails?: ActionRemoteIpDetails;
+  readonly DomainDetails?: AwsApiCallActionDomainDetails;
+  readonly AffectedResources?: {[key: string]: any};
+  readonly FirstSeen?: string;
+  readonly LastSeen?: string;
+}
+
+export interface AwsApiCallActionDomainDetails {
+  readonly Domain?: string;
+}
+
+export interface AwsApiGatewayAccessLogSettings {
+  readonly Format?: string;
+  readonly DestinationArn?: string;
+}
+
+export interface AwsApiGatewayCanarySettings {
+  readonly PercentTraffic?: unknown;
+  readonly DeploymentId?: string;
+  readonly StageVariableOverrides?: {[key: string]: any};
+  readonly UseStageCache?: boolean;
+}
+
+export interface AwsApiGatewayEndpointConfiguration {
+  readonly Types?: [];
+}
+
+export interface AwsApiGatewayMethodSettings {
+  readonly MetricsEnabled?: boolean;
+  readonly LoggingLevel?: string;
+  readonly DataTraceEnabled?: boolean;
+  readonly ThrottlingBurstLimit?: number;
+  readonly ThrottlingRateLimit?: unknown;
+  readonly CachingEnabled?: boolean;
+  readonly CacheTtlInSeconds?: number;
+  readonly CacheDataEncrypted?: boolean;
+  readonly RequireAuthorizationForCacheControl?: boolean;
+  readonly UnauthorizedCacheControlHeaderStrategy?: string;
+  readonly HttpMethod?: string;
+  readonly ResourcePath?: string;
+}
+
+export interface AwsApiGatewayRestApiDetails {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly CreatedDate?: string;
+  readonly Version?: string;
+  readonly BinaryMediaTypes?: [];
+  readonly MinimumCompressionSize?: number;
+  readonly ApiKeySource?: string;
+  readonly EndpointConfiguration?: AwsApiGatewayEndpointConfiguration;
+}
+
+export interface AwsApiGatewayStageDetails {
+  readonly DeploymentId?: string;
+  readonly ClientCertificateId?: string;
+  readonly StageName?: string;
+  readonly Description?: string;
+  readonly CacheClusterEnabled?: boolean;
+  readonly CacheClusterSize?: string;
+  readonly CacheClusterStatus?: string;
+  readonly MethodSettings?: [];
+  readonly Variables?: {[key: string]: any};
+  readonly DocumentationVersion?: string;
+  readonly AccessLogSettings?: AwsApiGatewayAccessLogSettings;
+  readonly CanarySettings?: AwsApiGatewayCanarySettings;
+  readonly TracingEnabled?: boolean;
+  readonly CreatedDate?: string;
+  readonly LastUpdatedDate?: string;
+  readonly WebAclArn?: string;
+}
+
+export interface AwsApiGatewayV2ApiDetails {
+  readonly ApiEndpoint?: string;
+  readonly ApiId?: string;
+  readonly ApiKeySelectionExpression?: string;
+  readonly CreatedDate?: string;
+  readonly Description?: string;
+  readonly Version?: string;
+  readonly Name?: string;
+  readonly ProtocolType?: string;
+  readonly RouteSelectionExpression?: string;
+  readonly CorsConfiguration?: AwsCorsConfiguration;
+}
+
+export interface AwsApiGatewayV2RouteSettings {
+  readonly DetailedMetricsEnabled?: boolean;
+  readonly LoggingLevel?: string;
+  readonly DataTraceEnabled?: boolean;
+  readonly ThrottlingBurstLimit?: number;
+  readonly ThrottlingRateLimit?: unknown;
+}
+
+export interface AwsApiGatewayV2StageDetails {
+  readonly ClientCertificateId?: string;
+  readonly CreatedDate?: string;
+  readonly Description?: string;
+  readonly DefaultRouteSettings?: AwsApiGatewayV2RouteSettings;
+  readonly DeploymentId?: string;
+  readonly LastUpdatedDate?: string;
+  readonly RouteSettings?: AwsApiGatewayV2RouteSettings;
+  readonly StageName?: string;
+  readonly StageVariables?: {[key: string]: any};
+  readonly AccessLogSettings?: AwsApiGatewayAccessLogSettings;
+  readonly AutoDeploy?: boolean;
+  readonly LastDeploymentStatusMessage?: string;
+  readonly ApiGatewayManaged?: boolean;
+}
+
+export interface AwsAutoScalingAutoScalingGroupDetails {
+  readonly LaunchConfigurationName?: string;
+  readonly LoadBalancerNames?: [];
+  readonly HealthCheckType?: string;
+  readonly HealthCheckGracePeriod?: number;
+  readonly CreatedTime?: string;
+}
+
+export interface AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
+  readonly DeviceName?: string;
+  readonly Ebs?: AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails;
+  readonly NoDevice?: boolean;
+  readonly VirtualName?: string;
+}
+
+export interface AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
+  readonly DeleteOnTermination?: boolean;
+  readonly Encrypted?: boolean;
+  readonly Iops?: number;
+  readonly SnapshotId?: string;
+  readonly VolumeSize?: number;
+  readonly VolumeType?: string;
+}
+
+export interface AwsAutoScalingLaunchConfigurationDetails {
+  readonly AssociatePublicIpAddress?: boolean;
+  readonly BlockDeviceMappings?: [];
+  readonly ClassicLinkVpcId?: string;
+  readonly ClassicLinkVpcSecurityGroups?: [];
+  readonly CreatedTime?: string;
+  readonly EbsOptimized?: boolean;
+  readonly IamInstanceProfile?: string;
+  readonly ImageId?: string;
+  readonly InstanceMonitoring?: AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails;
+  readonly InstanceType?: string;
+  readonly KernelId?: string;
+  readonly KeyName?: string;
+  readonly LaunchConfigurationName?: string;
+  readonly PlacementTenancy?: string;
+  readonly RamdiskId?: string;
+  readonly SecurityGroups?: [];
+  readonly SpotPrice?: string;
+  readonly UserData?: string;
+}
+
+export interface AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
+  readonly Enabled?: boolean;
+}
+
+export interface AwsCertificateManagerCertificateDetails {
+  readonly CertificateAuthorityArn?: string;
+  readonly CreatedAt?: string;
+  readonly DomainName?: string;
+  readonly DomainValidationOptions?: [];
+  readonly ExtendedKeyUsages?: [];
+  readonly FailureReason?: string;
+  readonly ImportedAt?: string;
+  readonly InUseBy?: [];
+  readonly IssuedAt?: string;
+  readonly Issuer?: string;
+  readonly KeyAlgorithm?: string;
+  readonly KeyUsages?: [];
+  readonly NotAfter?: string;
+  readonly NotBefore?: string;
+  readonly Options?: AwsCertificateManagerCertificateOptions;
+  readonly RenewalEligibility?: string;
+  readonly RenewalSummary?: AwsCertificateManagerCertificateRenewalSummary;
+  readonly Serial?: string;
+  readonly SignatureAlgorithm?: string;
+  readonly Status?: string;
+  readonly Subject?: string;
+  readonly SubjectAlternativeNames?: [];
+  readonly Type?: string;
 }
 
-interface AwsCertificateManagerCertificateDomainValidationOption {
-  readonly DomainName: string;
-  readonly ResourceRecord: AwsCertificateManagerCertificateResourceRecord;
-  readonly ValidationDomain: string;
-  readonly ValidationEmails: [];
-  readonly ValidationMethod: string;
-  readonly ValidationStatus: string;
+export interface AwsCertificateManagerCertificateDomainValidationOption {
+  readonly DomainName?: string;
+  readonly ResourceRecord?: AwsCertificateManagerCertificateResourceRecord;
+  readonly ValidationDomain?: string;
+  readonly ValidationEmails?: [];
+  readonly ValidationMethod?: string;
+  readonly ValidationStatus?: string;
 }
 
-interface AwsCertificateManagerCertificateExtendedKeyUsage {
-  readonly Name: string;
-  readonly OId: string;
+export interface AwsCertificateManagerCertificateExtendedKeyUsage {
+  readonly Name?: string;
+  readonly OId?: string;
 }
 
-interface AwsCertificateManagerCertificateKeyUsage {
-  readonly Name: string;
+export interface AwsCertificateManagerCertificateKeyUsage {
+  readonly Name?: string;
 }
 
-interface AwsCertificateManagerCertificateOptions {
-  readonly CertificateTransparencyLoggingPreference: string;
+export interface AwsCertificateManagerCertificateOptions {
+  readonly CertificateTransparencyLoggingPreference?: string;
 }
-
-interface AwsCertificateManagerCertificateRenewalSummary {
-  readonly DomainValidationOptions: [];
-  readonly RenewalStatus: string;
-  readonly RenewalStatusReason: string;
-  readonly UpdatedAt: string;
-}
-
-interface AwsCertificateManagerCertificateResourceRecord {
-  readonly Name: string;
-  readonly Type: string;
-  readonly Value: string;
-}
-
-interface AwsCloudFrontDistributionCacheBehavior {
-  readonly ViewerProtocolPolicy: string;
-}
-
-interface AwsCloudFrontDistributionCacheBehaviors {
-  readonly Items: [];
-}
-
-interface AwsCloudFrontDistributionDefaultCacheBehavior {
-  readonly ViewerProtocolPolicy: string;
-}
-
-interface AwsCloudFrontDistributionDetails {
-  readonly CacheBehaviors: AwsCloudFrontDistributionCacheBehaviors;
-  readonly DefaultCacheBehavior: AwsCloudFrontDistributionDefaultCacheBehavior;
-  readonly DefaultRootObject: string;
-  readonly DomainName: string;
-  readonly ETag: string;
-  readonly LastModifiedTime: string;
-  readonly Logging: AwsCloudFrontDistributionLogging;
-  readonly Origins: AwsCloudFrontDistributionOrigins;
-  readonly OriginGroups: AwsCloudFrontDistributionOriginGroups;
-  readonly ViewerCertificate: AwsCloudFrontDistributionViewerCertificate;
-  readonly Status: string;
-  readonly WebAclId: string;
-}
-
-interface AwsCloudFrontDistributionLogging {
-  readonly Bucket: string;
-  readonly Enabled: boolean;
-  readonly IncludeCookies: boolean;
-  readonly Prefix: string;
-}
-
-interface AwsCloudFrontDistributionOriginGroup {
-  readonly FailoverCriteria: AwsCloudFrontDistributionOriginGroupFailover;
-}
-
-interface AwsCloudFrontDistributionOriginGroupFailover {
-  readonly StatusCodes: AwsCloudFrontDistributionOriginGroupFailoverStatusCodes;
-}
-
-interface AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
-  readonly Items: [];
-  readonly Quantity: number;
-}
-
-interface AwsCloudFrontDistributionOriginGroups {
-  readonly Items: [];
+
+export interface AwsCertificateManagerCertificateRenewalSummary {
+  readonly DomainValidationOptions?: [];
+  readonly RenewalStatus?: string;
+  readonly RenewalStatusReason?: string;
+  readonly UpdatedAt?: string;
+}
+
+export interface AwsCertificateManagerCertificateResourceRecord {
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly Value?: string;
+}
+
+export interface AwsCloudFrontDistributionCacheBehavior {
+  readonly ViewerProtocolPolicy?: string;
+}
+
+export interface AwsCloudFrontDistributionCacheBehaviors {
+  readonly Items?: [];
+}
+
+export interface AwsCloudFrontDistributionDefaultCacheBehavior {
+  readonly ViewerProtocolPolicy?: string;
+}
+
+export interface AwsCloudFrontDistributionDetails {
+  readonly CacheBehaviors?: AwsCloudFrontDistributionCacheBehaviors;
+  readonly DefaultCacheBehavior?: AwsCloudFrontDistributionDefaultCacheBehavior;
+  readonly DefaultRootObject?: string;
+  readonly DomainName?: string;
+  readonly ETag?: string;
+  readonly LastModifiedTime?: string;
+  readonly Logging?: AwsCloudFrontDistributionLogging;
+  readonly Origins?: AwsCloudFrontDistributionOrigins;
+  readonly OriginGroups?: AwsCloudFrontDistributionOriginGroups;
+  readonly ViewerCertificate?: AwsCloudFrontDistributionViewerCertificate;
+  readonly Status?: string;
+  readonly WebAclId?: string;
+}
+
+export interface AwsCloudFrontDistributionLogging {
+  readonly Bucket?: string;
+  readonly Enabled?: boolean;
+  readonly IncludeCookies?: boolean;
+  readonly Prefix?: string;
+}
+
+export interface AwsCloudFrontDistributionOriginGroup {
+  readonly FailoverCriteria?: AwsCloudFrontDistributionOriginGroupFailover;
+}
+
+export interface AwsCloudFrontDistributionOriginGroupFailover {
+  readonly StatusCodes?: AwsCloudFrontDistributionOriginGroupFailoverStatusCodes;
+}
+
+export interface AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
+  readonly Items?: [];
+  readonly Quantity?: number;
+}
+
+export interface AwsCloudFrontDistributionOriginGroups {
+  readonly Items?: [];
 }
-
-interface AwsCloudFrontDistributionOriginItem {
-  readonly DomainName: string;
-  readonly Id: string;
-  readonly OriginPath: string;
-  readonly S3OriginConfig: AwsCloudFrontDistributionOriginS3OriginConfig;
+
+export interface AwsCloudFrontDistributionOriginItem {
+  readonly DomainName?: string;
+  readonly Id?: string;
+  readonly OriginPath?: string;
+  readonly S3OriginConfig?: AwsCloudFrontDistributionOriginS3OriginConfig;
 }
 
-interface AwsCloudFrontDistributionOriginS3OriginConfig {
-  readonly OriginAccessIdentity: string;
+export interface AwsCloudFrontDistributionOriginS3OriginConfig {
+  readonly OriginAccessIdentity?: string;
 }
 
-interface AwsCloudFrontDistributionOrigins {
-  readonly Items: [];
+export interface AwsCloudFrontDistributionOrigins {
+  readonly Items?: [];
 }
 
-interface AwsCloudFrontDistributionViewerCertificate {
-  readonly AcmCertificateArn: string;
-  readonly Certificate: string;
-  readonly CertificateSource: string;
-  readonly CloudFrontDefaultCertificate: boolean;
-  readonly IamCertificateId: string;
-  readonly MinimumProtocolVersion: string;
-  readonly SslSupportMethod: string;
-}
+export interface AwsCloudFrontDistributionViewerCertificate {
+  readonly AcmCertificateArn?: string;
+  readonly Certificate?: string;
+  readonly CertificateSource?: string;
+  readonly CloudFrontDefaultCertificate?: boolean;
+  readonly IamCertificateId?: string;
+  readonly MinimumProtocolVersion?: string;
+  readonly SslSupportMethod?: string;
+}
 
-interface AwsCloudTrailTrailDetails {
-  readonly CloudWatchLogsLogGroupArn: string;
-  readonly CloudWatchLogsRoleArn: string;
-  readonly HasCustomEventSelectors: boolean;
-  readonly HomeRegion: string;
-  readonly IncludeGlobalServiceEvents: boolean;
-  readonly IsMultiRegionTrail: boolean;
-  readonly IsOrganizationTrail: boolean;
-  readonly KmsKeyId: string;
-  readonly LogFileValidationEnabled: boolean;
-  readonly Name: string;
-  readonly S3BucketName: string;
-  readonly S3KeyPrefix: string;
-  readonly SnsTopicArn: string;
-  readonly SnsTopicName: string;
-  readonly TrailArn: string;
+export interface AwsCloudTrailTrailDetails {
+  readonly CloudWatchLogsLogGroupArn?: string;
+  readonly CloudWatchLogsRoleArn?: string;
+  readonly HasCustomEventSelectors?: boolean;
+  readonly HomeRegion?: string;
+  readonly IncludeGlobalServiceEvents?: boolean;
+  readonly IsMultiRegionTrail?: boolean;
+  readonly IsOrganizationTrail?: boolean;
+  readonly KmsKeyId?: string;
+  readonly LogFileValidationEnabled?: boolean;
+  readonly Name?: string;
+  readonly S3BucketName?: string;
+  readonly S3KeyPrefix?: string;
+  readonly SnsTopicArn?: string;
+  readonly SnsTopicName?: string;
+  readonly TrailArn?: string;
 }
 
-interface AwsCodeBuildProjectArtifactsDetails {
-  readonly ArtifactIdentifier: string;
-  readonly EncryptionDisabled: boolean;
-  readonly Location: string;
-  readonly Name: string;
-  readonly NamespaceType: string;
-  readonly OverrideArtifactName: boolean;
-  readonly Packaging: string;
-  readonly Path: string;
-  readonly Type: string;
-}
-
-interface AwsCodeBuildProjectDetails {
-  readonly EncryptionKey: string;
-  readonly Artifacts: [];
-  readonly Environment: AwsCodeBuildProjectEnvironment;
-  readonly Name: string;
-  readonly Source: AwsCodeBuildProjectSource;
-  readonly ServiceRole: string;
-  readonly LogsConfig: AwsCodeBuildProjectLogsConfigDetails;
-  readonly VpcConfig: AwsCodeBuildProjectVpcConfig;
-}
-
-interface AwsCodeBuildProjectEnvironment {
-  readonly Certificate: string;
-  readonly EnvironmentVariables: [];
-  readonly PrivilegedMode: boolean;
-  readonly ImagePullCredentialsType: string;
-  readonly RegistryCredential: AwsCodeBuildProjectEnvironmentRegistryCredential;
-  readonly Type: string;
-}
-
-interface AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
-  readonly Name: string;
-  readonly Type: string;
-  readonly Value: string;
-}
-
-interface AwsCodeBuildProjectEnvironmentRegistryCredential {
-  readonly Credential: string;
-  readonly CredentialProvider: string;
-}
-
-interface AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
-  readonly GroupName: string;
-  readonly Status: string;
-  readonly StreamName: string;
-}
-
-interface AwsCodeBuildProjectLogsConfigDetails {
-  readonly CloudWatchLogs: AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails;
-  readonly S3Logs: AwsCodeBuildProjectLogsConfigS3LogsDetails;
-}
-
-interface AwsCodeBuildProjectLogsConfigS3LogsDetails {
-  readonly EncryptionDisabled: boolean;
-  readonly Location: string;
-  readonly Status: string;
+export interface AwsCodeBuildProjectArtifactsDetails {
+  readonly ArtifactIdentifier?: string;
+  readonly EncryptionDisabled?: boolean;
+  readonly Location?: string;
+  readonly Name?: string;
+  readonly NamespaceType?: string;
+  readonly OverrideArtifactName?: boolean;
+  readonly Packaging?: string;
+  readonly Path?: string;
+  readonly Type?: string;
+}
+
+export interface AwsCodeBuildProjectDetails {
+  readonly EncryptionKey?: string;
+  readonly Artifacts?: [];
+  readonly Environment?: AwsCodeBuildProjectEnvironment;
+  readonly Name?: string;
+  readonly Source?: AwsCodeBuildProjectSource;
+  readonly ServiceRole?: string;
+  readonly LogsConfig?: AwsCodeBuildProjectLogsConfigDetails;
+  readonly VpcConfig?: AwsCodeBuildProjectVpcConfig;
+}
+
+export interface AwsCodeBuildProjectEnvironment {
+  readonly Certificate?: string;
+  readonly EnvironmentVariables?: [];
+  readonly PrivilegedMode?: boolean;
+  readonly ImagePullCredentialsType?: string;
+  readonly RegistryCredential?: AwsCodeBuildProjectEnvironmentRegistryCredential;
+  readonly Type?: string;
+}
+
+export interface AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly Value?: string;
+}
+
+export interface AwsCodeBuildProjectEnvironmentRegistryCredential {
+  readonly Credential?: string;
+  readonly CredentialProvider?: string;
+}
+
+export interface AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
+  readonly GroupName?: string;
+  readonly Status?: string;
+  readonly StreamName?: string;
+}
+
+export interface AwsCodeBuildProjectLogsConfigDetails {
+  readonly CloudWatchLogs?: AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails;
+  readonly S3Logs?: AwsCodeBuildProjectLogsConfigS3LogsDetails;
+}
+
+export interface AwsCodeBuildProjectLogsConfigS3LogsDetails {
+  readonly EncryptionDisabled?: boolean;
+  readonly Location?: string;
+  readonly Status?: string;
 }
 
-interface AwsCodeBuildProjectSource {
-  readonly Type: string;
-  readonly Location: string;
-  readonly GitCloneDepth: number;
-  readonly InsecureSsl: boolean;
+export interface AwsCodeBuildProjectSource {
+  readonly Type?: string;
+  readonly Location?: string;
+  readonly GitCloneDepth?: number;
+  readonly InsecureSsl?: boolean;
 }
 
-interface AwsCodeBuildProjectVpcConfig {
-  readonly VpcId: string;
-  readonly Subnets: [];
-  readonly SecurityGroupIds: [];
+export interface AwsCodeBuildProjectVpcConfig {
+  readonly VpcId?: string;
+  readonly Subnets?: [];
+  readonly SecurityGroupIds?: [];
 }
 
-interface AwsCorsConfiguration {
-  readonly AllowOrigins: [];
-  readonly AllowCredentials: boolean;
-  readonly ExposeHeaders: [];
-  readonly MaxAge: number;
-  readonly AllowMethods: [];
-  readonly AllowHeaders: [];
+export interface AwsCorsConfiguration {
+  readonly AllowOrigins?: [];
+  readonly AllowCredentials?: boolean;
+  readonly ExposeHeaders?: [];
+  readonly MaxAge?: number;
+  readonly AllowMethods?: [];
+  readonly AllowHeaders?: [];
 }
 
-interface AwsDynamoDbTableAttributeDefinition {
-  readonly AttributeName: string;
-  readonly AttributeType: string;
+export interface AwsDynamoDbTableAttributeDefinition {
+  readonly AttributeName?: string;
+  readonly AttributeType?: string;
 }
 
-interface AwsDynamoDbTableBillingModeSummary {
-  readonly BillingMode: string;
-  readonly LastUpdateToPayPerRequestDateTime: string;
+export interface AwsDynamoDbTableBillingModeSummary {
+  readonly BillingMode?: string;
+  readonly LastUpdateToPayPerRequestDateTime?: string;
 }
 
-interface AwsDynamoDbTableDetails {
-  readonly AttributeDefinitions: [];
-  readonly BillingModeSummary: AwsDynamoDbTableBillingModeSummary;
-  readonly CreationDateTime: string;
-  readonly GlobalSecondaryIndexes: [];
-  readonly GlobalTableVersion: string;
-  readonly ItemCount: number;
-  readonly KeySchema: [];
-  readonly LatestStreamArn: string;
-  readonly LatestStreamLabel: string;
-  readonly LocalSecondaryIndexes: [];
-  readonly ProvisionedThroughput: AwsDynamoDbTableProvisionedThroughput;
-  readonly Replicas: [];
-  readonly RestoreSummary: AwsDynamoDbTableRestoreSummary;
-  readonly SseDescription: AwsDynamoDbTableSseDescription;
-  readonly StreamSpecification: AwsDynamoDbTableStreamSpecification;
-  readonly TableId: string;
-  readonly TableName: string;
-  readonly TableSizeBytes: number;
-  readonly TableStatus: string;
-}
-
-interface AwsDynamoDbTableGlobalSecondaryIndex {
-  readonly Backfilling: boolean;
-  readonly IndexArn: string;
-  readonly IndexName: string;
-  readonly IndexSizeBytes: number;
-  readonly IndexStatus: string;
-  readonly ItemCount: number;
-  readonly KeySchema: [];
-  readonly Projection: AwsDynamoDbTableProjection;
-  readonly ProvisionedThroughput: AwsDynamoDbTableProvisionedThroughput;
+export interface AwsDynamoDbTableDetails {
+  readonly AttributeDefinitions?: [];
+  readonly BillingModeSummary?: AwsDynamoDbTableBillingModeSummary;
+  readonly CreationDateTime?: string;
+  readonly GlobalSecondaryIndexes?: [];
+  readonly GlobalTableVersion?: string;
+  readonly ItemCount?: number;
+  readonly KeySchema?: [];
+  readonly LatestStreamArn?: string;
+  readonly LatestStreamLabel?: string;
+  readonly LocalSecondaryIndexes?: [];
+  readonly ProvisionedThroughput?: AwsDynamoDbTableProvisionedThroughput;
+  readonly Replicas?: [];
+  readonly RestoreSummary?: AwsDynamoDbTableRestoreSummary;
+  readonly SseDescription?: AwsDynamoDbTableSseDescription;
+  readonly StreamSpecification?: AwsDynamoDbTableStreamSpecification;
+  readonly TableId?: string;
+  readonly TableName?: string;
+  readonly TableSizeBytes?: number;
+  readonly TableStatus?: string;
+}
+
+export interface AwsDynamoDbTableGlobalSecondaryIndex {
+  readonly Backfilling?: boolean;
+  readonly IndexArn?: string;
+  readonly IndexName?: string;
+  readonly IndexSizeBytes?: number;
+  readonly IndexStatus?: string;
+  readonly ItemCount?: number;
+  readonly KeySchema?: [];
+  readonly Projection?: AwsDynamoDbTableProjection;
+  readonly ProvisionedThroughput?: AwsDynamoDbTableProvisionedThroughput;
 }
 
-interface AwsDynamoDbTableKeySchema {
-  readonly AttributeName: string;
-  readonly KeyType: string;
+export interface AwsDynamoDbTableKeySchema {
+  readonly AttributeName?: string;
+  readonly KeyType?: string;
 }
 
-interface AwsDynamoDbTableLocalSecondaryIndex {
-  readonly IndexArn: string;
-  readonly IndexName: string;
-  readonly KeySchema: [];
-  readonly Projection: AwsDynamoDbTableProjection;
+export interface AwsDynamoDbTableLocalSecondaryIndex {
+  readonly IndexArn?: string;
+  readonly IndexName?: string;
+  readonly KeySchema?: [];
+  readonly Projection?: AwsDynamoDbTableProjection;
 }
 
-interface AwsDynamoDbTableProjection {
-  readonly NonKeyAttributes: [];
-  readonly ProjectionType: string;
-}
-
-interface AwsDynamoDbTableProvisionedThroughput {
-  readonly LastDecreaseDateTime: string;
-  readonly LastIncreaseDateTime: string;
-  readonly NumberOfDecreasesToday: number;
-  readonly ReadCapacityUnits: number;
-  readonly WriteCapacityUnits: number;
-}
-
-interface AwsDynamoDbTableProvisionedThroughputOverride {
-  readonly ReadCapacityUnits: number;
-}
+export interface AwsDynamoDbTableProjection {
+  readonly NonKeyAttributes?: [];
+  readonly ProjectionType?: string;
+}
+
+export interface AwsDynamoDbTableProvisionedThroughput {
+  readonly LastDecreaseDateTime?: string;
+  readonly LastIncreaseDateTime?: string;
+  readonly NumberOfDecreasesToday?: number;
+  readonly ReadCapacityUnits?: number;
+  readonly WriteCapacityUnits?: number;
+}
+
+export interface AwsDynamoDbTableProvisionedThroughputOverride {
+  readonly ReadCapacityUnits?: number;
+}
 
-interface AwsDynamoDbTableReplica {
-  readonly GlobalSecondaryIndexes: [];
-  readonly KmsMasterKeyId: string;
-  readonly ProvisionedThroughputOverride: AwsDynamoDbTableProvisionedThroughputOverride;
-  readonly RegionName: string;
-  readonly ReplicaStatus: string;
-  readonly ReplicaStatusDescription: string;
-}
-
-interface AwsDynamoDbTableReplicaGlobalSecondaryIndex {
-  readonly IndexName: string;
-  readonly ProvisionedThroughputOverride: AwsDynamoDbTableProvisionedThroughputOverride;
-}
-
-interface AwsDynamoDbTableRestoreSummary {
-  readonly SourceBackupArn: string;
-  readonly SourceTableArn: string;
-  readonly RestoreDateTime: string;
-  readonly RestoreInProgress: boolean;
+export interface AwsDynamoDbTableReplica {
+  readonly GlobalSecondaryIndexes?: [];
+  readonly KmsMasterKeyId?: string;
+  readonly ProvisionedThroughputOverride?: AwsDynamoDbTableProvisionedThroughputOverride;
+  readonly RegionName?: string;
+  readonly ReplicaStatus?: string;
+  readonly ReplicaStatusDescription?: string;
+}
+
+export interface AwsDynamoDbTableReplicaGlobalSecondaryIndex {
+  readonly IndexName?: string;
+  readonly ProvisionedThroughputOverride?: AwsDynamoDbTableProvisionedThroughputOverride;
+}
+
+export interface AwsDynamoDbTableRestoreSummary {
+  readonly SourceBackupArn?: string;
+  readonly SourceTableArn?: string;
+  readonly RestoreDateTime?: string;
+  readonly RestoreInProgress?: boolean;
 }
 
-interface AwsDynamoDbTableSseDescription {
-  readonly InaccessibleEncryptionDateTime: string;
-  readonly Status: string;
-  readonly SseType: string;
-  readonly KmsMasterKeyArn: string;
+export interface AwsDynamoDbTableSseDescription {
+  readonly InaccessibleEncryptionDateTime?: string;
+  readonly Status?: string;
+  readonly SseType?: string;
+  readonly KmsMasterKeyArn?: string;
 }
 
-interface AwsDynamoDbTableStreamSpecification {
-  readonly StreamEnabled: boolean;
-  readonly StreamViewType: string;
+export interface AwsDynamoDbTableStreamSpecification {
+  readonly StreamEnabled?: boolean;
+  readonly StreamViewType?: string;
 }
 
-interface AwsEc2EipDetails {
-  readonly InstanceId: string;
-  readonly PublicIp: string;
-  readonly AllocationId: string;
-  readonly AssociationId: string;
-  readonly Domain: string;
-  readonly PublicIpv4Pool: string;
-  readonly NetworkBorderGroup: string;
-  readonly NetworkInterfaceId: string;
-  readonly NetworkInterfaceOwnerId: string;
-  readonly PrivateIpAddress: string;
+export interface AwsEc2EipDetails {
+  readonly InstanceId?: string;
+  readonly PublicIp?: string;
+  readonly AllocationId?: string;
+  readonly AssociationId?: string;
+  readonly Domain?: string;
+  readonly PublicIpv4Pool?: string;
+  readonly NetworkBorderGroup?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly NetworkInterfaceOwnerId?: string;
+  readonly PrivateIpAddress?: string;
 }
 
-interface AwsEc2InstanceDetails {
-  readonly Type: string;
-  readonly ImageId: string;
-  readonly IpV4Addresses: [];
-  readonly IpV6Addresses: [];
-  readonly KeyName: string;
-  readonly IamInstanceProfileArn: string;
-  readonly VpcId: string;
-  readonly SubnetId: string;
-  readonly LaunchedAt: string;
-  readonly NetworkInterfaces: [];
+export interface AwsEc2InstanceDetails {
+  readonly Type?: string;
+  readonly ImageId?: string;
+  readonly IpV4Addresses?: [];
+  readonly IpV6Addresses?: [];
+  readonly KeyName?: string;
+  readonly IamInstanceProfileArn?: string;
+  readonly VpcId?: string;
+  readonly SubnetId?: string;
+  readonly LaunchedAt?: string;
+  readonly NetworkInterfaces?: [];
 }
 
-interface AwsEc2InstanceNetworkInterfacesDetails {
-  readonly NetworkInterfaceId: string;
+export interface AwsEc2InstanceNetworkInterfacesDetails {
+  readonly NetworkInterfaceId?: string;
 }
 
-interface AwsEc2NetworkAclAssociation {
-  readonly NetworkAclAssociationId: string;
-  readonly NetworkAclId: string;
-  readonly SubnetId: string;
+export interface AwsEc2NetworkAclAssociation {
+  readonly NetworkAclAssociationId?: string;
+  readonly NetworkAclId?: string;
+  readonly SubnetId?: string;
 }
 
-interface AwsEc2NetworkAclDetails {
-  readonly IsDefault: boolean;
-  readonly NetworkAclId: string;
-  readonly OwnerId: string;
-  readonly VpcId: string;
-  readonly Associations: [];
-  readonly Entries: [];
+export interface AwsEc2NetworkAclDetails {
+  readonly IsDefault?: boolean;
+  readonly NetworkAclId?: string;
+  readonly OwnerId?: string;
+  readonly VpcId?: string;
+  readonly Associations?: [];
+  readonly Entries?: [];
 }
 
-interface AwsEc2NetworkAclEntry {
-  readonly CidrBlock: string;
-  readonly Egress: boolean;
-  readonly IcmpTypeCode: IcmpTypeCode;
-  readonly Ipv6CidrBlock: string;
-  readonly PortRange: PortRangeFromTo;
-  readonly Protocol: string;
-  readonly RuleAction: string;
-  readonly RuleNumber: number;
+export interface AwsEc2NetworkAclEntry {
+  readonly CidrBlock?: string;
+  readonly Egress?: boolean;
+  readonly IcmpTypeCode?: IcmpTypeCode;
+  readonly Ipv6CidrBlock?: string;
+  readonly PortRange?: PortRangeFromTo;
+  readonly Protocol?: string;
+  readonly RuleAction?: string;
+  readonly RuleNumber?: number;
 }
 
-interface AwsEc2NetworkInterfaceAttachment {
-  readonly AttachTime: string;
-  readonly AttachmentId: string;
-  readonly DeleteOnTermination: boolean;
-  readonly DeviceIndex: number;
-  readonly InstanceId: string;
-  readonly InstanceOwnerId: string;
-  readonly Status: string;
+export interface AwsEc2NetworkInterfaceAttachment {
+  readonly AttachTime?: string;
+  readonly AttachmentId?: string;
+  readonly DeleteOnTermination?: boolean;
+  readonly DeviceIndex?: number;
+  readonly InstanceId?: string;
+  readonly InstanceOwnerId?: string;
+  readonly Status?: string;
 }
 
-interface AwsEc2NetworkInterfaceDetails {
-  readonly Attachment: AwsEc2NetworkInterfaceAttachment;
-  readonly NetworkInterfaceId: string;
-  readonly SecurityGroups: [];
-  readonly SourceDestCheck: boolean;
-  readonly IpV6Addresses: [];
-  readonly PrivateIpAddresses: [];
-  readonly PublicDnsName: string;
-  readonly PublicIp: string;
+export interface AwsEc2NetworkInterfaceDetails {
+  readonly Attachment?: AwsEc2NetworkInterfaceAttachment;
+  readonly NetworkInterfaceId?: string;
+  readonly SecurityGroups?: [];
+  readonly SourceDestCheck?: boolean;
+  readonly IpV6Addresses?: [];
+  readonly PrivateIpAddresses?: [];
+  readonly PublicDnsName?: string;
+  readonly PublicIp?: string;
 }
 
-interface AwsEc2NetworkInterfaceIpV6AddressDetail {
-  readonly IpV6Address: string;
+export interface AwsEc2NetworkInterfaceIpV6AddressDetail {
+  readonly IpV6Address?: string;
 }
-
-interface AwsEc2NetworkInterfacePrivateIpAddressDetail {
-  readonly PrivateIpAddress: string;
-  readonly PrivateDnsName: string;
-}
+
+export interface AwsEc2NetworkInterfacePrivateIpAddressDetail {
+  readonly PrivateIpAddress?: string;
+  readonly PrivateDnsName?: string;
+}
 
-interface AwsEc2NetworkInterfaceSecurityGroup {
-  readonly GroupName: string;
-  readonly GroupId: string;
+export interface AwsEc2NetworkInterfaceSecurityGroup {
+  readonly GroupName?: string;
+  readonly GroupId?: string;
 }
 
-interface AwsEc2SecurityGroupDetails {
-  readonly GroupName: string;
-  readonly GroupId: string;
-  readonly OwnerId: string;
-  readonly VpcId: string;
-  readonly IpPermissions: [];
-  readonly IpPermissionsEgress: [];
-}
-
-interface AwsEc2SecurityGroupIpPermission {
-  readonly IpProtocol: string;
-  readonly FromPort: number;
-  readonly ToPort: number;
-  readonly UserIdGroupPairs: [];
-  readonly IpRanges: [];
-  readonly Ipv6Ranges: [];
-  readonly PrefixListIds: [];
+export interface AwsEc2SecurityGroupDetails {
+  readonly GroupName?: string;
+  readonly GroupId?: string;
+  readonly OwnerId?: string;
+  readonly VpcId?: string;
+  readonly IpPermissions?: [];
+  readonly IpPermissionsEgress?: [];
+}
+
+export interface AwsEc2SecurityGroupIpPermission {
+  readonly IpProtocol?: string;
+  readonly FromPort?: number;
+  readonly ToPort?: number;
+  readonly UserIdGroupPairs?: [];
+  readonly IpRanges?: [];
+  readonly Ipv6Ranges?: [];
+  readonly PrefixListIds?: [];
 }
 
-interface AwsEc2SecurityGroupIpRange {
-  readonly CidrIp: string;
-}
-
-interface AwsEc2SecurityGroupIpv6Range {
-  readonly CidrIpv6: string;
-}
-
-interface AwsEc2SecurityGroupPrefixListId {
-  readonly PrefixListId: string;
-}
-
-interface AwsEc2SecurityGroupUserIdGroupPair {
-  readonly GroupId: string;
-  readonly GroupName: string;
-  readonly PeeringStatus: string;
-  readonly UserId: string;
-  readonly VpcId: string;
-  readonly VpcPeeringConnectionId: string;
-}
-
-interface AwsEc2SubnetDetails {
-  readonly AssignIpv6AddressOnCreation: boolean;
-  readonly AvailabilityZone: string;
-  readonly AvailabilityZoneId: string;
-  readonly AvailableIpAddressCount: number;
-  readonly CidrBlock: string;
-  readonly DefaultForAz: boolean;
-  readonly MapPublicIpOnLaunch: boolean;
-  readonly OwnerId: string;
-  readonly State: string;
-  readonly SubnetArn: string;
-  readonly SubnetId: string;
-  readonly VpcId: string;
-  readonly Ipv6CidrBlockAssociationSet: [];
-}
-
-interface AwsEc2VolumeAttachment {
-  readonly AttachTime: string;
-  readonly DeleteOnTermination: boolean;
-  readonly InstanceId: string;
-  readonly Status: string;
-}
-
-interface AwsEc2VolumeDetails {
-  readonly CreateTime: string;
-  readonly Encrypted: boolean;
-  readonly Size: number;
-  readonly SnapshotId: string;
-  readonly Status: string;
-  readonly KmsKeyId: string;
-  readonly Attachments: [];
-}
-
-interface AwsEc2VpcDetails {
-  readonly CidrBlockAssociationSet: [];
-  readonly Ipv6CidrBlockAssociationSet: [];
-  readonly DhcpOptionsId: string;
-  readonly State: string;
-}
-
-interface AwsEc2VpcEndpointServiceDetails {
-  readonly AcceptanceRequired: boolean;
-  readonly AvailabilityZones: [];
-  readonly BaseEndpointDnsNames: [];
-  readonly ManagesVpcEndpoints: boolean;
-  readonly GatewayLoadBalancerArns: [];
-  readonly NetworkLoadBalancerArns: [];
-  readonly PrivateDnsName: string;
-  readonly ServiceId: string;
-  readonly ServiceName: string;
-  readonly ServiceState: string;
-  readonly ServiceType: [];
+export interface AwsEc2SecurityGroupIpRange {
+  readonly CidrIp?: string;
+}
+
+export interface AwsEc2SecurityGroupIpv6Range {
+  readonly CidrIpv6?: string;
+}
+
+export interface AwsEc2SecurityGroupPrefixListId {
+  readonly PrefixListId?: string;
+}
+
+export interface AwsEc2SecurityGroupUserIdGroupPair {
+  readonly GroupId?: string;
+  readonly GroupName?: string;
+  readonly PeeringStatus?: string;
+  readonly UserId?: string;
+  readonly VpcId?: string;
+  readonly VpcPeeringConnectionId?: string;
+}
+
+export interface AwsEc2SubnetDetails {
+  readonly AssignIpv6AddressOnCreation?: boolean;
+  readonly AvailabilityZone?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly AvailableIpAddressCount?: number;
+  readonly CidrBlock?: string;
+  readonly DefaultForAz?: boolean;
+  readonly MapPublicIpOnLaunch?: boolean;
+  readonly OwnerId?: string;
+  readonly State?: string;
+  readonly SubnetArn?: string;
+  readonly SubnetId?: string;
+  readonly VpcId?: string;
+  readonly Ipv6CidrBlockAssociationSet?: [];
+}
+
+export interface AwsEc2VolumeAttachment {
+  readonly AttachTime?: string;
+  readonly DeleteOnTermination?: boolean;
+  readonly InstanceId?: string;
+  readonly Status?: string;
+}
+
+export interface AwsEc2VolumeDetails {
+  readonly CreateTime?: string;
+  readonly Encrypted?: boolean;
+  readonly Size?: number;
+  readonly SnapshotId?: string;
+  readonly Status?: string;
+  readonly KmsKeyId?: string;
+  readonly Attachments?: [];
+}
+
+export interface AwsEc2VpcDetails {
+  readonly CidrBlockAssociationSet?: [];
+  readonly Ipv6CidrBlockAssociationSet?: [];
+  readonly DhcpOptionsId?: string;
+  readonly State?: string;
+}
+
+export interface AwsEc2VpcEndpointServiceDetails {
+  readonly AcceptanceRequired?: boolean;
+  readonly AvailabilityZones?: [];
+  readonly BaseEndpointDnsNames?: [];
+  readonly ManagesVpcEndpoints?: boolean;
+  readonly GatewayLoadBalancerArns?: [];
+  readonly NetworkLoadBalancerArns?: [];
+  readonly PrivateDnsName?: string;
+  readonly ServiceId?: string;
+  readonly ServiceName?: string;
+  readonly ServiceState?: string;
+  readonly ServiceType?: [];
 }
 
-interface AwsEc2VpcEndpointServiceServiceTypeDetails {
-  readonly ServiceType: string;
+export interface AwsEc2VpcEndpointServiceServiceTypeDetails {
+  readonly ServiceType?: string;
 }
 
-interface AwsEc2VpnConnectionDetails {
-  readonly VpnConnectionId: string;
-  readonly State: string;
-  readonly CustomerGatewayId: string;
-  readonly CustomerGatewayConfiguration: string;
-  readonly Type: string;
-  readonly VpnGatewayId: string;
-  readonly Category: string;
-  readonly VgwTelemetry: [];
-  readonly Options: AwsEc2VpnConnectionOptionsDetails;
-  readonly Routes: [];
-  readonly TransitGatewayId: string;
+export interface AwsEc2VpnConnectionDetails {
+  readonly VpnConnectionId?: string;
+  readonly State?: string;
+  readonly CustomerGatewayId?: string;
+  readonly CustomerGatewayConfiguration?: string;
+  readonly Type?: string;
+  readonly VpnGatewayId?: string;
+  readonly Category?: string;
+  readonly VgwTelemetry?: [];
+  readonly Options?: AwsEc2VpnConnectionOptionsDetails;
+  readonly Routes?: [];
+  readonly TransitGatewayId?: string;
 }
 
-interface AwsEc2VpnConnectionOptionsDetails {
-  readonly StaticRoutesOnly: boolean;
-  readonly TunnelOptions: [];
+export interface AwsEc2VpnConnectionOptionsDetails {
+  readonly StaticRoutesOnly?: boolean;
+  readonly TunnelOptions?: [];
 }
 
-interface AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
-  readonly DpdTimeoutSeconds: number;
-  readonly IkeVersions: [];
-  readonly OutsideIpAddress: string;
-  readonly Phase1DhGroupNumbers: [];
-  readonly Phase1EncryptionAlgorithms: [];
-  readonly Phase1IntegrityAlgorithms: [];
-  readonly Phase1LifetimeSeconds: number;
-  readonly Phase2DhGroupNumbers: [];
-  readonly Phase2EncryptionAlgorithms: [];
-  readonly Phase2IntegrityAlgorithms: [];
-  readonly Phase2LifetimeSeconds: number;
-  readonly PreSharedKey: string;
-  readonly RekeyFuzzPercentage: number;
-  readonly RekeyMarginTimeSeconds: number;
-  readonly ReplayWindowSize: number;
-  readonly TunnelInsideCidr: string;
+export interface AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
+  readonly DpdTimeoutSeconds?: number;
+  readonly IkeVersions?: [];
+  readonly OutsideIpAddress?: string;
+  readonly Phase1DhGroupNumbers?: [];
+  readonly Phase1EncryptionAlgorithms?: [];
+  readonly Phase1IntegrityAlgorithms?: [];
+  readonly Phase1LifetimeSeconds?: number;
+  readonly Phase2DhGroupNumbers?: [];
+  readonly Phase2EncryptionAlgorithms?: [];
+  readonly Phase2IntegrityAlgorithms?: [];
+  readonly Phase2LifetimeSeconds?: number;
+  readonly PreSharedKey?: string;
+  readonly RekeyFuzzPercentage?: number;
+  readonly RekeyMarginTimeSeconds?: number;
+  readonly ReplayWindowSize?: number;
+  readonly TunnelInsideCidr?: string;
 }
 
-interface AwsEc2VpnConnectionRoutesDetails {
-  readonly DestinationCidrBlock: string;
-  readonly State: string;
+export interface AwsEc2VpnConnectionRoutesDetails {
+  readonly DestinationCidrBlock?: string;
+  readonly State?: string;
 }
 
-interface AwsEc2VpnConnectionVgwTelemetryDetails {
-  readonly AcceptedRouteCount: number;
-  readonly CertificateArn: string;
-  readonly LastStatusChange: string;
-  readonly OutsideIpAddress: string;
-  readonly Status: string;
-  readonly StatusMessage: string;
+export interface AwsEc2VpnConnectionVgwTelemetryDetails {
+  readonly AcceptedRouteCount?: number;
+  readonly CertificateArn?: string;
+  readonly LastStatusChange?: string;
+  readonly OutsideIpAddress?: string;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
 }
 
-interface AwsEcrContainerImageDetails {
-  readonly RegistryId: string;
-  readonly RepositoryName: string;
-  readonly Architecture: string;
-  readonly ImageDigest: string;
-  readonly ImageTags: [];
-  readonly ImagePublishedAt: string;
-}
+export interface AwsEcrContainerImageDetails {
+  readonly RegistryId?: string;
+  readonly RepositoryName?: string;
+  readonly Architecture?: string;
+  readonly ImageDigest?: string;
+  readonly ImageTags?: [];
+  readonly ImagePublishedAt?: string;
+}
 
-interface AwsEcrRepositoryDetails {
-  readonly Arn: string;
-  readonly ImageScanningConfiguration: AwsEcrRepositoryImageScanningConfigurationDetails;
-  readonly ImageTagMutability: string;
-  readonly LifecyclePolicy: AwsEcrRepositoryLifecyclePolicyDetails;
-  readonly RepositoryName: string;
-  readonly RepositoryPolicyText: string;
+export interface AwsEcrRepositoryDetails {
+  readonly Arn?: string;
+  readonly ImageScanningConfiguration?: AwsEcrRepositoryImageScanningConfigurationDetails;
+  readonly ImageTagMutability?: string;
+  readonly LifecyclePolicy?: AwsEcrRepositoryLifecyclePolicyDetails;
+  readonly RepositoryName?: string;
+  readonly RepositoryPolicyText?: string;
 }
 
-interface AwsEcrRepositoryImageScanningConfigurationDetails {
-  readonly ScanOnPush: boolean;
+export interface AwsEcrRepositoryImageScanningConfigurationDetails {
+  readonly ScanOnPush?: boolean;
 }
 
-interface AwsEcrRepositoryLifecyclePolicyDetails {
-  readonly LifecyclePolicyText: string;
-  readonly RegistryId: string;
+export interface AwsEcrRepositoryLifecyclePolicyDetails {
+  readonly LifecyclePolicyText?: string;
+  readonly RegistryId?: string;
 }
 
-interface AwsEcsClusterClusterSettingsDetails {
-  readonly Name: string;
-  readonly Value: string;
+export interface AwsEcsClusterClusterSettingsDetails {
+  readonly Name?: string;
+  readonly Value?: string;
 }
 
-interface AwsEcsClusterConfigurationDetails {
-  readonly ExecuteCommandConfiguration: AwsEcsClusterConfigurationExecuteCommandConfigurationDetails;
+export interface AwsEcsClusterConfigurationDetails {
+  readonly ExecuteCommandConfiguration?: AwsEcsClusterConfigurationExecuteCommandConfigurationDetails;
 }
 
-interface AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
-  readonly KmsKeyId: string;
-  readonly LogConfiguration: AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails;
-  readonly Logging: string;
+export interface AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
+  readonly KmsKeyId?: string;
+  readonly LogConfiguration?: AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails;
+  readonly Logging?: string;
 }
 
-interface AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
-  readonly CloudWatchEncryptionEnabled: boolean;
-  readonly CloudWatchLogGroupName: string;
-  readonly S3BucketName: string;
-  readonly S3EncryptionEnabled: boolean;
-  readonly S3KeyPrefix: string;
+export interface AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
+  readonly CloudWatchEncryptionEnabled?: boolean;
+  readonly CloudWatchLogGroupName?: string;
+  readonly S3BucketName?: string;
+  readonly S3EncryptionEnabled?: boolean;
+  readonly S3KeyPrefix?: string;
 }
 
-interface AwsEcsClusterDefaultCapacityProviderStrategyDetails {
-  readonly Base: number;
-  readonly CapacityProvider: string;
-  readonly Weight: number;
+export interface AwsEcsClusterDefaultCapacityProviderStrategyDetails {
+  readonly Base?: number;
+  readonly CapacityProvider?: string;
+  readonly Weight?: number;
 }
 
-interface AwsEcsClusterDetails {
-  readonly CapacityProviders: [];
-  readonly ClusterSettings: [];
-  readonly Configuration: AwsEcsClusterConfigurationDetails;
-  readonly DefaultCapacityProviderStrategy: [];
+export interface AwsEcsClusterDetails {
+  readonly CapacityProviders?: [];
+  readonly ClusterSettings?: [];
+  readonly Configuration?: AwsEcsClusterConfigurationDetails;
+  readonly DefaultCapacityProviderStrategy?: [];
 }
 
-interface AwsEcsServiceCapacityProviderStrategyDetails {
-  readonly Base: number;
-  readonly CapacityProvider: string;
-  readonly Weight: number;
+export interface AwsEcsServiceCapacityProviderStrategyDetails {
+  readonly Base?: number;
+  readonly CapacityProvider?: string;
+  readonly Weight?: number;
 }
 
-interface AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
-  readonly Enable: boolean;
-  readonly Rollback: boolean;
-}
-
-interface AwsEcsServiceDeploymentConfigurationDetails {
-  readonly DeploymentCircuitBreaker: AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails;
-  readonly MaximumPercent: number;
-  readonly MinimumHealthyPercent: number;
-}
-
-interface AwsEcsServiceDeploymentControllerDetails {
-  readonly Type: string;
-}
-
-interface AwsEcsServiceDetails {
-  readonly CapacityProviderStrategy: [];
-  readonly Cluster: string;
-  readonly DeploymentConfiguration: AwsEcsServiceDeploymentConfigurationDetails;
-  readonly DeploymentController: AwsEcsServiceDeploymentControllerDetails;
-  readonly DesiredCount: number;
-  readonly EnableEcsManagedTags: boolean;
-  readonly EnableExecuteCommand: boolean;
-  readonly HealthCheckGracePeriodSeconds: number;
-  readonly LaunchType: string;
-  readonly LoadBalancers: [];
-  readonly Name: string;
-  readonly NetworkConfiguration: AwsEcsServiceNetworkConfigurationDetails;
-  readonly PlacementConstraints: [];
-  readonly PlacementStrategies: [];
-  readonly PlatformVersion: string;
-  readonly PropagateTags: string;
-  readonly Role: string;
-  readonly SchedulingStrategy: string;
-  readonly ServiceArn: string;
-  readonly ServiceName: string;
-  readonly ServiceRegistries: [];
-  readonly TaskDefinition: string;
-}
-
-interface AwsEcsServiceLoadBalancersDetails {
-  readonly ContainerName: string;
-  readonly ContainerPort: number;
-  readonly LoadBalancerName: string;
-  readonly TargetGroupArn: string;
-}
-
-interface AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
-  readonly AssignPublicIp: string;
-  readonly SecurityGroups: [];
-  readonly Subnets: [];
-}
-
-interface AwsEcsServiceNetworkConfigurationDetails {
-  readonly AwsVpcConfiguration: AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails;
+export interface AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
+  readonly Enable?: boolean;
+  readonly Rollback?: boolean;
+}
+
+export interface AwsEcsServiceDeploymentConfigurationDetails {
+  readonly DeploymentCircuitBreaker?: AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails;
+  readonly MaximumPercent?: number;
+  readonly MinimumHealthyPercent?: number;
+}
+
+export interface AwsEcsServiceDeploymentControllerDetails {
+  readonly Type?: string;
+}
+
+export interface AwsEcsServiceDetails {
+  readonly CapacityProviderStrategy?: [];
+  readonly Cluster?: string;
+  readonly DeploymentConfiguration?: AwsEcsServiceDeploymentConfigurationDetails;
+  readonly DeploymentController?: AwsEcsServiceDeploymentControllerDetails;
+  readonly DesiredCount?: number;
+  readonly EnableEcsManagedTags?: boolean;
+  readonly EnableExecuteCommand?: boolean;
+  readonly HealthCheckGracePeriodSeconds?: number;
+  readonly LaunchType?: string;
+  readonly LoadBalancers?: [];
+  readonly Name?: string;
+  readonly NetworkConfiguration?: AwsEcsServiceNetworkConfigurationDetails;
+  readonly PlacementConstraints?: [];
+  readonly PlacementStrategies?: [];
+  readonly PlatformVersion?: string;
+  readonly PropagateTags?: string;
+  readonly Role?: string;
+  readonly SchedulingStrategy?: string;
+  readonly ServiceArn?: string;
+  readonly ServiceName?: string;
+  readonly ServiceRegistries?: [];
+  readonly TaskDefinition?: string;
+}
+
+export interface AwsEcsServiceLoadBalancersDetails {
+  readonly ContainerName?: string;
+  readonly ContainerPort?: number;
+  readonly LoadBalancerName?: string;
+  readonly TargetGroupArn?: string;
+}
+
+export interface AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
+  readonly AssignPublicIp?: string;
+  readonly SecurityGroups?: [];
+  readonly Subnets?: [];
+}
+
+export interface AwsEcsServiceNetworkConfigurationDetails {
+  readonly AwsVpcConfiguration?: AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails;
 }
 
-interface AwsEcsServicePlacementConstraintsDetails {
-  readonly Expression: string;
-  readonly Type: string;
-}
-
-interface AwsEcsServicePlacementStrategiesDetails {
-  readonly Field: string;
-  readonly Type: string;
+export interface AwsEcsServicePlacementConstraintsDetails {
+  readonly Expression?: string;
+  readonly Type?: string;
+}
+
+export interface AwsEcsServicePlacementStrategiesDetails {
+  readonly Field?: string;
+  readonly Type?: string;
 }
-
-interface AwsEcsServiceServiceRegistriesDetails {
-  readonly ContainerName: string;
-  readonly ContainerPort: number;
-  readonly Port: number;
-  readonly RegistryArn: string;
+
+export interface AwsEcsServiceServiceRegistriesDetails {
+  readonly ContainerName?: string;
+  readonly ContainerPort?: number;
+  readonly Port?: number;
+  readonly RegistryArn?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
-  readonly Condition: string;
-  readonly ContainerName: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
+  readonly Condition?: string;
+  readonly ContainerName?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsDetails {
-  readonly Command: [];
-  readonly Cpu: number;
-  readonly DependsOn: [];
-  readonly DisableNetworking: boolean;
-  readonly DnsSearchDomains: [];
-  readonly DnsServers: [];
-  readonly DockerLabels: {[key: string]: any};
-  readonly DockerSecurityOptions: [];
-  readonly EntryPoint: [];
-  readonly Environment: [];
-  readonly EnvironmentFiles: [];
-  readonly Essential: boolean;
-  readonly ExtraHosts: [];
-  readonly FirelensConfiguration: AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails;
-  readonly HealthCheck: AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails;
-  readonly Hostname: string;
-  readonly Image: string;
-  readonly Interactive: boolean;
-  readonly Links: [];
-  readonly LinuxParameters: AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails;
-  readonly LogConfiguration: AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails;
-  readonly Memory: number;
-  readonly MemoryReservation: number;
-  readonly MountPoints: [];
-  readonly Name: string;
-  readonly PortMappings: [];
-  readonly Privileged: boolean;
-  readonly PseudoTerminal: boolean;
-  readonly ReadonlyRootFilesystem: boolean;
-  readonly RepositoryCredentials: AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails;
-  readonly ResourceRequirements: [];
-  readonly Secrets: [];
-  readonly StartTimeout: number;
-  readonly StopTimeout: number;
-  readonly SystemControls: [];
-  readonly Ulimits: [];
-  readonly User: string;
-  readonly VolumesFrom: [];
-  readonly WorkingDirectory: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsDetails {
+  readonly Command?: [];
+  readonly Cpu?: number;
+  readonly DependsOn?: [];
+  readonly DisableNetworking?: boolean;
+  readonly DnsSearchDomains?: [];
+  readonly DnsServers?: [];
+  readonly DockerLabels?: {[key: string]: any};
+  readonly DockerSecurityOptions?: [];
+  readonly EntryPoint?: [];
+  readonly Environment?: [];
+  readonly EnvironmentFiles?: [];
+  readonly Essential?: boolean;
+  readonly ExtraHosts?: [];
+  readonly FirelensConfiguration?: AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails;
+  readonly HealthCheck?: AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails;
+  readonly Hostname?: string;
+  readonly Image?: string;
+  readonly Interactive?: boolean;
+  readonly Links?: [];
+  readonly LinuxParameters?: AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails;
+  readonly LogConfiguration?: AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails;
+  readonly Memory?: number;
+  readonly MemoryReservation?: number;
+  readonly MountPoints?: [];
+  readonly Name?: string;
+  readonly PortMappings?: [];
+  readonly Privileged?: boolean;
+  readonly PseudoTerminal?: boolean;
+  readonly ReadonlyRootFilesystem?: boolean;
+  readonly RepositoryCredentials?: AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails;
+  readonly ResourceRequirements?: [];
+  readonly Secrets?: [];
+  readonly StartTimeout?: number;
+  readonly StopTimeout?: number;
+  readonly SystemControls?: [];
+  readonly Ulimits?: [];
+  readonly User?: string;
+  readonly VolumesFrom?: [];
+  readonly WorkingDirectory?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
-  readonly Name: string;
-  readonly Value: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
+  readonly Name?: string;
+  readonly Value?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
-  readonly Type: string;
-  readonly Value: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
+  readonly Type?: string;
+  readonly Value?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
-  readonly Hostname: string;
-  readonly IpAddress: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
+  readonly Hostname?: string;
+  readonly IpAddress?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
-  readonly Options: {[key: string]: any};
-  readonly Type: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
+  readonly Options?: {[key: string]: any};
+  readonly Type?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
-  readonly Command: [];
-  readonly Interval: number;
-  readonly Retries: number;
-  readonly StartPeriod: number;
-  readonly Timeout: number;
+export interface AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
+  readonly Command?: [];
+  readonly Interval?: number;
+  readonly Retries?: number;
+  readonly StartPeriod?: number;
+  readonly Timeout?: number;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails {
-  readonly Add: [];
-  readonly Drop: [];
+export interface AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails {
+  readonly Add?: [];
+  readonly Drop?: [];
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
-  readonly Capabilities: AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails;
-  readonly Devices: [];
-  readonly InitProcessEnabled: boolean;
-  readonly MaxSwap: number;
-  readonly SharedMemorySize: number;
-  readonly Swappiness: number;
-  readonly Tmpfs: [];
+export interface AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
+  readonly Capabilities?: AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails;
+  readonly Devices?: [];
+  readonly InitProcessEnabled?: boolean;
+  readonly MaxSwap?: number;
+  readonly SharedMemorySize?: number;
+  readonly Swappiness?: number;
+  readonly Tmpfs?: [];
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
-  readonly ContainerPath: string;
-  readonly HostPath: string;
-  readonly Permissions: [];
+export interface AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
+  readonly ContainerPath?: string;
+  readonly HostPath?: string;
+  readonly Permissions?: [];
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
-  readonly ContainerPath: string;
-  readonly MountOptions: [];
-  readonly Size: number;
+export interface AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
+  readonly ContainerPath?: string;
+  readonly MountOptions?: [];
+  readonly Size?: number;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
-  readonly LogDriver: string;
-  readonly Options: {[key: string]: any};
-  readonly SecretOptions: [];
+export interface AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
+  readonly LogDriver?: string;
+  readonly Options?: {[key: string]: any};
+  readonly SecretOptions?: [];
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
-  readonly Name: string;
-  readonly ValueFrom: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
+  readonly Name?: string;
+  readonly ValueFrom?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
-  readonly ContainerPath: string;
-  readonly ReadOnly: boolean;
-  readonly SourceVolume: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
+  readonly ContainerPath?: string;
+  readonly ReadOnly?: boolean;
+  readonly SourceVolume?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
-  readonly ContainerPort: number;
-  readonly HostPort: number;
-  readonly Protocol: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
+  readonly ContainerPort?: number;
+  readonly HostPort?: number;
+  readonly Protocol?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
-  readonly CredentialsParameter: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
+  readonly CredentialsParameter?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
-  readonly Type: string;
-  readonly Value: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
+  readonly Type?: string;
+  readonly Value?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
-  readonly Name: string;
-  readonly ValueFrom: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
+  readonly Name?: string;
+  readonly ValueFrom?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
-  readonly Namespace: string;
-  readonly Value: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
+  readonly Namespace?: string;
+  readonly Value?: string;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
-  readonly HardLimit: number;
-  readonly Name: string;
-  readonly SoftLimit: number;
+export interface AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
+  readonly HardLimit?: number;
+  readonly Name?: string;
+  readonly SoftLimit?: number;
 }
 
-interface AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
-  readonly ReadOnly: boolean;
-  readonly SourceContainer: string;
+export interface AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
+  readonly ReadOnly?: boolean;
+  readonly SourceContainer?: string;
 }
 
-interface AwsEcsTaskDefinitionDetails {
-  readonly ContainerDefinitions: [];
-  readonly Cpu: string;
-  readonly ExecutionRoleArn: string;
-  readonly Family: string;
-  readonly InferenceAccelerators: [];
-  readonly IpcMode: string;
-  readonly Memory: string;
-  readonly NetworkMode: string;
-  readonly PidMode: string;
-  readonly PlacementConstraints: [];
-  readonly ProxyConfiguration: AwsEcsTaskDefinitionProxyConfigurationDetails;
-  readonly RequiresCompatibilities: [];
-  readonly TaskRoleArn: string;
-  readonly Volumes: [];
+export interface AwsEcsTaskDefinitionDetails {
+  readonly ContainerDefinitions?: [];
+  readonly Cpu?: string;
+  readonly ExecutionRoleArn?: string;
+  readonly Family?: string;
+  readonly InferenceAccelerators?: [];
+  readonly IpcMode?: string;
+  readonly Memory?: string;
+  readonly NetworkMode?: string;
+  readonly PidMode?: string;
+  readonly PlacementConstraints?: [];
+  readonly ProxyConfiguration?: AwsEcsTaskDefinitionProxyConfigurationDetails;
+  readonly RequiresCompatibilities?: [];
+  readonly TaskRoleArn?: string;
+  readonly Volumes?: [];
 }
 
-interface AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
-  readonly DeviceName: string;
-  readonly DeviceType: string;
+export interface AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
+  readonly DeviceName?: string;
+  readonly DeviceType?: string;
 }
 
-interface AwsEcsTaskDefinitionPlacementConstraintsDetails {
-  readonly Expression: string;
-  readonly Type: string;
+export interface AwsEcsTaskDefinitionPlacementConstraintsDetails {
+  readonly Expression?: string;
+  readonly Type?: string;
 }
 
-interface AwsEcsTaskDefinitionProxyConfigurationDetails {
-  readonly ContainerName: string;
-  readonly ProxyConfigurationProperties: [];
-  readonly Type: string;
+export interface AwsEcsTaskDefinitionProxyConfigurationDetails {
+  readonly ContainerName?: string;
+  readonly ProxyConfigurationProperties?: [];
+  readonly Type?: string;
 }
 
-interface AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails {
-  readonly Name: string;
-  readonly Value: string;
+export interface AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails {
+  readonly Name?: string;
+  readonly Value?: string;
 }
 
-interface AwsEcsTaskDefinitionVolumesDetails {
-  readonly DockerVolumeConfiguration: AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails;
-  readonly EfsVolumeConfiguration: AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails;
-  readonly Host: AwsEcsTaskDefinitionVolumesHostDetails;
-  readonly Name: string;
+export interface AwsEcsTaskDefinitionVolumesDetails {
+  readonly DockerVolumeConfiguration?: AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails;
+  readonly EfsVolumeConfiguration?: AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails;
+  readonly Host?: AwsEcsTaskDefinitionVolumesHostDetails;
+  readonly Name?: string;
 }
 
-interface AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
-  readonly Autoprovision: boolean;
-  readonly Driver: string;
-  readonly DriverOpts: {[key: string]: any};
-  readonly Labels: {[key: string]: any};
-  readonly Scope: string;
+export interface AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
+  readonly Autoprovision?: boolean;
+  readonly Driver?: string;
+  readonly DriverOpts?: {[key: string]: any};
+  readonly Labels?: {[key: string]: any};
+  readonly Scope?: string;
 }
 
-interface AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
-  readonly AccessPointId: string;
-  readonly Iam: string;
+export interface AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
+  readonly AccessPointId?: string;
+  readonly Iam?: string;
 }
 
-interface AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
-  readonly AuthorizationConfig: AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails;
-  readonly FilesystemId: string;
-  readonly RootDirectory: string;
-  readonly TransitEncryption: string;
-  readonly TransitEncryptionPort: number;
+export interface AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
+  readonly AuthorizationConfig?: AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails;
+  readonly FilesystemId?: string;
+  readonly RootDirectory?: string;
+  readonly TransitEncryption?: string;
+  readonly TransitEncryptionPort?: number;
 }
 
-interface AwsEcsTaskDefinitionVolumesHostDetails {
-  readonly SourcePath: string;
+export interface AwsEcsTaskDefinitionVolumesHostDetails {
+  readonly SourcePath?: string;
 }
 
-interface AwsEksClusterDetails {
-  readonly Arn: string;
-  readonly CertificateAuthorityData: string;
-  readonly ClusterStatus: string;
-  readonly Endpoint: string;
-  readonly Name: string;
-  readonly ResourcesVpcConfig: AwsEksClusterResourcesVpcConfigDetails;
-  readonly RoleArn: string;
-  readonly Version: string;
-  readonly Logging: AwsEksClusterLoggingDetails;
+export interface AwsEksClusterDetails {
+  readonly Arn?: string;
+  readonly CertificateAuthorityData?: string;
+  readonly ClusterStatus?: string;
+  readonly Endpoint?: string;
+  readonly Name?: string;
+  readonly ResourcesVpcConfig?: AwsEksClusterResourcesVpcConfigDetails;
+  readonly RoleArn?: string;
+  readonly Version?: string;
+  readonly Logging?: AwsEksClusterLoggingDetails;
 }
 
-interface AwsEksClusterLoggingClusterLoggingDetails {
-  readonly Enabled: boolean;
-  readonly Types: [];
+export interface AwsEksClusterLoggingClusterLoggingDetails {
+  readonly Enabled?: boolean;
+  readonly Types?: [];
 }
 
-interface AwsEksClusterLoggingDetails {
-  readonly ClusterLogging: [];
+export interface AwsEksClusterLoggingDetails {
+  readonly ClusterLogging?: [];
 }
 
-interface AwsEksClusterResourcesVpcConfigDetails {
-  readonly SecurityGroupIds: [];
-  readonly SubnetIds: [];
+export interface AwsEksClusterResourcesVpcConfigDetails {
+  readonly SecurityGroupIds?: [];
+  readonly SubnetIds?: [];
 }
 
-interface AwsElasticBeanstalkEnvironmentDetails {
-  readonly ApplicationName: string;
-  readonly Cname: string;
-  readonly DateCreated: string;
-  readonly DateUpdated: string;
-  readonly Description: string;
-  readonly EndpointUrl: string;
-  readonly EnvironmentArn: string;
-  readonly EnvironmentId: string;
-  readonly EnvironmentLinks: [];
-  readonly EnvironmentName: string;
-  readonly OptionSettings: [];
-  readonly PlatformArn: string;
-  readonly SolutionStackName: string;
-  readonly Status: string;
-  readonly Tier: AwsElasticBeanstalkEnvironmentTier;
-  readonly VersionLabel: string;
+export interface AwsElasticBeanstalkEnvironmentDetails {
+  readonly ApplicationName?: string;
+  readonly Cname?: string;
+  readonly DateCreated?: string;
+  readonly DateUpdated?: string;
+  readonly Description?: string;
+  readonly EndpointUrl?: string;
+  readonly EnvironmentArn?: string;
+  readonly EnvironmentId?: string;
+  readonly EnvironmentLinks?: [];
+  readonly EnvironmentName?: string;
+  readonly OptionSettings?: [];
+  readonly PlatformArn?: string;
+  readonly SolutionStackName?: string;
+  readonly Status?: string;
+  readonly Tier?: AwsElasticBeanstalkEnvironmentTier;
+  readonly VersionLabel?: string;
 }
 
-interface AwsElasticBeanstalkEnvironmentEnvironmentLink {
-  readonly EnvironmentName: string;
-  readonly LinkName: string;
+export interface AwsElasticBeanstalkEnvironmentEnvironmentLink {
+  readonly EnvironmentName?: string;
+  readonly LinkName?: string;
 }
 
-interface AwsElasticBeanstalkEnvironmentOptionSetting {
-  readonly Namespace: string;
-  readonly OptionName: string;
-  readonly ResourceName: string;
-  readonly Value: string;
+export interface AwsElasticBeanstalkEnvironmentOptionSetting {
+  readonly Namespace?: string;
+  readonly OptionName?: string;
+  readonly ResourceName?: string;
+  readonly Value?: string;
 }
 
-interface AwsElasticBeanstalkEnvironmentTier {
-  readonly Name: string;
-  readonly Type: string;
-  readonly Version: string;
+export interface AwsElasticBeanstalkEnvironmentTier {
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly Version?: string;
 }
 
-interface AwsElasticsearchDomainDetails {
-  readonly AccessPolicies: string;
-  readonly DomainEndpointOptions: AwsElasticsearchDomainDomainEndpointOptions;
-  readonly DomainId: string;
-  readonly DomainName: string;
-  readonly Endpoint: string;
-  readonly Endpoints: {[key: string]: any};
-  readonly ElasticsearchVersion: string;
-  readonly ElasticsearchClusterConfig: AwsElasticsearchDomainElasticsearchClusterConfigDetails;
-  readonly EncryptionAtRestOptions: AwsElasticsearchDomainEncryptionAtRestOptions;
-  readonly LogPublishingOptions: AwsElasticsearchDomainLogPublishingOptions;
-  readonly NodeToNodeEncryptionOptions: AwsElasticsearchDomainNodeToNodeEncryptionOptions;
-  readonly ServiceSoftwareOptions: AwsElasticsearchDomainServiceSoftwareOptions;
-  readonly VPCOptions: AwsElasticsearchDomainVPCOptions;
+export interface AwsElasticsearchDomainDetails {
+  readonly AccessPolicies?: string;
+  readonly DomainEndpointOptions?: AwsElasticsearchDomainDomainEndpointOptions;
+  readonly DomainId?: string;
+  readonly DomainName?: string;
+  readonly Endpoint?: string;
+  readonly Endpoints?: {[key: string]: any};
+  readonly ElasticsearchVersion?: string;
+  readonly ElasticsearchClusterConfig?: AwsElasticsearchDomainElasticsearchClusterConfigDetails;
+  readonly EncryptionAtRestOptions?: AwsElasticsearchDomainEncryptionAtRestOptions;
+  readonly LogPublishingOptions?: AwsElasticsearchDomainLogPublishingOptions;
+  readonly NodeToNodeEncryptionOptions?: AwsElasticsearchDomainNodeToNodeEncryptionOptions;
+  readonly ServiceSoftwareOptions?: AwsElasticsearchDomainServiceSoftwareOptions;
+  readonly VPCOptions?: AwsElasticsearchDomainVPCOptions;
 }
 
-interface AwsElasticsearchDomainDomainEndpointOptions {
-  readonly EnforceHTTPS: boolean;
-  readonly TLSSecurityPolicy: string;
+export interface AwsElasticsearchDomainDomainEndpointOptions {
+  readonly EnforceHTTPS?: boolean;
+  readonly TLSSecurityPolicy?: string;
 }
 
-interface AwsElasticsearchDomainElasticsearchClusterConfigDetails {
-  readonly DedicatedMasterCount: number;
-  readonly DedicatedMasterEnabled: boolean;
-  readonly DedicatedMasterType: string;
-  readonly InstanceCount: number;
-  readonly InstanceType: string;
-  readonly ZoneAwarenessConfig: AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails;
-  readonly ZoneAwarenessEnabled: boolean;
+export interface AwsElasticsearchDomainElasticsearchClusterConfigDetails {
+  readonly DedicatedMasterCount?: number;
+  readonly DedicatedMasterEnabled?: boolean;
+  readonly DedicatedMasterType?: string;
+  readonly InstanceCount?: number;
+  readonly InstanceType?: string;
+  readonly ZoneAwarenessConfig?: AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails;
+  readonly ZoneAwarenessEnabled?: boolean;
 }
 
-interface AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
-  readonly AvailabilityZoneCount: number;
+export interface AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
+  readonly AvailabilityZoneCount?: number;
 }
 
-interface AwsElasticsearchDomainEncryptionAtRestOptions {
-  readonly Enabled: boolean;
-  readonly KmsKeyId: string;
+export interface AwsElasticsearchDomainEncryptionAtRestOptions {
+  readonly Enabled?: boolean;
+  readonly KmsKeyId?: string;
 }
 
-interface AwsElasticsearchDomainLogPublishingOptions {
-  readonly IndexSlowLogs: AwsElasticsearchDomainLogPublishingOptionsLogConfig;
-  readonly SearchSlowLogs: AwsElasticsearchDomainLogPublishingOptionsLogConfig;
-  readonly AuditLogs: AwsElasticsearchDomainLogPublishingOptionsLogConfig;
+export interface AwsElasticsearchDomainLogPublishingOptions {
+  readonly IndexSlowLogs?: AwsElasticsearchDomainLogPublishingOptionsLogConfig;
+  readonly SearchSlowLogs?: AwsElasticsearchDomainLogPublishingOptionsLogConfig;
+  readonly AuditLogs?: AwsElasticsearchDomainLogPublishingOptionsLogConfig;
 }
 
-interface AwsElasticsearchDomainLogPublishingOptionsLogConfig {
-  readonly CloudWatchLogsLogGroupArn: string;
-  readonly Enabled: boolean;
+export interface AwsElasticsearchDomainLogPublishingOptionsLogConfig {
+  readonly CloudWatchLogsLogGroupArn?: string;
+  readonly Enabled?: boolean;
 }
 
-interface AwsElasticsearchDomainNodeToNodeEncryptionOptions {
-  readonly Enabled: boolean;
+export interface AwsElasticsearchDomainNodeToNodeEncryptionOptions {
+  readonly Enabled?: boolean;
 }
 
-interface AwsElasticsearchDomainServiceSoftwareOptions {
-  readonly AutomatedUpdateDate: string;
-  readonly Cancellable: boolean;
-  readonly CurrentVersion: string;
-  readonly Description: string;
-  readonly NewVersion: string;
-  readonly UpdateAvailable: boolean;
-  readonly UpdateStatus: string;
+export interface AwsElasticsearchDomainServiceSoftwareOptions {
+  readonly AutomatedUpdateDate?: string;
+  readonly Cancellable?: boolean;
+  readonly CurrentVersion?: string;
+  readonly Description?: string;
+  readonly NewVersion?: string;
+  readonly UpdateAvailable?: boolean;
+  readonly UpdateStatus?: string;
 }
 
-interface AwsElasticsearchDomainVPCOptions {
-  readonly AvailabilityZones: [];
-  readonly SecurityGroupIds: [];
-  readonly SubnetIds: [];
-  readonly VPCId: string;
+export interface AwsElasticsearchDomainVPCOptions {
+  readonly AvailabilityZones?: [];
+  readonly SecurityGroupIds?: [];
+  readonly SubnetIds?: [];
+  readonly VPCId?: string;
 }
 
-interface AwsElbAppCookieStickinessPolicy {
-  readonly CookieName: string;
-  readonly PolicyName: string;
+export interface AwsElbAppCookieStickinessPolicy {
+  readonly CookieName?: string;
+  readonly PolicyName?: string;
 }
 
-interface AwsElbLbCookieStickinessPolicy {
-  readonly CookieExpirationPeriod: number;
-  readonly PolicyName: string;
+export interface AwsElbLbCookieStickinessPolicy {
+  readonly CookieExpirationPeriod?: number;
+  readonly PolicyName?: string;
 }
 
-interface AwsElbLoadBalancerAccessLog {
-  readonly EmitInterval: number;
-  readonly Enabled: boolean;
-  readonly S3BucketName: string;
-  readonly S3BucketPrefix: string;
+export interface AwsElbLoadBalancerAccessLog {
+  readonly EmitInterval?: number;
+  readonly Enabled?: boolean;
+  readonly S3BucketName?: string;
+  readonly S3BucketPrefix?: string;
 }
 
-interface AwsElbLoadBalancerAttributes {
-  readonly AccessLog: AwsElbLoadBalancerAccessLog;
-  readonly ConnectionDraining: AwsElbLoadBalancerConnectionDraining;
-  readonly ConnectionSettings: AwsElbLoadBalancerConnectionSettings;
-  readonly CrossZoneLoadBalancing: AwsElbLoadBalancerCrossZoneLoadBalancing;
+export interface AwsElbLoadBalancerAttributes {
+  readonly AccessLog?: AwsElbLoadBalancerAccessLog;
+  readonly ConnectionDraining?: AwsElbLoadBalancerConnectionDraining;
+  readonly ConnectionSettings?: AwsElbLoadBalancerConnectionSettings;
+  readonly CrossZoneLoadBalancing?: AwsElbLoadBalancerCrossZoneLoadBalancing;
 }
 
-interface AwsElbLoadBalancerBackendServerDescription {
-  readonly InstancePort: number;
-  readonly PolicyNames: [];
+export interface AwsElbLoadBalancerBackendServerDescription {
+  readonly InstancePort?: number;
+  readonly PolicyNames?: [];
 }
 
-interface AwsElbLoadBalancerConnectionDraining {
-  readonly Enabled: boolean;
-  readonly Timeout: number;
+export interface AwsElbLoadBalancerConnectionDraining {
+  readonly Enabled?: boolean;
+  readonly Timeout?: number;
 }
 
-interface AwsElbLoadBalancerConnectionSettings {
-  readonly IdleTimeout: number;
+export interface AwsElbLoadBalancerConnectionSettings {
+  readonly IdleTimeout?: number;
 }
 
-interface AwsElbLoadBalancerCrossZoneLoadBalancing {
-  readonly Enabled: boolean;
+export interface AwsElbLoadBalancerCrossZoneLoadBalancing {
+  readonly Enabled?: boolean;
 }
 
-interface AwsElbLoadBalancerDetails {
-  readonly AvailabilityZones: [];
-  readonly BackendServerDescriptions: [];
-  readonly CanonicalHostedZoneName: string;
-  readonly CanonicalHostedZoneNameID: string;
-  readonly CreatedTime: string;
-  readonly DnsName: string;
-  readonly HealthCheck: AwsElbLoadBalancerHealthCheck;
-  readonly Instances: [];
-  readonly ListenerDescriptions: [];
-  readonly LoadBalancerAttributes: AwsElbLoadBalancerAttributes;
-  readonly LoadBalancerName: string;
-  readonly Policies: AwsElbLoadBalancerPolicies;
-  readonly Scheme: string;
-  readonly SecurityGroups: [];
-  readonly SourceSecurityGroup: AwsElbLoadBalancerSourceSecurityGroup;
-  readonly Subnets: [];
-  readonly VpcId: string;
+export interface AwsElbLoadBalancerDetails {
+  readonly AvailabilityZones?: [];
+  readonly BackendServerDescriptions?: [];
+  readonly CanonicalHostedZoneName?: string;
+  readonly CanonicalHostedZoneNameID?: string;
+  readonly CreatedTime?: string;
+  readonly DnsName?: string;
+  readonly HealthCheck?: AwsElbLoadBalancerHealthCheck;
+  readonly Instances?: [];
+  readonly ListenerDescriptions?: [];
+  readonly LoadBalancerAttributes?: AwsElbLoadBalancerAttributes;
+  readonly LoadBalancerName?: string;
+  readonly Policies?: AwsElbLoadBalancerPolicies;
+  readonly Scheme?: string;
+  readonly SecurityGroups?: [];
+  readonly SourceSecurityGroup?: AwsElbLoadBalancerSourceSecurityGroup;
+  readonly Subnets?: [];
+  readonly VpcId?: string;
 }
 
-interface AwsElbLoadBalancerHealthCheck {
-  readonly HealthyThreshold: number;
-  readonly Interval: number;
-  readonly Target: string;
-  readonly Timeout: number;
-  readonly UnhealthyThreshold: number;
+export interface AwsElbLoadBalancerHealthCheck {
+  readonly HealthyThreshold?: number;
+  readonly Interval?: number;
+  readonly Target?: string;
+  readonly Timeout?: number;
+  readonly UnhealthyThreshold?: number;
 }
 
-interface AwsElbLoadBalancerInstance {
-  readonly InstanceId: string;
+export interface AwsElbLoadBalancerInstance {
+  readonly InstanceId?: string;
 }
 
-interface AwsElbLoadBalancerListener {
-  readonly InstancePort: number;
-  readonly InstanceProtocol: string;
-  readonly LoadBalancerPort: number;
-  readonly Protocol: string;
-  readonly SslCertificateId: string;
+export interface AwsElbLoadBalancerListener {
+  readonly InstancePort?: number;
+  readonly InstanceProtocol?: string;
+  readonly LoadBalancerPort?: number;
+  readonly Protocol?: string;
+  readonly SslCertificateId?: string;
 }
 
-interface AwsElbLoadBalancerListenerDescription {
-  readonly Listener: AwsElbLoadBalancerListener;
-  readonly PolicyNames: [];
+export interface AwsElbLoadBalancerListenerDescription {
+  readonly Listener?: AwsElbLoadBalancerListener;
+  readonly PolicyNames?: [];
 }
 
-interface AwsElbLoadBalancerPolicies {
-  readonly AppCookieStickinessPolicies: [];
-  readonly LbCookieStickinessPolicies: [];
-  readonly OtherPolicies: [];
+export interface AwsElbLoadBalancerPolicies {
+  readonly AppCookieStickinessPolicies?: [];
+  readonly LbCookieStickinessPolicies?: [];
+  readonly OtherPolicies?: [];
 }
 
-interface AwsElbLoadBalancerSourceSecurityGroup {
-  readonly GroupName: string;
-  readonly OwnerAlias: string;
+export interface AwsElbLoadBalancerSourceSecurityGroup {
+  readonly GroupName?: string;
+  readonly OwnerAlias?: string;
 }
 
-interface AwsElbv2LoadBalancerAttribute {
-  readonly Key: string;
-  readonly Value: string;
+export interface AwsElbv2LoadBalancerAttribute {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface AwsElbv2LoadBalancerDetails {
-  readonly AvailabilityZones: [];
-  readonly CanonicalHostedZoneId: string;
-  readonly CreatedTime: string;
-  readonly DNSName: string;
-  readonly IpAddressType: string;
-  readonly Scheme: string;
-  readonly SecurityGroups: [];
-  readonly State: LoadBalancerState;
-  readonly Type: string;
-  readonly VpcId: string;
-  readonly LoadBalancerAttributes: [];
+export interface AwsElbv2LoadBalancerDetails {
+  readonly AvailabilityZones?: [];
+  readonly CanonicalHostedZoneId?: string;
+  readonly CreatedTime?: string;
+  readonly DNSName?: string;
+  readonly IpAddressType?: string;
+  readonly Scheme?: string;
+  readonly SecurityGroups?: [];
+  readonly State?: LoadBalancerState;
+  readonly Type?: string;
+  readonly VpcId?: string;
+  readonly LoadBalancerAttributes?: [];
 }
 
-interface AwsIamAccessKeyDetails {
-  readonly UserName: string;
-  readonly Status: string;
-  readonly CreatedAt: string;
-  readonly PrincipalId: string;
-  readonly PrincipalType: string;
-  readonly PrincipalName: string;
-  readonly AccountId: string;
-  readonly AccessKeyId: string;
-  readonly SessionContext: AwsIamAccessKeySessionContext;
+export interface AwsIamAccessKeyDetails {
+  readonly UserName?: string;
+  readonly Status?: string;
+  readonly CreatedAt?: string;
+  readonly PrincipalId?: string;
+  readonly PrincipalType?: string;
+  readonly PrincipalName?: string;
+  readonly AccountId?: string;
+  readonly AccessKeyId?: string;
+  readonly SessionContext?: AwsIamAccessKeySessionContext;
 }
 
-interface AwsIamAccessKeySessionContext {
-  readonly Attributes: AwsIamAccessKeySessionContextAttributes;
-  readonly SessionIssuer: AwsIamAccessKeySessionContextSessionIssuer;
+export interface AwsIamAccessKeySessionContext {
+  readonly Attributes?: AwsIamAccessKeySessionContextAttributes;
+  readonly SessionIssuer?: AwsIamAccessKeySessionContextSessionIssuer;
 }
 
-interface AwsIamAccessKeySessionContextAttributes {
-  readonly MfaAuthenticated: boolean;
-  readonly CreationDate: string;
+export interface AwsIamAccessKeySessionContextAttributes {
+  readonly MfaAuthenticated?: boolean;
+  readonly CreationDate?: string;
 }
 
-interface AwsIamAccessKeySessionContextSessionIssuer {
-  readonly Type: string;
-  readonly PrincipalId: string;
-  readonly Arn: string;
-  readonly AccountId: string;
-  readonly UserName: string;
+export interface AwsIamAccessKeySessionContextSessionIssuer {
+  readonly Type?: string;
+  readonly PrincipalId?: string;
+  readonly Arn?: string;
+  readonly AccountId?: string;
+  readonly UserName?: string;
 }
 
-interface AwsIamAttachedManagedPolicy {
-  readonly PolicyName: string;
-  readonly PolicyArn: string;
+export interface AwsIamAttachedManagedPolicy {
+  readonly PolicyName?: string;
+  readonly PolicyArn?: string;
 }
 
-interface AwsIamGroupDetails {
-  readonly AttachedManagedPolicies: [];
-  readonly CreateDate: string;
-  readonly GroupId: string;
-  readonly GroupName: string;
-  readonly GroupPolicyList: [];
-  readonly Path: string;
+export interface AwsIamGroupDetails {
+  readonly AttachedManagedPolicies?: [];
+  readonly CreateDate?: string;
+  readonly GroupId?: string;
+  readonly GroupName?: string;
+  readonly GroupPolicyList?: [];
+  readonly Path?: string;
 }
 
-interface AwsIamGroupPolicy {
-  readonly PolicyName: string;
+export interface AwsIamGroupPolicy {
+  readonly PolicyName?: string;
 }
 
-interface AwsIamInstanceProfile {
-  readonly Arn: string;
-  readonly CreateDate: string;
-  readonly InstanceProfileId: string;
-  readonly InstanceProfileName: string;
-  readonly Path: string;
-  readonly Roles: [];
+export interface AwsIamInstanceProfile {
+  readonly Arn?: string;
+  readonly CreateDate?: string;
+  readonly InstanceProfileId?: string;
+  readonly InstanceProfileName?: string;
+  readonly Path?: string;
+  readonly Roles?: [];
 }
 
-interface AwsIamInstanceProfileRole {
-  readonly Arn: string;
-  readonly AssumeRolePolicyDocument: string;
-  readonly CreateDate: string;
-  readonly Path: string;
-  readonly RoleId: string;
-  readonly RoleName: string;
+export interface AwsIamInstanceProfileRole {
+  readonly Arn?: string;
+  readonly AssumeRolePolicyDocument?: string;
+  readonly CreateDate?: string;
+  readonly Path?: string;
+  readonly RoleId?: string;
+  readonly RoleName?: string;
 }
 
-interface AwsIamPermissionsBoundary {
-  readonly PermissionsBoundaryArn: string;
-  readonly PermissionsBoundaryType: string;
+export interface AwsIamPermissionsBoundary {
+  readonly PermissionsBoundaryArn?: string;
+  readonly PermissionsBoundaryType?: string;
 }
 
-interface AwsIamPolicyDetails {
-  readonly AttachmentCount: number;
-  readonly CreateDate: string;
-  readonly DefaultVersionId: string;
-  readonly Description: string;
-  readonly IsAttachable: boolean;
-  readonly Path: string;
-  readonly PermissionsBoundaryUsageCount: number;
-  readonly PolicyId: string;
-  readonly PolicyName: string;
-  readonly PolicyVersionList: [];
-  readonly UpdateDate: string;
+export interface AwsIamPolicyDetails {
+  readonly AttachmentCount?: number;
+  readonly CreateDate?: string;
+  readonly DefaultVersionId?: string;
+  readonly Description?: string;
+  readonly IsAttachable?: boolean;
+  readonly Path?: string;
+  readonly PermissionsBoundaryUsageCount?: number;
+  readonly PolicyId?: string;
+  readonly PolicyName?: string;
+  readonly PolicyVersionList?: [];
+  readonly UpdateDate?: string;
 }
 
-interface AwsIamPolicyVersion {
-  readonly VersionId: string;
-  readonly IsDefaultVersion: boolean;
-  readonly CreateDate: string;
+export interface AwsIamPolicyVersion {
+  readonly VersionId?: string;
+  readonly IsDefaultVersion?: boolean;
+  readonly CreateDate?: string;
 }
 
-interface AwsIamRoleDetails {
-  readonly AssumeRolePolicyDocument: string;
-  readonly AttachedManagedPolicies: [];
-  readonly CreateDate: string;
-  readonly InstanceProfileList: [];
-  readonly PermissionsBoundary: AwsIamPermissionsBoundary;
-  readonly RoleId: string;
-  readonly RoleName: string;
-  readonly RolePolicyList: [];
-  readonly MaxSessionDuration: number;
-  readonly Path: string;
+export interface AwsIamRoleDetails {
+  readonly AssumeRolePolicyDocument?: string;
+  readonly AttachedManagedPolicies?: [];
+  readonly CreateDate?: string;
+  readonly InstanceProfileList?: [];
+  readonly PermissionsBoundary?: AwsIamPermissionsBoundary;
+  readonly RoleId?: string;
+  readonly RoleName?: string;
+  readonly RolePolicyList?: [];
+  readonly MaxSessionDuration?: number;
+  readonly Path?: string;
 }
 
-interface AwsIamRolePolicy {
-  readonly PolicyName: string;
+export interface AwsIamRolePolicy {
+  readonly PolicyName?: string;
 }
 
-interface AwsIamUserDetails {
-  readonly AttachedManagedPolicies: [];
-  readonly CreateDate: string;
-  readonly GroupList: [];
-  readonly Path: string;
-  readonly PermissionsBoundary: AwsIamPermissionsBoundary;
-  readonly UserId: string;
-  readonly UserName: string;
-  readonly UserPolicyList: [];
+export interface AwsIamUserDetails {
+  readonly AttachedManagedPolicies?: [];
+  readonly CreateDate?: string;
+  readonly GroupList?: [];
+  readonly Path?: string;
+  readonly PermissionsBoundary?: AwsIamPermissionsBoundary;
+  readonly UserId?: string;
+  readonly UserName?: string;
+  readonly UserPolicyList?: [];
 }
 
-interface AwsIamUserPolicy {
-  readonly PolicyName: string;
+export interface AwsIamUserPolicy {
+  readonly PolicyName?: string;
 }
 
-interface AwsKmsKeyDetails {
-  readonly AWSAccountId: string;
-  readonly CreationDate: unknown;
-  readonly KeyId: string;
-  readonly KeyManager: string;
-  readonly KeyState: string;
-  readonly Origin: string;
-  readonly Description: string;
-  readonly KeyRotationStatus: boolean;
+export interface AwsKmsKeyDetails {
+  readonly AWSAccountId?: string;
+  readonly CreationDate?: unknown;
+  readonly KeyId?: string;
+  readonly KeyManager?: string;
+  readonly KeyState?: string;
+  readonly Origin?: string;
+  readonly Description?: string;
+  readonly KeyRotationStatus?: boolean;
 }
 
-interface AwsLambdaFunctionCode {
-  readonly S3Bucket: string;
-  readonly S3Key: string;
-  readonly S3ObjectVersion: string;
-  readonly ZipFile: string;
+export interface AwsLambdaFunctionCode {
+  readonly S3Bucket?: string;
+  readonly S3Key?: string;
+  readonly S3ObjectVersion?: string;
+  readonly ZipFile?: string;
 }
 
-interface AwsLambdaFunctionDeadLetterConfig {
-  readonly TargetArn: string;
+export interface AwsLambdaFunctionDeadLetterConfig {
+  readonly TargetArn?: string;
 }
 
-interface AwsLambdaFunctionDetails {
-  readonly Code: AwsLambdaFunctionCode;
-  readonly CodeSha256: string;
-  readonly DeadLetterConfig: AwsLambdaFunctionDeadLetterConfig;
-  readonly Environment: AwsLambdaFunctionEnvironment;
-  readonly FunctionName: string;
-  readonly Handler: string;
-  readonly KmsKeyArn: string;
-  readonly LastModified: string;
-  readonly Layers: [];
-  readonly MasterArn: string;
-  readonly MemorySize: number;
-  readonly RevisionId: string;
-  readonly Role: string;
-  readonly Runtime: string;
-  readonly Timeout: number;
-  readonly TracingConfig: AwsLambdaFunctionTracingConfig;
-  readonly VpcConfig: AwsLambdaFunctionVpcConfig;
-  readonly Version: string;
+export interface AwsLambdaFunctionDetails {
+  readonly Code?: AwsLambdaFunctionCode;
+  readonly CodeSha256?: string;
+  readonly DeadLetterConfig?: AwsLambdaFunctionDeadLetterConfig;
+  readonly Environment?: AwsLambdaFunctionEnvironment;
+  readonly FunctionName?: string;
+  readonly Handler?: string;
+  readonly KmsKeyArn?: string;
+  readonly LastModified?: string;
+  readonly Layers?: [];
+  readonly MasterArn?: string;
+  readonly MemorySize?: number;
+  readonly RevisionId?: string;
+  readonly Role?: string;
+  readonly Runtime?: string;
+  readonly Timeout?: number;
+  readonly TracingConfig?: AwsLambdaFunctionTracingConfig;
+  readonly VpcConfig?: AwsLambdaFunctionVpcConfig;
+  readonly Version?: string;
 }
 
-interface AwsLambdaFunctionEnvironment {
-  readonly Variables: {[key: string]: any};
-  readonly Error: AwsLambdaFunctionEnvironmentError;
+export interface AwsLambdaFunctionEnvironment {
+  readonly Variables?: {[key: string]: any};
+  readonly Error?: AwsLambdaFunctionEnvironmentError;
 }
 
-interface AwsLambdaFunctionEnvironmentError {
-  readonly ErrorCode: string;
-  readonly Message: string;
+export interface AwsLambdaFunctionEnvironmentError {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
 }
 
-interface AwsLambdaFunctionLayer {
-  readonly Arn: string;
-  readonly CodeSize: number;
+export interface AwsLambdaFunctionLayer {
+  readonly Arn?: string;
+  readonly CodeSize?: number;
 }
 
-interface AwsLambdaFunctionTracingConfig {
-  readonly Mode: string;
+export interface AwsLambdaFunctionTracingConfig {
+  readonly Mode?: string;
 }
 
-interface AwsLambdaFunctionVpcConfig {
-  readonly SecurityGroupIds: [];
-  readonly SubnetIds: [];
-  readonly VpcId: string;
+export interface AwsLambdaFunctionVpcConfig {
+  readonly SecurityGroupIds?: [];
+  readonly SubnetIds?: [];
+  readonly VpcId?: string;
 }
 
-interface AwsLambdaLayerVersionDetails {
-  readonly Version: number;
-  readonly CompatibleRuntimes: [];
-  readonly CreatedDate: string;
+export interface AwsLambdaLayerVersionDetails {
+  readonly Version?: number;
+  readonly CompatibleRuntimes?: [];
+  readonly CreatedDate?: string;
 }
 
-interface AwsOpenSearchServiceDomainClusterConfigDetails {
-  readonly InstanceCount: number;
-  readonly WarmEnabled: boolean;
-  readonly WarmCount: number;
-  readonly DedicatedMasterEnabled: boolean;
-  readonly ZoneAwarenessConfig: AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails;
-  readonly DedicatedMasterCount: number;
-  readonly InstanceType: string;
-  readonly WarmType: string;
-  readonly ZoneAwarenessEnabled: boolean;
-  readonly DedicatedMasterType: string;
+export interface AwsOpenSearchServiceDomainClusterConfigDetails {
+  readonly InstanceCount?: number;
+  readonly WarmEnabled?: boolean;
+  readonly WarmCount?: number;
+  readonly DedicatedMasterEnabled?: boolean;
+  readonly ZoneAwarenessConfig?: AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails;
+  readonly DedicatedMasterCount?: number;
+  readonly InstanceType?: string;
+  readonly WarmType?: string;
+  readonly ZoneAwarenessEnabled?: boolean;
+  readonly DedicatedMasterType?: string;
 }
 
-interface AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
-  readonly AvailabilityZoneCount: number;
+export interface AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
+  readonly AvailabilityZoneCount?: number;
 }
 
-interface AwsOpenSearchServiceDomainDetails {
-  readonly Arn: string;
-  readonly AccessPolicies: string;
-  readonly DomainName: string;
-  readonly Id: string;
-  readonly DomainEndpoint: string;
-  readonly EngineVersion: string;
-  readonly EncryptionAtRestOptions: AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails;
-  readonly NodeToNodeEncryptionOptions: AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails;
-  readonly ServiceSoftwareOptions: AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails;
-  readonly ClusterConfig: AwsOpenSearchServiceDomainClusterConfigDetails;
-  readonly DomainEndpointOptions: AwsOpenSearchServiceDomainDomainEndpointOptionsDetails;
-  readonly VpcOptions: AwsOpenSearchServiceDomainVpcOptionsDetails;
-  readonly LogPublishingOptions: AwsOpenSearchServiceDomainLogPublishingOptionsDetails;
-  readonly DomainEndpoints: {[key: string]: any};
+export interface AwsOpenSearchServiceDomainDetails {
+  readonly Arn?: string;
+  readonly AccessPolicies?: string;
+  readonly DomainName?: string;
+  readonly Id?: string;
+  readonly DomainEndpoint?: string;
+  readonly EngineVersion?: string;
+  readonly EncryptionAtRestOptions?: AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails;
+  readonly NodeToNodeEncryptionOptions?: AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails;
+  readonly ServiceSoftwareOptions?: AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails;
+  readonly ClusterConfig?: AwsOpenSearchServiceDomainClusterConfigDetails;
+  readonly DomainEndpointOptions?: AwsOpenSearchServiceDomainDomainEndpointOptionsDetails;
+  readonly VpcOptions?: AwsOpenSearchServiceDomainVpcOptionsDetails;
+  readonly LogPublishingOptions?: AwsOpenSearchServiceDomainLogPublishingOptionsDetails;
+  readonly DomainEndpoints?: {[key: string]: any};
 }
 
-interface AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
-  readonly CustomEndpointCertificateArn: string;
-  readonly CustomEndpointEnabled: boolean;
-  readonly EnforceHTTPS: boolean;
-  readonly CustomEndpoint: string;
-  readonly TLSSecurityPolicy: string;
+export interface AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
+  readonly CustomEndpointCertificateArn?: string;
+  readonly CustomEndpointEnabled?: boolean;
+  readonly EnforceHTTPS?: boolean;
+  readonly CustomEndpoint?: string;
+  readonly TLSSecurityPolicy?: string;
 }
 
-interface AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
-  readonly Enabled: boolean;
-  readonly KmsKeyId: string;
+export interface AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
+  readonly Enabled?: boolean;
+  readonly KmsKeyId?: string;
 }
 
-interface AwsOpenSearchServiceDomainLogPublishingOption {
-  readonly CloudWatchLogsLogGroupArn: string;
-  readonly Enabled: boolean;
+export interface AwsOpenSearchServiceDomainLogPublishingOption {
+  readonly CloudWatchLogsLogGroupArn?: string;
+  readonly Enabled?: boolean;
 }
 
-interface AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
-  readonly IndexSlowLogs: AwsOpenSearchServiceDomainLogPublishingOption;
-  readonly SearchSlowLogs: AwsOpenSearchServiceDomainLogPublishingOption;
-  readonly AuditLogs: AwsOpenSearchServiceDomainLogPublishingOption;
+export interface AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
+  readonly IndexSlowLogs?: AwsOpenSearchServiceDomainLogPublishingOption;
+  readonly SearchSlowLogs?: AwsOpenSearchServiceDomainLogPublishingOption;
+  readonly AuditLogs?: AwsOpenSearchServiceDomainLogPublishingOption;
 }
 
-interface AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
-  readonly Enabled: boolean;
+export interface AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
+  readonly Enabled?: boolean;
 }
 
-interface AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
-  readonly AutomatedUpdateDate: string;
-  readonly Cancellable: boolean;
-  readonly CurrentVersion: string;
-  readonly Description: string;
-  readonly NewVersion: string;
-  readonly UpdateAvailable: boolean;
-  readonly UpdateStatus: string;
-  readonly OptionalDeployment: boolean;
+export interface AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
+  readonly AutomatedUpdateDate?: string;
+  readonly Cancellable?: boolean;
+  readonly CurrentVersion?: string;
+  readonly Description?: string;
+  readonly NewVersion?: string;
+  readonly UpdateAvailable?: boolean;
+  readonly UpdateStatus?: string;
+  readonly OptionalDeployment?: boolean;
 }
 
-interface AwsOpenSearchServiceDomainVpcOptionsDetails {
-  readonly SecurityGroupIds: [];
-  readonly SubnetIds: [];
+export interface AwsOpenSearchServiceDomainVpcOptionsDetails {
+  readonly SecurityGroupIds?: [];
+  readonly SubnetIds?: [];
 }
 
-interface AwsRdsDbClusterAssociatedRole {
-  readonly RoleArn: string;
-  readonly Status: string;
+export interface AwsRdsDbClusterAssociatedRole {
+  readonly RoleArn?: string;
+  readonly Status?: string;
 }
 
-interface AwsRdsDbClusterDetails {
-  readonly AllocatedStorage: number;
-  readonly AvailabilityZones: [];
-  readonly BackupRetentionPeriod: number;
-  readonly DatabaseName: string;
-  readonly Status: string;
-  readonly Endpoint: string;
-  readonly ReaderEndpoint: string;
-  readonly CustomEndpoints: [];
-  readonly MultiAz: boolean;
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly Port: number;
-  readonly MasterUsername: string;
-  readonly PreferredBackupWindow: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly ReadReplicaIdentifiers: [];
-  readonly VpcSecurityGroups: [];
-  readonly HostedZoneId: string;
-  readonly StorageEncrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly DbClusterResourceId: string;
-  readonly AssociatedRoles: [];
-  readonly ClusterCreateTime: string;
-  readonly EnabledCloudWatchLogsExports: [];
-  readonly EngineMode: string;
-  readonly DeletionProtection: boolean;
-  readonly HttpEndpointEnabled: boolean;
-  readonly ActivityStreamStatus: string;
-  readonly CopyTagsToSnapshot: boolean;
-  readonly CrossAccountClone: boolean;
-  readonly DomainMemberships: [];
-  readonly DbClusterParameterGroup: string;
-  readonly DbSubnetGroup: string;
-  readonly DbClusterOptionGroupMemberships: [];
-  readonly DbClusterIdentifier: string;
-  readonly DbClusterMembers: [];
-  readonly IamDatabaseAuthenticationEnabled: boolean;
-}
-
-interface AwsRdsDbClusterMember {
-  readonly IsClusterWriter: boolean;
-  readonly PromotionTier: number;
-  readonly DbInstanceIdentifier: string;
-  readonly DbClusterParameterGroupStatus: string;
-}
-
-interface AwsRdsDbClusterOptionGroupMembership {
-  readonly DbClusterOptionGroupName: string;
-  readonly Status: string;
-}
-
-interface AwsRdsDbClusterSnapshotDetails {
-  readonly AvailabilityZones: [];
-  readonly SnapshotCreateTime: string;
-  readonly Engine: string;
-  readonly AllocatedStorage: number;
-  readonly Status: string;
-  readonly Port: number;
-  readonly VpcId: string;
-  readonly ClusterCreateTime: string;
-  readonly MasterUsername: string;
-  readonly EngineVersion: string;
-  readonly LicenseModel: string;
-  readonly SnapshotType: string;
-  readonly PercentProgress: number;
-  readonly StorageEncrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly DbClusterIdentifier: string;
-  readonly DbClusterSnapshotIdentifier: string;
-  readonly IamDatabaseAuthenticationEnabled: boolean;
+export interface AwsRdsDbClusterDetails {
+  readonly AllocatedStorage?: number;
+  readonly AvailabilityZones?: [];
+  readonly BackupRetentionPeriod?: number;
+  readonly DatabaseName?: string;
+  readonly Status?: string;
+  readonly Endpoint?: string;
+  readonly ReaderEndpoint?: string;
+  readonly CustomEndpoints?: [];
+  readonly MultiAz?: boolean;
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly Port?: number;
+  readonly MasterUsername?: string;
+  readonly PreferredBackupWindow?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly ReadReplicaIdentifiers?: [];
+  readonly VpcSecurityGroups?: [];
+  readonly HostedZoneId?: string;
+  readonly StorageEncrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly DbClusterResourceId?: string;
+  readonly AssociatedRoles?: [];
+  readonly ClusterCreateTime?: string;
+  readonly EnabledCloudWatchLogsExports?: [];
+  readonly EngineMode?: string;
+  readonly DeletionProtection?: boolean;
+  readonly HttpEndpointEnabled?: boolean;
+  readonly ActivityStreamStatus?: string;
+  readonly CopyTagsToSnapshot?: boolean;
+  readonly CrossAccountClone?: boolean;
+  readonly DomainMemberships?: [];
+  readonly DbClusterParameterGroup?: string;
+  readonly DbSubnetGroup?: string;
+  readonly DbClusterOptionGroupMemberships?: [];
+  readonly DbClusterIdentifier?: string;
+  readonly DbClusterMembers?: [];
+  readonly IamDatabaseAuthenticationEnabled?: boolean;
+}
+
+export interface AwsRdsDbClusterMember {
+  readonly IsClusterWriter?: boolean;
+  readonly PromotionTier?: number;
+  readonly DbInstanceIdentifier?: string;
+  readonly DbClusterParameterGroupStatus?: string;
+}
+
+export interface AwsRdsDbClusterOptionGroupMembership {
+  readonly DbClusterOptionGroupName?: string;
+  readonly Status?: string;
+}
+
+export interface AwsRdsDbClusterSnapshotDetails {
+  readonly AvailabilityZones?: [];
+  readonly SnapshotCreateTime?: string;
+  readonly Engine?: string;
+  readonly AllocatedStorage?: number;
+  readonly Status?: string;
+  readonly Port?: number;
+  readonly VpcId?: string;
+  readonly ClusterCreateTime?: string;
+  readonly MasterUsername?: string;
+  readonly EngineVersion?: string;
+  readonly LicenseModel?: string;
+  readonly SnapshotType?: string;
+  readonly PercentProgress?: number;
+  readonly StorageEncrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly DbClusterIdentifier?: string;
+  readonly DbClusterSnapshotIdentifier?: string;
+  readonly IamDatabaseAuthenticationEnabled?: boolean;
 }
 
-interface AwsRdsDbDomainMembership {
-  readonly Domain: string;
-  readonly Status: string;
-  readonly Fqdn: string;
-  readonly IamRoleName: string;
-}
-
-interface AwsRdsDbInstanceAssociatedRole {
-  readonly RoleArn: string;
-  readonly FeatureName: string;
-  readonly Status: string;
-}
-
-interface AwsRdsDbInstanceDetails {
-  readonly AssociatedRoles: [];
-  readonly CACertificateIdentifier: string;
-  readonly DBClusterIdentifier: string;
-  readonly DBInstanceIdentifier: string;
-  readonly DBInstanceClass: string;
-  readonly DbInstancePort: number;
-  readonly DbiResourceId: string;
-  readonly DBName: string;
-  readonly DeletionProtection: boolean;
-  readonly Endpoint: AwsRdsDbInstanceEndpoint;
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly IAMDatabaseAuthenticationEnabled: boolean;
-  readonly InstanceCreateTime: string;
-  readonly KmsKeyId: string;
-  readonly PubliclyAccessible: boolean;
-  readonly StorageEncrypted: boolean;
-  readonly TdeCredentialArn: string;
-  readonly VpcSecurityGroups: [];
-  readonly MultiAz: boolean;
-  readonly EnhancedMonitoringResourceArn: string;
-  readonly DbInstanceStatus: string;
-  readonly MasterUsername: string;
-  readonly AllocatedStorage: number;
-  readonly PreferredBackupWindow: string;
-  readonly BackupRetentionPeriod: number;
-  readonly DbSecurityGroups: [];
-  readonly DbParameterGroups: [];
-  readonly AvailabilityZone: string;
-  readonly DbSubnetGroup: AwsRdsDbSubnetGroup;
-  readonly PreferredMaintenanceWindow: string;
-  readonly PendingModifiedValues: AwsRdsDbPendingModifiedValues;
-  readonly LatestRestorableTime: string;
-  readonly AutoMinorVersionUpgrade: boolean;
-  readonly ReadReplicaSourceDBInstanceIdentifier: string;
-  readonly ReadReplicaDBInstanceIdentifiers: [];
-  readonly ReadReplicaDBClusterIdentifiers: [];
-  readonly LicenseModel: string;
-  readonly Iops: number;
-  readonly OptionGroupMemberships: [];
-  readonly CharacterSetName: string;
-  readonly SecondaryAvailabilityZone: string;
-  readonly StatusInfos: [];
-  readonly StorageType: string;
-  readonly DomainMemberships: [];
-  readonly CopyTagsToSnapshot: boolean;
-  readonly MonitoringInterval: number;
-  readonly MonitoringRoleArn: string;
-  readonly PromotionTier: number;
-  readonly Timezone: string;
-  readonly PerformanceInsightsEnabled: boolean;
-  readonly PerformanceInsightsKmsKeyId: string;
-  readonly PerformanceInsightsRetentionPeriod: number;
-  readonly EnabledCloudWatchLogsExports: [];
-  readonly ProcessorFeatures: [];
-  readonly ListenerEndpoint: AwsRdsDbInstanceEndpoint;
-  readonly MaxAllocatedStorage: number;
-}
-
-interface AwsRdsDbInstanceEndpoint {
-  readonly Address: string;
-  readonly Port: number;
-  readonly HostedZoneId: string;
-}
-
-interface AwsRdsDbInstanceVpcSecurityGroup {
-  readonly VpcSecurityGroupId: string;
-  readonly Status: string;
-}
-
-interface AwsRdsDbOptionGroupMembership {
-  readonly OptionGroupName: string;
-  readonly Status: string;
-}
-
-interface AwsRdsDbParameterGroup {
-  readonly DbParameterGroupName: string;
-  readonly ParameterApplyStatus: string;
-}
-
-interface AwsRdsDbPendingModifiedValues {
-  readonly DbInstanceClass: string;
-  readonly AllocatedStorage: number;
-  readonly MasterUserPassword: string;
-  readonly Port: number;
-  readonly BackupRetentionPeriod: number;
-  readonly MultiAZ: boolean;
-  readonly EngineVersion: string;
-  readonly LicenseModel: string;
-  readonly Iops: number;
-  readonly DbInstanceIdentifier: string;
-  readonly StorageType: string;
-  readonly CaCertificateIdentifier: string;
-  readonly DbSubnetGroupName: string;
-  readonly PendingCloudWatchLogsExports: AwsRdsPendingCloudWatchLogsExports;
-  readonly ProcessorFeatures: [];
-}
-
-interface AwsRdsDbProcessorFeature {
-  readonly Name: string;
-  readonly Value: string;
-}
-
-interface AwsRdsDbSnapshotDetails {
-  readonly DbSnapshotIdentifier: string;
-  readonly DbInstanceIdentifier: string;
-  readonly SnapshotCreateTime: string;
-  readonly Engine: string;
-  readonly AllocatedStorage: number;
-  readonly Status: string;
-  readonly Port: number;
-  readonly AvailabilityZone: string;
-  readonly VpcId: string;
-  readonly InstanceCreateTime: string;
-  readonly MasterUsername: string;
-  readonly EngineVersion: string;
-  readonly LicenseModel: string;
-  readonly SnapshotType: string;
-  readonly Iops: number;
-  readonly OptionGroupName: string;
-  readonly PercentProgress: number;
-  readonly SourceRegion: string;
-  readonly SourceDbSnapshotIdentifier: string;
-  readonly StorageType: string;
-  readonly TdeCredentialArn: string;
-  readonly Encrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly Timezone: string;
-  readonly IamDatabaseAuthenticationEnabled: boolean;
-  readonly ProcessorFeatures: [];
-  readonly DbiResourceId: string;
-}
-
-interface AwsRdsDbStatusInfo {
-  readonly StatusType: string;
-  readonly Normal: boolean;
-  readonly Status: string;
-  readonly Message: string;
-}
-
-interface AwsRdsDbSubnetGroup {
-  readonly DbSubnetGroupName: string;
-  readonly DbSubnetGroupDescription: string;
-  readonly VpcId: string;
-  readonly SubnetGroupStatus: string;
-  readonly Subnets: [];
-  readonly DbSubnetGroupArn: string;
-}
-
-interface AwsRdsDbSubnetGroupSubnet {
-  readonly SubnetIdentifier: string;
-  readonly SubnetAvailabilityZone: AwsRdsDbSubnetGroupSubnetAvailabilityZone;
-  readonly SubnetStatus: string;
-}
-
-interface AwsRdsDbSubnetGroupSubnetAvailabilityZone {
-  readonly Name: string;
-}
-
-interface AwsRdsEventSubscriptionDetails {
-  readonly CustSubscriptionId: string;
-  readonly CustomerAwsId: string;
-  readonly Enabled: boolean;
-  readonly EventCategoriesList: [];
-  readonly EventSubscriptionArn: string;
-  readonly SnsTopicArn: string;
-  readonly SourceIdsList: [];
-  readonly SourceType: string;
-  readonly Status: string;
-  readonly SubscriptionCreationTime: string;
-}
-
-interface AwsRdsPendingCloudWatchLogsExports {
-  readonly LogTypesToEnable: [];
-  readonly LogTypesToDisable: [];
-}
-
-interface AwsRedshiftClusterClusterNode {
-  readonly NodeRole: string;
-  readonly PrivateIpAddress: string;
-  readonly PublicIpAddress: string;
-}
-
-interface AwsRedshiftClusterClusterParameterGroup {
-  readonly ClusterParameterStatusList: [];
-  readonly ParameterApplyStatus: string;
-  readonly ParameterGroupName: string;
-}
-
-interface AwsRedshiftClusterClusterParameterStatus {
-  readonly ParameterName: string;
-  readonly ParameterApplyStatus: string;
-  readonly ParameterApplyErrorDescription: string;
-}
-
-interface AwsRedshiftClusterClusterSecurityGroup {
-  readonly ClusterSecurityGroupName: string;
-  readonly Status: string;
-}
-
-interface AwsRedshiftClusterClusterSnapshotCopyStatus {
-  readonly DestinationRegion: string;
-  readonly ManualSnapshotRetentionPeriod: number;
-  readonly RetentionPeriod: number;
-  readonly SnapshotCopyGrantName: string;
-}
-
-interface AwsRedshiftClusterDeferredMaintenanceWindow {
-  readonly DeferMaintenanceEndTime: string;
-  readonly DeferMaintenanceIdentifier: string;
-  readonly DeferMaintenanceStartTime: string;
-}
-
-interface AwsRedshiftClusterDetails {
-  readonly AllowVersionUpgrade: boolean;
-  readonly AutomatedSnapshotRetentionPeriod: number;
-  readonly AvailabilityZone: string;
-  readonly ClusterAvailabilityStatus: string;
-  readonly ClusterCreateTime: string;
-  readonly ClusterIdentifier: string;
-  readonly ClusterNodes: [];
-  readonly ClusterParameterGroups: [];
-  readonly ClusterPublicKey: string;
-  readonly ClusterRevisionNumber: string;
-  readonly ClusterSecurityGroups: [];
-  readonly ClusterSnapshotCopyStatus: AwsRedshiftClusterClusterSnapshotCopyStatus;
-  readonly ClusterStatus: string;
-  readonly ClusterSubnetGroupName: string;
-  readonly ClusterVersion: string;
-  readonly DBName: string;
-  readonly DeferredMaintenanceWindows: [];
-  readonly ElasticIpStatus: AwsRedshiftClusterElasticIpStatus;
-  readonly ElasticResizeNumberOfNodeOptions: string;
-  readonly Encrypted: boolean;
-  readonly Endpoint: AwsRedshiftClusterEndpoint;
-  readonly EnhancedVpcRouting: boolean;
-  readonly ExpectedNextSnapshotScheduleTime: string;
-  readonly ExpectedNextSnapshotScheduleTimeStatus: string;
-  readonly HsmStatus: AwsRedshiftClusterHsmStatus;
-  readonly IamRoles: [];
-  readonly KmsKeyId: string;
-  readonly MaintenanceTrackName: string;
-  readonly ManualSnapshotRetentionPeriod: number;
-  readonly MasterUsername: string;
-  readonly NextMaintenanceWindowStartTime: string;
-  readonly NodeType: string;
-  readonly NumberOfNodes: number;
-  readonly PendingActions: [];
-  readonly PendingModifiedValues: AwsRedshiftClusterPendingModifiedValues;
-  readonly PreferredMaintenanceWindow: string;
-  readonly PubliclyAccessible: boolean;
-  readonly ResizeInfo: AwsRedshiftClusterResizeInfo;
-  readonly RestoreStatus: AwsRedshiftClusterRestoreStatus;
-  readonly SnapshotScheduleIdentifier: string;
-  readonly SnapshotScheduleState: string;
-  readonly VpcId: string;
-  readonly VpcSecurityGroups: [];
-}
-
-interface AwsRedshiftClusterElasticIpStatus {
-  readonly ElasticIp: string;
-  readonly Status: string;
-}
-
-interface AwsRedshiftClusterEndpoint {
-  readonly Address: string;
-  readonly Port: number;
-}
-
-interface AwsRedshiftClusterHsmStatus {
-  readonly HsmClientCertificateIdentifier: string;
-  readonly HsmConfigurationIdentifier: string;
-  readonly Status: string;
-}
-
-interface AwsRedshiftClusterIamRole {
-  readonly ApplyStatus: string;
-  readonly IamRoleArn: string;
-}
-
-interface AwsRedshiftClusterPendingModifiedValues {
-  readonly AutomatedSnapshotRetentionPeriod: number;
-  readonly ClusterIdentifier: string;
-  readonly ClusterType: string;
-  readonly ClusterVersion: string;
-  readonly EncryptionType: string;
-  readonly EnhancedVpcRouting: boolean;
-  readonly MaintenanceTrackName: string;
-  readonly MasterUserPassword: string;
-  readonly NodeType: string;
-  readonly NumberOfNodes: number;
-  readonly PubliclyAccessible: boolean;
-}
-
-interface AwsRedshiftClusterResizeInfo {
-  readonly AllowCancelResize: boolean;
-  readonly ResizeType: string;
-}
-
-interface AwsRedshiftClusterRestoreStatus {
-  readonly CurrentRestoreRateInMegaBytesPerSecond: unknown;
-  readonly ElapsedTimeInSeconds: number;
-  readonly EstimatedTimeToCompletionInSeconds: number;
-  readonly ProgressInMegaBytes: number;
-  readonly SnapshotSizeInMegaBytes: number;
-  readonly Status: string;
-}
-
-interface AwsRedshiftClusterVpcSecurityGroup {
-  readonly Status: string;
-  readonly VpcSecurityGroupId: string;
-}
-
-interface AwsS3AccountPublicAccessBlockDetails {
-  readonly BlockPublicAcls: boolean;
-  readonly BlockPublicPolicy: boolean;
-  readonly IgnorePublicAcls: boolean;
-  readonly RestrictPublicBuckets: boolean;
-}
-
-interface AwsS3BucketBucketLifecycleConfigurationDetails {
-  readonly Rules: [];
-}
+export interface AwsRdsDbDomainMembership {
+  readonly Domain?: string;
+  readonly Status?: string;
+  readonly Fqdn?: string;
+  readonly IamRoleName?: string;
+}
+
+export interface AwsRdsDbInstanceAssociatedRole {
+  readonly RoleArn?: string;
+  readonly FeatureName?: string;
+  readonly Status?: string;
+}
+
+export interface AwsRdsDbInstanceDetails {
+  readonly AssociatedRoles?: [];
+  readonly CACertificateIdentifier?: string;
+  readonly DBClusterIdentifier?: string;
+  readonly DBInstanceIdentifier?: string;
+  readonly DBInstanceClass?: string;
+  readonly DbInstancePort?: number;
+  readonly DbiResourceId?: string;
+  readonly DBName?: string;
+  readonly DeletionProtection?: boolean;
+  readonly Endpoint?: AwsRdsDbInstanceEndpoint;
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly IAMDatabaseAuthenticationEnabled?: boolean;
+  readonly InstanceCreateTime?: string;
+  readonly KmsKeyId?: string;
+  readonly PubliclyAccessible?: boolean;
+  readonly StorageEncrypted?: boolean;
+  readonly TdeCredentialArn?: string;
+  readonly VpcSecurityGroups?: [];
+  readonly MultiAz?: boolean;
+  readonly EnhancedMonitoringResourceArn?: string;
+  readonly DbInstanceStatus?: string;
+  readonly MasterUsername?: string;
+  readonly AllocatedStorage?: number;
+  readonly PreferredBackupWindow?: string;
+  readonly BackupRetentionPeriod?: number;
+  readonly DbSecurityGroups?: [];
+  readonly DbParameterGroups?: [];
+  readonly AvailabilityZone?: string;
+  readonly DbSubnetGroup?: AwsRdsDbSubnetGroup;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly PendingModifiedValues?: AwsRdsDbPendingModifiedValues;
+  readonly LatestRestorableTime?: string;
+  readonly AutoMinorVersionUpgrade?: boolean;
+  readonly ReadReplicaSourceDBInstanceIdentifier?: string;
+  readonly ReadReplicaDBInstanceIdentifiers?: [];
+  readonly ReadReplicaDBClusterIdentifiers?: [];
+  readonly LicenseModel?: string;
+  readonly Iops?: number;
+  readonly OptionGroupMemberships?: [];
+  readonly CharacterSetName?: string;
+  readonly SecondaryAvailabilityZone?: string;
+  readonly StatusInfos?: [];
+  readonly StorageType?: string;
+  readonly DomainMemberships?: [];
+  readonly CopyTagsToSnapshot?: boolean;
+  readonly MonitoringInterval?: number;
+  readonly MonitoringRoleArn?: string;
+  readonly PromotionTier?: number;
+  readonly Timezone?: string;
+  readonly PerformanceInsightsEnabled?: boolean;
+  readonly PerformanceInsightsKmsKeyId?: string;
+  readonly PerformanceInsightsRetentionPeriod?: number;
+  readonly EnabledCloudWatchLogsExports?: [];
+  readonly ProcessorFeatures?: [];
+  readonly ListenerEndpoint?: AwsRdsDbInstanceEndpoint;
+  readonly MaxAllocatedStorage?: number;
+}
+
+export interface AwsRdsDbInstanceEndpoint {
+  readonly Address?: string;
+  readonly Port?: number;
+  readonly HostedZoneId?: string;
+}
+
+export interface AwsRdsDbInstanceVpcSecurityGroup {
+  readonly VpcSecurityGroupId?: string;
+  readonly Status?: string;
+}
+
+export interface AwsRdsDbOptionGroupMembership {
+  readonly OptionGroupName?: string;
+  readonly Status?: string;
+}
+
+export interface AwsRdsDbParameterGroup {
+  readonly DbParameterGroupName?: string;
+  readonly ParameterApplyStatus?: string;
+}
+
+export interface AwsRdsDbPendingModifiedValues {
+  readonly DbInstanceClass?: string;
+  readonly AllocatedStorage?: number;
+  readonly MasterUserPassword?: string;
+  readonly Port?: number;
+  readonly BackupRetentionPeriod?: number;
+  readonly MultiAZ?: boolean;
+  readonly EngineVersion?: string;
+  readonly LicenseModel?: string;
+  readonly Iops?: number;
+  readonly DbInstanceIdentifier?: string;
+  readonly StorageType?: string;
+  readonly CaCertificateIdentifier?: string;
+  readonly DbSubnetGroupName?: string;
+  readonly PendingCloudWatchLogsExports?: AwsRdsPendingCloudWatchLogsExports;
+  readonly ProcessorFeatures?: [];
+}
+
+export interface AwsRdsDbProcessorFeature {
+  readonly Name?: string;
+  readonly Value?: string;
+}
+
+export interface AwsRdsDbSnapshotDetails {
+  readonly DbSnapshotIdentifier?: string;
+  readonly DbInstanceIdentifier?: string;
+  readonly SnapshotCreateTime?: string;
+  readonly Engine?: string;
+  readonly AllocatedStorage?: number;
+  readonly Status?: string;
+  readonly Port?: number;
+  readonly AvailabilityZone?: string;
+  readonly VpcId?: string;
+  readonly InstanceCreateTime?: string;
+  readonly MasterUsername?: string;
+  readonly EngineVersion?: string;
+  readonly LicenseModel?: string;
+  readonly SnapshotType?: string;
+  readonly Iops?: number;
+  readonly OptionGroupName?: string;
+  readonly PercentProgress?: number;
+  readonly SourceRegion?: string;
+  readonly SourceDbSnapshotIdentifier?: string;
+  readonly StorageType?: string;
+  readonly TdeCredentialArn?: string;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly Timezone?: string;
+  readonly IamDatabaseAuthenticationEnabled?: boolean;
+  readonly ProcessorFeatures?: [];
+  readonly DbiResourceId?: string;
+}
+
+export interface AwsRdsDbStatusInfo {
+  readonly StatusType?: string;
+  readonly Normal?: boolean;
+  readonly Status?: string;
+  readonly Message?: string;
+}
+
+export interface AwsRdsDbSubnetGroup {
+  readonly DbSubnetGroupName?: string;
+  readonly DbSubnetGroupDescription?: string;
+  readonly VpcId?: string;
+  readonly SubnetGroupStatus?: string;
+  readonly Subnets?: [];
+  readonly DbSubnetGroupArn?: string;
+}
+
+export interface AwsRdsDbSubnetGroupSubnet {
+  readonly SubnetIdentifier?: string;
+  readonly SubnetAvailabilityZone?: AwsRdsDbSubnetGroupSubnetAvailabilityZone;
+  readonly SubnetStatus?: string;
+}
+
+export interface AwsRdsDbSubnetGroupSubnetAvailabilityZone {
+  readonly Name?: string;
+}
+
+export interface AwsRdsEventSubscriptionDetails {
+  readonly CustSubscriptionId?: string;
+  readonly CustomerAwsId?: string;
+  readonly Enabled?: boolean;
+  readonly EventCategoriesList?: [];
+  readonly EventSubscriptionArn?: string;
+  readonly SnsTopicArn?: string;
+  readonly SourceIdsList?: [];
+  readonly SourceType?: string;
+  readonly Status?: string;
+  readonly SubscriptionCreationTime?: string;
+}
+
+export interface AwsRdsPendingCloudWatchLogsExports {
+  readonly LogTypesToEnable?: [];
+  readonly LogTypesToDisable?: [];
+}
+
+export interface AwsRedshiftClusterClusterNode {
+  readonly NodeRole?: string;
+  readonly PrivateIpAddress?: string;
+  readonly PublicIpAddress?: string;
+}
+
+export interface AwsRedshiftClusterClusterParameterGroup {
+  readonly ClusterParameterStatusList?: [];
+  readonly ParameterApplyStatus?: string;
+  readonly ParameterGroupName?: string;
+}
+
+export interface AwsRedshiftClusterClusterParameterStatus {
+  readonly ParameterName?: string;
+  readonly ParameterApplyStatus?: string;
+  readonly ParameterApplyErrorDescription?: string;
+}
+
+export interface AwsRedshiftClusterClusterSecurityGroup {
+  readonly ClusterSecurityGroupName?: string;
+  readonly Status?: string;
+}
+
+export interface AwsRedshiftClusterClusterSnapshotCopyStatus {
+  readonly DestinationRegion?: string;
+  readonly ManualSnapshotRetentionPeriod?: number;
+  readonly RetentionPeriod?: number;
+  readonly SnapshotCopyGrantName?: string;
+}
+
+export interface AwsRedshiftClusterDeferredMaintenanceWindow {
+  readonly DeferMaintenanceEndTime?: string;
+  readonly DeferMaintenanceIdentifier?: string;
+  readonly DeferMaintenanceStartTime?: string;
+}
+
+export interface AwsRedshiftClusterDetails {
+  readonly AllowVersionUpgrade?: boolean;
+  readonly AutomatedSnapshotRetentionPeriod?: number;
+  readonly AvailabilityZone?: string;
+  readonly ClusterAvailabilityStatus?: string;
+  readonly ClusterCreateTime?: string;
+  readonly ClusterIdentifier?: string;
+  readonly ClusterNodes?: [];
+  readonly ClusterParameterGroups?: [];
+  readonly ClusterPublicKey?: string;
+  readonly ClusterRevisionNumber?: string;
+  readonly ClusterSecurityGroups?: [];
+  readonly ClusterSnapshotCopyStatus?: AwsRedshiftClusterClusterSnapshotCopyStatus;
+  readonly ClusterStatus?: string;
+  readonly ClusterSubnetGroupName?: string;
+  readonly ClusterVersion?: string;
+  readonly DBName?: string;
+  readonly DeferredMaintenanceWindows?: [];
+  readonly ElasticIpStatus?: AwsRedshiftClusterElasticIpStatus;
+  readonly ElasticResizeNumberOfNodeOptions?: string;
+  readonly Encrypted?: boolean;
+  readonly Endpoint?: AwsRedshiftClusterEndpoint;
+  readonly EnhancedVpcRouting?: boolean;
+  readonly ExpectedNextSnapshotScheduleTime?: string;
+  readonly ExpectedNextSnapshotScheduleTimeStatus?: string;
+  readonly HsmStatus?: AwsRedshiftClusterHsmStatus;
+  readonly IamRoles?: [];
+  readonly KmsKeyId?: string;
+  readonly MaintenanceTrackName?: string;
+  readonly ManualSnapshotRetentionPeriod?: number;
+  readonly MasterUsername?: string;
+  readonly NextMaintenanceWindowStartTime?: string;
+  readonly NodeType?: string;
+  readonly NumberOfNodes?: number;
+  readonly PendingActions?: [];
+  readonly PendingModifiedValues?: AwsRedshiftClusterPendingModifiedValues;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly PubliclyAccessible?: boolean;
+  readonly ResizeInfo?: AwsRedshiftClusterResizeInfo;
+  readonly RestoreStatus?: AwsRedshiftClusterRestoreStatus;
+  readonly SnapshotScheduleIdentifier?: string;
+  readonly SnapshotScheduleState?: string;
+  readonly VpcId?: string;
+  readonly VpcSecurityGroups?: [];
+}
+
+export interface AwsRedshiftClusterElasticIpStatus {
+  readonly ElasticIp?: string;
+  readonly Status?: string;
+}
+
+export interface AwsRedshiftClusterEndpoint {
+  readonly Address?: string;
+  readonly Port?: number;
+}
+
+export interface AwsRedshiftClusterHsmStatus {
+  readonly HsmClientCertificateIdentifier?: string;
+  readonly HsmConfigurationIdentifier?: string;
+  readonly Status?: string;
+}
+
+export interface AwsRedshiftClusterIamRole {
+  readonly ApplyStatus?: string;
+  readonly IamRoleArn?: string;
+}
+
+export interface AwsRedshiftClusterPendingModifiedValues {
+  readonly AutomatedSnapshotRetentionPeriod?: number;
+  readonly ClusterIdentifier?: string;
+  readonly ClusterType?: string;
+  readonly ClusterVersion?: string;
+  readonly EncryptionType?: string;
+  readonly EnhancedVpcRouting?: boolean;
+  readonly MaintenanceTrackName?: string;
+  readonly MasterUserPassword?: string;
+  readonly NodeType?: string;
+  readonly NumberOfNodes?: number;
+  readonly PubliclyAccessible?: boolean;
+}
+
+export interface AwsRedshiftClusterResizeInfo {
+  readonly AllowCancelResize?: boolean;
+  readonly ResizeType?: string;
+}
+
+export interface AwsRedshiftClusterRestoreStatus {
+  readonly CurrentRestoreRateInMegaBytesPerSecond?: unknown;
+  readonly ElapsedTimeInSeconds?: number;
+  readonly EstimatedTimeToCompletionInSeconds?: number;
+  readonly ProgressInMegaBytes?: number;
+  readonly SnapshotSizeInMegaBytes?: number;
+  readonly Status?: string;
+}
+
+export interface AwsRedshiftClusterVpcSecurityGroup {
+  readonly Status?: string;
+  readonly VpcSecurityGroupId?: string;
+}
+
+export interface AwsS3AccountPublicAccessBlockDetails {
+  readonly BlockPublicAcls?: boolean;
+  readonly BlockPublicPolicy?: boolean;
+  readonly IgnorePublicAcls?: boolean;
+  readonly RestrictPublicBuckets?: boolean;
+}
+
+export interface AwsS3BucketBucketLifecycleConfigurationDetails {
+  readonly Rules?: [];
+}
 
-interface AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
-  readonly DaysAfterInitiation: number;
-}
+export interface AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
+  readonly DaysAfterInitiation?: number;
+}
 
-interface AwsS3BucketBucketLifecycleConfigurationRulesDetails {
-  readonly AbortIncompleteMultipartUpload: AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails;
-  readonly ExpirationDate: string;
-  readonly ExpirationInDays: number;
-  readonly ExpiredObjectDeleteMarker: boolean;
-  readonly Filter: AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails;
-  readonly ID: string;
-  readonly NoncurrentVersionExpirationInDays: number;
-  readonly NoncurrentVersionTransitions: [];
-  readonly Prefix: string;
-  readonly Status: string;
-  readonly Transitions: [];
+export interface AwsS3BucketBucketLifecycleConfigurationRulesDetails {
+  readonly AbortIncompleteMultipartUpload?: AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails;
+  readonly ExpirationDate?: string;
+  readonly ExpirationInDays?: number;
+  readonly ExpiredObjectDeleteMarker?: boolean;
+  readonly Filter?: AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails;
+  readonly ID?: string;
+  readonly NoncurrentVersionExpirationInDays?: number;
+  readonly NoncurrentVersionTransitions?: [];
+  readonly Prefix?: string;
+  readonly Status?: string;
+  readonly Transitions?: [];
 }
 
-interface AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
-  readonly Predicate: AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails;
+export interface AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
+  readonly Predicate?: AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails;
 }
 
-interface AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
-  readonly Operands: [];
-  readonly Prefix: string;
-  readonly Tag: AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails;
-  readonly Type: string;
+export interface AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
+  readonly Operands?: [];
+  readonly Prefix?: string;
+  readonly Tag?: AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails;
+  readonly Type?: string;
 }
 
-interface AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails {
-  readonly Prefix: string;
-  readonly Tag: AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails;
-  readonly Type: string;
+export interface AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails {
+  readonly Prefix?: string;
+  readonly Tag?: AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails;
+  readonly Type?: string;
 }
 
-interface AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
-  readonly Key: string;
-  readonly Value: string;
+export interface AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
-  readonly Key: string;
-  readonly Value: string;
+export interface AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
-  readonly Days: number;
-  readonly StorageClass: string;
+export interface AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
+  readonly Days?: number;
+  readonly StorageClass?: string;
 }
 
-interface AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
-  readonly Date: string;
-  readonly Days: number;
-  readonly StorageClass: string;
+export interface AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
+  readonly Date?: string;
+  readonly Days?: number;
+  readonly StorageClass?: string;
 }
 
-interface AwsS3BucketDetails {
-  readonly OwnerId: string;
-  readonly OwnerName: string;
-  readonly OwnerAccountId: string;
-  readonly CreatedAt: string;
-  readonly ServerSideEncryptionConfiguration: AwsS3BucketServerSideEncryptionConfiguration;
-  readonly BucketLifecycleConfiguration: AwsS3BucketBucketLifecycleConfigurationDetails;
-  readonly PublicAccessBlockConfiguration: AwsS3AccountPublicAccessBlockDetails;
-  readonly AccessControlList: string;
-  readonly BucketLoggingConfiguration: AwsS3BucketLoggingConfiguration;
-  readonly BucketWebsiteConfiguration: AwsS3BucketWebsiteConfiguration;
-  readonly BucketNotificationConfiguration: AwsS3BucketNotificationConfiguration;
+export interface AwsS3BucketDetails {
+  readonly OwnerId?: string;
+  readonly OwnerName?: string;
+  readonly OwnerAccountId?: string;
+  readonly CreatedAt?: string;
+  readonly ServerSideEncryptionConfiguration?: AwsS3BucketServerSideEncryptionConfiguration;
+  readonly BucketLifecycleConfiguration?: AwsS3BucketBucketLifecycleConfigurationDetails;
+  readonly PublicAccessBlockConfiguration?: AwsS3AccountPublicAccessBlockDetails;
+  readonly AccessControlList?: string;
+  readonly BucketLoggingConfiguration?: AwsS3BucketLoggingConfiguration;
+  readonly BucketWebsiteConfiguration?: AwsS3BucketWebsiteConfiguration;
+  readonly BucketNotificationConfiguration?: AwsS3BucketNotificationConfiguration;
 }
 
-interface AwsS3BucketLoggingConfiguration {
-  readonly DestinationBucketName: string;
-  readonly LogFilePrefix: string;
+export interface AwsS3BucketLoggingConfiguration {
+  readonly DestinationBucketName?: string;
+  readonly LogFilePrefix?: string;
 }
 
-interface AwsS3BucketNotificationConfiguration {
-  readonly Configurations: [];
+export interface AwsS3BucketNotificationConfiguration {
+  readonly Configurations?: [];
 }
 
-interface AwsS3BucketNotificationConfigurationDetail {
-  readonly Events: [];
-  readonly Filter: AwsS3BucketNotificationConfigurationFilter;
-  readonly Destination: string;
-  readonly Type: string;
+export interface AwsS3BucketNotificationConfigurationDetail {
+  readonly Events?: [];
+  readonly Filter?: AwsS3BucketNotificationConfigurationFilter;
+  readonly Destination?: string;
+  readonly Type?: string;
 }
 
-interface AwsS3BucketNotificationConfigurationFilter {
-  readonly S3KeyFilter: AwsS3BucketNotificationConfigurationS3KeyFilter;
+export interface AwsS3BucketNotificationConfigurationFilter {
+  readonly S3KeyFilter?: AwsS3BucketNotificationConfigurationS3KeyFilter;
 }
 
-interface AwsS3BucketNotificationConfigurationS3KeyFilter {
-  readonly FilterRules: [];
+export interface AwsS3BucketNotificationConfigurationS3KeyFilter {
+  readonly FilterRules?: [];
 }
 
-interface AwsS3BucketNotificationConfigurationS3KeyFilterRule {
-  readonly Name: string;
-  readonly Value: string;
+export interface AwsS3BucketNotificationConfigurationS3KeyFilterRule {
+  readonly Name?: string;
+  readonly Value?: string;
 }
 
-interface AwsS3BucketServerSideEncryptionByDefault {
-  readonly SSEAlgorithm: string;
-  readonly KMSMasterKeyID: string;
+export interface AwsS3BucketServerSideEncryptionByDefault {
+  readonly SSEAlgorithm?: string;
+  readonly KMSMasterKeyID?: string;
 }
 
-interface AwsS3BucketServerSideEncryptionConfiguration {
-  readonly Rules: [];
+export interface AwsS3BucketServerSideEncryptionConfiguration {
+  readonly Rules?: [];
 }
 
-interface AwsS3BucketServerSideEncryptionRule {
-  readonly ApplyServerSideEncryptionByDefault: AwsS3BucketServerSideEncryptionByDefault;
+export interface AwsS3BucketServerSideEncryptionRule {
+  readonly ApplyServerSideEncryptionByDefault?: AwsS3BucketServerSideEncryptionByDefault;
 }
 
-interface AwsS3BucketWebsiteConfiguration {
-  readonly ErrorDocument: string;
-  readonly IndexDocumentSuffix: string;
-  readonly RedirectAllRequestsTo: AwsS3BucketWebsiteConfigurationRedirectTo;
-  readonly RoutingRules: [];
+export interface AwsS3BucketWebsiteConfiguration {
+  readonly ErrorDocument?: string;
+  readonly IndexDocumentSuffix?: string;
+  readonly RedirectAllRequestsTo?: AwsS3BucketWebsiteConfigurationRedirectTo;
+  readonly RoutingRules?: [];
 }
 
-interface AwsS3BucketWebsiteConfigurationRedirectTo {
-  readonly Hostname: string;
-  readonly Protocol: string;
+export interface AwsS3BucketWebsiteConfigurationRedirectTo {
+  readonly Hostname?: string;
+  readonly Protocol?: string;
 }
 
-interface AwsS3BucketWebsiteConfigurationRoutingRule {
-  readonly Condition: AwsS3BucketWebsiteConfigurationRoutingRuleCondition;
-  readonly Redirect: AwsS3BucketWebsiteConfigurationRoutingRuleRedirect;
+export interface AwsS3BucketWebsiteConfigurationRoutingRule {
+  readonly Condition?: AwsS3BucketWebsiteConfigurationRoutingRuleCondition;
+  readonly Redirect?: AwsS3BucketWebsiteConfigurationRoutingRuleRedirect;
 }
 
-interface AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
-  readonly HttpErrorCodeReturnedEquals: string;
-  readonly KeyPrefixEquals: string;
+export interface AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
+  readonly HttpErrorCodeReturnedEquals?: string;
+  readonly KeyPrefixEquals?: string;
 }
 
-interface AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
-  readonly Hostname: string;
-  readonly HttpRedirectCode: string;
-  readonly Protocol: string;
-  readonly ReplaceKeyPrefixWith: string;
-  readonly ReplaceKeyWith: string;
+export interface AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
+  readonly Hostname?: string;
+  readonly HttpRedirectCode?: string;
+  readonly Protocol?: string;
+  readonly ReplaceKeyPrefixWith?: string;
+  readonly ReplaceKeyWith?: string;
 }
 
-interface AwsS3ObjectDetails {
-  readonly LastModified: string;
-  readonly ETag: string;
-  readonly VersionId: string;
-  readonly ContentType: string;
-  readonly ServerSideEncryption: string;
-  readonly SSEKMSKeyId: string;
+export interface AwsS3ObjectDetails {
+  readonly LastModified?: string;
+  readonly ETag?: string;
+  readonly VersionId?: string;
+  readonly ContentType?: string;
+  readonly ServerSideEncryption?: string;
+  readonly SSEKMSKeyId?: string;
 }
 
-interface AwsSecretsManagerSecretDetails {
-  readonly RotationRules: AwsSecretsManagerSecretRotationRules;
-  readonly RotationOccurredWithinFrequency: boolean;
-  readonly KmsKeyId: string;
-  readonly RotationEnabled: boolean;
-  readonly RotationLambdaArn: string;
-  readonly Deleted: boolean;
-  readonly Name: string;
-  readonly Description: string;
+export interface AwsSecretsManagerSecretDetails {
+  readonly RotationRules?: AwsSecretsManagerSecretRotationRules;
+  readonly RotationOccurredWithinFrequency?: boolean;
+  readonly KmsKeyId?: string;
+  readonly RotationEnabled?: boolean;
+  readonly RotationLambdaArn?: string;
+  readonly Deleted?: boolean;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 
-interface AwsSecretsManagerSecretRotationRules {
-  readonly AutomaticallyAfterDays: number;
+export interface AwsSecretsManagerSecretRotationRules {
+  readonly AutomaticallyAfterDays?: number;
 }
 
-interface AwsSecurityFinding {
+export interface AwsSecurityFinding {
   readonly SchemaVersion: string;
   readonly Id: string;
   readonly ProductArn: string;
-  readonly ProductName: string;
-  readonly CompanyName: string;
-  readonly Region: string;
+  readonly ProductName?: string;
+  readonly CompanyName?: string;
+  readonly Region?: string;
   readonly GeneratorId: string;
   readonly AwsAccountId: string;
-  readonly Types: [];
-  readonly FirstObservedAt: string;
-  readonly LastObservedAt: string;
+  readonly Types?: [];
+  readonly FirstObservedAt?: string;
+  readonly LastObservedAt?: string;
   readonly CreatedAt: string;
   readonly UpdatedAt: string;
-  readonly Severity: Severity;
-  readonly Confidence: number;
-  readonly Criticality: number;
+  readonly Severity?: Severity;
+  readonly Confidence?: number;
+  readonly Criticality?: number;
   readonly Title: string;
   readonly Description: string;
-  readonly Remediation: Remediation;
-  readonly SourceUrl: string;
-  readonly ProductFields: {[key: string]: any};
-  readonly UserDefinedFields: {[key: string]: any};
-  readonly Malware: [];
-  readonly Network: Network;
-  readonly NetworkPath: [];
-  readonly Process: ProcessDetails;
-  readonly ThreatIntelIndicators: [];
+  readonly Remediation?: Remediation;
+  readonly SourceUrl?: string;
+  readonly ProductFields?: {[key: string]: any};
+  readonly UserDefinedFields?: {[key: string]: any};
+  readonly Malware?: [];
+  readonly Network?: Network;
+  readonly NetworkPath?: [];
+  readonly Process?: ProcessDetails;
+  readonly ThreatIntelIndicators?: [];
   readonly Resources: [];
-  readonly Compliance: Compliance;
-  readonly VerificationState: string;
-  readonly WorkflowState: string;
-  readonly Workflow: Workflow;
-  readonly RecordState: string;
-  readonly RelatedFindings: [];
-  readonly Note: Note;
-  readonly Vulnerabilities: [];
-  readonly PatchSummary: PatchSummary;
-  readonly Action: Action;
-  readonly FindingProviderFields: FindingProviderFields;
+  readonly Compliance?: Compliance;
+  readonly VerificationState?: string;
+  readonly WorkflowState?: string;
+  readonly Workflow?: Workflow;
+  readonly RecordState?: string;
+  readonly RelatedFindings?: [];
+  readonly Note?: Note;
+  readonly Vulnerabilities?: [];
+  readonly PatchSummary?: PatchSummary;
+  readonly Action?: Action;
+  readonly FindingProviderFields?: FindingProviderFields;
 }
 
-interface AwsSecurityFindingFilters {
-  readonly ProductArn: [];
-  readonly AwsAccountId: [];
-  readonly Id: [];
-  readonly GeneratorId: [];
-  readonly Region: [];
-  readonly Type: [];
-  readonly FirstObservedAt: [];
-  readonly LastObservedAt: [];
-  readonly CreatedAt: [];
-  readonly UpdatedAt: [];
-  readonly SeverityProduct: [];
-  readonly SeverityNormalized: [];
-  readonly SeverityLabel: [];
-  readonly Confidence: [];
-  readonly Criticality: [];
-  readonly Title: [];
-  readonly Description: [];
-  readonly RecommendationText: [];
-  readonly SourceUrl: [];
-  readonly ProductFields: [];
-  readonly ProductName: [];
-  readonly CompanyName: [];
-  readonly UserDefinedFields: [];
-  readonly MalwareName: [];
-  readonly MalwareType: [];
-  readonly MalwarePath: [];
-  readonly MalwareState: [];
-  readonly NetworkDirection: [];
-  readonly NetworkProtocol: [];
-  readonly NetworkSourceIpV4: [];
-  readonly NetworkSourceIpV6: [];
-  readonly NetworkSourcePort: [];
-  readonly NetworkSourceDomain: [];
-  readonly NetworkSourceMac: [];
-  readonly NetworkDestinationIpV4: [];
-  readonly NetworkDestinationIpV6: [];
-  readonly NetworkDestinationPort: [];
-  readonly NetworkDestinationDomain: [];
-  readonly ProcessName: [];
-  readonly ProcessPath: [];
-  readonly ProcessPid: [];
-  readonly ProcessParentPid: [];
-  readonly ProcessLaunchedAt: [];
-  readonly ProcessTerminatedAt: [];
-  readonly ThreatIntelIndicatorType: [];
-  readonly ThreatIntelIndicatorValue: [];
-  readonly ThreatIntelIndicatorCategory: [];
-  readonly ThreatIntelIndicatorLastObservedAt: [];
-  readonly ThreatIntelIndicatorSource: [];
-  readonly ThreatIntelIndicatorSourceUrl: [];
-  readonly ResourceType: [];
-  readonly ResourceId: [];
-  readonly ResourcePartition: [];
-  readonly ResourceRegion: [];
-  readonly ResourceTags: [];
-  readonly ResourceAwsEc2InstanceType: [];
-  readonly ResourceAwsEc2InstanceImageId: [];
-  readonly ResourceAwsEc2InstanceIpV4Addresses: [];
-  readonly ResourceAwsEc2InstanceIpV6Addresses: [];
-  readonly ResourceAwsEc2InstanceKeyName: [];
-  readonly ResourceAwsEc2InstanceIamInstanceProfileArn: [];
-  readonly ResourceAwsEc2InstanceVpcId: [];
-  readonly ResourceAwsEc2InstanceSubnetId: [];
-  readonly ResourceAwsEc2InstanceLaunchedAt: [];
-  readonly ResourceAwsS3BucketOwnerId: [];
-  readonly ResourceAwsS3BucketOwnerName: [];
-  readonly ResourceAwsIamAccessKeyUserName: [];
-  readonly ResourceAwsIamAccessKeyPrincipalName: [];
-  readonly ResourceAwsIamAccessKeyStatus: [];
-  readonly ResourceAwsIamAccessKeyCreatedAt: [];
-  readonly ResourceAwsIamUserUserName: [];
-  readonly ResourceContainerName: [];
-  readonly ResourceContainerImageId: [];
-  readonly ResourceContainerImageName: [];
-  readonly ResourceContainerLaunchedAt: [];
-  readonly ResourceDetailsOther: [];
-  readonly ComplianceStatus: [];
-  readonly VerificationState: [];
-  readonly WorkflowState: [];
-  readonly WorkflowStatus: [];
-  readonly RecordState: [];
-  readonly RelatedFindingsProductArn: [];
-  readonly RelatedFindingsId: [];
-  readonly NoteText: [];
-  readonly NoteUpdatedAt: [];
-  readonly NoteUpdatedBy: [];
-  readonly Keyword: [];
-  readonly FindingProviderFieldsConfidence: [];
-  readonly FindingProviderFieldsCriticality: [];
-  readonly FindingProviderFieldsRelatedFindingsId: [];
-  readonly FindingProviderFieldsRelatedFindingsProductArn: [];
-  readonly FindingProviderFieldsSeverityLabel: [];
-  readonly FindingProviderFieldsSeverityOriginal: [];
-  readonly FindingProviderFieldsTypes: [];
+export interface AwsSecurityFindingFilters {
+  readonly ProductArn?: [];
+  readonly AwsAccountId?: [];
+  readonly Id?: [];
+  readonly GeneratorId?: [];
+  readonly Region?: [];
+  readonly Type?: [];
+  readonly FirstObservedAt?: [];
+  readonly LastObservedAt?: [];
+  readonly CreatedAt?: [];
+  readonly UpdatedAt?: [];
+  readonly SeverityProduct?: [];
+  readonly SeverityNormalized?: [];
+  readonly SeverityLabel?: [];
+  readonly Confidence?: [];
+  readonly Criticality?: [];
+  readonly Title?: [];
+  readonly Description?: [];
+  readonly RecommendationText?: [];
+  readonly SourceUrl?: [];
+  readonly ProductFields?: [];
+  readonly ProductName?: [];
+  readonly CompanyName?: [];
+  readonly UserDefinedFields?: [];
+  readonly MalwareName?: [];
+  readonly MalwareType?: [];
+  readonly MalwarePath?: [];
+  readonly MalwareState?: [];
+  readonly NetworkDirection?: [];
+  readonly NetworkProtocol?: [];
+  readonly NetworkSourceIpV4?: [];
+  readonly NetworkSourceIpV6?: [];
+  readonly NetworkSourcePort?: [];
+  readonly NetworkSourceDomain?: [];
+  readonly NetworkSourceMac?: [];
+  readonly NetworkDestinationIpV4?: [];
+  readonly NetworkDestinationIpV6?: [];
+  readonly NetworkDestinationPort?: [];
+  readonly NetworkDestinationDomain?: [];
+  readonly ProcessName?: [];
+  readonly ProcessPath?: [];
+  readonly ProcessPid?: [];
+  readonly ProcessParentPid?: [];
+  readonly ProcessLaunchedAt?: [];
+  readonly ProcessTerminatedAt?: [];
+  readonly ThreatIntelIndicatorType?: [];
+  readonly ThreatIntelIndicatorValue?: [];
+  readonly ThreatIntelIndicatorCategory?: [];
+  readonly ThreatIntelIndicatorLastObservedAt?: [];
+  readonly ThreatIntelIndicatorSource?: [];
+  readonly ThreatIntelIndicatorSourceUrl?: [];
+  readonly ResourceType?: [];
+  readonly ResourceId?: [];
+  readonly ResourcePartition?: [];
+  readonly ResourceRegion?: [];
+  readonly ResourceTags?: [];
+  readonly ResourceAwsEc2InstanceType?: [];
+  readonly ResourceAwsEc2InstanceImageId?: [];
+  readonly ResourceAwsEc2InstanceIpV4Addresses?: [];
+  readonly ResourceAwsEc2InstanceIpV6Addresses?: [];
+  readonly ResourceAwsEc2InstanceKeyName?: [];
+  readonly ResourceAwsEc2InstanceIamInstanceProfileArn?: [];
+  readonly ResourceAwsEc2InstanceVpcId?: [];
+  readonly ResourceAwsEc2InstanceSubnetId?: [];
+  readonly ResourceAwsEc2InstanceLaunchedAt?: [];
+  readonly ResourceAwsS3BucketOwnerId?: [];
+  readonly ResourceAwsS3BucketOwnerName?: [];
+  readonly ResourceAwsIamAccessKeyUserName?: [];
+  readonly ResourceAwsIamAccessKeyPrincipalName?: [];
+  readonly ResourceAwsIamAccessKeyStatus?: [];
+  readonly ResourceAwsIamAccessKeyCreatedAt?: [];
+  readonly ResourceAwsIamUserUserName?: [];
+  readonly ResourceContainerName?: [];
+  readonly ResourceContainerImageId?: [];
+  readonly ResourceContainerImageName?: [];
+  readonly ResourceContainerLaunchedAt?: [];
+  readonly ResourceDetailsOther?: [];
+  readonly ComplianceStatus?: [];
+  readonly VerificationState?: [];
+  readonly WorkflowState?: [];
+  readonly WorkflowStatus?: [];
+  readonly RecordState?: [];
+  readonly RelatedFindingsProductArn?: [];
+  readonly RelatedFindingsId?: [];
+  readonly NoteText?: [];
+  readonly NoteUpdatedAt?: [];
+  readonly NoteUpdatedBy?: [];
+  readonly Keyword?: [];
+  readonly FindingProviderFieldsConfidence?: [];
+  readonly FindingProviderFieldsCriticality?: [];
+  readonly FindingProviderFieldsRelatedFindingsId?: [];
+  readonly FindingProviderFieldsRelatedFindingsProductArn?: [];
+  readonly FindingProviderFieldsSeverityLabel?: [];
+  readonly FindingProviderFieldsSeverityOriginal?: [];
+  readonly FindingProviderFieldsTypes?: [];
 }
 
-interface AwsSecurityFindingIdentifier {
+export interface AwsSecurityFindingIdentifier {
   readonly Id: string;
   readonly ProductArn: string;
 }
 
-interface AwsSnsTopicDetails {
-  readonly KmsMasterKeyId: string;
-  readonly Subscription: [];
-  readonly TopicName: string;
-  readonly Owner: string;
+export interface AwsSnsTopicDetails {
+  readonly KmsMasterKeyId?: string;
+  readonly Subscription?: [];
+  readonly TopicName?: string;
+  readonly Owner?: string;
 }
 
-interface AwsSnsTopicSubscription {
-  readonly Endpoint: string;
-  readonly Protocol: string;
+export interface AwsSnsTopicSubscription {
+  readonly Endpoint?: string;
+  readonly Protocol?: string;
 }
 
-interface AwsSqsQueueDetails {
-  readonly KmsDataKeyReusePeriodSeconds: number;
-  readonly KmsMasterKeyId: string;
-  readonly QueueName: string;
-  readonly DeadLetterTargetArn: string;
+export interface AwsSqsQueueDetails {
+  readonly KmsDataKeyReusePeriodSeconds?: number;
+  readonly KmsMasterKeyId?: string;
+  readonly QueueName?: string;
+  readonly DeadLetterTargetArn?: string;
 }
 
-interface AwsSsmComplianceSummary {
-  readonly Status: string;
-  readonly CompliantCriticalCount: number;
-  readonly CompliantHighCount: number;
-  readonly CompliantMediumCount: number;
-  readonly ExecutionType: string;
-  readonly NonCompliantCriticalCount: number;
-  readonly CompliantInformationalCount: number;
-  readonly NonCompliantInformationalCount: number;
-  readonly CompliantUnspecifiedCount: number;
-  readonly NonCompliantLowCount: number;
-  readonly NonCompliantHighCount: number;
-  readonly CompliantLowCount: number;
-  readonly ComplianceType: string;
-  readonly PatchBaselineId: string;
-  readonly OverallSeverity: string;
-  readonly NonCompliantMediumCount: number;
-  readonly NonCompliantUnspecifiedCount: number;
-  readonly PatchGroup: string;
+export interface AwsSsmComplianceSummary {
+  readonly Status?: string;
+  readonly CompliantCriticalCount?: number;
+  readonly CompliantHighCount?: number;
+  readonly CompliantMediumCount?: number;
+  readonly ExecutionType?: string;
+  readonly NonCompliantCriticalCount?: number;
+  readonly CompliantInformationalCount?: number;
+  readonly NonCompliantInformationalCount?: number;
+  readonly CompliantUnspecifiedCount?: number;
+  readonly NonCompliantLowCount?: number;
+  readonly NonCompliantHighCount?: number;
+  readonly CompliantLowCount?: number;
+  readonly ComplianceType?: string;
+  readonly PatchBaselineId?: string;
+  readonly OverallSeverity?: string;
+  readonly NonCompliantMediumCount?: number;
+  readonly NonCompliantUnspecifiedCount?: number;
+  readonly PatchGroup?: string;
 }
 
-interface AwsSsmPatch {
-  readonly ComplianceSummary: AwsSsmComplianceSummary;
+export interface AwsSsmPatch {
+  readonly ComplianceSummary?: AwsSsmComplianceSummary;
 }
 
-interface AwsSsmPatchComplianceDetails {
-  readonly Patch: AwsSsmPatch;
+export interface AwsSsmPatchComplianceDetails {
+  readonly Patch?: AwsSsmPatch;
 }
 
-interface AwsWafRateBasedRuleDetails {
-  readonly MetricName: string;
-  readonly Name: string;
-  readonly RateKey: string;
-  readonly RateLimit: number;
-  readonly RuleId: string;
-  readonly MatchPredicates: [];
+export interface AwsWafRateBasedRuleDetails {
+  readonly MetricName?: string;
+  readonly Name?: string;
+  readonly RateKey?: string;
+  readonly RateLimit?: number;
+  readonly RuleId?: string;
+  readonly MatchPredicates?: [];
 }
 
-interface AwsWafRateBasedRuleMatchPredicate {
-  readonly DataId: string;
-  readonly Negated: boolean;
-  readonly Type: string;
+export interface AwsWafRateBasedRuleMatchPredicate {
+  readonly DataId?: string;
+  readonly Negated?: boolean;
+  readonly Type?: string;
 }
 
-interface AwsWafRegionalRateBasedRuleDetails {
-  readonly MetricName: string;
-  readonly Name: string;
-  readonly RateKey: string;
-  readonly RateLimit: number;
-  readonly RuleId: string;
-  readonly MatchPredicates: [];
+export interface AwsWafRegionalRateBasedRuleDetails {
+  readonly MetricName?: string;
+  readonly Name?: string;
+  readonly RateKey?: string;
+  readonly RateLimit?: number;
+  readonly RuleId?: string;
+  readonly MatchPredicates?: [];
 }
 
-interface AwsWafRegionalRateBasedRuleMatchPredicate {
-  readonly DataId: string;
-  readonly Negated: boolean;
-  readonly Type: string;
+export interface AwsWafRegionalRateBasedRuleMatchPredicate {
+  readonly DataId?: string;
+  readonly Negated?: boolean;
+  readonly Type?: string;
 }
 
-interface AwsWafWebAclDetails {
-  readonly Name: string;
-  readonly DefaultAction: string;
-  readonly Rules: [];
-  readonly WebAclId: string;
+export interface AwsWafWebAclDetails {
+  readonly Name?: string;
+  readonly DefaultAction?: string;
+  readonly Rules?: [];
+  readonly WebAclId?: string;
 }
 
-interface AwsWafWebAclRule {
-  readonly Action: WafAction;
-  readonly ExcludedRules: [];
-  readonly OverrideAction: WafOverrideAction;
-  readonly Priority: number;
-  readonly RuleId: string;
-  readonly Type: string;
+export interface AwsWafWebAclRule {
+  readonly Action?: WafAction;
+  readonly ExcludedRules?: [];
+  readonly OverrideAction?: WafOverrideAction;
+  readonly Priority?: number;
+  readonly RuleId?: string;
+  readonly Type?: string;
 }
 
-interface AwsXrayEncryptionConfigDetails {
-  readonly KeyId: string;
-  readonly Status: string;
-  readonly Type: string;
+export interface AwsXrayEncryptionConfigDetails {
+  readonly KeyId?: string;
+  readonly Status?: string;
+  readonly Type?: string;
 }
 
-interface BatchDisableStandardsRequest {
+export interface BatchDisableStandardsRequest {
   readonly StandardsSubscriptionArns: [];
 }
 
-interface BatchDisableStandardsResponse {
-  readonly StandardsSubscriptions: [];
+export interface BatchDisableStandardsResponse {
+  readonly StandardsSubscriptions?: [];
 }
 
-interface BatchEnableStandardsRequest {
+export interface BatchEnableStandardsRequest {
   readonly StandardsSubscriptionRequests: [];
 }
 
-interface BatchEnableStandardsResponse {
-  readonly StandardsSubscriptions: [];
+export interface BatchEnableStandardsResponse {
+  readonly StandardsSubscriptions?: [];
 }
 
-interface BatchImportFindingsRequest {
+export interface BatchImportFindingsRequest {
   readonly Findings: [];
 }
 
-interface BatchImportFindingsResponse {
+export interface BatchImportFindingsResponse {
   readonly FailedCount: number;
   readonly SuccessCount: number;
-  readonly FailedFindings: [];
+  readonly FailedFindings?: [];
 }
 
-interface BatchUpdateFindingsRequest {
+export interface BatchUpdateFindingsRequest {
   readonly FindingIdentifiers: [];
-  readonly Note: NoteUpdate;
-  readonly Severity: SeverityUpdate;
-  readonly VerificationState: string;
-  readonly Confidence: number;
-  readonly Criticality: number;
-  readonly Types: [];
-  readonly UserDefinedFields: {[key: string]: any};
-  readonly Workflow: WorkflowUpdate;
-  readonly RelatedFindings: [];
+  readonly Note?: NoteUpdate;
+  readonly Severity?: SeverityUpdate;
+  readonly VerificationState?: string;
+  readonly Confidence?: number;
+  readonly Criticality?: number;
+  readonly Types?: [];
+  readonly UserDefinedFields?: {[key: string]: any};
+  readonly Workflow?: WorkflowUpdate;
+  readonly RelatedFindings?: [];
 }
 
-interface BatchUpdateFindingsResponse {
+export interface BatchUpdateFindingsResponse {
   readonly ProcessedFindings: [];
   readonly UnprocessedFindings: [];
 }
 
-interface BatchUpdateFindingsUnprocessedFinding {
+export interface BatchUpdateFindingsUnprocessedFinding {
   readonly FindingIdentifier: AwsSecurityFindingIdentifier;
   readonly ErrorCode: string;
   readonly ErrorMessage: string;
 }
 
-interface Cell {
-  readonly Column: number;
-  readonly Row: number;
-  readonly ColumnName: string;
-  readonly CellReference: string;
+export interface Cell {
+  readonly Column?: number;
+  readonly Row?: number;
+  readonly ColumnName?: string;
+  readonly CellReference?: string;
 }
 
-interface CidrBlockAssociation {
-  readonly AssociationId: string;
-  readonly CidrBlock: string;
-  readonly CidrBlockState: string;
+export interface CidrBlockAssociation {
+  readonly AssociationId?: string;
+  readonly CidrBlock?: string;
+  readonly CidrBlockState?: string;
 }
 
-interface City {
-  readonly CityName: string;
+export interface City {
+  readonly CityName?: string;
 }
 
-interface ClassificationResult {
-  readonly MimeType: string;
-  readonly SizeClassified: number;
-  readonly AdditionalOccurrences: boolean;
-  readonly Status: ClassificationStatus;
-  readonly SensitiveData: [];
-  readonly CustomDataIdentifiers: CustomDataIdentifiersResult;
+export interface ClassificationResult {
+  readonly MimeType?: string;
+  readonly SizeClassified?: number;
+  readonly AdditionalOccurrences?: boolean;
+  readonly Status?: ClassificationStatus;
+  readonly SensitiveData?: [];
+  readonly CustomDataIdentifiers?: CustomDataIdentifiersResult;
 }
 
-interface ClassificationStatus {
-  readonly Code: string;
-  readonly Reason: string;
+export interface ClassificationStatus {
+  readonly Code?: string;
+  readonly Reason?: string;
 }
 
-interface Compliance {
-  readonly Status: string;
-  readonly RelatedRequirements: [];
-  readonly StatusReasons: [];
+export interface Compliance {
+  readonly Status?: string;
+  readonly RelatedRequirements?: [];
+  readonly StatusReasons?: [];
 }
 
-interface ContainerDetails {
-  readonly Name: string;
-  readonly ImageId: string;
-  readonly ImageName: string;
-  readonly LaunchedAt: string;
+export interface ContainerDetails {
+  readonly Name?: string;
+  readonly ImageId?: string;
+  readonly ImageName?: string;
+  readonly LaunchedAt?: string;
 }
 
-interface Country {
-  readonly CountryCode: string;
-  readonly CountryName: string;
+export interface Country {
+  readonly CountryCode?: string;
+  readonly CountryName?: string;
 }
 
-interface CreateActionTargetRequest {
+export interface CreateActionTargetRequest {
   readonly Name: string;
   readonly Description: string;
   readonly Id: string;
 }
 
-interface CreateActionTargetResponse {
+export interface CreateActionTargetResponse {
   readonly ActionTargetArn: string;
 }
 
-interface CreateFindingAggregatorRequest {
+export interface CreateFindingAggregatorRequest {
   readonly RegionLinkingMode: string;
-  readonly Regions: [];
+  readonly Regions?: [];
 }
 
-interface CreateFindingAggregatorResponse {
-  readonly FindingAggregatorArn: string;
-  readonly FindingAggregationRegion: string;
-  readonly RegionLinkingMode: string;
-  readonly Regions: [];
+export interface CreateFindingAggregatorResponse {
+  readonly FindingAggregatorArn?: string;
+  readonly FindingAggregationRegion?: string;
+  readonly RegionLinkingMode?: string;
+  readonly Regions?: [];
 }
 
-interface CreateInsightRequest {
+export interface CreateInsightRequest {
   readonly Name: string;
   readonly Filters: AwsSecurityFindingFilters;
   readonly GroupByAttribute: string;
 }
 
-interface CreateInsightResponse {
+export interface CreateInsightResponse {
   readonly InsightArn: string;
 }
 
-interface CreateMembersRequest {
+export interface CreateMembersRequest {
   readonly AccountDetails: [];
 }
 
-interface CreateMembersResponse {
-  readonly UnprocessedAccounts: [];
+export interface CreateMembersResponse {
+  readonly UnprocessedAccounts?: [];
 }
 
-interface CustomDataIdentifiersDetections {
-  readonly Count: number;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Occurrences: Occurrences;
+export interface CustomDataIdentifiersDetections {
+  readonly Count?: number;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Occurrences?: Occurrences;
 }
 
-interface CustomDataIdentifiersResult {
-  readonly Detections: [];
-  readonly TotalCount: number;
+export interface CustomDataIdentifiersResult {
+  readonly Detections?: [];
+  readonly TotalCount?: number;
 }
 
-interface Cvss {
-  readonly Version: string;
-  readonly BaseScore: unknown;
-  readonly BaseVector: string;
-  readonly Source: string;
-  readonly Adjustments: [];
+export interface Cvss {
+  readonly Version?: string;
+  readonly BaseScore?: unknown;
+  readonly BaseVector?: string;
+  readonly Source?: string;
+  readonly Adjustments?: [];
 }
 
-interface DataClassificationDetails {
-  readonly DetailedResultsLocation: string;
-  readonly Result: ClassificationResult;
+export interface DataClassificationDetails {
+  readonly DetailedResultsLocation?: string;
+  readonly Result?: ClassificationResult;
 }
 
-interface DateFilter {
-  readonly Start: string;
-  readonly End: string;
-  readonly DateRange: DateRange;
+export interface DateFilter {
+  readonly Start?: string;
+  readonly End?: string;
+  readonly DateRange?: DateRange;
 }
 
-interface DateRange {
-  readonly Value: number;
-  readonly Unit: string;
+export interface DateRange {
+  readonly Value?: number;
+  readonly Unit?: string;
 }
 
-interface DeclineInvitationsRequest {
+export interface DeclineInvitationsRequest {
   readonly AccountIds: [];
 }
 
-interface DeclineInvitationsResponse {
-  readonly UnprocessedAccounts: [];
+export interface DeclineInvitationsResponse {
+  readonly UnprocessedAccounts?: [];
 }
 
-interface DeleteActionTargetRequest {
+export interface DeleteActionTargetRequest {
   readonly ActionTargetArn: string;
 }
 
-interface DeleteActionTargetResponse {
+export interface DeleteActionTargetResponse {
   readonly ActionTargetArn: string;
 }
 
-interface DeleteFindingAggregatorRequest {
+export interface DeleteFindingAggregatorRequest {
   readonly FindingAggregatorArn: string;
 }
 
-interface DeleteFindingAggregatorResponse {
+export interface DeleteFindingAggregatorResponse {
 }
 
-interface DeleteInsightRequest {
+export interface DeleteInsightRequest {
   readonly InsightArn: string;
 }
 
-interface DeleteInsightResponse {
+export interface DeleteInsightResponse {
   readonly InsightArn: string;
 }
 
-interface DeleteInvitationsRequest {
+export interface DeleteInvitationsRequest {
   readonly AccountIds: [];
 }
 
-interface DeleteInvitationsResponse {
-  readonly UnprocessedAccounts: [];
+export interface DeleteInvitationsResponse {
+  readonly UnprocessedAccounts?: [];
 }
 
-interface DeleteMembersRequest {
+export interface DeleteMembersRequest {
   readonly AccountIds: [];
 }
 
-interface DeleteMembersResponse {
-  readonly UnprocessedAccounts: [];
+export interface DeleteMembersResponse {
+  readonly UnprocessedAccounts?: [];
 }
 
-interface DescribeActionTargetsRequest {
-  readonly ActionTargetArns: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeActionTargetsRequest {
+  readonly ActionTargetArns?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeActionTargetsResponse {
+export interface DescribeActionTargetsResponse {
   readonly ActionTargets: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeHubRequest {
-  readonly HubArn: string;
+export interface DescribeHubRequest {
+  readonly HubArn?: string;
 }
 
-interface DescribeHubResponse {
-  readonly HubArn: string;
-  readonly SubscribedAt: string;
-  readonly AutoEnableControls: boolean;
+export interface DescribeHubResponse {
+  readonly HubArn?: string;
+  readonly SubscribedAt?: string;
+  readonly AutoEnableControls?: boolean;
 }
 
-interface DescribeOrganizationConfigurationRequest {
+export interface DescribeOrganizationConfigurationRequest {
 }
 
-interface DescribeOrganizationConfigurationResponse {
-  readonly AutoEnable: boolean;
-  readonly MemberAccountLimitReached: boolean;
+export interface DescribeOrganizationConfigurationResponse {
+  readonly AutoEnable?: boolean;
+  readonly MemberAccountLimitReached?: boolean;
 }
 
-interface DescribeProductsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ProductArn: string;
+export interface DescribeProductsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ProductArn?: string;
 }
 
-interface DescribeProductsResponse {
+export interface DescribeProductsResponse {
   readonly Products: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeStandardsControlsRequest {
+export interface DescribeStandardsControlsRequest {
   readonly StandardsSubscriptionArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeStandardsControlsResponse {
-  readonly Controls: [];
-  readonly NextToken: string;
+export interface DescribeStandardsControlsResponse {
+  readonly Controls?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeStandardsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeStandardsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeStandardsResponse {
-  readonly Standards: [];
-  readonly NextToken: string;
+export interface DescribeStandardsResponse {
+  readonly Standards?: [];
+  readonly NextToken?: string;
 }
 
-interface DisableImportFindingsForProductRequest {
+export interface DisableImportFindingsForProductRequest {
   readonly ProductSubscriptionArn: string;
 }
 
-interface DisableImportFindingsForProductResponse {
+export interface DisableImportFindingsForProductResponse {
 }
 
-interface DisableOrganizationAdminAccountRequest {
+export interface DisableOrganizationAdminAccountRequest {
   readonly AdminAccountId: string;
 }
 
-interface DisableOrganizationAdminAccountResponse {
+export interface DisableOrganizationAdminAccountResponse {
 }
 
-interface DisableSecurityHubRequest {
+export interface DisableSecurityHubRequest {
 }
 
-interface DisableSecurityHubResponse {
+export interface DisableSecurityHubResponse {
 }
 
-interface DisassociateFromAdministratorAccountRequest {
+export interface DisassociateFromAdministratorAccountRequest {
 }
 
-interface DisassociateFromAdministratorAccountResponse {
+export interface DisassociateFromAdministratorAccountResponse {
 }
 
-interface DisassociateFromMasterAccountRequest {
+export interface DisassociateFromMasterAccountRequest {
 }
 
-interface DisassociateFromMasterAccountResponse {
+export interface DisassociateFromMasterAccountResponse {
 }
 
-interface DisassociateMembersRequest {
+export interface DisassociateMembersRequest {
   readonly AccountIds: [];
 }
 
-interface DisassociateMembersResponse {
+export interface DisassociateMembersResponse {
 }
 
-interface DnsRequestAction {
-  readonly Domain: string;
-  readonly Protocol: string;
-  readonly Blocked: boolean;
+export interface DnsRequestAction {
+  readonly Domain?: string;
+  readonly Protocol?: string;
+  readonly Blocked?: boolean;
 }
 
-interface EnableImportFindingsForProductRequest {
+export interface EnableImportFindingsForProductRequest {
   readonly ProductArn: string;
 }
 
-interface EnableImportFindingsForProductResponse {
-  readonly ProductSubscriptionArn: string;
+export interface EnableImportFindingsForProductResponse {
+  readonly ProductSubscriptionArn?: string;
 }
 
-interface EnableOrganizationAdminAccountRequest {
+export interface EnableOrganizationAdminAccountRequest {
   readonly AdminAccountId: string;
 }
 
-interface EnableOrganizationAdminAccountResponse {
+export interface EnableOrganizationAdminAccountResponse {
 }
 
-interface EnableSecurityHubRequest {
-  readonly Tags: {[key: string]: any};
-  readonly EnableDefaultStandards: boolean;
+export interface EnableSecurityHubRequest {
+  readonly Tags?: {[key: string]: any};
+  readonly EnableDefaultStandards?: boolean;
 }
 
-interface EnableSecurityHubResponse {
+export interface EnableSecurityHubResponse {
 }
 
-interface FindingAggregator {
+export interface FindingAggregator {
+  readonly FindingAggregatorArn?: string;
+}
+
+export interface FindingProviderFields {
+  readonly Confidence?: number;
+  readonly Criticality?: number;
+  readonly RelatedFindings?: [];
+  readonly Severity?: FindingProviderSeverity;
+  readonly Types?: [];
+}
+
+export interface FindingProviderSeverity {
+  readonly Label?: string;
+  readonly Original?: string;
+}
+
+export interface GeoLocation {
+  readonly Lon?: unknown;
+  readonly Lat?: unknown;
+}
+
+export interface GetAdministratorAccountRequest {
+}
+
+export interface GetAdministratorAccountResponse {
+  readonly Administrator?: Invitation;
+}
+
+export interface GetEnabledStandardsRequest {
+  readonly StandardsSubscriptionArns?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface GetEnabledStandardsResponse {
+  readonly StandardsSubscriptions?: [];
+  readonly NextToken?: string;
+}
+
+export interface GetFindingAggregatorRequest {
   readonly FindingAggregatorArn: string;
 }
 
-interface FindingProviderFields {
-  readonly Confidence: number;
-  readonly Criticality: number;
-  readonly RelatedFindings: [];
-  readonly Severity: FindingProviderSeverity;
-  readonly Types: [];
+export interface GetFindingAggregatorResponse {
+  readonly FindingAggregatorArn?: string;
+  readonly FindingAggregationRegion?: string;
+  readonly RegionLinkingMode?: string;
+  readonly Regions?: [];
 }
 
-interface FindingProviderSeverity {
-  readonly Label: string;
-  readonly Original: string;
+export interface GetFindingsRequest {
+  readonly Filters?: AwsSecurityFindingFilters;
+  readonly SortCriteria?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GeoLocation {
-  readonly Lon: unknown;
-  readonly Lat: unknown;
-}
-
-interface GetAdministratorAccountRequest {
-}
-
-interface GetAdministratorAccountResponse {
-  readonly Administrator: Invitation;
-}
-
-interface GetEnabledStandardsRequest {
-  readonly StandardsSubscriptionArns: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface GetEnabledStandardsResponse {
-  readonly StandardsSubscriptions: [];
-  readonly NextToken: string;
-}
-
-interface GetFindingAggregatorRequest {
-  readonly FindingAggregatorArn: string;
-}
-
-interface GetFindingAggregatorResponse {
-  readonly FindingAggregatorArn: string;
-  readonly FindingAggregationRegion: string;
-  readonly RegionLinkingMode: string;
-  readonly Regions: [];
-}
-
-interface GetFindingsRequest {
-  readonly Filters: AwsSecurityFindingFilters;
-  readonly SortCriteria: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface GetFindingsResponse {
+export interface GetFindingsResponse {
   readonly Findings: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface GetInsightResultsRequest {
+export interface GetInsightResultsRequest {
   readonly InsightArn: string;
 }
 
-interface GetInsightResultsResponse {
+export interface GetInsightResultsResponse {
   readonly InsightResults: InsightResults;
 }
 
-interface GetInsightsRequest {
-  readonly InsightArns: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface GetInsightsRequest {
+  readonly InsightArns?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetInsightsResponse {
+export interface GetInsightsResponse {
   readonly Insights: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface GetInvitationsCountRequest {
+export interface GetInvitationsCountRequest {
 }
 
-interface GetInvitationsCountResponse {
-  readonly InvitationsCount: number;
+export interface GetInvitationsCountResponse {
+  readonly InvitationsCount?: number;
 }
 
-interface GetMasterAccountRequest {
+export interface GetMasterAccountRequest {
 }
 
-interface GetMasterAccountResponse {
-  readonly Master: Invitation;
+export interface GetMasterAccountResponse {
+  readonly Master?: Invitation;
 }
 
-interface GetMembersRequest {
+export interface GetMembersRequest {
   readonly AccountIds: [];
 }
 
-interface GetMembersResponse {
-  readonly Members: [];
-  readonly UnprocessedAccounts: [];
+export interface GetMembersResponse {
+  readonly Members?: [];
+  readonly UnprocessedAccounts?: [];
 }
 
-interface IcmpTypeCode {
-  readonly Code: number;
-  readonly Type: number;
+export interface IcmpTypeCode {
+  readonly Code?: number;
+  readonly Type?: number;
 }
 
-interface ImportFindingsError {
+export interface ImportFindingsError {
   readonly Id: string;
   readonly ErrorCode: string;
   readonly ErrorMessage: string;
 }
 
-interface Insight {
+export interface Insight {
   readonly InsightArn: string;
   readonly Name: string;
   readonly Filters: AwsSecurityFindingFilters;
   readonly GroupByAttribute: string;
 }
 
-interface InsightResultValue {
+export interface InsightResultValue {
   readonly GroupByAttributeValue: string;
   readonly Count: number;
 }
 
-interface InsightResults {
+export interface InsightResults {
   readonly InsightArn: string;
   readonly GroupByAttribute: string;
   readonly ResultValues: [];
 }
 
-interface InternalException {
-  readonly Message: string;
-  readonly Code: string;
+export interface InternalException {
+  readonly Message?: string;
+  readonly Code?: string;
 }
 
-interface InvalidAccessException {
-  readonly Message: string;
-  readonly Code: string;
+export interface InvalidAccessException {
+  readonly Message?: string;
+  readonly Code?: string;
 }
 
-interface InvalidInputException {
-  readonly Message: string;
-  readonly Code: string;
+export interface InvalidInputException {
+  readonly Message?: string;
+  readonly Code?: string;
 }
 
-interface Invitation {
-  readonly AccountId: string;
-  readonly InvitationId: string;
-  readonly InvitedAt: Date;
-  readonly MemberStatus: string;
+export interface Invitation {
+  readonly AccountId?: string;
+  readonly InvitationId?: string;
+  readonly InvitedAt?: Date;
+  readonly MemberStatus?: string;
 }
 
-interface InviteMembersRequest {
+export interface InviteMembersRequest {
   readonly AccountIds: [];
 }
 
-interface InviteMembersResponse {
-  readonly UnprocessedAccounts: [];
+export interface InviteMembersResponse {
+  readonly UnprocessedAccounts?: [];
 }
 
-interface IpFilter {
-  readonly Cidr: string;
+export interface IpFilter {
+  readonly Cidr?: string;
 }
 
-interface IpOrganizationDetails {
-  readonly Asn: number;
-  readonly AsnOrg: string;
-  readonly Isp: string;
-  readonly Org: string;
+export interface IpOrganizationDetails {
+  readonly Asn?: number;
+  readonly AsnOrg?: string;
+  readonly Isp?: string;
+  readonly Org?: string;
 }
 
-interface Ipv6CidrBlockAssociation {
-  readonly AssociationId: string;
-  readonly Ipv6CidrBlock: string;
-  readonly CidrBlockState: string;
+export interface Ipv6CidrBlockAssociation {
+  readonly AssociationId?: string;
+  readonly Ipv6CidrBlock?: string;
+  readonly CidrBlockState?: string;
 }
 
-interface KeywordFilter {
-  readonly Value: string;
+export interface KeywordFilter {
+  readonly Value?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
-  readonly Code: string;
+export interface LimitExceededException {
+  readonly Message?: string;
+  readonly Code?: string;
 }
 
-interface ListEnabledProductsForImportRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListEnabledProductsForImportRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListEnabledProductsForImportResponse {
-  readonly ProductSubscriptions: [];
-  readonly NextToken: string;
+export interface ListEnabledProductsForImportResponse {
+  readonly ProductSubscriptions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListFindingAggregatorsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListFindingAggregatorsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListFindingAggregatorsResponse {
-  readonly FindingAggregators: [];
-  readonly NextToken: string;
+export interface ListFindingAggregatorsResponse {
+  readonly FindingAggregators?: [];
+  readonly NextToken?: string;
 }
 
-interface ListInvitationsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListInvitationsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListInvitationsResponse {
-  readonly Invitations: [];
-  readonly NextToken: string;
+export interface ListInvitationsResponse {
+  readonly Invitations?: [];
+  readonly NextToken?: string;
 }
 
-interface ListMembersRequest {
-  readonly OnlyAssociated: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListMembersRequest {
+  readonly OnlyAssociated?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListMembersResponse {
-  readonly Members: [];
-  readonly NextToken: string;
+export interface ListMembersResponse {
+  readonly Members?: [];
+  readonly NextToken?: string;
 }
 
-interface ListOrganizationAdminAccountsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListOrganizationAdminAccountsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListOrganizationAdminAccountsResponse {
-  readonly AdminAccounts: [];
-  readonly NextToken: string;
+export interface ListOrganizationAdminAccountsResponse {
+  readonly AdminAccounts?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface LoadBalancerState {
-  readonly Code: string;
-  readonly Reason: string;
+export interface LoadBalancerState {
+  readonly Code?: string;
+  readonly Reason?: string;
 }
 
-interface Malware {
+export interface Malware {
   readonly Name: string;
-  readonly Type: string;
-  readonly Path: string;
-  readonly State: string;
+  readonly Type?: string;
+  readonly Path?: string;
+  readonly State?: string;
 }
 
-interface MapFilter {
-  readonly Key: string;
-  readonly Value: string;
-  readonly Comparison: string;
+export interface MapFilter {
+  readonly Key?: string;
+  readonly Value?: string;
+  readonly Comparison?: string;
 }
 
-interface Member {
-  readonly AccountId: string;
-  readonly Email: string;
-  readonly MasterId: string;
-  readonly AdministratorId: string;
-  readonly MemberStatus: string;
-  readonly InvitedAt: Date;
-  readonly UpdatedAt: Date;
+export interface Member {
+  readonly AccountId?: string;
+  readonly Email?: string;
+  readonly MasterId?: string;
+  readonly AdministratorId?: string;
+  readonly MemberStatus?: string;
+  readonly InvitedAt?: Date;
+  readonly UpdatedAt?: Date;
 }
 
-interface Network {
-  readonly Direction: string;
-  readonly Protocol: string;
-  readonly OpenPortRange: PortRange;
-  readonly SourceIpV4: string;
-  readonly SourceIpV6: string;
-  readonly SourcePort: number;
-  readonly SourceDomain: string;
-  readonly SourceMac: string;
-  readonly DestinationIpV4: string;
-  readonly DestinationIpV6: string;
-  readonly DestinationPort: number;
-  readonly DestinationDomain: string;
+export interface Network {
+  readonly Direction?: string;
+  readonly Protocol?: string;
+  readonly OpenPortRange?: PortRange;
+  readonly SourceIpV4?: string;
+  readonly SourceIpV6?: string;
+  readonly SourcePort?: number;
+  readonly SourceDomain?: string;
+  readonly SourceMac?: string;
+  readonly DestinationIpV4?: string;
+  readonly DestinationIpV6?: string;
+  readonly DestinationPort?: number;
+  readonly DestinationDomain?: string;
 }
 
-interface NetworkConnectionAction {
-  readonly ConnectionDirection: string;
-  readonly RemoteIpDetails: ActionRemoteIpDetails;
-  readonly RemotePortDetails: ActionRemotePortDetails;
-  readonly LocalPortDetails: ActionLocalPortDetails;
-  readonly Protocol: string;
-  readonly Blocked: boolean;
+export interface NetworkConnectionAction {
+  readonly ConnectionDirection?: string;
+  readonly RemoteIpDetails?: ActionRemoteIpDetails;
+  readonly RemotePortDetails?: ActionRemotePortDetails;
+  readonly LocalPortDetails?: ActionLocalPortDetails;
+  readonly Protocol?: string;
+  readonly Blocked?: boolean;
 }
 
-interface NetworkHeader {
-  readonly Protocol: string;
-  readonly Destination: NetworkPathComponentDetails;
-  readonly Source: NetworkPathComponentDetails;
+export interface NetworkHeader {
+  readonly Protocol?: string;
+  readonly Destination?: NetworkPathComponentDetails;
+  readonly Source?: NetworkPathComponentDetails;
 }
 
-interface NetworkPathComponent {
-  readonly ComponentId: string;
-  readonly ComponentType: string;
-  readonly Egress: NetworkHeader;
-  readonly Ingress: NetworkHeader;
+export interface NetworkPathComponent {
+  readonly ComponentId?: string;
+  readonly ComponentType?: string;
+  readonly Egress?: NetworkHeader;
+  readonly Ingress?: NetworkHeader;
 }
 
-interface NetworkPathComponentDetails {
-  readonly Address: [];
-  readonly PortRanges: [];
+export interface NetworkPathComponentDetails {
+  readonly Address?: [];
+  readonly PortRanges?: [];
 }
 
-interface Note {
+export interface Note {
   readonly Text: string;
   readonly UpdatedBy: string;
   readonly UpdatedAt: string;
 }
 
-interface NoteUpdate {
+export interface NoteUpdate {
   readonly Text: string;
   readonly UpdatedBy: string;
 }
 
-interface NumberFilter {
-  readonly Gte: unknown;
-  readonly Lte: unknown;
-  readonly Eq: unknown;
+export interface NumberFilter {
+  readonly Gte?: unknown;
+  readonly Lte?: unknown;
+  readonly Eq?: unknown;
 }
 
-interface Occurrences {
-  readonly LineRanges: [];
-  readonly OffsetRanges: [];
-  readonly Pages: [];
-  readonly Records: [];
-  readonly Cells: [];
+export interface Occurrences {
+  readonly LineRanges?: [];
+  readonly OffsetRanges?: [];
+  readonly Pages?: [];
+  readonly Records?: [];
+  readonly Cells?: [];
 }
 
-interface Page {
-  readonly PageNumber: number;
-  readonly LineRange: Range;
-  readonly OffsetRange: Range;
+export interface Page {
+  readonly PageNumber?: number;
+  readonly LineRange?: Range;
+  readonly OffsetRange?: Range;
 }
 
-interface PatchSummary {
+export interface PatchSummary {
   readonly Id: string;
-  readonly InstalledCount: number;
-  readonly MissingCount: number;
-  readonly FailedCount: number;
-  readonly InstalledOtherCount: number;
-  readonly InstalledRejectedCount: number;
-  readonly InstalledPendingReboot: number;
-  readonly OperationStartTime: string;
-  readonly OperationEndTime: string;
-  readonly RebootOption: string;
-  readonly Operation: string;
+  readonly InstalledCount?: number;
+  readonly MissingCount?: number;
+  readonly FailedCount?: number;
+  readonly InstalledOtherCount?: number;
+  readonly InstalledRejectedCount?: number;
+  readonly InstalledPendingReboot?: number;
+  readonly OperationStartTime?: string;
+  readonly OperationEndTime?: string;
+  readonly RebootOption?: string;
+  readonly Operation?: string;
 }
 
-interface PortProbeAction {
-  readonly PortProbeDetails: [];
-  readonly Blocked: boolean;
+export interface PortProbeAction {
+  readonly PortProbeDetails?: [];
+  readonly Blocked?: boolean;
 }
 
-interface PortProbeDetail {
-  readonly LocalPortDetails: ActionLocalPortDetails;
-  readonly LocalIpDetails: ActionLocalIpDetails;
-  readonly RemoteIpDetails: ActionRemoteIpDetails;
+export interface PortProbeDetail {
+  readonly LocalPortDetails?: ActionLocalPortDetails;
+  readonly LocalIpDetails?: ActionLocalIpDetails;
+  readonly RemoteIpDetails?: ActionRemoteIpDetails;
 }
 
-interface PortRange {
-  readonly Begin: number;
-  readonly End: number;
+export interface PortRange {
+  readonly Begin?: number;
+  readonly End?: number;
 }
 
-interface PortRangeFromTo {
-  readonly From: number;
-  readonly To: number;
+export interface PortRangeFromTo {
+  readonly From?: number;
+  readonly To?: number;
 }
 
-interface ProcessDetails {
-  readonly Name: string;
-  readonly Path: string;
-  readonly Pid: number;
-  readonly ParentPid: number;
-  readonly LaunchedAt: string;
-  readonly TerminatedAt: string;
+export interface ProcessDetails {
+  readonly Name?: string;
+  readonly Path?: string;
+  readonly Pid?: number;
+  readonly ParentPid?: number;
+  readonly LaunchedAt?: string;
+  readonly TerminatedAt?: string;
 }
 
-interface Product {
+export interface Product {
   readonly ProductArn: string;
-  readonly ProductName: string;
-  readonly CompanyName: string;
-  readonly Description: string;
-  readonly Categories: [];
-  readonly IntegrationTypes: [];
-  readonly MarketplaceUrl: string;
-  readonly ActivationUrl: string;
-  readonly ProductSubscriptionResourcePolicy: string;
+  readonly ProductName?: string;
+  readonly CompanyName?: string;
+  readonly Description?: string;
+  readonly Categories?: [];
+  readonly IntegrationTypes?: [];
+  readonly MarketplaceUrl?: string;
+  readonly ActivationUrl?: string;
+  readonly ProductSubscriptionResourcePolicy?: string;
 }
 
-interface Range {
-  readonly Start: number;
-  readonly End: number;
-  readonly StartColumn: number;
+export interface Range {
+  readonly Start?: number;
+  readonly End?: number;
+  readonly StartColumn?: number;
 }
 
-interface Recommendation {
-  readonly Text: string;
-  readonly Url: string;
+export interface Recommendation {
+  readonly Text?: string;
+  readonly Url?: string;
 }
 
-interface Record {
-  readonly JsonPath: string;
-  readonly RecordIndex: number;
+export interface Record {
+  readonly JsonPath?: string;
+  readonly RecordIndex?: number;
 }
 
-interface RelatedFinding {
+export interface RelatedFinding {
   readonly ProductArn: string;
   readonly Id: string;
 }
 
-interface Remediation {
-  readonly Recommendation: Recommendation;
+export interface Remediation {
+  readonly Recommendation?: Recommendation;
 }
 
-interface Resource {
+export interface Resource {
   readonly Type: string;
   readonly Id: string;
-  readonly Partition: string;
-  readonly Region: string;
-  readonly ResourceRole: string;
-  readonly Tags: {[key: string]: any};
-  readonly DataClassification: DataClassificationDetails;
-  readonly Details: ResourceDetails;
+  readonly Partition?: string;
+  readonly Region?: string;
+  readonly ResourceRole?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly DataClassification?: DataClassificationDetails;
+  readonly Details?: ResourceDetails;
 }
 
-interface ResourceConflictException {
-  readonly Message: string;
-  readonly Code: string;
+export interface ResourceConflictException {
+  readonly Message?: string;
+  readonly Code?: string;
 }
 
-interface ResourceDetails {
-  readonly AwsAutoScalingAutoScalingGroup: AwsAutoScalingAutoScalingGroupDetails;
-  readonly AwsCodeBuildProject: AwsCodeBuildProjectDetails;
-  readonly AwsCloudFrontDistribution: AwsCloudFrontDistributionDetails;
-  readonly AwsEc2Instance: AwsEc2InstanceDetails;
-  readonly AwsEc2NetworkInterface: AwsEc2NetworkInterfaceDetails;
-  readonly AwsEc2SecurityGroup: AwsEc2SecurityGroupDetails;
-  readonly AwsEc2Volume: AwsEc2VolumeDetails;
-  readonly AwsEc2Vpc: AwsEc2VpcDetails;
-  readonly AwsEc2Eip: AwsEc2EipDetails;
-  readonly AwsEc2Subnet: AwsEc2SubnetDetails;
-  readonly AwsEc2NetworkAcl: AwsEc2NetworkAclDetails;
-  readonly AwsElbv2LoadBalancer: AwsElbv2LoadBalancerDetails;
-  readonly AwsElasticBeanstalkEnvironment: AwsElasticBeanstalkEnvironmentDetails;
-  readonly AwsElasticsearchDomain: AwsElasticsearchDomainDetails;
-  readonly AwsS3Bucket: AwsS3BucketDetails;
-  readonly AwsS3AccountPublicAccessBlock: AwsS3AccountPublicAccessBlockDetails;
-  readonly AwsS3Object: AwsS3ObjectDetails;
-  readonly AwsSecretsManagerSecret: AwsSecretsManagerSecretDetails;
-  readonly AwsIamAccessKey: AwsIamAccessKeyDetails;
-  readonly AwsIamUser: AwsIamUserDetails;
-  readonly AwsIamPolicy: AwsIamPolicyDetails;
-  readonly AwsApiGatewayV2Stage: AwsApiGatewayV2StageDetails;
-  readonly AwsApiGatewayV2Api: AwsApiGatewayV2ApiDetails;
-  readonly AwsDynamoDbTable: AwsDynamoDbTableDetails;
-  readonly AwsApiGatewayStage: AwsApiGatewayStageDetails;
-  readonly AwsApiGatewayRestApi: AwsApiGatewayRestApiDetails;
-  readonly AwsCloudTrailTrail: AwsCloudTrailTrailDetails;
-  readonly AwsSsmPatchCompliance: AwsSsmPatchComplianceDetails;
-  readonly AwsCertificateManagerCertificate: AwsCertificateManagerCertificateDetails;
-  readonly AwsRedshiftCluster: AwsRedshiftClusterDetails;
-  readonly AwsElbLoadBalancer: AwsElbLoadBalancerDetails;
-  readonly AwsIamGroup: AwsIamGroupDetails;
-  readonly AwsIamRole: AwsIamRoleDetails;
-  readonly AwsKmsKey: AwsKmsKeyDetails;
-  readonly AwsLambdaFunction: AwsLambdaFunctionDetails;
-  readonly AwsLambdaLayerVersion: AwsLambdaLayerVersionDetails;
-  readonly AwsRdsDbInstance: AwsRdsDbInstanceDetails;
-  readonly AwsSnsTopic: AwsSnsTopicDetails;
-  readonly AwsSqsQueue: AwsSqsQueueDetails;
-  readonly AwsWafWebAcl: AwsWafWebAclDetails;
-  readonly AwsRdsDbSnapshot: AwsRdsDbSnapshotDetails;
-  readonly AwsRdsDbClusterSnapshot: AwsRdsDbClusterSnapshotDetails;
-  readonly AwsRdsDbCluster: AwsRdsDbClusterDetails;
-  readonly AwsEcsCluster: AwsEcsClusterDetails;
-  readonly AwsEcsTaskDefinition: AwsEcsTaskDefinitionDetails;
-  readonly Container: ContainerDetails;
-  readonly Other: {[key: string]: any};
-  readonly AwsRdsEventSubscription: AwsRdsEventSubscriptionDetails;
-  readonly AwsEcsService: AwsEcsServiceDetails;
-  readonly AwsAutoScalingLaunchConfiguration: AwsAutoScalingLaunchConfigurationDetails;
-  readonly AwsEc2VpnConnection: AwsEc2VpnConnectionDetails;
-  readonly AwsEcrContainerImage: AwsEcrContainerImageDetails;
-  readonly AwsOpenSearchServiceDomain: AwsOpenSearchServiceDomainDetails;
-  readonly AwsEc2VpcEndpointService: AwsEc2VpcEndpointServiceDetails;
-  readonly AwsXrayEncryptionConfig: AwsXrayEncryptionConfigDetails;
-  readonly AwsWafRateBasedRule: AwsWafRateBasedRuleDetails;
-  readonly AwsWafRegionalRateBasedRule: AwsWafRegionalRateBasedRuleDetails;
-  readonly AwsEcrRepository: AwsEcrRepositoryDetails;
-  readonly AwsEksCluster: AwsEksClusterDetails;
+export interface ResourceDetails {
+  readonly AwsAutoScalingAutoScalingGroup?: AwsAutoScalingAutoScalingGroupDetails;
+  readonly AwsCodeBuildProject?: AwsCodeBuildProjectDetails;
+  readonly AwsCloudFrontDistribution?: AwsCloudFrontDistributionDetails;
+  readonly AwsEc2Instance?: AwsEc2InstanceDetails;
+  readonly AwsEc2NetworkInterface?: AwsEc2NetworkInterfaceDetails;
+  readonly AwsEc2SecurityGroup?: AwsEc2SecurityGroupDetails;
+  readonly AwsEc2Volume?: AwsEc2VolumeDetails;
+  readonly AwsEc2Vpc?: AwsEc2VpcDetails;
+  readonly AwsEc2Eip?: AwsEc2EipDetails;
+  readonly AwsEc2Subnet?: AwsEc2SubnetDetails;
+  readonly AwsEc2NetworkAcl?: AwsEc2NetworkAclDetails;
+  readonly AwsElbv2LoadBalancer?: AwsElbv2LoadBalancerDetails;
+  readonly AwsElasticBeanstalkEnvironment?: AwsElasticBeanstalkEnvironmentDetails;
+  readonly AwsElasticsearchDomain?: AwsElasticsearchDomainDetails;
+  readonly AwsS3Bucket?: AwsS3BucketDetails;
+  readonly AwsS3AccountPublicAccessBlock?: AwsS3AccountPublicAccessBlockDetails;
+  readonly AwsS3Object?: AwsS3ObjectDetails;
+  readonly AwsSecretsManagerSecret?: AwsSecretsManagerSecretDetails;
+  readonly AwsIamAccessKey?: AwsIamAccessKeyDetails;
+  readonly AwsIamUser?: AwsIamUserDetails;
+  readonly AwsIamPolicy?: AwsIamPolicyDetails;
+  readonly AwsApiGatewayV2Stage?: AwsApiGatewayV2StageDetails;
+  readonly AwsApiGatewayV2Api?: AwsApiGatewayV2ApiDetails;
+  readonly AwsDynamoDbTable?: AwsDynamoDbTableDetails;
+  readonly AwsApiGatewayStage?: AwsApiGatewayStageDetails;
+  readonly AwsApiGatewayRestApi?: AwsApiGatewayRestApiDetails;
+  readonly AwsCloudTrailTrail?: AwsCloudTrailTrailDetails;
+  readonly AwsSsmPatchCompliance?: AwsSsmPatchComplianceDetails;
+  readonly AwsCertificateManagerCertificate?: AwsCertificateManagerCertificateDetails;
+  readonly AwsRedshiftCluster?: AwsRedshiftClusterDetails;
+  readonly AwsElbLoadBalancer?: AwsElbLoadBalancerDetails;
+  readonly AwsIamGroup?: AwsIamGroupDetails;
+  readonly AwsIamRole?: AwsIamRoleDetails;
+  readonly AwsKmsKey?: AwsKmsKeyDetails;
+  readonly AwsLambdaFunction?: AwsLambdaFunctionDetails;
+  readonly AwsLambdaLayerVersion?: AwsLambdaLayerVersionDetails;
+  readonly AwsRdsDbInstance?: AwsRdsDbInstanceDetails;
+  readonly AwsSnsTopic?: AwsSnsTopicDetails;
+  readonly AwsSqsQueue?: AwsSqsQueueDetails;
+  readonly AwsWafWebAcl?: AwsWafWebAclDetails;
+  readonly AwsRdsDbSnapshot?: AwsRdsDbSnapshotDetails;
+  readonly AwsRdsDbClusterSnapshot?: AwsRdsDbClusterSnapshotDetails;
+  readonly AwsRdsDbCluster?: AwsRdsDbClusterDetails;
+  readonly AwsEcsCluster?: AwsEcsClusterDetails;
+  readonly AwsEcsTaskDefinition?: AwsEcsTaskDefinitionDetails;
+  readonly Container?: ContainerDetails;
+  readonly Other?: {[key: string]: any};
+  readonly AwsRdsEventSubscription?: AwsRdsEventSubscriptionDetails;
+  readonly AwsEcsService?: AwsEcsServiceDetails;
+  readonly AwsAutoScalingLaunchConfiguration?: AwsAutoScalingLaunchConfigurationDetails;
+  readonly AwsEc2VpnConnection?: AwsEc2VpnConnectionDetails;
+  readonly AwsEcrContainerImage?: AwsEcrContainerImageDetails;
+  readonly AwsOpenSearchServiceDomain?: AwsOpenSearchServiceDomainDetails;
+  readonly AwsEc2VpcEndpointService?: AwsEc2VpcEndpointServiceDetails;
+  readonly AwsXrayEncryptionConfig?: AwsXrayEncryptionConfigDetails;
+  readonly AwsWafRateBasedRule?: AwsWafRateBasedRuleDetails;
+  readonly AwsWafRegionalRateBasedRule?: AwsWafRegionalRateBasedRuleDetails;
+  readonly AwsEcrRepository?: AwsEcrRepositoryDetails;
+  readonly AwsEksCluster?: AwsEksClusterDetails;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
-  readonly Code: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
+  readonly Code?: string;
 }
 
-interface Result {
-  readonly AccountId: string;
-  readonly ProcessingResult: string;
+export interface Result {
+  readonly AccountId?: string;
+  readonly ProcessingResult?: string;
 }
 
-interface SensitiveDataDetections {
-  readonly Count: number;
-  readonly Type: string;
-  readonly Occurrences: Occurrences;
+export interface SensitiveDataDetections {
+  readonly Count?: number;
+  readonly Type?: string;
+  readonly Occurrences?: Occurrences;
 }
 
-interface SensitiveDataResult {
-  readonly Category: string;
-  readonly Detections: [];
-  readonly TotalCount: number;
+export interface SensitiveDataResult {
+  readonly Category?: string;
+  readonly Detections?: [];
+  readonly TotalCount?: number;
 }
 
-interface Severity {
-  readonly Product: unknown;
-  readonly Label: string;
-  readonly Normalized: number;
-  readonly Original: string;
+export interface Severity {
+  readonly Product?: unknown;
+  readonly Label?: string;
+  readonly Normalized?: number;
+  readonly Original?: string;
 }
 
-interface SeverityUpdate {
-  readonly Normalized: number;
-  readonly Product: unknown;
-  readonly Label: string;
+export interface SeverityUpdate {
+  readonly Normalized?: number;
+  readonly Product?: unknown;
+  readonly Label?: string;
 }
 
-interface SoftwarePackage {
-  readonly Name: string;
-  readonly Version: string;
-  readonly Epoch: string;
-  readonly Release: string;
-  readonly Architecture: string;
-  readonly PackageManager: string;
-  readonly FilePath: string;
+export interface SoftwarePackage {
+  readonly Name?: string;
+  readonly Version?: string;
+  readonly Epoch?: string;
+  readonly Release?: string;
+  readonly Architecture?: string;
+  readonly PackageManager?: string;
+  readonly FilePath?: string;
 }
 
-interface SortCriterion {
-  readonly Field: string;
-  readonly SortOrder: string;
+export interface SortCriterion {
+  readonly Field?: string;
+  readonly SortOrder?: string;
 }
 
-interface Standard {
-  readonly StandardsArn: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly EnabledByDefault: boolean;
+export interface Standard {
+  readonly StandardsArn?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly EnabledByDefault?: boolean;
 }
 
-interface StandardsControl {
-  readonly StandardsControlArn: string;
-  readonly ControlStatus: string;
-  readonly DisabledReason: string;
-  readonly ControlStatusUpdatedAt: Date;
-  readonly ControlId: string;
-  readonly Title: string;
-  readonly Description: string;
-  readonly RemediationUrl: string;
-  readonly SeverityRating: string;
-  readonly RelatedRequirements: [];
+export interface StandardsControl {
+  readonly StandardsControlArn?: string;
+  readonly ControlStatus?: string;
+  readonly DisabledReason?: string;
+  readonly ControlStatusUpdatedAt?: Date;
+  readonly ControlId?: string;
+  readonly Title?: string;
+  readonly Description?: string;
+  readonly RemediationUrl?: string;
+  readonly SeverityRating?: string;
+  readonly RelatedRequirements?: [];
 }
 
-interface StandardsSubscription {
+export interface StandardsSubscription {
   readonly StandardsSubscriptionArn: string;
   readonly StandardsArn: string;
   readonly StandardsInput: {[key: string]: any};
   readonly StandardsStatus: string;
 }
 
-interface StandardsSubscriptionRequest {
+export interface StandardsSubscriptionRequest {
   readonly StandardsArn: string;
-  readonly StandardsInput: {[key: string]: any};
+  readonly StandardsInput?: {[key: string]: any};
 }
 
-interface StatusReason {
+export interface StatusReason {
   readonly ReasonCode: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 
-interface StringFilter {
-  readonly Value: string;
-  readonly Comparison: string;
+export interface StringFilter {
+  readonly Value?: string;
+  readonly Comparison?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThreatIntelIndicator {
-  readonly Type: string;
-  readonly Value: string;
-  readonly Category: string;
-  readonly LastObservedAt: string;
-  readonly Source: string;
-  readonly SourceUrl: string;
+export interface ThreatIntelIndicator {
+  readonly Type?: string;
+  readonly Value?: string;
+  readonly Category?: string;
+  readonly LastObservedAt?: string;
+  readonly Source?: string;
+  readonly SourceUrl?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateActionTargetRequest {
+export interface UpdateActionTargetRequest {
   readonly ActionTargetArn: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 
-interface UpdateActionTargetResponse {
+export interface UpdateActionTargetResponse {
 }
 
-interface UpdateFindingAggregatorRequest {
+export interface UpdateFindingAggregatorRequest {
   readonly FindingAggregatorArn: string;
   readonly RegionLinkingMode: string;
-  readonly Regions: [];
+  readonly Regions?: [];
 }
 
-interface UpdateFindingAggregatorResponse {
-  readonly FindingAggregatorArn: string;
-  readonly FindingAggregationRegion: string;
-  readonly RegionLinkingMode: string;
-  readonly Regions: [];
+export interface UpdateFindingAggregatorResponse {
+  readonly FindingAggregatorArn?: string;
+  readonly FindingAggregationRegion?: string;
+  readonly RegionLinkingMode?: string;
+  readonly Regions?: [];
 }
 
-interface UpdateFindingsRequest {
+export interface UpdateFindingsRequest {
   readonly Filters: AwsSecurityFindingFilters;
-  readonly Note: NoteUpdate;
-  readonly RecordState: string;
+  readonly Note?: NoteUpdate;
+  readonly RecordState?: string;
 }
 
-interface UpdateFindingsResponse {
+export interface UpdateFindingsResponse {
 }
 
-interface UpdateInsightRequest {
+export interface UpdateInsightRequest {
   readonly InsightArn: string;
-  readonly Name: string;
-  readonly Filters: AwsSecurityFindingFilters;
-  readonly GroupByAttribute: string;
+  readonly Name?: string;
+  readonly Filters?: AwsSecurityFindingFilters;
+  readonly GroupByAttribute?: string;
 }
 
-interface UpdateInsightResponse {
+export interface UpdateInsightResponse {
 }
 
-interface UpdateOrganizationConfigurationRequest {
+export interface UpdateOrganizationConfigurationRequest {
   readonly AutoEnable: boolean;
 }
 
-interface UpdateOrganizationConfigurationResponse {
+export interface UpdateOrganizationConfigurationResponse {
 }
 
-interface UpdateSecurityHubConfigurationRequest {
-  readonly AutoEnableControls: boolean;
+export interface UpdateSecurityHubConfigurationRequest {
+  readonly AutoEnableControls?: boolean;
 }
 
-interface UpdateSecurityHubConfigurationResponse {
+export interface UpdateSecurityHubConfigurationResponse {
 }
 
-interface UpdateStandardsControlRequest {
+export interface UpdateStandardsControlRequest {
   readonly StandardsControlArn: string;
-  readonly ControlStatus: string;
-  readonly DisabledReason: string;
+  readonly ControlStatus?: string;
+  readonly DisabledReason?: string;
 }
 
-interface UpdateStandardsControlResponse {
+export interface UpdateStandardsControlResponse {
 }
 
-interface Vulnerability {
+export interface Vulnerability {
   readonly Id: string;
-  readonly VulnerablePackages: [];
-  readonly Cvss: [];
-  readonly RelatedVulnerabilities: [];
-  readonly Vendor: VulnerabilityVendor;
-  readonly ReferenceUrls: [];
+  readonly VulnerablePackages?: [];
+  readonly Cvss?: [];
+  readonly RelatedVulnerabilities?: [];
+  readonly Vendor?: VulnerabilityVendor;
+  readonly ReferenceUrls?: [];
 }
 
-interface VulnerabilityVendor {
+export interface VulnerabilityVendor {
   readonly Name: string;
-  readonly Url: string;
-  readonly VendorSeverity: string;
-  readonly VendorCreatedAt: string;
-  readonly VendorUpdatedAt: string;
+  readonly Url?: string;
+  readonly VendorSeverity?: string;
+  readonly VendorCreatedAt?: string;
+  readonly VendorUpdatedAt?: string;
 }
 
-interface WafAction {
-  readonly Type: string;
+export interface WafAction {
+  readonly Type?: string;
 }
 
-interface WafExcludedRule {
-  readonly RuleId: string;
+export interface WafExcludedRule {
+  readonly RuleId?: string;
 }
 
-interface WafOverrideAction {
-  readonly Type: string;
+export interface WafOverrideAction {
+  readonly Type?: string;
 }
 
-interface Workflow {
-  readonly Status: string;
+export interface Workflow {
+  readonly Status?: string;
 }
 
-interface WorkflowUpdate {
-  readonly Status: string;
+export interface WorkflowUpdate {
+  readonly Status?: string;
 }
+
 

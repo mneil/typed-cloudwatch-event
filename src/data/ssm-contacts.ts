@@ -9,10 +9,12 @@ export interface AcceptPage {
   readonly AcceptCode: string;
   readonly AcceptCodeValidation?: string;
 }
+
 export interface ActivateContactChannel {
   readonly ContactChannelId: string;
   readonly ActivationCode: string;
 }
+
 export interface CreateContact {
   readonly Alias: string;
   readonly DisplayName?: string;
@@ -21,6 +23,7 @@ export interface CreateContact {
   readonly Tags?: [];
   readonly IdempotencyToken?: string;
 }
+
 export interface CreateContactChannel {
   readonly ContactId: string;
   readonly Name: string;
@@ -29,72 +32,90 @@ export interface CreateContactChannel {
   readonly DeferActivation?: boolean;
   readonly IdempotencyToken?: string;
 }
+
 export interface DeactivateContactChannel {
   readonly ContactChannelId: string;
 }
+
 export interface DeleteContact {
   readonly ContactId: string;
 }
+
 export interface DeleteContactChannel {
   readonly ContactChannelId: string;
 }
+
 export interface DescribeEngagement {
   readonly EngagementId: string;
 }
+
 export interface DescribePage {
   readonly PageId: string;
 }
+
 export interface GetContact {
   readonly ContactId: string;
 }
+
 export interface GetContactChannel {
   readonly ContactChannelId: string;
 }
+
 export interface GetContactPolicy {
   readonly ContactArn: string;
 }
+
 export interface ListContactChannels {
   readonly ContactId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListContacts {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly AliasPrefix?: string;
   readonly Type?: string;
 }
+
 export interface ListEngagements {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly IncidentId?: string;
   readonly TimeRangeValue?: TimeRange;
 }
+
 export interface ListPageReceipts {
   readonly PageId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListPagesByContact {
   readonly ContactId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListPagesByEngagement {
   readonly EngagementId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
+
 export interface PutContactPolicy {
   readonly ContactArn: string;
   readonly Policy: string;
 }
+
 export interface SendActivationCode {
   readonly ContactChannelId: string;
 }
+
 export interface StartEngagement {
   readonly ContactId: string;
   readonly Sender: string;
@@ -105,445 +126,449 @@ export interface StartEngagement {
   readonly IncidentId?: string;
   readonly IdempotencyToken?: string;
 }
+
 export interface StopEngagement {
   readonly EngagementId: string;
   readonly Reason?: string;
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateContact {
   readonly ContactId: string;
   readonly DisplayName?: string;
   readonly Plan?: Plan;
 }
+
 export interface UpdateContactChannel {
   readonly ContactChannelId: string;
   readonly Name?: string;
   readonly DeliveryAddress?: ContactChannelAddress;
 }
 
-
-
-interface AcceptPageRequest {
+export interface AcceptPageRequest {
   readonly PageId: string;
-  readonly ContactChannelId: string;
+  readonly ContactChannelId?: string;
   readonly AcceptType: string;
-  readonly Note: string;
+  readonly Note?: string;
   readonly AcceptCode: string;
-  readonly AcceptCodeValidation: string;
+  readonly AcceptCodeValidation?: string;
 }
 
-interface AcceptPageResult {
+export interface AcceptPageResult {
 }
 
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly Message: string;
 }
 
-interface ActivateContactChannelRequest {
+export interface ActivateContactChannelRequest {
   readonly ContactChannelId: string;
   readonly ActivationCode: string;
 }
 
-interface ActivateContactChannelResult {
+export interface ActivateContactChannelResult {
 }
 
-interface ChannelTargetInfo {
+export interface ChannelTargetInfo {
   readonly ContactChannelId: string;
-  readonly RetryIntervalInMinutes: number;
+  readonly RetryIntervalInMinutes?: number;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly Message: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
 
-interface Contact {
+export interface Contact {
   readonly ContactArn: string;
   readonly Alias: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
   readonly Type: string;
 }
 
-interface ContactChannel {
+export interface ContactChannel {
   readonly ContactChannelArn: string;
   readonly ContactArn: string;
   readonly Name: string;
-  readonly Type: string;
+  readonly Type?: string;
   readonly DeliveryAddress: ContactChannelAddress;
   readonly ActivationStatus: string;
 }
 
-interface ContactChannelAddress {
-  readonly SimpleAddress: string;
+export interface ContactChannelAddress {
+  readonly SimpleAddress?: string;
 }
 
-interface ContactTargetInfo {
-  readonly ContactId: string;
+export interface ContactTargetInfo {
+  readonly ContactId?: string;
   readonly IsEssential: boolean;
 }
 
-interface CreateContactChannelRequest {
+export interface CreateContactChannelRequest {
   readonly ContactId: string;
   readonly Name: string;
   readonly Type: string;
   readonly DeliveryAddress: ContactChannelAddress;
-  readonly DeferActivation: boolean;
-  readonly IdempotencyToken: string;
+  readonly DeferActivation?: boolean;
+  readonly IdempotencyToken?: string;
 }
 
-interface CreateContactChannelResult {
+export interface CreateContactChannelResult {
   readonly ContactChannelArn: string;
 }
 
-interface CreateContactRequest {
+export interface CreateContactRequest {
   readonly Alias: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
   readonly Type: string;
   readonly Plan: Plan;
-  readonly Tags: [];
-  readonly IdempotencyToken: string;
+  readonly Tags?: [];
+  readonly IdempotencyToken?: string;
 }
 
-interface CreateContactResult {
+export interface CreateContactResult {
   readonly ContactArn: string;
 }
 
-interface DataEncryptionException {
+export interface DataEncryptionException {
   readonly Message: string;
 }
 
-interface DeactivateContactChannelRequest {
+export interface DeactivateContactChannelRequest {
   readonly ContactChannelId: string;
 }
 
-interface DeactivateContactChannelResult {
+export interface DeactivateContactChannelResult {
 }
 
-interface DeleteContactChannelRequest {
+export interface DeleteContactChannelRequest {
   readonly ContactChannelId: string;
 }
 
-interface DeleteContactChannelResult {
+export interface DeleteContactChannelResult {
 }
 
-interface DeleteContactRequest {
+export interface DeleteContactRequest {
   readonly ContactId: string;
 }
 
-interface DeleteContactResult {
+export interface DeleteContactResult {
 }
 
-interface DescribeEngagementRequest {
+export interface DescribeEngagementRequest {
   readonly EngagementId: string;
 }
 
-interface DescribeEngagementResult {
+export interface DescribeEngagementResult {
   readonly ContactArn: string;
   readonly EngagementArn: string;
   readonly Sender: string;
   readonly Subject: string;
   readonly Content: string;
-  readonly PublicSubject: string;
-  readonly PublicContent: string;
-  readonly IncidentId: string;
-  readonly StartTime: Date;
-  readonly StopTime: Date;
+  readonly PublicSubject?: string;
+  readonly PublicContent?: string;
+  readonly IncidentId?: string;
+  readonly StartTime?: Date;
+  readonly StopTime?: Date;
 }
 
-interface DescribePageRequest {
+export interface DescribePageRequest {
   readonly PageId: string;
 }
 
-interface DescribePageResult {
+export interface DescribePageResult {
   readonly PageArn: string;
   readonly EngagementArn: string;
   readonly ContactArn: string;
   readonly Sender: string;
   readonly Subject: string;
   readonly Content: string;
-  readonly PublicSubject: string;
-  readonly PublicContent: string;
-  readonly IncidentId: string;
-  readonly SentTime: Date;
-  readonly ReadTime: Date;
-  readonly DeliveryTime: Date;
+  readonly PublicSubject?: string;
+  readonly PublicContent?: string;
+  readonly IncidentId?: string;
+  readonly SentTime?: Date;
+  readonly ReadTime?: Date;
+  readonly DeliveryTime?: Date;
 }
 
-interface Engagement {
+export interface Engagement {
   readonly EngagementArn: string;
   readonly ContactArn: string;
   readonly Sender: string;
-  readonly IncidentId: string;
-  readonly StartTime: Date;
-  readonly StopTime: Date;
+  readonly IncidentId?: string;
+  readonly StartTime?: Date;
+  readonly StopTime?: Date;
 }
 
-interface GetContactChannelRequest {
+export interface GetContactChannelRequest {
   readonly ContactChannelId: string;
 }
 
-interface GetContactChannelResult {
+export interface GetContactChannelResult {
   readonly ContactArn: string;
   readonly ContactChannelArn: string;
   readonly Name: string;
   readonly Type: string;
   readonly DeliveryAddress: ContactChannelAddress;
-  readonly ActivationStatus: string;
+  readonly ActivationStatus?: string;
 }
 
-interface GetContactPolicyRequest {
+export interface GetContactPolicyRequest {
   readonly ContactArn: string;
 }
 
-interface GetContactPolicyResult {
-  readonly ContactArn: string;
-  readonly Policy: string;
+export interface GetContactPolicyResult {
+  readonly ContactArn?: string;
+  readonly Policy?: string;
 }
 
-interface GetContactRequest {
+export interface GetContactRequest {
   readonly ContactId: string;
 }
 
-interface GetContactResult {
+export interface GetContactResult {
   readonly ContactArn: string;
   readonly Alias: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
   readonly Type: string;
   readonly Plan: Plan;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly Message: string;
-  readonly RetryAfterSeconds: number;
+  readonly RetryAfterSeconds?: number;
 }
 
-interface ListContactChannelsRequest {
+export interface ListContactChannelsRequest {
   readonly ContactId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListContactChannelsResult {
-  readonly NextToken: string;
+export interface ListContactChannelsResult {
+  readonly NextToken?: string;
   readonly ContactChannels: [];
 }
 
-interface ListContactsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly AliasPrefix: string;
-  readonly Type: string;
+export interface ListContactsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly AliasPrefix?: string;
+  readonly Type?: string;
 }
 
-interface ListContactsResult {
-  readonly NextToken: string;
-  readonly Contacts: [];
+export interface ListContactsResult {
+  readonly NextToken?: string;
+  readonly Contacts?: [];
 }
 
-interface ListEngagementsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly IncidentId: string;
-  readonly TimeRangeValue: TimeRange;
+export interface ListEngagementsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly IncidentId?: string;
+  readonly TimeRangeValue?: TimeRange;
 }
 
-interface ListEngagementsResult {
-  readonly NextToken: string;
+export interface ListEngagementsResult {
+  readonly NextToken?: string;
   readonly Engagements: [];
 }
 
-interface ListPageReceiptsRequest {
+export interface ListPageReceiptsRequest {
   readonly PageId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListPageReceiptsResult {
-  readonly NextToken: string;
-  readonly Receipts: [];
+export interface ListPageReceiptsResult {
+  readonly NextToken?: string;
+  readonly Receipts?: [];
 }
 
-interface ListPagesByContactRequest {
+export interface ListPagesByContactRequest {
   readonly ContactId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListPagesByContactResult {
-  readonly NextToken: string;
+export interface ListPagesByContactResult {
+  readonly NextToken?: string;
   readonly Pages: [];
 }
 
-interface ListPagesByEngagementRequest {
+export interface ListPagesByEngagementRequest {
   readonly EngagementId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListPagesByEngagementResult {
-  readonly NextToken: string;
+export interface ListPagesByEngagementResult {
+  readonly NextToken?: string;
   readonly Pages: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
 }
 
-interface ListTagsForResourceResult {
-  readonly Tags: [];
+export interface ListTagsForResourceResult {
+  readonly Tags?: [];
 }
 
-interface Page {
+export interface Page {
   readonly PageArn: string;
   readonly EngagementArn: string;
   readonly ContactArn: string;
   readonly Sender: string;
-  readonly IncidentId: string;
-  readonly SentTime: Date;
-  readonly DeliveryTime: Date;
-  readonly ReadTime: Date;
+  readonly IncidentId?: string;
+  readonly SentTime?: Date;
+  readonly DeliveryTime?: Date;
+  readonly ReadTime?: Date;
 }
 
-interface Plan {
+export interface Plan {
   readonly Stages: [];
 }
 
-interface PutContactPolicyRequest {
+export interface PutContactPolicyRequest {
   readonly ContactArn: string;
   readonly Policy: string;
 }
 
-interface PutContactPolicyResult {
+export interface PutContactPolicyResult {
 }
 
-interface Receipt {
-  readonly ContactChannelArn: string;
+export interface Receipt {
+  readonly ContactChannelArn?: string;
   readonly ReceiptType: string;
-  readonly ReceiptInfo: string;
+  readonly ReceiptInfo?: string;
   readonly ReceiptTime: Date;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly Message: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
 
-interface SendActivationCodeRequest {
+export interface SendActivationCodeRequest {
   readonly ContactChannelId: string;
 }
 
-interface SendActivationCodeResult {
+export interface SendActivationCodeResult {
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly Message: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
   readonly QuotaCode: string;
   readonly ServiceCode: string;
 }
 
-interface Stage {
+export interface Stage {
   readonly DurationInMinutes: number;
   readonly Targets: [];
 }
 
-interface StartEngagementRequest {
+export interface StartEngagementRequest {
   readonly ContactId: string;
   readonly Sender: string;
   readonly Subject: string;
   readonly Content: string;
-  readonly PublicSubject: string;
-  readonly PublicContent: string;
-  readonly IncidentId: string;
-  readonly IdempotencyToken: string;
+  readonly PublicSubject?: string;
+  readonly PublicContent?: string;
+  readonly IncidentId?: string;
+  readonly IdempotencyToken?: string;
 }
 
-interface StartEngagementResult {
+export interface StartEngagementResult {
   readonly EngagementArn: string;
 }
 
-interface StopEngagementRequest {
+export interface StopEngagementRequest {
   readonly EngagementId: string;
-  readonly Reason: string;
+  readonly Reason?: string;
 }
 
-interface StopEngagementResult {
+export interface StopEngagementResult {
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResult {
+export interface TagResourceResult {
 }
 
-interface Target {
-  readonly ChannelTargetInfo: ChannelTargetInfo;
-  readonly ContactTargetInfo: ContactTargetInfo;
+export interface Target {
+  readonly ChannelTargetInfo?: ChannelTargetInfo;
+  readonly ContactTargetInfo?: ContactTargetInfo;
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly Message: string;
-  readonly QuotaCode: string;
-  readonly ServiceCode: string;
-  readonly RetryAfterSeconds: number;
+  readonly QuotaCode?: string;
+  readonly ServiceCode?: string;
+  readonly RetryAfterSeconds?: number;
 }
 
-interface TimeRange {
-  readonly StartTime: Date;
-  readonly EndTime: Date;
+export interface TimeRange {
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResult {
+export interface UntagResourceResult {
 }
 
-interface UpdateContactChannelRequest {
+export interface UpdateContactChannelRequest {
   readonly ContactChannelId: string;
-  readonly Name: string;
-  readonly DeliveryAddress: ContactChannelAddress;
+  readonly Name?: string;
+  readonly DeliveryAddress?: ContactChannelAddress;
 }
 
-interface UpdateContactChannelResult {
+export interface UpdateContactChannelResult {
 }
 
-interface UpdateContactRequest {
+export interface UpdateContactRequest {
   readonly ContactId: string;
-  readonly DisplayName: string;
-  readonly Plan: Plan;
+  readonly DisplayName?: string;
+  readonly Plan?: Plan;
 }
 
-interface UpdateContactResult {
+export interface UpdateContactResult {
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly Message: string;
-  readonly Reason: string;
-  readonly Fields: [];
+  readonly Reason?: string;
+  readonly Fields?: [];
 }
 
-interface ValidationExceptionField {
+export interface ValidationExceptionField {
   readonly Name: string;
   readonly Message: string;
 }
+
 

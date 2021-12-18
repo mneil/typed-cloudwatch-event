@@ -6,6 +6,7 @@ export interface AcceptEulas {
   readonly eulaIds?: [];
   readonly studioId: string;
 }
+
 export interface CreateLaunchProfile {
   readonly clientToken?: string;
   readonly description?: string;
@@ -17,6 +18,7 @@ export interface CreateLaunchProfile {
   readonly studioId: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateStreamingImage {
   readonly clientToken?: string;
   readonly description?: string;
@@ -25,6 +27,7 @@ export interface CreateStreamingImage {
   readonly studioId: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateStreamingSession {
   readonly clientToken?: string;
   readonly ec2InstanceType?: string;
@@ -34,12 +37,14 @@ export interface CreateStreamingSession {
   readonly studioId: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateStreamingSessionStream {
   readonly clientToken?: string;
   readonly expirationInSeconds?: number;
   readonly sessionId: string;
   readonly studioId: string;
 }
+
 export interface CreateStudio {
   readonly adminRoleArn: string;
   readonly clientToken?: string;
@@ -49,6 +54,7 @@ export interface CreateStudio {
   readonly tags?: {[key: string]: any};
   readonly userRoleArn: string;
 }
+
 export interface CreateStudioComponent {
   readonly clientToken?: string;
   readonly configuration?: StudioComponentConfiguration;
@@ -62,52 +68,63 @@ export interface CreateStudioComponent {
   readonly tags?: {[key: string]: any};
   readonly type: string;
 }
+
 export interface DeleteLaunchProfile {
   readonly clientToken?: string;
   readonly launchProfileId: string;
   readonly studioId: string;
 }
+
 export interface DeleteLaunchProfileMember {
   readonly clientToken?: string;
   readonly launchProfileId: string;
   readonly principalId: string;
   readonly studioId: string;
 }
+
 export interface DeleteStreamingImage {
   readonly clientToken?: string;
   readonly streamingImageId: string;
   readonly studioId: string;
 }
+
 export interface DeleteStreamingSession {
   readonly clientToken?: string;
   readonly sessionId: string;
   readonly studioId: string;
 }
+
 export interface DeleteStudio {
   readonly clientToken?: string;
   readonly studioId: string;
 }
+
 export interface DeleteStudioComponent {
   readonly clientToken?: string;
   readonly studioComponentId: string;
   readonly studioId: string;
 }
+
 export interface DeleteStudioMember {
   readonly clientToken?: string;
   readonly principalId: string;
   readonly studioId: string;
 }
+
 export interface GetEula {
   readonly eulaId: string;
 }
+
 export interface GetLaunchProfile {
   readonly launchProfileId: string;
   readonly studioId: string;
 }
+
 export interface GetLaunchProfileDetails {
   readonly launchProfileId: string;
   readonly studioId: string;
 }
+
 export interface GetLaunchProfileInitialization {
   readonly launchProfileId: string;
   readonly launchProfileProtocolVersions: [];
@@ -115,50 +132,61 @@ export interface GetLaunchProfileInitialization {
   readonly platform: string;
   readonly studioId: string;
 }
+
 export interface GetLaunchProfileMember {
   readonly launchProfileId: string;
   readonly principalId: string;
   readonly studioId: string;
 }
+
 export interface GetStreamingImage {
   readonly streamingImageId: string;
   readonly studioId: string;
 }
+
 export interface GetStreamingSession {
   readonly sessionId: string;
   readonly studioId: string;
 }
+
 export interface GetStreamingSessionStream {
   readonly sessionId: string;
   readonly streamId: string;
   readonly studioId: string;
 }
+
 export interface GetStudio {
   readonly studioId: string;
 }
+
 export interface GetStudioComponent {
   readonly studioComponentId: string;
   readonly studioId: string;
 }
+
 export interface GetStudioMember {
   readonly principalId: string;
   readonly studioId: string;
 }
+
 export interface ListEulaAcceptances {
   readonly eulaIds?: [];
   readonly nextToken?: string;
   readonly studioId: string;
 }
+
 export interface ListEulas {
   readonly eulaIds?: [];
   readonly nextToken?: string;
 }
+
 export interface ListLaunchProfileMembers {
   readonly launchProfileId: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly studioId: string;
 }
+
 export interface ListLaunchProfiles {
   readonly maxResults?: number;
   readonly nextToken?: string;
@@ -166,11 +194,13 @@ export interface ListLaunchProfiles {
   readonly states?: [];
   readonly studioId: string;
 }
+
 export interface ListStreamingImages {
   readonly nextToken?: string;
   readonly owner?: string;
   readonly studioId: string;
 }
+
 export interface ListStreamingSessions {
   readonly createdBy?: string;
   readonly nextToken?: string;
@@ -178,6 +208,7 @@ export interface ListStreamingSessions {
   readonly sessionIds?: string;
   readonly studioId: string;
 }
+
 export interface ListStudioComponents {
   readonly maxResults?: number;
   readonly nextToken?: string;
@@ -185,17 +216,21 @@ export interface ListStudioComponents {
   readonly studioId: string;
   readonly types?: [];
 }
+
 export interface ListStudioMembers {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly studioId: string;
 }
+
 export interface ListStudios {
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface PutLaunchProfileMembers {
   readonly clientToken?: string;
   readonly identityStoreId: string;
@@ -203,34 +238,41 @@ export interface PutLaunchProfileMembers {
   readonly members: [];
   readonly studioId: string;
 }
+
 export interface PutStudioMembers {
   readonly clientToken?: string;
   readonly identityStoreId: string;
   readonly members: [];
   readonly studioId: string;
 }
+
 export interface StartStreamingSession {
   readonly clientToken?: string;
   readonly sessionId: string;
   readonly studioId: string;
 }
+
 export interface StartStudioSSOConfigurationRepair {
   readonly clientToken?: string;
   readonly studioId: string;
 }
+
 export interface StopStreamingSession {
   readonly clientToken?: string;
   readonly sessionId: string;
   readonly studioId: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateLaunchProfile {
   readonly clientToken?: string;
   readonly description?: string;
@@ -241,6 +283,7 @@ export interface UpdateLaunchProfile {
   readonly studioComponentIds?: [];
   readonly studioId: string;
 }
+
 export interface UpdateLaunchProfileMember {
   readonly clientToken?: string;
   readonly launchProfileId: string;
@@ -248,6 +291,7 @@ export interface UpdateLaunchProfileMember {
   readonly principalId: string;
   readonly studioId: string;
 }
+
 export interface UpdateStreamingImage {
   readonly clientToken?: string;
   readonly description?: string;
@@ -255,6 +299,7 @@ export interface UpdateStreamingImage {
   readonly streamingImageId: string;
   readonly studioId: string;
 }
+
 export interface UpdateStudio {
   readonly adminRoleArn?: string;
   readonly clientToken?: string;
@@ -262,6 +307,7 @@ export interface UpdateStudio {
   readonly studioId: string;
   readonly userRoleArn?: string;
 }
+
 export interface UpdateStudioComponent {
   readonly clientToken?: string;
   readonly configuration?: StudioComponentConfiguration;
@@ -276,236 +322,234 @@ export interface UpdateStudioComponent {
   readonly type?: string;
 }
 
-
-
-interface AcceptEulasRequest {
-  readonly clientToken: string;
-  readonly eulaIds: [];
+export interface AcceptEulasRequest {
+  readonly clientToken?: string;
+  readonly eulaIds?: [];
   readonly studioId: string;
 }
 
-interface AcceptEulasResponse {
-  readonly eulaAcceptances: [];
+export interface AcceptEulasResponse {
+  readonly eulaAcceptances?: [];
 }
 
-interface AccessDeniedException {
-  readonly code: string;
-  readonly context: {[key: string]: any};
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly code?: string;
+  readonly context?: {[key: string]: any};
+  readonly message?: string;
 }
 
-interface ActiveDirectoryComputerAttribute {
-  readonly name: string;
-  readonly value: string;
+export interface ActiveDirectoryComputerAttribute {
+  readonly name?: string;
+  readonly value?: string;
 }
 
-interface ActiveDirectoryConfiguration {
-  readonly computerAttributes: [];
-  readonly directoryId: string;
-  readonly organizationalUnitDistinguishedName: string;
+export interface ActiveDirectoryConfiguration {
+  readonly computerAttributes?: [];
+  readonly directoryId?: string;
+  readonly organizationalUnitDistinguishedName?: string;
 }
 
-interface ComputeFarmConfiguration {
-  readonly activeDirectoryUser: string;
-  readonly endpoint: string;
+export interface ComputeFarmConfiguration {
+  readonly activeDirectoryUser?: string;
+  readonly endpoint?: string;
 }
 
-interface ConflictException {
-  readonly code: string;
-  readonly context: {[key: string]: any};
-  readonly message: string;
+export interface ConflictException {
+  readonly code?: string;
+  readonly context?: {[key: string]: any};
+  readonly message?: string;
 }
 
-interface CreateLaunchProfileRequest {
-  readonly clientToken: string;
-  readonly description: string;
+export interface CreateLaunchProfileRequest {
+  readonly clientToken?: string;
+  readonly description?: string;
   readonly ec2SubnetIds: [];
   readonly launchProfileProtocolVersions: [];
   readonly name: string;
   readonly streamConfiguration: StreamConfigurationCreate;
   readonly studioComponentIds: [];
   readonly studioId: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateLaunchProfileResponse {
-  readonly launchProfile: LaunchProfile;
+export interface CreateLaunchProfileResponse {
+  readonly launchProfile?: LaunchProfile;
 }
 
-interface CreateStreamingImageRequest {
-  readonly clientToken: string;
-  readonly description: string;
+export interface CreateStreamingImageRequest {
+  readonly clientToken?: string;
+  readonly description?: string;
   readonly ec2ImageId: string;
   readonly name: string;
   readonly studioId: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateStreamingImageResponse {
-  readonly streamingImage: StreamingImage;
+export interface CreateStreamingImageResponse {
+  readonly streamingImage?: StreamingImage;
 }
 
-interface CreateStreamingSessionRequest {
-  readonly clientToken: string;
-  readonly ec2InstanceType: string;
-  readonly launchProfileId: string;
-  readonly ownedBy: string;
-  readonly streamingImageId: string;
+export interface CreateStreamingSessionRequest {
+  readonly clientToken?: string;
+  readonly ec2InstanceType?: string;
+  readonly launchProfileId?: string;
+  readonly ownedBy?: string;
+  readonly streamingImageId?: string;
   readonly studioId: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateStreamingSessionResponse {
-  readonly session: StreamingSession;
+export interface CreateStreamingSessionResponse {
+  readonly session?: StreamingSession;
 }
 
-interface CreateStreamingSessionStreamRequest {
-  readonly clientToken: string;
-  readonly expirationInSeconds: number;
+export interface CreateStreamingSessionStreamRequest {
+  readonly clientToken?: string;
+  readonly expirationInSeconds?: number;
   readonly sessionId: string;
   readonly studioId: string;
 }
 
-interface CreateStreamingSessionStreamResponse {
-  readonly stream: StreamingSessionStream;
+export interface CreateStreamingSessionStreamResponse {
+  readonly stream?: StreamingSessionStream;
 }
 
-interface CreateStudioComponentRequest {
-  readonly clientToken: string;
-  readonly configuration: StudioComponentConfiguration;
-  readonly description: string;
-  readonly ec2SecurityGroupIds: [];
-  readonly initializationScripts: [];
+export interface CreateStudioComponentRequest {
+  readonly clientToken?: string;
+  readonly configuration?: StudioComponentConfiguration;
+  readonly description?: string;
+  readonly ec2SecurityGroupIds?: [];
+  readonly initializationScripts?: [];
   readonly name: string;
-  readonly scriptParameters: [];
+  readonly scriptParameters?: [];
   readonly studioId: string;
-  readonly subtype: string;
-  readonly tags: {[key: string]: any};
+  readonly subtype?: string;
+  readonly tags?: {[key: string]: any};
   readonly type: string;
 }
 
-interface CreateStudioComponentResponse {
-  readonly studioComponent: StudioComponent;
+export interface CreateStudioComponentResponse {
+  readonly studioComponent?: StudioComponent;
 }
 
-interface CreateStudioRequest {
+export interface CreateStudioRequest {
   readonly adminRoleArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly displayName: string;
-  readonly studioEncryptionConfiguration: StudioEncryptionConfiguration;
+  readonly studioEncryptionConfiguration?: StudioEncryptionConfiguration;
   readonly studioName: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly userRoleArn: string;
 }
 
-interface CreateStudioResponse {
-  readonly studio: Studio;
+export interface CreateStudioResponse {
+  readonly studio?: Studio;
 }
 
-interface DeleteLaunchProfileMemberRequest {
-  readonly clientToken: string;
+export interface DeleteLaunchProfileMemberRequest {
+  readonly clientToken?: string;
   readonly launchProfileId: string;
   readonly principalId: string;
   readonly studioId: string;
 }
 
-interface DeleteLaunchProfileMemberResponse {
+export interface DeleteLaunchProfileMemberResponse {
 }
 
-interface DeleteLaunchProfileRequest {
-  readonly clientToken: string;
+export interface DeleteLaunchProfileRequest {
+  readonly clientToken?: string;
   readonly launchProfileId: string;
   readonly studioId: string;
 }
 
-interface DeleteLaunchProfileResponse {
-  readonly launchProfile: LaunchProfile;
+export interface DeleteLaunchProfileResponse {
+  readonly launchProfile?: LaunchProfile;
 }
 
-interface DeleteStreamingImageRequest {
-  readonly clientToken: string;
+export interface DeleteStreamingImageRequest {
+  readonly clientToken?: string;
   readonly streamingImageId: string;
   readonly studioId: string;
 }
 
-interface DeleteStreamingImageResponse {
-  readonly streamingImage: StreamingImage;
+export interface DeleteStreamingImageResponse {
+  readonly streamingImage?: StreamingImage;
 }
 
-interface DeleteStreamingSessionRequest {
-  readonly clientToken: string;
+export interface DeleteStreamingSessionRequest {
+  readonly clientToken?: string;
   readonly sessionId: string;
   readonly studioId: string;
 }
 
-interface DeleteStreamingSessionResponse {
-  readonly session: StreamingSession;
+export interface DeleteStreamingSessionResponse {
+  readonly session?: StreamingSession;
 }
 
-interface DeleteStudioComponentRequest {
-  readonly clientToken: string;
+export interface DeleteStudioComponentRequest {
+  readonly clientToken?: string;
   readonly studioComponentId: string;
   readonly studioId: string;
 }
 
-interface DeleteStudioComponentResponse {
-  readonly studioComponent: StudioComponent;
+export interface DeleteStudioComponentResponse {
+  readonly studioComponent?: StudioComponent;
 }
 
-interface DeleteStudioMemberRequest {
-  readonly clientToken: string;
+export interface DeleteStudioMemberRequest {
+  readonly clientToken?: string;
   readonly principalId: string;
   readonly studioId: string;
 }
 
-interface DeleteStudioMemberResponse {
+export interface DeleteStudioMemberResponse {
 }
 
-interface DeleteStudioRequest {
-  readonly clientToken: string;
+export interface DeleteStudioRequest {
+  readonly clientToken?: string;
   readonly studioId: string;
 }
 
-interface DeleteStudioResponse {
+export interface DeleteStudioResponse {
   readonly studio: Studio;
 }
 
-interface Eula {
-  readonly content: string;
-  readonly createdAt: Date;
+export interface Eula {
+  readonly content?: string;
+  readonly createdAt?: Date;
+  readonly eulaId?: string;
+  readonly name?: string;
+  readonly updatedAt?: Date;
+}
+
+export interface EulaAcceptance {
+  readonly acceptedAt?: Date;
+  readonly acceptedBy?: string;
+  readonly accepteeId?: string;
+  readonly eulaAcceptanceId?: string;
+  readonly eulaId?: string;
+}
+
+export interface GetEulaRequest {
   readonly eulaId: string;
-  readonly name: string;
-  readonly updatedAt: Date;
 }
 
-interface EulaAcceptance {
-  readonly acceptedAt: Date;
-  readonly acceptedBy: string;
-  readonly accepteeId: string;
-  readonly eulaAcceptanceId: string;
-  readonly eulaId: string;
+export interface GetEulaResponse {
+  readonly eula?: Eula;
 }
 
-interface GetEulaRequest {
-  readonly eulaId: string;
-}
-
-interface GetEulaResponse {
-  readonly eula: Eula;
-}
-
-interface GetLaunchProfileDetailsRequest {
+export interface GetLaunchProfileDetailsRequest {
   readonly launchProfileId: string;
   readonly studioId: string;
 }
 
-interface GetLaunchProfileDetailsResponse {
-  readonly launchProfile: LaunchProfile;
-  readonly streamingImages: [];
-  readonly studioComponentSummaries: [];
+export interface GetLaunchProfileDetailsResponse {
+  readonly launchProfile?: LaunchProfile;
+  readonly streamingImages?: [];
+  readonly studioComponentSummaries?: [];
 }
 
-interface GetLaunchProfileInitializationRequest {
+export interface GetLaunchProfileInitializationRequest {
   readonly launchProfileId: string;
   readonly launchProfileProtocolVersions: [];
   readonly launchPurpose: string;
@@ -513,586 +557,587 @@ interface GetLaunchProfileInitializationRequest {
   readonly studioId: string;
 }
 
-interface GetLaunchProfileInitializationResponse {
-  readonly launchProfileInitialization: LaunchProfileInitialization;
+export interface GetLaunchProfileInitializationResponse {
+  readonly launchProfileInitialization?: LaunchProfileInitialization;
 }
 
-interface GetLaunchProfileMemberRequest {
+export interface GetLaunchProfileMemberRequest {
   readonly launchProfileId: string;
   readonly principalId: string;
   readonly studioId: string;
 }
 
-interface GetLaunchProfileMemberResponse {
-  readonly member: LaunchProfileMembership;
+export interface GetLaunchProfileMemberResponse {
+  readonly member?: LaunchProfileMembership;
 }
 
-interface GetLaunchProfileRequest {
+export interface GetLaunchProfileRequest {
   readonly launchProfileId: string;
   readonly studioId: string;
 }
 
-interface GetLaunchProfileResponse {
-  readonly launchProfile: LaunchProfile;
+export interface GetLaunchProfileResponse {
+  readonly launchProfile?: LaunchProfile;
 }
 
-interface GetStreamingImageRequest {
+export interface GetStreamingImageRequest {
   readonly streamingImageId: string;
   readonly studioId: string;
 }
 
-interface GetStreamingImageResponse {
-  readonly streamingImage: StreamingImage;
+export interface GetStreamingImageResponse {
+  readonly streamingImage?: StreamingImage;
 }
 
-interface GetStreamingSessionRequest {
+export interface GetStreamingSessionRequest {
   readonly sessionId: string;
   readonly studioId: string;
 }
 
-interface GetStreamingSessionResponse {
-  readonly session: StreamingSession;
+export interface GetStreamingSessionResponse {
+  readonly session?: StreamingSession;
 }
 
-interface GetStreamingSessionStreamRequest {
+export interface GetStreamingSessionStreamRequest {
   readonly sessionId: string;
   readonly streamId: string;
   readonly studioId: string;
 }
 
-interface GetStreamingSessionStreamResponse {
-  readonly stream: StreamingSessionStream;
+export interface GetStreamingSessionStreamResponse {
+  readonly stream?: StreamingSessionStream;
 }
 
-interface GetStudioComponentRequest {
+export interface GetStudioComponentRequest {
   readonly studioComponentId: string;
   readonly studioId: string;
 }
 
-interface GetStudioComponentResponse {
-  readonly studioComponent: StudioComponent;
+export interface GetStudioComponentResponse {
+  readonly studioComponent?: StudioComponent;
 }
 
-interface GetStudioMemberRequest {
+export interface GetStudioMemberRequest {
   readonly principalId: string;
   readonly studioId: string;
 }
 
-interface GetStudioMemberResponse {
-  readonly member: StudioMembership;
+export interface GetStudioMemberResponse {
+  readonly member?: StudioMembership;
 }
 
-interface GetStudioRequest {
+export interface GetStudioRequest {
   readonly studioId: string;
 }
 
-interface GetStudioResponse {
+export interface GetStudioResponse {
   readonly studio: Studio;
 }
 
-interface InternalServerErrorException {
-  readonly code: string;
-  readonly context: {[key: string]: any};
-  readonly message: string;
+export interface InternalServerErrorException {
+  readonly code?: string;
+  readonly context?: {[key: string]: any};
+  readonly message?: string;
 }
 
-interface LaunchProfile {
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly createdBy: string;
-  readonly description: string;
-  readonly ec2SubnetIds: [];
+export interface LaunchProfile {
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly createdBy?: string;
+  readonly description?: string;
+  readonly ec2SubnetIds?: [];
+  readonly launchProfileId?: string;
+  readonly launchProfileProtocolVersions?: [];
+  readonly name?: string;
+  readonly state?: string;
+  readonly statusCode?: string;
+  readonly statusMessage?: string;
+  readonly streamConfiguration?: StreamConfiguration;
+  readonly studioComponentIds?: [];
+  readonly tags?: {[key: string]: any};
+  readonly updatedAt?: Date;
+  readonly updatedBy?: string;
+}
+
+export interface LaunchProfileInitialization {
+  readonly activeDirectory?: LaunchProfileInitializationActiveDirectory;
+  readonly ec2SecurityGroupIds?: [];
+  readonly launchProfileId?: string;
+  readonly launchProfileProtocolVersion?: string;
+  readonly launchPurpose?: string;
+  readonly name?: string;
+  readonly platform?: string;
+  readonly systemInitializationScripts?: [];
+  readonly userInitializationScripts?: [];
+}
+
+export interface LaunchProfileInitializationActiveDirectory {
+  readonly computerAttributes?: [];
+  readonly directoryId?: string;
+  readonly directoryName?: string;
+  readonly dnsIpAddresses?: [];
+  readonly organizationalUnitDistinguishedName?: string;
+  readonly studioComponentId?: string;
+  readonly studioComponentName?: string;
+}
+
+export interface LaunchProfileInitializationScript {
+  readonly script?: string;
+  readonly studioComponentId?: string;
+  readonly studioComponentName?: string;
+}
+
+export interface LaunchProfileMembership {
+  readonly identityStoreId?: string;
+  readonly persona?: string;
+  readonly principalId?: string;
+  readonly sid?: string;
+}
+
+export interface LicenseServiceConfiguration {
+  readonly endpoint?: string;
+}
+
+export interface ListEulaAcceptancesRequest {
+  readonly eulaIds?: [];
+  readonly nextToken?: string;
+  readonly studioId: string;
+}
+
+export interface ListEulaAcceptancesResponse {
+  readonly eulaAcceptances?: [];
+  readonly nextToken?: string;
+}
+
+export interface ListEulasRequest {
+  readonly eulaIds?: [];
+  readonly nextToken?: string;
+}
+
+export interface ListEulasResponse {
+  readonly eulas?: [];
+  readonly nextToken?: string;
+}
+
+export interface ListLaunchProfileMembersRequest {
   readonly launchProfileId: string;
-  readonly launchProfileProtocolVersions: [];
-  readonly name: string;
-  readonly state: string;
-  readonly statusCode: string;
-  readonly statusMessage: string;
-  readonly streamConfiguration: StreamConfiguration;
-  readonly studioComponentIds: [];
-  readonly tags: {[key: string]: any};
-  readonly updatedAt: Date;
-  readonly updatedBy: string;
-}
-
-interface LaunchProfileInitialization {
-  readonly activeDirectory: LaunchProfileInitializationActiveDirectory;
-  readonly ec2SecurityGroupIds: [];
-  readonly launchProfileId: string;
-  readonly launchProfileProtocolVersion: string;
-  readonly launchPurpose: string;
-  readonly name: string;
-  readonly platform: string;
-  readonly systemInitializationScripts: [];
-  readonly userInitializationScripts: [];
-}
-
-interface LaunchProfileInitializationActiveDirectory {
-  readonly computerAttributes: [];
-  readonly directoryId: string;
-  readonly directoryName: string;
-  readonly dnsIpAddresses: [];
-  readonly organizationalUnitDistinguishedName: string;
-  readonly studioComponentId: string;
-  readonly studioComponentName: string;
-}
-
-interface LaunchProfileInitializationScript {
-  readonly script: string;
-  readonly studioComponentId: string;
-  readonly studioComponentName: string;
-}
-
-interface LaunchProfileMembership {
-  readonly identityStoreId: string;
-  readonly persona: string;
-  readonly principalId: string;
-  readonly sid: string;
-}
-
-interface LicenseServiceConfiguration {
-  readonly endpoint: string;
-}
-
-interface ListEulaAcceptancesRequest {
-  readonly eulaIds: [];
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly studioId: string;
 }
 
-interface ListEulaAcceptancesResponse {
-  readonly eulaAcceptances: [];
-  readonly nextToken: string;
+export interface ListLaunchProfileMembersResponse {
+  readonly members?: [];
+  readonly nextToken?: string;
 }
 
-interface ListEulasRequest {
-  readonly eulaIds: [];
-  readonly nextToken: string;
-}
-
-interface ListEulasResponse {
-  readonly eulas: [];
-  readonly nextToken: string;
-}
-
-interface ListLaunchProfileMembersRequest {
-  readonly launchProfileId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListLaunchProfilesRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly principalId?: string;
+  readonly states?: [];
   readonly studioId: string;
 }
 
-interface ListLaunchProfileMembersResponse {
-  readonly members: [];
-  readonly nextToken: string;
+export interface ListLaunchProfilesResponse {
+  readonly launchProfiles?: [];
+  readonly nextToken?: string;
 }
 
-interface ListLaunchProfilesRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly principalId: string;
-  readonly states: [];
+export interface ListStreamingImagesRequest {
+  readonly nextToken?: string;
+  readonly owner?: string;
   readonly studioId: string;
 }
 
-interface ListLaunchProfilesResponse {
-  readonly launchProfiles: [];
-  readonly nextToken: string;
+export interface ListStreamingImagesResponse {
+  readonly nextToken?: string;
+  readonly streamingImages?: [];
 }
 
-interface ListStreamingImagesRequest {
-  readonly nextToken: string;
-  readonly owner: string;
+export interface ListStreamingSessionsRequest {
+  readonly createdBy?: string;
+  readonly nextToken?: string;
+  readonly ownedBy?: string;
+  readonly sessionIds?: string;
   readonly studioId: string;
 }
 
-interface ListStreamingImagesResponse {
-  readonly nextToken: string;
-  readonly streamingImages: [];
+export interface ListStreamingSessionsResponse {
+  readonly nextToken?: string;
+  readonly sessions?: [];
 }
 
-interface ListStreamingSessionsRequest {
-  readonly createdBy: string;
-  readonly nextToken: string;
-  readonly ownedBy: string;
-  readonly sessionIds: string;
+export interface ListStudioComponentsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly states?: [];
+  readonly studioId: string;
+  readonly types?: [];
+}
+
+export interface ListStudioComponentsResponse {
+  readonly nextToken?: string;
+  readonly studioComponents?: [];
+}
+
+export interface ListStudioMembersRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly studioId: string;
 }
 
-interface ListStreamingSessionsResponse {
-  readonly nextToken: string;
-  readonly sessions: [];
+export interface ListStudioMembersResponse {
+  readonly members?: [];
+  readonly nextToken?: string;
 }
 
-interface ListStudioComponentsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly states: [];
-  readonly studioId: string;
-  readonly types: [];
+export interface ListStudiosRequest {
+  readonly nextToken?: string;
 }
 
-interface ListStudioComponentsResponse {
-  readonly nextToken: string;
-  readonly studioComponents: [];
-}
-
-interface ListStudioMembersRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly studioId: string;
-}
-
-interface ListStudioMembersResponse {
-  readonly members: [];
-  readonly nextToken: string;
-}
-
-interface ListStudiosRequest {
-  readonly nextToken: string;
-}
-
-interface ListStudiosResponse {
-  readonly nextToken: string;
+export interface ListStudiosResponse {
+  readonly nextToken?: string;
   readonly studios: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface NewLaunchProfileMember {
+export interface NewLaunchProfileMember {
   readonly persona: string;
   readonly principalId: string;
 }
 
-interface NewStudioMember {
+export interface NewStudioMember {
   readonly persona: string;
   readonly principalId: string;
 }
 
-interface PutLaunchProfileMembersRequest {
-  readonly clientToken: string;
+export interface PutLaunchProfileMembersRequest {
+  readonly clientToken?: string;
   readonly identityStoreId: string;
   readonly launchProfileId: string;
   readonly members: [];
   readonly studioId: string;
 }
 
-interface PutLaunchProfileMembersResponse {
+export interface PutLaunchProfileMembersResponse {
 }
 
-interface PutStudioMembersRequest {
-  readonly clientToken: string;
+export interface PutStudioMembersRequest {
+  readonly clientToken?: string;
   readonly identityStoreId: string;
   readonly members: [];
   readonly studioId: string;
 }
 
-interface PutStudioMembersResponse {
+export interface PutStudioMembersResponse {
 }
 
-interface ResourceNotFoundException {
-  readonly code: string;
-  readonly context: {[key: string]: any};
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly code?: string;
+  readonly context?: {[key: string]: any};
+  readonly message?: string;
 }
 
-interface ScriptParameterKeyValue {
-  readonly key: string;
-  readonly value: string;
+export interface ScriptParameterKeyValue {
+  readonly key?: string;
+  readonly value?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly code: string;
-  readonly context: {[key: string]: any};
-  readonly message: string;
+export interface ServiceQuotaExceededException {
+  readonly code?: string;
+  readonly context?: {[key: string]: any};
+  readonly message?: string;
 }
 
-interface SharedFileSystemConfiguration {
-  readonly endpoint: string;
-  readonly fileSystemId: string;
-  readonly linuxMountPoint: string;
-  readonly shareName: string;
-  readonly windowsMountDrive: string;
+export interface SharedFileSystemConfiguration {
+  readonly endpoint?: string;
+  readonly fileSystemId?: string;
+  readonly linuxMountPoint?: string;
+  readonly shareName?: string;
+  readonly windowsMountDrive?: string;
 }
 
-interface StartStreamingSessionRequest {
-  readonly clientToken: string;
+export interface StartStreamingSessionRequest {
+  readonly clientToken?: string;
   readonly sessionId: string;
   readonly studioId: string;
 }
 
-interface StartStreamingSessionResponse {
-  readonly session: StreamingSession;
+export interface StartStreamingSessionResponse {
+  readonly session?: StreamingSession;
 }
 
-interface StartStudioSSOConfigurationRepairRequest {
-  readonly clientToken: string;
+export interface StartStudioSSOConfigurationRepairRequest {
+  readonly clientToken?: string;
   readonly studioId: string;
 }
 
-interface StartStudioSSOConfigurationRepairResponse {
+export interface StartStudioSSOConfigurationRepairResponse {
   readonly studio: Studio;
 }
 
-interface StopStreamingSessionRequest {
-  readonly clientToken: string;
+export interface StopStreamingSessionRequest {
+  readonly clientToken?: string;
   readonly sessionId: string;
   readonly studioId: string;
 }
 
-interface StopStreamingSessionResponse {
-  readonly session: StreamingSession;
+export interface StopStreamingSessionResponse {
+  readonly session?: StreamingSession;
 }
 
-interface StreamConfiguration {
+export interface StreamConfiguration {
   readonly clipboardMode: string;
   readonly ec2InstanceTypes: [];
-  readonly maxSessionLengthInMinutes: number;
-  readonly maxStoppedSessionLengthInMinutes: number;
+  readonly maxSessionLengthInMinutes?: number;
+  readonly maxStoppedSessionLengthInMinutes?: number;
   readonly streamingImageIds: [];
 }
 
-interface StreamConfigurationCreate {
+export interface StreamConfigurationCreate {
   readonly clipboardMode: string;
   readonly ec2InstanceTypes: [];
-  readonly maxSessionLengthInMinutes: number;
-  readonly maxStoppedSessionLengthInMinutes: number;
+  readonly maxSessionLengthInMinutes?: number;
+  readonly maxStoppedSessionLengthInMinutes?: number;
   readonly streamingImageIds: [];
 }
 
-interface StreamingImage {
-  readonly arn: string;
-  readonly description: string;
-  readonly ec2ImageId: string;
-  readonly encryptionConfiguration: StreamingImageEncryptionConfiguration;
-  readonly eulaIds: [];
-  readonly name: string;
-  readonly owner: string;
-  readonly platform: string;
-  readonly state: string;
-  readonly statusCode: string;
-  readonly statusMessage: string;
-  readonly streamingImageId: string;
-  readonly tags: {[key: string]: any};
+export interface StreamingImage {
+  readonly arn?: string;
+  readonly description?: string;
+  readonly ec2ImageId?: string;
+  readonly encryptionConfiguration?: StreamingImageEncryptionConfiguration;
+  readonly eulaIds?: [];
+  readonly name?: string;
+  readonly owner?: string;
+  readonly platform?: string;
+  readonly state?: string;
+  readonly statusCode?: string;
+  readonly statusMessage?: string;
+  readonly streamingImageId?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface StreamingImageEncryptionConfiguration {
-  readonly keyArn: string;
+export interface StreamingImageEncryptionConfiguration {
+  readonly keyArn?: string;
   readonly keyType: string;
 }
 
-interface StreamingSession {
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly createdBy: string;
-  readonly ec2InstanceType: string;
-  readonly launchProfileId: string;
-  readonly ownedBy: string;
-  readonly sessionId: string;
-  readonly startedAt: Date;
-  readonly startedBy: string;
-  readonly state: string;
-  readonly statusCode: string;
-  readonly statusMessage: string;
-  readonly stopAt: Date;
-  readonly stoppedAt: Date;
-  readonly stoppedBy: string;
-  readonly streamingImageId: string;
-  readonly tags: {[key: string]: any};
-  readonly terminateAt: Date;
-  readonly updatedAt: Date;
-  readonly updatedBy: string;
+export interface StreamingSession {
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly createdBy?: string;
+  readonly ec2InstanceType?: string;
+  readonly launchProfileId?: string;
+  readonly ownedBy?: string;
+  readonly sessionId?: string;
+  readonly startedAt?: Date;
+  readonly startedBy?: string;
+  readonly state?: string;
+  readonly statusCode?: string;
+  readonly statusMessage?: string;
+  readonly stopAt?: Date;
+  readonly stoppedAt?: Date;
+  readonly stoppedBy?: string;
+  readonly streamingImageId?: string;
+  readonly tags?: {[key: string]: any};
+  readonly terminateAt?: Date;
+  readonly updatedAt?: Date;
+  readonly updatedBy?: string;
 }
 
-interface StreamingSessionStream {
-  readonly createdAt: Date;
-  readonly createdBy: string;
-  readonly expiresAt: Date;
-  readonly ownedBy: string;
-  readonly state: string;
-  readonly statusCode: string;
-  readonly streamId: string;
-  readonly url: string;
+export interface StreamingSessionStream {
+  readonly createdAt?: Date;
+  readonly createdBy?: string;
+  readonly expiresAt?: Date;
+  readonly ownedBy?: string;
+  readonly state?: string;
+  readonly statusCode?: string;
+  readonly streamId?: string;
+  readonly url?: string;
 }
 
-interface Studio {
-  readonly adminRoleArn: string;
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly displayName: string;
-  readonly homeRegion: string;
-  readonly ssoClientId: string;
-  readonly state: string;
-  readonly statusCode: string;
-  readonly statusMessage: string;
-  readonly studioEncryptionConfiguration: StudioEncryptionConfiguration;
-  readonly studioId: string;
-  readonly studioName: string;
-  readonly studioUrl: string;
-  readonly tags: {[key: string]: any};
-  readonly updatedAt: Date;
-  readonly userRoleArn: string;
+export interface Studio {
+  readonly adminRoleArn?: string;
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly displayName?: string;
+  readonly homeRegion?: string;
+  readonly ssoClientId?: string;
+  readonly state?: string;
+  readonly statusCode?: string;
+  readonly statusMessage?: string;
+  readonly studioEncryptionConfiguration?: StudioEncryptionConfiguration;
+  readonly studioId?: string;
+  readonly studioName?: string;
+  readonly studioUrl?: string;
+  readonly tags?: {[key: string]: any};
+  readonly updatedAt?: Date;
+  readonly userRoleArn?: string;
 }
 
-interface StudioComponent {
-  readonly arn: string;
-  readonly configuration: StudioComponentConfiguration;
-  readonly createdAt: Date;
-  readonly createdBy: string;
-  readonly description: string;
-  readonly ec2SecurityGroupIds: [];
-  readonly initializationScripts: [];
-  readonly name: string;
-  readonly scriptParameters: [];
-  readonly state: string;
-  readonly statusCode: string;
-  readonly statusMessage: string;
-  readonly studioComponentId: string;
-  readonly subtype: string;
-  readonly tags: {[key: string]: any};
-  readonly type: string;
-  readonly updatedAt: Date;
-  readonly updatedBy: string;
+export interface StudioComponent {
+  readonly arn?: string;
+  readonly configuration?: StudioComponentConfiguration;
+  readonly createdAt?: Date;
+  readonly createdBy?: string;
+  readonly description?: string;
+  readonly ec2SecurityGroupIds?: [];
+  readonly initializationScripts?: [];
+  readonly name?: string;
+  readonly scriptParameters?: [];
+  readonly state?: string;
+  readonly statusCode?: string;
+  readonly statusMessage?: string;
+  readonly studioComponentId?: string;
+  readonly subtype?: string;
+  readonly tags?: {[key: string]: any};
+  readonly type?: string;
+  readonly updatedAt?: Date;
+  readonly updatedBy?: string;
 }
 
-interface StudioComponentConfiguration {
-  readonly activeDirectoryConfiguration: ActiveDirectoryConfiguration;
-  readonly computeFarmConfiguration: ComputeFarmConfiguration;
-  readonly licenseServiceConfiguration: LicenseServiceConfiguration;
-  readonly sharedFileSystemConfiguration: SharedFileSystemConfiguration;
+export interface StudioComponentConfiguration {
+  readonly activeDirectoryConfiguration?: ActiveDirectoryConfiguration;
+  readonly computeFarmConfiguration?: ComputeFarmConfiguration;
+  readonly licenseServiceConfiguration?: LicenseServiceConfiguration;
+  readonly sharedFileSystemConfiguration?: SharedFileSystemConfiguration;
 }
 
-interface StudioComponentInitializationScript {
-  readonly launchProfileProtocolVersion: string;
-  readonly platform: string;
-  readonly runContext: string;
-  readonly script: string;
+export interface StudioComponentInitializationScript {
+  readonly launchProfileProtocolVersion?: string;
+  readonly platform?: string;
+  readonly runContext?: string;
+  readonly script?: string;
 }
 
-interface StudioComponentSummary {
-  readonly createdAt: Date;
-  readonly createdBy: string;
-  readonly description: string;
-  readonly name: string;
-  readonly studioComponentId: string;
-  readonly subtype: string;
-  readonly type: string;
-  readonly updatedAt: Date;
-  readonly updatedBy: string;
+export interface StudioComponentSummary {
+  readonly createdAt?: Date;
+  readonly createdBy?: string;
+  readonly description?: string;
+  readonly name?: string;
+  readonly studioComponentId?: string;
+  readonly subtype?: string;
+  readonly type?: string;
+  readonly updatedAt?: Date;
+  readonly updatedBy?: string;
 }
 
-interface StudioEncryptionConfiguration {
-  readonly keyArn: string;
+export interface StudioEncryptionConfiguration {
+  readonly keyArn?: string;
   readonly keyType: string;
 }
 
-interface StudioMembership {
-  readonly identityStoreId: string;
-  readonly persona: string;
-  readonly principalId: string;
-  readonly sid: string;
+export interface StudioMembership {
+  readonly identityStoreId?: string;
+  readonly persona?: string;
+  readonly principalId?: string;
+  readonly sid?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
-  readonly code: string;
-  readonly context: {[key: string]: any};
-  readonly message: string;
+export interface ThrottlingException {
+  readonly code?: string;
+  readonly context?: {[key: string]: any};
+  readonly message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateLaunchProfileMemberRequest {
-  readonly clientToken: string;
+export interface UpdateLaunchProfileMemberRequest {
+  readonly clientToken?: string;
   readonly launchProfileId: string;
   readonly persona: string;
   readonly principalId: string;
   readonly studioId: string;
 }
 
-interface UpdateLaunchProfileMemberResponse {
-  readonly member: LaunchProfileMembership;
+export interface UpdateLaunchProfileMemberResponse {
+  readonly member?: LaunchProfileMembership;
 }
 
-interface UpdateLaunchProfileRequest {
-  readonly clientToken: string;
-  readonly description: string;
+export interface UpdateLaunchProfileRequest {
+  readonly clientToken?: string;
+  readonly description?: string;
   readonly launchProfileId: string;
-  readonly launchProfileProtocolVersions: [];
-  readonly name: string;
-  readonly streamConfiguration: StreamConfigurationCreate;
-  readonly studioComponentIds: [];
+  readonly launchProfileProtocolVersions?: [];
+  readonly name?: string;
+  readonly streamConfiguration?: StreamConfigurationCreate;
+  readonly studioComponentIds?: [];
   readonly studioId: string;
 }
 
-interface UpdateLaunchProfileResponse {
-  readonly launchProfile: LaunchProfile;
+export interface UpdateLaunchProfileResponse {
+  readonly launchProfile?: LaunchProfile;
 }
 
-interface UpdateStreamingImageRequest {
-  readonly clientToken: string;
-  readonly description: string;
-  readonly name: string;
+export interface UpdateStreamingImageRequest {
+  readonly clientToken?: string;
+  readonly description?: string;
+  readonly name?: string;
   readonly streamingImageId: string;
   readonly studioId: string;
 }
 
-interface UpdateStreamingImageResponse {
-  readonly streamingImage: StreamingImage;
+export interface UpdateStreamingImageResponse {
+  readonly streamingImage?: StreamingImage;
 }
 
-interface UpdateStudioComponentRequest {
-  readonly clientToken: string;
-  readonly configuration: StudioComponentConfiguration;
-  readonly description: string;
-  readonly ec2SecurityGroupIds: [];
-  readonly initializationScripts: [];
-  readonly name: string;
-  readonly scriptParameters: [];
+export interface UpdateStudioComponentRequest {
+  readonly clientToken?: string;
+  readonly configuration?: StudioComponentConfiguration;
+  readonly description?: string;
+  readonly ec2SecurityGroupIds?: [];
+  readonly initializationScripts?: [];
+  readonly name?: string;
+  readonly scriptParameters?: [];
   readonly studioComponentId: string;
   readonly studioId: string;
-  readonly subtype: string;
-  readonly type: string;
+  readonly subtype?: string;
+  readonly type?: string;
 }
 
-interface UpdateStudioComponentResponse {
-  readonly studioComponent: StudioComponent;
+export interface UpdateStudioComponentResponse {
+  readonly studioComponent?: StudioComponent;
 }
 
-interface UpdateStudioRequest {
-  readonly adminRoleArn: string;
-  readonly clientToken: string;
-  readonly displayName: string;
+export interface UpdateStudioRequest {
+  readonly adminRoleArn?: string;
+  readonly clientToken?: string;
+  readonly displayName?: string;
   readonly studioId: string;
-  readonly userRoleArn: string;
+  readonly userRoleArn?: string;
 }
 
-interface UpdateStudioResponse {
+export interface UpdateStudioResponse {
   readonly studio: Studio;
 }
 
-interface ValidationException {
-  readonly code: string;
-  readonly context: {[key: string]: any};
-  readonly message: string;
+export interface ValidationException {
+  readonly code?: string;
+  readonly context?: {[key: string]: any};
+  readonly message?: string;
 }
+
 

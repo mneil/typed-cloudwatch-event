@@ -5,6 +5,7 @@ export interface CancelJobRun {
   readonly id: string;
   readonly virtualClusterId: string;
 }
+
 export interface CreateManagedEndpoint {
   readonly name: string;
   readonly virtualClusterId: string;
@@ -16,30 +17,37 @@ export interface CreateManagedEndpoint {
   readonly clientToken: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateVirtualCluster {
   readonly name: string;
   readonly containerProvider: ContainerProvider;
   readonly clientToken: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface DeleteManagedEndpoint {
   readonly id: string;
   readonly virtualClusterId: string;
 }
+
 export interface DeleteVirtualCluster {
   readonly id: string;
 }
+
 export interface DescribeJobRun {
   readonly id: string;
   readonly virtualClusterId: string;
 }
+
 export interface DescribeManagedEndpoint {
   readonly id: string;
   readonly virtualClusterId: string;
 }
+
 export interface DescribeVirtualCluster {
   readonly id: string;
 }
+
 export interface ListJobRuns {
   readonly virtualClusterId: string;
   readonly createdBefore?: Date;
@@ -49,6 +57,7 @@ export interface ListJobRuns {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListManagedEndpoints {
   readonly virtualClusterId: string;
   readonly createdBefore?: Date;
@@ -58,9 +67,11 @@ export interface ListManagedEndpoints {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface ListVirtualClusters {
   readonly containerProviderId?: string;
   readonly containerProviderType?: string;
@@ -70,6 +81,7 @@ export interface ListVirtualClusters {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface StartJobRun {
   readonly name?: string;
   readonly virtualClusterId: string;
@@ -80,304 +92,305 @@ export interface StartJobRun {
   readonly configurationOverrides?: ConfigurationOverrides;
   readonly tags?: {[key: string]: any};
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-
-
-interface CancelJobRunRequest {
+export interface CancelJobRunRequest {
   readonly id: string;
   readonly virtualClusterId: string;
 }
 
-interface CancelJobRunResponse {
-  readonly id: string;
-  readonly virtualClusterId: string;
+export interface CancelJobRunResponse {
+  readonly id?: string;
+  readonly virtualClusterId?: string;
 }
 
-interface Certificate {
-  readonly certificateArn: string;
-  readonly certificateData: string;
+export interface Certificate {
+  readonly certificateArn?: string;
+  readonly certificateData?: string;
 }
 
-interface CloudWatchMonitoringConfiguration {
+export interface CloudWatchMonitoringConfiguration {
   readonly logGroupName: string;
-  readonly logStreamNamePrefix: string;
+  readonly logStreamNamePrefix?: string;
 }
 
-interface Configuration {
+export interface Configuration {
   readonly classification: string;
-  readonly properties: {[key: string]: any};
-  readonly configurations: [];
+  readonly properties?: {[key: string]: any};
+  readonly configurations?: [];
 }
 
-interface ConfigurationOverrides {
-  readonly applicationConfiguration: [];
-  readonly monitoringConfiguration: MonitoringConfiguration;
+export interface ConfigurationOverrides {
+  readonly applicationConfiguration?: [];
+  readonly monitoringConfiguration?: MonitoringConfiguration;
 }
 
-interface ContainerInfo {
-  readonly eksInfo: EksInfo;
+export interface ContainerInfo {
+  readonly eksInfo?: EksInfo;
 }
 
-interface ContainerProvider {
+export interface ContainerProvider {
   readonly type: string;
   readonly id: string;
-  readonly info: ContainerInfo;
+  readonly info?: ContainerInfo;
 }
 
-interface CreateManagedEndpointRequest {
+export interface CreateManagedEndpointRequest {
   readonly name: string;
   readonly virtualClusterId: string;
   readonly type: string;
   readonly releaseLabel: string;
   readonly executionRoleArn: string;
-  readonly certificateArn: string;
-  readonly configurationOverrides: ConfigurationOverrides;
+  readonly certificateArn?: string;
+  readonly configurationOverrides?: ConfigurationOverrides;
   readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateManagedEndpointResponse {
-  readonly id: string;
-  readonly name: string;
-  readonly arn: string;
-  readonly virtualClusterId: string;
+export interface CreateManagedEndpointResponse {
+  readonly id?: string;
+  readonly name?: string;
+  readonly arn?: string;
+  readonly virtualClusterId?: string;
 }
 
-interface CreateVirtualClusterRequest {
+export interface CreateVirtualClusterRequest {
   readonly name: string;
   readonly containerProvider: ContainerProvider;
   readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateVirtualClusterResponse {
-  readonly id: string;
-  readonly name: string;
-  readonly arn: string;
+export interface CreateVirtualClusterResponse {
+  readonly id?: string;
+  readonly name?: string;
+  readonly arn?: string;
 }
 
-interface DeleteManagedEndpointRequest {
-  readonly id: string;
-  readonly virtualClusterId: string;
-}
-
-interface DeleteManagedEndpointResponse {
+export interface DeleteManagedEndpointRequest {
   readonly id: string;
   readonly virtualClusterId: string;
 }
 
-interface DeleteVirtualClusterRequest {
+export interface DeleteManagedEndpointResponse {
+  readonly id?: string;
+  readonly virtualClusterId?: string;
+}
+
+export interface DeleteVirtualClusterRequest {
   readonly id: string;
 }
 
-interface DeleteVirtualClusterResponse {
-  readonly id: string;
+export interface DeleteVirtualClusterResponse {
+  readonly id?: string;
 }
 
-interface DescribeJobRunRequest {
-  readonly id: string;
-  readonly virtualClusterId: string;
-}
-
-interface DescribeJobRunResponse {
-  readonly jobRun: JobRun;
-}
-
-interface DescribeManagedEndpointRequest {
+export interface DescribeJobRunRequest {
   readonly id: string;
   readonly virtualClusterId: string;
 }
 
-interface DescribeManagedEndpointResponse {
-  readonly endpoint: Endpoint;
+export interface DescribeJobRunResponse {
+  readonly jobRun?: JobRun;
 }
 
-interface DescribeVirtualClusterRequest {
+export interface DescribeManagedEndpointRequest {
+  readonly id: string;
+  readonly virtualClusterId: string;
+}
+
+export interface DescribeManagedEndpointResponse {
+  readonly endpoint?: Endpoint;
+}
+
+export interface DescribeVirtualClusterRequest {
   readonly id: string;
 }
 
-interface DescribeVirtualClusterResponse {
-  readonly virtualCluster: VirtualCluster;
+export interface DescribeVirtualClusterResponse {
+  readonly virtualCluster?: VirtualCluster;
 }
 
-interface EksInfo {
-  readonly namespace: string;
+export interface EksInfo {
+  readonly namespace?: string;
 }
 
-interface Endpoint {
-  readonly id: string;
-  readonly name: string;
-  readonly arn: string;
+export interface Endpoint {
+  readonly id?: string;
+  readonly name?: string;
+  readonly arn?: string;
+  readonly virtualClusterId?: string;
+  readonly type?: string;
+  readonly state?: string;
+  readonly releaseLabel?: string;
+  readonly executionRoleArn?: string;
+  readonly certificateArn?: string;
+  readonly certificateAuthority?: Certificate;
+  readonly configurationOverrides?: ConfigurationOverrides;
+  readonly serverUrl?: string;
+  readonly createdAt?: Date;
+  readonly securityGroup?: string;
+  readonly subnetIds?: [];
+  readonly stateDetails?: string;
+  readonly failureReason?: string;
+  readonly tags?: {[key: string]: any};
+}
+
+export interface InternalServerException {
+  readonly message?: string;
+}
+
+export interface JobDriver {
+  readonly sparkSubmitJobDriver?: SparkSubmitJobDriver;
+}
+
+export interface JobRun {
+  readonly id?: string;
+  readonly name?: string;
+  readonly virtualClusterId?: string;
+  readonly arn?: string;
+  readonly state?: string;
+  readonly clientToken?: string;
+  readonly executionRoleArn?: string;
+  readonly releaseLabel?: string;
+  readonly configurationOverrides?: ConfigurationOverrides;
+  readonly jobDriver?: JobDriver;
+  readonly createdAt?: Date;
+  readonly createdBy?: string;
+  readonly finishedAt?: Date;
+  readonly stateDetails?: string;
+  readonly failureReason?: string;
+  readonly tags?: {[key: string]: any};
+}
+
+export interface ListJobRunsRequest {
   readonly virtualClusterId: string;
-  readonly type: string;
-  readonly state: string;
-  readonly releaseLabel: string;
-  readonly executionRoleArn: string;
-  readonly certificateArn: string;
-  readonly certificateAuthority: Certificate;
-  readonly configurationOverrides: ConfigurationOverrides;
-  readonly serverUrl: string;
-  readonly createdAt: Date;
-  readonly securityGroup: string;
-  readonly subnetIds: [];
-  readonly stateDetails: string;
-  readonly failureReason: string;
-  readonly tags: {[key: string]: any};
+  readonly createdBefore?: Date;
+  readonly createdAfter?: Date;
+  readonly name?: string;
+  readonly states?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface InternalServerException {
-  readonly message: string;
+export interface ListJobRunsResponse {
+  readonly jobRuns?: [];
+  readonly nextToken?: string;
 }
 
-interface JobDriver {
-  readonly sparkSubmitJobDriver: SparkSubmitJobDriver;
-}
-
-interface JobRun {
-  readonly id: string;
-  readonly name: string;
+export interface ListManagedEndpointsRequest {
   readonly virtualClusterId: string;
-  readonly arn: string;
-  readonly state: string;
-  readonly clientToken: string;
-  readonly executionRoleArn: string;
-  readonly releaseLabel: string;
-  readonly configurationOverrides: ConfigurationOverrides;
-  readonly jobDriver: JobDriver;
-  readonly createdAt: Date;
-  readonly createdBy: string;
-  readonly finishedAt: Date;
-  readonly stateDetails: string;
-  readonly failureReason: string;
-  readonly tags: {[key: string]: any};
+  readonly createdBefore?: Date;
+  readonly createdAfter?: Date;
+  readonly types?: [];
+  readonly states?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListJobRunsRequest {
-  readonly virtualClusterId: string;
-  readonly createdBefore: Date;
-  readonly createdAfter: Date;
-  readonly name: string;
-  readonly states: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListManagedEndpointsResponse {
+  readonly endpoints?: [];
+  readonly nextToken?: string;
 }
 
-interface ListJobRunsResponse {
-  readonly jobRuns: [];
-  readonly nextToken: string;
-}
-
-interface ListManagedEndpointsRequest {
-  readonly virtualClusterId: string;
-  readonly createdBefore: Date;
-  readonly createdAfter: Date;
-  readonly types: [];
-  readonly states: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
-}
-
-interface ListManagedEndpointsResponse {
-  readonly endpoints: [];
-  readonly nextToken: string;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ListVirtualClustersRequest {
-  readonly containerProviderId: string;
-  readonly containerProviderType: string;
-  readonly createdAfter: Date;
-  readonly createdBefore: Date;
-  readonly states: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListVirtualClustersRequest {
+  readonly containerProviderId?: string;
+  readonly containerProviderType?: string;
+  readonly createdAfter?: Date;
+  readonly createdBefore?: Date;
+  readonly states?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListVirtualClustersResponse {
-  readonly virtualClusters: [];
-  readonly nextToken: string;
+export interface ListVirtualClustersResponse {
+  readonly virtualClusters?: [];
+  readonly nextToken?: string;
 }
 
-interface MonitoringConfiguration {
-  readonly persistentAppUI: string;
-  readonly cloudWatchMonitoringConfiguration: CloudWatchMonitoringConfiguration;
-  readonly s3MonitoringConfiguration: S3MonitoringConfiguration;
+export interface MonitoringConfiguration {
+  readonly persistentAppUI?: string;
+  readonly cloudWatchMonitoringConfiguration?: CloudWatchMonitoringConfiguration;
+  readonly s3MonitoringConfiguration?: S3MonitoringConfiguration;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface S3MonitoringConfiguration {
+export interface S3MonitoringConfiguration {
   readonly logUri: string;
 }
 
-interface SparkSubmitJobDriver {
+export interface SparkSubmitJobDriver {
   readonly entryPoint: string;
-  readonly entryPointArguments: [];
-  readonly sparkSubmitParameters: string;
+  readonly entryPointArguments?: [];
+  readonly sparkSubmitParameters?: string;
 }
 
-interface StartJobRunRequest {
-  readonly name: string;
+export interface StartJobRunRequest {
+  readonly name?: string;
   readonly virtualClusterId: string;
   readonly clientToken: string;
   readonly executionRoleArn: string;
   readonly releaseLabel: string;
   readonly jobDriver: JobDriver;
-  readonly configurationOverrides: ConfigurationOverrides;
-  readonly tags: {[key: string]: any};
+  readonly configurationOverrides?: ConfigurationOverrides;
+  readonly tags?: {[key: string]: any};
 }
 
-interface StartJobRunResponse {
-  readonly id: string;
-  readonly name: string;
-  readonly arn: string;
-  readonly virtualClusterId: string;
+export interface StartJobRunResponse {
+  readonly id?: string;
+  readonly name?: string;
+  readonly arn?: string;
+  readonly virtualClusterId?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface ValidationException {
-  readonly message: string;
+export interface ValidationException {
+  readonly message?: string;
 }
 
-interface VirtualCluster {
-  readonly id: string;
-  readonly name: string;
-  readonly arn: string;
-  readonly state: string;
-  readonly containerProvider: ContainerProvider;
-  readonly createdAt: Date;
-  readonly tags: {[key: string]: any};
+export interface VirtualCluster {
+  readonly id?: string;
+  readonly name?: string;
+  readonly arn?: string;
+  readonly state?: string;
+  readonly containerProvider?: ContainerProvider;
+  readonly createdAt?: Date;
+  readonly tags?: {[key: string]: any};
 }
+
 

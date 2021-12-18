@@ -7,12 +7,14 @@ export interface DeleteSession {
   readonly localeId: string;
   readonly sessionId: string;
 }
+
 export interface GetSession {
   readonly botId: string;
   readonly botAliasId: string;
   readonly localeId: string;
   readonly sessionId: string;
 }
+
 export interface PutSession {
   readonly botId: string;
   readonly botAliasId: string;
@@ -23,6 +25,7 @@ export interface PutSession {
   readonly requestAttributes?: {[key: string]: any};
   readonly responseContentType?: string;
 }
+
 export interface RecognizeText {
   readonly botId: string;
   readonly botAliasId: string;
@@ -32,6 +35,7 @@ export interface RecognizeText {
   readonly sessionState?: SessionState;
   readonly requestAttributes?: {[key: string]: any};
 }
+
 export interface RecognizeUtterance {
   readonly botId: string;
   readonly botAliasId: string;
@@ -43,6 +47,7 @@ export interface RecognizeUtterance {
   readonly responseContentType?: string;
   readonly inputStream?: unknown;
 }
+
 export interface StartConversation {
   readonly botId: string;
   readonly botAliasId: string;
@@ -52,324 +57,323 @@ export interface StartConversation {
   readonly requestEventStream: StartConversationRequestEventStream;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
 }
 
-interface ActiveContext {
+export interface ActiveContext {
   readonly name: string;
   readonly timeToLive: ActiveContextTimeToLive;
   readonly contextAttributes: {[key: string]: any};
 }
 
-interface ActiveContextTimeToLive {
+export interface ActiveContextTimeToLive {
   readonly timeToLiveInSeconds: number;
   readonly turnsToLive: number;
 }
 
-interface AudioInputEvent {
-  readonly audioChunk: unknown;
+export interface AudioInputEvent {
+  readonly audioChunk?: unknown;
   readonly contentType: string;
-  readonly eventId: string;
-  readonly clientTimestampMillis: number;
+  readonly eventId?: string;
+  readonly clientTimestampMillis?: number;
 }
 
-interface AudioResponseEvent {
-  readonly audioChunk: unknown;
-  readonly contentType: string;
-  readonly eventId: string;
+export interface AudioResponseEvent {
+  readonly audioChunk?: unknown;
+  readonly contentType?: string;
+  readonly eventId?: string;
 }
 
-interface BadGatewayException {
+export interface BadGatewayException {
   readonly message: string;
 }
 
-interface Button {
+export interface Button {
   readonly text: string;
   readonly value: string;
 }
 
-interface ConfidenceScore {
-  readonly score: unknown;
+export interface ConfidenceScore {
+  readonly score?: unknown;
 }
 
-interface ConfigurationEvent {
-  readonly requestAttributes: {[key: string]: any};
+export interface ConfigurationEvent {
+  readonly requestAttributes?: {[key: string]: any};
   readonly responseContentType: string;
-  readonly sessionState: SessionState;
-  readonly welcomeMessages: [];
-  readonly disablePlayback: boolean;
-  readonly eventId: string;
-  readonly clientTimestampMillis: number;
+  readonly sessionState?: SessionState;
+  readonly welcomeMessages?: [];
+  readonly disablePlayback?: boolean;
+  readonly eventId?: string;
+  readonly clientTimestampMillis?: number;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly message: string;
 }
 
-interface DTMFInputEvent {
+export interface DTMFInputEvent {
   readonly inputCharacter: string;
-  readonly eventId: string;
-  readonly clientTimestampMillis: number;
+  readonly eventId?: string;
+  readonly clientTimestampMillis?: number;
 }
 
-interface DeleteSessionRequest {
+export interface DeleteSessionRequest {
   readonly botId: string;
   readonly botAliasId: string;
   readonly localeId: string;
   readonly sessionId: string;
 }
 
-interface DeleteSessionResponse {
-  readonly botId: string;
-  readonly botAliasId: string;
-  readonly localeId: string;
-  readonly sessionId: string;
+export interface DeleteSessionResponse {
+  readonly botId?: string;
+  readonly botAliasId?: string;
+  readonly localeId?: string;
+  readonly sessionId?: string;
 }
 
-interface DependencyFailedException {
+export interface DependencyFailedException {
   readonly message: string;
 }
 
-interface DialogAction {
+export interface DialogAction {
   readonly type: string;
-  readonly slotToElicit: string;
-  readonly slotElicitationStyle: string;
+  readonly slotToElicit?: string;
+  readonly slotElicitationStyle?: string;
 }
 
-interface DisconnectionEvent {
-  readonly eventId: string;
-  readonly clientTimestampMillis: number;
+export interface DisconnectionEvent {
+  readonly eventId?: string;
+  readonly clientTimestampMillis?: number;
 }
 
-interface GetSessionRequest {
+export interface GetSessionRequest {
   readonly botId: string;
   readonly botAliasId: string;
   readonly localeId: string;
   readonly sessionId: string;
 }
 
-interface GetSessionResponse {
-  readonly sessionId: string;
-  readonly messages: [];
-  readonly interpretations: [];
-  readonly sessionState: SessionState;
+export interface GetSessionResponse {
+  readonly sessionId?: string;
+  readonly messages?: [];
+  readonly interpretations?: [];
+  readonly sessionState?: SessionState;
 }
 
-interface HeartbeatEvent {
-  readonly eventId: string;
+export interface HeartbeatEvent {
+  readonly eventId?: string;
 }
 
-interface ImageResponseCard {
+export interface ImageResponseCard {
   readonly title: string;
-  readonly subtitle: string;
-  readonly imageUrl: string;
-  readonly buttons: [];
+  readonly subtitle?: string;
+  readonly imageUrl?: string;
+  readonly buttons?: [];
 }
 
-interface Intent {
+export interface Intent {
   readonly name: string;
-  readonly slots: {[key: string]: any};
-  readonly state: string;
-  readonly confirmationState: string;
+  readonly slots?: {[key: string]: any};
+  readonly state?: string;
+  readonly confirmationState?: string;
 }
 
-interface IntentResultEvent {
-  readonly inputMode: string;
-  readonly interpretations: [];
-  readonly sessionState: SessionState;
-  readonly requestAttributes: {[key: string]: any};
-  readonly sessionId: string;
-  readonly eventId: string;
+export interface IntentResultEvent {
+  readonly inputMode?: string;
+  readonly interpretations?: [];
+  readonly sessionState?: SessionState;
+  readonly requestAttributes?: {[key: string]: any};
+  readonly sessionId?: string;
+  readonly eventId?: string;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
 }
 
-interface Interpretation {
-  readonly nluConfidence: ConfidenceScore;
-  readonly sentimentResponse: SentimentResponse;
-  readonly intent: Intent;
+export interface Interpretation {
+  readonly nluConfidence?: ConfidenceScore;
+  readonly sentimentResponse?: SentimentResponse;
+  readonly intent?: Intent;
 }
 
-interface Message {
-  readonly content: string;
+export interface Message {
+  readonly content?: string;
   readonly contentType: string;
-  readonly imageResponseCard: ImageResponseCard;
+  readonly imageResponseCard?: ImageResponseCard;
 }
 
-interface PlaybackCompletionEvent {
-  readonly eventId: string;
-  readonly clientTimestampMillis: number;
+export interface PlaybackCompletionEvent {
+  readonly eventId?: string;
+  readonly clientTimestampMillis?: number;
 }
 
-interface PlaybackInterruptionEvent {
-  readonly eventReason: string;
-  readonly causedByEventId: string;
-  readonly eventId: string;
+export interface PlaybackInterruptionEvent {
+  readonly eventReason?: string;
+  readonly causedByEventId?: string;
+  readonly eventId?: string;
 }
 
-interface PutSessionRequest {
+export interface PutSessionRequest {
   readonly botId: string;
   readonly botAliasId: string;
   readonly localeId: string;
   readonly sessionId: string;
-  readonly messages: [];
+  readonly messages?: [];
   readonly sessionState: SessionState;
-  readonly requestAttributes: {[key: string]: any};
-  readonly responseContentType: string;
+  readonly requestAttributes?: {[key: string]: any};
+  readonly responseContentType?: string;
 }
 
-interface PutSessionResponse {
-  readonly contentType: string;
-  readonly messages: string;
-  readonly sessionState: string;
-  readonly requestAttributes: string;
-  readonly sessionId: string;
-  readonly audioStream: unknown;
+export interface PutSessionResponse {
+  readonly contentType?: string;
+  readonly messages?: string;
+  readonly sessionState?: string;
+  readonly requestAttributes?: string;
+  readonly sessionId?: string;
+  readonly audioStream?: unknown;
 }
 
-interface RecognizeTextRequest {
+export interface RecognizeTextRequest {
   readonly botId: string;
   readonly botAliasId: string;
   readonly localeId: string;
   readonly sessionId: string;
   readonly text: string;
-  readonly sessionState: SessionState;
-  readonly requestAttributes: {[key: string]: any};
+  readonly sessionState?: SessionState;
+  readonly requestAttributes?: {[key: string]: any};
 }
 
-interface RecognizeTextResponse {
-  readonly messages: [];
-  readonly sessionState: SessionState;
-  readonly interpretations: [];
-  readonly requestAttributes: {[key: string]: any};
-  readonly sessionId: string;
+export interface RecognizeTextResponse {
+  readonly messages?: [];
+  readonly sessionState?: SessionState;
+  readonly interpretations?: [];
+  readonly requestAttributes?: {[key: string]: any};
+  readonly sessionId?: string;
 }
 
-interface RecognizeUtteranceRequest {
+export interface RecognizeUtteranceRequest {
   readonly botId: string;
   readonly botAliasId: string;
   readonly localeId: string;
   readonly sessionId: string;
-  readonly sessionState: string;
-  readonly requestAttributes: string;
+  readonly sessionState?: string;
+  readonly requestAttributes?: string;
   readonly requestContentType: string;
-  readonly responseContentType: string;
-  readonly inputStream: unknown;
+  readonly responseContentType?: string;
+  readonly inputStream?: unknown;
 }
 
-interface RecognizeUtteranceResponse {
-  readonly inputMode: string;
-  readonly contentType: string;
-  readonly messages: string;
-  readonly interpretations: string;
-  readonly sessionState: string;
-  readonly requestAttributes: string;
-  readonly sessionId: string;
-  readonly inputTranscript: string;
-  readonly audioStream: unknown;
+export interface RecognizeUtteranceResponse {
+  readonly inputMode?: string;
+  readonly contentType?: string;
+  readonly messages?: string;
+  readonly interpretations?: string;
+  readonly sessionState?: string;
+  readonly requestAttributes?: string;
+  readonly sessionId?: string;
+  readonly inputTranscript?: string;
+  readonly audioStream?: unknown;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
 }
 
-interface SentimentResponse {
-  readonly sentiment: string;
-  readonly sentimentScore: SentimentScore;
+export interface SentimentResponse {
+  readonly sentiment?: string;
+  readonly sentimentScore?: SentimentScore;
 }
 
-interface SentimentScore {
-  readonly positive: unknown;
-  readonly negative: unknown;
-  readonly neutral: unknown;
-  readonly mixed: unknown;
+export interface SentimentScore {
+  readonly positive?: unknown;
+  readonly negative?: unknown;
+  readonly neutral?: unknown;
+  readonly mixed?: unknown;
 }
 
-interface SessionState {
-  readonly dialogAction: DialogAction;
-  readonly intent: Intent;
-  readonly activeContexts: [];
-  readonly sessionAttributes: {[key: string]: any};
-  readonly originatingRequestId: string;
+export interface SessionState {
+  readonly dialogAction?: DialogAction;
+  readonly intent?: Intent;
+  readonly activeContexts?: [];
+  readonly sessionAttributes?: {[key: string]: any};
+  readonly originatingRequestId?: string;
 }
 
-interface Slot {
-  readonly value: Value;
-  readonly shape: string;
-  readonly values: [];
+export interface Slot {
+  readonly value?: Value;
+  readonly shape?: string;
+  readonly values?: [];
 }
 
-interface StartConversationRequest {
+export interface StartConversationRequest {
   readonly botId: string;
   readonly botAliasId: string;
   readonly localeId: string;
   readonly sessionId: string;
-  readonly conversationMode: string;
+  readonly conversationMode?: string;
   readonly requestEventStream: StartConversationRequestEventStream;
 }
 
-interface StartConversationRequestEventStream {
-  readonly ConfigurationEvent: ConfigurationEvent;
-  readonly AudioInputEvent: AudioInputEvent;
-  readonly DTMFInputEvent: DTMFInputEvent;
-  readonly TextInputEvent: TextInputEvent;
-  readonly PlaybackCompletionEvent: PlaybackCompletionEvent;
-  readonly DisconnectionEvent: DisconnectionEvent;
+export interface StartConversationRequestEventStream {
+  readonly ConfigurationEvent?: ConfigurationEvent;
+  readonly AudioInputEvent?: AudioInputEvent;
+  readonly DTMFInputEvent?: DTMFInputEvent;
+  readonly TextInputEvent?: TextInputEvent;
+  readonly PlaybackCompletionEvent?: PlaybackCompletionEvent;
+  readonly DisconnectionEvent?: DisconnectionEvent;
 }
 
-interface StartConversationResponse {
-  readonly responseEventStream: StartConversationResponseEventStream;
+export interface StartConversationResponse {
+  readonly responseEventStream?: StartConversationResponseEventStream;
 }
 
-interface StartConversationResponseEventStream {
-  readonly PlaybackInterruptionEvent: PlaybackInterruptionEvent;
-  readonly TranscriptEvent: TranscriptEvent;
-  readonly IntentResultEvent: IntentResultEvent;
-  readonly TextResponseEvent: TextResponseEvent;
-  readonly AudioResponseEvent: AudioResponseEvent;
-  readonly HeartbeatEvent: HeartbeatEvent;
-  readonly AccessDeniedException: AccessDeniedException;
-  readonly ResourceNotFoundException: ResourceNotFoundException;
-  readonly ValidationException: ValidationException;
-  readonly ThrottlingException: ThrottlingException;
-  readonly InternalServerException: InternalServerException;
-  readonly ConflictException: ConflictException;
-  readonly DependencyFailedException: DependencyFailedException;
-  readonly BadGatewayException: BadGatewayException;
+export interface StartConversationResponseEventStream {
+  readonly PlaybackInterruptionEvent?: PlaybackInterruptionEvent;
+  readonly TranscriptEvent?: TranscriptEvent;
+  readonly IntentResultEvent?: IntentResultEvent;
+  readonly TextResponseEvent?: TextResponseEvent;
+  readonly AudioResponseEvent?: AudioResponseEvent;
+  readonly HeartbeatEvent?: HeartbeatEvent;
+  readonly AccessDeniedException?: AccessDeniedException;
+  readonly ResourceNotFoundException?: ResourceNotFoundException;
+  readonly ValidationException?: ValidationException;
+  readonly ThrottlingException?: ThrottlingException;
+  readonly InternalServerException?: InternalServerException;
+  readonly ConflictException?: ConflictException;
+  readonly DependencyFailedException?: DependencyFailedException;
+  readonly BadGatewayException?: BadGatewayException;
 }
 
-interface TextInputEvent {
+export interface TextInputEvent {
   readonly text: string;
-  readonly eventId: string;
-  readonly clientTimestampMillis: number;
+  readonly eventId?: string;
+  readonly clientTimestampMillis?: number;
 }
 
-interface TextResponseEvent {
-  readonly messages: [];
-  readonly eventId: string;
+export interface TextResponseEvent {
+  readonly messages?: [];
+  readonly eventId?: string;
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly message: string;
 }
 
-interface TranscriptEvent {
-  readonly transcript: string;
-  readonly eventId: string;
+export interface TranscriptEvent {
+  readonly transcript?: string;
+  readonly eventId?: string;
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly message: string;
 }
 
-interface Value {
-  readonly originalValue: string;
+export interface Value {
+  readonly originalValue?: string;
   readonly interpretedValue: string;
-  readonly resolvedValues: [];
+  readonly resolvedValues?: [];
 }
+
 

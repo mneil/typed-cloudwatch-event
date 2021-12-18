@@ -4,6 +4,7 @@
 export interface CancelTaskExecution {
   readonly TaskExecutionArn: string;
 }
+
 export interface CreateAgent {
   readonly ActivationKey: string;
   readonly AgentName?: string;
@@ -12,12 +13,14 @@ export interface CreateAgent {
   readonly SubnetArns?: [];
   readonly SecurityGroupArns?: [];
 }
+
 export interface CreateLocationEfs {
   readonly Subdirectory?: string;
   readonly EfsFilesystemArn: string;
   readonly Ec2Config: Ec2Config;
   readonly Tags?: [];
 }
+
 export interface CreateLocationFsxWindows {
   readonly Subdirectory?: string;
   readonly FsxFilesystemArn: string;
@@ -27,6 +30,7 @@ export interface CreateLocationFsxWindows {
   readonly Domain?: string;
   readonly Password: string;
 }
+
 export interface CreateLocationHdfs {
   readonly Subdirectory?: string;
   readonly NameNodes: [];
@@ -42,6 +46,7 @@ export interface CreateLocationHdfs {
   readonly AgentArns: [];
   readonly Tags?: [];
 }
+
 export interface CreateLocationNfs {
   readonly Subdirectory: string;
   readonly ServerHostname: string;
@@ -49,6 +54,7 @@ export interface CreateLocationNfs {
   readonly MountOptions?: NfsMountOptions;
   readonly Tags?: [];
 }
+
 export interface CreateLocationObjectStorage {
   readonly ServerHostname: string;
   readonly ServerPort?: number;
@@ -60,6 +66,7 @@ export interface CreateLocationObjectStorage {
   readonly AgentArns: [];
   readonly Tags?: [];
 }
+
 export interface CreateLocationS3 {
   readonly Subdirectory?: string;
   readonly S3BucketArn: string;
@@ -68,6 +75,7 @@ export interface CreateLocationS3 {
   readonly AgentArns?: [];
   readonly Tags?: [];
 }
+
 export interface CreateLocationSmb {
   readonly Subdirectory: string;
   readonly ServerHostname: string;
@@ -78,6 +86,7 @@ export interface CreateLocationSmb {
   readonly MountOptions?: SmbMountOptions;
   readonly Tags?: [];
 }
+
 export interface CreateTask {
   readonly SourceLocationArn: string;
   readonly DestinationLocationArn: string;
@@ -89,87 +98,110 @@ export interface CreateTask {
   readonly Tags?: [];
   readonly Includes?: [];
 }
+
 export interface DeleteAgent {
   readonly AgentArn: string;
 }
+
 export interface DeleteLocation {
   readonly LocationArn: string;
 }
+
 export interface DeleteTask {
   readonly TaskArn: string;
 }
+
 export interface DescribeAgent {
   readonly AgentArn: string;
 }
+
 export interface DescribeLocationEfs {
   readonly LocationArn: string;
 }
+
 export interface DescribeLocationFsxWindows {
   readonly LocationArn: string;
 }
+
 export interface DescribeLocationHdfs {
   readonly LocationArn: string;
 }
+
 export interface DescribeLocationNfs {
   readonly LocationArn: string;
 }
+
 export interface DescribeLocationObjectStorage {
   readonly LocationArn: string;
 }
+
 export interface DescribeLocationS3 {
   readonly LocationArn: string;
 }
+
 export interface DescribeLocationSmb {
   readonly LocationArn: string;
 }
+
 export interface DescribeTask {
   readonly TaskArn: string;
 }
+
 export interface DescribeTaskExecution {
   readonly TaskExecutionArn: string;
 }
+
 export interface ListAgents {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListLocations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly Filters?: [];
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTaskExecutions {
   readonly TaskArn?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTasks {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly Filters?: [];
 }
+
 export interface StartTaskExecution {
   readonly TaskArn: string;
   readonly OverrideOptions?: Options;
   readonly Includes?: [];
   readonly Excludes?: [];
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly Keys: [];
 }
+
 export interface UpdateAgent {
   readonly AgentArn: string;
   readonly Name?: string;
 }
+
 export interface UpdateLocationHdfs {
   readonly LocationArn: string;
   readonly Subdirectory?: string;
@@ -185,12 +217,14 @@ export interface UpdateLocationHdfs {
   readonly KerberosKrb5Conf?: unknown;
   readonly AgentArns?: [];
 }
+
 export interface UpdateLocationNfs {
   readonly LocationArn: string;
   readonly Subdirectory?: string;
   readonly OnPremConfig?: OnPremConfig;
   readonly MountOptions?: NfsMountOptions;
 }
+
 export interface UpdateLocationObjectStorage {
   readonly LocationArn: string;
   readonly ServerPort?: number;
@@ -200,6 +234,7 @@ export interface UpdateLocationObjectStorage {
   readonly SecretKey?: string;
   readonly AgentArns?: [];
 }
+
 export interface UpdateLocationSmb {
   readonly LocationArn: string;
   readonly Subdirectory?: string;
@@ -209,6 +244,7 @@ export interface UpdateLocationSmb {
   readonly AgentArns?: [];
   readonly MountOptions?: SmbMountOptions;
 }
+
 export interface UpdateTask {
   readonly TaskArn: string;
   readonly Options?: Options;
@@ -218,610 +254,610 @@ export interface UpdateTask {
   readonly CloudWatchLogGroupArn?: string;
   readonly Includes?: [];
 }
+
 export interface UpdateTaskExecution {
   readonly TaskExecutionArn: string;
   readonly Options: Options;
 }
 
-
-
-interface AgentListEntry {
-  readonly AgentArn: string;
-  readonly Name: string;
-  readonly Status: string;
+export interface AgentListEntry {
+  readonly AgentArn?: string;
+  readonly Name?: string;
+  readonly Status?: string;
 }
 
-interface CancelTaskExecutionRequest {
+export interface CancelTaskExecutionRequest {
   readonly TaskExecutionArn: string;
 }
 
-interface CancelTaskExecutionResponse {
+export interface CancelTaskExecutionResponse {
 }
 
-interface CreateAgentRequest {
+export interface CreateAgentRequest {
   readonly ActivationKey: string;
-  readonly AgentName: string;
-  readonly Tags: [];
-  readonly VpcEndpointId: string;
-  readonly SubnetArns: [];
-  readonly SecurityGroupArns: [];
+  readonly AgentName?: string;
+  readonly Tags?: [];
+  readonly VpcEndpointId?: string;
+  readonly SubnetArns?: [];
+  readonly SecurityGroupArns?: [];
 }
 
-interface CreateAgentResponse {
-  readonly AgentArn: string;
+export interface CreateAgentResponse {
+  readonly AgentArn?: string;
 }
 
-interface CreateLocationEfsRequest {
-  readonly Subdirectory: string;
+export interface CreateLocationEfsRequest {
+  readonly Subdirectory?: string;
   readonly EfsFilesystemArn: string;
   readonly Ec2Config: Ec2Config;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateLocationEfsResponse {
-  readonly LocationArn: string;
+export interface CreateLocationEfsResponse {
+  readonly LocationArn?: string;
 }
 
-interface CreateLocationFsxWindowsRequest {
-  readonly Subdirectory: string;
+export interface CreateLocationFsxWindowsRequest {
+  readonly Subdirectory?: string;
   readonly FsxFilesystemArn: string;
   readonly SecurityGroupArns: [];
-  readonly Tags: [];
+  readonly Tags?: [];
   readonly User: string;
-  readonly Domain: string;
+  readonly Domain?: string;
   readonly Password: string;
 }
 
-interface CreateLocationFsxWindowsResponse {
-  readonly LocationArn: string;
+export interface CreateLocationFsxWindowsResponse {
+  readonly LocationArn?: string;
 }
 
-interface CreateLocationHdfsRequest {
-  readonly Subdirectory: string;
+export interface CreateLocationHdfsRequest {
+  readonly Subdirectory?: string;
   readonly NameNodes: [];
-  readonly BlockSize: number;
-  readonly ReplicationFactor: number;
-  readonly KmsKeyProviderUri: string;
-  readonly QopConfiguration: QopConfiguration;
+  readonly BlockSize?: number;
+  readonly ReplicationFactor?: number;
+  readonly KmsKeyProviderUri?: string;
+  readonly QopConfiguration?: QopConfiguration;
   readonly AuthenticationType: string;
-  readonly SimpleUser: string;
-  readonly KerberosPrincipal: string;
-  readonly KerberosKeytab: unknown;
-  readonly KerberosKrb5Conf: unknown;
+  readonly SimpleUser?: string;
+  readonly KerberosPrincipal?: string;
+  readonly KerberosKeytab?: unknown;
+  readonly KerberosKrb5Conf?: unknown;
   readonly AgentArns: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateLocationHdfsResponse {
-  readonly LocationArn: string;
+export interface CreateLocationHdfsResponse {
+  readonly LocationArn?: string;
 }
 
-interface CreateLocationNfsRequest {
+export interface CreateLocationNfsRequest {
   readonly Subdirectory: string;
   readonly ServerHostname: string;
   readonly OnPremConfig: OnPremConfig;
-  readonly MountOptions: NfsMountOptions;
-  readonly Tags: [];
+  readonly MountOptions?: NfsMountOptions;
+  readonly Tags?: [];
 }
 
-interface CreateLocationNfsResponse {
-  readonly LocationArn: string;
+export interface CreateLocationNfsResponse {
+  readonly LocationArn?: string;
 }
 
-interface CreateLocationObjectStorageRequest {
+export interface CreateLocationObjectStorageRequest {
   readonly ServerHostname: string;
-  readonly ServerPort: number;
-  readonly ServerProtocol: string;
-  readonly Subdirectory: string;
+  readonly ServerPort?: number;
+  readonly ServerProtocol?: string;
+  readonly Subdirectory?: string;
   readonly BucketName: string;
-  readonly AccessKey: string;
-  readonly SecretKey: string;
+  readonly AccessKey?: string;
+  readonly SecretKey?: string;
   readonly AgentArns: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateLocationObjectStorageResponse {
-  readonly LocationArn: string;
+export interface CreateLocationObjectStorageResponse {
+  readonly LocationArn?: string;
 }
 
-interface CreateLocationS3Request {
-  readonly Subdirectory: string;
+export interface CreateLocationS3Request {
+  readonly Subdirectory?: string;
   readonly S3BucketArn: string;
-  readonly S3StorageClass: string;
+  readonly S3StorageClass?: string;
   readonly S3Config: S3Config;
-  readonly AgentArns: [];
-  readonly Tags: [];
+  readonly AgentArns?: [];
+  readonly Tags?: [];
 }
 
-interface CreateLocationS3Response {
-  readonly LocationArn: string;
+export interface CreateLocationS3Response {
+  readonly LocationArn?: string;
 }
 
-interface CreateLocationSmbRequest {
+export interface CreateLocationSmbRequest {
   readonly Subdirectory: string;
   readonly ServerHostname: string;
   readonly User: string;
-  readonly Domain: string;
+  readonly Domain?: string;
   readonly Password: string;
   readonly AgentArns: [];
-  readonly MountOptions: SmbMountOptions;
-  readonly Tags: [];
+  readonly MountOptions?: SmbMountOptions;
+  readonly Tags?: [];
 }
 
-interface CreateLocationSmbResponse {
-  readonly LocationArn: string;
+export interface CreateLocationSmbResponse {
+  readonly LocationArn?: string;
 }
 
-interface CreateTaskRequest {
+export interface CreateTaskRequest {
   readonly SourceLocationArn: string;
   readonly DestinationLocationArn: string;
-  readonly CloudWatchLogGroupArn: string;
-  readonly Name: string;
-  readonly Options: Options;
-  readonly Excludes: [];
-  readonly Schedule: TaskSchedule;
-  readonly Tags: [];
-  readonly Includes: [];
+  readonly CloudWatchLogGroupArn?: string;
+  readonly Name?: string;
+  readonly Options?: Options;
+  readonly Excludes?: [];
+  readonly Schedule?: TaskSchedule;
+  readonly Tags?: [];
+  readonly Includes?: [];
 }
 
-interface CreateTaskResponse {
+export interface CreateTaskResponse {
+  readonly TaskArn?: string;
+}
+
+export interface DeleteAgentRequest {
+  readonly AgentArn: string;
+}
+
+export interface DeleteAgentResponse {
+}
+
+export interface DeleteLocationRequest {
+  readonly LocationArn: string;
+}
+
+export interface DeleteLocationResponse {
+}
+
+export interface DeleteTaskRequest {
   readonly TaskArn: string;
 }
 
-interface DeleteAgentRequest {
+export interface DeleteTaskResponse {
+}
+
+export interface DescribeAgentRequest {
   readonly AgentArn: string;
 }
 
-interface DeleteAgentResponse {
+export interface DescribeAgentResponse {
+  readonly AgentArn?: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly LastConnectionTime?: Date;
+  readonly CreationTime?: Date;
+  readonly EndpointType?: string;
+  readonly PrivateLinkConfig?: PrivateLinkConfig;
 }
 
-interface DeleteLocationRequest {
+export interface DescribeLocationEfsRequest {
   readonly LocationArn: string;
 }
 
-interface DeleteLocationResponse {
+export interface DescribeLocationEfsResponse {
+  readonly LocationArn?: string;
+  readonly LocationUri?: string;
+  readonly Ec2Config?: Ec2Config;
+  readonly CreationTime?: Date;
 }
 
-interface DeleteTaskRequest {
-  readonly TaskArn: string;
-}
-
-interface DeleteTaskResponse {
-}
-
-interface DescribeAgentRequest {
-  readonly AgentArn: string;
-}
-
-interface DescribeAgentResponse {
-  readonly AgentArn: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly LastConnectionTime: Date;
-  readonly CreationTime: Date;
-  readonly EndpointType: string;
-  readonly PrivateLinkConfig: PrivateLinkConfig;
-}
-
-interface DescribeLocationEfsRequest {
+export interface DescribeLocationFsxWindowsRequest {
   readonly LocationArn: string;
 }
 
-interface DescribeLocationEfsResponse {
-  readonly LocationArn: string;
-  readonly LocationUri: string;
-  readonly Ec2Config: Ec2Config;
-  readonly CreationTime: Date;
+export interface DescribeLocationFsxWindowsResponse {
+  readonly LocationArn?: string;
+  readonly LocationUri?: string;
+  readonly SecurityGroupArns?: [];
+  readonly CreationTime?: Date;
+  readonly User?: string;
+  readonly Domain?: string;
 }
 
-interface DescribeLocationFsxWindowsRequest {
-  readonly LocationArn: string;
-}
-
-interface DescribeLocationFsxWindowsResponse {
-  readonly LocationArn: string;
-  readonly LocationUri: string;
-  readonly SecurityGroupArns: [];
-  readonly CreationTime: Date;
-  readonly User: string;
-  readonly Domain: string;
-}
-
-interface DescribeLocationHdfsRequest {
+export interface DescribeLocationHdfsRequest {
   readonly LocationArn: string;
 }
 
-interface DescribeLocationHdfsResponse {
-  readonly LocationArn: string;
-  readonly LocationUri: string;
-  readonly NameNodes: [];
-  readonly BlockSize: number;
-  readonly ReplicationFactor: number;
-  readonly KmsKeyProviderUri: string;
-  readonly QopConfiguration: QopConfiguration;
-  readonly AuthenticationType: string;
-  readonly SimpleUser: string;
-  readonly KerberosPrincipal: string;
-  readonly AgentArns: [];
-  readonly CreationTime: Date;
+export interface DescribeLocationHdfsResponse {
+  readonly LocationArn?: string;
+  readonly LocationUri?: string;
+  readonly NameNodes?: [];
+  readonly BlockSize?: number;
+  readonly ReplicationFactor?: number;
+  readonly KmsKeyProviderUri?: string;
+  readonly QopConfiguration?: QopConfiguration;
+  readonly AuthenticationType?: string;
+  readonly SimpleUser?: string;
+  readonly KerberosPrincipal?: string;
+  readonly AgentArns?: [];
+  readonly CreationTime?: Date;
 }
 
-interface DescribeLocationNfsRequest {
-  readonly LocationArn: string;
-}
-
-interface DescribeLocationNfsResponse {
-  readonly LocationArn: string;
-  readonly LocationUri: string;
-  readonly OnPremConfig: OnPremConfig;
-  readonly MountOptions: NfsMountOptions;
-  readonly CreationTime: Date;
-}
-
-interface DescribeLocationObjectStorageRequest {
+export interface DescribeLocationNfsRequest {
   readonly LocationArn: string;
 }
 
-interface DescribeLocationObjectStorageResponse {
-  readonly LocationArn: string;
-  readonly LocationUri: string;
-  readonly AccessKey: string;
-  readonly ServerPort: number;
-  readonly ServerProtocol: string;
-  readonly AgentArns: [];
-  readonly CreationTime: Date;
+export interface DescribeLocationNfsResponse {
+  readonly LocationArn?: string;
+  readonly LocationUri?: string;
+  readonly OnPremConfig?: OnPremConfig;
+  readonly MountOptions?: NfsMountOptions;
+  readonly CreationTime?: Date;
 }
 
-interface DescribeLocationS3Request {
+export interface DescribeLocationObjectStorageRequest {
   readonly LocationArn: string;
 }
 
-interface DescribeLocationS3Response {
-  readonly LocationArn: string;
-  readonly LocationUri: string;
-  readonly S3StorageClass: string;
-  readonly S3Config: S3Config;
-  readonly AgentArns: [];
-  readonly CreationTime: Date;
+export interface DescribeLocationObjectStorageResponse {
+  readonly LocationArn?: string;
+  readonly LocationUri?: string;
+  readonly AccessKey?: string;
+  readonly ServerPort?: number;
+  readonly ServerProtocol?: string;
+  readonly AgentArns?: [];
+  readonly CreationTime?: Date;
 }
 
-interface DescribeLocationSmbRequest {
+export interface DescribeLocationS3Request {
   readonly LocationArn: string;
 }
 
-interface DescribeLocationSmbResponse {
-  readonly LocationArn: string;
-  readonly LocationUri: string;
-  readonly AgentArns: [];
-  readonly User: string;
-  readonly Domain: string;
-  readonly MountOptions: SmbMountOptions;
-  readonly CreationTime: Date;
+export interface DescribeLocationS3Response {
+  readonly LocationArn?: string;
+  readonly LocationUri?: string;
+  readonly S3StorageClass?: string;
+  readonly S3Config?: S3Config;
+  readonly AgentArns?: [];
+  readonly CreationTime?: Date;
 }
 
-interface DescribeTaskExecutionRequest {
+export interface DescribeLocationSmbRequest {
+  readonly LocationArn: string;
+}
+
+export interface DescribeLocationSmbResponse {
+  readonly LocationArn?: string;
+  readonly LocationUri?: string;
+  readonly AgentArns?: [];
+  readonly User?: string;
+  readonly Domain?: string;
+  readonly MountOptions?: SmbMountOptions;
+  readonly CreationTime?: Date;
+}
+
+export interface DescribeTaskExecutionRequest {
   readonly TaskExecutionArn: string;
 }
 
-interface DescribeTaskExecutionResponse {
-  readonly TaskExecutionArn: string;
-  readonly Status: string;
-  readonly Options: Options;
-  readonly Excludes: [];
-  readonly Includes: [];
-  readonly StartTime: Date;
-  readonly EstimatedFilesToTransfer: number;
-  readonly EstimatedBytesToTransfer: number;
-  readonly FilesTransferred: number;
-  readonly BytesWritten: number;
-  readonly BytesTransferred: number;
-  readonly Result: TaskExecutionResultDetail;
+export interface DescribeTaskExecutionResponse {
+  readonly TaskExecutionArn?: string;
+  readonly Status?: string;
+  readonly Options?: Options;
+  readonly Excludes?: [];
+  readonly Includes?: [];
+  readonly StartTime?: Date;
+  readonly EstimatedFilesToTransfer?: number;
+  readonly EstimatedBytesToTransfer?: number;
+  readonly FilesTransferred?: number;
+  readonly BytesWritten?: number;
+  readonly BytesTransferred?: number;
+  readonly Result?: TaskExecutionResultDetail;
 }
 
-interface DescribeTaskRequest {
+export interface DescribeTaskRequest {
   readonly TaskArn: string;
 }
 
-interface DescribeTaskResponse {
-  readonly TaskArn: string;
-  readonly Status: string;
-  readonly Name: string;
-  readonly CurrentTaskExecutionArn: string;
-  readonly SourceLocationArn: string;
-  readonly DestinationLocationArn: string;
-  readonly CloudWatchLogGroupArn: string;
-  readonly SourceNetworkInterfaceArns: [];
-  readonly DestinationNetworkInterfaceArns: [];
-  readonly Options: Options;
-  readonly Excludes: [];
-  readonly Schedule: TaskSchedule;
-  readonly ErrorCode: string;
-  readonly ErrorDetail: string;
-  readonly CreationTime: Date;
-  readonly Includes: [];
+export interface DescribeTaskResponse {
+  readonly TaskArn?: string;
+  readonly Status?: string;
+  readonly Name?: string;
+  readonly CurrentTaskExecutionArn?: string;
+  readonly SourceLocationArn?: string;
+  readonly DestinationLocationArn?: string;
+  readonly CloudWatchLogGroupArn?: string;
+  readonly SourceNetworkInterfaceArns?: [];
+  readonly DestinationNetworkInterfaceArns?: [];
+  readonly Options?: Options;
+  readonly Excludes?: [];
+  readonly Schedule?: TaskSchedule;
+  readonly ErrorCode?: string;
+  readonly ErrorDetail?: string;
+  readonly CreationTime?: Date;
+  readonly Includes?: [];
 }
 
-interface Ec2Config {
+export interface Ec2Config {
   readonly SubnetArn: string;
   readonly SecurityGroupArns: [];
 }
 
-interface FilterRule {
-  readonly FilterType: string;
-  readonly Value: string;
+export interface FilterRule {
+  readonly FilterType?: string;
+  readonly Value?: string;
 }
 
-interface HdfsNameNode {
+export interface HdfsNameNode {
   readonly Hostname: string;
   readonly Port: number;
 }
 
-interface InternalException {
-  readonly message: string;
-  readonly errorCode: string;
+export interface InternalException {
+  readonly message?: string;
+  readonly errorCode?: string;
 }
 
-interface InvalidRequestException {
-  readonly message: string;
-  readonly errorCode: string;
+export interface InvalidRequestException {
+  readonly message?: string;
+  readonly errorCode?: string;
 }
 
-interface ListAgentsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListAgentsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAgentsResponse {
-  readonly Agents: [];
-  readonly NextToken: string;
+export interface ListAgentsResponse {
+  readonly Agents?: [];
+  readonly NextToken?: string;
 }
 
-interface ListLocationsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+export interface ListLocationsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 
-interface ListLocationsResponse {
-  readonly Locations: [];
-  readonly NextToken: string;
+export interface ListLocationsResponse {
+  readonly Locations?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
-  readonly NextToken: string;
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTaskExecutionsRequest {
-  readonly TaskArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListTaskExecutionsRequest {
+  readonly TaskArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListTaskExecutionsResponse {
-  readonly TaskExecutions: [];
-  readonly NextToken: string;
+export interface ListTaskExecutionsResponse {
+  readonly TaskExecutions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTasksRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+export interface ListTasksRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 
-interface ListTasksResponse {
-  readonly Tasks: [];
-  readonly NextToken: string;
+export interface ListTasksResponse {
+  readonly Tasks?: [];
+  readonly NextToken?: string;
 }
 
-interface LocationFilter {
+export interface LocationFilter {
   readonly Name: string;
   readonly Values: [];
   readonly Operator: string;
 }
 
-interface LocationListEntry {
-  readonly LocationArn: string;
-  readonly LocationUri: string;
+export interface LocationListEntry {
+  readonly LocationArn?: string;
+  readonly LocationUri?: string;
 }
 
-interface NfsMountOptions {
-  readonly Version: string;
+export interface NfsMountOptions {
+  readonly Version?: string;
 }
 
-interface OnPremConfig {
+export interface OnPremConfig {
   readonly AgentArns: [];
 }
 
-interface Options {
-  readonly VerifyMode: string;
-  readonly OverwriteMode: string;
-  readonly Atime: string;
-  readonly Mtime: string;
-  readonly Uid: string;
-  readonly Gid: string;
-  readonly PreserveDeletedFiles: string;
-  readonly PreserveDevices: string;
-  readonly PosixPermissions: string;
-  readonly BytesPerSecond: number;
-  readonly TaskQueueing: string;
-  readonly LogLevel: string;
-  readonly TransferMode: string;
-  readonly SecurityDescriptorCopyFlags: string;
+export interface Options {
+  readonly VerifyMode?: string;
+  readonly OverwriteMode?: string;
+  readonly Atime?: string;
+  readonly Mtime?: string;
+  readonly Uid?: string;
+  readonly Gid?: string;
+  readonly PreserveDeletedFiles?: string;
+  readonly PreserveDevices?: string;
+  readonly PosixPermissions?: string;
+  readonly BytesPerSecond?: number;
+  readonly TaskQueueing?: string;
+  readonly LogLevel?: string;
+  readonly TransferMode?: string;
+  readonly SecurityDescriptorCopyFlags?: string;
 }
 
-interface PrivateLinkConfig {
-  readonly VpcEndpointId: string;
-  readonly PrivateLinkEndpoint: string;
-  readonly SubnetArns: [];
-  readonly SecurityGroupArns: [];
+export interface PrivateLinkConfig {
+  readonly VpcEndpointId?: string;
+  readonly PrivateLinkEndpoint?: string;
+  readonly SubnetArns?: [];
+  readonly SecurityGroupArns?: [];
 }
 
-interface QopConfiguration {
-  readonly RpcProtection: string;
-  readonly DataTransferProtection: string;
+export interface QopConfiguration {
+  readonly RpcProtection?: string;
+  readonly DataTransferProtection?: string;
 }
 
-interface S3Config {
+export interface S3Config {
   readonly BucketAccessRoleArn: string;
 }
 
-interface SmbMountOptions {
-  readonly Version: string;
+export interface SmbMountOptions {
+  readonly Version?: string;
 }
 
-interface StartTaskExecutionRequest {
+export interface StartTaskExecutionRequest {
   readonly TaskArn: string;
-  readonly OverrideOptions: Options;
-  readonly Includes: [];
-  readonly Excludes: [];
+  readonly OverrideOptions?: Options;
+  readonly Includes?: [];
+  readonly Excludes?: [];
 }
 
-interface StartTaskExecutionResponse {
-  readonly TaskExecutionArn: string;
+export interface StartTaskExecutionResponse {
+  readonly TaskExecutionArn?: string;
 }
 
-interface TagListEntry {
+export interface TagListEntry {
   readonly Key: string;
-  readonly Value: string;
+  readonly Value?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TaskExecutionListEntry {
-  readonly TaskExecutionArn: string;
-  readonly Status: string;
+export interface TaskExecutionListEntry {
+  readonly TaskExecutionArn?: string;
+  readonly Status?: string;
 }
 
-interface TaskExecutionResultDetail {
-  readonly PrepareDuration: number;
-  readonly PrepareStatus: string;
-  readonly TotalDuration: number;
-  readonly TransferDuration: number;
-  readonly TransferStatus: string;
-  readonly VerifyDuration: number;
-  readonly VerifyStatus: string;
-  readonly ErrorCode: string;
-  readonly ErrorDetail: string;
+export interface TaskExecutionResultDetail {
+  readonly PrepareDuration?: number;
+  readonly PrepareStatus?: string;
+  readonly TotalDuration?: number;
+  readonly TransferDuration?: number;
+  readonly TransferStatus?: string;
+  readonly VerifyDuration?: number;
+  readonly VerifyStatus?: string;
+  readonly ErrorCode?: string;
+  readonly ErrorDetail?: string;
 }
 
-interface TaskFilter {
+export interface TaskFilter {
   readonly Name: string;
   readonly Values: [];
   readonly Operator: string;
 }
 
-interface TaskListEntry {
-  readonly TaskArn: string;
-  readonly Status: string;
-  readonly Name: string;
+export interface TaskListEntry {
+  readonly TaskArn?: string;
+  readonly Status?: string;
+  readonly Name?: string;
 }
 
-interface TaskSchedule {
+export interface TaskSchedule {
   readonly ScheduleExpression: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly Keys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateAgentRequest {
+export interface UpdateAgentRequest {
   readonly AgentArn: string;
-  readonly Name: string;
+  readonly Name?: string;
 }
 
-interface UpdateAgentResponse {
+export interface UpdateAgentResponse {
 }
 
-interface UpdateLocationHdfsRequest {
+export interface UpdateLocationHdfsRequest {
   readonly LocationArn: string;
-  readonly Subdirectory: string;
-  readonly NameNodes: [];
-  readonly BlockSize: number;
-  readonly ReplicationFactor: number;
-  readonly KmsKeyProviderUri: string;
-  readonly QopConfiguration: QopConfiguration;
-  readonly AuthenticationType: string;
-  readonly SimpleUser: string;
-  readonly KerberosPrincipal: string;
-  readonly KerberosKeytab: unknown;
-  readonly KerberosKrb5Conf: unknown;
-  readonly AgentArns: [];
+  readonly Subdirectory?: string;
+  readonly NameNodes?: [];
+  readonly BlockSize?: number;
+  readonly ReplicationFactor?: number;
+  readonly KmsKeyProviderUri?: string;
+  readonly QopConfiguration?: QopConfiguration;
+  readonly AuthenticationType?: string;
+  readonly SimpleUser?: string;
+  readonly KerberosPrincipal?: string;
+  readonly KerberosKeytab?: unknown;
+  readonly KerberosKrb5Conf?: unknown;
+  readonly AgentArns?: [];
 }
 
-interface UpdateLocationHdfsResponse {
+export interface UpdateLocationHdfsResponse {
 }
 
-interface UpdateLocationNfsRequest {
+export interface UpdateLocationNfsRequest {
   readonly LocationArn: string;
-  readonly Subdirectory: string;
-  readonly OnPremConfig: OnPremConfig;
-  readonly MountOptions: NfsMountOptions;
+  readonly Subdirectory?: string;
+  readonly OnPremConfig?: OnPremConfig;
+  readonly MountOptions?: NfsMountOptions;
 }
 
-interface UpdateLocationNfsResponse {
+export interface UpdateLocationNfsResponse {
 }
 
-interface UpdateLocationObjectStorageRequest {
+export interface UpdateLocationObjectStorageRequest {
   readonly LocationArn: string;
-  readonly ServerPort: number;
-  readonly ServerProtocol: string;
-  readonly Subdirectory: string;
-  readonly AccessKey: string;
-  readonly SecretKey: string;
-  readonly AgentArns: [];
+  readonly ServerPort?: number;
+  readonly ServerProtocol?: string;
+  readonly Subdirectory?: string;
+  readonly AccessKey?: string;
+  readonly SecretKey?: string;
+  readonly AgentArns?: [];
 }
 
-interface UpdateLocationObjectStorageResponse {
+export interface UpdateLocationObjectStorageResponse {
 }
 
-interface UpdateLocationSmbRequest {
+export interface UpdateLocationSmbRequest {
   readonly LocationArn: string;
-  readonly Subdirectory: string;
-  readonly User: string;
-  readonly Domain: string;
-  readonly Password: string;
-  readonly AgentArns: [];
-  readonly MountOptions: SmbMountOptions;
+  readonly Subdirectory?: string;
+  readonly User?: string;
+  readonly Domain?: string;
+  readonly Password?: string;
+  readonly AgentArns?: [];
+  readonly MountOptions?: SmbMountOptions;
 }
 
-interface UpdateLocationSmbResponse {
+export interface UpdateLocationSmbResponse {
 }
 
-interface UpdateTaskExecutionRequest {
+export interface UpdateTaskExecutionRequest {
   readonly TaskExecutionArn: string;
   readonly Options: Options;
 }
 
-interface UpdateTaskExecutionResponse {
+export interface UpdateTaskExecutionResponse {
 }
 
-interface UpdateTaskRequest {
+export interface UpdateTaskRequest {
   readonly TaskArn: string;
-  readonly Options: Options;
-  readonly Excludes: [];
-  readonly Schedule: TaskSchedule;
-  readonly Name: string;
-  readonly CloudWatchLogGroupArn: string;
-  readonly Includes: [];
+  readonly Options?: Options;
+  readonly Excludes?: [];
+  readonly Schedule?: TaskSchedule;
+  readonly Name?: string;
+  readonly CloudWatchLogGroupArn?: string;
+  readonly Includes?: [];
 }
 
-interface UpdateTaskResponse {
+export interface UpdateTaskResponse {
 }
+
 

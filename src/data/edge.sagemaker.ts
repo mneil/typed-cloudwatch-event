@@ -5,6 +5,7 @@ export interface GetDeviceRegistration {
   readonly DeviceName: string;
   readonly DeviceFleetName: string;
 }
+
 export interface SendHeartbeat {
   readonly AgentMetrics?: [];
   readonly Models?: [];
@@ -13,42 +14,41 @@ export interface SendHeartbeat {
   readonly DeviceFleetName: string;
 }
 
-
-
-interface EdgeMetric {
-  readonly Dimension: string;
-  readonly MetricName: string;
-  readonly Value: unknown;
-  readonly Timestamp: Date;
+export interface EdgeMetric {
+  readonly Dimension?: string;
+  readonly MetricName?: string;
+  readonly Value?: unknown;
+  readonly Timestamp?: Date;
 }
 
-interface GetDeviceRegistrationRequest {
+export interface GetDeviceRegistrationRequest {
   readonly DeviceName: string;
   readonly DeviceFleetName: string;
 }
 
-interface GetDeviceRegistrationResult {
-  readonly DeviceRegistration: string;
-  readonly CacheTTL: string;
+export interface GetDeviceRegistrationResult {
+  readonly DeviceRegistration?: string;
+  readonly CacheTTL?: string;
 }
 
-interface InternalServiceException {
-  readonly Message: string;
+export interface InternalServiceException {
+  readonly Message?: string;
 }
 
-interface Model {
-  readonly ModelName: string;
-  readonly ModelVersion: string;
-  readonly LatestSampleTime: Date;
-  readonly LatestInference: Date;
-  readonly ModelMetrics: [];
+export interface Model {
+  readonly ModelName?: string;
+  readonly ModelVersion?: string;
+  readonly LatestSampleTime?: Date;
+  readonly LatestInference?: Date;
+  readonly ModelMetrics?: [];
 }
 
-interface SendHeartbeatRequest {
-  readonly AgentMetrics: [];
-  readonly Models: [];
+export interface SendHeartbeatRequest {
+  readonly AgentMetrics?: [];
+  readonly Models?: [];
   readonly AgentVersion: string;
   readonly DeviceName: string;
   readonly DeviceFleetName: string;
 }
+
 

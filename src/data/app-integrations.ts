@@ -10,6 +10,7 @@ export interface CreateDataIntegration {
   readonly Tags?: {[key: string]: any};
   readonly ClientToken?: string;
 }
+
 export interface CreateEventIntegration {
   readonly Name: string;
   readonly Description?: string;
@@ -18,284 +19,296 @@ export interface CreateEventIntegration {
   readonly ClientToken?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface DeleteDataIntegration {
   readonly DataIntegrationIdentifier: string;
 }
+
 export interface DeleteEventIntegration {
   readonly Name: string;
 }
+
 export interface GetDataIntegration {
   readonly Identifier: string;
 }
+
 export interface GetEventIntegration {
   readonly Name: string;
 }
+
 export interface ListDataIntegrationAssociations {
   readonly DataIntegrationIdentifier: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDataIntegrations {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListEventIntegrationAssociations {
   readonly EventIntegrationName: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListEventIntegrations {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateDataIntegration {
   readonly Identifier: string;
   readonly Name?: string;
   readonly Description?: string;
 }
+
 export interface UpdateEventIntegration {
   readonly Name: string;
   readonly Description?: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface CreateDataIntegrationRequest {
+export interface CreateDataIntegrationRequest {
   readonly Name: string;
-  readonly Description: string;
-  readonly KmsKey: string;
-  readonly SourceURI: string;
-  readonly ScheduleConfig: ScheduleConfiguration;
-  readonly Tags: {[key: string]: any};
-  readonly ClientToken: string;
+  readonly Description?: string;
+  readonly KmsKey?: string;
+  readonly SourceURI?: string;
+  readonly ScheduleConfig?: ScheduleConfiguration;
+  readonly Tags?: {[key: string]: any};
+  readonly ClientToken?: string;
 }
 
-interface CreateDataIntegrationResponse {
-  readonly Arn: string;
-  readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly KmsKey: string;
-  readonly SourceURI: string;
-  readonly ScheduleConfiguration: ScheduleConfiguration;
-  readonly Tags: {[key: string]: any};
-  readonly ClientToken: string;
+export interface CreateDataIntegrationResponse {
+  readonly Arn?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly KmsKey?: string;
+  readonly SourceURI?: string;
+  readonly ScheduleConfiguration?: ScheduleConfiguration;
+  readonly Tags?: {[key: string]: any};
+  readonly ClientToken?: string;
 }
 
-interface CreateEventIntegrationRequest {
+export interface CreateEventIntegrationRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly EventFilter: EventFilter;
   readonly EventBridgeBus: string;
-  readonly ClientToken: string;
-  readonly Tags: {[key: string]: any};
+  readonly ClientToken?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateEventIntegrationResponse {
-  readonly EventIntegrationArn: string;
+export interface CreateEventIntegrationResponse {
+  readonly EventIntegrationArn?: string;
 }
 
-interface DataIntegrationAssociationSummary {
-  readonly DataIntegrationAssociationArn: string;
-  readonly DataIntegrationArn: string;
-  readonly ClientId: string;
+export interface DataIntegrationAssociationSummary {
+  readonly DataIntegrationAssociationArn?: string;
+  readonly DataIntegrationArn?: string;
+  readonly ClientId?: string;
 }
 
-interface DataIntegrationSummary {
-  readonly Arn: string;
-  readonly Name: string;
-  readonly SourceURI: string;
+export interface DataIntegrationSummary {
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly SourceURI?: string;
 }
 
-interface DeleteDataIntegrationRequest {
+export interface DeleteDataIntegrationRequest {
   readonly DataIntegrationIdentifier: string;
 }
 
-interface DeleteDataIntegrationResponse {
+export interface DeleteDataIntegrationResponse {
 }
 
-interface DeleteEventIntegrationRequest {
+export interface DeleteEventIntegrationRequest {
   readonly Name: string;
 }
 
-interface DeleteEventIntegrationResponse {
+export interface DeleteEventIntegrationResponse {
 }
 
-interface DuplicateResourceException {
-  readonly Message: string;
+export interface DuplicateResourceException {
+  readonly Message?: string;
 }
 
-interface EventFilter {
+export interface EventFilter {
   readonly Source: string;
 }
 
-interface EventIntegration {
-  readonly EventIntegrationArn: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly EventFilter: EventFilter;
-  readonly EventBridgeBus: string;
-  readonly Tags: {[key: string]: any};
+export interface EventIntegration {
+  readonly EventIntegrationArn?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly EventFilter?: EventFilter;
+  readonly EventBridgeBus?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface EventIntegrationAssociation {
-  readonly EventIntegrationAssociationArn: string;
-  readonly EventIntegrationAssociationId: string;
-  readonly EventIntegrationName: string;
-  readonly ClientId: string;
-  readonly EventBridgeRuleName: string;
-  readonly ClientAssociationMetadata: {[key: string]: any};
+export interface EventIntegrationAssociation {
+  readonly EventIntegrationAssociationArn?: string;
+  readonly EventIntegrationAssociationId?: string;
+  readonly EventIntegrationName?: string;
+  readonly ClientId?: string;
+  readonly EventBridgeRuleName?: string;
+  readonly ClientAssociationMetadata?: {[key: string]: any};
 }
 
-interface GetDataIntegrationRequest {
+export interface GetDataIntegrationRequest {
   readonly Identifier: string;
 }
 
-interface GetDataIntegrationResponse {
-  readonly Arn: string;
-  readonly Id: string;
+export interface GetDataIntegrationResponse {
+  readonly Arn?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly KmsKey?: string;
+  readonly SourceURI?: string;
+  readonly ScheduleConfiguration?: ScheduleConfiguration;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface GetEventIntegrationRequest {
   readonly Name: string;
-  readonly Description: string;
-  readonly KmsKey: string;
-  readonly SourceURI: string;
-  readonly ScheduleConfiguration: ScheduleConfiguration;
-  readonly Tags: {[key: string]: any};
 }
 
-interface GetEventIntegrationRequest {
-  readonly Name: string;
+export interface GetEventIntegrationResponse {
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly EventIntegrationArn?: string;
+  readonly EventBridgeBus?: string;
+  readonly EventFilter?: EventFilter;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface GetEventIntegrationResponse {
-  readonly Name: string;
-  readonly Description: string;
-  readonly EventIntegrationArn: string;
-  readonly EventBridgeBus: string;
-  readonly EventFilter: EventFilter;
-  readonly Tags: {[key: string]: any};
+export interface InternalServiceError {
+  readonly Message?: string;
 }
 
-interface InternalServiceError {
-  readonly Message: string;
+export interface InvalidRequestException {
+  readonly Message?: string;
 }
 
-interface InvalidRequestException {
-  readonly Message: string;
-}
-
-interface ListDataIntegrationAssociationsRequest {
+export interface ListDataIntegrationAssociationsRequest {
   readonly DataIntegrationIdentifier: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDataIntegrationAssociationsResponse {
-  readonly DataIntegrationAssociations: [];
-  readonly NextToken: string;
+export interface ListDataIntegrationAssociationsResponse {
+  readonly DataIntegrationAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDataIntegrationsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListDataIntegrationsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDataIntegrationsResponse {
-  readonly DataIntegrations: [];
-  readonly NextToken: string;
+export interface ListDataIntegrationsResponse {
+  readonly DataIntegrations?: [];
+  readonly NextToken?: string;
 }
 
-interface ListEventIntegrationAssociationsRequest {
+export interface ListEventIntegrationAssociationsRequest {
   readonly EventIntegrationName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListEventIntegrationAssociationsResponse {
-  readonly EventIntegrationAssociations: [];
-  readonly NextToken: string;
+export interface ListEventIntegrationAssociationsResponse {
+  readonly EventIntegrationAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface ListEventIntegrationsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListEventIntegrationsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListEventIntegrationsResponse {
-  readonly EventIntegrations: [];
-  readonly NextToken: string;
+export interface ListEventIntegrationsResponse {
+  readonly EventIntegrations?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface ResourceQuotaExceededException {
-  readonly Message: string;
+export interface ResourceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface ScheduleConfiguration {
-  readonly FirstExecutionFrom: string;
-  readonly Object: string;
-  readonly ScheduleExpression: string;
+export interface ScheduleConfiguration {
+  readonly FirstExecutionFrom?: string;
+  readonly Object?: string;
+  readonly ScheduleExpression?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
-  readonly Message: string;
+export interface ThrottlingException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateDataIntegrationRequest {
+export interface UpdateDataIntegrationRequest {
   readonly Identifier: string;
+  readonly Name?: string;
+  readonly Description?: string;
+}
+
+export interface UpdateDataIntegrationResponse {
+}
+
+export interface UpdateEventIntegrationRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 
-interface UpdateDataIntegrationResponse {
+export interface UpdateEventIntegrationResponse {
 }
 
-interface UpdateEventIntegrationRequest {
-  readonly Name: string;
-  readonly Description: string;
-}
-
-interface UpdateEventIntegrationResponse {
-}
 

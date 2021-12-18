@@ -7,55 +7,68 @@ export interface AddPermission {
   readonly AWSAccountIds: [];
   readonly Actions: [];
 }
+
 export interface ChangeMessageVisibility {
   readonly QueueUrl: string;
   readonly ReceiptHandle: string;
   readonly VisibilityTimeout: number;
 }
+
 export interface ChangeMessageVisibilityBatch {
   readonly QueueUrl: string;
   readonly Entries: [];
 }
+
 export interface CreateQueue {
   readonly QueueName: string;
   readonly Attributes?: {[key: string]: any};
   readonly tags?: {[key: string]: any};
 }
+
 export interface DeleteMessage {
   readonly QueueUrl: string;
   readonly ReceiptHandle: string;
 }
+
 export interface DeleteMessageBatch {
   readonly QueueUrl: string;
   readonly Entries: [];
 }
+
 export interface DeleteQueue {
   readonly QueueUrl: string;
 }
+
 export interface GetQueueAttributes {
   readonly QueueUrl: string;
   readonly AttributeNames?: [];
 }
+
 export interface GetQueueUrl {
   readonly QueueName: string;
   readonly QueueOwnerAWSAccountId?: string;
 }
+
 export interface ListDeadLetterSourceQueues {
   readonly QueueUrl: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListQueueTags {
   readonly QueueUrl: string;
 }
+
 export interface ListQueues {
   readonly QueueNamePrefix?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface PurgeQueue {
   readonly QueueUrl: string;
 }
+
 export interface ReceiveMessage {
   readonly QueueUrl: string;
   readonly AttributeNames?: [];
@@ -65,10 +78,12 @@ export interface ReceiveMessage {
   readonly WaitTimeSeconds?: number;
   readonly ReceiveRequestAttemptId?: string;
 }
+
 export interface RemovePermission {
   readonly QueueUrl: string;
   readonly Label: string;
 }
+
 export interface SendMessage {
   readonly QueueUrl: string;
   readonly MessageBody: string;
@@ -78,307 +93,310 @@ export interface SendMessage {
   readonly MessageDeduplicationId?: string;
   readonly MessageGroupId?: string;
 }
+
 export interface SendMessageBatch {
   readonly QueueUrl: string;
   readonly Entries: [];
 }
+
 export interface SetQueueAttributes {
   readonly QueueUrl: string;
   readonly Attributes: {[key: string]: any};
 }
+
 export interface TagQueue {
   readonly QueueUrl: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagQueue {
   readonly QueueUrl: string;
   readonly TagKeys: [];
 }
 
-
-
-interface AddPermissionRequest {
+export interface AddPermissionRequest {
   readonly QueueUrl: string;
   readonly Label: string;
   readonly AWSAccountIds: [];
   readonly Actions: [];
 }
 
-interface BatchEntryIdsNotDistinct {
+export interface BatchEntryIdsNotDistinct {
 }
 
-interface BatchRequestTooLong {
+export interface BatchRequestTooLong {
 }
 
-interface BatchResultErrorEntry {
+export interface BatchResultErrorEntry {
   readonly Id: string;
   readonly SenderFault: boolean;
   readonly Code: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface ChangeMessageVisibilityBatchRequest {
+export interface ChangeMessageVisibilityBatchRequest {
   readonly QueueUrl: string;
   readonly Entries: [];
 }
 
-interface ChangeMessageVisibilityBatchRequestEntry {
+export interface ChangeMessageVisibilityBatchRequestEntry {
   readonly Id: string;
   readonly ReceiptHandle: string;
-  readonly VisibilityTimeout: number;
+  readonly VisibilityTimeout?: number;
 }
 
-interface ChangeMessageVisibilityBatchResult {
+export interface ChangeMessageVisibilityBatchResult {
   readonly Successful: [];
   readonly Failed: [];
 }
 
-interface ChangeMessageVisibilityBatchResultEntry {
+export interface ChangeMessageVisibilityBatchResultEntry {
   readonly Id: string;
 }
 
-interface ChangeMessageVisibilityRequest {
+export interface ChangeMessageVisibilityRequest {
   readonly QueueUrl: string;
   readonly ReceiptHandle: string;
   readonly VisibilityTimeout: number;
 }
 
-interface CreateQueueRequest {
+export interface CreateQueueRequest {
   readonly QueueName: string;
-  readonly Attributes: {[key: string]: any};
-  readonly tags: {[key: string]: any};
+  readonly Attributes?: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateQueueResult {
-  readonly QueueUrl: string;
+export interface CreateQueueResult {
+  readonly QueueUrl?: string;
 }
 
-interface DeleteMessageBatchRequest {
+export interface DeleteMessageBatchRequest {
   readonly QueueUrl: string;
   readonly Entries: [];
 }
 
-interface DeleteMessageBatchRequestEntry {
+export interface DeleteMessageBatchRequestEntry {
   readonly Id: string;
   readonly ReceiptHandle: string;
 }
 
-interface DeleteMessageBatchResult {
+export interface DeleteMessageBatchResult {
   readonly Successful: [];
   readonly Failed: [];
 }
 
-interface DeleteMessageBatchResultEntry {
+export interface DeleteMessageBatchResultEntry {
   readonly Id: string;
 }
 
-interface DeleteMessageRequest {
+export interface DeleteMessageRequest {
   readonly QueueUrl: string;
   readonly ReceiptHandle: string;
 }
 
-interface DeleteQueueRequest {
+export interface DeleteQueueRequest {
   readonly QueueUrl: string;
 }
 
-interface EmptyBatchRequest {
+export interface EmptyBatchRequest {
 }
 
-interface GetQueueAttributesRequest {
+export interface GetQueueAttributesRequest {
   readonly QueueUrl: string;
-  readonly AttributeNames: [];
+  readonly AttributeNames?: [];
 }
 
-interface GetQueueAttributesResult {
-  readonly Attributes: {[key: string]: any};
+export interface GetQueueAttributesResult {
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface GetQueueUrlRequest {
+export interface GetQueueUrlRequest {
   readonly QueueName: string;
-  readonly QueueOwnerAWSAccountId: string;
+  readonly QueueOwnerAWSAccountId?: string;
 }
 
-interface GetQueueUrlResult {
+export interface GetQueueUrlResult {
+  readonly QueueUrl?: string;
+}
+
+export interface InvalidAttributeName {
+}
+
+export interface InvalidBatchEntryId {
+}
+
+export interface InvalidIdFormat {
+}
+
+export interface InvalidMessageContents {
+}
+
+export interface ListDeadLetterSourceQueuesRequest {
   readonly QueueUrl: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface InvalidAttributeName {
-}
-
-interface InvalidBatchEntryId {
-}
-
-interface InvalidIdFormat {
-}
-
-interface InvalidMessageContents {
-}
-
-interface ListDeadLetterSourceQueuesRequest {
-  readonly QueueUrl: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface ListDeadLetterSourceQueuesResult {
+export interface ListDeadLetterSourceQueuesResult {
   readonly queueUrls: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListQueueTagsRequest {
+export interface ListQueueTagsRequest {
   readonly QueueUrl: string;
 }
 
-interface ListQueueTagsResult {
-  readonly Tags: {[key: string]: any};
+export interface ListQueueTagsResult {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListQueuesRequest {
-  readonly QueueNamePrefix: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListQueuesRequest {
+  readonly QueueNamePrefix?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListQueuesResult {
-  readonly QueueUrls: [];
-  readonly NextToken: string;
+export interface ListQueuesResult {
+  readonly QueueUrls?: [];
+  readonly NextToken?: string;
 }
 
-interface Message {
-  readonly MessageId: string;
-  readonly ReceiptHandle: string;
-  readonly MD5OfBody: string;
-  readonly Body: string;
-  readonly Attributes: {[key: string]: any};
-  readonly MD5OfMessageAttributes: string;
-  readonly MessageAttributes: {[key: string]: any};
+export interface Message {
+  readonly MessageId?: string;
+  readonly ReceiptHandle?: string;
+  readonly MD5OfBody?: string;
+  readonly Body?: string;
+  readonly Attributes?: {[key: string]: any};
+  readonly MD5OfMessageAttributes?: string;
+  readonly MessageAttributes?: {[key: string]: any};
 }
 
-interface MessageAttributeValue {
-  readonly StringValue: string;
-  readonly BinaryValue: unknown;
-  readonly StringListValues: [];
-  readonly BinaryListValues: [];
+export interface MessageAttributeValue {
+  readonly StringValue?: string;
+  readonly BinaryValue?: unknown;
+  readonly StringListValues?: [];
+  readonly BinaryListValues?: [];
   readonly DataType: string;
 }
 
-interface MessageNotInflight {
+export interface MessageNotInflight {
 }
 
-interface MessageSystemAttributeValue {
-  readonly StringValue: string;
-  readonly BinaryValue: unknown;
-  readonly StringListValues: [];
-  readonly BinaryListValues: [];
+export interface MessageSystemAttributeValue {
+  readonly StringValue?: string;
+  readonly BinaryValue?: unknown;
+  readonly StringListValues?: [];
+  readonly BinaryListValues?: [];
   readonly DataType: string;
 }
 
-interface OverLimit {
+export interface OverLimit {
 }
 
-interface PurgeQueueInProgress {
+export interface PurgeQueueInProgress {
 }
 
-interface PurgeQueueRequest {
+export interface PurgeQueueRequest {
   readonly QueueUrl: string;
 }
 
-interface QueueDeletedRecently {
+export interface QueueDeletedRecently {
 }
 
-interface QueueDoesNotExist {
+export interface QueueDoesNotExist {
 }
 
-interface QueueNameExists {
+export interface QueueNameExists {
 }
 
-interface ReceiptHandleIsInvalid {
+export interface ReceiptHandleIsInvalid {
 }
 
-interface ReceiveMessageRequest {
+export interface ReceiveMessageRequest {
   readonly QueueUrl: string;
-  readonly AttributeNames: [];
-  readonly MessageAttributeNames: [];
-  readonly MaxNumberOfMessages: number;
-  readonly VisibilityTimeout: number;
-  readonly WaitTimeSeconds: number;
-  readonly ReceiveRequestAttemptId: string;
+  readonly AttributeNames?: [];
+  readonly MessageAttributeNames?: [];
+  readonly MaxNumberOfMessages?: number;
+  readonly VisibilityTimeout?: number;
+  readonly WaitTimeSeconds?: number;
+  readonly ReceiveRequestAttemptId?: string;
 }
 
-interface ReceiveMessageResult {
-  readonly Messages: [];
+export interface ReceiveMessageResult {
+  readonly Messages?: [];
 }
 
-interface RemovePermissionRequest {
+export interface RemovePermissionRequest {
   readonly QueueUrl: string;
   readonly Label: string;
 }
 
-interface SendMessageBatchRequest {
+export interface SendMessageBatchRequest {
   readonly QueueUrl: string;
   readonly Entries: [];
 }
 
-interface SendMessageBatchRequestEntry {
+export interface SendMessageBatchRequestEntry {
   readonly Id: string;
   readonly MessageBody: string;
-  readonly DelaySeconds: number;
-  readonly MessageAttributes: {[key: string]: any};
-  readonly MessageSystemAttributes: {[key: string]: any};
-  readonly MessageDeduplicationId: string;
-  readonly MessageGroupId: string;
+  readonly DelaySeconds?: number;
+  readonly MessageAttributes?: {[key: string]: any};
+  readonly MessageSystemAttributes?: {[key: string]: any};
+  readonly MessageDeduplicationId?: string;
+  readonly MessageGroupId?: string;
 }
 
-interface SendMessageBatchResult {
+export interface SendMessageBatchResult {
   readonly Successful: [];
   readonly Failed: [];
 }
 
-interface SendMessageBatchResultEntry {
+export interface SendMessageBatchResultEntry {
   readonly Id: string;
   readonly MessageId: string;
   readonly MD5OfMessageBody: string;
-  readonly MD5OfMessageAttributes: string;
-  readonly MD5OfMessageSystemAttributes: string;
-  readonly SequenceNumber: string;
+  readonly MD5OfMessageAttributes?: string;
+  readonly MD5OfMessageSystemAttributes?: string;
+  readonly SequenceNumber?: string;
 }
 
-interface SendMessageRequest {
+export interface SendMessageRequest {
   readonly QueueUrl: string;
   readonly MessageBody: string;
-  readonly DelaySeconds: number;
-  readonly MessageAttributes: {[key: string]: any};
-  readonly MessageSystemAttributes: {[key: string]: any};
-  readonly MessageDeduplicationId: string;
-  readonly MessageGroupId: string;
+  readonly DelaySeconds?: number;
+  readonly MessageAttributes?: {[key: string]: any};
+  readonly MessageSystemAttributes?: {[key: string]: any};
+  readonly MessageDeduplicationId?: string;
+  readonly MessageGroupId?: string;
 }
 
-interface SendMessageResult {
-  readonly MD5OfMessageBody: string;
-  readonly MD5OfMessageAttributes: string;
-  readonly MD5OfMessageSystemAttributes: string;
-  readonly MessageId: string;
-  readonly SequenceNumber: string;
+export interface SendMessageResult {
+  readonly MD5OfMessageBody?: string;
+  readonly MD5OfMessageAttributes?: string;
+  readonly MD5OfMessageSystemAttributes?: string;
+  readonly MessageId?: string;
+  readonly SequenceNumber?: string;
 }
 
-interface SetQueueAttributesRequest {
+export interface SetQueueAttributesRequest {
   readonly QueueUrl: string;
   readonly Attributes: {[key: string]: any};
 }
 
-interface TagQueueRequest {
+export interface TagQueueRequest {
   readonly QueueUrl: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TooManyEntriesInBatchRequest {
+export interface TooManyEntriesInBatchRequest {
 }
 
-interface UnsupportedOperation {
+export interface UnsupportedOperation {
 }
 
-interface UntagQueueRequest {
+export interface UntagQueueRequest {
   readonly QueueUrl: string;
   readonly TagKeys: [];
 }
+
 

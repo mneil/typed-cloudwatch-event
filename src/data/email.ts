@@ -5,17 +5,21 @@ export interface CloneReceiptRuleSet {
   readonly RuleSetName: string;
   readonly OriginalRuleSetName: string;
 }
+
 export interface CreateConfigurationSet {
   readonly ConfigurationSet: ConfigurationSet;
 }
+
 export interface CreateConfigurationSetEventDestination {
   readonly ConfigurationSetName: string;
   readonly EventDestination: EventDestination;
 }
+
 export interface CreateConfigurationSetTrackingOptions {
   readonly ConfigurationSetName: string;
   readonly TrackingOptions: TrackingOptions;
 }
+
 export interface CreateCustomVerificationEmailTemplate {
   readonly TemplateName: string;
   readonly FromEmailAddress: string;
@@ -24,129 +28,166 @@ export interface CreateCustomVerificationEmailTemplate {
   readonly SuccessRedirectionURL: string;
   readonly FailureRedirectionURL: string;
 }
+
 export interface CreateReceiptFilter {
   readonly Filter: ReceiptFilter;
 }
+
 export interface CreateReceiptRule {
   readonly RuleSetName: string;
   readonly After?: string;
   readonly Rule: ReceiptRule;
 }
+
 export interface CreateReceiptRuleSet {
   readonly RuleSetName: string;
 }
+
 export interface CreateTemplate {
   readonly Template: Template;
 }
+
 export interface DeleteConfigurationSet {
   readonly ConfigurationSetName: string;
 }
+
 export interface DeleteConfigurationSetEventDestination {
   readonly ConfigurationSetName: string;
   readonly EventDestinationName: string;
 }
+
 export interface DeleteConfigurationSetTrackingOptions {
   readonly ConfigurationSetName: string;
 }
+
 export interface DeleteCustomVerificationEmailTemplate {
   readonly TemplateName: string;
 }
+
 export interface DeleteIdentity {
   readonly Identity: string;
 }
+
 export interface DeleteIdentityPolicy {
   readonly Identity: string;
   readonly PolicyName: string;
 }
+
 export interface DeleteReceiptFilter {
   readonly FilterName: string;
 }
+
 export interface DeleteReceiptRule {
   readonly RuleSetName: string;
   readonly RuleName: string;
 }
+
 export interface DeleteReceiptRuleSet {
   readonly RuleSetName: string;
 }
+
 export interface DeleteTemplate {
   readonly TemplateName: string;
 }
+
 export interface DeleteVerifiedEmailAddress {
   readonly EmailAddress: string;
 }
+
 export interface DescribeActiveReceiptRuleSet {
 }
+
 export interface DescribeConfigurationSet {
   readonly ConfigurationSetName: string;
   readonly ConfigurationSetAttributeNames?: [];
 }
+
 export interface DescribeReceiptRule {
   readonly RuleSetName: string;
   readonly RuleName: string;
 }
+
 export interface DescribeReceiptRuleSet {
   readonly RuleSetName: string;
 }
+
 export interface GetCustomVerificationEmailTemplate {
   readonly TemplateName: string;
 }
+
 export interface GetIdentityDkimAttributes {
   readonly Identities: [];
 }
+
 export interface GetIdentityMailFromDomainAttributes {
   readonly Identities: [];
 }
+
 export interface GetIdentityNotificationAttributes {
   readonly Identities: [];
 }
+
 export interface GetIdentityPolicies {
   readonly Identity: string;
   readonly PolicyNames: [];
 }
+
 export interface GetIdentityVerificationAttributes {
   readonly Identities: [];
 }
+
 export interface GetTemplate {
   readonly TemplateName: string;
 }
+
 export interface ListConfigurationSets {
   readonly NextToken?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListCustomVerificationEmailTemplates {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListIdentities {
   readonly IdentityType?: string;
   readonly NextToken?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListIdentityPolicies {
   readonly Identity: string;
 }
+
 export interface ListReceiptFilters {
 }
+
 export interface ListReceiptRuleSets {
   readonly NextToken?: string;
 }
+
 export interface ListTemplates {
   readonly NextToken?: string;
   readonly MaxItems?: number;
 }
+
 export interface PutConfigurationSetDeliveryOptions {
   readonly ConfigurationSetName: string;
   readonly DeliveryOptions?: DeliveryOptions;
 }
+
 export interface PutIdentityPolicy {
   readonly Identity: string;
   readonly PolicyName: string;
   readonly Policy: string;
 }
+
 export interface ReorderReceiptRuleSet {
   readonly RuleSetName: string;
   readonly RuleNames: [];
 }
+
 export interface SendBounce {
   readonly OriginalMessageId: string;
   readonly BounceSender: string;
@@ -155,6 +196,7 @@ export interface SendBounce {
   readonly BouncedRecipientInfoList: [];
   readonly BounceSenderArn?: string;
 }
+
 export interface SendBulkTemplatedEmail {
   readonly Source: string;
   readonly SourceArn?: string;
@@ -168,11 +210,13 @@ export interface SendBulkTemplatedEmail {
   readonly DefaultTemplateData?: string;
   readonly Destinations: [];
 }
+
 export interface SendCustomVerificationEmail {
   readonly EmailAddress: string;
   readonly TemplateName: string;
   readonly ConfigurationSetName?: string;
 }
+
 export interface SendEmail {
   readonly Source: string;
   readonly Destination: Destination;
@@ -184,6 +228,7 @@ export interface SendEmail {
   readonly Tags?: [];
   readonly ConfigurationSetName?: string;
 }
+
 export interface SendRawEmail {
   readonly Source?: string;
   readonly Destinations?: [];
@@ -194,6 +239,7 @@ export interface SendRawEmail {
   readonly Tags?: [];
   readonly ConfigurationSetName?: string;
 }
+
 export interface SendTemplatedEmail {
   readonly Source: string;
   readonly Destination: Destination;
@@ -207,60 +253,74 @@ export interface SendTemplatedEmail {
   readonly TemplateArn?: string;
   readonly TemplateData: string;
 }
+
 export interface SetActiveReceiptRuleSet {
   readonly RuleSetName?: string;
 }
+
 export interface SetIdentityDkimEnabled {
   readonly Identity: string;
   readonly DkimEnabled: boolean;
 }
+
 export interface SetIdentityFeedbackForwardingEnabled {
   readonly Identity: string;
   readonly ForwardingEnabled: boolean;
 }
+
 export interface SetIdentityHeadersInNotificationsEnabled {
   readonly Identity: string;
   readonly NotificationType: string;
   readonly Enabled: boolean;
 }
+
 export interface SetIdentityMailFromDomain {
   readonly Identity: string;
   readonly MailFromDomain?: string;
   readonly BehaviorOnMXFailure?: string;
 }
+
 export interface SetIdentityNotificationTopic {
   readonly Identity: string;
   readonly NotificationType: string;
   readonly SnsTopic?: string;
 }
+
 export interface SetReceiptRulePosition {
   readonly RuleSetName: string;
   readonly RuleName: string;
   readonly After?: string;
 }
+
 export interface TestRenderTemplate {
   readonly TemplateName: string;
   readonly TemplateData: string;
 }
+
 export interface UpdateAccountSendingEnabled {
   readonly Enabled?: boolean;
 }
+
 export interface UpdateConfigurationSetEventDestination {
   readonly ConfigurationSetName: string;
   readonly EventDestination: EventDestination;
 }
+
 export interface UpdateConfigurationSetReputationMetricsEnabled {
   readonly ConfigurationSetName: string;
   readonly Enabled: boolean;
 }
+
 export interface UpdateConfigurationSetSendingEnabled {
   readonly ConfigurationSetName: string;
   readonly Enabled: boolean;
 }
+
 export interface UpdateConfigurationSetTrackingOptions {
   readonly ConfigurationSetName: string;
   readonly TrackingOptions: TrackingOptions;
 }
+
 export interface UpdateCustomVerificationEmailTemplate {
   readonly TemplateName: string;
   readonly FromEmailAddress?: string;
@@ -269,139 +329,143 @@ export interface UpdateCustomVerificationEmailTemplate {
   readonly SuccessRedirectionURL?: string;
   readonly FailureRedirectionURL?: string;
 }
+
 export interface UpdateReceiptRule {
   readonly RuleSetName: string;
   readonly Rule: ReceiptRule;
 }
+
 export interface UpdateTemplate {
   readonly Template: Template;
 }
+
 export interface VerifyDomainDkim {
   readonly Domain: string;
 }
+
 export interface VerifyDomainIdentity {
   readonly Domain: string;
 }
+
 export interface VerifyEmailAddress {
   readonly EmailAddress: string;
 }
+
 export interface VerifyEmailIdentity {
   readonly EmailAddress: string;
 }
 
-
-
-interface AccountSendingPausedException {
+export interface AccountSendingPausedException {
 }
 
-interface AddHeaderAction {
+export interface AddHeaderAction {
   readonly HeaderName: string;
   readonly HeaderValue: string;
 }
 
-interface AlreadyExistsException {
-  readonly Name: string;
+export interface AlreadyExistsException {
+  readonly Name?: string;
 }
 
-interface Body {
-  readonly Text: Content;
-  readonly Html: Content;
+export interface Body {
+  readonly Text?: Content;
+  readonly Html?: Content;
 }
 
-interface BounceAction {
-  readonly TopicArn: string;
+export interface BounceAction {
+  readonly TopicArn?: string;
   readonly SmtpReplyCode: string;
-  readonly StatusCode: string;
+  readonly StatusCode?: string;
   readonly Message: string;
   readonly Sender: string;
 }
 
-interface BouncedRecipientInfo {
+export interface BouncedRecipientInfo {
   readonly Recipient: string;
-  readonly RecipientArn: string;
-  readonly BounceType: string;
-  readonly RecipientDsnFields: RecipientDsnFields;
+  readonly RecipientArn?: string;
+  readonly BounceType?: string;
+  readonly RecipientDsnFields?: RecipientDsnFields;
 }
 
-interface BulkEmailDestination {
+export interface BulkEmailDestination {
   readonly Destination: Destination;
-  readonly ReplacementTags: [];
-  readonly ReplacementTemplateData: string;
+  readonly ReplacementTags?: [];
+  readonly ReplacementTemplateData?: string;
 }
 
-interface BulkEmailDestinationStatus {
-  readonly Status: string;
-  readonly Error: string;
-  readonly MessageId: string;
+export interface BulkEmailDestinationStatus {
+  readonly Status?: string;
+  readonly Error?: string;
+  readonly MessageId?: string;
 }
 
-interface CannotDeleteException {
-  readonly Name: string;
+export interface CannotDeleteException {
+  readonly Name?: string;
 }
 
-interface CloneReceiptRuleSetRequest {
+export interface CloneReceiptRuleSetRequest {
   readonly RuleSetName: string;
   readonly OriginalRuleSetName: string;
 }
 
-interface CloneReceiptRuleSetResponse {
+export interface CloneReceiptRuleSetResponse {
 }
 
-interface CloudWatchDestination {
+export interface CloudWatchDestination {
   readonly DimensionConfigurations: [];
 }
 
-interface CloudWatchDimensionConfiguration {
+export interface CloudWatchDimensionConfiguration {
   readonly DimensionName: string;
   readonly DimensionValueSource: string;
   readonly DefaultDimensionValue: string;
 }
 
-interface ConfigurationSet {
+export interface ConfigurationSet {
   readonly Name: string;
 }
 
-interface ConfigurationSetAlreadyExistsException {
-  readonly ConfigurationSetName: string;
+export interface ConfigurationSetAlreadyExistsException {
+  readonly ConfigurationSetName?: string;
 }
 
-interface ConfigurationSetDoesNotExistException {
-  readonly ConfigurationSetName: string;
+export interface ConfigurationSetDoesNotExistException {
+  readonly ConfigurationSetName?: string;
 }
 
-interface ConfigurationSetSendingPausedException {
-  readonly ConfigurationSetName: string;
+export interface ConfigurationSetSendingPausedException {
+  readonly ConfigurationSetName?: string;
 }
 
-interface Content {
+export interface Content {
   readonly Data: string;
-  readonly Charset: string;
+  readonly Charset?: string;
 }
 
-interface CreateConfigurationSetEventDestinationRequest {
+export interface CreateConfigurationSetEventDestinationRequest {
   readonly ConfigurationSetName: string;
   readonly EventDestination: EventDestination;
 }
 
-interface CreateConfigurationSetEventDestinationResponse {
+export interface CreateConfigurationSetEventDestinationResponse {
 }
 
-interface CreateConfigurationSetRequest {
+export interface CreateConfigurationSetRequest {
   readonly ConfigurationSet: ConfigurationSet;
 }
 
-interface CreateConfigurationSetResponse {
+export interface CreateConfigurationSetResponse {
 }
 
-interface CreateConfigurationSetTrackingOptionsRequest {
+export interface CreateConfigurationSetTrackingOptionsRequest {
   readonly ConfigurationSetName: string;
   readonly TrackingOptions: TrackingOptions;
 }
 
-interface CreateConfigurationSetTrackingOptionsResponse {
+export interface CreateConfigurationSetTrackingOptionsResponse {
 }
 
-interface CreateCustomVerificationEmailTemplateRequest {
+export interface CreateCustomVerificationEmailTemplateRequest {
   readonly TemplateName: string;
   readonly FromEmailAddress: string;
   readonly TemplateSubject: string;
@@ -410,853 +474,854 @@ interface CreateCustomVerificationEmailTemplateRequest {
   readonly FailureRedirectionURL: string;
 }
 
-interface CreateReceiptFilterRequest {
+export interface CreateReceiptFilterRequest {
   readonly Filter: ReceiptFilter;
 }
 
-interface CreateReceiptFilterResponse {
+export interface CreateReceiptFilterResponse {
 }
 
-interface CreateReceiptRuleRequest {
+export interface CreateReceiptRuleRequest {
   readonly RuleSetName: string;
-  readonly After: string;
+  readonly After?: string;
   readonly Rule: ReceiptRule;
 }
 
-interface CreateReceiptRuleResponse {
+export interface CreateReceiptRuleResponse {
 }
 
-interface CreateReceiptRuleSetRequest {
+export interface CreateReceiptRuleSetRequest {
   readonly RuleSetName: string;
 }
 
-interface CreateReceiptRuleSetResponse {
+export interface CreateReceiptRuleSetResponse {
 }
 
-interface CreateTemplateRequest {
+export interface CreateTemplateRequest {
   readonly Template: Template;
 }
 
-interface CreateTemplateResponse {
+export interface CreateTemplateResponse {
 }
 
-interface CustomVerificationEmailInvalidContentException {
+export interface CustomVerificationEmailInvalidContentException {
 }
 
-interface CustomVerificationEmailTemplate {
-  readonly TemplateName: string;
-  readonly FromEmailAddress: string;
-  readonly TemplateSubject: string;
-  readonly SuccessRedirectionURL: string;
-  readonly FailureRedirectionURL: string;
+export interface CustomVerificationEmailTemplate {
+  readonly TemplateName?: string;
+  readonly FromEmailAddress?: string;
+  readonly TemplateSubject?: string;
+  readonly SuccessRedirectionURL?: string;
+  readonly FailureRedirectionURL?: string;
 }
 
-interface CustomVerificationEmailTemplateAlreadyExistsException {
-  readonly CustomVerificationEmailTemplateName: string;
+export interface CustomVerificationEmailTemplateAlreadyExistsException {
+  readonly CustomVerificationEmailTemplateName?: string;
 }
 
-interface CustomVerificationEmailTemplateDoesNotExistException {
-  readonly CustomVerificationEmailTemplateName: string;
+export interface CustomVerificationEmailTemplateDoesNotExistException {
+  readonly CustomVerificationEmailTemplateName?: string;
 }
 
-interface DeleteConfigurationSetEventDestinationRequest {
+export interface DeleteConfigurationSetEventDestinationRequest {
   readonly ConfigurationSetName: string;
   readonly EventDestinationName: string;
 }
 
-interface DeleteConfigurationSetEventDestinationResponse {
+export interface DeleteConfigurationSetEventDestinationResponse {
 }
 
-interface DeleteConfigurationSetRequest {
+export interface DeleteConfigurationSetRequest {
   readonly ConfigurationSetName: string;
 }
 
-interface DeleteConfigurationSetResponse {
+export interface DeleteConfigurationSetResponse {
 }
 
-interface DeleteConfigurationSetTrackingOptionsRequest {
+export interface DeleteConfigurationSetTrackingOptionsRequest {
   readonly ConfigurationSetName: string;
 }
 
-interface DeleteConfigurationSetTrackingOptionsResponse {
+export interface DeleteConfigurationSetTrackingOptionsResponse {
 }
 
-interface DeleteCustomVerificationEmailTemplateRequest {
+export interface DeleteCustomVerificationEmailTemplateRequest {
   readonly TemplateName: string;
 }
 
-interface DeleteIdentityPolicyRequest {
+export interface DeleteIdentityPolicyRequest {
   readonly Identity: string;
   readonly PolicyName: string;
 }
 
-interface DeleteIdentityPolicyResponse {
+export interface DeleteIdentityPolicyResponse {
 }
 
-interface DeleteIdentityRequest {
+export interface DeleteIdentityRequest {
   readonly Identity: string;
 }
 
-interface DeleteIdentityResponse {
+export interface DeleteIdentityResponse {
 }
 
-interface DeleteReceiptFilterRequest {
+export interface DeleteReceiptFilterRequest {
   readonly FilterName: string;
 }
 
-interface DeleteReceiptFilterResponse {
+export interface DeleteReceiptFilterResponse {
 }
 
-interface DeleteReceiptRuleRequest {
+export interface DeleteReceiptRuleRequest {
   readonly RuleSetName: string;
   readonly RuleName: string;
 }
 
-interface DeleteReceiptRuleResponse {
+export interface DeleteReceiptRuleResponse {
 }
 
-interface DeleteReceiptRuleSetRequest {
+export interface DeleteReceiptRuleSetRequest {
   readonly RuleSetName: string;
 }
 
-interface DeleteReceiptRuleSetResponse {
+export interface DeleteReceiptRuleSetResponse {
 }
 
-interface DeleteTemplateRequest {
+export interface DeleteTemplateRequest {
   readonly TemplateName: string;
 }
 
-interface DeleteTemplateResponse {
+export interface DeleteTemplateResponse {
 }
 
-interface DeleteVerifiedEmailAddressRequest {
+export interface DeleteVerifiedEmailAddressRequest {
   readonly EmailAddress: string;
 }
 
-interface DeliveryOptions {
-  readonly TlsPolicy: string;
+export interface DeliveryOptions {
+  readonly TlsPolicy?: string;
 }
 
-interface DescribeActiveReceiptRuleSetRequest {
+export interface DescribeActiveReceiptRuleSetRequest {
 }
 
-interface DescribeActiveReceiptRuleSetResponse {
-  readonly Metadata: ReceiptRuleSetMetadata;
-  readonly Rules: [];
+export interface DescribeActiveReceiptRuleSetResponse {
+  readonly Metadata?: ReceiptRuleSetMetadata;
+  readonly Rules?: [];
 }
 
-interface DescribeConfigurationSetRequest {
+export interface DescribeConfigurationSetRequest {
   readonly ConfigurationSetName: string;
-  readonly ConfigurationSetAttributeNames: [];
+  readonly ConfigurationSetAttributeNames?: [];
 }
 
-interface DescribeConfigurationSetResponse {
-  readonly ConfigurationSet: ConfigurationSet;
-  readonly EventDestinations: [];
-  readonly TrackingOptions: TrackingOptions;
-  readonly DeliveryOptions: DeliveryOptions;
-  readonly ReputationOptions: ReputationOptions;
+export interface DescribeConfigurationSetResponse {
+  readonly ConfigurationSet?: ConfigurationSet;
+  readonly EventDestinations?: [];
+  readonly TrackingOptions?: TrackingOptions;
+  readonly DeliveryOptions?: DeliveryOptions;
+  readonly ReputationOptions?: ReputationOptions;
 }
 
-interface DescribeReceiptRuleRequest {
+export interface DescribeReceiptRuleRequest {
   readonly RuleSetName: string;
   readonly RuleName: string;
 }
 
-interface DescribeReceiptRuleResponse {
-  readonly Rule: ReceiptRule;
+export interface DescribeReceiptRuleResponse {
+  readonly Rule?: ReceiptRule;
 }
 
-interface DescribeReceiptRuleSetRequest {
+export interface DescribeReceiptRuleSetRequest {
   readonly RuleSetName: string;
 }
 
-interface DescribeReceiptRuleSetResponse {
-  readonly Metadata: ReceiptRuleSetMetadata;
-  readonly Rules: [];
+export interface DescribeReceiptRuleSetResponse {
+  readonly Metadata?: ReceiptRuleSetMetadata;
+  readonly Rules?: [];
 }
 
-interface Destination {
-  readonly ToAddresses: [];
-  readonly CcAddresses: [];
-  readonly BccAddresses: [];
+export interface Destination {
+  readonly ToAddresses?: [];
+  readonly CcAddresses?: [];
+  readonly BccAddresses?: [];
 }
 
-interface EventDestination {
+export interface EventDestination {
   readonly Name: string;
-  readonly Enabled: boolean;
+  readonly Enabled?: boolean;
   readonly MatchingEventTypes: [];
-  readonly KinesisFirehoseDestination: KinesisFirehoseDestination;
-  readonly CloudWatchDestination: CloudWatchDestination;
-  readonly SNSDestination: SNSDestination;
+  readonly KinesisFirehoseDestination?: KinesisFirehoseDestination;
+  readonly CloudWatchDestination?: CloudWatchDestination;
+  readonly SNSDestination?: SNSDestination;
 }
 
-interface EventDestinationAlreadyExistsException {
-  readonly ConfigurationSetName: string;
-  readonly EventDestinationName: string;
+export interface EventDestinationAlreadyExistsException {
+  readonly ConfigurationSetName?: string;
+  readonly EventDestinationName?: string;
 }
 
-interface EventDestinationDoesNotExistException {
-  readonly ConfigurationSetName: string;
-  readonly EventDestinationName: string;
+export interface EventDestinationDoesNotExistException {
+  readonly ConfigurationSetName?: string;
+  readonly EventDestinationName?: string;
 }
 
-interface ExtensionField {
+export interface ExtensionField {
   readonly Name: string;
   readonly Value: string;
 }
 
-interface FromEmailAddressNotVerifiedException {
-  readonly FromEmailAddress: string;
+export interface FromEmailAddressNotVerifiedException {
+  readonly FromEmailAddress?: string;
 }
 
-interface GetAccountSendingEnabledResponse {
-  readonly Enabled: boolean;
+export interface GetAccountSendingEnabledResponse {
+  readonly Enabled?: boolean;
 }
 
-interface GetCustomVerificationEmailTemplateRequest {
+export interface GetCustomVerificationEmailTemplateRequest {
   readonly TemplateName: string;
 }
 
-interface GetCustomVerificationEmailTemplateResponse {
-  readonly TemplateName: string;
-  readonly FromEmailAddress: string;
-  readonly TemplateSubject: string;
-  readonly TemplateContent: string;
-  readonly SuccessRedirectionURL: string;
-  readonly FailureRedirectionURL: string;
+export interface GetCustomVerificationEmailTemplateResponse {
+  readonly TemplateName?: string;
+  readonly FromEmailAddress?: string;
+  readonly TemplateSubject?: string;
+  readonly TemplateContent?: string;
+  readonly SuccessRedirectionURL?: string;
+  readonly FailureRedirectionURL?: string;
 }
 
-interface GetIdentityDkimAttributesRequest {
+export interface GetIdentityDkimAttributesRequest {
   readonly Identities: [];
 }
 
-interface GetIdentityDkimAttributesResponse {
+export interface GetIdentityDkimAttributesResponse {
   readonly DkimAttributes: {[key: string]: any};
 }
 
-interface GetIdentityMailFromDomainAttributesRequest {
+export interface GetIdentityMailFromDomainAttributesRequest {
   readonly Identities: [];
 }
 
-interface GetIdentityMailFromDomainAttributesResponse {
+export interface GetIdentityMailFromDomainAttributesResponse {
   readonly MailFromDomainAttributes: {[key: string]: any};
 }
 
-interface GetIdentityNotificationAttributesRequest {
+export interface GetIdentityNotificationAttributesRequest {
   readonly Identities: [];
 }
 
-interface GetIdentityNotificationAttributesResponse {
+export interface GetIdentityNotificationAttributesResponse {
   readonly NotificationAttributes: {[key: string]: any};
 }
 
-interface GetIdentityPoliciesRequest {
+export interface GetIdentityPoliciesRequest {
   readonly Identity: string;
   readonly PolicyNames: [];
 }
 
-interface GetIdentityPoliciesResponse {
+export interface GetIdentityPoliciesResponse {
   readonly Policies: {[key: string]: any};
 }
 
-interface GetIdentityVerificationAttributesRequest {
+export interface GetIdentityVerificationAttributesRequest {
   readonly Identities: [];
 }
 
-interface GetIdentityVerificationAttributesResponse {
+export interface GetIdentityVerificationAttributesResponse {
   readonly VerificationAttributes: {[key: string]: any};
 }
 
-interface GetSendQuotaResponse {
-  readonly Max24HourSend: unknown;
-  readonly MaxSendRate: unknown;
-  readonly SentLast24Hours: unknown;
+export interface GetSendQuotaResponse {
+  readonly Max24HourSend?: unknown;
+  readonly MaxSendRate?: unknown;
+  readonly SentLast24Hours?: unknown;
 }
 
-interface GetSendStatisticsResponse {
-  readonly SendDataPoints: [];
+export interface GetSendStatisticsResponse {
+  readonly SendDataPoints?: [];
 }
 
-interface GetTemplateRequest {
+export interface GetTemplateRequest {
   readonly TemplateName: string;
 }
 
-interface GetTemplateResponse {
-  readonly Template: Template;
+export interface GetTemplateResponse {
+  readonly Template?: Template;
 }
 
-interface IdentityDkimAttributes {
+export interface IdentityDkimAttributes {
   readonly DkimEnabled: boolean;
   readonly DkimVerificationStatus: string;
-  readonly DkimTokens: [];
+  readonly DkimTokens?: [];
 }
 
-interface IdentityMailFromDomainAttributes {
+export interface IdentityMailFromDomainAttributes {
   readonly MailFromDomain: string;
   readonly MailFromDomainStatus: string;
   readonly BehaviorOnMXFailure: string;
 }
 
-interface IdentityNotificationAttributes {
+export interface IdentityNotificationAttributes {
   readonly BounceTopic: string;
   readonly ComplaintTopic: string;
   readonly DeliveryTopic: string;
   readonly ForwardingEnabled: boolean;
-  readonly HeadersInBounceNotificationsEnabled: boolean;
-  readonly HeadersInComplaintNotificationsEnabled: boolean;
-  readonly HeadersInDeliveryNotificationsEnabled: boolean;
+  readonly HeadersInBounceNotificationsEnabled?: boolean;
+  readonly HeadersInComplaintNotificationsEnabled?: boolean;
+  readonly HeadersInDeliveryNotificationsEnabled?: boolean;
 }
 
-interface IdentityVerificationAttributes {
+export interface IdentityVerificationAttributes {
   readonly VerificationStatus: string;
-  readonly VerificationToken: string;
+  readonly VerificationToken?: string;
 }
 
-interface InvalidCloudWatchDestinationException {
-  readonly ConfigurationSetName: string;
-  readonly EventDestinationName: string;
+export interface InvalidCloudWatchDestinationException {
+  readonly ConfigurationSetName?: string;
+  readonly EventDestinationName?: string;
 }
 
-interface InvalidConfigurationSetException {
+export interface InvalidConfigurationSetException {
 }
 
-interface InvalidDeliveryOptionsException {
+export interface InvalidDeliveryOptionsException {
 }
 
-interface InvalidFirehoseDestinationException {
-  readonly ConfigurationSetName: string;
-  readonly EventDestinationName: string;
+export interface InvalidFirehoseDestinationException {
+  readonly ConfigurationSetName?: string;
+  readonly EventDestinationName?: string;
 }
 
-interface InvalidLambdaFunctionException {
-  readonly FunctionArn: string;
+export interface InvalidLambdaFunctionException {
+  readonly FunctionArn?: string;
 }
 
-interface InvalidPolicyException {
+export interface InvalidPolicyException {
 }
 
-interface InvalidRenderingParameterException {
-  readonly TemplateName: string;
+export interface InvalidRenderingParameterException {
+  readonly TemplateName?: string;
 }
 
-interface InvalidS3ConfigurationException {
-  readonly Bucket: string;
+export interface InvalidS3ConfigurationException {
+  readonly Bucket?: string;
 }
 
-interface InvalidSNSDestinationException {
-  readonly ConfigurationSetName: string;
-  readonly EventDestinationName: string;
+export interface InvalidSNSDestinationException {
+  readonly ConfigurationSetName?: string;
+  readonly EventDestinationName?: string;
 }
 
-interface InvalidSnsTopicException {
-  readonly Topic: string;
+export interface InvalidSnsTopicException {
+  readonly Topic?: string;
 }
 
-interface InvalidTemplateException {
-  readonly TemplateName: string;
+export interface InvalidTemplateException {
+  readonly TemplateName?: string;
 }
 
-interface InvalidTrackingOptionsException {
+export interface InvalidTrackingOptionsException {
 }
 
-interface KinesisFirehoseDestination {
+export interface KinesisFirehoseDestination {
   readonly IAMRoleARN: string;
   readonly DeliveryStreamARN: string;
 }
 
-interface LambdaAction {
-  readonly TopicArn: string;
+export interface LambdaAction {
+  readonly TopicArn?: string;
   readonly FunctionArn: string;
-  readonly InvocationType: string;
+  readonly InvocationType?: string;
 }
 
-interface LimitExceededException {
+export interface LimitExceededException {
 }
 
-interface ListConfigurationSetsRequest {
-  readonly NextToken: string;
-  readonly MaxItems: number;
+export interface ListConfigurationSetsRequest {
+  readonly NextToken?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListConfigurationSetsResponse {
-  readonly ConfigurationSets: [];
-  readonly NextToken: string;
+export interface ListConfigurationSetsResponse {
+  readonly ConfigurationSets?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCustomVerificationEmailTemplatesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListCustomVerificationEmailTemplatesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListCustomVerificationEmailTemplatesResponse {
-  readonly CustomVerificationEmailTemplates: [];
-  readonly NextToken: string;
+export interface ListCustomVerificationEmailTemplatesResponse {
+  readonly CustomVerificationEmailTemplates?: [];
+  readonly NextToken?: string;
 }
 
-interface ListIdentitiesRequest {
-  readonly IdentityType: string;
-  readonly NextToken: string;
-  readonly MaxItems: number;
+export interface ListIdentitiesRequest {
+  readonly IdentityType?: string;
+  readonly NextToken?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListIdentitiesResponse {
+export interface ListIdentitiesResponse {
   readonly Identities: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListIdentityPoliciesRequest {
+export interface ListIdentityPoliciesRequest {
   readonly Identity: string;
 }
 
-interface ListIdentityPoliciesResponse {
+export interface ListIdentityPoliciesResponse {
   readonly PolicyNames: [];
 }
 
-interface ListReceiptFiltersRequest {
+export interface ListReceiptFiltersRequest {
 }
 
-interface ListReceiptFiltersResponse {
-  readonly Filters: [];
+export interface ListReceiptFiltersResponse {
+  readonly Filters?: [];
 }
 
-interface ListReceiptRuleSetsRequest {
-  readonly NextToken: string;
+export interface ListReceiptRuleSetsRequest {
+  readonly NextToken?: string;
 }
 
-interface ListReceiptRuleSetsResponse {
-  readonly RuleSets: [];
-  readonly NextToken: string;
+export interface ListReceiptRuleSetsResponse {
+  readonly RuleSets?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTemplatesRequest {
-  readonly NextToken: string;
-  readonly MaxItems: number;
+export interface ListTemplatesRequest {
+  readonly NextToken?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListTemplatesResponse {
-  readonly TemplatesMetadata: [];
-  readonly NextToken: string;
+export interface ListTemplatesResponse {
+  readonly TemplatesMetadata?: [];
+  readonly NextToken?: string;
 }
 
-interface ListVerifiedEmailAddressesResponse {
-  readonly VerifiedEmailAddresses: [];
+export interface ListVerifiedEmailAddressesResponse {
+  readonly VerifiedEmailAddresses?: [];
 }
 
-interface MailFromDomainNotVerifiedException {
+export interface MailFromDomainNotVerifiedException {
 }
 
-interface Message {
+export interface Message {
   readonly Subject: Content;
   readonly Body: Body;
 }
 
-interface MessageDsn {
+export interface MessageDsn {
   readonly ReportingMta: string;
-  readonly ArrivalDate: Date;
-  readonly ExtensionFields: [];
+  readonly ArrivalDate?: Date;
+  readonly ExtensionFields?: [];
 }
 
-interface MessageRejected {
+export interface MessageRejected {
 }
 
-interface MessageTag {
+export interface MessageTag {
   readonly Name: string;
   readonly Value: string;
 }
 
-interface MissingRenderingAttributeException {
-  readonly TemplateName: string;
+export interface MissingRenderingAttributeException {
+  readonly TemplateName?: string;
 }
 
-interface ProductionAccessNotGrantedException {
+export interface ProductionAccessNotGrantedException {
 }
 
-interface PutConfigurationSetDeliveryOptionsRequest {
+export interface PutConfigurationSetDeliveryOptionsRequest {
   readonly ConfigurationSetName: string;
-  readonly DeliveryOptions: DeliveryOptions;
+  readonly DeliveryOptions?: DeliveryOptions;
 }
 
-interface PutConfigurationSetDeliveryOptionsResponse {
+export interface PutConfigurationSetDeliveryOptionsResponse {
 }
 
-interface PutIdentityPolicyRequest {
+export interface PutIdentityPolicyRequest {
   readonly Identity: string;
   readonly PolicyName: string;
   readonly Policy: string;
 }
 
-interface PutIdentityPolicyResponse {
+export interface PutIdentityPolicyResponse {
 }
 
-interface RawMessage {
+export interface RawMessage {
   readonly Data: unknown;
 }
 
-interface ReceiptAction {
-  readonly S3Action: S3Action;
-  readonly BounceAction: BounceAction;
-  readonly WorkmailAction: WorkmailAction;
-  readonly LambdaAction: LambdaAction;
-  readonly StopAction: StopAction;
-  readonly AddHeaderAction: AddHeaderAction;
-  readonly SNSAction: SNSAction;
+export interface ReceiptAction {
+  readonly S3Action?: S3Action;
+  readonly BounceAction?: BounceAction;
+  readonly WorkmailAction?: WorkmailAction;
+  readonly LambdaAction?: LambdaAction;
+  readonly StopAction?: StopAction;
+  readonly AddHeaderAction?: AddHeaderAction;
+  readonly SNSAction?: SNSAction;
 }
 
-interface ReceiptFilter {
+export interface ReceiptFilter {
   readonly Name: string;
   readonly IpFilter: ReceiptIpFilter;
 }
 
-interface ReceiptIpFilter {
+export interface ReceiptIpFilter {
   readonly Policy: string;
   readonly Cidr: string;
 }
 
-interface ReceiptRule {
+export interface ReceiptRule {
   readonly Name: string;
-  readonly Enabled: boolean;
-  readonly TlsPolicy: string;
-  readonly Recipients: [];
-  readonly Actions: [];
-  readonly ScanEnabled: boolean;
+  readonly Enabled?: boolean;
+  readonly TlsPolicy?: string;
+  readonly Recipients?: [];
+  readonly Actions?: [];
+  readonly ScanEnabled?: boolean;
 }
 
-interface ReceiptRuleSetMetadata {
-  readonly Name: string;
-  readonly CreatedTimestamp: Date;
+export interface ReceiptRuleSetMetadata {
+  readonly Name?: string;
+  readonly CreatedTimestamp?: Date;
 }
 
-interface RecipientDsnFields {
-  readonly FinalRecipient: string;
+export interface RecipientDsnFields {
+  readonly FinalRecipient?: string;
   readonly Action: string;
-  readonly RemoteMta: string;
+  readonly RemoteMta?: string;
   readonly Status: string;
-  readonly DiagnosticCode: string;
-  readonly LastAttemptDate: Date;
-  readonly ExtensionFields: [];
+  readonly DiagnosticCode?: string;
+  readonly LastAttemptDate?: Date;
+  readonly ExtensionFields?: [];
 }
 
-interface ReorderReceiptRuleSetRequest {
+export interface ReorderReceiptRuleSetRequest {
   readonly RuleSetName: string;
   readonly RuleNames: [];
 }
 
-interface ReorderReceiptRuleSetResponse {
+export interface ReorderReceiptRuleSetResponse {
 }
 
-interface ReputationOptions {
-  readonly SendingEnabled: boolean;
-  readonly ReputationMetricsEnabled: boolean;
-  readonly LastFreshStart: Date;
+export interface ReputationOptions {
+  readonly SendingEnabled?: boolean;
+  readonly ReputationMetricsEnabled?: boolean;
+  readonly LastFreshStart?: Date;
 }
 
-interface RuleDoesNotExistException {
-  readonly Name: string;
+export interface RuleDoesNotExistException {
+  readonly Name?: string;
 }
 
-interface RuleSetDoesNotExistException {
-  readonly Name: string;
+export interface RuleSetDoesNotExistException {
+  readonly Name?: string;
 }
 
-interface S3Action {
-  readonly TopicArn: string;
+export interface S3Action {
+  readonly TopicArn?: string;
   readonly BucketName: string;
-  readonly ObjectKeyPrefix: string;
-  readonly KmsKeyArn: string;
+  readonly ObjectKeyPrefix?: string;
+  readonly KmsKeyArn?: string;
 }
 
-interface SNSAction {
+export interface SNSAction {
   readonly TopicArn: string;
-  readonly Encoding: string;
+  readonly Encoding?: string;
 }
 
-interface SNSDestination {
+export interface SNSDestination {
   readonly TopicARN: string;
 }
 
-interface SendBounceRequest {
+export interface SendBounceRequest {
   readonly OriginalMessageId: string;
   readonly BounceSender: string;
-  readonly Explanation: string;
-  readonly MessageDsn: MessageDsn;
+  readonly Explanation?: string;
+  readonly MessageDsn?: MessageDsn;
   readonly BouncedRecipientInfoList: [];
-  readonly BounceSenderArn: string;
+  readonly BounceSenderArn?: string;
 }
 
-interface SendBounceResponse {
-  readonly MessageId: string;
+export interface SendBounceResponse {
+  readonly MessageId?: string;
 }
 
-interface SendBulkTemplatedEmailRequest {
+export interface SendBulkTemplatedEmailRequest {
   readonly Source: string;
-  readonly SourceArn: string;
-  readonly ReplyToAddresses: [];
-  readonly ReturnPath: string;
-  readonly ReturnPathArn: string;
-  readonly ConfigurationSetName: string;
-  readonly DefaultTags: [];
+  readonly SourceArn?: string;
+  readonly ReplyToAddresses?: [];
+  readonly ReturnPath?: string;
+  readonly ReturnPathArn?: string;
+  readonly ConfigurationSetName?: string;
+  readonly DefaultTags?: [];
   readonly Template: string;
-  readonly TemplateArn: string;
-  readonly DefaultTemplateData: string;
+  readonly TemplateArn?: string;
+  readonly DefaultTemplateData?: string;
   readonly Destinations: [];
 }
 
-interface SendBulkTemplatedEmailResponse {
+export interface SendBulkTemplatedEmailResponse {
   readonly Status: [];
 }
 
-interface SendCustomVerificationEmailRequest {
+export interface SendCustomVerificationEmailRequest {
   readonly EmailAddress: string;
   readonly TemplateName: string;
-  readonly ConfigurationSetName: string;
+  readonly ConfigurationSetName?: string;
 }
 
-interface SendCustomVerificationEmailResponse {
-  readonly MessageId: string;
+export interface SendCustomVerificationEmailResponse {
+  readonly MessageId?: string;
 }
 
-interface SendDataPoint {
-  readonly Timestamp: Date;
-  readonly DeliveryAttempts: number;
-  readonly Bounces: number;
-  readonly Complaints: number;
-  readonly Rejects: number;
+export interface SendDataPoint {
+  readonly Timestamp?: Date;
+  readonly DeliveryAttempts?: number;
+  readonly Bounces?: number;
+  readonly Complaints?: number;
+  readonly Rejects?: number;
 }
 
-interface SendEmailRequest {
+export interface SendEmailRequest {
   readonly Source: string;
   readonly Destination: Destination;
   readonly Message: Message;
-  readonly ReplyToAddresses: [];
-  readonly ReturnPath: string;
-  readonly SourceArn: string;
-  readonly ReturnPathArn: string;
-  readonly Tags: [];
-  readonly ConfigurationSetName: string;
+  readonly ReplyToAddresses?: [];
+  readonly ReturnPath?: string;
+  readonly SourceArn?: string;
+  readonly ReturnPathArn?: string;
+  readonly Tags?: [];
+  readonly ConfigurationSetName?: string;
 }
 
-interface SendEmailResponse {
+export interface SendEmailResponse {
   readonly MessageId: string;
 }
 
-interface SendRawEmailRequest {
-  readonly Source: string;
-  readonly Destinations: [];
+export interface SendRawEmailRequest {
+  readonly Source?: string;
+  readonly Destinations?: [];
   readonly RawMessage: RawMessage;
-  readonly FromArn: string;
-  readonly SourceArn: string;
-  readonly ReturnPathArn: string;
-  readonly Tags: [];
-  readonly ConfigurationSetName: string;
+  readonly FromArn?: string;
+  readonly SourceArn?: string;
+  readonly ReturnPathArn?: string;
+  readonly Tags?: [];
+  readonly ConfigurationSetName?: string;
 }
 
-interface SendRawEmailResponse {
+export interface SendRawEmailResponse {
   readonly MessageId: string;
 }
 
-interface SendTemplatedEmailRequest {
+export interface SendTemplatedEmailRequest {
   readonly Source: string;
   readonly Destination: Destination;
-  readonly ReplyToAddresses: [];
-  readonly ReturnPath: string;
-  readonly SourceArn: string;
-  readonly ReturnPathArn: string;
-  readonly Tags: [];
-  readonly ConfigurationSetName: string;
+  readonly ReplyToAddresses?: [];
+  readonly ReturnPath?: string;
+  readonly SourceArn?: string;
+  readonly ReturnPathArn?: string;
+  readonly Tags?: [];
+  readonly ConfigurationSetName?: string;
   readonly Template: string;
-  readonly TemplateArn: string;
+  readonly TemplateArn?: string;
   readonly TemplateData: string;
 }
 
-interface SendTemplatedEmailResponse {
+export interface SendTemplatedEmailResponse {
   readonly MessageId: string;
 }
 
-interface SetActiveReceiptRuleSetRequest {
-  readonly RuleSetName: string;
+export interface SetActiveReceiptRuleSetRequest {
+  readonly RuleSetName?: string;
 }
 
-interface SetActiveReceiptRuleSetResponse {
+export interface SetActiveReceiptRuleSetResponse {
 }
 
-interface SetIdentityDkimEnabledRequest {
+export interface SetIdentityDkimEnabledRequest {
   readonly Identity: string;
   readonly DkimEnabled: boolean;
 }
 
-interface SetIdentityDkimEnabledResponse {
+export interface SetIdentityDkimEnabledResponse {
 }
 
-interface SetIdentityFeedbackForwardingEnabledRequest {
+export interface SetIdentityFeedbackForwardingEnabledRequest {
   readonly Identity: string;
   readonly ForwardingEnabled: boolean;
 }
 
-interface SetIdentityFeedbackForwardingEnabledResponse {
+export interface SetIdentityFeedbackForwardingEnabledResponse {
 }
 
-interface SetIdentityHeadersInNotificationsEnabledRequest {
+export interface SetIdentityHeadersInNotificationsEnabledRequest {
   readonly Identity: string;
   readonly NotificationType: string;
   readonly Enabled: boolean;
 }
 
-interface SetIdentityHeadersInNotificationsEnabledResponse {
+export interface SetIdentityHeadersInNotificationsEnabledResponse {
 }
 
-interface SetIdentityMailFromDomainRequest {
+export interface SetIdentityMailFromDomainRequest {
   readonly Identity: string;
-  readonly MailFromDomain: string;
-  readonly BehaviorOnMXFailure: string;
+  readonly MailFromDomain?: string;
+  readonly BehaviorOnMXFailure?: string;
 }
 
-interface SetIdentityMailFromDomainResponse {
+export interface SetIdentityMailFromDomainResponse {
 }
 
-interface SetIdentityNotificationTopicRequest {
+export interface SetIdentityNotificationTopicRequest {
   readonly Identity: string;
   readonly NotificationType: string;
-  readonly SnsTopic: string;
+  readonly SnsTopic?: string;
 }
 
-interface SetIdentityNotificationTopicResponse {
+export interface SetIdentityNotificationTopicResponse {
 }
 
-interface SetReceiptRulePositionRequest {
+export interface SetReceiptRulePositionRequest {
   readonly RuleSetName: string;
   readonly RuleName: string;
-  readonly After: string;
+  readonly After?: string;
 }
 
-interface SetReceiptRulePositionResponse {
+export interface SetReceiptRulePositionResponse {
 }
 
-interface StopAction {
+export interface StopAction {
   readonly Scope: string;
-  readonly TopicArn: string;
+  readonly TopicArn?: string;
 }
 
-interface Template {
+export interface Template {
   readonly TemplateName: string;
-  readonly SubjectPart: string;
-  readonly TextPart: string;
-  readonly HtmlPart: string;
+  readonly SubjectPart?: string;
+  readonly TextPart?: string;
+  readonly HtmlPart?: string;
 }
 
-interface TemplateDoesNotExistException {
-  readonly TemplateName: string;
+export interface TemplateDoesNotExistException {
+  readonly TemplateName?: string;
 }
 
-interface TemplateMetadata {
-  readonly Name: string;
-  readonly CreatedTimestamp: Date;
+export interface TemplateMetadata {
+  readonly Name?: string;
+  readonly CreatedTimestamp?: Date;
 }
 
-interface TestRenderTemplateRequest {
+export interface TestRenderTemplateRequest {
   readonly TemplateName: string;
   readonly TemplateData: string;
 }
 
-interface TestRenderTemplateResponse {
-  readonly RenderedTemplate: string;
+export interface TestRenderTemplateResponse {
+  readonly RenderedTemplate?: string;
 }
 
-interface TrackingOptions {
-  readonly CustomRedirectDomain: string;
+export interface TrackingOptions {
+  readonly CustomRedirectDomain?: string;
 }
 
-interface TrackingOptionsAlreadyExistsException {
-  readonly ConfigurationSetName: string;
+export interface TrackingOptionsAlreadyExistsException {
+  readonly ConfigurationSetName?: string;
 }
 
-interface TrackingOptionsDoesNotExistException {
-  readonly ConfigurationSetName: string;
+export interface TrackingOptionsDoesNotExistException {
+  readonly ConfigurationSetName?: string;
 }
 
-interface UpdateAccountSendingEnabledRequest {
-  readonly Enabled: boolean;
+export interface UpdateAccountSendingEnabledRequest {
+  readonly Enabled?: boolean;
 }
 
-interface UpdateConfigurationSetEventDestinationRequest {
+export interface UpdateConfigurationSetEventDestinationRequest {
   readonly ConfigurationSetName: string;
   readonly EventDestination: EventDestination;
 }
 
-interface UpdateConfigurationSetEventDestinationResponse {
+export interface UpdateConfigurationSetEventDestinationResponse {
 }
 
-interface UpdateConfigurationSetReputationMetricsEnabledRequest {
+export interface UpdateConfigurationSetReputationMetricsEnabledRequest {
   readonly ConfigurationSetName: string;
   readonly Enabled: boolean;
 }
 
-interface UpdateConfigurationSetSendingEnabledRequest {
+export interface UpdateConfigurationSetSendingEnabledRequest {
   readonly ConfigurationSetName: string;
   readonly Enabled: boolean;
 }
 
-interface UpdateConfigurationSetTrackingOptionsRequest {
+export interface UpdateConfigurationSetTrackingOptionsRequest {
   readonly ConfigurationSetName: string;
   readonly TrackingOptions: TrackingOptions;
 }
 
-interface UpdateConfigurationSetTrackingOptionsResponse {
+export interface UpdateConfigurationSetTrackingOptionsResponse {
 }
 
-interface UpdateCustomVerificationEmailTemplateRequest {
+export interface UpdateCustomVerificationEmailTemplateRequest {
   readonly TemplateName: string;
-  readonly FromEmailAddress: string;
-  readonly TemplateSubject: string;
-  readonly TemplateContent: string;
-  readonly SuccessRedirectionURL: string;
-  readonly FailureRedirectionURL: string;
+  readonly FromEmailAddress?: string;
+  readonly TemplateSubject?: string;
+  readonly TemplateContent?: string;
+  readonly SuccessRedirectionURL?: string;
+  readonly FailureRedirectionURL?: string;
 }
 
-interface UpdateReceiptRuleRequest {
+export interface UpdateReceiptRuleRequest {
   readonly RuleSetName: string;
   readonly Rule: ReceiptRule;
 }
 
-interface UpdateReceiptRuleResponse {
+export interface UpdateReceiptRuleResponse {
 }
 
-interface UpdateTemplateRequest {
+export interface UpdateTemplateRequest {
   readonly Template: Template;
 }
 
-interface UpdateTemplateResponse {
+export interface UpdateTemplateResponse {
 }
 
-interface VerifyDomainDkimRequest {
+export interface VerifyDomainDkimRequest {
   readonly Domain: string;
 }
 
-interface VerifyDomainDkimResponse {
+export interface VerifyDomainDkimResponse {
   readonly DkimTokens: [];
 }
 
-interface VerifyDomainIdentityRequest {
+export interface VerifyDomainIdentityRequest {
   readonly Domain: string;
 }
 
-interface VerifyDomainIdentityResponse {
+export interface VerifyDomainIdentityResponse {
   readonly VerificationToken: string;
 }
 
-interface VerifyEmailAddressRequest {
+export interface VerifyEmailAddressRequest {
   readonly EmailAddress: string;
 }
 
-interface VerifyEmailIdentityRequest {
+export interface VerifyEmailIdentityRequest {
   readonly EmailAddress: string;
 }
 
-interface VerifyEmailIdentityResponse {
+export interface VerifyEmailIdentityResponse {
 }
 
-interface WorkmailAction {
-  readonly TopicArn: string;
+export interface WorkmailAction {
+  readonly TopicArn?: string;
   readonly OrganizationArn: string;
 }
+
 

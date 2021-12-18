@@ -8,68 +8,84 @@ export interface CreateDomain {
   readonly ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
   readonly Tags?: [];
 }
+
 export interface DeleteDomain {
   readonly DomainId: string;
 }
+
 export interface DeleteFraudster {
   readonly DomainId: string;
   readonly FraudsterId: string;
 }
+
 export interface DeleteSpeaker {
   readonly DomainId: string;
   readonly SpeakerId: string;
 }
+
 export interface DescribeDomain {
   readonly DomainId: string;
 }
+
 export interface DescribeFraudster {
   readonly DomainId: string;
   readonly FraudsterId: string;
 }
+
 export interface DescribeFraudsterRegistrationJob {
   readonly DomainId: string;
   readonly JobId: string;
 }
+
 export interface DescribeSpeaker {
   readonly DomainId: string;
   readonly SpeakerId: string;
 }
+
 export interface DescribeSpeakerEnrollmentJob {
   readonly DomainId: string;
   readonly JobId: string;
 }
+
 export interface EvaluateSession {
   readonly DomainId: string;
   readonly SessionNameOrId: string;
 }
+
 export interface ListDomains {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListFraudsterRegistrationJobs {
   readonly DomainId: string;
   readonly JobStatus?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListSpeakerEnrollmentJobs {
   readonly DomainId: string;
   readonly JobStatus?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListSpeakers {
   readonly DomainId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface OptOutSpeaker {
   readonly DomainId: string;
   readonly SpeakerId: string;
 }
+
 export interface StartFraudsterRegistrationJob {
   readonly ClientToken?: string;
   readonly DataAccessRoleArn: string;
@@ -79,6 +95,7 @@ export interface StartFraudsterRegistrationJob {
   readonly OutputDataConfig: OutputDataConfig;
   readonly RegistrationConfig?: RegistrationConfig;
 }
+
 export interface StartSpeakerEnrollmentJob {
   readonly ClientToken?: string;
   readonly DataAccessRoleArn: string;
@@ -88,14 +105,17 @@ export interface StartSpeakerEnrollmentJob {
   readonly JobName?: string;
   readonly OutputDataConfig: OutputDataConfig;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateDomain {
   readonly Description?: string;
   readonly DomainId: string;
@@ -103,414 +123,413 @@ export interface UpdateDomain {
   readonly ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface AuthenticationConfiguration {
+export interface AuthenticationConfiguration {
   readonly AcceptanceThreshold: number;
 }
 
-interface AuthenticationResult {
-  readonly AudioAggregationEndedAt: Date;
-  readonly AudioAggregationStartedAt: Date;
-  readonly AuthenticationResultId: string;
-  readonly Configuration: AuthenticationConfiguration;
-  readonly CustomerSpeakerId: string;
-  readonly Decision: string;
-  readonly GeneratedSpeakerId: string;
-  readonly Score: number;
+export interface AuthenticationResult {
+  readonly AudioAggregationEndedAt?: Date;
+  readonly AudioAggregationStartedAt?: Date;
+  readonly AuthenticationResultId?: string;
+  readonly Configuration?: AuthenticationConfiguration;
+  readonly CustomerSpeakerId?: string;
+  readonly Decision?: string;
+  readonly GeneratedSpeakerId?: string;
+  readonly Score?: number;
 }
 
-interface ConflictException {
-  readonly ConflictType: string;
-  readonly Message: string;
+export interface ConflictException {
+  readonly ConflictType?: string;
+  readonly Message?: string;
 }
 
-interface CreateDomainRequest {
-  readonly ClientToken: string;
-  readonly Description: string;
+export interface CreateDomainRequest {
+  readonly ClientToken?: string;
+  readonly Description?: string;
   readonly Name: string;
   readonly ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateDomainResponse {
-  readonly Domain: Domain;
+export interface CreateDomainResponse {
+  readonly Domain?: Domain;
 }
 
-interface DeleteDomainRequest {
+export interface DeleteDomainRequest {
   readonly DomainId: string;
 }
 
-interface DeleteFraudsterRequest {
+export interface DeleteFraudsterRequest {
   readonly DomainId: string;
   readonly FraudsterId: string;
 }
 
-interface DeleteSpeakerRequest {
+export interface DeleteSpeakerRequest {
   readonly DomainId: string;
   readonly SpeakerId: string;
 }
 
-interface DescribeDomainRequest {
+export interface DescribeDomainRequest {
   readonly DomainId: string;
 }
 
-interface DescribeDomainResponse {
-  readonly Domain: Domain;
+export interface DescribeDomainResponse {
+  readonly Domain?: Domain;
 }
 
-interface DescribeFraudsterRegistrationJobRequest {
+export interface DescribeFraudsterRegistrationJobRequest {
   readonly DomainId: string;
   readonly JobId: string;
 }
 
-interface DescribeFraudsterRegistrationJobResponse {
-  readonly Job: FraudsterRegistrationJob;
+export interface DescribeFraudsterRegistrationJobResponse {
+  readonly Job?: FraudsterRegistrationJob;
 }
 
-interface DescribeFraudsterRequest {
+export interface DescribeFraudsterRequest {
   readonly DomainId: string;
   readonly FraudsterId: string;
 }
 
-interface DescribeFraudsterResponse {
-  readonly Fraudster: Fraudster;
+export interface DescribeFraudsterResponse {
+  readonly Fraudster?: Fraudster;
 }
 
-interface DescribeSpeakerEnrollmentJobRequest {
+export interface DescribeSpeakerEnrollmentJobRequest {
   readonly DomainId: string;
   readonly JobId: string;
 }
 
-interface DescribeSpeakerEnrollmentJobResponse {
-  readonly Job: SpeakerEnrollmentJob;
+export interface DescribeSpeakerEnrollmentJobResponse {
+  readonly Job?: SpeakerEnrollmentJob;
 }
 
-interface DescribeSpeakerRequest {
+export interface DescribeSpeakerRequest {
   readonly DomainId: string;
   readonly SpeakerId: string;
 }
 
-interface DescribeSpeakerResponse {
-  readonly Speaker: Speaker;
+export interface DescribeSpeakerResponse {
+  readonly Speaker?: Speaker;
 }
 
-interface Domain {
-  readonly Arn: string;
-  readonly CreatedAt: Date;
-  readonly Description: string;
-  readonly DomainId: string;
-  readonly DomainStatus: string;
-  readonly Name: string;
-  readonly ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
-  readonly UpdatedAt: Date;
+export interface Domain {
+  readonly Arn?: string;
+  readonly CreatedAt?: Date;
+  readonly Description?: string;
+  readonly DomainId?: string;
+  readonly DomainStatus?: string;
+  readonly Name?: string;
+  readonly ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
+  readonly UpdatedAt?: Date;
 }
 
-interface DomainSummary {
-  readonly Arn: string;
-  readonly CreatedAt: Date;
-  readonly Description: string;
-  readonly DomainId: string;
-  readonly DomainStatus: string;
-  readonly Name: string;
-  readonly ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
-  readonly UpdatedAt: Date;
+export interface DomainSummary {
+  readonly Arn?: string;
+  readonly CreatedAt?: Date;
+  readonly Description?: string;
+  readonly DomainId?: string;
+  readonly DomainStatus?: string;
+  readonly Name?: string;
+  readonly ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
+  readonly UpdatedAt?: Date;
 }
 
-interface EnrollmentConfig {
-  readonly ExistingEnrollmentAction: string;
-  readonly FraudDetectionConfig: EnrollmentJobFraudDetectionConfig;
+export interface EnrollmentConfig {
+  readonly ExistingEnrollmentAction?: string;
+  readonly FraudDetectionConfig?: EnrollmentJobFraudDetectionConfig;
 }
 
-interface EnrollmentJobFraudDetectionConfig {
-  readonly FraudDetectionAction: string;
-  readonly RiskThreshold: number;
+export interface EnrollmentJobFraudDetectionConfig {
+  readonly FraudDetectionAction?: string;
+  readonly RiskThreshold?: number;
 }
 
-interface EvaluateSessionRequest {
+export interface EvaluateSessionRequest {
   readonly DomainId: string;
   readonly SessionNameOrId: string;
 }
 
-interface EvaluateSessionResponse {
-  readonly AuthenticationResult: AuthenticationResult;
-  readonly DomainId: string;
-  readonly FraudDetectionResult: FraudDetectionResult;
-  readonly SessionId: string;
-  readonly SessionName: string;
-  readonly StreamingStatus: string;
+export interface EvaluateSessionResponse {
+  readonly AuthenticationResult?: AuthenticationResult;
+  readonly DomainId?: string;
+  readonly FraudDetectionResult?: FraudDetectionResult;
+  readonly SessionId?: string;
+  readonly SessionName?: string;
+  readonly StreamingStatus?: string;
 }
 
-interface FailureDetails {
-  readonly Message: string;
-  readonly StatusCode: number;
+export interface FailureDetails {
+  readonly Message?: string;
+  readonly StatusCode?: number;
 }
 
-interface FraudDetectionConfiguration {
+export interface FraudDetectionConfiguration {
   readonly RiskThreshold: number;
 }
 
-interface FraudDetectionResult {
-  readonly AudioAggregationEndedAt: Date;
-  readonly AudioAggregationStartedAt: Date;
-  readonly Configuration: FraudDetectionConfiguration;
-  readonly Decision: string;
-  readonly FraudDetectionResultId: string;
-  readonly Reasons: [];
-  readonly RiskDetails: FraudRiskDetails;
+export interface FraudDetectionResult {
+  readonly AudioAggregationEndedAt?: Date;
+  readonly AudioAggregationStartedAt?: Date;
+  readonly Configuration?: FraudDetectionConfiguration;
+  readonly Decision?: string;
+  readonly FraudDetectionResultId?: string;
+  readonly Reasons?: [];
+  readonly RiskDetails?: FraudRiskDetails;
 }
 
-interface FraudRiskDetails {
+export interface FraudRiskDetails {
   readonly KnownFraudsterRisk: KnownFraudsterRisk;
 }
 
-interface Fraudster {
-  readonly CreatedAt: Date;
-  readonly DomainId: string;
-  readonly GeneratedFraudsterId: string;
+export interface Fraudster {
+  readonly CreatedAt?: Date;
+  readonly DomainId?: string;
+  readonly GeneratedFraudsterId?: string;
 }
 
-interface FraudsterRegistrationJob {
-  readonly CreatedAt: Date;
-  readonly DataAccessRoleArn: string;
-  readonly DomainId: string;
-  readonly EndedAt: Date;
-  readonly FailureDetails: FailureDetails;
-  readonly InputDataConfig: InputDataConfig;
-  readonly JobId: string;
-  readonly JobName: string;
-  readonly JobProgress: JobProgress;
-  readonly JobStatus: string;
-  readonly OutputDataConfig: OutputDataConfig;
-  readonly RegistrationConfig: RegistrationConfig;
+export interface FraudsterRegistrationJob {
+  readonly CreatedAt?: Date;
+  readonly DataAccessRoleArn?: string;
+  readonly DomainId?: string;
+  readonly EndedAt?: Date;
+  readonly FailureDetails?: FailureDetails;
+  readonly InputDataConfig?: InputDataConfig;
+  readonly JobId?: string;
+  readonly JobName?: string;
+  readonly JobProgress?: JobProgress;
+  readonly JobStatus?: string;
+  readonly OutputDataConfig?: OutputDataConfig;
+  readonly RegistrationConfig?: RegistrationConfig;
 }
 
-interface FraudsterRegistrationJobSummary {
-  readonly CreatedAt: Date;
-  readonly DomainId: string;
-  readonly EndedAt: Date;
-  readonly FailureDetails: FailureDetails;
-  readonly JobId: string;
-  readonly JobName: string;
-  readonly JobProgress: JobProgress;
-  readonly JobStatus: string;
+export interface FraudsterRegistrationJobSummary {
+  readonly CreatedAt?: Date;
+  readonly DomainId?: string;
+  readonly EndedAt?: Date;
+  readonly FailureDetails?: FailureDetails;
+  readonly JobId?: string;
+  readonly JobName?: string;
+  readonly JobProgress?: JobProgress;
+  readonly JobStatus?: string;
 }
 
-interface InputDataConfig {
+export interface InputDataConfig {
   readonly S3Uri: string;
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface InternalServerException {
+  readonly Message?: string;
 }
 
-interface JobProgress {
-  readonly PercentComplete: number;
+export interface JobProgress {
+  readonly PercentComplete?: number;
 }
 
-interface KnownFraudsterRisk {
-  readonly GeneratedFraudsterId: string;
+export interface KnownFraudsterRisk {
+  readonly GeneratedFraudsterId?: string;
   readonly RiskScore: number;
 }
 
-interface ListDomainsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListDomainsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListDomainsResponse {
-  readonly DomainSummaries: [];
-  readonly NextToken: string;
+export interface ListDomainsResponse {
+  readonly DomainSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListFraudsterRegistrationJobsRequest {
+export interface ListFraudsterRegistrationJobsRequest {
   readonly DomainId: string;
-  readonly JobStatus: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly JobStatus?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListFraudsterRegistrationJobsResponse {
-  readonly JobSummaries: [];
-  readonly NextToken: string;
+export interface ListFraudsterRegistrationJobsResponse {
+  readonly JobSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListSpeakerEnrollmentJobsRequest {
+export interface ListSpeakerEnrollmentJobsRequest {
   readonly DomainId: string;
-  readonly JobStatus: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly JobStatus?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListSpeakerEnrollmentJobsResponse {
-  readonly JobSummaries: [];
-  readonly NextToken: string;
+export interface ListSpeakerEnrollmentJobsResponse {
+  readonly JobSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListSpeakersRequest {
+export interface ListSpeakersRequest {
   readonly DomainId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListSpeakersResponse {
-  readonly NextToken: string;
-  readonly SpeakerSummaries: [];
+export interface ListSpeakersResponse {
+  readonly NextToken?: string;
+  readonly SpeakerSummaries?: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface OptOutSpeakerRequest {
+export interface OptOutSpeakerRequest {
   readonly DomainId: string;
   readonly SpeakerId: string;
 }
 
-interface OptOutSpeakerResponse {
-  readonly Speaker: Speaker;
+export interface OptOutSpeakerResponse {
+  readonly Speaker?: Speaker;
 }
 
-interface OutputDataConfig {
-  readonly KmsKeyId: string;
+export interface OutputDataConfig {
+  readonly KmsKeyId?: string;
   readonly S3Uri: string;
 }
 
-interface RegistrationConfig {
-  readonly DuplicateRegistrationAction: string;
-  readonly FraudsterSimilarityThreshold: number;
+export interface RegistrationConfig {
+  readonly DuplicateRegistrationAction?: string;
+  readonly FraudsterSimilarityThreshold?: number;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
-  readonly ResourceType: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
+  readonly ResourceType?: string;
 }
 
-interface ServerSideEncryptionConfiguration {
+export interface ServerSideEncryptionConfiguration {
   readonly KmsKeyId: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface Speaker {
-  readonly CreatedAt: Date;
-  readonly CustomerSpeakerId: string;
-  readonly DomainId: string;
-  readonly GeneratedSpeakerId: string;
-  readonly Status: string;
-  readonly UpdatedAt: Date;
+export interface Speaker {
+  readonly CreatedAt?: Date;
+  readonly CustomerSpeakerId?: string;
+  readonly DomainId?: string;
+  readonly GeneratedSpeakerId?: string;
+  readonly Status?: string;
+  readonly UpdatedAt?: Date;
 }
 
-interface SpeakerEnrollmentJob {
-  readonly CreatedAt: Date;
+export interface SpeakerEnrollmentJob {
+  readonly CreatedAt?: Date;
+  readonly DataAccessRoleArn?: string;
+  readonly DomainId?: string;
+  readonly EndedAt?: Date;
+  readonly EnrollmentConfig?: EnrollmentConfig;
+  readonly FailureDetails?: FailureDetails;
+  readonly InputDataConfig?: InputDataConfig;
+  readonly JobId?: string;
+  readonly JobName?: string;
+  readonly JobProgress?: JobProgress;
+  readonly JobStatus?: string;
+  readonly OutputDataConfig?: OutputDataConfig;
+}
+
+export interface SpeakerEnrollmentJobSummary {
+  readonly CreatedAt?: Date;
+  readonly DomainId?: string;
+  readonly EndedAt?: Date;
+  readonly FailureDetails?: FailureDetails;
+  readonly JobId?: string;
+  readonly JobName?: string;
+  readonly JobProgress?: JobProgress;
+  readonly JobStatus?: string;
+}
+
+export interface SpeakerSummary {
+  readonly CreatedAt?: Date;
+  readonly CustomerSpeakerId?: string;
+  readonly DomainId?: string;
+  readonly GeneratedSpeakerId?: string;
+  readonly Status?: string;
+  readonly UpdatedAt?: Date;
+}
+
+export interface StartFraudsterRegistrationJobRequest {
+  readonly ClientToken?: string;
   readonly DataAccessRoleArn: string;
   readonly DomainId: string;
-  readonly EndedAt: Date;
-  readonly EnrollmentConfig: EnrollmentConfig;
-  readonly FailureDetails: FailureDetails;
   readonly InputDataConfig: InputDataConfig;
-  readonly JobId: string;
-  readonly JobName: string;
-  readonly JobProgress: JobProgress;
-  readonly JobStatus: string;
+  readonly JobName?: string;
+  readonly OutputDataConfig: OutputDataConfig;
+  readonly RegistrationConfig?: RegistrationConfig;
+}
+
+export interface StartFraudsterRegistrationJobResponse {
+  readonly Job?: FraudsterRegistrationJob;
+}
+
+export interface StartSpeakerEnrollmentJobRequest {
+  readonly ClientToken?: string;
+  readonly DataAccessRoleArn: string;
+  readonly DomainId: string;
+  readonly EnrollmentConfig?: EnrollmentConfig;
+  readonly InputDataConfig: InputDataConfig;
+  readonly JobName?: string;
   readonly OutputDataConfig: OutputDataConfig;
 }
 
-interface SpeakerEnrollmentJobSummary {
-  readonly CreatedAt: Date;
-  readonly DomainId: string;
-  readonly EndedAt: Date;
-  readonly FailureDetails: FailureDetails;
-  readonly JobId: string;
-  readonly JobName: string;
-  readonly JobProgress: JobProgress;
-  readonly JobStatus: string;
+export interface StartSpeakerEnrollmentJobResponse {
+  readonly Job?: SpeakerEnrollmentJob;
 }
 
-interface SpeakerSummary {
-  readonly CreatedAt: Date;
-  readonly CustomerSpeakerId: string;
-  readonly DomainId: string;
-  readonly GeneratedSpeakerId: string;
-  readonly Status: string;
-  readonly UpdatedAt: Date;
-}
-
-interface StartFraudsterRegistrationJobRequest {
-  readonly ClientToken: string;
-  readonly DataAccessRoleArn: string;
-  readonly DomainId: string;
-  readonly InputDataConfig: InputDataConfig;
-  readonly JobName: string;
-  readonly OutputDataConfig: OutputDataConfig;
-  readonly RegistrationConfig: RegistrationConfig;
-}
-
-interface StartFraudsterRegistrationJobResponse {
-  readonly Job: FraudsterRegistrationJob;
-}
-
-interface StartSpeakerEnrollmentJobRequest {
-  readonly ClientToken: string;
-  readonly DataAccessRoleArn: string;
-  readonly DomainId: string;
-  readonly EnrollmentConfig: EnrollmentConfig;
-  readonly InputDataConfig: InputDataConfig;
-  readonly JobName: string;
-  readonly OutputDataConfig: OutputDataConfig;
-}
-
-interface StartSpeakerEnrollmentJobResponse {
-  readonly Job: SpeakerEnrollmentJob;
-}
-
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
-  readonly Message: string;
+export interface ThrottlingException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateDomainRequest {
-  readonly Description: string;
+export interface UpdateDomainRequest {
+  readonly Description?: string;
   readonly DomainId: string;
   readonly Name: string;
   readonly ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
 }
 
-interface UpdateDomainResponse {
-  readonly Domain: Domain;
+export interface UpdateDomainResponse {
+  readonly Domain?: Domain;
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

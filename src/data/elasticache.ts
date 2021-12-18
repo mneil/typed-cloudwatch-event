@@ -5,25 +5,30 @@ export interface AddTagsToResource {
   readonly ResourceName: string;
   readonly Tags: [];
 }
+
 export interface AuthorizeCacheSecurityGroupIngress {
   readonly CacheSecurityGroupName: string;
   readonly EC2SecurityGroupName: string;
   readonly EC2SecurityGroupOwnerId: string;
 }
+
 export interface BatchApplyUpdateAction {
   readonly ReplicationGroupIds?: [];
   readonly CacheClusterIds?: [];
   readonly ServiceUpdateName: string;
 }
+
 export interface BatchStopUpdateAction {
   readonly ReplicationGroupIds?: [];
   readonly CacheClusterIds?: [];
   readonly ServiceUpdateName: string;
 }
+
 export interface CompleteMigration {
   readonly ReplicationGroupId: string;
   readonly Force?: boolean;
 }
+
 export interface CopySnapshot {
   readonly SourceSnapshotName: string;
   readonly TargetSnapshotName: string;
@@ -31,6 +36,7 @@ export interface CopySnapshot {
   readonly KmsKeyId?: string;
   readonly Tags?: [];
 }
+
 export interface CreateCacheCluster {
   readonly CacheClusterId: string;
   readonly ReplicationGroupId?: string;
@@ -60,28 +66,33 @@ export interface CreateCacheCluster {
   readonly PreferredOutpostArns?: [];
   readonly LogDeliveryConfigurations?: [];
 }
+
 export interface CreateCacheParameterGroup {
   readonly CacheParameterGroupName: string;
   readonly CacheParameterGroupFamily: string;
   readonly Description: string;
   readonly Tags?: [];
 }
+
 export interface CreateCacheSecurityGroup {
   readonly CacheSecurityGroupName: string;
   readonly Description: string;
   readonly Tags?: [];
 }
+
 export interface CreateCacheSubnetGroup {
   readonly CacheSubnetGroupName: string;
   readonly CacheSubnetGroupDescription: string;
   readonly SubnetIds: [];
   readonly Tags?: [];
 }
+
 export interface CreateGlobalReplicationGroup {
   readonly GlobalReplicationGroupIdSuffix: string;
   readonly GlobalReplicationGroupDescription?: string;
   readonly PrimaryReplicationGroupId: string;
 }
+
 export interface CreateReplicationGroup {
   readonly ReplicationGroupId: string;
   readonly ReplicationGroupDescription: string;
@@ -118,6 +129,7 @@ export interface CreateReplicationGroup {
   readonly LogDeliveryConfigurations?: [];
   readonly DataTieringEnabled?: boolean;
 }
+
 export interface CreateSnapshot {
   readonly ReplicationGroupId?: string;
   readonly CacheClusterId?: string;
@@ -125,6 +137,7 @@ export interface CreateSnapshot {
   readonly KmsKeyId?: string;
   readonly Tags?: [];
 }
+
 export interface CreateUser {
   readonly UserId: string;
   readonly UserName: string;
@@ -134,12 +147,14 @@ export interface CreateUser {
   readonly NoPasswordRequired?: boolean;
   readonly Tags?: [];
 }
+
 export interface CreateUserGroup {
   readonly UserGroupId: string;
   readonly Engine: string;
   readonly UserIds?: [];
   readonly Tags?: [];
 }
+
 export interface DecreaseNodeGroupsInGlobalReplicationGroup {
   readonly GlobalReplicationGroupId: string;
   readonly NodeGroupCount: number;
@@ -147,6 +162,7 @@ export interface DecreaseNodeGroupsInGlobalReplicationGroup {
   readonly GlobalNodeGroupsToRetain?: [];
   readonly ApplyImmediately: boolean;
 }
+
 export interface DecreaseReplicaCount {
   readonly ReplicationGroupId: string;
   readonly NewReplicaCount?: number;
@@ -154,37 +170,47 @@ export interface DecreaseReplicaCount {
   readonly ReplicasToRemove?: [];
   readonly ApplyImmediately: boolean;
 }
+
 export interface DeleteCacheCluster {
   readonly CacheClusterId: string;
   readonly FinalSnapshotIdentifier?: string;
 }
+
 export interface DeleteCacheParameterGroup {
   readonly CacheParameterGroupName: string;
 }
+
 export interface DeleteCacheSecurityGroup {
   readonly CacheSecurityGroupName: string;
 }
+
 export interface DeleteCacheSubnetGroup {
   readonly CacheSubnetGroupName: string;
 }
+
 export interface DeleteGlobalReplicationGroup {
   readonly GlobalReplicationGroupId: string;
   readonly RetainPrimaryReplicationGroup: boolean;
 }
+
 export interface DeleteReplicationGroup {
   readonly ReplicationGroupId: string;
   readonly RetainPrimaryCluster?: boolean;
   readonly FinalSnapshotIdentifier?: string;
 }
+
 export interface DeleteSnapshot {
   readonly SnapshotName: string;
 }
+
 export interface DeleteUser {
   readonly UserId: string;
 }
+
 export interface DeleteUserGroup {
   readonly UserGroupId: string;
 }
+
 export interface DescribeCacheClusters {
   readonly CacheClusterId?: string;
   readonly MaxRecords?: number;
@@ -192,6 +218,7 @@ export interface DescribeCacheClusters {
   readonly ShowCacheNodeInfo?: boolean;
   readonly ShowCacheClustersNotInReplicationGroups?: boolean;
 }
+
 export interface DescribeCacheEngineVersions {
   readonly Engine?: string;
   readonly EngineVersion?: string;
@@ -200,32 +227,38 @@ export interface DescribeCacheEngineVersions {
   readonly Marker?: string;
   readonly DefaultOnly?: boolean;
 }
+
 export interface DescribeCacheParameterGroups {
   readonly CacheParameterGroupName?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeCacheParameters {
   readonly CacheParameterGroupName: string;
   readonly Source?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeCacheSecurityGroups {
   readonly CacheSecurityGroupName?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeCacheSubnetGroups {
   readonly CacheSubnetGroupName?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeEngineDefaultParameters {
   readonly CacheParameterGroupFamily: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeEvents {
   readonly SourceIdentifier?: string;
   readonly SourceType?: string;
@@ -235,17 +268,20 @@ export interface DescribeEvents {
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeGlobalReplicationGroups {
   readonly GlobalReplicationGroupId?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
   readonly ShowMemberInfo?: boolean;
 }
+
 export interface DescribeReplicationGroups {
   readonly ReplicationGroupId?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeReservedCacheNodes {
   readonly ReservedCacheNodeId?: string;
   readonly ReservedCacheNodesOfferingId?: string;
@@ -256,6 +292,7 @@ export interface DescribeReservedCacheNodes {
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeReservedCacheNodesOfferings {
   readonly ReservedCacheNodesOfferingId?: string;
   readonly CacheNodeType?: string;
@@ -265,12 +302,14 @@ export interface DescribeReservedCacheNodesOfferings {
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeServiceUpdates {
   readonly ServiceUpdateName?: string;
   readonly ServiceUpdateStatus?: [];
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeSnapshots {
   readonly ReplicationGroupId?: string;
   readonly CacheClusterId?: string;
@@ -280,6 +319,7 @@ export interface DescribeSnapshots {
   readonly MaxRecords?: number;
   readonly ShowNodeGroupConfig?: boolean;
 }
+
 export interface DescribeUpdateActions {
   readonly ServiceUpdateName?: string;
   readonly ReplicationGroupIds?: [];
@@ -292,11 +332,13 @@ export interface DescribeUpdateActions {
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeUserGroups {
   readonly UserGroupId?: string;
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeUsers {
   readonly Engine?: string;
   readonly UserId?: string;
@@ -304,35 +346,42 @@ export interface DescribeUsers {
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DisassociateGlobalReplicationGroup {
   readonly GlobalReplicationGroupId: string;
   readonly ReplicationGroupId: string;
   readonly ReplicationGroupRegion: string;
 }
+
 export interface FailoverGlobalReplicationGroup {
   readonly GlobalReplicationGroupId: string;
   readonly PrimaryRegion: string;
   readonly PrimaryReplicationGroupId: string;
 }
+
 export interface IncreaseNodeGroupsInGlobalReplicationGroup {
   readonly GlobalReplicationGroupId: string;
   readonly NodeGroupCount: number;
   readonly RegionalConfigurations?: [];
   readonly ApplyImmediately: boolean;
 }
+
 export interface IncreaseReplicaCount {
   readonly ReplicationGroupId: string;
   readonly NewReplicaCount?: number;
   readonly ReplicaConfiguration?: [];
   readonly ApplyImmediately: boolean;
 }
+
 export interface ListAllowedNodeTypeModifications {
   readonly CacheClusterId?: string;
   readonly ReplicationGroupId?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceName: string;
 }
+
 export interface ModifyCacheCluster {
   readonly CacheClusterId: string;
   readonly NumCacheNodes?: number;
@@ -355,15 +404,18 @@ export interface ModifyCacheCluster {
   readonly AuthTokenUpdateStrategy?: string;
   readonly LogDeliveryConfigurations?: [];
 }
+
 export interface ModifyCacheParameterGroup {
   readonly CacheParameterGroupName: string;
   readonly ParameterNameValues: [];
 }
+
 export interface ModifyCacheSubnetGroup {
   readonly CacheSubnetGroupName: string;
   readonly CacheSubnetGroupDescription?: string;
   readonly SubnetIds?: [];
 }
+
 export interface ModifyGlobalReplicationGroup {
   readonly GlobalReplicationGroupId: string;
   readonly ApplyImmediately: boolean;
@@ -373,6 +425,7 @@ export interface ModifyGlobalReplicationGroup {
   readonly GlobalReplicationGroupDescription?: string;
   readonly AutomaticFailoverEnabled?: boolean;
 }
+
 export interface ModifyReplicationGroup {
   readonly ReplicationGroupId: string;
   readonly ReplicationGroupDescription?: string;
@@ -400,6 +453,7 @@ export interface ModifyReplicationGroup {
   readonly RemoveUserGroups?: boolean;
   readonly LogDeliveryConfigurations?: [];
 }
+
 export interface ModifyReplicationGroupShardConfiguration {
   readonly ReplicationGroupId: string;
   readonly NodeGroupCount: number;
@@ -408,6 +462,7 @@ export interface ModifyReplicationGroupShardConfiguration {
   readonly NodeGroupsToRemove?: [];
   readonly NodeGroupsToRetain?: [];
 }
+
 export interface ModifyUser {
   readonly UserId: string;
   readonly AccessString?: string;
@@ -415,1548 +470,1556 @@ export interface ModifyUser {
   readonly Passwords?: [];
   readonly NoPasswordRequired?: boolean;
 }
+
 export interface ModifyUserGroup {
   readonly UserGroupId: string;
   readonly UserIdsToAdd?: [];
   readonly UserIdsToRemove?: [];
 }
+
 export interface PurchaseReservedCacheNodesOffering {
   readonly ReservedCacheNodesOfferingId: string;
   readonly ReservedCacheNodeId?: string;
   readonly CacheNodeCount?: number;
   readonly Tags?: [];
 }
+
 export interface RebalanceSlotsInGlobalReplicationGroup {
   readonly GlobalReplicationGroupId: string;
   readonly ApplyImmediately: boolean;
 }
+
 export interface RebootCacheCluster {
   readonly CacheClusterId: string;
   readonly CacheNodeIdsToReboot: [];
 }
+
 export interface RemoveTagsFromResource {
   readonly ResourceName: string;
   readonly TagKeys: [];
 }
+
 export interface ResetCacheParameterGroup {
   readonly CacheParameterGroupName: string;
   readonly ResetAllParameters?: boolean;
   readonly ParameterNameValues?: [];
 }
+
 export interface RevokeCacheSecurityGroupIngress {
   readonly CacheSecurityGroupName: string;
   readonly EC2SecurityGroupName: string;
   readonly EC2SecurityGroupOwnerId: string;
 }
+
 export interface StartMigration {
   readonly ReplicationGroupId: string;
   readonly CustomerNodeEndpointList: [];
 }
+
 export interface TestFailover {
   readonly ReplicationGroupId: string;
   readonly NodeGroupId: string;
 }
 
-
-
-interface APICallRateForCustomerExceededFault {
+export interface APICallRateForCustomerExceededFault {
 }
 
-interface AddTagsToResourceMessage {
+export interface AddTagsToResourceMessage {
   readonly ResourceName: string;
   readonly Tags: [];
 }
 
-interface AllowedNodeTypeModificationsMessage {
-  readonly ScaleUpModifications: [];
-  readonly ScaleDownModifications: [];
+export interface AllowedNodeTypeModificationsMessage {
+  readonly ScaleUpModifications?: [];
+  readonly ScaleDownModifications?: [];
 }
 
-interface Authentication {
-  readonly Type: string;
-  readonly PasswordCount: number;
+export interface Authentication {
+  readonly Type?: string;
+  readonly PasswordCount?: number;
 }
 
-interface AuthorizationAlreadyExistsFault {
+export interface AuthorizationAlreadyExistsFault {
 }
 
-interface AuthorizationNotFoundFault {
+export interface AuthorizationNotFoundFault {
 }
 
-interface AuthorizeCacheSecurityGroupIngressMessage {
+export interface AuthorizeCacheSecurityGroupIngressMessage {
   readonly CacheSecurityGroupName: string;
   readonly EC2SecurityGroupName: string;
   readonly EC2SecurityGroupOwnerId: string;
 }
 
-interface AuthorizeCacheSecurityGroupIngressResult {
-  readonly CacheSecurityGroup: CacheSecurityGroup;
+export interface AuthorizeCacheSecurityGroupIngressResult {
+  readonly CacheSecurityGroup?: CacheSecurityGroup;
 }
 
-interface AvailabilityZone {
-  readonly Name: string;
+export interface AvailabilityZone {
+  readonly Name?: string;
 }
 
-interface BatchApplyUpdateActionMessage {
-  readonly ReplicationGroupIds: [];
-  readonly CacheClusterIds: [];
+export interface BatchApplyUpdateActionMessage {
+  readonly ReplicationGroupIds?: [];
+  readonly CacheClusterIds?: [];
   readonly ServiceUpdateName: string;
 }
 
-interface BatchStopUpdateActionMessage {
-  readonly ReplicationGroupIds: [];
-  readonly CacheClusterIds: [];
+export interface BatchStopUpdateActionMessage {
+  readonly ReplicationGroupIds?: [];
+  readonly CacheClusterIds?: [];
   readonly ServiceUpdateName: string;
 }
 
-interface CacheCluster {
-  readonly CacheClusterId: string;
-  readonly ConfigurationEndpoint: Endpoint;
-  readonly ClientDownloadLandingPage: string;
-  readonly CacheNodeType: string;
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly CacheClusterStatus: string;
-  readonly NumCacheNodes: number;
-  readonly PreferredAvailabilityZone: string;
-  readonly PreferredOutpostArn: string;
-  readonly CacheClusterCreateTime: Date;
-  readonly PreferredMaintenanceWindow: string;
-  readonly PendingModifiedValues: PendingModifiedValues;
-  readonly NotificationConfiguration: NotificationConfiguration;
-  readonly CacheSecurityGroups: [];
-  readonly CacheParameterGroup: CacheParameterGroupStatus;
-  readonly CacheSubnetGroupName: string;
-  readonly CacheNodes: [];
-  readonly AutoMinorVersionUpgrade: boolean;
-  readonly SecurityGroups: [];
+export interface CacheCluster {
+  readonly CacheClusterId?: string;
+  readonly ConfigurationEndpoint?: Endpoint;
+  readonly ClientDownloadLandingPage?: string;
+  readonly CacheNodeType?: string;
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly CacheClusterStatus?: string;
+  readonly NumCacheNodes?: number;
+  readonly PreferredAvailabilityZone?: string;
+  readonly PreferredOutpostArn?: string;
+  readonly CacheClusterCreateTime?: Date;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly PendingModifiedValues?: PendingModifiedValues;
+  readonly NotificationConfiguration?: NotificationConfiguration;
+  readonly CacheSecurityGroups?: [];
+  readonly CacheParameterGroup?: CacheParameterGroupStatus;
+  readonly CacheSubnetGroupName?: string;
+  readonly CacheNodes?: [];
+  readonly AutoMinorVersionUpgrade?: boolean;
+  readonly SecurityGroups?: [];
+  readonly ReplicationGroupId?: string;
+  readonly SnapshotRetentionLimit?: number;
+  readonly SnapshotWindow?: string;
+  readonly AuthTokenEnabled?: boolean;
+  readonly AuthTokenLastModifiedDate?: Date;
+  readonly TransitEncryptionEnabled?: boolean;
+  readonly AtRestEncryptionEnabled?: boolean;
+  readonly ARN?: string;
+  readonly ReplicationGroupLogDeliveryEnabled?: boolean;
+  readonly LogDeliveryConfigurations?: [];
+}
+
+export interface CacheClusterAlreadyExistsFault {
+}
+
+export interface CacheClusterMessage {
+  readonly Marker?: string;
+  readonly CacheClusters?: [];
+}
+
+export interface CacheClusterNotFoundFault {
+}
+
+export interface CacheEngineVersion {
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly CacheParameterGroupFamily?: string;
+  readonly CacheEngineDescription?: string;
+  readonly CacheEngineVersionDescription?: string;
+}
+
+export interface CacheEngineVersionMessage {
+  readonly Marker?: string;
+  readonly CacheEngineVersions?: [];
+}
+
+export interface CacheNode {
+  readonly CacheNodeId?: string;
+  readonly CacheNodeStatus?: string;
+  readonly CacheNodeCreateTime?: Date;
+  readonly Endpoint?: Endpoint;
+  readonly ParameterGroupStatus?: string;
+  readonly SourceCacheNodeId?: string;
+  readonly CustomerAvailabilityZone?: string;
+  readonly CustomerOutpostArn?: string;
+}
+
+export interface CacheNodeTypeSpecificParameter {
+  readonly ParameterName?: string;
+  readonly Description?: string;
+  readonly Source?: string;
+  readonly DataType?: string;
+  readonly AllowedValues?: string;
+  readonly IsModifiable?: boolean;
+  readonly MinimumEngineVersion?: string;
+  readonly CacheNodeTypeSpecificValues?: [];
+  readonly ChangeType?: string;
+}
+
+export interface CacheNodeTypeSpecificValue {
+  readonly CacheNodeType?: string;
+  readonly Value?: string;
+}
+
+export interface CacheNodeUpdateStatus {
+  readonly CacheNodeId?: string;
+  readonly NodeUpdateStatus?: string;
+  readonly NodeDeletionDate?: Date;
+  readonly NodeUpdateStartDate?: Date;
+  readonly NodeUpdateEndDate?: Date;
+  readonly NodeUpdateInitiatedBy?: string;
+  readonly NodeUpdateInitiatedDate?: Date;
+  readonly NodeUpdateStatusModifiedDate?: Date;
+}
+
+export interface CacheParameterGroup {
+  readonly CacheParameterGroupName?: string;
+  readonly CacheParameterGroupFamily?: string;
+  readonly Description?: string;
+  readonly IsGlobal?: boolean;
+  readonly ARN?: string;
+}
+
+export interface CacheParameterGroupAlreadyExistsFault {
+}
+
+export interface CacheParameterGroupDetails {
+  readonly Marker?: string;
+  readonly Parameters?: [];
+  readonly CacheNodeTypeSpecificParameters?: [];
+}
+
+export interface CacheParameterGroupNameMessage {
+  readonly CacheParameterGroupName?: string;
+}
+
+export interface CacheParameterGroupNotFoundFault {
+}
+
+export interface CacheParameterGroupQuotaExceededFault {
+}
+
+export interface CacheParameterGroupStatus {
+  readonly CacheParameterGroupName?: string;
+  readonly ParameterApplyStatus?: string;
+  readonly CacheNodeIdsToReboot?: [];
+}
+
+export interface CacheParameterGroupsMessage {
+  readonly Marker?: string;
+  readonly CacheParameterGroups?: [];
+}
+
+export interface CacheSecurityGroup {
+  readonly OwnerId?: string;
+  readonly CacheSecurityGroupName?: string;
+  readonly Description?: string;
+  readonly EC2SecurityGroups?: [];
+  readonly ARN?: string;
+}
+
+export interface CacheSecurityGroupAlreadyExistsFault {
+}
+
+export interface CacheSecurityGroupMembership {
+  readonly CacheSecurityGroupName?: string;
+  readonly Status?: string;
+}
+
+export interface CacheSecurityGroupMessage {
+  readonly Marker?: string;
+  readonly CacheSecurityGroups?: [];
+}
+
+export interface CacheSecurityGroupNotFoundFault {
+}
+
+export interface CacheSecurityGroupQuotaExceededFault {
+}
+
+export interface CacheSubnetGroup {
+  readonly CacheSubnetGroupName?: string;
+  readonly CacheSubnetGroupDescription?: string;
+  readonly VpcId?: string;
+  readonly Subnets?: [];
+  readonly ARN?: string;
+}
+
+export interface CacheSubnetGroupAlreadyExistsFault {
+}
+
+export interface CacheSubnetGroupInUse {
+}
+
+export interface CacheSubnetGroupMessage {
+  readonly Marker?: string;
+  readonly CacheSubnetGroups?: [];
+}
+
+export interface CacheSubnetGroupNotFoundFault {
+}
+
+export interface CacheSubnetGroupQuotaExceededFault {
+}
+
+export interface CacheSubnetQuotaExceededFault {
+}
+
+export interface CloudWatchLogsDestinationDetails {
+  readonly LogGroup?: string;
+}
+
+export interface ClusterQuotaForCustomerExceededFault {
+}
+
+export interface CompleteMigrationMessage {
   readonly ReplicationGroupId: string;
-  readonly SnapshotRetentionLimit: number;
-  readonly SnapshotWindow: string;
-  readonly AuthTokenEnabled: boolean;
-  readonly AuthTokenLastModifiedDate: Date;
-  readonly TransitEncryptionEnabled: boolean;
-  readonly AtRestEncryptionEnabled: boolean;
-  readonly ARN: string;
-  readonly ReplicationGroupLogDeliveryEnabled: boolean;
-  readonly LogDeliveryConfigurations: [];
+  readonly Force?: boolean;
 }
 
-interface CacheClusterAlreadyExistsFault {
+export interface CompleteMigrationResponse {
+  readonly ReplicationGroup?: ReplicationGroup;
 }
 
-interface CacheClusterMessage {
-  readonly Marker: string;
-  readonly CacheClusters: [];
-}
-
-interface CacheClusterNotFoundFault {
-}
-
-interface CacheEngineVersion {
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly CacheParameterGroupFamily: string;
-  readonly CacheEngineDescription: string;
-  readonly CacheEngineVersionDescription: string;
-}
-
-interface CacheEngineVersionMessage {
-  readonly Marker: string;
-  readonly CacheEngineVersions: [];
-}
-
-interface CacheNode {
-  readonly CacheNodeId: string;
-  readonly CacheNodeStatus: string;
-  readonly CacheNodeCreateTime: Date;
-  readonly Endpoint: Endpoint;
-  readonly ParameterGroupStatus: string;
-  readonly SourceCacheNodeId: string;
-  readonly CustomerAvailabilityZone: string;
-  readonly CustomerOutpostArn: string;
-}
-
-interface CacheNodeTypeSpecificParameter {
-  readonly ParameterName: string;
-  readonly Description: string;
-  readonly Source: string;
-  readonly DataType: string;
-  readonly AllowedValues: string;
-  readonly IsModifiable: boolean;
-  readonly MinimumEngineVersion: string;
-  readonly CacheNodeTypeSpecificValues: [];
-  readonly ChangeType: string;
-}
-
-interface CacheNodeTypeSpecificValue {
-  readonly CacheNodeType: string;
-  readonly Value: string;
-}
-
-interface CacheNodeUpdateStatus {
-  readonly CacheNodeId: string;
-  readonly NodeUpdateStatus: string;
-  readonly NodeDeletionDate: Date;
-  readonly NodeUpdateStartDate: Date;
-  readonly NodeUpdateEndDate: Date;
-  readonly NodeUpdateInitiatedBy: string;
-  readonly NodeUpdateInitiatedDate: Date;
-  readonly NodeUpdateStatusModifiedDate: Date;
-}
-
-interface CacheParameterGroup {
-  readonly CacheParameterGroupName: string;
-  readonly CacheParameterGroupFamily: string;
-  readonly Description: string;
-  readonly IsGlobal: boolean;
-  readonly ARN: string;
-}
-
-interface CacheParameterGroupAlreadyExistsFault {
-}
-
-interface CacheParameterGroupDetails {
-  readonly Marker: string;
-  readonly Parameters: [];
-  readonly CacheNodeTypeSpecificParameters: [];
-}
-
-interface CacheParameterGroupNameMessage {
-  readonly CacheParameterGroupName: string;
-}
-
-interface CacheParameterGroupNotFoundFault {
-}
-
-interface CacheParameterGroupQuotaExceededFault {
-}
-
-interface CacheParameterGroupStatus {
-  readonly CacheParameterGroupName: string;
-  readonly ParameterApplyStatus: string;
-  readonly CacheNodeIdsToReboot: [];
-}
-
-interface CacheParameterGroupsMessage {
-  readonly Marker: string;
-  readonly CacheParameterGroups: [];
-}
-
-interface CacheSecurityGroup {
-  readonly OwnerId: string;
-  readonly CacheSecurityGroupName: string;
-  readonly Description: string;
-  readonly EC2SecurityGroups: [];
-  readonly ARN: string;
-}
-
-interface CacheSecurityGroupAlreadyExistsFault {
-}
-
-interface CacheSecurityGroupMembership {
-  readonly CacheSecurityGroupName: string;
-  readonly Status: string;
-}
-
-interface CacheSecurityGroupMessage {
-  readonly Marker: string;
-  readonly CacheSecurityGroups: [];
-}
-
-interface CacheSecurityGroupNotFoundFault {
-}
-
-interface CacheSecurityGroupQuotaExceededFault {
-}
-
-interface CacheSubnetGroup {
-  readonly CacheSubnetGroupName: string;
-  readonly CacheSubnetGroupDescription: string;
-  readonly VpcId: string;
-  readonly Subnets: [];
-  readonly ARN: string;
-}
-
-interface CacheSubnetGroupAlreadyExistsFault {
-}
-
-interface CacheSubnetGroupInUse {
-}
-
-interface CacheSubnetGroupMessage {
-  readonly Marker: string;
-  readonly CacheSubnetGroups: [];
-}
-
-interface CacheSubnetGroupNotFoundFault {
-}
-
-interface CacheSubnetGroupQuotaExceededFault {
-}
-
-interface CacheSubnetQuotaExceededFault {
-}
-
-interface CloudWatchLogsDestinationDetails {
-  readonly LogGroup: string;
-}
-
-interface ClusterQuotaForCustomerExceededFault {
-}
-
-interface CompleteMigrationMessage {
-  readonly ReplicationGroupId: string;
-  readonly Force: boolean;
-}
-
-interface CompleteMigrationResponse {
-  readonly ReplicationGroup: ReplicationGroup;
-}
-
-interface ConfigureShard {
+export interface ConfigureShard {
   readonly NodeGroupId: string;
   readonly NewReplicaCount: number;
-  readonly PreferredAvailabilityZones: [];
-  readonly PreferredOutpostArns: [];
+  readonly PreferredAvailabilityZones?: [];
+  readonly PreferredOutpostArns?: [];
 }
 
-interface CopySnapshotMessage {
+export interface CopySnapshotMessage {
   readonly SourceSnapshotName: string;
   readonly TargetSnapshotName: string;
-  readonly TargetBucket: string;
-  readonly KmsKeyId: string;
-  readonly Tags: [];
+  readonly TargetBucket?: string;
+  readonly KmsKeyId?: string;
+  readonly Tags?: [];
 }
 
-interface CopySnapshotResult {
-  readonly Snapshot: Snapshot;
+export interface CopySnapshotResult {
+  readonly Snapshot?: Snapshot;
 }
 
-interface CreateCacheClusterMessage {
+export interface CreateCacheClusterMessage {
   readonly CacheClusterId: string;
-  readonly ReplicationGroupId: string;
-  readonly AZMode: string;
-  readonly PreferredAvailabilityZone: string;
-  readonly PreferredAvailabilityZones: [];
-  readonly NumCacheNodes: number;
-  readonly CacheNodeType: string;
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly CacheParameterGroupName: string;
-  readonly CacheSubnetGroupName: string;
-  readonly CacheSecurityGroupNames: [];
-  readonly SecurityGroupIds: [];
-  readonly Tags: [];
-  readonly SnapshotArns: [];
-  readonly SnapshotName: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly Port: number;
-  readonly NotificationTopicArn: string;
-  readonly AutoMinorVersionUpgrade: boolean;
-  readonly SnapshotRetentionLimit: number;
-  readonly SnapshotWindow: string;
-  readonly AuthToken: string;
-  readonly OutpostMode: string;
-  readonly PreferredOutpostArn: string;
-  readonly PreferredOutpostArns: [];
-  readonly LogDeliveryConfigurations: [];
+  readonly ReplicationGroupId?: string;
+  readonly AZMode?: string;
+  readonly PreferredAvailabilityZone?: string;
+  readonly PreferredAvailabilityZones?: [];
+  readonly NumCacheNodes?: number;
+  readonly CacheNodeType?: string;
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly CacheParameterGroupName?: string;
+  readonly CacheSubnetGroupName?: string;
+  readonly CacheSecurityGroupNames?: [];
+  readonly SecurityGroupIds?: [];
+  readonly Tags?: [];
+  readonly SnapshotArns?: [];
+  readonly SnapshotName?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly Port?: number;
+  readonly NotificationTopicArn?: string;
+  readonly AutoMinorVersionUpgrade?: boolean;
+  readonly SnapshotRetentionLimit?: number;
+  readonly SnapshotWindow?: string;
+  readonly AuthToken?: string;
+  readonly OutpostMode?: string;
+  readonly PreferredOutpostArn?: string;
+  readonly PreferredOutpostArns?: [];
+  readonly LogDeliveryConfigurations?: [];
 }
 
-interface CreateCacheClusterResult {
-  readonly CacheCluster: CacheCluster;
+export interface CreateCacheClusterResult {
+  readonly CacheCluster?: CacheCluster;
 }
 
-interface CreateCacheParameterGroupMessage {
+export interface CreateCacheParameterGroupMessage {
   readonly CacheParameterGroupName: string;
   readonly CacheParameterGroupFamily: string;
   readonly Description: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateCacheParameterGroupResult {
-  readonly CacheParameterGroup: CacheParameterGroup;
+export interface CreateCacheParameterGroupResult {
+  readonly CacheParameterGroup?: CacheParameterGroup;
 }
 
-interface CreateCacheSecurityGroupMessage {
+export interface CreateCacheSecurityGroupMessage {
   readonly CacheSecurityGroupName: string;
   readonly Description: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateCacheSecurityGroupResult {
-  readonly CacheSecurityGroup: CacheSecurityGroup;
+export interface CreateCacheSecurityGroupResult {
+  readonly CacheSecurityGroup?: CacheSecurityGroup;
 }
 
-interface CreateCacheSubnetGroupMessage {
+export interface CreateCacheSubnetGroupMessage {
   readonly CacheSubnetGroupName: string;
   readonly CacheSubnetGroupDescription: string;
   readonly SubnetIds: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateCacheSubnetGroupResult {
-  readonly CacheSubnetGroup: CacheSubnetGroup;
+export interface CreateCacheSubnetGroupResult {
+  readonly CacheSubnetGroup?: CacheSubnetGroup;
 }
 
-interface CreateGlobalReplicationGroupMessage {
+export interface CreateGlobalReplicationGroupMessage {
   readonly GlobalReplicationGroupIdSuffix: string;
-  readonly GlobalReplicationGroupDescription: string;
+  readonly GlobalReplicationGroupDescription?: string;
   readonly PrimaryReplicationGroupId: string;
 }
 
-interface CreateGlobalReplicationGroupResult {
-  readonly GlobalReplicationGroup: GlobalReplicationGroup;
+export interface CreateGlobalReplicationGroupResult {
+  readonly GlobalReplicationGroup?: GlobalReplicationGroup;
 }
 
-interface CreateReplicationGroupMessage {
+export interface CreateReplicationGroupMessage {
   readonly ReplicationGroupId: string;
   readonly ReplicationGroupDescription: string;
-  readonly GlobalReplicationGroupId: string;
-  readonly PrimaryClusterId: string;
-  readonly AutomaticFailoverEnabled: boolean;
-  readonly MultiAZEnabled: boolean;
-  readonly NumCacheClusters: number;
-  readonly PreferredCacheClusterAZs: [];
-  readonly NumNodeGroups: number;
-  readonly ReplicasPerNodeGroup: number;
-  readonly NodeGroupConfiguration: [];
-  readonly CacheNodeType: string;
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly CacheParameterGroupName: string;
-  readonly CacheSubnetGroupName: string;
-  readonly CacheSecurityGroupNames: [];
-  readonly SecurityGroupIds: [];
-  readonly Tags: [];
-  readonly SnapshotArns: [];
+  readonly GlobalReplicationGroupId?: string;
+  readonly PrimaryClusterId?: string;
+  readonly AutomaticFailoverEnabled?: boolean;
+  readonly MultiAZEnabled?: boolean;
+  readonly NumCacheClusters?: number;
+  readonly PreferredCacheClusterAZs?: [];
+  readonly NumNodeGroups?: number;
+  readonly ReplicasPerNodeGroup?: number;
+  readonly NodeGroupConfiguration?: [];
+  readonly CacheNodeType?: string;
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly CacheParameterGroupName?: string;
+  readonly CacheSubnetGroupName?: string;
+  readonly CacheSecurityGroupNames?: [];
+  readonly SecurityGroupIds?: [];
+  readonly Tags?: [];
+  readonly SnapshotArns?: [];
+  readonly SnapshotName?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly Port?: number;
+  readonly NotificationTopicArn?: string;
+  readonly AutoMinorVersionUpgrade?: boolean;
+  readonly SnapshotRetentionLimit?: number;
+  readonly SnapshotWindow?: string;
+  readonly AuthToken?: string;
+  readonly TransitEncryptionEnabled?: boolean;
+  readonly AtRestEncryptionEnabled?: boolean;
+  readonly KmsKeyId?: string;
+  readonly UserGroupIds?: [];
+  readonly LogDeliveryConfigurations?: [];
+  readonly DataTieringEnabled?: boolean;
+}
+
+export interface CreateReplicationGroupResult {
+  readonly ReplicationGroup?: ReplicationGroup;
+}
+
+export interface CreateSnapshotMessage {
+  readonly ReplicationGroupId?: string;
+  readonly CacheClusterId?: string;
   readonly SnapshotName: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly Port: number;
-  readonly NotificationTopicArn: string;
-  readonly AutoMinorVersionUpgrade: boolean;
-  readonly SnapshotRetentionLimit: number;
-  readonly SnapshotWindow: string;
-  readonly AuthToken: string;
-  readonly TransitEncryptionEnabled: boolean;
-  readonly AtRestEncryptionEnabled: boolean;
-  readonly KmsKeyId: string;
-  readonly UserGroupIds: [];
-  readonly LogDeliveryConfigurations: [];
-  readonly DataTieringEnabled: boolean;
+  readonly KmsKeyId?: string;
+  readonly Tags?: [];
 }
 
-interface CreateReplicationGroupResult {
-  readonly ReplicationGroup: ReplicationGroup;
+export interface CreateSnapshotResult {
+  readonly Snapshot?: Snapshot;
 }
 
-interface CreateSnapshotMessage {
-  readonly ReplicationGroupId: string;
-  readonly CacheClusterId: string;
-  readonly SnapshotName: string;
-  readonly KmsKeyId: string;
-  readonly Tags: [];
-}
-
-interface CreateSnapshotResult {
-  readonly Snapshot: Snapshot;
-}
-
-interface CreateUserGroupMessage {
+export interface CreateUserGroupMessage {
   readonly UserGroupId: string;
   readonly Engine: string;
-  readonly UserIds: [];
-  readonly Tags: [];
+  readonly UserIds?: [];
+  readonly Tags?: [];
 }
 
-interface CreateUserMessage {
+export interface CreateUserMessage {
   readonly UserId: string;
   readonly UserName: string;
   readonly Engine: string;
-  readonly Passwords: [];
+  readonly Passwords?: [];
   readonly AccessString: string;
-  readonly NoPasswordRequired: boolean;
-  readonly Tags: [];
+  readonly NoPasswordRequired?: boolean;
+  readonly Tags?: [];
 }
 
-interface CustomerNodeEndpoint {
-  readonly Address: string;
-  readonly Port: number;
+export interface CustomerNodeEndpoint {
+  readonly Address?: string;
+  readonly Port?: number;
 }
 
-interface DecreaseNodeGroupsInGlobalReplicationGroupMessage {
+export interface DecreaseNodeGroupsInGlobalReplicationGroupMessage {
   readonly GlobalReplicationGroupId: string;
   readonly NodeGroupCount: number;
-  readonly GlobalNodeGroupsToRemove: [];
-  readonly GlobalNodeGroupsToRetain: [];
+  readonly GlobalNodeGroupsToRemove?: [];
+  readonly GlobalNodeGroupsToRetain?: [];
   readonly ApplyImmediately: boolean;
 }
 
-interface DecreaseNodeGroupsInGlobalReplicationGroupResult {
-  readonly GlobalReplicationGroup: GlobalReplicationGroup;
+export interface DecreaseNodeGroupsInGlobalReplicationGroupResult {
+  readonly GlobalReplicationGroup?: GlobalReplicationGroup;
 }
 
-interface DecreaseReplicaCountMessage {
+export interface DecreaseReplicaCountMessage {
   readonly ReplicationGroupId: string;
-  readonly NewReplicaCount: number;
-  readonly ReplicaConfiguration: [];
-  readonly ReplicasToRemove: [];
+  readonly NewReplicaCount?: number;
+  readonly ReplicaConfiguration?: [];
+  readonly ReplicasToRemove?: [];
   readonly ApplyImmediately: boolean;
 }
 
-interface DecreaseReplicaCountResult {
-  readonly ReplicationGroup: ReplicationGroup;
+export interface DecreaseReplicaCountResult {
+  readonly ReplicationGroup?: ReplicationGroup;
 }
 
-interface DefaultUserAssociatedToUserGroupFault {
+export interface DefaultUserAssociatedToUserGroupFault {
 }
 
-interface DefaultUserRequired {
+export interface DefaultUserRequired {
 }
 
-interface DeleteCacheClusterMessage {
+export interface DeleteCacheClusterMessage {
   readonly CacheClusterId: string;
-  readonly FinalSnapshotIdentifier: string;
+  readonly FinalSnapshotIdentifier?: string;
 }
 
-interface DeleteCacheClusterResult {
-  readonly CacheCluster: CacheCluster;
+export interface DeleteCacheClusterResult {
+  readonly CacheCluster?: CacheCluster;
 }
 
-interface DeleteCacheParameterGroupMessage {
+export interface DeleteCacheParameterGroupMessage {
   readonly CacheParameterGroupName: string;
 }
 
-interface DeleteCacheSecurityGroupMessage {
+export interface DeleteCacheSecurityGroupMessage {
   readonly CacheSecurityGroupName: string;
 }
 
-interface DeleteCacheSubnetGroupMessage {
+export interface DeleteCacheSubnetGroupMessage {
   readonly CacheSubnetGroupName: string;
 }
 
-interface DeleteGlobalReplicationGroupMessage {
+export interface DeleteGlobalReplicationGroupMessage {
   readonly GlobalReplicationGroupId: string;
   readonly RetainPrimaryReplicationGroup: boolean;
 }
 
-interface DeleteGlobalReplicationGroupResult {
-  readonly GlobalReplicationGroup: GlobalReplicationGroup;
+export interface DeleteGlobalReplicationGroupResult {
+  readonly GlobalReplicationGroup?: GlobalReplicationGroup;
 }
 
-interface DeleteReplicationGroupMessage {
+export interface DeleteReplicationGroupMessage {
   readonly ReplicationGroupId: string;
-  readonly RetainPrimaryCluster: boolean;
-  readonly FinalSnapshotIdentifier: string;
+  readonly RetainPrimaryCluster?: boolean;
+  readonly FinalSnapshotIdentifier?: string;
 }
 
-interface DeleteReplicationGroupResult {
-  readonly ReplicationGroup: ReplicationGroup;
+export interface DeleteReplicationGroupResult {
+  readonly ReplicationGroup?: ReplicationGroup;
 }
 
-interface DeleteSnapshotMessage {
+export interface DeleteSnapshotMessage {
   readonly SnapshotName: string;
 }
 
-interface DeleteSnapshotResult {
-  readonly Snapshot: Snapshot;
+export interface DeleteSnapshotResult {
+  readonly Snapshot?: Snapshot;
 }
 
-interface DeleteUserGroupMessage {
+export interface DeleteUserGroupMessage {
   readonly UserGroupId: string;
 }
 
-interface DeleteUserMessage {
+export interface DeleteUserMessage {
   readonly UserId: string;
 }
 
-interface DescribeCacheClustersMessage {
-  readonly CacheClusterId: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly ShowCacheNodeInfo: boolean;
-  readonly ShowCacheClustersNotInReplicationGroups: boolean;
+export interface DescribeCacheClustersMessage {
+  readonly CacheClusterId?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly ShowCacheNodeInfo?: boolean;
+  readonly ShowCacheClustersNotInReplicationGroups?: boolean;
 }
 
-interface DescribeCacheEngineVersionsMessage {
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly CacheParameterGroupFamily: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly DefaultOnly: boolean;
+export interface DescribeCacheEngineVersionsMessage {
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly CacheParameterGroupFamily?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly DefaultOnly?: boolean;
 }
 
-interface DescribeCacheParameterGroupsMessage {
+export interface DescribeCacheParameterGroupsMessage {
+  readonly CacheParameterGroupName?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+}
+
+export interface DescribeCacheParametersMessage {
   readonly CacheParameterGroupName: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly Source?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeCacheParametersMessage {
-  readonly CacheParameterGroupName: string;
-  readonly Source: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeCacheSecurityGroupsMessage {
+  readonly CacheSecurityGroupName?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeCacheSecurityGroupsMessage {
-  readonly CacheSecurityGroupName: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeCacheSubnetGroupsMessage {
+  readonly CacheSubnetGroupName?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeCacheSubnetGroupsMessage {
-  readonly CacheSubnetGroupName: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-}
-
-interface DescribeEngineDefaultParametersMessage {
+export interface DescribeEngineDefaultParametersMessage {
   readonly CacheParameterGroupFamily: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeEngineDefaultParametersResult {
-  readonly EngineDefaults: EngineDefaults;
+export interface DescribeEngineDefaultParametersResult {
+  readonly EngineDefaults?: EngineDefaults;
 }
 
-interface DescribeEventsMessage {
-  readonly SourceIdentifier: string;
-  readonly SourceType: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Duration: number;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeEventsMessage {
+  readonly SourceIdentifier?: string;
+  readonly SourceType?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Duration?: number;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeGlobalReplicationGroupsMessage {
-  readonly GlobalReplicationGroupId: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly ShowMemberInfo: boolean;
+export interface DescribeGlobalReplicationGroupsMessage {
+  readonly GlobalReplicationGroupId?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly ShowMemberInfo?: boolean;
 }
 
-interface DescribeGlobalReplicationGroupsResult {
-  readonly Marker: string;
-  readonly GlobalReplicationGroups: [];
+export interface DescribeGlobalReplicationGroupsResult {
+  readonly Marker?: string;
+  readonly GlobalReplicationGroups?: [];
 }
 
-interface DescribeReplicationGroupsMessage {
-  readonly ReplicationGroupId: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeReplicationGroupsMessage {
+  readonly ReplicationGroupId?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeReservedCacheNodesMessage {
-  readonly ReservedCacheNodeId: string;
-  readonly ReservedCacheNodesOfferingId: string;
-  readonly CacheNodeType: string;
-  readonly Duration: string;
-  readonly ProductDescription: string;
-  readonly OfferingType: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeReservedCacheNodesMessage {
+  readonly ReservedCacheNodeId?: string;
+  readonly ReservedCacheNodesOfferingId?: string;
+  readonly CacheNodeType?: string;
+  readonly Duration?: string;
+  readonly ProductDescription?: string;
+  readonly OfferingType?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeReservedCacheNodesOfferingsMessage {
-  readonly ReservedCacheNodesOfferingId: string;
-  readonly CacheNodeType: string;
-  readonly Duration: string;
-  readonly ProductDescription: string;
-  readonly OfferingType: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeReservedCacheNodesOfferingsMessage {
+  readonly ReservedCacheNodesOfferingId?: string;
+  readonly CacheNodeType?: string;
+  readonly Duration?: string;
+  readonly ProductDescription?: string;
+  readonly OfferingType?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeServiceUpdatesMessage {
-  readonly ServiceUpdateName: string;
-  readonly ServiceUpdateStatus: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeServiceUpdatesMessage {
+  readonly ServiceUpdateName?: string;
+  readonly ServiceUpdateStatus?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeSnapshotsListMessage {
-  readonly Marker: string;
-  readonly Snapshots: [];
+export interface DescribeSnapshotsListMessage {
+  readonly Marker?: string;
+  readonly Snapshots?: [];
 }
 
-interface DescribeSnapshotsMessage {
-  readonly ReplicationGroupId: string;
-  readonly CacheClusterId: string;
-  readonly SnapshotName: string;
-  readonly SnapshotSource: string;
-  readonly Marker: string;
-  readonly MaxRecords: number;
-  readonly ShowNodeGroupConfig: boolean;
+export interface DescribeSnapshotsMessage {
+  readonly ReplicationGroupId?: string;
+  readonly CacheClusterId?: string;
+  readonly SnapshotName?: string;
+  readonly SnapshotSource?: string;
+  readonly Marker?: string;
+  readonly MaxRecords?: number;
+  readonly ShowNodeGroupConfig?: boolean;
 }
 
-interface DescribeUpdateActionsMessage {
-  readonly ServiceUpdateName: string;
-  readonly ReplicationGroupIds: [];
-  readonly CacheClusterIds: [];
-  readonly Engine: string;
-  readonly ServiceUpdateStatus: [];
-  readonly ServiceUpdateTimeRange: TimeRangeFilter;
-  readonly UpdateActionStatus: [];
-  readonly ShowNodeLevelUpdateStatus: boolean;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeUpdateActionsMessage {
+  readonly ServiceUpdateName?: string;
+  readonly ReplicationGroupIds?: [];
+  readonly CacheClusterIds?: [];
+  readonly Engine?: string;
+  readonly ServiceUpdateStatus?: [];
+  readonly ServiceUpdateTimeRange?: TimeRangeFilter;
+  readonly UpdateActionStatus?: [];
+  readonly ShowNodeLevelUpdateStatus?: boolean;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeUserGroupsMessage {
-  readonly UserGroupId: string;
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeUserGroupsMessage {
+  readonly UserGroupId?: string;
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeUserGroupsResult {
-  readonly UserGroups: [];
-  readonly Marker: string;
+export interface DescribeUserGroupsResult {
+  readonly UserGroups?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeUsersMessage {
-  readonly Engine: string;
-  readonly UserId: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeUsersMessage {
+  readonly Engine?: string;
+  readonly UserId?: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeUsersResult {
-  readonly Users: [];
-  readonly Marker: string;
+export interface DescribeUsersResult {
+  readonly Users?: [];
+  readonly Marker?: string;
 }
 
-interface DestinationDetails {
-  readonly CloudWatchLogsDetails: CloudWatchLogsDestinationDetails;
-  readonly KinesisFirehoseDetails: KinesisFirehoseDestinationDetails;
+export interface DestinationDetails {
+  readonly CloudWatchLogsDetails?: CloudWatchLogsDestinationDetails;
+  readonly KinesisFirehoseDetails?: KinesisFirehoseDestinationDetails;
 }
 
-interface DisassociateGlobalReplicationGroupMessage {
+export interface DisassociateGlobalReplicationGroupMessage {
   readonly GlobalReplicationGroupId: string;
   readonly ReplicationGroupId: string;
   readonly ReplicationGroupRegion: string;
 }
 
-interface DisassociateGlobalReplicationGroupResult {
-  readonly GlobalReplicationGroup: GlobalReplicationGroup;
+export interface DisassociateGlobalReplicationGroupResult {
+  readonly GlobalReplicationGroup?: GlobalReplicationGroup;
 }
 
-interface DuplicateUserNameFault {
+export interface DuplicateUserNameFault {
 }
 
-interface EC2SecurityGroup {
-  readonly Status: string;
-  readonly EC2SecurityGroupName: string;
-  readonly EC2SecurityGroupOwnerId: string;
+export interface EC2SecurityGroup {
+  readonly Status?: string;
+  readonly EC2SecurityGroupName?: string;
+  readonly EC2SecurityGroupOwnerId?: string;
 }
 
-interface Endpoint {
-  readonly Address: string;
-  readonly Port: number;
+export interface Endpoint {
+  readonly Address?: string;
+  readonly Port?: number;
 }
 
-interface EngineDefaults {
-  readonly CacheParameterGroupFamily: string;
-  readonly Marker: string;
-  readonly Parameters: [];
-  readonly CacheNodeTypeSpecificParameters: [];
+export interface EngineDefaults {
+  readonly CacheParameterGroupFamily?: string;
+  readonly Marker?: string;
+  readonly Parameters?: [];
+  readonly CacheNodeTypeSpecificParameters?: [];
 }
 
-interface Event {
-  readonly SourceIdentifier: string;
-  readonly SourceType: string;
-  readonly Message: string;
-  readonly Date: Date;
+export interface Event {
+  readonly SourceIdentifier?: string;
+  readonly SourceType?: string;
+  readonly Message?: string;
+  readonly Date?: Date;
 }
 
-interface EventsMessage {
-  readonly Marker: string;
-  readonly Events: [];
+export interface EventsMessage {
+  readonly Marker?: string;
+  readonly Events?: [];
 }
 
-interface FailoverGlobalReplicationGroupMessage {
+export interface FailoverGlobalReplicationGroupMessage {
   readonly GlobalReplicationGroupId: string;
   readonly PrimaryRegion: string;
   readonly PrimaryReplicationGroupId: string;
 }
 
-interface FailoverGlobalReplicationGroupResult {
-  readonly GlobalReplicationGroup: GlobalReplicationGroup;
+export interface FailoverGlobalReplicationGroupResult {
+  readonly GlobalReplicationGroup?: GlobalReplicationGroup;
 }
 
-interface Filter {
+export interface Filter {
   readonly Name: string;
   readonly Values: [];
 }
 
-interface GlobalNodeGroup {
-  readonly GlobalNodeGroupId: string;
-  readonly Slots: string;
+export interface GlobalNodeGroup {
+  readonly GlobalNodeGroupId?: string;
+  readonly Slots?: string;
 }
 
-interface GlobalReplicationGroup {
-  readonly GlobalReplicationGroupId: string;
-  readonly GlobalReplicationGroupDescription: string;
-  readonly Status: string;
-  readonly CacheNodeType: string;
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly Members: [];
-  readonly ClusterEnabled: boolean;
-  readonly GlobalNodeGroups: [];
-  readonly AuthTokenEnabled: boolean;
-  readonly TransitEncryptionEnabled: boolean;
-  readonly AtRestEncryptionEnabled: boolean;
-  readonly ARN: string;
+export interface GlobalReplicationGroup {
+  readonly GlobalReplicationGroupId?: string;
+  readonly GlobalReplicationGroupDescription?: string;
+  readonly Status?: string;
+  readonly CacheNodeType?: string;
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly Members?: [];
+  readonly ClusterEnabled?: boolean;
+  readonly GlobalNodeGroups?: [];
+  readonly AuthTokenEnabled?: boolean;
+  readonly TransitEncryptionEnabled?: boolean;
+  readonly AtRestEncryptionEnabled?: boolean;
+  readonly ARN?: string;
 }
 
-interface GlobalReplicationGroupAlreadyExistsFault {
+export interface GlobalReplicationGroupAlreadyExistsFault {
 }
 
-interface GlobalReplicationGroupInfo {
-  readonly GlobalReplicationGroupId: string;
-  readonly GlobalReplicationGroupMemberRole: string;
+export interface GlobalReplicationGroupInfo {
+  readonly GlobalReplicationGroupId?: string;
+  readonly GlobalReplicationGroupMemberRole?: string;
 }
 
-interface GlobalReplicationGroupMember {
-  readonly ReplicationGroupId: string;
-  readonly ReplicationGroupRegion: string;
-  readonly Role: string;
-  readonly AutomaticFailover: string;
-  readonly Status: string;
+export interface GlobalReplicationGroupMember {
+  readonly ReplicationGroupId?: string;
+  readonly ReplicationGroupRegion?: string;
+  readonly Role?: string;
+  readonly AutomaticFailover?: string;
+  readonly Status?: string;
 }
 
-interface GlobalReplicationGroupNotFoundFault {
+export interface GlobalReplicationGroupNotFoundFault {
 }
 
-interface IncreaseNodeGroupsInGlobalReplicationGroupMessage {
+export interface IncreaseNodeGroupsInGlobalReplicationGroupMessage {
   readonly GlobalReplicationGroupId: string;
   readonly NodeGroupCount: number;
-  readonly RegionalConfigurations: [];
+  readonly RegionalConfigurations?: [];
   readonly ApplyImmediately: boolean;
 }
 
-interface IncreaseNodeGroupsInGlobalReplicationGroupResult {
-  readonly GlobalReplicationGroup: GlobalReplicationGroup;
+export interface IncreaseNodeGroupsInGlobalReplicationGroupResult {
+  readonly GlobalReplicationGroup?: GlobalReplicationGroup;
 }
 
-interface IncreaseReplicaCountMessage {
+export interface IncreaseReplicaCountMessage {
   readonly ReplicationGroupId: string;
-  readonly NewReplicaCount: number;
-  readonly ReplicaConfiguration: [];
+  readonly NewReplicaCount?: number;
+  readonly ReplicaConfiguration?: [];
   readonly ApplyImmediately: boolean;
 }
 
-interface IncreaseReplicaCountResult {
-  readonly ReplicationGroup: ReplicationGroup;
+export interface IncreaseReplicaCountResult {
+  readonly ReplicationGroup?: ReplicationGroup;
 }
 
-interface InsufficientCacheClusterCapacityFault {
+export interface InsufficientCacheClusterCapacityFault {
 }
 
-interface InvalidARNFault {
+export interface InvalidARNFault {
 }
 
-interface InvalidCacheClusterStateFault {
+export interface InvalidCacheClusterStateFault {
 }
 
-interface InvalidCacheParameterGroupStateFault {
+export interface InvalidCacheParameterGroupStateFault {
 }
 
-interface InvalidCacheSecurityGroupStateFault {
+export interface InvalidCacheSecurityGroupStateFault {
 }
 
-interface InvalidGlobalReplicationGroupStateFault {
+export interface InvalidGlobalReplicationGroupStateFault {
 }
 
-interface InvalidKMSKeyFault {
+export interface InvalidKMSKeyFault {
 }
 
-interface InvalidParameterCombinationException {
-  readonly message: string;
+export interface InvalidParameterCombinationException {
+  readonly message?: string;
 }
 
-interface InvalidParameterValueException {
-  readonly message: string;
+export interface InvalidParameterValueException {
+  readonly message?: string;
 }
 
-interface InvalidReplicationGroupStateFault {
+export interface InvalidReplicationGroupStateFault {
 }
 
-interface InvalidSnapshotStateFault {
+export interface InvalidSnapshotStateFault {
 }
 
-interface InvalidSubnet {
+export interface InvalidSubnet {
 }
 
-interface InvalidUserGroupStateFault {
+export interface InvalidUserGroupStateFault {
 }
 
-interface InvalidUserStateFault {
+export interface InvalidUserStateFault {
 }
 
-interface InvalidVPCNetworkStateFault {
+export interface InvalidVPCNetworkStateFault {
 }
 
-interface KinesisFirehoseDestinationDetails {
-  readonly DeliveryStream: string;
+export interface KinesisFirehoseDestinationDetails {
+  readonly DeliveryStream?: string;
 }
 
-interface ListAllowedNodeTypeModificationsMessage {
-  readonly CacheClusterId: string;
-  readonly ReplicationGroupId: string;
+export interface ListAllowedNodeTypeModificationsMessage {
+  readonly CacheClusterId?: string;
+  readonly ReplicationGroupId?: string;
 }
 
-interface ListTagsForResourceMessage {
+export interface ListTagsForResourceMessage {
   readonly ResourceName: string;
 }
 
-interface LogDeliveryConfiguration {
-  readonly LogType: string;
-  readonly DestinationType: string;
-  readonly DestinationDetails: DestinationDetails;
-  readonly LogFormat: string;
-  readonly Status: string;
-  readonly Message: string;
+export interface LogDeliveryConfiguration {
+  readonly LogType?: string;
+  readonly DestinationType?: string;
+  readonly DestinationDetails?: DestinationDetails;
+  readonly LogFormat?: string;
+  readonly Status?: string;
+  readonly Message?: string;
 }
 
-interface LogDeliveryConfigurationRequest {
-  readonly LogType: string;
-  readonly DestinationType: string;
-  readonly DestinationDetails: DestinationDetails;
-  readonly LogFormat: string;
-  readonly Enabled: boolean;
+export interface LogDeliveryConfigurationRequest {
+  readonly LogType?: string;
+  readonly DestinationType?: string;
+  readonly DestinationDetails?: DestinationDetails;
+  readonly LogFormat?: string;
+  readonly Enabled?: boolean;
 }
 
-interface ModifyCacheClusterMessage {
+export interface ModifyCacheClusterMessage {
   readonly CacheClusterId: string;
-  readonly NumCacheNodes: number;
-  readonly CacheNodeIdsToRemove: [];
-  readonly AZMode: string;
-  readonly NewAvailabilityZones: [];
-  readonly CacheSecurityGroupNames: [];
-  readonly SecurityGroupIds: [];
-  readonly PreferredMaintenanceWindow: string;
-  readonly NotificationTopicArn: string;
-  readonly CacheParameterGroupName: string;
-  readonly NotificationTopicStatus: string;
-  readonly ApplyImmediately: boolean;
-  readonly EngineVersion: string;
-  readonly AutoMinorVersionUpgrade: boolean;
-  readonly SnapshotRetentionLimit: number;
-  readonly SnapshotWindow: string;
-  readonly CacheNodeType: string;
-  readonly AuthToken: string;
-  readonly AuthTokenUpdateStrategy: string;
-  readonly LogDeliveryConfigurations: [];
+  readonly NumCacheNodes?: number;
+  readonly CacheNodeIdsToRemove?: [];
+  readonly AZMode?: string;
+  readonly NewAvailabilityZones?: [];
+  readonly CacheSecurityGroupNames?: [];
+  readonly SecurityGroupIds?: [];
+  readonly PreferredMaintenanceWindow?: string;
+  readonly NotificationTopicArn?: string;
+  readonly CacheParameterGroupName?: string;
+  readonly NotificationTopicStatus?: string;
+  readonly ApplyImmediately?: boolean;
+  readonly EngineVersion?: string;
+  readonly AutoMinorVersionUpgrade?: boolean;
+  readonly SnapshotRetentionLimit?: number;
+  readonly SnapshotWindow?: string;
+  readonly CacheNodeType?: string;
+  readonly AuthToken?: string;
+  readonly AuthTokenUpdateStrategy?: string;
+  readonly LogDeliveryConfigurations?: [];
 }
 
-interface ModifyCacheClusterResult {
-  readonly CacheCluster: CacheCluster;
+export interface ModifyCacheClusterResult {
+  readonly CacheCluster?: CacheCluster;
 }
 
-interface ModifyCacheParameterGroupMessage {
+export interface ModifyCacheParameterGroupMessage {
   readonly CacheParameterGroupName: string;
   readonly ParameterNameValues: [];
 }
 
-interface ModifyCacheSubnetGroupMessage {
+export interface ModifyCacheSubnetGroupMessage {
   readonly CacheSubnetGroupName: string;
-  readonly CacheSubnetGroupDescription: string;
-  readonly SubnetIds: [];
+  readonly CacheSubnetGroupDescription?: string;
+  readonly SubnetIds?: [];
 }
 
-interface ModifyCacheSubnetGroupResult {
-  readonly CacheSubnetGroup: CacheSubnetGroup;
+export interface ModifyCacheSubnetGroupResult {
+  readonly CacheSubnetGroup?: CacheSubnetGroup;
 }
 
-interface ModifyGlobalReplicationGroupMessage {
+export interface ModifyGlobalReplicationGroupMessage {
   readonly GlobalReplicationGroupId: string;
   readonly ApplyImmediately: boolean;
-  readonly CacheNodeType: string;
-  readonly EngineVersion: string;
-  readonly CacheParameterGroupName: string;
-  readonly GlobalReplicationGroupDescription: string;
-  readonly AutomaticFailoverEnabled: boolean;
+  readonly CacheNodeType?: string;
+  readonly EngineVersion?: string;
+  readonly CacheParameterGroupName?: string;
+  readonly GlobalReplicationGroupDescription?: string;
+  readonly AutomaticFailoverEnabled?: boolean;
 }
 
-interface ModifyGlobalReplicationGroupResult {
-  readonly GlobalReplicationGroup: GlobalReplicationGroup;
+export interface ModifyGlobalReplicationGroupResult {
+  readonly GlobalReplicationGroup?: GlobalReplicationGroup;
 }
 
-interface ModifyReplicationGroupMessage {
+export interface ModifyReplicationGroupMessage {
   readonly ReplicationGroupId: string;
-  readonly ReplicationGroupDescription: string;
-  readonly PrimaryClusterId: string;
-  readonly SnapshottingClusterId: string;
-  readonly AutomaticFailoverEnabled: boolean;
-  readonly MultiAZEnabled: boolean;
-  readonly NodeGroupId: string;
-  readonly CacheSecurityGroupNames: [];
-  readonly SecurityGroupIds: [];
-  readonly PreferredMaintenanceWindow: string;
-  readonly NotificationTopicArn: string;
-  readonly CacheParameterGroupName: string;
-  readonly NotificationTopicStatus: string;
-  readonly ApplyImmediately: boolean;
-  readonly EngineVersion: string;
-  readonly AutoMinorVersionUpgrade: boolean;
-  readonly SnapshotRetentionLimit: number;
-  readonly SnapshotWindow: string;
-  readonly CacheNodeType: string;
-  readonly AuthToken: string;
-  readonly AuthTokenUpdateStrategy: string;
-  readonly UserGroupIdsToAdd: [];
-  readonly UserGroupIdsToRemove: [];
-  readonly RemoveUserGroups: boolean;
-  readonly LogDeliveryConfigurations: [];
+  readonly ReplicationGroupDescription?: string;
+  readonly PrimaryClusterId?: string;
+  readonly SnapshottingClusterId?: string;
+  readonly AutomaticFailoverEnabled?: boolean;
+  readonly MultiAZEnabled?: boolean;
+  readonly NodeGroupId?: string;
+  readonly CacheSecurityGroupNames?: [];
+  readonly SecurityGroupIds?: [];
+  readonly PreferredMaintenanceWindow?: string;
+  readonly NotificationTopicArn?: string;
+  readonly CacheParameterGroupName?: string;
+  readonly NotificationTopicStatus?: string;
+  readonly ApplyImmediately?: boolean;
+  readonly EngineVersion?: string;
+  readonly AutoMinorVersionUpgrade?: boolean;
+  readonly SnapshotRetentionLimit?: number;
+  readonly SnapshotWindow?: string;
+  readonly CacheNodeType?: string;
+  readonly AuthToken?: string;
+  readonly AuthTokenUpdateStrategy?: string;
+  readonly UserGroupIdsToAdd?: [];
+  readonly UserGroupIdsToRemove?: [];
+  readonly RemoveUserGroups?: boolean;
+  readonly LogDeliveryConfigurations?: [];
 }
 
-interface ModifyReplicationGroupResult {
-  readonly ReplicationGroup: ReplicationGroup;
+export interface ModifyReplicationGroupResult {
+  readonly ReplicationGroup?: ReplicationGroup;
 }
 
-interface ModifyReplicationGroupShardConfigurationMessage {
+export interface ModifyReplicationGroupShardConfigurationMessage {
   readonly ReplicationGroupId: string;
   readonly NodeGroupCount: number;
   readonly ApplyImmediately: boolean;
-  readonly ReshardingConfiguration: [];
-  readonly NodeGroupsToRemove: [];
-  readonly NodeGroupsToRetain: [];
+  readonly ReshardingConfiguration?: [];
+  readonly NodeGroupsToRemove?: [];
+  readonly NodeGroupsToRetain?: [];
 }
 
-interface ModifyReplicationGroupShardConfigurationResult {
-  readonly ReplicationGroup: ReplicationGroup;
+export interface ModifyReplicationGroupShardConfigurationResult {
+  readonly ReplicationGroup?: ReplicationGroup;
 }
 
-interface ModifyUserGroupMessage {
+export interface ModifyUserGroupMessage {
   readonly UserGroupId: string;
-  readonly UserIdsToAdd: [];
-  readonly UserIdsToRemove: [];
+  readonly UserIdsToAdd?: [];
+  readonly UserIdsToRemove?: [];
 }
 
-interface ModifyUserMessage {
+export interface ModifyUserMessage {
   readonly UserId: string;
-  readonly AccessString: string;
-  readonly AppendAccessString: string;
-  readonly Passwords: [];
-  readonly NoPasswordRequired: boolean;
+  readonly AccessString?: string;
+  readonly AppendAccessString?: string;
+  readonly Passwords?: [];
+  readonly NoPasswordRequired?: boolean;
 }
 
-interface NoOperationFault {
+export interface NoOperationFault {
 }
 
-interface NodeGroup {
-  readonly NodeGroupId: string;
-  readonly Status: string;
-  readonly PrimaryEndpoint: Endpoint;
-  readonly ReaderEndpoint: Endpoint;
-  readonly Slots: string;
-  readonly NodeGroupMembers: [];
+export interface NodeGroup {
+  readonly NodeGroupId?: string;
+  readonly Status?: string;
+  readonly PrimaryEndpoint?: Endpoint;
+  readonly ReaderEndpoint?: Endpoint;
+  readonly Slots?: string;
+  readonly NodeGroupMembers?: [];
 }
 
-interface NodeGroupConfiguration {
-  readonly NodeGroupId: string;
-  readonly Slots: string;
-  readonly ReplicaCount: number;
-  readonly PrimaryAvailabilityZone: string;
-  readonly ReplicaAvailabilityZones: [];
-  readonly PrimaryOutpostArn: string;
-  readonly ReplicaOutpostArns: [];
+export interface NodeGroupConfiguration {
+  readonly NodeGroupId?: string;
+  readonly Slots?: string;
+  readonly ReplicaCount?: number;
+  readonly PrimaryAvailabilityZone?: string;
+  readonly ReplicaAvailabilityZones?: [];
+  readonly PrimaryOutpostArn?: string;
+  readonly ReplicaOutpostArns?: [];
 }
 
-interface NodeGroupMember {
-  readonly CacheClusterId: string;
-  readonly CacheNodeId: string;
-  readonly ReadEndpoint: Endpoint;
-  readonly PreferredAvailabilityZone: string;
-  readonly PreferredOutpostArn: string;
-  readonly CurrentRole: string;
+export interface NodeGroupMember {
+  readonly CacheClusterId?: string;
+  readonly CacheNodeId?: string;
+  readonly ReadEndpoint?: Endpoint;
+  readonly PreferredAvailabilityZone?: string;
+  readonly PreferredOutpostArn?: string;
+  readonly CurrentRole?: string;
 }
 
-interface NodeGroupMemberUpdateStatus {
-  readonly CacheClusterId: string;
-  readonly CacheNodeId: string;
-  readonly NodeUpdateStatus: string;
-  readonly NodeDeletionDate: Date;
-  readonly NodeUpdateStartDate: Date;
-  readonly NodeUpdateEndDate: Date;
-  readonly NodeUpdateInitiatedBy: string;
-  readonly NodeUpdateInitiatedDate: Date;
-  readonly NodeUpdateStatusModifiedDate: Date;
+export interface NodeGroupMemberUpdateStatus {
+  readonly CacheClusterId?: string;
+  readonly CacheNodeId?: string;
+  readonly NodeUpdateStatus?: string;
+  readonly NodeDeletionDate?: Date;
+  readonly NodeUpdateStartDate?: Date;
+  readonly NodeUpdateEndDate?: Date;
+  readonly NodeUpdateInitiatedBy?: string;
+  readonly NodeUpdateInitiatedDate?: Date;
+  readonly NodeUpdateStatusModifiedDate?: Date;
 }
 
-interface NodeGroupNotFoundFault {
+export interface NodeGroupNotFoundFault {
 }
 
-interface NodeGroupUpdateStatus {
-  readonly NodeGroupId: string;
-  readonly NodeGroupMemberUpdateStatus: [];
+export interface NodeGroupUpdateStatus {
+  readonly NodeGroupId?: string;
+  readonly NodeGroupMemberUpdateStatus?: [];
 }
 
-interface NodeGroupsPerReplicationGroupQuotaExceededFault {
+export interface NodeGroupsPerReplicationGroupQuotaExceededFault {
 }
 
-interface NodeQuotaForClusterExceededFault {
+export interface NodeQuotaForClusterExceededFault {
 }
 
-interface NodeQuotaForCustomerExceededFault {
+export interface NodeQuotaForCustomerExceededFault {
 }
 
-interface NodeSnapshot {
-  readonly CacheClusterId: string;
-  readonly NodeGroupId: string;
-  readonly CacheNodeId: string;
-  readonly NodeGroupConfiguration: NodeGroupConfiguration;
-  readonly CacheSize: string;
-  readonly CacheNodeCreateTime: Date;
-  readonly SnapshotCreateTime: Date;
+export interface NodeSnapshot {
+  readonly CacheClusterId?: string;
+  readonly NodeGroupId?: string;
+  readonly CacheNodeId?: string;
+  readonly NodeGroupConfiguration?: NodeGroupConfiguration;
+  readonly CacheSize?: string;
+  readonly CacheNodeCreateTime?: Date;
+  readonly SnapshotCreateTime?: Date;
 }
 
-interface NotificationConfiguration {
-  readonly TopicArn: string;
-  readonly TopicStatus: string;
+export interface NotificationConfiguration {
+  readonly TopicArn?: string;
+  readonly TopicStatus?: string;
 }
 
-interface Parameter {
-  readonly ParameterName: string;
-  readonly ParameterValue: string;
-  readonly Description: string;
-  readonly Source: string;
-  readonly DataType: string;
-  readonly AllowedValues: string;
-  readonly IsModifiable: boolean;
-  readonly MinimumEngineVersion: string;
-  readonly ChangeType: string;
+export interface Parameter {
+  readonly ParameterName?: string;
+  readonly ParameterValue?: string;
+  readonly Description?: string;
+  readonly Source?: string;
+  readonly DataType?: string;
+  readonly AllowedValues?: string;
+  readonly IsModifiable?: boolean;
+  readonly MinimumEngineVersion?: string;
+  readonly ChangeType?: string;
 }
 
-interface ParameterNameValue {
-  readonly ParameterName: string;
-  readonly ParameterValue: string;
+export interface ParameterNameValue {
+  readonly ParameterName?: string;
+  readonly ParameterValue?: string;
 }
 
-interface PendingLogDeliveryConfiguration {
-  readonly LogType: string;
-  readonly DestinationType: string;
-  readonly DestinationDetails: DestinationDetails;
-  readonly LogFormat: string;
+export interface PendingLogDeliveryConfiguration {
+  readonly LogType?: string;
+  readonly DestinationType?: string;
+  readonly DestinationDetails?: DestinationDetails;
+  readonly LogFormat?: string;
 }
 
-interface PendingModifiedValues {
-  readonly NumCacheNodes: number;
-  readonly CacheNodeIdsToRemove: [];
-  readonly EngineVersion: string;
-  readonly CacheNodeType: string;
-  readonly AuthTokenStatus: string;
-  readonly LogDeliveryConfigurations: [];
+export interface PendingModifiedValues {
+  readonly NumCacheNodes?: number;
+  readonly CacheNodeIdsToRemove?: [];
+  readonly EngineVersion?: string;
+  readonly CacheNodeType?: string;
+  readonly AuthTokenStatus?: string;
+  readonly LogDeliveryConfigurations?: [];
 }
 
-interface ProcessedUpdateAction {
-  readonly ReplicationGroupId: string;
-  readonly CacheClusterId: string;
-  readonly ServiceUpdateName: string;
-  readonly UpdateActionStatus: string;
+export interface ProcessedUpdateAction {
+  readonly ReplicationGroupId?: string;
+  readonly CacheClusterId?: string;
+  readonly ServiceUpdateName?: string;
+  readonly UpdateActionStatus?: string;
 }
 
-interface PurchaseReservedCacheNodesOfferingMessage {
+export interface PurchaseReservedCacheNodesOfferingMessage {
   readonly ReservedCacheNodesOfferingId: string;
-  readonly ReservedCacheNodeId: string;
-  readonly CacheNodeCount: number;
-  readonly Tags: [];
+  readonly ReservedCacheNodeId?: string;
+  readonly CacheNodeCount?: number;
+  readonly Tags?: [];
 }
 
-interface PurchaseReservedCacheNodesOfferingResult {
-  readonly ReservedCacheNode: ReservedCacheNode;
+export interface PurchaseReservedCacheNodesOfferingResult {
+  readonly ReservedCacheNode?: ReservedCacheNode;
 }
 
-interface RebalanceSlotsInGlobalReplicationGroupMessage {
+export interface RebalanceSlotsInGlobalReplicationGroupMessage {
   readonly GlobalReplicationGroupId: string;
   readonly ApplyImmediately: boolean;
 }
 
-interface RebalanceSlotsInGlobalReplicationGroupResult {
-  readonly GlobalReplicationGroup: GlobalReplicationGroup;
+export interface RebalanceSlotsInGlobalReplicationGroupResult {
+  readonly GlobalReplicationGroup?: GlobalReplicationGroup;
 }
 
-interface RebootCacheClusterMessage {
+export interface RebootCacheClusterMessage {
   readonly CacheClusterId: string;
   readonly CacheNodeIdsToReboot: [];
 }
 
-interface RebootCacheClusterResult {
-  readonly CacheCluster: CacheCluster;
+export interface RebootCacheClusterResult {
+  readonly CacheCluster?: CacheCluster;
 }
 
-interface RecurringCharge {
-  readonly RecurringChargeAmount: unknown;
-  readonly RecurringChargeFrequency: string;
+export interface RecurringCharge {
+  readonly RecurringChargeAmount?: unknown;
+  readonly RecurringChargeFrequency?: string;
 }
 
-interface RegionalConfiguration {
+export interface RegionalConfiguration {
   readonly ReplicationGroupId: string;
   readonly ReplicationGroupRegion: string;
   readonly ReshardingConfiguration: [];
 }
 
-interface RemoveTagsFromResourceMessage {
+export interface RemoveTagsFromResourceMessage {
   readonly ResourceName: string;
   readonly TagKeys: [];
 }
 
-interface ReplicationGroup {
-  readonly ReplicationGroupId: string;
-  readonly Description: string;
-  readonly GlobalReplicationGroupInfo: GlobalReplicationGroupInfo;
-  readonly Status: string;
-  readonly PendingModifiedValues: ReplicationGroupPendingModifiedValues;
-  readonly MemberClusters: [];
-  readonly NodeGroups: [];
-  readonly SnapshottingClusterId: string;
-  readonly AutomaticFailover: string;
-  readonly MultiAZ: string;
-  readonly ConfigurationEndpoint: Endpoint;
-  readonly SnapshotRetentionLimit: number;
-  readonly SnapshotWindow: string;
-  readonly ClusterEnabled: boolean;
-  readonly CacheNodeType: string;
-  readonly AuthTokenEnabled: boolean;
-  readonly AuthTokenLastModifiedDate: Date;
-  readonly TransitEncryptionEnabled: boolean;
-  readonly AtRestEncryptionEnabled: boolean;
-  readonly MemberClustersOutpostArns: [];
-  readonly KmsKeyId: string;
-  readonly ARN: string;
-  readonly UserGroupIds: [];
-  readonly LogDeliveryConfigurations: [];
-  readonly ReplicationGroupCreateTime: Date;
-  readonly DataTiering: string;
+export interface ReplicationGroup {
+  readonly ReplicationGroupId?: string;
+  readonly Description?: string;
+  readonly GlobalReplicationGroupInfo?: GlobalReplicationGroupInfo;
+  readonly Status?: string;
+  readonly PendingModifiedValues?: ReplicationGroupPendingModifiedValues;
+  readonly MemberClusters?: [];
+  readonly NodeGroups?: [];
+  readonly SnapshottingClusterId?: string;
+  readonly AutomaticFailover?: string;
+  readonly MultiAZ?: string;
+  readonly ConfigurationEndpoint?: Endpoint;
+  readonly SnapshotRetentionLimit?: number;
+  readonly SnapshotWindow?: string;
+  readonly ClusterEnabled?: boolean;
+  readonly CacheNodeType?: string;
+  readonly AuthTokenEnabled?: boolean;
+  readonly AuthTokenLastModifiedDate?: Date;
+  readonly TransitEncryptionEnabled?: boolean;
+  readonly AtRestEncryptionEnabled?: boolean;
+  readonly MemberClustersOutpostArns?: [];
+  readonly KmsKeyId?: string;
+  readonly ARN?: string;
+  readonly UserGroupIds?: [];
+  readonly LogDeliveryConfigurations?: [];
+  readonly ReplicationGroupCreateTime?: Date;
+  readonly DataTiering?: string;
 }
 
-interface ReplicationGroupAlreadyExistsFault {
+export interface ReplicationGroupAlreadyExistsFault {
 }
 
-interface ReplicationGroupAlreadyUnderMigrationFault {
+export interface ReplicationGroupAlreadyUnderMigrationFault {
 }
 
-interface ReplicationGroupMessage {
-  readonly Marker: string;
-  readonly ReplicationGroups: [];
+export interface ReplicationGroupMessage {
+  readonly Marker?: string;
+  readonly ReplicationGroups?: [];
 }
 
-interface ReplicationGroupNotFoundFault {
+export interface ReplicationGroupNotFoundFault {
 }
 
-interface ReplicationGroupNotUnderMigrationFault {
+export interface ReplicationGroupNotUnderMigrationFault {
 }
 
-interface ReplicationGroupPendingModifiedValues {
-  readonly PrimaryClusterId: string;
-  readonly AutomaticFailoverStatus: string;
-  readonly Resharding: ReshardingStatus;
-  readonly AuthTokenStatus: string;
-  readonly UserGroups: UserGroupsUpdateStatus;
-  readonly LogDeliveryConfigurations: [];
+export interface ReplicationGroupPendingModifiedValues {
+  readonly PrimaryClusterId?: string;
+  readonly AutomaticFailoverStatus?: string;
+  readonly Resharding?: ReshardingStatus;
+  readonly AuthTokenStatus?: string;
+  readonly UserGroups?: UserGroupsUpdateStatus;
+  readonly LogDeliveryConfigurations?: [];
 }
 
-interface ReservedCacheNode {
-  readonly ReservedCacheNodeId: string;
-  readonly ReservedCacheNodesOfferingId: string;
-  readonly CacheNodeType: string;
-  readonly StartTime: Date;
-  readonly Duration: number;
-  readonly FixedPrice: unknown;
-  readonly UsagePrice: unknown;
-  readonly CacheNodeCount: number;
-  readonly ProductDescription: string;
-  readonly OfferingType: string;
-  readonly State: string;
-  readonly RecurringCharges: [];
-  readonly ReservationARN: string;
+export interface ReservedCacheNode {
+  readonly ReservedCacheNodeId?: string;
+  readonly ReservedCacheNodesOfferingId?: string;
+  readonly CacheNodeType?: string;
+  readonly StartTime?: Date;
+  readonly Duration?: number;
+  readonly FixedPrice?: unknown;
+  readonly UsagePrice?: unknown;
+  readonly CacheNodeCount?: number;
+  readonly ProductDescription?: string;
+  readonly OfferingType?: string;
+  readonly State?: string;
+  readonly RecurringCharges?: [];
+  readonly ReservationARN?: string;
 }
 
-interface ReservedCacheNodeAlreadyExistsFault {
+export interface ReservedCacheNodeAlreadyExistsFault {
 }
 
-interface ReservedCacheNodeMessage {
-  readonly Marker: string;
-  readonly ReservedCacheNodes: [];
+export interface ReservedCacheNodeMessage {
+  readonly Marker?: string;
+  readonly ReservedCacheNodes?: [];
 }
 
-interface ReservedCacheNodeNotFoundFault {
+export interface ReservedCacheNodeNotFoundFault {
 }
 
-interface ReservedCacheNodeQuotaExceededFault {
+export interface ReservedCacheNodeQuotaExceededFault {
 }
 
-interface ReservedCacheNodesOffering {
-  readonly ReservedCacheNodesOfferingId: string;
-  readonly CacheNodeType: string;
-  readonly Duration: number;
-  readonly FixedPrice: unknown;
-  readonly UsagePrice: unknown;
-  readonly ProductDescription: string;
-  readonly OfferingType: string;
-  readonly RecurringCharges: [];
+export interface ReservedCacheNodesOffering {
+  readonly ReservedCacheNodesOfferingId?: string;
+  readonly CacheNodeType?: string;
+  readonly Duration?: number;
+  readonly FixedPrice?: unknown;
+  readonly UsagePrice?: unknown;
+  readonly ProductDescription?: string;
+  readonly OfferingType?: string;
+  readonly RecurringCharges?: [];
 }
 
-interface ReservedCacheNodesOfferingMessage {
-  readonly Marker: string;
-  readonly ReservedCacheNodesOfferings: [];
+export interface ReservedCacheNodesOfferingMessage {
+  readonly Marker?: string;
+  readonly ReservedCacheNodesOfferings?: [];
 }
 
-interface ReservedCacheNodesOfferingNotFoundFault {
+export interface ReservedCacheNodesOfferingNotFoundFault {
 }
 
-interface ResetCacheParameterGroupMessage {
+export interface ResetCacheParameterGroupMessage {
   readonly CacheParameterGroupName: string;
-  readonly ResetAllParameters: boolean;
-  readonly ParameterNameValues: [];
+  readonly ResetAllParameters?: boolean;
+  readonly ParameterNameValues?: [];
 }
 
-interface ReshardingConfiguration {
-  readonly NodeGroupId: string;
-  readonly PreferredAvailabilityZones: [];
+export interface ReshardingConfiguration {
+  readonly NodeGroupId?: string;
+  readonly PreferredAvailabilityZones?: [];
 }
 
-interface ReshardingStatus {
-  readonly SlotMigration: SlotMigration;
+export interface ReshardingStatus {
+  readonly SlotMigration?: SlotMigration;
 }
 
-interface RevokeCacheSecurityGroupIngressMessage {
+export interface RevokeCacheSecurityGroupIngressMessage {
   readonly CacheSecurityGroupName: string;
   readonly EC2SecurityGroupName: string;
   readonly EC2SecurityGroupOwnerId: string;
 }
 
-interface RevokeCacheSecurityGroupIngressResult {
-  readonly CacheSecurityGroup: CacheSecurityGroup;
+export interface RevokeCacheSecurityGroupIngressResult {
+  readonly CacheSecurityGroup?: CacheSecurityGroup;
 }
 
-interface SecurityGroupMembership {
-  readonly SecurityGroupId: string;
-  readonly Status: string;
+export interface SecurityGroupMembership {
+  readonly SecurityGroupId?: string;
+  readonly Status?: string;
 }
 
-interface ServiceLinkedRoleNotFoundFault {
+export interface ServiceLinkedRoleNotFoundFault {
 }
 
-interface ServiceUpdate {
-  readonly ServiceUpdateName: string;
-  readonly ServiceUpdateReleaseDate: Date;
-  readonly ServiceUpdateEndDate: Date;
-  readonly ServiceUpdateSeverity: string;
-  readonly ServiceUpdateRecommendedApplyByDate: Date;
-  readonly ServiceUpdateStatus: string;
-  readonly ServiceUpdateDescription: string;
-  readonly ServiceUpdateType: string;
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly AutoUpdateAfterRecommendedApplyByDate: boolean;
-  readonly EstimatedUpdateTime: string;
+export interface ServiceUpdate {
+  readonly ServiceUpdateName?: string;
+  readonly ServiceUpdateReleaseDate?: Date;
+  readonly ServiceUpdateEndDate?: Date;
+  readonly ServiceUpdateSeverity?: string;
+  readonly ServiceUpdateRecommendedApplyByDate?: Date;
+  readonly ServiceUpdateStatus?: string;
+  readonly ServiceUpdateDescription?: string;
+  readonly ServiceUpdateType?: string;
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly AutoUpdateAfterRecommendedApplyByDate?: boolean;
+  readonly EstimatedUpdateTime?: string;
 }
 
-interface ServiceUpdateNotFoundFault {
+export interface ServiceUpdateNotFoundFault {
 }
 
-interface ServiceUpdatesMessage {
-  readonly Marker: string;
-  readonly ServiceUpdates: [];
+export interface ServiceUpdatesMessage {
+  readonly Marker?: string;
+  readonly ServiceUpdates?: [];
 }
 
-interface SlotMigration {
-  readonly ProgressPercentage: unknown;
+export interface SlotMigration {
+  readonly ProgressPercentage?: unknown;
 }
 
-interface Snapshot {
-  readonly SnapshotName: string;
-  readonly ReplicationGroupId: string;
-  readonly ReplicationGroupDescription: string;
-  readonly CacheClusterId: string;
-  readonly SnapshotStatus: string;
-  readonly SnapshotSource: string;
-  readonly CacheNodeType: string;
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly NumCacheNodes: number;
-  readonly PreferredAvailabilityZone: string;
-  readonly PreferredOutpostArn: string;
-  readonly CacheClusterCreateTime: Date;
-  readonly PreferredMaintenanceWindow: string;
-  readonly TopicArn: string;
-  readonly Port: number;
-  readonly CacheParameterGroupName: string;
-  readonly CacheSubnetGroupName: string;
-  readonly VpcId: string;
-  readonly AutoMinorVersionUpgrade: boolean;
-  readonly SnapshotRetentionLimit: number;
-  readonly SnapshotWindow: string;
-  readonly NumNodeGroups: number;
-  readonly AutomaticFailover: string;
-  readonly NodeSnapshots: [];
-  readonly KmsKeyId: string;
-  readonly ARN: string;
-  readonly DataTiering: string;
+export interface Snapshot {
+  readonly SnapshotName?: string;
+  readonly ReplicationGroupId?: string;
+  readonly ReplicationGroupDescription?: string;
+  readonly CacheClusterId?: string;
+  readonly SnapshotStatus?: string;
+  readonly SnapshotSource?: string;
+  readonly CacheNodeType?: string;
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly NumCacheNodes?: number;
+  readonly PreferredAvailabilityZone?: string;
+  readonly PreferredOutpostArn?: string;
+  readonly CacheClusterCreateTime?: Date;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly TopicArn?: string;
+  readonly Port?: number;
+  readonly CacheParameterGroupName?: string;
+  readonly CacheSubnetGroupName?: string;
+  readonly VpcId?: string;
+  readonly AutoMinorVersionUpgrade?: boolean;
+  readonly SnapshotRetentionLimit?: number;
+  readonly SnapshotWindow?: string;
+  readonly NumNodeGroups?: number;
+  readonly AutomaticFailover?: string;
+  readonly NodeSnapshots?: [];
+  readonly KmsKeyId?: string;
+  readonly ARN?: string;
+  readonly DataTiering?: string;
 }
 
-interface SnapshotAlreadyExistsFault {
+export interface SnapshotAlreadyExistsFault {
 }
 
-interface SnapshotFeatureNotSupportedFault {
+export interface SnapshotFeatureNotSupportedFault {
 }
 
-interface SnapshotNotFoundFault {
+export interface SnapshotNotFoundFault {
 }
 
-interface SnapshotQuotaExceededFault {
+export interface SnapshotQuotaExceededFault {
 }
 
-interface StartMigrationMessage {
+export interface StartMigrationMessage {
   readonly ReplicationGroupId: string;
   readonly CustomerNodeEndpointList: [];
 }
 
-interface StartMigrationResponse {
-  readonly ReplicationGroup: ReplicationGroup;
+export interface StartMigrationResponse {
+  readonly ReplicationGroup?: ReplicationGroup;
 }
 
-interface Subnet {
-  readonly SubnetIdentifier: string;
-  readonly SubnetAvailabilityZone: AvailabilityZone;
-  readonly SubnetOutpost: SubnetOutpost;
+export interface Subnet {
+  readonly SubnetIdentifier?: string;
+  readonly SubnetAvailabilityZone?: AvailabilityZone;
+  readonly SubnetOutpost?: SubnetOutpost;
 }
 
-interface SubnetInUse {
+export interface SubnetInUse {
 }
 
-interface SubnetNotAllowedFault {
+export interface SubnetNotAllowedFault {
 }
 
-interface SubnetOutpost {
-  readonly SubnetOutpostArn: string;
+export interface SubnetOutpost {
+  readonly SubnetOutpostArn?: string;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TagListMessage {
-  readonly TagList: [];
+export interface TagListMessage {
+  readonly TagList?: [];
 }
 
-interface TagNotFoundFault {
+export interface TagNotFoundFault {
 }
 
-interface TagQuotaPerResourceExceeded {
+export interface TagQuotaPerResourceExceeded {
 }
 
-interface TestFailoverMessage {
+export interface TestFailoverMessage {
   readonly ReplicationGroupId: string;
   readonly NodeGroupId: string;
 }
 
-interface TestFailoverNotAvailableFault {
+export interface TestFailoverNotAvailableFault {
 }
 
-interface TestFailoverResult {
-  readonly ReplicationGroup: ReplicationGroup;
+export interface TestFailoverResult {
+  readonly ReplicationGroup?: ReplicationGroup;
 }
 
-interface TimeRangeFilter {
-  readonly StartTime: Date;
-  readonly EndTime: Date;
+export interface TimeRangeFilter {
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
 }
 
-interface UnprocessedUpdateAction {
-  readonly ReplicationGroupId: string;
-  readonly CacheClusterId: string;
-  readonly ServiceUpdateName: string;
-  readonly ErrorType: string;
-  readonly ErrorMessage: string;
+export interface UnprocessedUpdateAction {
+  readonly ReplicationGroupId?: string;
+  readonly CacheClusterId?: string;
+  readonly ServiceUpdateName?: string;
+  readonly ErrorType?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface UpdateAction {
-  readonly ReplicationGroupId: string;
-  readonly CacheClusterId: string;
-  readonly ServiceUpdateName: string;
-  readonly ServiceUpdateReleaseDate: Date;
-  readonly ServiceUpdateSeverity: string;
-  readonly ServiceUpdateStatus: string;
-  readonly ServiceUpdateRecommendedApplyByDate: Date;
-  readonly ServiceUpdateType: string;
-  readonly UpdateActionAvailableDate: Date;
-  readonly UpdateActionStatus: string;
-  readonly NodesUpdated: string;
-  readonly UpdateActionStatusModifiedDate: Date;
-  readonly SlaMet: string;
-  readonly NodeGroupUpdateStatus: [];
-  readonly CacheNodeUpdateStatus: [];
-  readonly EstimatedUpdateTime: string;
-  readonly Engine: string;
+export interface UpdateAction {
+  readonly ReplicationGroupId?: string;
+  readonly CacheClusterId?: string;
+  readonly ServiceUpdateName?: string;
+  readonly ServiceUpdateReleaseDate?: Date;
+  readonly ServiceUpdateSeverity?: string;
+  readonly ServiceUpdateStatus?: string;
+  readonly ServiceUpdateRecommendedApplyByDate?: Date;
+  readonly ServiceUpdateType?: string;
+  readonly UpdateActionAvailableDate?: Date;
+  readonly UpdateActionStatus?: string;
+  readonly NodesUpdated?: string;
+  readonly UpdateActionStatusModifiedDate?: Date;
+  readonly SlaMet?: string;
+  readonly NodeGroupUpdateStatus?: [];
+  readonly CacheNodeUpdateStatus?: [];
+  readonly EstimatedUpdateTime?: string;
+  readonly Engine?: string;
 }
 
-interface UpdateActionResultsMessage {
-  readonly ProcessedUpdateActions: [];
-  readonly UnprocessedUpdateActions: [];
+export interface UpdateActionResultsMessage {
+  readonly ProcessedUpdateActions?: [];
+  readonly UnprocessedUpdateActions?: [];
 }
 
-interface UpdateActionsMessage {
-  readonly Marker: string;
-  readonly UpdateActions: [];
+export interface UpdateActionsMessage {
+  readonly Marker?: string;
+  readonly UpdateActions?: [];
 }
 
-interface User {
-  readonly UserId: string;
-  readonly UserName: string;
-  readonly Status: string;
-  readonly Engine: string;
-  readonly MinimumEngineVersion: string;
-  readonly AccessString: string;
-  readonly UserGroupIds: [];
-  readonly Authentication: Authentication;
-  readonly ARN: string;
+export interface User {
+  readonly UserId?: string;
+  readonly UserName?: string;
+  readonly Status?: string;
+  readonly Engine?: string;
+  readonly MinimumEngineVersion?: string;
+  readonly AccessString?: string;
+  readonly UserGroupIds?: [];
+  readonly Authentication?: Authentication;
+  readonly ARN?: string;
 }
 
-interface UserAlreadyExistsFault {
+export interface UserAlreadyExistsFault {
 }
 
-interface UserGroup {
-  readonly UserGroupId: string;
-  readonly Status: string;
-  readonly Engine: string;
-  readonly UserIds: [];
-  readonly MinimumEngineVersion: string;
-  readonly PendingChanges: UserGroupPendingChanges;
-  readonly ReplicationGroups: [];
-  readonly ARN: string;
+export interface UserGroup {
+  readonly UserGroupId?: string;
+  readonly Status?: string;
+  readonly Engine?: string;
+  readonly UserIds?: [];
+  readonly MinimumEngineVersion?: string;
+  readonly PendingChanges?: UserGroupPendingChanges;
+  readonly ReplicationGroups?: [];
+  readonly ARN?: string;
 }
 
-interface UserGroupAlreadyExistsFault {
+export interface UserGroupAlreadyExistsFault {
 }
 
-interface UserGroupNotFoundFault {
+export interface UserGroupNotFoundFault {
 }
 
-interface UserGroupPendingChanges {
-  readonly UserIdsToRemove: [];
-  readonly UserIdsToAdd: [];
+export interface UserGroupPendingChanges {
+  readonly UserIdsToRemove?: [];
+  readonly UserIdsToAdd?: [];
 }
 
-interface UserGroupQuotaExceededFault {
+export interface UserGroupQuotaExceededFault {
 }
 
-interface UserGroupsUpdateStatus {
-  readonly UserGroupIdsToAdd: [];
-  readonly UserGroupIdsToRemove: [];
+export interface UserGroupsUpdateStatus {
+  readonly UserGroupIdsToAdd?: [];
+  readonly UserGroupIdsToRemove?: [];
 }
 
-interface UserNotFoundFault {
+export interface UserNotFoundFault {
 }
 
-interface UserQuotaExceededFault {
+export interface UserQuotaExceededFault {
 }
+
 

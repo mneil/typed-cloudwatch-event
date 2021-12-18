@@ -11,27 +11,33 @@ export interface ActivateGateway {
   readonly MediumChangerType?: string;
   readonly Tags?: [];
 }
+
 export interface AddCache {
   readonly GatewayARN: string;
   readonly DiskIds: [];
 }
+
 export interface AddTagsToResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface AddUploadBuffer {
   readonly GatewayARN: string;
   readonly DiskIds: [];
 }
+
 export interface AddWorkingStorage {
   readonly GatewayARN: string;
   readonly DiskIds: [];
 }
+
 export interface AssignTapePool {
   readonly TapeARN: string;
   readonly PoolId: string;
   readonly BypassGovernanceRetention?: boolean;
 }
+
 export interface AssociateFileSystem {
   readonly UserName: string;
   readonly Password: string;
@@ -43,6 +49,7 @@ export interface AssociateFileSystem {
   readonly CacheAttributes?: CacheAttributes;
   readonly EndpointNetworkConfiguration?: EndpointNetworkConfiguration;
 }
+
 export interface AttachVolume {
   readonly GatewayARN: string;
   readonly TargetName?: string;
@@ -50,14 +57,17 @@ export interface AttachVolume {
   readonly NetworkInterfaceId: string;
   readonly DiskId?: string;
 }
+
 export interface CancelArchival {
   readonly GatewayARN: string;
   readonly TapeARN: string;
 }
+
 export interface CancelRetrieval {
   readonly GatewayARN: string;
   readonly TapeARN: string;
 }
+
 export interface CreateCachediSCSIVolume {
   readonly GatewayARN: string;
   readonly VolumeSizeInBytes: number;
@@ -70,6 +80,7 @@ export interface CreateCachediSCSIVolume {
   readonly KMSKey?: string;
   readonly Tags?: [];
 }
+
 export interface CreateNFSFileShare {
   readonly ClientToken: string;
   readonly NFSFileShareDefaults?: NFSFileShareDefaults;
@@ -93,6 +104,7 @@ export interface CreateNFSFileShare {
   readonly BucketRegion?: string;
   readonly AuditDestinationARN?: string;
 }
+
 export interface CreateSMBFileShare {
   readonly ClientToken: string;
   readonly GatewayARN: string;
@@ -121,16 +133,19 @@ export interface CreateSMBFileShare {
   readonly BucketRegion?: string;
   readonly OplocksEnabled?: boolean;
 }
+
 export interface CreateSnapshot {
   readonly VolumeARN: string;
   readonly SnapshotDescription: string;
   readonly Tags?: [];
 }
+
 export interface CreateSnapshotFromVolumeRecoveryPoint {
   readonly VolumeARN: string;
   readonly SnapshotDescription: string;
   readonly Tags?: [];
 }
+
 export interface CreateStorediSCSIVolume {
   readonly GatewayARN: string;
   readonly DiskId: string;
@@ -142,6 +157,7 @@ export interface CreateStorediSCSIVolume {
   readonly KMSKey?: string;
   readonly Tags?: [];
 }
+
 export interface CreateTapePool {
   readonly PoolName: string;
   readonly StorageClass: string;
@@ -149,6 +165,7 @@ export interface CreateTapePool {
   readonly RetentionLockTimeInDays?: number;
   readonly Tags?: [];
 }
+
 export interface CreateTapeWithBarcode {
   readonly GatewayARN: string;
   readonly TapeSizeInBytes: number;
@@ -159,6 +176,7 @@ export interface CreateTapeWithBarcode {
   readonly Worm?: boolean;
   readonly Tags?: [];
 }
+
 export interface CreateTapes {
   readonly GatewayARN: string;
   readonly TapeSizeInBytes: number;
@@ -171,123 +189,157 @@ export interface CreateTapes {
   readonly Worm?: boolean;
   readonly Tags?: [];
 }
+
 export interface DeleteAutomaticTapeCreationPolicy {
   readonly GatewayARN: string;
 }
+
 export interface DeleteBandwidthRateLimit {
   readonly GatewayARN: string;
   readonly BandwidthType: string;
 }
+
 export interface DeleteChapCredentials {
   readonly TargetARN: string;
   readonly InitiatorName: string;
 }
+
 export interface DeleteFileShare {
   readonly FileShareARN: string;
   readonly ForceDelete?: boolean;
 }
+
 export interface DeleteGateway {
   readonly GatewayARN: string;
 }
+
 export interface DeleteSnapshotSchedule {
   readonly VolumeARN: string;
 }
+
 export interface DeleteTape {
   readonly GatewayARN: string;
   readonly TapeARN: string;
   readonly BypassGovernanceRetention?: boolean;
 }
+
 export interface DeleteTapeArchive {
   readonly TapeARN: string;
   readonly BypassGovernanceRetention?: boolean;
 }
+
 export interface DeleteTapePool {
   readonly PoolARN: string;
 }
+
 export interface DeleteVolume {
   readonly VolumeARN: string;
 }
+
 export interface DescribeAvailabilityMonitorTest {
   readonly GatewayARN: string;
 }
+
 export interface DescribeBandwidthRateLimit {
   readonly GatewayARN: string;
 }
+
 export interface DescribeBandwidthRateLimitSchedule {
   readonly GatewayARN: string;
 }
+
 export interface DescribeCache {
   readonly GatewayARN: string;
 }
+
 export interface DescribeCachediSCSIVolumes {
   readonly VolumeARNs: [];
 }
+
 export interface DescribeChapCredentials {
   readonly TargetARN: string;
 }
+
 export interface DescribeFileSystemAssociations {
   readonly FileSystemAssociationARNList: [];
 }
+
 export interface DescribeGatewayInformation {
   readonly GatewayARN: string;
 }
+
 export interface DescribeMaintenanceStartTime {
   readonly GatewayARN: string;
 }
+
 export interface DescribeNFSFileShares {
   readonly FileShareARNList: [];
 }
+
 export interface DescribeSMBFileShares {
   readonly FileShareARNList: [];
 }
+
 export interface DescribeSMBSettings {
   readonly GatewayARN: string;
 }
+
 export interface DescribeSnapshotSchedule {
   readonly VolumeARN: string;
 }
+
 export interface DescribeStorediSCSIVolumes {
   readonly VolumeARNs: [];
 }
+
 export interface DescribeTapeArchives {
   readonly TapeARNs?: [];
   readonly Marker?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeTapeRecoveryPoints {
   readonly GatewayARN: string;
   readonly Marker?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeTapes {
   readonly GatewayARN: string;
   readonly TapeARNs?: [];
   readonly Marker?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeUploadBuffer {
   readonly GatewayARN: string;
 }
+
 export interface DescribeVTLDevices {
   readonly GatewayARN: string;
   readonly VTLDeviceARNs?: [];
   readonly Marker?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeWorkingStorage {
   readonly GatewayARN: string;
 }
+
 export interface DetachVolume {
   readonly VolumeARN: string;
   readonly ForceDetach?: boolean;
 }
+
 export interface DisableGateway {
   readonly GatewayARN: string;
 }
+
 export interface DisassociateFileSystem {
   readonly FileSystemAssociationARN: string;
   readonly ForceDelete?: boolean;
 }
+
 export interface JoinDomain {
   readonly GatewayARN: string;
   readonly DomainName: string;
@@ -297,111 +349,138 @@ export interface JoinDomain {
   readonly UserName: string;
   readonly Password: string;
 }
+
 export interface ListAutomaticTapeCreationPolicies {
   readonly GatewayARN?: string;
 }
+
 export interface ListFileShares {
   readonly GatewayARN?: string;
   readonly Limit?: number;
   readonly Marker?: string;
 }
+
 export interface ListFileSystemAssociations {
   readonly GatewayARN?: string;
   readonly Limit?: number;
   readonly Marker?: string;
 }
+
 export interface ListGateways {
   readonly Marker?: string;
   readonly Limit?: number;
 }
+
 export interface ListLocalDisks {
   readonly GatewayARN: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
   readonly Marker?: string;
   readonly Limit?: number;
 }
+
 export interface ListTapePools {
   readonly PoolARNs?: [];
   readonly Marker?: string;
   readonly Limit?: number;
 }
+
 export interface ListTapes {
   readonly TapeARNs?: [];
   readonly Marker?: string;
   readonly Limit?: number;
 }
+
 export interface ListVolumeInitiators {
   readonly VolumeARN: string;
 }
+
 export interface ListVolumeRecoveryPoints {
   readonly GatewayARN: string;
 }
+
 export interface ListVolumes {
   readonly GatewayARN?: string;
   readonly Marker?: string;
   readonly Limit?: number;
 }
+
 export interface NotifyWhenUploaded {
   readonly FileShareARN: string;
 }
+
 export interface RefreshCache {
   readonly FileShareARN: string;
   readonly FolderList?: [];
   readonly Recursive?: boolean;
 }
+
 export interface RemoveTagsFromResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface ResetCache {
   readonly GatewayARN: string;
 }
+
 export interface RetrieveTapeArchive {
   readonly TapeARN: string;
   readonly GatewayARN: string;
 }
+
 export interface RetrieveTapeRecoveryPoint {
   readonly TapeARN: string;
   readonly GatewayARN: string;
 }
+
 export interface SetLocalConsolePassword {
   readonly GatewayARN: string;
   readonly LocalConsolePassword: string;
 }
+
 export interface SetSMBGuestPassword {
   readonly GatewayARN: string;
   readonly Password: string;
 }
+
 export interface ShutdownGateway {
   readonly GatewayARN: string;
 }
+
 export interface StartAvailabilityMonitorTest {
   readonly GatewayARN: string;
 }
+
 export interface StartGateway {
   readonly GatewayARN: string;
 }
+
 export interface UpdateAutomaticTapeCreationPolicy {
   readonly AutomaticTapeCreationRules: [];
   readonly GatewayARN: string;
 }
+
 export interface UpdateBandwidthRateLimit {
   readonly GatewayARN: string;
   readonly AverageUploadRateLimitInBitsPerSec?: number;
   readonly AverageDownloadRateLimitInBitsPerSec?: number;
 }
+
 export interface UpdateBandwidthRateLimitSchedule {
   readonly GatewayARN: string;
   readonly BandwidthRateLimitIntervals: [];
 }
+
 export interface UpdateChapCredentials {
   readonly TargetARN: string;
   readonly SecretToAuthenticateInitiator: string;
   readonly InitiatorName: string;
   readonly SecretToAuthenticateTarget?: string;
 }
+
 export interface UpdateFileSystemAssociation {
   readonly FileSystemAssociationARN: string;
   readonly UserName?: string;
@@ -409,6 +488,7 @@ export interface UpdateFileSystemAssociation {
   readonly AuditDestinationARN?: string;
   readonly CacheAttributes?: CacheAttributes;
 }
+
 export interface UpdateGatewayInformation {
   readonly GatewayARN: string;
   readonly GatewayName?: string;
@@ -416,9 +496,11 @@ export interface UpdateGatewayInformation {
   readonly CloudWatchLogGroupARN?: string;
   readonly GatewayCapacity?: string;
 }
+
 export interface UpdateGatewaySoftwareNow {
   readonly GatewayARN: string;
 }
+
 export interface UpdateMaintenanceStartTime {
   readonly GatewayARN: string;
   readonly HourOfDay: number;
@@ -426,6 +508,7 @@ export interface UpdateMaintenanceStartTime {
   readonly DayOfWeek?: number;
   readonly DayOfMonth?: number;
 }
+
 export interface UpdateNFSFileShare {
   readonly FileShareARN: string;
   readonly KMSEncrypted?: boolean;
@@ -443,6 +526,7 @@ export interface UpdateNFSFileShare {
   readonly NotificationPolicy?: string;
   readonly AuditDestinationARN?: string;
 }
+
 export interface UpdateSMBFileShare {
   readonly FileShareARN: string;
   readonly KMSEncrypted?: boolean;
@@ -464,18 +548,22 @@ export interface UpdateSMBFileShare {
   readonly NotificationPolicy?: string;
   readonly OplocksEnabled?: boolean;
 }
+
 export interface UpdateSMBFileShareVisibility {
   readonly GatewayARN: string;
   readonly FileSharesVisible: boolean;
 }
+
 export interface UpdateSMBLocalGroups {
   readonly GatewayARN: string;
   readonly SMBLocalGroups: SMBLocalGroups;
 }
+
 export interface UpdateSMBSecurityStrategy {
   readonly GatewayARN: string;
   readonly SMBSecurityStrategy: string;
 }
+
 export interface UpdateSnapshotSchedule {
   readonly VolumeARN: string;
   readonly StartAt: number;
@@ -483,1357 +571,1357 @@ export interface UpdateSnapshotSchedule {
   readonly Description?: string;
   readonly Tags?: [];
 }
+
 export interface UpdateVTLDeviceType {
   readonly VTLDeviceARN: string;
   readonly DeviceType: string;
 }
 
-
-
-interface ActivateGatewayInput {
+export interface ActivateGatewayInput {
   readonly ActivationKey: string;
   readonly GatewayName: string;
   readonly GatewayTimezone: string;
   readonly GatewayRegion: string;
-  readonly GatewayType: string;
-  readonly TapeDriveType: string;
-  readonly MediumChangerType: string;
-  readonly Tags: [];
+  readonly GatewayType?: string;
+  readonly TapeDriveType?: string;
+  readonly MediumChangerType?: string;
+  readonly Tags?: [];
 }
 
-interface ActivateGatewayOutput {
-  readonly GatewayARN: string;
+export interface ActivateGatewayOutput {
+  readonly GatewayARN?: string;
 }
 
-interface AddCacheInput {
+export interface AddCacheInput {
   readonly GatewayARN: string;
   readonly DiskIds: [];
 }
 
-interface AddCacheOutput {
-  readonly GatewayARN: string;
+export interface AddCacheOutput {
+  readonly GatewayARN?: string;
 }
 
-interface AddTagsToResourceInput {
+export interface AddTagsToResourceInput {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface AddTagsToResourceOutput {
-  readonly ResourceARN: string;
+export interface AddTagsToResourceOutput {
+  readonly ResourceARN?: string;
 }
 
-interface AddUploadBufferInput {
+export interface AddUploadBufferInput {
   readonly GatewayARN: string;
   readonly DiskIds: [];
 }
 
-interface AddUploadBufferOutput {
-  readonly GatewayARN: string;
+export interface AddUploadBufferOutput {
+  readonly GatewayARN?: string;
 }
 
-interface AddWorkingStorageInput {
+export interface AddWorkingStorageInput {
   readonly GatewayARN: string;
   readonly DiskIds: [];
 }
 
-interface AddWorkingStorageOutput {
-  readonly GatewayARN: string;
+export interface AddWorkingStorageOutput {
+  readonly GatewayARN?: string;
 }
 
-interface AssignTapePoolInput {
+export interface AssignTapePoolInput {
   readonly TapeARN: string;
   readonly PoolId: string;
-  readonly BypassGovernanceRetention: boolean;
+  readonly BypassGovernanceRetention?: boolean;
 }
 
-interface AssignTapePoolOutput {
-  readonly TapeARN: string;
+export interface AssignTapePoolOutput {
+  readonly TapeARN?: string;
 }
 
-interface AssociateFileSystemInput {
+export interface AssociateFileSystemInput {
   readonly UserName: string;
   readonly Password: string;
   readonly ClientToken: string;
   readonly GatewayARN: string;
   readonly LocationARN: string;
-  readonly Tags: [];
-  readonly AuditDestinationARN: string;
-  readonly CacheAttributes: CacheAttributes;
-  readonly EndpointNetworkConfiguration: EndpointNetworkConfiguration;
+  readonly Tags?: [];
+  readonly AuditDestinationARN?: string;
+  readonly CacheAttributes?: CacheAttributes;
+  readonly EndpointNetworkConfiguration?: EndpointNetworkConfiguration;
 }
 
-interface AssociateFileSystemOutput {
-  readonly FileSystemAssociationARN: string;
+export interface AssociateFileSystemOutput {
+  readonly FileSystemAssociationARN?: string;
 }
 
-interface AttachVolumeInput {
+export interface AttachVolumeInput {
   readonly GatewayARN: string;
-  readonly TargetName: string;
+  readonly TargetName?: string;
   readonly VolumeARN: string;
   readonly NetworkInterfaceId: string;
-  readonly DiskId: string;
+  readonly DiskId?: string;
 }
 
-interface AttachVolumeOutput {
-  readonly VolumeARN: string;
-  readonly TargetARN: string;
+export interface AttachVolumeOutput {
+  readonly VolumeARN?: string;
+  readonly TargetARN?: string;
 }
 
-interface AutomaticTapeCreationPolicyInfo {
-  readonly AutomaticTapeCreationRules: [];
-  readonly GatewayARN: string;
+export interface AutomaticTapeCreationPolicyInfo {
+  readonly AutomaticTapeCreationRules?: [];
+  readonly GatewayARN?: string;
 }
 
-interface AutomaticTapeCreationRule {
+export interface AutomaticTapeCreationRule {
   readonly TapeBarcodePrefix: string;
   readonly PoolId: string;
   readonly TapeSizeInBytes: number;
   readonly MinimumNumTapes: number;
-  readonly Worm: boolean;
+  readonly Worm?: boolean;
 }
 
-interface BandwidthRateLimitInterval {
+export interface BandwidthRateLimitInterval {
   readonly StartHourOfDay: number;
   readonly StartMinuteOfHour: number;
   readonly EndHourOfDay: number;
   readonly EndMinuteOfHour: number;
   readonly DaysOfWeek: [];
-  readonly AverageUploadRateLimitInBitsPerSec: number;
-  readonly AverageDownloadRateLimitInBitsPerSec: number;
+  readonly AverageUploadRateLimitInBitsPerSec?: number;
+  readonly AverageDownloadRateLimitInBitsPerSec?: number;
 }
 
-interface CacheAttributes {
-  readonly CacheStaleTimeoutInSeconds: number;
+export interface CacheAttributes {
+  readonly CacheStaleTimeoutInSeconds?: number;
 }
 
-interface CachediSCSIVolume {
-  readonly VolumeARN: string;
-  readonly VolumeId: string;
-  readonly VolumeType: string;
-  readonly VolumeStatus: string;
-  readonly VolumeAttachmentStatus: string;
+export interface CachediSCSIVolume {
+  readonly VolumeARN?: string;
+  readonly VolumeId?: string;
+  readonly VolumeType?: string;
+  readonly VolumeStatus?: string;
+  readonly VolumeAttachmentStatus?: string;
+  readonly VolumeSizeInBytes?: number;
+  readonly VolumeProgress?: unknown;
+  readonly SourceSnapshotId?: string;
+  readonly VolumeiSCSIAttributes?: VolumeiSCSIAttributes;
+  readonly CreatedDate?: Date;
+  readonly VolumeUsedInBytes?: number;
+  readonly KMSKey?: string;
+  readonly TargetName?: string;
+}
+
+export interface CancelArchivalInput {
+  readonly GatewayARN: string;
+  readonly TapeARN: string;
+}
+
+export interface CancelArchivalOutput {
+  readonly TapeARN?: string;
+}
+
+export interface CancelRetrievalInput {
+  readonly GatewayARN: string;
+  readonly TapeARN: string;
+}
+
+export interface CancelRetrievalOutput {
+  readonly TapeARN?: string;
+}
+
+export interface ChapInfo {
+  readonly TargetARN?: string;
+  readonly SecretToAuthenticateInitiator?: string;
+  readonly InitiatorName?: string;
+  readonly SecretToAuthenticateTarget?: string;
+}
+
+export interface CreateCachediSCSIVolumeInput {
+  readonly GatewayARN: string;
   readonly VolumeSizeInBytes: number;
-  readonly VolumeProgress: unknown;
-  readonly SourceSnapshotId: string;
-  readonly VolumeiSCSIAttributes: VolumeiSCSIAttributes;
-  readonly CreatedDate: Date;
-  readonly VolumeUsedInBytes: number;
-  readonly KMSKey: string;
+  readonly SnapshotId?: string;
   readonly TargetName: string;
-}
-
-interface CancelArchivalInput {
-  readonly GatewayARN: string;
-  readonly TapeARN: string;
-}
-
-interface CancelArchivalOutput {
-  readonly TapeARN: string;
-}
-
-interface CancelRetrievalInput {
-  readonly GatewayARN: string;
-  readonly TapeARN: string;
-}
-
-interface CancelRetrievalOutput {
-  readonly TapeARN: string;
-}
-
-interface ChapInfo {
-  readonly TargetARN: string;
-  readonly SecretToAuthenticateInitiator: string;
-  readonly InitiatorName: string;
-  readonly SecretToAuthenticateTarget: string;
-}
-
-interface CreateCachediSCSIVolumeInput {
-  readonly GatewayARN: string;
-  readonly VolumeSizeInBytes: number;
-  readonly SnapshotId: string;
-  readonly TargetName: string;
-  readonly SourceVolumeARN: string;
+  readonly SourceVolumeARN?: string;
   readonly NetworkInterfaceId: string;
   readonly ClientToken: string;
-  readonly KMSEncrypted: boolean;
-  readonly KMSKey: string;
-  readonly Tags: [];
+  readonly KMSEncrypted?: boolean;
+  readonly KMSKey?: string;
+  readonly Tags?: [];
 }
 
-interface CreateCachediSCSIVolumeOutput {
-  readonly VolumeARN: string;
-  readonly TargetARN: string;
+export interface CreateCachediSCSIVolumeOutput {
+  readonly VolumeARN?: string;
+  readonly TargetARN?: string;
 }
 
-interface CreateNFSFileShareInput {
+export interface CreateNFSFileShareInput {
   readonly ClientToken: string;
-  readonly NFSFileShareDefaults: NFSFileShareDefaults;
+  readonly NFSFileShareDefaults?: NFSFileShareDefaults;
   readonly GatewayARN: string;
-  readonly KMSEncrypted: boolean;
-  readonly KMSKey: string;
+  readonly KMSEncrypted?: boolean;
+  readonly KMSKey?: string;
   readonly Role: string;
   readonly LocationARN: string;
-  readonly DefaultStorageClass: string;
-  readonly ObjectACL: string;
-  readonly ClientList: [];
-  readonly Squash: string;
-  readonly ReadOnly: boolean;
-  readonly GuessMIMETypeEnabled: boolean;
-  readonly RequesterPays: boolean;
-  readonly Tags: [];
-  readonly FileShareName: string;
-  readonly CacheAttributes: CacheAttributes;
-  readonly NotificationPolicy: string;
-  readonly VPCEndpointDNSName: string;
-  readonly BucketRegion: string;
-  readonly AuditDestinationARN: string;
+  readonly DefaultStorageClass?: string;
+  readonly ObjectACL?: string;
+  readonly ClientList?: [];
+  readonly Squash?: string;
+  readonly ReadOnly?: boolean;
+  readonly GuessMIMETypeEnabled?: boolean;
+  readonly RequesterPays?: boolean;
+  readonly Tags?: [];
+  readonly FileShareName?: string;
+  readonly CacheAttributes?: CacheAttributes;
+  readonly NotificationPolicy?: string;
+  readonly VPCEndpointDNSName?: string;
+  readonly BucketRegion?: string;
+  readonly AuditDestinationARN?: string;
 }
 
-interface CreateNFSFileShareOutput {
-  readonly FileShareARN: string;
+export interface CreateNFSFileShareOutput {
+  readonly FileShareARN?: string;
 }
 
-interface CreateSMBFileShareInput {
+export interface CreateSMBFileShareInput {
   readonly ClientToken: string;
   readonly GatewayARN: string;
-  readonly KMSEncrypted: boolean;
-  readonly KMSKey: string;
+  readonly KMSEncrypted?: boolean;
+  readonly KMSKey?: string;
   readonly Role: string;
   readonly LocationARN: string;
-  readonly DefaultStorageClass: string;
-  readonly ObjectACL: string;
-  readonly ReadOnly: boolean;
-  readonly GuessMIMETypeEnabled: boolean;
-  readonly RequesterPays: boolean;
-  readonly SMBACLEnabled: boolean;
-  readonly AccessBasedEnumeration: boolean;
-  readonly AdminUserList: [];
-  readonly ValidUserList: [];
-  readonly InvalidUserList: [];
-  readonly AuditDestinationARN: string;
-  readonly Authentication: string;
-  readonly CaseSensitivity: string;
-  readonly Tags: [];
-  readonly FileShareName: string;
-  readonly CacheAttributes: CacheAttributes;
-  readonly NotificationPolicy: string;
-  readonly VPCEndpointDNSName: string;
-  readonly BucketRegion: string;
-  readonly OplocksEnabled: boolean;
+  readonly DefaultStorageClass?: string;
+  readonly ObjectACL?: string;
+  readonly ReadOnly?: boolean;
+  readonly GuessMIMETypeEnabled?: boolean;
+  readonly RequesterPays?: boolean;
+  readonly SMBACLEnabled?: boolean;
+  readonly AccessBasedEnumeration?: boolean;
+  readonly AdminUserList?: [];
+  readonly ValidUserList?: [];
+  readonly InvalidUserList?: [];
+  readonly AuditDestinationARN?: string;
+  readonly Authentication?: string;
+  readonly CaseSensitivity?: string;
+  readonly Tags?: [];
+  readonly FileShareName?: string;
+  readonly CacheAttributes?: CacheAttributes;
+  readonly NotificationPolicy?: string;
+  readonly VPCEndpointDNSName?: string;
+  readonly BucketRegion?: string;
+  readonly OplocksEnabled?: boolean;
 }
 
-interface CreateSMBFileShareOutput {
-  readonly FileShareARN: string;
+export interface CreateSMBFileShareOutput {
+  readonly FileShareARN?: string;
 }
 
-interface CreateSnapshotFromVolumeRecoveryPointInput {
+export interface CreateSnapshotFromVolumeRecoveryPointInput {
   readonly VolumeARN: string;
   readonly SnapshotDescription: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateSnapshotFromVolumeRecoveryPointOutput {
-  readonly SnapshotId: string;
-  readonly VolumeARN: string;
-  readonly VolumeRecoveryPointTime: string;
+export interface CreateSnapshotFromVolumeRecoveryPointOutput {
+  readonly SnapshotId?: string;
+  readonly VolumeARN?: string;
+  readonly VolumeRecoveryPointTime?: string;
 }
 
-interface CreateSnapshotInput {
+export interface CreateSnapshotInput {
   readonly VolumeARN: string;
   readonly SnapshotDescription: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateSnapshotOutput {
-  readonly VolumeARN: string;
-  readonly SnapshotId: string;
+export interface CreateSnapshotOutput {
+  readonly VolumeARN?: string;
+  readonly SnapshotId?: string;
 }
 
-interface CreateStorediSCSIVolumeInput {
+export interface CreateStorediSCSIVolumeInput {
   readonly GatewayARN: string;
   readonly DiskId: string;
-  readonly SnapshotId: string;
+  readonly SnapshotId?: string;
   readonly PreserveExistingData: boolean;
   readonly TargetName: string;
   readonly NetworkInterfaceId: string;
-  readonly KMSEncrypted: boolean;
-  readonly KMSKey: string;
-  readonly Tags: [];
+  readonly KMSEncrypted?: boolean;
+  readonly KMSKey?: string;
+  readonly Tags?: [];
 }
 
-interface CreateStorediSCSIVolumeOutput {
-  readonly VolumeARN: string;
-  readonly VolumeSizeInBytes: number;
-  readonly TargetARN: string;
+export interface CreateStorediSCSIVolumeOutput {
+  readonly VolumeARN?: string;
+  readonly VolumeSizeInBytes?: number;
+  readonly TargetARN?: string;
 }
 
-interface CreateTapePoolInput {
+export interface CreateTapePoolInput {
   readonly PoolName: string;
   readonly StorageClass: string;
-  readonly RetentionLockType: string;
-  readonly RetentionLockTimeInDays: number;
-  readonly Tags: [];
+  readonly RetentionLockType?: string;
+  readonly RetentionLockTimeInDays?: number;
+  readonly Tags?: [];
 }
 
-interface CreateTapePoolOutput {
-  readonly PoolARN: string;
+export interface CreateTapePoolOutput {
+  readonly PoolARN?: string;
 }
 
-interface CreateTapeWithBarcodeInput {
+export interface CreateTapeWithBarcodeInput {
   readonly GatewayARN: string;
   readonly TapeSizeInBytes: number;
   readonly TapeBarcode: string;
-  readonly KMSEncrypted: boolean;
-  readonly KMSKey: string;
-  readonly PoolId: string;
-  readonly Worm: boolean;
-  readonly Tags: [];
+  readonly KMSEncrypted?: boolean;
+  readonly KMSKey?: string;
+  readonly PoolId?: string;
+  readonly Worm?: boolean;
+  readonly Tags?: [];
 }
 
-interface CreateTapeWithBarcodeOutput {
-  readonly TapeARN: string;
+export interface CreateTapeWithBarcodeOutput {
+  readonly TapeARN?: string;
 }
 
-interface CreateTapesInput {
+export interface CreateTapesInput {
   readonly GatewayARN: string;
   readonly TapeSizeInBytes: number;
   readonly ClientToken: string;
   readonly NumTapesToCreate: number;
   readonly TapeBarcodePrefix: string;
-  readonly KMSEncrypted: boolean;
-  readonly KMSKey: string;
-  readonly PoolId: string;
-  readonly Worm: boolean;
-  readonly Tags: [];
+  readonly KMSEncrypted?: boolean;
+  readonly KMSKey?: string;
+  readonly PoolId?: string;
+  readonly Worm?: boolean;
+  readonly Tags?: [];
 }
 
-interface CreateTapesOutput {
-  readonly TapeARNs: [];
+export interface CreateTapesOutput {
+  readonly TapeARNs?: [];
 }
 
-interface DeleteAutomaticTapeCreationPolicyInput {
+export interface DeleteAutomaticTapeCreationPolicyInput {
   readonly GatewayARN: string;
 }
 
-interface DeleteAutomaticTapeCreationPolicyOutput {
-  readonly GatewayARN: string;
+export interface DeleteAutomaticTapeCreationPolicyOutput {
+  readonly GatewayARN?: string;
 }
 
-interface DeleteBandwidthRateLimitInput {
+export interface DeleteBandwidthRateLimitInput {
   readonly GatewayARN: string;
   readonly BandwidthType: string;
 }
 
-interface DeleteBandwidthRateLimitOutput {
-  readonly GatewayARN: string;
+export interface DeleteBandwidthRateLimitOutput {
+  readonly GatewayARN?: string;
 }
 
-interface DeleteChapCredentialsInput {
+export interface DeleteChapCredentialsInput {
   readonly TargetARN: string;
   readonly InitiatorName: string;
 }
 
-interface DeleteChapCredentialsOutput {
-  readonly TargetARN: string;
-  readonly InitiatorName: string;
+export interface DeleteChapCredentialsOutput {
+  readonly TargetARN?: string;
+  readonly InitiatorName?: string;
 }
 
-interface DeleteFileShareInput {
+export interface DeleteFileShareInput {
   readonly FileShareARN: string;
-  readonly ForceDelete: boolean;
+  readonly ForceDelete?: boolean;
 }
 
-interface DeleteFileShareOutput {
-  readonly FileShareARN: string;
+export interface DeleteFileShareOutput {
+  readonly FileShareARN?: string;
 }
 
-interface DeleteGatewayInput {
+export interface DeleteGatewayInput {
   readonly GatewayARN: string;
 }
 
-interface DeleteGatewayOutput {
-  readonly GatewayARN: string;
+export interface DeleteGatewayOutput {
+  readonly GatewayARN?: string;
 }
 
-interface DeleteSnapshotScheduleInput {
+export interface DeleteSnapshotScheduleInput {
   readonly VolumeARN: string;
 }
 
-interface DeleteSnapshotScheduleOutput {
-  readonly VolumeARN: string;
+export interface DeleteSnapshotScheduleOutput {
+  readonly VolumeARN?: string;
 }
 
-interface DeleteTapeArchiveInput {
+export interface DeleteTapeArchiveInput {
   readonly TapeARN: string;
-  readonly BypassGovernanceRetention: boolean;
+  readonly BypassGovernanceRetention?: boolean;
 }
 
-interface DeleteTapeArchiveOutput {
-  readonly TapeARN: string;
+export interface DeleteTapeArchiveOutput {
+  readonly TapeARN?: string;
 }
 
-interface DeleteTapeInput {
+export interface DeleteTapeInput {
   readonly GatewayARN: string;
   readonly TapeARN: string;
-  readonly BypassGovernanceRetention: boolean;
+  readonly BypassGovernanceRetention?: boolean;
 }
 
-interface DeleteTapeOutput {
-  readonly TapeARN: string;
+export interface DeleteTapeOutput {
+  readonly TapeARN?: string;
 }
 
-interface DeleteTapePoolInput {
+export interface DeleteTapePoolInput {
   readonly PoolARN: string;
 }
 
-interface DeleteTapePoolOutput {
-  readonly PoolARN: string;
+export interface DeleteTapePoolOutput {
+  readonly PoolARN?: string;
 }
 
-interface DeleteVolumeInput {
+export interface DeleteVolumeInput {
   readonly VolumeARN: string;
 }
 
-interface DeleteVolumeOutput {
-  readonly VolumeARN: string;
+export interface DeleteVolumeOutput {
+  readonly VolumeARN?: string;
 }
 
-interface DescribeAvailabilityMonitorTestInput {
+export interface DescribeAvailabilityMonitorTestInput {
   readonly GatewayARN: string;
 }
 
-interface DescribeAvailabilityMonitorTestOutput {
-  readonly GatewayARN: string;
-  readonly Status: string;
-  readonly StartTime: Date;
+export interface DescribeAvailabilityMonitorTestOutput {
+  readonly GatewayARN?: string;
+  readonly Status?: string;
+  readonly StartTime?: Date;
 }
 
-interface DescribeBandwidthRateLimitInput {
-  readonly GatewayARN: string;
-}
-
-interface DescribeBandwidthRateLimitOutput {
-  readonly GatewayARN: string;
-  readonly AverageUploadRateLimitInBitsPerSec: number;
-  readonly AverageDownloadRateLimitInBitsPerSec: number;
-}
-
-interface DescribeBandwidthRateLimitScheduleInput {
+export interface DescribeBandwidthRateLimitInput {
   readonly GatewayARN: string;
 }
 
-interface DescribeBandwidthRateLimitScheduleOutput {
-  readonly GatewayARN: string;
-  readonly BandwidthRateLimitIntervals: [];
+export interface DescribeBandwidthRateLimitOutput {
+  readonly GatewayARN?: string;
+  readonly AverageUploadRateLimitInBitsPerSec?: number;
+  readonly AverageDownloadRateLimitInBitsPerSec?: number;
 }
 
-interface DescribeCacheInput {
+export interface DescribeBandwidthRateLimitScheduleInput {
   readonly GatewayARN: string;
 }
 
-interface DescribeCacheOutput {
-  readonly GatewayARN: string;
-  readonly DiskIds: [];
-  readonly CacheAllocatedInBytes: number;
-  readonly CacheUsedPercentage: unknown;
-  readonly CacheDirtyPercentage: unknown;
-  readonly CacheHitPercentage: unknown;
-  readonly CacheMissPercentage: unknown;
+export interface DescribeBandwidthRateLimitScheduleOutput {
+  readonly GatewayARN?: string;
+  readonly BandwidthRateLimitIntervals?: [];
 }
 
-interface DescribeCachediSCSIVolumesInput {
+export interface DescribeCacheInput {
+  readonly GatewayARN: string;
+}
+
+export interface DescribeCacheOutput {
+  readonly GatewayARN?: string;
+  readonly DiskIds?: [];
+  readonly CacheAllocatedInBytes?: number;
+  readonly CacheUsedPercentage?: unknown;
+  readonly CacheDirtyPercentage?: unknown;
+  readonly CacheHitPercentage?: unknown;
+  readonly CacheMissPercentage?: unknown;
+}
+
+export interface DescribeCachediSCSIVolumesInput {
   readonly VolumeARNs: [];
 }
 
-interface DescribeCachediSCSIVolumesOutput {
-  readonly CachediSCSIVolumes: [];
+export interface DescribeCachediSCSIVolumesOutput {
+  readonly CachediSCSIVolumes?: [];
 }
 
-interface DescribeChapCredentialsInput {
+export interface DescribeChapCredentialsInput {
   readonly TargetARN: string;
 }
 
-interface DescribeChapCredentialsOutput {
-  readonly ChapCredentials: [];
+export interface DescribeChapCredentialsOutput {
+  readonly ChapCredentials?: [];
 }
 
-interface DescribeFileSystemAssociationsInput {
+export interface DescribeFileSystemAssociationsInput {
   readonly FileSystemAssociationARNList: [];
 }
 
-interface DescribeFileSystemAssociationsOutput {
-  readonly FileSystemAssociationInfoList: [];
+export interface DescribeFileSystemAssociationsOutput {
+  readonly FileSystemAssociationInfoList?: [];
 }
 
-interface DescribeGatewayInformationInput {
+export interface DescribeGatewayInformationInput {
   readonly GatewayARN: string;
 }
 
-interface DescribeGatewayInformationOutput {
-  readonly GatewayARN: string;
-  readonly GatewayId: string;
-  readonly GatewayName: string;
-  readonly GatewayTimezone: string;
-  readonly GatewayState: string;
-  readonly GatewayNetworkInterfaces: [];
-  readonly GatewayType: string;
-  readonly NextUpdateAvailabilityDate: string;
-  readonly LastSoftwareUpdate: string;
-  readonly Ec2InstanceId: string;
-  readonly Ec2InstanceRegion: string;
-  readonly Tags: [];
-  readonly VPCEndpoint: string;
-  readonly CloudWatchLogGroupARN: string;
-  readonly HostEnvironment: string;
-  readonly EndpointType: string;
-  readonly SoftwareUpdatesEndDate: string;
-  readonly DeprecationDate: string;
-  readonly GatewayCapacity: string;
-  readonly SupportedGatewayCapacities: [];
-  readonly HostEnvironmentId: string;
+export interface DescribeGatewayInformationOutput {
+  readonly GatewayARN?: string;
+  readonly GatewayId?: string;
+  readonly GatewayName?: string;
+  readonly GatewayTimezone?: string;
+  readonly GatewayState?: string;
+  readonly GatewayNetworkInterfaces?: [];
+  readonly GatewayType?: string;
+  readonly NextUpdateAvailabilityDate?: string;
+  readonly LastSoftwareUpdate?: string;
+  readonly Ec2InstanceId?: string;
+  readonly Ec2InstanceRegion?: string;
+  readonly Tags?: [];
+  readonly VPCEndpoint?: string;
+  readonly CloudWatchLogGroupARN?: string;
+  readonly HostEnvironment?: string;
+  readonly EndpointType?: string;
+  readonly SoftwareUpdatesEndDate?: string;
+  readonly DeprecationDate?: string;
+  readonly GatewayCapacity?: string;
+  readonly SupportedGatewayCapacities?: [];
+  readonly HostEnvironmentId?: string;
 }
 
-interface DescribeMaintenanceStartTimeInput {
+export interface DescribeMaintenanceStartTimeInput {
   readonly GatewayARN: string;
 }
 
-interface DescribeMaintenanceStartTimeOutput {
-  readonly GatewayARN: string;
-  readonly HourOfDay: number;
-  readonly MinuteOfHour: number;
-  readonly DayOfWeek: number;
-  readonly DayOfMonth: number;
-  readonly Timezone: string;
+export interface DescribeMaintenanceStartTimeOutput {
+  readonly GatewayARN?: string;
+  readonly HourOfDay?: number;
+  readonly MinuteOfHour?: number;
+  readonly DayOfWeek?: number;
+  readonly DayOfMonth?: number;
+  readonly Timezone?: string;
 }
 
-interface DescribeNFSFileSharesInput {
+export interface DescribeNFSFileSharesInput {
   readonly FileShareARNList: [];
 }
 
-interface DescribeNFSFileSharesOutput {
-  readonly NFSFileShareInfoList: [];
+export interface DescribeNFSFileSharesOutput {
+  readonly NFSFileShareInfoList?: [];
 }
 
-interface DescribeSMBFileSharesInput {
+export interface DescribeSMBFileSharesInput {
   readonly FileShareARNList: [];
 }
 
-interface DescribeSMBFileSharesOutput {
-  readonly SMBFileShareInfoList: [];
+export interface DescribeSMBFileSharesOutput {
+  readonly SMBFileShareInfoList?: [];
 }
 
-interface DescribeSMBSettingsInput {
+export interface DescribeSMBSettingsInput {
   readonly GatewayARN: string;
 }
 
-interface DescribeSMBSettingsOutput {
-  readonly GatewayARN: string;
-  readonly DomainName: string;
-  readonly ActiveDirectoryStatus: string;
-  readonly SMBGuestPasswordSet: boolean;
-  readonly SMBSecurityStrategy: string;
-  readonly FileSharesVisible: boolean;
-  readonly SMBLocalGroups: SMBLocalGroups;
+export interface DescribeSMBSettingsOutput {
+  readonly GatewayARN?: string;
+  readonly DomainName?: string;
+  readonly ActiveDirectoryStatus?: string;
+  readonly SMBGuestPasswordSet?: boolean;
+  readonly SMBSecurityStrategy?: string;
+  readonly FileSharesVisible?: boolean;
+  readonly SMBLocalGroups?: SMBLocalGroups;
 }
 
-interface DescribeSnapshotScheduleInput {
+export interface DescribeSnapshotScheduleInput {
   readonly VolumeARN: string;
 }
 
-interface DescribeSnapshotScheduleOutput {
-  readonly VolumeARN: string;
-  readonly StartAt: number;
-  readonly RecurrenceInHours: number;
-  readonly Description: string;
-  readonly Timezone: string;
-  readonly Tags: [];
+export interface DescribeSnapshotScheduleOutput {
+  readonly VolumeARN?: string;
+  readonly StartAt?: number;
+  readonly RecurrenceInHours?: number;
+  readonly Description?: string;
+  readonly Timezone?: string;
+  readonly Tags?: [];
 }
 
-interface DescribeStorediSCSIVolumesInput {
+export interface DescribeStorediSCSIVolumesInput {
   readonly VolumeARNs: [];
 }
 
-interface DescribeStorediSCSIVolumesOutput {
-  readonly StorediSCSIVolumes: [];
+export interface DescribeStorediSCSIVolumesOutput {
+  readonly StorediSCSIVolumes?: [];
 }
 
-interface DescribeTapeArchivesInput {
-  readonly TapeARNs: [];
-  readonly Marker: string;
-  readonly Limit: number;
+export interface DescribeTapeArchivesInput {
+  readonly TapeARNs?: [];
+  readonly Marker?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeTapeArchivesOutput {
-  readonly TapeArchives: [];
-  readonly Marker: string;
+export interface DescribeTapeArchivesOutput {
+  readonly TapeArchives?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeTapeRecoveryPointsInput {
+export interface DescribeTapeRecoveryPointsInput {
   readonly GatewayARN: string;
-  readonly Marker: string;
-  readonly Limit: number;
+  readonly Marker?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeTapeRecoveryPointsOutput {
+export interface DescribeTapeRecoveryPointsOutput {
+  readonly GatewayARN?: string;
+  readonly TapeRecoveryPointInfos?: [];
+  readonly Marker?: string;
+}
+
+export interface DescribeTapesInput {
   readonly GatewayARN: string;
-  readonly TapeRecoveryPointInfos: [];
-  readonly Marker: string;
+  readonly TapeARNs?: [];
+  readonly Marker?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeTapesInput {
-  readonly GatewayARN: string;
-  readonly TapeARNs: [];
-  readonly Marker: string;
-  readonly Limit: number;
+export interface DescribeTapesOutput {
+  readonly Tapes?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeTapesOutput {
-  readonly Tapes: [];
-  readonly Marker: string;
-}
-
-interface DescribeUploadBufferInput {
-  readonly GatewayARN: string;
-}
-
-interface DescribeUploadBufferOutput {
-  readonly GatewayARN: string;
-  readonly DiskIds: [];
-  readonly UploadBufferUsedInBytes: number;
-  readonly UploadBufferAllocatedInBytes: number;
-}
-
-interface DescribeVTLDevicesInput {
-  readonly GatewayARN: string;
-  readonly VTLDeviceARNs: [];
-  readonly Marker: string;
-  readonly Limit: number;
-}
-
-interface DescribeVTLDevicesOutput {
-  readonly GatewayARN: string;
-  readonly VTLDevices: [];
-  readonly Marker: string;
-}
-
-interface DescribeWorkingStorageInput {
+export interface DescribeUploadBufferInput {
   readonly GatewayARN: string;
 }
 
-interface DescribeWorkingStorageOutput {
-  readonly GatewayARN: string;
-  readonly DiskIds: [];
-  readonly WorkingStorageUsedInBytes: number;
-  readonly WorkingStorageAllocatedInBytes: number;
+export interface DescribeUploadBufferOutput {
+  readonly GatewayARN?: string;
+  readonly DiskIds?: [];
+  readonly UploadBufferUsedInBytes?: number;
+  readonly UploadBufferAllocatedInBytes?: number;
 }
 
-interface DetachVolumeInput {
+export interface DescribeVTLDevicesInput {
+  readonly GatewayARN: string;
+  readonly VTLDeviceARNs?: [];
+  readonly Marker?: string;
+  readonly Limit?: number;
+}
+
+export interface DescribeVTLDevicesOutput {
+  readonly GatewayARN?: string;
+  readonly VTLDevices?: [];
+  readonly Marker?: string;
+}
+
+export interface DescribeWorkingStorageInput {
+  readonly GatewayARN: string;
+}
+
+export interface DescribeWorkingStorageOutput {
+  readonly GatewayARN?: string;
+  readonly DiskIds?: [];
+  readonly WorkingStorageUsedInBytes?: number;
+  readonly WorkingStorageAllocatedInBytes?: number;
+}
+
+export interface DetachVolumeInput {
   readonly VolumeARN: string;
-  readonly ForceDetach: boolean;
+  readonly ForceDetach?: boolean;
 }
 
-interface DetachVolumeOutput {
-  readonly VolumeARN: string;
+export interface DetachVolumeOutput {
+  readonly VolumeARN?: string;
 }
 
-interface DeviceiSCSIAttributes {
-  readonly TargetARN: string;
-  readonly NetworkInterfaceId: string;
-  readonly NetworkInterfacePort: number;
-  readonly ChapEnabled: boolean;
+export interface DeviceiSCSIAttributes {
+  readonly TargetARN?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly NetworkInterfacePort?: number;
+  readonly ChapEnabled?: boolean;
 }
 
-interface DisableGatewayInput {
+export interface DisableGatewayInput {
   readonly GatewayARN: string;
 }
 
-interface DisableGatewayOutput {
-  readonly GatewayARN: string;
+export interface DisableGatewayOutput {
+  readonly GatewayARN?: string;
 }
 
-interface DisassociateFileSystemInput {
+export interface DisassociateFileSystemInput {
   readonly FileSystemAssociationARN: string;
-  readonly ForceDelete: boolean;
+  readonly ForceDelete?: boolean;
 }
 
-interface DisassociateFileSystemOutput {
-  readonly FileSystemAssociationARN: string;
+export interface DisassociateFileSystemOutput {
+  readonly FileSystemAssociationARN?: string;
 }
 
-interface Disk {
-  readonly DiskId: string;
-  readonly DiskPath: string;
-  readonly DiskNode: string;
-  readonly DiskStatus: string;
-  readonly DiskSizeInBytes: number;
-  readonly DiskAllocationType: string;
-  readonly DiskAllocationResource: string;
-  readonly DiskAttributeList: [];
+export interface Disk {
+  readonly DiskId?: string;
+  readonly DiskPath?: string;
+  readonly DiskNode?: string;
+  readonly DiskStatus?: string;
+  readonly DiskSizeInBytes?: number;
+  readonly DiskAllocationType?: string;
+  readonly DiskAllocationResource?: string;
+  readonly DiskAttributeList?: [];
 }
 
-interface EndpointNetworkConfiguration {
-  readonly IpAddresses: [];
+export interface EndpointNetworkConfiguration {
+  readonly IpAddresses?: [];
 }
 
-interface FileShareInfo {
-  readonly FileShareType: string;
-  readonly FileShareARN: string;
-  readonly FileShareId: string;
-  readonly FileShareStatus: string;
-  readonly GatewayARN: string;
+export interface FileShareInfo {
+  readonly FileShareType?: string;
+  readonly FileShareARN?: string;
+  readonly FileShareId?: string;
+  readonly FileShareStatus?: string;
+  readonly GatewayARN?: string;
 }
 
-interface FileSystemAssociationInfo {
-  readonly FileSystemAssociationARN: string;
-  readonly LocationARN: string;
-  readonly FileSystemAssociationStatus: string;
-  readonly AuditDestinationARN: string;
-  readonly GatewayARN: string;
-  readonly Tags: [];
-  readonly CacheAttributes: CacheAttributes;
-  readonly EndpointNetworkConfiguration: EndpointNetworkConfiguration;
-  readonly FileSystemAssociationStatusDetails: [];
+export interface FileSystemAssociationInfo {
+  readonly FileSystemAssociationARN?: string;
+  readonly LocationARN?: string;
+  readonly FileSystemAssociationStatus?: string;
+  readonly AuditDestinationARN?: string;
+  readonly GatewayARN?: string;
+  readonly Tags?: [];
+  readonly CacheAttributes?: CacheAttributes;
+  readonly EndpointNetworkConfiguration?: EndpointNetworkConfiguration;
+  readonly FileSystemAssociationStatusDetails?: [];
 }
 
-interface FileSystemAssociationStatusDetail {
-  readonly ErrorCode: string;
+export interface FileSystemAssociationStatusDetail {
+  readonly ErrorCode?: string;
 }
 
-interface FileSystemAssociationSummary {
-  readonly FileSystemAssociationId: string;
-  readonly FileSystemAssociationARN: string;
-  readonly FileSystemAssociationStatus: string;
-  readonly GatewayARN: string;
+export interface FileSystemAssociationSummary {
+  readonly FileSystemAssociationId?: string;
+  readonly FileSystemAssociationARN?: string;
+  readonly FileSystemAssociationStatus?: string;
+  readonly GatewayARN?: string;
 }
 
-interface GatewayInfo {
-  readonly GatewayId: string;
-  readonly GatewayARN: string;
-  readonly GatewayType: string;
-  readonly GatewayOperationalState: string;
-  readonly GatewayName: string;
-  readonly Ec2InstanceId: string;
-  readonly Ec2InstanceRegion: string;
-  readonly HostEnvironment: string;
-  readonly HostEnvironmentId: string;
+export interface GatewayInfo {
+  readonly GatewayId?: string;
+  readonly GatewayARN?: string;
+  readonly GatewayType?: string;
+  readonly GatewayOperationalState?: string;
+  readonly GatewayName?: string;
+  readonly Ec2InstanceId?: string;
+  readonly Ec2InstanceRegion?: string;
+  readonly HostEnvironment?: string;
+  readonly HostEnvironmentId?: string;
 }
 
-interface InternalServerError {
-  readonly message: string;
-  readonly error: StorageGatewayError;
+export interface InternalServerError {
+  readonly message?: string;
+  readonly error?: StorageGatewayError;
 }
 
-interface InvalidGatewayRequestException {
-  readonly message: string;
-  readonly error: StorageGatewayError;
+export interface InvalidGatewayRequestException {
+  readonly message?: string;
+  readonly error?: StorageGatewayError;
 }
 
-interface JoinDomainInput {
+export interface JoinDomainInput {
   readonly GatewayARN: string;
   readonly DomainName: string;
-  readonly OrganizationalUnit: string;
-  readonly DomainControllers: [];
-  readonly TimeoutInSeconds: number;
+  readonly OrganizationalUnit?: string;
+  readonly DomainControllers?: [];
+  readonly TimeoutInSeconds?: number;
   readonly UserName: string;
   readonly Password: string;
 }
 
-interface JoinDomainOutput {
+export interface JoinDomainOutput {
+  readonly GatewayARN?: string;
+  readonly ActiveDirectoryStatus?: string;
+}
+
+export interface ListAutomaticTapeCreationPoliciesInput {
+  readonly GatewayARN?: string;
+}
+
+export interface ListAutomaticTapeCreationPoliciesOutput {
+  readonly AutomaticTapeCreationPolicyInfos?: [];
+}
+
+export interface ListFileSharesInput {
+  readonly GatewayARN?: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
+}
+
+export interface ListFileSharesOutput {
+  readonly Marker?: string;
+  readonly NextMarker?: string;
+  readonly FileShareInfoList?: [];
+}
+
+export interface ListFileSystemAssociationsInput {
+  readonly GatewayARN?: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
+}
+
+export interface ListFileSystemAssociationsOutput {
+  readonly Marker?: string;
+  readonly NextMarker?: string;
+  readonly FileSystemAssociationSummaryList?: [];
+}
+
+export interface ListGatewaysInput {
+  readonly Marker?: string;
+  readonly Limit?: number;
+}
+
+export interface ListGatewaysOutput {
+  readonly Gateways?: [];
+  readonly Marker?: string;
+}
+
+export interface ListLocalDisksInput {
   readonly GatewayARN: string;
-  readonly ActiveDirectoryStatus: string;
 }
 
-interface ListAutomaticTapeCreationPoliciesInput {
-  readonly GatewayARN: string;
+export interface ListLocalDisksOutput {
+  readonly GatewayARN?: string;
+  readonly Disks?: [];
 }
 
-interface ListAutomaticTapeCreationPoliciesOutput {
-  readonly AutomaticTapeCreationPolicyInfos: [];
-}
-
-interface ListFileSharesInput {
-  readonly GatewayARN: string;
-  readonly Limit: number;
-  readonly Marker: string;
-}
-
-interface ListFileSharesOutput {
-  readonly Marker: string;
-  readonly NextMarker: string;
-  readonly FileShareInfoList: [];
-}
-
-interface ListFileSystemAssociationsInput {
-  readonly GatewayARN: string;
-  readonly Limit: number;
-  readonly Marker: string;
-}
-
-interface ListFileSystemAssociationsOutput {
-  readonly Marker: string;
-  readonly NextMarker: string;
-  readonly FileSystemAssociationSummaryList: [];
-}
-
-interface ListGatewaysInput {
-  readonly Marker: string;
-  readonly Limit: number;
-}
-
-interface ListGatewaysOutput {
-  readonly Gateways: [];
-  readonly Marker: string;
-}
-
-interface ListLocalDisksInput {
-  readonly GatewayARN: string;
-}
-
-interface ListLocalDisksOutput {
-  readonly GatewayARN: string;
-  readonly Disks: [];
-}
-
-interface ListTagsForResourceInput {
+export interface ListTagsForResourceInput {
   readonly ResourceARN: string;
-  readonly Marker: string;
-  readonly Limit: number;
+  readonly Marker?: string;
+  readonly Limit?: number;
 }
 
-interface ListTagsForResourceOutput {
-  readonly ResourceARN: string;
-  readonly Marker: string;
-  readonly Tags: [];
+export interface ListTagsForResourceOutput {
+  readonly ResourceARN?: string;
+  readonly Marker?: string;
+  readonly Tags?: [];
 }
 
-interface ListTapePoolsInput {
-  readonly PoolARNs: [];
-  readonly Marker: string;
-  readonly Limit: number;
+export interface ListTapePoolsInput {
+  readonly PoolARNs?: [];
+  readonly Marker?: string;
+  readonly Limit?: number;
 }
 
-interface ListTapePoolsOutput {
-  readonly PoolInfos: [];
-  readonly Marker: string;
+export interface ListTapePoolsOutput {
+  readonly PoolInfos?: [];
+  readonly Marker?: string;
 }
 
-interface ListTapesInput {
-  readonly TapeARNs: [];
-  readonly Marker: string;
-  readonly Limit: number;
+export interface ListTapesInput {
+  readonly TapeARNs?: [];
+  readonly Marker?: string;
+  readonly Limit?: number;
 }
 
-interface ListTapesOutput {
-  readonly TapeInfos: [];
-  readonly Marker: string;
+export interface ListTapesOutput {
+  readonly TapeInfos?: [];
+  readonly Marker?: string;
 }
 
-interface ListVolumeInitiatorsInput {
+export interface ListVolumeInitiatorsInput {
   readonly VolumeARN: string;
 }
 
-interface ListVolumeInitiatorsOutput {
-  readonly Initiators: [];
+export interface ListVolumeInitiatorsOutput {
+  readonly Initiators?: [];
 }
 
-interface ListVolumeRecoveryPointsInput {
+export interface ListVolumeRecoveryPointsInput {
   readonly GatewayARN: string;
 }
 
-interface ListVolumeRecoveryPointsOutput {
-  readonly GatewayARN: string;
-  readonly VolumeRecoveryPointInfos: [];
+export interface ListVolumeRecoveryPointsOutput {
+  readonly GatewayARN?: string;
+  readonly VolumeRecoveryPointInfos?: [];
 }
 
-interface ListVolumesInput {
-  readonly GatewayARN: string;
-  readonly Marker: string;
-  readonly Limit: number;
+export interface ListVolumesInput {
+  readonly GatewayARN?: string;
+  readonly Marker?: string;
+  readonly Limit?: number;
 }
 
-interface ListVolumesOutput {
-  readonly GatewayARN: string;
-  readonly Marker: string;
-  readonly VolumeInfos: [];
+export interface ListVolumesOutput {
+  readonly GatewayARN?: string;
+  readonly Marker?: string;
+  readonly VolumeInfos?: [];
 }
 
-interface NFSFileShareDefaults {
-  readonly FileMode: string;
-  readonly DirectoryMode: string;
-  readonly GroupId: number;
-  readonly OwnerId: number;
+export interface NFSFileShareDefaults {
+  readonly FileMode?: string;
+  readonly DirectoryMode?: string;
+  readonly GroupId?: number;
+  readonly OwnerId?: number;
 }
 
-interface NFSFileShareInfo {
-  readonly NFSFileShareDefaults: NFSFileShareDefaults;
+export interface NFSFileShareInfo {
+  readonly NFSFileShareDefaults?: NFSFileShareDefaults;
+  readonly FileShareARN?: string;
+  readonly FileShareId?: string;
+  readonly FileShareStatus?: string;
+  readonly GatewayARN?: string;
+  readonly KMSEncrypted?: boolean;
+  readonly KMSKey?: string;
+  readonly Path?: string;
+  readonly Role?: string;
+  readonly LocationARN?: string;
+  readonly DefaultStorageClass?: string;
+  readonly ObjectACL?: string;
+  readonly ClientList?: [];
+  readonly Squash?: string;
+  readonly ReadOnly?: boolean;
+  readonly GuessMIMETypeEnabled?: boolean;
+  readonly RequesterPays?: boolean;
+  readonly Tags?: [];
+  readonly FileShareName?: string;
+  readonly CacheAttributes?: CacheAttributes;
+  readonly NotificationPolicy?: string;
+  readonly VPCEndpointDNSName?: string;
+  readonly BucketRegion?: string;
+  readonly AuditDestinationARN?: string;
+}
+
+export interface NetworkInterface {
+  readonly Ipv4Address?: string;
+  readonly MacAddress?: string;
+  readonly Ipv6Address?: string;
+}
+
+export interface NotifyWhenUploadedInput {
   readonly FileShareARN: string;
-  readonly FileShareId: string;
-  readonly FileShareStatus: string;
-  readonly GatewayARN: string;
-  readonly KMSEncrypted: boolean;
-  readonly KMSKey: string;
-  readonly Path: string;
-  readonly Role: string;
-  readonly LocationARN: string;
-  readonly DefaultStorageClass: string;
-  readonly ObjectACL: string;
-  readonly ClientList: [];
-  readonly Squash: string;
-  readonly ReadOnly: boolean;
-  readonly GuessMIMETypeEnabled: boolean;
-  readonly RequesterPays: boolean;
-  readonly Tags: [];
-  readonly FileShareName: string;
-  readonly CacheAttributes: CacheAttributes;
-  readonly NotificationPolicy: string;
-  readonly VPCEndpointDNSName: string;
-  readonly BucketRegion: string;
-  readonly AuditDestinationARN: string;
 }
 
-interface NetworkInterface {
-  readonly Ipv4Address: string;
-  readonly MacAddress: string;
-  readonly Ipv6Address: string;
+export interface NotifyWhenUploadedOutput {
+  readonly FileShareARN?: string;
+  readonly NotificationId?: string;
 }
 
-interface NotifyWhenUploadedInput {
+export interface PoolInfo {
+  readonly PoolARN?: string;
+  readonly PoolName?: string;
+  readonly StorageClass?: string;
+  readonly RetentionLockType?: string;
+  readonly RetentionLockTimeInDays?: number;
+  readonly PoolStatus?: string;
+}
+
+export interface RefreshCacheInput {
   readonly FileShareARN: string;
+  readonly FolderList?: [];
+  readonly Recursive?: boolean;
 }
 
-interface NotifyWhenUploadedOutput {
-  readonly FileShareARN: string;
-  readonly NotificationId: string;
+export interface RefreshCacheOutput {
+  readonly FileShareARN?: string;
+  readonly NotificationId?: string;
 }
 
-interface PoolInfo {
-  readonly PoolARN: string;
-  readonly PoolName: string;
-  readonly StorageClass: string;
-  readonly RetentionLockType: string;
-  readonly RetentionLockTimeInDays: number;
-  readonly PoolStatus: string;
-}
-
-interface RefreshCacheInput {
-  readonly FileShareARN: string;
-  readonly FolderList: [];
-  readonly Recursive: boolean;
-}
-
-interface RefreshCacheOutput {
-  readonly FileShareARN: string;
-  readonly NotificationId: string;
-}
-
-interface RemoveTagsFromResourceInput {
+export interface RemoveTagsFromResourceInput {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface RemoveTagsFromResourceOutput {
-  readonly ResourceARN: string;
+export interface RemoveTagsFromResourceOutput {
+  readonly ResourceARN?: string;
 }
 
-interface ResetCacheInput {
+export interface ResetCacheInput {
   readonly GatewayARN: string;
 }
 
-interface ResetCacheOutput {
-  readonly GatewayARN: string;
+export interface ResetCacheOutput {
+  readonly GatewayARN?: string;
 }
 
-interface RetrieveTapeArchiveInput {
+export interface RetrieveTapeArchiveInput {
   readonly TapeARN: string;
   readonly GatewayARN: string;
 }
 
-interface RetrieveTapeArchiveOutput {
-  readonly TapeARN: string;
+export interface RetrieveTapeArchiveOutput {
+  readonly TapeARN?: string;
 }
 
-interface RetrieveTapeRecoveryPointInput {
+export interface RetrieveTapeRecoveryPointInput {
   readonly TapeARN: string;
   readonly GatewayARN: string;
 }
 
-interface RetrieveTapeRecoveryPointOutput {
-  readonly TapeARN: string;
+export interface RetrieveTapeRecoveryPointOutput {
+  readonly TapeARN?: string;
 }
 
-interface SMBFileShareInfo {
-  readonly FileShareARN: string;
-  readonly FileShareId: string;
-  readonly FileShareStatus: string;
-  readonly GatewayARN: string;
-  readonly KMSEncrypted: boolean;
-  readonly KMSKey: string;
-  readonly Path: string;
-  readonly Role: string;
-  readonly LocationARN: string;
-  readonly DefaultStorageClass: string;
-  readonly ObjectACL: string;
-  readonly ReadOnly: boolean;
-  readonly GuessMIMETypeEnabled: boolean;
-  readonly RequesterPays: boolean;
-  readonly SMBACLEnabled: boolean;
-  readonly AccessBasedEnumeration: boolean;
-  readonly AdminUserList: [];
-  readonly ValidUserList: [];
-  readonly InvalidUserList: [];
-  readonly AuditDestinationARN: string;
-  readonly Authentication: string;
-  readonly CaseSensitivity: string;
-  readonly Tags: [];
-  readonly FileShareName: string;
-  readonly CacheAttributes: CacheAttributes;
-  readonly NotificationPolicy: string;
-  readonly VPCEndpointDNSName: string;
-  readonly BucketRegion: string;
-  readonly OplocksEnabled: boolean;
+export interface SMBFileShareInfo {
+  readonly FileShareARN?: string;
+  readonly FileShareId?: string;
+  readonly FileShareStatus?: string;
+  readonly GatewayARN?: string;
+  readonly KMSEncrypted?: boolean;
+  readonly KMSKey?: string;
+  readonly Path?: string;
+  readonly Role?: string;
+  readonly LocationARN?: string;
+  readonly DefaultStorageClass?: string;
+  readonly ObjectACL?: string;
+  readonly ReadOnly?: boolean;
+  readonly GuessMIMETypeEnabled?: boolean;
+  readonly RequesterPays?: boolean;
+  readonly SMBACLEnabled?: boolean;
+  readonly AccessBasedEnumeration?: boolean;
+  readonly AdminUserList?: [];
+  readonly ValidUserList?: [];
+  readonly InvalidUserList?: [];
+  readonly AuditDestinationARN?: string;
+  readonly Authentication?: string;
+  readonly CaseSensitivity?: string;
+  readonly Tags?: [];
+  readonly FileShareName?: string;
+  readonly CacheAttributes?: CacheAttributes;
+  readonly NotificationPolicy?: string;
+  readonly VPCEndpointDNSName?: string;
+  readonly BucketRegion?: string;
+  readonly OplocksEnabled?: boolean;
 }
 
-interface SMBLocalGroups {
-  readonly GatewayAdmins: [];
+export interface SMBLocalGroups {
+  readonly GatewayAdmins?: [];
 }
 
-interface ServiceUnavailableError {
-  readonly message: string;
-  readonly error: StorageGatewayError;
+export interface ServiceUnavailableError {
+  readonly message?: string;
+  readonly error?: StorageGatewayError;
 }
 
-interface SetLocalConsolePasswordInput {
+export interface SetLocalConsolePasswordInput {
   readonly GatewayARN: string;
   readonly LocalConsolePassword: string;
 }
 
-interface SetLocalConsolePasswordOutput {
-  readonly GatewayARN: string;
+export interface SetLocalConsolePasswordOutput {
+  readonly GatewayARN?: string;
 }
 
-interface SetSMBGuestPasswordInput {
+export interface SetSMBGuestPasswordInput {
   readonly GatewayARN: string;
   readonly Password: string;
 }
 
-interface SetSMBGuestPasswordOutput {
+export interface SetSMBGuestPasswordOutput {
+  readonly GatewayARN?: string;
+}
+
+export interface ShutdownGatewayInput {
   readonly GatewayARN: string;
 }
 
-interface ShutdownGatewayInput {
+export interface ShutdownGatewayOutput {
+  readonly GatewayARN?: string;
+}
+
+export interface StartAvailabilityMonitorTestInput {
   readonly GatewayARN: string;
 }
 
-interface ShutdownGatewayOutput {
+export interface StartAvailabilityMonitorTestOutput {
+  readonly GatewayARN?: string;
+}
+
+export interface StartGatewayInput {
   readonly GatewayARN: string;
 }
 
-interface StartAvailabilityMonitorTestInput {
-  readonly GatewayARN: string;
+export interface StartGatewayOutput {
+  readonly GatewayARN?: string;
 }
 
-interface StartAvailabilityMonitorTestOutput {
-  readonly GatewayARN: string;
+export interface StorageGatewayError {
+  readonly errorCode?: string;
+  readonly errorDetails?: {[key: string]: any};
 }
 
-interface StartGatewayInput {
-  readonly GatewayARN: string;
+export interface StorediSCSIVolume {
+  readonly VolumeARN?: string;
+  readonly VolumeId?: string;
+  readonly VolumeType?: string;
+  readonly VolumeStatus?: string;
+  readonly VolumeAttachmentStatus?: string;
+  readonly VolumeSizeInBytes?: number;
+  readonly VolumeProgress?: unknown;
+  readonly VolumeDiskId?: string;
+  readonly SourceSnapshotId?: string;
+  readonly PreservedExistingData?: boolean;
+  readonly VolumeiSCSIAttributes?: VolumeiSCSIAttributes;
+  readonly CreatedDate?: Date;
+  readonly VolumeUsedInBytes?: number;
+  readonly KMSKey?: string;
+  readonly TargetName?: string;
 }
 
-interface StartGatewayOutput {
-  readonly GatewayARN: string;
-}
-
-interface StorageGatewayError {
-  readonly errorCode: string;
-  readonly errorDetails: {[key: string]: any};
-}
-
-interface StorediSCSIVolume {
-  readonly VolumeARN: string;
-  readonly VolumeId: string;
-  readonly VolumeType: string;
-  readonly VolumeStatus: string;
-  readonly VolumeAttachmentStatus: string;
-  readonly VolumeSizeInBytes: number;
-  readonly VolumeProgress: unknown;
-  readonly VolumeDiskId: string;
-  readonly SourceSnapshotId: string;
-  readonly PreservedExistingData: boolean;
-  readonly VolumeiSCSIAttributes: VolumeiSCSIAttributes;
-  readonly CreatedDate: Date;
-  readonly VolumeUsedInBytes: number;
-  readonly KMSKey: string;
-  readonly TargetName: string;
-}
-
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface Tape {
-  readonly TapeARN: string;
-  readonly TapeBarcode: string;
-  readonly TapeCreatedDate: Date;
-  readonly TapeSizeInBytes: number;
-  readonly TapeStatus: string;
-  readonly VTLDevice: string;
-  readonly Progress: unknown;
-  readonly TapeUsedInBytes: number;
-  readonly KMSKey: string;
-  readonly PoolId: string;
-  readonly Worm: boolean;
-  readonly RetentionStartDate: Date;
-  readonly PoolEntryDate: Date;
+export interface Tape {
+  readonly TapeARN?: string;
+  readonly TapeBarcode?: string;
+  readonly TapeCreatedDate?: Date;
+  readonly TapeSizeInBytes?: number;
+  readonly TapeStatus?: string;
+  readonly VTLDevice?: string;
+  readonly Progress?: unknown;
+  readonly TapeUsedInBytes?: number;
+  readonly KMSKey?: string;
+  readonly PoolId?: string;
+  readonly Worm?: boolean;
+  readonly RetentionStartDate?: Date;
+  readonly PoolEntryDate?: Date;
 }
 
-interface TapeArchive {
-  readonly TapeARN: string;
-  readonly TapeBarcode: string;
-  readonly TapeCreatedDate: Date;
-  readonly TapeSizeInBytes: number;
-  readonly CompletionTime: Date;
-  readonly RetrievedTo: string;
-  readonly TapeStatus: string;
-  readonly TapeUsedInBytes: number;
-  readonly KMSKey: string;
-  readonly PoolId: string;
-  readonly Worm: boolean;
-  readonly RetentionStartDate: Date;
-  readonly PoolEntryDate: Date;
+export interface TapeArchive {
+  readonly TapeARN?: string;
+  readonly TapeBarcode?: string;
+  readonly TapeCreatedDate?: Date;
+  readonly TapeSizeInBytes?: number;
+  readonly CompletionTime?: Date;
+  readonly RetrievedTo?: string;
+  readonly TapeStatus?: string;
+  readonly TapeUsedInBytes?: number;
+  readonly KMSKey?: string;
+  readonly PoolId?: string;
+  readonly Worm?: boolean;
+  readonly RetentionStartDate?: Date;
+  readonly PoolEntryDate?: Date;
 }
 
-interface TapeInfo {
-  readonly TapeARN: string;
-  readonly TapeBarcode: string;
-  readonly TapeSizeInBytes: number;
-  readonly TapeStatus: string;
-  readonly GatewayARN: string;
-  readonly PoolId: string;
-  readonly RetentionStartDate: Date;
-  readonly PoolEntryDate: Date;
+export interface TapeInfo {
+  readonly TapeARN?: string;
+  readonly TapeBarcode?: string;
+  readonly TapeSizeInBytes?: number;
+  readonly TapeStatus?: string;
+  readonly GatewayARN?: string;
+  readonly PoolId?: string;
+  readonly RetentionStartDate?: Date;
+  readonly PoolEntryDate?: Date;
 }
 
-interface TapeRecoveryPointInfo {
-  readonly TapeARN: string;
-  readonly TapeRecoveryPointTime: Date;
-  readonly TapeSizeInBytes: number;
-  readonly TapeStatus: string;
+export interface TapeRecoveryPointInfo {
+  readonly TapeARN?: string;
+  readonly TapeRecoveryPointTime?: Date;
+  readonly TapeSizeInBytes?: number;
+  readonly TapeStatus?: string;
 }
 
-interface UpdateAutomaticTapeCreationPolicyInput {
+export interface UpdateAutomaticTapeCreationPolicyInput {
   readonly AutomaticTapeCreationRules: [];
   readonly GatewayARN: string;
 }
 
-interface UpdateAutomaticTapeCreationPolicyOutput {
-  readonly GatewayARN: string;
+export interface UpdateAutomaticTapeCreationPolicyOutput {
+  readonly GatewayARN?: string;
 }
 
-interface UpdateBandwidthRateLimitInput {
+export interface UpdateBandwidthRateLimitInput {
   readonly GatewayARN: string;
-  readonly AverageUploadRateLimitInBitsPerSec: number;
-  readonly AverageDownloadRateLimitInBitsPerSec: number;
+  readonly AverageUploadRateLimitInBitsPerSec?: number;
+  readonly AverageDownloadRateLimitInBitsPerSec?: number;
 }
 
-interface UpdateBandwidthRateLimitOutput {
-  readonly GatewayARN: string;
+export interface UpdateBandwidthRateLimitOutput {
+  readonly GatewayARN?: string;
 }
 
-interface UpdateBandwidthRateLimitScheduleInput {
+export interface UpdateBandwidthRateLimitScheduleInput {
   readonly GatewayARN: string;
   readonly BandwidthRateLimitIntervals: [];
 }
 
-interface UpdateBandwidthRateLimitScheduleOutput {
-  readonly GatewayARN: string;
+export interface UpdateBandwidthRateLimitScheduleOutput {
+  readonly GatewayARN?: string;
 }
 
-interface UpdateChapCredentialsInput {
+export interface UpdateChapCredentialsInput {
   readonly TargetARN: string;
   readonly SecretToAuthenticateInitiator: string;
   readonly InitiatorName: string;
-  readonly SecretToAuthenticateTarget: string;
+  readonly SecretToAuthenticateTarget?: string;
 }
 
-interface UpdateChapCredentialsOutput {
-  readonly TargetARN: string;
-  readonly InitiatorName: string;
+export interface UpdateChapCredentialsOutput {
+  readonly TargetARN?: string;
+  readonly InitiatorName?: string;
 }
 
-interface UpdateFileSystemAssociationInput {
+export interface UpdateFileSystemAssociationInput {
   readonly FileSystemAssociationARN: string;
-  readonly UserName: string;
-  readonly Password: string;
-  readonly AuditDestinationARN: string;
-  readonly CacheAttributes: CacheAttributes;
+  readonly UserName?: string;
+  readonly Password?: string;
+  readonly AuditDestinationARN?: string;
+  readonly CacheAttributes?: CacheAttributes;
 }
 
-interface UpdateFileSystemAssociationOutput {
-  readonly FileSystemAssociationARN: string;
+export interface UpdateFileSystemAssociationOutput {
+  readonly FileSystemAssociationARN?: string;
 }
 
-interface UpdateGatewayInformationInput {
+export interface UpdateGatewayInformationInput {
   readonly GatewayARN: string;
-  readonly GatewayName: string;
-  readonly GatewayTimezone: string;
-  readonly CloudWatchLogGroupARN: string;
-  readonly GatewayCapacity: string;
+  readonly GatewayName?: string;
+  readonly GatewayTimezone?: string;
+  readonly CloudWatchLogGroupARN?: string;
+  readonly GatewayCapacity?: string;
 }
 
-interface UpdateGatewayInformationOutput {
-  readonly GatewayARN: string;
-  readonly GatewayName: string;
+export interface UpdateGatewayInformationOutput {
+  readonly GatewayARN?: string;
+  readonly GatewayName?: string;
 }
 
-interface UpdateGatewaySoftwareNowInput {
-  readonly GatewayARN: string;
-}
-
-interface UpdateGatewaySoftwareNowOutput {
+export interface UpdateGatewaySoftwareNowInput {
   readonly GatewayARN: string;
 }
 
-interface UpdateMaintenanceStartTimeInput {
+export interface UpdateGatewaySoftwareNowOutput {
+  readonly GatewayARN?: string;
+}
+
+export interface UpdateMaintenanceStartTimeInput {
   readonly GatewayARN: string;
   readonly HourOfDay: number;
   readonly MinuteOfHour: number;
-  readonly DayOfWeek: number;
-  readonly DayOfMonth: number;
+  readonly DayOfWeek?: number;
+  readonly DayOfMonth?: number;
 }
 
-interface UpdateMaintenanceStartTimeOutput {
-  readonly GatewayARN: string;
+export interface UpdateMaintenanceStartTimeOutput {
+  readonly GatewayARN?: string;
 }
 
-interface UpdateNFSFileShareInput {
+export interface UpdateNFSFileShareInput {
   readonly FileShareARN: string;
-  readonly KMSEncrypted: boolean;
-  readonly KMSKey: string;
-  readonly NFSFileShareDefaults: NFSFileShareDefaults;
-  readonly DefaultStorageClass: string;
-  readonly ObjectACL: string;
-  readonly ClientList: [];
-  readonly Squash: string;
-  readonly ReadOnly: boolean;
-  readonly GuessMIMETypeEnabled: boolean;
-  readonly RequesterPays: boolean;
-  readonly FileShareName: string;
-  readonly CacheAttributes: CacheAttributes;
-  readonly NotificationPolicy: string;
-  readonly AuditDestinationARN: string;
+  readonly KMSEncrypted?: boolean;
+  readonly KMSKey?: string;
+  readonly NFSFileShareDefaults?: NFSFileShareDefaults;
+  readonly DefaultStorageClass?: string;
+  readonly ObjectACL?: string;
+  readonly ClientList?: [];
+  readonly Squash?: string;
+  readonly ReadOnly?: boolean;
+  readonly GuessMIMETypeEnabled?: boolean;
+  readonly RequesterPays?: boolean;
+  readonly FileShareName?: string;
+  readonly CacheAttributes?: CacheAttributes;
+  readonly NotificationPolicy?: string;
+  readonly AuditDestinationARN?: string;
 }
 
-interface UpdateNFSFileShareOutput {
+export interface UpdateNFSFileShareOutput {
+  readonly FileShareARN?: string;
+}
+
+export interface UpdateSMBFileShareInput {
   readonly FileShareARN: string;
+  readonly KMSEncrypted?: boolean;
+  readonly KMSKey?: string;
+  readonly DefaultStorageClass?: string;
+  readonly ObjectACL?: string;
+  readonly ReadOnly?: boolean;
+  readonly GuessMIMETypeEnabled?: boolean;
+  readonly RequesterPays?: boolean;
+  readonly SMBACLEnabled?: boolean;
+  readonly AccessBasedEnumeration?: boolean;
+  readonly AdminUserList?: [];
+  readonly ValidUserList?: [];
+  readonly InvalidUserList?: [];
+  readonly AuditDestinationARN?: string;
+  readonly CaseSensitivity?: string;
+  readonly FileShareName?: string;
+  readonly CacheAttributes?: CacheAttributes;
+  readonly NotificationPolicy?: string;
+  readonly OplocksEnabled?: boolean;
 }
 
-interface UpdateSMBFileShareInput {
-  readonly FileShareARN: string;
-  readonly KMSEncrypted: boolean;
-  readonly KMSKey: string;
-  readonly DefaultStorageClass: string;
-  readonly ObjectACL: string;
-  readonly ReadOnly: boolean;
-  readonly GuessMIMETypeEnabled: boolean;
-  readonly RequesterPays: boolean;
-  readonly SMBACLEnabled: boolean;
-  readonly AccessBasedEnumeration: boolean;
-  readonly AdminUserList: [];
-  readonly ValidUserList: [];
-  readonly InvalidUserList: [];
-  readonly AuditDestinationARN: string;
-  readonly CaseSensitivity: string;
-  readonly FileShareName: string;
-  readonly CacheAttributes: CacheAttributes;
-  readonly NotificationPolicy: string;
-  readonly OplocksEnabled: boolean;
+export interface UpdateSMBFileShareOutput {
+  readonly FileShareARN?: string;
 }
 
-interface UpdateSMBFileShareOutput {
-  readonly FileShareARN: string;
-}
-
-interface UpdateSMBFileShareVisibilityInput {
+export interface UpdateSMBFileShareVisibilityInput {
   readonly GatewayARN: string;
   readonly FileSharesVisible: boolean;
 }
 
-interface UpdateSMBFileShareVisibilityOutput {
-  readonly GatewayARN: string;
+export interface UpdateSMBFileShareVisibilityOutput {
+  readonly GatewayARN?: string;
 }
 
-interface UpdateSMBLocalGroupsInput {
+export interface UpdateSMBLocalGroupsInput {
   readonly GatewayARN: string;
   readonly SMBLocalGroups: SMBLocalGroups;
 }
 
-interface UpdateSMBLocalGroupsOutput {
-  readonly GatewayARN: string;
+export interface UpdateSMBLocalGroupsOutput {
+  readonly GatewayARN?: string;
 }
 
-interface UpdateSMBSecurityStrategyInput {
+export interface UpdateSMBSecurityStrategyInput {
   readonly GatewayARN: string;
   readonly SMBSecurityStrategy: string;
 }
 
-interface UpdateSMBSecurityStrategyOutput {
-  readonly GatewayARN: string;
+export interface UpdateSMBSecurityStrategyOutput {
+  readonly GatewayARN?: string;
 }
 
-interface UpdateSnapshotScheduleInput {
+export interface UpdateSnapshotScheduleInput {
   readonly VolumeARN: string;
   readonly StartAt: number;
   readonly RecurrenceInHours: number;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 
-interface UpdateSnapshotScheduleOutput {
-  readonly VolumeARN: string;
+export interface UpdateSnapshotScheduleOutput {
+  readonly VolumeARN?: string;
 }
 
-interface UpdateVTLDeviceTypeInput {
+export interface UpdateVTLDeviceTypeInput {
   readonly VTLDeviceARN: string;
   readonly DeviceType: string;
 }
 
-interface UpdateVTLDeviceTypeOutput {
-  readonly VTLDeviceARN: string;
+export interface UpdateVTLDeviceTypeOutput {
+  readonly VTLDeviceARN?: string;
 }
 
-interface VTLDevice {
-  readonly VTLDeviceARN: string;
-  readonly VTLDeviceType: string;
-  readonly VTLDeviceVendor: string;
-  readonly VTLDeviceProductIdentifier: string;
-  readonly DeviceiSCSIAttributes: DeviceiSCSIAttributes;
+export interface VTLDevice {
+  readonly VTLDeviceARN?: string;
+  readonly VTLDeviceType?: string;
+  readonly VTLDeviceVendor?: string;
+  readonly VTLDeviceProductIdentifier?: string;
+  readonly DeviceiSCSIAttributes?: DeviceiSCSIAttributes;
 }
 
-interface VolumeInfo {
-  readonly VolumeARN: string;
-  readonly VolumeId: string;
-  readonly GatewayARN: string;
-  readonly GatewayId: string;
-  readonly VolumeType: string;
-  readonly VolumeSizeInBytes: number;
-  readonly VolumeAttachmentStatus: string;
+export interface VolumeInfo {
+  readonly VolumeARN?: string;
+  readonly VolumeId?: string;
+  readonly GatewayARN?: string;
+  readonly GatewayId?: string;
+  readonly VolumeType?: string;
+  readonly VolumeSizeInBytes?: number;
+  readonly VolumeAttachmentStatus?: string;
 }
 
-interface VolumeRecoveryPointInfo {
-  readonly VolumeARN: string;
-  readonly VolumeSizeInBytes: number;
-  readonly VolumeUsageInBytes: number;
-  readonly VolumeRecoveryPointTime: string;
+export interface VolumeRecoveryPointInfo {
+  readonly VolumeARN?: string;
+  readonly VolumeSizeInBytes?: number;
+  readonly VolumeUsageInBytes?: number;
+  readonly VolumeRecoveryPointTime?: string;
 }
 
-interface VolumeiSCSIAttributes {
-  readonly TargetARN: string;
-  readonly NetworkInterfaceId: string;
-  readonly NetworkInterfacePort: number;
-  readonly LunNumber: number;
-  readonly ChapEnabled: boolean;
+export interface VolumeiSCSIAttributes {
+  readonly TargetARN?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly NetworkInterfacePort?: number;
+  readonly LunNumber?: number;
+  readonly ChapEnabled?: boolean;
 }
+
 

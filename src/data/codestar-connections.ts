@@ -7,6 +7,7 @@ export interface CreateConnection {
   readonly Tags?: [];
   readonly HostArn?: string;
 }
+
 export interface CreateHost {
   readonly Name: string;
   readonly ProviderType: string;
@@ -14,209 +15,218 @@ export interface CreateHost {
   readonly VpcConfiguration?: VpcConfiguration;
   readonly Tags?: [];
 }
+
 export interface DeleteConnection {
   readonly ConnectionArn: string;
 }
+
 export interface DeleteHost {
   readonly HostArn: string;
 }
+
 export interface GetConnection {
   readonly ConnectionArn: string;
 }
+
 export interface GetHost {
   readonly HostArn: string;
 }
+
 export interface ListConnections {
   readonly ProviderTypeFilter?: string;
   readonly HostArnFilter?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListHosts {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateHost {
   readonly HostArn: string;
   readonly ProviderEndpoint?: string;
   readonly VpcConfiguration?: VpcConfiguration;
 }
 
-
-
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface Connection {
+export interface Connection {
+  readonly ConnectionName?: string;
+  readonly ConnectionArn?: string;
+  readonly ProviderType?: string;
+  readonly OwnerAccountId?: string;
+  readonly ConnectionStatus?: string;
+  readonly HostArn?: string;
+}
+
+export interface CreateConnectionInput {
+  readonly ProviderType?: string;
   readonly ConnectionName: string;
+  readonly Tags?: [];
+  readonly HostArn?: string;
+}
+
+export interface CreateConnectionOutput {
   readonly ConnectionArn: string;
-  readonly ProviderType: string;
-  readonly OwnerAccountId: string;
-  readonly ConnectionStatus: string;
-  readonly HostArn: string;
+  readonly Tags?: [];
 }
 
-interface CreateConnectionInput {
-  readonly ProviderType: string;
-  readonly ConnectionName: string;
-  readonly Tags: [];
-  readonly HostArn: string;
-}
-
-interface CreateConnectionOutput {
-  readonly ConnectionArn: string;
-  readonly Tags: [];
-}
-
-interface CreateHostInput {
+export interface CreateHostInput {
   readonly Name: string;
   readonly ProviderType: string;
   readonly ProviderEndpoint: string;
-  readonly VpcConfiguration: VpcConfiguration;
-  readonly Tags: [];
+  readonly VpcConfiguration?: VpcConfiguration;
+  readonly Tags?: [];
 }
 
-interface CreateHostOutput {
-  readonly HostArn: string;
-  readonly Tags: [];
+export interface CreateHostOutput {
+  readonly HostArn?: string;
+  readonly Tags?: [];
 }
 
-interface DeleteConnectionInput {
+export interface DeleteConnectionInput {
   readonly ConnectionArn: string;
 }
 
-interface DeleteConnectionOutput {
+export interface DeleteConnectionOutput {
 }
 
-interface DeleteHostInput {
+export interface DeleteHostInput {
   readonly HostArn: string;
 }
 
-interface DeleteHostOutput {
+export interface DeleteHostOutput {
 }
 
-interface GetConnectionInput {
+export interface GetConnectionInput {
   readonly ConnectionArn: string;
 }
 
-interface GetConnectionOutput {
-  readonly Connection: Connection;
+export interface GetConnectionOutput {
+  readonly Connection?: Connection;
 }
 
-interface GetHostInput {
+export interface GetHostInput {
   readonly HostArn: string;
 }
 
-interface GetHostOutput {
-  readonly Name: string;
-  readonly Status: string;
-  readonly ProviderType: string;
-  readonly ProviderEndpoint: string;
-  readonly VpcConfiguration: VpcConfiguration;
+export interface GetHostOutput {
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly ProviderType?: string;
+  readonly ProviderEndpoint?: string;
+  readonly VpcConfiguration?: VpcConfiguration;
 }
 
-interface Host {
-  readonly Name: string;
-  readonly HostArn: string;
-  readonly ProviderType: string;
-  readonly ProviderEndpoint: string;
-  readonly VpcConfiguration: VpcConfiguration;
-  readonly Status: string;
-  readonly StatusMessage: string;
+export interface Host {
+  readonly Name?: string;
+  readonly HostArn?: string;
+  readonly ProviderType?: string;
+  readonly ProviderEndpoint?: string;
+  readonly VpcConfiguration?: VpcConfiguration;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface ListConnectionsInput {
-  readonly ProviderTypeFilter: string;
-  readonly HostArnFilter: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListConnectionsInput {
+  readonly ProviderTypeFilter?: string;
+  readonly HostArnFilter?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListConnectionsOutput {
-  readonly Connections: [];
-  readonly NextToken: string;
+export interface ListConnectionsOutput {
+  readonly Connections?: [];
+  readonly NextToken?: string;
 }
 
-interface ListHostsInput {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListHostsInput {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListHostsOutput {
-  readonly Hosts: [];
-  readonly NextToken: string;
+export interface ListHostsOutput {
+  readonly Hosts?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceInput {
+export interface ListTagsForResourceInput {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceOutput {
-  readonly Tags: [];
+export interface ListTagsForResourceOutput {
+  readonly Tags?: [];
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface ResourceUnavailableException {
-  readonly Message: string;
+export interface ResourceUnavailableException {
+  readonly Message?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceInput {
+export interface TagResourceInput {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceOutput {
+export interface TagResourceOutput {
 }
 
-interface UnsupportedOperationException {
-  readonly Message: string;
+export interface UnsupportedOperationException {
+  readonly Message?: string;
 }
 
-interface UntagResourceInput {
+export interface UntagResourceInput {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceOutput {
+export interface UntagResourceOutput {
 }
 
-interface UpdateHostInput {
+export interface UpdateHostInput {
   readonly HostArn: string;
-  readonly ProviderEndpoint: string;
-  readonly VpcConfiguration: VpcConfiguration;
+  readonly ProviderEndpoint?: string;
+  readonly VpcConfiguration?: VpcConfiguration;
 }
 
-interface UpdateHostOutput {
+export interface UpdateHostOutput {
 }
 
-interface VpcConfiguration {
+export interface VpcConfiguration {
   readonly VpcId: string;
   readonly SubnetIds: [];
   readonly SecurityGroupIds: [];
-  readonly TlsCertificate: string;
+  readonly TlsCertificate?: string;
 }
+
 

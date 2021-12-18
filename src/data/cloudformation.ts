@@ -13,19 +13,23 @@ export interface ActivateType {
   readonly VersionBump?: string;
   readonly MajorVersion?: number;
 }
+
 export interface BatchDescribeTypeConfigurations {
   readonly TypeConfigurationIdentifiers: [];
 }
+
 export interface CancelUpdateStack {
   readonly StackName: string;
   readonly ClientRequestToken?: string;
 }
+
 export interface ContinueUpdateRollback {
   readonly StackName: string;
   readonly RoleARN?: string;
   readonly ResourcesToSkip?: [];
   readonly ClientRequestToken?: string;
 }
+
 export interface CreateChangeSet {
   readonly StackName: string;
   readonly TemplateBody?: string;
@@ -45,6 +49,7 @@ export interface CreateChangeSet {
   readonly ResourcesToImport?: [];
   readonly IncludeNestedStacks?: boolean;
 }
+
 export interface CreateStack {
   readonly StackName: string;
   readonly TemplateBody?: string;
@@ -64,6 +69,7 @@ export interface CreateStack {
   readonly ClientRequestToken?: string;
   readonly EnableTerminationProtection?: boolean;
 }
+
 export interface CreateStackInstances {
   readonly StackSetName: string;
   readonly Accounts?: [];
@@ -74,6 +80,7 @@ export interface CreateStackInstances {
   readonly OperationId?: string;
   readonly CallAs?: string;
 }
+
 export interface CreateStackSet {
   readonly StackSetName: string;
   readonly Description?: string;
@@ -91,21 +98,25 @@ export interface CreateStackSet {
   readonly ClientRequestToken?: string;
   readonly ManagedExecution?: ManagedExecution;
 }
+
 export interface DeactivateType {
   readonly TypeName?: string;
   readonly Type?: string;
   readonly Arn?: string;
 }
+
 export interface DeleteChangeSet {
   readonly ChangeSetName: string;
   readonly StackName?: string;
 }
+
 export interface DeleteStack {
   readonly StackName: string;
   readonly RetainResources?: [];
   readonly RoleARN?: string;
   readonly ClientRequestToken?: string;
 }
+
 export interface DeleteStackInstances {
   readonly StackSetName: string;
   readonly Accounts?: [];
@@ -116,68 +127,83 @@ export interface DeleteStackInstances {
   readonly OperationId?: string;
   readonly CallAs?: string;
 }
+
 export interface DeleteStackSet {
   readonly StackSetName: string;
   readonly CallAs?: string;
 }
+
 export interface DeregisterType {
   readonly Arn?: string;
   readonly Type?: string;
   readonly TypeName?: string;
   readonly VersionId?: string;
 }
+
 export interface DescribeAccountLimits {
   readonly NextToken?: string;
 }
+
 export interface DescribeChangeSet {
   readonly ChangeSetName: string;
   readonly StackName?: string;
   readonly NextToken?: string;
 }
+
 export interface DescribePublisher {
   readonly PublisherId?: string;
 }
+
 export interface DescribeStackDriftDetectionStatus {
   readonly StackDriftDetectionId: string;
 }
+
 export interface DescribeStackEvents {
   readonly StackName?: string;
   readonly NextToken?: string;
 }
+
 export interface DescribeStackInstance {
   readonly StackSetName: string;
   readonly StackInstanceAccount: string;
   readonly StackInstanceRegion: string;
   readonly CallAs?: string;
 }
+
 export interface DescribeStackResource {
   readonly StackName: string;
   readonly LogicalResourceId: string;
 }
+
 export interface DescribeStackResourceDrifts {
   readonly StackName: string;
   readonly StackResourceDriftStatusFilters?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeStackResources {
   readonly StackName?: string;
   readonly LogicalResourceId?: string;
   readonly PhysicalResourceId?: string;
 }
+
 export interface DescribeStackSet {
   readonly StackSetName: string;
   readonly CallAs?: string;
 }
+
 export interface DescribeStackSetOperation {
   readonly StackSetName: string;
   readonly OperationId: string;
   readonly CallAs?: string;
 }
+
 export interface DescribeStacks {
   readonly StackName?: string;
   readonly NextToken?: string;
 }
+
 export interface DescribeType {
   readonly Type?: string;
   readonly TypeName?: string;
@@ -186,42 +212,51 @@ export interface DescribeType {
   readonly PublisherId?: string;
   readonly PublicVersionNumber?: string;
 }
+
 export interface DescribeTypeRegistration {
   readonly RegistrationToken: string;
 }
+
 export interface DetectStackDrift {
   readonly StackName: string;
   readonly LogicalResourceIds?: [];
 }
+
 export interface DetectStackResourceDrift {
   readonly StackName: string;
   readonly LogicalResourceId: string;
 }
+
 export interface DetectStackSetDrift {
   readonly StackSetName: string;
   readonly OperationPreferences?: StackSetOperationPreferences;
   readonly OperationId?: string;
   readonly CallAs?: string;
 }
+
 export interface EstimateTemplateCost {
   readonly TemplateBody?: string;
   readonly TemplateURL?: string;
   readonly Parameters?: [];
 }
+
 export interface ExecuteChangeSet {
   readonly ChangeSetName: string;
   readonly StackName?: string;
   readonly ClientRequestToken?: string;
   readonly DisableRollback?: boolean;
 }
+
 export interface GetStackPolicy {
   readonly StackName: string;
 }
+
 export interface GetTemplate {
   readonly StackName?: string;
   readonly ChangeSetName?: string;
   readonly TemplateStage?: string;
 }
+
 export interface GetTemplateSummary {
   readonly TemplateBody?: string;
   readonly TemplateURL?: string;
@@ -229,6 +264,7 @@ export interface GetTemplateSummary {
   readonly StackSetName?: string;
   readonly CallAs?: string;
 }
+
 export interface ImportStacksToStackSet {
   readonly StackSetName: string;
   readonly StackIds?: [];
@@ -238,17 +274,21 @@ export interface ImportStacksToStackSet {
   readonly OperationId?: string;
   readonly CallAs?: string;
 }
+
 export interface ListChangeSets {
   readonly StackName: string;
   readonly NextToken?: string;
 }
+
 export interface ListExports {
   readonly NextToken?: string;
 }
+
 export interface ListImports {
   readonly ExportName: string;
   readonly NextToken?: string;
 }
+
 export interface ListStackInstances {
   readonly StackSetName: string;
   readonly NextToken?: string;
@@ -258,10 +298,12 @@ export interface ListStackInstances {
   readonly StackInstanceRegion?: string;
   readonly CallAs?: string;
 }
+
 export interface ListStackResources {
   readonly StackName: string;
   readonly NextToken?: string;
 }
+
 export interface ListStackSetOperationResults {
   readonly StackSetName: string;
   readonly OperationId: string;
@@ -269,22 +311,26 @@ export interface ListStackSetOperationResults {
   readonly MaxResults?: number;
   readonly CallAs?: string;
 }
+
 export interface ListStackSetOperations {
   readonly StackSetName: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly CallAs?: string;
 }
+
 export interface ListStackSets {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Status?: string;
   readonly CallAs?: string;
 }
+
 export interface ListStacks {
   readonly NextToken?: string;
   readonly StackStatusFilter?: [];
 }
+
 export interface ListTypeRegistrations {
   readonly Type?: string;
   readonly TypeName?: string;
@@ -293,6 +339,7 @@ export interface ListTypeRegistrations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTypeVersions {
   readonly Type?: string;
   readonly TypeName?: string;
@@ -302,6 +349,7 @@ export interface ListTypeVersions {
   readonly DeprecatedStatus?: string;
   readonly PublisherId?: string;
 }
+
 export interface ListTypes {
   readonly Visibility?: string;
   readonly ProvisioningType?: string;
@@ -311,12 +359,14 @@ export interface ListTypes {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface PublishType {
   readonly Type?: string;
   readonly Arn?: string;
   readonly TypeName?: string;
   readonly PublicVersionNumber?: string;
 }
+
 export interface RecordHandlerProgress {
   readonly BearerToken: string;
   readonly OperationStatus: string;
@@ -326,10 +376,12 @@ export interface RecordHandlerProgress {
   readonly ResourceModel?: string;
   readonly ClientRequestToken?: string;
 }
+
 export interface RegisterPublisher {
   readonly AcceptTermsAndConditions?: boolean;
   readonly ConnectionArn?: string;
 }
+
 export interface RegisterType {
   readonly Type?: string;
   readonly TypeName: string;
@@ -338,16 +390,19 @@ export interface RegisterType {
   readonly ExecutionRoleArn?: string;
   readonly ClientRequestToken?: string;
 }
+
 export interface RollbackStack {
   readonly StackName: string;
   readonly RoleARN?: string;
   readonly ClientRequestToken?: string;
 }
+
 export interface SetStackPolicy {
   readonly StackName: string;
   readonly StackPolicyBody?: string;
   readonly StackPolicyURL?: string;
 }
+
 export interface SetTypeConfiguration {
   readonly TypeArn?: string;
   readonly Configuration: string;
@@ -355,23 +410,27 @@ export interface SetTypeConfiguration {
   readonly TypeName?: string;
   readonly Type?: string;
 }
+
 export interface SetTypeDefaultVersion {
   readonly Arn?: string;
   readonly Type?: string;
   readonly TypeName?: string;
   readonly VersionId?: string;
 }
+
 export interface SignalResource {
   readonly StackName: string;
   readonly LogicalResourceId: string;
   readonly UniqueId: string;
   readonly Status: string;
 }
+
 export interface StopStackSetOperation {
   readonly StackSetName: string;
   readonly OperationId: string;
   readonly CallAs?: string;
 }
+
 export interface TestType {
   readonly Arn?: string;
   readonly Type?: string;
@@ -379,6 +438,7 @@ export interface TestType {
   readonly VersionId?: string;
   readonly LogDeliveryBucket?: string;
 }
+
 export interface UpdateStack {
   readonly StackName: string;
   readonly TemplateBody?: string;
@@ -398,6 +458,7 @@ export interface UpdateStack {
   readonly DisableRollback?: boolean;
   readonly ClientRequestToken?: string;
 }
+
 export interface UpdateStackInstances {
   readonly StackSetName: string;
   readonly Accounts?: [];
@@ -408,6 +469,7 @@ export interface UpdateStackInstances {
   readonly OperationId?: string;
   readonly CallAs?: string;
 }
+
 export interface UpdateStackSet {
   readonly StackSetName: string;
   readonly Description?: string;
@@ -429,1374 +491,1375 @@ export interface UpdateStackSet {
   readonly CallAs?: string;
   readonly ManagedExecution?: ManagedExecution;
 }
+
 export interface UpdateTerminationProtection {
   readonly EnableTerminationProtection: boolean;
   readonly StackName: string;
 }
+
 export interface ValidateTemplate {
   readonly TemplateBody?: string;
   readonly TemplateURL?: string;
 }
 
-
-
-interface AccountGateResult {
-  readonly Status: string;
-  readonly StatusReason: string;
+export interface AccountGateResult {
+  readonly Status?: string;
+  readonly StatusReason?: string;
 }
 
-interface AccountLimit {
-  readonly Name: string;
-  readonly Value: number;
+export interface AccountLimit {
+  readonly Name?: string;
+  readonly Value?: number;
 }
 
-interface ActivateTypeInput {
-  readonly Type: string;
-  readonly PublicTypeArn: string;
-  readonly PublisherId: string;
-  readonly TypeName: string;
-  readonly TypeNameAlias: string;
-  readonly AutoUpdate: boolean;
-  readonly LoggingConfig: LoggingConfig;
-  readonly ExecutionRoleArn: string;
-  readonly VersionBump: string;
-  readonly MajorVersion: number;
+export interface ActivateTypeInput {
+  readonly Type?: string;
+  readonly PublicTypeArn?: string;
+  readonly PublisherId?: string;
+  readonly TypeName?: string;
+  readonly TypeNameAlias?: string;
+  readonly AutoUpdate?: boolean;
+  readonly LoggingConfig?: LoggingConfig;
+  readonly ExecutionRoleArn?: string;
+  readonly VersionBump?: string;
+  readonly MajorVersion?: number;
 }
 
-interface ActivateTypeOutput {
-  readonly Arn: string;
+export interface ActivateTypeOutput {
+  readonly Arn?: string;
 }
 
-interface AlreadyExistsException {
+export interface AlreadyExistsException {
 }
 
-interface AutoDeployment {
-  readonly Enabled: boolean;
-  readonly RetainStacksOnAccountRemoval: boolean;
+export interface AutoDeployment {
+  readonly Enabled?: boolean;
+  readonly RetainStacksOnAccountRemoval?: boolean;
 }
 
-interface BatchDescribeTypeConfigurationsError {
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
-  readonly TypeConfigurationIdentifier: TypeConfigurationIdentifier;
+export interface BatchDescribeTypeConfigurationsError {
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
+  readonly TypeConfigurationIdentifier?: TypeConfigurationIdentifier;
 }
 
-interface BatchDescribeTypeConfigurationsInput {
+export interface BatchDescribeTypeConfigurationsInput {
   readonly TypeConfigurationIdentifiers: [];
 }
 
-interface BatchDescribeTypeConfigurationsOutput {
-  readonly Errors: [];
-  readonly UnprocessedTypeConfigurations: [];
-  readonly TypeConfigurations: [];
+export interface BatchDescribeTypeConfigurationsOutput {
+  readonly Errors?: [];
+  readonly UnprocessedTypeConfigurations?: [];
+  readonly TypeConfigurations?: [];
 }
 
-interface CFNRegistryException {
-  readonly Message: string;
+export interface CFNRegistryException {
+  readonly Message?: string;
 }
 
-interface CancelUpdateStackInput {
+export interface CancelUpdateStackInput {
   readonly StackName: string;
-  readonly ClientRequestToken: string;
+  readonly ClientRequestToken?: string;
 }
 
-interface Change {
-  readonly Type: string;
-  readonly ResourceChange: ResourceChange;
+export interface Change {
+  readonly Type?: string;
+  readonly ResourceChange?: ResourceChange;
 }
 
-interface ChangeSetNotFoundException {
+export interface ChangeSetNotFoundException {
 }
 
-interface ChangeSetSummary {
-  readonly StackId: string;
+export interface ChangeSetSummary {
+  readonly StackId?: string;
+  readonly StackName?: string;
+  readonly ChangeSetId?: string;
+  readonly ChangeSetName?: string;
+  readonly ExecutionStatus?: string;
+  readonly Status?: string;
+  readonly StatusReason?: string;
+  readonly CreationTime?: Date;
+  readonly Description?: string;
+  readonly IncludeNestedStacks?: boolean;
+  readonly ParentChangeSetId?: string;
+  readonly RootChangeSetId?: string;
+}
+
+export interface ContinueUpdateRollbackInput {
   readonly StackName: string;
-  readonly ChangeSetId: string;
+  readonly RoleARN?: string;
+  readonly ResourcesToSkip?: [];
+  readonly ClientRequestToken?: string;
+}
+
+export interface ContinueUpdateRollbackOutput {
+}
+
+export interface CreateChangeSetInput {
+  readonly StackName: string;
+  readonly TemplateBody?: string;
+  readonly TemplateURL?: string;
+  readonly UsePreviousTemplate?: boolean;
+  readonly Parameters?: [];
+  readonly Capabilities?: [];
+  readonly ResourceTypes?: [];
+  readonly RoleARN?: string;
+  readonly RollbackConfiguration?: RollbackConfiguration;
+  readonly NotificationARNs?: [];
+  readonly Tags?: [];
   readonly ChangeSetName: string;
-  readonly ExecutionStatus: string;
-  readonly Status: string;
-  readonly StatusReason: string;
-  readonly CreationTime: Date;
-  readonly Description: string;
-  readonly IncludeNestedStacks: boolean;
-  readonly ParentChangeSetId: string;
-  readonly RootChangeSetId: string;
+  readonly ClientToken?: string;
+  readonly Description?: string;
+  readonly ChangeSetType?: string;
+  readonly ResourcesToImport?: [];
+  readonly IncludeNestedStacks?: boolean;
 }
 
-interface ContinueUpdateRollbackInput {
+export interface CreateChangeSetOutput {
+  readonly Id?: string;
+  readonly StackId?: string;
+}
+
+export interface CreateStackInput {
   readonly StackName: string;
-  readonly RoleARN: string;
-  readonly ResourcesToSkip: [];
-  readonly ClientRequestToken: string;
+  readonly TemplateBody?: string;
+  readonly TemplateURL?: string;
+  readonly Parameters?: [];
+  readonly DisableRollback?: boolean;
+  readonly RollbackConfiguration?: RollbackConfiguration;
+  readonly TimeoutInMinutes?: number;
+  readonly NotificationARNs?: [];
+  readonly Capabilities?: [];
+  readonly ResourceTypes?: [];
+  readonly RoleARN?: string;
+  readonly OnFailure?: string;
+  readonly StackPolicyBody?: string;
+  readonly StackPolicyURL?: string;
+  readonly Tags?: [];
+  readonly ClientRequestToken?: string;
+  readonly EnableTerminationProtection?: boolean;
 }
 
-interface ContinueUpdateRollbackOutput {
-}
-
-interface CreateChangeSetInput {
-  readonly StackName: string;
-  readonly TemplateBody: string;
-  readonly TemplateURL: string;
-  readonly UsePreviousTemplate: boolean;
-  readonly Parameters: [];
-  readonly Capabilities: [];
-  readonly ResourceTypes: [];
-  readonly RoleARN: string;
-  readonly RollbackConfiguration: RollbackConfiguration;
-  readonly NotificationARNs: [];
-  readonly Tags: [];
-  readonly ChangeSetName: string;
-  readonly ClientToken: string;
-  readonly Description: string;
-  readonly ChangeSetType: string;
-  readonly ResourcesToImport: [];
-  readonly IncludeNestedStacks: boolean;
-}
-
-interface CreateChangeSetOutput {
-  readonly Id: string;
-  readonly StackId: string;
-}
-
-interface CreateStackInput {
-  readonly StackName: string;
-  readonly TemplateBody: string;
-  readonly TemplateURL: string;
-  readonly Parameters: [];
-  readonly DisableRollback: boolean;
-  readonly RollbackConfiguration: RollbackConfiguration;
-  readonly TimeoutInMinutes: number;
-  readonly NotificationARNs: [];
-  readonly Capabilities: [];
-  readonly ResourceTypes: [];
-  readonly RoleARN: string;
-  readonly OnFailure: string;
-  readonly StackPolicyBody: string;
-  readonly StackPolicyURL: string;
-  readonly Tags: [];
-  readonly ClientRequestToken: string;
-  readonly EnableTerminationProtection: boolean;
-}
-
-interface CreateStackInstancesInput {
+export interface CreateStackInstancesInput {
   readonly StackSetName: string;
-  readonly Accounts: [];
-  readonly DeploymentTargets: DeploymentTargets;
+  readonly Accounts?: [];
+  readonly DeploymentTargets?: DeploymentTargets;
   readonly Regions: [];
-  readonly ParameterOverrides: [];
-  readonly OperationPreferences: StackSetOperationPreferences;
-  readonly OperationId: string;
-  readonly CallAs: string;
+  readonly ParameterOverrides?: [];
+  readonly OperationPreferences?: StackSetOperationPreferences;
+  readonly OperationId?: string;
+  readonly CallAs?: string;
 }
 
-interface CreateStackInstancesOutput {
-  readonly OperationId: string;
+export interface CreateStackInstancesOutput {
+  readonly OperationId?: string;
 }
 
-interface CreateStackOutput {
-  readonly StackId: string;
+export interface CreateStackOutput {
+  readonly StackId?: string;
 }
 
-interface CreateStackSetInput {
+export interface CreateStackSetInput {
   readonly StackSetName: string;
-  readonly Description: string;
-  readonly TemplateBody: string;
-  readonly TemplateURL: string;
-  readonly StackId: string;
-  readonly Parameters: [];
-  readonly Capabilities: [];
-  readonly Tags: [];
-  readonly AdministrationRoleARN: string;
-  readonly ExecutionRoleName: string;
-  readonly PermissionModel: string;
-  readonly AutoDeployment: AutoDeployment;
-  readonly CallAs: string;
-  readonly ClientRequestToken: string;
-  readonly ManagedExecution: ManagedExecution;
+  readonly Description?: string;
+  readonly TemplateBody?: string;
+  readonly TemplateURL?: string;
+  readonly StackId?: string;
+  readonly Parameters?: [];
+  readonly Capabilities?: [];
+  readonly Tags?: [];
+  readonly AdministrationRoleARN?: string;
+  readonly ExecutionRoleName?: string;
+  readonly PermissionModel?: string;
+  readonly AutoDeployment?: AutoDeployment;
+  readonly CallAs?: string;
+  readonly ClientRequestToken?: string;
+  readonly ManagedExecution?: ManagedExecution;
 }
 
-interface CreateStackSetOutput {
-  readonly StackSetId: string;
+export interface CreateStackSetOutput {
+  readonly StackSetId?: string;
 }
 
-interface CreatedButModifiedException {
+export interface CreatedButModifiedException {
 }
 
-interface DeactivateTypeInput {
-  readonly TypeName: string;
-  readonly Type: string;
-  readonly Arn: string;
+export interface DeactivateTypeInput {
+  readonly TypeName?: string;
+  readonly Type?: string;
+  readonly Arn?: string;
 }
 
-interface DeactivateTypeOutput {
+export interface DeactivateTypeOutput {
 }
 
-interface DeleteChangeSetInput {
+export interface DeleteChangeSetInput {
   readonly ChangeSetName: string;
+  readonly StackName?: string;
+}
+
+export interface DeleteChangeSetOutput {
+}
+
+export interface DeleteStackInput {
   readonly StackName: string;
+  readonly RetainResources?: [];
+  readonly RoleARN?: string;
+  readonly ClientRequestToken?: string;
 }
 
-interface DeleteChangeSetOutput {
-}
-
-interface DeleteStackInput {
-  readonly StackName: string;
-  readonly RetainResources: [];
-  readonly RoleARN: string;
-  readonly ClientRequestToken: string;
-}
-
-interface DeleteStackInstancesInput {
+export interface DeleteStackInstancesInput {
   readonly StackSetName: string;
-  readonly Accounts: [];
-  readonly DeploymentTargets: DeploymentTargets;
+  readonly Accounts?: [];
+  readonly DeploymentTargets?: DeploymentTargets;
   readonly Regions: [];
-  readonly OperationPreferences: StackSetOperationPreferences;
+  readonly OperationPreferences?: StackSetOperationPreferences;
   readonly RetainStacks: boolean;
-  readonly OperationId: string;
-  readonly CallAs: string;
+  readonly OperationId?: string;
+  readonly CallAs?: string;
 }
 
-interface DeleteStackInstancesOutput {
-  readonly OperationId: string;
+export interface DeleteStackInstancesOutput {
+  readonly OperationId?: string;
 }
 
-interface DeleteStackSetInput {
+export interface DeleteStackSetInput {
   readonly StackSetName: string;
-  readonly CallAs: string;
+  readonly CallAs?: string;
 }
 
-interface DeleteStackSetOutput {
+export interface DeleteStackSetOutput {
 }
 
-interface DeploymentTargets {
-  readonly Accounts: [];
-  readonly AccountsUrl: string;
-  readonly OrganizationalUnitIds: [];
+export interface DeploymentTargets {
+  readonly Accounts?: [];
+  readonly AccountsUrl?: string;
+  readonly OrganizationalUnitIds?: [];
 }
 
-interface DeregisterTypeInput {
-  readonly Arn: string;
-  readonly Type: string;
-  readonly TypeName: string;
-  readonly VersionId: string;
+export interface DeregisterTypeInput {
+  readonly Arn?: string;
+  readonly Type?: string;
+  readonly TypeName?: string;
+  readonly VersionId?: string;
 }
 
-interface DeregisterTypeOutput {
+export interface DeregisterTypeOutput {
 }
 
-interface DescribeAccountLimitsInput {
-  readonly NextToken: string;
+export interface DescribeAccountLimitsInput {
+  readonly NextToken?: string;
 }
 
-interface DescribeAccountLimitsOutput {
-  readonly AccountLimits: [];
-  readonly NextToken: string;
+export interface DescribeAccountLimitsOutput {
+  readonly AccountLimits?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeChangeSetInput {
+export interface DescribeChangeSetInput {
   readonly ChangeSetName: string;
-  readonly StackName: string;
-  readonly NextToken: string;
+  readonly StackName?: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeChangeSetOutput {
-  readonly ChangeSetName: string;
-  readonly ChangeSetId: string;
-  readonly StackId: string;
-  readonly StackName: string;
-  readonly Description: string;
-  readonly Parameters: [];
-  readonly CreationTime: Date;
-  readonly ExecutionStatus: string;
-  readonly Status: string;
-  readonly StatusReason: string;
-  readonly NotificationARNs: [];
-  readonly RollbackConfiguration: RollbackConfiguration;
-  readonly Capabilities: [];
-  readonly Tags: [];
-  readonly Changes: [];
-  readonly NextToken: string;
-  readonly IncludeNestedStacks: boolean;
-  readonly ParentChangeSetId: string;
-  readonly RootChangeSetId: string;
+export interface DescribeChangeSetOutput {
+  readonly ChangeSetName?: string;
+  readonly ChangeSetId?: string;
+  readonly StackId?: string;
+  readonly StackName?: string;
+  readonly Description?: string;
+  readonly Parameters?: [];
+  readonly CreationTime?: Date;
+  readonly ExecutionStatus?: string;
+  readonly Status?: string;
+  readonly StatusReason?: string;
+  readonly NotificationARNs?: [];
+  readonly RollbackConfiguration?: RollbackConfiguration;
+  readonly Capabilities?: [];
+  readonly Tags?: [];
+  readonly Changes?: [];
+  readonly NextToken?: string;
+  readonly IncludeNestedStacks?: boolean;
+  readonly ParentChangeSetId?: string;
+  readonly RootChangeSetId?: string;
 }
 
-interface DescribePublisherInput {
-  readonly PublisherId: string;
+export interface DescribePublisherInput {
+  readonly PublisherId?: string;
 }
 
-interface DescribePublisherOutput {
-  readonly PublisherId: string;
-  readonly PublisherStatus: string;
-  readonly IdentityProvider: string;
-  readonly PublisherProfile: string;
+export interface DescribePublisherOutput {
+  readonly PublisherId?: string;
+  readonly PublisherStatus?: string;
+  readonly IdentityProvider?: string;
+  readonly PublisherProfile?: string;
 }
 
-interface DescribeStackDriftDetectionStatusInput {
+export interface DescribeStackDriftDetectionStatusInput {
   readonly StackDriftDetectionId: string;
 }
 
-interface DescribeStackDriftDetectionStatusOutput {
+export interface DescribeStackDriftDetectionStatusOutput {
   readonly StackId: string;
   readonly StackDriftDetectionId: string;
-  readonly StackDriftStatus: string;
+  readonly StackDriftStatus?: string;
   readonly DetectionStatus: string;
-  readonly DetectionStatusReason: string;
-  readonly DriftedStackResourceCount: number;
+  readonly DetectionStatusReason?: string;
+  readonly DriftedStackResourceCount?: number;
   readonly Timestamp: Date;
 }
 
-interface DescribeStackEventsInput {
-  readonly StackName: string;
-  readonly NextToken: string;
+export interface DescribeStackEventsInput {
+  readonly StackName?: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeStackEventsOutput {
-  readonly StackEvents: [];
-  readonly NextToken: string;
+export interface DescribeStackEventsOutput {
+  readonly StackEvents?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeStackInstanceInput {
+export interface DescribeStackInstanceInput {
   readonly StackSetName: string;
   readonly StackInstanceAccount: string;
   readonly StackInstanceRegion: string;
-  readonly CallAs: string;
+  readonly CallAs?: string;
 }
 
-interface DescribeStackInstanceOutput {
-  readonly StackInstance: StackInstance;
+export interface DescribeStackInstanceOutput {
+  readonly StackInstance?: StackInstance;
 }
 
-interface DescribeStackResourceDriftsInput {
+export interface DescribeStackResourceDriftsInput {
   readonly StackName: string;
-  readonly StackResourceDriftStatusFilters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly StackResourceDriftStatusFilters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeStackResourceDriftsOutput {
+export interface DescribeStackResourceDriftsOutput {
   readonly StackResourceDrifts: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeStackResourceInput {
+export interface DescribeStackResourceInput {
   readonly StackName: string;
   readonly LogicalResourceId: string;
 }
 
-interface DescribeStackResourceOutput {
-  readonly StackResourceDetail: StackResourceDetail;
+export interface DescribeStackResourceOutput {
+  readonly StackResourceDetail?: StackResourceDetail;
 }
 
-interface DescribeStackResourcesInput {
-  readonly StackName: string;
-  readonly LogicalResourceId: string;
-  readonly PhysicalResourceId: string;
+export interface DescribeStackResourcesInput {
+  readonly StackName?: string;
+  readonly LogicalResourceId?: string;
+  readonly PhysicalResourceId?: string;
 }
 
-interface DescribeStackResourcesOutput {
-  readonly StackResources: [];
+export interface DescribeStackResourcesOutput {
+  readonly StackResources?: [];
 }
 
-interface DescribeStackSetInput {
+export interface DescribeStackSetInput {
   readonly StackSetName: string;
-  readonly CallAs: string;
+  readonly CallAs?: string;
 }
 
-interface DescribeStackSetOperationInput {
+export interface DescribeStackSetOperationInput {
   readonly StackSetName: string;
   readonly OperationId: string;
-  readonly CallAs: string;
+  readonly CallAs?: string;
 }
 
-interface DescribeStackSetOperationOutput {
-  readonly StackSetOperation: StackSetOperation;
+export interface DescribeStackSetOperationOutput {
+  readonly StackSetOperation?: StackSetOperation;
 }
 
-interface DescribeStackSetOutput {
-  readonly StackSet: StackSet;
+export interface DescribeStackSetOutput {
+  readonly StackSet?: StackSet;
 }
 
-interface DescribeStacksInput {
-  readonly StackName: string;
-  readonly NextToken: string;
+export interface DescribeStacksInput {
+  readonly StackName?: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeStacksOutput {
-  readonly Stacks: [];
-  readonly NextToken: string;
+export interface DescribeStacksOutput {
+  readonly Stacks?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTypeInput {
-  readonly Type: string;
-  readonly TypeName: string;
-  readonly Arn: string;
-  readonly VersionId: string;
-  readonly PublisherId: string;
-  readonly PublicVersionNumber: string;
+export interface DescribeTypeInput {
+  readonly Type?: string;
+  readonly TypeName?: string;
+  readonly Arn?: string;
+  readonly VersionId?: string;
+  readonly PublisherId?: string;
+  readonly PublicVersionNumber?: string;
 }
 
-interface DescribeTypeOutput {
-  readonly Arn: string;
-  readonly Type: string;
-  readonly TypeName: string;
-  readonly DefaultVersionId: string;
-  readonly IsDefaultVersion: boolean;
-  readonly TypeTestsStatus: string;
-  readonly TypeTestsStatusDescription: string;
-  readonly Description: string;
-  readonly Schema: string;
-  readonly ProvisioningType: string;
-  readonly DeprecatedStatus: string;
-  readonly LoggingConfig: LoggingConfig;
-  readonly RequiredActivatedTypes: [];
-  readonly ExecutionRoleArn: string;
-  readonly Visibility: string;
-  readonly SourceUrl: string;
-  readonly DocumentationUrl: string;
-  readonly LastUpdated: Date;
-  readonly TimeCreated: Date;
-  readonly ConfigurationSchema: string;
-  readonly PublisherId: string;
-  readonly OriginalTypeName: string;
-  readonly OriginalTypeArn: string;
-  readonly PublicVersionNumber: string;
-  readonly LatestPublicVersion: string;
-  readonly IsActivated: boolean;
-  readonly AutoUpdate: boolean;
+export interface DescribeTypeOutput {
+  readonly Arn?: string;
+  readonly Type?: string;
+  readonly TypeName?: string;
+  readonly DefaultVersionId?: string;
+  readonly IsDefaultVersion?: boolean;
+  readonly TypeTestsStatus?: string;
+  readonly TypeTestsStatusDescription?: string;
+  readonly Description?: string;
+  readonly Schema?: string;
+  readonly ProvisioningType?: string;
+  readonly DeprecatedStatus?: string;
+  readonly LoggingConfig?: LoggingConfig;
+  readonly RequiredActivatedTypes?: [];
+  readonly ExecutionRoleArn?: string;
+  readonly Visibility?: string;
+  readonly SourceUrl?: string;
+  readonly DocumentationUrl?: string;
+  readonly LastUpdated?: Date;
+  readonly TimeCreated?: Date;
+  readonly ConfigurationSchema?: string;
+  readonly PublisherId?: string;
+  readonly OriginalTypeName?: string;
+  readonly OriginalTypeArn?: string;
+  readonly PublicVersionNumber?: string;
+  readonly LatestPublicVersion?: string;
+  readonly IsActivated?: boolean;
+  readonly AutoUpdate?: boolean;
 }
 
-interface DescribeTypeRegistrationInput {
+export interface DescribeTypeRegistrationInput {
   readonly RegistrationToken: string;
 }
 
-interface DescribeTypeRegistrationOutput {
-  readonly ProgressStatus: string;
-  readonly Description: string;
-  readonly TypeArn: string;
-  readonly TypeVersionArn: string;
+export interface DescribeTypeRegistrationOutput {
+  readonly ProgressStatus?: string;
+  readonly Description?: string;
+  readonly TypeArn?: string;
+  readonly TypeVersionArn?: string;
 }
 
-interface DetectStackDriftInput {
+export interface DetectStackDriftInput {
   readonly StackName: string;
-  readonly LogicalResourceIds: [];
+  readonly LogicalResourceIds?: [];
 }
 
-interface DetectStackDriftOutput {
+export interface DetectStackDriftOutput {
   readonly StackDriftDetectionId: string;
 }
 
-interface DetectStackResourceDriftInput {
+export interface DetectStackResourceDriftInput {
   readonly StackName: string;
   readonly LogicalResourceId: string;
 }
 
-interface DetectStackResourceDriftOutput {
+export interface DetectStackResourceDriftOutput {
   readonly StackResourceDrift: StackResourceDrift;
 }
 
-interface DetectStackSetDriftInput {
+export interface DetectStackSetDriftInput {
   readonly StackSetName: string;
-  readonly OperationPreferences: StackSetOperationPreferences;
-  readonly OperationId: string;
-  readonly CallAs: string;
+  readonly OperationPreferences?: StackSetOperationPreferences;
+  readonly OperationId?: string;
+  readonly CallAs?: string;
 }
 
-interface DetectStackSetDriftOutput {
-  readonly OperationId: string;
+export interface DetectStackSetDriftOutput {
+  readonly OperationId?: string;
 }
 
-interface EstimateTemplateCostInput {
-  readonly TemplateBody: string;
-  readonly TemplateURL: string;
-  readonly Parameters: [];
+export interface EstimateTemplateCostInput {
+  readonly TemplateBody?: string;
+  readonly TemplateURL?: string;
+  readonly Parameters?: [];
 }
 
-interface EstimateTemplateCostOutput {
-  readonly Url: string;
+export interface EstimateTemplateCostOutput {
+  readonly Url?: string;
 }
 
-interface ExecuteChangeSetInput {
+export interface ExecuteChangeSetInput {
   readonly ChangeSetName: string;
+  readonly StackName?: string;
+  readonly ClientRequestToken?: string;
+  readonly DisableRollback?: boolean;
+}
+
+export interface ExecuteChangeSetOutput {
+}
+
+export interface Export {
+  readonly ExportingStackId?: string;
+  readonly Name?: string;
+  readonly Value?: string;
+}
+
+export interface GetStackPolicyInput {
   readonly StackName: string;
-  readonly ClientRequestToken: string;
-  readonly DisableRollback: boolean;
 }
 
-interface ExecuteChangeSetOutput {
+export interface GetStackPolicyOutput {
+  readonly StackPolicyBody?: string;
 }
 
-interface Export {
-  readonly ExportingStackId: string;
-  readonly Name: string;
-  readonly Value: string;
+export interface GetTemplateInput {
+  readonly StackName?: string;
+  readonly ChangeSetName?: string;
+  readonly TemplateStage?: string;
 }
 
-interface GetStackPolicyInput {
-  readonly StackName: string;
+export interface GetTemplateOutput {
+  readonly TemplateBody?: string;
+  readonly StagesAvailable?: [];
 }
 
-interface GetStackPolicyOutput {
-  readonly StackPolicyBody: string;
+export interface GetTemplateSummaryInput {
+  readonly TemplateBody?: string;
+  readonly TemplateURL?: string;
+  readonly StackName?: string;
+  readonly StackSetName?: string;
+  readonly CallAs?: string;
 }
 
-interface GetTemplateInput {
-  readonly StackName: string;
-  readonly ChangeSetName: string;
-  readonly TemplateStage: string;
+export interface GetTemplateSummaryOutput {
+  readonly Parameters?: [];
+  readonly Description?: string;
+  readonly Capabilities?: [];
+  readonly CapabilitiesReason?: string;
+  readonly ResourceTypes?: [];
+  readonly Version?: string;
+  readonly Metadata?: string;
+  readonly DeclaredTransforms?: [];
+  readonly ResourceIdentifierSummaries?: [];
 }
 
-interface GetTemplateOutput {
-  readonly TemplateBody: string;
-  readonly StagesAvailable: [];
-}
-
-interface GetTemplateSummaryInput {
-  readonly TemplateBody: string;
-  readonly TemplateURL: string;
-  readonly StackName: string;
+export interface ImportStacksToStackSetInput {
   readonly StackSetName: string;
-  readonly CallAs: string;
+  readonly StackIds?: [];
+  readonly StackIdsUrl?: string;
+  readonly OrganizationalUnitIds?: [];
+  readonly OperationPreferences?: StackSetOperationPreferences;
+  readonly OperationId?: string;
+  readonly CallAs?: string;
 }
 
-interface GetTemplateSummaryOutput {
-  readonly Parameters: [];
-  readonly Description: string;
-  readonly Capabilities: [];
-  readonly CapabilitiesReason: string;
-  readonly ResourceTypes: [];
-  readonly Version: string;
-  readonly Metadata: string;
-  readonly DeclaredTransforms: [];
-  readonly ResourceIdentifierSummaries: [];
+export interface ImportStacksToStackSetOutput {
+  readonly OperationId?: string;
 }
 
-interface ImportStacksToStackSetInput {
-  readonly StackSetName: string;
-  readonly StackIds: [];
-  readonly StackIdsUrl: string;
-  readonly OrganizationalUnitIds: [];
-  readonly OperationPreferences: StackSetOperationPreferences;
-  readonly OperationId: string;
-  readonly CallAs: string;
+export interface InsufficientCapabilitiesException {
 }
 
-interface ImportStacksToStackSetOutput {
-  readonly OperationId: string;
+export interface InvalidChangeSetStatusException {
 }
 
-interface InsufficientCapabilitiesException {
+export interface InvalidOperationException {
 }
 
-interface InvalidChangeSetStatusException {
+export interface InvalidStateTransitionException {
 }
 
-interface InvalidOperationException {
+export interface LimitExceededException {
 }
 
-interface InvalidStateTransitionException {
-}
-
-interface LimitExceededException {
-}
-
-interface ListChangeSetsInput {
+export interface ListChangeSetsInput {
   readonly StackName: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListChangeSetsOutput {
-  readonly Summaries: [];
-  readonly NextToken: string;
+export interface ListChangeSetsOutput {
+  readonly Summaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListExportsInput {
-  readonly NextToken: string;
+export interface ListExportsInput {
+  readonly NextToken?: string;
 }
 
-interface ListExportsOutput {
-  readonly Exports: [];
-  readonly NextToken: string;
+export interface ListExportsOutput {
+  readonly Exports?: [];
+  readonly NextToken?: string;
 }
 
-interface ListImportsInput {
+export interface ListImportsInput {
   readonly ExportName: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListImportsOutput {
-  readonly Imports: [];
-  readonly NextToken: string;
+export interface ListImportsOutput {
+  readonly Imports?: [];
+  readonly NextToken?: string;
 }
 
-interface ListStackInstancesInput {
+export interface ListStackInstancesInput {
   readonly StackSetName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
-  readonly StackInstanceAccount: string;
-  readonly StackInstanceRegion: string;
-  readonly CallAs: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
+  readonly StackInstanceAccount?: string;
+  readonly StackInstanceRegion?: string;
+  readonly CallAs?: string;
 }
 
-interface ListStackInstancesOutput {
-  readonly Summaries: [];
-  readonly NextToken: string;
+export interface ListStackInstancesOutput {
+  readonly Summaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListStackResourcesInput {
+export interface ListStackResourcesInput {
   readonly StackName: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListStackResourcesOutput {
-  readonly StackResourceSummaries: [];
-  readonly NextToken: string;
+export interface ListStackResourcesOutput {
+  readonly StackResourceSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListStackSetOperationResultsInput {
+export interface ListStackSetOperationResultsInput {
   readonly StackSetName: string;
   readonly OperationId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly CallAs: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly CallAs?: string;
 }
 
-interface ListStackSetOperationResultsOutput {
-  readonly Summaries: [];
-  readonly NextToken: string;
+export interface ListStackSetOperationResultsOutput {
+  readonly Summaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListStackSetOperationsInput {
+export interface ListStackSetOperationsInput {
   readonly StackSetName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly CallAs: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly CallAs?: string;
 }
 
-interface ListStackSetOperationsOutput {
-  readonly Summaries: [];
-  readonly NextToken: string;
+export interface ListStackSetOperationsOutput {
+  readonly Summaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListStackSetsInput {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Status: string;
-  readonly CallAs: string;
+export interface ListStackSetsInput {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Status?: string;
+  readonly CallAs?: string;
 }
 
-interface ListStackSetsOutput {
-  readonly Summaries: [];
-  readonly NextToken: string;
+export interface ListStackSetsOutput {
+  readonly Summaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListStacksInput {
-  readonly NextToken: string;
-  readonly StackStatusFilter: [];
+export interface ListStacksInput {
+  readonly NextToken?: string;
+  readonly StackStatusFilter?: [];
 }
 
-interface ListStacksOutput {
-  readonly StackSummaries: [];
-  readonly NextToken: string;
+export interface ListStacksOutput {
+  readonly StackSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTypeRegistrationsInput {
-  readonly Type: string;
-  readonly TypeName: string;
-  readonly TypeArn: string;
-  readonly RegistrationStatusFilter: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListTypeRegistrationsInput {
+  readonly Type?: string;
+  readonly TypeName?: string;
+  readonly TypeArn?: string;
+  readonly RegistrationStatusFilter?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListTypeRegistrationsOutput {
-  readonly RegistrationTokenList: [];
-  readonly NextToken: string;
+export interface ListTypeRegistrationsOutput {
+  readonly RegistrationTokenList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTypeVersionsInput {
-  readonly Type: string;
-  readonly TypeName: string;
-  readonly Arn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DeprecatedStatus: string;
-  readonly PublisherId: string;
+export interface ListTypeVersionsInput {
+  readonly Type?: string;
+  readonly TypeName?: string;
+  readonly Arn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DeprecatedStatus?: string;
+  readonly PublisherId?: string;
 }
 
-interface ListTypeVersionsOutput {
-  readonly TypeVersionSummaries: [];
-  readonly NextToken: string;
+export interface ListTypeVersionsOutput {
+  readonly TypeVersionSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTypesInput {
-  readonly Visibility: string;
-  readonly ProvisioningType: string;
-  readonly DeprecatedStatus: string;
-  readonly Type: string;
-  readonly Filters: TypeFilters;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListTypesInput {
+  readonly Visibility?: string;
+  readonly ProvisioningType?: string;
+  readonly DeprecatedStatus?: string;
+  readonly Type?: string;
+  readonly Filters?: TypeFilters;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListTypesOutput {
-  readonly TypeSummaries: [];
-  readonly NextToken: string;
+export interface ListTypesOutput {
+  readonly TypeSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface LoggingConfig {
+export interface LoggingConfig {
   readonly LogRoleArn: string;
   readonly LogGroupName: string;
 }
 
-interface ManagedExecution {
-  readonly Active: boolean;
+export interface ManagedExecution {
+  readonly Active?: boolean;
 }
 
-interface ModuleInfo {
-  readonly TypeHierarchy: string;
-  readonly LogicalIdHierarchy: string;
+export interface ModuleInfo {
+  readonly TypeHierarchy?: string;
+  readonly LogicalIdHierarchy?: string;
 }
 
-interface NameAlreadyExistsException {
+export interface NameAlreadyExistsException {
 }
 
-interface OperationIdAlreadyExistsException {
+export interface OperationIdAlreadyExistsException {
 }
 
-interface OperationInProgressException {
+export interface OperationInProgressException {
 }
 
-interface OperationNotFoundException {
+export interface OperationNotFoundException {
 }
 
-interface OperationStatusCheckFailedException {
+export interface OperationStatusCheckFailedException {
 }
 
-interface Output {
-  readonly OutputKey: string;
-  readonly OutputValue: string;
-  readonly Description: string;
-  readonly ExportName: string;
+export interface Output {
+  readonly OutputKey?: string;
+  readonly OutputValue?: string;
+  readonly Description?: string;
+  readonly ExportName?: string;
 }
 
-interface Parameter {
-  readonly ParameterKey: string;
-  readonly ParameterValue: string;
-  readonly UsePreviousValue: boolean;
-  readonly ResolvedValue: string;
+export interface Parameter {
+  readonly ParameterKey?: string;
+  readonly ParameterValue?: string;
+  readonly UsePreviousValue?: boolean;
+  readonly ResolvedValue?: string;
 }
 
-interface ParameterConstraints {
-  readonly AllowedValues: [];
+export interface ParameterConstraints {
+  readonly AllowedValues?: [];
 }
 
-interface ParameterDeclaration {
-  readonly ParameterKey: string;
-  readonly DefaultValue: string;
-  readonly ParameterType: string;
-  readonly NoEcho: boolean;
-  readonly Description: string;
-  readonly ParameterConstraints: ParameterConstraints;
+export interface ParameterDeclaration {
+  readonly ParameterKey?: string;
+  readonly DefaultValue?: string;
+  readonly ParameterType?: string;
+  readonly NoEcho?: boolean;
+  readonly Description?: string;
+  readonly ParameterConstraints?: ParameterConstraints;
 }
 
-interface PhysicalResourceIdContextKeyValuePair {
+export interface PhysicalResourceIdContextKeyValuePair {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface PropertyDifference {
+export interface PropertyDifference {
   readonly PropertyPath: string;
   readonly ExpectedValue: string;
   readonly ActualValue: string;
   readonly DifferenceType: string;
 }
 
-interface PublishTypeInput {
-  readonly Type: string;
-  readonly Arn: string;
-  readonly TypeName: string;
-  readonly PublicVersionNumber: string;
+export interface PublishTypeInput {
+  readonly Type?: string;
+  readonly Arn?: string;
+  readonly TypeName?: string;
+  readonly PublicVersionNumber?: string;
 }
 
-interface PublishTypeOutput {
-  readonly PublicTypeArn: string;
+export interface PublishTypeOutput {
+  readonly PublicTypeArn?: string;
 }
 
-interface RecordHandlerProgressInput {
+export interface RecordHandlerProgressInput {
   readonly BearerToken: string;
   readonly OperationStatus: string;
-  readonly CurrentOperationStatus: string;
-  readonly StatusMessage: string;
-  readonly ErrorCode: string;
-  readonly ResourceModel: string;
-  readonly ClientRequestToken: string;
+  readonly CurrentOperationStatus?: string;
+  readonly StatusMessage?: string;
+  readonly ErrorCode?: string;
+  readonly ResourceModel?: string;
+  readonly ClientRequestToken?: string;
 }
 
-interface RecordHandlerProgressOutput {
+export interface RecordHandlerProgressOutput {
 }
 
-interface RegisterPublisherInput {
-  readonly AcceptTermsAndConditions: boolean;
-  readonly ConnectionArn: string;
+export interface RegisterPublisherInput {
+  readonly AcceptTermsAndConditions?: boolean;
+  readonly ConnectionArn?: string;
 }
 
-interface RegisterPublisherOutput {
-  readonly PublisherId: string;
+export interface RegisterPublisherOutput {
+  readonly PublisherId?: string;
 }
 
-interface RegisterTypeInput {
-  readonly Type: string;
+export interface RegisterTypeInput {
+  readonly Type?: string;
   readonly TypeName: string;
   readonly SchemaHandlerPackage: string;
-  readonly LoggingConfig: LoggingConfig;
-  readonly ExecutionRoleArn: string;
-  readonly ClientRequestToken: string;
+  readonly LoggingConfig?: LoggingConfig;
+  readonly ExecutionRoleArn?: string;
+  readonly ClientRequestToken?: string;
 }
 
-interface RegisterTypeOutput {
-  readonly RegistrationToken: string;
+export interface RegisterTypeOutput {
+  readonly RegistrationToken?: string;
 }
 
-interface RequiredActivatedType {
-  readonly TypeNameAlias: string;
-  readonly OriginalTypeName: string;
-  readonly PublisherId: string;
-  readonly SupportedMajorVersions: [];
+export interface RequiredActivatedType {
+  readonly TypeNameAlias?: string;
+  readonly OriginalTypeName?: string;
+  readonly PublisherId?: string;
+  readonly SupportedMajorVersions?: [];
 }
 
-interface ResourceChange {
-  readonly Action: string;
-  readonly LogicalResourceId: string;
-  readonly PhysicalResourceId: string;
-  readonly ResourceType: string;
-  readonly Replacement: string;
-  readonly Scope: [];
-  readonly Details: [];
-  readonly ChangeSetId: string;
-  readonly ModuleInfo: ModuleInfo;
+export interface ResourceChange {
+  readonly Action?: string;
+  readonly LogicalResourceId?: string;
+  readonly PhysicalResourceId?: string;
+  readonly ResourceType?: string;
+  readonly Replacement?: string;
+  readonly Scope?: [];
+  readonly Details?: [];
+  readonly ChangeSetId?: string;
+  readonly ModuleInfo?: ModuleInfo;
 }
 
-interface ResourceChangeDetail {
-  readonly Target: ResourceTargetDefinition;
-  readonly Evaluation: string;
-  readonly ChangeSource: string;
-  readonly CausingEntity: string;
+export interface ResourceChangeDetail {
+  readonly Target?: ResourceTargetDefinition;
+  readonly Evaluation?: string;
+  readonly ChangeSource?: string;
+  readonly CausingEntity?: string;
 }
 
-interface ResourceIdentifierSummary {
-  readonly ResourceType: string;
-  readonly LogicalResourceIds: [];
-  readonly ResourceIdentifiers: [];
+export interface ResourceIdentifierSummary {
+  readonly ResourceType?: string;
+  readonly LogicalResourceIds?: [];
+  readonly ResourceIdentifiers?: [];
 }
 
-interface ResourceTargetDefinition {
-  readonly Attribute: string;
-  readonly Name: string;
-  readonly RequiresRecreation: string;
+export interface ResourceTargetDefinition {
+  readonly Attribute?: string;
+  readonly Name?: string;
+  readonly RequiresRecreation?: string;
 }
 
-interface ResourceToImport {
+export interface ResourceToImport {
   readonly ResourceType: string;
   readonly LogicalResourceId: string;
   readonly ResourceIdentifier: {[key: string]: any};
 }
 
-interface RollbackConfiguration {
-  readonly RollbackTriggers: [];
-  readonly MonitoringTimeInMinutes: number;
+export interface RollbackConfiguration {
+  readonly RollbackTriggers?: [];
+  readonly MonitoringTimeInMinutes?: number;
 }
 
-interface RollbackStackInput {
+export interface RollbackStackInput {
   readonly StackName: string;
-  readonly RoleARN: string;
-  readonly ClientRequestToken: string;
+  readonly RoleARN?: string;
+  readonly ClientRequestToken?: string;
 }
 
-interface RollbackStackOutput {
-  readonly StackId: string;
+export interface RollbackStackOutput {
+  readonly StackId?: string;
 }
 
-interface RollbackTrigger {
+export interface RollbackTrigger {
   readonly Arn: string;
   readonly Type: string;
 }
 
-interface SetStackPolicyInput {
+export interface SetStackPolicyInput {
   readonly StackName: string;
-  readonly StackPolicyBody: string;
-  readonly StackPolicyURL: string;
+  readonly StackPolicyBody?: string;
+  readonly StackPolicyURL?: string;
 }
 
-interface SetTypeConfigurationInput {
-  readonly TypeArn: string;
+export interface SetTypeConfigurationInput {
+  readonly TypeArn?: string;
   readonly Configuration: string;
-  readonly ConfigurationAlias: string;
-  readonly TypeName: string;
-  readonly Type: string;
+  readonly ConfigurationAlias?: string;
+  readonly TypeName?: string;
+  readonly Type?: string;
 }
 
-interface SetTypeConfigurationOutput {
-  readonly ConfigurationArn: string;
+export interface SetTypeConfigurationOutput {
+  readonly ConfigurationArn?: string;
 }
 
-interface SetTypeDefaultVersionInput {
-  readonly Arn: string;
-  readonly Type: string;
-  readonly TypeName: string;
-  readonly VersionId: string;
+export interface SetTypeDefaultVersionInput {
+  readonly Arn?: string;
+  readonly Type?: string;
+  readonly TypeName?: string;
+  readonly VersionId?: string;
 }
 
-interface SetTypeDefaultVersionOutput {
+export interface SetTypeDefaultVersionOutput {
 }
 
-interface SignalResourceInput {
+export interface SignalResourceInput {
   readonly StackName: string;
   readonly LogicalResourceId: string;
   readonly UniqueId: string;
   readonly Status: string;
 }
 
-interface Stack {
-  readonly StackId: string;
+export interface Stack {
+  readonly StackId?: string;
   readonly StackName: string;
-  readonly ChangeSetId: string;
-  readonly Description: string;
-  readonly Parameters: [];
+  readonly ChangeSetId?: string;
+  readonly Description?: string;
+  readonly Parameters?: [];
   readonly CreationTime: Date;
-  readonly DeletionTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly RollbackConfiguration: RollbackConfiguration;
+  readonly DeletionTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly RollbackConfiguration?: RollbackConfiguration;
   readonly StackStatus: string;
-  readonly StackStatusReason: string;
-  readonly DisableRollback: boolean;
-  readonly NotificationARNs: [];
-  readonly TimeoutInMinutes: number;
-  readonly Capabilities: [];
-  readonly Outputs: [];
-  readonly RoleARN: string;
-  readonly Tags: [];
-  readonly EnableTerminationProtection: boolean;
-  readonly ParentId: string;
-  readonly RootId: string;
-  readonly DriftInformation: StackDriftInformation;
+  readonly StackStatusReason?: string;
+  readonly DisableRollback?: boolean;
+  readonly NotificationARNs?: [];
+  readonly TimeoutInMinutes?: number;
+  readonly Capabilities?: [];
+  readonly Outputs?: [];
+  readonly RoleARN?: string;
+  readonly Tags?: [];
+  readonly EnableTerminationProtection?: boolean;
+  readonly ParentId?: string;
+  readonly RootId?: string;
+  readonly DriftInformation?: StackDriftInformation;
 }
 
-interface StackDriftInformation {
+export interface StackDriftInformation {
   readonly StackDriftStatus: string;
-  readonly LastCheckTimestamp: Date;
+  readonly LastCheckTimestamp?: Date;
 }
 
-interface StackDriftInformationSummary {
+export interface StackDriftInformationSummary {
   readonly StackDriftStatus: string;
-  readonly LastCheckTimestamp: Date;
+  readonly LastCheckTimestamp?: Date;
 }
 
-interface StackEvent {
+export interface StackEvent {
   readonly StackId: string;
   readonly EventId: string;
   readonly StackName: string;
+  readonly LogicalResourceId?: string;
+  readonly PhysicalResourceId?: string;
+  readonly ResourceType?: string;
+  readonly Timestamp: Date;
+  readonly ResourceStatus?: string;
+  readonly ResourceStatusReason?: string;
+  readonly ResourceProperties?: string;
+  readonly ClientRequestToken?: string;
+}
+
+export interface StackInstance {
+  readonly StackSetId?: string;
+  readonly Region?: string;
+  readonly Account?: string;
+  readonly StackId?: string;
+  readonly ParameterOverrides?: [];
+  readonly Status?: string;
+  readonly StackInstanceStatus?: StackInstanceComprehensiveStatus;
+  readonly StatusReason?: string;
+  readonly OrganizationalUnitId?: string;
+  readonly DriftStatus?: string;
+  readonly LastDriftCheckTimestamp?: Date;
+}
+
+export interface StackInstanceComprehensiveStatus {
+  readonly DetailedStatus?: string;
+}
+
+export interface StackInstanceFilter {
+  readonly Name?: string;
+  readonly Values?: string;
+}
+
+export interface StackInstanceNotFoundException {
+}
+
+export interface StackInstanceSummary {
+  readonly StackSetId?: string;
+  readonly Region?: string;
+  readonly Account?: string;
+  readonly StackId?: string;
+  readonly Status?: string;
+  readonly StatusReason?: string;
+  readonly StackInstanceStatus?: StackInstanceComprehensiveStatus;
+  readonly OrganizationalUnitId?: string;
+  readonly DriftStatus?: string;
+  readonly LastDriftCheckTimestamp?: Date;
+}
+
+export interface StackNotFoundException {
+}
+
+export interface StackResource {
+  readonly StackName?: string;
+  readonly StackId?: string;
   readonly LogicalResourceId: string;
-  readonly PhysicalResourceId: string;
+  readonly PhysicalResourceId?: string;
   readonly ResourceType: string;
   readonly Timestamp: Date;
   readonly ResourceStatus: string;
-  readonly ResourceStatusReason: string;
-  readonly ResourceProperties: string;
-  readonly ClientRequestToken: string;
+  readonly ResourceStatusReason?: string;
+  readonly Description?: string;
+  readonly DriftInformation?: StackResourceDriftInformation;
+  readonly ModuleInfo?: ModuleInfo;
 }
 
-interface StackInstance {
-  readonly StackSetId: string;
-  readonly Region: string;
-  readonly Account: string;
-  readonly StackId: string;
-  readonly ParameterOverrides: [];
-  readonly Status: string;
-  readonly StackInstanceStatus: StackInstanceComprehensiveStatus;
-  readonly StatusReason: string;
-  readonly OrganizationalUnitId: string;
-  readonly DriftStatus: string;
-  readonly LastDriftCheckTimestamp: Date;
-}
-
-interface StackInstanceComprehensiveStatus {
-  readonly DetailedStatus: string;
-}
-
-interface StackInstanceFilter {
-  readonly Name: string;
-  readonly Values: string;
-}
-
-interface StackInstanceNotFoundException {
-}
-
-interface StackInstanceSummary {
-  readonly StackSetId: string;
-  readonly Region: string;
-  readonly Account: string;
-  readonly StackId: string;
-  readonly Status: string;
-  readonly StatusReason: string;
-  readonly StackInstanceStatus: StackInstanceComprehensiveStatus;
-  readonly OrganizationalUnitId: string;
-  readonly DriftStatus: string;
-  readonly LastDriftCheckTimestamp: Date;
-}
-
-interface StackNotFoundException {
-}
-
-interface StackResource {
-  readonly StackName: string;
-  readonly StackId: string;
+export interface StackResourceDetail {
+  readonly StackName?: string;
+  readonly StackId?: string;
   readonly LogicalResourceId: string;
-  readonly PhysicalResourceId: string;
-  readonly ResourceType: string;
-  readonly Timestamp: Date;
-  readonly ResourceStatus: string;
-  readonly ResourceStatusReason: string;
-  readonly Description: string;
-  readonly DriftInformation: StackResourceDriftInformation;
-  readonly ModuleInfo: ModuleInfo;
-}
-
-interface StackResourceDetail {
-  readonly StackName: string;
-  readonly StackId: string;
-  readonly LogicalResourceId: string;
-  readonly PhysicalResourceId: string;
+  readonly PhysicalResourceId?: string;
   readonly ResourceType: string;
   readonly LastUpdatedTimestamp: Date;
   readonly ResourceStatus: string;
-  readonly ResourceStatusReason: string;
-  readonly Description: string;
-  readonly Metadata: string;
-  readonly DriftInformation: StackResourceDriftInformation;
-  readonly ModuleInfo: ModuleInfo;
+  readonly ResourceStatusReason?: string;
+  readonly Description?: string;
+  readonly Metadata?: string;
+  readonly DriftInformation?: StackResourceDriftInformation;
+  readonly ModuleInfo?: ModuleInfo;
 }
 
-interface StackResourceDrift {
+export interface StackResourceDrift {
   readonly StackId: string;
   readonly LogicalResourceId: string;
-  readonly PhysicalResourceId: string;
-  readonly PhysicalResourceIdContext: [];
+  readonly PhysicalResourceId?: string;
+  readonly PhysicalResourceIdContext?: [];
   readonly ResourceType: string;
-  readonly ExpectedProperties: string;
-  readonly ActualProperties: string;
-  readonly PropertyDifferences: [];
+  readonly ExpectedProperties?: string;
+  readonly ActualProperties?: string;
+  readonly PropertyDifferences?: [];
   readonly StackResourceDriftStatus: string;
   readonly Timestamp: Date;
-  readonly ModuleInfo: ModuleInfo;
+  readonly ModuleInfo?: ModuleInfo;
 }
 
-interface StackResourceDriftInformation {
+export interface StackResourceDriftInformation {
   readonly StackResourceDriftStatus: string;
-  readonly LastCheckTimestamp: Date;
+  readonly LastCheckTimestamp?: Date;
 }
 
-interface StackResourceDriftInformationSummary {
+export interface StackResourceDriftInformationSummary {
   readonly StackResourceDriftStatus: string;
-  readonly LastCheckTimestamp: Date;
+  readonly LastCheckTimestamp?: Date;
 }
 
-interface StackResourceSummary {
+export interface StackResourceSummary {
   readonly LogicalResourceId: string;
-  readonly PhysicalResourceId: string;
+  readonly PhysicalResourceId?: string;
   readonly ResourceType: string;
   readonly LastUpdatedTimestamp: Date;
   readonly ResourceStatus: string;
-  readonly ResourceStatusReason: string;
-  readonly DriftInformation: StackResourceDriftInformationSummary;
-  readonly ModuleInfo: ModuleInfo;
+  readonly ResourceStatusReason?: string;
+  readonly DriftInformation?: StackResourceDriftInformationSummary;
+  readonly ModuleInfo?: ModuleInfo;
 }
 
-interface StackSet {
-  readonly StackSetName: string;
-  readonly StackSetId: string;
-  readonly Description: string;
-  readonly Status: string;
-  readonly TemplateBody: string;
-  readonly Parameters: [];
-  readonly Capabilities: [];
-  readonly Tags: [];
-  readonly StackSetARN: string;
-  readonly AdministrationRoleARN: string;
-  readonly ExecutionRoleName: string;
-  readonly StackSetDriftDetectionDetails: StackSetDriftDetectionDetails;
-  readonly AutoDeployment: AutoDeployment;
-  readonly PermissionModel: string;
-  readonly OrganizationalUnitIds: [];
-  readonly ManagedExecution: ManagedExecution;
+export interface StackSet {
+  readonly StackSetName?: string;
+  readonly StackSetId?: string;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly TemplateBody?: string;
+  readonly Parameters?: [];
+  readonly Capabilities?: [];
+  readonly Tags?: [];
+  readonly StackSetARN?: string;
+  readonly AdministrationRoleARN?: string;
+  readonly ExecutionRoleName?: string;
+  readonly StackSetDriftDetectionDetails?: StackSetDriftDetectionDetails;
+  readonly AutoDeployment?: AutoDeployment;
+  readonly PermissionModel?: string;
+  readonly OrganizationalUnitIds?: [];
+  readonly ManagedExecution?: ManagedExecution;
 }
 
-interface StackSetDriftDetectionDetails {
-  readonly DriftStatus: string;
-  readonly DriftDetectionStatus: string;
-  readonly LastDriftCheckTimestamp: Date;
-  readonly TotalStackInstancesCount: number;
-  readonly DriftedStackInstancesCount: number;
-  readonly InSyncStackInstancesCount: number;
-  readonly InProgressStackInstancesCount: number;
-  readonly FailedStackInstancesCount: number;
+export interface StackSetDriftDetectionDetails {
+  readonly DriftStatus?: string;
+  readonly DriftDetectionStatus?: string;
+  readonly LastDriftCheckTimestamp?: Date;
+  readonly TotalStackInstancesCount?: number;
+  readonly DriftedStackInstancesCount?: number;
+  readonly InSyncStackInstancesCount?: number;
+  readonly InProgressStackInstancesCount?: number;
+  readonly FailedStackInstancesCount?: number;
 }
 
-interface StackSetNotEmptyException {
+export interface StackSetNotEmptyException {
 }
 
-interface StackSetNotFoundException {
+export interface StackSetNotFoundException {
 }
 
-interface StackSetOperation {
-  readonly OperationId: string;
-  readonly StackSetId: string;
-  readonly Action: string;
-  readonly Status: string;
-  readonly OperationPreferences: StackSetOperationPreferences;
-  readonly RetainStacks: boolean;
-  readonly AdministrationRoleARN: string;
-  readonly ExecutionRoleName: string;
-  readonly CreationTimestamp: Date;
-  readonly EndTimestamp: Date;
-  readonly DeploymentTargets: DeploymentTargets;
-  readonly StackSetDriftDetectionDetails: StackSetDriftDetectionDetails;
+export interface StackSetOperation {
+  readonly OperationId?: string;
+  readonly StackSetId?: string;
+  readonly Action?: string;
+  readonly Status?: string;
+  readonly OperationPreferences?: StackSetOperationPreferences;
+  readonly RetainStacks?: boolean;
+  readonly AdministrationRoleARN?: string;
+  readonly ExecutionRoleName?: string;
+  readonly CreationTimestamp?: Date;
+  readonly EndTimestamp?: Date;
+  readonly DeploymentTargets?: DeploymentTargets;
+  readonly StackSetDriftDetectionDetails?: StackSetDriftDetectionDetails;
 }
 
-interface StackSetOperationPreferences {
-  readonly RegionConcurrencyType: string;
-  readonly RegionOrder: [];
-  readonly FailureToleranceCount: number;
-  readonly FailureTolerancePercentage: number;
-  readonly MaxConcurrentCount: number;
-  readonly MaxConcurrentPercentage: number;
+export interface StackSetOperationPreferences {
+  readonly RegionConcurrencyType?: string;
+  readonly RegionOrder?: [];
+  readonly FailureToleranceCount?: number;
+  readonly FailureTolerancePercentage?: number;
+  readonly MaxConcurrentCount?: number;
+  readonly MaxConcurrentPercentage?: number;
 }
 
-interface StackSetOperationResultSummary {
-  readonly Account: string;
-  readonly Region: string;
-  readonly Status: string;
-  readonly StatusReason: string;
-  readonly AccountGateResult: AccountGateResult;
-  readonly OrganizationalUnitId: string;
+export interface StackSetOperationResultSummary {
+  readonly Account?: string;
+  readonly Region?: string;
+  readonly Status?: string;
+  readonly StatusReason?: string;
+  readonly AccountGateResult?: AccountGateResult;
+  readonly OrganizationalUnitId?: string;
 }
 
-interface StackSetOperationSummary {
-  readonly OperationId: string;
-  readonly Action: string;
-  readonly Status: string;
-  readonly CreationTimestamp: Date;
-  readonly EndTimestamp: Date;
+export interface StackSetOperationSummary {
+  readonly OperationId?: string;
+  readonly Action?: string;
+  readonly Status?: string;
+  readonly CreationTimestamp?: Date;
+  readonly EndTimestamp?: Date;
 }
 
-interface StackSetSummary {
-  readonly StackSetName: string;
-  readonly StackSetId: string;
-  readonly Description: string;
-  readonly Status: string;
-  readonly AutoDeployment: AutoDeployment;
-  readonly PermissionModel: string;
-  readonly DriftStatus: string;
-  readonly LastDriftCheckTimestamp: Date;
-  readonly ManagedExecution: ManagedExecution;
+export interface StackSetSummary {
+  readonly StackSetName?: string;
+  readonly StackSetId?: string;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly AutoDeployment?: AutoDeployment;
+  readonly PermissionModel?: string;
+  readonly DriftStatus?: string;
+  readonly LastDriftCheckTimestamp?: Date;
+  readonly ManagedExecution?: ManagedExecution;
 }
 
-interface StackSummary {
-  readonly StackId: string;
+export interface StackSummary {
+  readonly StackId?: string;
   readonly StackName: string;
-  readonly TemplateDescription: string;
+  readonly TemplateDescription?: string;
   readonly CreationTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly DeletionTime: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly DeletionTime?: Date;
   readonly StackStatus: string;
-  readonly StackStatusReason: string;
-  readonly ParentId: string;
-  readonly RootId: string;
-  readonly DriftInformation: StackDriftInformationSummary;
+  readonly StackStatusReason?: string;
+  readonly ParentId?: string;
+  readonly RootId?: string;
+  readonly DriftInformation?: StackDriftInformationSummary;
 }
 
-interface StaleRequestException {
+export interface StaleRequestException {
 }
 
-interface StopStackSetOperationInput {
+export interface StopStackSetOperationInput {
   readonly StackSetName: string;
   readonly OperationId: string;
-  readonly CallAs: string;
+  readonly CallAs?: string;
 }
 
-interface StopStackSetOperationOutput {
+export interface StopStackSetOperationOutput {
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TemplateParameter {
-  readonly ParameterKey: string;
-  readonly DefaultValue: string;
-  readonly NoEcho: boolean;
-  readonly Description: string;
+export interface TemplateParameter {
+  readonly ParameterKey?: string;
+  readonly DefaultValue?: string;
+  readonly NoEcho?: boolean;
+  readonly Description?: string;
 }
 
-interface TestTypeInput {
-  readonly Arn: string;
-  readonly Type: string;
-  readonly TypeName: string;
-  readonly VersionId: string;
-  readonly LogDeliveryBucket: string;
+export interface TestTypeInput {
+  readonly Arn?: string;
+  readonly Type?: string;
+  readonly TypeName?: string;
+  readonly VersionId?: string;
+  readonly LogDeliveryBucket?: string;
 }
 
-interface TestTypeOutput {
-  readonly TypeVersionArn: string;
+export interface TestTypeOutput {
+  readonly TypeVersionArn?: string;
 }
 
-interface TokenAlreadyExistsException {
+export interface TokenAlreadyExistsException {
 }
 
-interface TypeConfigurationDetails {
-  readonly Arn: string;
-  readonly Alias: string;
-  readonly Configuration: string;
-  readonly LastUpdated: Date;
-  readonly TypeArn: string;
-  readonly TypeName: string;
-  readonly IsDefaultConfiguration: boolean;
+export interface TypeConfigurationDetails {
+  readonly Arn?: string;
+  readonly Alias?: string;
+  readonly Configuration?: string;
+  readonly LastUpdated?: Date;
+  readonly TypeArn?: string;
+  readonly TypeName?: string;
+  readonly IsDefaultConfiguration?: boolean;
 }
 
-interface TypeConfigurationIdentifier {
-  readonly TypeArn: string;
-  readonly TypeConfigurationAlias: string;
-  readonly TypeConfigurationArn: string;
-  readonly Type: string;
-  readonly TypeName: string;
+export interface TypeConfigurationIdentifier {
+  readonly TypeArn?: string;
+  readonly TypeConfigurationAlias?: string;
+  readonly TypeConfigurationArn?: string;
+  readonly Type?: string;
+  readonly TypeName?: string;
 }
 
-interface TypeConfigurationNotFoundException {
+export interface TypeConfigurationNotFoundException {
 }
 
-interface TypeFilters {
-  readonly Category: string;
-  readonly PublisherId: string;
-  readonly TypeNamePrefix: string;
+export interface TypeFilters {
+  readonly Category?: string;
+  readonly PublisherId?: string;
+  readonly TypeNamePrefix?: string;
 }
 
-interface TypeNotFoundException {
+export interface TypeNotFoundException {
 }
 
-interface TypeSummary {
-  readonly Type: string;
-  readonly TypeName: string;
-  readonly DefaultVersionId: string;
-  readonly TypeArn: string;
-  readonly LastUpdated: Date;
-  readonly Description: string;
-  readonly PublisherId: string;
-  readonly OriginalTypeName: string;
-  readonly PublicVersionNumber: string;
-  readonly LatestPublicVersion: string;
-  readonly PublisherIdentity: string;
-  readonly PublisherName: string;
-  readonly IsActivated: boolean;
+export interface TypeSummary {
+  readonly Type?: string;
+  readonly TypeName?: string;
+  readonly DefaultVersionId?: string;
+  readonly TypeArn?: string;
+  readonly LastUpdated?: Date;
+  readonly Description?: string;
+  readonly PublisherId?: string;
+  readonly OriginalTypeName?: string;
+  readonly PublicVersionNumber?: string;
+  readonly LatestPublicVersion?: string;
+  readonly PublisherIdentity?: string;
+  readonly PublisherName?: string;
+  readonly IsActivated?: boolean;
 }
 
-interface TypeVersionSummary {
-  readonly Type: string;
-  readonly TypeName: string;
-  readonly VersionId: string;
-  readonly IsDefaultVersion: boolean;
-  readonly Arn: string;
-  readonly TimeCreated: Date;
-  readonly Description: string;
-  readonly PublicVersionNumber: string;
+export interface TypeVersionSummary {
+  readonly Type?: string;
+  readonly TypeName?: string;
+  readonly VersionId?: string;
+  readonly IsDefaultVersion?: boolean;
+  readonly Arn?: string;
+  readonly TimeCreated?: Date;
+  readonly Description?: string;
+  readonly PublicVersionNumber?: string;
 }
 
-interface UpdateStackInput {
+export interface UpdateStackInput {
   readonly StackName: string;
-  readonly TemplateBody: string;
-  readonly TemplateURL: string;
-  readonly UsePreviousTemplate: boolean;
-  readonly StackPolicyDuringUpdateBody: string;
-  readonly StackPolicyDuringUpdateURL: string;
-  readonly Parameters: [];
-  readonly Capabilities: [];
-  readonly ResourceTypes: [];
-  readonly RoleARN: string;
-  readonly RollbackConfiguration: RollbackConfiguration;
-  readonly StackPolicyBody: string;
-  readonly StackPolicyURL: string;
-  readonly NotificationARNs: [];
-  readonly Tags: [];
-  readonly DisableRollback: boolean;
-  readonly ClientRequestToken: string;
+  readonly TemplateBody?: string;
+  readonly TemplateURL?: string;
+  readonly UsePreviousTemplate?: boolean;
+  readonly StackPolicyDuringUpdateBody?: string;
+  readonly StackPolicyDuringUpdateURL?: string;
+  readonly Parameters?: [];
+  readonly Capabilities?: [];
+  readonly ResourceTypes?: [];
+  readonly RoleARN?: string;
+  readonly RollbackConfiguration?: RollbackConfiguration;
+  readonly StackPolicyBody?: string;
+  readonly StackPolicyURL?: string;
+  readonly NotificationARNs?: [];
+  readonly Tags?: [];
+  readonly DisableRollback?: boolean;
+  readonly ClientRequestToken?: string;
 }
 
-interface UpdateStackInstancesInput {
+export interface UpdateStackInstancesInput {
   readonly StackSetName: string;
-  readonly Accounts: [];
-  readonly DeploymentTargets: DeploymentTargets;
+  readonly Accounts?: [];
+  readonly DeploymentTargets?: DeploymentTargets;
   readonly Regions: [];
-  readonly ParameterOverrides: [];
-  readonly OperationPreferences: StackSetOperationPreferences;
-  readonly OperationId: string;
-  readonly CallAs: string;
+  readonly ParameterOverrides?: [];
+  readonly OperationPreferences?: StackSetOperationPreferences;
+  readonly OperationId?: string;
+  readonly CallAs?: string;
 }
 
-interface UpdateStackInstancesOutput {
-  readonly OperationId: string;
+export interface UpdateStackInstancesOutput {
+  readonly OperationId?: string;
 }
 
-interface UpdateStackOutput {
-  readonly StackId: string;
+export interface UpdateStackOutput {
+  readonly StackId?: string;
 }
 
-interface UpdateStackSetInput {
+export interface UpdateStackSetInput {
   readonly StackSetName: string;
-  readonly Description: string;
-  readonly TemplateBody: string;
-  readonly TemplateURL: string;
-  readonly UsePreviousTemplate: boolean;
-  readonly Parameters: [];
-  readonly Capabilities: [];
-  readonly Tags: [];
-  readonly OperationPreferences: StackSetOperationPreferences;
-  readonly AdministrationRoleARN: string;
-  readonly ExecutionRoleName: string;
-  readonly DeploymentTargets: DeploymentTargets;
-  readonly PermissionModel: string;
-  readonly AutoDeployment: AutoDeployment;
-  readonly OperationId: string;
-  readonly Accounts: [];
-  readonly Regions: [];
-  readonly CallAs: string;
-  readonly ManagedExecution: ManagedExecution;
+  readonly Description?: string;
+  readonly TemplateBody?: string;
+  readonly TemplateURL?: string;
+  readonly UsePreviousTemplate?: boolean;
+  readonly Parameters?: [];
+  readonly Capabilities?: [];
+  readonly Tags?: [];
+  readonly OperationPreferences?: StackSetOperationPreferences;
+  readonly AdministrationRoleARN?: string;
+  readonly ExecutionRoleName?: string;
+  readonly DeploymentTargets?: DeploymentTargets;
+  readonly PermissionModel?: string;
+  readonly AutoDeployment?: AutoDeployment;
+  readonly OperationId?: string;
+  readonly Accounts?: [];
+  readonly Regions?: [];
+  readonly CallAs?: string;
+  readonly ManagedExecution?: ManagedExecution;
 }
 
-interface UpdateStackSetOutput {
-  readonly OperationId: string;
+export interface UpdateStackSetOutput {
+  readonly OperationId?: string;
 }
 
-interface UpdateTerminationProtectionInput {
+export interface UpdateTerminationProtectionInput {
   readonly EnableTerminationProtection: boolean;
   readonly StackName: string;
 }
 
-interface UpdateTerminationProtectionOutput {
-  readonly StackId: string;
+export interface UpdateTerminationProtectionOutput {
+  readonly StackId?: string;
 }
 
-interface ValidateTemplateInput {
-  readonly TemplateBody: string;
-  readonly TemplateURL: string;
+export interface ValidateTemplateInput {
+  readonly TemplateBody?: string;
+  readonly TemplateURL?: string;
 }
 
-interface ValidateTemplateOutput {
-  readonly Parameters: [];
-  readonly Description: string;
-  readonly Capabilities: [];
-  readonly CapabilitiesReason: string;
-  readonly DeclaredTransforms: [];
+export interface ValidateTemplateOutput {
+  readonly Parameters?: [];
+  readonly Description?: string;
+  readonly Capabilities?: [];
+  readonly CapabilitiesReason?: string;
+  readonly DeclaredTransforms?: [];
 }
+
 

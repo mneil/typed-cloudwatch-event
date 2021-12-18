@@ -10,11 +10,13 @@ export interface CreateApplication {
   readonly AutoConfigEnabled?: boolean;
   readonly AutoCreate?: boolean;
 }
+
 export interface CreateComponent {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
   readonly ResourceList: [];
 }
+
 export interface CreateLogPattern {
   readonly ResourceGroupName: string;
   readonly PatternSetName: string;
@@ -22,57 +24,71 @@ export interface CreateLogPattern {
   readonly Pattern: string;
   readonly Rank: number;
 }
+
 export interface DeleteApplication {
   readonly ResourceGroupName: string;
 }
+
 export interface DeleteComponent {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
 }
+
 export interface DeleteLogPattern {
   readonly ResourceGroupName: string;
   readonly PatternSetName: string;
   readonly PatternName: string;
 }
+
 export interface DescribeApplication {
   readonly ResourceGroupName: string;
 }
+
 export interface DescribeComponent {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
 }
+
 export interface DescribeComponentConfiguration {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
 }
+
 export interface DescribeComponentConfigurationRecommendation {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
   readonly Tier: string;
 }
+
 export interface DescribeLogPattern {
   readonly ResourceGroupName: string;
   readonly PatternSetName: string;
   readonly PatternName: string;
 }
+
 export interface DescribeObservation {
   readonly ObservationId: string;
 }
+
 export interface DescribeProblem {
   readonly ProblemId: string;
 }
+
 export interface DescribeProblemObservations {
   readonly ProblemId: string;
 }
+
 export interface ListApplications {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListComponents {
   readonly ResourceGroupName: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListConfigurationHistory {
   readonly ResourceGroupName?: string;
   readonly StartTime?: Date;
@@ -81,17 +97,20 @@ export interface ListConfigurationHistory {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListLogPatternSets {
   readonly ResourceGroupName: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListLogPatterns {
   readonly ResourceGroupName: string;
   readonly PatternSetName?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListProblems {
   readonly ResourceGroupName?: string;
   readonly StartTime?: Date;
@@ -100,17 +119,21 @@ export interface ListProblems {
   readonly NextToken?: string;
   readonly ComponentName?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateApplication {
   readonly ResourceGroupName: string;
   readonly OpsCenterEnabled?: boolean;
@@ -119,12 +142,14 @@ export interface UpdateApplication {
   readonly RemoveSNSTopic?: boolean;
   readonly AutoConfigEnabled?: boolean;
 }
+
 export interface UpdateComponent {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
   readonly NewComponentName?: string;
   readonly ResourceList?: [];
 }
+
 export interface UpdateComponentConfiguration {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
@@ -133,6 +158,7 @@ export interface UpdateComponentConfiguration {
   readonly ComponentConfiguration?: string;
   readonly AutoConfigEnabled?: boolean;
 }
+
 export interface UpdateLogPattern {
   readonly ResourceGroupName: string;
   readonly PatternSetName: string;
@@ -141,70 +167,68 @@ export interface UpdateLogPattern {
   readonly Rank?: number;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface ApplicationComponent {
-  readonly ComponentName: string;
-  readonly ComponentRemarks: string;
-  readonly ResourceType: string;
-  readonly OsType: string;
-  readonly Tier: string;
-  readonly Monitor: boolean;
-  readonly DetectedWorkload: {[key: string]: any};
+export interface ApplicationComponent {
+  readonly ComponentName?: string;
+  readonly ComponentRemarks?: string;
+  readonly ResourceType?: string;
+  readonly OsType?: string;
+  readonly Tier?: string;
+  readonly Monitor?: boolean;
+  readonly DetectedWorkload?: {[key: string]: any};
 }
 
-interface ApplicationInfo {
-  readonly ResourceGroupName: string;
-  readonly LifeCycle: string;
-  readonly OpsItemSNSTopicArn: string;
-  readonly OpsCenterEnabled: boolean;
-  readonly CWEMonitorEnabled: boolean;
-  readonly Remarks: string;
-  readonly AutoConfigEnabled: boolean;
-  readonly DiscoveryType: string;
+export interface ApplicationInfo {
+  readonly ResourceGroupName?: string;
+  readonly LifeCycle?: string;
+  readonly OpsItemSNSTopicArn?: string;
+  readonly OpsCenterEnabled?: boolean;
+  readonly CWEMonitorEnabled?: boolean;
+  readonly Remarks?: string;
+  readonly AutoConfigEnabled?: boolean;
+  readonly DiscoveryType?: string;
 }
 
-interface BadRequestException {
-  readonly Message: string;
+export interface BadRequestException {
+  readonly Message?: string;
 }
 
-interface ConfigurationEvent {
-  readonly MonitoredResourceARN: string;
-  readonly EventStatus: string;
-  readonly EventResourceType: string;
-  readonly EventTime: Date;
-  readonly EventDetail: string;
-  readonly EventResourceName: string;
+export interface ConfigurationEvent {
+  readonly MonitoredResourceARN?: string;
+  readonly EventStatus?: string;
+  readonly EventResourceType?: string;
+  readonly EventTime?: Date;
+  readonly EventDetail?: string;
+  readonly EventResourceName?: string;
 }
 
-interface CreateApplicationRequest {
-  readonly ResourceGroupName: string;
-  readonly OpsCenterEnabled: boolean;
-  readonly CWEMonitorEnabled: boolean;
-  readonly OpsItemSNSTopicArn: string;
-  readonly Tags: [];
-  readonly AutoConfigEnabled: boolean;
-  readonly AutoCreate: boolean;
+export interface CreateApplicationRequest {
+  readonly ResourceGroupName?: string;
+  readonly OpsCenterEnabled?: boolean;
+  readonly CWEMonitorEnabled?: boolean;
+  readonly OpsItemSNSTopicArn?: string;
+  readonly Tags?: [];
+  readonly AutoConfigEnabled?: boolean;
+  readonly AutoCreate?: boolean;
 }
 
-interface CreateApplicationResponse {
-  readonly ApplicationInfo: ApplicationInfo;
+export interface CreateApplicationResponse {
+  readonly ApplicationInfo?: ApplicationInfo;
 }
 
-interface CreateComponentRequest {
+export interface CreateComponentRequest {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
   readonly ResourceList: [];
 }
 
-interface CreateComponentResponse {
+export interface CreateComponentResponse {
 }
 
-interface CreateLogPatternRequest {
+export interface CreateLogPatternRequest {
   readonly ResourceGroupName: string;
   readonly PatternSetName: string;
   readonly PatternName: string;
@@ -212,357 +236,358 @@ interface CreateLogPatternRequest {
   readonly Rank: number;
 }
 
-interface CreateLogPatternResponse {
-  readonly LogPattern: LogPattern;
+export interface CreateLogPatternResponse {
+  readonly LogPattern?: LogPattern;
+  readonly ResourceGroupName?: string;
+}
+
+export interface DeleteApplicationRequest {
   readonly ResourceGroupName: string;
 }
 
-interface DeleteApplicationRequest {
-  readonly ResourceGroupName: string;
+export interface DeleteApplicationResponse {
 }
 
-interface DeleteApplicationResponse {
-}
-
-interface DeleteComponentRequest {
+export interface DeleteComponentRequest {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
 }
 
-interface DeleteComponentResponse {
+export interface DeleteComponentResponse {
 }
 
-interface DeleteLogPatternRequest {
+export interface DeleteLogPatternRequest {
   readonly ResourceGroupName: string;
   readonly PatternSetName: string;
   readonly PatternName: string;
 }
 
-interface DeleteLogPatternResponse {
+export interface DeleteLogPatternResponse {
 }
 
-interface DescribeApplicationRequest {
+export interface DescribeApplicationRequest {
   readonly ResourceGroupName: string;
 }
 
-interface DescribeApplicationResponse {
-  readonly ApplicationInfo: ApplicationInfo;
+export interface DescribeApplicationResponse {
+  readonly ApplicationInfo?: ApplicationInfo;
 }
 
-interface DescribeComponentConfigurationRecommendationRequest {
+export interface DescribeComponentConfigurationRecommendationRequest {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
   readonly Tier: string;
 }
 
-interface DescribeComponentConfigurationRecommendationResponse {
-  readonly ComponentConfiguration: string;
+export interface DescribeComponentConfigurationRecommendationResponse {
+  readonly ComponentConfiguration?: string;
 }
 
-interface DescribeComponentConfigurationRequest {
+export interface DescribeComponentConfigurationRequest {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
 }
 
-interface DescribeComponentConfigurationResponse {
-  readonly Monitor: boolean;
-  readonly Tier: string;
-  readonly ComponentConfiguration: string;
+export interface DescribeComponentConfigurationResponse {
+  readonly Monitor?: boolean;
+  readonly Tier?: string;
+  readonly ComponentConfiguration?: string;
 }
 
-interface DescribeComponentRequest {
+export interface DescribeComponentRequest {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
 }
 
-interface DescribeComponentResponse {
-  readonly ApplicationComponent: ApplicationComponent;
-  readonly ResourceList: [];
+export interface DescribeComponentResponse {
+  readonly ApplicationComponent?: ApplicationComponent;
+  readonly ResourceList?: [];
 }
 
-interface DescribeLogPatternRequest {
+export interface DescribeLogPatternRequest {
   readonly ResourceGroupName: string;
   readonly PatternSetName: string;
   readonly PatternName: string;
 }
 
-interface DescribeLogPatternResponse {
-  readonly ResourceGroupName: string;
-  readonly LogPattern: LogPattern;
+export interface DescribeLogPatternResponse {
+  readonly ResourceGroupName?: string;
+  readonly LogPattern?: LogPattern;
 }
 
-interface DescribeObservationRequest {
+export interface DescribeObservationRequest {
   readonly ObservationId: string;
 }
 
-interface DescribeObservationResponse {
-  readonly Observation: Observation;
+export interface DescribeObservationResponse {
+  readonly Observation?: Observation;
 }
 
-interface DescribeProblemObservationsRequest {
+export interface DescribeProblemObservationsRequest {
   readonly ProblemId: string;
 }
 
-interface DescribeProblemObservationsResponse {
-  readonly RelatedObservations: RelatedObservations;
+export interface DescribeProblemObservationsResponse {
+  readonly RelatedObservations?: RelatedObservations;
 }
 
-interface DescribeProblemRequest {
+export interface DescribeProblemRequest {
   readonly ProblemId: string;
 }
 
-interface DescribeProblemResponse {
-  readonly Problem: Problem;
+export interface DescribeProblemResponse {
+  readonly Problem?: Problem;
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface InternalServerException {
+  readonly Message?: string;
 }
 
-interface ListApplicationsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListApplicationsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListApplicationsResponse {
-  readonly ApplicationInfoList: [];
-  readonly NextToken: string;
+export interface ListApplicationsResponse {
+  readonly ApplicationInfoList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListComponentsRequest {
+export interface ListComponentsRequest {
   readonly ResourceGroupName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListComponentsResponse {
-  readonly ApplicationComponentList: [];
-  readonly NextToken: string;
+export interface ListComponentsResponse {
+  readonly ApplicationComponentList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListConfigurationHistoryRequest {
+export interface ListConfigurationHistoryRequest {
+  readonly ResourceGroupName?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly EventStatus?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface ListConfigurationHistoryResponse {
+  readonly EventList?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListLogPatternSetsRequest {
   readonly ResourceGroupName: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly EventStatus: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListConfigurationHistoryResponse {
-  readonly EventList: [];
-  readonly NextToken: string;
+export interface ListLogPatternSetsResponse {
+  readonly ResourceGroupName?: string;
+  readonly LogPatternSets?: [];
+  readonly NextToken?: string;
 }
 
-interface ListLogPatternSetsRequest {
+export interface ListLogPatternsRequest {
   readonly ResourceGroupName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly PatternSetName?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListLogPatternSetsResponse {
-  readonly ResourceGroupName: string;
-  readonly LogPatternSets: [];
-  readonly NextToken: string;
+export interface ListLogPatternsResponse {
+  readonly ResourceGroupName?: string;
+  readonly LogPatterns?: [];
+  readonly NextToken?: string;
 }
 
-interface ListLogPatternsRequest {
-  readonly ResourceGroupName: string;
-  readonly PatternSetName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListProblemsRequest {
+  readonly ResourceGroupName?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ComponentName?: string;
 }
 
-interface ListLogPatternsResponse {
-  readonly ResourceGroupName: string;
-  readonly LogPatterns: [];
-  readonly NextToken: string;
+export interface ListProblemsResponse {
+  readonly ProblemList?: [];
+  readonly NextToken?: string;
+  readonly ResourceGroupName?: string;
 }
 
-interface ListProblemsRequest {
-  readonly ResourceGroupName: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ComponentName: string;
-}
-
-interface ListProblemsResponse {
-  readonly ProblemList: [];
-  readonly NextToken: string;
-  readonly ResourceGroupName: string;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface LogPattern {
-  readonly PatternSetName: string;
-  readonly PatternName: string;
-  readonly Pattern: string;
-  readonly Rank: number;
+export interface LogPattern {
+  readonly PatternSetName?: string;
+  readonly PatternName?: string;
+  readonly Pattern?: string;
+  readonly Rank?: number;
 }
 
-interface Observation {
-  readonly Id: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly SourceType: string;
-  readonly SourceARN: string;
-  readonly LogGroup: string;
-  readonly LineTime: Date;
-  readonly LogText: string;
-  readonly LogFilter: string;
-  readonly MetricNamespace: string;
-  readonly MetricName: string;
-  readonly Unit: string;
-  readonly Value: unknown;
-  readonly CloudWatchEventId: string;
-  readonly CloudWatchEventSource: string;
-  readonly CloudWatchEventDetailType: string;
-  readonly HealthEventArn: string;
-  readonly HealthService: string;
-  readonly HealthEventTypeCode: string;
-  readonly HealthEventTypeCategory: string;
-  readonly HealthEventDescription: string;
-  readonly CodeDeployDeploymentId: string;
-  readonly CodeDeployDeploymentGroup: string;
-  readonly CodeDeployState: string;
-  readonly CodeDeployApplication: string;
-  readonly CodeDeployInstanceGroupId: string;
-  readonly Ec2State: string;
-  readonly RdsEventCategories: string;
-  readonly RdsEventMessage: string;
-  readonly S3EventName: string;
-  readonly StatesExecutionArn: string;
-  readonly StatesArn: string;
-  readonly StatesStatus: string;
-  readonly StatesInput: string;
-  readonly EbsEvent: string;
-  readonly EbsResult: string;
-  readonly EbsCause: string;
-  readonly EbsRequestId: string;
-  readonly XRayFaultPercent: number;
-  readonly XRayThrottlePercent: number;
-  readonly XRayErrorPercent: number;
-  readonly XRayRequestCount: number;
-  readonly XRayRequestAverageLatency: number;
-  readonly XRayNodeName: string;
-  readonly XRayNodeType: string;
+export interface Observation {
+  readonly Id?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly SourceType?: string;
+  readonly SourceARN?: string;
+  readonly LogGroup?: string;
+  readonly LineTime?: Date;
+  readonly LogText?: string;
+  readonly LogFilter?: string;
+  readonly MetricNamespace?: string;
+  readonly MetricName?: string;
+  readonly Unit?: string;
+  readonly Value?: unknown;
+  readonly CloudWatchEventId?: string;
+  readonly CloudWatchEventSource?: string;
+  readonly CloudWatchEventDetailType?: string;
+  readonly HealthEventArn?: string;
+  readonly HealthService?: string;
+  readonly HealthEventTypeCode?: string;
+  readonly HealthEventTypeCategory?: string;
+  readonly HealthEventDescription?: string;
+  readonly CodeDeployDeploymentId?: string;
+  readonly CodeDeployDeploymentGroup?: string;
+  readonly CodeDeployState?: string;
+  readonly CodeDeployApplication?: string;
+  readonly CodeDeployInstanceGroupId?: string;
+  readonly Ec2State?: string;
+  readonly RdsEventCategories?: string;
+  readonly RdsEventMessage?: string;
+  readonly S3EventName?: string;
+  readonly StatesExecutionArn?: string;
+  readonly StatesArn?: string;
+  readonly StatesStatus?: string;
+  readonly StatesInput?: string;
+  readonly EbsEvent?: string;
+  readonly EbsResult?: string;
+  readonly EbsCause?: string;
+  readonly EbsRequestId?: string;
+  readonly XRayFaultPercent?: number;
+  readonly XRayThrottlePercent?: number;
+  readonly XRayErrorPercent?: number;
+  readonly XRayRequestCount?: number;
+  readonly XRayRequestAverageLatency?: number;
+  readonly XRayNodeName?: string;
+  readonly XRayNodeType?: string;
 }
 
-interface Problem {
-  readonly Id: string;
-  readonly Title: string;
-  readonly Insights: string;
-  readonly Status: string;
-  readonly AffectedResource: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly SeverityLevel: string;
-  readonly ResourceGroupName: string;
-  readonly Feedback: {[key: string]: any};
-  readonly RecurringCount: number;
-  readonly LastRecurrenceTime: Date;
+export interface Problem {
+  readonly Id?: string;
+  readonly Title?: string;
+  readonly Insights?: string;
+  readonly Status?: string;
+  readonly AffectedResource?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly SeverityLevel?: string;
+  readonly ResourceGroupName?: string;
+  readonly Feedback?: {[key: string]: any};
+  readonly RecurringCount?: number;
+  readonly LastRecurrenceTime?: Date;
 }
 
-interface RelatedObservations {
-  readonly ObservationList: [];
+export interface RelatedObservations {
+  readonly ObservationList?: [];
 }
 
-interface ResourceInUseException {
-  readonly Message: string;
+export interface ResourceInUseException {
+  readonly Message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TagsAlreadyExistException {
-  readonly Message: string;
+export interface TagsAlreadyExistException {
+  readonly Message?: string;
 }
 
-interface TooManyTagsException {
-  readonly Message: string;
-  readonly ResourceName: string;
+export interface TooManyTagsException {
+  readonly Message?: string;
+  readonly ResourceName?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateApplicationRequest {
+export interface UpdateApplicationRequest {
   readonly ResourceGroupName: string;
-  readonly OpsCenterEnabled: boolean;
-  readonly CWEMonitorEnabled: boolean;
-  readonly OpsItemSNSTopicArn: string;
-  readonly RemoveSNSTopic: boolean;
-  readonly AutoConfigEnabled: boolean;
+  readonly OpsCenterEnabled?: boolean;
+  readonly CWEMonitorEnabled?: boolean;
+  readonly OpsItemSNSTopicArn?: string;
+  readonly RemoveSNSTopic?: boolean;
+  readonly AutoConfigEnabled?: boolean;
 }
 
-interface UpdateApplicationResponse {
-  readonly ApplicationInfo: ApplicationInfo;
+export interface UpdateApplicationResponse {
+  readonly ApplicationInfo?: ApplicationInfo;
 }
 
-interface UpdateComponentConfigurationRequest {
-  readonly ResourceGroupName: string;
-  readonly ComponentName: string;
-  readonly Monitor: boolean;
-  readonly Tier: string;
-  readonly ComponentConfiguration: string;
-  readonly AutoConfigEnabled: boolean;
-}
-
-interface UpdateComponentConfigurationResponse {
-}
-
-interface UpdateComponentRequest {
+export interface UpdateComponentConfigurationRequest {
   readonly ResourceGroupName: string;
   readonly ComponentName: string;
-  readonly NewComponentName: string;
-  readonly ResourceList: [];
+  readonly Monitor?: boolean;
+  readonly Tier?: string;
+  readonly ComponentConfiguration?: string;
+  readonly AutoConfigEnabled?: boolean;
 }
 
-interface UpdateComponentResponse {
+export interface UpdateComponentConfigurationResponse {
 }
 
-interface UpdateLogPatternRequest {
+export interface UpdateComponentRequest {
+  readonly ResourceGroupName: string;
+  readonly ComponentName: string;
+  readonly NewComponentName?: string;
+  readonly ResourceList?: [];
+}
+
+export interface UpdateComponentResponse {
+}
+
+export interface UpdateLogPatternRequest {
   readonly ResourceGroupName: string;
   readonly PatternSetName: string;
   readonly PatternName: string;
-  readonly Pattern: string;
-  readonly Rank: number;
+  readonly Pattern?: string;
+  readonly Rank?: number;
 }
 
-interface UpdateLogPatternResponse {
-  readonly ResourceGroupName: string;
-  readonly LogPattern: LogPattern;
+export interface UpdateLogPatternResponse {
+  readonly ResourceGroupName?: string;
+  readonly LogPattern?: LogPattern;
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

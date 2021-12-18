@@ -5,67 +5,83 @@ export interface CreateBotVersion {
   readonly name: string;
   readonly checksum?: string;
 }
+
 export interface CreateIntentVersion {
   readonly name: string;
   readonly checksum?: string;
 }
+
 export interface CreateSlotTypeVersion {
   readonly name: string;
   readonly checksum?: string;
 }
+
 export interface DeleteBot {
   readonly name: string;
 }
+
 export interface DeleteBotAlias {
   readonly name: string;
   readonly botName: string;
 }
+
 export interface DeleteBotChannelAssociation {
   readonly name: string;
   readonly botName: string;
   readonly botAlias: string;
 }
+
 export interface DeleteBotVersion {
   readonly name: string;
   readonly version: string;
 }
+
 export interface DeleteIntent {
   readonly name: string;
 }
+
 export interface DeleteIntentVersion {
   readonly name: string;
   readonly version: string;
 }
+
 export interface DeleteSlotType {
   readonly name: string;
 }
+
 export interface DeleteSlotTypeVersion {
   readonly name: string;
   readonly version: string;
 }
+
 export interface DeleteUtterances {
   readonly botName: string;
   readonly userId: string;
 }
+
 export interface GetBot {
   readonly name: string;
   readonly versionOrAlias: string;
 }
+
 export interface GetBotAlias {
   readonly name: string;
   readonly botName: string;
 }
+
 export interface GetBotAliases {
   readonly botName: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly nameContains?: string;
 }
+
 export interface GetBotChannelAssociation {
   readonly name: string;
   readonly botName: string;
   readonly botAlias: string;
 }
+
 export interface GetBotChannelAssociations {
   readonly botName: string;
   readonly botAlias: string;
@@ -73,57 +89,69 @@ export interface GetBotChannelAssociations {
   readonly maxResults?: number;
   readonly nameContains?: string;
 }
+
 export interface GetBotVersions {
   readonly name: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetBots {
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly nameContains?: string;
 }
+
 export interface GetBuiltinIntent {
   readonly signature: string;
 }
+
 export interface GetBuiltinIntents {
   readonly locale?: string;
   readonly signatureContains?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetBuiltinSlotTypes {
   readonly locale?: string;
   readonly signatureContains?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetExport {
   readonly name: string;
   readonly version: string;
   readonly resourceType: string;
   readonly exportType: string;
 }
+
 export interface GetImport {
   readonly importId: string;
 }
+
 export interface GetIntent {
   readonly name: string;
   readonly version: string;
 }
+
 export interface GetIntentVersions {
   readonly name: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetIntents {
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly nameContains?: string;
 }
+
 export interface GetMigration {
   readonly migrationId: string;
 }
+
 export interface GetMigrations {
   readonly sortByAttribute?: string;
   readonly sortByOrder?: string;
@@ -132,28 +160,34 @@ export interface GetMigrations {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface GetSlotType {
   readonly name: string;
   readonly version: string;
 }
+
 export interface GetSlotTypeVersions {
   readonly name: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetSlotTypes {
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly nameContains?: string;
 }
+
 export interface GetUtterancesView {
   readonly botName: string;
   readonly botVersions: [];
   readonly statusType: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface PutBot {
   readonly name: string;
   readonly description?: string;
@@ -172,6 +206,7 @@ export interface PutBot {
   readonly createVersion?: boolean;
   readonly tags?: [];
 }
+
 export interface PutBotAlias {
   readonly name: string;
   readonly description?: string;
@@ -181,6 +216,7 @@ export interface PutBotAlias {
   readonly conversationLogs?: ConversationLogsRequest;
   readonly tags?: [];
 }
+
 export interface PutIntent {
   readonly name: string;
   readonly description?: string;
@@ -199,6 +235,7 @@ export interface PutIntent {
   readonly inputContexts?: [];
   readonly outputContexts?: [];
 }
+
 export interface PutSlotType {
   readonly name: string;
   readonly description?: string;
@@ -209,12 +246,14 @@ export interface PutSlotType {
   readonly parentSlotTypeSignature?: string;
   readonly slotTypeConfigurations?: [];
 }
+
 export interface StartImport {
   readonly payload: unknown;
   readonly resourceType: string;
   readonly mergeStrategy: string;
   readonly tags?: [];
 }
+
 export interface StartMigration {
   readonly v1BotName: string;
   readonly v1BotVersion: string;
@@ -222,815 +261,815 @@ export interface StartMigration {
   readonly v2BotRole: string;
   readonly migrationStrategy: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: [];
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-
-
-interface AccessDeniedException {
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly message?: string;
 }
 
-interface BadRequestException {
-  readonly message: string;
+export interface BadRequestException {
+  readonly message?: string;
 }
 
-interface BotAliasMetadata {
-  readonly name: string;
-  readonly description: string;
-  readonly botVersion: string;
-  readonly botName: string;
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly checksum: string;
-  readonly conversationLogs: ConversationLogsResponse;
+export interface BotAliasMetadata {
+  readonly name?: string;
+  readonly description?: string;
+  readonly botVersion?: string;
+  readonly botName?: string;
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly checksum?: string;
+  readonly conversationLogs?: ConversationLogsResponse;
 }
 
-interface BotChannelAssociation {
-  readonly name: string;
-  readonly description: string;
-  readonly botAlias: string;
-  readonly botName: string;
-  readonly createdDate: Date;
-  readonly type: string;
-  readonly botConfiguration: {[key: string]: any};
-  readonly status: string;
-  readonly failureReason: string;
+export interface BotChannelAssociation {
+  readonly name?: string;
+  readonly description?: string;
+  readonly botAlias?: string;
+  readonly botName?: string;
+  readonly createdDate?: Date;
+  readonly type?: string;
+  readonly botConfiguration?: {[key: string]: any};
+  readonly status?: string;
+  readonly failureReason?: string;
 }
 
-interface BotMetadata {
-  readonly name: string;
-  readonly description: string;
-  readonly status: string;
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly version: string;
+export interface BotMetadata {
+  readonly name?: string;
+  readonly description?: string;
+  readonly status?: string;
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly version?: string;
 }
 
-interface BuiltinIntentMetadata {
-  readonly signature: string;
-  readonly supportedLocales: [];
+export interface BuiltinIntentMetadata {
+  readonly signature?: string;
+  readonly supportedLocales?: [];
 }
 
-interface BuiltinIntentSlot {
-  readonly name: string;
+export interface BuiltinIntentSlot {
+  readonly name?: string;
 }
 
-interface BuiltinSlotTypeMetadata {
-  readonly signature: string;
-  readonly supportedLocales: [];
+export interface BuiltinSlotTypeMetadata {
+  readonly signature?: string;
+  readonly supportedLocales?: [];
 }
 
-interface CodeHook {
+export interface CodeHook {
   readonly uri: string;
   readonly messageVersion: string;
 }
 
-interface ConflictException {
-  readonly message: string;
+export interface ConflictException {
+  readonly message?: string;
 }
 
-interface ConversationLogsRequest {
+export interface ConversationLogsRequest {
   readonly logSettings: [];
   readonly iamRoleArn: string;
 }
 
-interface ConversationLogsResponse {
-  readonly logSettings: [];
-  readonly iamRoleArn: string;
+export interface ConversationLogsResponse {
+  readonly logSettings?: [];
+  readonly iamRoleArn?: string;
 }
 
-interface CreateBotVersionRequest {
+export interface CreateBotVersionRequest {
   readonly name: string;
-  readonly checksum: string;
+  readonly checksum?: string;
 }
 
-interface CreateBotVersionResponse {
+export interface CreateBotVersionResponse {
+  readonly name?: string;
+  readonly description?: string;
+  readonly intents?: [];
+  readonly clarificationPrompt?: Prompt;
+  readonly abortStatement?: Statement;
+  readonly status?: string;
+  readonly failureReason?: string;
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly idleSessionTTLInSeconds?: number;
+  readonly voiceId?: string;
+  readonly checksum?: string;
+  readonly version?: string;
+  readonly locale?: string;
+  readonly childDirected?: boolean;
+  readonly enableModelImprovements?: boolean;
+  readonly detectSentiment?: boolean;
+}
+
+export interface CreateIntentVersionRequest {
   readonly name: string;
-  readonly description: string;
-  readonly intents: [];
-  readonly clarificationPrompt: Prompt;
-  readonly abortStatement: Statement;
-  readonly status: string;
-  readonly failureReason: string;
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly idleSessionTTLInSeconds: number;
-  readonly voiceId: string;
-  readonly checksum: string;
-  readonly version: string;
-  readonly locale: string;
-  readonly childDirected: boolean;
-  readonly enableModelImprovements: boolean;
-  readonly detectSentiment: boolean;
+  readonly checksum?: string;
 }
 
-interface CreateIntentVersionRequest {
+export interface CreateIntentVersionResponse {
+  readonly name?: string;
+  readonly description?: string;
+  readonly slots?: [];
+  readonly sampleUtterances?: [];
+  readonly confirmationPrompt?: Prompt;
+  readonly rejectionStatement?: Statement;
+  readonly followUpPrompt?: FollowUpPrompt;
+  readonly conclusionStatement?: Statement;
+  readonly dialogCodeHook?: CodeHook;
+  readonly fulfillmentActivity?: FulfillmentActivity;
+  readonly parentIntentSignature?: string;
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly version?: string;
+  readonly checksum?: string;
+  readonly kendraConfiguration?: KendraConfiguration;
+  readonly inputContexts?: [];
+  readonly outputContexts?: [];
+}
+
+export interface CreateSlotTypeVersionRequest {
   readonly name: string;
-  readonly checksum: string;
+  readonly checksum?: string;
 }
 
-interface CreateIntentVersionResponse {
-  readonly name: string;
-  readonly description: string;
-  readonly slots: [];
-  readonly sampleUtterances: [];
-  readonly confirmationPrompt: Prompt;
-  readonly rejectionStatement: Statement;
-  readonly followUpPrompt: FollowUpPrompt;
-  readonly conclusionStatement: Statement;
-  readonly dialogCodeHook: CodeHook;
-  readonly fulfillmentActivity: FulfillmentActivity;
-  readonly parentIntentSignature: string;
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly version: string;
-  readonly checksum: string;
-  readonly kendraConfiguration: KendraConfiguration;
-  readonly inputContexts: [];
-  readonly outputContexts: [];
+export interface CreateSlotTypeVersionResponse {
+  readonly name?: string;
+  readonly description?: string;
+  readonly enumerationValues?: [];
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly version?: string;
+  readonly checksum?: string;
+  readonly valueSelectionStrategy?: string;
+  readonly parentSlotTypeSignature?: string;
+  readonly slotTypeConfigurations?: [];
 }
 
-interface CreateSlotTypeVersionRequest {
-  readonly name: string;
-  readonly checksum: string;
-}
-
-interface CreateSlotTypeVersionResponse {
-  readonly name: string;
-  readonly description: string;
-  readonly enumerationValues: [];
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly version: string;
-  readonly checksum: string;
-  readonly valueSelectionStrategy: string;
-  readonly parentSlotTypeSignature: string;
-  readonly slotTypeConfigurations: [];
-}
-
-interface DeleteBotAliasRequest {
+export interface DeleteBotAliasRequest {
   readonly name: string;
   readonly botName: string;
 }
 
-interface DeleteBotChannelAssociationRequest {
+export interface DeleteBotChannelAssociationRequest {
   readonly name: string;
   readonly botName: string;
   readonly botAlias: string;
 }
 
-interface DeleteBotRequest {
+export interface DeleteBotRequest {
   readonly name: string;
 }
 
-interface DeleteBotVersionRequest {
-  readonly name: string;
-  readonly version: string;
-}
-
-interface DeleteIntentRequest {
-  readonly name: string;
-}
-
-interface DeleteIntentVersionRequest {
+export interface DeleteBotVersionRequest {
   readonly name: string;
   readonly version: string;
 }
 
-interface DeleteSlotTypeRequest {
+export interface DeleteIntentRequest {
   readonly name: string;
 }
 
-interface DeleteSlotTypeVersionRequest {
+export interface DeleteIntentVersionRequest {
   readonly name: string;
   readonly version: string;
 }
 
-interface DeleteUtterancesRequest {
+export interface DeleteSlotTypeRequest {
+  readonly name: string;
+}
+
+export interface DeleteSlotTypeVersionRequest {
+  readonly name: string;
+  readonly version: string;
+}
+
+export interface DeleteUtterancesRequest {
   readonly botName: string;
   readonly userId: string;
 }
 
-interface EnumerationValue {
+export interface EnumerationValue {
   readonly value: string;
-  readonly synonyms: [];
+  readonly synonyms?: [];
 }
 
-interface FollowUpPrompt {
+export interface FollowUpPrompt {
   readonly prompt: Prompt;
   readonly rejectionStatement: Statement;
 }
 
-interface FulfillmentActivity {
+export interface FulfillmentActivity {
   readonly type: string;
-  readonly codeHook: CodeHook;
+  readonly codeHook?: CodeHook;
 }
 
-interface GetBotAliasRequest {
+export interface GetBotAliasRequest {
   readonly name: string;
   readonly botName: string;
 }
 
-interface GetBotAliasResponse {
-  readonly name: string;
-  readonly description: string;
-  readonly botVersion: string;
+export interface GetBotAliasResponse {
+  readonly name?: string;
+  readonly description?: string;
+  readonly botVersion?: string;
+  readonly botName?: string;
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly checksum?: string;
+  readonly conversationLogs?: ConversationLogsResponse;
+}
+
+export interface GetBotAliasesRequest {
   readonly botName: string;
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly checksum: string;
-  readonly conversationLogs: ConversationLogsResponse;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly nameContains?: string;
 }
 
-interface GetBotAliasesRequest {
-  readonly botName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly nameContains: string;
+export interface GetBotAliasesResponse {
+  readonly BotAliases?: [];
+  readonly nextToken?: string;
 }
 
-interface GetBotAliasesResponse {
-  readonly BotAliases: [];
-  readonly nextToken: string;
-}
-
-interface GetBotChannelAssociationRequest {
+export interface GetBotChannelAssociationRequest {
   readonly name: string;
   readonly botName: string;
   readonly botAlias: string;
 }
 
-interface GetBotChannelAssociationResponse {
-  readonly name: string;
-  readonly description: string;
-  readonly botAlias: string;
+export interface GetBotChannelAssociationResponse {
+  readonly name?: string;
+  readonly description?: string;
+  readonly botAlias?: string;
+  readonly botName?: string;
+  readonly createdDate?: Date;
+  readonly type?: string;
+  readonly botConfiguration?: {[key: string]: any};
+  readonly status?: string;
+  readonly failureReason?: string;
+}
+
+export interface GetBotChannelAssociationsRequest {
   readonly botName: string;
-  readonly createdDate: Date;
-  readonly type: string;
-  readonly botConfiguration: {[key: string]: any};
-  readonly status: string;
-  readonly failureReason: string;
-}
-
-interface GetBotChannelAssociationsRequest {
-  readonly botName: string;
   readonly botAlias: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly nameContains: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly nameContains?: string;
 }
 
-interface GetBotChannelAssociationsResponse {
-  readonly botChannelAssociations: [];
-  readonly nextToken: string;
+export interface GetBotChannelAssociationsResponse {
+  readonly botChannelAssociations?: [];
+  readonly nextToken?: string;
 }
 
-interface GetBotRequest {
+export interface GetBotRequest {
   readonly name: string;
   readonly versionOrAlias: string;
 }
 
-interface GetBotResponse {
+export interface GetBotResponse {
+  readonly name?: string;
+  readonly description?: string;
+  readonly intents?: [];
+  readonly enableModelImprovements?: boolean;
+  readonly nluIntentConfidenceThreshold?: unknown;
+  readonly clarificationPrompt?: Prompt;
+  readonly abortStatement?: Statement;
+  readonly status?: string;
+  readonly failureReason?: string;
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly idleSessionTTLInSeconds?: number;
+  readonly voiceId?: string;
+  readonly checksum?: string;
+  readonly version?: string;
+  readonly locale?: string;
+  readonly childDirected?: boolean;
+  readonly detectSentiment?: boolean;
+}
+
+export interface GetBotVersionsRequest {
   readonly name: string;
-  readonly description: string;
-  readonly intents: [];
-  readonly enableModelImprovements: boolean;
-  readonly nluIntentConfidenceThreshold: unknown;
-  readonly clarificationPrompt: Prompt;
-  readonly abortStatement: Statement;
-  readonly status: string;
-  readonly failureReason: string;
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly idleSessionTTLInSeconds: number;
-  readonly voiceId: string;
-  readonly checksum: string;
-  readonly version: string;
-  readonly locale: string;
-  readonly childDirected: boolean;
-  readonly detectSentiment: boolean;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetBotVersionsRequest {
-  readonly name: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetBotVersionsResponse {
+  readonly bots?: [];
+  readonly nextToken?: string;
 }
 
-interface GetBotVersionsResponse {
-  readonly bots: [];
-  readonly nextToken: string;
+export interface GetBotsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly nameContains?: string;
 }
 
-interface GetBotsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly nameContains: string;
+export interface GetBotsResponse {
+  readonly bots?: [];
+  readonly nextToken?: string;
 }
 
-interface GetBotsResponse {
-  readonly bots: [];
-  readonly nextToken: string;
-}
-
-interface GetBuiltinIntentRequest {
+export interface GetBuiltinIntentRequest {
   readonly signature: string;
 }
 
-interface GetBuiltinIntentResponse {
-  readonly signature: string;
-  readonly supportedLocales: [];
-  readonly slots: [];
+export interface GetBuiltinIntentResponse {
+  readonly signature?: string;
+  readonly supportedLocales?: [];
+  readonly slots?: [];
 }
 
-interface GetBuiltinIntentsRequest {
-  readonly locale: string;
-  readonly signatureContains: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetBuiltinIntentsRequest {
+  readonly locale?: string;
+  readonly signatureContains?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetBuiltinIntentsResponse {
-  readonly intents: [];
-  readonly nextToken: string;
+export interface GetBuiltinIntentsResponse {
+  readonly intents?: [];
+  readonly nextToken?: string;
 }
 
-interface GetBuiltinSlotTypesRequest {
-  readonly locale: string;
-  readonly signatureContains: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetBuiltinSlotTypesRequest {
+  readonly locale?: string;
+  readonly signatureContains?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetBuiltinSlotTypesResponse {
-  readonly slotTypes: [];
-  readonly nextToken: string;
+export interface GetBuiltinSlotTypesResponse {
+  readonly slotTypes?: [];
+  readonly nextToken?: string;
 }
 
-interface GetExportRequest {
+export interface GetExportRequest {
   readonly name: string;
   readonly version: string;
   readonly resourceType: string;
   readonly exportType: string;
 }
 
-interface GetExportResponse {
-  readonly name: string;
-  readonly version: string;
-  readonly resourceType: string;
-  readonly exportType: string;
-  readonly exportStatus: string;
-  readonly failureReason: string;
-  readonly url: string;
+export interface GetExportResponse {
+  readonly name?: string;
+  readonly version?: string;
+  readonly resourceType?: string;
+  readonly exportType?: string;
+  readonly exportStatus?: string;
+  readonly failureReason?: string;
+  readonly url?: string;
 }
 
-interface GetImportRequest {
+export interface GetImportRequest {
   readonly importId: string;
 }
 
-interface GetImportResponse {
-  readonly name: string;
-  readonly resourceType: string;
-  readonly mergeStrategy: string;
-  readonly importId: string;
-  readonly importStatus: string;
-  readonly failureReason: [];
-  readonly createdDate: Date;
+export interface GetImportResponse {
+  readonly name?: string;
+  readonly resourceType?: string;
+  readonly mergeStrategy?: string;
+  readonly importId?: string;
+  readonly importStatus?: string;
+  readonly failureReason?: [];
+  readonly createdDate?: Date;
 }
 
-interface GetIntentRequest {
+export interface GetIntentRequest {
   readonly name: string;
   readonly version: string;
 }
 
-interface GetIntentResponse {
+export interface GetIntentResponse {
+  readonly name?: string;
+  readonly description?: string;
+  readonly slots?: [];
+  readonly sampleUtterances?: [];
+  readonly confirmationPrompt?: Prompt;
+  readonly rejectionStatement?: Statement;
+  readonly followUpPrompt?: FollowUpPrompt;
+  readonly conclusionStatement?: Statement;
+  readonly dialogCodeHook?: CodeHook;
+  readonly fulfillmentActivity?: FulfillmentActivity;
+  readonly parentIntentSignature?: string;
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly version?: string;
+  readonly checksum?: string;
+  readonly kendraConfiguration?: KendraConfiguration;
+  readonly inputContexts?: [];
+  readonly outputContexts?: [];
+}
+
+export interface GetIntentVersionsRequest {
   readonly name: string;
-  readonly description: string;
-  readonly slots: [];
-  readonly sampleUtterances: [];
-  readonly confirmationPrompt: Prompt;
-  readonly rejectionStatement: Statement;
-  readonly followUpPrompt: FollowUpPrompt;
-  readonly conclusionStatement: Statement;
-  readonly dialogCodeHook: CodeHook;
-  readonly fulfillmentActivity: FulfillmentActivity;
-  readonly parentIntentSignature: string;
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly version: string;
-  readonly checksum: string;
-  readonly kendraConfiguration: KendraConfiguration;
-  readonly inputContexts: [];
-  readonly outputContexts: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetIntentVersionsRequest {
-  readonly name: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetIntentVersionsResponse {
+  readonly intents?: [];
+  readonly nextToken?: string;
 }
 
-interface GetIntentVersionsResponse {
-  readonly intents: [];
-  readonly nextToken: string;
+export interface GetIntentsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly nameContains?: string;
 }
 
-interface GetIntentsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly nameContains: string;
+export interface GetIntentsResponse {
+  readonly intents?: [];
+  readonly nextToken?: string;
 }
 
-interface GetIntentsResponse {
-  readonly intents: [];
-  readonly nextToken: string;
-}
-
-interface GetMigrationRequest {
+export interface GetMigrationRequest {
   readonly migrationId: string;
 }
 
-interface GetMigrationResponse {
-  readonly migrationId: string;
-  readonly v1BotName: string;
-  readonly v1BotVersion: string;
-  readonly v1BotLocale: string;
-  readonly v2BotId: string;
-  readonly v2BotRole: string;
-  readonly migrationStatus: string;
-  readonly migrationStrategy: string;
-  readonly migrationTimestamp: Date;
-  readonly alerts: [];
+export interface GetMigrationResponse {
+  readonly migrationId?: string;
+  readonly v1BotName?: string;
+  readonly v1BotVersion?: string;
+  readonly v1BotLocale?: string;
+  readonly v2BotId?: string;
+  readonly v2BotRole?: string;
+  readonly migrationStatus?: string;
+  readonly migrationStrategy?: string;
+  readonly migrationTimestamp?: Date;
+  readonly alerts?: [];
 }
 
-interface GetMigrationsRequest {
-  readonly sortByAttribute: string;
-  readonly sortByOrder: string;
-  readonly v1BotNameContains: string;
-  readonly migrationStatusEquals: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface GetMigrationsRequest {
+  readonly sortByAttribute?: string;
+  readonly sortByOrder?: string;
+  readonly v1BotNameContains?: string;
+  readonly migrationStatusEquals?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface GetMigrationsResponse {
-  readonly migrationSummaries: [];
-  readonly nextToken: string;
+export interface GetMigrationsResponse {
+  readonly migrationSummaries?: [];
+  readonly nextToken?: string;
 }
 
-interface GetSlotTypeRequest {
+export interface GetSlotTypeRequest {
   readonly name: string;
   readonly version: string;
 }
 
-interface GetSlotTypeResponse {
+export interface GetSlotTypeResponse {
+  readonly name?: string;
+  readonly description?: string;
+  readonly enumerationValues?: [];
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly version?: string;
+  readonly checksum?: string;
+  readonly valueSelectionStrategy?: string;
+  readonly parentSlotTypeSignature?: string;
+  readonly slotTypeConfigurations?: [];
+}
+
+export interface GetSlotTypeVersionsRequest {
   readonly name: string;
-  readonly description: string;
-  readonly enumerationValues: [];
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly version: string;
-  readonly checksum: string;
-  readonly valueSelectionStrategy: string;
-  readonly parentSlotTypeSignature: string;
-  readonly slotTypeConfigurations: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetSlotTypeVersionsRequest {
-  readonly name: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetSlotTypeVersionsResponse {
+  readonly slotTypes?: [];
+  readonly nextToken?: string;
 }
 
-interface GetSlotTypeVersionsResponse {
-  readonly slotTypes: [];
-  readonly nextToken: string;
+export interface GetSlotTypesRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly nameContains?: string;
 }
 
-interface GetSlotTypesRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly nameContains: string;
+export interface GetSlotTypesResponse {
+  readonly slotTypes?: [];
+  readonly nextToken?: string;
 }
 
-interface GetSlotTypesResponse {
-  readonly slotTypes: [];
-  readonly nextToken: string;
-}
-
-interface GetUtterancesViewRequest {
+export interface GetUtterancesViewRequest {
   readonly botName: string;
   readonly botVersions: [];
   readonly statusType: string;
 }
 
-interface GetUtterancesViewResponse {
-  readonly botName: string;
-  readonly utterances: [];
+export interface GetUtterancesViewResponse {
+  readonly botName?: string;
+  readonly utterances?: [];
 }
 
-interface InputContext {
+export interface InputContext {
   readonly name: string;
 }
 
-interface Intent {
+export interface Intent {
   readonly intentName: string;
   readonly intentVersion: string;
 }
 
-interface IntentMetadata {
-  readonly name: string;
-  readonly description: string;
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly version: string;
+export interface IntentMetadata {
+  readonly name?: string;
+  readonly description?: string;
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly version?: string;
 }
 
-interface InternalFailureException {
-  readonly message: string;
+export interface InternalFailureException {
+  readonly message?: string;
 }
 
-interface KendraConfiguration {
+export interface KendraConfiguration {
   readonly kendraIndex: string;
-  readonly queryFilterString: string;
+  readonly queryFilterString?: string;
   readonly role: string;
 }
 
-interface LimitExceededException {
-  readonly retryAfterSeconds: string;
-  readonly message: string;
+export interface LimitExceededException {
+  readonly retryAfterSeconds?: string;
+  readonly message?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: [];
+export interface ListTagsForResourceResponse {
+  readonly tags?: [];
 }
 
-interface LogSettingsRequest {
+export interface LogSettingsRequest {
   readonly logType: string;
   readonly destination: string;
-  readonly kmsKeyArn: string;
+  readonly kmsKeyArn?: string;
   readonly resourceArn: string;
 }
 
-interface LogSettingsResponse {
-  readonly logType: string;
-  readonly destination: string;
-  readonly kmsKeyArn: string;
-  readonly resourceArn: string;
-  readonly resourcePrefix: string;
+export interface LogSettingsResponse {
+  readonly logType?: string;
+  readonly destination?: string;
+  readonly kmsKeyArn?: string;
+  readonly resourceArn?: string;
+  readonly resourcePrefix?: string;
 }
 
-interface Message {
+export interface Message {
   readonly contentType: string;
   readonly content: string;
-  readonly groupNumber: number;
+  readonly groupNumber?: number;
 }
 
-interface MigrationAlert {
-  readonly type: string;
-  readonly message: string;
-  readonly details: [];
-  readonly referenceURLs: [];
+export interface MigrationAlert {
+  readonly type?: string;
+  readonly message?: string;
+  readonly details?: [];
+  readonly referenceURLs?: [];
 }
 
-interface MigrationSummary {
-  readonly migrationId: string;
-  readonly v1BotName: string;
-  readonly v1BotVersion: string;
-  readonly v1BotLocale: string;
-  readonly v2BotId: string;
-  readonly v2BotRole: string;
-  readonly migrationStatus: string;
-  readonly migrationStrategy: string;
-  readonly migrationTimestamp: Date;
+export interface MigrationSummary {
+  readonly migrationId?: string;
+  readonly v1BotName?: string;
+  readonly v1BotVersion?: string;
+  readonly v1BotLocale?: string;
+  readonly v2BotId?: string;
+  readonly v2BotRole?: string;
+  readonly migrationStatus?: string;
+  readonly migrationStrategy?: string;
+  readonly migrationTimestamp?: Date;
 }
 
-interface NotFoundException {
-  readonly message: string;
+export interface NotFoundException {
+  readonly message?: string;
 }
 
-interface OutputContext {
+export interface OutputContext {
   readonly name: string;
   readonly timeToLiveInSeconds: number;
   readonly turnsToLive: number;
 }
 
-interface PreconditionFailedException {
-  readonly message: string;
+export interface PreconditionFailedException {
+  readonly message?: string;
 }
 
-interface Prompt {
+export interface Prompt {
   readonly messages: [];
   readonly maxAttempts: number;
-  readonly responseCard: string;
+  readonly responseCard?: string;
 }
 
-interface PutBotAliasRequest {
+export interface PutBotAliasRequest {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly botVersion: string;
   readonly botName: string;
-  readonly checksum: string;
-  readonly conversationLogs: ConversationLogsRequest;
-  readonly tags: [];
+  readonly checksum?: string;
+  readonly conversationLogs?: ConversationLogsRequest;
+  readonly tags?: [];
 }
 
-interface PutBotAliasResponse {
-  readonly name: string;
-  readonly description: string;
-  readonly botVersion: string;
-  readonly botName: string;
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly checksum: string;
-  readonly conversationLogs: ConversationLogsResponse;
-  readonly tags: [];
+export interface PutBotAliasResponse {
+  readonly name?: string;
+  readonly description?: string;
+  readonly botVersion?: string;
+  readonly botName?: string;
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly checksum?: string;
+  readonly conversationLogs?: ConversationLogsResponse;
+  readonly tags?: [];
 }
 
-interface PutBotRequest {
+export interface PutBotRequest {
   readonly name: string;
-  readonly description: string;
-  readonly intents: [];
-  readonly enableModelImprovements: boolean;
-  readonly nluIntentConfidenceThreshold: unknown;
-  readonly clarificationPrompt: Prompt;
-  readonly abortStatement: Statement;
-  readonly idleSessionTTLInSeconds: number;
-  readonly voiceId: string;
-  readonly checksum: string;
-  readonly processBehavior: string;
+  readonly description?: string;
+  readonly intents?: [];
+  readonly enableModelImprovements?: boolean;
+  readonly nluIntentConfidenceThreshold?: unknown;
+  readonly clarificationPrompt?: Prompt;
+  readonly abortStatement?: Statement;
+  readonly idleSessionTTLInSeconds?: number;
+  readonly voiceId?: string;
+  readonly checksum?: string;
+  readonly processBehavior?: string;
   readonly locale: string;
   readonly childDirected: boolean;
-  readonly detectSentiment: boolean;
-  readonly createVersion: boolean;
-  readonly tags: [];
+  readonly detectSentiment?: boolean;
+  readonly createVersion?: boolean;
+  readonly tags?: [];
 }
 
-interface PutBotResponse {
+export interface PutBotResponse {
+  readonly name?: string;
+  readonly description?: string;
+  readonly intents?: [];
+  readonly enableModelImprovements?: boolean;
+  readonly nluIntentConfidenceThreshold?: unknown;
+  readonly clarificationPrompt?: Prompt;
+  readonly abortStatement?: Statement;
+  readonly status?: string;
+  readonly failureReason?: string;
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly idleSessionTTLInSeconds?: number;
+  readonly voiceId?: string;
+  readonly checksum?: string;
+  readonly version?: string;
+  readonly locale?: string;
+  readonly childDirected?: boolean;
+  readonly createVersion?: boolean;
+  readonly detectSentiment?: boolean;
+  readonly tags?: [];
+}
+
+export interface PutIntentRequest {
   readonly name: string;
-  readonly description: string;
-  readonly intents: [];
-  readonly enableModelImprovements: boolean;
-  readonly nluIntentConfidenceThreshold: unknown;
-  readonly clarificationPrompt: Prompt;
-  readonly abortStatement: Statement;
-  readonly status: string;
-  readonly failureReason: string;
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly idleSessionTTLInSeconds: number;
-  readonly voiceId: string;
-  readonly checksum: string;
-  readonly version: string;
-  readonly locale: string;
-  readonly childDirected: boolean;
-  readonly createVersion: boolean;
-  readonly detectSentiment: boolean;
-  readonly tags: [];
+  readonly description?: string;
+  readonly slots?: [];
+  readonly sampleUtterances?: [];
+  readonly confirmationPrompt?: Prompt;
+  readonly rejectionStatement?: Statement;
+  readonly followUpPrompt?: FollowUpPrompt;
+  readonly conclusionStatement?: Statement;
+  readonly dialogCodeHook?: CodeHook;
+  readonly fulfillmentActivity?: FulfillmentActivity;
+  readonly parentIntentSignature?: string;
+  readonly checksum?: string;
+  readonly createVersion?: boolean;
+  readonly kendraConfiguration?: KendraConfiguration;
+  readonly inputContexts?: [];
+  readonly outputContexts?: [];
 }
 
-interface PutIntentRequest {
+export interface PutIntentResponse {
+  readonly name?: string;
+  readonly description?: string;
+  readonly slots?: [];
+  readonly sampleUtterances?: [];
+  readonly confirmationPrompt?: Prompt;
+  readonly rejectionStatement?: Statement;
+  readonly followUpPrompt?: FollowUpPrompt;
+  readonly conclusionStatement?: Statement;
+  readonly dialogCodeHook?: CodeHook;
+  readonly fulfillmentActivity?: FulfillmentActivity;
+  readonly parentIntentSignature?: string;
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly version?: string;
+  readonly checksum?: string;
+  readonly createVersion?: boolean;
+  readonly kendraConfiguration?: KendraConfiguration;
+  readonly inputContexts?: [];
+  readonly outputContexts?: [];
+}
+
+export interface PutSlotTypeRequest {
   readonly name: string;
-  readonly description: string;
-  readonly slots: [];
-  readonly sampleUtterances: [];
-  readonly confirmationPrompt: Prompt;
-  readonly rejectionStatement: Statement;
-  readonly followUpPrompt: FollowUpPrompt;
-  readonly conclusionStatement: Statement;
-  readonly dialogCodeHook: CodeHook;
-  readonly fulfillmentActivity: FulfillmentActivity;
-  readonly parentIntentSignature: string;
-  readonly checksum: string;
-  readonly createVersion: boolean;
-  readonly kendraConfiguration: KendraConfiguration;
-  readonly inputContexts: [];
-  readonly outputContexts: [];
+  readonly description?: string;
+  readonly enumerationValues?: [];
+  readonly checksum?: string;
+  readonly valueSelectionStrategy?: string;
+  readonly createVersion?: boolean;
+  readonly parentSlotTypeSignature?: string;
+  readonly slotTypeConfigurations?: [];
 }
 
-interface PutIntentResponse {
+export interface PutSlotTypeResponse {
+  readonly name?: string;
+  readonly description?: string;
+  readonly enumerationValues?: [];
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly version?: string;
+  readonly checksum?: string;
+  readonly valueSelectionStrategy?: string;
+  readonly createVersion?: boolean;
+  readonly parentSlotTypeSignature?: string;
+  readonly slotTypeConfigurations?: [];
+}
+
+export interface ResourceInUseException {
+  readonly referenceType?: string;
+  readonly exampleReference?: ResourceReference;
+}
+
+export interface ResourceReference {
+  readonly name?: string;
+  readonly version?: string;
+}
+
+export interface Slot {
   readonly name: string;
-  readonly description: string;
-  readonly slots: [];
-  readonly sampleUtterances: [];
-  readonly confirmationPrompt: Prompt;
-  readonly rejectionStatement: Statement;
-  readonly followUpPrompt: FollowUpPrompt;
-  readonly conclusionStatement: Statement;
-  readonly dialogCodeHook: CodeHook;
-  readonly fulfillmentActivity: FulfillmentActivity;
-  readonly parentIntentSignature: string;
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly version: string;
-  readonly checksum: string;
-  readonly createVersion: boolean;
-  readonly kendraConfiguration: KendraConfiguration;
-  readonly inputContexts: [];
-  readonly outputContexts: [];
-}
-
-interface PutSlotTypeRequest {
-  readonly name: string;
-  readonly description: string;
-  readonly enumerationValues: [];
-  readonly checksum: string;
-  readonly valueSelectionStrategy: string;
-  readonly createVersion: boolean;
-  readonly parentSlotTypeSignature: string;
-  readonly slotTypeConfigurations: [];
-}
-
-interface PutSlotTypeResponse {
-  readonly name: string;
-  readonly description: string;
-  readonly enumerationValues: [];
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly version: string;
-  readonly checksum: string;
-  readonly valueSelectionStrategy: string;
-  readonly createVersion: boolean;
-  readonly parentSlotTypeSignature: string;
-  readonly slotTypeConfigurations: [];
-}
-
-interface ResourceInUseException {
-  readonly referenceType: string;
-  readonly exampleReference: ResourceReference;
-}
-
-interface ResourceReference {
-  readonly name: string;
-  readonly version: string;
-}
-
-interface Slot {
-  readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly slotConstraint: string;
-  readonly slotType: string;
-  readonly slotTypeVersion: string;
-  readonly valueElicitationPrompt: Prompt;
-  readonly priority: number;
-  readonly sampleUtterances: [];
-  readonly responseCard: string;
-  readonly obfuscationSetting: string;
-  readonly defaultValueSpec: SlotDefaultValueSpec;
+  readonly slotType?: string;
+  readonly slotTypeVersion?: string;
+  readonly valueElicitationPrompt?: Prompt;
+  readonly priority?: number;
+  readonly sampleUtterances?: [];
+  readonly responseCard?: string;
+  readonly obfuscationSetting?: string;
+  readonly defaultValueSpec?: SlotDefaultValueSpec;
 }
 
-interface SlotDefaultValue {
+export interface SlotDefaultValue {
   readonly defaultValue: string;
 }
 
-interface SlotDefaultValueSpec {
+export interface SlotDefaultValueSpec {
   readonly defaultValueList: [];
 }
 
-interface SlotTypeConfiguration {
-  readonly regexConfiguration: SlotTypeRegexConfiguration;
+export interface SlotTypeConfiguration {
+  readonly regexConfiguration?: SlotTypeRegexConfiguration;
 }
 
-interface SlotTypeMetadata {
-  readonly name: string;
-  readonly description: string;
-  readonly lastUpdatedDate: Date;
-  readonly createdDate: Date;
-  readonly version: string;
+export interface SlotTypeMetadata {
+  readonly name?: string;
+  readonly description?: string;
+  readonly lastUpdatedDate?: Date;
+  readonly createdDate?: Date;
+  readonly version?: string;
 }
 
-interface SlotTypeRegexConfiguration {
+export interface SlotTypeRegexConfiguration {
   readonly pattern: string;
 }
 
-interface StartImportRequest {
+export interface StartImportRequest {
   readonly payload: unknown;
   readonly resourceType: string;
   readonly mergeStrategy: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface StartImportResponse {
-  readonly name: string;
-  readonly resourceType: string;
-  readonly mergeStrategy: string;
-  readonly importId: string;
-  readonly importStatus: string;
-  readonly tags: [];
-  readonly createdDate: Date;
+export interface StartImportResponse {
+  readonly name?: string;
+  readonly resourceType?: string;
+  readonly mergeStrategy?: string;
+  readonly importId?: string;
+  readonly importStatus?: string;
+  readonly tags?: [];
+  readonly createdDate?: Date;
 }
 
-interface StartMigrationRequest {
+export interface StartMigrationRequest {
   readonly v1BotName: string;
   readonly v1BotVersion: string;
   readonly v2BotName: string;
@@ -1038,53 +1077,54 @@ interface StartMigrationRequest {
   readonly migrationStrategy: string;
 }
 
-interface StartMigrationResponse {
-  readonly v1BotName: string;
-  readonly v1BotVersion: string;
-  readonly v1BotLocale: string;
-  readonly v2BotId: string;
-  readonly v2BotRole: string;
-  readonly migrationId: string;
-  readonly migrationStrategy: string;
-  readonly migrationTimestamp: Date;
+export interface StartMigrationResponse {
+  readonly v1BotName?: string;
+  readonly v1BotVersion?: string;
+  readonly v1BotLocale?: string;
+  readonly v2BotId?: string;
+  readonly v2BotRole?: string;
+  readonly migrationId?: string;
+  readonly migrationStrategy?: string;
+  readonly migrationTimestamp?: Date;
 }
 
-interface Statement {
+export interface Statement {
   readonly messages: [];
-  readonly responseCard: string;
+  readonly responseCard?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly key: string;
   readonly value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UtteranceData {
-  readonly utteranceString: string;
-  readonly count: number;
-  readonly distinctUsers: number;
-  readonly firstUtteredDate: Date;
-  readonly lastUtteredDate: Date;
+export interface UtteranceData {
+  readonly utteranceString?: string;
+  readonly count?: number;
+  readonly distinctUsers?: number;
+  readonly firstUtteredDate?: Date;
+  readonly lastUtteredDate?: Date;
 }
 
-interface UtteranceList {
-  readonly botVersion: string;
-  readonly utterances: [];
+export interface UtteranceList {
+  readonly botVersion?: string;
+  readonly utterances?: [];
 }
+
 

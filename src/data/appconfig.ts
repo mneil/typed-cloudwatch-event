@@ -6,6 +6,7 @@ export interface CreateApplication {
   readonly Description?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateConfigurationProfile {
   readonly ApplicationId: string;
   readonly Name: string;
@@ -16,6 +17,7 @@ export interface CreateConfigurationProfile {
   readonly Tags?: {[key: string]: any};
   readonly Type?: string;
 }
+
 export interface CreateDeploymentStrategy {
   readonly Name: string;
   readonly Description?: string;
@@ -26,6 +28,7 @@ export interface CreateDeploymentStrategy {
   readonly ReplicateTo: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateEnvironment {
   readonly ApplicationId: string;
   readonly Name: string;
@@ -33,6 +36,7 @@ export interface CreateEnvironment {
   readonly Monitors?: [];
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateHostedConfigurationVersion {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
@@ -41,28 +45,35 @@ export interface CreateHostedConfigurationVersion {
   readonly ContentType: string;
   readonly LatestVersionNumber?: number;
 }
+
 export interface DeleteApplication {
   readonly ApplicationId: string;
 }
+
 export interface DeleteConfigurationProfile {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
 }
+
 export interface DeleteDeploymentStrategy {
   readonly DeploymentStrategyId: string;
 }
+
 export interface DeleteEnvironment {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
 }
+
 export interface DeleteHostedConfigurationVersion {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
   readonly VersionNumber: number;
 }
+
 export interface GetApplication {
   readonly ApplicationId: string;
 }
+
 export interface GetConfiguration {
   readonly Application: string;
   readonly Environment: string;
@@ -70,61 +81,74 @@ export interface GetConfiguration {
   readonly ClientId: string;
   readonly ClientConfigurationVersion?: string;
 }
+
 export interface GetConfigurationProfile {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
 }
+
 export interface GetDeployment {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
   readonly DeploymentNumber: number;
 }
+
 export interface GetDeploymentStrategy {
   readonly DeploymentStrategyId: string;
 }
+
 export interface GetEnvironment {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
 }
+
 export interface GetHostedConfigurationVersion {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
   readonly VersionNumber: number;
 }
+
 export interface ListApplications {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListConfigurationProfiles {
   readonly ApplicationId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly Type?: string;
 }
+
 export interface ListDeploymentStrategies {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListDeployments {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListEnvironments {
   readonly ApplicationId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListHostedConfigurationVersions {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface StartDeployment {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
@@ -134,24 +158,29 @@ export interface StartDeployment {
   readonly Description?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface StopDeployment {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
   readonly DeploymentNumber: number;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateApplication {
   readonly ApplicationId: string;
   readonly Name?: string;
   readonly Description?: string;
 }
+
 export interface UpdateConfigurationProfile {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
@@ -160,6 +189,7 @@ export interface UpdateConfigurationProfile {
   readonly RetrievalRoleArn?: string;
   readonly Validators?: [];
 }
+
 export interface UpdateDeploymentStrategy {
   readonly DeploymentStrategyId: string;
   readonly Description?: string;
@@ -168,6 +198,7 @@ export interface UpdateDeploymentStrategy {
   readonly GrowthFactor?: unknown;
   readonly GrowthType?: string;
 }
+
 export interface UpdateEnvironment {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
@@ -175,419 +206,419 @@ export interface UpdateEnvironment {
   readonly Description?: string;
   readonly Monitors?: [];
 }
+
 export interface ValidateConfiguration {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
   readonly ConfigurationVersion: string;
 }
 
+export interface Application {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+}
 
+export interface Applications {
+  readonly Items?: [];
+  readonly NextToken?: string;
+}
 
-interface Application {
-  readonly Id: string;
+export interface BadRequestDetails {
+  readonly InvalidConfiguration?: [];
+}
+
+export interface BadRequestException {
+  readonly Message?: string;
+  readonly Reason?: string;
+  readonly Details?: BadRequestDetails;
+}
+
+export interface Configuration {
+  readonly Content?: unknown;
+  readonly ConfigurationVersion?: string;
+  readonly ContentType?: string;
+}
+
+export interface ConfigurationProfile {
+  readonly ApplicationId?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly LocationUri?: string;
+  readonly RetrievalRoleArn?: string;
+  readonly Validators?: [];
+  readonly Type?: string;
+}
+
+export interface ConfigurationProfileSummary {
+  readonly ApplicationId?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly LocationUri?: string;
+  readonly ValidatorTypes?: [];
+  readonly Type?: string;
+}
+
+export interface ConfigurationProfiles {
+  readonly Items?: [];
+  readonly NextToken?: string;
+}
+
+export interface ConflictException {
+  readonly Message?: string;
+}
+
+export interface CreateApplicationRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface Applications {
-  readonly Items: [];
-  readonly NextToken: string;
-}
-
-interface BadRequestDetails {
-  readonly InvalidConfiguration: [];
-}
-
-interface BadRequestException {
-  readonly Message: string;
-  readonly Reason: string;
-  readonly Details: BadRequestDetails;
-}
-
-interface Configuration {
-  readonly Content: unknown;
-  readonly ConfigurationVersion: string;
-  readonly ContentType: string;
-}
-
-interface ConfigurationProfile {
-  readonly ApplicationId: string;
-  readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly LocationUri: string;
-  readonly RetrievalRoleArn: string;
-  readonly Validators: [];
-  readonly Type: string;
-}
-
-interface ConfigurationProfileSummary {
-  readonly ApplicationId: string;
-  readonly Id: string;
-  readonly Name: string;
-  readonly LocationUri: string;
-  readonly ValidatorTypes: [];
-  readonly Type: string;
-}
-
-interface ConfigurationProfiles {
-  readonly Items: [];
-  readonly NextToken: string;
-}
-
-interface ConflictException {
-  readonly Message: string;
-}
-
-interface CreateApplicationRequest {
-  readonly Name: string;
-  readonly Description: string;
-  readonly Tags: {[key: string]: any};
-}
-
-interface CreateConfigurationProfileRequest {
+export interface CreateConfigurationProfileRequest {
   readonly ApplicationId: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly LocationUri: string;
-  readonly RetrievalRoleArn: string;
-  readonly Validators: [];
-  readonly Tags: {[key: string]: any};
-  readonly Type: string;
+  readonly RetrievalRoleArn?: string;
+  readonly Validators?: [];
+  readonly Tags?: {[key: string]: any};
+  readonly Type?: string;
 }
 
-interface CreateDeploymentStrategyRequest {
+export interface CreateDeploymentStrategyRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly DeploymentDurationInMinutes: number;
-  readonly FinalBakeTimeInMinutes: number;
+  readonly FinalBakeTimeInMinutes?: number;
   readonly GrowthFactor: unknown;
-  readonly GrowthType: string;
+  readonly GrowthType?: string;
   readonly ReplicateTo: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateEnvironmentRequest {
+export interface CreateEnvironmentRequest {
   readonly ApplicationId: string;
   readonly Name: string;
-  readonly Description: string;
-  readonly Monitors: [];
-  readonly Tags: {[key: string]: any};
+  readonly Description?: string;
+  readonly Monitors?: [];
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateHostedConfigurationVersionRequest {
+export interface CreateHostedConfigurationVersionRequest {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Content: unknown;
   readonly ContentType: string;
-  readonly LatestVersionNumber: number;
+  readonly LatestVersionNumber?: number;
 }
 
-interface DeleteApplicationRequest {
+export interface DeleteApplicationRequest {
   readonly ApplicationId: string;
 }
 
-interface DeleteConfigurationProfileRequest {
+export interface DeleteConfigurationProfileRequest {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
 }
 
-interface DeleteDeploymentStrategyRequest {
+export interface DeleteDeploymentStrategyRequest {
   readonly DeploymentStrategyId: string;
 }
 
-interface DeleteEnvironmentRequest {
+export interface DeleteEnvironmentRequest {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
 }
 
-interface DeleteHostedConfigurationVersionRequest {
+export interface DeleteHostedConfigurationVersionRequest {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
   readonly VersionNumber: number;
 }
 
-interface Deployment {
+export interface Deployment {
+  readonly ApplicationId?: string;
+  readonly EnvironmentId?: string;
+  readonly DeploymentStrategyId?: string;
+  readonly ConfigurationProfileId?: string;
+  readonly DeploymentNumber?: number;
+  readonly ConfigurationName?: string;
+  readonly ConfigurationLocationUri?: string;
+  readonly ConfigurationVersion?: string;
+  readonly Description?: string;
+  readonly DeploymentDurationInMinutes?: number;
+  readonly GrowthType?: string;
+  readonly GrowthFactor?: unknown;
+  readonly FinalBakeTimeInMinutes?: number;
+  readonly State?: string;
+  readonly EventLog?: [];
+  readonly PercentageComplete?: unknown;
+  readonly StartedAt?: Date;
+  readonly CompletedAt?: Date;
+}
+
+export interface DeploymentEvent {
+  readonly EventType?: string;
+  readonly TriggeredBy?: string;
+  readonly Description?: string;
+  readonly OccurredAt?: Date;
+}
+
+export interface DeploymentStrategies {
+  readonly Items?: [];
+  readonly NextToken?: string;
+}
+
+export interface DeploymentStrategy {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly DeploymentDurationInMinutes?: number;
+  readonly GrowthType?: string;
+  readonly GrowthFactor?: unknown;
+  readonly FinalBakeTimeInMinutes?: number;
+  readonly ReplicateTo?: string;
+}
+
+export interface DeploymentSummary {
+  readonly DeploymentNumber?: number;
+  readonly ConfigurationName?: string;
+  readonly ConfigurationVersion?: string;
+  readonly DeploymentDurationInMinutes?: number;
+  readonly GrowthType?: string;
+  readonly GrowthFactor?: unknown;
+  readonly FinalBakeTimeInMinutes?: number;
+  readonly State?: string;
+  readonly PercentageComplete?: unknown;
+  readonly StartedAt?: Date;
+  readonly CompletedAt?: Date;
+}
+
+export interface Deployments {
+  readonly Items?: [];
+  readonly NextToken?: string;
+}
+
+export interface Environment {
+  readonly ApplicationId?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly State?: string;
+  readonly Monitors?: [];
+}
+
+export interface Environments {
+  readonly Items?: [];
+  readonly NextToken?: string;
+}
+
+export interface GetApplicationRequest {
   readonly ApplicationId: string;
-  readonly EnvironmentId: string;
-  readonly DeploymentStrategyId: string;
+}
+
+export interface GetConfigurationProfileRequest {
+  readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
-  readonly DeploymentNumber: number;
-  readonly ConfigurationName: string;
-  readonly ConfigurationLocationUri: string;
-  readonly ConfigurationVersion: string;
-  readonly Description: string;
-  readonly DeploymentDurationInMinutes: number;
-  readonly GrowthType: string;
-  readonly GrowthFactor: unknown;
-  readonly FinalBakeTimeInMinutes: number;
-  readonly State: string;
-  readonly EventLog: [];
-  readonly PercentageComplete: unknown;
-  readonly StartedAt: Date;
-  readonly CompletedAt: Date;
 }
 
-interface DeploymentEvent {
-  readonly EventType: string;
-  readonly TriggeredBy: string;
-  readonly Description: string;
-  readonly OccurredAt: Date;
-}
-
-interface DeploymentStrategies {
-  readonly Items: [];
-  readonly NextToken: string;
-}
-
-interface DeploymentStrategy {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly DeploymentDurationInMinutes: number;
-  readonly GrowthType: string;
-  readonly GrowthFactor: unknown;
-  readonly FinalBakeTimeInMinutes: number;
-  readonly ReplicateTo: string;
-}
-
-interface DeploymentSummary {
-  readonly DeploymentNumber: number;
-  readonly ConfigurationName: string;
-  readonly ConfigurationVersion: string;
-  readonly DeploymentDurationInMinutes: number;
-  readonly GrowthType: string;
-  readonly GrowthFactor: unknown;
-  readonly FinalBakeTimeInMinutes: number;
-  readonly State: string;
-  readonly PercentageComplete: unknown;
-  readonly StartedAt: Date;
-  readonly CompletedAt: Date;
-}
-
-interface Deployments {
-  readonly Items: [];
-  readonly NextToken: string;
-}
-
-interface Environment {
-  readonly ApplicationId: string;
-  readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly State: string;
-  readonly Monitors: [];
-}
-
-interface Environments {
-  readonly Items: [];
-  readonly NextToken: string;
-}
-
-interface GetApplicationRequest {
-  readonly ApplicationId: string;
-}
-
-interface GetConfigurationProfileRequest {
-  readonly ApplicationId: string;
-  readonly ConfigurationProfileId: string;
-}
-
-interface GetConfigurationRequest {
+export interface GetConfigurationRequest {
   readonly Application: string;
   readonly Environment: string;
   readonly Configuration: string;
   readonly ClientId: string;
-  readonly ClientConfigurationVersion: string;
+  readonly ClientConfigurationVersion?: string;
 }
 
-interface GetDeploymentRequest {
+export interface GetDeploymentRequest {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
   readonly DeploymentNumber: number;
 }
 
-interface GetDeploymentStrategyRequest {
+export interface GetDeploymentStrategyRequest {
   readonly DeploymentStrategyId: string;
 }
 
-interface GetEnvironmentRequest {
+export interface GetEnvironmentRequest {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
 }
 
-interface GetHostedConfigurationVersionRequest {
+export interface GetHostedConfigurationVersionRequest {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
   readonly VersionNumber: number;
 }
 
-interface HostedConfigurationVersion {
+export interface HostedConfigurationVersion {
+  readonly ApplicationId?: string;
+  readonly ConfigurationProfileId?: string;
+  readonly VersionNumber?: number;
+  readonly Description?: string;
+  readonly Content?: unknown;
+  readonly ContentType?: string;
+}
+
+export interface HostedConfigurationVersionSummary {
+  readonly ApplicationId?: string;
+  readonly ConfigurationProfileId?: string;
+  readonly VersionNumber?: number;
+  readonly Description?: string;
+  readonly ContentType?: string;
+}
+
+export interface HostedConfigurationVersions {
+  readonly Items?: [];
+  readonly NextToken?: string;
+}
+
+export interface InternalServerException {
+  readonly Message?: string;
+}
+
+export interface InvalidConfigurationDetail {
+  readonly Constraint?: string;
+  readonly Location?: string;
+  readonly Reason?: string;
+  readonly Type?: string;
+}
+
+export interface ListApplicationsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface ListConfigurationProfilesRequest {
   readonly ApplicationId: string;
-  readonly ConfigurationProfileId: string;
-  readonly VersionNumber: number;
-  readonly Description: string;
-  readonly Content: unknown;
-  readonly ContentType: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Type?: string;
 }
 
-interface HostedConfigurationVersionSummary {
-  readonly ApplicationId: string;
-  readonly ConfigurationProfileId: string;
-  readonly VersionNumber: number;
-  readonly Description: string;
-  readonly ContentType: string;
+export interface ListDeploymentStrategiesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface HostedConfigurationVersions {
-  readonly Items: [];
-  readonly NextToken: string;
-}
-
-interface InternalServerException {
-  readonly Message: string;
-}
-
-interface InvalidConfigurationDetail {
-  readonly Constraint: string;
-  readonly Location: string;
-  readonly Reason: string;
-  readonly Type: string;
-}
-
-interface ListApplicationsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface ListConfigurationProfilesRequest {
-  readonly ApplicationId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Type: string;
-}
-
-interface ListDeploymentStrategiesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface ListDeploymentsRequest {
+export interface ListDeploymentsRequest {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListEnvironmentsRequest {
+export interface ListEnvironmentsRequest {
   readonly ApplicationId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListHostedConfigurationVersionsRequest {
+export interface ListHostedConfigurationVersionsRequest {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface Monitor {
+export interface Monitor {
   readonly AlarmArn: string;
-  readonly AlarmRoleArn: string;
+  readonly AlarmRoleArn?: string;
 }
 
-interface PayloadTooLargeException {
-  readonly Message: string;
-  readonly Measure: string;
-  readonly Limit: unknown;
-  readonly Size: unknown;
+export interface PayloadTooLargeException {
+  readonly Message?: string;
+  readonly Measure?: string;
+  readonly Limit?: unknown;
+  readonly Size?: unknown;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
-  readonly ResourceName: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
+  readonly ResourceName?: string;
 }
 
-interface ResourceTags {
-  readonly Tags: {[key: string]: any};
+export interface ResourceTags {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface StartDeploymentRequest {
+export interface StartDeploymentRequest {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
   readonly DeploymentStrategyId: string;
   readonly ConfigurationProfileId: string;
   readonly ConfigurationVersion: string;
-  readonly Description: string;
-  readonly Tags: {[key: string]: any};
+  readonly Description?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface StopDeploymentRequest {
+export interface StopDeploymentRequest {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
   readonly DeploymentNumber: number;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UpdateApplicationRequest {
+export interface UpdateApplicationRequest {
   readonly ApplicationId: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 
-interface UpdateConfigurationProfileRequest {
+export interface UpdateConfigurationProfileRequest {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly RetrievalRoleArn: string;
-  readonly Validators: [];
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly RetrievalRoleArn?: string;
+  readonly Validators?: [];
 }
 
-interface UpdateDeploymentStrategyRequest {
+export interface UpdateDeploymentStrategyRequest {
   readonly DeploymentStrategyId: string;
-  readonly Description: string;
-  readonly DeploymentDurationInMinutes: number;
-  readonly FinalBakeTimeInMinutes: number;
-  readonly GrowthFactor: unknown;
-  readonly GrowthType: string;
+  readonly Description?: string;
+  readonly DeploymentDurationInMinutes?: number;
+  readonly FinalBakeTimeInMinutes?: number;
+  readonly GrowthFactor?: unknown;
+  readonly GrowthType?: string;
 }
 
-interface UpdateEnvironmentRequest {
+export interface UpdateEnvironmentRequest {
   readonly ApplicationId: string;
   readonly EnvironmentId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Monitors: [];
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Monitors?: [];
 }
 
-interface ValidateConfigurationRequest {
+export interface ValidateConfigurationRequest {
   readonly ApplicationId: string;
   readonly ConfigurationProfileId: string;
   readonly ConfigurationVersion: string;
 }
 
-interface Validator {
+export interface Validator {
   readonly Type: string;
   readonly Content: string;
 }
+
 

@@ -5,293 +5,312 @@ export interface CreateContainer {
   readonly ContainerName: string;
   readonly Tags?: [];
 }
+
 export interface DeleteContainer {
   readonly ContainerName: string;
 }
+
 export interface DeleteContainerPolicy {
   readonly ContainerName: string;
 }
+
 export interface DeleteCorsPolicy {
   readonly ContainerName: string;
 }
+
 export interface DeleteLifecyclePolicy {
   readonly ContainerName: string;
 }
+
 export interface DeleteMetricPolicy {
   readonly ContainerName: string;
 }
+
 export interface DescribeContainer {
   readonly ContainerName?: string;
 }
+
 export interface GetContainerPolicy {
   readonly ContainerName: string;
 }
+
 export interface GetCorsPolicy {
   readonly ContainerName: string;
 }
+
 export interface GetLifecyclePolicy {
   readonly ContainerName: string;
 }
+
 export interface GetMetricPolicy {
   readonly ContainerName: string;
 }
+
 export interface ListContainers {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly Resource: string;
 }
+
 export interface PutContainerPolicy {
   readonly ContainerName: string;
   readonly Policy: string;
 }
+
 export interface PutCorsPolicy {
   readonly ContainerName: string;
   readonly CorsPolicy: [];
 }
+
 export interface PutLifecyclePolicy {
   readonly ContainerName: string;
   readonly LifecyclePolicy: string;
 }
+
 export interface PutMetricPolicy {
   readonly ContainerName: string;
   readonly MetricPolicy: MetricPolicy;
 }
+
 export interface StartAccessLogging {
   readonly ContainerName: string;
 }
+
 export interface StopAccessLogging {
   readonly ContainerName: string;
 }
+
 export interface TagResource {
   readonly Resource: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly Resource: string;
   readonly TagKeys: [];
 }
 
-
-
-interface Container {
-  readonly Endpoint: string;
-  readonly CreationTime: Date;
-  readonly ARN: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly AccessLoggingEnabled: boolean;
+export interface Container {
+  readonly Endpoint?: string;
+  readonly CreationTime?: Date;
+  readonly ARN?: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly AccessLoggingEnabled?: boolean;
 }
 
-interface ContainerInUseException {
-  readonly Message: string;
+export interface ContainerInUseException {
+  readonly Message?: string;
 }
 
-interface ContainerNotFoundException {
-  readonly Message: string;
+export interface ContainerNotFoundException {
+  readonly Message?: string;
 }
 
-interface CorsPolicyNotFoundException {
-  readonly Message: string;
+export interface CorsPolicyNotFoundException {
+  readonly Message?: string;
 }
 
-interface CorsRule {
+export interface CorsRule {
   readonly AllowedOrigins: [];
-  readonly AllowedMethods: [];
+  readonly AllowedMethods?: [];
   readonly AllowedHeaders: [];
-  readonly MaxAgeSeconds: number;
-  readonly ExposeHeaders: [];
+  readonly MaxAgeSeconds?: number;
+  readonly ExposeHeaders?: [];
 }
 
-interface CreateContainerInput {
+export interface CreateContainerInput {
   readonly ContainerName: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateContainerOutput {
+export interface CreateContainerOutput {
   readonly Container: Container;
 }
 
-interface DeleteContainerInput {
+export interface DeleteContainerInput {
   readonly ContainerName: string;
 }
 
-interface DeleteContainerOutput {
+export interface DeleteContainerOutput {
 }
 
-interface DeleteContainerPolicyInput {
+export interface DeleteContainerPolicyInput {
   readonly ContainerName: string;
 }
 
-interface DeleteContainerPolicyOutput {
+export interface DeleteContainerPolicyOutput {
 }
 
-interface DeleteCorsPolicyInput {
+export interface DeleteCorsPolicyInput {
   readonly ContainerName: string;
 }
 
-interface DeleteCorsPolicyOutput {
+export interface DeleteCorsPolicyOutput {
 }
 
-interface DeleteLifecyclePolicyInput {
+export interface DeleteLifecyclePolicyInput {
   readonly ContainerName: string;
 }
 
-interface DeleteLifecyclePolicyOutput {
+export interface DeleteLifecyclePolicyOutput {
 }
 
-interface DeleteMetricPolicyInput {
+export interface DeleteMetricPolicyInput {
   readonly ContainerName: string;
 }
 
-interface DeleteMetricPolicyOutput {
+export interface DeleteMetricPolicyOutput {
 }
 
-interface DescribeContainerInput {
+export interface DescribeContainerInput {
+  readonly ContainerName?: string;
+}
+
+export interface DescribeContainerOutput {
+  readonly Container?: Container;
+}
+
+export interface GetContainerPolicyInput {
   readonly ContainerName: string;
 }
 
-interface DescribeContainerOutput {
-  readonly Container: Container;
-}
-
-interface GetContainerPolicyInput {
-  readonly ContainerName: string;
-}
-
-interface GetContainerPolicyOutput {
+export interface GetContainerPolicyOutput {
   readonly Policy: string;
 }
 
-interface GetCorsPolicyInput {
+export interface GetCorsPolicyInput {
   readonly ContainerName: string;
 }
 
-interface GetCorsPolicyOutput {
+export interface GetCorsPolicyOutput {
   readonly CorsPolicy: [];
 }
 
-interface GetLifecyclePolicyInput {
+export interface GetLifecyclePolicyInput {
   readonly ContainerName: string;
 }
 
-interface GetLifecyclePolicyOutput {
+export interface GetLifecyclePolicyOutput {
   readonly LifecyclePolicy: string;
 }
 
-interface GetMetricPolicyInput {
+export interface GetMetricPolicyInput {
   readonly ContainerName: string;
 }
 
-interface GetMetricPolicyOutput {
+export interface GetMetricPolicyOutput {
   readonly MetricPolicy: MetricPolicy;
 }
 
-interface InternalServerError {
-  readonly Message: string;
+export interface InternalServerError {
+  readonly Message?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface ListContainersInput {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListContainersInput {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListContainersOutput {
+export interface ListContainersOutput {
   readonly Containers: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceInput {
+export interface ListTagsForResourceInput {
   readonly Resource: string;
 }
 
-interface ListTagsForResourceOutput {
-  readonly Tags: [];
+export interface ListTagsForResourceOutput {
+  readonly Tags?: [];
 }
 
-interface MetricPolicy {
+export interface MetricPolicy {
   readonly ContainerLevelMetrics: string;
-  readonly MetricPolicyRules: [];
+  readonly MetricPolicyRules?: [];
 }
 
-interface MetricPolicyRule {
+export interface MetricPolicyRule {
   readonly ObjectGroup: string;
   readonly ObjectGroupName: string;
 }
 
-interface PolicyNotFoundException {
-  readonly Message: string;
+export interface PolicyNotFoundException {
+  readonly Message?: string;
 }
 
-interface PutContainerPolicyInput {
+export interface PutContainerPolicyInput {
   readonly ContainerName: string;
   readonly Policy: string;
 }
 
-interface PutContainerPolicyOutput {
+export interface PutContainerPolicyOutput {
 }
 
-interface PutCorsPolicyInput {
+export interface PutCorsPolicyInput {
   readonly ContainerName: string;
   readonly CorsPolicy: [];
 }
 
-interface PutCorsPolicyOutput {
+export interface PutCorsPolicyOutput {
 }
 
-interface PutLifecyclePolicyInput {
+export interface PutLifecyclePolicyInput {
   readonly ContainerName: string;
   readonly LifecyclePolicy: string;
 }
 
-interface PutLifecyclePolicyOutput {
+export interface PutLifecyclePolicyOutput {
 }
 
-interface PutMetricPolicyInput {
+export interface PutMetricPolicyInput {
   readonly ContainerName: string;
   readonly MetricPolicy: MetricPolicy;
 }
 
-interface PutMetricPolicyOutput {
+export interface PutMetricPolicyOutput {
 }
 
-interface StartAccessLoggingInput {
+export interface StartAccessLoggingInput {
   readonly ContainerName: string;
 }
 
-interface StartAccessLoggingOutput {
+export interface StartAccessLoggingOutput {
 }
 
-interface StopAccessLoggingInput {
+export interface StopAccessLoggingInput {
   readonly ContainerName: string;
 }
 
-interface StopAccessLoggingOutput {
+export interface StopAccessLoggingOutput {
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
-  readonly Value: string;
+  readonly Value?: string;
 }
 
-interface TagResourceInput {
+export interface TagResourceInput {
   readonly Resource: string;
   readonly Tags: [];
 }
 
-interface TagResourceOutput {
+export interface TagResourceOutput {
 }
 
-interface UntagResourceInput {
+export interface UntagResourceInput {
   readonly Resource: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceOutput {
+export interface UntagResourceOutput {
 }
+
 

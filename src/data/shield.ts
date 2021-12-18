@@ -4,21 +4,26 @@
 export interface AssociateDRTLogBucket {
   readonly LogBucket: string;
 }
+
 export interface AssociateDRTRole {
   readonly RoleArn: string;
 }
+
 export interface AssociateHealthCheck {
   readonly ProtectionId: string;
   readonly HealthCheckArn: string;
 }
+
 export interface AssociateProactiveEngagementDetails {
   readonly EmergencyContactList: [];
 }
+
 export interface CreateProtection {
   readonly Name: string;
   readonly ResourceArn: string;
   readonly Tags?: [];
 }
+
 export interface CreateProtectionGroup {
   readonly ProtectionGroupId: string;
   readonly Aggregation: string;
@@ -27,56 +32,76 @@ export interface CreateProtectionGroup {
   readonly Members?: [];
   readonly Tags?: [];
 }
+
 export interface CreateSubscription {
 }
+
 export interface DeleteProtection {
   readonly ProtectionId: string;
 }
+
 export interface DeleteProtectionGroup {
   readonly ProtectionGroupId: string;
 }
+
 export interface DeleteSubscription {
 }
+
 export interface DescribeAttack {
   readonly AttackId: string;
 }
+
 export interface DescribeAttackStatistics {
 }
+
 export interface DescribeDRTAccess {
 }
+
 export interface DescribeEmergencyContactSettings {
 }
+
 export interface DescribeProtection {
   readonly ProtectionId?: string;
   readonly ResourceArn?: string;
 }
+
 export interface DescribeProtectionGroup {
   readonly ProtectionGroupId: string;
 }
+
 export interface DescribeSubscription {
 }
+
 export interface DisableApplicationLayerAutomaticResponse {
   readonly ResourceArn: string;
 }
+
 export interface DisableProactiveEngagement {
 }
+
 export interface DisassociateDRTLogBucket {
   readonly LogBucket: string;
 }
+
 export interface DisassociateDRTRole {
 }
+
 export interface DisassociateHealthCheck {
   readonly ProtectionId: string;
   readonly HealthCheckArn: string;
 }
+
 export interface EnableApplicationLayerAutomaticResponse {
   readonly ResourceArn: string;
   readonly Action: ResponseAction;
 }
+
 export interface EnableProactiveEngagement {
 }
+
 export interface GetSubscriptionState {
 }
+
 export interface ListAttacks {
   readonly ResourceArns?: [];
   readonly StartTime?: TimeRange;
@@ -84,37 +109,46 @@ export interface ListAttacks {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListProtectionGroups {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListProtections {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListResourcesInProtectionGroup {
   readonly ProtectionGroupId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateApplicationLayerAutomaticResponse {
   readonly ResourceArn: string;
   readonly Action: ResponseAction;
 }
+
 export interface UpdateEmergencyContactSettings {
   readonly EmergencyContactList?: [];
 }
+
 export interface UpdateProtectionGroup {
   readonly ProtectionGroupId: string;
   readonly Aggregation: string;
@@ -122,524 +156,524 @@ export interface UpdateProtectionGroup {
   readonly ResourceType?: string;
   readonly Members?: [];
 }
+
 export interface UpdateSubscription {
   readonly AutoRenew?: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly message?: string;
 }
 
-interface AccessDeniedForDependencyException {
-  readonly message: string;
+export interface AccessDeniedForDependencyException {
+  readonly message?: string;
 }
 
-interface ApplicationLayerAutomaticResponseConfiguration {
+export interface ApplicationLayerAutomaticResponseConfiguration {
   readonly Status: string;
   readonly Action: ResponseAction;
 }
 
-interface AssociateDRTLogBucketRequest {
+export interface AssociateDRTLogBucketRequest {
   readonly LogBucket: string;
 }
 
-interface AssociateDRTLogBucketResponse {
+export interface AssociateDRTLogBucketResponse {
 }
 
-interface AssociateDRTRoleRequest {
+export interface AssociateDRTRoleRequest {
   readonly RoleArn: string;
 }
 
-interface AssociateDRTRoleResponse {
+export interface AssociateDRTRoleResponse {
 }
 
-interface AssociateHealthCheckRequest {
+export interface AssociateHealthCheckRequest {
   readonly ProtectionId: string;
   readonly HealthCheckArn: string;
 }
 
-interface AssociateHealthCheckResponse {
+export interface AssociateHealthCheckResponse {
 }
 
-interface AssociateProactiveEngagementDetailsRequest {
+export interface AssociateProactiveEngagementDetailsRequest {
   readonly EmergencyContactList: [];
 }
 
-interface AssociateProactiveEngagementDetailsResponse {
+export interface AssociateProactiveEngagementDetailsResponse {
 }
 
-interface AttackDetail {
-  readonly AttackId: string;
-  readonly ResourceArn: string;
-  readonly SubResources: [];
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly AttackCounters: [];
-  readonly AttackProperties: [];
-  readonly Mitigations: [];
+export interface AttackDetail {
+  readonly AttackId?: string;
+  readonly ResourceArn?: string;
+  readonly SubResources?: [];
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly AttackCounters?: [];
+  readonly AttackProperties?: [];
+  readonly Mitigations?: [];
 }
 
-interface AttackProperty {
-  readonly AttackLayer: string;
-  readonly AttackPropertyIdentifier: string;
-  readonly TopContributors: [];
-  readonly Unit: string;
-  readonly Total: number;
+export interface AttackProperty {
+  readonly AttackLayer?: string;
+  readonly AttackPropertyIdentifier?: string;
+  readonly TopContributors?: [];
+  readonly Unit?: string;
+  readonly Total?: number;
 }
 
-interface AttackStatisticsDataItem {
-  readonly AttackVolume: AttackVolume;
+export interface AttackStatisticsDataItem {
+  readonly AttackVolume?: AttackVolume;
   readonly AttackCount: number;
 }
 
-interface AttackSummary {
-  readonly AttackId: string;
-  readonly ResourceArn: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly AttackVectors: [];
+export interface AttackSummary {
+  readonly AttackId?: string;
+  readonly ResourceArn?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly AttackVectors?: [];
 }
 
-interface AttackVectorDescription {
+export interface AttackVectorDescription {
   readonly VectorType: string;
 }
 
-interface AttackVolume {
-  readonly BitsPerSecond: AttackVolumeStatistics;
-  readonly PacketsPerSecond: AttackVolumeStatistics;
-  readonly RequestsPerSecond: AttackVolumeStatistics;
+export interface AttackVolume {
+  readonly BitsPerSecond?: AttackVolumeStatistics;
+  readonly PacketsPerSecond?: AttackVolumeStatistics;
+  readonly RequestsPerSecond?: AttackVolumeStatistics;
 }
 
-interface AttackVolumeStatistics {
+export interface AttackVolumeStatistics {
   readonly Max: unknown;
 }
 
-interface BlockAction {
+export interface BlockAction {
 }
 
-interface Contributor {
-  readonly Name: string;
-  readonly Value: number;
+export interface Contributor {
+  readonly Name?: string;
+  readonly Value?: number;
 }
 
-interface CountAction {
+export interface CountAction {
 }
 
-interface CreateProtectionGroupRequest {
+export interface CreateProtectionGroupRequest {
   readonly ProtectionGroupId: string;
   readonly Aggregation: string;
   readonly Pattern: string;
-  readonly ResourceType: string;
-  readonly Members: [];
-  readonly Tags: [];
+  readonly ResourceType?: string;
+  readonly Members?: [];
+  readonly Tags?: [];
 }
 
-interface CreateProtectionGroupResponse {
+export interface CreateProtectionGroupResponse {
 }
 
-interface CreateProtectionRequest {
+export interface CreateProtectionRequest {
   readonly Name: string;
   readonly ResourceArn: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateProtectionResponse {
-  readonly ProtectionId: string;
+export interface CreateProtectionResponse {
+  readonly ProtectionId?: string;
 }
 
-interface CreateSubscriptionRequest {
+export interface CreateSubscriptionRequest {
 }
 
-interface CreateSubscriptionResponse {
+export interface CreateSubscriptionResponse {
 }
 
-interface DeleteProtectionGroupRequest {
+export interface DeleteProtectionGroupRequest {
   readonly ProtectionGroupId: string;
 }
 
-interface DeleteProtectionGroupResponse {
+export interface DeleteProtectionGroupResponse {
 }
 
-interface DeleteProtectionRequest {
+export interface DeleteProtectionRequest {
   readonly ProtectionId: string;
 }
 
-interface DeleteProtectionResponse {
+export interface DeleteProtectionResponse {
 }
 
-interface DeleteSubscriptionRequest {
+export interface DeleteSubscriptionRequest {
 }
 
-interface DeleteSubscriptionResponse {
+export interface DeleteSubscriptionResponse {
 }
 
-interface DescribeAttackRequest {
+export interface DescribeAttackRequest {
   readonly AttackId: string;
 }
 
-interface DescribeAttackResponse {
-  readonly Attack: AttackDetail;
+export interface DescribeAttackResponse {
+  readonly Attack?: AttackDetail;
 }
 
-interface DescribeAttackStatisticsRequest {
+export interface DescribeAttackStatisticsRequest {
 }
 
-interface DescribeAttackStatisticsResponse {
+export interface DescribeAttackStatisticsResponse {
   readonly TimeRange: TimeRange;
   readonly DataItems: [];
 }
 
-interface DescribeDRTAccessRequest {
+export interface DescribeDRTAccessRequest {
 }
 
-interface DescribeDRTAccessResponse {
-  readonly RoleArn: string;
-  readonly LogBucketList: [];
+export interface DescribeDRTAccessResponse {
+  readonly RoleArn?: string;
+  readonly LogBucketList?: [];
 }
 
-interface DescribeEmergencyContactSettingsRequest {
+export interface DescribeEmergencyContactSettingsRequest {
 }
 
-interface DescribeEmergencyContactSettingsResponse {
-  readonly EmergencyContactList: [];
+export interface DescribeEmergencyContactSettingsResponse {
+  readonly EmergencyContactList?: [];
 }
 
-interface DescribeProtectionGroupRequest {
+export interface DescribeProtectionGroupRequest {
   readonly ProtectionGroupId: string;
 }
 
-interface DescribeProtectionGroupResponse {
+export interface DescribeProtectionGroupResponse {
   readonly ProtectionGroup: ProtectionGroup;
 }
 
-interface DescribeProtectionRequest {
-  readonly ProtectionId: string;
+export interface DescribeProtectionRequest {
+  readonly ProtectionId?: string;
+  readonly ResourceArn?: string;
+}
+
+export interface DescribeProtectionResponse {
+  readonly Protection?: Protection;
+}
+
+export interface DescribeSubscriptionRequest {
+}
+
+export interface DescribeSubscriptionResponse {
+  readonly Subscription?: Subscription;
+}
+
+export interface DisableApplicationLayerAutomaticResponseRequest {
   readonly ResourceArn: string;
 }
 
-interface DescribeProtectionResponse {
-  readonly Protection: Protection;
+export interface DisableApplicationLayerAutomaticResponseResponse {
 }
 
-interface DescribeSubscriptionRequest {
+export interface DisableProactiveEngagementRequest {
 }
 
-interface DescribeSubscriptionResponse {
-  readonly Subscription: Subscription;
+export interface DisableProactiveEngagementResponse {
 }
 
-interface DisableApplicationLayerAutomaticResponseRequest {
-  readonly ResourceArn: string;
-}
-
-interface DisableApplicationLayerAutomaticResponseResponse {
-}
-
-interface DisableProactiveEngagementRequest {
-}
-
-interface DisableProactiveEngagementResponse {
-}
-
-interface DisassociateDRTLogBucketRequest {
+export interface DisassociateDRTLogBucketRequest {
   readonly LogBucket: string;
 }
 
-interface DisassociateDRTLogBucketResponse {
+export interface DisassociateDRTLogBucketResponse {
 }
 
-interface DisassociateDRTRoleRequest {
+export interface DisassociateDRTRoleRequest {
 }
 
-interface DisassociateDRTRoleResponse {
+export interface DisassociateDRTRoleResponse {
 }
 
-interface DisassociateHealthCheckRequest {
+export interface DisassociateHealthCheckRequest {
   readonly ProtectionId: string;
   readonly HealthCheckArn: string;
 }
 
-interface DisassociateHealthCheckResponse {
+export interface DisassociateHealthCheckResponse {
 }
 
-interface EmergencyContact {
+export interface EmergencyContact {
   readonly EmailAddress: string;
-  readonly PhoneNumber: string;
-  readonly ContactNotes: string;
+  readonly PhoneNumber?: string;
+  readonly ContactNotes?: string;
 }
 
-interface EnableApplicationLayerAutomaticResponseRequest {
+export interface EnableApplicationLayerAutomaticResponseRequest {
   readonly ResourceArn: string;
   readonly Action: ResponseAction;
 }
 
-interface EnableApplicationLayerAutomaticResponseResponse {
+export interface EnableApplicationLayerAutomaticResponseResponse {
 }
 
-interface EnableProactiveEngagementRequest {
+export interface EnableProactiveEngagementRequest {
 }
 
-interface EnableProactiveEngagementResponse {
+export interface EnableProactiveEngagementResponse {
 }
 
-interface GetSubscriptionStateRequest {
+export interface GetSubscriptionStateRequest {
 }
 
-interface GetSubscriptionStateResponse {
+export interface GetSubscriptionStateResponse {
   readonly SubscriptionState: string;
 }
 
-interface InternalErrorException {
-  readonly message: string;
+export interface InternalErrorException {
+  readonly message?: string;
 }
 
-interface InvalidOperationException {
-  readonly message: string;
+export interface InvalidOperationException {
+  readonly message?: string;
 }
 
-interface InvalidPaginationTokenException {
-  readonly message: string;
+export interface InvalidPaginationTokenException {
+  readonly message?: string;
 }
 
-interface InvalidParameterException {
-  readonly message: string;
-  readonly reason: string;
-  readonly fields: [];
+export interface InvalidParameterException {
+  readonly message?: string;
+  readonly reason?: string;
+  readonly fields?: [];
 }
 
-interface InvalidResourceException {
-  readonly message: string;
+export interface InvalidResourceException {
+  readonly message?: string;
 }
 
-interface Limit {
-  readonly Type: string;
-  readonly Max: number;
+export interface Limit {
+  readonly Type?: string;
+  readonly Max?: number;
 }
 
-interface LimitsExceededException {
-  readonly message: string;
-  readonly Type: string;
-  readonly Limit: number;
+export interface LimitsExceededException {
+  readonly message?: string;
+  readonly Type?: string;
+  readonly Limit?: number;
 }
 
-interface ListAttacksRequest {
-  readonly ResourceArns: [];
-  readonly StartTime: TimeRange;
-  readonly EndTime: TimeRange;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListAttacksRequest {
+  readonly ResourceArns?: [];
+  readonly StartTime?: TimeRange;
+  readonly EndTime?: TimeRange;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListAttacksResponse {
-  readonly AttackSummaries: [];
-  readonly NextToken: string;
+export interface ListAttacksResponse {
+  readonly AttackSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListProtectionGroupsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListProtectionGroupsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListProtectionGroupsResponse {
+export interface ListProtectionGroupsResponse {
   readonly ProtectionGroups: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListProtectionsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListProtectionsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListProtectionsResponse {
-  readonly Protections: [];
-  readonly NextToken: string;
+export interface ListProtectionsResponse {
+  readonly Protections?: [];
+  readonly NextToken?: string;
 }
 
-interface ListResourcesInProtectionGroupRequest {
+export interface ListResourcesInProtectionGroupRequest {
   readonly ProtectionGroupId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListResourcesInProtectionGroupResponse {
+export interface ListResourcesInProtectionGroupResponse {
   readonly ResourceArns: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface LockedSubscriptionException {
-  readonly message: string;
+export interface LockedSubscriptionException {
+  readonly message?: string;
 }
 
-interface Mitigation {
-  readonly MitigationName: string;
+export interface Mitigation {
+  readonly MitigationName?: string;
 }
 
-interface NoAssociatedRoleException {
-  readonly message: string;
+export interface NoAssociatedRoleException {
+  readonly message?: string;
 }
 
-interface OptimisticLockException {
-  readonly message: string;
+export interface OptimisticLockException {
+  readonly message?: string;
 }
 
-interface Protection {
-  readonly Id: string;
-  readonly Name: string;
-  readonly ResourceArn: string;
-  readonly HealthCheckIds: [];
-  readonly ProtectionArn: string;
-  readonly ApplicationLayerAutomaticResponseConfiguration: ApplicationLayerAutomaticResponseConfiguration;
+export interface Protection {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly ResourceArn?: string;
+  readonly HealthCheckIds?: [];
+  readonly ProtectionArn?: string;
+  readonly ApplicationLayerAutomaticResponseConfiguration?: ApplicationLayerAutomaticResponseConfiguration;
 }
 
-interface ProtectionGroup {
+export interface ProtectionGroup {
   readonly ProtectionGroupId: string;
   readonly Aggregation: string;
   readonly Pattern: string;
-  readonly ResourceType: string;
+  readonly ResourceType?: string;
   readonly Members: [];
-  readonly ProtectionGroupArn: string;
+  readonly ProtectionGroupArn?: string;
 }
 
-interface ProtectionGroupArbitraryPatternLimits {
+export interface ProtectionGroupArbitraryPatternLimits {
   readonly MaxMembers: number;
 }
 
-interface ProtectionGroupLimits {
+export interface ProtectionGroupLimits {
   readonly MaxProtectionGroups: number;
   readonly PatternTypeLimits: ProtectionGroupPatternTypeLimits;
 }
 
-interface ProtectionGroupPatternTypeLimits {
+export interface ProtectionGroupPatternTypeLimits {
   readonly ArbitraryPatternLimits: ProtectionGroupArbitraryPatternLimits;
 }
 
-interface ProtectionLimits {
+export interface ProtectionLimits {
   readonly ProtectedResourceTypeLimits: [];
 }
 
-interface ResourceAlreadyExistsException {
-  readonly message: string;
-  readonly resourceType: string;
+export interface ResourceAlreadyExistsException {
+  readonly message?: string;
+  readonly resourceType?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
-  readonly resourceType: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
+  readonly resourceType?: string;
 }
 
-interface ResponseAction {
-  readonly Block: BlockAction;
-  readonly Count: CountAction;
+export interface ResponseAction {
+  readonly Block?: BlockAction;
+  readonly Count?: CountAction;
 }
 
-interface SubResourceSummary {
-  readonly Type: string;
-  readonly Id: string;
-  readonly AttackVectors: [];
-  readonly Counters: [];
+export interface SubResourceSummary {
+  readonly Type?: string;
+  readonly Id?: string;
+  readonly AttackVectors?: [];
+  readonly Counters?: [];
 }
 
-interface Subscription {
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly TimeCommitmentInSeconds: number;
-  readonly AutoRenew: string;
-  readonly Limits: [];
-  readonly ProactiveEngagementStatus: string;
+export interface Subscription {
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly TimeCommitmentInSeconds?: number;
+  readonly AutoRenew?: string;
+  readonly Limits?: [];
+  readonly ProactiveEngagementStatus?: string;
   readonly SubscriptionLimits: SubscriptionLimits;
-  readonly SubscriptionArn: string;
+  readonly SubscriptionArn?: string;
 }
 
-interface SubscriptionLimits {
+export interface SubscriptionLimits {
   readonly ProtectionLimits: ProtectionLimits;
   readonly ProtectionGroupLimits: ProtectionGroupLimits;
 }
 
-interface SummarizedAttackVector {
+export interface SummarizedAttackVector {
   readonly VectorType: string;
-  readonly VectorCounters: [];
+  readonly VectorCounters?: [];
 }
 
-interface SummarizedCounter {
-  readonly Name: string;
-  readonly Max: unknown;
-  readonly Average: unknown;
-  readonly Sum: unknown;
-  readonly N: number;
-  readonly Unit: string;
+export interface SummarizedCounter {
+  readonly Name?: string;
+  readonly Max?: unknown;
+  readonly Average?: unknown;
+  readonly Sum?: unknown;
+  readonly N?: number;
+  readonly Unit?: string;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TimeRange {
-  readonly FromInclusive: Date;
-  readonly ToExclusive: Date;
+export interface TimeRange {
+  readonly FromInclusive?: Date;
+  readonly ToExclusive?: Date;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateApplicationLayerAutomaticResponseRequest {
+export interface UpdateApplicationLayerAutomaticResponseRequest {
   readonly ResourceArn: string;
   readonly Action: ResponseAction;
 }
 
-interface UpdateApplicationLayerAutomaticResponseResponse {
+export interface UpdateApplicationLayerAutomaticResponseResponse {
 }
 
-interface UpdateEmergencyContactSettingsRequest {
-  readonly EmergencyContactList: [];
+export interface UpdateEmergencyContactSettingsRequest {
+  readonly EmergencyContactList?: [];
 }
 
-interface UpdateEmergencyContactSettingsResponse {
+export interface UpdateEmergencyContactSettingsResponse {
 }
 
-interface UpdateProtectionGroupRequest {
+export interface UpdateProtectionGroupRequest {
   readonly ProtectionGroupId: string;
   readonly Aggregation: string;
   readonly Pattern: string;
-  readonly ResourceType: string;
-  readonly Members: [];
+  readonly ResourceType?: string;
+  readonly Members?: [];
 }
 
-interface UpdateProtectionGroupResponse {
+export interface UpdateProtectionGroupResponse {
 }
 
-interface UpdateSubscriptionRequest {
-  readonly AutoRenew: string;
+export interface UpdateSubscriptionRequest {
+  readonly AutoRenew?: string;
 }
 
-interface UpdateSubscriptionResponse {
+export interface UpdateSubscriptionResponse {
 }
 
-interface ValidationExceptionField {
+export interface ValidationExceptionField {
   readonly name: string;
   readonly message: string;
 }
+
 

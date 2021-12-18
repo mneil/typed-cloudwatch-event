@@ -8,6 +8,7 @@ export interface CreateAccessPoint {
   readonly PosixUser?: PosixUser;
   readonly RootDirectory?: RootDirectory;
 }
+
 export interface CreateFileSystem {
   readonly CreationToken: string;
   readonly PerformanceMode?: string;
@@ -19,60 +20,75 @@ export interface CreateFileSystem {
   readonly Backup?: boolean;
   readonly Tags?: [];
 }
+
 export interface CreateMountTarget {
   readonly FileSystemId: string;
   readonly SubnetId: string;
   readonly IpAddress?: string;
   readonly SecurityGroups?: [];
 }
+
 export interface CreateTags {
   readonly FileSystemId: string;
   readonly Tags: [];
 }
+
 export interface DeleteAccessPoint {
   readonly AccessPointId: string;
 }
+
 export interface DeleteFileSystem {
   readonly FileSystemId: string;
 }
+
 export interface DeleteFileSystemPolicy {
   readonly FileSystemId: string;
 }
+
 export interface DeleteMountTarget {
   readonly MountTargetId: string;
 }
+
 export interface DeleteTags {
   readonly FileSystemId: string;
   readonly TagKeys: [];
 }
+
 export interface DescribeAccessPoints {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly AccessPointId?: string;
   readonly FileSystemId?: string;
 }
+
 export interface DescribeAccountPreferences {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeBackupPolicy {
   readonly FileSystemId: string;
 }
+
 export interface DescribeFileSystemPolicy {
   readonly FileSystemId: string;
 }
+
 export interface DescribeFileSystems {
   readonly MaxItems?: number;
   readonly Marker?: string;
   readonly CreationToken?: string;
   readonly FileSystemId?: string;
 }
+
 export interface DescribeLifecycleConfiguration {
   readonly FileSystemId: string;
 }
+
 export interface DescribeMountTargetSecurityGroups {
   readonly MountTargetId: string;
 }
+
 export interface DescribeMountTargets {
   readonly MaxItems?: number;
   readonly Marker?: string;
@@ -80,483 +96,492 @@ export interface DescribeMountTargets {
   readonly MountTargetId?: string;
   readonly AccessPointId?: string;
 }
+
 export interface DescribeTags {
   readonly MaxItems?: number;
   readonly Marker?: string;
   readonly FileSystemId: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ModifyMountTargetSecurityGroups {
   readonly MountTargetId: string;
   readonly SecurityGroups?: [];
 }
+
 export interface PutAccountPreferences {
   readonly ResourceIdType: string;
 }
+
 export interface PutBackupPolicy {
   readonly FileSystemId: string;
   readonly BackupPolicy: BackupPolicy;
 }
+
 export interface PutFileSystemPolicy {
   readonly FileSystemId: string;
   readonly Policy: string;
   readonly BypassPolicyLockoutSafetyCheck?: boolean;
 }
+
 export interface PutLifecycleConfiguration {
   readonly FileSystemId: string;
   readonly LifecyclePolicies: [];
 }
+
 export interface TagResource {
   readonly ResourceId: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceId: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateFileSystem {
   readonly FileSystemId: string;
   readonly ThroughputMode?: string;
   readonly ProvisionedThroughputInMibps?: unknown;
 }
 
-
-
-interface AccessPointAlreadyExists {
+export interface AccessPointAlreadyExists {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
   readonly AccessPointId: string;
 }
 
-interface AccessPointDescription {
-  readonly ClientToken: string;
-  readonly Name: string;
-  readonly Tags: [];
-  readonly AccessPointId: string;
-  readonly AccessPointArn: string;
-  readonly FileSystemId: string;
-  readonly PosixUser: PosixUser;
-  readonly RootDirectory: RootDirectory;
-  readonly OwnerId: string;
-  readonly LifeCycleState: string;
+export interface AccessPointDescription {
+  readonly ClientToken?: string;
+  readonly Name?: string;
+  readonly Tags?: [];
+  readonly AccessPointId?: string;
+  readonly AccessPointArn?: string;
+  readonly FileSystemId?: string;
+  readonly PosixUser?: PosixUser;
+  readonly RootDirectory?: RootDirectory;
+  readonly OwnerId?: string;
+  readonly LifeCycleState?: string;
 }
 
-interface AccessPointLimitExceeded {
+export interface AccessPointLimitExceeded {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface AccessPointNotFound {
+export interface AccessPointNotFound {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface AvailabilityZonesMismatch {
-  readonly ErrorCode: string;
-  readonly Message: string;
+export interface AvailabilityZonesMismatch {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
 }
 
-interface BackupPolicy {
+export interface BackupPolicy {
   readonly Status: string;
 }
 
-interface BackupPolicyDescription {
-  readonly BackupPolicy: BackupPolicy;
+export interface BackupPolicyDescription {
+  readonly BackupPolicy?: BackupPolicy;
 }
 
-interface BadRequest {
+export interface BadRequest {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface CreateAccessPointRequest {
+export interface CreateAccessPointRequest {
   readonly ClientToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
   readonly FileSystemId: string;
-  readonly PosixUser: PosixUser;
-  readonly RootDirectory: RootDirectory;
+  readonly PosixUser?: PosixUser;
+  readonly RootDirectory?: RootDirectory;
 }
 
-interface CreateFileSystemRequest {
+export interface CreateFileSystemRequest {
   readonly CreationToken: string;
-  readonly PerformanceMode: string;
-  readonly Encrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly ThroughputMode: string;
-  readonly ProvisionedThroughputInMibps: unknown;
-  readonly AvailabilityZoneName: string;
-  readonly Backup: boolean;
-  readonly Tags: [];
+  readonly PerformanceMode?: string;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly ThroughputMode?: string;
+  readonly ProvisionedThroughputInMibps?: unknown;
+  readonly AvailabilityZoneName?: string;
+  readonly Backup?: boolean;
+  readonly Tags?: [];
 }
 
-interface CreateMountTargetRequest {
+export interface CreateMountTargetRequest {
   readonly FileSystemId: string;
   readonly SubnetId: string;
-  readonly IpAddress: string;
-  readonly SecurityGroups: [];
+  readonly IpAddress?: string;
+  readonly SecurityGroups?: [];
 }
 
-interface CreateTagsRequest {
+export interface CreateTagsRequest {
   readonly FileSystemId: string;
   readonly Tags: [];
 }
 
-interface CreationInfo {
+export interface CreationInfo {
   readonly OwnerUid: number;
   readonly OwnerGid: number;
   readonly Permissions: string;
 }
 
-interface DeleteAccessPointRequest {
+export interface DeleteAccessPointRequest {
   readonly AccessPointId: string;
 }
 
-interface DeleteFileSystemPolicyRequest {
+export interface DeleteFileSystemPolicyRequest {
   readonly FileSystemId: string;
 }
 
-interface DeleteFileSystemRequest {
+export interface DeleteFileSystemRequest {
   readonly FileSystemId: string;
 }
 
-interface DeleteMountTargetRequest {
+export interface DeleteMountTargetRequest {
   readonly MountTargetId: string;
 }
 
-interface DeleteTagsRequest {
+export interface DeleteTagsRequest {
   readonly FileSystemId: string;
   readonly TagKeys: [];
 }
 
-interface DependencyTimeout {
+export interface DependencyTimeout {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface DescribeAccessPointsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly AccessPointId: string;
+export interface DescribeAccessPointsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly AccessPointId?: string;
+  readonly FileSystemId?: string;
+}
+
+export interface DescribeAccessPointsResponse {
+  readonly AccessPoints?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeAccountPreferencesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface DescribeAccountPreferencesResponse {
+  readonly ResourceIdPreference?: ResourceIdPreference;
+  readonly NextToken?: string;
+}
+
+export interface DescribeBackupPolicyRequest {
   readonly FileSystemId: string;
 }
 
-interface DescribeAccessPointsResponse {
-  readonly AccessPoints: [];
-  readonly NextToken: string;
-}
-
-interface DescribeAccountPreferencesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface DescribeAccountPreferencesResponse {
-  readonly ResourceIdPreference: ResourceIdPreference;
-  readonly NextToken: string;
-}
-
-interface DescribeBackupPolicyRequest {
+export interface DescribeFileSystemPolicyRequest {
   readonly FileSystemId: string;
 }
 
-interface DescribeFileSystemPolicyRequest {
+export interface DescribeFileSystemsRequest {
+  readonly MaxItems?: number;
+  readonly Marker?: string;
+  readonly CreationToken?: string;
+  readonly FileSystemId?: string;
+}
+
+export interface DescribeFileSystemsResponse {
+  readonly Marker?: string;
+  readonly FileSystems?: [];
+  readonly NextMarker?: string;
+}
+
+export interface DescribeLifecycleConfigurationRequest {
   readonly FileSystemId: string;
 }
 
-interface DescribeFileSystemsRequest {
-  readonly MaxItems: number;
-  readonly Marker: string;
-  readonly CreationToken: string;
-  readonly FileSystemId: string;
-}
-
-interface DescribeFileSystemsResponse {
-  readonly Marker: string;
-  readonly FileSystems: [];
-  readonly NextMarker: string;
-}
-
-interface DescribeLifecycleConfigurationRequest {
-  readonly FileSystemId: string;
-}
-
-interface DescribeMountTargetSecurityGroupsRequest {
+export interface DescribeMountTargetSecurityGroupsRequest {
   readonly MountTargetId: string;
 }
 
-interface DescribeMountTargetSecurityGroupsResponse {
+export interface DescribeMountTargetSecurityGroupsResponse {
   readonly SecurityGroups: [];
 }
 
-interface DescribeMountTargetsRequest {
-  readonly MaxItems: number;
-  readonly Marker: string;
+export interface DescribeMountTargetsRequest {
+  readonly MaxItems?: number;
+  readonly Marker?: string;
+  readonly FileSystemId?: string;
+  readonly MountTargetId?: string;
+  readonly AccessPointId?: string;
+}
+
+export interface DescribeMountTargetsResponse {
+  readonly Marker?: string;
+  readonly MountTargets?: [];
+  readonly NextMarker?: string;
+}
+
+export interface DescribeTagsRequest {
+  readonly MaxItems?: number;
+  readonly Marker?: string;
   readonly FileSystemId: string;
-  readonly MountTargetId: string;
-  readonly AccessPointId: string;
 }
 
-interface DescribeMountTargetsResponse {
-  readonly Marker: string;
-  readonly MountTargets: [];
-  readonly NextMarker: string;
-}
-
-interface DescribeTagsRequest {
-  readonly MaxItems: number;
-  readonly Marker: string;
-  readonly FileSystemId: string;
-}
-
-interface DescribeTagsResponse {
-  readonly Marker: string;
+export interface DescribeTagsResponse {
+  readonly Marker?: string;
   readonly Tags: [];
-  readonly NextMarker: string;
+  readonly NextMarker?: string;
 }
 
-interface FileSystemAlreadyExists {
+export interface FileSystemAlreadyExists {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
   readonly FileSystemId: string;
 }
 
-interface FileSystemDescription {
+export interface FileSystemDescription {
   readonly OwnerId: string;
   readonly CreationToken: string;
   readonly FileSystemId: string;
-  readonly FileSystemArn: string;
+  readonly FileSystemArn?: string;
   readonly CreationTime: Date;
   readonly LifeCycleState: string;
-  readonly Name: string;
+  readonly Name?: string;
   readonly NumberOfMountTargets: number;
   readonly SizeInBytes: FileSystemSize;
   readonly PerformanceMode: string;
-  readonly Encrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly ThroughputMode: string;
-  readonly ProvisionedThroughputInMibps: unknown;
-  readonly AvailabilityZoneName: string;
-  readonly AvailabilityZoneId: string;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly ThroughputMode?: string;
+  readonly ProvisionedThroughputInMibps?: unknown;
+  readonly AvailabilityZoneName?: string;
+  readonly AvailabilityZoneId?: string;
   readonly Tags: [];
 }
 
-interface FileSystemInUse {
+export interface FileSystemInUse {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface FileSystemLimitExceeded {
+export interface FileSystemLimitExceeded {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface FileSystemNotFound {
+export interface FileSystemNotFound {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface FileSystemPolicyDescription {
-  readonly FileSystemId: string;
-  readonly Policy: string;
+export interface FileSystemPolicyDescription {
+  readonly FileSystemId?: string;
+  readonly Policy?: string;
 }
 
-interface FileSystemSize {
+export interface FileSystemSize {
   readonly Value: number;
-  readonly Timestamp: Date;
-  readonly ValueInIA: number;
-  readonly ValueInStandard: number;
+  readonly Timestamp?: Date;
+  readonly ValueInIA?: number;
+  readonly ValueInStandard?: number;
 }
 
-interface IncorrectFileSystemLifeCycleState {
+export interface IncorrectFileSystemLifeCycleState {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface IncorrectMountTargetState {
+export interface IncorrectMountTargetState {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface InsufficientThroughputCapacity {
+export interface InsufficientThroughputCapacity {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface InternalServerError {
+export interface InternalServerError {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface InvalidPolicyException {
+export interface InvalidPolicyException {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
+}
+
+export interface IpAddressInUse {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface IpAddressInUse {
-  readonly ErrorCode: string;
-  readonly Message: string;
+export interface LifecycleConfigurationDescription {
+  readonly LifecyclePolicies?: [];
 }
 
-interface LifecycleConfigurationDescription {
-  readonly LifecyclePolicies: [];
+export interface LifecyclePolicy {
+  readonly TransitionToIA?: string;
+  readonly TransitionToPrimaryStorageClass?: string;
 }
 
-interface LifecyclePolicy {
-  readonly TransitionToIA: string;
-  readonly TransitionToPrimaryStorageClass: string;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
-  readonly NextToken: string;
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
+  readonly NextToken?: string;
 }
 
-interface ModifyMountTargetSecurityGroupsRequest {
+export interface ModifyMountTargetSecurityGroupsRequest {
   readonly MountTargetId: string;
-  readonly SecurityGroups: [];
+  readonly SecurityGroups?: [];
 }
 
-interface MountTargetConflict {
+export interface MountTargetConflict {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface MountTargetDescription {
-  readonly OwnerId: string;
+export interface MountTargetDescription {
+  readonly OwnerId?: string;
   readonly MountTargetId: string;
   readonly FileSystemId: string;
   readonly SubnetId: string;
   readonly LifeCycleState: string;
-  readonly IpAddress: string;
-  readonly NetworkInterfaceId: string;
-  readonly AvailabilityZoneId: string;
-  readonly AvailabilityZoneName: string;
-  readonly VpcId: string;
+  readonly IpAddress?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly AvailabilityZoneName?: string;
+  readonly VpcId?: string;
 }
 
-interface MountTargetNotFound {
+export interface MountTargetNotFound {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface NetworkInterfaceLimitExceeded {
+export interface NetworkInterfaceLimitExceeded {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface NoFreeAddressesInSubnet {
+export interface NoFreeAddressesInSubnet {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface PolicyNotFound {
-  readonly ErrorCode: string;
-  readonly Message: string;
+export interface PolicyNotFound {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
 }
 
-interface PosixUser {
+export interface PosixUser {
   readonly Uid: number;
   readonly Gid: number;
-  readonly SecondaryGids: [];
+  readonly SecondaryGids?: [];
 }
 
-interface PutAccountPreferencesRequest {
+export interface PutAccountPreferencesRequest {
   readonly ResourceIdType: string;
 }
 
-interface PutAccountPreferencesResponse {
-  readonly ResourceIdPreference: ResourceIdPreference;
+export interface PutAccountPreferencesResponse {
+  readonly ResourceIdPreference?: ResourceIdPreference;
 }
 
-interface PutBackupPolicyRequest {
+export interface PutBackupPolicyRequest {
   readonly FileSystemId: string;
   readonly BackupPolicy: BackupPolicy;
 }
 
-interface PutFileSystemPolicyRequest {
+export interface PutFileSystemPolicyRequest {
   readonly FileSystemId: string;
   readonly Policy: string;
-  readonly BypassPolicyLockoutSafetyCheck: boolean;
+  readonly BypassPolicyLockoutSafetyCheck?: boolean;
 }
 
-interface PutLifecycleConfigurationRequest {
+export interface PutLifecycleConfigurationRequest {
   readonly FileSystemId: string;
   readonly LifecyclePolicies: [];
 }
 
-interface ResourceIdPreference {
-  readonly ResourceIdType: string;
-  readonly Resources: [];
+export interface ResourceIdPreference {
+  readonly ResourceIdType?: string;
+  readonly Resources?: [];
 }
 
-interface RootDirectory {
-  readonly Path: string;
-  readonly CreationInfo: CreationInfo;
+export interface RootDirectory {
+  readonly Path?: string;
+  readonly CreationInfo?: CreationInfo;
 }
 
-interface SecurityGroupLimitExceeded {
+export interface SecurityGroupLimitExceeded {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface SecurityGroupNotFound {
+export interface SecurityGroupNotFound {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface SubnetNotFound {
+export interface SubnetNotFound {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceId: string;
   readonly Tags: [];
 }
 
-interface ThroughputLimitExceeded {
+export interface ThroughputLimitExceeded {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface TooManyRequests {
+export interface TooManyRequests {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface UnsupportedAvailabilityZone {
+export interface UnsupportedAvailabilityZone {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceId: string;
   readonly TagKeys: [];
 }
 
-interface UpdateFileSystemRequest {
+export interface UpdateFileSystemRequest {
   readonly FileSystemId: string;
-  readonly ThroughputMode: string;
-  readonly ProvisionedThroughputInMibps: unknown;
+  readonly ThroughputMode?: string;
+  readonly ProvisionedThroughputInMibps?: unknown;
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly ErrorCode: string;
-  readonly Message: string;
+  readonly Message?: string;
 }
+
 

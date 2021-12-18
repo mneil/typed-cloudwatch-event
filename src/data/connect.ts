@@ -5,38 +5,46 @@ export interface AssociateApprovedOrigin {
   readonly InstanceId: string;
   readonly Origin: string;
 }
+
 export interface AssociateBot {
   readonly InstanceId: string;
   readonly LexBot?: LexBot;
   readonly LexV2Bot?: LexV2Bot;
 }
+
 export interface AssociateInstanceStorageConfig {
   readonly InstanceId: string;
   readonly ResourceType: string;
   readonly StorageConfig: InstanceStorageConfig;
 }
+
 export interface AssociateLambdaFunction {
   readonly InstanceId: string;
   readonly FunctionArn: string;
 }
+
 export interface AssociateLexBot {
   readonly InstanceId: string;
   readonly LexBot: LexBot;
 }
+
 export interface AssociateQueueQuickConnects {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly QuickConnectIds: [];
 }
+
 export interface AssociateRoutingProfileQueues {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
   readonly QueueConfigs: [];
 }
+
 export interface AssociateSecurityKey {
   readonly InstanceId: string;
   readonly Key: string;
 }
+
 export interface CreateAgentStatus {
   readonly InstanceId: string;
   readonly Name: string;
@@ -45,6 +53,7 @@ export interface CreateAgentStatus {
   readonly DisplayOrder?: number;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateContactFlow {
   readonly InstanceId: string;
   readonly Name: string;
@@ -53,6 +62,7 @@ export interface CreateContactFlow {
   readonly Content: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateContactFlowModule {
   readonly InstanceId: string;
   readonly Name: string;
@@ -61,6 +71,7 @@ export interface CreateContactFlowModule {
   readonly Tags?: {[key: string]: any};
   readonly ClientToken?: string;
 }
+
 export interface CreateHoursOfOperation {
   readonly InstanceId: string;
   readonly Name: string;
@@ -69,6 +80,7 @@ export interface CreateHoursOfOperation {
   readonly Config: [];
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateInstance {
   readonly ClientToken?: string;
   readonly IdentityManagementType: string;
@@ -77,6 +89,7 @@ export interface CreateInstance {
   readonly InboundCallsEnabled: boolean;
   readonly OutboundCallsEnabled: boolean;
 }
+
 export interface CreateIntegrationAssociation {
   readonly InstanceId: string;
   readonly IntegrationType: string;
@@ -86,6 +99,7 @@ export interface CreateIntegrationAssociation {
   readonly SourceType?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateQueue {
   readonly InstanceId: string;
   readonly Name: string;
@@ -96,6 +110,7 @@ export interface CreateQueue {
   readonly QuickConnectIds?: [];
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateQuickConnect {
   readonly InstanceId: string;
   readonly Name: string;
@@ -103,6 +118,7 @@ export interface CreateQuickConnect {
   readonly QuickConnectConfig: QuickConnectConfig;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateRoutingProfile {
   readonly InstanceId: string;
   readonly Name: string;
@@ -112,6 +128,7 @@ export interface CreateRoutingProfile {
   readonly MediaConcurrencies: [];
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateSecurityProfile {
   readonly SecurityProfileName: string;
   readonly Description?: string;
@@ -119,12 +136,14 @@ export interface CreateSecurityProfile {
   readonly InstanceId: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateUseCase {
   readonly InstanceId: string;
   readonly IntegrationAssociationId: string;
   readonly UseCaseType: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateUser {
   readonly Username: string;
   readonly Password?: string;
@@ -137,151 +156,187 @@ export interface CreateUser {
   readonly InstanceId: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateUserHierarchyGroup {
   readonly Name: string;
   readonly ParentGroupId?: string;
   readonly InstanceId: string;
 }
+
 export interface DeleteContactFlow {
   readonly InstanceId: string;
   readonly ContactFlowId: string;
 }
+
 export interface DeleteContactFlowModule {
   readonly InstanceId: string;
   readonly ContactFlowModuleId: string;
 }
+
 export interface DeleteHoursOfOperation {
   readonly InstanceId: string;
   readonly HoursOfOperationId: string;
 }
+
 export interface DeleteInstance {
   readonly InstanceId: string;
 }
+
 export interface DeleteIntegrationAssociation {
   readonly InstanceId: string;
   readonly IntegrationAssociationId: string;
 }
+
 export interface DeleteQuickConnect {
   readonly InstanceId: string;
   readonly QuickConnectId: string;
 }
+
 export interface DeleteSecurityProfile {
   readonly InstanceId: string;
   readonly SecurityProfileId: string;
 }
+
 export interface DeleteUseCase {
   readonly InstanceId: string;
   readonly IntegrationAssociationId: string;
   readonly UseCaseId: string;
 }
+
 export interface DeleteUser {
   readonly InstanceId: string;
   readonly UserId: string;
 }
+
 export interface DeleteUserHierarchyGroup {
   readonly HierarchyGroupId: string;
   readonly InstanceId: string;
 }
+
 export interface DescribeAgentStatus {
   readonly InstanceId: string;
   readonly AgentStatusId: string;
 }
+
 export interface DescribeContact {
   readonly InstanceId: string;
   readonly ContactId: string;
 }
+
 export interface DescribeContactFlow {
   readonly InstanceId: string;
   readonly ContactFlowId: string;
 }
+
 export interface DescribeContactFlowModule {
   readonly InstanceId: string;
   readonly ContactFlowModuleId: string;
 }
+
 export interface DescribeHoursOfOperation {
   readonly InstanceId: string;
   readonly HoursOfOperationId: string;
 }
+
 export interface DescribeInstance {
   readonly InstanceId: string;
 }
+
 export interface DescribeInstanceAttribute {
   readonly InstanceId: string;
   readonly AttributeType: string;
 }
+
 export interface DescribeInstanceStorageConfig {
   readonly InstanceId: string;
   readonly AssociationId: string;
   readonly ResourceType: string;
 }
+
 export interface DescribeQueue {
   readonly InstanceId: string;
   readonly QueueId: string;
 }
+
 export interface DescribeQuickConnect {
   readonly InstanceId: string;
   readonly QuickConnectId: string;
 }
+
 export interface DescribeRoutingProfile {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
 }
+
 export interface DescribeSecurityProfile {
   readonly SecurityProfileId: string;
   readonly InstanceId: string;
 }
+
 export interface DescribeUser {
   readonly UserId: string;
   readonly InstanceId: string;
 }
+
 export interface DescribeUserHierarchyGroup {
   readonly HierarchyGroupId: string;
   readonly InstanceId: string;
 }
+
 export interface DescribeUserHierarchyStructure {
   readonly InstanceId: string;
 }
+
 export interface DisassociateApprovedOrigin {
   readonly InstanceId: string;
   readonly Origin: string;
 }
+
 export interface DisassociateBot {
   readonly InstanceId: string;
   readonly LexBot?: LexBot;
   readonly LexV2Bot?: LexV2Bot;
 }
+
 export interface DisassociateInstanceStorageConfig {
   readonly InstanceId: string;
   readonly AssociationId: string;
   readonly ResourceType: string;
 }
+
 export interface DisassociateLambdaFunction {
   readonly InstanceId: string;
   readonly FunctionArn: string;
 }
+
 export interface DisassociateLexBot {
   readonly InstanceId: string;
   readonly BotName: string;
   readonly LexRegion: string;
 }
+
 export interface DisassociateQueueQuickConnects {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly QuickConnectIds: [];
 }
+
 export interface DisassociateRoutingProfileQueues {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
   readonly QueueReferences: [];
 }
+
 export interface DisassociateSecurityKey {
   readonly InstanceId: string;
   readonly AssociationId: string;
 }
+
 export interface GetContactAttributes {
   readonly InstanceId: string;
   readonly InitialContactId: string;
 }
+
 export interface GetCurrentMetricData {
   readonly InstanceId: string;
   readonly Filters: Filters;
@@ -290,9 +345,11 @@ export interface GetCurrentMetricData {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetFederationToken {
   readonly InstanceId: string;
 }
+
 export interface GetMetricData {
   readonly InstanceId: string;
   readonly StartTime: Date;
@@ -303,77 +360,91 @@ export interface GetMetricData {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListAgentStatuses {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly AgentStatusTypes?: [];
 }
+
 export interface ListApprovedOrigins {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListBots {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly LexVersion: string;
 }
+
 export interface ListContactFlowModules {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly ContactFlowModuleState?: string;
 }
+
 export interface ListContactFlows {
   readonly InstanceId: string;
   readonly ContactFlowTypes?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListContactReferences {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly ReferenceTypes: [];
   readonly NextToken?: string;
 }
+
 export interface ListHoursOfOperations {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListInstanceAttributes {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListInstanceStorageConfigs {
   readonly InstanceId: string;
   readonly ResourceType: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListInstances {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListIntegrationAssociations {
   readonly InstanceId: string;
   readonly IntegrationType?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListLambdaFunctions {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListLexBots {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListPhoneNumbers {
   readonly InstanceId: string;
   readonly PhoneNumberTypes?: [];
@@ -381,80 +452,95 @@ export interface ListPhoneNumbers {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListPrompts {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListQueueQuickConnects {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListQueues {
   readonly InstanceId: string;
   readonly QueueTypes?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListQuickConnects {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly QuickConnectTypes?: [];
 }
+
 export interface ListRoutingProfileQueues {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListRoutingProfiles {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListSecurityKeys {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListSecurityProfilePermissions {
   readonly SecurityProfileId: string;
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListSecurityProfiles {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface ListUseCases {
   readonly InstanceId: string;
   readonly IntegrationAssociationId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListUserHierarchyGroups {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListUsers {
   readonly InstanceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ResumeContactRecording {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly InitialContactId: string;
 }
+
 export interface StartChatContact {
   readonly InstanceId: string;
   readonly ContactFlowId: string;
@@ -463,18 +549,21 @@ export interface StartChatContact {
   readonly InitialMessage?: ChatMessage;
   readonly ClientToken?: string;
 }
+
 export interface StartContactRecording {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly InitialContactId: string;
   readonly VoiceRecordingConfiguration: VoiceRecordingConfiguration;
 }
+
 export interface StartContactStreaming {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly ChatStreamingConfiguration: ChatStreamingConfiguration;
   readonly ClientToken: string;
 }
+
 export interface StartOutboundVoiceContact {
   readonly DestinationPhoneNumber: string;
   readonly ContactFlowId: string;
@@ -487,6 +576,7 @@ export interface StartOutboundVoiceContact {
   readonly CampaignId?: string;
   readonly TrafficType?: string;
 }
+
 export interface StartTaskContact {
   readonly InstanceId: string;
   readonly PreviousContactId?: string;
@@ -498,33 +588,40 @@ export interface StartTaskContact {
   readonly ClientToken?: string;
   readonly ScheduledTime?: Date;
 }
+
 export interface StopContact {
   readonly ContactId: string;
   readonly InstanceId: string;
 }
+
 export interface StopContactRecording {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly InitialContactId: string;
 }
+
 export interface StopContactStreaming {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly StreamingId: string;
 }
+
 export interface SuspendContactRecording {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly InitialContactId: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateAgentStatus {
   readonly InstanceId: string;
   readonly AgentStatusId: string;
@@ -534,6 +631,7 @@ export interface UpdateAgentStatus {
   readonly DisplayOrder?: number;
   readonly ResetOrderNumber?: boolean;
 }
+
 export interface UpdateContact {
   readonly InstanceId: string;
   readonly ContactId: string;
@@ -541,16 +639,19 @@ export interface UpdateContact {
   readonly Description?: string;
   readonly References?: {[key: string]: any};
 }
+
 export interface UpdateContactAttributes {
   readonly InitialContactId: string;
   readonly InstanceId: string;
   readonly Attributes: {[key: string]: any};
 }
+
 export interface UpdateContactFlowContent {
   readonly InstanceId: string;
   readonly ContactFlowId: string;
   readonly Content: string;
 }
+
 export interface UpdateContactFlowMetadata {
   readonly InstanceId: string;
   readonly ContactFlowId: string;
@@ -558,11 +659,13 @@ export interface UpdateContactFlowMetadata {
   readonly Description?: string;
   readonly ContactFlowState?: string;
 }
+
 export interface UpdateContactFlowModuleContent {
   readonly InstanceId: string;
   readonly ContactFlowModuleId: string;
   readonly Content: string;
 }
+
 export interface UpdateContactFlowModuleMetadata {
   readonly InstanceId: string;
   readonly ContactFlowModuleId: string;
@@ -570,17 +673,20 @@ export interface UpdateContactFlowModuleMetadata {
   readonly Description?: string;
   readonly State?: string;
 }
+
 export interface UpdateContactFlowName {
   readonly InstanceId: string;
   readonly ContactFlowId: string;
   readonly Name?: string;
   readonly Description?: string;
 }
+
 export interface UpdateContactSchedule {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly ScheduledTime: Date;
 }
+
 export interface UpdateHoursOfOperation {
   readonly InstanceId: string;
   readonly HoursOfOperationId: string;
@@ -589,1446 +695,1465 @@ export interface UpdateHoursOfOperation {
   readonly TimeZone?: string;
   readonly Config?: [];
 }
+
 export interface UpdateInstanceAttribute {
   readonly InstanceId: string;
   readonly AttributeType: string;
   readonly Value: string;
 }
+
 export interface UpdateInstanceStorageConfig {
   readonly InstanceId: string;
   readonly AssociationId: string;
   readonly ResourceType: string;
   readonly StorageConfig: InstanceStorageConfig;
 }
+
 export interface UpdateQueueHoursOfOperation {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly HoursOfOperationId: string;
 }
+
 export interface UpdateQueueMaxContacts {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly MaxContacts?: number;
 }
+
 export interface UpdateQueueName {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly Name?: string;
   readonly Description?: string;
 }
+
 export interface UpdateQueueOutboundCallerConfig {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly OutboundCallerConfig: OutboundCallerConfig;
 }
+
 export interface UpdateQueueStatus {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly Status: string;
 }
+
 export interface UpdateQuickConnectConfig {
   readonly InstanceId: string;
   readonly QuickConnectId: string;
   readonly QuickConnectConfig: QuickConnectConfig;
 }
+
 export interface UpdateQuickConnectName {
   readonly InstanceId: string;
   readonly QuickConnectId: string;
   readonly Name?: string;
   readonly Description?: string;
 }
+
 export interface UpdateRoutingProfileConcurrency {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
   readonly MediaConcurrencies: [];
 }
+
 export interface UpdateRoutingProfileDefaultOutboundQueue {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
   readonly DefaultOutboundQueueId: string;
 }
+
 export interface UpdateRoutingProfileName {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
   readonly Name?: string;
   readonly Description?: string;
 }
+
 export interface UpdateRoutingProfileQueues {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
   readonly QueueConfigs: [];
 }
+
 export interface UpdateSecurityProfile {
   readonly Description?: string;
   readonly Permissions?: [];
   readonly SecurityProfileId: string;
   readonly InstanceId: string;
 }
+
 export interface UpdateUserHierarchy {
   readonly HierarchyGroupId?: string;
   readonly UserId: string;
   readonly InstanceId: string;
 }
+
 export interface UpdateUserHierarchyGroupName {
   readonly Name: string;
   readonly HierarchyGroupId: string;
   readonly InstanceId: string;
 }
+
 export interface UpdateUserHierarchyStructure {
   readonly HierarchyStructure: HierarchyStructureUpdate;
   readonly InstanceId: string;
 }
+
 export interface UpdateUserIdentityInfo {
   readonly IdentityInfo: UserIdentityInfo;
   readonly UserId: string;
   readonly InstanceId: string;
 }
+
 export interface UpdateUserPhoneConfig {
   readonly PhoneConfig: UserPhoneConfig;
   readonly UserId: string;
   readonly InstanceId: string;
 }
+
 export interface UpdateUserRoutingProfile {
   readonly RoutingProfileId: string;
   readonly UserId: string;
   readonly InstanceId: string;
 }
+
 export interface UpdateUserSecurityProfiles {
   readonly SecurityProfileIds: [];
   readonly UserId: string;
   readonly InstanceId: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface AgentInfo {
-  readonly Id: string;
-  readonly ConnectedToAgentTimestamp: Date;
+export interface AgentInfo {
+  readonly Id?: string;
+  readonly ConnectedToAgentTimestamp?: Date;
 }
 
-interface AgentStatus {
-  readonly AgentStatusARN: string;
-  readonly AgentStatusId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Type: string;
-  readonly DisplayOrder: number;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
+export interface AgentStatus {
+  readonly AgentStatusARN?: string;
+  readonly AgentStatusId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Type?: string;
+  readonly DisplayOrder?: number;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface AgentStatusSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Type: string;
+export interface AgentStatusSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Type?: string;
 }
 
-interface AnswerMachineDetectionConfig {
-  readonly EnableAnswerMachineDetection: boolean;
-  readonly AwaitAnswerMachinePrompt: boolean;
+export interface AnswerMachineDetectionConfig {
+  readonly EnableAnswerMachineDetection?: boolean;
+  readonly AwaitAnswerMachinePrompt?: boolean;
 }
 
-interface AssociateApprovedOriginRequest {
+export interface AssociateApprovedOriginRequest {
   readonly InstanceId: string;
   readonly Origin: string;
 }
 
-interface AssociateBotRequest {
+export interface AssociateBotRequest {
   readonly InstanceId: string;
-  readonly LexBot: LexBot;
-  readonly LexV2Bot: LexV2Bot;
+  readonly LexBot?: LexBot;
+  readonly LexV2Bot?: LexV2Bot;
 }
 
-interface AssociateInstanceStorageConfigRequest {
+export interface AssociateInstanceStorageConfigRequest {
   readonly InstanceId: string;
   readonly ResourceType: string;
   readonly StorageConfig: InstanceStorageConfig;
 }
 
-interface AssociateInstanceStorageConfigResponse {
-  readonly AssociationId: string;
+export interface AssociateInstanceStorageConfigResponse {
+  readonly AssociationId?: string;
 }
 
-interface AssociateLambdaFunctionRequest {
+export interface AssociateLambdaFunctionRequest {
   readonly InstanceId: string;
   readonly FunctionArn: string;
 }
 
-interface AssociateLexBotRequest {
+export interface AssociateLexBotRequest {
   readonly InstanceId: string;
   readonly LexBot: LexBot;
 }
 
-interface AssociateQueueQuickConnectsRequest {
+export interface AssociateQueueQuickConnectsRequest {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly QuickConnectIds: [];
 }
 
-interface AssociateRoutingProfileQueuesRequest {
+export interface AssociateRoutingProfileQueuesRequest {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
   readonly QueueConfigs: [];
 }
 
-interface AssociateSecurityKeyRequest {
+export interface AssociateSecurityKeyRequest {
   readonly InstanceId: string;
   readonly Key: string;
 }
 
-interface AssociateSecurityKeyResponse {
-  readonly AssociationId: string;
+export interface AssociateSecurityKeyResponse {
+  readonly AssociationId?: string;
 }
 
-interface AttachmentReference {
-  readonly Name: string;
-  readonly Value: string;
-  readonly Status: string;
+export interface AttachmentReference {
+  readonly Name?: string;
+  readonly Value?: string;
+  readonly Status?: string;
 }
 
-interface Attribute {
-  readonly AttributeType: string;
-  readonly Value: string;
+export interface Attribute {
+  readonly AttributeType?: string;
+  readonly Value?: string;
 }
 
-interface ChatMessage {
+export interface ChatMessage {
   readonly ContentType: string;
   readonly Content: string;
 }
 
-interface ChatStreamingConfiguration {
+export interface ChatStreamingConfiguration {
   readonly StreamingEndpointArn: string;
 }
 
-interface Contact {
-  readonly Arn: string;
-  readonly Id: string;
-  readonly InitialContactId: string;
-  readonly PreviousContactId: string;
-  readonly InitiationMethod: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Channel: string;
-  readonly QueueInfo: QueueInfo;
-  readonly AgentInfo: AgentInfo;
-  readonly InitiationTimestamp: Date;
-  readonly DisconnectTimestamp: Date;
-  readonly LastUpdateTimestamp: Date;
-  readonly ScheduledTimestamp: Date;
+export interface Contact {
+  readonly Arn?: string;
+  readonly Id?: string;
+  readonly InitialContactId?: string;
+  readonly PreviousContactId?: string;
+  readonly InitiationMethod?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Channel?: string;
+  readonly QueueInfo?: QueueInfo;
+  readonly AgentInfo?: AgentInfo;
+  readonly InitiationTimestamp?: Date;
+  readonly DisconnectTimestamp?: Date;
+  readonly LastUpdateTimestamp?: Date;
+  readonly ScheduledTimestamp?: Date;
 }
 
-interface ContactFlow {
-  readonly Arn: string;
-  readonly Id: string;
+export interface ContactFlow {
+  readonly Arn?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly State?: string;
+  readonly Description?: string;
+  readonly Content?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface ContactFlowModule {
+  readonly Arn?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Content?: string;
+  readonly Description?: string;
+  readonly State?: string;
+  readonly Status?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface ContactFlowModuleSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly State?: string;
+}
+
+export interface ContactFlowNotPublishedException {
+  readonly Message?: string;
+}
+
+export interface ContactFlowSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly ContactFlowType?: string;
+  readonly ContactFlowState?: string;
+}
+
+export interface ContactNotFoundException {
+  readonly Message?: string;
+}
+
+export interface CreateAgentStatusRequest {
+  readonly InstanceId: string;
+  readonly Name: string;
+  readonly Description?: string;
+  readonly State: string;
+  readonly DisplayOrder?: number;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface CreateAgentStatusResponse {
+  readonly AgentStatusARN?: string;
+  readonly AgentStatusId?: string;
+}
+
+export interface CreateContactFlowModuleRequest {
+  readonly InstanceId: string;
+  readonly Name: string;
+  readonly Description?: string;
+  readonly Content: string;
+  readonly Tags?: {[key: string]: any};
+  readonly ClientToken?: string;
+}
+
+export interface CreateContactFlowModuleResponse {
+  readonly Id?: string;
+  readonly Arn?: string;
+}
+
+export interface CreateContactFlowRequest {
+  readonly InstanceId: string;
   readonly Name: string;
   readonly Type: string;
-  readonly State: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Content: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ContactFlowModule {
-  readonly Arn: string;
-  readonly Id: string;
-  readonly Name: string;
-  readonly Content: string;
-  readonly Description: string;
-  readonly State: string;
-  readonly Status: string;
-  readonly Tags: {[key: string]: any};
+export interface CreateContactFlowResponse {
+  readonly ContactFlowId?: string;
+  readonly ContactFlowArn?: string;
 }
 
-interface ContactFlowModuleSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly State: string;
-}
-
-interface ContactFlowNotPublishedException {
-  readonly Message: string;
-}
-
-interface ContactFlowSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly ContactFlowType: string;
-  readonly ContactFlowState: string;
-}
-
-interface ContactNotFoundException {
-  readonly Message: string;
-}
-
-interface CreateAgentStatusRequest {
+export interface CreateHoursOfOperationRequest {
   readonly InstanceId: string;
   readonly Name: string;
-  readonly Description: string;
-  readonly State: string;
-  readonly DisplayOrder: number;
-  readonly Tags: {[key: string]: any};
-}
-
-interface CreateAgentStatusResponse {
-  readonly AgentStatusARN: string;
-  readonly AgentStatusId: string;
-}
-
-interface CreateContactFlowModuleRequest {
-  readonly InstanceId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Content: string;
-  readonly Tags: {[key: string]: any};
-  readonly ClientToken: string;
-}
-
-interface CreateContactFlowModuleResponse {
-  readonly Id: string;
-  readonly Arn: string;
-}
-
-interface CreateContactFlowRequest {
-  readonly InstanceId: string;
-  readonly Name: string;
-  readonly Type: string;
-  readonly Description: string;
-  readonly Content: string;
-  readonly Tags: {[key: string]: any};
-}
-
-interface CreateContactFlowResponse {
-  readonly ContactFlowId: string;
-  readonly ContactFlowArn: string;
-}
-
-interface CreateHoursOfOperationRequest {
-  readonly InstanceId: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly TimeZone: string;
   readonly Config: [];
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateHoursOfOperationResponse {
-  readonly HoursOfOperationId: string;
-  readonly HoursOfOperationArn: string;
+export interface CreateHoursOfOperationResponse {
+  readonly HoursOfOperationId?: string;
+  readonly HoursOfOperationArn?: string;
 }
 
-interface CreateInstanceRequest {
-  readonly ClientToken: string;
+export interface CreateInstanceRequest {
+  readonly ClientToken?: string;
   readonly IdentityManagementType: string;
-  readonly InstanceAlias: string;
-  readonly DirectoryId: string;
+  readonly InstanceAlias?: string;
+  readonly DirectoryId?: string;
   readonly InboundCallsEnabled: boolean;
   readonly OutboundCallsEnabled: boolean;
 }
 
-interface CreateInstanceResponse {
-  readonly Id: string;
-  readonly Arn: string;
+export interface CreateInstanceResponse {
+  readonly Id?: string;
+  readonly Arn?: string;
 }
 
-interface CreateIntegrationAssociationRequest {
+export interface CreateIntegrationAssociationRequest {
   readonly InstanceId: string;
   readonly IntegrationType: string;
   readonly IntegrationArn: string;
-  readonly SourceApplicationUrl: string;
-  readonly SourceApplicationName: string;
-  readonly SourceType: string;
-  readonly Tags: {[key: string]: any};
+  readonly SourceApplicationUrl?: string;
+  readonly SourceApplicationName?: string;
+  readonly SourceType?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateIntegrationAssociationResponse {
-  readonly IntegrationAssociationId: string;
-  readonly IntegrationAssociationArn: string;
+export interface CreateIntegrationAssociationResponse {
+  readonly IntegrationAssociationId?: string;
+  readonly IntegrationAssociationArn?: string;
 }
 
-interface CreateQueueRequest {
+export interface CreateQueueRequest {
   readonly InstanceId: string;
   readonly Name: string;
-  readonly Description: string;
-  readonly OutboundCallerConfig: OutboundCallerConfig;
+  readonly Description?: string;
+  readonly OutboundCallerConfig?: OutboundCallerConfig;
   readonly HoursOfOperationId: string;
-  readonly MaxContacts: number;
-  readonly QuickConnectIds: [];
-  readonly Tags: {[key: string]: any};
+  readonly MaxContacts?: number;
+  readonly QuickConnectIds?: [];
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateQueueResponse {
-  readonly QueueArn: string;
-  readonly QueueId: string;
+export interface CreateQueueResponse {
+  readonly QueueArn?: string;
+  readonly QueueId?: string;
 }
 
-interface CreateQuickConnectRequest {
+export interface CreateQuickConnectRequest {
   readonly InstanceId: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly QuickConnectConfig: QuickConnectConfig;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateQuickConnectResponse {
-  readonly QuickConnectARN: string;
-  readonly QuickConnectId: string;
+export interface CreateQuickConnectResponse {
+  readonly QuickConnectARN?: string;
+  readonly QuickConnectId?: string;
 }
 
-interface CreateRoutingProfileRequest {
+export interface CreateRoutingProfileRequest {
   readonly InstanceId: string;
   readonly Name: string;
   readonly Description: string;
   readonly DefaultOutboundQueueId: string;
-  readonly QueueConfigs: [];
+  readonly QueueConfigs?: [];
   readonly MediaConcurrencies: [];
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateRoutingProfileResponse {
-  readonly RoutingProfileArn: string;
-  readonly RoutingProfileId: string;
+export interface CreateRoutingProfileResponse {
+  readonly RoutingProfileArn?: string;
+  readonly RoutingProfileId?: string;
 }
 
-interface CreateSecurityProfileRequest {
+export interface CreateSecurityProfileRequest {
   readonly SecurityProfileName: string;
-  readonly Description: string;
-  readonly Permissions: [];
+  readonly Description?: string;
+  readonly Permissions?: [];
   readonly InstanceId: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateSecurityProfileResponse {
-  readonly SecurityProfileId: string;
-  readonly SecurityProfileArn: string;
+export interface CreateSecurityProfileResponse {
+  readonly SecurityProfileId?: string;
+  readonly SecurityProfileArn?: string;
 }
 
-interface CreateUseCaseRequest {
+export interface CreateUseCaseRequest {
   readonly InstanceId: string;
   readonly IntegrationAssociationId: string;
   readonly UseCaseType: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateUseCaseResponse {
-  readonly UseCaseId: string;
-  readonly UseCaseArn: string;
+export interface CreateUseCaseResponse {
+  readonly UseCaseId?: string;
+  readonly UseCaseArn?: string;
 }
 
-interface CreateUserHierarchyGroupRequest {
+export interface CreateUserHierarchyGroupRequest {
   readonly Name: string;
-  readonly ParentGroupId: string;
+  readonly ParentGroupId?: string;
   readonly InstanceId: string;
 }
 
-interface CreateUserHierarchyGroupResponse {
-  readonly HierarchyGroupId: string;
-  readonly HierarchyGroupArn: string;
+export interface CreateUserHierarchyGroupResponse {
+  readonly HierarchyGroupId?: string;
+  readonly HierarchyGroupArn?: string;
 }
 
-interface CreateUserRequest {
+export interface CreateUserRequest {
   readonly Username: string;
-  readonly Password: string;
-  readonly IdentityInfo: UserIdentityInfo;
+  readonly Password?: string;
+  readonly IdentityInfo?: UserIdentityInfo;
   readonly PhoneConfig: UserPhoneConfig;
-  readonly DirectoryUserId: string;
+  readonly DirectoryUserId?: string;
   readonly SecurityProfileIds: [];
   readonly RoutingProfileId: string;
-  readonly HierarchyGroupId: string;
+  readonly HierarchyGroupId?: string;
   readonly InstanceId: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateUserResponse {
-  readonly UserId: string;
-  readonly UserArn: string;
+export interface CreateUserResponse {
+  readonly UserId?: string;
+  readonly UserArn?: string;
 }
 
-interface Credentials {
-  readonly AccessToken: string;
-  readonly AccessTokenExpiration: Date;
-  readonly RefreshToken: string;
-  readonly RefreshTokenExpiration: Date;
+export interface Credentials {
+  readonly AccessToken?: string;
+  readonly AccessTokenExpiration?: Date;
+  readonly RefreshToken?: string;
+  readonly RefreshTokenExpiration?: Date;
 }
 
-interface CurrentMetric {
-  readonly Name: string;
-  readonly Unit: string;
+export interface CurrentMetric {
+  readonly Name?: string;
+  readonly Unit?: string;
 }
 
-interface CurrentMetricData {
-  readonly Metric: CurrentMetric;
-  readonly Value: unknown;
+export interface CurrentMetricData {
+  readonly Metric?: CurrentMetric;
+  readonly Value?: unknown;
 }
 
-interface CurrentMetricResult {
-  readonly Dimensions: Dimensions;
-  readonly Collections: [];
+export interface CurrentMetricResult {
+  readonly Dimensions?: Dimensions;
+  readonly Collections?: [];
 }
 
-interface DeleteContactFlowModuleRequest {
+export interface DeleteContactFlowModuleRequest {
   readonly InstanceId: string;
   readonly ContactFlowModuleId: string;
 }
 
-interface DeleteContactFlowModuleResponse {
+export interface DeleteContactFlowModuleResponse {
 }
 
-interface DeleteContactFlowRequest {
+export interface DeleteContactFlowRequest {
   readonly InstanceId: string;
   readonly ContactFlowId: string;
 }
 
-interface DeleteHoursOfOperationRequest {
+export interface DeleteHoursOfOperationRequest {
   readonly InstanceId: string;
   readonly HoursOfOperationId: string;
 }
 
-interface DeleteInstanceRequest {
+export interface DeleteInstanceRequest {
   readonly InstanceId: string;
 }
 
-interface DeleteIntegrationAssociationRequest {
+export interface DeleteIntegrationAssociationRequest {
   readonly InstanceId: string;
   readonly IntegrationAssociationId: string;
 }
 
-interface DeleteQuickConnectRequest {
+export interface DeleteQuickConnectRequest {
   readonly InstanceId: string;
   readonly QuickConnectId: string;
 }
 
-interface DeleteSecurityProfileRequest {
+export interface DeleteSecurityProfileRequest {
   readonly InstanceId: string;
   readonly SecurityProfileId: string;
 }
 
-interface DeleteUseCaseRequest {
+export interface DeleteUseCaseRequest {
   readonly InstanceId: string;
   readonly IntegrationAssociationId: string;
   readonly UseCaseId: string;
 }
 
-interface DeleteUserHierarchyGroupRequest {
+export interface DeleteUserHierarchyGroupRequest {
   readonly HierarchyGroupId: string;
   readonly InstanceId: string;
 }
 
-interface DeleteUserRequest {
+export interface DeleteUserRequest {
   readonly InstanceId: string;
   readonly UserId: string;
 }
 
-interface DescribeAgentStatusRequest {
+export interface DescribeAgentStatusRequest {
   readonly InstanceId: string;
   readonly AgentStatusId: string;
 }
 
-interface DescribeAgentStatusResponse {
-  readonly AgentStatus: AgentStatus;
+export interface DescribeAgentStatusResponse {
+  readonly AgentStatus?: AgentStatus;
 }
 
-interface DescribeContactFlowModuleRequest {
+export interface DescribeContactFlowModuleRequest {
   readonly InstanceId: string;
   readonly ContactFlowModuleId: string;
 }
 
-interface DescribeContactFlowModuleResponse {
-  readonly ContactFlowModule: ContactFlowModule;
+export interface DescribeContactFlowModuleResponse {
+  readonly ContactFlowModule?: ContactFlowModule;
 }
 
-interface DescribeContactFlowRequest {
+export interface DescribeContactFlowRequest {
   readonly InstanceId: string;
   readonly ContactFlowId: string;
 }
 
-interface DescribeContactFlowResponse {
-  readonly ContactFlow: ContactFlow;
+export interface DescribeContactFlowResponse {
+  readonly ContactFlow?: ContactFlow;
 }
 
-interface DescribeContactRequest {
+export interface DescribeContactRequest {
   readonly InstanceId: string;
   readonly ContactId: string;
 }
 
-interface DescribeContactResponse {
-  readonly Contact: Contact;
+export interface DescribeContactResponse {
+  readonly Contact?: Contact;
 }
 
-interface DescribeHoursOfOperationRequest {
+export interface DescribeHoursOfOperationRequest {
   readonly InstanceId: string;
   readonly HoursOfOperationId: string;
 }
 
-interface DescribeHoursOfOperationResponse {
-  readonly HoursOfOperation: HoursOfOperation;
+export interface DescribeHoursOfOperationResponse {
+  readonly HoursOfOperation?: HoursOfOperation;
 }
 
-interface DescribeInstanceAttributeRequest {
+export interface DescribeInstanceAttributeRequest {
   readonly InstanceId: string;
   readonly AttributeType: string;
 }
 
-interface DescribeInstanceAttributeResponse {
-  readonly Attribute: Attribute;
+export interface DescribeInstanceAttributeResponse {
+  readonly Attribute?: Attribute;
 }
 
-interface DescribeInstanceRequest {
+export interface DescribeInstanceRequest {
   readonly InstanceId: string;
 }
 
-interface DescribeInstanceResponse {
-  readonly Instance: Instance;
+export interface DescribeInstanceResponse {
+  readonly Instance?: Instance;
 }
 
-interface DescribeInstanceStorageConfigRequest {
+export interface DescribeInstanceStorageConfigRequest {
   readonly InstanceId: string;
   readonly AssociationId: string;
   readonly ResourceType: string;
 }
 
-interface DescribeInstanceStorageConfigResponse {
-  readonly StorageConfig: InstanceStorageConfig;
+export interface DescribeInstanceStorageConfigResponse {
+  readonly StorageConfig?: InstanceStorageConfig;
 }
 
-interface DescribeQueueRequest {
+export interface DescribeQueueRequest {
   readonly InstanceId: string;
   readonly QueueId: string;
 }
 
-interface DescribeQueueResponse {
-  readonly Queue: Queue;
+export interface DescribeQueueResponse {
+  readonly Queue?: Queue;
 }
 
-interface DescribeQuickConnectRequest {
+export interface DescribeQuickConnectRequest {
   readonly InstanceId: string;
   readonly QuickConnectId: string;
 }
 
-interface DescribeQuickConnectResponse {
-  readonly QuickConnect: QuickConnect;
+export interface DescribeQuickConnectResponse {
+  readonly QuickConnect?: QuickConnect;
 }
 
-interface DescribeRoutingProfileRequest {
+export interface DescribeRoutingProfileRequest {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
 }
 
-interface DescribeRoutingProfileResponse {
-  readonly RoutingProfile: RoutingProfile;
+export interface DescribeRoutingProfileResponse {
+  readonly RoutingProfile?: RoutingProfile;
 }
 
-interface DescribeSecurityProfileRequest {
+export interface DescribeSecurityProfileRequest {
   readonly SecurityProfileId: string;
   readonly InstanceId: string;
 }
 
-interface DescribeSecurityProfileResponse {
-  readonly SecurityProfile: SecurityProfile;
+export interface DescribeSecurityProfileResponse {
+  readonly SecurityProfile?: SecurityProfile;
 }
 
-interface DescribeUserHierarchyGroupRequest {
+export interface DescribeUserHierarchyGroupRequest {
   readonly HierarchyGroupId: string;
   readonly InstanceId: string;
 }
 
-interface DescribeUserHierarchyGroupResponse {
-  readonly HierarchyGroup: HierarchyGroup;
+export interface DescribeUserHierarchyGroupResponse {
+  readonly HierarchyGroup?: HierarchyGroup;
 }
 
-interface DescribeUserHierarchyStructureRequest {
+export interface DescribeUserHierarchyStructureRequest {
   readonly InstanceId: string;
 }
 
-interface DescribeUserHierarchyStructureResponse {
-  readonly HierarchyStructure: HierarchyStructure;
+export interface DescribeUserHierarchyStructureResponse {
+  readonly HierarchyStructure?: HierarchyStructure;
 }
 
-interface DescribeUserRequest {
+export interface DescribeUserRequest {
   readonly UserId: string;
   readonly InstanceId: string;
 }
 
-interface DescribeUserResponse {
-  readonly User: User;
+export interface DescribeUserResponse {
+  readonly User?: User;
 }
 
-interface DestinationNotAllowedException {
-  readonly Message: string;
+export interface DestinationNotAllowedException {
+  readonly Message?: string;
 }
 
-interface Dimensions {
-  readonly Queue: QueueReference;
-  readonly Channel: string;
+export interface Dimensions {
+  readonly Queue?: QueueReference;
+  readonly Channel?: string;
 }
 
-interface DisassociateApprovedOriginRequest {
+export interface DisassociateApprovedOriginRequest {
   readonly InstanceId: string;
   readonly Origin: string;
 }
 
-interface DisassociateBotRequest {
+export interface DisassociateBotRequest {
   readonly InstanceId: string;
-  readonly LexBot: LexBot;
-  readonly LexV2Bot: LexV2Bot;
+  readonly LexBot?: LexBot;
+  readonly LexV2Bot?: LexV2Bot;
 }
 
-interface DisassociateInstanceStorageConfigRequest {
+export interface DisassociateInstanceStorageConfigRequest {
   readonly InstanceId: string;
   readonly AssociationId: string;
   readonly ResourceType: string;
 }
 
-interface DisassociateLambdaFunctionRequest {
+export interface DisassociateLambdaFunctionRequest {
   readonly InstanceId: string;
   readonly FunctionArn: string;
 }
 
-interface DisassociateLexBotRequest {
+export interface DisassociateLexBotRequest {
   readonly InstanceId: string;
   readonly BotName: string;
   readonly LexRegion: string;
 }
 
-interface DisassociateQueueQuickConnectsRequest {
+export interface DisassociateQueueQuickConnectsRequest {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly QuickConnectIds: [];
 }
 
-interface DisassociateRoutingProfileQueuesRequest {
+export interface DisassociateRoutingProfileQueuesRequest {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
   readonly QueueReferences: [];
 }
 
-interface DisassociateSecurityKeyRequest {
+export interface DisassociateSecurityKeyRequest {
   readonly InstanceId: string;
   readonly AssociationId: string;
 }
 
-interface DuplicateResourceException {
-  readonly Message: string;
+export interface DuplicateResourceException {
+  readonly Message?: string;
 }
 
-interface EncryptionConfig {
+export interface EncryptionConfig {
   readonly EncryptionType: string;
   readonly KeyId: string;
 }
 
-interface Filters {
-  readonly Queues: [];
-  readonly Channels: [];
+export interface Filters {
+  readonly Queues?: [];
+  readonly Channels?: [];
 }
 
-interface GetContactAttributesRequest {
+export interface GetContactAttributesRequest {
   readonly InstanceId: string;
   readonly InitialContactId: string;
 }
 
-interface GetContactAttributesResponse {
-  readonly Attributes: {[key: string]: any};
+export interface GetContactAttributesResponse {
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface GetCurrentMetricDataRequest {
+export interface GetCurrentMetricDataRequest {
   readonly InstanceId: string;
   readonly Filters: Filters;
-  readonly Groupings: [];
+  readonly Groupings?: [];
   readonly CurrentMetrics: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetCurrentMetricDataResponse {
-  readonly NextToken: string;
-  readonly MetricResults: [];
-  readonly DataSnapshotTime: Date;
+export interface GetCurrentMetricDataResponse {
+  readonly NextToken?: string;
+  readonly MetricResults?: [];
+  readonly DataSnapshotTime?: Date;
 }
 
-interface GetFederationTokenRequest {
+export interface GetFederationTokenRequest {
   readonly InstanceId: string;
 }
 
-interface GetFederationTokenResponse {
-  readonly Credentials: Credentials;
+export interface GetFederationTokenResponse {
+  readonly Credentials?: Credentials;
 }
 
-interface GetMetricDataRequest {
+export interface GetMetricDataRequest {
   readonly InstanceId: string;
   readonly StartTime: Date;
   readonly EndTime: Date;
   readonly Filters: Filters;
-  readonly Groupings: [];
+  readonly Groupings?: [];
   readonly HistoricalMetrics: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetMetricDataResponse {
-  readonly NextToken: string;
-  readonly MetricResults: [];
+export interface GetMetricDataResponse {
+  readonly NextToken?: string;
+  readonly MetricResults?: [];
 }
 
-interface HierarchyGroup {
-  readonly Id: string;
-  readonly Arn: string;
+export interface HierarchyGroup {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly LevelId?: string;
+  readonly HierarchyPath?: HierarchyPath;
+}
+
+export interface HierarchyGroupSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+}
+
+export interface HierarchyLevel {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+}
+
+export interface HierarchyLevelUpdate {
   readonly Name: string;
-  readonly LevelId: string;
-  readonly HierarchyPath: HierarchyPath;
 }
 
-interface HierarchyGroupSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
+export interface HierarchyPath {
+  readonly LevelOne?: HierarchyGroupSummary;
+  readonly LevelTwo?: HierarchyGroupSummary;
+  readonly LevelThree?: HierarchyGroupSummary;
+  readonly LevelFour?: HierarchyGroupSummary;
+  readonly LevelFive?: HierarchyGroupSummary;
 }
 
-interface HierarchyLevel {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
+export interface HierarchyStructure {
+  readonly LevelOne?: HierarchyLevel;
+  readonly LevelTwo?: HierarchyLevel;
+  readonly LevelThree?: HierarchyLevel;
+  readonly LevelFour?: HierarchyLevel;
+  readonly LevelFive?: HierarchyLevel;
 }
 
-interface HierarchyLevelUpdate {
-  readonly Name: string;
+export interface HierarchyStructureUpdate {
+  readonly LevelOne?: HierarchyLevelUpdate;
+  readonly LevelTwo?: HierarchyLevelUpdate;
+  readonly LevelThree?: HierarchyLevelUpdate;
+  readonly LevelFour?: HierarchyLevelUpdate;
+  readonly LevelFive?: HierarchyLevelUpdate;
 }
 
-interface HierarchyPath {
-  readonly LevelOne: HierarchyGroupSummary;
-  readonly LevelTwo: HierarchyGroupSummary;
-  readonly LevelThree: HierarchyGroupSummary;
-  readonly LevelFour: HierarchyGroupSummary;
-  readonly LevelFive: HierarchyGroupSummary;
+export interface HistoricalMetric {
+  readonly Name?: string;
+  readonly Threshold?: Threshold;
+  readonly Statistic?: string;
+  readonly Unit?: string;
 }
 
-interface HierarchyStructure {
-  readonly LevelOne: HierarchyLevel;
-  readonly LevelTwo: HierarchyLevel;
-  readonly LevelThree: HierarchyLevel;
-  readonly LevelFour: HierarchyLevel;
-  readonly LevelFive: HierarchyLevel;
+export interface HistoricalMetricData {
+  readonly Metric?: HistoricalMetric;
+  readonly Value?: unknown;
 }
 
-interface HierarchyStructureUpdate {
-  readonly LevelOne: HierarchyLevelUpdate;
-  readonly LevelTwo: HierarchyLevelUpdate;
-  readonly LevelThree: HierarchyLevelUpdate;
-  readonly LevelFour: HierarchyLevelUpdate;
-  readonly LevelFive: HierarchyLevelUpdate;
+export interface HistoricalMetricResult {
+  readonly Dimensions?: Dimensions;
+  readonly Collections?: [];
 }
 
-interface HistoricalMetric {
-  readonly Name: string;
-  readonly Threshold: Threshold;
-  readonly Statistic: string;
-  readonly Unit: string;
+export interface HoursOfOperation {
+  readonly HoursOfOperationId?: string;
+  readonly HoursOfOperationArn?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly TimeZone?: string;
+  readonly Config?: [];
+  readonly Tags?: {[key: string]: any};
 }
 
-interface HistoricalMetricData {
-  readonly Metric: HistoricalMetric;
-  readonly Value: unknown;
-}
-
-interface HistoricalMetricResult {
-  readonly Dimensions: Dimensions;
-  readonly Collections: [];
-}
-
-interface HoursOfOperation {
-  readonly HoursOfOperationId: string;
-  readonly HoursOfOperationArn: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly TimeZone: string;
-  readonly Config: [];
-  readonly Tags: {[key: string]: any};
-}
-
-interface HoursOfOperationConfig {
+export interface HoursOfOperationConfig {
   readonly Day: string;
   readonly StartTime: HoursOfOperationTimeSlice;
   readonly EndTime: HoursOfOperationTimeSlice;
 }
 
-interface HoursOfOperationSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
+export interface HoursOfOperationSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
 }
 
-interface HoursOfOperationTimeSlice {
+export interface HoursOfOperationTimeSlice {
   readonly Hours: number;
   readonly Minutes: number;
 }
 
-interface IdempotencyException {
-  readonly Message: string;
+export interface IdempotencyException {
+  readonly Message?: string;
 }
 
-interface Instance {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly IdentityManagementType: string;
-  readonly InstanceAlias: string;
-  readonly CreatedTime: Date;
-  readonly ServiceRole: string;
-  readonly InstanceStatus: string;
-  readonly StatusReason: InstanceStatusReason;
-  readonly InboundCallsEnabled: boolean;
-  readonly OutboundCallsEnabled: boolean;
+export interface Instance {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly IdentityManagementType?: string;
+  readonly InstanceAlias?: string;
+  readonly CreatedTime?: Date;
+  readonly ServiceRole?: string;
+  readonly InstanceStatus?: string;
+  readonly StatusReason?: InstanceStatusReason;
+  readonly InboundCallsEnabled?: boolean;
+  readonly OutboundCallsEnabled?: boolean;
 }
 
-interface InstanceStatusReason {
-  readonly Message: string;
+export interface InstanceStatusReason {
+  readonly Message?: string;
 }
 
-interface InstanceStorageConfig {
-  readonly AssociationId: string;
+export interface InstanceStorageConfig {
+  readonly AssociationId?: string;
   readonly StorageType: string;
-  readonly S3Config: S3Config;
-  readonly KinesisVideoStreamConfig: KinesisVideoStreamConfig;
-  readonly KinesisStreamConfig: KinesisStreamConfig;
-  readonly KinesisFirehoseConfig: KinesisFirehoseConfig;
+  readonly S3Config?: S3Config;
+  readonly KinesisVideoStreamConfig?: KinesisVideoStreamConfig;
+  readonly KinesisStreamConfig?: KinesisStreamConfig;
+  readonly KinesisFirehoseConfig?: KinesisFirehoseConfig;
 }
 
-interface InstanceSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly IdentityManagementType: string;
-  readonly InstanceAlias: string;
-  readonly CreatedTime: Date;
-  readonly ServiceRole: string;
-  readonly InstanceStatus: string;
-  readonly InboundCallsEnabled: boolean;
-  readonly OutboundCallsEnabled: boolean;
+export interface InstanceSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly IdentityManagementType?: string;
+  readonly InstanceAlias?: string;
+  readonly CreatedTime?: Date;
+  readonly ServiceRole?: string;
+  readonly InstanceStatus?: string;
+  readonly InboundCallsEnabled?: boolean;
+  readonly OutboundCallsEnabled?: boolean;
 }
 
-interface IntegrationAssociationSummary {
-  readonly IntegrationAssociationId: string;
-  readonly IntegrationAssociationArn: string;
-  readonly InstanceId: string;
-  readonly IntegrationType: string;
-  readonly IntegrationArn: string;
-  readonly SourceApplicationUrl: string;
-  readonly SourceApplicationName: string;
-  readonly SourceType: string;
+export interface IntegrationAssociationSummary {
+  readonly IntegrationAssociationId?: string;
+  readonly IntegrationAssociationArn?: string;
+  readonly InstanceId?: string;
+  readonly IntegrationType?: string;
+  readonly IntegrationArn?: string;
+  readonly SourceApplicationUrl?: string;
+  readonly SourceApplicationName?: string;
+  readonly SourceType?: string;
 }
 
-interface InternalServiceException {
-  readonly Message: string;
+export interface InternalServiceException {
+  readonly Message?: string;
 }
 
-interface InvalidContactFlowException {
-  readonly problems: [];
+export interface InvalidContactFlowException {
+  readonly problems?: [];
 }
 
-interface InvalidContactFlowModuleException {
-  readonly Problems: [];
+export interface InvalidContactFlowModuleException {
+  readonly Problems?: [];
 }
 
-interface InvalidParameterException {
-  readonly Message: string;
+export interface InvalidParameterException {
+  readonly Message?: string;
 }
 
-interface InvalidRequestException {
-  readonly Message: string;
+export interface InvalidRequestException {
+  readonly Message?: string;
 }
 
-interface KinesisFirehoseConfig {
+export interface KinesisFirehoseConfig {
   readonly FirehoseArn: string;
 }
 
-interface KinesisStreamConfig {
+export interface KinesisStreamConfig {
   readonly StreamArn: string;
 }
 
-interface KinesisVideoStreamConfig {
+export interface KinesisVideoStreamConfig {
   readonly Prefix: string;
   readonly RetentionPeriodHours: number;
   readonly EncryptionConfig: EncryptionConfig;
 }
 
-interface LexBot {
-  readonly Name: string;
-  readonly LexRegion: string;
+export interface LexBot {
+  readonly Name?: string;
+  readonly LexRegion?: string;
 }
 
-interface LexBotConfig {
-  readonly LexBot: LexBot;
-  readonly LexV2Bot: LexV2Bot;
+export interface LexBotConfig {
+  readonly LexBot?: LexBot;
+  readonly LexV2Bot?: LexV2Bot;
 }
 
-interface LexV2Bot {
-  readonly AliasArn: string;
+export interface LexV2Bot {
+  readonly AliasArn?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface ListAgentStatusRequest {
+export interface ListAgentStatusRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly AgentStatusTypes: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly AgentStatusTypes?: [];
 }
 
-interface ListAgentStatusResponse {
-  readonly NextToken: string;
-  readonly AgentStatusSummaryList: [];
+export interface ListAgentStatusResponse {
+  readonly NextToken?: string;
+  readonly AgentStatusSummaryList?: [];
 }
 
-interface ListApprovedOriginsRequest {
+export interface ListApprovedOriginsRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListApprovedOriginsResponse {
-  readonly Origins: [];
-  readonly NextToken: string;
+export interface ListApprovedOriginsResponse {
+  readonly Origins?: [];
+  readonly NextToken?: string;
 }
 
-interface ListBotsRequest {
+export interface ListBotsRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
   readonly LexVersion: string;
 }
 
-interface ListBotsResponse {
-  readonly LexBots: [];
-  readonly NextToken: string;
+export interface ListBotsResponse {
+  readonly LexBots?: [];
+  readonly NextToken?: string;
 }
 
-interface ListContactFlowModulesRequest {
+export interface ListContactFlowModulesRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ContactFlowModuleState: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ContactFlowModuleState?: string;
 }
 
-interface ListContactFlowModulesResponse {
-  readonly ContactFlowModulesSummaryList: [];
-  readonly NextToken: string;
+export interface ListContactFlowModulesResponse {
+  readonly ContactFlowModulesSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListContactFlowsRequest {
+export interface ListContactFlowsRequest {
   readonly InstanceId: string;
-  readonly ContactFlowTypes: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly ContactFlowTypes?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListContactFlowsResponse {
-  readonly ContactFlowSummaryList: [];
-  readonly NextToken: string;
+export interface ListContactFlowsResponse {
+  readonly ContactFlowSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListContactReferencesRequest {
+export interface ListContactReferencesRequest {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly ReferenceTypes: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListContactReferencesResponse {
-  readonly ReferenceSummaryList: [];
-  readonly NextToken: string;
+export interface ListContactReferencesResponse {
+  readonly ReferenceSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListHoursOfOperationsRequest {
+export interface ListHoursOfOperationsRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListHoursOfOperationsResponse {
-  readonly HoursOfOperationSummaryList: [];
-  readonly NextToken: string;
+export interface ListHoursOfOperationsResponse {
+  readonly HoursOfOperationSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListInstanceAttributesRequest {
+export interface ListInstanceAttributesRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListInstanceAttributesResponse {
-  readonly Attributes: [];
-  readonly NextToken: string;
+export interface ListInstanceAttributesResponse {
+  readonly Attributes?: [];
+  readonly NextToken?: string;
 }
 
-interface ListInstanceStorageConfigsRequest {
+export interface ListInstanceStorageConfigsRequest {
   readonly InstanceId: string;
   readonly ResourceType: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListInstanceStorageConfigsResponse {
-  readonly StorageConfigs: [];
-  readonly NextToken: string;
+export interface ListInstanceStorageConfigsResponse {
+  readonly StorageConfigs?: [];
+  readonly NextToken?: string;
 }
 
-interface ListInstancesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListInstancesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListInstancesResponse {
-  readonly InstanceSummaryList: [];
-  readonly NextToken: string;
+export interface ListInstancesResponse {
+  readonly InstanceSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListIntegrationAssociationsRequest {
+export interface ListIntegrationAssociationsRequest {
   readonly InstanceId: string;
-  readonly IntegrationType: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly IntegrationType?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListIntegrationAssociationsResponse {
-  readonly IntegrationAssociationSummaryList: [];
-  readonly NextToken: string;
+export interface ListIntegrationAssociationsResponse {
+  readonly IntegrationAssociationSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListLambdaFunctionsRequest {
+export interface ListLambdaFunctionsRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListLambdaFunctionsResponse {
-  readonly LambdaFunctions: [];
-  readonly NextToken: string;
+export interface ListLambdaFunctionsResponse {
+  readonly LambdaFunctions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListLexBotsRequest {
+export interface ListLexBotsRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListLexBotsResponse {
-  readonly LexBots: [];
-  readonly NextToken: string;
+export interface ListLexBotsResponse {
+  readonly LexBots?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPhoneNumbersRequest {
+export interface ListPhoneNumbersRequest {
   readonly InstanceId: string;
-  readonly PhoneNumberTypes: [];
-  readonly PhoneNumberCountryCodes: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly PhoneNumberTypes?: [];
+  readonly PhoneNumberCountryCodes?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListPhoneNumbersResponse {
-  readonly PhoneNumberSummaryList: [];
-  readonly NextToken: string;
+export interface ListPhoneNumbersResponse {
+  readonly PhoneNumberSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPromptsRequest {
+export interface ListPromptsRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListPromptsResponse {
-  readonly PromptSummaryList: [];
-  readonly NextToken: string;
+export interface ListPromptsResponse {
+  readonly PromptSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListQueueQuickConnectsRequest {
+export interface ListQueueQuickConnectsRequest {
   readonly InstanceId: string;
   readonly QueueId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListQueueQuickConnectsResponse {
-  readonly NextToken: string;
-  readonly QuickConnectSummaryList: [];
+export interface ListQueueQuickConnectsResponse {
+  readonly NextToken?: string;
+  readonly QuickConnectSummaryList?: [];
 }
 
-interface ListQueuesRequest {
+export interface ListQueuesRequest {
   readonly InstanceId: string;
-  readonly QueueTypes: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly QueueTypes?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListQueuesResponse {
-  readonly QueueSummaryList: [];
-  readonly NextToken: string;
+export interface ListQueuesResponse {
+  readonly QueueSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListQuickConnectsRequest {
+export interface ListQuickConnectsRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly QuickConnectTypes: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly QuickConnectTypes?: [];
 }
 
-interface ListQuickConnectsResponse {
-  readonly QuickConnectSummaryList: [];
-  readonly NextToken: string;
+export interface ListQuickConnectsResponse {
+  readonly QuickConnectSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListRoutingProfileQueuesRequest {
+export interface ListRoutingProfileQueuesRequest {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListRoutingProfileQueuesResponse {
-  readonly NextToken: string;
-  readonly RoutingProfileQueueConfigSummaryList: [];
+export interface ListRoutingProfileQueuesResponse {
+  readonly NextToken?: string;
+  readonly RoutingProfileQueueConfigSummaryList?: [];
 }
 
-interface ListRoutingProfilesRequest {
+export interface ListRoutingProfilesRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListRoutingProfilesResponse {
-  readonly RoutingProfileSummaryList: [];
-  readonly NextToken: string;
+export interface ListRoutingProfilesResponse {
+  readonly RoutingProfileSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListSecurityKeysRequest {
+export interface ListSecurityKeysRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListSecurityKeysResponse {
-  readonly SecurityKeys: [];
-  readonly NextToken: string;
+export interface ListSecurityKeysResponse {
+  readonly SecurityKeys?: [];
+  readonly NextToken?: string;
 }
 
-interface ListSecurityProfilePermissionsRequest {
+export interface ListSecurityProfilePermissionsRequest {
   readonly SecurityProfileId: string;
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListSecurityProfilePermissionsResponse {
-  readonly Permissions: [];
-  readonly NextToken: string;
+export interface ListSecurityProfilePermissionsResponse {
+  readonly Permissions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListSecurityProfilesRequest {
+export interface ListSecurityProfilesRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListSecurityProfilesResponse {
-  readonly SecurityProfileSummaryList: [];
-  readonly NextToken: string;
+export interface ListSecurityProfilesResponse {
+  readonly SecurityProfileSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ListUseCasesRequest {
+export interface ListUseCasesRequest {
   readonly InstanceId: string;
   readonly IntegrationAssociationId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListUseCasesResponse {
-  readonly UseCaseSummaryList: [];
-  readonly NextToken: string;
+export interface ListUseCasesResponse {
+  readonly UseCaseSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListUserHierarchyGroupsRequest {
+export interface ListUserHierarchyGroupsRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListUserHierarchyGroupsResponse {
-  readonly UserHierarchyGroupSummaryList: [];
-  readonly NextToken: string;
+export interface ListUserHierarchyGroupsResponse {
+  readonly UserHierarchyGroupSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListUsersRequest {
+export interface ListUsersRequest {
   readonly InstanceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListUsersResponse {
-  readonly UserSummaryList: [];
-  readonly NextToken: string;
+export interface ListUsersResponse {
+  readonly UserSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface MediaConcurrency {
+export interface MediaConcurrency {
   readonly Channel: string;
   readonly Concurrency: number;
 }
 
-interface OutboundCallerConfig {
-  readonly OutboundCallerIdName: string;
-  readonly OutboundCallerIdNumberId: string;
-  readonly OutboundFlowId: string;
+export interface OutboundCallerConfig {
+  readonly OutboundCallerIdName?: string;
+  readonly OutboundCallerIdNumberId?: string;
+  readonly OutboundFlowId?: string;
 }
 
-interface OutboundContactNotPermittedException {
-  readonly Message: string;
+export interface OutboundContactNotPermittedException {
+  readonly Message?: string;
 }
 
-interface ParticipantDetails {
+export interface ParticipantDetails {
   readonly DisplayName: string;
 }
 
-interface PhoneNumberQuickConnectConfig {
+export interface PhoneNumberQuickConnectConfig {
   readonly PhoneNumber: string;
 }
 
-interface PhoneNumberSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly PhoneNumber: string;
-  readonly PhoneNumberType: string;
-  readonly PhoneNumberCountryCode: string;
+export interface PhoneNumberSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly PhoneNumber?: string;
+  readonly PhoneNumberType?: string;
+  readonly PhoneNumberCountryCode?: string;
 }
 
-interface ProblemDetail {
-  readonly message: string;
+export interface ProblemDetail {
+  readonly message?: string;
 }
 
-interface PromptSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
+export interface PromptSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
 }
 
-interface Queue {
-  readonly Name: string;
-  readonly QueueArn: string;
-  readonly QueueId: string;
-  readonly Description: string;
-  readonly OutboundCallerConfig: OutboundCallerConfig;
-  readonly HoursOfOperationId: string;
-  readonly MaxContacts: number;
-  readonly Status: string;
-  readonly Tags: {[key: string]: any};
+export interface Queue {
+  readonly Name?: string;
+  readonly QueueArn?: string;
+  readonly QueueId?: string;
+  readonly Description?: string;
+  readonly OutboundCallerConfig?: OutboundCallerConfig;
+  readonly HoursOfOperationId?: string;
+  readonly MaxContacts?: number;
+  readonly Status?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface QueueInfo {
-  readonly Id: string;
-  readonly EnqueueTimestamp: Date;
+export interface QueueInfo {
+  readonly Id?: string;
+  readonly EnqueueTimestamp?: Date;
 }
 
-interface QueueQuickConnectConfig {
+export interface QueueQuickConnectConfig {
   readonly QueueId: string;
   readonly ContactFlowId: string;
 }
 
-interface QueueReference {
-  readonly Id: string;
-  readonly Arn: string;
+export interface QueueReference {
+  readonly Id?: string;
+  readonly Arn?: string;
 }
 
-interface QueueSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly QueueType: string;
+export interface QueueSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly QueueType?: string;
 }
 
-interface QuickConnect {
-  readonly QuickConnectARN: string;
-  readonly QuickConnectId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly QuickConnectConfig: QuickConnectConfig;
-  readonly Tags: {[key: string]: any};
+export interface QuickConnect {
+  readonly QuickConnectARN?: string;
+  readonly QuickConnectId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly QuickConnectConfig?: QuickConnectConfig;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface QuickConnectConfig {
+export interface QuickConnectConfig {
   readonly QuickConnectType: string;
-  readonly UserConfig: UserQuickConnectConfig;
-  readonly QueueConfig: QueueQuickConnectConfig;
-  readonly PhoneConfig: PhoneNumberQuickConnectConfig;
+  readonly UserConfig?: UserQuickConnectConfig;
+  readonly QueueConfig?: QueueQuickConnectConfig;
+  readonly PhoneConfig?: PhoneNumberQuickConnectConfig;
 }
 
-interface QuickConnectSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly QuickConnectType: string;
+export interface QuickConnectSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly QuickConnectType?: string;
 }
 
-interface Reference {
+export interface Reference {
   readonly Value: string;
   readonly Type: string;
 }
 
-interface ReferenceSummary {
-  readonly Url: UrlReference;
-  readonly Attachment: AttachmentReference;
+export interface ReferenceSummary {
+  readonly Url?: UrlReference;
+  readonly Attachment?: AttachmentReference;
 }
 
-interface ResourceConflictException {
-  readonly Message: string;
+export interface ResourceConflictException {
+  readonly Message?: string;
 }
 
-interface ResourceInUseException {
-  readonly Message: string;
-  readonly ResourceType: string;
-  readonly ResourceId: string;
+export interface ResourceInUseException {
+  readonly Message?: string;
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface ResumeContactRecordingRequest {
+export interface ResumeContactRecordingRequest {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly InitialContactId: string;
 }
 
-interface ResumeContactRecordingResponse {
+export interface ResumeContactRecordingResponse {
 }
 
-interface RoutingProfile {
-  readonly InstanceId: string;
-  readonly Name: string;
-  readonly RoutingProfileArn: string;
-  readonly RoutingProfileId: string;
-  readonly Description: string;
-  readonly MediaConcurrencies: [];
-  readonly DefaultOutboundQueueId: string;
-  readonly Tags: {[key: string]: any};
+export interface RoutingProfile {
+  readonly InstanceId?: string;
+  readonly Name?: string;
+  readonly RoutingProfileArn?: string;
+  readonly RoutingProfileId?: string;
+  readonly Description?: string;
+  readonly MediaConcurrencies?: [];
+  readonly DefaultOutboundQueueId?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface RoutingProfileQueueConfig {
+export interface RoutingProfileQueueConfig {
   readonly QueueReference: RoutingProfileQueueReference;
   readonly Priority: number;
   readonly Delay: number;
 }
 
-interface RoutingProfileQueueConfigSummary {
+export interface RoutingProfileQueueConfigSummary {
   readonly QueueId: string;
   readonly QueueArn: string;
   readonly QueueName: string;
@@ -2037,443 +2162,444 @@ interface RoutingProfileQueueConfigSummary {
   readonly Channel: string;
 }
 
-interface RoutingProfileQueueReference {
+export interface RoutingProfileQueueReference {
   readonly QueueId: string;
   readonly Channel: string;
 }
 
-interface RoutingProfileSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
+export interface RoutingProfileSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
 }
 
-interface S3Config {
+export interface S3Config {
   readonly BucketName: string;
   readonly BucketPrefix: string;
-  readonly EncryptionConfig: EncryptionConfig;
+  readonly EncryptionConfig?: EncryptionConfig;
 }
 
-interface SecurityKey {
-  readonly AssociationId: string;
-  readonly Key: string;
-  readonly CreationTime: Date;
+export interface SecurityKey {
+  readonly AssociationId?: string;
+  readonly Key?: string;
+  readonly CreationTime?: Date;
 }
 
-interface SecurityProfile {
-  readonly Id: string;
-  readonly OrganizationResourceId: string;
-  readonly Arn: string;
-  readonly SecurityProfileName: string;
-  readonly Description: string;
-  readonly Tags: {[key: string]: any};
+export interface SecurityProfile {
+  readonly Id?: string;
+  readonly OrganizationResourceId?: string;
+  readonly Arn?: string;
+  readonly SecurityProfileName?: string;
+  readonly Description?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface SecurityProfileSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
+export interface SecurityProfileSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface StartChatContactRequest {
+export interface StartChatContactRequest {
   readonly InstanceId: string;
   readonly ContactFlowId: string;
-  readonly Attributes: {[key: string]: any};
+  readonly Attributes?: {[key: string]: any};
   readonly ParticipantDetails: ParticipantDetails;
-  readonly InitialMessage: ChatMessage;
-  readonly ClientToken: string;
+  readonly InitialMessage?: ChatMessage;
+  readonly ClientToken?: string;
 }
 
-interface StartChatContactResponse {
-  readonly ContactId: string;
-  readonly ParticipantId: string;
-  readonly ParticipantToken: string;
+export interface StartChatContactResponse {
+  readonly ContactId?: string;
+  readonly ParticipantId?: string;
+  readonly ParticipantToken?: string;
 }
 
-interface StartContactRecordingRequest {
+export interface StartContactRecordingRequest {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly InitialContactId: string;
   readonly VoiceRecordingConfiguration: VoiceRecordingConfiguration;
 }
 
-interface StartContactRecordingResponse {
+export interface StartContactRecordingResponse {
 }
 
-interface StartContactStreamingRequest {
+export interface StartContactStreamingRequest {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly ChatStreamingConfiguration: ChatStreamingConfiguration;
   readonly ClientToken: string;
 }
 
-interface StartContactStreamingResponse {
+export interface StartContactStreamingResponse {
   readonly StreamingId: string;
 }
 
-interface StartOutboundVoiceContactRequest {
+export interface StartOutboundVoiceContactRequest {
   readonly DestinationPhoneNumber: string;
   readonly ContactFlowId: string;
   readonly InstanceId: string;
-  readonly ClientToken: string;
-  readonly SourcePhoneNumber: string;
-  readonly QueueId: string;
-  readonly Attributes: {[key: string]: any};
-  readonly AnswerMachineDetectionConfig: AnswerMachineDetectionConfig;
-  readonly CampaignId: string;
-  readonly TrafficType: string;
+  readonly ClientToken?: string;
+  readonly SourcePhoneNumber?: string;
+  readonly QueueId?: string;
+  readonly Attributes?: {[key: string]: any};
+  readonly AnswerMachineDetectionConfig?: AnswerMachineDetectionConfig;
+  readonly CampaignId?: string;
+  readonly TrafficType?: string;
 }
 
-interface StartOutboundVoiceContactResponse {
-  readonly ContactId: string;
+export interface StartOutboundVoiceContactResponse {
+  readonly ContactId?: string;
 }
 
-interface StartTaskContactRequest {
+export interface StartTaskContactRequest {
   readonly InstanceId: string;
-  readonly PreviousContactId: string;
+  readonly PreviousContactId?: string;
   readonly ContactFlowId: string;
-  readonly Attributes: {[key: string]: any};
+  readonly Attributes?: {[key: string]: any};
   readonly Name: string;
-  readonly References: {[key: string]: any};
-  readonly Description: string;
-  readonly ClientToken: string;
-  readonly ScheduledTime: Date;
+  readonly References?: {[key: string]: any};
+  readonly Description?: string;
+  readonly ClientToken?: string;
+  readonly ScheduledTime?: Date;
 }
 
-interface StartTaskContactResponse {
-  readonly ContactId: string;
+export interface StartTaskContactResponse {
+  readonly ContactId?: string;
 }
 
-interface StopContactRecordingRequest {
+export interface StopContactRecordingRequest {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly InitialContactId: string;
 }
 
-interface StopContactRecordingResponse {
+export interface StopContactRecordingResponse {
 }
 
-interface StopContactRequest {
+export interface StopContactRequest {
   readonly ContactId: string;
   readonly InstanceId: string;
 }
 
-interface StopContactResponse {
+export interface StopContactResponse {
 }
 
-interface StopContactStreamingRequest {
+export interface StopContactStreamingRequest {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly StreamingId: string;
 }
 
-interface StopContactStreamingResponse {
+export interface StopContactStreamingResponse {
 }
 
-interface SuspendContactRecordingRequest {
+export interface SuspendContactRecordingRequest {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly InitialContactId: string;
 }
 
-interface SuspendContactRecordingResponse {
+export interface SuspendContactRecordingResponse {
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface Threshold {
-  readonly Comparison: string;
-  readonly ThresholdValue: unknown;
+export interface Threshold {
+  readonly Comparison?: string;
+  readonly ThresholdValue?: unknown;
 }
 
-interface ThrottlingException {
-  readonly Message: string;
+export interface ThrottlingException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UpdateAgentStatusRequest {
+export interface UpdateAgentStatusRequest {
   readonly InstanceId: string;
   readonly AgentStatusId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly State: string;
-  readonly DisplayOrder: number;
-  readonly ResetOrderNumber: boolean;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly State?: string;
+  readonly DisplayOrder?: number;
+  readonly ResetOrderNumber?: boolean;
 }
 
-interface UpdateContactAttributesRequest {
+export interface UpdateContactAttributesRequest {
   readonly InitialContactId: string;
   readonly InstanceId: string;
   readonly Attributes: {[key: string]: any};
 }
 
-interface UpdateContactAttributesResponse {
+export interface UpdateContactAttributesResponse {
 }
 
-interface UpdateContactFlowContentRequest {
+export interface UpdateContactFlowContentRequest {
   readonly InstanceId: string;
   readonly ContactFlowId: string;
   readonly Content: string;
 }
 
-interface UpdateContactFlowMetadataRequest {
+export interface UpdateContactFlowMetadataRequest {
   readonly InstanceId: string;
   readonly ContactFlowId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly ContactFlowState: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly ContactFlowState?: string;
 }
 
-interface UpdateContactFlowModuleContentRequest {
+export interface UpdateContactFlowModuleContentRequest {
   readonly InstanceId: string;
   readonly ContactFlowModuleId: string;
   readonly Content: string;
 }
 
-interface UpdateContactFlowModuleContentResponse {
+export interface UpdateContactFlowModuleContentResponse {
 }
 
-interface UpdateContactFlowModuleMetadataRequest {
+export interface UpdateContactFlowModuleMetadataRequest {
   readonly InstanceId: string;
   readonly ContactFlowModuleId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly State: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly State?: string;
 }
 
-interface UpdateContactFlowModuleMetadataResponse {
+export interface UpdateContactFlowModuleMetadataResponse {
 }
 
-interface UpdateContactFlowNameRequest {
+export interface UpdateContactFlowNameRequest {
   readonly InstanceId: string;
   readonly ContactFlowId: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 
-interface UpdateContactRequest {
+export interface UpdateContactRequest {
   readonly InstanceId: string;
   readonly ContactId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly References: {[key: string]: any};
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly References?: {[key: string]: any};
 }
 
-interface UpdateContactResponse {
+export interface UpdateContactResponse {
 }
 
-interface UpdateContactScheduleRequest {
+export interface UpdateContactScheduleRequest {
   readonly InstanceId: string;
   readonly ContactId: string;
   readonly ScheduledTime: Date;
 }
 
-interface UpdateContactScheduleResponse {
+export interface UpdateContactScheduleResponse {
 }
 
-interface UpdateHoursOfOperationRequest {
+export interface UpdateHoursOfOperationRequest {
   readonly InstanceId: string;
   readonly HoursOfOperationId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly TimeZone: string;
-  readonly Config: [];
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly TimeZone?: string;
+  readonly Config?: [];
 }
 
-interface UpdateInstanceAttributeRequest {
+export interface UpdateInstanceAttributeRequest {
   readonly InstanceId: string;
   readonly AttributeType: string;
   readonly Value: string;
 }
 
-interface UpdateInstanceStorageConfigRequest {
+export interface UpdateInstanceStorageConfigRequest {
   readonly InstanceId: string;
   readonly AssociationId: string;
   readonly ResourceType: string;
   readonly StorageConfig: InstanceStorageConfig;
 }
 
-interface UpdateQueueHoursOfOperationRequest {
+export interface UpdateQueueHoursOfOperationRequest {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly HoursOfOperationId: string;
 }
 
-interface UpdateQueueMaxContactsRequest {
+export interface UpdateQueueMaxContactsRequest {
   readonly InstanceId: string;
   readonly QueueId: string;
-  readonly MaxContacts: number;
+  readonly MaxContacts?: number;
 }
 
-interface UpdateQueueNameRequest {
+export interface UpdateQueueNameRequest {
   readonly InstanceId: string;
   readonly QueueId: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 
-interface UpdateQueueOutboundCallerConfigRequest {
+export interface UpdateQueueOutboundCallerConfigRequest {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly OutboundCallerConfig: OutboundCallerConfig;
 }
 
-interface UpdateQueueStatusRequest {
+export interface UpdateQueueStatusRequest {
   readonly InstanceId: string;
   readonly QueueId: string;
   readonly Status: string;
 }
 
-interface UpdateQuickConnectConfigRequest {
+export interface UpdateQuickConnectConfigRequest {
   readonly InstanceId: string;
   readonly QuickConnectId: string;
   readonly QuickConnectConfig: QuickConnectConfig;
 }
 
-interface UpdateQuickConnectNameRequest {
+export interface UpdateQuickConnectNameRequest {
   readonly InstanceId: string;
   readonly QuickConnectId: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 
-interface UpdateRoutingProfileConcurrencyRequest {
+export interface UpdateRoutingProfileConcurrencyRequest {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
   readonly MediaConcurrencies: [];
 }
 
-interface UpdateRoutingProfileDefaultOutboundQueueRequest {
+export interface UpdateRoutingProfileDefaultOutboundQueueRequest {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
   readonly DefaultOutboundQueueId: string;
 }
 
-interface UpdateRoutingProfileNameRequest {
+export interface UpdateRoutingProfileNameRequest {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 
-interface UpdateRoutingProfileQueuesRequest {
+export interface UpdateRoutingProfileQueuesRequest {
   readonly InstanceId: string;
   readonly RoutingProfileId: string;
   readonly QueueConfigs: [];
 }
 
-interface UpdateSecurityProfileRequest {
-  readonly Description: string;
-  readonly Permissions: [];
+export interface UpdateSecurityProfileRequest {
+  readonly Description?: string;
+  readonly Permissions?: [];
   readonly SecurityProfileId: string;
   readonly InstanceId: string;
 }
 
-interface UpdateUserHierarchyGroupNameRequest {
+export interface UpdateUserHierarchyGroupNameRequest {
   readonly Name: string;
   readonly HierarchyGroupId: string;
   readonly InstanceId: string;
 }
 
-interface UpdateUserHierarchyRequest {
-  readonly HierarchyGroupId: string;
+export interface UpdateUserHierarchyRequest {
+  readonly HierarchyGroupId?: string;
   readonly UserId: string;
   readonly InstanceId: string;
 }
 
-interface UpdateUserHierarchyStructureRequest {
+export interface UpdateUserHierarchyStructureRequest {
   readonly HierarchyStructure: HierarchyStructureUpdate;
   readonly InstanceId: string;
 }
 
-interface UpdateUserIdentityInfoRequest {
+export interface UpdateUserIdentityInfoRequest {
   readonly IdentityInfo: UserIdentityInfo;
   readonly UserId: string;
   readonly InstanceId: string;
 }
 
-interface UpdateUserPhoneConfigRequest {
+export interface UpdateUserPhoneConfigRequest {
   readonly PhoneConfig: UserPhoneConfig;
   readonly UserId: string;
   readonly InstanceId: string;
 }
 
-interface UpdateUserRoutingProfileRequest {
+export interface UpdateUserRoutingProfileRequest {
   readonly RoutingProfileId: string;
   readonly UserId: string;
   readonly InstanceId: string;
 }
 
-interface UpdateUserSecurityProfilesRequest {
+export interface UpdateUserSecurityProfilesRequest {
   readonly SecurityProfileIds: [];
   readonly UserId: string;
   readonly InstanceId: string;
 }
 
-interface UrlReference {
-  readonly Name: string;
-  readonly Value: string;
+export interface UrlReference {
+  readonly Name?: string;
+  readonly Value?: string;
 }
 
-interface UseCase {
-  readonly UseCaseId: string;
-  readonly UseCaseArn: string;
-  readonly UseCaseType: string;
+export interface UseCase {
+  readonly UseCaseId?: string;
+  readonly UseCaseArn?: string;
+  readonly UseCaseType?: string;
 }
 
-interface User {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Username: string;
-  readonly IdentityInfo: UserIdentityInfo;
-  readonly PhoneConfig: UserPhoneConfig;
-  readonly DirectoryUserId: string;
-  readonly SecurityProfileIds: [];
-  readonly RoutingProfileId: string;
-  readonly HierarchyGroupId: string;
-  readonly Tags: {[key: string]: any};
+export interface User {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Username?: string;
+  readonly IdentityInfo?: UserIdentityInfo;
+  readonly PhoneConfig?: UserPhoneConfig;
+  readonly DirectoryUserId?: string;
+  readonly SecurityProfileIds?: [];
+  readonly RoutingProfileId?: string;
+  readonly HierarchyGroupId?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface UserIdentityInfo {
-  readonly FirstName: string;
-  readonly LastName: string;
-  readonly Email: string;
+export interface UserIdentityInfo {
+  readonly FirstName?: string;
+  readonly LastName?: string;
+  readonly Email?: string;
 }
 
-interface UserNotFoundException {
-  readonly Message: string;
+export interface UserNotFoundException {
+  readonly Message?: string;
 }
 
-interface UserPhoneConfig {
+export interface UserPhoneConfig {
   readonly PhoneType: string;
-  readonly AutoAccept: boolean;
-  readonly AfterContactWorkTimeLimit: number;
-  readonly DeskPhoneNumber: string;
+  readonly AutoAccept?: boolean;
+  readonly AfterContactWorkTimeLimit?: number;
+  readonly DeskPhoneNumber?: string;
 }
 
-interface UserQuickConnectConfig {
+export interface UserQuickConnectConfig {
   readonly UserId: string;
   readonly ContactFlowId: string;
 }
 
-interface UserSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Username: string;
+export interface UserSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Username?: string;
 }
 
-interface VoiceRecordingConfiguration {
-  readonly VoiceRecordingTrack: string;
+export interface VoiceRecordingConfiguration {
+  readonly VoiceRecordingTrack?: string;
 }
+
 

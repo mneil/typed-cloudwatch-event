@@ -6,19 +6,23 @@ export interface CompleteAttachmentUpload {
   readonly ClientToken: string;
   readonly ConnectionToken: string;
 }
+
 export interface CreateParticipantConnection {
   readonly Type: [];
   readonly ParticipantToken: string;
   readonly ConnectParticipant?: boolean;
 }
+
 export interface DisconnectParticipant {
   readonly ClientToken?: string;
   readonly ConnectionToken: string;
 }
+
 export interface GetAttachment {
   readonly AttachmentId: string;
   readonly ConnectionToken: string;
 }
+
 export interface GetTranscript {
   readonly ContactId?: string;
   readonly MaxResults?: number;
@@ -28,18 +32,21 @@ export interface GetTranscript {
   readonly StartPosition?: StartPosition;
   readonly ConnectionToken: string;
 }
+
 export interface SendEvent {
   readonly ContentType: string;
   readonly Content?: string;
   readonly ClientToken?: string;
   readonly ConnectionToken: string;
 }
+
 export interface SendMessage {
   readonly ContentType: string;
   readonly Content: string;
   readonly ClientToken?: string;
   readonly ConnectionToken: string;
 }
+
 export interface StartAttachmentUpload {
   readonly ContentType: string;
   readonly AttachmentSizeInBytes: number;
@@ -48,127 +55,125 @@ export interface StartAttachmentUpload {
   readonly ConnectionToken: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly Message: string;
 }
 
-interface AttachmentItem {
-  readonly ContentType: string;
-  readonly AttachmentId: string;
-  readonly AttachmentName: string;
-  readonly Status: string;
+export interface AttachmentItem {
+  readonly ContentType?: string;
+  readonly AttachmentId?: string;
+  readonly AttachmentName?: string;
+  readonly Status?: string;
 }
 
-interface CompleteAttachmentUploadRequest {
+export interface CompleteAttachmentUploadRequest {
   readonly AttachmentIds: [];
   readonly ClientToken: string;
   readonly ConnectionToken: string;
 }
 
-interface CompleteAttachmentUploadResponse {
+export interface CompleteAttachmentUploadResponse {
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly Message: string;
 }
 
-interface ConnectionCredentials {
-  readonly ConnectionToken: string;
-  readonly Expiry: string;
+export interface ConnectionCredentials {
+  readonly ConnectionToken?: string;
+  readonly Expiry?: string;
 }
 
-interface CreateParticipantConnectionRequest {
+export interface CreateParticipantConnectionRequest {
   readonly Type: [];
   readonly ParticipantToken: string;
-  readonly ConnectParticipant: boolean;
+  readonly ConnectParticipant?: boolean;
 }
 
-interface CreateParticipantConnectionResponse {
-  readonly Websocket: Websocket;
-  readonly ConnectionCredentials: ConnectionCredentials;
+export interface CreateParticipantConnectionResponse {
+  readonly Websocket?: Websocket;
+  readonly ConnectionCredentials?: ConnectionCredentials;
 }
 
-interface DisconnectParticipantRequest {
-  readonly ClientToken: string;
+export interface DisconnectParticipantRequest {
+  readonly ClientToken?: string;
   readonly ConnectionToken: string;
 }
 
-interface DisconnectParticipantResponse {
+export interface DisconnectParticipantResponse {
 }
 
-interface GetAttachmentRequest {
+export interface GetAttachmentRequest {
   readonly AttachmentId: string;
   readonly ConnectionToken: string;
 }
 
-interface GetAttachmentResponse {
-  readonly Url: string;
-  readonly UrlExpiry: string;
+export interface GetAttachmentResponse {
+  readonly Url?: string;
+  readonly UrlExpiry?: string;
 }
 
-interface GetTranscriptRequest {
-  readonly ContactId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ScanDirection: string;
-  readonly SortOrder: string;
-  readonly StartPosition: StartPosition;
+export interface GetTranscriptRequest {
+  readonly ContactId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ScanDirection?: string;
+  readonly SortOrder?: string;
+  readonly StartPosition?: StartPosition;
   readonly ConnectionToken: string;
 }
 
-interface GetTranscriptResponse {
-  readonly InitialContactId: string;
-  readonly Transcript: [];
-  readonly NextToken: string;
+export interface GetTranscriptResponse {
+  readonly InitialContactId?: string;
+  readonly Transcript?: [];
+  readonly NextToken?: string;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly Message: string;
 }
 
-interface Item {
-  readonly AbsoluteTime: string;
-  readonly Content: string;
-  readonly ContentType: string;
-  readonly Id: string;
-  readonly Type: string;
-  readonly ParticipantId: string;
-  readonly DisplayName: string;
-  readonly ParticipantRole: string;
-  readonly Attachments: [];
+export interface Item {
+  readonly AbsoluteTime?: string;
+  readonly Content?: string;
+  readonly ContentType?: string;
+  readonly Id?: string;
+  readonly Type?: string;
+  readonly ParticipantId?: string;
+  readonly DisplayName?: string;
+  readonly ParticipantRole?: string;
+  readonly Attachments?: [];
 }
 
-interface SendEventRequest {
+export interface SendEventRequest {
   readonly ContentType: string;
-  readonly Content: string;
-  readonly ClientToken: string;
+  readonly Content?: string;
+  readonly ClientToken?: string;
   readonly ConnectionToken: string;
 }
 
-interface SendEventResponse {
-  readonly Id: string;
-  readonly AbsoluteTime: string;
+export interface SendEventResponse {
+  readonly Id?: string;
+  readonly AbsoluteTime?: string;
 }
 
-interface SendMessageRequest {
+export interface SendMessageRequest {
   readonly ContentType: string;
   readonly Content: string;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
   readonly ConnectionToken: string;
 }
 
-interface SendMessageResponse {
-  readonly Id: string;
-  readonly AbsoluteTime: string;
+export interface SendMessageResponse {
+  readonly Id?: string;
+  readonly AbsoluteTime?: string;
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly Message: string;
 }
 
-interface StartAttachmentUploadRequest {
+export interface StartAttachmentUploadRequest {
   readonly ContentType: string;
   readonly AttachmentSizeInBytes: number;
   readonly AttachmentName: string;
@@ -176,33 +181,34 @@ interface StartAttachmentUploadRequest {
   readonly ConnectionToken: string;
 }
 
-interface StartAttachmentUploadResponse {
-  readonly AttachmentId: string;
-  readonly UploadMetadata: UploadMetadata;
+export interface StartAttachmentUploadResponse {
+  readonly AttachmentId?: string;
+  readonly UploadMetadata?: UploadMetadata;
 }
 
-interface StartPosition {
-  readonly Id: string;
-  readonly AbsoluteTime: string;
-  readonly MostRecent: number;
+export interface StartPosition {
+  readonly Id?: string;
+  readonly AbsoluteTime?: string;
+  readonly MostRecent?: number;
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly Message: string;
 }
 
-interface UploadMetadata {
-  readonly Url: string;
-  readonly UrlExpiry: string;
-  readonly HeadersToInclude: {[key: string]: any};
+export interface UploadMetadata {
+  readonly Url?: string;
+  readonly UrlExpiry?: string;
+  readonly HeadersToInclude?: {[key: string]: any};
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly Message: string;
 }
 
-interface Websocket {
-  readonly Url: string;
-  readonly ConnectionExpiry: string;
+export interface Websocket {
+  readonly Url?: string;
+  readonly ConnectionExpiry?: string;
 }
+
 

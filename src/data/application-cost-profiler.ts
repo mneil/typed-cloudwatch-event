@@ -4,16 +4,20 @@
 export interface DeleteReportDefinition {
   readonly reportId: string;
 }
+
 export interface GetReportDefinition {
   readonly reportId: string;
 }
+
 export interface ImportApplicationUsage {
   readonly sourceS3Location: SourceS3Location;
 }
+
 export interface ListReportDefinitions {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface PutReportDefinition {
   readonly reportId: string;
   readonly reportDescription: string;
@@ -21,6 +25,7 @@ export interface PutReportDefinition {
   readonly format: string;
   readonly destinationS3Location: S3Location;
 }
+
 export interface UpdateReportDefinition {
   readonly reportId: string;
   readonly reportDescription: string;
@@ -29,25 +34,23 @@ export interface UpdateReportDefinition {
   readonly destinationS3Location: S3Location;
 }
 
-
-
-interface AccessDeniedException {
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly message?: string;
 }
 
-interface DeleteReportDefinitionRequest {
+export interface DeleteReportDefinitionRequest {
   readonly reportId: string;
 }
 
-interface DeleteReportDefinitionResult {
+export interface DeleteReportDefinitionResult {
+  readonly reportId?: string;
+}
+
+export interface GetReportDefinitionRequest {
   readonly reportId: string;
 }
 
-interface GetReportDefinitionRequest {
-  readonly reportId: string;
-}
-
-interface GetReportDefinitionResult {
+export interface GetReportDefinitionResult {
   readonly reportId: string;
   readonly reportDescription: string;
   readonly reportFrequency: string;
@@ -57,29 +60,29 @@ interface GetReportDefinitionResult {
   readonly lastUpdated: Date;
 }
 
-interface ImportApplicationUsageRequest {
+export interface ImportApplicationUsageRequest {
   readonly sourceS3Location: SourceS3Location;
 }
 
-interface ImportApplicationUsageResult {
+export interface ImportApplicationUsageResult {
   readonly importId: string;
 }
 
-interface InternalServerException {
-  readonly message: string;
+export interface InternalServerException {
+  readonly message?: string;
 }
 
-interface ListReportDefinitionsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListReportDefinitionsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListReportDefinitionsResult {
-  readonly reportDefinitions: [];
-  readonly nextToken: string;
+export interface ListReportDefinitionsResult {
+  readonly reportDefinitions?: [];
+  readonly nextToken?: string;
 }
 
-interface PutReportDefinitionRequest {
+export interface PutReportDefinitionRequest {
   readonly reportId: string;
   readonly reportDescription: string;
   readonly reportFrequency: string;
@@ -87,40 +90,40 @@ interface PutReportDefinitionRequest {
   readonly destinationS3Location: S3Location;
 }
 
-interface PutReportDefinitionResult {
-  readonly reportId: string;
+export interface PutReportDefinitionResult {
+  readonly reportId?: string;
 }
 
-interface ReportDefinition {
-  readonly reportId: string;
-  readonly reportDescription: string;
-  readonly reportFrequency: string;
-  readonly format: string;
-  readonly destinationS3Location: S3Location;
-  readonly createdAt: Date;
-  readonly lastUpdatedAt: Date;
+export interface ReportDefinition {
+  readonly reportId?: string;
+  readonly reportDescription?: string;
+  readonly reportFrequency?: string;
+  readonly format?: string;
+  readonly destinationS3Location?: S3Location;
+  readonly createdAt?: Date;
+  readonly lastUpdatedAt?: Date;
 }
 
-interface S3Location {
+export interface S3Location {
   readonly bucket: string;
   readonly prefix: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly message: string;
+export interface ServiceQuotaExceededException {
+  readonly message?: string;
 }
 
-interface SourceS3Location {
+export interface SourceS3Location {
   readonly bucket: string;
   readonly key: string;
-  readonly region: string;
+  readonly region?: string;
 }
 
-interface ThrottlingException {
-  readonly message: string;
+export interface ThrottlingException {
+  readonly message?: string;
 }
 
-interface UpdateReportDefinitionRequest {
+export interface UpdateReportDefinitionRequest {
   readonly reportId: string;
   readonly reportDescription: string;
   readonly reportFrequency: string;
@@ -128,11 +131,12 @@ interface UpdateReportDefinitionRequest {
   readonly destinationS3Location: S3Location;
 }
 
-interface UpdateReportDefinitionResult {
-  readonly reportId: string;
+export interface UpdateReportDefinitionResult {
+  readonly reportId?: string;
 }
 
-interface ValidationException {
-  readonly message: string;
+export interface ValidationException {
+  readonly message?: string;
 }
+
 

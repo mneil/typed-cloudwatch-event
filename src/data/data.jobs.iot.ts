@@ -7,14 +7,17 @@ export interface DescribeJobExecution {
   readonly includeJobDocument?: boolean;
   readonly executionNumber?: number;
 }
+
 export interface GetPendingJobExecutions {
   readonly thingName: string;
 }
+
 export interface StartNextPendingJobExecution {
   readonly thingName: string;
   readonly statusDetails?: {[key: string]: any};
   readonly stepTimeoutInMinutes?: number;
 }
+
 export interface UpdateJobExecution {
   readonly jobId: string;
   readonly thingName: string;
@@ -27,110 +30,109 @@ export interface UpdateJobExecution {
   readonly executionNumber?: number;
 }
 
-
-
-interface CertificateValidationException {
-  readonly message: string;
+export interface CertificateValidationException {
+  readonly message?: string;
 }
 
-interface DescribeJobExecutionRequest {
+export interface DescribeJobExecutionRequest {
   readonly jobId: string;
   readonly thingName: string;
-  readonly includeJobDocument: boolean;
-  readonly executionNumber: number;
+  readonly includeJobDocument?: boolean;
+  readonly executionNumber?: number;
 }
 
-interface DescribeJobExecutionResponse {
-  readonly execution: JobExecution;
+export interface DescribeJobExecutionResponse {
+  readonly execution?: JobExecution;
 }
 
-interface GetPendingJobExecutionsRequest {
+export interface GetPendingJobExecutionsRequest {
   readonly thingName: string;
 }
 
-interface GetPendingJobExecutionsResponse {
-  readonly inProgressJobs: [];
-  readonly queuedJobs: [];
+export interface GetPendingJobExecutionsResponse {
+  readonly inProgressJobs?: [];
+  readonly queuedJobs?: [];
 }
 
-interface InvalidRequestException {
-  readonly message: string;
+export interface InvalidRequestException {
+  readonly message?: string;
 }
 
-interface InvalidStateTransitionException {
-  readonly message: string;
+export interface InvalidStateTransitionException {
+  readonly message?: string;
 }
 
-interface JobExecution {
+export interface JobExecution {
+  readonly jobId?: string;
+  readonly thingName?: string;
+  readonly status?: string;
+  readonly statusDetails?: {[key: string]: any};
+  readonly queuedAt?: number;
+  readonly startedAt?: number;
+  readonly lastUpdatedAt?: number;
+  readonly approximateSecondsBeforeTimedOut?: number;
+  readonly versionNumber?: number;
+  readonly executionNumber?: number;
+  readonly jobDocument?: string;
+}
+
+export interface JobExecutionState {
+  readonly status?: string;
+  readonly statusDetails?: {[key: string]: any};
+  readonly versionNumber?: number;
+}
+
+export interface JobExecutionSummary {
+  readonly jobId?: string;
+  readonly queuedAt?: number;
+  readonly startedAt?: number;
+  readonly lastUpdatedAt?: number;
+  readonly versionNumber?: number;
+  readonly executionNumber?: number;
+}
+
+export interface ResourceNotFoundException {
+  readonly message?: string;
+}
+
+export interface ServiceUnavailableException {
+  readonly message?: string;
+}
+
+export interface StartNextPendingJobExecutionRequest {
+  readonly thingName: string;
+  readonly statusDetails?: {[key: string]: any};
+  readonly stepTimeoutInMinutes?: number;
+}
+
+export interface StartNextPendingJobExecutionResponse {
+  readonly execution?: JobExecution;
+}
+
+export interface TerminalStateException {
+  readonly message?: string;
+}
+
+export interface ThrottlingException {
+  readonly message?: string;
+  readonly payload?: unknown;
+}
+
+export interface UpdateJobExecutionRequest {
   readonly jobId: string;
   readonly thingName: string;
   readonly status: string;
-  readonly statusDetails: {[key: string]: any};
-  readonly queuedAt: number;
-  readonly startedAt: number;
-  readonly lastUpdatedAt: number;
-  readonly approximateSecondsBeforeTimedOut: number;
-  readonly versionNumber: number;
-  readonly executionNumber: number;
-  readonly jobDocument: string;
+  readonly statusDetails?: {[key: string]: any};
+  readonly stepTimeoutInMinutes?: number;
+  readonly expectedVersion?: number;
+  readonly includeJobExecutionState?: boolean;
+  readonly includeJobDocument?: boolean;
+  readonly executionNumber?: number;
 }
 
-interface JobExecutionState {
-  readonly status: string;
-  readonly statusDetails: {[key: string]: any};
-  readonly versionNumber: number;
+export interface UpdateJobExecutionResponse {
+  readonly executionState?: JobExecutionState;
+  readonly jobDocument?: string;
 }
 
-interface JobExecutionSummary {
-  readonly jobId: string;
-  readonly queuedAt: number;
-  readonly startedAt: number;
-  readonly lastUpdatedAt: number;
-  readonly versionNumber: number;
-  readonly executionNumber: number;
-}
-
-interface ResourceNotFoundException {
-  readonly message: string;
-}
-
-interface ServiceUnavailableException {
-  readonly message: string;
-}
-
-interface StartNextPendingJobExecutionRequest {
-  readonly thingName: string;
-  readonly statusDetails: {[key: string]: any};
-  readonly stepTimeoutInMinutes: number;
-}
-
-interface StartNextPendingJobExecutionResponse {
-  readonly execution: JobExecution;
-}
-
-interface TerminalStateException {
-  readonly message: string;
-}
-
-interface ThrottlingException {
-  readonly message: string;
-  readonly payload: unknown;
-}
-
-interface UpdateJobExecutionRequest {
-  readonly jobId: string;
-  readonly thingName: string;
-  readonly status: string;
-  readonly statusDetails: {[key: string]: any};
-  readonly stepTimeoutInMinutes: number;
-  readonly expectedVersion: number;
-  readonly includeJobExecutionState: boolean;
-  readonly includeJobDocument: boolean;
-  readonly executionNumber: number;
-}
-
-interface UpdateJobExecutionResponse {
-  readonly executionState: JobExecutionState;
-  readonly jobDocument: string;
-}
 

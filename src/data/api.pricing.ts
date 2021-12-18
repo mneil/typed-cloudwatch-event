@@ -7,12 +7,14 @@ export interface DescribeServices {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetAttributeValues {
   readonly ServiceCode: string;
   readonly AttributeName: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetProducts {
   readonly ServiceCode?: string;
   readonly Filters?: [];
@@ -21,79 +23,78 @@ export interface GetProducts {
   readonly MaxResults?: number;
 }
 
-
-
-interface AttributeValue {
-  readonly Value: string;
+export interface AttributeValue {
+  readonly Value?: string;
 }
 
-interface DescribeServicesRequest {
-  readonly ServiceCode: string;
-  readonly FormatVersion: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeServicesRequest {
+  readonly ServiceCode?: string;
+  readonly FormatVersion?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeServicesResponse {
-  readonly Services: [];
-  readonly FormatVersion: string;
-  readonly NextToken: string;
+export interface DescribeServicesResponse {
+  readonly Services?: [];
+  readonly FormatVersion?: string;
+  readonly NextToken?: string;
 }
 
-interface ExpiredNextTokenException {
-  readonly Message: string;
+export interface ExpiredNextTokenException {
+  readonly Message?: string;
 }
 
-interface Filter {
+export interface Filter {
   readonly Type: string;
   readonly Field: string;
   readonly Value: string;
 }
 
-interface GetAttributeValuesRequest {
+export interface GetAttributeValuesRequest {
   readonly ServiceCode: string;
   readonly AttributeName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetAttributeValuesResponse {
-  readonly AttributeValues: [];
-  readonly NextToken: string;
+export interface GetAttributeValuesResponse {
+  readonly AttributeValues?: [];
+  readonly NextToken?: string;
 }
 
-interface GetProductsRequest {
-  readonly ServiceCode: string;
-  readonly Filters: [];
-  readonly FormatVersion: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface GetProductsRequest {
+  readonly ServiceCode?: string;
+  readonly Filters?: [];
+  readonly FormatVersion?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetProductsResponse {
-  readonly FormatVersion: string;
-  readonly PriceList: [];
-  readonly NextToken: string;
+export interface GetProductsResponse {
+  readonly FormatVersion?: string;
+  readonly PriceList?: [];
+  readonly NextToken?: string;
 }
 
-interface InternalErrorException {
-  readonly Message: string;
+export interface InternalErrorException {
+  readonly Message?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly Message: string;
+export interface InvalidNextTokenException {
+  readonly Message?: string;
 }
 
-interface InvalidParameterException {
-  readonly Message: string;
+export interface InvalidParameterException {
+  readonly Message?: string;
 }
 
-interface NotFoundException {
-  readonly Message: string;
+export interface NotFoundException {
+  readonly Message?: string;
 }
 
-interface Service {
-  readonly ServiceCode: string;
-  readonly AttributeNames: [];
+export interface Service {
+  readonly ServiceCode?: string;
+  readonly AttributeNames?: [];
 }
+
 

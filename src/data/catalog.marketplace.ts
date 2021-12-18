@@ -5,14 +5,17 @@ export interface CancelChangeSet {
   readonly Catalog: string;
   readonly ChangeSetId: string;
 }
+
 export interface DescribeChangeSet {
   readonly Catalog: string;
   readonly ChangeSetId: string;
 }
+
 export interface DescribeEntity {
   readonly Catalog: string;
   readonly EntityId: string;
 }
+
 export interface ListChangeSets {
   readonly Catalog: string;
   readonly FilterList?: [];
@@ -20,6 +23,7 @@ export interface ListChangeSets {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListEntities {
   readonly Catalog: string;
   readonly EntityType: string;
@@ -28,6 +32,7 @@ export interface ListEntities {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface StartChangeSet {
   readonly Catalog: string;
   readonly ChangeSet: [];
@@ -35,171 +40,170 @@ export interface StartChangeSet {
   readonly ClientRequestToken?: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface CancelChangeSetRequest {
+export interface CancelChangeSetRequest {
   readonly Catalog: string;
   readonly ChangeSetId: string;
 }
 
-interface CancelChangeSetResponse {
-  readonly ChangeSetId: string;
-  readonly ChangeSetArn: string;
+export interface CancelChangeSetResponse {
+  readonly ChangeSetId?: string;
+  readonly ChangeSetArn?: string;
 }
 
-interface Change {
+export interface Change {
   readonly ChangeType: string;
   readonly Entity: Entity;
   readonly Details: string;
-  readonly ChangeName: string;
+  readonly ChangeName?: string;
 }
 
-interface ChangeSetSummaryListItem {
-  readonly ChangeSetId: string;
-  readonly ChangeSetArn: string;
-  readonly ChangeSetName: string;
-  readonly StartTime: string;
-  readonly EndTime: string;
-  readonly Status: string;
-  readonly EntityIdList: [];
-  readonly FailureCode: string;
+export interface ChangeSetSummaryListItem {
+  readonly ChangeSetId?: string;
+  readonly ChangeSetArn?: string;
+  readonly ChangeSetName?: string;
+  readonly StartTime?: string;
+  readonly EndTime?: string;
+  readonly Status?: string;
+  readonly EntityIdList?: [];
+  readonly FailureCode?: string;
 }
 
-interface ChangeSummary {
-  readonly ChangeType: string;
-  readonly Entity: Entity;
-  readonly Details: string;
-  readonly ErrorDetailList: [];
-  readonly ChangeName: string;
+export interface ChangeSummary {
+  readonly ChangeType?: string;
+  readonly Entity?: Entity;
+  readonly Details?: string;
+  readonly ErrorDetailList?: [];
+  readonly ChangeName?: string;
 }
 
-interface DescribeChangeSetRequest {
+export interface DescribeChangeSetRequest {
   readonly Catalog: string;
   readonly ChangeSetId: string;
 }
 
-interface DescribeChangeSetResponse {
-  readonly ChangeSetId: string;
-  readonly ChangeSetArn: string;
-  readonly ChangeSetName: string;
-  readonly StartTime: string;
-  readonly EndTime: string;
-  readonly Status: string;
-  readonly FailureCode: string;
-  readonly FailureDescription: string;
-  readonly ChangeSet: [];
+export interface DescribeChangeSetResponse {
+  readonly ChangeSetId?: string;
+  readonly ChangeSetArn?: string;
+  readonly ChangeSetName?: string;
+  readonly StartTime?: string;
+  readonly EndTime?: string;
+  readonly Status?: string;
+  readonly FailureCode?: string;
+  readonly FailureDescription?: string;
+  readonly ChangeSet?: [];
 }
 
-interface DescribeEntityRequest {
+export interface DescribeEntityRequest {
   readonly Catalog: string;
   readonly EntityId: string;
 }
 
-interface DescribeEntityResponse {
-  readonly EntityType: string;
-  readonly EntityIdentifier: string;
-  readonly EntityArn: string;
-  readonly LastModifiedDate: string;
-  readonly Details: string;
+export interface DescribeEntityResponse {
+  readonly EntityType?: string;
+  readonly EntityIdentifier?: string;
+  readonly EntityArn?: string;
+  readonly LastModifiedDate?: string;
+  readonly Details?: string;
 }
 
-interface Entity {
+export interface Entity {
   readonly Type: string;
-  readonly Identifier: string;
+  readonly Identifier?: string;
 }
 
-interface EntitySummary {
-  readonly Name: string;
-  readonly EntityType: string;
-  readonly EntityId: string;
-  readonly EntityArn: string;
-  readonly LastModifiedDate: string;
-  readonly Visibility: string;
+export interface EntitySummary {
+  readonly Name?: string;
+  readonly EntityType?: string;
+  readonly EntityId?: string;
+  readonly EntityArn?: string;
+  readonly LastModifiedDate?: string;
+  readonly Visibility?: string;
 }
 
-interface ErrorDetail {
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface ErrorDetail {
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface Filter {
-  readonly Name: string;
-  readonly ValueList: [];
+export interface Filter {
+  readonly Name?: string;
+  readonly ValueList?: [];
 }
 
-interface InternalServiceException {
-  readonly Message: string;
+export interface InternalServiceException {
+  readonly Message?: string;
 }
 
-interface ListChangeSetsRequest {
+export interface ListChangeSetsRequest {
   readonly Catalog: string;
-  readonly FilterList: [];
-  readonly Sort: Sort;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly FilterList?: [];
+  readonly Sort?: Sort;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListChangeSetsResponse {
-  readonly ChangeSetSummaryList: [];
-  readonly NextToken: string;
+export interface ListChangeSetsResponse {
+  readonly ChangeSetSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListEntitiesRequest {
+export interface ListEntitiesRequest {
   readonly Catalog: string;
   readonly EntityType: string;
-  readonly FilterList: [];
-  readonly Sort: Sort;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly FilterList?: [];
+  readonly Sort?: Sort;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListEntitiesResponse {
-  readonly EntitySummaryList: [];
-  readonly NextToken: string;
+export interface ListEntitiesResponse {
+  readonly EntitySummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ResourceInUseException {
-  readonly Message: string;
+export interface ResourceInUseException {
+  readonly Message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface ResourceNotSupportedException {
-  readonly Message: string;
+export interface ResourceNotSupportedException {
+  readonly Message?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface Sort {
-  readonly SortBy: string;
-  readonly SortOrder: string;
+export interface Sort {
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
 }
 
-interface StartChangeSetRequest {
+export interface StartChangeSetRequest {
   readonly Catalog: string;
   readonly ChangeSet: [];
-  readonly ChangeSetName: string;
-  readonly ClientRequestToken: string;
+  readonly ChangeSetName?: string;
+  readonly ClientRequestToken?: string;
 }
 
-interface StartChangeSetResponse {
-  readonly ChangeSetId: string;
-  readonly ChangeSetArn: string;
+export interface StartChangeSetResponse {
+  readonly ChangeSetId?: string;
+  readonly ChangeSetArn?: string;
 }
 
-interface ThrottlingException {
-  readonly Message: string;
+export interface ThrottlingException {
+  readonly Message?: string;
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

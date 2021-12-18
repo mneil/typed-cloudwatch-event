@@ -5,6 +5,7 @@ export interface AssociateLicense {
   readonly licenseType: string;
   readonly workspaceId: string;
 }
+
 export interface CreateWorkspace {
   readonly accountAccessType: string;
   readonly authenticationProviders: [];
@@ -19,19 +20,24 @@ export interface CreateWorkspace {
   readonly workspaceOrganizationalUnits?: [];
   readonly workspaceRoleArn?: string;
 }
+
 export interface DeleteWorkspace {
   readonly workspaceId: string;
 }
+
 export interface DescribeWorkspace {
   readonly workspaceId: string;
 }
+
 export interface DescribeWorkspaceAuthentication {
   readonly workspaceId: string;
 }
+
 export interface DisassociateLicense {
   readonly licenseType: string;
   readonly workspaceId: string;
 }
+
 export interface ListPermissions {
   readonly groupId?: string;
   readonly maxResults?: number;
@@ -40,14 +46,17 @@ export interface ListPermissions {
   readonly userType?: string;
   readonly workspaceId: string;
 }
+
 export interface ListWorkspaces {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface UpdatePermissions {
   readonly updateInstructionBatch: [];
   readonly workspaceId: string;
 }
+
 export interface UpdateWorkspace {
   readonly accountAccessType?: string;
   readonly organizationRoleName?: string;
@@ -61,173 +70,172 @@ export interface UpdateWorkspace {
   readonly workspaceOrganizationalUnits?: [];
   readonly workspaceRoleArn?: string;
 }
+
 export interface UpdateWorkspaceAuthentication {
   readonly authenticationProviders: [];
   readonly samlConfiguration?: SamlConfiguration;
   readonly workspaceId: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
 }
 
-interface AssertionAttributes {
-  readonly email: string;
-  readonly groups: string;
-  readonly login: string;
-  readonly name: string;
-  readonly org: string;
-  readonly role: string;
+export interface AssertionAttributes {
+  readonly email?: string;
+  readonly groups?: string;
+  readonly login?: string;
+  readonly name?: string;
+  readonly org?: string;
+  readonly role?: string;
 }
 
-interface AssociateLicenseRequest {
+export interface AssociateLicenseRequest {
   readonly licenseType: string;
   readonly workspaceId: string;
 }
 
-interface AssociateLicenseResponse {
+export interface AssociateLicenseResponse {
   readonly workspace: WorkspaceDescription;
 }
 
-interface AuthenticationDescription {
-  readonly awsSso: AwsSsoAuthentication;
+export interface AuthenticationDescription {
+  readonly awsSso?: AwsSsoAuthentication;
   readonly providers: [];
-  readonly saml: SamlAuthentication;
+  readonly saml?: SamlAuthentication;
 }
 
-interface AuthenticationSummary {
+export interface AuthenticationSummary {
   readonly providers: [];
-  readonly samlConfigurationStatus: string;
+  readonly samlConfigurationStatus?: string;
 }
 
-interface AwsSsoAuthentication {
-  readonly ssoClientId: string;
+export interface AwsSsoAuthentication {
+  readonly ssoClientId?: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly message: string;
   readonly resourceId: string;
   readonly resourceType: string;
 }
 
-interface CreateWorkspaceRequest {
+export interface CreateWorkspaceRequest {
   readonly accountAccessType: string;
   readonly authenticationProviders: [];
-  readonly clientToken: string;
-  readonly organizationRoleName: string;
+  readonly clientToken?: string;
+  readonly organizationRoleName?: string;
   readonly permissionType: string;
-  readonly stackSetName: string;
-  readonly workspaceDataSources: [];
-  readonly workspaceDescription: string;
-  readonly workspaceName: string;
-  readonly workspaceNotificationDestinations: [];
-  readonly workspaceOrganizationalUnits: [];
-  readonly workspaceRoleArn: string;
+  readonly stackSetName?: string;
+  readonly workspaceDataSources?: [];
+  readonly workspaceDescription?: string;
+  readonly workspaceName?: string;
+  readonly workspaceNotificationDestinations?: [];
+  readonly workspaceOrganizationalUnits?: [];
+  readonly workspaceRoleArn?: string;
 }
 
-interface CreateWorkspaceResponse {
+export interface CreateWorkspaceResponse {
   readonly workspace: WorkspaceDescription;
 }
 
-interface DeleteWorkspaceRequest {
+export interface DeleteWorkspaceRequest {
   readonly workspaceId: string;
 }
 
-interface DeleteWorkspaceResponse {
+export interface DeleteWorkspaceResponse {
   readonly workspace: WorkspaceDescription;
 }
 
-interface DescribeWorkspaceAuthenticationRequest {
+export interface DescribeWorkspaceAuthenticationRequest {
   readonly workspaceId: string;
 }
 
-interface DescribeWorkspaceAuthenticationResponse {
+export interface DescribeWorkspaceAuthenticationResponse {
   readonly authentication: AuthenticationDescription;
 }
 
-interface DescribeWorkspaceRequest {
+export interface DescribeWorkspaceRequest {
   readonly workspaceId: string;
 }
 
-interface DescribeWorkspaceResponse {
+export interface DescribeWorkspaceResponse {
   readonly workspace: WorkspaceDescription;
 }
 
-interface DisassociateLicenseRequest {
+export interface DisassociateLicenseRequest {
   readonly licenseType: string;
   readonly workspaceId: string;
 }
 
-interface DisassociateLicenseResponse {
+export interface DisassociateLicenseResponse {
   readonly workspace: WorkspaceDescription;
 }
 
-interface IdpMetadata {
-  readonly url: string;
-  readonly xml: string;
+export interface IdpMetadata {
+  readonly url?: string;
+  readonly xml?: string;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
-  readonly retryAfterSeconds: number;
+  readonly retryAfterSeconds?: number;
 }
 
-interface ListPermissionsRequest {
-  readonly groupId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly userId: string;
-  readonly userType: string;
+export interface ListPermissionsRequest {
+  readonly groupId?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly userId?: string;
+  readonly userType?: string;
   readonly workspaceId: string;
 }
 
-interface ListPermissionsResponse {
-  readonly nextToken: string;
+export interface ListPermissionsResponse {
+  readonly nextToken?: string;
   readonly permissions: [];
 }
 
-interface ListWorkspacesRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListWorkspacesRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListWorkspacesResponse {
-  readonly nextToken: string;
+export interface ListWorkspacesResponse {
+  readonly nextToken?: string;
   readonly workspaces: [];
 }
 
-interface PermissionEntry {
+export interface PermissionEntry {
   readonly role: string;
   readonly user: User;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
   readonly resourceId: string;
   readonly resourceType: string;
 }
 
-interface RoleValues {
-  readonly admin: [];
-  readonly editor: [];
+export interface RoleValues {
+  readonly admin?: [];
+  readonly editor?: [];
 }
 
-interface SamlAuthentication {
-  readonly configuration: SamlConfiguration;
+export interface SamlAuthentication {
+  readonly configuration?: SamlConfiguration;
   readonly status: string;
 }
 
-interface SamlConfiguration {
-  readonly allowedOrganizations: [];
-  readonly assertionAttributes: AssertionAttributes;
+export interface SamlConfiguration {
+  readonly allowedOrganizations?: [];
+  readonly assertionAttributes?: AssertionAttributes;
   readonly idpMetadata: IdpMetadata;
-  readonly loginValidityDuration: number;
-  readonly roleValues: RoleValues;
+  readonly loginValidityDuration?: number;
+  readonly roleValues?: RoleValues;
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly message: string;
   readonly quotaCode: string;
   readonly resourceId: string;
@@ -235,112 +243,113 @@ interface ServiceQuotaExceededException {
   readonly serviceCode: string;
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly message: string;
-  readonly quotaCode: string;
-  readonly retryAfterSeconds: number;
-  readonly serviceCode: string;
+  readonly quotaCode?: string;
+  readonly retryAfterSeconds?: number;
+  readonly serviceCode?: string;
 }
 
-interface UpdateError {
+export interface UpdateError {
   readonly causedBy: UpdateInstruction;
   readonly code: number;
   readonly message: string;
 }
 
-interface UpdateInstruction {
+export interface UpdateInstruction {
   readonly action: string;
   readonly role: string;
   readonly users: [];
 }
 
-interface UpdatePermissionsRequest {
+export interface UpdatePermissionsRequest {
   readonly updateInstructionBatch: [];
   readonly workspaceId: string;
 }
 
-interface UpdatePermissionsResponse {
+export interface UpdatePermissionsResponse {
   readonly errors: [];
 }
 
-interface UpdateWorkspaceAuthenticationRequest {
+export interface UpdateWorkspaceAuthenticationRequest {
   readonly authenticationProviders: [];
-  readonly samlConfiguration: SamlConfiguration;
+  readonly samlConfiguration?: SamlConfiguration;
   readonly workspaceId: string;
 }
 
-interface UpdateWorkspaceAuthenticationResponse {
+export interface UpdateWorkspaceAuthenticationResponse {
   readonly authentication: AuthenticationDescription;
 }
 
-interface UpdateWorkspaceRequest {
-  readonly accountAccessType: string;
-  readonly organizationRoleName: string;
-  readonly permissionType: string;
-  readonly stackSetName: string;
-  readonly workspaceDataSources: [];
-  readonly workspaceDescription: string;
+export interface UpdateWorkspaceRequest {
+  readonly accountAccessType?: string;
+  readonly organizationRoleName?: string;
+  readonly permissionType?: string;
+  readonly stackSetName?: string;
+  readonly workspaceDataSources?: [];
+  readonly workspaceDescription?: string;
   readonly workspaceId: string;
-  readonly workspaceName: string;
-  readonly workspaceNotificationDestinations: [];
-  readonly workspaceOrganizationalUnits: [];
-  readonly workspaceRoleArn: string;
+  readonly workspaceName?: string;
+  readonly workspaceNotificationDestinations?: [];
+  readonly workspaceOrganizationalUnits?: [];
+  readonly workspaceRoleArn?: string;
 }
 
-interface UpdateWorkspaceResponse {
+export interface UpdateWorkspaceResponse {
   readonly workspace: WorkspaceDescription;
 }
 
-interface User {
+export interface User {
   readonly id: string;
   readonly type: string;
 }
 
-interface ValidationException {
-  readonly fieldList: [];
+export interface ValidationException {
+  readonly fieldList?: [];
   readonly message: string;
   readonly reason: string;
 }
 
-interface ValidationExceptionField {
+export interface ValidationExceptionField {
   readonly message: string;
   readonly name: string;
 }
 
-interface WorkspaceDescription {
-  readonly accountAccessType: string;
+export interface WorkspaceDescription {
+  readonly accountAccessType?: string;
   readonly authentication: AuthenticationSummary;
   readonly created: Date;
   readonly dataSources: [];
-  readonly description: string;
+  readonly description?: string;
   readonly endpoint: string;
-  readonly freeTrialConsumed: boolean;
-  readonly freeTrialExpiration: Date;
+  readonly freeTrialConsumed?: boolean;
+  readonly freeTrialExpiration?: Date;
   readonly grafanaVersion: string;
   readonly id: string;
-  readonly licenseExpiration: Date;
-  readonly licenseType: string;
+  readonly licenseExpiration?: Date;
+  readonly licenseType?: string;
   readonly modified: Date;
-  readonly name: string;
-  readonly notificationDestinations: [];
-  readonly organizationRoleName: string;
-  readonly organizationalUnits: [];
-  readonly permissionType: string;
-  readonly stackSetName: string;
+  readonly name?: string;
+  readonly notificationDestinations?: [];
+  readonly organizationRoleName?: string;
+  readonly organizationalUnits?: [];
+  readonly permissionType?: string;
+  readonly stackSetName?: string;
   readonly status: string;
-  readonly workspaceRoleArn: string;
+  readonly workspaceRoleArn?: string;
 }
 
-interface WorkspaceSummary {
+export interface WorkspaceSummary {
   readonly authentication: AuthenticationSummary;
   readonly created: Date;
-  readonly description: string;
+  readonly description?: string;
   readonly endpoint: string;
   readonly grafanaVersion: string;
   readonly id: string;
   readonly modified: Date;
-  readonly name: string;
-  readonly notificationDestinations: [];
+  readonly name?: string;
+  readonly notificationDestinations?: [];
   readonly status: string;
 }
+
 

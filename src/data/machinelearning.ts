@@ -6,6 +6,7 @@ export interface AddTags {
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
+
 export interface CreateBatchPrediction {
   readonly BatchPredictionId: string;
   readonly BatchPredictionName?: string;
@@ -13,6 +14,7 @@ export interface CreateBatchPrediction {
   readonly BatchPredictionDataSourceId: string;
   readonly OutputUri: string;
 }
+
 export interface CreateDataSourceFromRDS {
   readonly DataSourceId: string;
   readonly DataSourceName?: string;
@@ -20,6 +22,7 @@ export interface CreateDataSourceFromRDS {
   readonly RoleARN: string;
   readonly ComputeStatistics?: boolean;
 }
+
 export interface CreateDataSourceFromRedshift {
   readonly DataSourceId: string;
   readonly DataSourceName?: string;
@@ -27,18 +30,21 @@ export interface CreateDataSourceFromRedshift {
   readonly RoleARN: string;
   readonly ComputeStatistics?: boolean;
 }
+
 export interface CreateDataSourceFromS3 {
   readonly DataSourceId: string;
   readonly DataSourceName?: string;
   readonly DataSpec: S3DataSpec;
   readonly ComputeStatistics?: boolean;
 }
+
 export interface CreateEvaluation {
   readonly EvaluationId: string;
   readonly EvaluationName?: string;
   readonly MLModelId: string;
   readonly EvaluationDataSourceId: string;
 }
+
 export interface CreateMLModel {
   readonly MLModelId: string;
   readonly MLModelName?: string;
@@ -48,29 +54,37 @@ export interface CreateMLModel {
   readonly Recipe?: string;
   readonly RecipeUri?: string;
 }
+
 export interface CreateRealtimeEndpoint {
   readonly MLModelId: string;
 }
+
 export interface DeleteBatchPrediction {
   readonly BatchPredictionId: string;
 }
+
 export interface DeleteDataSource {
   readonly DataSourceId: string;
 }
+
 export interface DeleteEvaluation {
   readonly EvaluationId: string;
 }
+
 export interface DeleteMLModel {
   readonly MLModelId: string;
 }
+
 export interface DeleteRealtimeEndpoint {
   readonly MLModelId: string;
 }
+
 export interface DeleteTags {
   readonly TagKeys: [];
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
+
 export interface DescribeBatchPredictions {
   readonly FilterVariable?: string;
   readonly EQ?: string;
@@ -84,6 +98,7 @@ export interface DescribeBatchPredictions {
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeDataSources {
   readonly FilterVariable?: string;
   readonly EQ?: string;
@@ -97,6 +112,7 @@ export interface DescribeDataSources {
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeEvaluations {
   readonly FilterVariable?: string;
   readonly EQ?: string;
@@ -110,6 +126,7 @@ export interface DescribeEvaluations {
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeMLModels {
   readonly FilterVariable?: string;
   readonly EQ?: string;
@@ -123,632 +140,641 @@ export interface DescribeMLModels {
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeTags {
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
+
 export interface GetBatchPrediction {
   readonly BatchPredictionId: string;
 }
+
 export interface GetDataSource {
   readonly DataSourceId: string;
   readonly Verbose?: boolean;
 }
+
 export interface GetEvaluation {
   readonly EvaluationId: string;
 }
+
 export interface GetMLModel {
   readonly MLModelId: string;
   readonly Verbose?: boolean;
 }
+
 export interface Predict {
   readonly MLModelId: string;
   readonly Record: {[key: string]: any};
   readonly PredictEndpoint: string;
 }
+
 export interface UpdateBatchPrediction {
   readonly BatchPredictionId: string;
   readonly BatchPredictionName: string;
 }
+
 export interface UpdateDataSource {
   readonly DataSourceId: string;
   readonly DataSourceName: string;
 }
+
 export interface UpdateEvaluation {
   readonly EvaluationId: string;
   readonly EvaluationName: string;
 }
+
 export interface UpdateMLModel {
   readonly MLModelId: string;
   readonly MLModelName?: string;
   readonly ScoreThreshold?: unknown;
 }
 
-
-
-interface AddTagsInput {
+export interface AddTagsInput {
   readonly Tags: [];
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
 
-interface AddTagsOutput {
-  readonly ResourceId: string;
-  readonly ResourceType: string;
+export interface AddTagsOutput {
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
 }
 
-interface BatchPrediction {
+export interface BatchPrediction {
+  readonly BatchPredictionId?: string;
+  readonly MLModelId?: string;
+  readonly BatchPredictionDataSourceId?: string;
+  readonly InputDataLocationS3?: string;
+  readonly CreatedByIamUser?: string;
+  readonly CreatedAt?: Date;
+  readonly LastUpdatedAt?: Date;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly OutputUri?: string;
+  readonly Message?: string;
+  readonly ComputeTime?: number;
+  readonly FinishedAt?: Date;
+  readonly StartedAt?: Date;
+  readonly TotalRecordCount?: number;
+  readonly InvalidRecordCount?: number;
+}
+
+export interface CreateBatchPredictionInput {
   readonly BatchPredictionId: string;
+  readonly BatchPredictionName?: string;
   readonly MLModelId: string;
   readonly BatchPredictionDataSourceId: string;
-  readonly InputDataLocationS3: string;
-  readonly CreatedByIamUser: string;
-  readonly CreatedAt: Date;
-  readonly LastUpdatedAt: Date;
-  readonly Name: string;
-  readonly Status: string;
-  readonly OutputUri: string;
-  readonly Message: string;
-  readonly ComputeTime: number;
-  readonly FinishedAt: Date;
-  readonly StartedAt: Date;
-  readonly TotalRecordCount: number;
-  readonly InvalidRecordCount: number;
-}
-
-interface CreateBatchPredictionInput {
-  readonly BatchPredictionId: string;
-  readonly BatchPredictionName: string;
-  readonly MLModelId: string;
-  readonly BatchPredictionDataSourceId: string;
   readonly OutputUri: string;
 }
 
-interface CreateBatchPredictionOutput {
-  readonly BatchPredictionId: string;
+export interface CreateBatchPredictionOutput {
+  readonly BatchPredictionId?: string;
 }
 
-interface CreateDataSourceFromRDSInput {
+export interface CreateDataSourceFromRDSInput {
   readonly DataSourceId: string;
-  readonly DataSourceName: string;
+  readonly DataSourceName?: string;
   readonly RDSData: RDSDataSpec;
   readonly RoleARN: string;
-  readonly ComputeStatistics: boolean;
+  readonly ComputeStatistics?: boolean;
 }
 
-interface CreateDataSourceFromRDSOutput {
-  readonly DataSourceId: string;
+export interface CreateDataSourceFromRDSOutput {
+  readonly DataSourceId?: string;
 }
 
-interface CreateDataSourceFromRedshiftInput {
+export interface CreateDataSourceFromRedshiftInput {
   readonly DataSourceId: string;
-  readonly DataSourceName: string;
+  readonly DataSourceName?: string;
   readonly DataSpec: RedshiftDataSpec;
   readonly RoleARN: string;
-  readonly ComputeStatistics: boolean;
+  readonly ComputeStatistics?: boolean;
 }
 
-interface CreateDataSourceFromRedshiftOutput {
-  readonly DataSourceId: string;
+export interface CreateDataSourceFromRedshiftOutput {
+  readonly DataSourceId?: string;
 }
 
-interface CreateDataSourceFromS3Input {
+export interface CreateDataSourceFromS3Input {
   readonly DataSourceId: string;
-  readonly DataSourceName: string;
+  readonly DataSourceName?: string;
   readonly DataSpec: S3DataSpec;
-  readonly ComputeStatistics: boolean;
+  readonly ComputeStatistics?: boolean;
 }
 
-interface CreateDataSourceFromS3Output {
-  readonly DataSourceId: string;
+export interface CreateDataSourceFromS3Output {
+  readonly DataSourceId?: string;
 }
 
-interface CreateEvaluationInput {
+export interface CreateEvaluationInput {
   readonly EvaluationId: string;
-  readonly EvaluationName: string;
+  readonly EvaluationName?: string;
   readonly MLModelId: string;
   readonly EvaluationDataSourceId: string;
 }
 
-interface CreateEvaluationOutput {
-  readonly EvaluationId: string;
+export interface CreateEvaluationOutput {
+  readonly EvaluationId?: string;
 }
 
-interface CreateMLModelInput {
+export interface CreateMLModelInput {
   readonly MLModelId: string;
-  readonly MLModelName: string;
+  readonly MLModelName?: string;
   readonly MLModelType: string;
-  readonly Parameters: {[key: string]: any};
+  readonly Parameters?: {[key: string]: any};
   readonly TrainingDataSourceId: string;
-  readonly Recipe: string;
-  readonly RecipeUri: string;
+  readonly Recipe?: string;
+  readonly RecipeUri?: string;
 }
 
-interface CreateMLModelOutput {
+export interface CreateMLModelOutput {
+  readonly MLModelId?: string;
+}
+
+export interface CreateRealtimeEndpointInput {
   readonly MLModelId: string;
 }
 
-interface CreateRealtimeEndpointInput {
-  readonly MLModelId: string;
+export interface CreateRealtimeEndpointOutput {
+  readonly MLModelId?: string;
+  readonly RealtimeEndpointInfo?: RealtimeEndpointInfo;
 }
 
-interface CreateRealtimeEndpointOutput {
-  readonly MLModelId: string;
-  readonly RealtimeEndpointInfo: RealtimeEndpointInfo;
+export interface DataSource {
+  readonly DataSourceId?: string;
+  readonly DataLocationS3?: string;
+  readonly DataRearrangement?: string;
+  readonly CreatedByIamUser?: string;
+  readonly CreatedAt?: Date;
+  readonly LastUpdatedAt?: Date;
+  readonly DataSizeInBytes?: number;
+  readonly NumberOfFiles?: number;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly RedshiftMetadata?: RedshiftMetadata;
+  readonly RDSMetadata?: RDSMetadata;
+  readonly RoleARN?: string;
+  readonly ComputeStatistics?: boolean;
+  readonly ComputeTime?: number;
+  readonly FinishedAt?: Date;
+  readonly StartedAt?: Date;
 }
 
-interface DataSource {
-  readonly DataSourceId: string;
-  readonly DataLocationS3: string;
-  readonly DataRearrangement: string;
-  readonly CreatedByIamUser: string;
-  readonly CreatedAt: Date;
-  readonly LastUpdatedAt: Date;
-  readonly DataSizeInBytes: number;
-  readonly NumberOfFiles: number;
-  readonly Name: string;
-  readonly Status: string;
-  readonly Message: string;
-  readonly RedshiftMetadata: RedshiftMetadata;
-  readonly RDSMetadata: RDSMetadata;
-  readonly RoleARN: string;
-  readonly ComputeStatistics: boolean;
-  readonly ComputeTime: number;
-  readonly FinishedAt: Date;
-  readonly StartedAt: Date;
-}
-
-interface DeleteBatchPredictionInput {
+export interface DeleteBatchPredictionInput {
   readonly BatchPredictionId: string;
 }
 
-interface DeleteBatchPredictionOutput {
-  readonly BatchPredictionId: string;
+export interface DeleteBatchPredictionOutput {
+  readonly BatchPredictionId?: string;
 }
 
-interface DeleteDataSourceInput {
+export interface DeleteDataSourceInput {
   readonly DataSourceId: string;
 }
 
-interface DeleteDataSourceOutput {
-  readonly DataSourceId: string;
+export interface DeleteDataSourceOutput {
+  readonly DataSourceId?: string;
 }
 
-interface DeleteEvaluationInput {
+export interface DeleteEvaluationInput {
   readonly EvaluationId: string;
 }
 
-interface DeleteEvaluationOutput {
-  readonly EvaluationId: string;
+export interface DeleteEvaluationOutput {
+  readonly EvaluationId?: string;
 }
 
-interface DeleteMLModelInput {
+export interface DeleteMLModelInput {
   readonly MLModelId: string;
 }
 
-interface DeleteMLModelOutput {
+export interface DeleteMLModelOutput {
+  readonly MLModelId?: string;
+}
+
+export interface DeleteRealtimeEndpointInput {
   readonly MLModelId: string;
 }
 
-interface DeleteRealtimeEndpointInput {
-  readonly MLModelId: string;
+export interface DeleteRealtimeEndpointOutput {
+  readonly MLModelId?: string;
+  readonly RealtimeEndpointInfo?: RealtimeEndpointInfo;
 }
 
-interface DeleteRealtimeEndpointOutput {
-  readonly MLModelId: string;
-  readonly RealtimeEndpointInfo: RealtimeEndpointInfo;
-}
-
-interface DeleteTagsInput {
+export interface DeleteTagsInput {
   readonly TagKeys: [];
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
 
-interface DeleteTagsOutput {
+export interface DeleteTagsOutput {
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+}
+
+export interface DescribeBatchPredictionsInput {
+  readonly FilterVariable?: string;
+  readonly EQ?: string;
+  readonly GT?: string;
+  readonly LT?: string;
+  readonly GE?: string;
+  readonly LE?: string;
+  readonly NE?: string;
+  readonly Prefix?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
+}
+
+export interface DescribeBatchPredictionsOutput {
+  readonly Results?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeDataSourcesInput {
+  readonly FilterVariable?: string;
+  readonly EQ?: string;
+  readonly GT?: string;
+  readonly LT?: string;
+  readonly GE?: string;
+  readonly LE?: string;
+  readonly NE?: string;
+  readonly Prefix?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
+}
+
+export interface DescribeDataSourcesOutput {
+  readonly Results?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeEvaluationsInput {
+  readonly FilterVariable?: string;
+  readonly EQ?: string;
+  readonly GT?: string;
+  readonly LT?: string;
+  readonly GE?: string;
+  readonly LE?: string;
+  readonly NE?: string;
+  readonly Prefix?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
+}
+
+export interface DescribeEvaluationsOutput {
+  readonly Results?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeMLModelsInput {
+  readonly FilterVariable?: string;
+  readonly EQ?: string;
+  readonly GT?: string;
+  readonly LT?: string;
+  readonly GE?: string;
+  readonly LE?: string;
+  readonly NE?: string;
+  readonly Prefix?: string;
+  readonly SortOrder?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
+}
+
+export interface DescribeMLModelsOutput {
+  readonly Results?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeTagsInput {
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
 
-interface DescribeBatchPredictionsInput {
-  readonly FilterVariable: string;
-  readonly EQ: string;
-  readonly GT: string;
-  readonly LT: string;
-  readonly GE: string;
-  readonly LE: string;
-  readonly NE: string;
-  readonly Prefix: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+export interface DescribeTagsOutput {
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly Tags?: [];
 }
 
-interface DescribeBatchPredictionsOutput {
-  readonly Results: [];
-  readonly NextToken: string;
+export interface Evaluation {
+  readonly EvaluationId?: string;
+  readonly MLModelId?: string;
+  readonly EvaluationDataSourceId?: string;
+  readonly InputDataLocationS3?: string;
+  readonly CreatedByIamUser?: string;
+  readonly CreatedAt?: Date;
+  readonly LastUpdatedAt?: Date;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly PerformanceMetrics?: PerformanceMetrics;
+  readonly Message?: string;
+  readonly ComputeTime?: number;
+  readonly FinishedAt?: Date;
+  readonly StartedAt?: Date;
 }
 
-interface DescribeDataSourcesInput {
-  readonly FilterVariable: string;
-  readonly EQ: string;
-  readonly GT: string;
-  readonly LT: string;
-  readonly GE: string;
-  readonly LE: string;
-  readonly NE: string;
-  readonly Prefix: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly Limit: number;
-}
-
-interface DescribeDataSourcesOutput {
-  readonly Results: [];
-  readonly NextToken: string;
-}
-
-interface DescribeEvaluationsInput {
-  readonly FilterVariable: string;
-  readonly EQ: string;
-  readonly GT: string;
-  readonly LT: string;
-  readonly GE: string;
-  readonly LE: string;
-  readonly NE: string;
-  readonly Prefix: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly Limit: number;
-}
-
-interface DescribeEvaluationsOutput {
-  readonly Results: [];
-  readonly NextToken: string;
-}
-
-interface DescribeMLModelsInput {
-  readonly FilterVariable: string;
-  readonly EQ: string;
-  readonly GT: string;
-  readonly LT: string;
-  readonly GE: string;
-  readonly LE: string;
-  readonly NE: string;
-  readonly Prefix: string;
-  readonly SortOrder: string;
-  readonly NextToken: string;
-  readonly Limit: number;
-}
-
-interface DescribeMLModelsOutput {
-  readonly Results: [];
-  readonly NextToken: string;
-}
-
-interface DescribeTagsInput {
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-}
-
-interface DescribeTagsOutput {
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly Tags: [];
-}
-
-interface Evaluation {
-  readonly EvaluationId: string;
-  readonly MLModelId: string;
-  readonly EvaluationDataSourceId: string;
-  readonly InputDataLocationS3: string;
-  readonly CreatedByIamUser: string;
-  readonly CreatedAt: Date;
-  readonly LastUpdatedAt: Date;
-  readonly Name: string;
-  readonly Status: string;
-  readonly PerformanceMetrics: PerformanceMetrics;
-  readonly Message: string;
-  readonly ComputeTime: number;
-  readonly FinishedAt: Date;
-  readonly StartedAt: Date;
-}
-
-interface GetBatchPredictionInput {
+export interface GetBatchPredictionInput {
   readonly BatchPredictionId: string;
 }
 
-interface GetBatchPredictionOutput {
-  readonly BatchPredictionId: string;
-  readonly MLModelId: string;
-  readonly BatchPredictionDataSourceId: string;
-  readonly InputDataLocationS3: string;
-  readonly CreatedByIamUser: string;
-  readonly CreatedAt: Date;
-  readonly LastUpdatedAt: Date;
-  readonly Name: string;
-  readonly Status: string;
-  readonly OutputUri: string;
-  readonly LogUri: string;
-  readonly Message: string;
-  readonly ComputeTime: number;
-  readonly FinishedAt: Date;
-  readonly StartedAt: Date;
-  readonly TotalRecordCount: number;
-  readonly InvalidRecordCount: number;
+export interface GetBatchPredictionOutput {
+  readonly BatchPredictionId?: string;
+  readonly MLModelId?: string;
+  readonly BatchPredictionDataSourceId?: string;
+  readonly InputDataLocationS3?: string;
+  readonly CreatedByIamUser?: string;
+  readonly CreatedAt?: Date;
+  readonly LastUpdatedAt?: Date;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly OutputUri?: string;
+  readonly LogUri?: string;
+  readonly Message?: string;
+  readonly ComputeTime?: number;
+  readonly FinishedAt?: Date;
+  readonly StartedAt?: Date;
+  readonly TotalRecordCount?: number;
+  readonly InvalidRecordCount?: number;
 }
 
-interface GetDataSourceInput {
+export interface GetDataSourceInput {
   readonly DataSourceId: string;
-  readonly Verbose: boolean;
+  readonly Verbose?: boolean;
 }
 
-interface GetDataSourceOutput {
-  readonly DataSourceId: string;
-  readonly DataLocationS3: string;
-  readonly DataRearrangement: string;
-  readonly CreatedByIamUser: string;
-  readonly CreatedAt: Date;
-  readonly LastUpdatedAt: Date;
-  readonly DataSizeInBytes: number;
-  readonly NumberOfFiles: number;
-  readonly Name: string;
-  readonly Status: string;
-  readonly LogUri: string;
-  readonly Message: string;
-  readonly RedshiftMetadata: RedshiftMetadata;
-  readonly RDSMetadata: RDSMetadata;
-  readonly RoleARN: string;
-  readonly ComputeStatistics: boolean;
-  readonly ComputeTime: number;
-  readonly FinishedAt: Date;
-  readonly StartedAt: Date;
-  readonly DataSourceSchema: string;
+export interface GetDataSourceOutput {
+  readonly DataSourceId?: string;
+  readonly DataLocationS3?: string;
+  readonly DataRearrangement?: string;
+  readonly CreatedByIamUser?: string;
+  readonly CreatedAt?: Date;
+  readonly LastUpdatedAt?: Date;
+  readonly DataSizeInBytes?: number;
+  readonly NumberOfFiles?: number;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly LogUri?: string;
+  readonly Message?: string;
+  readonly RedshiftMetadata?: RedshiftMetadata;
+  readonly RDSMetadata?: RDSMetadata;
+  readonly RoleARN?: string;
+  readonly ComputeStatistics?: boolean;
+  readonly ComputeTime?: number;
+  readonly FinishedAt?: Date;
+  readonly StartedAt?: Date;
+  readonly DataSourceSchema?: string;
 }
 
-interface GetEvaluationInput {
+export interface GetEvaluationInput {
   readonly EvaluationId: string;
 }
 
-interface GetEvaluationOutput {
-  readonly EvaluationId: string;
+export interface GetEvaluationOutput {
+  readonly EvaluationId?: string;
+  readonly MLModelId?: string;
+  readonly EvaluationDataSourceId?: string;
+  readonly InputDataLocationS3?: string;
+  readonly CreatedByIamUser?: string;
+  readonly CreatedAt?: Date;
+  readonly LastUpdatedAt?: Date;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly PerformanceMetrics?: PerformanceMetrics;
+  readonly LogUri?: string;
+  readonly Message?: string;
+  readonly ComputeTime?: number;
+  readonly FinishedAt?: Date;
+  readonly StartedAt?: Date;
+}
+
+export interface GetMLModelInput {
   readonly MLModelId: string;
-  readonly EvaluationDataSourceId: string;
-  readonly InputDataLocationS3: string;
-  readonly CreatedByIamUser: string;
-  readonly CreatedAt: Date;
-  readonly LastUpdatedAt: Date;
-  readonly Name: string;
-  readonly Status: string;
-  readonly PerformanceMetrics: PerformanceMetrics;
-  readonly LogUri: string;
-  readonly Message: string;
-  readonly ComputeTime: number;
-  readonly FinishedAt: Date;
-  readonly StartedAt: Date;
+  readonly Verbose?: boolean;
 }
 
-interface GetMLModelInput {
-  readonly MLModelId: string;
-  readonly Verbose: boolean;
+export interface GetMLModelOutput {
+  readonly MLModelId?: string;
+  readonly TrainingDataSourceId?: string;
+  readonly CreatedByIamUser?: string;
+  readonly CreatedAt?: Date;
+  readonly LastUpdatedAt?: Date;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly SizeInBytes?: number;
+  readonly EndpointInfo?: RealtimeEndpointInfo;
+  readonly TrainingParameters?: {[key: string]: any};
+  readonly InputDataLocationS3?: string;
+  readonly MLModelType?: string;
+  readonly ScoreThreshold?: unknown;
+  readonly ScoreThresholdLastUpdatedAt?: Date;
+  readonly LogUri?: string;
+  readonly Message?: string;
+  readonly ComputeTime?: number;
+  readonly FinishedAt?: Date;
+  readonly StartedAt?: Date;
+  readonly Recipe?: string;
+  readonly Schema?: string;
 }
 
-interface GetMLModelOutput {
-  readonly MLModelId: string;
-  readonly TrainingDataSourceId: string;
-  readonly CreatedByIamUser: string;
-  readonly CreatedAt: Date;
-  readonly LastUpdatedAt: Date;
-  readonly Name: string;
-  readonly Status: string;
-  readonly SizeInBytes: number;
-  readonly EndpointInfo: RealtimeEndpointInfo;
-  readonly TrainingParameters: {[key: string]: any};
-  readonly InputDataLocationS3: string;
-  readonly MLModelType: string;
-  readonly ScoreThreshold: unknown;
-  readonly ScoreThresholdLastUpdatedAt: Date;
-  readonly LogUri: string;
-  readonly Message: string;
-  readonly ComputeTime: number;
-  readonly FinishedAt: Date;
-  readonly StartedAt: Date;
-  readonly Recipe: string;
-  readonly Schema: string;
+export interface IdempotentParameterMismatchException {
+  readonly message?: string;
+  readonly code?: number;
 }
 
-interface IdempotentParameterMismatchException {
-  readonly message: string;
-  readonly code: number;
+export interface InternalServerException {
+  readonly message?: string;
+  readonly code?: number;
 }
 
-interface InternalServerException {
-  readonly message: string;
-  readonly code: number;
+export interface InvalidInputException {
+  readonly message?: string;
+  readonly code?: number;
 }
 
-interface InvalidInputException {
-  readonly message: string;
-  readonly code: number;
+export interface InvalidTagException {
+  readonly message?: string;
 }
 
-interface InvalidTagException {
-  readonly message: string;
+export interface LimitExceededException {
+  readonly message?: string;
+  readonly code?: number;
 }
 
-interface LimitExceededException {
-  readonly message: string;
-  readonly code: number;
+export interface MLModel {
+  readonly MLModelId?: string;
+  readonly TrainingDataSourceId?: string;
+  readonly CreatedByIamUser?: string;
+  readonly CreatedAt?: Date;
+  readonly LastUpdatedAt?: Date;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly SizeInBytes?: number;
+  readonly EndpointInfo?: RealtimeEndpointInfo;
+  readonly TrainingParameters?: {[key: string]: any};
+  readonly InputDataLocationS3?: string;
+  readonly Algorithm?: string;
+  readonly MLModelType?: string;
+  readonly ScoreThreshold?: unknown;
+  readonly ScoreThresholdLastUpdatedAt?: Date;
+  readonly Message?: string;
+  readonly ComputeTime?: number;
+  readonly FinishedAt?: Date;
+  readonly StartedAt?: Date;
 }
 
-interface MLModel {
-  readonly MLModelId: string;
-  readonly TrainingDataSourceId: string;
-  readonly CreatedByIamUser: string;
-  readonly CreatedAt: Date;
-  readonly LastUpdatedAt: Date;
-  readonly Name: string;
-  readonly Status: string;
-  readonly SizeInBytes: number;
-  readonly EndpointInfo: RealtimeEndpointInfo;
-  readonly TrainingParameters: {[key: string]: any};
-  readonly InputDataLocationS3: string;
-  readonly Algorithm: string;
-  readonly MLModelType: string;
-  readonly ScoreThreshold: unknown;
-  readonly ScoreThresholdLastUpdatedAt: Date;
-  readonly Message: string;
-  readonly ComputeTime: number;
-  readonly FinishedAt: Date;
-  readonly StartedAt: Date;
+export interface PerformanceMetrics {
+  readonly Properties?: {[key: string]: any};
 }
 
-interface PerformanceMetrics {
-  readonly Properties: {[key: string]: any};
-}
-
-interface PredictInput {
+export interface PredictInput {
   readonly MLModelId: string;
   readonly Record: {[key: string]: any};
   readonly PredictEndpoint: string;
 }
 
-interface PredictOutput {
-  readonly Prediction: Prediction;
+export interface PredictOutput {
+  readonly Prediction?: Prediction;
 }
 
-interface Prediction {
-  readonly predictedLabel: string;
-  readonly predictedValue: unknown;
-  readonly predictedScores: {[key: string]: any};
-  readonly details: {[key: string]: any};
+export interface Prediction {
+  readonly predictedLabel?: string;
+  readonly predictedValue?: unknown;
+  readonly predictedScores?: {[key: string]: any};
+  readonly details?: {[key: string]: any};
 }
 
-interface PredictorNotMountedException {
-  readonly message: string;
+export interface PredictorNotMountedException {
+  readonly message?: string;
 }
 
-interface RDSDataSpec {
+export interface RDSDataSpec {
   readonly DatabaseInformation: RDSDatabase;
   readonly SelectSqlQuery: string;
   readonly DatabaseCredentials: RDSDatabaseCredentials;
   readonly S3StagingLocation: string;
-  readonly DataRearrangement: string;
-  readonly DataSchema: string;
-  readonly DataSchemaUri: string;
+  readonly DataRearrangement?: string;
+  readonly DataSchema?: string;
+  readonly DataSchemaUri?: string;
   readonly ResourceRole: string;
   readonly ServiceRole: string;
   readonly SubnetId: string;
   readonly SecurityGroupIds: [];
 }
 
-interface RDSDatabase {
+export interface RDSDatabase {
   readonly InstanceIdentifier: string;
   readonly DatabaseName: string;
 }
 
-interface RDSDatabaseCredentials {
+export interface RDSDatabaseCredentials {
   readonly Username: string;
   readonly Password: string;
 }
 
-interface RDSMetadata {
-  readonly Database: RDSDatabase;
-  readonly DatabaseUserName: string;
-  readonly SelectSqlQuery: string;
-  readonly ResourceRole: string;
-  readonly ServiceRole: string;
-  readonly DataPipelineId: string;
+export interface RDSMetadata {
+  readonly Database?: RDSDatabase;
+  readonly DatabaseUserName?: string;
+  readonly SelectSqlQuery?: string;
+  readonly ResourceRole?: string;
+  readonly ServiceRole?: string;
+  readonly DataPipelineId?: string;
 }
 
-interface RealtimeEndpointInfo {
-  readonly PeakRequestsPerSecond: number;
-  readonly CreatedAt: Date;
-  readonly EndpointUrl: string;
-  readonly EndpointStatus: string;
+export interface RealtimeEndpointInfo {
+  readonly PeakRequestsPerSecond?: number;
+  readonly CreatedAt?: Date;
+  readonly EndpointUrl?: string;
+  readonly EndpointStatus?: string;
 }
 
-interface RedshiftDataSpec {
+export interface RedshiftDataSpec {
   readonly DatabaseInformation: RedshiftDatabase;
   readonly SelectSqlQuery: string;
   readonly DatabaseCredentials: RedshiftDatabaseCredentials;
   readonly S3StagingLocation: string;
-  readonly DataRearrangement: string;
-  readonly DataSchema: string;
-  readonly DataSchemaUri: string;
+  readonly DataRearrangement?: string;
+  readonly DataSchema?: string;
+  readonly DataSchemaUri?: string;
 }
 
-interface RedshiftDatabase {
+export interface RedshiftDatabase {
   readonly DatabaseName: string;
   readonly ClusterIdentifier: string;
 }
 
-interface RedshiftDatabaseCredentials {
+export interface RedshiftDatabaseCredentials {
   readonly Username: string;
   readonly Password: string;
 }
 
-interface RedshiftMetadata {
-  readonly RedshiftDatabase: RedshiftDatabase;
-  readonly DatabaseUserName: string;
-  readonly SelectSqlQuery: string;
+export interface RedshiftMetadata {
+  readonly RedshiftDatabase?: RedshiftDatabase;
+  readonly DatabaseUserName?: string;
+  readonly SelectSqlQuery?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
-  readonly code: number;
+export interface ResourceNotFoundException {
+  readonly message?: string;
+  readonly code?: number;
 }
 
-interface S3DataSpec {
+export interface S3DataSpec {
   readonly DataLocationS3: string;
-  readonly DataRearrangement: string;
-  readonly DataSchema: string;
-  readonly DataSchemaLocationS3: string;
+  readonly DataRearrangement?: string;
+  readonly DataSchema?: string;
+  readonly DataSchemaLocationS3?: string;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TagLimitExceededException {
-  readonly message: string;
+export interface TagLimitExceededException {
+  readonly message?: string;
 }
 
-interface UpdateBatchPredictionInput {
+export interface UpdateBatchPredictionInput {
   readonly BatchPredictionId: string;
   readonly BatchPredictionName: string;
 }
 
-interface UpdateBatchPredictionOutput {
-  readonly BatchPredictionId: string;
+export interface UpdateBatchPredictionOutput {
+  readonly BatchPredictionId?: string;
 }
 
-interface UpdateDataSourceInput {
+export interface UpdateDataSourceInput {
   readonly DataSourceId: string;
   readonly DataSourceName: string;
 }
 
-interface UpdateDataSourceOutput {
-  readonly DataSourceId: string;
+export interface UpdateDataSourceOutput {
+  readonly DataSourceId?: string;
 }
 
-interface UpdateEvaluationInput {
+export interface UpdateEvaluationInput {
   readonly EvaluationId: string;
   readonly EvaluationName: string;
 }
 
-interface UpdateEvaluationOutput {
-  readonly EvaluationId: string;
+export interface UpdateEvaluationOutput {
+  readonly EvaluationId?: string;
 }
 
-interface UpdateMLModelInput {
+export interface UpdateMLModelInput {
   readonly MLModelId: string;
-  readonly MLModelName: string;
-  readonly ScoreThreshold: unknown;
+  readonly MLModelName?: string;
+  readonly ScoreThreshold?: unknown;
 }
 
-interface UpdateMLModelOutput {
-  readonly MLModelId: string;
+export interface UpdateMLModelOutput {
+  readonly MLModelId?: string;
 }
+
 

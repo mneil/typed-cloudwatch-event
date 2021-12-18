@@ -7,6 +7,7 @@ export interface CreateHttpNamespace {
   readonly Description?: string;
   readonly Tags?: [];
 }
+
 export interface CreatePrivateDnsNamespace {
   readonly Name: string;
   readonly CreatorRequestId?: string;
@@ -15,6 +16,7 @@ export interface CreatePrivateDnsNamespace {
   readonly Tags?: [];
   readonly Properties?: PrivateDnsNamespaceProperties;
 }
+
 export interface CreatePublicDnsNamespace {
   readonly Name: string;
   readonly CreatorRequestId?: string;
@@ -22,6 +24,7 @@ export interface CreatePublicDnsNamespace {
   readonly Tags?: [];
   readonly Properties?: PublicDnsNamespaceProperties;
 }
+
 export interface CreateService {
   readonly Name: string;
   readonly NamespaceId?: string;
@@ -33,16 +36,20 @@ export interface CreateService {
   readonly Tags?: [];
   readonly Type?: string;
 }
+
 export interface DeleteNamespace {
   readonly Id: string;
 }
+
 export interface DeleteService {
   readonly Id: string;
 }
+
 export interface DeregisterInstance {
   readonly ServiceId: string;
   readonly InstanceId: string;
 }
+
 export interface DiscoverInstances {
   readonly NamespaceName: string;
   readonly ServiceName: string;
@@ -51,614 +58,631 @@ export interface DiscoverInstances {
   readonly OptionalParameters?: {[key: string]: any};
   readonly HealthStatus?: string;
 }
+
 export interface GetInstance {
   readonly ServiceId: string;
   readonly InstanceId: string;
 }
+
 export interface GetInstancesHealthStatus {
   readonly ServiceId: string;
   readonly Instances?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetNamespace {
   readonly Id: string;
 }
+
 export interface GetOperation {
   readonly OperationId: string;
 }
+
 export interface GetService {
   readonly Id: string;
 }
+
 export interface ListInstances {
   readonly ServiceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListNamespaces {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Filters?: [];
 }
+
 export interface ListOperations {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Filters?: [];
 }
+
 export interface ListServices {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Filters?: [];
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
+
 export interface RegisterInstance {
   readonly ServiceId: string;
   readonly InstanceId: string;
   readonly CreatorRequestId?: string;
   readonly Attributes: {[key: string]: any};
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateHttpNamespace {
   readonly Id: string;
   readonly UpdaterRequestId?: string;
   readonly Namespace: HttpNamespaceChange;
 }
+
 export interface UpdateInstanceCustomHealthStatus {
   readonly ServiceId: string;
   readonly InstanceId: string;
   readonly Status: string;
 }
+
 export interface UpdatePrivateDnsNamespace {
   readonly Id: string;
   readonly UpdaterRequestId?: string;
   readonly Namespace: PrivateDnsNamespaceChange;
 }
+
 export interface UpdatePublicDnsNamespace {
   readonly Id: string;
   readonly UpdaterRequestId?: string;
   readonly Namespace: PublicDnsNamespaceChange;
 }
+
 export interface UpdateService {
   readonly Id: string;
   readonly Service: ServiceChange;
 }
 
-
-
-interface CreateHttpNamespaceRequest {
+export interface CreateHttpNamespaceRequest {
   readonly Name: string;
-  readonly CreatorRequestId: string;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly CreatorRequestId?: string;
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 
-interface CreateHttpNamespaceResponse {
-  readonly OperationId: string;
+export interface CreateHttpNamespaceResponse {
+  readonly OperationId?: string;
 }
 
-interface CreatePrivateDnsNamespaceRequest {
+export interface CreatePrivateDnsNamespaceRequest {
   readonly Name: string;
-  readonly CreatorRequestId: string;
-  readonly Description: string;
+  readonly CreatorRequestId?: string;
+  readonly Description?: string;
   readonly Vpc: string;
-  readonly Tags: [];
-  readonly Properties: PrivateDnsNamespaceProperties;
+  readonly Tags?: [];
+  readonly Properties?: PrivateDnsNamespaceProperties;
 }
 
-interface CreatePrivateDnsNamespaceResponse {
-  readonly OperationId: string;
+export interface CreatePrivateDnsNamespaceResponse {
+  readonly OperationId?: string;
 }
 
-interface CreatePublicDnsNamespaceRequest {
+export interface CreatePublicDnsNamespaceRequest {
   readonly Name: string;
-  readonly CreatorRequestId: string;
-  readonly Description: string;
-  readonly Tags: [];
-  readonly Properties: PublicDnsNamespaceProperties;
+  readonly CreatorRequestId?: string;
+  readonly Description?: string;
+  readonly Tags?: [];
+  readonly Properties?: PublicDnsNamespaceProperties;
 }
 
-interface CreatePublicDnsNamespaceResponse {
-  readonly OperationId: string;
+export interface CreatePublicDnsNamespaceResponse {
+  readonly OperationId?: string;
 }
 
-interface CreateServiceRequest {
+export interface CreateServiceRequest {
   readonly Name: string;
-  readonly NamespaceId: string;
-  readonly CreatorRequestId: string;
-  readonly Description: string;
-  readonly DnsConfig: DnsConfig;
-  readonly HealthCheckConfig: HealthCheckConfig;
-  readonly HealthCheckCustomConfig: HealthCheckCustomConfig;
-  readonly Tags: [];
-  readonly Type: string;
+  readonly NamespaceId?: string;
+  readonly CreatorRequestId?: string;
+  readonly Description?: string;
+  readonly DnsConfig?: DnsConfig;
+  readonly HealthCheckConfig?: HealthCheckConfig;
+  readonly HealthCheckCustomConfig?: HealthCheckCustomConfig;
+  readonly Tags?: [];
+  readonly Type?: string;
 }
 
-interface CreateServiceResponse {
-  readonly Service: Service;
+export interface CreateServiceResponse {
+  readonly Service?: Service;
 }
 
-interface CustomHealthNotFound {
-  readonly Message: string;
+export interface CustomHealthNotFound {
+  readonly Message?: string;
 }
 
-interface DeleteNamespaceRequest {
+export interface DeleteNamespaceRequest {
   readonly Id: string;
 }
 
-interface DeleteNamespaceResponse {
-  readonly OperationId: string;
+export interface DeleteNamespaceResponse {
+  readonly OperationId?: string;
 }
 
-interface DeleteServiceRequest {
+export interface DeleteServiceRequest {
   readonly Id: string;
 }
 
-interface DeleteServiceResponse {
+export interface DeleteServiceResponse {
 }
 
-interface DeregisterInstanceRequest {
+export interface DeregisterInstanceRequest {
   readonly ServiceId: string;
   readonly InstanceId: string;
 }
 
-interface DeregisterInstanceResponse {
-  readonly OperationId: string;
+export interface DeregisterInstanceResponse {
+  readonly OperationId?: string;
 }
 
-interface DiscoverInstancesRequest {
+export interface DiscoverInstancesRequest {
   readonly NamespaceName: string;
   readonly ServiceName: string;
-  readonly MaxResults: number;
-  readonly QueryParameters: {[key: string]: any};
-  readonly OptionalParameters: {[key: string]: any};
-  readonly HealthStatus: string;
+  readonly MaxResults?: number;
+  readonly QueryParameters?: {[key: string]: any};
+  readonly OptionalParameters?: {[key: string]: any};
+  readonly HealthStatus?: string;
 }
 
-interface DiscoverInstancesResponse {
-  readonly Instances: [];
+export interface DiscoverInstancesResponse {
+  readonly Instances?: [];
 }
 
-interface DnsConfig {
-  readonly NamespaceId: string;
-  readonly RoutingPolicy: string;
+export interface DnsConfig {
+  readonly NamespaceId?: string;
+  readonly RoutingPolicy?: string;
   readonly DnsRecords: [];
 }
 
-interface DnsConfigChange {
+export interface DnsConfigChange {
   readonly DnsRecords: [];
 }
 
-interface DnsProperties {
-  readonly HostedZoneId: string;
-  readonly SOA: SOA;
+export interface DnsProperties {
+  readonly HostedZoneId?: string;
+  readonly SOA?: SOA;
 }
 
-interface DnsRecord {
+export interface DnsRecord {
   readonly Type: string;
   readonly TTL: number;
 }
 
-interface DuplicateRequest {
-  readonly Message: string;
-  readonly DuplicateOperationId: string;
+export interface DuplicateRequest {
+  readonly Message?: string;
+  readonly DuplicateOperationId?: string;
 }
 
-interface GetInstanceRequest {
+export interface GetInstanceRequest {
   readonly ServiceId: string;
   readonly InstanceId: string;
 }
 
-interface GetInstanceResponse {
-  readonly Instance: Instance;
+export interface GetInstanceResponse {
+  readonly Instance?: Instance;
 }
 
-interface GetInstancesHealthStatusRequest {
+export interface GetInstancesHealthStatusRequest {
   readonly ServiceId: string;
-  readonly Instances: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Instances?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetInstancesHealthStatusResponse {
-  readonly Status: {[key: string]: any};
-  readonly NextToken: string;
+export interface GetInstancesHealthStatusResponse {
+  readonly Status?: {[key: string]: any};
+  readonly NextToken?: string;
 }
 
-interface GetNamespaceRequest {
+export interface GetNamespaceRequest {
   readonly Id: string;
 }
 
-interface GetNamespaceResponse {
-  readonly Namespace: Namespace;
+export interface GetNamespaceResponse {
+  readonly Namespace?: Namespace;
 }
 
-interface GetOperationRequest {
+export interface GetOperationRequest {
   readonly OperationId: string;
 }
 
-interface GetOperationResponse {
-  readonly Operation: Operation;
+export interface GetOperationResponse {
+  readonly Operation?: Operation;
 }
 
-interface GetServiceRequest {
+export interface GetServiceRequest {
   readonly Id: string;
 }
 
-interface GetServiceResponse {
-  readonly Service: Service;
+export interface GetServiceResponse {
+  readonly Service?: Service;
 }
 
-interface HealthCheckConfig {
+export interface HealthCheckConfig {
   readonly Type: string;
-  readonly ResourcePath: string;
-  readonly FailureThreshold: number;
+  readonly ResourcePath?: string;
+  readonly FailureThreshold?: number;
 }
 
-interface HealthCheckCustomConfig {
-  readonly FailureThreshold: number;
+export interface HealthCheckCustomConfig {
+  readonly FailureThreshold?: number;
 }
 
-interface HttpInstanceSummary {
-  readonly InstanceId: string;
-  readonly NamespaceName: string;
-  readonly ServiceName: string;
-  readonly HealthStatus: string;
-  readonly Attributes: {[key: string]: any};
+export interface HttpInstanceSummary {
+  readonly InstanceId?: string;
+  readonly NamespaceName?: string;
+  readonly ServiceName?: string;
+  readonly HealthStatus?: string;
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface HttpNamespaceChange {
+export interface HttpNamespaceChange {
   readonly Description: string;
 }
 
-interface HttpProperties {
-  readonly HttpName: string;
+export interface HttpProperties {
+  readonly HttpName?: string;
 }
 
-interface Instance {
+export interface Instance {
   readonly Id: string;
-  readonly CreatorRequestId: string;
-  readonly Attributes: {[key: string]: any};
+  readonly CreatorRequestId?: string;
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface InstanceNotFound {
-  readonly Message: string;
+export interface InstanceNotFound {
+  readonly Message?: string;
 }
 
-interface InstanceSummary {
-  readonly Id: string;
-  readonly Attributes: {[key: string]: any};
+export interface InstanceSummary {
+  readonly Id?: string;
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface InvalidInput {
-  readonly Message: string;
+export interface InvalidInput {
+  readonly Message?: string;
 }
 
-interface ListInstancesRequest {
+export interface ListInstancesRequest {
   readonly ServiceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListInstancesResponse {
-  readonly Instances: [];
-  readonly NextToken: string;
+export interface ListInstancesResponse {
+  readonly Instances?: [];
+  readonly NextToken?: string;
 }
 
-interface ListNamespacesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+export interface ListNamespacesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 
-interface ListNamespacesResponse {
-  readonly Namespaces: [];
-  readonly NextToken: string;
+export interface ListNamespacesResponse {
+  readonly Namespaces?: [];
+  readonly NextToken?: string;
 }
 
-interface ListOperationsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+export interface ListOperationsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 
-interface ListOperationsResponse {
-  readonly Operations: [];
-  readonly NextToken: string;
+export interface ListOperationsResponse {
+  readonly Operations?: [];
+  readonly NextToken?: string;
 }
 
-interface ListServicesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+export interface ListServicesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 
-interface ListServicesResponse {
-  readonly Services: [];
-  readonly NextToken: string;
+export interface ListServicesResponse {
+  readonly Services?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface Namespace {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Type: string;
-  readonly Description: string;
-  readonly ServiceCount: number;
-  readonly Properties: NamespaceProperties;
-  readonly CreateDate: Date;
-  readonly CreatorRequestId: string;
+export interface Namespace {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly Description?: string;
+  readonly ServiceCount?: number;
+  readonly Properties?: NamespaceProperties;
+  readonly CreateDate?: Date;
+  readonly CreatorRequestId?: string;
 }
 
-interface NamespaceAlreadyExists {
-  readonly Message: string;
-  readonly CreatorRequestId: string;
-  readonly NamespaceId: string;
+export interface NamespaceAlreadyExists {
+  readonly Message?: string;
+  readonly CreatorRequestId?: string;
+  readonly NamespaceId?: string;
 }
 
-interface NamespaceFilter {
-  readonly Name: string;
-  readonly Values: [];
-  readonly Condition: string;
-}
-
-interface NamespaceNotFound {
-  readonly Message: string;
-}
-
-interface NamespaceProperties {
-  readonly DnsProperties: DnsProperties;
-  readonly HttpProperties: HttpProperties;
-}
-
-interface NamespaceSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Type: string;
-  readonly Description: string;
-  readonly ServiceCount: number;
-  readonly Properties: NamespaceProperties;
-  readonly CreateDate: Date;
-}
-
-interface Operation {
-  readonly Id: string;
-  readonly Type: string;
-  readonly Status: string;
-  readonly ErrorMessage: string;
-  readonly ErrorCode: string;
-  readonly CreateDate: Date;
-  readonly UpdateDate: Date;
-  readonly Targets: {[key: string]: any};
-}
-
-interface OperationFilter {
+export interface NamespaceFilter {
   readonly Name: string;
   readonly Values: [];
-  readonly Condition: string;
+  readonly Condition?: string;
 }
 
-interface OperationNotFound {
-  readonly Message: string;
+export interface NamespaceNotFound {
+  readonly Message?: string;
 }
 
-interface OperationSummary {
-  readonly Id: string;
-  readonly Status: string;
+export interface NamespaceProperties {
+  readonly DnsProperties?: DnsProperties;
+  readonly HttpProperties?: HttpProperties;
 }
 
-interface PrivateDnsNamespaceChange {
-  readonly Description: string;
-  readonly Properties: PrivateDnsNamespacePropertiesChange;
+export interface NamespaceSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly Description?: string;
+  readonly ServiceCount?: number;
+  readonly Properties?: NamespaceProperties;
+  readonly CreateDate?: Date;
 }
 
-interface PrivateDnsNamespaceProperties {
+export interface Operation {
+  readonly Id?: string;
+  readonly Type?: string;
+  readonly Status?: string;
+  readonly ErrorMessage?: string;
+  readonly ErrorCode?: string;
+  readonly CreateDate?: Date;
+  readonly UpdateDate?: Date;
+  readonly Targets?: {[key: string]: any};
+}
+
+export interface OperationFilter {
+  readonly Name: string;
+  readonly Values: [];
+  readonly Condition?: string;
+}
+
+export interface OperationNotFound {
+  readonly Message?: string;
+}
+
+export interface OperationSummary {
+  readonly Id?: string;
+  readonly Status?: string;
+}
+
+export interface PrivateDnsNamespaceChange {
+  readonly Description?: string;
+  readonly Properties?: PrivateDnsNamespacePropertiesChange;
+}
+
+export interface PrivateDnsNamespaceProperties {
   readonly DnsProperties: PrivateDnsPropertiesMutable;
 }
 
-interface PrivateDnsNamespacePropertiesChange {
+export interface PrivateDnsNamespacePropertiesChange {
   readonly DnsProperties: PrivateDnsPropertiesMutableChange;
 }
 
-interface PrivateDnsPropertiesMutable {
+export interface PrivateDnsPropertiesMutable {
   readonly SOA: SOA;
 }
 
-interface PrivateDnsPropertiesMutableChange {
+export interface PrivateDnsPropertiesMutableChange {
   readonly SOA: SOAChange;
 }
 
-interface PublicDnsNamespaceChange {
-  readonly Description: string;
-  readonly Properties: PublicDnsNamespacePropertiesChange;
+export interface PublicDnsNamespaceChange {
+  readonly Description?: string;
+  readonly Properties?: PublicDnsNamespacePropertiesChange;
 }
 
-interface PublicDnsNamespaceProperties {
+export interface PublicDnsNamespaceProperties {
   readonly DnsProperties: PublicDnsPropertiesMutable;
 }
 
-interface PublicDnsNamespacePropertiesChange {
+export interface PublicDnsNamespacePropertiesChange {
   readonly DnsProperties: PublicDnsPropertiesMutableChange;
 }
 
-interface PublicDnsPropertiesMutable {
+export interface PublicDnsPropertiesMutable {
   readonly SOA: SOA;
 }
 
-interface PublicDnsPropertiesMutableChange {
+export interface PublicDnsPropertiesMutableChange {
   readonly SOA: SOAChange;
 }
 
-interface RegisterInstanceRequest {
+export interface RegisterInstanceRequest {
   readonly ServiceId: string;
   readonly InstanceId: string;
-  readonly CreatorRequestId: string;
+  readonly CreatorRequestId?: string;
   readonly Attributes: {[key: string]: any};
 }
 
-interface RegisterInstanceResponse {
-  readonly OperationId: string;
+export interface RegisterInstanceResponse {
+  readonly OperationId?: string;
 }
 
-interface RequestLimitExceeded {
-  readonly Message: string;
+export interface RequestLimitExceeded {
+  readonly Message?: string;
 }
 
-interface ResourceInUse {
-  readonly Message: string;
+export interface ResourceInUse {
+  readonly Message?: string;
 }
 
-interface ResourceLimitExceeded {
-  readonly Message: string;
+export interface ResourceLimitExceeded {
+  readonly Message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface SOA {
+export interface SOA {
   readonly TTL: number;
 }
 
-interface SOAChange {
+export interface SOAChange {
   readonly TTL: number;
 }
 
-interface Service {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly NamespaceId: string;
-  readonly Description: string;
-  readonly InstanceCount: number;
-  readonly DnsConfig: DnsConfig;
-  readonly Type: string;
-  readonly HealthCheckConfig: HealthCheckConfig;
-  readonly HealthCheckCustomConfig: HealthCheckCustomConfig;
-  readonly CreateDate: Date;
-  readonly CreatorRequestId: string;
+export interface Service {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly NamespaceId?: string;
+  readonly Description?: string;
+  readonly InstanceCount?: number;
+  readonly DnsConfig?: DnsConfig;
+  readonly Type?: string;
+  readonly HealthCheckConfig?: HealthCheckConfig;
+  readonly HealthCheckCustomConfig?: HealthCheckCustomConfig;
+  readonly CreateDate?: Date;
+  readonly CreatorRequestId?: string;
 }
 
-interface ServiceAlreadyExists {
-  readonly Message: string;
-  readonly CreatorRequestId: string;
-  readonly ServiceId: string;
+export interface ServiceAlreadyExists {
+  readonly Message?: string;
+  readonly CreatorRequestId?: string;
+  readonly ServiceId?: string;
 }
 
-interface ServiceChange {
-  readonly Description: string;
-  readonly DnsConfig: DnsConfigChange;
-  readonly HealthCheckConfig: HealthCheckConfig;
+export interface ServiceChange {
+  readonly Description?: string;
+  readonly DnsConfig?: DnsConfigChange;
+  readonly HealthCheckConfig?: HealthCheckConfig;
 }
 
-interface ServiceFilter {
+export interface ServiceFilter {
   readonly Name: string;
   readonly Values: [];
-  readonly Condition: string;
+  readonly Condition?: string;
 }
 
-interface ServiceNotFound {
-  readonly Message: string;
+export interface ServiceNotFound {
+  readonly Message?: string;
 }
 
-interface ServiceSummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Type: string;
-  readonly Description: string;
-  readonly InstanceCount: number;
-  readonly DnsConfig: DnsConfig;
-  readonly HealthCheckConfig: HealthCheckConfig;
-  readonly HealthCheckCustomConfig: HealthCheckCustomConfig;
-  readonly CreateDate: Date;
+export interface ServiceSummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly Description?: string;
+  readonly InstanceCount?: number;
+  readonly DnsConfig?: DnsConfig;
+  readonly HealthCheckConfig?: HealthCheckConfig;
+  readonly HealthCheckCustomConfig?: HealthCheckCustomConfig;
+  readonly CreateDate?: Date;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TooManyTagsException {
-  readonly Message: string;
-  readonly ResourceName: string;
+export interface TooManyTagsException {
+  readonly Message?: string;
+  readonly ResourceName?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateHttpNamespaceRequest {
+export interface UpdateHttpNamespaceRequest {
   readonly Id: string;
-  readonly UpdaterRequestId: string;
+  readonly UpdaterRequestId?: string;
   readonly Namespace: HttpNamespaceChange;
 }
 
-interface UpdateHttpNamespaceResponse {
-  readonly OperationId: string;
+export interface UpdateHttpNamespaceResponse {
+  readonly OperationId?: string;
 }
 
-interface UpdateInstanceCustomHealthStatusRequest {
+export interface UpdateInstanceCustomHealthStatusRequest {
   readonly ServiceId: string;
   readonly InstanceId: string;
   readonly Status: string;
 }
 
-interface UpdatePrivateDnsNamespaceRequest {
+export interface UpdatePrivateDnsNamespaceRequest {
   readonly Id: string;
-  readonly UpdaterRequestId: string;
+  readonly UpdaterRequestId?: string;
   readonly Namespace: PrivateDnsNamespaceChange;
 }
 
-interface UpdatePrivateDnsNamespaceResponse {
-  readonly OperationId: string;
+export interface UpdatePrivateDnsNamespaceResponse {
+  readonly OperationId?: string;
 }
 
-interface UpdatePublicDnsNamespaceRequest {
+export interface UpdatePublicDnsNamespaceRequest {
   readonly Id: string;
-  readonly UpdaterRequestId: string;
+  readonly UpdaterRequestId?: string;
   readonly Namespace: PublicDnsNamespaceChange;
 }
 
-interface UpdatePublicDnsNamespaceResponse {
-  readonly OperationId: string;
+export interface UpdatePublicDnsNamespaceResponse {
+  readonly OperationId?: string;
 }
 
-interface UpdateServiceRequest {
+export interface UpdateServiceRequest {
   readonly Id: string;
   readonly Service: ServiceChange;
 }
 
-interface UpdateServiceResponse {
-  readonly OperationId: string;
+export interface UpdateServiceResponse {
+  readonly OperationId?: string;
 }
+
 

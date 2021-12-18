@@ -4,578 +4,601 @@
 export interface BuildSuggesters {
   readonly DomainName: string;
 }
+
 export interface CreateDomain {
   readonly DomainName: string;
 }
+
 export interface DefineAnalysisScheme {
   readonly DomainName: string;
   readonly AnalysisScheme: AnalysisScheme;
 }
+
 export interface DefineExpression {
   readonly DomainName: string;
   readonly Expression: Expression;
 }
+
 export interface DefineIndexField {
   readonly DomainName: string;
   readonly IndexField: IndexField;
 }
+
 export interface DefineSuggester {
   readonly DomainName: string;
   readonly Suggester: Suggester;
 }
+
 export interface DeleteAnalysisScheme {
   readonly DomainName: string;
   readonly AnalysisSchemeName: string;
 }
+
 export interface DeleteDomain {
   readonly DomainName: string;
 }
+
 export interface DeleteExpression {
   readonly DomainName: string;
   readonly ExpressionName: string;
 }
+
 export interface DeleteIndexField {
   readonly DomainName: string;
   readonly IndexFieldName: string;
 }
+
 export interface DeleteSuggester {
   readonly DomainName: string;
   readonly SuggesterName: string;
 }
+
 export interface DescribeAnalysisSchemes {
   readonly DomainName: string;
   readonly AnalysisSchemeNames?: [];
   readonly Deployed?: boolean;
 }
+
 export interface DescribeAvailabilityOptions {
   readonly DomainName: string;
   readonly Deployed?: boolean;
 }
+
 export interface DescribeDomainEndpointOptions {
   readonly DomainName: string;
   readonly Deployed?: boolean;
 }
+
 export interface DescribeDomains {
   readonly DomainNames?: [];
 }
+
 export interface DescribeExpressions {
   readonly DomainName: string;
   readonly ExpressionNames?: [];
   readonly Deployed?: boolean;
 }
+
 export interface DescribeIndexFields {
   readonly DomainName: string;
   readonly FieldNames?: [];
   readonly Deployed?: boolean;
 }
+
 export interface DescribeScalingParameters {
   readonly DomainName: string;
 }
+
 export interface DescribeServiceAccessPolicies {
   readonly DomainName: string;
   readonly Deployed?: boolean;
 }
+
 export interface DescribeSuggesters {
   readonly DomainName: string;
   readonly SuggesterNames?: [];
   readonly Deployed?: boolean;
 }
+
 export interface IndexDocuments {
   readonly DomainName: string;
 }
+
 export interface UpdateAvailabilityOptions {
   readonly DomainName: string;
   readonly MultiAZ: boolean;
 }
+
 export interface UpdateDomainEndpointOptions {
   readonly DomainName: string;
   readonly DomainEndpointOptions: DomainEndpointOptions;
 }
+
 export interface UpdateScalingParameters {
   readonly DomainName: string;
   readonly ScalingParameters: ScalingParameters;
 }
+
 export interface UpdateServiceAccessPolicies {
   readonly DomainName: string;
   readonly AccessPolicies: string;
 }
 
-
-
-interface AccessPoliciesStatus {
+export interface AccessPoliciesStatus {
   readonly Options: string;
   readonly Status: OptionStatus;
 }
 
-interface AnalysisOptions {
-  readonly Synonyms: string;
-  readonly Stopwords: string;
-  readonly StemmingDictionary: string;
-  readonly JapaneseTokenizationDictionary: string;
-  readonly AlgorithmicStemming: string;
+export interface AnalysisOptions {
+  readonly Synonyms?: string;
+  readonly Stopwords?: string;
+  readonly StemmingDictionary?: string;
+  readonly JapaneseTokenizationDictionary?: string;
+  readonly AlgorithmicStemming?: string;
 }
 
-interface AnalysisScheme {
+export interface AnalysisScheme {
   readonly AnalysisSchemeName: string;
   readonly AnalysisSchemeLanguage: string;
-  readonly AnalysisOptions: AnalysisOptions;
+  readonly AnalysisOptions?: AnalysisOptions;
 }
 
-interface AnalysisSchemeStatus {
+export interface AnalysisSchemeStatus {
   readonly Options: AnalysisScheme;
   readonly Status: OptionStatus;
 }
 
-interface AvailabilityOptionsStatus {
+export interface AvailabilityOptionsStatus {
   readonly Options: boolean;
   readonly Status: OptionStatus;
 }
 
-interface BaseException {
-  readonly Code: string;
-  readonly Message: string;
+export interface BaseException {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface BuildSuggestersRequest {
+export interface BuildSuggestersRequest {
   readonly DomainName: string;
 }
 
-interface BuildSuggestersResponse {
-  readonly FieldNames: [];
+export interface BuildSuggestersResponse {
+  readonly FieldNames?: [];
 }
 
-interface CreateDomainRequest {
+export interface CreateDomainRequest {
   readonly DomainName: string;
 }
 
-interface CreateDomainResponse {
-  readonly DomainStatus: DomainStatus;
+export interface CreateDomainResponse {
+  readonly DomainStatus?: DomainStatus;
 }
 
-interface DateArrayOptions {
-  readonly DefaultValue: string;
-  readonly SourceFields: string;
-  readonly FacetEnabled: boolean;
-  readonly SearchEnabled: boolean;
-  readonly ReturnEnabled: boolean;
+export interface DateArrayOptions {
+  readonly DefaultValue?: string;
+  readonly SourceFields?: string;
+  readonly FacetEnabled?: boolean;
+  readonly SearchEnabled?: boolean;
+  readonly ReturnEnabled?: boolean;
 }
 
-interface DateOptions {
-  readonly DefaultValue: string;
-  readonly SourceField: string;
-  readonly FacetEnabled: boolean;
-  readonly SearchEnabled: boolean;
-  readonly ReturnEnabled: boolean;
-  readonly SortEnabled: boolean;
+export interface DateOptions {
+  readonly DefaultValue?: string;
+  readonly SourceField?: string;
+  readonly FacetEnabled?: boolean;
+  readonly SearchEnabled?: boolean;
+  readonly ReturnEnabled?: boolean;
+  readonly SortEnabled?: boolean;
 }
 
-interface DefineAnalysisSchemeRequest {
+export interface DefineAnalysisSchemeRequest {
   readonly DomainName: string;
   readonly AnalysisScheme: AnalysisScheme;
 }
 
-interface DefineAnalysisSchemeResponse {
+export interface DefineAnalysisSchemeResponse {
   readonly AnalysisScheme: AnalysisSchemeStatus;
 }
 
-interface DefineExpressionRequest {
+export interface DefineExpressionRequest {
   readonly DomainName: string;
   readonly Expression: Expression;
 }
 
-interface DefineExpressionResponse {
+export interface DefineExpressionResponse {
   readonly Expression: ExpressionStatus;
 }
 
-interface DefineIndexFieldRequest {
+export interface DefineIndexFieldRequest {
   readonly DomainName: string;
   readonly IndexField: IndexField;
 }
 
-interface DefineIndexFieldResponse {
+export interface DefineIndexFieldResponse {
   readonly IndexField: IndexFieldStatus;
 }
 
-interface DefineSuggesterRequest {
+export interface DefineSuggesterRequest {
   readonly DomainName: string;
   readonly Suggester: Suggester;
 }
 
-interface DefineSuggesterResponse {
+export interface DefineSuggesterResponse {
   readonly Suggester: SuggesterStatus;
 }
 
-interface DeleteAnalysisSchemeRequest {
+export interface DeleteAnalysisSchemeRequest {
   readonly DomainName: string;
   readonly AnalysisSchemeName: string;
 }
 
-interface DeleteAnalysisSchemeResponse {
+export interface DeleteAnalysisSchemeResponse {
   readonly AnalysisScheme: AnalysisSchemeStatus;
 }
 
-interface DeleteDomainRequest {
+export interface DeleteDomainRequest {
   readonly DomainName: string;
 }
 
-interface DeleteDomainResponse {
-  readonly DomainStatus: DomainStatus;
+export interface DeleteDomainResponse {
+  readonly DomainStatus?: DomainStatus;
 }
 
-interface DeleteExpressionRequest {
+export interface DeleteExpressionRequest {
   readonly DomainName: string;
   readonly ExpressionName: string;
 }
 
-interface DeleteExpressionResponse {
+export interface DeleteExpressionResponse {
   readonly Expression: ExpressionStatus;
 }
 
-interface DeleteIndexFieldRequest {
+export interface DeleteIndexFieldRequest {
   readonly DomainName: string;
   readonly IndexFieldName: string;
 }
 
-interface DeleteIndexFieldResponse {
+export interface DeleteIndexFieldResponse {
   readonly IndexField: IndexFieldStatus;
 }
 
-interface DeleteSuggesterRequest {
+export interface DeleteSuggesterRequest {
   readonly DomainName: string;
   readonly SuggesterName: string;
 }
 
-interface DeleteSuggesterResponse {
+export interface DeleteSuggesterResponse {
   readonly Suggester: SuggesterStatus;
 }
 
-interface DescribeAnalysisSchemesRequest {
+export interface DescribeAnalysisSchemesRequest {
   readonly DomainName: string;
-  readonly AnalysisSchemeNames: [];
-  readonly Deployed: boolean;
+  readonly AnalysisSchemeNames?: [];
+  readonly Deployed?: boolean;
 }
 
-interface DescribeAnalysisSchemesResponse {
+export interface DescribeAnalysisSchemesResponse {
   readonly AnalysisSchemes: [];
 }
 
-interface DescribeAvailabilityOptionsRequest {
+export interface DescribeAvailabilityOptionsRequest {
   readonly DomainName: string;
-  readonly Deployed: boolean;
+  readonly Deployed?: boolean;
 }
 
-interface DescribeAvailabilityOptionsResponse {
-  readonly AvailabilityOptions: AvailabilityOptionsStatus;
+export interface DescribeAvailabilityOptionsResponse {
+  readonly AvailabilityOptions?: AvailabilityOptionsStatus;
 }
 
-interface DescribeDomainEndpointOptionsRequest {
+export interface DescribeDomainEndpointOptionsRequest {
   readonly DomainName: string;
-  readonly Deployed: boolean;
+  readonly Deployed?: boolean;
 }
 
-interface DescribeDomainEndpointOptionsResponse {
-  readonly DomainEndpointOptions: DomainEndpointOptionsStatus;
+export interface DescribeDomainEndpointOptionsResponse {
+  readonly DomainEndpointOptions?: DomainEndpointOptionsStatus;
 }
 
-interface DescribeDomainsRequest {
-  readonly DomainNames: [];
+export interface DescribeDomainsRequest {
+  readonly DomainNames?: [];
 }
 
-interface DescribeDomainsResponse {
+export interface DescribeDomainsResponse {
   readonly DomainStatusList: [];
 }
 
-interface DescribeExpressionsRequest {
+export interface DescribeExpressionsRequest {
   readonly DomainName: string;
-  readonly ExpressionNames: [];
-  readonly Deployed: boolean;
+  readonly ExpressionNames?: [];
+  readonly Deployed?: boolean;
 }
 
-interface DescribeExpressionsResponse {
+export interface DescribeExpressionsResponse {
   readonly Expressions: [];
 }
 
-interface DescribeIndexFieldsRequest {
+export interface DescribeIndexFieldsRequest {
   readonly DomainName: string;
-  readonly FieldNames: [];
-  readonly Deployed: boolean;
+  readonly FieldNames?: [];
+  readonly Deployed?: boolean;
 }
 
-interface DescribeIndexFieldsResponse {
+export interface DescribeIndexFieldsResponse {
   readonly IndexFields: [];
 }
 
-interface DescribeScalingParametersRequest {
+export interface DescribeScalingParametersRequest {
   readonly DomainName: string;
 }
 
-interface DescribeScalingParametersResponse {
+export interface DescribeScalingParametersResponse {
   readonly ScalingParameters: ScalingParametersStatus;
 }
 
-interface DescribeServiceAccessPoliciesRequest {
+export interface DescribeServiceAccessPoliciesRequest {
   readonly DomainName: string;
-  readonly Deployed: boolean;
+  readonly Deployed?: boolean;
 }
 
-interface DescribeServiceAccessPoliciesResponse {
+export interface DescribeServiceAccessPoliciesResponse {
   readonly AccessPolicies: AccessPoliciesStatus;
 }
 
-interface DescribeSuggestersRequest {
+export interface DescribeSuggestersRequest {
   readonly DomainName: string;
-  readonly SuggesterNames: [];
-  readonly Deployed: boolean;
+  readonly SuggesterNames?: [];
+  readonly Deployed?: boolean;
 }
 
-interface DescribeSuggestersResponse {
+export interface DescribeSuggestersResponse {
   readonly Suggesters: [];
 }
 
-interface DisabledOperationException {
+export interface DisabledOperationException {
 }
 
-interface DocumentSuggesterOptions {
+export interface DocumentSuggesterOptions {
   readonly SourceField: string;
-  readonly FuzzyMatching: string;
-  readonly SortExpression: string;
+  readonly FuzzyMatching?: string;
+  readonly SortExpression?: string;
 }
 
-interface DomainEndpointOptions {
-  readonly EnforceHTTPS: boolean;
-  readonly TLSSecurityPolicy: string;
+export interface DomainEndpointOptions {
+  readonly EnforceHTTPS?: boolean;
+  readonly TLSSecurityPolicy?: string;
 }
 
-interface DomainEndpointOptionsStatus {
+export interface DomainEndpointOptionsStatus {
   readonly Options: DomainEndpointOptions;
   readonly Status: OptionStatus;
 }
 
-interface DomainStatus {
+export interface DomainStatus {
   readonly DomainId: string;
   readonly DomainName: string;
-  readonly ARN: string;
-  readonly Created: boolean;
-  readonly Deleted: boolean;
-  readonly DocService: ServiceEndpoint;
-  readonly SearchService: ServiceEndpoint;
+  readonly ARN?: string;
+  readonly Created?: boolean;
+  readonly Deleted?: boolean;
+  readonly DocService?: ServiceEndpoint;
+  readonly SearchService?: ServiceEndpoint;
   readonly RequiresIndexDocuments: boolean;
-  readonly Processing: boolean;
-  readonly SearchInstanceType: string;
-  readonly SearchPartitionCount: number;
-  readonly SearchInstanceCount: number;
-  readonly Limits: Limits;
+  readonly Processing?: boolean;
+  readonly SearchInstanceType?: string;
+  readonly SearchPartitionCount?: number;
+  readonly SearchInstanceCount?: number;
+  readonly Limits?: Limits;
 }
 
-interface DoubleArrayOptions {
-  readonly DefaultValue: unknown;
-  readonly SourceFields: string;
-  readonly FacetEnabled: boolean;
-  readonly SearchEnabled: boolean;
-  readonly ReturnEnabled: boolean;
+export interface DoubleArrayOptions {
+  readonly DefaultValue?: unknown;
+  readonly SourceFields?: string;
+  readonly FacetEnabled?: boolean;
+  readonly SearchEnabled?: boolean;
+  readonly ReturnEnabled?: boolean;
 }
 
-interface DoubleOptions {
-  readonly DefaultValue: unknown;
-  readonly SourceField: string;
-  readonly FacetEnabled: boolean;
-  readonly SearchEnabled: boolean;
-  readonly ReturnEnabled: boolean;
-  readonly SortEnabled: boolean;
+export interface DoubleOptions {
+  readonly DefaultValue?: unknown;
+  readonly SourceField?: string;
+  readonly FacetEnabled?: boolean;
+  readonly SearchEnabled?: boolean;
+  readonly ReturnEnabled?: boolean;
+  readonly SortEnabled?: boolean;
 }
 
-interface Expression {
+export interface Expression {
   readonly ExpressionName: string;
   readonly ExpressionValue: string;
 }
 
-interface ExpressionStatus {
+export interface ExpressionStatus {
   readonly Options: Expression;
   readonly Status: OptionStatus;
 }
 
-interface IndexDocumentsRequest {
+export interface IndexDocumentsRequest {
   readonly DomainName: string;
 }
 
-interface IndexDocumentsResponse {
-  readonly FieldNames: [];
+export interface IndexDocumentsResponse {
+  readonly FieldNames?: [];
 }
 
-interface IndexField {
+export interface IndexField {
   readonly IndexFieldName: string;
   readonly IndexFieldType: string;
-  readonly IntOptions: IntOptions;
-  readonly DoubleOptions: DoubleOptions;
-  readonly LiteralOptions: LiteralOptions;
-  readonly TextOptions: TextOptions;
-  readonly DateOptions: DateOptions;
-  readonly LatLonOptions: LatLonOptions;
-  readonly IntArrayOptions: IntArrayOptions;
-  readonly DoubleArrayOptions: DoubleArrayOptions;
-  readonly LiteralArrayOptions: LiteralArrayOptions;
-  readonly TextArrayOptions: TextArrayOptions;
-  readonly DateArrayOptions: DateArrayOptions;
+  readonly IntOptions?: IntOptions;
+  readonly DoubleOptions?: DoubleOptions;
+  readonly LiteralOptions?: LiteralOptions;
+  readonly TextOptions?: TextOptions;
+  readonly DateOptions?: DateOptions;
+  readonly LatLonOptions?: LatLonOptions;
+  readonly IntArrayOptions?: IntArrayOptions;
+  readonly DoubleArrayOptions?: DoubleArrayOptions;
+  readonly LiteralArrayOptions?: LiteralArrayOptions;
+  readonly TextArrayOptions?: TextArrayOptions;
+  readonly DateArrayOptions?: DateArrayOptions;
 }
 
-interface IndexFieldStatus {
+export interface IndexFieldStatus {
   readonly Options: IndexField;
   readonly Status: OptionStatus;
 }
 
-interface IntArrayOptions {
-  readonly DefaultValue: number;
-  readonly SourceFields: string;
-  readonly FacetEnabled: boolean;
-  readonly SearchEnabled: boolean;
-  readonly ReturnEnabled: boolean;
+export interface IntArrayOptions {
+  readonly DefaultValue?: number;
+  readonly SourceFields?: string;
+  readonly FacetEnabled?: boolean;
+  readonly SearchEnabled?: boolean;
+  readonly ReturnEnabled?: boolean;
 }
 
-interface IntOptions {
-  readonly DefaultValue: number;
-  readonly SourceField: string;
-  readonly FacetEnabled: boolean;
-  readonly SearchEnabled: boolean;
-  readonly ReturnEnabled: boolean;
-  readonly SortEnabled: boolean;
+export interface IntOptions {
+  readonly DefaultValue?: number;
+  readonly SourceField?: string;
+  readonly FacetEnabled?: boolean;
+  readonly SearchEnabled?: boolean;
+  readonly ReturnEnabled?: boolean;
+  readonly SortEnabled?: boolean;
 }
 
-interface InternalException {
+export interface InternalException {
 }
 
-interface InvalidTypeException {
+export interface InvalidTypeException {
 }
 
-interface LatLonOptions {
-  readonly DefaultValue: string;
-  readonly SourceField: string;
-  readonly FacetEnabled: boolean;
-  readonly SearchEnabled: boolean;
-  readonly ReturnEnabled: boolean;
-  readonly SortEnabled: boolean;
+export interface LatLonOptions {
+  readonly DefaultValue?: string;
+  readonly SourceField?: string;
+  readonly FacetEnabled?: boolean;
+  readonly SearchEnabled?: boolean;
+  readonly ReturnEnabled?: boolean;
+  readonly SortEnabled?: boolean;
 }
 
-interface LimitExceededException {
+export interface LimitExceededException {
 }
 
-interface Limits {
+export interface Limits {
   readonly MaximumReplicationCount: number;
   readonly MaximumPartitionCount: number;
 }
 
-interface ListDomainNamesResponse {
-  readonly DomainNames: {[key: string]: any};
+export interface ListDomainNamesResponse {
+  readonly DomainNames?: {[key: string]: any};
 }
 
-interface LiteralArrayOptions {
-  readonly DefaultValue: string;
-  readonly SourceFields: string;
-  readonly FacetEnabled: boolean;
-  readonly SearchEnabled: boolean;
-  readonly ReturnEnabled: boolean;
+export interface LiteralArrayOptions {
+  readonly DefaultValue?: string;
+  readonly SourceFields?: string;
+  readonly FacetEnabled?: boolean;
+  readonly SearchEnabled?: boolean;
+  readonly ReturnEnabled?: boolean;
 }
 
-interface LiteralOptions {
-  readonly DefaultValue: string;
-  readonly SourceField: string;
-  readonly FacetEnabled: boolean;
-  readonly SearchEnabled: boolean;
-  readonly ReturnEnabled: boolean;
-  readonly SortEnabled: boolean;
+export interface LiteralOptions {
+  readonly DefaultValue?: string;
+  readonly SourceField?: string;
+  readonly FacetEnabled?: boolean;
+  readonly SearchEnabled?: boolean;
+  readonly ReturnEnabled?: boolean;
+  readonly SortEnabled?: boolean;
 }
 
-interface OptionStatus {
+export interface OptionStatus {
   readonly CreationDate: Date;
   readonly UpdateDate: Date;
-  readonly UpdateVersion: number;
+  readonly UpdateVersion?: number;
   readonly State: string;
-  readonly PendingDeletion: boolean;
+  readonly PendingDeletion?: boolean;
 }
 
-interface ResourceAlreadyExistsException {
+export interface ResourceAlreadyExistsException {
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
 }
 
-interface ScalingParameters {
-  readonly DesiredInstanceType: string;
-  readonly DesiredReplicationCount: number;
-  readonly DesiredPartitionCount: number;
+export interface ScalingParameters {
+  readonly DesiredInstanceType?: string;
+  readonly DesiredReplicationCount?: number;
+  readonly DesiredPartitionCount?: number;
 }
 
-interface ScalingParametersStatus {
+export interface ScalingParametersStatus {
   readonly Options: ScalingParameters;
   readonly Status: OptionStatus;
 }
 
-interface ServiceEndpoint {
-  readonly Endpoint: string;
+export interface ServiceEndpoint {
+  readonly Endpoint?: string;
 }
 
-interface Suggester {
+export interface Suggester {
   readonly SuggesterName: string;
   readonly DocumentSuggesterOptions: DocumentSuggesterOptions;
 }
 
-interface SuggesterStatus {
+export interface SuggesterStatus {
   readonly Options: Suggester;
   readonly Status: OptionStatus;
 }
 
-interface TextArrayOptions {
-  readonly DefaultValue: string;
-  readonly SourceFields: string;
-  readonly ReturnEnabled: boolean;
-  readonly HighlightEnabled: boolean;
-  readonly AnalysisScheme: string;
+export interface TextArrayOptions {
+  readonly DefaultValue?: string;
+  readonly SourceFields?: string;
+  readonly ReturnEnabled?: boolean;
+  readonly HighlightEnabled?: boolean;
+  readonly AnalysisScheme?: string;
 }
 
-interface TextOptions {
-  readonly DefaultValue: string;
-  readonly SourceField: string;
-  readonly ReturnEnabled: boolean;
-  readonly SortEnabled: boolean;
-  readonly HighlightEnabled: boolean;
-  readonly AnalysisScheme: string;
+export interface TextOptions {
+  readonly DefaultValue?: string;
+  readonly SourceField?: string;
+  readonly ReturnEnabled?: boolean;
+  readonly SortEnabled?: boolean;
+  readonly HighlightEnabled?: boolean;
+  readonly AnalysisScheme?: string;
 }
 
-interface UpdateAvailabilityOptionsRequest {
+export interface UpdateAvailabilityOptionsRequest {
   readonly DomainName: string;
   readonly MultiAZ: boolean;
 }
 
-interface UpdateAvailabilityOptionsResponse {
-  readonly AvailabilityOptions: AvailabilityOptionsStatus;
+export interface UpdateAvailabilityOptionsResponse {
+  readonly AvailabilityOptions?: AvailabilityOptionsStatus;
 }
 
-interface UpdateDomainEndpointOptionsRequest {
+export interface UpdateDomainEndpointOptionsRequest {
   readonly DomainName: string;
   readonly DomainEndpointOptions: DomainEndpointOptions;
 }
 
-interface UpdateDomainEndpointOptionsResponse {
-  readonly DomainEndpointOptions: DomainEndpointOptionsStatus;
+export interface UpdateDomainEndpointOptionsResponse {
+  readonly DomainEndpointOptions?: DomainEndpointOptionsStatus;
 }
 
-interface UpdateScalingParametersRequest {
+export interface UpdateScalingParametersRequest {
   readonly DomainName: string;
   readonly ScalingParameters: ScalingParameters;
 }
 
-interface UpdateScalingParametersResponse {
+export interface UpdateScalingParametersResponse {
   readonly ScalingParameters: ScalingParametersStatus;
 }
 
-interface UpdateServiceAccessPoliciesRequest {
+export interface UpdateServiceAccessPoliciesRequest {
   readonly DomainName: string;
   readonly AccessPolicies: string;
 }
 
-interface UpdateServiceAccessPoliciesResponse {
+export interface UpdateServiceAccessPoliciesResponse {
   readonly AccessPolicies: AccessPoliciesStatus;
 }
 
-interface ValidationException {
+export interface ValidationException {
 }
+
 

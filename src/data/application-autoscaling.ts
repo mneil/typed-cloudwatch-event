@@ -7,17 +7,20 @@ export interface DeleteScalingPolicy {
   readonly ResourceId: string;
   readonly ScalableDimension: string;
 }
+
 export interface DeleteScheduledAction {
   readonly ServiceNamespace: string;
   readonly ScheduledActionName: string;
   readonly ResourceId: string;
   readonly ScalableDimension: string;
 }
+
 export interface DeregisterScalableTarget {
   readonly ServiceNamespace: string;
   readonly ResourceId: string;
   readonly ScalableDimension: string;
 }
+
 export interface DescribeScalableTargets {
   readonly ServiceNamespace: string;
   readonly ResourceIds?: [];
@@ -25,6 +28,7 @@ export interface DescribeScalableTargets {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeScalingActivities {
   readonly ServiceNamespace: string;
   readonly ResourceId?: string;
@@ -32,6 +36,7 @@ export interface DescribeScalingActivities {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeScalingPolicies {
   readonly PolicyNames?: [];
   readonly ServiceNamespace: string;
@@ -40,6 +45,7 @@ export interface DescribeScalingPolicies {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeScheduledActions {
   readonly ScheduledActionNames?: [];
   readonly ServiceNamespace: string;
@@ -48,6 +54,7 @@ export interface DescribeScheduledActions {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface PutScalingPolicy {
   readonly PolicyName: string;
   readonly ServiceNamespace: string;
@@ -57,6 +64,7 @@ export interface PutScalingPolicy {
   readonly StepScalingPolicyConfiguration?: StepScalingPolicyConfiguration;
   readonly TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration;
 }
+
 export interface PutScheduledAction {
   readonly ServiceNamespace: string;
   readonly Schedule?: string;
@@ -68,6 +76,7 @@ export interface PutScheduledAction {
   readonly EndTime?: Date;
   readonly ScalableTargetAction?: ScalableTargetAction;
 }
+
 export interface RegisterScalableTarget {
   readonly ServiceNamespace: string;
   readonly ResourceId: string;
@@ -78,182 +87,180 @@ export interface RegisterScalableTarget {
   readonly SuspendedState?: SuspendedState;
 }
 
-
-
-interface Alarm {
+export interface Alarm {
   readonly AlarmName: string;
   readonly AlarmARN: string;
 }
 
-interface ConcurrentUpdateException {
-  readonly Message: string;
+export interface ConcurrentUpdateException {
+  readonly Message?: string;
 }
 
-interface CustomizedMetricSpecification {
+export interface CustomizedMetricSpecification {
   readonly MetricName: string;
   readonly Namespace: string;
-  readonly Dimensions: [];
+  readonly Dimensions?: [];
   readonly Statistic: string;
-  readonly Unit: string;
+  readonly Unit?: string;
 }
 
-interface DeleteScalingPolicyRequest {
+export interface DeleteScalingPolicyRequest {
   readonly PolicyName: string;
   readonly ServiceNamespace: string;
   readonly ResourceId: string;
   readonly ScalableDimension: string;
 }
 
-interface DeleteScalingPolicyResponse {
+export interface DeleteScalingPolicyResponse {
 }
 
-interface DeleteScheduledActionRequest {
+export interface DeleteScheduledActionRequest {
   readonly ServiceNamespace: string;
   readonly ScheduledActionName: string;
   readonly ResourceId: string;
   readonly ScalableDimension: string;
 }
 
-interface DeleteScheduledActionResponse {
+export interface DeleteScheduledActionResponse {
 }
 
-interface DeregisterScalableTargetRequest {
+export interface DeregisterScalableTargetRequest {
   readonly ServiceNamespace: string;
   readonly ResourceId: string;
   readonly ScalableDimension: string;
 }
 
-interface DeregisterScalableTargetResponse {
+export interface DeregisterScalableTargetResponse {
 }
 
-interface DescribeScalableTargetsRequest {
+export interface DescribeScalableTargetsRequest {
   readonly ServiceNamespace: string;
-  readonly ResourceIds: [];
-  readonly ScalableDimension: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ResourceIds?: [];
+  readonly ScalableDimension?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeScalableTargetsResponse {
-  readonly ScalableTargets: [];
-  readonly NextToken: string;
+export interface DescribeScalableTargetsResponse {
+  readonly ScalableTargets?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeScalingActivitiesRequest {
+export interface DescribeScalingActivitiesRequest {
   readonly ServiceNamespace: string;
-  readonly ResourceId: string;
-  readonly ScalableDimension: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ResourceId?: string;
+  readonly ScalableDimension?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeScalingActivitiesResponse {
-  readonly ScalingActivities: [];
-  readonly NextToken: string;
+export interface DescribeScalingActivitiesResponse {
+  readonly ScalingActivities?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeScalingPoliciesRequest {
-  readonly PolicyNames: [];
+export interface DescribeScalingPoliciesRequest {
+  readonly PolicyNames?: [];
   readonly ServiceNamespace: string;
-  readonly ResourceId: string;
-  readonly ScalableDimension: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ResourceId?: string;
+  readonly ScalableDimension?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeScalingPoliciesResponse {
-  readonly ScalingPolicies: [];
-  readonly NextToken: string;
+export interface DescribeScalingPoliciesResponse {
+  readonly ScalingPolicies?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeScheduledActionsRequest {
-  readonly ScheduledActionNames: [];
+export interface DescribeScheduledActionsRequest {
+  readonly ScheduledActionNames?: [];
   readonly ServiceNamespace: string;
-  readonly ResourceId: string;
-  readonly ScalableDimension: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ResourceId?: string;
+  readonly ScalableDimension?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeScheduledActionsResponse {
-  readonly ScheduledActions: [];
-  readonly NextToken: string;
+export interface DescribeScheduledActionsResponse {
+  readonly ScheduledActions?: [];
+  readonly NextToken?: string;
 }
 
-interface FailedResourceAccessException {
-  readonly Message: string;
+export interface FailedResourceAccessException {
+  readonly Message?: string;
 }
 
-interface InternalServiceException {
-  readonly Message: string;
+export interface InternalServiceException {
+  readonly Message?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly Message: string;
+export interface InvalidNextTokenException {
+  readonly Message?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface MetricDimension {
+export interface MetricDimension {
   readonly Name: string;
   readonly Value: string;
 }
 
-interface ObjectNotFoundException {
-  readonly Message: string;
+export interface ObjectNotFoundException {
+  readonly Message?: string;
 }
 
-interface PredefinedMetricSpecification {
+export interface PredefinedMetricSpecification {
   readonly PredefinedMetricType: string;
-  readonly ResourceLabel: string;
+  readonly ResourceLabel?: string;
 }
 
-interface PutScalingPolicyRequest {
+export interface PutScalingPolicyRequest {
   readonly PolicyName: string;
   readonly ServiceNamespace: string;
   readonly ResourceId: string;
   readonly ScalableDimension: string;
-  readonly PolicyType: string;
-  readonly StepScalingPolicyConfiguration: StepScalingPolicyConfiguration;
-  readonly TargetTrackingScalingPolicyConfiguration: TargetTrackingScalingPolicyConfiguration;
+  readonly PolicyType?: string;
+  readonly StepScalingPolicyConfiguration?: StepScalingPolicyConfiguration;
+  readonly TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration;
 }
 
-interface PutScalingPolicyResponse {
+export interface PutScalingPolicyResponse {
   readonly PolicyARN: string;
-  readonly Alarms: [];
+  readonly Alarms?: [];
 }
 
-interface PutScheduledActionRequest {
+export interface PutScheduledActionRequest {
   readonly ServiceNamespace: string;
-  readonly Schedule: string;
-  readonly Timezone: string;
+  readonly Schedule?: string;
+  readonly Timezone?: string;
   readonly ScheduledActionName: string;
   readonly ResourceId: string;
   readonly ScalableDimension: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly ScalableTargetAction: ScalableTargetAction;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly ScalableTargetAction?: ScalableTargetAction;
 }
 
-interface PutScheduledActionResponse {
+export interface PutScheduledActionResponse {
 }
 
-interface RegisterScalableTargetRequest {
+export interface RegisterScalableTargetRequest {
   readonly ServiceNamespace: string;
   readonly ResourceId: string;
   readonly ScalableDimension: string;
-  readonly MinCapacity: number;
-  readonly MaxCapacity: number;
-  readonly RoleARN: string;
-  readonly SuspendedState: SuspendedState;
+  readonly MinCapacity?: number;
+  readonly MaxCapacity?: number;
+  readonly RoleARN?: string;
+  readonly SuspendedState?: SuspendedState;
 }
 
-interface RegisterScalableTargetResponse {
+export interface RegisterScalableTargetResponse {
 }
 
-interface ScalableTarget {
+export interface ScalableTarget {
   readonly ServiceNamespace: string;
   readonly ResourceId: string;
   readonly ScalableDimension: string;
@@ -261,15 +268,15 @@ interface ScalableTarget {
   readonly MaxCapacity: number;
   readonly RoleARN: string;
   readonly CreationTime: Date;
-  readonly SuspendedState: SuspendedState;
+  readonly SuspendedState?: SuspendedState;
 }
 
-interface ScalableTargetAction {
-  readonly MinCapacity: number;
-  readonly MaxCapacity: number;
+export interface ScalableTargetAction {
+  readonly MinCapacity?: number;
+  readonly MaxCapacity?: number;
 }
 
-interface ScalingActivity {
+export interface ScalingActivity {
   readonly ActivityId: string;
   readonly ServiceNamespace: string;
   readonly ResourceId: string;
@@ -277,69 +284,70 @@ interface ScalingActivity {
   readonly Description: string;
   readonly Cause: string;
   readonly StartTime: Date;
-  readonly EndTime: Date;
+  readonly EndTime?: Date;
   readonly StatusCode: string;
-  readonly StatusMessage: string;
-  readonly Details: string;
+  readonly StatusMessage?: string;
+  readonly Details?: string;
 }
 
-interface ScalingPolicy {
+export interface ScalingPolicy {
   readonly PolicyARN: string;
   readonly PolicyName: string;
   readonly ServiceNamespace: string;
   readonly ResourceId: string;
   readonly ScalableDimension: string;
   readonly PolicyType: string;
-  readonly StepScalingPolicyConfiguration: StepScalingPolicyConfiguration;
-  readonly TargetTrackingScalingPolicyConfiguration: TargetTrackingScalingPolicyConfiguration;
-  readonly Alarms: [];
+  readonly StepScalingPolicyConfiguration?: StepScalingPolicyConfiguration;
+  readonly TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration;
+  readonly Alarms?: [];
   readonly CreationTime: Date;
 }
 
-interface ScheduledAction {
+export interface ScheduledAction {
   readonly ScheduledActionName: string;
   readonly ScheduledActionARN: string;
   readonly ServiceNamespace: string;
   readonly Schedule: string;
-  readonly Timezone: string;
+  readonly Timezone?: string;
   readonly ResourceId: string;
-  readonly ScalableDimension: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly ScalableTargetAction: ScalableTargetAction;
+  readonly ScalableDimension?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly ScalableTargetAction?: ScalableTargetAction;
   readonly CreationTime: Date;
 }
 
-interface StepAdjustment {
-  readonly MetricIntervalLowerBound: unknown;
-  readonly MetricIntervalUpperBound: unknown;
+export interface StepAdjustment {
+  readonly MetricIntervalLowerBound?: unknown;
+  readonly MetricIntervalUpperBound?: unknown;
   readonly ScalingAdjustment: number;
 }
 
-interface StepScalingPolicyConfiguration {
-  readonly AdjustmentType: string;
-  readonly StepAdjustments: [];
-  readonly MinAdjustmentMagnitude: number;
-  readonly Cooldown: number;
-  readonly MetricAggregationType: string;
+export interface StepScalingPolicyConfiguration {
+  readonly AdjustmentType?: string;
+  readonly StepAdjustments?: [];
+  readonly MinAdjustmentMagnitude?: number;
+  readonly Cooldown?: number;
+  readonly MetricAggregationType?: string;
 }
 
-interface SuspendedState {
-  readonly DynamicScalingInSuspended: boolean;
-  readonly DynamicScalingOutSuspended: boolean;
-  readonly ScheduledScalingSuspended: boolean;
+export interface SuspendedState {
+  readonly DynamicScalingInSuspended?: boolean;
+  readonly DynamicScalingOutSuspended?: boolean;
+  readonly ScheduledScalingSuspended?: boolean;
 }
 
-interface TargetTrackingScalingPolicyConfiguration {
+export interface TargetTrackingScalingPolicyConfiguration {
   readonly TargetValue: unknown;
-  readonly PredefinedMetricSpecification: PredefinedMetricSpecification;
-  readonly CustomizedMetricSpecification: CustomizedMetricSpecification;
-  readonly ScaleOutCooldown: number;
-  readonly ScaleInCooldown: number;
-  readonly DisableScaleIn: boolean;
+  readonly PredefinedMetricSpecification?: PredefinedMetricSpecification;
+  readonly CustomizedMetricSpecification?: CustomizedMetricSpecification;
+  readonly ScaleOutCooldown?: number;
+  readonly ScaleInCooldown?: number;
+  readonly DisableScaleIn?: boolean;
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

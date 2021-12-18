@@ -6,29 +6,35 @@ export interface AssociateEntitiesToExperience {
   readonly IndexId: string;
   readonly EntityList: [];
 }
+
 export interface AssociatePersonasToEntities {
   readonly Id: string;
   readonly IndexId: string;
   readonly Personas: [];
 }
+
 export interface BatchDeleteDocument {
   readonly IndexId: string;
   readonly DocumentIdList: [];
   readonly DataSourceSyncJobMetricTarget?: DataSourceSyncJobMetricTarget;
 }
+
 export interface BatchGetDocumentStatus {
   readonly IndexId: string;
   readonly DocumentInfoList: [];
 }
+
 export interface BatchPutDocument {
   readonly IndexId: string;
   readonly RoleArn?: string;
   readonly Documents: [];
   readonly CustomDocumentEnrichmentConfiguration?: CustomDocumentEnrichmentConfiguration;
 }
+
 export interface ClearQuerySuggestions {
   readonly IndexId: string;
 }
+
 export interface CreateDataSource {
   readonly Name: string;
   readonly IndexId: string;
@@ -42,6 +48,7 @@ export interface CreateDataSource {
   readonly LanguageCode?: string;
   readonly CustomDocumentEnrichmentConfiguration?: CustomDocumentEnrichmentConfiguration;
 }
+
 export interface CreateExperience {
   readonly Name: string;
   readonly IndexId: string;
@@ -50,6 +57,7 @@ export interface CreateExperience {
   readonly Description?: string;
   readonly ClientToken?: string;
 }
+
 export interface CreateFaq {
   readonly IndexId: string;
   readonly Name: string;
@@ -61,6 +69,7 @@ export interface CreateFaq {
   readonly ClientToken?: string;
   readonly LanguageCode?: string;
 }
+
 export interface CreateIndex {
   readonly Name: string;
   readonly Edition?: string;
@@ -73,6 +82,7 @@ export interface CreateIndex {
   readonly UserContextPolicy?: string;
   readonly UserGroupResolutionConfiguration?: UserGroupResolutionConfiguration;
 }
+
 export interface CreateQuerySuggestionsBlockList {
   readonly IndexId: string;
   readonly Name: string;
@@ -82,6 +92,7 @@ export interface CreateQuerySuggestionsBlockList {
   readonly RoleArn: string;
   readonly Tags?: [];
 }
+
 export interface CreateThesaurus {
   readonly IndexId: string;
   readonly Name: string;
@@ -91,81 +102,100 @@ export interface CreateThesaurus {
   readonly SourceS3Path: S3Path;
   readonly ClientToken?: string;
 }
+
 export interface DeleteDataSource {
   readonly Id: string;
   readonly IndexId: string;
 }
+
 export interface DeleteExperience {
   readonly Id: string;
   readonly IndexId: string;
 }
+
 export interface DeleteFaq {
   readonly Id: string;
   readonly IndexId: string;
 }
+
 export interface DeleteIndex {
   readonly Id: string;
 }
+
 export interface DeletePrincipalMapping {
   readonly IndexId: string;
   readonly DataSourceId?: string;
   readonly GroupId: string;
   readonly OrderingId?: number;
 }
+
 export interface DeleteQuerySuggestionsBlockList {
   readonly IndexId: string;
   readonly Id: string;
 }
+
 export interface DeleteThesaurus {
   readonly Id: string;
   readonly IndexId: string;
 }
+
 export interface DescribeDataSource {
   readonly Id: string;
   readonly IndexId: string;
 }
+
 export interface DescribeExperience {
   readonly Id: string;
   readonly IndexId: string;
 }
+
 export interface DescribeFaq {
   readonly Id: string;
   readonly IndexId: string;
 }
+
 export interface DescribeIndex {
   readonly Id: string;
 }
+
 export interface DescribePrincipalMapping {
   readonly IndexId: string;
   readonly DataSourceId?: string;
   readonly GroupId: string;
 }
+
 export interface DescribeQuerySuggestionsBlockList {
   readonly IndexId: string;
   readonly Id: string;
 }
+
 export interface DescribeQuerySuggestionsConfig {
   readonly IndexId: string;
 }
+
 export interface DescribeThesaurus {
   readonly Id: string;
   readonly IndexId: string;
 }
+
 export interface DisassociateEntitiesFromExperience {
   readonly Id: string;
   readonly IndexId: string;
   readonly EntityList: [];
 }
+
 export interface DisassociatePersonasFromEntities {
   readonly Id: string;
   readonly IndexId: string;
   readonly EntityIds: [];
 }
+
 export interface GetQuerySuggestions {
   readonly IndexId: string;
   readonly QueryText: string;
   readonly MaxSuggestionsCount?: number;
 }
+
 export interface GetSnapshots {
   readonly IndexId: string;
   readonly Interval: string;
@@ -173,6 +203,7 @@ export interface GetSnapshots {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDataSourceSyncJobs {
   readonly Id: string;
   readonly IndexId: string;
@@ -181,32 +212,38 @@ export interface ListDataSourceSyncJobs {
   readonly StartTimeFilter?: TimeRange;
   readonly StatusFilter?: string;
 }
+
 export interface ListDataSources {
   readonly IndexId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListEntityPersonas {
   readonly Id: string;
   readonly IndexId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListExperienceEntities {
   readonly Id: string;
   readonly IndexId: string;
   readonly NextToken?: string;
 }
+
 export interface ListExperiences {
   readonly IndexId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListFaqs {
   readonly IndexId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListGroupsOlderThanOrderingId {
   readonly IndexId: string;
   readonly DataSourceId?: string;
@@ -214,23 +251,28 @@ export interface ListGroupsOlderThanOrderingId {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListIndices {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListQuerySuggestionsBlockLists {
   readonly IndexId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
+
 export interface ListThesauri {
   readonly IndexId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface PutPrincipalMapping {
   readonly IndexId: string;
   readonly DataSourceId?: string;
@@ -239,6 +281,7 @@ export interface PutPrincipalMapping {
   readonly OrderingId?: number;
   readonly RoleArn?: string;
 }
+
 export interface Query {
   readonly IndexId: string;
   readonly QueryText: string;
@@ -253,28 +296,34 @@ export interface Query {
   readonly UserContext?: UserContext;
   readonly VisitorId?: string;
 }
+
 export interface StartDataSourceSyncJob {
   readonly Id: string;
   readonly IndexId: string;
 }
+
 export interface StopDataSourceSyncJob {
   readonly Id: string;
   readonly IndexId: string;
 }
+
 export interface SubmitFeedback {
   readonly IndexId: string;
   readonly QueryId: string;
   readonly ClickFeedbackItems?: [];
   readonly RelevanceFeedbackItems?: [];
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateDataSource {
   readonly Id: string;
   readonly Name?: string;
@@ -286,6 +335,7 @@ export interface UpdateDataSource {
   readonly LanguageCode?: string;
   readonly CustomDocumentEnrichmentConfiguration?: CustomDocumentEnrichmentConfiguration;
 }
+
 export interface UpdateExperience {
   readonly Id: string;
   readonly Name?: string;
@@ -294,6 +344,7 @@ export interface UpdateExperience {
   readonly Configuration?: ExperienceConfiguration;
   readonly Description?: string;
 }
+
 export interface UpdateIndex {
   readonly Id: string;
   readonly Name?: string;
@@ -305,6 +356,7 @@ export interface UpdateIndex {
   readonly UserContextPolicy?: string;
   readonly UserGroupResolutionConfiguration?: UserGroupResolutionConfiguration;
 }
+
 export interface UpdateQuerySuggestionsBlockList {
   readonly IndexId: string;
   readonly Id: string;
@@ -313,6 +365,7 @@ export interface UpdateQuerySuggestionsBlockList {
   readonly SourceS3Path?: S3Path;
   readonly RoleArn?: string;
 }
+
 export interface UpdateQuerySuggestionsConfig {
   readonly IndexId: string;
   readonly Mode?: string;
@@ -321,6 +374,7 @@ export interface UpdateQuerySuggestionsConfig {
   readonly MinimumNumberOfQueryingUsers?: number;
   readonly MinimumQueryCount?: number;
 }
+
 export interface UpdateThesaurus {
   readonly Id: string;
   readonly Name?: string;
@@ -330,207 +384,205 @@ export interface UpdateThesaurus {
   readonly SourceS3Path?: S3Path;
 }
 
-
-
-interface AccessControlListConfiguration {
-  readonly KeyPath: string;
+export interface AccessControlListConfiguration {
+  readonly KeyPath?: string;
 }
 
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface AclConfiguration {
+export interface AclConfiguration {
   readonly AllowedGroupsColumnName: string;
 }
 
-interface AdditionalResultAttribute {
+export interface AdditionalResultAttribute {
   readonly Key: string;
   readonly ValueType: string;
   readonly Value: AdditionalResultAttributeValue;
 }
 
-interface AdditionalResultAttributeValue {
-  readonly TextWithHighlightsValue: TextWithHighlights;
+export interface AdditionalResultAttributeValue {
+  readonly TextWithHighlightsValue?: TextWithHighlights;
 }
 
-interface AssociateEntitiesToExperienceRequest {
+export interface AssociateEntitiesToExperienceRequest {
   readonly Id: string;
   readonly IndexId: string;
   readonly EntityList: [];
 }
 
-interface AssociateEntitiesToExperienceResponse {
-  readonly FailedEntityList: [];
+export interface AssociateEntitiesToExperienceResponse {
+  readonly FailedEntityList?: [];
 }
 
-interface AssociatePersonasToEntitiesRequest {
+export interface AssociatePersonasToEntitiesRequest {
   readonly Id: string;
   readonly IndexId: string;
   readonly Personas: [];
 }
 
-interface AssociatePersonasToEntitiesResponse {
-  readonly FailedEntityList: [];
+export interface AssociatePersonasToEntitiesResponse {
+  readonly FailedEntityList?: [];
 }
 
-interface AttributeFilter {
-  readonly AndAllFilters: [];
-  readonly OrAllFilters: [];
-  readonly NotFilter: AttributeFilter;
-  readonly EqualsTo: DocumentAttribute;
-  readonly ContainsAll: DocumentAttribute;
-  readonly ContainsAny: DocumentAttribute;
-  readonly GreaterThan: DocumentAttribute;
-  readonly GreaterThanOrEquals: DocumentAttribute;
-  readonly LessThan: DocumentAttribute;
-  readonly LessThanOrEquals: DocumentAttribute;
+export interface AttributeFilter {
+  readonly AndAllFilters?: [];
+  readonly OrAllFilters?: [];
+  readonly NotFilter?: AttributeFilter;
+  readonly EqualsTo?: DocumentAttribute;
+  readonly ContainsAll?: DocumentAttribute;
+  readonly ContainsAny?: DocumentAttribute;
+  readonly GreaterThan?: DocumentAttribute;
+  readonly GreaterThanOrEquals?: DocumentAttribute;
+  readonly LessThan?: DocumentAttribute;
+  readonly LessThanOrEquals?: DocumentAttribute;
 }
 
-interface AuthenticationConfiguration {
-  readonly BasicAuthentication: [];
+export interface AuthenticationConfiguration {
+  readonly BasicAuthentication?: [];
 }
 
-interface BasicAuthenticationConfiguration {
+export interface BasicAuthenticationConfiguration {
   readonly Host: string;
   readonly Port: number;
   readonly Credentials: string;
 }
 
-interface BatchDeleteDocumentRequest {
+export interface BatchDeleteDocumentRequest {
   readonly IndexId: string;
   readonly DocumentIdList: [];
-  readonly DataSourceSyncJobMetricTarget: DataSourceSyncJobMetricTarget;
+  readonly DataSourceSyncJobMetricTarget?: DataSourceSyncJobMetricTarget;
 }
 
-interface BatchDeleteDocumentResponse {
-  readonly FailedDocuments: [];
+export interface BatchDeleteDocumentResponse {
+  readonly FailedDocuments?: [];
 }
 
-interface BatchDeleteDocumentResponseFailedDocument {
-  readonly Id: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface BatchDeleteDocumentResponseFailedDocument {
+  readonly Id?: string;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface BatchGetDocumentStatusRequest {
+export interface BatchGetDocumentStatusRequest {
   readonly IndexId: string;
   readonly DocumentInfoList: [];
 }
 
-interface BatchGetDocumentStatusResponse {
-  readonly Errors: [];
-  readonly DocumentStatusList: [];
+export interface BatchGetDocumentStatusResponse {
+  readonly Errors?: [];
+  readonly DocumentStatusList?: [];
 }
 
-interface BatchGetDocumentStatusResponseError {
-  readonly DocumentId: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface BatchGetDocumentStatusResponseError {
+  readonly DocumentId?: string;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface BatchPutDocumentRequest {
+export interface BatchPutDocumentRequest {
   readonly IndexId: string;
-  readonly RoleArn: string;
+  readonly RoleArn?: string;
   readonly Documents: [];
-  readonly CustomDocumentEnrichmentConfiguration: CustomDocumentEnrichmentConfiguration;
+  readonly CustomDocumentEnrichmentConfiguration?: CustomDocumentEnrichmentConfiguration;
 }
 
-interface BatchPutDocumentResponse {
-  readonly FailedDocuments: [];
+export interface BatchPutDocumentResponse {
+  readonly FailedDocuments?: [];
 }
 
-interface BatchPutDocumentResponseFailedDocument {
-  readonly Id: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface BatchPutDocumentResponseFailedDocument {
+  readonly Id?: string;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface CapacityUnitsConfiguration {
+export interface CapacityUnitsConfiguration {
   readonly StorageCapacityUnits: number;
   readonly QueryCapacityUnits: number;
 }
 
-interface ClearQuerySuggestionsRequest {
+export interface ClearQuerySuggestionsRequest {
   readonly IndexId: string;
 }
 
-interface ClickFeedback {
+export interface ClickFeedback {
   readonly ResultId: string;
   readonly ClickTime: Date;
 }
 
-interface ColumnConfiguration {
+export interface ColumnConfiguration {
   readonly DocumentIdColumnName: string;
   readonly DocumentDataColumnName: string;
-  readonly DocumentTitleColumnName: string;
-  readonly FieldMappings: [];
+  readonly DocumentTitleColumnName?: string;
+  readonly FieldMappings?: [];
   readonly ChangeDetectingColumns: [];
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface ConfluenceAttachmentConfiguration {
-  readonly CrawlAttachments: boolean;
-  readonly AttachmentFieldMappings: [];
+export interface ConfluenceAttachmentConfiguration {
+  readonly CrawlAttachments?: boolean;
+  readonly AttachmentFieldMappings?: [];
 }
 
-interface ConfluenceAttachmentToIndexFieldMapping {
-  readonly DataSourceFieldName: string;
-  readonly DateFieldFormat: string;
-  readonly IndexFieldName: string;
+export interface ConfluenceAttachmentToIndexFieldMapping {
+  readonly DataSourceFieldName?: string;
+  readonly DateFieldFormat?: string;
+  readonly IndexFieldName?: string;
 }
 
-interface ConfluenceBlogConfiguration {
-  readonly BlogFieldMappings: [];
+export interface ConfluenceBlogConfiguration {
+  readonly BlogFieldMappings?: [];
 }
 
-interface ConfluenceBlogToIndexFieldMapping {
-  readonly DataSourceFieldName: string;
-  readonly DateFieldFormat: string;
-  readonly IndexFieldName: string;
+export interface ConfluenceBlogToIndexFieldMapping {
+  readonly DataSourceFieldName?: string;
+  readonly DateFieldFormat?: string;
+  readonly IndexFieldName?: string;
 }
 
-interface ConfluenceConfiguration {
+export interface ConfluenceConfiguration {
   readonly ServerUrl: string;
   readonly SecretArn: string;
   readonly Version: string;
-  readonly SpaceConfiguration: ConfluenceSpaceConfiguration;
-  readonly PageConfiguration: ConfluencePageConfiguration;
-  readonly BlogConfiguration: ConfluenceBlogConfiguration;
-  readonly AttachmentConfiguration: ConfluenceAttachmentConfiguration;
-  readonly VpcConfiguration: DataSourceVpcConfiguration;
-  readonly InclusionPatterns: [];
-  readonly ExclusionPatterns: [];
+  readonly SpaceConfiguration?: ConfluenceSpaceConfiguration;
+  readonly PageConfiguration?: ConfluencePageConfiguration;
+  readonly BlogConfiguration?: ConfluenceBlogConfiguration;
+  readonly AttachmentConfiguration?: ConfluenceAttachmentConfiguration;
+  readonly VpcConfiguration?: DataSourceVpcConfiguration;
+  readonly InclusionPatterns?: [];
+  readonly ExclusionPatterns?: [];
 }
 
-interface ConfluencePageConfiguration {
-  readonly PageFieldMappings: [];
+export interface ConfluencePageConfiguration {
+  readonly PageFieldMappings?: [];
 }
 
-interface ConfluencePageToIndexFieldMapping {
-  readonly DataSourceFieldName: string;
-  readonly DateFieldFormat: string;
-  readonly IndexFieldName: string;
+export interface ConfluencePageToIndexFieldMapping {
+  readonly DataSourceFieldName?: string;
+  readonly DateFieldFormat?: string;
+  readonly IndexFieldName?: string;
 }
 
-interface ConfluenceSpaceConfiguration {
-  readonly CrawlPersonalSpaces: boolean;
-  readonly CrawlArchivedSpaces: boolean;
-  readonly IncludeSpaces: [];
-  readonly ExcludeSpaces: [];
-  readonly SpaceFieldMappings: [];
+export interface ConfluenceSpaceConfiguration {
+  readonly CrawlPersonalSpaces?: boolean;
+  readonly CrawlArchivedSpaces?: boolean;
+  readonly IncludeSpaces?: [];
+  readonly ExcludeSpaces?: [];
+  readonly SpaceFieldMappings?: [];
 }
 
-interface ConfluenceSpaceToIndexFieldMapping {
-  readonly DataSourceFieldName: string;
-  readonly DateFieldFormat: string;
-  readonly IndexFieldName: string;
+export interface ConfluenceSpaceToIndexFieldMapping {
+  readonly DataSourceFieldName?: string;
+  readonly DateFieldFormat?: string;
+  readonly IndexFieldName?: string;
 }
 
-interface ConnectionConfiguration {
+export interface ConnectionConfiguration {
   readonly DatabaseHost: string;
   readonly DatabasePort: number;
   readonly DatabaseName: string;
@@ -538,1238 +590,1239 @@ interface ConnectionConfiguration {
   readonly SecretArn: string;
 }
 
-interface ContentSourceConfiguration {
-  readonly DataSourceIds: [];
-  readonly FaqIds: [];
-  readonly DirectPutContent: boolean;
+export interface ContentSourceConfiguration {
+  readonly DataSourceIds?: [];
+  readonly FaqIds?: [];
+  readonly DirectPutContent?: boolean;
 }
 
-interface CreateDataSourceRequest {
+export interface CreateDataSourceRequest {
   readonly Name: string;
   readonly IndexId: string;
   readonly Type: string;
-  readonly Configuration: DataSourceConfiguration;
-  readonly Description: string;
-  readonly Schedule: string;
-  readonly RoleArn: string;
-  readonly Tags: [];
-  readonly ClientToken: string;
-  readonly LanguageCode: string;
-  readonly CustomDocumentEnrichmentConfiguration: CustomDocumentEnrichmentConfiguration;
+  readonly Configuration?: DataSourceConfiguration;
+  readonly Description?: string;
+  readonly Schedule?: string;
+  readonly RoleArn?: string;
+  readonly Tags?: [];
+  readonly ClientToken?: string;
+  readonly LanguageCode?: string;
+  readonly CustomDocumentEnrichmentConfiguration?: CustomDocumentEnrichmentConfiguration;
 }
 
-interface CreateDataSourceResponse {
+export interface CreateDataSourceResponse {
   readonly Id: string;
 }
 
-interface CreateExperienceRequest {
+export interface CreateExperienceRequest {
   readonly Name: string;
   readonly IndexId: string;
-  readonly RoleArn: string;
-  readonly Configuration: ExperienceConfiguration;
-  readonly Description: string;
-  readonly ClientToken: string;
+  readonly RoleArn?: string;
+  readonly Configuration?: ExperienceConfiguration;
+  readonly Description?: string;
+  readonly ClientToken?: string;
 }
 
-interface CreateExperienceResponse {
+export interface CreateExperienceResponse {
   readonly Id: string;
 }
 
-interface CreateFaqRequest {
+export interface CreateFaqRequest {
   readonly IndexId: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly S3Path: S3Path;
   readonly RoleArn: string;
-  readonly Tags: [];
-  readonly FileFormat: string;
-  readonly ClientToken: string;
-  readonly LanguageCode: string;
+  readonly Tags?: [];
+  readonly FileFormat?: string;
+  readonly ClientToken?: string;
+  readonly LanguageCode?: string;
 }
 
-interface CreateFaqResponse {
-  readonly Id: string;
+export interface CreateFaqResponse {
+  readonly Id?: string;
 }
 
-interface CreateIndexRequest {
+export interface CreateIndexRequest {
   readonly Name: string;
-  readonly Edition: string;
+  readonly Edition?: string;
   readonly RoleArn: string;
-  readonly ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
-  readonly Description: string;
-  readonly ClientToken: string;
-  readonly Tags: [];
-  readonly UserTokenConfigurations: [];
-  readonly UserContextPolicy: string;
-  readonly UserGroupResolutionConfiguration: UserGroupResolutionConfiguration;
+  readonly ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
+  readonly Description?: string;
+  readonly ClientToken?: string;
+  readonly Tags?: [];
+  readonly UserTokenConfigurations?: [];
+  readonly UserContextPolicy?: string;
+  readonly UserGroupResolutionConfiguration?: UserGroupResolutionConfiguration;
 }
 
-interface CreateIndexResponse {
-  readonly Id: string;
+export interface CreateIndexResponse {
+  readonly Id?: string;
 }
 
-interface CreateQuerySuggestionsBlockListRequest {
+export interface CreateQuerySuggestionsBlockListRequest {
   readonly IndexId: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly SourceS3Path: S3Path;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
   readonly RoleArn: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateQuerySuggestionsBlockListResponse {
-  readonly Id: string;
+export interface CreateQuerySuggestionsBlockListResponse {
+  readonly Id?: string;
 }
 
-interface CreateThesaurusRequest {
+export interface CreateThesaurusRequest {
   readonly IndexId: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly RoleArn: string;
-  readonly Tags: [];
+  readonly Tags?: [];
   readonly SourceS3Path: S3Path;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 
-interface CreateThesaurusResponse {
-  readonly Id: string;
+export interface CreateThesaurusResponse {
+  readonly Id?: string;
 }
 
-interface CustomDocumentEnrichmentConfiguration {
-  readonly InlineConfigurations: [];
-  readonly PreExtractionHookConfiguration: HookConfiguration;
-  readonly PostExtractionHookConfiguration: HookConfiguration;
-  readonly RoleArn: string;
+export interface CustomDocumentEnrichmentConfiguration {
+  readonly InlineConfigurations?: [];
+  readonly PreExtractionHookConfiguration?: HookConfiguration;
+  readonly PostExtractionHookConfiguration?: HookConfiguration;
+  readonly RoleArn?: string;
 }
 
-interface DataSourceConfiguration {
-  readonly S3Configuration: S3DataSourceConfiguration;
-  readonly SharePointConfiguration: SharePointConfiguration;
-  readonly DatabaseConfiguration: DatabaseConfiguration;
-  readonly SalesforceConfiguration: SalesforceConfiguration;
-  readonly OneDriveConfiguration: OneDriveConfiguration;
-  readonly ServiceNowConfiguration: ServiceNowConfiguration;
-  readonly ConfluenceConfiguration: ConfluenceConfiguration;
-  readonly GoogleDriveConfiguration: GoogleDriveConfiguration;
-  readonly WebCrawlerConfiguration: WebCrawlerConfiguration;
-  readonly WorkDocsConfiguration: WorkDocsConfiguration;
+export interface DataSourceConfiguration {
+  readonly S3Configuration?: S3DataSourceConfiguration;
+  readonly SharePointConfiguration?: SharePointConfiguration;
+  readonly DatabaseConfiguration?: DatabaseConfiguration;
+  readonly SalesforceConfiguration?: SalesforceConfiguration;
+  readonly OneDriveConfiguration?: OneDriveConfiguration;
+  readonly ServiceNowConfiguration?: ServiceNowConfiguration;
+  readonly ConfluenceConfiguration?: ConfluenceConfiguration;
+  readonly GoogleDriveConfiguration?: GoogleDriveConfiguration;
+  readonly WebCrawlerConfiguration?: WebCrawlerConfiguration;
+  readonly WorkDocsConfiguration?: WorkDocsConfiguration;
 }
 
-interface DataSourceGroup {
+export interface DataSourceGroup {
   readonly GroupId: string;
   readonly DataSourceId: string;
 }
 
-interface DataSourceSummary {
-  readonly Name: string;
-  readonly Id: string;
-  readonly Type: string;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
-  readonly Status: string;
-  readonly LanguageCode: string;
+export interface DataSourceSummary {
+  readonly Name?: string;
+  readonly Id?: string;
+  readonly Type?: string;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
+  readonly Status?: string;
+  readonly LanguageCode?: string;
 }
 
-interface DataSourceSyncJob {
-  readonly ExecutionId: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Status: string;
-  readonly ErrorMessage: string;
-  readonly ErrorCode: string;
-  readonly DataSourceErrorCode: string;
-  readonly Metrics: DataSourceSyncJobMetrics;
+export interface DataSourceSyncJob {
+  readonly ExecutionId?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Status?: string;
+  readonly ErrorMessage?: string;
+  readonly ErrorCode?: string;
+  readonly DataSourceErrorCode?: string;
+  readonly Metrics?: DataSourceSyncJobMetrics;
 }
 
-interface DataSourceSyncJobMetricTarget {
+export interface DataSourceSyncJobMetricTarget {
   readonly DataSourceId: string;
-  readonly DataSourceSyncJobId: string;
+  readonly DataSourceSyncJobId?: string;
 }
 
-interface DataSourceSyncJobMetrics {
-  readonly DocumentsAdded: string;
-  readonly DocumentsModified: string;
-  readonly DocumentsDeleted: string;
-  readonly DocumentsFailed: string;
-  readonly DocumentsScanned: string;
+export interface DataSourceSyncJobMetrics {
+  readonly DocumentsAdded?: string;
+  readonly DocumentsModified?: string;
+  readonly DocumentsDeleted?: string;
+  readonly DocumentsFailed?: string;
+  readonly DocumentsScanned?: string;
 }
 
-interface DataSourceToIndexFieldMapping {
+export interface DataSourceToIndexFieldMapping {
   readonly DataSourceFieldName: string;
-  readonly DateFieldFormat: string;
+  readonly DateFieldFormat?: string;
   readonly IndexFieldName: string;
 }
 
-interface DataSourceVpcConfiguration {
+export interface DataSourceVpcConfiguration {
   readonly SubnetIds: [];
   readonly SecurityGroupIds: [];
 }
 
-interface DatabaseConfiguration {
+export interface DatabaseConfiguration {
   readonly DatabaseEngineType: string;
   readonly ConnectionConfiguration: ConnectionConfiguration;
-  readonly VpcConfiguration: DataSourceVpcConfiguration;
+  readonly VpcConfiguration?: DataSourceVpcConfiguration;
   readonly ColumnConfiguration: ColumnConfiguration;
-  readonly AclConfiguration: AclConfiguration;
-  readonly SqlConfiguration: SqlConfiguration;
+  readonly AclConfiguration?: AclConfiguration;
+  readonly SqlConfiguration?: SqlConfiguration;
 }
 
-interface DeleteDataSourceRequest {
+export interface DeleteDataSourceRequest {
   readonly Id: string;
   readonly IndexId: string;
 }
 
-interface DeleteExperienceRequest {
+export interface DeleteExperienceRequest {
   readonly Id: string;
   readonly IndexId: string;
 }
 
-interface DeleteExperienceResponse {
+export interface DeleteExperienceResponse {
 }
 
-interface DeleteFaqRequest {
+export interface DeleteFaqRequest {
   readonly Id: string;
   readonly IndexId: string;
 }
 
-interface DeleteIndexRequest {
+export interface DeleteIndexRequest {
   readonly Id: string;
 }
 
-interface DeletePrincipalMappingRequest {
+export interface DeletePrincipalMappingRequest {
   readonly IndexId: string;
-  readonly DataSourceId: string;
+  readonly DataSourceId?: string;
   readonly GroupId: string;
-  readonly OrderingId: number;
+  readonly OrderingId?: number;
 }
 
-interface DeleteQuerySuggestionsBlockListRequest {
+export interface DeleteQuerySuggestionsBlockListRequest {
   readonly IndexId: string;
   readonly Id: string;
 }
 
-interface DeleteThesaurusRequest {
+export interface DeleteThesaurusRequest {
   readonly Id: string;
   readonly IndexId: string;
 }
 
-interface DescribeDataSourceRequest {
+export interface DescribeDataSourceRequest {
   readonly Id: string;
   readonly IndexId: string;
 }
 
-interface DescribeDataSourceResponse {
-  readonly Id: string;
-  readonly IndexId: string;
-  readonly Name: string;
-  readonly Type: string;
-  readonly Configuration: DataSourceConfiguration;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
-  readonly Description: string;
-  readonly Status: string;
-  readonly Schedule: string;
-  readonly RoleArn: string;
-  readonly ErrorMessage: string;
-  readonly LanguageCode: string;
-  readonly CustomDocumentEnrichmentConfiguration: CustomDocumentEnrichmentConfiguration;
+export interface DescribeDataSourceResponse {
+  readonly Id?: string;
+  readonly IndexId?: string;
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly Configuration?: DataSourceConfiguration;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly Schedule?: string;
+  readonly RoleArn?: string;
+  readonly ErrorMessage?: string;
+  readonly LanguageCode?: string;
+  readonly CustomDocumentEnrichmentConfiguration?: CustomDocumentEnrichmentConfiguration;
 }
 
-interface DescribeExperienceRequest {
-  readonly Id: string;
-  readonly IndexId: string;
-}
-
-interface DescribeExperienceResponse {
-  readonly Id: string;
-  readonly IndexId: string;
-  readonly Name: string;
-  readonly Endpoints: [];
-  readonly Configuration: ExperienceConfiguration;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
-  readonly Description: string;
-  readonly Status: string;
-  readonly RoleArn: string;
-  readonly ErrorMessage: string;
-}
-
-interface DescribeFaqRequest {
+export interface DescribeExperienceRequest {
   readonly Id: string;
   readonly IndexId: string;
 }
 
-interface DescribeFaqResponse {
+export interface DescribeExperienceResponse {
+  readonly Id?: string;
+  readonly IndexId?: string;
+  readonly Name?: string;
+  readonly Endpoints?: [];
+  readonly Configuration?: ExperienceConfiguration;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly RoleArn?: string;
+  readonly ErrorMessage?: string;
+}
+
+export interface DescribeFaqRequest {
   readonly Id: string;
   readonly IndexId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
-  readonly S3Path: S3Path;
-  readonly Status: string;
-  readonly RoleArn: string;
-  readonly ErrorMessage: string;
-  readonly FileFormat: string;
-  readonly LanguageCode: string;
 }
 
-interface DescribeIndexRequest {
+export interface DescribeFaqResponse {
+  readonly Id?: string;
+  readonly IndexId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
+  readonly S3Path?: S3Path;
+  readonly Status?: string;
+  readonly RoleArn?: string;
+  readonly ErrorMessage?: string;
+  readonly FileFormat?: string;
+  readonly LanguageCode?: string;
+}
+
+export interface DescribeIndexRequest {
   readonly Id: string;
 }
 
-interface DescribeIndexResponse {
-  readonly Name: string;
-  readonly Id: string;
-  readonly Edition: string;
-  readonly RoleArn: string;
-  readonly ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
-  readonly Status: string;
-  readonly Description: string;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
-  readonly DocumentMetadataConfigurations: [];
-  readonly IndexStatistics: IndexStatistics;
-  readonly ErrorMessage: string;
-  readonly CapacityUnits: CapacityUnitsConfiguration;
-  readonly UserTokenConfigurations: [];
-  readonly UserContextPolicy: string;
-  readonly UserGroupResolutionConfiguration: UserGroupResolutionConfiguration;
+export interface DescribeIndexResponse {
+  readonly Name?: string;
+  readonly Id?: string;
+  readonly Edition?: string;
+  readonly RoleArn?: string;
+  readonly ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
+  readonly Status?: string;
+  readonly Description?: string;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
+  readonly DocumentMetadataConfigurations?: [];
+  readonly IndexStatistics?: IndexStatistics;
+  readonly ErrorMessage?: string;
+  readonly CapacityUnits?: CapacityUnitsConfiguration;
+  readonly UserTokenConfigurations?: [];
+  readonly UserContextPolicy?: string;
+  readonly UserGroupResolutionConfiguration?: UserGroupResolutionConfiguration;
 }
 
-interface DescribePrincipalMappingRequest {
+export interface DescribePrincipalMappingRequest {
   readonly IndexId: string;
-  readonly DataSourceId: string;
+  readonly DataSourceId?: string;
   readonly GroupId: string;
 }
 
-interface DescribePrincipalMappingResponse {
-  readonly IndexId: string;
-  readonly DataSourceId: string;
-  readonly GroupId: string;
-  readonly GroupOrderingIdSummaries: [];
+export interface DescribePrincipalMappingResponse {
+  readonly IndexId?: string;
+  readonly DataSourceId?: string;
+  readonly GroupId?: string;
+  readonly GroupOrderingIdSummaries?: [];
 }
 
-interface DescribeQuerySuggestionsBlockListRequest {
-  readonly IndexId: string;
-  readonly Id: string;
-}
-
-interface DescribeQuerySuggestionsBlockListResponse {
+export interface DescribeQuerySuggestionsBlockListRequest {
   readonly IndexId: string;
   readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Status: string;
-  readonly ErrorMessage: string;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
-  readonly SourceS3Path: S3Path;
-  readonly ItemCount: number;
-  readonly FileSizeBytes: number;
-  readonly RoleArn: string;
 }
 
-interface DescribeQuerySuggestionsConfigRequest {
+export interface DescribeQuerySuggestionsBlockListResponse {
+  readonly IndexId?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly ErrorMessage?: string;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
+  readonly SourceS3Path?: S3Path;
+  readonly ItemCount?: number;
+  readonly FileSizeBytes?: number;
+  readonly RoleArn?: string;
+}
+
+export interface DescribeQuerySuggestionsConfigRequest {
   readonly IndexId: string;
 }
 
-interface DescribeQuerySuggestionsConfigResponse {
-  readonly Mode: string;
-  readonly Status: string;
-  readonly QueryLogLookBackWindowInDays: number;
-  readonly IncludeQueriesWithoutUserInformation: boolean;
-  readonly MinimumNumberOfQueryingUsers: number;
-  readonly MinimumQueryCount: number;
-  readonly LastSuggestionsBuildTime: Date;
-  readonly LastClearTime: Date;
-  readonly TotalSuggestionsCount: number;
+export interface DescribeQuerySuggestionsConfigResponse {
+  readonly Mode?: string;
+  readonly Status?: string;
+  readonly QueryLogLookBackWindowInDays?: number;
+  readonly IncludeQueriesWithoutUserInformation?: boolean;
+  readonly MinimumNumberOfQueryingUsers?: number;
+  readonly MinimumQueryCount?: number;
+  readonly LastSuggestionsBuildTime?: Date;
+  readonly LastClearTime?: Date;
+  readonly TotalSuggestionsCount?: number;
 }
 
-interface DescribeThesaurusRequest {
+export interface DescribeThesaurusRequest {
   readonly Id: string;
   readonly IndexId: string;
 }
 
-interface DescribeThesaurusResponse {
-  readonly Id: string;
-  readonly IndexId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Status: string;
-  readonly ErrorMessage: string;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
-  readonly RoleArn: string;
-  readonly SourceS3Path: S3Path;
-  readonly FileSizeBytes: number;
-  readonly TermCount: number;
-  readonly SynonymRuleCount: number;
+export interface DescribeThesaurusResponse {
+  readonly Id?: string;
+  readonly IndexId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly ErrorMessage?: string;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
+  readonly RoleArn?: string;
+  readonly SourceS3Path?: S3Path;
+  readonly FileSizeBytes?: number;
+  readonly TermCount?: number;
+  readonly SynonymRuleCount?: number;
 }
 
-interface DisassociateEntitiesFromExperienceRequest {
+export interface DisassociateEntitiesFromExperienceRequest {
   readonly Id: string;
   readonly IndexId: string;
   readonly EntityList: [];
 }
 
-interface DisassociateEntitiesFromExperienceResponse {
-  readonly FailedEntityList: [];
+export interface DisassociateEntitiesFromExperienceResponse {
+  readonly FailedEntityList?: [];
 }
 
-interface DisassociatePersonasFromEntitiesRequest {
+export interface DisassociatePersonasFromEntitiesRequest {
   readonly Id: string;
   readonly IndexId: string;
   readonly EntityIds: [];
 }
 
-interface DisassociatePersonasFromEntitiesResponse {
-  readonly FailedEntityList: [];
+export interface DisassociatePersonasFromEntitiesResponse {
+  readonly FailedEntityList?: [];
 }
 
-interface Document {
+export interface Document {
   readonly Id: string;
-  readonly Title: string;
-  readonly Blob: unknown;
-  readonly S3Path: S3Path;
-  readonly Attributes: [];
-  readonly AccessControlList: [];
-  readonly HierarchicalAccessControlList: [];
-  readonly ContentType: string;
+  readonly Title?: string;
+  readonly Blob?: unknown;
+  readonly S3Path?: S3Path;
+  readonly Attributes?: [];
+  readonly AccessControlList?: [];
+  readonly HierarchicalAccessControlList?: [];
+  readonly ContentType?: string;
 }
 
-interface DocumentAttribute {
+export interface DocumentAttribute {
   readonly Key: string;
   readonly Value: DocumentAttributeValue;
 }
 
-interface DocumentAttributeCondition {
+export interface DocumentAttributeCondition {
   readonly ConditionDocumentAttributeKey: string;
   readonly Operator: string;
-  readonly ConditionOnValue: DocumentAttributeValue;
+  readonly ConditionOnValue?: DocumentAttributeValue;
 }
 
-interface DocumentAttributeTarget {
-  readonly TargetDocumentAttributeKey: string;
-  readonly TargetDocumentAttributeValueDeletion: boolean;
-  readonly TargetDocumentAttributeValue: DocumentAttributeValue;
+export interface DocumentAttributeTarget {
+  readonly TargetDocumentAttributeKey?: string;
+  readonly TargetDocumentAttributeValueDeletion?: boolean;
+  readonly TargetDocumentAttributeValue?: DocumentAttributeValue;
 }
 
-interface DocumentAttributeValue {
-  readonly StringValue: string;
-  readonly StringListValue: [];
-  readonly LongValue: number;
-  readonly DateValue: Date;
+export interface DocumentAttributeValue {
+  readonly StringValue?: string;
+  readonly StringListValue?: [];
+  readonly LongValue?: number;
+  readonly DateValue?: Date;
 }
 
-interface DocumentAttributeValueCountPair {
-  readonly DocumentAttributeValue: DocumentAttributeValue;
-  readonly Count: number;
+export interface DocumentAttributeValueCountPair {
+  readonly DocumentAttributeValue?: DocumentAttributeValue;
+  readonly Count?: number;
 }
 
-interface DocumentInfo {
+export interface DocumentInfo {
   readonly DocumentId: string;
-  readonly Attributes: [];
+  readonly Attributes?: [];
 }
 
-interface DocumentMetadataConfiguration {
+export interface DocumentMetadataConfiguration {
   readonly Name: string;
   readonly Type: string;
-  readonly Relevance: Relevance;
-  readonly Search: Search;
+  readonly Relevance?: Relevance;
+  readonly Search?: Search;
 }
 
-interface DocumentRelevanceConfiguration {
+export interface DocumentRelevanceConfiguration {
   readonly Name: string;
   readonly Relevance: Relevance;
 }
 
-interface DocumentsMetadataConfiguration {
-  readonly S3Prefix: string;
+export interface DocumentsMetadataConfiguration {
+  readonly S3Prefix?: string;
 }
 
-interface EntityConfiguration {
+export interface EntityConfiguration {
   readonly EntityId: string;
   readonly EntityType: string;
 }
 
-interface EntityDisplayData {
-  readonly UserName: string;
-  readonly GroupName: string;
-  readonly IdentifiedUserName: string;
-  readonly FirstName: string;
-  readonly LastName: string;
+export interface EntityDisplayData {
+  readonly UserName?: string;
+  readonly GroupName?: string;
+  readonly IdentifiedUserName?: string;
+  readonly FirstName?: string;
+  readonly LastName?: string;
 }
 
-interface EntityPersonaConfiguration {
+export interface EntityPersonaConfiguration {
   readonly EntityId: string;
   readonly Persona: string;
 }
 
-interface ExperienceConfiguration {
-  readonly ContentSourceConfiguration: ContentSourceConfiguration;
-  readonly UserIdentityConfiguration: UserIdentityConfiguration;
+export interface ExperienceConfiguration {
+  readonly ContentSourceConfiguration?: ContentSourceConfiguration;
+  readonly UserIdentityConfiguration?: UserIdentityConfiguration;
 }
 
-interface ExperienceEndpoint {
-  readonly EndpointType: string;
-  readonly Endpoint: string;
+export interface ExperienceEndpoint {
+  readonly EndpointType?: string;
+  readonly Endpoint?: string;
 }
 
-interface ExperienceEntitiesSummary {
-  readonly EntityId: string;
-  readonly EntityType: string;
-  readonly DisplayData: EntityDisplayData;
+export interface ExperienceEntitiesSummary {
+  readonly EntityId?: string;
+  readonly EntityType?: string;
+  readonly DisplayData?: EntityDisplayData;
 }
 
-interface ExperiencesSummary {
-  readonly Name: string;
-  readonly Id: string;
-  readonly CreatedAt: Date;
-  readonly Status: string;
-  readonly Endpoints: [];
+export interface ExperiencesSummary {
+  readonly Name?: string;
+  readonly Id?: string;
+  readonly CreatedAt?: Date;
+  readonly Status?: string;
+  readonly Endpoints?: [];
 }
 
-interface Facet {
-  readonly DocumentAttributeKey: string;
+export interface Facet {
+  readonly DocumentAttributeKey?: string;
 }
 
-interface FacetResult {
-  readonly DocumentAttributeKey: string;
-  readonly DocumentAttributeValueType: string;
-  readonly DocumentAttributeValueCountPairs: [];
+export interface FacetResult {
+  readonly DocumentAttributeKey?: string;
+  readonly DocumentAttributeValueType?: string;
+  readonly DocumentAttributeValueCountPairs?: [];
 }
 
-interface FailedEntity {
-  readonly EntityId: string;
-  readonly ErrorMessage: string;
+export interface FailedEntity {
+  readonly EntityId?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface FaqStatistics {
+export interface FaqStatistics {
   readonly IndexedQuestionAnswersCount: number;
 }
 
-interface FaqSummary {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
-  readonly FileFormat: string;
-  readonly LanguageCode: string;
+export interface FaqSummary {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
+  readonly FileFormat?: string;
+  readonly LanguageCode?: string;
 }
 
-interface GetQuerySuggestionsRequest {
+export interface GetQuerySuggestionsRequest {
   readonly IndexId: string;
   readonly QueryText: string;
-  readonly MaxSuggestionsCount: number;
+  readonly MaxSuggestionsCount?: number;
 }
 
-interface GetQuerySuggestionsResponse {
-  readonly QuerySuggestionsId: string;
-  readonly Suggestions: [];
+export interface GetQuerySuggestionsResponse {
+  readonly QuerySuggestionsId?: string;
+  readonly Suggestions?: [];
 }
 
-interface GetSnapshotsRequest {
+export interface GetSnapshotsRequest {
   readonly IndexId: string;
   readonly Interval: string;
   readonly MetricType: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetSnapshotsResponse {
-  readonly SnapShotTimeFilter: TimeRange;
-  readonly SnapshotsDataHeader: [];
-  readonly SnapshotsData: [];
-  readonly NextToken: string;
+export interface GetSnapshotsResponse {
+  readonly SnapShotTimeFilter?: TimeRange;
+  readonly SnapshotsDataHeader?: [];
+  readonly SnapshotsData?: [];
+  readonly NextToken?: string;
 }
 
-interface GoogleDriveConfiguration {
+export interface GoogleDriveConfiguration {
   readonly SecretArn: string;
-  readonly InclusionPatterns: [];
-  readonly ExclusionPatterns: [];
-  readonly FieldMappings: [];
-  readonly ExcludeMimeTypes: [];
-  readonly ExcludeUserAccounts: [];
-  readonly ExcludeSharedDrives: [];
+  readonly InclusionPatterns?: [];
+  readonly ExclusionPatterns?: [];
+  readonly FieldMappings?: [];
+  readonly ExcludeMimeTypes?: [];
+  readonly ExcludeUserAccounts?: [];
+  readonly ExcludeSharedDrives?: [];
 }
 
-interface GroupMembers {
-  readonly MemberGroups: [];
-  readonly MemberUsers: [];
-  readonly S3PathforGroupMembers: S3Path;
+export interface GroupMembers {
+  readonly MemberGroups?: [];
+  readonly MemberUsers?: [];
+  readonly S3PathforGroupMembers?: S3Path;
 }
 
-interface GroupOrderingIdSummary {
-  readonly Status: string;
-  readonly LastUpdatedAt: Date;
-  readonly ReceivedAt: Date;
-  readonly OrderingId: number;
-  readonly FailureReason: string;
+export interface GroupOrderingIdSummary {
+  readonly Status?: string;
+  readonly LastUpdatedAt?: Date;
+  readonly ReceivedAt?: Date;
+  readonly OrderingId?: number;
+  readonly FailureReason?: string;
 }
 
-interface GroupSummary {
-  readonly GroupId: string;
-  readonly OrderingId: number;
+export interface GroupSummary {
+  readonly GroupId?: string;
+  readonly OrderingId?: number;
 }
 
-interface HierarchicalPrincipal {
+export interface HierarchicalPrincipal {
   readonly PrincipalList: [];
 }
 
-interface Highlight {
+export interface Highlight {
   readonly BeginOffset: number;
   readonly EndOffset: number;
-  readonly TopAnswer: boolean;
-  readonly Type: string;
+  readonly TopAnswer?: boolean;
+  readonly Type?: string;
 }
 
-interface HookConfiguration {
-  readonly InvocationCondition: DocumentAttributeCondition;
+export interface HookConfiguration {
+  readonly InvocationCondition?: DocumentAttributeCondition;
   readonly LambdaArn: string;
   readonly S3Bucket: string;
 }
 
-interface IndexConfigurationSummary {
-  readonly Name: string;
-  readonly Id: string;
-  readonly Edition: string;
+export interface IndexConfigurationSummary {
+  readonly Name?: string;
+  readonly Id?: string;
+  readonly Edition?: string;
   readonly CreatedAt: Date;
   readonly UpdatedAt: Date;
   readonly Status: string;
 }
 
-interface IndexStatistics {
+export interface IndexStatistics {
   readonly FaqStatistics: FaqStatistics;
   readonly TextDocumentStatistics: TextDocumentStatistics;
 }
 
-interface InlineCustomDocumentEnrichmentConfiguration {
-  readonly Condition: DocumentAttributeCondition;
-  readonly Target: DocumentAttributeTarget;
-  readonly DocumentContentDeletion: boolean;
+export interface InlineCustomDocumentEnrichmentConfiguration {
+  readonly Condition?: DocumentAttributeCondition;
+  readonly Target?: DocumentAttributeTarget;
+  readonly DocumentContentDeletion?: boolean;
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface InternalServerException {
+  readonly Message?: string;
 }
 
-interface InvalidRequestException {
-  readonly Message: string;
+export interface InvalidRequestException {
+  readonly Message?: string;
 }
 
-interface JsonTokenTypeConfiguration {
+export interface JsonTokenTypeConfiguration {
   readonly UserNameAttributeField: string;
   readonly GroupAttributeField: string;
 }
 
-interface JwtTokenTypeConfiguration {
+export interface JwtTokenTypeConfiguration {
   readonly KeyLocation: string;
-  readonly URL: string;
-  readonly SecretManagerArn: string;
-  readonly UserNameAttributeField: string;
-  readonly GroupAttributeField: string;
-  readonly Issuer: string;
-  readonly ClaimRegex: string;
+  readonly URL?: string;
+  readonly SecretManagerArn?: string;
+  readonly UserNameAttributeField?: string;
+  readonly GroupAttributeField?: string;
+  readonly Issuer?: string;
+  readonly ClaimRegex?: string;
 }
 
-interface ListDataSourceSyncJobsRequest {
+export interface ListDataSourceSyncJobsRequest {
   readonly Id: string;
   readonly IndexId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly StartTimeFilter: TimeRange;
-  readonly StatusFilter: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly StartTimeFilter?: TimeRange;
+  readonly StatusFilter?: string;
 }
 
-interface ListDataSourceSyncJobsResponse {
-  readonly History: [];
-  readonly NextToken: string;
+export interface ListDataSourceSyncJobsResponse {
+  readonly History?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDataSourcesRequest {
+export interface ListDataSourcesRequest {
   readonly IndexId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDataSourcesResponse {
-  readonly SummaryItems: [];
-  readonly NextToken: string;
+export interface ListDataSourcesResponse {
+  readonly SummaryItems?: [];
+  readonly NextToken?: string;
 }
 
-interface ListEntityPersonasRequest {
+export interface ListEntityPersonasRequest {
   readonly Id: string;
   readonly IndexId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListEntityPersonasResponse {
-  readonly SummaryItems: [];
-  readonly NextToken: string;
+export interface ListEntityPersonasResponse {
+  readonly SummaryItems?: [];
+  readonly NextToken?: string;
 }
 
-interface ListExperienceEntitiesRequest {
+export interface ListExperienceEntitiesRequest {
   readonly Id: string;
   readonly IndexId: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListExperienceEntitiesResponse {
-  readonly SummaryItems: [];
-  readonly NextToken: string;
+export interface ListExperienceEntitiesResponse {
+  readonly SummaryItems?: [];
+  readonly NextToken?: string;
 }
 
-interface ListExperiencesRequest {
+export interface ListExperiencesRequest {
   readonly IndexId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListExperiencesResponse {
-  readonly SummaryItems: [];
-  readonly NextToken: string;
+export interface ListExperiencesResponse {
+  readonly SummaryItems?: [];
+  readonly NextToken?: string;
 }
 
-interface ListFaqsRequest {
+export interface ListFaqsRequest {
   readonly IndexId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListFaqsResponse {
-  readonly NextToken: string;
-  readonly FaqSummaryItems: [];
+export interface ListFaqsResponse {
+  readonly NextToken?: string;
+  readonly FaqSummaryItems?: [];
 }
 
-interface ListGroupsOlderThanOrderingIdRequest {
+export interface ListGroupsOlderThanOrderingIdRequest {
   readonly IndexId: string;
-  readonly DataSourceId: string;
+  readonly DataSourceId?: string;
   readonly OrderingId: number;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListGroupsOlderThanOrderingIdResponse {
-  readonly GroupsSummaries: [];
-  readonly NextToken: string;
+export interface ListGroupsOlderThanOrderingIdResponse {
+  readonly GroupsSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListIndicesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListIndicesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListIndicesResponse {
-  readonly IndexConfigurationSummaryItems: [];
-  readonly NextToken: string;
+export interface ListIndicesResponse {
+  readonly IndexConfigurationSummaryItems?: [];
+  readonly NextToken?: string;
 }
 
-interface ListQuerySuggestionsBlockListsRequest {
+export interface ListQuerySuggestionsBlockListsRequest {
   readonly IndexId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListQuerySuggestionsBlockListsResponse {
-  readonly BlockListSummaryItems: [];
-  readonly NextToken: string;
+export interface ListQuerySuggestionsBlockListsResponse {
+  readonly BlockListSummaryItems?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface ListThesauriRequest {
+export interface ListThesauriRequest {
   readonly IndexId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListThesauriResponse {
-  readonly NextToken: string;
-  readonly ThesaurusSummaryItems: [];
+export interface ListThesauriResponse {
+  readonly NextToken?: string;
+  readonly ThesaurusSummaryItems?: [];
 }
 
-interface MemberGroup {
+export interface MemberGroup {
   readonly GroupId: string;
-  readonly DataSourceId: string;
+  readonly DataSourceId?: string;
 }
 
-interface MemberUser {
+export interface MemberUser {
   readonly UserId: string;
 }
 
-interface OneDriveConfiguration {
+export interface OneDriveConfiguration {
   readonly TenantDomain: string;
   readonly SecretArn: string;
   readonly OneDriveUsers: OneDriveUsers;
-  readonly InclusionPatterns: [];
-  readonly ExclusionPatterns: [];
-  readonly FieldMappings: [];
-  readonly DisableLocalGroups: boolean;
+  readonly InclusionPatterns?: [];
+  readonly ExclusionPatterns?: [];
+  readonly FieldMappings?: [];
+  readonly DisableLocalGroups?: boolean;
 }
 
-interface OneDriveUsers {
-  readonly OneDriveUserList: [];
-  readonly OneDriveUserS3Path: S3Path;
+export interface OneDriveUsers {
+  readonly OneDriveUserList?: [];
+  readonly OneDriveUserS3Path?: S3Path;
 }
 
-interface PersonasSummary {
-  readonly EntityId: string;
-  readonly Persona: string;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
+export interface PersonasSummary {
+  readonly EntityId?: string;
+  readonly Persona?: string;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
 }
 
-interface Principal {
+export interface Principal {
   readonly Name: string;
   readonly Type: string;
   readonly Access: string;
-  readonly DataSourceId: string;
+  readonly DataSourceId?: string;
 }
 
-interface ProxyConfiguration {
+export interface ProxyConfiguration {
   readonly Host: string;
   readonly Port: number;
-  readonly Credentials: string;
+  readonly Credentials?: string;
 }
 
-interface PutPrincipalMappingRequest {
+export interface PutPrincipalMappingRequest {
   readonly IndexId: string;
-  readonly DataSourceId: string;
+  readonly DataSourceId?: string;
   readonly GroupId: string;
   readonly GroupMembers: GroupMembers;
-  readonly OrderingId: number;
-  readonly RoleArn: string;
+  readonly OrderingId?: number;
+  readonly RoleArn?: string;
 }
 
-interface QueryRequest {
+export interface QueryRequest {
   readonly IndexId: string;
   readonly QueryText: string;
-  readonly AttributeFilter: AttributeFilter;
-  readonly Facets: [];
-  readonly RequestedDocumentAttributes: [];
-  readonly QueryResultTypeFilter: string;
-  readonly DocumentRelevanceOverrideConfigurations: [];
-  readonly PageNumber: number;
-  readonly PageSize: number;
-  readonly SortingConfiguration: SortingConfiguration;
-  readonly UserContext: UserContext;
-  readonly VisitorId: string;
+  readonly AttributeFilter?: AttributeFilter;
+  readonly Facets?: [];
+  readonly RequestedDocumentAttributes?: [];
+  readonly QueryResultTypeFilter?: string;
+  readonly DocumentRelevanceOverrideConfigurations?: [];
+  readonly PageNumber?: number;
+  readonly PageSize?: number;
+  readonly SortingConfiguration?: SortingConfiguration;
+  readonly UserContext?: UserContext;
+  readonly VisitorId?: string;
 }
 
-interface QueryResult {
-  readonly QueryId: string;
-  readonly ResultItems: [];
-  readonly FacetResults: [];
-  readonly TotalNumberOfResults: number;
+export interface QueryResult {
+  readonly QueryId?: string;
+  readonly ResultItems?: [];
+  readonly FacetResults?: [];
+  readonly TotalNumberOfResults?: number;
 }
 
-interface QueryResultItem {
-  readonly Id: string;
-  readonly Type: string;
-  readonly AdditionalAttributes: [];
-  readonly DocumentId: string;
-  readonly DocumentTitle: TextWithHighlights;
-  readonly DocumentExcerpt: TextWithHighlights;
-  readonly DocumentURI: string;
-  readonly DocumentAttributes: [];
-  readonly ScoreAttributes: ScoreAttributes;
-  readonly FeedbackToken: string;
+export interface QueryResultItem {
+  readonly Id?: string;
+  readonly Type?: string;
+  readonly AdditionalAttributes?: [];
+  readonly DocumentId?: string;
+  readonly DocumentTitle?: TextWithHighlights;
+  readonly DocumentExcerpt?: TextWithHighlights;
+  readonly DocumentURI?: string;
+  readonly DocumentAttributes?: [];
+  readonly ScoreAttributes?: ScoreAttributes;
+  readonly FeedbackToken?: string;
 }
 
-interface QuerySuggestionsBlockListSummary {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
-  readonly ItemCount: number;
+export interface QuerySuggestionsBlockListSummary {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
+  readonly ItemCount?: number;
 }
 
-interface Relevance {
-  readonly Freshness: boolean;
-  readonly Importance: number;
-  readonly Duration: string;
-  readonly RankOrder: string;
-  readonly ValueImportanceMap: {[key: string]: any};
+export interface Relevance {
+  readonly Freshness?: boolean;
+  readonly Importance?: number;
+  readonly Duration?: string;
+  readonly RankOrder?: string;
+  readonly ValueImportanceMap?: {[key: string]: any};
 }
 
-interface RelevanceFeedback {
+export interface RelevanceFeedback {
   readonly ResultId: string;
   readonly RelevanceValue: string;
 }
 
-interface ResourceAlreadyExistException {
-  readonly Message: string;
+export interface ResourceAlreadyExistException {
+  readonly Message?: string;
 }
 
-interface ResourceInUseException {
-  readonly Message: string;
+export interface ResourceInUseException {
+  readonly Message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface ResourceUnavailableException {
-  readonly Message: string;
+export interface ResourceUnavailableException {
+  readonly Message?: string;
 }
 
-interface S3DataSourceConfiguration {
+export interface S3DataSourceConfiguration {
   readonly BucketName: string;
-  readonly InclusionPrefixes: [];
-  readonly InclusionPatterns: [];
-  readonly ExclusionPatterns: [];
-  readonly DocumentsMetadataConfiguration: DocumentsMetadataConfiguration;
-  readonly AccessControlListConfiguration: AccessControlListConfiguration;
+  readonly InclusionPrefixes?: [];
+  readonly InclusionPatterns?: [];
+  readonly ExclusionPatterns?: [];
+  readonly DocumentsMetadataConfiguration?: DocumentsMetadataConfiguration;
+  readonly AccessControlListConfiguration?: AccessControlListConfiguration;
 }
 
-interface S3Path {
+export interface S3Path {
   readonly Bucket: string;
   readonly Key: string;
 }
 
-interface SalesforceChatterFeedConfiguration {
+export interface SalesforceChatterFeedConfiguration {
   readonly DocumentDataFieldName: string;
-  readonly DocumentTitleFieldName: string;
-  readonly FieldMappings: [];
-  readonly IncludeFilterTypes: [];
+  readonly DocumentTitleFieldName?: string;
+  readonly FieldMappings?: [];
+  readonly IncludeFilterTypes?: [];
 }
 
-interface SalesforceConfiguration {
+export interface SalesforceConfiguration {
   readonly ServerUrl: string;
   readonly SecretArn: string;
-  readonly StandardObjectConfigurations: [];
-  readonly KnowledgeArticleConfiguration: SalesforceKnowledgeArticleConfiguration;
-  readonly ChatterFeedConfiguration: SalesforceChatterFeedConfiguration;
-  readonly CrawlAttachments: boolean;
-  readonly StandardObjectAttachmentConfiguration: SalesforceStandardObjectAttachmentConfiguration;
-  readonly IncludeAttachmentFilePatterns: [];
-  readonly ExcludeAttachmentFilePatterns: [];
+  readonly StandardObjectConfigurations?: [];
+  readonly KnowledgeArticleConfiguration?: SalesforceKnowledgeArticleConfiguration;
+  readonly ChatterFeedConfiguration?: SalesforceChatterFeedConfiguration;
+  readonly CrawlAttachments?: boolean;
+  readonly StandardObjectAttachmentConfiguration?: SalesforceStandardObjectAttachmentConfiguration;
+  readonly IncludeAttachmentFilePatterns?: [];
+  readonly ExcludeAttachmentFilePatterns?: [];
 }
 
-interface SalesforceCustomKnowledgeArticleTypeConfiguration {
+export interface SalesforceCustomKnowledgeArticleTypeConfiguration {
   readonly Name: string;
   readonly DocumentDataFieldName: string;
-  readonly DocumentTitleFieldName: string;
-  readonly FieldMappings: [];
+  readonly DocumentTitleFieldName?: string;
+  readonly FieldMappings?: [];
 }
 
-interface SalesforceKnowledgeArticleConfiguration {
+export interface SalesforceKnowledgeArticleConfiguration {
   readonly IncludedStates: [];
-  readonly StandardKnowledgeArticleTypeConfiguration: SalesforceStandardKnowledgeArticleTypeConfiguration;
-  readonly CustomKnowledgeArticleTypeConfigurations: [];
+  readonly StandardKnowledgeArticleTypeConfiguration?: SalesforceStandardKnowledgeArticleTypeConfiguration;
+  readonly CustomKnowledgeArticleTypeConfigurations?: [];
 }
 
-interface SalesforceStandardKnowledgeArticleTypeConfiguration {
+export interface SalesforceStandardKnowledgeArticleTypeConfiguration {
   readonly DocumentDataFieldName: string;
-  readonly DocumentTitleFieldName: string;
-  readonly FieldMappings: [];
+  readonly DocumentTitleFieldName?: string;
+  readonly FieldMappings?: [];
 }
 
-interface SalesforceStandardObjectAttachmentConfiguration {
-  readonly DocumentTitleFieldName: string;
-  readonly FieldMappings: [];
+export interface SalesforceStandardObjectAttachmentConfiguration {
+  readonly DocumentTitleFieldName?: string;
+  readonly FieldMappings?: [];
 }
 
-interface SalesforceStandardObjectConfiguration {
+export interface SalesforceStandardObjectConfiguration {
   readonly Name: string;
   readonly DocumentDataFieldName: string;
-  readonly DocumentTitleFieldName: string;
-  readonly FieldMappings: [];
+  readonly DocumentTitleFieldName?: string;
+  readonly FieldMappings?: [];
 }
 
-interface ScoreAttributes {
-  readonly ScoreConfidence: string;
+export interface ScoreAttributes {
+  readonly ScoreConfidence?: string;
 }
 
-interface Search {
-  readonly Facetable: boolean;
-  readonly Searchable: boolean;
-  readonly Displayable: boolean;
-  readonly Sortable: boolean;
+export interface Search {
+  readonly Facetable?: boolean;
+  readonly Searchable?: boolean;
+  readonly Displayable?: boolean;
+  readonly Sortable?: boolean;
 }
 
-interface SeedUrlConfiguration {
+export interface SeedUrlConfiguration {
   readonly SeedUrls: [];
-  readonly WebCrawlerMode: string;
+  readonly WebCrawlerMode?: string;
 }
 
-interface ServerSideEncryptionConfiguration {
-  readonly KmsKeyId: string;
+export interface ServerSideEncryptionConfiguration {
+  readonly KmsKeyId?: string;
 }
 
-interface ServiceNowConfiguration {
+export interface ServiceNowConfiguration {
   readonly HostUrl: string;
   readonly SecretArn: string;
   readonly ServiceNowBuildVersion: string;
-  readonly KnowledgeArticleConfiguration: ServiceNowKnowledgeArticleConfiguration;
-  readonly ServiceCatalogConfiguration: ServiceNowServiceCatalogConfiguration;
-  readonly AuthenticationType: string;
+  readonly KnowledgeArticleConfiguration?: ServiceNowKnowledgeArticleConfiguration;
+  readonly ServiceCatalogConfiguration?: ServiceNowServiceCatalogConfiguration;
+  readonly AuthenticationType?: string;
 }
 
-interface ServiceNowKnowledgeArticleConfiguration {
-  readonly CrawlAttachments: boolean;
-  readonly IncludeAttachmentFilePatterns: [];
-  readonly ExcludeAttachmentFilePatterns: [];
+export interface ServiceNowKnowledgeArticleConfiguration {
+  readonly CrawlAttachments?: boolean;
+  readonly IncludeAttachmentFilePatterns?: [];
+  readonly ExcludeAttachmentFilePatterns?: [];
   readonly DocumentDataFieldName: string;
-  readonly DocumentTitleFieldName: string;
-  readonly FieldMappings: [];
-  readonly FilterQuery: string;
+  readonly DocumentTitleFieldName?: string;
+  readonly FieldMappings?: [];
+  readonly FilterQuery?: string;
 }
 
-interface ServiceNowServiceCatalogConfiguration {
-  readonly CrawlAttachments: boolean;
-  readonly IncludeAttachmentFilePatterns: [];
-  readonly ExcludeAttachmentFilePatterns: [];
+export interface ServiceNowServiceCatalogConfiguration {
+  readonly CrawlAttachments?: boolean;
+  readonly IncludeAttachmentFilePatterns?: [];
+  readonly ExcludeAttachmentFilePatterns?: [];
   readonly DocumentDataFieldName: string;
-  readonly DocumentTitleFieldName: string;
-  readonly FieldMappings: [];
+  readonly DocumentTitleFieldName?: string;
+  readonly FieldMappings?: [];
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface SharePointConfiguration {
+export interface SharePointConfiguration {
   readonly SharePointVersion: string;
   readonly Urls: [];
   readonly SecretArn: string;
-  readonly CrawlAttachments: boolean;
-  readonly UseChangeLog: boolean;
-  readonly InclusionPatterns: [];
-  readonly ExclusionPatterns: [];
-  readonly VpcConfiguration: DataSourceVpcConfiguration;
-  readonly FieldMappings: [];
-  readonly DocumentTitleFieldName: string;
-  readonly DisableLocalGroups: boolean;
-  readonly SslCertificateS3Path: S3Path;
+  readonly CrawlAttachments?: boolean;
+  readonly UseChangeLog?: boolean;
+  readonly InclusionPatterns?: [];
+  readonly ExclusionPatterns?: [];
+  readonly VpcConfiguration?: DataSourceVpcConfiguration;
+  readonly FieldMappings?: [];
+  readonly DocumentTitleFieldName?: string;
+  readonly DisableLocalGroups?: boolean;
+  readonly SslCertificateS3Path?: S3Path;
 }
 
-interface SiteMapsConfiguration {
+export interface SiteMapsConfiguration {
   readonly SiteMaps: [];
 }
 
-interface SortingConfiguration {
+export interface SortingConfiguration {
   readonly DocumentAttributeKey: string;
   readonly SortOrder: string;
 }
 
-interface SqlConfiguration {
-  readonly QueryIdentifiersEnclosingOption: string;
+export interface SqlConfiguration {
+  readonly QueryIdentifiersEnclosingOption?: string;
 }
 
-interface StartDataSourceSyncJobRequest {
+export interface StartDataSourceSyncJobRequest {
   readonly Id: string;
   readonly IndexId: string;
 }
 
-interface StartDataSourceSyncJobResponse {
-  readonly ExecutionId: string;
+export interface StartDataSourceSyncJobResponse {
+  readonly ExecutionId?: string;
 }
 
-interface Status {
-  readonly DocumentId: string;
-  readonly DocumentStatus: string;
-  readonly FailureCode: string;
-  readonly FailureReason: string;
+export interface Status {
+  readonly DocumentId?: string;
+  readonly DocumentStatus?: string;
+  readonly FailureCode?: string;
+  readonly FailureReason?: string;
 }
 
-interface StopDataSourceSyncJobRequest {
+export interface StopDataSourceSyncJobRequest {
   readonly Id: string;
   readonly IndexId: string;
 }
 
-interface SubmitFeedbackRequest {
+export interface SubmitFeedbackRequest {
   readonly IndexId: string;
   readonly QueryId: string;
-  readonly ClickFeedbackItems: [];
-  readonly RelevanceFeedbackItems: [];
+  readonly ClickFeedbackItems?: [];
+  readonly RelevanceFeedbackItems?: [];
 }
 
-interface Suggestion {
-  readonly Id: string;
-  readonly Value: SuggestionValue;
+export interface Suggestion {
+  readonly Id?: string;
+  readonly Value?: SuggestionValue;
 }
 
-interface SuggestionHighlight {
-  readonly BeginOffset: number;
-  readonly EndOffset: number;
+export interface SuggestionHighlight {
+  readonly BeginOffset?: number;
+  readonly EndOffset?: number;
 }
 
-interface SuggestionTextWithHighlights {
-  readonly Text: string;
-  readonly Highlights: [];
+export interface SuggestionTextWithHighlights {
+  readonly Text?: string;
+  readonly Highlights?: [];
 }
 
-interface SuggestionValue {
-  readonly Text: SuggestionTextWithHighlights;
+export interface SuggestionValue {
+  readonly Text?: SuggestionTextWithHighlights;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TextDocumentStatistics {
+export interface TextDocumentStatistics {
   readonly IndexedTextDocumentsCount: number;
   readonly IndexedTextBytes: number;
 }
 
-interface TextWithHighlights {
-  readonly Text: string;
-  readonly Highlights: [];
+export interface TextWithHighlights {
+  readonly Text?: string;
+  readonly Highlights?: [];
 }
 
-interface ThesaurusSummary {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
+export interface ThesaurusSummary {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
 }
 
-interface ThrottlingException {
-  readonly Message: string;
+export interface ThrottlingException {
+  readonly Message?: string;
 }
 
-interface TimeRange {
-  readonly StartTime: Date;
-  readonly EndTime: Date;
+export interface TimeRange {
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateDataSourceRequest {
+export interface UpdateDataSourceRequest {
   readonly Id: string;
-  readonly Name: string;
+  readonly Name?: string;
   readonly IndexId: string;
-  readonly Configuration: DataSourceConfiguration;
-  readonly Description: string;
-  readonly Schedule: string;
-  readonly RoleArn: string;
-  readonly LanguageCode: string;
-  readonly CustomDocumentEnrichmentConfiguration: CustomDocumentEnrichmentConfiguration;
+  readonly Configuration?: DataSourceConfiguration;
+  readonly Description?: string;
+  readonly Schedule?: string;
+  readonly RoleArn?: string;
+  readonly LanguageCode?: string;
+  readonly CustomDocumentEnrichmentConfiguration?: CustomDocumentEnrichmentConfiguration;
 }
 
-interface UpdateExperienceRequest {
+export interface UpdateExperienceRequest {
   readonly Id: string;
-  readonly Name: string;
+  readonly Name?: string;
   readonly IndexId: string;
-  readonly RoleArn: string;
-  readonly Configuration: ExperienceConfiguration;
-  readonly Description: string;
+  readonly RoleArn?: string;
+  readonly Configuration?: ExperienceConfiguration;
+  readonly Description?: string;
 }
 
-interface UpdateIndexRequest {
+export interface UpdateIndexRequest {
   readonly Id: string;
-  readonly Name: string;
-  readonly RoleArn: string;
-  readonly Description: string;
-  readonly DocumentMetadataConfigurationUpdates: [];
-  readonly CapacityUnits: CapacityUnitsConfiguration;
-  readonly UserTokenConfigurations: [];
-  readonly UserContextPolicy: string;
-  readonly UserGroupResolutionConfiguration: UserGroupResolutionConfiguration;
+  readonly Name?: string;
+  readonly RoleArn?: string;
+  readonly Description?: string;
+  readonly DocumentMetadataConfigurationUpdates?: [];
+  readonly CapacityUnits?: CapacityUnitsConfiguration;
+  readonly UserTokenConfigurations?: [];
+  readonly UserContextPolicy?: string;
+  readonly UserGroupResolutionConfiguration?: UserGroupResolutionConfiguration;
 }
 
-interface UpdateQuerySuggestionsBlockListRequest {
+export interface UpdateQuerySuggestionsBlockListRequest {
   readonly IndexId: string;
   readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly SourceS3Path: S3Path;
-  readonly RoleArn: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly SourceS3Path?: S3Path;
+  readonly RoleArn?: string;
 }
 
-interface UpdateQuerySuggestionsConfigRequest {
+export interface UpdateQuerySuggestionsConfigRequest {
   readonly IndexId: string;
-  readonly Mode: string;
-  readonly QueryLogLookBackWindowInDays: number;
-  readonly IncludeQueriesWithoutUserInformation: boolean;
-  readonly MinimumNumberOfQueryingUsers: number;
-  readonly MinimumQueryCount: number;
+  readonly Mode?: string;
+  readonly QueryLogLookBackWindowInDays?: number;
+  readonly IncludeQueriesWithoutUserInformation?: boolean;
+  readonly MinimumNumberOfQueryingUsers?: number;
+  readonly MinimumQueryCount?: number;
 }
 
-interface UpdateThesaurusRequest {
+export interface UpdateThesaurusRequest {
   readonly Id: string;
-  readonly Name: string;
+  readonly Name?: string;
   readonly IndexId: string;
-  readonly Description: string;
-  readonly RoleArn: string;
-  readonly SourceS3Path: S3Path;
+  readonly Description?: string;
+  readonly RoleArn?: string;
+  readonly SourceS3Path?: S3Path;
 }
 
-interface Urls {
-  readonly SeedUrlConfiguration: SeedUrlConfiguration;
-  readonly SiteMapsConfiguration: SiteMapsConfiguration;
+export interface Urls {
+  readonly SeedUrlConfiguration?: SeedUrlConfiguration;
+  readonly SiteMapsConfiguration?: SiteMapsConfiguration;
 }
 
-interface UserContext {
-  readonly Token: string;
-  readonly UserId: string;
-  readonly Groups: [];
-  readonly DataSourceGroups: [];
+export interface UserContext {
+  readonly Token?: string;
+  readonly UserId?: string;
+  readonly Groups?: [];
+  readonly DataSourceGroups?: [];
 }
 
-interface UserGroupResolutionConfiguration {
+export interface UserGroupResolutionConfiguration {
   readonly UserGroupResolutionMode: string;
 }
 
-interface UserIdentityConfiguration {
-  readonly IdentityAttributeName: string;
+export interface UserIdentityConfiguration {
+  readonly IdentityAttributeName?: string;
 }
 
-interface UserTokenConfiguration {
-  readonly JwtTokenTypeConfiguration: JwtTokenTypeConfiguration;
-  readonly JsonTokenTypeConfiguration: JsonTokenTypeConfiguration;
+export interface UserTokenConfiguration {
+  readonly JwtTokenTypeConfiguration?: JwtTokenTypeConfiguration;
+  readonly JsonTokenTypeConfiguration?: JsonTokenTypeConfiguration;
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
 
-interface WebCrawlerConfiguration {
+export interface WebCrawlerConfiguration {
   readonly Urls: Urls;
-  readonly CrawlDepth: number;
-  readonly MaxLinksPerPage: number;
-  readonly MaxContentSizePerPageInMegaBytes: unknown;
-  readonly MaxUrlsPerMinuteCrawlRate: number;
-  readonly UrlInclusionPatterns: [];
-  readonly UrlExclusionPatterns: [];
-  readonly ProxyConfiguration: ProxyConfiguration;
-  readonly AuthenticationConfiguration: AuthenticationConfiguration;
+  readonly CrawlDepth?: number;
+  readonly MaxLinksPerPage?: number;
+  readonly MaxContentSizePerPageInMegaBytes?: unknown;
+  readonly MaxUrlsPerMinuteCrawlRate?: number;
+  readonly UrlInclusionPatterns?: [];
+  readonly UrlExclusionPatterns?: [];
+  readonly ProxyConfiguration?: ProxyConfiguration;
+  readonly AuthenticationConfiguration?: AuthenticationConfiguration;
 }
 
-interface WorkDocsConfiguration {
+export interface WorkDocsConfiguration {
   readonly OrganizationId: string;
-  readonly CrawlComments: boolean;
-  readonly UseChangeLog: boolean;
-  readonly InclusionPatterns: [];
-  readonly ExclusionPatterns: [];
-  readonly FieldMappings: [];
+  readonly CrawlComments?: boolean;
+  readonly UseChangeLog?: boolean;
+  readonly InclusionPatterns?: [];
+  readonly ExclusionPatterns?: [];
+  readonly FieldMappings?: [];
 }
+
 

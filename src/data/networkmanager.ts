@@ -4,29 +4,34 @@
 export interface AcceptAttachment {
   readonly AttachmentId: string;
 }
+
 export interface AssociateConnectPeer {
   readonly GlobalNetworkId: string;
   readonly ConnectPeerId: string;
   readonly DeviceId: string;
   readonly LinkId?: string;
 }
+
 export interface AssociateCustomerGateway {
   readonly CustomerGatewayArn: string;
   readonly GlobalNetworkId: string;
   readonly DeviceId: string;
   readonly LinkId?: string;
 }
+
 export interface AssociateLink {
   readonly GlobalNetworkId: string;
   readonly DeviceId: string;
   readonly LinkId: string;
 }
+
 export interface AssociateTransitGatewayConnectPeer {
   readonly GlobalNetworkId: string;
   readonly TransitGatewayConnectPeerArn: string;
   readonly DeviceId: string;
   readonly LinkId?: string;
 }
+
 export interface CreateConnectAttachment {
   readonly CoreNetworkId: string;
   readonly EdgeLocation: string;
@@ -35,6 +40,7 @@ export interface CreateConnectAttachment {
   readonly Tags?: [];
   readonly ClientToken?: string;
 }
+
 export interface CreateConnectPeer {
   readonly ConnectAttachmentId: string;
   readonly CoreNetworkAddress?: string;
@@ -44,6 +50,7 @@ export interface CreateConnectPeer {
   readonly Tags?: [];
   readonly ClientToken?: string;
 }
+
 export interface CreateConnection {
   readonly GlobalNetworkId: string;
   readonly DeviceId: string;
@@ -53,6 +60,7 @@ export interface CreateConnection {
   readonly Description?: string;
   readonly Tags?: [];
 }
+
 export interface CreateCoreNetwork {
   readonly GlobalNetworkId: string;
   readonly Description?: string;
@@ -60,6 +68,7 @@ export interface CreateCoreNetwork {
   readonly PolicyDocument?: string;
   readonly ClientToken?: string;
 }
+
 export interface CreateDevice {
   readonly GlobalNetworkId: string;
   readonly AWSLocation?: AWSLocation;
@@ -72,10 +81,12 @@ export interface CreateDevice {
   readonly SiteId?: string;
   readonly Tags?: [];
 }
+
 export interface CreateGlobalNetwork {
   readonly Description?: string;
   readonly Tags?: [];
 }
+
 export interface CreateLink {
   readonly GlobalNetworkId: string;
   readonly Description?: string;
@@ -85,18 +96,21 @@ export interface CreateLink {
   readonly SiteId: string;
   readonly Tags?: [];
 }
+
 export interface CreateSite {
   readonly GlobalNetworkId: string;
   readonly Description?: string;
   readonly Location?: Location;
   readonly Tags?: [];
 }
+
 export interface CreateSiteToSiteVpnAttachment {
   readonly CoreNetworkId: string;
   readonly VpnConnectionArn: string;
   readonly Tags?: [];
   readonly ClientToken?: string;
 }
+
 export interface CreateVpcAttachment {
   readonly CoreNetworkId: string;
   readonly VpcArn: string;
@@ -105,83 +119,104 @@ export interface CreateVpcAttachment {
   readonly Tags?: [];
   readonly ClientToken?: string;
 }
+
 export interface DeleteAttachment {
   readonly AttachmentId: string;
 }
+
 export interface DeleteConnectPeer {
   readonly ConnectPeerId: string;
 }
+
 export interface DeleteConnection {
   readonly GlobalNetworkId: string;
   readonly ConnectionId: string;
 }
+
 export interface DeleteCoreNetwork {
   readonly CoreNetworkId: string;
 }
+
 export interface DeleteCoreNetworkPolicyVersion {
   readonly CoreNetworkId: string;
   readonly PolicyVersionId: number;
 }
+
 export interface DeleteDevice {
   readonly GlobalNetworkId: string;
   readonly DeviceId: string;
 }
+
 export interface DeleteGlobalNetwork {
   readonly GlobalNetworkId: string;
 }
+
 export interface DeleteLink {
   readonly GlobalNetworkId: string;
   readonly LinkId: string;
 }
+
 export interface DeleteResourcePolicy {
   readonly ResourceArn: string;
 }
+
 export interface DeleteSite {
   readonly GlobalNetworkId: string;
   readonly SiteId: string;
 }
+
 export interface DeregisterTransitGateway {
   readonly GlobalNetworkId: string;
   readonly TransitGatewayArn: string;
 }
+
 export interface DescribeGlobalNetworks {
   readonly GlobalNetworkIds?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DisassociateConnectPeer {
   readonly GlobalNetworkId: string;
   readonly ConnectPeerId: string;
 }
+
 export interface DisassociateCustomerGateway {
   readonly GlobalNetworkId: string;
   readonly CustomerGatewayArn: string;
 }
+
 export interface DisassociateLink {
   readonly GlobalNetworkId: string;
   readonly DeviceId: string;
   readonly LinkId: string;
 }
+
 export interface DisassociateTransitGatewayConnectPeer {
   readonly GlobalNetworkId: string;
   readonly TransitGatewayConnectPeerArn: string;
 }
+
 export interface ExecuteCoreNetworkChangeSet {
   readonly CoreNetworkId: string;
   readonly PolicyVersionId: number;
 }
+
 export interface GetConnectAttachment {
   readonly AttachmentId: string;
 }
+
 export interface GetConnectPeer {
   readonly ConnectPeerId: string;
 }
+
 export interface GetConnectPeerAssociations {
   readonly GlobalNetworkId: string;
   readonly ConnectPeerIds?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetConnections {
   readonly GlobalNetworkId: string;
   readonly ConnectionIds?: [];
@@ -189,26 +224,31 @@ export interface GetConnections {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetCoreNetwork {
   readonly CoreNetworkId: string;
 }
+
 export interface GetCoreNetworkChangeSet {
   readonly CoreNetworkId: string;
   readonly PolicyVersionId: number;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetCoreNetworkPolicy {
   readonly CoreNetworkId: string;
   readonly PolicyVersionId?: number;
   readonly Alias?: string;
 }
+
 export interface GetCustomerGatewayAssociations {
   readonly GlobalNetworkId: string;
   readonly CustomerGatewayArns?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetDevices {
   readonly GlobalNetworkId: string;
   readonly DeviceIds?: [];
@@ -216,6 +256,7 @@ export interface GetDevices {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetLinkAssociations {
   readonly GlobalNetworkId: string;
   readonly DeviceId?: string;
@@ -223,6 +264,7 @@ export interface GetLinkAssociations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetLinks {
   readonly GlobalNetworkId: string;
   readonly LinkIds?: [];
@@ -232,12 +274,14 @@ export interface GetLinks {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetNetworkResourceCounts {
   readonly GlobalNetworkId: string;
   readonly ResourceType?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetNetworkResourceRelationships {
   readonly GlobalNetworkId: string;
   readonly CoreNetworkId?: string;
@@ -249,6 +293,7 @@ export interface GetNetworkResourceRelationships {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetNetworkResources {
   readonly GlobalNetworkId: string;
   readonly CoreNetworkId?: string;
@@ -260,6 +305,7 @@ export interface GetNetworkResources {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetNetworkRoutes {
   readonly GlobalNetworkId: string;
   readonly RouteTableIdentifier: RouteTableIdentifier;
@@ -272,6 +318,7 @@ export interface GetNetworkRoutes {
   readonly Types?: [];
   readonly DestinationFilters?: {[key: string]: any};
 }
+
 export interface GetNetworkTelemetry {
   readonly GlobalNetworkId: string;
   readonly CoreNetworkId?: string;
@@ -283,37 +330,45 @@ export interface GetNetworkTelemetry {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetResourcePolicy {
   readonly ResourceArn: string;
 }
+
 export interface GetRouteAnalysis {
   readonly GlobalNetworkId: string;
   readonly RouteAnalysisId: string;
 }
+
 export interface GetSiteToSiteVpnAttachment {
   readonly AttachmentId: string;
 }
+
 export interface GetSites {
   readonly GlobalNetworkId: string;
   readonly SiteIds?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetTransitGatewayConnectPeerAssociations {
   readonly GlobalNetworkId: string;
   readonly TransitGatewayConnectPeerArns?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetTransitGatewayRegistrations {
   readonly GlobalNetworkId: string;
   readonly TransitGatewayArns?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetVpcAttachment {
   readonly AttachmentId: string;
 }
+
 export interface ListAttachments {
   readonly CoreNetworkId?: string;
   readonly AttachmentType?: string;
@@ -322,24 +377,29 @@ export interface ListAttachments {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListConnectPeers {
   readonly CoreNetworkId?: string;
   readonly ConnectAttachmentId?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListCoreNetworkPolicyVersions {
   readonly CoreNetworkId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListCoreNetworks {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface PutCoreNetworkPolicy {
   readonly CoreNetworkId: string;
   readonly PolicyDocument: string;
@@ -347,21 +407,26 @@ export interface PutCoreNetworkPolicy {
   readonly LatestVersionId?: number;
   readonly ClientToken?: string;
 }
+
 export interface PutResourcePolicy {
   readonly PolicyDocument: string;
   readonly ResourceArn: string;
 }
+
 export interface RegisterTransitGateway {
   readonly GlobalNetworkId: string;
   readonly TransitGatewayArn: string;
 }
+
 export interface RejectAttachment {
   readonly AttachmentId: string;
 }
+
 export interface RestoreCoreNetworkPolicyVersion {
   readonly CoreNetworkId: string;
   readonly PolicyVersionId: number;
 }
+
 export interface StartRouteAnalysis {
   readonly GlobalNetworkId: string;
   readonly Source: RouteAnalysisEndpointOptionsSpecification;
@@ -369,14 +434,17 @@ export interface StartRouteAnalysis {
   readonly IncludeReturnPath?: boolean;
   readonly UseMiddleboxes?: boolean;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateConnection {
   readonly GlobalNetworkId: string;
   readonly ConnectionId: string;
@@ -384,10 +452,12 @@ export interface UpdateConnection {
   readonly ConnectedLinkId?: string;
   readonly Description?: string;
 }
+
 export interface UpdateCoreNetwork {
   readonly CoreNetworkId: string;
   readonly Description?: string;
 }
+
 export interface UpdateDevice {
   readonly GlobalNetworkId: string;
   readonly DeviceId: string;
@@ -400,10 +470,12 @@ export interface UpdateDevice {
   readonly Location?: Location;
   readonly SiteId?: string;
 }
+
 export interface UpdateGlobalNetwork {
   readonly GlobalNetworkId: string;
   readonly Description?: string;
 }
+
 export interface UpdateLink {
   readonly GlobalNetworkId: string;
   readonly LinkId: string;
@@ -412,17 +484,20 @@ export interface UpdateLink {
   readonly Bandwidth?: Bandwidth;
   readonly Provider?: string;
 }
+
 export interface UpdateNetworkResourceMetadata {
   readonly GlobalNetworkId: string;
   readonly ResourceArn: string;
   readonly Metadata: {[key: string]: any};
 }
+
 export interface UpdateSite {
   readonly GlobalNetworkId: string;
   readonly SiteId: string;
   readonly Description?: string;
   readonly Location?: Location;
 }
+
 export interface UpdateVpcAttachment {
   readonly AttachmentId: string;
   readonly AddSubnetArns?: [];
@@ -430,1298 +505,1297 @@ export interface UpdateVpcAttachment {
   readonly Options?: VpcOptions;
 }
 
-
-
-interface AWSLocation {
-  readonly Zone: string;
-  readonly SubnetArn: string;
+export interface AWSLocation {
+  readonly Zone?: string;
+  readonly SubnetArn?: string;
 }
 
-interface AcceptAttachmentRequest {
+export interface AcceptAttachmentRequest {
   readonly AttachmentId: string;
 }
 
-interface AcceptAttachmentResponse {
-  readonly Attachment: Attachment;
+export interface AcceptAttachmentResponse {
+  readonly Attachment?: Attachment;
 }
 
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly Message: string;
 }
 
-interface AssociateConnectPeerRequest {
+export interface AssociateConnectPeerRequest {
   readonly GlobalNetworkId: string;
   readonly ConnectPeerId: string;
   readonly DeviceId: string;
-  readonly LinkId: string;
+  readonly LinkId?: string;
 }
 
-interface AssociateConnectPeerResponse {
-  readonly ConnectPeerAssociation: ConnectPeerAssociation;
+export interface AssociateConnectPeerResponse {
+  readonly ConnectPeerAssociation?: ConnectPeerAssociation;
 }
 
-interface AssociateCustomerGatewayRequest {
+export interface AssociateCustomerGatewayRequest {
   readonly CustomerGatewayArn: string;
   readonly GlobalNetworkId: string;
   readonly DeviceId: string;
-  readonly LinkId: string;
+  readonly LinkId?: string;
 }
 
-interface AssociateCustomerGatewayResponse {
-  readonly CustomerGatewayAssociation: CustomerGatewayAssociation;
+export interface AssociateCustomerGatewayResponse {
+  readonly CustomerGatewayAssociation?: CustomerGatewayAssociation;
 }
 
-interface AssociateLinkRequest {
+export interface AssociateLinkRequest {
   readonly GlobalNetworkId: string;
   readonly DeviceId: string;
   readonly LinkId: string;
 }
 
-interface AssociateLinkResponse {
-  readonly LinkAssociation: LinkAssociation;
+export interface AssociateLinkResponse {
+  readonly LinkAssociation?: LinkAssociation;
 }
 
-interface AssociateTransitGatewayConnectPeerRequest {
+export interface AssociateTransitGatewayConnectPeerRequest {
   readonly GlobalNetworkId: string;
   readonly TransitGatewayConnectPeerArn: string;
   readonly DeviceId: string;
-  readonly LinkId: string;
+  readonly LinkId?: string;
 }
 
-interface AssociateTransitGatewayConnectPeerResponse {
-  readonly TransitGatewayConnectPeerAssociation: TransitGatewayConnectPeerAssociation;
+export interface AssociateTransitGatewayConnectPeerResponse {
+  readonly TransitGatewayConnectPeerAssociation?: TransitGatewayConnectPeerAssociation;
 }
 
-interface Attachment {
-  readonly CoreNetworkId: string;
-  readonly CoreNetworkArn: string;
-  readonly AttachmentId: string;
-  readonly OwnerAccountId: string;
-  readonly AttachmentType: string;
-  readonly State: string;
-  readonly EdgeLocation: string;
-  readonly ResourceArn: string;
-  readonly AttachmentPolicyRuleNumber: number;
-  readonly SegmentName: string;
-  readonly Tags: [];
-  readonly ProposedSegmentChange: ProposedSegmentChange;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
+export interface Attachment {
+  readonly CoreNetworkId?: string;
+  readonly CoreNetworkArn?: string;
+  readonly AttachmentId?: string;
+  readonly OwnerAccountId?: string;
+  readonly AttachmentType?: string;
+  readonly State?: string;
+  readonly EdgeLocation?: string;
+  readonly ResourceArn?: string;
+  readonly AttachmentPolicyRuleNumber?: number;
+  readonly SegmentName?: string;
+  readonly Tags?: [];
+  readonly ProposedSegmentChange?: ProposedSegmentChange;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
 }
 
-interface Bandwidth {
-  readonly UploadSpeed: number;
-  readonly DownloadSpeed: number;
+export interface Bandwidth {
+  readonly UploadSpeed?: number;
+  readonly DownloadSpeed?: number;
 }
 
-interface BgpOptions {
-  readonly PeerAsn: number;
+export interface BgpOptions {
+  readonly PeerAsn?: number;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly Message: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
 
-interface ConnectAttachment {
-  readonly Attachment: Attachment;
-  readonly TransportAttachmentId: string;
-  readonly Options: ConnectAttachmentOptions;
+export interface ConnectAttachment {
+  readonly Attachment?: Attachment;
+  readonly TransportAttachmentId?: string;
+  readonly Options?: ConnectAttachmentOptions;
 }
 
-interface ConnectAttachmentOptions {
-  readonly Protocol: string;
+export interface ConnectAttachmentOptions {
+  readonly Protocol?: string;
 }
 
-interface ConnectPeer {
-  readonly CoreNetworkId: string;
-  readonly ConnectAttachmentId: string;
-  readonly ConnectPeerId: string;
-  readonly EdgeLocation: string;
-  readonly State: string;
-  readonly CreatedAt: Date;
-  readonly Configuration: ConnectPeerConfiguration;
-  readonly Tags: [];
+export interface ConnectPeer {
+  readonly CoreNetworkId?: string;
+  readonly ConnectAttachmentId?: string;
+  readonly ConnectPeerId?: string;
+  readonly EdgeLocation?: string;
+  readonly State?: string;
+  readonly CreatedAt?: Date;
+  readonly Configuration?: ConnectPeerConfiguration;
+  readonly Tags?: [];
 }
 
-interface ConnectPeerAssociation {
-  readonly ConnectPeerId: string;
-  readonly GlobalNetworkId: string;
-  readonly DeviceId: string;
-  readonly LinkId: string;
-  readonly State: string;
+export interface ConnectPeerAssociation {
+  readonly ConnectPeerId?: string;
+  readonly GlobalNetworkId?: string;
+  readonly DeviceId?: string;
+  readonly LinkId?: string;
+  readonly State?: string;
 }
 
-interface ConnectPeerBgpConfiguration {
-  readonly CoreNetworkAsn: number;
-  readonly PeerAsn: number;
-  readonly CoreNetworkAddress: string;
-  readonly PeerAddress: string;
+export interface ConnectPeerBgpConfiguration {
+  readonly CoreNetworkAsn?: number;
+  readonly PeerAsn?: number;
+  readonly CoreNetworkAddress?: string;
+  readonly PeerAddress?: string;
 }
 
-interface ConnectPeerConfiguration {
-  readonly CoreNetworkAddress: string;
-  readonly PeerAddress: string;
-  readonly InsideCidrBlocks: [];
-  readonly Protocol: string;
-  readonly BgpConfigurations: [];
+export interface ConnectPeerConfiguration {
+  readonly CoreNetworkAddress?: string;
+  readonly PeerAddress?: string;
+  readonly InsideCidrBlocks?: [];
+  readonly Protocol?: string;
+  readonly BgpConfigurations?: [];
 }
 
-interface ConnectPeerSummary {
-  readonly CoreNetworkId: string;
-  readonly ConnectAttachmentId: string;
-  readonly ConnectPeerId: string;
-  readonly EdgeLocation: string;
-  readonly ConnectPeerState: string;
-  readonly CreatedAt: Date;
-  readonly Tags: [];
+export interface ConnectPeerSummary {
+  readonly CoreNetworkId?: string;
+  readonly ConnectAttachmentId?: string;
+  readonly ConnectPeerId?: string;
+  readonly EdgeLocation?: string;
+  readonly ConnectPeerState?: string;
+  readonly CreatedAt?: Date;
+  readonly Tags?: [];
 }
 
-interface Connection {
-  readonly ConnectionId: string;
-  readonly ConnectionArn: string;
-  readonly GlobalNetworkId: string;
-  readonly DeviceId: string;
-  readonly ConnectedDeviceId: string;
-  readonly LinkId: string;
-  readonly ConnectedLinkId: string;
-  readonly Description: string;
-  readonly CreatedAt: Date;
-  readonly State: string;
-  readonly Tags: [];
+export interface Connection {
+  readonly ConnectionId?: string;
+  readonly ConnectionArn?: string;
+  readonly GlobalNetworkId?: string;
+  readonly DeviceId?: string;
+  readonly ConnectedDeviceId?: string;
+  readonly LinkId?: string;
+  readonly ConnectedLinkId?: string;
+  readonly Description?: string;
+  readonly CreatedAt?: Date;
+  readonly State?: string;
+  readonly Tags?: [];
 }
 
-interface ConnectionHealth {
-  readonly Type: string;
-  readonly Status: string;
-  readonly Timestamp: Date;
+export interface ConnectionHealth {
+  readonly Type?: string;
+  readonly Status?: string;
+  readonly Timestamp?: Date;
 }
 
-interface CoreNetwork {
-  readonly GlobalNetworkId: string;
-  readonly CoreNetworkId: string;
-  readonly CoreNetworkArn: string;
-  readonly Description: string;
-  readonly CreatedAt: Date;
-  readonly State: string;
-  readonly Segments: [];
-  readonly Edges: [];
-  readonly Tags: [];
+export interface CoreNetwork {
+  readonly GlobalNetworkId?: string;
+  readonly CoreNetworkId?: string;
+  readonly CoreNetworkArn?: string;
+  readonly Description?: string;
+  readonly CreatedAt?: Date;
+  readonly State?: string;
+  readonly Segments?: [];
+  readonly Edges?: [];
+  readonly Tags?: [];
 }
 
-interface CoreNetworkChange {
-  readonly Type: string;
-  readonly Action: string;
-  readonly Identifier: string;
-  readonly PreviousValues: CoreNetworkChangeValues;
-  readonly NewValues: CoreNetworkChangeValues;
+export interface CoreNetworkChange {
+  readonly Type?: string;
+  readonly Action?: string;
+  readonly Identifier?: string;
+  readonly PreviousValues?: CoreNetworkChangeValues;
+  readonly NewValues?: CoreNetworkChangeValues;
 }
 
-interface CoreNetworkChangeValues {
-  readonly SegmentName: string;
-  readonly EdgeLocations: [];
-  readonly Asn: number;
-  readonly Cidr: string;
-  readonly DestinationIdentifier: string;
-  readonly InsideCidrBlocks: [];
-  readonly SharedSegments: [];
+export interface CoreNetworkChangeValues {
+  readonly SegmentName?: string;
+  readonly EdgeLocations?: [];
+  readonly Asn?: number;
+  readonly Cidr?: string;
+  readonly DestinationIdentifier?: string;
+  readonly InsideCidrBlocks?: [];
+  readonly SharedSegments?: [];
 }
 
-interface CoreNetworkEdge {
-  readonly EdgeLocation: string;
-  readonly Asn: number;
-  readonly InsideCidrBlocks: [];
+export interface CoreNetworkEdge {
+  readonly EdgeLocation?: string;
+  readonly Asn?: number;
+  readonly InsideCidrBlocks?: [];
 }
 
-interface CoreNetworkPolicy {
-  readonly CoreNetworkId: string;
-  readonly PolicyVersionId: number;
-  readonly Alias: string;
-  readonly Description: string;
-  readonly CreatedAt: Date;
-  readonly ChangeSetState: string;
-  readonly PolicyErrors: [];
-  readonly PolicyDocument: string;
+export interface CoreNetworkPolicy {
+  readonly CoreNetworkId?: string;
+  readonly PolicyVersionId?: number;
+  readonly Alias?: string;
+  readonly Description?: string;
+  readonly CreatedAt?: Date;
+  readonly ChangeSetState?: string;
+  readonly PolicyErrors?: [];
+  readonly PolicyDocument?: string;
 }
 
-interface CoreNetworkPolicyError {
+export interface CoreNetworkPolicyError {
   readonly ErrorCode: string;
   readonly Message: string;
-  readonly Path: string;
+  readonly Path?: string;
 }
 
-interface CoreNetworkPolicyException {
+export interface CoreNetworkPolicyException {
   readonly Message: string;
-  readonly Errors: [];
+  readonly Errors?: [];
 }
 
-interface CoreNetworkPolicyVersion {
-  readonly CoreNetworkId: string;
-  readonly PolicyVersionId: number;
-  readonly Alias: string;
-  readonly Description: string;
-  readonly CreatedAt: Date;
-  readonly ChangeSetState: string;
+export interface CoreNetworkPolicyVersion {
+  readonly CoreNetworkId?: string;
+  readonly PolicyVersionId?: number;
+  readonly Alias?: string;
+  readonly Description?: string;
+  readonly CreatedAt?: Date;
+  readonly ChangeSetState?: string;
 }
 
-interface CoreNetworkSegment {
-  readonly Name: string;
-  readonly EdgeLocations: [];
-  readonly SharedSegments: [];
+export interface CoreNetworkSegment {
+  readonly Name?: string;
+  readonly EdgeLocations?: [];
+  readonly SharedSegments?: [];
 }
 
-interface CoreNetworkSegmentEdgeIdentifier {
-  readonly CoreNetworkId: string;
-  readonly SegmentName: string;
-  readonly EdgeLocation: string;
+export interface CoreNetworkSegmentEdgeIdentifier {
+  readonly CoreNetworkId?: string;
+  readonly SegmentName?: string;
+  readonly EdgeLocation?: string;
 }
 
-interface CoreNetworkSummary {
-  readonly CoreNetworkId: string;
-  readonly CoreNetworkArn: string;
-  readonly GlobalNetworkId: string;
-  readonly OwnerAccountId: string;
-  readonly State: string;
-  readonly Description: string;
-  readonly Tags: [];
+export interface CoreNetworkSummary {
+  readonly CoreNetworkId?: string;
+  readonly CoreNetworkArn?: string;
+  readonly GlobalNetworkId?: string;
+  readonly OwnerAccountId?: string;
+  readonly State?: string;
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 
-interface CreateConnectAttachmentRequest {
+export interface CreateConnectAttachmentRequest {
   readonly CoreNetworkId: string;
   readonly EdgeLocation: string;
   readonly TransportAttachmentId: string;
   readonly Options: ConnectAttachmentOptions;
-  readonly Tags: [];
-  readonly ClientToken: string;
+  readonly Tags?: [];
+  readonly ClientToken?: string;
 }
 
-interface CreateConnectAttachmentResponse {
-  readonly ConnectAttachment: ConnectAttachment;
+export interface CreateConnectAttachmentResponse {
+  readonly ConnectAttachment?: ConnectAttachment;
 }
 
-interface CreateConnectPeerRequest {
+export interface CreateConnectPeerRequest {
   readonly ConnectAttachmentId: string;
-  readonly CoreNetworkAddress: string;
+  readonly CoreNetworkAddress?: string;
   readonly PeerAddress: string;
-  readonly BgpOptions: BgpOptions;
+  readonly BgpOptions?: BgpOptions;
   readonly InsideCidrBlocks: [];
-  readonly Tags: [];
-  readonly ClientToken: string;
+  readonly Tags?: [];
+  readonly ClientToken?: string;
 }
 
-interface CreateConnectPeerResponse {
-  readonly ConnectPeer: ConnectPeer;
+export interface CreateConnectPeerResponse {
+  readonly ConnectPeer?: ConnectPeer;
 }
 
-interface CreateConnectionRequest {
+export interface CreateConnectionRequest {
   readonly GlobalNetworkId: string;
   readonly DeviceId: string;
   readonly ConnectedDeviceId: string;
-  readonly LinkId: string;
-  readonly ConnectedLinkId: string;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly LinkId?: string;
+  readonly ConnectedLinkId?: string;
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 
-interface CreateConnectionResponse {
-  readonly Connection: Connection;
+export interface CreateConnectionResponse {
+  readonly Connection?: Connection;
 }
 
-interface CreateCoreNetworkRequest {
+export interface CreateCoreNetworkRequest {
   readonly GlobalNetworkId: string;
-  readonly Description: string;
-  readonly Tags: [];
-  readonly PolicyDocument: string;
-  readonly ClientToken: string;
+  readonly Description?: string;
+  readonly Tags?: [];
+  readonly PolicyDocument?: string;
+  readonly ClientToken?: string;
 }
 
-interface CreateCoreNetworkResponse {
-  readonly CoreNetwork: CoreNetwork;
+export interface CreateCoreNetworkResponse {
+  readonly CoreNetwork?: CoreNetwork;
 }
 
-interface CreateDeviceRequest {
+export interface CreateDeviceRequest {
   readonly GlobalNetworkId: string;
-  readonly AWSLocation: AWSLocation;
-  readonly Description: string;
-  readonly Type: string;
-  readonly Vendor: string;
-  readonly Model: string;
-  readonly SerialNumber: string;
-  readonly Location: Location;
-  readonly SiteId: string;
-  readonly Tags: [];
+  readonly AWSLocation?: AWSLocation;
+  readonly Description?: string;
+  readonly Type?: string;
+  readonly Vendor?: string;
+  readonly Model?: string;
+  readonly SerialNumber?: string;
+  readonly Location?: Location;
+  readonly SiteId?: string;
+  readonly Tags?: [];
 }
 
-interface CreateDeviceResponse {
-  readonly Device: Device;
+export interface CreateDeviceResponse {
+  readonly Device?: Device;
 }
 
-interface CreateGlobalNetworkRequest {
-  readonly Description: string;
-  readonly Tags: [];
+export interface CreateGlobalNetworkRequest {
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 
-interface CreateGlobalNetworkResponse {
-  readonly GlobalNetwork: GlobalNetwork;
+export interface CreateGlobalNetworkResponse {
+  readonly GlobalNetwork?: GlobalNetwork;
 }
 
-interface CreateLinkRequest {
+export interface CreateLinkRequest {
   readonly GlobalNetworkId: string;
-  readonly Description: string;
-  readonly Type: string;
+  readonly Description?: string;
+  readonly Type?: string;
   readonly Bandwidth: Bandwidth;
-  readonly Provider: string;
+  readonly Provider?: string;
   readonly SiteId: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateLinkResponse {
-  readonly Link: Link;
+export interface CreateLinkResponse {
+  readonly Link?: Link;
 }
 
-interface CreateSiteRequest {
+export interface CreateSiteRequest {
   readonly GlobalNetworkId: string;
-  readonly Description: string;
-  readonly Location: Location;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly Location?: Location;
+  readonly Tags?: [];
 }
 
-interface CreateSiteResponse {
-  readonly Site: Site;
+export interface CreateSiteResponse {
+  readonly Site?: Site;
 }
 
-interface CreateSiteToSiteVpnAttachmentRequest {
+export interface CreateSiteToSiteVpnAttachmentRequest {
   readonly CoreNetworkId: string;
   readonly VpnConnectionArn: string;
-  readonly Tags: [];
-  readonly ClientToken: string;
+  readonly Tags?: [];
+  readonly ClientToken?: string;
 }
 
-interface CreateSiteToSiteVpnAttachmentResponse {
-  readonly SiteToSiteVpnAttachment: SiteToSiteVpnAttachment;
+export interface CreateSiteToSiteVpnAttachmentResponse {
+  readonly SiteToSiteVpnAttachment?: SiteToSiteVpnAttachment;
 }
 
-interface CreateVpcAttachmentRequest {
+export interface CreateVpcAttachmentRequest {
   readonly CoreNetworkId: string;
   readonly VpcArn: string;
   readonly SubnetArns: [];
-  readonly Options: VpcOptions;
-  readonly Tags: [];
-  readonly ClientToken: string;
+  readonly Options?: VpcOptions;
+  readonly Tags?: [];
+  readonly ClientToken?: string;
 }
 
-interface CreateVpcAttachmentResponse {
-  readonly VpcAttachment: VpcAttachment;
+export interface CreateVpcAttachmentResponse {
+  readonly VpcAttachment?: VpcAttachment;
 }
 
-interface CustomerGatewayAssociation {
-  readonly CustomerGatewayArn: string;
-  readonly GlobalNetworkId: string;
-  readonly DeviceId: string;
-  readonly LinkId: string;
-  readonly State: string;
+export interface CustomerGatewayAssociation {
+  readonly CustomerGatewayArn?: string;
+  readonly GlobalNetworkId?: string;
+  readonly DeviceId?: string;
+  readonly LinkId?: string;
+  readonly State?: string;
 }
 
-interface DeleteAttachmentRequest {
+export interface DeleteAttachmentRequest {
   readonly AttachmentId: string;
 }
 
-interface DeleteAttachmentResponse {
-  readonly Attachment: Attachment;
+export interface DeleteAttachmentResponse {
+  readonly Attachment?: Attachment;
 }
 
-interface DeleteConnectPeerRequest {
+export interface DeleteConnectPeerRequest {
   readonly ConnectPeerId: string;
 }
 
-interface DeleteConnectPeerResponse {
-  readonly ConnectPeer: ConnectPeer;
+export interface DeleteConnectPeerResponse {
+  readonly ConnectPeer?: ConnectPeer;
 }
 
-interface DeleteConnectionRequest {
+export interface DeleteConnectionRequest {
   readonly GlobalNetworkId: string;
   readonly ConnectionId: string;
 }
 
-interface DeleteConnectionResponse {
-  readonly Connection: Connection;
+export interface DeleteConnectionResponse {
+  readonly Connection?: Connection;
 }
 
-interface DeleteCoreNetworkPolicyVersionRequest {
+export interface DeleteCoreNetworkPolicyVersionRequest {
   readonly CoreNetworkId: string;
   readonly PolicyVersionId: number;
 }
 
-interface DeleteCoreNetworkPolicyVersionResponse {
-  readonly CoreNetworkPolicy: CoreNetworkPolicy;
+export interface DeleteCoreNetworkPolicyVersionResponse {
+  readonly CoreNetworkPolicy?: CoreNetworkPolicy;
 }
 
-interface DeleteCoreNetworkRequest {
+export interface DeleteCoreNetworkRequest {
   readonly CoreNetworkId: string;
 }
 
-interface DeleteCoreNetworkResponse {
-  readonly CoreNetwork: CoreNetwork;
+export interface DeleteCoreNetworkResponse {
+  readonly CoreNetwork?: CoreNetwork;
 }
 
-interface DeleteDeviceRequest {
+export interface DeleteDeviceRequest {
   readonly GlobalNetworkId: string;
   readonly DeviceId: string;
 }
 
-interface DeleteDeviceResponse {
-  readonly Device: Device;
+export interface DeleteDeviceResponse {
+  readonly Device?: Device;
 }
 
-interface DeleteGlobalNetworkRequest {
+export interface DeleteGlobalNetworkRequest {
   readonly GlobalNetworkId: string;
 }
 
-interface DeleteGlobalNetworkResponse {
-  readonly GlobalNetwork: GlobalNetwork;
+export interface DeleteGlobalNetworkResponse {
+  readonly GlobalNetwork?: GlobalNetwork;
 }
 
-interface DeleteLinkRequest {
+export interface DeleteLinkRequest {
   readonly GlobalNetworkId: string;
   readonly LinkId: string;
 }
 
-interface DeleteLinkResponse {
-  readonly Link: Link;
+export interface DeleteLinkResponse {
+  readonly Link?: Link;
 }
 
-interface DeleteResourcePolicyRequest {
+export interface DeleteResourcePolicyRequest {
   readonly ResourceArn: string;
 }
 
-interface DeleteResourcePolicyResponse {
+export interface DeleteResourcePolicyResponse {
 }
 
-interface DeleteSiteRequest {
+export interface DeleteSiteRequest {
   readonly GlobalNetworkId: string;
   readonly SiteId: string;
 }
 
-interface DeleteSiteResponse {
-  readonly Site: Site;
+export interface DeleteSiteResponse {
+  readonly Site?: Site;
 }
 
-interface DeregisterTransitGatewayRequest {
+export interface DeregisterTransitGatewayRequest {
   readonly GlobalNetworkId: string;
   readonly TransitGatewayArn: string;
 }
 
-interface DeregisterTransitGatewayResponse {
-  readonly TransitGatewayRegistration: TransitGatewayRegistration;
+export interface DeregisterTransitGatewayResponse {
+  readonly TransitGatewayRegistration?: TransitGatewayRegistration;
 }
 
-interface DescribeGlobalNetworksRequest {
-  readonly GlobalNetworkIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeGlobalNetworksRequest {
+  readonly GlobalNetworkIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeGlobalNetworksResponse {
-  readonly GlobalNetworks: [];
-  readonly NextToken: string;
+export interface DescribeGlobalNetworksResponse {
+  readonly GlobalNetworks?: [];
+  readonly NextToken?: string;
 }
 
-interface Device {
-  readonly DeviceId: string;
-  readonly DeviceArn: string;
-  readonly GlobalNetworkId: string;
-  readonly AWSLocation: AWSLocation;
-  readonly Description: string;
-  readonly Type: string;
-  readonly Vendor: string;
-  readonly Model: string;
-  readonly SerialNumber: string;
-  readonly Location: Location;
-  readonly SiteId: string;
-  readonly CreatedAt: Date;
-  readonly State: string;
-  readonly Tags: [];
+export interface Device {
+  readonly DeviceId?: string;
+  readonly DeviceArn?: string;
+  readonly GlobalNetworkId?: string;
+  readonly AWSLocation?: AWSLocation;
+  readonly Description?: string;
+  readonly Type?: string;
+  readonly Vendor?: string;
+  readonly Model?: string;
+  readonly SerialNumber?: string;
+  readonly Location?: Location;
+  readonly SiteId?: string;
+  readonly CreatedAt?: Date;
+  readonly State?: string;
+  readonly Tags?: [];
 }
 
-interface DisassociateConnectPeerRequest {
+export interface DisassociateConnectPeerRequest {
   readonly GlobalNetworkId: string;
   readonly ConnectPeerId: string;
 }
 
-interface DisassociateConnectPeerResponse {
-  readonly ConnectPeerAssociation: ConnectPeerAssociation;
+export interface DisassociateConnectPeerResponse {
+  readonly ConnectPeerAssociation?: ConnectPeerAssociation;
 }
 
-interface DisassociateCustomerGatewayRequest {
+export interface DisassociateCustomerGatewayRequest {
   readonly GlobalNetworkId: string;
   readonly CustomerGatewayArn: string;
 }
 
-interface DisassociateCustomerGatewayResponse {
-  readonly CustomerGatewayAssociation: CustomerGatewayAssociation;
+export interface DisassociateCustomerGatewayResponse {
+  readonly CustomerGatewayAssociation?: CustomerGatewayAssociation;
 }
 
-interface DisassociateLinkRequest {
+export interface DisassociateLinkRequest {
   readonly GlobalNetworkId: string;
   readonly DeviceId: string;
   readonly LinkId: string;
 }
 
-interface DisassociateLinkResponse {
-  readonly LinkAssociation: LinkAssociation;
+export interface DisassociateLinkResponse {
+  readonly LinkAssociation?: LinkAssociation;
 }
 
-interface DisassociateTransitGatewayConnectPeerRequest {
+export interface DisassociateTransitGatewayConnectPeerRequest {
   readonly GlobalNetworkId: string;
   readonly TransitGatewayConnectPeerArn: string;
 }
 
-interface DisassociateTransitGatewayConnectPeerResponse {
-  readonly TransitGatewayConnectPeerAssociation: TransitGatewayConnectPeerAssociation;
+export interface DisassociateTransitGatewayConnectPeerResponse {
+  readonly TransitGatewayConnectPeerAssociation?: TransitGatewayConnectPeerAssociation;
 }
 
-interface ExecuteCoreNetworkChangeSetRequest {
+export interface ExecuteCoreNetworkChangeSetRequest {
   readonly CoreNetworkId: string;
   readonly PolicyVersionId: number;
 }
 
-interface ExecuteCoreNetworkChangeSetResponse {
+export interface ExecuteCoreNetworkChangeSetResponse {
 }
 
-interface GetConnectAttachmentRequest {
+export interface GetConnectAttachmentRequest {
   readonly AttachmentId: string;
 }
 
-interface GetConnectAttachmentResponse {
-  readonly ConnectAttachment: ConnectAttachment;
+export interface GetConnectAttachmentResponse {
+  readonly ConnectAttachment?: ConnectAttachment;
 }
 
-interface GetConnectPeerAssociationsRequest {
+export interface GetConnectPeerAssociationsRequest {
   readonly GlobalNetworkId: string;
-  readonly ConnectPeerIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ConnectPeerIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetConnectPeerAssociationsResponse {
-  readonly ConnectPeerAssociations: [];
-  readonly NextToken: string;
+export interface GetConnectPeerAssociationsResponse {
+  readonly ConnectPeerAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetConnectPeerRequest {
+export interface GetConnectPeerRequest {
   readonly ConnectPeerId: string;
 }
 
-interface GetConnectPeerResponse {
-  readonly ConnectPeer: ConnectPeer;
+export interface GetConnectPeerResponse {
+  readonly ConnectPeer?: ConnectPeer;
 }
 
-interface GetConnectionsRequest {
+export interface GetConnectionsRequest {
   readonly GlobalNetworkId: string;
-  readonly ConnectionIds: [];
-  readonly DeviceId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ConnectionIds?: [];
+  readonly DeviceId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetConnectionsResponse {
-  readonly Connections: [];
-  readonly NextToken: string;
+export interface GetConnectionsResponse {
+  readonly Connections?: [];
+  readonly NextToken?: string;
 }
 
-interface GetCoreNetworkChangeSetRequest {
+export interface GetCoreNetworkChangeSetRequest {
   readonly CoreNetworkId: string;
   readonly PolicyVersionId: number;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetCoreNetworkChangeSetResponse {
-  readonly CoreNetworkChanges: [];
-  readonly NextToken: string;
+export interface GetCoreNetworkChangeSetResponse {
+  readonly CoreNetworkChanges?: [];
+  readonly NextToken?: string;
 }
 
-interface GetCoreNetworkPolicyRequest {
+export interface GetCoreNetworkPolicyRequest {
   readonly CoreNetworkId: string;
-  readonly PolicyVersionId: number;
-  readonly Alias: string;
+  readonly PolicyVersionId?: number;
+  readonly Alias?: string;
 }
 
-interface GetCoreNetworkPolicyResponse {
-  readonly CoreNetworkPolicy: CoreNetworkPolicy;
+export interface GetCoreNetworkPolicyResponse {
+  readonly CoreNetworkPolicy?: CoreNetworkPolicy;
 }
 
-interface GetCoreNetworkRequest {
+export interface GetCoreNetworkRequest {
   readonly CoreNetworkId: string;
 }
 
-interface GetCoreNetworkResponse {
-  readonly CoreNetwork: CoreNetwork;
+export interface GetCoreNetworkResponse {
+  readonly CoreNetwork?: CoreNetwork;
 }
 
-interface GetCustomerGatewayAssociationsRequest {
+export interface GetCustomerGatewayAssociationsRequest {
   readonly GlobalNetworkId: string;
-  readonly CustomerGatewayArns: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly CustomerGatewayArns?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetCustomerGatewayAssociationsResponse {
-  readonly CustomerGatewayAssociations: [];
-  readonly NextToken: string;
+export interface GetCustomerGatewayAssociationsResponse {
+  readonly CustomerGatewayAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetDevicesRequest {
+export interface GetDevicesRequest {
   readonly GlobalNetworkId: string;
-  readonly DeviceIds: [];
-  readonly SiteId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly DeviceIds?: [];
+  readonly SiteId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetDevicesResponse {
-  readonly Devices: [];
-  readonly NextToken: string;
+export interface GetDevicesResponse {
+  readonly Devices?: [];
+  readonly NextToken?: string;
 }
 
-interface GetLinkAssociationsRequest {
+export interface GetLinkAssociationsRequest {
   readonly GlobalNetworkId: string;
-  readonly DeviceId: string;
-  readonly LinkId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly DeviceId?: string;
+  readonly LinkId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetLinkAssociationsResponse {
-  readonly LinkAssociations: [];
-  readonly NextToken: string;
+export interface GetLinkAssociationsResponse {
+  readonly LinkAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetLinksRequest {
+export interface GetLinksRequest {
   readonly GlobalNetworkId: string;
-  readonly LinkIds: [];
-  readonly SiteId: string;
-  readonly Type: string;
-  readonly Provider: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly LinkIds?: [];
+  readonly SiteId?: string;
+  readonly Type?: string;
+  readonly Provider?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetLinksResponse {
-  readonly Links: [];
-  readonly NextToken: string;
+export interface GetLinksResponse {
+  readonly Links?: [];
+  readonly NextToken?: string;
 }
 
-interface GetNetworkResourceCountsRequest {
+export interface GetNetworkResourceCountsRequest {
   readonly GlobalNetworkId: string;
-  readonly ResourceType: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly ResourceType?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetNetworkResourceCountsResponse {
-  readonly NetworkResourceCounts: [];
-  readonly NextToken: string;
+export interface GetNetworkResourceCountsResponse {
+  readonly NetworkResourceCounts?: [];
+  readonly NextToken?: string;
 }
 
-interface GetNetworkResourceRelationshipsRequest {
+export interface GetNetworkResourceRelationshipsRequest {
   readonly GlobalNetworkId: string;
-  readonly CoreNetworkId: string;
-  readonly RegisteredGatewayArn: string;
-  readonly AwsRegion: string;
-  readonly AccountId: string;
-  readonly ResourceType: string;
-  readonly ResourceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly CoreNetworkId?: string;
+  readonly RegisteredGatewayArn?: string;
+  readonly AwsRegion?: string;
+  readonly AccountId?: string;
+  readonly ResourceType?: string;
+  readonly ResourceArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetNetworkResourceRelationshipsResponse {
-  readonly Relationships: [];
-  readonly NextToken: string;
+export interface GetNetworkResourceRelationshipsResponse {
+  readonly Relationships?: [];
+  readonly NextToken?: string;
 }
 
-interface GetNetworkResourcesRequest {
+export interface GetNetworkResourcesRequest {
   readonly GlobalNetworkId: string;
-  readonly CoreNetworkId: string;
-  readonly RegisteredGatewayArn: string;
-  readonly AwsRegion: string;
-  readonly AccountId: string;
-  readonly ResourceType: string;
-  readonly ResourceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly CoreNetworkId?: string;
+  readonly RegisteredGatewayArn?: string;
+  readonly AwsRegion?: string;
+  readonly AccountId?: string;
+  readonly ResourceType?: string;
+  readonly ResourceArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetNetworkResourcesResponse {
-  readonly NetworkResources: [];
-  readonly NextToken: string;
+export interface GetNetworkResourcesResponse {
+  readonly NetworkResources?: [];
+  readonly NextToken?: string;
 }
 
-interface GetNetworkRoutesRequest {
+export interface GetNetworkRoutesRequest {
   readonly GlobalNetworkId: string;
   readonly RouteTableIdentifier: RouteTableIdentifier;
-  readonly ExactCidrMatches: [];
-  readonly LongestPrefixMatches: [];
-  readonly SubnetOfMatches: [];
-  readonly SupernetOfMatches: [];
-  readonly PrefixListIds: [];
-  readonly States: [];
-  readonly Types: [];
-  readonly DestinationFilters: {[key: string]: any};
+  readonly ExactCidrMatches?: [];
+  readonly LongestPrefixMatches?: [];
+  readonly SubnetOfMatches?: [];
+  readonly SupernetOfMatches?: [];
+  readonly PrefixListIds?: [];
+  readonly States?: [];
+  readonly Types?: [];
+  readonly DestinationFilters?: {[key: string]: any};
 }
 
-interface GetNetworkRoutesResponse {
-  readonly RouteTableArn: string;
-  readonly CoreNetworkSegmentEdge: CoreNetworkSegmentEdgeIdentifier;
-  readonly RouteTableType: string;
-  readonly RouteTableTimestamp: Date;
-  readonly NetworkRoutes: [];
+export interface GetNetworkRoutesResponse {
+  readonly RouteTableArn?: string;
+  readonly CoreNetworkSegmentEdge?: CoreNetworkSegmentEdgeIdentifier;
+  readonly RouteTableType?: string;
+  readonly RouteTableTimestamp?: Date;
+  readonly NetworkRoutes?: [];
 }
 
-interface GetNetworkTelemetryRequest {
+export interface GetNetworkTelemetryRequest {
   readonly GlobalNetworkId: string;
-  readonly CoreNetworkId: string;
-  readonly RegisteredGatewayArn: string;
-  readonly AwsRegion: string;
-  readonly AccountId: string;
-  readonly ResourceType: string;
+  readonly CoreNetworkId?: string;
+  readonly RegisteredGatewayArn?: string;
+  readonly AwsRegion?: string;
+  readonly AccountId?: string;
+  readonly ResourceType?: string;
+  readonly ResourceArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface GetNetworkTelemetryResponse {
+  readonly NetworkTelemetry?: [];
+  readonly NextToken?: string;
+}
+
+export interface GetResourcePolicyRequest {
   readonly ResourceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
 }
 
-interface GetNetworkTelemetryResponse {
-  readonly NetworkTelemetry: [];
-  readonly NextToken: string;
+export interface GetResourcePolicyResponse {
+  readonly PolicyDocument?: string;
 }
 
-interface GetResourcePolicyRequest {
-  readonly ResourceArn: string;
-}
-
-interface GetResourcePolicyResponse {
-  readonly PolicyDocument: string;
-}
-
-interface GetRouteAnalysisRequest {
+export interface GetRouteAnalysisRequest {
   readonly GlobalNetworkId: string;
   readonly RouteAnalysisId: string;
 }
 
-interface GetRouteAnalysisResponse {
-  readonly RouteAnalysis: RouteAnalysis;
+export interface GetRouteAnalysisResponse {
+  readonly RouteAnalysis?: RouteAnalysis;
 }
 
-interface GetSiteToSiteVpnAttachmentRequest {
+export interface GetSiteToSiteVpnAttachmentRequest {
   readonly AttachmentId: string;
 }
 
-interface GetSiteToSiteVpnAttachmentResponse {
-  readonly SiteToSiteVpnAttachment: SiteToSiteVpnAttachment;
+export interface GetSiteToSiteVpnAttachmentResponse {
+  readonly SiteToSiteVpnAttachment?: SiteToSiteVpnAttachment;
 }
 
-interface GetSitesRequest {
+export interface GetSitesRequest {
   readonly GlobalNetworkId: string;
-  readonly SiteIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly SiteIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetSitesResponse {
-  readonly Sites: [];
-  readonly NextToken: string;
+export interface GetSitesResponse {
+  readonly Sites?: [];
+  readonly NextToken?: string;
 }
 
-interface GetTransitGatewayConnectPeerAssociationsRequest {
+export interface GetTransitGatewayConnectPeerAssociationsRequest {
   readonly GlobalNetworkId: string;
-  readonly TransitGatewayConnectPeerArns: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly TransitGatewayConnectPeerArns?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetTransitGatewayConnectPeerAssociationsResponse {
-  readonly TransitGatewayConnectPeerAssociations: [];
-  readonly NextToken: string;
+export interface GetTransitGatewayConnectPeerAssociationsResponse {
+  readonly TransitGatewayConnectPeerAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetTransitGatewayRegistrationsRequest {
+export interface GetTransitGatewayRegistrationsRequest {
   readonly GlobalNetworkId: string;
-  readonly TransitGatewayArns: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly TransitGatewayArns?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetTransitGatewayRegistrationsResponse {
-  readonly TransitGatewayRegistrations: [];
-  readonly NextToken: string;
+export interface GetTransitGatewayRegistrationsResponse {
+  readonly TransitGatewayRegistrations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetVpcAttachmentRequest {
+export interface GetVpcAttachmentRequest {
   readonly AttachmentId: string;
 }
 
-interface GetVpcAttachmentResponse {
-  readonly VpcAttachment: VpcAttachment;
+export interface GetVpcAttachmentResponse {
+  readonly VpcAttachment?: VpcAttachment;
 }
 
-interface GlobalNetwork {
-  readonly GlobalNetworkId: string;
-  readonly GlobalNetworkArn: string;
-  readonly Description: string;
-  readonly CreatedAt: Date;
-  readonly State: string;
-  readonly Tags: [];
+export interface GlobalNetwork {
+  readonly GlobalNetworkId?: string;
+  readonly GlobalNetworkArn?: string;
+  readonly Description?: string;
+  readonly CreatedAt?: Date;
+  readonly State?: string;
+  readonly Tags?: [];
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly Message: string;
-  readonly RetryAfterSeconds: number;
+  readonly RetryAfterSeconds?: number;
 }
 
-interface Link {
-  readonly LinkId: string;
-  readonly LinkArn: string;
-  readonly GlobalNetworkId: string;
-  readonly SiteId: string;
-  readonly Description: string;
-  readonly Type: string;
-  readonly Bandwidth: Bandwidth;
-  readonly Provider: string;
-  readonly CreatedAt: Date;
-  readonly State: string;
-  readonly Tags: [];
+export interface Link {
+  readonly LinkId?: string;
+  readonly LinkArn?: string;
+  readonly GlobalNetworkId?: string;
+  readonly SiteId?: string;
+  readonly Description?: string;
+  readonly Type?: string;
+  readonly Bandwidth?: Bandwidth;
+  readonly Provider?: string;
+  readonly CreatedAt?: Date;
+  readonly State?: string;
+  readonly Tags?: [];
 }
 
-interface LinkAssociation {
-  readonly GlobalNetworkId: string;
-  readonly DeviceId: string;
-  readonly LinkId: string;
-  readonly LinkAssociationState: string;
+export interface LinkAssociation {
+  readonly GlobalNetworkId?: string;
+  readonly DeviceId?: string;
+  readonly LinkId?: string;
+  readonly LinkAssociationState?: string;
 }
 
-interface ListAttachmentsRequest {
+export interface ListAttachmentsRequest {
+  readonly CoreNetworkId?: string;
+  readonly AttachmentType?: string;
+  readonly EdgeLocation?: string;
+  readonly State?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface ListAttachmentsResponse {
+  readonly Attachments?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListConnectPeersRequest {
+  readonly CoreNetworkId?: string;
+  readonly ConnectAttachmentId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface ListConnectPeersResponse {
+  readonly ConnectPeers?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListCoreNetworkPolicyVersionsRequest {
   readonly CoreNetworkId: string;
-  readonly AttachmentType: string;
-  readonly EdgeLocation: string;
-  readonly State: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAttachmentsResponse {
-  readonly Attachments: [];
-  readonly NextToken: string;
+export interface ListCoreNetworkPolicyVersionsResponse {
+  readonly CoreNetworkPolicyVersions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListConnectPeersRequest {
-  readonly CoreNetworkId: string;
-  readonly ConnectAttachmentId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListCoreNetworksRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListConnectPeersResponse {
-  readonly ConnectPeers: [];
-  readonly NextToken: string;
+export interface ListCoreNetworksResponse {
+  readonly CoreNetworks?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCoreNetworkPolicyVersionsRequest {
-  readonly CoreNetworkId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface ListCoreNetworkPolicyVersionsResponse {
-  readonly CoreNetworkPolicyVersions: [];
-  readonly NextToken: string;
-}
-
-interface ListCoreNetworksRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface ListCoreNetworksResponse {
-  readonly CoreNetworks: [];
-  readonly NextToken: string;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly TagList: [];
+export interface ListTagsForResourceResponse {
+  readonly TagList?: [];
 }
 
-interface Location {
-  readonly Address: string;
-  readonly Latitude: string;
-  readonly Longitude: string;
+export interface Location {
+  readonly Address?: string;
+  readonly Latitude?: string;
+  readonly Longitude?: string;
 }
 
-interface NetworkResource {
-  readonly RegisteredGatewayArn: string;
-  readonly CoreNetworkId: string;
-  readonly AwsRegion: string;
-  readonly AccountId: string;
-  readonly ResourceType: string;
-  readonly ResourceId: string;
-  readonly ResourceArn: string;
-  readonly Definition: string;
-  readonly DefinitionTimestamp: Date;
-  readonly Tags: [];
-  readonly Metadata: {[key: string]: any};
+export interface NetworkResource {
+  readonly RegisteredGatewayArn?: string;
+  readonly CoreNetworkId?: string;
+  readonly AwsRegion?: string;
+  readonly AccountId?: string;
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
+  readonly ResourceArn?: string;
+  readonly Definition?: string;
+  readonly DefinitionTimestamp?: Date;
+  readonly Tags?: [];
+  readonly Metadata?: {[key: string]: any};
 }
 
-interface NetworkResourceCount {
-  readonly ResourceType: string;
-  readonly Count: number;
+export interface NetworkResourceCount {
+  readonly ResourceType?: string;
+  readonly Count?: number;
 }
 
-interface NetworkResourceSummary {
-  readonly RegisteredGatewayArn: string;
-  readonly ResourceArn: string;
-  readonly ResourceType: string;
-  readonly Definition: string;
-  readonly NameTag: string;
-  readonly IsMiddlebox: boolean;
+export interface NetworkResourceSummary {
+  readonly RegisteredGatewayArn?: string;
+  readonly ResourceArn?: string;
+  readonly ResourceType?: string;
+  readonly Definition?: string;
+  readonly NameTag?: string;
+  readonly IsMiddlebox?: boolean;
 }
 
-interface NetworkRoute {
-  readonly DestinationCidrBlock: string;
-  readonly Destinations: [];
-  readonly PrefixListId: string;
-  readonly State: string;
-  readonly Type: string;
+export interface NetworkRoute {
+  readonly DestinationCidrBlock?: string;
+  readonly Destinations?: [];
+  readonly PrefixListId?: string;
+  readonly State?: string;
+  readonly Type?: string;
 }
 
-interface NetworkRouteDestination {
-  readonly CoreNetworkAttachmentId: string;
-  readonly TransitGatewayAttachmentId: string;
-  readonly SegmentName: string;
-  readonly EdgeLocation: string;
-  readonly ResourceType: string;
-  readonly ResourceId: string;
+export interface NetworkRouteDestination {
+  readonly CoreNetworkAttachmentId?: string;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly SegmentName?: string;
+  readonly EdgeLocation?: string;
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
 }
 
-interface NetworkTelemetry {
-  readonly RegisteredGatewayArn: string;
-  readonly CoreNetworkId: string;
-  readonly AwsRegion: string;
-  readonly AccountId: string;
-  readonly ResourceType: string;
-  readonly ResourceId: string;
-  readonly ResourceArn: string;
-  readonly Address: string;
-  readonly Health: ConnectionHealth;
+export interface NetworkTelemetry {
+  readonly RegisteredGatewayArn?: string;
+  readonly CoreNetworkId?: string;
+  readonly AwsRegion?: string;
+  readonly AccountId?: string;
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
+  readonly ResourceArn?: string;
+  readonly Address?: string;
+  readonly Health?: ConnectionHealth;
 }
 
-interface PathComponent {
-  readonly Sequence: number;
-  readonly Resource: NetworkResourceSummary;
-  readonly DestinationCidrBlock: string;
+export interface PathComponent {
+  readonly Sequence?: number;
+  readonly Resource?: NetworkResourceSummary;
+  readonly DestinationCidrBlock?: string;
 }
 
-interface ProposedSegmentChange {
-  readonly Tags: [];
-  readonly AttachmentPolicyRuleNumber: number;
-  readonly SegmentName: string;
+export interface ProposedSegmentChange {
+  readonly Tags?: [];
+  readonly AttachmentPolicyRuleNumber?: number;
+  readonly SegmentName?: string;
 }
 
-interface PutCoreNetworkPolicyRequest {
+export interface PutCoreNetworkPolicyRequest {
   readonly CoreNetworkId: string;
   readonly PolicyDocument: string;
-  readonly Description: string;
-  readonly LatestVersionId: number;
-  readonly ClientToken: string;
+  readonly Description?: string;
+  readonly LatestVersionId?: number;
+  readonly ClientToken?: string;
 }
 
-interface PutCoreNetworkPolicyResponse {
-  readonly CoreNetworkPolicy: CoreNetworkPolicy;
+export interface PutCoreNetworkPolicyResponse {
+  readonly CoreNetworkPolicy?: CoreNetworkPolicy;
 }
 
-interface PutResourcePolicyRequest {
+export interface PutResourcePolicyRequest {
   readonly PolicyDocument: string;
   readonly ResourceArn: string;
 }
 
-interface PutResourcePolicyResponse {
+export interface PutResourcePolicyResponse {
 }
 
-interface RegisterTransitGatewayRequest {
+export interface RegisterTransitGatewayRequest {
   readonly GlobalNetworkId: string;
   readonly TransitGatewayArn: string;
 }
 
-interface RegisterTransitGatewayResponse {
-  readonly TransitGatewayRegistration: TransitGatewayRegistration;
+export interface RegisterTransitGatewayResponse {
+  readonly TransitGatewayRegistration?: TransitGatewayRegistration;
 }
 
-interface RejectAttachmentRequest {
+export interface RejectAttachmentRequest {
   readonly AttachmentId: string;
 }
 
-interface RejectAttachmentResponse {
-  readonly Attachment: Attachment;
+export interface RejectAttachmentResponse {
+  readonly Attachment?: Attachment;
 }
 
-interface Relationship {
-  readonly From: string;
-  readonly To: string;
+export interface Relationship {
+  readonly From?: string;
+  readonly To?: string;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly Message: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
-  readonly Context: {[key: string]: any};
+  readonly Context?: {[key: string]: any};
 }
 
-interface RestoreCoreNetworkPolicyVersionRequest {
+export interface RestoreCoreNetworkPolicyVersionRequest {
   readonly CoreNetworkId: string;
   readonly PolicyVersionId: number;
 }
 
-interface RestoreCoreNetworkPolicyVersionResponse {
-  readonly CoreNetworkPolicy: CoreNetworkPolicy;
+export interface RestoreCoreNetworkPolicyVersionResponse {
+  readonly CoreNetworkPolicy?: CoreNetworkPolicy;
 }
 
-interface RouteAnalysis {
-  readonly GlobalNetworkId: string;
-  readonly OwnerAccountId: string;
-  readonly RouteAnalysisId: string;
-  readonly StartTimestamp: Date;
-  readonly Status: string;
-  readonly Source: RouteAnalysisEndpointOptions;
-  readonly Destination: RouteAnalysisEndpointOptions;
-  readonly IncludeReturnPath: boolean;
-  readonly UseMiddleboxes: boolean;
-  readonly ForwardPath: RouteAnalysisPath;
-  readonly ReturnPath: RouteAnalysisPath;
+export interface RouteAnalysis {
+  readonly GlobalNetworkId?: string;
+  readonly OwnerAccountId?: string;
+  readonly RouteAnalysisId?: string;
+  readonly StartTimestamp?: Date;
+  readonly Status?: string;
+  readonly Source?: RouteAnalysisEndpointOptions;
+  readonly Destination?: RouteAnalysisEndpointOptions;
+  readonly IncludeReturnPath?: boolean;
+  readonly UseMiddleboxes?: boolean;
+  readonly ForwardPath?: RouteAnalysisPath;
+  readonly ReturnPath?: RouteAnalysisPath;
 }
 
-interface RouteAnalysisCompletion {
-  readonly ResultCode: string;
-  readonly ReasonCode: string;
-  readonly ReasonContext: {[key: string]: any};
+export interface RouteAnalysisCompletion {
+  readonly ResultCode?: string;
+  readonly ReasonCode?: string;
+  readonly ReasonContext?: {[key: string]: any};
 }
 
-interface RouteAnalysisEndpointOptions {
-  readonly TransitGatewayAttachmentArn: string;
-  readonly TransitGatewayArn: string;
-  readonly IpAddress: string;
+export interface RouteAnalysisEndpointOptions {
+  readonly TransitGatewayAttachmentArn?: string;
+  readonly TransitGatewayArn?: string;
+  readonly IpAddress?: string;
 }
 
-interface RouteAnalysisEndpointOptionsSpecification {
-  readonly TransitGatewayAttachmentArn: string;
-  readonly IpAddress: string;
+export interface RouteAnalysisEndpointOptionsSpecification {
+  readonly TransitGatewayAttachmentArn?: string;
+  readonly IpAddress?: string;
 }
 
-interface RouteAnalysisPath {
-  readonly CompletionStatus: RouteAnalysisCompletion;
-  readonly Path: [];
+export interface RouteAnalysisPath {
+  readonly CompletionStatus?: RouteAnalysisCompletion;
+  readonly Path?: [];
 }
 
-interface RouteTableIdentifier {
-  readonly TransitGatewayRouteTableArn: string;
-  readonly CoreNetworkSegmentEdge: CoreNetworkSegmentEdgeIdentifier;
+export interface RouteTableIdentifier {
+  readonly TransitGatewayRouteTableArn?: string;
+  readonly CoreNetworkSegmentEdge?: CoreNetworkSegmentEdgeIdentifier;
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly Message: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
   readonly LimitCode: string;
   readonly ServiceCode: string;
 }
 
-interface Site {
-  readonly SiteId: string;
-  readonly SiteArn: string;
-  readonly GlobalNetworkId: string;
-  readonly Description: string;
-  readonly Location: Location;
-  readonly CreatedAt: Date;
-  readonly State: string;
-  readonly Tags: [];
+export interface Site {
+  readonly SiteId?: string;
+  readonly SiteArn?: string;
+  readonly GlobalNetworkId?: string;
+  readonly Description?: string;
+  readonly Location?: Location;
+  readonly CreatedAt?: Date;
+  readonly State?: string;
+  readonly Tags?: [];
 }
 
-interface SiteToSiteVpnAttachment {
-  readonly Attachment: Attachment;
-  readonly VpnConnectionArn: string;
+export interface SiteToSiteVpnAttachment {
+  readonly Attachment?: Attachment;
+  readonly VpnConnectionArn?: string;
 }
 
-interface StartRouteAnalysisRequest {
+export interface StartRouteAnalysisRequest {
   readonly GlobalNetworkId: string;
   readonly Source: RouteAnalysisEndpointOptionsSpecification;
   readonly Destination: RouteAnalysisEndpointOptionsSpecification;
-  readonly IncludeReturnPath: boolean;
-  readonly UseMiddleboxes: boolean;
+  readonly IncludeReturnPath?: boolean;
+  readonly UseMiddleboxes?: boolean;
 }
 
-interface StartRouteAnalysisResponse {
-  readonly RouteAnalysis: RouteAnalysis;
+export interface StartRouteAnalysisResponse {
+  readonly RouteAnalysis?: RouteAnalysis;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly Message: string;
-  readonly RetryAfterSeconds: number;
+  readonly RetryAfterSeconds?: number;
 }
 
-interface TransitGatewayConnectPeerAssociation {
-  readonly TransitGatewayConnectPeerArn: string;
-  readonly GlobalNetworkId: string;
-  readonly DeviceId: string;
-  readonly LinkId: string;
-  readonly State: string;
+export interface TransitGatewayConnectPeerAssociation {
+  readonly TransitGatewayConnectPeerArn?: string;
+  readonly GlobalNetworkId?: string;
+  readonly DeviceId?: string;
+  readonly LinkId?: string;
+  readonly State?: string;
 }
 
-interface TransitGatewayRegistration {
-  readonly GlobalNetworkId: string;
-  readonly TransitGatewayArn: string;
-  readonly State: TransitGatewayRegistrationStateReason;
+export interface TransitGatewayRegistration {
+  readonly GlobalNetworkId?: string;
+  readonly TransitGatewayArn?: string;
+  readonly State?: TransitGatewayRegistrationStateReason;
 }
 
-interface TransitGatewayRegistrationStateReason {
-  readonly Code: string;
-  readonly Message: string;
+export interface TransitGatewayRegistrationStateReason {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateConnectionRequest {
+export interface UpdateConnectionRequest {
   readonly GlobalNetworkId: string;
   readonly ConnectionId: string;
-  readonly LinkId: string;
-  readonly ConnectedLinkId: string;
-  readonly Description: string;
+  readonly LinkId?: string;
+  readonly ConnectedLinkId?: string;
+  readonly Description?: string;
 }
 
-interface UpdateConnectionResponse {
-  readonly Connection: Connection;
+export interface UpdateConnectionResponse {
+  readonly Connection?: Connection;
 }
 
-interface UpdateCoreNetworkRequest {
+export interface UpdateCoreNetworkRequest {
   readonly CoreNetworkId: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 
-interface UpdateCoreNetworkResponse {
-  readonly CoreNetwork: CoreNetwork;
+export interface UpdateCoreNetworkResponse {
+  readonly CoreNetwork?: CoreNetwork;
 }
 
-interface UpdateDeviceRequest {
+export interface UpdateDeviceRequest {
   readonly GlobalNetworkId: string;
   readonly DeviceId: string;
-  readonly AWSLocation: AWSLocation;
-  readonly Description: string;
-  readonly Type: string;
-  readonly Vendor: string;
-  readonly Model: string;
-  readonly SerialNumber: string;
-  readonly Location: Location;
-  readonly SiteId: string;
+  readonly AWSLocation?: AWSLocation;
+  readonly Description?: string;
+  readonly Type?: string;
+  readonly Vendor?: string;
+  readonly Model?: string;
+  readonly SerialNumber?: string;
+  readonly Location?: Location;
+  readonly SiteId?: string;
 }
 
-interface UpdateDeviceResponse {
-  readonly Device: Device;
+export interface UpdateDeviceResponse {
+  readonly Device?: Device;
 }
 
-interface UpdateGlobalNetworkRequest {
+export interface UpdateGlobalNetworkRequest {
   readonly GlobalNetworkId: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 
-interface UpdateGlobalNetworkResponse {
-  readonly GlobalNetwork: GlobalNetwork;
+export interface UpdateGlobalNetworkResponse {
+  readonly GlobalNetwork?: GlobalNetwork;
 }
 
-interface UpdateLinkRequest {
+export interface UpdateLinkRequest {
   readonly GlobalNetworkId: string;
   readonly LinkId: string;
-  readonly Description: string;
-  readonly Type: string;
-  readonly Bandwidth: Bandwidth;
-  readonly Provider: string;
+  readonly Description?: string;
+  readonly Type?: string;
+  readonly Bandwidth?: Bandwidth;
+  readonly Provider?: string;
 }
 
-interface UpdateLinkResponse {
-  readonly Link: Link;
+export interface UpdateLinkResponse {
+  readonly Link?: Link;
 }
 
-interface UpdateNetworkResourceMetadataRequest {
+export interface UpdateNetworkResourceMetadataRequest {
   readonly GlobalNetworkId: string;
   readonly ResourceArn: string;
   readonly Metadata: {[key: string]: any};
 }
 
-interface UpdateNetworkResourceMetadataResponse {
-  readonly ResourceArn: string;
-  readonly Metadata: {[key: string]: any};
+export interface UpdateNetworkResourceMetadataResponse {
+  readonly ResourceArn?: string;
+  readonly Metadata?: {[key: string]: any};
 }
 
-interface UpdateSiteRequest {
+export interface UpdateSiteRequest {
   readonly GlobalNetworkId: string;
   readonly SiteId: string;
-  readonly Description: string;
-  readonly Location: Location;
+  readonly Description?: string;
+  readonly Location?: Location;
 }
 
-interface UpdateSiteResponse {
-  readonly Site: Site;
+export interface UpdateSiteResponse {
+  readonly Site?: Site;
 }
 
-interface UpdateVpcAttachmentRequest {
+export interface UpdateVpcAttachmentRequest {
   readonly AttachmentId: string;
-  readonly AddSubnetArns: [];
-  readonly RemoveSubnetArns: [];
-  readonly Options: VpcOptions;
+  readonly AddSubnetArns?: [];
+  readonly RemoveSubnetArns?: [];
+  readonly Options?: VpcOptions;
 }
 
-interface UpdateVpcAttachmentResponse {
-  readonly VpcAttachment: VpcAttachment;
+export interface UpdateVpcAttachmentResponse {
+  readonly VpcAttachment?: VpcAttachment;
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly Message: string;
-  readonly Reason: string;
-  readonly Fields: [];
+  readonly Reason?: string;
+  readonly Fields?: [];
 }
 
-interface ValidationExceptionField {
+export interface ValidationExceptionField {
   readonly Name: string;
   readonly Message: string;
 }
 
-interface VpcAttachment {
-  readonly Attachment: Attachment;
-  readonly SubnetArns: [];
-  readonly Options: VpcOptions;
+export interface VpcAttachment {
+  readonly Attachment?: Attachment;
+  readonly SubnetArns?: [];
+  readonly Options?: VpcOptions;
 }
 
-interface VpcOptions {
-  readonly Ipv6Support: boolean;
+export interface VpcOptions {
+  readonly Ipv6Support?: boolean;
 }
+
 

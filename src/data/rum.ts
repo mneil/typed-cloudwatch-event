@@ -8,12 +8,15 @@ export interface CreateAppMonitor {
   readonly Name: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface DeleteAppMonitor {
   readonly Name: string;
 }
+
 export interface GetAppMonitor {
   readonly Name: string;
 }
+
 export interface GetAppMonitorData {
   readonly Filters?: [];
   readonly MaxResults?: number;
@@ -21,13 +24,16 @@ export interface GetAppMonitorData {
   readonly NextToken?: string;
   readonly TimeRange: TimeRange;
 }
+
 export interface ListAppMonitors {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface PutRumEvents {
   readonly AppMonitorDetails: AppMonitorDetails;
   readonly BatchId: string;
@@ -35,14 +41,17 @@ export interface PutRumEvents {
   readonly RumEvents: [];
   readonly UserDetails: UserDetails;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateAppMonitor {
   readonly AppMonitorConfiguration?: AppMonitorConfiguration;
   readonly CwLogEnabled?: boolean;
@@ -50,130 +59,128 @@ export interface UpdateAppMonitor {
   readonly Name: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
 }
 
-interface AppMonitor {
-  readonly AppMonitorConfiguration: AppMonitorConfiguration;
-  readonly Created: string;
-  readonly DataStorage: DataStorage;
-  readonly Domain: string;
-  readonly Id: string;
-  readonly LastModified: string;
-  readonly Name: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
+export interface AppMonitor {
+  readonly AppMonitorConfiguration?: AppMonitorConfiguration;
+  readonly Created?: string;
+  readonly DataStorage?: DataStorage;
+  readonly Domain?: string;
+  readonly Id?: string;
+  readonly LastModified?: string;
+  readonly Name?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface AppMonitorConfiguration {
-  readonly AllowCookies: boolean;
-  readonly EnableXRay: boolean;
-  readonly ExcludedPages: [];
-  readonly FavoritePages: [];
-  readonly GuestRoleArn: string;
-  readonly IdentityPoolId: string;
-  readonly IncludedPages: [];
-  readonly SessionSampleRate: unknown;
-  readonly Telemetries: [];
+export interface AppMonitorConfiguration {
+  readonly AllowCookies?: boolean;
+  readonly EnableXRay?: boolean;
+  readonly ExcludedPages?: [];
+  readonly FavoritePages?: [];
+  readonly GuestRoleArn?: string;
+  readonly IdentityPoolId?: string;
+  readonly IncludedPages?: [];
+  readonly SessionSampleRate?: unknown;
+  readonly Telemetries?: [];
 }
 
-interface AppMonitorDetails {
-  readonly id: string;
-  readonly name: string;
-  readonly version: string;
+export interface AppMonitorDetails {
+  readonly id?: string;
+  readonly name?: string;
+  readonly version?: string;
 }
 
-interface AppMonitorSummary {
-  readonly Created: string;
-  readonly Id: string;
-  readonly LastModified: string;
-  readonly Name: string;
-  readonly State: string;
+export interface AppMonitorSummary {
+  readonly Created?: string;
+  readonly Id?: string;
+  readonly LastModified?: string;
+  readonly Name?: string;
+  readonly State?: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly message: string;
   readonly resourceName: string;
-  readonly resourceType: string;
+  readonly resourceType?: string;
 }
 
-interface CreateAppMonitorRequest {
-  readonly AppMonitorConfiguration: AppMonitorConfiguration;
-  readonly CwLogEnabled: boolean;
+export interface CreateAppMonitorRequest {
+  readonly AppMonitorConfiguration?: AppMonitorConfiguration;
+  readonly CwLogEnabled?: boolean;
   readonly Domain: string;
   readonly Name: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateAppMonitorResponse {
-  readonly Id: string;
+export interface CreateAppMonitorResponse {
+  readonly Id?: string;
 }
 
-interface CwLog {
-  readonly CwLogEnabled: boolean;
-  readonly CwLogGroup: string;
+export interface CwLog {
+  readonly CwLogEnabled?: boolean;
+  readonly CwLogGroup?: string;
 }
 
-interface DataStorage {
-  readonly CwLog: CwLog;
+export interface DataStorage {
+  readonly CwLog?: CwLog;
 }
 
-interface DeleteAppMonitorRequest {
+export interface DeleteAppMonitorRequest {
   readonly Name: string;
 }
 
-interface DeleteAppMonitorResponse {
+export interface DeleteAppMonitorResponse {
 }
 
-interface GetAppMonitorDataRequest {
-  readonly Filters: [];
-  readonly MaxResults: number;
+export interface GetAppMonitorDataRequest {
+  readonly Filters?: [];
+  readonly MaxResults?: number;
   readonly Name: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
   readonly TimeRange: TimeRange;
 }
 
-interface GetAppMonitorDataResponse {
-  readonly Events: [];
-  readonly NextToken: string;
+export interface GetAppMonitorDataResponse {
+  readonly Events?: [];
+  readonly NextToken?: string;
 }
 
-interface GetAppMonitorRequest {
+export interface GetAppMonitorRequest {
   readonly Name: string;
 }
 
-interface GetAppMonitorResponse {
-  readonly AppMonitor: AppMonitor;
+export interface GetAppMonitorResponse {
+  readonly AppMonitor?: AppMonitor;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
-  readonly retryAfterSeconds: number;
+  readonly retryAfterSeconds?: number;
 }
 
-interface ListAppMonitorsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListAppMonitorsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAppMonitorsResponse {
-  readonly AppMonitorSummaries: [];
-  readonly NextToken: string;
+export interface ListAppMonitorsResponse {
+  readonly AppMonitorSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
+export interface ListTagsForResourceResponse {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface PutRumEventsRequest {
+export interface PutRumEventsRequest {
   readonly AppMonitorDetails: AppMonitorDetails;
   readonly BatchId: string;
   readonly Id: string;
@@ -181,76 +188,77 @@ interface PutRumEventsRequest {
   readonly UserDetails: UserDetails;
 }
 
-interface PutRumEventsResponse {
+export interface PutRumEventsResponse {
 }
 
-interface QueryFilter {
-  readonly Name: string;
-  readonly Values: [];
+export interface QueryFilter {
+  readonly Name?: string;
+  readonly Values?: [];
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
   readonly resourceName: string;
-  readonly resourceType: string;
+  readonly resourceType?: string;
 }
 
-interface RumEvent {
+export interface RumEvent {
   readonly details: string;
   readonly id: string;
-  readonly metadata: string;
+  readonly metadata?: string;
   readonly timestamp: Date;
   readonly type: string;
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly message: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly message: string;
-  readonly quotaCode: string;
-  readonly retryAfterSeconds: number;
-  readonly serviceCode: string;
+  readonly quotaCode?: string;
+  readonly retryAfterSeconds?: number;
+  readonly serviceCode?: string;
 }
 
-interface TimeRange {
+export interface TimeRange {
   readonly After: number;
-  readonly Before: number;
+  readonly Before?: number;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateAppMonitorRequest {
-  readonly AppMonitorConfiguration: AppMonitorConfiguration;
-  readonly CwLogEnabled: boolean;
-  readonly Domain: string;
+export interface UpdateAppMonitorRequest {
+  readonly AppMonitorConfiguration?: AppMonitorConfiguration;
+  readonly CwLogEnabled?: boolean;
+  readonly Domain?: string;
   readonly Name: string;
 }
 
-interface UpdateAppMonitorResponse {
+export interface UpdateAppMonitorResponse {
 }
 
-interface UserDetails {
-  readonly sessionId: string;
-  readonly userId: string;
+export interface UserDetails {
+  readonly sessionId?: string;
+  readonly userId?: string;
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly message: string;
 }
+
 

@@ -5,6 +5,7 @@ export interface ConfigureLogs {
   readonly EgressAccessLogs?: EgressAccessLogs;
   readonly Id: string;
 }
+
 export interface CreateAsset {
   readonly Id: string;
   readonly PackagingGroupId: string;
@@ -13,6 +14,7 @@ export interface CreateAsset {
   readonly SourceRoleArn: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreatePackagingConfiguration {
   readonly CmafPackage?: CmafPackage;
   readonly DashPackage?: DashPackage;
@@ -22,478 +24,491 @@ export interface CreatePackagingConfiguration {
   readonly PackagingGroupId: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreatePackagingGroup {
   readonly Authorization?: Authorization;
   readonly EgressAccessLogs?: EgressAccessLogs;
   readonly Id: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface DeleteAsset {
   readonly Id: string;
 }
+
 export interface DeletePackagingConfiguration {
   readonly Id: string;
 }
+
 export interface DeletePackagingGroup {
   readonly Id: string;
 }
+
 export interface DescribeAsset {
   readonly Id: string;
 }
+
 export interface DescribePackagingConfiguration {
   readonly Id: string;
 }
+
 export interface DescribePackagingGroup {
   readonly Id: string;
 }
+
 export interface ListAssets {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly PackagingGroupId?: string;
 }
+
 export interface ListPackagingConfigurations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly PackagingGroupId?: string;
 }
+
 export interface ListPackagingGroups {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdatePackagingGroup {
   readonly Authorization?: Authorization;
   readonly Id: string;
 }
 
+export interface Asset {
+  readonly Arn?: string;
+  readonly CreatedAt?: string;
+  readonly EgressEndpoints?: [];
+  readonly Id?: string;
+  readonly PackagingGroupId?: string;
+  readonly ResourceId?: string;
+  readonly SourceArn?: string;
+  readonly SourceRoleArn?: string;
+  readonly Tags?: {[key: string]: any};
+}
 
-
-interface Asset {
-  readonly Arn: string;
-  readonly CreatedAt: string;
-  readonly EgressEndpoints: [];
+export interface AssetCreateParameters {
   readonly Id: string;
   readonly PackagingGroupId: string;
-  readonly ResourceId: string;
+  readonly ResourceId?: string;
   readonly SourceArn: string;
   readonly SourceRoleArn: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface AssetCreateParameters {
-  readonly Id: string;
-  readonly PackagingGroupId: string;
-  readonly ResourceId: string;
-  readonly SourceArn: string;
-  readonly SourceRoleArn: string;
-  readonly Tags: {[key: string]: any};
+export interface AssetList {
+  readonly Assets?: [];
+  readonly NextToken?: string;
 }
 
-interface AssetList {
-  readonly Assets: [];
-  readonly NextToken: string;
+export interface AssetShallow {
+  readonly Arn?: string;
+  readonly CreatedAt?: string;
+  readonly Id?: string;
+  readonly PackagingGroupId?: string;
+  readonly ResourceId?: string;
+  readonly SourceArn?: string;
+  readonly SourceRoleArn?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface AssetShallow {
-  readonly Arn: string;
-  readonly CreatedAt: string;
-  readonly Id: string;
-  readonly PackagingGroupId: string;
-  readonly ResourceId: string;
-  readonly SourceArn: string;
-  readonly SourceRoleArn: string;
-  readonly Tags: {[key: string]: any};
-}
-
-interface Authorization {
+export interface Authorization {
   readonly CdnIdentifierSecret: string;
   readonly SecretsRoleArn: string;
 }
 
-interface CmafEncryption {
-  readonly ConstantInitializationVector: string;
+export interface CmafEncryption {
+  readonly ConstantInitializationVector?: string;
   readonly SpekeKeyProvider: SpekeKeyProvider;
 }
 
-interface CmafPackage {
-  readonly Encryption: CmafEncryption;
+export interface CmafPackage {
+  readonly Encryption?: CmafEncryption;
   readonly HlsManifests: [];
-  readonly IncludeEncoderConfigurationInSegments: boolean;
-  readonly SegmentDurationSeconds: number;
+  readonly IncludeEncoderConfigurationInSegments?: boolean;
+  readonly SegmentDurationSeconds?: number;
 }
 
-interface ConfigureLogsParameters {
-  readonly EgressAccessLogs: EgressAccessLogs;
+export interface ConfigureLogsParameters {
+  readonly EgressAccessLogs?: EgressAccessLogs;
 }
 
-interface ConfigureLogsRequest {
-  readonly EgressAccessLogs: EgressAccessLogs;
+export interface ConfigureLogsRequest {
+  readonly EgressAccessLogs?: EgressAccessLogs;
   readonly Id: string;
 }
 
-interface ConfigureLogsResponse {
-  readonly Arn: string;
-  readonly Authorization: Authorization;
-  readonly DomainName: string;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly Id: string;
-  readonly Tags: {[key: string]: any};
+export interface ConfigureLogsResponse {
+  readonly Arn?: string;
+  readonly Authorization?: Authorization;
+  readonly DomainName?: string;
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly Id?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateAssetRequest {
+export interface CreateAssetRequest {
   readonly Id: string;
   readonly PackagingGroupId: string;
-  readonly ResourceId: string;
+  readonly ResourceId?: string;
   readonly SourceArn: string;
   readonly SourceRoleArn: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateAssetResponse {
-  readonly Arn: string;
-  readonly CreatedAt: string;
-  readonly EgressEndpoints: [];
+export interface CreateAssetResponse {
+  readonly Arn?: string;
+  readonly CreatedAt?: string;
+  readonly EgressEndpoints?: [];
+  readonly Id?: string;
+  readonly PackagingGroupId?: string;
+  readonly ResourceId?: string;
+  readonly SourceArn?: string;
+  readonly SourceRoleArn?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface CreatePackagingConfigurationRequest {
+  readonly CmafPackage?: CmafPackage;
+  readonly DashPackage?: DashPackage;
+  readonly HlsPackage?: HlsPackage;
   readonly Id: string;
+  readonly MssPackage?: MssPackage;
   readonly PackagingGroupId: string;
-  readonly ResourceId: string;
-  readonly SourceArn: string;
-  readonly SourceRoleArn: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreatePackagingConfigurationRequest {
-  readonly CmafPackage: CmafPackage;
-  readonly DashPackage: DashPackage;
-  readonly HlsPackage: HlsPackage;
+export interface CreatePackagingConfigurationResponse {
+  readonly Arn?: string;
+  readonly CmafPackage?: CmafPackage;
+  readonly DashPackage?: DashPackage;
+  readonly HlsPackage?: HlsPackage;
+  readonly Id?: string;
+  readonly MssPackage?: MssPackage;
+  readonly PackagingGroupId?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface CreatePackagingGroupRequest {
+  readonly Authorization?: Authorization;
+  readonly EgressAccessLogs?: EgressAccessLogs;
   readonly Id: string;
-  readonly MssPackage: MssPackage;
-  readonly PackagingGroupId: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreatePackagingConfigurationResponse {
-  readonly Arn: string;
-  readonly CmafPackage: CmafPackage;
-  readonly DashPackage: DashPackage;
-  readonly HlsPackage: HlsPackage;
-  readonly Id: string;
-  readonly MssPackage: MssPackage;
-  readonly PackagingGroupId: string;
-  readonly Tags: {[key: string]: any};
+export interface CreatePackagingGroupResponse {
+  readonly Arn?: string;
+  readonly Authorization?: Authorization;
+  readonly DomainName?: string;
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly Id?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreatePackagingGroupRequest {
-  readonly Authorization: Authorization;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly Id: string;
-  readonly Tags: {[key: string]: any};
-}
-
-interface CreatePackagingGroupResponse {
-  readonly Arn: string;
-  readonly Authorization: Authorization;
-  readonly DomainName: string;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly Id: string;
-  readonly Tags: {[key: string]: any};
-}
-
-interface DashEncryption {
+export interface DashEncryption {
   readonly SpekeKeyProvider: SpekeKeyProvider;
 }
 
-interface DashManifest {
-  readonly ManifestLayout: string;
-  readonly ManifestName: string;
-  readonly MinBufferTimeSeconds: number;
-  readonly Profile: string;
-  readonly StreamSelection: StreamSelection;
+export interface DashManifest {
+  readonly ManifestLayout?: string;
+  readonly ManifestName?: string;
+  readonly MinBufferTimeSeconds?: number;
+  readonly Profile?: string;
+  readonly StreamSelection?: StreamSelection;
 }
 
-interface DashPackage {
+export interface DashPackage {
   readonly DashManifests: [];
-  readonly Encryption: DashEncryption;
-  readonly IncludeEncoderConfigurationInSegments: boolean;
-  readonly PeriodTriggers: [];
-  readonly SegmentDurationSeconds: number;
-  readonly SegmentTemplateFormat: string;
+  readonly Encryption?: DashEncryption;
+  readonly IncludeEncoderConfigurationInSegments?: boolean;
+  readonly PeriodTriggers?: [];
+  readonly SegmentDurationSeconds?: number;
+  readonly SegmentTemplateFormat?: string;
 }
 
-interface DeleteAssetRequest {
+export interface DeleteAssetRequest {
   readonly Id: string;
 }
 
-interface DeleteAssetResponse {
+export interface DeleteAssetResponse {
 }
 
-interface DeletePackagingConfigurationRequest {
+export interface DeletePackagingConfigurationRequest {
   readonly Id: string;
 }
 
-interface DeletePackagingConfigurationResponse {
+export interface DeletePackagingConfigurationResponse {
 }
 
-interface DeletePackagingGroupRequest {
+export interface DeletePackagingGroupRequest {
   readonly Id: string;
 }
 
-interface DeletePackagingGroupResponse {
+export interface DeletePackagingGroupResponse {
 }
 
-interface DescribeAssetRequest {
+export interface DescribeAssetRequest {
   readonly Id: string;
 }
 
-interface DescribeAssetResponse {
-  readonly Arn: string;
-  readonly CreatedAt: string;
-  readonly EgressEndpoints: [];
-  readonly Id: string;
-  readonly PackagingGroupId: string;
-  readonly ResourceId: string;
-  readonly SourceArn: string;
-  readonly SourceRoleArn: string;
-  readonly Tags: {[key: string]: any};
+export interface DescribeAssetResponse {
+  readonly Arn?: string;
+  readonly CreatedAt?: string;
+  readonly EgressEndpoints?: [];
+  readonly Id?: string;
+  readonly PackagingGroupId?: string;
+  readonly ResourceId?: string;
+  readonly SourceArn?: string;
+  readonly SourceRoleArn?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface DescribePackagingConfigurationRequest {
-  readonly Id: string;
-}
-
-interface DescribePackagingConfigurationResponse {
-  readonly Arn: string;
-  readonly CmafPackage: CmafPackage;
-  readonly DashPackage: DashPackage;
-  readonly HlsPackage: HlsPackage;
-  readonly Id: string;
-  readonly MssPackage: MssPackage;
-  readonly PackagingGroupId: string;
-  readonly Tags: {[key: string]: any};
-}
-
-interface DescribePackagingGroupRequest {
+export interface DescribePackagingConfigurationRequest {
   readonly Id: string;
 }
 
-interface DescribePackagingGroupResponse {
-  readonly Arn: string;
-  readonly Authorization: Authorization;
-  readonly DomainName: string;
-  readonly EgressAccessLogs: EgressAccessLogs;
+export interface DescribePackagingConfigurationResponse {
+  readonly Arn?: string;
+  readonly CmafPackage?: CmafPackage;
+  readonly DashPackage?: DashPackage;
+  readonly HlsPackage?: HlsPackage;
+  readonly Id?: string;
+  readonly MssPackage?: MssPackage;
+  readonly PackagingGroupId?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface DescribePackagingGroupRequest {
   readonly Id: string;
-  readonly Tags: {[key: string]: any};
 }
 
-interface EgressAccessLogs {
-  readonly LogGroupName: string;
+export interface DescribePackagingGroupResponse {
+  readonly Arn?: string;
+  readonly Authorization?: Authorization;
+  readonly DomainName?: string;
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly Id?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface EgressEndpoint {
-  readonly PackagingConfigurationId: string;
-  readonly Status: string;
-  readonly Url: string;
+export interface EgressAccessLogs {
+  readonly LogGroupName?: string;
 }
 
-interface ForbiddenException {
-  readonly Message: string;
+export interface EgressEndpoint {
+  readonly PackagingConfigurationId?: string;
+  readonly Status?: string;
+  readonly Url?: string;
 }
 
-interface HlsEncryption {
-  readonly ConstantInitializationVector: string;
-  readonly EncryptionMethod: string;
+export interface ForbiddenException {
+  readonly Message?: string;
+}
+
+export interface HlsEncryption {
+  readonly ConstantInitializationVector?: string;
+  readonly EncryptionMethod?: string;
   readonly SpekeKeyProvider: SpekeKeyProvider;
 }
 
-interface HlsManifest {
-  readonly AdMarkers: string;
-  readonly IncludeIframeOnlyStream: boolean;
-  readonly ManifestName: string;
-  readonly ProgramDateTimeIntervalSeconds: number;
-  readonly RepeatExtXKey: boolean;
-  readonly StreamSelection: StreamSelection;
+export interface HlsManifest {
+  readonly AdMarkers?: string;
+  readonly IncludeIframeOnlyStream?: boolean;
+  readonly ManifestName?: string;
+  readonly ProgramDateTimeIntervalSeconds?: number;
+  readonly RepeatExtXKey?: boolean;
+  readonly StreamSelection?: StreamSelection;
 }
 
-interface HlsPackage {
-  readonly Encryption: HlsEncryption;
+export interface HlsPackage {
+  readonly Encryption?: HlsEncryption;
   readonly HlsManifests: [];
-  readonly IncludeDvbSubtitles: boolean;
-  readonly SegmentDurationSeconds: number;
-  readonly UseAudioRenditionGroup: boolean;
+  readonly IncludeDvbSubtitles?: boolean;
+  readonly SegmentDurationSeconds?: number;
+  readonly UseAudioRenditionGroup?: boolean;
 }
 
-interface InternalServerErrorException {
-  readonly Message: string;
+export interface InternalServerErrorException {
+  readonly Message?: string;
 }
 
-interface ListAssetsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly PackagingGroupId: string;
+export interface ListAssetsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly PackagingGroupId?: string;
 }
 
-interface ListAssetsResponse {
-  readonly Assets: [];
-  readonly NextToken: string;
+export interface ListAssetsResponse {
+  readonly Assets?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPackagingConfigurationsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly PackagingGroupId: string;
+export interface ListPackagingConfigurationsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly PackagingGroupId?: string;
 }
 
-interface ListPackagingConfigurationsResponse {
-  readonly NextToken: string;
-  readonly PackagingConfigurations: [];
+export interface ListPackagingConfigurationsResponse {
+  readonly NextToken?: string;
+  readonly PackagingConfigurations?: [];
 }
 
-interface ListPackagingGroupsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListPackagingGroupsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListPackagingGroupsResponse {
-  readonly NextToken: string;
-  readonly PackagingGroups: [];
+export interface ListPackagingGroupsResponse {
+  readonly NextToken?: string;
+  readonly PackagingGroups?: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface MssEncryption {
+export interface MssEncryption {
   readonly SpekeKeyProvider: SpekeKeyProvider;
 }
 
-interface MssManifest {
-  readonly ManifestName: string;
-  readonly StreamSelection: StreamSelection;
+export interface MssManifest {
+  readonly ManifestName?: string;
+  readonly StreamSelection?: StreamSelection;
 }
 
-interface MssPackage {
-  readonly Encryption: MssEncryption;
+export interface MssPackage {
+  readonly Encryption?: MssEncryption;
   readonly MssManifests: [];
-  readonly SegmentDurationSeconds: number;
+  readonly SegmentDurationSeconds?: number;
 }
 
-interface NotFoundException {
-  readonly Message: string;
+export interface NotFoundException {
+  readonly Message?: string;
 }
 
-interface PackagingConfiguration {
-  readonly Arn: string;
-  readonly CmafPackage: CmafPackage;
-  readonly DashPackage: DashPackage;
-  readonly HlsPackage: HlsPackage;
+export interface PackagingConfiguration {
+  readonly Arn?: string;
+  readonly CmafPackage?: CmafPackage;
+  readonly DashPackage?: DashPackage;
+  readonly HlsPackage?: HlsPackage;
+  readonly Id?: string;
+  readonly MssPackage?: MssPackage;
+  readonly PackagingGroupId?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface PackagingConfigurationCreateParameters {
+  readonly CmafPackage?: CmafPackage;
+  readonly DashPackage?: DashPackage;
+  readonly HlsPackage?: HlsPackage;
   readonly Id: string;
-  readonly MssPackage: MssPackage;
+  readonly MssPackage?: MssPackage;
   readonly PackagingGroupId: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface PackagingConfigurationCreateParameters {
-  readonly CmafPackage: CmafPackage;
-  readonly DashPackage: DashPackage;
-  readonly HlsPackage: HlsPackage;
+export interface PackagingConfigurationList {
+  readonly NextToken?: string;
+  readonly PackagingConfigurations?: [];
+}
+
+export interface PackagingGroup {
+  readonly Arn?: string;
+  readonly Authorization?: Authorization;
+  readonly DomainName?: string;
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly Id?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface PackagingGroupCreateParameters {
+  readonly Authorization?: Authorization;
+  readonly EgressAccessLogs?: EgressAccessLogs;
   readonly Id: string;
-  readonly MssPackage: MssPackage;
-  readonly PackagingGroupId: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface PackagingConfigurationList {
-  readonly NextToken: string;
-  readonly PackagingConfigurations: [];
+export interface PackagingGroupList {
+  readonly NextToken?: string;
+  readonly PackagingGroups?: [];
 }
 
-interface PackagingGroup {
-  readonly Arn: string;
-  readonly Authorization: Authorization;
-  readonly DomainName: string;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly Id: string;
-  readonly Tags: {[key: string]: any};
+export interface PackagingGroupUpdateParameters {
+  readonly Authorization?: Authorization;
 }
 
-interface PackagingGroupCreateParameters {
-  readonly Authorization: Authorization;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly Id: string;
-  readonly Tags: {[key: string]: any};
+export interface ServiceUnavailableException {
+  readonly Message?: string;
 }
 
-interface PackagingGroupList {
-  readonly NextToken: string;
-  readonly PackagingGroups: [];
-}
-
-interface PackagingGroupUpdateParameters {
-  readonly Authorization: Authorization;
-}
-
-interface ServiceUnavailableException {
-  readonly Message: string;
-}
-
-interface SpekeKeyProvider {
+export interface SpekeKeyProvider {
   readonly RoleArn: string;
   readonly SystemIds: [];
   readonly Url: string;
 }
 
-interface StreamSelection {
-  readonly MaxVideoBitsPerSecond: number;
-  readonly MinVideoBitsPerSecond: number;
-  readonly StreamOrder: string;
+export interface StreamSelection {
+  readonly MaxVideoBitsPerSecond?: number;
+  readonly MinVideoBitsPerSecond?: number;
+  readonly StreamOrder?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagsModel {
+export interface TagsModel {
   readonly Tags: {[key: string]: any};
 }
 
-interface TooManyRequestsException {
-  readonly Message: string;
+export interface TooManyRequestsException {
+  readonly Message?: string;
 }
 
-interface UnprocessableEntityException {
-  readonly Message: string;
+export interface UnprocessableEntityException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UpdatePackagingGroupRequest {
-  readonly Authorization: Authorization;
+export interface UpdatePackagingGroupRequest {
+  readonly Authorization?: Authorization;
   readonly Id: string;
 }
 
-interface UpdatePackagingGroupResponse {
-  readonly Arn: string;
-  readonly Authorization: Authorization;
-  readonly DomainName: string;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly Id: string;
-  readonly Tags: {[key: string]: any};
+export interface UpdatePackagingGroupResponse {
+  readonly Arn?: string;
+  readonly Authorization?: Authorization;
+  readonly DomainName?: string;
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly Id?: string;
+  readonly Tags?: {[key: string]: any};
 }
+
 

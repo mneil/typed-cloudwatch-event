@@ -6,91 +6,93 @@ export interface GetRoleCredentials {
   readonly accountId: string;
   readonly accessToken: string;
 }
+
 export interface ListAccountRoles {
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly accessToken: string;
   readonly accountId: string;
 }
+
 export interface ListAccounts {
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly accessToken: string;
 }
+
 export interface Logout {
   readonly accessToken: string;
 }
 
-
-
-interface AccountInfo {
-  readonly accountId: string;
-  readonly accountName: string;
-  readonly emailAddress: string;
+export interface AccountInfo {
+  readonly accountId?: string;
+  readonly accountName?: string;
+  readonly emailAddress?: string;
 }
 
-interface GetRoleCredentialsRequest {
+export interface GetRoleCredentialsRequest {
   readonly roleName: string;
   readonly accountId: string;
   readonly accessToken: string;
 }
 
-interface GetRoleCredentialsResponse {
-  readonly roleCredentials: RoleCredentials;
+export interface GetRoleCredentialsResponse {
+  readonly roleCredentials?: RoleCredentials;
 }
 
-interface InvalidRequestException {
-  readonly message: string;
+export interface InvalidRequestException {
+  readonly message?: string;
 }
 
-interface ListAccountRolesRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListAccountRolesRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
   readonly accessToken: string;
   readonly accountId: string;
 }
 
-interface ListAccountRolesResponse {
-  readonly nextToken: string;
-  readonly roleList: [];
+export interface ListAccountRolesResponse {
+  readonly nextToken?: string;
+  readonly roleList?: [];
 }
 
-interface ListAccountsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListAccountsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
   readonly accessToken: string;
 }
 
-interface ListAccountsResponse {
-  readonly nextToken: string;
-  readonly accountList: [];
+export interface ListAccountsResponse {
+  readonly nextToken?: string;
+  readonly accountList?: [];
 }
 
-interface LogoutRequest {
+export interface LogoutRequest {
   readonly accessToken: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface RoleCredentials {
-  readonly accessKeyId: string;
-  readonly secretAccessKey: string;
-  readonly sessionToken: string;
-  readonly expiration: number;
+export interface RoleCredentials {
+  readonly accessKeyId?: string;
+  readonly secretAccessKey?: string;
+  readonly sessionToken?: string;
+  readonly expiration?: number;
 }
 
-interface RoleInfo {
-  readonly roleName: string;
-  readonly accountId: string;
+export interface RoleInfo {
+  readonly roleName?: string;
+  readonly accountId?: string;
 }
 
-interface TooManyRequestsException {
-  readonly message: string;
+export interface TooManyRequestsException {
+  readonly message?: string;
 }
 
-interface UnauthorizedException {
-  readonly message: string;
+export interface UnauthorizedException {
+  readonly message?: string;
 }
+
 

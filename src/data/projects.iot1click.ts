@@ -7,197 +7,210 @@ export interface AssociateDeviceWithPlacement {
   readonly deviceId: string;
   readonly deviceTemplateName: string;
 }
+
 export interface CreatePlacement {
   readonly placementName: string;
   readonly projectName: string;
   readonly attributes?: {[key: string]: any};
 }
+
 export interface CreateProject {
   readonly projectName: string;
   readonly description?: string;
   readonly placementTemplate?: PlacementTemplate;
   readonly tags?: {[key: string]: any};
 }
+
 export interface DeletePlacement {
   readonly placementName: string;
   readonly projectName: string;
 }
+
 export interface DeleteProject {
   readonly projectName: string;
 }
+
 export interface DescribePlacement {
   readonly placementName: string;
   readonly projectName: string;
 }
+
 export interface DescribeProject {
   readonly projectName: string;
 }
+
 export interface DisassociateDeviceFromPlacement {
   readonly projectName: string;
   readonly placementName: string;
   readonly deviceTemplateName: string;
 }
+
 export interface GetDevicesInPlacement {
   readonly projectName: string;
   readonly placementName: string;
 }
+
 export interface ListPlacements {
   readonly projectName: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListProjects {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdatePlacement {
   readonly placementName: string;
   readonly projectName: string;
   readonly attributes?: {[key: string]: any};
 }
+
 export interface UpdateProject {
   readonly projectName: string;
   readonly description?: string;
   readonly placementTemplate?: PlacementTemplate;
 }
 
-
-
-interface AssociateDeviceWithPlacementRequest {
+export interface AssociateDeviceWithPlacementRequest {
   readonly projectName: string;
   readonly placementName: string;
   readonly deviceId: string;
   readonly deviceTemplateName: string;
 }
 
-interface AssociateDeviceWithPlacementResponse {
+export interface AssociateDeviceWithPlacementResponse {
 }
 
-interface CreatePlacementRequest {
+export interface CreatePlacementRequest {
   readonly placementName: string;
   readonly projectName: string;
-  readonly attributes: {[key: string]: any};
+  readonly attributes?: {[key: string]: any};
 }
 
-interface CreatePlacementResponse {
+export interface CreatePlacementResponse {
 }
 
-interface CreateProjectRequest {
+export interface CreateProjectRequest {
   readonly projectName: string;
-  readonly description: string;
-  readonly placementTemplate: PlacementTemplate;
-  readonly tags: {[key: string]: any};
+  readonly description?: string;
+  readonly placementTemplate?: PlacementTemplate;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateProjectResponse {
+export interface CreateProjectResponse {
 }
 
-interface DeletePlacementRequest {
-  readonly placementName: string;
-  readonly projectName: string;
-}
-
-interface DeletePlacementResponse {
-}
-
-interface DeleteProjectRequest {
-  readonly projectName: string;
-}
-
-interface DeleteProjectResponse {
-}
-
-interface DescribePlacementRequest {
+export interface DeletePlacementRequest {
   readonly placementName: string;
   readonly projectName: string;
 }
 
-interface DescribePlacementResponse {
+export interface DeletePlacementResponse {
+}
+
+export interface DeleteProjectRequest {
+  readonly projectName: string;
+}
+
+export interface DeleteProjectResponse {
+}
+
+export interface DescribePlacementRequest {
+  readonly placementName: string;
+  readonly projectName: string;
+}
+
+export interface DescribePlacementResponse {
   readonly placement: PlacementDescription;
 }
 
-interface DescribeProjectRequest {
+export interface DescribeProjectRequest {
   readonly projectName: string;
 }
 
-interface DescribeProjectResponse {
+export interface DescribeProjectResponse {
   readonly project: ProjectDescription;
 }
 
-interface DeviceTemplate {
-  readonly deviceType: string;
-  readonly callbackOverrides: {[key: string]: any};
+export interface DeviceTemplate {
+  readonly deviceType?: string;
+  readonly callbackOverrides?: {[key: string]: any};
 }
 
-interface DisassociateDeviceFromPlacementRequest {
+export interface DisassociateDeviceFromPlacementRequest {
   readonly projectName: string;
   readonly placementName: string;
   readonly deviceTemplateName: string;
 }
 
-interface DisassociateDeviceFromPlacementResponse {
+export interface DisassociateDeviceFromPlacementResponse {
 }
 
-interface GetDevicesInPlacementRequest {
+export interface GetDevicesInPlacementRequest {
   readonly projectName: string;
   readonly placementName: string;
 }
 
-interface GetDevicesInPlacementResponse {
+export interface GetDevicesInPlacementResponse {
   readonly devices: {[key: string]: any};
 }
 
-interface InternalFailureException {
+export interface InternalFailureException {
   readonly code: string;
   readonly message: string;
 }
 
-interface InvalidRequestException {
+export interface InvalidRequestException {
   readonly code: string;
   readonly message: string;
 }
 
-interface ListPlacementsRequest {
+export interface ListPlacementsRequest {
   readonly projectName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListPlacementsResponse {
+export interface ListPlacementsResponse {
   readonly placements: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListProjectsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListProjectsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListProjectsResponse {
+export interface ListProjectsResponse {
   readonly projects: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface PlacementDescription {
+export interface PlacementDescription {
   readonly projectName: string;
   readonly placementName: string;
   readonly attributes: {[key: string]: any};
@@ -205,82 +218,83 @@ interface PlacementDescription {
   readonly updatedDate: Date;
 }
 
-interface PlacementSummary {
+export interface PlacementSummary {
   readonly projectName: string;
   readonly placementName: string;
   readonly createdDate: Date;
   readonly updatedDate: Date;
 }
 
-interface PlacementTemplate {
-  readonly defaultAttributes: {[key: string]: any};
-  readonly deviceTemplates: {[key: string]: any};
+export interface PlacementTemplate {
+  readonly defaultAttributes?: {[key: string]: any};
+  readonly deviceTemplates?: {[key: string]: any};
 }
 
-interface ProjectDescription {
-  readonly arn: string;
+export interface ProjectDescription {
+  readonly arn?: string;
   readonly projectName: string;
-  readonly description: string;
+  readonly description?: string;
   readonly createdDate: Date;
   readonly updatedDate: Date;
-  readonly placementTemplate: PlacementTemplate;
-  readonly tags: {[key: string]: any};
+  readonly placementTemplate?: PlacementTemplate;
+  readonly tags?: {[key: string]: any};
 }
 
-interface ProjectSummary {
-  readonly arn: string;
+export interface ProjectSummary {
+  readonly arn?: string;
   readonly projectName: string;
   readonly createdDate: Date;
   readonly updatedDate: Date;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface ResourceConflictException {
+export interface ResourceConflictException {
   readonly code: string;
   readonly message: string;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly code: string;
   readonly message: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TooManyRequestsException {
+export interface TooManyRequestsException {
   readonly code: string;
   readonly message: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdatePlacementRequest {
+export interface UpdatePlacementRequest {
   readonly placementName: string;
   readonly projectName: string;
-  readonly attributes: {[key: string]: any};
+  readonly attributes?: {[key: string]: any};
 }
 
-interface UpdatePlacementResponse {
+export interface UpdatePlacementResponse {
 }
 
-interface UpdateProjectRequest {
+export interface UpdateProjectRequest {
   readonly projectName: string;
-  readonly description: string;
-  readonly placementTemplate: PlacementTemplate;
+  readonly description?: string;
+  readonly placementTemplate?: PlacementTemplate;
 }
 
-interface UpdateProjectResponse {
+export interface UpdateProjectResponse {
 }
+
 

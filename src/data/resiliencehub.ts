@@ -5,6 +5,7 @@ export interface AddDraftAppVersionResourceMappings {
   readonly appArn: string;
   readonly resourceMappings: [];
 }
+
 export interface CreateApp {
   readonly clientToken?: string;
   readonly description?: string;
@@ -12,6 +13,7 @@ export interface CreateApp {
   readonly policyArn?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateRecommendationTemplate {
   readonly assessmentArn: string;
   readonly bucketName?: string;
@@ -22,6 +24,7 @@ export interface CreateRecommendationTemplate {
   readonly recommendationTypes?: [];
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateResiliencyPolicy {
   readonly clientToken?: string;
   readonly dataLocationConstraint?: string;
@@ -31,53 +34,66 @@ export interface CreateResiliencyPolicy {
   readonly tags?: {[key: string]: any};
   readonly tier: string;
 }
+
 export interface DeleteApp {
   readonly appArn: string;
   readonly clientToken?: string;
   readonly forceDelete?: boolean;
 }
+
 export interface DeleteAppAssessment {
   readonly assessmentArn: string;
   readonly clientToken?: string;
 }
+
 export interface DeleteRecommendationTemplate {
   readonly clientToken?: string;
   readonly recommendationTemplateArn: string;
 }
+
 export interface DeleteResiliencyPolicy {
   readonly clientToken?: string;
   readonly policyArn: string;
 }
+
 export interface DescribeApp {
   readonly appArn: string;
 }
+
 export interface DescribeAppAssessment {
   readonly assessmentArn: string;
 }
+
 export interface DescribeAppVersionResourcesResolutionStatus {
   readonly appArn: string;
   readonly appVersion: string;
   readonly resolutionId?: string;
 }
+
 export interface DescribeAppVersionTemplate {
   readonly appArn: string;
   readonly appVersion: string;
 }
+
 export interface DescribeDraftAppVersionResourcesImportStatus {
   readonly appArn: string;
 }
+
 export interface DescribeResiliencyPolicy {
   readonly policyArn: string;
 }
+
 export interface ImportResourcesToDraftAppVersion {
   readonly appArn: string;
   readonly sourceArns: [];
 }
+
 export interface ListAlarmRecommendations {
   readonly assessmentArn: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListAppAssessments {
   readonly appArn?: string;
   readonly assessmentName?: string;
@@ -88,22 +104,26 @@ export interface ListAppAssessments {
   readonly nextToken?: string;
   readonly reverseOrder?: boolean;
 }
+
 export interface ListAppComponentCompliances {
   readonly assessmentArn: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListAppComponentRecommendations {
   readonly assessmentArn: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListAppVersionResourceMappings {
   readonly appArn: string;
   readonly appVersion: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListAppVersionResources {
   readonly appArn: string;
   readonly appVersion: string;
@@ -111,17 +131,20 @@ export interface ListAppVersionResources {
   readonly nextToken?: string;
   readonly resolutionId?: string;
 }
+
 export interface ListAppVersions {
   readonly appArn: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListApps {
   readonly appArn?: string;
   readonly maxResults?: number;
   readonly name?: string;
   readonly nextToken?: string;
 }
+
 export interface ListRecommendationTemplates {
   readonly assessmentArn: string;
   readonly maxResults?: number;
@@ -131,28 +154,34 @@ export interface ListRecommendationTemplates {
   readonly reverseOrder?: boolean;
   readonly status?: [];
 }
+
 export interface ListResiliencyPolicies {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly policyName?: string;
 }
+
 export interface ListSopRecommendations {
   readonly assessmentArn: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListSuggestedResiliencyPolicies {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface ListTestRecommendations {
   readonly assessmentArn: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListUnsupportedAppVersionResources {
   readonly appArn: string;
   readonly appVersion: string;
@@ -160,13 +189,16 @@ export interface ListUnsupportedAppVersionResources {
   readonly nextToken?: string;
   readonly resolutionId?: string;
 }
+
 export interface PublishAppVersion {
   readonly appArn: string;
 }
+
 export interface PutDraftAppVersionTemplate {
   readonly appArn: string;
   readonly appTemplateBody: string;
 }
+
 export interface RemoveDraftAppVersionResourceMappings {
   readonly appArn: string;
   readonly appRegistryAppNames?: [];
@@ -174,10 +206,12 @@ export interface RemoveDraftAppVersionResourceMappings {
   readonly resourceGroupNames?: [];
   readonly resourceNames?: [];
 }
+
 export interface ResolveAppVersionResources {
   readonly appArn: string;
   readonly appVersion: string;
 }
+
 export interface StartAppAssessment {
   readonly appArn: string;
   readonly appVersion: string;
@@ -185,20 +219,24 @@ export interface StartAppAssessment {
   readonly clientToken?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateApp {
   readonly appArn: string;
   readonly clearResiliencyPolicyArn?: boolean;
   readonly description?: string;
   readonly policyArn?: string;
 }
+
 export interface UpdateResiliencyPolicy {
   readonly dataLocationConstraint?: string;
   readonly policy?: {[key: string]: any};
@@ -208,718 +246,717 @@ export interface UpdateResiliencyPolicy {
   readonly tier?: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly message?: string;
 }
 
-interface AddDraftAppVersionResourceMappingsRequest {
+export interface AddDraftAppVersionResourceMappingsRequest {
   readonly appArn: string;
   readonly resourceMappings: [];
 }
 
-interface AddDraftAppVersionResourceMappingsResponse {
+export interface AddDraftAppVersionResourceMappingsResponse {
   readonly appArn: string;
   readonly appVersion: string;
   readonly resourceMappings: [];
 }
 
-interface AlarmRecommendation {
-  readonly appComponentName: string;
-  readonly description: string;
-  readonly items: [];
+export interface AlarmRecommendation {
+  readonly appComponentName?: string;
+  readonly description?: string;
+  readonly items?: [];
   readonly name: string;
-  readonly prerequisite: string;
+  readonly prerequisite?: string;
   readonly recommendationId: string;
   readonly referenceId: string;
   readonly type: string;
 }
 
-interface App {
+export interface App {
   readonly appArn: string;
-  readonly complianceStatus: string;
+  readonly complianceStatus?: string;
   readonly creationTime: Date;
-  readonly description: string;
-  readonly lastAppComplianceEvaluationTime: Date;
-  readonly lastResiliencyScoreEvaluationTime: Date;
+  readonly description?: string;
+  readonly lastAppComplianceEvaluationTime?: Date;
+  readonly lastResiliencyScoreEvaluationTime?: Date;
   readonly name: string;
-  readonly policyArn: string;
-  readonly resiliencyScore: unknown;
-  readonly status: string;
-  readonly tags: {[key: string]: any};
+  readonly policyArn?: string;
+  readonly resiliencyScore?: unknown;
+  readonly status?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface AppAssessment {
-  readonly appArn: string;
-  readonly appVersion: string;
+export interface AppAssessment {
+  readonly appArn?: string;
+  readonly appVersion?: string;
   readonly assessmentArn: string;
-  readonly assessmentName: string;
+  readonly assessmentName?: string;
   readonly assessmentStatus: string;
-  readonly compliance: {[key: string]: any};
-  readonly complianceStatus: string;
-  readonly cost: Cost;
-  readonly endTime: Date;
+  readonly compliance?: {[key: string]: any};
+  readonly complianceStatus?: string;
+  readonly cost?: Cost;
+  readonly endTime?: Date;
   readonly invoker: string;
-  readonly message: string;
-  readonly policy: ResiliencyPolicy;
-  readonly resiliencyScore: ResiliencyScore;
-  readonly startTime: Date;
-  readonly tags: {[key: string]: any};
+  readonly message?: string;
+  readonly policy?: ResiliencyPolicy;
+  readonly resiliencyScore?: ResiliencyScore;
+  readonly startTime?: Date;
+  readonly tags?: {[key: string]: any};
 }
 
-interface AppAssessmentSummary {
-  readonly appArn: string;
-  readonly appVersion: string;
+export interface AppAssessmentSummary {
+  readonly appArn?: string;
+  readonly appVersion?: string;
   readonly assessmentArn: string;
-  readonly assessmentName: string;
+  readonly assessmentName?: string;
   readonly assessmentStatus: string;
-  readonly complianceStatus: string;
-  readonly cost: Cost;
-  readonly endTime: Date;
-  readonly invoker: string;
-  readonly message: string;
-  readonly resiliencyScore: unknown;
-  readonly startTime: Date;
+  readonly complianceStatus?: string;
+  readonly cost?: Cost;
+  readonly endTime?: Date;
+  readonly invoker?: string;
+  readonly message?: string;
+  readonly resiliencyScore?: unknown;
+  readonly startTime?: Date;
 }
 
-interface AppComponent {
+export interface AppComponent {
   readonly name: string;
   readonly type: string;
 }
 
-interface AppComponentCompliance {
-  readonly appComponentName: string;
-  readonly compliance: {[key: string]: any};
-  readonly cost: Cost;
-  readonly message: string;
-  readonly resiliencyScore: ResiliencyScore;
-  readonly status: string;
+export interface AppComponentCompliance {
+  readonly appComponentName?: string;
+  readonly compliance?: {[key: string]: any};
+  readonly cost?: Cost;
+  readonly message?: string;
+  readonly resiliencyScore?: ResiliencyScore;
+  readonly status?: string;
 }
 
-interface AppSummary {
+export interface AppSummary {
   readonly appArn: string;
-  readonly complianceStatus: string;
+  readonly complianceStatus?: string;
   readonly creationTime: Date;
-  readonly description: string;
+  readonly description?: string;
   readonly name: string;
-  readonly resiliencyScore: unknown;
+  readonly resiliencyScore?: unknown;
 }
 
-interface AppVersionSummary {
+export interface AppVersionSummary {
   readonly appVersion: string;
 }
 
-interface ComponentRecommendation {
+export interface ComponentRecommendation {
   readonly appComponentName: string;
   readonly configRecommendations: [];
   readonly recommendationStatus: string;
 }
 
-interface ConfigRecommendation {
-  readonly appComponentName: string;
-  readonly compliance: {[key: string]: any};
-  readonly cost: Cost;
-  readonly description: string;
-  readonly haArchitecture: string;
+export interface ConfigRecommendation {
+  readonly appComponentName?: string;
+  readonly compliance?: {[key: string]: any};
+  readonly cost?: Cost;
+  readonly description?: string;
+  readonly haArchitecture?: string;
   readonly name: string;
   readonly optimizationType: string;
-  readonly recommendationCompliance: {[key: string]: any};
+  readonly recommendationCompliance?: {[key: string]: any};
   readonly referenceId: string;
-  readonly suggestedChanges: [];
+  readonly suggestedChanges?: [];
 }
 
-interface ConflictException {
-  readonly message: string;
-  readonly resourceId: string;
-  readonly resourceType: string;
+export interface ConflictException {
+  readonly message?: string;
+  readonly resourceId?: string;
+  readonly resourceType?: string;
 }
 
-interface Cost {
+export interface Cost {
   readonly amount: unknown;
   readonly currency: string;
   readonly frequency: string;
 }
 
-interface CreateAppRequest {
-  readonly clientToken: string;
-  readonly description: string;
+export interface CreateAppRequest {
+  readonly clientToken?: string;
+  readonly description?: string;
   readonly name: string;
-  readonly policyArn: string;
-  readonly tags: {[key: string]: any};
+  readonly policyArn?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateAppResponse {
+export interface CreateAppResponse {
   readonly app: App;
 }
 
-interface CreateRecommendationTemplateRequest {
+export interface CreateRecommendationTemplateRequest {
   readonly assessmentArn: string;
-  readonly bucketName: string;
-  readonly clientToken: string;
-  readonly format: string;
+  readonly bucketName?: string;
+  readonly clientToken?: string;
+  readonly format?: string;
   readonly name: string;
-  readonly recommendationIds: [];
-  readonly recommendationTypes: [];
-  readonly tags: {[key: string]: any};
+  readonly recommendationIds?: [];
+  readonly recommendationTypes?: [];
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateRecommendationTemplateResponse {
-  readonly recommendationTemplate: RecommendationTemplate;
+export interface CreateRecommendationTemplateResponse {
+  readonly recommendationTemplate?: RecommendationTemplate;
 }
 
-interface CreateResiliencyPolicyRequest {
-  readonly clientToken: string;
-  readonly dataLocationConstraint: string;
+export interface CreateResiliencyPolicyRequest {
+  readonly clientToken?: string;
+  readonly dataLocationConstraint?: string;
   readonly policy: {[key: string]: any};
-  readonly policyDescription: string;
+  readonly policyDescription?: string;
   readonly policyName: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly tier: string;
 }
 
-interface CreateResiliencyPolicyResponse {
+export interface CreateResiliencyPolicyResponse {
   readonly policy: ResiliencyPolicy;
 }
 
-interface DeleteAppAssessmentRequest {
+export interface DeleteAppAssessmentRequest {
   readonly assessmentArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface DeleteAppAssessmentResponse {
+export interface DeleteAppAssessmentResponse {
   readonly assessmentArn: string;
   readonly assessmentStatus: string;
 }
 
-interface DeleteAppRequest {
+export interface DeleteAppRequest {
   readonly appArn: string;
-  readonly clientToken: string;
-  readonly forceDelete: boolean;
+  readonly clientToken?: string;
+  readonly forceDelete?: boolean;
 }
 
-interface DeleteAppResponse {
+export interface DeleteAppResponse {
   readonly appArn: string;
 }
 
-interface DeleteRecommendationTemplateRequest {
-  readonly clientToken: string;
+export interface DeleteRecommendationTemplateRequest {
+  readonly clientToken?: string;
   readonly recommendationTemplateArn: string;
 }
 
-interface DeleteRecommendationTemplateResponse {
+export interface DeleteRecommendationTemplateResponse {
   readonly recommendationTemplateArn: string;
   readonly status: string;
 }
 
-interface DeleteResiliencyPolicyRequest {
-  readonly clientToken: string;
+export interface DeleteResiliencyPolicyRequest {
+  readonly clientToken?: string;
   readonly policyArn: string;
 }
 
-interface DeleteResiliencyPolicyResponse {
+export interface DeleteResiliencyPolicyResponse {
   readonly policyArn: string;
 }
 
-interface DescribeAppAssessmentRequest {
+export interface DescribeAppAssessmentRequest {
   readonly assessmentArn: string;
 }
 
-interface DescribeAppAssessmentResponse {
+export interface DescribeAppAssessmentResponse {
   readonly assessment: AppAssessment;
 }
 
-interface DescribeAppRequest {
+export interface DescribeAppRequest {
   readonly appArn: string;
 }
 
-interface DescribeAppResponse {
+export interface DescribeAppResponse {
   readonly app: App;
 }
 
-interface DescribeAppVersionResourcesResolutionStatusRequest {
+export interface DescribeAppVersionResourcesResolutionStatusRequest {
   readonly appArn: string;
   readonly appVersion: string;
-  readonly resolutionId: string;
+  readonly resolutionId?: string;
 }
 
-interface DescribeAppVersionResourcesResolutionStatusResponse {
+export interface DescribeAppVersionResourcesResolutionStatusResponse {
   readonly appArn: string;
   readonly appVersion: string;
-  readonly errorMessage: string;
+  readonly errorMessage?: string;
   readonly resolutionId: string;
   readonly status: string;
 }
 
-interface DescribeAppVersionTemplateRequest {
+export interface DescribeAppVersionTemplateRequest {
   readonly appArn: string;
   readonly appVersion: string;
 }
 
-interface DescribeAppVersionTemplateResponse {
+export interface DescribeAppVersionTemplateResponse {
   readonly appArn: string;
   readonly appTemplateBody: string;
   readonly appVersion: string;
 }
 
-interface DescribeDraftAppVersionResourcesImportStatusRequest {
+export interface DescribeDraftAppVersionResourcesImportStatusRequest {
   readonly appArn: string;
 }
 
-interface DescribeDraftAppVersionResourcesImportStatusResponse {
+export interface DescribeDraftAppVersionResourcesImportStatusResponse {
   readonly appArn: string;
   readonly appVersion: string;
-  readonly errorMessage: string;
+  readonly errorMessage?: string;
   readonly status: string;
   readonly statusChangeTime: Date;
 }
 
-interface DescribeResiliencyPolicyRequest {
+export interface DescribeResiliencyPolicyRequest {
   readonly policyArn: string;
 }
 
-interface DescribeResiliencyPolicyResponse {
+export interface DescribeResiliencyPolicyResponse {
   readonly policy: ResiliencyPolicy;
 }
 
-interface DisruptionCompliance {
-  readonly achievableRpoInSecs: number;
-  readonly achievableRtoInSecs: number;
+export interface DisruptionCompliance {
+  readonly achievableRpoInSecs?: number;
+  readonly achievableRtoInSecs?: number;
   readonly complianceStatus: string;
-  readonly currentRpoInSecs: number;
-  readonly currentRtoInSecs: number;
-  readonly message: string;
-  readonly rpoDescription: string;
-  readonly rpoReferenceId: string;
-  readonly rtoDescription: string;
-  readonly rtoReferenceId: string;
+  readonly currentRpoInSecs?: number;
+  readonly currentRtoInSecs?: number;
+  readonly message?: string;
+  readonly rpoDescription?: string;
+  readonly rpoReferenceId?: string;
+  readonly rtoDescription?: string;
+  readonly rtoReferenceId?: string;
 }
 
-interface FailurePolicy {
+export interface FailurePolicy {
   readonly rpoInSecs: number;
   readonly rtoInSecs: number;
 }
 
-interface ImportResourcesToDraftAppVersionRequest {
+export interface ImportResourcesToDraftAppVersionRequest {
   readonly appArn: string;
   readonly sourceArns: [];
 }
 
-interface ImportResourcesToDraftAppVersionResponse {
+export interface ImportResourcesToDraftAppVersionResponse {
   readonly appArn: string;
   readonly appVersion: string;
   readonly sourceArns: [];
   readonly status: string;
 }
 
-interface InternalServerException {
-  readonly message: string;
+export interface InternalServerException {
+  readonly message?: string;
 }
 
-interface ListAlarmRecommendationsRequest {
+export interface ListAlarmRecommendationsRequest {
   readonly assessmentArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListAlarmRecommendationsResponse {
+export interface ListAlarmRecommendationsResponse {
   readonly alarmRecommendations: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAppAssessmentsRequest {
-  readonly appArn: string;
-  readonly assessmentName: string;
-  readonly assessmentStatus: [];
-  readonly complianceStatus: string;
-  readonly invoker: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly reverseOrder: boolean;
+export interface ListAppAssessmentsRequest {
+  readonly appArn?: string;
+  readonly assessmentName?: string;
+  readonly assessmentStatus?: [];
+  readonly complianceStatus?: string;
+  readonly invoker?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly reverseOrder?: boolean;
 }
 
-interface ListAppAssessmentsResponse {
+export interface ListAppAssessmentsResponse {
   readonly assessmentSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAppComponentCompliancesRequest {
+export interface ListAppComponentCompliancesRequest {
   readonly assessmentArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListAppComponentCompliancesResponse {
+export interface ListAppComponentCompliancesResponse {
   readonly componentCompliances: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAppComponentRecommendationsRequest {
+export interface ListAppComponentRecommendationsRequest {
   readonly assessmentArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListAppComponentRecommendationsResponse {
+export interface ListAppComponentRecommendationsResponse {
   readonly componentRecommendations: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAppVersionResourceMappingsRequest {
+export interface ListAppVersionResourceMappingsRequest {
   readonly appArn: string;
   readonly appVersion: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListAppVersionResourceMappingsResponse {
-  readonly nextToken: string;
+export interface ListAppVersionResourceMappingsResponse {
+  readonly nextToken?: string;
   readonly resourceMappings: [];
 }
 
-interface ListAppVersionResourcesRequest {
+export interface ListAppVersionResourcesRequest {
   readonly appArn: string;
   readonly appVersion: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly resolutionId: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly resolutionId?: string;
 }
 
-interface ListAppVersionResourcesResponse {
-  readonly nextToken: string;
+export interface ListAppVersionResourcesResponse {
+  readonly nextToken?: string;
   readonly physicalResources: [];
   readonly resolutionId: string;
 }
 
-interface ListAppVersionsRequest {
+export interface ListAppVersionsRequest {
   readonly appArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListAppVersionsResponse {
+export interface ListAppVersionsResponse {
   readonly appVersions: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAppsRequest {
-  readonly appArn: string;
-  readonly maxResults: number;
-  readonly name: string;
-  readonly nextToken: string;
+export interface ListAppsRequest {
+  readonly appArn?: string;
+  readonly maxResults?: number;
+  readonly name?: string;
+  readonly nextToken?: string;
 }
 
-interface ListAppsResponse {
+export interface ListAppsResponse {
   readonly appSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListRecommendationTemplatesRequest {
+export interface ListRecommendationTemplatesRequest {
   readonly assessmentArn: string;
-  readonly maxResults: number;
-  readonly name: string;
-  readonly nextToken: string;
-  readonly recommendationTemplateArn: string;
-  readonly reverseOrder: boolean;
-  readonly status: [];
+  readonly maxResults?: number;
+  readonly name?: string;
+  readonly nextToken?: string;
+  readonly recommendationTemplateArn?: string;
+  readonly reverseOrder?: boolean;
+  readonly status?: [];
 }
 
-interface ListRecommendationTemplatesResponse {
-  readonly nextToken: string;
-  readonly recommendationTemplates: [];
+export interface ListRecommendationTemplatesResponse {
+  readonly nextToken?: string;
+  readonly recommendationTemplates?: [];
 }
 
-interface ListResiliencyPoliciesRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly policyName: string;
+export interface ListResiliencyPoliciesRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly policyName?: string;
 }
 
-interface ListResiliencyPoliciesResponse {
-  readonly nextToken: string;
+export interface ListResiliencyPoliciesResponse {
+  readonly nextToken?: string;
   readonly resiliencyPolicies: [];
 }
 
-interface ListSopRecommendationsRequest {
+export interface ListSopRecommendationsRequest {
   readonly assessmentArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListSopRecommendationsResponse {
-  readonly nextToken: string;
+export interface ListSopRecommendationsResponse {
+  readonly nextToken?: string;
   readonly sopRecommendations: [];
 }
 
-interface ListSuggestedResiliencyPoliciesRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListSuggestedResiliencyPoliciesRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListSuggestedResiliencyPoliciesResponse {
-  readonly nextToken: string;
+export interface ListSuggestedResiliencyPoliciesResponse {
+  readonly nextToken?: string;
   readonly resiliencyPolicies: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ListTestRecommendationsRequest {
+export interface ListTestRecommendationsRequest {
   readonly assessmentArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListTestRecommendationsResponse {
-  readonly nextToken: string;
+export interface ListTestRecommendationsResponse {
+  readonly nextToken?: string;
   readonly testRecommendations: [];
 }
 
-interface ListUnsupportedAppVersionResourcesRequest {
+export interface ListUnsupportedAppVersionResourcesRequest {
   readonly appArn: string;
   readonly appVersion: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly resolutionId: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly resolutionId?: string;
 }
 
-interface ListUnsupportedAppVersionResourcesResponse {
-  readonly nextToken: string;
+export interface ListUnsupportedAppVersionResourcesResponse {
+  readonly nextToken?: string;
   readonly resolutionId: string;
   readonly unsupportedResources: [];
 }
 
-interface LogicalResourceId {
+export interface LogicalResourceId {
   readonly identifier: string;
-  readonly logicalStackName: string;
-  readonly resourceGroupName: string;
+  readonly logicalStackName?: string;
+  readonly resourceGroupName?: string;
 }
 
-interface PhysicalResource {
-  readonly appComponents: [];
+export interface PhysicalResource {
+  readonly appComponents?: [];
   readonly logicalResourceId: LogicalResourceId;
   readonly physicalResourceId: PhysicalResourceId;
-  readonly resourceName: string;
+  readonly resourceName?: string;
   readonly resourceType: string;
 }
 
-interface PhysicalResourceId {
-  readonly awsAccountId: string;
-  readonly awsRegion: string;
+export interface PhysicalResourceId {
+  readonly awsAccountId?: string;
+  readonly awsRegion?: string;
   readonly identifier: string;
   readonly type: string;
 }
 
-interface PublishAppVersionRequest {
+export interface PublishAppVersionRequest {
   readonly appArn: string;
 }
 
-interface PublishAppVersionResponse {
+export interface PublishAppVersionResponse {
   readonly appArn: string;
-  readonly appVersion: string;
+  readonly appVersion?: string;
 }
 
-interface PutDraftAppVersionTemplateRequest {
+export interface PutDraftAppVersionTemplateRequest {
   readonly appArn: string;
   readonly appTemplateBody: string;
 }
 
-interface PutDraftAppVersionTemplateResponse {
-  readonly appArn: string;
-  readonly appVersion: string;
+export interface PutDraftAppVersionTemplateResponse {
+  readonly appArn?: string;
+  readonly appVersion?: string;
 }
 
-interface RecommendationDisruptionCompliance {
+export interface RecommendationDisruptionCompliance {
   readonly expectedComplianceStatus: string;
-  readonly expectedRpoDescription: string;
-  readonly expectedRpoInSecs: number;
-  readonly expectedRtoDescription: string;
-  readonly expectedRtoInSecs: number;
+  readonly expectedRpoDescription?: string;
+  readonly expectedRpoInSecs?: number;
+  readonly expectedRtoDescription?: string;
+  readonly expectedRtoInSecs?: number;
 }
 
-interface RecommendationItem {
-  readonly alreadyImplemented: boolean;
-  readonly resourceId: string;
-  readonly targetAccountId: string;
-  readonly targetRegion: string;
+export interface RecommendationItem {
+  readonly alreadyImplemented?: boolean;
+  readonly resourceId?: string;
+  readonly targetAccountId?: string;
+  readonly targetRegion?: string;
 }
 
-interface RecommendationTemplate {
-  readonly appArn: string;
+export interface RecommendationTemplate {
+  readonly appArn?: string;
   readonly assessmentArn: string;
-  readonly endTime: Date;
+  readonly endTime?: Date;
   readonly format: string;
-  readonly message: string;
+  readonly message?: string;
   readonly name: string;
-  readonly needsReplacements: boolean;
-  readonly recommendationIds: [];
+  readonly needsReplacements?: boolean;
+  readonly recommendationIds?: [];
   readonly recommendationTemplateArn: string;
   readonly recommendationTypes: [];
-  readonly startTime: Date;
+  readonly startTime?: Date;
   readonly status: string;
-  readonly tags: {[key: string]: any};
-  readonly templatesLocation: S3Location;
+  readonly tags?: {[key: string]: any};
+  readonly templatesLocation?: S3Location;
 }
 
-interface RemoveDraftAppVersionResourceMappingsRequest {
+export interface RemoveDraftAppVersionResourceMappingsRequest {
   readonly appArn: string;
-  readonly appRegistryAppNames: [];
-  readonly logicalStackNames: [];
-  readonly resourceGroupNames: [];
-  readonly resourceNames: [];
+  readonly appRegistryAppNames?: [];
+  readonly logicalStackNames?: [];
+  readonly resourceGroupNames?: [];
+  readonly resourceNames?: [];
 }
 
-interface RemoveDraftAppVersionResourceMappingsResponse {
-  readonly appArn: string;
-  readonly appVersion: string;
+export interface RemoveDraftAppVersionResourceMappingsResponse {
+  readonly appArn?: string;
+  readonly appVersion?: string;
 }
 
-interface ResiliencyPolicy {
-  readonly creationTime: Date;
-  readonly dataLocationConstraint: string;
-  readonly estimatedCostTier: string;
-  readonly policy: {[key: string]: any};
-  readonly policyArn: string;
-  readonly policyDescription: string;
-  readonly policyName: string;
-  readonly tags: {[key: string]: any};
-  readonly tier: string;
+export interface ResiliencyPolicy {
+  readonly creationTime?: Date;
+  readonly dataLocationConstraint?: string;
+  readonly estimatedCostTier?: string;
+  readonly policy?: {[key: string]: any};
+  readonly policyArn?: string;
+  readonly policyDescription?: string;
+  readonly policyName?: string;
+  readonly tags?: {[key: string]: any};
+  readonly tier?: string;
 }
 
-interface ResiliencyScore {
+export interface ResiliencyScore {
   readonly disruptionScore: {[key: string]: any};
   readonly score: unknown;
 }
 
-interface ResolveAppVersionResourcesRequest {
+export interface ResolveAppVersionResourcesRequest {
   readonly appArn: string;
   readonly appVersion: string;
 }
 
-interface ResolveAppVersionResourcesResponse {
+export interface ResolveAppVersionResourcesResponse {
   readonly appArn: string;
   readonly appVersion: string;
   readonly resolutionId: string;
   readonly status: string;
 }
 
-interface ResourceMapping {
-  readonly appRegistryAppName: string;
-  readonly logicalStackName: string;
+export interface ResourceMapping {
+  readonly appRegistryAppName?: string;
+  readonly logicalStackName?: string;
   readonly mappingType: string;
   readonly physicalResourceId: PhysicalResourceId;
-  readonly resourceGroupName: string;
-  readonly resourceName: string;
+  readonly resourceGroupName?: string;
+  readonly resourceName?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
-  readonly resourceId: string;
-  readonly resourceType: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
+  readonly resourceId?: string;
+  readonly resourceType?: string;
 }
 
-interface S3Location {
-  readonly bucket: string;
-  readonly prefix: string;
+export interface S3Location {
+  readonly bucket?: string;
+  readonly prefix?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly message: string;
+export interface ServiceQuotaExceededException {
+  readonly message?: string;
 }
 
-interface SopRecommendation {
-  readonly appComponentName: string;
-  readonly description: string;
-  readonly items: [];
-  readonly name: string;
-  readonly prerequisite: string;
+export interface SopRecommendation {
+  readonly appComponentName?: string;
+  readonly description?: string;
+  readonly items?: [];
+  readonly name?: string;
+  readonly prerequisite?: string;
   readonly recommendationId: string;
   readonly referenceId: string;
   readonly serviceType: string;
 }
 
-interface StartAppAssessmentRequest {
+export interface StartAppAssessmentRequest {
   readonly appArn: string;
   readonly appVersion: string;
   readonly assessmentName: string;
-  readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly clientToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface StartAppAssessmentResponse {
+export interface StartAppAssessmentResponse {
   readonly assessment: AppAssessment;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TestRecommendation {
-  readonly appComponentName: string;
-  readonly description: string;
-  readonly intent: string;
-  readonly items: [];
-  readonly name: string;
-  readonly prerequisite: string;
-  readonly recommendationId: string;
+export interface TestRecommendation {
+  readonly appComponentName?: string;
+  readonly description?: string;
+  readonly intent?: string;
+  readonly items?: [];
+  readonly name?: string;
+  readonly prerequisite?: string;
+  readonly recommendationId?: string;
   readonly referenceId: string;
-  readonly risk: string;
-  readonly type: string;
+  readonly risk?: string;
+  readonly type?: string;
 }
 
-interface ThrottlingException {
-  readonly message: string;
-  readonly retryAfterSeconds: number;
+export interface ThrottlingException {
+  readonly message?: string;
+  readonly retryAfterSeconds?: number;
 }
 
-interface UnsupportedResource {
+export interface UnsupportedResource {
   readonly logicalResourceId: LogicalResourceId;
   readonly physicalResourceId: PhysicalResourceId;
   readonly resourceType: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateAppRequest {
+export interface UpdateAppRequest {
   readonly appArn: string;
-  readonly clearResiliencyPolicyArn: boolean;
-  readonly description: string;
-  readonly policyArn: string;
+  readonly clearResiliencyPolicyArn?: boolean;
+  readonly description?: string;
+  readonly policyArn?: string;
 }
 
-interface UpdateAppResponse {
+export interface UpdateAppResponse {
   readonly app: App;
 }
 
-interface UpdateResiliencyPolicyRequest {
-  readonly dataLocationConstraint: string;
-  readonly policy: {[key: string]: any};
+export interface UpdateResiliencyPolicyRequest {
+  readonly dataLocationConstraint?: string;
+  readonly policy?: {[key: string]: any};
   readonly policyArn: string;
-  readonly policyDescription: string;
-  readonly policyName: string;
-  readonly tier: string;
+  readonly policyDescription?: string;
+  readonly policyName?: string;
+  readonly tier?: string;
 }
 
-interface UpdateResiliencyPolicyResponse {
+export interface UpdateResiliencyPolicyResponse {
   readonly policy: ResiliencyPolicy;
 }
 
-interface ValidationException {
-  readonly message: string;
+export interface ValidationException {
+  readonly message?: string;
 }
+
 

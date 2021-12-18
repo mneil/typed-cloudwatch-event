@@ -6,12 +6,14 @@ export interface CancelIngestion {
   readonly DataSetId: string;
   readonly IngestionId: string;
 }
+
 export interface CreateAccountCustomization {
   readonly AwsAccountId: string;
   readonly Namespace?: string;
   readonly AccountCustomization: AccountCustomization;
   readonly Tags?: [];
 }
+
 export interface CreateAnalysis {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
@@ -22,6 +24,7 @@ export interface CreateAnalysis {
   readonly ThemeArn?: string;
   readonly Tags?: [];
 }
+
 export interface CreateDashboard {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
@@ -34,6 +37,7 @@ export interface CreateDashboard {
   readonly DashboardPublishOptions?: DashboardPublishOptions;
   readonly ThemeArn?: string;
 }
+
 export interface CreateDataSet {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
@@ -50,6 +54,7 @@ export interface CreateDataSet {
   readonly Tags?: [];
   readonly DataSetUsageConfiguration?: DataSetUsageConfiguration;
 }
+
 export interface CreateDataSource {
   readonly AwsAccountId: string;
   readonly DataSourceId: string;
@@ -62,6 +67,7 @@ export interface CreateDataSource {
   readonly SslProperties?: SslProperties;
   readonly Tags?: [];
 }
+
 export interface CreateFolder {
   readonly AwsAccountId: string;
   readonly FolderId: string;
@@ -71,24 +77,28 @@ export interface CreateFolder {
   readonly Permissions?: [];
   readonly Tags?: [];
 }
+
 export interface CreateFolderMembership {
   readonly AwsAccountId: string;
   readonly FolderId: string;
   readonly MemberId: string;
   readonly MemberType: string;
 }
+
 export interface CreateGroup {
   readonly GroupName: string;
   readonly Description?: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
+
 export interface CreateGroupMembership {
   readonly MemberName: string;
   readonly GroupName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
+
 export interface CreateIAMPolicyAssignment {
   readonly AwsAccountId: string;
   readonly AssignmentName: string;
@@ -97,18 +107,21 @@ export interface CreateIAMPolicyAssignment {
   readonly Identities?: {[key: string]: any};
   readonly Namespace: string;
 }
+
 export interface CreateIngestion {
   readonly DataSetId: string;
   readonly IngestionId: string;
   readonly AwsAccountId: string;
   readonly IngestionType?: string;
 }
+
 export interface CreateNamespace {
   readonly AwsAccountId: string;
   readonly Namespace: string;
   readonly IdentityStore: string;
   readonly Tags?: [];
 }
+
 export interface CreateTemplate {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
@@ -118,12 +131,14 @@ export interface CreateTemplate {
   readonly Tags?: [];
   readonly VersionDescription?: string;
 }
+
 export interface CreateTemplateAlias {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly AliasName: string;
   readonly TemplateVersionNumber: number;
 }
+
 export interface CreateTheme {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
@@ -134,206 +149,250 @@ export interface CreateTheme {
   readonly Permissions?: [];
   readonly Tags?: [];
 }
+
 export interface CreateThemeAlias {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly AliasName: string;
   readonly ThemeVersionNumber: number;
 }
+
 export interface DeleteAccountCustomization {
   readonly AwsAccountId: string;
   readonly Namespace?: string;
 }
+
 export interface DeleteAnalysis {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
   readonly RecoveryWindowInDays?: number;
   readonly ForceDeleteWithoutRecovery?: boolean;
 }
+
 export interface DeleteDashboard {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
   readonly VersionNumber?: number;
 }
+
 export interface DeleteDataSet {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
 }
+
 export interface DeleteDataSource {
   readonly AwsAccountId: string;
   readonly DataSourceId: string;
 }
+
 export interface DeleteFolder {
   readonly AwsAccountId: string;
   readonly FolderId: string;
 }
+
 export interface DeleteFolderMembership {
   readonly AwsAccountId: string;
   readonly FolderId: string;
   readonly MemberId: string;
   readonly MemberType: string;
 }
+
 export interface DeleteGroup {
   readonly GroupName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
+
 export interface DeleteGroupMembership {
   readonly MemberName: string;
   readonly GroupName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
+
 export interface DeleteIAMPolicyAssignment {
   readonly AwsAccountId: string;
   readonly AssignmentName: string;
   readonly Namespace: string;
 }
+
 export interface DeleteNamespace {
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
+
 export interface DeleteTemplate {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly VersionNumber?: number;
 }
+
 export interface DeleteTemplateAlias {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly AliasName: string;
 }
+
 export interface DeleteTheme {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly VersionNumber?: number;
 }
+
 export interface DeleteThemeAlias {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly AliasName: string;
 }
+
 export interface DeleteUser {
   readonly UserName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
+
 export interface DeleteUserByPrincipalId {
   readonly PrincipalId: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
+
 export interface DescribeAccountCustomization {
   readonly AwsAccountId: string;
   readonly Namespace?: string;
   readonly Resolved?: boolean;
 }
+
 export interface DescribeAccountSettings {
   readonly AwsAccountId: string;
 }
+
 export interface DescribeAnalysis {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
 }
+
 export interface DescribeAnalysisPermissions {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
 }
+
 export interface DescribeDashboard {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
   readonly VersionNumber?: number;
   readonly AliasName?: string;
 }
+
 export interface DescribeDashboardPermissions {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
 }
+
 export interface DescribeDataSet {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
 }
+
 export interface DescribeDataSetPermissions {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
 }
+
 export interface DescribeDataSource {
   readonly AwsAccountId: string;
   readonly DataSourceId: string;
 }
+
 export interface DescribeDataSourcePermissions {
   readonly AwsAccountId: string;
   readonly DataSourceId: string;
 }
+
 export interface DescribeFolder {
   readonly AwsAccountId: string;
   readonly FolderId: string;
 }
+
 export interface DescribeFolderPermissions {
   readonly AwsAccountId: string;
   readonly FolderId: string;
 }
+
 export interface DescribeFolderResolvedPermissions {
   readonly AwsAccountId: string;
   readonly FolderId: string;
 }
+
 export interface DescribeGroup {
   readonly GroupName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
+
 export interface DescribeIAMPolicyAssignment {
   readonly AwsAccountId: string;
   readonly AssignmentName: string;
   readonly Namespace: string;
 }
+
 export interface DescribeIngestion {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
   readonly IngestionId: string;
 }
+
 export interface DescribeIpRestriction {
   readonly AwsAccountId: string;
 }
+
 export interface DescribeNamespace {
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
+
 export interface DescribeTemplate {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly VersionNumber?: number;
   readonly AliasName?: string;
 }
+
 export interface DescribeTemplateAlias {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly AliasName: string;
 }
+
 export interface DescribeTemplatePermissions {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
 }
+
 export interface DescribeTheme {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly VersionNumber?: number;
   readonly AliasName?: string;
 }
+
 export interface DescribeThemeAlias {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly AliasName: string;
 }
+
 export interface DescribeThemePermissions {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
 }
+
 export interface DescribeUser {
   readonly UserName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
+
 export interface GenerateEmbedUrlForAnonymousUser {
   readonly AwsAccountId: string;
   readonly SessionLifetimeInMinutes?: number;
@@ -342,12 +401,14 @@ export interface GenerateEmbedUrlForAnonymousUser {
   readonly AuthorizedResourceArns: [];
   readonly ExperienceConfiguration: AnonymousUserEmbeddingExperienceConfiguration;
 }
+
 export interface GenerateEmbedUrlForRegisteredUser {
   readonly AwsAccountId: string;
   readonly SessionLifetimeInMinutes?: number;
   readonly UserArn: string;
   readonly ExperienceConfiguration: RegisteredUserEmbeddingExperienceConfiguration;
 }
+
 export interface GetDashboardEmbedUrl {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
@@ -360,49 +421,58 @@ export interface GetDashboardEmbedUrl {
   readonly Namespace?: string;
   readonly AdditionalDashboardIds?: [];
 }
+
 export interface GetSessionEmbedUrl {
   readonly AwsAccountId: string;
   readonly EntryPoint?: string;
   readonly SessionLifetimeInMinutes?: number;
   readonly UserArn?: string;
 }
+
 export interface ListAnalyses {
   readonly AwsAccountId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDashboardVersions {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDashboards {
   readonly AwsAccountId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDataSets {
   readonly AwsAccountId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDataSources {
   readonly AwsAccountId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListFolderMembers {
   readonly AwsAccountId: string;
   readonly FolderId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListFolders {
   readonly AwsAccountId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListGroupMemberships {
   readonly GroupName: string;
   readonly NextToken?: string;
@@ -410,12 +480,14 @@ export interface ListGroupMemberships {
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
+
 export interface ListGroups {
   readonly AwsAccountId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Namespace: string;
 }
+
 export interface ListIAMPolicyAssignments {
   readonly AwsAccountId: string;
   readonly AssignmentStatus?: string;
@@ -423,6 +495,7 @@ export interface ListIAMPolicyAssignments {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListIAMPolicyAssignmentsForUser {
   readonly AwsAccountId: string;
   readonly UserName: string;
@@ -430,55 +503,65 @@ export interface ListIAMPolicyAssignmentsForUser {
   readonly MaxResults?: number;
   readonly Namespace: string;
 }
+
 export interface ListIngestions {
   readonly DataSetId: string;
   readonly NextToken?: string;
   readonly AwsAccountId: string;
   readonly MaxResults?: number;
 }
+
 export interface ListNamespaces {
   readonly AwsAccountId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface ListTemplateAliases {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTemplateVersions {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTemplates {
   readonly AwsAccountId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListThemeAliases {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListThemeVersions {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListThemes {
   readonly AwsAccountId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Type?: string;
 }
+
 export interface ListUserGroups {
   readonly UserName: string;
   readonly AwsAccountId: string;
@@ -486,12 +569,14 @@ export interface ListUserGroups {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListUsers {
   readonly AwsAccountId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Namespace: string;
 }
+
 export interface RegisterUser {
   readonly IdentityType: string;
   readonly Email: string;
@@ -506,46 +591,55 @@ export interface RegisterUser {
   readonly CustomFederationProviderUrl?: string;
   readonly ExternalLoginId?: string;
 }
+
 export interface RestoreAnalysis {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
 }
+
 export interface SearchAnalyses {
   readonly AwsAccountId: string;
   readonly Filters: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface SearchDashboards {
   readonly AwsAccountId: string;
   readonly Filters: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface SearchFolders {
   readonly AwsAccountId: string;
   readonly Filters: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateAccountCustomization {
   readonly AwsAccountId: string;
   readonly Namespace?: string;
   readonly AccountCustomization: AccountCustomization;
 }
+
 export interface UpdateAccountSettings {
   readonly AwsAccountId: string;
   readonly DefaultNamespace: string;
   readonly NotificationEmail?: string;
 }
+
 export interface UpdateAnalysis {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
@@ -554,12 +648,14 @@ export interface UpdateAnalysis {
   readonly SourceEntity: AnalysisSourceEntity;
   readonly ThemeArn?: string;
 }
+
 export interface UpdateAnalysisPermissions {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
   readonly GrantPermissions?: [];
   readonly RevokePermissions?: [];
 }
+
 export interface UpdateDashboard {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
@@ -570,6 +666,7 @@ export interface UpdateDashboard {
   readonly DashboardPublishOptions?: DashboardPublishOptions;
   readonly ThemeArn?: string;
 }
+
 export interface UpdateDashboardPermissions {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
@@ -578,11 +675,13 @@ export interface UpdateDashboardPermissions {
   readonly GrantLinkPermissions?: [];
   readonly RevokeLinkPermissions?: [];
 }
+
 export interface UpdateDashboardPublishedVersion {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
   readonly VersionNumber: number;
 }
+
 export interface UpdateDataSet {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
@@ -597,12 +696,14 @@ export interface UpdateDataSet {
   readonly ColumnLevelPermissionRules?: [];
   readonly DataSetUsageConfiguration?: DataSetUsageConfiguration;
 }
+
 export interface UpdateDataSetPermissions {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
   readonly GrantPermissions?: [];
   readonly RevokePermissions?: [];
 }
+
 export interface UpdateDataSource {
   readonly AwsAccountId: string;
   readonly DataSourceId: string;
@@ -612,29 +713,34 @@ export interface UpdateDataSource {
   readonly VpcConnectionProperties?: VpcConnectionProperties;
   readonly SslProperties?: SslProperties;
 }
+
 export interface UpdateDataSourcePermissions {
   readonly AwsAccountId: string;
   readonly DataSourceId: string;
   readonly GrantPermissions?: [];
   readonly RevokePermissions?: [];
 }
+
 export interface UpdateFolder {
   readonly AwsAccountId: string;
   readonly FolderId: string;
   readonly Name: string;
 }
+
 export interface UpdateFolderPermissions {
   readonly AwsAccountId: string;
   readonly FolderId: string;
   readonly GrantPermissions?: [];
   readonly RevokePermissions?: [];
 }
+
 export interface UpdateGroup {
   readonly GroupName: string;
   readonly Description?: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
+
 export interface UpdateIAMPolicyAssignment {
   readonly AwsAccountId: string;
   readonly AssignmentName: string;
@@ -643,11 +749,13 @@ export interface UpdateIAMPolicyAssignment {
   readonly PolicyArn?: string;
   readonly Identities?: {[key: string]: any};
 }
+
 export interface UpdateIpRestriction {
   readonly AwsAccountId: string;
   readonly IpRestrictionRuleMap?: {[key: string]: any};
   readonly Enabled?: boolean;
 }
+
 export interface UpdateTemplate {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
@@ -655,18 +763,21 @@ export interface UpdateTemplate {
   readonly VersionDescription?: string;
   readonly Name?: string;
 }
+
 export interface UpdateTemplateAlias {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly AliasName: string;
   readonly TemplateVersionNumber: number;
 }
+
 export interface UpdateTemplatePermissions {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly GrantPermissions?: [];
   readonly RevokePermissions?: [];
 }
+
 export interface UpdateTheme {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
@@ -675,18 +786,21 @@ export interface UpdateTheme {
   readonly VersionDescription?: string;
   readonly Configuration?: ThemeConfiguration;
 }
+
 export interface UpdateThemeAlias {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly AliasName: string;
   readonly ThemeVersionNumber: number;
 }
+
 export interface UpdateThemePermissions {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly GrantPermissions?: [];
   readonly RevokePermissions?: [];
 }
+
 export interface UpdateUser {
   readonly UserName: string;
   readonly AwsAccountId: string;
@@ -700,2644 +814,2643 @@ export interface UpdateUser {
   readonly ExternalLoginId?: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface AccountCustomization {
-  readonly DefaultTheme: string;
-  readonly DefaultEmailCustomizationTemplate: string;
+export interface AccountCustomization {
+  readonly DefaultTheme?: string;
+  readonly DefaultEmailCustomizationTemplate?: string;
 }
 
-interface AccountSettings {
-  readonly AccountName: string;
-  readonly Edition: string;
-  readonly DefaultNamespace: string;
-  readonly NotificationEmail: string;
+export interface AccountSettings {
+  readonly AccountName?: string;
+  readonly Edition?: string;
+  readonly DefaultNamespace?: string;
+  readonly NotificationEmail?: string;
 }
 
-interface ActiveIAMPolicyAssignment {
-  readonly AssignmentName: string;
-  readonly PolicyArn: string;
+export interface ActiveIAMPolicyAssignment {
+  readonly AssignmentName?: string;
+  readonly PolicyArn?: string;
 }
 
-interface AdHocFilteringOption {
-  readonly AvailabilityStatus: string;
+export interface AdHocFilteringOption {
+  readonly AvailabilityStatus?: string;
 }
 
-interface AmazonElasticsearchParameters {
+export interface AmazonElasticsearchParameters {
   readonly Domain: string;
 }
 
-interface AmazonOpenSearchParameters {
+export interface AmazonOpenSearchParameters {
   readonly Domain: string;
 }
 
-interface Analysis {
-  readonly AnalysisId: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly Errors: [];
-  readonly DataSetArns: [];
-  readonly ThemeArn: string;
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly Sheets: [];
+export interface Analysis {
+  readonly AnalysisId?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly Errors?: [];
+  readonly DataSetArns?: [];
+  readonly ThemeArn?: string;
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly Sheets?: [];
 }
 
-interface AnalysisError {
-  readonly Type: string;
-  readonly Message: string;
+export interface AnalysisError {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface AnalysisSearchFilter {
-  readonly Operator: string;
-  readonly Name: string;
-  readonly Value: string;
+export interface AnalysisSearchFilter {
+  readonly Operator?: string;
+  readonly Name?: string;
+  readonly Value?: string;
 }
 
-interface AnalysisSourceEntity {
-  readonly SourceTemplate: AnalysisSourceTemplate;
+export interface AnalysisSourceEntity {
+  readonly SourceTemplate?: AnalysisSourceTemplate;
 }
 
-interface AnalysisSourceTemplate {
+export interface AnalysisSourceTemplate {
   readonly DataSetReferences: [];
   readonly Arn: string;
 }
 
-interface AnalysisSummary {
-  readonly Arn: string;
-  readonly AnalysisId: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
+export interface AnalysisSummary {
+  readonly Arn?: string;
+  readonly AnalysisId?: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
 }
 
-interface AnonymousUserDashboardEmbeddingConfiguration {
+export interface AnonymousUserDashboardEmbeddingConfiguration {
   readonly InitialDashboardId: string;
 }
 
-interface AnonymousUserEmbeddingExperienceConfiguration {
-  readonly Dashboard: AnonymousUserDashboardEmbeddingConfiguration;
+export interface AnonymousUserEmbeddingExperienceConfiguration {
+  readonly Dashboard?: AnonymousUserDashboardEmbeddingConfiguration;
 }
 
-interface AthenaParameters {
-  readonly WorkGroup: string;
+export interface AthenaParameters {
+  readonly WorkGroup?: string;
 }
 
-interface AuroraParameters {
+export interface AuroraParameters {
   readonly Host: string;
   readonly Port: number;
   readonly Database: string;
 }
 
-interface AuroraPostgreSqlParameters {
+export interface AuroraPostgreSqlParameters {
   readonly Host: string;
   readonly Port: number;
   readonly Database: string;
 }
 
-interface AwsIotAnalyticsParameters {
+export interface AwsIotAnalyticsParameters {
   readonly DataSetName: string;
 }
 
-interface BorderStyle {
-  readonly Show: boolean;
+export interface BorderStyle {
+  readonly Show?: boolean;
 }
 
-interface CalculatedColumn {
+export interface CalculatedColumn {
   readonly ColumnName: string;
   readonly ColumnId: string;
   readonly Expression: string;
 }
 
-interface CancelIngestionRequest {
+export interface CancelIngestionRequest {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
   readonly IngestionId: string;
 }
 
-interface CancelIngestionResponse {
-  readonly Arn: string;
-  readonly IngestionId: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface CancelIngestionResponse {
+  readonly Arn?: string;
+  readonly IngestionId?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface CastColumnTypeOperation {
+export interface CastColumnTypeOperation {
   readonly ColumnName: string;
   readonly NewColumnType: string;
-  readonly Format: string;
+  readonly Format?: string;
 }
 
-interface ColumnDescription {
-  readonly Text: string;
+export interface ColumnDescription {
+  readonly Text?: string;
 }
 
-interface ColumnGroup {
-  readonly GeoSpatialColumnGroup: GeoSpatialColumnGroup;
+export interface ColumnGroup {
+  readonly GeoSpatialColumnGroup?: GeoSpatialColumnGroup;
 }
 
-interface ColumnGroupColumnSchema {
-  readonly Name: string;
+export interface ColumnGroupColumnSchema {
+  readonly Name?: string;
 }
 
-interface ColumnGroupSchema {
-  readonly Name: string;
-  readonly ColumnGroupColumnSchemaList: [];
+export interface ColumnGroupSchema {
+  readonly Name?: string;
+  readonly ColumnGroupColumnSchemaList?: [];
 }
 
-interface ColumnLevelPermissionRule {
-  readonly Principals: [];
-  readonly ColumnNames: [];
+export interface ColumnLevelPermissionRule {
+  readonly Principals?: [];
+  readonly ColumnNames?: [];
 }
 
-interface ColumnSchema {
-  readonly Name: string;
-  readonly DataType: string;
-  readonly GeographicRole: string;
+export interface ColumnSchema {
+  readonly Name?: string;
+  readonly DataType?: string;
+  readonly GeographicRole?: string;
 }
 
-interface ColumnTag {
-  readonly ColumnGeographicRole: string;
-  readonly ColumnDescription: ColumnDescription;
+export interface ColumnTag {
+  readonly ColumnGeographicRole?: string;
+  readonly ColumnDescription?: ColumnDescription;
 }
 
-interface ConcurrentUpdatingException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface ConcurrentUpdatingException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface ConflictException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface ConflictException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface CreateAccountCustomizationRequest {
+export interface CreateAccountCustomizationRequest {
   readonly AwsAccountId: string;
-  readonly Namespace: string;
+  readonly Namespace?: string;
   readonly AccountCustomization: AccountCustomization;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateAccountCustomizationResponse {
-  readonly Arn: string;
-  readonly AwsAccountId: string;
-  readonly Namespace: string;
-  readonly AccountCustomization: AccountCustomization;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface CreateAccountCustomizationResponse {
+  readonly Arn?: string;
+  readonly AwsAccountId?: string;
+  readonly Namespace?: string;
+  readonly AccountCustomization?: AccountCustomization;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface CreateAnalysisRequest {
+export interface CreateAnalysisRequest {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
   readonly Name: string;
-  readonly Parameters: Parameters;
-  readonly Permissions: [];
+  readonly Parameters?: Parameters;
+  readonly Permissions?: [];
   readonly SourceEntity: AnalysisSourceEntity;
-  readonly ThemeArn: string;
-  readonly Tags: [];
+  readonly ThemeArn?: string;
+  readonly Tags?: [];
 }
 
-interface CreateAnalysisResponse {
-  readonly Arn: string;
-  readonly AnalysisId: string;
-  readonly CreationStatus: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface CreateAnalysisResponse {
+  readonly Arn?: string;
+  readonly AnalysisId?: string;
+  readonly CreationStatus?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface CreateColumnsOperation {
+export interface CreateColumnsOperation {
   readonly Columns: [];
 }
 
-interface CreateDashboardRequest {
+export interface CreateDashboardRequest {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
   readonly Name: string;
-  readonly Parameters: Parameters;
-  readonly Permissions: [];
+  readonly Parameters?: Parameters;
+  readonly Permissions?: [];
   readonly SourceEntity: DashboardSourceEntity;
-  readonly Tags: [];
-  readonly VersionDescription: string;
-  readonly DashboardPublishOptions: DashboardPublishOptions;
-  readonly ThemeArn: string;
+  readonly Tags?: [];
+  readonly VersionDescription?: string;
+  readonly DashboardPublishOptions?: DashboardPublishOptions;
+  readonly ThemeArn?: string;
 }
 
-interface CreateDashboardResponse {
-  readonly Arn: string;
-  readonly VersionArn: string;
-  readonly DashboardId: string;
-  readonly CreationStatus: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface CreateDashboardResponse {
+  readonly Arn?: string;
+  readonly VersionArn?: string;
+  readonly DashboardId?: string;
+  readonly CreationStatus?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface CreateDataSetRequest {
+export interface CreateDataSetRequest {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
   readonly Name: string;
   readonly PhysicalTableMap: {[key: string]: any};
-  readonly LogicalTableMap: {[key: string]: any};
+  readonly LogicalTableMap?: {[key: string]: any};
   readonly ImportMode: string;
-  readonly ColumnGroups: [];
-  readonly FieldFolders: {[key: string]: any};
-  readonly Permissions: [];
-  readonly RowLevelPermissionDataSet: RowLevelPermissionDataSet;
-  readonly RowLevelPermissionTagConfiguration: RowLevelPermissionTagConfiguration;
-  readonly ColumnLevelPermissionRules: [];
-  readonly Tags: [];
-  readonly DataSetUsageConfiguration: DataSetUsageConfiguration;
+  readonly ColumnGroups?: [];
+  readonly FieldFolders?: {[key: string]: any};
+  readonly Permissions?: [];
+  readonly RowLevelPermissionDataSet?: RowLevelPermissionDataSet;
+  readonly RowLevelPermissionTagConfiguration?: RowLevelPermissionTagConfiguration;
+  readonly ColumnLevelPermissionRules?: [];
+  readonly Tags?: [];
+  readonly DataSetUsageConfiguration?: DataSetUsageConfiguration;
 }
 
-interface CreateDataSetResponse {
-  readonly Arn: string;
-  readonly DataSetId: string;
-  readonly IngestionArn: string;
-  readonly IngestionId: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface CreateDataSetResponse {
+  readonly Arn?: string;
+  readonly DataSetId?: string;
+  readonly IngestionArn?: string;
+  readonly IngestionId?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface CreateDataSourceRequest {
+export interface CreateDataSourceRequest {
   readonly AwsAccountId: string;
   readonly DataSourceId: string;
   readonly Name: string;
   readonly Type: string;
-  readonly DataSourceParameters: DataSourceParameters;
-  readonly Credentials: DataSourceCredentials;
-  readonly Permissions: [];
-  readonly VpcConnectionProperties: VpcConnectionProperties;
-  readonly SslProperties: SslProperties;
-  readonly Tags: [];
+  readonly DataSourceParameters?: DataSourceParameters;
+  readonly Credentials?: DataSourceCredentials;
+  readonly Permissions?: [];
+  readonly VpcConnectionProperties?: VpcConnectionProperties;
+  readonly SslProperties?: SslProperties;
+  readonly Tags?: [];
 }
 
-interface CreateDataSourceResponse {
-  readonly Arn: string;
-  readonly DataSourceId: string;
-  readonly CreationStatus: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface CreateDataSourceResponse {
+  readonly Arn?: string;
+  readonly DataSourceId?: string;
+  readonly CreationStatus?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface CreateFolderMembershipRequest {
+export interface CreateFolderMembershipRequest {
   readonly AwsAccountId: string;
   readonly FolderId: string;
   readonly MemberId: string;
   readonly MemberType: string;
 }
 
-interface CreateFolderMembershipResponse {
-  readonly Status: number;
-  readonly FolderMember: FolderMember;
-  readonly RequestId: string;
+export interface CreateFolderMembershipResponse {
+  readonly Status?: number;
+  readonly FolderMember?: FolderMember;
+  readonly RequestId?: string;
 }
 
-interface CreateFolderRequest {
+export interface CreateFolderRequest {
   readonly AwsAccountId: string;
   readonly FolderId: string;
-  readonly Name: string;
-  readonly FolderType: string;
-  readonly ParentFolderArn: string;
-  readonly Permissions: [];
-  readonly Tags: [];
+  readonly Name?: string;
+  readonly FolderType?: string;
+  readonly ParentFolderArn?: string;
+  readonly Permissions?: [];
+  readonly Tags?: [];
 }
 
-interface CreateFolderResponse {
-  readonly Status: number;
-  readonly Arn: string;
-  readonly FolderId: string;
-  readonly RequestId: string;
+export interface CreateFolderResponse {
+  readonly Status?: number;
+  readonly Arn?: string;
+  readonly FolderId?: string;
+  readonly RequestId?: string;
 }
 
-interface CreateGroupMembershipRequest {
+export interface CreateGroupMembershipRequest {
   readonly MemberName: string;
   readonly GroupName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
 
-interface CreateGroupMembershipResponse {
-  readonly GroupMember: GroupMember;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface CreateGroupMembershipResponse {
+  readonly GroupMember?: GroupMember;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface CreateGroupRequest {
+export interface CreateGroupRequest {
   readonly GroupName: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
 
-interface CreateGroupResponse {
-  readonly Group: Group;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface CreateGroupResponse {
+  readonly Group?: Group;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface CreateIAMPolicyAssignmentRequest {
+export interface CreateIAMPolicyAssignmentRequest {
   readonly AwsAccountId: string;
   readonly AssignmentName: string;
   readonly AssignmentStatus: string;
-  readonly PolicyArn: string;
-  readonly Identities: {[key: string]: any};
+  readonly PolicyArn?: string;
+  readonly Identities?: {[key: string]: any};
   readonly Namespace: string;
 }
 
-interface CreateIAMPolicyAssignmentResponse {
-  readonly AssignmentName: string;
-  readonly AssignmentId: string;
-  readonly AssignmentStatus: string;
-  readonly PolicyArn: string;
-  readonly Identities: {[key: string]: any};
-  readonly RequestId: string;
-  readonly Status: number;
+export interface CreateIAMPolicyAssignmentResponse {
+  readonly AssignmentName?: string;
+  readonly AssignmentId?: string;
+  readonly AssignmentStatus?: string;
+  readonly PolicyArn?: string;
+  readonly Identities?: {[key: string]: any};
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface CreateIngestionRequest {
+export interface CreateIngestionRequest {
   readonly DataSetId: string;
   readonly IngestionId: string;
   readonly AwsAccountId: string;
-  readonly IngestionType: string;
+  readonly IngestionType?: string;
 }
 
-interface CreateIngestionResponse {
-  readonly Arn: string;
-  readonly IngestionId: string;
-  readonly IngestionStatus: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface CreateIngestionResponse {
+  readonly Arn?: string;
+  readonly IngestionId?: string;
+  readonly IngestionStatus?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface CreateNamespaceRequest {
+export interface CreateNamespaceRequest {
   readonly AwsAccountId: string;
   readonly Namespace: string;
   readonly IdentityStore: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateNamespaceResponse {
-  readonly Arn: string;
-  readonly Name: string;
-  readonly CapacityRegion: string;
-  readonly CreationStatus: string;
-  readonly IdentityStore: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface CreateNamespaceResponse {
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly CapacityRegion?: string;
+  readonly CreationStatus?: string;
+  readonly IdentityStore?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface CreateTemplateAliasRequest {
+export interface CreateTemplateAliasRequest {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly AliasName: string;
   readonly TemplateVersionNumber: number;
 }
 
-interface CreateTemplateAliasResponse {
-  readonly TemplateAlias: TemplateAlias;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface CreateTemplateAliasResponse {
+  readonly TemplateAlias?: TemplateAlias;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface CreateTemplateRequest {
+export interface CreateTemplateRequest {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
-  readonly Name: string;
-  readonly Permissions: [];
+  readonly Name?: string;
+  readonly Permissions?: [];
   readonly SourceEntity: TemplateSourceEntity;
-  readonly Tags: [];
-  readonly VersionDescription: string;
+  readonly Tags?: [];
+  readonly VersionDescription?: string;
 }
 
-interface CreateTemplateResponse {
-  readonly Arn: string;
-  readonly VersionArn: string;
-  readonly TemplateId: string;
-  readonly CreationStatus: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface CreateTemplateResponse {
+  readonly Arn?: string;
+  readonly VersionArn?: string;
+  readonly TemplateId?: string;
+  readonly CreationStatus?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface CreateThemeAliasRequest {
+export interface CreateThemeAliasRequest {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly AliasName: string;
   readonly ThemeVersionNumber: number;
 }
 
-interface CreateThemeAliasResponse {
-  readonly ThemeAlias: ThemeAlias;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface CreateThemeAliasResponse {
+  readonly ThemeAlias?: ThemeAlias;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface CreateThemeRequest {
+export interface CreateThemeRequest {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly Name: string;
   readonly BaseThemeId: string;
-  readonly VersionDescription: string;
+  readonly VersionDescription?: string;
   readonly Configuration: ThemeConfiguration;
-  readonly Permissions: [];
-  readonly Tags: [];
+  readonly Permissions?: [];
+  readonly Tags?: [];
 }
 
-interface CreateThemeResponse {
-  readonly Arn: string;
-  readonly VersionArn: string;
-  readonly ThemeId: string;
-  readonly CreationStatus: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface CreateThemeResponse {
+  readonly Arn?: string;
+  readonly VersionArn?: string;
+  readonly ThemeId?: string;
+  readonly CreationStatus?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface CredentialPair {
+export interface CredentialPair {
   readonly Username: string;
   readonly Password: string;
-  readonly AlternateDataSourceParameters: [];
+  readonly AlternateDataSourceParameters?: [];
 }
 
-interface CustomSql {
+export interface CustomSql {
   readonly DataSourceArn: string;
   readonly Name: string;
   readonly SqlQuery: string;
-  readonly Columns: [];
+  readonly Columns?: [];
 }
 
-interface Dashboard {
-  readonly DashboardId: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Version: DashboardVersion;
-  readonly CreatedTime: Date;
-  readonly LastPublishedTime: Date;
-  readonly LastUpdatedTime: Date;
+export interface Dashboard {
+  readonly DashboardId?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Version?: DashboardVersion;
+  readonly CreatedTime?: Date;
+  readonly LastPublishedTime?: Date;
+  readonly LastUpdatedTime?: Date;
 }
 
-interface DashboardError {
-  readonly Type: string;
-  readonly Message: string;
+export interface DashboardError {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface DashboardPublishOptions {
-  readonly AdHocFilteringOption: AdHocFilteringOption;
-  readonly ExportToCSVOption: ExportToCSVOption;
-  readonly SheetControlsOption: SheetControlsOption;
+export interface DashboardPublishOptions {
+  readonly AdHocFilteringOption?: AdHocFilteringOption;
+  readonly ExportToCSVOption?: ExportToCSVOption;
+  readonly SheetControlsOption?: SheetControlsOption;
 }
 
-interface DashboardSearchFilter {
+export interface DashboardSearchFilter {
   readonly Operator: string;
-  readonly Name: string;
-  readonly Value: string;
+  readonly Name?: string;
+  readonly Value?: string;
 }
 
-interface DashboardSourceEntity {
-  readonly SourceTemplate: DashboardSourceTemplate;
+export interface DashboardSourceEntity {
+  readonly SourceTemplate?: DashboardSourceTemplate;
 }
 
-interface DashboardSourceTemplate {
+export interface DashboardSourceTemplate {
   readonly DataSetReferences: [];
   readonly Arn: string;
 }
 
-interface DashboardSummary {
-  readonly Arn: string;
-  readonly DashboardId: string;
-  readonly Name: string;
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly PublishedVersionNumber: number;
-  readonly LastPublishedTime: Date;
+export interface DashboardSummary {
+  readonly Arn?: string;
+  readonly DashboardId?: string;
+  readonly Name?: string;
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly PublishedVersionNumber?: number;
+  readonly LastPublishedTime?: Date;
 }
 
-interface DashboardVersion {
-  readonly CreatedTime: Date;
-  readonly Errors: [];
-  readonly VersionNumber: number;
-  readonly Status: string;
-  readonly Arn: string;
-  readonly SourceEntityArn: string;
-  readonly DataSetArns: [];
-  readonly Description: string;
-  readonly ThemeArn: string;
-  readonly Sheets: [];
+export interface DashboardVersion {
+  readonly CreatedTime?: Date;
+  readonly Errors?: [];
+  readonly VersionNumber?: number;
+  readonly Status?: string;
+  readonly Arn?: string;
+  readonly SourceEntityArn?: string;
+  readonly DataSetArns?: [];
+  readonly Description?: string;
+  readonly ThemeArn?: string;
+  readonly Sheets?: [];
 }
 
-interface DashboardVersionSummary {
-  readonly Arn: string;
-  readonly CreatedTime: Date;
-  readonly VersionNumber: number;
-  readonly Status: string;
-  readonly SourceEntityArn: string;
-  readonly Description: string;
+export interface DashboardVersionSummary {
+  readonly Arn?: string;
+  readonly CreatedTime?: Date;
+  readonly VersionNumber?: number;
+  readonly Status?: string;
+  readonly SourceEntityArn?: string;
+  readonly Description?: string;
 }
 
-interface DataColorPalette {
-  readonly Colors: [];
-  readonly MinMaxGradient: [];
-  readonly EmptyFillColor: string;
+export interface DataColorPalette {
+  readonly Colors?: [];
+  readonly MinMaxGradient?: [];
+  readonly EmptyFillColor?: string;
 }
 
-interface DataSet {
-  readonly Arn: string;
-  readonly DataSetId: string;
-  readonly Name: string;
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly PhysicalTableMap: {[key: string]: any};
-  readonly LogicalTableMap: {[key: string]: any};
-  readonly OutputColumns: [];
-  readonly ImportMode: string;
-  readonly ConsumedSpiceCapacityInBytes: number;
-  readonly ColumnGroups: [];
-  readonly FieldFolders: {[key: string]: any};
-  readonly RowLevelPermissionDataSet: RowLevelPermissionDataSet;
-  readonly RowLevelPermissionTagConfiguration: RowLevelPermissionTagConfiguration;
-  readonly ColumnLevelPermissionRules: [];
-  readonly DataSetUsageConfiguration: DataSetUsageConfiguration;
+export interface DataSet {
+  readonly Arn?: string;
+  readonly DataSetId?: string;
+  readonly Name?: string;
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly PhysicalTableMap?: {[key: string]: any};
+  readonly LogicalTableMap?: {[key: string]: any};
+  readonly OutputColumns?: [];
+  readonly ImportMode?: string;
+  readonly ConsumedSpiceCapacityInBytes?: number;
+  readonly ColumnGroups?: [];
+  readonly FieldFolders?: {[key: string]: any};
+  readonly RowLevelPermissionDataSet?: RowLevelPermissionDataSet;
+  readonly RowLevelPermissionTagConfiguration?: RowLevelPermissionTagConfiguration;
+  readonly ColumnLevelPermissionRules?: [];
+  readonly DataSetUsageConfiguration?: DataSetUsageConfiguration;
 }
 
-interface DataSetConfiguration {
-  readonly Placeholder: string;
-  readonly DataSetSchema: DataSetSchema;
-  readonly ColumnGroupSchemaList: [];
+export interface DataSetConfiguration {
+  readonly Placeholder?: string;
+  readonly DataSetSchema?: DataSetSchema;
+  readonly ColumnGroupSchemaList?: [];
 }
 
-interface DataSetReference {
+export interface DataSetReference {
   readonly DataSetPlaceholder: string;
   readonly DataSetArn: string;
 }
 
-interface DataSetSchema {
-  readonly ColumnSchemaList: [];
+export interface DataSetSchema {
+  readonly ColumnSchemaList?: [];
 }
 
-interface DataSetSummary {
-  readonly Arn: string;
-  readonly DataSetId: string;
-  readonly Name: string;
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly ImportMode: string;
-  readonly RowLevelPermissionDataSet: RowLevelPermissionDataSet;
-  readonly RowLevelPermissionTagConfigurationApplied: boolean;
-  readonly ColumnLevelPermissionRulesApplied: boolean;
+export interface DataSetSummary {
+  readonly Arn?: string;
+  readonly DataSetId?: string;
+  readonly Name?: string;
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly ImportMode?: string;
+  readonly RowLevelPermissionDataSet?: RowLevelPermissionDataSet;
+  readonly RowLevelPermissionTagConfigurationApplied?: boolean;
+  readonly ColumnLevelPermissionRulesApplied?: boolean;
 }
 
-interface DataSetUsageConfiguration {
-  readonly DisableUseAsDirectQuerySource: boolean;
-  readonly DisableUseAsImportedSource: boolean;
+export interface DataSetUsageConfiguration {
+  readonly DisableUseAsDirectQuerySource?: boolean;
+  readonly DisableUseAsImportedSource?: boolean;
 }
 
-interface DataSource {
-  readonly Arn: string;
-  readonly DataSourceId: string;
-  readonly Name: string;
-  readonly Type: string;
-  readonly Status: string;
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly DataSourceParameters: DataSourceParameters;
-  readonly AlternateDataSourceParameters: [];
-  readonly VpcConnectionProperties: VpcConnectionProperties;
-  readonly SslProperties: SslProperties;
-  readonly ErrorInfo: DataSourceErrorInfo;
+export interface DataSource {
+  readonly Arn?: string;
+  readonly DataSourceId?: string;
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly Status?: string;
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly DataSourceParameters?: DataSourceParameters;
+  readonly AlternateDataSourceParameters?: [];
+  readonly VpcConnectionProperties?: VpcConnectionProperties;
+  readonly SslProperties?: SslProperties;
+  readonly ErrorInfo?: DataSourceErrorInfo;
 }
 
-interface DataSourceCredentials {
-  readonly CredentialPair: CredentialPair;
-  readonly CopySourceArn: string;
+export interface DataSourceCredentials {
+  readonly CredentialPair?: CredentialPair;
+  readonly CopySourceArn?: string;
 }
 
-interface DataSourceErrorInfo {
-  readonly Type: string;
-  readonly Message: string;
+export interface DataSourceErrorInfo {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface DataSourceParameters {
-  readonly AmazonElasticsearchParameters: AmazonElasticsearchParameters;
-  readonly AthenaParameters: AthenaParameters;
-  readonly AuroraParameters: AuroraParameters;
-  readonly AuroraPostgreSqlParameters: AuroraPostgreSqlParameters;
-  readonly AwsIotAnalyticsParameters: AwsIotAnalyticsParameters;
-  readonly JiraParameters: JiraParameters;
-  readonly MariaDbParameters: MariaDbParameters;
-  readonly MySqlParameters: MySqlParameters;
-  readonly OracleParameters: OracleParameters;
-  readonly PostgreSqlParameters: PostgreSqlParameters;
-  readonly PrestoParameters: PrestoParameters;
-  readonly RdsParameters: RdsParameters;
-  readonly RedshiftParameters: RedshiftParameters;
-  readonly S3Parameters: S3Parameters;
-  readonly ServiceNowParameters: ServiceNowParameters;
-  readonly SnowflakeParameters: SnowflakeParameters;
-  readonly SparkParameters: SparkParameters;
-  readonly SqlServerParameters: SqlServerParameters;
-  readonly TeradataParameters: TeradataParameters;
-  readonly TwitterParameters: TwitterParameters;
-  readonly AmazonOpenSearchParameters: AmazonOpenSearchParameters;
-  readonly ExasolParameters: ExasolParameters;
+export interface DataSourceParameters {
+  readonly AmazonElasticsearchParameters?: AmazonElasticsearchParameters;
+  readonly AthenaParameters?: AthenaParameters;
+  readonly AuroraParameters?: AuroraParameters;
+  readonly AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters;
+  readonly AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters;
+  readonly JiraParameters?: JiraParameters;
+  readonly MariaDbParameters?: MariaDbParameters;
+  readonly MySqlParameters?: MySqlParameters;
+  readonly OracleParameters?: OracleParameters;
+  readonly PostgreSqlParameters?: PostgreSqlParameters;
+  readonly PrestoParameters?: PrestoParameters;
+  readonly RdsParameters?: RdsParameters;
+  readonly RedshiftParameters?: RedshiftParameters;
+  readonly S3Parameters?: S3Parameters;
+  readonly ServiceNowParameters?: ServiceNowParameters;
+  readonly SnowflakeParameters?: SnowflakeParameters;
+  readonly SparkParameters?: SparkParameters;
+  readonly SqlServerParameters?: SqlServerParameters;
+  readonly TeradataParameters?: TeradataParameters;
+  readonly TwitterParameters?: TwitterParameters;
+  readonly AmazonOpenSearchParameters?: AmazonOpenSearchParameters;
+  readonly ExasolParameters?: ExasolParameters;
 }
 
-interface DateTimeParameter {
-  readonly Name: string;
-  readonly Values: [];
-}
-
-interface DecimalParameter {
+export interface DateTimeParameter {
   readonly Name: string;
   readonly Values: [];
 }
 
-interface DeleteAccountCustomizationRequest {
+export interface DecimalParameter {
+  readonly Name: string;
+  readonly Values: [];
+}
+
+export interface DeleteAccountCustomizationRequest {
   readonly AwsAccountId: string;
-  readonly Namespace: string;
+  readonly Namespace?: string;
 }
 
-interface DeleteAccountCustomizationResponse {
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DeleteAccountCustomizationResponse {
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DeleteAnalysisRequest {
+export interface DeleteAnalysisRequest {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
-  readonly RecoveryWindowInDays: number;
-  readonly ForceDeleteWithoutRecovery: boolean;
+  readonly RecoveryWindowInDays?: number;
+  readonly ForceDeleteWithoutRecovery?: boolean;
 }
 
-interface DeleteAnalysisResponse {
-  readonly Status: number;
-  readonly Arn: string;
-  readonly AnalysisId: string;
-  readonly DeletionTime: Date;
-  readonly RequestId: string;
+export interface DeleteAnalysisResponse {
+  readonly Status?: number;
+  readonly Arn?: string;
+  readonly AnalysisId?: string;
+  readonly DeletionTime?: Date;
+  readonly RequestId?: string;
 }
 
-interface DeleteDashboardRequest {
+export interface DeleteDashboardRequest {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
-  readonly VersionNumber: number;
+  readonly VersionNumber?: number;
 }
 
-interface DeleteDashboardResponse {
-  readonly Status: number;
-  readonly Arn: string;
-  readonly DashboardId: string;
-  readonly RequestId: string;
+export interface DeleteDashboardResponse {
+  readonly Status?: number;
+  readonly Arn?: string;
+  readonly DashboardId?: string;
+  readonly RequestId?: string;
 }
 
-interface DeleteDataSetRequest {
+export interface DeleteDataSetRequest {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
 }
 
-interface DeleteDataSetResponse {
-  readonly Arn: string;
-  readonly DataSetId: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DeleteDataSetResponse {
+  readonly Arn?: string;
+  readonly DataSetId?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DeleteDataSourceRequest {
+export interface DeleteDataSourceRequest {
   readonly AwsAccountId: string;
   readonly DataSourceId: string;
 }
 
-interface DeleteDataSourceResponse {
-  readonly Arn: string;
-  readonly DataSourceId: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DeleteDataSourceResponse {
+  readonly Arn?: string;
+  readonly DataSourceId?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DeleteFolderMembershipRequest {
+export interface DeleteFolderMembershipRequest {
   readonly AwsAccountId: string;
   readonly FolderId: string;
   readonly MemberId: string;
   readonly MemberType: string;
 }
 
-interface DeleteFolderMembershipResponse {
-  readonly Status: number;
-  readonly RequestId: string;
+export interface DeleteFolderMembershipResponse {
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface DeleteFolderRequest {
+export interface DeleteFolderRequest {
   readonly AwsAccountId: string;
   readonly FolderId: string;
 }
 
-interface DeleteFolderResponse {
-  readonly Status: number;
-  readonly Arn: string;
-  readonly FolderId: string;
-  readonly RequestId: string;
+export interface DeleteFolderResponse {
+  readonly Status?: number;
+  readonly Arn?: string;
+  readonly FolderId?: string;
+  readonly RequestId?: string;
 }
 
-interface DeleteGroupMembershipRequest {
+export interface DeleteGroupMembershipRequest {
   readonly MemberName: string;
   readonly GroupName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
 
-interface DeleteGroupMembershipResponse {
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DeleteGroupMembershipResponse {
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DeleteGroupRequest {
+export interface DeleteGroupRequest {
   readonly GroupName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
 
-interface DeleteGroupResponse {
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DeleteGroupResponse {
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DeleteIAMPolicyAssignmentRequest {
+export interface DeleteIAMPolicyAssignmentRequest {
   readonly AwsAccountId: string;
   readonly AssignmentName: string;
   readonly Namespace: string;
 }
 
-interface DeleteIAMPolicyAssignmentResponse {
-  readonly AssignmentName: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DeleteIAMPolicyAssignmentResponse {
+  readonly AssignmentName?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DeleteNamespaceRequest {
+export interface DeleteNamespaceRequest {
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
 
-interface DeleteNamespaceResponse {
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DeleteNamespaceResponse {
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DeleteTemplateAliasRequest {
+export interface DeleteTemplateAliasRequest {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly AliasName: string;
 }
 
-interface DeleteTemplateAliasResponse {
-  readonly Status: number;
-  readonly TemplateId: string;
-  readonly AliasName: string;
-  readonly Arn: string;
-  readonly RequestId: string;
+export interface DeleteTemplateAliasResponse {
+  readonly Status?: number;
+  readonly TemplateId?: string;
+  readonly AliasName?: string;
+  readonly Arn?: string;
+  readonly RequestId?: string;
 }
 
-interface DeleteTemplateRequest {
+export interface DeleteTemplateRequest {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
-  readonly VersionNumber: number;
+  readonly VersionNumber?: number;
 }
 
-interface DeleteTemplateResponse {
-  readonly RequestId: string;
-  readonly Arn: string;
-  readonly TemplateId: string;
-  readonly Status: number;
+export interface DeleteTemplateResponse {
+  readonly RequestId?: string;
+  readonly Arn?: string;
+  readonly TemplateId?: string;
+  readonly Status?: number;
 }
 
-interface DeleteThemeAliasRequest {
+export interface DeleteThemeAliasRequest {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly AliasName: string;
 }
 
-interface DeleteThemeAliasResponse {
-  readonly AliasName: string;
-  readonly Arn: string;
-  readonly RequestId: string;
-  readonly Status: number;
-  readonly ThemeId: string;
+export interface DeleteThemeAliasResponse {
+  readonly AliasName?: string;
+  readonly Arn?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
+  readonly ThemeId?: string;
 }
 
-interface DeleteThemeRequest {
+export interface DeleteThemeRequest {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
-  readonly VersionNumber: number;
+  readonly VersionNumber?: number;
 }
 
-interface DeleteThemeResponse {
-  readonly Arn: string;
-  readonly RequestId: string;
-  readonly Status: number;
-  readonly ThemeId: string;
+export interface DeleteThemeResponse {
+  readonly Arn?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
+  readonly ThemeId?: string;
 }
 
-interface DeleteUserByPrincipalIdRequest {
+export interface DeleteUserByPrincipalIdRequest {
   readonly PrincipalId: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
 
-interface DeleteUserByPrincipalIdResponse {
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DeleteUserByPrincipalIdResponse {
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DeleteUserRequest {
+export interface DeleteUserRequest {
   readonly UserName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
 
-interface DeleteUserResponse {
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DeleteUserResponse {
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeAccountCustomizationRequest {
+export interface DescribeAccountCustomizationRequest {
   readonly AwsAccountId: string;
-  readonly Namespace: string;
-  readonly Resolved: boolean;
+  readonly Namespace?: string;
+  readonly Resolved?: boolean;
 }
 
-interface DescribeAccountCustomizationResponse {
-  readonly Arn: string;
+export interface DescribeAccountCustomizationResponse {
+  readonly Arn?: string;
+  readonly AwsAccountId?: string;
+  readonly Namespace?: string;
+  readonly AccountCustomization?: AccountCustomization;
+  readonly RequestId?: string;
+  readonly Status?: number;
+}
+
+export interface DescribeAccountSettingsRequest {
   readonly AwsAccountId: string;
-  readonly Namespace: string;
-  readonly AccountCustomization: AccountCustomization;
-  readonly RequestId: string;
-  readonly Status: number;
 }
 
-interface DescribeAccountSettingsRequest {
-  readonly AwsAccountId: string;
+export interface DescribeAccountSettingsResponse {
+  readonly AccountSettings?: AccountSettings;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeAccountSettingsResponse {
-  readonly AccountSettings: AccountSettings;
-  readonly RequestId: string;
-  readonly Status: number;
-}
-
-interface DescribeAnalysisPermissionsRequest {
-  readonly AwsAccountId: string;
-  readonly AnalysisId: string;
-}
-
-interface DescribeAnalysisPermissionsResponse {
-  readonly AnalysisId: string;
-  readonly AnalysisArn: string;
-  readonly Permissions: [];
-  readonly Status: number;
-  readonly RequestId: string;
-}
-
-interface DescribeAnalysisRequest {
+export interface DescribeAnalysisPermissionsRequest {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
 }
 
-interface DescribeAnalysisResponse {
-  readonly Analysis: Analysis;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface DescribeAnalysisPermissionsResponse {
+  readonly AnalysisId?: string;
+  readonly AnalysisArn?: string;
+  readonly Permissions?: [];
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface DescribeDashboardPermissionsRequest {
+export interface DescribeAnalysisRequest {
+  readonly AwsAccountId: string;
+  readonly AnalysisId: string;
+}
+
+export interface DescribeAnalysisResponse {
+  readonly Analysis?: Analysis;
+  readonly Status?: number;
+  readonly RequestId?: string;
+}
+
+export interface DescribeDashboardPermissionsRequest {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
 }
 
-interface DescribeDashboardPermissionsResponse {
-  readonly DashboardId: string;
-  readonly DashboardArn: string;
-  readonly Permissions: [];
-  readonly Status: number;
-  readonly RequestId: string;
-  readonly LinkSharingConfiguration: LinkSharingConfiguration;
+export interface DescribeDashboardPermissionsResponse {
+  readonly DashboardId?: string;
+  readonly DashboardArn?: string;
+  readonly Permissions?: [];
+  readonly Status?: number;
+  readonly RequestId?: string;
+  readonly LinkSharingConfiguration?: LinkSharingConfiguration;
 }
 
-interface DescribeDashboardRequest {
+export interface DescribeDashboardRequest {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
-  readonly VersionNumber: number;
-  readonly AliasName: string;
+  readonly VersionNumber?: number;
+  readonly AliasName?: string;
 }
 
-interface DescribeDashboardResponse {
-  readonly Dashboard: Dashboard;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface DescribeDashboardResponse {
+  readonly Dashboard?: Dashboard;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface DescribeDataSetPermissionsRequest {
+export interface DescribeDataSetPermissionsRequest {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
 }
 
-interface DescribeDataSetPermissionsResponse {
-  readonly DataSetArn: string;
-  readonly DataSetId: string;
-  readonly Permissions: [];
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DescribeDataSetPermissionsResponse {
+  readonly DataSetArn?: string;
+  readonly DataSetId?: string;
+  readonly Permissions?: [];
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeDataSetRequest {
+export interface DescribeDataSetRequest {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
 }
 
-interface DescribeDataSetResponse {
-  readonly DataSet: DataSet;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DescribeDataSetResponse {
+  readonly DataSet?: DataSet;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeDataSourcePermissionsRequest {
+export interface DescribeDataSourcePermissionsRequest {
   readonly AwsAccountId: string;
   readonly DataSourceId: string;
 }
 
-interface DescribeDataSourcePermissionsResponse {
-  readonly DataSourceArn: string;
-  readonly DataSourceId: string;
-  readonly Permissions: [];
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DescribeDataSourcePermissionsResponse {
+  readonly DataSourceArn?: string;
+  readonly DataSourceId?: string;
+  readonly Permissions?: [];
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeDataSourceRequest {
+export interface DescribeDataSourceRequest {
   readonly AwsAccountId: string;
   readonly DataSourceId: string;
 }
 
-interface DescribeDataSourceResponse {
-  readonly DataSource: DataSource;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DescribeDataSourceResponse {
+  readonly DataSource?: DataSource;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeFolderPermissionsRequest {
+export interface DescribeFolderPermissionsRequest {
   readonly AwsAccountId: string;
   readonly FolderId: string;
 }
 
-interface DescribeFolderPermissionsResponse {
-  readonly Status: number;
-  readonly FolderId: string;
-  readonly Arn: string;
-  readonly Permissions: [];
-  readonly RequestId: string;
+export interface DescribeFolderPermissionsResponse {
+  readonly Status?: number;
+  readonly FolderId?: string;
+  readonly Arn?: string;
+  readonly Permissions?: [];
+  readonly RequestId?: string;
 }
 
-interface DescribeFolderRequest {
+export interface DescribeFolderRequest {
   readonly AwsAccountId: string;
   readonly FolderId: string;
 }
 
-interface DescribeFolderResolvedPermissionsRequest {
+export interface DescribeFolderResolvedPermissionsRequest {
   readonly AwsAccountId: string;
   readonly FolderId: string;
 }
 
-interface DescribeFolderResolvedPermissionsResponse {
-  readonly Status: number;
-  readonly FolderId: string;
-  readonly Arn: string;
-  readonly Permissions: [];
-  readonly RequestId: string;
+export interface DescribeFolderResolvedPermissionsResponse {
+  readonly Status?: number;
+  readonly FolderId?: string;
+  readonly Arn?: string;
+  readonly Permissions?: [];
+  readonly RequestId?: string;
 }
 
-interface DescribeFolderResponse {
-  readonly Status: number;
-  readonly Folder: Folder;
-  readonly RequestId: string;
+export interface DescribeFolderResponse {
+  readonly Status?: number;
+  readonly Folder?: Folder;
+  readonly RequestId?: string;
 }
 
-interface DescribeGroupRequest {
+export interface DescribeGroupRequest {
   readonly GroupName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
 
-interface DescribeGroupResponse {
-  readonly Group: Group;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DescribeGroupResponse {
+  readonly Group?: Group;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeIAMPolicyAssignmentRequest {
+export interface DescribeIAMPolicyAssignmentRequest {
   readonly AwsAccountId: string;
   readonly AssignmentName: string;
   readonly Namespace: string;
 }
 
-interface DescribeIAMPolicyAssignmentResponse {
-  readonly IAMPolicyAssignment: IAMPolicyAssignment;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DescribeIAMPolicyAssignmentResponse {
+  readonly IAMPolicyAssignment?: IAMPolicyAssignment;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeIngestionRequest {
+export interface DescribeIngestionRequest {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
   readonly IngestionId: string;
 }
 
-interface DescribeIngestionResponse {
-  readonly Ingestion: Ingestion;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DescribeIngestionResponse {
+  readonly Ingestion?: Ingestion;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeIpRestrictionRequest {
+export interface DescribeIpRestrictionRequest {
   readonly AwsAccountId: string;
 }
 
-interface DescribeIpRestrictionResponse {
-  readonly AwsAccountId: string;
-  readonly IpRestrictionRuleMap: {[key: string]: any};
-  readonly Enabled: boolean;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DescribeIpRestrictionResponse {
+  readonly AwsAccountId?: string;
+  readonly IpRestrictionRuleMap?: {[key: string]: any};
+  readonly Enabled?: boolean;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeNamespaceRequest {
+export interface DescribeNamespaceRequest {
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
 
-interface DescribeNamespaceResponse {
-  readonly Namespace: NamespaceInfoV2;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DescribeNamespaceResponse {
+  readonly Namespace?: NamespaceInfoV2;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeTemplateAliasRequest {
+export interface DescribeTemplateAliasRequest {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly AliasName: string;
 }
 
-interface DescribeTemplateAliasResponse {
-  readonly TemplateAlias: TemplateAlias;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface DescribeTemplateAliasResponse {
+  readonly TemplateAlias?: TemplateAlias;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface DescribeTemplatePermissionsRequest {
+export interface DescribeTemplatePermissionsRequest {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
 }
 
-interface DescribeTemplatePermissionsResponse {
-  readonly TemplateId: string;
-  readonly TemplateArn: string;
-  readonly Permissions: [];
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DescribeTemplatePermissionsResponse {
+  readonly TemplateId?: string;
+  readonly TemplateArn?: string;
+  readonly Permissions?: [];
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeTemplateRequest {
+export interface DescribeTemplateRequest {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
-  readonly VersionNumber: number;
-  readonly AliasName: string;
+  readonly VersionNumber?: number;
+  readonly AliasName?: string;
 }
 
-interface DescribeTemplateResponse {
-  readonly Template: Template;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface DescribeTemplateResponse {
+  readonly Template?: Template;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface DescribeThemeAliasRequest {
+export interface DescribeThemeAliasRequest {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly AliasName: string;
 }
 
-interface DescribeThemeAliasResponse {
-  readonly ThemeAlias: ThemeAlias;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface DescribeThemeAliasResponse {
+  readonly ThemeAlias?: ThemeAlias;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface DescribeThemePermissionsRequest {
+export interface DescribeThemePermissionsRequest {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
 }
 
-interface DescribeThemePermissionsResponse {
-  readonly ThemeId: string;
-  readonly ThemeArn: string;
-  readonly Permissions: [];
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DescribeThemePermissionsResponse {
+  readonly ThemeId?: string;
+  readonly ThemeArn?: string;
+  readonly Permissions?: [];
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DescribeThemeRequest {
+export interface DescribeThemeRequest {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
-  readonly VersionNumber: number;
-  readonly AliasName: string;
+  readonly VersionNumber?: number;
+  readonly AliasName?: string;
 }
 
-interface DescribeThemeResponse {
-  readonly Theme: Theme;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface DescribeThemeResponse {
+  readonly Theme?: Theme;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface DescribeUserRequest {
+export interface DescribeUserRequest {
   readonly UserName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
 
-interface DescribeUserResponse {
-  readonly User: User;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface DescribeUserResponse {
+  readonly User?: User;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface DomainNotWhitelistedException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface DomainNotWhitelistedException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface ErrorInfo {
-  readonly Type: string;
-  readonly Message: string;
+export interface ErrorInfo {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface ExasolParameters {
+export interface ExasolParameters {
   readonly Host: string;
   readonly Port: number;
 }
 
-interface ExportToCSVOption {
-  readonly AvailabilityStatus: string;
+export interface ExportToCSVOption {
+  readonly AvailabilityStatus?: string;
 }
 
-interface FieldFolder {
-  readonly description: string;
-  readonly columns: [];
+export interface FieldFolder {
+  readonly description?: string;
+  readonly columns?: [];
 }
 
-interface FilterOperation {
+export interface FilterOperation {
   readonly ConditionExpression: string;
 }
 
-interface Folder {
-  readonly FolderId: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly FolderType: string;
-  readonly FolderPath: [];
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
+export interface Folder {
+  readonly FolderId?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly FolderType?: string;
+  readonly FolderPath?: [];
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
 }
 
-interface FolderMember {
-  readonly MemberId: string;
-  readonly MemberType: string;
+export interface FolderMember {
+  readonly MemberId?: string;
+  readonly MemberType?: string;
 }
 
-interface FolderSearchFilter {
-  readonly Operator: string;
-  readonly Name: string;
-  readonly Value: string;
+export interface FolderSearchFilter {
+  readonly Operator?: string;
+  readonly Name?: string;
+  readonly Value?: string;
 }
 
-interface FolderSummary {
-  readonly Arn: string;
-  readonly FolderId: string;
-  readonly Name: string;
-  readonly FolderType: string;
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
+export interface FolderSummary {
+  readonly Arn?: string;
+  readonly FolderId?: string;
+  readonly Name?: string;
+  readonly FolderType?: string;
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
 }
 
-interface GenerateEmbedUrlForAnonymousUserRequest {
+export interface GenerateEmbedUrlForAnonymousUserRequest {
   readonly AwsAccountId: string;
-  readonly SessionLifetimeInMinutes: number;
+  readonly SessionLifetimeInMinutes?: number;
   readonly Namespace: string;
-  readonly SessionTags: [];
+  readonly SessionTags?: [];
   readonly AuthorizedResourceArns: [];
   readonly ExperienceConfiguration: AnonymousUserEmbeddingExperienceConfiguration;
 }
 
-interface GenerateEmbedUrlForAnonymousUserResponse {
+export interface GenerateEmbedUrlForAnonymousUserResponse {
   readonly EmbedUrl: string;
   readonly Status: number;
   readonly RequestId: string;
 }
 
-interface GenerateEmbedUrlForRegisteredUserRequest {
+export interface GenerateEmbedUrlForRegisteredUserRequest {
   readonly AwsAccountId: string;
-  readonly SessionLifetimeInMinutes: number;
+  readonly SessionLifetimeInMinutes?: number;
   readonly UserArn: string;
   readonly ExperienceConfiguration: RegisteredUserEmbeddingExperienceConfiguration;
 }
 
-interface GenerateEmbedUrlForRegisteredUserResponse {
+export interface GenerateEmbedUrlForRegisteredUserResponse {
   readonly EmbedUrl: string;
   readonly Status: number;
   readonly RequestId: string;
 }
 
-interface GeoSpatialColumnGroup {
+export interface GeoSpatialColumnGroup {
   readonly Name: string;
   readonly CountryCode: string;
   readonly Columns: [];
 }
 
-interface GetDashboardEmbedUrlRequest {
+export interface GetDashboardEmbedUrlRequest {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
   readonly IdentityType: string;
-  readonly SessionLifetimeInMinutes: number;
-  readonly UndoRedoDisabled: boolean;
-  readonly ResetDisabled: boolean;
-  readonly StatePersistenceEnabled: boolean;
-  readonly UserArn: string;
-  readonly Namespace: string;
-  readonly AdditionalDashboardIds: [];
+  readonly SessionLifetimeInMinutes?: number;
+  readonly UndoRedoDisabled?: boolean;
+  readonly ResetDisabled?: boolean;
+  readonly StatePersistenceEnabled?: boolean;
+  readonly UserArn?: string;
+  readonly Namespace?: string;
+  readonly AdditionalDashboardIds?: [];
 }
 
-interface GetDashboardEmbedUrlResponse {
-  readonly EmbedUrl: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface GetDashboardEmbedUrlResponse {
+  readonly EmbedUrl?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface GetSessionEmbedUrlRequest {
+export interface GetSessionEmbedUrlRequest {
   readonly AwsAccountId: string;
-  readonly EntryPoint: string;
-  readonly SessionLifetimeInMinutes: number;
-  readonly UserArn: string;
+  readonly EntryPoint?: string;
+  readonly SessionLifetimeInMinutes?: number;
+  readonly UserArn?: string;
 }
 
-interface GetSessionEmbedUrlResponse {
-  readonly EmbedUrl: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface GetSessionEmbedUrlResponse {
+  readonly EmbedUrl?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface Group {
+export interface Group {
+  readonly Arn?: string;
+  readonly GroupName?: string;
+  readonly Description?: string;
+  readonly PrincipalId?: string;
+}
+
+export interface GroupMember {
+  readonly Arn?: string;
+  readonly MemberName?: string;
+}
+
+export interface GutterStyle {
+  readonly Show?: boolean;
+}
+
+export interface IAMPolicyAssignment {
+  readonly AwsAccountId?: string;
+  readonly AssignmentId?: string;
+  readonly AssignmentName?: string;
+  readonly PolicyArn?: string;
+  readonly Identities?: {[key: string]: any};
+  readonly AssignmentStatus?: string;
+}
+
+export interface IAMPolicyAssignmentSummary {
+  readonly AssignmentName?: string;
+  readonly AssignmentStatus?: string;
+}
+
+export interface IdentityTypeNotSupportedException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface Ingestion {
   readonly Arn: string;
-  readonly GroupName: string;
-  readonly Description: string;
-  readonly PrincipalId: string;
-}
-
-interface GroupMember {
-  readonly Arn: string;
-  readonly MemberName: string;
-}
-
-interface GutterStyle {
-  readonly Show: boolean;
-}
-
-interface IAMPolicyAssignment {
-  readonly AwsAccountId: string;
-  readonly AssignmentId: string;
-  readonly AssignmentName: string;
-  readonly PolicyArn: string;
-  readonly Identities: {[key: string]: any};
-  readonly AssignmentStatus: string;
-}
-
-interface IAMPolicyAssignmentSummary {
-  readonly AssignmentName: string;
-  readonly AssignmentStatus: string;
-}
-
-interface IdentityTypeNotSupportedException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface Ingestion {
-  readonly Arn: string;
-  readonly IngestionId: string;
+  readonly IngestionId?: string;
   readonly IngestionStatus: string;
-  readonly ErrorInfo: ErrorInfo;
-  readonly RowInfo: RowInfo;
-  readonly QueueInfo: QueueInfo;
+  readonly ErrorInfo?: ErrorInfo;
+  readonly RowInfo?: RowInfo;
+  readonly QueueInfo?: QueueInfo;
   readonly CreatedTime: Date;
-  readonly IngestionTimeInSeconds: number;
-  readonly IngestionSizeInBytes: number;
-  readonly RequestSource: string;
-  readonly RequestType: string;
+  readonly IngestionTimeInSeconds?: number;
+  readonly IngestionSizeInBytes?: number;
+  readonly RequestSource?: string;
+  readonly RequestType?: string;
 }
 
-interface InputColumn {
+export interface InputColumn {
   readonly Name: string;
   readonly Type: string;
 }
 
-interface IntegerParameter {
+export interface IntegerParameter {
   readonly Name: string;
   readonly Values: [];
 }
 
-interface InternalFailureException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface InternalFailureException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface InvalidNextTokenException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface InvalidParameterValueException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface InvalidParameterValueException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface JiraParameters {
+export interface JiraParameters {
   readonly SiteBaseUrl: string;
 }
 
-interface JoinInstruction {
+export interface JoinInstruction {
   readonly LeftOperand: string;
   readonly RightOperand: string;
-  readonly LeftJoinKeyProperties: JoinKeyProperties;
-  readonly RightJoinKeyProperties: JoinKeyProperties;
+  readonly LeftJoinKeyProperties?: JoinKeyProperties;
+  readonly RightJoinKeyProperties?: JoinKeyProperties;
   readonly Type: string;
   readonly OnClause: string;
 }
 
-interface JoinKeyProperties {
-  readonly UniqueKey: boolean;
+export interface JoinKeyProperties {
+  readonly UniqueKey?: boolean;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
-  readonly ResourceType: string;
-  readonly RequestId: string;
+export interface LimitExceededException {
+  readonly Message?: string;
+  readonly ResourceType?: string;
+  readonly RequestId?: string;
 }
 
-interface LinkSharingConfiguration {
-  readonly Permissions: [];
+export interface LinkSharingConfiguration {
+  readonly Permissions?: [];
 }
 
-interface ListAnalysesRequest {
+export interface ListAnalysesRequest {
   readonly AwsAccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListAnalysesResponse {
-  readonly AnalysisSummaryList: [];
-  readonly NextToken: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface ListAnalysesResponse {
+  readonly AnalysisSummaryList?: [];
+  readonly NextToken?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface ListDashboardVersionsRequest {
+export interface ListDashboardVersionsRequest {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDashboardVersionsResponse {
-  readonly DashboardVersionSummaryList: [];
-  readonly NextToken: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface ListDashboardVersionsResponse {
+  readonly DashboardVersionSummaryList?: [];
+  readonly NextToken?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface ListDashboardsRequest {
+export interface ListDashboardsRequest {
   readonly AwsAccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDashboardsResponse {
-  readonly DashboardSummaryList: [];
-  readonly NextToken: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface ListDashboardsResponse {
+  readonly DashboardSummaryList?: [];
+  readonly NextToken?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface ListDataSetsRequest {
+export interface ListDataSetsRequest {
   readonly AwsAccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDataSetsResponse {
-  readonly DataSetSummaries: [];
-  readonly NextToken: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface ListDataSetsResponse {
+  readonly DataSetSummaries?: [];
+  readonly NextToken?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface ListDataSourcesRequest {
+export interface ListDataSourcesRequest {
   readonly AwsAccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDataSourcesResponse {
-  readonly DataSources: [];
-  readonly NextToken: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface ListDataSourcesResponse {
+  readonly DataSources?: [];
+  readonly NextToken?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface ListFolderMembersRequest {
+export interface ListFolderMembersRequest {
   readonly AwsAccountId: string;
   readonly FolderId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListFolderMembersResponse {
-  readonly Status: number;
-  readonly FolderMemberList: [];
-  readonly NextToken: string;
-  readonly RequestId: string;
+export interface ListFolderMembersResponse {
+  readonly Status?: number;
+  readonly FolderMemberList?: [];
+  readonly NextToken?: string;
+  readonly RequestId?: string;
 }
 
-interface ListFoldersRequest {
+export interface ListFoldersRequest {
   readonly AwsAccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListFoldersResponse {
-  readonly Status: number;
-  readonly FolderSummaryList: [];
-  readonly NextToken: string;
-  readonly RequestId: string;
+export interface ListFoldersResponse {
+  readonly Status?: number;
+  readonly FolderSummaryList?: [];
+  readonly NextToken?: string;
+  readonly RequestId?: string;
 }
 
-interface ListGroupMembershipsRequest {
+export interface ListGroupMembershipsRequest {
   readonly GroupName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
 
-interface ListGroupMembershipsResponse {
-  readonly GroupMemberList: [];
-  readonly NextToken: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface ListGroupMembershipsResponse {
+  readonly GroupMemberList?: [];
+  readonly NextToken?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface ListGroupsRequest {
+export interface ListGroupsRequest {
   readonly AwsAccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
   readonly Namespace: string;
 }
 
-interface ListGroupsResponse {
-  readonly GroupList: [];
-  readonly NextToken: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface ListGroupsResponse {
+  readonly GroupList?: [];
+  readonly NextToken?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface ListIAMPolicyAssignmentsForUserRequest {
+export interface ListIAMPolicyAssignmentsForUserRequest {
   readonly AwsAccountId: string;
   readonly UserName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
   readonly Namespace: string;
 }
 
-interface ListIAMPolicyAssignmentsForUserResponse {
-  readonly ActiveAssignments: [];
-  readonly RequestId: string;
-  readonly NextToken: string;
-  readonly Status: number;
+export interface ListIAMPolicyAssignmentsForUserResponse {
+  readonly ActiveAssignments?: [];
+  readonly RequestId?: string;
+  readonly NextToken?: string;
+  readonly Status?: number;
 }
 
-interface ListIAMPolicyAssignmentsRequest {
+export interface ListIAMPolicyAssignmentsRequest {
   readonly AwsAccountId: string;
-  readonly AssignmentStatus: string;
+  readonly AssignmentStatus?: string;
   readonly Namespace: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListIAMPolicyAssignmentsResponse {
-  readonly IAMPolicyAssignments: [];
-  readonly NextToken: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface ListIAMPolicyAssignmentsResponse {
+  readonly IAMPolicyAssignments?: [];
+  readonly NextToken?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface ListIngestionsRequest {
+export interface ListIngestionsRequest {
   readonly DataSetId: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
   readonly AwsAccountId: string;
-  readonly MaxResults: number;
+  readonly MaxResults?: number;
 }
 
-interface ListIngestionsResponse {
-  readonly Ingestions: [];
-  readonly NextToken: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface ListIngestionsResponse {
+  readonly Ingestions?: [];
+  readonly NextToken?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface ListNamespacesRequest {
+export interface ListNamespacesRequest {
   readonly AwsAccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListNamespacesResponse {
-  readonly Namespaces: [];
-  readonly NextToken: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface ListNamespacesResponse {
+  readonly Namespaces?: [];
+  readonly NextToken?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
-  readonly RequestId: string;
-  readonly Status: number;
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface ListTemplateAliasesRequest {
+export interface ListTemplateAliasesRequest {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTemplateAliasesResponse {
-  readonly TemplateAliasList: [];
-  readonly Status: number;
-  readonly RequestId: string;
-  readonly NextToken: string;
+export interface ListTemplateAliasesResponse {
+  readonly TemplateAliasList?: [];
+  readonly Status?: number;
+  readonly RequestId?: string;
+  readonly NextToken?: string;
 }
 
-interface ListTemplateVersionsRequest {
+export interface ListTemplateVersionsRequest {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTemplateVersionsResponse {
-  readonly TemplateVersionSummaryList: [];
-  readonly NextToken: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface ListTemplateVersionsResponse {
+  readonly TemplateVersionSummaryList?: [];
+  readonly NextToken?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface ListTemplatesRequest {
+export interface ListTemplatesRequest {
   readonly AwsAccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTemplatesResponse {
-  readonly TemplateSummaryList: [];
-  readonly NextToken: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface ListTemplatesResponse {
+  readonly TemplateSummaryList?: [];
+  readonly NextToken?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface ListThemeAliasesRequest {
-  readonly AwsAccountId: string;
-  readonly ThemeId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface ListThemeAliasesResponse {
-  readonly ThemeAliasList: [];
-  readonly Status: number;
-  readonly RequestId: string;
-  readonly NextToken: string;
-}
-
-interface ListThemeVersionsRequest {
+export interface ListThemeAliasesRequest {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListThemeVersionsResponse {
-  readonly ThemeVersionSummaryList: [];
-  readonly NextToken: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface ListThemeAliasesResponse {
+  readonly ThemeAliasList?: [];
+  readonly Status?: number;
+  readonly RequestId?: string;
+  readonly NextToken?: string;
 }
 
-interface ListThemesRequest {
+export interface ListThemeVersionsRequest {
   readonly AwsAccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Type: string;
+  readonly ThemeId: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListThemesResponse {
-  readonly ThemeSummaryList: [];
-  readonly NextToken: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface ListThemeVersionsResponse {
+  readonly ThemeVersionSummaryList?: [];
+  readonly NextToken?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface ListUserGroupsRequest {
+export interface ListThemesRequest {
+  readonly AwsAccountId: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Type?: string;
+}
+
+export interface ListThemesResponse {
+  readonly ThemeSummaryList?: [];
+  readonly NextToken?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
+}
+
+export interface ListUserGroupsRequest {
   readonly UserName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListUserGroupsResponse {
-  readonly GroupList: [];
-  readonly NextToken: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface ListUserGroupsResponse {
+  readonly GroupList?: [];
+  readonly NextToken?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface ListUsersRequest {
+export interface ListUsersRequest {
   readonly AwsAccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
   readonly Namespace: string;
 }
 
-interface ListUsersResponse {
-  readonly UserList: [];
-  readonly NextToken: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface ListUsersResponse {
+  readonly UserList?: [];
+  readonly NextToken?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface LogicalTable {
+export interface LogicalTable {
   readonly Alias: string;
-  readonly DataTransforms: [];
+  readonly DataTransforms?: [];
   readonly Source: LogicalTableSource;
 }
 
-interface LogicalTableSource {
-  readonly JoinInstruction: JoinInstruction;
-  readonly PhysicalTableId: string;
-  readonly DataSetArn: string;
+export interface LogicalTableSource {
+  readonly JoinInstruction?: JoinInstruction;
+  readonly PhysicalTableId?: string;
+  readonly DataSetArn?: string;
 }
 
-interface ManifestFileLocation {
+export interface ManifestFileLocation {
   readonly Bucket: string;
   readonly Key: string;
 }
 
-interface MarginStyle {
-  readonly Show: boolean;
+export interface MarginStyle {
+  readonly Show?: boolean;
 }
 
-interface MariaDbParameters {
+export interface MariaDbParameters {
   readonly Host: string;
   readonly Port: number;
   readonly Database: string;
 }
 
-interface MemberIdArnPair {
-  readonly MemberId: string;
-  readonly MemberArn: string;
+export interface MemberIdArnPair {
+  readonly MemberId?: string;
+  readonly MemberArn?: string;
 }
 
-interface MySqlParameters {
+export interface MySqlParameters {
   readonly Host: string;
   readonly Port: number;
   readonly Database: string;
 }
 
-interface NamespaceError {
-  readonly Type: string;
-  readonly Message: string;
+export interface NamespaceError {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface NamespaceInfoV2 {
-  readonly Name: string;
-  readonly Arn: string;
-  readonly CapacityRegion: string;
-  readonly CreationStatus: string;
-  readonly IdentityStore: string;
-  readonly NamespaceError: NamespaceError;
+export interface NamespaceInfoV2 {
+  readonly Name?: string;
+  readonly Arn?: string;
+  readonly CapacityRegion?: string;
+  readonly CreationStatus?: string;
+  readonly IdentityStore?: string;
+  readonly NamespaceError?: NamespaceError;
 }
 
-interface OracleParameters {
+export interface OracleParameters {
   readonly Host: string;
   readonly Port: number;
   readonly Database: string;
 }
 
-interface OutputColumn {
-  readonly Name: string;
-  readonly Description: string;
-  readonly Type: string;
+export interface OutputColumn {
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Type?: string;
 }
 
-interface Parameters {
-  readonly StringParameters: [];
-  readonly IntegerParameters: [];
-  readonly DecimalParameters: [];
-  readonly DateTimeParameters: [];
+export interface Parameters {
+  readonly StringParameters?: [];
+  readonly IntegerParameters?: [];
+  readonly DecimalParameters?: [];
+  readonly DateTimeParameters?: [];
 }
 
-interface PhysicalTable {
-  readonly RelationalTable: RelationalTable;
-  readonly CustomSql: CustomSql;
-  readonly S3Source: S3Source;
+export interface PhysicalTable {
+  readonly RelationalTable?: RelationalTable;
+  readonly CustomSql?: CustomSql;
+  readonly S3Source?: S3Source;
 }
 
-interface PostgreSqlParameters {
+export interface PostgreSqlParameters {
   readonly Host: string;
   readonly Port: number;
   readonly Database: string;
 }
 
-interface PreconditionNotMetException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface PreconditionNotMetException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface PrestoParameters {
+export interface PrestoParameters {
   readonly Host: string;
   readonly Port: number;
   readonly Catalog: string;
 }
 
-interface ProjectOperation {
+export interface ProjectOperation {
   readonly ProjectedColumns: [];
 }
 
-interface QueueInfo {
+export interface QueueInfo {
   readonly WaitingOnIngestion: string;
   readonly QueuedIngestion: string;
 }
 
-interface QuickSightUserNotFoundException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface QuickSightUserNotFoundException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface RdsParameters {
+export interface RdsParameters {
   readonly InstanceId: string;
   readonly Database: string;
 }
 
-interface RedshiftParameters {
-  readonly Host: string;
-  readonly Port: number;
+export interface RedshiftParameters {
+  readonly Host?: string;
+  readonly Port?: number;
   readonly Database: string;
-  readonly ClusterId: string;
+  readonly ClusterId?: string;
 }
 
-interface RegisterUserRequest {
+export interface RegisterUserRequest {
   readonly IdentityType: string;
   readonly Email: string;
   readonly UserRole: string;
-  readonly IamArn: string;
-  readonly SessionName: string;
+  readonly IamArn?: string;
+  readonly SessionName?: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
-  readonly UserName: string;
-  readonly CustomPermissionsName: string;
-  readonly ExternalLoginFederationProviderType: string;
-  readonly CustomFederationProviderUrl: string;
-  readonly ExternalLoginId: string;
+  readonly UserName?: string;
+  readonly CustomPermissionsName?: string;
+  readonly ExternalLoginFederationProviderType?: string;
+  readonly CustomFederationProviderUrl?: string;
+  readonly ExternalLoginId?: string;
 }
 
-interface RegisterUserResponse {
-  readonly User: User;
-  readonly UserInvitationUrl: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface RegisterUserResponse {
+  readonly User?: User;
+  readonly UserInvitationUrl?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface RegisteredUserDashboardEmbeddingConfiguration {
+export interface RegisteredUserDashboardEmbeddingConfiguration {
   readonly InitialDashboardId: string;
 }
 
-interface RegisteredUserEmbeddingExperienceConfiguration {
-  readonly Dashboard: RegisteredUserDashboardEmbeddingConfiguration;
-  readonly QuickSightConsole: RegisteredUserQuickSightConsoleEmbeddingConfiguration;
-  readonly QSearchBar: RegisteredUserQSearchBarEmbeddingConfiguration;
+export interface RegisteredUserEmbeddingExperienceConfiguration {
+  readonly Dashboard?: RegisteredUserDashboardEmbeddingConfiguration;
+  readonly QuickSightConsole?: RegisteredUserQuickSightConsoleEmbeddingConfiguration;
+  readonly QSearchBar?: RegisteredUserQSearchBarEmbeddingConfiguration;
 }
 
-interface RegisteredUserQSearchBarEmbeddingConfiguration {
-  readonly InitialTopicId: string;
+export interface RegisteredUserQSearchBarEmbeddingConfiguration {
+  readonly InitialTopicId?: string;
 }
 
-interface RegisteredUserQuickSightConsoleEmbeddingConfiguration {
-  readonly InitialPath: string;
+export interface RegisteredUserQuickSightConsoleEmbeddingConfiguration {
+  readonly InitialPath?: string;
 }
 
-interface RelationalTable {
+export interface RelationalTable {
   readonly DataSourceArn: string;
-  readonly Catalog: string;
-  readonly Schema: string;
+  readonly Catalog?: string;
+  readonly Schema?: string;
   readonly Name: string;
   readonly InputColumns: [];
 }
 
-interface RenameColumnOperation {
+export interface RenameColumnOperation {
   readonly ColumnName: string;
   readonly NewColumnName: string;
 }
 
-interface ResourceExistsException {
-  readonly Message: string;
-  readonly ResourceType: string;
-  readonly RequestId: string;
+export interface ResourceExistsException {
+  readonly Message?: string;
+  readonly ResourceType?: string;
+  readonly RequestId?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
-  readonly ResourceType: string;
-  readonly RequestId: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
+  readonly ResourceType?: string;
+  readonly RequestId?: string;
 }
 
-interface ResourcePermission {
+export interface ResourcePermission {
   readonly Principal: string;
   readonly Actions: [];
 }
 
-interface ResourceUnavailableException {
-  readonly Message: string;
-  readonly ResourceType: string;
-  readonly RequestId: string;
+export interface ResourceUnavailableException {
+  readonly Message?: string;
+  readonly ResourceType?: string;
+  readonly RequestId?: string;
 }
 
-interface RestoreAnalysisRequest {
+export interface RestoreAnalysisRequest {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
 }
 
-interface RestoreAnalysisResponse {
-  readonly Status: number;
-  readonly Arn: string;
-  readonly AnalysisId: string;
-  readonly RequestId: string;
+export interface RestoreAnalysisResponse {
+  readonly Status?: number;
+  readonly Arn?: string;
+  readonly AnalysisId?: string;
+  readonly RequestId?: string;
 }
 
-interface RowInfo {
-  readonly RowsIngested: number;
-  readonly RowsDropped: number;
-  readonly TotalRowsInDataset: number;
+export interface RowInfo {
+  readonly RowsIngested?: number;
+  readonly RowsDropped?: number;
+  readonly TotalRowsInDataset?: number;
 }
 
-interface RowLevelPermissionDataSet {
-  readonly Namespace: string;
+export interface RowLevelPermissionDataSet {
+  readonly Namespace?: string;
   readonly Arn: string;
   readonly PermissionPolicy: string;
-  readonly FormatVersion: string;
-  readonly Status: string;
+  readonly FormatVersion?: string;
+  readonly Status?: string;
 }
 
-interface RowLevelPermissionTagConfiguration {
-  readonly Status: string;
+export interface RowLevelPermissionTagConfiguration {
+  readonly Status?: string;
   readonly TagRules: [];
 }
 
-interface RowLevelPermissionTagRule {
+export interface RowLevelPermissionTagRule {
   readonly TagKey: string;
   readonly ColumnName: string;
-  readonly TagMultiValueDelimiter: string;
-  readonly MatchAllValue: string;
+  readonly TagMultiValueDelimiter?: string;
+  readonly MatchAllValue?: string;
 }
 
-interface S3Parameters {
+export interface S3Parameters {
   readonly ManifestFileLocation: ManifestFileLocation;
 }
 
-interface S3Source {
+export interface S3Source {
   readonly DataSourceArn: string;
-  readonly UploadSettings: UploadSettings;
+  readonly UploadSettings?: UploadSettings;
   readonly InputColumns: [];
 }
 
-interface SearchAnalysesRequest {
+export interface SearchAnalysesRequest {
   readonly AwsAccountId: string;
   readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface SearchAnalysesResponse {
-  readonly AnalysisSummaryList: [];
-  readonly NextToken: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface SearchAnalysesResponse {
+  readonly AnalysisSummaryList?: [];
+  readonly NextToken?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface SearchDashboardsRequest {
+export interface SearchDashboardsRequest {
   readonly AwsAccountId: string;
   readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface SearchDashboardsResponse {
-  readonly DashboardSummaryList: [];
-  readonly NextToken: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface SearchDashboardsResponse {
+  readonly DashboardSummaryList?: [];
+  readonly NextToken?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface SearchFoldersRequest {
+export interface SearchFoldersRequest {
   readonly AwsAccountId: string;
   readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface SearchFoldersResponse {
-  readonly Status: number;
-  readonly FolderSummaryList: [];
-  readonly NextToken: string;
-  readonly RequestId: string;
+export interface SearchFoldersResponse {
+  readonly Status?: number;
+  readonly FolderSummaryList?: [];
+  readonly NextToken?: string;
+  readonly RequestId?: string;
 }
 
-interface ServiceNowParameters {
+export interface ServiceNowParameters {
   readonly SiteBaseUrl: string;
 }
 
-interface SessionLifetimeInMinutesInvalidException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface SessionLifetimeInMinutesInvalidException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface SessionTag {
+export interface SessionTag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface Sheet {
-  readonly SheetId: string;
-  readonly Name: string;
+export interface Sheet {
+  readonly SheetId?: string;
+  readonly Name?: string;
 }
 
-interface SheetControlsOption {
-  readonly VisibilityState: string;
+export interface SheetControlsOption {
+  readonly VisibilityState?: string;
 }
 
-interface SheetStyle {
-  readonly Tile: TileStyle;
-  readonly TileLayout: TileLayoutStyle;
+export interface SheetStyle {
+  readonly Tile?: TileStyle;
+  readonly TileLayout?: TileLayoutStyle;
 }
 
-interface SnowflakeParameters {
+export interface SnowflakeParameters {
   readonly Host: string;
   readonly Database: string;
   readonly Warehouse: string;
 }
 
-interface SparkParameters {
+export interface SparkParameters {
   readonly Host: string;
   readonly Port: number;
 }
 
-interface SqlServerParameters {
+export interface SqlServerParameters {
   readonly Host: string;
   readonly Port: number;
   readonly Database: string;
 }
 
-interface SslProperties {
-  readonly DisableSsl: boolean;
+export interface SslProperties {
+  readonly DisableSsl?: boolean;
 }
 
-interface StringParameter {
+export interface StringParameter {
   readonly Name: string;
   readonly Values: [];
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagColumnOperation {
+export interface TagColumnOperation {
   readonly ColumnName: string;
   readonly Tags: [];
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
-  readonly RequestId: string;
-  readonly Status: number;
+export interface TagResourceResponse {
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface Template {
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Version: TemplateVersion;
-  readonly TemplateId: string;
-  readonly LastUpdatedTime: Date;
-  readonly CreatedTime: Date;
+export interface Template {
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Version?: TemplateVersion;
+  readonly TemplateId?: string;
+  readonly LastUpdatedTime?: Date;
+  readonly CreatedTime?: Date;
 }
 
-interface TemplateAlias {
-  readonly AliasName: string;
-  readonly Arn: string;
-  readonly TemplateVersionNumber: number;
+export interface TemplateAlias {
+  readonly AliasName?: string;
+  readonly Arn?: string;
+  readonly TemplateVersionNumber?: number;
 }
 
-interface TemplateError {
-  readonly Type: string;
-  readonly Message: string;
+export interface TemplateError {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface TemplateSourceAnalysis {
+export interface TemplateSourceAnalysis {
   readonly Arn: string;
   readonly DataSetReferences: [];
 }
 
-interface TemplateSourceEntity {
-  readonly SourceAnalysis: TemplateSourceAnalysis;
-  readonly SourceTemplate: TemplateSourceTemplate;
+export interface TemplateSourceEntity {
+  readonly SourceAnalysis?: TemplateSourceAnalysis;
+  readonly SourceTemplate?: TemplateSourceTemplate;
 }
 
-interface TemplateSourceTemplate {
+export interface TemplateSourceTemplate {
   readonly Arn: string;
 }
 
-interface TemplateSummary {
-  readonly Arn: string;
-  readonly TemplateId: string;
-  readonly Name: string;
-  readonly LatestVersionNumber: number;
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
+export interface TemplateSummary {
+  readonly Arn?: string;
+  readonly TemplateId?: string;
+  readonly Name?: string;
+  readonly LatestVersionNumber?: number;
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
 }
 
-interface TemplateVersion {
-  readonly CreatedTime: Date;
-  readonly Errors: [];
-  readonly VersionNumber: number;
-  readonly Status: string;
-  readonly DataSetConfigurations: [];
-  readonly Description: string;
-  readonly SourceEntityArn: string;
-  readonly ThemeArn: string;
-  readonly Sheets: [];
+export interface TemplateVersion {
+  readonly CreatedTime?: Date;
+  readonly Errors?: [];
+  readonly VersionNumber?: number;
+  readonly Status?: string;
+  readonly DataSetConfigurations?: [];
+  readonly Description?: string;
+  readonly SourceEntityArn?: string;
+  readonly ThemeArn?: string;
+  readonly Sheets?: [];
 }
 
-interface TemplateVersionSummary {
-  readonly Arn: string;
-  readonly VersionNumber: number;
-  readonly CreatedTime: Date;
-  readonly Status: string;
-  readonly Description: string;
+export interface TemplateVersionSummary {
+  readonly Arn?: string;
+  readonly VersionNumber?: number;
+  readonly CreatedTime?: Date;
+  readonly Status?: string;
+  readonly Description?: string;
 }
 
-interface TeradataParameters {
+export interface TeradataParameters {
   readonly Host: string;
   readonly Port: number;
   readonly Database: string;
 }
 
-interface Theme {
-  readonly Arn: string;
-  readonly Name: string;
-  readonly ThemeId: string;
-  readonly Version: ThemeVersion;
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly Type: string;
+export interface Theme {
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly ThemeId?: string;
+  readonly Version?: ThemeVersion;
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly Type?: string;
 }
 
-interface ThemeAlias {
-  readonly Arn: string;
-  readonly AliasName: string;
-  readonly ThemeVersionNumber: number;
+export interface ThemeAlias {
+  readonly Arn?: string;
+  readonly AliasName?: string;
+  readonly ThemeVersionNumber?: number;
 }
 
-interface ThemeConfiguration {
-  readonly DataColorPalette: DataColorPalette;
-  readonly UIColorPalette: UIColorPalette;
-  readonly Sheet: SheetStyle;
+export interface ThemeConfiguration {
+  readonly DataColorPalette?: DataColorPalette;
+  readonly UIColorPalette?: UIColorPalette;
+  readonly Sheet?: SheetStyle;
 }
 
-interface ThemeError {
-  readonly Type: string;
-  readonly Message: string;
+export interface ThemeError {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface ThemeSummary {
-  readonly Arn: string;
-  readonly Name: string;
-  readonly ThemeId: string;
-  readonly LatestVersionNumber: number;
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
+export interface ThemeSummary {
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly ThemeId?: string;
+  readonly LatestVersionNumber?: number;
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
 }
 
-interface ThemeVersion {
-  readonly VersionNumber: number;
-  readonly Arn: string;
-  readonly Description: string;
-  readonly BaseThemeId: string;
-  readonly CreatedTime: Date;
-  readonly Configuration: ThemeConfiguration;
-  readonly Errors: [];
-  readonly Status: string;
+export interface ThemeVersion {
+  readonly VersionNumber?: number;
+  readonly Arn?: string;
+  readonly Description?: string;
+  readonly BaseThemeId?: string;
+  readonly CreatedTime?: Date;
+  readonly Configuration?: ThemeConfiguration;
+  readonly Errors?: [];
+  readonly Status?: string;
 }
 
-interface ThemeVersionSummary {
-  readonly VersionNumber: number;
-  readonly Arn: string;
-  readonly Description: string;
-  readonly CreatedTime: Date;
-  readonly Status: string;
+export interface ThemeVersionSummary {
+  readonly VersionNumber?: number;
+  readonly Arn?: string;
+  readonly Description?: string;
+  readonly CreatedTime?: Date;
+  readonly Status?: string;
 }
 
-interface ThrottlingException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface ThrottlingException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface TileLayoutStyle {
-  readonly Gutter: GutterStyle;
-  readonly Margin: MarginStyle;
+export interface TileLayoutStyle {
+  readonly Gutter?: GutterStyle;
+  readonly Margin?: MarginStyle;
 }
 
-interface TileStyle {
-  readonly Border: BorderStyle;
+export interface TileStyle {
+  readonly Border?: BorderStyle;
 }
 
-interface TransformOperation {
-  readonly ProjectOperation: ProjectOperation;
-  readonly FilterOperation: FilterOperation;
-  readonly CreateColumnsOperation: CreateColumnsOperation;
-  readonly RenameColumnOperation: RenameColumnOperation;
-  readonly CastColumnTypeOperation: CastColumnTypeOperation;
-  readonly TagColumnOperation: TagColumnOperation;
-  readonly UntagColumnOperation: UntagColumnOperation;
+export interface TransformOperation {
+  readonly ProjectOperation?: ProjectOperation;
+  readonly FilterOperation?: FilterOperation;
+  readonly CreateColumnsOperation?: CreateColumnsOperation;
+  readonly RenameColumnOperation?: RenameColumnOperation;
+  readonly CastColumnTypeOperation?: CastColumnTypeOperation;
+  readonly TagColumnOperation?: TagColumnOperation;
+  readonly UntagColumnOperation?: UntagColumnOperation;
 }
 
-interface TwitterParameters {
+export interface TwitterParameters {
   readonly Query: string;
   readonly MaxRows: number;
 }
 
-interface UIColorPalette {
-  readonly PrimaryForeground: string;
-  readonly PrimaryBackground: string;
-  readonly SecondaryForeground: string;
-  readonly SecondaryBackground: string;
-  readonly Accent: string;
-  readonly AccentForeground: string;
-  readonly Danger: string;
-  readonly DangerForeground: string;
-  readonly Warning: string;
-  readonly WarningForeground: string;
-  readonly Success: string;
-  readonly SuccessForeground: string;
-  readonly Dimension: string;
-  readonly DimensionForeground: string;
-  readonly Measure: string;
-  readonly MeasureForeground: string;
+export interface UIColorPalette {
+  readonly PrimaryForeground?: string;
+  readonly PrimaryBackground?: string;
+  readonly SecondaryForeground?: string;
+  readonly SecondaryBackground?: string;
+  readonly Accent?: string;
+  readonly AccentForeground?: string;
+  readonly Danger?: string;
+  readonly DangerForeground?: string;
+  readonly Warning?: string;
+  readonly WarningForeground?: string;
+  readonly Success?: string;
+  readonly SuccessForeground?: string;
+  readonly Dimension?: string;
+  readonly DimensionForeground?: string;
+  readonly Measure?: string;
+  readonly MeasureForeground?: string;
 }
 
-interface UnsupportedPricingPlanException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface UnsupportedPricingPlanException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface UnsupportedUserEditionException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface UnsupportedUserEditionException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface UntagColumnOperation {
+export interface UntagColumnOperation {
   readonly ColumnName: string;
   readonly TagNames: [];
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UntagResourceResponse {
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateAccountCustomizationRequest {
+export interface UpdateAccountCustomizationRequest {
   readonly AwsAccountId: string;
-  readonly Namespace: string;
+  readonly Namespace?: string;
   readonly AccountCustomization: AccountCustomization;
 }
 
-interface UpdateAccountCustomizationResponse {
-  readonly Arn: string;
-  readonly AwsAccountId: string;
-  readonly Namespace: string;
-  readonly AccountCustomization: AccountCustomization;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateAccountCustomizationResponse {
+  readonly Arn?: string;
+  readonly AwsAccountId?: string;
+  readonly Namespace?: string;
+  readonly AccountCustomization?: AccountCustomization;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateAccountSettingsRequest {
+export interface UpdateAccountSettingsRequest {
   readonly AwsAccountId: string;
   readonly DefaultNamespace: string;
-  readonly NotificationEmail: string;
+  readonly NotificationEmail?: string;
 }
 
-interface UpdateAccountSettingsResponse {
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateAccountSettingsResponse {
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateAnalysisPermissionsRequest {
+export interface UpdateAnalysisPermissionsRequest {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
-  readonly GrantPermissions: [];
-  readonly RevokePermissions: [];
+  readonly GrantPermissions?: [];
+  readonly RevokePermissions?: [];
 }
 
-interface UpdateAnalysisPermissionsResponse {
-  readonly AnalysisArn: string;
-  readonly AnalysisId: string;
-  readonly Permissions: [];
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateAnalysisPermissionsResponse {
+  readonly AnalysisArn?: string;
+  readonly AnalysisId?: string;
+  readonly Permissions?: [];
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateAnalysisRequest {
+export interface UpdateAnalysisRequest {
   readonly AwsAccountId: string;
   readonly AnalysisId: string;
   readonly Name: string;
-  readonly Parameters: Parameters;
+  readonly Parameters?: Parameters;
   readonly SourceEntity: AnalysisSourceEntity;
-  readonly ThemeArn: string;
+  readonly ThemeArn?: string;
 }
 
-interface UpdateAnalysisResponse {
-  readonly Arn: string;
-  readonly AnalysisId: string;
-  readonly UpdateStatus: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface UpdateAnalysisResponse {
+  readonly Arn?: string;
+  readonly AnalysisId?: string;
+  readonly UpdateStatus?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface UpdateDashboardPermissionsRequest {
+export interface UpdateDashboardPermissionsRequest {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
-  readonly GrantPermissions: [];
-  readonly RevokePermissions: [];
-  readonly GrantLinkPermissions: [];
-  readonly RevokeLinkPermissions: [];
+  readonly GrantPermissions?: [];
+  readonly RevokePermissions?: [];
+  readonly GrantLinkPermissions?: [];
+  readonly RevokeLinkPermissions?: [];
 }
 
-interface UpdateDashboardPermissionsResponse {
-  readonly DashboardArn: string;
-  readonly DashboardId: string;
-  readonly Permissions: [];
-  readonly RequestId: string;
-  readonly Status: number;
-  readonly LinkSharingConfiguration: LinkSharingConfiguration;
+export interface UpdateDashboardPermissionsResponse {
+  readonly DashboardArn?: string;
+  readonly DashboardId?: string;
+  readonly Permissions?: [];
+  readonly RequestId?: string;
+  readonly Status?: number;
+  readonly LinkSharingConfiguration?: LinkSharingConfiguration;
 }
 
-interface UpdateDashboardPublishedVersionRequest {
+export interface UpdateDashboardPublishedVersionRequest {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
   readonly VersionNumber: number;
 }
 
-interface UpdateDashboardPublishedVersionResponse {
-  readonly DashboardId: string;
-  readonly DashboardArn: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface UpdateDashboardPublishedVersionResponse {
+  readonly DashboardId?: string;
+  readonly DashboardArn?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface UpdateDashboardRequest {
+export interface UpdateDashboardRequest {
   readonly AwsAccountId: string;
   readonly DashboardId: string;
   readonly Name: string;
   readonly SourceEntity: DashboardSourceEntity;
-  readonly Parameters: Parameters;
-  readonly VersionDescription: string;
-  readonly DashboardPublishOptions: DashboardPublishOptions;
-  readonly ThemeArn: string;
+  readonly Parameters?: Parameters;
+  readonly VersionDescription?: string;
+  readonly DashboardPublishOptions?: DashboardPublishOptions;
+  readonly ThemeArn?: string;
 }
 
-interface UpdateDashboardResponse {
-  readonly Arn: string;
-  readonly VersionArn: string;
-  readonly DashboardId: string;
-  readonly CreationStatus: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface UpdateDashboardResponse {
+  readonly Arn?: string;
+  readonly VersionArn?: string;
+  readonly DashboardId?: string;
+  readonly CreationStatus?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface UpdateDataSetPermissionsRequest {
+export interface UpdateDataSetPermissionsRequest {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
-  readonly GrantPermissions: [];
-  readonly RevokePermissions: [];
+  readonly GrantPermissions?: [];
+  readonly RevokePermissions?: [];
 }
 
-interface UpdateDataSetPermissionsResponse {
-  readonly DataSetArn: string;
-  readonly DataSetId: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateDataSetPermissionsResponse {
+  readonly DataSetArn?: string;
+  readonly DataSetId?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateDataSetRequest {
+export interface UpdateDataSetRequest {
   readonly AwsAccountId: string;
   readonly DataSetId: string;
   readonly Name: string;
   readonly PhysicalTableMap: {[key: string]: any};
-  readonly LogicalTableMap: {[key: string]: any};
+  readonly LogicalTableMap?: {[key: string]: any};
   readonly ImportMode: string;
-  readonly ColumnGroups: [];
-  readonly FieldFolders: {[key: string]: any};
-  readonly RowLevelPermissionDataSet: RowLevelPermissionDataSet;
-  readonly RowLevelPermissionTagConfiguration: RowLevelPermissionTagConfiguration;
-  readonly ColumnLevelPermissionRules: [];
-  readonly DataSetUsageConfiguration: DataSetUsageConfiguration;
+  readonly ColumnGroups?: [];
+  readonly FieldFolders?: {[key: string]: any};
+  readonly RowLevelPermissionDataSet?: RowLevelPermissionDataSet;
+  readonly RowLevelPermissionTagConfiguration?: RowLevelPermissionTagConfiguration;
+  readonly ColumnLevelPermissionRules?: [];
+  readonly DataSetUsageConfiguration?: DataSetUsageConfiguration;
 }
 
-interface UpdateDataSetResponse {
-  readonly Arn: string;
-  readonly DataSetId: string;
-  readonly IngestionArn: string;
-  readonly IngestionId: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateDataSetResponse {
+  readonly Arn?: string;
+  readonly DataSetId?: string;
+  readonly IngestionArn?: string;
+  readonly IngestionId?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateDataSourcePermissionsRequest {
+export interface UpdateDataSourcePermissionsRequest {
   readonly AwsAccountId: string;
   readonly DataSourceId: string;
-  readonly GrantPermissions: [];
-  readonly RevokePermissions: [];
+  readonly GrantPermissions?: [];
+  readonly RevokePermissions?: [];
 }
 
-interface UpdateDataSourcePermissionsResponse {
-  readonly DataSourceArn: string;
-  readonly DataSourceId: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateDataSourcePermissionsResponse {
+  readonly DataSourceArn?: string;
+  readonly DataSourceId?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateDataSourceRequest {
+export interface UpdateDataSourceRequest {
   readonly AwsAccountId: string;
   readonly DataSourceId: string;
   readonly Name: string;
-  readonly DataSourceParameters: DataSourceParameters;
-  readonly Credentials: DataSourceCredentials;
-  readonly VpcConnectionProperties: VpcConnectionProperties;
-  readonly SslProperties: SslProperties;
+  readonly DataSourceParameters?: DataSourceParameters;
+  readonly Credentials?: DataSourceCredentials;
+  readonly VpcConnectionProperties?: VpcConnectionProperties;
+  readonly SslProperties?: SslProperties;
 }
 
-interface UpdateDataSourceResponse {
-  readonly Arn: string;
-  readonly DataSourceId: string;
-  readonly UpdateStatus: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateDataSourceResponse {
+  readonly Arn?: string;
+  readonly DataSourceId?: string;
+  readonly UpdateStatus?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateFolderPermissionsRequest {
+export interface UpdateFolderPermissionsRequest {
   readonly AwsAccountId: string;
   readonly FolderId: string;
-  readonly GrantPermissions: [];
-  readonly RevokePermissions: [];
+  readonly GrantPermissions?: [];
+  readonly RevokePermissions?: [];
 }
 
-interface UpdateFolderPermissionsResponse {
-  readonly Status: number;
-  readonly Arn: string;
-  readonly FolderId: string;
-  readonly Permissions: [];
-  readonly RequestId: string;
+export interface UpdateFolderPermissionsResponse {
+  readonly Status?: number;
+  readonly Arn?: string;
+  readonly FolderId?: string;
+  readonly Permissions?: [];
+  readonly RequestId?: string;
 }
 
-interface UpdateFolderRequest {
+export interface UpdateFolderRequest {
   readonly AwsAccountId: string;
   readonly FolderId: string;
   readonly Name: string;
 }
 
-interface UpdateFolderResponse {
-  readonly Status: number;
-  readonly Arn: string;
-  readonly FolderId: string;
-  readonly RequestId: string;
+export interface UpdateFolderResponse {
+  readonly Status?: number;
+  readonly Arn?: string;
+  readonly FolderId?: string;
+  readonly RequestId?: string;
 }
 
-interface UpdateGroupRequest {
+export interface UpdateGroupRequest {
   readonly GroupName: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
 }
 
-interface UpdateGroupResponse {
-  readonly Group: Group;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateGroupResponse {
+  readonly Group?: Group;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateIAMPolicyAssignmentRequest {
+export interface UpdateIAMPolicyAssignmentRequest {
   readonly AwsAccountId: string;
   readonly AssignmentName: string;
   readonly Namespace: string;
-  readonly AssignmentStatus: string;
-  readonly PolicyArn: string;
-  readonly Identities: {[key: string]: any};
+  readonly AssignmentStatus?: string;
+  readonly PolicyArn?: string;
+  readonly Identities?: {[key: string]: any};
 }
 
-interface UpdateIAMPolicyAssignmentResponse {
-  readonly AssignmentName: string;
-  readonly AssignmentId: string;
-  readonly PolicyArn: string;
-  readonly Identities: {[key: string]: any};
-  readonly AssignmentStatus: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateIAMPolicyAssignmentResponse {
+  readonly AssignmentName?: string;
+  readonly AssignmentId?: string;
+  readonly PolicyArn?: string;
+  readonly Identities?: {[key: string]: any};
+  readonly AssignmentStatus?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateIpRestrictionRequest {
+export interface UpdateIpRestrictionRequest {
   readonly AwsAccountId: string;
-  readonly IpRestrictionRuleMap: {[key: string]: any};
-  readonly Enabled: boolean;
+  readonly IpRestrictionRuleMap?: {[key: string]: any};
+  readonly Enabled?: boolean;
 }
 
-interface UpdateIpRestrictionResponse {
-  readonly AwsAccountId: string;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateIpRestrictionResponse {
+  readonly AwsAccountId?: string;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateTemplateAliasRequest {
+export interface UpdateTemplateAliasRequest {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly AliasName: string;
   readonly TemplateVersionNumber: number;
 }
 
-interface UpdateTemplateAliasResponse {
-  readonly TemplateAlias: TemplateAlias;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface UpdateTemplateAliasResponse {
+  readonly TemplateAlias?: TemplateAlias;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface UpdateTemplatePermissionsRequest {
+export interface UpdateTemplatePermissionsRequest {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
-  readonly GrantPermissions: [];
-  readonly RevokePermissions: [];
+  readonly GrantPermissions?: [];
+  readonly RevokePermissions?: [];
 }
 
-interface UpdateTemplatePermissionsResponse {
-  readonly TemplateId: string;
-  readonly TemplateArn: string;
-  readonly Permissions: [];
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateTemplatePermissionsResponse {
+  readonly TemplateId?: string;
+  readonly TemplateArn?: string;
+  readonly Permissions?: [];
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateTemplateRequest {
+export interface UpdateTemplateRequest {
   readonly AwsAccountId: string;
   readonly TemplateId: string;
   readonly SourceEntity: TemplateSourceEntity;
-  readonly VersionDescription: string;
-  readonly Name: string;
+  readonly VersionDescription?: string;
+  readonly Name?: string;
 }
 
-interface UpdateTemplateResponse {
-  readonly TemplateId: string;
-  readonly Arn: string;
-  readonly VersionArn: string;
-  readonly CreationStatus: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface UpdateTemplateResponse {
+  readonly TemplateId?: string;
+  readonly Arn?: string;
+  readonly VersionArn?: string;
+  readonly CreationStatus?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface UpdateThemeAliasRequest {
+export interface UpdateThemeAliasRequest {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
   readonly AliasName: string;
   readonly ThemeVersionNumber: number;
 }
 
-interface UpdateThemeAliasResponse {
-  readonly ThemeAlias: ThemeAlias;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface UpdateThemeAliasResponse {
+  readonly ThemeAlias?: ThemeAlias;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface UpdateThemePermissionsRequest {
+export interface UpdateThemePermissionsRequest {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
-  readonly GrantPermissions: [];
-  readonly RevokePermissions: [];
+  readonly GrantPermissions?: [];
+  readonly RevokePermissions?: [];
 }
 
-interface UpdateThemePermissionsResponse {
-  readonly ThemeId: string;
-  readonly ThemeArn: string;
-  readonly Permissions: [];
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateThemePermissionsResponse {
+  readonly ThemeId?: string;
+  readonly ThemeArn?: string;
+  readonly Permissions?: [];
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UpdateThemeRequest {
+export interface UpdateThemeRequest {
   readonly AwsAccountId: string;
   readonly ThemeId: string;
-  readonly Name: string;
+  readonly Name?: string;
   readonly BaseThemeId: string;
-  readonly VersionDescription: string;
-  readonly Configuration: ThemeConfiguration;
+  readonly VersionDescription?: string;
+  readonly Configuration?: ThemeConfiguration;
 }
 
-interface UpdateThemeResponse {
-  readonly ThemeId: string;
-  readonly Arn: string;
-  readonly VersionArn: string;
-  readonly CreationStatus: string;
-  readonly Status: number;
-  readonly RequestId: string;
+export interface UpdateThemeResponse {
+  readonly ThemeId?: string;
+  readonly Arn?: string;
+  readonly VersionArn?: string;
+  readonly CreationStatus?: string;
+  readonly Status?: number;
+  readonly RequestId?: string;
 }
 
-interface UpdateUserRequest {
+export interface UpdateUserRequest {
   readonly UserName: string;
   readonly AwsAccountId: string;
   readonly Namespace: string;
   readonly Email: string;
   readonly Role: string;
-  readonly CustomPermissionsName: string;
-  readonly UnapplyCustomPermissions: boolean;
-  readonly ExternalLoginFederationProviderType: string;
-  readonly CustomFederationProviderUrl: string;
-  readonly ExternalLoginId: string;
+  readonly CustomPermissionsName?: string;
+  readonly UnapplyCustomPermissions?: boolean;
+  readonly ExternalLoginFederationProviderType?: string;
+  readonly CustomFederationProviderUrl?: string;
+  readonly ExternalLoginId?: string;
 }
 
-interface UpdateUserResponse {
-  readonly User: User;
-  readonly RequestId: string;
-  readonly Status: number;
+export interface UpdateUserResponse {
+  readonly User?: User;
+  readonly RequestId?: string;
+  readonly Status?: number;
 }
 
-interface UploadSettings {
-  readonly Format: string;
-  readonly StartFromRow: number;
-  readonly ContainsHeader: boolean;
-  readonly TextQualifier: string;
-  readonly Delimiter: string;
+export interface UploadSettings {
+  readonly Format?: string;
+  readonly StartFromRow?: number;
+  readonly ContainsHeader?: boolean;
+  readonly TextQualifier?: string;
+  readonly Delimiter?: string;
 }
 
-interface User {
-  readonly Arn: string;
-  readonly UserName: string;
-  readonly Email: string;
-  readonly Role: string;
-  readonly IdentityType: string;
-  readonly Active: boolean;
-  readonly PrincipalId: string;
-  readonly CustomPermissionsName: string;
-  readonly ExternalLoginFederationProviderType: string;
-  readonly ExternalLoginFederationProviderUrl: string;
-  readonly ExternalLoginId: string;
+export interface User {
+  readonly Arn?: string;
+  readonly UserName?: string;
+  readonly Email?: string;
+  readonly Role?: string;
+  readonly IdentityType?: string;
+  readonly Active?: boolean;
+  readonly PrincipalId?: string;
+  readonly CustomPermissionsName?: string;
+  readonly ExternalLoginFederationProviderType?: string;
+  readonly ExternalLoginFederationProviderUrl?: string;
+  readonly ExternalLoginId?: string;
 }
 
-interface VpcConnectionProperties {
+export interface VpcConnectionProperties {
   readonly VpcConnectionArn: string;
 }
+
 

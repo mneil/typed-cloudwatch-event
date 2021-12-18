@@ -7,70 +7,70 @@ export interface SendSSHPublicKey {
   readonly SSHPublicKey: string;
   readonly AvailabilityZone: string;
 }
+
 export interface SendSerialConsoleSSHPublicKey {
   readonly InstanceId: string;
   readonly SerialPort?: number;
   readonly SSHPublicKey: string;
 }
 
-
-
-interface AuthException {
-  readonly Message: string;
+export interface AuthException {
+  readonly Message?: string;
 }
 
-interface EC2InstanceNotFoundException {
-  readonly Message: string;
+export interface EC2InstanceNotFoundException {
+  readonly Message?: string;
 }
 
-interface EC2InstanceTypeInvalidException {
-  readonly Message: string;
+export interface EC2InstanceTypeInvalidException {
+  readonly Message?: string;
 }
 
-interface InvalidArgsException {
-  readonly Message: string;
+export interface InvalidArgsException {
+  readonly Message?: string;
 }
 
-interface SendSSHPublicKeyRequest {
+export interface SendSSHPublicKeyRequest {
   readonly InstanceId: string;
   readonly InstanceOSUser: string;
   readonly SSHPublicKey: string;
   readonly AvailabilityZone: string;
 }
 
-interface SendSSHPublicKeyResponse {
-  readonly RequestId: string;
-  readonly Success: boolean;
+export interface SendSSHPublicKeyResponse {
+  readonly RequestId?: string;
+  readonly Success?: boolean;
 }
 
-interface SendSerialConsoleSSHPublicKeyRequest {
+export interface SendSerialConsoleSSHPublicKeyRequest {
   readonly InstanceId: string;
-  readonly SerialPort: number;
+  readonly SerialPort?: number;
   readonly SSHPublicKey: string;
 }
 
-interface SendSerialConsoleSSHPublicKeyResponse {
-  readonly RequestId: string;
-  readonly Success: boolean;
+export interface SendSerialConsoleSSHPublicKeyResponse {
+  readonly RequestId?: string;
+  readonly Success?: boolean;
 }
 
-interface SerialConsoleAccessDisabledException {
-  readonly Message: string;
+export interface SerialConsoleAccessDisabledException {
+  readonly Message?: string;
 }
 
-interface SerialConsoleSessionLimitExceededException {
-  readonly Message: string;
+export interface SerialConsoleSessionLimitExceededException {
+  readonly Message?: string;
 }
 
-interface SerialConsoleSessionUnavailableException {
-  readonly Message: string;
+export interface SerialConsoleSessionUnavailableException {
+  readonly Message?: string;
 }
 
-interface ServiceException {
-  readonly Message: string;
+export interface ServiceException {
+  readonly Message?: string;
 }
 
-interface ThrottlingException {
-  readonly Message: string;
+export interface ThrottlingException {
+  readonly Message?: string;
 }
+
 

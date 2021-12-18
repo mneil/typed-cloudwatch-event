@@ -4,33 +4,41 @@
 export interface AddNotificationChannel {
   readonly Config: NotificationChannelConfig;
 }
+
 export interface DescribeAccountHealth {
 }
+
 export interface DescribeAccountOverview {
   readonly FromTime: Date;
   readonly ToTime?: Date;
 }
+
 export interface DescribeAnomaly {
   readonly Id: string;
   readonly AccountId?: string;
 }
+
 export interface DescribeFeedback {
   readonly InsightId?: string;
 }
+
 export interface DescribeInsight {
   readonly Id: string;
   readonly AccountId?: string;
 }
+
 export interface DescribeOrganizationHealth {
   readonly AccountIds?: [];
   readonly OrganizationalUnitIds?: [];
 }
+
 export interface DescribeOrganizationOverview {
   readonly FromTime: Date;
   readonly ToTime?: Date;
   readonly AccountIds?: [];
   readonly OrganizationalUnitIds?: [];
 }
+
 export interface DescribeOrganizationResourceCollectionHealth {
   readonly OrganizationResourceCollectionType: string;
   readonly AccountIds?: [];
@@ -38,19 +46,24 @@ export interface DescribeOrganizationResourceCollectionHealth {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeResourceCollectionHealth {
   readonly ResourceCollectionType: string;
   readonly NextToken?: string;
 }
+
 export interface DescribeServiceIntegration {
 }
+
 export interface GetCostEstimation {
   readonly NextToken?: string;
 }
+
 export interface GetResourceCollection {
   readonly ResourceCollectionType: string;
   readonly NextToken?: string;
 }
+
 export interface ListAnomaliesForInsight {
   readonly InsightId: string;
   readonly StartTimeRange?: StartTimeRange;
@@ -58,20 +71,24 @@ export interface ListAnomaliesForInsight {
   readonly NextToken?: string;
   readonly AccountId?: string;
 }
+
 export interface ListEvents {
   readonly Filters: ListEventsFilters;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly AccountId?: string;
 }
+
 export interface ListInsights {
   readonly StatusFilter: ListInsightsStatusFilter;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListNotificationChannels {
   readonly NextToken?: string;
 }
+
 export interface ListOrganizationInsights {
   readonly StatusFilter: ListInsightsStatusFilter;
   readonly MaxResults?: number;
@@ -79,18 +96,22 @@ export interface ListOrganizationInsights {
   readonly OrganizationalUnitIds?: [];
   readonly NextToken?: string;
 }
+
 export interface ListRecommendations {
   readonly InsightId: string;
   readonly NextToken?: string;
   readonly Locale?: string;
   readonly AccountId?: string;
 }
+
 export interface PutFeedback {
   readonly InsightFeedback?: InsightFeedback;
 }
+
 export interface RemoveNotificationChannel {
   readonly Id: string;
 }
+
 export interface SearchInsights {
   readonly StartTimeRange: StartTimeRange;
   readonly Filters?: SearchInsightsFilters;
@@ -98,6 +119,7 @@ export interface SearchInsights {
   readonly NextToken?: string;
   readonly Type: string;
 }
+
 export interface SearchOrganizationInsights {
   readonly AccountIds: [];
   readonly StartTimeRange: StartTimeRange;
@@ -106,823 +128,825 @@ export interface SearchOrganizationInsights {
   readonly NextToken?: string;
   readonly Type: string;
 }
+
 export interface StartCostEstimation {
   readonly ResourceCollection: CostEstimationResourceCollectionFilter;
   readonly ClientToken?: string;
 }
+
 export interface UpdateResourceCollection {
   readonly Action: string;
   readonly ResourceCollection: UpdateResourceCollectionFilter;
 }
+
 export interface UpdateServiceIntegration {
   readonly ServiceIntegration: UpdateServiceIntegrationConfig;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly Message: string;
 }
 
-interface AccountHealth {
-  readonly AccountId: string;
-  readonly Insight: AccountInsightHealth;
+export interface AccountHealth {
+  readonly AccountId?: string;
+  readonly Insight?: AccountInsightHealth;
 }
 
-interface AccountInsightHealth {
-  readonly OpenProactiveInsights: number;
-  readonly OpenReactiveInsights: number;
+export interface AccountInsightHealth {
+  readonly OpenProactiveInsights?: number;
+  readonly OpenReactiveInsights?: number;
 }
 
-interface AddNotificationChannelRequest {
+export interface AddNotificationChannelRequest {
   readonly Config: NotificationChannelConfig;
 }
 
-interface AddNotificationChannelResponse {
+export interface AddNotificationChannelResponse {
   readonly Id: string;
 }
 
-interface AnomalyReportedTimeRange {
+export interface AnomalyReportedTimeRange {
   readonly OpenTime: Date;
-  readonly CloseTime: Date;
+  readonly CloseTime?: Date;
 }
 
-interface AnomalyResource {
-  readonly Name: string;
-  readonly Type: string;
+export interface AnomalyResource {
+  readonly Name?: string;
+  readonly Type?: string;
 }
 
-interface AnomalySourceDetails {
-  readonly CloudWatchMetrics: [];
-  readonly PerformanceInsightsMetrics: [];
+export interface AnomalySourceDetails {
+  readonly CloudWatchMetrics?: [];
+  readonly PerformanceInsightsMetrics?: [];
 }
 
-interface AnomalyTimeRange {
+export interface AnomalyTimeRange {
   readonly StartTime: Date;
-  readonly EndTime: Date;
+  readonly EndTime?: Date;
 }
 
-interface CloudFormationCollection {
-  readonly StackNames: [];
+export interface CloudFormationCollection {
+  readonly StackNames?: [];
 }
 
-interface CloudFormationCollectionFilter {
-  readonly StackNames: [];
+export interface CloudFormationCollectionFilter {
+  readonly StackNames?: [];
 }
 
-interface CloudFormationCostEstimationResourceCollectionFilter {
-  readonly StackNames: [];
+export interface CloudFormationCostEstimationResourceCollectionFilter {
+  readonly StackNames?: [];
 }
 
-interface CloudFormationHealth {
-  readonly StackName: string;
-  readonly Insight: InsightHealth;
+export interface CloudFormationHealth {
+  readonly StackName?: string;
+  readonly Insight?: InsightHealth;
 }
 
-interface CloudWatchMetricsDataSummary {
-  readonly TimestampMetricValuePairList: [];
-  readonly StatusCode: string;
+export interface CloudWatchMetricsDataSummary {
+  readonly TimestampMetricValuePairList?: [];
+  readonly StatusCode?: string;
 }
 
-interface CloudWatchMetricsDetail {
-  readonly MetricName: string;
-  readonly Namespace: string;
-  readonly Dimensions: [];
-  readonly Stat: string;
-  readonly Unit: string;
-  readonly Period: number;
-  readonly MetricDataSummary: CloudWatchMetricsDataSummary;
+export interface CloudWatchMetricsDetail {
+  readonly MetricName?: string;
+  readonly Namespace?: string;
+  readonly Dimensions?: [];
+  readonly Stat?: string;
+  readonly Unit?: string;
+  readonly Period?: number;
+  readonly MetricDataSummary?: CloudWatchMetricsDataSummary;
 }
 
-interface CloudWatchMetricsDimension {
-  readonly Name: string;
-  readonly Value: string;
+export interface CloudWatchMetricsDimension {
+  readonly Name?: string;
+  readonly Value?: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly Message: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
 
-interface CostEstimationResourceCollectionFilter {
-  readonly CloudFormation: CloudFormationCostEstimationResourceCollectionFilter;
-  readonly Tags: [];
+export interface CostEstimationResourceCollectionFilter {
+  readonly CloudFormation?: CloudFormationCostEstimationResourceCollectionFilter;
+  readonly Tags?: [];
 }
 
-interface CostEstimationTimeRange {
-  readonly StartTime: Date;
-  readonly EndTime: Date;
+export interface CostEstimationTimeRange {
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
 }
 
-interface DescribeAccountHealthRequest {
+export interface DescribeAccountHealthRequest {
 }
 
-interface DescribeAccountHealthResponse {
+export interface DescribeAccountHealthResponse {
   readonly OpenReactiveInsights: number;
   readonly OpenProactiveInsights: number;
   readonly MetricsAnalyzed: number;
   readonly ResourceHours: number;
 }
 
-interface DescribeAccountOverviewRequest {
+export interface DescribeAccountOverviewRequest {
   readonly FromTime: Date;
-  readonly ToTime: Date;
+  readonly ToTime?: Date;
 }
 
-interface DescribeAccountOverviewResponse {
+export interface DescribeAccountOverviewResponse {
   readonly ReactiveInsights: number;
   readonly ProactiveInsights: number;
   readonly MeanTimeToRecoverInMilliseconds: number;
 }
 
-interface DescribeAnomalyRequest {
+export interface DescribeAnomalyRequest {
   readonly Id: string;
-  readonly AccountId: string;
+  readonly AccountId?: string;
 }
 
-interface DescribeAnomalyResponse {
-  readonly ProactiveAnomaly: ProactiveAnomaly;
-  readonly ReactiveAnomaly: ReactiveAnomaly;
+export interface DescribeAnomalyResponse {
+  readonly ProactiveAnomaly?: ProactiveAnomaly;
+  readonly ReactiveAnomaly?: ReactiveAnomaly;
 }
 
-interface DescribeFeedbackRequest {
-  readonly InsightId: string;
+export interface DescribeFeedbackRequest {
+  readonly InsightId?: string;
 }
 
-interface DescribeFeedbackResponse {
-  readonly InsightFeedback: InsightFeedback;
+export interface DescribeFeedbackResponse {
+  readonly InsightFeedback?: InsightFeedback;
 }
 
-interface DescribeInsightRequest {
+export interface DescribeInsightRequest {
   readonly Id: string;
-  readonly AccountId: string;
+  readonly AccountId?: string;
 }
 
-interface DescribeInsightResponse {
-  readonly ProactiveInsight: ProactiveInsight;
-  readonly ReactiveInsight: ReactiveInsight;
+export interface DescribeInsightResponse {
+  readonly ProactiveInsight?: ProactiveInsight;
+  readonly ReactiveInsight?: ReactiveInsight;
 }
 
-interface DescribeOrganizationHealthRequest {
-  readonly AccountIds: [];
-  readonly OrganizationalUnitIds: [];
+export interface DescribeOrganizationHealthRequest {
+  readonly AccountIds?: [];
+  readonly OrganizationalUnitIds?: [];
 }
 
-interface DescribeOrganizationHealthResponse {
+export interface DescribeOrganizationHealthResponse {
   readonly OpenReactiveInsights: number;
   readonly OpenProactiveInsights: number;
   readonly MetricsAnalyzed: number;
   readonly ResourceHours: number;
 }
 
-interface DescribeOrganizationOverviewRequest {
+export interface DescribeOrganizationOverviewRequest {
   readonly FromTime: Date;
-  readonly ToTime: Date;
-  readonly AccountIds: [];
-  readonly OrganizationalUnitIds: [];
+  readonly ToTime?: Date;
+  readonly AccountIds?: [];
+  readonly OrganizationalUnitIds?: [];
 }
 
-interface DescribeOrganizationOverviewResponse {
+export interface DescribeOrganizationOverviewResponse {
   readonly ReactiveInsights: number;
   readonly ProactiveInsights: number;
 }
 
-interface DescribeOrganizationResourceCollectionHealthRequest {
+export interface DescribeOrganizationResourceCollectionHealthRequest {
   readonly OrganizationResourceCollectionType: string;
-  readonly AccountIds: [];
-  readonly OrganizationalUnitIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly AccountIds?: [];
+  readonly OrganizationalUnitIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeOrganizationResourceCollectionHealthResponse {
-  readonly CloudFormation: [];
-  readonly Service: [];
-  readonly Account: [];
-  readonly NextToken: string;
+export interface DescribeOrganizationResourceCollectionHealthResponse {
+  readonly CloudFormation?: [];
+  readonly Service?: [];
+  readonly Account?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeResourceCollectionHealthRequest {
+export interface DescribeResourceCollectionHealthRequest {
   readonly ResourceCollectionType: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeResourceCollectionHealthResponse {
-  readonly CloudFormation: [];
-  readonly Service: [];
-  readonly NextToken: string;
-  readonly Tags: [];
+export interface DescribeResourceCollectionHealthResponse {
+  readonly CloudFormation?: [];
+  readonly Service?: [];
+  readonly NextToken?: string;
+  readonly Tags?: [];
 }
 
-interface DescribeServiceIntegrationRequest {
+export interface DescribeServiceIntegrationRequest {
 }
 
-interface DescribeServiceIntegrationResponse {
-  readonly ServiceIntegration: ServiceIntegrationConfig;
+export interface DescribeServiceIntegrationResponse {
+  readonly ServiceIntegration?: ServiceIntegrationConfig;
 }
 
-interface EndTimeRange {
+export interface EndTimeRange {
+  readonly FromTime?: Date;
+  readonly ToTime?: Date;
+}
+
+export interface Event {
+  readonly ResourceCollection?: ResourceCollection;
+  readonly Id?: string;
+  readonly Time?: Date;
+  readonly EventSource?: string;
+  readonly Name?: string;
+  readonly DataSource?: string;
+  readonly EventClass?: string;
+  readonly Resources?: [];
+}
+
+export interface EventResource {
+  readonly Type?: string;
+  readonly Name?: string;
+  readonly Arn?: string;
+}
+
+export interface EventTimeRange {
   readonly FromTime: Date;
   readonly ToTime: Date;
 }
 
-interface Event {
-  readonly ResourceCollection: ResourceCollection;
-  readonly Id: string;
-  readonly Time: Date;
-  readonly EventSource: string;
-  readonly Name: string;
-  readonly DataSource: string;
-  readonly EventClass: string;
-  readonly Resources: [];
+export interface GetCostEstimationRequest {
+  readonly NextToken?: string;
 }
 
-interface EventResource {
-  readonly Type: string;
-  readonly Name: string;
-  readonly Arn: string;
+export interface GetCostEstimationResponse {
+  readonly ResourceCollection?: CostEstimationResourceCollectionFilter;
+  readonly Status?: string;
+  readonly Costs?: [];
+  readonly TimeRange?: CostEstimationTimeRange;
+  readonly TotalCost?: unknown;
+  readonly NextToken?: string;
 }
 
-interface EventTimeRange {
-  readonly FromTime: Date;
-  readonly ToTime: Date;
-}
-
-interface GetCostEstimationRequest {
-  readonly NextToken: string;
-}
-
-interface GetCostEstimationResponse {
-  readonly ResourceCollection: CostEstimationResourceCollectionFilter;
-  readonly Status: string;
-  readonly Costs: [];
-  readonly TimeRange: CostEstimationTimeRange;
-  readonly TotalCost: unknown;
-  readonly NextToken: string;
-}
-
-interface GetResourceCollectionRequest {
+export interface GetResourceCollectionRequest {
   readonly ResourceCollectionType: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface GetResourceCollectionResponse {
-  readonly ResourceCollection: ResourceCollectionFilter;
-  readonly NextToken: string;
+export interface GetResourceCollectionResponse {
+  readonly ResourceCollection?: ResourceCollectionFilter;
+  readonly NextToken?: string;
 }
 
-interface InsightFeedback {
-  readonly Id: string;
-  readonly Feedback: string;
+export interface InsightFeedback {
+  readonly Id?: string;
+  readonly Feedback?: string;
 }
 
-interface InsightHealth {
-  readonly OpenProactiveInsights: number;
-  readonly OpenReactiveInsights: number;
-  readonly MeanTimeToRecoverInMilliseconds: number;
+export interface InsightHealth {
+  readonly OpenProactiveInsights?: number;
+  readonly OpenReactiveInsights?: number;
+  readonly MeanTimeToRecoverInMilliseconds?: number;
 }
 
-interface InsightTimeRange {
+export interface InsightTimeRange {
   readonly StartTime: Date;
-  readonly EndTime: Date;
+  readonly EndTime?: Date;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly Message: string;
-  readonly RetryAfterSeconds: number;
+  readonly RetryAfterSeconds?: number;
 }
 
-interface ListAnomaliesForInsightRequest {
+export interface ListAnomaliesForInsightRequest {
   readonly InsightId: string;
-  readonly StartTimeRange: StartTimeRange;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly AccountId: string;
+  readonly StartTimeRange?: StartTimeRange;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly AccountId?: string;
 }
 
-interface ListAnomaliesForInsightResponse {
-  readonly ProactiveAnomalies: [];
-  readonly ReactiveAnomalies: [];
-  readonly NextToken: string;
+export interface ListAnomaliesForInsightResponse {
+  readonly ProactiveAnomalies?: [];
+  readonly ReactiveAnomalies?: [];
+  readonly NextToken?: string;
 }
 
-interface ListEventsFilters {
-  readonly InsightId: string;
-  readonly EventTimeRange: EventTimeRange;
-  readonly EventClass: string;
-  readonly EventSource: string;
-  readonly DataSource: string;
-  readonly ResourceCollection: ResourceCollection;
+export interface ListEventsFilters {
+  readonly InsightId?: string;
+  readonly EventTimeRange?: EventTimeRange;
+  readonly EventClass?: string;
+  readonly EventSource?: string;
+  readonly DataSource?: string;
+  readonly ResourceCollection?: ResourceCollection;
 }
 
-interface ListEventsRequest {
+export interface ListEventsRequest {
   readonly Filters: ListEventsFilters;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly AccountId: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly AccountId?: string;
 }
 
-interface ListEventsResponse {
+export interface ListEventsResponse {
   readonly Events: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListInsightsAnyStatusFilter {
+export interface ListInsightsAnyStatusFilter {
   readonly Type: string;
   readonly StartTimeRange: StartTimeRange;
 }
 
-interface ListInsightsClosedStatusFilter {
+export interface ListInsightsClosedStatusFilter {
   readonly Type: string;
   readonly EndTimeRange: EndTimeRange;
 }
 
-interface ListInsightsOngoingStatusFilter {
+export interface ListInsightsOngoingStatusFilter {
   readonly Type: string;
 }
 
-interface ListInsightsRequest {
+export interface ListInsightsRequest {
   readonly StatusFilter: ListInsightsStatusFilter;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListInsightsResponse {
-  readonly ProactiveInsights: [];
-  readonly ReactiveInsights: [];
-  readonly NextToken: string;
+export interface ListInsightsResponse {
+  readonly ProactiveInsights?: [];
+  readonly ReactiveInsights?: [];
+  readonly NextToken?: string;
 }
 
-interface ListInsightsStatusFilter {
-  readonly Ongoing: ListInsightsOngoingStatusFilter;
-  readonly Closed: ListInsightsClosedStatusFilter;
-  readonly Any: ListInsightsAnyStatusFilter;
+export interface ListInsightsStatusFilter {
+  readonly Ongoing?: ListInsightsOngoingStatusFilter;
+  readonly Closed?: ListInsightsClosedStatusFilter;
+  readonly Any?: ListInsightsAnyStatusFilter;
 }
 
-interface ListNotificationChannelsRequest {
-  readonly NextToken: string;
+export interface ListNotificationChannelsRequest {
+  readonly NextToken?: string;
 }
 
-interface ListNotificationChannelsResponse {
-  readonly Channels: [];
-  readonly NextToken: string;
+export interface ListNotificationChannelsResponse {
+  readonly Channels?: [];
+  readonly NextToken?: string;
 }
 
-interface ListOrganizationInsightsRequest {
+export interface ListOrganizationInsightsRequest {
   readonly StatusFilter: ListInsightsStatusFilter;
-  readonly MaxResults: number;
-  readonly AccountIds: [];
-  readonly OrganizationalUnitIds: [];
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly AccountIds?: [];
+  readonly OrganizationalUnitIds?: [];
+  readonly NextToken?: string;
 }
 
-interface ListOrganizationInsightsResponse {
-  readonly ProactiveInsights: [];
-  readonly ReactiveInsights: [];
-  readonly NextToken: string;
+export interface ListOrganizationInsightsResponse {
+  readonly ProactiveInsights?: [];
+  readonly ReactiveInsights?: [];
+  readonly NextToken?: string;
 }
 
-interface ListRecommendationsRequest {
+export interface ListRecommendationsRequest {
   readonly InsightId: string;
-  readonly NextToken: string;
-  readonly Locale: string;
-  readonly AccountId: string;
+  readonly NextToken?: string;
+  readonly Locale?: string;
+  readonly AccountId?: string;
 }
 
-interface ListRecommendationsResponse {
-  readonly Recommendations: [];
-  readonly NextToken: string;
+export interface ListRecommendationsResponse {
+  readonly Recommendations?: [];
+  readonly NextToken?: string;
 }
 
-interface NotificationChannel {
-  readonly Id: string;
-  readonly Config: NotificationChannelConfig;
+export interface NotificationChannel {
+  readonly Id?: string;
+  readonly Config?: NotificationChannelConfig;
 }
 
-interface NotificationChannelConfig {
+export interface NotificationChannelConfig {
   readonly Sns: SnsChannelConfig;
 }
 
-interface OpsCenterIntegration {
-  readonly OptInStatus: string;
+export interface OpsCenterIntegration {
+  readonly OptInStatus?: string;
 }
 
-interface OpsCenterIntegrationConfig {
-  readonly OptInStatus: string;
+export interface OpsCenterIntegrationConfig {
+  readonly OptInStatus?: string;
 }
 
-interface PerformanceInsightsMetricDimensionGroup {
-  readonly Group: string;
-  readonly Dimensions: [];
-  readonly Limit: number;
+export interface PerformanceInsightsMetricDimensionGroup {
+  readonly Group?: string;
+  readonly Dimensions?: [];
+  readonly Limit?: number;
 }
 
-interface PerformanceInsightsMetricQuery {
-  readonly Metric: string;
-  readonly GroupBy: PerformanceInsightsMetricDimensionGroup;
-  readonly Filter: {[key: string]: any};
+export interface PerformanceInsightsMetricQuery {
+  readonly Metric?: string;
+  readonly GroupBy?: PerformanceInsightsMetricDimensionGroup;
+  readonly Filter?: {[key: string]: any};
 }
 
-interface PerformanceInsightsMetricsDetail {
-  readonly MetricDisplayName: string;
-  readonly Unit: string;
-  readonly MetricQuery: PerformanceInsightsMetricQuery;
-  readonly ReferenceData: [];
-  readonly StatsAtAnomaly: [];
-  readonly StatsAtBaseline: [];
+export interface PerformanceInsightsMetricsDetail {
+  readonly MetricDisplayName?: string;
+  readonly Unit?: string;
+  readonly MetricQuery?: PerformanceInsightsMetricQuery;
+  readonly ReferenceData?: [];
+  readonly StatsAtAnomaly?: [];
+  readonly StatsAtBaseline?: [];
 }
 
-interface PerformanceInsightsReferenceComparisonValues {
-  readonly ReferenceScalar: PerformanceInsightsReferenceScalar;
-  readonly ReferenceMetric: PerformanceInsightsReferenceMetric;
+export interface PerformanceInsightsReferenceComparisonValues {
+  readonly ReferenceScalar?: PerformanceInsightsReferenceScalar;
+  readonly ReferenceMetric?: PerformanceInsightsReferenceMetric;
 }
 
-interface PerformanceInsightsReferenceData {
-  readonly Name: string;
-  readonly ComparisonValues: PerformanceInsightsReferenceComparisonValues;
+export interface PerformanceInsightsReferenceData {
+  readonly Name?: string;
+  readonly ComparisonValues?: PerformanceInsightsReferenceComparisonValues;
 }
 
-interface PerformanceInsightsReferenceMetric {
-  readonly MetricQuery: PerformanceInsightsMetricQuery;
+export interface PerformanceInsightsReferenceMetric {
+  readonly MetricQuery?: PerformanceInsightsMetricQuery;
 }
 
-interface PerformanceInsightsReferenceScalar {
-  readonly Value: unknown;
+export interface PerformanceInsightsReferenceScalar {
+  readonly Value?: unknown;
 }
 
-interface PerformanceInsightsStat {
-  readonly Type: string;
-  readonly Value: unknown;
+export interface PerformanceInsightsStat {
+  readonly Type?: string;
+  readonly Value?: unknown;
 }
 
-interface PredictionTimeRange {
+export interface PredictionTimeRange {
   readonly StartTime: Date;
-  readonly EndTime: Date;
+  readonly EndTime?: Date;
 }
 
-interface ProactiveAnomaly {
+export interface ProactiveAnomaly {
+  readonly Id?: string;
+  readonly Severity?: string;
+  readonly Status?: string;
+  readonly UpdateTime?: Date;
+  readonly AnomalyTimeRange?: AnomalyTimeRange;
+  readonly AnomalyReportedTimeRange?: AnomalyReportedTimeRange;
+  readonly PredictionTimeRange?: PredictionTimeRange;
+  readonly SourceDetails?: AnomalySourceDetails;
+  readonly AssociatedInsightId?: string;
+  readonly ResourceCollection?: ResourceCollection;
+  readonly Limit?: unknown;
+}
+
+export interface ProactiveAnomalySummary {
+  readonly Id?: string;
+  readonly Severity?: string;
+  readonly Status?: string;
+  readonly UpdateTime?: Date;
+  readonly AnomalyTimeRange?: AnomalyTimeRange;
+  readonly AnomalyReportedTimeRange?: AnomalyReportedTimeRange;
+  readonly PredictionTimeRange?: PredictionTimeRange;
+  readonly SourceDetails?: AnomalySourceDetails;
+  readonly AssociatedInsightId?: string;
+  readonly ResourceCollection?: ResourceCollection;
+  readonly Limit?: unknown;
+}
+
+export interface ProactiveInsight {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Severity?: string;
+  readonly Status?: string;
+  readonly InsightTimeRange?: InsightTimeRange;
+  readonly PredictionTimeRange?: PredictionTimeRange;
+  readonly ResourceCollection?: ResourceCollection;
+  readonly SsmOpsItemId?: string;
+}
+
+export interface ProactiveInsightSummary {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Severity?: string;
+  readonly Status?: string;
+  readonly InsightTimeRange?: InsightTimeRange;
+  readonly PredictionTimeRange?: PredictionTimeRange;
+  readonly ResourceCollection?: ResourceCollection;
+  readonly ServiceCollection?: ServiceCollection;
+  readonly AssociatedResourceArns?: [];
+}
+
+export interface ProactiveOrganizationInsightSummary {
+  readonly Id?: string;
+  readonly AccountId?: string;
+  readonly OrganizationalUnitId?: string;
+  readonly Name?: string;
+  readonly Severity?: string;
+  readonly Status?: string;
+  readonly InsightTimeRange?: InsightTimeRange;
+  readonly PredictionTimeRange?: PredictionTimeRange;
+  readonly ResourceCollection?: ResourceCollection;
+  readonly ServiceCollection?: ServiceCollection;
+}
+
+export interface PutFeedbackRequest {
+  readonly InsightFeedback?: InsightFeedback;
+}
+
+export interface PutFeedbackResponse {
+}
+
+export interface ReactiveAnomaly {
+  readonly Id?: string;
+  readonly Severity?: string;
+  readonly Status?: string;
+  readonly AnomalyTimeRange?: AnomalyTimeRange;
+  readonly AnomalyReportedTimeRange?: AnomalyReportedTimeRange;
+  readonly SourceDetails?: AnomalySourceDetails;
+  readonly AssociatedInsightId?: string;
+  readonly ResourceCollection?: ResourceCollection;
+  readonly Type?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly CausalAnomalyId?: string;
+  readonly AnomalyResources?: [];
+}
+
+export interface ReactiveAnomalySummary {
+  readonly Id?: string;
+  readonly Severity?: string;
+  readonly Status?: string;
+  readonly AnomalyTimeRange?: AnomalyTimeRange;
+  readonly AnomalyReportedTimeRange?: AnomalyReportedTimeRange;
+  readonly SourceDetails?: AnomalySourceDetails;
+  readonly AssociatedInsightId?: string;
+  readonly ResourceCollection?: ResourceCollection;
+  readonly Type?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly CausalAnomalyId?: string;
+  readonly AnomalyResources?: [];
+}
+
+export interface ReactiveInsight {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Severity?: string;
+  readonly Status?: string;
+  readonly InsightTimeRange?: InsightTimeRange;
+  readonly ResourceCollection?: ResourceCollection;
+  readonly SsmOpsItemId?: string;
+}
+
+export interface ReactiveInsightSummary {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Severity?: string;
+  readonly Status?: string;
+  readonly InsightTimeRange?: InsightTimeRange;
+  readonly ResourceCollection?: ResourceCollection;
+  readonly ServiceCollection?: ServiceCollection;
+  readonly AssociatedResourceArns?: [];
+}
+
+export interface ReactiveOrganizationInsightSummary {
+  readonly Id?: string;
+  readonly AccountId?: string;
+  readonly OrganizationalUnitId?: string;
+  readonly Name?: string;
+  readonly Severity?: string;
+  readonly Status?: string;
+  readonly InsightTimeRange?: InsightTimeRange;
+  readonly ResourceCollection?: ResourceCollection;
+  readonly ServiceCollection?: ServiceCollection;
+}
+
+export interface Recommendation {
+  readonly Description?: string;
+  readonly Link?: string;
+  readonly Name?: string;
+  readonly Reason?: string;
+  readonly RelatedEvents?: [];
+  readonly RelatedAnomalies?: [];
+}
+
+export interface RecommendationRelatedAnomaly {
+  readonly Resources?: [];
+  readonly SourceDetails?: [];
+  readonly AnomalyId?: string;
+}
+
+export interface RecommendationRelatedAnomalyResource {
+  readonly Name?: string;
+  readonly Type?: string;
+}
+
+export interface RecommendationRelatedAnomalySourceDetail {
+  readonly CloudWatchMetrics?: [];
+}
+
+export interface RecommendationRelatedCloudWatchMetricsSourceDetail {
+  readonly MetricName?: string;
+  readonly Namespace?: string;
+}
+
+export interface RecommendationRelatedEvent {
+  readonly Name?: string;
+  readonly Resources?: [];
+}
+
+export interface RecommendationRelatedEventResource {
+  readonly Name?: string;
+  readonly Type?: string;
+}
+
+export interface RemoveNotificationChannelRequest {
   readonly Id: string;
-  readonly Severity: string;
-  readonly Status: string;
-  readonly UpdateTime: Date;
-  readonly AnomalyTimeRange: AnomalyTimeRange;
-  readonly AnomalyReportedTimeRange: AnomalyReportedTimeRange;
-  readonly PredictionTimeRange: PredictionTimeRange;
-  readonly SourceDetails: AnomalySourceDetails;
-  readonly AssociatedInsightId: string;
-  readonly ResourceCollection: ResourceCollection;
-  readonly Limit: unknown;
 }
 
-interface ProactiveAnomalySummary {
-  readonly Id: string;
-  readonly Severity: string;
-  readonly Status: string;
-  readonly UpdateTime: Date;
-  readonly AnomalyTimeRange: AnomalyTimeRange;
-  readonly AnomalyReportedTimeRange: AnomalyReportedTimeRange;
-  readonly PredictionTimeRange: PredictionTimeRange;
-  readonly SourceDetails: AnomalySourceDetails;
-  readonly AssociatedInsightId: string;
-  readonly ResourceCollection: ResourceCollection;
-  readonly Limit: unknown;
+export interface RemoveNotificationChannelResponse {
 }
 
-interface ProactiveInsight {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Severity: string;
-  readonly Status: string;
-  readonly InsightTimeRange: InsightTimeRange;
-  readonly PredictionTimeRange: PredictionTimeRange;
-  readonly ResourceCollection: ResourceCollection;
-  readonly SsmOpsItemId: string;
+export interface ResourceCollection {
+  readonly CloudFormation?: CloudFormationCollection;
+  readonly Tags?: [];
 }
 
-interface ProactiveInsightSummary {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Severity: string;
-  readonly Status: string;
-  readonly InsightTimeRange: InsightTimeRange;
-  readonly PredictionTimeRange: PredictionTimeRange;
-  readonly ResourceCollection: ResourceCollection;
-  readonly ServiceCollection: ServiceCollection;
-  readonly AssociatedResourceArns: [];
+export interface ResourceCollectionFilter {
+  readonly CloudFormation?: CloudFormationCollectionFilter;
+  readonly Tags?: [];
 }
 
-interface ProactiveOrganizationInsightSummary {
-  readonly Id: string;
-  readonly AccountId: string;
-  readonly OrganizationalUnitId: string;
-  readonly Name: string;
-  readonly Severity: string;
-  readonly Status: string;
-  readonly InsightTimeRange: InsightTimeRange;
-  readonly PredictionTimeRange: PredictionTimeRange;
-  readonly ResourceCollection: ResourceCollection;
-  readonly ServiceCollection: ServiceCollection;
-}
-
-interface PutFeedbackRequest {
-  readonly InsightFeedback: InsightFeedback;
-}
-
-interface PutFeedbackResponse {
-}
-
-interface ReactiveAnomaly {
-  readonly Id: string;
-  readonly Severity: string;
-  readonly Status: string;
-  readonly AnomalyTimeRange: AnomalyTimeRange;
-  readonly AnomalyReportedTimeRange: AnomalyReportedTimeRange;
-  readonly SourceDetails: AnomalySourceDetails;
-  readonly AssociatedInsightId: string;
-  readonly ResourceCollection: ResourceCollection;
-  readonly Type: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly CausalAnomalyId: string;
-  readonly AnomalyResources: [];
-}
-
-interface ReactiveAnomalySummary {
-  readonly Id: string;
-  readonly Severity: string;
-  readonly Status: string;
-  readonly AnomalyTimeRange: AnomalyTimeRange;
-  readonly AnomalyReportedTimeRange: AnomalyReportedTimeRange;
-  readonly SourceDetails: AnomalySourceDetails;
-  readonly AssociatedInsightId: string;
-  readonly ResourceCollection: ResourceCollection;
-  readonly Type: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly CausalAnomalyId: string;
-  readonly AnomalyResources: [];
-}
-
-interface ReactiveInsight {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Severity: string;
-  readonly Status: string;
-  readonly InsightTimeRange: InsightTimeRange;
-  readonly ResourceCollection: ResourceCollection;
-  readonly SsmOpsItemId: string;
-}
-
-interface ReactiveInsightSummary {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Severity: string;
-  readonly Status: string;
-  readonly InsightTimeRange: InsightTimeRange;
-  readonly ResourceCollection: ResourceCollection;
-  readonly ServiceCollection: ServiceCollection;
-  readonly AssociatedResourceArns: [];
-}
-
-interface ReactiveOrganizationInsightSummary {
-  readonly Id: string;
-  readonly AccountId: string;
-  readonly OrganizationalUnitId: string;
-  readonly Name: string;
-  readonly Severity: string;
-  readonly Status: string;
-  readonly InsightTimeRange: InsightTimeRange;
-  readonly ResourceCollection: ResourceCollection;
-  readonly ServiceCollection: ServiceCollection;
-}
-
-interface Recommendation {
-  readonly Description: string;
-  readonly Link: string;
-  readonly Name: string;
-  readonly Reason: string;
-  readonly RelatedEvents: [];
-  readonly RelatedAnomalies: [];
-}
-
-interface RecommendationRelatedAnomaly {
-  readonly Resources: [];
-  readonly SourceDetails: [];
-  readonly AnomalyId: string;
-}
-
-interface RecommendationRelatedAnomalyResource {
-  readonly Name: string;
-  readonly Type: string;
-}
-
-interface RecommendationRelatedAnomalySourceDetail {
-  readonly CloudWatchMetrics: [];
-}
-
-interface RecommendationRelatedCloudWatchMetricsSourceDetail {
-  readonly MetricName: string;
-  readonly Namespace: string;
-}
-
-interface RecommendationRelatedEvent {
-  readonly Name: string;
-  readonly Resources: [];
-}
-
-interface RecommendationRelatedEventResource {
-  readonly Name: string;
-  readonly Type: string;
-}
-
-interface RemoveNotificationChannelRequest {
-  readonly Id: string;
-}
-
-interface RemoveNotificationChannelResponse {
-}
-
-interface ResourceCollection {
-  readonly CloudFormation: CloudFormationCollection;
-  readonly Tags: [];
-}
-
-interface ResourceCollectionFilter {
-  readonly CloudFormation: CloudFormationCollectionFilter;
-  readonly Tags: [];
-}
-
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly Message: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
 
-interface SearchInsightsFilters {
-  readonly Severities: [];
-  readonly Statuses: [];
-  readonly ResourceCollection: ResourceCollection;
-  readonly ServiceCollection: ServiceCollection;
+export interface SearchInsightsFilters {
+  readonly Severities?: [];
+  readonly Statuses?: [];
+  readonly ResourceCollection?: ResourceCollection;
+  readonly ServiceCollection?: ServiceCollection;
 }
 
-interface SearchInsightsRequest {
+export interface SearchInsightsRequest {
   readonly StartTimeRange: StartTimeRange;
-  readonly Filters: SearchInsightsFilters;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: SearchInsightsFilters;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly Type: string;
 }
 
-interface SearchInsightsResponse {
-  readonly ProactiveInsights: [];
-  readonly ReactiveInsights: [];
-  readonly NextToken: string;
+export interface SearchInsightsResponse {
+  readonly ProactiveInsights?: [];
+  readonly ReactiveInsights?: [];
+  readonly NextToken?: string;
 }
 
-interface SearchOrganizationInsightsFilters {
-  readonly Severities: [];
-  readonly Statuses: [];
-  readonly ResourceCollection: ResourceCollection;
-  readonly ServiceCollection: ServiceCollection;
+export interface SearchOrganizationInsightsFilters {
+  readonly Severities?: [];
+  readonly Statuses?: [];
+  readonly ResourceCollection?: ResourceCollection;
+  readonly ServiceCollection?: ServiceCollection;
 }
 
-interface SearchOrganizationInsightsRequest {
+export interface SearchOrganizationInsightsRequest {
   readonly AccountIds: [];
   readonly StartTimeRange: StartTimeRange;
-  readonly Filters: SearchOrganizationInsightsFilters;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: SearchOrganizationInsightsFilters;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly Type: string;
 }
 
-interface SearchOrganizationInsightsResponse {
-  readonly ProactiveInsights: [];
-  readonly ReactiveInsights: [];
-  readonly NextToken: string;
+export interface SearchOrganizationInsightsResponse {
+  readonly ProactiveInsights?: [];
+  readonly ReactiveInsights?: [];
+  readonly NextToken?: string;
 }
 
-interface ServiceCollection {
-  readonly ServiceNames: [];
+export interface ServiceCollection {
+  readonly ServiceNames?: [];
 }
 
-interface ServiceHealth {
-  readonly ServiceName: string;
-  readonly Insight: ServiceInsightHealth;
+export interface ServiceHealth {
+  readonly ServiceName?: string;
+  readonly Insight?: ServiceInsightHealth;
 }
 
-interface ServiceInsightHealth {
-  readonly OpenProactiveInsights: number;
-  readonly OpenReactiveInsights: number;
+export interface ServiceInsightHealth {
+  readonly OpenProactiveInsights?: number;
+  readonly OpenReactiveInsights?: number;
 }
 
-interface ServiceIntegrationConfig {
-  readonly OpsCenter: OpsCenterIntegration;
+export interface ServiceIntegrationConfig {
+  readonly OpsCenter?: OpsCenterIntegration;
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface ServiceResourceCost {
-  readonly Type: string;
-  readonly State: string;
-  readonly Count: number;
-  readonly UnitCost: unknown;
-  readonly Cost: unknown;
+export interface ServiceResourceCost {
+  readonly Type?: string;
+  readonly State?: string;
+  readonly Count?: number;
+  readonly UnitCost?: unknown;
+  readonly Cost?: unknown;
 }
 
-interface SnsChannelConfig {
-  readonly TopicArn: string;
+export interface SnsChannelConfig {
+  readonly TopicArn?: string;
 }
 
-interface StartCostEstimationRequest {
+export interface StartCostEstimationRequest {
   readonly ResourceCollection: CostEstimationResourceCollectionFilter;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 
-interface StartCostEstimationResponse {
+export interface StartCostEstimationResponse {
 }
 
-interface StartTimeRange {
-  readonly FromTime: Date;
-  readonly ToTime: Date;
+export interface StartTimeRange {
+  readonly FromTime?: Date;
+  readonly ToTime?: Date;
 }
 
-interface TagCollection {
+export interface TagCollection {
   readonly AppBoundaryKey: string;
   readonly TagValues: [];
 }
 
-interface TagCollectionFilter {
+export interface TagCollectionFilter {
   readonly AppBoundaryKey: string;
   readonly TagValues: [];
 }
 
-interface TagCostEstimationResourceCollectionFilter {
+export interface TagCostEstimationResourceCollectionFilter {
   readonly AppBoundaryKey: string;
   readonly TagValues: [];
 }
 
-interface TagHealth {
-  readonly AppBoundaryKey: string;
-  readonly TagValue: string;
-  readonly Insight: InsightHealth;
+export interface TagHealth {
+  readonly AppBoundaryKey?: string;
+  readonly TagValue?: string;
+  readonly Insight?: InsightHealth;
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly Message: string;
-  readonly QuotaCode: string;
-  readonly ServiceCode: string;
-  readonly RetryAfterSeconds: number;
+  readonly QuotaCode?: string;
+  readonly ServiceCode?: string;
+  readonly RetryAfterSeconds?: number;
 }
 
-interface TimestampMetricValuePair {
-  readonly Timestamp: Date;
-  readonly MetricValue: unknown;
+export interface TimestampMetricValuePair {
+  readonly Timestamp?: Date;
+  readonly MetricValue?: unknown;
 }
 
-interface UpdateCloudFormationCollectionFilter {
-  readonly StackNames: [];
+export interface UpdateCloudFormationCollectionFilter {
+  readonly StackNames?: [];
 }
 
-interface UpdateResourceCollectionFilter {
-  readonly CloudFormation: UpdateCloudFormationCollectionFilter;
-  readonly Tags: [];
+export interface UpdateResourceCollectionFilter {
+  readonly CloudFormation?: UpdateCloudFormationCollectionFilter;
+  readonly Tags?: [];
 }
 
-interface UpdateResourceCollectionRequest {
+export interface UpdateResourceCollectionRequest {
   readonly Action: string;
   readonly ResourceCollection: UpdateResourceCollectionFilter;
 }
 
-interface UpdateResourceCollectionResponse {
+export interface UpdateResourceCollectionResponse {
 }
 
-interface UpdateServiceIntegrationConfig {
-  readonly OpsCenter: OpsCenterIntegrationConfig;
+export interface UpdateServiceIntegrationConfig {
+  readonly OpsCenter?: OpsCenterIntegrationConfig;
 }
 
-interface UpdateServiceIntegrationRequest {
+export interface UpdateServiceIntegrationRequest {
   readonly ServiceIntegration: UpdateServiceIntegrationConfig;
 }
 
-interface UpdateServiceIntegrationResponse {
+export interface UpdateServiceIntegrationResponse {
 }
 
-interface UpdateTagCollectionFilter {
+export interface UpdateTagCollectionFilter {
   readonly AppBoundaryKey: string;
   readonly TagValues: [];
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly Message: string;
-  readonly Reason: string;
-  readonly Fields: [];
+  readonly Reason?: string;
+  readonly Fields?: [];
 }
 
-interface ValidationExceptionField {
+export interface ValidationExceptionField {
   readonly Name: string;
   readonly Message: string;
 }
+
 

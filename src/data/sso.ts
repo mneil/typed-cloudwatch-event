@@ -6,6 +6,7 @@ export interface AttachManagedPolicyToPermissionSet {
   readonly PermissionSetArn: string;
   readonly ManagedPolicyArn: string;
 }
+
 export interface CreateAccountAssignment {
   readonly InstanceArn: string;
   readonly TargetId: string;
@@ -14,10 +15,12 @@ export interface CreateAccountAssignment {
   readonly PrincipalType: string;
   readonly PrincipalId: string;
 }
+
 export interface CreateInstanceAccessControlAttributeConfiguration {
   readonly InstanceArn: string;
   readonly InstanceAccessControlAttributeConfiguration: InstanceAccessControlAttributeConfiguration;
 }
+
 export interface CreatePermissionSet {
   readonly Name: string;
   readonly Description?: string;
@@ -26,6 +29,7 @@ export interface CreatePermissionSet {
   readonly RelayState?: string;
   readonly Tags?: [];
 }
+
 export interface DeleteAccountAssignment {
   readonly InstanceArn: string;
   readonly TargetId: string;
@@ -34,57 +38,70 @@ export interface DeleteAccountAssignment {
   readonly PrincipalType: string;
   readonly PrincipalId: string;
 }
+
 export interface DeleteInlinePolicyFromPermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
 }
+
 export interface DeleteInstanceAccessControlAttributeConfiguration {
   readonly InstanceArn: string;
 }
+
 export interface DeletePermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
 }
+
 export interface DescribeAccountAssignmentCreationStatus {
   readonly InstanceArn: string;
   readonly AccountAssignmentCreationRequestId: string;
 }
+
 export interface DescribeAccountAssignmentDeletionStatus {
   readonly InstanceArn: string;
   readonly AccountAssignmentDeletionRequestId: string;
 }
+
 export interface DescribeInstanceAccessControlAttributeConfiguration {
   readonly InstanceArn: string;
 }
+
 export interface DescribePermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
 }
+
 export interface DescribePermissionSetProvisioningStatus {
   readonly InstanceArn: string;
   readonly ProvisionPermissionSetRequestId: string;
 }
+
 export interface DetachManagedPolicyFromPermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
   readonly ManagedPolicyArn: string;
 }
+
 export interface GetInlinePolicyForPermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
 }
+
 export interface ListAccountAssignmentCreationStatus {
   readonly InstanceArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly Filter?: OperationStatusFilter;
 }
+
 export interface ListAccountAssignmentDeletionStatus {
   readonly InstanceArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly Filter?: OperationStatusFilter;
 }
+
 export interface ListAccountAssignments {
   readonly InstanceArn: string;
   readonly AccountId: string;
@@ -92,6 +109,7 @@ export interface ListAccountAssignments {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListAccountsForProvisionedPermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
@@ -99,27 +117,32 @@ export interface ListAccountsForProvisionedPermissionSet {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListInstances {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListManagedPoliciesInPermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListPermissionSetProvisioningStatus {
   readonly InstanceArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly Filter?: OperationStatusFilter;
 }
+
 export interface ListPermissionSets {
   readonly InstanceArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListPermissionSetsProvisionedToAccount {
   readonly InstanceArn: string;
   readonly AccountId: string;
@@ -127,36 +150,43 @@ export interface ListPermissionSetsProvisionedToAccount {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly InstanceArn: string;
   readonly ResourceArn: string;
   readonly NextToken?: string;
 }
+
 export interface ProvisionPermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
   readonly TargetId?: string;
   readonly TargetType: string;
 }
+
 export interface PutInlinePolicyToPermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
   readonly InlinePolicy: string;
 }
+
 export interface TagResource {
   readonly InstanceArn: string;
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly InstanceArn: string;
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateInstanceAccessControlAttributeConfiguration {
   readonly InstanceArn: string;
   readonly InstanceAccessControlAttributeConfiguration: InstanceAccessControlAttributeConfiguration;
 }
+
 export interface UpdatePermissionSet {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
@@ -165,65 +195,63 @@ export interface UpdatePermissionSet {
   readonly RelayState?: string;
 }
 
-
-
-interface AccessControlAttribute {
+export interface AccessControlAttribute {
   readonly Key: string;
   readonly Value: AccessControlAttributeValue;
 }
 
-interface AccessControlAttributeValue {
+export interface AccessControlAttributeValue {
   readonly Source: [];
 }
 
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface AccountAssignment {
-  readonly AccountId: string;
-  readonly PermissionSetArn: string;
-  readonly PrincipalType: string;
-  readonly PrincipalId: string;
+export interface AccountAssignment {
+  readonly AccountId?: string;
+  readonly PermissionSetArn?: string;
+  readonly PrincipalType?: string;
+  readonly PrincipalId?: string;
 }
 
-interface AccountAssignmentOperationStatus {
-  readonly Status: string;
-  readonly RequestId: string;
-  readonly FailureReason: string;
-  readonly TargetId: string;
-  readonly TargetType: string;
-  readonly PermissionSetArn: string;
-  readonly PrincipalType: string;
-  readonly PrincipalId: string;
-  readonly CreatedDate: Date;
+export interface AccountAssignmentOperationStatus {
+  readonly Status?: string;
+  readonly RequestId?: string;
+  readonly FailureReason?: string;
+  readonly TargetId?: string;
+  readonly TargetType?: string;
+  readonly PermissionSetArn?: string;
+  readonly PrincipalType?: string;
+  readonly PrincipalId?: string;
+  readonly CreatedDate?: Date;
 }
 
-interface AccountAssignmentOperationStatusMetadata {
-  readonly Status: string;
-  readonly RequestId: string;
-  readonly CreatedDate: Date;
+export interface AccountAssignmentOperationStatusMetadata {
+  readonly Status?: string;
+  readonly RequestId?: string;
+  readonly CreatedDate?: Date;
 }
 
-interface AttachManagedPolicyToPermissionSetRequest {
+export interface AttachManagedPolicyToPermissionSetRequest {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
   readonly ManagedPolicyArn: string;
 }
 
-interface AttachManagedPolicyToPermissionSetResponse {
+export interface AttachManagedPolicyToPermissionSetResponse {
 }
 
-interface AttachedManagedPolicy {
-  readonly Name: string;
-  readonly Arn: string;
+export interface AttachedManagedPolicy {
+  readonly Name?: string;
+  readonly Arn?: string;
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface CreateAccountAssignmentRequest {
+export interface CreateAccountAssignmentRequest {
   readonly InstanceArn: string;
   readonly TargetId: string;
   readonly TargetType: string;
@@ -232,32 +260,32 @@ interface CreateAccountAssignmentRequest {
   readonly PrincipalId: string;
 }
 
-interface CreateAccountAssignmentResponse {
-  readonly AccountAssignmentCreationStatus: AccountAssignmentOperationStatus;
+export interface CreateAccountAssignmentResponse {
+  readonly AccountAssignmentCreationStatus?: AccountAssignmentOperationStatus;
 }
 
-interface CreateInstanceAccessControlAttributeConfigurationRequest {
+export interface CreateInstanceAccessControlAttributeConfigurationRequest {
   readonly InstanceArn: string;
   readonly InstanceAccessControlAttributeConfiguration: InstanceAccessControlAttributeConfiguration;
 }
 
-interface CreateInstanceAccessControlAttributeConfigurationResponse {
+export interface CreateInstanceAccessControlAttributeConfigurationResponse {
 }
 
-interface CreatePermissionSetRequest {
+export interface CreatePermissionSetRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly InstanceArn: string;
-  readonly SessionDuration: string;
-  readonly RelayState: string;
-  readonly Tags: [];
+  readonly SessionDuration?: string;
+  readonly RelayState?: string;
+  readonly Tags?: [];
 }
 
-interface CreatePermissionSetResponse {
-  readonly PermissionSet: PermissionSet;
+export interface CreatePermissionSetResponse {
+  readonly PermissionSet?: PermissionSet;
 }
 
-interface DeleteAccountAssignmentRequest {
+export interface DeleteAccountAssignmentRequest {
   readonly InstanceArn: string;
   readonly TargetId: string;
   readonly TargetType: string;
@@ -266,332 +294,333 @@ interface DeleteAccountAssignmentRequest {
   readonly PrincipalId: string;
 }
 
-interface DeleteAccountAssignmentResponse {
-  readonly AccountAssignmentDeletionStatus: AccountAssignmentOperationStatus;
+export interface DeleteAccountAssignmentResponse {
+  readonly AccountAssignmentDeletionStatus?: AccountAssignmentOperationStatus;
 }
 
-interface DeleteInlinePolicyFromPermissionSetRequest {
+export interface DeleteInlinePolicyFromPermissionSetRequest {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
 }
 
-interface DeleteInlinePolicyFromPermissionSetResponse {
+export interface DeleteInlinePolicyFromPermissionSetResponse {
 }
 
-interface DeleteInstanceAccessControlAttributeConfigurationRequest {
+export interface DeleteInstanceAccessControlAttributeConfigurationRequest {
   readonly InstanceArn: string;
 }
 
-interface DeleteInstanceAccessControlAttributeConfigurationResponse {
+export interface DeleteInstanceAccessControlAttributeConfigurationResponse {
 }
 
-interface DeletePermissionSetRequest {
+export interface DeletePermissionSetRequest {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
 }
 
-interface DeletePermissionSetResponse {
+export interface DeletePermissionSetResponse {
 }
 
-interface DescribeAccountAssignmentCreationStatusRequest {
+export interface DescribeAccountAssignmentCreationStatusRequest {
   readonly InstanceArn: string;
   readonly AccountAssignmentCreationRequestId: string;
 }
 
-interface DescribeAccountAssignmentCreationStatusResponse {
-  readonly AccountAssignmentCreationStatus: AccountAssignmentOperationStatus;
+export interface DescribeAccountAssignmentCreationStatusResponse {
+  readonly AccountAssignmentCreationStatus?: AccountAssignmentOperationStatus;
 }
 
-interface DescribeAccountAssignmentDeletionStatusRequest {
+export interface DescribeAccountAssignmentDeletionStatusRequest {
   readonly InstanceArn: string;
   readonly AccountAssignmentDeletionRequestId: string;
 }
 
-interface DescribeAccountAssignmentDeletionStatusResponse {
-  readonly AccountAssignmentDeletionStatus: AccountAssignmentOperationStatus;
+export interface DescribeAccountAssignmentDeletionStatusResponse {
+  readonly AccountAssignmentDeletionStatus?: AccountAssignmentOperationStatus;
 }
 
-interface DescribeInstanceAccessControlAttributeConfigurationRequest {
+export interface DescribeInstanceAccessControlAttributeConfigurationRequest {
   readonly InstanceArn: string;
 }
 
-interface DescribeInstanceAccessControlAttributeConfigurationResponse {
-  readonly Status: string;
-  readonly StatusReason: string;
-  readonly InstanceAccessControlAttributeConfiguration: InstanceAccessControlAttributeConfiguration;
+export interface DescribeInstanceAccessControlAttributeConfigurationResponse {
+  readonly Status?: string;
+  readonly StatusReason?: string;
+  readonly InstanceAccessControlAttributeConfiguration?: InstanceAccessControlAttributeConfiguration;
 }
 
-interface DescribePermissionSetProvisioningStatusRequest {
+export interface DescribePermissionSetProvisioningStatusRequest {
   readonly InstanceArn: string;
   readonly ProvisionPermissionSetRequestId: string;
 }
 
-interface DescribePermissionSetProvisioningStatusResponse {
-  readonly PermissionSetProvisioningStatus: PermissionSetProvisioningStatus;
+export interface DescribePermissionSetProvisioningStatusResponse {
+  readonly PermissionSetProvisioningStatus?: PermissionSetProvisioningStatus;
 }
 
-interface DescribePermissionSetRequest {
+export interface DescribePermissionSetRequest {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
 }
 
-interface DescribePermissionSetResponse {
-  readonly PermissionSet: PermissionSet;
+export interface DescribePermissionSetResponse {
+  readonly PermissionSet?: PermissionSet;
 }
 
-interface DetachManagedPolicyFromPermissionSetRequest {
+export interface DetachManagedPolicyFromPermissionSetRequest {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
   readonly ManagedPolicyArn: string;
 }
 
-interface DetachManagedPolicyFromPermissionSetResponse {
+export interface DetachManagedPolicyFromPermissionSetResponse {
 }
 
-interface GetInlinePolicyForPermissionSetRequest {
+export interface GetInlinePolicyForPermissionSetRequest {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
 }
 
-interface GetInlinePolicyForPermissionSetResponse {
-  readonly InlinePolicy: string;
+export interface GetInlinePolicyForPermissionSetResponse {
+  readonly InlinePolicy?: string;
 }
 
-interface InstanceAccessControlAttributeConfiguration {
+export interface InstanceAccessControlAttributeConfiguration {
   readonly AccessControlAttributes: [];
 }
 
-interface InstanceMetadata {
+export interface InstanceMetadata {
+  readonly InstanceArn?: string;
+  readonly IdentityStoreId?: string;
+}
+
+export interface InternalServerException {
+  readonly Message?: string;
+}
+
+export interface ListAccountAssignmentCreationStatusRequest {
   readonly InstanceArn: string;
-  readonly IdentityStoreId: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filter?: OperationStatusFilter;
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface ListAccountAssignmentCreationStatusResponse {
+  readonly AccountAssignmentsCreationStatus?: [];
+  readonly NextToken?: string;
 }
 
-interface ListAccountAssignmentCreationStatusRequest {
+export interface ListAccountAssignmentDeletionStatusRequest {
   readonly InstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filter: OperationStatusFilter;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filter?: OperationStatusFilter;
 }
 
-interface ListAccountAssignmentCreationStatusResponse {
-  readonly AccountAssignmentsCreationStatus: [];
-  readonly NextToken: string;
+export interface ListAccountAssignmentDeletionStatusResponse {
+  readonly AccountAssignmentsDeletionStatus?: [];
+  readonly NextToken?: string;
 }
 
-interface ListAccountAssignmentDeletionStatusRequest {
-  readonly InstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filter: OperationStatusFilter;
-}
-
-interface ListAccountAssignmentDeletionStatusResponse {
-  readonly AccountAssignmentsDeletionStatus: [];
-  readonly NextToken: string;
-}
-
-interface ListAccountAssignmentsRequest {
-  readonly InstanceArn: string;
-  readonly AccountId: string;
-  readonly PermissionSetArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface ListAccountAssignmentsResponse {
-  readonly AccountAssignments: [];
-  readonly NextToken: string;
-}
-
-interface ListAccountsForProvisionedPermissionSetRequest {
-  readonly InstanceArn: string;
-  readonly PermissionSetArn: string;
-  readonly ProvisioningStatus: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface ListAccountsForProvisionedPermissionSetResponse {
-  readonly AccountIds: [];
-  readonly NextToken: string;
-}
-
-interface ListInstancesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface ListInstancesResponse {
-  readonly Instances: [];
-  readonly NextToken: string;
-}
-
-interface ListManagedPoliciesInPermissionSetRequest {
-  readonly InstanceArn: string;
-  readonly PermissionSetArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface ListManagedPoliciesInPermissionSetResponse {
-  readonly AttachedManagedPolicies: [];
-  readonly NextToken: string;
-}
-
-interface ListPermissionSetProvisioningStatusRequest {
-  readonly InstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filter: OperationStatusFilter;
-}
-
-interface ListPermissionSetProvisioningStatusResponse {
-  readonly PermissionSetsProvisioningStatus: [];
-  readonly NextToken: string;
-}
-
-interface ListPermissionSetsProvisionedToAccountRequest {
+export interface ListAccountAssignmentsRequest {
   readonly InstanceArn: string;
   readonly AccountId: string;
-  readonly ProvisioningStatus: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly PermissionSetArn: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListPermissionSetsProvisionedToAccountResponse {
-  readonly NextToken: string;
-  readonly PermissionSets: [];
+export interface ListAccountAssignmentsResponse {
+  readonly AccountAssignments?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPermissionSetsRequest {
+export interface ListAccountsForProvisionedPermissionSetRequest {
   readonly InstanceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly PermissionSetArn: string;
+  readonly ProvisioningStatus?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListPermissionSetsResponse {
-  readonly PermissionSets: [];
-  readonly NextToken: string;
+export interface ListAccountsForProvisionedPermissionSetResponse {
+  readonly AccountIds?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListInstancesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface ListInstancesResponse {
+  readonly Instances?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListManagedPoliciesInPermissionSetRequest {
+  readonly InstanceArn: string;
+  readonly PermissionSetArn: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface ListManagedPoliciesInPermissionSetResponse {
+  readonly AttachedManagedPolicies?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListPermissionSetProvisioningStatusRequest {
+  readonly InstanceArn: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filter?: OperationStatusFilter;
+}
+
+export interface ListPermissionSetProvisioningStatusResponse {
+  readonly PermissionSetsProvisioningStatus?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListPermissionSetsProvisionedToAccountRequest {
+  readonly InstanceArn: string;
+  readonly AccountId: string;
+  readonly ProvisioningStatus?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface ListPermissionSetsProvisionedToAccountResponse {
+  readonly NextToken?: string;
+  readonly PermissionSets?: [];
+}
+
+export interface ListPermissionSetsRequest {
+  readonly InstanceArn: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface ListPermissionSetsResponse {
+  readonly PermissionSets?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListTagsForResourceRequest {
   readonly InstanceArn: string;
   readonly ResourceArn: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
-  readonly NextToken: string;
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
+  readonly NextToken?: string;
 }
 
-interface OperationStatusFilter {
-  readonly Status: string;
+export interface OperationStatusFilter {
+  readonly Status?: string;
 }
 
-interface PermissionSet {
-  readonly Name: string;
-  readonly PermissionSetArn: string;
-  readonly Description: string;
-  readonly CreatedDate: Date;
-  readonly SessionDuration: string;
-  readonly RelayState: string;
+export interface PermissionSet {
+  readonly Name?: string;
+  readonly PermissionSetArn?: string;
+  readonly Description?: string;
+  readonly CreatedDate?: Date;
+  readonly SessionDuration?: string;
+  readonly RelayState?: string;
 }
 
-interface PermissionSetProvisioningStatus {
-  readonly Status: string;
-  readonly RequestId: string;
-  readonly AccountId: string;
-  readonly PermissionSetArn: string;
-  readonly FailureReason: string;
-  readonly CreatedDate: Date;
+export interface PermissionSetProvisioningStatus {
+  readonly Status?: string;
+  readonly RequestId?: string;
+  readonly AccountId?: string;
+  readonly PermissionSetArn?: string;
+  readonly FailureReason?: string;
+  readonly CreatedDate?: Date;
 }
 
-interface PermissionSetProvisioningStatusMetadata {
-  readonly Status: string;
-  readonly RequestId: string;
-  readonly CreatedDate: Date;
+export interface PermissionSetProvisioningStatusMetadata {
+  readonly Status?: string;
+  readonly RequestId?: string;
+  readonly CreatedDate?: Date;
 }
 
-interface ProvisionPermissionSetRequest {
+export interface ProvisionPermissionSetRequest {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
-  readonly TargetId: string;
+  readonly TargetId?: string;
   readonly TargetType: string;
 }
 
-interface ProvisionPermissionSetResponse {
-  readonly PermissionSetProvisioningStatus: PermissionSetProvisioningStatus;
+export interface ProvisionPermissionSetResponse {
+  readonly PermissionSetProvisioningStatus?: PermissionSetProvisioningStatus;
 }
 
-interface PutInlinePolicyToPermissionSetRequest {
+export interface PutInlinePolicyToPermissionSetRequest {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
   readonly InlinePolicy: string;
 }
 
-interface PutInlinePolicyToPermissionSetResponse {
+export interface PutInlinePolicyToPermissionSetResponse {
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly InstanceArn: string;
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
-  readonly Message: string;
+export interface ThrottlingException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly InstanceArn: string;
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateInstanceAccessControlAttributeConfigurationRequest {
+export interface UpdateInstanceAccessControlAttributeConfigurationRequest {
   readonly InstanceArn: string;
   readonly InstanceAccessControlAttributeConfiguration: InstanceAccessControlAttributeConfiguration;
 }
 
-interface UpdateInstanceAccessControlAttributeConfigurationResponse {
+export interface UpdateInstanceAccessControlAttributeConfigurationResponse {
 }
 
-interface UpdatePermissionSetRequest {
+export interface UpdatePermissionSetRequest {
   readonly InstanceArn: string;
   readonly PermissionSetArn: string;
-  readonly Description: string;
-  readonly SessionDuration: string;
-  readonly RelayState: string;
+  readonly Description?: string;
+  readonly SessionDuration?: string;
+  readonly RelayState?: string;
 }
 
-interface UpdatePermissionSetResponse {
+export interface UpdatePermissionSetResponse {
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

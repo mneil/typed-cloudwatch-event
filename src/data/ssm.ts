@@ -6,19 +6,23 @@ export interface AddTagsToResource {
   readonly ResourceId: string;
   readonly Tags: [];
 }
+
 export interface AssociateOpsItemRelatedItem {
   readonly OpsItemId: string;
   readonly AssociationType: string;
   readonly ResourceType: string;
   readonly ResourceUri: string;
 }
+
 export interface CancelCommand {
   readonly CommandId: string;
   readonly InstanceIds?: [];
 }
+
 export interface CancelMaintenanceWindowExecution {
   readonly WindowExecutionId: string;
 }
+
 export interface CreateActivation {
   readonly Description?: string;
   readonly DefaultInstanceName?: string;
@@ -28,6 +32,7 @@ export interface CreateActivation {
   readonly Tags?: [];
   readonly RegistrationMetadata?: [];
 }
+
 export interface CreateAssociation {
   readonly Name: string;
   readonly DocumentVersion?: string;
@@ -46,9 +51,11 @@ export interface CreateAssociation {
   readonly CalendarNames?: [];
   readonly TargetLocations?: [];
 }
+
 export interface CreateAssociationBatch {
   readonly Entries: [];
 }
+
 export interface CreateDocument {
   readonly Content: string;
   readonly Requires?: [];
@@ -61,6 +68,7 @@ export interface CreateDocument {
   readonly TargetType?: string;
   readonly Tags?: [];
 }
+
 export interface CreateMaintenanceWindow {
   readonly Name: string;
   readonly Description?: string;
@@ -75,6 +83,7 @@ export interface CreateMaintenanceWindow {
   readonly ClientToken?: string;
   readonly Tags?: [];
 }
+
 export interface CreateOpsItem {
   readonly Description: string;
   readonly OpsItemType?: string;
@@ -92,11 +101,13 @@ export interface CreateOpsItem {
   readonly PlannedStartTime?: Date;
   readonly PlannedEndTime?: Date;
 }
+
 export interface CreateOpsMetadata {
   readonly ResourceId: string;
   readonly Metadata?: {[key: string]: any};
   readonly Tags?: [];
 }
+
 export interface CreatePatchBaseline {
   readonly OperatingSystem?: string;
   readonly Name: string;
@@ -112,78 +123,96 @@ export interface CreatePatchBaseline {
   readonly ClientToken?: string;
   readonly Tags?: [];
 }
+
 export interface CreateResourceDataSync {
   readonly SyncName: string;
   readonly S3Destination?: ResourceDataSyncS3Destination;
   readonly SyncType?: string;
   readonly SyncSource?: ResourceDataSyncSource;
 }
+
 export interface DeleteActivation {
   readonly ActivationId: string;
 }
+
 export interface DeleteAssociation {
   readonly Name?: string;
   readonly InstanceId?: string;
   readonly AssociationId?: string;
 }
+
 export interface DeleteDocument {
   readonly Name: string;
   readonly DocumentVersion?: string;
   readonly VersionName?: string;
   readonly Force?: boolean;
 }
+
 export interface DeleteInventory {
   readonly TypeName: string;
   readonly SchemaDeleteOption?: string;
   readonly DryRun?: boolean;
   readonly ClientToken?: string;
 }
+
 export interface DeleteMaintenanceWindow {
   readonly WindowId: string;
 }
+
 export interface DeleteOpsMetadata {
   readonly OpsMetadataArn: string;
 }
+
 export interface DeleteParameter {
   readonly Name: string;
 }
+
 export interface DeleteParameters {
   readonly Names: [];
 }
+
 export interface DeletePatchBaseline {
   readonly BaselineId: string;
 }
+
 export interface DeleteResourceDataSync {
   readonly SyncName: string;
   readonly SyncType?: string;
 }
+
 export interface DeregisterManagedInstance {
   readonly InstanceId: string;
 }
+
 export interface DeregisterPatchBaselineForPatchGroup {
   readonly BaselineId: string;
   readonly PatchGroup: string;
 }
+
 export interface DeregisterTargetFromMaintenanceWindow {
   readonly WindowId: string;
   readonly WindowTargetId: string;
   readonly Safe?: boolean;
 }
+
 export interface DeregisterTaskFromMaintenanceWindow {
   readonly WindowId: string;
   readonly WindowTaskId: string;
 }
+
 export interface DescribeActivations {
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeAssociation {
   readonly Name?: string;
   readonly InstanceId?: string;
   readonly AssociationId?: string;
   readonly AssociationVersion?: string;
 }
+
 export interface DescribeAssociationExecutionTargets {
   readonly AssociationId: string;
   readonly ExecutionId: string;
@@ -191,17 +220,20 @@ export interface DescribeAssociationExecutionTargets {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeAssociationExecutions {
   readonly AssociationId: string;
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeAutomationExecutions {
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeAutomationStepExecutions {
   readonly AutomationExecutionId: string;
   readonly Filters?: [];
@@ -209,65 +241,77 @@ export interface DescribeAutomationStepExecutions {
   readonly MaxResults?: number;
   readonly ReverseOrder?: boolean;
 }
+
 export interface DescribeAvailablePatches {
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeDocument {
   readonly Name: string;
   readonly DocumentVersion?: string;
   readonly VersionName?: string;
 }
+
 export interface DescribeDocumentPermission {
   readonly Name: string;
   readonly PermissionType: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeEffectiveInstanceAssociations {
   readonly InstanceId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeEffectivePatchesForPatchBaseline {
   readonly BaselineId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeInstanceAssociationsStatus {
   readonly InstanceId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeInstanceInformation {
   readonly InstanceInformationFilterList?: [];
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeInstancePatchStates {
   readonly InstanceIds: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeInstancePatchStatesForPatchGroup {
   readonly PatchGroup: string;
   readonly Filters?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeInstancePatches {
   readonly InstanceId: string;
   readonly Filters?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeInventoryDeletions {
   readonly DeletionId?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeMaintenanceWindowExecutionTaskInvocations {
   readonly WindowExecutionId: string;
   readonly TaskId: string;
@@ -275,18 +319,21 @@ export interface DescribeMaintenanceWindowExecutionTaskInvocations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeMaintenanceWindowExecutionTasks {
   readonly WindowExecutionId: string;
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeMaintenanceWindowExecutions {
   readonly WindowId: string;
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeMaintenanceWindowSchedule {
   readonly WindowId?: string;
   readonly Targets?: [];
@@ -295,53 +342,63 @@ export interface DescribeMaintenanceWindowSchedule {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeMaintenanceWindowTargets {
   readonly WindowId: string;
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeMaintenanceWindowTasks {
   readonly WindowId: string;
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeMaintenanceWindows {
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeMaintenanceWindowsForTarget {
   readonly Targets: [];
   readonly ResourceType: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeOpsItems {
   readonly OpsItemFilters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeParameters {
   readonly Filters?: [];
   readonly ParameterFilters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribePatchBaselines {
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribePatchGroupState {
   readonly PatchGroup: string;
 }
+
 export interface DescribePatchGroups {
   readonly MaxResults?: number;
   readonly Filters?: [];
   readonly NextToken?: string;
 }
+
 export interface DescribePatchProperties {
   readonly OperatingSystem: string;
   readonly Property: string;
@@ -349,45 +406,55 @@ export interface DescribePatchProperties {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeSessions {
   readonly State: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly Filters?: [];
 }
+
 export interface DisassociateOpsItemRelatedItem {
   readonly OpsItemId: string;
   readonly AssociationId: string;
 }
+
 export interface GetAutomationExecution {
   readonly AutomationExecutionId: string;
 }
+
 export interface GetCalendarState {
   readonly CalendarNames: [];
   readonly AtTime?: string;
 }
+
 export interface GetCommandInvocation {
   readonly CommandId: string;
   readonly InstanceId: string;
   readonly PluginName?: string;
 }
+
 export interface GetConnectionStatus {
   readonly Target: string;
 }
+
 export interface GetDefaultPatchBaseline {
   readonly OperatingSystem?: string;
 }
+
 export interface GetDeployablePatchSnapshotForInstance {
   readonly InstanceId: string;
   readonly SnapshotId: string;
   readonly BaselineOverride?: BaselineOverride;
 }
+
 export interface GetDocument {
   readonly Name: string;
   readonly VersionName?: string;
   readonly DocumentVersion?: string;
   readonly DocumentFormat?: string;
 }
+
 export interface GetInventory {
   readonly Filters?: [];
   readonly Aggregators?: [];
@@ -395,6 +462,7 @@ export interface GetInventory {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetInventorySchema {
   readonly TypeName?: string;
   readonly NextToken?: string;
@@ -402,33 +470,41 @@ export interface GetInventorySchema {
   readonly Aggregator?: boolean;
   readonly SubType?: boolean;
 }
+
 export interface GetMaintenanceWindow {
   readonly WindowId: string;
 }
+
 export interface GetMaintenanceWindowExecution {
   readonly WindowExecutionId: string;
 }
+
 export interface GetMaintenanceWindowExecutionTask {
   readonly WindowExecutionId: string;
   readonly TaskId: string;
 }
+
 export interface GetMaintenanceWindowExecutionTaskInvocation {
   readonly WindowExecutionId: string;
   readonly TaskId: string;
   readonly InvocationId: string;
 }
+
 export interface GetMaintenanceWindowTask {
   readonly WindowId: string;
   readonly WindowTaskId: string;
 }
+
 export interface GetOpsItem {
   readonly OpsItemId: string;
 }
+
 export interface GetOpsMetadata {
   readonly OpsMetadataArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetOpsSummary {
   readonly SyncName?: string;
   readonly Filters?: [];
@@ -437,20 +513,24 @@ export interface GetOpsSummary {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetParameter {
   readonly Name: string;
   readonly WithDecryption?: boolean;
 }
+
 export interface GetParameterHistory {
   readonly Name: string;
   readonly WithDecryption?: boolean;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetParameters {
   readonly Names: [];
   readonly WithDecryption?: boolean;
 }
+
 export interface GetParametersByPath {
   readonly Path: string;
   readonly Recursive?: boolean;
@@ -459,31 +539,38 @@ export interface GetParametersByPath {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetPatchBaseline {
   readonly BaselineId: string;
 }
+
 export interface GetPatchBaselineForPatchGroup {
   readonly PatchGroup: string;
   readonly OperatingSystem?: string;
 }
+
 export interface GetServiceSetting {
   readonly SettingId: string;
 }
+
 export interface LabelParameterVersion {
   readonly Name: string;
   readonly ParameterVersion?: number;
   readonly Labels: [];
 }
+
 export interface ListAssociationVersions {
   readonly AssociationId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListAssociations {
   readonly AssociationFilterList?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListCommandInvocations {
   readonly CommandId?: string;
   readonly InstanceId?: string;
@@ -492,6 +579,7 @@ export interface ListCommandInvocations {
   readonly Filters?: [];
   readonly Details?: boolean;
 }
+
 export interface ListCommands {
   readonly CommandId?: string;
   readonly InstanceId?: string;
@@ -499,6 +587,7 @@ export interface ListCommands {
   readonly NextToken?: string;
   readonly Filters?: [];
 }
+
 export interface ListComplianceItems {
   readonly Filters?: [];
   readonly ResourceIds?: [];
@@ -506,11 +595,13 @@ export interface ListComplianceItems {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListComplianceSummaries {
   readonly Filters?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDocumentMetadataHistory {
   readonly Name: string;
   readonly DocumentVersion?: string;
@@ -518,17 +609,20 @@ export interface ListDocumentMetadataHistory {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDocumentVersions {
   readonly Name: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListDocuments {
   readonly DocumentFilterList?: [];
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListInventoryEntries {
   readonly InstanceId: string;
   readonly TypeName: string;
@@ -536,36 +630,43 @@ export interface ListInventoryEntries {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListOpsItemEvents {
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListOpsItemRelatedItems {
   readonly OpsItemId?: string;
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListOpsMetadata {
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListResourceComplianceSummaries {
   readonly Filters?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListResourceDataSync {
   readonly SyncType?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceType: string;
   readonly ResourceId: string;
 }
+
 export interface ModifyDocumentPermission {
   readonly Name: string;
   readonly PermissionType: string;
@@ -573,6 +674,7 @@ export interface ModifyDocumentPermission {
   readonly AccountIdsToRemove?: [];
   readonly SharedDocumentVersion?: string;
 }
+
 export interface PutComplianceItems {
   readonly ResourceId: string;
   readonly ResourceType: string;
@@ -582,10 +684,12 @@ export interface PutComplianceItems {
   readonly ItemContentHash?: string;
   readonly UploadType?: string;
 }
+
 export interface PutInventory {
   readonly InstanceId: string;
   readonly Items: [];
 }
+
 export interface PutParameter {
   readonly Name: string;
   readonly Description?: string;
@@ -599,13 +703,16 @@ export interface PutParameter {
   readonly Policies?: string;
   readonly DataType?: string;
 }
+
 export interface RegisterDefaultPatchBaseline {
   readonly BaselineId: string;
 }
+
 export interface RegisterPatchBaselineForPatchGroup {
   readonly BaselineId: string;
   readonly PatchGroup: string;
 }
+
 export interface RegisterTargetWithMaintenanceWindow {
   readonly WindowId: string;
   readonly ResourceType: string;
@@ -615,6 +722,7 @@ export interface RegisterTargetWithMaintenanceWindow {
   readonly Description?: string;
   readonly ClientToken?: string;
 }
+
 export interface RegisterTaskWithMaintenanceWindow {
   readonly WindowId: string;
   readonly Targets?: [];
@@ -632,22 +740,27 @@ export interface RegisterTaskWithMaintenanceWindow {
   readonly ClientToken?: string;
   readonly CutoffBehavior?: string;
 }
+
 export interface RemoveTagsFromResource {
   readonly ResourceType: string;
   readonly ResourceId: string;
   readonly TagKeys: [];
 }
+
 export interface ResetServiceSetting {
   readonly SettingId: string;
 }
+
 export interface ResumeSession {
   readonly SessionId: string;
 }
+
 export interface SendAutomationSignal {
   readonly AutomationExecutionId: string;
   readonly SignalType: string;
   readonly Payload?: {[key: string]: any};
 }
+
 export interface SendCommand {
   readonly InstanceIds?: [];
   readonly Targets?: [];
@@ -667,9 +780,11 @@ export interface SendCommand {
   readonly NotificationConfig?: NotificationConfig;
   readonly CloudWatchOutputConfig?: CloudWatchOutputConfig;
 }
+
 export interface StartAssociationsOnce {
   readonly AssociationIds: [];
 }
+
 export interface StartAutomationExecution {
   readonly DocumentName: string;
   readonly DocumentVersion?: string;
@@ -684,6 +799,7 @@ export interface StartAutomationExecution {
   readonly TargetLocations?: [];
   readonly Tags?: [];
 }
+
 export interface StartChangeRequestExecution {
   readonly ScheduledTime?: Date;
   readonly DocumentName: string;
@@ -697,24 +813,29 @@ export interface StartChangeRequestExecution {
   readonly ScheduledEndTime?: Date;
   readonly ChangeDetails?: string;
 }
+
 export interface StartSession {
   readonly Target: string;
   readonly DocumentName?: string;
   readonly Reason?: string;
   readonly Parameters?: {[key: string]: any};
 }
+
 export interface StopAutomationExecution {
   readonly AutomationExecutionId: string;
   readonly Type?: string;
 }
+
 export interface TerminateSession {
   readonly SessionId: string;
 }
+
 export interface UnlabelParameterVersion {
   readonly Name: string;
   readonly ParameterVersion: number;
   readonly Labels: [];
 }
+
 export interface UpdateAssociation {
   readonly AssociationId: string;
   readonly Parameters?: {[key: string]: any};
@@ -734,11 +855,13 @@ export interface UpdateAssociation {
   readonly CalendarNames?: [];
   readonly TargetLocations?: [];
 }
+
 export interface UpdateAssociationStatus {
   readonly Name: string;
   readonly InstanceId: string;
   readonly AssociationStatus: AssociationStatus;
 }
+
 export interface UpdateDocument {
   readonly Content: string;
   readonly Attachments?: [];
@@ -749,15 +872,18 @@ export interface UpdateDocument {
   readonly DocumentFormat?: string;
   readonly TargetType?: string;
 }
+
 export interface UpdateDocumentDefaultVersion {
   readonly Name: string;
   readonly DocumentVersion: string;
 }
+
 export interface UpdateDocumentMetadata {
   readonly Name: string;
   readonly DocumentVersion?: string;
   readonly DocumentReviews: DocumentReviews;
 }
+
 export interface UpdateMaintenanceWindow {
   readonly WindowId: string;
   readonly Name?: string;
@@ -773,6 +899,7 @@ export interface UpdateMaintenanceWindow {
   readonly Enabled?: boolean;
   readonly Replace?: boolean;
 }
+
 export interface UpdateMaintenanceWindowTarget {
   readonly WindowId: string;
   readonly WindowTargetId: string;
@@ -782,6 +909,7 @@ export interface UpdateMaintenanceWindowTarget {
   readonly Description?: string;
   readonly Replace?: boolean;
 }
+
 export interface UpdateMaintenanceWindowTask {
   readonly WindowId: string;
   readonly WindowTaskId: string;
@@ -799,10 +927,12 @@ export interface UpdateMaintenanceWindowTask {
   readonly Replace?: boolean;
   readonly CutoffBehavior?: string;
 }
+
 export interface UpdateManagedInstanceRole {
   readonly InstanceId: string;
   readonly IamRole: string;
 }
+
 export interface UpdateOpsItem {
   readonly Description?: string;
   readonly OperationalData?: {[key: string]: any};
@@ -820,11 +950,13 @@ export interface UpdateOpsItem {
   readonly PlannedStartTime?: Date;
   readonly PlannedEndTime?: Date;
 }
+
 export interface UpdateOpsMetadata {
   readonly OpsMetadataArn: string;
   readonly MetadataToUpdate?: {[key: string]: any};
   readonly KeysToDelete?: [];
 }
+
 export interface UpdatePatchBaseline {
   readonly BaselineId: string;
   readonly Name?: string;
@@ -839,3559 +971,3560 @@ export interface UpdatePatchBaseline {
   readonly Sources?: [];
   readonly Replace?: boolean;
 }
+
 export interface UpdateResourceDataSync {
   readonly SyncName: string;
   readonly SyncType: string;
   readonly SyncSource: ResourceDataSyncSource;
 }
+
 export interface UpdateServiceSetting {
   readonly SettingId: string;
   readonly SettingValue: string;
 }
 
-
-
-interface AccountSharingInfo {
-  readonly AccountId: string;
-  readonly SharedDocumentVersion: string;
+export interface AccountSharingInfo {
+  readonly AccountId?: string;
+  readonly SharedDocumentVersion?: string;
 }
 
-interface Activation {
-  readonly ActivationId: string;
-  readonly Description: string;
-  readonly DefaultInstanceName: string;
-  readonly IamRole: string;
-  readonly RegistrationLimit: number;
-  readonly RegistrationsCount: number;
-  readonly ExpirationDate: Date;
-  readonly Expired: boolean;
-  readonly CreatedDate: Date;
-  readonly Tags: [];
+export interface Activation {
+  readonly ActivationId?: string;
+  readonly Description?: string;
+  readonly DefaultInstanceName?: string;
+  readonly IamRole?: string;
+  readonly RegistrationLimit?: number;
+  readonly RegistrationsCount?: number;
+  readonly ExpirationDate?: Date;
+  readonly Expired?: boolean;
+  readonly CreatedDate?: Date;
+  readonly Tags?: [];
 }
 
-interface AddTagsToResourceRequest {
+export interface AddTagsToResourceRequest {
   readonly ResourceType: string;
   readonly ResourceId: string;
   readonly Tags: [];
 }
 
-interface AddTagsToResourceResult {
+export interface AddTagsToResourceResult {
 }
 
-interface AlreadyExistsException {
-  readonly Message: string;
+export interface AlreadyExistsException {
+  readonly Message?: string;
 }
 
-interface AssociateOpsItemRelatedItemRequest {
+export interface AssociateOpsItemRelatedItemRequest {
   readonly OpsItemId: string;
   readonly AssociationType: string;
   readonly ResourceType: string;
   readonly ResourceUri: string;
 }
 
-interface AssociateOpsItemRelatedItemResponse {
-  readonly AssociationId: string;
+export interface AssociateOpsItemRelatedItemResponse {
+  readonly AssociationId?: string;
 }
 
-interface AssociatedInstances {
+export interface AssociatedInstances {
 }
 
-interface Association {
-  readonly Name: string;
-  readonly InstanceId: string;
-  readonly AssociationId: string;
-  readonly AssociationVersion: string;
-  readonly DocumentVersion: string;
-  readonly Targets: [];
-  readonly LastExecutionDate: Date;
-  readonly Overview: AssociationOverview;
-  readonly ScheduleExpression: string;
-  readonly AssociationName: string;
+export interface Association {
+  readonly Name?: string;
+  readonly InstanceId?: string;
+  readonly AssociationId?: string;
+  readonly AssociationVersion?: string;
+  readonly DocumentVersion?: string;
+  readonly Targets?: [];
+  readonly LastExecutionDate?: Date;
+  readonly Overview?: AssociationOverview;
+  readonly ScheduleExpression?: string;
+  readonly AssociationName?: string;
 }
 
-interface AssociationAlreadyExists {
+export interface AssociationAlreadyExists {
 }
 
-interface AssociationDescription {
-  readonly Name: string;
-  readonly InstanceId: string;
-  readonly AssociationVersion: string;
-  readonly Date: Date;
-  readonly LastUpdateAssociationDate: Date;
-  readonly Status: AssociationStatus;
-  readonly Overview: AssociationOverview;
-  readonly DocumentVersion: string;
-  readonly AutomationTargetParameterName: string;
-  readonly Parameters: {[key: string]: any};
-  readonly AssociationId: string;
-  readonly Targets: [];
-  readonly ScheduleExpression: string;
-  readonly OutputLocation: InstanceAssociationOutputLocation;
-  readonly LastExecutionDate: Date;
-  readonly LastSuccessfulExecutionDate: Date;
-  readonly AssociationName: string;
-  readonly MaxErrors: string;
-  readonly MaxConcurrency: string;
-  readonly ComplianceSeverity: string;
-  readonly SyncCompliance: string;
-  readonly ApplyOnlyAtCronInterval: boolean;
-  readonly CalendarNames: [];
-  readonly TargetLocations: [];
+export interface AssociationDescription {
+  readonly Name?: string;
+  readonly InstanceId?: string;
+  readonly AssociationVersion?: string;
+  readonly Date?: Date;
+  readonly LastUpdateAssociationDate?: Date;
+  readonly Status?: AssociationStatus;
+  readonly Overview?: AssociationOverview;
+  readonly DocumentVersion?: string;
+  readonly AutomationTargetParameterName?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly AssociationId?: string;
+  readonly Targets?: [];
+  readonly ScheduleExpression?: string;
+  readonly OutputLocation?: InstanceAssociationOutputLocation;
+  readonly LastExecutionDate?: Date;
+  readonly LastSuccessfulExecutionDate?: Date;
+  readonly AssociationName?: string;
+  readonly MaxErrors?: string;
+  readonly MaxConcurrency?: string;
+  readonly ComplianceSeverity?: string;
+  readonly SyncCompliance?: string;
+  readonly ApplyOnlyAtCronInterval?: boolean;
+  readonly CalendarNames?: [];
+  readonly TargetLocations?: [];
 }
 
-interface AssociationDoesNotExist {
-  readonly Message: string;
+export interface AssociationDoesNotExist {
+  readonly Message?: string;
 }
 
-interface AssociationExecution {
-  readonly AssociationId: string;
-  readonly AssociationVersion: string;
-  readonly ExecutionId: string;
-  readonly Status: string;
-  readonly DetailedStatus: string;
-  readonly CreatedTime: Date;
-  readonly LastExecutionDate: Date;
-  readonly ResourceCountByStatus: string;
+export interface AssociationExecution {
+  readonly AssociationId?: string;
+  readonly AssociationVersion?: string;
+  readonly ExecutionId?: string;
+  readonly Status?: string;
+  readonly DetailedStatus?: string;
+  readonly CreatedTime?: Date;
+  readonly LastExecutionDate?: Date;
+  readonly ResourceCountByStatus?: string;
 }
 
-interface AssociationExecutionDoesNotExist {
-  readonly Message: string;
+export interface AssociationExecutionDoesNotExist {
+  readonly Message?: string;
 }
 
-interface AssociationExecutionFilter {
+export interface AssociationExecutionFilter {
   readonly Key: string;
   readonly Value: string;
   readonly Type: string;
 }
 
-interface AssociationExecutionTarget {
-  readonly AssociationId: string;
-  readonly AssociationVersion: string;
-  readonly ExecutionId: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly Status: string;
-  readonly DetailedStatus: string;
-  readonly LastExecutionDate: Date;
-  readonly OutputSource: OutputSource;
+export interface AssociationExecutionTarget {
+  readonly AssociationId?: string;
+  readonly AssociationVersion?: string;
+  readonly ExecutionId?: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly Status?: string;
+  readonly DetailedStatus?: string;
+  readonly LastExecutionDate?: Date;
+  readonly OutputSource?: OutputSource;
 }
 
-interface AssociationExecutionTargetsFilter {
+export interface AssociationExecutionTargetsFilter {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface AssociationFilter {
+export interface AssociationFilter {
   readonly key: string;
   readonly value: string;
 }
 
-interface AssociationLimitExceeded {
+export interface AssociationLimitExceeded {
 }
 
-interface AssociationOverview {
-  readonly Status: string;
-  readonly DetailedStatus: string;
-  readonly AssociationStatusAggregatedCount: {[key: string]: any};
+export interface AssociationOverview {
+  readonly Status?: string;
+  readonly DetailedStatus?: string;
+  readonly AssociationStatusAggregatedCount?: {[key: string]: any};
 }
 
-interface AssociationStatus {
+export interface AssociationStatus {
   readonly Date: Date;
   readonly Name: string;
   readonly Message: string;
-  readonly AdditionalInfo: string;
+  readonly AdditionalInfo?: string;
 }
 
-interface AssociationVersionInfo {
-  readonly AssociationId: string;
-  readonly AssociationVersion: string;
-  readonly CreatedDate: Date;
-  readonly Name: string;
-  readonly DocumentVersion: string;
-  readonly Parameters: {[key: string]: any};
-  readonly Targets: [];
-  readonly ScheduleExpression: string;
-  readonly OutputLocation: InstanceAssociationOutputLocation;
-  readonly AssociationName: string;
-  readonly MaxErrors: string;
-  readonly MaxConcurrency: string;
-  readonly ComplianceSeverity: string;
-  readonly SyncCompliance: string;
-  readonly ApplyOnlyAtCronInterval: boolean;
-  readonly CalendarNames: [];
-  readonly TargetLocations: [];
+export interface AssociationVersionInfo {
+  readonly AssociationId?: string;
+  readonly AssociationVersion?: string;
+  readonly CreatedDate?: Date;
+  readonly Name?: string;
+  readonly DocumentVersion?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly Targets?: [];
+  readonly ScheduleExpression?: string;
+  readonly OutputLocation?: InstanceAssociationOutputLocation;
+  readonly AssociationName?: string;
+  readonly MaxErrors?: string;
+  readonly MaxConcurrency?: string;
+  readonly ComplianceSeverity?: string;
+  readonly SyncCompliance?: string;
+  readonly ApplyOnlyAtCronInterval?: boolean;
+  readonly CalendarNames?: [];
+  readonly TargetLocations?: [];
 }
 
-interface AssociationVersionLimitExceeded {
-  readonly Message: string;
+export interface AssociationVersionLimitExceeded {
+  readonly Message?: string;
 }
 
-interface AttachmentContent {
-  readonly Name: string;
-  readonly Size: number;
-  readonly Hash: string;
-  readonly HashType: string;
-  readonly Url: string;
+export interface AttachmentContent {
+  readonly Name?: string;
+  readonly Size?: number;
+  readonly Hash?: string;
+  readonly HashType?: string;
+  readonly Url?: string;
 }
 
-interface AttachmentInformation {
-  readonly Name: string;
+export interface AttachmentInformation {
+  readonly Name?: string;
 }
 
-interface AttachmentsSource {
+export interface AttachmentsSource {
+  readonly Key?: string;
+  readonly Values?: [];
+  readonly Name?: string;
+}
+
+export interface AutomationDefinitionNotApprovedException {
+  readonly Message?: string;
+}
+
+export interface AutomationDefinitionNotFoundException {
+  readonly Message?: string;
+}
+
+export interface AutomationDefinitionVersionNotFoundException {
+  readonly Message?: string;
+}
+
+export interface AutomationExecution {
+  readonly AutomationExecutionId?: string;
+  readonly DocumentName?: string;
+  readonly DocumentVersion?: string;
+  readonly ExecutionStartTime?: Date;
+  readonly ExecutionEndTime?: Date;
+  readonly AutomationExecutionStatus?: string;
+  readonly StepExecutions?: [];
+  readonly StepExecutionsTruncated?: boolean;
+  readonly Parameters?: {[key: string]: any};
+  readonly Outputs?: {[key: string]: any};
+  readonly FailureMessage?: string;
+  readonly Mode?: string;
+  readonly ParentAutomationExecutionId?: string;
+  readonly ExecutedBy?: string;
+  readonly CurrentStepName?: string;
+  readonly CurrentAction?: string;
+  readonly TargetParameterName?: string;
+  readonly Targets?: [];
+  readonly TargetMaps?: [];
+  readonly ResolvedTargets?: ResolvedTargets;
+  readonly MaxConcurrency?: string;
+  readonly MaxErrors?: string;
+  readonly Target?: string;
+  readonly TargetLocations?: [];
+  readonly ProgressCounters?: ProgressCounters;
+  readonly AutomationSubtype?: string;
+  readonly ScheduledTime?: Date;
+  readonly Runbooks?: [];
+  readonly OpsItemId?: string;
+  readonly AssociationId?: string;
+  readonly ChangeRequestName?: string;
+}
+
+export interface AutomationExecutionFilter {
   readonly Key: string;
   readonly Values: [];
-  readonly Name: string;
 }
 
-interface AutomationDefinitionNotApprovedException {
-  readonly Message: string;
+export interface AutomationExecutionLimitExceededException {
+  readonly Message?: string;
 }
 
-interface AutomationDefinitionNotFoundException {
-  readonly Message: string;
+export interface AutomationExecutionMetadata {
+  readonly AutomationExecutionId?: string;
+  readonly DocumentName?: string;
+  readonly DocumentVersion?: string;
+  readonly AutomationExecutionStatus?: string;
+  readonly ExecutionStartTime?: Date;
+  readonly ExecutionEndTime?: Date;
+  readonly ExecutedBy?: string;
+  readonly LogFile?: string;
+  readonly Outputs?: {[key: string]: any};
+  readonly Mode?: string;
+  readonly ParentAutomationExecutionId?: string;
+  readonly CurrentStepName?: string;
+  readonly CurrentAction?: string;
+  readonly FailureMessage?: string;
+  readonly TargetParameterName?: string;
+  readonly Targets?: [];
+  readonly TargetMaps?: [];
+  readonly ResolvedTargets?: ResolvedTargets;
+  readonly MaxConcurrency?: string;
+  readonly MaxErrors?: string;
+  readonly Target?: string;
+  readonly AutomationType?: string;
+  readonly AutomationSubtype?: string;
+  readonly ScheduledTime?: Date;
+  readonly Runbooks?: [];
+  readonly OpsItemId?: string;
+  readonly AssociationId?: string;
+  readonly ChangeRequestName?: string;
 }
 
-interface AutomationDefinitionVersionNotFoundException {
-  readonly Message: string;
+export interface AutomationExecutionNotFoundException {
+  readonly Message?: string;
 }
 
-interface AutomationExecution {
-  readonly AutomationExecutionId: string;
-  readonly DocumentName: string;
-  readonly DocumentVersion: string;
-  readonly ExecutionStartTime: Date;
-  readonly ExecutionEndTime: Date;
-  readonly AutomationExecutionStatus: string;
-  readonly StepExecutions: [];
-  readonly StepExecutionsTruncated: boolean;
-  readonly Parameters: {[key: string]: any};
-  readonly Outputs: {[key: string]: any};
-  readonly FailureMessage: string;
-  readonly Mode: string;
-  readonly ParentAutomationExecutionId: string;
-  readonly ExecutedBy: string;
-  readonly CurrentStepName: string;
-  readonly CurrentAction: string;
-  readonly TargetParameterName: string;
-  readonly Targets: [];
-  readonly TargetMaps: [];
-  readonly ResolvedTargets: ResolvedTargets;
-  readonly MaxConcurrency: string;
-  readonly MaxErrors: string;
-  readonly Target: string;
-  readonly TargetLocations: [];
-  readonly ProgressCounters: ProgressCounters;
-  readonly AutomationSubtype: string;
-  readonly ScheduledTime: Date;
-  readonly Runbooks: [];
-  readonly OpsItemId: string;
-  readonly AssociationId: string;
-  readonly ChangeRequestName: string;
+export interface AutomationStepNotFoundException {
+  readonly Message?: string;
 }
 
-interface AutomationExecutionFilter {
-  readonly Key: string;
-  readonly Values: [];
+export interface BaselineOverride {
+  readonly OperatingSystem?: string;
+  readonly GlobalFilters?: PatchFilterGroup;
+  readonly ApprovalRules?: PatchRuleGroup;
+  readonly ApprovedPatches?: [];
+  readonly ApprovedPatchesComplianceLevel?: string;
+  readonly RejectedPatches?: [];
+  readonly RejectedPatchesAction?: string;
+  readonly ApprovedPatchesEnableNonSecurity?: boolean;
+  readonly Sources?: [];
 }
 
-interface AutomationExecutionLimitExceededException {
-  readonly Message: string;
-}
-
-interface AutomationExecutionMetadata {
-  readonly AutomationExecutionId: string;
-  readonly DocumentName: string;
-  readonly DocumentVersion: string;
-  readonly AutomationExecutionStatus: string;
-  readonly ExecutionStartTime: Date;
-  readonly ExecutionEndTime: Date;
-  readonly ExecutedBy: string;
-  readonly LogFile: string;
-  readonly Outputs: {[key: string]: any};
-  readonly Mode: string;
-  readonly ParentAutomationExecutionId: string;
-  readonly CurrentStepName: string;
-  readonly CurrentAction: string;
-  readonly FailureMessage: string;
-  readonly TargetParameterName: string;
-  readonly Targets: [];
-  readonly TargetMaps: [];
-  readonly ResolvedTargets: ResolvedTargets;
-  readonly MaxConcurrency: string;
-  readonly MaxErrors: string;
-  readonly Target: string;
-  readonly AutomationType: string;
-  readonly AutomationSubtype: string;
-  readonly ScheduledTime: Date;
-  readonly Runbooks: [];
-  readonly OpsItemId: string;
-  readonly AssociationId: string;
-  readonly ChangeRequestName: string;
-}
-
-interface AutomationExecutionNotFoundException {
-  readonly Message: string;
-}
-
-interface AutomationStepNotFoundException {
-  readonly Message: string;
-}
-
-interface BaselineOverride {
-  readonly OperatingSystem: string;
-  readonly GlobalFilters: PatchFilterGroup;
-  readonly ApprovalRules: PatchRuleGroup;
-  readonly ApprovedPatches: [];
-  readonly ApprovedPatchesComplianceLevel: string;
-  readonly RejectedPatches: [];
-  readonly RejectedPatchesAction: string;
-  readonly ApprovedPatchesEnableNonSecurity: boolean;
-  readonly Sources: [];
-}
-
-interface CancelCommandRequest {
+export interface CancelCommandRequest {
   readonly CommandId: string;
-  readonly InstanceIds: [];
+  readonly InstanceIds?: [];
 }
 
-interface CancelCommandResult {
+export interface CancelCommandResult {
 }
 
-interface CancelMaintenanceWindowExecutionRequest {
+export interface CancelMaintenanceWindowExecutionRequest {
   readonly WindowExecutionId: string;
 }
 
-interface CancelMaintenanceWindowExecutionResult {
-  readonly WindowExecutionId: string;
+export interface CancelMaintenanceWindowExecutionResult {
+  readonly WindowExecutionId?: string;
 }
 
-interface CloudWatchOutputConfig {
-  readonly CloudWatchLogGroupName: string;
-  readonly CloudWatchOutputEnabled: boolean;
+export interface CloudWatchOutputConfig {
+  readonly CloudWatchLogGroupName?: string;
+  readonly CloudWatchOutputEnabled?: boolean;
 }
 
-interface Command {
-  readonly CommandId: string;
-  readonly DocumentName: string;
-  readonly DocumentVersion: string;
-  readonly Comment: string;
-  readonly ExpiresAfter: Date;
-  readonly Parameters: {[key: string]: any};
-  readonly InstanceIds: [];
-  readonly Targets: [];
-  readonly RequestedDateTime: Date;
-  readonly Status: string;
-  readonly StatusDetails: string;
-  readonly OutputS3Region: string;
-  readonly OutputS3BucketName: string;
-  readonly OutputS3KeyPrefix: string;
-  readonly MaxConcurrency: string;
-  readonly MaxErrors: string;
-  readonly TargetCount: number;
-  readonly CompletedCount: number;
-  readonly ErrorCount: number;
-  readonly DeliveryTimedOutCount: number;
-  readonly ServiceRole: string;
-  readonly NotificationConfig: NotificationConfig;
-  readonly CloudWatchOutputConfig: CloudWatchOutputConfig;
-  readonly TimeoutSeconds: number;
+export interface Command {
+  readonly CommandId?: string;
+  readonly DocumentName?: string;
+  readonly DocumentVersion?: string;
+  readonly Comment?: string;
+  readonly ExpiresAfter?: Date;
+  readonly Parameters?: {[key: string]: any};
+  readonly InstanceIds?: [];
+  readonly Targets?: [];
+  readonly RequestedDateTime?: Date;
+  readonly Status?: string;
+  readonly StatusDetails?: string;
+  readonly OutputS3Region?: string;
+  readonly OutputS3BucketName?: string;
+  readonly OutputS3KeyPrefix?: string;
+  readonly MaxConcurrency?: string;
+  readonly MaxErrors?: string;
+  readonly TargetCount?: number;
+  readonly CompletedCount?: number;
+  readonly ErrorCount?: number;
+  readonly DeliveryTimedOutCount?: number;
+  readonly ServiceRole?: string;
+  readonly NotificationConfig?: NotificationConfig;
+  readonly CloudWatchOutputConfig?: CloudWatchOutputConfig;
+  readonly TimeoutSeconds?: number;
 }
 
-interface CommandFilter {
+export interface CommandFilter {
   readonly key: string;
   readonly value: string;
 }
 
-interface CommandInvocation {
-  readonly CommandId: string;
-  readonly InstanceId: string;
-  readonly InstanceName: string;
-  readonly Comment: string;
-  readonly DocumentName: string;
-  readonly DocumentVersion: string;
-  readonly RequestedDateTime: Date;
-  readonly Status: string;
-  readonly StatusDetails: string;
-  readonly TraceOutput: string;
-  readonly StandardOutputUrl: string;
-  readonly StandardErrorUrl: string;
-  readonly CommandPlugins: [];
-  readonly ServiceRole: string;
-  readonly NotificationConfig: NotificationConfig;
-  readonly CloudWatchOutputConfig: CloudWatchOutputConfig;
+export interface CommandInvocation {
+  readonly CommandId?: string;
+  readonly InstanceId?: string;
+  readonly InstanceName?: string;
+  readonly Comment?: string;
+  readonly DocumentName?: string;
+  readonly DocumentVersion?: string;
+  readonly RequestedDateTime?: Date;
+  readonly Status?: string;
+  readonly StatusDetails?: string;
+  readonly TraceOutput?: string;
+  readonly StandardOutputUrl?: string;
+  readonly StandardErrorUrl?: string;
+  readonly CommandPlugins?: [];
+  readonly ServiceRole?: string;
+  readonly NotificationConfig?: NotificationConfig;
+  readonly CloudWatchOutputConfig?: CloudWatchOutputConfig;
 }
 
-interface CommandPlugin {
-  readonly Name: string;
-  readonly Status: string;
-  readonly StatusDetails: string;
-  readonly ResponseCode: number;
-  readonly ResponseStartDateTime: Date;
-  readonly ResponseFinishDateTime: Date;
-  readonly Output: string;
-  readonly StandardOutputUrl: string;
-  readonly StandardErrorUrl: string;
-  readonly OutputS3Region: string;
-  readonly OutputS3BucketName: string;
-  readonly OutputS3KeyPrefix: string;
+export interface CommandPlugin {
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly StatusDetails?: string;
+  readonly ResponseCode?: number;
+  readonly ResponseStartDateTime?: Date;
+  readonly ResponseFinishDateTime?: Date;
+  readonly Output?: string;
+  readonly StandardOutputUrl?: string;
+  readonly StandardErrorUrl?: string;
+  readonly OutputS3Region?: string;
+  readonly OutputS3BucketName?: string;
+  readonly OutputS3KeyPrefix?: string;
 }
 
-interface ComplianceExecutionSummary {
+export interface ComplianceExecutionSummary {
   readonly ExecutionTime: Date;
-  readonly ExecutionId: string;
-  readonly ExecutionType: string;
+  readonly ExecutionId?: string;
+  readonly ExecutionType?: string;
 }
 
-interface ComplianceItem {
-  readonly ComplianceType: string;
-  readonly ResourceType: string;
-  readonly ResourceId: string;
-  readonly Id: string;
-  readonly Title: string;
-  readonly Status: string;
+export interface ComplianceItem {
+  readonly ComplianceType?: string;
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
+  readonly Id?: string;
+  readonly Title?: string;
+  readonly Status?: string;
+  readonly Severity?: string;
+  readonly ExecutionSummary?: ComplianceExecutionSummary;
+  readonly Details?: {[key: string]: any};
+}
+
+export interface ComplianceItemEntry {
+  readonly Id?: string;
+  readonly Title?: string;
   readonly Severity: string;
-  readonly ExecutionSummary: ComplianceExecutionSummary;
-  readonly Details: {[key: string]: any};
-}
-
-interface ComplianceItemEntry {
-  readonly Id: string;
-  readonly Title: string;
-  readonly Severity: string;
   readonly Status: string;
-  readonly Details: {[key: string]: any};
+  readonly Details?: {[key: string]: any};
 }
 
-interface ComplianceStringFilter {
-  readonly Key: string;
-  readonly Values: [];
-  readonly Type: string;
+export interface ComplianceStringFilter {
+  readonly Key?: string;
+  readonly Values?: [];
+  readonly Type?: string;
 }
 
-interface ComplianceSummaryItem {
-  readonly ComplianceType: string;
-  readonly CompliantSummary: CompliantSummary;
-  readonly NonCompliantSummary: NonCompliantSummary;
+export interface ComplianceSummaryItem {
+  readonly ComplianceType?: string;
+  readonly CompliantSummary?: CompliantSummary;
+  readonly NonCompliantSummary?: NonCompliantSummary;
 }
 
-interface ComplianceTypeCountLimitExceededException {
-  readonly Message: string;
+export interface ComplianceTypeCountLimitExceededException {
+  readonly Message?: string;
 }
 
-interface CompliantSummary {
-  readonly CompliantCount: number;
-  readonly SeveritySummary: SeveritySummary;
+export interface CompliantSummary {
+  readonly CompliantCount?: number;
+  readonly SeveritySummary?: SeveritySummary;
 }
 
-interface CreateActivationRequest {
-  readonly Description: string;
-  readonly DefaultInstanceName: string;
+export interface CreateActivationRequest {
+  readonly Description?: string;
+  readonly DefaultInstanceName?: string;
   readonly IamRole: string;
-  readonly RegistrationLimit: number;
-  readonly ExpirationDate: Date;
-  readonly Tags: [];
-  readonly RegistrationMetadata: [];
+  readonly RegistrationLimit?: number;
+  readonly ExpirationDate?: Date;
+  readonly Tags?: [];
+  readonly RegistrationMetadata?: [];
 }
 
-interface CreateActivationResult {
-  readonly ActivationId: string;
-  readonly ActivationCode: string;
+export interface CreateActivationResult {
+  readonly ActivationId?: string;
+  readonly ActivationCode?: string;
 }
 
-interface CreateAssociationBatchRequest {
+export interface CreateAssociationBatchRequest {
   readonly Entries: [];
 }
 
-interface CreateAssociationBatchRequestEntry {
+export interface CreateAssociationBatchRequestEntry {
   readonly Name: string;
-  readonly InstanceId: string;
-  readonly Parameters: {[key: string]: any};
-  readonly AutomationTargetParameterName: string;
-  readonly DocumentVersion: string;
-  readonly Targets: [];
-  readonly ScheduleExpression: string;
-  readonly OutputLocation: InstanceAssociationOutputLocation;
-  readonly AssociationName: string;
-  readonly MaxErrors: string;
-  readonly MaxConcurrency: string;
-  readonly ComplianceSeverity: string;
-  readonly SyncCompliance: string;
-  readonly ApplyOnlyAtCronInterval: boolean;
-  readonly CalendarNames: [];
-  readonly TargetLocations: [];
+  readonly InstanceId?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly AutomationTargetParameterName?: string;
+  readonly DocumentVersion?: string;
+  readonly Targets?: [];
+  readonly ScheduleExpression?: string;
+  readonly OutputLocation?: InstanceAssociationOutputLocation;
+  readonly AssociationName?: string;
+  readonly MaxErrors?: string;
+  readonly MaxConcurrency?: string;
+  readonly ComplianceSeverity?: string;
+  readonly SyncCompliance?: string;
+  readonly ApplyOnlyAtCronInterval?: boolean;
+  readonly CalendarNames?: [];
+  readonly TargetLocations?: [];
 }
 
-interface CreateAssociationBatchResult {
-  readonly Successful: [];
-  readonly Failed: [];
+export interface CreateAssociationBatchResult {
+  readonly Successful?: [];
+  readonly Failed?: [];
 }
 
-interface CreateAssociationRequest {
+export interface CreateAssociationRequest {
   readonly Name: string;
-  readonly DocumentVersion: string;
-  readonly InstanceId: string;
-  readonly Parameters: {[key: string]: any};
-  readonly Targets: [];
-  readonly ScheduleExpression: string;
-  readonly OutputLocation: InstanceAssociationOutputLocation;
-  readonly AssociationName: string;
-  readonly AutomationTargetParameterName: string;
-  readonly MaxErrors: string;
-  readonly MaxConcurrency: string;
-  readonly ComplianceSeverity: string;
-  readonly SyncCompliance: string;
-  readonly ApplyOnlyAtCronInterval: boolean;
-  readonly CalendarNames: [];
-  readonly TargetLocations: [];
+  readonly DocumentVersion?: string;
+  readonly InstanceId?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly Targets?: [];
+  readonly ScheduleExpression?: string;
+  readonly OutputLocation?: InstanceAssociationOutputLocation;
+  readonly AssociationName?: string;
+  readonly AutomationTargetParameterName?: string;
+  readonly MaxErrors?: string;
+  readonly MaxConcurrency?: string;
+  readonly ComplianceSeverity?: string;
+  readonly SyncCompliance?: string;
+  readonly ApplyOnlyAtCronInterval?: boolean;
+  readonly CalendarNames?: [];
+  readonly TargetLocations?: [];
 }
 
-interface CreateAssociationResult {
-  readonly AssociationDescription: AssociationDescription;
+export interface CreateAssociationResult {
+  readonly AssociationDescription?: AssociationDescription;
 }
 
-interface CreateDocumentRequest {
+export interface CreateDocumentRequest {
   readonly Content: string;
-  readonly Requires: [];
-  readonly Attachments: [];
+  readonly Requires?: [];
+  readonly Attachments?: [];
   readonly Name: string;
-  readonly DisplayName: string;
-  readonly VersionName: string;
-  readonly DocumentType: string;
-  readonly DocumentFormat: string;
-  readonly TargetType: string;
-  readonly Tags: [];
+  readonly DisplayName?: string;
+  readonly VersionName?: string;
+  readonly DocumentType?: string;
+  readonly DocumentFormat?: string;
+  readonly TargetType?: string;
+  readonly Tags?: [];
 }
 
-interface CreateDocumentResult {
-  readonly DocumentDescription: DocumentDescription;
+export interface CreateDocumentResult {
+  readonly DocumentDescription?: DocumentDescription;
 }
 
-interface CreateMaintenanceWindowRequest {
+export interface CreateMaintenanceWindowRequest {
   readonly Name: string;
-  readonly Description: string;
-  readonly StartDate: string;
-  readonly EndDate: string;
+  readonly Description?: string;
+  readonly StartDate?: string;
+  readonly EndDate?: string;
   readonly Schedule: string;
-  readonly ScheduleTimezone: string;
-  readonly ScheduleOffset: number;
+  readonly ScheduleTimezone?: string;
+  readonly ScheduleOffset?: number;
   readonly Duration: number;
   readonly Cutoff: number;
   readonly AllowUnassociatedTargets: boolean;
-  readonly ClientToken: string;
-  readonly Tags: [];
+  readonly ClientToken?: string;
+  readonly Tags?: [];
 }
 
-interface CreateMaintenanceWindowResult {
-  readonly WindowId: string;
+export interface CreateMaintenanceWindowResult {
+  readonly WindowId?: string;
 }
 
-interface CreateOpsItemRequest {
+export interface CreateOpsItemRequest {
   readonly Description: string;
-  readonly OpsItemType: string;
-  readonly OperationalData: {[key: string]: any};
-  readonly Notifications: [];
-  readonly Priority: number;
-  readonly RelatedOpsItems: [];
+  readonly OpsItemType?: string;
+  readonly OperationalData?: {[key: string]: any};
+  readonly Notifications?: [];
+  readonly Priority?: number;
+  readonly RelatedOpsItems?: [];
   readonly Source: string;
   readonly Title: string;
-  readonly Tags: [];
-  readonly Category: string;
-  readonly Severity: string;
-  readonly ActualStartTime: Date;
-  readonly ActualEndTime: Date;
-  readonly PlannedStartTime: Date;
-  readonly PlannedEndTime: Date;
+  readonly Tags?: [];
+  readonly Category?: string;
+  readonly Severity?: string;
+  readonly ActualStartTime?: Date;
+  readonly ActualEndTime?: Date;
+  readonly PlannedStartTime?: Date;
+  readonly PlannedEndTime?: Date;
 }
 
-interface CreateOpsItemResponse {
-  readonly OpsItemId: string;
+export interface CreateOpsItemResponse {
+  readonly OpsItemId?: string;
 }
 
-interface CreateOpsMetadataRequest {
+export interface CreateOpsMetadataRequest {
   readonly ResourceId: string;
-  readonly Metadata: {[key: string]: any};
-  readonly Tags: [];
+  readonly Metadata?: {[key: string]: any};
+  readonly Tags?: [];
 }
 
-interface CreateOpsMetadataResult {
-  readonly OpsMetadataArn: string;
+export interface CreateOpsMetadataResult {
+  readonly OpsMetadataArn?: string;
 }
 
-interface CreatePatchBaselineRequest {
-  readonly OperatingSystem: string;
+export interface CreatePatchBaselineRequest {
+  readonly OperatingSystem?: string;
   readonly Name: string;
-  readonly GlobalFilters: PatchFilterGroup;
-  readonly ApprovalRules: PatchRuleGroup;
-  readonly ApprovedPatches: [];
-  readonly ApprovedPatchesComplianceLevel: string;
-  readonly ApprovedPatchesEnableNonSecurity: boolean;
-  readonly RejectedPatches: [];
-  readonly RejectedPatchesAction: string;
-  readonly Description: string;
-  readonly Sources: [];
-  readonly ClientToken: string;
-  readonly Tags: [];
+  readonly GlobalFilters?: PatchFilterGroup;
+  readonly ApprovalRules?: PatchRuleGroup;
+  readonly ApprovedPatches?: [];
+  readonly ApprovedPatchesComplianceLevel?: string;
+  readonly ApprovedPatchesEnableNonSecurity?: boolean;
+  readonly RejectedPatches?: [];
+  readonly RejectedPatchesAction?: string;
+  readonly Description?: string;
+  readonly Sources?: [];
+  readonly ClientToken?: string;
+  readonly Tags?: [];
 }
 
-interface CreatePatchBaselineResult {
-  readonly BaselineId: string;
+export interface CreatePatchBaselineResult {
+  readonly BaselineId?: string;
 }
 
-interface CreateResourceDataSyncRequest {
+export interface CreateResourceDataSyncRequest {
   readonly SyncName: string;
-  readonly S3Destination: ResourceDataSyncS3Destination;
-  readonly SyncType: string;
-  readonly SyncSource: ResourceDataSyncSource;
+  readonly S3Destination?: ResourceDataSyncS3Destination;
+  readonly SyncType?: string;
+  readonly SyncSource?: ResourceDataSyncSource;
 }
 
-interface CreateResourceDataSyncResult {
+export interface CreateResourceDataSyncResult {
 }
 
-interface CustomSchemaCountLimitExceededException {
-  readonly Message: string;
+export interface CustomSchemaCountLimitExceededException {
+  readonly Message?: string;
 }
 
-interface DeleteActivationRequest {
+export interface DeleteActivationRequest {
   readonly ActivationId: string;
 }
 
-interface DeleteActivationResult {
+export interface DeleteActivationResult {
 }
 
-interface DeleteAssociationRequest {
+export interface DeleteAssociationRequest {
+  readonly Name?: string;
+  readonly InstanceId?: string;
+  readonly AssociationId?: string;
+}
+
+export interface DeleteAssociationResult {
+}
+
+export interface DeleteDocumentRequest {
   readonly Name: string;
-  readonly InstanceId: string;
-  readonly AssociationId: string;
+  readonly DocumentVersion?: string;
+  readonly VersionName?: string;
+  readonly Force?: boolean;
 }
 
-interface DeleteAssociationResult {
+export interface DeleteDocumentResult {
 }
 
-interface DeleteDocumentRequest {
-  readonly Name: string;
-  readonly DocumentVersion: string;
-  readonly VersionName: string;
-  readonly Force: boolean;
-}
-
-interface DeleteDocumentResult {
-}
-
-interface DeleteInventoryRequest {
+export interface DeleteInventoryRequest {
   readonly TypeName: string;
-  readonly SchemaDeleteOption: string;
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
+  readonly SchemaDeleteOption?: string;
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
 }
 
-interface DeleteInventoryResult {
-  readonly DeletionId: string;
-  readonly TypeName: string;
-  readonly DeletionSummary: InventoryDeletionSummary;
+export interface DeleteInventoryResult {
+  readonly DeletionId?: string;
+  readonly TypeName?: string;
+  readonly DeletionSummary?: InventoryDeletionSummary;
 }
 
-interface DeleteMaintenanceWindowRequest {
+export interface DeleteMaintenanceWindowRequest {
   readonly WindowId: string;
 }
 
-interface DeleteMaintenanceWindowResult {
-  readonly WindowId: string;
+export interface DeleteMaintenanceWindowResult {
+  readonly WindowId?: string;
 }
 
-interface DeleteOpsMetadataRequest {
+export interface DeleteOpsMetadataRequest {
   readonly OpsMetadataArn: string;
 }
 
-interface DeleteOpsMetadataResult {
+export interface DeleteOpsMetadataResult {
 }
 
-interface DeleteParameterRequest {
+export interface DeleteParameterRequest {
   readonly Name: string;
 }
 
-interface DeleteParameterResult {
+export interface DeleteParameterResult {
 }
 
-interface DeleteParametersRequest {
+export interface DeleteParametersRequest {
   readonly Names: [];
 }
 
-interface DeleteParametersResult {
-  readonly DeletedParameters: [];
-  readonly InvalidParameters: [];
+export interface DeleteParametersResult {
+  readonly DeletedParameters?: [];
+  readonly InvalidParameters?: [];
 }
 
-interface DeletePatchBaselineRequest {
+export interface DeletePatchBaselineRequest {
   readonly BaselineId: string;
 }
 
-interface DeletePatchBaselineResult {
-  readonly BaselineId: string;
+export interface DeletePatchBaselineResult {
+  readonly BaselineId?: string;
 }
 
-interface DeleteResourceDataSyncRequest {
+export interface DeleteResourceDataSyncRequest {
   readonly SyncName: string;
-  readonly SyncType: string;
+  readonly SyncType?: string;
 }
 
-interface DeleteResourceDataSyncResult {
+export interface DeleteResourceDataSyncResult {
 }
 
-interface DeregisterManagedInstanceRequest {
+export interface DeregisterManagedInstanceRequest {
   readonly InstanceId: string;
 }
 
-interface DeregisterManagedInstanceResult {
+export interface DeregisterManagedInstanceResult {
 }
 
-interface DeregisterPatchBaselineForPatchGroupRequest {
+export interface DeregisterPatchBaselineForPatchGroupRequest {
   readonly BaselineId: string;
   readonly PatchGroup: string;
 }
 
-interface DeregisterPatchBaselineForPatchGroupResult {
-  readonly BaselineId: string;
-  readonly PatchGroup: string;
+export interface DeregisterPatchBaselineForPatchGroupResult {
+  readonly BaselineId?: string;
+  readonly PatchGroup?: string;
 }
 
-interface DeregisterTargetFromMaintenanceWindowRequest {
+export interface DeregisterTargetFromMaintenanceWindowRequest {
   readonly WindowId: string;
   readonly WindowTargetId: string;
-  readonly Safe: boolean;
+  readonly Safe?: boolean;
 }
 
-interface DeregisterTargetFromMaintenanceWindowResult {
-  readonly WindowId: string;
-  readonly WindowTargetId: string;
+export interface DeregisterTargetFromMaintenanceWindowResult {
+  readonly WindowId?: string;
+  readonly WindowTargetId?: string;
 }
 
-interface DeregisterTaskFromMaintenanceWindowRequest {
+export interface DeregisterTaskFromMaintenanceWindowRequest {
   readonly WindowId: string;
   readonly WindowTaskId: string;
 }
 
-interface DeregisterTaskFromMaintenanceWindowResult {
-  readonly WindowId: string;
-  readonly WindowTaskId: string;
+export interface DeregisterTaskFromMaintenanceWindowResult {
+  readonly WindowId?: string;
+  readonly WindowTaskId?: string;
 }
 
-interface DescribeActivationsFilter {
-  readonly FilterKey: string;
-  readonly FilterValues: [];
+export interface DescribeActivationsFilter {
+  readonly FilterKey?: string;
+  readonly FilterValues?: [];
 }
 
-interface DescribeActivationsRequest {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeActivationsRequest {
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeActivationsResult {
-  readonly ActivationList: [];
-  readonly NextToken: string;
+export interface DescribeActivationsResult {
+  readonly ActivationList?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeAssociationExecutionTargetsRequest {
+export interface DescribeAssociationExecutionTargetsRequest {
   readonly AssociationId: string;
   readonly ExecutionId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeAssociationExecutionTargetsResult {
-  readonly AssociationExecutionTargets: [];
-  readonly NextToken: string;
+export interface DescribeAssociationExecutionTargetsResult {
+  readonly AssociationExecutionTargets?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeAssociationExecutionsRequest {
+export interface DescribeAssociationExecutionsRequest {
   readonly AssociationId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeAssociationExecutionsResult {
-  readonly AssociationExecutions: [];
-  readonly NextToken: string;
+export interface DescribeAssociationExecutionsResult {
+  readonly AssociationExecutions?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeAssociationRequest {
-  readonly Name: string;
-  readonly InstanceId: string;
-  readonly AssociationId: string;
-  readonly AssociationVersion: string;
+export interface DescribeAssociationRequest {
+  readonly Name?: string;
+  readonly InstanceId?: string;
+  readonly AssociationId?: string;
+  readonly AssociationVersion?: string;
 }
 
-interface DescribeAssociationResult {
-  readonly AssociationDescription: AssociationDescription;
+export interface DescribeAssociationResult {
+  readonly AssociationDescription?: AssociationDescription;
 }
 
-interface DescribeAutomationExecutionsRequest {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeAutomationExecutionsRequest {
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeAutomationExecutionsResult {
-  readonly AutomationExecutionMetadataList: [];
-  readonly NextToken: string;
+export interface DescribeAutomationExecutionsResult {
+  readonly AutomationExecutionMetadataList?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeAutomationStepExecutionsRequest {
+export interface DescribeAutomationStepExecutionsRequest {
   readonly AutomationExecutionId: string;
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ReverseOrder: boolean;
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ReverseOrder?: boolean;
 }
 
-interface DescribeAutomationStepExecutionsResult {
-  readonly StepExecutions: [];
-  readonly NextToken: string;
+export interface DescribeAutomationStepExecutionsResult {
+  readonly StepExecutions?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeAvailablePatchesRequest {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeAvailablePatchesRequest {
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeAvailablePatchesResult {
-  readonly Patches: [];
-  readonly NextToken: string;
+export interface DescribeAvailablePatchesResult {
+  readonly Patches?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeDocumentPermissionRequest {
+export interface DescribeDocumentPermissionRequest {
   readonly Name: string;
   readonly PermissionType: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeDocumentPermissionResponse {
-  readonly AccountIds: [];
-  readonly AccountSharingInfoList: [];
-  readonly NextToken: string;
+export interface DescribeDocumentPermissionResponse {
+  readonly AccountIds?: [];
+  readonly AccountSharingInfoList?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeDocumentRequest {
+export interface DescribeDocumentRequest {
   readonly Name: string;
-  readonly DocumentVersion: string;
-  readonly VersionName: string;
+  readonly DocumentVersion?: string;
+  readonly VersionName?: string;
 }
 
-interface DescribeDocumentResult {
-  readonly Document: DocumentDescription;
+export interface DescribeDocumentResult {
+  readonly Document?: DocumentDescription;
 }
 
-interface DescribeEffectiveInstanceAssociationsRequest {
+export interface DescribeEffectiveInstanceAssociationsRequest {
   readonly InstanceId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeEffectiveInstanceAssociationsResult {
-  readonly Associations: [];
-  readonly NextToken: string;
+export interface DescribeEffectiveInstanceAssociationsResult {
+  readonly Associations?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeEffectivePatchesForPatchBaselineRequest {
+export interface DescribeEffectivePatchesForPatchBaselineRequest {
   readonly BaselineId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeEffectivePatchesForPatchBaselineResult {
-  readonly EffectivePatches: [];
-  readonly NextToken: string;
+export interface DescribeEffectivePatchesForPatchBaselineResult {
+  readonly EffectivePatches?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceAssociationsStatusRequest {
+export interface DescribeInstanceAssociationsStatusRequest {
   readonly InstanceId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceAssociationsStatusResult {
-  readonly InstanceAssociationStatusInfos: [];
-  readonly NextToken: string;
+export interface DescribeInstanceAssociationsStatusResult {
+  readonly InstanceAssociationStatusInfos?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceInformationRequest {
-  readonly InstanceInformationFilterList: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeInstanceInformationRequest {
+  readonly InstanceInformationFilterList?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceInformationResult {
-  readonly InstanceInformationList: [];
-  readonly NextToken: string;
+export interface DescribeInstanceInformationResult {
+  readonly InstanceInformationList?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInstancePatchStatesForPatchGroupRequest {
+export interface DescribeInstancePatchStatesForPatchGroupRequest {
   readonly PatchGroup: string;
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeInstancePatchStatesForPatchGroupResult {
-  readonly InstancePatchStates: [];
-  readonly NextToken: string;
+export interface DescribeInstancePatchStatesForPatchGroupResult {
+  readonly InstancePatchStates?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInstancePatchStatesRequest {
+export interface DescribeInstancePatchStatesRequest {
   readonly InstanceIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeInstancePatchStatesResult {
-  readonly InstancePatchStates: [];
-  readonly NextToken: string;
+export interface DescribeInstancePatchStatesResult {
+  readonly InstancePatchStates?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInstancePatchesRequest {
+export interface DescribeInstancePatchesRequest {
   readonly InstanceId: string;
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeInstancePatchesResult {
-  readonly Patches: [];
-  readonly NextToken: string;
+export interface DescribeInstancePatchesResult {
+  readonly Patches?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInventoryDeletionsRequest {
-  readonly DeletionId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeInventoryDeletionsRequest {
+  readonly DeletionId?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeInventoryDeletionsResult {
-  readonly InventoryDeletions: [];
-  readonly NextToken: string;
+export interface DescribeInventoryDeletionsResult {
+  readonly InventoryDeletions?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowExecutionTaskInvocationsRequest {
+export interface DescribeMaintenanceWindowExecutionTaskInvocationsRequest {
   readonly WindowExecutionId: string;
   readonly TaskId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowExecutionTaskInvocationsResult {
-  readonly WindowExecutionTaskInvocationIdentities: [];
-  readonly NextToken: string;
+export interface DescribeMaintenanceWindowExecutionTaskInvocationsResult {
+  readonly WindowExecutionTaskInvocationIdentities?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowExecutionTasksRequest {
+export interface DescribeMaintenanceWindowExecutionTasksRequest {
   readonly WindowExecutionId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowExecutionTasksResult {
-  readonly WindowExecutionTaskIdentities: [];
-  readonly NextToken: string;
+export interface DescribeMaintenanceWindowExecutionTasksResult {
+  readonly WindowExecutionTaskIdentities?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowExecutionsRequest {
+export interface DescribeMaintenanceWindowExecutionsRequest {
   readonly WindowId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowExecutionsResult {
-  readonly WindowExecutions: [];
-  readonly NextToken: string;
+export interface DescribeMaintenanceWindowExecutionsResult {
+  readonly WindowExecutions?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowScheduleRequest {
+export interface DescribeMaintenanceWindowScheduleRequest {
+  readonly WindowId?: string;
+  readonly Targets?: [];
+  readonly ResourceType?: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface DescribeMaintenanceWindowScheduleResult {
+  readonly ScheduledWindowExecutions?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeMaintenanceWindowTargetsRequest {
   readonly WindowId: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface DescribeMaintenanceWindowTargetsResult {
+  readonly Targets?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeMaintenanceWindowTasksRequest {
+  readonly WindowId: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface DescribeMaintenanceWindowTasksResult {
+  readonly Tasks?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeMaintenanceWindowsForTargetRequest {
   readonly Targets: [];
   readonly ResourceType: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowScheduleResult {
-  readonly ScheduledWindowExecutions: [];
-  readonly NextToken: string;
+export interface DescribeMaintenanceWindowsForTargetResult {
+  readonly WindowIdentities?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowTargetsRequest {
-  readonly WindowId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeMaintenanceWindowsRequest {
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowTargetsResult {
-  readonly Targets: [];
-  readonly NextToken: string;
+export interface DescribeMaintenanceWindowsResult {
+  readonly WindowIdentities?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowTasksRequest {
-  readonly WindowId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeOpsItemsRequest {
+  readonly OpsItemFilters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowTasksResult {
-  readonly Tasks: [];
-  readonly NextToken: string;
+export interface DescribeOpsItemsResponse {
+  readonly NextToken?: string;
+  readonly OpsItemSummaries?: [];
 }
 
-interface DescribeMaintenanceWindowsForTargetRequest {
-  readonly Targets: [];
-  readonly ResourceType: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeParametersRequest {
+  readonly Filters?: [];
+  readonly ParameterFilters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowsForTargetResult {
-  readonly WindowIdentities: [];
-  readonly NextToken: string;
+export interface DescribeParametersResult {
+  readonly Parameters?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowsRequest {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribePatchBaselinesRequest {
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeMaintenanceWindowsResult {
-  readonly WindowIdentities: [];
-  readonly NextToken: string;
+export interface DescribePatchBaselinesResult {
+  readonly BaselineIdentities?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeOpsItemsRequest {
-  readonly OpsItemFilters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface DescribeOpsItemsResponse {
-  readonly NextToken: string;
-  readonly OpsItemSummaries: [];
-}
-
-interface DescribeParametersRequest {
-  readonly Filters: [];
-  readonly ParameterFilters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface DescribeParametersResult {
-  readonly Parameters: [];
-  readonly NextToken: string;
-}
-
-interface DescribePatchBaselinesRequest {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface DescribePatchBaselinesResult {
-  readonly BaselineIdentities: [];
-  readonly NextToken: string;
-}
-
-interface DescribePatchGroupStateRequest {
+export interface DescribePatchGroupStateRequest {
   readonly PatchGroup: string;
 }
 
-interface DescribePatchGroupStateResult {
-  readonly Instances: number;
-  readonly InstancesWithInstalledPatches: number;
-  readonly InstancesWithInstalledOtherPatches: number;
-  readonly InstancesWithInstalledPendingRebootPatches: number;
-  readonly InstancesWithInstalledRejectedPatches: number;
-  readonly InstancesWithMissingPatches: number;
-  readonly InstancesWithFailedPatches: number;
-  readonly InstancesWithNotApplicablePatches: number;
-  readonly InstancesWithUnreportedNotApplicablePatches: number;
-  readonly InstancesWithCriticalNonCompliantPatches: number;
-  readonly InstancesWithSecurityNonCompliantPatches: number;
-  readonly InstancesWithOtherNonCompliantPatches: number;
+export interface DescribePatchGroupStateResult {
+  readonly Instances?: number;
+  readonly InstancesWithInstalledPatches?: number;
+  readonly InstancesWithInstalledOtherPatches?: number;
+  readonly InstancesWithInstalledPendingRebootPatches?: number;
+  readonly InstancesWithInstalledRejectedPatches?: number;
+  readonly InstancesWithMissingPatches?: number;
+  readonly InstancesWithFailedPatches?: number;
+  readonly InstancesWithNotApplicablePatches?: number;
+  readonly InstancesWithUnreportedNotApplicablePatches?: number;
+  readonly InstancesWithCriticalNonCompliantPatches?: number;
+  readonly InstancesWithSecurityNonCompliantPatches?: number;
+  readonly InstancesWithOtherNonCompliantPatches?: number;
 }
 
-interface DescribePatchGroupsRequest {
-  readonly MaxResults: number;
-  readonly Filters: [];
-  readonly NextToken: string;
+export interface DescribePatchGroupsRequest {
+  readonly MaxResults?: number;
+  readonly Filters?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribePatchGroupsResult {
-  readonly Mappings: [];
-  readonly NextToken: string;
+export interface DescribePatchGroupsResult {
+  readonly Mappings?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribePatchPropertiesRequest {
+export interface DescribePatchPropertiesRequest {
   readonly OperatingSystem: string;
   readonly Property: string;
-  readonly PatchSet: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly PatchSet?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribePatchPropertiesResult {
-  readonly Properties: [];
-  readonly NextToken: string;
+export interface DescribePatchPropertiesResult {
+  readonly Properties?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeSessionsRequest {
+export interface DescribeSessionsRequest {
   readonly State: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 
-interface DescribeSessionsResponse {
-  readonly Sessions: [];
-  readonly NextToken: string;
+export interface DescribeSessionsResponse {
+  readonly Sessions?: [];
+  readonly NextToken?: string;
 }
 
-interface DisassociateOpsItemRelatedItemRequest {
+export interface DisassociateOpsItemRelatedItemRequest {
   readonly OpsItemId: string;
   readonly AssociationId: string;
 }
 
-interface DisassociateOpsItemRelatedItemResponse {
+export interface DisassociateOpsItemRelatedItemResponse {
 }
 
-interface DocumentAlreadyExists {
-  readonly Message: string;
+export interface DocumentAlreadyExists {
+  readonly Message?: string;
 }
 
-interface DocumentDefaultVersionDescription {
-  readonly Name: string;
-  readonly DefaultVersion: string;
-  readonly DefaultVersionName: string;
+export interface DocumentDefaultVersionDescription {
+  readonly Name?: string;
+  readonly DefaultVersion?: string;
+  readonly DefaultVersionName?: string;
 }
 
-interface DocumentDescription {
-  readonly Sha1: string;
-  readonly Hash: string;
-  readonly HashType: string;
-  readonly Name: string;
-  readonly DisplayName: string;
-  readonly VersionName: string;
-  readonly Owner: string;
-  readonly CreatedDate: Date;
-  readonly Status: string;
-  readonly StatusInformation: string;
-  readonly DocumentVersion: string;
-  readonly Description: string;
-  readonly Parameters: [];
-  readonly PlatformTypes: [];
-  readonly DocumentType: string;
-  readonly SchemaVersion: string;
-  readonly LatestVersion: string;
-  readonly DefaultVersion: string;
-  readonly DocumentFormat: string;
-  readonly TargetType: string;
-  readonly Tags: [];
-  readonly AttachmentsInformation: [];
-  readonly Requires: [];
-  readonly Author: string;
-  readonly ReviewInformation: [];
-  readonly ApprovedVersion: string;
-  readonly PendingReviewVersion: string;
-  readonly ReviewStatus: string;
+export interface DocumentDescription {
+  readonly Sha1?: string;
+  readonly Hash?: string;
+  readonly HashType?: string;
+  readonly Name?: string;
+  readonly DisplayName?: string;
+  readonly VersionName?: string;
+  readonly Owner?: string;
+  readonly CreatedDate?: Date;
+  readonly Status?: string;
+  readonly StatusInformation?: string;
+  readonly DocumentVersion?: string;
+  readonly Description?: string;
+  readonly Parameters?: [];
+  readonly PlatformTypes?: [];
+  readonly DocumentType?: string;
+  readonly SchemaVersion?: string;
+  readonly LatestVersion?: string;
+  readonly DefaultVersion?: string;
+  readonly DocumentFormat?: string;
+  readonly TargetType?: string;
+  readonly Tags?: [];
+  readonly AttachmentsInformation?: [];
+  readonly Requires?: [];
+  readonly Author?: string;
+  readonly ReviewInformation?: [];
+  readonly ApprovedVersion?: string;
+  readonly PendingReviewVersion?: string;
+  readonly ReviewStatus?: string;
 }
 
-interface DocumentFilter {
+export interface DocumentFilter {
   readonly key: string;
   readonly value: string;
 }
 
-interface DocumentIdentifier {
+export interface DocumentIdentifier {
+  readonly Name?: string;
+  readonly CreatedDate?: Date;
+  readonly DisplayName?: string;
+  readonly Owner?: string;
+  readonly VersionName?: string;
+  readonly PlatformTypes?: [];
+  readonly DocumentVersion?: string;
+  readonly DocumentType?: string;
+  readonly SchemaVersion?: string;
+  readonly DocumentFormat?: string;
+  readonly TargetType?: string;
+  readonly Tags?: [];
+  readonly Requires?: [];
+  readonly ReviewStatus?: string;
+  readonly Author?: string;
+}
+
+export interface DocumentKeyValuesFilter {
+  readonly Key?: string;
+  readonly Values?: [];
+}
+
+export interface DocumentLimitExceeded {
+  readonly Message?: string;
+}
+
+export interface DocumentMetadataResponseInfo {
+  readonly ReviewerResponse?: [];
+}
+
+export interface DocumentParameter {
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly Description?: string;
+  readonly DefaultValue?: string;
+}
+
+export interface DocumentPermissionLimit {
+  readonly Message?: string;
+}
+
+export interface DocumentRequires {
   readonly Name: string;
-  readonly CreatedDate: Date;
-  readonly DisplayName: string;
-  readonly Owner: string;
-  readonly VersionName: string;
-  readonly PlatformTypes: [];
-  readonly DocumentVersion: string;
-  readonly DocumentType: string;
-  readonly SchemaVersion: string;
-  readonly DocumentFormat: string;
-  readonly TargetType: string;
-  readonly Tags: [];
-  readonly Requires: [];
-  readonly ReviewStatus: string;
-  readonly Author: string;
+  readonly Version?: string;
 }
 
-interface DocumentKeyValuesFilter {
-  readonly Key: string;
-  readonly Values: [];
+export interface DocumentReviewCommentSource {
+  readonly Type?: string;
+  readonly Content?: string;
 }
 
-interface DocumentLimitExceeded {
-  readonly Message: string;
+export interface DocumentReviewerResponseSource {
+  readonly CreateTime?: Date;
+  readonly UpdatedTime?: Date;
+  readonly ReviewStatus?: string;
+  readonly Comment?: [];
+  readonly Reviewer?: string;
 }
 
-interface DocumentMetadataResponseInfo {
-  readonly ReviewerResponse: [];
-}
-
-interface DocumentParameter {
-  readonly Name: string;
-  readonly Type: string;
-  readonly Description: string;
-  readonly DefaultValue: string;
-}
-
-interface DocumentPermissionLimit {
-  readonly Message: string;
-}
-
-interface DocumentRequires {
-  readonly Name: string;
-  readonly Version: string;
-}
-
-interface DocumentReviewCommentSource {
-  readonly Type: string;
-  readonly Content: string;
-}
-
-interface DocumentReviewerResponseSource {
-  readonly CreateTime: Date;
-  readonly UpdatedTime: Date;
-  readonly ReviewStatus: string;
-  readonly Comment: [];
-  readonly Reviewer: string;
-}
-
-interface DocumentReviews {
+export interface DocumentReviews {
   readonly Action: string;
-  readonly Comment: [];
+  readonly Comment?: [];
 }
 
-interface DocumentVersionInfo {
-  readonly Name: string;
-  readonly DisplayName: string;
-  readonly DocumentVersion: string;
-  readonly VersionName: string;
-  readonly CreatedDate: Date;
-  readonly IsDefaultVersion: boolean;
-  readonly DocumentFormat: string;
-  readonly Status: string;
-  readonly StatusInformation: string;
-  readonly ReviewStatus: string;
+export interface DocumentVersionInfo {
+  readonly Name?: string;
+  readonly DisplayName?: string;
+  readonly DocumentVersion?: string;
+  readonly VersionName?: string;
+  readonly CreatedDate?: Date;
+  readonly IsDefaultVersion?: boolean;
+  readonly DocumentFormat?: string;
+  readonly Status?: string;
+  readonly StatusInformation?: string;
+  readonly ReviewStatus?: string;
 }
 
-interface DocumentVersionLimitExceeded {
-  readonly Message: string;
+export interface DocumentVersionLimitExceeded {
+  readonly Message?: string;
 }
 
-interface DoesNotExistException {
-  readonly Message: string;
+export interface DoesNotExistException {
+  readonly Message?: string;
 }
 
-interface DuplicateDocumentContent {
-  readonly Message: string;
+export interface DuplicateDocumentContent {
+  readonly Message?: string;
 }
 
-interface DuplicateDocumentVersionName {
-  readonly Message: string;
+export interface DuplicateDocumentVersionName {
+  readonly Message?: string;
 }
 
-interface DuplicateInstanceId {
+export interface DuplicateInstanceId {
 }
 
-interface EffectivePatch {
-  readonly Patch: Patch;
-  readonly PatchStatus: PatchStatus;
+export interface EffectivePatch {
+  readonly Patch?: Patch;
+  readonly PatchStatus?: PatchStatus;
 }
 
-interface FailedCreateAssociation {
-  readonly Entry: CreateAssociationBatchRequestEntry;
-  readonly Message: string;
-  readonly Fault: string;
+export interface FailedCreateAssociation {
+  readonly Entry?: CreateAssociationBatchRequestEntry;
+  readonly Message?: string;
+  readonly Fault?: string;
 }
 
-interface FailureDetails {
-  readonly FailureStage: string;
-  readonly FailureType: string;
-  readonly Details: {[key: string]: any};
+export interface FailureDetails {
+  readonly FailureStage?: string;
+  readonly FailureType?: string;
+  readonly Details?: {[key: string]: any};
 }
 
-interface FeatureNotAvailableException {
-  readonly Message: string;
+export interface FeatureNotAvailableException {
+  readonly Message?: string;
 }
 
-interface GetAutomationExecutionRequest {
+export interface GetAutomationExecutionRequest {
   readonly AutomationExecutionId: string;
 }
 
-interface GetAutomationExecutionResult {
-  readonly AutomationExecution: AutomationExecution;
+export interface GetAutomationExecutionResult {
+  readonly AutomationExecution?: AutomationExecution;
 }
 
-interface GetCalendarStateRequest {
+export interface GetCalendarStateRequest {
   readonly CalendarNames: [];
-  readonly AtTime: string;
+  readonly AtTime?: string;
 }
 
-interface GetCalendarStateResponse {
-  readonly State: string;
-  readonly AtTime: string;
-  readonly NextTransitionTime: string;
+export interface GetCalendarStateResponse {
+  readonly State?: string;
+  readonly AtTime?: string;
+  readonly NextTransitionTime?: string;
 }
 
-interface GetCommandInvocationRequest {
+export interface GetCommandInvocationRequest {
   readonly CommandId: string;
   readonly InstanceId: string;
-  readonly PluginName: string;
+  readonly PluginName?: string;
 }
 
-interface GetCommandInvocationResult {
-  readonly CommandId: string;
-  readonly InstanceId: string;
-  readonly Comment: string;
-  readonly DocumentName: string;
-  readonly DocumentVersion: string;
-  readonly PluginName: string;
-  readonly ResponseCode: number;
-  readonly ExecutionStartDateTime: string;
-  readonly ExecutionElapsedTime: string;
-  readonly ExecutionEndDateTime: string;
-  readonly Status: string;
-  readonly StatusDetails: string;
-  readonly StandardOutputContent: string;
-  readonly StandardOutputUrl: string;
-  readonly StandardErrorContent: string;
-  readonly StandardErrorUrl: string;
-  readonly CloudWatchOutputConfig: CloudWatchOutputConfig;
+export interface GetCommandInvocationResult {
+  readonly CommandId?: string;
+  readonly InstanceId?: string;
+  readonly Comment?: string;
+  readonly DocumentName?: string;
+  readonly DocumentVersion?: string;
+  readonly PluginName?: string;
+  readonly ResponseCode?: number;
+  readonly ExecutionStartDateTime?: string;
+  readonly ExecutionElapsedTime?: string;
+  readonly ExecutionEndDateTime?: string;
+  readonly Status?: string;
+  readonly StatusDetails?: string;
+  readonly StandardOutputContent?: string;
+  readonly StandardOutputUrl?: string;
+  readonly StandardErrorContent?: string;
+  readonly StandardErrorUrl?: string;
+  readonly CloudWatchOutputConfig?: CloudWatchOutputConfig;
 }
 
-interface GetConnectionStatusRequest {
+export interface GetConnectionStatusRequest {
   readonly Target: string;
 }
 
-interface GetConnectionStatusResponse {
-  readonly Target: string;
-  readonly Status: string;
+export interface GetConnectionStatusResponse {
+  readonly Target?: string;
+  readonly Status?: string;
 }
 
-interface GetDefaultPatchBaselineRequest {
-  readonly OperatingSystem: string;
+export interface GetDefaultPatchBaselineRequest {
+  readonly OperatingSystem?: string;
 }
 
-interface GetDefaultPatchBaselineResult {
-  readonly BaselineId: string;
-  readonly OperatingSystem: string;
+export interface GetDefaultPatchBaselineResult {
+  readonly BaselineId?: string;
+  readonly OperatingSystem?: string;
 }
 
-interface GetDeployablePatchSnapshotForInstanceRequest {
+export interface GetDeployablePatchSnapshotForInstanceRequest {
   readonly InstanceId: string;
   readonly SnapshotId: string;
-  readonly BaselineOverride: BaselineOverride;
+  readonly BaselineOverride?: BaselineOverride;
 }
 
-interface GetDeployablePatchSnapshotForInstanceResult {
-  readonly InstanceId: string;
-  readonly SnapshotId: string;
-  readonly SnapshotDownloadUrl: string;
-  readonly Product: string;
+export interface GetDeployablePatchSnapshotForInstanceResult {
+  readonly InstanceId?: string;
+  readonly SnapshotId?: string;
+  readonly SnapshotDownloadUrl?: string;
+  readonly Product?: string;
 }
 
-interface GetDocumentRequest {
+export interface GetDocumentRequest {
   readonly Name: string;
-  readonly VersionName: string;
-  readonly DocumentVersion: string;
-  readonly DocumentFormat: string;
+  readonly VersionName?: string;
+  readonly DocumentVersion?: string;
+  readonly DocumentFormat?: string;
 }
 
-interface GetDocumentResult {
-  readonly Name: string;
-  readonly CreatedDate: Date;
-  readonly DisplayName: string;
-  readonly VersionName: string;
-  readonly DocumentVersion: string;
-  readonly Status: string;
-  readonly StatusInformation: string;
-  readonly Content: string;
-  readonly DocumentType: string;
-  readonly DocumentFormat: string;
-  readonly Requires: [];
-  readonly AttachmentsContent: [];
-  readonly ReviewStatus: string;
+export interface GetDocumentResult {
+  readonly Name?: string;
+  readonly CreatedDate?: Date;
+  readonly DisplayName?: string;
+  readonly VersionName?: string;
+  readonly DocumentVersion?: string;
+  readonly Status?: string;
+  readonly StatusInformation?: string;
+  readonly Content?: string;
+  readonly DocumentType?: string;
+  readonly DocumentFormat?: string;
+  readonly Requires?: [];
+  readonly AttachmentsContent?: [];
+  readonly ReviewStatus?: string;
 }
 
-interface GetInventoryRequest {
-  readonly Filters: [];
-  readonly Aggregators: [];
-  readonly ResultAttributes: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface GetInventoryRequest {
+  readonly Filters?: [];
+  readonly Aggregators?: [];
+  readonly ResultAttributes?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetInventoryResult {
-  readonly Entities: [];
-  readonly NextToken: string;
+export interface GetInventoryResult {
+  readonly Entities?: [];
+  readonly NextToken?: string;
 }
 
-interface GetInventorySchemaRequest {
-  readonly TypeName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Aggregator: boolean;
-  readonly SubType: boolean;
+export interface GetInventorySchemaRequest {
+  readonly TypeName?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Aggregator?: boolean;
+  readonly SubType?: boolean;
 }
 
-interface GetInventorySchemaResult {
-  readonly Schemas: [];
-  readonly NextToken: string;
+export interface GetInventorySchemaResult {
+  readonly Schemas?: [];
+  readonly NextToken?: string;
 }
 
-interface GetMaintenanceWindowExecutionRequest {
+export interface GetMaintenanceWindowExecutionRequest {
   readonly WindowExecutionId: string;
 }
 
-interface GetMaintenanceWindowExecutionResult {
-  readonly WindowExecutionId: string;
-  readonly TaskIds: [];
-  readonly Status: string;
-  readonly StatusDetails: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
+export interface GetMaintenanceWindowExecutionResult {
+  readonly WindowExecutionId?: string;
+  readonly TaskIds?: [];
+  readonly Status?: string;
+  readonly StatusDetails?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
 }
 
-interface GetMaintenanceWindowExecutionTaskInvocationRequest {
+export interface GetMaintenanceWindowExecutionTaskInvocationRequest {
   readonly WindowExecutionId: string;
   readonly TaskId: string;
   readonly InvocationId: string;
 }
 
-interface GetMaintenanceWindowExecutionTaskInvocationResult {
-  readonly WindowExecutionId: string;
-  readonly TaskExecutionId: string;
-  readonly InvocationId: string;
-  readonly ExecutionId: string;
-  readonly TaskType: string;
-  readonly Parameters: string;
-  readonly Status: string;
-  readonly StatusDetails: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly OwnerInformation: string;
-  readonly WindowTargetId: string;
+export interface GetMaintenanceWindowExecutionTaskInvocationResult {
+  readonly WindowExecutionId?: string;
+  readonly TaskExecutionId?: string;
+  readonly InvocationId?: string;
+  readonly ExecutionId?: string;
+  readonly TaskType?: string;
+  readonly Parameters?: string;
+  readonly Status?: string;
+  readonly StatusDetails?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly OwnerInformation?: string;
+  readonly WindowTargetId?: string;
 }
 
-interface GetMaintenanceWindowExecutionTaskRequest {
+export interface GetMaintenanceWindowExecutionTaskRequest {
   readonly WindowExecutionId: string;
   readonly TaskId: string;
 }
 
-interface GetMaintenanceWindowExecutionTaskResult {
-  readonly WindowExecutionId: string;
-  readonly TaskExecutionId: string;
-  readonly TaskArn: string;
-  readonly ServiceRole: string;
-  readonly Type: string;
-  readonly TaskParameters: [];
-  readonly Priority: number;
-  readonly MaxConcurrency: string;
-  readonly MaxErrors: string;
-  readonly Status: string;
-  readonly StatusDetails: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
+export interface GetMaintenanceWindowExecutionTaskResult {
+  readonly WindowExecutionId?: string;
+  readonly TaskExecutionId?: string;
+  readonly TaskArn?: string;
+  readonly ServiceRole?: string;
+  readonly Type?: string;
+  readonly TaskParameters?: [];
+  readonly Priority?: number;
+  readonly MaxConcurrency?: string;
+  readonly MaxErrors?: string;
+  readonly Status?: string;
+  readonly StatusDetails?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
 }
 
-interface GetMaintenanceWindowRequest {
+export interface GetMaintenanceWindowRequest {
   readonly WindowId: string;
 }
 
-interface GetMaintenanceWindowResult {
-  readonly WindowId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly StartDate: string;
-  readonly EndDate: string;
-  readonly Schedule: string;
-  readonly ScheduleTimezone: string;
-  readonly ScheduleOffset: number;
-  readonly NextExecutionTime: string;
-  readonly Duration: number;
-  readonly Cutoff: number;
-  readonly AllowUnassociatedTargets: boolean;
-  readonly Enabled: boolean;
-  readonly CreatedDate: Date;
-  readonly ModifiedDate: Date;
+export interface GetMaintenanceWindowResult {
+  readonly WindowId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly StartDate?: string;
+  readonly EndDate?: string;
+  readonly Schedule?: string;
+  readonly ScheduleTimezone?: string;
+  readonly ScheduleOffset?: number;
+  readonly NextExecutionTime?: string;
+  readonly Duration?: number;
+  readonly Cutoff?: number;
+  readonly AllowUnassociatedTargets?: boolean;
+  readonly Enabled?: boolean;
+  readonly CreatedDate?: Date;
+  readonly ModifiedDate?: Date;
 }
 
-interface GetMaintenanceWindowTaskRequest {
-  readonly WindowId: string;
-  readonly WindowTaskId: string;
-}
-
-interface GetMaintenanceWindowTaskResult {
+export interface GetMaintenanceWindowTaskRequest {
   readonly WindowId: string;
   readonly WindowTaskId: string;
-  readonly Targets: [];
-  readonly TaskArn: string;
-  readonly ServiceRoleArn: string;
-  readonly TaskType: string;
-  readonly TaskParameters: {[key: string]: any};
-  readonly TaskInvocationParameters: MaintenanceWindowTaskInvocationParameters;
-  readonly Priority: number;
-  readonly MaxConcurrency: string;
-  readonly MaxErrors: string;
-  readonly LoggingInfo: LoggingInfo;
-  readonly Name: string;
-  readonly Description: string;
-  readonly CutoffBehavior: string;
 }
 
-interface GetOpsItemRequest {
+export interface GetMaintenanceWindowTaskResult {
+  readonly WindowId?: string;
+  readonly WindowTaskId?: string;
+  readonly Targets?: [];
+  readonly TaskArn?: string;
+  readonly ServiceRoleArn?: string;
+  readonly TaskType?: string;
+  readonly TaskParameters?: {[key: string]: any};
+  readonly TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters;
+  readonly Priority?: number;
+  readonly MaxConcurrency?: string;
+  readonly MaxErrors?: string;
+  readonly LoggingInfo?: LoggingInfo;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly CutoffBehavior?: string;
+}
+
+export interface GetOpsItemRequest {
   readonly OpsItemId: string;
 }
 
-interface GetOpsItemResponse {
-  readonly OpsItem: OpsItem;
+export interface GetOpsItemResponse {
+  readonly OpsItem?: OpsItem;
 }
 
-interface GetOpsMetadataRequest {
+export interface GetOpsMetadataRequest {
   readonly OpsMetadataArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetOpsMetadataResult {
-  readonly ResourceId: string;
-  readonly Metadata: {[key: string]: any};
-  readonly NextToken: string;
+export interface GetOpsMetadataResult {
+  readonly ResourceId?: string;
+  readonly Metadata?: {[key: string]: any};
+  readonly NextToken?: string;
 }
 
-interface GetOpsSummaryRequest {
-  readonly SyncName: string;
-  readonly Filters: [];
-  readonly Aggregators: [];
-  readonly ResultAttributes: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface GetOpsSummaryRequest {
+  readonly SyncName?: string;
+  readonly Filters?: [];
+  readonly Aggregators?: [];
+  readonly ResultAttributes?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetOpsSummaryResult {
-  readonly Entities: [];
-  readonly NextToken: string;
+export interface GetOpsSummaryResult {
+  readonly Entities?: [];
+  readonly NextToken?: string;
 }
 
-interface GetParameterHistoryRequest {
+export interface GetParameterHistoryRequest {
   readonly Name: string;
-  readonly WithDecryption: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly WithDecryption?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetParameterHistoryResult {
-  readonly Parameters: [];
-  readonly NextToken: string;
+export interface GetParameterHistoryResult {
+  readonly Parameters?: [];
+  readonly NextToken?: string;
 }
 
-interface GetParameterRequest {
+export interface GetParameterRequest {
   readonly Name: string;
-  readonly WithDecryption: boolean;
+  readonly WithDecryption?: boolean;
 }
 
-interface GetParameterResult {
-  readonly Parameter: Parameter;
+export interface GetParameterResult {
+  readonly Parameter?: Parameter;
 }
 
-interface GetParametersByPathRequest {
+export interface GetParametersByPathRequest {
   readonly Path: string;
-  readonly Recursive: boolean;
-  readonly ParameterFilters: [];
-  readonly WithDecryption: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Recursive?: boolean;
+  readonly ParameterFilters?: [];
+  readonly WithDecryption?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetParametersByPathResult {
-  readonly Parameters: [];
-  readonly NextToken: string;
+export interface GetParametersByPathResult {
+  readonly Parameters?: [];
+  readonly NextToken?: string;
 }
 
-interface GetParametersRequest {
+export interface GetParametersRequest {
   readonly Names: [];
-  readonly WithDecryption: boolean;
+  readonly WithDecryption?: boolean;
 }
 
-interface GetParametersResult {
-  readonly Parameters: [];
-  readonly InvalidParameters: [];
+export interface GetParametersResult {
+  readonly Parameters?: [];
+  readonly InvalidParameters?: [];
 }
 
-interface GetPatchBaselineForPatchGroupRequest {
+export interface GetPatchBaselineForPatchGroupRequest {
   readonly PatchGroup: string;
-  readonly OperatingSystem: string;
+  readonly OperatingSystem?: string;
 }
 
-interface GetPatchBaselineForPatchGroupResult {
+export interface GetPatchBaselineForPatchGroupResult {
+  readonly BaselineId?: string;
+  readonly PatchGroup?: string;
+  readonly OperatingSystem?: string;
+}
+
+export interface GetPatchBaselineRequest {
   readonly BaselineId: string;
-  readonly PatchGroup: string;
-  readonly OperatingSystem: string;
 }
 
-interface GetPatchBaselineRequest {
-  readonly BaselineId: string;
+export interface GetPatchBaselineResult {
+  readonly BaselineId?: string;
+  readonly Name?: string;
+  readonly OperatingSystem?: string;
+  readonly GlobalFilters?: PatchFilterGroup;
+  readonly ApprovalRules?: PatchRuleGroup;
+  readonly ApprovedPatches?: [];
+  readonly ApprovedPatchesComplianceLevel?: string;
+  readonly ApprovedPatchesEnableNonSecurity?: boolean;
+  readonly RejectedPatches?: [];
+  readonly RejectedPatchesAction?: string;
+  readonly PatchGroups?: [];
+  readonly CreatedDate?: Date;
+  readonly ModifiedDate?: Date;
+  readonly Description?: string;
+  readonly Sources?: [];
 }
 
-interface GetPatchBaselineResult {
-  readonly BaselineId: string;
-  readonly Name: string;
-  readonly OperatingSystem: string;
-  readonly GlobalFilters: PatchFilterGroup;
-  readonly ApprovalRules: PatchRuleGroup;
-  readonly ApprovedPatches: [];
-  readonly ApprovedPatchesComplianceLevel: string;
-  readonly ApprovedPatchesEnableNonSecurity: boolean;
-  readonly RejectedPatches: [];
-  readonly RejectedPatchesAction: string;
-  readonly PatchGroups: [];
-  readonly CreatedDate: Date;
-  readonly ModifiedDate: Date;
-  readonly Description: string;
-  readonly Sources: [];
-}
-
-interface GetServiceSettingRequest {
+export interface GetServiceSettingRequest {
   readonly SettingId: string;
 }
 
-interface GetServiceSettingResult {
-  readonly ServiceSetting: ServiceSetting;
+export interface GetServiceSettingResult {
+  readonly ServiceSetting?: ServiceSetting;
 }
 
-interface HierarchyLevelLimitExceededException {
-  readonly message: string;
+export interface HierarchyLevelLimitExceededException {
+  readonly message?: string;
 }
 
-interface HierarchyTypeMismatchException {
-  readonly message: string;
+export interface HierarchyTypeMismatchException {
+  readonly message?: string;
 }
 
-interface IdempotentParameterMismatch {
-  readonly Message: string;
+export interface IdempotentParameterMismatch {
+  readonly Message?: string;
 }
 
-interface IncompatiblePolicyException {
-  readonly message: string;
+export interface IncompatiblePolicyException {
+  readonly message?: string;
 }
 
-interface InstanceAggregatedAssociationOverview {
-  readonly DetailedStatus: string;
-  readonly InstanceAssociationStatusAggregatedCount: {[key: string]: any};
+export interface InstanceAggregatedAssociationOverview {
+  readonly DetailedStatus?: string;
+  readonly InstanceAssociationStatusAggregatedCount?: {[key: string]: any};
 }
 
-interface InstanceAssociation {
-  readonly AssociationId: string;
-  readonly InstanceId: string;
-  readonly Content: string;
-  readonly AssociationVersion: string;
+export interface InstanceAssociation {
+  readonly AssociationId?: string;
+  readonly InstanceId?: string;
+  readonly Content?: string;
+  readonly AssociationVersion?: string;
 }
 
-interface InstanceAssociationOutputLocation {
-  readonly S3Location: S3OutputLocation;
+export interface InstanceAssociationOutputLocation {
+  readonly S3Location?: S3OutputLocation;
 }
 
-interface InstanceAssociationOutputUrl {
-  readonly S3OutputUrl: S3OutputUrl;
+export interface InstanceAssociationOutputUrl {
+  readonly S3OutputUrl?: S3OutputUrl;
 }
 
-interface InstanceAssociationStatusInfo {
-  readonly AssociationId: string;
-  readonly Name: string;
-  readonly DocumentVersion: string;
-  readonly AssociationVersion: string;
-  readonly InstanceId: string;
-  readonly ExecutionDate: Date;
-  readonly Status: string;
-  readonly DetailedStatus: string;
-  readonly ExecutionSummary: string;
-  readonly ErrorCode: string;
-  readonly OutputUrl: InstanceAssociationOutputUrl;
-  readonly AssociationName: string;
+export interface InstanceAssociationStatusInfo {
+  readonly AssociationId?: string;
+  readonly Name?: string;
+  readonly DocumentVersion?: string;
+  readonly AssociationVersion?: string;
+  readonly InstanceId?: string;
+  readonly ExecutionDate?: Date;
+  readonly Status?: string;
+  readonly DetailedStatus?: string;
+  readonly ExecutionSummary?: string;
+  readonly ErrorCode?: string;
+  readonly OutputUrl?: InstanceAssociationOutputUrl;
+  readonly AssociationName?: string;
 }
 
-interface InstanceInformation {
-  readonly InstanceId: string;
-  readonly PingStatus: string;
-  readonly LastPingDateTime: Date;
-  readonly AgentVersion: string;
-  readonly IsLatestVersion: boolean;
-  readonly PlatformType: string;
-  readonly PlatformName: string;
-  readonly PlatformVersion: string;
-  readonly ActivationId: string;
-  readonly IamRole: string;
-  readonly RegistrationDate: Date;
-  readonly ResourceType: string;
-  readonly Name: string;
-  readonly IPAddress: string;
-  readonly ComputerName: string;
-  readonly AssociationStatus: string;
-  readonly LastAssociationExecutionDate: Date;
-  readonly LastSuccessfulAssociationExecutionDate: Date;
-  readonly AssociationOverview: InstanceAggregatedAssociationOverview;
-  readonly SourceId: string;
-  readonly SourceType: string;
+export interface InstanceInformation {
+  readonly InstanceId?: string;
+  readonly PingStatus?: string;
+  readonly LastPingDateTime?: Date;
+  readonly AgentVersion?: string;
+  readonly IsLatestVersion?: boolean;
+  readonly PlatformType?: string;
+  readonly PlatformName?: string;
+  readonly PlatformVersion?: string;
+  readonly ActivationId?: string;
+  readonly IamRole?: string;
+  readonly RegistrationDate?: Date;
+  readonly ResourceType?: string;
+  readonly Name?: string;
+  readonly IPAddress?: string;
+  readonly ComputerName?: string;
+  readonly AssociationStatus?: string;
+  readonly LastAssociationExecutionDate?: Date;
+  readonly LastSuccessfulAssociationExecutionDate?: Date;
+  readonly AssociationOverview?: InstanceAggregatedAssociationOverview;
+  readonly SourceId?: string;
+  readonly SourceType?: string;
 }
 
-interface InstanceInformationFilter {
+export interface InstanceInformationFilter {
   readonly key: string;
   readonly valueSet: [];
 }
 
-interface InstanceInformationStringFilter {
+export interface InstanceInformationStringFilter {
   readonly Key: string;
   readonly Values: [];
 }
 
-interface InstancePatchState {
+export interface InstancePatchState {
   readonly InstanceId: string;
   readonly PatchGroup: string;
   readonly BaselineId: string;
-  readonly SnapshotId: string;
-  readonly InstallOverrideList: string;
-  readonly OwnerInformation: string;
-  readonly InstalledCount: number;
-  readonly InstalledOtherCount: number;
-  readonly InstalledPendingRebootCount: number;
-  readonly InstalledRejectedCount: number;
-  readonly MissingCount: number;
-  readonly FailedCount: number;
-  readonly UnreportedNotApplicableCount: number;
-  readonly NotApplicableCount: number;
+  readonly SnapshotId?: string;
+  readonly InstallOverrideList?: string;
+  readonly OwnerInformation?: string;
+  readonly InstalledCount?: number;
+  readonly InstalledOtherCount?: number;
+  readonly InstalledPendingRebootCount?: number;
+  readonly InstalledRejectedCount?: number;
+  readonly MissingCount?: number;
+  readonly FailedCount?: number;
+  readonly UnreportedNotApplicableCount?: number;
+  readonly NotApplicableCount?: number;
   readonly OperationStartTime: Date;
   readonly OperationEndTime: Date;
   readonly Operation: string;
-  readonly LastNoRebootInstallOperationTime: Date;
-  readonly RebootOption: string;
-  readonly CriticalNonCompliantCount: number;
-  readonly SecurityNonCompliantCount: number;
-  readonly OtherNonCompliantCount: number;
+  readonly LastNoRebootInstallOperationTime?: Date;
+  readonly RebootOption?: string;
+  readonly CriticalNonCompliantCount?: number;
+  readonly SecurityNonCompliantCount?: number;
+  readonly OtherNonCompliantCount?: number;
 }
 
-interface InstancePatchStateFilter {
+export interface InstancePatchStateFilter {
   readonly Key: string;
   readonly Values: [];
   readonly Type: string;
 }
 
-interface InternalServerError {
-  readonly Message: string;
+export interface InternalServerError {
+  readonly Message?: string;
 }
 
-interface InvalidActivation {
-  readonly Message: string;
+export interface InvalidActivation {
+  readonly Message?: string;
 }
 
-interface InvalidActivationId {
-  readonly Message: string;
+export interface InvalidActivationId {
+  readonly Message?: string;
 }
 
-interface InvalidAggregatorException {
-  readonly Message: string;
+export interface InvalidAggregatorException {
+  readonly Message?: string;
 }
 
-interface InvalidAllowedPatternException {
-  readonly message: string;
+export interface InvalidAllowedPatternException {
+  readonly message?: string;
 }
 
-interface InvalidAssociation {
-  readonly Message: string;
+export interface InvalidAssociation {
+  readonly Message?: string;
 }
 
-interface InvalidAssociationVersion {
-  readonly Message: string;
+export interface InvalidAssociationVersion {
+  readonly Message?: string;
 }
 
-interface InvalidAutomationExecutionParametersException {
-  readonly Message: string;
+export interface InvalidAutomationExecutionParametersException {
+  readonly Message?: string;
 }
 
-interface InvalidAutomationSignalException {
-  readonly Message: string;
+export interface InvalidAutomationSignalException {
+  readonly Message?: string;
 }
 
-interface InvalidAutomationStatusUpdateException {
-  readonly Message: string;
+export interface InvalidAutomationStatusUpdateException {
+  readonly Message?: string;
 }
 
-interface InvalidCommandId {
+export interface InvalidCommandId {
 }
 
-interface InvalidDeleteInventoryParametersException {
-  readonly Message: string;
+export interface InvalidDeleteInventoryParametersException {
+  readonly Message?: string;
 }
 
-interface InvalidDeletionIdException {
-  readonly Message: string;
+export interface InvalidDeletionIdException {
+  readonly Message?: string;
 }
 
-interface InvalidDocument {
-  readonly Message: string;
+export interface InvalidDocument {
+  readonly Message?: string;
 }
 
-interface InvalidDocumentContent {
-  readonly Message: string;
+export interface InvalidDocumentContent {
+  readonly Message?: string;
 }
 
-interface InvalidDocumentOperation {
-  readonly Message: string;
+export interface InvalidDocumentOperation {
+  readonly Message?: string;
 }
 
-interface InvalidDocumentSchemaVersion {
-  readonly Message: string;
+export interface InvalidDocumentSchemaVersion {
+  readonly Message?: string;
 }
 
-interface InvalidDocumentType {
-  readonly Message: string;
+export interface InvalidDocumentType {
+  readonly Message?: string;
 }
 
-interface InvalidDocumentVersion {
-  readonly Message: string;
+export interface InvalidDocumentVersion {
+  readonly Message?: string;
 }
 
-interface InvalidFilter {
-  readonly Message: string;
+export interface InvalidFilter {
+  readonly Message?: string;
 }
 
-interface InvalidFilterKey {
+export interface InvalidFilterKey {
 }
 
-interface InvalidFilterOption {
-  readonly message: string;
+export interface InvalidFilterOption {
+  readonly message?: string;
 }
 
-interface InvalidFilterValue {
-  readonly Message: string;
+export interface InvalidFilterValue {
+  readonly Message?: string;
 }
 
-interface InvalidInstanceId {
-  readonly Message: string;
+export interface InvalidInstanceId {
+  readonly Message?: string;
 }
 
-interface InvalidInstanceInformationFilterValue {
-  readonly message: string;
+export interface InvalidInstanceInformationFilterValue {
+  readonly message?: string;
 }
 
-interface InvalidInventoryGroupException {
-  readonly Message: string;
+export interface InvalidInventoryGroupException {
+  readonly Message?: string;
 }
 
-interface InvalidInventoryItemContextException {
-  readonly Message: string;
+export interface InvalidInventoryItemContextException {
+  readonly Message?: string;
 }
 
-interface InvalidInventoryRequestException {
-  readonly Message: string;
+export interface InvalidInventoryRequestException {
+  readonly Message?: string;
 }
 
-interface InvalidItemContentException {
-  readonly TypeName: string;
-  readonly Message: string;
+export interface InvalidItemContentException {
+  readonly TypeName?: string;
+  readonly Message?: string;
 }
 
-interface InvalidKeyId {
-  readonly message: string;
+export interface InvalidKeyId {
+  readonly message?: string;
 }
 
-interface InvalidNextToken {
-  readonly Message: string;
+export interface InvalidNextToken {
+  readonly Message?: string;
 }
 
-interface InvalidNotificationConfig {
-  readonly Message: string;
+export interface InvalidNotificationConfig {
+  readonly Message?: string;
 }
 
-interface InvalidOptionException {
-  readonly Message: string;
+export interface InvalidOptionException {
+  readonly Message?: string;
 }
 
-interface InvalidOutputFolder {
+export interface InvalidOutputFolder {
 }
 
-interface InvalidOutputLocation {
+export interface InvalidOutputLocation {
 }
 
-interface InvalidParameters {
-  readonly Message: string;
+export interface InvalidParameters {
+  readonly Message?: string;
 }
 
-interface InvalidPermissionType {
-  readonly Message: string;
+export interface InvalidPermissionType {
+  readonly Message?: string;
 }
 
-interface InvalidPluginName {
+export interface InvalidPluginName {
 }
 
-interface InvalidPolicyAttributeException {
-  readonly message: string;
+export interface InvalidPolicyAttributeException {
+  readonly message?: string;
 }
 
-interface InvalidPolicyTypeException {
-  readonly message: string;
+export interface InvalidPolicyTypeException {
+  readonly message?: string;
 }
 
-interface InvalidResourceId {
+export interface InvalidResourceId {
 }
 
-interface InvalidResourceType {
+export interface InvalidResourceType {
 }
 
-interface InvalidResultAttributeException {
-  readonly Message: string;
+export interface InvalidResultAttributeException {
+  readonly Message?: string;
 }
 
-interface InvalidRole {
-  readonly Message: string;
+export interface InvalidRole {
+  readonly Message?: string;
 }
 
-interface InvalidSchedule {
-  readonly Message: string;
+export interface InvalidSchedule {
+  readonly Message?: string;
 }
 
-interface InvalidTarget {
-  readonly Message: string;
+export interface InvalidTarget {
+  readonly Message?: string;
 }
 
-interface InvalidTypeNameException {
-  readonly Message: string;
+export interface InvalidTypeNameException {
+  readonly Message?: string;
 }
 
-interface InvalidUpdate {
-  readonly Message: string;
+export interface InvalidUpdate {
+  readonly Message?: string;
 }
 
-interface InventoryAggregator {
-  readonly Expression: string;
-  readonly Aggregators: [];
-  readonly Groups: [];
+export interface InventoryAggregator {
+  readonly Expression?: string;
+  readonly Aggregators?: [];
+  readonly Groups?: [];
 }
 
-interface InventoryDeletionStatusItem {
-  readonly DeletionId: string;
-  readonly TypeName: string;
-  readonly DeletionStartTime: Date;
-  readonly LastStatus: string;
-  readonly LastStatusMessage: string;
-  readonly DeletionSummary: InventoryDeletionSummary;
-  readonly LastStatusUpdateTime: Date;
+export interface InventoryDeletionStatusItem {
+  readonly DeletionId?: string;
+  readonly TypeName?: string;
+  readonly DeletionStartTime?: Date;
+  readonly LastStatus?: string;
+  readonly LastStatusMessage?: string;
+  readonly DeletionSummary?: InventoryDeletionSummary;
+  readonly LastStatusUpdateTime?: Date;
 }
 
-interface InventoryDeletionSummary {
-  readonly TotalCount: number;
-  readonly RemainingCount: number;
-  readonly SummaryItems: [];
+export interface InventoryDeletionSummary {
+  readonly TotalCount?: number;
+  readonly RemainingCount?: number;
+  readonly SummaryItems?: [];
 }
 
-interface InventoryDeletionSummaryItem {
-  readonly Version: string;
-  readonly Count: number;
-  readonly RemainingCount: number;
+export interface InventoryDeletionSummaryItem {
+  readonly Version?: string;
+  readonly Count?: number;
+  readonly RemainingCount?: number;
 }
 
-interface InventoryFilter {
+export interface InventoryFilter {
   readonly Key: string;
   readonly Values: [];
-  readonly Type: string;
+  readonly Type?: string;
 }
 
-interface InventoryGroup {
+export interface InventoryGroup {
   readonly Name: string;
   readonly Filters: [];
 }
 
-interface InventoryItem {
+export interface InventoryItem {
   readonly TypeName: string;
   readonly SchemaVersion: string;
   readonly CaptureTime: string;
-  readonly ContentHash: string;
-  readonly Content: [];
-  readonly Context: {[key: string]: any};
+  readonly ContentHash?: string;
+  readonly Content?: [];
+  readonly Context?: {[key: string]: any};
 }
 
-interface InventoryItemAttribute {
+export interface InventoryItemAttribute {
   readonly Name: string;
   readonly DataType: string;
 }
 
-interface InventoryItemSchema {
+export interface InventoryItemSchema {
   readonly TypeName: string;
-  readonly Version: string;
+  readonly Version?: string;
   readonly Attributes: [];
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
 }
 
-interface InventoryResultEntity {
-  readonly Id: string;
-  readonly Data: {[key: string]: any};
+export interface InventoryResultEntity {
+  readonly Id?: string;
+  readonly Data?: {[key: string]: any};
 }
 
-interface InventoryResultItem {
+export interface InventoryResultItem {
   readonly TypeName: string;
   readonly SchemaVersion: string;
-  readonly CaptureTime: string;
-  readonly ContentHash: string;
+  readonly CaptureTime?: string;
+  readonly ContentHash?: string;
   readonly Content: [];
 }
 
-interface InvocationDoesNotExist {
+export interface InvocationDoesNotExist {
 }
 
-interface ItemContentMismatchException {
-  readonly TypeName: string;
-  readonly Message: string;
+export interface ItemContentMismatchException {
+  readonly TypeName?: string;
+  readonly Message?: string;
 }
 
-interface ItemSizeLimitExceededException {
-  readonly TypeName: string;
-  readonly Message: string;
+export interface ItemSizeLimitExceededException {
+  readonly TypeName?: string;
+  readonly Message?: string;
 }
 
-interface LabelParameterVersionRequest {
+export interface LabelParameterVersionRequest {
   readonly Name: string;
-  readonly ParameterVersion: number;
+  readonly ParameterVersion?: number;
   readonly Labels: [];
 }
 
-interface LabelParameterVersionResult {
-  readonly InvalidLabels: [];
-  readonly ParameterVersion: number;
+export interface LabelParameterVersionResult {
+  readonly InvalidLabels?: [];
+  readonly ParameterVersion?: number;
 }
 
-interface ListAssociationVersionsRequest {
+export interface ListAssociationVersionsRequest {
   readonly AssociationId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAssociationVersionsResult {
-  readonly AssociationVersions: [];
-  readonly NextToken: string;
+export interface ListAssociationVersionsResult {
+  readonly AssociationVersions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListAssociationsRequest {
-  readonly AssociationFilterList: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListAssociationsRequest {
+  readonly AssociationFilterList?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAssociationsResult {
-  readonly Associations: [];
-  readonly NextToken: string;
+export interface ListAssociationsResult {
+  readonly Associations?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCommandInvocationsRequest {
-  readonly CommandId: string;
-  readonly InstanceId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
-  readonly Details: boolean;
+export interface ListCommandInvocationsRequest {
+  readonly CommandId?: string;
+  readonly InstanceId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
+  readonly Details?: boolean;
 }
 
-interface ListCommandInvocationsResult {
-  readonly CommandInvocations: [];
-  readonly NextToken: string;
+export interface ListCommandInvocationsResult {
+  readonly CommandInvocations?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCommandsRequest {
-  readonly CommandId: string;
-  readonly InstanceId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+export interface ListCommandsRequest {
+  readonly CommandId?: string;
+  readonly InstanceId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 
-interface ListCommandsResult {
-  readonly Commands: [];
-  readonly NextToken: string;
+export interface ListCommandsResult {
+  readonly Commands?: [];
+  readonly NextToken?: string;
 }
 
-interface ListComplianceItemsRequest {
-  readonly Filters: [];
-  readonly ResourceIds: [];
-  readonly ResourceTypes: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListComplianceItemsRequest {
+  readonly Filters?: [];
+  readonly ResourceIds?: [];
+  readonly ResourceTypes?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListComplianceItemsResult {
-  readonly ComplianceItems: [];
-  readonly NextToken: string;
+export interface ListComplianceItemsResult {
+  readonly ComplianceItems?: [];
+  readonly NextToken?: string;
 }
 
-interface ListComplianceSummariesRequest {
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListComplianceSummariesRequest {
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListComplianceSummariesResult {
-  readonly ComplianceSummaryItems: [];
-  readonly NextToken: string;
+export interface ListComplianceSummariesResult {
+  readonly ComplianceSummaryItems?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDocumentMetadataHistoryRequest {
+export interface ListDocumentMetadataHistoryRequest {
   readonly Name: string;
-  readonly DocumentVersion: string;
+  readonly DocumentVersion?: string;
   readonly Metadata: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDocumentMetadataHistoryResponse {
+export interface ListDocumentMetadataHistoryResponse {
+  readonly Name?: string;
+  readonly DocumentVersion?: string;
+  readonly Author?: string;
+  readonly Metadata?: DocumentMetadataResponseInfo;
+  readonly NextToken?: string;
+}
+
+export interface ListDocumentVersionsRequest {
   readonly Name: string;
-  readonly DocumentVersion: string;
-  readonly Author: string;
-  readonly Metadata: DocumentMetadataResponseInfo;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListDocumentVersionsRequest {
-  readonly Name: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListDocumentVersionsResult {
+  readonly DocumentVersions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDocumentVersionsResult {
-  readonly DocumentVersions: [];
-  readonly NextToken: string;
+export interface ListDocumentsRequest {
+  readonly DocumentFilterList?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListDocumentsRequest {
-  readonly DocumentFilterList: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListDocumentsResult {
+  readonly DocumentIdentifiers?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDocumentsResult {
-  readonly DocumentIdentifiers: [];
-  readonly NextToken: string;
-}
-
-interface ListInventoryEntriesRequest {
+export interface ListInventoryEntriesRequest {
   readonly InstanceId: string;
   readonly TypeName: string;
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListInventoryEntriesResult {
-  readonly TypeName: string;
-  readonly InstanceId: string;
-  readonly SchemaVersion: string;
-  readonly CaptureTime: string;
-  readonly Entries: [];
-  readonly NextToken: string;
+export interface ListInventoryEntriesResult {
+  readonly TypeName?: string;
+  readonly InstanceId?: string;
+  readonly SchemaVersion?: string;
+  readonly CaptureTime?: string;
+  readonly Entries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListOpsItemEventsRequest {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListOpsItemEventsRequest {
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListOpsItemEventsResponse {
-  readonly NextToken: string;
-  readonly Summaries: [];
+export interface ListOpsItemEventsResponse {
+  readonly NextToken?: string;
+  readonly Summaries?: [];
 }
 
-interface ListOpsItemRelatedItemsRequest {
-  readonly OpsItemId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListOpsItemRelatedItemsRequest {
+  readonly OpsItemId?: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListOpsItemRelatedItemsResponse {
-  readonly NextToken: string;
-  readonly Summaries: [];
+export interface ListOpsItemRelatedItemsResponse {
+  readonly NextToken?: string;
+  readonly Summaries?: [];
 }
 
-interface ListOpsMetadataRequest {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListOpsMetadataRequest {
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListOpsMetadataResult {
-  readonly OpsMetadataList: [];
-  readonly NextToken: string;
+export interface ListOpsMetadataResult {
+  readonly OpsMetadataList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListResourceComplianceSummariesRequest {
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListResourceComplianceSummariesRequest {
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListResourceComplianceSummariesResult {
-  readonly ResourceComplianceSummaryItems: [];
-  readonly NextToken: string;
+export interface ListResourceComplianceSummariesResult {
+  readonly ResourceComplianceSummaryItems?: [];
+  readonly NextToken?: string;
 }
 
-interface ListResourceDataSyncRequest {
-  readonly SyncType: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListResourceDataSyncRequest {
+  readonly SyncType?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListResourceDataSyncResult {
-  readonly ResourceDataSyncItems: [];
-  readonly NextToken: string;
+export interface ListResourceDataSyncResult {
+  readonly ResourceDataSyncItems?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceType: string;
   readonly ResourceId: string;
 }
 
-interface ListTagsForResourceResult {
-  readonly TagList: [];
+export interface ListTagsForResourceResult {
+  readonly TagList?: [];
 }
 
-interface LoggingInfo {
+export interface LoggingInfo {
   readonly S3BucketName: string;
-  readonly S3KeyPrefix: string;
+  readonly S3KeyPrefix?: string;
   readonly S3Region: string;
 }
 
-interface MaintenanceWindowAutomationParameters {
-  readonly DocumentVersion: string;
-  readonly Parameters: {[key: string]: any};
+export interface MaintenanceWindowAutomationParameters {
+  readonly DocumentVersion?: string;
+  readonly Parameters?: {[key: string]: any};
 }
 
-interface MaintenanceWindowExecution {
-  readonly WindowId: string;
-  readonly WindowExecutionId: string;
-  readonly Status: string;
-  readonly StatusDetails: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
+export interface MaintenanceWindowExecution {
+  readonly WindowId?: string;
+  readonly WindowExecutionId?: string;
+  readonly Status?: string;
+  readonly StatusDetails?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
 }
 
-interface MaintenanceWindowExecutionTaskIdentity {
-  readonly WindowExecutionId: string;
-  readonly TaskExecutionId: string;
-  readonly Status: string;
-  readonly StatusDetails: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly TaskArn: string;
-  readonly TaskType: string;
+export interface MaintenanceWindowExecutionTaskIdentity {
+  readonly WindowExecutionId?: string;
+  readonly TaskExecutionId?: string;
+  readonly Status?: string;
+  readonly StatusDetails?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly TaskArn?: string;
+  readonly TaskType?: string;
 }
 
-interface MaintenanceWindowExecutionTaskInvocationIdentity {
-  readonly WindowExecutionId: string;
-  readonly TaskExecutionId: string;
-  readonly InvocationId: string;
-  readonly ExecutionId: string;
-  readonly TaskType: string;
-  readonly Parameters: string;
-  readonly Status: string;
-  readonly StatusDetails: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly OwnerInformation: string;
-  readonly WindowTargetId: string;
+export interface MaintenanceWindowExecutionTaskInvocationIdentity {
+  readonly WindowExecutionId?: string;
+  readonly TaskExecutionId?: string;
+  readonly InvocationId?: string;
+  readonly ExecutionId?: string;
+  readonly TaskType?: string;
+  readonly Parameters?: string;
+  readonly Status?: string;
+  readonly StatusDetails?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly OwnerInformation?: string;
+  readonly WindowTargetId?: string;
 }
 
-interface MaintenanceWindowFilter {
-  readonly Key: string;
-  readonly Values: [];
+export interface MaintenanceWindowFilter {
+  readonly Key?: string;
+  readonly Values?: [];
 }
 
-interface MaintenanceWindowIdentity {
-  readonly WindowId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Enabled: boolean;
-  readonly Duration: number;
-  readonly Cutoff: number;
-  readonly Schedule: string;
-  readonly ScheduleTimezone: string;
-  readonly ScheduleOffset: number;
-  readonly EndDate: string;
-  readonly StartDate: string;
-  readonly NextExecutionTime: string;
+export interface MaintenanceWindowIdentity {
+  readonly WindowId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Enabled?: boolean;
+  readonly Duration?: number;
+  readonly Cutoff?: number;
+  readonly Schedule?: string;
+  readonly ScheduleTimezone?: string;
+  readonly ScheduleOffset?: number;
+  readonly EndDate?: string;
+  readonly StartDate?: string;
+  readonly NextExecutionTime?: string;
 }
 
-interface MaintenanceWindowIdentityForTarget {
-  readonly WindowId: string;
-  readonly Name: string;
+export interface MaintenanceWindowIdentityForTarget {
+  readonly WindowId?: string;
+  readonly Name?: string;
 }
 
-interface MaintenanceWindowLambdaParameters {
-  readonly ClientContext: string;
-  readonly Qualifier: string;
-  readonly Payload: unknown;
+export interface MaintenanceWindowLambdaParameters {
+  readonly ClientContext?: string;
+  readonly Qualifier?: string;
+  readonly Payload?: unknown;
 }
 
-interface MaintenanceWindowRunCommandParameters {
-  readonly Comment: string;
-  readonly CloudWatchOutputConfig: CloudWatchOutputConfig;
-  readonly DocumentHash: string;
-  readonly DocumentHashType: string;
-  readonly DocumentVersion: string;
-  readonly NotificationConfig: NotificationConfig;
-  readonly OutputS3BucketName: string;
-  readonly OutputS3KeyPrefix: string;
-  readonly Parameters: {[key: string]: any};
-  readonly ServiceRoleArn: string;
-  readonly TimeoutSeconds: number;
+export interface MaintenanceWindowRunCommandParameters {
+  readonly Comment?: string;
+  readonly CloudWatchOutputConfig?: CloudWatchOutputConfig;
+  readonly DocumentHash?: string;
+  readonly DocumentHashType?: string;
+  readonly DocumentVersion?: string;
+  readonly NotificationConfig?: NotificationConfig;
+  readonly OutputS3BucketName?: string;
+  readonly OutputS3KeyPrefix?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly ServiceRoleArn?: string;
+  readonly TimeoutSeconds?: number;
 }
 
-interface MaintenanceWindowStepFunctionsParameters {
-  readonly Input: string;
-  readonly Name: string;
+export interface MaintenanceWindowStepFunctionsParameters {
+  readonly Input?: string;
+  readonly Name?: string;
 }
 
-interface MaintenanceWindowTarget {
-  readonly WindowId: string;
-  readonly WindowTargetId: string;
-  readonly ResourceType: string;
-  readonly Targets: [];
-  readonly OwnerInformation: string;
-  readonly Name: string;
-  readonly Description: string;
+export interface MaintenanceWindowTarget {
+  readonly WindowId?: string;
+  readonly WindowTargetId?: string;
+  readonly ResourceType?: string;
+  readonly Targets?: [];
+  readonly OwnerInformation?: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 
-interface MaintenanceWindowTask {
-  readonly WindowId: string;
-  readonly WindowTaskId: string;
-  readonly TaskArn: string;
-  readonly Type: string;
-  readonly Targets: [];
-  readonly TaskParameters: {[key: string]: any};
-  readonly Priority: number;
-  readonly LoggingInfo: LoggingInfo;
-  readonly ServiceRoleArn: string;
-  readonly MaxConcurrency: string;
-  readonly MaxErrors: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly CutoffBehavior: string;
+export interface MaintenanceWindowTask {
+  readonly WindowId?: string;
+  readonly WindowTaskId?: string;
+  readonly TaskArn?: string;
+  readonly Type?: string;
+  readonly Targets?: [];
+  readonly TaskParameters?: {[key: string]: any};
+  readonly Priority?: number;
+  readonly LoggingInfo?: LoggingInfo;
+  readonly ServiceRoleArn?: string;
+  readonly MaxConcurrency?: string;
+  readonly MaxErrors?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly CutoffBehavior?: string;
 }
 
-interface MaintenanceWindowTaskInvocationParameters {
-  readonly RunCommand: MaintenanceWindowRunCommandParameters;
-  readonly Automation: MaintenanceWindowAutomationParameters;
-  readonly StepFunctions: MaintenanceWindowStepFunctionsParameters;
-  readonly Lambda: MaintenanceWindowLambdaParameters;
+export interface MaintenanceWindowTaskInvocationParameters {
+  readonly RunCommand?: MaintenanceWindowRunCommandParameters;
+  readonly Automation?: MaintenanceWindowAutomationParameters;
+  readonly StepFunctions?: MaintenanceWindowStepFunctionsParameters;
+  readonly Lambda?: MaintenanceWindowLambdaParameters;
 }
 
-interface MaintenanceWindowTaskParameterValueExpression {
-  readonly Values: [];
+export interface MaintenanceWindowTaskParameterValueExpression {
+  readonly Values?: [];
 }
 
-interface MaxDocumentSizeExceeded {
-  readonly Message: string;
+export interface MaxDocumentSizeExceeded {
+  readonly Message?: string;
 }
 
-interface MetadataValue {
-  readonly Value: string;
+export interface MetadataValue {
+  readonly Value?: string;
 }
 
-interface ModifyDocumentPermissionRequest {
+export interface ModifyDocumentPermissionRequest {
   readonly Name: string;
   readonly PermissionType: string;
-  readonly AccountIdsToAdd: [];
-  readonly AccountIdsToRemove: [];
-  readonly SharedDocumentVersion: string;
+  readonly AccountIdsToAdd?: [];
+  readonly AccountIdsToRemove?: [];
+  readonly SharedDocumentVersion?: string;
 }
 
-interface ModifyDocumentPermissionResponse {
+export interface ModifyDocumentPermissionResponse {
 }
 
-interface NonCompliantSummary {
-  readonly NonCompliantCount: number;
-  readonly SeveritySummary: SeveritySummary;
+export interface NonCompliantSummary {
+  readonly NonCompliantCount?: number;
+  readonly SeveritySummary?: SeveritySummary;
 }
 
-interface NotificationConfig {
-  readonly NotificationArn: string;
-  readonly NotificationEvents: [];
-  readonly NotificationType: string;
+export interface NotificationConfig {
+  readonly NotificationArn?: string;
+  readonly NotificationEvents?: [];
+  readonly NotificationType?: string;
 }
 
-interface OpsAggregator {
-  readonly AggregatorType: string;
+export interface OpsAggregator {
+  readonly AggregatorType?: string;
+  readonly TypeName?: string;
+  readonly AttributeName?: string;
+  readonly Values?: {[key: string]: any};
+  readonly Filters?: [];
+  readonly Aggregators?: [];
+}
+
+export interface OpsEntity {
+  readonly Id?: string;
+  readonly Data?: {[key: string]: any};
+}
+
+export interface OpsEntityItem {
+  readonly CaptureTime?: string;
+  readonly Content?: [];
+}
+
+export interface OpsFilter {
+  readonly Key: string;
+  readonly Values: [];
+  readonly Type?: string;
+}
+
+export interface OpsItem {
+  readonly CreatedBy?: string;
+  readonly OpsItemType?: string;
+  readonly CreatedTime?: Date;
+  readonly Description?: string;
+  readonly LastModifiedBy?: string;
+  readonly LastModifiedTime?: Date;
+  readonly Notifications?: [];
+  readonly Priority?: number;
+  readonly RelatedOpsItems?: [];
+  readonly Status?: string;
+  readonly OpsItemId?: string;
+  readonly Version?: string;
+  readonly Title?: string;
+  readonly Source?: string;
+  readonly OperationalData?: {[key: string]: any};
+  readonly Category?: string;
+  readonly Severity?: string;
+  readonly ActualStartTime?: Date;
+  readonly ActualEndTime?: Date;
+  readonly PlannedStartTime?: Date;
+  readonly PlannedEndTime?: Date;
+}
+
+export interface OpsItemAlreadyExistsException {
+  readonly Message?: string;
+  readonly OpsItemId?: string;
+}
+
+export interface OpsItemDataValue {
+  readonly Value?: string;
+  readonly Type?: string;
+}
+
+export interface OpsItemEventFilter {
+  readonly Key: string;
+  readonly Values: [];
+  readonly Operator: string;
+}
+
+export interface OpsItemEventSummary {
+  readonly OpsItemId?: string;
+  readonly EventId?: string;
+  readonly Source?: string;
+  readonly DetailType?: string;
+  readonly Detail?: string;
+  readonly CreatedBy?: OpsItemIdentity;
+  readonly CreatedTime?: Date;
+}
+
+export interface OpsItemFilter {
+  readonly Key: string;
+  readonly Values: [];
+  readonly Operator: string;
+}
+
+export interface OpsItemIdentity {
+  readonly Arn?: string;
+}
+
+export interface OpsItemInvalidParameterException {
+  readonly ParameterNames?: [];
+  readonly Message?: string;
+}
+
+export interface OpsItemLimitExceededException {
+  readonly ResourceTypes?: [];
+  readonly Limit?: number;
+  readonly LimitType?: string;
+  readonly Message?: string;
+}
+
+export interface OpsItemNotFoundException {
+  readonly Message?: string;
+}
+
+export interface OpsItemNotification {
+  readonly Arn?: string;
+}
+
+export interface OpsItemRelatedItemAlreadyExistsException {
+  readonly Message?: string;
+  readonly ResourceUri?: string;
+  readonly OpsItemId?: string;
+}
+
+export interface OpsItemRelatedItemAssociationNotFoundException {
+  readonly Message?: string;
+}
+
+export interface OpsItemRelatedItemSummary {
+  readonly OpsItemId?: string;
+  readonly AssociationId?: string;
+  readonly ResourceType?: string;
+  readonly AssociationType?: string;
+  readonly ResourceUri?: string;
+  readonly CreatedBy?: OpsItemIdentity;
+  readonly CreatedTime?: Date;
+  readonly LastModifiedBy?: OpsItemIdentity;
+  readonly LastModifiedTime?: Date;
+}
+
+export interface OpsItemRelatedItemsFilter {
+  readonly Key: string;
+  readonly Values: [];
+  readonly Operator: string;
+}
+
+export interface OpsItemSummary {
+  readonly CreatedBy?: string;
+  readonly CreatedTime?: Date;
+  readonly LastModifiedBy?: string;
+  readonly LastModifiedTime?: Date;
+  readonly Priority?: number;
+  readonly Source?: string;
+  readonly Status?: string;
+  readonly OpsItemId?: string;
+  readonly Title?: string;
+  readonly OperationalData?: {[key: string]: any};
+  readonly Category?: string;
+  readonly Severity?: string;
+  readonly OpsItemType?: string;
+  readonly ActualStartTime?: Date;
+  readonly ActualEndTime?: Date;
+  readonly PlannedStartTime?: Date;
+  readonly PlannedEndTime?: Date;
+}
+
+export interface OpsMetadata {
+  readonly ResourceId?: string;
+  readonly OpsMetadataArn?: string;
+  readonly LastModifiedDate?: Date;
+  readonly LastModifiedUser?: string;
+  readonly CreationDate?: Date;
+}
+
+export interface OpsMetadataAlreadyExistsException {
+  readonly message?: string;
+}
+
+export interface OpsMetadataFilter {
+  readonly Key: string;
+  readonly Values: [];
+}
+
+export interface OpsMetadataInvalidArgumentException {
+  readonly message?: string;
+}
+
+export interface OpsMetadataKeyLimitExceededException {
+  readonly message?: string;
+}
+
+export interface OpsMetadataLimitExceededException {
+  readonly message?: string;
+}
+
+export interface OpsMetadataNotFoundException {
+  readonly message?: string;
+}
+
+export interface OpsMetadataTooManyUpdatesException {
+  readonly message?: string;
+}
+
+export interface OpsResultAttribute {
   readonly TypeName: string;
-  readonly AttributeName: string;
-  readonly Values: {[key: string]: any};
-  readonly Filters: [];
-  readonly Aggregators: [];
 }
 
-interface OpsEntity {
-  readonly Id: string;
-  readonly Data: {[key: string]: any};
+export interface OutputSource {
+  readonly OutputSourceId?: string;
+  readonly OutputSourceType?: string;
 }
 
-interface OpsEntityItem {
-  readonly CaptureTime: string;
-  readonly Content: [];
+export interface Parameter {
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly Value?: string;
+  readonly Version?: number;
+  readonly Selector?: string;
+  readonly SourceResult?: string;
+  readonly LastModifiedDate?: Date;
+  readonly ARN?: string;
+  readonly DataType?: string;
 }
 
-interface OpsFilter {
+export interface ParameterAlreadyExists {
+  readonly message?: string;
+}
+
+export interface ParameterHistory {
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly KeyId?: string;
+  readonly LastModifiedDate?: Date;
+  readonly LastModifiedUser?: string;
+  readonly Description?: string;
+  readonly Value?: string;
+  readonly AllowedPattern?: string;
+  readonly Version?: number;
+  readonly Labels?: [];
+  readonly Tier?: string;
+  readonly Policies?: [];
+  readonly DataType?: string;
+}
+
+export interface ParameterInlinePolicy {
+  readonly PolicyText?: string;
+  readonly PolicyType?: string;
+  readonly PolicyStatus?: string;
+}
+
+export interface ParameterLimitExceeded {
+  readonly message?: string;
+}
+
+export interface ParameterMaxVersionLimitExceeded {
+  readonly message?: string;
+}
+
+export interface ParameterMetadata {
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly KeyId?: string;
+  readonly LastModifiedDate?: Date;
+  readonly LastModifiedUser?: string;
+  readonly Description?: string;
+  readonly AllowedPattern?: string;
+  readonly Version?: number;
+  readonly Tier?: string;
+  readonly Policies?: [];
+  readonly DataType?: string;
+}
+
+export interface ParameterNotFound {
+  readonly message?: string;
+}
+
+export interface ParameterPatternMismatchException {
+  readonly message?: string;
+}
+
+export interface ParameterStringFilter {
   readonly Key: string;
-  readonly Values: [];
-  readonly Type: string;
+  readonly Option?: string;
+  readonly Values?: [];
 }
 
-interface OpsItem {
-  readonly CreatedBy: string;
-  readonly OpsItemType: string;
-  readonly CreatedTime: Date;
-  readonly Description: string;
-  readonly LastModifiedBy: string;
-  readonly LastModifiedTime: Date;
-  readonly Notifications: [];
-  readonly Priority: number;
-  readonly RelatedOpsItems: [];
-  readonly Status: string;
-  readonly OpsItemId: string;
-  readonly Version: string;
-  readonly Title: string;
-  readonly Source: string;
-  readonly OperationalData: {[key: string]: any};
-  readonly Category: string;
-  readonly Severity: string;
-  readonly ActualStartTime: Date;
-  readonly ActualEndTime: Date;
-  readonly PlannedStartTime: Date;
-  readonly PlannedEndTime: Date;
+export interface ParameterVersionLabelLimitExceeded {
+  readonly message?: string;
 }
 
-interface OpsItemAlreadyExistsException {
-  readonly Message: string;
-  readonly OpsItemId: string;
+export interface ParameterVersionNotFound {
+  readonly message?: string;
 }
 
-interface OpsItemDataValue {
-  readonly Value: string;
-  readonly Type: string;
-}
-
-interface OpsItemEventFilter {
-  readonly Key: string;
-  readonly Values: [];
-  readonly Operator: string;
-}
-
-interface OpsItemEventSummary {
-  readonly OpsItemId: string;
-  readonly EventId: string;
-  readonly Source: string;
-  readonly DetailType: string;
-  readonly Detail: string;
-  readonly CreatedBy: OpsItemIdentity;
-  readonly CreatedTime: Date;
-}
-
-interface OpsItemFilter {
-  readonly Key: string;
-  readonly Values: [];
-  readonly Operator: string;
-}
-
-interface OpsItemIdentity {
-  readonly Arn: string;
-}
-
-interface OpsItemInvalidParameterException {
-  readonly ParameterNames: [];
-  readonly Message: string;
-}
-
-interface OpsItemLimitExceededException {
-  readonly ResourceTypes: [];
-  readonly Limit: number;
-  readonly LimitType: string;
-  readonly Message: string;
-}
-
-interface OpsItemNotFoundException {
-  readonly Message: string;
-}
-
-interface OpsItemNotification {
-  readonly Arn: string;
-}
-
-interface OpsItemRelatedItemAlreadyExistsException {
-  readonly Message: string;
-  readonly ResourceUri: string;
-  readonly OpsItemId: string;
-}
-
-interface OpsItemRelatedItemAssociationNotFoundException {
-  readonly Message: string;
-}
-
-interface OpsItemRelatedItemSummary {
-  readonly OpsItemId: string;
-  readonly AssociationId: string;
-  readonly ResourceType: string;
-  readonly AssociationType: string;
-  readonly ResourceUri: string;
-  readonly CreatedBy: OpsItemIdentity;
-  readonly CreatedTime: Date;
-  readonly LastModifiedBy: OpsItemIdentity;
-  readonly LastModifiedTime: Date;
-}
-
-interface OpsItemRelatedItemsFilter {
-  readonly Key: string;
-  readonly Values: [];
-  readonly Operator: string;
-}
-
-interface OpsItemSummary {
-  readonly CreatedBy: string;
-  readonly CreatedTime: Date;
-  readonly LastModifiedBy: string;
-  readonly LastModifiedTime: Date;
-  readonly Priority: number;
-  readonly Source: string;
-  readonly Status: string;
-  readonly OpsItemId: string;
-  readonly Title: string;
-  readonly OperationalData: {[key: string]: any};
-  readonly Category: string;
-  readonly Severity: string;
-  readonly OpsItemType: string;
-  readonly ActualStartTime: Date;
-  readonly ActualEndTime: Date;
-  readonly PlannedStartTime: Date;
-  readonly PlannedEndTime: Date;
-}
-
-interface OpsMetadata {
-  readonly ResourceId: string;
-  readonly OpsMetadataArn: string;
-  readonly LastModifiedDate: Date;
-  readonly LastModifiedUser: string;
-  readonly CreationDate: Date;
-}
-
-interface OpsMetadataAlreadyExistsException {
-  readonly message: string;
-}
-
-interface OpsMetadataFilter {
+export interface ParametersFilter {
   readonly Key: string;
   readonly Values: [];
 }
 
-interface OpsMetadataInvalidArgumentException {
-  readonly message: string;
+export interface Patch {
+  readonly Id?: string;
+  readonly ReleaseDate?: Date;
+  readonly Title?: string;
+  readonly Description?: string;
+  readonly ContentUrl?: string;
+  readonly Vendor?: string;
+  readonly ProductFamily?: string;
+  readonly Product?: string;
+  readonly Classification?: string;
+  readonly MsrcSeverity?: string;
+  readonly KbNumber?: string;
+  readonly MsrcNumber?: string;
+  readonly Language?: string;
+  readonly AdvisoryIds?: [];
+  readonly BugzillaIds?: [];
+  readonly CVEIds?: [];
+  readonly Name?: string;
+  readonly Epoch?: number;
+  readonly Version?: string;
+  readonly Release?: string;
+  readonly Arch?: string;
+  readonly Severity?: string;
+  readonly Repository?: string;
 }
 
-interface OpsMetadataKeyLimitExceededException {
-  readonly message: string;
+export interface PatchBaselineIdentity {
+  readonly BaselineId?: string;
+  readonly BaselineName?: string;
+  readonly OperatingSystem?: string;
+  readonly BaselineDescription?: string;
+  readonly DefaultBaseline?: boolean;
 }
 
-interface OpsMetadataLimitExceededException {
-  readonly message: string;
-}
-
-interface OpsMetadataNotFoundException {
-  readonly message: string;
-}
-
-interface OpsMetadataTooManyUpdatesException {
-  readonly message: string;
-}
-
-interface OpsResultAttribute {
-  readonly TypeName: string;
-}
-
-interface OutputSource {
-  readonly OutputSourceId: string;
-  readonly OutputSourceType: string;
-}
-
-interface Parameter {
-  readonly Name: string;
-  readonly Type: string;
-  readonly Value: string;
-  readonly Version: number;
-  readonly Selector: string;
-  readonly SourceResult: string;
-  readonly LastModifiedDate: Date;
-  readonly ARN: string;
-  readonly DataType: string;
-}
-
-interface ParameterAlreadyExists {
-  readonly message: string;
-}
-
-interface ParameterHistory {
-  readonly Name: string;
-  readonly Type: string;
-  readonly KeyId: string;
-  readonly LastModifiedDate: Date;
-  readonly LastModifiedUser: string;
-  readonly Description: string;
-  readonly Value: string;
-  readonly AllowedPattern: string;
-  readonly Version: number;
-  readonly Labels: [];
-  readonly Tier: string;
-  readonly Policies: [];
-  readonly DataType: string;
-}
-
-interface ParameterInlinePolicy {
-  readonly PolicyText: string;
-  readonly PolicyType: string;
-  readonly PolicyStatus: string;
-}
-
-interface ParameterLimitExceeded {
-  readonly message: string;
-}
-
-interface ParameterMaxVersionLimitExceeded {
-  readonly message: string;
-}
-
-interface ParameterMetadata {
-  readonly Name: string;
-  readonly Type: string;
-  readonly KeyId: string;
-  readonly LastModifiedDate: Date;
-  readonly LastModifiedUser: string;
-  readonly Description: string;
-  readonly AllowedPattern: string;
-  readonly Version: number;
-  readonly Tier: string;
-  readonly Policies: [];
-  readonly DataType: string;
-}
-
-interface ParameterNotFound {
-  readonly message: string;
-}
-
-interface ParameterPatternMismatchException {
-  readonly message: string;
-}
-
-interface ParameterStringFilter {
-  readonly Key: string;
-  readonly Option: string;
-  readonly Values: [];
-}
-
-interface ParameterVersionLabelLimitExceeded {
-  readonly message: string;
-}
-
-interface ParameterVersionNotFound {
-  readonly message: string;
-}
-
-interface ParametersFilter {
-  readonly Key: string;
-  readonly Values: [];
-}
-
-interface Patch {
-  readonly Id: string;
-  readonly ReleaseDate: Date;
-  readonly Title: string;
-  readonly Description: string;
-  readonly ContentUrl: string;
-  readonly Vendor: string;
-  readonly ProductFamily: string;
-  readonly Product: string;
-  readonly Classification: string;
-  readonly MsrcSeverity: string;
-  readonly KbNumber: string;
-  readonly MsrcNumber: string;
-  readonly Language: string;
-  readonly AdvisoryIds: [];
-  readonly BugzillaIds: [];
-  readonly CVEIds: [];
-  readonly Name: string;
-  readonly Epoch: number;
-  readonly Version: string;
-  readonly Release: string;
-  readonly Arch: string;
-  readonly Severity: string;
-  readonly Repository: string;
-}
-
-interface PatchBaselineIdentity {
-  readonly BaselineId: string;
-  readonly BaselineName: string;
-  readonly OperatingSystem: string;
-  readonly BaselineDescription: string;
-  readonly DefaultBaseline: boolean;
-}
-
-interface PatchComplianceData {
+export interface PatchComplianceData {
   readonly Title: string;
   readonly KBId: string;
   readonly Classification: string;
   readonly Severity: string;
   readonly State: string;
   readonly InstalledTime: Date;
-  readonly CVEIds: string;
+  readonly CVEIds?: string;
 }
 
-interface PatchFilter {
+export interface PatchFilter {
   readonly Key: string;
   readonly Values: [];
 }
 
-interface PatchFilterGroup {
+export interface PatchFilterGroup {
   readonly PatchFilters: [];
 }
 
-interface PatchGroupPatchBaselineMapping {
-  readonly PatchGroup: string;
-  readonly BaselineIdentity: PatchBaselineIdentity;
+export interface PatchGroupPatchBaselineMapping {
+  readonly PatchGroup?: string;
+  readonly BaselineIdentity?: PatchBaselineIdentity;
 }
 
-interface PatchOrchestratorFilter {
-  readonly Key: string;
-  readonly Values: [];
+export interface PatchOrchestratorFilter {
+  readonly Key?: string;
+  readonly Values?: [];
 }
 
-interface PatchRule {
+export interface PatchRule {
   readonly PatchFilterGroup: PatchFilterGroup;
-  readonly ComplianceLevel: string;
-  readonly ApproveAfterDays: number;
-  readonly ApproveUntilDate: string;
-  readonly EnableNonSecurity: boolean;
+  readonly ComplianceLevel?: string;
+  readonly ApproveAfterDays?: number;
+  readonly ApproveUntilDate?: string;
+  readonly EnableNonSecurity?: boolean;
 }
 
-interface PatchRuleGroup {
+export interface PatchRuleGroup {
   readonly PatchRules: [];
 }
 
-interface PatchSource {
+export interface PatchSource {
   readonly Name: string;
   readonly Products: [];
   readonly Configuration: string;
 }
 
-interface PatchStatus {
-  readonly DeploymentStatus: string;
-  readonly ComplianceLevel: string;
-  readonly ApprovalDate: Date;
+export interface PatchStatus {
+  readonly DeploymentStatus?: string;
+  readonly ComplianceLevel?: string;
+  readonly ApprovalDate?: Date;
 }
 
-interface PoliciesLimitExceededException {
-  readonly message: string;
+export interface PoliciesLimitExceededException {
+  readonly message?: string;
 }
 
-interface ProgressCounters {
-  readonly TotalSteps: number;
-  readonly SuccessSteps: number;
-  readonly FailedSteps: number;
-  readonly CancelledSteps: number;
-  readonly TimedOutSteps: number;
+export interface ProgressCounters {
+  readonly TotalSteps?: number;
+  readonly SuccessSteps?: number;
+  readonly FailedSteps?: number;
+  readonly CancelledSteps?: number;
+  readonly TimedOutSteps?: number;
 }
 
-interface PutComplianceItemsRequest {
+export interface PutComplianceItemsRequest {
   readonly ResourceId: string;
   readonly ResourceType: string;
   readonly ComplianceType: string;
   readonly ExecutionSummary: ComplianceExecutionSummary;
   readonly Items: [];
-  readonly ItemContentHash: string;
-  readonly UploadType: string;
+  readonly ItemContentHash?: string;
+  readonly UploadType?: string;
 }
 
-interface PutComplianceItemsResult {
+export interface PutComplianceItemsResult {
 }
 
-interface PutInventoryRequest {
+export interface PutInventoryRequest {
   readonly InstanceId: string;
   readonly Items: [];
 }
 
-interface PutInventoryResult {
-  readonly Message: string;
+export interface PutInventoryResult {
+  readonly Message?: string;
 }
 
-interface PutParameterRequest {
+export interface PutParameterRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Value: string;
-  readonly Type: string;
-  readonly KeyId: string;
-  readonly Overwrite: boolean;
-  readonly AllowedPattern: string;
-  readonly Tags: [];
-  readonly Tier: string;
-  readonly Policies: string;
-  readonly DataType: string;
+  readonly Type?: string;
+  readonly KeyId?: string;
+  readonly Overwrite?: boolean;
+  readonly AllowedPattern?: string;
+  readonly Tags?: [];
+  readonly Tier?: string;
+  readonly Policies?: string;
+  readonly DataType?: string;
 }
 
-interface PutParameterResult {
-  readonly Version: number;
-  readonly Tier: string;
+export interface PutParameterResult {
+  readonly Version?: number;
+  readonly Tier?: string;
 }
 
-interface RegisterDefaultPatchBaselineRequest {
+export interface RegisterDefaultPatchBaselineRequest {
   readonly BaselineId: string;
 }
 
-interface RegisterDefaultPatchBaselineResult {
-  readonly BaselineId: string;
+export interface RegisterDefaultPatchBaselineResult {
+  readonly BaselineId?: string;
 }
 
-interface RegisterPatchBaselineForPatchGroupRequest {
-  readonly BaselineId: string;
-  readonly PatchGroup: string;
-}
-
-interface RegisterPatchBaselineForPatchGroupResult {
+export interface RegisterPatchBaselineForPatchGroupRequest {
   readonly BaselineId: string;
   readonly PatchGroup: string;
 }
 
-interface RegisterTargetWithMaintenanceWindowRequest {
+export interface RegisterPatchBaselineForPatchGroupResult {
+  readonly BaselineId?: string;
+  readonly PatchGroup?: string;
+}
+
+export interface RegisterTargetWithMaintenanceWindowRequest {
   readonly WindowId: string;
   readonly ResourceType: string;
   readonly Targets: [];
-  readonly OwnerInformation: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly ClientToken: string;
+  readonly OwnerInformation?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly ClientToken?: string;
 }
 
-interface RegisterTargetWithMaintenanceWindowResult {
-  readonly WindowTargetId: string;
+export interface RegisterTargetWithMaintenanceWindowResult {
+  readonly WindowTargetId?: string;
 }
 
-interface RegisterTaskWithMaintenanceWindowRequest {
+export interface RegisterTaskWithMaintenanceWindowRequest {
   readonly WindowId: string;
-  readonly Targets: [];
+  readonly Targets?: [];
   readonly TaskArn: string;
-  readonly ServiceRoleArn: string;
+  readonly ServiceRoleArn?: string;
   readonly TaskType: string;
-  readonly TaskParameters: {[key: string]: any};
-  readonly TaskInvocationParameters: MaintenanceWindowTaskInvocationParameters;
-  readonly Priority: number;
-  readonly MaxConcurrency: string;
-  readonly MaxErrors: string;
-  readonly LoggingInfo: LoggingInfo;
-  readonly Name: string;
-  readonly Description: string;
-  readonly ClientToken: string;
-  readonly CutoffBehavior: string;
+  readonly TaskParameters?: {[key: string]: any};
+  readonly TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters;
+  readonly Priority?: number;
+  readonly MaxConcurrency?: string;
+  readonly MaxErrors?: string;
+  readonly LoggingInfo?: LoggingInfo;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly ClientToken?: string;
+  readonly CutoffBehavior?: string;
 }
 
-interface RegisterTaskWithMaintenanceWindowResult {
-  readonly WindowTaskId: string;
+export interface RegisterTaskWithMaintenanceWindowResult {
+  readonly WindowTaskId?: string;
 }
 
-interface RegistrationMetadataItem {
+export interface RegistrationMetadataItem {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface RelatedOpsItem {
+export interface RelatedOpsItem {
   readonly OpsItemId: string;
 }
 
-interface RemoveTagsFromResourceRequest {
+export interface RemoveTagsFromResourceRequest {
   readonly ResourceType: string;
   readonly ResourceId: string;
   readonly TagKeys: [];
 }
 
-interface RemoveTagsFromResourceResult {
+export interface RemoveTagsFromResourceResult {
 }
 
-interface ResetServiceSettingRequest {
+export interface ResetServiceSettingRequest {
   readonly SettingId: string;
 }
 
-interface ResetServiceSettingResult {
-  readonly ServiceSetting: ServiceSetting;
+export interface ResetServiceSettingResult {
+  readonly ServiceSetting?: ServiceSetting;
 }
 
-interface ResolvedTargets {
-  readonly ParameterValues: [];
-  readonly Truncated: boolean;
+export interface ResolvedTargets {
+  readonly ParameterValues?: [];
+  readonly Truncated?: boolean;
 }
 
-interface ResourceComplianceSummaryItem {
-  readonly ComplianceType: string;
-  readonly ResourceType: string;
-  readonly ResourceId: string;
-  readonly Status: string;
-  readonly OverallSeverity: string;
-  readonly ExecutionSummary: ComplianceExecutionSummary;
-  readonly CompliantSummary: CompliantSummary;
-  readonly NonCompliantSummary: NonCompliantSummary;
+export interface ResourceComplianceSummaryItem {
+  readonly ComplianceType?: string;
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
+  readonly Status?: string;
+  readonly OverallSeverity?: string;
+  readonly ExecutionSummary?: ComplianceExecutionSummary;
+  readonly CompliantSummary?: CompliantSummary;
+  readonly NonCompliantSummary?: NonCompliantSummary;
 }
 
-interface ResourceDataSyncAlreadyExistsException {
-  readonly SyncName: string;
+export interface ResourceDataSyncAlreadyExistsException {
+  readonly SyncName?: string;
 }
 
-interface ResourceDataSyncAwsOrganizationsSource {
+export interface ResourceDataSyncAwsOrganizationsSource {
   readonly OrganizationSourceType: string;
-  readonly OrganizationalUnits: [];
+  readonly OrganizationalUnits?: [];
 }
 
-interface ResourceDataSyncConflictException {
-  readonly Message: string;
+export interface ResourceDataSyncConflictException {
+  readonly Message?: string;
 }
 
-interface ResourceDataSyncCountExceededException {
-  readonly Message: string;
+export interface ResourceDataSyncCountExceededException {
+  readonly Message?: string;
 }
 
-interface ResourceDataSyncDestinationDataSharing {
-  readonly DestinationDataSharingType: string;
+export interface ResourceDataSyncDestinationDataSharing {
+  readonly DestinationDataSharingType?: string;
 }
 
-interface ResourceDataSyncInvalidConfigurationException {
-  readonly Message: string;
+export interface ResourceDataSyncInvalidConfigurationException {
+  readonly Message?: string;
 }
 
-interface ResourceDataSyncItem {
-  readonly SyncName: string;
-  readonly SyncType: string;
-  readonly SyncSource: ResourceDataSyncSourceWithState;
-  readonly S3Destination: ResourceDataSyncS3Destination;
-  readonly LastSyncTime: Date;
-  readonly LastSuccessfulSyncTime: Date;
-  readonly SyncLastModifiedTime: Date;
-  readonly LastStatus: string;
-  readonly SyncCreatedTime: Date;
-  readonly LastSyncStatusMessage: string;
+export interface ResourceDataSyncItem {
+  readonly SyncName?: string;
+  readonly SyncType?: string;
+  readonly SyncSource?: ResourceDataSyncSourceWithState;
+  readonly S3Destination?: ResourceDataSyncS3Destination;
+  readonly LastSyncTime?: Date;
+  readonly LastSuccessfulSyncTime?: Date;
+  readonly SyncLastModifiedTime?: Date;
+  readonly LastStatus?: string;
+  readonly SyncCreatedTime?: Date;
+  readonly LastSyncStatusMessage?: string;
 }
 
-interface ResourceDataSyncNotFoundException {
-  readonly SyncName: string;
-  readonly SyncType: string;
-  readonly Message: string;
+export interface ResourceDataSyncNotFoundException {
+  readonly SyncName?: string;
+  readonly SyncType?: string;
+  readonly Message?: string;
 }
 
-interface ResourceDataSyncOrganizationalUnit {
-  readonly OrganizationalUnitId: string;
+export interface ResourceDataSyncOrganizationalUnit {
+  readonly OrganizationalUnitId?: string;
 }
 
-interface ResourceDataSyncS3Destination {
+export interface ResourceDataSyncS3Destination {
   readonly BucketName: string;
-  readonly Prefix: string;
+  readonly Prefix?: string;
   readonly SyncFormat: string;
   readonly Region: string;
-  readonly AWSKMSKeyARN: string;
-  readonly DestinationDataSharing: ResourceDataSyncDestinationDataSharing;
+  readonly AWSKMSKeyARN?: string;
+  readonly DestinationDataSharing?: ResourceDataSyncDestinationDataSharing;
 }
 
-interface ResourceDataSyncSource {
+export interface ResourceDataSyncSource {
   readonly SourceType: string;
-  readonly AwsOrganizationsSource: ResourceDataSyncAwsOrganizationsSource;
+  readonly AwsOrganizationsSource?: ResourceDataSyncAwsOrganizationsSource;
   readonly SourceRegions: [];
-  readonly IncludeFutureRegions: boolean;
-  readonly EnableAllOpsDataSources: boolean;
+  readonly IncludeFutureRegions?: boolean;
+  readonly EnableAllOpsDataSources?: boolean;
 }
 
-interface ResourceDataSyncSourceWithState {
-  readonly SourceType: string;
-  readonly AwsOrganizationsSource: ResourceDataSyncAwsOrganizationsSource;
-  readonly SourceRegions: [];
-  readonly IncludeFutureRegions: boolean;
-  readonly State: string;
-  readonly EnableAllOpsDataSources: boolean;
+export interface ResourceDataSyncSourceWithState {
+  readonly SourceType?: string;
+  readonly AwsOrganizationsSource?: ResourceDataSyncAwsOrganizationsSource;
+  readonly SourceRegions?: [];
+  readonly IncludeFutureRegions?: boolean;
+  readonly State?: string;
+  readonly EnableAllOpsDataSources?: boolean;
 }
 
-interface ResourceInUseException {
-  readonly Message: string;
+export interface ResourceInUseException {
+  readonly Message?: string;
 }
 
-interface ResourceLimitExceededException {
-  readonly Message: string;
+export interface ResourceLimitExceededException {
+  readonly Message?: string;
 }
 
-interface ResultAttribute {
+export interface ResultAttribute {
   readonly TypeName: string;
 }
 
-interface ResumeSessionRequest {
+export interface ResumeSessionRequest {
   readonly SessionId: string;
 }
 
-interface ResumeSessionResponse {
-  readonly SessionId: string;
-  readonly TokenValue: string;
-  readonly StreamUrl: string;
+export interface ResumeSessionResponse {
+  readonly SessionId?: string;
+  readonly TokenValue?: string;
+  readonly StreamUrl?: string;
 }
 
-interface ReviewInformation {
-  readonly ReviewedTime: Date;
-  readonly Status: string;
-  readonly Reviewer: string;
+export interface ReviewInformation {
+  readonly ReviewedTime?: Date;
+  readonly Status?: string;
+  readonly Reviewer?: string;
 }
 
-interface Runbook {
+export interface Runbook {
   readonly DocumentName: string;
-  readonly DocumentVersion: string;
-  readonly Parameters: {[key: string]: any};
-  readonly TargetParameterName: string;
-  readonly Targets: [];
-  readonly MaxConcurrency: string;
-  readonly MaxErrors: string;
-  readonly TargetLocations: [];
+  readonly DocumentVersion?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly TargetParameterName?: string;
+  readonly Targets?: [];
+  readonly MaxConcurrency?: string;
+  readonly MaxErrors?: string;
+  readonly TargetLocations?: [];
 }
 
-interface S3OutputLocation {
-  readonly OutputS3Region: string;
-  readonly OutputS3BucketName: string;
-  readonly OutputS3KeyPrefix: string;
+export interface S3OutputLocation {
+  readonly OutputS3Region?: string;
+  readonly OutputS3BucketName?: string;
+  readonly OutputS3KeyPrefix?: string;
 }
 
-interface S3OutputUrl {
-  readonly OutputUrl: string;
+export interface S3OutputUrl {
+  readonly OutputUrl?: string;
 }
 
-interface ScheduledWindowExecution {
-  readonly WindowId: string;
-  readonly Name: string;
-  readonly ExecutionTime: string;
+export interface ScheduledWindowExecution {
+  readonly WindowId?: string;
+  readonly Name?: string;
+  readonly ExecutionTime?: string;
 }
 
-interface SendAutomationSignalRequest {
+export interface SendAutomationSignalRequest {
   readonly AutomationExecutionId: string;
   readonly SignalType: string;
-  readonly Payload: {[key: string]: any};
+  readonly Payload?: {[key: string]: any};
 }
 
-interface SendAutomationSignalResult {
+export interface SendAutomationSignalResult {
 }
 
-interface SendCommandRequest {
-  readonly InstanceIds: [];
-  readonly Targets: [];
+export interface SendCommandRequest {
+  readonly InstanceIds?: [];
+  readonly Targets?: [];
   readonly DocumentName: string;
-  readonly DocumentVersion: string;
-  readonly DocumentHash: string;
-  readonly DocumentHashType: string;
-  readonly TimeoutSeconds: number;
-  readonly Comment: string;
-  readonly Parameters: {[key: string]: any};
-  readonly OutputS3Region: string;
-  readonly OutputS3BucketName: string;
-  readonly OutputS3KeyPrefix: string;
-  readonly MaxConcurrency: string;
-  readonly MaxErrors: string;
-  readonly ServiceRoleArn: string;
-  readonly NotificationConfig: NotificationConfig;
-  readonly CloudWatchOutputConfig: CloudWatchOutputConfig;
+  readonly DocumentVersion?: string;
+  readonly DocumentHash?: string;
+  readonly DocumentHashType?: string;
+  readonly TimeoutSeconds?: number;
+  readonly Comment?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly OutputS3Region?: string;
+  readonly OutputS3BucketName?: string;
+  readonly OutputS3KeyPrefix?: string;
+  readonly MaxConcurrency?: string;
+  readonly MaxErrors?: string;
+  readonly ServiceRoleArn?: string;
+  readonly NotificationConfig?: NotificationConfig;
+  readonly CloudWatchOutputConfig?: CloudWatchOutputConfig;
 }
 
-interface SendCommandResult {
-  readonly Command: Command;
+export interface SendCommandResult {
+  readonly Command?: Command;
 }
 
-interface ServiceSetting {
-  readonly SettingId: string;
-  readonly SettingValue: string;
-  readonly LastModifiedDate: Date;
-  readonly LastModifiedUser: string;
-  readonly ARN: string;
-  readonly Status: string;
+export interface ServiceSetting {
+  readonly SettingId?: string;
+  readonly SettingValue?: string;
+  readonly LastModifiedDate?: Date;
+  readonly LastModifiedUser?: string;
+  readonly ARN?: string;
+  readonly Status?: string;
 }
 
-interface ServiceSettingNotFound {
-  readonly Message: string;
+export interface ServiceSettingNotFound {
+  readonly Message?: string;
 }
 
-interface Session {
-  readonly SessionId: string;
-  readonly Target: string;
-  readonly Status: string;
-  readonly StartDate: Date;
-  readonly EndDate: Date;
-  readonly DocumentName: string;
-  readonly Owner: string;
-  readonly Reason: string;
-  readonly Details: string;
-  readonly OutputUrl: SessionManagerOutputUrl;
-  readonly MaxSessionDuration: string;
+export interface Session {
+  readonly SessionId?: string;
+  readonly Target?: string;
+  readonly Status?: string;
+  readonly StartDate?: Date;
+  readonly EndDate?: Date;
+  readonly DocumentName?: string;
+  readonly Owner?: string;
+  readonly Reason?: string;
+  readonly Details?: string;
+  readonly OutputUrl?: SessionManagerOutputUrl;
+  readonly MaxSessionDuration?: string;
 }
 
-interface SessionFilter {
+export interface SessionFilter {
   readonly key: string;
   readonly value: string;
 }
 
-interface SessionManagerOutputUrl {
-  readonly S3OutputUrl: string;
-  readonly CloudWatchOutputUrl: string;
+export interface SessionManagerOutputUrl {
+  readonly S3OutputUrl?: string;
+  readonly CloudWatchOutputUrl?: string;
 }
 
-interface SeveritySummary {
-  readonly CriticalCount: number;
-  readonly HighCount: number;
-  readonly MediumCount: number;
-  readonly LowCount: number;
-  readonly InformationalCount: number;
-  readonly UnspecifiedCount: number;
+export interface SeveritySummary {
+  readonly CriticalCount?: number;
+  readonly HighCount?: number;
+  readonly MediumCount?: number;
+  readonly LowCount?: number;
+  readonly InformationalCount?: number;
+  readonly UnspecifiedCount?: number;
 }
 
-interface StartAssociationsOnceRequest {
+export interface StartAssociationsOnceRequest {
   readonly AssociationIds: [];
 }
 
-interface StartAssociationsOnceResult {
+export interface StartAssociationsOnceResult {
 }
 
-interface StartAutomationExecutionRequest {
+export interface StartAutomationExecutionRequest {
   readonly DocumentName: string;
-  readonly DocumentVersion: string;
-  readonly Parameters: {[key: string]: any};
-  readonly ClientToken: string;
-  readonly Mode: string;
-  readonly TargetParameterName: string;
-  readonly Targets: [];
-  readonly TargetMaps: [];
-  readonly MaxConcurrency: string;
-  readonly MaxErrors: string;
-  readonly TargetLocations: [];
-  readonly Tags: [];
+  readonly DocumentVersion?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly ClientToken?: string;
+  readonly Mode?: string;
+  readonly TargetParameterName?: string;
+  readonly Targets?: [];
+  readonly TargetMaps?: [];
+  readonly MaxConcurrency?: string;
+  readonly MaxErrors?: string;
+  readonly TargetLocations?: [];
+  readonly Tags?: [];
 }
 
-interface StartAutomationExecutionResult {
-  readonly AutomationExecutionId: string;
+export interface StartAutomationExecutionResult {
+  readonly AutomationExecutionId?: string;
 }
 
-interface StartChangeRequestExecutionRequest {
-  readonly ScheduledTime: Date;
+export interface StartChangeRequestExecutionRequest {
+  readonly ScheduledTime?: Date;
   readonly DocumentName: string;
-  readonly DocumentVersion: string;
-  readonly Parameters: {[key: string]: any};
-  readonly ChangeRequestName: string;
-  readonly ClientToken: string;
-  readonly AutoApprove: boolean;
+  readonly DocumentVersion?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly ChangeRequestName?: string;
+  readonly ClientToken?: string;
+  readonly AutoApprove?: boolean;
   readonly Runbooks: [];
-  readonly Tags: [];
-  readonly ScheduledEndTime: Date;
-  readonly ChangeDetails: string;
+  readonly Tags?: [];
+  readonly ScheduledEndTime?: Date;
+  readonly ChangeDetails?: string;
 }
 
-interface StartChangeRequestExecutionResult {
-  readonly AutomationExecutionId: string;
+export interface StartChangeRequestExecutionResult {
+  readonly AutomationExecutionId?: string;
 }
 
-interface StartSessionRequest {
+export interface StartSessionRequest {
   readonly Target: string;
-  readonly DocumentName: string;
-  readonly Reason: string;
-  readonly Parameters: {[key: string]: any};
+  readonly DocumentName?: string;
+  readonly Reason?: string;
+  readonly Parameters?: {[key: string]: any};
 }
 
-interface StartSessionResponse {
-  readonly SessionId: string;
-  readonly TokenValue: string;
-  readonly StreamUrl: string;
+export interface StartSessionResponse {
+  readonly SessionId?: string;
+  readonly TokenValue?: string;
+  readonly StreamUrl?: string;
 }
 
-interface StatusUnchanged {
+export interface StatusUnchanged {
 }
 
-interface StepExecution {
-  readonly StepName: string;
-  readonly Action: string;
-  readonly TimeoutSeconds: number;
-  readonly OnFailure: string;
-  readonly MaxAttempts: number;
-  readonly ExecutionStartTime: Date;
-  readonly ExecutionEndTime: Date;
-  readonly StepStatus: string;
-  readonly ResponseCode: string;
-  readonly Inputs: {[key: string]: any};
-  readonly Outputs: {[key: string]: any};
-  readonly Response: string;
-  readonly FailureMessage: string;
-  readonly FailureDetails: FailureDetails;
-  readonly StepExecutionId: string;
-  readonly OverriddenParameters: {[key: string]: any};
-  readonly IsEnd: boolean;
-  readonly NextStep: string;
-  readonly IsCritical: boolean;
-  readonly ValidNextSteps: [];
-  readonly Targets: [];
-  readonly TargetLocation: TargetLocation;
+export interface StepExecution {
+  readonly StepName?: string;
+  readonly Action?: string;
+  readonly TimeoutSeconds?: number;
+  readonly OnFailure?: string;
+  readonly MaxAttempts?: number;
+  readonly ExecutionStartTime?: Date;
+  readonly ExecutionEndTime?: Date;
+  readonly StepStatus?: string;
+  readonly ResponseCode?: string;
+  readonly Inputs?: {[key: string]: any};
+  readonly Outputs?: {[key: string]: any};
+  readonly Response?: string;
+  readonly FailureMessage?: string;
+  readonly FailureDetails?: FailureDetails;
+  readonly StepExecutionId?: string;
+  readonly OverriddenParameters?: {[key: string]: any};
+  readonly IsEnd?: boolean;
+  readonly NextStep?: string;
+  readonly IsCritical?: boolean;
+  readonly ValidNextSteps?: [];
+  readonly Targets?: [];
+  readonly TargetLocation?: TargetLocation;
 }
 
-interface StepExecutionFilter {
+export interface StepExecutionFilter {
   readonly Key: string;
   readonly Values: [];
 }
 
-interface StopAutomationExecutionRequest {
+export interface StopAutomationExecutionRequest {
   readonly AutomationExecutionId: string;
-  readonly Type: string;
+  readonly Type?: string;
 }
 
-interface StopAutomationExecutionResult {
+export interface StopAutomationExecutionResult {
 }
 
-interface SubTypeCountLimitExceededException {
-  readonly Message: string;
+export interface SubTypeCountLimitExceededException {
+  readonly Message?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface Target {
-  readonly Key: string;
-  readonly Values: [];
+export interface Target {
+  readonly Key?: string;
+  readonly Values?: [];
 }
 
-interface TargetInUseException {
-  readonly Message: string;
+export interface TargetInUseException {
+  readonly Message?: string;
 }
 
-interface TargetLocation {
-  readonly Accounts: [];
-  readonly Regions: [];
-  readonly TargetLocationMaxConcurrency: string;
-  readonly TargetLocationMaxErrors: string;
-  readonly ExecutionRoleName: string;
+export interface TargetLocation {
+  readonly Accounts?: [];
+  readonly Regions?: [];
+  readonly TargetLocationMaxConcurrency?: string;
+  readonly TargetLocationMaxErrors?: string;
+  readonly ExecutionRoleName?: string;
 }
 
-interface TargetNotConnected {
-  readonly Message: string;
+export interface TargetNotConnected {
+  readonly Message?: string;
 }
 
-interface TerminateSessionRequest {
+export interface TerminateSessionRequest {
   readonly SessionId: string;
 }
 
-interface TerminateSessionResponse {
-  readonly SessionId: string;
+export interface TerminateSessionResponse {
+  readonly SessionId?: string;
 }
 
-interface TooManyTagsError {
+export interface TooManyTagsError {
 }
 
-interface TooManyUpdates {
-  readonly Message: string;
+export interface TooManyUpdates {
+  readonly Message?: string;
 }
 
-interface TotalSizeLimitExceededException {
-  readonly Message: string;
+export interface TotalSizeLimitExceededException {
+  readonly Message?: string;
 }
 
-interface UnlabelParameterVersionRequest {
+export interface UnlabelParameterVersionRequest {
   readonly Name: string;
   readonly ParameterVersion: number;
   readonly Labels: [];
 }
 
-interface UnlabelParameterVersionResult {
-  readonly RemovedLabels: [];
-  readonly InvalidLabels: [];
+export interface UnlabelParameterVersionResult {
+  readonly RemovedLabels?: [];
+  readonly InvalidLabels?: [];
 }
 
-interface UnsupportedCalendarException {
-  readonly Message: string;
+export interface UnsupportedCalendarException {
+  readonly Message?: string;
 }
 
-interface UnsupportedFeatureRequiredException {
-  readonly Message: string;
+export interface UnsupportedFeatureRequiredException {
+  readonly Message?: string;
 }
 
-interface UnsupportedInventoryItemContextException {
-  readonly TypeName: string;
-  readonly Message: string;
+export interface UnsupportedInventoryItemContextException {
+  readonly TypeName?: string;
+  readonly Message?: string;
 }
 
-interface UnsupportedInventorySchemaVersionException {
-  readonly Message: string;
+export interface UnsupportedInventorySchemaVersionException {
+  readonly Message?: string;
 }
 
-interface UnsupportedOperatingSystem {
-  readonly Message: string;
+export interface UnsupportedOperatingSystem {
+  readonly Message?: string;
 }
 
-interface UnsupportedParameterType {
-  readonly message: string;
+export interface UnsupportedParameterType {
+  readonly message?: string;
 }
 
-interface UnsupportedPlatformType {
-  readonly Message: string;
+export interface UnsupportedPlatformType {
+  readonly Message?: string;
 }
 
-interface UpdateAssociationRequest {
+export interface UpdateAssociationRequest {
   readonly AssociationId: string;
-  readonly Parameters: {[key: string]: any};
-  readonly DocumentVersion: string;
-  readonly ScheduleExpression: string;
-  readonly OutputLocation: InstanceAssociationOutputLocation;
-  readonly Name: string;
-  readonly Targets: [];
-  readonly AssociationName: string;
-  readonly AssociationVersion: string;
-  readonly AutomationTargetParameterName: string;
-  readonly MaxErrors: string;
-  readonly MaxConcurrency: string;
-  readonly ComplianceSeverity: string;
-  readonly SyncCompliance: string;
-  readonly ApplyOnlyAtCronInterval: boolean;
-  readonly CalendarNames: [];
-  readonly TargetLocations: [];
+  readonly Parameters?: {[key: string]: any};
+  readonly DocumentVersion?: string;
+  readonly ScheduleExpression?: string;
+  readonly OutputLocation?: InstanceAssociationOutputLocation;
+  readonly Name?: string;
+  readonly Targets?: [];
+  readonly AssociationName?: string;
+  readonly AssociationVersion?: string;
+  readonly AutomationTargetParameterName?: string;
+  readonly MaxErrors?: string;
+  readonly MaxConcurrency?: string;
+  readonly ComplianceSeverity?: string;
+  readonly SyncCompliance?: string;
+  readonly ApplyOnlyAtCronInterval?: boolean;
+  readonly CalendarNames?: [];
+  readonly TargetLocations?: [];
 }
 
-interface UpdateAssociationResult {
-  readonly AssociationDescription: AssociationDescription;
+export interface UpdateAssociationResult {
+  readonly AssociationDescription?: AssociationDescription;
 }
 
-interface UpdateAssociationStatusRequest {
+export interface UpdateAssociationStatusRequest {
   readonly Name: string;
   readonly InstanceId: string;
   readonly AssociationStatus: AssociationStatus;
 }
 
-interface UpdateAssociationStatusResult {
-  readonly AssociationDescription: AssociationDescription;
+export interface UpdateAssociationStatusResult {
+  readonly AssociationDescription?: AssociationDescription;
 }
 
-interface UpdateDocumentDefaultVersionRequest {
+export interface UpdateDocumentDefaultVersionRequest {
   readonly Name: string;
   readonly DocumentVersion: string;
 }
 
-interface UpdateDocumentDefaultVersionResult {
-  readonly Description: DocumentDefaultVersionDescription;
+export interface UpdateDocumentDefaultVersionResult {
+  readonly Description?: DocumentDefaultVersionDescription;
 }
 
-interface UpdateDocumentMetadataRequest {
+export interface UpdateDocumentMetadataRequest {
   readonly Name: string;
-  readonly DocumentVersion: string;
+  readonly DocumentVersion?: string;
   readonly DocumentReviews: DocumentReviews;
 }
 
-interface UpdateDocumentMetadataResponse {
+export interface UpdateDocumentMetadataResponse {
 }
 
-interface UpdateDocumentRequest {
+export interface UpdateDocumentRequest {
   readonly Content: string;
-  readonly Attachments: [];
+  readonly Attachments?: [];
   readonly Name: string;
-  readonly DisplayName: string;
-  readonly VersionName: string;
-  readonly DocumentVersion: string;
-  readonly DocumentFormat: string;
-  readonly TargetType: string;
+  readonly DisplayName?: string;
+  readonly VersionName?: string;
+  readonly DocumentVersion?: string;
+  readonly DocumentFormat?: string;
+  readonly TargetType?: string;
 }
 
-interface UpdateDocumentResult {
-  readonly DocumentDescription: DocumentDescription;
+export interface UpdateDocumentResult {
+  readonly DocumentDescription?: DocumentDescription;
 }
 
-interface UpdateMaintenanceWindowRequest {
+export interface UpdateMaintenanceWindowRequest {
   readonly WindowId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly StartDate: string;
-  readonly EndDate: string;
-  readonly Schedule: string;
-  readonly ScheduleTimezone: string;
-  readonly ScheduleOffset: number;
-  readonly Duration: number;
-  readonly Cutoff: number;
-  readonly AllowUnassociatedTargets: boolean;
-  readonly Enabled: boolean;
-  readonly Replace: boolean;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly StartDate?: string;
+  readonly EndDate?: string;
+  readonly Schedule?: string;
+  readonly ScheduleTimezone?: string;
+  readonly ScheduleOffset?: number;
+  readonly Duration?: number;
+  readonly Cutoff?: number;
+  readonly AllowUnassociatedTargets?: boolean;
+  readonly Enabled?: boolean;
+  readonly Replace?: boolean;
 }
 
-interface UpdateMaintenanceWindowResult {
-  readonly WindowId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly StartDate: string;
-  readonly EndDate: string;
-  readonly Schedule: string;
-  readonly ScheduleTimezone: string;
-  readonly ScheduleOffset: number;
-  readonly Duration: number;
-  readonly Cutoff: number;
-  readonly AllowUnassociatedTargets: boolean;
-  readonly Enabled: boolean;
+export interface UpdateMaintenanceWindowResult {
+  readonly WindowId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly StartDate?: string;
+  readonly EndDate?: string;
+  readonly Schedule?: string;
+  readonly ScheduleTimezone?: string;
+  readonly ScheduleOffset?: number;
+  readonly Duration?: number;
+  readonly Cutoff?: number;
+  readonly AllowUnassociatedTargets?: boolean;
+  readonly Enabled?: boolean;
 }
 
-interface UpdateMaintenanceWindowTargetRequest {
-  readonly WindowId: string;
-  readonly WindowTargetId: string;
-  readonly Targets: [];
-  readonly OwnerInformation: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Replace: boolean;
-}
-
-interface UpdateMaintenanceWindowTargetResult {
+export interface UpdateMaintenanceWindowTargetRequest {
   readonly WindowId: string;
   readonly WindowTargetId: string;
-  readonly Targets: [];
-  readonly OwnerInformation: string;
-  readonly Name: string;
-  readonly Description: string;
+  readonly Targets?: [];
+  readonly OwnerInformation?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Replace?: boolean;
 }
 
-interface UpdateMaintenanceWindowTaskRequest {
+export interface UpdateMaintenanceWindowTargetResult {
+  readonly WindowId?: string;
+  readonly WindowTargetId?: string;
+  readonly Targets?: [];
+  readonly OwnerInformation?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+}
+
+export interface UpdateMaintenanceWindowTaskRequest {
   readonly WindowId: string;
   readonly WindowTaskId: string;
-  readonly Targets: [];
-  readonly TaskArn: string;
-  readonly ServiceRoleArn: string;
-  readonly TaskParameters: {[key: string]: any};
-  readonly TaskInvocationParameters: MaintenanceWindowTaskInvocationParameters;
-  readonly Priority: number;
-  readonly MaxConcurrency: string;
-  readonly MaxErrors: string;
-  readonly LoggingInfo: LoggingInfo;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Replace: boolean;
-  readonly CutoffBehavior: string;
+  readonly Targets?: [];
+  readonly TaskArn?: string;
+  readonly ServiceRoleArn?: string;
+  readonly TaskParameters?: {[key: string]: any};
+  readonly TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters;
+  readonly Priority?: number;
+  readonly MaxConcurrency?: string;
+  readonly MaxErrors?: string;
+  readonly LoggingInfo?: LoggingInfo;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Replace?: boolean;
+  readonly CutoffBehavior?: string;
 }
 
-interface UpdateMaintenanceWindowTaskResult {
-  readonly WindowId: string;
-  readonly WindowTaskId: string;
-  readonly Targets: [];
-  readonly TaskArn: string;
-  readonly ServiceRoleArn: string;
-  readonly TaskParameters: {[key: string]: any};
-  readonly TaskInvocationParameters: MaintenanceWindowTaskInvocationParameters;
-  readonly Priority: number;
-  readonly MaxConcurrency: string;
-  readonly MaxErrors: string;
-  readonly LoggingInfo: LoggingInfo;
-  readonly Name: string;
-  readonly Description: string;
-  readonly CutoffBehavior: string;
+export interface UpdateMaintenanceWindowTaskResult {
+  readonly WindowId?: string;
+  readonly WindowTaskId?: string;
+  readonly Targets?: [];
+  readonly TaskArn?: string;
+  readonly ServiceRoleArn?: string;
+  readonly TaskParameters?: {[key: string]: any};
+  readonly TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters;
+  readonly Priority?: number;
+  readonly MaxConcurrency?: string;
+  readonly MaxErrors?: string;
+  readonly LoggingInfo?: LoggingInfo;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly CutoffBehavior?: string;
 }
 
-interface UpdateManagedInstanceRoleRequest {
+export interface UpdateManagedInstanceRoleRequest {
   readonly InstanceId: string;
   readonly IamRole: string;
 }
 
-interface UpdateManagedInstanceRoleResult {
+export interface UpdateManagedInstanceRoleResult {
 }
 
-interface UpdateOpsItemRequest {
-  readonly Description: string;
-  readonly OperationalData: {[key: string]: any};
-  readonly OperationalDataToDelete: [];
-  readonly Notifications: [];
-  readonly Priority: number;
-  readonly RelatedOpsItems: [];
-  readonly Status: string;
+export interface UpdateOpsItemRequest {
+  readonly Description?: string;
+  readonly OperationalData?: {[key: string]: any};
+  readonly OperationalDataToDelete?: [];
+  readonly Notifications?: [];
+  readonly Priority?: number;
+  readonly RelatedOpsItems?: [];
+  readonly Status?: string;
   readonly OpsItemId: string;
-  readonly Title: string;
-  readonly Category: string;
-  readonly Severity: string;
-  readonly ActualStartTime: Date;
-  readonly ActualEndTime: Date;
-  readonly PlannedStartTime: Date;
-  readonly PlannedEndTime: Date;
+  readonly Title?: string;
+  readonly Category?: string;
+  readonly Severity?: string;
+  readonly ActualStartTime?: Date;
+  readonly ActualEndTime?: Date;
+  readonly PlannedStartTime?: Date;
+  readonly PlannedEndTime?: Date;
 }
 
-interface UpdateOpsItemResponse {
+export interface UpdateOpsItemResponse {
 }
 
-interface UpdateOpsMetadataRequest {
+export interface UpdateOpsMetadataRequest {
   readonly OpsMetadataArn: string;
-  readonly MetadataToUpdate: {[key: string]: any};
-  readonly KeysToDelete: [];
+  readonly MetadataToUpdate?: {[key: string]: any};
+  readonly KeysToDelete?: [];
 }
 
-interface UpdateOpsMetadataResult {
-  readonly OpsMetadataArn: string;
+export interface UpdateOpsMetadataResult {
+  readonly OpsMetadataArn?: string;
 }
 
-interface UpdatePatchBaselineRequest {
+export interface UpdatePatchBaselineRequest {
   readonly BaselineId: string;
-  readonly Name: string;
-  readonly GlobalFilters: PatchFilterGroup;
-  readonly ApprovalRules: PatchRuleGroup;
-  readonly ApprovedPatches: [];
-  readonly ApprovedPatchesComplianceLevel: string;
-  readonly ApprovedPatchesEnableNonSecurity: boolean;
-  readonly RejectedPatches: [];
-  readonly RejectedPatchesAction: string;
-  readonly Description: string;
-  readonly Sources: [];
-  readonly Replace: boolean;
+  readonly Name?: string;
+  readonly GlobalFilters?: PatchFilterGroup;
+  readonly ApprovalRules?: PatchRuleGroup;
+  readonly ApprovedPatches?: [];
+  readonly ApprovedPatchesComplianceLevel?: string;
+  readonly ApprovedPatchesEnableNonSecurity?: boolean;
+  readonly RejectedPatches?: [];
+  readonly RejectedPatchesAction?: string;
+  readonly Description?: string;
+  readonly Sources?: [];
+  readonly Replace?: boolean;
 }
 
-interface UpdatePatchBaselineResult {
-  readonly BaselineId: string;
-  readonly Name: string;
-  readonly OperatingSystem: string;
-  readonly GlobalFilters: PatchFilterGroup;
-  readonly ApprovalRules: PatchRuleGroup;
-  readonly ApprovedPatches: [];
-  readonly ApprovedPatchesComplianceLevel: string;
-  readonly ApprovedPatchesEnableNonSecurity: boolean;
-  readonly RejectedPatches: [];
-  readonly RejectedPatchesAction: string;
-  readonly CreatedDate: Date;
-  readonly ModifiedDate: Date;
-  readonly Description: string;
-  readonly Sources: [];
+export interface UpdatePatchBaselineResult {
+  readonly BaselineId?: string;
+  readonly Name?: string;
+  readonly OperatingSystem?: string;
+  readonly GlobalFilters?: PatchFilterGroup;
+  readonly ApprovalRules?: PatchRuleGroup;
+  readonly ApprovedPatches?: [];
+  readonly ApprovedPatchesComplianceLevel?: string;
+  readonly ApprovedPatchesEnableNonSecurity?: boolean;
+  readonly RejectedPatches?: [];
+  readonly RejectedPatchesAction?: string;
+  readonly CreatedDate?: Date;
+  readonly ModifiedDate?: Date;
+  readonly Description?: string;
+  readonly Sources?: [];
 }
 
-interface UpdateResourceDataSyncRequest {
+export interface UpdateResourceDataSyncRequest {
   readonly SyncName: string;
   readonly SyncType: string;
   readonly SyncSource: ResourceDataSyncSource;
 }
 
-interface UpdateResourceDataSyncResult {
+export interface UpdateResourceDataSyncResult {
 }
 
-interface UpdateServiceSettingRequest {
+export interface UpdateServiceSettingRequest {
   readonly SettingId: string;
   readonly SettingValue: string;
 }
 
-interface UpdateServiceSettingResult {
+export interface UpdateServiceSettingResult {
 }
+
 

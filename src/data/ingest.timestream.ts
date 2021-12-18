@@ -6,6 +6,7 @@ export interface CreateDatabase {
   readonly KmsKeyId?: string;
   readonly Tags?: [];
 }
+
 export interface CreateTable {
   readonly DatabaseName: string;
   readonly TableName: string;
@@ -13,52 +14,65 @@ export interface CreateTable {
   readonly Tags?: [];
   readonly MagneticStoreWriteProperties?: MagneticStoreWriteProperties;
 }
+
 export interface DeleteDatabase {
   readonly DatabaseName: string;
 }
+
 export interface DeleteTable {
   readonly DatabaseName: string;
   readonly TableName: string;
 }
+
 export interface DescribeDatabase {
   readonly DatabaseName: string;
 }
+
 export interface DescribeEndpoints {
 }
+
 export interface DescribeTable {
   readonly DatabaseName: string;
   readonly TableName: string;
 }
+
 export interface ListDatabases {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTables {
   readonly DatabaseName?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateDatabase {
   readonly DatabaseName: string;
   readonly KmsKeyId: string;
 }
+
 export interface UpdateTable {
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly RetentionProperties?: RetentionProperties;
   readonly MagneticStoreWriteProperties?: MagneticStoreWriteProperties;
 }
+
 export interface WriteRecords {
   readonly DatabaseName: string;
   readonly TableName: string;
@@ -66,259 +80,258 @@ export interface WriteRecords {
   readonly Records: [];
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly Message: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly Message: string;
 }
 
-interface CreateDatabaseRequest {
+export interface CreateDatabaseRequest {
   readonly DatabaseName: string;
-  readonly KmsKeyId: string;
-  readonly Tags: [];
+  readonly KmsKeyId?: string;
+  readonly Tags?: [];
 }
 
-interface CreateDatabaseResponse {
-  readonly Database: Database;
+export interface CreateDatabaseResponse {
+  readonly Database?: Database;
 }
 
-interface CreateTableRequest {
+export interface CreateTableRequest {
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly RetentionProperties: RetentionProperties;
-  readonly Tags: [];
-  readonly MagneticStoreWriteProperties: MagneticStoreWriteProperties;
+  readonly RetentionProperties?: RetentionProperties;
+  readonly Tags?: [];
+  readonly MagneticStoreWriteProperties?: MagneticStoreWriteProperties;
 }
 
-interface CreateTableResponse {
-  readonly Table: Table;
+export interface CreateTableResponse {
+  readonly Table?: Table;
 }
 
-interface Database {
-  readonly Arn: string;
+export interface Database {
+  readonly Arn?: string;
+  readonly DatabaseName?: string;
+  readonly TableCount?: number;
+  readonly KmsKeyId?: string;
+  readonly CreationTime?: Date;
+  readonly LastUpdatedTime?: Date;
+}
+
+export interface DeleteDatabaseRequest {
   readonly DatabaseName: string;
-  readonly TableCount: number;
-  readonly KmsKeyId: string;
-  readonly CreationTime: Date;
-  readonly LastUpdatedTime: Date;
 }
 
-interface DeleteDatabaseRequest {
-  readonly DatabaseName: string;
-}
-
-interface DeleteTableRequest {
+export interface DeleteTableRequest {
   readonly DatabaseName: string;
   readonly TableName: string;
 }
 
-interface DescribeDatabaseRequest {
+export interface DescribeDatabaseRequest {
   readonly DatabaseName: string;
 }
 
-interface DescribeDatabaseResponse {
-  readonly Database: Database;
+export interface DescribeDatabaseResponse {
+  readonly Database?: Database;
 }
 
-interface DescribeEndpointsRequest {
+export interface DescribeEndpointsRequest {
 }
 
-interface DescribeEndpointsResponse {
+export interface DescribeEndpointsResponse {
   readonly Endpoints: [];
 }
 
-interface DescribeTableRequest {
+export interface DescribeTableRequest {
   readonly DatabaseName: string;
   readonly TableName: string;
 }
 
-interface DescribeTableResponse {
-  readonly Table: Table;
+export interface DescribeTableResponse {
+  readonly Table?: Table;
 }
 
-interface Dimension {
+export interface Dimension {
   readonly Name: string;
   readonly Value: string;
-  readonly DimensionValueType: string;
+  readonly DimensionValueType?: string;
 }
 
-interface Endpoint {
+export interface Endpoint {
   readonly Address: string;
   readonly CachePeriodInMinutes: number;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly Message: string;
 }
 
-interface InvalidEndpointException {
-  readonly Message: string;
+export interface InvalidEndpointException {
+  readonly Message?: string;
 }
 
-interface ListDatabasesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListDatabasesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDatabasesResponse {
-  readonly Databases: [];
-  readonly NextToken: string;
+export interface ListDatabasesResponse {
+  readonly Databases?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTablesRequest {
-  readonly DatabaseName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListTablesRequest {
+  readonly DatabaseName?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTablesResponse {
-  readonly Tables: [];
-  readonly NextToken: string;
+export interface ListTablesResponse {
+  readonly Tables?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface MagneticStoreRejectedDataLocation {
-  readonly S3Configuration: S3Configuration;
+export interface MagneticStoreRejectedDataLocation {
+  readonly S3Configuration?: S3Configuration;
 }
 
-interface MagneticStoreWriteProperties {
+export interface MagneticStoreWriteProperties {
   readonly EnableMagneticStoreWrites: boolean;
-  readonly MagneticStoreRejectedDataLocation: MagneticStoreRejectedDataLocation;
+  readonly MagneticStoreRejectedDataLocation?: MagneticStoreRejectedDataLocation;
 }
 
-interface MeasureValue {
+export interface MeasureValue {
   readonly Name: string;
   readonly Value: string;
   readonly Type: string;
 }
 
-interface Record {
-  readonly Dimensions: [];
-  readonly MeasureName: string;
-  readonly MeasureValue: string;
-  readonly MeasureValueType: string;
-  readonly Time: string;
-  readonly TimeUnit: string;
-  readonly Version: number;
-  readonly MeasureValues: [];
+export interface Record {
+  readonly Dimensions?: [];
+  readonly MeasureName?: string;
+  readonly MeasureValue?: string;
+  readonly MeasureValueType?: string;
+  readonly Time?: string;
+  readonly TimeUnit?: string;
+  readonly Version?: number;
+  readonly MeasureValues?: [];
 }
 
-interface RecordsIngested {
-  readonly Total: number;
-  readonly MemoryStore: number;
-  readonly MagneticStore: number;
+export interface RecordsIngested {
+  readonly Total?: number;
+  readonly MemoryStore?: number;
+  readonly MagneticStore?: number;
 }
 
-interface RejectedRecord {
-  readonly RecordIndex: number;
-  readonly Reason: string;
-  readonly ExistingVersion: number;
+export interface RejectedRecord {
+  readonly RecordIndex?: number;
+  readonly Reason?: string;
+  readonly ExistingVersion?: number;
 }
 
-interface RejectedRecordsException {
-  readonly Message: string;
-  readonly RejectedRecords: [];
+export interface RejectedRecordsException {
+  readonly Message?: string;
+  readonly RejectedRecords?: [];
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface RetentionProperties {
+export interface RetentionProperties {
   readonly MemoryStoreRetentionPeriodInHours: number;
   readonly MagneticStoreRetentionPeriodInDays: number;
 }
 
-interface S3Configuration {
-  readonly BucketName: string;
-  readonly ObjectKeyPrefix: string;
-  readonly EncryptionOption: string;
-  readonly KmsKeyId: string;
+export interface S3Configuration {
+  readonly BucketName?: string;
+  readonly ObjectKeyPrefix?: string;
+  readonly EncryptionOption?: string;
+  readonly KmsKeyId?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface Table {
-  readonly Arn: string;
-  readonly TableName: string;
-  readonly DatabaseName: string;
-  readonly TableStatus: string;
-  readonly RetentionProperties: RetentionProperties;
-  readonly CreationTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly MagneticStoreWriteProperties: MagneticStoreWriteProperties;
+export interface Table {
+  readonly Arn?: string;
+  readonly TableName?: string;
+  readonly DatabaseName?: string;
+  readonly TableStatus?: string;
+  readonly RetentionProperties?: RetentionProperties;
+  readonly CreationTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly MagneticStoreWriteProperties?: MagneticStoreWriteProperties;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly Message: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateDatabaseRequest {
+export interface UpdateDatabaseRequest {
   readonly DatabaseName: string;
   readonly KmsKeyId: string;
 }
 
-interface UpdateDatabaseResponse {
-  readonly Database: Database;
+export interface UpdateDatabaseResponse {
+  readonly Database?: Database;
 }
 
-interface UpdateTableRequest {
+export interface UpdateTableRequest {
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly RetentionProperties: RetentionProperties;
-  readonly MagneticStoreWriteProperties: MagneticStoreWriteProperties;
+  readonly RetentionProperties?: RetentionProperties;
+  readonly MagneticStoreWriteProperties?: MagneticStoreWriteProperties;
 }
 
-interface UpdateTableResponse {
-  readonly Table: Table;
+export interface UpdateTableResponse {
+  readonly Table?: Table;
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly Message: string;
 }
 
-interface WriteRecordsRequest {
+export interface WriteRecordsRequest {
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly CommonAttributes: Record;
+  readonly CommonAttributes?: Record;
   readonly Records: [];
 }
 
-interface WriteRecordsResponse {
-  readonly RecordsIngested: RecordsIngested;
+export interface WriteRecordsResponse {
+  readonly RecordsIngested?: RecordsIngested;
 }
+
 

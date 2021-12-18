@@ -11,27 +11,34 @@ export interface CreateEnvironment {
   readonly superuserParameters?: SuperuserParameters;
   readonly dataBundles?: [];
 }
+
 export interface DeleteEnvironment {
   readonly environmentId: string;
 }
+
 export interface GetEnvironment {
   readonly environmentId: string;
 }
+
 export interface ListEnvironments {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateEnvironment {
   readonly environmentId: string;
   readonly name?: string;
@@ -40,143 +47,142 @@ export interface UpdateEnvironment {
   readonly federationParameters?: FederationParameters;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
 }
 
-interface CreateEnvironmentRequest {
+export interface CreateEnvironmentRequest {
   readonly name: string;
-  readonly description: string;
-  readonly kmsKeyId: string;
-  readonly tags: {[key: string]: any};
-  readonly federationMode: string;
-  readonly federationParameters: FederationParameters;
-  readonly superuserParameters: SuperuserParameters;
-  readonly dataBundles: [];
+  readonly description?: string;
+  readonly kmsKeyId?: string;
+  readonly tags?: {[key: string]: any};
+  readonly federationMode?: string;
+  readonly federationParameters?: FederationParameters;
+  readonly superuserParameters?: SuperuserParameters;
+  readonly dataBundles?: [];
 }
 
-interface CreateEnvironmentResponse {
-  readonly environmentId: string;
-  readonly environmentArn: string;
-  readonly environmentUrl: string;
+export interface CreateEnvironmentResponse {
+  readonly environmentId?: string;
+  readonly environmentArn?: string;
+  readonly environmentUrl?: string;
 }
 
-interface DeleteEnvironmentRequest {
-  readonly environmentId: string;
-}
-
-interface DeleteEnvironmentResponse {
-}
-
-interface Environment {
-  readonly name: string;
-  readonly environmentId: string;
-  readonly awsAccountId: string;
-  readonly status: string;
-  readonly environmentUrl: string;
-  readonly description: string;
-  readonly environmentArn: string;
-  readonly sageMakerStudioDomainUrl: string;
-  readonly kmsKeyId: string;
-  readonly dedicatedServiceAccountId: string;
-  readonly federationMode: string;
-  readonly federationParameters: FederationParameters;
-}
-
-interface FederationParameters {
-  readonly samlMetadataDocument: string;
-  readonly samlMetadataURL: string;
-  readonly applicationCallBackURL: string;
-  readonly federationURN: string;
-  readonly federationProviderName: string;
-  readonly attributeMap: {[key: string]: any};
-}
-
-interface GetEnvironmentRequest {
+export interface DeleteEnvironmentRequest {
   readonly environmentId: string;
 }
 
-interface GetEnvironmentResponse {
-  readonly environment: Environment;
+export interface DeleteEnvironmentResponse {
 }
 
-interface InternalServerException {
-  readonly message: string;
+export interface Environment {
+  readonly name?: string;
+  readonly environmentId?: string;
+  readonly awsAccountId?: string;
+  readonly status?: string;
+  readonly environmentUrl?: string;
+  readonly description?: string;
+  readonly environmentArn?: string;
+  readonly sageMakerStudioDomainUrl?: string;
+  readonly kmsKeyId?: string;
+  readonly dedicatedServiceAccountId?: string;
+  readonly federationMode?: string;
+  readonly federationParameters?: FederationParameters;
 }
 
-interface InvalidRequestException {
-  readonly message: string;
+export interface FederationParameters {
+  readonly samlMetadataDocument?: string;
+  readonly samlMetadataURL?: string;
+  readonly applicationCallBackURL?: string;
+  readonly federationURN?: string;
+  readonly federationProviderName?: string;
+  readonly attributeMap?: {[key: string]: any};
 }
 
-interface LimitExceededException {
-  readonly message: string;
+export interface GetEnvironmentRequest {
+  readonly environmentId: string;
 }
 
-interface ListEnvironmentsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetEnvironmentResponse {
+  readonly environment?: Environment;
 }
 
-interface ListEnvironmentsResponse {
-  readonly environments: [];
-  readonly nextToken: string;
+export interface InternalServerException {
+  readonly message?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface InvalidRequestException {
+  readonly message?: string;
+}
+
+export interface LimitExceededException {
+  readonly message?: string;
+}
+
+export interface ListEnvironmentsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+}
+
+export interface ListEnvironmentsResponse {
+  readonly environments?: [];
+  readonly nextToken?: string;
+}
+
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly message: string;
+export interface ServiceQuotaExceededException {
+  readonly message?: string;
 }
 
-interface SuperuserParameters {
+export interface SuperuserParameters {
   readonly emailAddress: string;
   readonly firstName: string;
   readonly lastName: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateEnvironmentRequest {
+export interface UpdateEnvironmentRequest {
   readonly environmentId: string;
-  readonly name: string;
-  readonly description: string;
-  readonly federationMode: string;
-  readonly federationParameters: FederationParameters;
+  readonly name?: string;
+  readonly description?: string;
+  readonly federationMode?: string;
+  readonly federationParameters?: FederationParameters;
 }
 
-interface UpdateEnvironmentResponse {
-  readonly environment: Environment;
+export interface UpdateEnvironmentResponse {
+  readonly environment?: Environment;
 }
 
-interface ValidationException {
-  readonly message: string;
+export interface ValidationException {
+  readonly message?: string;
 }
+
 

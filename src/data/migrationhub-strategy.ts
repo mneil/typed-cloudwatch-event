@@ -4,30 +4,39 @@
 export interface GetApplicationComponentDetails {
   readonly applicationComponentId: string;
 }
+
 export interface GetApplicationComponentStrategies {
   readonly applicationComponentId: string;
 }
+
 export interface GetAssessment {
   readonly id: string;
 }
+
 export interface GetImportFileTask {
   readonly id: string;
 }
+
 export interface GetPortfolioPreferences {
 }
+
 export interface GetPortfolioSummary {
 }
+
 export interface GetRecommendationReportDetails {
   readonly id: string;
 }
+
 export interface GetServerDetails {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly serverId: string;
 }
+
 export interface GetServerStrategies {
   readonly serverId: string;
 }
+
 export interface ListApplicationComponents {
   readonly applicationComponentCriteria?: string;
   readonly filterValue?: string;
@@ -36,14 +45,17 @@ export interface ListApplicationComponents {
   readonly nextToken?: string;
   readonly sort?: string;
 }
+
 export interface ListCollectors {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListImportFileTask {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListServers {
   readonly filterValue?: string;
   readonly groupIdFilter?: [];
@@ -52,15 +64,18 @@ export interface ListServers {
   readonly serverCriteria?: string;
   readonly sort?: string;
 }
+
 export interface PutPortfolioPreferences {
   readonly applicationPreferences?: ApplicationPreferences;
   readonly databasePreferences?: DatabasePreferences;
   readonly prioritizeBusinessGoals?: PrioritizeBusinessGoals;
 }
+
 export interface StartAssessment {
   readonly s3bucketForAnalysisData?: string;
   readonly s3bucketForReportData?: string;
 }
+
 export interface StartImportFileTask {
   readonly S3Bucket: string;
   readonly dataSourceType?: string;
@@ -69,13 +84,16 @@ export interface StartImportFileTask {
   readonly s3bucketForReportData?: string;
   readonly s3key: string;
 }
+
 export interface StartRecommendationReportGeneration {
   readonly groupIdFilter?: [];
   readonly outputFormat?: string;
 }
+
 export interface StopAssessment {
   readonly assessmentId: string;
 }
+
 export interface UpdateApplicationComponentConfig {
   readonly applicationComponentId: string;
   readonly inclusionStatus?: string;
@@ -83,498 +101,498 @@ export interface UpdateApplicationComponentConfig {
   readonly sourceCodeList?: [];
   readonly strategyOption?: StrategyOption;
 }
+
 export interface UpdateServerConfig {
   readonly serverId: string;
   readonly strategyOption?: StrategyOption;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
 }
 
-interface AntipatternSeveritySummary {
-  readonly count: number;
-  readonly severity: string;
+export interface AntipatternSeveritySummary {
+  readonly count?: number;
+  readonly severity?: string;
 }
 
-interface ApplicationComponentDetail {
-  readonly analysisStatus: string;
-  readonly antipatternReportS3Object: S3Object;
-  readonly antipatternReportStatus: string;
-  readonly antipatternReportStatusMessage: string;
-  readonly appType: string;
-  readonly associatedServerId: string;
-  readonly databaseConfigDetail: DatabaseConfigDetail;
-  readonly id: string;
-  readonly inclusionStatus: string;
-  readonly lastAnalyzedTimestamp: Date;
-  readonly listAntipatternSeveritySummary: [];
-  readonly moreServerAssociationExists: boolean;
-  readonly name: string;
-  readonly osDriver: string;
-  readonly osVersion: string;
-  readonly recommendationSet: RecommendationSet;
-  readonly resourceSubType: string;
-  readonly sourceCodeRepositories: [];
-  readonly statusMessage: string;
+export interface ApplicationComponentDetail {
+  readonly analysisStatus?: string;
+  readonly antipatternReportS3Object?: S3Object;
+  readonly antipatternReportStatus?: string;
+  readonly antipatternReportStatusMessage?: string;
+  readonly appType?: string;
+  readonly associatedServerId?: string;
+  readonly databaseConfigDetail?: DatabaseConfigDetail;
+  readonly id?: string;
+  readonly inclusionStatus?: string;
+  readonly lastAnalyzedTimestamp?: Date;
+  readonly listAntipatternSeveritySummary?: [];
+  readonly moreServerAssociationExists?: boolean;
+  readonly name?: string;
+  readonly osDriver?: string;
+  readonly osVersion?: string;
+  readonly recommendationSet?: RecommendationSet;
+  readonly resourceSubType?: string;
+  readonly sourceCodeRepositories?: [];
+  readonly statusMessage?: string;
 }
 
-interface ApplicationComponentStrategy {
-  readonly isPreferred: boolean;
-  readonly recommendation: RecommendationSet;
-  readonly status: string;
+export interface ApplicationComponentStrategy {
+  readonly isPreferred?: boolean;
+  readonly recommendation?: RecommendationSet;
+  readonly status?: string;
 }
 
-interface ApplicationComponentSummary {
-  readonly appType: string;
-  readonly count: number;
+export interface ApplicationComponentSummary {
+  readonly appType?: string;
+  readonly count?: number;
 }
 
-interface ApplicationPreferences {
-  readonly managementPreference: ManagementPreference;
+export interface ApplicationPreferences {
+  readonly managementPreference?: ManagementPreference;
 }
 
-interface AssessmentSummary {
-  readonly antipatternReportS3Object: S3Object;
-  readonly antipatternReportStatus: string;
-  readonly antipatternReportStatusMessage: string;
-  readonly lastAnalyzedTimestamp: Date;
-  readonly listAntipatternSeveritySummary: [];
-  readonly listApplicationComponentStrategySummary: [];
-  readonly listApplicationComponentSummary: [];
-  readonly listServerStrategySummary: [];
-  readonly listServerSummary: [];
+export interface AssessmentSummary {
+  readonly antipatternReportS3Object?: S3Object;
+  readonly antipatternReportStatus?: string;
+  readonly antipatternReportStatusMessage?: string;
+  readonly lastAnalyzedTimestamp?: Date;
+  readonly listAntipatternSeveritySummary?: [];
+  readonly listApplicationComponentStrategySummary?: [];
+  readonly listApplicationComponentSummary?: [];
+  readonly listServerStrategySummary?: [];
+  readonly listServerSummary?: [];
 }
 
-interface AssociatedApplication {
-  readonly id: string;
-  readonly name: string;
+export interface AssociatedApplication {
+  readonly id?: string;
+  readonly name?: string;
 }
 
-interface AwsManagedResources {
+export interface AwsManagedResources {
   readonly targetDestination: [];
 }
 
-interface BusinessGoals {
-  readonly licenseCostReduction: number;
-  readonly modernizeInfrastructureWithCloudNativeTechnologies: number;
-  readonly reduceOperationalOverheadWithManagedServices: number;
-  readonly speedOfMigration: number;
+export interface BusinessGoals {
+  readonly licenseCostReduction?: number;
+  readonly modernizeInfrastructureWithCloudNativeTechnologies?: number;
+  readonly reduceOperationalOverheadWithManagedServices?: number;
+  readonly speedOfMigration?: number;
 }
 
-interface Collector {
-  readonly collectorHealth: string;
-  readonly collectorId: string;
-  readonly collectorVersion: string;
-  readonly hostName: string;
-  readonly ipAddress: string;
-  readonly lastActivityTimeStamp: string;
-  readonly registeredTimeStamp: string;
+export interface Collector {
+  readonly collectorHealth?: string;
+  readonly collectorId?: string;
+  readonly collectorVersion?: string;
+  readonly hostName?: string;
+  readonly ipAddress?: string;
+  readonly lastActivityTimeStamp?: string;
+  readonly registeredTimeStamp?: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly message: string;
 }
 
-interface DataCollectionDetails {
-  readonly completionTime: Date;
-  readonly failed: number;
-  readonly inProgress: number;
-  readonly servers: number;
-  readonly startTime: Date;
-  readonly status: string;
-  readonly success: number;
+export interface DataCollectionDetails {
+  readonly completionTime?: Date;
+  readonly failed?: number;
+  readonly inProgress?: number;
+  readonly servers?: number;
+  readonly startTime?: Date;
+  readonly status?: string;
+  readonly success?: number;
 }
 
-interface DatabaseConfigDetail {
-  readonly secretName: string;
+export interface DatabaseConfigDetail {
+  readonly secretName?: string;
 }
 
-interface DatabaseMigrationPreference {
-  readonly heterogeneous: Heterogeneous;
-  readonly homogeneous: Homogeneous;
-  readonly noPreference: NoDatabaseMigrationPreference;
+export interface DatabaseMigrationPreference {
+  readonly heterogeneous?: Heterogeneous;
+  readonly homogeneous?: Homogeneous;
+  readonly noPreference?: NoDatabaseMigrationPreference;
 }
 
-interface DatabasePreferences {
-  readonly databaseManagementPreference: string;
-  readonly databaseMigrationPreference: DatabaseMigrationPreference;
+export interface DatabasePreferences {
+  readonly databaseManagementPreference?: string;
+  readonly databaseMigrationPreference?: DatabaseMigrationPreference;
 }
 
-interface GetApplicationComponentDetailsRequest {
+export interface GetApplicationComponentDetailsRequest {
   readonly applicationComponentId: string;
 }
 
-interface GetApplicationComponentDetailsResponse {
-  readonly applicationComponentDetail: ApplicationComponentDetail;
-  readonly associatedApplications: [];
-  readonly associatedServerIds: [];
-  readonly moreApplicationResource: boolean;
+export interface GetApplicationComponentDetailsResponse {
+  readonly applicationComponentDetail?: ApplicationComponentDetail;
+  readonly associatedApplications?: [];
+  readonly associatedServerIds?: [];
+  readonly moreApplicationResource?: boolean;
 }
 
-interface GetApplicationComponentStrategiesRequest {
+export interface GetApplicationComponentStrategiesRequest {
   readonly applicationComponentId: string;
 }
 
-interface GetApplicationComponentStrategiesResponse {
-  readonly applicationComponentStrategies: [];
+export interface GetApplicationComponentStrategiesResponse {
+  readonly applicationComponentStrategies?: [];
 }
 
-interface GetAssessmentRequest {
+export interface GetAssessmentRequest {
   readonly id: string;
 }
 
-interface GetAssessmentResponse {
-  readonly dataCollectionDetails: DataCollectionDetails;
+export interface GetAssessmentResponse {
+  readonly dataCollectionDetails?: DataCollectionDetails;
+  readonly id?: string;
+}
+
+export interface GetImportFileTaskRequest {
   readonly id: string;
 }
 
-interface GetImportFileTaskRequest {
+export interface GetImportFileTaskResponse {
+  readonly completionTime?: Date;
+  readonly id?: string;
+  readonly importName?: string;
+  readonly inputS3Bucket?: string;
+  readonly inputS3Key?: string;
+  readonly numberOfRecordsFailed?: number;
+  readonly numberOfRecordsSuccess?: number;
+  readonly startTime?: Date;
+  readonly status?: string;
+  readonly statusReportS3Bucket?: string;
+  readonly statusReportS3Key?: string;
+}
+
+export interface GetPortfolioPreferencesRequest {
+}
+
+export interface GetPortfolioPreferencesResponse {
+  readonly applicationPreferences?: ApplicationPreferences;
+  readonly databasePreferences?: DatabasePreferences;
+  readonly prioritizeBusinessGoals?: PrioritizeBusinessGoals;
+}
+
+export interface GetPortfolioSummaryRequest {
+}
+
+export interface GetPortfolioSummaryResponse {
+  readonly assessmentSummary?: AssessmentSummary;
+}
+
+export interface GetRecommendationReportDetailsRequest {
   readonly id: string;
 }
 
-interface GetImportFileTaskResponse {
-  readonly completionTime: Date;
-  readonly id: string;
-  readonly importName: string;
-  readonly inputS3Bucket: string;
-  readonly inputS3Key: string;
-  readonly numberOfRecordsFailed: number;
-  readonly numberOfRecordsSuccess: number;
-  readonly startTime: Date;
-  readonly status: string;
-  readonly statusReportS3Bucket: string;
-  readonly statusReportS3Key: string;
+export interface GetRecommendationReportDetailsResponse {
+  readonly id?: string;
+  readonly recommendationReportDetails?: RecommendationReportDetails;
 }
 
-interface GetPortfolioPreferencesRequest {
-}
-
-interface GetPortfolioPreferencesResponse {
-  readonly applicationPreferences: ApplicationPreferences;
-  readonly databasePreferences: DatabasePreferences;
-  readonly prioritizeBusinessGoals: PrioritizeBusinessGoals;
-}
-
-interface GetPortfolioSummaryRequest {
-}
-
-interface GetPortfolioSummaryResponse {
-  readonly assessmentSummary: AssessmentSummary;
-}
-
-interface GetRecommendationReportDetailsRequest {
-  readonly id: string;
-}
-
-interface GetRecommendationReportDetailsResponse {
-  readonly id: string;
-  readonly recommendationReportDetails: RecommendationReportDetails;
-}
-
-interface GetServerDetailsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface GetServerDetailsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly serverId: string;
 }
 
-interface GetServerDetailsResponse {
-  readonly associatedApplications: [];
-  readonly nextToken: string;
-  readonly serverDetail: ServerDetail;
+export interface GetServerDetailsResponse {
+  readonly associatedApplications?: [];
+  readonly nextToken?: string;
+  readonly serverDetail?: ServerDetail;
 }
 
-interface GetServerStrategiesRequest {
+export interface GetServerStrategiesRequest {
   readonly serverId: string;
 }
 
-interface GetServerStrategiesResponse {
-  readonly serverStrategies: [];
+export interface GetServerStrategiesResponse {
+  readonly serverStrategies?: [];
 }
 
-interface Group {
-  readonly name: string;
-  readonly value: string;
+export interface Group {
+  readonly name?: string;
+  readonly value?: string;
 }
 
-interface Heterogeneous {
+export interface Heterogeneous {
   readonly targetDatabaseEngine: [];
 }
 
-interface Homogeneous {
-  readonly targetDatabaseEngine: [];
+export interface Homogeneous {
+  readonly targetDatabaseEngine?: [];
 }
 
-interface ImportFileTaskInformation {
-  readonly completionTime: Date;
-  readonly id: string;
-  readonly importName: string;
-  readonly inputS3Bucket: string;
-  readonly inputS3Key: string;
-  readonly numberOfRecordsFailed: number;
-  readonly numberOfRecordsSuccess: number;
-  readonly startTime: Date;
-  readonly status: string;
-  readonly statusReportS3Bucket: string;
-  readonly statusReportS3Key: string;
+export interface ImportFileTaskInformation {
+  readonly completionTime?: Date;
+  readonly id?: string;
+  readonly importName?: string;
+  readonly inputS3Bucket?: string;
+  readonly inputS3Key?: string;
+  readonly numberOfRecordsFailed?: number;
+  readonly numberOfRecordsSuccess?: number;
+  readonly startTime?: Date;
+  readonly status?: string;
+  readonly statusReportS3Bucket?: string;
+  readonly statusReportS3Key?: string;
 }
 
-interface InternalServerException {
-  readonly message: string;
+export interface InternalServerException {
+  readonly message?: string;
 }
 
-interface ListApplicationComponentsRequest {
-  readonly applicationComponentCriteria: string;
-  readonly filterValue: string;
-  readonly groupIdFilter: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly sort: string;
+export interface ListApplicationComponentsRequest {
+  readonly applicationComponentCriteria?: string;
+  readonly filterValue?: string;
+  readonly groupIdFilter?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly sort?: string;
 }
 
-interface ListApplicationComponentsResponse {
-  readonly applicationComponentInfos: [];
-  readonly nextToken: string;
+export interface ListApplicationComponentsResponse {
+  readonly applicationComponentInfos?: [];
+  readonly nextToken?: string;
 }
 
-interface ListCollectorsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListCollectorsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListCollectorsResponse {
-  readonly Collectors: [];
-  readonly nextToken: string;
+export interface ListCollectorsResponse {
+  readonly Collectors?: [];
+  readonly nextToken?: string;
 }
 
-interface ListImportFileTaskRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListImportFileTaskRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListImportFileTaskResponse {
-  readonly nextToken: string;
-  readonly taskInfos: [];
+export interface ListImportFileTaskResponse {
+  readonly nextToken?: string;
+  readonly taskInfos?: [];
 }
 
-interface ListServersRequest {
-  readonly filterValue: string;
-  readonly groupIdFilter: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly serverCriteria: string;
-  readonly sort: string;
+export interface ListServersRequest {
+  readonly filterValue?: string;
+  readonly groupIdFilter?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly serverCriteria?: string;
+  readonly sort?: string;
 }
 
-interface ListServersResponse {
-  readonly nextToken: string;
-  readonly serverInfos: [];
+export interface ListServersResponse {
+  readonly nextToken?: string;
+  readonly serverInfos?: [];
 }
 
-interface ManagementPreference {
-  readonly awsManagedResources: AwsManagedResources;
-  readonly noPreference: NoManagementPreference;
-  readonly selfManageResources: SelfManageResources;
+export interface ManagementPreference {
+  readonly awsManagedResources?: AwsManagedResources;
+  readonly noPreference?: NoManagementPreference;
+  readonly selfManageResources?: SelfManageResources;
 }
 
-interface NetworkInfo {
+export interface NetworkInfo {
   readonly interfaceName: string;
   readonly ipAddress: string;
   readonly macAddress: string;
   readonly netMask: string;
 }
 
-interface NoDatabaseMigrationPreference {
+export interface NoDatabaseMigrationPreference {
   readonly targetDatabaseEngine: [];
 }
 
-interface NoManagementPreference {
+export interface NoManagementPreference {
   readonly targetDestination: [];
 }
 
-interface OSInfo {
-  readonly type: string;
-  readonly version: string;
+export interface OSInfo {
+  readonly type?: string;
+  readonly version?: string;
 }
 
-interface PrioritizeBusinessGoals {
-  readonly businessGoals: BusinessGoals;
+export interface PrioritizeBusinessGoals {
+  readonly businessGoals?: BusinessGoals;
 }
 
-interface PutPortfolioPreferencesRequest {
-  readonly applicationPreferences: ApplicationPreferences;
-  readonly databasePreferences: DatabasePreferences;
-  readonly prioritizeBusinessGoals: PrioritizeBusinessGoals;
+export interface PutPortfolioPreferencesRequest {
+  readonly applicationPreferences?: ApplicationPreferences;
+  readonly databasePreferences?: DatabasePreferences;
+  readonly prioritizeBusinessGoals?: PrioritizeBusinessGoals;
 }
 
-interface PutPortfolioPreferencesResponse {
+export interface PutPortfolioPreferencesResponse {
 }
 
-interface RecommendationReportDetails {
-  readonly completionTime: Date;
-  readonly s3Bucket: string;
-  readonly s3Keys: [];
-  readonly startTime: Date;
-  readonly status: string;
-  readonly statusMessage: string;
+export interface RecommendationReportDetails {
+  readonly completionTime?: Date;
+  readonly s3Bucket?: string;
+  readonly s3Keys?: [];
+  readonly startTime?: Date;
+  readonly status?: string;
+  readonly statusMessage?: string;
 }
 
-interface RecommendationSet {
-  readonly strategy: string;
-  readonly targetDestination: string;
-  readonly transformationTool: TransformationTool;
+export interface RecommendationSet {
+  readonly strategy?: string;
+  readonly targetDestination?: string;
+  readonly transformationTool?: TransformationTool;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface S3Object {
-  readonly s3Bucket: string;
-  readonly s3key: string;
+export interface S3Object {
+  readonly s3Bucket?: string;
+  readonly s3key?: string;
 }
 
-interface SelfManageResources {
+export interface SelfManageResources {
   readonly targetDestination: [];
 }
 
-interface ServerDetail {
-  readonly antipatternReportS3Object: S3Object;
-  readonly antipatternReportStatus: string;
-  readonly antipatternReportStatusMessage: string;
-  readonly applicationComponentStrategySummary: [];
-  readonly dataCollectionStatus: string;
-  readonly id: string;
-  readonly lastAnalyzedTimestamp: Date;
-  readonly listAntipatternSeveritySummary: [];
-  readonly name: string;
-  readonly recommendationSet: RecommendationSet;
-  readonly serverType: string;
-  readonly statusMessage: string;
-  readonly systemInfo: SystemInfo;
+export interface ServerDetail {
+  readonly antipatternReportS3Object?: S3Object;
+  readonly antipatternReportStatus?: string;
+  readonly antipatternReportStatusMessage?: string;
+  readonly applicationComponentStrategySummary?: [];
+  readonly dataCollectionStatus?: string;
+  readonly id?: string;
+  readonly lastAnalyzedTimestamp?: Date;
+  readonly listAntipatternSeveritySummary?: [];
+  readonly name?: string;
+  readonly recommendationSet?: RecommendationSet;
+  readonly serverType?: string;
+  readonly statusMessage?: string;
+  readonly systemInfo?: SystemInfo;
 }
 
-interface ServerStrategy {
-  readonly isPreferred: boolean;
-  readonly numberOfApplicationComponents: number;
-  readonly recommendation: RecommendationSet;
-  readonly status: string;
+export interface ServerStrategy {
+  readonly isPreferred?: boolean;
+  readonly numberOfApplicationComponents?: number;
+  readonly recommendation?: RecommendationSet;
+  readonly status?: string;
 }
 
-interface ServerSummary {
-  readonly ServerOsType: string;
-  readonly count: number;
+export interface ServerSummary {
+  readonly ServerOsType?: string;
+  readonly count?: number;
 }
 
-interface ServiceLinkedRoleLockClientException {
+export interface ServiceLinkedRoleLockClientException {
+  readonly message?: string;
+}
+
+export interface ServiceQuotaExceededException {
   readonly message: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly message: string;
+export interface SourceCode {
+  readonly location?: string;
+  readonly sourceVersion?: string;
+  readonly versionControl?: string;
 }
 
-interface SourceCode {
-  readonly location: string;
-  readonly sourceVersion: string;
-  readonly versionControl: string;
+export interface SourceCodeRepository {
+  readonly branch?: string;
+  readonly repository?: string;
+  readonly versionControlType?: string;
 }
 
-interface SourceCodeRepository {
-  readonly branch: string;
-  readonly repository: string;
-  readonly versionControlType: string;
+export interface StartAssessmentRequest {
+  readonly s3bucketForAnalysisData?: string;
+  readonly s3bucketForReportData?: string;
 }
 
-interface StartAssessmentRequest {
-  readonly s3bucketForAnalysisData: string;
-  readonly s3bucketForReportData: string;
+export interface StartAssessmentResponse {
+  readonly assessmentId?: string;
 }
 
-interface StartAssessmentResponse {
-  readonly assessmentId: string;
-}
-
-interface StartImportFileTaskRequest {
+export interface StartImportFileTaskRequest {
   readonly S3Bucket: string;
-  readonly dataSourceType: string;
-  readonly groupId: [];
+  readonly dataSourceType?: string;
+  readonly groupId?: [];
   readonly name: string;
-  readonly s3bucketForReportData: string;
+  readonly s3bucketForReportData?: string;
   readonly s3key: string;
 }
 
-interface StartImportFileTaskResponse {
-  readonly id: string;
+export interface StartImportFileTaskResponse {
+  readonly id?: string;
 }
 
-interface StartRecommendationReportGenerationRequest {
-  readonly groupIdFilter: [];
-  readonly outputFormat: string;
+export interface StartRecommendationReportGenerationRequest {
+  readonly groupIdFilter?: [];
+  readonly outputFormat?: string;
 }
 
-interface StartRecommendationReportGenerationResponse {
-  readonly id: string;
+export interface StartRecommendationReportGenerationResponse {
+  readonly id?: string;
 }
 
-interface StopAssessmentRequest {
+export interface StopAssessmentRequest {
   readonly assessmentId: string;
 }
 
-interface StopAssessmentResponse {
+export interface StopAssessmentResponse {
 }
 
-interface StrategyOption {
-  readonly isPreferred: boolean;
-  readonly strategy: string;
-  readonly targetDestination: string;
-  readonly toolName: string;
+export interface StrategyOption {
+  readonly isPreferred?: boolean;
+  readonly strategy?: string;
+  readonly targetDestination?: string;
+  readonly toolName?: string;
 }
 
-interface StrategySummary {
-  readonly count: number;
-  readonly strategy: string;
+export interface StrategySummary {
+  readonly count?: number;
+  readonly strategy?: string;
 }
 
-interface SystemInfo {
-  readonly cpuArchitecture: string;
-  readonly fileSystemType: string;
-  readonly networkInfoList: [];
-  readonly osInfo: OSInfo;
+export interface SystemInfo {
+  readonly cpuArchitecture?: string;
+  readonly fileSystemType?: string;
+  readonly networkInfoList?: [];
+  readonly osInfo?: OSInfo;
 }
 
-interface ThrottlingException {
-  readonly message: string;
+export interface ThrottlingException {
+  readonly message?: string;
 }
 
-interface TransformationTool {
-  readonly description: string;
-  readonly name: string;
-  readonly tranformationToolInstallationLink: string;
+export interface TransformationTool {
+  readonly description?: string;
+  readonly name?: string;
+  readonly tranformationToolInstallationLink?: string;
 }
 
-interface UpdateApplicationComponentConfigRequest {
+export interface UpdateApplicationComponentConfigRequest {
   readonly applicationComponentId: string;
-  readonly inclusionStatus: string;
-  readonly secretsManagerKey: string;
-  readonly sourceCodeList: [];
-  readonly strategyOption: StrategyOption;
+  readonly inclusionStatus?: string;
+  readonly secretsManagerKey?: string;
+  readonly sourceCodeList?: [];
+  readonly strategyOption?: StrategyOption;
 }
 
-interface UpdateApplicationComponentConfigResponse {
+export interface UpdateApplicationComponentConfigResponse {
 }
 
-interface UpdateServerConfigRequest {
+export interface UpdateServerConfigRequest {
   readonly serverId: string;
-  readonly strategyOption: StrategyOption;
+  readonly strategyOption?: StrategyOption;
 }
 
-interface UpdateServerConfigResponse {
+export interface UpdateServerConfigResponse {
 }
 
-interface ValidationException {
-  readonly message: string;
+export interface ValidationException {
+  readonly message?: string;
 }
+
 

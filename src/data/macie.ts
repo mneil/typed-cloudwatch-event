@@ -4,145 +4,150 @@
 export interface AssociateMemberAccount {
   readonly memberAccountId: string;
 }
+
 export interface AssociateS3Resources {
   readonly memberAccountId?: string;
   readonly s3Resources: [];
 }
+
 export interface DisassociateMemberAccount {
   readonly memberAccountId: string;
 }
+
 export interface DisassociateS3Resources {
   readonly memberAccountId?: string;
   readonly associatedS3Resources: [];
 }
+
 export interface ListMemberAccounts {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListS3Resources {
   readonly memberAccountId?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface UpdateS3Resources {
   readonly memberAccountId?: string;
   readonly s3ResourcesUpdate: [];
 }
 
-
-
-interface AccessDeniedException {
-  readonly message: string;
-  readonly resourceType: string;
+export interface AccessDeniedException {
+  readonly message?: string;
+  readonly resourceType?: string;
 }
 
-interface AssociateMemberAccountRequest {
+export interface AssociateMemberAccountRequest {
   readonly memberAccountId: string;
 }
 
-interface AssociateS3ResourcesRequest {
-  readonly memberAccountId: string;
+export interface AssociateS3ResourcesRequest {
+  readonly memberAccountId?: string;
   readonly s3Resources: [];
 }
 
-interface AssociateS3ResourcesResult {
-  readonly failedS3Resources: [];
+export interface AssociateS3ResourcesResult {
+  readonly failedS3Resources?: [];
 }
 
-interface ClassificationType {
+export interface ClassificationType {
   readonly oneTime: string;
   readonly continuous: string;
 }
 
-interface ClassificationTypeUpdate {
-  readonly oneTime: string;
-  readonly continuous: string;
+export interface ClassificationTypeUpdate {
+  readonly oneTime?: string;
+  readonly continuous?: string;
 }
 
-interface DisassociateMemberAccountRequest {
+export interface DisassociateMemberAccountRequest {
   readonly memberAccountId: string;
 }
 
-interface DisassociateS3ResourcesRequest {
-  readonly memberAccountId: string;
+export interface DisassociateS3ResourcesRequest {
+  readonly memberAccountId?: string;
   readonly associatedS3Resources: [];
 }
 
-interface DisassociateS3ResourcesResult {
-  readonly failedS3Resources: [];
+export interface DisassociateS3ResourcesResult {
+  readonly failedS3Resources?: [];
 }
 
-interface FailedS3Resource {
-  readonly failedItem: S3Resource;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface FailedS3Resource {
+  readonly failedItem?: S3Resource;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface InternalException {
-  readonly errorCode: string;
-  readonly message: string;
+export interface InternalException {
+  readonly errorCode?: string;
+  readonly message?: string;
 }
 
-interface InvalidInputException {
-  readonly errorCode: string;
-  readonly message: string;
-  readonly fieldName: string;
+export interface InvalidInputException {
+  readonly errorCode?: string;
+  readonly message?: string;
+  readonly fieldName?: string;
 }
 
-interface LimitExceededException {
-  readonly errorCode: string;
-  readonly message: string;
-  readonly resourceType: string;
+export interface LimitExceededException {
+  readonly errorCode?: string;
+  readonly message?: string;
+  readonly resourceType?: string;
 }
 
-interface ListMemberAccountsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListMemberAccountsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListMemberAccountsResult {
-  readonly memberAccounts: [];
-  readonly nextToken: string;
+export interface ListMemberAccountsResult {
+  readonly memberAccounts?: [];
+  readonly nextToken?: string;
 }
 
-interface ListS3ResourcesRequest {
-  readonly memberAccountId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListS3ResourcesRequest {
+  readonly memberAccountId?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListS3ResourcesResult {
-  readonly s3Resources: [];
-  readonly nextToken: string;
+export interface ListS3ResourcesResult {
+  readonly s3Resources?: [];
+  readonly nextToken?: string;
 }
 
-interface MemberAccount {
-  readonly accountId: string;
+export interface MemberAccount {
+  readonly accountId?: string;
 }
 
-interface S3Resource {
+export interface S3Resource {
   readonly bucketName: string;
-  readonly prefix: string;
+  readonly prefix?: string;
 }
 
-interface S3ResourceClassification {
+export interface S3ResourceClassification {
   readonly bucketName: string;
-  readonly prefix: string;
+  readonly prefix?: string;
   readonly classificationType: ClassificationType;
 }
 
-interface S3ResourceClassificationUpdate {
+export interface S3ResourceClassificationUpdate {
   readonly bucketName: string;
-  readonly prefix: string;
+  readonly prefix?: string;
   readonly classificationTypeUpdate: ClassificationTypeUpdate;
 }
 
-interface UpdateS3ResourcesRequest {
-  readonly memberAccountId: string;
+export interface UpdateS3ResourcesRequest {
+  readonly memberAccountId?: string;
   readonly s3ResourcesUpdate: [];
 }
 
-interface UpdateS3ResourcesResult {
-  readonly failedS3Resources: [];
+export interface UpdateS3ResourcesResult {
+  readonly failedS3Resources?: [];
 }
+
 

@@ -12,35 +12,44 @@ export interface CreateIdentityPool {
   readonly SamlProviderARNs?: [];
   readonly IdentityPoolTags?: {[key: string]: any};
 }
+
 export interface DeleteIdentities {
   readonly IdentityIdsToDelete: [];
 }
+
 export interface DeleteIdentityPool {
   readonly IdentityPoolId: string;
 }
+
 export interface DescribeIdentity {
   readonly IdentityId: string;
 }
+
 export interface DescribeIdentityPool {
   readonly IdentityPoolId: string;
 }
+
 export interface GetCredentialsForIdentity {
   readonly IdentityId: string;
   readonly Logins?: {[key: string]: any};
   readonly CustomRoleArn?: string;
 }
+
 export interface GetId {
   readonly AccountId?: string;
   readonly IdentityPoolId: string;
   readonly Logins?: {[key: string]: any};
 }
+
 export interface GetIdentityPoolRoles {
   readonly IdentityPoolId: string;
 }
+
 export interface GetOpenIdToken {
   readonly IdentityId: string;
   readonly Logins?: {[key: string]: any};
 }
+
 export interface GetOpenIdTokenForDeveloperIdentity {
   readonly IdentityPoolId: string;
   readonly IdentityId?: string;
@@ -48,23 +57,28 @@ export interface GetOpenIdTokenForDeveloperIdentity {
   readonly PrincipalTags?: {[key: string]: any};
   readonly TokenDuration?: number;
 }
+
 export interface GetPrincipalTagAttributeMap {
   readonly IdentityPoolId: string;
   readonly IdentityProviderName: string;
 }
+
 export interface ListIdentities {
   readonly IdentityPoolId: string;
   readonly MaxResults: number;
   readonly NextToken?: string;
   readonly HideDisabled?: boolean;
 }
+
 export interface ListIdentityPools {
   readonly MaxResults: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface LookupDeveloperIdentity {
   readonly IdentityPoolId: string;
   readonly IdentityId?: string;
@@ -72,42 +86,50 @@ export interface LookupDeveloperIdentity {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface MergeDeveloperIdentities {
   readonly SourceUserIdentifier: string;
   readonly DestinationUserIdentifier: string;
   readonly DeveloperProviderName: string;
   readonly IdentityPoolId: string;
 }
+
 export interface SetIdentityPoolRoles {
   readonly IdentityPoolId: string;
   readonly Roles: {[key: string]: any};
   readonly RoleMappings?: {[key: string]: any};
 }
+
 export interface SetPrincipalTagAttributeMap {
   readonly IdentityPoolId: string;
   readonly IdentityProviderName: string;
   readonly UseDefaults?: boolean;
   readonly PrincipalTags?: {[key: string]: any};
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UnlinkDeveloperIdentity {
   readonly IdentityId: string;
   readonly IdentityPoolId: string;
   readonly DeveloperProviderName: string;
   readonly DeveloperUserIdentifier: string;
 }
+
 export interface UnlinkIdentity {
   readonly IdentityId: string;
   readonly Logins: {[key: string]: any};
   readonly LoginsToRemove: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateIdentityPool {
   readonly IdentityPoolId: string;
   readonly IdentityPoolName: string;
@@ -121,312 +143,311 @@ export interface UpdateIdentityPool {
   readonly IdentityPoolTags?: {[key: string]: any};
 }
 
-
-
-interface CognitoIdentityProvider {
-  readonly ProviderName: string;
-  readonly ClientId: string;
-  readonly ServerSideTokenCheck: boolean;
+export interface CognitoIdentityProvider {
+  readonly ProviderName?: string;
+  readonly ClientId?: string;
+  readonly ServerSideTokenCheck?: boolean;
 }
 
-interface ConcurrentModificationException {
-  readonly message: string;
+export interface ConcurrentModificationException {
+  readonly message?: string;
 }
 
-interface CreateIdentityPoolInput {
+export interface CreateIdentityPoolInput {
   readonly IdentityPoolName: string;
   readonly AllowUnauthenticatedIdentities: boolean;
-  readonly AllowClassicFlow: boolean;
-  readonly SupportedLoginProviders: {[key: string]: any};
-  readonly DeveloperProviderName: string;
-  readonly OpenIdConnectProviderARNs: [];
-  readonly CognitoIdentityProviders: [];
-  readonly SamlProviderARNs: [];
-  readonly IdentityPoolTags: {[key: string]: any};
+  readonly AllowClassicFlow?: boolean;
+  readonly SupportedLoginProviders?: {[key: string]: any};
+  readonly DeveloperProviderName?: string;
+  readonly OpenIdConnectProviderARNs?: [];
+  readonly CognitoIdentityProviders?: [];
+  readonly SamlProviderARNs?: [];
+  readonly IdentityPoolTags?: {[key: string]: any};
 }
 
-interface Credentials {
-  readonly AccessKeyId: string;
-  readonly SecretKey: string;
-  readonly SessionToken: string;
-  readonly Expiration: Date;
+export interface Credentials {
+  readonly AccessKeyId?: string;
+  readonly SecretKey?: string;
+  readonly SessionToken?: string;
+  readonly Expiration?: Date;
 }
 
-interface DeleteIdentitiesInput {
+export interface DeleteIdentitiesInput {
   readonly IdentityIdsToDelete: [];
 }
 
-interface DeleteIdentitiesResponse {
-  readonly UnprocessedIdentityIds: [];
+export interface DeleteIdentitiesResponse {
+  readonly UnprocessedIdentityIds?: [];
 }
 
-interface DeleteIdentityPoolInput {
+export interface DeleteIdentityPoolInput {
   readonly IdentityPoolId: string;
 }
 
-interface DescribeIdentityInput {
+export interface DescribeIdentityInput {
   readonly IdentityId: string;
 }
 
-interface DescribeIdentityPoolInput {
+export interface DescribeIdentityPoolInput {
   readonly IdentityPoolId: string;
 }
 
-interface DeveloperUserAlreadyRegisteredException {
-  readonly message: string;
+export interface DeveloperUserAlreadyRegisteredException {
+  readonly message?: string;
 }
 
-interface ExternalServiceException {
-  readonly message: string;
+export interface ExternalServiceException {
+  readonly message?: string;
 }
 
-interface GetCredentialsForIdentityInput {
+export interface GetCredentialsForIdentityInput {
   readonly IdentityId: string;
+  readonly Logins?: {[key: string]: any};
+  readonly CustomRoleArn?: string;
+}
+
+export interface GetCredentialsForIdentityResponse {
+  readonly IdentityId?: string;
+  readonly Credentials?: Credentials;
+}
+
+export interface GetIdInput {
+  readonly AccountId?: string;
+  readonly IdentityPoolId: string;
+  readonly Logins?: {[key: string]: any};
+}
+
+export interface GetIdResponse {
+  readonly IdentityId?: string;
+}
+
+export interface GetIdentityPoolRolesInput {
+  readonly IdentityPoolId: string;
+}
+
+export interface GetIdentityPoolRolesResponse {
+  readonly IdentityPoolId?: string;
+  readonly Roles?: {[key: string]: any};
+  readonly RoleMappings?: {[key: string]: any};
+}
+
+export interface GetOpenIdTokenForDeveloperIdentityInput {
+  readonly IdentityPoolId: string;
+  readonly IdentityId?: string;
   readonly Logins: {[key: string]: any};
-  readonly CustomRoleArn: string;
+  readonly PrincipalTags?: {[key: string]: any};
+  readonly TokenDuration?: number;
 }
 
-interface GetCredentialsForIdentityResponse {
+export interface GetOpenIdTokenForDeveloperIdentityResponse {
+  readonly IdentityId?: string;
+  readonly Token?: string;
+}
+
+export interface GetOpenIdTokenInput {
   readonly IdentityId: string;
-  readonly Credentials: Credentials;
+  readonly Logins?: {[key: string]: any};
 }
 
-interface GetIdInput {
-  readonly AccountId: string;
-  readonly IdentityPoolId: string;
-  readonly Logins: {[key: string]: any};
+export interface GetOpenIdTokenResponse {
+  readonly IdentityId?: string;
+  readonly Token?: string;
 }
 
-interface GetIdResponse {
-  readonly IdentityId: string;
-}
-
-interface GetIdentityPoolRolesInput {
-  readonly IdentityPoolId: string;
-}
-
-interface GetIdentityPoolRolesResponse {
-  readonly IdentityPoolId: string;
-  readonly Roles: {[key: string]: any};
-  readonly RoleMappings: {[key: string]: any};
-}
-
-interface GetOpenIdTokenForDeveloperIdentityInput {
-  readonly IdentityPoolId: string;
-  readonly IdentityId: string;
-  readonly Logins: {[key: string]: any};
-  readonly PrincipalTags: {[key: string]: any};
-  readonly TokenDuration: number;
-}
-
-interface GetOpenIdTokenForDeveloperIdentityResponse {
-  readonly IdentityId: string;
-  readonly Token: string;
-}
-
-interface GetOpenIdTokenInput {
-  readonly IdentityId: string;
-  readonly Logins: {[key: string]: any};
-}
-
-interface GetOpenIdTokenResponse {
-  readonly IdentityId: string;
-  readonly Token: string;
-}
-
-interface GetPrincipalTagAttributeMapInput {
+export interface GetPrincipalTagAttributeMapInput {
   readonly IdentityPoolId: string;
   readonly IdentityProviderName: string;
 }
 
-interface GetPrincipalTagAttributeMapResponse {
-  readonly IdentityPoolId: string;
-  readonly IdentityProviderName: string;
-  readonly UseDefaults: boolean;
-  readonly PrincipalTags: {[key: string]: any};
+export interface GetPrincipalTagAttributeMapResponse {
+  readonly IdentityPoolId?: string;
+  readonly IdentityProviderName?: string;
+  readonly UseDefaults?: boolean;
+  readonly PrincipalTags?: {[key: string]: any};
 }
 
-interface IdentityDescription {
-  readonly IdentityId: string;
-  readonly Logins: [];
-  readonly CreationDate: Date;
-  readonly LastModifiedDate: Date;
+export interface IdentityDescription {
+  readonly IdentityId?: string;
+  readonly Logins?: [];
+  readonly CreationDate?: Date;
+  readonly LastModifiedDate?: Date;
 }
 
-interface IdentityPool {
+export interface IdentityPool {
   readonly IdentityPoolId: string;
   readonly IdentityPoolName: string;
   readonly AllowUnauthenticatedIdentities: boolean;
-  readonly AllowClassicFlow: boolean;
-  readonly SupportedLoginProviders: {[key: string]: any};
-  readonly DeveloperProviderName: string;
-  readonly OpenIdConnectProviderARNs: [];
-  readonly CognitoIdentityProviders: [];
-  readonly SamlProviderARNs: [];
-  readonly IdentityPoolTags: {[key: string]: any};
+  readonly AllowClassicFlow?: boolean;
+  readonly SupportedLoginProviders?: {[key: string]: any};
+  readonly DeveloperProviderName?: string;
+  readonly OpenIdConnectProviderARNs?: [];
+  readonly CognitoIdentityProviders?: [];
+  readonly SamlProviderARNs?: [];
+  readonly IdentityPoolTags?: {[key: string]: any};
 }
 
-interface IdentityPoolShortDescription {
-  readonly IdentityPoolId: string;
-  readonly IdentityPoolName: string;
+export interface IdentityPoolShortDescription {
+  readonly IdentityPoolId?: string;
+  readonly IdentityPoolName?: string;
 }
 
-interface InternalErrorException {
-  readonly message: string;
+export interface InternalErrorException {
+  readonly message?: string;
 }
 
-interface InvalidIdentityPoolConfigurationException {
-  readonly message: string;
+export interface InvalidIdentityPoolConfigurationException {
+  readonly message?: string;
 }
 
-interface InvalidParameterException {
-  readonly message: string;
+export interface InvalidParameterException {
+  readonly message?: string;
 }
 
-interface LimitExceededException {
-  readonly message: string;
+export interface LimitExceededException {
+  readonly message?: string;
 }
 
-interface ListIdentitiesInput {
+export interface ListIdentitiesInput {
   readonly IdentityPoolId: string;
   readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly HideDisabled: boolean;
+  readonly NextToken?: string;
+  readonly HideDisabled?: boolean;
 }
 
-interface ListIdentitiesResponse {
-  readonly IdentityPoolId: string;
-  readonly Identities: [];
-  readonly NextToken: string;
+export interface ListIdentitiesResponse {
+  readonly IdentityPoolId?: string;
+  readonly Identities?: [];
+  readonly NextToken?: string;
 }
 
-interface ListIdentityPoolsInput {
+export interface ListIdentityPoolsInput {
   readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListIdentityPoolsResponse {
-  readonly IdentityPools: [];
-  readonly NextToken: string;
+export interface ListIdentityPoolsResponse {
+  readonly IdentityPools?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceInput {
+export interface ListTagsForResourceInput {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface LookupDeveloperIdentityInput {
+export interface LookupDeveloperIdentityInput {
   readonly IdentityPoolId: string;
-  readonly IdentityId: string;
-  readonly DeveloperUserIdentifier: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly IdentityId?: string;
+  readonly DeveloperUserIdentifier?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface LookupDeveloperIdentityResponse {
-  readonly IdentityId: string;
-  readonly DeveloperUserIdentifierList: [];
-  readonly NextToken: string;
+export interface LookupDeveloperIdentityResponse {
+  readonly IdentityId?: string;
+  readonly DeveloperUserIdentifierList?: [];
+  readonly NextToken?: string;
 }
 
-interface MappingRule {
+export interface MappingRule {
   readonly Claim: string;
   readonly MatchType: string;
   readonly Value: string;
   readonly RoleARN: string;
 }
 
-interface MergeDeveloperIdentitiesInput {
+export interface MergeDeveloperIdentitiesInput {
   readonly SourceUserIdentifier: string;
   readonly DestinationUserIdentifier: string;
   readonly DeveloperProviderName: string;
   readonly IdentityPoolId: string;
 }
 
-interface MergeDeveloperIdentitiesResponse {
-  readonly IdentityId: string;
+export interface MergeDeveloperIdentitiesResponse {
+  readonly IdentityId?: string;
 }
 
-interface NotAuthorizedException {
-  readonly message: string;
+export interface NotAuthorizedException {
+  readonly message?: string;
 }
 
-interface ResourceConflictException {
-  readonly message: string;
+export interface ResourceConflictException {
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface RoleMapping {
+export interface RoleMapping {
   readonly Type: string;
-  readonly AmbiguousRoleResolution: string;
-  readonly RulesConfiguration: RulesConfigurationType;
+  readonly AmbiguousRoleResolution?: string;
+  readonly RulesConfiguration?: RulesConfigurationType;
 }
 
-interface RulesConfigurationType {
+export interface RulesConfigurationType {
   readonly Rules: [];
 }
 
-interface SetIdentityPoolRolesInput {
+export interface SetIdentityPoolRolesInput {
   readonly IdentityPoolId: string;
   readonly Roles: {[key: string]: any};
-  readonly RoleMappings: {[key: string]: any};
+  readonly RoleMappings?: {[key: string]: any};
 }
 
-interface SetPrincipalTagAttributeMapInput {
+export interface SetPrincipalTagAttributeMapInput {
   readonly IdentityPoolId: string;
   readonly IdentityProviderName: string;
-  readonly UseDefaults: boolean;
-  readonly PrincipalTags: {[key: string]: any};
+  readonly UseDefaults?: boolean;
+  readonly PrincipalTags?: {[key: string]: any};
 }
 
-interface SetPrincipalTagAttributeMapResponse {
-  readonly IdentityPoolId: string;
-  readonly IdentityProviderName: string;
-  readonly UseDefaults: boolean;
-  readonly PrincipalTags: {[key: string]: any};
+export interface SetPrincipalTagAttributeMapResponse {
+  readonly IdentityPoolId?: string;
+  readonly IdentityProviderName?: string;
+  readonly UseDefaults?: boolean;
+  readonly PrincipalTags?: {[key: string]: any};
 }
 
-interface TagResourceInput {
+export interface TagResourceInput {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TooManyRequestsException {
-  readonly message: string;
+export interface TooManyRequestsException {
+  readonly message?: string;
 }
 
-interface UnlinkDeveloperIdentityInput {
+export interface UnlinkDeveloperIdentityInput {
   readonly IdentityId: string;
   readonly IdentityPoolId: string;
   readonly DeveloperProviderName: string;
   readonly DeveloperUserIdentifier: string;
 }
 
-interface UnlinkIdentityInput {
+export interface UnlinkIdentityInput {
   readonly IdentityId: string;
   readonly Logins: {[key: string]: any};
   readonly LoginsToRemove: [];
 }
 
-interface UnprocessedIdentityId {
-  readonly IdentityId: string;
-  readonly ErrorCode: string;
+export interface UnprocessedIdentityId {
+  readonly IdentityId?: string;
+  readonly ErrorCode?: string;
 }
 
-interface UntagResourceInput {
+export interface UntagResourceInput {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
+
 

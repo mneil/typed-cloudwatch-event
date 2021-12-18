@@ -7,519 +7,550 @@ export interface AssociateDomain {
   readonly DisplayName?: string;
   readonly AcmCertificateArn: string;
 }
+
 export interface AssociateWebsiteAuthorizationProvider {
   readonly FleetArn: string;
   readonly AuthorizationProviderType: string;
   readonly DomainName?: string;
 }
+
 export interface AssociateWebsiteCertificateAuthority {
   readonly FleetArn: string;
   readonly Certificate: string;
   readonly DisplayName?: string;
 }
+
 export interface CreateFleet {
   readonly FleetName: string;
   readonly DisplayName?: string;
   readonly OptimizeForEndUserLocation?: boolean;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface DeleteFleet {
   readonly FleetArn: string;
 }
+
 export interface DescribeAuditStreamConfiguration {
   readonly FleetArn: string;
 }
+
 export interface DescribeCompanyNetworkConfiguration {
   readonly FleetArn: string;
 }
+
 export interface DescribeDevice {
   readonly FleetArn: string;
   readonly DeviceId: string;
 }
+
 export interface DescribeDevicePolicyConfiguration {
   readonly FleetArn: string;
 }
+
 export interface DescribeDomain {
   readonly FleetArn: string;
   readonly DomainName: string;
 }
+
 export interface DescribeFleetMetadata {
   readonly FleetArn: string;
 }
+
 export interface DescribeIdentityProviderConfiguration {
   readonly FleetArn: string;
 }
+
 export interface DescribeWebsiteCertificateAuthority {
   readonly FleetArn: string;
   readonly WebsiteCaId: string;
 }
+
 export interface DisassociateDomain {
   readonly FleetArn: string;
   readonly DomainName: string;
 }
+
 export interface DisassociateWebsiteAuthorizationProvider {
   readonly FleetArn: string;
   readonly AuthorizationProviderId: string;
 }
+
 export interface DisassociateWebsiteCertificateAuthority {
   readonly FleetArn: string;
   readonly WebsiteCaId: string;
 }
+
 export interface ListDevices {
   readonly FleetArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDomains {
   readonly FleetArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListFleets {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface ListWebsiteAuthorizationProviders {
   readonly FleetArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListWebsiteCertificateAuthorities {
   readonly FleetArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface RestoreDomainAccess {
   readonly FleetArn: string;
   readonly DomainName: string;
 }
+
 export interface RevokeDomainAccess {
   readonly FleetArn: string;
   readonly DomainName: string;
 }
+
 export interface SignOutUser {
   readonly FleetArn: string;
   readonly Username: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateAuditStreamConfiguration {
   readonly FleetArn: string;
   readonly AuditStreamArn?: string;
 }
+
 export interface UpdateCompanyNetworkConfiguration {
   readonly FleetArn: string;
   readonly VpcId: string;
   readonly SubnetIds: [];
   readonly SecurityGroupIds: [];
 }
+
 export interface UpdateDevicePolicyConfiguration {
   readonly FleetArn: string;
   readonly DeviceCaCertificate?: string;
 }
+
 export interface UpdateDomainMetadata {
   readonly FleetArn: string;
   readonly DomainName: string;
   readonly DisplayName?: string;
 }
+
 export interface UpdateFleetMetadata {
   readonly FleetArn: string;
   readonly DisplayName?: string;
   readonly OptimizeForEndUserLocation?: boolean;
 }
+
 export interface UpdateIdentityProviderConfiguration {
   readonly FleetArn: string;
   readonly IdentityProviderType: string;
   readonly IdentityProviderSamlMetadata?: string;
 }
 
-
-
-interface AssociateDomainRequest {
+export interface AssociateDomainRequest {
   readonly FleetArn: string;
   readonly DomainName: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
   readonly AcmCertificateArn: string;
 }
 
-interface AssociateDomainResponse {
+export interface AssociateDomainResponse {
 }
 
-interface AssociateWebsiteAuthorizationProviderRequest {
+export interface AssociateWebsiteAuthorizationProviderRequest {
   readonly FleetArn: string;
   readonly AuthorizationProviderType: string;
-  readonly DomainName: string;
+  readonly DomainName?: string;
 }
 
-interface AssociateWebsiteAuthorizationProviderResponse {
-  readonly AuthorizationProviderId: string;
+export interface AssociateWebsiteAuthorizationProviderResponse {
+  readonly AuthorizationProviderId?: string;
 }
 
-interface AssociateWebsiteCertificateAuthorityRequest {
+export interface AssociateWebsiteCertificateAuthorityRequest {
   readonly FleetArn: string;
   readonly Certificate: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
 }
 
-interface AssociateWebsiteCertificateAuthorityResponse {
-  readonly WebsiteCaId: string;
+export interface AssociateWebsiteCertificateAuthorityResponse {
+  readonly WebsiteCaId?: string;
 }
 
-interface CreateFleetRequest {
+export interface CreateFleetRequest {
   readonly FleetName: string;
-  readonly DisplayName: string;
-  readonly OptimizeForEndUserLocation: boolean;
-  readonly Tags: {[key: string]: any};
+  readonly DisplayName?: string;
+  readonly OptimizeForEndUserLocation?: boolean;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateFleetResponse {
+export interface CreateFleetResponse {
+  readonly FleetArn?: string;
+}
+
+export interface DeleteFleetRequest {
   readonly FleetArn: string;
 }
 
-interface DeleteFleetRequest {
+export interface DeleteFleetResponse {
+}
+
+export interface DescribeAuditStreamConfigurationRequest {
   readonly FleetArn: string;
 }
 
-interface DeleteFleetResponse {
+export interface DescribeAuditStreamConfigurationResponse {
+  readonly AuditStreamArn?: string;
 }
 
-interface DescribeAuditStreamConfigurationRequest {
+export interface DescribeCompanyNetworkConfigurationRequest {
   readonly FleetArn: string;
 }
 
-interface DescribeAuditStreamConfigurationResponse {
-  readonly AuditStreamArn: string;
+export interface DescribeCompanyNetworkConfigurationResponse {
+  readonly VpcId?: string;
+  readonly SubnetIds?: [];
+  readonly SecurityGroupIds?: [];
 }
 
-interface DescribeCompanyNetworkConfigurationRequest {
+export interface DescribeDevicePolicyConfigurationRequest {
   readonly FleetArn: string;
 }
 
-interface DescribeCompanyNetworkConfigurationResponse {
-  readonly VpcId: string;
-  readonly SubnetIds: [];
-  readonly SecurityGroupIds: [];
+export interface DescribeDevicePolicyConfigurationResponse {
+  readonly DeviceCaCertificate?: string;
 }
 
-interface DescribeDevicePolicyConfigurationRequest {
-  readonly FleetArn: string;
-}
-
-interface DescribeDevicePolicyConfigurationResponse {
-  readonly DeviceCaCertificate: string;
-}
-
-interface DescribeDeviceRequest {
+export interface DescribeDeviceRequest {
   readonly FleetArn: string;
   readonly DeviceId: string;
 }
 
-interface DescribeDeviceResponse {
-  readonly Status: string;
-  readonly Model: string;
-  readonly Manufacturer: string;
-  readonly OperatingSystem: string;
-  readonly OperatingSystemVersion: string;
-  readonly PatchLevel: string;
-  readonly FirstAccessedTime: Date;
-  readonly LastAccessedTime: Date;
-  readonly Username: string;
+export interface DescribeDeviceResponse {
+  readonly Status?: string;
+  readonly Model?: string;
+  readonly Manufacturer?: string;
+  readonly OperatingSystem?: string;
+  readonly OperatingSystemVersion?: string;
+  readonly PatchLevel?: string;
+  readonly FirstAccessedTime?: Date;
+  readonly LastAccessedTime?: Date;
+  readonly Username?: string;
 }
 
-interface DescribeDomainRequest {
+export interface DescribeDomainRequest {
   readonly FleetArn: string;
   readonly DomainName: string;
 }
 
-interface DescribeDomainResponse {
-  readonly DomainName: string;
-  readonly DisplayName: string;
-  readonly CreatedTime: Date;
-  readonly DomainStatus: string;
-  readonly AcmCertificateArn: string;
+export interface DescribeDomainResponse {
+  readonly DomainName?: string;
+  readonly DisplayName?: string;
+  readonly CreatedTime?: Date;
+  readonly DomainStatus?: string;
+  readonly AcmCertificateArn?: string;
 }
 
-interface DescribeFleetMetadataRequest {
+export interface DescribeFleetMetadataRequest {
   readonly FleetArn: string;
 }
 
-interface DescribeFleetMetadataResponse {
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly FleetName: string;
-  readonly DisplayName: string;
-  readonly OptimizeForEndUserLocation: boolean;
-  readonly CompanyCode: string;
-  readonly FleetStatus: string;
-  readonly Tags: {[key: string]: any};
+export interface DescribeFleetMetadataResponse {
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly FleetName?: string;
+  readonly DisplayName?: string;
+  readonly OptimizeForEndUserLocation?: boolean;
+  readonly CompanyCode?: string;
+  readonly FleetStatus?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface DescribeIdentityProviderConfigurationRequest {
+export interface DescribeIdentityProviderConfigurationRequest {
   readonly FleetArn: string;
 }
 
-interface DescribeIdentityProviderConfigurationResponse {
-  readonly IdentityProviderType: string;
-  readonly ServiceProviderSamlMetadata: string;
-  readonly IdentityProviderSamlMetadata: string;
+export interface DescribeIdentityProviderConfigurationResponse {
+  readonly IdentityProviderType?: string;
+  readonly ServiceProviderSamlMetadata?: string;
+  readonly IdentityProviderSamlMetadata?: string;
 }
 
-interface DescribeWebsiteCertificateAuthorityRequest {
+export interface DescribeWebsiteCertificateAuthorityRequest {
   readonly FleetArn: string;
   readonly WebsiteCaId: string;
 }
 
-interface DescribeWebsiteCertificateAuthorityResponse {
-  readonly Certificate: string;
-  readonly CreatedTime: Date;
-  readonly DisplayName: string;
+export interface DescribeWebsiteCertificateAuthorityResponse {
+  readonly Certificate?: string;
+  readonly CreatedTime?: Date;
+  readonly DisplayName?: string;
 }
 
-interface DeviceSummary {
-  readonly DeviceId: string;
-  readonly DeviceStatus: string;
+export interface DeviceSummary {
+  readonly DeviceId?: string;
+  readonly DeviceStatus?: string;
 }
 
-interface DisassociateDomainRequest {
+export interface DisassociateDomainRequest {
   readonly FleetArn: string;
   readonly DomainName: string;
 }
 
-interface DisassociateDomainResponse {
+export interface DisassociateDomainResponse {
 }
 
-interface DisassociateWebsiteAuthorizationProviderRequest {
+export interface DisassociateWebsiteAuthorizationProviderRequest {
   readonly FleetArn: string;
   readonly AuthorizationProviderId: string;
 }
 
-interface DisassociateWebsiteAuthorizationProviderResponse {
+export interface DisassociateWebsiteAuthorizationProviderResponse {
 }
 
-interface DisassociateWebsiteCertificateAuthorityRequest {
+export interface DisassociateWebsiteCertificateAuthorityRequest {
   readonly FleetArn: string;
   readonly WebsiteCaId: string;
 }
 
-interface DisassociateWebsiteCertificateAuthorityResponse {
+export interface DisassociateWebsiteCertificateAuthorityResponse {
 }
 
-interface DomainSummary {
+export interface DomainSummary {
   readonly DomainName: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
   readonly CreatedTime: Date;
   readonly DomainStatus: string;
 }
 
-interface FleetSummary {
+export interface FleetSummary {
+  readonly FleetArn?: string;
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly FleetName?: string;
+  readonly DisplayName?: string;
+  readonly CompanyCode?: string;
+  readonly FleetStatus?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface InternalServerErrorException {
+  readonly Message?: string;
+}
+
+export interface InvalidRequestException {
+  readonly Message?: string;
+}
+
+export interface ListDevicesRequest {
   readonly FleetArn: string;
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly FleetName: string;
-  readonly DisplayName: string;
-  readonly CompanyCode: string;
-  readonly FleetStatus: string;
-  readonly Tags: {[key: string]: any};
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface InternalServerErrorException {
-  readonly Message: string;
+export interface ListDevicesResponse {
+  readonly Devices?: [];
+  readonly NextToken?: string;
 }
 
-interface InvalidRequestException {
-  readonly Message: string;
-}
-
-interface ListDevicesRequest {
+export interface ListDomainsRequest {
   readonly FleetArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDevicesResponse {
-  readonly Devices: [];
-  readonly NextToken: string;
+export interface ListDomainsResponse {
+  readonly Domains?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDomainsRequest {
-  readonly FleetArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListFleetsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDomainsResponse {
-  readonly Domains: [];
-  readonly NextToken: string;
+export interface ListFleetsResponse {
+  readonly FleetSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListFleetsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface ListFleetsResponse {
-  readonly FleetSummaryList: [];
-  readonly NextToken: string;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListWebsiteAuthorizationProvidersRequest {
+export interface ListWebsiteAuthorizationProvidersRequest {
   readonly FleetArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListWebsiteAuthorizationProvidersResponse {
-  readonly WebsiteAuthorizationProviders: [];
-  readonly NextToken: string;
+export interface ListWebsiteAuthorizationProvidersResponse {
+  readonly WebsiteAuthorizationProviders?: [];
+  readonly NextToken?: string;
 }
 
-interface ListWebsiteCertificateAuthoritiesRequest {
+export interface ListWebsiteCertificateAuthoritiesRequest {
   readonly FleetArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListWebsiteCertificateAuthoritiesResponse {
-  readonly WebsiteCertificateAuthorities: [];
-  readonly NextToken: string;
+export interface ListWebsiteCertificateAuthoritiesResponse {
+  readonly WebsiteCertificateAuthorities?: [];
+  readonly NextToken?: string;
 }
 
-interface ResourceAlreadyExistsException {
-  readonly Message: string;
+export interface ResourceAlreadyExistsException {
+  readonly Message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface RestoreDomainAccessRequest {
-  readonly FleetArn: string;
-  readonly DomainName: string;
-}
-
-interface RestoreDomainAccessResponse {
-}
-
-interface RevokeDomainAccessRequest {
+export interface RestoreDomainAccessRequest {
   readonly FleetArn: string;
   readonly DomainName: string;
 }
 
-interface RevokeDomainAccessResponse {
+export interface RestoreDomainAccessResponse {
 }
 
-interface SignOutUserRequest {
+export interface RevokeDomainAccessRequest {
+  readonly FleetArn: string;
+  readonly DomainName: string;
+}
+
+export interface RevokeDomainAccessResponse {
+}
+
+export interface SignOutUserRequest {
   readonly FleetArn: string;
   readonly Username: string;
 }
 
-interface SignOutUserResponse {
+export interface SignOutUserResponse {
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TooManyRequestsException {
-  readonly Message: string;
+export interface TooManyRequestsException {
+  readonly Message?: string;
 }
 
-interface UnauthorizedException {
-  readonly Message: string;
+export interface UnauthorizedException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateAuditStreamConfigurationRequest {
+export interface UpdateAuditStreamConfigurationRequest {
   readonly FleetArn: string;
-  readonly AuditStreamArn: string;
+  readonly AuditStreamArn?: string;
 }
 
-interface UpdateAuditStreamConfigurationResponse {
+export interface UpdateAuditStreamConfigurationResponse {
 }
 
-interface UpdateCompanyNetworkConfigurationRequest {
+export interface UpdateCompanyNetworkConfigurationRequest {
   readonly FleetArn: string;
   readonly VpcId: string;
   readonly SubnetIds: [];
   readonly SecurityGroupIds: [];
 }
 
-interface UpdateCompanyNetworkConfigurationResponse {
+export interface UpdateCompanyNetworkConfigurationResponse {
 }
 
-interface UpdateDevicePolicyConfigurationRequest {
+export interface UpdateDevicePolicyConfigurationRequest {
   readonly FleetArn: string;
-  readonly DeviceCaCertificate: string;
+  readonly DeviceCaCertificate?: string;
 }
 
-interface UpdateDevicePolicyConfigurationResponse {
+export interface UpdateDevicePolicyConfigurationResponse {
 }
 
-interface UpdateDomainMetadataRequest {
+export interface UpdateDomainMetadataRequest {
   readonly FleetArn: string;
   readonly DomainName: string;
-  readonly DisplayName: string;
+  readonly DisplayName?: string;
 }
 
-interface UpdateDomainMetadataResponse {
+export interface UpdateDomainMetadataResponse {
 }
 
-interface UpdateFleetMetadataRequest {
+export interface UpdateFleetMetadataRequest {
   readonly FleetArn: string;
-  readonly DisplayName: string;
-  readonly OptimizeForEndUserLocation: boolean;
+  readonly DisplayName?: string;
+  readonly OptimizeForEndUserLocation?: boolean;
 }
 
-interface UpdateFleetMetadataResponse {
+export interface UpdateFleetMetadataResponse {
 }
 
-interface UpdateIdentityProviderConfigurationRequest {
+export interface UpdateIdentityProviderConfigurationRequest {
   readonly FleetArn: string;
   readonly IdentityProviderType: string;
-  readonly IdentityProviderSamlMetadata: string;
+  readonly IdentityProviderSamlMetadata?: string;
 }
 
-interface UpdateIdentityProviderConfigurationResponse {
+export interface UpdateIdentityProviderConfigurationResponse {
 }
 
-interface WebsiteAuthorizationProviderSummary {
-  readonly AuthorizationProviderId: string;
+export interface WebsiteAuthorizationProviderSummary {
+  readonly AuthorizationProviderId?: string;
   readonly AuthorizationProviderType: string;
-  readonly DomainName: string;
-  readonly CreatedTime: Date;
+  readonly DomainName?: string;
+  readonly CreatedTime?: Date;
 }
 
-interface WebsiteCaSummary {
-  readonly WebsiteCaId: string;
-  readonly CreatedTime: Date;
-  readonly DisplayName: string;
+export interface WebsiteCaSummary {
+  readonly WebsiteCaId?: string;
+  readonly CreatedTime?: Date;
+  readonly DisplayName?: string;
 }
+
 

@@ -9,25 +9,31 @@ export interface CreateFHIRDatastore {
   readonly ClientToken?: string;
   readonly Tags?: [];
 }
+
 export interface DeleteFHIRDatastore {
   readonly DatastoreId?: string;
 }
+
 export interface DescribeFHIRDatastore {
   readonly DatastoreId?: string;
 }
+
 export interface DescribeFHIRExportJob {
   readonly DatastoreId: string;
   readonly JobId: string;
 }
+
 export interface DescribeFHIRImportJob {
   readonly DatastoreId: string;
   readonly JobId: string;
 }
+
 export interface ListFHIRDatastores {
   readonly Filter?: DatastoreFilter;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListFHIRExportJobs {
   readonly DatastoreId: string;
   readonly NextToken?: string;
@@ -37,6 +43,7 @@ export interface ListFHIRExportJobs {
   readonly SubmittedBefore?: Date;
   readonly SubmittedAfter?: Date;
 }
+
 export interface ListFHIRImportJobs {
   readonly DatastoreId: string;
   readonly NextToken?: string;
@@ -46,9 +53,11 @@ export interface ListFHIRImportJobs {
   readonly SubmittedBefore?: Date;
   readonly SubmittedAfter?: Date;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
+
 export interface StartFHIRExportJob {
   readonly JobName?: string;
   readonly OutputDataConfig: OutputDataConfig;
@@ -56,6 +65,7 @@ export interface StartFHIRExportJob {
   readonly DataAccessRoleArn: string;
   readonly ClientToken: string;
 }
+
 export interface StartFHIRImportJob {
   readonly JobName?: string;
   readonly InputDataConfig: InputDataConfig;
@@ -64,221 +74,221 @@ export interface StartFHIRImportJob {
   readonly DataAccessRoleArn: string;
   readonly ClientToken: string;
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface CreateFHIRDatastoreRequest {
-  readonly DatastoreName: string;
+export interface CreateFHIRDatastoreRequest {
+  readonly DatastoreName?: string;
   readonly DatastoreTypeVersion: string;
-  readonly SseConfiguration: SseConfiguration;
-  readonly PreloadDataConfig: PreloadDataConfig;
-  readonly ClientToken: string;
-  readonly Tags: [];
+  readonly SseConfiguration?: SseConfiguration;
+  readonly PreloadDataConfig?: PreloadDataConfig;
+  readonly ClientToken?: string;
+  readonly Tags?: [];
 }
 
-interface CreateFHIRDatastoreResponse {
+export interface CreateFHIRDatastoreResponse {
   readonly DatastoreId: string;
   readonly DatastoreArn: string;
   readonly DatastoreStatus: string;
   readonly DatastoreEndpoint: string;
 }
 
-interface DatastoreFilter {
-  readonly DatastoreName: string;
-  readonly DatastoreStatus: string;
-  readonly CreatedBefore: Date;
-  readonly CreatedAfter: Date;
+export interface DatastoreFilter {
+  readonly DatastoreName?: string;
+  readonly DatastoreStatus?: string;
+  readonly CreatedBefore?: Date;
+  readonly CreatedAfter?: Date;
 }
 
-interface DatastoreProperties {
+export interface DatastoreProperties {
   readonly DatastoreId: string;
   readonly DatastoreArn: string;
-  readonly DatastoreName: string;
+  readonly DatastoreName?: string;
   readonly DatastoreStatus: string;
-  readonly CreatedAt: Date;
+  readonly CreatedAt?: Date;
   readonly DatastoreTypeVersion: string;
   readonly DatastoreEndpoint: string;
-  readonly SseConfiguration: SseConfiguration;
-  readonly PreloadDataConfig: PreloadDataConfig;
+  readonly SseConfiguration?: SseConfiguration;
+  readonly PreloadDataConfig?: PreloadDataConfig;
 }
 
-interface DeleteFHIRDatastoreRequest {
-  readonly DatastoreId: string;
+export interface DeleteFHIRDatastoreRequest {
+  readonly DatastoreId?: string;
 }
 
-interface DeleteFHIRDatastoreResponse {
+export interface DeleteFHIRDatastoreResponse {
   readonly DatastoreId: string;
   readonly DatastoreArn: string;
   readonly DatastoreStatus: string;
   readonly DatastoreEndpoint: string;
 }
 
-interface DescribeFHIRDatastoreRequest {
-  readonly DatastoreId: string;
+export interface DescribeFHIRDatastoreRequest {
+  readonly DatastoreId?: string;
 }
 
-interface DescribeFHIRDatastoreResponse {
+export interface DescribeFHIRDatastoreResponse {
   readonly DatastoreProperties: DatastoreProperties;
 }
 
-interface DescribeFHIRExportJobRequest {
+export interface DescribeFHIRExportJobRequest {
   readonly DatastoreId: string;
   readonly JobId: string;
 }
 
-interface DescribeFHIRExportJobResponse {
+export interface DescribeFHIRExportJobResponse {
   readonly ExportJobProperties: ExportJobProperties;
 }
 
-interface DescribeFHIRImportJobRequest {
+export interface DescribeFHIRImportJobRequest {
   readonly DatastoreId: string;
   readonly JobId: string;
 }
 
-interface DescribeFHIRImportJobResponse {
+export interface DescribeFHIRImportJobResponse {
   readonly ImportJobProperties: ImportJobProperties;
 }
 
-interface ExportJobProperties {
+export interface ExportJobProperties {
   readonly JobId: string;
-  readonly JobName: string;
+  readonly JobName?: string;
   readonly JobStatus: string;
   readonly SubmitTime: Date;
-  readonly EndTime: Date;
+  readonly EndTime?: Date;
   readonly DatastoreId: string;
   readonly OutputDataConfig: OutputDataConfig;
-  readonly DataAccessRoleArn: string;
-  readonly Message: string;
+  readonly DataAccessRoleArn?: string;
+  readonly Message?: string;
 }
 
-interface ImportJobProperties {
+export interface ImportJobProperties {
   readonly JobId: string;
-  readonly JobName: string;
+  readonly JobName?: string;
   readonly JobStatus: string;
   readonly SubmitTime: Date;
-  readonly EndTime: Date;
+  readonly EndTime?: Date;
   readonly DatastoreId: string;
   readonly InputDataConfig: InputDataConfig;
-  readonly JobOutputDataConfig: OutputDataConfig;
-  readonly DataAccessRoleArn: string;
-  readonly Message: string;
+  readonly JobOutputDataConfig?: OutputDataConfig;
+  readonly DataAccessRoleArn?: string;
+  readonly Message?: string;
 }
 
-interface InputDataConfig {
-  readonly S3Uri: string;
+export interface InputDataConfig {
+  readonly S3Uri?: string;
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface InternalServerException {
+  readonly Message?: string;
 }
 
-interface KmsEncryptionConfig {
+export interface KmsEncryptionConfig {
   readonly CmkType: string;
-  readonly KmsKeyId: string;
+  readonly KmsKeyId?: string;
 }
 
-interface ListFHIRDatastoresRequest {
-  readonly Filter: DatastoreFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListFHIRDatastoresRequest {
+  readonly Filter?: DatastoreFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListFHIRDatastoresResponse {
+export interface ListFHIRDatastoresResponse {
   readonly DatastorePropertiesList: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListFHIRExportJobsRequest {
+export interface ListFHIRExportJobsRequest {
   readonly DatastoreId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly JobName: string;
-  readonly JobStatus: string;
-  readonly SubmittedBefore: Date;
-  readonly SubmittedAfter: Date;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly JobName?: string;
+  readonly JobStatus?: string;
+  readonly SubmittedBefore?: Date;
+  readonly SubmittedAfter?: Date;
 }
 
-interface ListFHIRExportJobsResponse {
+export interface ListFHIRExportJobsResponse {
   readonly ExportJobPropertiesList: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListFHIRImportJobsRequest {
+export interface ListFHIRImportJobsRequest {
   readonly DatastoreId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly JobName: string;
-  readonly JobStatus: string;
-  readonly SubmittedBefore: Date;
-  readonly SubmittedAfter: Date;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly JobName?: string;
+  readonly JobStatus?: string;
+  readonly SubmittedBefore?: Date;
+  readonly SubmittedAfter?: Date;
 }
 
-interface ListFHIRImportJobsResponse {
+export interface ListFHIRImportJobsResponse {
   readonly ImportJobPropertiesList: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface OutputDataConfig {
-  readonly S3Configuration: S3Configuration;
+export interface OutputDataConfig {
+  readonly S3Configuration?: S3Configuration;
 }
 
-interface PreloadDataConfig {
+export interface PreloadDataConfig {
   readonly PreloadDataType: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface S3Configuration {
+export interface S3Configuration {
   readonly S3Uri: string;
   readonly KmsKeyId: string;
 }
 
-interface SseConfiguration {
+export interface SseConfiguration {
   readonly KmsEncryptionConfig: KmsEncryptionConfig;
 }
 
-interface StartFHIRExportJobRequest {
-  readonly JobName: string;
+export interface StartFHIRExportJobRequest {
+  readonly JobName?: string;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DatastoreId: string;
   readonly DataAccessRoleArn: string;
   readonly ClientToken: string;
 }
 
-interface StartFHIRExportJobResponse {
+export interface StartFHIRExportJobResponse {
   readonly JobId: string;
   readonly JobStatus: string;
-  readonly DatastoreId: string;
+  readonly DatastoreId?: string;
 }
 
-interface StartFHIRImportJobRequest {
-  readonly JobName: string;
+export interface StartFHIRImportJobRequest {
+  readonly JobName?: string;
   readonly InputDataConfig: InputDataConfig;
   readonly JobOutputDataConfig: OutputDataConfig;
   readonly DatastoreId: string;
@@ -286,38 +296,39 @@ interface StartFHIRImportJobRequest {
   readonly ClientToken: string;
 }
 
-interface StartFHIRImportJobResponse {
+export interface StartFHIRImportJobResponse {
   readonly JobId: string;
   readonly JobStatus: string;
-  readonly DatastoreId: string;
+  readonly DatastoreId?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
-  readonly Message: string;
+export interface ThrottlingException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

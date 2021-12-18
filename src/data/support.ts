@@ -5,12 +5,14 @@ export interface AddAttachmentsToSet {
   readonly attachmentSetId?: string;
   readonly attachments: [];
 }
+
 export interface AddCommunicationToCase {
   readonly caseId?: string;
   readonly communicationBody: string;
   readonly ccEmailAddresses?: [];
   readonly attachmentSetId?: string;
 }
+
 export interface CreateCase {
   readonly subject: string;
   readonly serviceCode?: string;
@@ -22,9 +24,11 @@ export interface CreateCase {
   readonly issueType?: string;
   readonly attachmentSetId?: string;
 }
+
 export interface DescribeAttachment {
   readonly attachmentId: string;
 }
+
 export interface DescribeCases {
   readonly caseIdList?: [];
   readonly displayId?: string;
@@ -36,6 +40,7 @@ export interface DescribeCases {
   readonly language?: string;
   readonly includeCommunications?: boolean;
 }
+
 export interface DescribeCommunications {
   readonly caseId: string;
   readonly beforeTime?: string;
@@ -43,272 +48,278 @@ export interface DescribeCommunications {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DescribeServices {
   readonly serviceCodeList?: [];
   readonly language?: string;
 }
+
 export interface DescribeSeverityLevels {
   readonly language?: string;
 }
+
 export interface DescribeTrustedAdvisorCheckRefreshStatuses {
   readonly checkIds: [];
 }
+
 export interface DescribeTrustedAdvisorCheckResult {
   readonly checkId: string;
   readonly language?: string;
 }
+
 export interface DescribeTrustedAdvisorCheckSummaries {
   readonly checkIds: [];
 }
+
 export interface DescribeTrustedAdvisorChecks {
   readonly language: string;
 }
+
 export interface RefreshTrustedAdvisorCheck {
   readonly checkId: string;
 }
+
 export interface ResolveCase {
   readonly caseId?: string;
 }
 
-
-
-interface AddAttachmentsToSetRequest {
-  readonly attachmentSetId: string;
+export interface AddAttachmentsToSetRequest {
+  readonly attachmentSetId?: string;
   readonly attachments: [];
 }
 
-interface AddAttachmentsToSetResponse {
-  readonly attachmentSetId: string;
-  readonly expiryTime: string;
+export interface AddAttachmentsToSetResponse {
+  readonly attachmentSetId?: string;
+  readonly expiryTime?: string;
 }
 
-interface AddCommunicationToCaseRequest {
-  readonly caseId: string;
+export interface AddCommunicationToCaseRequest {
+  readonly caseId?: string;
   readonly communicationBody: string;
-  readonly ccEmailAddresses: [];
-  readonly attachmentSetId: string;
+  readonly ccEmailAddresses?: [];
+  readonly attachmentSetId?: string;
 }
 
-interface AddCommunicationToCaseResponse {
-  readonly result: boolean;
+export interface AddCommunicationToCaseResponse {
+  readonly result?: boolean;
 }
 
-interface Attachment {
-  readonly fileName: string;
-  readonly data: unknown;
+export interface Attachment {
+  readonly fileName?: string;
+  readonly data?: unknown;
 }
 
-interface AttachmentDetails {
-  readonly attachmentId: string;
-  readonly fileName: string;
+export interface AttachmentDetails {
+  readonly attachmentId?: string;
+  readonly fileName?: string;
 }
 
-interface AttachmentIdNotFound {
-  readonly message: string;
+export interface AttachmentIdNotFound {
+  readonly message?: string;
 }
 
-interface AttachmentLimitExceeded {
-  readonly message: string;
+export interface AttachmentLimitExceeded {
+  readonly message?: string;
 }
 
-interface AttachmentSetExpired {
-  readonly message: string;
+export interface AttachmentSetExpired {
+  readonly message?: string;
 }
 
-interface AttachmentSetIdNotFound {
-  readonly message: string;
+export interface AttachmentSetIdNotFound {
+  readonly message?: string;
 }
 
-interface AttachmentSetSizeLimitExceeded {
-  readonly message: string;
+export interface AttachmentSetSizeLimitExceeded {
+  readonly message?: string;
 }
 
-interface CaseCreationLimitExceeded {
-  readonly message: string;
+export interface CaseCreationLimitExceeded {
+  readonly message?: string;
 }
 
-interface CaseDetails {
-  readonly caseId: string;
-  readonly displayId: string;
+export interface CaseDetails {
+  readonly caseId?: string;
+  readonly displayId?: string;
+  readonly subject?: string;
+  readonly status?: string;
+  readonly serviceCode?: string;
+  readonly categoryCode?: string;
+  readonly severityCode?: string;
+  readonly submittedBy?: string;
+  readonly timeCreated?: string;
+  readonly recentCommunications?: RecentCaseCommunications;
+  readonly ccEmailAddresses?: [];
+  readonly language?: string;
+}
+
+export interface CaseIdNotFound {
+  readonly message?: string;
+}
+
+export interface Category {
+  readonly code?: string;
+  readonly name?: string;
+}
+
+export interface Communication {
+  readonly caseId?: string;
+  readonly body?: string;
+  readonly submittedBy?: string;
+  readonly timeCreated?: string;
+  readonly attachmentSet?: [];
+}
+
+export interface CreateCaseRequest {
   readonly subject: string;
-  readonly status: string;
-  readonly serviceCode: string;
-  readonly categoryCode: string;
-  readonly severityCode: string;
-  readonly submittedBy: string;
-  readonly timeCreated: string;
-  readonly recentCommunications: RecentCaseCommunications;
-  readonly ccEmailAddresses: [];
-  readonly language: string;
-}
-
-interface CaseIdNotFound {
-  readonly message: string;
-}
-
-interface Category {
-  readonly code: string;
-  readonly name: string;
-}
-
-interface Communication {
-  readonly caseId: string;
-  readonly body: string;
-  readonly submittedBy: string;
-  readonly timeCreated: string;
-  readonly attachmentSet: [];
-}
-
-interface CreateCaseRequest {
-  readonly subject: string;
-  readonly serviceCode: string;
-  readonly severityCode: string;
-  readonly categoryCode: string;
+  readonly serviceCode?: string;
+  readonly severityCode?: string;
+  readonly categoryCode?: string;
   readonly communicationBody: string;
-  readonly ccEmailAddresses: [];
-  readonly language: string;
-  readonly issueType: string;
-  readonly attachmentSetId: string;
+  readonly ccEmailAddresses?: [];
+  readonly language?: string;
+  readonly issueType?: string;
+  readonly attachmentSetId?: string;
 }
 
-interface CreateCaseResponse {
-  readonly caseId: string;
+export interface CreateCaseResponse {
+  readonly caseId?: string;
 }
 
-interface DescribeAttachmentLimitExceeded {
-  readonly message: string;
+export interface DescribeAttachmentLimitExceeded {
+  readonly message?: string;
 }
 
-interface DescribeAttachmentRequest {
+export interface DescribeAttachmentRequest {
   readonly attachmentId: string;
 }
 
-interface DescribeAttachmentResponse {
-  readonly attachment: Attachment;
+export interface DescribeAttachmentResponse {
+  readonly attachment?: Attachment;
 }
 
-interface DescribeCasesRequest {
-  readonly caseIdList: [];
-  readonly displayId: string;
-  readonly afterTime: string;
-  readonly beforeTime: string;
-  readonly includeResolvedCases: boolean;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly language: string;
-  readonly includeCommunications: boolean;
+export interface DescribeCasesRequest {
+  readonly caseIdList?: [];
+  readonly displayId?: string;
+  readonly afterTime?: string;
+  readonly beforeTime?: string;
+  readonly includeResolvedCases?: boolean;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly language?: string;
+  readonly includeCommunications?: boolean;
 }
 
-interface DescribeCasesResponse {
-  readonly cases: [];
-  readonly nextToken: string;
+export interface DescribeCasesResponse {
+  readonly cases?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeCommunicationsRequest {
+export interface DescribeCommunicationsRequest {
   readonly caseId: string;
-  readonly beforeTime: string;
-  readonly afterTime: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly beforeTime?: string;
+  readonly afterTime?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DescribeCommunicationsResponse {
-  readonly communications: [];
-  readonly nextToken: string;
+export interface DescribeCommunicationsResponse {
+  readonly communications?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeServicesRequest {
-  readonly serviceCodeList: [];
-  readonly language: string;
+export interface DescribeServicesRequest {
+  readonly serviceCodeList?: [];
+  readonly language?: string;
 }
 
-interface DescribeServicesResponse {
-  readonly services: [];
+export interface DescribeServicesResponse {
+  readonly services?: [];
 }
 
-interface DescribeSeverityLevelsRequest {
-  readonly language: string;
+export interface DescribeSeverityLevelsRequest {
+  readonly language?: string;
 }
 
-interface DescribeSeverityLevelsResponse {
-  readonly severityLevels: [];
+export interface DescribeSeverityLevelsResponse {
+  readonly severityLevels?: [];
 }
 
-interface DescribeTrustedAdvisorCheckRefreshStatusesRequest {
+export interface DescribeTrustedAdvisorCheckRefreshStatusesRequest {
   readonly checkIds: [];
 }
 
-interface DescribeTrustedAdvisorCheckRefreshStatusesResponse {
+export interface DescribeTrustedAdvisorCheckRefreshStatusesResponse {
   readonly statuses: [];
 }
 
-interface DescribeTrustedAdvisorCheckResultRequest {
+export interface DescribeTrustedAdvisorCheckResultRequest {
   readonly checkId: string;
-  readonly language: string;
+  readonly language?: string;
 }
 
-interface DescribeTrustedAdvisorCheckResultResponse {
-  readonly result: TrustedAdvisorCheckResult;
+export interface DescribeTrustedAdvisorCheckResultResponse {
+  readonly result?: TrustedAdvisorCheckResult;
 }
 
-interface DescribeTrustedAdvisorCheckSummariesRequest {
+export interface DescribeTrustedAdvisorCheckSummariesRequest {
   readonly checkIds: [];
 }
 
-interface DescribeTrustedAdvisorCheckSummariesResponse {
+export interface DescribeTrustedAdvisorCheckSummariesResponse {
   readonly summaries: [];
 }
 
-interface DescribeTrustedAdvisorChecksRequest {
+export interface DescribeTrustedAdvisorChecksRequest {
   readonly language: string;
 }
 
-interface DescribeTrustedAdvisorChecksResponse {
+export interface DescribeTrustedAdvisorChecksResponse {
   readonly checks: [];
 }
 
-interface InternalServerError {
-  readonly message: string;
+export interface InternalServerError {
+  readonly message?: string;
 }
 
-interface RecentCaseCommunications {
-  readonly communications: [];
-  readonly nextToken: string;
+export interface RecentCaseCommunications {
+  readonly communications?: [];
+  readonly nextToken?: string;
 }
 
-interface RefreshTrustedAdvisorCheckRequest {
+export interface RefreshTrustedAdvisorCheckRequest {
   readonly checkId: string;
 }
 
-interface RefreshTrustedAdvisorCheckResponse {
+export interface RefreshTrustedAdvisorCheckResponse {
   readonly status: TrustedAdvisorCheckRefreshStatus;
 }
 
-interface ResolveCaseRequest {
-  readonly caseId: string;
+export interface ResolveCaseRequest {
+  readonly caseId?: string;
 }
 
-interface ResolveCaseResponse {
-  readonly initialCaseStatus: string;
-  readonly finalCaseStatus: string;
+export interface ResolveCaseResponse {
+  readonly initialCaseStatus?: string;
+  readonly finalCaseStatus?: string;
 }
 
-interface Service {
-  readonly code: string;
-  readonly name: string;
-  readonly categories: [];
+export interface Service {
+  readonly code?: string;
+  readonly name?: string;
+  readonly categories?: [];
 }
 
-interface SeverityLevel {
-  readonly code: string;
-  readonly name: string;
+export interface SeverityLevel {
+  readonly code?: string;
+  readonly name?: string;
 }
 
-interface TrustedAdvisorCategorySpecificSummary {
-  readonly costOptimizing: TrustedAdvisorCostOptimizingSummary;
+export interface TrustedAdvisorCategorySpecificSummary {
+  readonly costOptimizing?: TrustedAdvisorCostOptimizingSummary;
 }
 
-interface TrustedAdvisorCheckDescription {
+export interface TrustedAdvisorCheckDescription {
   readonly id: string;
   readonly name: string;
   readonly description: string;
@@ -316,13 +327,13 @@ interface TrustedAdvisorCheckDescription {
   readonly metadata: [];
 }
 
-interface TrustedAdvisorCheckRefreshStatus {
+export interface TrustedAdvisorCheckRefreshStatus {
   readonly checkId: string;
   readonly status: string;
   readonly millisUntilNextRefreshable: number;
 }
 
-interface TrustedAdvisorCheckResult {
+export interface TrustedAdvisorCheckResult {
   readonly checkId: string;
   readonly timestamp: string;
   readonly status: string;
@@ -331,32 +342,33 @@ interface TrustedAdvisorCheckResult {
   readonly flaggedResources: [];
 }
 
-interface TrustedAdvisorCheckSummary {
+export interface TrustedAdvisorCheckSummary {
   readonly checkId: string;
   readonly timestamp: string;
   readonly status: string;
-  readonly hasFlaggedResources: boolean;
+  readonly hasFlaggedResources?: boolean;
   readonly resourcesSummary: TrustedAdvisorResourcesSummary;
   readonly categorySpecificSummary: TrustedAdvisorCategorySpecificSummary;
 }
 
-interface TrustedAdvisorCostOptimizingSummary {
+export interface TrustedAdvisorCostOptimizingSummary {
   readonly estimatedMonthlySavings: unknown;
   readonly estimatedPercentMonthlySavings: unknown;
 }
 
-interface TrustedAdvisorResourceDetail {
+export interface TrustedAdvisorResourceDetail {
   readonly status: string;
-  readonly region: string;
+  readonly region?: string;
   readonly resourceId: string;
-  readonly isSuppressed: boolean;
+  readonly isSuppressed?: boolean;
   readonly metadata: [];
 }
 
-interface TrustedAdvisorResourcesSummary {
+export interface TrustedAdvisorResourcesSummary {
   readonly resourcesProcessed: number;
   readonly resourcesFlagged: number;
   readonly resourcesIgnored: number;
   readonly resourcesSuppressed: number;
 }
+
 

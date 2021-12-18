@@ -5,127 +5,131 @@ export interface DescribeAcceleratorOfferings {
   readonly locationType: string;
   readonly acceleratorTypes?: [];
 }
+
 export interface DescribeAcceleratorTypes {
 }
+
 export interface DescribeAccelerators {
   readonly acceleratorIds?: [];
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-
-
-interface AcceleratorType {
-  readonly acceleratorTypeName: string;
-  readonly memoryInfo: MemoryInfo;
-  readonly throughputInfo: [];
+export interface AcceleratorType {
+  readonly acceleratorTypeName?: string;
+  readonly memoryInfo?: MemoryInfo;
+  readonly throughputInfo?: [];
 }
 
-interface AcceleratorTypeOffering {
-  readonly acceleratorType: string;
+export interface AcceleratorTypeOffering {
+  readonly acceleratorType?: string;
+  readonly locationType?: string;
+  readonly location?: string;
+}
+
+export interface BadRequestException {
+  readonly message?: string;
+}
+
+export interface DescribeAcceleratorOfferingsRequest {
   readonly locationType: string;
-  readonly location: string;
+  readonly acceleratorTypes?: [];
 }
 
-interface BadRequestException {
-  readonly message: string;
+export interface DescribeAcceleratorOfferingsResponse {
+  readonly acceleratorTypeOfferings?: [];
 }
 
-interface DescribeAcceleratorOfferingsRequest {
-  readonly locationType: string;
-  readonly acceleratorTypes: [];
+export interface DescribeAcceleratorTypesRequest {
 }
 
-interface DescribeAcceleratorOfferingsResponse {
-  readonly acceleratorTypeOfferings: [];
+export interface DescribeAcceleratorTypesResponse {
+  readonly acceleratorTypes?: [];
 }
 
-interface DescribeAcceleratorTypesRequest {
+export interface DescribeAcceleratorsRequest {
+  readonly acceleratorIds?: [];
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface DescribeAcceleratorTypesResponse {
-  readonly acceleratorTypes: [];
+export interface DescribeAcceleratorsResponse {
+  readonly acceleratorSet?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeAcceleratorsRequest {
-  readonly acceleratorIds: [];
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ElasticInferenceAccelerator {
+  readonly acceleratorHealth?: ElasticInferenceAcceleratorHealth;
+  readonly acceleratorType?: string;
+  readonly acceleratorId?: string;
+  readonly availabilityZone?: string;
+  readonly attachedResource?: string;
 }
 
-interface DescribeAcceleratorsResponse {
-  readonly acceleratorSet: [];
-  readonly nextToken: string;
+export interface ElasticInferenceAcceleratorHealth {
+  readonly status?: string;
 }
 
-interface ElasticInferenceAccelerator {
-  readonly acceleratorHealth: ElasticInferenceAcceleratorHealth;
-  readonly acceleratorType: string;
-  readonly acceleratorId: string;
-  readonly availabilityZone: string;
-  readonly attachedResource: string;
+export interface Filter {
+  readonly name?: string;
+  readonly values?: [];
 }
 
-interface ElasticInferenceAcceleratorHealth {
-  readonly status: string;
+export interface InternalServerException {
+  readonly message?: string;
 }
 
-interface Filter {
-  readonly name: string;
-  readonly values: [];
+export interface KeyValuePair {
+  readonly key?: string;
+  readonly value?: number;
 }
 
-interface InternalServerException {
-  readonly message: string;
-}
-
-interface KeyValuePair {
-  readonly key: string;
-  readonly value: number;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResult {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResult {
+  readonly tags?: {[key: string]: any};
 }
 
-interface MemoryInfo {
-  readonly sizeInMiB: number;
+export interface MemoryInfo {
+  readonly sizeInMiB?: number;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResult {
+export interface TagResourceResult {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResult {
+export interface UntagResourceResult {
 }
+
 

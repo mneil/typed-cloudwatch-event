@@ -5,291 +5,303 @@ export interface CreateSuiteDefinition {
   readonly suiteDefinitionConfiguration?: SuiteDefinitionConfiguration;
   readonly tags?: {[key: string]: any};
 }
+
 export interface DeleteSuiteDefinition {
   readonly suiteDefinitionId: string;
 }
+
 export interface GetEndpoint {
   readonly thingArn?: string;
   readonly certificateArn?: string;
 }
+
 export interface GetSuiteDefinition {
   readonly suiteDefinitionId: string;
   readonly suiteDefinitionVersion?: string;
 }
+
 export interface GetSuiteRun {
   readonly suiteDefinitionId: string;
   readonly suiteRunId: string;
 }
+
 export interface GetSuiteRunReport {
   readonly suiteDefinitionId: string;
   readonly suiteRunId: string;
 }
+
 export interface ListSuiteDefinitions {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListSuiteRuns {
   readonly suiteDefinitionId?: string;
   readonly suiteDefinitionVersion?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface StartSuiteRun {
   readonly suiteDefinitionId: string;
   readonly suiteDefinitionVersion?: string;
   readonly suiteRunConfiguration?: SuiteRunConfiguration;
   readonly tags?: {[key: string]: any};
 }
+
 export interface StopSuiteRun {
   readonly suiteDefinitionId: string;
   readonly suiteRunId: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateSuiteDefinition {
   readonly suiteDefinitionId: string;
   readonly suiteDefinitionConfiguration?: SuiteDefinitionConfiguration;
 }
 
-
-
-interface ConflictException {
-  readonly message: string;
+export interface ConflictException {
+  readonly message?: string;
 }
 
-interface CreateSuiteDefinitionRequest {
-  readonly suiteDefinitionConfiguration: SuiteDefinitionConfiguration;
-  readonly tags: {[key: string]: any};
+export interface CreateSuiteDefinitionRequest {
+  readonly suiteDefinitionConfiguration?: SuiteDefinitionConfiguration;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateSuiteDefinitionResponse {
-  readonly suiteDefinitionId: string;
-  readonly suiteDefinitionArn: string;
-  readonly suiteDefinitionName: string;
-  readonly createdAt: Date;
+export interface CreateSuiteDefinitionResponse {
+  readonly suiteDefinitionId?: string;
+  readonly suiteDefinitionArn?: string;
+  readonly suiteDefinitionName?: string;
+  readonly createdAt?: Date;
 }
 
-interface DeleteSuiteDefinitionRequest {
+export interface DeleteSuiteDefinitionRequest {
   readonly suiteDefinitionId: string;
 }
 
-interface DeleteSuiteDefinitionResponse {
+export interface DeleteSuiteDefinitionResponse {
 }
 
-interface DeviceUnderTest {
-  readonly thingArn: string;
-  readonly certificateArn: string;
+export interface DeviceUnderTest {
+  readonly thingArn?: string;
+  readonly certificateArn?: string;
 }
 
-interface GetEndpointRequest {
-  readonly thingArn: string;
-  readonly certificateArn: string;
+export interface GetEndpointRequest {
+  readonly thingArn?: string;
+  readonly certificateArn?: string;
 }
 
-interface GetEndpointResponse {
-  readonly endpoint: string;
+export interface GetEndpointResponse {
+  readonly endpoint?: string;
 }
 
-interface GetSuiteDefinitionRequest {
+export interface GetSuiteDefinitionRequest {
   readonly suiteDefinitionId: string;
-  readonly suiteDefinitionVersion: string;
+  readonly suiteDefinitionVersion?: string;
 }
 
-interface GetSuiteDefinitionResponse {
-  readonly suiteDefinitionId: string;
-  readonly suiteDefinitionArn: string;
-  readonly suiteDefinitionVersion: string;
-  readonly latestVersion: string;
-  readonly suiteDefinitionConfiguration: SuiteDefinitionConfiguration;
-  readonly createdAt: Date;
-  readonly lastModifiedAt: Date;
-  readonly tags: {[key: string]: any};
+export interface GetSuiteDefinitionResponse {
+  readonly suiteDefinitionId?: string;
+  readonly suiteDefinitionArn?: string;
+  readonly suiteDefinitionVersion?: string;
+  readonly latestVersion?: string;
+  readonly suiteDefinitionConfiguration?: SuiteDefinitionConfiguration;
+  readonly createdAt?: Date;
+  readonly lastModifiedAt?: Date;
+  readonly tags?: {[key: string]: any};
 }
 
-interface GetSuiteRunReportRequest {
+export interface GetSuiteRunReportRequest {
   readonly suiteDefinitionId: string;
   readonly suiteRunId: string;
 }
 
-interface GetSuiteRunReportResponse {
-  readonly qualificationReportDownloadUrl: string;
+export interface GetSuiteRunReportResponse {
+  readonly qualificationReportDownloadUrl?: string;
 }
 
-interface GetSuiteRunRequest {
+export interface GetSuiteRunRequest {
   readonly suiteDefinitionId: string;
   readonly suiteRunId: string;
 }
 
-interface GetSuiteRunResponse {
-  readonly suiteDefinitionId: string;
-  readonly suiteDefinitionVersion: string;
-  readonly suiteRunId: string;
-  readonly suiteRunArn: string;
-  readonly suiteRunConfiguration: SuiteRunConfiguration;
-  readonly testResult: TestResult;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly status: string;
-  readonly errorReason: string;
-  readonly tags: {[key: string]: any};
+export interface GetSuiteRunResponse {
+  readonly suiteDefinitionId?: string;
+  readonly suiteDefinitionVersion?: string;
+  readonly suiteRunId?: string;
+  readonly suiteRunArn?: string;
+  readonly suiteRunConfiguration?: SuiteRunConfiguration;
+  readonly testResult?: TestResult;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly status?: string;
+  readonly errorReason?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface GroupResult {
-  readonly groupId: string;
-  readonly groupName: string;
-  readonly tests: [];
+export interface GroupResult {
+  readonly groupId?: string;
+  readonly groupName?: string;
+  readonly tests?: [];
 }
 
-interface InternalServerException {
-  readonly message: string;
+export interface InternalServerException {
+  readonly message?: string;
 }
 
-interface ListSuiteDefinitionsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListSuiteDefinitionsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListSuiteDefinitionsResponse {
-  readonly suiteDefinitionInformationList: [];
-  readonly nextToken: string;
+export interface ListSuiteDefinitionsResponse {
+  readonly suiteDefinitionInformationList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListSuiteRunsRequest {
-  readonly suiteDefinitionId: string;
-  readonly suiteDefinitionVersion: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListSuiteRunsRequest {
+  readonly suiteDefinitionId?: string;
+  readonly suiteDefinitionVersion?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListSuiteRunsResponse {
-  readonly suiteRunsList: [];
-  readonly nextToken: string;
+export interface ListSuiteRunsResponse {
+  readonly suiteRunsList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface StartSuiteRunRequest {
+export interface StartSuiteRunRequest {
   readonly suiteDefinitionId: string;
-  readonly suiteDefinitionVersion: string;
-  readonly suiteRunConfiguration: SuiteRunConfiguration;
-  readonly tags: {[key: string]: any};
+  readonly suiteDefinitionVersion?: string;
+  readonly suiteRunConfiguration?: SuiteRunConfiguration;
+  readonly tags?: {[key: string]: any};
 }
 
-interface StartSuiteRunResponse {
+export interface StartSuiteRunResponse {
+  readonly suiteRunId?: string;
+  readonly suiteRunArn?: string;
+  readonly createdAt?: Date;
+}
+
+export interface StopSuiteRunRequest {
+  readonly suiteDefinitionId: string;
   readonly suiteRunId: string;
-  readonly suiteRunArn: string;
-  readonly createdAt: Date;
 }
 
-interface StopSuiteRunRequest {
-  readonly suiteDefinitionId: string;
-  readonly suiteRunId: string;
+export interface StopSuiteRunResponse {
 }
 
-interface StopSuiteRunResponse {
+export interface SuiteDefinitionConfiguration {
+  readonly suiteDefinitionName?: string;
+  readonly devices?: [];
+  readonly intendedForQualification?: boolean;
+  readonly rootGroup?: string;
+  readonly devicePermissionRoleArn?: string;
 }
 
-interface SuiteDefinitionConfiguration {
-  readonly suiteDefinitionName: string;
-  readonly devices: [];
-  readonly intendedForQualification: boolean;
-  readonly rootGroup: string;
-  readonly devicePermissionRoleArn: string;
+export interface SuiteDefinitionInformation {
+  readonly suiteDefinitionId?: string;
+  readonly suiteDefinitionName?: string;
+  readonly defaultDevices?: [];
+  readonly intendedForQualification?: boolean;
+  readonly createdAt?: Date;
 }
 
-interface SuiteDefinitionInformation {
-  readonly suiteDefinitionId: string;
-  readonly suiteDefinitionName: string;
-  readonly defaultDevices: [];
-  readonly intendedForQualification: boolean;
-  readonly createdAt: Date;
+export interface SuiteRunConfiguration {
+  readonly primaryDevice?: DeviceUnderTest;
+  readonly selectedTestList?: [];
+  readonly parallelRun?: boolean;
 }
 
-interface SuiteRunConfiguration {
-  readonly primaryDevice: DeviceUnderTest;
-  readonly selectedTestList: [];
-  readonly parallelRun: boolean;
+export interface SuiteRunInformation {
+  readonly suiteDefinitionId?: string;
+  readonly suiteDefinitionVersion?: string;
+  readonly suiteDefinitionName?: string;
+  readonly suiteRunId?: string;
+  readonly createdAt?: Date;
+  readonly startedAt?: Date;
+  readonly endAt?: Date;
+  readonly status?: string;
+  readonly passed?: number;
+  readonly failed?: number;
 }
 
-interface SuiteRunInformation {
-  readonly suiteDefinitionId: string;
-  readonly suiteDefinitionVersion: string;
-  readonly suiteDefinitionName: string;
-  readonly suiteRunId: string;
-  readonly createdAt: Date;
-  readonly startedAt: Date;
-  readonly endAt: Date;
-  readonly status: string;
-  readonly passed: number;
-  readonly failed: number;
-}
-
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TestCaseRun {
-  readonly testCaseRunId: string;
-  readonly testCaseDefinitionId: string;
-  readonly testCaseDefinitionName: string;
-  readonly status: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly logUrl: string;
-  readonly warnings: string;
-  readonly failure: string;
+export interface TestCaseRun {
+  readonly testCaseRunId?: string;
+  readonly testCaseDefinitionId?: string;
+  readonly testCaseDefinitionName?: string;
+  readonly status?: string;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly logUrl?: string;
+  readonly warnings?: string;
+  readonly failure?: string;
 }
 
-interface TestResult {
-  readonly groups: [];
+export interface TestResult {
+  readonly groups?: [];
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateSuiteDefinitionRequest {
+export interface UpdateSuiteDefinitionRequest {
   readonly suiteDefinitionId: string;
-  readonly suiteDefinitionConfiguration: SuiteDefinitionConfiguration;
+  readonly suiteDefinitionConfiguration?: SuiteDefinitionConfiguration;
 }
 
-interface UpdateSuiteDefinitionResponse {
-  readonly suiteDefinitionId: string;
-  readonly suiteDefinitionArn: string;
-  readonly suiteDefinitionName: string;
-  readonly suiteDefinitionVersion: string;
-  readonly createdAt: Date;
-  readonly lastUpdatedAt: Date;
+export interface UpdateSuiteDefinitionResponse {
+  readonly suiteDefinitionId?: string;
+  readonly suiteDefinitionArn?: string;
+  readonly suiteDefinitionName?: string;
+  readonly suiteDefinitionVersion?: string;
+  readonly createdAt?: Date;
+  readonly lastUpdatedAt?: Date;
 }
 
-interface ValidationException {
-  readonly message: string;
+export interface ValidationException {
+  readonly message?: string;
 }
+
 

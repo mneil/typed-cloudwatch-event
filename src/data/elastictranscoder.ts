@@ -4,6 +4,7 @@
 export interface CancelJob {
   readonly Id: string;
 }
+
 export interface CreateJob {
   readonly PipelineId: string;
   readonly Input?: JobInput;
@@ -14,6 +15,7 @@ export interface CreateJob {
   readonly Playlists?: [];
   readonly UserMetadata?: {[key: string]: any};
 }
+
 export interface CreatePipeline {
   readonly Name: string;
   readonly InputBucket: string;
@@ -24,6 +26,7 @@ export interface CreatePipeline {
   readonly ContentConfig?: PipelineOutputConfig;
   readonly ThumbnailConfig?: PipelineOutputConfig;
 }
+
 export interface CreatePreset {
   readonly Name: string;
   readonly Description?: string;
@@ -32,45 +35,56 @@ export interface CreatePreset {
   readonly Audio?: AudioParameters;
   readonly Thumbnails?: Thumbnails;
 }
+
 export interface DeletePipeline {
   readonly Id: string;
 }
+
 export interface DeletePreset {
   readonly Id: string;
 }
+
 export interface ListJobsByPipeline {
   readonly PipelineId: string;
   readonly Ascending?: string;
   readonly PageToken?: string;
 }
+
 export interface ListJobsByStatus {
   readonly Status: string;
   readonly Ascending?: string;
   readonly PageToken?: string;
 }
+
 export interface ListPipelines {
   readonly Ascending?: string;
   readonly PageToken?: string;
 }
+
 export interface ListPresets {
   readonly Ascending?: string;
   readonly PageToken?: string;
 }
+
 export interface ReadJob {
   readonly Id: string;
 }
+
 export interface ReadPipeline {
   readonly Id: string;
 }
+
 export interface ReadPreset {
   readonly Id: string;
 }
+
 export interface TestRole {
   readonly Role: string;
   readonly InputBucket: string;
   readonly OutputBucket: string;
   readonly Topics: [];
 }
+
 export interface UpdatePipeline {
   readonly Id: string;
   readonly Name?: string;
@@ -81,500 +95,501 @@ export interface UpdatePipeline {
   readonly ContentConfig?: PipelineOutputConfig;
   readonly ThumbnailConfig?: PipelineOutputConfig;
 }
+
 export interface UpdatePipelineNotifications {
   readonly Id: string;
   readonly Notifications: Notifications;
 }
+
 export interface UpdatePipelineStatus {
   readonly Id: string;
   readonly Status: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
 }
 
-interface Artwork {
-  readonly InputKey: string;
-  readonly MaxWidth: string;
-  readonly MaxHeight: string;
-  readonly SizingPolicy: string;
-  readonly PaddingPolicy: string;
-  readonly AlbumArtFormat: string;
-  readonly Encryption: Encryption;
+export interface Artwork {
+  readonly InputKey?: string;
+  readonly MaxWidth?: string;
+  readonly MaxHeight?: string;
+  readonly SizingPolicy?: string;
+  readonly PaddingPolicy?: string;
+  readonly AlbumArtFormat?: string;
+  readonly Encryption?: Encryption;
 }
 
-interface AudioCodecOptions {
-  readonly Profile: string;
-  readonly BitDepth: string;
-  readonly BitOrder: string;
-  readonly Signed: string;
+export interface AudioCodecOptions {
+  readonly Profile?: string;
+  readonly BitDepth?: string;
+  readonly BitOrder?: string;
+  readonly Signed?: string;
 }
 
-interface AudioParameters {
-  readonly Codec: string;
-  readonly SampleRate: string;
-  readonly BitRate: string;
-  readonly Channels: string;
-  readonly AudioPackingMode: string;
-  readonly CodecOptions: AudioCodecOptions;
+export interface AudioParameters {
+  readonly Codec?: string;
+  readonly SampleRate?: string;
+  readonly BitRate?: string;
+  readonly Channels?: string;
+  readonly AudioPackingMode?: string;
+  readonly CodecOptions?: AudioCodecOptions;
 }
 
-interface CancelJobRequest {
+export interface CancelJobRequest {
   readonly Id: string;
 }
 
-interface CancelJobResponse {
+export interface CancelJobResponse {
 }
 
-interface CaptionFormat {
-  readonly Format: string;
-  readonly Pattern: string;
-  readonly Encryption: Encryption;
+export interface CaptionFormat {
+  readonly Format?: string;
+  readonly Pattern?: string;
+  readonly Encryption?: Encryption;
 }
 
-interface CaptionSource {
-  readonly Key: string;
-  readonly Language: string;
-  readonly TimeOffset: string;
-  readonly Label: string;
-  readonly Encryption: Encryption;
+export interface CaptionSource {
+  readonly Key?: string;
+  readonly Language?: string;
+  readonly TimeOffset?: string;
+  readonly Label?: string;
+  readonly Encryption?: Encryption;
 }
 
-interface Captions {
-  readonly MergePolicy: string;
-  readonly CaptionSources: [];
-  readonly CaptionFormats: [];
+export interface Captions {
+  readonly MergePolicy?: string;
+  readonly CaptionSources?: [];
+  readonly CaptionFormats?: [];
 }
 
-interface Clip {
-  readonly TimeSpan: TimeSpan;
+export interface Clip {
+  readonly TimeSpan?: TimeSpan;
 }
 
-interface CreateJobOutput {
-  readonly Key: string;
-  readonly ThumbnailPattern: string;
-  readonly ThumbnailEncryption: Encryption;
-  readonly Rotate: string;
-  readonly PresetId: string;
-  readonly SegmentDuration: string;
-  readonly Watermarks: [];
-  readonly AlbumArt: JobAlbumArt;
-  readonly Composition: [];
-  readonly Captions: Captions;
-  readonly Encryption: Encryption;
+export interface CreateJobOutput {
+  readonly Key?: string;
+  readonly ThumbnailPattern?: string;
+  readonly ThumbnailEncryption?: Encryption;
+  readonly Rotate?: string;
+  readonly PresetId?: string;
+  readonly SegmentDuration?: string;
+  readonly Watermarks?: [];
+  readonly AlbumArt?: JobAlbumArt;
+  readonly Composition?: [];
+  readonly Captions?: Captions;
+  readonly Encryption?: Encryption;
 }
 
-interface CreateJobPlaylist {
-  readonly Name: string;
-  readonly Format: string;
-  readonly OutputKeys: [];
-  readonly HlsContentProtection: HlsContentProtection;
-  readonly PlayReadyDrm: PlayReadyDrm;
+export interface CreateJobPlaylist {
+  readonly Name?: string;
+  readonly Format?: string;
+  readonly OutputKeys?: [];
+  readonly HlsContentProtection?: HlsContentProtection;
+  readonly PlayReadyDrm?: PlayReadyDrm;
 }
 
-interface CreateJobRequest {
+export interface CreateJobRequest {
   readonly PipelineId: string;
-  readonly Input: JobInput;
-  readonly Inputs: [];
-  readonly Output: CreateJobOutput;
-  readonly Outputs: [];
-  readonly OutputKeyPrefix: string;
-  readonly Playlists: [];
-  readonly UserMetadata: {[key: string]: any};
+  readonly Input?: JobInput;
+  readonly Inputs?: [];
+  readonly Output?: CreateJobOutput;
+  readonly Outputs?: [];
+  readonly OutputKeyPrefix?: string;
+  readonly Playlists?: [];
+  readonly UserMetadata?: {[key: string]: any};
 }
 
-interface CreateJobResponse {
-  readonly Job: Job;
+export interface CreateJobResponse {
+  readonly Job?: Job;
 }
 
-interface CreatePipelineRequest {
+export interface CreatePipelineRequest {
   readonly Name: string;
   readonly InputBucket: string;
-  readonly OutputBucket: string;
+  readonly OutputBucket?: string;
   readonly Role: string;
-  readonly AwsKmsKeyArn: string;
-  readonly Notifications: Notifications;
-  readonly ContentConfig: PipelineOutputConfig;
-  readonly ThumbnailConfig: PipelineOutputConfig;
+  readonly AwsKmsKeyArn?: string;
+  readonly Notifications?: Notifications;
+  readonly ContentConfig?: PipelineOutputConfig;
+  readonly ThumbnailConfig?: PipelineOutputConfig;
 }
 
-interface CreatePipelineResponse {
-  readonly Pipeline: Pipeline;
-  readonly Warnings: [];
+export interface CreatePipelineResponse {
+  readonly Pipeline?: Pipeline;
+  readonly Warnings?: [];
 }
 
-interface CreatePresetRequest {
+export interface CreatePresetRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Container: string;
-  readonly Video: VideoParameters;
-  readonly Audio: AudioParameters;
-  readonly Thumbnails: Thumbnails;
+  readonly Video?: VideoParameters;
+  readonly Audio?: AudioParameters;
+  readonly Thumbnails?: Thumbnails;
 }
 
-interface CreatePresetResponse {
-  readonly Preset: Preset;
-  readonly Warning: string;
+export interface CreatePresetResponse {
+  readonly Preset?: Preset;
+  readonly Warning?: string;
 }
 
-interface DeletePipelineRequest {
+export interface DeletePipelineRequest {
   readonly Id: string;
 }
 
-interface DeletePipelineResponse {
+export interface DeletePipelineResponse {
 }
 
-interface DeletePresetRequest {
+export interface DeletePresetRequest {
   readonly Id: string;
 }
 
-interface DeletePresetResponse {
+export interface DeletePresetResponse {
 }
 
-interface DetectedProperties {
-  readonly Width: number;
-  readonly Height: number;
-  readonly FrameRate: string;
-  readonly FileSize: number;
-  readonly DurationMillis: number;
+export interface DetectedProperties {
+  readonly Width?: number;
+  readonly Height?: number;
+  readonly FrameRate?: string;
+  readonly FileSize?: number;
+  readonly DurationMillis?: number;
 }
 
-interface Encryption {
-  readonly Mode: string;
-  readonly Key: string;
-  readonly KeyMd5: string;
-  readonly InitializationVector: string;
+export interface Encryption {
+  readonly Mode?: string;
+  readonly Key?: string;
+  readonly KeyMd5?: string;
+  readonly InitializationVector?: string;
 }
 
-interface HlsContentProtection {
-  readonly Method: string;
-  readonly Key: string;
-  readonly KeyMd5: string;
-  readonly InitializationVector: string;
-  readonly LicenseAcquisitionUrl: string;
-  readonly KeyStoragePolicy: string;
+export interface HlsContentProtection {
+  readonly Method?: string;
+  readonly Key?: string;
+  readonly KeyMd5?: string;
+  readonly InitializationVector?: string;
+  readonly LicenseAcquisitionUrl?: string;
+  readonly KeyStoragePolicy?: string;
 }
 
-interface IncompatibleVersionException {
+export interface IncompatibleVersionException {
 }
 
-interface InputCaptions {
-  readonly MergePolicy: string;
-  readonly CaptionSources: [];
+export interface InputCaptions {
+  readonly MergePolicy?: string;
+  readonly CaptionSources?: [];
 }
 
-interface InternalServiceException {
+export interface InternalServiceException {
 }
 
-interface Job {
-  readonly Id: string;
-  readonly Arn: string;
+export interface Job {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly PipelineId?: string;
+  readonly Input?: JobInput;
+  readonly Inputs?: [];
+  readonly Output?: JobOutput;
+  readonly Outputs?: [];
+  readonly OutputKeyPrefix?: string;
+  readonly Playlists?: [];
+  readonly Status?: string;
+  readonly UserMetadata?: {[key: string]: any};
+  readonly Timing?: Timing;
+}
+
+export interface JobAlbumArt {
+  readonly MergePolicy?: string;
+  readonly Artwork?: [];
+}
+
+export interface JobInput {
+  readonly Key?: string;
+  readonly FrameRate?: string;
+  readonly Resolution?: string;
+  readonly AspectRatio?: string;
+  readonly Interlaced?: string;
+  readonly Container?: string;
+  readonly Encryption?: Encryption;
+  readonly TimeSpan?: TimeSpan;
+  readonly InputCaptions?: InputCaptions;
+  readonly DetectedProperties?: DetectedProperties;
+}
+
+export interface JobOutput {
+  readonly Id?: string;
+  readonly Key?: string;
+  readonly ThumbnailPattern?: string;
+  readonly ThumbnailEncryption?: Encryption;
+  readonly Rotate?: string;
+  readonly PresetId?: string;
+  readonly SegmentDuration?: string;
+  readonly Status?: string;
+  readonly StatusDetail?: string;
+  readonly Duration?: number;
+  readonly Width?: number;
+  readonly Height?: number;
+  readonly FrameRate?: string;
+  readonly FileSize?: number;
+  readonly DurationMillis?: number;
+  readonly Watermarks?: [];
+  readonly AlbumArt?: JobAlbumArt;
+  readonly Composition?: [];
+  readonly Captions?: Captions;
+  readonly Encryption?: Encryption;
+  readonly AppliedColorSpaceConversion?: string;
+}
+
+export interface JobWatermark {
+  readonly PresetWatermarkId?: string;
+  readonly InputKey?: string;
+  readonly Encryption?: Encryption;
+}
+
+export interface LimitExceededException {
+}
+
+export interface ListJobsByPipelineRequest {
   readonly PipelineId: string;
-  readonly Input: JobInput;
-  readonly Inputs: [];
-  readonly Output: JobOutput;
-  readonly Outputs: [];
-  readonly OutputKeyPrefix: string;
-  readonly Playlists: [];
+  readonly Ascending?: string;
+  readonly PageToken?: string;
+}
+
+export interface ListJobsByPipelineResponse {
+  readonly Jobs?: [];
+  readonly NextPageToken?: string;
+}
+
+export interface ListJobsByStatusRequest {
   readonly Status: string;
-  readonly UserMetadata: {[key: string]: any};
-  readonly Timing: Timing;
+  readonly Ascending?: string;
+  readonly PageToken?: string;
 }
 
-interface JobAlbumArt {
-  readonly MergePolicy: string;
-  readonly Artwork: [];
+export interface ListJobsByStatusResponse {
+  readonly Jobs?: [];
+  readonly NextPageToken?: string;
 }
 
-interface JobInput {
-  readonly Key: string;
-  readonly FrameRate: string;
-  readonly Resolution: string;
-  readonly AspectRatio: string;
-  readonly Interlaced: string;
-  readonly Container: string;
-  readonly Encryption: Encryption;
-  readonly TimeSpan: TimeSpan;
-  readonly InputCaptions: InputCaptions;
-  readonly DetectedProperties: DetectedProperties;
+export interface ListPipelinesRequest {
+  readonly Ascending?: string;
+  readonly PageToken?: string;
 }
 
-interface JobOutput {
-  readonly Id: string;
-  readonly Key: string;
-  readonly ThumbnailPattern: string;
-  readonly ThumbnailEncryption: Encryption;
-  readonly Rotate: string;
-  readonly PresetId: string;
-  readonly SegmentDuration: string;
-  readonly Status: string;
-  readonly StatusDetail: string;
-  readonly Duration: number;
-  readonly Width: number;
-  readonly Height: number;
-  readonly FrameRate: string;
-  readonly FileSize: number;
-  readonly DurationMillis: number;
-  readonly Watermarks: [];
-  readonly AlbumArt: JobAlbumArt;
-  readonly Composition: [];
-  readonly Captions: Captions;
-  readonly Encryption: Encryption;
-  readonly AppliedColorSpaceConversion: string;
+export interface ListPipelinesResponse {
+  readonly Pipelines?: [];
+  readonly NextPageToken?: string;
 }
 
-interface JobWatermark {
-  readonly PresetWatermarkId: string;
-  readonly InputKey: string;
-  readonly Encryption: Encryption;
+export interface ListPresetsRequest {
+  readonly Ascending?: string;
+  readonly PageToken?: string;
 }
 
-interface LimitExceededException {
+export interface ListPresetsResponse {
+  readonly Presets?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListJobsByPipelineRequest {
-  readonly PipelineId: string;
-  readonly Ascending: string;
-  readonly PageToken: string;
+export interface Notifications {
+  readonly Progressing?: string;
+  readonly Completed?: string;
+  readonly Warning?: string;
+  readonly Error?: string;
 }
 
-interface ListJobsByPipelineResponse {
-  readonly Jobs: [];
-  readonly NextPageToken: string;
+export interface Permission {
+  readonly GranteeType?: string;
+  readonly Grantee?: string;
+  readonly Access?: [];
 }
 
-interface ListJobsByStatusRequest {
-  readonly Status: string;
-  readonly Ascending: string;
-  readonly PageToken: string;
+export interface Pipeline {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly InputBucket?: string;
+  readonly OutputBucket?: string;
+  readonly Role?: string;
+  readonly AwsKmsKeyArn?: string;
+  readonly Notifications?: Notifications;
+  readonly ContentConfig?: PipelineOutputConfig;
+  readonly ThumbnailConfig?: PipelineOutputConfig;
 }
 
-interface ListJobsByStatusResponse {
-  readonly Jobs: [];
-  readonly NextPageToken: string;
+export interface PipelineOutputConfig {
+  readonly Bucket?: string;
+  readonly StorageClass?: string;
+  readonly Permissions?: [];
 }
 
-interface ListPipelinesRequest {
-  readonly Ascending: string;
-  readonly PageToken: string;
+export interface PlayReadyDrm {
+  readonly Format?: string;
+  readonly Key?: string;
+  readonly KeyMd5?: string;
+  readonly KeyId?: string;
+  readonly InitializationVector?: string;
+  readonly LicenseAcquisitionUrl?: string;
 }
 
-interface ListPipelinesResponse {
-  readonly Pipelines: [];
-  readonly NextPageToken: string;
+export interface Playlist {
+  readonly Name?: string;
+  readonly Format?: string;
+  readonly OutputKeys?: [];
+  readonly HlsContentProtection?: HlsContentProtection;
+  readonly PlayReadyDrm?: PlayReadyDrm;
+  readonly Status?: string;
+  readonly StatusDetail?: string;
 }
 
-interface ListPresetsRequest {
-  readonly Ascending: string;
-  readonly PageToken: string;
+export interface Preset {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Container?: string;
+  readonly Audio?: AudioParameters;
+  readonly Video?: VideoParameters;
+  readonly Thumbnails?: Thumbnails;
+  readonly Type?: string;
 }
 
-interface ListPresetsResponse {
-  readonly Presets: [];
-  readonly NextPageToken: string;
+export interface PresetWatermark {
+  readonly Id?: string;
+  readonly MaxWidth?: string;
+  readonly MaxHeight?: string;
+  readonly SizingPolicy?: string;
+  readonly HorizontalAlign?: string;
+  readonly HorizontalOffset?: string;
+  readonly VerticalAlign?: string;
+  readonly VerticalOffset?: string;
+  readonly Opacity?: string;
+  readonly Target?: string;
 }
 
-interface Notifications {
-  readonly Progressing: string;
-  readonly Completed: string;
-  readonly Warning: string;
-  readonly Error: string;
-}
-
-interface Permission {
-  readonly GranteeType: string;
-  readonly Grantee: string;
-  readonly Access: [];
-}
-
-interface Pipeline {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly InputBucket: string;
-  readonly OutputBucket: string;
-  readonly Role: string;
-  readonly AwsKmsKeyArn: string;
-  readonly Notifications: Notifications;
-  readonly ContentConfig: PipelineOutputConfig;
-  readonly ThumbnailConfig: PipelineOutputConfig;
-}
-
-interface PipelineOutputConfig {
-  readonly Bucket: string;
-  readonly StorageClass: string;
-  readonly Permissions: [];
-}
-
-interface PlayReadyDrm {
-  readonly Format: string;
-  readonly Key: string;
-  readonly KeyMd5: string;
-  readonly KeyId: string;
-  readonly InitializationVector: string;
-  readonly LicenseAcquisitionUrl: string;
-}
-
-interface Playlist {
-  readonly Name: string;
-  readonly Format: string;
-  readonly OutputKeys: [];
-  readonly HlsContentProtection: HlsContentProtection;
-  readonly PlayReadyDrm: PlayReadyDrm;
-  readonly Status: string;
-  readonly StatusDetail: string;
-}
-
-interface Preset {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Container: string;
-  readonly Audio: AudioParameters;
-  readonly Video: VideoParameters;
-  readonly Thumbnails: Thumbnails;
-  readonly Type: string;
-}
-
-interface PresetWatermark {
-  readonly Id: string;
-  readonly MaxWidth: string;
-  readonly MaxHeight: string;
-  readonly SizingPolicy: string;
-  readonly HorizontalAlign: string;
-  readonly HorizontalOffset: string;
-  readonly VerticalAlign: string;
-  readonly VerticalOffset: string;
-  readonly Opacity: string;
-  readonly Target: string;
-}
-
-interface ReadJobRequest {
+export interface ReadJobRequest {
   readonly Id: string;
 }
 
-interface ReadJobResponse {
-  readonly Job: Job;
+export interface ReadJobResponse {
+  readonly Job?: Job;
 }
 
-interface ReadPipelineRequest {
+export interface ReadPipelineRequest {
   readonly Id: string;
 }
 
-interface ReadPipelineResponse {
-  readonly Pipeline: Pipeline;
-  readonly Warnings: [];
+export interface ReadPipelineResponse {
+  readonly Pipeline?: Pipeline;
+  readonly Warnings?: [];
 }
 
-interface ReadPresetRequest {
+export interface ReadPresetRequest {
   readonly Id: string;
 }
 
-interface ReadPresetResponse {
-  readonly Preset: Preset;
+export interface ReadPresetResponse {
+  readonly Preset?: Preset;
 }
 
-interface ResourceInUseException {
+export interface ResourceInUseException {
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
 }
 
-interface TestRoleRequest {
+export interface TestRoleRequest {
   readonly Role: string;
   readonly InputBucket: string;
   readonly OutputBucket: string;
   readonly Topics: [];
 }
 
-interface TestRoleResponse {
-  readonly Success: string;
-  readonly Messages: [];
+export interface TestRoleResponse {
+  readonly Success?: string;
+  readonly Messages?: [];
 }
 
-interface Thumbnails {
-  readonly Format: string;
-  readonly Interval: string;
-  readonly Resolution: string;
-  readonly AspectRatio: string;
-  readonly MaxWidth: string;
-  readonly MaxHeight: string;
-  readonly SizingPolicy: string;
-  readonly PaddingPolicy: string;
+export interface Thumbnails {
+  readonly Format?: string;
+  readonly Interval?: string;
+  readonly Resolution?: string;
+  readonly AspectRatio?: string;
+  readonly MaxWidth?: string;
+  readonly MaxHeight?: string;
+  readonly SizingPolicy?: string;
+  readonly PaddingPolicy?: string;
 }
 
-interface TimeSpan {
-  readonly StartTime: string;
-  readonly Duration: string;
+export interface TimeSpan {
+  readonly StartTime?: string;
+  readonly Duration?: string;
 }
 
-interface Timing {
-  readonly SubmitTimeMillis: number;
-  readonly StartTimeMillis: number;
-  readonly FinishTimeMillis: number;
+export interface Timing {
+  readonly SubmitTimeMillis?: number;
+  readonly StartTimeMillis?: number;
+  readonly FinishTimeMillis?: number;
 }
 
-interface UpdatePipelineNotificationsRequest {
+export interface UpdatePipelineNotificationsRequest {
   readonly Id: string;
   readonly Notifications: Notifications;
 }
 
-interface UpdatePipelineNotificationsResponse {
-  readonly Pipeline: Pipeline;
+export interface UpdatePipelineNotificationsResponse {
+  readonly Pipeline?: Pipeline;
 }
 
-interface UpdatePipelineRequest {
+export interface UpdatePipelineRequest {
   readonly Id: string;
-  readonly Name: string;
-  readonly InputBucket: string;
-  readonly Role: string;
-  readonly AwsKmsKeyArn: string;
-  readonly Notifications: Notifications;
-  readonly ContentConfig: PipelineOutputConfig;
-  readonly ThumbnailConfig: PipelineOutputConfig;
+  readonly Name?: string;
+  readonly InputBucket?: string;
+  readonly Role?: string;
+  readonly AwsKmsKeyArn?: string;
+  readonly Notifications?: Notifications;
+  readonly ContentConfig?: PipelineOutputConfig;
+  readonly ThumbnailConfig?: PipelineOutputConfig;
 }
 
-interface UpdatePipelineResponse {
-  readonly Pipeline: Pipeline;
-  readonly Warnings: [];
+export interface UpdatePipelineResponse {
+  readonly Pipeline?: Pipeline;
+  readonly Warnings?: [];
 }
 
-interface UpdatePipelineStatusRequest {
+export interface UpdatePipelineStatusRequest {
   readonly Id: string;
   readonly Status: string;
 }
 
-interface UpdatePipelineStatusResponse {
-  readonly Pipeline: Pipeline;
+export interface UpdatePipelineStatusResponse {
+  readonly Pipeline?: Pipeline;
 }
 
-interface ValidationException {
+export interface ValidationException {
 }
 
-interface VideoParameters {
-  readonly Codec: string;
-  readonly CodecOptions: {[key: string]: any};
-  readonly KeyframesMaxDist: string;
-  readonly FixedGOP: string;
-  readonly BitRate: string;
-  readonly FrameRate: string;
-  readonly MaxFrameRate: string;
-  readonly Resolution: string;
-  readonly AspectRatio: string;
-  readonly MaxWidth: string;
-  readonly MaxHeight: string;
-  readonly DisplayAspectRatio: string;
-  readonly SizingPolicy: string;
-  readonly PaddingPolicy: string;
-  readonly Watermarks: [];
+export interface VideoParameters {
+  readonly Codec?: string;
+  readonly CodecOptions?: {[key: string]: any};
+  readonly KeyframesMaxDist?: string;
+  readonly FixedGOP?: string;
+  readonly BitRate?: string;
+  readonly FrameRate?: string;
+  readonly MaxFrameRate?: string;
+  readonly Resolution?: string;
+  readonly AspectRatio?: string;
+  readonly MaxWidth?: string;
+  readonly MaxHeight?: string;
+  readonly DisplayAspectRatio?: string;
+  readonly SizingPolicy?: string;
+  readonly PaddingPolicy?: string;
+  readonly Watermarks?: [];
 }
 
-interface Warning {
-  readonly Code: string;
-  readonly Message: string;
+export interface Warning {
+  readonly Code?: string;
+  readonly Message?: string;
 }
+
 

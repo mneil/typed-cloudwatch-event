@@ -5,30 +5,36 @@ export interface AssociateAssessmentReportEvidenceFolder {
   readonly assessmentId: string;
   readonly evidenceFolderId: string;
 }
+
 export interface BatchAssociateAssessmentReportEvidence {
   readonly assessmentId: string;
   readonly evidenceFolderId: string;
   readonly evidenceIds: [];
 }
+
 export interface BatchCreateDelegationByAssessment {
   readonly createDelegationRequests: [];
   readonly assessmentId: string;
 }
+
 export interface BatchDeleteDelegationByAssessment {
   readonly delegationIds: [];
   readonly assessmentId: string;
 }
+
 export interface BatchDisassociateAssessmentReportEvidence {
   readonly assessmentId: string;
   readonly evidenceFolderId: string;
   readonly evidenceIds: [];
 }
+
 export interface BatchImportEvidenceToAssessmentControl {
   readonly assessmentId: string;
   readonly controlSetId: string;
   readonly controlId: string;
   readonly manualEvidence: [];
 }
+
 export interface CreateAssessment {
   readonly name: string;
   readonly description?: string;
@@ -38,6 +44,7 @@ export interface CreateAssessment {
   readonly frameworkId: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateAssessmentFramework {
   readonly name: string;
   readonly description?: string;
@@ -45,11 +52,13 @@ export interface CreateAssessmentFramework {
   readonly controlSets: [];
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateAssessmentReport {
   readonly name: string;
   readonly description?: string;
   readonly assessmentId: string;
 }
+
 export interface CreateControl {
   readonly name: string;
   readonly description?: string;
@@ -59,44 +68,57 @@ export interface CreateControl {
   readonly controlMappingSources: [];
   readonly tags?: {[key: string]: any};
 }
+
 export interface DeleteAssessment {
   readonly assessmentId: string;
 }
+
 export interface DeleteAssessmentFramework {
   readonly frameworkId: string;
 }
+
 export interface DeleteAssessmentFrameworkShare {
   readonly requestId: string;
   readonly requestType: string;
 }
+
 export interface DeleteAssessmentReport {
   readonly assessmentId: string;
   readonly assessmentReportId: string;
 }
+
 export interface DeleteControl {
   readonly controlId: string;
 }
+
 export interface DeregisterAccount {
 }
+
 export interface DeregisterOrganizationAdminAccount {
   readonly adminAccountId?: string;
 }
+
 export interface DisassociateAssessmentReportEvidenceFolder {
   readonly assessmentId: string;
   readonly evidenceFolderId: string;
 }
+
 export interface GetAccountStatus {
 }
+
 export interface GetAssessment {
   readonly assessmentId: string;
 }
+
 export interface GetAssessmentFramework {
   readonly frameworkId: string;
 }
+
 export interface GetAssessmentReportUrl {
   readonly assessmentReportId: string;
   readonly assessmentId: string;
 }
+
 export interface GetChangeLogs {
   readonly assessmentId: string;
   readonly controlSetId?: string;
@@ -104,19 +126,23 @@ export interface GetChangeLogs {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetControl {
   readonly controlId: string;
 }
+
 export interface GetDelegations {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetEvidence {
   readonly assessmentId: string;
   readonly controlSetId: string;
   readonly evidenceFolderId: string;
   readonly evidenceId: string;
 }
+
 export interface GetEvidenceByEvidenceFolder {
   readonly assessmentId: string;
   readonly controlSetId: string;
@@ -124,16 +150,19 @@ export interface GetEvidenceByEvidenceFolder {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetEvidenceFolder {
   readonly assessmentId: string;
   readonly controlSetId: string;
   readonly evidenceFolderId: string;
 }
+
 export interface GetEvidenceFoldersByAssessment {
   readonly assessmentId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetEvidenceFoldersByAssessmentControl {
   readonly assessmentId: string;
   readonly controlSetId: string;
@@ -141,95 +170,118 @@ export interface GetEvidenceFoldersByAssessmentControl {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetInsights {
 }
+
 export interface GetInsightsByAssessment {
   readonly assessmentId: string;
 }
+
 export interface GetOrganizationAdminAccount {
 }
+
 export interface GetServicesInScope {
 }
+
 export interface GetSettings {
   readonly attribute: string;
 }
+
 export interface ListAssessmentControlInsightsByControlDomain {
   readonly controlDomainId: string;
   readonly assessmentId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssessmentFrameworkShareRequests {
   readonly requestType: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssessmentFrameworks {
   readonly frameworkType: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssessmentReports {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssessments {
   readonly status?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListControlDomainInsights {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListControlDomainInsightsByAssessment {
   readonly assessmentId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListControlInsightsByControlDomain {
   readonly controlDomainId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListControls {
   readonly controlType: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListKeywordsForDataSource {
   readonly source: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListNotifications {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface RegisterAccount {
   readonly kmsKey?: string;
   readonly delegatedAdminAccount?: string;
 }
+
 export interface RegisterOrganizationAdminAccount {
   readonly adminAccountId: string;
 }
+
 export interface StartAssessmentFrameworkShare {
   readonly frameworkId: string;
   readonly destinationAccount: string;
   readonly destinationRegion: string;
   readonly comment?: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateAssessment {
   readonly assessmentId: string;
   readonly assessmentName?: string;
@@ -238,6 +290,7 @@ export interface UpdateAssessment {
   readonly assessmentReportsDestination?: AssessmentReportsDestination;
   readonly roles?: [];
 }
+
 export interface UpdateAssessmentControl {
   readonly assessmentId: string;
   readonly controlSetId: string;
@@ -245,12 +298,14 @@ export interface UpdateAssessmentControl {
   readonly controlStatus?: string;
   readonly commentBody?: string;
 }
+
 export interface UpdateAssessmentControlSetStatus {
   readonly assessmentId: string;
   readonly controlSetId: string;
   readonly status: string;
   readonly comment: string;
 }
+
 export interface UpdateAssessmentFramework {
   readonly frameworkId: string;
   readonly name: string;
@@ -258,15 +313,18 @@ export interface UpdateAssessmentFramework {
   readonly complianceType?: string;
   readonly controlSets: [];
 }
+
 export interface UpdateAssessmentFrameworkShare {
   readonly requestId: string;
   readonly requestType: string;
   readonly action: string;
 }
+
 export interface UpdateAssessmentStatus {
   readonly assessmentId: string;
   readonly status: string;
 }
+
 export interface UpdateControl {
   readonly controlId: string;
   readonly name: string;
@@ -276,1083 +334,1084 @@ export interface UpdateControl {
   readonly actionPlanInstructions?: string;
   readonly controlMappingSources: [];
 }
+
 export interface UpdateSettings {
   readonly snsTopic?: string;
   readonly defaultAssessmentReportsDestination?: AssessmentReportsDestination;
   readonly defaultProcessOwners?: [];
   readonly kmsKey?: string;
 }
+
 export interface ValidateAssessmentReportIntegrity {
   readonly s3RelativePath: string;
 }
 
-
-
-interface AWSAccount {
-  readonly id: string;
-  readonly emailAddress: string;
-  readonly name: string;
+export interface AWSAccount {
+  readonly id?: string;
+  readonly emailAddress?: string;
+  readonly name?: string;
 }
 
-interface AWSService {
-  readonly serviceName: string;
+export interface AWSService {
+  readonly serviceName?: string;
 }
 
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
 }
 
-interface Assessment {
-  readonly arn: string;
-  readonly awsAccount: AWSAccount;
-  readonly metadata: AssessmentMetadata;
-  readonly framework: AssessmentFramework;
-  readonly tags: {[key: string]: any};
+export interface Assessment {
+  readonly arn?: string;
+  readonly awsAccount?: AWSAccount;
+  readonly metadata?: AssessmentMetadata;
+  readonly framework?: AssessmentFramework;
+  readonly tags?: {[key: string]: any};
 }
 
-interface AssessmentControl {
-  readonly id: string;
-  readonly name: string;
-  readonly description: string;
-  readonly status: string;
-  readonly response: string;
-  readonly comments: [];
-  readonly evidenceSources: [];
-  readonly evidenceCount: number;
-  readonly assessmentReportEvidenceCount: number;
+export interface AssessmentControl {
+  readonly id?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly status?: string;
+  readonly response?: string;
+  readonly comments?: [];
+  readonly evidenceSources?: [];
+  readonly evidenceCount?: number;
+  readonly assessmentReportEvidenceCount?: number;
 }
 
-interface AssessmentControlSet {
-  readonly id: string;
-  readonly description: string;
-  readonly status: string;
-  readonly roles: [];
-  readonly controls: [];
-  readonly delegations: [];
-  readonly systemEvidenceCount: number;
-  readonly manualEvidenceCount: number;
+export interface AssessmentControlSet {
+  readonly id?: string;
+  readonly description?: string;
+  readonly status?: string;
+  readonly roles?: [];
+  readonly controls?: [];
+  readonly delegations?: [];
+  readonly systemEvidenceCount?: number;
+  readonly manualEvidenceCount?: number;
 }
 
-interface AssessmentEvidenceFolder {
-  readonly name: string;
-  readonly date: Date;
-  readonly assessmentId: string;
-  readonly controlSetId: string;
-  readonly controlId: string;
-  readonly id: string;
-  readonly dataSource: string;
-  readonly author: string;
-  readonly totalEvidence: number;
-  readonly assessmentReportSelectionCount: number;
-  readonly controlName: string;
-  readonly evidenceResourcesIncludedCount: number;
-  readonly evidenceByTypeConfigurationDataCount: number;
-  readonly evidenceByTypeManualCount: number;
-  readonly evidenceByTypeComplianceCheckCount: number;
-  readonly evidenceByTypeComplianceCheckIssuesCount: number;
-  readonly evidenceByTypeUserActivityCount: number;
-  readonly evidenceAwsServiceSourceCount: number;
+export interface AssessmentEvidenceFolder {
+  readonly name?: string;
+  readonly date?: Date;
+  readonly assessmentId?: string;
+  readonly controlSetId?: string;
+  readonly controlId?: string;
+  readonly id?: string;
+  readonly dataSource?: string;
+  readonly author?: string;
+  readonly totalEvidence?: number;
+  readonly assessmentReportSelectionCount?: number;
+  readonly controlName?: string;
+  readonly evidenceResourcesIncludedCount?: number;
+  readonly evidenceByTypeConfigurationDataCount?: number;
+  readonly evidenceByTypeManualCount?: number;
+  readonly evidenceByTypeComplianceCheckCount?: number;
+  readonly evidenceByTypeComplianceCheckIssuesCount?: number;
+  readonly evidenceByTypeUserActivityCount?: number;
+  readonly evidenceAwsServiceSourceCount?: number;
 }
 
-interface AssessmentFramework {
-  readonly id: string;
-  readonly arn: string;
-  readonly metadata: FrameworkMetadata;
-  readonly controlSets: [];
+export interface AssessmentFramework {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly metadata?: FrameworkMetadata;
+  readonly controlSets?: [];
 }
 
-interface AssessmentFrameworkMetadata {
-  readonly arn: string;
-  readonly id: string;
-  readonly type: string;
-  readonly name: string;
-  readonly description: string;
-  readonly logo: string;
-  readonly complianceType: string;
-  readonly controlsCount: number;
-  readonly controlSetsCount: number;
-  readonly createdAt: Date;
-  readonly lastUpdatedAt: Date;
+export interface AssessmentFrameworkMetadata {
+  readonly arn?: string;
+  readonly id?: string;
+  readonly type?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly logo?: string;
+  readonly complianceType?: string;
+  readonly controlsCount?: number;
+  readonly controlSetsCount?: number;
+  readonly createdAt?: Date;
+  readonly lastUpdatedAt?: Date;
 }
 
-interface AssessmentFrameworkShareRequest {
-  readonly id: string;
-  readonly frameworkId: string;
-  readonly frameworkName: string;
-  readonly frameworkDescription: string;
-  readonly status: string;
-  readonly sourceAccount: string;
-  readonly destinationAccount: string;
-  readonly destinationRegion: string;
-  readonly expirationTime: Date;
-  readonly creationTime: Date;
-  readonly lastUpdated: Date;
-  readonly comment: string;
-  readonly standardControlsCount: number;
-  readonly customControlsCount: number;
-  readonly complianceType: string;
+export interface AssessmentFrameworkShareRequest {
+  readonly id?: string;
+  readonly frameworkId?: string;
+  readonly frameworkName?: string;
+  readonly frameworkDescription?: string;
+  readonly status?: string;
+  readonly sourceAccount?: string;
+  readonly destinationAccount?: string;
+  readonly destinationRegion?: string;
+  readonly expirationTime?: Date;
+  readonly creationTime?: Date;
+  readonly lastUpdated?: Date;
+  readonly comment?: string;
+  readonly standardControlsCount?: number;
+  readonly customControlsCount?: number;
+  readonly complianceType?: string;
 }
 
-interface AssessmentMetadata {
-  readonly name: string;
-  readonly id: string;
-  readonly description: string;
-  readonly complianceType: string;
-  readonly status: string;
-  readonly assessmentReportsDestination: AssessmentReportsDestination;
-  readonly scope: Scope;
-  readonly roles: [];
-  readonly delegations: [];
-  readonly creationTime: Date;
-  readonly lastUpdated: Date;
+export interface AssessmentMetadata {
+  readonly name?: string;
+  readonly id?: string;
+  readonly description?: string;
+  readonly complianceType?: string;
+  readonly status?: string;
+  readonly assessmentReportsDestination?: AssessmentReportsDestination;
+  readonly scope?: Scope;
+  readonly roles?: [];
+  readonly delegations?: [];
+  readonly creationTime?: Date;
+  readonly lastUpdated?: Date;
 }
 
-interface AssessmentMetadataItem {
-  readonly name: string;
-  readonly id: string;
-  readonly complianceType: string;
-  readonly status: string;
-  readonly roles: [];
-  readonly delegations: [];
-  readonly creationTime: Date;
-  readonly lastUpdated: Date;
+export interface AssessmentMetadataItem {
+  readonly name?: string;
+  readonly id?: string;
+  readonly complianceType?: string;
+  readonly status?: string;
+  readonly roles?: [];
+  readonly delegations?: [];
+  readonly creationTime?: Date;
+  readonly lastUpdated?: Date;
 }
 
-interface AssessmentReport {
-  readonly id: string;
-  readonly name: string;
-  readonly description: string;
-  readonly awsAccountId: string;
-  readonly assessmentId: string;
-  readonly assessmentName: string;
-  readonly author: string;
-  readonly status: string;
-  readonly creationTime: Date;
+export interface AssessmentReport {
+  readonly id?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly awsAccountId?: string;
+  readonly assessmentId?: string;
+  readonly assessmentName?: string;
+  readonly author?: string;
+  readonly status?: string;
+  readonly creationTime?: Date;
 }
 
-interface AssessmentReportEvidenceError {
-  readonly evidenceId: string;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface AssessmentReportEvidenceError {
+  readonly evidenceId?: string;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface AssessmentReportMetadata {
-  readonly id: string;
-  readonly name: string;
-  readonly description: string;
-  readonly assessmentId: string;
-  readonly assessmentName: string;
-  readonly author: string;
-  readonly status: string;
-  readonly creationTime: Date;
+export interface AssessmentReportMetadata {
+  readonly id?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly assessmentId?: string;
+  readonly assessmentName?: string;
+  readonly author?: string;
+  readonly status?: string;
+  readonly creationTime?: Date;
 }
 
-interface AssessmentReportsDestination {
-  readonly destinationType: string;
-  readonly destination: string;
+export interface AssessmentReportsDestination {
+  readonly destinationType?: string;
+  readonly destination?: string;
 }
 
-interface AssociateAssessmentReportEvidenceFolderRequest {
+export interface AssociateAssessmentReportEvidenceFolderRequest {
   readonly assessmentId: string;
   readonly evidenceFolderId: string;
 }
 
-interface AssociateAssessmentReportEvidenceFolderResponse {
+export interface AssociateAssessmentReportEvidenceFolderResponse {
 }
 
-interface BatchAssociateAssessmentReportEvidenceRequest {
+export interface BatchAssociateAssessmentReportEvidenceRequest {
   readonly assessmentId: string;
   readonly evidenceFolderId: string;
   readonly evidenceIds: [];
 }
 
-interface BatchAssociateAssessmentReportEvidenceResponse {
-  readonly evidenceIds: [];
-  readonly errors: [];
+export interface BatchAssociateAssessmentReportEvidenceResponse {
+  readonly evidenceIds?: [];
+  readonly errors?: [];
 }
 
-interface BatchCreateDelegationByAssessmentError {
-  readonly createDelegationRequest: CreateDelegationRequest;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface BatchCreateDelegationByAssessmentError {
+  readonly createDelegationRequest?: CreateDelegationRequest;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface BatchCreateDelegationByAssessmentRequest {
+export interface BatchCreateDelegationByAssessmentRequest {
   readonly createDelegationRequests: [];
   readonly assessmentId: string;
 }
 
-interface BatchCreateDelegationByAssessmentResponse {
-  readonly delegations: [];
-  readonly errors: [];
+export interface BatchCreateDelegationByAssessmentResponse {
+  readonly delegations?: [];
+  readonly errors?: [];
 }
 
-interface BatchDeleteDelegationByAssessmentError {
-  readonly delegationId: string;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface BatchDeleteDelegationByAssessmentError {
+  readonly delegationId?: string;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface BatchDeleteDelegationByAssessmentRequest {
+export interface BatchDeleteDelegationByAssessmentRequest {
   readonly delegationIds: [];
   readonly assessmentId: string;
 }
 
-interface BatchDeleteDelegationByAssessmentResponse {
-  readonly errors: [];
+export interface BatchDeleteDelegationByAssessmentResponse {
+  readonly errors?: [];
 }
 
-interface BatchDisassociateAssessmentReportEvidenceRequest {
+export interface BatchDisassociateAssessmentReportEvidenceRequest {
   readonly assessmentId: string;
   readonly evidenceFolderId: string;
   readonly evidenceIds: [];
 }
 
-interface BatchDisassociateAssessmentReportEvidenceResponse {
-  readonly evidenceIds: [];
-  readonly errors: [];
+export interface BatchDisassociateAssessmentReportEvidenceResponse {
+  readonly evidenceIds?: [];
+  readonly errors?: [];
 }
 
-interface BatchImportEvidenceToAssessmentControlError {
-  readonly manualEvidence: ManualEvidence;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface BatchImportEvidenceToAssessmentControlError {
+  readonly manualEvidence?: ManualEvidence;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface BatchImportEvidenceToAssessmentControlRequest {
+export interface BatchImportEvidenceToAssessmentControlRequest {
   readonly assessmentId: string;
   readonly controlSetId: string;
   readonly controlId: string;
   readonly manualEvidence: [];
 }
 
-interface BatchImportEvidenceToAssessmentControlResponse {
-  readonly errors: [];
+export interface BatchImportEvidenceToAssessmentControlResponse {
+  readonly errors?: [];
 }
 
-interface ChangeLog {
-  readonly objectType: string;
-  readonly objectName: string;
-  readonly action: string;
-  readonly createdAt: Date;
-  readonly createdBy: string;
+export interface ChangeLog {
+  readonly objectType?: string;
+  readonly objectName?: string;
+  readonly action?: string;
+  readonly createdAt?: Date;
+  readonly createdBy?: string;
 }
 
-interface Control {
-  readonly arn: string;
-  readonly id: string;
-  readonly type: string;
+export interface Control {
+  readonly arn?: string;
+  readonly id?: string;
+  readonly type?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly testingInformation?: string;
+  readonly actionPlanTitle?: string;
+  readonly actionPlanInstructions?: string;
+  readonly controlSources?: string;
+  readonly controlMappingSources?: [];
+  readonly createdAt?: Date;
+  readonly lastUpdatedAt?: Date;
+  readonly createdBy?: string;
+  readonly lastUpdatedBy?: string;
+  readonly tags?: {[key: string]: any};
+}
+
+export interface ControlComment {
+  readonly authorName?: string;
+  readonly commentBody?: string;
+  readonly postedDate?: Date;
+}
+
+export interface ControlDomainInsights {
+  readonly name?: string;
+  readonly id?: string;
+  readonly controlsCountByNoncompliantEvidence?: number;
+  readonly totalControlsCount?: number;
+  readonly evidenceInsights?: EvidenceInsights;
+  readonly lastUpdated?: Date;
+}
+
+export interface ControlInsightsMetadataByAssessmentItem {
+  readonly name?: string;
+  readonly id?: string;
+  readonly evidenceInsights?: EvidenceInsights;
+  readonly controlSetName?: string;
+  readonly lastUpdated?: Date;
+}
+
+export interface ControlInsightsMetadataItem {
+  readonly name?: string;
+  readonly id?: string;
+  readonly evidenceInsights?: EvidenceInsights;
+  readonly lastUpdated?: Date;
+}
+
+export interface ControlMappingSource {
+  readonly sourceId?: string;
+  readonly sourceName?: string;
+  readonly sourceDescription?: string;
+  readonly sourceSetUpOption?: string;
+  readonly sourceType?: string;
+  readonly sourceKeyword?: SourceKeyword;
+  readonly sourceFrequency?: string;
+  readonly troubleshootingText?: string;
+}
+
+export interface ControlMetadata {
+  readonly arn?: string;
+  readonly id?: string;
+  readonly name?: string;
+  readonly controlSources?: string;
+  readonly createdAt?: Date;
+  readonly lastUpdatedAt?: Date;
+}
+
+export interface ControlSet {
+  readonly id?: string;
+  readonly name?: string;
+  readonly controls?: [];
+}
+
+export interface CreateAssessmentFrameworkControl {
+  readonly id?: string;
+}
+
+export interface CreateAssessmentFrameworkControlSet {
   readonly name: string;
-  readonly description: string;
-  readonly testingInformation: string;
-  readonly actionPlanTitle: string;
-  readonly actionPlanInstructions: string;
-  readonly controlSources: string;
-  readonly controlMappingSources: [];
-  readonly createdAt: Date;
-  readonly lastUpdatedAt: Date;
-  readonly createdBy: string;
-  readonly lastUpdatedBy: string;
-  readonly tags: {[key: string]: any};
+  readonly controls?: [];
 }
 
-interface ControlComment {
-  readonly authorName: string;
-  readonly commentBody: string;
-  readonly postedDate: Date;
-}
-
-interface ControlDomainInsights {
+export interface CreateAssessmentFrameworkRequest {
   readonly name: string;
-  readonly id: string;
-  readonly controlsCountByNoncompliantEvidence: number;
-  readonly totalControlsCount: number;
-  readonly evidenceInsights: EvidenceInsights;
-  readonly lastUpdated: Date;
-}
-
-interface ControlInsightsMetadataByAssessmentItem {
-  readonly name: string;
-  readonly id: string;
-  readonly evidenceInsights: EvidenceInsights;
-  readonly controlSetName: string;
-  readonly lastUpdated: Date;
-}
-
-interface ControlInsightsMetadataItem {
-  readonly name: string;
-  readonly id: string;
-  readonly evidenceInsights: EvidenceInsights;
-  readonly lastUpdated: Date;
-}
-
-interface ControlMappingSource {
-  readonly sourceId: string;
-  readonly sourceName: string;
-  readonly sourceDescription: string;
-  readonly sourceSetUpOption: string;
-  readonly sourceType: string;
-  readonly sourceKeyword: SourceKeyword;
-  readonly sourceFrequency: string;
-  readonly troubleshootingText: string;
-}
-
-interface ControlMetadata {
-  readonly arn: string;
-  readonly id: string;
-  readonly name: string;
-  readonly controlSources: string;
-  readonly createdAt: Date;
-  readonly lastUpdatedAt: Date;
-}
-
-interface ControlSet {
-  readonly id: string;
-  readonly name: string;
-  readonly controls: [];
-}
-
-interface CreateAssessmentFrameworkControl {
-  readonly id: string;
-}
-
-interface CreateAssessmentFrameworkControlSet {
-  readonly name: string;
-  readonly controls: [];
-}
-
-interface CreateAssessmentFrameworkRequest {
-  readonly name: string;
-  readonly description: string;
-  readonly complianceType: string;
+  readonly description?: string;
+  readonly complianceType?: string;
   readonly controlSets: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateAssessmentFrameworkResponse {
-  readonly framework: Framework;
+export interface CreateAssessmentFrameworkResponse {
+  readonly framework?: Framework;
 }
 
-interface CreateAssessmentReportRequest {
+export interface CreateAssessmentReportRequest {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly assessmentId: string;
 }
 
-interface CreateAssessmentReportResponse {
-  readonly assessmentReport: AssessmentReport;
+export interface CreateAssessmentReportResponse {
+  readonly assessmentReport?: AssessmentReport;
 }
 
-interface CreateAssessmentRequest {
+export interface CreateAssessmentRequest {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly assessmentReportsDestination: AssessmentReportsDestination;
   readonly scope: Scope;
   readonly roles: [];
   readonly frameworkId: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateAssessmentResponse {
-  readonly assessment: Assessment;
+export interface CreateAssessmentResponse {
+  readonly assessment?: Assessment;
 }
 
-interface CreateControlMappingSource {
-  readonly sourceName: string;
-  readonly sourceDescription: string;
-  readonly sourceSetUpOption: string;
-  readonly sourceType: string;
-  readonly sourceKeyword: SourceKeyword;
-  readonly sourceFrequency: string;
-  readonly troubleshootingText: string;
+export interface CreateControlMappingSource {
+  readonly sourceName?: string;
+  readonly sourceDescription?: string;
+  readonly sourceSetUpOption?: string;
+  readonly sourceType?: string;
+  readonly sourceKeyword?: SourceKeyword;
+  readonly sourceFrequency?: string;
+  readonly troubleshootingText?: string;
 }
 
-interface CreateControlRequest {
+export interface CreateControlRequest {
   readonly name: string;
-  readonly description: string;
-  readonly testingInformation: string;
-  readonly actionPlanTitle: string;
-  readonly actionPlanInstructions: string;
+  readonly description?: string;
+  readonly testingInformation?: string;
+  readonly actionPlanTitle?: string;
+  readonly actionPlanInstructions?: string;
   readonly controlMappingSources: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateControlResponse {
-  readonly control: Control;
+export interface CreateControlResponse {
+  readonly control?: Control;
 }
 
-interface CreateDelegationRequest {
-  readonly comment: string;
-  readonly controlSetId: string;
-  readonly roleArn: string;
-  readonly roleType: string;
+export interface CreateDelegationRequest {
+  readonly comment?: string;
+  readonly controlSetId?: string;
+  readonly roleArn?: string;
+  readonly roleType?: string;
 }
 
-interface Delegation {
-  readonly id: string;
-  readonly assessmentName: string;
-  readonly assessmentId: string;
-  readonly status: string;
-  readonly roleArn: string;
-  readonly roleType: string;
-  readonly creationTime: Date;
-  readonly lastUpdated: Date;
-  readonly controlSetId: string;
-  readonly comment: string;
-  readonly createdBy: string;
+export interface Delegation {
+  readonly id?: string;
+  readonly assessmentName?: string;
+  readonly assessmentId?: string;
+  readonly status?: string;
+  readonly roleArn?: string;
+  readonly roleType?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdated?: Date;
+  readonly controlSetId?: string;
+  readonly comment?: string;
+  readonly createdBy?: string;
 }
 
-interface DelegationMetadata {
-  readonly id: string;
-  readonly assessmentName: string;
-  readonly assessmentId: string;
-  readonly status: string;
-  readonly roleArn: string;
-  readonly creationTime: Date;
-  readonly controlSetName: string;
+export interface DelegationMetadata {
+  readonly id?: string;
+  readonly assessmentName?: string;
+  readonly assessmentId?: string;
+  readonly status?: string;
+  readonly roleArn?: string;
+  readonly creationTime?: Date;
+  readonly controlSetName?: string;
 }
 
-interface DeleteAssessmentFrameworkRequest {
+export interface DeleteAssessmentFrameworkRequest {
   readonly frameworkId: string;
 }
 
-interface DeleteAssessmentFrameworkResponse {
+export interface DeleteAssessmentFrameworkResponse {
 }
 
-interface DeleteAssessmentFrameworkShareRequest {
+export interface DeleteAssessmentFrameworkShareRequest {
   readonly requestId: string;
   readonly requestType: string;
 }
 
-interface DeleteAssessmentFrameworkShareResponse {
+export interface DeleteAssessmentFrameworkShareResponse {
 }
 
-interface DeleteAssessmentReportRequest {
+export interface DeleteAssessmentReportRequest {
   readonly assessmentId: string;
   readonly assessmentReportId: string;
 }
 
-interface DeleteAssessmentReportResponse {
+export interface DeleteAssessmentReportResponse {
 }
 
-interface DeleteAssessmentRequest {
+export interface DeleteAssessmentRequest {
   readonly assessmentId: string;
 }
 
-interface DeleteAssessmentResponse {
+export interface DeleteAssessmentResponse {
 }
 
-interface DeleteControlRequest {
+export interface DeleteControlRequest {
   readonly controlId: string;
 }
 
-interface DeleteControlResponse {
+export interface DeleteControlResponse {
 }
 
-interface DeregisterAccountRequest {
+export interface DeregisterAccountRequest {
 }
 
-interface DeregisterAccountResponse {
-  readonly status: string;
+export interface DeregisterAccountResponse {
+  readonly status?: string;
 }
 
-interface DeregisterOrganizationAdminAccountRequest {
-  readonly adminAccountId: string;
+export interface DeregisterOrganizationAdminAccountRequest {
+  readonly adminAccountId?: string;
 }
 
-interface DeregisterOrganizationAdminAccountResponse {
+export interface DeregisterOrganizationAdminAccountResponse {
 }
 
-interface DisassociateAssessmentReportEvidenceFolderRequest {
+export interface DisassociateAssessmentReportEvidenceFolderRequest {
   readonly assessmentId: string;
   readonly evidenceFolderId: string;
 }
 
-interface DisassociateAssessmentReportEvidenceFolderResponse {
+export interface DisassociateAssessmentReportEvidenceFolderResponse {
 }
 
-interface Evidence {
-  readonly dataSource: string;
-  readonly evidenceAwsAccountId: string;
-  readonly time: Date;
-  readonly eventSource: string;
-  readonly eventName: string;
-  readonly evidenceByType: string;
-  readonly resourcesIncluded: [];
-  readonly attributes: {[key: string]: any};
-  readonly iamId: string;
-  readonly complianceCheck: string;
-  readonly awsOrganization: string;
-  readonly awsAccountId: string;
-  readonly evidenceFolderId: string;
-  readonly id: string;
-  readonly assessmentReportSelection: string;
+export interface Evidence {
+  readonly dataSource?: string;
+  readonly evidenceAwsAccountId?: string;
+  readonly time?: Date;
+  readonly eventSource?: string;
+  readonly eventName?: string;
+  readonly evidenceByType?: string;
+  readonly resourcesIncluded?: [];
+  readonly attributes?: {[key: string]: any};
+  readonly iamId?: string;
+  readonly complianceCheck?: string;
+  readonly awsOrganization?: string;
+  readonly awsAccountId?: string;
+  readonly evidenceFolderId?: string;
+  readonly id?: string;
+  readonly assessmentReportSelection?: string;
 }
 
-interface EvidenceInsights {
-  readonly noncompliantEvidenceCount: number;
-  readonly compliantEvidenceCount: number;
-  readonly inconclusiveEvidenceCount: number;
+export interface EvidenceInsights {
+  readonly noncompliantEvidenceCount?: number;
+  readonly compliantEvidenceCount?: number;
+  readonly inconclusiveEvidenceCount?: number;
 }
 
-interface Framework {
-  readonly arn: string;
-  readonly id: string;
-  readonly name: string;
-  readonly type: string;
-  readonly complianceType: string;
-  readonly description: string;
-  readonly logo: string;
-  readonly controlSources: string;
-  readonly controlSets: [];
-  readonly createdAt: Date;
-  readonly lastUpdatedAt: Date;
-  readonly createdBy: string;
-  readonly lastUpdatedBy: string;
-  readonly tags: {[key: string]: any};
+export interface Framework {
+  readonly arn?: string;
+  readonly id?: string;
+  readonly name?: string;
+  readonly type?: string;
+  readonly complianceType?: string;
+  readonly description?: string;
+  readonly logo?: string;
+  readonly controlSources?: string;
+  readonly controlSets?: [];
+  readonly createdAt?: Date;
+  readonly lastUpdatedAt?: Date;
+  readonly createdBy?: string;
+  readonly lastUpdatedBy?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface FrameworkMetadata {
-  readonly name: string;
-  readonly description: string;
-  readonly logo: string;
-  readonly complianceType: string;
+export interface FrameworkMetadata {
+  readonly name?: string;
+  readonly description?: string;
+  readonly logo?: string;
+  readonly complianceType?: string;
 }
 
-interface GetAccountStatusRequest {
+export interface GetAccountStatusRequest {
 }
 
-interface GetAccountStatusResponse {
-  readonly status: string;
+export interface GetAccountStatusResponse {
+  readonly status?: string;
 }
 
-interface GetAssessmentFrameworkRequest {
+export interface GetAssessmentFrameworkRequest {
   readonly frameworkId: string;
 }
 
-interface GetAssessmentFrameworkResponse {
-  readonly framework: Framework;
+export interface GetAssessmentFrameworkResponse {
+  readonly framework?: Framework;
 }
 
-interface GetAssessmentReportUrlRequest {
+export interface GetAssessmentReportUrlRequest {
   readonly assessmentReportId: string;
   readonly assessmentId: string;
 }
 
-interface GetAssessmentReportUrlResponse {
-  readonly preSignedUrl: URL;
+export interface GetAssessmentReportUrlResponse {
+  readonly preSignedUrl?: URL;
 }
 
-interface GetAssessmentRequest {
+export interface GetAssessmentRequest {
   readonly assessmentId: string;
 }
 
-interface GetAssessmentResponse {
-  readonly assessment: Assessment;
-  readonly userRole: Role;
+export interface GetAssessmentResponse {
+  readonly assessment?: Assessment;
+  readonly userRole?: Role;
 }
 
-interface GetChangeLogsRequest {
+export interface GetChangeLogsRequest {
   readonly assessmentId: string;
-  readonly controlSetId: string;
+  readonly controlSetId?: string;
+  readonly controlId?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+}
+
+export interface GetChangeLogsResponse {
+  readonly changeLogs?: [];
+  readonly nextToken?: string;
+}
+
+export interface GetControlRequest {
   readonly controlId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
 }
 
-interface GetChangeLogsResponse {
-  readonly changeLogs: [];
-  readonly nextToken: string;
+export interface GetControlResponse {
+  readonly control?: Control;
 }
 
-interface GetControlRequest {
-  readonly controlId: string;
+export interface GetDelegationsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetControlResponse {
-  readonly control: Control;
+export interface GetDelegationsResponse {
+  readonly delegations?: [];
+  readonly nextToken?: string;
 }
 
-interface GetDelegationsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
-}
-
-interface GetDelegationsResponse {
-  readonly delegations: [];
-  readonly nextToken: string;
-}
-
-interface GetEvidenceByEvidenceFolderRequest {
+export interface GetEvidenceByEvidenceFolderRequest {
   readonly assessmentId: string;
   readonly controlSetId: string;
   readonly evidenceFolderId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetEvidenceByEvidenceFolderResponse {
-  readonly evidence: [];
-  readonly nextToken: string;
+export interface GetEvidenceByEvidenceFolderResponse {
+  readonly evidence?: [];
+  readonly nextToken?: string;
 }
 
-interface GetEvidenceFolderRequest {
+export interface GetEvidenceFolderRequest {
   readonly assessmentId: string;
   readonly controlSetId: string;
   readonly evidenceFolderId: string;
 }
 
-interface GetEvidenceFolderResponse {
-  readonly evidenceFolder: AssessmentEvidenceFolder;
+export interface GetEvidenceFolderResponse {
+  readonly evidenceFolder?: AssessmentEvidenceFolder;
 }
 
-interface GetEvidenceFoldersByAssessmentControlRequest {
+export interface GetEvidenceFoldersByAssessmentControlRequest {
   readonly assessmentId: string;
   readonly controlSetId: string;
   readonly controlId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetEvidenceFoldersByAssessmentControlResponse {
-  readonly evidenceFolders: [];
-  readonly nextToken: string;
+export interface GetEvidenceFoldersByAssessmentControlResponse {
+  readonly evidenceFolders?: [];
+  readonly nextToken?: string;
 }
 
-interface GetEvidenceFoldersByAssessmentRequest {
+export interface GetEvidenceFoldersByAssessmentRequest {
   readonly assessmentId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetEvidenceFoldersByAssessmentResponse {
-  readonly evidenceFolders: [];
-  readonly nextToken: string;
+export interface GetEvidenceFoldersByAssessmentResponse {
+  readonly evidenceFolders?: [];
+  readonly nextToken?: string;
 }
 
-interface GetEvidenceRequest {
+export interface GetEvidenceRequest {
   readonly assessmentId: string;
   readonly controlSetId: string;
   readonly evidenceFolderId: string;
   readonly evidenceId: string;
 }
 
-interface GetEvidenceResponse {
-  readonly evidence: Evidence;
+export interface GetEvidenceResponse {
+  readonly evidence?: Evidence;
 }
 
-interface GetInsightsByAssessmentRequest {
+export interface GetInsightsByAssessmentRequest {
   readonly assessmentId: string;
 }
 
-interface GetInsightsByAssessmentResponse {
-  readonly insights: InsightsByAssessment;
+export interface GetInsightsByAssessmentResponse {
+  readonly insights?: InsightsByAssessment;
 }
 
-interface GetInsightsRequest {
+export interface GetInsightsRequest {
 }
 
-interface GetInsightsResponse {
-  readonly insights: Insights;
+export interface GetInsightsResponse {
+  readonly insights?: Insights;
 }
 
-interface GetOrganizationAdminAccountRequest {
+export interface GetOrganizationAdminAccountRequest {
 }
 
-interface GetOrganizationAdminAccountResponse {
-  readonly adminAccountId: string;
-  readonly organizationId: string;
+export interface GetOrganizationAdminAccountResponse {
+  readonly adminAccountId?: string;
+  readonly organizationId?: string;
 }
 
-interface GetServicesInScopeRequest {
+export interface GetServicesInScopeRequest {
 }
 
-interface GetServicesInScopeResponse {
-  readonly serviceMetadata: [];
+export interface GetServicesInScopeResponse {
+  readonly serviceMetadata?: [];
 }
 
-interface GetSettingsRequest {
+export interface GetSettingsRequest {
   readonly attribute: string;
 }
 
-interface GetSettingsResponse {
-  readonly settings: Settings;
+export interface GetSettingsResponse {
+  readonly settings?: Settings;
 }
 
-interface Insights {
-  readonly activeAssessmentsCount: number;
-  readonly noncompliantEvidenceCount: number;
-  readonly compliantEvidenceCount: number;
-  readonly inconclusiveEvidenceCount: number;
-  readonly assessmentControlsCountByNoncompliantEvidence: number;
-  readonly totalAssessmentControlsCount: number;
-  readonly lastUpdated: Date;
+export interface Insights {
+  readonly activeAssessmentsCount?: number;
+  readonly noncompliantEvidenceCount?: number;
+  readonly compliantEvidenceCount?: number;
+  readonly inconclusiveEvidenceCount?: number;
+  readonly assessmentControlsCountByNoncompliantEvidence?: number;
+  readonly totalAssessmentControlsCount?: number;
+  readonly lastUpdated?: Date;
 }
 
-interface InsightsByAssessment {
-  readonly noncompliantEvidenceCount: number;
-  readonly compliantEvidenceCount: number;
-  readonly inconclusiveEvidenceCount: number;
-  readonly assessmentControlsCountByNoncompliantEvidence: number;
-  readonly totalAssessmentControlsCount: number;
-  readonly lastUpdated: Date;
+export interface InsightsByAssessment {
+  readonly noncompliantEvidenceCount?: number;
+  readonly compliantEvidenceCount?: number;
+  readonly inconclusiveEvidenceCount?: number;
+  readonly assessmentControlsCountByNoncompliantEvidence?: number;
+  readonly totalAssessmentControlsCount?: number;
+  readonly lastUpdated?: Date;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
 }
 
-interface ListAssessmentControlInsightsByControlDomainRequest {
+export interface ListAssessmentControlInsightsByControlDomainRequest {
   readonly controlDomainId: string;
   readonly assessmentId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssessmentControlInsightsByControlDomainResponse {
-  readonly controlInsightsByAssessment: [];
-  readonly nextToken: string;
+export interface ListAssessmentControlInsightsByControlDomainResponse {
+  readonly controlInsightsByAssessment?: [];
+  readonly nextToken?: string;
 }
 
-interface ListAssessmentFrameworkShareRequestsRequest {
+export interface ListAssessmentFrameworkShareRequestsRequest {
   readonly requestType: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssessmentFrameworkShareRequestsResponse {
-  readonly assessmentFrameworkShareRequests: [];
-  readonly nextToken: string;
+export interface ListAssessmentFrameworkShareRequestsResponse {
+  readonly assessmentFrameworkShareRequests?: [];
+  readonly nextToken?: string;
 }
 
-interface ListAssessmentFrameworksRequest {
+export interface ListAssessmentFrameworksRequest {
   readonly frameworkType: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssessmentFrameworksResponse {
-  readonly frameworkMetadataList: [];
-  readonly nextToken: string;
+export interface ListAssessmentFrameworksResponse {
+  readonly frameworkMetadataList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListAssessmentReportsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListAssessmentReportsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssessmentReportsResponse {
-  readonly assessmentReports: [];
-  readonly nextToken: string;
+export interface ListAssessmentReportsResponse {
+  readonly assessmentReports?: [];
+  readonly nextToken?: string;
 }
 
-interface ListAssessmentsRequest {
-  readonly status: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListAssessmentsRequest {
+  readonly status?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssessmentsResponse {
-  readonly assessmentMetadata: [];
-  readonly nextToken: string;
+export interface ListAssessmentsResponse {
+  readonly assessmentMetadata?: [];
+  readonly nextToken?: string;
 }
 
-interface ListControlDomainInsightsByAssessmentRequest {
+export interface ListControlDomainInsightsByAssessmentRequest {
   readonly assessmentId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListControlDomainInsightsByAssessmentResponse {
-  readonly controlDomainInsights: [];
-  readonly nextToken: string;
+export interface ListControlDomainInsightsByAssessmentResponse {
+  readonly controlDomainInsights?: [];
+  readonly nextToken?: string;
 }
 
-interface ListControlDomainInsightsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListControlDomainInsightsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListControlDomainInsightsResponse {
-  readonly controlDomainInsights: [];
-  readonly nextToken: string;
+export interface ListControlDomainInsightsResponse {
+  readonly controlDomainInsights?: [];
+  readonly nextToken?: string;
 }
 
-interface ListControlInsightsByControlDomainRequest {
+export interface ListControlInsightsByControlDomainRequest {
   readonly controlDomainId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListControlInsightsByControlDomainResponse {
-  readonly controlInsightsMetadata: [];
-  readonly nextToken: string;
+export interface ListControlInsightsByControlDomainResponse {
+  readonly controlInsightsMetadata?: [];
+  readonly nextToken?: string;
 }
 
-interface ListControlsRequest {
+export interface ListControlsRequest {
   readonly controlType: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListControlsResponse {
-  readonly controlMetadataList: [];
-  readonly nextToken: string;
+export interface ListControlsResponse {
+  readonly controlMetadataList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListKeywordsForDataSourceRequest {
+export interface ListKeywordsForDataSourceRequest {
   readonly source: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListKeywordsForDataSourceResponse {
-  readonly keywords: [];
-  readonly nextToken: string;
+export interface ListKeywordsForDataSourceResponse {
+  readonly keywords?: [];
+  readonly nextToken?: string;
 }
 
-interface ListNotificationsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListNotificationsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListNotificationsResponse {
-  readonly notifications: [];
-  readonly nextToken: string;
+export interface ListNotificationsResponse {
+  readonly notifications?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ManualEvidence {
-  readonly s3ResourcePath: string;
+export interface ManualEvidence {
+  readonly s3ResourcePath?: string;
 }
 
-interface Notification {
-  readonly id: string;
-  readonly assessmentId: string;
-  readonly assessmentName: string;
-  readonly controlSetId: string;
-  readonly controlSetName: string;
-  readonly description: string;
-  readonly eventTime: Date;
-  readonly source: string;
+export interface Notification {
+  readonly id?: string;
+  readonly assessmentId?: string;
+  readonly assessmentName?: string;
+  readonly controlSetId?: string;
+  readonly controlSetName?: string;
+  readonly description?: string;
+  readonly eventTime?: Date;
+  readonly source?: string;
 }
 
-interface RegisterAccountRequest {
-  readonly kmsKey: string;
-  readonly delegatedAdminAccount: string;
+export interface RegisterAccountRequest {
+  readonly kmsKey?: string;
+  readonly delegatedAdminAccount?: string;
 }
 
-interface RegisterAccountResponse {
-  readonly status: string;
+export interface RegisterAccountResponse {
+  readonly status?: string;
 }
 
-interface RegisterOrganizationAdminAccountRequest {
+export interface RegisterOrganizationAdminAccountRequest {
   readonly adminAccountId: string;
 }
 
-interface RegisterOrganizationAdminAccountResponse {
-  readonly adminAccountId: string;
-  readonly organizationId: string;
+export interface RegisterOrganizationAdminAccountResponse {
+  readonly adminAccountId?: string;
+  readonly organizationId?: string;
 }
 
-interface Resource {
-  readonly arn: string;
-  readonly value: string;
+export interface Resource {
+  readonly arn?: string;
+  readonly value?: string;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
   readonly resourceId: string;
   readonly resourceType: string;
 }
 
-interface Role {
-  readonly roleType: string;
-  readonly roleArn: string;
+export interface Role {
+  readonly roleType?: string;
+  readonly roleArn?: string;
 }
 
-interface Scope {
-  readonly awsAccounts: [];
-  readonly awsServices: [];
+export interface Scope {
+  readonly awsAccounts?: [];
+  readonly awsServices?: [];
 }
 
-interface ServiceMetadata {
-  readonly name: string;
-  readonly displayName: string;
-  readonly description: string;
-  readonly category: string;
+export interface ServiceMetadata {
+  readonly name?: string;
+  readonly displayName?: string;
+  readonly description?: string;
+  readonly category?: string;
 }
 
-interface Settings {
-  readonly isAwsOrgEnabled: boolean;
-  readonly snsTopic: string;
-  readonly defaultAssessmentReportsDestination: AssessmentReportsDestination;
-  readonly defaultProcessOwners: [];
-  readonly kmsKey: string;
+export interface Settings {
+  readonly isAwsOrgEnabled?: boolean;
+  readonly snsTopic?: string;
+  readonly defaultAssessmentReportsDestination?: AssessmentReportsDestination;
+  readonly defaultProcessOwners?: [];
+  readonly kmsKey?: string;
 }
 
-interface SourceKeyword {
-  readonly keywordInputType: string;
-  readonly keywordValue: string;
+export interface SourceKeyword {
+  readonly keywordInputType?: string;
+  readonly keywordValue?: string;
 }
 
-interface StartAssessmentFrameworkShareRequest {
+export interface StartAssessmentFrameworkShareRequest {
   readonly frameworkId: string;
   readonly destinationAccount: string;
   readonly destinationRegion: string;
-  readonly comment: string;
+  readonly comment?: string;
 }
 
-interface StartAssessmentFrameworkShareResponse {
-  readonly assessmentFrameworkShareRequest: AssessmentFrameworkShareRequest;
+export interface StartAssessmentFrameworkShareResponse {
+  readonly assessmentFrameworkShareRequest?: AssessmentFrameworkShareRequest;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface URL {
-  readonly hyperlinkName: string;
-  readonly link: string;
+export interface URL {
+  readonly hyperlinkName?: string;
+  readonly link?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateAssessmentControlRequest {
+export interface UpdateAssessmentControlRequest {
   readonly assessmentId: string;
   readonly controlSetId: string;
   readonly controlId: string;
-  readonly controlStatus: string;
-  readonly commentBody: string;
+  readonly controlStatus?: string;
+  readonly commentBody?: string;
 }
 
-interface UpdateAssessmentControlResponse {
-  readonly control: AssessmentControl;
+export interface UpdateAssessmentControlResponse {
+  readonly control?: AssessmentControl;
 }
 
-interface UpdateAssessmentControlSetStatusRequest {
+export interface UpdateAssessmentControlSetStatusRequest {
   readonly assessmentId: string;
   readonly controlSetId: string;
   readonly status: string;
   readonly comment: string;
 }
 
-interface UpdateAssessmentControlSetStatusResponse {
-  readonly controlSet: AssessmentControlSet;
+export interface UpdateAssessmentControlSetStatusResponse {
+  readonly controlSet?: AssessmentControlSet;
 }
 
-interface UpdateAssessmentFrameworkControlSet {
-  readonly id: string;
+export interface UpdateAssessmentFrameworkControlSet {
+  readonly id?: string;
   readonly name: string;
-  readonly controls: [];
+  readonly controls?: [];
 }
 
-interface UpdateAssessmentFrameworkRequest {
+export interface UpdateAssessmentFrameworkRequest {
   readonly frameworkId: string;
   readonly name: string;
-  readonly description: string;
-  readonly complianceType: string;
+  readonly description?: string;
+  readonly complianceType?: string;
   readonly controlSets: [];
 }
 
-interface UpdateAssessmentFrameworkResponse {
-  readonly framework: Framework;
+export interface UpdateAssessmentFrameworkResponse {
+  readonly framework?: Framework;
 }
 
-interface UpdateAssessmentFrameworkShareRequest {
+export interface UpdateAssessmentFrameworkShareRequest {
   readonly requestId: string;
   readonly requestType: string;
   readonly action: string;
 }
 
-interface UpdateAssessmentFrameworkShareResponse {
-  readonly assessmentFrameworkShareRequest: AssessmentFrameworkShareRequest;
+export interface UpdateAssessmentFrameworkShareResponse {
+  readonly assessmentFrameworkShareRequest?: AssessmentFrameworkShareRequest;
 }
 
-interface UpdateAssessmentRequest {
+export interface UpdateAssessmentRequest {
   readonly assessmentId: string;
-  readonly assessmentName: string;
-  readonly assessmentDescription: string;
+  readonly assessmentName?: string;
+  readonly assessmentDescription?: string;
   readonly scope: Scope;
-  readonly assessmentReportsDestination: AssessmentReportsDestination;
-  readonly roles: [];
+  readonly assessmentReportsDestination?: AssessmentReportsDestination;
+  readonly roles?: [];
 }
 
-interface UpdateAssessmentResponse {
-  readonly assessment: Assessment;
+export interface UpdateAssessmentResponse {
+  readonly assessment?: Assessment;
 }
 
-interface UpdateAssessmentStatusRequest {
+export interface UpdateAssessmentStatusRequest {
   readonly assessmentId: string;
   readonly status: string;
 }
 
-interface UpdateAssessmentStatusResponse {
-  readonly assessment: Assessment;
+export interface UpdateAssessmentStatusResponse {
+  readonly assessment?: Assessment;
 }
 
-interface UpdateControlRequest {
+export interface UpdateControlRequest {
   readonly controlId: string;
   readonly name: string;
-  readonly description: string;
-  readonly testingInformation: string;
-  readonly actionPlanTitle: string;
-  readonly actionPlanInstructions: string;
+  readonly description?: string;
+  readonly testingInformation?: string;
+  readonly actionPlanTitle?: string;
+  readonly actionPlanInstructions?: string;
   readonly controlMappingSources: [];
 }
 
-interface UpdateControlResponse {
-  readonly control: Control;
+export interface UpdateControlResponse {
+  readonly control?: Control;
 }
 
-interface UpdateSettingsRequest {
-  readonly snsTopic: string;
-  readonly defaultAssessmentReportsDestination: AssessmentReportsDestination;
-  readonly defaultProcessOwners: [];
-  readonly kmsKey: string;
+export interface UpdateSettingsRequest {
+  readonly snsTopic?: string;
+  readonly defaultAssessmentReportsDestination?: AssessmentReportsDestination;
+  readonly defaultProcessOwners?: [];
+  readonly kmsKey?: string;
 }
 
-interface UpdateSettingsResponse {
-  readonly settings: Settings;
+export interface UpdateSettingsResponse {
+  readonly settings?: Settings;
 }
 
-interface ValidateAssessmentReportIntegrityRequest {
+export interface ValidateAssessmentReportIntegrityRequest {
   readonly s3RelativePath: string;
 }
 
-interface ValidateAssessmentReportIntegrityResponse {
-  readonly signatureValid: boolean;
-  readonly signatureAlgorithm: string;
-  readonly signatureDateTime: string;
-  readonly signatureKeyId: string;
-  readonly validationErrors: [];
+export interface ValidateAssessmentReportIntegrityResponse {
+  readonly signatureValid?: boolean;
+  readonly signatureAlgorithm?: string;
+  readonly signatureDateTime?: string;
+  readonly signatureKeyId?: string;
+  readonly validationErrors?: [];
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly message: string;
-  readonly reason: string;
-  readonly fields: [];
+  readonly reason?: string;
+  readonly fields?: [];
 }
 
-interface ValidationExceptionField {
+export interface ValidationExceptionField {
   readonly name: string;
   readonly message: string;
 }
+
 

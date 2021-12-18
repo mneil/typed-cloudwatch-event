@@ -7,90 +7,109 @@ export interface BatchCreatePartition {
   readonly TableName: string;
   readonly PartitionInputList: [];
 }
+
 export interface BatchDeleteConnection {
   readonly CatalogId?: string;
   readonly ConnectionNameList: [];
 }
+
 export interface BatchDeletePartition {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionsToDelete: [];
 }
+
 export interface BatchDeleteTable {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TablesToDelete: [];
   readonly TransactionId?: string;
 }
+
 export interface BatchDeleteTableVersion {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly VersionIds: [];
 }
+
 export interface BatchGetBlueprints {
   readonly Names: [];
   readonly IncludeBlueprint?: boolean;
   readonly IncludeParameterSpec?: boolean;
 }
+
 export interface BatchGetCrawlers {
   readonly CrawlerNames: [];
 }
+
 export interface BatchGetDevEndpoints {
   readonly DevEndpointNames: [];
 }
+
 export interface BatchGetJobs {
   readonly JobNames: [];
 }
+
 export interface BatchGetPartition {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionsToGet: [];
 }
+
 export interface BatchGetTriggers {
   readonly TriggerNames: [];
 }
+
 export interface BatchGetWorkflows {
   readonly Names: [];
   readonly IncludeGraph?: boolean;
 }
+
 export interface BatchStopJobRun {
   readonly JobName: string;
   readonly JobRunIds: [];
 }
+
 export interface BatchUpdatePartition {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly Entries: [];
 }
+
 export interface CancelMLTaskRun {
   readonly TransformId: string;
   readonly TaskRunId: string;
 }
+
 export interface CheckSchemaVersionValidity {
   readonly DataFormat: string;
   readonly SchemaDefinition: string;
 }
+
 export interface CreateBlueprint {
   readonly Name: string;
   readonly Description?: string;
   readonly BlueprintLocation: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateClassifier {
   readonly GrokClassifier?: CreateGrokClassifierRequest;
   readonly XMLClassifier?: CreateXMLClassifierRequest;
   readonly JsonClassifier?: CreateJsonClassifierRequest;
   readonly CsvClassifier?: CreateCsvClassifierRequest;
 }
+
 export interface CreateConnection {
   readonly CatalogId?: string;
   readonly ConnectionInput: ConnectionInput;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateCrawler {
   readonly Name: string;
   readonly Role: string;
@@ -107,10 +126,12 @@ export interface CreateCrawler {
   readonly CrawlerSecurityConfiguration?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateDatabase {
   readonly CatalogId?: string;
   readonly DatabaseInput: DatabaseInput;
 }
+
 export interface CreateDevEndpoint {
   readonly EndpointName: string;
   readonly RoleArn: string;
@@ -128,6 +149,7 @@ export interface CreateDevEndpoint {
   readonly Tags?: {[key: string]: any};
   readonly Arguments?: {[key: string]: any};
 }
+
 export interface CreateJob {
   readonly Name: string;
   readonly Description?: string;
@@ -149,6 +171,7 @@ export interface CreateJob {
   readonly NumberOfWorkers?: number;
   readonly WorkerType?: string;
 }
+
 export interface CreateMLTransform {
   readonly Name: string;
   readonly Description?: string;
@@ -164,23 +187,27 @@ export interface CreateMLTransform {
   readonly Tags?: {[key: string]: any};
   readonly TransformEncryption?: TransformEncryption;
 }
+
 export interface CreatePartition {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionInput: PartitionInput;
 }
+
 export interface CreatePartitionIndex {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionIndex: PartitionIndex;
 }
+
 export interface CreateRegistry {
   readonly RegistryName: string;
   readonly Description?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateSchema {
   readonly RegistryId?: RegistryId;
   readonly SchemaName: string;
@@ -190,15 +217,18 @@ export interface CreateSchema {
   readonly Tags?: {[key: string]: any};
   readonly SchemaDefinition?: string;
 }
+
 export interface CreateScript {
   readonly DagNodes?: [];
   readonly DagEdges?: [];
   readonly Language?: string;
 }
+
 export interface CreateSecurityConfiguration {
   readonly Name: string;
   readonly EncryptionConfiguration: EncryptionConfiguration;
 }
+
 export interface CreateTable {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -206,6 +236,7 @@ export interface CreateTable {
   readonly PartitionIndexes?: [];
   readonly TransactionId?: string;
 }
+
 export interface CreateTrigger {
   readonly Name: string;
   readonly WorkflowName?: string;
@@ -218,11 +249,13 @@ export interface CreateTrigger {
   readonly Tags?: {[key: string]: any};
   readonly EventBatchingCondition?: EventBatchingCondition;
 }
+
 export interface CreateUserDefinedFunction {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly FunctionInput: UserDefinedFunctionInput;
 }
+
 export interface CreateWorkflow {
   readonly Name: string;
   readonly Description?: string;
@@ -230,12 +263,15 @@ export interface CreateWorkflow {
   readonly Tags?: {[key: string]: any};
   readonly MaxConcurrentRuns?: number;
 }
+
 export interface DeleteBlueprint {
   readonly Name: string;
 }
+
 export interface DeleteClassifier {
   readonly Name: string;
 }
+
 export interface DeleteColumnStatisticsForPartition {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -243,108 +279,134 @@ export interface DeleteColumnStatisticsForPartition {
   readonly PartitionValues: [];
   readonly ColumnName: string;
 }
+
 export interface DeleteColumnStatisticsForTable {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly ColumnName: string;
 }
+
 export interface DeleteConnection {
   readonly CatalogId?: string;
   readonly ConnectionName: string;
 }
+
 export interface DeleteCrawler {
   readonly Name: string;
 }
+
 export interface DeleteDatabase {
   readonly CatalogId?: string;
   readonly Name: string;
 }
+
 export interface DeleteDevEndpoint {
   readonly EndpointName: string;
 }
+
 export interface DeleteJob {
   readonly JobName: string;
 }
+
 export interface DeleteMLTransform {
   readonly TransformId: string;
 }
+
 export interface DeletePartition {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionValues: [];
 }
+
 export interface DeletePartitionIndex {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly IndexName: string;
 }
+
 export interface DeleteRegistry {
   readonly RegistryId: RegistryId;
 }
+
 export interface DeleteResourcePolicy {
   readonly PolicyHashCondition?: string;
   readonly ResourceArn?: string;
 }
+
 export interface DeleteSchema {
   readonly SchemaId: SchemaId;
 }
+
 export interface DeleteSchemaVersions {
   readonly SchemaId: SchemaId;
   readonly Versions: string;
 }
+
 export interface DeleteSecurityConfiguration {
   readonly Name: string;
 }
+
 export interface DeleteTable {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly Name: string;
   readonly TransactionId?: string;
 }
+
 export interface DeleteTableVersion {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly VersionId: string;
 }
+
 export interface DeleteTrigger {
   readonly Name: string;
 }
+
 export interface DeleteUserDefinedFunction {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly FunctionName: string;
 }
+
 export interface DeleteWorkflow {
   readonly Name: string;
 }
+
 export interface GetBlueprint {
   readonly Name: string;
   readonly IncludeBlueprint?: boolean;
   readonly IncludeParameterSpec?: boolean;
 }
+
 export interface GetBlueprintRun {
   readonly BlueprintName: string;
   readonly RunId: string;
 }
+
 export interface GetBlueprintRuns {
   readonly BlueprintName: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetCatalogImportStatus {
   readonly CatalogId?: string;
 }
+
 export interface GetClassifier {
   readonly Name: string;
 }
+
 export interface GetClassifiers {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetColumnStatisticsForPartition {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -352,17 +414,20 @@ export interface GetColumnStatisticsForPartition {
   readonly PartitionValues: [];
   readonly ColumnNames: [];
 }
+
 export interface GetColumnStatisticsForTable {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly ColumnNames: [];
 }
+
 export interface GetConnection {
   readonly CatalogId?: string;
   readonly Name: string;
   readonly HidePassword?: boolean;
 }
+
 export interface GetConnections {
   readonly CatalogId?: string;
   readonly Filter?: GetConnectionsFilter;
@@ -370,66 +435,82 @@ export interface GetConnections {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetCrawler {
   readonly Name: string;
 }
+
 export interface GetCrawlerMetrics {
   readonly CrawlerNameList?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetCrawlers {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetDataCatalogEncryptionSettings {
   readonly CatalogId?: string;
 }
+
 export interface GetDatabase {
   readonly CatalogId?: string;
   readonly Name: string;
 }
+
 export interface GetDatabases {
   readonly CatalogId?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly ResourceShareType?: string;
 }
+
 export interface GetDataflowGraph {
   readonly PythonScript?: string;
 }
+
 export interface GetDevEndpoint {
   readonly EndpointName: string;
 }
+
 export interface GetDevEndpoints {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetJob {
   readonly JobName: string;
 }
+
 export interface GetJobBookmark {
   readonly JobName: string;
   readonly RunId?: string;
 }
+
 export interface GetJobRun {
   readonly JobName: string;
   readonly RunId: string;
   readonly PredecessorsIncluded?: boolean;
 }
+
 export interface GetJobRuns {
   readonly JobName: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetJobs {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetMLTaskRun {
   readonly TransformId: string;
   readonly TaskRunId: string;
 }
+
 export interface GetMLTaskRuns {
   readonly TransformId: string;
   readonly NextToken?: string;
@@ -437,32 +518,38 @@ export interface GetMLTaskRuns {
   readonly Filter?: TaskRunFilterCriteria;
   readonly Sort?: TaskRunSortCriteria;
 }
+
 export interface GetMLTransform {
   readonly TransformId: string;
 }
+
 export interface GetMLTransforms {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Filter?: TransformFilterCriteria;
   readonly Sort?: TransformSortCriteria;
 }
+
 export interface GetMapping {
   readonly Source: CatalogEntry;
   readonly Sinks?: [];
   readonly Location?: Location;
 }
+
 export interface GetPartition {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionValues: [];
 }
+
 export interface GetPartitionIndexes {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly NextToken?: string;
 }
+
 export interface GetPartitions {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -475,6 +562,7 @@ export interface GetPartitions {
   readonly TransactionId?: string;
   readonly QueryAsOfTime?: Date;
 }
+
 export interface GetPlan {
   readonly Mapping: [];
   readonly Source: CatalogEntry;
@@ -483,41 +571,51 @@ export interface GetPlan {
   readonly Language?: string;
   readonly AdditionalPlanOptionsMap?: {[key: string]: any};
 }
+
 export interface GetRegistry {
   readonly RegistryId: RegistryId;
 }
+
 export interface GetResourcePolicies {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetResourcePolicy {
   readonly ResourceArn?: string;
 }
+
 export interface GetSchema {
   readonly SchemaId: SchemaId;
 }
+
 export interface GetSchemaByDefinition {
   readonly SchemaId: SchemaId;
   readonly SchemaDefinition: string;
 }
+
 export interface GetSchemaVersion {
   readonly SchemaId?: SchemaId;
   readonly SchemaVersionId?: string;
   readonly SchemaVersionNumber?: SchemaVersionNumber;
 }
+
 export interface GetSchemaVersionsDiff {
   readonly SchemaId: SchemaId;
   readonly FirstSchemaVersionNumber: SchemaVersionNumber;
   readonly SecondSchemaVersionNumber: SchemaVersionNumber;
   readonly SchemaDiffType: string;
 }
+
 export interface GetSecurityConfiguration {
   readonly Name: string;
 }
+
 export interface GetSecurityConfigurations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetTable {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -525,12 +623,14 @@ export interface GetTable {
   readonly TransactionId?: string;
   readonly QueryAsOfTime?: Date;
 }
+
 export interface GetTableVersion {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly VersionId?: string;
 }
+
 export interface GetTableVersions {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -538,6 +638,7 @@ export interface GetTableVersions {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetTables {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -547,22 +648,27 @@ export interface GetTables {
   readonly TransactionId?: string;
   readonly QueryAsOfTime?: Date;
 }
+
 export interface GetTags {
   readonly ResourceArn: string;
 }
+
 export interface GetTrigger {
   readonly Name: string;
 }
+
 export interface GetTriggers {
   readonly NextToken?: string;
   readonly DependentJobName?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetUserDefinedFunction {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly FunctionName: string;
 }
+
 export interface GetUserDefinedFunctions {
   readonly CatalogId?: string;
   readonly DatabaseName?: string;
@@ -570,48 +676,58 @@ export interface GetUserDefinedFunctions {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetWorkflow {
   readonly Name: string;
   readonly IncludeGraph?: boolean;
 }
+
 export interface GetWorkflowRun {
   readonly Name: string;
   readonly RunId: string;
   readonly IncludeGraph?: boolean;
 }
+
 export interface GetWorkflowRunProperties {
   readonly Name: string;
   readonly RunId: string;
 }
+
 export interface GetWorkflowRuns {
   readonly Name: string;
   readonly IncludeGraph?: boolean;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ImportCatalogToGlue {
   readonly CatalogId?: string;
 }
+
 export interface ListBlueprints {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface ListCrawlers {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface ListDevEndpoints {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface ListJobs {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface ListMLTransforms {
   readonly NextToken?: string;
   readonly MaxResults?: number;
@@ -619,34 +735,41 @@ export interface ListMLTransforms {
   readonly Sort?: TransformSortCriteria;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface ListRegistries {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListSchemaVersions {
   readonly SchemaId: SchemaId;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListSchemas {
   readonly RegistryId?: RegistryId;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTriggers {
   readonly NextToken?: string;
   readonly DependentJobName?: string;
   readonly MaxResults?: number;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface ListWorkflows {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface PutDataCatalogEncryptionSettings {
   readonly CatalogId?: string;
   readonly DataCatalogEncryptionSettings: DataCatalogEncryptionSettings;
 }
+
 export interface PutResourcePolicy {
   readonly PolicyInJson: string;
   readonly ResourceArn?: string;
@@ -654,17 +777,20 @@ export interface PutResourcePolicy {
   readonly PolicyExistsCondition?: string;
   readonly EnableHybrid?: string;
 }
+
 export interface PutSchemaVersionMetadata {
   readonly SchemaId?: SchemaId;
   readonly SchemaVersionNumber?: SchemaVersionNumber;
   readonly SchemaVersionId?: string;
   readonly MetadataKeyValue: MetadataKeyValuePair;
 }
+
 export interface PutWorkflowRunProperties {
   readonly Name: string;
   readonly RunId: string;
   readonly RunProperties: {[key: string]: any};
 }
+
 export interface QuerySchemaVersionMetadata {
   readonly SchemaId?: SchemaId;
   readonly SchemaVersionNumber?: SchemaVersionNumber;
@@ -673,25 +799,30 @@ export interface QuerySchemaVersionMetadata {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface RegisterSchemaVersion {
   readonly SchemaId: SchemaId;
   readonly SchemaDefinition: string;
 }
+
 export interface RemoveSchemaVersionMetadata {
   readonly SchemaId?: SchemaId;
   readonly SchemaVersionNumber?: SchemaVersionNumber;
   readonly SchemaVersionId?: string;
   readonly MetadataKeyValue: MetadataKeyValuePair;
 }
+
 export interface ResetJobBookmark {
   readonly JobName: string;
   readonly RunId?: string;
 }
+
 export interface ResumeWorkflowRun {
   readonly Name: string;
   readonly RunId: string;
   readonly NodeIds: [];
 }
+
 export interface SearchTables {
   readonly CatalogId?: string;
   readonly NextToken?: string;
@@ -701,26 +832,32 @@ export interface SearchTables {
   readonly MaxResults?: number;
   readonly ResourceShareType?: string;
 }
+
 export interface StartBlueprintRun {
   readonly BlueprintName: string;
   readonly Parameters?: string;
   readonly RoleArn: string;
 }
+
 export interface StartCrawler {
   readonly Name: string;
 }
+
 export interface StartCrawlerSchedule {
   readonly CrawlerName: string;
 }
+
 export interface StartExportLabelsTaskRun {
   readonly TransformId: string;
   readonly OutputS3Path: string;
 }
+
 export interface StartImportLabelsTaskRun {
   readonly TransformId: string;
   readonly InputS3Path: string;
   readonly ReplaceAllLabels?: boolean;
 }
+
 export interface StartJobRun {
   readonly JobName: string;
   readonly JobRunId?: string;
@@ -733,51 +870,64 @@ export interface StartJobRun {
   readonly WorkerType?: string;
   readonly NumberOfWorkers?: number;
 }
+
 export interface StartMLEvaluationTaskRun {
   readonly TransformId: string;
 }
+
 export interface StartMLLabelingSetGenerationTaskRun {
   readonly TransformId: string;
   readonly OutputS3Path: string;
 }
+
 export interface StartTrigger {
   readonly Name: string;
 }
+
 export interface StartWorkflowRun {
   readonly Name: string;
 }
+
 export interface StopCrawler {
   readonly Name: string;
 }
+
 export interface StopCrawlerSchedule {
   readonly CrawlerName: string;
 }
+
 export interface StopTrigger {
   readonly Name: string;
 }
+
 export interface StopWorkflowRun {
   readonly Name: string;
   readonly RunId: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly TagsToAdd: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagsToRemove: [];
 }
+
 export interface UpdateBlueprint {
   readonly Name: string;
   readonly Description?: string;
   readonly BlueprintLocation: string;
 }
+
 export interface UpdateClassifier {
   readonly GrokClassifier?: UpdateGrokClassifierRequest;
   readonly XMLClassifier?: UpdateXMLClassifierRequest;
   readonly JsonClassifier?: UpdateJsonClassifierRequest;
   readonly CsvClassifier?: UpdateCsvClassifierRequest;
 }
+
 export interface UpdateColumnStatisticsForPartition {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -785,17 +935,20 @@ export interface UpdateColumnStatisticsForPartition {
   readonly PartitionValues: [];
   readonly ColumnStatisticsList: [];
 }
+
 export interface UpdateColumnStatisticsForTable {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly ColumnStatisticsList: [];
 }
+
 export interface UpdateConnection {
   readonly CatalogId?: string;
   readonly Name: string;
   readonly ConnectionInput: ConnectionInput;
 }
+
 export interface UpdateCrawler {
   readonly Name: string;
   readonly Role?: string;
@@ -811,15 +964,18 @@ export interface UpdateCrawler {
   readonly Configuration?: string;
   readonly CrawlerSecurityConfiguration?: string;
 }
+
 export interface UpdateCrawlerSchedule {
   readonly CrawlerName: string;
   readonly Schedule?: string;
 }
+
 export interface UpdateDatabase {
   readonly CatalogId?: string;
   readonly Name: string;
   readonly DatabaseInput: DatabaseInput;
 }
+
 export interface UpdateDevEndpoint {
   readonly EndpointName: string;
   readonly PublicKey?: string;
@@ -830,10 +986,12 @@ export interface UpdateDevEndpoint {
   readonly DeleteArguments?: [];
   readonly AddArguments?: {[key: string]: any};
 }
+
 export interface UpdateJob {
   readonly JobName: string;
   readonly JobUpdate: JobUpdate;
 }
+
 export interface UpdateMLTransform {
   readonly TransformId: string;
   readonly Name?: string;
@@ -847,6 +1005,7 @@ export interface UpdateMLTransform {
   readonly Timeout?: number;
   readonly MaxRetries?: number;
 }
+
 export interface UpdatePartition {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -854,16 +1013,19 @@ export interface UpdatePartition {
   readonly PartitionValueList: [];
   readonly PartitionInput: PartitionInput;
 }
+
 export interface UpdateRegistry {
   readonly RegistryId: RegistryId;
   readonly Description: string;
 }
+
 export interface UpdateSchema {
   readonly SchemaId: SchemaId;
   readonly SchemaVersionNumber?: SchemaVersionNumber;
   readonly Compatibility?: string;
   readonly Description?: string;
 }
+
 export interface UpdateTable {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -871,16 +1033,19 @@ export interface UpdateTable {
   readonly SkipArchive?: boolean;
   readonly TransactionId?: string;
 }
+
 export interface UpdateTrigger {
   readonly Name: string;
   readonly TriggerUpdate: TriggerUpdate;
 }
+
 export interface UpdateUserDefinedFunction {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly FunctionName: string;
   readonly FunctionInput: UserDefinedFunctionInput;
 }
+
 export interface UpdateWorkflow {
   readonly Name: string;
   readonly Description?: string;
@@ -888,3142 +1053,3141 @@ export interface UpdateWorkflow {
   readonly MaxConcurrentRuns?: number;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface Action {
-  readonly JobName: string;
-  readonly Arguments: {[key: string]: any};
-  readonly Timeout: number;
-  readonly SecurityConfiguration: string;
-  readonly NotificationProperty: NotificationProperty;
-  readonly CrawlerName: string;
+export interface Action {
+  readonly JobName?: string;
+  readonly Arguments?: {[key: string]: any};
+  readonly Timeout?: number;
+  readonly SecurityConfiguration?: string;
+  readonly NotificationProperty?: NotificationProperty;
+  readonly CrawlerName?: string;
 }
 
-interface AlreadyExistsException {
-  readonly Message: string;
+export interface AlreadyExistsException {
+  readonly Message?: string;
 }
 
-interface BackfillError {
-  readonly Code: string;
-  readonly Partitions: [];
+export interface BackfillError {
+  readonly Code?: string;
+  readonly Partitions?: [];
 }
 
-interface BatchCreatePartitionRequest {
-  readonly CatalogId: string;
+export interface BatchCreatePartitionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionInputList: [];
 }
 
-interface BatchCreatePartitionResponse {
-  readonly Errors: [];
+export interface BatchCreatePartitionResponse {
+  readonly Errors?: [];
 }
 
-interface BatchDeleteConnectionRequest {
-  readonly CatalogId: string;
+export interface BatchDeleteConnectionRequest {
+  readonly CatalogId?: string;
   readonly ConnectionNameList: [];
 }
 
-interface BatchDeleteConnectionResponse {
-  readonly Succeeded: [];
-  readonly Errors: {[key: string]: any};
+export interface BatchDeleteConnectionResponse {
+  readonly Succeeded?: [];
+  readonly Errors?: {[key: string]: any};
 }
 
-interface BatchDeletePartitionRequest {
-  readonly CatalogId: string;
+export interface BatchDeletePartitionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionsToDelete: [];
 }
 
-interface BatchDeletePartitionResponse {
-  readonly Errors: [];
+export interface BatchDeletePartitionResponse {
+  readonly Errors?: [];
 }
 
-interface BatchDeleteTableRequest {
-  readonly CatalogId: string;
+export interface BatchDeleteTableRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TablesToDelete: [];
-  readonly TransactionId: string;
+  readonly TransactionId?: string;
 }
 
-interface BatchDeleteTableResponse {
-  readonly Errors: [];
+export interface BatchDeleteTableResponse {
+  readonly Errors?: [];
 }
 
-interface BatchDeleteTableVersionRequest {
-  readonly CatalogId: string;
+export interface BatchDeleteTableVersionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly VersionIds: [];
 }
 
-interface BatchDeleteTableVersionResponse {
-  readonly Errors: [];
+export interface BatchDeleteTableVersionResponse {
+  readonly Errors?: [];
 }
 
-interface BatchGetBlueprintsRequest {
+export interface BatchGetBlueprintsRequest {
   readonly Names: [];
-  readonly IncludeBlueprint: boolean;
-  readonly IncludeParameterSpec: boolean;
+  readonly IncludeBlueprint?: boolean;
+  readonly IncludeParameterSpec?: boolean;
 }
 
-interface BatchGetBlueprintsResponse {
-  readonly Blueprints: [];
-  readonly MissingBlueprints: [];
+export interface BatchGetBlueprintsResponse {
+  readonly Blueprints?: [];
+  readonly MissingBlueprints?: [];
 }
 
-interface BatchGetCrawlersRequest {
+export interface BatchGetCrawlersRequest {
   readonly CrawlerNames: [];
 }
 
-interface BatchGetCrawlersResponse {
-  readonly Crawlers: [];
-  readonly CrawlersNotFound: [];
+export interface BatchGetCrawlersResponse {
+  readonly Crawlers?: [];
+  readonly CrawlersNotFound?: [];
 }
 
-interface BatchGetDevEndpointsRequest {
+export interface BatchGetDevEndpointsRequest {
   readonly DevEndpointNames: [];
 }
 
-interface BatchGetDevEndpointsResponse {
-  readonly DevEndpoints: [];
-  readonly DevEndpointsNotFound: [];
+export interface BatchGetDevEndpointsResponse {
+  readonly DevEndpoints?: [];
+  readonly DevEndpointsNotFound?: [];
 }
 
-interface BatchGetJobsRequest {
+export interface BatchGetJobsRequest {
   readonly JobNames: [];
 }
 
-interface BatchGetJobsResponse {
-  readonly Jobs: [];
-  readonly JobsNotFound: [];
+export interface BatchGetJobsResponse {
+  readonly Jobs?: [];
+  readonly JobsNotFound?: [];
 }
 
-interface BatchGetPartitionRequest {
-  readonly CatalogId: string;
+export interface BatchGetPartitionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionsToGet: [];
 }
 
-interface BatchGetPartitionResponse {
-  readonly Partitions: [];
-  readonly UnprocessedKeys: [];
+export interface BatchGetPartitionResponse {
+  readonly Partitions?: [];
+  readonly UnprocessedKeys?: [];
 }
 
-interface BatchGetTriggersRequest {
+export interface BatchGetTriggersRequest {
   readonly TriggerNames: [];
 }
 
-interface BatchGetTriggersResponse {
-  readonly Triggers: [];
-  readonly TriggersNotFound: [];
+export interface BatchGetTriggersResponse {
+  readonly Triggers?: [];
+  readonly TriggersNotFound?: [];
 }
 
-interface BatchGetWorkflowsRequest {
+export interface BatchGetWorkflowsRequest {
   readonly Names: [];
-  readonly IncludeGraph: boolean;
+  readonly IncludeGraph?: boolean;
 }
 
-interface BatchGetWorkflowsResponse {
-  readonly Workflows: [];
-  readonly MissingWorkflows: [];
+export interface BatchGetWorkflowsResponse {
+  readonly Workflows?: [];
+  readonly MissingWorkflows?: [];
 }
 
-interface BatchStopJobRunError {
-  readonly JobName: string;
-  readonly JobRunId: string;
-  readonly ErrorDetail: ErrorDetail;
+export interface BatchStopJobRunError {
+  readonly JobName?: string;
+  readonly JobRunId?: string;
+  readonly ErrorDetail?: ErrorDetail;
 }
 
-interface BatchStopJobRunRequest {
+export interface BatchStopJobRunRequest {
   readonly JobName: string;
   readonly JobRunIds: [];
 }
 
-interface BatchStopJobRunResponse {
-  readonly SuccessfulSubmissions: [];
-  readonly Errors: [];
+export interface BatchStopJobRunResponse {
+  readonly SuccessfulSubmissions?: [];
+  readonly Errors?: [];
 }
 
-interface BatchStopJobRunSuccessfulSubmission {
-  readonly JobName: string;
-  readonly JobRunId: string;
+export interface BatchStopJobRunSuccessfulSubmission {
+  readonly JobName?: string;
+  readonly JobRunId?: string;
 }
 
-interface BatchUpdatePartitionFailureEntry {
-  readonly PartitionValueList: [];
-  readonly ErrorDetail: ErrorDetail;
+export interface BatchUpdatePartitionFailureEntry {
+  readonly PartitionValueList?: [];
+  readonly ErrorDetail?: ErrorDetail;
 }
 
-interface BatchUpdatePartitionRequest {
-  readonly CatalogId: string;
+export interface BatchUpdatePartitionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly Entries: [];
 }
 
-interface BatchUpdatePartitionRequestEntry {
+export interface BatchUpdatePartitionRequestEntry {
   readonly PartitionValueList: [];
   readonly PartitionInput: PartitionInput;
 }
 
-interface BatchUpdatePartitionResponse {
-  readonly Errors: [];
+export interface BatchUpdatePartitionResponse {
+  readonly Errors?: [];
 }
 
-interface BinaryColumnStatisticsData {
+export interface BinaryColumnStatisticsData {
   readonly MaximumLength: number;
   readonly AverageLength: unknown;
   readonly NumberOfNulls: number;
 }
 
-interface Blueprint {
-  readonly Name: string;
-  readonly Description: string;
-  readonly CreatedOn: Date;
-  readonly LastModifiedOn: Date;
-  readonly ParameterSpec: string;
-  readonly BlueprintLocation: string;
-  readonly BlueprintServiceLocation: string;
-  readonly Status: string;
-  readonly ErrorMessage: string;
-  readonly LastActiveDefinition: LastActiveDefinition;
+export interface Blueprint {
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly CreatedOn?: Date;
+  readonly LastModifiedOn?: Date;
+  readonly ParameterSpec?: string;
+  readonly BlueprintLocation?: string;
+  readonly BlueprintServiceLocation?: string;
+  readonly Status?: string;
+  readonly ErrorMessage?: string;
+  readonly LastActiveDefinition?: LastActiveDefinition;
 }
 
-interface BlueprintDetails {
-  readonly BlueprintName: string;
-  readonly RunId: string;
+export interface BlueprintDetails {
+  readonly BlueprintName?: string;
+  readonly RunId?: string;
 }
 
-interface BlueprintRun {
-  readonly BlueprintName: string;
-  readonly RunId: string;
-  readonly WorkflowName: string;
-  readonly State: string;
-  readonly StartedOn: Date;
-  readonly CompletedOn: Date;
-  readonly ErrorMessage: string;
-  readonly RollbackErrorMessage: string;
-  readonly Parameters: string;
-  readonly RoleArn: string;
+export interface BlueprintRun {
+  readonly BlueprintName?: string;
+  readonly RunId?: string;
+  readonly WorkflowName?: string;
+  readonly State?: string;
+  readonly StartedOn?: Date;
+  readonly CompletedOn?: Date;
+  readonly ErrorMessage?: string;
+  readonly RollbackErrorMessage?: string;
+  readonly Parameters?: string;
+  readonly RoleArn?: string;
 }
 
-interface BooleanColumnStatisticsData {
+export interface BooleanColumnStatisticsData {
   readonly NumberOfTrues: number;
   readonly NumberOfFalses: number;
   readonly NumberOfNulls: number;
 }
 
-interface CancelMLTaskRunRequest {
+export interface CancelMLTaskRunRequest {
   readonly TransformId: string;
   readonly TaskRunId: string;
 }
 
-interface CancelMLTaskRunResponse {
-  readonly TransformId: string;
-  readonly TaskRunId: string;
-  readonly Status: string;
+export interface CancelMLTaskRunResponse {
+  readonly TransformId?: string;
+  readonly TaskRunId?: string;
+  readonly Status?: string;
 }
 
-interface CatalogEntry {
+export interface CatalogEntry {
   readonly DatabaseName: string;
   readonly TableName: string;
 }
 
-interface CatalogImportStatus {
-  readonly ImportCompleted: boolean;
-  readonly ImportTime: Date;
-  readonly ImportedBy: string;
+export interface CatalogImportStatus {
+  readonly ImportCompleted?: boolean;
+  readonly ImportTime?: Date;
+  readonly ImportedBy?: string;
 }
 
-interface CatalogTarget {
+export interface CatalogTarget {
   readonly DatabaseName: string;
   readonly Tables: [];
 }
 
-interface CheckSchemaVersionValidityInput {
+export interface CheckSchemaVersionValidityInput {
   readonly DataFormat: string;
   readonly SchemaDefinition: string;
 }
 
-interface CheckSchemaVersionValidityResponse {
-  readonly Valid: boolean;
-  readonly Error: string;
+export interface CheckSchemaVersionValidityResponse {
+  readonly Valid?: boolean;
+  readonly Error?: string;
 }
 
-interface Classifier {
-  readonly GrokClassifier: GrokClassifier;
-  readonly XMLClassifier: XMLClassifier;
-  readonly JsonClassifier: JsonClassifier;
-  readonly CsvClassifier: CsvClassifier;
+export interface Classifier {
+  readonly GrokClassifier?: GrokClassifier;
+  readonly XMLClassifier?: XMLClassifier;
+  readonly JsonClassifier?: JsonClassifier;
+  readonly CsvClassifier?: CsvClassifier;
 }
 
-interface CloudWatchEncryption {
-  readonly CloudWatchEncryptionMode: string;
-  readonly KmsKeyArn: string;
+export interface CloudWatchEncryption {
+  readonly CloudWatchEncryptionMode?: string;
+  readonly KmsKeyArn?: string;
 }
 
-interface CodeGenEdge {
+export interface CodeGenEdge {
   readonly Source: string;
   readonly Target: string;
-  readonly TargetParameter: string;
+  readonly TargetParameter?: string;
 }
 
-interface CodeGenNode {
+export interface CodeGenNode {
   readonly Id: string;
   readonly NodeType: string;
   readonly Args: [];
-  readonly LineNumber: number;
+  readonly LineNumber?: number;
 }
 
-interface CodeGenNodeArg {
+export interface CodeGenNodeArg {
   readonly Name: string;
   readonly Value: string;
-  readonly Param: boolean;
+  readonly Param?: boolean;
 }
 
-interface Column {
+export interface Column {
   readonly Name: string;
-  readonly Type: string;
-  readonly Comment: string;
-  readonly Parameters: {[key: string]: any};
+  readonly Type?: string;
+  readonly Comment?: string;
+  readonly Parameters?: {[key: string]: any};
 }
 
-interface ColumnError {
-  readonly ColumnName: string;
-  readonly Error: ErrorDetail;
+export interface ColumnError {
+  readonly ColumnName?: string;
+  readonly Error?: ErrorDetail;
 }
 
-interface ColumnImportance {
-  readonly ColumnName: string;
-  readonly Importance: unknown;
+export interface ColumnImportance {
+  readonly ColumnName?: string;
+  readonly Importance?: unknown;
 }
 
-interface ColumnStatistics {
+export interface ColumnStatistics {
   readonly ColumnName: string;
   readonly ColumnType: string;
   readonly AnalyzedTime: Date;
   readonly StatisticsData: ColumnStatisticsData;
 }
 
-interface ColumnStatisticsData {
+export interface ColumnStatisticsData {
   readonly Type: string;
-  readonly BooleanColumnStatisticsData: BooleanColumnStatisticsData;
-  readonly DateColumnStatisticsData: DateColumnStatisticsData;
-  readonly DecimalColumnStatisticsData: DecimalColumnStatisticsData;
-  readonly DoubleColumnStatisticsData: DoubleColumnStatisticsData;
-  readonly LongColumnStatisticsData: LongColumnStatisticsData;
-  readonly StringColumnStatisticsData: StringColumnStatisticsData;
-  readonly BinaryColumnStatisticsData: BinaryColumnStatisticsData;
+  readonly BooleanColumnStatisticsData?: BooleanColumnStatisticsData;
+  readonly DateColumnStatisticsData?: DateColumnStatisticsData;
+  readonly DecimalColumnStatisticsData?: DecimalColumnStatisticsData;
+  readonly DoubleColumnStatisticsData?: DoubleColumnStatisticsData;
+  readonly LongColumnStatisticsData?: LongColumnStatisticsData;
+  readonly StringColumnStatisticsData?: StringColumnStatisticsData;
+  readonly BinaryColumnStatisticsData?: BinaryColumnStatisticsData;
 }
 
-interface ColumnStatisticsError {
-  readonly ColumnStatistics: ColumnStatistics;
-  readonly Error: ErrorDetail;
+export interface ColumnStatisticsError {
+  readonly ColumnStatistics?: ColumnStatistics;
+  readonly Error?: ErrorDetail;
 }
 
-interface ConcurrentModificationException {
-  readonly Message: string;
+export interface ConcurrentModificationException {
+  readonly Message?: string;
 }
 
-interface ConcurrentRunsExceededException {
-  readonly Message: string;
+export interface ConcurrentRunsExceededException {
+  readonly Message?: string;
 }
 
-interface Condition {
-  readonly LogicalOperator: string;
-  readonly JobName: string;
-  readonly State: string;
-  readonly CrawlerName: string;
-  readonly CrawlState: string;
+export interface Condition {
+  readonly LogicalOperator?: string;
+  readonly JobName?: string;
+  readonly State?: string;
+  readonly CrawlerName?: string;
+  readonly CrawlState?: string;
 }
 
-interface ConditionCheckFailureException {
-  readonly Message: string;
+export interface ConditionCheckFailureException {
+  readonly Message?: string;
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface ConfusionMatrix {
-  readonly NumTruePositives: number;
-  readonly NumFalsePositives: number;
-  readonly NumTrueNegatives: number;
-  readonly NumFalseNegatives: number;
+export interface ConfusionMatrix {
+  readonly NumTruePositives?: number;
+  readonly NumFalsePositives?: number;
+  readonly NumTrueNegatives?: number;
+  readonly NumFalseNegatives?: number;
 }
 
-interface Connection {
+export interface Connection {
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly ConnectionType?: string;
+  readonly MatchCriteria?: [];
+  readonly ConnectionProperties?: {[key: string]: any};
+  readonly PhysicalConnectionRequirements?: PhysicalConnectionRequirements;
+  readonly CreationTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly LastUpdatedBy?: string;
+}
+
+export interface ConnectionInput {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly ConnectionType: string;
-  readonly MatchCriteria: [];
+  readonly MatchCriteria?: [];
   readonly ConnectionProperties: {[key: string]: any};
-  readonly PhysicalConnectionRequirements: PhysicalConnectionRequirements;
-  readonly CreationTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly LastUpdatedBy: string;
+  readonly PhysicalConnectionRequirements?: PhysicalConnectionRequirements;
 }
 
-interface ConnectionInput {
-  readonly Name: string;
-  readonly Description: string;
-  readonly ConnectionType: string;
-  readonly MatchCriteria: [];
-  readonly ConnectionProperties: {[key: string]: any};
-  readonly PhysicalConnectionRequirements: PhysicalConnectionRequirements;
-}
-
-interface ConnectionPasswordEncryption {
+export interface ConnectionPasswordEncryption {
   readonly ReturnConnectionPasswordEncrypted: boolean;
-  readonly AwsKmsKeyId: string;
+  readonly AwsKmsKeyId?: string;
 }
 
-interface ConnectionsList {
-  readonly Connections: [];
+export interface ConnectionsList {
+  readonly Connections?: [];
 }
 
-interface Crawl {
-  readonly State: string;
-  readonly StartedOn: Date;
-  readonly CompletedOn: Date;
-  readonly ErrorMessage: string;
-  readonly LogGroup: string;
-  readonly LogStream: string;
+export interface Crawl {
+  readonly State?: string;
+  readonly StartedOn?: Date;
+  readonly CompletedOn?: Date;
+  readonly ErrorMessage?: string;
+  readonly LogGroup?: string;
+  readonly LogStream?: string;
 }
 
-interface Crawler {
+export interface Crawler {
+  readonly Name?: string;
+  readonly Role?: string;
+  readonly Targets?: CrawlerTargets;
+  readonly DatabaseName?: string;
+  readonly Description?: string;
+  readonly Classifiers?: [];
+  readonly RecrawlPolicy?: RecrawlPolicy;
+  readonly SchemaChangePolicy?: SchemaChangePolicy;
+  readonly LineageConfiguration?: LineageConfiguration;
+  readonly State?: string;
+  readonly TablePrefix?: string;
+  readonly Schedule?: Schedule;
+  readonly CrawlElapsedTime?: number;
+  readonly CreationTime?: Date;
+  readonly LastUpdated?: Date;
+  readonly LastCrawl?: LastCrawlInfo;
+  readonly Version?: number;
+  readonly Configuration?: string;
+  readonly CrawlerSecurityConfiguration?: string;
+}
+
+export interface CrawlerMetrics {
+  readonly CrawlerName?: string;
+  readonly TimeLeftSeconds?: unknown;
+  readonly StillEstimating?: boolean;
+  readonly LastRuntimeSeconds?: unknown;
+  readonly MedianRuntimeSeconds?: unknown;
+  readonly TablesCreated?: number;
+  readonly TablesUpdated?: number;
+  readonly TablesDeleted?: number;
+}
+
+export interface CrawlerNodeDetails {
+  readonly Crawls?: [];
+}
+
+export interface CrawlerNotRunningException {
+  readonly Message?: string;
+}
+
+export interface CrawlerRunningException {
+  readonly Message?: string;
+}
+
+export interface CrawlerStoppingException {
+  readonly Message?: string;
+}
+
+export interface CrawlerTargets {
+  readonly S3Targets?: [];
+  readonly JdbcTargets?: [];
+  readonly MongoDBTargets?: [];
+  readonly DynamoDBTargets?: [];
+  readonly CatalogTargets?: [];
+}
+
+export interface CreateBlueprintRequest {
   readonly Name: string;
-  readonly Role: string;
-  readonly Targets: CrawlerTargets;
-  readonly DatabaseName: string;
-  readonly Description: string;
-  readonly Classifiers: [];
-  readonly RecrawlPolicy: RecrawlPolicy;
-  readonly SchemaChangePolicy: SchemaChangePolicy;
-  readonly LineageConfiguration: LineageConfiguration;
-  readonly State: string;
-  readonly TablePrefix: string;
-  readonly Schedule: Schedule;
-  readonly CrawlElapsedTime: number;
-  readonly CreationTime: Date;
-  readonly LastUpdated: Date;
-  readonly LastCrawl: LastCrawlInfo;
-  readonly Version: number;
-  readonly Configuration: string;
-  readonly CrawlerSecurityConfiguration: string;
-}
-
-interface CrawlerMetrics {
-  readonly CrawlerName: string;
-  readonly TimeLeftSeconds: unknown;
-  readonly StillEstimating: boolean;
-  readonly LastRuntimeSeconds: unknown;
-  readonly MedianRuntimeSeconds: unknown;
-  readonly TablesCreated: number;
-  readonly TablesUpdated: number;
-  readonly TablesDeleted: number;
-}
-
-interface CrawlerNodeDetails {
-  readonly Crawls: [];
-}
-
-interface CrawlerNotRunningException {
-  readonly Message: string;
-}
-
-interface CrawlerRunningException {
-  readonly Message: string;
-}
-
-interface CrawlerStoppingException {
-  readonly Message: string;
-}
-
-interface CrawlerTargets {
-  readonly S3Targets: [];
-  readonly JdbcTargets: [];
-  readonly MongoDBTargets: [];
-  readonly DynamoDBTargets: [];
-  readonly CatalogTargets: [];
-}
-
-interface CreateBlueprintRequest {
-  readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly BlueprintLocation: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateBlueprintResponse {
-  readonly Name: string;
+export interface CreateBlueprintResponse {
+  readonly Name?: string;
 }
 
-interface CreateClassifierRequest {
-  readonly GrokClassifier: CreateGrokClassifierRequest;
-  readonly XMLClassifier: CreateXMLClassifierRequest;
-  readonly JsonClassifier: CreateJsonClassifierRequest;
-  readonly CsvClassifier: CreateCsvClassifierRequest;
+export interface CreateClassifierRequest {
+  readonly GrokClassifier?: CreateGrokClassifierRequest;
+  readonly XMLClassifier?: CreateXMLClassifierRequest;
+  readonly JsonClassifier?: CreateJsonClassifierRequest;
+  readonly CsvClassifier?: CreateCsvClassifierRequest;
 }
 
-interface CreateClassifierResponse {
+export interface CreateClassifierResponse {
 }
 
-interface CreateConnectionRequest {
-  readonly CatalogId: string;
+export interface CreateConnectionRequest {
+  readonly CatalogId?: string;
   readonly ConnectionInput: ConnectionInput;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateConnectionResponse {
+export interface CreateConnectionResponse {
 }
 
-interface CreateCrawlerRequest {
+export interface CreateCrawlerRequest {
   readonly Name: string;
   readonly Role: string;
-  readonly DatabaseName: string;
-  readonly Description: string;
+  readonly DatabaseName?: string;
+  readonly Description?: string;
   readonly Targets: CrawlerTargets;
-  readonly Schedule: string;
-  readonly Classifiers: [];
-  readonly TablePrefix: string;
-  readonly SchemaChangePolicy: SchemaChangePolicy;
-  readonly RecrawlPolicy: RecrawlPolicy;
-  readonly LineageConfiguration: LineageConfiguration;
-  readonly Configuration: string;
-  readonly CrawlerSecurityConfiguration: string;
-  readonly Tags: {[key: string]: any};
+  readonly Schedule?: string;
+  readonly Classifiers?: [];
+  readonly TablePrefix?: string;
+  readonly SchemaChangePolicy?: SchemaChangePolicy;
+  readonly RecrawlPolicy?: RecrawlPolicy;
+  readonly LineageConfiguration?: LineageConfiguration;
+  readonly Configuration?: string;
+  readonly CrawlerSecurityConfiguration?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateCrawlerResponse {
+export interface CreateCrawlerResponse {
 }
 
-interface CreateCsvClassifierRequest {
+export interface CreateCsvClassifierRequest {
   readonly Name: string;
-  readonly Delimiter: string;
-  readonly QuoteSymbol: string;
-  readonly ContainsHeader: string;
-  readonly Header: [];
-  readonly DisableValueTrimming: boolean;
-  readonly AllowSingleColumn: boolean;
+  readonly Delimiter?: string;
+  readonly QuoteSymbol?: string;
+  readonly ContainsHeader?: string;
+  readonly Header?: [];
+  readonly DisableValueTrimming?: boolean;
+  readonly AllowSingleColumn?: boolean;
 }
 
-interface CreateDatabaseRequest {
-  readonly CatalogId: string;
+export interface CreateDatabaseRequest {
+  readonly CatalogId?: string;
   readonly DatabaseInput: DatabaseInput;
 }
 
-interface CreateDatabaseResponse {
+export interface CreateDatabaseResponse {
 }
 
-interface CreateDevEndpointRequest {
+export interface CreateDevEndpointRequest {
   readonly EndpointName: string;
   readonly RoleArn: string;
-  readonly SecurityGroupIds: [];
-  readonly SubnetId: string;
-  readonly PublicKey: string;
-  readonly PublicKeys: [];
-  readonly NumberOfNodes: number;
-  readonly WorkerType: string;
-  readonly GlueVersion: string;
-  readonly NumberOfWorkers: number;
-  readonly ExtraPythonLibsS3Path: string;
-  readonly ExtraJarsS3Path: string;
-  readonly SecurityConfiguration: string;
-  readonly Tags: {[key: string]: any};
-  readonly Arguments: {[key: string]: any};
+  readonly SecurityGroupIds?: [];
+  readonly SubnetId?: string;
+  readonly PublicKey?: string;
+  readonly PublicKeys?: [];
+  readonly NumberOfNodes?: number;
+  readonly WorkerType?: string;
+  readonly GlueVersion?: string;
+  readonly NumberOfWorkers?: number;
+  readonly ExtraPythonLibsS3Path?: string;
+  readonly ExtraJarsS3Path?: string;
+  readonly SecurityConfiguration?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Arguments?: {[key: string]: any};
 }
 
-interface CreateDevEndpointResponse {
-  readonly EndpointName: string;
-  readonly Status: string;
-  readonly SecurityGroupIds: [];
-  readonly SubnetId: string;
-  readonly RoleArn: string;
-  readonly YarnEndpointAddress: string;
-  readonly ZeppelinRemoteSparkInterpreterPort: number;
-  readonly NumberOfNodes: number;
-  readonly WorkerType: string;
-  readonly GlueVersion: string;
-  readonly NumberOfWorkers: number;
-  readonly AvailabilityZone: string;
-  readonly VpcId: string;
-  readonly ExtraPythonLibsS3Path: string;
-  readonly ExtraJarsS3Path: string;
-  readonly FailureReason: string;
-  readonly SecurityConfiguration: string;
-  readonly CreatedTimestamp: Date;
-  readonly Arguments: {[key: string]: any};
+export interface CreateDevEndpointResponse {
+  readonly EndpointName?: string;
+  readonly Status?: string;
+  readonly SecurityGroupIds?: [];
+  readonly SubnetId?: string;
+  readonly RoleArn?: string;
+  readonly YarnEndpointAddress?: string;
+  readonly ZeppelinRemoteSparkInterpreterPort?: number;
+  readonly NumberOfNodes?: number;
+  readonly WorkerType?: string;
+  readonly GlueVersion?: string;
+  readonly NumberOfWorkers?: number;
+  readonly AvailabilityZone?: string;
+  readonly VpcId?: string;
+  readonly ExtraPythonLibsS3Path?: string;
+  readonly ExtraJarsS3Path?: string;
+  readonly FailureReason?: string;
+  readonly SecurityConfiguration?: string;
+  readonly CreatedTimestamp?: Date;
+  readonly Arguments?: {[key: string]: any};
 }
 
-interface CreateGrokClassifierRequest {
+export interface CreateGrokClassifierRequest {
   readonly Classification: string;
   readonly Name: string;
   readonly GrokPattern: string;
-  readonly CustomPatterns: string;
+  readonly CustomPatterns?: string;
 }
 
-interface CreateJobRequest {
+export interface CreateJobRequest {
   readonly Name: string;
-  readonly Description: string;
-  readonly LogUri: string;
+  readonly Description?: string;
+  readonly LogUri?: string;
   readonly Role: string;
-  readonly ExecutionProperty: ExecutionProperty;
+  readonly ExecutionProperty?: ExecutionProperty;
   readonly Command: JobCommand;
-  readonly DefaultArguments: {[key: string]: any};
-  readonly NonOverridableArguments: {[key: string]: any};
-  readonly Connections: ConnectionsList;
-  readonly MaxRetries: number;
-  readonly AllocatedCapacity: number;
-  readonly Timeout: number;
-  readonly MaxCapacity: unknown;
-  readonly SecurityConfiguration: string;
-  readonly Tags: {[key: string]: any};
-  readonly NotificationProperty: NotificationProperty;
-  readonly GlueVersion: string;
-  readonly NumberOfWorkers: number;
-  readonly WorkerType: string;
+  readonly DefaultArguments?: {[key: string]: any};
+  readonly NonOverridableArguments?: {[key: string]: any};
+  readonly Connections?: ConnectionsList;
+  readonly MaxRetries?: number;
+  readonly AllocatedCapacity?: number;
+  readonly Timeout?: number;
+  readonly MaxCapacity?: unknown;
+  readonly SecurityConfiguration?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly NotificationProperty?: NotificationProperty;
+  readonly GlueVersion?: string;
+  readonly NumberOfWorkers?: number;
+  readonly WorkerType?: string;
 }
 
-interface CreateJobResponse {
-  readonly Name: string;
+export interface CreateJobResponse {
+  readonly Name?: string;
 }
 
-interface CreateJsonClassifierRequest {
+export interface CreateJsonClassifierRequest {
   readonly Name: string;
   readonly JsonPath: string;
 }
 
-interface CreateMLTransformRequest {
+export interface CreateMLTransformRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly InputRecordTables: [];
   readonly Parameters: TransformParameters;
   readonly Role: string;
-  readonly GlueVersion: string;
-  readonly MaxCapacity: unknown;
-  readonly WorkerType: string;
-  readonly NumberOfWorkers: number;
-  readonly Timeout: number;
-  readonly MaxRetries: number;
-  readonly Tags: {[key: string]: any};
-  readonly TransformEncryption: TransformEncryption;
+  readonly GlueVersion?: string;
+  readonly MaxCapacity?: unknown;
+  readonly WorkerType?: string;
+  readonly NumberOfWorkers?: number;
+  readonly Timeout?: number;
+  readonly MaxRetries?: number;
+  readonly Tags?: {[key: string]: any};
+  readonly TransformEncryption?: TransformEncryption;
 }
 
-interface CreateMLTransformResponse {
-  readonly TransformId: string;
+export interface CreateMLTransformResponse {
+  readonly TransformId?: string;
 }
 
-interface CreatePartitionIndexRequest {
-  readonly CatalogId: string;
+export interface CreatePartitionIndexRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionIndex: PartitionIndex;
 }
 
-interface CreatePartitionIndexResponse {
+export interface CreatePartitionIndexResponse {
 }
 
-interface CreatePartitionRequest {
-  readonly CatalogId: string;
+export interface CreatePartitionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionInput: PartitionInput;
 }
 
-interface CreatePartitionResponse {
+export interface CreatePartitionResponse {
 }
 
-interface CreateRegistryInput {
+export interface CreateRegistryInput {
   readonly RegistryName: string;
-  readonly Description: string;
-  readonly Tags: {[key: string]: any};
+  readonly Description?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateRegistryResponse {
-  readonly RegistryArn: string;
-  readonly RegistryName: string;
-  readonly Description: string;
-  readonly Tags: {[key: string]: any};
+export interface CreateRegistryResponse {
+  readonly RegistryArn?: string;
+  readonly RegistryName?: string;
+  readonly Description?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateSchemaInput {
-  readonly RegistryId: RegistryId;
+export interface CreateSchemaInput {
+  readonly RegistryId?: RegistryId;
   readonly SchemaName: string;
   readonly DataFormat: string;
-  readonly Compatibility: string;
-  readonly Description: string;
-  readonly Tags: {[key: string]: any};
-  readonly SchemaDefinition: string;
+  readonly Compatibility?: string;
+  readonly Description?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly SchemaDefinition?: string;
 }
 
-interface CreateSchemaResponse {
-  readonly RegistryName: string;
-  readonly RegistryArn: string;
-  readonly SchemaName: string;
-  readonly SchemaArn: string;
-  readonly Description: string;
-  readonly DataFormat: string;
-  readonly Compatibility: string;
-  readonly SchemaCheckpoint: number;
-  readonly LatestSchemaVersion: number;
-  readonly NextSchemaVersion: number;
-  readonly SchemaStatus: string;
-  readonly Tags: {[key: string]: any};
-  readonly SchemaVersionId: string;
-  readonly SchemaVersionStatus: string;
+export interface CreateSchemaResponse {
+  readonly RegistryName?: string;
+  readonly RegistryArn?: string;
+  readonly SchemaName?: string;
+  readonly SchemaArn?: string;
+  readonly Description?: string;
+  readonly DataFormat?: string;
+  readonly Compatibility?: string;
+  readonly SchemaCheckpoint?: number;
+  readonly LatestSchemaVersion?: number;
+  readonly NextSchemaVersion?: number;
+  readonly SchemaStatus?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly SchemaVersionId?: string;
+  readonly SchemaVersionStatus?: string;
 }
 
-interface CreateScriptRequest {
-  readonly DagNodes: [];
-  readonly DagEdges: [];
-  readonly Language: string;
+export interface CreateScriptRequest {
+  readonly DagNodes?: [];
+  readonly DagEdges?: [];
+  readonly Language?: string;
 }
 
-interface CreateScriptResponse {
-  readonly PythonScript: string;
-  readonly ScalaCode: string;
+export interface CreateScriptResponse {
+  readonly PythonScript?: string;
+  readonly ScalaCode?: string;
 }
 
-interface CreateSecurityConfigurationRequest {
+export interface CreateSecurityConfigurationRequest {
   readonly Name: string;
   readonly EncryptionConfiguration: EncryptionConfiguration;
 }
 
-interface CreateSecurityConfigurationResponse {
-  readonly Name: string;
-  readonly CreatedTimestamp: Date;
+export interface CreateSecurityConfigurationResponse {
+  readonly Name?: string;
+  readonly CreatedTimestamp?: Date;
 }
 
-interface CreateTableRequest {
-  readonly CatalogId: string;
+export interface CreateTableRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableInput: TableInput;
-  readonly PartitionIndexes: [];
-  readonly TransactionId: string;
+  readonly PartitionIndexes?: [];
+  readonly TransactionId?: string;
 }
 
-interface CreateTableResponse {
+export interface CreateTableResponse {
 }
 
-interface CreateTriggerRequest {
+export interface CreateTriggerRequest {
   readonly Name: string;
-  readonly WorkflowName: string;
+  readonly WorkflowName?: string;
   readonly Type: string;
-  readonly Schedule: string;
-  readonly Predicate: Predicate;
+  readonly Schedule?: string;
+  readonly Predicate?: Predicate;
   readonly Actions: [];
-  readonly Description: string;
-  readonly StartOnCreation: boolean;
-  readonly Tags: {[key: string]: any};
-  readonly EventBatchingCondition: EventBatchingCondition;
+  readonly Description?: string;
+  readonly StartOnCreation?: boolean;
+  readonly Tags?: {[key: string]: any};
+  readonly EventBatchingCondition?: EventBatchingCondition;
 }
 
-interface CreateTriggerResponse {
-  readonly Name: string;
+export interface CreateTriggerResponse {
+  readonly Name?: string;
 }
 
-interface CreateUserDefinedFunctionRequest {
-  readonly CatalogId: string;
+export interface CreateUserDefinedFunctionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly FunctionInput: UserDefinedFunctionInput;
 }
 
-interface CreateUserDefinedFunctionResponse {
+export interface CreateUserDefinedFunctionResponse {
 }
 
-interface CreateWorkflowRequest {
+export interface CreateWorkflowRequest {
   readonly Name: string;
-  readonly Description: string;
-  readonly DefaultRunProperties: {[key: string]: any};
-  readonly Tags: {[key: string]: any};
-  readonly MaxConcurrentRuns: number;
+  readonly Description?: string;
+  readonly DefaultRunProperties?: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
+  readonly MaxConcurrentRuns?: number;
 }
 
-interface CreateWorkflowResponse {
-  readonly Name: string;
+export interface CreateWorkflowResponse {
+  readonly Name?: string;
 }
 
-interface CreateXMLClassifierRequest {
+export interface CreateXMLClassifierRequest {
   readonly Classification: string;
   readonly Name: string;
-  readonly RowTag: string;
+  readonly RowTag?: string;
 }
 
-interface CsvClassifier {
+export interface CsvClassifier {
   readonly Name: string;
-  readonly CreationTime: Date;
-  readonly LastUpdated: Date;
-  readonly Version: number;
-  readonly Delimiter: string;
-  readonly QuoteSymbol: string;
-  readonly ContainsHeader: string;
-  readonly Header: [];
-  readonly DisableValueTrimming: boolean;
-  readonly AllowSingleColumn: boolean;
+  readonly CreationTime?: Date;
+  readonly LastUpdated?: Date;
+  readonly Version?: number;
+  readonly Delimiter?: string;
+  readonly QuoteSymbol?: string;
+  readonly ContainsHeader?: string;
+  readonly Header?: [];
+  readonly DisableValueTrimming?: boolean;
+  readonly AllowSingleColumn?: boolean;
 }
 
-interface DataCatalogEncryptionSettings {
-  readonly EncryptionAtRest: EncryptionAtRest;
-  readonly ConnectionPasswordEncryption: ConnectionPasswordEncryption;
+export interface DataCatalogEncryptionSettings {
+  readonly EncryptionAtRest?: EncryptionAtRest;
+  readonly ConnectionPasswordEncryption?: ConnectionPasswordEncryption;
 }
 
-interface DataLakePrincipal {
-  readonly DataLakePrincipalIdentifier: string;
+export interface DataLakePrincipal {
+  readonly DataLakePrincipalIdentifier?: string;
 }
 
-interface Database {
+export interface Database {
   readonly Name: string;
-  readonly Description: string;
-  readonly LocationUri: string;
-  readonly Parameters: {[key: string]: any};
-  readonly CreateTime: Date;
-  readonly CreateTableDefaultPermissions: [];
-  readonly TargetDatabase: DatabaseIdentifier;
-  readonly CatalogId: string;
+  readonly Description?: string;
+  readonly LocationUri?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly CreateTime?: Date;
+  readonly CreateTableDefaultPermissions?: [];
+  readonly TargetDatabase?: DatabaseIdentifier;
+  readonly CatalogId?: string;
 }
 
-interface DatabaseIdentifier {
-  readonly CatalogId: string;
-  readonly DatabaseName: string;
+export interface DatabaseIdentifier {
+  readonly CatalogId?: string;
+  readonly DatabaseName?: string;
 }
 
-interface DatabaseInput {
+export interface DatabaseInput {
   readonly Name: string;
-  readonly Description: string;
-  readonly LocationUri: string;
-  readonly Parameters: {[key: string]: any};
-  readonly CreateTableDefaultPermissions: [];
-  readonly TargetDatabase: DatabaseIdentifier;
+  readonly Description?: string;
+  readonly LocationUri?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly CreateTableDefaultPermissions?: [];
+  readonly TargetDatabase?: DatabaseIdentifier;
 }
 
-interface DateColumnStatisticsData {
-  readonly MinimumValue: Date;
-  readonly MaximumValue: Date;
+export interface DateColumnStatisticsData {
+  readonly MinimumValue?: Date;
+  readonly MaximumValue?: Date;
   readonly NumberOfNulls: number;
   readonly NumberOfDistinctValues: number;
 }
 
-interface DecimalColumnStatisticsData {
-  readonly MinimumValue: DecimalNumber;
-  readonly MaximumValue: DecimalNumber;
+export interface DecimalColumnStatisticsData {
+  readonly MinimumValue?: DecimalNumber;
+  readonly MaximumValue?: DecimalNumber;
   readonly NumberOfNulls: number;
   readonly NumberOfDistinctValues: number;
 }
 
-interface DecimalNumber {
+export interface DecimalNumber {
   readonly UnscaledValue: unknown;
   readonly Scale: number;
 }
 
-interface DeleteBlueprintRequest {
+export interface DeleteBlueprintRequest {
   readonly Name: string;
 }
 
-interface DeleteBlueprintResponse {
+export interface DeleteBlueprintResponse {
+  readonly Name?: string;
+}
+
+export interface DeleteClassifierRequest {
   readonly Name: string;
 }
 
-interface DeleteClassifierRequest {
-  readonly Name: string;
+export interface DeleteClassifierResponse {
 }
 
-interface DeleteClassifierResponse {
-}
-
-interface DeleteColumnStatisticsForPartitionRequest {
-  readonly CatalogId: string;
+export interface DeleteColumnStatisticsForPartitionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionValues: [];
   readonly ColumnName: string;
 }
 
-interface DeleteColumnStatisticsForPartitionResponse {
+export interface DeleteColumnStatisticsForPartitionResponse {
 }
 
-interface DeleteColumnStatisticsForTableRequest {
-  readonly CatalogId: string;
+export interface DeleteColumnStatisticsForTableRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly ColumnName: string;
 }
 
-interface DeleteColumnStatisticsForTableResponse {
+export interface DeleteColumnStatisticsForTableResponse {
 }
 
-interface DeleteConnectionRequest {
-  readonly CatalogId: string;
+export interface DeleteConnectionRequest {
+  readonly CatalogId?: string;
   readonly ConnectionName: string;
 }
 
-interface DeleteConnectionResponse {
+export interface DeleteConnectionResponse {
 }
 
-interface DeleteCrawlerRequest {
+export interface DeleteCrawlerRequest {
   readonly Name: string;
 }
 
-interface DeleteCrawlerResponse {
+export interface DeleteCrawlerResponse {
 }
 
-interface DeleteDatabaseRequest {
-  readonly CatalogId: string;
+export interface DeleteDatabaseRequest {
+  readonly CatalogId?: string;
   readonly Name: string;
 }
 
-interface DeleteDatabaseResponse {
+export interface DeleteDatabaseResponse {
 }
 
-interface DeleteDevEndpointRequest {
+export interface DeleteDevEndpointRequest {
   readonly EndpointName: string;
 }
 
-interface DeleteDevEndpointResponse {
+export interface DeleteDevEndpointResponse {
 }
 
-interface DeleteJobRequest {
+export interface DeleteJobRequest {
   readonly JobName: string;
 }
 
-interface DeleteJobResponse {
-  readonly JobName: string;
+export interface DeleteJobResponse {
+  readonly JobName?: string;
 }
 
-interface DeleteMLTransformRequest {
+export interface DeleteMLTransformRequest {
   readonly TransformId: string;
 }
 
-interface DeleteMLTransformResponse {
-  readonly TransformId: string;
+export interface DeleteMLTransformResponse {
+  readonly TransformId?: string;
 }
 
-interface DeletePartitionIndexRequest {
-  readonly CatalogId: string;
+export interface DeletePartitionIndexRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly IndexName: string;
 }
 
-interface DeletePartitionIndexResponse {
+export interface DeletePartitionIndexResponse {
 }
 
-interface DeletePartitionRequest {
-  readonly CatalogId: string;
+export interface DeletePartitionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionValues: [];
 }
 
-interface DeletePartitionResponse {
+export interface DeletePartitionResponse {
 }
 
-interface DeleteRegistryInput {
+export interface DeleteRegistryInput {
   readonly RegistryId: RegistryId;
 }
 
-interface DeleteRegistryResponse {
-  readonly RegistryName: string;
-  readonly RegistryArn: string;
-  readonly Status: string;
+export interface DeleteRegistryResponse {
+  readonly RegistryName?: string;
+  readonly RegistryArn?: string;
+  readonly Status?: string;
 }
 
-interface DeleteResourcePolicyRequest {
-  readonly PolicyHashCondition: string;
-  readonly ResourceArn: string;
+export interface DeleteResourcePolicyRequest {
+  readonly PolicyHashCondition?: string;
+  readonly ResourceArn?: string;
 }
 
-interface DeleteResourcePolicyResponse {
+export interface DeleteResourcePolicyResponse {
 }
 
-interface DeleteSchemaInput {
+export interface DeleteSchemaInput {
   readonly SchemaId: SchemaId;
 }
 
-interface DeleteSchemaResponse {
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly Status: string;
+export interface DeleteSchemaResponse {
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly Status?: string;
 }
 
-interface DeleteSchemaVersionsInput {
+export interface DeleteSchemaVersionsInput {
   readonly SchemaId: SchemaId;
   readonly Versions: string;
 }
 
-interface DeleteSchemaVersionsResponse {
-  readonly SchemaVersionErrors: [];
+export interface DeleteSchemaVersionsResponse {
+  readonly SchemaVersionErrors?: [];
 }
 
-interface DeleteSecurityConfigurationRequest {
+export interface DeleteSecurityConfigurationRequest {
   readonly Name: string;
 }
 
-interface DeleteSecurityConfigurationResponse {
+export interface DeleteSecurityConfigurationResponse {
 }
 
-interface DeleteTableRequest {
-  readonly CatalogId: string;
+export interface DeleteTableRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly Name: string;
-  readonly TransactionId: string;
+  readonly TransactionId?: string;
 }
 
-interface DeleteTableResponse {
+export interface DeleteTableResponse {
 }
 
-interface DeleteTableVersionRequest {
-  readonly CatalogId: string;
+export interface DeleteTableVersionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly VersionId: string;
 }
 
-interface DeleteTableVersionResponse {
+export interface DeleteTableVersionResponse {
 }
 
-interface DeleteTriggerRequest {
+export interface DeleteTriggerRequest {
   readonly Name: string;
 }
 
-interface DeleteTriggerResponse {
-  readonly Name: string;
+export interface DeleteTriggerResponse {
+  readonly Name?: string;
 }
 
-interface DeleteUserDefinedFunctionRequest {
-  readonly CatalogId: string;
+export interface DeleteUserDefinedFunctionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly FunctionName: string;
 }
 
-interface DeleteUserDefinedFunctionResponse {
+export interface DeleteUserDefinedFunctionResponse {
 }
 
-interface DeleteWorkflowRequest {
+export interface DeleteWorkflowRequest {
   readonly Name: string;
 }
 
-interface DeleteWorkflowResponse {
-  readonly Name: string;
+export interface DeleteWorkflowResponse {
+  readonly Name?: string;
 }
 
-interface DevEndpoint {
-  readonly EndpointName: string;
-  readonly RoleArn: string;
-  readonly SecurityGroupIds: [];
-  readonly SubnetId: string;
-  readonly YarnEndpointAddress: string;
-  readonly PrivateAddress: string;
-  readonly ZeppelinRemoteSparkInterpreterPort: number;
-  readonly PublicAddress: string;
-  readonly Status: string;
-  readonly WorkerType: string;
-  readonly GlueVersion: string;
-  readonly NumberOfWorkers: number;
-  readonly NumberOfNodes: number;
-  readonly AvailabilityZone: string;
-  readonly VpcId: string;
-  readonly ExtraPythonLibsS3Path: string;
-  readonly ExtraJarsS3Path: string;
-  readonly FailureReason: string;
-  readonly LastUpdateStatus: string;
-  readonly CreatedTimestamp: Date;
-  readonly LastModifiedTimestamp: Date;
-  readonly PublicKey: string;
-  readonly PublicKeys: [];
-  readonly SecurityConfiguration: string;
-  readonly Arguments: {[key: string]: any};
+export interface DevEndpoint {
+  readonly EndpointName?: string;
+  readonly RoleArn?: string;
+  readonly SecurityGroupIds?: [];
+  readonly SubnetId?: string;
+  readonly YarnEndpointAddress?: string;
+  readonly PrivateAddress?: string;
+  readonly ZeppelinRemoteSparkInterpreterPort?: number;
+  readonly PublicAddress?: string;
+  readonly Status?: string;
+  readonly WorkerType?: string;
+  readonly GlueVersion?: string;
+  readonly NumberOfWorkers?: number;
+  readonly NumberOfNodes?: number;
+  readonly AvailabilityZone?: string;
+  readonly VpcId?: string;
+  readonly ExtraPythonLibsS3Path?: string;
+  readonly ExtraJarsS3Path?: string;
+  readonly FailureReason?: string;
+  readonly LastUpdateStatus?: string;
+  readonly CreatedTimestamp?: Date;
+  readonly LastModifiedTimestamp?: Date;
+  readonly PublicKey?: string;
+  readonly PublicKeys?: [];
+  readonly SecurityConfiguration?: string;
+  readonly Arguments?: {[key: string]: any};
 }
 
-interface DevEndpointCustomLibraries {
-  readonly ExtraPythonLibsS3Path: string;
-  readonly ExtraJarsS3Path: string;
+export interface DevEndpointCustomLibraries {
+  readonly ExtraPythonLibsS3Path?: string;
+  readonly ExtraJarsS3Path?: string;
 }
 
-interface DoubleColumnStatisticsData {
-  readonly MinimumValue: unknown;
-  readonly MaximumValue: unknown;
+export interface DoubleColumnStatisticsData {
+  readonly MinimumValue?: unknown;
+  readonly MaximumValue?: unknown;
   readonly NumberOfNulls: number;
   readonly NumberOfDistinctValues: number;
 }
 
-interface DynamoDBTarget {
-  readonly Path: string;
-  readonly scanAll: boolean;
-  readonly scanRate: unknown;
+export interface DynamoDBTarget {
+  readonly Path?: string;
+  readonly scanAll?: boolean;
+  readonly scanRate?: unknown;
 }
 
-interface Edge {
-  readonly SourceId: string;
-  readonly DestinationId: string;
+export interface Edge {
+  readonly SourceId?: string;
+  readonly DestinationId?: string;
 }
 
-interface EncryptionAtRest {
+export interface EncryptionAtRest {
   readonly CatalogEncryptionMode: string;
-  readonly SseAwsKmsKeyId: string;
+  readonly SseAwsKmsKeyId?: string;
 }
 
-interface EncryptionConfiguration {
-  readonly S3Encryption: [];
-  readonly CloudWatchEncryption: CloudWatchEncryption;
-  readonly JobBookmarksEncryption: JobBookmarksEncryption;
+export interface EncryptionConfiguration {
+  readonly S3Encryption?: [];
+  readonly CloudWatchEncryption?: CloudWatchEncryption;
+  readonly JobBookmarksEncryption?: JobBookmarksEncryption;
 }
 
-interface EntityNotFoundException {
-  readonly Message: string;
+export interface EntityNotFoundException {
+  readonly Message?: string;
 }
 
-interface ErrorDetail {
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface ErrorDetail {
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface ErrorDetails {
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface ErrorDetails {
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface EvaluationMetrics {
+export interface EvaluationMetrics {
   readonly TransformType: string;
-  readonly FindMatchesMetrics: FindMatchesMetrics;
+  readonly FindMatchesMetrics?: FindMatchesMetrics;
 }
 
-interface EventBatchingCondition {
+export interface EventBatchingCondition {
   readonly BatchSize: number;
-  readonly BatchWindow: number;
+  readonly BatchWindow?: number;
 }
 
-interface ExecutionProperty {
-  readonly MaxConcurrentRuns: number;
+export interface ExecutionProperty {
+  readonly MaxConcurrentRuns?: number;
 }
 
-interface ExportLabelsTaskRunProperties {
-  readonly OutputS3Path: string;
+export interface ExportLabelsTaskRunProperties {
+  readonly OutputS3Path?: string;
 }
 
-interface FindMatchesMetrics {
-  readonly AreaUnderPRCurve: unknown;
-  readonly Precision: unknown;
-  readonly Recall: unknown;
-  readonly F1: unknown;
-  readonly ConfusionMatrix: ConfusionMatrix;
-  readonly ColumnImportances: [];
+export interface FindMatchesMetrics {
+  readonly AreaUnderPRCurve?: unknown;
+  readonly Precision?: unknown;
+  readonly Recall?: unknown;
+  readonly F1?: unknown;
+  readonly ConfusionMatrix?: ConfusionMatrix;
+  readonly ColumnImportances?: [];
 }
 
-interface FindMatchesParameters {
-  readonly PrimaryKeyColumnName: string;
-  readonly PrecisionRecallTradeoff: unknown;
-  readonly AccuracyCostTradeoff: unknown;
-  readonly EnforceProvidedLabels: boolean;
+export interface FindMatchesParameters {
+  readonly PrimaryKeyColumnName?: string;
+  readonly PrecisionRecallTradeoff?: unknown;
+  readonly AccuracyCostTradeoff?: unknown;
+  readonly EnforceProvidedLabels?: boolean;
 }
 
-interface FindMatchesTaskRunProperties {
-  readonly JobId: string;
-  readonly JobName: string;
-  readonly JobRunId: string;
+export interface FindMatchesTaskRunProperties {
+  readonly JobId?: string;
+  readonly JobName?: string;
+  readonly JobRunId?: string;
 }
 
-interface GetBlueprintRequest {
+export interface GetBlueprintRequest {
   readonly Name: string;
-  readonly IncludeBlueprint: boolean;
-  readonly IncludeParameterSpec: boolean;
+  readonly IncludeBlueprint?: boolean;
+  readonly IncludeParameterSpec?: boolean;
 }
 
-interface GetBlueprintResponse {
-  readonly Blueprint: Blueprint;
+export interface GetBlueprintResponse {
+  readonly Blueprint?: Blueprint;
 }
 
-interface GetBlueprintRunRequest {
+export interface GetBlueprintRunRequest {
   readonly BlueprintName: string;
   readonly RunId: string;
 }
 
-interface GetBlueprintRunResponse {
-  readonly BlueprintRun: BlueprintRun;
+export interface GetBlueprintRunResponse {
+  readonly BlueprintRun?: BlueprintRun;
 }
 
-interface GetBlueprintRunsRequest {
+export interface GetBlueprintRunsRequest {
   readonly BlueprintName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetBlueprintRunsResponse {
-  readonly BlueprintRuns: [];
-  readonly NextToken: string;
+export interface GetBlueprintRunsResponse {
+  readonly BlueprintRuns?: [];
+  readonly NextToken?: string;
 }
 
-interface GetCatalogImportStatusRequest {
-  readonly CatalogId: string;
+export interface GetCatalogImportStatusRequest {
+  readonly CatalogId?: string;
 }
 
-interface GetCatalogImportStatusResponse {
-  readonly ImportStatus: CatalogImportStatus;
+export interface GetCatalogImportStatusResponse {
+  readonly ImportStatus?: CatalogImportStatus;
 }
 
-interface GetClassifierRequest {
+export interface GetClassifierRequest {
   readonly Name: string;
 }
 
-interface GetClassifierResponse {
-  readonly Classifier: Classifier;
+export interface GetClassifierResponse {
+  readonly Classifier?: Classifier;
 }
 
-interface GetClassifiersRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface GetClassifiersRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetClassifiersResponse {
-  readonly Classifiers: [];
-  readonly NextToken: string;
+export interface GetClassifiersResponse {
+  readonly Classifiers?: [];
+  readonly NextToken?: string;
 }
 
-interface GetColumnStatisticsForPartitionRequest {
-  readonly CatalogId: string;
+export interface GetColumnStatisticsForPartitionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionValues: [];
   readonly ColumnNames: [];
 }
 
-interface GetColumnStatisticsForPartitionResponse {
-  readonly ColumnStatisticsList: [];
-  readonly Errors: [];
+export interface GetColumnStatisticsForPartitionResponse {
+  readonly ColumnStatisticsList?: [];
+  readonly Errors?: [];
 }
 
-interface GetColumnStatisticsForTableRequest {
-  readonly CatalogId: string;
+export interface GetColumnStatisticsForTableRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly ColumnNames: [];
 }
 
-interface GetColumnStatisticsForTableResponse {
-  readonly ColumnStatisticsList: [];
-  readonly Errors: [];
+export interface GetColumnStatisticsForTableResponse {
+  readonly ColumnStatisticsList?: [];
+  readonly Errors?: [];
 }
 
-interface GetConnectionRequest {
-  readonly CatalogId: string;
+export interface GetConnectionRequest {
+  readonly CatalogId?: string;
   readonly Name: string;
-  readonly HidePassword: boolean;
+  readonly HidePassword?: boolean;
 }
 
-interface GetConnectionResponse {
-  readonly Connection: Connection;
+export interface GetConnectionResponse {
+  readonly Connection?: Connection;
 }
 
-interface GetConnectionsFilter {
-  readonly MatchCriteria: [];
-  readonly ConnectionType: string;
+export interface GetConnectionsFilter {
+  readonly MatchCriteria?: [];
+  readonly ConnectionType?: string;
 }
 
-interface GetConnectionsRequest {
-  readonly CatalogId: string;
-  readonly Filter: GetConnectionsFilter;
-  readonly HidePassword: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface GetConnectionsRequest {
+  readonly CatalogId?: string;
+  readonly Filter?: GetConnectionsFilter;
+  readonly HidePassword?: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetConnectionsResponse {
-  readonly ConnectionList: [];
-  readonly NextToken: string;
+export interface GetConnectionsResponse {
+  readonly ConnectionList?: [];
+  readonly NextToken?: string;
 }
 
-interface GetCrawlerMetricsRequest {
-  readonly CrawlerNameList: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface GetCrawlerMetricsRequest {
+  readonly CrawlerNameList?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetCrawlerMetricsResponse {
-  readonly CrawlerMetricsList: [];
-  readonly NextToken: string;
+export interface GetCrawlerMetricsResponse {
+  readonly CrawlerMetricsList?: [];
+  readonly NextToken?: string;
 }
 
-interface GetCrawlerRequest {
-  readonly Name: string;
-}
-
-interface GetCrawlerResponse {
-  readonly Crawler: Crawler;
-}
-
-interface GetCrawlersRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface GetCrawlersResponse {
-  readonly Crawlers: [];
-  readonly NextToken: string;
-}
-
-interface GetDataCatalogEncryptionSettingsRequest {
-  readonly CatalogId: string;
-}
-
-interface GetDataCatalogEncryptionSettingsResponse {
-  readonly DataCatalogEncryptionSettings: DataCatalogEncryptionSettings;
-}
-
-interface GetDatabaseRequest {
-  readonly CatalogId: string;
+export interface GetCrawlerRequest {
   readonly Name: string;
 }
 
-interface GetDatabaseResponse {
-  readonly Database: Database;
+export interface GetCrawlerResponse {
+  readonly Crawler?: Crawler;
 }
 
-interface GetDatabasesRequest {
-  readonly CatalogId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ResourceShareType: string;
+export interface GetCrawlersRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetDatabasesResponse {
+export interface GetCrawlersResponse {
+  readonly Crawlers?: [];
+  readonly NextToken?: string;
+}
+
+export interface GetDataCatalogEncryptionSettingsRequest {
+  readonly CatalogId?: string;
+}
+
+export interface GetDataCatalogEncryptionSettingsResponse {
+  readonly DataCatalogEncryptionSettings?: DataCatalogEncryptionSettings;
+}
+
+export interface GetDatabaseRequest {
+  readonly CatalogId?: string;
+  readonly Name: string;
+}
+
+export interface GetDatabaseResponse {
+  readonly Database?: Database;
+}
+
+export interface GetDatabasesRequest {
+  readonly CatalogId?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ResourceShareType?: string;
+}
+
+export interface GetDatabasesResponse {
   readonly DatabaseList: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface GetDataflowGraphRequest {
-  readonly PythonScript: string;
+export interface GetDataflowGraphRequest {
+  readonly PythonScript?: string;
 }
 
-interface GetDataflowGraphResponse {
-  readonly DagNodes: [];
-  readonly DagEdges: [];
+export interface GetDataflowGraphResponse {
+  readonly DagNodes?: [];
+  readonly DagEdges?: [];
 }
 
-interface GetDevEndpointRequest {
+export interface GetDevEndpointRequest {
   readonly EndpointName: string;
 }
 
-interface GetDevEndpointResponse {
-  readonly DevEndpoint: DevEndpoint;
+export interface GetDevEndpointResponse {
+  readonly DevEndpoint?: DevEndpoint;
 }
 
-interface GetDevEndpointsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface GetDevEndpointsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetDevEndpointsResponse {
-  readonly DevEndpoints: [];
-  readonly NextToken: string;
+export interface GetDevEndpointsResponse {
+  readonly DevEndpoints?: [];
+  readonly NextToken?: string;
 }
 
-interface GetJobBookmarkRequest {
+export interface GetJobBookmarkRequest {
+  readonly JobName: string;
+  readonly RunId?: string;
+}
+
+export interface GetJobBookmarkResponse {
+  readonly JobBookmarkEntry?: JobBookmarkEntry;
+}
+
+export interface GetJobRequest {
+  readonly JobName: string;
+}
+
+export interface GetJobResponse {
+  readonly Job?: Job;
+}
+
+export interface GetJobRunRequest {
   readonly JobName: string;
   readonly RunId: string;
+  readonly PredecessorsIncluded?: boolean;
 }
 
-interface GetJobBookmarkResponse {
-  readonly JobBookmarkEntry: JobBookmarkEntry;
+export interface GetJobRunResponse {
+  readonly JobRun?: JobRun;
 }
 
-interface GetJobRequest {
+export interface GetJobRunsRequest {
   readonly JobName: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetJobResponse {
-  readonly Job: Job;
+export interface GetJobRunsResponse {
+  readonly JobRuns?: [];
+  readonly NextToken?: string;
 }
 
-interface GetJobRunRequest {
-  readonly JobName: string;
-  readonly RunId: string;
-  readonly PredecessorsIncluded: boolean;
+export interface GetJobsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetJobRunResponse {
-  readonly JobRun: JobRun;
+export interface GetJobsResponse {
+  readonly Jobs?: [];
+  readonly NextToken?: string;
 }
 
-interface GetJobRunsRequest {
-  readonly JobName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface GetJobRunsResponse {
-  readonly JobRuns: [];
-  readonly NextToken: string;
-}
-
-interface GetJobsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface GetJobsResponse {
-  readonly Jobs: [];
-  readonly NextToken: string;
-}
-
-interface GetMLTaskRunRequest {
+export interface GetMLTaskRunRequest {
   readonly TransformId: string;
   readonly TaskRunId: string;
 }
 
-interface GetMLTaskRunResponse {
+export interface GetMLTaskRunResponse {
+  readonly TransformId?: string;
+  readonly TaskRunId?: string;
+  readonly Status?: string;
+  readonly LogGroupName?: string;
+  readonly Properties?: TaskRunProperties;
+  readonly ErrorString?: string;
+  readonly StartedOn?: Date;
+  readonly LastModifiedOn?: Date;
+  readonly CompletedOn?: Date;
+  readonly ExecutionTime?: number;
+}
+
+export interface GetMLTaskRunsRequest {
   readonly TransformId: string;
-  readonly TaskRunId: string;
-  readonly Status: string;
-  readonly LogGroupName: string;
-  readonly Properties: TaskRunProperties;
-  readonly ErrorString: string;
-  readonly StartedOn: Date;
-  readonly LastModifiedOn: Date;
-  readonly CompletedOn: Date;
-  readonly ExecutionTime: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filter?: TaskRunFilterCriteria;
+  readonly Sort?: TaskRunSortCriteria;
 }
 
-interface GetMLTaskRunsRequest {
-  readonly TransformId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filter: TaskRunFilterCriteria;
-  readonly Sort: TaskRunSortCriteria;
+export interface GetMLTaskRunsResponse {
+  readonly TaskRuns?: [];
+  readonly NextToken?: string;
 }
 
-interface GetMLTaskRunsResponse {
-  readonly TaskRuns: [];
-  readonly NextToken: string;
-}
-
-interface GetMLTransformRequest {
+export interface GetMLTransformRequest {
   readonly TransformId: string;
 }
 
-interface GetMLTransformResponse {
-  readonly TransformId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Status: string;
-  readonly CreatedOn: Date;
-  readonly LastModifiedOn: Date;
-  readonly InputRecordTables: [];
-  readonly Parameters: TransformParameters;
-  readonly EvaluationMetrics: EvaluationMetrics;
-  readonly LabelCount: number;
-  readonly Schema: [];
-  readonly Role: string;
-  readonly GlueVersion: string;
-  readonly MaxCapacity: unknown;
-  readonly WorkerType: string;
-  readonly NumberOfWorkers: number;
-  readonly Timeout: number;
-  readonly MaxRetries: number;
-  readonly TransformEncryption: TransformEncryption;
+export interface GetMLTransformResponse {
+  readonly TransformId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly CreatedOn?: Date;
+  readonly LastModifiedOn?: Date;
+  readonly InputRecordTables?: [];
+  readonly Parameters?: TransformParameters;
+  readonly EvaluationMetrics?: EvaluationMetrics;
+  readonly LabelCount?: number;
+  readonly Schema?: [];
+  readonly Role?: string;
+  readonly GlueVersion?: string;
+  readonly MaxCapacity?: unknown;
+  readonly WorkerType?: string;
+  readonly NumberOfWorkers?: number;
+  readonly Timeout?: number;
+  readonly MaxRetries?: number;
+  readonly TransformEncryption?: TransformEncryption;
 }
 
-interface GetMLTransformsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filter: TransformFilterCriteria;
-  readonly Sort: TransformSortCriteria;
+export interface GetMLTransformsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filter?: TransformFilterCriteria;
+  readonly Sort?: TransformSortCriteria;
 }
 
-interface GetMLTransformsResponse {
+export interface GetMLTransformsResponse {
   readonly Transforms: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface GetMappingRequest {
+export interface GetMappingRequest {
   readonly Source: CatalogEntry;
-  readonly Sinks: [];
-  readonly Location: Location;
+  readonly Sinks?: [];
+  readonly Location?: Location;
 }
 
-interface GetMappingResponse {
+export interface GetMappingResponse {
   readonly Mapping: [];
 }
 
-interface GetPartitionIndexesRequest {
-  readonly CatalogId: string;
+export interface GetPartitionIndexesRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface GetPartitionIndexesResponse {
-  readonly PartitionIndexDescriptorList: [];
-  readonly NextToken: string;
+export interface GetPartitionIndexesResponse {
+  readonly PartitionIndexDescriptorList?: [];
+  readonly NextToken?: string;
 }
 
-interface GetPartitionRequest {
-  readonly CatalogId: string;
+export interface GetPartitionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionValues: [];
 }
 
-interface GetPartitionResponse {
-  readonly Partition: Partition;
+export interface GetPartitionResponse {
+  readonly Partition?: Partition;
 }
 
-interface GetPartitionsRequest {
-  readonly CatalogId: string;
+export interface GetPartitionsRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly Expression: string;
-  readonly NextToken: string;
-  readonly Segment: Segment;
-  readonly MaxResults: number;
-  readonly ExcludeColumnSchema: boolean;
-  readonly TransactionId: string;
-  readonly QueryAsOfTime: Date;
+  readonly Expression?: string;
+  readonly NextToken?: string;
+  readonly Segment?: Segment;
+  readonly MaxResults?: number;
+  readonly ExcludeColumnSchema?: boolean;
+  readonly TransactionId?: string;
+  readonly QueryAsOfTime?: Date;
 }
 
-interface GetPartitionsResponse {
-  readonly Partitions: [];
-  readonly NextToken: string;
+export interface GetPartitionsResponse {
+  readonly Partitions?: [];
+  readonly NextToken?: string;
 }
 
-interface GetPlanRequest {
+export interface GetPlanRequest {
   readonly Mapping: [];
   readonly Source: CatalogEntry;
-  readonly Sinks: [];
-  readonly Location: Location;
-  readonly Language: string;
-  readonly AdditionalPlanOptionsMap: {[key: string]: any};
+  readonly Sinks?: [];
+  readonly Location?: Location;
+  readonly Language?: string;
+  readonly AdditionalPlanOptionsMap?: {[key: string]: any};
 }
 
-interface GetPlanResponse {
-  readonly PythonScript: string;
-  readonly ScalaCode: string;
+export interface GetPlanResponse {
+  readonly PythonScript?: string;
+  readonly ScalaCode?: string;
 }
 
-interface GetRegistryInput {
+export interface GetRegistryInput {
   readonly RegistryId: RegistryId;
 }
 
-interface GetRegistryResponse {
-  readonly RegistryName: string;
-  readonly RegistryArn: string;
-  readonly Description: string;
-  readonly Status: string;
-  readonly CreatedTime: string;
-  readonly UpdatedTime: string;
+export interface GetRegistryResponse {
+  readonly RegistryName?: string;
+  readonly RegistryArn?: string;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly CreatedTime?: string;
+  readonly UpdatedTime?: string;
 }
 
-interface GetResourcePoliciesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface GetResourcePoliciesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetResourcePoliciesResponse {
-  readonly GetResourcePoliciesResponseList: [];
-  readonly NextToken: string;
+export interface GetResourcePoliciesResponse {
+  readonly GetResourcePoliciesResponseList?: [];
+  readonly NextToken?: string;
 }
 
-interface GetResourcePolicyRequest {
-  readonly ResourceArn: string;
+export interface GetResourcePolicyRequest {
+  readonly ResourceArn?: string;
 }
 
-interface GetResourcePolicyResponse {
-  readonly PolicyInJson: string;
-  readonly PolicyHash: string;
-  readonly CreateTime: Date;
-  readonly UpdateTime: Date;
+export interface GetResourcePolicyResponse {
+  readonly PolicyInJson?: string;
+  readonly PolicyHash?: string;
+  readonly CreateTime?: Date;
+  readonly UpdateTime?: Date;
 }
 
-interface GetSchemaByDefinitionInput {
+export interface GetSchemaByDefinitionInput {
   readonly SchemaId: SchemaId;
   readonly SchemaDefinition: string;
 }
 
-interface GetSchemaByDefinitionResponse {
-  readonly SchemaVersionId: string;
-  readonly SchemaArn: string;
-  readonly DataFormat: string;
-  readonly Status: string;
-  readonly CreatedTime: string;
+export interface GetSchemaByDefinitionResponse {
+  readonly SchemaVersionId?: string;
+  readonly SchemaArn?: string;
+  readonly DataFormat?: string;
+  readonly Status?: string;
+  readonly CreatedTime?: string;
 }
 
-interface GetSchemaInput {
+export interface GetSchemaInput {
   readonly SchemaId: SchemaId;
 }
 
-interface GetSchemaResponse {
-  readonly RegistryName: string;
-  readonly RegistryArn: string;
-  readonly SchemaName: string;
-  readonly SchemaArn: string;
-  readonly Description: string;
-  readonly DataFormat: string;
-  readonly Compatibility: string;
-  readonly SchemaCheckpoint: number;
-  readonly LatestSchemaVersion: number;
-  readonly NextSchemaVersion: number;
-  readonly SchemaStatus: string;
-  readonly CreatedTime: string;
-  readonly UpdatedTime: string;
+export interface GetSchemaResponse {
+  readonly RegistryName?: string;
+  readonly RegistryArn?: string;
+  readonly SchemaName?: string;
+  readonly SchemaArn?: string;
+  readonly Description?: string;
+  readonly DataFormat?: string;
+  readonly Compatibility?: string;
+  readonly SchemaCheckpoint?: number;
+  readonly LatestSchemaVersion?: number;
+  readonly NextSchemaVersion?: number;
+  readonly SchemaStatus?: string;
+  readonly CreatedTime?: string;
+  readonly UpdatedTime?: string;
 }
 
-interface GetSchemaVersionInput {
-  readonly SchemaId: SchemaId;
-  readonly SchemaVersionId: string;
-  readonly SchemaVersionNumber: SchemaVersionNumber;
+export interface GetSchemaVersionInput {
+  readonly SchemaId?: SchemaId;
+  readonly SchemaVersionId?: string;
+  readonly SchemaVersionNumber?: SchemaVersionNumber;
 }
 
-interface GetSchemaVersionResponse {
-  readonly SchemaVersionId: string;
-  readonly SchemaDefinition: string;
-  readonly DataFormat: string;
-  readonly SchemaArn: string;
-  readonly VersionNumber: number;
-  readonly Status: string;
-  readonly CreatedTime: string;
+export interface GetSchemaVersionResponse {
+  readonly SchemaVersionId?: string;
+  readonly SchemaDefinition?: string;
+  readonly DataFormat?: string;
+  readonly SchemaArn?: string;
+  readonly VersionNumber?: number;
+  readonly Status?: string;
+  readonly CreatedTime?: string;
 }
 
-interface GetSchemaVersionsDiffInput {
+export interface GetSchemaVersionsDiffInput {
   readonly SchemaId: SchemaId;
   readonly FirstSchemaVersionNumber: SchemaVersionNumber;
   readonly SecondSchemaVersionNumber: SchemaVersionNumber;
   readonly SchemaDiffType: string;
 }
 
-interface GetSchemaVersionsDiffResponse {
-  readonly Diff: string;
+export interface GetSchemaVersionsDiffResponse {
+  readonly Diff?: string;
 }
 
-interface GetSecurityConfigurationRequest {
+export interface GetSecurityConfigurationRequest {
   readonly Name: string;
 }
 
-interface GetSecurityConfigurationResponse {
-  readonly SecurityConfiguration: SecurityConfiguration;
+export interface GetSecurityConfigurationResponse {
+  readonly SecurityConfiguration?: SecurityConfiguration;
 }
 
-interface GetSecurityConfigurationsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface GetSecurityConfigurationsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetSecurityConfigurationsResponse {
-  readonly SecurityConfigurations: [];
-  readonly NextToken: string;
+export interface GetSecurityConfigurationsResponse {
+  readonly SecurityConfigurations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetTableRequest {
-  readonly CatalogId: string;
+export interface GetTableRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly Name: string;
-  readonly TransactionId: string;
-  readonly QueryAsOfTime: Date;
+  readonly TransactionId?: string;
+  readonly QueryAsOfTime?: Date;
 }
 
-interface GetTableResponse {
-  readonly Table: Table;
+export interface GetTableResponse {
+  readonly Table?: Table;
 }
 
-interface GetTableVersionRequest {
-  readonly CatalogId: string;
+export interface GetTableVersionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly VersionId: string;
+  readonly VersionId?: string;
 }
 
-interface GetTableVersionResponse {
-  readonly TableVersion: TableVersion;
+export interface GetTableVersionResponse {
+  readonly TableVersion?: TableVersion;
 }
 
-interface GetTableVersionsRequest {
-  readonly CatalogId: string;
+export interface GetTableVersionsRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetTableVersionsResponse {
-  readonly TableVersions: [];
-  readonly NextToken: string;
+export interface GetTableVersionsResponse {
+  readonly TableVersions?: [];
+  readonly NextToken?: string;
 }
 
-interface GetTablesRequest {
-  readonly CatalogId: string;
+export interface GetTablesRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
-  readonly Expression: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly TransactionId: string;
-  readonly QueryAsOfTime: Date;
+  readonly Expression?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly TransactionId?: string;
+  readonly QueryAsOfTime?: Date;
 }
 
-interface GetTablesResponse {
-  readonly TableList: [];
-  readonly NextToken: string;
+export interface GetTablesResponse {
+  readonly TableList?: [];
+  readonly NextToken?: string;
 }
 
-interface GetTagsRequest {
+export interface GetTagsRequest {
   readonly ResourceArn: string;
 }
 
-interface GetTagsResponse {
-  readonly Tags: {[key: string]: any};
+export interface GetTagsResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface GetTriggerRequest {
+export interface GetTriggerRequest {
   readonly Name: string;
 }
 
-interface GetTriggerResponse {
-  readonly Trigger: Trigger;
+export interface GetTriggerResponse {
+  readonly Trigger?: Trigger;
 }
 
-interface GetTriggersRequest {
-  readonly NextToken: string;
-  readonly DependentJobName: string;
-  readonly MaxResults: number;
+export interface GetTriggersRequest {
+  readonly NextToken?: string;
+  readonly DependentJobName?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetTriggersResponse {
-  readonly Triggers: [];
-  readonly NextToken: string;
+export interface GetTriggersResponse {
+  readonly Triggers?: [];
+  readonly NextToken?: string;
 }
 
-interface GetUserDefinedFunctionRequest {
-  readonly CatalogId: string;
+export interface GetUserDefinedFunctionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly FunctionName: string;
 }
 
-interface GetUserDefinedFunctionResponse {
-  readonly UserDefinedFunction: UserDefinedFunction;
+export interface GetUserDefinedFunctionResponse {
+  readonly UserDefinedFunction?: UserDefinedFunction;
 }
 
-interface GetUserDefinedFunctionsRequest {
-  readonly CatalogId: string;
-  readonly DatabaseName: string;
+export interface GetUserDefinedFunctionsRequest {
+  readonly CatalogId?: string;
+  readonly DatabaseName?: string;
   readonly Pattern: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetUserDefinedFunctionsResponse {
-  readonly UserDefinedFunctions: [];
-  readonly NextToken: string;
+export interface GetUserDefinedFunctionsResponse {
+  readonly UserDefinedFunctions?: [];
+  readonly NextToken?: string;
 }
 
-interface GetWorkflowRequest {
+export interface GetWorkflowRequest {
   readonly Name: string;
-  readonly IncludeGraph: boolean;
+  readonly IncludeGraph?: boolean;
 }
 
-interface GetWorkflowResponse {
-  readonly Workflow: Workflow;
+export interface GetWorkflowResponse {
+  readonly Workflow?: Workflow;
 }
 
-interface GetWorkflowRunPropertiesRequest {
-  readonly Name: string;
-  readonly RunId: string;
-}
-
-interface GetWorkflowRunPropertiesResponse {
-  readonly RunProperties: {[key: string]: any};
-}
-
-interface GetWorkflowRunRequest {
+export interface GetWorkflowRunPropertiesRequest {
   readonly Name: string;
   readonly RunId: string;
-  readonly IncludeGraph: boolean;
 }
 
-interface GetWorkflowRunResponse {
-  readonly Run: WorkflowRun;
+export interface GetWorkflowRunPropertiesResponse {
+  readonly RunProperties?: {[key: string]: any};
 }
 
-interface GetWorkflowRunsRequest {
+export interface GetWorkflowRunRequest {
   readonly Name: string;
-  readonly IncludeGraph: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly RunId: string;
+  readonly IncludeGraph?: boolean;
 }
 
-interface GetWorkflowRunsResponse {
-  readonly Runs: [];
-  readonly NextToken: string;
+export interface GetWorkflowRunResponse {
+  readonly Run?: WorkflowRun;
 }
 
-interface GlueEncryptionException {
-  readonly Message: string;
+export interface GetWorkflowRunsRequest {
+  readonly Name: string;
+  readonly IncludeGraph?: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GluePolicy {
-  readonly PolicyInJson: string;
-  readonly PolicyHash: string;
-  readonly CreateTime: Date;
-  readonly UpdateTime: Date;
+export interface GetWorkflowRunsResponse {
+  readonly Runs?: [];
+  readonly NextToken?: string;
 }
 
-interface GlueTable {
+export interface GlueEncryptionException {
+  readonly Message?: string;
+}
+
+export interface GluePolicy {
+  readonly PolicyInJson?: string;
+  readonly PolicyHash?: string;
+  readonly CreateTime?: Date;
+  readonly UpdateTime?: Date;
+}
+
+export interface GlueTable {
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly CatalogId: string;
-  readonly ConnectionName: string;
+  readonly CatalogId?: string;
+  readonly ConnectionName?: string;
 }
 
-interface GrokClassifier {
+export interface GrokClassifier {
   readonly Name: string;
   readonly Classification: string;
-  readonly CreationTime: Date;
-  readonly LastUpdated: Date;
-  readonly Version: number;
+  readonly CreationTime?: Date;
+  readonly LastUpdated?: Date;
+  readonly Version?: number;
   readonly GrokPattern: string;
-  readonly CustomPatterns: string;
+  readonly CustomPatterns?: string;
 }
 
-interface IdempotentParameterMismatchException {
-  readonly Message: string;
+export interface IdempotentParameterMismatchException {
+  readonly Message?: string;
 }
 
-interface IllegalBlueprintStateException {
-  readonly Message: string;
+export interface IllegalBlueprintStateException {
+  readonly Message?: string;
 }
 
-interface IllegalWorkflowStateException {
-  readonly Message: string;
+export interface IllegalWorkflowStateException {
+  readonly Message?: string;
 }
 
-interface ImportCatalogToGlueRequest {
-  readonly CatalogId: string;
+export interface ImportCatalogToGlueRequest {
+  readonly CatalogId?: string;
 }
 
-interface ImportCatalogToGlueResponse {
+export interface ImportCatalogToGlueResponse {
 }
 
-interface ImportLabelsTaskRunProperties {
-  readonly InputS3Path: string;
-  readonly Replace: boolean;
+export interface ImportLabelsTaskRunProperties {
+  readonly InputS3Path?: string;
+  readonly Replace?: boolean;
 }
 
-interface InternalServiceException {
-  readonly Message: string;
+export interface InternalServiceException {
+  readonly Message?: string;
 }
 
-interface InvalidInputException {
-  readonly Message: string;
+export interface InvalidInputException {
+  readonly Message?: string;
 }
 
-interface InvalidStateException {
-  readonly Message: string;
+export interface InvalidStateException {
+  readonly Message?: string;
 }
 
-interface JdbcTarget {
-  readonly ConnectionName: string;
-  readonly Path: string;
-  readonly Exclusions: [];
+export interface JdbcTarget {
+  readonly ConnectionName?: string;
+  readonly Path?: string;
+  readonly Exclusions?: [];
 }
 
-interface Job {
+export interface Job {
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly LogUri?: string;
+  readonly Role?: string;
+  readonly CreatedOn?: Date;
+  readonly LastModifiedOn?: Date;
+  readonly ExecutionProperty?: ExecutionProperty;
+  readonly Command?: JobCommand;
+  readonly DefaultArguments?: {[key: string]: any};
+  readonly NonOverridableArguments?: {[key: string]: any};
+  readonly Connections?: ConnectionsList;
+  readonly MaxRetries?: number;
+  readonly AllocatedCapacity?: number;
+  readonly Timeout?: number;
+  readonly MaxCapacity?: unknown;
+  readonly WorkerType?: string;
+  readonly NumberOfWorkers?: number;
+  readonly SecurityConfiguration?: string;
+  readonly NotificationProperty?: NotificationProperty;
+  readonly GlueVersion?: string;
+}
+
+export interface JobBookmarkEntry {
+  readonly JobName?: string;
+  readonly Version?: number;
+  readonly Run?: number;
+  readonly Attempt?: number;
+  readonly PreviousRunId?: string;
+  readonly RunId?: string;
+  readonly JobBookmark?: string;
+}
+
+export interface JobBookmarksEncryption {
+  readonly JobBookmarksEncryptionMode?: string;
+  readonly KmsKeyArn?: string;
+}
+
+export interface JobCommand {
+  readonly Name?: string;
+  readonly ScriptLocation?: string;
+  readonly PythonVersion?: string;
+}
+
+export interface JobNodeDetails {
+  readonly JobRuns?: [];
+}
+
+export interface JobRun {
+  readonly Id?: string;
+  readonly Attempt?: number;
+  readonly PreviousRunId?: string;
+  readonly TriggerName?: string;
+  readonly JobName?: string;
+  readonly StartedOn?: Date;
+  readonly LastModifiedOn?: Date;
+  readonly CompletedOn?: Date;
+  readonly JobRunState?: string;
+  readonly Arguments?: {[key: string]: any};
+  readonly ErrorMessage?: string;
+  readonly PredecessorRuns?: [];
+  readonly AllocatedCapacity?: number;
+  readonly ExecutionTime?: number;
+  readonly Timeout?: number;
+  readonly MaxCapacity?: unknown;
+  readonly WorkerType?: string;
+  readonly NumberOfWorkers?: number;
+  readonly SecurityConfiguration?: string;
+  readonly LogGroupName?: string;
+  readonly NotificationProperty?: NotificationProperty;
+  readonly GlueVersion?: string;
+}
+
+export interface JobUpdate {
+  readonly Description?: string;
+  readonly LogUri?: string;
+  readonly Role?: string;
+  readonly ExecutionProperty?: ExecutionProperty;
+  readonly Command?: JobCommand;
+  readonly DefaultArguments?: {[key: string]: any};
+  readonly NonOverridableArguments?: {[key: string]: any};
+  readonly Connections?: ConnectionsList;
+  readonly MaxRetries?: number;
+  readonly AllocatedCapacity?: number;
+  readonly Timeout?: number;
+  readonly MaxCapacity?: unknown;
+  readonly WorkerType?: string;
+  readonly NumberOfWorkers?: number;
+  readonly SecurityConfiguration?: string;
+  readonly NotificationProperty?: NotificationProperty;
+  readonly GlueVersion?: string;
+}
+
+export interface JsonClassifier {
   readonly Name: string;
-  readonly Description: string;
-  readonly LogUri: string;
-  readonly Role: string;
-  readonly CreatedOn: Date;
-  readonly LastModifiedOn: Date;
-  readonly ExecutionProperty: ExecutionProperty;
-  readonly Command: JobCommand;
-  readonly DefaultArguments: {[key: string]: any};
-  readonly NonOverridableArguments: {[key: string]: any};
-  readonly Connections: ConnectionsList;
-  readonly MaxRetries: number;
-  readonly AllocatedCapacity: number;
-  readonly Timeout: number;
-  readonly MaxCapacity: unknown;
-  readonly WorkerType: string;
-  readonly NumberOfWorkers: number;
-  readonly SecurityConfiguration: string;
-  readonly NotificationProperty: NotificationProperty;
-  readonly GlueVersion: string;
-}
-
-interface JobBookmarkEntry {
-  readonly JobName: string;
-  readonly Version: number;
-  readonly Run: number;
-  readonly Attempt: number;
-  readonly PreviousRunId: string;
-  readonly RunId: string;
-  readonly JobBookmark: string;
-}
-
-interface JobBookmarksEncryption {
-  readonly JobBookmarksEncryptionMode: string;
-  readonly KmsKeyArn: string;
-}
-
-interface JobCommand {
-  readonly Name: string;
-  readonly ScriptLocation: string;
-  readonly PythonVersion: string;
-}
-
-interface JobNodeDetails {
-  readonly JobRuns: [];
-}
-
-interface JobRun {
-  readonly Id: string;
-  readonly Attempt: number;
-  readonly PreviousRunId: string;
-  readonly TriggerName: string;
-  readonly JobName: string;
-  readonly StartedOn: Date;
-  readonly LastModifiedOn: Date;
-  readonly CompletedOn: Date;
-  readonly JobRunState: string;
-  readonly Arguments: {[key: string]: any};
-  readonly ErrorMessage: string;
-  readonly PredecessorRuns: [];
-  readonly AllocatedCapacity: number;
-  readonly ExecutionTime: number;
-  readonly Timeout: number;
-  readonly MaxCapacity: unknown;
-  readonly WorkerType: string;
-  readonly NumberOfWorkers: number;
-  readonly SecurityConfiguration: string;
-  readonly LogGroupName: string;
-  readonly NotificationProperty: NotificationProperty;
-  readonly GlueVersion: string;
-}
-
-interface JobUpdate {
-  readonly Description: string;
-  readonly LogUri: string;
-  readonly Role: string;
-  readonly ExecutionProperty: ExecutionProperty;
-  readonly Command: JobCommand;
-  readonly DefaultArguments: {[key: string]: any};
-  readonly NonOverridableArguments: {[key: string]: any};
-  readonly Connections: ConnectionsList;
-  readonly MaxRetries: number;
-  readonly AllocatedCapacity: number;
-  readonly Timeout: number;
-  readonly MaxCapacity: unknown;
-  readonly WorkerType: string;
-  readonly NumberOfWorkers: number;
-  readonly SecurityConfiguration: string;
-  readonly NotificationProperty: NotificationProperty;
-  readonly GlueVersion: string;
-}
-
-interface JsonClassifier {
-  readonly Name: string;
-  readonly CreationTime: Date;
-  readonly LastUpdated: Date;
-  readonly Version: number;
+  readonly CreationTime?: Date;
+  readonly LastUpdated?: Date;
+  readonly Version?: number;
   readonly JsonPath: string;
 }
 
-interface KeySchemaElement {
+export interface KeySchemaElement {
   readonly Name: string;
   readonly Type: string;
 }
 
-interface LabelingSetGenerationTaskRunProperties {
-  readonly OutputS3Path: string;
+export interface LabelingSetGenerationTaskRunProperties {
+  readonly OutputS3Path?: string;
 }
 
-interface LastActiveDefinition {
-  readonly Description: string;
-  readonly LastModifiedOn: Date;
-  readonly ParameterSpec: string;
-  readonly BlueprintLocation: string;
-  readonly BlueprintServiceLocation: string;
+export interface LastActiveDefinition {
+  readonly Description?: string;
+  readonly LastModifiedOn?: Date;
+  readonly ParameterSpec?: string;
+  readonly BlueprintLocation?: string;
+  readonly BlueprintServiceLocation?: string;
 }
 
-interface LastCrawlInfo {
-  readonly Status: string;
-  readonly ErrorMessage: string;
-  readonly LogGroup: string;
-  readonly LogStream: string;
-  readonly MessagePrefix: string;
-  readonly StartTime: Date;
+export interface LastCrawlInfo {
+  readonly Status?: string;
+  readonly ErrorMessage?: string;
+  readonly LogGroup?: string;
+  readonly LogStream?: string;
+  readonly MessagePrefix?: string;
+  readonly StartTime?: Date;
 }
 
-interface LineageConfiguration {
-  readonly CrawlerLineageSettings: string;
+export interface LineageConfiguration {
+  readonly CrawlerLineageSettings?: string;
 }
 
-interface ListBlueprintsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Tags: {[key: string]: any};
+export interface ListBlueprintsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListBlueprintsResponse {
-  readonly Blueprints: [];
-  readonly NextToken: string;
+export interface ListBlueprintsResponse {
+  readonly Blueprints?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCrawlersRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Tags: {[key: string]: any};
+export interface ListCrawlersRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListCrawlersResponse {
-  readonly CrawlerNames: [];
-  readonly NextToken: string;
+export interface ListCrawlersResponse {
+  readonly CrawlerNames?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDevEndpointsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Tags: {[key: string]: any};
+export interface ListDevEndpointsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListDevEndpointsResponse {
-  readonly DevEndpointNames: [];
-  readonly NextToken: string;
+export interface ListDevEndpointsResponse {
+  readonly DevEndpointNames?: [];
+  readonly NextToken?: string;
 }
 
-interface ListJobsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Tags: {[key: string]: any};
+export interface ListJobsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListJobsResponse {
-  readonly JobNames: [];
-  readonly NextToken: string;
+export interface ListJobsResponse {
+  readonly JobNames?: [];
+  readonly NextToken?: string;
 }
 
-interface ListMLTransformsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filter: TransformFilterCriteria;
-  readonly Sort: TransformSortCriteria;
-  readonly Tags: {[key: string]: any};
+export interface ListMLTransformsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filter?: TransformFilterCriteria;
+  readonly Sort?: TransformSortCriteria;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListMLTransformsResponse {
+export interface ListMLTransformsResponse {
   readonly TransformIds: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListRegistriesInput {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListRegistriesInput {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListRegistriesResponse {
-  readonly Registries: [];
-  readonly NextToken: string;
+export interface ListRegistriesResponse {
+  readonly Registries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListSchemaVersionsInput {
+export interface ListSchemaVersionsInput {
   readonly SchemaId: SchemaId;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListSchemaVersionsResponse {
-  readonly Schemas: [];
-  readonly NextToken: string;
+export interface ListSchemaVersionsResponse {
+  readonly Schemas?: [];
+  readonly NextToken?: string;
 }
 
-interface ListSchemasInput {
-  readonly RegistryId: RegistryId;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListSchemasInput {
+  readonly RegistryId?: RegistryId;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListSchemasResponse {
-  readonly Schemas: [];
-  readonly NextToken: string;
+export interface ListSchemasResponse {
+  readonly Schemas?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTriggersRequest {
-  readonly NextToken: string;
-  readonly DependentJobName: string;
-  readonly MaxResults: number;
-  readonly Tags: {[key: string]: any};
+export interface ListTriggersRequest {
+  readonly NextToken?: string;
+  readonly DependentJobName?: string;
+  readonly MaxResults?: number;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListTriggersResponse {
-  readonly TriggerNames: [];
-  readonly NextToken: string;
+export interface ListTriggersResponse {
+  readonly TriggerNames?: [];
+  readonly NextToken?: string;
 }
 
-interface ListWorkflowsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListWorkflowsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListWorkflowsResponse {
-  readonly Workflows: [];
-  readonly NextToken: string;
+export interface ListWorkflowsResponse {
+  readonly Workflows?: [];
+  readonly NextToken?: string;
 }
 
-interface Location {
-  readonly Jdbc: [];
-  readonly S3: [];
-  readonly DynamoDB: [];
+export interface Location {
+  readonly Jdbc?: [];
+  readonly S3?: [];
+  readonly DynamoDB?: [];
 }
 
-interface LongColumnStatisticsData {
-  readonly MinimumValue: number;
-  readonly MaximumValue: number;
+export interface LongColumnStatisticsData {
+  readonly MinimumValue?: number;
+  readonly MaximumValue?: number;
   readonly NumberOfNulls: number;
   readonly NumberOfDistinctValues: number;
 }
 
-interface MLTransform {
-  readonly TransformId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Status: string;
-  readonly CreatedOn: Date;
-  readonly LastModifiedOn: Date;
-  readonly InputRecordTables: [];
-  readonly Parameters: TransformParameters;
-  readonly EvaluationMetrics: EvaluationMetrics;
-  readonly LabelCount: number;
-  readonly Schema: [];
-  readonly Role: string;
-  readonly GlueVersion: string;
-  readonly MaxCapacity: unknown;
-  readonly WorkerType: string;
-  readonly NumberOfWorkers: number;
-  readonly Timeout: number;
-  readonly MaxRetries: number;
-  readonly TransformEncryption: TransformEncryption;
+export interface MLTransform {
+  readonly TransformId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly CreatedOn?: Date;
+  readonly LastModifiedOn?: Date;
+  readonly InputRecordTables?: [];
+  readonly Parameters?: TransformParameters;
+  readonly EvaluationMetrics?: EvaluationMetrics;
+  readonly LabelCount?: number;
+  readonly Schema?: [];
+  readonly Role?: string;
+  readonly GlueVersion?: string;
+  readonly MaxCapacity?: unknown;
+  readonly WorkerType?: string;
+  readonly NumberOfWorkers?: number;
+  readonly Timeout?: number;
+  readonly MaxRetries?: number;
+  readonly TransformEncryption?: TransformEncryption;
 }
 
-interface MLTransformNotReadyException {
-  readonly Message: string;
+export interface MLTransformNotReadyException {
+  readonly Message?: string;
 }
 
-interface MLUserDataEncryption {
+export interface MLUserDataEncryption {
   readonly MlUserDataEncryptionMode: string;
-  readonly KmsKeyId: string;
+  readonly KmsKeyId?: string;
 }
 
-interface MappingEntry {
-  readonly SourceTable: string;
-  readonly SourcePath: string;
-  readonly SourceType: string;
-  readonly TargetTable: string;
-  readonly TargetPath: string;
-  readonly TargetType: string;
+export interface MappingEntry {
+  readonly SourceTable?: string;
+  readonly SourcePath?: string;
+  readonly SourceType?: string;
+  readonly TargetTable?: string;
+  readonly TargetPath?: string;
+  readonly TargetType?: string;
 }
 
-interface MetadataInfo {
-  readonly MetadataValue: string;
-  readonly CreatedTime: string;
-  readonly OtherMetadataValueList: [];
+export interface MetadataInfo {
+  readonly MetadataValue?: string;
+  readonly CreatedTime?: string;
+  readonly OtherMetadataValueList?: [];
 }
 
-interface MetadataKeyValuePair {
-  readonly MetadataKey: string;
-  readonly MetadataValue: string;
+export interface MetadataKeyValuePair {
+  readonly MetadataKey?: string;
+  readonly MetadataValue?: string;
 }
 
-interface MongoDBTarget {
-  readonly ConnectionName: string;
-  readonly Path: string;
-  readonly ScanAll: boolean;
+export interface MongoDBTarget {
+  readonly ConnectionName?: string;
+  readonly Path?: string;
+  readonly ScanAll?: boolean;
 }
 
-interface NoScheduleException {
-  readonly Message: string;
+export interface NoScheduleException {
+  readonly Message?: string;
 }
 
-interface Node {
-  readonly Type: string;
-  readonly Name: string;
-  readonly UniqueId: string;
-  readonly TriggerDetails: TriggerNodeDetails;
-  readonly JobDetails: JobNodeDetails;
-  readonly CrawlerDetails: CrawlerNodeDetails;
+export interface Node {
+  readonly Type?: string;
+  readonly Name?: string;
+  readonly UniqueId?: string;
+  readonly TriggerDetails?: TriggerNodeDetails;
+  readonly JobDetails?: JobNodeDetails;
+  readonly CrawlerDetails?: CrawlerNodeDetails;
 }
 
-interface NotificationProperty {
-  readonly NotifyDelayAfter: number;
+export interface NotificationProperty {
+  readonly NotifyDelayAfter?: number;
 }
 
-interface OperationTimeoutException {
-  readonly Message: string;
+export interface OperationTimeoutException {
+  readonly Message?: string;
 }
 
-interface Order {
+export interface Order {
   readonly Column: string;
   readonly SortOrder: number;
 }
 
-interface OtherMetadataValueListItem {
-  readonly MetadataValue: string;
-  readonly CreatedTime: string;
+export interface OtherMetadataValueListItem {
+  readonly MetadataValue?: string;
+  readonly CreatedTime?: string;
 }
 
-interface Partition {
-  readonly Values: [];
-  readonly DatabaseName: string;
-  readonly TableName: string;
-  readonly CreationTime: Date;
-  readonly LastAccessTime: Date;
-  readonly StorageDescriptor: StorageDescriptor;
-  readonly Parameters: {[key: string]: any};
-  readonly LastAnalyzedTime: Date;
-  readonly CatalogId: string;
+export interface Partition {
+  readonly Values?: [];
+  readonly DatabaseName?: string;
+  readonly TableName?: string;
+  readonly CreationTime?: Date;
+  readonly LastAccessTime?: Date;
+  readonly StorageDescriptor?: StorageDescriptor;
+  readonly Parameters?: {[key: string]: any};
+  readonly LastAnalyzedTime?: Date;
+  readonly CatalogId?: string;
 }
 
-interface PartitionError {
-  readonly PartitionValues: [];
-  readonly ErrorDetail: ErrorDetail;
+export interface PartitionError {
+  readonly PartitionValues?: [];
+  readonly ErrorDetail?: ErrorDetail;
 }
 
-interface PartitionIndex {
+export interface PartitionIndex {
   readonly Keys: [];
   readonly IndexName: string;
 }
 
-interface PartitionIndexDescriptor {
+export interface PartitionIndexDescriptor {
   readonly IndexName: string;
   readonly Keys: [];
   readonly IndexStatus: string;
-  readonly BackfillErrors: [];
+  readonly BackfillErrors?: [];
 }
 
-interface PartitionInput {
+export interface PartitionInput {
+  readonly Values?: [];
+  readonly LastAccessTime?: Date;
+  readonly StorageDescriptor?: StorageDescriptor;
+  readonly Parameters?: {[key: string]: any};
+  readonly LastAnalyzedTime?: Date;
+}
+
+export interface PartitionValueList {
   readonly Values: [];
-  readonly LastAccessTime: Date;
-  readonly StorageDescriptor: StorageDescriptor;
-  readonly Parameters: {[key: string]: any};
-  readonly LastAnalyzedTime: Date;
 }
 
-interface PartitionValueList {
-  readonly Values: [];
+export interface PhysicalConnectionRequirements {
+  readonly SubnetId?: string;
+  readonly SecurityGroupIdList?: [];
+  readonly AvailabilityZone?: string;
 }
 
-interface PhysicalConnectionRequirements {
-  readonly SubnetId: string;
-  readonly SecurityGroupIdList: [];
-  readonly AvailabilityZone: string;
+export interface Predecessor {
+  readonly JobName?: string;
+  readonly RunId?: string;
 }
 
-interface Predecessor {
-  readonly JobName: string;
-  readonly RunId: string;
+export interface Predicate {
+  readonly Logical?: string;
+  readonly Conditions?: [];
 }
 
-interface Predicate {
-  readonly Logical: string;
-  readonly Conditions: [];
+export interface PrincipalPermissions {
+  readonly Principal?: DataLakePrincipal;
+  readonly Permissions?: [];
 }
 
-interface PrincipalPermissions {
-  readonly Principal: DataLakePrincipal;
-  readonly Permissions: [];
+export interface PropertyPredicate {
+  readonly Key?: string;
+  readonly Value?: string;
+  readonly Comparator?: string;
 }
 
-interface PropertyPredicate {
-  readonly Key: string;
-  readonly Value: string;
-  readonly Comparator: string;
-}
-
-interface PutDataCatalogEncryptionSettingsRequest {
-  readonly CatalogId: string;
+export interface PutDataCatalogEncryptionSettingsRequest {
+  readonly CatalogId?: string;
   readonly DataCatalogEncryptionSettings: DataCatalogEncryptionSettings;
 }
 
-interface PutDataCatalogEncryptionSettingsResponse {
+export interface PutDataCatalogEncryptionSettingsResponse {
 }
 
-interface PutResourcePolicyRequest {
+export interface PutResourcePolicyRequest {
   readonly PolicyInJson: string;
-  readonly ResourceArn: string;
-  readonly PolicyHashCondition: string;
-  readonly PolicyExistsCondition: string;
-  readonly EnableHybrid: string;
+  readonly ResourceArn?: string;
+  readonly PolicyHashCondition?: string;
+  readonly PolicyExistsCondition?: string;
+  readonly EnableHybrid?: string;
 }
 
-interface PutResourcePolicyResponse {
-  readonly PolicyHash: string;
+export interface PutResourcePolicyResponse {
+  readonly PolicyHash?: string;
 }
 
-interface PutSchemaVersionMetadataInput {
-  readonly SchemaId: SchemaId;
-  readonly SchemaVersionNumber: SchemaVersionNumber;
-  readonly SchemaVersionId: string;
+export interface PutSchemaVersionMetadataInput {
+  readonly SchemaId?: SchemaId;
+  readonly SchemaVersionNumber?: SchemaVersionNumber;
+  readonly SchemaVersionId?: string;
   readonly MetadataKeyValue: MetadataKeyValuePair;
 }
 
-interface PutSchemaVersionMetadataResponse {
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly RegistryName: string;
-  readonly LatestVersion: boolean;
-  readonly VersionNumber: number;
-  readonly SchemaVersionId: string;
-  readonly MetadataKey: string;
-  readonly MetadataValue: string;
+export interface PutSchemaVersionMetadataResponse {
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly RegistryName?: string;
+  readonly LatestVersion?: boolean;
+  readonly VersionNumber?: number;
+  readonly SchemaVersionId?: string;
+  readonly MetadataKey?: string;
+  readonly MetadataValue?: string;
 }
 
-interface PutWorkflowRunPropertiesRequest {
+export interface PutWorkflowRunPropertiesRequest {
   readonly Name: string;
   readonly RunId: string;
   readonly RunProperties: {[key: string]: any};
 }
 
-interface PutWorkflowRunPropertiesResponse {
+export interface PutWorkflowRunPropertiesResponse {
 }
 
-interface QuerySchemaVersionMetadataInput {
-  readonly SchemaId: SchemaId;
-  readonly SchemaVersionNumber: SchemaVersionNumber;
-  readonly SchemaVersionId: string;
-  readonly MetadataList: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface QuerySchemaVersionMetadataInput {
+  readonly SchemaId?: SchemaId;
+  readonly SchemaVersionNumber?: SchemaVersionNumber;
+  readonly SchemaVersionId?: string;
+  readonly MetadataList?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface QuerySchemaVersionMetadataResponse {
-  readonly MetadataInfoMap: {[key: string]: any};
-  readonly SchemaVersionId: string;
-  readonly NextToken: string;
+export interface QuerySchemaVersionMetadataResponse {
+  readonly MetadataInfoMap?: {[key: string]: any};
+  readonly SchemaVersionId?: string;
+  readonly NextToken?: string;
 }
 
-interface RecrawlPolicy {
-  readonly RecrawlBehavior: string;
+export interface RecrawlPolicy {
+  readonly RecrawlBehavior?: string;
 }
 
-interface RegisterSchemaVersionInput {
+export interface RegisterSchemaVersionInput {
   readonly SchemaId: SchemaId;
   readonly SchemaDefinition: string;
 }
 
-interface RegisterSchemaVersionResponse {
-  readonly SchemaVersionId: string;
-  readonly VersionNumber: number;
-  readonly Status: string;
+export interface RegisterSchemaVersionResponse {
+  readonly SchemaVersionId?: string;
+  readonly VersionNumber?: number;
+  readonly Status?: string;
 }
 
-interface RegistryId {
-  readonly RegistryName: string;
-  readonly RegistryArn: string;
+export interface RegistryId {
+  readonly RegistryName?: string;
+  readonly RegistryArn?: string;
 }
 
-interface RegistryListItem {
-  readonly RegistryName: string;
-  readonly RegistryArn: string;
-  readonly Description: string;
-  readonly Status: string;
-  readonly CreatedTime: string;
-  readonly UpdatedTime: string;
+export interface RegistryListItem {
+  readonly RegistryName?: string;
+  readonly RegistryArn?: string;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly CreatedTime?: string;
+  readonly UpdatedTime?: string;
 }
 
-interface RemoveSchemaVersionMetadataInput {
-  readonly SchemaId: SchemaId;
-  readonly SchemaVersionNumber: SchemaVersionNumber;
-  readonly SchemaVersionId: string;
+export interface RemoveSchemaVersionMetadataInput {
+  readonly SchemaId?: SchemaId;
+  readonly SchemaVersionNumber?: SchemaVersionNumber;
+  readonly SchemaVersionId?: string;
   readonly MetadataKeyValue: MetadataKeyValuePair;
 }
 
-interface RemoveSchemaVersionMetadataResponse {
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly RegistryName: string;
-  readonly LatestVersion: boolean;
-  readonly VersionNumber: number;
-  readonly SchemaVersionId: string;
-  readonly MetadataKey: string;
-  readonly MetadataValue: string;
+export interface RemoveSchemaVersionMetadataResponse {
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly RegistryName?: string;
+  readonly LatestVersion?: boolean;
+  readonly VersionNumber?: number;
+  readonly SchemaVersionId?: string;
+  readonly MetadataKey?: string;
+  readonly MetadataValue?: string;
 }
 
-interface ResetJobBookmarkRequest {
+export interface ResetJobBookmarkRequest {
   readonly JobName: string;
-  readonly RunId: string;
+  readonly RunId?: string;
 }
 
-interface ResetJobBookmarkResponse {
-  readonly JobBookmarkEntry: JobBookmarkEntry;
+export interface ResetJobBookmarkResponse {
+  readonly JobBookmarkEntry?: JobBookmarkEntry;
 }
 
-interface ResourceNotReadyException {
-  readonly Message: string;
+export interface ResourceNotReadyException {
+  readonly Message?: string;
 }
 
-interface ResourceNumberLimitExceededException {
-  readonly Message: string;
+export interface ResourceNumberLimitExceededException {
+  readonly Message?: string;
 }
 
-interface ResourceUri {
-  readonly ResourceType: string;
-  readonly Uri: string;
+export interface ResourceUri {
+  readonly ResourceType?: string;
+  readonly Uri?: string;
 }
 
-interface ResumeWorkflowRunRequest {
+export interface ResumeWorkflowRunRequest {
   readonly Name: string;
   readonly RunId: string;
   readonly NodeIds: [];
 }
 
-interface ResumeWorkflowRunResponse {
-  readonly RunId: string;
-  readonly NodeIds: [];
+export interface ResumeWorkflowRunResponse {
+  readonly RunId?: string;
+  readonly NodeIds?: [];
 }
 
-interface S3Encryption {
-  readonly S3EncryptionMode: string;
-  readonly KmsKeyArn: string;
+export interface S3Encryption {
+  readonly S3EncryptionMode?: string;
+  readonly KmsKeyArn?: string;
 }
 
-interface S3Target {
-  readonly Path: string;
-  readonly Exclusions: [];
-  readonly ConnectionName: string;
-  readonly SampleSize: number;
-  readonly EventQueueArn: string;
-  readonly DlqEventQueueArn: string;
+export interface S3Target {
+  readonly Path?: string;
+  readonly Exclusions?: [];
+  readonly ConnectionName?: string;
+  readonly SampleSize?: number;
+  readonly EventQueueArn?: string;
+  readonly DlqEventQueueArn?: string;
 }
 
-interface Schedule {
-  readonly ScheduleExpression: string;
-  readonly State: string;
+export interface Schedule {
+  readonly ScheduleExpression?: string;
+  readonly State?: string;
 }
 
-interface SchedulerNotRunningException {
-  readonly Message: string;
+export interface SchedulerNotRunningException {
+  readonly Message?: string;
 }
 
-interface SchedulerRunningException {
-  readonly Message: string;
+export interface SchedulerRunningException {
+  readonly Message?: string;
 }
 
-interface SchedulerTransitioningException {
-  readonly Message: string;
+export interface SchedulerTransitioningException {
+  readonly Message?: string;
 }
 
-interface SchemaChangePolicy {
-  readonly UpdateBehavior: string;
-  readonly DeleteBehavior: string;
+export interface SchemaChangePolicy {
+  readonly UpdateBehavior?: string;
+  readonly DeleteBehavior?: string;
 }
 
-interface SchemaColumn {
-  readonly Name: string;
-  readonly DataType: string;
+export interface SchemaColumn {
+  readonly Name?: string;
+  readonly DataType?: string;
 }
 
-interface SchemaId {
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly RegistryName: string;
+export interface SchemaId {
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly RegistryName?: string;
 }
 
-interface SchemaListItem {
-  readonly RegistryName: string;
-  readonly SchemaName: string;
-  readonly SchemaArn: string;
-  readonly Description: string;
-  readonly SchemaStatus: string;
-  readonly CreatedTime: string;
-  readonly UpdatedTime: string;
+export interface SchemaListItem {
+  readonly RegistryName?: string;
+  readonly SchemaName?: string;
+  readonly SchemaArn?: string;
+  readonly Description?: string;
+  readonly SchemaStatus?: string;
+  readonly CreatedTime?: string;
+  readonly UpdatedTime?: string;
 }
 
-interface SchemaReference {
-  readonly SchemaId: SchemaId;
-  readonly SchemaVersionId: string;
-  readonly SchemaVersionNumber: number;
+export interface SchemaReference {
+  readonly SchemaId?: SchemaId;
+  readonly SchemaVersionId?: string;
+  readonly SchemaVersionNumber?: number;
 }
 
-interface SchemaVersionErrorItem {
-  readonly VersionNumber: number;
-  readonly ErrorDetails: ErrorDetails;
+export interface SchemaVersionErrorItem {
+  readonly VersionNumber?: number;
+  readonly ErrorDetails?: ErrorDetails;
 }
 
-interface SchemaVersionListItem {
-  readonly SchemaArn: string;
-  readonly SchemaVersionId: string;
-  readonly VersionNumber: number;
-  readonly Status: string;
-  readonly CreatedTime: string;
+export interface SchemaVersionListItem {
+  readonly SchemaArn?: string;
+  readonly SchemaVersionId?: string;
+  readonly VersionNumber?: number;
+  readonly Status?: string;
+  readonly CreatedTime?: string;
 }
 
-interface SchemaVersionNumber {
-  readonly LatestVersion: boolean;
-  readonly VersionNumber: number;
+export interface SchemaVersionNumber {
+  readonly LatestVersion?: boolean;
+  readonly VersionNumber?: number;
 }
 
-interface SearchTablesRequest {
-  readonly CatalogId: string;
-  readonly NextToken: string;
-  readonly Filters: [];
-  readonly SearchText: string;
-  readonly SortCriteria: [];
-  readonly MaxResults: number;
-  readonly ResourceShareType: string;
+export interface SearchTablesRequest {
+  readonly CatalogId?: string;
+  readonly NextToken?: string;
+  readonly Filters?: [];
+  readonly SearchText?: string;
+  readonly SortCriteria?: [];
+  readonly MaxResults?: number;
+  readonly ResourceShareType?: string;
 }
 
-interface SearchTablesResponse {
-  readonly NextToken: string;
-  readonly TableList: [];
+export interface SearchTablesResponse {
+  readonly NextToken?: string;
+  readonly TableList?: [];
 }
 
-interface SecurityConfiguration {
-  readonly Name: string;
-  readonly CreatedTimeStamp: Date;
-  readonly EncryptionConfiguration: EncryptionConfiguration;
+export interface SecurityConfiguration {
+  readonly Name?: string;
+  readonly CreatedTimeStamp?: Date;
+  readonly EncryptionConfiguration?: EncryptionConfiguration;
 }
 
-interface Segment {
+export interface Segment {
   readonly SegmentNumber: number;
   readonly TotalSegments: number;
 }
 
-interface SerDeInfo {
-  readonly Name: string;
-  readonly SerializationLibrary: string;
-  readonly Parameters: {[key: string]: any};
+export interface SerDeInfo {
+  readonly Name?: string;
+  readonly SerializationLibrary?: string;
+  readonly Parameters?: {[key: string]: any};
 }
 
-interface SkewedInfo {
-  readonly SkewedColumnNames: [];
-  readonly SkewedColumnValues: [];
-  readonly SkewedColumnValueLocationMaps: {[key: string]: any};
+export interface SkewedInfo {
+  readonly SkewedColumnNames?: [];
+  readonly SkewedColumnValues?: [];
+  readonly SkewedColumnValueLocationMaps?: {[key: string]: any};
 }
 
-interface SortCriterion {
-  readonly FieldName: string;
-  readonly Sort: string;
+export interface SortCriterion {
+  readonly FieldName?: string;
+  readonly Sort?: string;
 }
 
-interface StartBlueprintRunRequest {
+export interface StartBlueprintRunRequest {
   readonly BlueprintName: string;
-  readonly Parameters: string;
+  readonly Parameters?: string;
   readonly RoleArn: string;
 }
 
-interface StartBlueprintRunResponse {
-  readonly RunId: string;
+export interface StartBlueprintRunResponse {
+  readonly RunId?: string;
 }
 
-interface StartCrawlerRequest {
+export interface StartCrawlerRequest {
   readonly Name: string;
 }
 
-interface StartCrawlerResponse {
+export interface StartCrawlerResponse {
 }
 
-interface StartCrawlerScheduleRequest {
+export interface StartCrawlerScheduleRequest {
   readonly CrawlerName: string;
 }
 
-interface StartCrawlerScheduleResponse {
+export interface StartCrawlerScheduleResponse {
 }
 
-interface StartExportLabelsTaskRunRequest {
+export interface StartExportLabelsTaskRunRequest {
   readonly TransformId: string;
   readonly OutputS3Path: string;
 }
 
-interface StartExportLabelsTaskRunResponse {
-  readonly TaskRunId: string;
+export interface StartExportLabelsTaskRunResponse {
+  readonly TaskRunId?: string;
 }
 
-interface StartImportLabelsTaskRunRequest {
+export interface StartImportLabelsTaskRunRequest {
   readonly TransformId: string;
   readonly InputS3Path: string;
-  readonly ReplaceAllLabels: boolean;
+  readonly ReplaceAllLabels?: boolean;
 }
 
-interface StartImportLabelsTaskRunResponse {
-  readonly TaskRunId: string;
+export interface StartImportLabelsTaskRunResponse {
+  readonly TaskRunId?: string;
 }
 
-interface StartJobRunRequest {
+export interface StartJobRunRequest {
   readonly JobName: string;
-  readonly JobRunId: string;
-  readonly Arguments: {[key: string]: any};
-  readonly AllocatedCapacity: number;
-  readonly Timeout: number;
-  readonly MaxCapacity: unknown;
-  readonly SecurityConfiguration: string;
-  readonly NotificationProperty: NotificationProperty;
-  readonly WorkerType: string;
-  readonly NumberOfWorkers: number;
+  readonly JobRunId?: string;
+  readonly Arguments?: {[key: string]: any};
+  readonly AllocatedCapacity?: number;
+  readonly Timeout?: number;
+  readonly MaxCapacity?: unknown;
+  readonly SecurityConfiguration?: string;
+  readonly NotificationProperty?: NotificationProperty;
+  readonly WorkerType?: string;
+  readonly NumberOfWorkers?: number;
 }
 
-interface StartJobRunResponse {
-  readonly JobRunId: string;
+export interface StartJobRunResponse {
+  readonly JobRunId?: string;
 }
 
-interface StartMLEvaluationTaskRunRequest {
+export interface StartMLEvaluationTaskRunRequest {
   readonly TransformId: string;
 }
 
-interface StartMLEvaluationTaskRunResponse {
-  readonly TaskRunId: string;
+export interface StartMLEvaluationTaskRunResponse {
+  readonly TaskRunId?: string;
 }
 
-interface StartMLLabelingSetGenerationTaskRunRequest {
+export interface StartMLLabelingSetGenerationTaskRunRequest {
   readonly TransformId: string;
   readonly OutputS3Path: string;
 }
 
-interface StartMLLabelingSetGenerationTaskRunResponse {
-  readonly TaskRunId: string;
+export interface StartMLLabelingSetGenerationTaskRunResponse {
+  readonly TaskRunId?: string;
 }
 
-interface StartTriggerRequest {
+export interface StartTriggerRequest {
   readonly Name: string;
 }
 
-interface StartTriggerResponse {
+export interface StartTriggerResponse {
+  readonly Name?: string;
+}
+
+export interface StartWorkflowRunRequest {
   readonly Name: string;
 }
 
-interface StartWorkflowRunRequest {
+export interface StartWorkflowRunResponse {
+  readonly RunId?: string;
+}
+
+export interface StartingEventBatchCondition {
+  readonly BatchSize?: number;
+  readonly BatchWindow?: number;
+}
+
+export interface StopCrawlerRequest {
   readonly Name: string;
 }
 
-interface StartWorkflowRunResponse {
-  readonly RunId: string;
+export interface StopCrawlerResponse {
 }
 
-interface StartingEventBatchCondition {
-  readonly BatchSize: number;
-  readonly BatchWindow: number;
-}
-
-interface StopCrawlerRequest {
-  readonly Name: string;
-}
-
-interface StopCrawlerResponse {
-}
-
-interface StopCrawlerScheduleRequest {
+export interface StopCrawlerScheduleRequest {
   readonly CrawlerName: string;
 }
 
-interface StopCrawlerScheduleResponse {
+export interface StopCrawlerScheduleResponse {
 }
 
-interface StopTriggerRequest {
+export interface StopTriggerRequest {
   readonly Name: string;
 }
 
-interface StopTriggerResponse {
-  readonly Name: string;
+export interface StopTriggerResponse {
+  readonly Name?: string;
 }
 
-interface StopWorkflowRunRequest {
+export interface StopWorkflowRunRequest {
   readonly Name: string;
   readonly RunId: string;
 }
 
-interface StopWorkflowRunResponse {
+export interface StopWorkflowRunResponse {
 }
 
-interface StorageDescriptor {
-  readonly Columns: [];
-  readonly Location: string;
-  readonly InputFormat: string;
-  readonly OutputFormat: string;
-  readonly Compressed: boolean;
-  readonly NumberOfBuckets: number;
-  readonly SerdeInfo: SerDeInfo;
-  readonly BucketColumns: [];
-  readonly SortColumns: [];
-  readonly Parameters: {[key: string]: any};
-  readonly SkewedInfo: SkewedInfo;
-  readonly StoredAsSubDirectories: boolean;
-  readonly SchemaReference: SchemaReference;
+export interface StorageDescriptor {
+  readonly Columns?: [];
+  readonly Location?: string;
+  readonly InputFormat?: string;
+  readonly OutputFormat?: string;
+  readonly Compressed?: boolean;
+  readonly NumberOfBuckets?: number;
+  readonly SerdeInfo?: SerDeInfo;
+  readonly BucketColumns?: [];
+  readonly SortColumns?: [];
+  readonly Parameters?: {[key: string]: any};
+  readonly SkewedInfo?: SkewedInfo;
+  readonly StoredAsSubDirectories?: boolean;
+  readonly SchemaReference?: SchemaReference;
 }
 
-interface StringColumnStatisticsData {
+export interface StringColumnStatisticsData {
   readonly MaximumLength: number;
   readonly AverageLength: unknown;
   readonly NumberOfNulls: number;
   readonly NumberOfDistinctValues: number;
 }
 
-interface Table {
+export interface Table {
   readonly Name: string;
-  readonly DatabaseName: string;
-  readonly Description: string;
-  readonly Owner: string;
-  readonly CreateTime: Date;
-  readonly UpdateTime: Date;
-  readonly LastAccessTime: Date;
-  readonly LastAnalyzedTime: Date;
-  readonly Retention: number;
-  readonly StorageDescriptor: StorageDescriptor;
-  readonly PartitionKeys: [];
-  readonly ViewOriginalText: string;
-  readonly ViewExpandedText: string;
-  readonly TableType: string;
-  readonly Parameters: {[key: string]: any};
-  readonly CreatedBy: string;
-  readonly IsRegisteredWithLakeFormation: boolean;
-  readonly TargetTable: TableIdentifier;
-  readonly CatalogId: string;
+  readonly DatabaseName?: string;
+  readonly Description?: string;
+  readonly Owner?: string;
+  readonly CreateTime?: Date;
+  readonly UpdateTime?: Date;
+  readonly LastAccessTime?: Date;
+  readonly LastAnalyzedTime?: Date;
+  readonly Retention?: number;
+  readonly StorageDescriptor?: StorageDescriptor;
+  readonly PartitionKeys?: [];
+  readonly ViewOriginalText?: string;
+  readonly ViewExpandedText?: string;
+  readonly TableType?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly CreatedBy?: string;
+  readonly IsRegisteredWithLakeFormation?: boolean;
+  readonly TargetTable?: TableIdentifier;
+  readonly CatalogId?: string;
 }
 
-interface TableError {
-  readonly TableName: string;
-  readonly ErrorDetail: ErrorDetail;
+export interface TableError {
+  readonly TableName?: string;
+  readonly ErrorDetail?: ErrorDetail;
 }
 
-interface TableIdentifier {
-  readonly CatalogId: string;
-  readonly DatabaseName: string;
+export interface TableIdentifier {
+  readonly CatalogId?: string;
+  readonly DatabaseName?: string;
+  readonly Name?: string;
+}
+
+export interface TableInput {
   readonly Name: string;
+  readonly Description?: string;
+  readonly Owner?: string;
+  readonly LastAccessTime?: Date;
+  readonly LastAnalyzedTime?: Date;
+  readonly Retention?: number;
+  readonly StorageDescriptor?: StorageDescriptor;
+  readonly PartitionKeys?: [];
+  readonly ViewOriginalText?: string;
+  readonly ViewExpandedText?: string;
+  readonly TableType?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly TargetTable?: TableIdentifier;
 }
 
-interface TableInput {
-  readonly Name: string;
-  readonly Description: string;
-  readonly Owner: string;
-  readonly LastAccessTime: Date;
-  readonly LastAnalyzedTime: Date;
-  readonly Retention: number;
-  readonly StorageDescriptor: StorageDescriptor;
-  readonly PartitionKeys: [];
-  readonly ViewOriginalText: string;
-  readonly ViewExpandedText: string;
-  readonly TableType: string;
-  readonly Parameters: {[key: string]: any};
-  readonly TargetTable: TableIdentifier;
+export interface TableVersion {
+  readonly Table?: Table;
+  readonly VersionId?: string;
 }
 
-interface TableVersion {
-  readonly Table: Table;
-  readonly VersionId: string;
+export interface TableVersionError {
+  readonly TableName?: string;
+  readonly VersionId?: string;
+  readonly ErrorDetail?: ErrorDetail;
 }
 
-interface TableVersionError {
-  readonly TableName: string;
-  readonly VersionId: string;
-  readonly ErrorDetail: ErrorDetail;
-}
-
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly TagsToAdd: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TaskRun {
-  readonly TransformId: string;
-  readonly TaskRunId: string;
-  readonly Status: string;
-  readonly LogGroupName: string;
-  readonly Properties: TaskRunProperties;
-  readonly ErrorString: string;
-  readonly StartedOn: Date;
-  readonly LastModifiedOn: Date;
-  readonly CompletedOn: Date;
-  readonly ExecutionTime: number;
+export interface TaskRun {
+  readonly TransformId?: string;
+  readonly TaskRunId?: string;
+  readonly Status?: string;
+  readonly LogGroupName?: string;
+  readonly Properties?: TaskRunProperties;
+  readonly ErrorString?: string;
+  readonly StartedOn?: Date;
+  readonly LastModifiedOn?: Date;
+  readonly CompletedOn?: Date;
+  readonly ExecutionTime?: number;
 }
 
-interface TaskRunFilterCriteria {
-  readonly TaskRunType: string;
-  readonly Status: string;
-  readonly StartedBefore: Date;
-  readonly StartedAfter: Date;
+export interface TaskRunFilterCriteria {
+  readonly TaskRunType?: string;
+  readonly Status?: string;
+  readonly StartedBefore?: Date;
+  readonly StartedAfter?: Date;
 }
 
-interface TaskRunProperties {
-  readonly TaskType: string;
-  readonly ImportLabelsTaskRunProperties: ImportLabelsTaskRunProperties;
-  readonly ExportLabelsTaskRunProperties: ExportLabelsTaskRunProperties;
-  readonly LabelingSetGenerationTaskRunProperties: LabelingSetGenerationTaskRunProperties;
-  readonly FindMatchesTaskRunProperties: FindMatchesTaskRunProperties;
+export interface TaskRunProperties {
+  readonly TaskType?: string;
+  readonly ImportLabelsTaskRunProperties?: ImportLabelsTaskRunProperties;
+  readonly ExportLabelsTaskRunProperties?: ExportLabelsTaskRunProperties;
+  readonly LabelingSetGenerationTaskRunProperties?: LabelingSetGenerationTaskRunProperties;
+  readonly FindMatchesTaskRunProperties?: FindMatchesTaskRunProperties;
 }
 
-interface TaskRunSortCriteria {
+export interface TaskRunSortCriteria {
   readonly Column: string;
   readonly SortDirection: string;
 }
 
-interface TransformEncryption {
-  readonly MlUserDataEncryption: MLUserDataEncryption;
-  readonly TaskRunSecurityConfigurationName: string;
+export interface TransformEncryption {
+  readonly MlUserDataEncryption?: MLUserDataEncryption;
+  readonly TaskRunSecurityConfigurationName?: string;
 }
 
-interface TransformFilterCriteria {
-  readonly Name: string;
+export interface TransformFilterCriteria {
+  readonly Name?: string;
+  readonly TransformType?: string;
+  readonly Status?: string;
+  readonly GlueVersion?: string;
+  readonly CreatedBefore?: Date;
+  readonly CreatedAfter?: Date;
+  readonly LastModifiedBefore?: Date;
+  readonly LastModifiedAfter?: Date;
+  readonly Schema?: [];
+}
+
+export interface TransformParameters {
   readonly TransformType: string;
-  readonly Status: string;
-  readonly GlueVersion: string;
-  readonly CreatedBefore: Date;
-  readonly CreatedAfter: Date;
-  readonly LastModifiedBefore: Date;
-  readonly LastModifiedAfter: Date;
-  readonly Schema: [];
+  readonly FindMatchesParameters?: FindMatchesParameters;
 }
 
-interface TransformParameters {
-  readonly TransformType: string;
-  readonly FindMatchesParameters: FindMatchesParameters;
-}
-
-interface TransformSortCriteria {
+export interface TransformSortCriteria {
   readonly Column: string;
   readonly SortDirection: string;
 }
 
-interface Trigger {
-  readonly Name: string;
-  readonly WorkflowName: string;
-  readonly Id: string;
-  readonly Type: string;
-  readonly State: string;
-  readonly Description: string;
-  readonly Schedule: string;
-  readonly Actions: [];
-  readonly Predicate: Predicate;
-  readonly EventBatchingCondition: EventBatchingCondition;
+export interface Trigger {
+  readonly Name?: string;
+  readonly WorkflowName?: string;
+  readonly Id?: string;
+  readonly Type?: string;
+  readonly State?: string;
+  readonly Description?: string;
+  readonly Schedule?: string;
+  readonly Actions?: [];
+  readonly Predicate?: Predicate;
+  readonly EventBatchingCondition?: EventBatchingCondition;
 }
 
-interface TriggerNodeDetails {
-  readonly Trigger: Trigger;
+export interface TriggerNodeDetails {
+  readonly Trigger?: Trigger;
 }
 
-interface TriggerUpdate {
-  readonly Name: string;
-  readonly Description: string;
-  readonly Schedule: string;
-  readonly Actions: [];
-  readonly Predicate: Predicate;
-  readonly EventBatchingCondition: EventBatchingCondition;
+export interface TriggerUpdate {
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Schedule?: string;
+  readonly Actions?: [];
+  readonly Predicate?: Predicate;
+  readonly EventBatchingCondition?: EventBatchingCondition;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagsToRemove: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateBlueprintRequest {
+export interface UpdateBlueprintRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly BlueprintLocation: string;
 }
 
-interface UpdateBlueprintResponse {
-  readonly Name: string;
+export interface UpdateBlueprintResponse {
+  readonly Name?: string;
 }
 
-interface UpdateClassifierRequest {
-  readonly GrokClassifier: UpdateGrokClassifierRequest;
-  readonly XMLClassifier: UpdateXMLClassifierRequest;
-  readonly JsonClassifier: UpdateJsonClassifierRequest;
-  readonly CsvClassifier: UpdateCsvClassifierRequest;
+export interface UpdateClassifierRequest {
+  readonly GrokClassifier?: UpdateGrokClassifierRequest;
+  readonly XMLClassifier?: UpdateXMLClassifierRequest;
+  readonly JsonClassifier?: UpdateJsonClassifierRequest;
+  readonly CsvClassifier?: UpdateCsvClassifierRequest;
 }
 
-interface UpdateClassifierResponse {
+export interface UpdateClassifierResponse {
 }
 
-interface UpdateColumnStatisticsForPartitionRequest {
-  readonly CatalogId: string;
+export interface UpdateColumnStatisticsForPartitionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionValues: [];
   readonly ColumnStatisticsList: [];
 }
 
-interface UpdateColumnStatisticsForPartitionResponse {
-  readonly Errors: [];
+export interface UpdateColumnStatisticsForPartitionResponse {
+  readonly Errors?: [];
 }
 
-interface UpdateColumnStatisticsForTableRequest {
-  readonly CatalogId: string;
+export interface UpdateColumnStatisticsForTableRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly ColumnStatisticsList: [];
 }
 
-interface UpdateColumnStatisticsForTableResponse {
-  readonly Errors: [];
+export interface UpdateColumnStatisticsForTableResponse {
+  readonly Errors?: [];
 }
 
-interface UpdateConnectionRequest {
-  readonly CatalogId: string;
+export interface UpdateConnectionRequest {
+  readonly CatalogId?: string;
   readonly Name: string;
   readonly ConnectionInput: ConnectionInput;
 }
 
-interface UpdateConnectionResponse {
+export interface UpdateConnectionResponse {
 }
 
-interface UpdateCrawlerRequest {
+export interface UpdateCrawlerRequest {
   readonly Name: string;
-  readonly Role: string;
-  readonly DatabaseName: string;
-  readonly Description: string;
-  readonly Targets: CrawlerTargets;
-  readonly Schedule: string;
-  readonly Classifiers: [];
-  readonly TablePrefix: string;
-  readonly SchemaChangePolicy: SchemaChangePolicy;
-  readonly RecrawlPolicy: RecrawlPolicy;
-  readonly LineageConfiguration: LineageConfiguration;
-  readonly Configuration: string;
-  readonly CrawlerSecurityConfiguration: string;
+  readonly Role?: string;
+  readonly DatabaseName?: string;
+  readonly Description?: string;
+  readonly Targets?: CrawlerTargets;
+  readonly Schedule?: string;
+  readonly Classifiers?: [];
+  readonly TablePrefix?: string;
+  readonly SchemaChangePolicy?: SchemaChangePolicy;
+  readonly RecrawlPolicy?: RecrawlPolicy;
+  readonly LineageConfiguration?: LineageConfiguration;
+  readonly Configuration?: string;
+  readonly CrawlerSecurityConfiguration?: string;
 }
 
-interface UpdateCrawlerResponse {
+export interface UpdateCrawlerResponse {
 }
 
-interface UpdateCrawlerScheduleRequest {
+export interface UpdateCrawlerScheduleRequest {
   readonly CrawlerName: string;
-  readonly Schedule: string;
+  readonly Schedule?: string;
 }
 
-interface UpdateCrawlerScheduleResponse {
+export interface UpdateCrawlerScheduleResponse {
 }
 
-interface UpdateCsvClassifierRequest {
+export interface UpdateCsvClassifierRequest {
   readonly Name: string;
-  readonly Delimiter: string;
-  readonly QuoteSymbol: string;
-  readonly ContainsHeader: string;
-  readonly Header: [];
-  readonly DisableValueTrimming: boolean;
-  readonly AllowSingleColumn: boolean;
+  readonly Delimiter?: string;
+  readonly QuoteSymbol?: string;
+  readonly ContainsHeader?: string;
+  readonly Header?: [];
+  readonly DisableValueTrimming?: boolean;
+  readonly AllowSingleColumn?: boolean;
 }
 
-interface UpdateDatabaseRequest {
-  readonly CatalogId: string;
+export interface UpdateDatabaseRequest {
+  readonly CatalogId?: string;
   readonly Name: string;
   readonly DatabaseInput: DatabaseInput;
 }
 
-interface UpdateDatabaseResponse {
+export interface UpdateDatabaseResponse {
 }
 
-interface UpdateDevEndpointRequest {
+export interface UpdateDevEndpointRequest {
   readonly EndpointName: string;
-  readonly PublicKey: string;
-  readonly AddPublicKeys: [];
-  readonly DeletePublicKeys: [];
-  readonly CustomLibraries: DevEndpointCustomLibraries;
-  readonly UpdateEtlLibraries: boolean;
-  readonly DeleteArguments: [];
-  readonly AddArguments: {[key: string]: any};
+  readonly PublicKey?: string;
+  readonly AddPublicKeys?: [];
+  readonly DeletePublicKeys?: [];
+  readonly CustomLibraries?: DevEndpointCustomLibraries;
+  readonly UpdateEtlLibraries?: boolean;
+  readonly DeleteArguments?: [];
+  readonly AddArguments?: {[key: string]: any};
 }
 
-interface UpdateDevEndpointResponse {
+export interface UpdateDevEndpointResponse {
 }
 
-interface UpdateGrokClassifierRequest {
+export interface UpdateGrokClassifierRequest {
   readonly Name: string;
-  readonly Classification: string;
-  readonly GrokPattern: string;
-  readonly CustomPatterns: string;
+  readonly Classification?: string;
+  readonly GrokPattern?: string;
+  readonly CustomPatterns?: string;
 }
 
-interface UpdateJobRequest {
+export interface UpdateJobRequest {
   readonly JobName: string;
   readonly JobUpdate: JobUpdate;
 }
 
-interface UpdateJobResponse {
-  readonly JobName: string;
+export interface UpdateJobResponse {
+  readonly JobName?: string;
 }
 
-interface UpdateJsonClassifierRequest {
+export interface UpdateJsonClassifierRequest {
   readonly Name: string;
-  readonly JsonPath: string;
+  readonly JsonPath?: string;
 }
 
-interface UpdateMLTransformRequest {
+export interface UpdateMLTransformRequest {
   readonly TransformId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Parameters: TransformParameters;
-  readonly Role: string;
-  readonly GlueVersion: string;
-  readonly MaxCapacity: unknown;
-  readonly WorkerType: string;
-  readonly NumberOfWorkers: number;
-  readonly Timeout: number;
-  readonly MaxRetries: number;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Parameters?: TransformParameters;
+  readonly Role?: string;
+  readonly GlueVersion?: string;
+  readonly MaxCapacity?: unknown;
+  readonly WorkerType?: string;
+  readonly NumberOfWorkers?: number;
+  readonly Timeout?: number;
+  readonly MaxRetries?: number;
 }
 
-interface UpdateMLTransformResponse {
-  readonly TransformId: string;
+export interface UpdateMLTransformResponse {
+  readonly TransformId?: string;
 }
 
-interface UpdatePartitionRequest {
-  readonly CatalogId: string;
+export interface UpdatePartitionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly PartitionValueList: [];
   readonly PartitionInput: PartitionInput;
 }
 
-interface UpdatePartitionResponse {
+export interface UpdatePartitionResponse {
 }
 
-interface UpdateRegistryInput {
+export interface UpdateRegistryInput {
   readonly RegistryId: RegistryId;
   readonly Description: string;
 }
 
-interface UpdateRegistryResponse {
-  readonly RegistryName: string;
-  readonly RegistryArn: string;
+export interface UpdateRegistryResponse {
+  readonly RegistryName?: string;
+  readonly RegistryArn?: string;
 }
 
-interface UpdateSchemaInput {
+export interface UpdateSchemaInput {
   readonly SchemaId: SchemaId;
-  readonly SchemaVersionNumber: SchemaVersionNumber;
-  readonly Compatibility: string;
-  readonly Description: string;
+  readonly SchemaVersionNumber?: SchemaVersionNumber;
+  readonly Compatibility?: string;
+  readonly Description?: string;
 }
 
-interface UpdateSchemaResponse {
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly RegistryName: string;
+export interface UpdateSchemaResponse {
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly RegistryName?: string;
 }
 
-interface UpdateTableRequest {
-  readonly CatalogId: string;
+export interface UpdateTableRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableInput: TableInput;
-  readonly SkipArchive: boolean;
-  readonly TransactionId: string;
+  readonly SkipArchive?: boolean;
+  readonly TransactionId?: string;
 }
 
-interface UpdateTableResponse {
+export interface UpdateTableResponse {
 }
 
-interface UpdateTriggerRequest {
+export interface UpdateTriggerRequest {
   readonly Name: string;
   readonly TriggerUpdate: TriggerUpdate;
 }
 
-interface UpdateTriggerResponse {
-  readonly Trigger: Trigger;
+export interface UpdateTriggerResponse {
+  readonly Trigger?: Trigger;
 }
 
-interface UpdateUserDefinedFunctionRequest {
-  readonly CatalogId: string;
+export interface UpdateUserDefinedFunctionRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly FunctionName: string;
   readonly FunctionInput: UserDefinedFunctionInput;
 }
 
-interface UpdateUserDefinedFunctionResponse {
+export interface UpdateUserDefinedFunctionResponse {
 }
 
-interface UpdateWorkflowRequest {
+export interface UpdateWorkflowRequest {
   readonly Name: string;
-  readonly Description: string;
-  readonly DefaultRunProperties: {[key: string]: any};
-  readonly MaxConcurrentRuns: number;
+  readonly Description?: string;
+  readonly DefaultRunProperties?: {[key: string]: any};
+  readonly MaxConcurrentRuns?: number;
 }
 
-interface UpdateWorkflowResponse {
+export interface UpdateWorkflowResponse {
+  readonly Name?: string;
+}
+
+export interface UpdateXMLClassifierRequest {
   readonly Name: string;
+  readonly Classification?: string;
+  readonly RowTag?: string;
 }
 
-interface UpdateXMLClassifierRequest {
+export interface UserDefinedFunction {
+  readonly FunctionName?: string;
+  readonly DatabaseName?: string;
+  readonly ClassName?: string;
+  readonly OwnerName?: string;
+  readonly OwnerType?: string;
+  readonly CreateTime?: Date;
+  readonly ResourceUris?: [];
+  readonly CatalogId?: string;
+}
+
+export interface UserDefinedFunctionInput {
+  readonly FunctionName?: string;
+  readonly ClassName?: string;
+  readonly OwnerName?: string;
+  readonly OwnerType?: string;
+  readonly ResourceUris?: [];
+}
+
+export interface ValidationException {
+  readonly Message?: string;
+}
+
+export interface VersionMismatchException {
+  readonly Message?: string;
+}
+
+export interface Workflow {
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly DefaultRunProperties?: {[key: string]: any};
+  readonly CreatedOn?: Date;
+  readonly LastModifiedOn?: Date;
+  readonly LastRun?: WorkflowRun;
+  readonly Graph?: WorkflowGraph;
+  readonly MaxConcurrentRuns?: number;
+  readonly BlueprintDetails?: BlueprintDetails;
+}
+
+export interface WorkflowGraph {
+  readonly Nodes?: [];
+  readonly Edges?: [];
+}
+
+export interface WorkflowRun {
+  readonly Name?: string;
+  readonly WorkflowRunId?: string;
+  readonly PreviousRunId?: string;
+  readonly WorkflowRunProperties?: {[key: string]: any};
+  readonly StartedOn?: Date;
+  readonly CompletedOn?: Date;
+  readonly Status?: string;
+  readonly ErrorMessage?: string;
+  readonly Statistics?: WorkflowRunStatistics;
+  readonly Graph?: WorkflowGraph;
+  readonly StartingEventBatchCondition?: StartingEventBatchCondition;
+}
+
+export interface WorkflowRunStatistics {
+  readonly TotalActions?: number;
+  readonly TimeoutActions?: number;
+  readonly FailedActions?: number;
+  readonly StoppedActions?: number;
+  readonly SucceededActions?: number;
+  readonly RunningActions?: number;
+}
+
+export interface XMLClassifier {
   readonly Name: string;
   readonly Classification: string;
-  readonly RowTag: string;
+  readonly CreationTime?: Date;
+  readonly LastUpdated?: Date;
+  readonly Version?: number;
+  readonly RowTag?: string;
 }
 
-interface UserDefinedFunction {
-  readonly FunctionName: string;
-  readonly DatabaseName: string;
-  readonly ClassName: string;
-  readonly OwnerName: string;
-  readonly OwnerType: string;
-  readonly CreateTime: Date;
-  readonly ResourceUris: [];
-  readonly CatalogId: string;
-}
-
-interface UserDefinedFunctionInput {
-  readonly FunctionName: string;
-  readonly ClassName: string;
-  readonly OwnerName: string;
-  readonly OwnerType: string;
-  readonly ResourceUris: [];
-}
-
-interface ValidationException {
-  readonly Message: string;
-}
-
-interface VersionMismatchException {
-  readonly Message: string;
-}
-
-interface Workflow {
-  readonly Name: string;
-  readonly Description: string;
-  readonly DefaultRunProperties: {[key: string]: any};
-  readonly CreatedOn: Date;
-  readonly LastModifiedOn: Date;
-  readonly LastRun: WorkflowRun;
-  readonly Graph: WorkflowGraph;
-  readonly MaxConcurrentRuns: number;
-  readonly BlueprintDetails: BlueprintDetails;
-}
-
-interface WorkflowGraph {
-  readonly Nodes: [];
-  readonly Edges: [];
-}
-
-interface WorkflowRun {
-  readonly Name: string;
-  readonly WorkflowRunId: string;
-  readonly PreviousRunId: string;
-  readonly WorkflowRunProperties: {[key: string]: any};
-  readonly StartedOn: Date;
-  readonly CompletedOn: Date;
-  readonly Status: string;
-  readonly ErrorMessage: string;
-  readonly Statistics: WorkflowRunStatistics;
-  readonly Graph: WorkflowGraph;
-  readonly StartingEventBatchCondition: StartingEventBatchCondition;
-}
-
-interface WorkflowRunStatistics {
-  readonly TotalActions: number;
-  readonly TimeoutActions: number;
-  readonly FailedActions: number;
-  readonly StoppedActions: number;
-  readonly SucceededActions: number;
-  readonly RunningActions: number;
-}
-
-interface XMLClassifier {
-  readonly Name: string;
-  readonly Classification: string;
-  readonly CreationTime: Date;
-  readonly LastUpdated: Date;
-  readonly Version: number;
-  readonly RowTag: string;
-}
 

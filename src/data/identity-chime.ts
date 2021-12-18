@@ -7,10 +7,12 @@ export interface CreateAppInstance {
   readonly ClientRequestToken: string;
   readonly Tags?: [];
 }
+
 export interface CreateAppInstanceAdmin {
   readonly AppInstanceAdminArn: string;
   readonly AppInstanceArn: string;
 }
+
 export interface CreateAppInstanceUser {
   readonly AppInstanceArn: string;
   readonly AppInstanceUserId: string;
@@ -19,63 +21,79 @@ export interface CreateAppInstanceUser {
   readonly ClientRequestToken: string;
   readonly Tags?: [];
 }
+
 export interface DeleteAppInstance {
   readonly AppInstanceArn: string;
 }
+
 export interface DeleteAppInstanceAdmin {
   readonly AppInstanceAdminArn: string;
   readonly AppInstanceArn: string;
 }
+
 export interface DeleteAppInstanceUser {
   readonly AppInstanceUserArn: string;
 }
+
 export interface DeregisterAppInstanceUserEndpoint {
   readonly AppInstanceUserArn: string;
   readonly EndpointId: string;
 }
+
 export interface DescribeAppInstance {
   readonly AppInstanceArn: string;
 }
+
 export interface DescribeAppInstanceAdmin {
   readonly AppInstanceAdminArn: string;
   readonly AppInstanceArn: string;
 }
+
 export interface DescribeAppInstanceUser {
   readonly AppInstanceUserArn: string;
 }
+
 export interface DescribeAppInstanceUserEndpoint {
   readonly AppInstanceUserArn: string;
   readonly EndpointId: string;
 }
+
 export interface GetAppInstanceRetentionSettings {
   readonly AppInstanceArn: string;
 }
+
 export interface ListAppInstanceAdmins {
   readonly AppInstanceArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListAppInstanceUserEndpoints {
   readonly AppInstanceUserArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListAppInstanceUsers {
   readonly AppInstanceArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListAppInstances {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
+
 export interface PutAppInstanceRetentionSettings {
   readonly AppInstanceArn: string;
   readonly AppInstanceRetentionSettings: AppInstanceRetentionSettings;
 }
+
 export interface RegisterAppInstanceUserEndpoint {
   readonly AppInstanceUserArn: string;
   readonly Name?: string;
@@ -85,24 +103,29 @@ export interface RegisterAppInstanceUserEndpoint {
   readonly ClientRequestToken: string;
   readonly AllowMessages?: string;
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateAppInstance {
   readonly AppInstanceArn: string;
   readonly Name: string;
   readonly Metadata: string;
 }
+
 export interface UpdateAppInstanceUser {
   readonly AppInstanceUserArn: string;
   readonly Name: string;
   readonly Metadata: string;
 }
+
 export interface UpdateAppInstanceUserEndpoint {
   readonly AppInstanceUserArn: string;
   readonly EndpointId: string;
@@ -110,348 +133,347 @@ export interface UpdateAppInstanceUserEndpoint {
   readonly AllowMessages?: string;
 }
 
-
-
-interface AppInstance {
-  readonly AppInstanceArn: string;
-  readonly Name: string;
-  readonly CreatedTimestamp: Date;
-  readonly LastUpdatedTimestamp: Date;
-  readonly Metadata: string;
+export interface AppInstance {
+  readonly AppInstanceArn?: string;
+  readonly Name?: string;
+  readonly CreatedTimestamp?: Date;
+  readonly LastUpdatedTimestamp?: Date;
+  readonly Metadata?: string;
 }
 
-interface AppInstanceAdmin {
-  readonly Admin: Identity;
-  readonly AppInstanceArn: string;
-  readonly CreatedTimestamp: Date;
+export interface AppInstanceAdmin {
+  readonly Admin?: Identity;
+  readonly AppInstanceArn?: string;
+  readonly CreatedTimestamp?: Date;
 }
 
-interface AppInstanceAdminSummary {
-  readonly Admin: Identity;
+export interface AppInstanceAdminSummary {
+  readonly Admin?: Identity;
 }
 
-interface AppInstanceRetentionSettings {
-  readonly ChannelRetentionSettings: ChannelRetentionSettings;
+export interface AppInstanceRetentionSettings {
+  readonly ChannelRetentionSettings?: ChannelRetentionSettings;
 }
 
-interface AppInstanceSummary {
-  readonly AppInstanceArn: string;
-  readonly Name: string;
-  readonly Metadata: string;
+export interface AppInstanceSummary {
+  readonly AppInstanceArn?: string;
+  readonly Name?: string;
+  readonly Metadata?: string;
 }
 
-interface AppInstanceUser {
-  readonly AppInstanceUserArn: string;
-  readonly Name: string;
-  readonly Metadata: string;
-  readonly CreatedTimestamp: Date;
-  readonly LastUpdatedTimestamp: Date;
+export interface AppInstanceUser {
+  readonly AppInstanceUserArn?: string;
+  readonly Name?: string;
+  readonly Metadata?: string;
+  readonly CreatedTimestamp?: Date;
+  readonly LastUpdatedTimestamp?: Date;
 }
 
-interface AppInstanceUserEndpoint {
-  readonly AppInstanceUserArn: string;
-  readonly EndpointId: string;
-  readonly Name: string;
-  readonly Type: string;
-  readonly ResourceArn: string;
-  readonly EndpointAttributes: EndpointAttributes;
-  readonly CreatedTimestamp: Date;
-  readonly LastUpdatedTimestamp: Date;
-  readonly AllowMessages: string;
-  readonly EndpointState: EndpointState;
+export interface AppInstanceUserEndpoint {
+  readonly AppInstanceUserArn?: string;
+  readonly EndpointId?: string;
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly ResourceArn?: string;
+  readonly EndpointAttributes?: EndpointAttributes;
+  readonly CreatedTimestamp?: Date;
+  readonly LastUpdatedTimestamp?: Date;
+  readonly AllowMessages?: string;
+  readonly EndpointState?: EndpointState;
 }
 
-interface AppInstanceUserEndpointSummary {
-  readonly AppInstanceUserArn: string;
-  readonly EndpointId: string;
-  readonly Name: string;
-  readonly Type: string;
-  readonly AllowMessages: string;
-  readonly EndpointState: EndpointState;
+export interface AppInstanceUserEndpointSummary {
+  readonly AppInstanceUserArn?: string;
+  readonly EndpointId?: string;
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly AllowMessages?: string;
+  readonly EndpointState?: EndpointState;
 }
 
-interface AppInstanceUserSummary {
-  readonly AppInstanceUserArn: string;
-  readonly Name: string;
-  readonly Metadata: string;
+export interface AppInstanceUserSummary {
+  readonly AppInstanceUserArn?: string;
+  readonly Name?: string;
+  readonly Metadata?: string;
 }
 
-interface BadRequestException {
-  readonly Code: string;
-  readonly Message: string;
+export interface BadRequestException {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface ChannelRetentionSettings {
-  readonly RetentionDays: number;
+export interface ChannelRetentionSettings {
+  readonly RetentionDays?: number;
 }
 
-interface ConflictException {
-  readonly Code: string;
-  readonly Message: string;
+export interface ConflictException {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface CreateAppInstanceAdminRequest {
+export interface CreateAppInstanceAdminRequest {
   readonly AppInstanceAdminArn: string;
   readonly AppInstanceArn: string;
 }
 
-interface CreateAppInstanceAdminResponse {
-  readonly AppInstanceAdmin: Identity;
-  readonly AppInstanceArn: string;
+export interface CreateAppInstanceAdminResponse {
+  readonly AppInstanceAdmin?: Identity;
+  readonly AppInstanceArn?: string;
 }
 
-interface CreateAppInstanceRequest {
+export interface CreateAppInstanceRequest {
   readonly Name: string;
-  readonly Metadata: string;
+  readonly Metadata?: string;
   readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateAppInstanceResponse {
-  readonly AppInstanceArn: string;
+export interface CreateAppInstanceResponse {
+  readonly AppInstanceArn?: string;
 }
 
-interface CreateAppInstanceUserRequest {
+export interface CreateAppInstanceUserRequest {
   readonly AppInstanceArn: string;
   readonly AppInstanceUserId: string;
   readonly Name: string;
-  readonly Metadata: string;
+  readonly Metadata?: string;
   readonly ClientRequestToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateAppInstanceUserResponse {
-  readonly AppInstanceUserArn: string;
+export interface CreateAppInstanceUserResponse {
+  readonly AppInstanceUserArn?: string;
 }
 
-interface DeleteAppInstanceAdminRequest {
+export interface DeleteAppInstanceAdminRequest {
   readonly AppInstanceAdminArn: string;
   readonly AppInstanceArn: string;
 }
 
-interface DeleteAppInstanceRequest {
+export interface DeleteAppInstanceRequest {
   readonly AppInstanceArn: string;
 }
 
-interface DeleteAppInstanceUserRequest {
+export interface DeleteAppInstanceUserRequest {
   readonly AppInstanceUserArn: string;
 }
 
-interface DeregisterAppInstanceUserEndpointRequest {
+export interface DeregisterAppInstanceUserEndpointRequest {
   readonly AppInstanceUserArn: string;
   readonly EndpointId: string;
 }
 
-interface DescribeAppInstanceAdminRequest {
+export interface DescribeAppInstanceAdminRequest {
   readonly AppInstanceAdminArn: string;
   readonly AppInstanceArn: string;
 }
 
-interface DescribeAppInstanceAdminResponse {
-  readonly AppInstanceAdmin: AppInstanceAdmin;
+export interface DescribeAppInstanceAdminResponse {
+  readonly AppInstanceAdmin?: AppInstanceAdmin;
 }
 
-interface DescribeAppInstanceRequest {
+export interface DescribeAppInstanceRequest {
   readonly AppInstanceArn: string;
 }
 
-interface DescribeAppInstanceResponse {
-  readonly AppInstance: AppInstance;
+export interface DescribeAppInstanceResponse {
+  readonly AppInstance?: AppInstance;
 }
 
-interface DescribeAppInstanceUserEndpointRequest {
+export interface DescribeAppInstanceUserEndpointRequest {
   readonly AppInstanceUserArn: string;
   readonly EndpointId: string;
 }
 
-interface DescribeAppInstanceUserEndpointResponse {
-  readonly AppInstanceUserEndpoint: AppInstanceUserEndpoint;
+export interface DescribeAppInstanceUserEndpointResponse {
+  readonly AppInstanceUserEndpoint?: AppInstanceUserEndpoint;
 }
 
-interface DescribeAppInstanceUserRequest {
+export interface DescribeAppInstanceUserRequest {
   readonly AppInstanceUserArn: string;
 }
 
-interface DescribeAppInstanceUserResponse {
-  readonly AppInstanceUser: AppInstanceUser;
+export interface DescribeAppInstanceUserResponse {
+  readonly AppInstanceUser?: AppInstanceUser;
 }
 
-interface EndpointAttributes {
+export interface EndpointAttributes {
   readonly DeviceToken: string;
-  readonly VoipDeviceToken: string;
+  readonly VoipDeviceToken?: string;
 }
 
-interface EndpointState {
+export interface EndpointState {
   readonly Status: string;
-  readonly StatusReason: string;
+  readonly StatusReason?: string;
 }
 
-interface ForbiddenException {
-  readonly Code: string;
-  readonly Message: string;
+export interface ForbiddenException {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface GetAppInstanceRetentionSettingsRequest {
+export interface GetAppInstanceRetentionSettingsRequest {
   readonly AppInstanceArn: string;
 }
 
-interface GetAppInstanceRetentionSettingsResponse {
-  readonly AppInstanceRetentionSettings: AppInstanceRetentionSettings;
-  readonly InitiateDeletionTimestamp: Date;
+export interface GetAppInstanceRetentionSettingsResponse {
+  readonly AppInstanceRetentionSettings?: AppInstanceRetentionSettings;
+  readonly InitiateDeletionTimestamp?: Date;
 }
 
-interface Identity {
-  readonly Arn: string;
-  readonly Name: string;
+export interface Identity {
+  readonly Arn?: string;
+  readonly Name?: string;
 }
 
-interface ListAppInstanceAdminsRequest {
+export interface ListAppInstanceAdminsRequest {
   readonly AppInstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAppInstanceAdminsResponse {
-  readonly AppInstanceArn: string;
-  readonly AppInstanceAdmins: [];
-  readonly NextToken: string;
+export interface ListAppInstanceAdminsResponse {
+  readonly AppInstanceArn?: string;
+  readonly AppInstanceAdmins?: [];
+  readonly NextToken?: string;
 }
 
-interface ListAppInstanceUserEndpointsRequest {
+export interface ListAppInstanceUserEndpointsRequest {
   readonly AppInstanceUserArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAppInstanceUserEndpointsResponse {
-  readonly AppInstanceUserEndpoints: [];
-  readonly NextToken: string;
+export interface ListAppInstanceUserEndpointsResponse {
+  readonly AppInstanceUserEndpoints?: [];
+  readonly NextToken?: string;
 }
 
-interface ListAppInstanceUsersRequest {
+export interface ListAppInstanceUsersRequest {
   readonly AppInstanceArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAppInstanceUsersResponse {
-  readonly AppInstanceArn: string;
-  readonly AppInstanceUsers: [];
-  readonly NextToken: string;
+export interface ListAppInstanceUsersResponse {
+  readonly AppInstanceArn?: string;
+  readonly AppInstanceUsers?: [];
+  readonly NextToken?: string;
 }
 
-interface ListAppInstancesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListAppInstancesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAppInstancesResponse {
-  readonly AppInstances: [];
-  readonly NextToken: string;
+export interface ListAppInstancesResponse {
+  readonly AppInstances?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface PutAppInstanceRetentionSettingsRequest {
+export interface PutAppInstanceRetentionSettingsRequest {
   readonly AppInstanceArn: string;
   readonly AppInstanceRetentionSettings: AppInstanceRetentionSettings;
 }
 
-interface PutAppInstanceRetentionSettingsResponse {
-  readonly AppInstanceRetentionSettings: AppInstanceRetentionSettings;
-  readonly InitiateDeletionTimestamp: Date;
+export interface PutAppInstanceRetentionSettingsResponse {
+  readonly AppInstanceRetentionSettings?: AppInstanceRetentionSettings;
+  readonly InitiateDeletionTimestamp?: Date;
 }
 
-interface RegisterAppInstanceUserEndpointRequest {
+export interface RegisterAppInstanceUserEndpointRequest {
   readonly AppInstanceUserArn: string;
-  readonly Name: string;
+  readonly Name?: string;
   readonly Type: string;
   readonly ResourceArn: string;
   readonly EndpointAttributes: EndpointAttributes;
   readonly ClientRequestToken: string;
-  readonly AllowMessages: string;
+  readonly AllowMessages?: string;
 }
 
-interface RegisterAppInstanceUserEndpointResponse {
-  readonly AppInstanceUserArn: string;
-  readonly EndpointId: string;
+export interface RegisterAppInstanceUserEndpointResponse {
+  readonly AppInstanceUserArn?: string;
+  readonly EndpointId?: string;
 }
 
-interface ResourceLimitExceededException {
-  readonly Code: string;
-  readonly Message: string;
+export interface ResourceLimitExceededException {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface ServiceFailureException {
-  readonly Code: string;
-  readonly Message: string;
+export interface ServiceFailureException {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface ServiceUnavailableException {
-  readonly Code: string;
-  readonly Message: string;
+export interface ServiceUnavailableException {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface ThrottledClientException {
-  readonly Code: string;
-  readonly Message: string;
+export interface ThrottledClientException {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface UnauthorizedClientException {
-  readonly Code: string;
-  readonly Message: string;
+export interface UnauthorizedClientException {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UpdateAppInstanceRequest {
+export interface UpdateAppInstanceRequest {
   readonly AppInstanceArn: string;
   readonly Name: string;
   readonly Metadata: string;
 }
 
-interface UpdateAppInstanceResponse {
-  readonly AppInstanceArn: string;
+export interface UpdateAppInstanceResponse {
+  readonly AppInstanceArn?: string;
 }
 
-interface UpdateAppInstanceUserEndpointRequest {
+export interface UpdateAppInstanceUserEndpointRequest {
   readonly AppInstanceUserArn: string;
   readonly EndpointId: string;
-  readonly Name: string;
-  readonly AllowMessages: string;
+  readonly Name?: string;
+  readonly AllowMessages?: string;
 }
 
-interface UpdateAppInstanceUserEndpointResponse {
-  readonly AppInstanceUserArn: string;
-  readonly EndpointId: string;
+export interface UpdateAppInstanceUserEndpointResponse {
+  readonly AppInstanceUserArn?: string;
+  readonly EndpointId?: string;
 }
 
-interface UpdateAppInstanceUserRequest {
+export interface UpdateAppInstanceUserRequest {
   readonly AppInstanceUserArn: string;
   readonly Name: string;
   readonly Metadata: string;
 }
 
-interface UpdateAppInstanceUserResponse {
-  readonly AppInstanceUserArn: string;
+export interface UpdateAppInstanceUserResponse {
+  readonly AppInstanceUserArn?: string;
 }
+
 

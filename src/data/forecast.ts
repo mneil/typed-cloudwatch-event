@@ -14,6 +14,7 @@ export interface CreateAutoPredictor {
   readonly ExplainPredictor?: boolean;
   readonly Tags?: [];
 }
+
 export interface CreateDataset {
   readonly DatasetName: string;
   readonly Domain: string;
@@ -23,12 +24,14 @@ export interface CreateDataset {
   readonly EncryptionConfig?: EncryptionConfig;
   readonly Tags?: [];
 }
+
 export interface CreateDatasetGroup {
   readonly DatasetGroupName: string;
   readonly Domain: string;
   readonly DatasetArns?: [];
   readonly Tags?: [];
 }
+
 export interface CreateDatasetImportJob {
   readonly DatasetImportJobName: string;
   readonly DatasetArn: string;
@@ -39,6 +42,7 @@ export interface CreateDatasetImportJob {
   readonly GeolocationFormat?: string;
   readonly Tags?: [];
 }
+
 export interface CreateExplainability {
   readonly ExplainabilityName: string;
   readonly ResourceArn: string;
@@ -50,24 +54,28 @@ export interface CreateExplainability {
   readonly EndDateTime?: string;
   readonly Tags?: [];
 }
+
 export interface CreateExplainabilityExport {
   readonly ExplainabilityExportName: string;
   readonly ExplainabilityArn: string;
   readonly Destination: DataDestination;
   readonly Tags?: [];
 }
+
 export interface CreateForecast {
   readonly ForecastName: string;
   readonly PredictorArn: string;
   readonly ForecastTypes?: [];
   readonly Tags?: [];
 }
+
 export interface CreateForecastExportJob {
   readonly ForecastExportJobName: string;
   readonly ForecastArn: string;
   readonly Destination: DataDestination;
   readonly Tags?: [];
 }
+
 export interface CreatePredictor {
   readonly PredictorName: string;
   readonly AlgorithmArn?: string;
@@ -85,959 +93,994 @@ export interface CreatePredictor {
   readonly Tags?: [];
   readonly OptimizationMetric?: string;
 }
+
 export interface CreatePredictorBacktestExportJob {
   readonly PredictorBacktestExportJobName: string;
   readonly PredictorArn: string;
   readonly Destination: DataDestination;
   readonly Tags?: [];
 }
+
 export interface DeleteDataset {
   readonly DatasetArn: string;
 }
+
 export interface DeleteDatasetGroup {
   readonly DatasetGroupArn: string;
 }
+
 export interface DeleteDatasetImportJob {
   readonly DatasetImportJobArn: string;
 }
+
 export interface DeleteExplainability {
   readonly ExplainabilityArn: string;
 }
+
 export interface DeleteExplainabilityExport {
   readonly ExplainabilityExportArn: string;
 }
+
 export interface DeleteForecast {
   readonly ForecastArn: string;
 }
+
 export interface DeleteForecastExportJob {
   readonly ForecastExportJobArn: string;
 }
+
 export interface DeletePredictor {
   readonly PredictorArn: string;
 }
+
 export interface DeletePredictorBacktestExportJob {
   readonly PredictorBacktestExportJobArn: string;
 }
+
 export interface DeleteResourceTree {
   readonly ResourceArn: string;
 }
+
 export interface DescribeAutoPredictor {
   readonly PredictorArn: string;
 }
+
 export interface DescribeDataset {
   readonly DatasetArn: string;
 }
+
 export interface DescribeDatasetGroup {
   readonly DatasetGroupArn: string;
 }
+
 export interface DescribeDatasetImportJob {
   readonly DatasetImportJobArn: string;
 }
+
 export interface DescribeExplainability {
   readonly ExplainabilityArn: string;
 }
+
 export interface DescribeExplainabilityExport {
   readonly ExplainabilityExportArn: string;
 }
+
 export interface DescribeForecast {
   readonly ForecastArn: string;
 }
+
 export interface DescribeForecastExportJob {
   readonly ForecastExportJobArn: string;
 }
+
 export interface DescribePredictor {
   readonly PredictorArn: string;
 }
+
 export interface DescribePredictorBacktestExportJob {
   readonly PredictorBacktestExportJobArn: string;
 }
+
 export interface GetAccuracyMetrics {
   readonly PredictorArn: string;
 }
+
 export interface ListDatasetGroups {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDatasetImportJobs {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Filters?: [];
 }
+
 export interface ListDatasets {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListExplainabilities {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Filters?: [];
 }
+
 export interface ListExplainabilityExports {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Filters?: [];
 }
+
 export interface ListForecastExportJobs {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Filters?: [];
 }
+
 export interface ListForecasts {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Filters?: [];
 }
+
 export interface ListPredictorBacktestExportJobs {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Filters?: [];
 }
+
 export interface ListPredictors {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Filters?: [];
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface StopResource {
   readonly ResourceArn: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateDatasetGroup {
   readonly DatasetGroupArn: string;
   readonly DatasetArns: [];
 }
 
-
-
-interface AdditionalDataset {
+export interface AdditionalDataset {
   readonly Name: string;
-  readonly Configuration: {[key: string]: any};
+  readonly Configuration?: {[key: string]: any};
 }
 
-interface AttributeConfig {
+export interface AttributeConfig {
   readonly AttributeName: string;
   readonly Transformations: {[key: string]: any};
 }
 
-interface CategoricalParameterRange {
+export interface CategoricalParameterRange {
   readonly Name: string;
   readonly Values: [];
 }
 
-interface ContinuousParameterRange {
+export interface ContinuousParameterRange {
   readonly Name: string;
   readonly MaxValue: unknown;
   readonly MinValue: unknown;
-  readonly ScalingType: string;
+  readonly ScalingType?: string;
 }
 
-interface CreateAutoPredictorRequest {
+export interface CreateAutoPredictorRequest {
   readonly PredictorName: string;
-  readonly ForecastHorizon: number;
-  readonly ForecastTypes: [];
-  readonly ForecastDimensions: [];
-  readonly ForecastFrequency: string;
-  readonly DataConfig: DataConfig;
-  readonly EncryptionConfig: EncryptionConfig;
-  readonly ReferencePredictorArn: string;
-  readonly OptimizationMetric: string;
-  readonly ExplainPredictor: boolean;
-  readonly Tags: [];
+  readonly ForecastHorizon?: number;
+  readonly ForecastTypes?: [];
+  readonly ForecastDimensions?: [];
+  readonly ForecastFrequency?: string;
+  readonly DataConfig?: DataConfig;
+  readonly EncryptionConfig?: EncryptionConfig;
+  readonly ReferencePredictorArn?: string;
+  readonly OptimizationMetric?: string;
+  readonly ExplainPredictor?: boolean;
+  readonly Tags?: [];
 }
 
-interface CreateAutoPredictorResponse {
-  readonly PredictorArn: string;
+export interface CreateAutoPredictorResponse {
+  readonly PredictorArn?: string;
 }
 
-interface CreateDatasetGroupRequest {
+export interface CreateDatasetGroupRequest {
   readonly DatasetGroupName: string;
   readonly Domain: string;
-  readonly DatasetArns: [];
-  readonly Tags: [];
+  readonly DatasetArns?: [];
+  readonly Tags?: [];
 }
 
-interface CreateDatasetGroupResponse {
-  readonly DatasetGroupArn: string;
+export interface CreateDatasetGroupResponse {
+  readonly DatasetGroupArn?: string;
 }
 
-interface CreateDatasetImportJobRequest {
+export interface CreateDatasetImportJobRequest {
   readonly DatasetImportJobName: string;
   readonly DatasetArn: string;
   readonly DataSource: DataSource;
-  readonly TimestampFormat: string;
-  readonly TimeZone: string;
-  readonly UseGeolocationForTimeZone: boolean;
-  readonly GeolocationFormat: string;
-  readonly Tags: [];
+  readonly TimestampFormat?: string;
+  readonly TimeZone?: string;
+  readonly UseGeolocationForTimeZone?: boolean;
+  readonly GeolocationFormat?: string;
+  readonly Tags?: [];
 }
 
-interface CreateDatasetImportJobResponse {
-  readonly DatasetImportJobArn: string;
+export interface CreateDatasetImportJobResponse {
+  readonly DatasetImportJobArn?: string;
 }
 
-interface CreateDatasetRequest {
+export interface CreateDatasetRequest {
   readonly DatasetName: string;
   readonly Domain: string;
   readonly DatasetType: string;
-  readonly DataFrequency: string;
+  readonly DataFrequency?: string;
   readonly Schema: Schema;
-  readonly EncryptionConfig: EncryptionConfig;
-  readonly Tags: [];
+  readonly EncryptionConfig?: EncryptionConfig;
+  readonly Tags?: [];
 }
 
-interface CreateDatasetResponse {
-  readonly DatasetArn: string;
+export interface CreateDatasetResponse {
+  readonly DatasetArn?: string;
 }
 
-interface CreateExplainabilityExportRequest {
+export interface CreateExplainabilityExportRequest {
   readonly ExplainabilityExportName: string;
   readonly ExplainabilityArn: string;
   readonly Destination: DataDestination;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateExplainabilityExportResponse {
-  readonly ExplainabilityExportArn: string;
+export interface CreateExplainabilityExportResponse {
+  readonly ExplainabilityExportArn?: string;
 }
 
-interface CreateExplainabilityRequest {
+export interface CreateExplainabilityRequest {
   readonly ExplainabilityName: string;
   readonly ResourceArn: string;
   readonly ExplainabilityConfig: ExplainabilityConfig;
-  readonly DataSource: DataSource;
-  readonly Schema: Schema;
-  readonly EnableVisualization: boolean;
-  readonly StartDateTime: string;
-  readonly EndDateTime: string;
-  readonly Tags: [];
+  readonly DataSource?: DataSource;
+  readonly Schema?: Schema;
+  readonly EnableVisualization?: boolean;
+  readonly StartDateTime?: string;
+  readonly EndDateTime?: string;
+  readonly Tags?: [];
 }
 
-interface CreateExplainabilityResponse {
-  readonly ExplainabilityArn: string;
+export interface CreateExplainabilityResponse {
+  readonly ExplainabilityArn?: string;
 }
 
-interface CreateForecastExportJobRequest {
+export interface CreateForecastExportJobRequest {
   readonly ForecastExportJobName: string;
   readonly ForecastArn: string;
   readonly Destination: DataDestination;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateForecastExportJobResponse {
-  readonly ForecastExportJobArn: string;
+export interface CreateForecastExportJobResponse {
+  readonly ForecastExportJobArn?: string;
 }
 
-interface CreateForecastRequest {
+export interface CreateForecastRequest {
   readonly ForecastName: string;
   readonly PredictorArn: string;
-  readonly ForecastTypes: [];
-  readonly Tags: [];
+  readonly ForecastTypes?: [];
+  readonly Tags?: [];
 }
 
-interface CreateForecastResponse {
-  readonly ForecastArn: string;
+export interface CreateForecastResponse {
+  readonly ForecastArn?: string;
 }
 
-interface CreatePredictorBacktestExportJobRequest {
+export interface CreatePredictorBacktestExportJobRequest {
   readonly PredictorBacktestExportJobName: string;
   readonly PredictorArn: string;
   readonly Destination: DataDestination;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreatePredictorBacktestExportJobResponse {
-  readonly PredictorBacktestExportJobArn: string;
+export interface CreatePredictorBacktestExportJobResponse {
+  readonly PredictorBacktestExportJobArn?: string;
 }
 
-interface CreatePredictorRequest {
+export interface CreatePredictorRequest {
   readonly PredictorName: string;
-  readonly AlgorithmArn: string;
+  readonly AlgorithmArn?: string;
   readonly ForecastHorizon: number;
-  readonly ForecastTypes: [];
-  readonly PerformAutoML: boolean;
-  readonly AutoMLOverrideStrategy: string;
-  readonly PerformHPO: boolean;
-  readonly TrainingParameters: {[key: string]: any};
-  readonly EvaluationParameters: EvaluationParameters;
-  readonly HPOConfig: HyperParameterTuningJobConfig;
+  readonly ForecastTypes?: [];
+  readonly PerformAutoML?: boolean;
+  readonly AutoMLOverrideStrategy?: string;
+  readonly PerformHPO?: boolean;
+  readonly TrainingParameters?: {[key: string]: any};
+  readonly EvaluationParameters?: EvaluationParameters;
+  readonly HPOConfig?: HyperParameterTuningJobConfig;
   readonly InputDataConfig: InputDataConfig;
   readonly FeaturizationConfig: FeaturizationConfig;
-  readonly EncryptionConfig: EncryptionConfig;
-  readonly Tags: [];
-  readonly OptimizationMetric: string;
+  readonly EncryptionConfig?: EncryptionConfig;
+  readonly Tags?: [];
+  readonly OptimizationMetric?: string;
 }
 
-interface CreatePredictorResponse {
-  readonly PredictorArn: string;
+export interface CreatePredictorResponse {
+  readonly PredictorArn?: string;
 }
 
-interface DataConfig {
+export interface DataConfig {
   readonly DatasetGroupArn: string;
-  readonly AttributeConfigs: [];
-  readonly AdditionalDatasets: [];
+  readonly AttributeConfigs?: [];
+  readonly AdditionalDatasets?: [];
 }
 
-interface DataDestination {
+export interface DataDestination {
   readonly S3Config: S3Config;
 }
 
-interface DataSource {
+export interface DataSource {
   readonly S3Config: S3Config;
 }
 
-interface DatasetGroupSummary {
+export interface DatasetGroupSummary {
+  readonly DatasetGroupArn?: string;
+  readonly DatasetGroupName?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
+}
+
+export interface DatasetImportJobSummary {
+  readonly DatasetImportJobArn?: string;
+  readonly DatasetImportJobName?: string;
+  readonly DataSource?: DataSource;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
+}
+
+export interface DatasetSummary {
+  readonly DatasetArn?: string;
+  readonly DatasetName?: string;
+  readonly DatasetType?: string;
+  readonly Domain?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
+}
+
+export interface DeleteDatasetGroupRequest {
   readonly DatasetGroupArn: string;
-  readonly DatasetGroupName: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
 }
 
-interface DatasetImportJobSummary {
-  readonly DatasetImportJobArn: string;
-  readonly DatasetImportJobName: string;
-  readonly DataSource: DataSource;
-  readonly Status: string;
-  readonly Message: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
-}
-
-interface DatasetSummary {
-  readonly DatasetArn: string;
-  readonly DatasetName: string;
-  readonly DatasetType: string;
-  readonly Domain: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
-}
-
-interface DeleteDatasetGroupRequest {
-  readonly DatasetGroupArn: string;
-}
-
-interface DeleteDatasetImportJobRequest {
+export interface DeleteDatasetImportJobRequest {
   readonly DatasetImportJobArn: string;
 }
 
-interface DeleteDatasetRequest {
+export interface DeleteDatasetRequest {
   readonly DatasetArn: string;
 }
 
-interface DeleteExplainabilityExportRequest {
+export interface DeleteExplainabilityExportRequest {
   readonly ExplainabilityExportArn: string;
 }
 
-interface DeleteExplainabilityRequest {
+export interface DeleteExplainabilityRequest {
   readonly ExplainabilityArn: string;
 }
 
-interface DeleteForecastExportJobRequest {
+export interface DeleteForecastExportJobRequest {
   readonly ForecastExportJobArn: string;
 }
 
-interface DeleteForecastRequest {
+export interface DeleteForecastRequest {
   readonly ForecastArn: string;
 }
 
-interface DeletePredictorBacktestExportJobRequest {
+export interface DeletePredictorBacktestExportJobRequest {
   readonly PredictorBacktestExportJobArn: string;
 }
 
-interface DeletePredictorRequest {
+export interface DeletePredictorRequest {
   readonly PredictorArn: string;
 }
 
-interface DeleteResourceTreeRequest {
+export interface DeleteResourceTreeRequest {
   readonly ResourceArn: string;
 }
 
-interface DescribeAutoPredictorRequest {
+export interface DescribeAutoPredictorRequest {
   readonly PredictorArn: string;
 }
 
-interface DescribeAutoPredictorResponse {
-  readonly PredictorArn: string;
-  readonly PredictorName: string;
-  readonly ForecastHorizon: number;
-  readonly ForecastTypes: [];
-  readonly ForecastFrequency: string;
-  readonly DatasetImportJobArns: [];
-  readonly DataConfig: DataConfig;
-  readonly EncryptionConfig: EncryptionConfig;
-  readonly ReferencePredictorSummary: ReferencePredictorSummary;
-  readonly EstimatedTimeRemainingInMinutes: number;
-  readonly Status: string;
-  readonly Message: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
-  readonly OptimizationMetric: string;
-  readonly ExplainabilityInfo: ExplainabilityInfo;
+export interface DescribeAutoPredictorResponse {
+  readonly PredictorArn?: string;
+  readonly PredictorName?: string;
+  readonly ForecastHorizon?: number;
+  readonly ForecastTypes?: [];
+  readonly ForecastFrequency?: string;
+  readonly DatasetImportJobArns?: [];
+  readonly DataConfig?: DataConfig;
+  readonly EncryptionConfig?: EncryptionConfig;
+  readonly ReferencePredictorSummary?: ReferencePredictorSummary;
+  readonly EstimatedTimeRemainingInMinutes?: number;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
+  readonly OptimizationMetric?: string;
+  readonly ExplainabilityInfo?: ExplainabilityInfo;
 }
 
-interface DescribeDatasetGroupRequest {
+export interface DescribeDatasetGroupRequest {
   readonly DatasetGroupArn: string;
 }
 
-interface DescribeDatasetGroupResponse {
-  readonly DatasetGroupName: string;
-  readonly DatasetGroupArn: string;
-  readonly DatasetArns: [];
-  readonly Domain: string;
-  readonly Status: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface DescribeDatasetGroupResponse {
+  readonly DatasetGroupName?: string;
+  readonly DatasetGroupArn?: string;
+  readonly DatasetArns?: [];
+  readonly Domain?: string;
+  readonly Status?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface DescribeDatasetImportJobRequest {
+export interface DescribeDatasetImportJobRequest {
   readonly DatasetImportJobArn: string;
 }
 
-interface DescribeDatasetImportJobResponse {
-  readonly DatasetImportJobName: string;
-  readonly DatasetImportJobArn: string;
-  readonly DatasetArn: string;
-  readonly TimestampFormat: string;
-  readonly TimeZone: string;
-  readonly UseGeolocationForTimeZone: boolean;
-  readonly GeolocationFormat: string;
-  readonly DataSource: DataSource;
-  readonly EstimatedTimeRemainingInMinutes: number;
-  readonly FieldStatistics: {[key: string]: any};
-  readonly DataSize: unknown;
-  readonly Status: string;
-  readonly Message: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface DescribeDatasetImportJobResponse {
+  readonly DatasetImportJobName?: string;
+  readonly DatasetImportJobArn?: string;
+  readonly DatasetArn?: string;
+  readonly TimestampFormat?: string;
+  readonly TimeZone?: string;
+  readonly UseGeolocationForTimeZone?: boolean;
+  readonly GeolocationFormat?: string;
+  readonly DataSource?: DataSource;
+  readonly EstimatedTimeRemainingInMinutes?: number;
+  readonly FieldStatistics?: {[key: string]: any};
+  readonly DataSize?: unknown;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface DescribeDatasetRequest {
+export interface DescribeDatasetRequest {
   readonly DatasetArn: string;
 }
 
-interface DescribeDatasetResponse {
-  readonly DatasetArn: string;
-  readonly DatasetName: string;
-  readonly Domain: string;
-  readonly DatasetType: string;
-  readonly DataFrequency: string;
-  readonly Schema: Schema;
-  readonly EncryptionConfig: EncryptionConfig;
-  readonly Status: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface DescribeDatasetResponse {
+  readonly DatasetArn?: string;
+  readonly DatasetName?: string;
+  readonly Domain?: string;
+  readonly DatasetType?: string;
+  readonly DataFrequency?: string;
+  readonly Schema?: Schema;
+  readonly EncryptionConfig?: EncryptionConfig;
+  readonly Status?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface DescribeExplainabilityExportRequest {
+export interface DescribeExplainabilityExportRequest {
   readonly ExplainabilityExportArn: string;
 }
 
-interface DescribeExplainabilityExportResponse {
-  readonly ExplainabilityExportArn: string;
-  readonly ExplainabilityExportName: string;
-  readonly ExplainabilityArn: string;
-  readonly Destination: DataDestination;
-  readonly Message: string;
-  readonly Status: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface DescribeExplainabilityExportResponse {
+  readonly ExplainabilityExportArn?: string;
+  readonly ExplainabilityExportName?: string;
+  readonly ExplainabilityArn?: string;
+  readonly Destination?: DataDestination;
+  readonly Message?: string;
+  readonly Status?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface DescribeExplainabilityRequest {
+export interface DescribeExplainabilityRequest {
   readonly ExplainabilityArn: string;
 }
 
-interface DescribeExplainabilityResponse {
-  readonly ExplainabilityArn: string;
-  readonly ExplainabilityName: string;
-  readonly ResourceArn: string;
-  readonly ExplainabilityConfig: ExplainabilityConfig;
-  readonly EnableVisualization: boolean;
-  readonly DataSource: DataSource;
-  readonly Schema: Schema;
-  readonly StartDateTime: string;
-  readonly EndDateTime: string;
-  readonly EstimatedTimeRemainingInMinutes: number;
-  readonly Message: string;
-  readonly Status: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface DescribeExplainabilityResponse {
+  readonly ExplainabilityArn?: string;
+  readonly ExplainabilityName?: string;
+  readonly ResourceArn?: string;
+  readonly ExplainabilityConfig?: ExplainabilityConfig;
+  readonly EnableVisualization?: boolean;
+  readonly DataSource?: DataSource;
+  readonly Schema?: Schema;
+  readonly StartDateTime?: string;
+  readonly EndDateTime?: string;
+  readonly EstimatedTimeRemainingInMinutes?: number;
+  readonly Message?: string;
+  readonly Status?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface DescribeForecastExportJobRequest {
+export interface DescribeForecastExportJobRequest {
   readonly ForecastExportJobArn: string;
 }
 
-interface DescribeForecastExportJobResponse {
-  readonly ForecastExportJobArn: string;
-  readonly ForecastExportJobName: string;
-  readonly ForecastArn: string;
-  readonly Destination: DataDestination;
-  readonly Message: string;
-  readonly Status: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface DescribeForecastExportJobResponse {
+  readonly ForecastExportJobArn?: string;
+  readonly ForecastExportJobName?: string;
+  readonly ForecastArn?: string;
+  readonly Destination?: DataDestination;
+  readonly Message?: string;
+  readonly Status?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface DescribeForecastRequest {
+export interface DescribeForecastRequest {
   readonly ForecastArn: string;
 }
 
-interface DescribeForecastResponse {
-  readonly ForecastArn: string;
-  readonly ForecastName: string;
-  readonly ForecastTypes: [];
-  readonly PredictorArn: string;
-  readonly DatasetGroupArn: string;
-  readonly EstimatedTimeRemainingInMinutes: number;
-  readonly Status: string;
-  readonly Message: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface DescribeForecastResponse {
+  readonly ForecastArn?: string;
+  readonly ForecastName?: string;
+  readonly ForecastTypes?: [];
+  readonly PredictorArn?: string;
+  readonly DatasetGroupArn?: string;
+  readonly EstimatedTimeRemainingInMinutes?: number;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface DescribePredictorBacktestExportJobRequest {
+export interface DescribePredictorBacktestExportJobRequest {
   readonly PredictorBacktestExportJobArn: string;
 }
 
-interface DescribePredictorBacktestExportJobResponse {
-  readonly PredictorBacktestExportJobArn: string;
-  readonly PredictorBacktestExportJobName: string;
-  readonly PredictorArn: string;
-  readonly Destination: DataDestination;
-  readonly Message: string;
-  readonly Status: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface DescribePredictorBacktestExportJobResponse {
+  readonly PredictorBacktestExportJobArn?: string;
+  readonly PredictorBacktestExportJobName?: string;
+  readonly PredictorArn?: string;
+  readonly Destination?: DataDestination;
+  readonly Message?: string;
+  readonly Status?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface DescribePredictorRequest {
+export interface DescribePredictorRequest {
   readonly PredictorArn: string;
 }
 
-interface DescribePredictorResponse {
-  readonly PredictorArn: string;
-  readonly PredictorName: string;
-  readonly AlgorithmArn: string;
-  readonly AutoMLAlgorithmArns: [];
-  readonly ForecastHorizon: number;
-  readonly ForecastTypes: [];
-  readonly PerformAutoML: boolean;
-  readonly AutoMLOverrideStrategy: string;
-  readonly PerformHPO: boolean;
-  readonly TrainingParameters: {[key: string]: any};
-  readonly EvaluationParameters: EvaluationParameters;
-  readonly HPOConfig: HyperParameterTuningJobConfig;
-  readonly InputDataConfig: InputDataConfig;
-  readonly FeaturizationConfig: FeaturizationConfig;
-  readonly EncryptionConfig: EncryptionConfig;
-  readonly PredictorExecutionDetails: PredictorExecutionDetails;
-  readonly EstimatedTimeRemainingInMinutes: number;
-  readonly IsAutoPredictor: boolean;
-  readonly DatasetImportJobArns: [];
-  readonly Status: string;
-  readonly Message: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
-  readonly OptimizationMetric: string;
+export interface DescribePredictorResponse {
+  readonly PredictorArn?: string;
+  readonly PredictorName?: string;
+  readonly AlgorithmArn?: string;
+  readonly AutoMLAlgorithmArns?: [];
+  readonly ForecastHorizon?: number;
+  readonly ForecastTypes?: [];
+  readonly PerformAutoML?: boolean;
+  readonly AutoMLOverrideStrategy?: string;
+  readonly PerformHPO?: boolean;
+  readonly TrainingParameters?: {[key: string]: any};
+  readonly EvaluationParameters?: EvaluationParameters;
+  readonly HPOConfig?: HyperParameterTuningJobConfig;
+  readonly InputDataConfig?: InputDataConfig;
+  readonly FeaturizationConfig?: FeaturizationConfig;
+  readonly EncryptionConfig?: EncryptionConfig;
+  readonly PredictorExecutionDetails?: PredictorExecutionDetails;
+  readonly EstimatedTimeRemainingInMinutes?: number;
+  readonly IsAutoPredictor?: boolean;
+  readonly DatasetImportJobArns?: [];
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
+  readonly OptimizationMetric?: string;
 }
 
-interface EncryptionConfig {
+export interface EncryptionConfig {
   readonly RoleArn: string;
   readonly KMSKeyArn: string;
 }
 
-interface ErrorMetric {
-  readonly ForecastType: string;
-  readonly WAPE: unknown;
-  readonly RMSE: unknown;
-  readonly MASE: unknown;
-  readonly MAPE: unknown;
+export interface ErrorMetric {
+  readonly ForecastType?: string;
+  readonly WAPE?: unknown;
+  readonly RMSE?: unknown;
+  readonly MASE?: unknown;
+  readonly MAPE?: unknown;
 }
 
-interface EvaluationParameters {
-  readonly NumberOfBacktestWindows: number;
-  readonly BackTestWindowOffset: number;
+export interface EvaluationParameters {
+  readonly NumberOfBacktestWindows?: number;
+  readonly BackTestWindowOffset?: number;
 }
 
-interface EvaluationResult {
-  readonly AlgorithmArn: string;
-  readonly TestWindows: [];
+export interface EvaluationResult {
+  readonly AlgorithmArn?: string;
+  readonly TestWindows?: [];
 }
 
-interface ExplainabilityConfig {
+export interface ExplainabilityConfig {
   readonly TimeSeriesGranularity: string;
   readonly TimePointGranularity: string;
 }
 
-interface ExplainabilityExportSummary {
-  readonly ExplainabilityExportArn: string;
-  readonly ExplainabilityExportName: string;
-  readonly Destination: DataDestination;
-  readonly Status: string;
-  readonly Message: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface ExplainabilityExportSummary {
+  readonly ExplainabilityExportArn?: string;
+  readonly ExplainabilityExportName?: string;
+  readonly Destination?: DataDestination;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface ExplainabilityInfo {
-  readonly ExplainabilityArn: string;
-  readonly Status: string;
+export interface ExplainabilityInfo {
+  readonly ExplainabilityArn?: string;
+  readonly Status?: string;
 }
 
-interface ExplainabilitySummary {
-  readonly ExplainabilityArn: string;
-  readonly ExplainabilityName: string;
-  readonly ResourceArn: string;
-  readonly ExplainabilityConfig: ExplainabilityConfig;
-  readonly Status: string;
-  readonly Message: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface ExplainabilitySummary {
+  readonly ExplainabilityArn?: string;
+  readonly ExplainabilityName?: string;
+  readonly ResourceArn?: string;
+  readonly ExplainabilityConfig?: ExplainabilityConfig;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface Featurization {
+export interface Featurization {
   readonly AttributeName: string;
-  readonly FeaturizationPipeline: [];
+  readonly FeaturizationPipeline?: [];
 }
 
-interface FeaturizationConfig {
+export interface FeaturizationConfig {
   readonly ForecastFrequency: string;
-  readonly ForecastDimensions: [];
-  readonly Featurizations: [];
+  readonly ForecastDimensions?: [];
+  readonly Featurizations?: [];
 }
 
-interface FeaturizationMethod {
+export interface FeaturizationMethod {
   readonly FeaturizationMethodName: string;
-  readonly FeaturizationMethodParameters: {[key: string]: any};
+  readonly FeaturizationMethodParameters?: {[key: string]: any};
 }
 
-interface Filter {
+export interface Filter {
   readonly Key: string;
   readonly Value: string;
   readonly Condition: string;
 }
 
-interface ForecastExportJobSummary {
-  readonly ForecastExportJobArn: string;
-  readonly ForecastExportJobName: string;
-  readonly Destination: DataDestination;
-  readonly Status: string;
-  readonly Message: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface ForecastExportJobSummary {
+  readonly ForecastExportJobArn?: string;
+  readonly ForecastExportJobName?: string;
+  readonly Destination?: DataDestination;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface ForecastSummary {
-  readonly ForecastArn: string;
-  readonly ForecastName: string;
+export interface ForecastSummary {
+  readonly ForecastArn?: string;
+  readonly ForecastName?: string;
+  readonly PredictorArn?: string;
+  readonly CreatedUsingAutoPredictor?: boolean;
+  readonly DatasetGroupArn?: string;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
+}
+
+export interface GetAccuracyMetricsRequest {
   readonly PredictorArn: string;
-  readonly CreatedUsingAutoPredictor: boolean;
+}
+
+export interface GetAccuracyMetricsResponse {
+  readonly PredictorEvaluationResults?: [];
+  readonly IsAutoPredictor?: boolean;
+  readonly AutoMLOverrideStrategy?: string;
+  readonly OptimizationMetric?: string;
+}
+
+export interface HyperParameterTuningJobConfig {
+  readonly ParameterRanges?: ParameterRanges;
+}
+
+export interface InputDataConfig {
   readonly DatasetGroupArn: string;
-  readonly Status: string;
-  readonly Message: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+  readonly SupplementaryFeatures?: [];
 }
 
-interface GetAccuracyMetricsRequest {
-  readonly PredictorArn: string;
-}
-
-interface GetAccuracyMetricsResponse {
-  readonly PredictorEvaluationResults: [];
-  readonly IsAutoPredictor: boolean;
-  readonly AutoMLOverrideStrategy: string;
-  readonly OptimizationMetric: string;
-}
-
-interface HyperParameterTuningJobConfig {
-  readonly ParameterRanges: ParameterRanges;
-}
-
-interface InputDataConfig {
-  readonly DatasetGroupArn: string;
-  readonly SupplementaryFeatures: [];
-}
-
-interface IntegerParameterRange {
+export interface IntegerParameterRange {
   readonly Name: string;
   readonly MaxValue: number;
   readonly MinValue: number;
-  readonly ScalingType: string;
+  readonly ScalingType?: string;
 }
 
-interface InvalidInputException {
-  readonly Message: string;
+export interface InvalidInputException {
+  readonly Message?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly Message: string;
+export interface InvalidNextTokenException {
+  readonly Message?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface ListDatasetGroupsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListDatasetGroupsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDatasetGroupsResponse {
-  readonly DatasetGroups: [];
-  readonly NextToken: string;
+export interface ListDatasetGroupsResponse {
+  readonly DatasetGroups?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDatasetImportJobsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+export interface ListDatasetImportJobsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 
-interface ListDatasetImportJobsResponse {
-  readonly DatasetImportJobs: [];
-  readonly NextToken: string;
+export interface ListDatasetImportJobsResponse {
+  readonly DatasetImportJobs?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDatasetsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListDatasetsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDatasetsResponse {
-  readonly Datasets: [];
-  readonly NextToken: string;
+export interface ListDatasetsResponse {
+  readonly Datasets?: [];
+  readonly NextToken?: string;
 }
 
-interface ListExplainabilitiesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+export interface ListExplainabilitiesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 
-interface ListExplainabilitiesResponse {
-  readonly Explainabilities: [];
-  readonly NextToken: string;
+export interface ListExplainabilitiesResponse {
+  readonly Explainabilities?: [];
+  readonly NextToken?: string;
 }
 
-interface ListExplainabilityExportsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+export interface ListExplainabilityExportsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 
-interface ListExplainabilityExportsResponse {
-  readonly ExplainabilityExports: [];
-  readonly NextToken: string;
+export interface ListExplainabilityExportsResponse {
+  readonly ExplainabilityExports?: [];
+  readonly NextToken?: string;
 }
 
-interface ListForecastExportJobsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+export interface ListForecastExportJobsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 
-interface ListForecastExportJobsResponse {
-  readonly ForecastExportJobs: [];
-  readonly NextToken: string;
+export interface ListForecastExportJobsResponse {
+  readonly ForecastExportJobs?: [];
+  readonly NextToken?: string;
 }
 
-interface ListForecastsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+export interface ListForecastsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 
-interface ListForecastsResponse {
-  readonly Forecasts: [];
-  readonly NextToken: string;
+export interface ListForecastsResponse {
+  readonly Forecasts?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPredictorBacktestExportJobsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+export interface ListPredictorBacktestExportJobsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 
-interface ListPredictorBacktestExportJobsResponse {
-  readonly PredictorBacktestExportJobs: [];
-  readonly NextToken: string;
+export interface ListPredictorBacktestExportJobsResponse {
+  readonly PredictorBacktestExportJobs?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPredictorsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+export interface ListPredictorsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 
-interface ListPredictorsResponse {
-  readonly Predictors: [];
-  readonly NextToken: string;
+export interface ListPredictorsResponse {
+  readonly Predictors?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface Metrics {
-  readonly RMSE: unknown;
-  readonly WeightedQuantileLosses: [];
-  readonly ErrorMetrics: [];
-  readonly AverageWeightedQuantileLoss: unknown;
+export interface Metrics {
+  readonly RMSE?: unknown;
+  readonly WeightedQuantileLosses?: [];
+  readonly ErrorMetrics?: [];
+  readonly AverageWeightedQuantileLoss?: unknown;
 }
 
-interface ParameterRanges {
-  readonly CategoricalParameterRanges: [];
-  readonly ContinuousParameterRanges: [];
-  readonly IntegerParameterRanges: [];
+export interface ParameterRanges {
+  readonly CategoricalParameterRanges?: [];
+  readonly ContinuousParameterRanges?: [];
+  readonly IntegerParameterRanges?: [];
 }
 
-interface PredictorBacktestExportJobSummary {
-  readonly PredictorBacktestExportJobArn: string;
-  readonly PredictorBacktestExportJobName: string;
-  readonly Destination: DataDestination;
-  readonly Status: string;
-  readonly Message: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface PredictorBacktestExportJobSummary {
+  readonly PredictorBacktestExportJobArn?: string;
+  readonly PredictorBacktestExportJobName?: string;
+  readonly Destination?: DataDestination;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface PredictorExecution {
-  readonly AlgorithmArn: string;
-  readonly TestWindows: [];
+export interface PredictorExecution {
+  readonly AlgorithmArn?: string;
+  readonly TestWindows?: [];
 }
 
-interface PredictorExecutionDetails {
-  readonly PredictorExecutions: [];
+export interface PredictorExecutionDetails {
+  readonly PredictorExecutions?: [];
 }
 
-interface PredictorSummary {
-  readonly PredictorArn: string;
-  readonly PredictorName: string;
-  readonly DatasetGroupArn: string;
-  readonly IsAutoPredictor: boolean;
-  readonly ReferencePredictorSummary: ReferencePredictorSummary;
-  readonly Status: string;
-  readonly Message: string;
-  readonly CreationTime: Date;
-  readonly LastModificationTime: Date;
+export interface PredictorSummary {
+  readonly PredictorArn?: string;
+  readonly PredictorName?: string;
+  readonly DatasetGroupArn?: string;
+  readonly IsAutoPredictor?: boolean;
+  readonly ReferencePredictorSummary?: ReferencePredictorSummary;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly CreationTime?: Date;
+  readonly LastModificationTime?: Date;
 }
 
-interface ReferencePredictorSummary {
-  readonly Arn: string;
-  readonly State: string;
+export interface ReferencePredictorSummary {
+  readonly Arn?: string;
+  readonly State?: string;
 }
 
-interface ResourceAlreadyExistsException {
-  readonly Message: string;
+export interface ResourceAlreadyExistsException {
+  readonly Message?: string;
 }
 
-interface ResourceInUseException {
-  readonly Message: string;
+export interface ResourceInUseException {
+  readonly Message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface S3Config {
+export interface S3Config {
   readonly Path: string;
   readonly RoleArn: string;
-  readonly KMSKeyArn: string;
+  readonly KMSKeyArn?: string;
 }
 
-interface Schema {
-  readonly Attributes: [];
+export interface Schema {
+  readonly Attributes?: [];
 }
 
-interface SchemaAttribute {
-  readonly AttributeName: string;
-  readonly AttributeType: string;
+export interface SchemaAttribute {
+  readonly AttributeName?: string;
+  readonly AttributeType?: string;
 }
 
-interface Statistics {
-  readonly Count: number;
-  readonly CountDistinct: number;
-  readonly CountNull: number;
-  readonly CountNan: number;
-  readonly Min: string;
-  readonly Max: string;
-  readonly Avg: unknown;
-  readonly Stddev: unknown;
-  readonly CountLong: number;
-  readonly CountDistinctLong: number;
-  readonly CountNullLong: number;
-  readonly CountNanLong: number;
+export interface Statistics {
+  readonly Count?: number;
+  readonly CountDistinct?: number;
+  readonly CountNull?: number;
+  readonly CountNan?: number;
+  readonly Min?: string;
+  readonly Max?: string;
+  readonly Avg?: unknown;
+  readonly Stddev?: unknown;
+  readonly CountLong?: number;
+  readonly CountDistinctLong?: number;
+  readonly CountNullLong?: number;
+  readonly CountNanLong?: number;
 }
 
-interface StopResourceRequest {
+export interface StopResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface SupplementaryFeature {
+export interface SupplementaryFeature {
   readonly Name: string;
   readonly Value: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TestWindowSummary {
-  readonly TestWindowStart: Date;
-  readonly TestWindowEnd: Date;
-  readonly Status: string;
-  readonly Message: string;
+export interface TestWindowSummary {
+  readonly TestWindowStart?: Date;
+  readonly TestWindowEnd?: Date;
+  readonly Status?: string;
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateDatasetGroupRequest {
+export interface UpdateDatasetGroupRequest {
   readonly DatasetGroupArn: string;
   readonly DatasetArns: [];
 }
 
-interface UpdateDatasetGroupResponse {
+export interface UpdateDatasetGroupResponse {
 }
 
-interface WeightedQuantileLoss {
-  readonly Quantile: unknown;
-  readonly LossValue: unknown;
+export interface WeightedQuantileLoss {
+  readonly Quantile?: unknown;
+  readonly LossValue?: unknown;
 }
 
-interface WindowSummary {
-  readonly TestWindowStart: Date;
-  readonly TestWindowEnd: Date;
-  readonly ItemCount: number;
-  readonly EvaluationType: string;
-  readonly Metrics: Metrics;
+export interface WindowSummary {
+  readonly TestWindowStart?: Date;
+  readonly TestWindowEnd?: Date;
+  readonly ItemCount?: number;
+  readonly EvaluationType?: string;
+  readonly Metrics?: Metrics;
 }
+
 

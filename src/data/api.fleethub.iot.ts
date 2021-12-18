@@ -8,27 +8,34 @@ export interface CreateApplication {
   readonly roleArn: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface DeleteApplication {
   readonly applicationId: string;
   readonly clientToken?: string;
 }
+
 export interface DescribeApplication {
   readonly applicationId: string;
 }
+
 export interface ListApplications {
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateApplication {
   readonly applicationId: string;
   readonly applicationName?: string;
@@ -36,122 +43,121 @@ export interface UpdateApplication {
   readonly clientToken?: string;
 }
 
-
-
-interface ApplicationSummary {
+export interface ApplicationSummary {
   readonly applicationId: string;
   readonly applicationName: string;
-  readonly applicationDescription: string;
+  readonly applicationDescription?: string;
   readonly applicationUrl: string;
-  readonly applicationCreationDate: number;
-  readonly applicationLastUpdateDate: number;
-  readonly applicationState: string;
+  readonly applicationCreationDate?: number;
+  readonly applicationLastUpdateDate?: number;
+  readonly applicationState?: string;
 }
 
-interface ConflictException {
-  readonly message: string;
+export interface ConflictException {
+  readonly message?: string;
 }
 
-interface CreateApplicationRequest {
+export interface CreateApplicationRequest {
   readonly applicationName: string;
-  readonly applicationDescription: string;
-  readonly clientToken: string;
+  readonly applicationDescription?: string;
+  readonly clientToken?: string;
   readonly roleArn: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateApplicationResponse {
+export interface CreateApplicationResponse {
   readonly applicationId: string;
   readonly applicationArn: string;
 }
 
-interface DeleteApplicationRequest {
+export interface DeleteApplicationRequest {
   readonly applicationId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface DeleteApplicationResponse {
+export interface DeleteApplicationResponse {
 }
 
-interface DescribeApplicationRequest {
+export interface DescribeApplicationRequest {
   readonly applicationId: string;
 }
 
-interface DescribeApplicationResponse {
+export interface DescribeApplicationResponse {
   readonly applicationId: string;
   readonly applicationArn: string;
   readonly applicationName: string;
-  readonly applicationDescription: string;
+  readonly applicationDescription?: string;
   readonly applicationUrl: string;
   readonly applicationState: string;
   readonly applicationCreationDate: number;
   readonly applicationLastUpdateDate: number;
   readonly roleArn: string;
-  readonly ssoClientId: string;
-  readonly errorMessage: string;
-  readonly tags: {[key: string]: any};
+  readonly ssoClientId?: string;
+  readonly errorMessage?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface InternalFailureException {
-  readonly message: string;
+export interface InternalFailureException {
+  readonly message?: string;
 }
 
-interface InvalidRequestException {
-  readonly message: string;
+export interface InvalidRequestException {
+  readonly message?: string;
 }
 
-interface LimitExceededException {
-  readonly message: string;
+export interface LimitExceededException {
+  readonly message?: string;
 }
 
-interface ListApplicationsRequest {
-  readonly nextToken: string;
+export interface ListApplicationsRequest {
+  readonly nextToken?: string;
 }
 
-interface ListApplicationsResponse {
-  readonly applicationSummaries: [];
-  readonly nextToken: string;
+export interface ListApplicationsResponse {
+  readonly applicationSummaries?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
-  readonly message: string;
+export interface ThrottlingException {
+  readonly message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateApplicationRequest {
+export interface UpdateApplicationRequest {
   readonly applicationId: string;
-  readonly applicationName: string;
-  readonly applicationDescription: string;
-  readonly clientToken: string;
+  readonly applicationName?: string;
+  readonly applicationDescription?: string;
+  readonly clientToken?: string;
 }
 
-interface UpdateApplicationResponse {
+export interface UpdateApplicationResponse {
 }
+
 

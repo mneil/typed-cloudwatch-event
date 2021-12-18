@@ -5,9 +5,11 @@ export interface AddCustomRoutingEndpoints {
   readonly EndpointConfigurations: [];
   readonly EndpointGroupArn: string;
 }
+
 export interface AdvertiseByoipCidr {
   readonly Cidr: string;
 }
+
 export interface AllowCustomRoutingTraffic {
   readonly EndpointGroupArn: string;
   readonly EndpointId: string;
@@ -15,6 +17,7 @@ export interface AllowCustomRoutingTraffic {
   readonly DestinationPorts?: [];
   readonly AllowAllTrafficToEndpoint?: boolean;
 }
+
 export interface CreateAccelerator {
   readonly Name: string;
   readonly IpAddressType?: string;
@@ -23,6 +26,7 @@ export interface CreateAccelerator {
   readonly IdempotencyToken: string;
   readonly Tags?: [];
 }
+
 export interface CreateCustomRoutingAccelerator {
   readonly Name: string;
   readonly IpAddressType?: string;
@@ -31,17 +35,20 @@ export interface CreateCustomRoutingAccelerator {
   readonly IdempotencyToken: string;
   readonly Tags?: [];
 }
+
 export interface CreateCustomRoutingEndpointGroup {
   readonly ListenerArn: string;
   readonly EndpointGroupRegion: string;
   readonly DestinationConfigurations: [];
   readonly IdempotencyToken: string;
 }
+
 export interface CreateCustomRoutingListener {
   readonly AcceleratorArn: string;
   readonly PortRanges: [];
   readonly IdempotencyToken: string;
 }
+
 export interface CreateEndpointGroup {
   readonly ListenerArn: string;
   readonly EndpointGroupRegion: string;
@@ -55,6 +62,7 @@ export interface CreateEndpointGroup {
   readonly IdempotencyToken: string;
   readonly PortOverrides?: [];
 }
+
 export interface CreateListener {
   readonly AcceleratorArn: string;
   readonly PortRanges: [];
@@ -62,24 +70,31 @@ export interface CreateListener {
   readonly ClientAffinity?: string;
   readonly IdempotencyToken: string;
 }
+
 export interface DeleteAccelerator {
   readonly AcceleratorArn: string;
 }
+
 export interface DeleteCustomRoutingAccelerator {
   readonly AcceleratorArn: string;
 }
+
 export interface DeleteCustomRoutingEndpointGroup {
   readonly EndpointGroupArn: string;
 }
+
 export interface DeleteCustomRoutingListener {
   readonly ListenerArn: string;
 }
+
 export interface DeleteEndpointGroup {
   readonly EndpointGroupArn: string;
 }
+
 export interface DeleteListener {
   readonly ListenerArn: string;
 }
+
 export interface DenyCustomRoutingTraffic {
   readonly EndpointGroupArn: string;
   readonly EndpointId: string;
@@ -87,124 +102,153 @@ export interface DenyCustomRoutingTraffic {
   readonly DestinationPorts?: [];
   readonly DenyAllTrafficToEndpoint?: boolean;
 }
+
 export interface DeprovisionByoipCidr {
   readonly Cidr: string;
 }
+
 export interface DescribeAccelerator {
   readonly AcceleratorArn: string;
 }
+
 export interface DescribeAcceleratorAttributes {
   readonly AcceleratorArn: string;
 }
+
 export interface DescribeCustomRoutingAccelerator {
   readonly AcceleratorArn: string;
 }
+
 export interface DescribeCustomRoutingAcceleratorAttributes {
   readonly AcceleratorArn: string;
 }
+
 export interface DescribeCustomRoutingEndpointGroup {
   readonly EndpointGroupArn: string;
 }
+
 export interface DescribeCustomRoutingListener {
   readonly ListenerArn: string;
 }
+
 export interface DescribeEndpointGroup {
   readonly EndpointGroupArn: string;
 }
+
 export interface DescribeListener {
   readonly ListenerArn: string;
 }
+
 export interface ListAccelerators {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListByoipCidrs {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListCustomRoutingAccelerators {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListCustomRoutingEndpointGroups {
   readonly ListenerArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListCustomRoutingListeners {
   readonly AcceleratorArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListCustomRoutingPortMappings {
   readonly AcceleratorArn: string;
   readonly EndpointGroupArn?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListCustomRoutingPortMappingsByDestination {
   readonly EndpointId: string;
   readonly DestinationAddress: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListEndpointGroups {
   readonly ListenerArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListListeners {
   readonly AcceleratorArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface ProvisionByoipCidr {
   readonly Cidr: string;
   readonly CidrAuthorizationContext: CidrAuthorizationContext;
 }
+
 export interface RemoveCustomRoutingEndpoints {
   readonly EndpointIds: [];
   readonly EndpointGroupArn: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateAccelerator {
   readonly AcceleratorArn: string;
   readonly Name?: string;
   readonly IpAddressType?: string;
   readonly Enabled?: boolean;
 }
+
 export interface UpdateAcceleratorAttributes {
   readonly AcceleratorArn: string;
   readonly FlowLogsEnabled?: boolean;
   readonly FlowLogsS3Bucket?: string;
   readonly FlowLogsS3Prefix?: string;
 }
+
 export interface UpdateCustomRoutingAccelerator {
   readonly AcceleratorArn: string;
   readonly Name?: string;
   readonly IpAddressType?: string;
   readonly Enabled?: boolean;
 }
+
 export interface UpdateCustomRoutingAcceleratorAttributes {
   readonly AcceleratorArn: string;
   readonly FlowLogsEnabled?: boolean;
   readonly FlowLogsS3Bucket?: string;
   readonly FlowLogsS3Prefix?: string;
 }
+
 export interface UpdateCustomRoutingListener {
   readonly ListenerArn: string;
   readonly PortRanges: [];
 }
+
 export interface UpdateEndpointGroup {
   readonly EndpointGroupArn: string;
   readonly EndpointConfigurations?: [];
@@ -216,681 +260,682 @@ export interface UpdateEndpointGroup {
   readonly ThresholdCount?: number;
   readonly PortOverrides?: [];
 }
+
 export interface UpdateListener {
   readonly ListenerArn: string;
   readonly PortRanges?: [];
   readonly Protocol?: string;
   readonly ClientAffinity?: string;
 }
+
 export interface WithdrawByoipCidr {
   readonly Cidr: string;
 }
 
-
-
-interface Accelerator {
-  readonly AcceleratorArn: string;
-  readonly Name: string;
-  readonly IpAddressType: string;
-  readonly Enabled: boolean;
-  readonly IpSets: [];
-  readonly DnsName: string;
-  readonly Status: string;
-  readonly CreatedTime: Date;
-  readonly LastModifiedTime: Date;
+export interface Accelerator {
+  readonly AcceleratorArn?: string;
+  readonly Name?: string;
+  readonly IpAddressType?: string;
+  readonly Enabled?: boolean;
+  readonly IpSets?: [];
+  readonly DnsName?: string;
+  readonly Status?: string;
+  readonly CreatedTime?: Date;
+  readonly LastModifiedTime?: Date;
 }
 
-interface AcceleratorAttributes {
-  readonly FlowLogsEnabled: boolean;
-  readonly FlowLogsS3Bucket: string;
-  readonly FlowLogsS3Prefix: string;
+export interface AcceleratorAttributes {
+  readonly FlowLogsEnabled?: boolean;
+  readonly FlowLogsS3Bucket?: string;
+  readonly FlowLogsS3Prefix?: string;
 }
 
-interface AcceleratorNotDisabledException {
-  readonly Message: string;
+export interface AcceleratorNotDisabledException {
+  readonly Message?: string;
 }
 
-interface AcceleratorNotFoundException {
-  readonly Message: string;
+export interface AcceleratorNotFoundException {
+  readonly Message?: string;
 }
 
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface AddCustomRoutingEndpointsRequest {
+export interface AddCustomRoutingEndpointsRequest {
   readonly EndpointConfigurations: [];
   readonly EndpointGroupArn: string;
 }
 
-interface AddCustomRoutingEndpointsResponse {
-  readonly EndpointDescriptions: [];
-  readonly EndpointGroupArn: string;
+export interface AddCustomRoutingEndpointsResponse {
+  readonly EndpointDescriptions?: [];
+  readonly EndpointGroupArn?: string;
 }
 
-interface AdvertiseByoipCidrRequest {
+export interface AdvertiseByoipCidrRequest {
   readonly Cidr: string;
 }
 
-interface AdvertiseByoipCidrResponse {
-  readonly ByoipCidr: ByoipCidr;
+export interface AdvertiseByoipCidrResponse {
+  readonly ByoipCidr?: ByoipCidr;
 }
 
-interface AllowCustomRoutingTrafficRequest {
+export interface AllowCustomRoutingTrafficRequest {
   readonly EndpointGroupArn: string;
   readonly EndpointId: string;
-  readonly DestinationAddresses: [];
-  readonly DestinationPorts: [];
-  readonly AllowAllTrafficToEndpoint: boolean;
+  readonly DestinationAddresses?: [];
+  readonly DestinationPorts?: [];
+  readonly AllowAllTrafficToEndpoint?: boolean;
 }
 
-interface AssociatedEndpointGroupFoundException {
-  readonly Message: string;
+export interface AssociatedEndpointGroupFoundException {
+  readonly Message?: string;
 }
 
-interface AssociatedListenerFoundException {
-  readonly Message: string;
+export interface AssociatedListenerFoundException {
+  readonly Message?: string;
 }
 
-interface ByoipCidr {
-  readonly Cidr: string;
-  readonly State: string;
-  readonly Events: [];
+export interface ByoipCidr {
+  readonly Cidr?: string;
+  readonly State?: string;
+  readonly Events?: [];
 }
 
-interface ByoipCidrEvent {
-  readonly Message: string;
-  readonly Timestamp: Date;
+export interface ByoipCidrEvent {
+  readonly Message?: string;
+  readonly Timestamp?: Date;
 }
 
-interface ByoipCidrNotFoundException {
-  readonly Message: string;
+export interface ByoipCidrNotFoundException {
+  readonly Message?: string;
 }
 
-interface CidrAuthorizationContext {
+export interface CidrAuthorizationContext {
   readonly Message: string;
   readonly Signature: string;
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface CreateAcceleratorRequest {
+export interface CreateAcceleratorRequest {
   readonly Name: string;
-  readonly IpAddressType: string;
-  readonly IpAddresses: [];
-  readonly Enabled: boolean;
+  readonly IpAddressType?: string;
+  readonly IpAddresses?: [];
+  readonly Enabled?: boolean;
   readonly IdempotencyToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateAcceleratorResponse {
-  readonly Accelerator: Accelerator;
+export interface CreateAcceleratorResponse {
+  readonly Accelerator?: Accelerator;
 }
 
-interface CreateCustomRoutingAcceleratorRequest {
+export interface CreateCustomRoutingAcceleratorRequest {
   readonly Name: string;
-  readonly IpAddressType: string;
-  readonly IpAddresses: [];
-  readonly Enabled: boolean;
+  readonly IpAddressType?: string;
+  readonly IpAddresses?: [];
+  readonly Enabled?: boolean;
   readonly IdempotencyToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateCustomRoutingAcceleratorResponse {
-  readonly Accelerator: CustomRoutingAccelerator;
+export interface CreateCustomRoutingAcceleratorResponse {
+  readonly Accelerator?: CustomRoutingAccelerator;
 }
 
-interface CreateCustomRoutingEndpointGroupRequest {
+export interface CreateCustomRoutingEndpointGroupRequest {
   readonly ListenerArn: string;
   readonly EndpointGroupRegion: string;
   readonly DestinationConfigurations: [];
   readonly IdempotencyToken: string;
 }
 
-interface CreateCustomRoutingEndpointGroupResponse {
-  readonly EndpointGroup: CustomRoutingEndpointGroup;
+export interface CreateCustomRoutingEndpointGroupResponse {
+  readonly EndpointGroup?: CustomRoutingEndpointGroup;
 }
 
-interface CreateCustomRoutingListenerRequest {
+export interface CreateCustomRoutingListenerRequest {
   readonly AcceleratorArn: string;
   readonly PortRanges: [];
   readonly IdempotencyToken: string;
 }
 
-interface CreateCustomRoutingListenerResponse {
-  readonly Listener: CustomRoutingListener;
+export interface CreateCustomRoutingListenerResponse {
+  readonly Listener?: CustomRoutingListener;
 }
 
-interface CreateEndpointGroupRequest {
+export interface CreateEndpointGroupRequest {
   readonly ListenerArn: string;
   readonly EndpointGroupRegion: string;
-  readonly EndpointConfigurations: [];
-  readonly TrafficDialPercentage: unknown;
-  readonly HealthCheckPort: number;
-  readonly HealthCheckProtocol: string;
-  readonly HealthCheckPath: string;
-  readonly HealthCheckIntervalSeconds: number;
-  readonly ThresholdCount: number;
+  readonly EndpointConfigurations?: [];
+  readonly TrafficDialPercentage?: unknown;
+  readonly HealthCheckPort?: number;
+  readonly HealthCheckProtocol?: string;
+  readonly HealthCheckPath?: string;
+  readonly HealthCheckIntervalSeconds?: number;
+  readonly ThresholdCount?: number;
   readonly IdempotencyToken: string;
-  readonly PortOverrides: [];
+  readonly PortOverrides?: [];
 }
 
-interface CreateEndpointGroupResponse {
-  readonly EndpointGroup: EndpointGroup;
+export interface CreateEndpointGroupResponse {
+  readonly EndpointGroup?: EndpointGroup;
 }
 
-interface CreateListenerRequest {
+export interface CreateListenerRequest {
   readonly AcceleratorArn: string;
   readonly PortRanges: [];
   readonly Protocol: string;
-  readonly ClientAffinity: string;
+  readonly ClientAffinity?: string;
   readonly IdempotencyToken: string;
 }
 
-interface CreateListenerResponse {
-  readonly Listener: Listener;
+export interface CreateListenerResponse {
+  readonly Listener?: Listener;
 }
 
-interface CustomRoutingAccelerator {
-  readonly AcceleratorArn: string;
-  readonly Name: string;
-  readonly IpAddressType: string;
-  readonly Enabled: boolean;
-  readonly IpSets: [];
-  readonly DnsName: string;
-  readonly Status: string;
-  readonly CreatedTime: Date;
-  readonly LastModifiedTime: Date;
+export interface CustomRoutingAccelerator {
+  readonly AcceleratorArn?: string;
+  readonly Name?: string;
+  readonly IpAddressType?: string;
+  readonly Enabled?: boolean;
+  readonly IpSets?: [];
+  readonly DnsName?: string;
+  readonly Status?: string;
+  readonly CreatedTime?: Date;
+  readonly LastModifiedTime?: Date;
 }
 
-interface CustomRoutingAcceleratorAttributes {
-  readonly FlowLogsEnabled: boolean;
-  readonly FlowLogsS3Bucket: string;
-  readonly FlowLogsS3Prefix: string;
+export interface CustomRoutingAcceleratorAttributes {
+  readonly FlowLogsEnabled?: boolean;
+  readonly FlowLogsS3Bucket?: string;
+  readonly FlowLogsS3Prefix?: string;
 }
 
-interface CustomRoutingDestinationConfiguration {
+export interface CustomRoutingDestinationConfiguration {
   readonly FromPort: number;
   readonly ToPort: number;
   readonly Protocols: [];
 }
 
-interface CustomRoutingDestinationDescription {
-  readonly FromPort: number;
-  readonly ToPort: number;
-  readonly Protocols: [];
+export interface CustomRoutingDestinationDescription {
+  readonly FromPort?: number;
+  readonly ToPort?: number;
+  readonly Protocols?: [];
 }
 
-interface CustomRoutingEndpointConfiguration {
-  readonly EndpointId: string;
+export interface CustomRoutingEndpointConfiguration {
+  readonly EndpointId?: string;
 }
 
-interface CustomRoutingEndpointDescription {
-  readonly EndpointId: string;
+export interface CustomRoutingEndpointDescription {
+  readonly EndpointId?: string;
 }
 
-interface CustomRoutingEndpointGroup {
-  readonly EndpointGroupArn: string;
-  readonly EndpointGroupRegion: string;
-  readonly DestinationDescriptions: [];
-  readonly EndpointDescriptions: [];
+export interface CustomRoutingEndpointGroup {
+  readonly EndpointGroupArn?: string;
+  readonly EndpointGroupRegion?: string;
+  readonly DestinationDescriptions?: [];
+  readonly EndpointDescriptions?: [];
 }
 
-interface CustomRoutingListener {
-  readonly ListenerArn: string;
-  readonly PortRanges: [];
+export interface CustomRoutingListener {
+  readonly ListenerArn?: string;
+  readonly PortRanges?: [];
 }
 
-interface DeleteAcceleratorRequest {
+export interface DeleteAcceleratorRequest {
   readonly AcceleratorArn: string;
 }
 
-interface DeleteCustomRoutingAcceleratorRequest {
+export interface DeleteCustomRoutingAcceleratorRequest {
   readonly AcceleratorArn: string;
 }
 
-interface DeleteCustomRoutingEndpointGroupRequest {
+export interface DeleteCustomRoutingEndpointGroupRequest {
   readonly EndpointGroupArn: string;
 }
 
-interface DeleteCustomRoutingListenerRequest {
+export interface DeleteCustomRoutingListenerRequest {
   readonly ListenerArn: string;
 }
 
-interface DeleteEndpointGroupRequest {
+export interface DeleteEndpointGroupRequest {
   readonly EndpointGroupArn: string;
 }
 
-interface DeleteListenerRequest {
+export interface DeleteListenerRequest {
   readonly ListenerArn: string;
 }
 
-interface DenyCustomRoutingTrafficRequest {
+export interface DenyCustomRoutingTrafficRequest {
   readonly EndpointGroupArn: string;
   readonly EndpointId: string;
-  readonly DestinationAddresses: [];
-  readonly DestinationPorts: [];
-  readonly DenyAllTrafficToEndpoint: boolean;
+  readonly DestinationAddresses?: [];
+  readonly DestinationPorts?: [];
+  readonly DenyAllTrafficToEndpoint?: boolean;
 }
 
-interface DeprovisionByoipCidrRequest {
+export interface DeprovisionByoipCidrRequest {
   readonly Cidr: string;
 }
 
-interface DeprovisionByoipCidrResponse {
-  readonly ByoipCidr: ByoipCidr;
+export interface DeprovisionByoipCidrResponse {
+  readonly ByoipCidr?: ByoipCidr;
 }
 
-interface DescribeAcceleratorAttributesRequest {
+export interface DescribeAcceleratorAttributesRequest {
   readonly AcceleratorArn: string;
 }
 
-interface DescribeAcceleratorAttributesResponse {
-  readonly AcceleratorAttributes: AcceleratorAttributes;
+export interface DescribeAcceleratorAttributesResponse {
+  readonly AcceleratorAttributes?: AcceleratorAttributes;
 }
 
-interface DescribeAcceleratorRequest {
+export interface DescribeAcceleratorRequest {
   readonly AcceleratorArn: string;
 }
 
-interface DescribeAcceleratorResponse {
-  readonly Accelerator: Accelerator;
+export interface DescribeAcceleratorResponse {
+  readonly Accelerator?: Accelerator;
 }
 
-interface DescribeCustomRoutingAcceleratorAttributesRequest {
+export interface DescribeCustomRoutingAcceleratorAttributesRequest {
   readonly AcceleratorArn: string;
 }
 
-interface DescribeCustomRoutingAcceleratorAttributesResponse {
-  readonly AcceleratorAttributes: CustomRoutingAcceleratorAttributes;
+export interface DescribeCustomRoutingAcceleratorAttributesResponse {
+  readonly AcceleratorAttributes?: CustomRoutingAcceleratorAttributes;
 }
 
-interface DescribeCustomRoutingAcceleratorRequest {
+export interface DescribeCustomRoutingAcceleratorRequest {
   readonly AcceleratorArn: string;
 }
 
-interface DescribeCustomRoutingAcceleratorResponse {
-  readonly Accelerator: CustomRoutingAccelerator;
+export interface DescribeCustomRoutingAcceleratorResponse {
+  readonly Accelerator?: CustomRoutingAccelerator;
 }
 
-interface DescribeCustomRoutingEndpointGroupRequest {
+export interface DescribeCustomRoutingEndpointGroupRequest {
   readonly EndpointGroupArn: string;
 }
 
-interface DescribeCustomRoutingEndpointGroupResponse {
-  readonly EndpointGroup: CustomRoutingEndpointGroup;
+export interface DescribeCustomRoutingEndpointGroupResponse {
+  readonly EndpointGroup?: CustomRoutingEndpointGroup;
 }
 
-interface DescribeCustomRoutingListenerRequest {
+export interface DescribeCustomRoutingListenerRequest {
   readonly ListenerArn: string;
 }
 
-interface DescribeCustomRoutingListenerResponse {
-  readonly Listener: CustomRoutingListener;
+export interface DescribeCustomRoutingListenerResponse {
+  readonly Listener?: CustomRoutingListener;
 }
 
-interface DescribeEndpointGroupRequest {
+export interface DescribeEndpointGroupRequest {
   readonly EndpointGroupArn: string;
 }
 
-interface DescribeEndpointGroupResponse {
-  readonly EndpointGroup: EndpointGroup;
+export interface DescribeEndpointGroupResponse {
+  readonly EndpointGroup?: EndpointGroup;
 }
 
-interface DescribeListenerRequest {
+export interface DescribeListenerRequest {
   readonly ListenerArn: string;
 }
 
-interface DescribeListenerResponse {
-  readonly Listener: Listener;
+export interface DescribeListenerResponse {
+  readonly Listener?: Listener;
 }
 
-interface DestinationPortMapping {
-  readonly AcceleratorArn: string;
-  readonly AcceleratorSocketAddresses: [];
-  readonly EndpointGroupArn: string;
-  readonly EndpointId: string;
-  readonly EndpointGroupRegion: string;
-  readonly DestinationSocketAddress: SocketAddress;
-  readonly IpAddressType: string;
-  readonly DestinationTrafficState: string;
+export interface DestinationPortMapping {
+  readonly AcceleratorArn?: string;
+  readonly AcceleratorSocketAddresses?: [];
+  readonly EndpointGroupArn?: string;
+  readonly EndpointId?: string;
+  readonly EndpointGroupRegion?: string;
+  readonly DestinationSocketAddress?: SocketAddress;
+  readonly IpAddressType?: string;
+  readonly DestinationTrafficState?: string;
 }
 
-interface EndpointAlreadyExistsException {
-  readonly Message: string;
+export interface EndpointAlreadyExistsException {
+  readonly Message?: string;
 }
 
-interface EndpointConfiguration {
-  readonly EndpointId: string;
-  readonly Weight: number;
-  readonly ClientIPPreservationEnabled: boolean;
+export interface EndpointConfiguration {
+  readonly EndpointId?: string;
+  readonly Weight?: number;
+  readonly ClientIPPreservationEnabled?: boolean;
 }
 
-interface EndpointDescription {
-  readonly EndpointId: string;
-  readonly Weight: number;
-  readonly HealthState: string;
-  readonly HealthReason: string;
-  readonly ClientIPPreservationEnabled: boolean;
+export interface EndpointDescription {
+  readonly EndpointId?: string;
+  readonly Weight?: number;
+  readonly HealthState?: string;
+  readonly HealthReason?: string;
+  readonly ClientIPPreservationEnabled?: boolean;
 }
 
-interface EndpointGroup {
-  readonly EndpointGroupArn: string;
-  readonly EndpointGroupRegion: string;
-  readonly EndpointDescriptions: [];
-  readonly TrafficDialPercentage: unknown;
-  readonly HealthCheckPort: number;
-  readonly HealthCheckProtocol: string;
-  readonly HealthCheckPath: string;
-  readonly HealthCheckIntervalSeconds: number;
-  readonly ThresholdCount: number;
-  readonly PortOverrides: [];
+export interface EndpointGroup {
+  readonly EndpointGroupArn?: string;
+  readonly EndpointGroupRegion?: string;
+  readonly EndpointDescriptions?: [];
+  readonly TrafficDialPercentage?: unknown;
+  readonly HealthCheckPort?: number;
+  readonly HealthCheckProtocol?: string;
+  readonly HealthCheckPath?: string;
+  readonly HealthCheckIntervalSeconds?: number;
+  readonly ThresholdCount?: number;
+  readonly PortOverrides?: [];
 }
 
-interface EndpointGroupAlreadyExistsException {
-  readonly Message: string;
+export interface EndpointGroupAlreadyExistsException {
+  readonly Message?: string;
 }
 
-interface EndpointGroupNotFoundException {
-  readonly Message: string;
+export interface EndpointGroupNotFoundException {
+  readonly Message?: string;
 }
 
-interface EndpointNotFoundException {
-  readonly Message: string;
+export interface EndpointNotFoundException {
+  readonly Message?: string;
 }
 
-interface IncorrectCidrStateException {
-  readonly Message: string;
+export interface IncorrectCidrStateException {
+  readonly Message?: string;
 }
 
-interface InternalServiceErrorException {
-  readonly Message: string;
+export interface InternalServiceErrorException {
+  readonly Message?: string;
 }
 
-interface InvalidArgumentException {
-  readonly Message: string;
+export interface InvalidArgumentException {
+  readonly Message?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly Message: string;
+export interface InvalidNextTokenException {
+  readonly Message?: string;
 }
 
-interface InvalidPortRangeException {
-  readonly Message: string;
+export interface InvalidPortRangeException {
+  readonly Message?: string;
 }
 
-interface IpSet {
-  readonly IpFamily: string;
-  readonly IpAddresses: [];
+export interface IpSet {
+  readonly IpFamily?: string;
+  readonly IpAddresses?: [];
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface ListAcceleratorsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListAcceleratorsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAcceleratorsResponse {
-  readonly Accelerators: [];
-  readonly NextToken: string;
+export interface ListAcceleratorsResponse {
+  readonly Accelerators?: [];
+  readonly NextToken?: string;
 }
 
-interface ListByoipCidrsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListByoipCidrsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListByoipCidrsResponse {
-  readonly ByoipCidrs: [];
-  readonly NextToken: string;
+export interface ListByoipCidrsResponse {
+  readonly ByoipCidrs?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCustomRoutingAcceleratorsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListCustomRoutingAcceleratorsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListCustomRoutingAcceleratorsResponse {
-  readonly Accelerators: [];
-  readonly NextToken: string;
+export interface ListCustomRoutingAcceleratorsResponse {
+  readonly Accelerators?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCustomRoutingEndpointGroupsRequest {
+export interface ListCustomRoutingEndpointGroupsRequest {
   readonly ListenerArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListCustomRoutingEndpointGroupsResponse {
-  readonly EndpointGroups: [];
-  readonly NextToken: string;
+export interface ListCustomRoutingEndpointGroupsResponse {
+  readonly EndpointGroups?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCustomRoutingListenersRequest {
+export interface ListCustomRoutingListenersRequest {
   readonly AcceleratorArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListCustomRoutingListenersResponse {
-  readonly Listeners: [];
-  readonly NextToken: string;
+export interface ListCustomRoutingListenersResponse {
+  readonly Listeners?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCustomRoutingPortMappingsByDestinationRequest {
+export interface ListCustomRoutingPortMappingsByDestinationRequest {
   readonly EndpointId: string;
   readonly DestinationAddress: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListCustomRoutingPortMappingsByDestinationResponse {
-  readonly DestinationPortMappings: [];
-  readonly NextToken: string;
+export interface ListCustomRoutingPortMappingsByDestinationResponse {
+  readonly DestinationPortMappings?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCustomRoutingPortMappingsRequest {
+export interface ListCustomRoutingPortMappingsRequest {
   readonly AcceleratorArn: string;
-  readonly EndpointGroupArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly EndpointGroupArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListCustomRoutingPortMappingsResponse {
-  readonly PortMappings: [];
-  readonly NextToken: string;
+export interface ListCustomRoutingPortMappingsResponse {
+  readonly PortMappings?: [];
+  readonly NextToken?: string;
 }
 
-interface ListEndpointGroupsRequest {
+export interface ListEndpointGroupsRequest {
   readonly ListenerArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListEndpointGroupsResponse {
-  readonly EndpointGroups: [];
-  readonly NextToken: string;
+export interface ListEndpointGroupsResponse {
+  readonly EndpointGroups?: [];
+  readonly NextToken?: string;
 }
 
-interface ListListenersRequest {
+export interface ListListenersRequest {
   readonly AcceleratorArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListListenersResponse {
-  readonly Listeners: [];
-  readonly NextToken: string;
+export interface ListListenersResponse {
+  readonly Listeners?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface Listener {
-  readonly ListenerArn: string;
-  readonly PortRanges: [];
-  readonly Protocol: string;
-  readonly ClientAffinity: string;
+export interface Listener {
+  readonly ListenerArn?: string;
+  readonly PortRanges?: [];
+  readonly Protocol?: string;
+  readonly ClientAffinity?: string;
 }
 
-interface ListenerNotFoundException {
-  readonly Message: string;
+export interface ListenerNotFoundException {
+  readonly Message?: string;
 }
 
-interface PortMapping {
-  readonly AcceleratorPort: number;
-  readonly EndpointGroupArn: string;
-  readonly EndpointId: string;
-  readonly DestinationSocketAddress: SocketAddress;
-  readonly Protocols: [];
-  readonly DestinationTrafficState: string;
+export interface PortMapping {
+  readonly AcceleratorPort?: number;
+  readonly EndpointGroupArn?: string;
+  readonly EndpointId?: string;
+  readonly DestinationSocketAddress?: SocketAddress;
+  readonly Protocols?: [];
+  readonly DestinationTrafficState?: string;
 }
 
-interface PortOverride {
-  readonly ListenerPort: number;
-  readonly EndpointPort: number;
+export interface PortOverride {
+  readonly ListenerPort?: number;
+  readonly EndpointPort?: number;
 }
 
-interface PortRange {
-  readonly FromPort: number;
-  readonly ToPort: number;
+export interface PortRange {
+  readonly FromPort?: number;
+  readonly ToPort?: number;
 }
 
-interface ProvisionByoipCidrRequest {
+export interface ProvisionByoipCidrRequest {
   readonly Cidr: string;
   readonly CidrAuthorizationContext: CidrAuthorizationContext;
 }
 
-interface ProvisionByoipCidrResponse {
-  readonly ByoipCidr: ByoipCidr;
+export interface ProvisionByoipCidrResponse {
+  readonly ByoipCidr?: ByoipCidr;
 }
 
-interface RemoveCustomRoutingEndpointsRequest {
+export interface RemoveCustomRoutingEndpointsRequest {
   readonly EndpointIds: [];
   readonly EndpointGroupArn: string;
 }
 
-interface SocketAddress {
-  readonly IpAddress: string;
-  readonly Port: number;
+export interface SocketAddress {
+  readonly IpAddress?: string;
+  readonly Port?: number;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateAcceleratorAttributesRequest {
+export interface UpdateAcceleratorAttributesRequest {
   readonly AcceleratorArn: string;
-  readonly FlowLogsEnabled: boolean;
-  readonly FlowLogsS3Bucket: string;
-  readonly FlowLogsS3Prefix: string;
+  readonly FlowLogsEnabled?: boolean;
+  readonly FlowLogsS3Bucket?: string;
+  readonly FlowLogsS3Prefix?: string;
 }
 
-interface UpdateAcceleratorAttributesResponse {
-  readonly AcceleratorAttributes: AcceleratorAttributes;
+export interface UpdateAcceleratorAttributesResponse {
+  readonly AcceleratorAttributes?: AcceleratorAttributes;
 }
 
-interface UpdateAcceleratorRequest {
+export interface UpdateAcceleratorRequest {
   readonly AcceleratorArn: string;
-  readonly Name: string;
-  readonly IpAddressType: string;
-  readonly Enabled: boolean;
+  readonly Name?: string;
+  readonly IpAddressType?: string;
+  readonly Enabled?: boolean;
 }
 
-interface UpdateAcceleratorResponse {
-  readonly Accelerator: Accelerator;
+export interface UpdateAcceleratorResponse {
+  readonly Accelerator?: Accelerator;
 }
 
-interface UpdateCustomRoutingAcceleratorAttributesRequest {
+export interface UpdateCustomRoutingAcceleratorAttributesRequest {
   readonly AcceleratorArn: string;
-  readonly FlowLogsEnabled: boolean;
-  readonly FlowLogsS3Bucket: string;
-  readonly FlowLogsS3Prefix: string;
+  readonly FlowLogsEnabled?: boolean;
+  readonly FlowLogsS3Bucket?: string;
+  readonly FlowLogsS3Prefix?: string;
 }
 
-interface UpdateCustomRoutingAcceleratorAttributesResponse {
-  readonly AcceleratorAttributes: CustomRoutingAcceleratorAttributes;
+export interface UpdateCustomRoutingAcceleratorAttributesResponse {
+  readonly AcceleratorAttributes?: CustomRoutingAcceleratorAttributes;
 }
 
-interface UpdateCustomRoutingAcceleratorRequest {
+export interface UpdateCustomRoutingAcceleratorRequest {
   readonly AcceleratorArn: string;
-  readonly Name: string;
-  readonly IpAddressType: string;
-  readonly Enabled: boolean;
+  readonly Name?: string;
+  readonly IpAddressType?: string;
+  readonly Enabled?: boolean;
 }
 
-interface UpdateCustomRoutingAcceleratorResponse {
-  readonly Accelerator: CustomRoutingAccelerator;
+export interface UpdateCustomRoutingAcceleratorResponse {
+  readonly Accelerator?: CustomRoutingAccelerator;
 }
 
-interface UpdateCustomRoutingListenerRequest {
+export interface UpdateCustomRoutingListenerRequest {
   readonly ListenerArn: string;
   readonly PortRanges: [];
 }
 
-interface UpdateCustomRoutingListenerResponse {
-  readonly Listener: CustomRoutingListener;
+export interface UpdateCustomRoutingListenerResponse {
+  readonly Listener?: CustomRoutingListener;
 }
 
-interface UpdateEndpointGroupRequest {
+export interface UpdateEndpointGroupRequest {
   readonly EndpointGroupArn: string;
-  readonly EndpointConfigurations: [];
-  readonly TrafficDialPercentage: unknown;
-  readonly HealthCheckPort: number;
-  readonly HealthCheckProtocol: string;
-  readonly HealthCheckPath: string;
-  readonly HealthCheckIntervalSeconds: number;
-  readonly ThresholdCount: number;
-  readonly PortOverrides: [];
+  readonly EndpointConfigurations?: [];
+  readonly TrafficDialPercentage?: unknown;
+  readonly HealthCheckPort?: number;
+  readonly HealthCheckProtocol?: string;
+  readonly HealthCheckPath?: string;
+  readonly HealthCheckIntervalSeconds?: number;
+  readonly ThresholdCount?: number;
+  readonly PortOverrides?: [];
 }
 
-interface UpdateEndpointGroupResponse {
-  readonly EndpointGroup: EndpointGroup;
+export interface UpdateEndpointGroupResponse {
+  readonly EndpointGroup?: EndpointGroup;
 }
 
-interface UpdateListenerRequest {
+export interface UpdateListenerRequest {
   readonly ListenerArn: string;
-  readonly PortRanges: [];
-  readonly Protocol: string;
-  readonly ClientAffinity: string;
+  readonly PortRanges?: [];
+  readonly Protocol?: string;
+  readonly ClientAffinity?: string;
 }
 
-interface UpdateListenerResponse {
-  readonly Listener: Listener;
+export interface UpdateListenerResponse {
+  readonly Listener?: Listener;
 }
 
-interface WithdrawByoipCidrRequest {
+export interface WithdrawByoipCidrRequest {
   readonly Cidr: string;
 }
 
-interface WithdrawByoipCidrResponse {
-  readonly ByoipCidr: ByoipCidr;
+export interface WithdrawByoipCidrResponse {
+  readonly ByoipCidr?: ByoipCidr;
 }
+
 

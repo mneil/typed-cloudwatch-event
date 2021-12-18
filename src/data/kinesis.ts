@@ -5,51 +5,63 @@ export interface AddTagsToStream {
   readonly StreamName: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface CreateStream {
   readonly StreamName: string;
   readonly ShardCount?: number;
   readonly StreamModeDetails?: StreamModeDetails;
 }
+
 export interface DecreaseStreamRetentionPeriod {
   readonly StreamName: string;
   readonly RetentionPeriodHours: number;
 }
+
 export interface DeleteStream {
   readonly StreamName: string;
   readonly EnforceConsumerDeletion?: boolean;
 }
+
 export interface DeregisterStreamConsumer {
   readonly StreamARN?: string;
   readonly ConsumerName?: string;
   readonly ConsumerARN?: string;
 }
+
 export interface DescribeLimits {
 }
+
 export interface DescribeStream {
   readonly StreamName: string;
   readonly Limit?: number;
   readonly ExclusiveStartShardId?: string;
 }
+
 export interface DescribeStreamConsumer {
   readonly StreamARN?: string;
   readonly ConsumerName?: string;
   readonly ConsumerARN?: string;
 }
+
 export interface DescribeStreamSummary {
   readonly StreamName: string;
 }
+
 export interface DisableEnhancedMonitoring {
   readonly StreamName: string;
   readonly ShardLevelMetrics: [];
 }
+
 export interface EnableEnhancedMonitoring {
   readonly StreamName: string;
   readonly ShardLevelMetrics: [];
 }
+
 export interface GetRecords {
   readonly ShardIterator: string;
   readonly Limit?: number;
 }
+
 export interface GetShardIterator {
   readonly StreamName: string;
   readonly ShardId: string;
@@ -57,10 +69,12 @@ export interface GetShardIterator {
   readonly StartingSequenceNumber?: string;
   readonly Timestamp?: Date;
 }
+
 export interface IncreaseStreamRetentionPeriod {
   readonly StreamName: string;
   readonly RetentionPeriodHours: number;
 }
+
 export interface ListShards {
   readonly StreamName?: string;
   readonly NextToken?: string;
@@ -69,26 +83,31 @@ export interface ListShards {
   readonly StreamCreationTimestamp?: Date;
   readonly ShardFilter?: ShardFilter;
 }
+
 export interface ListStreamConsumers {
   readonly StreamARN: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly StreamCreationTimestamp?: Date;
 }
+
 export interface ListStreams {
   readonly Limit?: number;
   readonly ExclusiveStartStreamName?: string;
 }
+
 export interface ListTagsForStream {
   readonly StreamName: string;
   readonly ExclusiveStartTagKey?: string;
   readonly Limit?: number;
 }
+
 export interface MergeShards {
   readonly StreamName: string;
   readonly ShardToMerge: string;
   readonly AdjacentShardToMerge: string;
 }
+
 export interface PutRecord {
   readonly StreamName: string;
   readonly Data: unknown;
@@ -96,69 +115,76 @@ export interface PutRecord {
   readonly ExplicitHashKey?: string;
   readonly SequenceNumberForOrdering?: string;
 }
+
 export interface PutRecords {
   readonly Records: [];
   readonly StreamName: string;
 }
+
 export interface RegisterStreamConsumer {
   readonly StreamARN: string;
   readonly ConsumerName: string;
 }
+
 export interface RemoveTagsFromStream {
   readonly StreamName: string;
   readonly TagKeys: [];
 }
+
 export interface SplitShard {
   readonly StreamName: string;
   readonly ShardToSplit: string;
   readonly NewStartingHashKey: string;
 }
+
 export interface StartStreamEncryption {
   readonly StreamName: string;
   readonly EncryptionType: string;
   readonly KeyId: string;
 }
+
 export interface StopStreamEncryption {
   readonly StreamName: string;
   readonly EncryptionType: string;
   readonly KeyId: string;
 }
+
 export interface SubscribeToShard {
   readonly ConsumerARN: string;
   readonly ShardId: string;
   readonly StartingPosition: StartingPosition;
 }
+
 export interface UpdateShardCount {
   readonly StreamName: string;
   readonly TargetShardCount: number;
   readonly ScalingType: string;
 }
+
 export interface UpdateStreamMode {
   readonly StreamARN: string;
   readonly StreamModeDetails: StreamModeDetails;
 }
 
-
-
-interface AddTagsToStreamInput {
+export interface AddTagsToStreamInput {
   readonly StreamName: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface ChildShard {
+export interface ChildShard {
   readonly ShardId: string;
   readonly ParentShards: [];
   readonly HashKeyRange: HashKeyRange;
 }
 
-interface Consumer {
+export interface Consumer {
   readonly ConsumerName: string;
   readonly ConsumerARN: string;
   readonly ConsumerStatus: string;
   readonly ConsumerCreationTimestamp: Date;
 }
 
-interface ConsumerDescription {
+export interface ConsumerDescription {
   readonly ConsumerName: string;
   readonly ConsumerARN: string;
   readonly ConsumerStatus: string;
@@ -166,417 +192,418 @@ interface ConsumerDescription {
   readonly StreamARN: string;
 }
 
-interface CreateStreamInput {
+export interface CreateStreamInput {
   readonly StreamName: string;
-  readonly ShardCount: number;
-  readonly StreamModeDetails: StreamModeDetails;
+  readonly ShardCount?: number;
+  readonly StreamModeDetails?: StreamModeDetails;
 }
 
-interface DecreaseStreamRetentionPeriodInput {
+export interface DecreaseStreamRetentionPeriodInput {
   readonly StreamName: string;
   readonly RetentionPeriodHours: number;
 }
 
-interface DeleteStreamInput {
+export interface DeleteStreamInput {
   readonly StreamName: string;
-  readonly EnforceConsumerDeletion: boolean;
+  readonly EnforceConsumerDeletion?: boolean;
 }
 
-interface DeregisterStreamConsumerInput {
-  readonly StreamARN: string;
-  readonly ConsumerName: string;
-  readonly ConsumerARN: string;
+export interface DeregisterStreamConsumerInput {
+  readonly StreamARN?: string;
+  readonly ConsumerName?: string;
+  readonly ConsumerARN?: string;
 }
 
-interface DescribeLimitsInput {
+export interface DescribeLimitsInput {
 }
 
-interface DescribeLimitsOutput {
+export interface DescribeLimitsOutput {
   readonly ShardLimit: number;
   readonly OpenShardCount: number;
   readonly OnDemandStreamCount: number;
   readonly OnDemandStreamCountLimit: number;
 }
 
-interface DescribeStreamConsumerInput {
-  readonly StreamARN: string;
-  readonly ConsumerName: string;
-  readonly ConsumerARN: string;
+export interface DescribeStreamConsumerInput {
+  readonly StreamARN?: string;
+  readonly ConsumerName?: string;
+  readonly ConsumerARN?: string;
 }
 
-interface DescribeStreamConsumerOutput {
+export interface DescribeStreamConsumerOutput {
   readonly ConsumerDescription: ConsumerDescription;
 }
 
-interface DescribeStreamInput {
+export interface DescribeStreamInput {
   readonly StreamName: string;
-  readonly Limit: number;
-  readonly ExclusiveStartShardId: string;
+  readonly Limit?: number;
+  readonly ExclusiveStartShardId?: string;
 }
 
-interface DescribeStreamOutput {
+export interface DescribeStreamOutput {
   readonly StreamDescription: StreamDescription;
 }
 
-interface DescribeStreamSummaryInput {
+export interface DescribeStreamSummaryInput {
   readonly StreamName: string;
 }
 
-interface DescribeStreamSummaryOutput {
+export interface DescribeStreamSummaryOutput {
   readonly StreamDescriptionSummary: StreamDescriptionSummary;
 }
 
-interface DisableEnhancedMonitoringInput {
+export interface DisableEnhancedMonitoringInput {
   readonly StreamName: string;
   readonly ShardLevelMetrics: [];
 }
 
-interface EnableEnhancedMonitoringInput {
+export interface EnableEnhancedMonitoringInput {
   readonly StreamName: string;
   readonly ShardLevelMetrics: [];
 }
 
-interface EnhancedMetrics {
-  readonly ShardLevelMetrics: [];
+export interface EnhancedMetrics {
+  readonly ShardLevelMetrics?: [];
 }
 
-interface EnhancedMonitoringOutput {
-  readonly StreamName: string;
-  readonly CurrentShardLevelMetrics: [];
-  readonly DesiredShardLevelMetrics: [];
+export interface EnhancedMonitoringOutput {
+  readonly StreamName?: string;
+  readonly CurrentShardLevelMetrics?: [];
+  readonly DesiredShardLevelMetrics?: [];
 }
 
-interface ExpiredIteratorException {
-  readonly message: string;
+export interface ExpiredIteratorException {
+  readonly message?: string;
 }
 
-interface ExpiredNextTokenException {
-  readonly message: string;
+export interface ExpiredNextTokenException {
+  readonly message?: string;
 }
 
-interface GetRecordsInput {
+export interface GetRecordsInput {
   readonly ShardIterator: string;
-  readonly Limit: number;
+  readonly Limit?: number;
 }
 
-interface GetRecordsOutput {
+export interface GetRecordsOutput {
   readonly Records: [];
-  readonly NextShardIterator: string;
-  readonly MillisBehindLatest: number;
-  readonly ChildShards: [];
+  readonly NextShardIterator?: string;
+  readonly MillisBehindLatest?: number;
+  readonly ChildShards?: [];
 }
 
-interface GetShardIteratorInput {
+export interface GetShardIteratorInput {
   readonly StreamName: string;
   readonly ShardId: string;
   readonly ShardIteratorType: string;
-  readonly StartingSequenceNumber: string;
-  readonly Timestamp: Date;
+  readonly StartingSequenceNumber?: string;
+  readonly Timestamp?: Date;
 }
 
-interface GetShardIteratorOutput {
-  readonly ShardIterator: string;
+export interface GetShardIteratorOutput {
+  readonly ShardIterator?: string;
 }
 
-interface HashKeyRange {
+export interface HashKeyRange {
   readonly StartingHashKey: string;
   readonly EndingHashKey: string;
 }
 
-interface IncreaseStreamRetentionPeriodInput {
+export interface IncreaseStreamRetentionPeriodInput {
   readonly StreamName: string;
   readonly RetentionPeriodHours: number;
 }
 
-interface InternalFailureException {
-  readonly message: string;
+export interface InternalFailureException {
+  readonly message?: string;
 }
 
-interface InvalidArgumentException {
-  readonly message: string;
+export interface InvalidArgumentException {
+  readonly message?: string;
 }
 
-interface KMSAccessDeniedException {
-  readonly message: string;
+export interface KMSAccessDeniedException {
+  readonly message?: string;
 }
 
-interface KMSDisabledException {
-  readonly message: string;
+export interface KMSDisabledException {
+  readonly message?: string;
 }
 
-interface KMSInvalidStateException {
-  readonly message: string;
+export interface KMSInvalidStateException {
+  readonly message?: string;
 }
 
-interface KMSNotFoundException {
-  readonly message: string;
+export interface KMSNotFoundException {
+  readonly message?: string;
 }
 
-interface KMSOptInRequired {
-  readonly message: string;
+export interface KMSOptInRequired {
+  readonly message?: string;
 }
 
-interface KMSThrottlingException {
-  readonly message: string;
+export interface KMSThrottlingException {
+  readonly message?: string;
 }
 
-interface LimitExceededException {
-  readonly message: string;
+export interface LimitExceededException {
+  readonly message?: string;
 }
 
-interface ListShardsInput {
-  readonly StreamName: string;
-  readonly NextToken: string;
-  readonly ExclusiveStartShardId: string;
-  readonly MaxResults: number;
-  readonly StreamCreationTimestamp: Date;
-  readonly ShardFilter: ShardFilter;
+export interface ListShardsInput {
+  readonly StreamName?: string;
+  readonly NextToken?: string;
+  readonly ExclusiveStartShardId?: string;
+  readonly MaxResults?: number;
+  readonly StreamCreationTimestamp?: Date;
+  readonly ShardFilter?: ShardFilter;
 }
 
-interface ListShardsOutput {
-  readonly Shards: [];
-  readonly NextToken: string;
+export interface ListShardsOutput {
+  readonly Shards?: [];
+  readonly NextToken?: string;
 }
 
-interface ListStreamConsumersInput {
+export interface ListStreamConsumersInput {
   readonly StreamARN: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly StreamCreationTimestamp: Date;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly StreamCreationTimestamp?: Date;
 }
 
-interface ListStreamConsumersOutput {
-  readonly Consumers: [];
-  readonly NextToken: string;
+export interface ListStreamConsumersOutput {
+  readonly Consumers?: [];
+  readonly NextToken?: string;
 }
 
-interface ListStreamsInput {
-  readonly Limit: number;
-  readonly ExclusiveStartStreamName: string;
+export interface ListStreamsInput {
+  readonly Limit?: number;
+  readonly ExclusiveStartStreamName?: string;
 }
 
-interface ListStreamsOutput {
+export interface ListStreamsOutput {
   readonly StreamNames: [];
   readonly HasMoreStreams: boolean;
 }
 
-interface ListTagsForStreamInput {
+export interface ListTagsForStreamInput {
   readonly StreamName: string;
-  readonly ExclusiveStartTagKey: string;
-  readonly Limit: number;
+  readonly ExclusiveStartTagKey?: string;
+  readonly Limit?: number;
 }
 
-interface ListTagsForStreamOutput {
+export interface ListTagsForStreamOutput {
   readonly Tags: [];
   readonly HasMoreTags: boolean;
 }
 
-interface MergeShardsInput {
+export interface MergeShardsInput {
   readonly StreamName: string;
   readonly ShardToMerge: string;
   readonly AdjacentShardToMerge: string;
 }
 
-interface ProvisionedThroughputExceededException {
-  readonly message: string;
+export interface ProvisionedThroughputExceededException {
+  readonly message?: string;
 }
 
-interface PutRecordInput {
+export interface PutRecordInput {
   readonly StreamName: string;
   readonly Data: unknown;
   readonly PartitionKey: string;
-  readonly ExplicitHashKey: string;
-  readonly SequenceNumberForOrdering: string;
+  readonly ExplicitHashKey?: string;
+  readonly SequenceNumberForOrdering?: string;
 }
 
-interface PutRecordOutput {
+export interface PutRecordOutput {
   readonly ShardId: string;
   readonly SequenceNumber: string;
-  readonly EncryptionType: string;
+  readonly EncryptionType?: string;
 }
 
-interface PutRecordsInput {
+export interface PutRecordsInput {
   readonly Records: [];
   readonly StreamName: string;
 }
 
-interface PutRecordsOutput {
-  readonly FailedRecordCount: number;
+export interface PutRecordsOutput {
+  readonly FailedRecordCount?: number;
   readonly Records: [];
-  readonly EncryptionType: string;
+  readonly EncryptionType?: string;
 }
 
-interface PutRecordsRequestEntry {
+export interface PutRecordsRequestEntry {
   readonly Data: unknown;
-  readonly ExplicitHashKey: string;
+  readonly ExplicitHashKey?: string;
   readonly PartitionKey: string;
 }
 
-interface PutRecordsResultEntry {
-  readonly SequenceNumber: string;
-  readonly ShardId: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface PutRecordsResultEntry {
+  readonly SequenceNumber?: string;
+  readonly ShardId?: string;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface Record {
+export interface Record {
   readonly SequenceNumber: string;
-  readonly ApproximateArrivalTimestamp: Date;
+  readonly ApproximateArrivalTimestamp?: Date;
   readonly Data: unknown;
   readonly PartitionKey: string;
-  readonly EncryptionType: string;
+  readonly EncryptionType?: string;
 }
 
-interface RegisterStreamConsumerInput {
+export interface RegisterStreamConsumerInput {
   readonly StreamARN: string;
   readonly ConsumerName: string;
 }
 
-interface RegisterStreamConsumerOutput {
+export interface RegisterStreamConsumerOutput {
   readonly Consumer: Consumer;
 }
 
-interface RemoveTagsFromStreamInput {
+export interface RemoveTagsFromStreamInput {
   readonly StreamName: string;
   readonly TagKeys: [];
 }
 
-interface ResourceInUseException {
-  readonly message: string;
+export interface ResourceInUseException {
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface SequenceNumberRange {
+export interface SequenceNumberRange {
   readonly StartingSequenceNumber: string;
-  readonly EndingSequenceNumber: string;
+  readonly EndingSequenceNumber?: string;
 }
 
-interface Shard {
+export interface Shard {
   readonly ShardId: string;
-  readonly ParentShardId: string;
-  readonly AdjacentParentShardId: string;
+  readonly ParentShardId?: string;
+  readonly AdjacentParentShardId?: string;
   readonly HashKeyRange: HashKeyRange;
   readonly SequenceNumberRange: SequenceNumberRange;
 }
 
-interface ShardFilter {
+export interface ShardFilter {
   readonly Type: string;
-  readonly ShardId: string;
-  readonly Timestamp: Date;
+  readonly ShardId?: string;
+  readonly Timestamp?: Date;
 }
 
-interface SplitShardInput {
+export interface SplitShardInput {
   readonly StreamName: string;
   readonly ShardToSplit: string;
   readonly NewStartingHashKey: string;
 }
 
-interface StartStreamEncryptionInput {
+export interface StartStreamEncryptionInput {
   readonly StreamName: string;
   readonly EncryptionType: string;
   readonly KeyId: string;
 }
 
-interface StartingPosition {
+export interface StartingPosition {
   readonly Type: string;
-  readonly SequenceNumber: string;
-  readonly Timestamp: Date;
+  readonly SequenceNumber?: string;
+  readonly Timestamp?: Date;
 }
 
-interface StopStreamEncryptionInput {
+export interface StopStreamEncryptionInput {
   readonly StreamName: string;
   readonly EncryptionType: string;
   readonly KeyId: string;
 }
 
-interface StreamDescription {
+export interface StreamDescription {
   readonly StreamName: string;
   readonly StreamARN: string;
   readonly StreamStatus: string;
-  readonly StreamModeDetails: StreamModeDetails;
+  readonly StreamModeDetails?: StreamModeDetails;
   readonly Shards: [];
   readonly HasMoreShards: boolean;
   readonly RetentionPeriodHours: number;
   readonly StreamCreationTimestamp: Date;
   readonly EnhancedMonitoring: [];
-  readonly EncryptionType: string;
-  readonly KeyId: string;
+  readonly EncryptionType?: string;
+  readonly KeyId?: string;
 }
 
-interface StreamDescriptionSummary {
+export interface StreamDescriptionSummary {
   readonly StreamName: string;
   readonly StreamARN: string;
   readonly StreamStatus: string;
-  readonly StreamModeDetails: StreamModeDetails;
+  readonly StreamModeDetails?: StreamModeDetails;
   readonly RetentionPeriodHours: number;
   readonly StreamCreationTimestamp: Date;
   readonly EnhancedMonitoring: [];
-  readonly EncryptionType: string;
-  readonly KeyId: string;
+  readonly EncryptionType?: string;
+  readonly KeyId?: string;
   readonly OpenShardCount: number;
-  readonly ConsumerCount: number;
+  readonly ConsumerCount?: number;
 }
 
-interface StreamModeDetails {
+export interface StreamModeDetails {
   readonly StreamMode: string;
 }
 
-interface SubscribeToShardEvent {
+export interface SubscribeToShardEvent {
   readonly Records: [];
   readonly ContinuationSequenceNumber: string;
   readonly MillisBehindLatest: number;
-  readonly ChildShards: [];
+  readonly ChildShards?: [];
 }
 
-interface SubscribeToShardEventStream {
+export interface SubscribeToShardEventStream {
   readonly SubscribeToShardEvent: SubscribeToShardEvent;
-  readonly ResourceNotFoundException: ResourceNotFoundException;
-  readonly ResourceInUseException: ResourceInUseException;
-  readonly KMSDisabledException: KMSDisabledException;
-  readonly KMSInvalidStateException: KMSInvalidStateException;
-  readonly KMSAccessDeniedException: KMSAccessDeniedException;
-  readonly KMSNotFoundException: KMSNotFoundException;
-  readonly KMSOptInRequired: KMSOptInRequired;
-  readonly KMSThrottlingException: KMSThrottlingException;
-  readonly InternalFailureException: InternalFailureException;
+  readonly ResourceNotFoundException?: ResourceNotFoundException;
+  readonly ResourceInUseException?: ResourceInUseException;
+  readonly KMSDisabledException?: KMSDisabledException;
+  readonly KMSInvalidStateException?: KMSInvalidStateException;
+  readonly KMSAccessDeniedException?: KMSAccessDeniedException;
+  readonly KMSNotFoundException?: KMSNotFoundException;
+  readonly KMSOptInRequired?: KMSOptInRequired;
+  readonly KMSThrottlingException?: KMSThrottlingException;
+  readonly InternalFailureException?: InternalFailureException;
 }
 
-interface SubscribeToShardInput {
+export interface SubscribeToShardInput {
   readonly ConsumerARN: string;
   readonly ShardId: string;
   readonly StartingPosition: StartingPosition;
 }
 
-interface SubscribeToShardOutput {
+export interface SubscribeToShardOutput {
   readonly EventStream: SubscribeToShardEventStream;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
-  readonly Value: string;
+  readonly Value?: string;
 }
 
-interface UpdateShardCountInput {
+export interface UpdateShardCountInput {
   readonly StreamName: string;
   readonly TargetShardCount: number;
   readonly ScalingType: string;
 }
 
-interface UpdateShardCountOutput {
-  readonly StreamName: string;
-  readonly CurrentShardCount: number;
-  readonly TargetShardCount: number;
+export interface UpdateShardCountOutput {
+  readonly StreamName?: string;
+  readonly CurrentShardCount?: number;
+  readonly TargetShardCount?: number;
 }
 
-interface UpdateStreamModeInput {
+export interface UpdateStreamModeInput {
   readonly StreamARN: string;
   readonly StreamModeDetails: StreamModeDetails;
 }
 
-interface ValidationException {
-  readonly message: string;
+export interface ValidationException {
+  readonly message?: string;
 }
+
 

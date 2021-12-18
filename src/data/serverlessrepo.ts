@@ -18,6 +18,7 @@ export interface CreateApplication {
   readonly TemplateBody?: string;
   readonly TemplateUrl?: string;
 }
+
 export interface CreateApplicationVersion {
   readonly ApplicationId: string;
   readonly SemanticVersion: string;
@@ -26,6 +27,7 @@ export interface CreateApplicationVersion {
   readonly TemplateBody?: string;
   readonly TemplateUrl?: string;
 }
+
 export interface CreateCloudFormationChangeSet {
   readonly ApplicationId: string;
   readonly Capabilities?: [];
@@ -41,47 +43,58 @@ export interface CreateCloudFormationChangeSet {
   readonly Tags?: [];
   readonly TemplateId?: string;
 }
+
 export interface CreateCloudFormationTemplate {
   readonly ApplicationId: string;
   readonly SemanticVersion?: string;
 }
+
 export interface DeleteApplication {
   readonly ApplicationId: string;
 }
+
 export interface GetApplication {
   readonly ApplicationId: string;
   readonly SemanticVersion?: string;
 }
+
 export interface GetApplicationPolicy {
   readonly ApplicationId: string;
 }
+
 export interface GetCloudFormationTemplate {
   readonly ApplicationId: string;
   readonly TemplateId: string;
 }
+
 export interface ListApplicationDependencies {
   readonly ApplicationId: string;
   readonly MaxItems?: number;
   readonly NextToken?: string;
   readonly SemanticVersion?: string;
 }
+
 export interface ListApplicationVersions {
   readonly ApplicationId: string;
   readonly MaxItems?: number;
   readonly NextToken?: string;
 }
+
 export interface ListApplications {
   readonly MaxItems?: number;
   readonly NextToken?: string;
 }
+
 export interface PutApplicationPolicy {
   readonly ApplicationId: string;
   readonly Statements: [];
 }
+
 export interface UnshareApplication {
   readonly ApplicationId: string;
   readonly OrganizationId: string;
 }
+
 export interface UpdateApplication {
   readonly ApplicationId: string;
   readonly Author?: string;
@@ -92,358 +105,356 @@ export interface UpdateApplication {
   readonly ReadmeUrl?: string;
 }
 
-
-
-interface Application {
+export interface Application {
   readonly ApplicationId: string;
   readonly Author: string;
-  readonly CreationTime: string;
+  readonly CreationTime?: string;
   readonly Description: string;
-  readonly HomePageUrl: string;
-  readonly IsVerifiedAuthor: boolean;
-  readonly Labels: [];
-  readonly LicenseUrl: string;
+  readonly HomePageUrl?: string;
+  readonly IsVerifiedAuthor?: boolean;
+  readonly Labels?: [];
+  readonly LicenseUrl?: string;
   readonly Name: string;
-  readonly ReadmeUrl: string;
-  readonly SpdxLicenseId: string;
-  readonly VerifiedAuthorUrl: string;
-  readonly Version: Version;
+  readonly ReadmeUrl?: string;
+  readonly SpdxLicenseId?: string;
+  readonly VerifiedAuthorUrl?: string;
+  readonly Version?: Version;
 }
 
-interface ApplicationDependencyPage {
+export interface ApplicationDependencyPage {
   readonly Dependencies: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ApplicationDependencySummary {
+export interface ApplicationDependencySummary {
   readonly ApplicationId: string;
   readonly SemanticVersion: string;
 }
 
-interface ApplicationPage {
+export interface ApplicationPage {
   readonly Applications: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ApplicationPolicy {
+export interface ApplicationPolicy {
   readonly Statements: [];
 }
 
-interface ApplicationPolicyStatement {
+export interface ApplicationPolicyStatement {
   readonly Actions: [];
-  readonly PrincipalOrgIDs: [];
+  readonly PrincipalOrgIDs?: [];
   readonly Principals: [];
-  readonly StatementId: string;
+  readonly StatementId?: string;
 }
 
-interface ApplicationSummary {
+export interface ApplicationSummary {
   readonly ApplicationId: string;
   readonly Author: string;
-  readonly CreationTime: string;
+  readonly CreationTime?: string;
   readonly Description: string;
-  readonly HomePageUrl: string;
-  readonly Labels: [];
+  readonly HomePageUrl?: string;
+  readonly Labels?: [];
   readonly Name: string;
-  readonly SpdxLicenseId: string;
+  readonly SpdxLicenseId?: string;
 }
 
-interface ApplicationVersionPage {
-  readonly NextToken: string;
+export interface ApplicationVersionPage {
+  readonly NextToken?: string;
   readonly Versions: [];
 }
 
-interface BadRequestException {
-  readonly ErrorCode: string;
-  readonly Message: string;
+export interface BadRequestException {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
 }
 
-interface ChangeSetDetails {
+export interface ChangeSetDetails {
   readonly ApplicationId: string;
   readonly ChangeSetId: string;
   readonly SemanticVersion: string;
   readonly StackId: string;
 }
 
-interface ConflictException {
-  readonly ErrorCode: string;
-  readonly Message: string;
+export interface ConflictException {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
 }
 
-interface CreateApplicationInput {
+export interface CreateApplicationInput {
   readonly Author: string;
   readonly Description: string;
-  readonly HomePageUrl: string;
-  readonly Labels: [];
-  readonly LicenseBody: string;
-  readonly LicenseUrl: string;
+  readonly HomePageUrl?: string;
+  readonly Labels?: [];
+  readonly LicenseBody?: string;
+  readonly LicenseUrl?: string;
   readonly Name: string;
-  readonly ReadmeBody: string;
-  readonly ReadmeUrl: string;
-  readonly SemanticVersion: string;
-  readonly SourceCodeArchiveUrl: string;
-  readonly SourceCodeUrl: string;
-  readonly SpdxLicenseId: string;
-  readonly TemplateBody: string;
-  readonly TemplateUrl: string;
+  readonly ReadmeBody?: string;
+  readonly ReadmeUrl?: string;
+  readonly SemanticVersion?: string;
+  readonly SourceCodeArchiveUrl?: string;
+  readonly SourceCodeUrl?: string;
+  readonly SpdxLicenseId?: string;
+  readonly TemplateBody?: string;
+  readonly TemplateUrl?: string;
 }
 
-interface CreateApplicationRequest {
+export interface CreateApplicationRequest {
   readonly Author: string;
   readonly Description: string;
-  readonly HomePageUrl: string;
-  readonly Labels: [];
-  readonly LicenseBody: string;
-  readonly LicenseUrl: string;
+  readonly HomePageUrl?: string;
+  readonly Labels?: [];
+  readonly LicenseBody?: string;
+  readonly LicenseUrl?: string;
   readonly Name: string;
-  readonly ReadmeBody: string;
-  readonly ReadmeUrl: string;
-  readonly SemanticVersion: string;
-  readonly SourceCodeArchiveUrl: string;
-  readonly SourceCodeUrl: string;
-  readonly SpdxLicenseId: string;
-  readonly TemplateBody: string;
-  readonly TemplateUrl: string;
+  readonly ReadmeBody?: string;
+  readonly ReadmeUrl?: string;
+  readonly SemanticVersion?: string;
+  readonly SourceCodeArchiveUrl?: string;
+  readonly SourceCodeUrl?: string;
+  readonly SpdxLicenseId?: string;
+  readonly TemplateBody?: string;
+  readonly TemplateUrl?: string;
 }
 
-interface CreateApplicationResponse {
+export interface CreateApplicationResponse {
+  readonly ApplicationId?: string;
+  readonly Author?: string;
+  readonly CreationTime?: string;
+  readonly Description?: string;
+  readonly HomePageUrl?: string;
+  readonly IsVerifiedAuthor?: boolean;
+  readonly Labels?: [];
+  readonly LicenseUrl?: string;
+  readonly Name?: string;
+  readonly ReadmeUrl?: string;
+  readonly SpdxLicenseId?: string;
+  readonly VerifiedAuthorUrl?: string;
+  readonly Version?: Version;
+}
+
+export interface CreateApplicationVersionInput {
+  readonly SourceCodeArchiveUrl?: string;
+  readonly SourceCodeUrl?: string;
+  readonly TemplateBody?: string;
+  readonly TemplateUrl?: string;
+}
+
+export interface CreateApplicationVersionRequest {
   readonly ApplicationId: string;
-  readonly Author: string;
-  readonly CreationTime: string;
-  readonly Description: string;
-  readonly HomePageUrl: string;
-  readonly IsVerifiedAuthor: boolean;
-  readonly Labels: [];
-  readonly LicenseUrl: string;
-  readonly Name: string;
-  readonly ReadmeUrl: string;
-  readonly SpdxLicenseId: string;
-  readonly VerifiedAuthorUrl: string;
-  readonly Version: Version;
-}
-
-interface CreateApplicationVersionInput {
-  readonly SourceCodeArchiveUrl: string;
-  readonly SourceCodeUrl: string;
-  readonly TemplateBody: string;
-  readonly TemplateUrl: string;
-}
-
-interface CreateApplicationVersionRequest {
-  readonly ApplicationId: string;
   readonly SemanticVersion: string;
-  readonly SourceCodeArchiveUrl: string;
-  readonly SourceCodeUrl: string;
-  readonly TemplateBody: string;
-  readonly TemplateUrl: string;
+  readonly SourceCodeArchiveUrl?: string;
+  readonly SourceCodeUrl?: string;
+  readonly TemplateBody?: string;
+  readonly TemplateUrl?: string;
 }
 
-interface CreateApplicationVersionResponse {
-  readonly ApplicationId: string;
-  readonly CreationTime: string;
-  readonly ParameterDefinitions: [];
-  readonly RequiredCapabilities: [];
-  readonly ResourcesSupported: boolean;
-  readonly SemanticVersion: string;
-  readonly SourceCodeArchiveUrl: string;
-  readonly SourceCodeUrl: string;
-  readonly TemplateUrl: string;
+export interface CreateApplicationVersionResponse {
+  readonly ApplicationId?: string;
+  readonly CreationTime?: string;
+  readonly ParameterDefinitions?: [];
+  readonly RequiredCapabilities?: [];
+  readonly ResourcesSupported?: boolean;
+  readonly SemanticVersion?: string;
+  readonly SourceCodeArchiveUrl?: string;
+  readonly SourceCodeUrl?: string;
+  readonly TemplateUrl?: string;
 }
 
-interface CreateCloudFormationChangeSetInput {
-  readonly Capabilities: [];
-  readonly ChangeSetName: string;
-  readonly ClientToken: string;
-  readonly Description: string;
-  readonly NotificationArns: [];
-  readonly ParameterOverrides: [];
-  readonly ResourceTypes: [];
-  readonly RollbackConfiguration: RollbackConfiguration;
-  readonly SemanticVersion: string;
+export interface CreateCloudFormationChangeSetInput {
+  readonly Capabilities?: [];
+  readonly ChangeSetName?: string;
+  readonly ClientToken?: string;
+  readonly Description?: string;
+  readonly NotificationArns?: [];
+  readonly ParameterOverrides?: [];
+  readonly ResourceTypes?: [];
+  readonly RollbackConfiguration?: RollbackConfiguration;
+  readonly SemanticVersion?: string;
   readonly StackName: string;
-  readonly Tags: [];
-  readonly TemplateId: string;
+  readonly Tags?: [];
+  readonly TemplateId?: string;
 }
 
-interface CreateCloudFormationChangeSetRequest {
+export interface CreateCloudFormationChangeSetRequest {
   readonly ApplicationId: string;
-  readonly Capabilities: [];
-  readonly ChangeSetName: string;
-  readonly ClientToken: string;
-  readonly Description: string;
-  readonly NotificationArns: [];
-  readonly ParameterOverrides: [];
-  readonly ResourceTypes: [];
-  readonly RollbackConfiguration: RollbackConfiguration;
-  readonly SemanticVersion: string;
+  readonly Capabilities?: [];
+  readonly ChangeSetName?: string;
+  readonly ClientToken?: string;
+  readonly Description?: string;
+  readonly NotificationArns?: [];
+  readonly ParameterOverrides?: [];
+  readonly ResourceTypes?: [];
+  readonly RollbackConfiguration?: RollbackConfiguration;
+  readonly SemanticVersion?: string;
   readonly StackName: string;
-  readonly Tags: [];
+  readonly Tags?: [];
+  readonly TemplateId?: string;
+}
+
+export interface CreateCloudFormationChangeSetResponse {
+  readonly ApplicationId?: string;
+  readonly ChangeSetId?: string;
+  readonly SemanticVersion?: string;
+  readonly StackId?: string;
+}
+
+export interface CreateCloudFormationTemplateRequest {
+  readonly ApplicationId: string;
+  readonly SemanticVersion?: string;
+}
+
+export interface CreateCloudFormationTemplateResponse {
+  readonly ApplicationId?: string;
+  readonly CreationTime?: string;
+  readonly ExpirationTime?: string;
+  readonly SemanticVersion?: string;
+  readonly Status?: string;
+  readonly TemplateId?: string;
+  readonly TemplateUrl?: string;
+}
+
+export interface DeleteApplicationRequest {
+  readonly ApplicationId: string;
+}
+
+export interface ForbiddenException {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
+}
+
+export interface GetApplicationPolicyRequest {
+  readonly ApplicationId: string;
+}
+
+export interface GetApplicationPolicyResponse {
+  readonly Statements?: [];
+}
+
+export interface GetApplicationRequest {
+  readonly ApplicationId: string;
+  readonly SemanticVersion?: string;
+}
+
+export interface GetApplicationResponse {
+  readonly ApplicationId?: string;
+  readonly Author?: string;
+  readonly CreationTime?: string;
+  readonly Description?: string;
+  readonly HomePageUrl?: string;
+  readonly IsVerifiedAuthor?: boolean;
+  readonly Labels?: [];
+  readonly LicenseUrl?: string;
+  readonly Name?: string;
+  readonly ReadmeUrl?: string;
+  readonly SpdxLicenseId?: string;
+  readonly VerifiedAuthorUrl?: string;
+  readonly Version?: Version;
+}
+
+export interface GetCloudFormationTemplateRequest {
+  readonly ApplicationId: string;
   readonly TemplateId: string;
 }
 
-interface CreateCloudFormationChangeSetResponse {
+export interface GetCloudFormationTemplateResponse {
+  readonly ApplicationId?: string;
+  readonly CreationTime?: string;
+  readonly ExpirationTime?: string;
+  readonly SemanticVersion?: string;
+  readonly Status?: string;
+  readonly TemplateId?: string;
+  readonly TemplateUrl?: string;
+}
+
+export interface InternalServerErrorException {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
+}
+
+export interface ListApplicationDependenciesRequest {
   readonly ApplicationId: string;
-  readonly ChangeSetId: string;
-  readonly SemanticVersion: string;
-  readonly StackId: string;
+  readonly MaxItems?: number;
+  readonly NextToken?: string;
+  readonly SemanticVersion?: string;
 }
 
-interface CreateCloudFormationTemplateRequest {
+export interface ListApplicationDependenciesResponse {
+  readonly Dependencies?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListApplicationVersionsRequest {
   readonly ApplicationId: string;
-  readonly SemanticVersion: string;
+  readonly MaxItems?: number;
+  readonly NextToken?: string;
 }
 
-interface CreateCloudFormationTemplateResponse {
-  readonly ApplicationId: string;
-  readonly CreationTime: string;
-  readonly ExpirationTime: string;
-  readonly SemanticVersion: string;
-  readonly Status: string;
-  readonly TemplateId: string;
-  readonly TemplateUrl: string;
+export interface ListApplicationVersionsResponse {
+  readonly NextToken?: string;
+  readonly Versions?: [];
 }
 
-interface DeleteApplicationRequest {
-  readonly ApplicationId: string;
+export interface ListApplicationsRequest {
+  readonly MaxItems?: number;
+  readonly NextToken?: string;
 }
 
-interface ForbiddenException {
-  readonly ErrorCode: string;
-  readonly Message: string;
+export interface ListApplicationsResponse {
+  readonly Applications?: [];
+  readonly NextToken?: string;
 }
 
-interface GetApplicationPolicyRequest {
-  readonly ApplicationId: string;
+export interface NotFoundException {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
 }
 
-interface GetApplicationPolicyResponse {
-  readonly Statements: [];
-}
-
-interface GetApplicationRequest {
-  readonly ApplicationId: string;
-  readonly SemanticVersion: string;
-}
-
-interface GetApplicationResponse {
-  readonly ApplicationId: string;
-  readonly Author: string;
-  readonly CreationTime: string;
-  readonly Description: string;
-  readonly HomePageUrl: string;
-  readonly IsVerifiedAuthor: boolean;
-  readonly Labels: [];
-  readonly LicenseUrl: string;
+export interface ParameterDefinition {
+  readonly AllowedPattern?: string;
+  readonly AllowedValues?: [];
+  readonly ConstraintDescription?: string;
+  readonly DefaultValue?: string;
+  readonly Description?: string;
+  readonly MaxLength?: number;
+  readonly MaxValue?: number;
+  readonly MinLength?: number;
+  readonly MinValue?: number;
   readonly Name: string;
-  readonly ReadmeUrl: string;
-  readonly SpdxLicenseId: string;
-  readonly VerifiedAuthorUrl: string;
-  readonly Version: Version;
-}
-
-interface GetCloudFormationTemplateRequest {
-  readonly ApplicationId: string;
-  readonly TemplateId: string;
-}
-
-interface GetCloudFormationTemplateResponse {
-  readonly ApplicationId: string;
-  readonly CreationTime: string;
-  readonly ExpirationTime: string;
-  readonly SemanticVersion: string;
-  readonly Status: string;
-  readonly TemplateId: string;
-  readonly TemplateUrl: string;
-}
-
-interface InternalServerErrorException {
-  readonly ErrorCode: string;
-  readonly Message: string;
-}
-
-interface ListApplicationDependenciesRequest {
-  readonly ApplicationId: string;
-  readonly MaxItems: number;
-  readonly NextToken: string;
-  readonly SemanticVersion: string;
-}
-
-interface ListApplicationDependenciesResponse {
-  readonly Dependencies: [];
-  readonly NextToken: string;
-}
-
-interface ListApplicationVersionsRequest {
-  readonly ApplicationId: string;
-  readonly MaxItems: number;
-  readonly NextToken: string;
-}
-
-interface ListApplicationVersionsResponse {
-  readonly NextToken: string;
-  readonly Versions: [];
-}
-
-interface ListApplicationsRequest {
-  readonly MaxItems: number;
-  readonly NextToken: string;
-}
-
-interface ListApplicationsResponse {
-  readonly Applications: [];
-  readonly NextToken: string;
-}
-
-interface NotFoundException {
-  readonly ErrorCode: string;
-  readonly Message: string;
-}
-
-interface ParameterDefinition {
-  readonly AllowedPattern: string;
-  readonly AllowedValues: [];
-  readonly ConstraintDescription: string;
-  readonly DefaultValue: string;
-  readonly Description: string;
-  readonly MaxLength: number;
-  readonly MaxValue: number;
-  readonly MinLength: number;
-  readonly MinValue: number;
-  readonly Name: string;
-  readonly NoEcho: boolean;
+  readonly NoEcho?: boolean;
   readonly ReferencedByResources: [];
-  readonly Type: string;
+  readonly Type?: string;
 }
 
-interface ParameterValue {
+export interface ParameterValue {
   readonly Name: string;
   readonly Value: string;
 }
 
-interface PutApplicationPolicyRequest {
+export interface PutApplicationPolicyRequest {
   readonly ApplicationId: string;
   readonly Statements: [];
 }
 
-interface PutApplicationPolicyResponse {
-  readonly Statements: [];
+export interface PutApplicationPolicyResponse {
+  readonly Statements?: [];
 }
 
-interface RollbackConfiguration {
-  readonly MonitoringTimeInMinutes: number;
-  readonly RollbackTriggers: [];
+export interface RollbackConfiguration {
+  readonly MonitoringTimeInMinutes?: number;
+  readonly RollbackTriggers?: [];
 }
 
-interface RollbackTrigger {
+export interface RollbackTrigger {
   readonly Arn: string;
   readonly Type: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TemplateDetails {
+export interface TemplateDetails {
   readonly ApplicationId: string;
   readonly CreationTime: string;
   readonly ExpirationTime: string;
@@ -453,71 +464,72 @@ interface TemplateDetails {
   readonly TemplateUrl: string;
 }
 
-interface TooManyRequestsException {
-  readonly ErrorCode: string;
-  readonly Message: string;
+export interface TooManyRequestsException {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
 }
 
-interface UnshareApplicationInput {
+export interface UnshareApplicationInput {
   readonly OrganizationId: string;
 }
 
-interface UnshareApplicationRequest {
+export interface UnshareApplicationRequest {
   readonly ApplicationId: string;
   readonly OrganizationId: string;
 }
 
-interface UpdateApplicationInput {
-  readonly Author: string;
-  readonly Description: string;
-  readonly HomePageUrl: string;
-  readonly Labels: [];
-  readonly ReadmeBody: string;
-  readonly ReadmeUrl: string;
+export interface UpdateApplicationInput {
+  readonly Author?: string;
+  readonly Description?: string;
+  readonly HomePageUrl?: string;
+  readonly Labels?: [];
+  readonly ReadmeBody?: string;
+  readonly ReadmeUrl?: string;
 }
 
-interface UpdateApplicationRequest {
+export interface UpdateApplicationRequest {
   readonly ApplicationId: string;
-  readonly Author: string;
-  readonly Description: string;
-  readonly HomePageUrl: string;
-  readonly Labels: [];
-  readonly ReadmeBody: string;
-  readonly ReadmeUrl: string;
+  readonly Author?: string;
+  readonly Description?: string;
+  readonly HomePageUrl?: string;
+  readonly Labels?: [];
+  readonly ReadmeBody?: string;
+  readonly ReadmeUrl?: string;
 }
 
-interface UpdateApplicationResponse {
-  readonly ApplicationId: string;
-  readonly Author: string;
-  readonly CreationTime: string;
-  readonly Description: string;
-  readonly HomePageUrl: string;
-  readonly IsVerifiedAuthor: boolean;
-  readonly Labels: [];
-  readonly LicenseUrl: string;
-  readonly Name: string;
-  readonly ReadmeUrl: string;
-  readonly SpdxLicenseId: string;
-  readonly VerifiedAuthorUrl: string;
-  readonly Version: Version;
+export interface UpdateApplicationResponse {
+  readonly ApplicationId?: string;
+  readonly Author?: string;
+  readonly CreationTime?: string;
+  readonly Description?: string;
+  readonly HomePageUrl?: string;
+  readonly IsVerifiedAuthor?: boolean;
+  readonly Labels?: [];
+  readonly LicenseUrl?: string;
+  readonly Name?: string;
+  readonly ReadmeUrl?: string;
+  readonly SpdxLicenseId?: string;
+  readonly VerifiedAuthorUrl?: string;
+  readonly Version?: Version;
 }
 
-interface Version {
+export interface Version {
   readonly ApplicationId: string;
   readonly CreationTime: string;
   readonly ParameterDefinitions: [];
   readonly RequiredCapabilities: [];
   readonly ResourcesSupported: boolean;
   readonly SemanticVersion: string;
-  readonly SourceCodeArchiveUrl: string;
-  readonly SourceCodeUrl: string;
+  readonly SourceCodeArchiveUrl?: string;
+  readonly SourceCodeUrl?: string;
   readonly TemplateUrl: string;
 }
 
-interface VersionSummary {
+export interface VersionSummary {
   readonly ApplicationId: string;
   readonly CreationTime: string;
   readonly SemanticVersion: string;
-  readonly SourceCodeUrl: string;
+  readonly SourceCodeUrl?: string;
 }
+
 

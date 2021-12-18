@@ -5,12 +5,14 @@ export interface AcceptResourceShareInvitation {
   readonly resourceShareInvitationArn: string;
   readonly clientToken?: string;
 }
+
 export interface AssociateResourceShare {
   readonly resourceShareArn: string;
   readonly resourceArns?: [];
   readonly principals?: [];
   readonly clientToken?: string;
 }
+
 export interface AssociateResourceSharePermission {
   readonly resourceShareArn: string;
   readonly permissionArn: string;
@@ -18,6 +20,7 @@ export interface AssociateResourceSharePermission {
   readonly clientToken?: string;
   readonly permissionVersion?: number;
 }
+
 export interface CreateResourceShare {
   readonly name: string;
   readonly resourceArns?: [];
@@ -27,33 +30,40 @@ export interface CreateResourceShare {
   readonly clientToken?: string;
   readonly permissionArns?: [];
 }
+
 export interface DeleteResourceShare {
   readonly resourceShareArn: string;
   readonly clientToken?: string;
 }
+
 export interface DisassociateResourceShare {
   readonly resourceShareArn: string;
   readonly resourceArns?: [];
   readonly principals?: [];
   readonly clientToken?: string;
 }
+
 export interface DisassociateResourceSharePermission {
   readonly resourceShareArn: string;
   readonly permissionArn: string;
   readonly clientToken?: string;
 }
+
 export interface EnableSharingWithAwsOrganization {
 }
+
 export interface GetPermission {
   readonly permissionArn: string;
   readonly permissionVersion?: number;
 }
+
 export interface GetResourcePolicies {
   readonly resourceArns: [];
   readonly principal?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetResourceShareAssociations {
   readonly associationType: string;
   readonly resourceShareArns?: [];
@@ -63,12 +73,14 @@ export interface GetResourceShareAssociations {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetResourceShareInvitations {
   readonly resourceShareInvitationArns?: [];
   readonly resourceShareArns?: [];
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetResourceShares {
   readonly resourceShareArns?: [];
   readonly resourceShareStatus?: string;
@@ -79,17 +91,20 @@ export interface GetResourceShares {
   readonly maxResults?: number;
   readonly permissionArn?: string;
 }
+
 export interface ListPendingInvitationResources {
   readonly resourceShareInvitationArn: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly resourceRegionScope?: string;
 }
+
 export interface ListPermissions {
   readonly resourceType?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListPrincipals {
   readonly resourceOwner: string;
   readonly resourceArn?: string;
@@ -99,16 +114,19 @@ export interface ListPrincipals {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListResourceSharePermissions {
   readonly resourceShareArn: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListResourceTypes {
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly resourceRegionScope?: string;
 }
+
 export interface ListResources {
   readonly resourceOwner: string;
   readonly principal?: string;
@@ -119,21 +137,26 @@ export interface ListResources {
   readonly maxResults?: number;
   readonly resourceRegionScope?: string;
 }
+
 export interface PromoteResourceShareCreatedFromPolicy {
   readonly resourceShareArn: string;
 }
+
 export interface RejectResourceShareInvitation {
   readonly resourceShareInvitationArn: string;
   readonly clientToken?: string;
 }
+
 export interface TagResource {
   readonly resourceShareArn: string;
   readonly tags: [];
 }
+
 export interface UntagResource {
   readonly resourceShareArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateResourceShare {
   readonly resourceShareArn: string;
   readonly name?: string;
@@ -141,466 +164,465 @@ export interface UpdateResourceShare {
   readonly clientToken?: string;
 }
 
-
-
-interface AcceptResourceShareInvitationRequest {
+export interface AcceptResourceShareInvitationRequest {
   readonly resourceShareInvitationArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface AcceptResourceShareInvitationResponse {
-  readonly resourceShareInvitation: ResourceShareInvitation;
-  readonly clientToken: string;
+export interface AcceptResourceShareInvitationResponse {
+  readonly resourceShareInvitation?: ResourceShareInvitation;
+  readonly clientToken?: string;
 }
 
-interface AssociateResourceSharePermissionRequest {
+export interface AssociateResourceSharePermissionRequest {
   readonly resourceShareArn: string;
   readonly permissionArn: string;
-  readonly replace: boolean;
-  readonly clientToken: string;
-  readonly permissionVersion: number;
+  readonly replace?: boolean;
+  readonly clientToken?: string;
+  readonly permissionVersion?: number;
 }
 
-interface AssociateResourceSharePermissionResponse {
-  readonly returnValue: boolean;
-  readonly clientToken: string;
+export interface AssociateResourceSharePermissionResponse {
+  readonly returnValue?: boolean;
+  readonly clientToken?: string;
 }
 
-interface AssociateResourceShareRequest {
+export interface AssociateResourceShareRequest {
   readonly resourceShareArn: string;
-  readonly resourceArns: [];
-  readonly principals: [];
-  readonly clientToken: string;
+  readonly resourceArns?: [];
+  readonly principals?: [];
+  readonly clientToken?: string;
 }
 
-interface AssociateResourceShareResponse {
-  readonly resourceShareAssociations: [];
-  readonly clientToken: string;
+export interface AssociateResourceShareResponse {
+  readonly resourceShareAssociations?: [];
+  readonly clientToken?: string;
 }
 
-interface CreateResourceShareRequest {
+export interface CreateResourceShareRequest {
   readonly name: string;
-  readonly resourceArns: [];
-  readonly principals: [];
-  readonly tags: [];
-  readonly allowExternalPrincipals: boolean;
-  readonly clientToken: string;
-  readonly permissionArns: [];
+  readonly resourceArns?: [];
+  readonly principals?: [];
+  readonly tags?: [];
+  readonly allowExternalPrincipals?: boolean;
+  readonly clientToken?: string;
+  readonly permissionArns?: [];
 }
 
-interface CreateResourceShareResponse {
-  readonly resourceShare: ResourceShare;
-  readonly clientToken: string;
+export interface CreateResourceShareResponse {
+  readonly resourceShare?: ResourceShare;
+  readonly clientToken?: string;
 }
 
-interface DeleteResourceShareRequest {
+export interface DeleteResourceShareRequest {
   readonly resourceShareArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface DeleteResourceShareResponse {
-  readonly returnValue: boolean;
-  readonly clientToken: string;
+export interface DeleteResourceShareResponse {
+  readonly returnValue?: boolean;
+  readonly clientToken?: string;
 }
 
-interface DisassociateResourceSharePermissionRequest {
+export interface DisassociateResourceSharePermissionRequest {
   readonly resourceShareArn: string;
   readonly permissionArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface DisassociateResourceSharePermissionResponse {
-  readonly returnValue: boolean;
-  readonly clientToken: string;
+export interface DisassociateResourceSharePermissionResponse {
+  readonly returnValue?: boolean;
+  readonly clientToken?: string;
 }
 
-interface DisassociateResourceShareRequest {
+export interface DisassociateResourceShareRequest {
   readonly resourceShareArn: string;
-  readonly resourceArns: [];
-  readonly principals: [];
-  readonly clientToken: string;
+  readonly resourceArns?: [];
+  readonly principals?: [];
+  readonly clientToken?: string;
 }
 
-interface DisassociateResourceShareResponse {
-  readonly resourceShareAssociations: [];
-  readonly clientToken: string;
+export interface DisassociateResourceShareResponse {
+  readonly resourceShareAssociations?: [];
+  readonly clientToken?: string;
 }
 
-interface EnableSharingWithAwsOrganizationRequest {
+export interface EnableSharingWithAwsOrganizationRequest {
 }
 
-interface EnableSharingWithAwsOrganizationResponse {
-  readonly returnValue: boolean;
+export interface EnableSharingWithAwsOrganizationResponse {
+  readonly returnValue?: boolean;
 }
 
-interface GetPermissionRequest {
+export interface GetPermissionRequest {
   readonly permissionArn: string;
-  readonly permissionVersion: number;
+  readonly permissionVersion?: number;
 }
 
-interface GetPermissionResponse {
-  readonly permission: ResourceSharePermissionDetail;
+export interface GetPermissionResponse {
+  readonly permission?: ResourceSharePermissionDetail;
 }
 
-interface GetResourcePoliciesRequest {
+export interface GetResourcePoliciesRequest {
   readonly resourceArns: [];
-  readonly principal: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly principal?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetResourcePoliciesResponse {
-  readonly policies: [];
-  readonly nextToken: string;
+export interface GetResourcePoliciesResponse {
+  readonly policies?: [];
+  readonly nextToken?: string;
 }
 
-interface GetResourceShareAssociationsRequest {
+export interface GetResourceShareAssociationsRequest {
   readonly associationType: string;
-  readonly resourceShareArns: [];
-  readonly resourceArn: string;
-  readonly principal: string;
-  readonly associationStatus: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly resourceShareArns?: [];
+  readonly resourceArn?: string;
+  readonly principal?: string;
+  readonly associationStatus?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetResourceShareAssociationsResponse {
-  readonly resourceShareAssociations: [];
-  readonly nextToken: string;
+export interface GetResourceShareAssociationsResponse {
+  readonly resourceShareAssociations?: [];
+  readonly nextToken?: string;
 }
 
-interface GetResourceShareInvitationsRequest {
-  readonly resourceShareInvitationArns: [];
-  readonly resourceShareArns: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetResourceShareInvitationsRequest {
+  readonly resourceShareInvitationArns?: [];
+  readonly resourceShareArns?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetResourceShareInvitationsResponse {
-  readonly resourceShareInvitations: [];
-  readonly nextToken: string;
+export interface GetResourceShareInvitationsResponse {
+  readonly resourceShareInvitations?: [];
+  readonly nextToken?: string;
 }
 
-interface GetResourceSharesRequest {
-  readonly resourceShareArns: [];
-  readonly resourceShareStatus: string;
+export interface GetResourceSharesRequest {
+  readonly resourceShareArns?: [];
+  readonly resourceShareStatus?: string;
   readonly resourceOwner: string;
-  readonly name: string;
-  readonly tagFilters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly permissionArn: string;
+  readonly name?: string;
+  readonly tagFilters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly permissionArn?: string;
 }
 
-interface GetResourceSharesResponse {
-  readonly resourceShares: [];
-  readonly nextToken: string;
+export interface GetResourceSharesResponse {
+  readonly resourceShares?: [];
+  readonly nextToken?: string;
 }
 
-interface IdempotentParameterMismatchException {
+export interface IdempotentParameterMismatchException {
   readonly message: string;
 }
 
-interface InvalidClientTokenException {
+export interface InvalidClientTokenException {
   readonly message: string;
 }
 
-interface InvalidMaxResultsException {
+export interface InvalidMaxResultsException {
   readonly message: string;
 }
 
-interface InvalidNextTokenException {
+export interface InvalidNextTokenException {
   readonly message: string;
 }
 
-interface InvalidParameterException {
+export interface InvalidParameterException {
   readonly message: string;
 }
 
-interface InvalidResourceTypeException {
+export interface InvalidResourceTypeException {
   readonly message: string;
 }
 
-interface InvalidStateTransitionException {
+export interface InvalidStateTransitionException {
   readonly message: string;
 }
 
-interface ListPendingInvitationResourcesRequest {
+export interface ListPendingInvitationResourcesRequest {
   readonly resourceShareInvitationArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly resourceRegionScope: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly resourceRegionScope?: string;
 }
 
-interface ListPendingInvitationResourcesResponse {
-  readonly resources: [];
-  readonly nextToken: string;
+export interface ListPendingInvitationResourcesResponse {
+  readonly resources?: [];
+  readonly nextToken?: string;
 }
 
-interface ListPermissionsRequest {
-  readonly resourceType: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListPermissionsRequest {
+  readonly resourceType?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListPermissionsResponse {
-  readonly permissions: [];
-  readonly nextToken: string;
+export interface ListPermissionsResponse {
+  readonly permissions?: [];
+  readonly nextToken?: string;
 }
 
-interface ListPrincipalsRequest {
+export interface ListPrincipalsRequest {
   readonly resourceOwner: string;
-  readonly resourceArn: string;
-  readonly principals: [];
-  readonly resourceType: string;
-  readonly resourceShareArns: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly resourceArn?: string;
+  readonly principals?: [];
+  readonly resourceType?: string;
+  readonly resourceShareArns?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListPrincipalsResponse {
-  readonly principals: [];
-  readonly nextToken: string;
+export interface ListPrincipalsResponse {
+  readonly principals?: [];
+  readonly nextToken?: string;
 }
 
-interface ListResourceSharePermissionsRequest {
+export interface ListResourceSharePermissionsRequest {
   readonly resourceShareArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListResourceSharePermissionsResponse {
-  readonly permissions: [];
-  readonly nextToken: string;
+export interface ListResourceSharePermissionsResponse {
+  readonly permissions?: [];
+  readonly nextToken?: string;
 }
 
-interface ListResourceTypesRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly resourceRegionScope: string;
+export interface ListResourceTypesRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly resourceRegionScope?: string;
 }
 
-interface ListResourceTypesResponse {
-  readonly resourceTypes: [];
-  readonly nextToken: string;
+export interface ListResourceTypesResponse {
+  readonly resourceTypes?: [];
+  readonly nextToken?: string;
 }
 
-interface ListResourcesRequest {
+export interface ListResourcesRequest {
   readonly resourceOwner: string;
-  readonly principal: string;
-  readonly resourceType: string;
-  readonly resourceArns: [];
-  readonly resourceShareArns: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly resourceRegionScope: string;
+  readonly principal?: string;
+  readonly resourceType?: string;
+  readonly resourceArns?: [];
+  readonly resourceShareArns?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly resourceRegionScope?: string;
 }
 
-interface ListResourcesResponse {
-  readonly resources: [];
-  readonly nextToken: string;
+export interface ListResourcesResponse {
+  readonly resources?: [];
+  readonly nextToken?: string;
 }
 
-interface MalformedArnException {
+export interface MalformedArnException {
   readonly message: string;
 }
 
-interface MissingRequiredParameterException {
+export interface MissingRequiredParameterException {
   readonly message: string;
 }
 
-interface OperationNotPermittedException {
+export interface OperationNotPermittedException {
   readonly message: string;
 }
 
-interface Principal {
-  readonly id: string;
+export interface Principal {
+  readonly id?: string;
+  readonly resourceShareArn?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdatedTime?: Date;
+  readonly external?: boolean;
+}
+
+export interface PromoteResourceShareCreatedFromPolicyRequest {
   readonly resourceShareArn: string;
-  readonly creationTime: Date;
-  readonly lastUpdatedTime: Date;
-  readonly external: boolean;
 }
 
-interface PromoteResourceShareCreatedFromPolicyRequest {
-  readonly resourceShareArn: string;
+export interface PromoteResourceShareCreatedFromPolicyResponse {
+  readonly returnValue?: boolean;
 }
 
-interface PromoteResourceShareCreatedFromPolicyResponse {
-  readonly returnValue: boolean;
-}
-
-interface RejectResourceShareInvitationRequest {
+export interface RejectResourceShareInvitationRequest {
   readonly resourceShareInvitationArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface RejectResourceShareInvitationResponse {
-  readonly resourceShareInvitation: ResourceShareInvitation;
-  readonly clientToken: string;
+export interface RejectResourceShareInvitationResponse {
+  readonly resourceShareInvitation?: ResourceShareInvitation;
+  readonly clientToken?: string;
 }
 
-interface Resource {
-  readonly arn: string;
-  readonly type: string;
-  readonly resourceShareArn: string;
-  readonly resourceGroupArn: string;
-  readonly status: string;
-  readonly statusMessage: string;
-  readonly creationTime: Date;
-  readonly lastUpdatedTime: Date;
-  readonly resourceRegionScope: string;
+export interface Resource {
+  readonly arn?: string;
+  readonly type?: string;
+  readonly resourceShareArn?: string;
+  readonly resourceGroupArn?: string;
+  readonly status?: string;
+  readonly statusMessage?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdatedTime?: Date;
+  readonly resourceRegionScope?: string;
 }
 
-interface ResourceArnNotFoundException {
+export interface ResourceArnNotFoundException {
   readonly message: string;
 }
 
-interface ResourceShare {
+export interface ResourceShare {
+  readonly resourceShareArn?: string;
+  readonly name?: string;
+  readonly owningAccountId?: string;
+  readonly allowExternalPrincipals?: boolean;
+  readonly status?: string;
+  readonly statusMessage?: string;
+  readonly tags?: [];
+  readonly creationTime?: Date;
+  readonly lastUpdatedTime?: Date;
+  readonly featureSet?: string;
+}
+
+export interface ResourceShareAssociation {
+  readonly resourceShareArn?: string;
+  readonly resourceShareName?: string;
+  readonly associatedEntity?: string;
+  readonly associationType?: string;
+  readonly status?: string;
+  readonly statusMessage?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdatedTime?: Date;
+  readonly external?: boolean;
+}
+
+export interface ResourceShareInvitation {
+  readonly resourceShareInvitationArn?: string;
+  readonly resourceShareName?: string;
+  readonly resourceShareArn?: string;
+  readonly senderAccountId?: string;
+  readonly receiverAccountId?: string;
+  readonly invitationTimestamp?: Date;
+  readonly status?: string;
+  readonly resourceShareAssociations?: [];
+  readonly receiverArn?: string;
+}
+
+export interface ResourceShareInvitationAlreadyAcceptedException {
+  readonly message: string;
+}
+
+export interface ResourceShareInvitationAlreadyRejectedException {
+  readonly message: string;
+}
+
+export interface ResourceShareInvitationArnNotFoundException {
+  readonly message: string;
+}
+
+export interface ResourceShareInvitationExpiredException {
+  readonly message: string;
+}
+
+export interface ResourceShareLimitExceededException {
+  readonly message: string;
+}
+
+export interface ResourceSharePermissionDetail {
+  readonly arn?: string;
+  readonly version?: string;
+  readonly defaultVersion?: boolean;
+  readonly name?: string;
+  readonly resourceType?: string;
+  readonly permission?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdatedTime?: Date;
+  readonly isResourceTypeDefault?: boolean;
+}
+
+export interface ResourceSharePermissionSummary {
+  readonly arn?: string;
+  readonly version?: string;
+  readonly defaultVersion?: boolean;
+  readonly name?: string;
+  readonly resourceType?: string;
+  readonly status?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdatedTime?: Date;
+  readonly isResourceTypeDefault?: boolean;
+}
+
+export interface ServerInternalException {
+  readonly message: string;
+}
+
+export interface ServiceNameAndResourceType {
+  readonly resourceType?: string;
+  readonly serviceName?: string;
+  readonly resourceRegionScope?: string;
+}
+
+export interface ServiceUnavailableException {
+  readonly message: string;
+}
+
+export interface Tag {
+  readonly key?: string;
+  readonly value?: string;
+}
+
+export interface TagFilter {
+  readonly tagKey?: string;
+  readonly tagValues?: [];
+}
+
+export interface TagLimitExceededException {
+  readonly message: string;
+}
+
+export interface TagPolicyViolationException {
+  readonly message: string;
+}
+
+export interface TagResourceRequest {
   readonly resourceShareArn: string;
-  readonly name: string;
-  readonly owningAccountId: string;
-  readonly allowExternalPrincipals: boolean;
-  readonly status: string;
-  readonly statusMessage: string;
   readonly tags: [];
-  readonly creationTime: Date;
-  readonly lastUpdatedTime: Date;
-  readonly featureSet: string;
 }
 
-interface ResourceShareAssociation {
-  readonly resourceShareArn: string;
-  readonly resourceShareName: string;
-  readonly associatedEntity: string;
-  readonly associationType: string;
-  readonly status: string;
-  readonly statusMessage: string;
-  readonly creationTime: Date;
-  readonly lastUpdatedTime: Date;
-  readonly external: boolean;
+export interface TagResourceResponse {
 }
 
-interface ResourceShareInvitation {
-  readonly resourceShareInvitationArn: string;
-  readonly resourceShareName: string;
-  readonly resourceShareArn: string;
-  readonly senderAccountId: string;
-  readonly receiverAccountId: string;
-  readonly invitationTimestamp: Date;
-  readonly status: string;
-  readonly resourceShareAssociations: [];
-  readonly receiverArn: string;
-}
-
-interface ResourceShareInvitationAlreadyAcceptedException {
+export interface ThrottlingException {
   readonly message: string;
 }
 
-interface ResourceShareInvitationAlreadyRejectedException {
+export interface UnknownResourceException {
   readonly message: string;
 }
 
-interface ResourceShareInvitationArnNotFoundException {
-  readonly message: string;
-}
-
-interface ResourceShareInvitationExpiredException {
-  readonly message: string;
-}
-
-interface ResourceShareLimitExceededException {
-  readonly message: string;
-}
-
-interface ResourceSharePermissionDetail {
-  readonly arn: string;
-  readonly version: string;
-  readonly defaultVersion: boolean;
-  readonly name: string;
-  readonly resourceType: string;
-  readonly permission: string;
-  readonly creationTime: Date;
-  readonly lastUpdatedTime: Date;
-  readonly isResourceTypeDefault: boolean;
-}
-
-interface ResourceSharePermissionSummary {
-  readonly arn: string;
-  readonly version: string;
-  readonly defaultVersion: boolean;
-  readonly name: string;
-  readonly resourceType: string;
-  readonly status: string;
-  readonly creationTime: Date;
-  readonly lastUpdatedTime: Date;
-  readonly isResourceTypeDefault: boolean;
-}
-
-interface ServerInternalException {
-  readonly message: string;
-}
-
-interface ServiceNameAndResourceType {
-  readonly resourceType: string;
-  readonly serviceName: string;
-  readonly resourceRegionScope: string;
-}
-
-interface ServiceUnavailableException {
-  readonly message: string;
-}
-
-interface Tag {
-  readonly key: string;
-  readonly value: string;
-}
-
-interface TagFilter {
-  readonly tagKey: string;
-  readonly tagValues: [];
-}
-
-interface TagLimitExceededException {
-  readonly message: string;
-}
-
-interface TagPolicyViolationException {
-  readonly message: string;
-}
-
-interface TagResourceRequest {
-  readonly resourceShareArn: string;
-  readonly tags: [];
-}
-
-interface TagResourceResponse {
-}
-
-interface ThrottlingException {
-  readonly message: string;
-}
-
-interface UnknownResourceException {
-  readonly message: string;
-}
-
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceShareArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateResourceShareRequest {
+export interface UpdateResourceShareRequest {
   readonly resourceShareArn: string;
-  readonly name: string;
-  readonly allowExternalPrincipals: boolean;
-  readonly clientToken: string;
+  readonly name?: string;
+  readonly allowExternalPrincipals?: boolean;
+  readonly clientToken?: string;
 }
 
-interface UpdateResourceShareResponse {
-  readonly resourceShare: ResourceShare;
-  readonly clientToken: string;
+export interface UpdateResourceShareResponse {
+  readonly resourceShare?: ResourceShare;
+  readonly clientToken?: string;
 }
+
 

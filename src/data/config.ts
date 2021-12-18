@@ -5,83 +5,105 @@ export interface BatchGetAggregateResourceConfig {
   readonly ConfigurationAggregatorName: string;
   readonly ResourceIdentifiers: [];
 }
+
 export interface BatchGetResourceConfig {
   readonly resourceKeys: [];
 }
+
 export interface DeleteAggregationAuthorization {
   readonly AuthorizedAccountId: string;
   readonly AuthorizedAwsRegion: string;
 }
+
 export interface DeleteConfigRule {
   readonly ConfigRuleName: string;
 }
+
 export interface DeleteConfigurationAggregator {
   readonly ConfigurationAggregatorName: string;
 }
+
 export interface DeleteConfigurationRecorder {
   readonly ConfigurationRecorderName: string;
 }
+
 export interface DeleteConformancePack {
   readonly ConformancePackName: string;
 }
+
 export interface DeleteDeliveryChannel {
   readonly DeliveryChannelName: string;
 }
+
 export interface DeleteEvaluationResults {
   readonly ConfigRuleName: string;
 }
+
 export interface DeleteOrganizationConfigRule {
   readonly OrganizationConfigRuleName: string;
 }
+
 export interface DeleteOrganizationConformancePack {
   readonly OrganizationConformancePackName: string;
 }
+
 export interface DeletePendingAggregationRequest {
   readonly RequesterAccountId: string;
   readonly RequesterAwsRegion: string;
 }
+
 export interface DeleteRemediationConfiguration {
   readonly ConfigRuleName: string;
   readonly ResourceType?: string;
 }
+
 export interface DeleteRemediationExceptions {
   readonly ConfigRuleName: string;
   readonly ResourceKeys: [];
 }
+
 export interface DeleteResourceConfig {
   readonly ResourceType: string;
   readonly ResourceId: string;
 }
+
 export interface DeleteRetentionConfiguration {
   readonly RetentionConfigurationName: string;
 }
+
 export interface DeleteStoredQuery {
   readonly QueryName: string;
 }
+
 export interface DeliverConfigSnapshot {
   readonly deliveryChannelName: string;
 }
+
 export interface DescribeAggregateComplianceByConfigRules {
   readonly ConfigurationAggregatorName: string;
   readonly Filters?: ConfigRuleComplianceFilters;
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeAggregateComplianceByConformancePacks {
   readonly ConfigurationAggregatorName: string;
   readonly Filters?: AggregateConformancePackComplianceFilters;
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeAggregationAuthorizations {
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeComplianceByConfigRule {
   readonly ConfigRuleNames?: [];
   readonly ComplianceTypes?: [];
   readonly NextToken?: string;
 }
+
 export interface DescribeComplianceByResource {
   readonly ResourceType?: string;
   readonly ResourceId?: string;
@@ -89,97 +111,118 @@ export interface DescribeComplianceByResource {
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeConfigRuleEvaluationStatus {
   readonly ConfigRuleNames?: [];
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeConfigRules {
   readonly ConfigRuleNames?: [];
   readonly NextToken?: string;
 }
+
 export interface DescribeConfigurationAggregatorSourcesStatus {
   readonly ConfigurationAggregatorName: string;
   readonly UpdateStatus?: [];
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeConfigurationAggregators {
   readonly ConfigurationAggregatorNames?: [];
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeConfigurationRecorderStatus {
   readonly ConfigurationRecorderNames?: [];
 }
+
 export interface DescribeConfigurationRecorders {
   readonly ConfigurationRecorderNames?: [];
 }
+
 export interface DescribeConformancePackCompliance {
   readonly ConformancePackName: string;
   readonly Filters?: ConformancePackComplianceFilters;
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeConformancePackStatus {
   readonly ConformancePackNames?: [];
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeConformancePacks {
   readonly ConformancePackNames?: [];
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeDeliveryChannelStatus {
   readonly DeliveryChannelNames?: [];
 }
+
 export interface DescribeDeliveryChannels {
   readonly DeliveryChannelNames?: [];
 }
+
 export interface DescribeOrganizationConfigRuleStatuses {
   readonly OrganizationConfigRuleNames?: [];
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeOrganizationConfigRules {
   readonly OrganizationConfigRuleNames?: [];
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeOrganizationConformancePackStatuses {
   readonly OrganizationConformancePackNames?: [];
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeOrganizationConformancePacks {
   readonly OrganizationConformancePackNames?: [];
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribePendingAggregationRequests {
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeRemediationConfigurations {
   readonly ConfigRuleNames: [];
 }
+
 export interface DescribeRemediationExceptions {
   readonly ConfigRuleName: string;
   readonly ResourceKeys?: [];
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeRemediationExecutionStatus {
   readonly ConfigRuleName: string;
   readonly ResourceKeys?: [];
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeRetentionConfigurations {
   readonly RetentionConfigurationNames?: [];
   readonly NextToken?: string;
 }
+
 export interface GetAggregateComplianceDetailsByConfigRule {
   readonly ConfigurationAggregatorName: string;
   readonly ConfigRuleName: string;
@@ -189,6 +232,7 @@ export interface GetAggregateComplianceDetailsByConfigRule {
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface GetAggregateConfigRuleComplianceSummary {
   readonly ConfigurationAggregatorName: string;
   readonly Filters?: ConfigRuleComplianceSummaryFilters;
@@ -196,6 +240,7 @@ export interface GetAggregateConfigRuleComplianceSummary {
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface GetAggregateConformancePackComplianceSummary {
   readonly ConfigurationAggregatorName: string;
   readonly Filters?: AggregateConformancePackComplianceSummaryFilters;
@@ -203,6 +248,7 @@ export interface GetAggregateConformancePackComplianceSummary {
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface GetAggregateDiscoveredResourceCounts {
   readonly ConfigurationAggregatorName: string;
   readonly Filters?: ResourceCountFilters;
@@ -210,53 +256,63 @@ export interface GetAggregateDiscoveredResourceCounts {
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface GetAggregateResourceConfig {
   readonly ConfigurationAggregatorName: string;
   readonly ResourceIdentifier: AggregateResourceIdentifier;
 }
+
 export interface GetComplianceDetailsByConfigRule {
   readonly ConfigRuleName: string;
   readonly ComplianceTypes?: [];
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface GetComplianceDetailsByResource {
   readonly ResourceType: string;
   readonly ResourceId: string;
   readonly ComplianceTypes?: [];
   readonly NextToken?: string;
 }
+
 export interface GetComplianceSummaryByResourceType {
   readonly ResourceTypes?: [];
 }
+
 export interface GetConformancePackComplianceDetails {
   readonly ConformancePackName: string;
   readonly Filters?: ConformancePackEvaluationFilters;
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface GetConformancePackComplianceSummary {
   readonly ConformancePackNames: [];
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface GetDiscoveredResourceCounts {
   readonly resourceTypes?: [];
   readonly limit?: number;
   readonly nextToken?: string;
 }
+
 export interface GetOrganizationConfigRuleDetailedStatus {
   readonly OrganizationConfigRuleName: string;
   readonly Filters?: StatusDetailFilters;
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface GetOrganizationConformancePackDetailedStatus {
   readonly OrganizationConformancePackName: string;
   readonly Filters?: OrganizationResourceDetailedStatusFilters;
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface GetResourceConfigHistory {
   readonly resourceType: string;
   readonly resourceId: string;
@@ -266,9 +322,11 @@ export interface GetResourceConfigHistory {
   readonly limit?: number;
   readonly nextToken?: string;
 }
+
 export interface GetStoredQuery {
   readonly QueryName: string;
 }
+
 export interface ListAggregateDiscoveredResources {
   readonly ConfigurationAggregatorName: string;
   readonly ResourceType: string;
@@ -276,6 +334,7 @@ export interface ListAggregateDiscoveredResources {
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface ListDiscoveredResources {
   readonly resourceType: string;
   readonly resourceIds?: [];
@@ -284,33 +343,40 @@ export interface ListDiscoveredResources {
   readonly includeDeletedResources?: boolean;
   readonly nextToken?: string;
 }
+
 export interface ListStoredQueries {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface PutAggregationAuthorization {
   readonly AuthorizedAccountId: string;
   readonly AuthorizedAwsRegion: string;
   readonly Tags?: [];
 }
+
 export interface PutConfigRule {
   readonly ConfigRule: ConfigRule;
   readonly Tags?: [];
 }
+
 export interface PutConfigurationAggregator {
   readonly ConfigurationAggregatorName: string;
   readonly AccountAggregationSources?: [];
   readonly OrganizationAggregationSource?: OrganizationAggregationSource;
   readonly Tags?: [];
 }
+
 export interface PutConfigurationRecorder {
   readonly ConfigurationRecorder: ConfigurationRecorder;
 }
+
 export interface PutConformancePack {
   readonly ConformancePackName: string;
   readonly TemplateS3Uri?: string;
@@ -319,24 +385,29 @@ export interface PutConformancePack {
   readonly DeliveryS3KeyPrefix?: string;
   readonly ConformancePackInputParameters?: [];
 }
+
 export interface PutDeliveryChannel {
   readonly DeliveryChannel: DeliveryChannel;
 }
+
 export interface PutEvaluations {
   readonly Evaluations?: [];
   readonly ResultToken: string;
   readonly TestMode?: boolean;
 }
+
 export interface PutExternalEvaluation {
   readonly ConfigRuleName: string;
   readonly ExternalEvaluation: ExternalEvaluation;
 }
+
 export interface PutOrganizationConfigRule {
   readonly OrganizationConfigRuleName: string;
   readonly OrganizationManagedRuleMetadata?: OrganizationManagedRuleMetadata;
   readonly OrganizationCustomRuleMetadata?: OrganizationCustomRuleMetadata;
   readonly ExcludedAccounts?: [];
 }
+
 export interface PutOrganizationConformancePack {
   readonly OrganizationConformancePackName: string;
   readonly TemplateS3Uri?: string;
@@ -346,15 +417,18 @@ export interface PutOrganizationConformancePack {
   readonly ConformancePackInputParameters?: [];
   readonly ExcludedAccounts?: [];
 }
+
 export interface PutRemediationConfigurations {
   readonly RemediationConfigurations: [];
 }
+
 export interface PutRemediationExceptions {
   readonly ConfigRuleName: string;
   readonly ResourceKeys: [];
   readonly Message?: string;
   readonly ExpirationTime?: Date;
 }
+
 export interface PutResourceConfig {
   readonly ResourceType: string;
   readonly SchemaVersionId: string;
@@ -363,13 +437,16 @@ export interface PutResourceConfig {
   readonly Configuration: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface PutRetentionConfiguration {
   readonly RetentionPeriodInDays: number;
 }
+
 export interface PutStoredQuery {
   readonly StoredQuery: StoredQuery;
   readonly Tags?: [];
 }
+
 export interface SelectAggregateResourceConfig {
   readonly Expression: string;
   readonly ConfigurationAggregatorName: string;
@@ -377,1626 +454,1632 @@ export interface SelectAggregateResourceConfig {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface SelectResourceConfig {
   readonly Expression: string;
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface StartConfigRulesEvaluation {
   readonly ConfigRuleNames?: [];
 }
+
 export interface StartConfigurationRecorder {
   readonly ConfigurationRecorderName: string;
 }
+
 export interface StartRemediationExecution {
   readonly ConfigRuleName: string;
   readonly ResourceKeys: [];
 }
+
 export interface StopConfigurationRecorder {
   readonly ConfigurationRecorderName: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-
-
-interface AccountAggregationSource {
+export interface AccountAggregationSource {
   readonly AccountIds: [];
-  readonly AllAwsRegions: boolean;
-  readonly AwsRegions: [];
+  readonly AllAwsRegions?: boolean;
+  readonly AwsRegions?: [];
 }
 
-interface AggregateComplianceByConfigRule {
-  readonly ConfigRuleName: string;
-  readonly Compliance: Compliance;
-  readonly AccountId: string;
-  readonly AwsRegion: string;
+export interface AggregateComplianceByConfigRule {
+  readonly ConfigRuleName?: string;
+  readonly Compliance?: Compliance;
+  readonly AccountId?: string;
+  readonly AwsRegion?: string;
 }
 
-interface AggregateComplianceByConformancePack {
-  readonly ConformancePackName: string;
-  readonly Compliance: AggregateConformancePackCompliance;
-  readonly AccountId: string;
-  readonly AwsRegion: string;
+export interface AggregateComplianceByConformancePack {
+  readonly ConformancePackName?: string;
+  readonly Compliance?: AggregateConformancePackCompliance;
+  readonly AccountId?: string;
+  readonly AwsRegion?: string;
 }
 
-interface AggregateComplianceCount {
-  readonly GroupName: string;
-  readonly ComplianceSummary: ComplianceSummary;
+export interface AggregateComplianceCount {
+  readonly GroupName?: string;
+  readonly ComplianceSummary?: ComplianceSummary;
 }
 
-interface AggregateConformancePackCompliance {
-  readonly ComplianceType: string;
-  readonly CompliantRuleCount: number;
-  readonly NonCompliantRuleCount: number;
-  readonly TotalRuleCount: number;
+export interface AggregateConformancePackCompliance {
+  readonly ComplianceType?: string;
+  readonly CompliantRuleCount?: number;
+  readonly NonCompliantRuleCount?: number;
+  readonly TotalRuleCount?: number;
 }
 
-interface AggregateConformancePackComplianceCount {
-  readonly CompliantConformancePackCount: number;
-  readonly NonCompliantConformancePackCount: number;
+export interface AggregateConformancePackComplianceCount {
+  readonly CompliantConformancePackCount?: number;
+  readonly NonCompliantConformancePackCount?: number;
 }
 
-interface AggregateConformancePackComplianceFilters {
-  readonly ConformancePackName: string;
-  readonly ComplianceType: string;
-  readonly AccountId: string;
-  readonly AwsRegion: string;
+export interface AggregateConformancePackComplianceFilters {
+  readonly ConformancePackName?: string;
+  readonly ComplianceType?: string;
+  readonly AccountId?: string;
+  readonly AwsRegion?: string;
 }
 
-interface AggregateConformancePackComplianceSummary {
-  readonly ComplianceSummary: AggregateConformancePackComplianceCount;
-  readonly GroupName: string;
+export interface AggregateConformancePackComplianceSummary {
+  readonly ComplianceSummary?: AggregateConformancePackComplianceCount;
+  readonly GroupName?: string;
 }
 
-interface AggregateConformancePackComplianceSummaryFilters {
-  readonly AccountId: string;
-  readonly AwsRegion: string;
+export interface AggregateConformancePackComplianceSummaryFilters {
+  readonly AccountId?: string;
+  readonly AwsRegion?: string;
 }
 
-interface AggregateEvaluationResult {
-  readonly EvaluationResultIdentifier: EvaluationResultIdentifier;
-  readonly ComplianceType: string;
-  readonly ResultRecordedTime: Date;
-  readonly ConfigRuleInvokedTime: Date;
-  readonly Annotation: string;
-  readonly AccountId: string;
-  readonly AwsRegion: string;
+export interface AggregateEvaluationResult {
+  readonly EvaluationResultIdentifier?: EvaluationResultIdentifier;
+  readonly ComplianceType?: string;
+  readonly ResultRecordedTime?: Date;
+  readonly ConfigRuleInvokedTime?: Date;
+  readonly Annotation?: string;
+  readonly AccountId?: string;
+  readonly AwsRegion?: string;
 }
 
-interface AggregateResourceIdentifier {
+export interface AggregateResourceIdentifier {
   readonly SourceAccountId: string;
   readonly SourceRegion: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
-  readonly ResourceName: string;
+  readonly ResourceName?: string;
 }
 
-interface AggregatedSourceStatus {
-  readonly SourceId: string;
-  readonly SourceType: string;
-  readonly AwsRegion: string;
-  readonly LastUpdateStatus: string;
-  readonly LastUpdateTime: Date;
-  readonly LastErrorCode: string;
-  readonly LastErrorMessage: string;
+export interface AggregatedSourceStatus {
+  readonly SourceId?: string;
+  readonly SourceType?: string;
+  readonly AwsRegion?: string;
+  readonly LastUpdateStatus?: string;
+  readonly LastUpdateTime?: Date;
+  readonly LastErrorCode?: string;
+  readonly LastErrorMessage?: string;
 }
 
-interface AggregationAuthorization {
-  readonly AggregationAuthorizationArn: string;
-  readonly AuthorizedAccountId: string;
-  readonly AuthorizedAwsRegion: string;
-  readonly CreationTime: Date;
+export interface AggregationAuthorization {
+  readonly AggregationAuthorizationArn?: string;
+  readonly AuthorizedAccountId?: string;
+  readonly AuthorizedAwsRegion?: string;
+  readonly CreationTime?: Date;
 }
 
-interface BaseConfigurationItem {
-  readonly version: string;
-  readonly accountId: string;
-  readonly configurationItemCaptureTime: Date;
-  readonly configurationItemStatus: string;
-  readonly configurationStateId: string;
-  readonly arn: string;
-  readonly resourceType: string;
-  readonly resourceId: string;
-  readonly resourceName: string;
-  readonly awsRegion: string;
-  readonly availabilityZone: string;
-  readonly resourceCreationTime: Date;
-  readonly configuration: string;
-  readonly supplementaryConfiguration: {[key: string]: any};
+export interface BaseConfigurationItem {
+  readonly version?: string;
+  readonly accountId?: string;
+  readonly configurationItemCaptureTime?: Date;
+  readonly configurationItemStatus?: string;
+  readonly configurationStateId?: string;
+  readonly arn?: string;
+  readonly resourceType?: string;
+  readonly resourceId?: string;
+  readonly resourceName?: string;
+  readonly awsRegion?: string;
+  readonly availabilityZone?: string;
+  readonly resourceCreationTime?: Date;
+  readonly configuration?: string;
+  readonly supplementaryConfiguration?: {[key: string]: any};
 }
 
-interface BatchGetAggregateResourceConfigRequest {
+export interface BatchGetAggregateResourceConfigRequest {
   readonly ConfigurationAggregatorName: string;
   readonly ResourceIdentifiers: [];
 }
 
-interface BatchGetAggregateResourceConfigResponse {
-  readonly BaseConfigurationItems: [];
-  readonly UnprocessedResourceIdentifiers: [];
+export interface BatchGetAggregateResourceConfigResponse {
+  readonly BaseConfigurationItems?: [];
+  readonly UnprocessedResourceIdentifiers?: [];
 }
 
-interface BatchGetResourceConfigRequest {
+export interface BatchGetResourceConfigRequest {
   readonly resourceKeys: [];
 }
 
-interface BatchGetResourceConfigResponse {
-  readonly baseConfigurationItems: [];
-  readonly unprocessedResourceKeys: [];
+export interface BatchGetResourceConfigResponse {
+  readonly baseConfigurationItems?: [];
+  readonly unprocessedResourceKeys?: [];
 }
 
-interface Compliance {
-  readonly ComplianceType: string;
-  readonly ComplianceContributorCount: ComplianceContributorCount;
+export interface Compliance {
+  readonly ComplianceType?: string;
+  readonly ComplianceContributorCount?: ComplianceContributorCount;
 }
 
-interface ComplianceByConfigRule {
-  readonly ConfigRuleName: string;
-  readonly Compliance: Compliance;
+export interface ComplianceByConfigRule {
+  readonly ConfigRuleName?: string;
+  readonly Compliance?: Compliance;
 }
 
-interface ComplianceByResource {
-  readonly ResourceType: string;
-  readonly ResourceId: string;
-  readonly Compliance: Compliance;
+export interface ComplianceByResource {
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
+  readonly Compliance?: Compliance;
 }
 
-interface ComplianceContributorCount {
-  readonly CappedCount: number;
-  readonly CapExceeded: boolean;
+export interface ComplianceContributorCount {
+  readonly CappedCount?: number;
+  readonly CapExceeded?: boolean;
 }
 
-interface ComplianceSummary {
-  readonly CompliantResourceCount: ComplianceContributorCount;
-  readonly NonCompliantResourceCount: ComplianceContributorCount;
-  readonly ComplianceSummaryTimestamp: Date;
+export interface ComplianceSummary {
+  readonly CompliantResourceCount?: ComplianceContributorCount;
+  readonly NonCompliantResourceCount?: ComplianceContributorCount;
+  readonly ComplianceSummaryTimestamp?: Date;
 }
 
-interface ComplianceSummaryByResourceType {
-  readonly ResourceType: string;
-  readonly ComplianceSummary: ComplianceSummary;
+export interface ComplianceSummaryByResourceType {
+  readonly ResourceType?: string;
+  readonly ComplianceSummary?: ComplianceSummary;
 }
 
-interface ConfigExportDeliveryInfo {
-  readonly lastStatus: string;
-  readonly lastErrorCode: string;
-  readonly lastErrorMessage: string;
-  readonly lastAttemptTime: Date;
-  readonly lastSuccessfulTime: Date;
-  readonly nextDeliveryTime: Date;
+export interface ConfigExportDeliveryInfo {
+  readonly lastStatus?: string;
+  readonly lastErrorCode?: string;
+  readonly lastErrorMessage?: string;
+  readonly lastAttemptTime?: Date;
+  readonly lastSuccessfulTime?: Date;
+  readonly nextDeliveryTime?: Date;
 }
 
-interface ConfigRule {
-  readonly ConfigRuleName: string;
-  readonly ConfigRuleArn: string;
-  readonly ConfigRuleId: string;
-  readonly Description: string;
-  readonly Scope: Scope;
+export interface ConfigRule {
+  readonly ConfigRuleName?: string;
+  readonly ConfigRuleArn?: string;
+  readonly ConfigRuleId?: string;
+  readonly Description?: string;
+  readonly Scope?: Scope;
   readonly Source: Source;
-  readonly InputParameters: string;
-  readonly MaximumExecutionFrequency: string;
-  readonly ConfigRuleState: string;
-  readonly CreatedBy: string;
+  readonly InputParameters?: string;
+  readonly MaximumExecutionFrequency?: string;
+  readonly ConfigRuleState?: string;
+  readonly CreatedBy?: string;
 }
 
-interface ConfigRuleComplianceFilters {
-  readonly ConfigRuleName: string;
-  readonly ComplianceType: string;
-  readonly AccountId: string;
-  readonly AwsRegion: string;
+export interface ConfigRuleComplianceFilters {
+  readonly ConfigRuleName?: string;
+  readonly ComplianceType?: string;
+  readonly AccountId?: string;
+  readonly AwsRegion?: string;
 }
 
-interface ConfigRuleComplianceSummaryFilters {
-  readonly AccountId: string;
-  readonly AwsRegion: string;
+export interface ConfigRuleComplianceSummaryFilters {
+  readonly AccountId?: string;
+  readonly AwsRegion?: string;
 }
 
-interface ConfigRuleEvaluationStatus {
-  readonly ConfigRuleName: string;
-  readonly ConfigRuleArn: string;
-  readonly ConfigRuleId: string;
-  readonly LastSuccessfulInvocationTime: Date;
-  readonly LastFailedInvocationTime: Date;
-  readonly LastSuccessfulEvaluationTime: Date;
-  readonly LastFailedEvaluationTime: Date;
-  readonly FirstActivatedTime: Date;
-  readonly LastDeactivatedTime: Date;
-  readonly LastErrorCode: string;
-  readonly LastErrorMessage: string;
-  readonly FirstEvaluationStarted: boolean;
+export interface ConfigRuleEvaluationStatus {
+  readonly ConfigRuleName?: string;
+  readonly ConfigRuleArn?: string;
+  readonly ConfigRuleId?: string;
+  readonly LastSuccessfulInvocationTime?: Date;
+  readonly LastFailedInvocationTime?: Date;
+  readonly LastSuccessfulEvaluationTime?: Date;
+  readonly LastFailedEvaluationTime?: Date;
+  readonly FirstActivatedTime?: Date;
+  readonly LastDeactivatedTime?: Date;
+  readonly LastErrorCode?: string;
+  readonly LastErrorMessage?: string;
+  readonly FirstEvaluationStarted?: boolean;
 }
 
-interface ConfigSnapshotDeliveryProperties {
-  readonly deliveryFrequency: string;
+export interface ConfigSnapshotDeliveryProperties {
+  readonly deliveryFrequency?: string;
 }
 
-interface ConfigStreamDeliveryInfo {
-  readonly lastStatus: string;
-  readonly lastErrorCode: string;
-  readonly lastErrorMessage: string;
-  readonly lastStatusChangeTime: Date;
+export interface ConfigStreamDeliveryInfo {
+  readonly lastStatus?: string;
+  readonly lastErrorCode?: string;
+  readonly lastErrorMessage?: string;
+  readonly lastStatusChangeTime?: Date;
 }
 
-interface ConfigurationAggregator {
-  readonly ConfigurationAggregatorName: string;
-  readonly ConfigurationAggregatorArn: string;
-  readonly AccountAggregationSources: [];
-  readonly OrganizationAggregationSource: OrganizationAggregationSource;
-  readonly CreationTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly CreatedBy: string;
+export interface ConfigurationAggregator {
+  readonly ConfigurationAggregatorName?: string;
+  readonly ConfigurationAggregatorArn?: string;
+  readonly AccountAggregationSources?: [];
+  readonly OrganizationAggregationSource?: OrganizationAggregationSource;
+  readonly CreationTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly CreatedBy?: string;
 }
 
-interface ConfigurationItem {
-  readonly version: string;
-  readonly accountId: string;
-  readonly configurationItemCaptureTime: Date;
-  readonly configurationItemStatus: string;
-  readonly configurationStateId: string;
-  readonly configurationItemMD5Hash: string;
-  readonly arn: string;
-  readonly resourceType: string;
-  readonly resourceId: string;
-  readonly resourceName: string;
-  readonly awsRegion: string;
-  readonly availabilityZone: string;
-  readonly resourceCreationTime: Date;
-  readonly tags: {[key: string]: any};
-  readonly relatedEvents: [];
-  readonly relationships: [];
-  readonly configuration: string;
-  readonly supplementaryConfiguration: {[key: string]: any};
+export interface ConfigurationItem {
+  readonly version?: string;
+  readonly accountId?: string;
+  readonly configurationItemCaptureTime?: Date;
+  readonly configurationItemStatus?: string;
+  readonly configurationStateId?: string;
+  readonly configurationItemMD5Hash?: string;
+  readonly arn?: string;
+  readonly resourceType?: string;
+  readonly resourceId?: string;
+  readonly resourceName?: string;
+  readonly awsRegion?: string;
+  readonly availabilityZone?: string;
+  readonly resourceCreationTime?: Date;
+  readonly tags?: {[key: string]: any};
+  readonly relatedEvents?: [];
+  readonly relationships?: [];
+  readonly configuration?: string;
+  readonly supplementaryConfiguration?: {[key: string]: any};
 }
 
-interface ConfigurationRecorder {
-  readonly name: string;
-  readonly roleARN: string;
-  readonly recordingGroup: RecordingGroup;
+export interface ConfigurationRecorder {
+  readonly name?: string;
+  readonly roleARN?: string;
+  readonly recordingGroup?: RecordingGroup;
 }
 
-interface ConfigurationRecorderStatus {
-  readonly name: string;
-  readonly lastStartTime: Date;
-  readonly lastStopTime: Date;
-  readonly recording: boolean;
-  readonly lastStatus: string;
-  readonly lastErrorCode: string;
-  readonly lastErrorMessage: string;
-  readonly lastStatusChangeTime: Date;
+export interface ConfigurationRecorderStatus {
+  readonly name?: string;
+  readonly lastStartTime?: Date;
+  readonly lastStopTime?: Date;
+  readonly recording?: boolean;
+  readonly lastStatus?: string;
+  readonly lastErrorCode?: string;
+  readonly lastErrorMessage?: string;
+  readonly lastStatusChangeTime?: Date;
 }
 
-interface ConformancePackComplianceFilters {
-  readonly ConfigRuleNames: [];
-  readonly ComplianceType: string;
+export interface ConformancePackComplianceFilters {
+  readonly ConfigRuleNames?: [];
+  readonly ComplianceType?: string;
 }
 
-interface ConformancePackComplianceSummary {
+export interface ConformancePackComplianceSummary {
   readonly ConformancePackName: string;
   readonly ConformancePackComplianceStatus: string;
 }
 
-interface ConformancePackDetail {
+export interface ConformancePackDetail {
   readonly ConformancePackName: string;
   readonly ConformancePackArn: string;
   readonly ConformancePackId: string;
-  readonly DeliveryS3Bucket: string;
-  readonly DeliveryS3KeyPrefix: string;
-  readonly ConformancePackInputParameters: [];
-  readonly LastUpdateRequestedTime: Date;
-  readonly CreatedBy: string;
+  readonly DeliveryS3Bucket?: string;
+  readonly DeliveryS3KeyPrefix?: string;
+  readonly ConformancePackInputParameters?: [];
+  readonly LastUpdateRequestedTime?: Date;
+  readonly CreatedBy?: string;
 }
 
-interface ConformancePackEvaluationFilters {
-  readonly ConfigRuleNames: [];
-  readonly ComplianceType: string;
-  readonly ResourceType: string;
-  readonly ResourceIds: [];
+export interface ConformancePackEvaluationFilters {
+  readonly ConfigRuleNames?: [];
+  readonly ComplianceType?: string;
+  readonly ResourceType?: string;
+  readonly ResourceIds?: [];
 }
 
-interface ConformancePackEvaluationResult {
+export interface ConformancePackEvaluationResult {
   readonly ComplianceType: string;
   readonly EvaluationResultIdentifier: EvaluationResultIdentifier;
   readonly ConfigRuleInvokedTime: Date;
   readonly ResultRecordedTime: Date;
-  readonly Annotation: string;
+  readonly Annotation?: string;
 }
 
-interface ConformancePackInputParameter {
+export interface ConformancePackInputParameter {
   readonly ParameterName: string;
   readonly ParameterValue: string;
 }
 
-interface ConformancePackRuleCompliance {
-  readonly ConfigRuleName: string;
-  readonly ComplianceType: string;
-  readonly Controls: [];
+export interface ConformancePackRuleCompliance {
+  readonly ConfigRuleName?: string;
+  readonly ComplianceType?: string;
+  readonly Controls?: [];
 }
 
-interface ConformancePackStatusDetail {
+export interface ConformancePackStatusDetail {
   readonly ConformancePackName: string;
   readonly ConformancePackId: string;
   readonly ConformancePackArn: string;
   readonly ConformancePackState: string;
   readonly StackArn: string;
-  readonly ConformancePackStatusReason: string;
+  readonly ConformancePackStatusReason?: string;
   readonly LastUpdateRequestedTime: Date;
-  readonly LastUpdateCompletedTime: Date;
+  readonly LastUpdateCompletedTime?: Date;
 }
 
-interface ConformancePackTemplateValidationException {
+export interface ConformancePackTemplateValidationException {
 }
 
-interface DeleteAggregationAuthorizationRequest {
+export interface DeleteAggregationAuthorizationRequest {
   readonly AuthorizedAccountId: string;
   readonly AuthorizedAwsRegion: string;
 }
 
-interface DeleteConfigRuleRequest {
+export interface DeleteConfigRuleRequest {
   readonly ConfigRuleName: string;
 }
 
-interface DeleteConfigurationAggregatorRequest {
+export interface DeleteConfigurationAggregatorRequest {
   readonly ConfigurationAggregatorName: string;
 }
 
-interface DeleteConfigurationRecorderRequest {
+export interface DeleteConfigurationRecorderRequest {
   readonly ConfigurationRecorderName: string;
 }
 
-interface DeleteConformancePackRequest {
+export interface DeleteConformancePackRequest {
   readonly ConformancePackName: string;
 }
 
-interface DeleteDeliveryChannelRequest {
+export interface DeleteDeliveryChannelRequest {
   readonly DeliveryChannelName: string;
 }
 
-interface DeleteEvaluationResultsRequest {
+export interface DeleteEvaluationResultsRequest {
   readonly ConfigRuleName: string;
 }
 
-interface DeleteEvaluationResultsResponse {
+export interface DeleteEvaluationResultsResponse {
 }
 
-interface DeleteOrganizationConfigRuleRequest {
+export interface DeleteOrganizationConfigRuleRequest {
   readonly OrganizationConfigRuleName: string;
 }
 
-interface DeleteOrganizationConformancePackRequest {
+export interface DeleteOrganizationConformancePackRequest {
   readonly OrganizationConformancePackName: string;
 }
 
-interface DeletePendingAggregationRequestRequest {
+export interface DeletePendingAggregationRequestRequest {
   readonly RequesterAccountId: string;
   readonly RequesterAwsRegion: string;
 }
 
-interface DeleteRemediationConfigurationRequest {
+export interface DeleteRemediationConfigurationRequest {
   readonly ConfigRuleName: string;
-  readonly ResourceType: string;
+  readonly ResourceType?: string;
 }
 
-interface DeleteRemediationConfigurationResponse {
+export interface DeleteRemediationConfigurationResponse {
 }
 
-interface DeleteRemediationExceptionsRequest {
+export interface DeleteRemediationExceptionsRequest {
   readonly ConfigRuleName: string;
   readonly ResourceKeys: [];
 }
 
-interface DeleteRemediationExceptionsResponse {
-  readonly FailedBatches: [];
+export interface DeleteRemediationExceptionsResponse {
+  readonly FailedBatches?: [];
 }
 
-interface DeleteResourceConfigRequest {
+export interface DeleteResourceConfigRequest {
   readonly ResourceType: string;
   readonly ResourceId: string;
 }
 
-interface DeleteRetentionConfigurationRequest {
+export interface DeleteRetentionConfigurationRequest {
   readonly RetentionConfigurationName: string;
 }
 
-interface DeleteStoredQueryRequest {
+export interface DeleteStoredQueryRequest {
   readonly QueryName: string;
 }
 
-interface DeleteStoredQueryResponse {
+export interface DeleteStoredQueryResponse {
 }
 
-interface DeliverConfigSnapshotRequest {
+export interface DeliverConfigSnapshotRequest {
   readonly deliveryChannelName: string;
 }
 
-interface DeliverConfigSnapshotResponse {
-  readonly configSnapshotId: string;
+export interface DeliverConfigSnapshotResponse {
+  readonly configSnapshotId?: string;
 }
 
-interface DeliveryChannel {
-  readonly name: string;
-  readonly s3BucketName: string;
-  readonly s3KeyPrefix: string;
-  readonly s3KmsKeyArn: string;
-  readonly snsTopicARN: string;
-  readonly configSnapshotDeliveryProperties: ConfigSnapshotDeliveryProperties;
+export interface DeliveryChannel {
+  readonly name?: string;
+  readonly s3BucketName?: string;
+  readonly s3KeyPrefix?: string;
+  readonly s3KmsKeyArn?: string;
+  readonly snsTopicARN?: string;
+  readonly configSnapshotDeliveryProperties?: ConfigSnapshotDeliveryProperties;
 }
 
-interface DeliveryChannelStatus {
-  readonly name: string;
-  readonly configSnapshotDeliveryInfo: ConfigExportDeliveryInfo;
-  readonly configHistoryDeliveryInfo: ConfigExportDeliveryInfo;
-  readonly configStreamDeliveryInfo: ConfigStreamDeliveryInfo;
+export interface DeliveryChannelStatus {
+  readonly name?: string;
+  readonly configSnapshotDeliveryInfo?: ConfigExportDeliveryInfo;
+  readonly configHistoryDeliveryInfo?: ConfigExportDeliveryInfo;
+  readonly configStreamDeliveryInfo?: ConfigStreamDeliveryInfo;
 }
 
-interface DescribeAggregateComplianceByConfigRulesRequest {
+export interface DescribeAggregateComplianceByConfigRulesRequest {
   readonly ConfigurationAggregatorName: string;
-  readonly Filters: ConfigRuleComplianceFilters;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Filters?: ConfigRuleComplianceFilters;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeAggregateComplianceByConfigRulesResponse {
-  readonly AggregateComplianceByConfigRules: [];
-  readonly NextToken: string;
+export interface DescribeAggregateComplianceByConfigRulesResponse {
+  readonly AggregateComplianceByConfigRules?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeAggregateComplianceByConformancePacksRequest {
+export interface DescribeAggregateComplianceByConformancePacksRequest {
   readonly ConfigurationAggregatorName: string;
-  readonly Filters: AggregateConformancePackComplianceFilters;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Filters?: AggregateConformancePackComplianceFilters;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeAggregateComplianceByConformancePacksResponse {
-  readonly AggregateComplianceByConformancePacks: [];
-  readonly NextToken: string;
+export interface DescribeAggregateComplianceByConformancePacksResponse {
+  readonly AggregateComplianceByConformancePacks?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeAggregationAuthorizationsRequest {
-  readonly Limit: number;
-  readonly NextToken: string;
+export interface DescribeAggregationAuthorizationsRequest {
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeAggregationAuthorizationsResponse {
-  readonly AggregationAuthorizations: [];
-  readonly NextToken: string;
+export interface DescribeAggregationAuthorizationsResponse {
+  readonly AggregationAuthorizations?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeComplianceByConfigRuleRequest {
-  readonly ConfigRuleNames: [];
-  readonly ComplianceTypes: [];
-  readonly NextToken: string;
+export interface DescribeComplianceByConfigRuleRequest {
+  readonly ConfigRuleNames?: [];
+  readonly ComplianceTypes?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeComplianceByConfigRuleResponse {
-  readonly ComplianceByConfigRules: [];
-  readonly NextToken: string;
+export interface DescribeComplianceByConfigRuleResponse {
+  readonly ComplianceByConfigRules?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeComplianceByResourceRequest {
-  readonly ResourceType: string;
-  readonly ResourceId: string;
-  readonly ComplianceTypes: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+export interface DescribeComplianceByResourceRequest {
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
+  readonly ComplianceTypes?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeComplianceByResourceResponse {
-  readonly ComplianceByResources: [];
-  readonly NextToken: string;
+export interface DescribeComplianceByResourceResponse {
+  readonly ComplianceByResources?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeConfigRuleEvaluationStatusRequest {
-  readonly ConfigRuleNames: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+export interface DescribeConfigRuleEvaluationStatusRequest {
+  readonly ConfigRuleNames?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeConfigRuleEvaluationStatusResponse {
-  readonly ConfigRulesEvaluationStatus: [];
-  readonly NextToken: string;
+export interface DescribeConfigRuleEvaluationStatusResponse {
+  readonly ConfigRulesEvaluationStatus?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeConfigRulesRequest {
-  readonly ConfigRuleNames: [];
-  readonly NextToken: string;
+export interface DescribeConfigRulesRequest {
+  readonly ConfigRuleNames?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeConfigRulesResponse {
-  readonly ConfigRules: [];
-  readonly NextToken: string;
+export interface DescribeConfigRulesResponse {
+  readonly ConfigRules?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeConfigurationAggregatorSourcesStatusRequest {
+export interface DescribeConfigurationAggregatorSourcesStatusRequest {
   readonly ConfigurationAggregatorName: string;
-  readonly UpdateStatus: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly UpdateStatus?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeConfigurationAggregatorSourcesStatusResponse {
-  readonly AggregatedSourceStatusList: [];
-  readonly NextToken: string;
+export interface DescribeConfigurationAggregatorSourcesStatusResponse {
+  readonly AggregatedSourceStatusList?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeConfigurationAggregatorsRequest {
-  readonly ConfigurationAggregatorNames: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+export interface DescribeConfigurationAggregatorsRequest {
+  readonly ConfigurationAggregatorNames?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeConfigurationAggregatorsResponse {
-  readonly ConfigurationAggregators: [];
-  readonly NextToken: string;
+export interface DescribeConfigurationAggregatorsResponse {
+  readonly ConfigurationAggregators?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeConfigurationRecorderStatusRequest {
-  readonly ConfigurationRecorderNames: [];
+export interface DescribeConfigurationRecorderStatusRequest {
+  readonly ConfigurationRecorderNames?: [];
 }
 
-interface DescribeConfigurationRecorderStatusResponse {
-  readonly ConfigurationRecordersStatus: [];
+export interface DescribeConfigurationRecorderStatusResponse {
+  readonly ConfigurationRecordersStatus?: [];
 }
 
-interface DescribeConfigurationRecordersRequest {
-  readonly ConfigurationRecorderNames: [];
+export interface DescribeConfigurationRecordersRequest {
+  readonly ConfigurationRecorderNames?: [];
 }
 
-interface DescribeConfigurationRecordersResponse {
-  readonly ConfigurationRecorders: [];
+export interface DescribeConfigurationRecordersResponse {
+  readonly ConfigurationRecorders?: [];
 }
 
-interface DescribeConformancePackComplianceRequest {
+export interface DescribeConformancePackComplianceRequest {
   readonly ConformancePackName: string;
-  readonly Filters: ConformancePackComplianceFilters;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Filters?: ConformancePackComplianceFilters;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeConformancePackComplianceResponse {
+export interface DescribeConformancePackComplianceResponse {
   readonly ConformancePackName: string;
   readonly ConformancePackRuleComplianceList: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeConformancePackStatusRequest {
-  readonly ConformancePackNames: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+export interface DescribeConformancePackStatusRequest {
+  readonly ConformancePackNames?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeConformancePackStatusResponse {
-  readonly ConformancePackStatusDetails: [];
-  readonly NextToken: string;
+export interface DescribeConformancePackStatusResponse {
+  readonly ConformancePackStatusDetails?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeConformancePacksRequest {
-  readonly ConformancePackNames: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+export interface DescribeConformancePacksRequest {
+  readonly ConformancePackNames?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeConformancePacksResponse {
-  readonly ConformancePackDetails: [];
-  readonly NextToken: string;
+export interface DescribeConformancePacksResponse {
+  readonly ConformancePackDetails?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeDeliveryChannelStatusRequest {
-  readonly DeliveryChannelNames: [];
+export interface DescribeDeliveryChannelStatusRequest {
+  readonly DeliveryChannelNames?: [];
 }
 
-interface DescribeDeliveryChannelStatusResponse {
-  readonly DeliveryChannelsStatus: [];
+export interface DescribeDeliveryChannelStatusResponse {
+  readonly DeliveryChannelsStatus?: [];
 }
 
-interface DescribeDeliveryChannelsRequest {
-  readonly DeliveryChannelNames: [];
+export interface DescribeDeliveryChannelsRequest {
+  readonly DeliveryChannelNames?: [];
 }
 
-interface DescribeDeliveryChannelsResponse {
-  readonly DeliveryChannels: [];
+export interface DescribeDeliveryChannelsResponse {
+  readonly DeliveryChannels?: [];
 }
 
-interface DescribeOrganizationConfigRuleStatusesRequest {
-  readonly OrganizationConfigRuleNames: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+export interface DescribeOrganizationConfigRuleStatusesRequest {
+  readonly OrganizationConfigRuleNames?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeOrganizationConfigRuleStatusesResponse {
-  readonly OrganizationConfigRuleStatuses: [];
-  readonly NextToken: string;
+export interface DescribeOrganizationConfigRuleStatusesResponse {
+  readonly OrganizationConfigRuleStatuses?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeOrganizationConfigRulesRequest {
-  readonly OrganizationConfigRuleNames: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+export interface DescribeOrganizationConfigRulesRequest {
+  readonly OrganizationConfigRuleNames?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeOrganizationConfigRulesResponse {
-  readonly OrganizationConfigRules: [];
-  readonly NextToken: string;
+export interface DescribeOrganizationConfigRulesResponse {
+  readonly OrganizationConfigRules?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeOrganizationConformancePackStatusesRequest {
-  readonly OrganizationConformancePackNames: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+export interface DescribeOrganizationConformancePackStatusesRequest {
+  readonly OrganizationConformancePackNames?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeOrganizationConformancePackStatusesResponse {
-  readonly OrganizationConformancePackStatuses: [];
-  readonly NextToken: string;
+export interface DescribeOrganizationConformancePackStatusesResponse {
+  readonly OrganizationConformancePackStatuses?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeOrganizationConformancePacksRequest {
-  readonly OrganizationConformancePackNames: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+export interface DescribeOrganizationConformancePacksRequest {
+  readonly OrganizationConformancePackNames?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeOrganizationConformancePacksResponse {
-  readonly OrganizationConformancePacks: [];
-  readonly NextToken: string;
+export interface DescribeOrganizationConformancePacksResponse {
+  readonly OrganizationConformancePacks?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribePendingAggregationRequestsRequest {
-  readonly Limit: number;
-  readonly NextToken: string;
+export interface DescribePendingAggregationRequestsRequest {
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribePendingAggregationRequestsResponse {
-  readonly PendingAggregationRequests: [];
-  readonly NextToken: string;
+export interface DescribePendingAggregationRequestsResponse {
+  readonly PendingAggregationRequests?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeRemediationConfigurationsRequest {
+export interface DescribeRemediationConfigurationsRequest {
   readonly ConfigRuleNames: [];
 }
 
-interface DescribeRemediationConfigurationsResponse {
-  readonly RemediationConfigurations: [];
+export interface DescribeRemediationConfigurationsResponse {
+  readonly RemediationConfigurations?: [];
 }
 
-interface DescribeRemediationExceptionsRequest {
+export interface DescribeRemediationExceptionsRequest {
   readonly ConfigRuleName: string;
-  readonly ResourceKeys: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly ResourceKeys?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeRemediationExceptionsResponse {
-  readonly RemediationExceptions: [];
-  readonly NextToken: string;
+export interface DescribeRemediationExceptionsResponse {
+  readonly RemediationExceptions?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeRemediationExecutionStatusRequest {
+export interface DescribeRemediationExecutionStatusRequest {
   readonly ConfigRuleName: string;
-  readonly ResourceKeys: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly ResourceKeys?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeRemediationExecutionStatusResponse {
-  readonly RemediationExecutionStatuses: [];
-  readonly NextToken: string;
+export interface DescribeRemediationExecutionStatusResponse {
+  readonly RemediationExecutionStatuses?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeRetentionConfigurationsRequest {
-  readonly RetentionConfigurationNames: [];
-  readonly NextToken: string;
+export interface DescribeRetentionConfigurationsRequest {
+  readonly RetentionConfigurationNames?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeRetentionConfigurationsResponse {
-  readonly RetentionConfigurations: [];
-  readonly NextToken: string;
+export interface DescribeRetentionConfigurationsResponse {
+  readonly RetentionConfigurations?: [];
+  readonly NextToken?: string;
 }
 
-interface Evaluation {
+export interface Evaluation {
   readonly ComplianceResourceType: string;
   readonly ComplianceResourceId: string;
   readonly ComplianceType: string;
-  readonly Annotation: string;
+  readonly Annotation?: string;
   readonly OrderingTimestamp: Date;
 }
 
-interface EvaluationResult {
-  readonly EvaluationResultIdentifier: EvaluationResultIdentifier;
-  readonly ComplianceType: string;
-  readonly ResultRecordedTime: Date;
-  readonly ConfigRuleInvokedTime: Date;
-  readonly Annotation: string;
-  readonly ResultToken: string;
+export interface EvaluationResult {
+  readonly EvaluationResultIdentifier?: EvaluationResultIdentifier;
+  readonly ComplianceType?: string;
+  readonly ResultRecordedTime?: Date;
+  readonly ConfigRuleInvokedTime?: Date;
+  readonly Annotation?: string;
+  readonly ResultToken?: string;
 }
 
-interface EvaluationResultIdentifier {
-  readonly EvaluationResultQualifier: EvaluationResultQualifier;
-  readonly OrderingTimestamp: Date;
+export interface EvaluationResultIdentifier {
+  readonly EvaluationResultQualifier?: EvaluationResultQualifier;
+  readonly OrderingTimestamp?: Date;
 }
 
-interface EvaluationResultQualifier {
-  readonly ConfigRuleName: string;
-  readonly ResourceType: string;
-  readonly ResourceId: string;
+export interface EvaluationResultQualifier {
+  readonly ConfigRuleName?: string;
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
 }
 
-interface ExecutionControls {
-  readonly SsmControls: SsmControls;
+export interface ExecutionControls {
+  readonly SsmControls?: SsmControls;
 }
 
-interface ExternalEvaluation {
+export interface ExternalEvaluation {
   readonly ComplianceResourceType: string;
   readonly ComplianceResourceId: string;
   readonly ComplianceType: string;
-  readonly Annotation: string;
+  readonly Annotation?: string;
   readonly OrderingTimestamp: Date;
 }
 
-interface FailedDeleteRemediationExceptionsBatch {
-  readonly FailureMessage: string;
-  readonly FailedItems: [];
+export interface FailedDeleteRemediationExceptionsBatch {
+  readonly FailureMessage?: string;
+  readonly FailedItems?: [];
 }
 
-interface FailedRemediationBatch {
-  readonly FailureMessage: string;
-  readonly FailedItems: [];
+export interface FailedRemediationBatch {
+  readonly FailureMessage?: string;
+  readonly FailedItems?: [];
 }
 
-interface FailedRemediationExceptionBatch {
-  readonly FailureMessage: string;
-  readonly FailedItems: [];
+export interface FailedRemediationExceptionBatch {
+  readonly FailureMessage?: string;
+  readonly FailedItems?: [];
 }
 
-interface FieldInfo {
-  readonly Name: string;
+export interface FieldInfo {
+  readonly Name?: string;
 }
 
-interface GetAggregateComplianceDetailsByConfigRuleRequest {
+export interface GetAggregateComplianceDetailsByConfigRuleRequest {
   readonly ConfigurationAggregatorName: string;
   readonly ConfigRuleName: string;
   readonly AccountId: string;
   readonly AwsRegion: string;
-  readonly ComplianceType: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly ComplianceType?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface GetAggregateComplianceDetailsByConfigRuleResponse {
-  readonly AggregateEvaluationResults: [];
-  readonly NextToken: string;
+export interface GetAggregateComplianceDetailsByConfigRuleResponse {
+  readonly AggregateEvaluationResults?: [];
+  readonly NextToken?: string;
 }
 
-interface GetAggregateConfigRuleComplianceSummaryRequest {
+export interface GetAggregateConfigRuleComplianceSummaryRequest {
   readonly ConfigurationAggregatorName: string;
-  readonly Filters: ConfigRuleComplianceSummaryFilters;
-  readonly GroupByKey: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Filters?: ConfigRuleComplianceSummaryFilters;
+  readonly GroupByKey?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface GetAggregateConfigRuleComplianceSummaryResponse {
-  readonly GroupByKey: string;
-  readonly AggregateComplianceCounts: [];
-  readonly NextToken: string;
+export interface GetAggregateConfigRuleComplianceSummaryResponse {
+  readonly GroupByKey?: string;
+  readonly AggregateComplianceCounts?: [];
+  readonly NextToken?: string;
 }
 
-interface GetAggregateConformancePackComplianceSummaryRequest {
+export interface GetAggregateConformancePackComplianceSummaryRequest {
   readonly ConfigurationAggregatorName: string;
-  readonly Filters: AggregateConformancePackComplianceSummaryFilters;
-  readonly GroupByKey: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Filters?: AggregateConformancePackComplianceSummaryFilters;
+  readonly GroupByKey?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface GetAggregateConformancePackComplianceSummaryResponse {
-  readonly AggregateConformancePackComplianceSummaries: [];
-  readonly GroupByKey: string;
-  readonly NextToken: string;
+export interface GetAggregateConformancePackComplianceSummaryResponse {
+  readonly AggregateConformancePackComplianceSummaries?: [];
+  readonly GroupByKey?: string;
+  readonly NextToken?: string;
 }
 
-interface GetAggregateDiscoveredResourceCountsRequest {
+export interface GetAggregateDiscoveredResourceCountsRequest {
   readonly ConfigurationAggregatorName: string;
-  readonly Filters: ResourceCountFilters;
-  readonly GroupByKey: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Filters?: ResourceCountFilters;
+  readonly GroupByKey?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface GetAggregateDiscoveredResourceCountsResponse {
+export interface GetAggregateDiscoveredResourceCountsResponse {
   readonly TotalDiscoveredResources: number;
-  readonly GroupByKey: string;
-  readonly GroupedResourceCounts: [];
-  readonly NextToken: string;
+  readonly GroupByKey?: string;
+  readonly GroupedResourceCounts?: [];
+  readonly NextToken?: string;
 }
 
-interface GetAggregateResourceConfigRequest {
+export interface GetAggregateResourceConfigRequest {
   readonly ConfigurationAggregatorName: string;
   readonly ResourceIdentifier: AggregateResourceIdentifier;
 }
 
-interface GetAggregateResourceConfigResponse {
-  readonly ConfigurationItem: ConfigurationItem;
+export interface GetAggregateResourceConfigResponse {
+  readonly ConfigurationItem?: ConfigurationItem;
 }
 
-interface GetComplianceDetailsByConfigRuleRequest {
+export interface GetComplianceDetailsByConfigRuleRequest {
   readonly ConfigRuleName: string;
-  readonly ComplianceTypes: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly ComplianceTypes?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface GetComplianceDetailsByConfigRuleResponse {
-  readonly EvaluationResults: [];
-  readonly NextToken: string;
+export interface GetComplianceDetailsByConfigRuleResponse {
+  readonly EvaluationResults?: [];
+  readonly NextToken?: string;
 }
 
-interface GetComplianceDetailsByResourceRequest {
+export interface GetComplianceDetailsByResourceRequest {
   readonly ResourceType: string;
   readonly ResourceId: string;
-  readonly ComplianceTypes: [];
-  readonly NextToken: string;
+  readonly ComplianceTypes?: [];
+  readonly NextToken?: string;
 }
 
-interface GetComplianceDetailsByResourceResponse {
-  readonly EvaluationResults: [];
-  readonly NextToken: string;
+export interface GetComplianceDetailsByResourceResponse {
+  readonly EvaluationResults?: [];
+  readonly NextToken?: string;
 }
 
-interface GetComplianceSummaryByConfigRuleResponse {
-  readonly ComplianceSummary: ComplianceSummary;
+export interface GetComplianceSummaryByConfigRuleResponse {
+  readonly ComplianceSummary?: ComplianceSummary;
 }
 
-interface GetComplianceSummaryByResourceTypeRequest {
-  readonly ResourceTypes: [];
+export interface GetComplianceSummaryByResourceTypeRequest {
+  readonly ResourceTypes?: [];
 }
 
-interface GetComplianceSummaryByResourceTypeResponse {
-  readonly ComplianceSummariesByResourceType: [];
+export interface GetComplianceSummaryByResourceTypeResponse {
+  readonly ComplianceSummariesByResourceType?: [];
 }
 
-interface GetConformancePackComplianceDetailsRequest {
+export interface GetConformancePackComplianceDetailsRequest {
   readonly ConformancePackName: string;
-  readonly Filters: ConformancePackEvaluationFilters;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Filters?: ConformancePackEvaluationFilters;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface GetConformancePackComplianceDetailsResponse {
+export interface GetConformancePackComplianceDetailsResponse {
   readonly ConformancePackName: string;
-  readonly ConformancePackRuleEvaluationResults: [];
-  readonly NextToken: string;
+  readonly ConformancePackRuleEvaluationResults?: [];
+  readonly NextToken?: string;
 }
 
-interface GetConformancePackComplianceSummaryRequest {
+export interface GetConformancePackComplianceSummaryRequest {
   readonly ConformancePackNames: [];
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface GetConformancePackComplianceSummaryResponse {
-  readonly ConformancePackComplianceSummaryList: [];
-  readonly NextToken: string;
+export interface GetConformancePackComplianceSummaryResponse {
+  readonly ConformancePackComplianceSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface GetDiscoveredResourceCountsRequest {
-  readonly resourceTypes: [];
-  readonly limit: number;
-  readonly nextToken: string;
+export interface GetDiscoveredResourceCountsRequest {
+  readonly resourceTypes?: [];
+  readonly limit?: number;
+  readonly nextToken?: string;
 }
 
-interface GetDiscoveredResourceCountsResponse {
-  readonly totalDiscoveredResources: number;
-  readonly resourceCounts: [];
-  readonly nextToken: string;
+export interface GetDiscoveredResourceCountsResponse {
+  readonly totalDiscoveredResources?: number;
+  readonly resourceCounts?: [];
+  readonly nextToken?: string;
 }
 
-interface GetOrganizationConfigRuleDetailedStatusRequest {
+export interface GetOrganizationConfigRuleDetailedStatusRequest {
   readonly OrganizationConfigRuleName: string;
-  readonly Filters: StatusDetailFilters;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Filters?: StatusDetailFilters;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface GetOrganizationConfigRuleDetailedStatusResponse {
-  readonly OrganizationConfigRuleDetailedStatus: [];
-  readonly NextToken: string;
+export interface GetOrganizationConfigRuleDetailedStatusResponse {
+  readonly OrganizationConfigRuleDetailedStatus?: [];
+  readonly NextToken?: string;
 }
 
-interface GetOrganizationConformancePackDetailedStatusRequest {
+export interface GetOrganizationConformancePackDetailedStatusRequest {
   readonly OrganizationConformancePackName: string;
-  readonly Filters: OrganizationResourceDetailedStatusFilters;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Filters?: OrganizationResourceDetailedStatusFilters;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface GetOrganizationConformancePackDetailedStatusResponse {
-  readonly OrganizationConformancePackDetailedStatuses: [];
-  readonly NextToken: string;
+export interface GetOrganizationConformancePackDetailedStatusResponse {
+  readonly OrganizationConformancePackDetailedStatuses?: [];
+  readonly NextToken?: string;
 }
 
-interface GetResourceConfigHistoryRequest {
+export interface GetResourceConfigHistoryRequest {
   readonly resourceType: string;
   readonly resourceId: string;
-  readonly laterTime: Date;
-  readonly earlierTime: Date;
-  readonly chronologicalOrder: string;
-  readonly limit: number;
-  readonly nextToken: string;
+  readonly laterTime?: Date;
+  readonly earlierTime?: Date;
+  readonly chronologicalOrder?: string;
+  readonly limit?: number;
+  readonly nextToken?: string;
 }
 
-interface GetResourceConfigHistoryResponse {
-  readonly configurationItems: [];
-  readonly nextToken: string;
+export interface GetResourceConfigHistoryResponse {
+  readonly configurationItems?: [];
+  readonly nextToken?: string;
 }
 
-interface GetStoredQueryRequest {
+export interface GetStoredQueryRequest {
   readonly QueryName: string;
 }
 
-interface GetStoredQueryResponse {
-  readonly StoredQuery: StoredQuery;
+export interface GetStoredQueryResponse {
+  readonly StoredQuery?: StoredQuery;
 }
 
-interface GroupedResourceCount {
+export interface GroupedResourceCount {
   readonly GroupName: string;
   readonly ResourceCount: number;
 }
 
-interface InsufficientDeliveryPolicyException {
+export interface InsufficientDeliveryPolicyException {
 }
 
-interface InsufficientPermissionsException {
+export interface InsufficientPermissionsException {
 }
 
-interface InvalidConfigurationRecorderNameException {
+export interface InvalidConfigurationRecorderNameException {
 }
 
-interface InvalidDeliveryChannelNameException {
+export interface InvalidDeliveryChannelNameException {
 }
 
-interface InvalidExpressionException {
+export interface InvalidExpressionException {
 }
 
-interface InvalidLimitException {
+export interface InvalidLimitException {
 }
 
-interface InvalidNextTokenException {
+export interface InvalidNextTokenException {
 }
 
-interface InvalidParameterValueException {
+export interface InvalidParameterValueException {
 }
 
-interface InvalidRecordingGroupException {
+export interface InvalidRecordingGroupException {
 }
 
-interface InvalidResultTokenException {
+export interface InvalidResultTokenException {
 }
 
-interface InvalidRoleException {
+export interface InvalidRoleException {
 }
 
-interface InvalidS3KeyPrefixException {
+export interface InvalidS3KeyPrefixException {
 }
 
-interface InvalidS3KmsKeyArnException {
+export interface InvalidS3KmsKeyArnException {
 }
 
-interface InvalidSNSTopicARNException {
+export interface InvalidSNSTopicARNException {
 }
 
-interface InvalidTimeRangeException {
+export interface InvalidTimeRangeException {
 }
 
-interface LastDeliveryChannelDeleteFailedException {
+export interface LastDeliveryChannelDeleteFailedException {
 }
 
-interface LimitExceededException {
+export interface LimitExceededException {
 }
 
-interface ListAggregateDiscoveredResourcesRequest {
+export interface ListAggregateDiscoveredResourcesRequest {
   readonly ConfigurationAggregatorName: string;
   readonly ResourceType: string;
-  readonly Filters: ResourceFilters;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Filters?: ResourceFilters;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAggregateDiscoveredResourcesResponse {
-  readonly ResourceIdentifiers: [];
-  readonly NextToken: string;
+export interface ListAggregateDiscoveredResourcesResponse {
+  readonly ResourceIdentifiers?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDiscoveredResourcesRequest {
+export interface ListDiscoveredResourcesRequest {
   readonly resourceType: string;
-  readonly resourceIds: [];
-  readonly resourceName: string;
-  readonly limit: number;
-  readonly includeDeletedResources: boolean;
-  readonly nextToken: string;
+  readonly resourceIds?: [];
+  readonly resourceName?: string;
+  readonly limit?: number;
+  readonly includeDeletedResources?: boolean;
+  readonly nextToken?: string;
 }
 
-interface ListDiscoveredResourcesResponse {
-  readonly resourceIdentifiers: [];
-  readonly nextToken: string;
+export interface ListDiscoveredResourcesResponse {
+  readonly resourceIdentifiers?: [];
+  readonly nextToken?: string;
 }
 
-interface ListStoredQueriesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListStoredQueriesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListStoredQueriesResponse {
-  readonly StoredQueryMetadata: [];
-  readonly NextToken: string;
+export interface ListStoredQueriesResponse {
+  readonly StoredQueryMetadata?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
-  readonly NextToken: string;
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
+  readonly NextToken?: string;
 }
 
-interface MaxActiveResourcesExceededException {
+export interface MaxActiveResourcesExceededException {
 }
 
-interface MaxNumberOfConfigRulesExceededException {
+export interface MaxNumberOfConfigRulesExceededException {
 }
 
-interface MaxNumberOfConfigurationRecordersExceededException {
+export interface MaxNumberOfConfigurationRecordersExceededException {
 }
 
-interface MaxNumberOfConformancePacksExceededException {
+export interface MaxNumberOfConformancePacksExceededException {
 }
 
-interface MaxNumberOfDeliveryChannelsExceededException {
+export interface MaxNumberOfDeliveryChannelsExceededException {
 }
 
-interface MaxNumberOfOrganizationConfigRulesExceededException {
+export interface MaxNumberOfOrganizationConfigRulesExceededException {
 }
 
-interface MaxNumberOfOrganizationConformancePacksExceededException {
+export interface MaxNumberOfOrganizationConformancePacksExceededException {
 }
 
-interface MaxNumberOfRetentionConfigurationsExceededException {
+export interface MaxNumberOfRetentionConfigurationsExceededException {
 }
 
-interface MemberAccountStatus {
+export interface MemberAccountStatus {
   readonly AccountId: string;
   readonly ConfigRuleName: string;
   readonly MemberAccountRuleStatus: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
-  readonly LastUpdateTime: Date;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
+  readonly LastUpdateTime?: Date;
 }
 
-interface NoAvailableConfigurationRecorderException {
+export interface NoAvailableConfigurationRecorderException {
 }
 
-interface NoAvailableDeliveryChannelException {
+export interface NoAvailableDeliveryChannelException {
 }
 
-interface NoAvailableOrganizationException {
+export interface NoAvailableOrganizationException {
 }
 
-interface NoRunningConfigurationRecorderException {
+export interface NoRunningConfigurationRecorderException {
 }
 
-interface NoSuchBucketException {
+export interface NoSuchBucketException {
 }
 
-interface NoSuchConfigRuleException {
+export interface NoSuchConfigRuleException {
 }
 
-interface NoSuchConfigRuleInConformancePackException {
+export interface NoSuchConfigRuleInConformancePackException {
 }
 
-interface NoSuchConfigurationAggregatorException {
+export interface NoSuchConfigurationAggregatorException {
 }
 
-interface NoSuchConfigurationRecorderException {
+export interface NoSuchConfigurationRecorderException {
 }
 
-interface NoSuchConformancePackException {
+export interface NoSuchConformancePackException {
 }
 
-interface NoSuchDeliveryChannelException {
+export interface NoSuchDeliveryChannelException {
 }
 
-interface NoSuchOrganizationConfigRuleException {
+export interface NoSuchOrganizationConfigRuleException {
 }
 
-interface NoSuchOrganizationConformancePackException {
+export interface NoSuchOrganizationConformancePackException {
 }
 
-interface NoSuchRemediationConfigurationException {
+export interface NoSuchRemediationConfigurationException {
 }
 
-interface NoSuchRemediationExceptionException {
+export interface NoSuchRemediationExceptionException {
 }
 
-interface NoSuchRetentionConfigurationException {
+export interface NoSuchRetentionConfigurationException {
 }
 
-interface OrganizationAccessDeniedException {
+export interface OrganizationAccessDeniedException {
 }
 
-interface OrganizationAggregationSource {
+export interface OrganizationAggregationSource {
   readonly RoleArn: string;
-  readonly AwsRegions: [];
-  readonly AllAwsRegions: boolean;
+  readonly AwsRegions?: [];
+  readonly AllAwsRegions?: boolean;
 }
 
-interface OrganizationAllFeaturesNotEnabledException {
+export interface OrganizationAllFeaturesNotEnabledException {
 }
 
-interface OrganizationConfigRule {
+export interface OrganizationConfigRule {
   readonly OrganizationConfigRuleName: string;
   readonly OrganizationConfigRuleArn: string;
-  readonly OrganizationManagedRuleMetadata: OrganizationManagedRuleMetadata;
-  readonly OrganizationCustomRuleMetadata: OrganizationCustomRuleMetadata;
-  readonly ExcludedAccounts: [];
-  readonly LastUpdateTime: Date;
+  readonly OrganizationManagedRuleMetadata?: OrganizationManagedRuleMetadata;
+  readonly OrganizationCustomRuleMetadata?: OrganizationCustomRuleMetadata;
+  readonly ExcludedAccounts?: [];
+  readonly LastUpdateTime?: Date;
 }
 
-interface OrganizationConfigRuleStatus {
+export interface OrganizationConfigRuleStatus {
   readonly OrganizationConfigRuleName: string;
   readonly OrganizationRuleStatus: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
-  readonly LastUpdateTime: Date;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
+  readonly LastUpdateTime?: Date;
 }
 
-interface OrganizationConformancePack {
+export interface OrganizationConformancePack {
   readonly OrganizationConformancePackName: string;
   readonly OrganizationConformancePackArn: string;
-  readonly DeliveryS3Bucket: string;
-  readonly DeliveryS3KeyPrefix: string;
-  readonly ConformancePackInputParameters: [];
-  readonly ExcludedAccounts: [];
+  readonly DeliveryS3Bucket?: string;
+  readonly DeliveryS3KeyPrefix?: string;
+  readonly ConformancePackInputParameters?: [];
+  readonly ExcludedAccounts?: [];
   readonly LastUpdateTime: Date;
 }
 
-interface OrganizationConformancePackDetailedStatus {
+export interface OrganizationConformancePackDetailedStatus {
   readonly AccountId: string;
   readonly ConformancePackName: string;
   readonly Status: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
-  readonly LastUpdateTime: Date;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
+  readonly LastUpdateTime?: Date;
 }
 
-interface OrganizationConformancePackStatus {
+export interface OrganizationConformancePackStatus {
   readonly OrganizationConformancePackName: string;
   readonly Status: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
-  readonly LastUpdateTime: Date;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
+  readonly LastUpdateTime?: Date;
 }
 
-interface OrganizationConformancePackTemplateValidationException {
+export interface OrganizationConformancePackTemplateValidationException {
 }
 
-interface OrganizationCustomRuleMetadata {
-  readonly Description: string;
+export interface OrganizationCustomRuleMetadata {
+  readonly Description?: string;
   readonly LambdaFunctionArn: string;
   readonly OrganizationConfigRuleTriggerTypes: [];
-  readonly InputParameters: string;
-  readonly MaximumExecutionFrequency: string;
-  readonly ResourceTypesScope: [];
-  readonly ResourceIdScope: string;
-  readonly TagKeyScope: string;
-  readonly TagValueScope: string;
+  readonly InputParameters?: string;
+  readonly MaximumExecutionFrequency?: string;
+  readonly ResourceTypesScope?: [];
+  readonly ResourceIdScope?: string;
+  readonly TagKeyScope?: string;
+  readonly TagValueScope?: string;
 }
 
-interface OrganizationManagedRuleMetadata {
-  readonly Description: string;
+export interface OrganizationManagedRuleMetadata {
+  readonly Description?: string;
   readonly RuleIdentifier: string;
-  readonly InputParameters: string;
-  readonly MaximumExecutionFrequency: string;
-  readonly ResourceTypesScope: [];
-  readonly ResourceIdScope: string;
-  readonly TagKeyScope: string;
-  readonly TagValueScope: string;
+  readonly InputParameters?: string;
+  readonly MaximumExecutionFrequency?: string;
+  readonly ResourceTypesScope?: [];
+  readonly ResourceIdScope?: string;
+  readonly TagKeyScope?: string;
+  readonly TagValueScope?: string;
 }
 
-interface OrganizationResourceDetailedStatusFilters {
-  readonly AccountId: string;
-  readonly Status: string;
+export interface OrganizationResourceDetailedStatusFilters {
+  readonly AccountId?: string;
+  readonly Status?: string;
 }
 
-interface OversizedConfigurationItemException {
+export interface OversizedConfigurationItemException {
 }
 
-interface PendingAggregationRequest {
-  readonly RequesterAccountId: string;
-  readonly RequesterAwsRegion: string;
+export interface PendingAggregationRequest {
+  readonly RequesterAccountId?: string;
+  readonly RequesterAwsRegion?: string;
 }
 
-interface PutAggregationAuthorizationRequest {
+export interface PutAggregationAuthorizationRequest {
   readonly AuthorizedAccountId: string;
   readonly AuthorizedAwsRegion: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface PutAggregationAuthorizationResponse {
-  readonly AggregationAuthorization: AggregationAuthorization;
+export interface PutAggregationAuthorizationResponse {
+  readonly AggregationAuthorization?: AggregationAuthorization;
 }
 
-interface PutConfigRuleRequest {
+export interface PutConfigRuleRequest {
   readonly ConfigRule: ConfigRule;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface PutConfigurationAggregatorRequest {
+export interface PutConfigurationAggregatorRequest {
   readonly ConfigurationAggregatorName: string;
-  readonly AccountAggregationSources: [];
-  readonly OrganizationAggregationSource: OrganizationAggregationSource;
-  readonly Tags: [];
+  readonly AccountAggregationSources?: [];
+  readonly OrganizationAggregationSource?: OrganizationAggregationSource;
+  readonly Tags?: [];
 }
 
-interface PutConfigurationAggregatorResponse {
-  readonly ConfigurationAggregator: ConfigurationAggregator;
+export interface PutConfigurationAggregatorResponse {
+  readonly ConfigurationAggregator?: ConfigurationAggregator;
 }
 
-interface PutConfigurationRecorderRequest {
+export interface PutConfigurationRecorderRequest {
   readonly ConfigurationRecorder: ConfigurationRecorder;
 }
 
-interface PutConformancePackRequest {
+export interface PutConformancePackRequest {
   readonly ConformancePackName: string;
-  readonly TemplateS3Uri: string;
-  readonly TemplateBody: string;
-  readonly DeliveryS3Bucket: string;
-  readonly DeliveryS3KeyPrefix: string;
-  readonly ConformancePackInputParameters: [];
+  readonly TemplateS3Uri?: string;
+  readonly TemplateBody?: string;
+  readonly DeliveryS3Bucket?: string;
+  readonly DeliveryS3KeyPrefix?: string;
+  readonly ConformancePackInputParameters?: [];
 }
 
-interface PutConformancePackResponse {
-  readonly ConformancePackArn: string;
+export interface PutConformancePackResponse {
+  readonly ConformancePackArn?: string;
 }
 
-interface PutDeliveryChannelRequest {
+export interface PutDeliveryChannelRequest {
   readonly DeliveryChannel: DeliveryChannel;
 }
 
-interface PutEvaluationsRequest {
-  readonly Evaluations: [];
+export interface PutEvaluationsRequest {
+  readonly Evaluations?: [];
   readonly ResultToken: string;
-  readonly TestMode: boolean;
+  readonly TestMode?: boolean;
 }
 
-interface PutEvaluationsResponse {
-  readonly FailedEvaluations: [];
+export interface PutEvaluationsResponse {
+  readonly FailedEvaluations?: [];
 }
 
-interface PutExternalEvaluationRequest {
+export interface PutExternalEvaluationRequest {
   readonly ConfigRuleName: string;
   readonly ExternalEvaluation: ExternalEvaluation;
 }
 
-interface PutExternalEvaluationResponse {
+export interface PutExternalEvaluationResponse {
 }
 
-interface PutOrganizationConfigRuleRequest {
+export interface PutOrganizationConfigRuleRequest {
   readonly OrganizationConfigRuleName: string;
-  readonly OrganizationManagedRuleMetadata: OrganizationManagedRuleMetadata;
-  readonly OrganizationCustomRuleMetadata: OrganizationCustomRuleMetadata;
-  readonly ExcludedAccounts: [];
+  readonly OrganizationManagedRuleMetadata?: OrganizationManagedRuleMetadata;
+  readonly OrganizationCustomRuleMetadata?: OrganizationCustomRuleMetadata;
+  readonly ExcludedAccounts?: [];
 }
 
-interface PutOrganizationConfigRuleResponse {
-  readonly OrganizationConfigRuleArn: string;
+export interface PutOrganizationConfigRuleResponse {
+  readonly OrganizationConfigRuleArn?: string;
 }
 
-interface PutOrganizationConformancePackRequest {
+export interface PutOrganizationConformancePackRequest {
   readonly OrganizationConformancePackName: string;
-  readonly TemplateS3Uri: string;
-  readonly TemplateBody: string;
-  readonly DeliveryS3Bucket: string;
-  readonly DeliveryS3KeyPrefix: string;
-  readonly ConformancePackInputParameters: [];
-  readonly ExcludedAccounts: [];
+  readonly TemplateS3Uri?: string;
+  readonly TemplateBody?: string;
+  readonly DeliveryS3Bucket?: string;
+  readonly DeliveryS3KeyPrefix?: string;
+  readonly ConformancePackInputParameters?: [];
+  readonly ExcludedAccounts?: [];
 }
 
-interface PutOrganizationConformancePackResponse {
-  readonly OrganizationConformancePackArn: string;
+export interface PutOrganizationConformancePackResponse {
+  readonly OrganizationConformancePackArn?: string;
 }
 
-interface PutRemediationConfigurationsRequest {
+export interface PutRemediationConfigurationsRequest {
   readonly RemediationConfigurations: [];
 }
 
-interface PutRemediationConfigurationsResponse {
-  readonly FailedBatches: [];
+export interface PutRemediationConfigurationsResponse {
+  readonly FailedBatches?: [];
 }
 
-interface PutRemediationExceptionsRequest {
+export interface PutRemediationExceptionsRequest {
   readonly ConfigRuleName: string;
   readonly ResourceKeys: [];
-  readonly Message: string;
-  readonly ExpirationTime: Date;
+  readonly Message?: string;
+  readonly ExpirationTime?: Date;
 }
 
-interface PutRemediationExceptionsResponse {
-  readonly FailedBatches: [];
+export interface PutRemediationExceptionsResponse {
+  readonly FailedBatches?: [];
 }
 
-interface PutResourceConfigRequest {
+export interface PutResourceConfigRequest {
   readonly ResourceType: string;
   readonly SchemaVersionId: string;
   readonly ResourceId: string;
-  readonly ResourceName: string;
+  readonly ResourceName?: string;
   readonly Configuration: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface PutRetentionConfigurationRequest {
+export interface PutRetentionConfigurationRequest {
   readonly RetentionPeriodInDays: number;
 }
 
-interface PutRetentionConfigurationResponse {
-  readonly RetentionConfiguration: RetentionConfiguration;
+export interface PutRetentionConfigurationResponse {
+  readonly RetentionConfiguration?: RetentionConfiguration;
 }
 
-interface PutStoredQueryRequest {
+export interface PutStoredQueryRequest {
   readonly StoredQuery: StoredQuery;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface PutStoredQueryResponse {
-  readonly QueryArn: string;
+export interface PutStoredQueryResponse {
+  readonly QueryArn?: string;
 }
 
-interface QueryInfo {
-  readonly SelectFields: [];
+export interface QueryInfo {
+  readonly SelectFields?: [];
 }
 
-interface RecordingGroup {
-  readonly allSupported: boolean;
-  readonly includeGlobalResourceTypes: boolean;
-  readonly resourceTypes: [];
+export interface RecordingGroup {
+  readonly allSupported?: boolean;
+  readonly includeGlobalResourceTypes?: boolean;
+  readonly resourceTypes?: [];
 }
 
-interface Relationship {
-  readonly resourceType: string;
-  readonly resourceId: string;
-  readonly resourceName: string;
-  readonly relationshipName: string;
+export interface Relationship {
+  readonly resourceType?: string;
+  readonly resourceId?: string;
+  readonly resourceName?: string;
+  readonly relationshipName?: string;
 }
 
-interface RemediationConfiguration {
+export interface RemediationConfiguration {
   readonly ConfigRuleName: string;
   readonly TargetType: string;
   readonly TargetId: string;
-  readonly TargetVersion: string;
-  readonly Parameters: {[key: string]: any};
-  readonly ResourceType: string;
-  readonly Automatic: boolean;
-  readonly ExecutionControls: ExecutionControls;
-  readonly MaximumAutomaticAttempts: number;
-  readonly RetryAttemptSeconds: number;
-  readonly Arn: string;
-  readonly CreatedByService: string;
+  readonly TargetVersion?: string;
+  readonly Parameters?: {[key: string]: any};
+  readonly ResourceType?: string;
+  readonly Automatic?: boolean;
+  readonly ExecutionControls?: ExecutionControls;
+  readonly MaximumAutomaticAttempts?: number;
+  readonly RetryAttemptSeconds?: number;
+  readonly Arn?: string;
+  readonly CreatedByService?: string;
 }
 
-interface RemediationException {
+export interface RemediationException {
   readonly ConfigRuleName: string;
   readonly ResourceType: string;
   readonly ResourceId: string;
-  readonly Message: string;
-  readonly ExpirationTime: Date;
+  readonly Message?: string;
+  readonly ExpirationTime?: Date;
 }
 
-interface RemediationExceptionResourceKey {
-  readonly ResourceType: string;
-  readonly ResourceId: string;
+export interface RemediationExceptionResourceKey {
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
 }
 
-interface RemediationExecutionStatus {
-  readonly ResourceKey: ResourceKey;
-  readonly State: string;
-  readonly StepDetails: [];
-  readonly InvocationTime: Date;
-  readonly LastUpdatedTime: Date;
+export interface RemediationExecutionStatus {
+  readonly ResourceKey?: ResourceKey;
+  readonly State?: string;
+  readonly StepDetails?: [];
+  readonly InvocationTime?: Date;
+  readonly LastUpdatedTime?: Date;
 }
 
-interface RemediationExecutionStep {
-  readonly Name: string;
-  readonly State: string;
-  readonly ErrorMessage: string;
-  readonly StartTime: Date;
-  readonly StopTime: Date;
+export interface RemediationExecutionStep {
+  readonly Name?: string;
+  readonly State?: string;
+  readonly ErrorMessage?: string;
+  readonly StartTime?: Date;
+  readonly StopTime?: Date;
 }
 
-interface RemediationInProgressException {
+export interface RemediationInProgressException {
 }
 
-interface RemediationParameterValue {
-  readonly ResourceValue: ResourceValue;
-  readonly StaticValue: StaticValue;
+export interface RemediationParameterValue {
+  readonly ResourceValue?: ResourceValue;
+  readonly StaticValue?: StaticValue;
 }
 
-interface ResourceConcurrentModificationException {
-  readonly message: string;
+export interface ResourceConcurrentModificationException {
+  readonly message?: string;
 }
 
-interface ResourceCount {
-  readonly resourceType: string;
-  readonly count: number;
+export interface ResourceCount {
+  readonly resourceType?: string;
+  readonly count?: number;
 }
 
-interface ResourceCountFilters {
-  readonly ResourceType: string;
-  readonly AccountId: string;
-  readonly Region: string;
+export interface ResourceCountFilters {
+  readonly ResourceType?: string;
+  readonly AccountId?: string;
+  readonly Region?: string;
 }
 
-interface ResourceFilters {
-  readonly AccountId: string;
-  readonly ResourceId: string;
-  readonly ResourceName: string;
-  readonly Region: string;
+export interface ResourceFilters {
+  readonly AccountId?: string;
+  readonly ResourceId?: string;
+  readonly ResourceName?: string;
+  readonly Region?: string;
 }
 
-interface ResourceIdentifier {
+export interface ResourceIdentifier {
+  readonly resourceType?: string;
+  readonly resourceId?: string;
+  readonly resourceName?: string;
+  readonly resourceDeletionTime?: Date;
+}
+
+export interface ResourceInUseException {
+}
+
+export interface ResourceKey {
   readonly resourceType: string;
   readonly resourceId: string;
-  readonly resourceName: string;
-  readonly resourceDeletionTime: Date;
 }
 
-interface ResourceInUseException {
+export interface ResourceNotDiscoveredException {
 }
 
-interface ResourceKey {
-  readonly resourceType: string;
-  readonly resourceId: string;
+export interface ResourceNotFoundException {
 }
 
-interface ResourceNotDiscoveredException {
-}
-
-interface ResourceNotFoundException {
-}
-
-interface ResourceValue {
+export interface ResourceValue {
   readonly Value: string;
 }
 
-interface RetentionConfiguration {
+export interface RetentionConfiguration {
   readonly Name: string;
   readonly RetentionPeriodInDays: number;
 }
 
-interface Scope {
-  readonly ComplianceResourceTypes: [];
-  readonly TagKey: string;
-  readonly TagValue: string;
-  readonly ComplianceResourceId: string;
+export interface Scope {
+  readonly ComplianceResourceTypes?: [];
+  readonly TagKey?: string;
+  readonly TagValue?: string;
+  readonly ComplianceResourceId?: string;
 }
 
-interface SelectAggregateResourceConfigRequest {
+export interface SelectAggregateResourceConfigRequest {
   readonly Expression: string;
   readonly ConfigurationAggregatorName: string;
-  readonly Limit: number;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Limit?: number;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface SelectAggregateResourceConfigResponse {
-  readonly Results: [];
-  readonly QueryInfo: QueryInfo;
-  readonly NextToken: string;
+export interface SelectAggregateResourceConfigResponse {
+  readonly Results?: [];
+  readonly QueryInfo?: QueryInfo;
+  readonly NextToken?: string;
 }
 
-interface SelectResourceConfigRequest {
+export interface SelectResourceConfigRequest {
   readonly Expression: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface SelectResourceConfigResponse {
-  readonly Results: [];
-  readonly QueryInfo: QueryInfo;
-  readonly NextToken: string;
+export interface SelectResourceConfigResponse {
+  readonly Results?: [];
+  readonly QueryInfo?: QueryInfo;
+  readonly NextToken?: string;
 }
 
-interface Source {
+export interface Source {
   readonly Owner: string;
   readonly SourceIdentifier: string;
-  readonly SourceDetails: [];
+  readonly SourceDetails?: [];
 }
 
-interface SourceDetail {
-  readonly EventSource: string;
-  readonly MessageType: string;
-  readonly MaximumExecutionFrequency: string;
+export interface SourceDetail {
+  readonly EventSource?: string;
+  readonly MessageType?: string;
+  readonly MaximumExecutionFrequency?: string;
 }
 
-interface SsmControls {
-  readonly ConcurrentExecutionRatePercentage: number;
-  readonly ErrorPercentage: number;
+export interface SsmControls {
+  readonly ConcurrentExecutionRatePercentage?: number;
+  readonly ErrorPercentage?: number;
 }
 
-interface StartConfigRulesEvaluationRequest {
-  readonly ConfigRuleNames: [];
+export interface StartConfigRulesEvaluationRequest {
+  readonly ConfigRuleNames?: [];
 }
 
-interface StartConfigRulesEvaluationResponse {
+export interface StartConfigRulesEvaluationResponse {
 }
 
-interface StartConfigurationRecorderRequest {
+export interface StartConfigurationRecorderRequest {
   readonly ConfigurationRecorderName: string;
 }
 
-interface StartRemediationExecutionRequest {
+export interface StartRemediationExecutionRequest {
   readonly ConfigRuleName: string;
   readonly ResourceKeys: [];
 }
 
-interface StartRemediationExecutionResponse {
-  readonly FailureMessage: string;
-  readonly FailedItems: [];
+export interface StartRemediationExecutionResponse {
+  readonly FailureMessage?: string;
+  readonly FailedItems?: [];
 }
 
-interface StaticValue {
+export interface StaticValue {
   readonly Values: [];
 }
 
-interface StatusDetailFilters {
-  readonly AccountId: string;
-  readonly MemberAccountRuleStatus: string;
+export interface StatusDetailFilters {
+  readonly AccountId?: string;
+  readonly MemberAccountRuleStatus?: string;
 }
 
-interface StopConfigurationRecorderRequest {
+export interface StopConfigurationRecorderRequest {
   readonly ConfigurationRecorderName: string;
 }
 
-interface StoredQuery {
+export interface StoredQuery {
+  readonly QueryId?: string;
+  readonly QueryArn?: string;
+  readonly QueryName: string;
+  readonly Description?: string;
+  readonly Expression?: string;
+}
+
+export interface StoredQueryMetadata {
   readonly QueryId: string;
   readonly QueryArn: string;
   readonly QueryName: string;
-  readonly Description: string;
-  readonly Expression: string;
+  readonly Description?: string;
 }
 
-interface StoredQueryMetadata {
-  readonly QueryId: string;
-  readonly QueryArn: string;
-  readonly QueryName: string;
-  readonly Description: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
-}
-
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TooManyTagsException {
+export interface TooManyTagsException {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface ValidationException {
+export interface ValidationException {
 }
+
 

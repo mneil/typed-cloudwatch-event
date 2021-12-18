@@ -4,9 +4,11 @@
 export interface BatchGetChannel {
   readonly arns: [];
 }
+
 export interface BatchGetStreamKey {
   readonly arns: [];
 }
+
 export interface CreateChannel {
   readonly authorized?: boolean;
   readonly latencyMode?: string;
@@ -15,98 +17,123 @@ export interface CreateChannel {
   readonly tags?: {[key: string]: any};
   readonly type?: string;
 }
+
 export interface CreateRecordingConfiguration {
   readonly destinationConfiguration: DestinationConfiguration;
   readonly name?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateStreamKey {
   readonly channelArn: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface DeleteChannel {
   readonly arn: string;
 }
+
 export interface DeletePlaybackKeyPair {
   readonly arn: string;
 }
+
 export interface DeleteRecordingConfiguration {
   readonly arn: string;
 }
+
 export interface DeleteStreamKey {
   readonly arn: string;
 }
+
 export interface GetChannel {
   readonly arn: string;
 }
+
 export interface GetPlaybackKeyPair {
   readonly arn: string;
 }
+
 export interface GetRecordingConfiguration {
   readonly arn: string;
 }
+
 export interface GetStream {
   readonly channelArn: string;
 }
+
 export interface GetStreamKey {
   readonly arn: string;
 }
+
 export interface GetStreamSession {
   readonly channelArn: string;
   readonly streamId?: string;
 }
+
 export interface ImportPlaybackKeyPair {
   readonly name?: string;
   readonly publicKeyMaterial: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface ListChannels {
   readonly filterByName?: string;
   readonly filterByRecordingConfigurationArn?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListPlaybackKeyPairs {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListRecordingConfigurations {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListStreamKeys {
   readonly channelArn: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListStreamSessions {
   readonly channelArn: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListStreams {
   readonly filterBy?: StreamFilters;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface PutMetadata {
   readonly channelArn: string;
   readonly metadata: string;
 }
+
 export interface StopStream {
   readonly channelArn: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateChannel {
   readonly arn: string;
   readonly authorized?: boolean;
@@ -116,434 +143,433 @@ export interface UpdateChannel {
   readonly type?: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly exceptionMessage: string;
+export interface AccessDeniedException {
+  readonly exceptionMessage?: string;
 }
 
-interface AudioConfiguration {
-  readonly channels: number;
-  readonly codec: string;
-  readonly sampleRate: number;
-  readonly targetBitrate: number;
+export interface AudioConfiguration {
+  readonly channels?: number;
+  readonly codec?: string;
+  readonly sampleRate?: number;
+  readonly targetBitrate?: number;
 }
 
-interface BatchError {
-  readonly arn: string;
-  readonly code: string;
-  readonly message: string;
+export interface BatchError {
+  readonly arn?: string;
+  readonly code?: string;
+  readonly message?: string;
 }
 
-interface BatchGetChannelRequest {
+export interface BatchGetChannelRequest {
   readonly arns: [];
 }
 
-interface BatchGetChannelResponse {
-  readonly channels: [];
-  readonly errors: [];
+export interface BatchGetChannelResponse {
+  readonly channels?: [];
+  readonly errors?: [];
 }
 
-interface BatchGetStreamKeyRequest {
+export interface BatchGetStreamKeyRequest {
   readonly arns: [];
 }
 
-interface BatchGetStreamKeyResponse {
-  readonly errors: [];
-  readonly streamKeys: [];
+export interface BatchGetStreamKeyResponse {
+  readonly errors?: [];
+  readonly streamKeys?: [];
 }
 
-interface Channel {
-  readonly arn: string;
-  readonly authorized: boolean;
-  readonly ingestEndpoint: string;
-  readonly latencyMode: string;
-  readonly name: string;
-  readonly playbackUrl: string;
-  readonly recordingConfigurationArn: string;
-  readonly tags: {[key: string]: any};
-  readonly type: string;
+export interface Channel {
+  readonly arn?: string;
+  readonly authorized?: boolean;
+  readonly ingestEndpoint?: string;
+  readonly latencyMode?: string;
+  readonly name?: string;
+  readonly playbackUrl?: string;
+  readonly recordingConfigurationArn?: string;
+  readonly tags?: {[key: string]: any};
+  readonly type?: string;
 }
 
-interface ChannelNotBroadcasting {
-  readonly exceptionMessage: string;
+export interface ChannelNotBroadcasting {
+  readonly exceptionMessage?: string;
 }
 
-interface ChannelSummary {
-  readonly arn: string;
-  readonly authorized: boolean;
-  readonly latencyMode: string;
-  readonly name: string;
-  readonly recordingConfigurationArn: string;
-  readonly tags: {[key: string]: any};
+export interface ChannelSummary {
+  readonly arn?: string;
+  readonly authorized?: boolean;
+  readonly latencyMode?: string;
+  readonly name?: string;
+  readonly recordingConfigurationArn?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface ConflictException {
-  readonly exceptionMessage: string;
+export interface ConflictException {
+  readonly exceptionMessage?: string;
 }
 
-interface CreateChannelRequest {
-  readonly authorized: boolean;
-  readonly latencyMode: string;
-  readonly name: string;
-  readonly recordingConfigurationArn: string;
-  readonly tags: {[key: string]: any};
-  readonly type: string;
+export interface CreateChannelRequest {
+  readonly authorized?: boolean;
+  readonly latencyMode?: string;
+  readonly name?: string;
+  readonly recordingConfigurationArn?: string;
+  readonly tags?: {[key: string]: any};
+  readonly type?: string;
 }
 
-interface CreateChannelResponse {
-  readonly channel: Channel;
-  readonly streamKey: StreamKey;
+export interface CreateChannelResponse {
+  readonly channel?: Channel;
+  readonly streamKey?: StreamKey;
 }
 
-interface CreateRecordingConfigurationRequest {
+export interface CreateRecordingConfigurationRequest {
   readonly destinationConfiguration: DestinationConfiguration;
-  readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly name?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateRecordingConfigurationResponse {
-  readonly recordingConfiguration: RecordingConfiguration;
+export interface CreateRecordingConfigurationResponse {
+  readonly recordingConfiguration?: RecordingConfiguration;
 }
 
-interface CreateStreamKeyRequest {
+export interface CreateStreamKeyRequest {
   readonly channelArn: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateStreamKeyResponse {
-  readonly streamKey: StreamKey;
+export interface CreateStreamKeyResponse {
+  readonly streamKey?: StreamKey;
 }
 
-interface DeleteChannelRequest {
+export interface DeleteChannelRequest {
   readonly arn: string;
 }
 
-interface DeletePlaybackKeyPairRequest {
+export interface DeletePlaybackKeyPairRequest {
   readonly arn: string;
 }
 
-interface DeletePlaybackKeyPairResponse {
+export interface DeletePlaybackKeyPairResponse {
 }
 
-interface DeleteRecordingConfigurationRequest {
+export interface DeleteRecordingConfigurationRequest {
   readonly arn: string;
 }
 
-interface DeleteStreamKeyRequest {
+export interface DeleteStreamKeyRequest {
   readonly arn: string;
 }
 
-interface DestinationConfiguration {
-  readonly s3: S3DestinationConfiguration;
+export interface DestinationConfiguration {
+  readonly s3?: S3DestinationConfiguration;
 }
 
-interface GetChannelRequest {
+export interface GetChannelRequest {
   readonly arn: string;
 }
 
-interface GetChannelResponse {
-  readonly channel: Channel;
+export interface GetChannelResponse {
+  readonly channel?: Channel;
 }
 
-interface GetPlaybackKeyPairRequest {
+export interface GetPlaybackKeyPairRequest {
   readonly arn: string;
 }
 
-interface GetPlaybackKeyPairResponse {
-  readonly keyPair: PlaybackKeyPair;
+export interface GetPlaybackKeyPairResponse {
+  readonly keyPair?: PlaybackKeyPair;
 }
 
-interface GetRecordingConfigurationRequest {
+export interface GetRecordingConfigurationRequest {
   readonly arn: string;
 }
 
-interface GetRecordingConfigurationResponse {
-  readonly recordingConfiguration: RecordingConfiguration;
+export interface GetRecordingConfigurationResponse {
+  readonly recordingConfiguration?: RecordingConfiguration;
 }
 
-interface GetStreamKeyRequest {
+export interface GetStreamKeyRequest {
   readonly arn: string;
 }
 
-interface GetStreamKeyResponse {
-  readonly streamKey: StreamKey;
+export interface GetStreamKeyResponse {
+  readonly streamKey?: StreamKey;
 }
 
-interface GetStreamRequest {
+export interface GetStreamRequest {
   readonly channelArn: string;
 }
 
-interface GetStreamResponse {
-  readonly stream: Stream;
+export interface GetStreamResponse {
+  readonly stream?: Stream;
 }
 
-interface GetStreamSessionRequest {
+export interface GetStreamSessionRequest {
   readonly channelArn: string;
-  readonly streamId: string;
+  readonly streamId?: string;
 }
 
-interface GetStreamSessionResponse {
-  readonly streamSession: StreamSession;
+export interface GetStreamSessionResponse {
+  readonly streamSession?: StreamSession;
 }
 
-interface ImportPlaybackKeyPairRequest {
-  readonly name: string;
+export interface ImportPlaybackKeyPairRequest {
+  readonly name?: string;
   readonly publicKeyMaterial: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface ImportPlaybackKeyPairResponse {
-  readonly keyPair: PlaybackKeyPair;
+export interface ImportPlaybackKeyPairResponse {
+  readonly keyPair?: PlaybackKeyPair;
 }
 
-interface IngestConfiguration {
-  readonly audio: AudioConfiguration;
-  readonly video: VideoConfiguration;
+export interface IngestConfiguration {
+  readonly audio?: AudioConfiguration;
+  readonly video?: VideoConfiguration;
 }
 
-interface InternalServerException {
-  readonly exceptionMessage: string;
+export interface InternalServerException {
+  readonly exceptionMessage?: string;
 }
 
-interface ListChannelsRequest {
-  readonly filterByName: string;
-  readonly filterByRecordingConfigurationArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListChannelsRequest {
+  readonly filterByName?: string;
+  readonly filterByRecordingConfigurationArn?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListChannelsResponse {
+export interface ListChannelsResponse {
   readonly channels: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListPlaybackKeyPairsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListPlaybackKeyPairsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListPlaybackKeyPairsResponse {
+export interface ListPlaybackKeyPairsResponse {
   readonly keyPairs: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListRecordingConfigurationsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListRecordingConfigurationsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListRecordingConfigurationsResponse {
-  readonly nextToken: string;
+export interface ListRecordingConfigurationsResponse {
+  readonly nextToken?: string;
   readonly recordingConfigurations: [];
 }
 
-interface ListStreamKeysRequest {
+export interface ListStreamKeysRequest {
   readonly channelArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListStreamKeysResponse {
-  readonly nextToken: string;
+export interface ListStreamKeysResponse {
+  readonly nextToken?: string;
   readonly streamKeys: [];
 }
 
-interface ListStreamSessionsRequest {
+export interface ListStreamSessionsRequest {
   readonly channelArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListStreamSessionsResponse {
-  readonly nextToken: string;
+export interface ListStreamSessionsResponse {
+  readonly nextToken?: string;
   readonly streamSessions: [];
 }
 
-interface ListStreamsRequest {
-  readonly filterBy: StreamFilters;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListStreamsRequest {
+  readonly filterBy?: StreamFilters;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListStreamsResponse {
-  readonly nextToken: string;
+export interface ListStreamsResponse {
+  readonly nextToken?: string;
   readonly streams: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
+export interface ListTagsForResourceResponse {
   readonly tags: {[key: string]: any};
 }
 
-interface PendingVerification {
-  readonly exceptionMessage: string;
+export interface PendingVerification {
+  readonly exceptionMessage?: string;
 }
 
-interface PlaybackKeyPair {
-  readonly arn: string;
-  readonly fingerprint: string;
-  readonly name: string;
-  readonly tags: {[key: string]: any};
+export interface PlaybackKeyPair {
+  readonly arn?: string;
+  readonly fingerprint?: string;
+  readonly name?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface PlaybackKeyPairSummary {
-  readonly arn: string;
-  readonly name: string;
-  readonly tags: {[key: string]: any};
+export interface PlaybackKeyPairSummary {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface PutMetadataRequest {
+export interface PutMetadataRequest {
   readonly channelArn: string;
   readonly metadata: string;
 }
 
-interface RecordingConfiguration {
+export interface RecordingConfiguration {
   readonly arn: string;
   readonly destinationConfiguration: DestinationConfiguration;
-  readonly name: string;
+  readonly name?: string;
   readonly state: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface RecordingConfigurationSummary {
+export interface RecordingConfigurationSummary {
   readonly arn: string;
   readonly destinationConfiguration: DestinationConfiguration;
-  readonly name: string;
+  readonly name?: string;
   readonly state: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface ResourceNotFoundException {
-  readonly exceptionMessage: string;
+export interface ResourceNotFoundException {
+  readonly exceptionMessage?: string;
 }
 
-interface S3DestinationConfiguration {
+export interface S3DestinationConfiguration {
   readonly bucketName: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly exceptionMessage: string;
+export interface ServiceQuotaExceededException {
+  readonly exceptionMessage?: string;
 }
 
-interface StopStreamRequest {
+export interface StopStreamRequest {
   readonly channelArn: string;
 }
 
-interface StopStreamResponse {
+export interface StopStreamResponse {
 }
 
-interface Stream {
-  readonly channelArn: string;
-  readonly health: string;
-  readonly playbackUrl: string;
-  readonly startTime: Date;
-  readonly state: string;
-  readonly streamId: string;
-  readonly viewerCount: number;
+export interface Stream {
+  readonly channelArn?: string;
+  readonly health?: string;
+  readonly playbackUrl?: string;
+  readonly startTime?: Date;
+  readonly state?: string;
+  readonly streamId?: string;
+  readonly viewerCount?: number;
 }
 
-interface StreamEvent {
-  readonly eventTime: Date;
-  readonly name: string;
-  readonly type: string;
+export interface StreamEvent {
+  readonly eventTime?: Date;
+  readonly name?: string;
+  readonly type?: string;
 }
 
-interface StreamFilters {
-  readonly health: string;
+export interface StreamFilters {
+  readonly health?: string;
 }
 
-interface StreamKey {
-  readonly arn: string;
-  readonly channelArn: string;
-  readonly tags: {[key: string]: any};
-  readonly value: string;
+export interface StreamKey {
+  readonly arn?: string;
+  readonly channelArn?: string;
+  readonly tags?: {[key: string]: any};
+  readonly value?: string;
 }
 
-interface StreamKeySummary {
-  readonly arn: string;
-  readonly channelArn: string;
-  readonly tags: {[key: string]: any};
+export interface StreamKeySummary {
+  readonly arn?: string;
+  readonly channelArn?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface StreamSession {
-  readonly channel: Channel;
-  readonly endTime: Date;
-  readonly ingestConfiguration: IngestConfiguration;
-  readonly recordingConfiguration: RecordingConfiguration;
-  readonly startTime: Date;
-  readonly streamId: string;
-  readonly truncatedEvents: [];
+export interface StreamSession {
+  readonly channel?: Channel;
+  readonly endTime?: Date;
+  readonly ingestConfiguration?: IngestConfiguration;
+  readonly recordingConfiguration?: RecordingConfiguration;
+  readonly startTime?: Date;
+  readonly streamId?: string;
+  readonly truncatedEvents?: [];
 }
 
-interface StreamSessionSummary {
-  readonly endTime: Date;
-  readonly hasErrorEvent: boolean;
-  readonly startTime: Date;
-  readonly streamId: string;
+export interface StreamSessionSummary {
+  readonly endTime?: Date;
+  readonly hasErrorEvent?: boolean;
+  readonly startTime?: Date;
+  readonly streamId?: string;
 }
 
-interface StreamSummary {
-  readonly channelArn: string;
-  readonly health: string;
-  readonly startTime: Date;
-  readonly state: string;
-  readonly streamId: string;
-  readonly viewerCount: number;
+export interface StreamSummary {
+  readonly channelArn?: string;
+  readonly health?: string;
+  readonly startTime?: Date;
+  readonly state?: string;
+  readonly streamId?: string;
+  readonly viewerCount?: number;
 }
 
-interface StreamUnavailable {
-  readonly exceptionMessage: string;
+export interface StreamUnavailable {
+  readonly exceptionMessage?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
-  readonly exceptionMessage: string;
+export interface ThrottlingException {
+  readonly exceptionMessage?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateChannelRequest {
+export interface UpdateChannelRequest {
   readonly arn: string;
-  readonly authorized: boolean;
-  readonly latencyMode: string;
-  readonly name: string;
-  readonly recordingConfigurationArn: string;
-  readonly type: string;
+  readonly authorized?: boolean;
+  readonly latencyMode?: string;
+  readonly name?: string;
+  readonly recordingConfigurationArn?: string;
+  readonly type?: string;
 }
 
-interface UpdateChannelResponse {
-  readonly channel: Channel;
+export interface UpdateChannelResponse {
+  readonly channel?: Channel;
 }
 
-interface ValidationException {
-  readonly exceptionMessage: string;
+export interface ValidationException {
+  readonly exceptionMessage?: string;
 }
 
-interface VideoConfiguration {
-  readonly avcLevel: string;
-  readonly avcProfile: string;
-  readonly codec: string;
-  readonly encoder: string;
-  readonly targetBitrate: number;
-  readonly targetFramerate: number;
-  readonly videoHeight: number;
-  readonly videoWidth: number;
+export interface VideoConfiguration {
+  readonly avcLevel?: string;
+  readonly avcProfile?: string;
+  readonly codec?: string;
+  readonly encoder?: string;
+  readonly targetBitrate?: number;
+  readonly targetFramerate?: number;
+  readonly videoHeight?: number;
+  readonly videoWidth?: number;
 }
+
 

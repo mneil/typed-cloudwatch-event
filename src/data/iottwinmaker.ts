@@ -5,6 +5,7 @@ export interface BatchPutPropertyValues {
   readonly entries: [];
   readonly workspaceId: string;
 }
+
 export interface CreateComponentType {
   readonly componentTypeId: string;
   readonly description?: string;
@@ -15,6 +16,7 @@ export interface CreateComponentType {
   readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
+
 export interface CreateEntity {
   readonly components?: {[key: string]: any};
   readonly description?: string;
@@ -24,6 +26,7 @@ export interface CreateEntity {
   readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
+
 export interface CreateScene {
   readonly capabilities?: [];
   readonly contentLocation: string;
@@ -32,6 +35,7 @@ export interface CreateScene {
   readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
+
 export interface CreateWorkspace {
   readonly description?: string;
   readonly role: string;
@@ -39,30 +43,37 @@ export interface CreateWorkspace {
   readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
+
 export interface DeleteComponentType {
   readonly componentTypeId: string;
   readonly workspaceId: string;
 }
+
 export interface DeleteEntity {
   readonly entityId: string;
   readonly isRecursive?: boolean;
   readonly workspaceId: string;
 }
+
 export interface DeleteScene {
   readonly sceneId: string;
   readonly workspaceId: string;
 }
+
 export interface DeleteWorkspace {
   readonly workspaceId: string;
 }
+
 export interface GetComponentType {
   readonly componentTypeId: string;
   readonly workspaceId: string;
 }
+
 export interface GetEntity {
   readonly entityId: string;
   readonly workspaceId: string;
 }
+
 export interface GetPropertyValue {
   readonly componentName?: string;
   readonly componentTypeId?: string;
@@ -70,6 +81,7 @@ export interface GetPropertyValue {
   readonly selectedProperties: [];
   readonly workspaceId: string;
 }
+
 export interface GetPropertyValueHistory {
   readonly componentName?: string;
   readonly componentTypeId?: string;
@@ -84,47 +96,57 @@ export interface GetPropertyValueHistory {
   readonly startDateTime: Date;
   readonly workspaceId: string;
 }
+
 export interface GetScene {
   readonly sceneId: string;
   readonly workspaceId: string;
 }
+
 export interface GetWorkspace {
   readonly workspaceId: string;
 }
+
 export interface ListComponentTypes {
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly workspaceId: string;
 }
+
 export interface ListEntities {
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly workspaceId: string;
 }
+
 export interface ListScenes {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly workspaceId: string;
 }
+
 export interface ListTagsForResource {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly resourceARN: string;
 }
+
 export interface ListWorkspaces {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface TagResource {
   readonly resourceARN: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceARN: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateComponentType {
   readonly componentTypeId: string;
   readonly description?: string;
@@ -134,6 +156,7 @@ export interface UpdateComponentType {
   readonly propertyDefinitions?: {[key: string]: any};
   readonly workspaceId: string;
 }
+
 export interface UpdateEntity {
   readonly componentUpdates?: {[key: string]: any};
   readonly description?: string;
@@ -142,6 +165,7 @@ export interface UpdateEntity {
   readonly parentEntityUpdate?: ParentEntityUpdateRequest;
   readonly workspaceId: string;
 }
+
 export interface UpdateScene {
   readonly capabilities?: [];
   readonly contentLocation?: string;
@@ -149,440 +173,439 @@ export interface UpdateScene {
   readonly sceneId: string;
   readonly workspaceId: string;
 }
+
 export interface UpdateWorkspace {
   readonly description?: string;
   readonly role?: string;
   readonly workspaceId: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly message?: string;
 }
 
-interface BatchPutPropertyError {
+export interface BatchPutPropertyError {
   readonly entry: PropertyValueEntry;
   readonly errorCode: string;
   readonly errorMessage: string;
 }
 
-interface BatchPutPropertyErrorEntry {
+export interface BatchPutPropertyErrorEntry {
   readonly errors: [];
 }
 
-interface BatchPutPropertyValuesRequest {
+export interface BatchPutPropertyValuesRequest {
   readonly entries: [];
   readonly workspaceId: string;
 }
 
-interface BatchPutPropertyValuesResponse {
+export interface BatchPutPropertyValuesResponse {
   readonly errorEntries: [];
 }
 
-interface ComponentRequest {
-  readonly componentTypeId: string;
-  readonly description: string;
-  readonly properties: {[key: string]: any};
+export interface ComponentRequest {
+  readonly componentTypeId?: string;
+  readonly description?: string;
+  readonly properties?: {[key: string]: any};
 }
 
-interface ComponentResponse {
-  readonly componentName: string;
-  readonly componentTypeId: string;
-  readonly definedIn: string;
-  readonly description: string;
-  readonly properties: {[key: string]: any};
-  readonly status: Status;
+export interface ComponentResponse {
+  readonly componentName?: string;
+  readonly componentTypeId?: string;
+  readonly definedIn?: string;
+  readonly description?: string;
+  readonly properties?: {[key: string]: any};
+  readonly status?: Status;
 }
 
-interface ComponentTypeSummary {
+export interface ComponentTypeSummary {
   readonly arn: string;
   readonly componentTypeId: string;
   readonly creationDateTime: Date;
-  readonly description: string;
-  readonly status: Status;
+  readonly description?: string;
+  readonly status?: Status;
   readonly updateDateTime: Date;
 }
 
-interface ComponentUpdateRequest {
+export interface ComponentUpdateRequest {
+  readonly componentTypeId?: string;
+  readonly description?: string;
+  readonly propertyUpdates?: {[key: string]: any};
+  readonly updateType?: string;
+}
+
+export interface ConflictException {
+  readonly message?: string;
+}
+
+export interface ConnectorFailureException {
+  readonly message?: string;
+}
+
+export interface ConnectorTimeoutException {
+  readonly message?: string;
+}
+
+export interface CreateComponentTypeRequest {
   readonly componentTypeId: string;
-  readonly description: string;
-  readonly propertyUpdates: {[key: string]: any};
-  readonly updateType: string;
-}
-
-interface ConflictException {
-  readonly message: string;
-}
-
-interface ConnectorFailureException {
-  readonly message: string;
-}
-
-interface ConnectorTimeoutException {
-  readonly message: string;
-}
-
-interface CreateComponentTypeRequest {
-  readonly componentTypeId: string;
-  readonly description: string;
-  readonly extendsFrom: [];
-  readonly functions: {[key: string]: any};
-  readonly isSingleton: boolean;
-  readonly propertyDefinitions: {[key: string]: any};
-  readonly tags: {[key: string]: any};
+  readonly description?: string;
+  readonly extendsFrom?: [];
+  readonly functions?: {[key: string]: any};
+  readonly isSingleton?: boolean;
+  readonly propertyDefinitions?: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
 
-interface CreateComponentTypeResponse {
+export interface CreateComponentTypeResponse {
   readonly arn: string;
   readonly creationDateTime: Date;
   readonly state: string;
 }
 
-interface CreateEntityRequest {
-  readonly components: {[key: string]: any};
-  readonly description: string;
-  readonly entityId: string;
+export interface CreateEntityRequest {
+  readonly components?: {[key: string]: any};
+  readonly description?: string;
+  readonly entityId?: string;
   readonly entityName: string;
-  readonly parentEntityId: string;
-  readonly tags: {[key: string]: any};
+  readonly parentEntityId?: string;
+  readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
 
-interface CreateEntityResponse {
+export interface CreateEntityResponse {
   readonly arn: string;
   readonly creationDateTime: Date;
   readonly entityId: string;
   readonly state: string;
 }
 
-interface CreateSceneRequest {
-  readonly capabilities: [];
+export interface CreateSceneRequest {
+  readonly capabilities?: [];
   readonly contentLocation: string;
-  readonly description: string;
+  readonly description?: string;
   readonly sceneId: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
 
-interface CreateSceneResponse {
+export interface CreateSceneResponse {
   readonly arn: string;
   readonly creationDateTime: Date;
 }
 
-interface CreateWorkspaceRequest {
-  readonly description: string;
+export interface CreateWorkspaceRequest {
+  readonly description?: string;
   readonly role: string;
   readonly s3Location: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
 
-interface CreateWorkspaceResponse {
+export interface CreateWorkspaceResponse {
   readonly arn: string;
   readonly creationDateTime: Date;
 }
 
-interface DataConnector {
-  readonly isNative: boolean;
-  readonly lambda: LambdaFunction;
+export interface DataConnector {
+  readonly isNative?: boolean;
+  readonly lambda?: LambdaFunction;
 }
 
-interface DataType {
-  readonly allowedValues: [];
-  readonly nestedType: DataType;
-  readonly relationship: Relationship;
+export interface DataType {
+  readonly allowedValues?: [];
+  readonly nestedType?: DataType;
+  readonly relationship?: Relationship;
   readonly type: string;
-  readonly unitOfMeasure: string;
+  readonly unitOfMeasure?: string;
 }
 
-interface DataValue {
-  readonly booleanValue: boolean;
-  readonly doubleValue: unknown;
-  readonly expression: string;
-  readonly integerValue: number;
-  readonly listValue: [];
-  readonly longValue: number;
-  readonly mapValue: {[key: string]: any};
-  readonly relationshipValue: RelationshipValue;
-  readonly stringValue: string;
+export interface DataValue {
+  readonly booleanValue?: boolean;
+  readonly doubleValue?: unknown;
+  readonly expression?: string;
+  readonly integerValue?: number;
+  readonly listValue?: [];
+  readonly longValue?: number;
+  readonly mapValue?: {[key: string]: any};
+  readonly relationshipValue?: RelationshipValue;
+  readonly stringValue?: string;
 }
 
-interface DeleteComponentTypeRequest {
+export interface DeleteComponentTypeRequest {
   readonly componentTypeId: string;
   readonly workspaceId: string;
 }
 
-interface DeleteComponentTypeResponse {
+export interface DeleteComponentTypeResponse {
   readonly state: string;
 }
 
-interface DeleteEntityRequest {
+export interface DeleteEntityRequest {
   readonly entityId: string;
-  readonly isRecursive: boolean;
+  readonly isRecursive?: boolean;
   readonly workspaceId: string;
 }
 
-interface DeleteEntityResponse {
+export interface DeleteEntityResponse {
   readonly state: string;
 }
 
-interface DeleteSceneRequest {
+export interface DeleteSceneRequest {
   readonly sceneId: string;
   readonly workspaceId: string;
 }
 
-interface DeleteSceneResponse {
+export interface DeleteSceneResponse {
 }
 
-interface DeleteWorkspaceRequest {
+export interface DeleteWorkspaceRequest {
   readonly workspaceId: string;
 }
 
-interface DeleteWorkspaceResponse {
+export interface DeleteWorkspaceResponse {
 }
 
-interface EntityPropertyReference {
-  readonly componentName: string;
-  readonly entityId: string;
-  readonly externalIdProperty: {[key: string]: any};
+export interface EntityPropertyReference {
+  readonly componentName?: string;
+  readonly entityId?: string;
+  readonly externalIdProperty?: {[key: string]: any};
   readonly propertyName: string;
 }
 
-interface EntitySummary {
+export interface EntitySummary {
   readonly arn: string;
   readonly creationDateTime: Date;
-  readonly description: string;
+  readonly description?: string;
+  readonly entityId: string;
+  readonly entityName: string;
+  readonly hasChildEntities?: boolean;
+  readonly parentEntityId?: string;
+  readonly status: Status;
+  readonly updateDateTime: Date;
+}
+
+export interface ErrorDetails {
+  readonly code?: string;
+  readonly message?: string;
+}
+
+export interface FunctionRequest {
+  readonly implementedBy?: DataConnector;
+  readonly requiredProperties?: [];
+  readonly scope?: string;
+}
+
+export interface FunctionResponse {
+  readonly implementedBy?: DataConnector;
+  readonly isInherited?: boolean;
+  readonly requiredProperties?: [];
+  readonly scope?: string;
+}
+
+export interface GetComponentTypeRequest {
+  readonly componentTypeId: string;
+  readonly workspaceId: string;
+}
+
+export interface GetComponentTypeResponse {
+  readonly arn: string;
+  readonly componentTypeId: string;
+  readonly creationDateTime: Date;
+  readonly description?: string;
+  readonly extendsFrom?: [];
+  readonly functions?: {[key: string]: any};
+  readonly isAbstract?: boolean;
+  readonly isSchemaInitialized?: boolean;
+  readonly isSingleton?: boolean;
+  readonly propertyDefinitions?: {[key: string]: any};
+  readonly status?: Status;
+  readonly updateDateTime: Date;
+  readonly workspaceId: string;
+}
+
+export interface GetEntityRequest {
+  readonly entityId: string;
+  readonly workspaceId: string;
+}
+
+export interface GetEntityResponse {
+  readonly arn: string;
+  readonly components?: {[key: string]: any};
+  readonly creationDateTime: Date;
+  readonly description?: string;
   readonly entityId: string;
   readonly entityName: string;
   readonly hasChildEntities: boolean;
   readonly parentEntityId: string;
   readonly status: Status;
   readonly updateDateTime: Date;
-}
-
-interface ErrorDetails {
-  readonly code: string;
-  readonly message: string;
-}
-
-interface FunctionRequest {
-  readonly implementedBy: DataConnector;
-  readonly requiredProperties: [];
-  readonly scope: string;
-}
-
-interface FunctionResponse {
-  readonly implementedBy: DataConnector;
-  readonly isInherited: boolean;
-  readonly requiredProperties: [];
-  readonly scope: string;
-}
-
-interface GetComponentTypeRequest {
-  readonly componentTypeId: string;
   readonly workspaceId: string;
 }
 
-interface GetComponentTypeResponse {
-  readonly arn: string;
-  readonly componentTypeId: string;
-  readonly creationDateTime: Date;
-  readonly description: string;
-  readonly extendsFrom: [];
-  readonly functions: {[key: string]: any};
-  readonly isAbstract: boolean;
-  readonly isSchemaInitialized: boolean;
-  readonly isSingleton: boolean;
-  readonly propertyDefinitions: {[key: string]: any};
-  readonly status: Status;
-  readonly updateDateTime: Date;
-  readonly workspaceId: string;
-}
-
-interface GetEntityRequest {
-  readonly entityId: string;
-  readonly workspaceId: string;
-}
-
-interface GetEntityResponse {
-  readonly arn: string;
-  readonly components: {[key: string]: any};
-  readonly creationDateTime: Date;
-  readonly description: string;
-  readonly entityId: string;
-  readonly entityName: string;
-  readonly hasChildEntities: boolean;
-  readonly parentEntityId: string;
-  readonly status: Status;
-  readonly updateDateTime: Date;
-  readonly workspaceId: string;
-}
-
-interface GetPropertyValueHistoryRequest {
-  readonly componentName: string;
-  readonly componentTypeId: string;
+export interface GetPropertyValueHistoryRequest {
+  readonly componentName?: string;
+  readonly componentTypeId?: string;
   readonly endDateTime: Date;
-  readonly entityId: string;
-  readonly interpolation: InterpolationParameters;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly orderByTime: string;
-  readonly propertyFilters: [];
+  readonly entityId?: string;
+  readonly interpolation?: InterpolationParameters;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly orderByTime?: string;
+  readonly propertyFilters?: [];
   readonly selectedProperties: [];
   readonly startDateTime: Date;
   readonly workspaceId: string;
 }
 
-interface GetPropertyValueHistoryResponse {
-  readonly nextToken: string;
+export interface GetPropertyValueHistoryResponse {
+  readonly nextToken?: string;
   readonly propertyValues: [];
 }
 
-interface GetPropertyValueRequest {
-  readonly componentName: string;
-  readonly componentTypeId: string;
-  readonly entityId: string;
+export interface GetPropertyValueRequest {
+  readonly componentName?: string;
+  readonly componentTypeId?: string;
+  readonly entityId?: string;
   readonly selectedProperties: [];
   readonly workspaceId: string;
 }
 
-interface GetPropertyValueResponse {
+export interface GetPropertyValueResponse {
   readonly propertyValues: {[key: string]: any};
 }
 
-interface GetSceneRequest {
+export interface GetSceneRequest {
   readonly sceneId: string;
   readonly workspaceId: string;
 }
 
-interface GetSceneResponse {
+export interface GetSceneResponse {
   readonly arn: string;
-  readonly capabilities: [];
+  readonly capabilities?: [];
   readonly contentLocation: string;
   readonly creationDateTime: Date;
-  readonly description: string;
+  readonly description?: string;
   readonly sceneId: string;
   readonly updateDateTime: Date;
   readonly workspaceId: string;
 }
 
-interface GetWorkspaceRequest {
+export interface GetWorkspaceRequest {
   readonly workspaceId: string;
 }
 
-interface GetWorkspaceResponse {
+export interface GetWorkspaceResponse {
   readonly arn: string;
   readonly creationDateTime: Date;
-  readonly description: string;
+  readonly description?: string;
   readonly role: string;
   readonly s3Location: string;
   readonly updateDateTime: Date;
   readonly workspaceId: string;
 }
 
-interface InternalServerException {
-  readonly message: string;
+export interface InternalServerException {
+  readonly message?: string;
 }
 
-interface InterpolationParameters {
-  readonly interpolationType: string;
-  readonly intervalInSeconds: number;
+export interface InterpolationParameters {
+  readonly interpolationType?: string;
+  readonly intervalInSeconds?: number;
 }
 
-interface LambdaFunction {
+export interface LambdaFunction {
   readonly arn: string;
 }
 
-interface ListComponentTypesFilter {
-  readonly extendsFrom: string;
-  readonly isAbstract: boolean;
-  readonly namespace: string;
+export interface ListComponentTypesFilter {
+  readonly extendsFrom?: string;
+  readonly isAbstract?: boolean;
+  readonly namespace?: string;
 }
 
-interface ListComponentTypesRequest {
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListComponentTypesRequest {
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly workspaceId: string;
 }
 
-interface ListComponentTypesResponse {
+export interface ListComponentTypesResponse {
   readonly componentTypeSummaries: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly workspaceId: string;
 }
 
-interface ListEntitiesFilter {
-  readonly componentTypeId: string;
-  readonly parentEntityId: string;
+export interface ListEntitiesFilter {
+  readonly componentTypeId?: string;
+  readonly parentEntityId?: string;
 }
 
-interface ListEntitiesRequest {
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListEntitiesRequest {
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly workspaceId: string;
 }
 
-interface ListEntitiesResponse {
-  readonly entitySummaries: [];
-  readonly nextToken: string;
+export interface ListEntitiesResponse {
+  readonly entitySummaries?: [];
+  readonly nextToken?: string;
 }
 
-interface ListScenesRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListScenesRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly workspaceId: string;
 }
 
-interface ListScenesResponse {
-  readonly nextToken: string;
-  readonly sceneSummaries: [];
+export interface ListScenesResponse {
+  readonly nextToken?: string;
+  readonly sceneSummaries?: [];
 }
 
-interface ListTagsForResourceRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListTagsForResourceRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly resourceARN: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly nextToken: string;
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly nextToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface ListWorkspacesRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListWorkspacesRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListWorkspacesResponse {
-  readonly nextToken: string;
-  readonly workspaceSummaries: [];
+export interface ListWorkspacesResponse {
+  readonly nextToken?: string;
+  readonly workspaceSummaries?: [];
 }
 
-interface ParentEntityUpdateRequest {
-  readonly parentEntityId: string;
+export interface ParentEntityUpdateRequest {
+  readonly parentEntityId?: string;
   readonly updateType: string;
 }
 
-interface PropertyDefinitionRequest {
-  readonly configuration: {[key: string]: any};
-  readonly dataType: DataType;
-  readonly defaultValue: DataValue;
-  readonly isExternalId: boolean;
-  readonly isRequiredInEntity: boolean;
-  readonly isStoredExternally: boolean;
-  readonly isTimeSeries: boolean;
+export interface PropertyDefinitionRequest {
+  readonly configuration?: {[key: string]: any};
+  readonly dataType?: DataType;
+  readonly defaultValue?: DataValue;
+  readonly isExternalId?: boolean;
+  readonly isRequiredInEntity?: boolean;
+  readonly isStoredExternally?: boolean;
+  readonly isTimeSeries?: boolean;
 }
 
-interface PropertyDefinitionResponse {
-  readonly configuration: {[key: string]: any};
+export interface PropertyDefinitionResponse {
+  readonly configuration?: {[key: string]: any};
   readonly dataType: DataType;
-  readonly defaultValue: DataValue;
+  readonly defaultValue?: DataValue;
   readonly isExternalId: boolean;
   readonly isFinal: boolean;
   readonly isImported: boolean;
@@ -592,161 +615,162 @@ interface PropertyDefinitionResponse {
   readonly isTimeSeries: boolean;
 }
 
-interface PropertyFilter {
-  readonly operator: string;
-  readonly propertyName: string;
-  readonly value: DataValue;
+export interface PropertyFilter {
+  readonly operator?: string;
+  readonly propertyName?: string;
+  readonly value?: DataValue;
 }
 
-interface PropertyLatestValue {
+export interface PropertyLatestValue {
   readonly propertyReference: EntityPropertyReference;
-  readonly propertyValue: DataValue;
+  readonly propertyValue?: DataValue;
 }
 
-interface PropertyRequest {
-  readonly definition: PropertyDefinitionRequest;
-  readonly updateType: string;
-  readonly value: DataValue;
+export interface PropertyRequest {
+  readonly definition?: PropertyDefinitionRequest;
+  readonly updateType?: string;
+  readonly value?: DataValue;
 }
 
-interface PropertyResponse {
-  readonly definition: PropertyDefinitionResponse;
-  readonly value: DataValue;
+export interface PropertyResponse {
+  readonly definition?: PropertyDefinitionResponse;
+  readonly value?: DataValue;
 }
 
-interface PropertyValue {
+export interface PropertyValue {
   readonly timestamp: Date;
   readonly value: DataValue;
 }
 
-interface PropertyValueEntry {
+export interface PropertyValueEntry {
   readonly entityPropertyReference: EntityPropertyReference;
-  readonly propertyValues: [];
+  readonly propertyValues?: [];
 }
 
-interface PropertyValueHistory {
+export interface PropertyValueHistory {
   readonly entityPropertyReference: EntityPropertyReference;
-  readonly values: [];
+  readonly values?: [];
 }
 
-interface Relationship {
-  readonly relationshipType: string;
-  readonly targetComponentTypeId: string;
+export interface Relationship {
+  readonly relationshipType?: string;
+  readonly targetComponentTypeId?: string;
 }
 
-interface RelationshipValue {
-  readonly targetComponentName: string;
-  readonly targetEntityId: string;
+export interface RelationshipValue {
+  readonly targetComponentName?: string;
+  readonly targetEntityId?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface SceneSummary {
+export interface SceneSummary {
   readonly arn: string;
   readonly contentLocation: string;
   readonly creationDateTime: Date;
-  readonly description: string;
+  readonly description?: string;
   readonly sceneId: string;
   readonly updateDateTime: Date;
 }
 
-interface ServiceQuotaExceededException {
-  readonly message: string;
+export interface ServiceQuotaExceededException {
+  readonly message?: string;
 }
 
-interface Status {
-  readonly error: ErrorDetails;
-  readonly state: string;
+export interface Status {
+  readonly error?: ErrorDetails;
+  readonly state?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceARN: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
-  readonly message: string;
+export interface ThrottlingException {
+  readonly message?: string;
 }
 
-interface TooManyTagsException {
-  readonly message: string;
+export interface TooManyTagsException {
+  readonly message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceARN: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateComponentTypeRequest {
+export interface UpdateComponentTypeRequest {
   readonly componentTypeId: string;
-  readonly description: string;
-  readonly extendsFrom: [];
-  readonly functions: {[key: string]: any};
-  readonly isSingleton: boolean;
-  readonly propertyDefinitions: {[key: string]: any};
+  readonly description?: string;
+  readonly extendsFrom?: [];
+  readonly functions?: {[key: string]: any};
+  readonly isSingleton?: boolean;
+  readonly propertyDefinitions?: {[key: string]: any};
   readonly workspaceId: string;
 }
 
-interface UpdateComponentTypeResponse {
+export interface UpdateComponentTypeResponse {
   readonly arn: string;
   readonly componentTypeId: string;
   readonly state: string;
   readonly workspaceId: string;
 }
 
-interface UpdateEntityRequest {
-  readonly componentUpdates: {[key: string]: any};
-  readonly description: string;
+export interface UpdateEntityRequest {
+  readonly componentUpdates?: {[key: string]: any};
+  readonly description?: string;
   readonly entityId: string;
-  readonly entityName: string;
-  readonly parentEntityUpdate: ParentEntityUpdateRequest;
+  readonly entityName?: string;
+  readonly parentEntityUpdate?: ParentEntityUpdateRequest;
   readonly workspaceId: string;
 }
 
-interface UpdateEntityResponse {
+export interface UpdateEntityResponse {
   readonly state: string;
   readonly updateDateTime: Date;
 }
 
-interface UpdateSceneRequest {
-  readonly capabilities: [];
-  readonly contentLocation: string;
-  readonly description: string;
+export interface UpdateSceneRequest {
+  readonly capabilities?: [];
+  readonly contentLocation?: string;
+  readonly description?: string;
   readonly sceneId: string;
   readonly workspaceId: string;
 }
 
-interface UpdateSceneResponse {
+export interface UpdateSceneResponse {
   readonly updateDateTime: Date;
 }
 
-interface UpdateWorkspaceRequest {
-  readonly description: string;
-  readonly role: string;
+export interface UpdateWorkspaceRequest {
+  readonly description?: string;
+  readonly role?: string;
   readonly workspaceId: string;
 }
 
-interface UpdateWorkspaceResponse {
+export interface UpdateWorkspaceResponse {
   readonly updateDateTime: Date;
 }
 
-interface ValidationException {
-  readonly message: string;
+export interface ValidationException {
+  readonly message?: string;
 }
 
-interface WorkspaceSummary {
+export interface WorkspaceSummary {
   readonly arn: string;
   readonly creationDateTime: Date;
-  readonly description: string;
+  readonly description?: string;
   readonly updateDateTime: Date;
   readonly workspaceId: string;
 }
+
 

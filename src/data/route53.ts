@@ -5,25 +5,30 @@ export interface ActivateKeySigningKey {
   readonly HostedZoneId: string;
   readonly Name: string;
 }
+
 export interface AssociateVPCWithHostedZone {
   readonly HostedZoneId: string;
   readonly VPC: VPC;
   readonly Comment?: string;
 }
+
 export interface ChangeResourceRecordSets {
   readonly HostedZoneId: string;
   readonly ChangeBatch: ChangeBatch;
 }
+
 export interface ChangeTagsForResource {
   readonly ResourceType: string;
   readonly ResourceId: string;
   readonly AddTags?: [];
   readonly RemoveTagKeys?: [];
 }
+
 export interface CreateHealthCheck {
   readonly CallerReference: string;
   readonly HealthCheckConfig: HealthCheckConfig;
 }
+
 export interface CreateHostedZone {
   readonly Name: string;
   readonly VPC?: VPC;
@@ -31,6 +36,7 @@ export interface CreateHostedZone {
   readonly HostedZoneConfig?: HostedZoneConfig;
   readonly DelegationSetId?: string;
 }
+
 export interface CreateKeySigningKey {
   readonly CallerReference: string;
   readonly HostedZoneId: string;
@@ -38,19 +44,23 @@ export interface CreateKeySigningKey {
   readonly Name: string;
   readonly Status: string;
 }
+
 export interface CreateQueryLoggingConfig {
   readonly HostedZoneId: string;
   readonly CloudWatchLogsLogGroupArn: string;
 }
+
 export interface CreateReusableDelegationSet {
   readonly CallerReference: string;
   readonly HostedZoneId?: string;
 }
+
 export interface CreateTrafficPolicy {
   readonly Name: string;
   readonly Document: string;
   readonly Comment?: string;
 }
+
 export interface CreateTrafficPolicyInstance {
   readonly HostedZoneId: string;
   readonly Name: string;
@@ -58,143 +68,182 @@ export interface CreateTrafficPolicyInstance {
   readonly TrafficPolicyId: string;
   readonly TrafficPolicyVersion: number;
 }
+
 export interface CreateTrafficPolicyVersion {
   readonly Id: string;
   readonly Document: string;
   readonly Comment?: string;
 }
+
 export interface CreateVPCAssociationAuthorization {
   readonly HostedZoneId: string;
   readonly VPC: VPC;
 }
+
 export interface DeactivateKeySigningKey {
   readonly HostedZoneId: string;
   readonly Name: string;
 }
+
 export interface DeleteHealthCheck {
   readonly HealthCheckId: string;
 }
+
 export interface DeleteHostedZone {
   readonly Id: string;
 }
+
 export interface DeleteKeySigningKey {
   readonly HostedZoneId: string;
   readonly Name: string;
 }
+
 export interface DeleteQueryLoggingConfig {
   readonly Id: string;
 }
+
 export interface DeleteReusableDelegationSet {
   readonly Id: string;
 }
+
 export interface DeleteTrafficPolicy {
   readonly Id: string;
   readonly Version: number;
 }
+
 export interface DeleteTrafficPolicyInstance {
   readonly Id: string;
 }
+
 export interface DeleteVPCAssociationAuthorization {
   readonly HostedZoneId: string;
   readonly VPC: VPC;
 }
+
 export interface DisableHostedZoneDNSSEC {
   readonly HostedZoneId: string;
 }
+
 export interface DisassociateVPCFromHostedZone {
   readonly HostedZoneId: string;
   readonly VPC: VPC;
   readonly Comment?: string;
 }
+
 export interface EnableHostedZoneDNSSEC {
   readonly HostedZoneId: string;
 }
+
 export interface GetAccountLimit {
   readonly Type: string;
 }
+
 export interface GetChange {
   readonly Id: string;
 }
+
 export interface GetCheckerIpRanges {
 }
+
 export interface GetDNSSEC {
   readonly HostedZoneId: string;
 }
+
 export interface GetGeoLocation {
   readonly ContinentCode?: string;
   readonly CountryCode?: string;
   readonly SubdivisionCode?: string;
 }
+
 export interface GetHealthCheck {
   readonly HealthCheckId: string;
 }
+
 export interface GetHealthCheckCount {
 }
+
 export interface GetHealthCheckLastFailureReason {
   readonly HealthCheckId: string;
 }
+
 export interface GetHealthCheckStatus {
   readonly HealthCheckId: string;
 }
+
 export interface GetHostedZone {
   readonly Id: string;
 }
+
 export interface GetHostedZoneCount {
 }
+
 export interface GetHostedZoneLimit {
   readonly Type: string;
   readonly HostedZoneId: string;
 }
+
 export interface GetQueryLoggingConfig {
   readonly Id: string;
 }
+
 export interface GetReusableDelegationSet {
   readonly Id: string;
 }
+
 export interface GetReusableDelegationSetLimit {
   readonly Type: string;
   readonly DelegationSetId: string;
 }
+
 export interface GetTrafficPolicy {
   readonly Id: string;
   readonly Version: number;
 }
+
 export interface GetTrafficPolicyInstance {
   readonly Id: string;
 }
+
 export interface GetTrafficPolicyInstanceCount {
 }
+
 export interface ListGeoLocations {
   readonly StartContinentCode?: string;
   readonly StartCountryCode?: string;
   readonly StartSubdivisionCode?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListHealthChecks {
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListHostedZones {
   readonly Marker?: string;
   readonly MaxItems?: string;
   readonly DelegationSetId?: string;
 }
+
 export interface ListHostedZonesByName {
   readonly DNSName?: string;
   readonly HostedZoneId?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListHostedZonesByVPC {
   readonly VPCId: string;
   readonly VPCRegion: string;
   readonly MaxItems?: string;
   readonly NextToken?: string;
 }
+
 export interface ListQueryLoggingConfigs {
   readonly HostedZoneId?: string;
   readonly NextToken?: string;
   readonly MaxResults?: string;
 }
+
 export interface ListResourceRecordSets {
   readonly HostedZoneId: string;
   readonly StartRecordName?: string;
@@ -202,34 +251,41 @@ export interface ListResourceRecordSets {
   readonly StartRecordIdentifier?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListReusableDelegationSets {
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceType: string;
   readonly ResourceId: string;
 }
+
 export interface ListTagsForResources {
   readonly ResourceType: string;
   readonly ResourceIds: [];
 }
+
 export interface ListTrafficPolicies {
   readonly TrafficPolicyIdMarker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListTrafficPolicyInstances {
   readonly HostedZoneIdMarker?: string;
   readonly TrafficPolicyInstanceNameMarker?: string;
   readonly TrafficPolicyInstanceTypeMarker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListTrafficPolicyInstancesByHostedZone {
   readonly HostedZoneId: string;
   readonly TrafficPolicyInstanceNameMarker?: string;
   readonly TrafficPolicyInstanceTypeMarker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListTrafficPolicyInstancesByPolicy {
   readonly TrafficPolicyId: string;
   readonly TrafficPolicyVersion: number;
@@ -238,16 +294,19 @@ export interface ListTrafficPolicyInstancesByPolicy {
   readonly TrafficPolicyInstanceTypeMarker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListTrafficPolicyVersions {
   readonly Id: string;
   readonly TrafficPolicyVersionMarker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListVPCAssociationAuthorizations {
   readonly HostedZoneId: string;
   readonly NextToken?: string;
   readonly MaxResults?: string;
 }
+
 export interface TestDNSAnswer {
   readonly HostedZoneId: string;
   readonly RecordName: string;
@@ -256,6 +315,7 @@ export interface TestDNSAnswer {
   readonly EDNS0ClientSubnetIP?: string;
   readonly EDNS0ClientSubnetMask?: string;
 }
+
 export interface UpdateHealthCheck {
   readonly HealthCheckId: string;
   readonly HealthCheckVersion?: number;
@@ -275,15 +335,18 @@ export interface UpdateHealthCheck {
   readonly InsufficientDataHealthStatus?: string;
   readonly ResetElements?: [];
 }
+
 export interface UpdateHostedZoneComment {
   readonly Id: string;
   readonly Comment?: string;
 }
+
 export interface UpdateTrafficPolicyComment {
   readonly Id: string;
   readonly Version: number;
   readonly Comment: string;
 }
+
 export interface UpdateTrafficPolicyInstance {
   readonly Id: string;
   readonly TTL: number;
@@ -291,80 +354,78 @@ export interface UpdateTrafficPolicyInstance {
   readonly TrafficPolicyVersion: number;
 }
 
-
-
-interface AccountLimit {
+export interface AccountLimit {
   readonly Type: string;
   readonly Value: number;
 }
 
-interface ActivateKeySigningKeyRequest {
+export interface ActivateKeySigningKeyRequest {
   readonly HostedZoneId: string;
   readonly Name: string;
 }
 
-interface ActivateKeySigningKeyResponse {
+export interface ActivateKeySigningKeyResponse {
   readonly ChangeInfo: ChangeInfo;
 }
 
-interface AlarmIdentifier {
+export interface AlarmIdentifier {
   readonly Region: string;
   readonly Name: string;
 }
 
-interface AliasTarget {
+export interface AliasTarget {
   readonly HostedZoneId: string;
   readonly DNSName: string;
   readonly EvaluateTargetHealth: boolean;
 }
 
-interface AssociateVPCWithHostedZoneRequest {
+export interface AssociateVPCWithHostedZoneRequest {
   readonly HostedZoneId: string;
   readonly VPC: VPC;
-  readonly Comment: string;
+  readonly Comment?: string;
 }
 
-interface AssociateVPCWithHostedZoneResponse {
+export interface AssociateVPCWithHostedZoneResponse {
   readonly ChangeInfo: ChangeInfo;
 }
 
-interface Change {
+export interface Change {
   readonly Action: string;
   readonly ResourceRecordSet: ResourceRecordSet;
 }
 
-interface ChangeBatch {
-  readonly Comment: string;
+export interface ChangeBatch {
+  readonly Comment?: string;
   readonly Changes: [];
 }
 
-interface ChangeInfo {
+export interface ChangeInfo {
   readonly Id: string;
   readonly Status: string;
   readonly SubmittedAt: Date;
-  readonly Comment: string;
+  readonly Comment?: string;
 }
 
-interface ChangeResourceRecordSetsRequest {
+export interface ChangeResourceRecordSetsRequest {
   readonly HostedZoneId: string;
   readonly ChangeBatch: ChangeBatch;
 }
 
-interface ChangeResourceRecordSetsResponse {
+export interface ChangeResourceRecordSetsResponse {
   readonly ChangeInfo: ChangeInfo;
 }
 
-interface ChangeTagsForResourceRequest {
+export interface ChangeTagsForResourceRequest {
   readonly ResourceType: string;
   readonly ResourceId: string;
-  readonly AddTags: [];
-  readonly RemoveTagKeys: [];
+  readonly AddTags?: [];
+  readonly RemoveTagKeys?: [];
 }
 
-interface ChangeTagsForResourceResponse {
+export interface ChangeTagsForResourceResponse {
 }
 
-interface CloudWatchAlarmConfiguration {
+export interface CloudWatchAlarmConfiguration {
   readonly EvaluationPeriods: number;
   readonly Threshold: unknown;
   readonly ComparisonOperator: string;
@@ -372,48 +433,48 @@ interface CloudWatchAlarmConfiguration {
   readonly MetricName: string;
   readonly Namespace: string;
   readonly Statistic: string;
-  readonly Dimensions: [];
+  readonly Dimensions?: [];
 }
 
-interface ConcurrentModification {
-  readonly message: string;
+export interface ConcurrentModification {
+  readonly message?: string;
 }
 
-interface ConflictingDomainExists {
-  readonly message: string;
+export interface ConflictingDomainExists {
+  readonly message?: string;
 }
 
-interface ConflictingTypes {
-  readonly message: string;
+export interface ConflictingTypes {
+  readonly message?: string;
 }
 
-interface CreateHealthCheckRequest {
+export interface CreateHealthCheckRequest {
   readonly CallerReference: string;
   readonly HealthCheckConfig: HealthCheckConfig;
 }
 
-interface CreateHealthCheckResponse {
+export interface CreateHealthCheckResponse {
   readonly HealthCheck: HealthCheck;
   readonly Location: string;
 }
 
-interface CreateHostedZoneRequest {
+export interface CreateHostedZoneRequest {
   readonly Name: string;
-  readonly VPC: VPC;
+  readonly VPC?: VPC;
   readonly CallerReference: string;
-  readonly HostedZoneConfig: HostedZoneConfig;
-  readonly DelegationSetId: string;
+  readonly HostedZoneConfig?: HostedZoneConfig;
+  readonly DelegationSetId?: string;
 }
 
-interface CreateHostedZoneResponse {
+export interface CreateHostedZoneResponse {
   readonly HostedZone: HostedZone;
   readonly ChangeInfo: ChangeInfo;
   readonly DelegationSet: DelegationSet;
-  readonly VPC: VPC;
+  readonly VPC?: VPC;
   readonly Location: string;
 }
 
-interface CreateKeySigningKeyRequest {
+export interface CreateKeySigningKeyRequest {
   readonly CallerReference: string;
   readonly HostedZoneId: string;
   readonly KeyManagementServiceArn: string;
@@ -421,33 +482,33 @@ interface CreateKeySigningKeyRequest {
   readonly Status: string;
 }
 
-interface CreateKeySigningKeyResponse {
+export interface CreateKeySigningKeyResponse {
   readonly ChangeInfo: ChangeInfo;
   readonly KeySigningKey: KeySigningKey;
   readonly Location: string;
 }
 
-interface CreateQueryLoggingConfigRequest {
+export interface CreateQueryLoggingConfigRequest {
   readonly HostedZoneId: string;
   readonly CloudWatchLogsLogGroupArn: string;
 }
 
-interface CreateQueryLoggingConfigResponse {
+export interface CreateQueryLoggingConfigResponse {
   readonly QueryLoggingConfig: QueryLoggingConfig;
   readonly Location: string;
 }
 
-interface CreateReusableDelegationSetRequest {
+export interface CreateReusableDelegationSetRequest {
   readonly CallerReference: string;
-  readonly HostedZoneId: string;
+  readonly HostedZoneId?: string;
 }
 
-interface CreateReusableDelegationSetResponse {
+export interface CreateReusableDelegationSetResponse {
   readonly DelegationSet: DelegationSet;
   readonly Location: string;
 }
 
-interface CreateTrafficPolicyInstanceRequest {
+export interface CreateTrafficPolicyInstanceRequest {
   readonly HostedZoneId: string;
   readonly Name: string;
   readonly TTL: number;
@@ -455,874 +516,874 @@ interface CreateTrafficPolicyInstanceRequest {
   readonly TrafficPolicyVersion: number;
 }
 
-interface CreateTrafficPolicyInstanceResponse {
+export interface CreateTrafficPolicyInstanceResponse {
   readonly TrafficPolicyInstance: TrafficPolicyInstance;
   readonly Location: string;
 }
 
-interface CreateTrafficPolicyRequest {
+export interface CreateTrafficPolicyRequest {
   readonly Name: string;
   readonly Document: string;
-  readonly Comment: string;
+  readonly Comment?: string;
 }
 
-interface CreateTrafficPolicyResponse {
+export interface CreateTrafficPolicyResponse {
   readonly TrafficPolicy: TrafficPolicy;
   readonly Location: string;
 }
 
-interface CreateTrafficPolicyVersionRequest {
+export interface CreateTrafficPolicyVersionRequest {
   readonly Id: string;
   readonly Document: string;
-  readonly Comment: string;
+  readonly Comment?: string;
 }
 
-interface CreateTrafficPolicyVersionResponse {
+export interface CreateTrafficPolicyVersionResponse {
   readonly TrafficPolicy: TrafficPolicy;
   readonly Location: string;
 }
 
-interface CreateVPCAssociationAuthorizationRequest {
+export interface CreateVPCAssociationAuthorizationRequest {
   readonly HostedZoneId: string;
   readonly VPC: VPC;
 }
 
-interface CreateVPCAssociationAuthorizationResponse {
+export interface CreateVPCAssociationAuthorizationResponse {
   readonly HostedZoneId: string;
   readonly VPC: VPC;
 }
 
-interface DNSSECNotFound {
-  readonly message: string;
+export interface DNSSECNotFound {
+  readonly message?: string;
 }
 
-interface DNSSECStatus {
-  readonly ServeSignature: string;
-  readonly StatusMessage: string;
+export interface DNSSECStatus {
+  readonly ServeSignature?: string;
+  readonly StatusMessage?: string;
 }
 
-interface DeactivateKeySigningKeyRequest {
+export interface DeactivateKeySigningKeyRequest {
   readonly HostedZoneId: string;
   readonly Name: string;
 }
 
-interface DeactivateKeySigningKeyResponse {
+export interface DeactivateKeySigningKeyResponse {
   readonly ChangeInfo: ChangeInfo;
 }
 
-interface DelegationSet {
-  readonly Id: string;
-  readonly CallerReference: string;
+export interface DelegationSet {
+  readonly Id?: string;
+  readonly CallerReference?: string;
   readonly NameServers: [];
 }
 
-interface DelegationSetAlreadyCreated {
-  readonly message: string;
+export interface DelegationSetAlreadyCreated {
+  readonly message?: string;
 }
 
-interface DelegationSetAlreadyReusable {
-  readonly message: string;
+export interface DelegationSetAlreadyReusable {
+  readonly message?: string;
 }
 
-interface DelegationSetInUse {
-  readonly message: string;
+export interface DelegationSetInUse {
+  readonly message?: string;
 }
 
-interface DelegationSetNotAvailable {
-  readonly message: string;
+export interface DelegationSetNotAvailable {
+  readonly message?: string;
 }
 
-interface DelegationSetNotReusable {
-  readonly message: string;
+export interface DelegationSetNotReusable {
+  readonly message?: string;
 }
 
-interface DeleteHealthCheckRequest {
+export interface DeleteHealthCheckRequest {
   readonly HealthCheckId: string;
 }
 
-interface DeleteHealthCheckResponse {
+export interface DeleteHealthCheckResponse {
 }
 
-interface DeleteHostedZoneRequest {
+export interface DeleteHostedZoneRequest {
   readonly Id: string;
 }
 
-interface DeleteHostedZoneResponse {
+export interface DeleteHostedZoneResponse {
   readonly ChangeInfo: ChangeInfo;
 }
 
-interface DeleteKeySigningKeyRequest {
+export interface DeleteKeySigningKeyRequest {
   readonly HostedZoneId: string;
   readonly Name: string;
 }
 
-interface DeleteKeySigningKeyResponse {
+export interface DeleteKeySigningKeyResponse {
   readonly ChangeInfo: ChangeInfo;
 }
 
-interface DeleteQueryLoggingConfigRequest {
+export interface DeleteQueryLoggingConfigRequest {
   readonly Id: string;
 }
 
-interface DeleteQueryLoggingConfigResponse {
+export interface DeleteQueryLoggingConfigResponse {
 }
 
-interface DeleteReusableDelegationSetRequest {
+export interface DeleteReusableDelegationSetRequest {
   readonly Id: string;
 }
 
-interface DeleteReusableDelegationSetResponse {
+export interface DeleteReusableDelegationSetResponse {
 }
 
-interface DeleteTrafficPolicyInstanceRequest {
+export interface DeleteTrafficPolicyInstanceRequest {
   readonly Id: string;
 }
 
-interface DeleteTrafficPolicyInstanceResponse {
+export interface DeleteTrafficPolicyInstanceResponse {
 }
 
-interface DeleteTrafficPolicyRequest {
+export interface DeleteTrafficPolicyRequest {
   readonly Id: string;
   readonly Version: number;
 }
 
-interface DeleteTrafficPolicyResponse {
+export interface DeleteTrafficPolicyResponse {
 }
 
-interface DeleteVPCAssociationAuthorizationRequest {
+export interface DeleteVPCAssociationAuthorizationRequest {
   readonly HostedZoneId: string;
   readonly VPC: VPC;
 }
 
-interface DeleteVPCAssociationAuthorizationResponse {
+export interface DeleteVPCAssociationAuthorizationResponse {
 }
 
-interface Dimension {
+export interface Dimension {
   readonly Name: string;
   readonly Value: string;
 }
 
-interface DisableHostedZoneDNSSECRequest {
+export interface DisableHostedZoneDNSSECRequest {
   readonly HostedZoneId: string;
 }
 
-interface DisableHostedZoneDNSSECResponse {
+export interface DisableHostedZoneDNSSECResponse {
   readonly ChangeInfo: ChangeInfo;
 }
 
-interface DisassociateVPCFromHostedZoneRequest {
+export interface DisassociateVPCFromHostedZoneRequest {
   readonly HostedZoneId: string;
   readonly VPC: VPC;
-  readonly Comment: string;
+  readonly Comment?: string;
 }
 
-interface DisassociateVPCFromHostedZoneResponse {
+export interface DisassociateVPCFromHostedZoneResponse {
   readonly ChangeInfo: ChangeInfo;
 }
 
-interface EnableHostedZoneDNSSECRequest {
+export interface EnableHostedZoneDNSSECRequest {
   readonly HostedZoneId: string;
 }
 
-interface EnableHostedZoneDNSSECResponse {
+export interface EnableHostedZoneDNSSECResponse {
   readonly ChangeInfo: ChangeInfo;
 }
 
-interface GeoLocation {
-  readonly ContinentCode: string;
-  readonly CountryCode: string;
-  readonly SubdivisionCode: string;
+export interface GeoLocation {
+  readonly ContinentCode?: string;
+  readonly CountryCode?: string;
+  readonly SubdivisionCode?: string;
 }
 
-interface GeoLocationDetails {
-  readonly ContinentCode: string;
-  readonly ContinentName: string;
-  readonly CountryCode: string;
-  readonly CountryName: string;
-  readonly SubdivisionCode: string;
-  readonly SubdivisionName: string;
+export interface GeoLocationDetails {
+  readonly ContinentCode?: string;
+  readonly ContinentName?: string;
+  readonly CountryCode?: string;
+  readonly CountryName?: string;
+  readonly SubdivisionCode?: string;
+  readonly SubdivisionName?: string;
 }
 
-interface GetAccountLimitRequest {
+export interface GetAccountLimitRequest {
   readonly Type: string;
 }
 
-interface GetAccountLimitResponse {
+export interface GetAccountLimitResponse {
   readonly Limit: AccountLimit;
   readonly Count: number;
 }
 
-interface GetChangeRequest {
+export interface GetChangeRequest {
   readonly Id: string;
 }
 
-interface GetChangeResponse {
+export interface GetChangeResponse {
   readonly ChangeInfo: ChangeInfo;
 }
 
-interface GetCheckerIpRangesRequest {
+export interface GetCheckerIpRangesRequest {
 }
 
-interface GetCheckerIpRangesResponse {
+export interface GetCheckerIpRangesResponse {
   readonly CheckerIpRanges: [];
 }
 
-interface GetDNSSECRequest {
+export interface GetDNSSECRequest {
   readonly HostedZoneId: string;
 }
 
-interface GetDNSSECResponse {
+export interface GetDNSSECResponse {
   readonly Status: DNSSECStatus;
   readonly KeySigningKeys: [];
 }
 
-interface GetGeoLocationRequest {
-  readonly ContinentCode: string;
-  readonly CountryCode: string;
-  readonly SubdivisionCode: string;
+export interface GetGeoLocationRequest {
+  readonly ContinentCode?: string;
+  readonly CountryCode?: string;
+  readonly SubdivisionCode?: string;
 }
 
-interface GetGeoLocationResponse {
+export interface GetGeoLocationResponse {
   readonly GeoLocationDetails: GeoLocationDetails;
 }
 
-interface GetHealthCheckCountRequest {
+export interface GetHealthCheckCountRequest {
 }
 
-interface GetHealthCheckCountResponse {
+export interface GetHealthCheckCountResponse {
   readonly HealthCheckCount: number;
 }
 
-interface GetHealthCheckLastFailureReasonRequest {
+export interface GetHealthCheckLastFailureReasonRequest {
   readonly HealthCheckId: string;
 }
 
-interface GetHealthCheckLastFailureReasonResponse {
+export interface GetHealthCheckLastFailureReasonResponse {
   readonly HealthCheckObservations: [];
 }
 
-interface GetHealthCheckRequest {
+export interface GetHealthCheckRequest {
   readonly HealthCheckId: string;
 }
 
-interface GetHealthCheckResponse {
+export interface GetHealthCheckResponse {
   readonly HealthCheck: HealthCheck;
 }
 
-interface GetHealthCheckStatusRequest {
+export interface GetHealthCheckStatusRequest {
   readonly HealthCheckId: string;
 }
 
-interface GetHealthCheckStatusResponse {
+export interface GetHealthCheckStatusResponse {
   readonly HealthCheckObservations: [];
 }
 
-interface GetHostedZoneCountRequest {
+export interface GetHostedZoneCountRequest {
 }
 
-interface GetHostedZoneCountResponse {
+export interface GetHostedZoneCountResponse {
   readonly HostedZoneCount: number;
 }
 
-interface GetHostedZoneLimitRequest {
+export interface GetHostedZoneLimitRequest {
   readonly Type: string;
   readonly HostedZoneId: string;
 }
 
-interface GetHostedZoneLimitResponse {
+export interface GetHostedZoneLimitResponse {
   readonly Limit: HostedZoneLimit;
   readonly Count: number;
 }
 
-interface GetHostedZoneRequest {
+export interface GetHostedZoneRequest {
   readonly Id: string;
 }
 
-interface GetHostedZoneResponse {
+export interface GetHostedZoneResponse {
   readonly HostedZone: HostedZone;
-  readonly DelegationSet: DelegationSet;
-  readonly VPCs: [];
+  readonly DelegationSet?: DelegationSet;
+  readonly VPCs?: [];
 }
 
-interface GetQueryLoggingConfigRequest {
+export interface GetQueryLoggingConfigRequest {
   readonly Id: string;
 }
 
-interface GetQueryLoggingConfigResponse {
+export interface GetQueryLoggingConfigResponse {
   readonly QueryLoggingConfig: QueryLoggingConfig;
 }
 
-interface GetReusableDelegationSetLimitRequest {
+export interface GetReusableDelegationSetLimitRequest {
   readonly Type: string;
   readonly DelegationSetId: string;
 }
 
-interface GetReusableDelegationSetLimitResponse {
+export interface GetReusableDelegationSetLimitResponse {
   readonly Limit: ReusableDelegationSetLimit;
   readonly Count: number;
 }
 
-interface GetReusableDelegationSetRequest {
+export interface GetReusableDelegationSetRequest {
   readonly Id: string;
 }
 
-interface GetReusableDelegationSetResponse {
+export interface GetReusableDelegationSetResponse {
   readonly DelegationSet: DelegationSet;
 }
 
-interface GetTrafficPolicyInstanceCountRequest {
+export interface GetTrafficPolicyInstanceCountRequest {
 }
 
-interface GetTrafficPolicyInstanceCountResponse {
+export interface GetTrafficPolicyInstanceCountResponse {
   readonly TrafficPolicyInstanceCount: number;
 }
 
-interface GetTrafficPolicyInstanceRequest {
+export interface GetTrafficPolicyInstanceRequest {
   readonly Id: string;
 }
 
-interface GetTrafficPolicyInstanceResponse {
+export interface GetTrafficPolicyInstanceResponse {
   readonly TrafficPolicyInstance: TrafficPolicyInstance;
 }
 
-interface GetTrafficPolicyRequest {
+export interface GetTrafficPolicyRequest {
   readonly Id: string;
   readonly Version: number;
 }
 
-interface GetTrafficPolicyResponse {
+export interface GetTrafficPolicyResponse {
   readonly TrafficPolicy: TrafficPolicy;
 }
 
-interface HealthCheck {
+export interface HealthCheck {
   readonly Id: string;
   readonly CallerReference: string;
-  readonly LinkedService: LinkedService;
+  readonly LinkedService?: LinkedService;
   readonly HealthCheckConfig: HealthCheckConfig;
   readonly HealthCheckVersion: number;
-  readonly CloudWatchAlarmConfiguration: CloudWatchAlarmConfiguration;
+  readonly CloudWatchAlarmConfiguration?: CloudWatchAlarmConfiguration;
 }
 
-interface HealthCheckAlreadyExists {
-  readonly message: string;
+export interface HealthCheckAlreadyExists {
+  readonly message?: string;
 }
 
-interface HealthCheckConfig {
-  readonly IPAddress: string;
-  readonly Port: number;
+export interface HealthCheckConfig {
+  readonly IPAddress?: string;
+  readonly Port?: number;
   readonly Type: string;
-  readonly ResourcePath: string;
-  readonly FullyQualifiedDomainName: string;
-  readonly SearchString: string;
-  readonly RequestInterval: number;
-  readonly FailureThreshold: number;
-  readonly MeasureLatency: boolean;
-  readonly Inverted: boolean;
-  readonly Disabled: boolean;
-  readonly HealthThreshold: number;
-  readonly ChildHealthChecks: [];
-  readonly EnableSNI: boolean;
-  readonly Regions: [];
-  readonly AlarmIdentifier: AlarmIdentifier;
-  readonly InsufficientDataHealthStatus: string;
-  readonly RoutingControlArn: string;
+  readonly ResourcePath?: string;
+  readonly FullyQualifiedDomainName?: string;
+  readonly SearchString?: string;
+  readonly RequestInterval?: number;
+  readonly FailureThreshold?: number;
+  readonly MeasureLatency?: boolean;
+  readonly Inverted?: boolean;
+  readonly Disabled?: boolean;
+  readonly HealthThreshold?: number;
+  readonly ChildHealthChecks?: [];
+  readonly EnableSNI?: boolean;
+  readonly Regions?: [];
+  readonly AlarmIdentifier?: AlarmIdentifier;
+  readonly InsufficientDataHealthStatus?: string;
+  readonly RoutingControlArn?: string;
 }
 
-interface HealthCheckInUse {
-  readonly message: string;
+export interface HealthCheckInUse {
+  readonly message?: string;
 }
 
-interface HealthCheckObservation {
-  readonly Region: string;
-  readonly IPAddress: string;
-  readonly StatusReport: StatusReport;
+export interface HealthCheckObservation {
+  readonly Region?: string;
+  readonly IPAddress?: string;
+  readonly StatusReport?: StatusReport;
 }
 
-interface HealthCheckVersionMismatch {
-  readonly message: string;
+export interface HealthCheckVersionMismatch {
+  readonly message?: string;
 }
 
-interface HostedZone {
+export interface HostedZone {
   readonly Id: string;
   readonly Name: string;
   readonly CallerReference: string;
-  readonly Config: HostedZoneConfig;
-  readonly ResourceRecordSetCount: number;
-  readonly LinkedService: LinkedService;
+  readonly Config?: HostedZoneConfig;
+  readonly ResourceRecordSetCount?: number;
+  readonly LinkedService?: LinkedService;
 }
 
-interface HostedZoneAlreadyExists {
-  readonly message: string;
+export interface HostedZoneAlreadyExists {
+  readonly message?: string;
 }
 
-interface HostedZoneConfig {
-  readonly Comment: string;
-  readonly PrivateZone: boolean;
+export interface HostedZoneConfig {
+  readonly Comment?: string;
+  readonly PrivateZone?: boolean;
 }
 
-interface HostedZoneLimit {
+export interface HostedZoneLimit {
   readonly Type: string;
   readonly Value: number;
 }
 
-interface HostedZoneNotEmpty {
-  readonly message: string;
+export interface HostedZoneNotEmpty {
+  readonly message?: string;
 }
 
-interface HostedZoneNotFound {
-  readonly message: string;
+export interface HostedZoneNotFound {
+  readonly message?: string;
 }
 
-interface HostedZoneNotPrivate {
-  readonly message: string;
+export interface HostedZoneNotPrivate {
+  readonly message?: string;
 }
 
-interface HostedZoneOwner {
-  readonly OwningAccount: string;
-  readonly OwningService: string;
+export interface HostedZoneOwner {
+  readonly OwningAccount?: string;
+  readonly OwningService?: string;
 }
 
-interface HostedZonePartiallyDelegated {
-  readonly message: string;
+export interface HostedZonePartiallyDelegated {
+  readonly message?: string;
 }
 
-interface HostedZoneSummary {
+export interface HostedZoneSummary {
   readonly HostedZoneId: string;
   readonly Name: string;
   readonly Owner: HostedZoneOwner;
 }
 
-interface IncompatibleVersion {
-  readonly message: string;
+export interface IncompatibleVersion {
+  readonly message?: string;
 }
 
-interface InsufficientCloudWatchLogsResourcePolicy {
-  readonly message: string;
+export interface InsufficientCloudWatchLogsResourcePolicy {
+  readonly message?: string;
 }
 
-interface InvalidArgument {
-  readonly message: string;
+export interface InvalidArgument {
+  readonly message?: string;
 }
 
-interface InvalidChangeBatch {
-  readonly messages: [];
-  readonly message: string;
+export interface InvalidChangeBatch {
+  readonly messages?: [];
+  readonly message?: string;
 }
 
-interface InvalidDomainName {
-  readonly message: string;
+export interface InvalidDomainName {
+  readonly message?: string;
 }
 
-interface InvalidInput {
-  readonly message: string;
+export interface InvalidInput {
+  readonly message?: string;
 }
 
-interface InvalidKMSArn {
-  readonly message: string;
+export interface InvalidKMSArn {
+  readonly message?: string;
 }
 
-interface InvalidKeySigningKeyName {
-  readonly message: string;
+export interface InvalidKeySigningKeyName {
+  readonly message?: string;
 }
 
-interface InvalidKeySigningKeyStatus {
-  readonly message: string;
+export interface InvalidKeySigningKeyStatus {
+  readonly message?: string;
 }
 
-interface InvalidPaginationToken {
-  readonly message: string;
+export interface InvalidPaginationToken {
+  readonly message?: string;
 }
 
-interface InvalidSigningStatus {
-  readonly message: string;
+export interface InvalidSigningStatus {
+  readonly message?: string;
 }
 
-interface InvalidTrafficPolicyDocument {
-  readonly message: string;
+export interface InvalidTrafficPolicyDocument {
+  readonly message?: string;
 }
 
-interface InvalidVPCId {
-  readonly message: string;
+export interface InvalidVPCId {
+  readonly message?: string;
 }
 
-interface KeySigningKey {
-  readonly Name: string;
-  readonly KmsArn: string;
-  readonly Flag: number;
-  readonly SigningAlgorithmMnemonic: string;
-  readonly SigningAlgorithmType: number;
-  readonly DigestAlgorithmMnemonic: string;
-  readonly DigestAlgorithmType: number;
-  readonly KeyTag: number;
-  readonly DigestValue: string;
-  readonly PublicKey: string;
-  readonly DSRecord: string;
-  readonly DNSKEYRecord: string;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly CreatedDate: Date;
-  readonly LastModifiedDate: Date;
+export interface KeySigningKey {
+  readonly Name?: string;
+  readonly KmsArn?: string;
+  readonly Flag?: number;
+  readonly SigningAlgorithmMnemonic?: string;
+  readonly SigningAlgorithmType?: number;
+  readonly DigestAlgorithmMnemonic?: string;
+  readonly DigestAlgorithmType?: number;
+  readonly KeyTag?: number;
+  readonly DigestValue?: string;
+  readonly PublicKey?: string;
+  readonly DSRecord?: string;
+  readonly DNSKEYRecord?: string;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly CreatedDate?: Date;
+  readonly LastModifiedDate?: Date;
 }
 
-interface KeySigningKeyAlreadyExists {
-  readonly message: string;
+export interface KeySigningKeyAlreadyExists {
+  readonly message?: string;
 }
 
-interface KeySigningKeyInParentDSRecord {
-  readonly message: string;
+export interface KeySigningKeyInParentDSRecord {
+  readonly message?: string;
 }
 
-interface KeySigningKeyInUse {
-  readonly message: string;
+export interface KeySigningKeyInUse {
+  readonly message?: string;
 }
 
-interface KeySigningKeyWithActiveStatusNotFound {
-  readonly message: string;
+export interface KeySigningKeyWithActiveStatusNotFound {
+  readonly message?: string;
 }
 
-interface LastVPCAssociation {
-  readonly message: string;
+export interface LastVPCAssociation {
+  readonly message?: string;
 }
 
-interface LimitsExceeded {
-  readonly message: string;
+export interface LimitsExceeded {
+  readonly message?: string;
 }
 
-interface LinkedService {
-  readonly ServicePrincipal: string;
-  readonly Description: string;
+export interface LinkedService {
+  readonly ServicePrincipal?: string;
+  readonly Description?: string;
 }
 
-interface ListGeoLocationsRequest {
-  readonly StartContinentCode: string;
-  readonly StartCountryCode: string;
-  readonly StartSubdivisionCode: string;
-  readonly MaxItems: string;
+export interface ListGeoLocationsRequest {
+  readonly StartContinentCode?: string;
+  readonly StartCountryCode?: string;
+  readonly StartSubdivisionCode?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListGeoLocationsResponse {
+export interface ListGeoLocationsResponse {
   readonly GeoLocationDetailsList: [];
   readonly IsTruncated: boolean;
-  readonly NextContinentCode: string;
-  readonly NextCountryCode: string;
-  readonly NextSubdivisionCode: string;
+  readonly NextContinentCode?: string;
+  readonly NextCountryCode?: string;
+  readonly NextSubdivisionCode?: string;
   readonly MaxItems: string;
 }
 
-interface ListHealthChecksRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListHealthChecksRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListHealthChecksResponse {
+export interface ListHealthChecksResponse {
   readonly HealthChecks: [];
   readonly Marker: string;
   readonly IsTruncated: boolean;
-  readonly NextMarker: string;
+  readonly NextMarker?: string;
   readonly MaxItems: string;
 }
 
-interface ListHostedZonesByNameRequest {
-  readonly DNSName: string;
-  readonly HostedZoneId: string;
-  readonly MaxItems: string;
+export interface ListHostedZonesByNameRequest {
+  readonly DNSName?: string;
+  readonly HostedZoneId?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListHostedZonesByNameResponse {
+export interface ListHostedZonesByNameResponse {
   readonly HostedZones: [];
-  readonly DNSName: string;
-  readonly HostedZoneId: string;
+  readonly DNSName?: string;
+  readonly HostedZoneId?: string;
   readonly IsTruncated: boolean;
-  readonly NextDNSName: string;
-  readonly NextHostedZoneId: string;
+  readonly NextDNSName?: string;
+  readonly NextHostedZoneId?: string;
   readonly MaxItems: string;
 }
 
-interface ListHostedZonesByVPCRequest {
+export interface ListHostedZonesByVPCRequest {
   readonly VPCId: string;
   readonly VPCRegion: string;
-  readonly MaxItems: string;
-  readonly NextToken: string;
+  readonly MaxItems?: string;
+  readonly NextToken?: string;
 }
 
-interface ListHostedZonesByVPCResponse {
+export interface ListHostedZonesByVPCResponse {
   readonly HostedZoneSummaries: [];
   readonly MaxItems: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListHostedZonesRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
-  readonly DelegationSetId: string;
+export interface ListHostedZonesRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
+  readonly DelegationSetId?: string;
 }
 
-interface ListHostedZonesResponse {
+export interface ListHostedZonesResponse {
   readonly HostedZones: [];
   readonly Marker: string;
   readonly IsTruncated: boolean;
-  readonly NextMarker: string;
+  readonly NextMarker?: string;
   readonly MaxItems: string;
 }
 
-interface ListQueryLoggingConfigsRequest {
-  readonly HostedZoneId: string;
-  readonly NextToken: string;
-  readonly MaxResults: string;
+export interface ListQueryLoggingConfigsRequest {
+  readonly HostedZoneId?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: string;
 }
 
-interface ListQueryLoggingConfigsResponse {
+export interface ListQueryLoggingConfigsResponse {
   readonly QueryLoggingConfigs: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListResourceRecordSetsRequest {
+export interface ListResourceRecordSetsRequest {
   readonly HostedZoneId: string;
-  readonly StartRecordName: string;
-  readonly StartRecordType: string;
-  readonly StartRecordIdentifier: string;
-  readonly MaxItems: string;
+  readonly StartRecordName?: string;
+  readonly StartRecordType?: string;
+  readonly StartRecordIdentifier?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListResourceRecordSetsResponse {
+export interface ListResourceRecordSetsResponse {
   readonly ResourceRecordSets: [];
   readonly IsTruncated: boolean;
-  readonly NextRecordName: string;
-  readonly NextRecordType: string;
-  readonly NextRecordIdentifier: string;
+  readonly NextRecordName?: string;
+  readonly NextRecordType?: string;
+  readonly NextRecordIdentifier?: string;
   readonly MaxItems: string;
 }
 
-interface ListReusableDelegationSetsRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListReusableDelegationSetsRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListReusableDelegationSetsResponse {
+export interface ListReusableDelegationSetsResponse {
   readonly DelegationSets: [];
   readonly Marker: string;
   readonly IsTruncated: boolean;
-  readonly NextMarker: string;
+  readonly NextMarker?: string;
   readonly MaxItems: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceType: string;
   readonly ResourceId: string;
 }
 
-interface ListTagsForResourceResponse {
+export interface ListTagsForResourceResponse {
   readonly ResourceTagSet: ResourceTagSet;
 }
 
-interface ListTagsForResourcesRequest {
+export interface ListTagsForResourcesRequest {
   readonly ResourceType: string;
   readonly ResourceIds: [];
 }
 
-interface ListTagsForResourcesResponse {
+export interface ListTagsForResourcesResponse {
   readonly ResourceTagSets: [];
 }
 
-interface ListTrafficPoliciesRequest {
-  readonly TrafficPolicyIdMarker: string;
-  readonly MaxItems: string;
+export interface ListTrafficPoliciesRequest {
+  readonly TrafficPolicyIdMarker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListTrafficPoliciesResponse {
+export interface ListTrafficPoliciesResponse {
   readonly TrafficPolicySummaries: [];
   readonly IsTruncated: boolean;
   readonly TrafficPolicyIdMarker: string;
   readonly MaxItems: string;
 }
 
-interface ListTrafficPolicyInstancesByHostedZoneRequest {
+export interface ListTrafficPolicyInstancesByHostedZoneRequest {
   readonly HostedZoneId: string;
-  readonly TrafficPolicyInstanceNameMarker: string;
-  readonly TrafficPolicyInstanceTypeMarker: string;
-  readonly MaxItems: string;
+  readonly TrafficPolicyInstanceNameMarker?: string;
+  readonly TrafficPolicyInstanceTypeMarker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListTrafficPolicyInstancesByHostedZoneResponse {
+export interface ListTrafficPolicyInstancesByHostedZoneResponse {
   readonly TrafficPolicyInstances: [];
-  readonly TrafficPolicyInstanceNameMarker: string;
-  readonly TrafficPolicyInstanceTypeMarker: string;
+  readonly TrafficPolicyInstanceNameMarker?: string;
+  readonly TrafficPolicyInstanceTypeMarker?: string;
   readonly IsTruncated: boolean;
   readonly MaxItems: string;
 }
 
-interface ListTrafficPolicyInstancesByPolicyRequest {
+export interface ListTrafficPolicyInstancesByPolicyRequest {
   readonly TrafficPolicyId: string;
   readonly TrafficPolicyVersion: number;
-  readonly HostedZoneIdMarker: string;
-  readonly TrafficPolicyInstanceNameMarker: string;
-  readonly TrafficPolicyInstanceTypeMarker: string;
-  readonly MaxItems: string;
+  readonly HostedZoneIdMarker?: string;
+  readonly TrafficPolicyInstanceNameMarker?: string;
+  readonly TrafficPolicyInstanceTypeMarker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListTrafficPolicyInstancesByPolicyResponse {
+export interface ListTrafficPolicyInstancesByPolicyResponse {
   readonly TrafficPolicyInstances: [];
-  readonly HostedZoneIdMarker: string;
-  readonly TrafficPolicyInstanceNameMarker: string;
-  readonly TrafficPolicyInstanceTypeMarker: string;
+  readonly HostedZoneIdMarker?: string;
+  readonly TrafficPolicyInstanceNameMarker?: string;
+  readonly TrafficPolicyInstanceTypeMarker?: string;
   readonly IsTruncated: boolean;
   readonly MaxItems: string;
 }
 
-interface ListTrafficPolicyInstancesRequest {
-  readonly HostedZoneIdMarker: string;
-  readonly TrafficPolicyInstanceNameMarker: string;
-  readonly TrafficPolicyInstanceTypeMarker: string;
-  readonly MaxItems: string;
+export interface ListTrafficPolicyInstancesRequest {
+  readonly HostedZoneIdMarker?: string;
+  readonly TrafficPolicyInstanceNameMarker?: string;
+  readonly TrafficPolicyInstanceTypeMarker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListTrafficPolicyInstancesResponse {
+export interface ListTrafficPolicyInstancesResponse {
   readonly TrafficPolicyInstances: [];
-  readonly HostedZoneIdMarker: string;
-  readonly TrafficPolicyInstanceNameMarker: string;
-  readonly TrafficPolicyInstanceTypeMarker: string;
+  readonly HostedZoneIdMarker?: string;
+  readonly TrafficPolicyInstanceNameMarker?: string;
+  readonly TrafficPolicyInstanceTypeMarker?: string;
   readonly IsTruncated: boolean;
   readonly MaxItems: string;
 }
 
-interface ListTrafficPolicyVersionsRequest {
+export interface ListTrafficPolicyVersionsRequest {
   readonly Id: string;
-  readonly TrafficPolicyVersionMarker: string;
-  readonly MaxItems: string;
+  readonly TrafficPolicyVersionMarker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListTrafficPolicyVersionsResponse {
+export interface ListTrafficPolicyVersionsResponse {
   readonly TrafficPolicies: [];
   readonly IsTruncated: boolean;
   readonly TrafficPolicyVersionMarker: string;
   readonly MaxItems: string;
 }
 
-interface ListVPCAssociationAuthorizationsRequest {
+export interface ListVPCAssociationAuthorizationsRequest {
   readonly HostedZoneId: string;
-  readonly NextToken: string;
-  readonly MaxResults: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: string;
 }
 
-interface ListVPCAssociationAuthorizationsResponse {
+export interface ListVPCAssociationAuthorizationsResponse {
   readonly HostedZoneId: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
   readonly VPCs: [];
 }
 
-interface NoSuchChange {
-  readonly message: string;
+export interface NoSuchChange {
+  readonly message?: string;
 }
 
-interface NoSuchCloudWatchLogsLogGroup {
-  readonly message: string;
+export interface NoSuchCloudWatchLogsLogGroup {
+  readonly message?: string;
 }
 
-interface NoSuchDelegationSet {
-  readonly message: string;
+export interface NoSuchDelegationSet {
+  readonly message?: string;
 }
 
-interface NoSuchGeoLocation {
-  readonly message: string;
+export interface NoSuchGeoLocation {
+  readonly message?: string;
 }
 
-interface NoSuchHealthCheck {
-  readonly message: string;
+export interface NoSuchHealthCheck {
+  readonly message?: string;
 }
 
-interface NoSuchHostedZone {
-  readonly message: string;
+export interface NoSuchHostedZone {
+  readonly message?: string;
 }
 
-interface NoSuchKeySigningKey {
-  readonly message: string;
+export interface NoSuchKeySigningKey {
+  readonly message?: string;
 }
 
-interface NoSuchQueryLoggingConfig {
-  readonly message: string;
+export interface NoSuchQueryLoggingConfig {
+  readonly message?: string;
 }
 
-interface NoSuchTrafficPolicy {
-  readonly message: string;
+export interface NoSuchTrafficPolicy {
+  readonly message?: string;
 }
 
-interface NoSuchTrafficPolicyInstance {
-  readonly message: string;
+export interface NoSuchTrafficPolicyInstance {
+  readonly message?: string;
 }
 
-interface NotAuthorizedException {
-  readonly message: string;
+export interface NotAuthorizedException {
+  readonly message?: string;
 }
 
-interface PriorRequestNotComplete {
-  readonly message: string;
+export interface PriorRequestNotComplete {
+  readonly message?: string;
 }
 
-interface PublicZoneVPCAssociation {
-  readonly message: string;
+export interface PublicZoneVPCAssociation {
+  readonly message?: string;
 }
 
-interface QueryLoggingConfig {
+export interface QueryLoggingConfig {
   readonly Id: string;
   readonly HostedZoneId: string;
   readonly CloudWatchLogsLogGroupArn: string;
 }
 
-interface QueryLoggingConfigAlreadyExists {
-  readonly message: string;
+export interface QueryLoggingConfigAlreadyExists {
+  readonly message?: string;
 }
 
-interface ResourceRecord {
+export interface ResourceRecord {
   readonly Value: string;
 }
 
-interface ResourceRecordSet {
+export interface ResourceRecordSet {
   readonly Name: string;
   readonly Type: string;
-  readonly SetIdentifier: string;
-  readonly Weight: number;
-  readonly Region: string;
-  readonly GeoLocation: GeoLocation;
-  readonly Failover: string;
-  readonly MultiValueAnswer: boolean;
-  readonly TTL: number;
-  readonly ResourceRecords: [];
-  readonly AliasTarget: AliasTarget;
-  readonly HealthCheckId: string;
-  readonly TrafficPolicyInstanceId: string;
+  readonly SetIdentifier?: string;
+  readonly Weight?: number;
+  readonly Region?: string;
+  readonly GeoLocation?: GeoLocation;
+  readonly Failover?: string;
+  readonly MultiValueAnswer?: boolean;
+  readonly TTL?: number;
+  readonly ResourceRecords?: [];
+  readonly AliasTarget?: AliasTarget;
+  readonly HealthCheckId?: string;
+  readonly TrafficPolicyInstanceId?: string;
 }
 
-interface ResourceTagSet {
-  readonly ResourceType: string;
-  readonly ResourceId: string;
-  readonly Tags: [];
+export interface ResourceTagSet {
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
+  readonly Tags?: [];
 }
 
-interface ReusableDelegationSetLimit {
+export interface ReusableDelegationSetLimit {
   readonly Type: string;
   readonly Value: number;
 }
 
-interface StatusReport {
-  readonly Status: string;
-  readonly CheckedTime: Date;
+export interface StatusReport {
+  readonly Status?: string;
+  readonly CheckedTime?: Date;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TestDNSAnswerRequest {
+export interface TestDNSAnswerRequest {
   readonly HostedZoneId: string;
   readonly RecordName: string;
   readonly RecordType: string;
-  readonly ResolverIP: string;
-  readonly EDNS0ClientSubnetIP: string;
-  readonly EDNS0ClientSubnetMask: string;
+  readonly ResolverIP?: string;
+  readonly EDNS0ClientSubnetIP?: string;
+  readonly EDNS0ClientSubnetMask?: string;
 }
 
-interface TestDNSAnswerResponse {
+export interface TestDNSAnswerResponse {
   readonly Nameserver: string;
   readonly RecordName: string;
   readonly RecordType: string;
@@ -1331,56 +1392,56 @@ interface TestDNSAnswerResponse {
   readonly Protocol: string;
 }
 
-interface ThrottlingException {
-  readonly message: string;
+export interface ThrottlingException {
+  readonly message?: string;
 }
 
-interface TooManyHealthChecks {
-  readonly message: string;
+export interface TooManyHealthChecks {
+  readonly message?: string;
 }
 
-interface TooManyHostedZones {
-  readonly message: string;
+export interface TooManyHostedZones {
+  readonly message?: string;
 }
 
-interface TooManyKeySigningKeys {
-  readonly message: string;
+export interface TooManyKeySigningKeys {
+  readonly message?: string;
 }
 
-interface TooManyTrafficPolicies {
-  readonly message: string;
+export interface TooManyTrafficPolicies {
+  readonly message?: string;
 }
 
-interface TooManyTrafficPolicyInstances {
-  readonly message: string;
+export interface TooManyTrafficPolicyInstances {
+  readonly message?: string;
 }
 
-interface TooManyTrafficPolicyVersionsForCurrentPolicy {
-  readonly message: string;
+export interface TooManyTrafficPolicyVersionsForCurrentPolicy {
+  readonly message?: string;
 }
 
-interface TooManyVPCAssociationAuthorizations {
-  readonly message: string;
+export interface TooManyVPCAssociationAuthorizations {
+  readonly message?: string;
 }
 
-interface TrafficPolicy {
+export interface TrafficPolicy {
   readonly Id: string;
   readonly Version: number;
   readonly Name: string;
   readonly Type: string;
   readonly Document: string;
-  readonly Comment: string;
+  readonly Comment?: string;
 }
 
-interface TrafficPolicyAlreadyExists {
-  readonly message: string;
+export interface TrafficPolicyAlreadyExists {
+  readonly message?: string;
 }
 
-interface TrafficPolicyInUse {
-  readonly message: string;
+export interface TrafficPolicyInUse {
+  readonly message?: string;
 }
 
-interface TrafficPolicyInstance {
+export interface TrafficPolicyInstance {
   readonly Id: string;
   readonly HostedZoneId: string;
   readonly Name: string;
@@ -1392,11 +1453,11 @@ interface TrafficPolicyInstance {
   readonly TrafficPolicyType: string;
 }
 
-interface TrafficPolicyInstanceAlreadyExists {
-  readonly message: string;
+export interface TrafficPolicyInstanceAlreadyExists {
+  readonly message?: string;
 }
 
-interface TrafficPolicySummary {
+export interface TrafficPolicySummary {
   readonly Id: string;
   readonly Name: string;
   readonly Type: string;
@@ -1404,70 +1465,71 @@ interface TrafficPolicySummary {
   readonly TrafficPolicyCount: number;
 }
 
-interface UpdateHealthCheckRequest {
+export interface UpdateHealthCheckRequest {
   readonly HealthCheckId: string;
-  readonly HealthCheckVersion: number;
-  readonly IPAddress: string;
-  readonly Port: number;
-  readonly ResourcePath: string;
-  readonly FullyQualifiedDomainName: string;
-  readonly SearchString: string;
-  readonly FailureThreshold: number;
-  readonly Inverted: boolean;
-  readonly Disabled: boolean;
-  readonly HealthThreshold: number;
-  readonly ChildHealthChecks: [];
-  readonly EnableSNI: boolean;
-  readonly Regions: [];
-  readonly AlarmIdentifier: AlarmIdentifier;
-  readonly InsufficientDataHealthStatus: string;
-  readonly ResetElements: [];
+  readonly HealthCheckVersion?: number;
+  readonly IPAddress?: string;
+  readonly Port?: number;
+  readonly ResourcePath?: string;
+  readonly FullyQualifiedDomainName?: string;
+  readonly SearchString?: string;
+  readonly FailureThreshold?: number;
+  readonly Inverted?: boolean;
+  readonly Disabled?: boolean;
+  readonly HealthThreshold?: number;
+  readonly ChildHealthChecks?: [];
+  readonly EnableSNI?: boolean;
+  readonly Regions?: [];
+  readonly AlarmIdentifier?: AlarmIdentifier;
+  readonly InsufficientDataHealthStatus?: string;
+  readonly ResetElements?: [];
 }
 
-interface UpdateHealthCheckResponse {
+export interface UpdateHealthCheckResponse {
   readonly HealthCheck: HealthCheck;
 }
 
-interface UpdateHostedZoneCommentRequest {
+export interface UpdateHostedZoneCommentRequest {
   readonly Id: string;
-  readonly Comment: string;
+  readonly Comment?: string;
 }
 
-interface UpdateHostedZoneCommentResponse {
+export interface UpdateHostedZoneCommentResponse {
   readonly HostedZone: HostedZone;
 }
 
-interface UpdateTrafficPolicyCommentRequest {
+export interface UpdateTrafficPolicyCommentRequest {
   readonly Id: string;
   readonly Version: number;
   readonly Comment: string;
 }
 
-interface UpdateTrafficPolicyCommentResponse {
+export interface UpdateTrafficPolicyCommentResponse {
   readonly TrafficPolicy: TrafficPolicy;
 }
 
-interface UpdateTrafficPolicyInstanceRequest {
+export interface UpdateTrafficPolicyInstanceRequest {
   readonly Id: string;
   readonly TTL: number;
   readonly TrafficPolicyId: string;
   readonly TrafficPolicyVersion: number;
 }
 
-interface UpdateTrafficPolicyInstanceResponse {
+export interface UpdateTrafficPolicyInstanceResponse {
   readonly TrafficPolicyInstance: TrafficPolicyInstance;
 }
 
-interface VPC {
-  readonly VPCRegion: string;
-  readonly VPCId: string;
+export interface VPC {
+  readonly VPCRegion?: string;
+  readonly VPCId?: string;
 }
 
-interface VPCAssociationAuthorizationNotFound {
-  readonly message: string;
+export interface VPCAssociationAuthorizationNotFound {
+  readonly message?: string;
 }
 
-interface VPCAssociationNotFound {
-  readonly message: string;
+export interface VPCAssociationNotFound {
+  readonly message?: string;
 }
+
 

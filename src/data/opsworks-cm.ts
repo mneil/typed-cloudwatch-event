@@ -6,11 +6,13 @@ export interface AssociateNode {
   readonly NodeName: string;
   readonly EngineAttributes: [];
 }
+
 export interface CreateBackup {
   readonly ServerName: string;
   readonly Description?: string;
   readonly Tags?: [];
 }
+
 export interface CreateServer {
   readonly AssociatePublicIpAddress?: boolean;
   readonly CustomDomain?: string;
@@ -34,67 +36,82 @@ export interface CreateServer {
   readonly Tags?: [];
   readonly BackupId?: string;
 }
+
 export interface DeleteBackup {
   readonly BackupId: string;
 }
+
 export interface DeleteServer {
   readonly ServerName: string;
 }
+
 export interface DescribeAccountAttributes {
 }
+
 export interface DescribeBackups {
   readonly BackupId?: string;
   readonly ServerName?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeEvents {
   readonly ServerName: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeNodeAssociationStatus {
   readonly NodeAssociationStatusToken: string;
   readonly ServerName: string;
 }
+
 export interface DescribeServers {
   readonly ServerName?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DisassociateNode {
   readonly ServerName: string;
   readonly NodeName: string;
   readonly EngineAttributes?: [];
 }
+
 export interface ExportServerEngineAttribute {
   readonly ExportAttributeName: string;
   readonly ServerName: string;
   readonly InputAttributes?: [];
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface RestoreServer {
   readonly BackupId: string;
   readonly ServerName: string;
   readonly InstanceType?: string;
   readonly KeyPair?: string;
 }
+
 export interface StartMaintenance {
   readonly ServerName: string;
   readonly EngineAttributes?: [];
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateServer {
   readonly DisableAutomatedBackup?: boolean;
   readonly BackupRetentionCount?: number;
@@ -102,315 +119,315 @@ export interface UpdateServer {
   readonly PreferredMaintenanceWindow?: string;
   readonly PreferredBackupWindow?: string;
 }
+
 export interface UpdateServerEngineAttributes {
   readonly ServerName: string;
   readonly AttributeName: string;
   readonly AttributeValue?: string;
 }
 
-
-
-interface AccountAttribute {
-  readonly Name: string;
-  readonly Maximum: number;
-  readonly Used: number;
+export interface AccountAttribute {
+  readonly Name?: string;
+  readonly Maximum?: number;
+  readonly Used?: number;
 }
 
-interface AssociateNodeRequest {
+export interface AssociateNodeRequest {
   readonly ServerName: string;
   readonly NodeName: string;
   readonly EngineAttributes: [];
 }
 
-interface AssociateNodeResponse {
-  readonly NodeAssociationStatusToken: string;
+export interface AssociateNodeResponse {
+  readonly NodeAssociationStatusToken?: string;
 }
 
-interface Backup {
-  readonly BackupArn: string;
-  readonly BackupId: string;
-  readonly BackupType: string;
-  readonly CreatedAt: Date;
-  readonly Description: string;
+export interface Backup {
+  readonly BackupArn?: string;
+  readonly BackupId?: string;
+  readonly BackupType?: string;
+  readonly CreatedAt?: Date;
+  readonly Description?: string;
+  readonly Engine?: string;
+  readonly EngineModel?: string;
+  readonly EngineVersion?: string;
+  readonly InstanceProfileArn?: string;
+  readonly InstanceType?: string;
+  readonly KeyPair?: string;
+  readonly PreferredBackupWindow?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly S3DataSize?: number;
+  readonly S3DataUrl?: string;
+  readonly S3LogUrl?: string;
+  readonly SecurityGroupIds?: [];
+  readonly ServerName?: string;
+  readonly ServiceRoleArn?: string;
+  readonly Status?: string;
+  readonly StatusDescription?: string;
+  readonly SubnetIds?: [];
+  readonly ToolsVersion?: string;
+  readonly UserArn?: string;
+}
+
+export interface CreateBackupRequest {
+  readonly ServerName: string;
+  readonly Description?: string;
+  readonly Tags?: [];
+}
+
+export interface CreateBackupResponse {
+  readonly Backup?: Backup;
+}
+
+export interface CreateServerRequest {
+  readonly AssociatePublicIpAddress?: boolean;
+  readonly CustomDomain?: string;
+  readonly CustomCertificate?: string;
+  readonly CustomPrivateKey?: string;
+  readonly DisableAutomatedBackup?: boolean;
   readonly Engine: string;
-  readonly EngineModel: string;
-  readonly EngineVersion: string;
+  readonly EngineModel?: string;
+  readonly EngineVersion?: string;
+  readonly EngineAttributes?: [];
+  readonly BackupRetentionCount?: number;
+  readonly ServerName: string;
   readonly InstanceProfileArn: string;
   readonly InstanceType: string;
-  readonly KeyPair: string;
-  readonly PreferredBackupWindow: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly S3DataSize: number;
-  readonly S3DataUrl: string;
-  readonly S3LogUrl: string;
-  readonly SecurityGroupIds: [];
-  readonly ServerName: string;
+  readonly KeyPair?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly PreferredBackupWindow?: string;
+  readonly SecurityGroupIds?: [];
   readonly ServiceRoleArn: string;
-  readonly Status: string;
-  readonly StatusDescription: string;
-  readonly SubnetIds: [];
-  readonly ToolsVersion: string;
-  readonly UserArn: string;
+  readonly SubnetIds?: [];
+  readonly Tags?: [];
+  readonly BackupId?: string;
 }
 
-interface CreateBackupRequest {
-  readonly ServerName: string;
-  readonly Description: string;
-  readonly Tags: [];
+export interface CreateServerResponse {
+  readonly Server?: Server;
 }
 
-interface CreateBackupResponse {
-  readonly Backup: Backup;
-}
-
-interface CreateServerRequest {
-  readonly AssociatePublicIpAddress: boolean;
-  readonly CustomDomain: string;
-  readonly CustomCertificate: string;
-  readonly CustomPrivateKey: string;
-  readonly DisableAutomatedBackup: boolean;
-  readonly Engine: string;
-  readonly EngineModel: string;
-  readonly EngineVersion: string;
-  readonly EngineAttributes: [];
-  readonly BackupRetentionCount: number;
-  readonly ServerName: string;
-  readonly InstanceProfileArn: string;
-  readonly InstanceType: string;
-  readonly KeyPair: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly PreferredBackupWindow: string;
-  readonly SecurityGroupIds: [];
-  readonly ServiceRoleArn: string;
-  readonly SubnetIds: [];
-  readonly Tags: [];
+export interface DeleteBackupRequest {
   readonly BackupId: string;
 }
 
-interface CreateServerResponse {
-  readonly Server: Server;
+export interface DeleteBackupResponse {
 }
 
-interface DeleteBackupRequest {
-  readonly BackupId: string;
-}
-
-interface DeleteBackupResponse {
-}
-
-interface DeleteServerRequest {
+export interface DeleteServerRequest {
   readonly ServerName: string;
 }
 
-interface DeleteServerResponse {
+export interface DeleteServerResponse {
 }
 
-interface DescribeAccountAttributesRequest {
+export interface DescribeAccountAttributesRequest {
 }
 
-interface DescribeAccountAttributesResponse {
-  readonly Attributes: [];
+export interface DescribeAccountAttributesResponse {
+  readonly Attributes?: [];
 }
 
-interface DescribeBackupsRequest {
-  readonly BackupId: string;
+export interface DescribeBackupsRequest {
+  readonly BackupId?: string;
+  readonly ServerName?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface DescribeBackupsResponse {
+  readonly Backups?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeEventsRequest {
   readonly ServerName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeBackupsResponse {
-  readonly Backups: [];
-  readonly NextToken: string;
+export interface DescribeEventsResponse {
+  readonly ServerEvents?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeEventsRequest {
-  readonly ServerName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface DescribeEventsResponse {
-  readonly ServerEvents: [];
-  readonly NextToken: string;
-}
-
-interface DescribeNodeAssociationStatusRequest {
+export interface DescribeNodeAssociationStatusRequest {
   readonly NodeAssociationStatusToken: string;
   readonly ServerName: string;
 }
 
-interface DescribeNodeAssociationStatusResponse {
-  readonly NodeAssociationStatus: string;
-  readonly EngineAttributes: [];
+export interface DescribeNodeAssociationStatusResponse {
+  readonly NodeAssociationStatus?: string;
+  readonly EngineAttributes?: [];
 }
 
-interface DescribeServersRequest {
-  readonly ServerName: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeServersRequest {
+  readonly ServerName?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeServersResponse {
-  readonly Servers: [];
-  readonly NextToken: string;
+export interface DescribeServersResponse {
+  readonly Servers?: [];
+  readonly NextToken?: string;
 }
 
-interface DisassociateNodeRequest {
+export interface DisassociateNodeRequest {
   readonly ServerName: string;
   readonly NodeName: string;
-  readonly EngineAttributes: [];
+  readonly EngineAttributes?: [];
 }
 
-interface DisassociateNodeResponse {
-  readonly NodeAssociationStatusToken: string;
+export interface DisassociateNodeResponse {
+  readonly NodeAssociationStatusToken?: string;
 }
 
-interface EngineAttribute {
-  readonly Name: string;
-  readonly Value: string;
+export interface EngineAttribute {
+  readonly Name?: string;
+  readonly Value?: string;
 }
 
-interface ExportServerEngineAttributeRequest {
+export interface ExportServerEngineAttributeRequest {
   readonly ExportAttributeName: string;
   readonly ServerName: string;
-  readonly InputAttributes: [];
+  readonly InputAttributes?: [];
 }
 
-interface ExportServerEngineAttributeResponse {
-  readonly EngineAttribute: EngineAttribute;
-  readonly ServerName: string;
+export interface ExportServerEngineAttributeResponse {
+  readonly EngineAttribute?: EngineAttribute;
+  readonly ServerName?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly Message: string;
+export interface InvalidNextTokenException {
+  readonly Message?: string;
 }
 
-interface InvalidStateException {
-  readonly Message: string;
+export interface InvalidStateException {
+  readonly Message?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
-  readonly NextToken: string;
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
+  readonly NextToken?: string;
 }
 
-interface ResourceAlreadyExistsException {
-  readonly Message: string;
+export interface ResourceAlreadyExistsException {
+  readonly Message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface RestoreServerRequest {
+export interface RestoreServerRequest {
   readonly BackupId: string;
   readonly ServerName: string;
-  readonly InstanceType: string;
-  readonly KeyPair: string;
+  readonly InstanceType?: string;
+  readonly KeyPair?: string;
 }
 
-interface RestoreServerResponse {
-  readonly Server: Server;
+export interface RestoreServerResponse {
+  readonly Server?: Server;
 }
 
-interface Server {
-  readonly AssociatePublicIpAddress: boolean;
-  readonly BackupRetentionCount: number;
+export interface Server {
+  readonly AssociatePublicIpAddress?: boolean;
+  readonly BackupRetentionCount?: number;
+  readonly ServerName?: string;
+  readonly CreatedAt?: Date;
+  readonly CloudFormationStackArn?: string;
+  readonly CustomDomain?: string;
+  readonly DisableAutomatedBackup?: boolean;
+  readonly Endpoint?: string;
+  readonly Engine?: string;
+  readonly EngineModel?: string;
+  readonly EngineAttributes?: [];
+  readonly EngineVersion?: string;
+  readonly InstanceProfileArn?: string;
+  readonly InstanceType?: string;
+  readonly KeyPair?: string;
+  readonly MaintenanceStatus?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly PreferredBackupWindow?: string;
+  readonly SecurityGroupIds?: [];
+  readonly ServiceRoleArn?: string;
+  readonly Status?: string;
+  readonly StatusReason?: string;
+  readonly SubnetIds?: [];
+  readonly ServerArn?: string;
+}
+
+export interface ServerEvent {
+  readonly CreatedAt?: Date;
+  readonly ServerName?: string;
+  readonly Message?: string;
+  readonly LogUrl?: string;
+}
+
+export interface StartMaintenanceRequest {
   readonly ServerName: string;
-  readonly CreatedAt: Date;
-  readonly CloudFormationStackArn: string;
-  readonly CustomDomain: string;
-  readonly DisableAutomatedBackup: boolean;
-  readonly Endpoint: string;
-  readonly Engine: string;
-  readonly EngineModel: string;
-  readonly EngineAttributes: [];
-  readonly EngineVersion: string;
-  readonly InstanceProfileArn: string;
-  readonly InstanceType: string;
-  readonly KeyPair: string;
-  readonly MaintenanceStatus: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly PreferredBackupWindow: string;
-  readonly SecurityGroupIds: [];
-  readonly ServiceRoleArn: string;
-  readonly Status: string;
-  readonly StatusReason: string;
-  readonly SubnetIds: [];
-  readonly ServerArn: string;
+  readonly EngineAttributes?: [];
 }
 
-interface ServerEvent {
-  readonly CreatedAt: Date;
-  readonly ServerName: string;
-  readonly Message: string;
-  readonly LogUrl: string;
+export interface StartMaintenanceResponse {
+  readonly Server?: Server;
 }
 
-interface StartMaintenanceRequest {
-  readonly ServerName: string;
-  readonly EngineAttributes: [];
-}
-
-interface StartMaintenanceResponse {
-  readonly Server: Server;
-}
-
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateServerEngineAttributesRequest {
+export interface UpdateServerEngineAttributesRequest {
   readonly ServerName: string;
   readonly AttributeName: string;
-  readonly AttributeValue: string;
+  readonly AttributeValue?: string;
 }
 
-interface UpdateServerEngineAttributesResponse {
-  readonly Server: Server;
+export interface UpdateServerEngineAttributesResponse {
+  readonly Server?: Server;
 }
 
-interface UpdateServerRequest {
-  readonly DisableAutomatedBackup: boolean;
-  readonly BackupRetentionCount: number;
+export interface UpdateServerRequest {
+  readonly DisableAutomatedBackup?: boolean;
+  readonly BackupRetentionCount?: number;
   readonly ServerName: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly PreferredBackupWindow: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly PreferredBackupWindow?: string;
 }
 
-interface UpdateServerResponse {
-  readonly Server: Server;
+export interface UpdateServerResponse {
+  readonly Server?: Server;
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

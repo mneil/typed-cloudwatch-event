@@ -5,40 +5,50 @@ export interface AddTagsToOnPremisesInstances {
   readonly tags: [];
   readonly instanceNames: [];
 }
+
 export interface BatchGetApplicationRevisions {
   readonly applicationName: string;
   readonly revisions: [];
 }
+
 export interface BatchGetApplications {
   readonly applicationNames: [];
 }
+
 export interface BatchGetDeploymentGroups {
   readonly applicationName: string;
   readonly deploymentGroupNames: [];
 }
+
 export interface BatchGetDeploymentInstances {
   readonly deploymentId: string;
   readonly instanceIds: [];
 }
+
 export interface BatchGetDeploymentTargets {
   readonly deploymentId?: string;
   readonly targetIds?: [];
 }
+
 export interface BatchGetDeployments {
   readonly deploymentIds: [];
 }
+
 export interface BatchGetOnPremisesInstances {
   readonly instanceNames: [];
 }
+
 export interface ContinueDeployment {
   readonly deploymentId?: string;
   readonly deploymentWaitType?: string;
 }
+
 export interface CreateApplication {
   readonly applicationName: string;
   readonly computePlatform?: string;
   readonly tags?: [];
 }
+
 export interface CreateDeployment {
   readonly applicationName: string;
   readonly deploymentGroupName?: string;
@@ -51,12 +61,14 @@ export interface CreateDeployment {
   readonly updateOutdatedInstancesOnly?: boolean;
   readonly fileExistsBehavior?: string;
 }
+
 export interface CreateDeploymentConfig {
   readonly deploymentConfigName: string;
   readonly minimumHealthyHosts?: MinimumHealthyHosts;
   readonly trafficRoutingConfig?: TrafficRoutingConfig;
   readonly computePlatform?: string;
 }
+
 export interface CreateDeploymentGroup {
   readonly applicationName: string;
   readonly deploymentGroupName: string;
@@ -77,53 +89,68 @@ export interface CreateDeploymentGroup {
   readonly onPremisesTagSet?: OnPremisesTagSet;
   readonly tags?: [];
 }
+
 export interface DeleteApplication {
   readonly applicationName: string;
 }
+
 export interface DeleteDeploymentConfig {
   readonly deploymentConfigName: string;
 }
+
 export interface DeleteDeploymentGroup {
   readonly applicationName: string;
   readonly deploymentGroupName: string;
 }
+
 export interface DeleteGitHubAccountToken {
   readonly tokenName?: string;
 }
+
 export interface DeleteResourcesByExternalId {
   readonly externalId?: string;
 }
+
 export interface DeregisterOnPremisesInstance {
   readonly instanceName: string;
 }
+
 export interface GetApplication {
   readonly applicationName: string;
 }
+
 export interface GetApplicationRevision {
   readonly applicationName: string;
   readonly revision: RevisionLocation;
 }
+
 export interface GetDeployment {
   readonly deploymentId: string;
 }
+
 export interface GetDeploymentConfig {
   readonly deploymentConfigName: string;
 }
+
 export interface GetDeploymentGroup {
   readonly applicationName: string;
   readonly deploymentGroupName: string;
 }
+
 export interface GetDeploymentInstance {
   readonly deploymentId: string;
   readonly instanceId: string;
 }
+
 export interface GetDeploymentTarget {
   readonly deploymentId?: string;
   readonly targetId?: string;
 }
+
 export interface GetOnPremisesInstance {
   readonly instanceName: string;
 }
+
 export interface ListApplicationRevisions {
   readonly applicationName: string;
   readonly sortBy?: string;
@@ -133,27 +160,33 @@ export interface ListApplicationRevisions {
   readonly deployed?: string;
   readonly nextToken?: string;
 }
+
 export interface ListApplications {
   readonly nextToken?: string;
 }
+
 export interface ListDeploymentConfigs {
   readonly nextToken?: string;
 }
+
 export interface ListDeploymentGroups {
   readonly applicationName: string;
   readonly nextToken?: string;
 }
+
 export interface ListDeploymentInstances {
   readonly deploymentId: string;
   readonly nextToken?: string;
   readonly instanceStatusFilter?: [];
   readonly instanceTypeFilter?: [];
 }
+
 export interface ListDeploymentTargets {
   readonly deploymentId?: string;
   readonly nextToken?: string;
   readonly targetFilters?: {[key: string]: any};
 }
+
 export interface ListDeployments {
   readonly applicationName?: string;
   readonly deploymentGroupName?: string;
@@ -162,56 +195,69 @@ export interface ListDeployments {
   readonly createTimeRange?: TimeRange;
   readonly nextToken?: string;
 }
+
 export interface ListGitHubAccountTokenNames {
   readonly nextToken?: string;
 }
+
 export interface ListOnPremisesInstances {
   readonly registrationStatus?: string;
   readonly tagFilters?: [];
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
   readonly NextToken?: string;
 }
+
 export interface PutLifecycleEventHookExecutionStatus {
   readonly deploymentId?: string;
   readonly lifecycleEventHookExecutionId?: string;
   readonly status?: string;
 }
+
 export interface RegisterApplicationRevision {
   readonly applicationName: string;
   readonly description?: string;
   readonly revision: RevisionLocation;
 }
+
 export interface RegisterOnPremisesInstance {
   readonly instanceName: string;
   readonly iamSessionArn?: string;
   readonly iamUserArn?: string;
 }
+
 export interface RemoveTagsFromOnPremisesInstances {
   readonly tags: [];
   readonly instanceNames: [];
 }
+
 export interface SkipWaitTimeForInstanceTermination {
   readonly deploymentId?: string;
 }
+
 export interface StopDeployment {
   readonly deploymentId: string;
   readonly autoRollbackEnabled?: boolean;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateApplication {
   readonly applicationName?: string;
   readonly newApplicationName?: string;
 }
+
 export interface UpdateDeploymentGroup {
   readonly applicationName: string;
   readonly currentDeploymentGroupName: string;
@@ -233,1171 +279,1170 @@ export interface UpdateDeploymentGroup {
   readonly onPremisesTagSet?: OnPremisesTagSet;
 }
 
-
-
-interface AddTagsToOnPremisesInstancesInput {
+export interface AddTagsToOnPremisesInstancesInput {
   readonly tags: [];
   readonly instanceNames: [];
 }
 
-interface Alarm {
-  readonly name: string;
+export interface Alarm {
+  readonly name?: string;
 }
 
-interface AlarmConfiguration {
-  readonly enabled: boolean;
-  readonly ignorePollAlarmFailure: boolean;
-  readonly alarms: [];
+export interface AlarmConfiguration {
+  readonly enabled?: boolean;
+  readonly ignorePollAlarmFailure?: boolean;
+  readonly alarms?: [];
 }
 
-interface AlarmsLimitExceededException {
+export interface AlarmsLimitExceededException {
 }
 
-interface AppSpecContent {
-  readonly content: string;
-  readonly sha256: string;
+export interface AppSpecContent {
+  readonly content?: string;
+  readonly sha256?: string;
 }
 
-interface ApplicationAlreadyExistsException {
+export interface ApplicationAlreadyExistsException {
 }
 
-interface ApplicationDoesNotExistException {
+export interface ApplicationDoesNotExistException {
 }
 
-interface ApplicationInfo {
-  readonly applicationId: string;
-  readonly applicationName: string;
-  readonly createTime: Date;
-  readonly linkedToGitHub: boolean;
-  readonly gitHubAccountName: string;
-  readonly computePlatform: string;
+export interface ApplicationInfo {
+  readonly applicationId?: string;
+  readonly applicationName?: string;
+  readonly createTime?: Date;
+  readonly linkedToGitHub?: boolean;
+  readonly gitHubAccountName?: string;
+  readonly computePlatform?: string;
 }
 
-interface ApplicationLimitExceededException {
+export interface ApplicationLimitExceededException {
 }
 
-interface ApplicationNameRequiredException {
+export interface ApplicationNameRequiredException {
 }
 
-interface ArnNotSupportedException {
+export interface ArnNotSupportedException {
 }
 
-interface AutoRollbackConfiguration {
-  readonly enabled: boolean;
-  readonly events: [];
+export interface AutoRollbackConfiguration {
+  readonly enabled?: boolean;
+  readonly events?: [];
 }
 
-interface AutoScalingGroup {
-  readonly name: string;
-  readonly hook: string;
+export interface AutoScalingGroup {
+  readonly name?: string;
+  readonly hook?: string;
 }
 
-interface BatchGetApplicationRevisionsInput {
+export interface BatchGetApplicationRevisionsInput {
   readonly applicationName: string;
   readonly revisions: [];
 }
 
-interface BatchGetApplicationRevisionsOutput {
-  readonly applicationName: string;
-  readonly errorMessage: string;
-  readonly revisions: [];
+export interface BatchGetApplicationRevisionsOutput {
+  readonly applicationName?: string;
+  readonly errorMessage?: string;
+  readonly revisions?: [];
 }
 
-interface BatchGetApplicationsInput {
+export interface BatchGetApplicationsInput {
   readonly applicationNames: [];
 }
 
-interface BatchGetApplicationsOutput {
-  readonly applicationsInfo: [];
+export interface BatchGetApplicationsOutput {
+  readonly applicationsInfo?: [];
 }
 
-interface BatchGetDeploymentGroupsInput {
+export interface BatchGetDeploymentGroupsInput {
   readonly applicationName: string;
   readonly deploymentGroupNames: [];
 }
 
-interface BatchGetDeploymentGroupsOutput {
-  readonly deploymentGroupsInfo: [];
-  readonly errorMessage: string;
+export interface BatchGetDeploymentGroupsOutput {
+  readonly deploymentGroupsInfo?: [];
+  readonly errorMessage?: string;
 }
 
-interface BatchGetDeploymentInstancesInput {
+export interface BatchGetDeploymentInstancesInput {
   readonly deploymentId: string;
   readonly instanceIds: [];
 }
 
-interface BatchGetDeploymentInstancesOutput {
-  readonly instancesSummary: [];
-  readonly errorMessage: string;
+export interface BatchGetDeploymentInstancesOutput {
+  readonly instancesSummary?: [];
+  readonly errorMessage?: string;
 }
 
-interface BatchGetDeploymentTargetsInput {
-  readonly deploymentId: string;
-  readonly targetIds: [];
+export interface BatchGetDeploymentTargetsInput {
+  readonly deploymentId?: string;
+  readonly targetIds?: [];
 }
 
-interface BatchGetDeploymentTargetsOutput {
-  readonly deploymentTargets: [];
+export interface BatchGetDeploymentTargetsOutput {
+  readonly deploymentTargets?: [];
 }
 
-interface BatchGetDeploymentsInput {
+export interface BatchGetDeploymentsInput {
   readonly deploymentIds: [];
 }
 
-interface BatchGetDeploymentsOutput {
-  readonly deploymentsInfo: [];
+export interface BatchGetDeploymentsOutput {
+  readonly deploymentsInfo?: [];
 }
 
-interface BatchGetOnPremisesInstancesInput {
+export interface BatchGetOnPremisesInstancesInput {
   readonly instanceNames: [];
 }
 
-interface BatchGetOnPremisesInstancesOutput {
-  readonly instanceInfos: [];
+export interface BatchGetOnPremisesInstancesOutput {
+  readonly instanceInfos?: [];
 }
 
-interface BatchLimitExceededException {
+export interface BatchLimitExceededException {
 }
 
-interface BlueGreenDeploymentConfiguration {
-  readonly terminateBlueInstancesOnDeploymentSuccess: BlueInstanceTerminationOption;
-  readonly deploymentReadyOption: DeploymentReadyOption;
-  readonly greenFleetProvisioningOption: GreenFleetProvisioningOption;
+export interface BlueGreenDeploymentConfiguration {
+  readonly terminateBlueInstancesOnDeploymentSuccess?: BlueInstanceTerminationOption;
+  readonly deploymentReadyOption?: DeploymentReadyOption;
+  readonly greenFleetProvisioningOption?: GreenFleetProvisioningOption;
 }
 
-interface BlueInstanceTerminationOption {
-  readonly action: string;
-  readonly terminationWaitTimeInMinutes: number;
+export interface BlueInstanceTerminationOption {
+  readonly action?: string;
+  readonly terminationWaitTimeInMinutes?: number;
 }
 
-interface BucketNameFilterRequiredException {
+export interface BucketNameFilterRequiredException {
 }
 
-interface CloudFormationTarget {
-  readonly deploymentId: string;
-  readonly targetId: string;
-  readonly lastUpdatedAt: Date;
-  readonly lifecycleEvents: [];
-  readonly status: string;
-  readonly resourceType: string;
-  readonly targetVersionWeight: unknown;
+export interface CloudFormationTarget {
+  readonly deploymentId?: string;
+  readonly targetId?: string;
+  readonly lastUpdatedAt?: Date;
+  readonly lifecycleEvents?: [];
+  readonly status?: string;
+  readonly resourceType?: string;
+  readonly targetVersionWeight?: unknown;
 }
 
-interface ContinueDeploymentInput {
-  readonly deploymentId: string;
-  readonly deploymentWaitType: string;
+export interface ContinueDeploymentInput {
+  readonly deploymentId?: string;
+  readonly deploymentWaitType?: string;
 }
 
-interface CreateApplicationInput {
+export interface CreateApplicationInput {
   readonly applicationName: string;
-  readonly computePlatform: string;
-  readonly tags: [];
+  readonly computePlatform?: string;
+  readonly tags?: [];
 }
 
-interface CreateApplicationOutput {
-  readonly applicationId: string;
+export interface CreateApplicationOutput {
+  readonly applicationId?: string;
 }
 
-interface CreateDeploymentConfigInput {
+export interface CreateDeploymentConfigInput {
   readonly deploymentConfigName: string;
-  readonly minimumHealthyHosts: MinimumHealthyHosts;
-  readonly trafficRoutingConfig: TrafficRoutingConfig;
-  readonly computePlatform: string;
+  readonly minimumHealthyHosts?: MinimumHealthyHosts;
+  readonly trafficRoutingConfig?: TrafficRoutingConfig;
+  readonly computePlatform?: string;
 }
 
-interface CreateDeploymentConfigOutput {
-  readonly deploymentConfigId: string;
+export interface CreateDeploymentConfigOutput {
+  readonly deploymentConfigId?: string;
 }
 
-interface CreateDeploymentGroupInput {
+export interface CreateDeploymentGroupInput {
   readonly applicationName: string;
   readonly deploymentGroupName: string;
-  readonly deploymentConfigName: string;
-  readonly ec2TagFilters: [];
-  readonly onPremisesInstanceTagFilters: [];
-  readonly autoScalingGroups: [];
+  readonly deploymentConfigName?: string;
+  readonly ec2TagFilters?: [];
+  readonly onPremisesInstanceTagFilters?: [];
+  readonly autoScalingGroups?: [];
   readonly serviceRoleArn: string;
-  readonly triggerConfigurations: [];
-  readonly alarmConfiguration: AlarmConfiguration;
-  readonly autoRollbackConfiguration: AutoRollbackConfiguration;
-  readonly outdatedInstancesStrategy: string;
-  readonly deploymentStyle: DeploymentStyle;
-  readonly blueGreenDeploymentConfiguration: BlueGreenDeploymentConfiguration;
-  readonly loadBalancerInfo: LoadBalancerInfo;
-  readonly ec2TagSet: EC2TagSet;
-  readonly ecsServices: [];
-  readonly onPremisesTagSet: OnPremisesTagSet;
-  readonly tags: [];
+  readonly triggerConfigurations?: [];
+  readonly alarmConfiguration?: AlarmConfiguration;
+  readonly autoRollbackConfiguration?: AutoRollbackConfiguration;
+  readonly outdatedInstancesStrategy?: string;
+  readonly deploymentStyle?: DeploymentStyle;
+  readonly blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration;
+  readonly loadBalancerInfo?: LoadBalancerInfo;
+  readonly ec2TagSet?: EC2TagSet;
+  readonly ecsServices?: [];
+  readonly onPremisesTagSet?: OnPremisesTagSet;
+  readonly tags?: [];
 }
 
-interface CreateDeploymentGroupOutput {
-  readonly deploymentGroupId: string;
+export interface CreateDeploymentGroupOutput {
+  readonly deploymentGroupId?: string;
 }
 
-interface CreateDeploymentInput {
+export interface CreateDeploymentInput {
+  readonly applicationName: string;
+  readonly deploymentGroupName?: string;
+  readonly revision?: RevisionLocation;
+  readonly deploymentConfigName?: string;
+  readonly description?: string;
+  readonly ignoreApplicationStopFailures?: boolean;
+  readonly targetInstances?: TargetInstances;
+  readonly autoRollbackConfiguration?: AutoRollbackConfiguration;
+  readonly updateOutdatedInstancesOnly?: boolean;
+  readonly fileExistsBehavior?: string;
+}
+
+export interface CreateDeploymentOutput {
+  readonly deploymentId?: string;
+}
+
+export interface DeleteApplicationInput {
+  readonly applicationName: string;
+}
+
+export interface DeleteDeploymentConfigInput {
+  readonly deploymentConfigName: string;
+}
+
+export interface DeleteDeploymentGroupInput {
   readonly applicationName: string;
   readonly deploymentGroupName: string;
-  readonly revision: RevisionLocation;
-  readonly deploymentConfigName: string;
-  readonly description: string;
-  readonly ignoreApplicationStopFailures: boolean;
-  readonly targetInstances: TargetInstances;
-  readonly autoRollbackConfiguration: AutoRollbackConfiguration;
-  readonly updateOutdatedInstancesOnly: boolean;
-  readonly fileExistsBehavior: string;
 }
 
-interface CreateDeploymentOutput {
-  readonly deploymentId: string;
+export interface DeleteDeploymentGroupOutput {
+  readonly hooksNotCleanedUp?: [];
 }
 
-interface DeleteApplicationInput {
-  readonly applicationName: string;
+export interface DeleteGitHubAccountTokenInput {
+  readonly tokenName?: string;
 }
 
-interface DeleteDeploymentConfigInput {
-  readonly deploymentConfigName: string;
+export interface DeleteGitHubAccountTokenOutput {
+  readonly tokenName?: string;
 }
 
-interface DeleteDeploymentGroupInput {
-  readonly applicationName: string;
-  readonly deploymentGroupName: string;
+export interface DeleteResourcesByExternalIdInput {
+  readonly externalId?: string;
 }
 
-interface DeleteDeploymentGroupOutput {
-  readonly hooksNotCleanedUp: [];
+export interface DeleteResourcesByExternalIdOutput {
 }
 
-interface DeleteGitHubAccountTokenInput {
-  readonly tokenName: string;
+export interface DeploymentAlreadyCompletedException {
 }
 
-interface DeleteGitHubAccountTokenOutput {
-  readonly tokenName: string;
+export interface DeploymentAlreadyStartedException {
 }
 
-interface DeleteResourcesByExternalIdInput {
-  readonly externalId: string;
+export interface DeploymentConfigAlreadyExistsException {
 }
 
-interface DeleteResourcesByExternalIdOutput {
+export interface DeploymentConfigDoesNotExistException {
 }
 
-interface DeploymentAlreadyCompletedException {
+export interface DeploymentConfigInUseException {
 }
 
-interface DeploymentAlreadyStartedException {
+export interface DeploymentConfigInfo {
+  readonly deploymentConfigId?: string;
+  readonly deploymentConfigName?: string;
+  readonly minimumHealthyHosts?: MinimumHealthyHosts;
+  readonly createTime?: Date;
+  readonly computePlatform?: string;
+  readonly trafficRoutingConfig?: TrafficRoutingConfig;
 }
 
-interface DeploymentConfigAlreadyExistsException {
+export interface DeploymentConfigLimitExceededException {
 }
 
-interface DeploymentConfigDoesNotExistException {
+export interface DeploymentConfigNameRequiredException {
 }
 
-interface DeploymentConfigInUseException {
+export interface DeploymentDoesNotExistException {
 }
 
-interface DeploymentConfigInfo {
-  readonly deploymentConfigId: string;
-  readonly deploymentConfigName: string;
-  readonly minimumHealthyHosts: MinimumHealthyHosts;
-  readonly createTime: Date;
-  readonly computePlatform: string;
-  readonly trafficRoutingConfig: TrafficRoutingConfig;
+export interface DeploymentGroupAlreadyExistsException {
 }
 
-interface DeploymentConfigLimitExceededException {
+export interface DeploymentGroupDoesNotExistException {
 }
 
-interface DeploymentConfigNameRequiredException {
+export interface DeploymentGroupInfo {
+  readonly applicationName?: string;
+  readonly deploymentGroupId?: string;
+  readonly deploymentGroupName?: string;
+  readonly deploymentConfigName?: string;
+  readonly ec2TagFilters?: [];
+  readonly onPremisesInstanceTagFilters?: [];
+  readonly autoScalingGroups?: [];
+  readonly serviceRoleArn?: string;
+  readonly targetRevision?: RevisionLocation;
+  readonly triggerConfigurations?: [];
+  readonly alarmConfiguration?: AlarmConfiguration;
+  readonly autoRollbackConfiguration?: AutoRollbackConfiguration;
+  readonly deploymentStyle?: DeploymentStyle;
+  readonly outdatedInstancesStrategy?: string;
+  readonly blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration;
+  readonly loadBalancerInfo?: LoadBalancerInfo;
+  readonly lastSuccessfulDeployment?: LastDeploymentInfo;
+  readonly lastAttemptedDeployment?: LastDeploymentInfo;
+  readonly ec2TagSet?: EC2TagSet;
+  readonly onPremisesTagSet?: OnPremisesTagSet;
+  readonly computePlatform?: string;
+  readonly ecsServices?: [];
 }
 
-interface DeploymentDoesNotExistException {
+export interface DeploymentGroupLimitExceededException {
 }
 
-interface DeploymentGroupAlreadyExistsException {
+export interface DeploymentGroupNameRequiredException {
 }
 
-interface DeploymentGroupDoesNotExistException {
+export interface DeploymentIdRequiredException {
 }
 
-interface DeploymentGroupInfo {
-  readonly applicationName: string;
-  readonly deploymentGroupId: string;
-  readonly deploymentGroupName: string;
-  readonly deploymentConfigName: string;
-  readonly ec2TagFilters: [];
-  readonly onPremisesInstanceTagFilters: [];
-  readonly autoScalingGroups: [];
-  readonly serviceRoleArn: string;
-  readonly targetRevision: RevisionLocation;
-  readonly triggerConfigurations: [];
-  readonly alarmConfiguration: AlarmConfiguration;
-  readonly autoRollbackConfiguration: AutoRollbackConfiguration;
-  readonly deploymentStyle: DeploymentStyle;
-  readonly outdatedInstancesStrategy: string;
-  readonly blueGreenDeploymentConfiguration: BlueGreenDeploymentConfiguration;
-  readonly loadBalancerInfo: LoadBalancerInfo;
-  readonly lastSuccessfulDeployment: LastDeploymentInfo;
-  readonly lastAttemptedDeployment: LastDeploymentInfo;
-  readonly ec2TagSet: EC2TagSet;
-  readonly onPremisesTagSet: OnPremisesTagSet;
-  readonly computePlatform: string;
-  readonly ecsServices: [];
+export interface DeploymentInfo {
+  readonly applicationName?: string;
+  readonly deploymentGroupName?: string;
+  readonly deploymentConfigName?: string;
+  readonly deploymentId?: string;
+  readonly previousRevision?: RevisionLocation;
+  readonly revision?: RevisionLocation;
+  readonly status?: string;
+  readonly errorInformation?: ErrorInformation;
+  readonly createTime?: Date;
+  readonly startTime?: Date;
+  readonly completeTime?: Date;
+  readonly deploymentOverview?: DeploymentOverview;
+  readonly description?: string;
+  readonly creator?: string;
+  readonly ignoreApplicationStopFailures?: boolean;
+  readonly autoRollbackConfiguration?: AutoRollbackConfiguration;
+  readonly updateOutdatedInstancesOnly?: boolean;
+  readonly rollbackInfo?: RollbackInfo;
+  readonly deploymentStyle?: DeploymentStyle;
+  readonly targetInstances?: TargetInstances;
+  readonly instanceTerminationWaitTimeStarted?: boolean;
+  readonly blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration;
+  readonly loadBalancerInfo?: LoadBalancerInfo;
+  readonly additionalDeploymentStatusInfo?: string;
+  readonly fileExistsBehavior?: string;
+  readonly deploymentStatusMessages?: [];
+  readonly computePlatform?: string;
+  readonly externalId?: string;
+  readonly relatedDeployments?: RelatedDeployments;
 }
 
-interface DeploymentGroupLimitExceededException {
+export interface DeploymentIsNotInReadyStateException {
 }
 
-interface DeploymentGroupNameRequiredException {
+export interface DeploymentLimitExceededException {
 }
 
-interface DeploymentIdRequiredException {
+export interface DeploymentNotStartedException {
 }
 
-interface DeploymentInfo {
-  readonly applicationName: string;
-  readonly deploymentGroupName: string;
-  readonly deploymentConfigName: string;
-  readonly deploymentId: string;
-  readonly previousRevision: RevisionLocation;
-  readonly revision: RevisionLocation;
-  readonly status: string;
-  readonly errorInformation: ErrorInformation;
-  readonly createTime: Date;
-  readonly startTime: Date;
-  readonly completeTime: Date;
-  readonly deploymentOverview: DeploymentOverview;
-  readonly description: string;
-  readonly creator: string;
-  readonly ignoreApplicationStopFailures: boolean;
-  readonly autoRollbackConfiguration: AutoRollbackConfiguration;
-  readonly updateOutdatedInstancesOnly: boolean;
-  readonly rollbackInfo: RollbackInfo;
-  readonly deploymentStyle: DeploymentStyle;
-  readonly targetInstances: TargetInstances;
-  readonly instanceTerminationWaitTimeStarted: boolean;
-  readonly blueGreenDeploymentConfiguration: BlueGreenDeploymentConfiguration;
-  readonly loadBalancerInfo: LoadBalancerInfo;
-  readonly additionalDeploymentStatusInfo: string;
-  readonly fileExistsBehavior: string;
-  readonly deploymentStatusMessages: [];
-  readonly computePlatform: string;
-  readonly externalId: string;
-  readonly relatedDeployments: RelatedDeployments;
+export interface DeploymentOverview {
+  readonly Pending?: number;
+  readonly InProgress?: number;
+  readonly Succeeded?: number;
+  readonly Failed?: number;
+  readonly Skipped?: number;
+  readonly Ready?: number;
 }
 
-interface DeploymentIsNotInReadyStateException {
+export interface DeploymentReadyOption {
+  readonly actionOnTimeout?: string;
+  readonly waitTimeInMinutes?: number;
 }
 
-interface DeploymentLimitExceededException {
+export interface DeploymentStyle {
+  readonly deploymentType?: string;
+  readonly deploymentOption?: string;
 }
 
-interface DeploymentNotStartedException {
+export interface DeploymentTarget {
+  readonly deploymentTargetType?: string;
+  readonly instanceTarget?: InstanceTarget;
+  readonly lambdaTarget?: LambdaTarget;
+  readonly ecsTarget?: ECSTarget;
+  readonly cloudFormationTarget?: CloudFormationTarget;
 }
 
-interface DeploymentOverview {
-  readonly Pending: number;
-  readonly InProgress: number;
-  readonly Succeeded: number;
-  readonly Failed: number;
-  readonly Skipped: number;
-  readonly Ready: number;
+export interface DeploymentTargetDoesNotExistException {
 }
 
-interface DeploymentReadyOption {
-  readonly actionOnTimeout: string;
-  readonly waitTimeInMinutes: number;
+export interface DeploymentTargetIdRequiredException {
 }
 
-interface DeploymentStyle {
-  readonly deploymentType: string;
-  readonly deploymentOption: string;
+export interface DeploymentTargetListSizeExceededException {
 }
 
-interface DeploymentTarget {
-  readonly deploymentTargetType: string;
-  readonly instanceTarget: InstanceTarget;
-  readonly lambdaTarget: LambdaTarget;
-  readonly ecsTarget: ECSTarget;
-  readonly cloudFormationTarget: CloudFormationTarget;
-}
-
-interface DeploymentTargetDoesNotExistException {
-}
-
-interface DeploymentTargetIdRequiredException {
-}
-
-interface DeploymentTargetListSizeExceededException {
-}
-
-interface DeregisterOnPremisesInstanceInput {
+export interface DeregisterOnPremisesInstanceInput {
   readonly instanceName: string;
 }
 
-interface DescriptionTooLongException {
+export interface DescriptionTooLongException {
 }
 
-interface Diagnostics {
-  readonly errorCode: string;
-  readonly scriptName: string;
-  readonly message: string;
-  readonly logTail: string;
+export interface Diagnostics {
+  readonly errorCode?: string;
+  readonly scriptName?: string;
+  readonly message?: string;
+  readonly logTail?: string;
 }
 
-interface EC2TagFilter {
-  readonly Key: string;
-  readonly Value: string;
-  readonly Type: string;
+export interface EC2TagFilter {
+  readonly Key?: string;
+  readonly Value?: string;
+  readonly Type?: string;
 }
 
-interface EC2TagSet {
-  readonly ec2TagSetList: [];
+export interface EC2TagSet {
+  readonly ec2TagSetList?: [];
 }
 
-interface ECSService {
-  readonly serviceName: string;
-  readonly clusterName: string;
+export interface ECSService {
+  readonly serviceName?: string;
+  readonly clusterName?: string;
 }
 
-interface ECSServiceMappingLimitExceededException {
+export interface ECSServiceMappingLimitExceededException {
 }
 
-interface ECSTarget {
-  readonly deploymentId: string;
-  readonly targetId: string;
-  readonly targetArn: string;
-  readonly lastUpdatedAt: Date;
-  readonly lifecycleEvents: [];
-  readonly status: string;
-  readonly taskSetsInfo: [];
+export interface ECSTarget {
+  readonly deploymentId?: string;
+  readonly targetId?: string;
+  readonly targetArn?: string;
+  readonly lastUpdatedAt?: Date;
+  readonly lifecycleEvents?: [];
+  readonly status?: string;
+  readonly taskSetsInfo?: [];
 }
 
-interface ECSTaskSet {
-  readonly identifer: string;
-  readonly desiredCount: number;
-  readonly pendingCount: number;
-  readonly runningCount: number;
-  readonly status: string;
-  readonly trafficWeight: unknown;
-  readonly targetGroup: TargetGroupInfo;
-  readonly taskSetLabel: string;
+export interface ECSTaskSet {
+  readonly identifer?: string;
+  readonly desiredCount?: number;
+  readonly pendingCount?: number;
+  readonly runningCount?: number;
+  readonly status?: string;
+  readonly trafficWeight?: unknown;
+  readonly targetGroup?: TargetGroupInfo;
+  readonly taskSetLabel?: string;
 }
 
-interface ELBInfo {
-  readonly name: string;
+export interface ELBInfo {
+  readonly name?: string;
 }
 
-interface ErrorInformation {
-  readonly code: string;
-  readonly message: string;
+export interface ErrorInformation {
+  readonly code?: string;
+  readonly message?: string;
 }
 
-interface GenericRevisionInfo {
-  readonly description: string;
-  readonly deploymentGroups: [];
-  readonly firstUsedTime: Date;
-  readonly lastUsedTime: Date;
-  readonly registerTime: Date;
+export interface GenericRevisionInfo {
+  readonly description?: string;
+  readonly deploymentGroups?: [];
+  readonly firstUsedTime?: Date;
+  readonly lastUsedTime?: Date;
+  readonly registerTime?: Date;
 }
 
-interface GetApplicationInput {
+export interface GetApplicationInput {
   readonly applicationName: string;
 }
 
-interface GetApplicationOutput {
-  readonly application: ApplicationInfo;
+export interface GetApplicationOutput {
+  readonly application?: ApplicationInfo;
 }
 
-interface GetApplicationRevisionInput {
-  readonly applicationName: string;
-  readonly revision: RevisionLocation;
-}
-
-interface GetApplicationRevisionOutput {
+export interface GetApplicationRevisionInput {
   readonly applicationName: string;
   readonly revision: RevisionLocation;
-  readonly revisionInfo: GenericRevisionInfo;
 }
 
-interface GetDeploymentConfigInput {
+export interface GetApplicationRevisionOutput {
+  readonly applicationName?: string;
+  readonly revision?: RevisionLocation;
+  readonly revisionInfo?: GenericRevisionInfo;
+}
+
+export interface GetDeploymentConfigInput {
   readonly deploymentConfigName: string;
 }
 
-interface GetDeploymentConfigOutput {
-  readonly deploymentConfigInfo: DeploymentConfigInfo;
+export interface GetDeploymentConfigOutput {
+  readonly deploymentConfigInfo?: DeploymentConfigInfo;
 }
 
-interface GetDeploymentGroupInput {
+export interface GetDeploymentGroupInput {
   readonly applicationName: string;
   readonly deploymentGroupName: string;
 }
 
-interface GetDeploymentGroupOutput {
-  readonly deploymentGroupInfo: DeploymentGroupInfo;
+export interface GetDeploymentGroupOutput {
+  readonly deploymentGroupInfo?: DeploymentGroupInfo;
 }
 
-interface GetDeploymentInput {
+export interface GetDeploymentInput {
   readonly deploymentId: string;
 }
 
-interface GetDeploymentInstanceInput {
+export interface GetDeploymentInstanceInput {
   readonly deploymentId: string;
   readonly instanceId: string;
 }
 
-interface GetDeploymentInstanceOutput {
-  readonly instanceSummary: InstanceSummary;
+export interface GetDeploymentInstanceOutput {
+  readonly instanceSummary?: InstanceSummary;
 }
 
-interface GetDeploymentOutput {
-  readonly deploymentInfo: DeploymentInfo;
+export interface GetDeploymentOutput {
+  readonly deploymentInfo?: DeploymentInfo;
 }
 
-interface GetDeploymentTargetInput {
-  readonly deploymentId: string;
-  readonly targetId: string;
+export interface GetDeploymentTargetInput {
+  readonly deploymentId?: string;
+  readonly targetId?: string;
 }
 
-interface GetDeploymentTargetOutput {
-  readonly deploymentTarget: DeploymentTarget;
+export interface GetDeploymentTargetOutput {
+  readonly deploymentTarget?: DeploymentTarget;
 }
 
-interface GetOnPremisesInstanceInput {
+export interface GetOnPremisesInstanceInput {
   readonly instanceName: string;
 }
 
-interface GetOnPremisesInstanceOutput {
-  readonly instanceInfo: InstanceInfo;
+export interface GetOnPremisesInstanceOutput {
+  readonly instanceInfo?: InstanceInfo;
 }
 
-interface GitHubAccountTokenDoesNotExistException {
+export interface GitHubAccountTokenDoesNotExistException {
 }
 
-interface GitHubAccountTokenNameRequiredException {
+export interface GitHubAccountTokenNameRequiredException {
 }
 
-interface GitHubLocation {
-  readonly repository: string;
-  readonly commitId: string;
+export interface GitHubLocation {
+  readonly repository?: string;
+  readonly commitId?: string;
 }
 
-interface GreenFleetProvisioningOption {
-  readonly action: string;
+export interface GreenFleetProvisioningOption {
+  readonly action?: string;
 }
 
-interface IamArnRequiredException {
+export interface IamArnRequiredException {
 }
 
-interface IamSessionArnAlreadyRegisteredException {
+export interface IamSessionArnAlreadyRegisteredException {
 }
 
-interface IamUserArnAlreadyRegisteredException {
+export interface IamUserArnAlreadyRegisteredException {
 }
 
-interface IamUserArnRequiredException {
+export interface IamUserArnRequiredException {
 }
 
-interface InstanceDoesNotExistException {
+export interface InstanceDoesNotExistException {
 }
 
-interface InstanceIdRequiredException {
+export interface InstanceIdRequiredException {
 }
 
-interface InstanceInfo {
-  readonly instanceName: string;
-  readonly iamSessionArn: string;
-  readonly iamUserArn: string;
-  readonly instanceArn: string;
-  readonly registerTime: Date;
-  readonly deregisterTime: Date;
-  readonly tags: [];
+export interface InstanceInfo {
+  readonly instanceName?: string;
+  readonly iamSessionArn?: string;
+  readonly iamUserArn?: string;
+  readonly instanceArn?: string;
+  readonly registerTime?: Date;
+  readonly deregisterTime?: Date;
+  readonly tags?: [];
 }
 
-interface InstanceLimitExceededException {
+export interface InstanceLimitExceededException {
 }
 
-interface InstanceNameAlreadyRegisteredException {
+export interface InstanceNameAlreadyRegisteredException {
 }
 
-interface InstanceNameRequiredException {
+export interface InstanceNameRequiredException {
 }
 
-interface InstanceNotRegisteredException {
+export interface InstanceNotRegisteredException {
 }
 
-interface InstanceSummary {
-  readonly deploymentId: string;
-  readonly instanceId: string;
-  readonly status: string;
-  readonly lastUpdatedAt: Date;
-  readonly lifecycleEvents: [];
-  readonly instanceType: string;
+export interface InstanceSummary {
+  readonly deploymentId?: string;
+  readonly instanceId?: string;
+  readonly status?: string;
+  readonly lastUpdatedAt?: Date;
+  readonly lifecycleEvents?: [];
+  readonly instanceType?: string;
 }
 
-interface InstanceTarget {
-  readonly deploymentId: string;
-  readonly targetId: string;
-  readonly targetArn: string;
-  readonly status: string;
-  readonly lastUpdatedAt: Date;
-  readonly lifecycleEvents: [];
-  readonly instanceLabel: string;
+export interface InstanceTarget {
+  readonly deploymentId?: string;
+  readonly targetId?: string;
+  readonly targetArn?: string;
+  readonly status?: string;
+  readonly lastUpdatedAt?: Date;
+  readonly lifecycleEvents?: [];
+  readonly instanceLabel?: string;
 }
 
-interface InvalidAlarmConfigException {
+export interface InvalidAlarmConfigException {
 }
 
-interface InvalidApplicationNameException {
+export interface InvalidApplicationNameException {
 }
 
-interface InvalidArnException {
+export interface InvalidArnException {
 }
 
-interface InvalidAutoRollbackConfigException {
+export interface InvalidAutoRollbackConfigException {
 }
 
-interface InvalidAutoScalingGroupException {
+export interface InvalidAutoScalingGroupException {
 }
 
-interface InvalidBlueGreenDeploymentConfigurationException {
+export interface InvalidBlueGreenDeploymentConfigurationException {
 }
 
-interface InvalidBucketNameFilterException {
+export interface InvalidBucketNameFilterException {
 }
 
-interface InvalidComputePlatformException {
+export interface InvalidComputePlatformException {
 }
 
-interface InvalidDeployedStateFilterException {
+export interface InvalidDeployedStateFilterException {
 }
 
-interface InvalidDeploymentConfigNameException {
+export interface InvalidDeploymentConfigNameException {
 }
 
-interface InvalidDeploymentGroupNameException {
+export interface InvalidDeploymentGroupNameException {
 }
 
-interface InvalidDeploymentIdException {
+export interface InvalidDeploymentIdException {
 }
 
-interface InvalidDeploymentInstanceTypeException {
+export interface InvalidDeploymentInstanceTypeException {
 }
 
-interface InvalidDeploymentStatusException {
+export interface InvalidDeploymentStatusException {
 }
 
-interface InvalidDeploymentStyleException {
+export interface InvalidDeploymentStyleException {
 }
 
-interface InvalidDeploymentTargetIdException {
+export interface InvalidDeploymentTargetIdException {
 }
 
-interface InvalidDeploymentWaitTypeException {
+export interface InvalidDeploymentWaitTypeException {
 }
 
-interface InvalidEC2TagCombinationException {
+export interface InvalidEC2TagCombinationException {
 }
 
-interface InvalidEC2TagException {
+export interface InvalidEC2TagException {
 }
 
-interface InvalidECSServiceException {
+export interface InvalidECSServiceException {
 }
 
-interface InvalidExternalIdException {
+export interface InvalidExternalIdException {
 }
 
-interface InvalidFileExistsBehaviorException {
+export interface InvalidFileExistsBehaviorException {
 }
 
-interface InvalidGitHubAccountTokenException {
+export interface InvalidGitHubAccountTokenException {
 }
 
-interface InvalidGitHubAccountTokenNameException {
+export interface InvalidGitHubAccountTokenNameException {
 }
 
-interface InvalidIamSessionArnException {
+export interface InvalidIamSessionArnException {
 }
 
-interface InvalidIamUserArnException {
+export interface InvalidIamUserArnException {
 }
 
-interface InvalidIgnoreApplicationStopFailuresValueException {
+export interface InvalidIgnoreApplicationStopFailuresValueException {
 }
 
-interface InvalidInputException {
+export interface InvalidInputException {
 }
 
-interface InvalidInstanceIdException {
+export interface InvalidInstanceIdException {
 }
 
-interface InvalidInstanceNameException {
+export interface InvalidInstanceNameException {
 }
 
-interface InvalidInstanceStatusException {
+export interface InvalidInstanceStatusException {
 }
 
-interface InvalidInstanceTypeException {
+export interface InvalidInstanceTypeException {
 }
 
-interface InvalidKeyPrefixFilterException {
+export interface InvalidKeyPrefixFilterException {
 }
 
-interface InvalidLifecycleEventHookExecutionIdException {
+export interface InvalidLifecycleEventHookExecutionIdException {
 }
 
-interface InvalidLifecycleEventHookExecutionStatusException {
+export interface InvalidLifecycleEventHookExecutionStatusException {
 }
 
-interface InvalidLoadBalancerInfoException {
+export interface InvalidLoadBalancerInfoException {
 }
 
-interface InvalidMinimumHealthyHostValueException {
+export interface InvalidMinimumHealthyHostValueException {
 }
 
-interface InvalidNextTokenException {
+export interface InvalidNextTokenException {
 }
 
-interface InvalidOnPremisesTagCombinationException {
+export interface InvalidOnPremisesTagCombinationException {
 }
 
-interface InvalidOperationException {
+export interface InvalidOperationException {
 }
 
-interface InvalidRegistrationStatusException {
+export interface InvalidRegistrationStatusException {
 }
 
-interface InvalidRevisionException {
+export interface InvalidRevisionException {
 }
 
-interface InvalidRoleException {
+export interface InvalidRoleException {
 }
 
-interface InvalidSortByException {
+export interface InvalidSortByException {
 }
 
-interface InvalidSortOrderException {
+export interface InvalidSortOrderException {
 }
 
-interface InvalidTagException {
+export interface InvalidTagException {
 }
 
-interface InvalidTagFilterException {
+export interface InvalidTagFilterException {
 }
 
-interface InvalidTagsToAddException {
+export interface InvalidTagsToAddException {
 }
 
-interface InvalidTargetException {
+export interface InvalidTargetException {
 }
 
-interface InvalidTargetFilterNameException {
+export interface InvalidTargetFilterNameException {
 }
 
-interface InvalidTargetGroupPairException {
+export interface InvalidTargetGroupPairException {
 }
 
-interface InvalidTargetInstancesException {
+export interface InvalidTargetInstancesException {
 }
 
-interface InvalidTimeRangeException {
+export interface InvalidTimeRangeException {
 }
 
-interface InvalidTrafficRoutingConfigurationException {
+export interface InvalidTrafficRoutingConfigurationException {
 }
 
-interface InvalidTriggerConfigException {
+export interface InvalidTriggerConfigException {
 }
 
-interface InvalidUpdateOutdatedInstancesOnlyValueException {
+export interface InvalidUpdateOutdatedInstancesOnlyValueException {
 }
 
-interface LambdaFunctionInfo {
-  readonly functionName: string;
-  readonly functionAlias: string;
-  readonly currentVersion: string;
-  readonly targetVersion: string;
-  readonly targetVersionWeight: unknown;
+export interface LambdaFunctionInfo {
+  readonly functionName?: string;
+  readonly functionAlias?: string;
+  readonly currentVersion?: string;
+  readonly targetVersion?: string;
+  readonly targetVersionWeight?: unknown;
 }
 
-interface LambdaTarget {
-  readonly deploymentId: string;
-  readonly targetId: string;
-  readonly targetArn: string;
-  readonly status: string;
-  readonly lastUpdatedAt: Date;
-  readonly lifecycleEvents: [];
-  readonly lambdaFunctionInfo: LambdaFunctionInfo;
+export interface LambdaTarget {
+  readonly deploymentId?: string;
+  readonly targetId?: string;
+  readonly targetArn?: string;
+  readonly status?: string;
+  readonly lastUpdatedAt?: Date;
+  readonly lifecycleEvents?: [];
+  readonly lambdaFunctionInfo?: LambdaFunctionInfo;
 }
 
-interface LastDeploymentInfo {
-  readonly deploymentId: string;
-  readonly status: string;
-  readonly endTime: Date;
-  readonly createTime: Date;
+export interface LastDeploymentInfo {
+  readonly deploymentId?: string;
+  readonly status?: string;
+  readonly endTime?: Date;
+  readonly createTime?: Date;
 }
 
-interface LifecycleEvent {
-  readonly lifecycleEventName: string;
-  readonly diagnostics: Diagnostics;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly status: string;
+export interface LifecycleEvent {
+  readonly lifecycleEventName?: string;
+  readonly diagnostics?: Diagnostics;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly status?: string;
 }
 
-interface LifecycleEventAlreadyCompletedException {
+export interface LifecycleEventAlreadyCompletedException {
 }
 
-interface LifecycleHookLimitExceededException {
+export interface LifecycleHookLimitExceededException {
 }
 
-interface ListApplicationRevisionsInput {
+export interface ListApplicationRevisionsInput {
   readonly applicationName: string;
-  readonly sortBy: string;
-  readonly sortOrder: string;
-  readonly s3Bucket: string;
-  readonly s3KeyPrefix: string;
-  readonly deployed: string;
-  readonly nextToken: string;
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
+  readonly s3Bucket?: string;
+  readonly s3KeyPrefix?: string;
+  readonly deployed?: string;
+  readonly nextToken?: string;
 }
 
-interface ListApplicationRevisionsOutput {
-  readonly revisions: [];
-  readonly nextToken: string;
+export interface ListApplicationRevisionsOutput {
+  readonly revisions?: [];
+  readonly nextToken?: string;
 }
 
-interface ListApplicationsInput {
-  readonly nextToken: string;
+export interface ListApplicationsInput {
+  readonly nextToken?: string;
 }
 
-interface ListApplicationsOutput {
-  readonly applications: [];
-  readonly nextToken: string;
+export interface ListApplicationsOutput {
+  readonly applications?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDeploymentConfigsInput {
-  readonly nextToken: string;
+export interface ListDeploymentConfigsInput {
+  readonly nextToken?: string;
 }
 
-interface ListDeploymentConfigsOutput {
-  readonly deploymentConfigsList: [];
-  readonly nextToken: string;
+export interface ListDeploymentConfigsOutput {
+  readonly deploymentConfigsList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDeploymentGroupsInput {
+export interface ListDeploymentGroupsInput {
   readonly applicationName: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListDeploymentGroupsOutput {
-  readonly applicationName: string;
-  readonly deploymentGroups: [];
-  readonly nextToken: string;
+export interface ListDeploymentGroupsOutput {
+  readonly applicationName?: string;
+  readonly deploymentGroups?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDeploymentInstancesInput {
+export interface ListDeploymentInstancesInput {
   readonly deploymentId: string;
-  readonly nextToken: string;
-  readonly instanceStatusFilter: [];
-  readonly instanceTypeFilter: [];
+  readonly nextToken?: string;
+  readonly instanceStatusFilter?: [];
+  readonly instanceTypeFilter?: [];
 }
 
-interface ListDeploymentInstancesOutput {
-  readonly instancesList: [];
-  readonly nextToken: string;
+export interface ListDeploymentInstancesOutput {
+  readonly instancesList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDeploymentTargetsInput {
-  readonly deploymentId: string;
-  readonly nextToken: string;
-  readonly targetFilters: {[key: string]: any};
+export interface ListDeploymentTargetsInput {
+  readonly deploymentId?: string;
+  readonly nextToken?: string;
+  readonly targetFilters?: {[key: string]: any};
 }
 
-interface ListDeploymentTargetsOutput {
-  readonly targetIds: [];
-  readonly nextToken: string;
+export interface ListDeploymentTargetsOutput {
+  readonly targetIds?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDeploymentsInput {
-  readonly applicationName: string;
-  readonly deploymentGroupName: string;
-  readonly externalId: string;
-  readonly includeOnlyStatuses: [];
-  readonly createTimeRange: TimeRange;
-  readonly nextToken: string;
+export interface ListDeploymentsInput {
+  readonly applicationName?: string;
+  readonly deploymentGroupName?: string;
+  readonly externalId?: string;
+  readonly includeOnlyStatuses?: [];
+  readonly createTimeRange?: TimeRange;
+  readonly nextToken?: string;
 }
 
-interface ListDeploymentsOutput {
-  readonly deployments: [];
-  readonly nextToken: string;
+export interface ListDeploymentsOutput {
+  readonly deployments?: [];
+  readonly nextToken?: string;
 }
 
-interface ListGitHubAccountTokenNamesInput {
-  readonly nextToken: string;
+export interface ListGitHubAccountTokenNamesInput {
+  readonly nextToken?: string;
 }
 
-interface ListGitHubAccountTokenNamesOutput {
-  readonly tokenNameList: [];
-  readonly nextToken: string;
+export interface ListGitHubAccountTokenNamesOutput {
+  readonly tokenNameList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListOnPremisesInstancesInput {
-  readonly registrationStatus: string;
-  readonly tagFilters: [];
-  readonly nextToken: string;
+export interface ListOnPremisesInstancesInput {
+  readonly registrationStatus?: string;
+  readonly tagFilters?: [];
+  readonly nextToken?: string;
 }
 
-interface ListOnPremisesInstancesOutput {
-  readonly instanceNames: [];
-  readonly nextToken: string;
+export interface ListOnPremisesInstancesOutput {
+  readonly instanceNames?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceInput {
+export interface ListTagsForResourceInput {
   readonly ResourceArn: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceOutput {
-  readonly Tags: [];
-  readonly NextToken: string;
+export interface ListTagsForResourceOutput {
+  readonly Tags?: [];
+  readonly NextToken?: string;
 }
 
-interface LoadBalancerInfo {
-  readonly elbInfoList: [];
-  readonly targetGroupInfoList: [];
-  readonly targetGroupPairInfoList: [];
+export interface LoadBalancerInfo {
+  readonly elbInfoList?: [];
+  readonly targetGroupInfoList?: [];
+  readonly targetGroupPairInfoList?: [];
 }
 
-interface MinimumHealthyHosts {
-  readonly type: string;
-  readonly value: number;
+export interface MinimumHealthyHosts {
+  readonly type?: string;
+  readonly value?: number;
 }
 
-interface MultipleIamArnsProvidedException {
+export interface MultipleIamArnsProvidedException {
 }
 
-interface OnPremisesTagSet {
-  readonly onPremisesTagSetList: [];
+export interface OnPremisesTagSet {
+  readonly onPremisesTagSetList?: [];
 }
 
-interface OperationNotSupportedException {
+export interface OperationNotSupportedException {
 }
 
-interface PutLifecycleEventHookExecutionStatusInput {
-  readonly deploymentId: string;
-  readonly lifecycleEventHookExecutionId: string;
-  readonly status: string;
+export interface PutLifecycleEventHookExecutionStatusInput {
+  readonly deploymentId?: string;
+  readonly lifecycleEventHookExecutionId?: string;
+  readonly status?: string;
 }
 
-interface PutLifecycleEventHookExecutionStatusOutput {
-  readonly lifecycleEventHookExecutionId: string;
+export interface PutLifecycleEventHookExecutionStatusOutput {
+  readonly lifecycleEventHookExecutionId?: string;
 }
 
-interface RawString {
-  readonly content: string;
-  readonly sha256: string;
+export interface RawString {
+  readonly content?: string;
+  readonly sha256?: string;
 }
 
-interface RegisterApplicationRevisionInput {
+export interface RegisterApplicationRevisionInput {
   readonly applicationName: string;
-  readonly description: string;
+  readonly description?: string;
   readonly revision: RevisionLocation;
 }
 
-interface RegisterOnPremisesInstanceInput {
+export interface RegisterOnPremisesInstanceInput {
   readonly instanceName: string;
-  readonly iamSessionArn: string;
-  readonly iamUserArn: string;
+  readonly iamSessionArn?: string;
+  readonly iamUserArn?: string;
 }
 
-interface RelatedDeployments {
-  readonly autoUpdateOutdatedInstancesRootDeploymentId: string;
-  readonly autoUpdateOutdatedInstancesDeploymentIds: [];
+export interface RelatedDeployments {
+  readonly autoUpdateOutdatedInstancesRootDeploymentId?: string;
+  readonly autoUpdateOutdatedInstancesDeploymentIds?: [];
 }
 
-interface RemoveTagsFromOnPremisesInstancesInput {
+export interface RemoveTagsFromOnPremisesInstancesInput {
   readonly tags: [];
   readonly instanceNames: [];
 }
 
-interface ResourceArnRequiredException {
+export interface ResourceArnRequiredException {
 }
 
-interface ResourceValidationException {
+export interface ResourceValidationException {
 }
 
-interface RevisionDoesNotExistException {
+export interface RevisionDoesNotExistException {
 }
 
-interface RevisionInfo {
-  readonly revisionLocation: RevisionLocation;
-  readonly genericRevisionInfo: GenericRevisionInfo;
+export interface RevisionInfo {
+  readonly revisionLocation?: RevisionLocation;
+  readonly genericRevisionInfo?: GenericRevisionInfo;
 }
 
-interface RevisionLocation {
-  readonly revisionType: string;
-  readonly s3Location: S3Location;
-  readonly gitHubLocation: GitHubLocation;
-  readonly string: RawString;
-  readonly appSpecContent: AppSpecContent;
+export interface RevisionLocation {
+  readonly revisionType?: string;
+  readonly s3Location?: S3Location;
+  readonly gitHubLocation?: GitHubLocation;
+  readonly string?: RawString;
+  readonly appSpecContent?: AppSpecContent;
 }
 
-interface RevisionRequiredException {
+export interface RevisionRequiredException {
 }
 
-interface RoleRequiredException {
+export interface RoleRequiredException {
 }
 
-interface RollbackInfo {
-  readonly rollbackDeploymentId: string;
-  readonly rollbackTriggeringDeploymentId: string;
-  readonly rollbackMessage: string;
+export interface RollbackInfo {
+  readonly rollbackDeploymentId?: string;
+  readonly rollbackTriggeringDeploymentId?: string;
+  readonly rollbackMessage?: string;
 }
 
-interface S3Location {
-  readonly bucket: string;
-  readonly key: string;
-  readonly bundleType: string;
-  readonly version: string;
-  readonly eTag: string;
+export interface S3Location {
+  readonly bucket?: string;
+  readonly key?: string;
+  readonly bundleType?: string;
+  readonly version?: string;
+  readonly eTag?: string;
 }
 
-interface SkipWaitTimeForInstanceTerminationInput {
+export interface SkipWaitTimeForInstanceTerminationInput {
+  readonly deploymentId?: string;
+}
+
+export interface StopDeploymentInput {
   readonly deploymentId: string;
+  readonly autoRollbackEnabled?: boolean;
 }
 
-interface StopDeploymentInput {
-  readonly deploymentId: string;
-  readonly autoRollbackEnabled: boolean;
+export interface StopDeploymentOutput {
+  readonly status?: string;
+  readonly statusMessage?: string;
 }
 
-interface StopDeploymentOutput {
-  readonly status: string;
-  readonly statusMessage: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface TagFilter {
+  readonly Key?: string;
+  readonly Value?: string;
+  readonly Type?: string;
 }
 
-interface TagFilter {
-  readonly Key: string;
-  readonly Value: string;
-  readonly Type: string;
+export interface TagLimitExceededException {
 }
 
-interface TagLimitExceededException {
+export interface TagRequiredException {
 }
 
-interface TagRequiredException {
-}
-
-interface TagResourceInput {
+export interface TagResourceInput {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceOutput {
+export interface TagResourceOutput {
 }
 
-interface TagSetListLimitExceededException {
+export interface TagSetListLimitExceededException {
 }
 
-interface TargetGroupInfo {
-  readonly name: string;
+export interface TargetGroupInfo {
+  readonly name?: string;
 }
 
-interface TargetGroupPairInfo {
-  readonly targetGroups: [];
-  readonly prodTrafficRoute: TrafficRoute;
-  readonly testTrafficRoute: TrafficRoute;
+export interface TargetGroupPairInfo {
+  readonly targetGroups?: [];
+  readonly prodTrafficRoute?: TrafficRoute;
+  readonly testTrafficRoute?: TrafficRoute;
 }
 
-interface TargetInstances {
-  readonly tagFilters: [];
-  readonly autoScalingGroups: [];
-  readonly ec2TagSet: EC2TagSet;
+export interface TargetInstances {
+  readonly tagFilters?: [];
+  readonly autoScalingGroups?: [];
+  readonly ec2TagSet?: EC2TagSet;
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
 }
 
-interface TimeBasedCanary {
-  readonly canaryPercentage: number;
-  readonly canaryInterval: number;
+export interface TimeBasedCanary {
+  readonly canaryPercentage?: number;
+  readonly canaryInterval?: number;
 }
 
-interface TimeBasedLinear {
-  readonly linearPercentage: number;
-  readonly linearInterval: number;
+export interface TimeBasedLinear {
+  readonly linearPercentage?: number;
+  readonly linearInterval?: number;
 }
 
-interface TimeRange {
-  readonly start: Date;
-  readonly end: Date;
+export interface TimeRange {
+  readonly start?: Date;
+  readonly end?: Date;
 }
 
-interface TrafficRoute {
-  readonly listenerArns: [];
+export interface TrafficRoute {
+  readonly listenerArns?: [];
 }
 
-interface TrafficRoutingConfig {
-  readonly type: string;
-  readonly timeBasedCanary: TimeBasedCanary;
-  readonly timeBasedLinear: TimeBasedLinear;
+export interface TrafficRoutingConfig {
+  readonly type?: string;
+  readonly timeBasedCanary?: TimeBasedCanary;
+  readonly timeBasedLinear?: TimeBasedLinear;
 }
 
-interface TriggerConfig {
-  readonly triggerName: string;
-  readonly triggerTargetArn: string;
-  readonly triggerEvents: [];
+export interface TriggerConfig {
+  readonly triggerName?: string;
+  readonly triggerTargetArn?: string;
+  readonly triggerEvents?: [];
 }
 
-interface TriggerTargetsLimitExceededException {
+export interface TriggerTargetsLimitExceededException {
 }
 
-interface UnsupportedActionForDeploymentTypeException {
+export interface UnsupportedActionForDeploymentTypeException {
 }
 
-interface UntagResourceInput {
+export interface UntagResourceInput {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceOutput {
+export interface UntagResourceOutput {
 }
 
-interface UpdateApplicationInput {
-  readonly applicationName: string;
-  readonly newApplicationName: string;
+export interface UpdateApplicationInput {
+  readonly applicationName?: string;
+  readonly newApplicationName?: string;
 }
 
-interface UpdateDeploymentGroupInput {
+export interface UpdateDeploymentGroupInput {
   readonly applicationName: string;
   readonly currentDeploymentGroupName: string;
-  readonly newDeploymentGroupName: string;
-  readonly deploymentConfigName: string;
-  readonly ec2TagFilters: [];
-  readonly onPremisesInstanceTagFilters: [];
-  readonly autoScalingGroups: [];
-  readonly serviceRoleArn: string;
-  readonly triggerConfigurations: [];
-  readonly alarmConfiguration: AlarmConfiguration;
-  readonly autoRollbackConfiguration: AutoRollbackConfiguration;
-  readonly outdatedInstancesStrategy: string;
-  readonly deploymentStyle: DeploymentStyle;
-  readonly blueGreenDeploymentConfiguration: BlueGreenDeploymentConfiguration;
-  readonly loadBalancerInfo: LoadBalancerInfo;
-  readonly ec2TagSet: EC2TagSet;
-  readonly ecsServices: [];
-  readonly onPremisesTagSet: OnPremisesTagSet;
+  readonly newDeploymentGroupName?: string;
+  readonly deploymentConfigName?: string;
+  readonly ec2TagFilters?: [];
+  readonly onPremisesInstanceTagFilters?: [];
+  readonly autoScalingGroups?: [];
+  readonly serviceRoleArn?: string;
+  readonly triggerConfigurations?: [];
+  readonly alarmConfiguration?: AlarmConfiguration;
+  readonly autoRollbackConfiguration?: AutoRollbackConfiguration;
+  readonly outdatedInstancesStrategy?: string;
+  readonly deploymentStyle?: DeploymentStyle;
+  readonly blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration;
+  readonly loadBalancerInfo?: LoadBalancerInfo;
+  readonly ec2TagSet?: EC2TagSet;
+  readonly ecsServices?: [];
+  readonly onPremisesTagSet?: OnPremisesTagSet;
 }
 
-interface UpdateDeploymentGroupOutput {
-  readonly hooksNotCleanedUp: [];
+export interface UpdateDeploymentGroupOutput {
+  readonly hooksNotCleanedUp?: [];
 }
+
 

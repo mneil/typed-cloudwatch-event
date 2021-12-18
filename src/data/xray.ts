@@ -5,47 +5,58 @@ export interface BatchGetTraces {
   readonly TraceIds: [];
   readonly NextToken?: string;
 }
+
 export interface CreateGroup {
   readonly GroupName: string;
   readonly FilterExpression?: string;
   readonly InsightsConfiguration?: InsightsConfiguration;
   readonly Tags?: [];
 }
+
 export interface CreateSamplingRule {
   readonly SamplingRule: SamplingRule;
   readonly Tags?: [];
 }
+
 export interface DeleteGroup {
   readonly GroupName?: string;
   readonly GroupARN?: string;
 }
+
 export interface DeleteSamplingRule {
   readonly RuleName?: string;
   readonly RuleARN?: string;
 }
+
 export interface GetEncryptionConfig {
 }
+
 export interface GetGroup {
   readonly GroupName?: string;
   readonly GroupARN?: string;
 }
+
 export interface GetGroups {
   readonly NextToken?: string;
 }
+
 export interface GetInsight {
   readonly InsightId: string;
 }
+
 export interface GetInsightEvents {
   readonly InsightId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetInsightImpactGraph {
   readonly InsightId: string;
   readonly StartTime: Date;
   readonly EndTime: Date;
   readonly NextToken?: string;
 }
+
 export interface GetInsightSummaries {
   readonly States?: [];
   readonly GroupARN?: string;
@@ -55,15 +66,19 @@ export interface GetInsightSummaries {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetSamplingRules {
   readonly NextToken?: string;
 }
+
 export interface GetSamplingStatisticSummaries {
   readonly NextToken?: string;
 }
+
 export interface GetSamplingTargets {
   readonly SamplingStatisticsDocuments: [];
 }
+
 export interface GetServiceGraph {
   readonly StartTime: Date;
   readonly EndTime: Date;
@@ -71,6 +86,7 @@ export interface GetServiceGraph {
   readonly GroupARN?: string;
   readonly NextToken?: string;
 }
+
 export interface GetTimeSeriesServiceStatistics {
   readonly StartTime: Date;
   readonly EndTime: Date;
@@ -81,10 +97,12 @@ export interface GetTimeSeriesServiceStatistics {
   readonly ForecastStatistics?: boolean;
   readonly NextToken?: string;
 }
+
 export interface GetTraceGraph {
   readonly TraceIds: [];
   readonly NextToken?: string;
 }
+
 export interface GetTraceSummaries {
   readonly StartTime: Date;
   readonly EndTime: Date;
@@ -94,539 +112,545 @@ export interface GetTraceSummaries {
   readonly FilterExpression?: string;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
   readonly NextToken?: string;
 }
+
 export interface PutEncryptionConfig {
   readonly KeyId?: string;
   readonly Type: string;
 }
+
 export interface PutTelemetryRecords {
   readonly TelemetryRecords: [];
   readonly EC2InstanceId?: string;
   readonly Hostname?: string;
   readonly ResourceARN?: string;
 }
+
 export interface PutTraceSegments {
   readonly TraceSegmentDocuments: [];
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateGroup {
   readonly GroupName?: string;
   readonly GroupARN?: string;
   readonly FilterExpression?: string;
   readonly InsightsConfiguration?: InsightsConfiguration;
 }
+
 export interface UpdateSamplingRule {
   readonly SamplingRuleUpdate: SamplingRuleUpdate;
 }
 
-
-
-interface Alias {
-  readonly Name: string;
-  readonly Names: [];
-  readonly Type: string;
+export interface Alias {
+  readonly Name?: string;
+  readonly Names?: [];
+  readonly Type?: string;
 }
 
-interface AnnotationValue {
-  readonly NumberValue: unknown;
-  readonly BooleanValue: boolean;
-  readonly StringValue: string;
+export interface AnnotationValue {
+  readonly NumberValue?: unknown;
+  readonly BooleanValue?: boolean;
+  readonly StringValue?: string;
 }
 
-interface AnomalousService {
-  readonly ServiceId: ServiceId;
+export interface AnomalousService {
+  readonly ServiceId?: ServiceId;
 }
 
-interface AvailabilityZoneDetail {
-  readonly Name: string;
+export interface AvailabilityZoneDetail {
+  readonly Name?: string;
 }
 
-interface BackendConnectionErrors {
-  readonly TimeoutCount: number;
-  readonly ConnectionRefusedCount: number;
-  readonly HTTPCode4XXCount: number;
-  readonly HTTPCode5XXCount: number;
-  readonly UnknownHostCount: number;
-  readonly OtherCount: number;
+export interface BackendConnectionErrors {
+  readonly TimeoutCount?: number;
+  readonly ConnectionRefusedCount?: number;
+  readonly HTTPCode4XXCount?: number;
+  readonly HTTPCode5XXCount?: number;
+  readonly UnknownHostCount?: number;
+  readonly OtherCount?: number;
 }
 
-interface BatchGetTracesRequest {
+export interface BatchGetTracesRequest {
   readonly TraceIds: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface BatchGetTracesResult {
-  readonly Traces: [];
-  readonly UnprocessedTraceIds: [];
-  readonly NextToken: string;
+export interface BatchGetTracesResult {
+  readonly Traces?: [];
+  readonly UnprocessedTraceIds?: [];
+  readonly NextToken?: string;
 }
 
-interface CreateGroupRequest {
+export interface CreateGroupRequest {
   readonly GroupName: string;
-  readonly FilterExpression: string;
-  readonly InsightsConfiguration: InsightsConfiguration;
-  readonly Tags: [];
+  readonly FilterExpression?: string;
+  readonly InsightsConfiguration?: InsightsConfiguration;
+  readonly Tags?: [];
 }
 
-interface CreateGroupResult {
-  readonly Group: Group;
+export interface CreateGroupResult {
+  readonly Group?: Group;
 }
 
-interface CreateSamplingRuleRequest {
+export interface CreateSamplingRuleRequest {
   readonly SamplingRule: SamplingRule;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateSamplingRuleResult {
-  readonly SamplingRuleRecord: SamplingRuleRecord;
+export interface CreateSamplingRuleResult {
+  readonly SamplingRuleRecord?: SamplingRuleRecord;
 }
 
-interface DeleteGroupRequest {
-  readonly GroupName: string;
-  readonly GroupARN: string;
+export interface DeleteGroupRequest {
+  readonly GroupName?: string;
+  readonly GroupARN?: string;
 }
 
-interface DeleteGroupResult {
+export interface DeleteGroupResult {
 }
 
-interface DeleteSamplingRuleRequest {
-  readonly RuleName: string;
-  readonly RuleARN: string;
+export interface DeleteSamplingRuleRequest {
+  readonly RuleName?: string;
+  readonly RuleARN?: string;
 }
 
-interface DeleteSamplingRuleResult {
-  readonly SamplingRuleRecord: SamplingRuleRecord;
+export interface DeleteSamplingRuleResult {
+  readonly SamplingRuleRecord?: SamplingRuleRecord;
 }
 
-interface Edge {
-  readonly ReferenceId: number;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly SummaryStatistics: EdgeStatistics;
-  readonly ResponseTimeHistogram: [];
-  readonly Aliases: [];
+export interface Edge {
+  readonly ReferenceId?: number;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly SummaryStatistics?: EdgeStatistics;
+  readonly ResponseTimeHistogram?: [];
+  readonly Aliases?: [];
 }
 
-interface EdgeStatistics {
-  readonly OkCount: number;
-  readonly ErrorStatistics: ErrorStatistics;
-  readonly FaultStatistics: FaultStatistics;
-  readonly TotalCount: number;
-  readonly TotalResponseTime: unknown;
+export interface EdgeStatistics {
+  readonly OkCount?: number;
+  readonly ErrorStatistics?: ErrorStatistics;
+  readonly FaultStatistics?: FaultStatistics;
+  readonly TotalCount?: number;
+  readonly TotalResponseTime?: unknown;
 }
 
-interface EncryptionConfig {
-  readonly KeyId: string;
-  readonly Status: string;
-  readonly Type: string;
+export interface EncryptionConfig {
+  readonly KeyId?: string;
+  readonly Status?: string;
+  readonly Type?: string;
 }
 
-interface ErrorRootCause {
-  readonly Services: [];
-  readonly ClientImpacting: boolean;
+export interface ErrorRootCause {
+  readonly Services?: [];
+  readonly ClientImpacting?: boolean;
 }
 
-interface ErrorRootCauseEntity {
-  readonly Name: string;
-  readonly Exceptions: [];
-  readonly Remote: boolean;
+export interface ErrorRootCauseEntity {
+  readonly Name?: string;
+  readonly Exceptions?: [];
+  readonly Remote?: boolean;
 }
 
-interface ErrorRootCauseService {
-  readonly Name: string;
-  readonly Names: [];
-  readonly Type: string;
-  readonly AccountId: string;
-  readonly EntityPath: [];
-  readonly Inferred: boolean;
+export interface ErrorRootCauseService {
+  readonly Name?: string;
+  readonly Names?: [];
+  readonly Type?: string;
+  readonly AccountId?: string;
+  readonly EntityPath?: [];
+  readonly Inferred?: boolean;
 }
 
-interface ErrorStatistics {
-  readonly ThrottleCount: number;
-  readonly OtherCount: number;
-  readonly TotalCount: number;
+export interface ErrorStatistics {
+  readonly ThrottleCount?: number;
+  readonly OtherCount?: number;
+  readonly TotalCount?: number;
 }
 
-interface FaultRootCause {
-  readonly Services: [];
-  readonly ClientImpacting: boolean;
+export interface FaultRootCause {
+  readonly Services?: [];
+  readonly ClientImpacting?: boolean;
 }
 
-interface FaultRootCauseEntity {
-  readonly Name: string;
-  readonly Exceptions: [];
-  readonly Remote: boolean;
+export interface FaultRootCauseEntity {
+  readonly Name?: string;
+  readonly Exceptions?: [];
+  readonly Remote?: boolean;
 }
 
-interface FaultRootCauseService {
-  readonly Name: string;
-  readonly Names: [];
-  readonly Type: string;
-  readonly AccountId: string;
-  readonly EntityPath: [];
-  readonly Inferred: boolean;
+export interface FaultRootCauseService {
+  readonly Name?: string;
+  readonly Names?: [];
+  readonly Type?: string;
+  readonly AccountId?: string;
+  readonly EntityPath?: [];
+  readonly Inferred?: boolean;
 }
 
-interface FaultStatistics {
-  readonly OtherCount: number;
-  readonly TotalCount: number;
+export interface FaultStatistics {
+  readonly OtherCount?: number;
+  readonly TotalCount?: number;
 }
 
-interface ForecastStatistics {
-  readonly FaultCountHigh: number;
-  readonly FaultCountLow: number;
+export interface ForecastStatistics {
+  readonly FaultCountHigh?: number;
+  readonly FaultCountLow?: number;
 }
 
-interface GetEncryptionConfigRequest {
+export interface GetEncryptionConfigRequest {
 }
 
-interface GetEncryptionConfigResult {
-  readonly EncryptionConfig: EncryptionConfig;
+export interface GetEncryptionConfigResult {
+  readonly EncryptionConfig?: EncryptionConfig;
 }
 
-interface GetGroupRequest {
-  readonly GroupName: string;
-  readonly GroupARN: string;
+export interface GetGroupRequest {
+  readonly GroupName?: string;
+  readonly GroupARN?: string;
 }
 
-interface GetGroupResult {
-  readonly Group: Group;
+export interface GetGroupResult {
+  readonly Group?: Group;
 }
 
-interface GetGroupsRequest {
-  readonly NextToken: string;
+export interface GetGroupsRequest {
+  readonly NextToken?: string;
 }
 
-interface GetGroupsResult {
-  readonly Groups: [];
-  readonly NextToken: string;
+export interface GetGroupsResult {
+  readonly Groups?: [];
+  readonly NextToken?: string;
 }
 
-interface GetInsightEventsRequest {
+export interface GetInsightEventsRequest {
   readonly InsightId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetInsightEventsResult {
-  readonly InsightEvents: [];
-  readonly NextToken: string;
+export interface GetInsightEventsResult {
+  readonly InsightEvents?: [];
+  readonly NextToken?: string;
 }
 
-interface GetInsightImpactGraphRequest {
-  readonly InsightId: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly NextToken: string;
-}
-
-interface GetInsightImpactGraphResult {
+export interface GetInsightImpactGraphRequest {
   readonly InsightId: string;
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly ServiceGraphStartTime: Date;
-  readonly ServiceGraphEndTime: Date;
-  readonly Services: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface GetInsightRequest {
+export interface GetInsightImpactGraphResult {
+  readonly InsightId?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly ServiceGraphStartTime?: Date;
+  readonly ServiceGraphEndTime?: Date;
+  readonly Services?: [];
+  readonly NextToken?: string;
+}
+
+export interface GetInsightRequest {
   readonly InsightId: string;
 }
 
-interface GetInsightResult {
-  readonly Insight: Insight;
+export interface GetInsightResult {
+  readonly Insight?: Insight;
 }
 
-interface GetInsightSummariesRequest {
-  readonly States: [];
-  readonly GroupARN: string;
-  readonly GroupName: string;
+export interface GetInsightSummariesRequest {
+  readonly States?: [];
+  readonly GroupARN?: string;
+  readonly GroupName?: string;
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetInsightSummariesResult {
-  readonly InsightSummaries: [];
-  readonly NextToken: string;
+export interface GetInsightSummariesResult {
+  readonly InsightSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface GetSamplingRulesRequest {
-  readonly NextToken: string;
+export interface GetSamplingRulesRequest {
+  readonly NextToken?: string;
 }
 
-interface GetSamplingRulesResult {
-  readonly SamplingRuleRecords: [];
-  readonly NextToken: string;
+export interface GetSamplingRulesResult {
+  readonly SamplingRuleRecords?: [];
+  readonly NextToken?: string;
 }
 
-interface GetSamplingStatisticSummariesRequest {
-  readonly NextToken: string;
+export interface GetSamplingStatisticSummariesRequest {
+  readonly NextToken?: string;
 }
 
-interface GetSamplingStatisticSummariesResult {
-  readonly SamplingStatisticSummaries: [];
-  readonly NextToken: string;
+export interface GetSamplingStatisticSummariesResult {
+  readonly SamplingStatisticSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface GetSamplingTargetsRequest {
+export interface GetSamplingTargetsRequest {
   readonly SamplingStatisticsDocuments: [];
 }
 
-interface GetSamplingTargetsResult {
-  readonly SamplingTargetDocuments: [];
-  readonly LastRuleModification: Date;
-  readonly UnprocessedStatistics: [];
+export interface GetSamplingTargetsResult {
+  readonly SamplingTargetDocuments?: [];
+  readonly LastRuleModification?: Date;
+  readonly UnprocessedStatistics?: [];
 }
 
-interface GetServiceGraphRequest {
+export interface GetServiceGraphRequest {
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly GroupName: string;
-  readonly GroupARN: string;
-  readonly NextToken: string;
+  readonly GroupName?: string;
+  readonly GroupARN?: string;
+  readonly NextToken?: string;
 }
 
-interface GetServiceGraphResult {
+export interface GetServiceGraphResult {
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Services?: [];
+  readonly ContainsOldGroupVersions?: boolean;
+  readonly NextToken?: string;
+}
+
+export interface GetTimeSeriesServiceStatisticsRequest {
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly Services: [];
-  readonly ContainsOldGroupVersions: boolean;
-  readonly NextToken: string;
+  readonly GroupName?: string;
+  readonly GroupARN?: string;
+  readonly EntitySelectorExpression?: string;
+  readonly Period?: number;
+  readonly ForecastStatistics?: boolean;
+  readonly NextToken?: string;
 }
 
-interface GetTimeSeriesServiceStatisticsRequest {
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly GroupName: string;
-  readonly GroupARN: string;
-  readonly EntitySelectorExpression: string;
-  readonly Period: number;
-  readonly ForecastStatistics: boolean;
-  readonly NextToken: string;
+export interface GetTimeSeriesServiceStatisticsResult {
+  readonly TimeSeriesServiceStatistics?: [];
+  readonly ContainsOldGroupVersions?: boolean;
+  readonly NextToken?: string;
 }
 
-interface GetTimeSeriesServiceStatisticsResult {
-  readonly TimeSeriesServiceStatistics: [];
-  readonly ContainsOldGroupVersions: boolean;
-  readonly NextToken: string;
-}
-
-interface GetTraceGraphRequest {
+export interface GetTraceGraphRequest {
   readonly TraceIds: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface GetTraceGraphResult {
-  readonly Services: [];
-  readonly NextToken: string;
+export interface GetTraceGraphResult {
+  readonly Services?: [];
+  readonly NextToken?: string;
 }
 
-interface GetTraceSummariesRequest {
+export interface GetTraceSummariesRequest {
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly TimeRangeType: string;
-  readonly Sampling: boolean;
-  readonly SamplingStrategy: SamplingStrategy;
-  readonly FilterExpression: string;
-  readonly NextToken: string;
+  readonly TimeRangeType?: string;
+  readonly Sampling?: boolean;
+  readonly SamplingStrategy?: SamplingStrategy;
+  readonly FilterExpression?: string;
+  readonly NextToken?: string;
 }
 
-interface GetTraceSummariesResult {
-  readonly TraceSummaries: [];
-  readonly ApproximateTime: Date;
-  readonly TracesProcessedCount: number;
-  readonly NextToken: string;
+export interface GetTraceSummariesResult {
+  readonly TraceSummaries?: [];
+  readonly ApproximateTime?: Date;
+  readonly TracesProcessedCount?: number;
+  readonly NextToken?: string;
 }
 
-interface Group {
-  readonly GroupName: string;
-  readonly GroupARN: string;
-  readonly FilterExpression: string;
-  readonly InsightsConfiguration: InsightsConfiguration;
+export interface Group {
+  readonly GroupName?: string;
+  readonly GroupARN?: string;
+  readonly FilterExpression?: string;
+  readonly InsightsConfiguration?: InsightsConfiguration;
 }
 
-interface GroupSummary {
-  readonly GroupName: string;
-  readonly GroupARN: string;
-  readonly FilterExpression: string;
-  readonly InsightsConfiguration: InsightsConfiguration;
+export interface GroupSummary {
+  readonly GroupName?: string;
+  readonly GroupARN?: string;
+  readonly FilterExpression?: string;
+  readonly InsightsConfiguration?: InsightsConfiguration;
 }
 
-interface HistogramEntry {
-  readonly Value: unknown;
-  readonly Count: number;
+export interface HistogramEntry {
+  readonly Value?: unknown;
+  readonly Count?: number;
 }
 
-interface Http {
-  readonly HttpURL: string;
-  readonly HttpStatus: number;
-  readonly HttpMethod: string;
-  readonly UserAgent: string;
-  readonly ClientIp: string;
+export interface Http {
+  readonly HttpURL?: string;
+  readonly HttpStatus?: number;
+  readonly HttpMethod?: string;
+  readonly UserAgent?: string;
+  readonly ClientIp?: string;
 }
 
-interface Insight {
-  readonly InsightId: string;
-  readonly GroupARN: string;
-  readonly GroupName: string;
-  readonly RootCauseServiceId: ServiceId;
-  readonly Categories: [];
-  readonly State: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Summary: string;
-  readonly ClientRequestImpactStatistics: RequestImpactStatistics;
-  readonly RootCauseServiceRequestImpactStatistics: RequestImpactStatistics;
-  readonly TopAnomalousServices: [];
+export interface Insight {
+  readonly InsightId?: string;
+  readonly GroupARN?: string;
+  readonly GroupName?: string;
+  readonly RootCauseServiceId?: ServiceId;
+  readonly Categories?: [];
+  readonly State?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Summary?: string;
+  readonly ClientRequestImpactStatistics?: RequestImpactStatistics;
+  readonly RootCauseServiceRequestImpactStatistics?: RequestImpactStatistics;
+  readonly TopAnomalousServices?: [];
 }
 
-interface InsightEvent {
-  readonly Summary: string;
-  readonly EventTime: Date;
-  readonly ClientRequestImpactStatistics: RequestImpactStatistics;
-  readonly RootCauseServiceRequestImpactStatistics: RequestImpactStatistics;
-  readonly TopAnomalousServices: [];
+export interface InsightEvent {
+  readonly Summary?: string;
+  readonly EventTime?: Date;
+  readonly ClientRequestImpactStatistics?: RequestImpactStatistics;
+  readonly RootCauseServiceRequestImpactStatistics?: RequestImpactStatistics;
+  readonly TopAnomalousServices?: [];
 }
 
-interface InsightImpactGraphEdge {
-  readonly ReferenceId: number;
+export interface InsightImpactGraphEdge {
+  readonly ReferenceId?: number;
 }
 
-interface InsightImpactGraphService {
-  readonly ReferenceId: number;
-  readonly Type: string;
-  readonly Name: string;
-  readonly Names: [];
-  readonly AccountId: string;
-  readonly Edges: [];
+export interface InsightImpactGraphService {
+  readonly ReferenceId?: number;
+  readonly Type?: string;
+  readonly Name?: string;
+  readonly Names?: [];
+  readonly AccountId?: string;
+  readonly Edges?: [];
 }
 
-interface InsightSummary {
-  readonly InsightId: string;
-  readonly GroupARN: string;
-  readonly GroupName: string;
-  readonly RootCauseServiceId: ServiceId;
-  readonly Categories: [];
-  readonly State: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Summary: string;
-  readonly ClientRequestImpactStatistics: RequestImpactStatistics;
-  readonly RootCauseServiceRequestImpactStatistics: RequestImpactStatistics;
-  readonly TopAnomalousServices: [];
-  readonly LastUpdateTime: Date;
+export interface InsightSummary {
+  readonly InsightId?: string;
+  readonly GroupARN?: string;
+  readonly GroupName?: string;
+  readonly RootCauseServiceId?: ServiceId;
+  readonly Categories?: [];
+  readonly State?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Summary?: string;
+  readonly ClientRequestImpactStatistics?: RequestImpactStatistics;
+  readonly RootCauseServiceRequestImpactStatistics?: RequestImpactStatistics;
+  readonly TopAnomalousServices?: [];
+  readonly LastUpdateTime?: Date;
 }
 
-interface InsightsConfiguration {
-  readonly InsightsEnabled: boolean;
-  readonly NotificationsEnabled: boolean;
+export interface InsightsConfiguration {
+  readonly InsightsEnabled?: boolean;
+  readonly NotificationsEnabled?: boolean;
 }
 
-interface InstanceIdDetail {
-  readonly Id: string;
+export interface InstanceIdDetail {
+  readonly Id?: string;
 }
 
-interface InvalidRequestException {
-  readonly Message: string;
+export interface InvalidRequestException {
+  readonly Message?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
-  readonly NextToken: string;
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
+  readonly NextToken?: string;
 }
 
-interface PutEncryptionConfigRequest {
-  readonly KeyId: string;
+export interface PutEncryptionConfigRequest {
+  readonly KeyId?: string;
   readonly Type: string;
 }
 
-interface PutEncryptionConfigResult {
-  readonly EncryptionConfig: EncryptionConfig;
+export interface PutEncryptionConfigResult {
+  readonly EncryptionConfig?: EncryptionConfig;
 }
 
-interface PutTelemetryRecordsRequest {
+export interface PutTelemetryRecordsRequest {
   readonly TelemetryRecords: [];
-  readonly EC2InstanceId: string;
-  readonly Hostname: string;
-  readonly ResourceARN: string;
+  readonly EC2InstanceId?: string;
+  readonly Hostname?: string;
+  readonly ResourceARN?: string;
 }
 
-interface PutTelemetryRecordsResult {
+export interface PutTelemetryRecordsResult {
 }
 
-interface PutTraceSegmentsRequest {
+export interface PutTraceSegmentsRequest {
   readonly TraceSegmentDocuments: [];
 }
 
-interface PutTraceSegmentsResult {
-  readonly UnprocessedTraceSegments: [];
+export interface PutTraceSegmentsResult {
+  readonly UnprocessedTraceSegments?: [];
 }
 
-interface RequestImpactStatistics {
-  readonly FaultCount: number;
-  readonly OkCount: number;
-  readonly TotalCount: number;
+export interface RequestImpactStatistics {
+  readonly FaultCount?: number;
+  readonly OkCount?: number;
+  readonly TotalCount?: number;
 }
 
-interface ResourceARNDetail {
-  readonly ARN: string;
+export interface ResourceARNDetail {
+  readonly ARN?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
-  readonly ResourceName: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
+  readonly ResourceName?: string;
 }
 
-interface ResponseTimeRootCause {
-  readonly Services: [];
-  readonly ClientImpacting: boolean;
+export interface ResponseTimeRootCause {
+  readonly Services?: [];
+  readonly ClientImpacting?: boolean;
 }
 
-interface ResponseTimeRootCauseEntity {
-  readonly Name: string;
-  readonly Coverage: unknown;
-  readonly Remote: boolean;
+export interface ResponseTimeRootCauseEntity {
+  readonly Name?: string;
+  readonly Coverage?: unknown;
+  readonly Remote?: boolean;
 }
 
-interface ResponseTimeRootCauseService {
-  readonly Name: string;
-  readonly Names: [];
-  readonly Type: string;
-  readonly AccountId: string;
-  readonly EntityPath: [];
-  readonly Inferred: boolean;
+export interface ResponseTimeRootCauseService {
+  readonly Name?: string;
+  readonly Names?: [];
+  readonly Type?: string;
+  readonly AccountId?: string;
+  readonly EntityPath?: [];
+  readonly Inferred?: boolean;
 }
 
-interface RootCauseException {
-  readonly Name: string;
-  readonly Message: string;
+export interface RootCauseException {
+  readonly Name?: string;
+  readonly Message?: string;
 }
 
-interface RuleLimitExceededException {
-  readonly Message: string;
+export interface RuleLimitExceededException {
+  readonly Message?: string;
 }
 
-interface SamplingRule {
-  readonly RuleName: string;
-  readonly RuleARN: string;
+export interface SamplingRule {
+  readonly RuleName?: string;
+  readonly RuleARN?: string;
   readonly ResourceARN: string;
   readonly Priority: number;
   readonly FixedRate: unknown;
@@ -637,211 +661,212 @@ interface SamplingRule {
   readonly HTTPMethod: string;
   readonly URLPath: string;
   readonly Version: number;
-  readonly Attributes: {[key: string]: any};
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface SamplingRuleRecord {
-  readonly SamplingRule: SamplingRule;
-  readonly CreatedAt: Date;
-  readonly ModifiedAt: Date;
+export interface SamplingRuleRecord {
+  readonly SamplingRule?: SamplingRule;
+  readonly CreatedAt?: Date;
+  readonly ModifiedAt?: Date;
 }
 
-interface SamplingRuleUpdate {
-  readonly RuleName: string;
-  readonly RuleARN: string;
-  readonly ResourceARN: string;
-  readonly Priority: number;
-  readonly FixedRate: unknown;
-  readonly ReservoirSize: number;
-  readonly Host: string;
-  readonly ServiceName: string;
-  readonly ServiceType: string;
-  readonly HTTPMethod: string;
-  readonly URLPath: string;
-  readonly Attributes: {[key: string]: any};
+export interface SamplingRuleUpdate {
+  readonly RuleName?: string;
+  readonly RuleARN?: string;
+  readonly ResourceARN?: string;
+  readonly Priority?: number;
+  readonly FixedRate?: unknown;
+  readonly ReservoirSize?: number;
+  readonly Host?: string;
+  readonly ServiceName?: string;
+  readonly ServiceType?: string;
+  readonly HTTPMethod?: string;
+  readonly URLPath?: string;
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface SamplingStatisticSummary {
-  readonly RuleName: string;
-  readonly Timestamp: Date;
-  readonly RequestCount: number;
-  readonly BorrowCount: number;
-  readonly SampledCount: number;
+export interface SamplingStatisticSummary {
+  readonly RuleName?: string;
+  readonly Timestamp?: Date;
+  readonly RequestCount?: number;
+  readonly BorrowCount?: number;
+  readonly SampledCount?: number;
 }
 
-interface SamplingStatisticsDocument {
+export interface SamplingStatisticsDocument {
   readonly RuleName: string;
   readonly ClientID: string;
   readonly Timestamp: Date;
   readonly RequestCount: number;
   readonly SampledCount: number;
-  readonly BorrowCount: number;
+  readonly BorrowCount?: number;
 }
 
-interface SamplingStrategy {
-  readonly Name: string;
-  readonly Value: unknown;
+export interface SamplingStrategy {
+  readonly Name?: string;
+  readonly Value?: unknown;
 }
 
-interface SamplingTargetDocument {
-  readonly RuleName: string;
-  readonly FixedRate: unknown;
-  readonly ReservoirQuota: number;
-  readonly ReservoirQuotaTTL: Date;
-  readonly Interval: number;
+export interface SamplingTargetDocument {
+  readonly RuleName?: string;
+  readonly FixedRate?: unknown;
+  readonly ReservoirQuota?: number;
+  readonly ReservoirQuotaTTL?: Date;
+  readonly Interval?: number;
 }
 
-interface Segment {
-  readonly Id: string;
-  readonly Document: string;
+export interface Segment {
+  readonly Id?: string;
+  readonly Document?: string;
 }
 
-interface Service {
-  readonly ReferenceId: number;
-  readonly Name: string;
-  readonly Names: [];
-  readonly Root: boolean;
-  readonly AccountId: string;
-  readonly Type: string;
-  readonly State: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Edges: [];
-  readonly SummaryStatistics: ServiceStatistics;
-  readonly DurationHistogram: [];
-  readonly ResponseTimeHistogram: [];
+export interface Service {
+  readonly ReferenceId?: number;
+  readonly Name?: string;
+  readonly Names?: [];
+  readonly Root?: boolean;
+  readonly AccountId?: string;
+  readonly Type?: string;
+  readonly State?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Edges?: [];
+  readonly SummaryStatistics?: ServiceStatistics;
+  readonly DurationHistogram?: [];
+  readonly ResponseTimeHistogram?: [];
 }
 
-interface ServiceId {
-  readonly Name: string;
-  readonly Names: [];
-  readonly AccountId: string;
-  readonly Type: string;
+export interface ServiceId {
+  readonly Name?: string;
+  readonly Names?: [];
+  readonly AccountId?: string;
+  readonly Type?: string;
 }
 
-interface ServiceStatistics {
-  readonly OkCount: number;
-  readonly ErrorStatistics: ErrorStatistics;
-  readonly FaultStatistics: FaultStatistics;
-  readonly TotalCount: number;
-  readonly TotalResponseTime: unknown;
+export interface ServiceStatistics {
+  readonly OkCount?: number;
+  readonly ErrorStatistics?: ErrorStatistics;
+  readonly FaultStatistics?: FaultStatistics;
+  readonly TotalCount?: number;
+  readonly TotalResponseTime?: unknown;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TelemetryRecord {
+export interface TelemetryRecord {
   readonly Timestamp: Date;
-  readonly SegmentsReceivedCount: number;
-  readonly SegmentsSentCount: number;
-  readonly SegmentsSpilloverCount: number;
-  readonly SegmentsRejectedCount: number;
-  readonly BackendConnectionErrors: BackendConnectionErrors;
+  readonly SegmentsReceivedCount?: number;
+  readonly SegmentsSentCount?: number;
+  readonly SegmentsSpilloverCount?: number;
+  readonly SegmentsRejectedCount?: number;
+  readonly BackendConnectionErrors?: BackendConnectionErrors;
 }
 
-interface ThrottledException {
-  readonly Message: string;
+export interface ThrottledException {
+  readonly Message?: string;
 }
 
-interface TimeSeriesServiceStatistics {
-  readonly Timestamp: Date;
-  readonly EdgeSummaryStatistics: EdgeStatistics;
-  readonly ServiceSummaryStatistics: ServiceStatistics;
-  readonly ServiceForecastStatistics: ForecastStatistics;
-  readonly ResponseTimeHistogram: [];
+export interface TimeSeriesServiceStatistics {
+  readonly Timestamp?: Date;
+  readonly EdgeSummaryStatistics?: EdgeStatistics;
+  readonly ServiceSummaryStatistics?: ServiceStatistics;
+  readonly ServiceForecastStatistics?: ForecastStatistics;
+  readonly ResponseTimeHistogram?: [];
 }
 
-interface TooManyTagsException {
-  readonly Message: string;
-  readonly ResourceName: string;
+export interface TooManyTagsException {
+  readonly Message?: string;
+  readonly ResourceName?: string;
 }
 
-interface Trace {
-  readonly Id: string;
-  readonly Duration: unknown;
-  readonly LimitExceeded: boolean;
-  readonly Segments: [];
+export interface Trace {
+  readonly Id?: string;
+  readonly Duration?: unknown;
+  readonly LimitExceeded?: boolean;
+  readonly Segments?: [];
 }
 
-interface TraceSummary {
-  readonly Id: string;
-  readonly Duration: unknown;
-  readonly ResponseTime: unknown;
-  readonly HasFault: boolean;
-  readonly HasError: boolean;
-  readonly HasThrottle: boolean;
-  readonly IsPartial: boolean;
-  readonly Http: Http;
-  readonly Annotations: {[key: string]: any};
-  readonly Users: [];
-  readonly ServiceIds: [];
-  readonly ResourceARNs: [];
-  readonly InstanceIds: [];
-  readonly AvailabilityZones: [];
-  readonly EntryPoint: ServiceId;
-  readonly FaultRootCauses: [];
-  readonly ErrorRootCauses: [];
-  readonly ResponseTimeRootCauses: [];
-  readonly Revision: number;
-  readonly MatchedEventTime: Date;
+export interface TraceSummary {
+  readonly Id?: string;
+  readonly Duration?: unknown;
+  readonly ResponseTime?: unknown;
+  readonly HasFault?: boolean;
+  readonly HasError?: boolean;
+  readonly HasThrottle?: boolean;
+  readonly IsPartial?: boolean;
+  readonly Http?: Http;
+  readonly Annotations?: {[key: string]: any};
+  readonly Users?: [];
+  readonly ServiceIds?: [];
+  readonly ResourceARNs?: [];
+  readonly InstanceIds?: [];
+  readonly AvailabilityZones?: [];
+  readonly EntryPoint?: ServiceId;
+  readonly FaultRootCauses?: [];
+  readonly ErrorRootCauses?: [];
+  readonly ResponseTimeRootCauses?: [];
+  readonly Revision?: number;
+  readonly MatchedEventTime?: Date;
 }
 
-interface TraceUser {
-  readonly UserName: string;
-  readonly ServiceIds: [];
+export interface TraceUser {
+  readonly UserName?: string;
+  readonly ServiceIds?: [];
 }
 
-interface UnprocessedStatistics {
-  readonly RuleName: string;
-  readonly ErrorCode: string;
-  readonly Message: string;
+export interface UnprocessedStatistics {
+  readonly RuleName?: string;
+  readonly ErrorCode?: string;
+  readonly Message?: string;
 }
 
-interface UnprocessedTraceSegment {
-  readonly Id: string;
-  readonly ErrorCode: string;
-  readonly Message: string;
+export interface UnprocessedTraceSegment {
+  readonly Id?: string;
+  readonly ErrorCode?: string;
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateGroupRequest {
-  readonly GroupName: string;
-  readonly GroupARN: string;
-  readonly FilterExpression: string;
-  readonly InsightsConfiguration: InsightsConfiguration;
+export interface UpdateGroupRequest {
+  readonly GroupName?: string;
+  readonly GroupARN?: string;
+  readonly FilterExpression?: string;
+  readonly InsightsConfiguration?: InsightsConfiguration;
 }
 
-interface UpdateGroupResult {
-  readonly Group: Group;
+export interface UpdateGroupResult {
+  readonly Group?: Group;
 }
 
-interface UpdateSamplingRuleRequest {
+export interface UpdateSamplingRuleRequest {
   readonly SamplingRuleUpdate: SamplingRuleUpdate;
 }
 
-interface UpdateSamplingRuleResult {
-  readonly SamplingRuleRecord: SamplingRuleRecord;
+export interface UpdateSamplingRuleResult {
+  readonly SamplingRuleRecord?: SamplingRuleRecord;
 }
 
-interface ValueWithServiceIds {
-  readonly AnnotationValue: AnnotationValue;
-  readonly ServiceIds: [];
+export interface ValueWithServiceIds {
+  readonly AnnotationValue?: AnnotationValue;
+  readonly ServiceIds?: [];
 }
+
 

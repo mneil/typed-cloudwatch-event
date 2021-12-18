@@ -5,6 +5,7 @@ export interface CreateCallAnalyticsCategory {
   readonly CategoryName: string;
   readonly Rules: [];
 }
+
 export interface CreateLanguageModel {
   readonly LanguageCode: string;
   readonly BaseModelName: string;
@@ -12,12 +13,14 @@ export interface CreateLanguageModel {
   readonly InputDataConfig: InputDataConfig;
   readonly Tags?: [];
 }
+
 export interface CreateMedicalVocabulary {
   readonly VocabularyName: string;
   readonly LanguageCode: string;
   readonly VocabularyFileUri: string;
   readonly Tags?: [];
 }
+
 export interface CreateVocabulary {
   readonly VocabularyName: string;
   readonly LanguageCode: string;
@@ -25,6 +28,7 @@ export interface CreateVocabulary {
   readonly VocabularyFileUri?: string;
   readonly Tags?: [];
 }
+
 export interface CreateVocabularyFilter {
   readonly VocabularyFilterName: string;
   readonly LanguageCode: string;
@@ -32,102 +36,128 @@ export interface CreateVocabularyFilter {
   readonly VocabularyFilterFileUri?: string;
   readonly Tags?: [];
 }
+
 export interface DeleteCallAnalyticsCategory {
   readonly CategoryName: string;
 }
+
 export interface DeleteCallAnalyticsJob {
   readonly CallAnalyticsJobName: string;
 }
+
 export interface DeleteLanguageModel {
   readonly ModelName: string;
 }
+
 export interface DeleteMedicalTranscriptionJob {
   readonly MedicalTranscriptionJobName: string;
 }
+
 export interface DeleteMedicalVocabulary {
   readonly VocabularyName: string;
 }
+
 export interface DeleteTranscriptionJob {
   readonly TranscriptionJobName: string;
 }
+
 export interface DeleteVocabulary {
   readonly VocabularyName: string;
 }
+
 export interface DeleteVocabularyFilter {
   readonly VocabularyFilterName: string;
 }
+
 export interface DescribeLanguageModel {
   readonly ModelName: string;
 }
+
 export interface GetCallAnalyticsCategory {
   readonly CategoryName: string;
 }
+
 export interface GetCallAnalyticsJob {
   readonly CallAnalyticsJobName: string;
 }
+
 export interface GetMedicalTranscriptionJob {
   readonly MedicalTranscriptionJobName: string;
 }
+
 export interface GetMedicalVocabulary {
   readonly VocabularyName: string;
 }
+
 export interface GetTranscriptionJob {
   readonly TranscriptionJobName: string;
 }
+
 export interface GetVocabulary {
   readonly VocabularyName: string;
 }
+
 export interface GetVocabularyFilter {
   readonly VocabularyFilterName: string;
 }
+
 export interface ListCallAnalyticsCategories {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListCallAnalyticsJobs {
   readonly Status?: string;
   readonly JobNameContains?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListLanguageModels {
   readonly StatusEquals?: string;
   readonly NameContains?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListMedicalTranscriptionJobs {
   readonly Status?: string;
   readonly JobNameContains?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListMedicalVocabularies {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly StateEquals?: string;
   readonly NameContains?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface ListTranscriptionJobs {
   readonly Status?: string;
   readonly JobNameContains?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListVocabularies {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly StateEquals?: string;
   readonly NameContains?: string;
 }
+
 export interface ListVocabularyFilters {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly NameContains?: string;
 }
+
 export interface StartCallAnalyticsJob {
   readonly CallAnalyticsJobName: string;
   readonly Media: Media;
@@ -137,6 +167,7 @@ export interface StartCallAnalyticsJob {
   readonly Settings?: CallAnalyticsJobSettings;
   readonly ChannelDefinitions?: [];
 }
+
 export interface StartMedicalTranscriptionJob {
   readonly MedicalTranscriptionJobName: string;
   readonly LanguageCode: string;
@@ -153,6 +184,7 @@ export interface StartMedicalTranscriptionJob {
   readonly Type: string;
   readonly Tags?: [];
 }
+
 export interface StartTranscriptionJob {
   readonly TranscriptionJobName: string;
   readonly LanguageCode?: string;
@@ -173,744 +205,749 @@ export interface StartTranscriptionJob {
   readonly Tags?: [];
   readonly LanguageIdSettings?: {[key: string]: any};
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateCallAnalyticsCategory {
   readonly CategoryName: string;
   readonly Rules: [];
 }
+
 export interface UpdateMedicalVocabulary {
   readonly VocabularyName: string;
   readonly LanguageCode: string;
   readonly VocabularyFileUri?: string;
 }
+
 export interface UpdateVocabulary {
   readonly VocabularyName: string;
   readonly LanguageCode: string;
   readonly Phrases?: [];
   readonly VocabularyFileUri?: string;
 }
+
 export interface UpdateVocabularyFilter {
   readonly VocabularyFilterName: string;
   readonly Words?: [];
   readonly VocabularyFilterFileUri?: string;
 }
 
-
-
-interface AbsoluteTimeRange {
-  readonly StartTime: number;
-  readonly EndTime: number;
-  readonly First: number;
-  readonly Last: number;
+export interface AbsoluteTimeRange {
+  readonly StartTime?: number;
+  readonly EndTime?: number;
+  readonly First?: number;
+  readonly Last?: number;
 }
 
-interface BadRequestException {
-  readonly Message: string;
+export interface BadRequestException {
+  readonly Message?: string;
 }
 
-interface CallAnalyticsJob {
-  readonly CallAnalyticsJobName: string;
-  readonly CallAnalyticsJobStatus: string;
-  readonly LanguageCode: string;
-  readonly MediaSampleRateHertz: number;
-  readonly MediaFormat: string;
-  readonly Media: Media;
-  readonly Transcript: Transcript;
-  readonly StartTime: Date;
-  readonly CreationTime: Date;
-  readonly CompletionTime: Date;
-  readonly FailureReason: string;
-  readonly DataAccessRoleArn: string;
-  readonly IdentifiedLanguageScore: unknown;
-  readonly Settings: CallAnalyticsJobSettings;
-  readonly ChannelDefinitions: [];
+export interface CallAnalyticsJob {
+  readonly CallAnalyticsJobName?: string;
+  readonly CallAnalyticsJobStatus?: string;
+  readonly LanguageCode?: string;
+  readonly MediaSampleRateHertz?: number;
+  readonly MediaFormat?: string;
+  readonly Media?: Media;
+  readonly Transcript?: Transcript;
+  readonly StartTime?: Date;
+  readonly CreationTime?: Date;
+  readonly CompletionTime?: Date;
+  readonly FailureReason?: string;
+  readonly DataAccessRoleArn?: string;
+  readonly IdentifiedLanguageScore?: unknown;
+  readonly Settings?: CallAnalyticsJobSettings;
+  readonly ChannelDefinitions?: [];
 }
 
-interface CallAnalyticsJobSettings {
-  readonly VocabularyName: string;
-  readonly VocabularyFilterName: string;
-  readonly VocabularyFilterMethod: string;
-  readonly LanguageModelName: string;
-  readonly ContentRedaction: ContentRedaction;
-  readonly LanguageOptions: [];
-  readonly LanguageIdSettings: {[key: string]: any};
+export interface CallAnalyticsJobSettings {
+  readonly VocabularyName?: string;
+  readonly VocabularyFilterName?: string;
+  readonly VocabularyFilterMethod?: string;
+  readonly LanguageModelName?: string;
+  readonly ContentRedaction?: ContentRedaction;
+  readonly LanguageOptions?: [];
+  readonly LanguageIdSettings?: {[key: string]: any};
 }
 
-interface CallAnalyticsJobSummary {
-  readonly CallAnalyticsJobName: string;
-  readonly CreationTime: Date;
-  readonly StartTime: Date;
-  readonly CompletionTime: Date;
-  readonly LanguageCode: string;
-  readonly CallAnalyticsJobStatus: string;
-  readonly FailureReason: string;
+export interface CallAnalyticsJobSummary {
+  readonly CallAnalyticsJobName?: string;
+  readonly CreationTime?: Date;
+  readonly StartTime?: Date;
+  readonly CompletionTime?: Date;
+  readonly LanguageCode?: string;
+  readonly CallAnalyticsJobStatus?: string;
+  readonly FailureReason?: string;
 }
 
-interface CategoryProperties {
-  readonly CategoryName: string;
-  readonly Rules: [];
-  readonly CreateTime: Date;
-  readonly LastUpdateTime: Date;
+export interface CategoryProperties {
+  readonly CategoryName?: string;
+  readonly Rules?: [];
+  readonly CreateTime?: Date;
+  readonly LastUpdateTime?: Date;
 }
 
-interface ChannelDefinition {
-  readonly ChannelId: number;
-  readonly ParticipantRole: string;
+export interface ChannelDefinition {
+  readonly ChannelId?: number;
+  readonly ParticipantRole?: string;
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface ContentRedaction {
+export interface ContentRedaction {
   readonly RedactionType: string;
   readonly RedactionOutput: string;
 }
 
-interface CreateCallAnalyticsCategoryRequest {
+export interface CreateCallAnalyticsCategoryRequest {
   readonly CategoryName: string;
   readonly Rules: [];
 }
 
-interface CreateCallAnalyticsCategoryResponse {
-  readonly CategoryProperties: CategoryProperties;
+export interface CreateCallAnalyticsCategoryResponse {
+  readonly CategoryProperties?: CategoryProperties;
 }
 
-interface CreateLanguageModelRequest {
+export interface CreateLanguageModelRequest {
   readonly LanguageCode: string;
   readonly BaseModelName: string;
   readonly ModelName: string;
   readonly InputDataConfig: InputDataConfig;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateLanguageModelResponse {
-  readonly LanguageCode: string;
-  readonly BaseModelName: string;
-  readonly ModelName: string;
-  readonly InputDataConfig: InputDataConfig;
-  readonly ModelStatus: string;
+export interface CreateLanguageModelResponse {
+  readonly LanguageCode?: string;
+  readonly BaseModelName?: string;
+  readonly ModelName?: string;
+  readonly InputDataConfig?: InputDataConfig;
+  readonly ModelStatus?: string;
 }
 
-interface CreateMedicalVocabularyRequest {
+export interface CreateMedicalVocabularyRequest {
   readonly VocabularyName: string;
   readonly LanguageCode: string;
   readonly VocabularyFileUri: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateMedicalVocabularyResponse {
-  readonly VocabularyName: string;
-  readonly LanguageCode: string;
-  readonly VocabularyState: string;
-  readonly LastModifiedTime: Date;
-  readonly FailureReason: string;
+export interface CreateMedicalVocabularyResponse {
+  readonly VocabularyName?: string;
+  readonly LanguageCode?: string;
+  readonly VocabularyState?: string;
+  readonly LastModifiedTime?: Date;
+  readonly FailureReason?: string;
 }
 
-interface CreateVocabularyFilterRequest {
+export interface CreateVocabularyFilterRequest {
   readonly VocabularyFilterName: string;
   readonly LanguageCode: string;
-  readonly Words: [];
-  readonly VocabularyFilterFileUri: string;
-  readonly Tags: [];
+  readonly Words?: [];
+  readonly VocabularyFilterFileUri?: string;
+  readonly Tags?: [];
 }
 
-interface CreateVocabularyFilterResponse {
-  readonly VocabularyFilterName: string;
-  readonly LanguageCode: string;
-  readonly LastModifiedTime: Date;
+export interface CreateVocabularyFilterResponse {
+  readonly VocabularyFilterName?: string;
+  readonly LanguageCode?: string;
+  readonly LastModifiedTime?: Date;
 }
 
-interface CreateVocabularyRequest {
+export interface CreateVocabularyRequest {
   readonly VocabularyName: string;
   readonly LanguageCode: string;
-  readonly Phrases: [];
-  readonly VocabularyFileUri: string;
-  readonly Tags: [];
+  readonly Phrases?: [];
+  readonly VocabularyFileUri?: string;
+  readonly Tags?: [];
 }
 
-interface CreateVocabularyResponse {
-  readonly VocabularyName: string;
-  readonly LanguageCode: string;
-  readonly VocabularyState: string;
-  readonly LastModifiedTime: Date;
-  readonly FailureReason: string;
+export interface CreateVocabularyResponse {
+  readonly VocabularyName?: string;
+  readonly LanguageCode?: string;
+  readonly VocabularyState?: string;
+  readonly LastModifiedTime?: Date;
+  readonly FailureReason?: string;
 }
 
-interface DeleteCallAnalyticsCategoryRequest {
+export interface DeleteCallAnalyticsCategoryRequest {
   readonly CategoryName: string;
 }
 
-interface DeleteCallAnalyticsCategoryResponse {
+export interface DeleteCallAnalyticsCategoryResponse {
 }
 
-interface DeleteCallAnalyticsJobRequest {
+export interface DeleteCallAnalyticsJobRequest {
   readonly CallAnalyticsJobName: string;
 }
 
-interface DeleteCallAnalyticsJobResponse {
+export interface DeleteCallAnalyticsJobResponse {
 }
 
-interface DeleteLanguageModelRequest {
+export interface DeleteLanguageModelRequest {
   readonly ModelName: string;
 }
 
-interface DeleteMedicalTranscriptionJobRequest {
+export interface DeleteMedicalTranscriptionJobRequest {
   readonly MedicalTranscriptionJobName: string;
 }
 
-interface DeleteMedicalVocabularyRequest {
+export interface DeleteMedicalVocabularyRequest {
   readonly VocabularyName: string;
 }
 
-interface DeleteTranscriptionJobRequest {
+export interface DeleteTranscriptionJobRequest {
   readonly TranscriptionJobName: string;
 }
 
-interface DeleteVocabularyFilterRequest {
+export interface DeleteVocabularyFilterRequest {
   readonly VocabularyFilterName: string;
 }
 
-interface DeleteVocabularyRequest {
+export interface DeleteVocabularyRequest {
   readonly VocabularyName: string;
 }
 
-interface DescribeLanguageModelRequest {
+export interface DescribeLanguageModelRequest {
   readonly ModelName: string;
 }
 
-interface DescribeLanguageModelResponse {
-  readonly LanguageModel: LanguageModel;
+export interface DescribeLanguageModelResponse {
+  readonly LanguageModel?: LanguageModel;
 }
 
-interface GetCallAnalyticsCategoryRequest {
+export interface GetCallAnalyticsCategoryRequest {
   readonly CategoryName: string;
 }
 
-interface GetCallAnalyticsCategoryResponse {
-  readonly CategoryProperties: CategoryProperties;
+export interface GetCallAnalyticsCategoryResponse {
+  readonly CategoryProperties?: CategoryProperties;
 }
 
-interface GetCallAnalyticsJobRequest {
+export interface GetCallAnalyticsJobRequest {
   readonly CallAnalyticsJobName: string;
 }
 
-interface GetCallAnalyticsJobResponse {
-  readonly CallAnalyticsJob: CallAnalyticsJob;
+export interface GetCallAnalyticsJobResponse {
+  readonly CallAnalyticsJob?: CallAnalyticsJob;
 }
 
-interface GetMedicalTranscriptionJobRequest {
+export interface GetMedicalTranscriptionJobRequest {
   readonly MedicalTranscriptionJobName: string;
 }
 
-interface GetMedicalTranscriptionJobResponse {
-  readonly MedicalTranscriptionJob: MedicalTranscriptionJob;
+export interface GetMedicalTranscriptionJobResponse {
+  readonly MedicalTranscriptionJob?: MedicalTranscriptionJob;
 }
 
-interface GetMedicalVocabularyRequest {
+export interface GetMedicalVocabularyRequest {
   readonly VocabularyName: string;
 }
 
-interface GetMedicalVocabularyResponse {
-  readonly VocabularyName: string;
-  readonly LanguageCode: string;
-  readonly VocabularyState: string;
-  readonly LastModifiedTime: Date;
-  readonly FailureReason: string;
-  readonly DownloadUri: string;
+export interface GetMedicalVocabularyResponse {
+  readonly VocabularyName?: string;
+  readonly LanguageCode?: string;
+  readonly VocabularyState?: string;
+  readonly LastModifiedTime?: Date;
+  readonly FailureReason?: string;
+  readonly DownloadUri?: string;
 }
 
-interface GetTranscriptionJobRequest {
+export interface GetTranscriptionJobRequest {
   readonly TranscriptionJobName: string;
 }
 
-interface GetTranscriptionJobResponse {
-  readonly TranscriptionJob: TranscriptionJob;
+export interface GetTranscriptionJobResponse {
+  readonly TranscriptionJob?: TranscriptionJob;
 }
 
-interface GetVocabularyFilterRequest {
+export interface GetVocabularyFilterRequest {
   readonly VocabularyFilterName: string;
 }
 
-interface GetVocabularyFilterResponse {
-  readonly VocabularyFilterName: string;
-  readonly LanguageCode: string;
-  readonly LastModifiedTime: Date;
-  readonly DownloadUri: string;
+export interface GetVocabularyFilterResponse {
+  readonly VocabularyFilterName?: string;
+  readonly LanguageCode?: string;
+  readonly LastModifiedTime?: Date;
+  readonly DownloadUri?: string;
 }
 
-interface GetVocabularyRequest {
+export interface GetVocabularyRequest {
   readonly VocabularyName: string;
 }
 
-interface GetVocabularyResponse {
-  readonly VocabularyName: string;
-  readonly LanguageCode: string;
-  readonly VocabularyState: string;
-  readonly LastModifiedTime: Date;
-  readonly FailureReason: string;
-  readonly DownloadUri: string;
+export interface GetVocabularyResponse {
+  readonly VocabularyName?: string;
+  readonly LanguageCode?: string;
+  readonly VocabularyState?: string;
+  readonly LastModifiedTime?: Date;
+  readonly FailureReason?: string;
+  readonly DownloadUri?: string;
 }
 
-interface InputDataConfig {
+export interface InputDataConfig {
   readonly S3Uri: string;
-  readonly TuningDataS3Uri: string;
+  readonly TuningDataS3Uri?: string;
   readonly DataAccessRoleArn: string;
 }
 
-interface InternalFailureException {
-  readonly Message: string;
+export interface InternalFailureException {
+  readonly Message?: string;
 }
 
-interface InterruptionFilter {
-  readonly Threshold: number;
-  readonly ParticipantRole: string;
-  readonly AbsoluteTimeRange: AbsoluteTimeRange;
-  readonly RelativeTimeRange: RelativeTimeRange;
-  readonly Negate: boolean;
+export interface InterruptionFilter {
+  readonly Threshold?: number;
+  readonly ParticipantRole?: string;
+  readonly AbsoluteTimeRange?: AbsoluteTimeRange;
+  readonly RelativeTimeRange?: RelativeTimeRange;
+  readonly Negate?: boolean;
 }
 
-interface JobExecutionSettings {
-  readonly AllowDeferredExecution: boolean;
-  readonly DataAccessRoleArn: string;
+export interface JobExecutionSettings {
+  readonly AllowDeferredExecution?: boolean;
+  readonly DataAccessRoleArn?: string;
 }
 
-interface LanguageIdSettings {
-  readonly VocabularyName: string;
-  readonly VocabularyFilterName: string;
-  readonly LanguageModelName: string;
+export interface LanguageIdSettings {
+  readonly VocabularyName?: string;
+  readonly VocabularyFilterName?: string;
+  readonly LanguageModelName?: string;
 }
 
-interface LanguageModel {
-  readonly ModelName: string;
-  readonly CreateTime: Date;
-  readonly LastModifiedTime: Date;
-  readonly LanguageCode: string;
-  readonly BaseModelName: string;
-  readonly ModelStatus: string;
-  readonly UpgradeAvailability: boolean;
-  readonly FailureReason: string;
-  readonly InputDataConfig: InputDataConfig;
+export interface LanguageModel {
+  readonly ModelName?: string;
+  readonly CreateTime?: Date;
+  readonly LastModifiedTime?: Date;
+  readonly LanguageCode?: string;
+  readonly BaseModelName?: string;
+  readonly ModelStatus?: string;
+  readonly UpgradeAvailability?: boolean;
+  readonly FailureReason?: string;
+  readonly InputDataConfig?: InputDataConfig;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface ListCallAnalyticsCategoriesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListCallAnalyticsCategoriesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListCallAnalyticsCategoriesResponse {
-  readonly NextToken: string;
-  readonly Categories: [];
+export interface ListCallAnalyticsCategoriesResponse {
+  readonly NextToken?: string;
+  readonly Categories?: [];
 }
 
-interface ListCallAnalyticsJobsRequest {
-  readonly Status: string;
-  readonly JobNameContains: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListCallAnalyticsJobsRequest {
+  readonly Status?: string;
+  readonly JobNameContains?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListCallAnalyticsJobsResponse {
-  readonly Status: string;
-  readonly NextToken: string;
-  readonly CallAnalyticsJobSummaries: [];
+export interface ListCallAnalyticsJobsResponse {
+  readonly Status?: string;
+  readonly NextToken?: string;
+  readonly CallAnalyticsJobSummaries?: [];
 }
 
-interface ListLanguageModelsRequest {
-  readonly StatusEquals: string;
-  readonly NameContains: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListLanguageModelsRequest {
+  readonly StatusEquals?: string;
+  readonly NameContains?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListLanguageModelsResponse {
-  readonly NextToken: string;
-  readonly Models: [];
+export interface ListLanguageModelsResponse {
+  readonly NextToken?: string;
+  readonly Models?: [];
 }
 
-interface ListMedicalTranscriptionJobsRequest {
-  readonly Status: string;
-  readonly JobNameContains: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListMedicalTranscriptionJobsRequest {
+  readonly Status?: string;
+  readonly JobNameContains?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListMedicalTranscriptionJobsResponse {
-  readonly Status: string;
-  readonly NextToken: string;
-  readonly MedicalTranscriptionJobSummaries: [];
+export interface ListMedicalTranscriptionJobsResponse {
+  readonly Status?: string;
+  readonly NextToken?: string;
+  readonly MedicalTranscriptionJobSummaries?: [];
 }
 
-interface ListMedicalVocabulariesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly StateEquals: string;
-  readonly NameContains: string;
+export interface ListMedicalVocabulariesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly StateEquals?: string;
+  readonly NameContains?: string;
 }
 
-interface ListMedicalVocabulariesResponse {
-  readonly Status: string;
-  readonly NextToken: string;
-  readonly Vocabularies: [];
+export interface ListMedicalVocabulariesResponse {
+  readonly Status?: string;
+  readonly NextToken?: string;
+  readonly Vocabularies?: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly ResourceArn: string;
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly ResourceArn?: string;
+  readonly Tags?: [];
 }
 
-interface ListTranscriptionJobsRequest {
-  readonly Status: string;
-  readonly JobNameContains: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListTranscriptionJobsRequest {
+  readonly Status?: string;
+  readonly JobNameContains?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTranscriptionJobsResponse {
-  readonly Status: string;
-  readonly NextToken: string;
-  readonly TranscriptionJobSummaries: [];
+export interface ListTranscriptionJobsResponse {
+  readonly Status?: string;
+  readonly NextToken?: string;
+  readonly TranscriptionJobSummaries?: [];
 }
 
-interface ListVocabulariesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly StateEquals: string;
-  readonly NameContains: string;
+export interface ListVocabulariesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly StateEquals?: string;
+  readonly NameContains?: string;
 }
 
-interface ListVocabulariesResponse {
-  readonly Status: string;
-  readonly NextToken: string;
-  readonly Vocabularies: [];
+export interface ListVocabulariesResponse {
+  readonly Status?: string;
+  readonly NextToken?: string;
+  readonly Vocabularies?: [];
 }
 
-interface ListVocabularyFiltersRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly NameContains: string;
+export interface ListVocabularyFiltersRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly NameContains?: string;
 }
 
-interface ListVocabularyFiltersResponse {
-  readonly NextToken: string;
-  readonly VocabularyFilters: [];
+export interface ListVocabularyFiltersResponse {
+  readonly NextToken?: string;
+  readonly VocabularyFilters?: [];
 }
 
-interface Media {
-  readonly MediaFileUri: string;
-  readonly RedactedMediaFileUri: string;
+export interface Media {
+  readonly MediaFileUri?: string;
+  readonly RedactedMediaFileUri?: string;
 }
 
-interface MedicalTranscript {
-  readonly TranscriptFileUri: string;
+export interface MedicalTranscript {
+  readonly TranscriptFileUri?: string;
 }
 
-interface MedicalTranscriptionJob {
-  readonly MedicalTranscriptionJobName: string;
-  readonly TranscriptionJobStatus: string;
-  readonly LanguageCode: string;
-  readonly MediaSampleRateHertz: number;
-  readonly MediaFormat: string;
-  readonly Media: Media;
-  readonly Transcript: MedicalTranscript;
-  readonly StartTime: Date;
-  readonly CreationTime: Date;
-  readonly CompletionTime: Date;
-  readonly FailureReason: string;
-  readonly Settings: MedicalTranscriptionSetting;
-  readonly ContentIdentificationType: string;
-  readonly Specialty: string;
-  readonly Type: string;
-  readonly Tags: [];
+export interface MedicalTranscriptionJob {
+  readonly MedicalTranscriptionJobName?: string;
+  readonly TranscriptionJobStatus?: string;
+  readonly LanguageCode?: string;
+  readonly MediaSampleRateHertz?: number;
+  readonly MediaFormat?: string;
+  readonly Media?: Media;
+  readonly Transcript?: MedicalTranscript;
+  readonly StartTime?: Date;
+  readonly CreationTime?: Date;
+  readonly CompletionTime?: Date;
+  readonly FailureReason?: string;
+  readonly Settings?: MedicalTranscriptionSetting;
+  readonly ContentIdentificationType?: string;
+  readonly Specialty?: string;
+  readonly Type?: string;
+  readonly Tags?: [];
 }
 
-interface MedicalTranscriptionJobSummary {
-  readonly MedicalTranscriptionJobName: string;
-  readonly CreationTime: Date;
-  readonly StartTime: Date;
-  readonly CompletionTime: Date;
-  readonly LanguageCode: string;
-  readonly TranscriptionJobStatus: string;
-  readonly FailureReason: string;
-  readonly OutputLocationType: string;
-  readonly Specialty: string;
-  readonly ContentIdentificationType: string;
-  readonly Type: string;
+export interface MedicalTranscriptionJobSummary {
+  readonly MedicalTranscriptionJobName?: string;
+  readonly CreationTime?: Date;
+  readonly StartTime?: Date;
+  readonly CompletionTime?: Date;
+  readonly LanguageCode?: string;
+  readonly TranscriptionJobStatus?: string;
+  readonly FailureReason?: string;
+  readonly OutputLocationType?: string;
+  readonly Specialty?: string;
+  readonly ContentIdentificationType?: string;
+  readonly Type?: string;
 }
 
-interface MedicalTranscriptionSetting {
-  readonly ShowSpeakerLabels: boolean;
-  readonly MaxSpeakerLabels: number;
-  readonly ChannelIdentification: boolean;
-  readonly ShowAlternatives: boolean;
-  readonly MaxAlternatives: number;
-  readonly VocabularyName: string;
+export interface MedicalTranscriptionSetting {
+  readonly ShowSpeakerLabels?: boolean;
+  readonly MaxSpeakerLabels?: number;
+  readonly ChannelIdentification?: boolean;
+  readonly ShowAlternatives?: boolean;
+  readonly MaxAlternatives?: number;
+  readonly VocabularyName?: string;
 }
 
-interface ModelSettings {
-  readonly LanguageModelName: string;
+export interface ModelSettings {
+  readonly LanguageModelName?: string;
 }
 
-interface NonTalkTimeFilter {
-  readonly Threshold: number;
-  readonly AbsoluteTimeRange: AbsoluteTimeRange;
-  readonly RelativeTimeRange: RelativeTimeRange;
-  readonly Negate: boolean;
+export interface NonTalkTimeFilter {
+  readonly Threshold?: number;
+  readonly AbsoluteTimeRange?: AbsoluteTimeRange;
+  readonly RelativeTimeRange?: RelativeTimeRange;
+  readonly Negate?: boolean;
 }
 
-interface NotFoundException {
-  readonly Message: string;
+export interface NotFoundException {
+  readonly Message?: string;
 }
 
-interface RelativeTimeRange {
-  readonly StartPercentage: number;
-  readonly EndPercentage: number;
-  readonly First: number;
-  readonly Last: number;
+export interface RelativeTimeRange {
+  readonly StartPercentage?: number;
+  readonly EndPercentage?: number;
+  readonly First?: number;
+  readonly Last?: number;
 }
 
-interface Rule {
-  readonly NonTalkTimeFilter: NonTalkTimeFilter;
-  readonly InterruptionFilter: InterruptionFilter;
-  readonly TranscriptFilter: TranscriptFilter;
-  readonly SentimentFilter: SentimentFilter;
+export interface Rule {
+  readonly NonTalkTimeFilter?: NonTalkTimeFilter;
+  readonly InterruptionFilter?: InterruptionFilter;
+  readonly TranscriptFilter?: TranscriptFilter;
+  readonly SentimentFilter?: SentimentFilter;
 }
 
-interface SentimentFilter {
+export interface SentimentFilter {
   readonly Sentiments: [];
-  readonly AbsoluteTimeRange: AbsoluteTimeRange;
-  readonly RelativeTimeRange: RelativeTimeRange;
-  readonly ParticipantRole: string;
-  readonly Negate: boolean;
+  readonly AbsoluteTimeRange?: AbsoluteTimeRange;
+  readonly RelativeTimeRange?: RelativeTimeRange;
+  readonly ParticipantRole?: string;
+  readonly Negate?: boolean;
 }
 
-interface Settings {
-  readonly VocabularyName: string;
-  readonly ShowSpeakerLabels: boolean;
-  readonly MaxSpeakerLabels: number;
-  readonly ChannelIdentification: boolean;
-  readonly ShowAlternatives: boolean;
-  readonly MaxAlternatives: number;
-  readonly VocabularyFilterName: string;
-  readonly VocabularyFilterMethod: string;
+export interface Settings {
+  readonly VocabularyName?: string;
+  readonly ShowSpeakerLabels?: boolean;
+  readonly MaxSpeakerLabels?: number;
+  readonly ChannelIdentification?: boolean;
+  readonly ShowAlternatives?: boolean;
+  readonly MaxAlternatives?: number;
+  readonly VocabularyFilterName?: string;
+  readonly VocabularyFilterMethod?: string;
 }
 
-interface StartCallAnalyticsJobRequest {
+export interface StartCallAnalyticsJobRequest {
   readonly CallAnalyticsJobName: string;
   readonly Media: Media;
-  readonly OutputLocation: string;
-  readonly OutputEncryptionKMSKeyId: string;
+  readonly OutputLocation?: string;
+  readonly OutputEncryptionKMSKeyId?: string;
   readonly DataAccessRoleArn: string;
-  readonly Settings: CallAnalyticsJobSettings;
-  readonly ChannelDefinitions: [];
+  readonly Settings?: CallAnalyticsJobSettings;
+  readonly ChannelDefinitions?: [];
 }
 
-interface StartCallAnalyticsJobResponse {
-  readonly CallAnalyticsJob: CallAnalyticsJob;
+export interface StartCallAnalyticsJobResponse {
+  readonly CallAnalyticsJob?: CallAnalyticsJob;
 }
 
-interface StartMedicalTranscriptionJobRequest {
+export interface StartMedicalTranscriptionJobRequest {
   readonly MedicalTranscriptionJobName: string;
   readonly LanguageCode: string;
-  readonly MediaSampleRateHertz: number;
-  readonly MediaFormat: string;
+  readonly MediaSampleRateHertz?: number;
+  readonly MediaFormat?: string;
   readonly Media: Media;
   readonly OutputBucketName: string;
-  readonly OutputKey: string;
-  readonly OutputEncryptionKMSKeyId: string;
-  readonly KMSEncryptionContext: {[key: string]: any};
-  readonly Settings: MedicalTranscriptionSetting;
-  readonly ContentIdentificationType: string;
+  readonly OutputKey?: string;
+  readonly OutputEncryptionKMSKeyId?: string;
+  readonly KMSEncryptionContext?: {[key: string]: any};
+  readonly Settings?: MedicalTranscriptionSetting;
+  readonly ContentIdentificationType?: string;
   readonly Specialty: string;
   readonly Type: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface StartMedicalTranscriptionJobResponse {
-  readonly MedicalTranscriptionJob: MedicalTranscriptionJob;
+export interface StartMedicalTranscriptionJobResponse {
+  readonly MedicalTranscriptionJob?: MedicalTranscriptionJob;
 }
 
-interface StartTranscriptionJobRequest {
+export interface StartTranscriptionJobRequest {
   readonly TranscriptionJobName: string;
-  readonly LanguageCode: string;
-  readonly MediaSampleRateHertz: number;
-  readonly MediaFormat: string;
+  readonly LanguageCode?: string;
+  readonly MediaSampleRateHertz?: number;
+  readonly MediaFormat?: string;
   readonly Media: Media;
-  readonly OutputBucketName: string;
-  readonly OutputKey: string;
-  readonly OutputEncryptionKMSKeyId: string;
-  readonly KMSEncryptionContext: {[key: string]: any};
-  readonly Settings: Settings;
-  readonly ModelSettings: ModelSettings;
-  readonly JobExecutionSettings: JobExecutionSettings;
-  readonly ContentRedaction: ContentRedaction;
-  readonly IdentifyLanguage: boolean;
-  readonly LanguageOptions: [];
-  readonly Subtitles: Subtitles;
-  readonly Tags: [];
-  readonly LanguageIdSettings: {[key: string]: any};
+  readonly OutputBucketName?: string;
+  readonly OutputKey?: string;
+  readonly OutputEncryptionKMSKeyId?: string;
+  readonly KMSEncryptionContext?: {[key: string]: any};
+  readonly Settings?: Settings;
+  readonly ModelSettings?: ModelSettings;
+  readonly JobExecutionSettings?: JobExecutionSettings;
+  readonly ContentRedaction?: ContentRedaction;
+  readonly IdentifyLanguage?: boolean;
+  readonly LanguageOptions?: [];
+  readonly Subtitles?: Subtitles;
+  readonly Tags?: [];
+  readonly LanguageIdSettings?: {[key: string]: any};
 }
 
-interface StartTranscriptionJobResponse {
-  readonly TranscriptionJob: TranscriptionJob;
+export interface StartTranscriptionJobResponse {
+  readonly TranscriptionJob?: TranscriptionJob;
 }
 
-interface Subtitles {
-  readonly Formats: [];
+export interface Subtitles {
+  readonly Formats?: [];
 }
 
-interface SubtitlesOutput {
-  readonly Formats: [];
-  readonly SubtitleFileUris: [];
+export interface SubtitlesOutput {
+  readonly Formats?: [];
+  readonly SubtitleFileUris?: [];
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface Transcript {
-  readonly TranscriptFileUri: string;
-  readonly RedactedTranscriptFileUri: string;
+export interface Transcript {
+  readonly TranscriptFileUri?: string;
+  readonly RedactedTranscriptFileUri?: string;
 }
 
-interface TranscriptFilter {
+export interface TranscriptFilter {
   readonly TranscriptFilterType: string;
-  readonly AbsoluteTimeRange: AbsoluteTimeRange;
-  readonly RelativeTimeRange: RelativeTimeRange;
-  readonly ParticipantRole: string;
-  readonly Negate: boolean;
+  readonly AbsoluteTimeRange?: AbsoluteTimeRange;
+  readonly RelativeTimeRange?: RelativeTimeRange;
+  readonly ParticipantRole?: string;
+  readonly Negate?: boolean;
   readonly Targets: [];
 }
 
-interface TranscriptionJob {
-  readonly TranscriptionJobName: string;
-  readonly TranscriptionJobStatus: string;
-  readonly LanguageCode: string;
-  readonly MediaSampleRateHertz: number;
-  readonly MediaFormat: string;
-  readonly Media: Media;
-  readonly Transcript: Transcript;
-  readonly StartTime: Date;
-  readonly CreationTime: Date;
-  readonly CompletionTime: Date;
-  readonly FailureReason: string;
-  readonly Settings: Settings;
-  readonly ModelSettings: ModelSettings;
-  readonly JobExecutionSettings: JobExecutionSettings;
-  readonly ContentRedaction: ContentRedaction;
-  readonly IdentifyLanguage: boolean;
-  readonly LanguageOptions: [];
-  readonly IdentifiedLanguageScore: unknown;
-  readonly Tags: [];
-  readonly Subtitles: SubtitlesOutput;
-  readonly LanguageIdSettings: {[key: string]: any};
+export interface TranscriptionJob {
+  readonly TranscriptionJobName?: string;
+  readonly TranscriptionJobStatus?: string;
+  readonly LanguageCode?: string;
+  readonly MediaSampleRateHertz?: number;
+  readonly MediaFormat?: string;
+  readonly Media?: Media;
+  readonly Transcript?: Transcript;
+  readonly StartTime?: Date;
+  readonly CreationTime?: Date;
+  readonly CompletionTime?: Date;
+  readonly FailureReason?: string;
+  readonly Settings?: Settings;
+  readonly ModelSettings?: ModelSettings;
+  readonly JobExecutionSettings?: JobExecutionSettings;
+  readonly ContentRedaction?: ContentRedaction;
+  readonly IdentifyLanguage?: boolean;
+  readonly LanguageOptions?: [];
+  readonly IdentifiedLanguageScore?: unknown;
+  readonly Tags?: [];
+  readonly Subtitles?: SubtitlesOutput;
+  readonly LanguageIdSettings?: {[key: string]: any};
 }
 
-interface TranscriptionJobSummary {
-  readonly TranscriptionJobName: string;
-  readonly CreationTime: Date;
-  readonly StartTime: Date;
-  readonly CompletionTime: Date;
-  readonly LanguageCode: string;
-  readonly TranscriptionJobStatus: string;
-  readonly FailureReason: string;
-  readonly OutputLocationType: string;
-  readonly ContentRedaction: ContentRedaction;
-  readonly ModelSettings: ModelSettings;
-  readonly IdentifyLanguage: boolean;
-  readonly IdentifiedLanguageScore: unknown;
+export interface TranscriptionJobSummary {
+  readonly TranscriptionJobName?: string;
+  readonly CreationTime?: Date;
+  readonly StartTime?: Date;
+  readonly CompletionTime?: Date;
+  readonly LanguageCode?: string;
+  readonly TranscriptionJobStatus?: string;
+  readonly FailureReason?: string;
+  readonly OutputLocationType?: string;
+  readonly ContentRedaction?: ContentRedaction;
+  readonly ModelSettings?: ModelSettings;
+  readonly IdentifyLanguage?: boolean;
+  readonly IdentifiedLanguageScore?: unknown;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateCallAnalyticsCategoryRequest {
+export interface UpdateCallAnalyticsCategoryRequest {
   readonly CategoryName: string;
   readonly Rules: [];
 }
 
-interface UpdateCallAnalyticsCategoryResponse {
-  readonly CategoryProperties: CategoryProperties;
+export interface UpdateCallAnalyticsCategoryResponse {
+  readonly CategoryProperties?: CategoryProperties;
 }
 
-interface UpdateMedicalVocabularyRequest {
+export interface UpdateMedicalVocabularyRequest {
   readonly VocabularyName: string;
   readonly LanguageCode: string;
-  readonly VocabularyFileUri: string;
+  readonly VocabularyFileUri?: string;
 }
 
-interface UpdateMedicalVocabularyResponse {
-  readonly VocabularyName: string;
-  readonly LanguageCode: string;
-  readonly LastModifiedTime: Date;
-  readonly VocabularyState: string;
+export interface UpdateMedicalVocabularyResponse {
+  readonly VocabularyName?: string;
+  readonly LanguageCode?: string;
+  readonly LastModifiedTime?: Date;
+  readonly VocabularyState?: string;
 }
 
-interface UpdateVocabularyFilterRequest {
+export interface UpdateVocabularyFilterRequest {
   readonly VocabularyFilterName: string;
-  readonly Words: [];
-  readonly VocabularyFilterFileUri: string;
+  readonly Words?: [];
+  readonly VocabularyFilterFileUri?: string;
 }
 
-interface UpdateVocabularyFilterResponse {
-  readonly VocabularyFilterName: string;
-  readonly LanguageCode: string;
-  readonly LastModifiedTime: Date;
+export interface UpdateVocabularyFilterResponse {
+  readonly VocabularyFilterName?: string;
+  readonly LanguageCode?: string;
+  readonly LastModifiedTime?: Date;
 }
 
-interface UpdateVocabularyRequest {
+export interface UpdateVocabularyRequest {
   readonly VocabularyName: string;
   readonly LanguageCode: string;
-  readonly Phrases: [];
-  readonly VocabularyFileUri: string;
+  readonly Phrases?: [];
+  readonly VocabularyFileUri?: string;
 }
 
-interface UpdateVocabularyResponse {
-  readonly VocabularyName: string;
-  readonly LanguageCode: string;
-  readonly LastModifiedTime: Date;
-  readonly VocabularyState: string;
+export interface UpdateVocabularyResponse {
+  readonly VocabularyName?: string;
+  readonly LanguageCode?: string;
+  readonly LastModifiedTime?: Date;
+  readonly VocabularyState?: string;
 }
 
-interface VocabularyFilterInfo {
-  readonly VocabularyFilterName: string;
-  readonly LanguageCode: string;
-  readonly LastModifiedTime: Date;
+export interface VocabularyFilterInfo {
+  readonly VocabularyFilterName?: string;
+  readonly LanguageCode?: string;
+  readonly LastModifiedTime?: Date;
 }
 
-interface VocabularyInfo {
-  readonly VocabularyName: string;
-  readonly LanguageCode: string;
-  readonly LastModifiedTime: Date;
-  readonly VocabularyState: string;
+export interface VocabularyInfo {
+  readonly VocabularyName?: string;
+  readonly LanguageCode?: string;
+  readonly LastModifiedTime?: Date;
+  readonly VocabularyState?: string;
 }
+
 

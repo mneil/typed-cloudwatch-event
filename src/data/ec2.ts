@@ -6,33 +6,40 @@ export interface AcceptReservedInstancesExchangeQuote {
   readonly ReservedInstanceIds: [];
   readonly TargetConfigurations?: [];
 }
+
 export interface AcceptTransitGatewayMulticastDomainAssociations {
   readonly TransitGatewayMulticastDomainId?: string;
   readonly TransitGatewayAttachmentId?: string;
   readonly SubnetIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface AcceptTransitGatewayPeeringAttachment {
   readonly TransitGatewayAttachmentId: string;
   readonly DryRun?: boolean;
 }
+
 export interface AcceptTransitGatewayVpcAttachment {
   readonly TransitGatewayAttachmentId: string;
   readonly DryRun?: boolean;
 }
+
 export interface AcceptVpcEndpointConnections {
   readonly DryRun?: boolean;
   readonly ServiceId: string;
   readonly VpcEndpointIds: [];
 }
+
 export interface AcceptVpcPeeringConnection {
   readonly DryRun?: boolean;
   readonly VpcPeeringConnectionId?: string;
 }
+
 export interface AdvertiseByoipCidr {
   readonly Cidr: string;
   readonly DryRun?: boolean;
 }
+
 export interface AllocateAddress {
   readonly Domain?: string;
   readonly Address?: string;
@@ -42,6 +49,7 @@ export interface AllocateAddress {
   readonly DryRun?: boolean;
   readonly TagSpecifications?: [];
 }
+
 export interface AllocateHosts {
   readonly AutoPlacement?: string;
   readonly AvailabilityZone: string;
@@ -52,6 +60,7 @@ export interface AllocateHosts {
   readonly TagSpecifications?: [];
   readonly HostRecovery?: string;
 }
+
 export interface AllocateIpamPoolCidr {
   readonly DryRun?: boolean;
   readonly IpamPoolId: string;
@@ -62,12 +71,14 @@ export interface AllocateIpamPoolCidr {
   readonly PreviewNextCidr?: boolean;
   readonly DisallowedCidrs?: [];
 }
+
 export interface ApplySecurityGroupsToClientVpnTargetNetwork {
   readonly ClientVpnEndpointId: string;
   readonly VpcId: string;
   readonly SecurityGroupIds: [];
   readonly DryRun?: boolean;
 }
+
 export interface AssignIpv6Addresses {
   readonly Ipv6AddressCount?: number;
   readonly Ipv6Addresses?: [];
@@ -75,6 +86,7 @@ export interface AssignIpv6Addresses {
   readonly Ipv6Prefixes?: [];
   readonly NetworkInterfaceId: string;
 }
+
 export interface AssignPrivateIpAddresses {
   readonly AllowReassignment?: boolean;
   readonly NetworkInterfaceId: string;
@@ -83,6 +95,7 @@ export interface AssignPrivateIpAddresses {
   readonly Ipv4Prefixes?: [];
   readonly Ipv4PrefixCount?: number;
 }
+
 export interface AssociateAddress {
   readonly AllocationId?: string;
   readonly InstanceId?: string;
@@ -92,52 +105,62 @@ export interface AssociateAddress {
   readonly NetworkInterfaceId?: string;
   readonly PrivateIpAddress?: string;
 }
+
 export interface AssociateClientVpnTargetNetwork {
   readonly ClientVpnEndpointId: string;
   readonly SubnetId: string;
   readonly ClientToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface AssociateDhcpOptions {
   readonly DhcpOptionsId: string;
   readonly VpcId: string;
   readonly DryRun?: boolean;
 }
+
 export interface AssociateEnclaveCertificateIamRole {
   readonly CertificateArn?: string;
   readonly RoleArn?: string;
   readonly DryRun?: boolean;
 }
+
 export interface AssociateIamInstanceProfile {
   readonly IamInstanceProfile: IamInstanceProfileSpecification;
   readonly InstanceId: string;
 }
+
 export interface AssociateInstanceEventWindow {
   readonly DryRun?: boolean;
   readonly InstanceEventWindowId: string;
   readonly AssociationTarget: InstanceEventWindowAssociationRequest;
 }
+
 export interface AssociateRouteTable {
   readonly DryRun?: boolean;
   readonly RouteTableId: string;
   readonly SubnetId?: string;
   readonly GatewayId?: string;
 }
+
 export interface AssociateSubnetCidrBlock {
   readonly Ipv6CidrBlock: string;
   readonly SubnetId: string;
 }
+
 export interface AssociateTransitGatewayMulticastDomain {
   readonly TransitGatewayMulticastDomainId?: string;
   readonly TransitGatewayAttachmentId?: string;
   readonly SubnetIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface AssociateTransitGatewayRouteTable {
   readonly TransitGatewayRouteTableId: string;
   readonly TransitGatewayAttachmentId: string;
   readonly DryRun?: boolean;
 }
+
 export interface AssociateTrunkInterface {
   readonly BranchInterfaceId: string;
   readonly TrunkInterfaceId: string;
@@ -146,6 +169,7 @@ export interface AssociateTrunkInterface {
   readonly ClientToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface AssociateVpcCidrBlock {
   readonly AmazonProvidedIpv6CidrBlock?: boolean;
   readonly CidrBlock?: string;
@@ -158,17 +182,20 @@ export interface AssociateVpcCidrBlock {
   readonly Ipv6IpamPoolId?: string;
   readonly Ipv6NetmaskLength?: number;
 }
+
 export interface AttachClassicLinkVpc {
   readonly DryRun?: boolean;
   readonly Groups: [];
   readonly InstanceId: string;
   readonly VpcId: string;
 }
+
 export interface AttachInternetGateway {
   readonly DryRun?: boolean;
   readonly InternetGatewayId: string;
   readonly VpcId: string;
 }
+
 export interface AttachNetworkInterface {
   readonly DeviceIndex: number;
   readonly DryRun?: boolean;
@@ -176,17 +203,20 @@ export interface AttachNetworkInterface {
   readonly NetworkInterfaceId: string;
   readonly NetworkCardIndex?: number;
 }
+
 export interface AttachVolume {
   readonly Device: string;
   readonly InstanceId: string;
   readonly VolumeId: string;
   readonly DryRun?: boolean;
 }
+
 export interface AttachVpnGateway {
   readonly VpcId: string;
   readonly VpnGatewayId: string;
   readonly DryRun?: boolean;
 }
+
 export interface AuthorizeClientVpnIngress {
   readonly ClientVpnEndpointId: string;
   readonly TargetNetworkCidr: string;
@@ -196,6 +226,7 @@ export interface AuthorizeClientVpnIngress {
   readonly ClientToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface AuthorizeSecurityGroupEgress {
   readonly DryRun?: boolean;
   readonly GroupId: string;
@@ -208,6 +239,7 @@ export interface AuthorizeSecurityGroupEgress {
   readonly SourceSecurityGroupName?: string;
   readonly SourceSecurityGroupOwnerId?: string;
 }
+
 export interface AuthorizeSecurityGroupIngress {
   readonly CidrIp?: string;
   readonly FromPort?: number;
@@ -221,53 +253,65 @@ export interface AuthorizeSecurityGroupIngress {
   readonly DryRun?: boolean;
   readonly TagSpecifications?: [];
 }
+
 export interface BundleInstance {
   readonly InstanceId: string;
   readonly Storage: Storage;
   readonly DryRun?: boolean;
 }
+
 export interface CancelBundleTask {
   readonly BundleId: string;
   readonly DryRun?: boolean;
 }
+
 export interface CancelCapacityReservation {
   readonly CapacityReservationId: string;
   readonly DryRun?: boolean;
 }
+
 export interface CancelCapacityReservationFleets {
   readonly DryRun?: boolean;
   readonly CapacityReservationFleetIds: [];
 }
+
 export interface CancelConversionTask {
   readonly ConversionTaskId: string;
   readonly DryRun?: boolean;
   readonly ReasonMessage?: string;
 }
+
 export interface CancelExportTask {
   readonly ExportTaskId: string;
 }
+
 export interface CancelImportTask {
   readonly CancelReason?: string;
   readonly DryRun?: boolean;
   readonly ImportTaskId?: string;
 }
+
 export interface CancelReservedInstancesListing {
   readonly ReservedInstancesListingId: string;
 }
+
 export interface CancelSpotFleetRequests {
   readonly DryRun?: boolean;
   readonly SpotFleetRequestIds: [];
   readonly TerminateInstances: boolean;
 }
+
 export interface CancelSpotInstanceRequests {
   readonly DryRun?: boolean;
   readonly SpotInstanceRequestIds: [];
 }
+
 export interface ConfirmProductInstance {
   readonly InstanceId: string;
   readonly ProductCode: string;
   readonly DryRun?: boolean;
 }
+
 export interface CopyFpgaImage {
   readonly DryRun?: boolean;
   readonly SourceFpgaImageId: string;
@@ -276,6 +320,7 @@ export interface CopyFpgaImage {
   readonly SourceRegion: string;
   readonly ClientToken?: string;
 }
+
 export interface CopyImage {
   readonly ClientToken?: string;
   readonly Description?: string;
@@ -287,6 +332,7 @@ export interface CopyImage {
   readonly DestinationOutpostArn?: string;
   readonly DryRun?: boolean;
 }
+
 export interface CopySnapshot {
   readonly Description?: string;
   readonly DestinationOutpostArn?: string;
@@ -299,6 +345,7 @@ export interface CopySnapshot {
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateCapacityReservation {
   readonly ClientToken?: string;
   readonly InstanceType: string;
@@ -316,6 +363,7 @@ export interface CreateCapacityReservation {
   readonly DryRun?: boolean;
   readonly OutpostArn?: string;
 }
+
 export interface CreateCapacityReservationFleet {
   readonly AllocationStrategy?: string;
   readonly ClientToken?: string;
@@ -327,12 +375,14 @@ export interface CreateCapacityReservationFleet {
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateCarrierGateway {
   readonly VpcId: string;
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
   readonly ClientToken?: string;
 }
+
 export interface CreateClientVpnEndpoint {
   readonly ClientCidrBlock: string;
   readonly ServerCertificateArn: string;
@@ -351,6 +401,7 @@ export interface CreateClientVpnEndpoint {
   readonly SelfServicePortal?: string;
   readonly ClientConnectOptions?: ClientConnectOptions;
 }
+
 export interface CreateClientVpnRoute {
   readonly ClientVpnEndpointId: string;
   readonly DestinationCidrBlock: string;
@@ -359,6 +410,7 @@ export interface CreateClientVpnRoute {
   readonly ClientToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface CreateCustomerGateway {
   readonly BgpAsn: number;
   readonly PublicIp?: string;
@@ -368,25 +420,30 @@ export interface CreateCustomerGateway {
   readonly DeviceName?: string;
   readonly DryRun?: boolean;
 }
+
 export interface CreateDefaultSubnet {
   readonly AvailabilityZone: string;
   readonly DryRun?: boolean;
   readonly Ipv6Native?: boolean;
 }
+
 export interface CreateDefaultVpc {
   readonly DryRun?: boolean;
 }
+
 export interface CreateDhcpOptions {
   readonly DhcpConfigurations: [];
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateEgressOnlyInternetGateway {
   readonly ClientToken?: string;
   readonly DryRun?: boolean;
   readonly VpcId: string;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateFleet {
   readonly DryRun?: boolean;
   readonly ClientToken?: string;
@@ -403,6 +460,7 @@ export interface CreateFleet {
   readonly TagSpecifications?: [];
   readonly Context?: string;
 }
+
 export interface CreateFlowLogs {
   readonly DryRun?: boolean;
   readonly ClientToken?: string;
@@ -418,6 +476,7 @@ export interface CreateFlowLogs {
   readonly MaxAggregationInterval?: number;
   readonly DestinationOptions?: DestinationOptionsRequest;
 }
+
 export interface CreateFpgaImage {
   readonly DryRun?: boolean;
   readonly InputStorageLocation: StorageLocation;
@@ -427,6 +486,7 @@ export interface CreateFpgaImage {
   readonly ClientToken?: string;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateImage {
   readonly BlockDeviceMappings?: [];
   readonly Description?: string;
@@ -436,6 +496,7 @@ export interface CreateImage {
   readonly NoReboot?: boolean;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateInstanceEventWindow {
   readonly DryRun?: boolean;
   readonly Name?: string;
@@ -443,6 +504,7 @@ export interface CreateInstanceEventWindow {
   readonly CronExpression?: string;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateInstanceExportTask {
   readonly Description?: string;
   readonly ExportToS3Task: ExportToS3TaskSpecification;
@@ -450,10 +512,12 @@ export interface CreateInstanceExportTask {
   readonly TargetEnvironment: string;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateInternetGateway {
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateIpam {
   readonly DryRun?: boolean;
   readonly Description?: string;
@@ -461,6 +525,7 @@ export interface CreateIpam {
   readonly TagSpecifications?: [];
   readonly ClientToken?: string;
 }
+
 export interface CreateIpamPool {
   readonly DryRun?: boolean;
   readonly IpamScopeId: string;
@@ -478,6 +543,7 @@ export interface CreateIpamPool {
   readonly ClientToken?: string;
   readonly AwsService?: string;
 }
+
 export interface CreateIpamScope {
   readonly DryRun?: boolean;
   readonly IpamId: string;
@@ -485,12 +551,14 @@ export interface CreateIpamScope {
   readonly TagSpecifications?: [];
   readonly ClientToken?: string;
 }
+
 export interface CreateKeyPair {
   readonly KeyName: string;
   readonly DryRun?: boolean;
   readonly KeyType?: string;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateLaunchTemplate {
   readonly DryRun?: boolean;
   readonly ClientToken?: string;
@@ -499,6 +567,7 @@ export interface CreateLaunchTemplate {
   readonly LaunchTemplateData: RequestLaunchTemplateData;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateLaunchTemplateVersion {
   readonly DryRun?: boolean;
   readonly ClientToken?: string;
@@ -508,18 +577,21 @@ export interface CreateLaunchTemplateVersion {
   readonly VersionDescription?: string;
   readonly LaunchTemplateData: RequestLaunchTemplateData;
 }
+
 export interface CreateLocalGatewayRoute {
   readonly DestinationCidrBlock: string;
   readonly LocalGatewayRouteTableId: string;
   readonly LocalGatewayVirtualInterfaceGroupId: string;
   readonly DryRun?: boolean;
 }
+
 export interface CreateLocalGatewayRouteTableVpcAssociation {
   readonly LocalGatewayRouteTableId: string;
   readonly VpcId: string;
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateManagedPrefixList {
   readonly DryRun?: boolean;
   readonly PrefixListName: string;
@@ -529,6 +601,7 @@ export interface CreateManagedPrefixList {
   readonly AddressFamily: string;
   readonly ClientToken?: string;
 }
+
 export interface CreateNatGateway {
   readonly AllocationId?: string;
   readonly ClientToken?: string;
@@ -537,11 +610,13 @@ export interface CreateNatGateway {
   readonly TagSpecifications?: [];
   readonly ConnectivityType?: string;
 }
+
 export interface CreateNetworkAcl {
   readonly DryRun?: boolean;
   readonly VpcId: string;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateNetworkAclEntry {
   readonly CidrBlock?: string;
   readonly DryRun?: boolean;
@@ -554,6 +629,7 @@ export interface CreateNetworkAclEntry {
   readonly RuleAction: string;
   readonly RuleNumber: number;
 }
+
 export interface CreateNetworkInsightsAccessScope {
   readonly MatchPaths?: [];
   readonly ExcludePaths?: [];
@@ -561,6 +637,7 @@ export interface CreateNetworkInsightsAccessScope {
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateNetworkInsightsPath {
   readonly SourceIp?: string;
   readonly DestinationIp?: string;
@@ -572,6 +649,7 @@ export interface CreateNetworkInsightsPath {
   readonly DryRun?: boolean;
   readonly ClientToken: string;
 }
+
 export interface CreateNetworkInterface {
   readonly Description?: string;
   readonly DryRun?: boolean;
@@ -590,6 +668,7 @@ export interface CreateNetworkInterface {
   readonly TagSpecifications?: [];
   readonly ClientToken?: string;
 }
+
 export interface CreateNetworkInterfacePermission {
   readonly NetworkInterfaceId: string;
   readonly AwsAccountId?: string;
@@ -597,6 +676,7 @@ export interface CreateNetworkInterfacePermission {
   readonly Permission: string;
   readonly DryRun?: boolean;
 }
+
 export interface CreatePlacementGroup {
   readonly DryRun?: boolean;
   readonly GroupName?: string;
@@ -604,10 +684,12 @@ export interface CreatePlacementGroup {
   readonly PartitionCount?: number;
   readonly TagSpecifications?: [];
 }
+
 export interface CreatePublicIpv4Pool {
   readonly DryRun?: boolean;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateReplaceRootVolumeTask {
   readonly InstanceId: string;
   readonly SnapshotId?: string;
@@ -615,12 +697,14 @@ export interface CreateReplaceRootVolumeTask {
   readonly DryRun?: boolean;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateReservedInstancesListing {
   readonly ClientToken: string;
   readonly InstanceCount: number;
   readonly PriceSchedules: [];
   readonly ReservedInstancesId: string;
 }
+
 export interface CreateRestoreImageTask {
   readonly Bucket: string;
   readonly ObjectKey: string;
@@ -628,6 +712,7 @@ export interface CreateRestoreImageTask {
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateRoute {
   readonly DestinationCidrBlock?: string;
   readonly DestinationIpv6CidrBlock?: string;
@@ -646,11 +731,13 @@ export interface CreateRoute {
   readonly VpcPeeringConnectionId?: string;
   readonly CoreNetworkArn?: string;
 }
+
 export interface CreateRouteTable {
   readonly DryRun?: boolean;
   readonly VpcId: string;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateSecurityGroup {
   readonly Description: string;
   readonly GroupName: string;
@@ -658,6 +745,7 @@ export interface CreateSecurityGroup {
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateSnapshot {
   readonly Description?: string;
   readonly OutpostArn?: string;
@@ -665,6 +753,7 @@ export interface CreateSnapshot {
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateSnapshots {
   readonly Description?: string;
   readonly InstanceSpecification: InstanceSpecification;
@@ -673,17 +762,20 @@ export interface CreateSnapshots {
   readonly DryRun?: boolean;
   readonly CopyTagsFromSource?: string;
 }
+
 export interface CreateSpotDatafeedSubscription {
   readonly Bucket: string;
   readonly DryRun?: boolean;
   readonly Prefix?: string;
 }
+
 export interface CreateStoreImageTask {
   readonly ImageId: string;
   readonly Bucket: string;
   readonly S3ObjectTags?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateSubnet {
   readonly TagSpecifications?: [];
   readonly AvailabilityZone?: string;
@@ -695,6 +787,7 @@ export interface CreateSubnet {
   readonly DryRun?: boolean;
   readonly Ipv6Native?: boolean;
 }
+
 export interface CreateSubnetCidrReservation {
   readonly TagSpecifications?: [];
   readonly SubnetId: string;
@@ -703,17 +796,20 @@ export interface CreateSubnetCidrReservation {
   readonly Description?: string;
   readonly DryRun?: boolean;
 }
+
 export interface CreateTags {
   readonly DryRun?: boolean;
   readonly Resources: [];
   readonly Tags: [];
 }
+
 export interface CreateTrafficMirrorFilter {
   readonly Description?: string;
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
   readonly ClientToken?: string;
 }
+
 export interface CreateTrafficMirrorFilterRule {
   readonly TrafficMirrorFilterId: string;
   readonly TrafficDirection: string;
@@ -728,6 +824,7 @@ export interface CreateTrafficMirrorFilterRule {
   readonly DryRun?: boolean;
   readonly ClientToken?: string;
 }
+
 export interface CreateTrafficMirrorSession {
   readonly NetworkInterfaceId: string;
   readonly TrafficMirrorTargetId: string;
@@ -740,6 +837,7 @@ export interface CreateTrafficMirrorSession {
   readonly DryRun?: boolean;
   readonly ClientToken?: string;
 }
+
 export interface CreateTrafficMirrorTarget {
   readonly NetworkInterfaceId?: string;
   readonly NetworkLoadBalancerArn?: string;
@@ -748,18 +846,21 @@ export interface CreateTrafficMirrorTarget {
   readonly DryRun?: boolean;
   readonly ClientToken?: string;
 }
+
 export interface CreateTransitGateway {
   readonly Description?: string;
   readonly Options?: TransitGatewayRequestOptions;
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateTransitGatewayConnect {
   readonly TransportTransitGatewayAttachmentId: string;
   readonly Options: CreateTransitGatewayConnectRequestOptions;
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateTransitGatewayConnectPeer {
   readonly TransitGatewayAttachmentId: string;
   readonly TransitGatewayAddress?: string;
@@ -769,12 +870,14 @@ export interface CreateTransitGatewayConnectPeer {
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateTransitGatewayMulticastDomain {
   readonly TransitGatewayId: string;
   readonly Options?: CreateTransitGatewayMulticastDomainRequestOptions;
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateTransitGatewayPeeringAttachment {
   readonly TransitGatewayId: string;
   readonly PeerTransitGatewayId: string;
@@ -783,6 +886,7 @@ export interface CreateTransitGatewayPeeringAttachment {
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateTransitGatewayPrefixListReference {
   readonly TransitGatewayRouteTableId: string;
   readonly PrefixListId: string;
@@ -790,6 +894,7 @@ export interface CreateTransitGatewayPrefixListReference {
   readonly Blackhole?: boolean;
   readonly DryRun?: boolean;
 }
+
 export interface CreateTransitGatewayRoute {
   readonly DestinationCidrBlock: string;
   readonly TransitGatewayRouteTableId: string;
@@ -797,11 +902,13 @@ export interface CreateTransitGatewayRoute {
   readonly Blackhole?: boolean;
   readonly DryRun?: boolean;
 }
+
 export interface CreateTransitGatewayRouteTable {
   readonly TransitGatewayId: string;
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateTransitGatewayVpcAttachment {
   readonly TransitGatewayId: string;
   readonly VpcId: string;
@@ -810,6 +917,7 @@ export interface CreateTransitGatewayVpcAttachment {
   readonly TagSpecifications?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateVolume {
   readonly AvailabilityZone: string;
   readonly Encrypted?: boolean;
@@ -825,6 +933,7 @@ export interface CreateVolume {
   readonly Throughput?: number;
   readonly ClientToken?: string;
 }
+
 export interface CreateVpc {
   readonly CidrBlock?: string;
   readonly AmazonProvidedIpv6CidrBlock?: boolean;
@@ -839,6 +948,7 @@ export interface CreateVpc {
   readonly Ipv6CidrBlockNetworkBorderGroup?: string;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateVpcEndpoint {
   readonly DryRun?: boolean;
   readonly VpcEndpointType?: string;
@@ -852,6 +962,7 @@ export interface CreateVpcEndpoint {
   readonly PrivateDnsEnabled?: boolean;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateVpcEndpointConnectionNotification {
   readonly DryRun?: boolean;
   readonly ServiceId?: string;
@@ -860,6 +971,7 @@ export interface CreateVpcEndpointConnectionNotification {
   readonly ConnectionEvents: [];
   readonly ClientToken?: string;
 }
+
 export interface CreateVpcEndpointServiceConfiguration {
   readonly DryRun?: boolean;
   readonly AcceptanceRequired?: boolean;
@@ -869,6 +981,7 @@ export interface CreateVpcEndpointServiceConfiguration {
   readonly ClientToken?: string;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateVpcPeeringConnection {
   readonly DryRun?: boolean;
   readonly PeerOwnerId?: string;
@@ -877,6 +990,7 @@ export interface CreateVpcPeeringConnection {
   readonly PeerRegion?: string;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateVpnConnection {
   readonly CustomerGatewayId: string;
   readonly Type: string;
@@ -886,10 +1000,12 @@ export interface CreateVpnConnection {
   readonly Options?: VpnConnectionOptionsSpecification;
   readonly TagSpecifications?: [];
 }
+
 export interface CreateVpnConnectionRoute {
   readonly DestinationCidrBlock: string;
   readonly VpnConnectionId: string;
 }
+
 export interface CreateVpnGateway {
   readonly AvailabilityZone?: string;
   readonly Type: string;
@@ -897,146 +1013,179 @@ export interface CreateVpnGateway {
   readonly AmazonSideAsn?: number;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteCarrierGateway {
   readonly CarrierGatewayId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteClientVpnEndpoint {
   readonly ClientVpnEndpointId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteClientVpnRoute {
   readonly ClientVpnEndpointId: string;
   readonly TargetVpcSubnetId?: string;
   readonly DestinationCidrBlock: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteCustomerGateway {
   readonly CustomerGatewayId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteDhcpOptions {
   readonly DhcpOptionsId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteEgressOnlyInternetGateway {
   readonly DryRun?: boolean;
   readonly EgressOnlyInternetGatewayId: string;
 }
+
 export interface DeleteFleets {
   readonly DryRun?: boolean;
   readonly FleetIds: [];
   readonly TerminateInstances: boolean;
 }
+
 export interface DeleteFlowLogs {
   readonly DryRun?: boolean;
   readonly FlowLogIds: [];
 }
+
 export interface DeleteFpgaImage {
   readonly DryRun?: boolean;
   readonly FpgaImageId: string;
 }
+
 export interface DeleteInstanceEventWindow {
   readonly DryRun?: boolean;
   readonly ForceDelete?: boolean;
   readonly InstanceEventWindowId: string;
 }
+
 export interface DeleteInternetGateway {
   readonly DryRun?: boolean;
   readonly InternetGatewayId: string;
 }
+
 export interface DeleteIpam {
   readonly DryRun?: boolean;
   readonly IpamId: string;
 }
+
 export interface DeleteIpamPool {
   readonly DryRun?: boolean;
   readonly IpamPoolId: string;
 }
+
 export interface DeleteIpamScope {
   readonly DryRun?: boolean;
   readonly IpamScopeId: string;
 }
+
 export interface DeleteKeyPair {
   readonly KeyName?: string;
   readonly KeyPairId?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteLaunchTemplate {
   readonly DryRun?: boolean;
   readonly LaunchTemplateId?: string;
   readonly LaunchTemplateName?: string;
 }
+
 export interface DeleteLaunchTemplateVersions {
   readonly DryRun?: boolean;
   readonly LaunchTemplateId?: string;
   readonly LaunchTemplateName?: string;
   readonly Versions: [];
 }
+
 export interface DeleteLocalGatewayRoute {
   readonly DestinationCidrBlock: string;
   readonly LocalGatewayRouteTableId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteLocalGatewayRouteTableVpcAssociation {
   readonly LocalGatewayRouteTableVpcAssociationId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteManagedPrefixList {
   readonly DryRun?: boolean;
   readonly PrefixListId: string;
 }
+
 export interface DeleteNatGateway {
   readonly DryRun?: boolean;
   readonly NatGatewayId: string;
 }
+
 export interface DeleteNetworkAcl {
   readonly DryRun?: boolean;
   readonly NetworkAclId: string;
 }
+
 export interface DeleteNetworkAclEntry {
   readonly DryRun?: boolean;
   readonly Egress: boolean;
   readonly NetworkAclId: string;
   readonly RuleNumber: number;
 }
+
 export interface DeleteNetworkInsightsAccessScope {
   readonly DryRun?: boolean;
   readonly NetworkInsightsAccessScopeId: string;
 }
+
 export interface DeleteNetworkInsightsAccessScopeAnalysis {
   readonly NetworkInsightsAccessScopeAnalysisId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteNetworkInsightsAnalysis {
   readonly DryRun?: boolean;
   readonly NetworkInsightsAnalysisId: string;
 }
+
 export interface DeleteNetworkInsightsPath {
   readonly DryRun?: boolean;
   readonly NetworkInsightsPathId: string;
 }
+
 export interface DeleteNetworkInterface {
   readonly DryRun?: boolean;
   readonly NetworkInterfaceId: string;
 }
+
 export interface DeleteNetworkInterfacePermission {
   readonly NetworkInterfacePermissionId: string;
   readonly Force?: boolean;
   readonly DryRun?: boolean;
 }
+
 export interface DeletePlacementGroup {
   readonly DryRun?: boolean;
   readonly GroupName: string;
 }
+
 export interface DeletePublicIpv4Pool {
   readonly DryRun?: boolean;
   readonly PoolId: string;
 }
+
 export interface DeleteQueuedReservedInstances {
   readonly DryRun?: boolean;
   readonly ReservedInstancesIds: [];
 }
+
 export interface DeleteRoute {
   readonly DestinationCidrBlock?: string;
   readonly DestinationIpv6CidrBlock?: string;
@@ -1044,169 +1193,208 @@ export interface DeleteRoute {
   readonly DryRun?: boolean;
   readonly RouteTableId: string;
 }
+
 export interface DeleteRouteTable {
   readonly DryRun?: boolean;
   readonly RouteTableId: string;
 }
+
 export interface DeleteSecurityGroup {
   readonly GroupId?: string;
   readonly GroupName?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteSnapshot {
   readonly SnapshotId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteSpotDatafeedSubscription {
   readonly DryRun?: boolean;
 }
+
 export interface DeleteSubnet {
   readonly SubnetId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteSubnetCidrReservation {
   readonly SubnetCidrReservationId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTags {
   readonly DryRun?: boolean;
   readonly Resources: [];
   readonly Tags?: [];
 }
+
 export interface DeleteTrafficMirrorFilter {
   readonly TrafficMirrorFilterId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTrafficMirrorFilterRule {
   readonly TrafficMirrorFilterRuleId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTrafficMirrorSession {
   readonly TrafficMirrorSessionId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTrafficMirrorTarget {
   readonly TrafficMirrorTargetId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTransitGateway {
   readonly TransitGatewayId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTransitGatewayConnect {
   readonly TransitGatewayAttachmentId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTransitGatewayConnectPeer {
   readonly TransitGatewayConnectPeerId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTransitGatewayMulticastDomain {
   readonly TransitGatewayMulticastDomainId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTransitGatewayPeeringAttachment {
   readonly TransitGatewayAttachmentId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTransitGatewayPrefixListReference {
   readonly TransitGatewayRouteTableId: string;
   readonly PrefixListId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTransitGatewayRoute {
   readonly TransitGatewayRouteTableId: string;
   readonly DestinationCidrBlock: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTransitGatewayRouteTable {
   readonly TransitGatewayRouteTableId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteTransitGatewayVpcAttachment {
   readonly TransitGatewayAttachmentId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteVolume {
   readonly VolumeId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteVpc {
   readonly VpcId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteVpcEndpointConnectionNotifications {
   readonly DryRun?: boolean;
   readonly ConnectionNotificationIds: [];
 }
+
 export interface DeleteVpcEndpointServiceConfigurations {
   readonly DryRun?: boolean;
   readonly ServiceIds: [];
 }
+
 export interface DeleteVpcEndpoints {
   readonly DryRun?: boolean;
   readonly VpcEndpointIds: [];
 }
+
 export interface DeleteVpcPeeringConnection {
   readonly DryRun?: boolean;
   readonly VpcPeeringConnectionId: string;
 }
+
 export interface DeleteVpnConnection {
   readonly VpnConnectionId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeleteVpnConnectionRoute {
   readonly DestinationCidrBlock: string;
   readonly VpnConnectionId: string;
 }
+
 export interface DeleteVpnGateway {
   readonly VpnGatewayId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeprovisionByoipCidr {
   readonly Cidr: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeprovisionIpamPoolCidr {
   readonly DryRun?: boolean;
   readonly IpamPoolId: string;
   readonly Cidr?: string;
 }
+
 export interface DeprovisionPublicIpv4PoolCidr {
   readonly DryRun?: boolean;
   readonly PoolId: string;
   readonly Cidr: string;
 }
+
 export interface DeregisterImage {
   readonly ImageId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DeregisterInstanceEventNotificationAttributes {
   readonly DryRun?: boolean;
   readonly InstanceTagAttribute?: DeregisterInstanceTagAttributeRequest;
 }
+
 export interface DeregisterTransitGatewayMulticastGroupMembers {
   readonly TransitGatewayMulticastDomainId?: string;
   readonly GroupIpAddress?: string;
   readonly NetworkInterfaceIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DeregisterTransitGatewayMulticastGroupSources {
   readonly TransitGatewayMulticastDomainId?: string;
   readonly GroupIpAddress?: string;
   readonly NetworkInterfaceIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeAccountAttributes {
   readonly AttributeNames?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeAddresses {
   readonly Filters?: [];
   readonly PublicIps?: [];
   readonly AllocationIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeAddressesAttribute {
   readonly AllocationIds?: [];
   readonly Attribute?: string;
@@ -1214,9 +1402,11 @@ export interface DescribeAddressesAttribute {
   readonly MaxResults?: number;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeAggregateIdFormat {
   readonly DryRun?: boolean;
 }
+
 export interface DescribeAvailabilityZones {
   readonly Filters?: [];
   readonly ZoneNames?: [];
@@ -1224,16 +1414,19 @@ export interface DescribeAvailabilityZones {
   readonly AllAvailabilityZones?: boolean;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeBundleTasks {
   readonly BundleIds?: [];
   readonly Filters?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeByoipCidrs {
   readonly DryRun?: boolean;
   readonly MaxResults: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeCapacityReservationFleets {
   readonly CapacityReservationFleetIds?: [];
   readonly NextToken?: string;
@@ -1241,6 +1434,7 @@ export interface DescribeCapacityReservationFleets {
   readonly Filters?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeCapacityReservations {
   readonly CapacityReservationIds?: [];
   readonly NextToken?: string;
@@ -1248,6 +1442,7 @@ export interface DescribeCapacityReservations {
   readonly Filters?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeCarrierGateways {
   readonly CarrierGatewayIds?: [];
   readonly Filters?: [];
@@ -1255,6 +1450,7 @@ export interface DescribeCarrierGateways {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeClassicLinkInstances {
   readonly Filters?: [];
   readonly DryRun?: boolean;
@@ -1262,6 +1458,7 @@ export interface DescribeClassicLinkInstances {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeClientVpnAuthorizationRules {
   readonly ClientVpnEndpointId: string;
   readonly DryRun?: boolean;
@@ -1269,6 +1466,7 @@ export interface DescribeClientVpnAuthorizationRules {
   readonly Filters?: [];
   readonly MaxResults?: number;
 }
+
 export interface DescribeClientVpnConnections {
   readonly ClientVpnEndpointId: string;
   readonly Filters?: [];
@@ -1276,6 +1474,7 @@ export interface DescribeClientVpnConnections {
   readonly MaxResults?: number;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeClientVpnEndpoints {
   readonly ClientVpnEndpointIds?: [];
   readonly MaxResults?: number;
@@ -1283,6 +1482,7 @@ export interface DescribeClientVpnEndpoints {
   readonly Filters?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeClientVpnRoutes {
   readonly ClientVpnEndpointId: string;
   readonly Filters?: [];
@@ -1290,6 +1490,7 @@ export interface DescribeClientVpnRoutes {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeClientVpnTargetNetworks {
   readonly ClientVpnEndpointId: string;
   readonly AssociationIds?: [];
@@ -1298,6 +1499,7 @@ export interface DescribeClientVpnTargetNetworks {
   readonly Filters?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeCoipPools {
   readonly PoolIds?: [];
   readonly Filters?: [];
@@ -1305,15 +1507,18 @@ export interface DescribeCoipPools {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeConversionTasks {
   readonly ConversionTaskIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeCustomerGateways {
   readonly CustomerGatewayIds?: [];
   readonly Filters?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeDhcpOptions {
   readonly DhcpOptionsIds?: [];
   readonly Filters?: [];
@@ -1321,6 +1526,7 @@ export interface DescribeDhcpOptions {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeEgressOnlyInternetGateways {
   readonly DryRun?: boolean;
   readonly EgressOnlyInternetGatewayIds?: [];
@@ -1328,6 +1534,7 @@ export interface DescribeEgressOnlyInternetGateways {
   readonly NextToken?: string;
   readonly Filters?: [];
 }
+
 export interface DescribeElasticGpus {
   readonly ElasticGpuIds?: [];
   readonly DryRun?: boolean;
@@ -1335,6 +1542,7 @@ export interface DescribeElasticGpus {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeExportImageTasks {
   readonly DryRun?: boolean;
   readonly Filters?: [];
@@ -1342,16 +1550,19 @@ export interface DescribeExportImageTasks {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeExportTasks {
   readonly ExportTaskIds?: [];
   readonly Filters?: [];
 }
+
 export interface DescribeFastSnapshotRestores {
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeFleetHistory {
   readonly DryRun?: boolean;
   readonly EventType?: string;
@@ -1360,6 +1571,7 @@ export interface DescribeFleetHistory {
   readonly FleetId: string;
   readonly StartTime: Date;
 }
+
 export interface DescribeFleetInstances {
   readonly DryRun?: boolean;
   readonly MaxResults?: number;
@@ -1367,6 +1579,7 @@ export interface DescribeFleetInstances {
   readonly FleetId: string;
   readonly Filters?: [];
 }
+
 export interface DescribeFleets {
   readonly DryRun?: boolean;
   readonly MaxResults?: number;
@@ -1374,6 +1587,7 @@ export interface DescribeFleets {
   readonly FleetIds?: [];
   readonly Filters?: [];
 }
+
 export interface DescribeFlowLogs {
   readonly DryRun?: boolean;
   readonly Filter?: [];
@@ -1381,11 +1595,13 @@ export interface DescribeFlowLogs {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeFpgaImageAttribute {
   readonly DryRun?: boolean;
   readonly FpgaImageId: string;
   readonly Attribute: string;
 }
+
 export interface DescribeFpgaImages {
   readonly DryRun?: boolean;
   readonly FpgaImageIds?: [];
@@ -1394,6 +1610,7 @@ export interface DescribeFpgaImages {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeHostReservationOfferings {
   readonly Filter?: [];
   readonly MaxDuration?: number;
@@ -1402,36 +1619,43 @@ export interface DescribeHostReservationOfferings {
   readonly NextToken?: string;
   readonly OfferingId?: string;
 }
+
 export interface DescribeHostReservations {
   readonly Filter?: [];
   readonly HostReservationIdSet?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeHosts {
   readonly Filter?: [];
   readonly HostIds?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeIamInstanceProfileAssociations {
   readonly AssociationIds?: [];
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeIdFormat {
   readonly Resource?: string;
 }
+
 export interface DescribeIdentityIdFormat {
   readonly PrincipalArn: string;
   readonly Resource?: string;
 }
+
 export interface DescribeImageAttribute {
   readonly Attribute: string;
   readonly ImageId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeImages {
   readonly ExecutableUsers?: [];
   readonly Filters?: [];
@@ -1440,6 +1664,7 @@ export interface DescribeImages {
   readonly IncludeDeprecated?: boolean;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeImportImageTasks {
   readonly DryRun?: boolean;
   readonly Filters?: [];
@@ -1447,6 +1672,7 @@ export interface DescribeImportImageTasks {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeImportSnapshotTasks {
   readonly DryRun?: boolean;
   readonly Filters?: [];
@@ -1454,11 +1680,13 @@ export interface DescribeImportSnapshotTasks {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeInstanceAttribute {
   readonly Attribute: string;
   readonly DryRun?: boolean;
   readonly InstanceId: string;
 }
+
 export interface DescribeInstanceCreditSpecifications {
   readonly DryRun?: boolean;
   readonly Filters?: [];
@@ -1466,9 +1694,11 @@ export interface DescribeInstanceCreditSpecifications {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeInstanceEventNotificationAttributes {
   readonly DryRun?: boolean;
 }
+
 export interface DescribeInstanceEventWindows {
   readonly DryRun?: boolean;
   readonly InstanceEventWindowIds?: [];
@@ -1476,6 +1706,7 @@ export interface DescribeInstanceEventWindows {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeInstanceStatus {
   readonly Filters?: [];
   readonly InstanceIds?: [];
@@ -1484,6 +1715,7 @@ export interface DescribeInstanceStatus {
   readonly DryRun?: boolean;
   readonly IncludeAllInstances?: boolean;
 }
+
 export interface DescribeInstanceTypeOfferings {
   readonly DryRun?: boolean;
   readonly LocationType?: string;
@@ -1491,6 +1723,7 @@ export interface DescribeInstanceTypeOfferings {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeInstanceTypes {
   readonly DryRun?: boolean;
   readonly InstanceTypes?: [];
@@ -1498,6 +1731,7 @@ export interface DescribeInstanceTypes {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeInstances {
   readonly Filters?: [];
   readonly InstanceIds?: [];
@@ -1505,6 +1739,7 @@ export interface DescribeInstances {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeInternetGateways {
   readonly Filters?: [];
   readonly DryRun?: boolean;
@@ -1512,6 +1747,7 @@ export interface DescribeInternetGateways {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeIpamPools {
   readonly DryRun?: boolean;
   readonly Filters?: [];
@@ -1519,6 +1755,7 @@ export interface DescribeIpamPools {
   readonly NextToken?: string;
   readonly IpamPoolIds?: [];
 }
+
 export interface DescribeIpamScopes {
   readonly DryRun?: boolean;
   readonly Filters?: [];
@@ -1526,6 +1763,7 @@ export interface DescribeIpamScopes {
   readonly NextToken?: string;
   readonly IpamScopeIds?: [];
 }
+
 export interface DescribeIpams {
   readonly DryRun?: boolean;
   readonly Filters?: [];
@@ -1533,6 +1771,7 @@ export interface DescribeIpams {
   readonly NextToken?: string;
   readonly IpamIds?: [];
 }
+
 export interface DescribeIpv6Pools {
   readonly PoolIds?: [];
   readonly NextToken?: string;
@@ -1540,12 +1779,14 @@ export interface DescribeIpv6Pools {
   readonly DryRun?: boolean;
   readonly Filters?: [];
 }
+
 export interface DescribeKeyPairs {
   readonly Filters?: [];
   readonly KeyNames?: [];
   readonly KeyPairIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeLaunchTemplateVersions {
   readonly DryRun?: boolean;
   readonly LaunchTemplateId?: string;
@@ -1557,6 +1798,7 @@ export interface DescribeLaunchTemplateVersions {
   readonly MaxResults?: number;
   readonly Filters?: [];
 }
+
 export interface DescribeLaunchTemplates {
   readonly DryRun?: boolean;
   readonly LaunchTemplateIds?: [];
@@ -1565,6 +1807,7 @@ export interface DescribeLaunchTemplates {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations {
   readonly LocalGatewayRouteTableVirtualInterfaceGroupAssociationIds?: [];
   readonly Filters?: [];
@@ -1572,6 +1815,7 @@ export interface DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeLocalGatewayRouteTableVpcAssociations {
   readonly LocalGatewayRouteTableVpcAssociationIds?: [];
   readonly Filters?: [];
@@ -1579,6 +1823,7 @@ export interface DescribeLocalGatewayRouteTableVpcAssociations {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeLocalGatewayRouteTables {
   readonly LocalGatewayRouteTableIds?: [];
   readonly Filters?: [];
@@ -1586,6 +1831,7 @@ export interface DescribeLocalGatewayRouteTables {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeLocalGatewayVirtualInterfaceGroups {
   readonly LocalGatewayVirtualInterfaceGroupIds?: [];
   readonly Filters?: [];
@@ -1593,6 +1839,7 @@ export interface DescribeLocalGatewayVirtualInterfaceGroups {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeLocalGatewayVirtualInterfaces {
   readonly LocalGatewayVirtualInterfaceIds?: [];
   readonly Filters?: [];
@@ -1600,6 +1847,7 @@ export interface DescribeLocalGatewayVirtualInterfaces {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeLocalGateways {
   readonly LocalGatewayIds?: [];
   readonly Filters?: [];
@@ -1607,6 +1855,7 @@ export interface DescribeLocalGateways {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeManagedPrefixLists {
   readonly DryRun?: boolean;
   readonly Filters?: [];
@@ -1614,6 +1863,7 @@ export interface DescribeManagedPrefixLists {
   readonly NextToken?: string;
   readonly PrefixListIds?: [];
 }
+
 export interface DescribeMovingAddresses {
   readonly Filters?: [];
   readonly DryRun?: boolean;
@@ -1621,6 +1871,7 @@ export interface DescribeMovingAddresses {
   readonly NextToken?: string;
   readonly PublicIps?: [];
 }
+
 export interface DescribeNatGateways {
   readonly DryRun?: boolean;
   readonly Filter?: [];
@@ -1628,6 +1879,7 @@ export interface DescribeNatGateways {
   readonly NatGatewayIds?: [];
   readonly NextToken?: string;
 }
+
 export interface DescribeNetworkAcls {
   readonly Filters?: [];
   readonly DryRun?: boolean;
@@ -1635,6 +1887,7 @@ export interface DescribeNetworkAcls {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeNetworkInsightsAccessScopeAnalyses {
   readonly NetworkInsightsAccessScopeAnalysisIds?: [];
   readonly NetworkInsightsAccessScopeId?: string;
@@ -1645,6 +1898,7 @@ export interface DescribeNetworkInsightsAccessScopeAnalyses {
   readonly DryRun?: boolean;
   readonly NextToken?: string;
 }
+
 export interface DescribeNetworkInsightsAccessScopes {
   readonly NetworkInsightsAccessScopeIds?: [];
   readonly Filters?: [];
@@ -1652,6 +1906,7 @@ export interface DescribeNetworkInsightsAccessScopes {
   readonly DryRun?: boolean;
   readonly NextToken?: string;
 }
+
 export interface DescribeNetworkInsightsAnalyses {
   readonly NetworkInsightsAnalysisIds?: [];
   readonly NetworkInsightsPathId?: string;
@@ -1662,6 +1917,7 @@ export interface DescribeNetworkInsightsAnalyses {
   readonly DryRun?: boolean;
   readonly NextToken?: string;
 }
+
 export interface DescribeNetworkInsightsPaths {
   readonly NetworkInsightsPathIds?: [];
   readonly Filters?: [];
@@ -1669,17 +1925,20 @@ export interface DescribeNetworkInsightsPaths {
   readonly DryRun?: boolean;
   readonly NextToken?: string;
 }
+
 export interface DescribeNetworkInterfaceAttribute {
   readonly Attribute?: string;
   readonly DryRun?: boolean;
   readonly NetworkInterfaceId: string;
 }
+
 export interface DescribeNetworkInterfacePermissions {
   readonly NetworkInterfacePermissionIds?: [];
   readonly Filters?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeNetworkInterfaces {
   readonly Filters?: [];
   readonly DryRun?: boolean;
@@ -1687,12 +1946,14 @@ export interface DescribeNetworkInterfaces {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribePlacementGroups {
   readonly Filters?: [];
   readonly DryRun?: boolean;
   readonly GroupNames?: [];
   readonly GroupIds?: [];
 }
+
 export interface DescribePrefixLists {
   readonly DryRun?: boolean;
   readonly Filters?: [];
@@ -1700,24 +1961,28 @@ export interface DescribePrefixLists {
   readonly NextToken?: string;
   readonly PrefixListIds?: [];
 }
+
 export interface DescribePrincipalIdFormat {
   readonly DryRun?: boolean;
   readonly Resources?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribePublicIpv4Pools {
   readonly PoolIds?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Filters?: [];
 }
+
 export interface DescribeRegions {
   readonly Filters?: [];
   readonly RegionNames?: [];
   readonly DryRun?: boolean;
   readonly AllRegions?: boolean;
 }
+
 export interface DescribeReplaceRootVolumeTasks {
   readonly ReplaceRootVolumeTaskIds?: [];
   readonly Filters?: [];
@@ -1725,6 +1990,7 @@ export interface DescribeReplaceRootVolumeTasks {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeReservedInstances {
   readonly Filters?: [];
   readonly OfferingClass?: string;
@@ -1732,16 +1998,19 @@ export interface DescribeReservedInstances {
   readonly DryRun?: boolean;
   readonly OfferingType?: string;
 }
+
 export interface DescribeReservedInstancesListings {
   readonly Filters?: [];
   readonly ReservedInstancesId?: string;
   readonly ReservedInstancesListingId?: string;
 }
+
 export interface DescribeReservedInstancesModifications {
   readonly Filters?: [];
   readonly ReservedInstancesModificationIds?: [];
   readonly NextToken?: string;
 }
+
 export interface DescribeReservedInstancesOfferings {
   readonly AvailabilityZone?: string;
   readonly Filters?: [];
@@ -1759,6 +2028,7 @@ export interface DescribeReservedInstancesOfferings {
   readonly NextToken?: string;
   readonly OfferingType?: string;
 }
+
 export interface DescribeRouteTables {
   readonly Filters?: [];
   readonly DryRun?: boolean;
@@ -1766,6 +2036,7 @@ export interface DescribeRouteTables {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeScheduledInstanceAvailability {
   readonly DryRun?: boolean;
   readonly Filters?: [];
@@ -1776,6 +2047,7 @@ export interface DescribeScheduledInstanceAvailability {
   readonly NextToken?: string;
   readonly Recurrence: ScheduledInstanceRecurrenceRequest;
 }
+
 export interface DescribeScheduledInstances {
   readonly DryRun?: boolean;
   readonly Filters?: [];
@@ -1784,10 +2056,12 @@ export interface DescribeScheduledInstances {
   readonly ScheduledInstanceIds?: [];
   readonly SlotStartTimeRange?: SlotStartTimeRangeRequest;
 }
+
 export interface DescribeSecurityGroupReferences {
   readonly DryRun?: boolean;
   readonly GroupId: [];
 }
+
 export interface DescribeSecurityGroupRules {
   readonly Filters?: [];
   readonly SecurityGroupRuleIds?: [];
@@ -1795,6 +2069,7 @@ export interface DescribeSecurityGroupRules {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeSecurityGroups {
   readonly Filters?: [];
   readonly GroupIds?: [];
@@ -1803,17 +2078,20 @@ export interface DescribeSecurityGroups {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeSnapshotAttribute {
   readonly Attribute: string;
   readonly SnapshotId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeSnapshotTierStatus {
   readonly Filters?: [];
   readonly DryRun?: boolean;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeSnapshots {
   readonly Filters?: [];
   readonly MaxResults?: number;
@@ -1823,15 +2101,18 @@ export interface DescribeSnapshots {
   readonly SnapshotIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeSpotDatafeedSubscription {
   readonly DryRun?: boolean;
 }
+
 export interface DescribeSpotFleetInstances {
   readonly DryRun?: boolean;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly SpotFleetRequestId: string;
 }
+
 export interface DescribeSpotFleetRequestHistory {
   readonly DryRun?: boolean;
   readonly EventType?: string;
@@ -1840,12 +2121,14 @@ export interface DescribeSpotFleetRequestHistory {
   readonly SpotFleetRequestId: string;
   readonly StartTime: Date;
 }
+
 export interface DescribeSpotFleetRequests {
   readonly DryRun?: boolean;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly SpotFleetRequestIds?: [];
 }
+
 export interface DescribeSpotInstanceRequests {
   readonly Filters?: [];
   readonly DryRun?: boolean;
@@ -1853,6 +2136,7 @@ export interface DescribeSpotInstanceRequests {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeSpotPriceHistory {
   readonly Filters?: [];
   readonly AvailabilityZone?: string;
@@ -1864,12 +2148,14 @@ export interface DescribeSpotPriceHistory {
   readonly ProductDescriptions?: [];
   readonly StartTime?: Date;
 }
+
 export interface DescribeStaleSecurityGroups {
   readonly DryRun?: boolean;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly VpcId: string;
 }
+
 export interface DescribeStoreImageTasks {
   readonly ImageIds?: [];
   readonly DryRun?: boolean;
@@ -1877,6 +2163,7 @@ export interface DescribeStoreImageTasks {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeSubnets {
   readonly Filters?: [];
   readonly SubnetIds?: [];
@@ -1884,12 +2171,14 @@ export interface DescribeSubnets {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeTags {
   readonly DryRun?: boolean;
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeTrafficMirrorFilters {
   readonly TrafficMirrorFilterIds?: [];
   readonly DryRun?: boolean;
@@ -1897,6 +2186,7 @@ export interface DescribeTrafficMirrorFilters {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeTrafficMirrorSessions {
   readonly TrafficMirrorSessionIds?: [];
   readonly DryRun?: boolean;
@@ -1904,6 +2194,7 @@ export interface DescribeTrafficMirrorSessions {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeTrafficMirrorTargets {
   readonly TrafficMirrorTargetIds?: [];
   readonly DryRun?: boolean;
@@ -1911,6 +2202,7 @@ export interface DescribeTrafficMirrorTargets {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeTransitGatewayAttachments {
   readonly TransitGatewayAttachmentIds?: [];
   readonly Filters?: [];
@@ -1918,6 +2210,7 @@ export interface DescribeTransitGatewayAttachments {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeTransitGatewayConnectPeers {
   readonly TransitGatewayConnectPeerIds?: [];
   readonly Filters?: [];
@@ -1925,6 +2218,7 @@ export interface DescribeTransitGatewayConnectPeers {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeTransitGatewayConnects {
   readonly TransitGatewayAttachmentIds?: [];
   readonly Filters?: [];
@@ -1932,6 +2226,7 @@ export interface DescribeTransitGatewayConnects {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeTransitGatewayMulticastDomains {
   readonly TransitGatewayMulticastDomainIds?: [];
   readonly Filters?: [];
@@ -1939,6 +2234,7 @@ export interface DescribeTransitGatewayMulticastDomains {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeTransitGatewayPeeringAttachments {
   readonly TransitGatewayAttachmentIds?: [];
   readonly Filters?: [];
@@ -1946,6 +2242,7 @@ export interface DescribeTransitGatewayPeeringAttachments {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeTransitGatewayRouteTables {
   readonly TransitGatewayRouteTableIds?: [];
   readonly Filters?: [];
@@ -1953,6 +2250,7 @@ export interface DescribeTransitGatewayRouteTables {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeTransitGatewayVpcAttachments {
   readonly TransitGatewayAttachmentIds?: [];
   readonly Filters?: [];
@@ -1960,6 +2258,7 @@ export interface DescribeTransitGatewayVpcAttachments {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeTransitGateways {
   readonly TransitGatewayIds?: [];
   readonly Filters?: [];
@@ -1967,6 +2266,7 @@ export interface DescribeTransitGateways {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeTrunkInterfaceAssociations {
   readonly AssociationIds?: [];
   readonly DryRun?: boolean;
@@ -1974,11 +2274,13 @@ export interface DescribeTrunkInterfaceAssociations {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeVolumeAttribute {
   readonly Attribute: string;
   readonly VolumeId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeVolumeStatus {
   readonly Filters?: [];
   readonly MaxResults?: number;
@@ -1986,6 +2288,7 @@ export interface DescribeVolumeStatus {
   readonly VolumeIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeVolumes {
   readonly Filters?: [];
   readonly VolumeIds?: [];
@@ -1993,6 +2296,7 @@ export interface DescribeVolumes {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeVolumesModifications {
   readonly DryRun?: boolean;
   readonly VolumeIds?: [];
@@ -2000,21 +2304,25 @@ export interface DescribeVolumesModifications {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeVpcAttribute {
   readonly Attribute: string;
   readonly VpcId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeVpcClassicLink {
   readonly Filters?: [];
   readonly DryRun?: boolean;
   readonly VpcIds?: [];
 }
+
 export interface DescribeVpcClassicLinkDnsSupport {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly VpcIds?: [];
 }
+
 export interface DescribeVpcEndpointConnectionNotifications {
   readonly DryRun?: boolean;
   readonly ConnectionNotificationId?: string;
@@ -2022,12 +2330,14 @@ export interface DescribeVpcEndpointConnectionNotifications {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeVpcEndpointConnections {
   readonly DryRun?: boolean;
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeVpcEndpointServiceConfigurations {
   readonly DryRun?: boolean;
   readonly ServiceIds?: [];
@@ -2035,6 +2345,7 @@ export interface DescribeVpcEndpointServiceConfigurations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeVpcEndpointServicePermissions {
   readonly DryRun?: boolean;
   readonly ServiceId: string;
@@ -2042,6 +2353,7 @@ export interface DescribeVpcEndpointServicePermissions {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeVpcEndpointServices {
   readonly DryRun?: boolean;
   readonly ServiceNames?: [];
@@ -2049,6 +2361,7 @@ export interface DescribeVpcEndpointServices {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeVpcEndpoints {
   readonly DryRun?: boolean;
   readonly VpcEndpointIds?: [];
@@ -2056,6 +2369,7 @@ export interface DescribeVpcEndpoints {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeVpcPeeringConnections {
   readonly Filters?: [];
   readonly DryRun?: boolean;
@@ -2063,6 +2377,7 @@ export interface DescribeVpcPeeringConnections {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeVpcs {
   readonly Filters?: [];
   readonly VpcIds?: [];
@@ -2070,31 +2385,37 @@ export interface DescribeVpcs {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeVpnConnections {
   readonly Filters?: [];
   readonly VpnConnectionIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DescribeVpnGateways {
   readonly Filters?: [];
   readonly VpnGatewayIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DetachClassicLinkVpc {
   readonly DryRun?: boolean;
   readonly InstanceId: string;
   readonly VpcId: string;
 }
+
 export interface DetachInternetGateway {
   readonly DryRun?: boolean;
   readonly InternetGatewayId: string;
   readonly VpcId: string;
 }
+
 export interface DetachNetworkInterface {
   readonly AttachmentId: string;
   readonly DryRun?: boolean;
   readonly Force?: boolean;
 }
+
 export interface DetachVolume {
   readonly Device?: string;
   readonly Force?: boolean;
@@ -2102,145 +2423,179 @@ export interface DetachVolume {
   readonly VolumeId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DetachVpnGateway {
   readonly VpcId: string;
   readonly VpnGatewayId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DisableEbsEncryptionByDefault {
   readonly DryRun?: boolean;
 }
+
 export interface DisableFastSnapshotRestores {
   readonly AvailabilityZones: [];
   readonly SourceSnapshotIds: [];
   readonly DryRun?: boolean;
 }
+
 export interface DisableImageDeprecation {
   readonly ImageId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DisableIpamOrganizationAdminAccount {
   readonly DryRun?: boolean;
   readonly DelegatedAdminAccountId: string;
 }
+
 export interface DisableSerialConsoleAccess {
   readonly DryRun?: boolean;
 }
+
 export interface DisableTransitGatewayRouteTablePropagation {
   readonly TransitGatewayRouteTableId: string;
   readonly TransitGatewayAttachmentId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DisableVgwRoutePropagation {
   readonly GatewayId: string;
   readonly RouteTableId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DisableVpcClassicLink {
   readonly DryRun?: boolean;
   readonly VpcId: string;
 }
+
 export interface DisableVpcClassicLinkDnsSupport {
   readonly VpcId?: string;
 }
+
 export interface DisassociateAddress {
   readonly AssociationId?: string;
   readonly PublicIp?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DisassociateClientVpnTargetNetwork {
   readonly ClientVpnEndpointId: string;
   readonly AssociationId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DisassociateEnclaveCertificateIamRole {
   readonly CertificateArn?: string;
   readonly RoleArn?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DisassociateIamInstanceProfile {
   readonly AssociationId: string;
 }
+
 export interface DisassociateInstanceEventWindow {
   readonly DryRun?: boolean;
   readonly InstanceEventWindowId: string;
   readonly AssociationTarget: InstanceEventWindowDisassociationRequest;
 }
+
 export interface DisassociateRouteTable {
   readonly AssociationId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DisassociateSubnetCidrBlock {
   readonly AssociationId: string;
 }
+
 export interface DisassociateTransitGatewayMulticastDomain {
   readonly TransitGatewayMulticastDomainId?: string;
   readonly TransitGatewayAttachmentId?: string;
   readonly SubnetIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DisassociateTransitGatewayRouteTable {
   readonly TransitGatewayRouteTableId: string;
   readonly TransitGatewayAttachmentId: string;
   readonly DryRun?: boolean;
 }
+
 export interface DisassociateTrunkInterface {
   readonly AssociationId: string;
   readonly ClientToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface DisassociateVpcCidrBlock {
   readonly AssociationId: string;
 }
+
 export interface EnableEbsEncryptionByDefault {
   readonly DryRun?: boolean;
 }
+
 export interface EnableFastSnapshotRestores {
   readonly AvailabilityZones: [];
   readonly SourceSnapshotIds: [];
   readonly DryRun?: boolean;
 }
+
 export interface EnableImageDeprecation {
   readonly ImageId: string;
   readonly DeprecateAt: Date;
   readonly DryRun?: boolean;
 }
+
 export interface EnableIpamOrganizationAdminAccount {
   readonly DryRun?: boolean;
   readonly DelegatedAdminAccountId: string;
 }
+
 export interface EnableSerialConsoleAccess {
   readonly DryRun?: boolean;
 }
+
 export interface EnableTransitGatewayRouteTablePropagation {
   readonly TransitGatewayRouteTableId: string;
   readonly TransitGatewayAttachmentId: string;
   readonly DryRun?: boolean;
 }
+
 export interface EnableVgwRoutePropagation {
   readonly GatewayId: string;
   readonly RouteTableId: string;
   readonly DryRun?: boolean;
 }
+
 export interface EnableVolumeIO {
   readonly DryRun?: boolean;
   readonly VolumeId: string;
 }
+
 export interface EnableVpcClassicLink {
   readonly DryRun?: boolean;
   readonly VpcId: string;
 }
+
 export interface EnableVpcClassicLinkDnsSupport {
   readonly VpcId?: string;
 }
+
 export interface ExportClientVpnClientCertificateRevocationList {
   readonly ClientVpnEndpointId: string;
   readonly DryRun?: boolean;
 }
+
 export interface ExportClientVpnClientConfiguration {
   readonly ClientVpnEndpointId: string;
   readonly DryRun?: boolean;
 }
+
 export interface ExportImage {
   readonly ClientToken?: string;
   readonly Description?: string;
@@ -2251,28 +2606,33 @@ export interface ExportImage {
   readonly RoleName?: string;
   readonly TagSpecifications?: [];
 }
+
 export interface ExportTransitGatewayRoutes {
   readonly TransitGatewayRouteTableId: string;
   readonly Filters?: [];
   readonly S3Bucket: string;
   readonly DryRun?: boolean;
 }
+
 export interface GetAssociatedEnclaveCertificateIamRoles {
   readonly CertificateArn?: string;
   readonly DryRun?: boolean;
 }
+
 export interface GetAssociatedIpv6PoolCidrs {
   readonly PoolId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly DryRun?: boolean;
 }
+
 export interface GetCapacityReservationUsage {
   readonly CapacityReservationId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly DryRun?: boolean;
 }
+
 export interface GetCoipPoolUsage {
   readonly PoolId: string;
   readonly Filters?: [];
@@ -2280,42 +2640,51 @@ export interface GetCoipPoolUsage {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface GetConsoleOutput {
   readonly InstanceId: string;
   readonly DryRun?: boolean;
   readonly Latest?: boolean;
 }
+
 export interface GetConsoleScreenshot {
   readonly DryRun?: boolean;
   readonly InstanceId: string;
   readonly WakeUp?: boolean;
 }
+
 export interface GetDefaultCreditSpecification {
   readonly DryRun?: boolean;
   readonly InstanceFamily: string;
 }
+
 export interface GetEbsDefaultKmsKeyId {
   readonly DryRun?: boolean;
 }
+
 export interface GetEbsEncryptionByDefault {
   readonly DryRun?: boolean;
 }
+
 export interface GetFlowLogsIntegrationTemplate {
   readonly DryRun?: boolean;
   readonly FlowLogId: string;
   readonly ConfigDeliveryS3DestinationArn: string;
   readonly IntegrateServices: IntegrateServices;
 }
+
 export interface GetGroupsForCapacityReservation {
   readonly CapacityReservationId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly DryRun?: boolean;
 }
+
 export interface GetHostReservationPurchasePreview {
   readonly HostIdSet: [];
   readonly OfferingId: string;
 }
+
 export interface GetInstanceTypesFromInstanceRequirements {
   readonly DryRun?: boolean;
   readonly ArchitectureTypes: [];
@@ -2324,6 +2693,7 @@ export interface GetInstanceTypesFromInstanceRequirements {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetIpamAddressHistory {
   readonly DryRun?: boolean;
   readonly Cidr: string;
@@ -2334,6 +2704,7 @@ export interface GetIpamAddressHistory {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetIpamPoolAllocations {
   readonly DryRun?: boolean;
   readonly IpamPoolId: string;
@@ -2342,6 +2713,7 @@ export interface GetIpamPoolAllocations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetIpamPoolCidrs {
   readonly DryRun?: boolean;
   readonly IpamPoolId: string;
@@ -2349,6 +2721,7 @@ export interface GetIpamPoolCidrs {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetIpamResourceCidrs {
   readonly DryRun?: boolean;
   readonly Filters?: [];
@@ -2361,16 +2734,19 @@ export interface GetIpamResourceCidrs {
   readonly ResourceTag?: RequestIpamResourceTag;
   readonly ResourceOwner?: string;
 }
+
 export interface GetLaunchTemplateData {
   readonly DryRun?: boolean;
   readonly InstanceId: string;
 }
+
 export interface GetManagedPrefixListAssociations {
   readonly DryRun?: boolean;
   readonly PrefixListId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetManagedPrefixListEntries {
   readonly DryRun?: boolean;
   readonly PrefixListId: string;
@@ -2378,28 +2754,34 @@ export interface GetManagedPrefixListEntries {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetNetworkInsightsAccessScopeAnalysisFindings {
   readonly NetworkInsightsAccessScopeAnalysisId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface GetNetworkInsightsAccessScopeContent {
   readonly NetworkInsightsAccessScopeId: string;
   readonly DryRun?: boolean;
 }
+
 export interface GetPasswordData {
   readonly InstanceId: string;
   readonly DryRun?: boolean;
 }
+
 export interface GetReservedInstancesExchangeQuote {
   readonly DryRun?: boolean;
   readonly ReservedInstanceIds: [];
   readonly TargetConfigurations?: [];
 }
+
 export interface GetSerialConsoleAccessStatus {
   readonly DryRun?: boolean;
 }
+
 export interface GetSpotPlacementScores {
   readonly InstanceTypes?: [];
   readonly TargetCapacity: number;
@@ -2411,6 +2793,7 @@ export interface GetSpotPlacementScores {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetSubnetCidrReservations {
   readonly Filters?: [];
   readonly SubnetId: string;
@@ -2418,6 +2801,7 @@ export interface GetSubnetCidrReservations {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetTransitGatewayAttachmentPropagations {
   readonly TransitGatewayAttachmentId: string;
   readonly Filters?: [];
@@ -2425,6 +2809,7 @@ export interface GetTransitGatewayAttachmentPropagations {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface GetTransitGatewayMulticastDomainAssociations {
   readonly TransitGatewayMulticastDomainId?: string;
   readonly Filters?: [];
@@ -2432,6 +2817,7 @@ export interface GetTransitGatewayMulticastDomainAssociations {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface GetTransitGatewayPrefixListReferences {
   readonly TransitGatewayRouteTableId: string;
   readonly Filters?: [];
@@ -2439,6 +2825,7 @@ export interface GetTransitGatewayPrefixListReferences {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface GetTransitGatewayRouteTableAssociations {
   readonly TransitGatewayRouteTableId: string;
   readonly Filters?: [];
@@ -2446,6 +2833,7 @@ export interface GetTransitGatewayRouteTableAssociations {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface GetTransitGatewayRouteTablePropagations {
   readonly TransitGatewayRouteTableId: string;
   readonly Filters?: [];
@@ -2453,22 +2841,26 @@ export interface GetTransitGatewayRouteTablePropagations {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface GetVpnConnectionDeviceSampleConfiguration {
   readonly VpnConnectionId: string;
   readonly VpnConnectionDeviceTypeId: string;
   readonly InternetKeyExchangeVersion?: string;
   readonly DryRun?: boolean;
 }
+
 export interface GetVpnConnectionDeviceTypes {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface ImportClientVpnClientCertificateRevocationList {
   readonly ClientVpnEndpointId: string;
   readonly CertificateRevocationList: string;
   readonly DryRun?: boolean;
 }
+
 export interface ImportImage {
   readonly Architecture?: string;
   readonly ClientData?: ClientData;
@@ -2487,6 +2879,7 @@ export interface ImportImage {
   readonly UsageOperation?: string;
   readonly BootMode?: string;
 }
+
 export interface ImportInstance {
   readonly Description?: string;
   readonly DiskImages?: [];
@@ -2494,12 +2887,14 @@ export interface ImportInstance {
   readonly LaunchSpecification?: ImportInstanceLaunchSpecification;
   readonly Platform: string;
 }
+
 export interface ImportKeyPair {
   readonly DryRun?: boolean;
   readonly KeyName: string;
   readonly PublicKeyMaterial: unknown;
   readonly TagSpecifications?: [];
 }
+
 export interface ImportSnapshot {
   readonly ClientData?: ClientData;
   readonly ClientToken?: string;
@@ -2511,6 +2906,7 @@ export interface ImportSnapshot {
   readonly RoleName?: string;
   readonly TagSpecifications?: [];
 }
+
 export interface ImportVolume {
   readonly AvailabilityZone: string;
   readonly Description?: string;
@@ -2518,22 +2914,26 @@ export interface ImportVolume {
   readonly Image: DiskImageDetail;
   readonly Volume: VolumeDetail;
 }
+
 export interface ListSnapshotsInRecycleBin {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly SnapshotIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface ModifyAddressAttribute {
   readonly AllocationId: string;
   readonly DomainName?: string;
   readonly DryRun?: boolean;
 }
+
 export interface ModifyAvailabilityZoneGroup {
   readonly GroupName: string;
   readonly OptInStatus: string;
   readonly DryRun?: boolean;
 }
+
 export interface ModifyCapacityReservation {
   readonly CapacityReservationId: string;
   readonly InstanceCount?: number;
@@ -2543,6 +2943,7 @@ export interface ModifyCapacityReservation {
   readonly DryRun?: boolean;
   readonly AdditionalInfo?: string;
 }
+
 export interface ModifyCapacityReservationFleet {
   readonly CapacityReservationFleetId: string;
   readonly TotalTargetCapacity?: number;
@@ -2550,6 +2951,7 @@ export interface ModifyCapacityReservationFleet {
   readonly DryRun?: boolean;
   readonly RemoveEndDate?: boolean;
 }
+
 export interface ModifyClientVpnEndpoint {
   readonly ClientVpnEndpointId: string;
   readonly ServerCertificateArn?: string;
@@ -2564,15 +2966,18 @@ export interface ModifyClientVpnEndpoint {
   readonly SelfServicePortal?: string;
   readonly ClientConnectOptions?: ClientConnectOptions;
 }
+
 export interface ModifyDefaultCreditSpecification {
   readonly DryRun?: boolean;
   readonly InstanceFamily: string;
   readonly CpuCredits: string;
 }
+
 export interface ModifyEbsDefaultKmsKeyId {
   readonly KmsKeyId: string;
   readonly DryRun?: boolean;
 }
+
 export interface ModifyFleet {
   readonly DryRun?: boolean;
   readonly ExcessCapacityTerminationPolicy?: string;
@@ -2581,6 +2986,7 @@ export interface ModifyFleet {
   readonly TargetCapacitySpecification?: TargetCapacitySpecificationRequest;
   readonly Context?: string;
 }
+
 export interface ModifyFpgaImageAttribute {
   readonly DryRun?: boolean;
   readonly FpgaImageId: string;
@@ -2593,6 +2999,7 @@ export interface ModifyFpgaImageAttribute {
   readonly Description?: string;
   readonly Name?: string;
 }
+
 export interface ModifyHosts {
   readonly AutoPlacement?: string;
   readonly HostIds: [];
@@ -2600,15 +3007,18 @@ export interface ModifyHosts {
   readonly InstanceType?: string;
   readonly InstanceFamily?: string;
 }
+
 export interface ModifyIdFormat {
   readonly Resource: string;
   readonly UseLongIds: boolean;
 }
+
 export interface ModifyIdentityIdFormat {
   readonly PrincipalArn: string;
   readonly Resource: string;
   readonly UseLongIds: boolean;
 }
+
 export interface ModifyImageAttribute {
   readonly Attribute?: string;
   readonly Description?: AttributeValue;
@@ -2623,6 +3033,7 @@ export interface ModifyImageAttribute {
   readonly OrganizationArns?: [];
   readonly OrganizationalUnitArns?: [];
 }
+
 export interface ModifyInstanceAttribute {
   readonly SourceDestCheck?: AttributeBooleanValue;
   readonly Attribute?: string;
@@ -2641,22 +3052,26 @@ export interface ModifyInstanceAttribute {
   readonly UserData?: BlobAttributeValue;
   readonly Value?: string;
 }
+
 export interface ModifyInstanceCapacityReservationAttributes {
   readonly InstanceId: string;
   readonly CapacityReservationSpecification: CapacityReservationSpecification;
   readonly DryRun?: boolean;
 }
+
 export interface ModifyInstanceCreditSpecification {
   readonly DryRun?: boolean;
   readonly ClientToken?: string;
   readonly InstanceCreditSpecifications: [];
 }
+
 export interface ModifyInstanceEventStartTime {
   readonly DryRun?: boolean;
   readonly InstanceId: string;
   readonly InstanceEventId: string;
   readonly NotBefore: Date;
 }
+
 export interface ModifyInstanceEventWindow {
   readonly DryRun?: boolean;
   readonly Name?: string;
@@ -2664,6 +3079,7 @@ export interface ModifyInstanceEventWindow {
   readonly TimeRanges?: [];
   readonly CronExpression?: string;
 }
+
 export interface ModifyInstanceMetadataOptions {
   readonly InstanceId: string;
   readonly HttpTokens?: string;
@@ -2672,6 +3088,7 @@ export interface ModifyInstanceMetadataOptions {
   readonly DryRun?: boolean;
   readonly HttpProtocolIpv6?: string;
 }
+
 export interface ModifyInstancePlacement {
   readonly Affinity?: string;
   readonly GroupName?: string;
@@ -2681,6 +3098,7 @@ export interface ModifyInstancePlacement {
   readonly PartitionNumber?: number;
   readonly HostResourceGroupArn?: string;
 }
+
 export interface ModifyIpam {
   readonly DryRun?: boolean;
   readonly IpamId: string;
@@ -2688,6 +3106,7 @@ export interface ModifyIpam {
   readonly AddOperatingRegions?: [];
   readonly RemoveOperatingRegions?: [];
 }
+
 export interface ModifyIpamPool {
   readonly DryRun?: boolean;
   readonly IpamPoolId: string;
@@ -2700,6 +3119,7 @@ export interface ModifyIpamPool {
   readonly AddAllocationResourceTags?: [];
   readonly RemoveAllocationResourceTags?: [];
 }
+
 export interface ModifyIpamResourceCidr {
   readonly DryRun?: boolean;
   readonly ResourceId: string;
@@ -2709,11 +3129,13 @@ export interface ModifyIpamResourceCidr {
   readonly DestinationIpamScopeId?: string;
   readonly Monitored: boolean;
 }
+
 export interface ModifyIpamScope {
   readonly DryRun?: boolean;
   readonly IpamScopeId: string;
   readonly Description?: string;
 }
+
 export interface ModifyLaunchTemplate {
   readonly DryRun?: boolean;
   readonly ClientToken?: string;
@@ -2721,6 +3143,7 @@ export interface ModifyLaunchTemplate {
   readonly LaunchTemplateName?: string;
   readonly DefaultVersion?: string;
 }
+
 export interface ModifyManagedPrefixList {
   readonly DryRun?: boolean;
   readonly PrefixListId: string;
@@ -2730,6 +3153,7 @@ export interface ModifyManagedPrefixList {
   readonly RemoveEntries?: [];
   readonly MaxEntries?: number;
 }
+
 export interface ModifyNetworkInterfaceAttribute {
   readonly Attachment?: NetworkInterfaceAttachmentChanges;
   readonly Description?: AttributeValue;
@@ -2738,6 +3162,7 @@ export interface ModifyNetworkInterfaceAttribute {
   readonly NetworkInterfaceId: string;
   readonly SourceDestCheck?: AttributeBooleanValue;
 }
+
 export interface ModifyPrivateDnsNameOptions {
   readonly DryRun?: boolean;
   readonly InstanceId?: string;
@@ -2745,16 +3170,19 @@ export interface ModifyPrivateDnsNameOptions {
   readonly EnableResourceNameDnsARecord?: boolean;
   readonly EnableResourceNameDnsAAAARecord?: boolean;
 }
+
 export interface ModifyReservedInstances {
   readonly ReservedInstancesIds: [];
   readonly ClientToken?: string;
   readonly TargetConfigurations: [];
 }
+
 export interface ModifySecurityGroupRules {
   readonly GroupId: string;
   readonly SecurityGroupRules: [];
   readonly DryRun?: boolean;
 }
+
 export interface ModifySnapshotAttribute {
   readonly Attribute?: string;
   readonly CreateVolumePermission?: CreateVolumePermissionModifications;
@@ -2764,11 +3192,13 @@ export interface ModifySnapshotAttribute {
   readonly UserIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface ModifySnapshotTier {
   readonly SnapshotId: string;
   readonly StorageTier?: string;
   readonly DryRun?: boolean;
 }
+
 export interface ModifySpotFleetRequest {
   readonly ExcessCapacityTerminationPolicy?: string;
   readonly LaunchTemplateConfigs?: [];
@@ -2777,6 +3207,7 @@ export interface ModifySpotFleetRequest {
   readonly OnDemandTargetCapacity?: number;
   readonly Context?: string;
 }
+
 export interface ModifySubnetAttribute {
   readonly AssignIpv6AddressOnCreation?: AttributeBooleanValue;
   readonly MapPublicIpOnLaunch?: AttributeBooleanValue;
@@ -2790,12 +3221,14 @@ export interface ModifySubnetAttribute {
   readonly EnableLniAtDeviceIndex?: number;
   readonly DisableLniAtDeviceIndex?: AttributeBooleanValue;
 }
+
 export interface ModifyTrafficMirrorFilterNetworkServices {
   readonly TrafficMirrorFilterId: string;
   readonly AddNetworkServices?: [];
   readonly RemoveNetworkServices?: [];
   readonly DryRun?: boolean;
 }
+
 export interface ModifyTrafficMirrorFilterRule {
   readonly TrafficMirrorFilterRuleId: string;
   readonly TrafficDirection?: string;
@@ -2810,6 +3243,7 @@ export interface ModifyTrafficMirrorFilterRule {
   readonly RemoveFields?: [];
   readonly DryRun?: boolean;
 }
+
 export interface ModifyTrafficMirrorSession {
   readonly TrafficMirrorSessionId: string;
   readonly TrafficMirrorTargetId?: string;
@@ -2821,12 +3255,14 @@ export interface ModifyTrafficMirrorSession {
   readonly RemoveFields?: [];
   readonly DryRun?: boolean;
 }
+
 export interface ModifyTransitGateway {
   readonly TransitGatewayId: string;
   readonly Description?: string;
   readonly Options?: ModifyTransitGatewayOptions;
   readonly DryRun?: boolean;
 }
+
 export interface ModifyTransitGatewayPrefixListReference {
   readonly TransitGatewayRouteTableId: string;
   readonly PrefixListId: string;
@@ -2834,6 +3270,7 @@ export interface ModifyTransitGatewayPrefixListReference {
   readonly Blackhole?: boolean;
   readonly DryRun?: boolean;
 }
+
 export interface ModifyTransitGatewayVpcAttachment {
   readonly TransitGatewayAttachmentId: string;
   readonly AddSubnetIds?: [];
@@ -2841,6 +3278,7 @@ export interface ModifyTransitGatewayVpcAttachment {
   readonly Options?: ModifyTransitGatewayVpcAttachmentRequestOptions;
   readonly DryRun?: boolean;
 }
+
 export interface ModifyVolume {
   readonly DryRun?: boolean;
   readonly VolumeId: string;
@@ -2850,16 +3288,19 @@ export interface ModifyVolume {
   readonly Throughput?: number;
   readonly MultiAttachEnabled?: boolean;
 }
+
 export interface ModifyVolumeAttribute {
   readonly AutoEnableIO?: AttributeBooleanValue;
   readonly VolumeId: string;
   readonly DryRun?: boolean;
 }
+
 export interface ModifyVpcAttribute {
   readonly EnableDnsHostnames?: AttributeBooleanValue;
   readonly EnableDnsSupport?: AttributeBooleanValue;
   readonly VpcId: string;
 }
+
 export interface ModifyVpcEndpoint {
   readonly DryRun?: boolean;
   readonly VpcEndpointId: string;
@@ -2873,12 +3314,14 @@ export interface ModifyVpcEndpoint {
   readonly RemoveSecurityGroupIds?: [];
   readonly PrivateDnsEnabled?: boolean;
 }
+
 export interface ModifyVpcEndpointConnectionNotification {
   readonly DryRun?: boolean;
   readonly ConnectionNotificationId: string;
   readonly ConnectionNotificationArn?: string;
   readonly ConnectionEvents?: [];
 }
+
 export interface ModifyVpcEndpointServiceConfiguration {
   readonly DryRun?: boolean;
   readonly ServiceId: string;
@@ -2890,23 +3333,27 @@ export interface ModifyVpcEndpointServiceConfiguration {
   readonly AddGatewayLoadBalancerArns?: [];
   readonly RemoveGatewayLoadBalancerArns?: [];
 }
+
 export interface ModifyVpcEndpointServicePermissions {
   readonly DryRun?: boolean;
   readonly ServiceId: string;
   readonly AddAllowedPrincipals?: [];
   readonly RemoveAllowedPrincipals?: [];
 }
+
 export interface ModifyVpcPeeringConnectionOptions {
   readonly AccepterPeeringConnectionOptions?: PeeringConnectionOptionsRequest;
   readonly DryRun?: boolean;
   readonly RequesterPeeringConnectionOptions?: PeeringConnectionOptionsRequest;
   readonly VpcPeeringConnectionId: string;
 }
+
 export interface ModifyVpcTenancy {
   readonly VpcId: string;
   readonly InstanceTenancy: string;
   readonly DryRun?: boolean;
 }
+
 export interface ModifyVpnConnection {
   readonly VpnConnectionId: string;
   readonly TransitGatewayId?: string;
@@ -2914,6 +3361,7 @@ export interface ModifyVpnConnection {
   readonly VpnGatewayId?: string;
   readonly DryRun?: boolean;
 }
+
 export interface ModifyVpnConnectionOptions {
   readonly VpnConnectionId: string;
   readonly LocalIpv4NetworkCidr?: string;
@@ -2922,31 +3370,37 @@ export interface ModifyVpnConnectionOptions {
   readonly RemoteIpv6NetworkCidr?: string;
   readonly DryRun?: boolean;
 }
+
 export interface ModifyVpnTunnelCertificate {
   readonly VpnConnectionId: string;
   readonly VpnTunnelOutsideIpAddress: string;
   readonly DryRun?: boolean;
 }
+
 export interface ModifyVpnTunnelOptions {
   readonly VpnConnectionId: string;
   readonly VpnTunnelOutsideIpAddress: string;
   readonly TunnelOptions: ModifyVpnTunnelOptionsSpecification;
   readonly DryRun?: boolean;
 }
+
 export interface MonitorInstances {
   readonly InstanceIds: [];
   readonly DryRun?: boolean;
 }
+
 export interface MoveAddressToVpc {
   readonly DryRun?: boolean;
   readonly PublicIp: string;
 }
+
 export interface MoveByoipCidrToIpam {
   readonly DryRun?: boolean;
   readonly Cidr?: string;
   readonly IpamPoolId?: string;
   readonly IpamPoolOwner?: string;
 }
+
 export interface ProvisionByoipCidr {
   readonly Cidr: string;
   readonly CidrAuthorizationContext?: CidrAuthorizationContext;
@@ -2956,18 +3410,21 @@ export interface ProvisionByoipCidr {
   readonly PoolTagSpecifications?: [];
   readonly MultiRegion?: boolean;
 }
+
 export interface ProvisionIpamPoolCidr {
   readonly DryRun?: boolean;
   readonly IpamPoolId: string;
   readonly Cidr?: string;
   readonly CidrAuthorizationContext?: IpamCidrAuthorizationContext;
 }
+
 export interface ProvisionPublicIpv4PoolCidr {
   readonly DryRun?: boolean;
   readonly IpamPoolId: string;
   readonly PoolId: string;
   readonly NetmaskLength: number;
 }
+
 export interface PurchaseHostReservation {
   readonly ClientToken?: string;
   readonly CurrencyCode?: string;
@@ -2976,6 +3433,7 @@ export interface PurchaseHostReservation {
   readonly OfferingId: string;
   readonly TagSpecifications?: [];
 }
+
 export interface PurchaseReservedInstancesOffering {
   readonly InstanceCount: number;
   readonly ReservedInstancesOfferingId: string;
@@ -2983,15 +3441,18 @@ export interface PurchaseReservedInstancesOffering {
   readonly LimitPrice?: ReservedInstanceLimitPrice;
   readonly PurchaseTime?: Date;
 }
+
 export interface PurchaseScheduledInstances {
   readonly ClientToken?: string;
   readonly DryRun?: boolean;
   readonly PurchaseRequests: [];
 }
+
 export interface RebootInstances {
   readonly InstanceIds: [];
   readonly DryRun?: boolean;
 }
+
 export interface RegisterImage {
   readonly ImageLocation?: string;
   readonly Architecture?: string;
@@ -3008,69 +3469,83 @@ export interface RegisterImage {
   readonly VirtualizationType?: string;
   readonly BootMode?: string;
 }
+
 export interface RegisterInstanceEventNotificationAttributes {
   readonly DryRun?: boolean;
   readonly InstanceTagAttribute?: RegisterInstanceTagAttributeRequest;
 }
+
 export interface RegisterTransitGatewayMulticastGroupMembers {
   readonly TransitGatewayMulticastDomainId?: string;
   readonly GroupIpAddress?: string;
   readonly NetworkInterfaceIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface RegisterTransitGatewayMulticastGroupSources {
   readonly TransitGatewayMulticastDomainId?: string;
   readonly GroupIpAddress?: string;
   readonly NetworkInterfaceIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface RejectTransitGatewayMulticastDomainAssociations {
   readonly TransitGatewayMulticastDomainId?: string;
   readonly TransitGatewayAttachmentId?: string;
   readonly SubnetIds?: [];
   readonly DryRun?: boolean;
 }
+
 export interface RejectTransitGatewayPeeringAttachment {
   readonly TransitGatewayAttachmentId: string;
   readonly DryRun?: boolean;
 }
+
 export interface RejectTransitGatewayVpcAttachment {
   readonly TransitGatewayAttachmentId: string;
   readonly DryRun?: boolean;
 }
+
 export interface RejectVpcEndpointConnections {
   readonly DryRun?: boolean;
   readonly ServiceId: string;
   readonly VpcEndpointIds: [];
 }
+
 export interface RejectVpcPeeringConnection {
   readonly DryRun?: boolean;
   readonly VpcPeeringConnectionId: string;
 }
+
 export interface ReleaseAddress {
   readonly AllocationId?: string;
   readonly PublicIp?: string;
   readonly NetworkBorderGroup?: string;
   readonly DryRun?: boolean;
 }
+
 export interface ReleaseHosts {
   readonly HostIds: [];
 }
+
 export interface ReleaseIpamPoolAllocation {
   readonly DryRun?: boolean;
   readonly IpamPoolId: string;
   readonly Cidr: string;
   readonly IpamPoolAllocationId?: string;
 }
+
 export interface ReplaceIamInstanceProfileAssociation {
   readonly IamInstanceProfile: IamInstanceProfileSpecification;
   readonly AssociationId: string;
 }
+
 export interface ReplaceNetworkAclAssociation {
   readonly AssociationId: string;
   readonly DryRun?: boolean;
   readonly NetworkAclId: string;
 }
+
 export interface ReplaceNetworkAclEntry {
   readonly CidrBlock?: string;
   readonly DryRun?: boolean;
@@ -3083,6 +3558,7 @@ export interface ReplaceNetworkAclEntry {
   readonly RuleAction: string;
   readonly RuleNumber: number;
 }
+
 export interface ReplaceRoute {
   readonly DestinationCidrBlock?: string;
   readonly DestinationIpv6CidrBlock?: string;
@@ -3102,11 +3578,13 @@ export interface ReplaceRoute {
   readonly VpcPeeringConnectionId?: string;
   readonly CoreNetworkArn?: string;
 }
+
 export interface ReplaceRouteTableAssociation {
   readonly AssociationId: string;
   readonly DryRun?: boolean;
   readonly RouteTableId: string;
 }
+
 export interface ReplaceTransitGatewayRoute {
   readonly DestinationCidrBlock: string;
   readonly TransitGatewayRouteTableId: string;
@@ -3114,6 +3592,7 @@ export interface ReplaceTransitGatewayRoute {
   readonly Blackhole?: boolean;
   readonly DryRun?: boolean;
 }
+
 export interface ReportInstanceStatus {
   readonly Description?: string;
   readonly DryRun?: boolean;
@@ -3123,10 +3602,12 @@ export interface ReportInstanceStatus {
   readonly StartTime?: Date;
   readonly Status: string;
 }
+
 export interface RequestSpotFleet {
   readonly DryRun?: boolean;
   readonly SpotFleetRequestConfig: SpotFleetRequestConfigData;
 }
+
 export interface RequestSpotInstances {
   readonly AvailabilityZoneGroup?: string;
   readonly BlockDurationMinutes?: number;
@@ -3142,59 +3623,71 @@ export interface RequestSpotInstances {
   readonly TagSpecifications?: [];
   readonly InstanceInterruptionBehavior?: string;
 }
+
 export interface ResetAddressAttribute {
   readonly AllocationId: string;
   readonly Attribute: string;
   readonly DryRun?: boolean;
 }
+
 export interface ResetEbsDefaultKmsKeyId {
   readonly DryRun?: boolean;
 }
+
 export interface ResetFpgaImageAttribute {
   readonly DryRun?: boolean;
   readonly FpgaImageId: string;
   readonly Attribute?: string;
 }
+
 export interface ResetImageAttribute {
   readonly Attribute: string;
   readonly ImageId: string;
   readonly DryRun?: boolean;
 }
+
 export interface ResetInstanceAttribute {
   readonly Attribute: string;
   readonly DryRun?: boolean;
   readonly InstanceId: string;
 }
+
 export interface ResetNetworkInterfaceAttribute {
   readonly DryRun?: boolean;
   readonly NetworkInterfaceId: string;
   readonly SourceDestCheck?: string;
 }
+
 export interface ResetSnapshotAttribute {
   readonly Attribute: string;
   readonly SnapshotId: string;
   readonly DryRun?: boolean;
 }
+
 export interface RestoreAddressToClassic {
   readonly DryRun?: boolean;
   readonly PublicIp: string;
 }
+
 export interface RestoreManagedPrefixListVersion {
   readonly DryRun?: boolean;
   readonly PrefixListId: string;
   readonly PreviousVersion: number;
   readonly CurrentVersion: number;
 }
+
 export interface RestoreSnapshotFromRecycleBin {
   readonly SnapshotId: string;
   readonly DryRun?: boolean;
 }
+
 export interface RestoreSnapshotTier {
   readonly SnapshotId: string;
   readonly TemporaryRestoreDays?: number;
   readonly PermanentRestore?: boolean;
   readonly DryRun?: boolean;
 }
+
 export interface RevokeClientVpnIngress {
   readonly ClientVpnEndpointId: string;
   readonly TargetNetworkCidr: string;
@@ -3202,6 +3695,7 @@ export interface RevokeClientVpnIngress {
   readonly RevokeAllGroups?: boolean;
   readonly DryRun?: boolean;
 }
+
 export interface RevokeSecurityGroupEgress {
   readonly DryRun?: boolean;
   readonly GroupId: string;
@@ -3214,6 +3708,7 @@ export interface RevokeSecurityGroupEgress {
   readonly SourceSecurityGroupName?: string;
   readonly SourceSecurityGroupOwnerId?: string;
 }
+
 export interface RevokeSecurityGroupIngress {
   readonly CidrIp?: string;
   readonly FromPort?: number;
@@ -3227,6 +3722,7 @@ export interface RevokeSecurityGroupIngress {
   readonly DryRun?: boolean;
   readonly SecurityGroupRuleIds?: [];
 }
+
 export interface RunInstances {
   readonly BlockDeviceMappings?: [];
   readonly ImageId?: string;
@@ -3267,6 +3763,7 @@ export interface RunInstances {
   readonly EnclaveOptions?: EnclaveOptionsRequest;
   readonly PrivateDnsNameOptions?: PrivateDnsNameOptionsRequest;
 }
+
 export interface RunScheduledInstances {
   readonly ClientToken?: string;
   readonly DryRun?: boolean;
@@ -3274,6 +3771,7 @@ export interface RunScheduledInstances {
   readonly LaunchSpecification: ScheduledInstancesLaunchSpecification;
   readonly ScheduledInstanceId: string;
 }
+
 export interface SearchLocalGatewayRoutes {
   readonly LocalGatewayRouteTableId: string;
   readonly Filters?: [];
@@ -3281,6 +3779,7 @@ export interface SearchLocalGatewayRoutes {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface SearchTransitGatewayMulticastGroups {
   readonly TransitGatewayMulticastDomainId?: string;
   readonly Filters?: [];
@@ -3288,27 +3787,32 @@ export interface SearchTransitGatewayMulticastGroups {
   readonly NextToken?: string;
   readonly DryRun?: boolean;
 }
+
 export interface SearchTransitGatewayRoutes {
   readonly TransitGatewayRouteTableId: string;
   readonly Filters: [];
   readonly MaxResults?: number;
   readonly DryRun?: boolean;
 }
+
 export interface SendDiagnosticInterrupt {
   readonly InstanceId: string;
   readonly DryRun?: boolean;
 }
+
 export interface StartInstances {
   readonly InstanceIds: [];
   readonly AdditionalInfo?: string;
   readonly DryRun?: boolean;
 }
+
 export interface StartNetworkInsightsAccessScopeAnalysis {
   readonly NetworkInsightsAccessScopeId: string;
   readonly DryRun?: boolean;
   readonly TagSpecifications?: [];
   readonly ClientToken: string;
 }
+
 export interface StartNetworkInsightsAnalysis {
   readonly NetworkInsightsPathId: string;
   readonly FilterInArns?: [];
@@ -3316,40 +3820,48 @@ export interface StartNetworkInsightsAnalysis {
   readonly TagSpecifications?: [];
   readonly ClientToken: string;
 }
+
 export interface StartVpcEndpointServicePrivateDnsVerification {
   readonly DryRun?: boolean;
   readonly ServiceId: string;
 }
+
 export interface StopInstances {
   readonly InstanceIds: [];
   readonly Hibernate?: boolean;
   readonly DryRun?: boolean;
   readonly Force?: boolean;
 }
+
 export interface TerminateClientVpnConnections {
   readonly ClientVpnEndpointId: string;
   readonly ConnectionId?: string;
   readonly Username?: string;
   readonly DryRun?: boolean;
 }
+
 export interface TerminateInstances {
   readonly InstanceIds: [];
   readonly DryRun?: boolean;
 }
+
 export interface UnassignIpv6Addresses {
   readonly Ipv6Addresses?: [];
   readonly Ipv6Prefixes?: [];
   readonly NetworkInterfaceId: string;
 }
+
 export interface UnassignPrivateIpAddresses {
   readonly NetworkInterfaceId: string;
   readonly PrivateIpAddresses?: [];
   readonly Ipv4Prefixes?: [];
 }
+
 export interface UnmonitorInstances {
   readonly InstanceIds: [];
   readonly DryRun?: boolean;
 }
+
 export interface UpdateSecurityGroupRuleDescriptionsEgress {
   readonly DryRun?: boolean;
   readonly GroupId?: string;
@@ -3357,6 +3869,7 @@ export interface UpdateSecurityGroupRuleDescriptionsEgress {
   readonly IpPermissions?: [];
   readonly SecurityGroupRuleDescriptions?: [];
 }
+
 export interface UpdateSecurityGroupRuleDescriptionsIngress {
   readonly DryRun?: boolean;
   readonly GroupId?: string;
@@ -3364,10903 +3877,10903 @@ export interface UpdateSecurityGroupRuleDescriptionsIngress {
   readonly IpPermissions?: [];
   readonly SecurityGroupRuleDescriptions?: [];
 }
+
 export interface WithdrawByoipCidr {
   readonly Cidr: string;
   readonly DryRun?: boolean;
 }
 
-
-
-interface AcceleratorCount {
-  readonly Min: number;
-  readonly Max: number;
+export interface AcceleratorCount {
+  readonly Min?: number;
+  readonly Max?: number;
 }
 
-interface AcceleratorCountRequest {
-  readonly Min: number;
-  readonly Max: number;
+export interface AcceleratorCountRequest {
+  readonly Min?: number;
+  readonly Max?: number;
 }
 
-interface AcceleratorTotalMemoryMiB {
-  readonly Min: number;
-  readonly Max: number;
+export interface AcceleratorTotalMemoryMiB {
+  readonly Min?: number;
+  readonly Max?: number;
 }
 
-interface AcceleratorTotalMemoryMiBRequest {
-  readonly Min: number;
-  readonly Max: number;
+export interface AcceleratorTotalMemoryMiBRequest {
+  readonly Min?: number;
+  readonly Max?: number;
 }
 
-interface AcceptReservedInstancesExchangeQuoteRequest {
-  readonly DryRun: boolean;
+export interface AcceptReservedInstancesExchangeQuoteRequest {
+  readonly DryRun?: boolean;
   readonly ReservedInstanceIds: [];
-  readonly TargetConfigurations: [];
+  readonly TargetConfigurations?: [];
 }
 
-interface AcceptReservedInstancesExchangeQuoteResult {
-  readonly ExchangeId: string;
+export interface AcceptReservedInstancesExchangeQuoteResult {
+  readonly ExchangeId?: string;
 }
 
-interface AcceptTransitGatewayMulticastDomainAssociationsRequest {
-  readonly TransitGatewayMulticastDomainId: string;
+export interface AcceptTransitGatewayMulticastDomainAssociationsRequest {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly SubnetIds?: [];
+  readonly DryRun?: boolean;
+}
+
+export interface AcceptTransitGatewayMulticastDomainAssociationsResult {
+  readonly Associations?: TransitGatewayMulticastDomainAssociations;
+}
+
+export interface AcceptTransitGatewayPeeringAttachmentRequest {
   readonly TransitGatewayAttachmentId: string;
-  readonly SubnetIds: [];
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface AcceptTransitGatewayMulticastDomainAssociationsResult {
-  readonly Associations: TransitGatewayMulticastDomainAssociations;
+export interface AcceptTransitGatewayPeeringAttachmentResult {
+  readonly TransitGatewayPeeringAttachment?: TransitGatewayPeeringAttachment;
 }
 
-interface AcceptTransitGatewayPeeringAttachmentRequest {
+export interface AcceptTransitGatewayVpcAttachmentRequest {
   readonly TransitGatewayAttachmentId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface AcceptTransitGatewayPeeringAttachmentResult {
-  readonly TransitGatewayPeeringAttachment: TransitGatewayPeeringAttachment;
+export interface AcceptTransitGatewayVpcAttachmentResult {
+  readonly TransitGatewayVpcAttachment?: TransitGatewayVpcAttachment;
 }
 
-interface AcceptTransitGatewayVpcAttachmentRequest {
-  readonly TransitGatewayAttachmentId: string;
-  readonly DryRun: boolean;
-}
-
-interface AcceptTransitGatewayVpcAttachmentResult {
-  readonly TransitGatewayVpcAttachment: TransitGatewayVpcAttachment;
-}
-
-interface AcceptVpcEndpointConnectionsRequest {
-  readonly DryRun: boolean;
+export interface AcceptVpcEndpointConnectionsRequest {
+  readonly DryRun?: boolean;
   readonly ServiceId: string;
   readonly VpcEndpointIds: [];
 }
 
-interface AcceptVpcEndpointConnectionsResult {
-  readonly Unsuccessful: [];
+export interface AcceptVpcEndpointConnectionsResult {
+  readonly Unsuccessful?: [];
 }
 
-interface AcceptVpcPeeringConnectionRequest {
-  readonly DryRun: boolean;
-  readonly VpcPeeringConnectionId: string;
+export interface AcceptVpcPeeringConnectionRequest {
+  readonly DryRun?: boolean;
+  readonly VpcPeeringConnectionId?: string;
 }
 
-interface AcceptVpcPeeringConnectionResult {
-  readonly VpcPeeringConnection: VpcPeeringConnection;
+export interface AcceptVpcPeeringConnectionResult {
+  readonly VpcPeeringConnection?: VpcPeeringConnection;
 }
 
-interface AccessScopeAnalysisFinding {
-  readonly NetworkInsightsAccessScopeAnalysisId: string;
-  readonly NetworkInsightsAccessScopeId: string;
-  readonly FindingId: string;
-  readonly FindingComponents: [];
+export interface AccessScopeAnalysisFinding {
+  readonly NetworkInsightsAccessScopeAnalysisId?: string;
+  readonly NetworkInsightsAccessScopeId?: string;
+  readonly FindingId?: string;
+  readonly FindingComponents?: [];
 }
 
-interface AccessScopePath {
-  readonly Source: PathStatement;
-  readonly Destination: PathStatement;
-  readonly ThroughResources: [];
+export interface AccessScopePath {
+  readonly Source?: PathStatement;
+  readonly Destination?: PathStatement;
+  readonly ThroughResources?: [];
 }
 
-interface AccessScopePathRequest {
-  readonly Source: PathStatementRequest;
-  readonly Destination: PathStatementRequest;
-  readonly ThroughResources: [];
+export interface AccessScopePathRequest {
+  readonly Source?: PathStatementRequest;
+  readonly Destination?: PathStatementRequest;
+  readonly ThroughResources?: [];
 }
 
-interface AccountAttribute {
-  readonly AttributeName: string;
-  readonly AttributeValues: [];
+export interface AccountAttribute {
+  readonly AttributeName?: string;
+  readonly AttributeValues?: [];
 }
 
-interface AccountAttributeValue {
-  readonly AttributeValue: string;
+export interface AccountAttributeValue {
+  readonly AttributeValue?: string;
 }
 
-interface ActiveInstance {
-  readonly InstanceId: string;
-  readonly InstanceType: string;
-  readonly SpotInstanceRequestId: string;
-  readonly InstanceHealth: string;
+export interface ActiveInstance {
+  readonly InstanceId?: string;
+  readonly InstanceType?: string;
+  readonly SpotInstanceRequestId?: string;
+  readonly InstanceHealth?: string;
 }
 
-interface AddIpamOperatingRegion {
-  readonly RegionName: string;
+export interface AddIpamOperatingRegion {
+  readonly RegionName?: string;
 }
 
-interface AddPrefixListEntry {
+export interface AddPrefixListEntry {
   readonly Cidr: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 
-interface Address {
-  readonly InstanceId: string;
-  readonly PublicIp: string;
-  readonly AllocationId: string;
-  readonly AssociationId: string;
-  readonly Domain: string;
-  readonly NetworkInterfaceId: string;
-  readonly NetworkInterfaceOwnerId: string;
-  readonly PrivateIpAddress: string;
-  readonly Tags: [];
-  readonly PublicIpv4Pool: string;
-  readonly NetworkBorderGroup: string;
-  readonly CustomerOwnedIp: string;
-  readonly CustomerOwnedIpv4Pool: string;
-  readonly CarrierIp: string;
+export interface Address {
+  readonly InstanceId?: string;
+  readonly PublicIp?: string;
+  readonly AllocationId?: string;
+  readonly AssociationId?: string;
+  readonly Domain?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly NetworkInterfaceOwnerId?: string;
+  readonly PrivateIpAddress?: string;
+  readonly Tags?: [];
+  readonly PublicIpv4Pool?: string;
+  readonly NetworkBorderGroup?: string;
+  readonly CustomerOwnedIp?: string;
+  readonly CustomerOwnedIpv4Pool?: string;
+  readonly CarrierIp?: string;
 }
 
-interface AddressAttribute {
-  readonly PublicIp: string;
-  readonly AllocationId: string;
-  readonly PtrRecord: string;
-  readonly PtrRecordUpdate: PtrUpdateStatus;
+export interface AddressAttribute {
+  readonly PublicIp?: string;
+  readonly AllocationId?: string;
+  readonly PtrRecord?: string;
+  readonly PtrRecordUpdate?: PtrUpdateStatus;
 }
 
-interface AdvertiseByoipCidrRequest {
+export interface AdvertiseByoipCidrRequest {
   readonly Cidr: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface AdvertiseByoipCidrResult {
-  readonly ByoipCidr: ByoipCidr;
+export interface AdvertiseByoipCidrResult {
+  readonly ByoipCidr?: ByoipCidr;
 }
 
-interface AllocateAddressRequest {
-  readonly Domain: string;
-  readonly Address: string;
-  readonly PublicIpv4Pool: string;
-  readonly NetworkBorderGroup: string;
-  readonly CustomerOwnedIpv4Pool: string;
-  readonly DryRun: boolean;
-  readonly TagSpecifications: [];
+export interface AllocateAddressRequest {
+  readonly Domain?: string;
+  readonly Address?: string;
+  readonly PublicIpv4Pool?: string;
+  readonly NetworkBorderGroup?: string;
+  readonly CustomerOwnedIpv4Pool?: string;
+  readonly DryRun?: boolean;
+  readonly TagSpecifications?: [];
 }
 
-interface AllocateAddressResult {
-  readonly PublicIp: string;
-  readonly AllocationId: string;
-  readonly PublicIpv4Pool: string;
-  readonly NetworkBorderGroup: string;
-  readonly Domain: string;
-  readonly CustomerOwnedIp: string;
-  readonly CustomerOwnedIpv4Pool: string;
-  readonly CarrierIp: string;
+export interface AllocateAddressResult {
+  readonly PublicIp?: string;
+  readonly AllocationId?: string;
+  readonly PublicIpv4Pool?: string;
+  readonly NetworkBorderGroup?: string;
+  readonly Domain?: string;
+  readonly CustomerOwnedIp?: string;
+  readonly CustomerOwnedIpv4Pool?: string;
+  readonly CarrierIp?: string;
 }
 
-interface AllocateHostsRequest {
-  readonly AutoPlacement: string;
+export interface AllocateHostsRequest {
+  readonly AutoPlacement?: string;
   readonly AvailabilityZone: string;
-  readonly ClientToken: string;
-  readonly InstanceType: string;
-  readonly InstanceFamily: string;
+  readonly ClientToken?: string;
+  readonly InstanceType?: string;
+  readonly InstanceFamily?: string;
   readonly Quantity: number;
-  readonly TagSpecifications: [];
-  readonly HostRecovery: string;
+  readonly TagSpecifications?: [];
+  readonly HostRecovery?: string;
 }
 
-interface AllocateHostsResult {
-  readonly HostIds: [];
+export interface AllocateHostsResult {
+  readonly HostIds?: [];
 }
 
-interface AllocateIpamPoolCidrRequest {
-  readonly DryRun: boolean;
+export interface AllocateIpamPoolCidrRequest {
+  readonly DryRun?: boolean;
   readonly IpamPoolId: string;
-  readonly Cidr: string;
-  readonly NetmaskLength: number;
-  readonly ClientToken: string;
-  readonly Description: string;
-  readonly PreviewNextCidr: boolean;
-  readonly DisallowedCidrs: [];
+  readonly Cidr?: string;
+  readonly NetmaskLength?: number;
+  readonly ClientToken?: string;
+  readonly Description?: string;
+  readonly PreviewNextCidr?: boolean;
+  readonly DisallowedCidrs?: [];
 }
 
-interface AllocateIpamPoolCidrResult {
-  readonly IpamPoolAllocation: IpamPoolAllocation;
+export interface AllocateIpamPoolCidrResult {
+  readonly IpamPoolAllocation?: IpamPoolAllocation;
 }
 
-interface AllowedPrincipal {
-  readonly PrincipalType: string;
-  readonly Principal: string;
+export interface AllowedPrincipal {
+  readonly PrincipalType?: string;
+  readonly Principal?: string;
 }
 
-interface AlternatePathHint {
-  readonly ComponentId: string;
-  readonly ComponentArn: string;
+export interface AlternatePathHint {
+  readonly ComponentId?: string;
+  readonly ComponentArn?: string;
 }
 
-interface AnalysisAclRule {
-  readonly Cidr: string;
-  readonly Egress: boolean;
-  readonly PortRange: PortRange;
-  readonly Protocol: string;
-  readonly RuleAction: string;
-  readonly RuleNumber: number;
+export interface AnalysisAclRule {
+  readonly Cidr?: string;
+  readonly Egress?: boolean;
+  readonly PortRange?: PortRange;
+  readonly Protocol?: string;
+  readonly RuleAction?: string;
+  readonly RuleNumber?: number;
 }
 
-interface AnalysisComponent {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
+export interface AnalysisComponent {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
 }
 
-interface AnalysisLoadBalancerListener {
-  readonly LoadBalancerPort: number;
-  readonly InstancePort: number;
+export interface AnalysisLoadBalancerListener {
+  readonly LoadBalancerPort?: number;
+  readonly InstancePort?: number;
 }
 
-interface AnalysisLoadBalancerTarget {
-  readonly Address: string;
-  readonly AvailabilityZone: string;
-  readonly Instance: AnalysisComponent;
-  readonly Port: number;
+export interface AnalysisLoadBalancerTarget {
+  readonly Address?: string;
+  readonly AvailabilityZone?: string;
+  readonly Instance?: AnalysisComponent;
+  readonly Port?: number;
 }
 
-interface AnalysisPacketHeader {
-  readonly DestinationAddresses: [];
-  readonly DestinationPortRanges: [];
-  readonly Protocol: string;
-  readonly SourceAddresses: [];
-  readonly SourcePortRanges: [];
+export interface AnalysisPacketHeader {
+  readonly DestinationAddresses?: [];
+  readonly DestinationPortRanges?: [];
+  readonly Protocol?: string;
+  readonly SourceAddresses?: [];
+  readonly SourcePortRanges?: [];
 }
 
-interface AnalysisRouteTableRoute {
-  readonly DestinationCidr: string;
-  readonly DestinationPrefixListId: string;
-  readonly EgressOnlyInternetGatewayId: string;
-  readonly GatewayId: string;
-  readonly InstanceId: string;
-  readonly NatGatewayId: string;
-  readonly NetworkInterfaceId: string;
-  readonly Origin: string;
-  readonly TransitGatewayId: string;
-  readonly VpcPeeringConnectionId: string;
+export interface AnalysisRouteTableRoute {
+  readonly DestinationCidr?: string;
+  readonly DestinationPrefixListId?: string;
+  readonly EgressOnlyInternetGatewayId?: string;
+  readonly GatewayId?: string;
+  readonly InstanceId?: string;
+  readonly NatGatewayId?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly Origin?: string;
+  readonly TransitGatewayId?: string;
+  readonly VpcPeeringConnectionId?: string;
 }
 
-interface AnalysisSecurityGroupRule {
-  readonly Cidr: string;
-  readonly Direction: string;
-  readonly SecurityGroupId: string;
-  readonly PortRange: PortRange;
-  readonly PrefixListId: string;
-  readonly Protocol: string;
+export interface AnalysisSecurityGroupRule {
+  readonly Cidr?: string;
+  readonly Direction?: string;
+  readonly SecurityGroupId?: string;
+  readonly PortRange?: PortRange;
+  readonly PrefixListId?: string;
+  readonly Protocol?: string;
 }
 
-interface ApplySecurityGroupsToClientVpnTargetNetworkRequest {
+export interface ApplySecurityGroupsToClientVpnTargetNetworkRequest {
   readonly ClientVpnEndpointId: string;
   readonly VpcId: string;
   readonly SecurityGroupIds: [];
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ApplySecurityGroupsToClientVpnTargetNetworkResult {
-  readonly SecurityGroupIds: [];
+export interface ApplySecurityGroupsToClientVpnTargetNetworkResult {
+  readonly SecurityGroupIds?: [];
 }
 
-interface AssignIpv6AddressesRequest {
-  readonly Ipv6AddressCount: number;
-  readonly Ipv6Addresses: [];
-  readonly Ipv6PrefixCount: number;
-  readonly Ipv6Prefixes: [];
+export interface AssignIpv6AddressesRequest {
+  readonly Ipv6AddressCount?: number;
+  readonly Ipv6Addresses?: [];
+  readonly Ipv6PrefixCount?: number;
+  readonly Ipv6Prefixes?: [];
   readonly NetworkInterfaceId: string;
 }
 
-interface AssignIpv6AddressesResult {
-  readonly AssignedIpv6Addresses: [];
-  readonly AssignedIpv6Prefixes: [];
+export interface AssignIpv6AddressesResult {
+  readonly AssignedIpv6Addresses?: [];
+  readonly AssignedIpv6Prefixes?: [];
+  readonly NetworkInterfaceId?: string;
+}
+
+export interface AssignPrivateIpAddressesRequest {
+  readonly AllowReassignment?: boolean;
   readonly NetworkInterfaceId: string;
+  readonly PrivateIpAddresses?: [];
+  readonly SecondaryPrivateIpAddressCount?: number;
+  readonly Ipv4Prefixes?: [];
+  readonly Ipv4PrefixCount?: number;
 }
 
-interface AssignPrivateIpAddressesRequest {
-  readonly AllowReassignment: boolean;
-  readonly NetworkInterfaceId: string;
-  readonly PrivateIpAddresses: [];
-  readonly SecondaryPrivateIpAddressCount: number;
-  readonly Ipv4Prefixes: [];
-  readonly Ipv4PrefixCount: number;
+export interface AssignPrivateIpAddressesResult {
+  readonly NetworkInterfaceId?: string;
+  readonly AssignedPrivateIpAddresses?: [];
+  readonly AssignedIpv4Prefixes?: [];
 }
 
-interface AssignPrivateIpAddressesResult {
-  readonly NetworkInterfaceId: string;
-  readonly AssignedPrivateIpAddresses: [];
-  readonly AssignedIpv4Prefixes: [];
+export interface AssignedPrivateIpAddress {
+  readonly PrivateIpAddress?: string;
 }
 
-interface AssignedPrivateIpAddress {
-  readonly PrivateIpAddress: string;
+export interface AssociateAddressRequest {
+  readonly AllocationId?: string;
+  readonly InstanceId?: string;
+  readonly PublicIp?: string;
+  readonly AllowReassociation?: boolean;
+  readonly DryRun?: boolean;
+  readonly NetworkInterfaceId?: string;
+  readonly PrivateIpAddress?: string;
 }
 
-interface AssociateAddressRequest {
-  readonly AllocationId: string;
-  readonly InstanceId: string;
-  readonly PublicIp: string;
-  readonly AllowReassociation: boolean;
-  readonly DryRun: boolean;
-  readonly NetworkInterfaceId: string;
-  readonly PrivateIpAddress: string;
+export interface AssociateAddressResult {
+  readonly AssociationId?: string;
 }
 
-interface AssociateAddressResult {
-  readonly AssociationId: string;
-}
-
-interface AssociateClientVpnTargetNetworkRequest {
+export interface AssociateClientVpnTargetNetworkRequest {
   readonly ClientVpnEndpointId: string;
   readonly SubnetId: string;
-  readonly ClientToken: string;
-  readonly DryRun: boolean;
+  readonly ClientToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface AssociateClientVpnTargetNetworkResult {
-  readonly AssociationId: string;
-  readonly Status: AssociationStatus;
+export interface AssociateClientVpnTargetNetworkResult {
+  readonly AssociationId?: string;
+  readonly Status?: AssociationStatus;
 }
 
-interface AssociateDhcpOptionsRequest {
+export interface AssociateDhcpOptionsRequest {
   readonly DhcpOptionsId: string;
   readonly VpcId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface AssociateEnclaveCertificateIamRoleRequest {
-  readonly CertificateArn: string;
-  readonly RoleArn: string;
-  readonly DryRun: boolean;
+export interface AssociateEnclaveCertificateIamRoleRequest {
+  readonly CertificateArn?: string;
+  readonly RoleArn?: string;
+  readonly DryRun?: boolean;
 }
 
-interface AssociateEnclaveCertificateIamRoleResult {
-  readonly CertificateS3BucketName: string;
-  readonly CertificateS3ObjectKey: string;
-  readonly EncryptionKmsKeyId: string;
+export interface AssociateEnclaveCertificateIamRoleResult {
+  readonly CertificateS3BucketName?: string;
+  readonly CertificateS3ObjectKey?: string;
+  readonly EncryptionKmsKeyId?: string;
 }
 
-interface AssociateIamInstanceProfileRequest {
+export interface AssociateIamInstanceProfileRequest {
   readonly IamInstanceProfile: IamInstanceProfileSpecification;
   readonly InstanceId: string;
 }
 
-interface AssociateIamInstanceProfileResult {
-  readonly IamInstanceProfileAssociation: IamInstanceProfileAssociation;
+export interface AssociateIamInstanceProfileResult {
+  readonly IamInstanceProfileAssociation?: IamInstanceProfileAssociation;
 }
 
-interface AssociateInstanceEventWindowRequest {
-  readonly DryRun: boolean;
+export interface AssociateInstanceEventWindowRequest {
+  readonly DryRun?: boolean;
   readonly InstanceEventWindowId: string;
   readonly AssociationTarget: InstanceEventWindowAssociationRequest;
 }
 
-interface AssociateInstanceEventWindowResult {
-  readonly InstanceEventWindow: InstanceEventWindow;
+export interface AssociateInstanceEventWindowResult {
+  readonly InstanceEventWindow?: InstanceEventWindow;
 }
 
-interface AssociateRouteTableRequest {
-  readonly DryRun: boolean;
+export interface AssociateRouteTableRequest {
+  readonly DryRun?: boolean;
   readonly RouteTableId: string;
-  readonly SubnetId: string;
-  readonly GatewayId: string;
+  readonly SubnetId?: string;
+  readonly GatewayId?: string;
 }
 
-interface AssociateRouteTableResult {
-  readonly AssociationId: string;
-  readonly AssociationState: RouteTableAssociationState;
+export interface AssociateRouteTableResult {
+  readonly AssociationId?: string;
+  readonly AssociationState?: RouteTableAssociationState;
 }
 
-interface AssociateSubnetCidrBlockRequest {
+export interface AssociateSubnetCidrBlockRequest {
   readonly Ipv6CidrBlock: string;
   readonly SubnetId: string;
 }
 
-interface AssociateSubnetCidrBlockResult {
-  readonly Ipv6CidrBlockAssociation: SubnetIpv6CidrBlockAssociation;
-  readonly SubnetId: string;
+export interface AssociateSubnetCidrBlockResult {
+  readonly Ipv6CidrBlockAssociation?: SubnetIpv6CidrBlockAssociation;
+  readonly SubnetId?: string;
 }
 
-interface AssociateTransitGatewayMulticastDomainRequest {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly TransitGatewayAttachmentId: string;
-  readonly SubnetIds: [];
-  readonly DryRun: boolean;
+export interface AssociateTransitGatewayMulticastDomainRequest {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly SubnetIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface AssociateTransitGatewayMulticastDomainResult {
-  readonly Associations: TransitGatewayMulticastDomainAssociations;
+export interface AssociateTransitGatewayMulticastDomainResult {
+  readonly Associations?: TransitGatewayMulticastDomainAssociations;
 }
 
-interface AssociateTransitGatewayRouteTableRequest {
+export interface AssociateTransitGatewayRouteTableRequest {
   readonly TransitGatewayRouteTableId: string;
   readonly TransitGatewayAttachmentId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface AssociateTransitGatewayRouteTableResult {
-  readonly Association: TransitGatewayAssociation;
+export interface AssociateTransitGatewayRouteTableResult {
+  readonly Association?: TransitGatewayAssociation;
 }
 
-interface AssociateTrunkInterfaceRequest {
+export interface AssociateTrunkInterfaceRequest {
   readonly BranchInterfaceId: string;
   readonly TrunkInterfaceId: string;
-  readonly VlanId: number;
-  readonly GreKey: number;
-  readonly ClientToken: string;
-  readonly DryRun: boolean;
+  readonly VlanId?: number;
+  readonly GreKey?: number;
+  readonly ClientToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface AssociateTrunkInterfaceResult {
-  readonly InterfaceAssociation: TrunkInterfaceAssociation;
-  readonly ClientToken: string;
+export interface AssociateTrunkInterfaceResult {
+  readonly InterfaceAssociation?: TrunkInterfaceAssociation;
+  readonly ClientToken?: string;
 }
 
-interface AssociateVpcCidrBlockRequest {
-  readonly AmazonProvidedIpv6CidrBlock: boolean;
-  readonly CidrBlock: string;
+export interface AssociateVpcCidrBlockRequest {
+  readonly AmazonProvidedIpv6CidrBlock?: boolean;
+  readonly CidrBlock?: string;
   readonly VpcId: string;
-  readonly Ipv6CidrBlockNetworkBorderGroup: string;
-  readonly Ipv6Pool: string;
-  readonly Ipv6CidrBlock: string;
-  readonly Ipv4IpamPoolId: string;
-  readonly Ipv4NetmaskLength: number;
-  readonly Ipv6IpamPoolId: string;
-  readonly Ipv6NetmaskLength: number;
+  readonly Ipv6CidrBlockNetworkBorderGroup?: string;
+  readonly Ipv6Pool?: string;
+  readonly Ipv6CidrBlock?: string;
+  readonly Ipv4IpamPoolId?: string;
+  readonly Ipv4NetmaskLength?: number;
+  readonly Ipv6IpamPoolId?: string;
+  readonly Ipv6NetmaskLength?: number;
 }
 
-interface AssociateVpcCidrBlockResult {
-  readonly Ipv6CidrBlockAssociation: VpcIpv6CidrBlockAssociation;
-  readonly CidrBlockAssociation: VpcCidrBlockAssociation;
-  readonly VpcId: string;
+export interface AssociateVpcCidrBlockResult {
+  readonly Ipv6CidrBlockAssociation?: VpcIpv6CidrBlockAssociation;
+  readonly CidrBlockAssociation?: VpcCidrBlockAssociation;
+  readonly VpcId?: string;
 }
 
-interface AssociatedRole {
-  readonly AssociatedRoleArn: string;
-  readonly CertificateS3BucketName: string;
-  readonly CertificateS3ObjectKey: string;
-  readonly EncryptionKmsKeyId: string;
+export interface AssociatedRole {
+  readonly AssociatedRoleArn?: string;
+  readonly CertificateS3BucketName?: string;
+  readonly CertificateS3ObjectKey?: string;
+  readonly EncryptionKmsKeyId?: string;
 }
 
-interface AssociatedTargetNetwork {
-  readonly NetworkId: string;
-  readonly NetworkType: string;
+export interface AssociatedTargetNetwork {
+  readonly NetworkId?: string;
+  readonly NetworkType?: string;
 }
 
-interface AssociationStatus {
-  readonly Code: string;
-  readonly Message: string;
+export interface AssociationStatus {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface AthenaIntegration {
+export interface AthenaIntegration {
   readonly IntegrationResultS3DestinationArn: string;
   readonly PartitionLoadFrequency: string;
-  readonly PartitionStartDate: Date;
-  readonly PartitionEndDate: Date;
+  readonly PartitionStartDate?: Date;
+  readonly PartitionEndDate?: Date;
 }
 
-interface AttachClassicLinkVpcRequest {
-  readonly DryRun: boolean;
+export interface AttachClassicLinkVpcRequest {
+  readonly DryRun?: boolean;
   readonly Groups: [];
   readonly InstanceId: string;
   readonly VpcId: string;
 }
 
-interface AttachClassicLinkVpcResult {
-  readonly Return: boolean;
+export interface AttachClassicLinkVpcResult {
+  readonly Return?: boolean;
 }
 
-interface AttachInternetGatewayRequest {
-  readonly DryRun: boolean;
+export interface AttachInternetGatewayRequest {
+  readonly DryRun?: boolean;
   readonly InternetGatewayId: string;
   readonly VpcId: string;
 }
 
-interface AttachNetworkInterfaceRequest {
+export interface AttachNetworkInterfaceRequest {
   readonly DeviceIndex: number;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
   readonly InstanceId: string;
   readonly NetworkInterfaceId: string;
-  readonly NetworkCardIndex: number;
+  readonly NetworkCardIndex?: number;
 }
 
-interface AttachNetworkInterfaceResult {
-  readonly AttachmentId: string;
-  readonly NetworkCardIndex: number;
+export interface AttachNetworkInterfaceResult {
+  readonly AttachmentId?: string;
+  readonly NetworkCardIndex?: number;
 }
 
-interface AttachVolumeRequest {
+export interface AttachVolumeRequest {
   readonly Device: string;
   readonly InstanceId: string;
   readonly VolumeId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface AttachVpnGatewayRequest {
+export interface AttachVpnGatewayRequest {
   readonly VpcId: string;
   readonly VpnGatewayId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface AttachVpnGatewayResult {
-  readonly VpcAttachment: VpcAttachment;
+export interface AttachVpnGatewayResult {
+  readonly VpcAttachment?: VpcAttachment;
 }
 
-interface AttributeBooleanValue {
-  readonly Value: boolean;
+export interface AttributeBooleanValue {
+  readonly Value?: boolean;
 }
 
-interface AttributeValue {
-  readonly Value: string;
+export interface AttributeValue {
+  readonly Value?: string;
 }
 
-interface AuthorizationRule {
-  readonly ClientVpnEndpointId: string;
-  readonly Description: string;
-  readonly GroupId: string;
-  readonly AccessAll: boolean;
-  readonly DestinationCidr: string;
-  readonly Status: ClientVpnAuthorizationRuleStatus;
+export interface AuthorizationRule {
+  readonly ClientVpnEndpointId?: string;
+  readonly Description?: string;
+  readonly GroupId?: string;
+  readonly AccessAll?: boolean;
+  readonly DestinationCidr?: string;
+  readonly Status?: ClientVpnAuthorizationRuleStatus;
 }
 
-interface AuthorizeClientVpnIngressRequest {
+export interface AuthorizeClientVpnIngressRequest {
   readonly ClientVpnEndpointId: string;
   readonly TargetNetworkCidr: string;
-  readonly AccessGroupId: string;
-  readonly AuthorizeAllGroups: boolean;
-  readonly Description: string;
-  readonly ClientToken: string;
-  readonly DryRun: boolean;
+  readonly AccessGroupId?: string;
+  readonly AuthorizeAllGroups?: boolean;
+  readonly Description?: string;
+  readonly ClientToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface AuthorizeClientVpnIngressResult {
-  readonly Status: ClientVpnAuthorizationRuleStatus;
+export interface AuthorizeClientVpnIngressResult {
+  readonly Status?: ClientVpnAuthorizationRuleStatus;
 }
 
-interface AuthorizeSecurityGroupEgressRequest {
-  readonly DryRun: boolean;
+export interface AuthorizeSecurityGroupEgressRequest {
+  readonly DryRun?: boolean;
   readonly GroupId: string;
-  readonly IpPermissions: [];
-  readonly TagSpecifications: [];
-  readonly CidrIp: string;
-  readonly FromPort: number;
-  readonly IpProtocol: string;
-  readonly ToPort: number;
-  readonly SourceSecurityGroupName: string;
-  readonly SourceSecurityGroupOwnerId: string;
+  readonly IpPermissions?: [];
+  readonly TagSpecifications?: [];
+  readonly CidrIp?: string;
+  readonly FromPort?: number;
+  readonly IpProtocol?: string;
+  readonly ToPort?: number;
+  readonly SourceSecurityGroupName?: string;
+  readonly SourceSecurityGroupOwnerId?: string;
 }
 
-interface AuthorizeSecurityGroupEgressResult {
-  readonly Return: boolean;
-  readonly SecurityGroupRules: [];
+export interface AuthorizeSecurityGroupEgressResult {
+  readonly Return?: boolean;
+  readonly SecurityGroupRules?: [];
 }
 
-interface AuthorizeSecurityGroupIngressRequest {
-  readonly CidrIp: string;
-  readonly FromPort: number;
-  readonly GroupId: string;
-  readonly GroupName: string;
-  readonly IpPermissions: [];
-  readonly IpProtocol: string;
-  readonly SourceSecurityGroupName: string;
-  readonly SourceSecurityGroupOwnerId: string;
-  readonly ToPort: number;
-  readonly DryRun: boolean;
-  readonly TagSpecifications: [];
+export interface AuthorizeSecurityGroupIngressRequest {
+  readonly CidrIp?: string;
+  readonly FromPort?: number;
+  readonly GroupId?: string;
+  readonly GroupName?: string;
+  readonly IpPermissions?: [];
+  readonly IpProtocol?: string;
+  readonly SourceSecurityGroupName?: string;
+  readonly SourceSecurityGroupOwnerId?: string;
+  readonly ToPort?: number;
+  readonly DryRun?: boolean;
+  readonly TagSpecifications?: [];
 }
 
-interface AuthorizeSecurityGroupIngressResult {
-  readonly Return: boolean;
-  readonly SecurityGroupRules: [];
+export interface AuthorizeSecurityGroupIngressResult {
+  readonly Return?: boolean;
+  readonly SecurityGroupRules?: [];
 }
 
-interface AvailabilityZone {
-  readonly State: string;
-  readonly OptInStatus: string;
-  readonly Messages: [];
-  readonly RegionName: string;
-  readonly ZoneName: string;
-  readonly ZoneId: string;
-  readonly GroupName: string;
-  readonly NetworkBorderGroup: string;
-  readonly ZoneType: string;
-  readonly ParentZoneName: string;
-  readonly ParentZoneId: string;
+export interface AvailabilityZone {
+  readonly State?: string;
+  readonly OptInStatus?: string;
+  readonly Messages?: [];
+  readonly RegionName?: string;
+  readonly ZoneName?: string;
+  readonly ZoneId?: string;
+  readonly GroupName?: string;
+  readonly NetworkBorderGroup?: string;
+  readonly ZoneType?: string;
+  readonly ParentZoneName?: string;
+  readonly ParentZoneId?: string;
 }
 
-interface AvailabilityZoneMessage {
-  readonly Message: string;
+export interface AvailabilityZoneMessage {
+  readonly Message?: string;
 }
 
-interface AvailableCapacity {
-  readonly AvailableInstanceCapacity: [];
-  readonly AvailableVCpus: number;
+export interface AvailableCapacity {
+  readonly AvailableInstanceCapacity?: [];
+  readonly AvailableVCpus?: number;
 }
 
-interface BaselineEbsBandwidthMbps {
-  readonly Min: number;
-  readonly Max: number;
+export interface BaselineEbsBandwidthMbps {
+  readonly Min?: number;
+  readonly Max?: number;
 }
 
-interface BaselineEbsBandwidthMbpsRequest {
-  readonly Min: number;
-  readonly Max: number;
+export interface BaselineEbsBandwidthMbpsRequest {
+  readonly Min?: number;
+  readonly Max?: number;
 }
 
-interface BlobAttributeValue {
-  readonly Value: unknown;
+export interface BlobAttributeValue {
+  readonly Value?: unknown;
 }
 
-interface BlockDeviceMapping {
-  readonly DeviceName: string;
-  readonly VirtualName: string;
-  readonly Ebs: EbsBlockDevice;
-  readonly NoDevice: string;
+export interface BlockDeviceMapping {
+  readonly DeviceName?: string;
+  readonly VirtualName?: string;
+  readonly Ebs?: EbsBlockDevice;
+  readonly NoDevice?: string;
 }
 
-interface BundleInstanceRequest {
+export interface BundleInstanceRequest {
   readonly InstanceId: string;
   readonly Storage: Storage;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface BundleInstanceResult {
-  readonly BundleTask: BundleTask;
+export interface BundleInstanceResult {
+  readonly BundleTask?: BundleTask;
 }
 
-interface BundleTask {
+export interface BundleTask {
+  readonly BundleId?: string;
+  readonly BundleTaskError?: BundleTaskError;
+  readonly InstanceId?: string;
+  readonly Progress?: string;
+  readonly StartTime?: Date;
+  readonly State?: string;
+  readonly Storage?: Storage;
+  readonly UpdateTime?: Date;
+}
+
+export interface BundleTaskError {
+  readonly Code?: string;
+  readonly Message?: string;
+}
+
+export interface ByoipCidr {
+  readonly Cidr?: string;
+  readonly Description?: string;
+  readonly StatusMessage?: string;
+  readonly State?: string;
+}
+
+export interface CancelBundleTaskRequest {
   readonly BundleId: string;
-  readonly BundleTaskError: BundleTaskError;
-  readonly InstanceId: string;
-  readonly Progress: string;
-  readonly StartTime: Date;
-  readonly State: string;
-  readonly Storage: Storage;
-  readonly UpdateTime: Date;
+  readonly DryRun?: boolean;
 }
 
-interface BundleTaskError {
-  readonly Code: string;
-  readonly Message: string;
+export interface CancelBundleTaskResult {
+  readonly BundleTask?: BundleTask;
 }
 
-interface ByoipCidr {
-  readonly Cidr: string;
-  readonly Description: string;
-  readonly StatusMessage: string;
-  readonly State: string;
+export interface CancelCapacityReservationFleetError {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface CancelBundleTaskRequest {
-  readonly BundleId: string;
-  readonly DryRun: boolean;
-}
-
-interface CancelBundleTaskResult {
-  readonly BundleTask: BundleTask;
-}
-
-interface CancelCapacityReservationFleetError {
-  readonly Code: string;
-  readonly Message: string;
-}
-
-interface CancelCapacityReservationFleetsRequest {
-  readonly DryRun: boolean;
+export interface CancelCapacityReservationFleetsRequest {
+  readonly DryRun?: boolean;
   readonly CapacityReservationFleetIds: [];
 }
 
-interface CancelCapacityReservationFleetsResult {
-  readonly SuccessfulFleetCancellations: [];
-  readonly FailedFleetCancellations: [];
+export interface CancelCapacityReservationFleetsResult {
+  readonly SuccessfulFleetCancellations?: [];
+  readonly FailedFleetCancellations?: [];
 }
 
-interface CancelCapacityReservationRequest {
+export interface CancelCapacityReservationRequest {
   readonly CapacityReservationId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface CancelCapacityReservationResult {
-  readonly Return: boolean;
+export interface CancelCapacityReservationResult {
+  readonly Return?: boolean;
 }
 
-interface CancelConversionRequest {
+export interface CancelConversionRequest {
   readonly ConversionTaskId: string;
-  readonly DryRun: boolean;
-  readonly ReasonMessage: string;
+  readonly DryRun?: boolean;
+  readonly ReasonMessage?: string;
 }
 
-interface CancelExportTaskRequest {
+export interface CancelExportTaskRequest {
   readonly ExportTaskId: string;
 }
 
-interface CancelImportTaskRequest {
-  readonly CancelReason: string;
-  readonly DryRun: boolean;
-  readonly ImportTaskId: string;
+export interface CancelImportTaskRequest {
+  readonly CancelReason?: string;
+  readonly DryRun?: boolean;
+  readonly ImportTaskId?: string;
 }
 
-interface CancelImportTaskResult {
-  readonly ImportTaskId: string;
-  readonly PreviousState: string;
-  readonly State: string;
+export interface CancelImportTaskResult {
+  readonly ImportTaskId?: string;
+  readonly PreviousState?: string;
+  readonly State?: string;
 }
 
-interface CancelReservedInstancesListingRequest {
+export interface CancelReservedInstancesListingRequest {
   readonly ReservedInstancesListingId: string;
 }
 
-interface CancelReservedInstancesListingResult {
-  readonly ReservedInstancesListings: [];
+export interface CancelReservedInstancesListingResult {
+  readonly ReservedInstancesListings?: [];
 }
 
-interface CancelSpotFleetRequestsError {
-  readonly Code: string;
-  readonly Message: string;
+export interface CancelSpotFleetRequestsError {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface CancelSpotFleetRequestsErrorItem {
-  readonly Error: CancelSpotFleetRequestsError;
-  readonly SpotFleetRequestId: string;
+export interface CancelSpotFleetRequestsErrorItem {
+  readonly Error?: CancelSpotFleetRequestsError;
+  readonly SpotFleetRequestId?: string;
 }
 
-interface CancelSpotFleetRequestsRequest {
-  readonly DryRun: boolean;
+export interface CancelSpotFleetRequestsRequest {
+  readonly DryRun?: boolean;
   readonly SpotFleetRequestIds: [];
   readonly TerminateInstances: boolean;
 }
 
-interface CancelSpotFleetRequestsResponse {
-  readonly SuccessfulFleetRequests: [];
-  readonly UnsuccessfulFleetRequests: [];
+export interface CancelSpotFleetRequestsResponse {
+  readonly SuccessfulFleetRequests?: [];
+  readonly UnsuccessfulFleetRequests?: [];
 }
 
-interface CancelSpotFleetRequestsSuccessItem {
-  readonly CurrentSpotFleetRequestState: string;
-  readonly PreviousSpotFleetRequestState: string;
-  readonly SpotFleetRequestId: string;
+export interface CancelSpotFleetRequestsSuccessItem {
+  readonly CurrentSpotFleetRequestState?: string;
+  readonly PreviousSpotFleetRequestState?: string;
+  readonly SpotFleetRequestId?: string;
 }
 
-interface CancelSpotInstanceRequestsRequest {
-  readonly DryRun: boolean;
+export interface CancelSpotInstanceRequestsRequest {
+  readonly DryRun?: boolean;
   readonly SpotInstanceRequestIds: [];
 }
 
-interface CancelSpotInstanceRequestsResult {
-  readonly CancelledSpotInstanceRequests: [];
+export interface CancelSpotInstanceRequestsResult {
+  readonly CancelledSpotInstanceRequests?: [];
 }
 
-interface CancelledSpotInstanceRequest {
-  readonly SpotInstanceRequestId: string;
-  readonly State: string;
+export interface CancelledSpotInstanceRequest {
+  readonly SpotInstanceRequestId?: string;
+  readonly State?: string;
 }
 
-interface CapacityReservation {
-  readonly CapacityReservationId: string;
-  readonly OwnerId: string;
-  readonly CapacityReservationArn: string;
-  readonly AvailabilityZoneId: string;
-  readonly InstanceType: string;
-  readonly InstancePlatform: string;
-  readonly AvailabilityZone: string;
-  readonly Tenancy: string;
-  readonly TotalInstanceCount: number;
-  readonly AvailableInstanceCount: number;
-  readonly EbsOptimized: boolean;
-  readonly EphemeralStorage: boolean;
-  readonly State: string;
-  readonly StartDate: Date;
-  readonly EndDate: Date;
-  readonly EndDateType: string;
-  readonly InstanceMatchCriteria: string;
-  readonly CreateDate: Date;
-  readonly Tags: [];
-  readonly OutpostArn: string;
-  readonly CapacityReservationFleetId: string;
+export interface CapacityReservation {
+  readonly CapacityReservationId?: string;
+  readonly OwnerId?: string;
+  readonly CapacityReservationArn?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly InstanceType?: string;
+  readonly InstancePlatform?: string;
+  readonly AvailabilityZone?: string;
+  readonly Tenancy?: string;
+  readonly TotalInstanceCount?: number;
+  readonly AvailableInstanceCount?: number;
+  readonly EbsOptimized?: boolean;
+  readonly EphemeralStorage?: boolean;
+  readonly State?: string;
+  readonly StartDate?: Date;
+  readonly EndDate?: Date;
+  readonly EndDateType?: string;
+  readonly InstanceMatchCriteria?: string;
+  readonly CreateDate?: Date;
+  readonly Tags?: [];
+  readonly OutpostArn?: string;
+  readonly CapacityReservationFleetId?: string;
 }
 
-interface CapacityReservationFleet {
-  readonly CapacityReservationFleetId: string;
-  readonly CapacityReservationFleetArn: string;
-  readonly State: string;
-  readonly TotalTargetCapacity: number;
-  readonly TotalFulfilledCapacity: unknown;
-  readonly Tenancy: string;
-  readonly EndDate: Date;
-  readonly CreateTime: Date;
-  readonly InstanceMatchCriteria: string;
-  readonly AllocationStrategy: string;
-  readonly InstanceTypeSpecifications: [];
-  readonly Tags: [];
+export interface CapacityReservationFleet {
+  readonly CapacityReservationFleetId?: string;
+  readonly CapacityReservationFleetArn?: string;
+  readonly State?: string;
+  readonly TotalTargetCapacity?: number;
+  readonly TotalFulfilledCapacity?: unknown;
+  readonly Tenancy?: string;
+  readonly EndDate?: Date;
+  readonly CreateTime?: Date;
+  readonly InstanceMatchCriteria?: string;
+  readonly AllocationStrategy?: string;
+  readonly InstanceTypeSpecifications?: [];
+  readonly Tags?: [];
 }
 
-interface CapacityReservationFleetCancellationState {
-  readonly CurrentFleetState: string;
-  readonly PreviousFleetState: string;
-  readonly CapacityReservationFleetId: string;
+export interface CapacityReservationFleetCancellationState {
+  readonly CurrentFleetState?: string;
+  readonly PreviousFleetState?: string;
+  readonly CapacityReservationFleetId?: string;
 }
 
-interface CapacityReservationGroup {
-  readonly GroupArn: string;
-  readonly OwnerId: string;
+export interface CapacityReservationGroup {
+  readonly GroupArn?: string;
+  readonly OwnerId?: string;
 }
 
-interface CapacityReservationOptions {
-  readonly UsageStrategy: string;
+export interface CapacityReservationOptions {
+  readonly UsageStrategy?: string;
 }
 
-interface CapacityReservationOptionsRequest {
-  readonly UsageStrategy: string;
+export interface CapacityReservationOptionsRequest {
+  readonly UsageStrategy?: string;
 }
 
-interface CapacityReservationSpecification {
-  readonly CapacityReservationPreference: string;
-  readonly CapacityReservationTarget: CapacityReservationTarget;
+export interface CapacityReservationSpecification {
+  readonly CapacityReservationPreference?: string;
+  readonly CapacityReservationTarget?: CapacityReservationTarget;
 }
 
-interface CapacityReservationSpecificationResponse {
-  readonly CapacityReservationPreference: string;
-  readonly CapacityReservationTarget: CapacityReservationTargetResponse;
+export interface CapacityReservationSpecificationResponse {
+  readonly CapacityReservationPreference?: string;
+  readonly CapacityReservationTarget?: CapacityReservationTargetResponse;
 }
 
-interface CapacityReservationTarget {
-  readonly CapacityReservationId: string;
-  readonly CapacityReservationResourceGroupArn: string;
+export interface CapacityReservationTarget {
+  readonly CapacityReservationId?: string;
+  readonly CapacityReservationResourceGroupArn?: string;
 }
 
-interface CapacityReservationTargetResponse {
-  readonly CapacityReservationId: string;
-  readonly CapacityReservationResourceGroupArn: string;
+export interface CapacityReservationTargetResponse {
+  readonly CapacityReservationId?: string;
+  readonly CapacityReservationResourceGroupArn?: string;
 }
 
-interface CarrierGateway {
-  readonly CarrierGatewayId: string;
-  readonly VpcId: string;
-  readonly State: string;
-  readonly OwnerId: string;
-  readonly Tags: [];
+export interface CarrierGateway {
+  readonly CarrierGatewayId?: string;
+  readonly VpcId?: string;
+  readonly State?: string;
+  readonly OwnerId?: string;
+  readonly Tags?: [];
 }
 
-interface CertificateAuthentication {
-  readonly ClientRootCertificateChain: string;
+export interface CertificateAuthentication {
+  readonly ClientRootCertificateChain?: string;
 }
 
-interface CertificateAuthenticationRequest {
-  readonly ClientRootCertificateChainArn: string;
+export interface CertificateAuthenticationRequest {
+  readonly ClientRootCertificateChainArn?: string;
 }
 
-interface CidrAuthorizationContext {
+export interface CidrAuthorizationContext {
   readonly Message: string;
   readonly Signature: string;
 }
 
-interface CidrBlock {
-  readonly CidrBlock: string;
+export interface CidrBlock {
+  readonly CidrBlock?: string;
 }
 
-interface ClassicLinkDnsSupport {
-  readonly ClassicLinkDnsSupported: boolean;
-  readonly VpcId: string;
+export interface ClassicLinkDnsSupport {
+  readonly ClassicLinkDnsSupported?: boolean;
+  readonly VpcId?: string;
 }
 
-interface ClassicLinkInstance {
-  readonly Groups: [];
-  readonly InstanceId: string;
-  readonly Tags: [];
-  readonly VpcId: string;
+export interface ClassicLinkInstance {
+  readonly Groups?: [];
+  readonly InstanceId?: string;
+  readonly Tags?: [];
+  readonly VpcId?: string;
 }
 
-interface ClassicLoadBalancer {
-  readonly Name: string;
+export interface ClassicLoadBalancer {
+  readonly Name?: string;
 }
 
-interface ClassicLoadBalancersConfig {
-  readonly ClassicLoadBalancers: [];
+export interface ClassicLoadBalancersConfig {
+  readonly ClassicLoadBalancers?: [];
 }
 
-interface ClientCertificateRevocationListStatus {
-  readonly Code: string;
-  readonly Message: string;
+export interface ClientCertificateRevocationListStatus {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface ClientConnectOptions {
-  readonly Enabled: boolean;
-  readonly LambdaFunctionArn: string;
+export interface ClientConnectOptions {
+  readonly Enabled?: boolean;
+  readonly LambdaFunctionArn?: string;
 }
 
-interface ClientConnectResponseOptions {
-  readonly Enabled: boolean;
-  readonly LambdaFunctionArn: string;
-  readonly Status: ClientVpnEndpointAttributeStatus;
+export interface ClientConnectResponseOptions {
+  readonly Enabled?: boolean;
+  readonly LambdaFunctionArn?: string;
+  readonly Status?: ClientVpnEndpointAttributeStatus;
 }
 
-interface ClientData {
-  readonly Comment: string;
-  readonly UploadEnd: Date;
-  readonly UploadSize: unknown;
-  readonly UploadStart: Date;
+export interface ClientData {
+  readonly Comment?: string;
+  readonly UploadEnd?: Date;
+  readonly UploadSize?: unknown;
+  readonly UploadStart?: Date;
 }
 
-interface ClientVpnAuthentication {
-  readonly Type: string;
-  readonly ActiveDirectory: DirectoryServiceAuthentication;
-  readonly MutualAuthentication: CertificateAuthentication;
-  readonly FederatedAuthentication: FederatedAuthentication;
+export interface ClientVpnAuthentication {
+  readonly Type?: string;
+  readonly ActiveDirectory?: DirectoryServiceAuthentication;
+  readonly MutualAuthentication?: CertificateAuthentication;
+  readonly FederatedAuthentication?: FederatedAuthentication;
 }
 
-interface ClientVpnAuthenticationRequest {
-  readonly Type: string;
-  readonly ActiveDirectory: DirectoryServiceAuthenticationRequest;
-  readonly MutualAuthentication: CertificateAuthenticationRequest;
-  readonly FederatedAuthentication: FederatedAuthenticationRequest;
+export interface ClientVpnAuthenticationRequest {
+  readonly Type?: string;
+  readonly ActiveDirectory?: DirectoryServiceAuthenticationRequest;
+  readonly MutualAuthentication?: CertificateAuthenticationRequest;
+  readonly FederatedAuthentication?: FederatedAuthenticationRequest;
 }
 
-interface ClientVpnAuthorizationRuleStatus {
-  readonly Code: string;
-  readonly Message: string;
+export interface ClientVpnAuthorizationRuleStatus {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface ClientVpnConnection {
-  readonly ClientVpnEndpointId: string;
-  readonly Timestamp: string;
-  readonly ConnectionId: string;
-  readonly Username: string;
-  readonly ConnectionEstablishedTime: string;
-  readonly IngressBytes: string;
-  readonly EgressBytes: string;
-  readonly IngressPackets: string;
-  readonly EgressPackets: string;
-  readonly ClientIp: string;
-  readonly CommonName: string;
-  readonly Status: ClientVpnConnectionStatus;
-  readonly ConnectionEndTime: string;
-  readonly PostureComplianceStatuses: [];
+export interface ClientVpnConnection {
+  readonly ClientVpnEndpointId?: string;
+  readonly Timestamp?: string;
+  readonly ConnectionId?: string;
+  readonly Username?: string;
+  readonly ConnectionEstablishedTime?: string;
+  readonly IngressBytes?: string;
+  readonly EgressBytes?: string;
+  readonly IngressPackets?: string;
+  readonly EgressPackets?: string;
+  readonly ClientIp?: string;
+  readonly CommonName?: string;
+  readonly Status?: ClientVpnConnectionStatus;
+  readonly ConnectionEndTime?: string;
+  readonly PostureComplianceStatuses?: [];
 }
 
-interface ClientVpnConnectionStatus {
-  readonly Code: string;
-  readonly Message: string;
+export interface ClientVpnConnectionStatus {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface ClientVpnEndpoint {
-  readonly ClientVpnEndpointId: string;
-  readonly Description: string;
-  readonly Status: ClientVpnEndpointStatus;
-  readonly CreationTime: string;
-  readonly DeletionTime: string;
-  readonly DnsName: string;
-  readonly ClientCidrBlock: string;
-  readonly DnsServers: [];
-  readonly SplitTunnel: boolean;
-  readonly VpnProtocol: string;
-  readonly TransportProtocol: string;
-  readonly VpnPort: number;
-  readonly AssociatedTargetNetworks: [];
-  readonly ServerCertificateArn: string;
-  readonly AuthenticationOptions: [];
-  readonly ConnectionLogOptions: ConnectionLogResponseOptions;
-  readonly Tags: [];
-  readonly SecurityGroupIds: [];
-  readonly VpcId: string;
-  readonly SelfServicePortalUrl: string;
-  readonly ClientConnectOptions: ClientConnectResponseOptions;
+export interface ClientVpnEndpoint {
+  readonly ClientVpnEndpointId?: string;
+  readonly Description?: string;
+  readonly Status?: ClientVpnEndpointStatus;
+  readonly CreationTime?: string;
+  readonly DeletionTime?: string;
+  readonly DnsName?: string;
+  readonly ClientCidrBlock?: string;
+  readonly DnsServers?: [];
+  readonly SplitTunnel?: boolean;
+  readonly VpnProtocol?: string;
+  readonly TransportProtocol?: string;
+  readonly VpnPort?: number;
+  readonly AssociatedTargetNetworks?: [];
+  readonly ServerCertificateArn?: string;
+  readonly AuthenticationOptions?: [];
+  readonly ConnectionLogOptions?: ConnectionLogResponseOptions;
+  readonly Tags?: [];
+  readonly SecurityGroupIds?: [];
+  readonly VpcId?: string;
+  readonly SelfServicePortalUrl?: string;
+  readonly ClientConnectOptions?: ClientConnectResponseOptions;
 }
 
-interface ClientVpnEndpointAttributeStatus {
-  readonly Code: string;
-  readonly Message: string;
+export interface ClientVpnEndpointAttributeStatus {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface ClientVpnEndpointStatus {
-  readonly Code: string;
-  readonly Message: string;
+export interface ClientVpnEndpointStatus {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface ClientVpnRoute {
-  readonly ClientVpnEndpointId: string;
-  readonly DestinationCidr: string;
-  readonly TargetSubnet: string;
-  readonly Type: string;
-  readonly Origin: string;
-  readonly Status: ClientVpnRouteStatus;
-  readonly Description: string;
+export interface ClientVpnRoute {
+  readonly ClientVpnEndpointId?: string;
+  readonly DestinationCidr?: string;
+  readonly TargetSubnet?: string;
+  readonly Type?: string;
+  readonly Origin?: string;
+  readonly Status?: ClientVpnRouteStatus;
+  readonly Description?: string;
 }
 
-interface ClientVpnRouteStatus {
-  readonly Code: string;
-  readonly Message: string;
+export interface ClientVpnRouteStatus {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface CoipAddressUsage {
-  readonly AllocationId: string;
-  readonly AwsAccountId: string;
-  readonly AwsService: string;
-  readonly CoIp: string;
+export interface CoipAddressUsage {
+  readonly AllocationId?: string;
+  readonly AwsAccountId?: string;
+  readonly AwsService?: string;
+  readonly CoIp?: string;
 }
 
-interface CoipPool {
-  readonly PoolId: string;
-  readonly PoolCidrs: [];
-  readonly LocalGatewayRouteTableId: string;
-  readonly Tags: [];
-  readonly PoolArn: string;
+export interface CoipPool {
+  readonly PoolId?: string;
+  readonly PoolCidrs?: [];
+  readonly LocalGatewayRouteTableId?: string;
+  readonly Tags?: [];
+  readonly PoolArn?: string;
 }
 
-interface ConfirmProductInstanceRequest {
+export interface ConfirmProductInstanceRequest {
   readonly InstanceId: string;
   readonly ProductCode: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ConfirmProductInstanceResult {
-  readonly OwnerId: string;
-  readonly Return: boolean;
+export interface ConfirmProductInstanceResult {
+  readonly OwnerId?: string;
+  readonly Return?: boolean;
 }
 
-interface ConnectionLogOptions {
-  readonly Enabled: boolean;
-  readonly CloudwatchLogGroup: string;
-  readonly CloudwatchLogStream: string;
+export interface ConnectionLogOptions {
+  readonly Enabled?: boolean;
+  readonly CloudwatchLogGroup?: string;
+  readonly CloudwatchLogStream?: string;
 }
 
-interface ConnectionLogResponseOptions {
-  readonly Enabled: boolean;
-  readonly CloudwatchLogGroup: string;
-  readonly CloudwatchLogStream: string;
+export interface ConnectionLogResponseOptions {
+  readonly Enabled?: boolean;
+  readonly CloudwatchLogGroup?: string;
+  readonly CloudwatchLogStream?: string;
 }
 
-interface ConnectionNotification {
-  readonly ConnectionNotificationId: string;
-  readonly ServiceId: string;
-  readonly VpcEndpointId: string;
-  readonly ConnectionNotificationType: string;
-  readonly ConnectionNotificationArn: string;
-  readonly ConnectionEvents: [];
-  readonly ConnectionNotificationState: string;
+export interface ConnectionNotification {
+  readonly ConnectionNotificationId?: string;
+  readonly ServiceId?: string;
+  readonly VpcEndpointId?: string;
+  readonly ConnectionNotificationType?: string;
+  readonly ConnectionNotificationArn?: string;
+  readonly ConnectionEvents?: [];
+  readonly ConnectionNotificationState?: string;
 }
 
-interface ConversionTask {
-  readonly ConversionTaskId: string;
-  readonly ExpirationTime: string;
-  readonly ImportInstance: ImportInstanceTaskDetails;
-  readonly ImportVolume: ImportVolumeTaskDetails;
-  readonly State: string;
-  readonly StatusMessage: string;
-  readonly Tags: [];
+export interface ConversionTask {
+  readonly ConversionTaskId?: string;
+  readonly ExpirationTime?: string;
+  readonly ImportInstance?: ImportInstanceTaskDetails;
+  readonly ImportVolume?: ImportVolumeTaskDetails;
+  readonly State?: string;
+  readonly StatusMessage?: string;
+  readonly Tags?: [];
 }
 
-interface CopyFpgaImageRequest {
-  readonly DryRun: boolean;
+export interface CopyFpgaImageRequest {
+  readonly DryRun?: boolean;
   readonly SourceFpgaImageId: string;
-  readonly Description: string;
-  readonly Name: string;
+  readonly Description?: string;
+  readonly Name?: string;
   readonly SourceRegion: string;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 
-interface CopyFpgaImageResult {
-  readonly FpgaImageId: string;
+export interface CopyFpgaImageResult {
+  readonly FpgaImageId?: string;
 }
 
-interface CopyImageRequest {
-  readonly ClientToken: string;
-  readonly Description: string;
-  readonly Encrypted: boolean;
-  readonly KmsKeyId: string;
+export interface CopyImageRequest {
+  readonly ClientToken?: string;
+  readonly Description?: string;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyId?: string;
   readonly Name: string;
   readonly SourceImageId: string;
   readonly SourceRegion: string;
-  readonly DestinationOutpostArn: string;
-  readonly DryRun: boolean;
+  readonly DestinationOutpostArn?: string;
+  readonly DryRun?: boolean;
 }
 
-interface CopyImageResult {
-  readonly ImageId: string;
+export interface CopyImageResult {
+  readonly ImageId?: string;
 }
 
-interface CopySnapshotRequest {
-  readonly Description: string;
-  readonly DestinationOutpostArn: string;
-  readonly DestinationRegion: string;
-  readonly Encrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly PresignedUrl: string;
+export interface CopySnapshotRequest {
+  readonly Description?: string;
+  readonly DestinationOutpostArn?: string;
+  readonly DestinationRegion?: string;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly PresignedUrl?: string;
   readonly SourceRegion: string;
   readonly SourceSnapshotId: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CopySnapshotResult {
-  readonly SnapshotId: string;
-  readonly Tags: [];
+export interface CopySnapshotResult {
+  readonly SnapshotId?: string;
+  readonly Tags?: [];
 }
 
-interface CpuOptions {
-  readonly CoreCount: number;
-  readonly ThreadsPerCore: number;
+export interface CpuOptions {
+  readonly CoreCount?: number;
+  readonly ThreadsPerCore?: number;
 }
 
-interface CpuOptionsRequest {
-  readonly CoreCount: number;
-  readonly ThreadsPerCore: number;
+export interface CpuOptionsRequest {
+  readonly CoreCount?: number;
+  readonly ThreadsPerCore?: number;
 }
 
-interface CreateCapacityReservationFleetRequest {
-  readonly AllocationStrategy: string;
-  readonly ClientToken: string;
+export interface CreateCapacityReservationFleetRequest {
+  readonly AllocationStrategy?: string;
+  readonly ClientToken?: string;
   readonly InstanceTypeSpecifications: [];
-  readonly Tenancy: string;
+  readonly Tenancy?: string;
   readonly TotalTargetCapacity: number;
-  readonly EndDate: Date;
-  readonly InstanceMatchCriteria: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly EndDate?: Date;
+  readonly InstanceMatchCriteria?: string;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateCapacityReservationFleetResult {
-  readonly CapacityReservationFleetId: string;
-  readonly State: string;
-  readonly TotalTargetCapacity: number;
-  readonly TotalFulfilledCapacity: unknown;
-  readonly InstanceMatchCriteria: string;
-  readonly AllocationStrategy: string;
-  readonly CreateTime: Date;
-  readonly EndDate: Date;
-  readonly Tenancy: string;
-  readonly FleetCapacityReservations: [];
-  readonly Tags: [];
+export interface CreateCapacityReservationFleetResult {
+  readonly CapacityReservationFleetId?: string;
+  readonly State?: string;
+  readonly TotalTargetCapacity?: number;
+  readonly TotalFulfilledCapacity?: unknown;
+  readonly InstanceMatchCriteria?: string;
+  readonly AllocationStrategy?: string;
+  readonly CreateTime?: Date;
+  readonly EndDate?: Date;
+  readonly Tenancy?: string;
+  readonly FleetCapacityReservations?: [];
+  readonly Tags?: [];
 }
 
-interface CreateCapacityReservationRequest {
-  readonly ClientToken: string;
+export interface CreateCapacityReservationRequest {
+  readonly ClientToken?: string;
   readonly InstanceType: string;
   readonly InstancePlatform: string;
-  readonly AvailabilityZone: string;
-  readonly AvailabilityZoneId: string;
-  readonly Tenancy: string;
+  readonly AvailabilityZone?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly Tenancy?: string;
   readonly InstanceCount: number;
-  readonly EbsOptimized: boolean;
-  readonly EphemeralStorage: boolean;
-  readonly EndDate: Date;
-  readonly EndDateType: string;
-  readonly InstanceMatchCriteria: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
-  readonly OutpostArn: string;
+  readonly EbsOptimized?: boolean;
+  readonly EphemeralStorage?: boolean;
+  readonly EndDate?: Date;
+  readonly EndDateType?: string;
+  readonly InstanceMatchCriteria?: string;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
+  readonly OutpostArn?: string;
 }
 
-interface CreateCapacityReservationResult {
-  readonly CapacityReservation: CapacityReservation;
+export interface CreateCapacityReservationResult {
+  readonly CapacityReservation?: CapacityReservation;
 }
 
-interface CreateCarrierGatewayRequest {
+export interface CreateCarrierGatewayRequest {
   readonly VpcId: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
 }
 
-interface CreateCarrierGatewayResult {
-  readonly CarrierGateway: CarrierGateway;
+export interface CreateCarrierGatewayResult {
+  readonly CarrierGateway?: CarrierGateway;
 }
 
-interface CreateClientVpnEndpointRequest {
+export interface CreateClientVpnEndpointRequest {
   readonly ClientCidrBlock: string;
   readonly ServerCertificateArn: string;
   readonly AuthenticationOptions: [];
   readonly ConnectionLogOptions: ConnectionLogOptions;
-  readonly DnsServers: [];
-  readonly TransportProtocol: string;
-  readonly VpnPort: number;
-  readonly Description: string;
-  readonly SplitTunnel: boolean;
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
-  readonly TagSpecifications: [];
-  readonly SecurityGroupIds: [];
-  readonly VpcId: string;
-  readonly SelfServicePortal: string;
-  readonly ClientConnectOptions: ClientConnectOptions;
+  readonly DnsServers?: [];
+  readonly TransportProtocol?: string;
+  readonly VpnPort?: number;
+  readonly Description?: string;
+  readonly SplitTunnel?: boolean;
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
+  readonly TagSpecifications?: [];
+  readonly SecurityGroupIds?: [];
+  readonly VpcId?: string;
+  readonly SelfServicePortal?: string;
+  readonly ClientConnectOptions?: ClientConnectOptions;
 }
 
-interface CreateClientVpnEndpointResult {
-  readonly ClientVpnEndpointId: string;
-  readonly Status: ClientVpnEndpointStatus;
-  readonly DnsName: string;
+export interface CreateClientVpnEndpointResult {
+  readonly ClientVpnEndpointId?: string;
+  readonly Status?: ClientVpnEndpointStatus;
+  readonly DnsName?: string;
 }
 
-interface CreateClientVpnRouteRequest {
+export interface CreateClientVpnRouteRequest {
   readonly ClientVpnEndpointId: string;
   readonly DestinationCidrBlock: string;
   readonly TargetVpcSubnetId: string;
-  readonly Description: string;
-  readonly ClientToken: string;
-  readonly DryRun: boolean;
+  readonly Description?: string;
+  readonly ClientToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface CreateClientVpnRouteResult {
-  readonly Status: ClientVpnRouteStatus;
+export interface CreateClientVpnRouteResult {
+  readonly Status?: ClientVpnRouteStatus;
 }
 
-interface CreateCustomerGatewayRequest {
+export interface CreateCustomerGatewayRequest {
   readonly BgpAsn: number;
-  readonly PublicIp: string;
-  readonly CertificateArn: string;
+  readonly PublicIp?: string;
+  readonly CertificateArn?: string;
   readonly Type: string;
-  readonly TagSpecifications: [];
-  readonly DeviceName: string;
-  readonly DryRun: boolean;
+  readonly TagSpecifications?: [];
+  readonly DeviceName?: string;
+  readonly DryRun?: boolean;
 }
 
-interface CreateCustomerGatewayResult {
-  readonly CustomerGateway: CustomerGateway;
+export interface CreateCustomerGatewayResult {
+  readonly CustomerGateway?: CustomerGateway;
 }
 
-interface CreateDefaultSubnetRequest {
+export interface CreateDefaultSubnetRequest {
   readonly AvailabilityZone: string;
-  readonly DryRun: boolean;
-  readonly Ipv6Native: boolean;
+  readonly DryRun?: boolean;
+  readonly Ipv6Native?: boolean;
 }
 
-interface CreateDefaultSubnetResult {
-  readonly Subnet: Subnet;
+export interface CreateDefaultSubnetResult {
+  readonly Subnet?: Subnet;
 }
 
-interface CreateDefaultVpcRequest {
-  readonly DryRun: boolean;
+export interface CreateDefaultVpcRequest {
+  readonly DryRun?: boolean;
 }
 
-interface CreateDefaultVpcResult {
-  readonly Vpc: Vpc;
+export interface CreateDefaultVpcResult {
+  readonly Vpc?: Vpc;
 }
 
-interface CreateDhcpOptionsRequest {
+export interface CreateDhcpOptionsRequest {
   readonly DhcpConfigurations: [];
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateDhcpOptionsResult {
-  readonly DhcpOptions: DhcpOptions;
+export interface CreateDhcpOptionsResult {
+  readonly DhcpOptions?: DhcpOptions;
 }
 
-interface CreateEgressOnlyInternetGatewayRequest {
-  readonly ClientToken: string;
-  readonly DryRun: boolean;
+export interface CreateEgressOnlyInternetGatewayRequest {
+  readonly ClientToken?: string;
+  readonly DryRun?: boolean;
   readonly VpcId: string;
-  readonly TagSpecifications: [];
+  readonly TagSpecifications?: [];
 }
 
-interface CreateEgressOnlyInternetGatewayResult {
-  readonly ClientToken: string;
-  readonly EgressOnlyInternetGateway: EgressOnlyInternetGateway;
+export interface CreateEgressOnlyInternetGatewayResult {
+  readonly ClientToken?: string;
+  readonly EgressOnlyInternetGateway?: EgressOnlyInternetGateway;
 }
 
-interface CreateFleetError {
-  readonly LaunchTemplateAndOverrides: LaunchTemplateAndOverridesResponse;
-  readonly Lifecycle: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface CreateFleetError {
+  readonly LaunchTemplateAndOverrides?: LaunchTemplateAndOverridesResponse;
+  readonly Lifecycle?: string;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface CreateFleetInstance {
-  readonly LaunchTemplateAndOverrides: LaunchTemplateAndOverridesResponse;
-  readonly Lifecycle: string;
-  readonly InstanceIds: [];
-  readonly InstanceType: string;
-  readonly Platform: string;
+export interface CreateFleetInstance {
+  readonly LaunchTemplateAndOverrides?: LaunchTemplateAndOverridesResponse;
+  readonly Lifecycle?: string;
+  readonly InstanceIds?: [];
+  readonly InstanceType?: string;
+  readonly Platform?: string;
 }
 
-interface CreateFleetRequest {
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
-  readonly SpotOptions: SpotOptionsRequest;
-  readonly OnDemandOptions: OnDemandOptionsRequest;
-  readonly ExcessCapacityTerminationPolicy: string;
+export interface CreateFleetRequest {
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
+  readonly SpotOptions?: SpotOptionsRequest;
+  readonly OnDemandOptions?: OnDemandOptionsRequest;
+  readonly ExcessCapacityTerminationPolicy?: string;
   readonly LaunchTemplateConfigs: [];
   readonly TargetCapacitySpecification: TargetCapacitySpecificationRequest;
-  readonly TerminateInstancesWithExpiration: boolean;
-  readonly Type: string;
-  readonly ValidFrom: Date;
-  readonly ValidUntil: Date;
-  readonly ReplaceUnhealthyInstances: boolean;
-  readonly TagSpecifications: [];
-  readonly Context: string;
+  readonly TerminateInstancesWithExpiration?: boolean;
+  readonly Type?: string;
+  readonly ValidFrom?: Date;
+  readonly ValidUntil?: Date;
+  readonly ReplaceUnhealthyInstances?: boolean;
+  readonly TagSpecifications?: [];
+  readonly Context?: string;
 }
 
-interface CreateFleetResult {
-  readonly FleetId: string;
-  readonly Errors: [];
-  readonly Instances: [];
+export interface CreateFleetResult {
+  readonly FleetId?: string;
+  readonly Errors?: [];
+  readonly Instances?: [];
 }
 
-interface CreateFlowLogsRequest {
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
-  readonly DeliverLogsPermissionArn: string;
-  readonly LogGroupName: string;
+export interface CreateFlowLogsRequest {
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
+  readonly DeliverLogsPermissionArn?: string;
+  readonly LogGroupName?: string;
   readonly ResourceIds: [];
   readonly ResourceType: string;
   readonly TrafficType: string;
-  readonly LogDestinationType: string;
-  readonly LogDestination: string;
-  readonly LogFormat: string;
-  readonly TagSpecifications: [];
-  readonly MaxAggregationInterval: number;
-  readonly DestinationOptions: DestinationOptionsRequest;
+  readonly LogDestinationType?: string;
+  readonly LogDestination?: string;
+  readonly LogFormat?: string;
+  readonly TagSpecifications?: [];
+  readonly MaxAggregationInterval?: number;
+  readonly DestinationOptions?: DestinationOptionsRequest;
 }
 
-interface CreateFlowLogsResult {
-  readonly ClientToken: string;
-  readonly FlowLogIds: [];
-  readonly Unsuccessful: [];
+export interface CreateFlowLogsResult {
+  readonly ClientToken?: string;
+  readonly FlowLogIds?: [];
+  readonly Unsuccessful?: [];
 }
 
-interface CreateFpgaImageRequest {
-  readonly DryRun: boolean;
+export interface CreateFpgaImageRequest {
+  readonly DryRun?: boolean;
   readonly InputStorageLocation: StorageLocation;
-  readonly LogsStorageLocation: StorageLocation;
-  readonly Description: string;
-  readonly Name: string;
-  readonly ClientToken: string;
-  readonly TagSpecifications: [];
+  readonly LogsStorageLocation?: StorageLocation;
+  readonly Description?: string;
+  readonly Name?: string;
+  readonly ClientToken?: string;
+  readonly TagSpecifications?: [];
 }
 
-interface CreateFpgaImageResult {
-  readonly FpgaImageId: string;
-  readonly FpgaImageGlobalId: string;
+export interface CreateFpgaImageResult {
+  readonly FpgaImageId?: string;
+  readonly FpgaImageGlobalId?: string;
 }
 
-interface CreateImageRequest {
-  readonly BlockDeviceMappings: [];
-  readonly Description: string;
-  readonly DryRun: boolean;
+export interface CreateImageRequest {
+  readonly BlockDeviceMappings?: [];
+  readonly Description?: string;
+  readonly DryRun?: boolean;
   readonly InstanceId: string;
   readonly Name: string;
-  readonly NoReboot: boolean;
-  readonly TagSpecifications: [];
+  readonly NoReboot?: boolean;
+  readonly TagSpecifications?: [];
 }
 
-interface CreateImageResult {
-  readonly ImageId: string;
+export interface CreateImageResult {
+  readonly ImageId?: string;
 }
 
-interface CreateInstanceEventWindowRequest {
-  readonly DryRun: boolean;
-  readonly Name: string;
-  readonly TimeRanges: [];
-  readonly CronExpression: string;
-  readonly TagSpecifications: [];
+export interface CreateInstanceEventWindowRequest {
+  readonly DryRun?: boolean;
+  readonly Name?: string;
+  readonly TimeRanges?: [];
+  readonly CronExpression?: string;
+  readonly TagSpecifications?: [];
 }
 
-interface CreateInstanceEventWindowResult {
-  readonly InstanceEventWindow: InstanceEventWindow;
+export interface CreateInstanceEventWindowResult {
+  readonly InstanceEventWindow?: InstanceEventWindow;
 }
 
-interface CreateInstanceExportTaskRequest {
-  readonly Description: string;
+export interface CreateInstanceExportTaskRequest {
+  readonly Description?: string;
   readonly ExportToS3Task: ExportToS3TaskSpecification;
   readonly InstanceId: string;
   readonly TargetEnvironment: string;
-  readonly TagSpecifications: [];
+  readonly TagSpecifications?: [];
 }
 
-interface CreateInstanceExportTaskResult {
-  readonly ExportTask: ExportTask;
+export interface CreateInstanceExportTaskResult {
+  readonly ExportTask?: ExportTask;
 }
 
-interface CreateInternetGatewayRequest {
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+export interface CreateInternetGatewayRequest {
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateInternetGatewayResult {
-  readonly InternetGateway: InternetGateway;
+export interface CreateInternetGatewayResult {
+  readonly InternetGateway?: InternetGateway;
 }
 
-interface CreateIpamPoolRequest {
-  readonly DryRun: boolean;
+export interface CreateIpamPoolRequest {
+  readonly DryRun?: boolean;
   readonly IpamScopeId: string;
-  readonly Locale: string;
-  readonly SourceIpamPoolId: string;
-  readonly Description: string;
-  readonly AddressFamily: string;
-  readonly AutoImport: boolean;
-  readonly PubliclyAdvertisable: boolean;
-  readonly AllocationMinNetmaskLength: number;
-  readonly AllocationMaxNetmaskLength: number;
-  readonly AllocationDefaultNetmaskLength: number;
-  readonly AllocationResourceTags: [];
-  readonly TagSpecifications: [];
-  readonly ClientToken: string;
-  readonly AwsService: string;
+  readonly Locale?: string;
+  readonly SourceIpamPoolId?: string;
+  readonly Description?: string;
+  readonly AddressFamily?: string;
+  readonly AutoImport?: boolean;
+  readonly PubliclyAdvertisable?: boolean;
+  readonly AllocationMinNetmaskLength?: number;
+  readonly AllocationMaxNetmaskLength?: number;
+  readonly AllocationDefaultNetmaskLength?: number;
+  readonly AllocationResourceTags?: [];
+  readonly TagSpecifications?: [];
+  readonly ClientToken?: string;
+  readonly AwsService?: string;
 }
 
-interface CreateIpamPoolResult {
-  readonly IpamPool: IpamPool;
+export interface CreateIpamPoolResult {
+  readonly IpamPool?: IpamPool;
 }
 
-interface CreateIpamRequest {
-  readonly DryRun: boolean;
-  readonly Description: string;
-  readonly OperatingRegions: [];
-  readonly TagSpecifications: [];
-  readonly ClientToken: string;
+export interface CreateIpamRequest {
+  readonly DryRun?: boolean;
+  readonly Description?: string;
+  readonly OperatingRegions?: [];
+  readonly TagSpecifications?: [];
+  readonly ClientToken?: string;
 }
 
-interface CreateIpamResult {
-  readonly Ipam: Ipam;
+export interface CreateIpamResult {
+  readonly Ipam?: Ipam;
 }
 
-interface CreateIpamScopeRequest {
-  readonly DryRun: boolean;
+export interface CreateIpamScopeRequest {
+  readonly DryRun?: boolean;
   readonly IpamId: string;
-  readonly Description: string;
-  readonly TagSpecifications: [];
-  readonly ClientToken: string;
+  readonly Description?: string;
+  readonly TagSpecifications?: [];
+  readonly ClientToken?: string;
 }
 
-interface CreateIpamScopeResult {
-  readonly IpamScope: IpamScope;
+export interface CreateIpamScopeResult {
+  readonly IpamScope?: IpamScope;
 }
 
-interface CreateKeyPairRequest {
+export interface CreateKeyPairRequest {
   readonly KeyName: string;
-  readonly DryRun: boolean;
-  readonly KeyType: string;
-  readonly TagSpecifications: [];
+  readonly DryRun?: boolean;
+  readonly KeyType?: string;
+  readonly TagSpecifications?: [];
 }
 
-interface CreateLaunchTemplateRequest {
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
+export interface CreateLaunchTemplateRequest {
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
   readonly LaunchTemplateName: string;
-  readonly VersionDescription: string;
+  readonly VersionDescription?: string;
   readonly LaunchTemplateData: RequestLaunchTemplateData;
-  readonly TagSpecifications: [];
+  readonly TagSpecifications?: [];
 }
 
-interface CreateLaunchTemplateResult {
-  readonly LaunchTemplate: LaunchTemplate;
-  readonly Warning: ValidationWarning;
+export interface CreateLaunchTemplateResult {
+  readonly LaunchTemplate?: LaunchTemplate;
+  readonly Warning?: ValidationWarning;
 }
 
-interface CreateLaunchTemplateVersionRequest {
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
-  readonly SourceVersion: string;
-  readonly VersionDescription: string;
+export interface CreateLaunchTemplateVersionRequest {
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
+  readonly SourceVersion?: string;
+  readonly VersionDescription?: string;
   readonly LaunchTemplateData: RequestLaunchTemplateData;
 }
 
-interface CreateLaunchTemplateVersionResult {
-  readonly LaunchTemplateVersion: LaunchTemplateVersion;
-  readonly Warning: ValidationWarning;
+export interface CreateLaunchTemplateVersionResult {
+  readonly LaunchTemplateVersion?: LaunchTemplateVersion;
+  readonly Warning?: ValidationWarning;
 }
 
-interface CreateLocalGatewayRouteRequest {
+export interface CreateLocalGatewayRouteRequest {
   readonly DestinationCidrBlock: string;
   readonly LocalGatewayRouteTableId: string;
   readonly LocalGatewayVirtualInterfaceGroupId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface CreateLocalGatewayRouteResult {
-  readonly Route: LocalGatewayRoute;
+export interface CreateLocalGatewayRouteResult {
+  readonly Route?: LocalGatewayRoute;
 }
 
-interface CreateLocalGatewayRouteTableVpcAssociationRequest {
+export interface CreateLocalGatewayRouteTableVpcAssociationRequest {
   readonly LocalGatewayRouteTableId: string;
   readonly VpcId: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateLocalGatewayRouteTableVpcAssociationResult {
-  readonly LocalGatewayRouteTableVpcAssociation: LocalGatewayRouteTableVpcAssociation;
+export interface CreateLocalGatewayRouteTableVpcAssociationResult {
+  readonly LocalGatewayRouteTableVpcAssociation?: LocalGatewayRouteTableVpcAssociation;
 }
 
-interface CreateManagedPrefixListRequest {
-  readonly DryRun: boolean;
+export interface CreateManagedPrefixListRequest {
+  readonly DryRun?: boolean;
   readonly PrefixListName: string;
-  readonly Entries: [];
+  readonly Entries?: [];
   readonly MaxEntries: number;
-  readonly TagSpecifications: [];
+  readonly TagSpecifications?: [];
   readonly AddressFamily: string;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 
-interface CreateManagedPrefixListResult {
-  readonly PrefixList: ManagedPrefixList;
+export interface CreateManagedPrefixListResult {
+  readonly PrefixList?: ManagedPrefixList;
 }
 
-interface CreateNatGatewayRequest {
-  readonly AllocationId: string;
-  readonly ClientToken: string;
-  readonly DryRun: boolean;
+export interface CreateNatGatewayRequest {
+  readonly AllocationId?: string;
+  readonly ClientToken?: string;
+  readonly DryRun?: boolean;
   readonly SubnetId: string;
-  readonly TagSpecifications: [];
-  readonly ConnectivityType: string;
+  readonly TagSpecifications?: [];
+  readonly ConnectivityType?: string;
 }
 
-interface CreateNatGatewayResult {
-  readonly ClientToken: string;
-  readonly NatGateway: NatGateway;
+export interface CreateNatGatewayResult {
+  readonly ClientToken?: string;
+  readonly NatGateway?: NatGateway;
 }
 
-interface CreateNetworkAclEntryRequest {
-  readonly CidrBlock: string;
-  readonly DryRun: boolean;
+export interface CreateNetworkAclEntryRequest {
+  readonly CidrBlock?: string;
+  readonly DryRun?: boolean;
   readonly Egress: boolean;
-  readonly IcmpTypeCode: IcmpTypeCode;
-  readonly Ipv6CidrBlock: string;
+  readonly IcmpTypeCode?: IcmpTypeCode;
+  readonly Ipv6CidrBlock?: string;
   readonly NetworkAclId: string;
-  readonly PortRange: PortRange;
+  readonly PortRange?: PortRange;
   readonly Protocol: string;
   readonly RuleAction: string;
   readonly RuleNumber: number;
 }
 
-interface CreateNetworkAclRequest {
-  readonly DryRun: boolean;
+export interface CreateNetworkAclRequest {
+  readonly DryRun?: boolean;
   readonly VpcId: string;
-  readonly TagSpecifications: [];
+  readonly TagSpecifications?: [];
 }
 
-interface CreateNetworkAclResult {
-  readonly NetworkAcl: NetworkAcl;
+export interface CreateNetworkAclResult {
+  readonly NetworkAcl?: NetworkAcl;
 }
 
-interface CreateNetworkInsightsAccessScopeRequest {
-  readonly MatchPaths: [];
-  readonly ExcludePaths: [];
+export interface CreateNetworkInsightsAccessScopeRequest {
+  readonly MatchPaths?: [];
+  readonly ExcludePaths?: [];
   readonly ClientToken: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateNetworkInsightsAccessScopeResult {
-  readonly NetworkInsightsAccessScope: NetworkInsightsAccessScope;
-  readonly NetworkInsightsAccessScopeContent: NetworkInsightsAccessScopeContent;
+export interface CreateNetworkInsightsAccessScopeResult {
+  readonly NetworkInsightsAccessScope?: NetworkInsightsAccessScope;
+  readonly NetworkInsightsAccessScopeContent?: NetworkInsightsAccessScopeContent;
 }
 
-interface CreateNetworkInsightsPathRequest {
-  readonly SourceIp: string;
-  readonly DestinationIp: string;
+export interface CreateNetworkInsightsPathRequest {
+  readonly SourceIp?: string;
+  readonly DestinationIp?: string;
   readonly Source: string;
   readonly Destination: string;
   readonly Protocol: string;
-  readonly DestinationPort: number;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly DestinationPort?: number;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
   readonly ClientToken: string;
 }
 
-interface CreateNetworkInsightsPathResult {
-  readonly NetworkInsightsPath: NetworkInsightsPath;
+export interface CreateNetworkInsightsPathResult {
+  readonly NetworkInsightsPath?: NetworkInsightsPath;
 }
 
-interface CreateNetworkInterfacePermissionRequest {
+export interface CreateNetworkInterfacePermissionRequest {
   readonly NetworkInterfaceId: string;
-  readonly AwsAccountId: string;
-  readonly AwsService: string;
+  readonly AwsAccountId?: string;
+  readonly AwsService?: string;
   readonly Permission: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface CreateNetworkInterfacePermissionResult {
-  readonly InterfacePermission: NetworkInterfacePermission;
+export interface CreateNetworkInterfacePermissionResult {
+  readonly InterfacePermission?: NetworkInterfacePermission;
 }
 
-interface CreateNetworkInterfaceRequest {
-  readonly Description: string;
-  readonly DryRun: boolean;
-  readonly Groups: [];
-  readonly Ipv6AddressCount: number;
-  readonly Ipv6Addresses: [];
-  readonly PrivateIpAddress: string;
-  readonly PrivateIpAddresses: [];
-  readonly SecondaryPrivateIpAddressCount: number;
-  readonly Ipv4Prefixes: [];
-  readonly Ipv4PrefixCount: number;
-  readonly Ipv6Prefixes: [];
-  readonly Ipv6PrefixCount: number;
-  readonly InterfaceType: string;
+export interface CreateNetworkInterfaceRequest {
+  readonly Description?: string;
+  readonly DryRun?: boolean;
+  readonly Groups?: [];
+  readonly Ipv6AddressCount?: number;
+  readonly Ipv6Addresses?: [];
+  readonly PrivateIpAddress?: string;
+  readonly PrivateIpAddresses?: [];
+  readonly SecondaryPrivateIpAddressCount?: number;
+  readonly Ipv4Prefixes?: [];
+  readonly Ipv4PrefixCount?: number;
+  readonly Ipv6Prefixes?: [];
+  readonly Ipv6PrefixCount?: number;
+  readonly InterfaceType?: string;
   readonly SubnetId: string;
-  readonly TagSpecifications: [];
-  readonly ClientToken: string;
+  readonly TagSpecifications?: [];
+  readonly ClientToken?: string;
 }
 
-interface CreateNetworkInterfaceResult {
-  readonly NetworkInterface: NetworkInterface;
-  readonly ClientToken: string;
+export interface CreateNetworkInterfaceResult {
+  readonly NetworkInterface?: NetworkInterface;
+  readonly ClientToken?: string;
 }
 
-interface CreatePlacementGroupRequest {
-  readonly DryRun: boolean;
-  readonly GroupName: string;
-  readonly Strategy: string;
-  readonly PartitionCount: number;
-  readonly TagSpecifications: [];
+export interface CreatePlacementGroupRequest {
+  readonly DryRun?: boolean;
+  readonly GroupName?: string;
+  readonly Strategy?: string;
+  readonly PartitionCount?: number;
+  readonly TagSpecifications?: [];
 }
 
-interface CreatePlacementGroupResult {
-  readonly PlacementGroup: PlacementGroup;
+export interface CreatePlacementGroupResult {
+  readonly PlacementGroup?: PlacementGroup;
 }
 
-interface CreatePublicIpv4PoolRequest {
-  readonly DryRun: boolean;
-  readonly TagSpecifications: [];
+export interface CreatePublicIpv4PoolRequest {
+  readonly DryRun?: boolean;
+  readonly TagSpecifications?: [];
 }
 
-interface CreatePublicIpv4PoolResult {
-  readonly PoolId: string;
+export interface CreatePublicIpv4PoolResult {
+  readonly PoolId?: string;
 }
 
-interface CreateReplaceRootVolumeTaskRequest {
+export interface CreateReplaceRootVolumeTaskRequest {
   readonly InstanceId: string;
-  readonly SnapshotId: string;
-  readonly ClientToken: string;
-  readonly DryRun: boolean;
-  readonly TagSpecifications: [];
+  readonly SnapshotId?: string;
+  readonly ClientToken?: string;
+  readonly DryRun?: boolean;
+  readonly TagSpecifications?: [];
 }
 
-interface CreateReplaceRootVolumeTaskResult {
-  readonly ReplaceRootVolumeTask: ReplaceRootVolumeTask;
+export interface CreateReplaceRootVolumeTaskResult {
+  readonly ReplaceRootVolumeTask?: ReplaceRootVolumeTask;
 }
 
-interface CreateReservedInstancesListingRequest {
+export interface CreateReservedInstancesListingRequest {
   readonly ClientToken: string;
   readonly InstanceCount: number;
   readonly PriceSchedules: [];
   readonly ReservedInstancesId: string;
 }
 
-interface CreateReservedInstancesListingResult {
-  readonly ReservedInstancesListings: [];
+export interface CreateReservedInstancesListingResult {
+  readonly ReservedInstancesListings?: [];
 }
 
-interface CreateRestoreImageTaskRequest {
+export interface CreateRestoreImageTaskRequest {
   readonly Bucket: string;
   readonly ObjectKey: string;
-  readonly Name: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly Name?: string;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateRestoreImageTaskResult {
-  readonly ImageId: string;
+export interface CreateRestoreImageTaskResult {
+  readonly ImageId?: string;
 }
 
-interface CreateRouteRequest {
-  readonly DestinationCidrBlock: string;
-  readonly DestinationIpv6CidrBlock: string;
-  readonly DestinationPrefixListId: string;
-  readonly DryRun: boolean;
-  readonly VpcEndpointId: string;
-  readonly EgressOnlyInternetGatewayId: string;
-  readonly GatewayId: string;
-  readonly InstanceId: string;
-  readonly NatGatewayId: string;
-  readonly TransitGatewayId: string;
-  readonly LocalGatewayId: string;
-  readonly CarrierGatewayId: string;
-  readonly NetworkInterfaceId: string;
+export interface CreateRouteRequest {
+  readonly DestinationCidrBlock?: string;
+  readonly DestinationIpv6CidrBlock?: string;
+  readonly DestinationPrefixListId?: string;
+  readonly DryRun?: boolean;
+  readonly VpcEndpointId?: string;
+  readonly EgressOnlyInternetGatewayId?: string;
+  readonly GatewayId?: string;
+  readonly InstanceId?: string;
+  readonly NatGatewayId?: string;
+  readonly TransitGatewayId?: string;
+  readonly LocalGatewayId?: string;
+  readonly CarrierGatewayId?: string;
+  readonly NetworkInterfaceId?: string;
   readonly RouteTableId: string;
-  readonly VpcPeeringConnectionId: string;
-  readonly CoreNetworkArn: string;
+  readonly VpcPeeringConnectionId?: string;
+  readonly CoreNetworkArn?: string;
 }
 
-interface CreateRouteResult {
-  readonly Return: boolean;
+export interface CreateRouteResult {
+  readonly Return?: boolean;
 }
 
-interface CreateRouteTableRequest {
-  readonly DryRun: boolean;
+export interface CreateRouteTableRequest {
+  readonly DryRun?: boolean;
   readonly VpcId: string;
-  readonly TagSpecifications: [];
+  readonly TagSpecifications?: [];
 }
 
-interface CreateRouteTableResult {
-  readonly RouteTable: RouteTable;
+export interface CreateRouteTableResult {
+  readonly RouteTable?: RouteTable;
 }
 
-interface CreateSecurityGroupRequest {
+export interface CreateSecurityGroupRequest {
   readonly Description: string;
   readonly GroupName: string;
-  readonly VpcId: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly VpcId?: string;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateSecurityGroupResult {
-  readonly GroupId: string;
-  readonly Tags: [];
+export interface CreateSecurityGroupResult {
+  readonly GroupId?: string;
+  readonly Tags?: [];
 }
 
-interface CreateSnapshotRequest {
-  readonly Description: string;
-  readonly OutpostArn: string;
+export interface CreateSnapshotRequest {
+  readonly Description?: string;
+  readonly OutpostArn?: string;
   readonly VolumeId: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateSnapshotsRequest {
-  readonly Description: string;
+export interface CreateSnapshotsRequest {
+  readonly Description?: string;
   readonly InstanceSpecification: InstanceSpecification;
-  readonly OutpostArn: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
-  readonly CopyTagsFromSource: string;
+  readonly OutpostArn?: string;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
+  readonly CopyTagsFromSource?: string;
 }
 
-interface CreateSnapshotsResult {
-  readonly Snapshots: [];
+export interface CreateSnapshotsResult {
+  readonly Snapshots?: [];
 }
 
-interface CreateSpotDatafeedSubscriptionRequest {
+export interface CreateSpotDatafeedSubscriptionRequest {
   readonly Bucket: string;
-  readonly DryRun: boolean;
-  readonly Prefix: string;
+  readonly DryRun?: boolean;
+  readonly Prefix?: string;
 }
 
-interface CreateSpotDatafeedSubscriptionResult {
-  readonly SpotDatafeedSubscription: SpotDatafeedSubscription;
+export interface CreateSpotDatafeedSubscriptionResult {
+  readonly SpotDatafeedSubscription?: SpotDatafeedSubscription;
 }
 
-interface CreateStoreImageTaskRequest {
+export interface CreateStoreImageTaskRequest {
   readonly ImageId: string;
   readonly Bucket: string;
-  readonly S3ObjectTags: [];
-  readonly DryRun: boolean;
+  readonly S3ObjectTags?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateStoreImageTaskResult {
-  readonly ObjectKey: string;
+export interface CreateStoreImageTaskResult {
+  readonly ObjectKey?: string;
 }
 
-interface CreateSubnetCidrReservationRequest {
-  readonly TagSpecifications: [];
+export interface CreateSubnetCidrReservationRequest {
+  readonly TagSpecifications?: [];
   readonly SubnetId: string;
   readonly Cidr: string;
   readonly ReservationType: string;
-  readonly Description: string;
-  readonly DryRun: boolean;
+  readonly Description?: string;
+  readonly DryRun?: boolean;
 }
 
-interface CreateSubnetCidrReservationResult {
-  readonly SubnetCidrReservation: SubnetCidrReservation;
+export interface CreateSubnetCidrReservationResult {
+  readonly SubnetCidrReservation?: SubnetCidrReservation;
 }
 
-interface CreateSubnetRequest {
-  readonly TagSpecifications: [];
-  readonly AvailabilityZone: string;
-  readonly AvailabilityZoneId: string;
-  readonly CidrBlock: string;
-  readonly Ipv6CidrBlock: string;
-  readonly OutpostArn: string;
+export interface CreateSubnetRequest {
+  readonly TagSpecifications?: [];
+  readonly AvailabilityZone?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly CidrBlock?: string;
+  readonly Ipv6CidrBlock?: string;
+  readonly OutpostArn?: string;
   readonly VpcId: string;
-  readonly DryRun: boolean;
-  readonly Ipv6Native: boolean;
+  readonly DryRun?: boolean;
+  readonly Ipv6Native?: boolean;
 }
 
-interface CreateSubnetResult {
-  readonly Subnet: Subnet;
+export interface CreateSubnetResult {
+  readonly Subnet?: Subnet;
 }
 
-interface CreateTagsRequest {
-  readonly DryRun: boolean;
+export interface CreateTagsRequest {
+  readonly DryRun?: boolean;
   readonly Resources: [];
   readonly Tags: [];
 }
 
-interface CreateTrafficMirrorFilterRequest {
-  readonly Description: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
+export interface CreateTrafficMirrorFilterRequest {
+  readonly Description?: string;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
 }
 
-interface CreateTrafficMirrorFilterResult {
-  readonly TrafficMirrorFilter: TrafficMirrorFilter;
-  readonly ClientToken: string;
+export interface CreateTrafficMirrorFilterResult {
+  readonly TrafficMirrorFilter?: TrafficMirrorFilter;
+  readonly ClientToken?: string;
 }
 
-interface CreateTrafficMirrorFilterRuleRequest {
+export interface CreateTrafficMirrorFilterRuleRequest {
   readonly TrafficMirrorFilterId: string;
   readonly TrafficDirection: string;
   readonly RuleNumber: number;
   readonly RuleAction: string;
-  readonly DestinationPortRange: TrafficMirrorPortRangeRequest;
-  readonly SourcePortRange: TrafficMirrorPortRangeRequest;
-  readonly Protocol: number;
+  readonly DestinationPortRange?: TrafficMirrorPortRangeRequest;
+  readonly SourcePortRange?: TrafficMirrorPortRangeRequest;
+  readonly Protocol?: number;
   readonly DestinationCidrBlock: string;
   readonly SourceCidrBlock: string;
-  readonly Description: string;
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
+  readonly Description?: string;
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
 }
 
-interface CreateTrafficMirrorFilterRuleResult {
-  readonly TrafficMirrorFilterRule: TrafficMirrorFilterRule;
-  readonly ClientToken: string;
+export interface CreateTrafficMirrorFilterRuleResult {
+  readonly TrafficMirrorFilterRule?: TrafficMirrorFilterRule;
+  readonly ClientToken?: string;
 }
 
-interface CreateTrafficMirrorSessionRequest {
+export interface CreateTrafficMirrorSessionRequest {
   readonly NetworkInterfaceId: string;
   readonly TrafficMirrorTargetId: string;
   readonly TrafficMirrorFilterId: string;
-  readonly PacketLength: number;
+  readonly PacketLength?: number;
   readonly SessionNumber: number;
-  readonly VirtualNetworkId: number;
-  readonly Description: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
+  readonly VirtualNetworkId?: number;
+  readonly Description?: string;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
 }
 
-interface CreateTrafficMirrorSessionResult {
-  readonly TrafficMirrorSession: TrafficMirrorSession;
-  readonly ClientToken: string;
+export interface CreateTrafficMirrorSessionResult {
+  readonly TrafficMirrorSession?: TrafficMirrorSession;
+  readonly ClientToken?: string;
 }
 
-interface CreateTrafficMirrorTargetRequest {
-  readonly NetworkInterfaceId: string;
-  readonly NetworkLoadBalancerArn: string;
-  readonly Description: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
+export interface CreateTrafficMirrorTargetRequest {
+  readonly NetworkInterfaceId?: string;
+  readonly NetworkLoadBalancerArn?: string;
+  readonly Description?: string;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
 }
 
-interface CreateTrafficMirrorTargetResult {
-  readonly TrafficMirrorTarget: TrafficMirrorTarget;
-  readonly ClientToken: string;
+export interface CreateTrafficMirrorTargetResult {
+  readonly TrafficMirrorTarget?: TrafficMirrorTarget;
+  readonly ClientToken?: string;
 }
 
-interface CreateTransitGatewayConnectPeerRequest {
+export interface CreateTransitGatewayConnectPeerRequest {
   readonly TransitGatewayAttachmentId: string;
-  readonly TransitGatewayAddress: string;
+  readonly TransitGatewayAddress?: string;
   readonly PeerAddress: string;
-  readonly BgpOptions: TransitGatewayConnectRequestBgpOptions;
+  readonly BgpOptions?: TransitGatewayConnectRequestBgpOptions;
   readonly InsideCidrBlocks: [];
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateTransitGatewayConnectPeerResult {
-  readonly TransitGatewayConnectPeer: TransitGatewayConnectPeer;
+export interface CreateTransitGatewayConnectPeerResult {
+  readonly TransitGatewayConnectPeer?: TransitGatewayConnectPeer;
 }
 
-interface CreateTransitGatewayConnectRequest {
+export interface CreateTransitGatewayConnectRequest {
   readonly TransportTransitGatewayAttachmentId: string;
   readonly Options: CreateTransitGatewayConnectRequestOptions;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateTransitGatewayConnectRequestOptions {
+export interface CreateTransitGatewayConnectRequestOptions {
   readonly Protocol: string;
 }
 
-interface CreateTransitGatewayConnectResult {
-  readonly TransitGatewayConnect: TransitGatewayConnect;
+export interface CreateTransitGatewayConnectResult {
+  readonly TransitGatewayConnect?: TransitGatewayConnect;
 }
 
-interface CreateTransitGatewayMulticastDomainRequest {
+export interface CreateTransitGatewayMulticastDomainRequest {
   readonly TransitGatewayId: string;
-  readonly Options: CreateTransitGatewayMulticastDomainRequestOptions;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly Options?: CreateTransitGatewayMulticastDomainRequestOptions;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateTransitGatewayMulticastDomainRequestOptions {
-  readonly Igmpv2Support: string;
-  readonly StaticSourcesSupport: string;
-  readonly AutoAcceptSharedAssociations: string;
+export interface CreateTransitGatewayMulticastDomainRequestOptions {
+  readonly Igmpv2Support?: string;
+  readonly StaticSourcesSupport?: string;
+  readonly AutoAcceptSharedAssociations?: string;
 }
 
-interface CreateTransitGatewayMulticastDomainResult {
-  readonly TransitGatewayMulticastDomain: TransitGatewayMulticastDomain;
+export interface CreateTransitGatewayMulticastDomainResult {
+  readonly TransitGatewayMulticastDomain?: TransitGatewayMulticastDomain;
 }
 
-interface CreateTransitGatewayPeeringAttachmentRequest {
+export interface CreateTransitGatewayPeeringAttachmentRequest {
   readonly TransitGatewayId: string;
   readonly PeerTransitGatewayId: string;
   readonly PeerAccountId: string;
   readonly PeerRegion: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateTransitGatewayPeeringAttachmentResult {
-  readonly TransitGatewayPeeringAttachment: TransitGatewayPeeringAttachment;
+export interface CreateTransitGatewayPeeringAttachmentResult {
+  readonly TransitGatewayPeeringAttachment?: TransitGatewayPeeringAttachment;
 }
 
-interface CreateTransitGatewayPrefixListReferenceRequest {
+export interface CreateTransitGatewayPrefixListReferenceRequest {
   readonly TransitGatewayRouteTableId: string;
   readonly PrefixListId: string;
-  readonly TransitGatewayAttachmentId: string;
-  readonly Blackhole: boolean;
-  readonly DryRun: boolean;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly Blackhole?: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface CreateTransitGatewayPrefixListReferenceResult {
-  readonly TransitGatewayPrefixListReference: TransitGatewayPrefixListReference;
+export interface CreateTransitGatewayPrefixListReferenceResult {
+  readonly TransitGatewayPrefixListReference?: TransitGatewayPrefixListReference;
 }
 
-interface CreateTransitGatewayRequest {
-  readonly Description: string;
-  readonly Options: TransitGatewayRequestOptions;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+export interface CreateTransitGatewayRequest {
+  readonly Description?: string;
+  readonly Options?: TransitGatewayRequestOptions;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateTransitGatewayResult {
-  readonly TransitGateway: TransitGateway;
+export interface CreateTransitGatewayResult {
+  readonly TransitGateway?: TransitGateway;
 }
 
-interface CreateTransitGatewayRouteRequest {
+export interface CreateTransitGatewayRouteRequest {
   readonly DestinationCidrBlock: string;
   readonly TransitGatewayRouteTableId: string;
-  readonly TransitGatewayAttachmentId: string;
-  readonly Blackhole: boolean;
-  readonly DryRun: boolean;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly Blackhole?: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface CreateTransitGatewayRouteResult {
-  readonly Route: TransitGatewayRoute;
+export interface CreateTransitGatewayRouteResult {
+  readonly Route?: TransitGatewayRoute;
 }
 
-interface CreateTransitGatewayRouteTableRequest {
+export interface CreateTransitGatewayRouteTableRequest {
   readonly TransitGatewayId: string;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateTransitGatewayRouteTableResult {
-  readonly TransitGatewayRouteTable: TransitGatewayRouteTable;
+export interface CreateTransitGatewayRouteTableResult {
+  readonly TransitGatewayRouteTable?: TransitGatewayRouteTable;
 }
 
-interface CreateTransitGatewayVpcAttachmentRequest {
+export interface CreateTransitGatewayVpcAttachmentRequest {
   readonly TransitGatewayId: string;
   readonly VpcId: string;
   readonly SubnetIds: [];
-  readonly Options: CreateTransitGatewayVpcAttachmentRequestOptions;
-  readonly TagSpecifications: [];
-  readonly DryRun: boolean;
+  readonly Options?: CreateTransitGatewayVpcAttachmentRequestOptions;
+  readonly TagSpecifications?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateTransitGatewayVpcAttachmentRequestOptions {
-  readonly DnsSupport: string;
-  readonly Ipv6Support: string;
-  readonly ApplianceModeSupport: string;
+export interface CreateTransitGatewayVpcAttachmentRequestOptions {
+  readonly DnsSupport?: string;
+  readonly Ipv6Support?: string;
+  readonly ApplianceModeSupport?: string;
 }
 
-interface CreateTransitGatewayVpcAttachmentResult {
-  readonly TransitGatewayVpcAttachment: TransitGatewayVpcAttachment;
+export interface CreateTransitGatewayVpcAttachmentResult {
+  readonly TransitGatewayVpcAttachment?: TransitGatewayVpcAttachment;
 }
 
-interface CreateVolumePermission {
-  readonly Group: string;
-  readonly UserId: string;
+export interface CreateVolumePermission {
+  readonly Group?: string;
+  readonly UserId?: string;
 }
 
-interface CreateVolumePermissionModifications {
-  readonly Add: [];
-  readonly Remove: [];
+export interface CreateVolumePermissionModifications {
+  readonly Add?: [];
+  readonly Remove?: [];
 }
 
-interface CreateVolumeRequest {
+export interface CreateVolumeRequest {
   readonly AvailabilityZone: string;
-  readonly Encrypted: boolean;
-  readonly Iops: number;
-  readonly KmsKeyId: string;
-  readonly OutpostArn: string;
-  readonly Size: number;
-  readonly SnapshotId: string;
-  readonly VolumeType: string;
-  readonly DryRun: boolean;
-  readonly TagSpecifications: [];
-  readonly MultiAttachEnabled: boolean;
-  readonly Throughput: number;
-  readonly ClientToken: string;
+  readonly Encrypted?: boolean;
+  readonly Iops?: number;
+  readonly KmsKeyId?: string;
+  readonly OutpostArn?: string;
+  readonly Size?: number;
+  readonly SnapshotId?: string;
+  readonly VolumeType?: string;
+  readonly DryRun?: boolean;
+  readonly TagSpecifications?: [];
+  readonly MultiAttachEnabled?: boolean;
+  readonly Throughput?: number;
+  readonly ClientToken?: string;
 }
 
-interface CreateVpcEndpointConnectionNotificationRequest {
-  readonly DryRun: boolean;
-  readonly ServiceId: string;
-  readonly VpcEndpointId: string;
+export interface CreateVpcEndpointConnectionNotificationRequest {
+  readonly DryRun?: boolean;
+  readonly ServiceId?: string;
+  readonly VpcEndpointId?: string;
   readonly ConnectionNotificationArn: string;
   readonly ConnectionEvents: [];
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 
-interface CreateVpcEndpointConnectionNotificationResult {
-  readonly ConnectionNotification: ConnectionNotification;
-  readonly ClientToken: string;
+export interface CreateVpcEndpointConnectionNotificationResult {
+  readonly ConnectionNotification?: ConnectionNotification;
+  readonly ClientToken?: string;
 }
 
-interface CreateVpcEndpointRequest {
-  readonly DryRun: boolean;
-  readonly VpcEndpointType: string;
+export interface CreateVpcEndpointRequest {
+  readonly DryRun?: boolean;
+  readonly VpcEndpointType?: string;
   readonly VpcId: string;
   readonly ServiceName: string;
-  readonly PolicyDocument: string;
-  readonly RouteTableIds: [];
-  readonly SubnetIds: [];
-  readonly SecurityGroupIds: [];
-  readonly ClientToken: string;
-  readonly PrivateDnsEnabled: boolean;
-  readonly TagSpecifications: [];
+  readonly PolicyDocument?: string;
+  readonly RouteTableIds?: [];
+  readonly SubnetIds?: [];
+  readonly SecurityGroupIds?: [];
+  readonly ClientToken?: string;
+  readonly PrivateDnsEnabled?: boolean;
+  readonly TagSpecifications?: [];
 }
 
-interface CreateVpcEndpointResult {
-  readonly VpcEndpoint: VpcEndpoint;
-  readonly ClientToken: string;
+export interface CreateVpcEndpointResult {
+  readonly VpcEndpoint?: VpcEndpoint;
+  readonly ClientToken?: string;
 }
 
-interface CreateVpcEndpointServiceConfigurationRequest {
-  readonly DryRun: boolean;
-  readonly AcceptanceRequired: boolean;
-  readonly PrivateDnsName: string;
-  readonly NetworkLoadBalancerArns: [];
-  readonly GatewayLoadBalancerArns: [];
-  readonly ClientToken: string;
-  readonly TagSpecifications: [];
+export interface CreateVpcEndpointServiceConfigurationRequest {
+  readonly DryRun?: boolean;
+  readonly AcceptanceRequired?: boolean;
+  readonly PrivateDnsName?: string;
+  readonly NetworkLoadBalancerArns?: [];
+  readonly GatewayLoadBalancerArns?: [];
+  readonly ClientToken?: string;
+  readonly TagSpecifications?: [];
 }
 
-interface CreateVpcEndpointServiceConfigurationResult {
-  readonly ServiceConfiguration: ServiceConfiguration;
-  readonly ClientToken: string;
+export interface CreateVpcEndpointServiceConfigurationResult {
+  readonly ServiceConfiguration?: ServiceConfiguration;
+  readonly ClientToken?: string;
 }
 
-interface CreateVpcPeeringConnectionRequest {
-  readonly DryRun: boolean;
-  readonly PeerOwnerId: string;
-  readonly PeerVpcId: string;
-  readonly VpcId: string;
-  readonly PeerRegion: string;
-  readonly TagSpecifications: [];
+export interface CreateVpcPeeringConnectionRequest {
+  readonly DryRun?: boolean;
+  readonly PeerOwnerId?: string;
+  readonly PeerVpcId?: string;
+  readonly VpcId?: string;
+  readonly PeerRegion?: string;
+  readonly TagSpecifications?: [];
 }
 
-interface CreateVpcPeeringConnectionResult {
-  readonly VpcPeeringConnection: VpcPeeringConnection;
+export interface CreateVpcPeeringConnectionResult {
+  readonly VpcPeeringConnection?: VpcPeeringConnection;
 }
 
-interface CreateVpcRequest {
-  readonly CidrBlock: string;
-  readonly AmazonProvidedIpv6CidrBlock: boolean;
-  readonly Ipv6Pool: string;
-  readonly Ipv6CidrBlock: string;
-  readonly Ipv4IpamPoolId: string;
-  readonly Ipv4NetmaskLength: number;
-  readonly Ipv6IpamPoolId: string;
-  readonly Ipv6NetmaskLength: number;
-  readonly DryRun: boolean;
-  readonly InstanceTenancy: string;
-  readonly Ipv6CidrBlockNetworkBorderGroup: string;
-  readonly TagSpecifications: [];
+export interface CreateVpcRequest {
+  readonly CidrBlock?: string;
+  readonly AmazonProvidedIpv6CidrBlock?: boolean;
+  readonly Ipv6Pool?: string;
+  readonly Ipv6CidrBlock?: string;
+  readonly Ipv4IpamPoolId?: string;
+  readonly Ipv4NetmaskLength?: number;
+  readonly Ipv6IpamPoolId?: string;
+  readonly Ipv6NetmaskLength?: number;
+  readonly DryRun?: boolean;
+  readonly InstanceTenancy?: string;
+  readonly Ipv6CidrBlockNetworkBorderGroup?: string;
+  readonly TagSpecifications?: [];
 }
 
-interface CreateVpcResult {
-  readonly Vpc: Vpc;
+export interface CreateVpcResult {
+  readonly Vpc?: Vpc;
 }
 
-interface CreateVpnConnectionRequest {
+export interface CreateVpnConnectionRequest {
   readonly CustomerGatewayId: string;
   readonly Type: string;
-  readonly VpnGatewayId: string;
-  readonly TransitGatewayId: string;
-  readonly DryRun: boolean;
-  readonly Options: VpnConnectionOptionsSpecification;
-  readonly TagSpecifications: [];
+  readonly VpnGatewayId?: string;
+  readonly TransitGatewayId?: string;
+  readonly DryRun?: boolean;
+  readonly Options?: VpnConnectionOptionsSpecification;
+  readonly TagSpecifications?: [];
 }
 
-interface CreateVpnConnectionResult {
-  readonly VpnConnection: VpnConnection;
+export interface CreateVpnConnectionResult {
+  readonly VpnConnection?: VpnConnection;
 }
 
-interface CreateVpnConnectionRouteRequest {
+export interface CreateVpnConnectionRouteRequest {
   readonly DestinationCidrBlock: string;
   readonly VpnConnectionId: string;
 }
 
-interface CreateVpnGatewayRequest {
-  readonly AvailabilityZone: string;
+export interface CreateVpnGatewayRequest {
+  readonly AvailabilityZone?: string;
   readonly Type: string;
-  readonly TagSpecifications: [];
-  readonly AmazonSideAsn: number;
-  readonly DryRun: boolean;
+  readonly TagSpecifications?: [];
+  readonly AmazonSideAsn?: number;
+  readonly DryRun?: boolean;
 }
 
-interface CreateVpnGatewayResult {
-  readonly VpnGateway: VpnGateway;
+export interface CreateVpnGatewayResult {
+  readonly VpnGateway?: VpnGateway;
 }
 
-interface CreditSpecification {
+export interface CreditSpecification {
+  readonly CpuCredits?: string;
+}
+
+export interface CreditSpecificationRequest {
   readonly CpuCredits: string;
 }
 
-interface CreditSpecificationRequest {
-  readonly CpuCredits: string;
+export interface CustomerGateway {
+  readonly BgpAsn?: string;
+  readonly CustomerGatewayId?: string;
+  readonly IpAddress?: string;
+  readonly CertificateArn?: string;
+  readonly State?: string;
+  readonly Type?: string;
+  readonly DeviceName?: string;
+  readonly Tags?: [];
 }
 
-interface CustomerGateway {
-  readonly BgpAsn: string;
-  readonly CustomerGatewayId: string;
-  readonly IpAddress: string;
-  readonly CertificateArn: string;
-  readonly State: string;
-  readonly Type: string;
-  readonly DeviceName: string;
-  readonly Tags: [];
-}
-
-interface DeleteCarrierGatewayRequest {
+export interface DeleteCarrierGatewayRequest {
   readonly CarrierGatewayId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteCarrierGatewayResult {
-  readonly CarrierGateway: CarrierGateway;
+export interface DeleteCarrierGatewayResult {
+  readonly CarrierGateway?: CarrierGateway;
 }
 
-interface DeleteClientVpnEndpointRequest {
+export interface DeleteClientVpnEndpointRequest {
   readonly ClientVpnEndpointId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteClientVpnEndpointResult {
-  readonly Status: ClientVpnEndpointStatus;
+export interface DeleteClientVpnEndpointResult {
+  readonly Status?: ClientVpnEndpointStatus;
 }
 
-interface DeleteClientVpnRouteRequest {
+export interface DeleteClientVpnRouteRequest {
   readonly ClientVpnEndpointId: string;
-  readonly TargetVpcSubnetId: string;
+  readonly TargetVpcSubnetId?: string;
   readonly DestinationCidrBlock: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteClientVpnRouteResult {
-  readonly Status: ClientVpnRouteStatus;
+export interface DeleteClientVpnRouteResult {
+  readonly Status?: ClientVpnRouteStatus;
 }
 
-interface DeleteCustomerGatewayRequest {
+export interface DeleteCustomerGatewayRequest {
   readonly CustomerGatewayId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteDhcpOptionsRequest {
+export interface DeleteDhcpOptionsRequest {
   readonly DhcpOptionsId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteEgressOnlyInternetGatewayRequest {
-  readonly DryRun: boolean;
+export interface DeleteEgressOnlyInternetGatewayRequest {
+  readonly DryRun?: boolean;
   readonly EgressOnlyInternetGatewayId: string;
 }
 
-interface DeleteEgressOnlyInternetGatewayResult {
-  readonly ReturnCode: boolean;
+export interface DeleteEgressOnlyInternetGatewayResult {
+  readonly ReturnCode?: boolean;
 }
 
-interface DeleteFleetError {
-  readonly Code: string;
-  readonly Message: string;
+export interface DeleteFleetError {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface DeleteFleetErrorItem {
-  readonly Error: DeleteFleetError;
-  readonly FleetId: string;
+export interface DeleteFleetErrorItem {
+  readonly Error?: DeleteFleetError;
+  readonly FleetId?: string;
 }
 
-interface DeleteFleetSuccessItem {
-  readonly CurrentFleetState: string;
-  readonly PreviousFleetState: string;
-  readonly FleetId: string;
+export interface DeleteFleetSuccessItem {
+  readonly CurrentFleetState?: string;
+  readonly PreviousFleetState?: string;
+  readonly FleetId?: string;
 }
 
-interface DeleteFleetsRequest {
-  readonly DryRun: boolean;
+export interface DeleteFleetsRequest {
+  readonly DryRun?: boolean;
   readonly FleetIds: [];
   readonly TerminateInstances: boolean;
 }
 
-interface DeleteFleetsResult {
-  readonly SuccessfulFleetDeletions: [];
-  readonly UnsuccessfulFleetDeletions: [];
+export interface DeleteFleetsResult {
+  readonly SuccessfulFleetDeletions?: [];
+  readonly UnsuccessfulFleetDeletions?: [];
 }
 
-interface DeleteFlowLogsRequest {
-  readonly DryRun: boolean;
+export interface DeleteFlowLogsRequest {
+  readonly DryRun?: boolean;
   readonly FlowLogIds: [];
 }
 
-interface DeleteFlowLogsResult {
-  readonly Unsuccessful: [];
+export interface DeleteFlowLogsResult {
+  readonly Unsuccessful?: [];
 }
 
-interface DeleteFpgaImageRequest {
-  readonly DryRun: boolean;
+export interface DeleteFpgaImageRequest {
+  readonly DryRun?: boolean;
   readonly FpgaImageId: string;
 }
 
-interface DeleteFpgaImageResult {
-  readonly Return: boolean;
+export interface DeleteFpgaImageResult {
+  readonly Return?: boolean;
 }
 
-interface DeleteInstanceEventWindowRequest {
-  readonly DryRun: boolean;
-  readonly ForceDelete: boolean;
+export interface DeleteInstanceEventWindowRequest {
+  readonly DryRun?: boolean;
+  readonly ForceDelete?: boolean;
   readonly InstanceEventWindowId: string;
 }
 
-interface DeleteInstanceEventWindowResult {
-  readonly InstanceEventWindowState: InstanceEventWindowStateChange;
+export interface DeleteInstanceEventWindowResult {
+  readonly InstanceEventWindowState?: InstanceEventWindowStateChange;
 }
 
-interface DeleteInternetGatewayRequest {
-  readonly DryRun: boolean;
+export interface DeleteInternetGatewayRequest {
+  readonly DryRun?: boolean;
   readonly InternetGatewayId: string;
 }
 
-interface DeleteIpamPoolRequest {
-  readonly DryRun: boolean;
+export interface DeleteIpamPoolRequest {
+  readonly DryRun?: boolean;
   readonly IpamPoolId: string;
 }
 
-interface DeleteIpamPoolResult {
-  readonly IpamPool: IpamPool;
+export interface DeleteIpamPoolResult {
+  readonly IpamPool?: IpamPool;
 }
 
-interface DeleteIpamRequest {
-  readonly DryRun: boolean;
+export interface DeleteIpamRequest {
+  readonly DryRun?: boolean;
   readonly IpamId: string;
 }
 
-interface DeleteIpamResult {
-  readonly Ipam: Ipam;
+export interface DeleteIpamResult {
+  readonly Ipam?: Ipam;
 }
 
-interface DeleteIpamScopeRequest {
-  readonly DryRun: boolean;
+export interface DeleteIpamScopeRequest {
+  readonly DryRun?: boolean;
   readonly IpamScopeId: string;
 }
 
-interface DeleteIpamScopeResult {
-  readonly IpamScope: IpamScope;
+export interface DeleteIpamScopeResult {
+  readonly IpamScope?: IpamScope;
 }
 
-interface DeleteKeyPairRequest {
-  readonly KeyName: string;
-  readonly KeyPairId: string;
-  readonly DryRun: boolean;
+export interface DeleteKeyPairRequest {
+  readonly KeyName?: string;
+  readonly KeyPairId?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteLaunchTemplateRequest {
-  readonly DryRun: boolean;
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
+export interface DeleteLaunchTemplateRequest {
+  readonly DryRun?: boolean;
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
 }
 
-interface DeleteLaunchTemplateResult {
-  readonly LaunchTemplate: LaunchTemplate;
+export interface DeleteLaunchTemplateResult {
+  readonly LaunchTemplate?: LaunchTemplate;
 }
 
-interface DeleteLaunchTemplateVersionsRequest {
-  readonly DryRun: boolean;
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
+export interface DeleteLaunchTemplateVersionsRequest {
+  readonly DryRun?: boolean;
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
   readonly Versions: [];
 }
 
-interface DeleteLaunchTemplateVersionsResponseErrorItem {
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
-  readonly VersionNumber: number;
-  readonly ResponseError: ResponseError;
+export interface DeleteLaunchTemplateVersionsResponseErrorItem {
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
+  readonly VersionNumber?: number;
+  readonly ResponseError?: ResponseError;
 }
 
-interface DeleteLaunchTemplateVersionsResponseSuccessItem {
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
-  readonly VersionNumber: number;
+export interface DeleteLaunchTemplateVersionsResponseSuccessItem {
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
+  readonly VersionNumber?: number;
 }
 
-interface DeleteLaunchTemplateVersionsResult {
-  readonly SuccessfullyDeletedLaunchTemplateVersions: [];
-  readonly UnsuccessfullyDeletedLaunchTemplateVersions: [];
+export interface DeleteLaunchTemplateVersionsResult {
+  readonly SuccessfullyDeletedLaunchTemplateVersions?: [];
+  readonly UnsuccessfullyDeletedLaunchTemplateVersions?: [];
 }
 
-interface DeleteLocalGatewayRouteRequest {
+export interface DeleteLocalGatewayRouteRequest {
   readonly DestinationCidrBlock: string;
   readonly LocalGatewayRouteTableId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteLocalGatewayRouteResult {
-  readonly Route: LocalGatewayRoute;
+export interface DeleteLocalGatewayRouteResult {
+  readonly Route?: LocalGatewayRoute;
 }
 
-interface DeleteLocalGatewayRouteTableVpcAssociationRequest {
+export interface DeleteLocalGatewayRouteTableVpcAssociationRequest {
   readonly LocalGatewayRouteTableVpcAssociationId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteLocalGatewayRouteTableVpcAssociationResult {
-  readonly LocalGatewayRouteTableVpcAssociation: LocalGatewayRouteTableVpcAssociation;
+export interface DeleteLocalGatewayRouteTableVpcAssociationResult {
+  readonly LocalGatewayRouteTableVpcAssociation?: LocalGatewayRouteTableVpcAssociation;
 }
 
-interface DeleteManagedPrefixListRequest {
-  readonly DryRun: boolean;
+export interface DeleteManagedPrefixListRequest {
+  readonly DryRun?: boolean;
   readonly PrefixListId: string;
 }
 
-interface DeleteManagedPrefixListResult {
-  readonly PrefixList: ManagedPrefixList;
+export interface DeleteManagedPrefixListResult {
+  readonly PrefixList?: ManagedPrefixList;
 }
 
-interface DeleteNatGatewayRequest {
-  readonly DryRun: boolean;
+export interface DeleteNatGatewayRequest {
+  readonly DryRun?: boolean;
   readonly NatGatewayId: string;
 }
 
-interface DeleteNatGatewayResult {
-  readonly NatGatewayId: string;
+export interface DeleteNatGatewayResult {
+  readonly NatGatewayId?: string;
 }
 
-interface DeleteNetworkAclEntryRequest {
-  readonly DryRun: boolean;
+export interface DeleteNetworkAclEntryRequest {
+  readonly DryRun?: boolean;
   readonly Egress: boolean;
   readonly NetworkAclId: string;
   readonly RuleNumber: number;
 }
 
-interface DeleteNetworkAclRequest {
-  readonly DryRun: boolean;
+export interface DeleteNetworkAclRequest {
+  readonly DryRun?: boolean;
   readonly NetworkAclId: string;
 }
 
-interface DeleteNetworkInsightsAccessScopeAnalysisRequest {
+export interface DeleteNetworkInsightsAccessScopeAnalysisRequest {
   readonly NetworkInsightsAccessScopeAnalysisId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteNetworkInsightsAccessScopeAnalysisResult {
-  readonly NetworkInsightsAccessScopeAnalysisId: string;
+export interface DeleteNetworkInsightsAccessScopeAnalysisResult {
+  readonly NetworkInsightsAccessScopeAnalysisId?: string;
 }
 
-interface DeleteNetworkInsightsAccessScopeRequest {
-  readonly DryRun: boolean;
+export interface DeleteNetworkInsightsAccessScopeRequest {
+  readonly DryRun?: boolean;
   readonly NetworkInsightsAccessScopeId: string;
 }
 
-interface DeleteNetworkInsightsAccessScopeResult {
-  readonly NetworkInsightsAccessScopeId: string;
+export interface DeleteNetworkInsightsAccessScopeResult {
+  readonly NetworkInsightsAccessScopeId?: string;
 }
 
-interface DeleteNetworkInsightsAnalysisRequest {
-  readonly DryRun: boolean;
+export interface DeleteNetworkInsightsAnalysisRequest {
+  readonly DryRun?: boolean;
   readonly NetworkInsightsAnalysisId: string;
 }
 
-interface DeleteNetworkInsightsAnalysisResult {
-  readonly NetworkInsightsAnalysisId: string;
+export interface DeleteNetworkInsightsAnalysisResult {
+  readonly NetworkInsightsAnalysisId?: string;
 }
 
-interface DeleteNetworkInsightsPathRequest {
-  readonly DryRun: boolean;
+export interface DeleteNetworkInsightsPathRequest {
+  readonly DryRun?: boolean;
   readonly NetworkInsightsPathId: string;
 }
 
-interface DeleteNetworkInsightsPathResult {
-  readonly NetworkInsightsPathId: string;
+export interface DeleteNetworkInsightsPathResult {
+  readonly NetworkInsightsPathId?: string;
 }
 
-interface DeleteNetworkInterfacePermissionRequest {
+export interface DeleteNetworkInterfacePermissionRequest {
   readonly NetworkInterfacePermissionId: string;
-  readonly Force: boolean;
-  readonly DryRun: boolean;
+  readonly Force?: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteNetworkInterfacePermissionResult {
-  readonly Return: boolean;
+export interface DeleteNetworkInterfacePermissionResult {
+  readonly Return?: boolean;
 }
 
-interface DeleteNetworkInterfaceRequest {
-  readonly DryRun: boolean;
+export interface DeleteNetworkInterfaceRequest {
+  readonly DryRun?: boolean;
   readonly NetworkInterfaceId: string;
 }
 
-interface DeletePlacementGroupRequest {
-  readonly DryRun: boolean;
+export interface DeletePlacementGroupRequest {
+  readonly DryRun?: boolean;
   readonly GroupName: string;
 }
 
-interface DeletePublicIpv4PoolRequest {
-  readonly DryRun: boolean;
+export interface DeletePublicIpv4PoolRequest {
+  readonly DryRun?: boolean;
   readonly PoolId: string;
 }
 
-interface DeletePublicIpv4PoolResult {
-  readonly ReturnValue: boolean;
+export interface DeletePublicIpv4PoolResult {
+  readonly ReturnValue?: boolean;
 }
 
-interface DeleteQueuedReservedInstancesError {
-  readonly Code: string;
-  readonly Message: string;
+export interface DeleteQueuedReservedInstancesError {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface DeleteQueuedReservedInstancesRequest {
-  readonly DryRun: boolean;
+export interface DeleteQueuedReservedInstancesRequest {
+  readonly DryRun?: boolean;
   readonly ReservedInstancesIds: [];
 }
 
-interface DeleteQueuedReservedInstancesResult {
-  readonly SuccessfulQueuedPurchaseDeletions: [];
-  readonly FailedQueuedPurchaseDeletions: [];
+export interface DeleteQueuedReservedInstancesResult {
+  readonly SuccessfulQueuedPurchaseDeletions?: [];
+  readonly FailedQueuedPurchaseDeletions?: [];
 }
 
-interface DeleteRouteRequest {
-  readonly DestinationCidrBlock: string;
-  readonly DestinationIpv6CidrBlock: string;
-  readonly DestinationPrefixListId: string;
-  readonly DryRun: boolean;
+export interface DeleteRouteRequest {
+  readonly DestinationCidrBlock?: string;
+  readonly DestinationIpv6CidrBlock?: string;
+  readonly DestinationPrefixListId?: string;
+  readonly DryRun?: boolean;
   readonly RouteTableId: string;
 }
 
-interface DeleteRouteTableRequest {
-  readonly DryRun: boolean;
+export interface DeleteRouteTableRequest {
+  readonly DryRun?: boolean;
   readonly RouteTableId: string;
 }
 
-interface DeleteSecurityGroupRequest {
-  readonly GroupId: string;
-  readonly GroupName: string;
-  readonly DryRun: boolean;
+export interface DeleteSecurityGroupRequest {
+  readonly GroupId?: string;
+  readonly GroupName?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteSnapshotRequest {
+export interface DeleteSnapshotRequest {
   readonly SnapshotId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteSpotDatafeedSubscriptionRequest {
-  readonly DryRun: boolean;
+export interface DeleteSpotDatafeedSubscriptionRequest {
+  readonly DryRun?: boolean;
 }
 
-interface DeleteSubnetCidrReservationRequest {
+export interface DeleteSubnetCidrReservationRequest {
   readonly SubnetCidrReservationId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteSubnetCidrReservationResult {
-  readonly DeletedSubnetCidrReservation: SubnetCidrReservation;
+export interface DeleteSubnetCidrReservationResult {
+  readonly DeletedSubnetCidrReservation?: SubnetCidrReservation;
 }
 
-interface DeleteSubnetRequest {
+export interface DeleteSubnetRequest {
   readonly SubnetId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTagsRequest {
-  readonly DryRun: boolean;
+export interface DeleteTagsRequest {
+  readonly DryRun?: boolean;
   readonly Resources: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface DeleteTrafficMirrorFilterRequest {
+export interface DeleteTrafficMirrorFilterRequest {
   readonly TrafficMirrorFilterId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTrafficMirrorFilterResult {
-  readonly TrafficMirrorFilterId: string;
+export interface DeleteTrafficMirrorFilterResult {
+  readonly TrafficMirrorFilterId?: string;
 }
 
-interface DeleteTrafficMirrorFilterRuleRequest {
+export interface DeleteTrafficMirrorFilterRuleRequest {
   readonly TrafficMirrorFilterRuleId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTrafficMirrorFilterRuleResult {
-  readonly TrafficMirrorFilterRuleId: string;
+export interface DeleteTrafficMirrorFilterRuleResult {
+  readonly TrafficMirrorFilterRuleId?: string;
 }
 
-interface DeleteTrafficMirrorSessionRequest {
+export interface DeleteTrafficMirrorSessionRequest {
   readonly TrafficMirrorSessionId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTrafficMirrorSessionResult {
-  readonly TrafficMirrorSessionId: string;
+export interface DeleteTrafficMirrorSessionResult {
+  readonly TrafficMirrorSessionId?: string;
 }
 
-interface DeleteTrafficMirrorTargetRequest {
+export interface DeleteTrafficMirrorTargetRequest {
   readonly TrafficMirrorTargetId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTrafficMirrorTargetResult {
-  readonly TrafficMirrorTargetId: string;
+export interface DeleteTrafficMirrorTargetResult {
+  readonly TrafficMirrorTargetId?: string;
 }
 
-interface DeleteTransitGatewayConnectPeerRequest {
+export interface DeleteTransitGatewayConnectPeerRequest {
   readonly TransitGatewayConnectPeerId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTransitGatewayConnectPeerResult {
-  readonly TransitGatewayConnectPeer: TransitGatewayConnectPeer;
+export interface DeleteTransitGatewayConnectPeerResult {
+  readonly TransitGatewayConnectPeer?: TransitGatewayConnectPeer;
 }
 
-interface DeleteTransitGatewayConnectRequest {
+export interface DeleteTransitGatewayConnectRequest {
   readonly TransitGatewayAttachmentId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTransitGatewayConnectResult {
-  readonly TransitGatewayConnect: TransitGatewayConnect;
+export interface DeleteTransitGatewayConnectResult {
+  readonly TransitGatewayConnect?: TransitGatewayConnect;
 }
 
-interface DeleteTransitGatewayMulticastDomainRequest {
+export interface DeleteTransitGatewayMulticastDomainRequest {
   readonly TransitGatewayMulticastDomainId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTransitGatewayMulticastDomainResult {
-  readonly TransitGatewayMulticastDomain: TransitGatewayMulticastDomain;
+export interface DeleteTransitGatewayMulticastDomainResult {
+  readonly TransitGatewayMulticastDomain?: TransitGatewayMulticastDomain;
 }
 
-interface DeleteTransitGatewayPeeringAttachmentRequest {
+export interface DeleteTransitGatewayPeeringAttachmentRequest {
   readonly TransitGatewayAttachmentId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTransitGatewayPeeringAttachmentResult {
-  readonly TransitGatewayPeeringAttachment: TransitGatewayPeeringAttachment;
+export interface DeleteTransitGatewayPeeringAttachmentResult {
+  readonly TransitGatewayPeeringAttachment?: TransitGatewayPeeringAttachment;
 }
 
-interface DeleteTransitGatewayPrefixListReferenceRequest {
+export interface DeleteTransitGatewayPrefixListReferenceRequest {
   readonly TransitGatewayRouteTableId: string;
   readonly PrefixListId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTransitGatewayPrefixListReferenceResult {
-  readonly TransitGatewayPrefixListReference: TransitGatewayPrefixListReference;
+export interface DeleteTransitGatewayPrefixListReferenceResult {
+  readonly TransitGatewayPrefixListReference?: TransitGatewayPrefixListReference;
 }
 
-interface DeleteTransitGatewayRequest {
+export interface DeleteTransitGatewayRequest {
   readonly TransitGatewayId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTransitGatewayResult {
-  readonly TransitGateway: TransitGateway;
+export interface DeleteTransitGatewayResult {
+  readonly TransitGateway?: TransitGateway;
 }
 
-interface DeleteTransitGatewayRouteRequest {
+export interface DeleteTransitGatewayRouteRequest {
   readonly TransitGatewayRouteTableId: string;
   readonly DestinationCidrBlock: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTransitGatewayRouteResult {
-  readonly Route: TransitGatewayRoute;
+export interface DeleteTransitGatewayRouteResult {
+  readonly Route?: TransitGatewayRoute;
 }
 
-interface DeleteTransitGatewayRouteTableRequest {
+export interface DeleteTransitGatewayRouteTableRequest {
   readonly TransitGatewayRouteTableId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTransitGatewayRouteTableResult {
-  readonly TransitGatewayRouteTable: TransitGatewayRouteTable;
+export interface DeleteTransitGatewayRouteTableResult {
+  readonly TransitGatewayRouteTable?: TransitGatewayRouteTable;
 }
 
-interface DeleteTransitGatewayVpcAttachmentRequest {
+export interface DeleteTransitGatewayVpcAttachmentRequest {
   readonly TransitGatewayAttachmentId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteTransitGatewayVpcAttachmentResult {
-  readonly TransitGatewayVpcAttachment: TransitGatewayVpcAttachment;
+export interface DeleteTransitGatewayVpcAttachmentResult {
+  readonly TransitGatewayVpcAttachment?: TransitGatewayVpcAttachment;
 }
 
-interface DeleteVolumeRequest {
+export interface DeleteVolumeRequest {
   readonly VolumeId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteVpcEndpointConnectionNotificationsRequest {
-  readonly DryRun: boolean;
+export interface DeleteVpcEndpointConnectionNotificationsRequest {
+  readonly DryRun?: boolean;
   readonly ConnectionNotificationIds: [];
 }
 
-interface DeleteVpcEndpointConnectionNotificationsResult {
-  readonly Unsuccessful: [];
+export interface DeleteVpcEndpointConnectionNotificationsResult {
+  readonly Unsuccessful?: [];
 }
 
-interface DeleteVpcEndpointServiceConfigurationsRequest {
-  readonly DryRun: boolean;
+export interface DeleteVpcEndpointServiceConfigurationsRequest {
+  readonly DryRun?: boolean;
   readonly ServiceIds: [];
 }
 
-interface DeleteVpcEndpointServiceConfigurationsResult {
-  readonly Unsuccessful: [];
+export interface DeleteVpcEndpointServiceConfigurationsResult {
+  readonly Unsuccessful?: [];
 }
 
-interface DeleteVpcEndpointsRequest {
-  readonly DryRun: boolean;
+export interface DeleteVpcEndpointsRequest {
+  readonly DryRun?: boolean;
   readonly VpcEndpointIds: [];
 }
 
-interface DeleteVpcEndpointsResult {
-  readonly Unsuccessful: [];
+export interface DeleteVpcEndpointsResult {
+  readonly Unsuccessful?: [];
 }
 
-interface DeleteVpcPeeringConnectionRequest {
-  readonly DryRun: boolean;
+export interface DeleteVpcPeeringConnectionRequest {
+  readonly DryRun?: boolean;
   readonly VpcPeeringConnectionId: string;
 }
 
-interface DeleteVpcPeeringConnectionResult {
-  readonly Return: boolean;
+export interface DeleteVpcPeeringConnectionResult {
+  readonly Return?: boolean;
 }
 
-interface DeleteVpcRequest {
+export interface DeleteVpcRequest {
   readonly VpcId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteVpnConnectionRequest {
+export interface DeleteVpnConnectionRequest {
   readonly VpnConnectionId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeleteVpnConnectionRouteRequest {
+export interface DeleteVpnConnectionRouteRequest {
   readonly DestinationCidrBlock: string;
   readonly VpnConnectionId: string;
 }
 
-interface DeleteVpnGatewayRequest {
+export interface DeleteVpnGatewayRequest {
   readonly VpnGatewayId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeprovisionByoipCidrRequest {
+export interface DeprovisionByoipCidrRequest {
   readonly Cidr: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeprovisionByoipCidrResult {
-  readonly ByoipCidr: ByoipCidr;
+export interface DeprovisionByoipCidrResult {
+  readonly ByoipCidr?: ByoipCidr;
 }
 
-interface DeprovisionIpamPoolCidrRequest {
-  readonly DryRun: boolean;
+export interface DeprovisionIpamPoolCidrRequest {
+  readonly DryRun?: boolean;
   readonly IpamPoolId: string;
-  readonly Cidr: string;
+  readonly Cidr?: string;
 }
 
-interface DeprovisionIpamPoolCidrResult {
-  readonly IpamPoolCidr: IpamPoolCidr;
+export interface DeprovisionIpamPoolCidrResult {
+  readonly IpamPoolCidr?: IpamPoolCidr;
 }
 
-interface DeprovisionPublicIpv4PoolCidrRequest {
-  readonly DryRun: boolean;
+export interface DeprovisionPublicIpv4PoolCidrRequest {
+  readonly DryRun?: boolean;
   readonly PoolId: string;
   readonly Cidr: string;
 }
 
-interface DeprovisionPublicIpv4PoolCidrResult {
-  readonly PoolId: string;
-  readonly DeprovisionedAddresses: [];
+export interface DeprovisionPublicIpv4PoolCidrResult {
+  readonly PoolId?: string;
+  readonly DeprovisionedAddresses?: [];
 }
 
-interface DeregisterImageRequest {
+export interface DeregisterImageRequest {
   readonly ImageId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DeregisterInstanceEventNotificationAttributesRequest {
-  readonly DryRun: boolean;
-  readonly InstanceTagAttribute: DeregisterInstanceTagAttributeRequest;
+export interface DeregisterInstanceEventNotificationAttributesRequest {
+  readonly DryRun?: boolean;
+  readonly InstanceTagAttribute?: DeregisterInstanceTagAttributeRequest;
 }
 
-interface DeregisterInstanceEventNotificationAttributesResult {
-  readonly InstanceTagAttribute: InstanceTagNotificationAttribute;
+export interface DeregisterInstanceEventNotificationAttributesResult {
+  readonly InstanceTagAttribute?: InstanceTagNotificationAttribute;
 }
 
-interface DeregisterInstanceTagAttributeRequest {
-  readonly IncludeAllTagsOfInstance: boolean;
-  readonly InstanceTagKeys: [];
+export interface DeregisterInstanceTagAttributeRequest {
+  readonly IncludeAllTagsOfInstance?: boolean;
+  readonly InstanceTagKeys?: [];
 }
 
-interface DeregisterTransitGatewayMulticastGroupMembersRequest {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly GroupIpAddress: string;
-  readonly NetworkInterfaceIds: [];
-  readonly DryRun: boolean;
+export interface DeregisterTransitGatewayMulticastGroupMembersRequest {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly GroupIpAddress?: string;
+  readonly NetworkInterfaceIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DeregisterTransitGatewayMulticastGroupMembersResult {
-  readonly DeregisteredMulticastGroupMembers: TransitGatewayMulticastDeregisteredGroupMembers;
+export interface DeregisterTransitGatewayMulticastGroupMembersResult {
+  readonly DeregisteredMulticastGroupMembers?: TransitGatewayMulticastDeregisteredGroupMembers;
 }
 
-interface DeregisterTransitGatewayMulticastGroupSourcesRequest {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly GroupIpAddress: string;
-  readonly NetworkInterfaceIds: [];
-  readonly DryRun: boolean;
+export interface DeregisterTransitGatewayMulticastGroupSourcesRequest {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly GroupIpAddress?: string;
+  readonly NetworkInterfaceIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DeregisterTransitGatewayMulticastGroupSourcesResult {
-  readonly DeregisteredMulticastGroupSources: TransitGatewayMulticastDeregisteredGroupSources;
+export interface DeregisterTransitGatewayMulticastGroupSourcesResult {
+  readonly DeregisteredMulticastGroupSources?: TransitGatewayMulticastDeregisteredGroupSources;
 }
 
-interface DescribeAccountAttributesRequest {
-  readonly AttributeNames: [];
-  readonly DryRun: boolean;
+export interface DescribeAccountAttributesRequest {
+  readonly AttributeNames?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DescribeAccountAttributesResult {
-  readonly AccountAttributes: [];
+export interface DescribeAccountAttributesResult {
+  readonly AccountAttributes?: [];
 }
 
-interface DescribeAddressesAttributeRequest {
-  readonly AllocationIds: [];
-  readonly Attribute: string;
-  readonly NextToken: string;
+export interface DescribeAddressesAttributeRequest {
+  readonly AllocationIds?: [];
+  readonly Attribute?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly DryRun?: boolean;
+}
+
+export interface DescribeAddressesAttributeResult {
+  readonly Addresses?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeAddressesRequest {
+  readonly Filters?: [];
+  readonly PublicIps?: [];
+  readonly AllocationIds?: [];
+  readonly DryRun?: boolean;
+}
+
+export interface DescribeAddressesResult {
+  readonly Addresses?: [];
+}
+
+export interface DescribeAggregateIdFormatRequest {
+  readonly DryRun?: boolean;
+}
+
+export interface DescribeAggregateIdFormatResult {
+  readonly UseLongIdsAggregated?: boolean;
+  readonly Statuses?: [];
+}
+
+export interface DescribeAvailabilityZonesRequest {
+  readonly Filters?: [];
+  readonly ZoneNames?: [];
+  readonly ZoneIds?: [];
+  readonly AllAvailabilityZones?: boolean;
+  readonly DryRun?: boolean;
+}
+
+export interface DescribeAvailabilityZonesResult {
+  readonly AvailabilityZones?: [];
+}
+
+export interface DescribeBundleTasksRequest {
+  readonly BundleIds?: [];
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+}
+
+export interface DescribeBundleTasksResult {
+  readonly BundleTasks?: [];
+}
+
+export interface DescribeByoipCidrsRequest {
+  readonly DryRun?: boolean;
   readonly MaxResults: number;
-  readonly DryRun: boolean;
+  readonly NextToken?: string;
 }
 
-interface DescribeAddressesAttributeResult {
-  readonly Addresses: [];
-  readonly NextToken: string;
+export interface DescribeByoipCidrsResult {
+  readonly ByoipCidrs?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeAddressesRequest {
-  readonly Filters: [];
-  readonly PublicIps: [];
-  readonly AllocationIds: [];
-  readonly DryRun: boolean;
+export interface DescribeCapacityReservationFleetsRequest {
+  readonly CapacityReservationFleetIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DescribeAddressesResult {
-  readonly Addresses: [];
+export interface DescribeCapacityReservationFleetsResult {
+  readonly CapacityReservationFleets?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeAggregateIdFormatRequest {
-  readonly DryRun: boolean;
+export interface DescribeCapacityReservationsRequest {
+  readonly CapacityReservationIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DescribeAggregateIdFormatResult {
-  readonly UseLongIdsAggregated: boolean;
-  readonly Statuses: [];
+export interface DescribeCapacityReservationsResult {
+  readonly NextToken?: string;
+  readonly CapacityReservations?: [];
 }
 
-interface DescribeAvailabilityZonesRequest {
-  readonly Filters: [];
-  readonly ZoneNames: [];
-  readonly ZoneIds: [];
-  readonly AllAvailabilityZones: boolean;
-  readonly DryRun: boolean;
+export interface DescribeCarrierGatewaysRequest {
+  readonly CarrierGatewayIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeAvailabilityZonesResult {
-  readonly AvailabilityZones: [];
+export interface DescribeCarrierGatewaysResult {
+  readonly CarrierGateways?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeBundleTasksRequest {
-  readonly BundleIds: [];
-  readonly Filters: [];
-  readonly DryRun: boolean;
+export interface DescribeClassicLinkInstancesRequest {
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+  readonly InstanceIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeBundleTasksResult {
-  readonly BundleTasks: [];
+export interface DescribeClassicLinkInstancesResult {
+  readonly Instances?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeByoipCidrsRequest {
-  readonly DryRun: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface DescribeByoipCidrsResult {
-  readonly ByoipCidrs: [];
-  readonly NextToken: string;
-}
-
-interface DescribeCapacityReservationFleetsRequest {
-  readonly CapacityReservationFleetIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
-  readonly DryRun: boolean;
-}
-
-interface DescribeCapacityReservationFleetsResult {
-  readonly CapacityReservationFleets: [];
-  readonly NextToken: string;
-}
-
-interface DescribeCapacityReservationsRequest {
-  readonly CapacityReservationIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
-  readonly DryRun: boolean;
-}
-
-interface DescribeCapacityReservationsResult {
-  readonly NextToken: string;
-  readonly CapacityReservations: [];
-}
-
-interface DescribeCarrierGatewaysRequest {
-  readonly CarrierGatewayIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
-}
-
-interface DescribeCarrierGatewaysResult {
-  readonly CarrierGateways: [];
-  readonly NextToken: string;
-}
-
-interface DescribeClassicLinkInstancesRequest {
-  readonly Filters: [];
-  readonly DryRun: boolean;
-  readonly InstanceIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface DescribeClassicLinkInstancesResult {
-  readonly Instances: [];
-  readonly NextToken: string;
-}
-
-interface DescribeClientVpnAuthorizationRulesRequest {
+export interface DescribeClientVpnAuthorizationRulesRequest {
   readonly ClientVpnEndpointId: string;
-  readonly DryRun: boolean;
-  readonly NextToken: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
+  readonly DryRun?: boolean;
+  readonly NextToken?: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
 }
 
-interface DescribeClientVpnAuthorizationRulesResult {
-  readonly AuthorizationRules: [];
-  readonly NextToken: string;
+export interface DescribeClientVpnAuthorizationRulesResult {
+  readonly AuthorizationRules?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeClientVpnConnectionsRequest {
+export interface DescribeClientVpnConnectionsRequest {
   readonly ClientVpnEndpointId: string;
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly DryRun: boolean;
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeClientVpnConnectionsResult {
-  readonly Connections: [];
-  readonly NextToken: string;
+export interface DescribeClientVpnConnectionsResult {
+  readonly Connections?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeClientVpnEndpointsRequest {
-  readonly ClientVpnEndpointIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
-  readonly DryRun: boolean;
+export interface DescribeClientVpnEndpointsRequest {
+  readonly ClientVpnEndpointIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DescribeClientVpnEndpointsResult {
-  readonly ClientVpnEndpoints: [];
-  readonly NextToken: string;
+export interface DescribeClientVpnEndpointsResult {
+  readonly ClientVpnEndpoints?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeClientVpnRoutesRequest {
+export interface DescribeClientVpnRoutesRequest {
   readonly ClientVpnEndpointId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeClientVpnRoutesResult {
-  readonly Routes: [];
-  readonly NextToken: string;
+export interface DescribeClientVpnRoutesResult {
+  readonly Routes?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeClientVpnTargetNetworksRequest {
+export interface DescribeClientVpnTargetNetworksRequest {
   readonly ClientVpnEndpointId: string;
-  readonly AssociationIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
-  readonly DryRun: boolean;
+  readonly AssociationIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DescribeClientVpnTargetNetworksResult {
-  readonly ClientVpnTargetNetworks: [];
-  readonly NextToken: string;
+export interface DescribeClientVpnTargetNetworksResult {
+  readonly ClientVpnTargetNetworks?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeCoipPoolsRequest {
-  readonly PoolIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeCoipPoolsRequest {
+  readonly PoolIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeCoipPoolsResult {
-  readonly CoipPools: [];
-  readonly NextToken: string;
+export interface DescribeCoipPoolsResult {
+  readonly CoipPools?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeConversionTasksRequest {
-  readonly ConversionTaskIds: [];
-  readonly DryRun: boolean;
+export interface DescribeConversionTasksRequest {
+  readonly ConversionTaskIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DescribeConversionTasksResult {
-  readonly ConversionTasks: [];
+export interface DescribeConversionTasksResult {
+  readonly ConversionTasks?: [];
 }
 
-interface DescribeCustomerGatewaysRequest {
-  readonly CustomerGatewayIds: [];
-  readonly Filters: [];
-  readonly DryRun: boolean;
+export interface DescribeCustomerGatewaysRequest {
+  readonly CustomerGatewayIds?: [];
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DescribeCustomerGatewaysResult {
-  readonly CustomerGateways: [];
+export interface DescribeCustomerGatewaysResult {
+  readonly CustomerGateways?: [];
 }
 
-interface DescribeDhcpOptionsRequest {
-  readonly DhcpOptionsIds: [];
-  readonly Filters: [];
-  readonly DryRun: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeDhcpOptionsRequest {
+  readonly DhcpOptionsIds?: [];
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeDhcpOptionsResult {
-  readonly DhcpOptions: [];
-  readonly NextToken: string;
+export interface DescribeDhcpOptionsResult {
+  readonly DhcpOptions?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeEgressOnlyInternetGatewaysRequest {
-  readonly DryRun: boolean;
-  readonly EgressOnlyInternetGatewayIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly Filters: [];
+export interface DescribeEgressOnlyInternetGatewaysRequest {
+  readonly DryRun?: boolean;
+  readonly EgressOnlyInternetGatewayIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly Filters?: [];
 }
 
-interface DescribeEgressOnlyInternetGatewaysResult {
-  readonly EgressOnlyInternetGateways: [];
-  readonly NextToken: string;
+export interface DescribeEgressOnlyInternetGatewaysResult {
+  readonly EgressOnlyInternetGateways?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeElasticGpusRequest {
-  readonly ElasticGpuIds: [];
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeElasticGpusRequest {
+  readonly ElasticGpuIds?: [];
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeElasticGpusResult {
-  readonly ElasticGpuSet: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeElasticGpusResult {
+  readonly ElasticGpuSet?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeExportImageTasksRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly ExportImageTaskIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeExportImageTasksRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly ExportImageTaskIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeExportImageTasksResult {
-  readonly ExportImageTasks: [];
-  readonly NextToken: string;
+export interface DescribeExportImageTasksResult {
+  readonly ExportImageTasks?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeExportTasksRequest {
-  readonly ExportTaskIds: [];
-  readonly Filters: [];
+export interface DescribeExportTasksRequest {
+  readonly ExportTaskIds?: [];
+  readonly Filters?: [];
 }
 
-interface DescribeExportTasksResult {
-  readonly ExportTasks: [];
+export interface DescribeExportTasksResult {
+  readonly ExportTasks?: [];
 }
 
-interface DescribeFastSnapshotRestoreSuccessItem {
-  readonly SnapshotId: string;
-  readonly AvailabilityZone: string;
-  readonly State: string;
-  readonly StateTransitionReason: string;
-  readonly OwnerId: string;
-  readonly OwnerAlias: string;
-  readonly EnablingTime: Date;
-  readonly OptimizingTime: Date;
-  readonly EnabledTime: Date;
-  readonly DisablingTime: Date;
-  readonly DisabledTime: Date;
+export interface DescribeFastSnapshotRestoreSuccessItem {
+  readonly SnapshotId?: string;
+  readonly AvailabilityZone?: string;
+  readonly State?: string;
+  readonly StateTransitionReason?: string;
+  readonly OwnerId?: string;
+  readonly OwnerAlias?: string;
+  readonly EnablingTime?: Date;
+  readonly OptimizingTime?: Date;
+  readonly EnabledTime?: Date;
+  readonly DisablingTime?: Date;
+  readonly DisabledTime?: Date;
 }
 
-interface DescribeFastSnapshotRestoresRequest {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeFastSnapshotRestoresRequest {
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeFastSnapshotRestoresResult {
-  readonly FastSnapshotRestores: [];
-  readonly NextToken: string;
+export interface DescribeFastSnapshotRestoresResult {
+  readonly FastSnapshotRestores?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeFleetError {
-  readonly LaunchTemplateAndOverrides: LaunchTemplateAndOverridesResponse;
-  readonly Lifecycle: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface DescribeFleetError {
+  readonly LaunchTemplateAndOverrides?: LaunchTemplateAndOverridesResponse;
+  readonly Lifecycle?: string;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface DescribeFleetHistoryRequest {
-  readonly DryRun: boolean;
-  readonly EventType: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeFleetHistoryRequest {
+  readonly DryRun?: boolean;
+  readonly EventType?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly FleetId: string;
   readonly StartTime: Date;
 }
 
-interface DescribeFleetHistoryResult {
-  readonly HistoryRecords: [];
-  readonly LastEvaluatedTime: Date;
-  readonly NextToken: string;
+export interface DescribeFleetHistoryResult {
+  readonly HistoryRecords?: [];
+  readonly LastEvaluatedTime?: Date;
+  readonly NextToken?: string;
+  readonly FleetId?: string;
+  readonly StartTime?: Date;
+}
+
+export interface DescribeFleetInstancesRequest {
+  readonly DryRun?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly FleetId: string;
-  readonly StartTime: Date;
+  readonly Filters?: [];
 }
 
-interface DescribeFleetInstancesRequest {
-  readonly DryRun: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly FleetId: string;
-  readonly Filters: [];
+export interface DescribeFleetInstancesResult {
+  readonly ActiveInstances?: [];
+  readonly NextToken?: string;
+  readonly FleetId?: string;
 }
 
-interface DescribeFleetInstancesResult {
-  readonly ActiveInstances: [];
-  readonly NextToken: string;
-  readonly FleetId: string;
+export interface DescribeFleetsInstances {
+  readonly LaunchTemplateAndOverrides?: LaunchTemplateAndOverridesResponse;
+  readonly Lifecycle?: string;
+  readonly InstanceIds?: [];
+  readonly InstanceType?: string;
+  readonly Platform?: string;
 }
 
-interface DescribeFleetsInstances {
-  readonly LaunchTemplateAndOverrides: LaunchTemplateAndOverridesResponse;
-  readonly Lifecycle: string;
-  readonly InstanceIds: [];
-  readonly InstanceType: string;
-  readonly Platform: string;
+export interface DescribeFleetsRequest {
+  readonly DryRun?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly FleetIds?: [];
+  readonly Filters?: [];
 }
 
-interface DescribeFleetsRequest {
-  readonly DryRun: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly FleetIds: [];
-  readonly Filters: [];
+export interface DescribeFleetsResult {
+  readonly NextToken?: string;
+  readonly Fleets?: [];
 }
 
-interface DescribeFleetsResult {
-  readonly NextToken: string;
-  readonly Fleets: [];
+export interface DescribeFlowLogsRequest {
+  readonly DryRun?: boolean;
+  readonly Filter?: [];
+  readonly FlowLogIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeFlowLogsRequest {
-  readonly DryRun: boolean;
-  readonly Filter: [];
-  readonly FlowLogIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeFlowLogsResult {
+  readonly FlowLogs?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeFlowLogsResult {
-  readonly FlowLogs: [];
-  readonly NextToken: string;
-}
-
-interface DescribeFpgaImageAttributeRequest {
-  readonly DryRun: boolean;
+export interface DescribeFpgaImageAttributeRequest {
+  readonly DryRun?: boolean;
   readonly FpgaImageId: string;
   readonly Attribute: string;
 }
 
-interface DescribeFpgaImageAttributeResult {
-  readonly FpgaImageAttribute: FpgaImageAttribute;
+export interface DescribeFpgaImageAttributeResult {
+  readonly FpgaImageAttribute?: FpgaImageAttribute;
 }
 
-interface DescribeFpgaImagesRequest {
-  readonly DryRun: boolean;
-  readonly FpgaImageIds: [];
-  readonly Owners: [];
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeFpgaImagesRequest {
+  readonly DryRun?: boolean;
+  readonly FpgaImageIds?: [];
+  readonly Owners?: [];
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeFpgaImagesResult {
-  readonly FpgaImages: [];
-  readonly NextToken: string;
+export interface DescribeFpgaImagesResult {
+  readonly FpgaImages?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeHostReservationOfferingsRequest {
-  readonly Filter: [];
-  readonly MaxDuration: number;
-  readonly MaxResults: number;
-  readonly MinDuration: number;
-  readonly NextToken: string;
-  readonly OfferingId: string;
+export interface DescribeHostReservationOfferingsRequest {
+  readonly Filter?: [];
+  readonly MaxDuration?: number;
+  readonly MaxResults?: number;
+  readonly MinDuration?: number;
+  readonly NextToken?: string;
+  readonly OfferingId?: string;
 }
 
-interface DescribeHostReservationOfferingsResult {
-  readonly NextToken: string;
-  readonly OfferingSet: [];
+export interface DescribeHostReservationOfferingsResult {
+  readonly NextToken?: string;
+  readonly OfferingSet?: [];
 }
 
-interface DescribeHostReservationsRequest {
-  readonly Filter: [];
-  readonly HostReservationIdSet: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeHostReservationsRequest {
+  readonly Filter?: [];
+  readonly HostReservationIdSet?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeHostReservationsResult {
-  readonly HostReservationSet: [];
-  readonly NextToken: string;
+export interface DescribeHostReservationsResult {
+  readonly HostReservationSet?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeHostsRequest {
-  readonly Filter: [];
-  readonly HostIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeHostsRequest {
+  readonly Filter?: [];
+  readonly HostIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeHostsResult {
-  readonly Hosts: [];
-  readonly NextToken: string;
+export interface DescribeHostsResult {
+  readonly Hosts?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeIamInstanceProfileAssociationsRequest {
-  readonly AssociationIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeIamInstanceProfileAssociationsRequest {
+  readonly AssociationIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeIamInstanceProfileAssociationsResult {
-  readonly IamInstanceProfileAssociations: [];
-  readonly NextToken: string;
+export interface DescribeIamInstanceProfileAssociationsResult {
+  readonly IamInstanceProfileAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeIdFormatRequest {
-  readonly Resource: string;
+export interface DescribeIdFormatRequest {
+  readonly Resource?: string;
 }
 
-interface DescribeIdFormatResult {
-  readonly Statuses: [];
+export interface DescribeIdFormatResult {
+  readonly Statuses?: [];
 }
 
-interface DescribeIdentityIdFormatRequest {
+export interface DescribeIdentityIdFormatRequest {
   readonly PrincipalArn: string;
-  readonly Resource: string;
+  readonly Resource?: string;
 }
 
-interface DescribeIdentityIdFormatResult {
-  readonly Statuses: [];
+export interface DescribeIdentityIdFormatResult {
+  readonly Statuses?: [];
 }
 
-interface DescribeImageAttributeRequest {
+export interface DescribeImageAttributeRequest {
   readonly Attribute: string;
   readonly ImageId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeImagesRequest {
-  readonly ExecutableUsers: [];
-  readonly Filters: [];
-  readonly ImageIds: [];
-  readonly Owners: [];
-  readonly IncludeDeprecated: boolean;
-  readonly DryRun: boolean;
+export interface DescribeImagesRequest {
+  readonly ExecutableUsers?: [];
+  readonly Filters?: [];
+  readonly ImageIds?: [];
+  readonly Owners?: [];
+  readonly IncludeDeprecated?: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeImagesResult {
-  readonly Images: [];
+export interface DescribeImagesResult {
+  readonly Images?: [];
 }
 
-interface DescribeImportImageTasksRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly ImportTaskIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeImportImageTasksRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly ImportTaskIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeImportImageTasksResult {
-  readonly ImportImageTasks: [];
-  readonly NextToken: string;
+export interface DescribeImportImageTasksResult {
+  readonly ImportImageTasks?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeImportSnapshotTasksRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly ImportTaskIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeImportSnapshotTasksRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly ImportTaskIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeImportSnapshotTasksResult {
-  readonly ImportSnapshotTasks: [];
-  readonly NextToken: string;
+export interface DescribeImportSnapshotTasksResult {
+  readonly ImportSnapshotTasks?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceAttributeRequest {
+export interface DescribeInstanceAttributeRequest {
   readonly Attribute: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
   readonly InstanceId: string;
 }
 
-interface DescribeInstanceCreditSpecificationsRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly InstanceIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeInstanceCreditSpecificationsRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly InstanceIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceCreditSpecificationsResult {
-  readonly InstanceCreditSpecifications: [];
-  readonly NextToken: string;
+export interface DescribeInstanceCreditSpecificationsResult {
+  readonly InstanceCreditSpecifications?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceEventNotificationAttributesRequest {
-  readonly DryRun: boolean;
+export interface DescribeInstanceEventNotificationAttributesRequest {
+  readonly DryRun?: boolean;
 }
 
-interface DescribeInstanceEventNotificationAttributesResult {
-  readonly InstanceTagAttribute: InstanceTagNotificationAttribute;
+export interface DescribeInstanceEventNotificationAttributesResult {
+  readonly InstanceTagAttribute?: InstanceTagNotificationAttribute;
 }
 
-interface DescribeInstanceEventWindowsRequest {
-  readonly DryRun: boolean;
-  readonly InstanceEventWindowIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeInstanceEventWindowsRequest {
+  readonly DryRun?: boolean;
+  readonly InstanceEventWindowIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceEventWindowsResult {
-  readonly InstanceEventWindows: [];
-  readonly NextToken: string;
+export interface DescribeInstanceEventWindowsResult {
+  readonly InstanceEventWindows?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceStatusRequest {
-  readonly Filters: [];
-  readonly InstanceIds: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
-  readonly IncludeAllInstances: boolean;
+export interface DescribeInstanceStatusRequest {
+  readonly Filters?: [];
+  readonly InstanceIds?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
+  readonly IncludeAllInstances?: boolean;
 }
 
-interface DescribeInstanceStatusResult {
-  readonly InstanceStatuses: [];
-  readonly NextToken: string;
+export interface DescribeInstanceStatusResult {
+  readonly InstanceStatuses?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceTypeOfferingsRequest {
-  readonly DryRun: boolean;
-  readonly LocationType: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeInstanceTypeOfferingsRequest {
+  readonly DryRun?: boolean;
+  readonly LocationType?: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceTypeOfferingsResult {
-  readonly InstanceTypeOfferings: [];
-  readonly NextToken: string;
+export interface DescribeInstanceTypeOfferingsResult {
+  readonly InstanceTypeOfferings?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceTypesRequest {
-  readonly DryRun: boolean;
-  readonly InstanceTypes: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeInstanceTypesRequest {
+  readonly DryRun?: boolean;
+  readonly InstanceTypes?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceTypesResult {
-  readonly InstanceTypes: [];
-  readonly NextToken: string;
+export interface DescribeInstanceTypesResult {
+  readonly InstanceTypes?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInstancesRequest {
-  readonly Filters: [];
-  readonly InstanceIds: [];
-  readonly DryRun: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeInstancesRequest {
+  readonly Filters?: [];
+  readonly InstanceIds?: [];
+  readonly DryRun?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeInstancesResult {
-  readonly Reservations: [];
-  readonly NextToken: string;
+export interface DescribeInstancesResult {
+  readonly Reservations?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInternetGatewaysRequest {
-  readonly Filters: [];
-  readonly DryRun: boolean;
-  readonly InternetGatewayIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeInternetGatewaysRequest {
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+  readonly InternetGatewayIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeInternetGatewaysResult {
-  readonly InternetGateways: [];
-  readonly NextToken: string;
+export interface DescribeInternetGatewaysResult {
+  readonly InternetGateways?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeIpamPoolsRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly IpamPoolIds: [];
+export interface DescribeIpamPoolsRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly IpamPoolIds?: [];
 }
 
-interface DescribeIpamPoolsResult {
-  readonly NextToken: string;
-  readonly IpamPools: [];
+export interface DescribeIpamPoolsResult {
+  readonly NextToken?: string;
+  readonly IpamPools?: [];
 }
 
-interface DescribeIpamScopesRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly IpamScopeIds: [];
+export interface DescribeIpamScopesRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly IpamScopeIds?: [];
 }
 
-interface DescribeIpamScopesResult {
-  readonly NextToken: string;
-  readonly IpamScopes: [];
+export interface DescribeIpamScopesResult {
+  readonly NextToken?: string;
+  readonly IpamScopes?: [];
 }
 
-interface DescribeIpamsRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly IpamIds: [];
+export interface DescribeIpamsRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly IpamIds?: [];
 }
 
-interface DescribeIpamsResult {
-  readonly NextToken: string;
-  readonly Ipams: [];
+export interface DescribeIpamsResult {
+  readonly NextToken?: string;
+  readonly Ipams?: [];
 }
 
-interface DescribeIpv6PoolsRequest {
-  readonly PoolIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly DryRun: boolean;
-  readonly Filters: [];
+export interface DescribeIpv6PoolsRequest {
+  readonly PoolIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
 }
 
-interface DescribeIpv6PoolsResult {
-  readonly Ipv6Pools: [];
-  readonly NextToken: string;
+export interface DescribeIpv6PoolsResult {
+  readonly Ipv6Pools?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeKeyPairsRequest {
-  readonly Filters: [];
-  readonly KeyNames: [];
-  readonly KeyPairIds: [];
-  readonly DryRun: boolean;
+export interface DescribeKeyPairsRequest {
+  readonly Filters?: [];
+  readonly KeyNames?: [];
+  readonly KeyPairIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DescribeKeyPairsResult {
-  readonly KeyPairs: [];
+export interface DescribeKeyPairsResult {
+  readonly KeyPairs?: [];
 }
 
-interface DescribeLaunchTemplateVersionsRequest {
-  readonly DryRun: boolean;
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
-  readonly Versions: [];
-  readonly MinVersion: string;
-  readonly MaxVersion: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+export interface DescribeLaunchTemplateVersionsRequest {
+  readonly DryRun?: boolean;
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
+  readonly Versions?: [];
+  readonly MinVersion?: string;
+  readonly MaxVersion?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 
-interface DescribeLaunchTemplateVersionsResult {
-  readonly LaunchTemplateVersions: [];
-  readonly NextToken: string;
+export interface DescribeLaunchTemplateVersionsResult {
+  readonly LaunchTemplateVersions?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeLaunchTemplatesRequest {
-  readonly DryRun: boolean;
-  readonly LaunchTemplateIds: [];
-  readonly LaunchTemplateNames: [];
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeLaunchTemplatesRequest {
+  readonly DryRun?: boolean;
+  readonly LaunchTemplateIds?: [];
+  readonly LaunchTemplateNames?: [];
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeLaunchTemplatesResult {
-  readonly LaunchTemplates: [];
-  readonly NextToken: string;
+export interface DescribeLaunchTemplatesResult {
+  readonly LaunchTemplates?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest {
-  readonly LocalGatewayRouteTableVirtualInterfaceGroupAssociationIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest {
+  readonly LocalGatewayRouteTableVirtualInterfaceGroupAssociationIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult {
-  readonly LocalGatewayRouteTableVirtualInterfaceGroupAssociations: [];
-  readonly NextToken: string;
+export interface DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult {
+  readonly LocalGatewayRouteTableVirtualInterfaceGroupAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeLocalGatewayRouteTableVpcAssociationsRequest {
-  readonly LocalGatewayRouteTableVpcAssociationIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeLocalGatewayRouteTableVpcAssociationsRequest {
+  readonly LocalGatewayRouteTableVpcAssociationIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeLocalGatewayRouteTableVpcAssociationsResult {
-  readonly LocalGatewayRouteTableVpcAssociations: [];
-  readonly NextToken: string;
+export interface DescribeLocalGatewayRouteTableVpcAssociationsResult {
+  readonly LocalGatewayRouteTableVpcAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeLocalGatewayRouteTablesRequest {
-  readonly LocalGatewayRouteTableIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeLocalGatewayRouteTablesRequest {
+  readonly LocalGatewayRouteTableIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeLocalGatewayRouteTablesResult {
-  readonly LocalGatewayRouteTables: [];
-  readonly NextToken: string;
+export interface DescribeLocalGatewayRouteTablesResult {
+  readonly LocalGatewayRouteTables?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeLocalGatewayVirtualInterfaceGroupsRequest {
-  readonly LocalGatewayVirtualInterfaceGroupIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeLocalGatewayVirtualInterfaceGroupsRequest {
+  readonly LocalGatewayVirtualInterfaceGroupIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeLocalGatewayVirtualInterfaceGroupsResult {
-  readonly LocalGatewayVirtualInterfaceGroups: [];
-  readonly NextToken: string;
+export interface DescribeLocalGatewayVirtualInterfaceGroupsResult {
+  readonly LocalGatewayVirtualInterfaceGroups?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeLocalGatewayVirtualInterfacesRequest {
-  readonly LocalGatewayVirtualInterfaceIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeLocalGatewayVirtualInterfacesRequest {
+  readonly LocalGatewayVirtualInterfaceIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeLocalGatewayVirtualInterfacesResult {
-  readonly LocalGatewayVirtualInterfaces: [];
-  readonly NextToken: string;
+export interface DescribeLocalGatewayVirtualInterfacesResult {
+  readonly LocalGatewayVirtualInterfaces?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeLocalGatewaysRequest {
-  readonly LocalGatewayIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeLocalGatewaysRequest {
+  readonly LocalGatewayIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeLocalGatewaysResult {
-  readonly LocalGateways: [];
-  readonly NextToken: string;
+export interface DescribeLocalGatewaysResult {
+  readonly LocalGateways?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeManagedPrefixListsRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly PrefixListIds: [];
+export interface DescribeManagedPrefixListsRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly PrefixListIds?: [];
 }
 
-interface DescribeManagedPrefixListsResult {
-  readonly NextToken: string;
-  readonly PrefixLists: [];
+export interface DescribeManagedPrefixListsResult {
+  readonly NextToken?: string;
+  readonly PrefixLists?: [];
 }
 
-interface DescribeMovingAddressesRequest {
-  readonly Filters: [];
-  readonly DryRun: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly PublicIps: [];
+export interface DescribeMovingAddressesRequest {
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly PublicIps?: [];
 }
 
-interface DescribeMovingAddressesResult {
-  readonly MovingAddressStatuses: [];
-  readonly NextToken: string;
+export interface DescribeMovingAddressesResult {
+  readonly MovingAddressStatuses?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeNatGatewaysRequest {
-  readonly DryRun: boolean;
-  readonly Filter: [];
-  readonly MaxResults: number;
-  readonly NatGatewayIds: [];
-  readonly NextToken: string;
+export interface DescribeNatGatewaysRequest {
+  readonly DryRun?: boolean;
+  readonly Filter?: [];
+  readonly MaxResults?: number;
+  readonly NatGatewayIds?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeNatGatewaysResult {
-  readonly NatGateways: [];
-  readonly NextToken: string;
+export interface DescribeNatGatewaysResult {
+  readonly NatGateways?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeNetworkAclsRequest {
-  readonly Filters: [];
-  readonly DryRun: boolean;
-  readonly NetworkAclIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeNetworkAclsRequest {
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+  readonly NetworkAclIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeNetworkAclsResult {
-  readonly NetworkAcls: [];
-  readonly NextToken: string;
+export interface DescribeNetworkAclsResult {
+  readonly NetworkAcls?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeNetworkInsightsAccessScopeAnalysesRequest {
-  readonly NetworkInsightsAccessScopeAnalysisIds: [];
-  readonly NetworkInsightsAccessScopeId: string;
-  readonly AnalysisStartTimeBegin: Date;
-  readonly AnalysisStartTimeEnd: Date;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly DryRun: boolean;
-  readonly NextToken: string;
+export interface DescribeNetworkInsightsAccessScopeAnalysesRequest {
+  readonly NetworkInsightsAccessScopeAnalysisIds?: [];
+  readonly NetworkInsightsAccessScopeId?: string;
+  readonly AnalysisStartTimeBegin?: Date;
+  readonly AnalysisStartTimeEnd?: Date;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly DryRun?: boolean;
+  readonly NextToken?: string;
 }
 
-interface DescribeNetworkInsightsAccessScopeAnalysesResult {
-  readonly NetworkInsightsAccessScopeAnalyses: [];
-  readonly NextToken: string;
+export interface DescribeNetworkInsightsAccessScopeAnalysesResult {
+  readonly NetworkInsightsAccessScopeAnalyses?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeNetworkInsightsAccessScopesRequest {
-  readonly NetworkInsightsAccessScopeIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly DryRun: boolean;
-  readonly NextToken: string;
+export interface DescribeNetworkInsightsAccessScopesRequest {
+  readonly NetworkInsightsAccessScopeIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly DryRun?: boolean;
+  readonly NextToken?: string;
 }
 
-interface DescribeNetworkInsightsAccessScopesResult {
-  readonly NetworkInsightsAccessScopes: [];
-  readonly NextToken: string;
+export interface DescribeNetworkInsightsAccessScopesResult {
+  readonly NetworkInsightsAccessScopes?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeNetworkInsightsAnalysesRequest {
-  readonly NetworkInsightsAnalysisIds: [];
-  readonly NetworkInsightsPathId: string;
-  readonly AnalysisStartTime: Date;
-  readonly AnalysisEndTime: Date;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly DryRun: boolean;
-  readonly NextToken: string;
+export interface DescribeNetworkInsightsAnalysesRequest {
+  readonly NetworkInsightsAnalysisIds?: [];
+  readonly NetworkInsightsPathId?: string;
+  readonly AnalysisStartTime?: Date;
+  readonly AnalysisEndTime?: Date;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly DryRun?: boolean;
+  readonly NextToken?: string;
 }
 
-interface DescribeNetworkInsightsAnalysesResult {
-  readonly NetworkInsightsAnalyses: [];
-  readonly NextToken: string;
+export interface DescribeNetworkInsightsAnalysesResult {
+  readonly NetworkInsightsAnalyses?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeNetworkInsightsPathsRequest {
-  readonly NetworkInsightsPathIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly DryRun: boolean;
-  readonly NextToken: string;
+export interface DescribeNetworkInsightsPathsRequest {
+  readonly NetworkInsightsPathIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly DryRun?: boolean;
+  readonly NextToken?: string;
 }
 
-interface DescribeNetworkInsightsPathsResult {
-  readonly NetworkInsightsPaths: [];
-  readonly NextToken: string;
+export interface DescribeNetworkInsightsPathsResult {
+  readonly NetworkInsightsPaths?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeNetworkInterfaceAttributeRequest {
-  readonly Attribute: string;
-  readonly DryRun: boolean;
+export interface DescribeNetworkInterfaceAttributeRequest {
+  readonly Attribute?: string;
+  readonly DryRun?: boolean;
   readonly NetworkInterfaceId: string;
 }
 
-interface DescribeNetworkInterfaceAttributeResult {
-  readonly Attachment: NetworkInterfaceAttachment;
-  readonly Description: AttributeValue;
-  readonly Groups: [];
-  readonly NetworkInterfaceId: string;
-  readonly SourceDestCheck: AttributeBooleanValue;
+export interface DescribeNetworkInterfaceAttributeResult {
+  readonly Attachment?: NetworkInterfaceAttachment;
+  readonly Description?: AttributeValue;
+  readonly Groups?: [];
+  readonly NetworkInterfaceId?: string;
+  readonly SourceDestCheck?: AttributeBooleanValue;
 }
 
-interface DescribeNetworkInterfacePermissionsRequest {
-  readonly NetworkInterfacePermissionIds: [];
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeNetworkInterfacePermissionsRequest {
+  readonly NetworkInterfacePermissionIds?: [];
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeNetworkInterfacePermissionsResult {
-  readonly NetworkInterfacePermissions: [];
-  readonly NextToken: string;
+export interface DescribeNetworkInterfacePermissionsResult {
+  readonly NetworkInterfacePermissions?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeNetworkInterfacesRequest {
-  readonly Filters: [];
-  readonly DryRun: boolean;
-  readonly NetworkInterfaceIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeNetworkInterfacesRequest {
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+  readonly NetworkInterfaceIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeNetworkInterfacesResult {
-  readonly NetworkInterfaces: [];
-  readonly NextToken: string;
+export interface DescribeNetworkInterfacesResult {
+  readonly NetworkInterfaces?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribePlacementGroupsRequest {
-  readonly Filters: [];
-  readonly DryRun: boolean;
-  readonly GroupNames: [];
-  readonly GroupIds: [];
+export interface DescribePlacementGroupsRequest {
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+  readonly GroupNames?: [];
+  readonly GroupIds?: [];
 }
 
-interface DescribePlacementGroupsResult {
-  readonly PlacementGroups: [];
+export interface DescribePlacementGroupsResult {
+  readonly PlacementGroups?: [];
 }
 
-interface DescribePrefixListsRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly PrefixListIds: [];
+export interface DescribePrefixListsRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly PrefixListIds?: [];
 }
 
-interface DescribePrefixListsResult {
-  readonly NextToken: string;
-  readonly PrefixLists: [];
+export interface DescribePrefixListsResult {
+  readonly NextToken?: string;
+  readonly PrefixLists?: [];
 }
 
-interface DescribePrincipalIdFormatRequest {
-  readonly DryRun: boolean;
-  readonly Resources: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribePrincipalIdFormatRequest {
+  readonly DryRun?: boolean;
+  readonly Resources?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribePrincipalIdFormatResult {
-  readonly Principals: [];
-  readonly NextToken: string;
+export interface DescribePrincipalIdFormatResult {
+  readonly Principals?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribePublicIpv4PoolsRequest {
-  readonly PoolIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Filters: [];
+export interface DescribePublicIpv4PoolsRequest {
+  readonly PoolIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Filters?: [];
 }
 
-interface DescribePublicIpv4PoolsResult {
-  readonly PublicIpv4Pools: [];
-  readonly NextToken: string;
+export interface DescribePublicIpv4PoolsResult {
+  readonly PublicIpv4Pools?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeRegionsRequest {
-  readonly Filters: [];
-  readonly RegionNames: [];
-  readonly DryRun: boolean;
-  readonly AllRegions: boolean;
+export interface DescribeRegionsRequest {
+  readonly Filters?: [];
+  readonly RegionNames?: [];
+  readonly DryRun?: boolean;
+  readonly AllRegions?: boolean;
 }
 
-interface DescribeRegionsResult {
-  readonly Regions: [];
+export interface DescribeRegionsResult {
+  readonly Regions?: [];
 }
 
-interface DescribeReplaceRootVolumeTasksRequest {
-  readonly ReplaceRootVolumeTaskIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeReplaceRootVolumeTasksRequest {
+  readonly ReplaceRootVolumeTaskIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeReplaceRootVolumeTasksResult {
-  readonly ReplaceRootVolumeTasks: [];
-  readonly NextToken: string;
+export interface DescribeReplaceRootVolumeTasksResult {
+  readonly ReplaceRootVolumeTasks?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeReservedInstancesListingsRequest {
-  readonly Filters: [];
-  readonly ReservedInstancesId: string;
-  readonly ReservedInstancesListingId: string;
+export interface DescribeReservedInstancesListingsRequest {
+  readonly Filters?: [];
+  readonly ReservedInstancesId?: string;
+  readonly ReservedInstancesListingId?: string;
 }
 
-interface DescribeReservedInstancesListingsResult {
-  readonly ReservedInstancesListings: [];
+export interface DescribeReservedInstancesListingsResult {
+  readonly ReservedInstancesListings?: [];
 }
 
-interface DescribeReservedInstancesModificationsRequest {
-  readonly Filters: [];
-  readonly ReservedInstancesModificationIds: [];
-  readonly NextToken: string;
+export interface DescribeReservedInstancesModificationsRequest {
+  readonly Filters?: [];
+  readonly ReservedInstancesModificationIds?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeReservedInstancesModificationsResult {
-  readonly NextToken: string;
-  readonly ReservedInstancesModifications: [];
+export interface DescribeReservedInstancesModificationsResult {
+  readonly NextToken?: string;
+  readonly ReservedInstancesModifications?: [];
 }
 
-interface DescribeReservedInstancesOfferingsRequest {
-  readonly AvailabilityZone: string;
-  readonly Filters: [];
-  readonly IncludeMarketplace: boolean;
-  readonly InstanceType: string;
-  readonly MaxDuration: number;
-  readonly MaxInstanceCount: number;
-  readonly MinDuration: number;
-  readonly OfferingClass: string;
-  readonly ProductDescription: string;
-  readonly ReservedInstancesOfferingIds: [];
-  readonly DryRun: boolean;
-  readonly InstanceTenancy: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly OfferingType: string;
+export interface DescribeReservedInstancesOfferingsRequest {
+  readonly AvailabilityZone?: string;
+  readonly Filters?: [];
+  readonly IncludeMarketplace?: boolean;
+  readonly InstanceType?: string;
+  readonly MaxDuration?: number;
+  readonly MaxInstanceCount?: number;
+  readonly MinDuration?: number;
+  readonly OfferingClass?: string;
+  readonly ProductDescription?: string;
+  readonly ReservedInstancesOfferingIds?: [];
+  readonly DryRun?: boolean;
+  readonly InstanceTenancy?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly OfferingType?: string;
 }
 
-interface DescribeReservedInstancesOfferingsResult {
-  readonly ReservedInstancesOfferings: [];
-  readonly NextToken: string;
+export interface DescribeReservedInstancesOfferingsResult {
+  readonly ReservedInstancesOfferings?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeReservedInstancesRequest {
-  readonly Filters: [];
-  readonly OfferingClass: string;
-  readonly ReservedInstancesIds: [];
-  readonly DryRun: boolean;
-  readonly OfferingType: string;
+export interface DescribeReservedInstancesRequest {
+  readonly Filters?: [];
+  readonly OfferingClass?: string;
+  readonly ReservedInstancesIds?: [];
+  readonly DryRun?: boolean;
+  readonly OfferingType?: string;
 }
 
-interface DescribeReservedInstancesResult {
-  readonly ReservedInstances: [];
+export interface DescribeReservedInstancesResult {
+  readonly ReservedInstances?: [];
 }
 
-interface DescribeRouteTablesRequest {
-  readonly Filters: [];
-  readonly DryRun: boolean;
-  readonly RouteTableIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeRouteTablesRequest {
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+  readonly RouteTableIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeRouteTablesResult {
-  readonly RouteTables: [];
-  readonly NextToken: string;
+export interface DescribeRouteTablesResult {
+  readonly RouteTables?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeScheduledInstanceAvailabilityRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
+export interface DescribeScheduledInstanceAvailabilityRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
   readonly FirstSlotStartTimeRange: SlotDateTimeRangeRequest;
-  readonly MaxResults: number;
-  readonly MaxSlotDurationInHours: number;
-  readonly MinSlotDurationInHours: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly MaxSlotDurationInHours?: number;
+  readonly MinSlotDurationInHours?: number;
+  readonly NextToken?: string;
   readonly Recurrence: ScheduledInstanceRecurrenceRequest;
 }
 
-interface DescribeScheduledInstanceAvailabilityResult {
-  readonly NextToken: string;
-  readonly ScheduledInstanceAvailabilitySet: [];
+export interface DescribeScheduledInstanceAvailabilityResult {
+  readonly NextToken?: string;
+  readonly ScheduledInstanceAvailabilitySet?: [];
 }
 
-interface DescribeScheduledInstancesRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ScheduledInstanceIds: [];
-  readonly SlotStartTimeRange: SlotStartTimeRangeRequest;
+export interface DescribeScheduledInstancesRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ScheduledInstanceIds?: [];
+  readonly SlotStartTimeRange?: SlotStartTimeRangeRequest;
 }
 
-interface DescribeScheduledInstancesResult {
-  readonly NextToken: string;
-  readonly ScheduledInstanceSet: [];
+export interface DescribeScheduledInstancesResult {
+  readonly NextToken?: string;
+  readonly ScheduledInstanceSet?: [];
 }
 
-interface DescribeSecurityGroupReferencesRequest {
-  readonly DryRun: boolean;
+export interface DescribeSecurityGroupReferencesRequest {
+  readonly DryRun?: boolean;
   readonly GroupId: [];
 }
 
-interface DescribeSecurityGroupReferencesResult {
-  readonly SecurityGroupReferenceSet: [];
+export interface DescribeSecurityGroupReferencesResult {
+  readonly SecurityGroupReferenceSet?: [];
 }
 
-interface DescribeSecurityGroupRulesRequest {
-  readonly Filters: [];
-  readonly SecurityGroupRuleIds: [];
-  readonly DryRun: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeSecurityGroupRulesRequest {
+  readonly Filters?: [];
+  readonly SecurityGroupRuleIds?: [];
+  readonly DryRun?: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeSecurityGroupRulesResult {
-  readonly SecurityGroupRules: [];
-  readonly NextToken: string;
+export interface DescribeSecurityGroupRulesResult {
+  readonly SecurityGroupRules?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeSecurityGroupsRequest {
-  readonly Filters: [];
-  readonly GroupIds: [];
-  readonly GroupNames: [];
-  readonly DryRun: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeSecurityGroupsRequest {
+  readonly Filters?: [];
+  readonly GroupIds?: [];
+  readonly GroupNames?: [];
+  readonly DryRun?: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeSecurityGroupsResult {
-  readonly SecurityGroups: [];
-  readonly NextToken: string;
+export interface DescribeSecurityGroupsResult {
+  readonly SecurityGroups?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeSnapshotAttributeRequest {
+export interface DescribeSnapshotAttributeRequest {
   readonly Attribute: string;
   readonly SnapshotId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeSnapshotAttributeResult {
-  readonly CreateVolumePermissions: [];
-  readonly ProductCodes: [];
-  readonly SnapshotId: string;
+export interface DescribeSnapshotAttributeResult {
+  readonly CreateVolumePermissions?: [];
+  readonly ProductCodes?: [];
+  readonly SnapshotId?: string;
 }
 
-interface DescribeSnapshotTierStatusRequest {
-  readonly Filters: [];
-  readonly DryRun: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeSnapshotTierStatusRequest {
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeSnapshotTierStatusResult {
-  readonly SnapshotTierStatuses: [];
-  readonly NextToken: string;
+export interface DescribeSnapshotTierStatusResult {
+  readonly SnapshotTierStatuses?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeSnapshotsRequest {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly OwnerIds: [];
-  readonly RestorableByUserIds: [];
-  readonly SnapshotIds: [];
-  readonly DryRun: boolean;
+export interface DescribeSnapshotsRequest {
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly OwnerIds?: [];
+  readonly RestorableByUserIds?: [];
+  readonly SnapshotIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DescribeSnapshotsResult {
-  readonly Snapshots: [];
-  readonly NextToken: string;
+export interface DescribeSnapshotsResult {
+  readonly Snapshots?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeSpotDatafeedSubscriptionRequest {
-  readonly DryRun: boolean;
+export interface DescribeSpotDatafeedSubscriptionRequest {
+  readonly DryRun?: boolean;
 }
 
-interface DescribeSpotDatafeedSubscriptionResult {
-  readonly SpotDatafeedSubscription: SpotDatafeedSubscription;
+export interface DescribeSpotDatafeedSubscriptionResult {
+  readonly SpotDatafeedSubscription?: SpotDatafeedSubscription;
 }
 
-interface DescribeSpotFleetInstancesRequest {
-  readonly DryRun: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeSpotFleetInstancesRequest {
+  readonly DryRun?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly SpotFleetRequestId: string;
 }
 
-interface DescribeSpotFleetInstancesResponse {
-  readonly ActiveInstances: [];
-  readonly NextToken: string;
-  readonly SpotFleetRequestId: string;
+export interface DescribeSpotFleetInstancesResponse {
+  readonly ActiveInstances?: [];
+  readonly NextToken?: string;
+  readonly SpotFleetRequestId?: string;
 }
 
-interface DescribeSpotFleetRequestHistoryRequest {
-  readonly DryRun: boolean;
-  readonly EventType: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly SpotFleetRequestId: string;
-  readonly StartTime: Date;
-}
-
-interface DescribeSpotFleetRequestHistoryResponse {
-  readonly HistoryRecords: [];
-  readonly LastEvaluatedTime: Date;
-  readonly NextToken: string;
+export interface DescribeSpotFleetRequestHistoryRequest {
+  readonly DryRun?: boolean;
+  readonly EventType?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly SpotFleetRequestId: string;
   readonly StartTime: Date;
 }
 
-interface DescribeSpotFleetRequestsRequest {
-  readonly DryRun: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly SpotFleetRequestIds: [];
+export interface DescribeSpotFleetRequestHistoryResponse {
+  readonly HistoryRecords?: [];
+  readonly LastEvaluatedTime?: Date;
+  readonly NextToken?: string;
+  readonly SpotFleetRequestId?: string;
+  readonly StartTime?: Date;
 }
 
-interface DescribeSpotFleetRequestsResponse {
-  readonly NextToken: string;
-  readonly SpotFleetRequestConfigs: [];
+export interface DescribeSpotFleetRequestsRequest {
+  readonly DryRun?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly SpotFleetRequestIds?: [];
 }
 
-interface DescribeSpotInstanceRequestsRequest {
-  readonly Filters: [];
-  readonly DryRun: boolean;
-  readonly SpotInstanceRequestIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeSpotFleetRequestsResponse {
+  readonly NextToken?: string;
+  readonly SpotFleetRequestConfigs?: [];
 }
 
-interface DescribeSpotInstanceRequestsResult {
-  readonly SpotInstanceRequests: [];
-  readonly NextToken: string;
+export interface DescribeSpotInstanceRequestsRequest {
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+  readonly SpotInstanceRequestIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeSpotPriceHistoryRequest {
-  readonly Filters: [];
-  readonly AvailabilityZone: string;
-  readonly DryRun: boolean;
-  readonly EndTime: Date;
-  readonly InstanceTypes: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ProductDescriptions: [];
-  readonly StartTime: Date;
+export interface DescribeSpotInstanceRequestsResult {
+  readonly SpotInstanceRequests?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeSpotPriceHistoryResult {
-  readonly NextToken: string;
-  readonly SpotPriceHistory: [];
+export interface DescribeSpotPriceHistoryRequest {
+  readonly Filters?: [];
+  readonly AvailabilityZone?: string;
+  readonly DryRun?: boolean;
+  readonly EndTime?: Date;
+  readonly InstanceTypes?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ProductDescriptions?: [];
+  readonly StartTime?: Date;
 }
 
-interface DescribeStaleSecurityGroupsRequest {
-  readonly DryRun: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeSpotPriceHistoryResult {
+  readonly NextToken?: string;
+  readonly SpotPriceHistory?: [];
+}
+
+export interface DescribeStaleSecurityGroupsRequest {
+  readonly DryRun?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly VpcId: string;
 }
 
-interface DescribeStaleSecurityGroupsResult {
-  readonly NextToken: string;
-  readonly StaleSecurityGroupSet: [];
+export interface DescribeStaleSecurityGroupsResult {
+  readonly NextToken?: string;
+  readonly StaleSecurityGroupSet?: [];
 }
 
-interface DescribeStoreImageTasksRequest {
-  readonly ImageIds: [];
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeStoreImageTasksRequest {
+  readonly ImageIds?: [];
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeStoreImageTasksResult {
-  readonly StoreImageTaskResults: [];
-  readonly NextToken: string;
+export interface DescribeStoreImageTasksResult {
+  readonly StoreImageTaskResults?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeSubnetsRequest {
-  readonly Filters: [];
-  readonly SubnetIds: [];
-  readonly DryRun: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeSubnetsRequest {
+  readonly Filters?: [];
+  readonly SubnetIds?: [];
+  readonly DryRun?: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeSubnetsResult {
-  readonly Subnets: [];
-  readonly NextToken: string;
+export interface DescribeSubnetsResult {
+  readonly Subnets?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTagsRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeTagsRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeTagsResult {
-  readonly NextToken: string;
-  readonly Tags: [];
+export interface DescribeTagsResult {
+  readonly NextToken?: string;
+  readonly Tags?: [];
 }
 
-interface DescribeTrafficMirrorFiltersRequest {
-  readonly TrafficMirrorFilterIds: [];
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeTrafficMirrorFiltersRequest {
+  readonly TrafficMirrorFilterIds?: [];
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeTrafficMirrorFiltersResult {
-  readonly TrafficMirrorFilters: [];
-  readonly NextToken: string;
+export interface DescribeTrafficMirrorFiltersResult {
+  readonly TrafficMirrorFilters?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTrafficMirrorSessionsRequest {
-  readonly TrafficMirrorSessionIds: [];
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeTrafficMirrorSessionsRequest {
+  readonly TrafficMirrorSessionIds?: [];
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeTrafficMirrorSessionsResult {
-  readonly TrafficMirrorSessions: [];
-  readonly NextToken: string;
+export interface DescribeTrafficMirrorSessionsResult {
+  readonly TrafficMirrorSessions?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTrafficMirrorTargetsRequest {
-  readonly TrafficMirrorTargetIds: [];
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeTrafficMirrorTargetsRequest {
+  readonly TrafficMirrorTargetIds?: [];
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeTrafficMirrorTargetsResult {
-  readonly TrafficMirrorTargets: [];
-  readonly NextToken: string;
+export interface DescribeTrafficMirrorTargetsResult {
+  readonly TrafficMirrorTargets?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTransitGatewayAttachmentsRequest {
-  readonly TransitGatewayAttachmentIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeTransitGatewayAttachmentsRequest {
+  readonly TransitGatewayAttachmentIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeTransitGatewayAttachmentsResult {
-  readonly TransitGatewayAttachments: [];
-  readonly NextToken: string;
+export interface DescribeTransitGatewayAttachmentsResult {
+  readonly TransitGatewayAttachments?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTransitGatewayConnectPeersRequest {
-  readonly TransitGatewayConnectPeerIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeTransitGatewayConnectPeersRequest {
+  readonly TransitGatewayConnectPeerIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeTransitGatewayConnectPeersResult {
-  readonly TransitGatewayConnectPeers: [];
-  readonly NextToken: string;
+export interface DescribeTransitGatewayConnectPeersResult {
+  readonly TransitGatewayConnectPeers?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTransitGatewayConnectsRequest {
-  readonly TransitGatewayAttachmentIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeTransitGatewayConnectsRequest {
+  readonly TransitGatewayAttachmentIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeTransitGatewayConnectsResult {
-  readonly TransitGatewayConnects: [];
-  readonly NextToken: string;
+export interface DescribeTransitGatewayConnectsResult {
+  readonly TransitGatewayConnects?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTransitGatewayMulticastDomainsRequest {
-  readonly TransitGatewayMulticastDomainIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeTransitGatewayMulticastDomainsRequest {
+  readonly TransitGatewayMulticastDomainIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeTransitGatewayMulticastDomainsResult {
-  readonly TransitGatewayMulticastDomains: [];
-  readonly NextToken: string;
+export interface DescribeTransitGatewayMulticastDomainsResult {
+  readonly TransitGatewayMulticastDomains?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTransitGatewayPeeringAttachmentsRequest {
-  readonly TransitGatewayAttachmentIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeTransitGatewayPeeringAttachmentsRequest {
+  readonly TransitGatewayAttachmentIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeTransitGatewayPeeringAttachmentsResult {
-  readonly TransitGatewayPeeringAttachments: [];
-  readonly NextToken: string;
+export interface DescribeTransitGatewayPeeringAttachmentsResult {
+  readonly TransitGatewayPeeringAttachments?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTransitGatewayRouteTablesRequest {
-  readonly TransitGatewayRouteTableIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeTransitGatewayRouteTablesRequest {
+  readonly TransitGatewayRouteTableIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeTransitGatewayRouteTablesResult {
-  readonly TransitGatewayRouteTables: [];
-  readonly NextToken: string;
+export interface DescribeTransitGatewayRouteTablesResult {
+  readonly TransitGatewayRouteTables?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTransitGatewayVpcAttachmentsRequest {
-  readonly TransitGatewayAttachmentIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeTransitGatewayVpcAttachmentsRequest {
+  readonly TransitGatewayAttachmentIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeTransitGatewayVpcAttachmentsResult {
-  readonly TransitGatewayVpcAttachments: [];
-  readonly NextToken: string;
+export interface DescribeTransitGatewayVpcAttachmentsResult {
+  readonly TransitGatewayVpcAttachments?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTransitGatewaysRequest {
-  readonly TransitGatewayIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface DescribeTransitGatewaysRequest {
+  readonly TransitGatewayIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeTransitGatewaysResult {
-  readonly TransitGateways: [];
-  readonly NextToken: string;
+export interface DescribeTransitGatewaysResult {
+  readonly TransitGateways?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTrunkInterfaceAssociationsRequest {
-  readonly AssociationIds: [];
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeTrunkInterfaceAssociationsRequest {
+  readonly AssociationIds?: [];
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeTrunkInterfaceAssociationsResult {
-  readonly InterfaceAssociations: [];
-  readonly NextToken: string;
+export interface DescribeTrunkInterfaceAssociationsResult {
+  readonly InterfaceAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeVolumeAttributeRequest {
+export interface DescribeVolumeAttributeRequest {
   readonly Attribute: string;
   readonly VolumeId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeVolumeAttributeResult {
-  readonly AutoEnableIO: AttributeBooleanValue;
-  readonly ProductCodes: [];
-  readonly VolumeId: string;
+export interface DescribeVolumeAttributeResult {
+  readonly AutoEnableIO?: AttributeBooleanValue;
+  readonly ProductCodes?: [];
+  readonly VolumeId?: string;
 }
 
-interface DescribeVolumeStatusRequest {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly VolumeIds: [];
-  readonly DryRun: boolean;
+export interface DescribeVolumeStatusRequest {
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly VolumeIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DescribeVolumeStatusResult {
-  readonly NextToken: string;
-  readonly VolumeStatuses: [];
+export interface DescribeVolumeStatusResult {
+  readonly NextToken?: string;
+  readonly VolumeStatuses?: [];
 }
 
-interface DescribeVolumesModificationsRequest {
-  readonly DryRun: boolean;
-  readonly VolumeIds: [];
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeVolumesModificationsRequest {
+  readonly DryRun?: boolean;
+  readonly VolumeIds?: [];
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeVolumesModificationsResult {
-  readonly VolumesModifications: [];
-  readonly NextToken: string;
+export interface DescribeVolumesModificationsResult {
+  readonly VolumesModifications?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeVolumesRequest {
-  readonly Filters: [];
-  readonly VolumeIds: [];
-  readonly DryRun: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeVolumesRequest {
+  readonly Filters?: [];
+  readonly VolumeIds?: [];
+  readonly DryRun?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeVolumesResult {
-  readonly Volumes: [];
-  readonly NextToken: string;
+export interface DescribeVolumesResult {
+  readonly Volumes?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcAttributeRequest {
+export interface DescribeVpcAttributeRequest {
   readonly Attribute: string;
   readonly VpcId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DescribeVpcAttributeResult {
-  readonly VpcId: string;
-  readonly EnableDnsHostnames: AttributeBooleanValue;
-  readonly EnableDnsSupport: AttributeBooleanValue;
+export interface DescribeVpcAttributeResult {
+  readonly VpcId?: string;
+  readonly EnableDnsHostnames?: AttributeBooleanValue;
+  readonly EnableDnsSupport?: AttributeBooleanValue;
 }
 
-interface DescribeVpcClassicLinkDnsSupportRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly VpcIds: [];
+export interface DescribeVpcClassicLinkDnsSupportRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly VpcIds?: [];
 }
 
-interface DescribeVpcClassicLinkDnsSupportResult {
-  readonly NextToken: string;
-  readonly Vpcs: [];
+export interface DescribeVpcClassicLinkDnsSupportResult {
+  readonly NextToken?: string;
+  readonly Vpcs?: [];
 }
 
-interface DescribeVpcClassicLinkRequest {
-  readonly Filters: [];
-  readonly DryRun: boolean;
-  readonly VpcIds: [];
+export interface DescribeVpcClassicLinkRequest {
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+  readonly VpcIds?: [];
 }
 
-interface DescribeVpcClassicLinkResult {
-  readonly Vpcs: [];
+export interface DescribeVpcClassicLinkResult {
+  readonly Vpcs?: [];
 }
 
-interface DescribeVpcEndpointConnectionNotificationsRequest {
-  readonly DryRun: boolean;
-  readonly ConnectionNotificationId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeVpcEndpointConnectionNotificationsRequest {
+  readonly DryRun?: boolean;
+  readonly ConnectionNotificationId?: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcEndpointConnectionNotificationsResult {
-  readonly ConnectionNotificationSet: [];
-  readonly NextToken: string;
+export interface DescribeVpcEndpointConnectionNotificationsResult {
+  readonly ConnectionNotificationSet?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcEndpointConnectionsRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeVpcEndpointConnectionsRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcEndpointConnectionsResult {
-  readonly VpcEndpointConnections: [];
-  readonly NextToken: string;
+export interface DescribeVpcEndpointConnectionsResult {
+  readonly VpcEndpointConnections?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcEndpointServiceConfigurationsRequest {
-  readonly DryRun: boolean;
-  readonly ServiceIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeVpcEndpointServiceConfigurationsRequest {
+  readonly DryRun?: boolean;
+  readonly ServiceIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcEndpointServiceConfigurationsResult {
-  readonly ServiceConfigurations: [];
-  readonly NextToken: string;
+export interface DescribeVpcEndpointServiceConfigurationsResult {
+  readonly ServiceConfigurations?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcEndpointServicePermissionsRequest {
-  readonly DryRun: boolean;
+export interface DescribeVpcEndpointServicePermissionsRequest {
+  readonly DryRun?: boolean;
   readonly ServiceId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcEndpointServicePermissionsResult {
-  readonly AllowedPrincipals: [];
-  readonly NextToken: string;
+export interface DescribeVpcEndpointServicePermissionsResult {
+  readonly AllowedPrincipals?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcEndpointServicesRequest {
-  readonly DryRun: boolean;
-  readonly ServiceNames: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeVpcEndpointServicesRequest {
+  readonly DryRun?: boolean;
+  readonly ServiceNames?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcEndpointServicesResult {
-  readonly ServiceNames: [];
-  readonly ServiceDetails: [];
-  readonly NextToken: string;
+export interface DescribeVpcEndpointServicesResult {
+  readonly ServiceNames?: [];
+  readonly ServiceDetails?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcEndpointsRequest {
-  readonly DryRun: boolean;
-  readonly VpcEndpointIds: [];
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeVpcEndpointsRequest {
+  readonly DryRun?: boolean;
+  readonly VpcEndpointIds?: [];
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcEndpointsResult {
-  readonly VpcEndpoints: [];
-  readonly NextToken: string;
+export interface DescribeVpcEndpointsResult {
+  readonly VpcEndpoints?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcPeeringConnectionsRequest {
-  readonly Filters: [];
-  readonly DryRun: boolean;
-  readonly VpcPeeringConnectionIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeVpcPeeringConnectionsRequest {
+  readonly Filters?: [];
+  readonly DryRun?: boolean;
+  readonly VpcPeeringConnectionIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeVpcPeeringConnectionsResult {
-  readonly VpcPeeringConnections: [];
-  readonly NextToken: string;
+export interface DescribeVpcPeeringConnectionsResult {
+  readonly VpcPeeringConnections?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeVpcsRequest {
-  readonly Filters: [];
-  readonly VpcIds: [];
-  readonly DryRun: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeVpcsRequest {
+  readonly Filters?: [];
+  readonly VpcIds?: [];
+  readonly DryRun?: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeVpcsResult {
-  readonly Vpcs: [];
-  readonly NextToken: string;
+export interface DescribeVpcsResult {
+  readonly Vpcs?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeVpnConnectionsRequest {
-  readonly Filters: [];
-  readonly VpnConnectionIds: [];
-  readonly DryRun: boolean;
+export interface DescribeVpnConnectionsRequest {
+  readonly Filters?: [];
+  readonly VpnConnectionIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DescribeVpnConnectionsResult {
-  readonly VpnConnections: [];
+export interface DescribeVpnConnectionsResult {
+  readonly VpnConnections?: [];
 }
 
-interface DescribeVpnGatewaysRequest {
-  readonly Filters: [];
-  readonly VpnGatewayIds: [];
-  readonly DryRun: boolean;
+export interface DescribeVpnGatewaysRequest {
+  readonly Filters?: [];
+  readonly VpnGatewayIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DescribeVpnGatewaysResult {
-  readonly VpnGateways: [];
+export interface DescribeVpnGatewaysResult {
+  readonly VpnGateways?: [];
 }
 
-interface DestinationOptionsRequest {
-  readonly FileFormat: string;
-  readonly HiveCompatiblePartitions: boolean;
-  readonly PerHourPartition: boolean;
+export interface DestinationOptionsRequest {
+  readonly FileFormat?: string;
+  readonly HiveCompatiblePartitions?: boolean;
+  readonly PerHourPartition?: boolean;
 }
 
-interface DestinationOptionsResponse {
-  readonly FileFormat: string;
-  readonly HiveCompatiblePartitions: boolean;
-  readonly PerHourPartition: boolean;
+export interface DestinationOptionsResponse {
+  readonly FileFormat?: string;
+  readonly HiveCompatiblePartitions?: boolean;
+  readonly PerHourPartition?: boolean;
 }
 
-interface DetachClassicLinkVpcRequest {
-  readonly DryRun: boolean;
+export interface DetachClassicLinkVpcRequest {
+  readonly DryRun?: boolean;
   readonly InstanceId: string;
   readonly VpcId: string;
 }
 
-interface DetachClassicLinkVpcResult {
-  readonly Return: boolean;
+export interface DetachClassicLinkVpcResult {
+  readonly Return?: boolean;
 }
 
-interface DetachInternetGatewayRequest {
-  readonly DryRun: boolean;
+export interface DetachInternetGatewayRequest {
+  readonly DryRun?: boolean;
   readonly InternetGatewayId: string;
   readonly VpcId: string;
 }
 
-interface DetachNetworkInterfaceRequest {
+export interface DetachNetworkInterfaceRequest {
   readonly AttachmentId: string;
-  readonly DryRun: boolean;
-  readonly Force: boolean;
+  readonly DryRun?: boolean;
+  readonly Force?: boolean;
 }
 
-interface DetachVolumeRequest {
-  readonly Device: string;
-  readonly Force: boolean;
-  readonly InstanceId: string;
+export interface DetachVolumeRequest {
+  readonly Device?: string;
+  readonly Force?: boolean;
+  readonly InstanceId?: string;
   readonly VolumeId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DetachVpnGatewayRequest {
+export interface DetachVpnGatewayRequest {
   readonly VpcId: string;
   readonly VpnGatewayId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DhcpConfiguration {
-  readonly Key: string;
-  readonly Values: [];
+export interface DhcpConfiguration {
+  readonly Key?: string;
+  readonly Values?: [];
 }
 
-interface DhcpOptions {
-  readonly DhcpConfigurations: [];
-  readonly DhcpOptionsId: string;
-  readonly OwnerId: string;
-  readonly Tags: [];
+export interface DhcpOptions {
+  readonly DhcpConfigurations?: [];
+  readonly DhcpOptionsId?: string;
+  readonly OwnerId?: string;
+  readonly Tags?: [];
 }
 
-interface DirectoryServiceAuthentication {
-  readonly DirectoryId: string;
+export interface DirectoryServiceAuthentication {
+  readonly DirectoryId?: string;
 }
 
-interface DirectoryServiceAuthenticationRequest {
-  readonly DirectoryId: string;
+export interface DirectoryServiceAuthenticationRequest {
+  readonly DirectoryId?: string;
 }
 
-interface DisableEbsEncryptionByDefaultRequest {
-  readonly DryRun: boolean;
+export interface DisableEbsEncryptionByDefaultRequest {
+  readonly DryRun?: boolean;
 }
 
-interface DisableEbsEncryptionByDefaultResult {
-  readonly EbsEncryptionByDefault: boolean;
+export interface DisableEbsEncryptionByDefaultResult {
+  readonly EbsEncryptionByDefault?: boolean;
 }
 
-interface DisableFastSnapshotRestoreErrorItem {
-  readonly SnapshotId: string;
-  readonly FastSnapshotRestoreStateErrors: [];
+export interface DisableFastSnapshotRestoreErrorItem {
+  readonly SnapshotId?: string;
+  readonly FastSnapshotRestoreStateErrors?: [];
 }
 
-interface DisableFastSnapshotRestoreStateError {
-  readonly Code: string;
-  readonly Message: string;
+export interface DisableFastSnapshotRestoreStateError {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface DisableFastSnapshotRestoreStateErrorItem {
-  readonly AvailabilityZone: string;
-  readonly Error: DisableFastSnapshotRestoreStateError;
+export interface DisableFastSnapshotRestoreStateErrorItem {
+  readonly AvailabilityZone?: string;
+  readonly Error?: DisableFastSnapshotRestoreStateError;
 }
 
-interface DisableFastSnapshotRestoreSuccessItem {
-  readonly SnapshotId: string;
-  readonly AvailabilityZone: string;
-  readonly State: string;
-  readonly StateTransitionReason: string;
-  readonly OwnerId: string;
-  readonly OwnerAlias: string;
-  readonly EnablingTime: Date;
-  readonly OptimizingTime: Date;
-  readonly EnabledTime: Date;
-  readonly DisablingTime: Date;
-  readonly DisabledTime: Date;
+export interface DisableFastSnapshotRestoreSuccessItem {
+  readonly SnapshotId?: string;
+  readonly AvailabilityZone?: string;
+  readonly State?: string;
+  readonly StateTransitionReason?: string;
+  readonly OwnerId?: string;
+  readonly OwnerAlias?: string;
+  readonly EnablingTime?: Date;
+  readonly OptimizingTime?: Date;
+  readonly EnabledTime?: Date;
+  readonly DisablingTime?: Date;
+  readonly DisabledTime?: Date;
 }
 
-interface DisableFastSnapshotRestoresRequest {
+export interface DisableFastSnapshotRestoresRequest {
   readonly AvailabilityZones: [];
   readonly SourceSnapshotIds: [];
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DisableFastSnapshotRestoresResult {
-  readonly Successful: [];
-  readonly Unsuccessful: [];
+export interface DisableFastSnapshotRestoresResult {
+  readonly Successful?: [];
+  readonly Unsuccessful?: [];
 }
 
-interface DisableImageDeprecationRequest {
+export interface DisableImageDeprecationRequest {
   readonly ImageId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DisableImageDeprecationResult {
-  readonly Return: boolean;
+export interface DisableImageDeprecationResult {
+  readonly Return?: boolean;
 }
 
-interface DisableIpamOrganizationAdminAccountRequest {
-  readonly DryRun: boolean;
+export interface DisableIpamOrganizationAdminAccountRequest {
+  readonly DryRun?: boolean;
   readonly DelegatedAdminAccountId: string;
 }
 
-interface DisableIpamOrganizationAdminAccountResult {
-  readonly Success: boolean;
+export interface DisableIpamOrganizationAdminAccountResult {
+  readonly Success?: boolean;
 }
 
-interface DisableSerialConsoleAccessRequest {
-  readonly DryRun: boolean;
+export interface DisableSerialConsoleAccessRequest {
+  readonly DryRun?: boolean;
 }
 
-interface DisableSerialConsoleAccessResult {
-  readonly SerialConsoleAccessEnabled: boolean;
+export interface DisableSerialConsoleAccessResult {
+  readonly SerialConsoleAccessEnabled?: boolean;
 }
 
-interface DisableTransitGatewayRouteTablePropagationRequest {
+export interface DisableTransitGatewayRouteTablePropagationRequest {
   readonly TransitGatewayRouteTableId: string;
   readonly TransitGatewayAttachmentId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DisableTransitGatewayRouteTablePropagationResult {
-  readonly Propagation: TransitGatewayPropagation;
+export interface DisableTransitGatewayRouteTablePropagationResult {
+  readonly Propagation?: TransitGatewayPropagation;
 }
 
-interface DisableVgwRoutePropagationRequest {
+export interface DisableVgwRoutePropagationRequest {
   readonly GatewayId: string;
   readonly RouteTableId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DisableVpcClassicLinkDnsSupportRequest {
+export interface DisableVpcClassicLinkDnsSupportRequest {
+  readonly VpcId?: string;
+}
+
+export interface DisableVpcClassicLinkDnsSupportResult {
+  readonly Return?: boolean;
+}
+
+export interface DisableVpcClassicLinkRequest {
+  readonly DryRun?: boolean;
   readonly VpcId: string;
 }
 
-interface DisableVpcClassicLinkDnsSupportResult {
-  readonly Return: boolean;
+export interface DisableVpcClassicLinkResult {
+  readonly Return?: boolean;
 }
 
-interface DisableVpcClassicLinkRequest {
-  readonly DryRun: boolean;
-  readonly VpcId: string;
+export interface DisassociateAddressRequest {
+  readonly AssociationId?: string;
+  readonly PublicIp?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DisableVpcClassicLinkResult {
-  readonly Return: boolean;
-}
-
-interface DisassociateAddressRequest {
-  readonly AssociationId: string;
-  readonly PublicIp: string;
-  readonly DryRun: boolean;
-}
-
-interface DisassociateClientVpnTargetNetworkRequest {
+export interface DisassociateClientVpnTargetNetworkRequest {
   readonly ClientVpnEndpointId: string;
   readonly AssociationId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DisassociateClientVpnTargetNetworkResult {
+export interface DisassociateClientVpnTargetNetworkResult {
+  readonly AssociationId?: string;
+  readonly Status?: AssociationStatus;
+}
+
+export interface DisassociateEnclaveCertificateIamRoleRequest {
+  readonly CertificateArn?: string;
+  readonly RoleArn?: string;
+  readonly DryRun?: boolean;
+}
+
+export interface DisassociateEnclaveCertificateIamRoleResult {
+  readonly Return?: boolean;
+}
+
+export interface DisassociateIamInstanceProfileRequest {
   readonly AssociationId: string;
-  readonly Status: AssociationStatus;
 }
 
-interface DisassociateEnclaveCertificateIamRoleRequest {
-  readonly CertificateArn: string;
-  readonly RoleArn: string;
-  readonly DryRun: boolean;
+export interface DisassociateIamInstanceProfileResult {
+  readonly IamInstanceProfileAssociation?: IamInstanceProfileAssociation;
 }
 
-interface DisassociateEnclaveCertificateIamRoleResult {
-  readonly Return: boolean;
-}
-
-interface DisassociateIamInstanceProfileRequest {
-  readonly AssociationId: string;
-}
-
-interface DisassociateIamInstanceProfileResult {
-  readonly IamInstanceProfileAssociation: IamInstanceProfileAssociation;
-}
-
-interface DisassociateInstanceEventWindowRequest {
-  readonly DryRun: boolean;
+export interface DisassociateInstanceEventWindowRequest {
+  readonly DryRun?: boolean;
   readonly InstanceEventWindowId: string;
   readonly AssociationTarget: InstanceEventWindowDisassociationRequest;
 }
 
-interface DisassociateInstanceEventWindowResult {
-  readonly InstanceEventWindow: InstanceEventWindow;
+export interface DisassociateInstanceEventWindowResult {
+  readonly InstanceEventWindow?: InstanceEventWindow;
 }
 
-interface DisassociateRouteTableRequest {
+export interface DisassociateRouteTableRequest {
   readonly AssociationId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DisassociateSubnetCidrBlockRequest {
+export interface DisassociateSubnetCidrBlockRequest {
   readonly AssociationId: string;
 }
 
-interface DisassociateSubnetCidrBlockResult {
-  readonly Ipv6CidrBlockAssociation: SubnetIpv6CidrBlockAssociation;
-  readonly SubnetId: string;
+export interface DisassociateSubnetCidrBlockResult {
+  readonly Ipv6CidrBlockAssociation?: SubnetIpv6CidrBlockAssociation;
+  readonly SubnetId?: string;
 }
 
-interface DisassociateTransitGatewayMulticastDomainRequest {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly TransitGatewayAttachmentId: string;
-  readonly SubnetIds: [];
-  readonly DryRun: boolean;
+export interface DisassociateTransitGatewayMulticastDomainRequest {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly SubnetIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface DisassociateTransitGatewayMulticastDomainResult {
-  readonly Associations: TransitGatewayMulticastDomainAssociations;
+export interface DisassociateTransitGatewayMulticastDomainResult {
+  readonly Associations?: TransitGatewayMulticastDomainAssociations;
 }
 
-interface DisassociateTransitGatewayRouteTableRequest {
+export interface DisassociateTransitGatewayRouteTableRequest {
   readonly TransitGatewayRouteTableId: string;
   readonly TransitGatewayAttachmentId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface DisassociateTransitGatewayRouteTableResult {
-  readonly Association: TransitGatewayAssociation;
+export interface DisassociateTransitGatewayRouteTableResult {
+  readonly Association?: TransitGatewayAssociation;
 }
 
-interface DisassociateTrunkInterfaceRequest {
+export interface DisassociateTrunkInterfaceRequest {
   readonly AssociationId: string;
-  readonly ClientToken: string;
-  readonly DryRun: boolean;
+  readonly ClientToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface DisassociateTrunkInterfaceResult {
-  readonly Return: boolean;
-  readonly ClientToken: string;
+export interface DisassociateTrunkInterfaceResult {
+  readonly Return?: boolean;
+  readonly ClientToken?: string;
 }
 
-interface DisassociateVpcCidrBlockRequest {
+export interface DisassociateVpcCidrBlockRequest {
   readonly AssociationId: string;
 }
 
-interface DisassociateVpcCidrBlockResult {
-  readonly Ipv6CidrBlockAssociation: VpcIpv6CidrBlockAssociation;
-  readonly CidrBlockAssociation: VpcCidrBlockAssociation;
-  readonly VpcId: string;
+export interface DisassociateVpcCidrBlockResult {
+  readonly Ipv6CidrBlockAssociation?: VpcIpv6CidrBlockAssociation;
+  readonly CidrBlockAssociation?: VpcCidrBlockAssociation;
+  readonly VpcId?: string;
 }
 
-interface DiskImage {
-  readonly Description: string;
-  readonly Image: DiskImageDetail;
-  readonly Volume: VolumeDetail;
+export interface DiskImage {
+  readonly Description?: string;
+  readonly Image?: DiskImageDetail;
+  readonly Volume?: VolumeDetail;
 }
 
-interface DiskImageDescription {
-  readonly Checksum: string;
-  readonly Format: string;
-  readonly ImportManifestUrl: string;
-  readonly Size: number;
+export interface DiskImageDescription {
+  readonly Checksum?: string;
+  readonly Format?: string;
+  readonly ImportManifestUrl?: string;
+  readonly Size?: number;
 }
 
-interface DiskImageDetail {
+export interface DiskImageDetail {
   readonly Bytes: number;
   readonly Format: string;
   readonly ImportManifestUrl: string;
 }
 
-interface DiskImageVolumeDescription {
-  readonly Id: string;
-  readonly Size: number;
+export interface DiskImageVolumeDescription {
+  readonly Id?: string;
+  readonly Size?: number;
 }
 
-interface DiskInfo {
-  readonly SizeInGB: number;
-  readonly Count: number;
+export interface DiskInfo {
+  readonly SizeInGB?: number;
+  readonly Count?: number;
+  readonly Type?: string;
+}
+
+export interface DnsEntry {
+  readonly DnsName?: string;
+  readonly HostedZoneId?: string;
+}
+
+export interface DnsServersOptionsModifyStructure {
+  readonly CustomDnsServers?: [];
+  readonly Enabled?: boolean;
+}
+
+export interface EbsBlockDevice {
+  readonly DeleteOnTermination?: boolean;
+  readonly Iops?: number;
+  readonly SnapshotId?: string;
+  readonly VolumeSize?: number;
+  readonly VolumeType?: string;
+  readonly KmsKeyId?: string;
+  readonly Throughput?: number;
+  readonly OutpostArn?: string;
+  readonly Encrypted?: boolean;
+}
+
+export interface EbsInfo {
+  readonly EbsOptimizedSupport?: string;
+  readonly EncryptionSupport?: string;
+  readonly EbsOptimizedInfo?: EbsOptimizedInfo;
+  readonly NvmeSupport?: string;
+}
+
+export interface EbsInstanceBlockDevice {
+  readonly AttachTime?: Date;
+  readonly DeleteOnTermination?: boolean;
+  readonly Status?: string;
+  readonly VolumeId?: string;
+}
+
+export interface EbsInstanceBlockDeviceSpecification {
+  readonly DeleteOnTermination?: boolean;
+  readonly VolumeId?: string;
+}
+
+export interface EbsOptimizedInfo {
+  readonly BaselineBandwidthInMbps?: number;
+  readonly BaselineThroughputInMBps?: unknown;
+  readonly BaselineIops?: number;
+  readonly MaximumBandwidthInMbps?: number;
+  readonly MaximumThroughputInMBps?: unknown;
+  readonly MaximumIops?: number;
+}
+
+export interface EfaInfo {
+  readonly MaximumEfaInterfaces?: number;
+}
+
+export interface EgressOnlyInternetGateway {
+  readonly Attachments?: [];
+  readonly EgressOnlyInternetGatewayId?: string;
+  readonly Tags?: [];
+}
+
+export interface ElasticGpuAssociation {
+  readonly ElasticGpuId?: string;
+  readonly ElasticGpuAssociationId?: string;
+  readonly ElasticGpuAssociationState?: string;
+  readonly ElasticGpuAssociationTime?: string;
+}
+
+export interface ElasticGpuHealth {
+  readonly Status?: string;
+}
+
+export interface ElasticGpuSpecification {
   readonly Type: string;
 }
 
-interface DnsEntry {
-  readonly DnsName: string;
-  readonly HostedZoneId: string;
+export interface ElasticGpuSpecificationResponse {
+  readonly Type?: string;
 }
 
-interface DnsServersOptionsModifyStructure {
-  readonly CustomDnsServers: [];
-  readonly Enabled: boolean;
+export interface ElasticGpus {
+  readonly ElasticGpuId?: string;
+  readonly AvailabilityZone?: string;
+  readonly ElasticGpuType?: string;
+  readonly ElasticGpuHealth?: ElasticGpuHealth;
+  readonly ElasticGpuState?: string;
+  readonly InstanceId?: string;
+  readonly Tags?: [];
 }
 
-interface EbsBlockDevice {
-  readonly DeleteOnTermination: boolean;
-  readonly Iops: number;
-  readonly SnapshotId: string;
-  readonly VolumeSize: number;
-  readonly VolumeType: string;
-  readonly KmsKeyId: string;
-  readonly Throughput: number;
-  readonly OutpostArn: string;
-  readonly Encrypted: boolean;
-}
-
-interface EbsInfo {
-  readonly EbsOptimizedSupport: string;
-  readonly EncryptionSupport: string;
-  readonly EbsOptimizedInfo: EbsOptimizedInfo;
-  readonly NvmeSupport: string;
-}
-
-interface EbsInstanceBlockDevice {
-  readonly AttachTime: Date;
-  readonly DeleteOnTermination: boolean;
-  readonly Status: string;
-  readonly VolumeId: string;
-}
-
-interface EbsInstanceBlockDeviceSpecification {
-  readonly DeleteOnTermination: boolean;
-  readonly VolumeId: string;
-}
-
-interface EbsOptimizedInfo {
-  readonly BaselineBandwidthInMbps: number;
-  readonly BaselineThroughputInMBps: unknown;
-  readonly BaselineIops: number;
-  readonly MaximumBandwidthInMbps: number;
-  readonly MaximumThroughputInMBps: unknown;
-  readonly MaximumIops: number;
-}
-
-interface EfaInfo {
-  readonly MaximumEfaInterfaces: number;
-}
-
-interface EgressOnlyInternetGateway {
-  readonly Attachments: [];
-  readonly EgressOnlyInternetGatewayId: string;
-  readonly Tags: [];
-}
-
-interface ElasticGpuAssociation {
-  readonly ElasticGpuId: string;
-  readonly ElasticGpuAssociationId: string;
-  readonly ElasticGpuAssociationState: string;
-  readonly ElasticGpuAssociationTime: string;
-}
-
-interface ElasticGpuHealth {
-  readonly Status: string;
-}
-
-interface ElasticGpuSpecification {
+export interface ElasticInferenceAccelerator {
   readonly Type: string;
+  readonly Count?: number;
 }
 
-interface ElasticGpuSpecificationResponse {
-  readonly Type: string;
+export interface ElasticInferenceAcceleratorAssociation {
+  readonly ElasticInferenceAcceleratorArn?: string;
+  readonly ElasticInferenceAcceleratorAssociationId?: string;
+  readonly ElasticInferenceAcceleratorAssociationState?: string;
+  readonly ElasticInferenceAcceleratorAssociationTime?: Date;
 }
 
-interface ElasticGpus {
-  readonly ElasticGpuId: string;
-  readonly AvailabilityZone: string;
-  readonly ElasticGpuType: string;
-  readonly ElasticGpuHealth: ElasticGpuHealth;
-  readonly ElasticGpuState: string;
-  readonly InstanceId: string;
-  readonly Tags: [];
+export interface EnableEbsEncryptionByDefaultRequest {
+  readonly DryRun?: boolean;
 }
 
-interface ElasticInferenceAccelerator {
-  readonly Type: string;
-  readonly Count: number;
+export interface EnableEbsEncryptionByDefaultResult {
+  readonly EbsEncryptionByDefault?: boolean;
 }
 
-interface ElasticInferenceAcceleratorAssociation {
-  readonly ElasticInferenceAcceleratorArn: string;
-  readonly ElasticInferenceAcceleratorAssociationId: string;
-  readonly ElasticInferenceAcceleratorAssociationState: string;
-  readonly ElasticInferenceAcceleratorAssociationTime: Date;
+export interface EnableFastSnapshotRestoreErrorItem {
+  readonly SnapshotId?: string;
+  readonly FastSnapshotRestoreStateErrors?: [];
 }
 
-interface EnableEbsEncryptionByDefaultRequest {
-  readonly DryRun: boolean;
+export interface EnableFastSnapshotRestoreStateError {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface EnableEbsEncryptionByDefaultResult {
-  readonly EbsEncryptionByDefault: boolean;
+export interface EnableFastSnapshotRestoreStateErrorItem {
+  readonly AvailabilityZone?: string;
+  readonly Error?: EnableFastSnapshotRestoreStateError;
 }
 
-interface EnableFastSnapshotRestoreErrorItem {
-  readonly SnapshotId: string;
-  readonly FastSnapshotRestoreStateErrors: [];
+export interface EnableFastSnapshotRestoreSuccessItem {
+  readonly SnapshotId?: string;
+  readonly AvailabilityZone?: string;
+  readonly State?: string;
+  readonly StateTransitionReason?: string;
+  readonly OwnerId?: string;
+  readonly OwnerAlias?: string;
+  readonly EnablingTime?: Date;
+  readonly OptimizingTime?: Date;
+  readonly EnabledTime?: Date;
+  readonly DisablingTime?: Date;
+  readonly DisabledTime?: Date;
 }
 
-interface EnableFastSnapshotRestoreStateError {
-  readonly Code: string;
-  readonly Message: string;
-}
-
-interface EnableFastSnapshotRestoreStateErrorItem {
-  readonly AvailabilityZone: string;
-  readonly Error: EnableFastSnapshotRestoreStateError;
-}
-
-interface EnableFastSnapshotRestoreSuccessItem {
-  readonly SnapshotId: string;
-  readonly AvailabilityZone: string;
-  readonly State: string;
-  readonly StateTransitionReason: string;
-  readonly OwnerId: string;
-  readonly OwnerAlias: string;
-  readonly EnablingTime: Date;
-  readonly OptimizingTime: Date;
-  readonly EnabledTime: Date;
-  readonly DisablingTime: Date;
-  readonly DisabledTime: Date;
-}
-
-interface EnableFastSnapshotRestoresRequest {
+export interface EnableFastSnapshotRestoresRequest {
   readonly AvailabilityZones: [];
   readonly SourceSnapshotIds: [];
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface EnableFastSnapshotRestoresResult {
-  readonly Successful: [];
-  readonly Unsuccessful: [];
+export interface EnableFastSnapshotRestoresResult {
+  readonly Successful?: [];
+  readonly Unsuccessful?: [];
 }
 
-interface EnableImageDeprecationRequest {
+export interface EnableImageDeprecationRequest {
   readonly ImageId: string;
   readonly DeprecateAt: Date;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface EnableImageDeprecationResult {
-  readonly Return: boolean;
+export interface EnableImageDeprecationResult {
+  readonly Return?: boolean;
 }
 
-interface EnableIpamOrganizationAdminAccountRequest {
-  readonly DryRun: boolean;
+export interface EnableIpamOrganizationAdminAccountRequest {
+  readonly DryRun?: boolean;
   readonly DelegatedAdminAccountId: string;
 }
 
-interface EnableIpamOrganizationAdminAccountResult {
-  readonly Success: boolean;
+export interface EnableIpamOrganizationAdminAccountResult {
+  readonly Success?: boolean;
 }
 
-interface EnableSerialConsoleAccessRequest {
-  readonly DryRun: boolean;
+export interface EnableSerialConsoleAccessRequest {
+  readonly DryRun?: boolean;
 }
 
-interface EnableSerialConsoleAccessResult {
-  readonly SerialConsoleAccessEnabled: boolean;
+export interface EnableSerialConsoleAccessResult {
+  readonly SerialConsoleAccessEnabled?: boolean;
 }
 
-interface EnableTransitGatewayRouteTablePropagationRequest {
+export interface EnableTransitGatewayRouteTablePropagationRequest {
   readonly TransitGatewayRouteTableId: string;
   readonly TransitGatewayAttachmentId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface EnableTransitGatewayRouteTablePropagationResult {
-  readonly Propagation: TransitGatewayPropagation;
+export interface EnableTransitGatewayRouteTablePropagationResult {
+  readonly Propagation?: TransitGatewayPropagation;
 }
 
-interface EnableVgwRoutePropagationRequest {
+export interface EnableVgwRoutePropagationRequest {
   readonly GatewayId: string;
   readonly RouteTableId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface EnableVolumeIORequest {
-  readonly DryRun: boolean;
+export interface EnableVolumeIORequest {
+  readonly DryRun?: boolean;
   readonly VolumeId: string;
 }
 
-interface EnableVpcClassicLinkDnsSupportRequest {
+export interface EnableVpcClassicLinkDnsSupportRequest {
+  readonly VpcId?: string;
+}
+
+export interface EnableVpcClassicLinkDnsSupportResult {
+  readonly Return?: boolean;
+}
+
+export interface EnableVpcClassicLinkRequest {
+  readonly DryRun?: boolean;
   readonly VpcId: string;
 }
 
-interface EnableVpcClassicLinkDnsSupportResult {
-  readonly Return: boolean;
+export interface EnableVpcClassicLinkResult {
+  readonly Return?: boolean;
 }
 
-interface EnableVpcClassicLinkRequest {
-  readonly DryRun: boolean;
-  readonly VpcId: string;
+export interface EnclaveOptions {
+  readonly Enabled?: boolean;
 }
 
-interface EnableVpcClassicLinkResult {
-  readonly Return: boolean;
+export interface EnclaveOptionsRequest {
+  readonly Enabled?: boolean;
 }
 
-interface EnclaveOptions {
-  readonly Enabled: boolean;
+export interface EventInformation {
+  readonly EventDescription?: string;
+  readonly EventSubType?: string;
+  readonly InstanceId?: string;
 }
 
-interface EnclaveOptionsRequest {
-  readonly Enabled: boolean;
+export interface Explanation {
+  readonly Acl?: AnalysisComponent;
+  readonly AclRule?: AnalysisAclRule;
+  readonly Address?: string;
+  readonly Addresses?: [];
+  readonly AttachedTo?: AnalysisComponent;
+  readonly AvailabilityZones?: [];
+  readonly Cidrs?: [];
+  readonly Component?: AnalysisComponent;
+  readonly CustomerGateway?: AnalysisComponent;
+  readonly Destination?: AnalysisComponent;
+  readonly DestinationVpc?: AnalysisComponent;
+  readonly Direction?: string;
+  readonly ExplanationCode?: string;
+  readonly IngressRouteTable?: AnalysisComponent;
+  readonly InternetGateway?: AnalysisComponent;
+  readonly LoadBalancerArn?: string;
+  readonly ClassicLoadBalancerListener?: AnalysisLoadBalancerListener;
+  readonly LoadBalancerListenerPort?: number;
+  readonly LoadBalancerTarget?: AnalysisLoadBalancerTarget;
+  readonly LoadBalancerTargetGroup?: AnalysisComponent;
+  readonly LoadBalancerTargetGroups?: [];
+  readonly LoadBalancerTargetPort?: number;
+  readonly ElasticLoadBalancerListener?: AnalysisComponent;
+  readonly MissingComponent?: string;
+  readonly NatGateway?: AnalysisComponent;
+  readonly NetworkInterface?: AnalysisComponent;
+  readonly PacketField?: string;
+  readonly VpcPeeringConnection?: AnalysisComponent;
+  readonly Port?: number;
+  readonly PortRanges?: [];
+  readonly PrefixList?: AnalysisComponent;
+  readonly Protocols?: [];
+  readonly RouteTableRoute?: AnalysisRouteTableRoute;
+  readonly RouteTable?: AnalysisComponent;
+  readonly SecurityGroup?: AnalysisComponent;
+  readonly SecurityGroupRule?: AnalysisSecurityGroupRule;
+  readonly SecurityGroups?: [];
+  readonly SourceVpc?: AnalysisComponent;
+  readonly State?: string;
+  readonly Subnet?: AnalysisComponent;
+  readonly SubnetRouteTable?: AnalysisComponent;
+  readonly Vpc?: AnalysisComponent;
+  readonly VpcEndpoint?: AnalysisComponent;
+  readonly VpnConnection?: AnalysisComponent;
+  readonly VpnGateway?: AnalysisComponent;
 }
 
-interface EventInformation {
-  readonly EventDescription: string;
-  readonly EventSubType: string;
-  readonly InstanceId: string;
-}
-
-interface Explanation {
-  readonly Acl: AnalysisComponent;
-  readonly AclRule: AnalysisAclRule;
-  readonly Address: string;
-  readonly Addresses: [];
-  readonly AttachedTo: AnalysisComponent;
-  readonly AvailabilityZones: [];
-  readonly Cidrs: [];
-  readonly Component: AnalysisComponent;
-  readonly CustomerGateway: AnalysisComponent;
-  readonly Destination: AnalysisComponent;
-  readonly DestinationVpc: AnalysisComponent;
-  readonly Direction: string;
-  readonly ExplanationCode: string;
-  readonly IngressRouteTable: AnalysisComponent;
-  readonly InternetGateway: AnalysisComponent;
-  readonly LoadBalancerArn: string;
-  readonly ClassicLoadBalancerListener: AnalysisLoadBalancerListener;
-  readonly LoadBalancerListenerPort: number;
-  readonly LoadBalancerTarget: AnalysisLoadBalancerTarget;
-  readonly LoadBalancerTargetGroup: AnalysisComponent;
-  readonly LoadBalancerTargetGroups: [];
-  readonly LoadBalancerTargetPort: number;
-  readonly ElasticLoadBalancerListener: AnalysisComponent;
-  readonly MissingComponent: string;
-  readonly NatGateway: AnalysisComponent;
-  readonly NetworkInterface: AnalysisComponent;
-  readonly PacketField: string;
-  readonly VpcPeeringConnection: AnalysisComponent;
-  readonly Port: number;
-  readonly PortRanges: [];
-  readonly PrefixList: AnalysisComponent;
-  readonly Protocols: [];
-  readonly RouteTableRoute: AnalysisRouteTableRoute;
-  readonly RouteTable: AnalysisComponent;
-  readonly SecurityGroup: AnalysisComponent;
-  readonly SecurityGroupRule: AnalysisSecurityGroupRule;
-  readonly SecurityGroups: [];
-  readonly SourceVpc: AnalysisComponent;
-  readonly State: string;
-  readonly Subnet: AnalysisComponent;
-  readonly SubnetRouteTable: AnalysisComponent;
-  readonly Vpc: AnalysisComponent;
-  readonly VpcEndpoint: AnalysisComponent;
-  readonly VpnConnection: AnalysisComponent;
-  readonly VpnGateway: AnalysisComponent;
-}
-
-interface ExportClientVpnClientCertificateRevocationListRequest {
+export interface ExportClientVpnClientCertificateRevocationListRequest {
   readonly ClientVpnEndpointId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ExportClientVpnClientCertificateRevocationListResult {
-  readonly CertificateRevocationList: string;
-  readonly Status: ClientCertificateRevocationListStatus;
+export interface ExportClientVpnClientCertificateRevocationListResult {
+  readonly CertificateRevocationList?: string;
+  readonly Status?: ClientCertificateRevocationListStatus;
 }
 
-interface ExportClientVpnClientConfigurationRequest {
+export interface ExportClientVpnClientConfigurationRequest {
   readonly ClientVpnEndpointId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ExportClientVpnClientConfigurationResult {
-  readonly ClientConfiguration: string;
+export interface ExportClientVpnClientConfigurationResult {
+  readonly ClientConfiguration?: string;
 }
 
-interface ExportImageRequest {
-  readonly ClientToken: string;
-  readonly Description: string;
+export interface ExportImageRequest {
+  readonly ClientToken?: string;
+  readonly Description?: string;
   readonly DiskImageFormat: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
   readonly ImageId: string;
   readonly S3ExportLocation: ExportTaskS3LocationRequest;
-  readonly RoleName: string;
-  readonly TagSpecifications: [];
+  readonly RoleName?: string;
+  readonly TagSpecifications?: [];
 }
 
-interface ExportImageResult {
-  readonly Description: string;
-  readonly DiskImageFormat: string;
-  readonly ExportImageTaskId: string;
-  readonly ImageId: string;
-  readonly RoleName: string;
-  readonly Progress: string;
-  readonly S3ExportLocation: ExportTaskS3Location;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly Tags: [];
+export interface ExportImageResult {
+  readonly Description?: string;
+  readonly DiskImageFormat?: string;
+  readonly ExportImageTaskId?: string;
+  readonly ImageId?: string;
+  readonly RoleName?: string;
+  readonly Progress?: string;
+  readonly S3ExportLocation?: ExportTaskS3Location;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly Tags?: [];
 }
 
-interface ExportImageTask {
-  readonly Description: string;
-  readonly ExportImageTaskId: string;
-  readonly ImageId: string;
-  readonly Progress: string;
-  readonly S3ExportLocation: ExportTaskS3Location;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly Tags: [];
+export interface ExportImageTask {
+  readonly Description?: string;
+  readonly ExportImageTaskId?: string;
+  readonly ImageId?: string;
+  readonly Progress?: string;
+  readonly S3ExportLocation?: ExportTaskS3Location;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly Tags?: [];
 }
 
-interface ExportTask {
-  readonly Description: string;
-  readonly ExportTaskId: string;
-  readonly ExportToS3Task: ExportToS3Task;
-  readonly InstanceExportDetails: InstanceExportDetails;
-  readonly State: string;
-  readonly StatusMessage: string;
-  readonly Tags: [];
+export interface ExportTask {
+  readonly Description?: string;
+  readonly ExportTaskId?: string;
+  readonly ExportToS3Task?: ExportToS3Task;
+  readonly InstanceExportDetails?: InstanceExportDetails;
+  readonly State?: string;
+  readonly StatusMessage?: string;
+  readonly Tags?: [];
 }
 
-interface ExportTaskS3Location {
+export interface ExportTaskS3Location {
+  readonly S3Bucket?: string;
+  readonly S3Prefix?: string;
+}
+
+export interface ExportTaskS3LocationRequest {
   readonly S3Bucket: string;
-  readonly S3Prefix: string;
+  readonly S3Prefix?: string;
 }
 
-interface ExportTaskS3LocationRequest {
-  readonly S3Bucket: string;
-  readonly S3Prefix: string;
+export interface ExportToS3Task {
+  readonly ContainerFormat?: string;
+  readonly DiskImageFormat?: string;
+  readonly S3Bucket?: string;
+  readonly S3Key?: string;
 }
 
-interface ExportToS3Task {
-  readonly ContainerFormat: string;
-  readonly DiskImageFormat: string;
-  readonly S3Bucket: string;
-  readonly S3Key: string;
+export interface ExportToS3TaskSpecification {
+  readonly ContainerFormat?: string;
+  readonly DiskImageFormat?: string;
+  readonly S3Bucket?: string;
+  readonly S3Prefix?: string;
 }
 
-interface ExportToS3TaskSpecification {
-  readonly ContainerFormat: string;
-  readonly DiskImageFormat: string;
-  readonly S3Bucket: string;
-  readonly S3Prefix: string;
-}
-
-interface ExportTransitGatewayRoutesRequest {
+export interface ExportTransitGatewayRoutesRequest {
   readonly TransitGatewayRouteTableId: string;
-  readonly Filters: [];
+  readonly Filters?: [];
   readonly S3Bucket: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ExportTransitGatewayRoutesResult {
-  readonly S3Location: string;
+export interface ExportTransitGatewayRoutesResult {
+  readonly S3Location?: string;
 }
 
-interface FailedCapacityReservationFleetCancellationResult {
-  readonly CapacityReservationFleetId: string;
-  readonly CancelCapacityReservationFleetError: CancelCapacityReservationFleetError;
+export interface FailedCapacityReservationFleetCancellationResult {
+  readonly CapacityReservationFleetId?: string;
+  readonly CancelCapacityReservationFleetError?: CancelCapacityReservationFleetError;
 }
 
-interface FailedQueuedPurchaseDeletion {
-  readonly Error: DeleteQueuedReservedInstancesError;
-  readonly ReservedInstancesId: string;
+export interface FailedQueuedPurchaseDeletion {
+  readonly Error?: DeleteQueuedReservedInstancesError;
+  readonly ReservedInstancesId?: string;
 }
 
-interface FederatedAuthentication {
-  readonly SamlProviderArn: string;
-  readonly SelfServiceSamlProviderArn: string;
+export interface FederatedAuthentication {
+  readonly SamlProviderArn?: string;
+  readonly SelfServiceSamlProviderArn?: string;
 }
 
-interface FederatedAuthenticationRequest {
-  readonly SAMLProviderArn: string;
-  readonly SelfServiceSAMLProviderArn: string;
+export interface FederatedAuthenticationRequest {
+  readonly SAMLProviderArn?: string;
+  readonly SelfServiceSAMLProviderArn?: string;
 }
 
-interface Filter {
-  readonly Name: string;
-  readonly Values: [];
+export interface Filter {
+  readonly Name?: string;
+  readonly Values?: [];
 }
 
-interface FleetCapacityReservation {
-  readonly CapacityReservationId: string;
-  readonly AvailabilityZoneId: string;
-  readonly InstanceType: string;
-  readonly InstancePlatform: string;
-  readonly AvailabilityZone: string;
-  readonly TotalInstanceCount: number;
-  readonly FulfilledCapacity: unknown;
-  readonly EbsOptimized: boolean;
-  readonly CreateDate: Date;
-  readonly Weight: unknown;
-  readonly Priority: number;
+export interface FleetCapacityReservation {
+  readonly CapacityReservationId?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly InstanceType?: string;
+  readonly InstancePlatform?: string;
+  readonly AvailabilityZone?: string;
+  readonly TotalInstanceCount?: number;
+  readonly FulfilledCapacity?: unknown;
+  readonly EbsOptimized?: boolean;
+  readonly CreateDate?: Date;
+  readonly Weight?: unknown;
+  readonly Priority?: number;
 }
 
-interface FleetData {
-  readonly ActivityStatus: string;
-  readonly CreateTime: Date;
-  readonly FleetId: string;
-  readonly FleetState: string;
-  readonly ClientToken: string;
-  readonly ExcessCapacityTerminationPolicy: string;
-  readonly FulfilledCapacity: unknown;
-  readonly FulfilledOnDemandCapacity: unknown;
-  readonly LaunchTemplateConfigs: [];
-  readonly TargetCapacitySpecification: TargetCapacitySpecification;
-  readonly TerminateInstancesWithExpiration: boolean;
-  readonly Type: string;
-  readonly ValidFrom: Date;
-  readonly ValidUntil: Date;
-  readonly ReplaceUnhealthyInstances: boolean;
-  readonly SpotOptions: SpotOptions;
-  readonly OnDemandOptions: OnDemandOptions;
-  readonly Tags: [];
-  readonly Errors: [];
-  readonly Instances: [];
-  readonly Context: string;
+export interface FleetData {
+  readonly ActivityStatus?: string;
+  readonly CreateTime?: Date;
+  readonly FleetId?: string;
+  readonly FleetState?: string;
+  readonly ClientToken?: string;
+  readonly ExcessCapacityTerminationPolicy?: string;
+  readonly FulfilledCapacity?: unknown;
+  readonly FulfilledOnDemandCapacity?: unknown;
+  readonly LaunchTemplateConfigs?: [];
+  readonly TargetCapacitySpecification?: TargetCapacitySpecification;
+  readonly TerminateInstancesWithExpiration?: boolean;
+  readonly Type?: string;
+  readonly ValidFrom?: Date;
+  readonly ValidUntil?: Date;
+  readonly ReplaceUnhealthyInstances?: boolean;
+  readonly SpotOptions?: SpotOptions;
+  readonly OnDemandOptions?: OnDemandOptions;
+  readonly Tags?: [];
+  readonly Errors?: [];
+  readonly Instances?: [];
+  readonly Context?: string;
 }
 
-interface FleetLaunchTemplateConfig {
-  readonly LaunchTemplateSpecification: FleetLaunchTemplateSpecification;
-  readonly Overrides: [];
+export interface FleetLaunchTemplateConfig {
+  readonly LaunchTemplateSpecification?: FleetLaunchTemplateSpecification;
+  readonly Overrides?: [];
 }
 
-interface FleetLaunchTemplateConfigRequest {
-  readonly LaunchTemplateSpecification: FleetLaunchTemplateSpecificationRequest;
-  readonly Overrides: [];
+export interface FleetLaunchTemplateConfigRequest {
+  readonly LaunchTemplateSpecification?: FleetLaunchTemplateSpecificationRequest;
+  readonly Overrides?: [];
 }
 
-interface FleetLaunchTemplateOverrides {
-  readonly InstanceType: string;
-  readonly MaxPrice: string;
-  readonly SubnetId: string;
-  readonly AvailabilityZone: string;
-  readonly WeightedCapacity: unknown;
-  readonly Priority: unknown;
-  readonly Placement: PlacementResponse;
-  readonly InstanceRequirements: InstanceRequirements;
+export interface FleetLaunchTemplateOverrides {
+  readonly InstanceType?: string;
+  readonly MaxPrice?: string;
+  readonly SubnetId?: string;
+  readonly AvailabilityZone?: string;
+  readonly WeightedCapacity?: unknown;
+  readonly Priority?: unknown;
+  readonly Placement?: PlacementResponse;
+  readonly InstanceRequirements?: InstanceRequirements;
 }
 
-interface FleetLaunchTemplateOverridesRequest {
-  readonly InstanceType: string;
-  readonly MaxPrice: string;
-  readonly SubnetId: string;
-  readonly AvailabilityZone: string;
-  readonly WeightedCapacity: unknown;
-  readonly Priority: unknown;
-  readonly Placement: Placement;
-  readonly InstanceRequirements: InstanceRequirementsRequest;
+export interface FleetLaunchTemplateOverridesRequest {
+  readonly InstanceType?: string;
+  readonly MaxPrice?: string;
+  readonly SubnetId?: string;
+  readonly AvailabilityZone?: string;
+  readonly WeightedCapacity?: unknown;
+  readonly Priority?: unknown;
+  readonly Placement?: Placement;
+  readonly InstanceRequirements?: InstanceRequirementsRequest;
 }
 
-interface FleetLaunchTemplateSpecification {
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
-  readonly Version: string;
+export interface FleetLaunchTemplateSpecification {
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
+  readonly Version?: string;
 }
 
-interface FleetLaunchTemplateSpecificationRequest {
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
-  readonly Version: string;
+export interface FleetLaunchTemplateSpecificationRequest {
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
+  readonly Version?: string;
 }
 
-interface FleetSpotCapacityRebalance {
-  readonly ReplacementStrategy: string;
-  readonly TerminationDelay: number;
+export interface FleetSpotCapacityRebalance {
+  readonly ReplacementStrategy?: string;
+  readonly TerminationDelay?: number;
 }
 
-interface FleetSpotCapacityRebalanceRequest {
-  readonly ReplacementStrategy: string;
-  readonly TerminationDelay: number;
+export interface FleetSpotCapacityRebalanceRequest {
+  readonly ReplacementStrategy?: string;
+  readonly TerminationDelay?: number;
 }
 
-interface FleetSpotMaintenanceStrategies {
-  readonly CapacityRebalance: FleetSpotCapacityRebalance;
+export interface FleetSpotMaintenanceStrategies {
+  readonly CapacityRebalance?: FleetSpotCapacityRebalance;
 }
 
-interface FleetSpotMaintenanceStrategiesRequest {
-  readonly CapacityRebalance: FleetSpotCapacityRebalanceRequest;
+export interface FleetSpotMaintenanceStrategiesRequest {
+  readonly CapacityRebalance?: FleetSpotCapacityRebalanceRequest;
 }
 
-interface FlowLog {
-  readonly CreationTime: Date;
-  readonly DeliverLogsErrorMessage: string;
-  readonly DeliverLogsPermissionArn: string;
-  readonly DeliverLogsStatus: string;
-  readonly FlowLogId: string;
-  readonly FlowLogStatus: string;
-  readonly LogGroupName: string;
-  readonly ResourceId: string;
-  readonly TrafficType: string;
-  readonly LogDestinationType: string;
-  readonly LogDestination: string;
-  readonly LogFormat: string;
-  readonly Tags: [];
-  readonly MaxAggregationInterval: number;
-  readonly DestinationOptions: DestinationOptionsResponse;
+export interface FlowLog {
+  readonly CreationTime?: Date;
+  readonly DeliverLogsErrorMessage?: string;
+  readonly DeliverLogsPermissionArn?: string;
+  readonly DeliverLogsStatus?: string;
+  readonly FlowLogId?: string;
+  readonly FlowLogStatus?: string;
+  readonly LogGroupName?: string;
+  readonly ResourceId?: string;
+  readonly TrafficType?: string;
+  readonly LogDestinationType?: string;
+  readonly LogDestination?: string;
+  readonly LogFormat?: string;
+  readonly Tags?: [];
+  readonly MaxAggregationInterval?: number;
+  readonly DestinationOptions?: DestinationOptionsResponse;
 }
 
-interface FpgaDeviceInfo {
-  readonly Name: string;
-  readonly Manufacturer: string;
-  readonly Count: number;
-  readonly MemoryInfo: FpgaDeviceMemoryInfo;
+export interface FpgaDeviceInfo {
+  readonly Name?: string;
+  readonly Manufacturer?: string;
+  readonly Count?: number;
+  readonly MemoryInfo?: FpgaDeviceMemoryInfo;
 }
 
-interface FpgaDeviceMemoryInfo {
-  readonly SizeInMiB: number;
+export interface FpgaDeviceMemoryInfo {
+  readonly SizeInMiB?: number;
 }
 
-interface FpgaImage {
-  readonly FpgaImageId: string;
-  readonly FpgaImageGlobalId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly ShellVersion: string;
-  readonly PciId: PciId;
-  readonly State: FpgaImageState;
-  readonly CreateTime: Date;
-  readonly UpdateTime: Date;
-  readonly OwnerId: string;
-  readonly OwnerAlias: string;
-  readonly ProductCodes: [];
-  readonly Tags: [];
-  readonly Public: boolean;
-  readonly DataRetentionSupport: boolean;
+export interface FpgaImage {
+  readonly FpgaImageId?: string;
+  readonly FpgaImageGlobalId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly ShellVersion?: string;
+  readonly PciId?: PciId;
+  readonly State?: FpgaImageState;
+  readonly CreateTime?: Date;
+  readonly UpdateTime?: Date;
+  readonly OwnerId?: string;
+  readonly OwnerAlias?: string;
+  readonly ProductCodes?: [];
+  readonly Tags?: [];
+  readonly Public?: boolean;
+  readonly DataRetentionSupport?: boolean;
 }
 
-interface FpgaImageAttribute {
-  readonly FpgaImageId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly LoadPermissions: [];
-  readonly ProductCodes: [];
+export interface FpgaImageAttribute {
+  readonly FpgaImageId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly LoadPermissions?: [];
+  readonly ProductCodes?: [];
 }
 
-interface FpgaImageState {
-  readonly Code: string;
-  readonly Message: string;
+export interface FpgaImageState {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface FpgaInfo {
-  readonly Fpgas: [];
-  readonly TotalFpgaMemoryInMiB: number;
+export interface FpgaInfo {
+  readonly Fpgas?: [];
+  readonly TotalFpgaMemoryInMiB?: number;
 }
 
-interface GetAssociatedEnclaveCertificateIamRolesRequest {
-  readonly CertificateArn: string;
-  readonly DryRun: boolean;
+export interface GetAssociatedEnclaveCertificateIamRolesRequest {
+  readonly CertificateArn?: string;
+  readonly DryRun?: boolean;
 }
 
-interface GetAssociatedEnclaveCertificateIamRolesResult {
-  readonly AssociatedRoles: [];
+export interface GetAssociatedEnclaveCertificateIamRolesResult {
+  readonly AssociatedRoles?: [];
 }
 
-interface GetAssociatedIpv6PoolCidrsRequest {
+export interface GetAssociatedIpv6PoolCidrsRequest {
   readonly PoolId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly DryRun: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly DryRun?: boolean;
 }
 
-interface GetAssociatedIpv6PoolCidrsResult {
-  readonly Ipv6CidrAssociations: [];
-  readonly NextToken: string;
+export interface GetAssociatedIpv6PoolCidrsResult {
+  readonly Ipv6CidrAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetCapacityReservationUsageRequest {
+export interface GetCapacityReservationUsageRequest {
   readonly CapacityReservationId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly DryRun: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly DryRun?: boolean;
 }
 
-interface GetCapacityReservationUsageResult {
-  readonly NextToken: string;
-  readonly CapacityReservationId: string;
-  readonly InstanceType: string;
-  readonly TotalInstanceCount: number;
-  readonly AvailableInstanceCount: number;
-  readonly State: string;
-  readonly InstanceUsages: [];
+export interface GetCapacityReservationUsageResult {
+  readonly NextToken?: string;
+  readonly CapacityReservationId?: string;
+  readonly InstanceType?: string;
+  readonly TotalInstanceCount?: number;
+  readonly AvailableInstanceCount?: number;
+  readonly State?: string;
+  readonly InstanceUsages?: [];
 }
 
-interface GetCoipPoolUsageRequest {
+export interface GetCoipPoolUsageRequest {
   readonly PoolId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface GetCoipPoolUsageResult {
-  readonly CoipPoolId: string;
-  readonly CoipAddressUsages: [];
-  readonly LocalGatewayRouteTableId: string;
+export interface GetCoipPoolUsageResult {
+  readonly CoipPoolId?: string;
+  readonly CoipAddressUsages?: [];
+  readonly LocalGatewayRouteTableId?: string;
 }
 
-interface GetConsoleOutputRequest {
+export interface GetConsoleOutputRequest {
   readonly InstanceId: string;
-  readonly DryRun: boolean;
-  readonly Latest: boolean;
+  readonly DryRun?: boolean;
+  readonly Latest?: boolean;
 }
 
-interface GetConsoleOutputResult {
+export interface GetConsoleOutputResult {
+  readonly InstanceId?: string;
+  readonly Output?: string;
+  readonly Timestamp?: Date;
+}
+
+export interface GetConsoleScreenshotRequest {
+  readonly DryRun?: boolean;
   readonly InstanceId: string;
-  readonly Output: string;
-  readonly Timestamp: Date;
+  readonly WakeUp?: boolean;
 }
 
-interface GetConsoleScreenshotRequest {
-  readonly DryRun: boolean;
-  readonly InstanceId: string;
-  readonly WakeUp: boolean;
+export interface GetConsoleScreenshotResult {
+  readonly ImageData?: string;
+  readonly InstanceId?: string;
 }
 
-interface GetConsoleScreenshotResult {
-  readonly ImageData: string;
-  readonly InstanceId: string;
-}
-
-interface GetDefaultCreditSpecificationRequest {
-  readonly DryRun: boolean;
+export interface GetDefaultCreditSpecificationRequest {
+  readonly DryRun?: boolean;
   readonly InstanceFamily: string;
 }
 
-interface GetDefaultCreditSpecificationResult {
-  readonly InstanceFamilyCreditSpecification: InstanceFamilyCreditSpecification;
+export interface GetDefaultCreditSpecificationResult {
+  readonly InstanceFamilyCreditSpecification?: InstanceFamilyCreditSpecification;
 }
 
-interface GetEbsDefaultKmsKeyIdRequest {
-  readonly DryRun: boolean;
+export interface GetEbsDefaultKmsKeyIdRequest {
+  readonly DryRun?: boolean;
 }
 
-interface GetEbsDefaultKmsKeyIdResult {
-  readonly KmsKeyId: string;
+export interface GetEbsDefaultKmsKeyIdResult {
+  readonly KmsKeyId?: string;
 }
 
-interface GetEbsEncryptionByDefaultRequest {
-  readonly DryRun: boolean;
+export interface GetEbsEncryptionByDefaultRequest {
+  readonly DryRun?: boolean;
 }
 
-interface GetEbsEncryptionByDefaultResult {
-  readonly EbsEncryptionByDefault: boolean;
+export interface GetEbsEncryptionByDefaultResult {
+  readonly EbsEncryptionByDefault?: boolean;
 }
 
-interface GetFlowLogsIntegrationTemplateRequest {
-  readonly DryRun: boolean;
+export interface GetFlowLogsIntegrationTemplateRequest {
+  readonly DryRun?: boolean;
   readonly FlowLogId: string;
   readonly ConfigDeliveryS3DestinationArn: string;
   readonly IntegrateServices: IntegrateServices;
 }
 
-interface GetFlowLogsIntegrationTemplateResult {
-  readonly Result: string;
+export interface GetFlowLogsIntegrationTemplateResult {
+  readonly Result?: string;
 }
 
-interface GetGroupsForCapacityReservationRequest {
+export interface GetGroupsForCapacityReservationRequest {
   readonly CapacityReservationId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly DryRun: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly DryRun?: boolean;
 }
 
-interface GetGroupsForCapacityReservationResult {
-  readonly NextToken: string;
-  readonly CapacityReservationGroups: [];
+export interface GetGroupsForCapacityReservationResult {
+  readonly NextToken?: string;
+  readonly CapacityReservationGroups?: [];
 }
 
-interface GetHostReservationPurchasePreviewRequest {
+export interface GetHostReservationPurchasePreviewRequest {
   readonly HostIdSet: [];
   readonly OfferingId: string;
 }
 
-interface GetHostReservationPurchasePreviewResult {
-  readonly CurrencyCode: string;
-  readonly Purchase: [];
-  readonly TotalHourlyPrice: string;
-  readonly TotalUpfrontPrice: string;
+export interface GetHostReservationPurchasePreviewResult {
+  readonly CurrencyCode?: string;
+  readonly Purchase?: [];
+  readonly TotalHourlyPrice?: string;
+  readonly TotalUpfrontPrice?: string;
 }
 
-interface GetInstanceTypesFromInstanceRequirementsRequest {
-  readonly DryRun: boolean;
+export interface GetInstanceTypesFromInstanceRequirementsRequest {
+  readonly DryRun?: boolean;
   readonly ArchitectureTypes: [];
   readonly VirtualizationTypes: [];
   readonly InstanceRequirements: InstanceRequirementsRequest;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetInstanceTypesFromInstanceRequirementsResult {
-  readonly InstanceTypes: [];
-  readonly NextToken: string;
+export interface GetInstanceTypesFromInstanceRequirementsResult {
+  readonly InstanceTypes?: [];
+  readonly NextToken?: string;
 }
 
-interface GetIpamAddressHistoryRequest {
-  readonly DryRun: boolean;
+export interface GetIpamAddressHistoryRequest {
+  readonly DryRun?: boolean;
   readonly Cidr: string;
   readonly IpamScopeId: string;
-  readonly VpcId: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly VpcId?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetIpamAddressHistoryResult {
-  readonly HistoryRecords: [];
-  readonly NextToken: string;
+export interface GetIpamAddressHistoryResult {
+  readonly HistoryRecords?: [];
+  readonly NextToken?: string;
 }
 
-interface GetIpamPoolAllocationsRequest {
-  readonly DryRun: boolean;
+export interface GetIpamPoolAllocationsRequest {
+  readonly DryRun?: boolean;
   readonly IpamPoolId: string;
-  readonly IpamPoolAllocationId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly IpamPoolAllocationId?: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetIpamPoolAllocationsResult {
-  readonly IpamPoolAllocations: [];
-  readonly NextToken: string;
+export interface GetIpamPoolAllocationsResult {
+  readonly IpamPoolAllocations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetIpamPoolCidrsRequest {
-  readonly DryRun: boolean;
+export interface GetIpamPoolCidrsRequest {
+  readonly DryRun?: boolean;
   readonly IpamPoolId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetIpamPoolCidrsResult {
-  readonly IpamPoolCidrs: [];
-  readonly NextToken: string;
+export interface GetIpamPoolCidrsResult {
+  readonly IpamPoolCidrs?: [];
+  readonly NextToken?: string;
 }
 
-interface GetIpamResourceCidrsRequest {
-  readonly DryRun: boolean;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface GetIpamResourceCidrsRequest {
+  readonly DryRun?: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly IpamScopeId: string;
-  readonly IpamPoolId: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly ResourceTag: RequestIpamResourceTag;
-  readonly ResourceOwner: string;
+  readonly IpamPoolId?: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly ResourceTag?: RequestIpamResourceTag;
+  readonly ResourceOwner?: string;
 }
 
-interface GetIpamResourceCidrsResult {
-  readonly NextToken: string;
-  readonly IpamResourceCidrs: [];
+export interface GetIpamResourceCidrsResult {
+  readonly NextToken?: string;
+  readonly IpamResourceCidrs?: [];
 }
 
-interface GetLaunchTemplateDataRequest {
-  readonly DryRun: boolean;
+export interface GetLaunchTemplateDataRequest {
+  readonly DryRun?: boolean;
   readonly InstanceId: string;
 }
 
-interface GetLaunchTemplateDataResult {
-  readonly LaunchTemplateData: ResponseLaunchTemplateData;
+export interface GetLaunchTemplateDataResult {
+  readonly LaunchTemplateData?: ResponseLaunchTemplateData;
 }
 
-interface GetManagedPrefixListAssociationsRequest {
-  readonly DryRun: boolean;
+export interface GetManagedPrefixListAssociationsRequest {
+  readonly DryRun?: boolean;
   readonly PrefixListId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetManagedPrefixListAssociationsResult {
-  readonly PrefixListAssociations: [];
-  readonly NextToken: string;
+export interface GetManagedPrefixListAssociationsResult {
+  readonly PrefixListAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetManagedPrefixListEntriesRequest {
-  readonly DryRun: boolean;
+export interface GetManagedPrefixListEntriesRequest {
+  readonly DryRun?: boolean;
   readonly PrefixListId: string;
-  readonly TargetVersion: number;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly TargetVersion?: number;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetManagedPrefixListEntriesResult {
-  readonly Entries: [];
-  readonly NextToken: string;
+export interface GetManagedPrefixListEntriesResult {
+  readonly Entries?: [];
+  readonly NextToken?: string;
 }
 
-interface GetNetworkInsightsAccessScopeAnalysisFindingsRequest {
+export interface GetNetworkInsightsAccessScopeAnalysisFindingsRequest {
   readonly NetworkInsightsAccessScopeAnalysisId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface GetNetworkInsightsAccessScopeAnalysisFindingsResult {
-  readonly NetworkInsightsAccessScopeAnalysisId: string;
-  readonly AnalysisStatus: string;
-  readonly AnalysisFindings: [];
-  readonly NextToken: string;
+export interface GetNetworkInsightsAccessScopeAnalysisFindingsResult {
+  readonly NetworkInsightsAccessScopeAnalysisId?: string;
+  readonly AnalysisStatus?: string;
+  readonly AnalysisFindings?: [];
+  readonly NextToken?: string;
 }
 
-interface GetNetworkInsightsAccessScopeContentRequest {
+export interface GetNetworkInsightsAccessScopeContentRequest {
   readonly NetworkInsightsAccessScopeId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface GetNetworkInsightsAccessScopeContentResult {
-  readonly NetworkInsightsAccessScopeContent: NetworkInsightsAccessScopeContent;
+export interface GetNetworkInsightsAccessScopeContentResult {
+  readonly NetworkInsightsAccessScopeContent?: NetworkInsightsAccessScopeContent;
 }
 
-interface GetPasswordDataRequest {
+export interface GetPasswordDataRequest {
   readonly InstanceId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface GetPasswordDataResult {
-  readonly InstanceId: string;
-  readonly PasswordData: string;
-  readonly Timestamp: Date;
+export interface GetPasswordDataResult {
+  readonly InstanceId?: string;
+  readonly PasswordData?: string;
+  readonly Timestamp?: Date;
 }
 
-interface GetReservedInstancesExchangeQuoteRequest {
-  readonly DryRun: boolean;
+export interface GetReservedInstancesExchangeQuoteRequest {
+  readonly DryRun?: boolean;
   readonly ReservedInstanceIds: [];
-  readonly TargetConfigurations: [];
+  readonly TargetConfigurations?: [];
 }
 
-interface GetReservedInstancesExchangeQuoteResult {
-  readonly CurrencyCode: string;
-  readonly IsValidExchange: boolean;
-  readonly OutputReservedInstancesWillExpireAt: Date;
-  readonly PaymentDue: string;
-  readonly ReservedInstanceValueRollup: ReservationValue;
-  readonly ReservedInstanceValueSet: [];
-  readonly TargetConfigurationValueRollup: ReservationValue;
-  readonly TargetConfigurationValueSet: [];
-  readonly ValidationFailureReason: string;
+export interface GetReservedInstancesExchangeQuoteResult {
+  readonly CurrencyCode?: string;
+  readonly IsValidExchange?: boolean;
+  readonly OutputReservedInstancesWillExpireAt?: Date;
+  readonly PaymentDue?: string;
+  readonly ReservedInstanceValueRollup?: ReservationValue;
+  readonly ReservedInstanceValueSet?: [];
+  readonly TargetConfigurationValueRollup?: ReservationValue;
+  readonly TargetConfigurationValueSet?: [];
+  readonly ValidationFailureReason?: string;
 }
 
-interface GetSerialConsoleAccessStatusRequest {
-  readonly DryRun: boolean;
+export interface GetSerialConsoleAccessStatusRequest {
+  readonly DryRun?: boolean;
 }
 
-interface GetSerialConsoleAccessStatusResult {
-  readonly SerialConsoleAccessEnabled: boolean;
+export interface GetSerialConsoleAccessStatusResult {
+  readonly SerialConsoleAccessEnabled?: boolean;
 }
 
-interface GetSpotPlacementScoresRequest {
-  readonly InstanceTypes: [];
+export interface GetSpotPlacementScoresRequest {
+  readonly InstanceTypes?: [];
   readonly TargetCapacity: number;
-  readonly TargetCapacityUnitType: string;
-  readonly SingleAvailabilityZone: boolean;
-  readonly RegionNames: [];
-  readonly InstanceRequirementsWithMetadata: InstanceRequirementsWithMetadataRequest;
-  readonly DryRun: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly TargetCapacityUnitType?: string;
+  readonly SingleAvailabilityZone?: boolean;
+  readonly RegionNames?: [];
+  readonly InstanceRequirementsWithMetadata?: InstanceRequirementsWithMetadataRequest;
+  readonly DryRun?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetSpotPlacementScoresResult {
-  readonly SpotPlacementScores: [];
-  readonly NextToken: string;
+export interface GetSpotPlacementScoresResult {
+  readonly SpotPlacementScores?: [];
+  readonly NextToken?: string;
 }
 
-interface GetSubnetCidrReservationsRequest {
-  readonly Filters: [];
+export interface GetSubnetCidrReservationsRequest {
+  readonly Filters?: [];
   readonly SubnetId: string;
-  readonly DryRun: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly DryRun?: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetSubnetCidrReservationsResult {
-  readonly SubnetIpv4CidrReservations: [];
-  readonly SubnetIpv6CidrReservations: [];
-  readonly NextToken: string;
+export interface GetSubnetCidrReservationsResult {
+  readonly SubnetIpv4CidrReservations?: [];
+  readonly SubnetIpv6CidrReservations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetTransitGatewayAttachmentPropagationsRequest {
+export interface GetTransitGatewayAttachmentPropagationsRequest {
   readonly TransitGatewayAttachmentId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface GetTransitGatewayAttachmentPropagationsResult {
-  readonly TransitGatewayAttachmentPropagations: [];
-  readonly NextToken: string;
+export interface GetTransitGatewayAttachmentPropagationsResult {
+  readonly TransitGatewayAttachmentPropagations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetTransitGatewayMulticastDomainAssociationsRequest {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface GetTransitGatewayMulticastDomainAssociationsRequest {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface GetTransitGatewayMulticastDomainAssociationsResult {
-  readonly MulticastDomainAssociations: [];
-  readonly NextToken: string;
+export interface GetTransitGatewayMulticastDomainAssociationsResult {
+  readonly MulticastDomainAssociations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetTransitGatewayPrefixListReferencesRequest {
+export interface GetTransitGatewayPrefixListReferencesRequest {
   readonly TransitGatewayRouteTableId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface GetTransitGatewayPrefixListReferencesResult {
-  readonly TransitGatewayPrefixListReferences: [];
-  readonly NextToken: string;
+export interface GetTransitGatewayPrefixListReferencesResult {
+  readonly TransitGatewayPrefixListReferences?: [];
+  readonly NextToken?: string;
 }
 
-interface GetTransitGatewayRouteTableAssociationsRequest {
+export interface GetTransitGatewayRouteTableAssociationsRequest {
   readonly TransitGatewayRouteTableId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface GetTransitGatewayRouteTableAssociationsResult {
-  readonly Associations: [];
-  readonly NextToken: string;
+export interface GetTransitGatewayRouteTableAssociationsResult {
+  readonly Associations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetTransitGatewayRouteTablePropagationsRequest {
+export interface GetTransitGatewayRouteTablePropagationsRequest {
   readonly TransitGatewayRouteTableId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface GetTransitGatewayRouteTablePropagationsResult {
-  readonly TransitGatewayRouteTablePropagations: [];
-  readonly NextToken: string;
+export interface GetTransitGatewayRouteTablePropagationsResult {
+  readonly TransitGatewayRouteTablePropagations?: [];
+  readonly NextToken?: string;
 }
 
-interface GetVpnConnectionDeviceSampleConfigurationRequest {
+export interface GetVpnConnectionDeviceSampleConfigurationRequest {
   readonly VpnConnectionId: string;
   readonly VpnConnectionDeviceTypeId: string;
-  readonly InternetKeyExchangeVersion: string;
-  readonly DryRun: boolean;
+  readonly InternetKeyExchangeVersion?: string;
+  readonly DryRun?: boolean;
 }
 
-interface GetVpnConnectionDeviceSampleConfigurationResult {
-  readonly VpnConnectionDeviceSampleConfiguration: string;
+export interface GetVpnConnectionDeviceSampleConfigurationResult {
+  readonly VpnConnectionDeviceSampleConfiguration?: string;
 }
 
-interface GetVpnConnectionDeviceTypesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface GetVpnConnectionDeviceTypesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface GetVpnConnectionDeviceTypesResult {
-  readonly VpnConnectionDeviceTypes: [];
-  readonly NextToken: string;
+export interface GetVpnConnectionDeviceTypesResult {
+  readonly VpnConnectionDeviceTypes?: [];
+  readonly NextToken?: string;
 }
 
-interface GpuDeviceInfo {
-  readonly Name: string;
-  readonly Manufacturer: string;
-  readonly Count: number;
-  readonly MemoryInfo: GpuDeviceMemoryInfo;
+export interface GpuDeviceInfo {
+  readonly Name?: string;
+  readonly Manufacturer?: string;
+  readonly Count?: number;
+  readonly MemoryInfo?: GpuDeviceMemoryInfo;
 }
 
-interface GpuDeviceMemoryInfo {
-  readonly SizeInMiB: number;
+export interface GpuDeviceMemoryInfo {
+  readonly SizeInMiB?: number;
 }
 
-interface GpuInfo {
-  readonly Gpus: [];
-  readonly TotalGpuMemoryInMiB: number;
+export interface GpuInfo {
+  readonly Gpus?: [];
+  readonly TotalGpuMemoryInMiB?: number;
 }
 
-interface GroupIdentifier {
-  readonly GroupName: string;
-  readonly GroupId: string;
+export interface GroupIdentifier {
+  readonly GroupName?: string;
+  readonly GroupId?: string;
 }
 
-interface HibernationOptions {
-  readonly Configured: boolean;
+export interface HibernationOptions {
+  readonly Configured?: boolean;
 }
 
-interface HibernationOptionsRequest {
-  readonly Configured: boolean;
+export interface HibernationOptionsRequest {
+  readonly Configured?: boolean;
 }
 
-interface HistoryRecord {
-  readonly EventInformation: EventInformation;
-  readonly EventType: string;
-  readonly Timestamp: Date;
+export interface HistoryRecord {
+  readonly EventInformation?: EventInformation;
+  readonly EventType?: string;
+  readonly Timestamp?: Date;
 }
 
-interface HistoryRecordEntry {
-  readonly EventInformation: EventInformation;
-  readonly EventType: string;
-  readonly Timestamp: Date;
+export interface HistoryRecordEntry {
+  readonly EventInformation?: EventInformation;
+  readonly EventType?: string;
+  readonly Timestamp?: Date;
 }
 
-interface Host {
-  readonly AutoPlacement: string;
-  readonly AvailabilityZone: string;
-  readonly AvailableCapacity: AvailableCapacity;
-  readonly ClientToken: string;
-  readonly HostId: string;
-  readonly HostProperties: HostProperties;
-  readonly HostReservationId: string;
-  readonly Instances: [];
-  readonly State: string;
-  readonly AllocationTime: Date;
-  readonly ReleaseTime: Date;
-  readonly Tags: [];
-  readonly HostRecovery: string;
-  readonly AllowsMultipleInstanceTypes: string;
-  readonly OwnerId: string;
-  readonly AvailabilityZoneId: string;
-  readonly MemberOfServiceLinkedResourceGroup: boolean;
+export interface Host {
+  readonly AutoPlacement?: string;
+  readonly AvailabilityZone?: string;
+  readonly AvailableCapacity?: AvailableCapacity;
+  readonly ClientToken?: string;
+  readonly HostId?: string;
+  readonly HostProperties?: HostProperties;
+  readonly HostReservationId?: string;
+  readonly Instances?: [];
+  readonly State?: string;
+  readonly AllocationTime?: Date;
+  readonly ReleaseTime?: Date;
+  readonly Tags?: [];
+  readonly HostRecovery?: string;
+  readonly AllowsMultipleInstanceTypes?: string;
+  readonly OwnerId?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly MemberOfServiceLinkedResourceGroup?: boolean;
 }
 
-interface HostInstance {
-  readonly InstanceId: string;
-  readonly InstanceType: string;
-  readonly OwnerId: string;
+export interface HostInstance {
+  readonly InstanceId?: string;
+  readonly InstanceType?: string;
+  readonly OwnerId?: string;
 }
 
-interface HostOffering {
-  readonly CurrencyCode: string;
-  readonly Duration: number;
-  readonly HourlyPrice: string;
-  readonly InstanceFamily: string;
-  readonly OfferingId: string;
-  readonly PaymentOption: string;
-  readonly UpfrontPrice: string;
+export interface HostOffering {
+  readonly CurrencyCode?: string;
+  readonly Duration?: number;
+  readonly HourlyPrice?: string;
+  readonly InstanceFamily?: string;
+  readonly OfferingId?: string;
+  readonly PaymentOption?: string;
+  readonly UpfrontPrice?: string;
 }
 
-interface HostProperties {
-  readonly Cores: number;
-  readonly InstanceType: string;
-  readonly InstanceFamily: string;
-  readonly Sockets: number;
-  readonly TotalVCpus: number;
+export interface HostProperties {
+  readonly Cores?: number;
+  readonly InstanceType?: string;
+  readonly InstanceFamily?: string;
+  readonly Sockets?: number;
+  readonly TotalVCpus?: number;
 }
 
-interface HostReservation {
-  readonly Count: number;
-  readonly CurrencyCode: string;
-  readonly Duration: number;
-  readonly End: Date;
-  readonly HostIdSet: [];
-  readonly HostReservationId: string;
-  readonly HourlyPrice: string;
-  readonly InstanceFamily: string;
-  readonly OfferingId: string;
-  readonly PaymentOption: string;
-  readonly Start: Date;
-  readonly State: string;
-  readonly UpfrontPrice: string;
-  readonly Tags: [];
+export interface HostReservation {
+  readonly Count?: number;
+  readonly CurrencyCode?: string;
+  readonly Duration?: number;
+  readonly End?: Date;
+  readonly HostIdSet?: [];
+  readonly HostReservationId?: string;
+  readonly HourlyPrice?: string;
+  readonly InstanceFamily?: string;
+  readonly OfferingId?: string;
+  readonly PaymentOption?: string;
+  readonly Start?: Date;
+  readonly State?: string;
+  readonly UpfrontPrice?: string;
+  readonly Tags?: [];
 }
 
-interface IKEVersionsListValue {
-  readonly Value: string;
+export interface IKEVersionsListValue {
+  readonly Value?: string;
 }
 
-interface IKEVersionsRequestListValue {
-  readonly Value: string;
+export interface IKEVersionsRequestListValue {
+  readonly Value?: string;
 }
 
-interface IamInstanceProfile {
-  readonly Arn: string;
-  readonly Id: string;
+export interface IamInstanceProfile {
+  readonly Arn?: string;
+  readonly Id?: string;
 }
 
-interface IamInstanceProfileAssociation {
-  readonly AssociationId: string;
-  readonly InstanceId: string;
-  readonly IamInstanceProfile: IamInstanceProfile;
-  readonly State: string;
-  readonly Timestamp: Date;
+export interface IamInstanceProfileAssociation {
+  readonly AssociationId?: string;
+  readonly InstanceId?: string;
+  readonly IamInstanceProfile?: IamInstanceProfile;
+  readonly State?: string;
+  readonly Timestamp?: Date;
 }
 
-interface IamInstanceProfileSpecification {
-  readonly Arn: string;
-  readonly Name: string;
+export interface IamInstanceProfileSpecification {
+  readonly Arn?: string;
+  readonly Name?: string;
 }
 
-interface IcmpTypeCode {
-  readonly Code: number;
-  readonly Type: number;
+export interface IcmpTypeCode {
+  readonly Code?: number;
+  readonly Type?: number;
 }
 
-interface IdFormat {
-  readonly Deadline: Date;
-  readonly Resource: string;
-  readonly UseLongIds: boolean;
+export interface IdFormat {
+  readonly Deadline?: Date;
+  readonly Resource?: string;
+  readonly UseLongIds?: boolean;
 }
 
-interface Image {
-  readonly Architecture: string;
-  readonly CreationDate: string;
-  readonly ImageId: string;
-  readonly ImageLocation: string;
-  readonly ImageType: string;
-  readonly Public: boolean;
-  readonly KernelId: string;
-  readonly OwnerId: string;
-  readonly Platform: string;
-  readonly PlatformDetails: string;
-  readonly UsageOperation: string;
-  readonly ProductCodes: [];
-  readonly RamdiskId: string;
-  readonly State: string;
-  readonly BlockDeviceMappings: [];
-  readonly Description: string;
-  readonly EnaSupport: boolean;
-  readonly Hypervisor: string;
-  readonly ImageOwnerAlias: string;
-  readonly Name: string;
-  readonly RootDeviceName: string;
-  readonly RootDeviceType: string;
-  readonly SriovNetSupport: string;
-  readonly StateReason: StateReason;
-  readonly Tags: [];
-  readonly VirtualizationType: string;
-  readonly BootMode: string;
-  readonly DeprecationTime: string;
+export interface Image {
+  readonly Architecture?: string;
+  readonly CreationDate?: string;
+  readonly ImageId?: string;
+  readonly ImageLocation?: string;
+  readonly ImageType?: string;
+  readonly Public?: boolean;
+  readonly KernelId?: string;
+  readonly OwnerId?: string;
+  readonly Platform?: string;
+  readonly PlatformDetails?: string;
+  readonly UsageOperation?: string;
+  readonly ProductCodes?: [];
+  readonly RamdiskId?: string;
+  readonly State?: string;
+  readonly BlockDeviceMappings?: [];
+  readonly Description?: string;
+  readonly EnaSupport?: boolean;
+  readonly Hypervisor?: string;
+  readonly ImageOwnerAlias?: string;
+  readonly Name?: string;
+  readonly RootDeviceName?: string;
+  readonly RootDeviceType?: string;
+  readonly SriovNetSupport?: string;
+  readonly StateReason?: StateReason;
+  readonly Tags?: [];
+  readonly VirtualizationType?: string;
+  readonly BootMode?: string;
+  readonly DeprecationTime?: string;
 }
 
-interface ImageAttribute {
-  readonly BlockDeviceMappings: [];
-  readonly ImageId: string;
-  readonly LaunchPermissions: [];
-  readonly ProductCodes: [];
-  readonly Description: AttributeValue;
-  readonly KernelId: AttributeValue;
-  readonly RamdiskId: AttributeValue;
-  readonly SriovNetSupport: AttributeValue;
-  readonly BootMode: AttributeValue;
+export interface ImageAttribute {
+  readonly BlockDeviceMappings?: [];
+  readonly ImageId?: string;
+  readonly LaunchPermissions?: [];
+  readonly ProductCodes?: [];
+  readonly Description?: AttributeValue;
+  readonly KernelId?: AttributeValue;
+  readonly RamdiskId?: AttributeValue;
+  readonly SriovNetSupport?: AttributeValue;
+  readonly BootMode?: AttributeValue;
 }
 
-interface ImageDiskContainer {
-  readonly Description: string;
-  readonly DeviceName: string;
-  readonly Format: string;
-  readonly SnapshotId: string;
-  readonly Url: string;
-  readonly UserBucket: UserBucket;
+export interface ImageDiskContainer {
+  readonly Description?: string;
+  readonly DeviceName?: string;
+  readonly Format?: string;
+  readonly SnapshotId?: string;
+  readonly Url?: string;
+  readonly UserBucket?: UserBucket;
 }
 
-interface ImportClientVpnClientCertificateRevocationListRequest {
+export interface ImportClientVpnClientCertificateRevocationListRequest {
   readonly ClientVpnEndpointId: string;
   readonly CertificateRevocationList: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ImportClientVpnClientCertificateRevocationListResult {
-  readonly Return: boolean;
+export interface ImportClientVpnClientCertificateRevocationListResult {
+  readonly Return?: boolean;
 }
 
-interface ImportImageLicenseConfigurationRequest {
-  readonly LicenseConfigurationArn: string;
+export interface ImportImageLicenseConfigurationRequest {
+  readonly LicenseConfigurationArn?: string;
 }
 
-interface ImportImageLicenseConfigurationResponse {
-  readonly LicenseConfigurationArn: string;
+export interface ImportImageLicenseConfigurationResponse {
+  readonly LicenseConfigurationArn?: string;
 }
 
-interface ImportImageRequest {
-  readonly Architecture: string;
-  readonly ClientData: ClientData;
-  readonly ClientToken: string;
-  readonly Description: string;
-  readonly DiskContainers: [];
-  readonly DryRun: boolean;
-  readonly Encrypted: boolean;
-  readonly Hypervisor: string;
-  readonly KmsKeyId: string;
-  readonly LicenseType: string;
+export interface ImportImageRequest {
+  readonly Architecture?: string;
+  readonly ClientData?: ClientData;
+  readonly ClientToken?: string;
+  readonly Description?: string;
+  readonly DiskContainers?: [];
+  readonly DryRun?: boolean;
+  readonly Encrypted?: boolean;
+  readonly Hypervisor?: string;
+  readonly KmsKeyId?: string;
+  readonly LicenseType?: string;
+  readonly Platform?: string;
+  readonly RoleName?: string;
+  readonly LicenseSpecifications?: [];
+  readonly TagSpecifications?: [];
+  readonly UsageOperation?: string;
+  readonly BootMode?: string;
+}
+
+export interface ImportImageResult {
+  readonly Architecture?: string;
+  readonly Description?: string;
+  readonly Encrypted?: boolean;
+  readonly Hypervisor?: string;
+  readonly ImageId?: string;
+  readonly ImportTaskId?: string;
+  readonly KmsKeyId?: string;
+  readonly LicenseType?: string;
+  readonly Platform?: string;
+  readonly Progress?: string;
+  readonly SnapshotDetails?: [];
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly LicenseSpecifications?: [];
+  readonly Tags?: [];
+  readonly UsageOperation?: string;
+}
+
+export interface ImportImageTask {
+  readonly Architecture?: string;
+  readonly Description?: string;
+  readonly Encrypted?: boolean;
+  readonly Hypervisor?: string;
+  readonly ImageId?: string;
+  readonly ImportTaskId?: string;
+  readonly KmsKeyId?: string;
+  readonly LicenseType?: string;
+  readonly Platform?: string;
+  readonly Progress?: string;
+  readonly SnapshotDetails?: [];
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly Tags?: [];
+  readonly LicenseSpecifications?: [];
+  readonly UsageOperation?: string;
+  readonly BootMode?: string;
+}
+
+export interface ImportInstanceLaunchSpecification {
+  readonly AdditionalInfo?: string;
+  readonly Architecture?: string;
+  readonly GroupIds?: [];
+  readonly GroupNames?: [];
+  readonly InstanceInitiatedShutdownBehavior?: string;
+  readonly InstanceType?: string;
+  readonly Monitoring?: boolean;
+  readonly Placement?: Placement;
+  readonly PrivateIpAddress?: string;
+  readonly SubnetId?: string;
+  readonly UserData?: UserData;
+}
+
+export interface ImportInstanceRequest {
+  readonly Description?: string;
+  readonly DiskImages?: [];
+  readonly DryRun?: boolean;
+  readonly LaunchSpecification?: ImportInstanceLaunchSpecification;
   readonly Platform: string;
-  readonly RoleName: string;
-  readonly LicenseSpecifications: [];
-  readonly TagSpecifications: [];
-  readonly UsageOperation: string;
-  readonly BootMode: string;
 }
 
-interface ImportImageResult {
-  readonly Architecture: string;
-  readonly Description: string;
-  readonly Encrypted: boolean;
-  readonly Hypervisor: string;
-  readonly ImageId: string;
-  readonly ImportTaskId: string;
-  readonly KmsKeyId: string;
-  readonly LicenseType: string;
-  readonly Platform: string;
-  readonly Progress: string;
-  readonly SnapshotDetails: [];
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly LicenseSpecifications: [];
-  readonly Tags: [];
-  readonly UsageOperation: string;
+export interface ImportInstanceResult {
+  readonly ConversionTask?: ConversionTask;
 }
 
-interface ImportImageTask {
-  readonly Architecture: string;
-  readonly Description: string;
-  readonly Encrypted: boolean;
-  readonly Hypervisor: string;
-  readonly ImageId: string;
-  readonly ImportTaskId: string;
-  readonly KmsKeyId: string;
-  readonly LicenseType: string;
-  readonly Platform: string;
-  readonly Progress: string;
-  readonly SnapshotDetails: [];
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly Tags: [];
-  readonly LicenseSpecifications: [];
-  readonly UsageOperation: string;
-  readonly BootMode: string;
+export interface ImportInstanceTaskDetails {
+  readonly Description?: string;
+  readonly InstanceId?: string;
+  readonly Platform?: string;
+  readonly Volumes?: [];
 }
 
-interface ImportInstanceLaunchSpecification {
-  readonly AdditionalInfo: string;
-  readonly Architecture: string;
-  readonly GroupIds: [];
-  readonly GroupNames: [];
-  readonly InstanceInitiatedShutdownBehavior: string;
-  readonly InstanceType: string;
-  readonly Monitoring: boolean;
-  readonly Placement: Placement;
-  readonly PrivateIpAddress: string;
-  readonly SubnetId: string;
-  readonly UserData: UserData;
+export interface ImportInstanceVolumeDetailItem {
+  readonly AvailabilityZone?: string;
+  readonly BytesConverted?: number;
+  readonly Description?: string;
+  readonly Image?: DiskImageDescription;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly Volume?: DiskImageVolumeDescription;
 }
 
-interface ImportInstanceRequest {
-  readonly Description: string;
-  readonly DiskImages: [];
-  readonly DryRun: boolean;
-  readonly LaunchSpecification: ImportInstanceLaunchSpecification;
-  readonly Platform: string;
-}
-
-interface ImportInstanceResult {
-  readonly ConversionTask: ConversionTask;
-}
-
-interface ImportInstanceTaskDetails {
-  readonly Description: string;
-  readonly InstanceId: string;
-  readonly Platform: string;
-  readonly Volumes: [];
-}
-
-interface ImportInstanceVolumeDetailItem {
-  readonly AvailabilityZone: string;
-  readonly BytesConverted: number;
-  readonly Description: string;
-  readonly Image: DiskImageDescription;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly Volume: DiskImageVolumeDescription;
-}
-
-interface ImportKeyPairRequest {
-  readonly DryRun: boolean;
+export interface ImportKeyPairRequest {
+  readonly DryRun?: boolean;
   readonly KeyName: string;
   readonly PublicKeyMaterial: unknown;
-  readonly TagSpecifications: [];
+  readonly TagSpecifications?: [];
 }
 
-interface ImportKeyPairResult {
-  readonly KeyFingerprint: string;
-  readonly KeyName: string;
-  readonly KeyPairId: string;
-  readonly Tags: [];
+export interface ImportKeyPairResult {
+  readonly KeyFingerprint?: string;
+  readonly KeyName?: string;
+  readonly KeyPairId?: string;
+  readonly Tags?: [];
 }
 
-interface ImportSnapshotRequest {
-  readonly ClientData: ClientData;
-  readonly ClientToken: string;
-  readonly Description: string;
-  readonly DiskContainer: SnapshotDiskContainer;
-  readonly DryRun: boolean;
-  readonly Encrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly RoleName: string;
-  readonly TagSpecifications: [];
+export interface ImportSnapshotRequest {
+  readonly ClientData?: ClientData;
+  readonly ClientToken?: string;
+  readonly Description?: string;
+  readonly DiskContainer?: SnapshotDiskContainer;
+  readonly DryRun?: boolean;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly RoleName?: string;
+  readonly TagSpecifications?: [];
 }
 
-interface ImportSnapshotResult {
-  readonly Description: string;
-  readonly ImportTaskId: string;
-  readonly SnapshotTaskDetail: SnapshotTaskDetail;
-  readonly Tags: [];
+export interface ImportSnapshotResult {
+  readonly Description?: string;
+  readonly ImportTaskId?: string;
+  readonly SnapshotTaskDetail?: SnapshotTaskDetail;
+  readonly Tags?: [];
 }
 
-interface ImportSnapshotTask {
-  readonly Description: string;
-  readonly ImportTaskId: string;
-  readonly SnapshotTaskDetail: SnapshotTaskDetail;
-  readonly Tags: [];
+export interface ImportSnapshotTask {
+  readonly Description?: string;
+  readonly ImportTaskId?: string;
+  readonly SnapshotTaskDetail?: SnapshotTaskDetail;
+  readonly Tags?: [];
 }
 
-interface ImportVolumeRequest {
+export interface ImportVolumeRequest {
   readonly AvailabilityZone: string;
-  readonly Description: string;
-  readonly DryRun: boolean;
+  readonly Description?: string;
+  readonly DryRun?: boolean;
   readonly Image: DiskImageDetail;
   readonly Volume: VolumeDetail;
 }
 
-interface ImportVolumeResult {
-  readonly ConversionTask: ConversionTask;
+export interface ImportVolumeResult {
+  readonly ConversionTask?: ConversionTask;
 }
 
-interface ImportVolumeTaskDetails {
-  readonly AvailabilityZone: string;
-  readonly BytesConverted: number;
-  readonly Description: string;
-  readonly Image: DiskImageDescription;
-  readonly Volume: DiskImageVolumeDescription;
+export interface ImportVolumeTaskDetails {
+  readonly AvailabilityZone?: string;
+  readonly BytesConverted?: number;
+  readonly Description?: string;
+  readonly Image?: DiskImageDescription;
+  readonly Volume?: DiskImageVolumeDescription;
 }
 
-interface InferenceAcceleratorInfo {
-  readonly Accelerators: [];
+export interface InferenceAcceleratorInfo {
+  readonly Accelerators?: [];
 }
 
-interface InferenceDeviceInfo {
-  readonly Count: number;
-  readonly Name: string;
-  readonly Manufacturer: string;
+export interface InferenceDeviceInfo {
+  readonly Count?: number;
+  readonly Name?: string;
+  readonly Manufacturer?: string;
 }
 
-interface Instance {
-  readonly AmiLaunchIndex: number;
-  readonly ImageId: string;
-  readonly InstanceId: string;
-  readonly InstanceType: string;
-  readonly KernelId: string;
-  readonly KeyName: string;
-  readonly LaunchTime: Date;
-  readonly Monitoring: Monitoring;
-  readonly Placement: Placement;
-  readonly Platform: string;
-  readonly PrivateDnsName: string;
-  readonly PrivateIpAddress: string;
-  readonly ProductCodes: [];
-  readonly PublicDnsName: string;
-  readonly PublicIpAddress: string;
-  readonly RamdiskId: string;
-  readonly State: InstanceState;
-  readonly StateTransitionReason: string;
-  readonly SubnetId: string;
-  readonly VpcId: string;
-  readonly Architecture: string;
-  readonly BlockDeviceMappings: [];
-  readonly ClientToken: string;
-  readonly EbsOptimized: boolean;
-  readonly EnaSupport: boolean;
-  readonly Hypervisor: string;
-  readonly IamInstanceProfile: IamInstanceProfile;
-  readonly InstanceLifecycle: string;
-  readonly ElasticGpuAssociations: [];
-  readonly ElasticInferenceAcceleratorAssociations: [];
-  readonly NetworkInterfaces: [];
-  readonly OutpostArn: string;
-  readonly RootDeviceName: string;
-  readonly RootDeviceType: string;
-  readonly SecurityGroups: [];
-  readonly SourceDestCheck: boolean;
-  readonly SpotInstanceRequestId: string;
-  readonly SriovNetSupport: string;
-  readonly StateReason: StateReason;
-  readonly Tags: [];
-  readonly VirtualizationType: string;
-  readonly CpuOptions: CpuOptions;
-  readonly CapacityReservationId: string;
-  readonly CapacityReservationSpecification: CapacityReservationSpecificationResponse;
-  readonly HibernationOptions: HibernationOptions;
-  readonly Licenses: [];
-  readonly MetadataOptions: InstanceMetadataOptionsResponse;
-  readonly EnclaveOptions: EnclaveOptions;
-  readonly BootMode: string;
-  readonly PlatformDetails: string;
-  readonly UsageOperation: string;
-  readonly UsageOperationUpdateTime: Date;
-  readonly PrivateDnsNameOptions: PrivateDnsNameOptionsResponse;
-  readonly Ipv6Address: string;
+export interface Instance {
+  readonly AmiLaunchIndex?: number;
+  readonly ImageId?: string;
+  readonly InstanceId?: string;
+  readonly InstanceType?: string;
+  readonly KernelId?: string;
+  readonly KeyName?: string;
+  readonly LaunchTime?: Date;
+  readonly Monitoring?: Monitoring;
+  readonly Placement?: Placement;
+  readonly Platform?: string;
+  readonly PrivateDnsName?: string;
+  readonly PrivateIpAddress?: string;
+  readonly ProductCodes?: [];
+  readonly PublicDnsName?: string;
+  readonly PublicIpAddress?: string;
+  readonly RamdiskId?: string;
+  readonly State?: InstanceState;
+  readonly StateTransitionReason?: string;
+  readonly SubnetId?: string;
+  readonly VpcId?: string;
+  readonly Architecture?: string;
+  readonly BlockDeviceMappings?: [];
+  readonly ClientToken?: string;
+  readonly EbsOptimized?: boolean;
+  readonly EnaSupport?: boolean;
+  readonly Hypervisor?: string;
+  readonly IamInstanceProfile?: IamInstanceProfile;
+  readonly InstanceLifecycle?: string;
+  readonly ElasticGpuAssociations?: [];
+  readonly ElasticInferenceAcceleratorAssociations?: [];
+  readonly NetworkInterfaces?: [];
+  readonly OutpostArn?: string;
+  readonly RootDeviceName?: string;
+  readonly RootDeviceType?: string;
+  readonly SecurityGroups?: [];
+  readonly SourceDestCheck?: boolean;
+  readonly SpotInstanceRequestId?: string;
+  readonly SriovNetSupport?: string;
+  readonly StateReason?: StateReason;
+  readonly Tags?: [];
+  readonly VirtualizationType?: string;
+  readonly CpuOptions?: CpuOptions;
+  readonly CapacityReservationId?: string;
+  readonly CapacityReservationSpecification?: CapacityReservationSpecificationResponse;
+  readonly HibernationOptions?: HibernationOptions;
+  readonly Licenses?: [];
+  readonly MetadataOptions?: InstanceMetadataOptionsResponse;
+  readonly EnclaveOptions?: EnclaveOptions;
+  readonly BootMode?: string;
+  readonly PlatformDetails?: string;
+  readonly UsageOperation?: string;
+  readonly UsageOperationUpdateTime?: Date;
+  readonly PrivateDnsNameOptions?: PrivateDnsNameOptionsResponse;
+  readonly Ipv6Address?: string;
 }
 
-interface InstanceAttribute {
-  readonly Groups: [];
-  readonly BlockDeviceMappings: [];
-  readonly DisableApiTermination: AttributeBooleanValue;
-  readonly EnaSupport: AttributeBooleanValue;
-  readonly EnclaveOptions: EnclaveOptions;
-  readonly EbsOptimized: AttributeBooleanValue;
-  readonly InstanceId: string;
-  readonly InstanceInitiatedShutdownBehavior: AttributeValue;
-  readonly InstanceType: AttributeValue;
-  readonly KernelId: AttributeValue;
-  readonly ProductCodes: [];
-  readonly RamdiskId: AttributeValue;
-  readonly RootDeviceName: AttributeValue;
-  readonly SourceDestCheck: AttributeBooleanValue;
-  readonly SriovNetSupport: AttributeValue;
-  readonly UserData: AttributeValue;
+export interface InstanceAttribute {
+  readonly Groups?: [];
+  readonly BlockDeviceMappings?: [];
+  readonly DisableApiTermination?: AttributeBooleanValue;
+  readonly EnaSupport?: AttributeBooleanValue;
+  readonly EnclaveOptions?: EnclaveOptions;
+  readonly EbsOptimized?: AttributeBooleanValue;
+  readonly InstanceId?: string;
+  readonly InstanceInitiatedShutdownBehavior?: AttributeValue;
+  readonly InstanceType?: AttributeValue;
+  readonly KernelId?: AttributeValue;
+  readonly ProductCodes?: [];
+  readonly RamdiskId?: AttributeValue;
+  readonly RootDeviceName?: AttributeValue;
+  readonly SourceDestCheck?: AttributeBooleanValue;
+  readonly SriovNetSupport?: AttributeValue;
+  readonly UserData?: AttributeValue;
 }
 
-interface InstanceBlockDeviceMapping {
-  readonly DeviceName: string;
-  readonly Ebs: EbsInstanceBlockDevice;
+export interface InstanceBlockDeviceMapping {
+  readonly DeviceName?: string;
+  readonly Ebs?: EbsInstanceBlockDevice;
 }
 
-interface InstanceBlockDeviceMappingSpecification {
-  readonly DeviceName: string;
-  readonly Ebs: EbsInstanceBlockDeviceSpecification;
-  readonly NoDevice: string;
-  readonly VirtualName: string;
+export interface InstanceBlockDeviceMappingSpecification {
+  readonly DeviceName?: string;
+  readonly Ebs?: EbsInstanceBlockDeviceSpecification;
+  readonly NoDevice?: string;
+  readonly VirtualName?: string;
 }
 
-interface InstanceCapacity {
-  readonly AvailableCapacity: number;
-  readonly InstanceType: string;
-  readonly TotalCapacity: number;
+export interface InstanceCapacity {
+  readonly AvailableCapacity?: number;
+  readonly InstanceType?: string;
+  readonly TotalCapacity?: number;
 }
 
-interface InstanceCount {
-  readonly InstanceCount: number;
-  readonly State: string;
+export interface InstanceCount {
+  readonly InstanceCount?: number;
+  readonly State?: string;
 }
 
-interface InstanceCreditSpecification {
-  readonly InstanceId: string;
-  readonly CpuCredits: string;
+export interface InstanceCreditSpecification {
+  readonly InstanceId?: string;
+  readonly CpuCredits?: string;
 }
 
-interface InstanceCreditSpecificationRequest {
-  readonly InstanceId: string;
-  readonly CpuCredits: string;
+export interface InstanceCreditSpecificationRequest {
+  readonly InstanceId?: string;
+  readonly CpuCredits?: string;
 }
 
-interface InstanceEventWindow {
-  readonly InstanceEventWindowId: string;
-  readonly TimeRanges: [];
-  readonly Name: string;
-  readonly CronExpression: string;
-  readonly AssociationTarget: InstanceEventWindowAssociationTarget;
-  readonly State: string;
-  readonly Tags: [];
+export interface InstanceEventWindow {
+  readonly InstanceEventWindowId?: string;
+  readonly TimeRanges?: [];
+  readonly Name?: string;
+  readonly CronExpression?: string;
+  readonly AssociationTarget?: InstanceEventWindowAssociationTarget;
+  readonly State?: string;
+  readonly Tags?: [];
 }
 
-interface InstanceEventWindowAssociationRequest {
-  readonly InstanceIds: [];
-  readonly InstanceTags: [];
-  readonly DedicatedHostIds: [];
+export interface InstanceEventWindowAssociationRequest {
+  readonly InstanceIds?: [];
+  readonly InstanceTags?: [];
+  readonly DedicatedHostIds?: [];
 }
 
-interface InstanceEventWindowAssociationTarget {
-  readonly InstanceIds: [];
-  readonly Tags: [];
-  readonly DedicatedHostIds: [];
+export interface InstanceEventWindowAssociationTarget {
+  readonly InstanceIds?: [];
+  readonly Tags?: [];
+  readonly DedicatedHostIds?: [];
 }
 
-interface InstanceEventWindowDisassociationRequest {
-  readonly InstanceIds: [];
-  readonly InstanceTags: [];
-  readonly DedicatedHostIds: [];
+export interface InstanceEventWindowDisassociationRequest {
+  readonly InstanceIds?: [];
+  readonly InstanceTags?: [];
+  readonly DedicatedHostIds?: [];
 }
 
-interface InstanceEventWindowStateChange {
-  readonly InstanceEventWindowId: string;
-  readonly State: string;
+export interface InstanceEventWindowStateChange {
+  readonly InstanceEventWindowId?: string;
+  readonly State?: string;
 }
 
-interface InstanceEventWindowTimeRange {
-  readonly StartWeekDay: string;
-  readonly StartHour: number;
-  readonly EndWeekDay: string;
-  readonly EndHour: number;
+export interface InstanceEventWindowTimeRange {
+  readonly StartWeekDay?: string;
+  readonly StartHour?: number;
+  readonly EndWeekDay?: string;
+  readonly EndHour?: number;
 }
 
-interface InstanceEventWindowTimeRangeRequest {
-  readonly StartWeekDay: string;
-  readonly StartHour: number;
-  readonly EndWeekDay: string;
-  readonly EndHour: number;
+export interface InstanceEventWindowTimeRangeRequest {
+  readonly StartWeekDay?: string;
+  readonly StartHour?: number;
+  readonly EndWeekDay?: string;
+  readonly EndHour?: number;
 }
 
-interface InstanceExportDetails {
-  readonly InstanceId: string;
-  readonly TargetEnvironment: string;
+export interface InstanceExportDetails {
+  readonly InstanceId?: string;
+  readonly TargetEnvironment?: string;
 }
 
-interface InstanceFamilyCreditSpecification {
-  readonly InstanceFamily: string;
-  readonly CpuCredits: string;
+export interface InstanceFamilyCreditSpecification {
+  readonly InstanceFamily?: string;
+  readonly CpuCredits?: string;
 }
 
-interface InstanceIpv4Prefix {
-  readonly Ipv4Prefix: string;
+export interface InstanceIpv4Prefix {
+  readonly Ipv4Prefix?: string;
 }
 
-interface InstanceIpv6Address {
-  readonly Ipv6Address: string;
+export interface InstanceIpv6Address {
+  readonly Ipv6Address?: string;
 }
 
-interface InstanceIpv6AddressRequest {
-  readonly Ipv6Address: string;
+export interface InstanceIpv6AddressRequest {
+  readonly Ipv6Address?: string;
 }
 
-interface InstanceIpv6Prefix {
-  readonly Ipv6Prefix: string;
+export interface InstanceIpv6Prefix {
+  readonly Ipv6Prefix?: string;
 }
 
-interface InstanceMarketOptionsRequest {
-  readonly MarketType: string;
-  readonly SpotOptions: SpotMarketOptions;
+export interface InstanceMarketOptionsRequest {
+  readonly MarketType?: string;
+  readonly SpotOptions?: SpotMarketOptions;
 }
 
-interface InstanceMetadataOptionsRequest {
-  readonly HttpTokens: string;
-  readonly HttpPutResponseHopLimit: number;
-  readonly HttpEndpoint: string;
-  readonly HttpProtocolIpv6: string;
+export interface InstanceMetadataOptionsRequest {
+  readonly HttpTokens?: string;
+  readonly HttpPutResponseHopLimit?: number;
+  readonly HttpEndpoint?: string;
+  readonly HttpProtocolIpv6?: string;
 }
 
-interface InstanceMetadataOptionsResponse {
-  readonly State: string;
-  readonly HttpTokens: string;
-  readonly HttpPutResponseHopLimit: number;
-  readonly HttpEndpoint: string;
-  readonly HttpProtocolIpv6: string;
+export interface InstanceMetadataOptionsResponse {
+  readonly State?: string;
+  readonly HttpTokens?: string;
+  readonly HttpPutResponseHopLimit?: number;
+  readonly HttpEndpoint?: string;
+  readonly HttpProtocolIpv6?: string;
 }
 
-interface InstanceMonitoring {
-  readonly InstanceId: string;
-  readonly Monitoring: Monitoring;
+export interface InstanceMonitoring {
+  readonly InstanceId?: string;
+  readonly Monitoring?: Monitoring;
 }
 
-interface InstanceNetworkInterface {
-  readonly Association: InstanceNetworkInterfaceAssociation;
-  readonly Attachment: InstanceNetworkInterfaceAttachment;
-  readonly Description: string;
-  readonly Groups: [];
-  readonly Ipv6Addresses: [];
-  readonly MacAddress: string;
-  readonly NetworkInterfaceId: string;
-  readonly OwnerId: string;
-  readonly PrivateDnsName: string;
-  readonly PrivateIpAddress: string;
-  readonly PrivateIpAddresses: [];
-  readonly SourceDestCheck: boolean;
-  readonly Status: string;
-  readonly SubnetId: string;
-  readonly VpcId: string;
-  readonly InterfaceType: string;
-  readonly Ipv4Prefixes: [];
-  readonly Ipv6Prefixes: [];
+export interface InstanceNetworkInterface {
+  readonly Association?: InstanceNetworkInterfaceAssociation;
+  readonly Attachment?: InstanceNetworkInterfaceAttachment;
+  readonly Description?: string;
+  readonly Groups?: [];
+  readonly Ipv6Addresses?: [];
+  readonly MacAddress?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly OwnerId?: string;
+  readonly PrivateDnsName?: string;
+  readonly PrivateIpAddress?: string;
+  readonly PrivateIpAddresses?: [];
+  readonly SourceDestCheck?: boolean;
+  readonly Status?: string;
+  readonly SubnetId?: string;
+  readonly VpcId?: string;
+  readonly InterfaceType?: string;
+  readonly Ipv4Prefixes?: [];
+  readonly Ipv6Prefixes?: [];
 }
 
-interface InstanceNetworkInterfaceAssociation {
-  readonly CarrierIp: string;
-  readonly CustomerOwnedIp: string;
-  readonly IpOwnerId: string;
-  readonly PublicDnsName: string;
-  readonly PublicIp: string;
+export interface InstanceNetworkInterfaceAssociation {
+  readonly CarrierIp?: string;
+  readonly CustomerOwnedIp?: string;
+  readonly IpOwnerId?: string;
+  readonly PublicDnsName?: string;
+  readonly PublicIp?: string;
 }
 
-interface InstanceNetworkInterfaceAttachment {
-  readonly AttachTime: Date;
-  readonly AttachmentId: string;
-  readonly DeleteOnTermination: boolean;
-  readonly DeviceIndex: number;
-  readonly Status: string;
-  readonly NetworkCardIndex: number;
+export interface InstanceNetworkInterfaceAttachment {
+  readonly AttachTime?: Date;
+  readonly AttachmentId?: string;
+  readonly DeleteOnTermination?: boolean;
+  readonly DeviceIndex?: number;
+  readonly Status?: string;
+  readonly NetworkCardIndex?: number;
 }
 
-interface InstanceNetworkInterfaceSpecification {
-  readonly AssociatePublicIpAddress: boolean;
-  readonly DeleteOnTermination: boolean;
-  readonly Description: string;
-  readonly DeviceIndex: number;
-  readonly Groups: [];
-  readonly Ipv6AddressCount: number;
-  readonly Ipv6Addresses: [];
-  readonly NetworkInterfaceId: string;
-  readonly PrivateIpAddress: string;
-  readonly PrivateIpAddresses: [];
-  readonly SecondaryPrivateIpAddressCount: number;
-  readonly SubnetId: string;
-  readonly AssociateCarrierIpAddress: boolean;
-  readonly InterfaceType: string;
-  readonly NetworkCardIndex: number;
-  readonly Ipv4Prefixes: [];
-  readonly Ipv4PrefixCount: number;
-  readonly Ipv6Prefixes: [];
-  readonly Ipv6PrefixCount: number;
+export interface InstanceNetworkInterfaceSpecification {
+  readonly AssociatePublicIpAddress?: boolean;
+  readonly DeleteOnTermination?: boolean;
+  readonly Description?: string;
+  readonly DeviceIndex?: number;
+  readonly Groups?: [];
+  readonly Ipv6AddressCount?: number;
+  readonly Ipv6Addresses?: [];
+  readonly NetworkInterfaceId?: string;
+  readonly PrivateIpAddress?: string;
+  readonly PrivateIpAddresses?: [];
+  readonly SecondaryPrivateIpAddressCount?: number;
+  readonly SubnetId?: string;
+  readonly AssociateCarrierIpAddress?: boolean;
+  readonly InterfaceType?: string;
+  readonly NetworkCardIndex?: number;
+  readonly Ipv4Prefixes?: [];
+  readonly Ipv4PrefixCount?: number;
+  readonly Ipv6Prefixes?: [];
+  readonly Ipv6PrefixCount?: number;
 }
 
-interface InstancePrivateIpAddress {
-  readonly Association: InstanceNetworkInterfaceAssociation;
-  readonly Primary: boolean;
-  readonly PrivateDnsName: string;
-  readonly PrivateIpAddress: string;
+export interface InstancePrivateIpAddress {
+  readonly Association?: InstanceNetworkInterfaceAssociation;
+  readonly Primary?: boolean;
+  readonly PrivateDnsName?: string;
+  readonly PrivateIpAddress?: string;
 }
 
-interface InstanceRequirements {
-  readonly VCpuCount: VCpuCountRange;
-  readonly MemoryMiB: MemoryMiB;
-  readonly CpuManufacturers: [];
-  readonly MemoryGiBPerVCpu: MemoryGiBPerVCpu;
-  readonly ExcludedInstanceTypes: [];
-  readonly InstanceGenerations: [];
-  readonly SpotMaxPricePercentageOverLowestPrice: number;
-  readonly OnDemandMaxPricePercentageOverLowestPrice: number;
-  readonly BareMetal: string;
-  readonly BurstablePerformance: string;
-  readonly RequireHibernateSupport: boolean;
-  readonly NetworkInterfaceCount: NetworkInterfaceCount;
-  readonly LocalStorage: string;
-  readonly LocalStorageTypes: [];
-  readonly TotalLocalStorageGB: TotalLocalStorageGB;
-  readonly BaselineEbsBandwidthMbps: BaselineEbsBandwidthMbps;
-  readonly AcceleratorTypes: [];
-  readonly AcceleratorCount: AcceleratorCount;
-  readonly AcceleratorManufacturers: [];
-  readonly AcceleratorNames: [];
-  readonly AcceleratorTotalMemoryMiB: AcceleratorTotalMemoryMiB;
+export interface InstanceRequirements {
+  readonly VCpuCount?: VCpuCountRange;
+  readonly MemoryMiB?: MemoryMiB;
+  readonly CpuManufacturers?: [];
+  readonly MemoryGiBPerVCpu?: MemoryGiBPerVCpu;
+  readonly ExcludedInstanceTypes?: [];
+  readonly InstanceGenerations?: [];
+  readonly SpotMaxPricePercentageOverLowestPrice?: number;
+  readonly OnDemandMaxPricePercentageOverLowestPrice?: number;
+  readonly BareMetal?: string;
+  readonly BurstablePerformance?: string;
+  readonly RequireHibernateSupport?: boolean;
+  readonly NetworkInterfaceCount?: NetworkInterfaceCount;
+  readonly LocalStorage?: string;
+  readonly LocalStorageTypes?: [];
+  readonly TotalLocalStorageGB?: TotalLocalStorageGB;
+  readonly BaselineEbsBandwidthMbps?: BaselineEbsBandwidthMbps;
+  readonly AcceleratorTypes?: [];
+  readonly AcceleratorCount?: AcceleratorCount;
+  readonly AcceleratorManufacturers?: [];
+  readonly AcceleratorNames?: [];
+  readonly AcceleratorTotalMemoryMiB?: AcceleratorTotalMemoryMiB;
 }
 
-interface InstanceRequirementsRequest {
+export interface InstanceRequirementsRequest {
   readonly VCpuCount: VCpuCountRangeRequest;
   readonly MemoryMiB: MemoryMiBRequest;
-  readonly CpuManufacturers: [];
-  readonly MemoryGiBPerVCpu: MemoryGiBPerVCpuRequest;
-  readonly ExcludedInstanceTypes: [];
-  readonly InstanceGenerations: [];
-  readonly SpotMaxPricePercentageOverLowestPrice: number;
-  readonly OnDemandMaxPricePercentageOverLowestPrice: number;
-  readonly BareMetal: string;
-  readonly BurstablePerformance: string;
-  readonly RequireHibernateSupport: boolean;
-  readonly NetworkInterfaceCount: NetworkInterfaceCountRequest;
-  readonly LocalStorage: string;
-  readonly LocalStorageTypes: [];
-  readonly TotalLocalStorageGB: TotalLocalStorageGBRequest;
-  readonly BaselineEbsBandwidthMbps: BaselineEbsBandwidthMbpsRequest;
-  readonly AcceleratorTypes: [];
-  readonly AcceleratorCount: AcceleratorCountRequest;
-  readonly AcceleratorManufacturers: [];
-  readonly AcceleratorNames: [];
-  readonly AcceleratorTotalMemoryMiB: AcceleratorTotalMemoryMiBRequest;
+  readonly CpuManufacturers?: [];
+  readonly MemoryGiBPerVCpu?: MemoryGiBPerVCpuRequest;
+  readonly ExcludedInstanceTypes?: [];
+  readonly InstanceGenerations?: [];
+  readonly SpotMaxPricePercentageOverLowestPrice?: number;
+  readonly OnDemandMaxPricePercentageOverLowestPrice?: number;
+  readonly BareMetal?: string;
+  readonly BurstablePerformance?: string;
+  readonly RequireHibernateSupport?: boolean;
+  readonly NetworkInterfaceCount?: NetworkInterfaceCountRequest;
+  readonly LocalStorage?: string;
+  readonly LocalStorageTypes?: [];
+  readonly TotalLocalStorageGB?: TotalLocalStorageGBRequest;
+  readonly BaselineEbsBandwidthMbps?: BaselineEbsBandwidthMbpsRequest;
+  readonly AcceleratorTypes?: [];
+  readonly AcceleratorCount?: AcceleratorCountRequest;
+  readonly AcceleratorManufacturers?: [];
+  readonly AcceleratorNames?: [];
+  readonly AcceleratorTotalMemoryMiB?: AcceleratorTotalMemoryMiBRequest;
 }
 
-interface InstanceRequirementsWithMetadataRequest {
-  readonly ArchitectureTypes: [];
-  readonly VirtualizationTypes: [];
-  readonly InstanceRequirements: InstanceRequirementsRequest;
+export interface InstanceRequirementsWithMetadataRequest {
+  readonly ArchitectureTypes?: [];
+  readonly VirtualizationTypes?: [];
+  readonly InstanceRequirements?: InstanceRequirementsRequest;
 }
 
-interface InstanceSpecification {
-  readonly InstanceId: string;
-  readonly ExcludeBootVolume: boolean;
+export interface InstanceSpecification {
+  readonly InstanceId?: string;
+  readonly ExcludeBootVolume?: boolean;
 }
 
-interface InstanceState {
-  readonly Code: number;
-  readonly Name: string;
+export interface InstanceState {
+  readonly Code?: number;
+  readonly Name?: string;
 }
 
-interface InstanceStateChange {
-  readonly CurrentState: InstanceState;
-  readonly InstanceId: string;
-  readonly PreviousState: InstanceState;
+export interface InstanceStateChange {
+  readonly CurrentState?: InstanceState;
+  readonly InstanceId?: string;
+  readonly PreviousState?: InstanceState;
 }
 
-interface InstanceStatus {
-  readonly AvailabilityZone: string;
-  readonly OutpostArn: string;
-  readonly Events: [];
-  readonly InstanceId: string;
-  readonly InstanceState: InstanceState;
-  readonly InstanceStatus: InstanceStatusSummary;
-  readonly SystemStatus: InstanceStatusSummary;
+export interface InstanceStatus {
+  readonly AvailabilityZone?: string;
+  readonly OutpostArn?: string;
+  readonly Events?: [];
+  readonly InstanceId?: string;
+  readonly InstanceState?: InstanceState;
+  readonly InstanceStatus?: InstanceStatusSummary;
+  readonly SystemStatus?: InstanceStatusSummary;
 }
 
-interface InstanceStatusDetails {
-  readonly ImpairedSince: Date;
-  readonly Name: string;
-  readonly Status: string;
+export interface InstanceStatusDetails {
+  readonly ImpairedSince?: Date;
+  readonly Name?: string;
+  readonly Status?: string;
 }
 
-interface InstanceStatusEvent {
-  readonly InstanceEventId: string;
-  readonly Code: string;
-  readonly Description: string;
-  readonly NotAfter: Date;
-  readonly NotBefore: Date;
-  readonly NotBeforeDeadline: Date;
+export interface InstanceStatusEvent {
+  readonly InstanceEventId?: string;
+  readonly Code?: string;
+  readonly Description?: string;
+  readonly NotAfter?: Date;
+  readonly NotBefore?: Date;
+  readonly NotBeforeDeadline?: Date;
 }
 
-interface InstanceStatusSummary {
-  readonly Details: [];
-  readonly Status: string;
+export interface InstanceStatusSummary {
+  readonly Details?: [];
+  readonly Status?: string;
 }
 
-interface InstanceStorageInfo {
-  readonly TotalSizeInGB: number;
-  readonly Disks: [];
-  readonly NvmeSupport: string;
-  readonly EncryptionSupport: string;
+export interface InstanceStorageInfo {
+  readonly TotalSizeInGB?: number;
+  readonly Disks?: [];
+  readonly NvmeSupport?: string;
+  readonly EncryptionSupport?: string;
 }
 
-interface InstanceTagNotificationAttribute {
-  readonly InstanceTagKeys: [];
-  readonly IncludeAllTagsOfInstance: boolean;
+export interface InstanceTagNotificationAttribute {
+  readonly InstanceTagKeys?: [];
+  readonly IncludeAllTagsOfInstance?: boolean;
 }
 
-interface InstanceTypeInfo {
-  readonly InstanceType: string;
-  readonly CurrentGeneration: boolean;
-  readonly FreeTierEligible: boolean;
-  readonly SupportedUsageClasses: [];
-  readonly SupportedRootDeviceTypes: [];
-  readonly SupportedVirtualizationTypes: [];
-  readonly BareMetal: boolean;
-  readonly Hypervisor: string;
-  readonly ProcessorInfo: ProcessorInfo;
-  readonly VCpuInfo: VCpuInfo;
-  readonly MemoryInfo: MemoryInfo;
-  readonly InstanceStorageSupported: boolean;
-  readonly InstanceStorageInfo: InstanceStorageInfo;
-  readonly EbsInfo: EbsInfo;
-  readonly NetworkInfo: NetworkInfo;
-  readonly GpuInfo: GpuInfo;
-  readonly FpgaInfo: FpgaInfo;
-  readonly PlacementGroupInfo: PlacementGroupInfo;
-  readonly InferenceAcceleratorInfo: InferenceAcceleratorInfo;
-  readonly HibernationSupported: boolean;
-  readonly BurstablePerformanceSupported: boolean;
-  readonly DedicatedHostsSupported: boolean;
-  readonly AutoRecoverySupported: boolean;
-  readonly SupportedBootModes: [];
+export interface InstanceTypeInfo {
+  readonly InstanceType?: string;
+  readonly CurrentGeneration?: boolean;
+  readonly FreeTierEligible?: boolean;
+  readonly SupportedUsageClasses?: [];
+  readonly SupportedRootDeviceTypes?: [];
+  readonly SupportedVirtualizationTypes?: [];
+  readonly BareMetal?: boolean;
+  readonly Hypervisor?: string;
+  readonly ProcessorInfo?: ProcessorInfo;
+  readonly VCpuInfo?: VCpuInfo;
+  readonly MemoryInfo?: MemoryInfo;
+  readonly InstanceStorageSupported?: boolean;
+  readonly InstanceStorageInfo?: InstanceStorageInfo;
+  readonly EbsInfo?: EbsInfo;
+  readonly NetworkInfo?: NetworkInfo;
+  readonly GpuInfo?: GpuInfo;
+  readonly FpgaInfo?: FpgaInfo;
+  readonly PlacementGroupInfo?: PlacementGroupInfo;
+  readonly InferenceAcceleratorInfo?: InferenceAcceleratorInfo;
+  readonly HibernationSupported?: boolean;
+  readonly BurstablePerformanceSupported?: boolean;
+  readonly DedicatedHostsSupported?: boolean;
+  readonly AutoRecoverySupported?: boolean;
+  readonly SupportedBootModes?: [];
 }
 
-interface InstanceTypeInfoFromInstanceRequirements {
-  readonly InstanceType: string;
+export interface InstanceTypeInfoFromInstanceRequirements {
+  readonly InstanceType?: string;
 }
 
-interface InstanceTypeOffering {
-  readonly InstanceType: string;
-  readonly LocationType: string;
-  readonly Location: string;
+export interface InstanceTypeOffering {
+  readonly InstanceType?: string;
+  readonly LocationType?: string;
+  readonly Location?: string;
 }
 
-interface InstanceUsage {
-  readonly AccountId: string;
-  readonly UsedInstanceCount: number;
+export interface InstanceUsage {
+  readonly AccountId?: string;
+  readonly UsedInstanceCount?: number;
 }
 
-interface IntegrateServices {
-  readonly AthenaIntegrations: [];
+export interface IntegrateServices {
+  readonly AthenaIntegrations?: [];
 }
 
-interface InternetGateway {
-  readonly Attachments: [];
-  readonly InternetGatewayId: string;
-  readonly OwnerId: string;
-  readonly Tags: [];
+export interface InternetGateway {
+  readonly Attachments?: [];
+  readonly InternetGatewayId?: string;
+  readonly OwnerId?: string;
+  readonly Tags?: [];
 }
 
-interface InternetGatewayAttachment {
-  readonly State: string;
-  readonly VpcId: string;
+export interface InternetGatewayAttachment {
+  readonly State?: string;
+  readonly VpcId?: string;
 }
 
-interface IpPermission {
-  readonly FromPort: number;
-  readonly IpProtocol: string;
-  readonly IpRanges: [];
-  readonly Ipv6Ranges: [];
-  readonly PrefixListIds: [];
-  readonly ToPort: number;
-  readonly UserIdGroupPairs: [];
+export interface IpPermission {
+  readonly FromPort?: number;
+  readonly IpProtocol?: string;
+  readonly IpRanges?: [];
+  readonly Ipv6Ranges?: [];
+  readonly PrefixListIds?: [];
+  readonly ToPort?: number;
+  readonly UserIdGroupPairs?: [];
 }
 
-interface IpRange {
-  readonly CidrIp: string;
-  readonly Description: string;
+export interface IpRange {
+  readonly CidrIp?: string;
+  readonly Description?: string;
 }
 
-interface Ipam {
-  readonly OwnerId: string;
-  readonly IpamId: string;
-  readonly IpamArn: string;
-  readonly IpamRegion: string;
-  readonly PublicDefaultScopeId: string;
-  readonly PrivateDefaultScopeId: string;
-  readonly ScopeCount: number;
-  readonly Description: string;
-  readonly OperatingRegions: [];
-  readonly State: string;
-  readonly Tags: [];
+export interface Ipam {
+  readonly OwnerId?: string;
+  readonly IpamId?: string;
+  readonly IpamArn?: string;
+  readonly IpamRegion?: string;
+  readonly PublicDefaultScopeId?: string;
+  readonly PrivateDefaultScopeId?: string;
+  readonly ScopeCount?: number;
+  readonly Description?: string;
+  readonly OperatingRegions?: [];
+  readonly State?: string;
+  readonly Tags?: [];
 }
 
-interface IpamAddressHistoryRecord {
-  readonly ResourceOwnerId: string;
-  readonly ResourceRegion: string;
-  readonly ResourceType: string;
-  readonly ResourceId: string;
-  readonly ResourceCidr: string;
-  readonly ResourceName: string;
-  readonly ResourceComplianceStatus: string;
-  readonly ResourceOverlapStatus: string;
-  readonly VpcId: string;
-  readonly SampledStartTime: Date;
-  readonly SampledEndTime: Date;
+export interface IpamAddressHistoryRecord {
+  readonly ResourceOwnerId?: string;
+  readonly ResourceRegion?: string;
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
+  readonly ResourceCidr?: string;
+  readonly ResourceName?: string;
+  readonly ResourceComplianceStatus?: string;
+  readonly ResourceOverlapStatus?: string;
+  readonly VpcId?: string;
+  readonly SampledStartTime?: Date;
+  readonly SampledEndTime?: Date;
 }
 
-interface IpamCidrAuthorizationContext {
-  readonly Message: string;
-  readonly Signature: string;
+export interface IpamCidrAuthorizationContext {
+  readonly Message?: string;
+  readonly Signature?: string;
 }
 
-interface IpamOperatingRegion {
-  readonly RegionName: string;
+export interface IpamOperatingRegion {
+  readonly RegionName?: string;
 }
 
-interface IpamPool {
-  readonly OwnerId: string;
-  readonly IpamPoolId: string;
-  readonly SourceIpamPoolId: string;
-  readonly IpamPoolArn: string;
-  readonly IpamScopeArn: string;
-  readonly IpamScopeType: string;
-  readonly IpamArn: string;
-  readonly IpamRegion: string;
-  readonly Locale: string;
-  readonly PoolDepth: number;
-  readonly State: string;
-  readonly StateMessage: string;
-  readonly Description: string;
-  readonly AutoImport: boolean;
-  readonly PubliclyAdvertisable: boolean;
-  readonly AddressFamily: string;
-  readonly AllocationMinNetmaskLength: number;
-  readonly AllocationMaxNetmaskLength: number;
-  readonly AllocationDefaultNetmaskLength: number;
-  readonly AllocationResourceTags: [];
-  readonly Tags: [];
-  readonly AwsService: string;
+export interface IpamPool {
+  readonly OwnerId?: string;
+  readonly IpamPoolId?: string;
+  readonly SourceIpamPoolId?: string;
+  readonly IpamPoolArn?: string;
+  readonly IpamScopeArn?: string;
+  readonly IpamScopeType?: string;
+  readonly IpamArn?: string;
+  readonly IpamRegion?: string;
+  readonly Locale?: string;
+  readonly PoolDepth?: number;
+  readonly State?: string;
+  readonly StateMessage?: string;
+  readonly Description?: string;
+  readonly AutoImport?: boolean;
+  readonly PubliclyAdvertisable?: boolean;
+  readonly AddressFamily?: string;
+  readonly AllocationMinNetmaskLength?: number;
+  readonly AllocationMaxNetmaskLength?: number;
+  readonly AllocationDefaultNetmaskLength?: number;
+  readonly AllocationResourceTags?: [];
+  readonly Tags?: [];
+  readonly AwsService?: string;
 }
 
-interface IpamPoolAllocation {
-  readonly Cidr: string;
-  readonly IpamPoolAllocationId: string;
-  readonly Description: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly ResourceRegion: string;
-  readonly ResourceOwner: string;
+export interface IpamPoolAllocation {
+  readonly Cidr?: string;
+  readonly IpamPoolAllocationId?: string;
+  readonly Description?: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly ResourceRegion?: string;
+  readonly ResourceOwner?: string;
 }
 
-interface IpamPoolCidr {
-  readonly Cidr: string;
-  readonly State: string;
-  readonly FailureReason: IpamPoolCidrFailureReason;
+export interface IpamPoolCidr {
+  readonly Cidr?: string;
+  readonly State?: string;
+  readonly FailureReason?: IpamPoolCidrFailureReason;
 }
 
-interface IpamPoolCidrFailureReason {
-  readonly Code: string;
-  readonly Message: string;
+export interface IpamPoolCidrFailureReason {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface IpamResourceCidr {
-  readonly IpamId: string;
-  readonly IpamScopeId: string;
-  readonly IpamPoolId: string;
-  readonly ResourceRegion: string;
-  readonly ResourceOwnerId: string;
-  readonly ResourceId: string;
-  readonly ResourceName: string;
-  readonly ResourceCidr: string;
-  readonly ResourceType: string;
-  readonly ResourceTags: [];
-  readonly IpUsage: unknown;
-  readonly ComplianceStatus: string;
-  readonly ManagementState: string;
-  readonly OverlapStatus: string;
-  readonly VpcId: string;
+export interface IpamResourceCidr {
+  readonly IpamId?: string;
+  readonly IpamScopeId?: string;
+  readonly IpamPoolId?: string;
+  readonly ResourceRegion?: string;
+  readonly ResourceOwnerId?: string;
+  readonly ResourceId?: string;
+  readonly ResourceName?: string;
+  readonly ResourceCidr?: string;
+  readonly ResourceType?: string;
+  readonly ResourceTags?: [];
+  readonly IpUsage?: unknown;
+  readonly ComplianceStatus?: string;
+  readonly ManagementState?: string;
+  readonly OverlapStatus?: string;
+  readonly VpcId?: string;
 }
 
-interface IpamResourceTag {
-  readonly Key: string;
-  readonly Value: string;
+export interface IpamResourceTag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface IpamScope {
-  readonly OwnerId: string;
-  readonly IpamScopeId: string;
-  readonly IpamScopeArn: string;
-  readonly IpamArn: string;
-  readonly IpamRegion: string;
-  readonly IpamScopeType: string;
-  readonly IsDefault: boolean;
-  readonly Description: string;
-  readonly PoolCount: number;
-  readonly State: string;
-  readonly Tags: [];
+export interface IpamScope {
+  readonly OwnerId?: string;
+  readonly IpamScopeId?: string;
+  readonly IpamScopeArn?: string;
+  readonly IpamArn?: string;
+  readonly IpamRegion?: string;
+  readonly IpamScopeType?: string;
+  readonly IsDefault?: boolean;
+  readonly Description?: string;
+  readonly PoolCount?: number;
+  readonly State?: string;
+  readonly Tags?: [];
 }
 
-interface Ipv4PrefixSpecification {
-  readonly Ipv4Prefix: string;
+export interface Ipv4PrefixSpecification {
+  readonly Ipv4Prefix?: string;
 }
 
-interface Ipv4PrefixSpecificationRequest {
-  readonly Ipv4Prefix: string;
+export interface Ipv4PrefixSpecificationRequest {
+  readonly Ipv4Prefix?: string;
 }
 
-interface Ipv4PrefixSpecificationResponse {
-  readonly Ipv4Prefix: string;
+export interface Ipv4PrefixSpecificationResponse {
+  readonly Ipv4Prefix?: string;
 }
 
-interface Ipv6CidrAssociation {
-  readonly Ipv6Cidr: string;
-  readonly AssociatedResource: string;
+export interface Ipv6CidrAssociation {
+  readonly Ipv6Cidr?: string;
+  readonly AssociatedResource?: string;
 }
 
-interface Ipv6CidrBlock {
-  readonly Ipv6CidrBlock: string;
+export interface Ipv6CidrBlock {
+  readonly Ipv6CidrBlock?: string;
 }
 
-interface Ipv6Pool {
-  readonly PoolId: string;
-  readonly Description: string;
-  readonly PoolCidrBlocks: [];
-  readonly Tags: [];
+export interface Ipv6Pool {
+  readonly PoolId?: string;
+  readonly Description?: string;
+  readonly PoolCidrBlocks?: [];
+  readonly Tags?: [];
 }
 
-interface Ipv6PrefixSpecification {
-  readonly Ipv6Prefix: string;
+export interface Ipv6PrefixSpecification {
+  readonly Ipv6Prefix?: string;
 }
 
-interface Ipv6PrefixSpecificationRequest {
-  readonly Ipv6Prefix: string;
+export interface Ipv6PrefixSpecificationRequest {
+  readonly Ipv6Prefix?: string;
 }
 
-interface Ipv6PrefixSpecificationResponse {
-  readonly Ipv6Prefix: string;
+export interface Ipv6PrefixSpecificationResponse {
+  readonly Ipv6Prefix?: string;
 }
 
-interface Ipv6Range {
-  readonly CidrIpv6: string;
-  readonly Description: string;
+export interface Ipv6Range {
+  readonly CidrIpv6?: string;
+  readonly Description?: string;
 }
 
-interface KeyPair {
-  readonly KeyFingerprint: string;
-  readonly KeyMaterial: string;
-  readonly KeyName: string;
-  readonly KeyPairId: string;
-  readonly Tags: [];
+export interface KeyPair {
+  readonly KeyFingerprint?: string;
+  readonly KeyMaterial?: string;
+  readonly KeyName?: string;
+  readonly KeyPairId?: string;
+  readonly Tags?: [];
 }
 
-interface KeyPairInfo {
-  readonly KeyPairId: string;
-  readonly KeyFingerprint: string;
-  readonly KeyName: string;
-  readonly KeyType: string;
-  readonly Tags: [];
+export interface KeyPairInfo {
+  readonly KeyPairId?: string;
+  readonly KeyFingerprint?: string;
+  readonly KeyName?: string;
+  readonly KeyType?: string;
+  readonly Tags?: [];
 }
 
-interface LastError {
-  readonly Message: string;
-  readonly Code: string;
+export interface LastError {
+  readonly Message?: string;
+  readonly Code?: string;
 }
 
-interface LaunchPermission {
-  readonly Group: string;
-  readonly UserId: string;
-  readonly OrganizationArn: string;
-  readonly OrganizationalUnitArn: string;
+export interface LaunchPermission {
+  readonly Group?: string;
+  readonly UserId?: string;
+  readonly OrganizationArn?: string;
+  readonly OrganizationalUnitArn?: string;
 }
 
-interface LaunchPermissionModifications {
-  readonly Add: [];
-  readonly Remove: [];
+export interface LaunchPermissionModifications {
+  readonly Add?: [];
+  readonly Remove?: [];
 }
 
-interface LaunchSpecification {
-  readonly UserData: string;
-  readonly SecurityGroups: [];
-  readonly AddressingType: string;
-  readonly BlockDeviceMappings: [];
-  readonly EbsOptimized: boolean;
-  readonly IamInstanceProfile: IamInstanceProfileSpecification;
-  readonly ImageId: string;
-  readonly InstanceType: string;
-  readonly KernelId: string;
-  readonly KeyName: string;
-  readonly NetworkInterfaces: [];
-  readonly Placement: SpotPlacement;
-  readonly RamdiskId: string;
-  readonly SubnetId: string;
-  readonly Monitoring: RunInstancesMonitoringEnabled;
+export interface LaunchSpecification {
+  readonly UserData?: string;
+  readonly SecurityGroups?: [];
+  readonly AddressingType?: string;
+  readonly BlockDeviceMappings?: [];
+  readonly EbsOptimized?: boolean;
+  readonly IamInstanceProfile?: IamInstanceProfileSpecification;
+  readonly ImageId?: string;
+  readonly InstanceType?: string;
+  readonly KernelId?: string;
+  readonly KeyName?: string;
+  readonly NetworkInterfaces?: [];
+  readonly Placement?: SpotPlacement;
+  readonly RamdiskId?: string;
+  readonly SubnetId?: string;
+  readonly Monitoring?: RunInstancesMonitoringEnabled;
 }
 
-interface LaunchTemplate {
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
-  readonly CreateTime: Date;
-  readonly CreatedBy: string;
-  readonly DefaultVersionNumber: number;
-  readonly LatestVersionNumber: number;
-  readonly Tags: [];
+export interface LaunchTemplate {
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
+  readonly CreateTime?: Date;
+  readonly CreatedBy?: string;
+  readonly DefaultVersionNumber?: number;
+  readonly LatestVersionNumber?: number;
+  readonly Tags?: [];
 }
 
-interface LaunchTemplateAndOverridesResponse {
-  readonly LaunchTemplateSpecification: FleetLaunchTemplateSpecification;
-  readonly Overrides: FleetLaunchTemplateOverrides;
+export interface LaunchTemplateAndOverridesResponse {
+  readonly LaunchTemplateSpecification?: FleetLaunchTemplateSpecification;
+  readonly Overrides?: FleetLaunchTemplateOverrides;
 }
 
-interface LaunchTemplateBlockDeviceMapping {
-  readonly DeviceName: string;
-  readonly VirtualName: string;
-  readonly Ebs: LaunchTemplateEbsBlockDevice;
-  readonly NoDevice: string;
+export interface LaunchTemplateBlockDeviceMapping {
+  readonly DeviceName?: string;
+  readonly VirtualName?: string;
+  readonly Ebs?: LaunchTemplateEbsBlockDevice;
+  readonly NoDevice?: string;
 }
 
-interface LaunchTemplateBlockDeviceMappingRequest {
-  readonly DeviceName: string;
-  readonly VirtualName: string;
-  readonly Ebs: LaunchTemplateEbsBlockDeviceRequest;
-  readonly NoDevice: string;
+export interface LaunchTemplateBlockDeviceMappingRequest {
+  readonly DeviceName?: string;
+  readonly VirtualName?: string;
+  readonly Ebs?: LaunchTemplateEbsBlockDeviceRequest;
+  readonly NoDevice?: string;
 }
 
-interface LaunchTemplateCapacityReservationSpecificationRequest {
-  readonly CapacityReservationPreference: string;
-  readonly CapacityReservationTarget: CapacityReservationTarget;
+export interface LaunchTemplateCapacityReservationSpecificationRequest {
+  readonly CapacityReservationPreference?: string;
+  readonly CapacityReservationTarget?: CapacityReservationTarget;
 }
 
-interface LaunchTemplateCapacityReservationSpecificationResponse {
-  readonly CapacityReservationPreference: string;
-  readonly CapacityReservationTarget: CapacityReservationTargetResponse;
+export interface LaunchTemplateCapacityReservationSpecificationResponse {
+  readonly CapacityReservationPreference?: string;
+  readonly CapacityReservationTarget?: CapacityReservationTargetResponse;
 }
 
-interface LaunchTemplateConfig {
-  readonly LaunchTemplateSpecification: FleetLaunchTemplateSpecification;
-  readonly Overrides: [];
+export interface LaunchTemplateConfig {
+  readonly LaunchTemplateSpecification?: FleetLaunchTemplateSpecification;
+  readonly Overrides?: [];
 }
 
-interface LaunchTemplateCpuOptions {
-  readonly CoreCount: number;
-  readonly ThreadsPerCore: number;
+export interface LaunchTemplateCpuOptions {
+  readonly CoreCount?: number;
+  readonly ThreadsPerCore?: number;
 }
 
-interface LaunchTemplateCpuOptionsRequest {
-  readonly CoreCount: number;
-  readonly ThreadsPerCore: number;
+export interface LaunchTemplateCpuOptionsRequest {
+  readonly CoreCount?: number;
+  readonly ThreadsPerCore?: number;
 }
 
-interface LaunchTemplateEbsBlockDevice {
-  readonly Encrypted: boolean;
-  readonly DeleteOnTermination: boolean;
-  readonly Iops: number;
-  readonly KmsKeyId: string;
-  readonly SnapshotId: string;
-  readonly VolumeSize: number;
-  readonly VolumeType: string;
-  readonly Throughput: number;
+export interface LaunchTemplateEbsBlockDevice {
+  readonly Encrypted?: boolean;
+  readonly DeleteOnTermination?: boolean;
+  readonly Iops?: number;
+  readonly KmsKeyId?: string;
+  readonly SnapshotId?: string;
+  readonly VolumeSize?: number;
+  readonly VolumeType?: string;
+  readonly Throughput?: number;
 }
 
-interface LaunchTemplateEbsBlockDeviceRequest {
-  readonly Encrypted: boolean;
-  readonly DeleteOnTermination: boolean;
-  readonly Iops: number;
-  readonly KmsKeyId: string;
-  readonly SnapshotId: string;
-  readonly VolumeSize: number;
-  readonly VolumeType: string;
-  readonly Throughput: number;
+export interface LaunchTemplateEbsBlockDeviceRequest {
+  readonly Encrypted?: boolean;
+  readonly DeleteOnTermination?: boolean;
+  readonly Iops?: number;
+  readonly KmsKeyId?: string;
+  readonly SnapshotId?: string;
+  readonly VolumeSize?: number;
+  readonly VolumeType?: string;
+  readonly Throughput?: number;
 }
 
-interface LaunchTemplateElasticInferenceAccelerator {
+export interface LaunchTemplateElasticInferenceAccelerator {
   readonly Type: string;
-  readonly Count: number;
+  readonly Count?: number;
 }
 
-interface LaunchTemplateElasticInferenceAcceleratorResponse {
-  readonly Type: string;
-  readonly Count: number;
+export interface LaunchTemplateElasticInferenceAcceleratorResponse {
+  readonly Type?: string;
+  readonly Count?: number;
 }
 
-interface LaunchTemplateEnclaveOptions {
-  readonly Enabled: boolean;
+export interface LaunchTemplateEnclaveOptions {
+  readonly Enabled?: boolean;
 }
 
-interface LaunchTemplateEnclaveOptionsRequest {
-  readonly Enabled: boolean;
+export interface LaunchTemplateEnclaveOptionsRequest {
+  readonly Enabled?: boolean;
 }
 
-interface LaunchTemplateHibernationOptions {
-  readonly Configured: boolean;
+export interface LaunchTemplateHibernationOptions {
+  readonly Configured?: boolean;
 }
 
-interface LaunchTemplateHibernationOptionsRequest {
-  readonly Configured: boolean;
+export interface LaunchTemplateHibernationOptionsRequest {
+  readonly Configured?: boolean;
 }
 
-interface LaunchTemplateIamInstanceProfileSpecification {
-  readonly Arn: string;
-  readonly Name: string;
+export interface LaunchTemplateIamInstanceProfileSpecification {
+  readonly Arn?: string;
+  readonly Name?: string;
 }
 
-interface LaunchTemplateIamInstanceProfileSpecificationRequest {
-  readonly Arn: string;
-  readonly Name: string;
+export interface LaunchTemplateIamInstanceProfileSpecificationRequest {
+  readonly Arn?: string;
+  readonly Name?: string;
 }
 
-interface LaunchTemplateInstanceMarketOptions {
-  readonly MarketType: string;
-  readonly SpotOptions: LaunchTemplateSpotMarketOptions;
+export interface LaunchTemplateInstanceMarketOptions {
+  readonly MarketType?: string;
+  readonly SpotOptions?: LaunchTemplateSpotMarketOptions;
 }
 
-interface LaunchTemplateInstanceMarketOptionsRequest {
-  readonly MarketType: string;
-  readonly SpotOptions: LaunchTemplateSpotMarketOptionsRequest;
+export interface LaunchTemplateInstanceMarketOptionsRequest {
+  readonly MarketType?: string;
+  readonly SpotOptions?: LaunchTemplateSpotMarketOptionsRequest;
 }
 
-interface LaunchTemplateInstanceMetadataOptions {
-  readonly State: string;
-  readonly HttpTokens: string;
-  readonly HttpPutResponseHopLimit: number;
-  readonly HttpEndpoint: string;
-  readonly HttpProtocolIpv6: string;
+export interface LaunchTemplateInstanceMetadataOptions {
+  readonly State?: string;
+  readonly HttpTokens?: string;
+  readonly HttpPutResponseHopLimit?: number;
+  readonly HttpEndpoint?: string;
+  readonly HttpProtocolIpv6?: string;
 }
 
-interface LaunchTemplateInstanceMetadataOptionsRequest {
-  readonly HttpTokens: string;
-  readonly HttpPutResponseHopLimit: number;
-  readonly HttpEndpoint: string;
-  readonly HttpProtocolIpv6: string;
+export interface LaunchTemplateInstanceMetadataOptionsRequest {
+  readonly HttpTokens?: string;
+  readonly HttpPutResponseHopLimit?: number;
+  readonly HttpEndpoint?: string;
+  readonly HttpProtocolIpv6?: string;
 }
 
-interface LaunchTemplateInstanceNetworkInterfaceSpecification {
-  readonly AssociateCarrierIpAddress: boolean;
-  readonly AssociatePublicIpAddress: boolean;
-  readonly DeleteOnTermination: boolean;
-  readonly Description: string;
-  readonly DeviceIndex: number;
-  readonly Groups: [];
-  readonly InterfaceType: string;
-  readonly Ipv6AddressCount: number;
-  readonly Ipv6Addresses: [];
-  readonly NetworkInterfaceId: string;
-  readonly PrivateIpAddress: string;
-  readonly PrivateIpAddresses: [];
-  readonly SecondaryPrivateIpAddressCount: number;
-  readonly SubnetId: string;
-  readonly NetworkCardIndex: number;
-  readonly Ipv4Prefixes: [];
-  readonly Ipv4PrefixCount: number;
-  readonly Ipv6Prefixes: [];
-  readonly Ipv6PrefixCount: number;
+export interface LaunchTemplateInstanceNetworkInterfaceSpecification {
+  readonly AssociateCarrierIpAddress?: boolean;
+  readonly AssociatePublicIpAddress?: boolean;
+  readonly DeleteOnTermination?: boolean;
+  readonly Description?: string;
+  readonly DeviceIndex?: number;
+  readonly Groups?: [];
+  readonly InterfaceType?: string;
+  readonly Ipv6AddressCount?: number;
+  readonly Ipv6Addresses?: [];
+  readonly NetworkInterfaceId?: string;
+  readonly PrivateIpAddress?: string;
+  readonly PrivateIpAddresses?: [];
+  readonly SecondaryPrivateIpAddressCount?: number;
+  readonly SubnetId?: string;
+  readonly NetworkCardIndex?: number;
+  readonly Ipv4Prefixes?: [];
+  readonly Ipv4PrefixCount?: number;
+  readonly Ipv6Prefixes?: [];
+  readonly Ipv6PrefixCount?: number;
 }
 
-interface LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
-  readonly AssociateCarrierIpAddress: boolean;
-  readonly AssociatePublicIpAddress: boolean;
-  readonly DeleteOnTermination: boolean;
-  readonly Description: string;
-  readonly DeviceIndex: number;
-  readonly Groups: [];
-  readonly InterfaceType: string;
-  readonly Ipv6AddressCount: number;
-  readonly Ipv6Addresses: [];
-  readonly NetworkInterfaceId: string;
-  readonly PrivateIpAddress: string;
-  readonly PrivateIpAddresses: [];
-  readonly SecondaryPrivateIpAddressCount: number;
-  readonly SubnetId: string;
-  readonly NetworkCardIndex: number;
-  readonly Ipv4Prefixes: [];
-  readonly Ipv4PrefixCount: number;
-  readonly Ipv6Prefixes: [];
-  readonly Ipv6PrefixCount: number;
+export interface LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
+  readonly AssociateCarrierIpAddress?: boolean;
+  readonly AssociatePublicIpAddress?: boolean;
+  readonly DeleteOnTermination?: boolean;
+  readonly Description?: string;
+  readonly DeviceIndex?: number;
+  readonly Groups?: [];
+  readonly InterfaceType?: string;
+  readonly Ipv6AddressCount?: number;
+  readonly Ipv6Addresses?: [];
+  readonly NetworkInterfaceId?: string;
+  readonly PrivateIpAddress?: string;
+  readonly PrivateIpAddresses?: [];
+  readonly SecondaryPrivateIpAddressCount?: number;
+  readonly SubnetId?: string;
+  readonly NetworkCardIndex?: number;
+  readonly Ipv4Prefixes?: [];
+  readonly Ipv4PrefixCount?: number;
+  readonly Ipv6Prefixes?: [];
+  readonly Ipv6PrefixCount?: number;
 }
 
-interface LaunchTemplateLicenseConfiguration {
-  readonly LicenseConfigurationArn: string;
+export interface LaunchTemplateLicenseConfiguration {
+  readonly LicenseConfigurationArn?: string;
 }
 
-interface LaunchTemplateLicenseConfigurationRequest {
-  readonly LicenseConfigurationArn: string;
+export interface LaunchTemplateLicenseConfigurationRequest {
+  readonly LicenseConfigurationArn?: string;
 }
 
-interface LaunchTemplateOverrides {
-  readonly InstanceType: string;
-  readonly SpotPrice: string;
-  readonly SubnetId: string;
-  readonly AvailabilityZone: string;
-  readonly WeightedCapacity: unknown;
-  readonly Priority: unknown;
-  readonly InstanceRequirements: InstanceRequirements;
+export interface LaunchTemplateOverrides {
+  readonly InstanceType?: string;
+  readonly SpotPrice?: string;
+  readonly SubnetId?: string;
+  readonly AvailabilityZone?: string;
+  readonly WeightedCapacity?: unknown;
+  readonly Priority?: unknown;
+  readonly InstanceRequirements?: InstanceRequirements;
 }
 
-interface LaunchTemplatePlacement {
-  readonly AvailabilityZone: string;
-  readonly Affinity: string;
-  readonly GroupName: string;
-  readonly HostId: string;
-  readonly Tenancy: string;
-  readonly SpreadDomain: string;
-  readonly HostResourceGroupArn: string;
-  readonly PartitionNumber: number;
+export interface LaunchTemplatePlacement {
+  readonly AvailabilityZone?: string;
+  readonly Affinity?: string;
+  readonly GroupName?: string;
+  readonly HostId?: string;
+  readonly Tenancy?: string;
+  readonly SpreadDomain?: string;
+  readonly HostResourceGroupArn?: string;
+  readonly PartitionNumber?: number;
 }
 
-interface LaunchTemplatePlacementRequest {
-  readonly AvailabilityZone: string;
-  readonly Affinity: string;
-  readonly GroupName: string;
-  readonly HostId: string;
-  readonly Tenancy: string;
-  readonly SpreadDomain: string;
-  readonly HostResourceGroupArn: string;
-  readonly PartitionNumber: number;
+export interface LaunchTemplatePlacementRequest {
+  readonly AvailabilityZone?: string;
+  readonly Affinity?: string;
+  readonly GroupName?: string;
+  readonly HostId?: string;
+  readonly Tenancy?: string;
+  readonly SpreadDomain?: string;
+  readonly HostResourceGroupArn?: string;
+  readonly PartitionNumber?: number;
 }
 
-interface LaunchTemplatePrivateDnsNameOptions {
-  readonly HostnameType: string;
-  readonly EnableResourceNameDnsARecord: boolean;
-  readonly EnableResourceNameDnsAAAARecord: boolean;
+export interface LaunchTemplatePrivateDnsNameOptions {
+  readonly HostnameType?: string;
+  readonly EnableResourceNameDnsARecord?: boolean;
+  readonly EnableResourceNameDnsAAAARecord?: boolean;
 }
 
-interface LaunchTemplatePrivateDnsNameOptionsRequest {
-  readonly HostnameType: string;
-  readonly EnableResourceNameDnsARecord: boolean;
-  readonly EnableResourceNameDnsAAAARecord: boolean;
+export interface LaunchTemplatePrivateDnsNameOptionsRequest {
+  readonly HostnameType?: string;
+  readonly EnableResourceNameDnsARecord?: boolean;
+  readonly EnableResourceNameDnsAAAARecord?: boolean;
 }
 
-interface LaunchTemplateSpecification {
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
-  readonly Version: string;
+export interface LaunchTemplateSpecification {
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
+  readonly Version?: string;
 }
 
-interface LaunchTemplateSpotMarketOptions {
-  readonly MaxPrice: string;
-  readonly SpotInstanceType: string;
-  readonly BlockDurationMinutes: number;
-  readonly ValidUntil: Date;
-  readonly InstanceInterruptionBehavior: string;
+export interface LaunchTemplateSpotMarketOptions {
+  readonly MaxPrice?: string;
+  readonly SpotInstanceType?: string;
+  readonly BlockDurationMinutes?: number;
+  readonly ValidUntil?: Date;
+  readonly InstanceInterruptionBehavior?: string;
 }
 
-interface LaunchTemplateSpotMarketOptionsRequest {
-  readonly MaxPrice: string;
-  readonly SpotInstanceType: string;
-  readonly BlockDurationMinutes: number;
-  readonly ValidUntil: Date;
-  readonly InstanceInterruptionBehavior: string;
+export interface LaunchTemplateSpotMarketOptionsRequest {
+  readonly MaxPrice?: string;
+  readonly SpotInstanceType?: string;
+  readonly BlockDurationMinutes?: number;
+  readonly ValidUntil?: Date;
+  readonly InstanceInterruptionBehavior?: string;
 }
 
-interface LaunchTemplateTagSpecification {
-  readonly ResourceType: string;
-  readonly Tags: [];
+export interface LaunchTemplateTagSpecification {
+  readonly ResourceType?: string;
+  readonly Tags?: [];
 }
 
-interface LaunchTemplateTagSpecificationRequest {
-  readonly ResourceType: string;
-  readonly Tags: [];
+export interface LaunchTemplateTagSpecificationRequest {
+  readonly ResourceType?: string;
+  readonly Tags?: [];
 }
 
-interface LaunchTemplateVersion {
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
-  readonly VersionNumber: number;
-  readonly VersionDescription: string;
-  readonly CreateTime: Date;
-  readonly CreatedBy: string;
-  readonly DefaultVersion: boolean;
-  readonly LaunchTemplateData: ResponseLaunchTemplateData;
+export interface LaunchTemplateVersion {
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
+  readonly VersionNumber?: number;
+  readonly VersionDescription?: string;
+  readonly CreateTime?: Date;
+  readonly CreatedBy?: string;
+  readonly DefaultVersion?: boolean;
+  readonly LaunchTemplateData?: ResponseLaunchTemplateData;
 }
 
-interface LaunchTemplatesMonitoring {
-  readonly Enabled: boolean;
+export interface LaunchTemplatesMonitoring {
+  readonly Enabled?: boolean;
 }
 
-interface LaunchTemplatesMonitoringRequest {
-  readonly Enabled: boolean;
+export interface LaunchTemplatesMonitoringRequest {
+  readonly Enabled?: boolean;
 }
 
-interface LicenseConfiguration {
-  readonly LicenseConfigurationArn: string;
+export interface LicenseConfiguration {
+  readonly LicenseConfigurationArn?: string;
 }
 
-interface LicenseConfigurationRequest {
-  readonly LicenseConfigurationArn: string;
+export interface LicenseConfigurationRequest {
+  readonly LicenseConfigurationArn?: string;
 }
 
-interface ListSnapshotsInRecycleBinRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly SnapshotIds: [];
-  readonly DryRun: boolean;
+export interface ListSnapshotsInRecycleBinRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly SnapshotIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface ListSnapshotsInRecycleBinResult {
-  readonly Snapshots: [];
-  readonly NextToken: string;
+export interface ListSnapshotsInRecycleBinResult {
+  readonly Snapshots?: [];
+  readonly NextToken?: string;
 }
 
-interface LoadBalancersConfig {
-  readonly ClassicLoadBalancersConfig: ClassicLoadBalancersConfig;
-  readonly TargetGroupsConfig: TargetGroupsConfig;
+export interface LoadBalancersConfig {
+  readonly ClassicLoadBalancersConfig?: ClassicLoadBalancersConfig;
+  readonly TargetGroupsConfig?: TargetGroupsConfig;
 }
 
-interface LoadPermission {
-  readonly UserId: string;
-  readonly Group: string;
+export interface LoadPermission {
+  readonly UserId?: string;
+  readonly Group?: string;
 }
 
-interface LoadPermissionModifications {
-  readonly Add: [];
-  readonly Remove: [];
+export interface LoadPermissionModifications {
+  readonly Add?: [];
+  readonly Remove?: [];
 }
 
-interface LoadPermissionRequest {
-  readonly Group: string;
-  readonly UserId: string;
+export interface LoadPermissionRequest {
+  readonly Group?: string;
+  readonly UserId?: string;
 }
 
-interface LocalGateway {
-  readonly LocalGatewayId: string;
-  readonly OutpostArn: string;
-  readonly OwnerId: string;
-  readonly State: string;
-  readonly Tags: [];
+export interface LocalGateway {
+  readonly LocalGatewayId?: string;
+  readonly OutpostArn?: string;
+  readonly OwnerId?: string;
+  readonly State?: string;
+  readonly Tags?: [];
 }
 
-interface LocalGatewayRoute {
-  readonly DestinationCidrBlock: string;
-  readonly LocalGatewayVirtualInterfaceGroupId: string;
-  readonly Type: string;
-  readonly State: string;
-  readonly LocalGatewayRouteTableId: string;
-  readonly LocalGatewayRouteTableArn: string;
-  readonly OwnerId: string;
+export interface LocalGatewayRoute {
+  readonly DestinationCidrBlock?: string;
+  readonly LocalGatewayVirtualInterfaceGroupId?: string;
+  readonly Type?: string;
+  readonly State?: string;
+  readonly LocalGatewayRouteTableId?: string;
+  readonly LocalGatewayRouteTableArn?: string;
+  readonly OwnerId?: string;
 }
 
-interface LocalGatewayRouteTable {
-  readonly LocalGatewayRouteTableId: string;
-  readonly LocalGatewayRouteTableArn: string;
-  readonly LocalGatewayId: string;
-  readonly OutpostArn: string;
-  readonly OwnerId: string;
-  readonly State: string;
-  readonly Tags: [];
+export interface LocalGatewayRouteTable {
+  readonly LocalGatewayRouteTableId?: string;
+  readonly LocalGatewayRouteTableArn?: string;
+  readonly LocalGatewayId?: string;
+  readonly OutpostArn?: string;
+  readonly OwnerId?: string;
+  readonly State?: string;
+  readonly Tags?: [];
 }
 
-interface LocalGatewayRouteTableVirtualInterfaceGroupAssociation {
-  readonly LocalGatewayRouteTableVirtualInterfaceGroupAssociationId: string;
-  readonly LocalGatewayVirtualInterfaceGroupId: string;
-  readonly LocalGatewayId: string;
-  readonly LocalGatewayRouteTableId: string;
-  readonly LocalGatewayRouteTableArn: string;
-  readonly OwnerId: string;
-  readonly State: string;
-  readonly Tags: [];
+export interface LocalGatewayRouteTableVirtualInterfaceGroupAssociation {
+  readonly LocalGatewayRouteTableVirtualInterfaceGroupAssociationId?: string;
+  readonly LocalGatewayVirtualInterfaceGroupId?: string;
+  readonly LocalGatewayId?: string;
+  readonly LocalGatewayRouteTableId?: string;
+  readonly LocalGatewayRouteTableArn?: string;
+  readonly OwnerId?: string;
+  readonly State?: string;
+  readonly Tags?: [];
 }
 
-interface LocalGatewayRouteTableVpcAssociation {
-  readonly LocalGatewayRouteTableVpcAssociationId: string;
-  readonly LocalGatewayRouteTableId: string;
-  readonly LocalGatewayRouteTableArn: string;
-  readonly LocalGatewayId: string;
-  readonly VpcId: string;
-  readonly OwnerId: string;
-  readonly State: string;
-  readonly Tags: [];
+export interface LocalGatewayRouteTableVpcAssociation {
+  readonly LocalGatewayRouteTableVpcAssociationId?: string;
+  readonly LocalGatewayRouteTableId?: string;
+  readonly LocalGatewayRouteTableArn?: string;
+  readonly LocalGatewayId?: string;
+  readonly VpcId?: string;
+  readonly OwnerId?: string;
+  readonly State?: string;
+  readonly Tags?: [];
 }
 
-interface LocalGatewayVirtualInterface {
-  readonly LocalGatewayVirtualInterfaceId: string;
-  readonly LocalGatewayId: string;
-  readonly Vlan: number;
-  readonly LocalAddress: string;
-  readonly PeerAddress: string;
-  readonly LocalBgpAsn: number;
-  readonly PeerBgpAsn: number;
-  readonly OwnerId: string;
-  readonly Tags: [];
+export interface LocalGatewayVirtualInterface {
+  readonly LocalGatewayVirtualInterfaceId?: string;
+  readonly LocalGatewayId?: string;
+  readonly Vlan?: number;
+  readonly LocalAddress?: string;
+  readonly PeerAddress?: string;
+  readonly LocalBgpAsn?: number;
+  readonly PeerBgpAsn?: number;
+  readonly OwnerId?: string;
+  readonly Tags?: [];
 }
 
-interface LocalGatewayVirtualInterfaceGroup {
-  readonly LocalGatewayVirtualInterfaceGroupId: string;
-  readonly LocalGatewayVirtualInterfaceIds: [];
-  readonly LocalGatewayId: string;
-  readonly OwnerId: string;
-  readonly Tags: [];
+export interface LocalGatewayVirtualInterfaceGroup {
+  readonly LocalGatewayVirtualInterfaceGroupId?: string;
+  readonly LocalGatewayVirtualInterfaceIds?: [];
+  readonly LocalGatewayId?: string;
+  readonly OwnerId?: string;
+  readonly Tags?: [];
 }
 
-interface ManagedPrefixList {
-  readonly PrefixListId: string;
-  readonly AddressFamily: string;
-  readonly State: string;
-  readonly StateMessage: string;
-  readonly PrefixListArn: string;
-  readonly PrefixListName: string;
-  readonly MaxEntries: number;
-  readonly Version: number;
-  readonly Tags: [];
-  readonly OwnerId: string;
+export interface ManagedPrefixList {
+  readonly PrefixListId?: string;
+  readonly AddressFamily?: string;
+  readonly State?: string;
+  readonly StateMessage?: string;
+  readonly PrefixListArn?: string;
+  readonly PrefixListName?: string;
+  readonly MaxEntries?: number;
+  readonly Version?: number;
+  readonly Tags?: [];
+  readonly OwnerId?: string;
 }
 
-interface MemoryGiBPerVCpu {
-  readonly Min: unknown;
-  readonly Max: unknown;
+export interface MemoryGiBPerVCpu {
+  readonly Min?: unknown;
+  readonly Max?: unknown;
 }
 
-interface MemoryGiBPerVCpuRequest {
-  readonly Min: unknown;
-  readonly Max: unknown;
+export interface MemoryGiBPerVCpuRequest {
+  readonly Min?: unknown;
+  readonly Max?: unknown;
 }
 
-interface MemoryInfo {
-  readonly SizeInMiB: number;
+export interface MemoryInfo {
+  readonly SizeInMiB?: number;
 }
 
-interface MemoryMiB {
+export interface MemoryMiB {
+  readonly Min?: number;
+  readonly Max?: number;
+}
+
+export interface MemoryMiBRequest {
   readonly Min: number;
-  readonly Max: number;
+  readonly Max?: number;
 }
 
-interface MemoryMiBRequest {
-  readonly Min: number;
-  readonly Max: number;
-}
-
-interface ModifyAddressAttributeRequest {
+export interface ModifyAddressAttributeRequest {
   readonly AllocationId: string;
-  readonly DomainName: string;
-  readonly DryRun: boolean;
+  readonly DomainName?: string;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyAddressAttributeResult {
-  readonly Address: AddressAttribute;
+export interface ModifyAddressAttributeResult {
+  readonly Address?: AddressAttribute;
 }
 
-interface ModifyAvailabilityZoneGroupRequest {
+export interface ModifyAvailabilityZoneGroupRequest {
   readonly GroupName: string;
   readonly OptInStatus: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyAvailabilityZoneGroupResult {
-  readonly Return: boolean;
+export interface ModifyAvailabilityZoneGroupResult {
+  readonly Return?: boolean;
 }
 
-interface ModifyCapacityReservationFleetRequest {
+export interface ModifyCapacityReservationFleetRequest {
   readonly CapacityReservationFleetId: string;
-  readonly TotalTargetCapacity: number;
-  readonly EndDate: Date;
-  readonly DryRun: boolean;
-  readonly RemoveEndDate: boolean;
+  readonly TotalTargetCapacity?: number;
+  readonly EndDate?: Date;
+  readonly DryRun?: boolean;
+  readonly RemoveEndDate?: boolean;
 }
 
-interface ModifyCapacityReservationFleetResult {
-  readonly Return: boolean;
+export interface ModifyCapacityReservationFleetResult {
+  readonly Return?: boolean;
 }
 
-interface ModifyCapacityReservationRequest {
+export interface ModifyCapacityReservationRequest {
   readonly CapacityReservationId: string;
-  readonly InstanceCount: number;
-  readonly EndDate: Date;
-  readonly EndDateType: string;
-  readonly Accept: boolean;
-  readonly DryRun: boolean;
-  readonly AdditionalInfo: string;
+  readonly InstanceCount?: number;
+  readonly EndDate?: Date;
+  readonly EndDateType?: string;
+  readonly Accept?: boolean;
+  readonly DryRun?: boolean;
+  readonly AdditionalInfo?: string;
 }
 
-interface ModifyCapacityReservationResult {
-  readonly Return: boolean;
+export interface ModifyCapacityReservationResult {
+  readonly Return?: boolean;
 }
 
-interface ModifyClientVpnEndpointRequest {
+export interface ModifyClientVpnEndpointRequest {
   readonly ClientVpnEndpointId: string;
-  readonly ServerCertificateArn: string;
-  readonly ConnectionLogOptions: ConnectionLogOptions;
-  readonly DnsServers: DnsServersOptionsModifyStructure;
-  readonly VpnPort: number;
-  readonly Description: string;
-  readonly SplitTunnel: boolean;
-  readonly DryRun: boolean;
-  readonly SecurityGroupIds: [];
-  readonly VpcId: string;
-  readonly SelfServicePortal: string;
-  readonly ClientConnectOptions: ClientConnectOptions;
+  readonly ServerCertificateArn?: string;
+  readonly ConnectionLogOptions?: ConnectionLogOptions;
+  readonly DnsServers?: DnsServersOptionsModifyStructure;
+  readonly VpnPort?: number;
+  readonly Description?: string;
+  readonly SplitTunnel?: boolean;
+  readonly DryRun?: boolean;
+  readonly SecurityGroupIds?: [];
+  readonly VpcId?: string;
+  readonly SelfServicePortal?: string;
+  readonly ClientConnectOptions?: ClientConnectOptions;
 }
 
-interface ModifyClientVpnEndpointResult {
-  readonly Return: boolean;
+export interface ModifyClientVpnEndpointResult {
+  readonly Return?: boolean;
 }
 
-interface ModifyDefaultCreditSpecificationRequest {
-  readonly DryRun: boolean;
+export interface ModifyDefaultCreditSpecificationRequest {
+  readonly DryRun?: boolean;
   readonly InstanceFamily: string;
   readonly CpuCredits: string;
 }
 
-interface ModifyDefaultCreditSpecificationResult {
-  readonly InstanceFamilyCreditSpecification: InstanceFamilyCreditSpecification;
+export interface ModifyDefaultCreditSpecificationResult {
+  readonly InstanceFamilyCreditSpecification?: InstanceFamilyCreditSpecification;
 }
 
-interface ModifyEbsDefaultKmsKeyIdRequest {
+export interface ModifyEbsDefaultKmsKeyIdRequest {
   readonly KmsKeyId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyEbsDefaultKmsKeyIdResult {
-  readonly KmsKeyId: string;
+export interface ModifyEbsDefaultKmsKeyIdResult {
+  readonly KmsKeyId?: string;
 }
 
-interface ModifyFleetRequest {
-  readonly DryRun: boolean;
-  readonly ExcessCapacityTerminationPolicy: string;
-  readonly LaunchTemplateConfigs: [];
+export interface ModifyFleetRequest {
+  readonly DryRun?: boolean;
+  readonly ExcessCapacityTerminationPolicy?: string;
+  readonly LaunchTemplateConfigs?: [];
   readonly FleetId: string;
-  readonly TargetCapacitySpecification: TargetCapacitySpecificationRequest;
-  readonly Context: string;
+  readonly TargetCapacitySpecification?: TargetCapacitySpecificationRequest;
+  readonly Context?: string;
 }
 
-interface ModifyFleetResult {
-  readonly Return: boolean;
+export interface ModifyFleetResult {
+  readonly Return?: boolean;
 }
 
-interface ModifyFpgaImageAttributeRequest {
-  readonly DryRun: boolean;
+export interface ModifyFpgaImageAttributeRequest {
+  readonly DryRun?: boolean;
   readonly FpgaImageId: string;
-  readonly Attribute: string;
-  readonly OperationType: string;
-  readonly UserIds: [];
-  readonly UserGroups: [];
-  readonly ProductCodes: [];
-  readonly LoadPermission: LoadPermissionModifications;
-  readonly Description: string;
-  readonly Name: string;
+  readonly Attribute?: string;
+  readonly OperationType?: string;
+  readonly UserIds?: [];
+  readonly UserGroups?: [];
+  readonly ProductCodes?: [];
+  readonly LoadPermission?: LoadPermissionModifications;
+  readonly Description?: string;
+  readonly Name?: string;
 }
 
-interface ModifyFpgaImageAttributeResult {
-  readonly FpgaImageAttribute: FpgaImageAttribute;
+export interface ModifyFpgaImageAttributeResult {
+  readonly FpgaImageAttribute?: FpgaImageAttribute;
 }
 
-interface ModifyHostsRequest {
-  readonly AutoPlacement: string;
+export interface ModifyHostsRequest {
+  readonly AutoPlacement?: string;
   readonly HostIds: [];
-  readonly HostRecovery: string;
-  readonly InstanceType: string;
-  readonly InstanceFamily: string;
+  readonly HostRecovery?: string;
+  readonly InstanceType?: string;
+  readonly InstanceFamily?: string;
 }
 
-interface ModifyHostsResult {
-  readonly Successful: [];
-  readonly Unsuccessful: [];
+export interface ModifyHostsResult {
+  readonly Successful?: [];
+  readonly Unsuccessful?: [];
 }
 
-interface ModifyIdFormatRequest {
+export interface ModifyIdFormatRequest {
   readonly Resource: string;
   readonly UseLongIds: boolean;
 }
 
-interface ModifyIdentityIdFormatRequest {
+export interface ModifyIdentityIdFormatRequest {
   readonly PrincipalArn: string;
   readonly Resource: string;
   readonly UseLongIds: boolean;
 }
 
-interface ModifyImageAttributeRequest {
-  readonly Attribute: string;
-  readonly Description: AttributeValue;
+export interface ModifyImageAttributeRequest {
+  readonly Attribute?: string;
+  readonly Description?: AttributeValue;
   readonly ImageId: string;
-  readonly LaunchPermission: LaunchPermissionModifications;
-  readonly OperationType: string;
-  readonly ProductCodes: [];
-  readonly UserGroups: [];
-  readonly UserIds: [];
-  readonly Value: string;
-  readonly DryRun: boolean;
-  readonly OrganizationArns: [];
-  readonly OrganizationalUnitArns: [];
+  readonly LaunchPermission?: LaunchPermissionModifications;
+  readonly OperationType?: string;
+  readonly ProductCodes?: [];
+  readonly UserGroups?: [];
+  readonly UserIds?: [];
+  readonly Value?: string;
+  readonly DryRun?: boolean;
+  readonly OrganizationArns?: [];
+  readonly OrganizationalUnitArns?: [];
 }
 
-interface ModifyInstanceAttributeRequest {
-  readonly SourceDestCheck: AttributeBooleanValue;
-  readonly Attribute: string;
-  readonly BlockDeviceMappings: [];
-  readonly DisableApiTermination: AttributeBooleanValue;
-  readonly DryRun: boolean;
-  readonly EbsOptimized: AttributeBooleanValue;
-  readonly EnaSupport: AttributeBooleanValue;
-  readonly Groups: [];
+export interface ModifyInstanceAttributeRequest {
+  readonly SourceDestCheck?: AttributeBooleanValue;
+  readonly Attribute?: string;
+  readonly BlockDeviceMappings?: [];
+  readonly DisableApiTermination?: AttributeBooleanValue;
+  readonly DryRun?: boolean;
+  readonly EbsOptimized?: AttributeBooleanValue;
+  readonly EnaSupport?: AttributeBooleanValue;
+  readonly Groups?: [];
   readonly InstanceId: string;
-  readonly InstanceInitiatedShutdownBehavior: AttributeValue;
-  readonly InstanceType: AttributeValue;
-  readonly Kernel: AttributeValue;
-  readonly Ramdisk: AttributeValue;
-  readonly SriovNetSupport: AttributeValue;
-  readonly UserData: BlobAttributeValue;
-  readonly Value: string;
+  readonly InstanceInitiatedShutdownBehavior?: AttributeValue;
+  readonly InstanceType?: AttributeValue;
+  readonly Kernel?: AttributeValue;
+  readonly Ramdisk?: AttributeValue;
+  readonly SriovNetSupport?: AttributeValue;
+  readonly UserData?: BlobAttributeValue;
+  readonly Value?: string;
 }
 
-interface ModifyInstanceCapacityReservationAttributesRequest {
+export interface ModifyInstanceCapacityReservationAttributesRequest {
   readonly InstanceId: string;
   readonly CapacityReservationSpecification: CapacityReservationSpecification;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyInstanceCapacityReservationAttributesResult {
-  readonly Return: boolean;
+export interface ModifyInstanceCapacityReservationAttributesResult {
+  readonly Return?: boolean;
 }
 
-interface ModifyInstanceCreditSpecificationRequest {
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
+export interface ModifyInstanceCreditSpecificationRequest {
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
   readonly InstanceCreditSpecifications: [];
 }
 
-interface ModifyInstanceCreditSpecificationResult {
-  readonly SuccessfulInstanceCreditSpecifications: [];
-  readonly UnsuccessfulInstanceCreditSpecifications: [];
+export interface ModifyInstanceCreditSpecificationResult {
+  readonly SuccessfulInstanceCreditSpecifications?: [];
+  readonly UnsuccessfulInstanceCreditSpecifications?: [];
 }
 
-interface ModifyInstanceEventStartTimeRequest {
-  readonly DryRun: boolean;
+export interface ModifyInstanceEventStartTimeRequest {
+  readonly DryRun?: boolean;
   readonly InstanceId: string;
   readonly InstanceEventId: string;
   readonly NotBefore: Date;
 }
 
-interface ModifyInstanceEventStartTimeResult {
-  readonly Event: InstanceStatusEvent;
+export interface ModifyInstanceEventStartTimeResult {
+  readonly Event?: InstanceStatusEvent;
 }
 
-interface ModifyInstanceEventWindowRequest {
-  readonly DryRun: boolean;
-  readonly Name: string;
+export interface ModifyInstanceEventWindowRequest {
+  readonly DryRun?: boolean;
+  readonly Name?: string;
   readonly InstanceEventWindowId: string;
-  readonly TimeRanges: [];
-  readonly CronExpression: string;
+  readonly TimeRanges?: [];
+  readonly CronExpression?: string;
 }
 
-interface ModifyInstanceEventWindowResult {
-  readonly InstanceEventWindow: InstanceEventWindow;
+export interface ModifyInstanceEventWindowResult {
+  readonly InstanceEventWindow?: InstanceEventWindow;
 }
 
-interface ModifyInstanceMetadataOptionsRequest {
+export interface ModifyInstanceMetadataOptionsRequest {
   readonly InstanceId: string;
-  readonly HttpTokens: string;
-  readonly HttpPutResponseHopLimit: number;
-  readonly HttpEndpoint: string;
-  readonly DryRun: boolean;
-  readonly HttpProtocolIpv6: string;
+  readonly HttpTokens?: string;
+  readonly HttpPutResponseHopLimit?: number;
+  readonly HttpEndpoint?: string;
+  readonly DryRun?: boolean;
+  readonly HttpProtocolIpv6?: string;
 }
 
-interface ModifyInstanceMetadataOptionsResult {
+export interface ModifyInstanceMetadataOptionsResult {
+  readonly InstanceId?: string;
+  readonly InstanceMetadataOptions?: InstanceMetadataOptionsResponse;
+}
+
+export interface ModifyInstancePlacementRequest {
+  readonly Affinity?: string;
+  readonly GroupName?: string;
+  readonly HostId?: string;
   readonly InstanceId: string;
-  readonly InstanceMetadataOptions: InstanceMetadataOptionsResponse;
+  readonly Tenancy?: string;
+  readonly PartitionNumber?: number;
+  readonly HostResourceGroupArn?: string;
 }
 
-interface ModifyInstancePlacementRequest {
-  readonly Affinity: string;
-  readonly GroupName: string;
-  readonly HostId: string;
-  readonly InstanceId: string;
-  readonly Tenancy: string;
-  readonly PartitionNumber: number;
-  readonly HostResourceGroupArn: string;
+export interface ModifyInstancePlacementResult {
+  readonly Return?: boolean;
 }
 
-interface ModifyInstancePlacementResult {
-  readonly Return: boolean;
-}
-
-interface ModifyIpamPoolRequest {
-  readonly DryRun: boolean;
+export interface ModifyIpamPoolRequest {
+  readonly DryRun?: boolean;
   readonly IpamPoolId: string;
-  readonly Description: string;
-  readonly AutoImport: boolean;
-  readonly AllocationMinNetmaskLength: number;
-  readonly AllocationMaxNetmaskLength: number;
-  readonly AllocationDefaultNetmaskLength: number;
-  readonly ClearAllocationDefaultNetmaskLength: boolean;
-  readonly AddAllocationResourceTags: [];
-  readonly RemoveAllocationResourceTags: [];
+  readonly Description?: string;
+  readonly AutoImport?: boolean;
+  readonly AllocationMinNetmaskLength?: number;
+  readonly AllocationMaxNetmaskLength?: number;
+  readonly AllocationDefaultNetmaskLength?: number;
+  readonly ClearAllocationDefaultNetmaskLength?: boolean;
+  readonly AddAllocationResourceTags?: [];
+  readonly RemoveAllocationResourceTags?: [];
 }
 
-interface ModifyIpamPoolResult {
-  readonly IpamPool: IpamPool;
+export interface ModifyIpamPoolResult {
+  readonly IpamPool?: IpamPool;
 }
 
-interface ModifyIpamRequest {
-  readonly DryRun: boolean;
+export interface ModifyIpamRequest {
+  readonly DryRun?: boolean;
   readonly IpamId: string;
-  readonly Description: string;
-  readonly AddOperatingRegions: [];
-  readonly RemoveOperatingRegions: [];
+  readonly Description?: string;
+  readonly AddOperatingRegions?: [];
+  readonly RemoveOperatingRegions?: [];
 }
 
-interface ModifyIpamResourceCidrRequest {
-  readonly DryRun: boolean;
+export interface ModifyIpamResourceCidrRequest {
+  readonly DryRun?: boolean;
   readonly ResourceId: string;
   readonly ResourceCidr: string;
   readonly ResourceRegion: string;
   readonly CurrentIpamScopeId: string;
-  readonly DestinationIpamScopeId: string;
+  readonly DestinationIpamScopeId?: string;
   readonly Monitored: boolean;
 }
 
-interface ModifyIpamResourceCidrResult {
-  readonly IpamResourceCidr: IpamResourceCidr;
+export interface ModifyIpamResourceCidrResult {
+  readonly IpamResourceCidr?: IpamResourceCidr;
 }
 
-interface ModifyIpamResult {
-  readonly Ipam: Ipam;
+export interface ModifyIpamResult {
+  readonly Ipam?: Ipam;
 }
 
-interface ModifyIpamScopeRequest {
-  readonly DryRun: boolean;
+export interface ModifyIpamScopeRequest {
+  readonly DryRun?: boolean;
   readonly IpamScopeId: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 
-interface ModifyIpamScopeResult {
-  readonly IpamScope: IpamScope;
+export interface ModifyIpamScopeResult {
+  readonly IpamScope?: IpamScope;
 }
 
-interface ModifyLaunchTemplateRequest {
-  readonly DryRun: boolean;
-  readonly ClientToken: string;
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
-  readonly DefaultVersion: string;
+export interface ModifyLaunchTemplateRequest {
+  readonly DryRun?: boolean;
+  readonly ClientToken?: string;
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
+  readonly DefaultVersion?: string;
 }
 
-interface ModifyLaunchTemplateResult {
-  readonly LaunchTemplate: LaunchTemplate;
+export interface ModifyLaunchTemplateResult {
+  readonly LaunchTemplate?: LaunchTemplate;
 }
 
-interface ModifyManagedPrefixListRequest {
-  readonly DryRun: boolean;
+export interface ModifyManagedPrefixListRequest {
+  readonly DryRun?: boolean;
   readonly PrefixListId: string;
-  readonly CurrentVersion: number;
-  readonly PrefixListName: string;
-  readonly AddEntries: [];
-  readonly RemoveEntries: [];
-  readonly MaxEntries: number;
+  readonly CurrentVersion?: number;
+  readonly PrefixListName?: string;
+  readonly AddEntries?: [];
+  readonly RemoveEntries?: [];
+  readonly MaxEntries?: number;
 }
 
-interface ModifyManagedPrefixListResult {
-  readonly PrefixList: ManagedPrefixList;
+export interface ModifyManagedPrefixListResult {
+  readonly PrefixList?: ManagedPrefixList;
 }
 
-interface ModifyNetworkInterfaceAttributeRequest {
-  readonly Attachment: NetworkInterfaceAttachmentChanges;
-  readonly Description: AttributeValue;
-  readonly DryRun: boolean;
-  readonly Groups: [];
+export interface ModifyNetworkInterfaceAttributeRequest {
+  readonly Attachment?: NetworkInterfaceAttachmentChanges;
+  readonly Description?: AttributeValue;
+  readonly DryRun?: boolean;
+  readonly Groups?: [];
   readonly NetworkInterfaceId: string;
-  readonly SourceDestCheck: AttributeBooleanValue;
+  readonly SourceDestCheck?: AttributeBooleanValue;
 }
 
-interface ModifyPrivateDnsNameOptionsRequest {
-  readonly DryRun: boolean;
-  readonly InstanceId: string;
-  readonly PrivateDnsHostnameType: string;
-  readonly EnableResourceNameDnsARecord: boolean;
-  readonly EnableResourceNameDnsAAAARecord: boolean;
+export interface ModifyPrivateDnsNameOptionsRequest {
+  readonly DryRun?: boolean;
+  readonly InstanceId?: string;
+  readonly PrivateDnsHostnameType?: string;
+  readonly EnableResourceNameDnsARecord?: boolean;
+  readonly EnableResourceNameDnsAAAARecord?: boolean;
 }
 
-interface ModifyPrivateDnsNameOptionsResult {
-  readonly Return: boolean;
+export interface ModifyPrivateDnsNameOptionsResult {
+  readonly Return?: boolean;
 }
 
-interface ModifyReservedInstancesRequest {
+export interface ModifyReservedInstancesRequest {
   readonly ReservedInstancesIds: [];
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
   readonly TargetConfigurations: [];
 }
 
-interface ModifyReservedInstancesResult {
-  readonly ReservedInstancesModificationId: string;
+export interface ModifyReservedInstancesResult {
+  readonly ReservedInstancesModificationId?: string;
 }
 
-interface ModifySecurityGroupRulesRequest {
+export interface ModifySecurityGroupRulesRequest {
   readonly GroupId: string;
   readonly SecurityGroupRules: [];
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ModifySecurityGroupRulesResult {
-  readonly Return: boolean;
+export interface ModifySecurityGroupRulesResult {
+  readonly Return?: boolean;
 }
 
-interface ModifySnapshotAttributeRequest {
-  readonly Attribute: string;
-  readonly CreateVolumePermission: CreateVolumePermissionModifications;
-  readonly GroupNames: [];
-  readonly OperationType: string;
+export interface ModifySnapshotAttributeRequest {
+  readonly Attribute?: string;
+  readonly CreateVolumePermission?: CreateVolumePermissionModifications;
+  readonly GroupNames?: [];
+  readonly OperationType?: string;
   readonly SnapshotId: string;
-  readonly UserIds: [];
-  readonly DryRun: boolean;
+  readonly UserIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface ModifySnapshotTierRequest {
+export interface ModifySnapshotTierRequest {
   readonly SnapshotId: string;
-  readonly StorageTier: string;
-  readonly DryRun: boolean;
+  readonly StorageTier?: string;
+  readonly DryRun?: boolean;
 }
 
-interface ModifySnapshotTierResult {
-  readonly SnapshotId: string;
-  readonly TieringStartTime: Date;
+export interface ModifySnapshotTierResult {
+  readonly SnapshotId?: string;
+  readonly TieringStartTime?: Date;
 }
 
-interface ModifySpotFleetRequestRequest {
-  readonly ExcessCapacityTerminationPolicy: string;
-  readonly LaunchTemplateConfigs: [];
+export interface ModifySpotFleetRequestRequest {
+  readonly ExcessCapacityTerminationPolicy?: string;
+  readonly LaunchTemplateConfigs?: [];
   readonly SpotFleetRequestId: string;
-  readonly TargetCapacity: number;
-  readonly OnDemandTargetCapacity: number;
-  readonly Context: string;
+  readonly TargetCapacity?: number;
+  readonly OnDemandTargetCapacity?: number;
+  readonly Context?: string;
 }
 
-interface ModifySpotFleetRequestResponse {
-  readonly Return: boolean;
+export interface ModifySpotFleetRequestResponse {
+  readonly Return?: boolean;
 }
 
-interface ModifySubnetAttributeRequest {
-  readonly AssignIpv6AddressOnCreation: AttributeBooleanValue;
-  readonly MapPublicIpOnLaunch: AttributeBooleanValue;
+export interface ModifySubnetAttributeRequest {
+  readonly AssignIpv6AddressOnCreation?: AttributeBooleanValue;
+  readonly MapPublicIpOnLaunch?: AttributeBooleanValue;
   readonly SubnetId: string;
-  readonly MapCustomerOwnedIpOnLaunch: AttributeBooleanValue;
-  readonly CustomerOwnedIpv4Pool: string;
-  readonly EnableDns64: AttributeBooleanValue;
-  readonly PrivateDnsHostnameTypeOnLaunch: string;
-  readonly EnableResourceNameDnsARecordOnLaunch: AttributeBooleanValue;
-  readonly EnableResourceNameDnsAAAARecordOnLaunch: AttributeBooleanValue;
-  readonly EnableLniAtDeviceIndex: number;
-  readonly DisableLniAtDeviceIndex: AttributeBooleanValue;
+  readonly MapCustomerOwnedIpOnLaunch?: AttributeBooleanValue;
+  readonly CustomerOwnedIpv4Pool?: string;
+  readonly EnableDns64?: AttributeBooleanValue;
+  readonly PrivateDnsHostnameTypeOnLaunch?: string;
+  readonly EnableResourceNameDnsARecordOnLaunch?: AttributeBooleanValue;
+  readonly EnableResourceNameDnsAAAARecordOnLaunch?: AttributeBooleanValue;
+  readonly EnableLniAtDeviceIndex?: number;
+  readonly DisableLniAtDeviceIndex?: AttributeBooleanValue;
 }
 
-interface ModifyTrafficMirrorFilterNetworkServicesRequest {
+export interface ModifyTrafficMirrorFilterNetworkServicesRequest {
   readonly TrafficMirrorFilterId: string;
-  readonly AddNetworkServices: [];
-  readonly RemoveNetworkServices: [];
-  readonly DryRun: boolean;
+  readonly AddNetworkServices?: [];
+  readonly RemoveNetworkServices?: [];
+  readonly DryRun?: boolean;
 }
 
-interface ModifyTrafficMirrorFilterNetworkServicesResult {
-  readonly TrafficMirrorFilter: TrafficMirrorFilter;
+export interface ModifyTrafficMirrorFilterNetworkServicesResult {
+  readonly TrafficMirrorFilter?: TrafficMirrorFilter;
 }
 
-interface ModifyTrafficMirrorFilterRuleRequest {
+export interface ModifyTrafficMirrorFilterRuleRequest {
   readonly TrafficMirrorFilterRuleId: string;
-  readonly TrafficDirection: string;
-  readonly RuleNumber: number;
-  readonly RuleAction: string;
-  readonly DestinationPortRange: TrafficMirrorPortRangeRequest;
-  readonly SourcePortRange: TrafficMirrorPortRangeRequest;
-  readonly Protocol: number;
-  readonly DestinationCidrBlock: string;
-  readonly SourceCidrBlock: string;
-  readonly Description: string;
-  readonly RemoveFields: [];
-  readonly DryRun: boolean;
+  readonly TrafficDirection?: string;
+  readonly RuleNumber?: number;
+  readonly RuleAction?: string;
+  readonly DestinationPortRange?: TrafficMirrorPortRangeRequest;
+  readonly SourcePortRange?: TrafficMirrorPortRangeRequest;
+  readonly Protocol?: number;
+  readonly DestinationCidrBlock?: string;
+  readonly SourceCidrBlock?: string;
+  readonly Description?: string;
+  readonly RemoveFields?: [];
+  readonly DryRun?: boolean;
 }
 
-interface ModifyTrafficMirrorFilterRuleResult {
-  readonly TrafficMirrorFilterRule: TrafficMirrorFilterRule;
+export interface ModifyTrafficMirrorFilterRuleResult {
+  readonly TrafficMirrorFilterRule?: TrafficMirrorFilterRule;
 }
 
-interface ModifyTrafficMirrorSessionRequest {
+export interface ModifyTrafficMirrorSessionRequest {
   readonly TrafficMirrorSessionId: string;
-  readonly TrafficMirrorTargetId: string;
-  readonly TrafficMirrorFilterId: string;
-  readonly PacketLength: number;
-  readonly SessionNumber: number;
-  readonly VirtualNetworkId: number;
-  readonly Description: string;
-  readonly RemoveFields: [];
-  readonly DryRun: boolean;
+  readonly TrafficMirrorTargetId?: string;
+  readonly TrafficMirrorFilterId?: string;
+  readonly PacketLength?: number;
+  readonly SessionNumber?: number;
+  readonly VirtualNetworkId?: number;
+  readonly Description?: string;
+  readonly RemoveFields?: [];
+  readonly DryRun?: boolean;
 }
 
-interface ModifyTrafficMirrorSessionResult {
-  readonly TrafficMirrorSession: TrafficMirrorSession;
+export interface ModifyTrafficMirrorSessionResult {
+  readonly TrafficMirrorSession?: TrafficMirrorSession;
 }
 
-interface ModifyTransitGatewayOptions {
-  readonly AddTransitGatewayCidrBlocks: [];
-  readonly RemoveTransitGatewayCidrBlocks: [];
-  readonly VpnEcmpSupport: string;
-  readonly DnsSupport: string;
-  readonly AutoAcceptSharedAttachments: string;
-  readonly DefaultRouteTableAssociation: string;
-  readonly AssociationDefaultRouteTableId: string;
-  readonly DefaultRouteTablePropagation: string;
-  readonly PropagationDefaultRouteTableId: string;
+export interface ModifyTransitGatewayOptions {
+  readonly AddTransitGatewayCidrBlocks?: [];
+  readonly RemoveTransitGatewayCidrBlocks?: [];
+  readonly VpnEcmpSupport?: string;
+  readonly DnsSupport?: string;
+  readonly AutoAcceptSharedAttachments?: string;
+  readonly DefaultRouteTableAssociation?: string;
+  readonly AssociationDefaultRouteTableId?: string;
+  readonly DefaultRouteTablePropagation?: string;
+  readonly PropagationDefaultRouteTableId?: string;
 }
 
-interface ModifyTransitGatewayPrefixListReferenceRequest {
+export interface ModifyTransitGatewayPrefixListReferenceRequest {
   readonly TransitGatewayRouteTableId: string;
   readonly PrefixListId: string;
-  readonly TransitGatewayAttachmentId: string;
-  readonly Blackhole: boolean;
-  readonly DryRun: boolean;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly Blackhole?: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyTransitGatewayPrefixListReferenceResult {
-  readonly TransitGatewayPrefixListReference: TransitGatewayPrefixListReference;
+export interface ModifyTransitGatewayPrefixListReferenceResult {
+  readonly TransitGatewayPrefixListReference?: TransitGatewayPrefixListReference;
 }
 
-interface ModifyTransitGatewayRequest {
+export interface ModifyTransitGatewayRequest {
   readonly TransitGatewayId: string;
-  readonly Description: string;
-  readonly Options: ModifyTransitGatewayOptions;
-  readonly DryRun: boolean;
+  readonly Description?: string;
+  readonly Options?: ModifyTransitGatewayOptions;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyTransitGatewayResult {
-  readonly TransitGateway: TransitGateway;
+export interface ModifyTransitGatewayResult {
+  readonly TransitGateway?: TransitGateway;
 }
 
-interface ModifyTransitGatewayVpcAttachmentRequest {
+export interface ModifyTransitGatewayVpcAttachmentRequest {
   readonly TransitGatewayAttachmentId: string;
-  readonly AddSubnetIds: [];
-  readonly RemoveSubnetIds: [];
-  readonly Options: ModifyTransitGatewayVpcAttachmentRequestOptions;
-  readonly DryRun: boolean;
+  readonly AddSubnetIds?: [];
+  readonly RemoveSubnetIds?: [];
+  readonly Options?: ModifyTransitGatewayVpcAttachmentRequestOptions;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyTransitGatewayVpcAttachmentRequestOptions {
-  readonly DnsSupport: string;
-  readonly Ipv6Support: string;
-  readonly ApplianceModeSupport: string;
+export interface ModifyTransitGatewayVpcAttachmentRequestOptions {
+  readonly DnsSupport?: string;
+  readonly Ipv6Support?: string;
+  readonly ApplianceModeSupport?: string;
 }
 
-interface ModifyTransitGatewayVpcAttachmentResult {
-  readonly TransitGatewayVpcAttachment: TransitGatewayVpcAttachment;
+export interface ModifyTransitGatewayVpcAttachmentResult {
+  readonly TransitGatewayVpcAttachment?: TransitGatewayVpcAttachment;
 }
 
-interface ModifyVolumeAttributeRequest {
-  readonly AutoEnableIO: AttributeBooleanValue;
+export interface ModifyVolumeAttributeRequest {
+  readonly AutoEnableIO?: AttributeBooleanValue;
   readonly VolumeId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyVolumeRequest {
-  readonly DryRun: boolean;
+export interface ModifyVolumeRequest {
+  readonly DryRun?: boolean;
   readonly VolumeId: string;
-  readonly Size: number;
-  readonly VolumeType: string;
-  readonly Iops: number;
-  readonly Throughput: number;
-  readonly MultiAttachEnabled: boolean;
+  readonly Size?: number;
+  readonly VolumeType?: string;
+  readonly Iops?: number;
+  readonly Throughput?: number;
+  readonly MultiAttachEnabled?: boolean;
 }
 
-interface ModifyVolumeResult {
-  readonly VolumeModification: VolumeModification;
+export interface ModifyVolumeResult {
+  readonly VolumeModification?: VolumeModification;
 }
 
-interface ModifyVpcAttributeRequest {
-  readonly EnableDnsHostnames: AttributeBooleanValue;
-  readonly EnableDnsSupport: AttributeBooleanValue;
+export interface ModifyVpcAttributeRequest {
+  readonly EnableDnsHostnames?: AttributeBooleanValue;
+  readonly EnableDnsSupport?: AttributeBooleanValue;
   readonly VpcId: string;
 }
 
-interface ModifyVpcEndpointConnectionNotificationRequest {
-  readonly DryRun: boolean;
+export interface ModifyVpcEndpointConnectionNotificationRequest {
+  readonly DryRun?: boolean;
   readonly ConnectionNotificationId: string;
-  readonly ConnectionNotificationArn: string;
-  readonly ConnectionEvents: [];
+  readonly ConnectionNotificationArn?: string;
+  readonly ConnectionEvents?: [];
 }
 
-interface ModifyVpcEndpointConnectionNotificationResult {
-  readonly ReturnValue: boolean;
+export interface ModifyVpcEndpointConnectionNotificationResult {
+  readonly ReturnValue?: boolean;
 }
 
-interface ModifyVpcEndpointRequest {
-  readonly DryRun: boolean;
+export interface ModifyVpcEndpointRequest {
+  readonly DryRun?: boolean;
   readonly VpcEndpointId: string;
-  readonly ResetPolicy: boolean;
-  readonly PolicyDocument: string;
-  readonly AddRouteTableIds: [];
-  readonly RemoveRouteTableIds: [];
-  readonly AddSubnetIds: [];
-  readonly RemoveSubnetIds: [];
-  readonly AddSecurityGroupIds: [];
-  readonly RemoveSecurityGroupIds: [];
-  readonly PrivateDnsEnabled: boolean;
+  readonly ResetPolicy?: boolean;
+  readonly PolicyDocument?: string;
+  readonly AddRouteTableIds?: [];
+  readonly RemoveRouteTableIds?: [];
+  readonly AddSubnetIds?: [];
+  readonly RemoveSubnetIds?: [];
+  readonly AddSecurityGroupIds?: [];
+  readonly RemoveSecurityGroupIds?: [];
+  readonly PrivateDnsEnabled?: boolean;
 }
 
-interface ModifyVpcEndpointResult {
-  readonly Return: boolean;
+export interface ModifyVpcEndpointResult {
+  readonly Return?: boolean;
 }
 
-interface ModifyVpcEndpointServiceConfigurationRequest {
-  readonly DryRun: boolean;
+export interface ModifyVpcEndpointServiceConfigurationRequest {
+  readonly DryRun?: boolean;
   readonly ServiceId: string;
-  readonly PrivateDnsName: string;
-  readonly RemovePrivateDnsName: boolean;
-  readonly AcceptanceRequired: boolean;
-  readonly AddNetworkLoadBalancerArns: [];
-  readonly RemoveNetworkLoadBalancerArns: [];
-  readonly AddGatewayLoadBalancerArns: [];
-  readonly RemoveGatewayLoadBalancerArns: [];
+  readonly PrivateDnsName?: string;
+  readonly RemovePrivateDnsName?: boolean;
+  readonly AcceptanceRequired?: boolean;
+  readonly AddNetworkLoadBalancerArns?: [];
+  readonly RemoveNetworkLoadBalancerArns?: [];
+  readonly AddGatewayLoadBalancerArns?: [];
+  readonly RemoveGatewayLoadBalancerArns?: [];
 }
 
-interface ModifyVpcEndpointServiceConfigurationResult {
-  readonly Return: boolean;
+export interface ModifyVpcEndpointServiceConfigurationResult {
+  readonly Return?: boolean;
 }
 
-interface ModifyVpcEndpointServicePermissionsRequest {
-  readonly DryRun: boolean;
+export interface ModifyVpcEndpointServicePermissionsRequest {
+  readonly DryRun?: boolean;
   readonly ServiceId: string;
-  readonly AddAllowedPrincipals: [];
-  readonly RemoveAllowedPrincipals: [];
+  readonly AddAllowedPrincipals?: [];
+  readonly RemoveAllowedPrincipals?: [];
 }
 
-interface ModifyVpcEndpointServicePermissionsResult {
-  readonly ReturnValue: boolean;
+export interface ModifyVpcEndpointServicePermissionsResult {
+  readonly ReturnValue?: boolean;
 }
 
-interface ModifyVpcPeeringConnectionOptionsRequest {
-  readonly AccepterPeeringConnectionOptions: PeeringConnectionOptionsRequest;
-  readonly DryRun: boolean;
-  readonly RequesterPeeringConnectionOptions: PeeringConnectionOptionsRequest;
+export interface ModifyVpcPeeringConnectionOptionsRequest {
+  readonly AccepterPeeringConnectionOptions?: PeeringConnectionOptionsRequest;
+  readonly DryRun?: boolean;
+  readonly RequesterPeeringConnectionOptions?: PeeringConnectionOptionsRequest;
   readonly VpcPeeringConnectionId: string;
 }
 
-interface ModifyVpcPeeringConnectionOptionsResult {
-  readonly AccepterPeeringConnectionOptions: PeeringConnectionOptions;
-  readonly RequesterPeeringConnectionOptions: PeeringConnectionOptions;
+export interface ModifyVpcPeeringConnectionOptionsResult {
+  readonly AccepterPeeringConnectionOptions?: PeeringConnectionOptions;
+  readonly RequesterPeeringConnectionOptions?: PeeringConnectionOptions;
 }
 
-interface ModifyVpcTenancyRequest {
+export interface ModifyVpcTenancyRequest {
   readonly VpcId: string;
   readonly InstanceTenancy: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyVpcTenancyResult {
-  readonly ReturnValue: boolean;
+export interface ModifyVpcTenancyResult {
+  readonly ReturnValue?: boolean;
 }
 
-interface ModifyVpnConnectionOptionsRequest {
+export interface ModifyVpnConnectionOptionsRequest {
   readonly VpnConnectionId: string;
-  readonly LocalIpv4NetworkCidr: string;
-  readonly RemoteIpv4NetworkCidr: string;
-  readonly LocalIpv6NetworkCidr: string;
-  readonly RemoteIpv6NetworkCidr: string;
-  readonly DryRun: boolean;
+  readonly LocalIpv4NetworkCidr?: string;
+  readonly RemoteIpv4NetworkCidr?: string;
+  readonly LocalIpv6NetworkCidr?: string;
+  readonly RemoteIpv6NetworkCidr?: string;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyVpnConnectionOptionsResult {
-  readonly VpnConnection: VpnConnection;
+export interface ModifyVpnConnectionOptionsResult {
+  readonly VpnConnection?: VpnConnection;
 }
 
-interface ModifyVpnConnectionRequest {
+export interface ModifyVpnConnectionRequest {
   readonly VpnConnectionId: string;
-  readonly TransitGatewayId: string;
-  readonly CustomerGatewayId: string;
-  readonly VpnGatewayId: string;
-  readonly DryRun: boolean;
+  readonly TransitGatewayId?: string;
+  readonly CustomerGatewayId?: string;
+  readonly VpnGatewayId?: string;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyVpnConnectionResult {
-  readonly VpnConnection: VpnConnection;
+export interface ModifyVpnConnectionResult {
+  readonly VpnConnection?: VpnConnection;
 }
 
-interface ModifyVpnTunnelCertificateRequest {
+export interface ModifyVpnTunnelCertificateRequest {
   readonly VpnConnectionId: string;
   readonly VpnTunnelOutsideIpAddress: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyVpnTunnelCertificateResult {
-  readonly VpnConnection: VpnConnection;
+export interface ModifyVpnTunnelCertificateResult {
+  readonly VpnConnection?: VpnConnection;
 }
 
-interface ModifyVpnTunnelOptionsRequest {
+export interface ModifyVpnTunnelOptionsRequest {
   readonly VpnConnectionId: string;
   readonly VpnTunnelOutsideIpAddress: string;
   readonly TunnelOptions: ModifyVpnTunnelOptionsSpecification;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ModifyVpnTunnelOptionsResult {
-  readonly VpnConnection: VpnConnection;
+export interface ModifyVpnTunnelOptionsResult {
+  readonly VpnConnection?: VpnConnection;
 }
 
-interface ModifyVpnTunnelOptionsSpecification {
-  readonly TunnelInsideCidr: string;
-  readonly TunnelInsideIpv6Cidr: string;
-  readonly PreSharedKey: string;
-  readonly Phase1LifetimeSeconds: number;
-  readonly Phase2LifetimeSeconds: number;
-  readonly RekeyMarginTimeSeconds: number;
-  readonly RekeyFuzzPercentage: number;
-  readonly ReplayWindowSize: number;
-  readonly DPDTimeoutSeconds: number;
-  readonly DPDTimeoutAction: string;
-  readonly Phase1EncryptionAlgorithms: [];
-  readonly Phase2EncryptionAlgorithms: [];
-  readonly Phase1IntegrityAlgorithms: [];
-  readonly Phase2IntegrityAlgorithms: [];
-  readonly Phase1DHGroupNumbers: [];
-  readonly Phase2DHGroupNumbers: [];
-  readonly IKEVersions: [];
-  readonly StartupAction: string;
+export interface ModifyVpnTunnelOptionsSpecification {
+  readonly TunnelInsideCidr?: string;
+  readonly TunnelInsideIpv6Cidr?: string;
+  readonly PreSharedKey?: string;
+  readonly Phase1LifetimeSeconds?: number;
+  readonly Phase2LifetimeSeconds?: number;
+  readonly RekeyMarginTimeSeconds?: number;
+  readonly RekeyFuzzPercentage?: number;
+  readonly ReplayWindowSize?: number;
+  readonly DPDTimeoutSeconds?: number;
+  readonly DPDTimeoutAction?: string;
+  readonly Phase1EncryptionAlgorithms?: [];
+  readonly Phase2EncryptionAlgorithms?: [];
+  readonly Phase1IntegrityAlgorithms?: [];
+  readonly Phase2IntegrityAlgorithms?: [];
+  readonly Phase1DHGroupNumbers?: [];
+  readonly Phase2DHGroupNumbers?: [];
+  readonly IKEVersions?: [];
+  readonly StartupAction?: string;
 }
 
-interface MonitorInstancesRequest {
+export interface MonitorInstancesRequest {
   readonly InstanceIds: [];
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface MonitorInstancesResult {
-  readonly InstanceMonitorings: [];
+export interface MonitorInstancesResult {
+  readonly InstanceMonitorings?: [];
 }
 
-interface Monitoring {
-  readonly State: string;
+export interface Monitoring {
+  readonly State?: string;
 }
 
-interface MoveAddressToVpcRequest {
-  readonly DryRun: boolean;
+export interface MoveAddressToVpcRequest {
+  readonly DryRun?: boolean;
   readonly PublicIp: string;
 }
 
-interface MoveAddressToVpcResult {
-  readonly AllocationId: string;
-  readonly Status: string;
+export interface MoveAddressToVpcResult {
+  readonly AllocationId?: string;
+  readonly Status?: string;
 }
 
-interface MoveByoipCidrToIpamRequest {
-  readonly DryRun: boolean;
+export interface MoveByoipCidrToIpamRequest {
+  readonly DryRun?: boolean;
+  readonly Cidr?: string;
+  readonly IpamPoolId?: string;
+  readonly IpamPoolOwner?: string;
+}
+
+export interface MoveByoipCidrToIpamResult {
+  readonly ByoipCidr?: ByoipCidr;
+}
+
+export interface MovingAddressStatus {
+  readonly MoveStatus?: string;
+  readonly PublicIp?: string;
+}
+
+export interface NatGateway {
+  readonly CreateTime?: Date;
+  readonly DeleteTime?: Date;
+  readonly FailureCode?: string;
+  readonly FailureMessage?: string;
+  readonly NatGatewayAddresses?: [];
+  readonly NatGatewayId?: string;
+  readonly ProvisionedBandwidth?: ProvisionedBandwidth;
+  readonly State?: string;
+  readonly SubnetId?: string;
+  readonly VpcId?: string;
+  readonly Tags?: [];
+  readonly ConnectivityType?: string;
+}
+
+export interface NatGatewayAddress {
+  readonly AllocationId?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly PrivateIp?: string;
+  readonly PublicIp?: string;
+}
+
+export interface NetworkAcl {
+  readonly Associations?: [];
+  readonly Entries?: [];
+  readonly IsDefault?: boolean;
+  readonly NetworkAclId?: string;
+  readonly Tags?: [];
+  readonly VpcId?: string;
+  readonly OwnerId?: string;
+}
+
+export interface NetworkAclAssociation {
+  readonly NetworkAclAssociationId?: string;
+  readonly NetworkAclId?: string;
+  readonly SubnetId?: string;
+}
+
+export interface NetworkAclEntry {
+  readonly CidrBlock?: string;
+  readonly Egress?: boolean;
+  readonly IcmpTypeCode?: IcmpTypeCode;
+  readonly Ipv6CidrBlock?: string;
+  readonly PortRange?: PortRange;
+  readonly Protocol?: string;
+  readonly RuleAction?: string;
+  readonly RuleNumber?: number;
+}
+
+export interface NetworkCardInfo {
+  readonly NetworkCardIndex?: number;
+  readonly NetworkPerformance?: string;
+  readonly MaximumNetworkInterfaces?: number;
+}
+
+export interface NetworkInfo {
+  readonly NetworkPerformance?: string;
+  readonly MaximumNetworkInterfaces?: number;
+  readonly MaximumNetworkCards?: number;
+  readonly DefaultNetworkCardIndex?: number;
+  readonly NetworkCards?: [];
+  readonly Ipv4AddressesPerInterface?: number;
+  readonly Ipv6AddressesPerInterface?: number;
+  readonly Ipv6Supported?: boolean;
+  readonly EnaSupport?: string;
+  readonly EfaSupported?: boolean;
+  readonly EfaInfo?: EfaInfo;
+  readonly EncryptionInTransitSupported?: boolean;
+}
+
+export interface NetworkInsightsAccessScope {
+  readonly NetworkInsightsAccessScopeId?: string;
+  readonly NetworkInsightsAccessScopeArn?: string;
+  readonly CreatedDate?: Date;
+  readonly UpdatedDate?: Date;
+  readonly Tags?: [];
+}
+
+export interface NetworkInsightsAccessScopeAnalysis {
+  readonly NetworkInsightsAccessScopeAnalysisId?: string;
+  readonly NetworkInsightsAccessScopeAnalysisArn?: string;
+  readonly NetworkInsightsAccessScopeId?: string;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly WarningMessage?: string;
+  readonly StartDate?: Date;
+  readonly EndDate?: Date;
+  readonly FindingsFound?: string;
+  readonly AnalyzedEniCount?: number;
+  readonly Tags?: [];
+}
+
+export interface NetworkInsightsAccessScopeContent {
+  readonly NetworkInsightsAccessScopeId?: string;
+  readonly MatchPaths?: [];
+  readonly ExcludePaths?: [];
+}
+
+export interface NetworkInsightsAnalysis {
+  readonly NetworkInsightsAnalysisId?: string;
+  readonly NetworkInsightsAnalysisArn?: string;
+  readonly NetworkInsightsPathId?: string;
+  readonly FilterInArns?: [];
+  readonly StartDate?: Date;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly WarningMessage?: string;
+  readonly NetworkPathFound?: boolean;
+  readonly ForwardPathComponents?: [];
+  readonly ReturnPathComponents?: [];
+  readonly Explanations?: [];
+  readonly AlternatePathHints?: [];
+  readonly Tags?: [];
+}
+
+export interface NetworkInsightsPath {
+  readonly NetworkInsightsPathId?: string;
+  readonly NetworkInsightsPathArn?: string;
+  readonly CreatedDate?: Date;
+  readonly Source?: string;
+  readonly Destination?: string;
+  readonly SourceIp?: string;
+  readonly DestinationIp?: string;
+  readonly Protocol?: string;
+  readonly DestinationPort?: number;
+  readonly Tags?: [];
+}
+
+export interface NetworkInterface {
+  readonly Association?: NetworkInterfaceAssociation;
+  readonly Attachment?: NetworkInterfaceAttachment;
+  readonly AvailabilityZone?: string;
+  readonly Description?: string;
+  readonly Groups?: [];
+  readonly InterfaceType?: string;
+  readonly Ipv6Addresses?: [];
+  readonly MacAddress?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly OutpostArn?: string;
+  readonly OwnerId?: string;
+  readonly PrivateDnsName?: string;
+  readonly PrivateIpAddress?: string;
+  readonly PrivateIpAddresses?: [];
+  readonly Ipv4Prefixes?: [];
+  readonly Ipv6Prefixes?: [];
+  readonly RequesterId?: string;
+  readonly RequesterManaged?: boolean;
+  readonly SourceDestCheck?: boolean;
+  readonly Status?: string;
+  readonly SubnetId?: string;
+  readonly TagSet?: [];
+  readonly VpcId?: string;
+  readonly DenyAllIgwTraffic?: boolean;
+  readonly Ipv6Native?: boolean;
+  readonly Ipv6Address?: string;
+}
+
+export interface NetworkInterfaceAssociation {
+  readonly AllocationId?: string;
+  readonly AssociationId?: string;
+  readonly IpOwnerId?: string;
+  readonly PublicDnsName?: string;
+  readonly PublicIp?: string;
+  readonly CustomerOwnedIp?: string;
+  readonly CarrierIp?: string;
+}
+
+export interface NetworkInterfaceAttachment {
+  readonly AttachTime?: Date;
+  readonly AttachmentId?: string;
+  readonly DeleteOnTermination?: boolean;
+  readonly DeviceIndex?: number;
+  readonly NetworkCardIndex?: number;
+  readonly InstanceId?: string;
+  readonly InstanceOwnerId?: string;
+  readonly Status?: string;
+}
+
+export interface NetworkInterfaceAttachmentChanges {
+  readonly AttachmentId?: string;
+  readonly DeleteOnTermination?: boolean;
+}
+
+export interface NetworkInterfaceCount {
+  readonly Min?: number;
+  readonly Max?: number;
+}
+
+export interface NetworkInterfaceCountRequest {
+  readonly Min?: number;
+  readonly Max?: number;
+}
+
+export interface NetworkInterfaceIpv6Address {
+  readonly Ipv6Address?: string;
+}
+
+export interface NetworkInterfacePermission {
+  readonly NetworkInterfacePermissionId?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly AwsAccountId?: string;
+  readonly AwsService?: string;
+  readonly Permission?: string;
+  readonly PermissionState?: NetworkInterfacePermissionState;
+}
+
+export interface NetworkInterfacePermissionState {
+  readonly State?: string;
+  readonly StatusMessage?: string;
+}
+
+export interface NetworkInterfacePrivateIpAddress {
+  readonly Association?: NetworkInterfaceAssociation;
+  readonly Primary?: boolean;
+  readonly PrivateDnsName?: string;
+  readonly PrivateIpAddress?: string;
+}
+
+export interface NewDhcpConfiguration {
+  readonly Key?: string;
+  readonly Values?: [];
+}
+
+export interface OnDemandOptions {
+  readonly AllocationStrategy?: string;
+  readonly CapacityReservationOptions?: CapacityReservationOptions;
+  readonly SingleInstanceType?: boolean;
+  readonly SingleAvailabilityZone?: boolean;
+  readonly MinTargetCapacity?: number;
+  readonly MaxTotalPrice?: string;
+}
+
+export interface OnDemandOptionsRequest {
+  readonly AllocationStrategy?: string;
+  readonly CapacityReservationOptions?: CapacityReservationOptionsRequest;
+  readonly SingleInstanceType?: boolean;
+  readonly SingleAvailabilityZone?: boolean;
+  readonly MinTargetCapacity?: number;
+  readonly MaxTotalPrice?: string;
+}
+
+export interface PacketHeaderStatement {
+  readonly SourceAddresses?: [];
+  readonly DestinationAddresses?: [];
+  readonly SourcePorts?: [];
+  readonly DestinationPorts?: [];
+  readonly SourcePrefixLists?: [];
+  readonly DestinationPrefixLists?: [];
+  readonly Protocols?: [];
+}
+
+export interface PacketHeaderStatementRequest {
+  readonly SourceAddresses?: [];
+  readonly DestinationAddresses?: [];
+  readonly SourcePorts?: [];
+  readonly DestinationPorts?: [];
+  readonly SourcePrefixLists?: [];
+  readonly DestinationPrefixLists?: [];
+  readonly Protocols?: [];
+}
+
+export interface PathComponent {
+  readonly SequenceNumber?: number;
+  readonly AclRule?: AnalysisAclRule;
+  readonly AttachedTo?: AnalysisComponent;
+  readonly Component?: AnalysisComponent;
+  readonly DestinationVpc?: AnalysisComponent;
+  readonly OutboundHeader?: AnalysisPacketHeader;
+  readonly InboundHeader?: AnalysisPacketHeader;
+  readonly RouteTableRoute?: AnalysisRouteTableRoute;
+  readonly SecurityGroupRule?: AnalysisSecurityGroupRule;
+  readonly SourceVpc?: AnalysisComponent;
+  readonly Subnet?: AnalysisComponent;
+  readonly Vpc?: AnalysisComponent;
+}
+
+export interface PathStatement {
+  readonly PacketHeaderStatement?: PacketHeaderStatement;
+  readonly ResourceStatement?: ResourceStatement;
+}
+
+export interface PathStatementRequest {
+  readonly PacketHeaderStatement?: PacketHeaderStatementRequest;
+  readonly ResourceStatement?: ResourceStatementRequest;
+}
+
+export interface PciId {
+  readonly DeviceId?: string;
+  readonly VendorId?: string;
+  readonly SubsystemId?: string;
+  readonly SubsystemVendorId?: string;
+}
+
+export interface PeeringAttachmentStatus {
+  readonly Code?: string;
+  readonly Message?: string;
+}
+
+export interface PeeringConnectionOptions {
+  readonly AllowDnsResolutionFromRemoteVpc?: boolean;
+  readonly AllowEgressFromLocalClassicLinkToRemoteVpc?: boolean;
+  readonly AllowEgressFromLocalVpcToRemoteClassicLink?: boolean;
+}
+
+export interface PeeringConnectionOptionsRequest {
+  readonly AllowDnsResolutionFromRemoteVpc?: boolean;
+  readonly AllowEgressFromLocalClassicLinkToRemoteVpc?: boolean;
+  readonly AllowEgressFromLocalVpcToRemoteClassicLink?: boolean;
+}
+
+export interface PeeringTgwInfo {
+  readonly TransitGatewayId?: string;
+  readonly OwnerId?: string;
+  readonly Region?: string;
+}
+
+export interface Phase1DHGroupNumbersListValue {
+  readonly Value?: number;
+}
+
+export interface Phase1DHGroupNumbersRequestListValue {
+  readonly Value?: number;
+}
+
+export interface Phase1EncryptionAlgorithmsListValue {
+  readonly Value?: string;
+}
+
+export interface Phase1EncryptionAlgorithmsRequestListValue {
+  readonly Value?: string;
+}
+
+export interface Phase1IntegrityAlgorithmsListValue {
+  readonly Value?: string;
+}
+
+export interface Phase1IntegrityAlgorithmsRequestListValue {
+  readonly Value?: string;
+}
+
+export interface Phase2DHGroupNumbersListValue {
+  readonly Value?: number;
+}
+
+export interface Phase2DHGroupNumbersRequestListValue {
+  readonly Value?: number;
+}
+
+export interface Phase2EncryptionAlgorithmsListValue {
+  readonly Value?: string;
+}
+
+export interface Phase2EncryptionAlgorithmsRequestListValue {
+  readonly Value?: string;
+}
+
+export interface Phase2IntegrityAlgorithmsListValue {
+  readonly Value?: string;
+}
+
+export interface Phase2IntegrityAlgorithmsRequestListValue {
+  readonly Value?: string;
+}
+
+export interface Placement {
+  readonly AvailabilityZone?: string;
+  readonly Affinity?: string;
+  readonly GroupName?: string;
+  readonly PartitionNumber?: number;
+  readonly HostId?: string;
+  readonly Tenancy?: string;
+  readonly SpreadDomain?: string;
+  readonly HostResourceGroupArn?: string;
+}
+
+export interface PlacementGroup {
+  readonly GroupName?: string;
+  readonly State?: string;
+  readonly Strategy?: string;
+  readonly PartitionCount?: number;
+  readonly GroupId?: string;
+  readonly Tags?: [];
+}
+
+export interface PlacementGroupInfo {
+  readonly SupportedStrategies?: [];
+}
+
+export interface PlacementResponse {
+  readonly GroupName?: string;
+}
+
+export interface PoolCidrBlock {
+  readonly Cidr?: string;
+}
+
+export interface PortRange {
+  readonly From?: number;
+  readonly To?: number;
+}
+
+export interface PrefixList {
+  readonly Cidrs?: [];
+  readonly PrefixListId?: string;
+  readonly PrefixListName?: string;
+}
+
+export interface PrefixListAssociation {
+  readonly ResourceId?: string;
+  readonly ResourceOwner?: string;
+}
+
+export interface PrefixListEntry {
+  readonly Cidr?: string;
+  readonly Description?: string;
+}
+
+export interface PrefixListId {
+  readonly Description?: string;
+  readonly PrefixListId?: string;
+}
+
+export interface PriceSchedule {
+  readonly Active?: boolean;
+  readonly CurrencyCode?: string;
+  readonly Price?: unknown;
+  readonly Term?: number;
+}
+
+export interface PriceScheduleSpecification {
+  readonly CurrencyCode?: string;
+  readonly Price?: unknown;
+  readonly Term?: number;
+}
+
+export interface PricingDetail {
+  readonly Count?: number;
+  readonly Price?: unknown;
+}
+
+export interface PrincipalIdFormat {
+  readonly Arn?: string;
+  readonly Statuses?: [];
+}
+
+export interface PrivateDnsDetails {
+  readonly PrivateDnsName?: string;
+}
+
+export interface PrivateDnsNameConfiguration {
+  readonly State?: string;
+  readonly Type?: string;
+  readonly Value?: string;
+  readonly Name?: string;
+}
+
+export interface PrivateDnsNameOptionsOnLaunch {
+  readonly HostnameType?: string;
+  readonly EnableResourceNameDnsARecord?: boolean;
+  readonly EnableResourceNameDnsAAAARecord?: boolean;
+}
+
+export interface PrivateDnsNameOptionsRequest {
+  readonly HostnameType?: string;
+  readonly EnableResourceNameDnsARecord?: boolean;
+  readonly EnableResourceNameDnsAAAARecord?: boolean;
+}
+
+export interface PrivateDnsNameOptionsResponse {
+  readonly HostnameType?: string;
+  readonly EnableResourceNameDnsARecord?: boolean;
+  readonly EnableResourceNameDnsAAAARecord?: boolean;
+}
+
+export interface PrivateIpAddressSpecification {
+  readonly Primary?: boolean;
+  readonly PrivateIpAddress?: string;
+}
+
+export interface ProcessorInfo {
+  readonly SupportedArchitectures?: [];
+  readonly SustainedClockSpeedInGhz?: unknown;
+}
+
+export interface ProductCode {
+  readonly ProductCodeId?: string;
+  readonly ProductCodeType?: string;
+}
+
+export interface PropagatingVgw {
+  readonly GatewayId?: string;
+}
+
+export interface ProvisionByoipCidrRequest {
   readonly Cidr: string;
+  readonly CidrAuthorizationContext?: CidrAuthorizationContext;
+  readonly PubliclyAdvertisable?: boolean;
+  readonly Description?: string;
+  readonly DryRun?: boolean;
+  readonly PoolTagSpecifications?: [];
+  readonly MultiRegion?: boolean;
+}
+
+export interface ProvisionByoipCidrResult {
+  readonly ByoipCidr?: ByoipCidr;
+}
+
+export interface ProvisionIpamPoolCidrRequest {
+  readonly DryRun?: boolean;
   readonly IpamPoolId: string;
-  readonly IpamPoolOwner: string;
+  readonly Cidr?: string;
+  readonly CidrAuthorizationContext?: IpamCidrAuthorizationContext;
 }
 
-interface MoveByoipCidrToIpamResult {
-  readonly ByoipCidr: ByoipCidr;
+export interface ProvisionIpamPoolCidrResult {
+  readonly IpamPoolCidr?: IpamPoolCidr;
 }
 
-interface MovingAddressStatus {
-  readonly MoveStatus: string;
-  readonly PublicIp: string;
-}
-
-interface NatGateway {
-  readonly CreateTime: Date;
-  readonly DeleteTime: Date;
-  readonly FailureCode: string;
-  readonly FailureMessage: string;
-  readonly NatGatewayAddresses: [];
-  readonly NatGatewayId: string;
-  readonly ProvisionedBandwidth: ProvisionedBandwidth;
-  readonly State: string;
-  readonly SubnetId: string;
-  readonly VpcId: string;
-  readonly Tags: [];
-  readonly ConnectivityType: string;
-}
-
-interface NatGatewayAddress {
-  readonly AllocationId: string;
-  readonly NetworkInterfaceId: string;
-  readonly PrivateIp: string;
-  readonly PublicIp: string;
-}
-
-interface NetworkAcl {
-  readonly Associations: [];
-  readonly Entries: [];
-  readonly IsDefault: boolean;
-  readonly NetworkAclId: string;
-  readonly Tags: [];
-  readonly VpcId: string;
-  readonly OwnerId: string;
-}
-
-interface NetworkAclAssociation {
-  readonly NetworkAclAssociationId: string;
-  readonly NetworkAclId: string;
-  readonly SubnetId: string;
-}
-
-interface NetworkAclEntry {
-  readonly CidrBlock: string;
-  readonly Egress: boolean;
-  readonly IcmpTypeCode: IcmpTypeCode;
-  readonly Ipv6CidrBlock: string;
-  readonly PortRange: PortRange;
-  readonly Protocol: string;
-  readonly RuleAction: string;
-  readonly RuleNumber: number;
-}
-
-interface NetworkCardInfo {
-  readonly NetworkCardIndex: number;
-  readonly NetworkPerformance: string;
-  readonly MaximumNetworkInterfaces: number;
-}
-
-interface NetworkInfo {
-  readonly NetworkPerformance: string;
-  readonly MaximumNetworkInterfaces: number;
-  readonly MaximumNetworkCards: number;
-  readonly DefaultNetworkCardIndex: number;
-  readonly NetworkCards: [];
-  readonly Ipv4AddressesPerInterface: number;
-  readonly Ipv6AddressesPerInterface: number;
-  readonly Ipv6Supported: boolean;
-  readonly EnaSupport: string;
-  readonly EfaSupported: boolean;
-  readonly EfaInfo: EfaInfo;
-  readonly EncryptionInTransitSupported: boolean;
-}
-
-interface NetworkInsightsAccessScope {
-  readonly NetworkInsightsAccessScopeId: string;
-  readonly NetworkInsightsAccessScopeArn: string;
-  readonly CreatedDate: Date;
-  readonly UpdatedDate: Date;
-  readonly Tags: [];
-}
-
-interface NetworkInsightsAccessScopeAnalysis {
-  readonly NetworkInsightsAccessScopeAnalysisId: string;
-  readonly NetworkInsightsAccessScopeAnalysisArn: string;
-  readonly NetworkInsightsAccessScopeId: string;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly WarningMessage: string;
-  readonly StartDate: Date;
-  readonly EndDate: Date;
-  readonly FindingsFound: string;
-  readonly AnalyzedEniCount: number;
-  readonly Tags: [];
-}
-
-interface NetworkInsightsAccessScopeContent {
-  readonly NetworkInsightsAccessScopeId: string;
-  readonly MatchPaths: [];
-  readonly ExcludePaths: [];
-}
-
-interface NetworkInsightsAnalysis {
-  readonly NetworkInsightsAnalysisId: string;
-  readonly NetworkInsightsAnalysisArn: string;
-  readonly NetworkInsightsPathId: string;
-  readonly FilterInArns: [];
-  readonly StartDate: Date;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly WarningMessage: string;
-  readonly NetworkPathFound: boolean;
-  readonly ForwardPathComponents: [];
-  readonly ReturnPathComponents: [];
-  readonly Explanations: [];
-  readonly AlternatePathHints: [];
-  readonly Tags: [];
-}
-
-interface NetworkInsightsPath {
-  readonly NetworkInsightsPathId: string;
-  readonly NetworkInsightsPathArn: string;
-  readonly CreatedDate: Date;
-  readonly Source: string;
-  readonly Destination: string;
-  readonly SourceIp: string;
-  readonly DestinationIp: string;
-  readonly Protocol: string;
-  readonly DestinationPort: number;
-  readonly Tags: [];
-}
-
-interface NetworkInterface {
-  readonly Association: NetworkInterfaceAssociation;
-  readonly Attachment: NetworkInterfaceAttachment;
-  readonly AvailabilityZone: string;
-  readonly Description: string;
-  readonly Groups: [];
-  readonly InterfaceType: string;
-  readonly Ipv6Addresses: [];
-  readonly MacAddress: string;
-  readonly NetworkInterfaceId: string;
-  readonly OutpostArn: string;
-  readonly OwnerId: string;
-  readonly PrivateDnsName: string;
-  readonly PrivateIpAddress: string;
-  readonly PrivateIpAddresses: [];
-  readonly Ipv4Prefixes: [];
-  readonly Ipv6Prefixes: [];
-  readonly RequesterId: string;
-  readonly RequesterManaged: boolean;
-  readonly SourceDestCheck: boolean;
-  readonly Status: string;
-  readonly SubnetId: string;
-  readonly TagSet: [];
-  readonly VpcId: string;
-  readonly DenyAllIgwTraffic: boolean;
-  readonly Ipv6Native: boolean;
-  readonly Ipv6Address: string;
-}
-
-interface NetworkInterfaceAssociation {
-  readonly AllocationId: string;
-  readonly AssociationId: string;
-  readonly IpOwnerId: string;
-  readonly PublicDnsName: string;
-  readonly PublicIp: string;
-  readonly CustomerOwnedIp: string;
-  readonly CarrierIp: string;
-}
-
-interface NetworkInterfaceAttachment {
-  readonly AttachTime: Date;
-  readonly AttachmentId: string;
-  readonly DeleteOnTermination: boolean;
-  readonly DeviceIndex: number;
-  readonly NetworkCardIndex: number;
-  readonly InstanceId: string;
-  readonly InstanceOwnerId: string;
-  readonly Status: string;
-}
-
-interface NetworkInterfaceAttachmentChanges {
-  readonly AttachmentId: string;
-  readonly DeleteOnTermination: boolean;
-}
-
-interface NetworkInterfaceCount {
-  readonly Min: number;
-  readonly Max: number;
-}
-
-interface NetworkInterfaceCountRequest {
-  readonly Min: number;
-  readonly Max: number;
-}
-
-interface NetworkInterfaceIpv6Address {
-  readonly Ipv6Address: string;
-}
-
-interface NetworkInterfacePermission {
-  readonly NetworkInterfacePermissionId: string;
-  readonly NetworkInterfaceId: string;
-  readonly AwsAccountId: string;
-  readonly AwsService: string;
-  readonly Permission: string;
-  readonly PermissionState: NetworkInterfacePermissionState;
-}
-
-interface NetworkInterfacePermissionState {
-  readonly State: string;
-  readonly StatusMessage: string;
-}
-
-interface NetworkInterfacePrivateIpAddress {
-  readonly Association: NetworkInterfaceAssociation;
-  readonly Primary: boolean;
-  readonly PrivateDnsName: string;
-  readonly PrivateIpAddress: string;
-}
-
-interface NewDhcpConfiguration {
-  readonly Key: string;
-  readonly Values: [];
-}
-
-interface OnDemandOptions {
-  readonly AllocationStrategy: string;
-  readonly CapacityReservationOptions: CapacityReservationOptions;
-  readonly SingleInstanceType: boolean;
-  readonly SingleAvailabilityZone: boolean;
-  readonly MinTargetCapacity: number;
-  readonly MaxTotalPrice: string;
-}
-
-interface OnDemandOptionsRequest {
-  readonly AllocationStrategy: string;
-  readonly CapacityReservationOptions: CapacityReservationOptionsRequest;
-  readonly SingleInstanceType: boolean;
-  readonly SingleAvailabilityZone: boolean;
-  readonly MinTargetCapacity: number;
-  readonly MaxTotalPrice: string;
-}
-
-interface PacketHeaderStatement {
-  readonly SourceAddresses: [];
-  readonly DestinationAddresses: [];
-  readonly SourcePorts: [];
-  readonly DestinationPorts: [];
-  readonly SourcePrefixLists: [];
-  readonly DestinationPrefixLists: [];
-  readonly Protocols: [];
-}
-
-interface PacketHeaderStatementRequest {
-  readonly SourceAddresses: [];
-  readonly DestinationAddresses: [];
-  readonly SourcePorts: [];
-  readonly DestinationPorts: [];
-  readonly SourcePrefixLists: [];
-  readonly DestinationPrefixLists: [];
-  readonly Protocols: [];
-}
-
-interface PathComponent {
-  readonly SequenceNumber: number;
-  readonly AclRule: AnalysisAclRule;
-  readonly AttachedTo: AnalysisComponent;
-  readonly Component: AnalysisComponent;
-  readonly DestinationVpc: AnalysisComponent;
-  readonly OutboundHeader: AnalysisPacketHeader;
-  readonly InboundHeader: AnalysisPacketHeader;
-  readonly RouteTableRoute: AnalysisRouteTableRoute;
-  readonly SecurityGroupRule: AnalysisSecurityGroupRule;
-  readonly SourceVpc: AnalysisComponent;
-  readonly Subnet: AnalysisComponent;
-  readonly Vpc: AnalysisComponent;
-}
-
-interface PathStatement {
-  readonly PacketHeaderStatement: PacketHeaderStatement;
-  readonly ResourceStatement: ResourceStatement;
-}
-
-interface PathStatementRequest {
-  readonly PacketHeaderStatement: PacketHeaderStatementRequest;
-  readonly ResourceStatement: ResourceStatementRequest;
-}
-
-interface PciId {
-  readonly DeviceId: string;
-  readonly VendorId: string;
-  readonly SubsystemId: string;
-  readonly SubsystemVendorId: string;
-}
-
-interface PeeringAttachmentStatus {
-  readonly Code: string;
-  readonly Message: string;
-}
-
-interface PeeringConnectionOptions {
-  readonly AllowDnsResolutionFromRemoteVpc: boolean;
-  readonly AllowEgressFromLocalClassicLinkToRemoteVpc: boolean;
-  readonly AllowEgressFromLocalVpcToRemoteClassicLink: boolean;
-}
-
-interface PeeringConnectionOptionsRequest {
-  readonly AllowDnsResolutionFromRemoteVpc: boolean;
-  readonly AllowEgressFromLocalClassicLinkToRemoteVpc: boolean;
-  readonly AllowEgressFromLocalVpcToRemoteClassicLink: boolean;
-}
-
-interface PeeringTgwInfo {
-  readonly TransitGatewayId: string;
-  readonly OwnerId: string;
-  readonly Region: string;
-}
-
-interface Phase1DHGroupNumbersListValue {
-  readonly Value: number;
-}
-
-interface Phase1DHGroupNumbersRequestListValue {
-  readonly Value: number;
-}
-
-interface Phase1EncryptionAlgorithmsListValue {
-  readonly Value: string;
-}
-
-interface Phase1EncryptionAlgorithmsRequestListValue {
-  readonly Value: string;
-}
-
-interface Phase1IntegrityAlgorithmsListValue {
-  readonly Value: string;
-}
-
-interface Phase1IntegrityAlgorithmsRequestListValue {
-  readonly Value: string;
-}
-
-interface Phase2DHGroupNumbersListValue {
-  readonly Value: number;
-}
-
-interface Phase2DHGroupNumbersRequestListValue {
-  readonly Value: number;
-}
-
-interface Phase2EncryptionAlgorithmsListValue {
-  readonly Value: string;
-}
-
-interface Phase2EncryptionAlgorithmsRequestListValue {
-  readonly Value: string;
-}
-
-interface Phase2IntegrityAlgorithmsListValue {
-  readonly Value: string;
-}
-
-interface Phase2IntegrityAlgorithmsRequestListValue {
-  readonly Value: string;
-}
-
-interface Placement {
-  readonly AvailabilityZone: string;
-  readonly Affinity: string;
-  readonly GroupName: string;
-  readonly PartitionNumber: number;
-  readonly HostId: string;
-  readonly Tenancy: string;
-  readonly SpreadDomain: string;
-  readonly HostResourceGroupArn: string;
-}
-
-interface PlacementGroup {
-  readonly GroupName: string;
-  readonly State: string;
-  readonly Strategy: string;
-  readonly PartitionCount: number;
-  readonly GroupId: string;
-  readonly Tags: [];
-}
-
-interface PlacementGroupInfo {
-  readonly SupportedStrategies: [];
-}
-
-interface PlacementResponse {
-  readonly GroupName: string;
-}
-
-interface PoolCidrBlock {
-  readonly Cidr: string;
-}
-
-interface PortRange {
-  readonly From: number;
-  readonly To: number;
-}
-
-interface PrefixList {
-  readonly Cidrs: [];
-  readonly PrefixListId: string;
-  readonly PrefixListName: string;
-}
-
-interface PrefixListAssociation {
-  readonly ResourceId: string;
-  readonly ResourceOwner: string;
-}
-
-interface PrefixListEntry {
-  readonly Cidr: string;
-  readonly Description: string;
-}
-
-interface PrefixListId {
-  readonly Description: string;
-  readonly PrefixListId: string;
-}
-
-interface PriceSchedule {
-  readonly Active: boolean;
-  readonly CurrencyCode: string;
-  readonly Price: unknown;
-  readonly Term: number;
-}
-
-interface PriceScheduleSpecification {
-  readonly CurrencyCode: string;
-  readonly Price: unknown;
-  readonly Term: number;
-}
-
-interface PricingDetail {
-  readonly Count: number;
-  readonly Price: unknown;
-}
-
-interface PrincipalIdFormat {
-  readonly Arn: string;
-  readonly Statuses: [];
-}
-
-interface PrivateDnsDetails {
-  readonly PrivateDnsName: string;
-}
-
-interface PrivateDnsNameConfiguration {
-  readonly State: string;
-  readonly Type: string;
-  readonly Value: string;
-  readonly Name: string;
-}
-
-interface PrivateDnsNameOptionsOnLaunch {
-  readonly HostnameType: string;
-  readonly EnableResourceNameDnsARecord: boolean;
-  readonly EnableResourceNameDnsAAAARecord: boolean;
-}
-
-interface PrivateDnsNameOptionsRequest {
-  readonly HostnameType: string;
-  readonly EnableResourceNameDnsARecord: boolean;
-  readonly EnableResourceNameDnsAAAARecord: boolean;
-}
-
-interface PrivateDnsNameOptionsResponse {
-  readonly HostnameType: string;
-  readonly EnableResourceNameDnsARecord: boolean;
-  readonly EnableResourceNameDnsAAAARecord: boolean;
-}
-
-interface PrivateIpAddressSpecification {
-  readonly Primary: boolean;
-  readonly PrivateIpAddress: string;
-}
-
-interface ProcessorInfo {
-  readonly SupportedArchitectures: [];
-  readonly SustainedClockSpeedInGhz: unknown;
-}
-
-interface ProductCode {
-  readonly ProductCodeId: string;
-  readonly ProductCodeType: string;
-}
-
-interface PropagatingVgw {
-  readonly GatewayId: string;
-}
-
-interface ProvisionByoipCidrRequest {
-  readonly Cidr: string;
-  readonly CidrAuthorizationContext: CidrAuthorizationContext;
-  readonly PubliclyAdvertisable: boolean;
-  readonly Description: string;
-  readonly DryRun: boolean;
-  readonly PoolTagSpecifications: [];
-  readonly MultiRegion: boolean;
-}
-
-interface ProvisionByoipCidrResult {
-  readonly ByoipCidr: ByoipCidr;
-}
-
-interface ProvisionIpamPoolCidrRequest {
-  readonly DryRun: boolean;
-  readonly IpamPoolId: string;
-  readonly Cidr: string;
-  readonly CidrAuthorizationContext: IpamCidrAuthorizationContext;
-}
-
-interface ProvisionIpamPoolCidrResult {
-  readonly IpamPoolCidr: IpamPoolCidr;
-}
-
-interface ProvisionPublicIpv4PoolCidrRequest {
-  readonly DryRun: boolean;
+export interface ProvisionPublicIpv4PoolCidrRequest {
+  readonly DryRun?: boolean;
   readonly IpamPoolId: string;
   readonly PoolId: string;
   readonly NetmaskLength: number;
 }
 
-interface ProvisionPublicIpv4PoolCidrResult {
-  readonly PoolId: string;
-  readonly PoolAddressRange: PublicIpv4PoolRange;
+export interface ProvisionPublicIpv4PoolCidrResult {
+  readonly PoolId?: string;
+  readonly PoolAddressRange?: PublicIpv4PoolRange;
 }
 
-interface ProvisionedBandwidth {
-  readonly ProvisionTime: Date;
-  readonly Provisioned: string;
-  readonly RequestTime: Date;
-  readonly Requested: string;
-  readonly Status: string;
+export interface ProvisionedBandwidth {
+  readonly ProvisionTime?: Date;
+  readonly Provisioned?: string;
+  readonly RequestTime?: Date;
+  readonly Requested?: string;
+  readonly Status?: string;
 }
 
-interface PtrUpdateStatus {
-  readonly Value: string;
-  readonly Status: string;
-  readonly Reason: string;
+export interface PtrUpdateStatus {
+  readonly Value?: string;
+  readonly Status?: string;
+  readonly Reason?: string;
 }
 
-interface PublicIpv4Pool {
-  readonly PoolId: string;
-  readonly Description: string;
-  readonly PoolAddressRanges: [];
-  readonly TotalAddressCount: number;
-  readonly TotalAvailableAddressCount: number;
-  readonly NetworkBorderGroup: string;
-  readonly Tags: [];
+export interface PublicIpv4Pool {
+  readonly PoolId?: string;
+  readonly Description?: string;
+  readonly PoolAddressRanges?: [];
+  readonly TotalAddressCount?: number;
+  readonly TotalAvailableAddressCount?: number;
+  readonly NetworkBorderGroup?: string;
+  readonly Tags?: [];
 }
 
-interface PublicIpv4PoolRange {
-  readonly FirstAddress: string;
-  readonly LastAddress: string;
-  readonly AddressCount: number;
-  readonly AvailableAddressCount: number;
+export interface PublicIpv4PoolRange {
+  readonly FirstAddress?: string;
+  readonly LastAddress?: string;
+  readonly AddressCount?: number;
+  readonly AvailableAddressCount?: number;
 }
 
-interface Purchase {
-  readonly CurrencyCode: string;
-  readonly Duration: number;
+export interface Purchase {
+  readonly CurrencyCode?: string;
+  readonly Duration?: number;
+  readonly HostIdSet?: [];
+  readonly HostReservationId?: string;
+  readonly HourlyPrice?: string;
+  readonly InstanceFamily?: string;
+  readonly PaymentOption?: string;
+  readonly UpfrontPrice?: string;
+}
+
+export interface PurchaseHostReservationRequest {
+  readonly ClientToken?: string;
+  readonly CurrencyCode?: string;
   readonly HostIdSet: [];
-  readonly HostReservationId: string;
-  readonly HourlyPrice: string;
-  readonly InstanceFamily: string;
-  readonly PaymentOption: string;
-  readonly UpfrontPrice: string;
-}
-
-interface PurchaseHostReservationRequest {
-  readonly ClientToken: string;
-  readonly CurrencyCode: string;
-  readonly HostIdSet: [];
-  readonly LimitPrice: string;
+  readonly LimitPrice?: string;
   readonly OfferingId: string;
-  readonly TagSpecifications: [];
+  readonly TagSpecifications?: [];
 }
 
-interface PurchaseHostReservationResult {
-  readonly ClientToken: string;
-  readonly CurrencyCode: string;
-  readonly Purchase: [];
-  readonly TotalHourlyPrice: string;
-  readonly TotalUpfrontPrice: string;
+export interface PurchaseHostReservationResult {
+  readonly ClientToken?: string;
+  readonly CurrencyCode?: string;
+  readonly Purchase?: [];
+  readonly TotalHourlyPrice?: string;
+  readonly TotalUpfrontPrice?: string;
 }
 
-interface PurchaseRequest {
+export interface PurchaseRequest {
   readonly InstanceCount: number;
   readonly PurchaseToken: string;
 }
 
-interface PurchaseReservedInstancesOfferingRequest {
+export interface PurchaseReservedInstancesOfferingRequest {
   readonly InstanceCount: number;
   readonly ReservedInstancesOfferingId: string;
-  readonly DryRun: boolean;
-  readonly LimitPrice: ReservedInstanceLimitPrice;
-  readonly PurchaseTime: Date;
+  readonly DryRun?: boolean;
+  readonly LimitPrice?: ReservedInstanceLimitPrice;
+  readonly PurchaseTime?: Date;
 }
 
-interface PurchaseReservedInstancesOfferingResult {
-  readonly ReservedInstancesId: string;
+export interface PurchaseReservedInstancesOfferingResult {
+  readonly ReservedInstancesId?: string;
 }
 
-interface PurchaseScheduledInstancesRequest {
-  readonly ClientToken: string;
-  readonly DryRun: boolean;
+export interface PurchaseScheduledInstancesRequest {
+  readonly ClientToken?: string;
+  readonly DryRun?: boolean;
   readonly PurchaseRequests: [];
 }
 
-interface PurchaseScheduledInstancesResult {
-  readonly ScheduledInstanceSet: [];
+export interface PurchaseScheduledInstancesResult {
+  readonly ScheduledInstanceSet?: [];
 }
 
-interface RebootInstancesRequest {
+export interface RebootInstancesRequest {
   readonly InstanceIds: [];
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface RecurringCharge {
-  readonly Amount: unknown;
-  readonly Frequency: string;
+export interface RecurringCharge {
+  readonly Amount?: unknown;
+  readonly Frequency?: string;
 }
 
-interface ReferencedSecurityGroup {
-  readonly GroupId: string;
-  readonly PeeringStatus: string;
-  readonly UserId: string;
-  readonly VpcId: string;
-  readonly VpcPeeringConnectionId: string;
+export interface ReferencedSecurityGroup {
+  readonly GroupId?: string;
+  readonly PeeringStatus?: string;
+  readonly UserId?: string;
+  readonly VpcId?: string;
+  readonly VpcPeeringConnectionId?: string;
 }
 
-interface Region {
-  readonly Endpoint: string;
-  readonly RegionName: string;
-  readonly OptInStatus: string;
+export interface Region {
+  readonly Endpoint?: string;
+  readonly RegionName?: string;
+  readonly OptInStatus?: string;
 }
 
-interface RegisterImageRequest {
-  readonly ImageLocation: string;
-  readonly Architecture: string;
-  readonly BlockDeviceMappings: [];
-  readonly Description: string;
-  readonly DryRun: boolean;
-  readonly EnaSupport: boolean;
-  readonly KernelId: string;
+export interface RegisterImageRequest {
+  readonly ImageLocation?: string;
+  readonly Architecture?: string;
+  readonly BlockDeviceMappings?: [];
+  readonly Description?: string;
+  readonly DryRun?: boolean;
+  readonly EnaSupport?: boolean;
+  readonly KernelId?: string;
   readonly Name: string;
-  readonly BillingProducts: [];
-  readonly RamdiskId: string;
-  readonly RootDeviceName: string;
-  readonly SriovNetSupport: string;
-  readonly VirtualizationType: string;
-  readonly BootMode: string;
+  readonly BillingProducts?: [];
+  readonly RamdiskId?: string;
+  readonly RootDeviceName?: string;
+  readonly SriovNetSupport?: string;
+  readonly VirtualizationType?: string;
+  readonly BootMode?: string;
 }
 
-interface RegisterImageResult {
-  readonly ImageId: string;
+export interface RegisterImageResult {
+  readonly ImageId?: string;
 }
 
-interface RegisterInstanceEventNotificationAttributesRequest {
-  readonly DryRun: boolean;
-  readonly InstanceTagAttribute: RegisterInstanceTagAttributeRequest;
+export interface RegisterInstanceEventNotificationAttributesRequest {
+  readonly DryRun?: boolean;
+  readonly InstanceTagAttribute?: RegisterInstanceTagAttributeRequest;
 }
 
-interface RegisterInstanceEventNotificationAttributesResult {
-  readonly InstanceTagAttribute: InstanceTagNotificationAttribute;
+export interface RegisterInstanceEventNotificationAttributesResult {
+  readonly InstanceTagAttribute?: InstanceTagNotificationAttribute;
 }
 
-interface RegisterInstanceTagAttributeRequest {
-  readonly IncludeAllTagsOfInstance: boolean;
-  readonly InstanceTagKeys: [];
+export interface RegisterInstanceTagAttributeRequest {
+  readonly IncludeAllTagsOfInstance?: boolean;
+  readonly InstanceTagKeys?: [];
 }
 
-interface RegisterTransitGatewayMulticastGroupMembersRequest {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly GroupIpAddress: string;
-  readonly NetworkInterfaceIds: [];
-  readonly DryRun: boolean;
+export interface RegisterTransitGatewayMulticastGroupMembersRequest {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly GroupIpAddress?: string;
+  readonly NetworkInterfaceIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface RegisterTransitGatewayMulticastGroupMembersResult {
-  readonly RegisteredMulticastGroupMembers: TransitGatewayMulticastRegisteredGroupMembers;
+export interface RegisterTransitGatewayMulticastGroupMembersResult {
+  readonly RegisteredMulticastGroupMembers?: TransitGatewayMulticastRegisteredGroupMembers;
 }
 
-interface RegisterTransitGatewayMulticastGroupSourcesRequest {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly GroupIpAddress: string;
-  readonly NetworkInterfaceIds: [];
-  readonly DryRun: boolean;
+export interface RegisterTransitGatewayMulticastGroupSourcesRequest {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly GroupIpAddress?: string;
+  readonly NetworkInterfaceIds?: [];
+  readonly DryRun?: boolean;
 }
 
-interface RegisterTransitGatewayMulticastGroupSourcesResult {
-  readonly RegisteredMulticastGroupSources: TransitGatewayMulticastRegisteredGroupSources;
+export interface RegisterTransitGatewayMulticastGroupSourcesResult {
+  readonly RegisteredMulticastGroupSources?: TransitGatewayMulticastRegisteredGroupSources;
 }
 
-interface RejectTransitGatewayMulticastDomainAssociationsRequest {
-  readonly TransitGatewayMulticastDomainId: string;
+export interface RejectTransitGatewayMulticastDomainAssociationsRequest {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly SubnetIds?: [];
+  readonly DryRun?: boolean;
+}
+
+export interface RejectTransitGatewayMulticastDomainAssociationsResult {
+  readonly Associations?: TransitGatewayMulticastDomainAssociations;
+}
+
+export interface RejectTransitGatewayPeeringAttachmentRequest {
   readonly TransitGatewayAttachmentId: string;
-  readonly SubnetIds: [];
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface RejectTransitGatewayMulticastDomainAssociationsResult {
-  readonly Associations: TransitGatewayMulticastDomainAssociations;
+export interface RejectTransitGatewayPeeringAttachmentResult {
+  readonly TransitGatewayPeeringAttachment?: TransitGatewayPeeringAttachment;
 }
 
-interface RejectTransitGatewayPeeringAttachmentRequest {
+export interface RejectTransitGatewayVpcAttachmentRequest {
   readonly TransitGatewayAttachmentId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface RejectTransitGatewayPeeringAttachmentResult {
-  readonly TransitGatewayPeeringAttachment: TransitGatewayPeeringAttachment;
+export interface RejectTransitGatewayVpcAttachmentResult {
+  readonly TransitGatewayVpcAttachment?: TransitGatewayVpcAttachment;
 }
 
-interface RejectTransitGatewayVpcAttachmentRequest {
-  readonly TransitGatewayAttachmentId: string;
-  readonly DryRun: boolean;
-}
-
-interface RejectTransitGatewayVpcAttachmentResult {
-  readonly TransitGatewayVpcAttachment: TransitGatewayVpcAttachment;
-}
-
-interface RejectVpcEndpointConnectionsRequest {
-  readonly DryRun: boolean;
+export interface RejectVpcEndpointConnectionsRequest {
+  readonly DryRun?: boolean;
   readonly ServiceId: string;
   readonly VpcEndpointIds: [];
 }
 
-interface RejectVpcEndpointConnectionsResult {
-  readonly Unsuccessful: [];
+export interface RejectVpcEndpointConnectionsResult {
+  readonly Unsuccessful?: [];
 }
 
-interface RejectVpcPeeringConnectionRequest {
-  readonly DryRun: boolean;
+export interface RejectVpcPeeringConnectionRequest {
+  readonly DryRun?: boolean;
   readonly VpcPeeringConnectionId: string;
 }
 
-interface RejectVpcPeeringConnectionResult {
-  readonly Return: boolean;
+export interface RejectVpcPeeringConnectionResult {
+  readonly Return?: boolean;
 }
 
-interface ReleaseAddressRequest {
-  readonly AllocationId: string;
-  readonly PublicIp: string;
-  readonly NetworkBorderGroup: string;
-  readonly DryRun: boolean;
+export interface ReleaseAddressRequest {
+  readonly AllocationId?: string;
+  readonly PublicIp?: string;
+  readonly NetworkBorderGroup?: string;
+  readonly DryRun?: boolean;
 }
 
-interface ReleaseHostsRequest {
+export interface ReleaseHostsRequest {
   readonly HostIds: [];
 }
 
-interface ReleaseHostsResult {
-  readonly Successful: [];
-  readonly Unsuccessful: [];
+export interface ReleaseHostsResult {
+  readonly Successful?: [];
+  readonly Unsuccessful?: [];
 }
 
-interface ReleaseIpamPoolAllocationRequest {
-  readonly DryRun: boolean;
+export interface ReleaseIpamPoolAllocationRequest {
+  readonly DryRun?: boolean;
   readonly IpamPoolId: string;
   readonly Cidr: string;
-  readonly IpamPoolAllocationId: string;
+  readonly IpamPoolAllocationId?: string;
 }
 
-interface ReleaseIpamPoolAllocationResult {
-  readonly Success: boolean;
+export interface ReleaseIpamPoolAllocationResult {
+  readonly Success?: boolean;
 }
 
-interface RemoveIpamOperatingRegion {
-  readonly RegionName: string;
+export interface RemoveIpamOperatingRegion {
+  readonly RegionName?: string;
 }
 
-interface RemovePrefixListEntry {
+export interface RemovePrefixListEntry {
   readonly Cidr: string;
 }
 
-interface ReplaceIamInstanceProfileAssociationRequest {
+export interface ReplaceIamInstanceProfileAssociationRequest {
   readonly IamInstanceProfile: IamInstanceProfileSpecification;
   readonly AssociationId: string;
 }
 
-interface ReplaceIamInstanceProfileAssociationResult {
-  readonly IamInstanceProfileAssociation: IamInstanceProfileAssociation;
+export interface ReplaceIamInstanceProfileAssociationResult {
+  readonly IamInstanceProfileAssociation?: IamInstanceProfileAssociation;
 }
 
-interface ReplaceNetworkAclAssociationRequest {
+export interface ReplaceNetworkAclAssociationRequest {
   readonly AssociationId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
   readonly NetworkAclId: string;
 }
 
-interface ReplaceNetworkAclAssociationResult {
-  readonly NewAssociationId: string;
+export interface ReplaceNetworkAclAssociationResult {
+  readonly NewAssociationId?: string;
 }
 
-interface ReplaceNetworkAclEntryRequest {
-  readonly CidrBlock: string;
-  readonly DryRun: boolean;
+export interface ReplaceNetworkAclEntryRequest {
+  readonly CidrBlock?: string;
+  readonly DryRun?: boolean;
   readonly Egress: boolean;
-  readonly IcmpTypeCode: IcmpTypeCode;
-  readonly Ipv6CidrBlock: string;
+  readonly IcmpTypeCode?: IcmpTypeCode;
+  readonly Ipv6CidrBlock?: string;
   readonly NetworkAclId: string;
-  readonly PortRange: PortRange;
+  readonly PortRange?: PortRange;
   readonly Protocol: string;
   readonly RuleAction: string;
   readonly RuleNumber: number;
 }
 
-interface ReplaceRootVolumeTask {
-  readonly ReplaceRootVolumeTaskId: string;
-  readonly InstanceId: string;
-  readonly TaskState: string;
-  readonly StartTime: string;
-  readonly CompleteTime: string;
-  readonly Tags: [];
+export interface ReplaceRootVolumeTask {
+  readonly ReplaceRootVolumeTaskId?: string;
+  readonly InstanceId?: string;
+  readonly TaskState?: string;
+  readonly StartTime?: string;
+  readonly CompleteTime?: string;
+  readonly Tags?: [];
 }
 
-interface ReplaceRouteRequest {
-  readonly DestinationCidrBlock: string;
-  readonly DestinationIpv6CidrBlock: string;
-  readonly DestinationPrefixListId: string;
-  readonly DryRun: boolean;
-  readonly VpcEndpointId: string;
-  readonly EgressOnlyInternetGatewayId: string;
-  readonly GatewayId: string;
-  readonly InstanceId: string;
-  readonly LocalTarget: boolean;
-  readonly NatGatewayId: string;
-  readonly TransitGatewayId: string;
-  readonly LocalGatewayId: string;
-  readonly CarrierGatewayId: string;
-  readonly NetworkInterfaceId: string;
+export interface ReplaceRouteRequest {
+  readonly DestinationCidrBlock?: string;
+  readonly DestinationIpv6CidrBlock?: string;
+  readonly DestinationPrefixListId?: string;
+  readonly DryRun?: boolean;
+  readonly VpcEndpointId?: string;
+  readonly EgressOnlyInternetGatewayId?: string;
+  readonly GatewayId?: string;
+  readonly InstanceId?: string;
+  readonly LocalTarget?: boolean;
+  readonly NatGatewayId?: string;
+  readonly TransitGatewayId?: string;
+  readonly LocalGatewayId?: string;
+  readonly CarrierGatewayId?: string;
+  readonly NetworkInterfaceId?: string;
   readonly RouteTableId: string;
-  readonly VpcPeeringConnectionId: string;
-  readonly CoreNetworkArn: string;
+  readonly VpcPeeringConnectionId?: string;
+  readonly CoreNetworkArn?: string;
 }
 
-interface ReplaceRouteTableAssociationRequest {
+export interface ReplaceRouteTableAssociationRequest {
   readonly AssociationId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
   readonly RouteTableId: string;
 }
 
-interface ReplaceRouteTableAssociationResult {
-  readonly NewAssociationId: string;
-  readonly AssociationState: RouteTableAssociationState;
+export interface ReplaceRouteTableAssociationResult {
+  readonly NewAssociationId?: string;
+  readonly AssociationState?: RouteTableAssociationState;
 }
 
-interface ReplaceTransitGatewayRouteRequest {
+export interface ReplaceTransitGatewayRouteRequest {
   readonly DestinationCidrBlock: string;
   readonly TransitGatewayRouteTableId: string;
-  readonly TransitGatewayAttachmentId: string;
-  readonly Blackhole: boolean;
-  readonly DryRun: boolean;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly Blackhole?: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ReplaceTransitGatewayRouteResult {
-  readonly Route: TransitGatewayRoute;
+export interface ReplaceTransitGatewayRouteResult {
+  readonly Route?: TransitGatewayRoute;
 }
 
-interface ReportInstanceStatusRequest {
-  readonly Description: string;
-  readonly DryRun: boolean;
-  readonly EndTime: Date;
+export interface ReportInstanceStatusRequest {
+  readonly Description?: string;
+  readonly DryRun?: boolean;
+  readonly EndTime?: Date;
   readonly Instances: [];
   readonly ReasonCodes: [];
-  readonly StartTime: Date;
+  readonly StartTime?: Date;
   readonly Status: string;
 }
 
-interface RequestIpamResourceTag {
-  readonly Key: string;
-  readonly Value: string;
+export interface RequestIpamResourceTag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface RequestLaunchTemplateData {
-  readonly KernelId: string;
-  readonly EbsOptimized: boolean;
-  readonly IamInstanceProfile: LaunchTemplateIamInstanceProfileSpecificationRequest;
-  readonly BlockDeviceMappings: [];
-  readonly NetworkInterfaces: [];
-  readonly ImageId: string;
-  readonly InstanceType: string;
-  readonly KeyName: string;
-  readonly Monitoring: LaunchTemplatesMonitoringRequest;
-  readonly Placement: LaunchTemplatePlacementRequest;
-  readonly RamDiskId: string;
-  readonly DisableApiTermination: boolean;
-  readonly InstanceInitiatedShutdownBehavior: string;
-  readonly UserData: string;
-  readonly TagSpecifications: [];
-  readonly ElasticGpuSpecifications: [];
-  readonly ElasticInferenceAccelerators: [];
-  readonly SecurityGroupIds: [];
-  readonly SecurityGroups: [];
-  readonly InstanceMarketOptions: LaunchTemplateInstanceMarketOptionsRequest;
-  readonly CreditSpecification: CreditSpecificationRequest;
-  readonly CpuOptions: LaunchTemplateCpuOptionsRequest;
-  readonly CapacityReservationSpecification: LaunchTemplateCapacityReservationSpecificationRequest;
-  readonly LicenseSpecifications: [];
-  readonly HibernationOptions: LaunchTemplateHibernationOptionsRequest;
-  readonly MetadataOptions: LaunchTemplateInstanceMetadataOptionsRequest;
-  readonly EnclaveOptions: LaunchTemplateEnclaveOptionsRequest;
-  readonly InstanceRequirements: InstanceRequirementsRequest;
-  readonly PrivateDnsNameOptions: LaunchTemplatePrivateDnsNameOptionsRequest;
+export interface RequestLaunchTemplateData {
+  readonly KernelId?: string;
+  readonly EbsOptimized?: boolean;
+  readonly IamInstanceProfile?: LaunchTemplateIamInstanceProfileSpecificationRequest;
+  readonly BlockDeviceMappings?: [];
+  readonly NetworkInterfaces?: [];
+  readonly ImageId?: string;
+  readonly InstanceType?: string;
+  readonly KeyName?: string;
+  readonly Monitoring?: LaunchTemplatesMonitoringRequest;
+  readonly Placement?: LaunchTemplatePlacementRequest;
+  readonly RamDiskId?: string;
+  readonly DisableApiTermination?: boolean;
+  readonly InstanceInitiatedShutdownBehavior?: string;
+  readonly UserData?: string;
+  readonly TagSpecifications?: [];
+  readonly ElasticGpuSpecifications?: [];
+  readonly ElasticInferenceAccelerators?: [];
+  readonly SecurityGroupIds?: [];
+  readonly SecurityGroups?: [];
+  readonly InstanceMarketOptions?: LaunchTemplateInstanceMarketOptionsRequest;
+  readonly CreditSpecification?: CreditSpecificationRequest;
+  readonly CpuOptions?: LaunchTemplateCpuOptionsRequest;
+  readonly CapacityReservationSpecification?: LaunchTemplateCapacityReservationSpecificationRequest;
+  readonly LicenseSpecifications?: [];
+  readonly HibernationOptions?: LaunchTemplateHibernationOptionsRequest;
+  readonly MetadataOptions?: LaunchTemplateInstanceMetadataOptionsRequest;
+  readonly EnclaveOptions?: LaunchTemplateEnclaveOptionsRequest;
+  readonly InstanceRequirements?: InstanceRequirementsRequest;
+  readonly PrivateDnsNameOptions?: LaunchTemplatePrivateDnsNameOptionsRequest;
 }
 
-interface RequestSpotFleetRequest {
-  readonly DryRun: boolean;
+export interface RequestSpotFleetRequest {
+  readonly DryRun?: boolean;
   readonly SpotFleetRequestConfig: SpotFleetRequestConfigData;
 }
 
-interface RequestSpotFleetResponse {
-  readonly SpotFleetRequestId: string;
+export interface RequestSpotFleetResponse {
+  readonly SpotFleetRequestId?: string;
 }
 
-interface RequestSpotInstancesRequest {
-  readonly AvailabilityZoneGroup: string;
-  readonly BlockDurationMinutes: number;
-  readonly ClientToken: string;
-  readonly DryRun: boolean;
-  readonly InstanceCount: number;
-  readonly LaunchGroup: string;
-  readonly LaunchSpecification: RequestSpotLaunchSpecification;
-  readonly SpotPrice: string;
-  readonly Type: string;
-  readonly ValidFrom: Date;
-  readonly ValidUntil: Date;
-  readonly TagSpecifications: [];
-  readonly InstanceInterruptionBehavior: string;
+export interface RequestSpotInstancesRequest {
+  readonly AvailabilityZoneGroup?: string;
+  readonly BlockDurationMinutes?: number;
+  readonly ClientToken?: string;
+  readonly DryRun?: boolean;
+  readonly InstanceCount?: number;
+  readonly LaunchGroup?: string;
+  readonly LaunchSpecification?: RequestSpotLaunchSpecification;
+  readonly SpotPrice?: string;
+  readonly Type?: string;
+  readonly ValidFrom?: Date;
+  readonly ValidUntil?: Date;
+  readonly TagSpecifications?: [];
+  readonly InstanceInterruptionBehavior?: string;
 }
 
-interface RequestSpotInstancesResult {
-  readonly SpotInstanceRequests: [];
+export interface RequestSpotInstancesResult {
+  readonly SpotInstanceRequests?: [];
 }
 
-interface RequestSpotLaunchSpecification {
-  readonly SecurityGroupIds: [];
-  readonly SecurityGroups: [];
-  readonly AddressingType: string;
-  readonly BlockDeviceMappings: [];
-  readonly EbsOptimized: boolean;
-  readonly IamInstanceProfile: IamInstanceProfileSpecification;
-  readonly ImageId: string;
-  readonly InstanceType: string;
-  readonly KernelId: string;
-  readonly KeyName: string;
-  readonly Monitoring: RunInstancesMonitoringEnabled;
-  readonly NetworkInterfaces: [];
-  readonly Placement: SpotPlacement;
-  readonly RamdiskId: string;
-  readonly SubnetId: string;
-  readonly UserData: string;
+export interface RequestSpotLaunchSpecification {
+  readonly SecurityGroupIds?: [];
+  readonly SecurityGroups?: [];
+  readonly AddressingType?: string;
+  readonly BlockDeviceMappings?: [];
+  readonly EbsOptimized?: boolean;
+  readonly IamInstanceProfile?: IamInstanceProfileSpecification;
+  readonly ImageId?: string;
+  readonly InstanceType?: string;
+  readonly KernelId?: string;
+  readonly KeyName?: string;
+  readonly Monitoring?: RunInstancesMonitoringEnabled;
+  readonly NetworkInterfaces?: [];
+  readonly Placement?: SpotPlacement;
+  readonly RamdiskId?: string;
+  readonly SubnetId?: string;
+  readonly UserData?: string;
 }
 
-interface Reservation {
-  readonly Groups: [];
-  readonly Instances: [];
-  readonly OwnerId: string;
-  readonly RequesterId: string;
-  readonly ReservationId: string;
+export interface Reservation {
+  readonly Groups?: [];
+  readonly Instances?: [];
+  readonly OwnerId?: string;
+  readonly RequesterId?: string;
+  readonly ReservationId?: string;
 }
 
-interface ReservationFleetInstanceSpecification {
-  readonly InstanceType: string;
-  readonly InstancePlatform: string;
-  readonly Weight: unknown;
-  readonly AvailabilityZone: string;
-  readonly AvailabilityZoneId: string;
-  readonly EbsOptimized: boolean;
-  readonly Priority: number;
+export interface ReservationFleetInstanceSpecification {
+  readonly InstanceType?: string;
+  readonly InstancePlatform?: string;
+  readonly Weight?: unknown;
+  readonly AvailabilityZone?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly EbsOptimized?: boolean;
+  readonly Priority?: number;
 }
 
-interface ReservationValue {
-  readonly HourlyPrice: string;
-  readonly RemainingTotalValue: string;
-  readonly RemainingUpfrontValue: string;
+export interface ReservationValue {
+  readonly HourlyPrice?: string;
+  readonly RemainingTotalValue?: string;
+  readonly RemainingUpfrontValue?: string;
 }
 
-interface ReservedInstanceLimitPrice {
-  readonly Amount: unknown;
-  readonly CurrencyCode: string;
+export interface ReservedInstanceLimitPrice {
+  readonly Amount?: unknown;
+  readonly CurrencyCode?: string;
 }
 
-interface ReservedInstanceReservationValue {
-  readonly ReservationValue: ReservationValue;
-  readonly ReservedInstanceId: string;
+export interface ReservedInstanceReservationValue {
+  readonly ReservationValue?: ReservationValue;
+  readonly ReservedInstanceId?: string;
 }
 
-interface ReservedInstances {
-  readonly AvailabilityZone: string;
-  readonly Duration: number;
-  readonly End: Date;
-  readonly FixedPrice: unknown;
-  readonly InstanceCount: number;
-  readonly InstanceType: string;
-  readonly ProductDescription: string;
-  readonly ReservedInstancesId: string;
-  readonly Start: Date;
-  readonly State: string;
-  readonly UsagePrice: unknown;
-  readonly CurrencyCode: string;
-  readonly InstanceTenancy: string;
-  readonly OfferingClass: string;
-  readonly OfferingType: string;
-  readonly RecurringCharges: [];
-  readonly Scope: string;
-  readonly Tags: [];
+export interface ReservedInstances {
+  readonly AvailabilityZone?: string;
+  readonly Duration?: number;
+  readonly End?: Date;
+  readonly FixedPrice?: unknown;
+  readonly InstanceCount?: number;
+  readonly InstanceType?: string;
+  readonly ProductDescription?: string;
+  readonly ReservedInstancesId?: string;
+  readonly Start?: Date;
+  readonly State?: string;
+  readonly UsagePrice?: unknown;
+  readonly CurrencyCode?: string;
+  readonly InstanceTenancy?: string;
+  readonly OfferingClass?: string;
+  readonly OfferingType?: string;
+  readonly RecurringCharges?: [];
+  readonly Scope?: string;
+  readonly Tags?: [];
 }
 
-interface ReservedInstancesConfiguration {
-  readonly AvailabilityZone: string;
-  readonly InstanceCount: number;
-  readonly InstanceType: string;
-  readonly Platform: string;
-  readonly Scope: string;
+export interface ReservedInstancesConfiguration {
+  readonly AvailabilityZone?: string;
+  readonly InstanceCount?: number;
+  readonly InstanceType?: string;
+  readonly Platform?: string;
+  readonly Scope?: string;
 }
 
-interface ReservedInstancesId {
-  readonly ReservedInstancesId: string;
+export interface ReservedInstancesId {
+  readonly ReservedInstancesId?: string;
 }
 
-interface ReservedInstancesListing {
-  readonly ClientToken: string;
-  readonly CreateDate: Date;
-  readonly InstanceCounts: [];
-  readonly PriceSchedules: [];
-  readonly ReservedInstancesId: string;
-  readonly ReservedInstancesListingId: string;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly Tags: [];
-  readonly UpdateDate: Date;
+export interface ReservedInstancesListing {
+  readonly ClientToken?: string;
+  readonly CreateDate?: Date;
+  readonly InstanceCounts?: [];
+  readonly PriceSchedules?: [];
+  readonly ReservedInstancesId?: string;
+  readonly ReservedInstancesListingId?: string;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly Tags?: [];
+  readonly UpdateDate?: Date;
 }
 
-interface ReservedInstancesModification {
-  readonly ClientToken: string;
-  readonly CreateDate: Date;
-  readonly EffectiveDate: Date;
-  readonly ModificationResults: [];
-  readonly ReservedInstancesIds: [];
-  readonly ReservedInstancesModificationId: string;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly UpdateDate: Date;
+export interface ReservedInstancesModification {
+  readonly ClientToken?: string;
+  readonly CreateDate?: Date;
+  readonly EffectiveDate?: Date;
+  readonly ModificationResults?: [];
+  readonly ReservedInstancesIds?: [];
+  readonly ReservedInstancesModificationId?: string;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly UpdateDate?: Date;
 }
 
-interface ReservedInstancesModificationResult {
-  readonly ReservedInstancesId: string;
-  readonly TargetConfiguration: ReservedInstancesConfiguration;
+export interface ReservedInstancesModificationResult {
+  readonly ReservedInstancesId?: string;
+  readonly TargetConfiguration?: ReservedInstancesConfiguration;
 }
 
-interface ReservedInstancesOffering {
-  readonly AvailabilityZone: string;
-  readonly Duration: number;
-  readonly FixedPrice: unknown;
-  readonly InstanceType: string;
-  readonly ProductDescription: string;
-  readonly ReservedInstancesOfferingId: string;
-  readonly UsagePrice: unknown;
-  readonly CurrencyCode: string;
-  readonly InstanceTenancy: string;
-  readonly Marketplace: boolean;
-  readonly OfferingClass: string;
-  readonly OfferingType: string;
-  readonly PricingDetails: [];
-  readonly RecurringCharges: [];
-  readonly Scope: string;
+export interface ReservedInstancesOffering {
+  readonly AvailabilityZone?: string;
+  readonly Duration?: number;
+  readonly FixedPrice?: unknown;
+  readonly InstanceType?: string;
+  readonly ProductDescription?: string;
+  readonly ReservedInstancesOfferingId?: string;
+  readonly UsagePrice?: unknown;
+  readonly CurrencyCode?: string;
+  readonly InstanceTenancy?: string;
+  readonly Marketplace?: boolean;
+  readonly OfferingClass?: string;
+  readonly OfferingType?: string;
+  readonly PricingDetails?: [];
+  readonly RecurringCharges?: [];
+  readonly Scope?: string;
 }
 
-interface ResetAddressAttributeRequest {
+export interface ResetAddressAttributeRequest {
   readonly AllocationId: string;
   readonly Attribute: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ResetAddressAttributeResult {
-  readonly Address: AddressAttribute;
+export interface ResetAddressAttributeResult {
+  readonly Address?: AddressAttribute;
 }
 
-interface ResetEbsDefaultKmsKeyIdRequest {
-  readonly DryRun: boolean;
+export interface ResetEbsDefaultKmsKeyIdRequest {
+  readonly DryRun?: boolean;
 }
 
-interface ResetEbsDefaultKmsKeyIdResult {
-  readonly KmsKeyId: string;
+export interface ResetEbsDefaultKmsKeyIdResult {
+  readonly KmsKeyId?: string;
 }
 
-interface ResetFpgaImageAttributeRequest {
-  readonly DryRun: boolean;
+export interface ResetFpgaImageAttributeRequest {
+  readonly DryRun?: boolean;
   readonly FpgaImageId: string;
-  readonly Attribute: string;
+  readonly Attribute?: string;
 }
 
-interface ResetFpgaImageAttributeResult {
-  readonly Return: boolean;
+export interface ResetFpgaImageAttributeResult {
+  readonly Return?: boolean;
 }
 
-interface ResetImageAttributeRequest {
+export interface ResetImageAttributeRequest {
   readonly Attribute: string;
   readonly ImageId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ResetInstanceAttributeRequest {
+export interface ResetInstanceAttributeRequest {
   readonly Attribute: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
   readonly InstanceId: string;
 }
 
-interface ResetNetworkInterfaceAttributeRequest {
-  readonly DryRun: boolean;
+export interface ResetNetworkInterfaceAttributeRequest {
+  readonly DryRun?: boolean;
   readonly NetworkInterfaceId: string;
-  readonly SourceDestCheck: string;
+  readonly SourceDestCheck?: string;
 }
 
-interface ResetSnapshotAttributeRequest {
+export interface ResetSnapshotAttributeRequest {
   readonly Attribute: string;
   readonly SnapshotId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ResourceStatement {
-  readonly Resources: [];
-  readonly ResourceTypes: [];
+export interface ResourceStatement {
+  readonly Resources?: [];
+  readonly ResourceTypes?: [];
 }
 
-interface ResourceStatementRequest {
-  readonly Resources: [];
-  readonly ResourceTypes: [];
+export interface ResourceStatementRequest {
+  readonly Resources?: [];
+  readonly ResourceTypes?: [];
 }
 
-interface ResponseError {
-  readonly Code: string;
-  readonly Message: string;
+export interface ResponseError {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface ResponseLaunchTemplateData {
-  readonly KernelId: string;
-  readonly EbsOptimized: boolean;
-  readonly IamInstanceProfile: LaunchTemplateIamInstanceProfileSpecification;
-  readonly BlockDeviceMappings: [];
-  readonly NetworkInterfaces: [];
-  readonly ImageId: string;
-  readonly InstanceType: string;
-  readonly KeyName: string;
-  readonly Monitoring: LaunchTemplatesMonitoring;
-  readonly Placement: LaunchTemplatePlacement;
-  readonly RamDiskId: string;
-  readonly DisableApiTermination: boolean;
-  readonly InstanceInitiatedShutdownBehavior: string;
-  readonly UserData: string;
-  readonly TagSpecifications: [];
-  readonly ElasticGpuSpecifications: [];
-  readonly ElasticInferenceAccelerators: [];
-  readonly SecurityGroupIds: [];
-  readonly SecurityGroups: [];
-  readonly InstanceMarketOptions: LaunchTemplateInstanceMarketOptions;
-  readonly CreditSpecification: CreditSpecification;
-  readonly CpuOptions: LaunchTemplateCpuOptions;
-  readonly CapacityReservationSpecification: LaunchTemplateCapacityReservationSpecificationResponse;
-  readonly LicenseSpecifications: [];
-  readonly HibernationOptions: LaunchTemplateHibernationOptions;
-  readonly MetadataOptions: LaunchTemplateInstanceMetadataOptions;
-  readonly EnclaveOptions: LaunchTemplateEnclaveOptions;
-  readonly InstanceRequirements: InstanceRequirements;
-  readonly PrivateDnsNameOptions: LaunchTemplatePrivateDnsNameOptions;
+export interface ResponseLaunchTemplateData {
+  readonly KernelId?: string;
+  readonly EbsOptimized?: boolean;
+  readonly IamInstanceProfile?: LaunchTemplateIamInstanceProfileSpecification;
+  readonly BlockDeviceMappings?: [];
+  readonly NetworkInterfaces?: [];
+  readonly ImageId?: string;
+  readonly InstanceType?: string;
+  readonly KeyName?: string;
+  readonly Monitoring?: LaunchTemplatesMonitoring;
+  readonly Placement?: LaunchTemplatePlacement;
+  readonly RamDiskId?: string;
+  readonly DisableApiTermination?: boolean;
+  readonly InstanceInitiatedShutdownBehavior?: string;
+  readonly UserData?: string;
+  readonly TagSpecifications?: [];
+  readonly ElasticGpuSpecifications?: [];
+  readonly ElasticInferenceAccelerators?: [];
+  readonly SecurityGroupIds?: [];
+  readonly SecurityGroups?: [];
+  readonly InstanceMarketOptions?: LaunchTemplateInstanceMarketOptions;
+  readonly CreditSpecification?: CreditSpecification;
+  readonly CpuOptions?: LaunchTemplateCpuOptions;
+  readonly CapacityReservationSpecification?: LaunchTemplateCapacityReservationSpecificationResponse;
+  readonly LicenseSpecifications?: [];
+  readonly HibernationOptions?: LaunchTemplateHibernationOptions;
+  readonly MetadataOptions?: LaunchTemplateInstanceMetadataOptions;
+  readonly EnclaveOptions?: LaunchTemplateEnclaveOptions;
+  readonly InstanceRequirements?: InstanceRequirements;
+  readonly PrivateDnsNameOptions?: LaunchTemplatePrivateDnsNameOptions;
 }
 
-interface RestoreAddressToClassicRequest {
-  readonly DryRun: boolean;
+export interface RestoreAddressToClassicRequest {
+  readonly DryRun?: boolean;
   readonly PublicIp: string;
 }
 
-interface RestoreAddressToClassicResult {
-  readonly PublicIp: string;
-  readonly Status: string;
+export interface RestoreAddressToClassicResult {
+  readonly PublicIp?: string;
+  readonly Status?: string;
 }
 
-interface RestoreManagedPrefixListVersionRequest {
-  readonly DryRun: boolean;
+export interface RestoreManagedPrefixListVersionRequest {
+  readonly DryRun?: boolean;
   readonly PrefixListId: string;
   readonly PreviousVersion: number;
   readonly CurrentVersion: number;
 }
 
-interface RestoreManagedPrefixListVersionResult {
-  readonly PrefixList: ManagedPrefixList;
+export interface RestoreManagedPrefixListVersionResult {
+  readonly PrefixList?: ManagedPrefixList;
 }
 
-interface RestoreSnapshotFromRecycleBinRequest {
+export interface RestoreSnapshotFromRecycleBinRequest {
   readonly SnapshotId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface RestoreSnapshotFromRecycleBinResult {
+export interface RestoreSnapshotFromRecycleBinResult {
+  readonly SnapshotId?: string;
+  readonly OutpostArn?: string;
+  readonly Description?: string;
+  readonly Encrypted?: boolean;
+  readonly OwnerId?: string;
+  readonly Progress?: string;
+  readonly StartTime?: Date;
+  readonly State?: string;
+  readonly VolumeId?: string;
+  readonly VolumeSize?: number;
+}
+
+export interface RestoreSnapshotTierRequest {
   readonly SnapshotId: string;
-  readonly OutpostArn: string;
-  readonly Description: string;
-  readonly Encrypted: boolean;
-  readonly OwnerId: string;
-  readonly Progress: string;
-  readonly StartTime: Date;
-  readonly State: string;
-  readonly VolumeId: string;
-  readonly VolumeSize: number;
+  readonly TemporaryRestoreDays?: number;
+  readonly PermanentRestore?: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface RestoreSnapshotTierRequest {
-  readonly SnapshotId: string;
-  readonly TemporaryRestoreDays: number;
-  readonly PermanentRestore: boolean;
-  readonly DryRun: boolean;
+export interface RestoreSnapshotTierResult {
+  readonly SnapshotId?: string;
+  readonly RestoreStartTime?: Date;
+  readonly RestoreDuration?: number;
+  readonly IsPermanentRestore?: boolean;
 }
 
-interface RestoreSnapshotTierResult {
-  readonly SnapshotId: string;
-  readonly RestoreStartTime: Date;
-  readonly RestoreDuration: number;
-  readonly IsPermanentRestore: boolean;
-}
-
-interface RevokeClientVpnIngressRequest {
+export interface RevokeClientVpnIngressRequest {
   readonly ClientVpnEndpointId: string;
   readonly TargetNetworkCidr: string;
-  readonly AccessGroupId: string;
-  readonly RevokeAllGroups: boolean;
-  readonly DryRun: boolean;
+  readonly AccessGroupId?: string;
+  readonly RevokeAllGroups?: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface RevokeClientVpnIngressResult {
-  readonly Status: ClientVpnAuthorizationRuleStatus;
+export interface RevokeClientVpnIngressResult {
+  readonly Status?: ClientVpnAuthorizationRuleStatus;
 }
 
-interface RevokeSecurityGroupEgressRequest {
-  readonly DryRun: boolean;
+export interface RevokeSecurityGroupEgressRequest {
+  readonly DryRun?: boolean;
   readonly GroupId: string;
-  readonly IpPermissions: [];
-  readonly SecurityGroupRuleIds: [];
-  readonly CidrIp: string;
-  readonly FromPort: number;
-  readonly IpProtocol: string;
-  readonly ToPort: number;
-  readonly SourceSecurityGroupName: string;
-  readonly SourceSecurityGroupOwnerId: string;
+  readonly IpPermissions?: [];
+  readonly SecurityGroupRuleIds?: [];
+  readonly CidrIp?: string;
+  readonly FromPort?: number;
+  readonly IpProtocol?: string;
+  readonly ToPort?: number;
+  readonly SourceSecurityGroupName?: string;
+  readonly SourceSecurityGroupOwnerId?: string;
 }
 
-interface RevokeSecurityGroupEgressResult {
-  readonly Return: boolean;
-  readonly UnknownIpPermissions: [];
+export interface RevokeSecurityGroupEgressResult {
+  readonly Return?: boolean;
+  readonly UnknownIpPermissions?: [];
 }
 
-interface RevokeSecurityGroupIngressRequest {
-  readonly CidrIp: string;
-  readonly FromPort: number;
-  readonly GroupId: string;
-  readonly GroupName: string;
-  readonly IpPermissions: [];
-  readonly IpProtocol: string;
-  readonly SourceSecurityGroupName: string;
-  readonly SourceSecurityGroupOwnerId: string;
-  readonly ToPort: number;
-  readonly DryRun: boolean;
-  readonly SecurityGroupRuleIds: [];
+export interface RevokeSecurityGroupIngressRequest {
+  readonly CidrIp?: string;
+  readonly FromPort?: number;
+  readonly GroupId?: string;
+  readonly GroupName?: string;
+  readonly IpPermissions?: [];
+  readonly IpProtocol?: string;
+  readonly SourceSecurityGroupName?: string;
+  readonly SourceSecurityGroupOwnerId?: string;
+  readonly ToPort?: number;
+  readonly DryRun?: boolean;
+  readonly SecurityGroupRuleIds?: [];
 }
 
-interface RevokeSecurityGroupIngressResult {
-  readonly Return: boolean;
-  readonly UnknownIpPermissions: [];
+export interface RevokeSecurityGroupIngressResult {
+  readonly Return?: boolean;
+  readonly UnknownIpPermissions?: [];
 }
 
-interface Route {
-  readonly DestinationCidrBlock: string;
-  readonly DestinationIpv6CidrBlock: string;
-  readonly DestinationPrefixListId: string;
-  readonly EgressOnlyInternetGatewayId: string;
-  readonly GatewayId: string;
-  readonly InstanceId: string;
-  readonly InstanceOwnerId: string;
-  readonly NatGatewayId: string;
-  readonly TransitGatewayId: string;
-  readonly LocalGatewayId: string;
-  readonly CarrierGatewayId: string;
-  readonly NetworkInterfaceId: string;
-  readonly Origin: string;
-  readonly State: string;
-  readonly VpcPeeringConnectionId: string;
-  readonly CoreNetworkArn: string;
+export interface Route {
+  readonly DestinationCidrBlock?: string;
+  readonly DestinationIpv6CidrBlock?: string;
+  readonly DestinationPrefixListId?: string;
+  readonly EgressOnlyInternetGatewayId?: string;
+  readonly GatewayId?: string;
+  readonly InstanceId?: string;
+  readonly InstanceOwnerId?: string;
+  readonly NatGatewayId?: string;
+  readonly TransitGatewayId?: string;
+  readonly LocalGatewayId?: string;
+  readonly CarrierGatewayId?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly Origin?: string;
+  readonly State?: string;
+  readonly VpcPeeringConnectionId?: string;
+  readonly CoreNetworkArn?: string;
 }
 
-interface RouteTable {
-  readonly Associations: [];
-  readonly PropagatingVgws: [];
-  readonly RouteTableId: string;
-  readonly Routes: [];
-  readonly Tags: [];
-  readonly VpcId: string;
-  readonly OwnerId: string;
+export interface RouteTable {
+  readonly Associations?: [];
+  readonly PropagatingVgws?: [];
+  readonly RouteTableId?: string;
+  readonly Routes?: [];
+  readonly Tags?: [];
+  readonly VpcId?: string;
+  readonly OwnerId?: string;
 }
 
-interface RouteTableAssociation {
-  readonly Main: boolean;
-  readonly RouteTableAssociationId: string;
-  readonly RouteTableId: string;
-  readonly SubnetId: string;
-  readonly GatewayId: string;
-  readonly AssociationState: RouteTableAssociationState;
+export interface RouteTableAssociation {
+  readonly Main?: boolean;
+  readonly RouteTableAssociationId?: string;
+  readonly RouteTableId?: string;
+  readonly SubnetId?: string;
+  readonly GatewayId?: string;
+  readonly AssociationState?: RouteTableAssociationState;
 }
 
-interface RouteTableAssociationState {
-  readonly State: string;
-  readonly StatusMessage: string;
+export interface RouteTableAssociationState {
+  readonly State?: string;
+  readonly StatusMessage?: string;
 }
 
-interface RunInstancesMonitoringEnabled {
+export interface RunInstancesMonitoringEnabled {
   readonly Enabled: boolean;
 }
 
-interface RunInstancesRequest {
-  readonly BlockDeviceMappings: [];
-  readonly ImageId: string;
-  readonly InstanceType: string;
-  readonly Ipv6AddressCount: number;
-  readonly Ipv6Addresses: [];
-  readonly KernelId: string;
-  readonly KeyName: string;
+export interface RunInstancesRequest {
+  readonly BlockDeviceMappings?: [];
+  readonly ImageId?: string;
+  readonly InstanceType?: string;
+  readonly Ipv6AddressCount?: number;
+  readonly Ipv6Addresses?: [];
+  readonly KernelId?: string;
+  readonly KeyName?: string;
   readonly MaxCount: number;
   readonly MinCount: number;
-  readonly Monitoring: RunInstancesMonitoringEnabled;
-  readonly Placement: Placement;
-  readonly RamdiskId: string;
-  readonly SecurityGroupIds: [];
-  readonly SecurityGroups: [];
-  readonly SubnetId: string;
-  readonly UserData: string;
-  readonly AdditionalInfo: string;
-  readonly ClientToken: string;
-  readonly DisableApiTermination: boolean;
-  readonly DryRun: boolean;
-  readonly EbsOptimized: boolean;
-  readonly IamInstanceProfile: IamInstanceProfileSpecification;
-  readonly InstanceInitiatedShutdownBehavior: string;
-  readonly NetworkInterfaces: [];
-  readonly PrivateIpAddress: string;
-  readonly ElasticGpuSpecification: [];
-  readonly ElasticInferenceAccelerators: [];
-  readonly TagSpecifications: [];
-  readonly LaunchTemplate: LaunchTemplateSpecification;
-  readonly InstanceMarketOptions: InstanceMarketOptionsRequest;
-  readonly CreditSpecification: CreditSpecificationRequest;
-  readonly CpuOptions: CpuOptionsRequest;
-  readonly CapacityReservationSpecification: CapacityReservationSpecification;
-  readonly HibernationOptions: HibernationOptionsRequest;
-  readonly LicenseSpecifications: [];
-  readonly MetadataOptions: InstanceMetadataOptionsRequest;
-  readonly EnclaveOptions: EnclaveOptionsRequest;
-  readonly PrivateDnsNameOptions: PrivateDnsNameOptionsRequest;
+  readonly Monitoring?: RunInstancesMonitoringEnabled;
+  readonly Placement?: Placement;
+  readonly RamdiskId?: string;
+  readonly SecurityGroupIds?: [];
+  readonly SecurityGroups?: [];
+  readonly SubnetId?: string;
+  readonly UserData?: string;
+  readonly AdditionalInfo?: string;
+  readonly ClientToken?: string;
+  readonly DisableApiTermination?: boolean;
+  readonly DryRun?: boolean;
+  readonly EbsOptimized?: boolean;
+  readonly IamInstanceProfile?: IamInstanceProfileSpecification;
+  readonly InstanceInitiatedShutdownBehavior?: string;
+  readonly NetworkInterfaces?: [];
+  readonly PrivateIpAddress?: string;
+  readonly ElasticGpuSpecification?: [];
+  readonly ElasticInferenceAccelerators?: [];
+  readonly TagSpecifications?: [];
+  readonly LaunchTemplate?: LaunchTemplateSpecification;
+  readonly InstanceMarketOptions?: InstanceMarketOptionsRequest;
+  readonly CreditSpecification?: CreditSpecificationRequest;
+  readonly CpuOptions?: CpuOptionsRequest;
+  readonly CapacityReservationSpecification?: CapacityReservationSpecification;
+  readonly HibernationOptions?: HibernationOptionsRequest;
+  readonly LicenseSpecifications?: [];
+  readonly MetadataOptions?: InstanceMetadataOptionsRequest;
+  readonly EnclaveOptions?: EnclaveOptionsRequest;
+  readonly PrivateDnsNameOptions?: PrivateDnsNameOptionsRequest;
 }
 
-interface RunScheduledInstancesRequest {
-  readonly ClientToken: string;
-  readonly DryRun: boolean;
-  readonly InstanceCount: number;
+export interface RunScheduledInstancesRequest {
+  readonly ClientToken?: string;
+  readonly DryRun?: boolean;
+  readonly InstanceCount?: number;
   readonly LaunchSpecification: ScheduledInstancesLaunchSpecification;
   readonly ScheduledInstanceId: string;
 }
 
-interface RunScheduledInstancesResult {
-  readonly InstanceIdSet: [];
+export interface RunScheduledInstancesResult {
+  readonly InstanceIdSet?: [];
 }
 
-interface S3ObjectTag {
-  readonly Key: string;
-  readonly Value: string;
+export interface S3ObjectTag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface S3Storage {
-  readonly AWSAccessKeyId: string;
-  readonly Bucket: string;
-  readonly Prefix: string;
-  readonly UploadPolicy: unknown;
-  readonly UploadPolicySignature: string;
+export interface S3Storage {
+  readonly AWSAccessKeyId?: string;
+  readonly Bucket?: string;
+  readonly Prefix?: string;
+  readonly UploadPolicy?: unknown;
+  readonly UploadPolicySignature?: string;
 }
 
-interface ScheduledInstance {
-  readonly AvailabilityZone: string;
-  readonly CreateDate: Date;
-  readonly HourlyPrice: string;
-  readonly InstanceCount: number;
-  readonly InstanceType: string;
-  readonly NetworkPlatform: string;
-  readonly NextSlotStartTime: Date;
-  readonly Platform: string;
-  readonly PreviousSlotEndTime: Date;
-  readonly Recurrence: ScheduledInstanceRecurrence;
-  readonly ScheduledInstanceId: string;
-  readonly SlotDurationInHours: number;
-  readonly TermEndDate: Date;
-  readonly TermStartDate: Date;
-  readonly TotalScheduledInstanceHours: number;
+export interface ScheduledInstance {
+  readonly AvailabilityZone?: string;
+  readonly CreateDate?: Date;
+  readonly HourlyPrice?: string;
+  readonly InstanceCount?: number;
+  readonly InstanceType?: string;
+  readonly NetworkPlatform?: string;
+  readonly NextSlotStartTime?: Date;
+  readonly Platform?: string;
+  readonly PreviousSlotEndTime?: Date;
+  readonly Recurrence?: ScheduledInstanceRecurrence;
+  readonly ScheduledInstanceId?: string;
+  readonly SlotDurationInHours?: number;
+  readonly TermEndDate?: Date;
+  readonly TermStartDate?: Date;
+  readonly TotalScheduledInstanceHours?: number;
 }
 
-interface ScheduledInstanceAvailability {
-  readonly AvailabilityZone: string;
-  readonly AvailableInstanceCount: number;
-  readonly FirstSlotStartTime: Date;
-  readonly HourlyPrice: string;
-  readonly InstanceType: string;
-  readonly MaxTermDurationInDays: number;
-  readonly MinTermDurationInDays: number;
-  readonly NetworkPlatform: string;
-  readonly Platform: string;
-  readonly PurchaseToken: string;
-  readonly Recurrence: ScheduledInstanceRecurrence;
-  readonly SlotDurationInHours: number;
-  readonly TotalScheduledInstanceHours: number;
+export interface ScheduledInstanceAvailability {
+  readonly AvailabilityZone?: string;
+  readonly AvailableInstanceCount?: number;
+  readonly FirstSlotStartTime?: Date;
+  readonly HourlyPrice?: string;
+  readonly InstanceType?: string;
+  readonly MaxTermDurationInDays?: number;
+  readonly MinTermDurationInDays?: number;
+  readonly NetworkPlatform?: string;
+  readonly Platform?: string;
+  readonly PurchaseToken?: string;
+  readonly Recurrence?: ScheduledInstanceRecurrence;
+  readonly SlotDurationInHours?: number;
+  readonly TotalScheduledInstanceHours?: number;
 }
 
-interface ScheduledInstanceRecurrence {
-  readonly Frequency: string;
-  readonly Interval: number;
-  readonly OccurrenceDaySet: [];
-  readonly OccurrenceRelativeToEnd: boolean;
-  readonly OccurrenceUnit: string;
+export interface ScheduledInstanceRecurrence {
+  readonly Frequency?: string;
+  readonly Interval?: number;
+  readonly OccurrenceDaySet?: [];
+  readonly OccurrenceRelativeToEnd?: boolean;
+  readonly OccurrenceUnit?: string;
 }
 
-interface ScheduledInstanceRecurrenceRequest {
-  readonly Frequency: string;
-  readonly Interval: number;
-  readonly OccurrenceDays: [];
-  readonly OccurrenceRelativeToEnd: boolean;
-  readonly OccurrenceUnit: string;
+export interface ScheduledInstanceRecurrenceRequest {
+  readonly Frequency?: string;
+  readonly Interval?: number;
+  readonly OccurrenceDays?: [];
+  readonly OccurrenceRelativeToEnd?: boolean;
+  readonly OccurrenceUnit?: string;
 }
 
-interface ScheduledInstancesBlockDeviceMapping {
-  readonly DeviceName: string;
-  readonly Ebs: ScheduledInstancesEbs;
-  readonly NoDevice: string;
-  readonly VirtualName: string;
+export interface ScheduledInstancesBlockDeviceMapping {
+  readonly DeviceName?: string;
+  readonly Ebs?: ScheduledInstancesEbs;
+  readonly NoDevice?: string;
+  readonly VirtualName?: string;
 }
 
-interface ScheduledInstancesEbs {
-  readonly DeleteOnTermination: boolean;
-  readonly Encrypted: boolean;
-  readonly Iops: number;
-  readonly SnapshotId: string;
-  readonly VolumeSize: number;
-  readonly VolumeType: string;
+export interface ScheduledInstancesEbs {
+  readonly DeleteOnTermination?: boolean;
+  readonly Encrypted?: boolean;
+  readonly Iops?: number;
+  readonly SnapshotId?: string;
+  readonly VolumeSize?: number;
+  readonly VolumeType?: string;
 }
 
-interface ScheduledInstancesIamInstanceProfile {
-  readonly Arn: string;
-  readonly Name: string;
+export interface ScheduledInstancesIamInstanceProfile {
+  readonly Arn?: string;
+  readonly Name?: string;
 }
 
-interface ScheduledInstancesIpv6Address {
-  readonly Ipv6Address: string;
+export interface ScheduledInstancesIpv6Address {
+  readonly Ipv6Address?: string;
 }
 
-interface ScheduledInstancesLaunchSpecification {
-  readonly BlockDeviceMappings: [];
-  readonly EbsOptimized: boolean;
-  readonly IamInstanceProfile: ScheduledInstancesIamInstanceProfile;
+export interface ScheduledInstancesLaunchSpecification {
+  readonly BlockDeviceMappings?: [];
+  readonly EbsOptimized?: boolean;
+  readonly IamInstanceProfile?: ScheduledInstancesIamInstanceProfile;
   readonly ImageId: string;
-  readonly InstanceType: string;
-  readonly KernelId: string;
-  readonly KeyName: string;
-  readonly Monitoring: ScheduledInstancesMonitoring;
-  readonly NetworkInterfaces: [];
-  readonly Placement: ScheduledInstancesPlacement;
-  readonly RamdiskId: string;
-  readonly SecurityGroupIds: [];
-  readonly SubnetId: string;
-  readonly UserData: string;
+  readonly InstanceType?: string;
+  readonly KernelId?: string;
+  readonly KeyName?: string;
+  readonly Monitoring?: ScheduledInstancesMonitoring;
+  readonly NetworkInterfaces?: [];
+  readonly Placement?: ScheduledInstancesPlacement;
+  readonly RamdiskId?: string;
+  readonly SecurityGroupIds?: [];
+  readonly SubnetId?: string;
+  readonly UserData?: string;
 }
 
-interface ScheduledInstancesMonitoring {
-  readonly Enabled: boolean;
+export interface ScheduledInstancesMonitoring {
+  readonly Enabled?: boolean;
 }
 
-interface ScheduledInstancesNetworkInterface {
-  readonly AssociatePublicIpAddress: boolean;
-  readonly DeleteOnTermination: boolean;
-  readonly Description: string;
-  readonly DeviceIndex: number;
-  readonly Groups: [];
-  readonly Ipv6AddressCount: number;
-  readonly Ipv6Addresses: [];
-  readonly NetworkInterfaceId: string;
-  readonly PrivateIpAddress: string;
-  readonly PrivateIpAddressConfigs: [];
-  readonly SecondaryPrivateIpAddressCount: number;
-  readonly SubnetId: string;
+export interface ScheduledInstancesNetworkInterface {
+  readonly AssociatePublicIpAddress?: boolean;
+  readonly DeleteOnTermination?: boolean;
+  readonly Description?: string;
+  readonly DeviceIndex?: number;
+  readonly Groups?: [];
+  readonly Ipv6AddressCount?: number;
+  readonly Ipv6Addresses?: [];
+  readonly NetworkInterfaceId?: string;
+  readonly PrivateIpAddress?: string;
+  readonly PrivateIpAddressConfigs?: [];
+  readonly SecondaryPrivateIpAddressCount?: number;
+  readonly SubnetId?: string;
 }
 
-interface ScheduledInstancesPlacement {
-  readonly AvailabilityZone: string;
-  readonly GroupName: string;
+export interface ScheduledInstancesPlacement {
+  readonly AvailabilityZone?: string;
+  readonly GroupName?: string;
 }
 
-interface ScheduledInstancesPrivateIpAddressConfig {
-  readonly Primary: boolean;
-  readonly PrivateIpAddress: string;
+export interface ScheduledInstancesPrivateIpAddressConfig {
+  readonly Primary?: boolean;
+  readonly PrivateIpAddress?: string;
 }
 
-interface SearchLocalGatewayRoutesRequest {
+export interface SearchLocalGatewayRoutesRequest {
   readonly LocalGatewayRouteTableId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface SearchLocalGatewayRoutesResult {
-  readonly Routes: [];
-  readonly NextToken: string;
+export interface SearchLocalGatewayRoutesResult {
+  readonly Routes?: [];
+  readonly NextToken?: string;
 }
 
-interface SearchTransitGatewayMulticastGroupsRequest {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DryRun: boolean;
+export interface SearchTransitGatewayMulticastGroupsRequest {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DryRun?: boolean;
 }
 
-interface SearchTransitGatewayMulticastGroupsResult {
-  readonly MulticastGroups: [];
-  readonly NextToken: string;
+export interface SearchTransitGatewayMulticastGroupsResult {
+  readonly MulticastGroups?: [];
+  readonly NextToken?: string;
 }
 
-interface SearchTransitGatewayRoutesRequest {
+export interface SearchTransitGatewayRoutesRequest {
   readonly TransitGatewayRouteTableId: string;
   readonly Filters: [];
-  readonly MaxResults: number;
-  readonly DryRun: boolean;
+  readonly MaxResults?: number;
+  readonly DryRun?: boolean;
 }
 
-interface SearchTransitGatewayRoutesResult {
-  readonly Routes: [];
-  readonly AdditionalRoutesAvailable: boolean;
+export interface SearchTransitGatewayRoutesResult {
+  readonly Routes?: [];
+  readonly AdditionalRoutesAvailable?: boolean;
 }
 
-interface SecurityGroup {
-  readonly Description: string;
-  readonly GroupName: string;
-  readonly IpPermissions: [];
-  readonly OwnerId: string;
-  readonly GroupId: string;
-  readonly IpPermissionsEgress: [];
-  readonly Tags: [];
-  readonly VpcId: string;
+export interface SecurityGroup {
+  readonly Description?: string;
+  readonly GroupName?: string;
+  readonly IpPermissions?: [];
+  readonly OwnerId?: string;
+  readonly GroupId?: string;
+  readonly IpPermissionsEgress?: [];
+  readonly Tags?: [];
+  readonly VpcId?: string;
 }
 
-interface SecurityGroupIdentifier {
-  readonly GroupId: string;
-  readonly GroupName: string;
+export interface SecurityGroupIdentifier {
+  readonly GroupId?: string;
+  readonly GroupName?: string;
 }
 
-interface SecurityGroupReference {
-  readonly GroupId: string;
-  readonly ReferencingVpcId: string;
-  readonly VpcPeeringConnectionId: string;
+export interface SecurityGroupReference {
+  readonly GroupId?: string;
+  readonly ReferencingVpcId?: string;
+  readonly VpcPeeringConnectionId?: string;
 }
 
-interface SecurityGroupRule {
-  readonly SecurityGroupRuleId: string;
-  readonly GroupId: string;
-  readonly GroupOwnerId: string;
-  readonly IsEgress: boolean;
-  readonly IpProtocol: string;
-  readonly FromPort: number;
-  readonly ToPort: number;
-  readonly CidrIpv4: string;
-  readonly CidrIpv6: string;
-  readonly PrefixListId: string;
-  readonly ReferencedGroupInfo: ReferencedSecurityGroup;
-  readonly Description: string;
-  readonly Tags: [];
+export interface SecurityGroupRule {
+  readonly SecurityGroupRuleId?: string;
+  readonly GroupId?: string;
+  readonly GroupOwnerId?: string;
+  readonly IsEgress?: boolean;
+  readonly IpProtocol?: string;
+  readonly FromPort?: number;
+  readonly ToPort?: number;
+  readonly CidrIpv4?: string;
+  readonly CidrIpv6?: string;
+  readonly PrefixListId?: string;
+  readonly ReferencedGroupInfo?: ReferencedSecurityGroup;
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 
-interface SecurityGroupRuleDescription {
-  readonly SecurityGroupRuleId: string;
-  readonly Description: string;
+export interface SecurityGroupRuleDescription {
+  readonly SecurityGroupRuleId?: string;
+  readonly Description?: string;
 }
 
-interface SecurityGroupRuleRequest {
-  readonly IpProtocol: string;
-  readonly FromPort: number;
-  readonly ToPort: number;
-  readonly CidrIpv4: string;
-  readonly CidrIpv6: string;
-  readonly PrefixListId: string;
-  readonly ReferencedGroupId: string;
-  readonly Description: string;
+export interface SecurityGroupRuleRequest {
+  readonly IpProtocol?: string;
+  readonly FromPort?: number;
+  readonly ToPort?: number;
+  readonly CidrIpv4?: string;
+  readonly CidrIpv6?: string;
+  readonly PrefixListId?: string;
+  readonly ReferencedGroupId?: string;
+  readonly Description?: string;
 }
 
-interface SecurityGroupRuleUpdate {
-  readonly SecurityGroupRuleId: string;
-  readonly SecurityGroupRule: SecurityGroupRuleRequest;
+export interface SecurityGroupRuleUpdate {
+  readonly SecurityGroupRuleId?: string;
+  readonly SecurityGroupRule?: SecurityGroupRuleRequest;
 }
 
-interface SendDiagnosticInterruptRequest {
+export interface SendDiagnosticInterruptRequest {
   readonly InstanceId: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface ServiceConfiguration {
-  readonly ServiceType: [];
-  readonly ServiceId: string;
-  readonly ServiceName: string;
-  readonly ServiceState: string;
-  readonly AvailabilityZones: [];
-  readonly AcceptanceRequired: boolean;
-  readonly ManagesVpcEndpoints: boolean;
-  readonly NetworkLoadBalancerArns: [];
-  readonly GatewayLoadBalancerArns: [];
-  readonly BaseEndpointDnsNames: [];
-  readonly PrivateDnsName: string;
-  readonly PrivateDnsNameConfiguration: PrivateDnsNameConfiguration;
-  readonly Tags: [];
+export interface ServiceConfiguration {
+  readonly ServiceType?: [];
+  readonly ServiceId?: string;
+  readonly ServiceName?: string;
+  readonly ServiceState?: string;
+  readonly AvailabilityZones?: [];
+  readonly AcceptanceRequired?: boolean;
+  readonly ManagesVpcEndpoints?: boolean;
+  readonly NetworkLoadBalancerArns?: [];
+  readonly GatewayLoadBalancerArns?: [];
+  readonly BaseEndpointDnsNames?: [];
+  readonly PrivateDnsName?: string;
+  readonly PrivateDnsNameConfiguration?: PrivateDnsNameConfiguration;
+  readonly Tags?: [];
 }
 
-interface ServiceDetail {
-  readonly ServiceName: string;
-  readonly ServiceId: string;
-  readonly ServiceType: [];
-  readonly AvailabilityZones: [];
-  readonly Owner: string;
-  readonly BaseEndpointDnsNames: [];
-  readonly PrivateDnsName: string;
-  readonly PrivateDnsNames: [];
-  readonly VpcEndpointPolicySupported: boolean;
-  readonly AcceptanceRequired: boolean;
-  readonly ManagesVpcEndpoints: boolean;
-  readonly Tags: [];
-  readonly PrivateDnsNameVerificationState: string;
+export interface ServiceDetail {
+  readonly ServiceName?: string;
+  readonly ServiceId?: string;
+  readonly ServiceType?: [];
+  readonly AvailabilityZones?: [];
+  readonly Owner?: string;
+  readonly BaseEndpointDnsNames?: [];
+  readonly PrivateDnsName?: string;
+  readonly PrivateDnsNames?: [];
+  readonly VpcEndpointPolicySupported?: boolean;
+  readonly AcceptanceRequired?: boolean;
+  readonly ManagesVpcEndpoints?: boolean;
+  readonly Tags?: [];
+  readonly PrivateDnsNameVerificationState?: string;
 }
 
-interface ServiceTypeDetail {
-  readonly ServiceType: string;
+export interface ServiceTypeDetail {
+  readonly ServiceType?: string;
 }
 
-interface SlotDateTimeRangeRequest {
+export interface SlotDateTimeRangeRequest {
   readonly EarliestTime: Date;
   readonly LatestTime: Date;
 }
 
-interface SlotStartTimeRangeRequest {
-  readonly EarliestTime: Date;
-  readonly LatestTime: Date;
+export interface SlotStartTimeRangeRequest {
+  readonly EarliestTime?: Date;
+  readonly LatestTime?: Date;
 }
 
-interface Snapshot {
-  readonly DataEncryptionKeyId: string;
-  readonly Description: string;
-  readonly Encrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly OwnerId: string;
-  readonly Progress: string;
-  readonly SnapshotId: string;
-  readonly StartTime: Date;
-  readonly State: string;
-  readonly StateMessage: string;
-  readonly VolumeId: string;
-  readonly VolumeSize: number;
-  readonly OwnerAlias: string;
-  readonly OutpostArn: string;
-  readonly Tags: [];
-  readonly StorageTier: string;
-  readonly RestoreExpiryTime: Date;
+export interface Snapshot {
+  readonly DataEncryptionKeyId?: string;
+  readonly Description?: string;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly OwnerId?: string;
+  readonly Progress?: string;
+  readonly SnapshotId?: string;
+  readonly StartTime?: Date;
+  readonly State?: string;
+  readonly StateMessage?: string;
+  readonly VolumeId?: string;
+  readonly VolumeSize?: number;
+  readonly OwnerAlias?: string;
+  readonly OutpostArn?: string;
+  readonly Tags?: [];
+  readonly StorageTier?: string;
+  readonly RestoreExpiryTime?: Date;
 }
 
-interface SnapshotDetail {
-  readonly Description: string;
-  readonly DeviceName: string;
-  readonly DiskImageSize: unknown;
-  readonly Format: string;
-  readonly Progress: string;
-  readonly SnapshotId: string;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly Url: string;
-  readonly UserBucket: UserBucketDetails;
+export interface SnapshotDetail {
+  readonly Description?: string;
+  readonly DeviceName?: string;
+  readonly DiskImageSize?: unknown;
+  readonly Format?: string;
+  readonly Progress?: string;
+  readonly SnapshotId?: string;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly Url?: string;
+  readonly UserBucket?: UserBucketDetails;
 }
 
-interface SnapshotDiskContainer {
-  readonly Description: string;
-  readonly Format: string;
-  readonly Url: string;
-  readonly UserBucket: UserBucket;
+export interface SnapshotDiskContainer {
+  readonly Description?: string;
+  readonly Format?: string;
+  readonly Url?: string;
+  readonly UserBucket?: UserBucket;
 }
 
-interface SnapshotInfo {
-  readonly Description: string;
-  readonly Tags: [];
-  readonly Encrypted: boolean;
-  readonly VolumeId: string;
-  readonly State: string;
-  readonly VolumeSize: number;
-  readonly StartTime: Date;
-  readonly Progress: string;
-  readonly OwnerId: string;
-  readonly SnapshotId: string;
-  readonly OutpostArn: string;
+export interface SnapshotInfo {
+  readonly Description?: string;
+  readonly Tags?: [];
+  readonly Encrypted?: boolean;
+  readonly VolumeId?: string;
+  readonly State?: string;
+  readonly VolumeSize?: number;
+  readonly StartTime?: Date;
+  readonly Progress?: string;
+  readonly OwnerId?: string;
+  readonly SnapshotId?: string;
+  readonly OutpostArn?: string;
 }
 
-interface SnapshotRecycleBinInfo {
-  readonly SnapshotId: string;
-  readonly RecycleBinEnterTime: Date;
-  readonly RecycleBinExitTime: Date;
-  readonly Description: string;
-  readonly VolumeId: string;
+export interface SnapshotRecycleBinInfo {
+  readonly SnapshotId?: string;
+  readonly RecycleBinEnterTime?: Date;
+  readonly RecycleBinExitTime?: Date;
+  readonly Description?: string;
+  readonly VolumeId?: string;
 }
 
-interface SnapshotTaskDetail {
-  readonly Description: string;
-  readonly DiskImageSize: unknown;
-  readonly Encrypted: boolean;
-  readonly Format: string;
-  readonly KmsKeyId: string;
-  readonly Progress: string;
-  readonly SnapshotId: string;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly Url: string;
-  readonly UserBucket: UserBucketDetails;
+export interface SnapshotTaskDetail {
+  readonly Description?: string;
+  readonly DiskImageSize?: unknown;
+  readonly Encrypted?: boolean;
+  readonly Format?: string;
+  readonly KmsKeyId?: string;
+  readonly Progress?: string;
+  readonly SnapshotId?: string;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly Url?: string;
+  readonly UserBucket?: UserBucketDetails;
 }
 
-interface SnapshotTierStatus {
-  readonly SnapshotId: string;
-  readonly VolumeId: string;
-  readonly Status: string;
-  readonly OwnerId: string;
-  readonly Tags: [];
-  readonly StorageTier: string;
-  readonly LastTieringStartTime: Date;
-  readonly LastTieringProgress: number;
-  readonly LastTieringOperationStatus: string;
-  readonly LastTieringOperationStatusDetail: string;
-  readonly ArchivalCompleteTime: Date;
-  readonly RestoreExpiryTime: Date;
+export interface SnapshotTierStatus {
+  readonly SnapshotId?: string;
+  readonly VolumeId?: string;
+  readonly Status?: string;
+  readonly OwnerId?: string;
+  readonly Tags?: [];
+  readonly StorageTier?: string;
+  readonly LastTieringStartTime?: Date;
+  readonly LastTieringProgress?: number;
+  readonly LastTieringOperationStatus?: string;
+  readonly LastTieringOperationStatusDetail?: string;
+  readonly ArchivalCompleteTime?: Date;
+  readonly RestoreExpiryTime?: Date;
 }
 
-interface SpotCapacityRebalance {
-  readonly ReplacementStrategy: string;
-  readonly TerminationDelay: number;
+export interface SpotCapacityRebalance {
+  readonly ReplacementStrategy?: string;
+  readonly TerminationDelay?: number;
 }
 
-interface SpotDatafeedSubscription {
-  readonly Bucket: string;
-  readonly Fault: SpotInstanceStateFault;
-  readonly OwnerId: string;
-  readonly Prefix: string;
-  readonly State: string;
+export interface SpotDatafeedSubscription {
+  readonly Bucket?: string;
+  readonly Fault?: SpotInstanceStateFault;
+  readonly OwnerId?: string;
+  readonly Prefix?: string;
+  readonly State?: string;
 }
 
-interface SpotFleetLaunchSpecification {
-  readonly SecurityGroups: [];
-  readonly AddressingType: string;
-  readonly BlockDeviceMappings: [];
-  readonly EbsOptimized: boolean;
-  readonly IamInstanceProfile: IamInstanceProfileSpecification;
-  readonly ImageId: string;
-  readonly InstanceType: string;
-  readonly KernelId: string;
-  readonly KeyName: string;
-  readonly Monitoring: SpotFleetMonitoring;
-  readonly NetworkInterfaces: [];
-  readonly Placement: SpotPlacement;
-  readonly RamdiskId: string;
-  readonly SpotPrice: string;
-  readonly SubnetId: string;
-  readonly UserData: string;
-  readonly WeightedCapacity: unknown;
-  readonly TagSpecifications: [];
-  readonly InstanceRequirements: InstanceRequirements;
+export interface SpotFleetLaunchSpecification {
+  readonly SecurityGroups?: [];
+  readonly AddressingType?: string;
+  readonly BlockDeviceMappings?: [];
+  readonly EbsOptimized?: boolean;
+  readonly IamInstanceProfile?: IamInstanceProfileSpecification;
+  readonly ImageId?: string;
+  readonly InstanceType?: string;
+  readonly KernelId?: string;
+  readonly KeyName?: string;
+  readonly Monitoring?: SpotFleetMonitoring;
+  readonly NetworkInterfaces?: [];
+  readonly Placement?: SpotPlacement;
+  readonly RamdiskId?: string;
+  readonly SpotPrice?: string;
+  readonly SubnetId?: string;
+  readonly UserData?: string;
+  readonly WeightedCapacity?: unknown;
+  readonly TagSpecifications?: [];
+  readonly InstanceRequirements?: InstanceRequirements;
 }
 
-interface SpotFleetMonitoring {
-  readonly Enabled: boolean;
+export interface SpotFleetMonitoring {
+  readonly Enabled?: boolean;
 }
 
-interface SpotFleetRequestConfig {
-  readonly ActivityStatus: string;
-  readonly CreateTime: Date;
-  readonly SpotFleetRequestConfig: SpotFleetRequestConfigData;
-  readonly SpotFleetRequestId: string;
-  readonly SpotFleetRequestState: string;
-  readonly Tags: [];
+export interface SpotFleetRequestConfig {
+  readonly ActivityStatus?: string;
+  readonly CreateTime?: Date;
+  readonly SpotFleetRequestConfig?: SpotFleetRequestConfigData;
+  readonly SpotFleetRequestId?: string;
+  readonly SpotFleetRequestState?: string;
+  readonly Tags?: [];
 }
 
-interface SpotFleetRequestConfigData {
-  readonly AllocationStrategy: string;
-  readonly OnDemandAllocationStrategy: string;
-  readonly SpotMaintenanceStrategies: SpotMaintenanceStrategies;
-  readonly ClientToken: string;
-  readonly ExcessCapacityTerminationPolicy: string;
-  readonly FulfilledCapacity: unknown;
-  readonly OnDemandFulfilledCapacity: unknown;
+export interface SpotFleetRequestConfigData {
+  readonly AllocationStrategy?: string;
+  readonly OnDemandAllocationStrategy?: string;
+  readonly SpotMaintenanceStrategies?: SpotMaintenanceStrategies;
+  readonly ClientToken?: string;
+  readonly ExcessCapacityTerminationPolicy?: string;
+  readonly FulfilledCapacity?: unknown;
+  readonly OnDemandFulfilledCapacity?: unknown;
   readonly IamFleetRole: string;
-  readonly LaunchSpecifications: [];
-  readonly LaunchTemplateConfigs: [];
-  readonly SpotPrice: string;
+  readonly LaunchSpecifications?: [];
+  readonly LaunchTemplateConfigs?: [];
+  readonly SpotPrice?: string;
   readonly TargetCapacity: number;
-  readonly OnDemandTargetCapacity: number;
-  readonly OnDemandMaxTotalPrice: string;
-  readonly SpotMaxTotalPrice: string;
-  readonly TerminateInstancesWithExpiration: boolean;
-  readonly Type: string;
-  readonly ValidFrom: Date;
-  readonly ValidUntil: Date;
-  readonly ReplaceUnhealthyInstances: boolean;
-  readonly InstanceInterruptionBehavior: string;
-  readonly LoadBalancersConfig: LoadBalancersConfig;
-  readonly InstancePoolsToUseCount: number;
-  readonly Context: string;
-  readonly TargetCapacityUnitType: string;
-  readonly TagSpecifications: [];
+  readonly OnDemandTargetCapacity?: number;
+  readonly OnDemandMaxTotalPrice?: string;
+  readonly SpotMaxTotalPrice?: string;
+  readonly TerminateInstancesWithExpiration?: boolean;
+  readonly Type?: string;
+  readonly ValidFrom?: Date;
+  readonly ValidUntil?: Date;
+  readonly ReplaceUnhealthyInstances?: boolean;
+  readonly InstanceInterruptionBehavior?: string;
+  readonly LoadBalancersConfig?: LoadBalancersConfig;
+  readonly InstancePoolsToUseCount?: number;
+  readonly Context?: string;
+  readonly TargetCapacityUnitType?: string;
+  readonly TagSpecifications?: [];
 }
 
-interface SpotFleetTagSpecification {
-  readonly ResourceType: string;
-  readonly Tags: [];
+export interface SpotFleetTagSpecification {
+  readonly ResourceType?: string;
+  readonly Tags?: [];
 }
 
-interface SpotInstanceRequest {
-  readonly ActualBlockHourlyPrice: string;
-  readonly AvailabilityZoneGroup: string;
-  readonly BlockDurationMinutes: number;
-  readonly CreateTime: Date;
-  readonly Fault: SpotInstanceStateFault;
-  readonly InstanceId: string;
-  readonly LaunchGroup: string;
-  readonly LaunchSpecification: LaunchSpecification;
-  readonly LaunchedAvailabilityZone: string;
-  readonly ProductDescription: string;
-  readonly SpotInstanceRequestId: string;
-  readonly SpotPrice: string;
-  readonly State: string;
-  readonly Status: SpotInstanceStatus;
-  readonly Tags: [];
-  readonly Type: string;
-  readonly ValidFrom: Date;
-  readonly ValidUntil: Date;
-  readonly InstanceInterruptionBehavior: string;
+export interface SpotInstanceRequest {
+  readonly ActualBlockHourlyPrice?: string;
+  readonly AvailabilityZoneGroup?: string;
+  readonly BlockDurationMinutes?: number;
+  readonly CreateTime?: Date;
+  readonly Fault?: SpotInstanceStateFault;
+  readonly InstanceId?: string;
+  readonly LaunchGroup?: string;
+  readonly LaunchSpecification?: LaunchSpecification;
+  readonly LaunchedAvailabilityZone?: string;
+  readonly ProductDescription?: string;
+  readonly SpotInstanceRequestId?: string;
+  readonly SpotPrice?: string;
+  readonly State?: string;
+  readonly Status?: SpotInstanceStatus;
+  readonly Tags?: [];
+  readonly Type?: string;
+  readonly ValidFrom?: Date;
+  readonly ValidUntil?: Date;
+  readonly InstanceInterruptionBehavior?: string;
 }
 
-interface SpotInstanceStateFault {
-  readonly Code: string;
-  readonly Message: string;
+export interface SpotInstanceStateFault {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface SpotInstanceStatus {
-  readonly Code: string;
-  readonly Message: string;
-  readonly UpdateTime: Date;
+export interface SpotInstanceStatus {
+  readonly Code?: string;
+  readonly Message?: string;
+  readonly UpdateTime?: Date;
 }
 
-interface SpotMaintenanceStrategies {
-  readonly CapacityRebalance: SpotCapacityRebalance;
+export interface SpotMaintenanceStrategies {
+  readonly CapacityRebalance?: SpotCapacityRebalance;
 }
 
-interface SpotMarketOptions {
-  readonly MaxPrice: string;
-  readonly SpotInstanceType: string;
-  readonly BlockDurationMinutes: number;
-  readonly ValidUntil: Date;
-  readonly InstanceInterruptionBehavior: string;
+export interface SpotMarketOptions {
+  readonly MaxPrice?: string;
+  readonly SpotInstanceType?: string;
+  readonly BlockDurationMinutes?: number;
+  readonly ValidUntil?: Date;
+  readonly InstanceInterruptionBehavior?: string;
 }
 
-interface SpotOptions {
-  readonly AllocationStrategy: string;
-  readonly MaintenanceStrategies: FleetSpotMaintenanceStrategies;
-  readonly InstanceInterruptionBehavior: string;
-  readonly InstancePoolsToUseCount: number;
-  readonly SingleInstanceType: boolean;
-  readonly SingleAvailabilityZone: boolean;
-  readonly MinTargetCapacity: number;
-  readonly MaxTotalPrice: string;
+export interface SpotOptions {
+  readonly AllocationStrategy?: string;
+  readonly MaintenanceStrategies?: FleetSpotMaintenanceStrategies;
+  readonly InstanceInterruptionBehavior?: string;
+  readonly InstancePoolsToUseCount?: number;
+  readonly SingleInstanceType?: boolean;
+  readonly SingleAvailabilityZone?: boolean;
+  readonly MinTargetCapacity?: number;
+  readonly MaxTotalPrice?: string;
 }
 
-interface SpotOptionsRequest {
-  readonly AllocationStrategy: string;
-  readonly MaintenanceStrategies: FleetSpotMaintenanceStrategiesRequest;
-  readonly InstanceInterruptionBehavior: string;
-  readonly InstancePoolsToUseCount: number;
-  readonly SingleInstanceType: boolean;
-  readonly SingleAvailabilityZone: boolean;
-  readonly MinTargetCapacity: number;
-  readonly MaxTotalPrice: string;
+export interface SpotOptionsRequest {
+  readonly AllocationStrategy?: string;
+  readonly MaintenanceStrategies?: FleetSpotMaintenanceStrategiesRequest;
+  readonly InstanceInterruptionBehavior?: string;
+  readonly InstancePoolsToUseCount?: number;
+  readonly SingleInstanceType?: boolean;
+  readonly SingleAvailabilityZone?: boolean;
+  readonly MinTargetCapacity?: number;
+  readonly MaxTotalPrice?: string;
 }
 
-interface SpotPlacement {
-  readonly AvailabilityZone: string;
-  readonly GroupName: string;
-  readonly Tenancy: string;
+export interface SpotPlacement {
+  readonly AvailabilityZone?: string;
+  readonly GroupName?: string;
+  readonly Tenancy?: string;
 }
 
-interface SpotPlacementScore {
-  readonly Region: string;
-  readonly AvailabilityZoneId: string;
-  readonly Score: number;
+export interface SpotPlacementScore {
+  readonly Region?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly Score?: number;
 }
 
-interface SpotPrice {
-  readonly AvailabilityZone: string;
-  readonly InstanceType: string;
-  readonly ProductDescription: string;
-  readonly SpotPrice: string;
-  readonly Timestamp: Date;
+export interface SpotPrice {
+  readonly AvailabilityZone?: string;
+  readonly InstanceType?: string;
+  readonly ProductDescription?: string;
+  readonly SpotPrice?: string;
+  readonly Timestamp?: Date;
 }
 
-interface StaleIpPermission {
-  readonly FromPort: number;
-  readonly IpProtocol: string;
-  readonly IpRanges: [];
-  readonly PrefixListIds: [];
-  readonly ToPort: number;
-  readonly UserIdGroupPairs: [];
+export interface StaleIpPermission {
+  readonly FromPort?: number;
+  readonly IpProtocol?: string;
+  readonly IpRanges?: [];
+  readonly PrefixListIds?: [];
+  readonly ToPort?: number;
+  readonly UserIdGroupPairs?: [];
 }
 
-interface StaleSecurityGroup {
-  readonly Description: string;
-  readonly GroupId: string;
-  readonly GroupName: string;
-  readonly StaleIpPermissions: [];
-  readonly StaleIpPermissionsEgress: [];
-  readonly VpcId: string;
+export interface StaleSecurityGroup {
+  readonly Description?: string;
+  readonly GroupId?: string;
+  readonly GroupName?: string;
+  readonly StaleIpPermissions?: [];
+  readonly StaleIpPermissionsEgress?: [];
+  readonly VpcId?: string;
 }
 
-interface StartInstancesRequest {
+export interface StartInstancesRequest {
   readonly InstanceIds: [];
-  readonly AdditionalInfo: string;
-  readonly DryRun: boolean;
+  readonly AdditionalInfo?: string;
+  readonly DryRun?: boolean;
 }
 
-interface StartInstancesResult {
-  readonly StartingInstances: [];
+export interface StartInstancesResult {
+  readonly StartingInstances?: [];
 }
 
-interface StartNetworkInsightsAccessScopeAnalysisRequest {
+export interface StartNetworkInsightsAccessScopeAnalysisRequest {
   readonly NetworkInsightsAccessScopeId: string;
-  readonly DryRun: boolean;
-  readonly TagSpecifications: [];
+  readonly DryRun?: boolean;
+  readonly TagSpecifications?: [];
   readonly ClientToken: string;
 }
 
-interface StartNetworkInsightsAccessScopeAnalysisResult {
-  readonly NetworkInsightsAccessScopeAnalysis: NetworkInsightsAccessScopeAnalysis;
+export interface StartNetworkInsightsAccessScopeAnalysisResult {
+  readonly NetworkInsightsAccessScopeAnalysis?: NetworkInsightsAccessScopeAnalysis;
 }
 
-interface StartNetworkInsightsAnalysisRequest {
+export interface StartNetworkInsightsAnalysisRequest {
   readonly NetworkInsightsPathId: string;
-  readonly FilterInArns: [];
-  readonly DryRun: boolean;
-  readonly TagSpecifications: [];
+  readonly FilterInArns?: [];
+  readonly DryRun?: boolean;
+  readonly TagSpecifications?: [];
   readonly ClientToken: string;
 }
 
-interface StartNetworkInsightsAnalysisResult {
-  readonly NetworkInsightsAnalysis: NetworkInsightsAnalysis;
+export interface StartNetworkInsightsAnalysisResult {
+  readonly NetworkInsightsAnalysis?: NetworkInsightsAnalysis;
 }
 
-interface StartVpcEndpointServicePrivateDnsVerificationRequest {
-  readonly DryRun: boolean;
+export interface StartVpcEndpointServicePrivateDnsVerificationRequest {
+  readonly DryRun?: boolean;
   readonly ServiceId: string;
 }
 
-interface StartVpcEndpointServicePrivateDnsVerificationResult {
-  readonly ReturnValue: boolean;
+export interface StartVpcEndpointServicePrivateDnsVerificationResult {
+  readonly ReturnValue?: boolean;
 }
 
-interface StateReason {
-  readonly Code: string;
-  readonly Message: string;
+export interface StateReason {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface StopInstancesRequest {
+export interface StopInstancesRequest {
   readonly InstanceIds: [];
-  readonly Hibernate: boolean;
-  readonly DryRun: boolean;
-  readonly Force: boolean;
+  readonly Hibernate?: boolean;
+  readonly DryRun?: boolean;
+  readonly Force?: boolean;
 }
 
-interface StopInstancesResult {
-  readonly StoppingInstances: [];
+export interface StopInstancesResult {
+  readonly StoppingInstances?: [];
 }
 
-interface Storage {
-  readonly S3: S3Storage;
+export interface Storage {
+  readonly S3?: S3Storage;
 }
 
-interface StorageLocation {
-  readonly Bucket: string;
-  readonly Key: string;
+export interface StorageLocation {
+  readonly Bucket?: string;
+  readonly Key?: string;
 }
 
-interface StoreImageTaskResult {
-  readonly AmiId: string;
-  readonly TaskStartTime: Date;
-  readonly Bucket: string;
-  readonly S3objectKey: string;
-  readonly ProgressPercentage: number;
-  readonly StoreTaskState: string;
-  readonly StoreTaskFailureReason: string;
+export interface StoreImageTaskResult {
+  readonly AmiId?: string;
+  readonly TaskStartTime?: Date;
+  readonly Bucket?: string;
+  readonly S3objectKey?: string;
+  readonly ProgressPercentage?: number;
+  readonly StoreTaskState?: string;
+  readonly StoreTaskFailureReason?: string;
 }
 
-interface Subnet {
-  readonly AvailabilityZone: string;
-  readonly AvailabilityZoneId: string;
-  readonly AvailableIpAddressCount: number;
-  readonly CidrBlock: string;
-  readonly DefaultForAz: boolean;
-  readonly EnableLniAtDeviceIndex: number;
-  readonly MapPublicIpOnLaunch: boolean;
-  readonly MapCustomerOwnedIpOnLaunch: boolean;
-  readonly CustomerOwnedIpv4Pool: string;
-  readonly State: string;
-  readonly SubnetId: string;
-  readonly VpcId: string;
-  readonly OwnerId: string;
-  readonly AssignIpv6AddressOnCreation: boolean;
-  readonly Ipv6CidrBlockAssociationSet: [];
-  readonly Tags: [];
-  readonly SubnetArn: string;
-  readonly OutpostArn: string;
-  readonly EnableDns64: boolean;
-  readonly Ipv6Native: boolean;
-  readonly PrivateDnsNameOptionsOnLaunch: PrivateDnsNameOptionsOnLaunch;
+export interface Subnet {
+  readonly AvailabilityZone?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly AvailableIpAddressCount?: number;
+  readonly CidrBlock?: string;
+  readonly DefaultForAz?: boolean;
+  readonly EnableLniAtDeviceIndex?: number;
+  readonly MapPublicIpOnLaunch?: boolean;
+  readonly MapCustomerOwnedIpOnLaunch?: boolean;
+  readonly CustomerOwnedIpv4Pool?: string;
+  readonly State?: string;
+  readonly SubnetId?: string;
+  readonly VpcId?: string;
+  readonly OwnerId?: string;
+  readonly AssignIpv6AddressOnCreation?: boolean;
+  readonly Ipv6CidrBlockAssociationSet?: [];
+  readonly Tags?: [];
+  readonly SubnetArn?: string;
+  readonly OutpostArn?: string;
+  readonly EnableDns64?: boolean;
+  readonly Ipv6Native?: boolean;
+  readonly PrivateDnsNameOptionsOnLaunch?: PrivateDnsNameOptionsOnLaunch;
 }
 
-interface SubnetAssociation {
-  readonly SubnetId: string;
-  readonly State: string;
+export interface SubnetAssociation {
+  readonly SubnetId?: string;
+  readonly State?: string;
 }
 
-interface SubnetCidrBlockState {
-  readonly State: string;
-  readonly StatusMessage: string;
+export interface SubnetCidrBlockState {
+  readonly State?: string;
+  readonly StatusMessage?: string;
 }
 
-interface SubnetCidrReservation {
-  readonly SubnetCidrReservationId: string;
-  readonly SubnetId: string;
-  readonly Cidr: string;
-  readonly ReservationType: string;
-  readonly OwnerId: string;
-  readonly Description: string;
-  readonly Tags: [];
+export interface SubnetCidrReservation {
+  readonly SubnetCidrReservationId?: string;
+  readonly SubnetId?: string;
+  readonly Cidr?: string;
+  readonly ReservationType?: string;
+  readonly OwnerId?: string;
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 
-interface SubnetIpv6CidrBlockAssociation {
-  readonly AssociationId: string;
-  readonly Ipv6CidrBlock: string;
-  readonly Ipv6CidrBlockState: SubnetCidrBlockState;
+export interface SubnetIpv6CidrBlockAssociation {
+  readonly AssociationId?: string;
+  readonly Ipv6CidrBlock?: string;
+  readonly Ipv6CidrBlockState?: SubnetCidrBlockState;
 }
 
-interface SuccessfulInstanceCreditSpecificationItem {
-  readonly InstanceId: string;
+export interface SuccessfulInstanceCreditSpecificationItem {
+  readonly InstanceId?: string;
 }
 
-interface SuccessfulQueuedPurchaseDeletion {
-  readonly ReservedInstancesId: string;
+export interface SuccessfulQueuedPurchaseDeletion {
+  readonly ReservedInstancesId?: string;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TagDescription {
-  readonly Key: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly Value: string;
+export interface TagDescription {
+  readonly Key?: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly Value?: string;
 }
 
-interface TagSpecification {
-  readonly ResourceType: string;
-  readonly Tags: [];
+export interface TagSpecification {
+  readonly ResourceType?: string;
+  readonly Tags?: [];
 }
 
-interface TargetCapacitySpecification {
+export interface TargetCapacitySpecification {
+  readonly TotalTargetCapacity?: number;
+  readonly OnDemandTargetCapacity?: number;
+  readonly SpotTargetCapacity?: number;
+  readonly DefaultTargetCapacityType?: string;
+  readonly TargetCapacityUnitType?: string;
+}
+
+export interface TargetCapacitySpecificationRequest {
   readonly TotalTargetCapacity: number;
-  readonly OnDemandTargetCapacity: number;
-  readonly SpotTargetCapacity: number;
-  readonly DefaultTargetCapacityType: string;
-  readonly TargetCapacityUnitType: string;
+  readonly OnDemandTargetCapacity?: number;
+  readonly SpotTargetCapacity?: number;
+  readonly DefaultTargetCapacityType?: string;
+  readonly TargetCapacityUnitType?: string;
 }
 
-interface TargetCapacitySpecificationRequest {
-  readonly TotalTargetCapacity: number;
-  readonly OnDemandTargetCapacity: number;
-  readonly SpotTargetCapacity: number;
-  readonly DefaultTargetCapacityType: string;
-  readonly TargetCapacityUnitType: string;
+export interface TargetConfiguration {
+  readonly InstanceCount?: number;
+  readonly OfferingId?: string;
 }
 
-interface TargetConfiguration {
-  readonly InstanceCount: number;
+export interface TargetConfigurationRequest {
+  readonly InstanceCount?: number;
   readonly OfferingId: string;
 }
 
-interface TargetConfigurationRequest {
-  readonly InstanceCount: number;
-  readonly OfferingId: string;
+export interface TargetGroup {
+  readonly Arn?: string;
 }
 
-interface TargetGroup {
-  readonly Arn: string;
+export interface TargetGroupsConfig {
+  readonly TargetGroups?: [];
 }
 
-interface TargetGroupsConfig {
-  readonly TargetGroups: [];
+export interface TargetNetwork {
+  readonly AssociationId?: string;
+  readonly VpcId?: string;
+  readonly TargetNetworkId?: string;
+  readonly ClientVpnEndpointId?: string;
+  readonly Status?: AssociationStatus;
+  readonly SecurityGroups?: [];
 }
 
-interface TargetNetwork {
-  readonly AssociationId: string;
-  readonly VpcId: string;
-  readonly TargetNetworkId: string;
+export interface TargetReservationValue {
+  readonly ReservationValue?: ReservationValue;
+  readonly TargetConfiguration?: TargetConfiguration;
+}
+
+export interface TerminateClientVpnConnectionsRequest {
   readonly ClientVpnEndpointId: string;
-  readonly Status: AssociationStatus;
-  readonly SecurityGroups: [];
+  readonly ConnectionId?: string;
+  readonly Username?: string;
+  readonly DryRun?: boolean;
 }
 
-interface TargetReservationValue {
-  readonly ReservationValue: ReservationValue;
-  readonly TargetConfiguration: TargetConfiguration;
+export interface TerminateClientVpnConnectionsResult {
+  readonly ClientVpnEndpointId?: string;
+  readonly Username?: string;
+  readonly ConnectionStatuses?: [];
 }
 
-interface TerminateClientVpnConnectionsRequest {
-  readonly ClientVpnEndpointId: string;
-  readonly ConnectionId: string;
-  readonly Username: string;
-  readonly DryRun: boolean;
+export interface TerminateConnectionStatus {
+  readonly ConnectionId?: string;
+  readonly PreviousStatus?: ClientVpnConnectionStatus;
+  readonly CurrentStatus?: ClientVpnConnectionStatus;
 }
 
-interface TerminateClientVpnConnectionsResult {
-  readonly ClientVpnEndpointId: string;
-  readonly Username: string;
-  readonly ConnectionStatuses: [];
-}
-
-interface TerminateConnectionStatus {
-  readonly ConnectionId: string;
-  readonly PreviousStatus: ClientVpnConnectionStatus;
-  readonly CurrentStatus: ClientVpnConnectionStatus;
-}
-
-interface TerminateInstancesRequest {
+export interface TerminateInstancesRequest {
   readonly InstanceIds: [];
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface TerminateInstancesResult {
-  readonly TerminatingInstances: [];
+export interface TerminateInstancesResult {
+  readonly TerminatingInstances?: [];
 }
 
-interface ThroughResourcesStatement {
-  readonly ResourceStatement: ResourceStatement;
+export interface ThroughResourcesStatement {
+  readonly ResourceStatement?: ResourceStatement;
 }
 
-interface ThroughResourcesStatementRequest {
-  readonly ResourceStatement: ResourceStatementRequest;
+export interface ThroughResourcesStatementRequest {
+  readonly ResourceStatement?: ResourceStatementRequest;
 }
 
-interface TotalLocalStorageGB {
-  readonly Min: unknown;
-  readonly Max: unknown;
+export interface TotalLocalStorageGB {
+  readonly Min?: unknown;
+  readonly Max?: unknown;
 }
 
-interface TotalLocalStorageGBRequest {
-  readonly Min: unknown;
-  readonly Max: unknown;
+export interface TotalLocalStorageGBRequest {
+  readonly Min?: unknown;
+  readonly Max?: unknown;
 }
 
-interface TrafficMirrorFilter {
-  readonly TrafficMirrorFilterId: string;
-  readonly IngressFilterRules: [];
-  readonly EgressFilterRules: [];
-  readonly NetworkServices: [];
-  readonly Description: string;
-  readonly Tags: [];
+export interface TrafficMirrorFilter {
+  readonly TrafficMirrorFilterId?: string;
+  readonly IngressFilterRules?: [];
+  readonly EgressFilterRules?: [];
+  readonly NetworkServices?: [];
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 
-interface TrafficMirrorFilterRule {
-  readonly TrafficMirrorFilterRuleId: string;
-  readonly TrafficMirrorFilterId: string;
-  readonly TrafficDirection: string;
-  readonly RuleNumber: number;
-  readonly RuleAction: string;
-  readonly Protocol: number;
-  readonly DestinationPortRange: TrafficMirrorPortRange;
-  readonly SourcePortRange: TrafficMirrorPortRange;
-  readonly DestinationCidrBlock: string;
-  readonly SourceCidrBlock: string;
-  readonly Description: string;
+export interface TrafficMirrorFilterRule {
+  readonly TrafficMirrorFilterRuleId?: string;
+  readonly TrafficMirrorFilterId?: string;
+  readonly TrafficDirection?: string;
+  readonly RuleNumber?: number;
+  readonly RuleAction?: string;
+  readonly Protocol?: number;
+  readonly DestinationPortRange?: TrafficMirrorPortRange;
+  readonly SourcePortRange?: TrafficMirrorPortRange;
+  readonly DestinationCidrBlock?: string;
+  readonly SourceCidrBlock?: string;
+  readonly Description?: string;
 }
 
-interface TrafficMirrorPortRange {
-  readonly FromPort: number;
-  readonly ToPort: number;
+export interface TrafficMirrorPortRange {
+  readonly FromPort?: number;
+  readonly ToPort?: number;
 }
 
-interface TrafficMirrorPortRangeRequest {
-  readonly FromPort: number;
-  readonly ToPort: number;
+export interface TrafficMirrorPortRangeRequest {
+  readonly FromPort?: number;
+  readonly ToPort?: number;
 }
 
-interface TrafficMirrorSession {
-  readonly TrafficMirrorSessionId: string;
-  readonly TrafficMirrorTargetId: string;
-  readonly TrafficMirrorFilterId: string;
+export interface TrafficMirrorSession {
+  readonly TrafficMirrorSessionId?: string;
+  readonly TrafficMirrorTargetId?: string;
+  readonly TrafficMirrorFilterId?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly OwnerId?: string;
+  readonly PacketLength?: number;
+  readonly SessionNumber?: number;
+  readonly VirtualNetworkId?: number;
+  readonly Description?: string;
+  readonly Tags?: [];
+}
+
+export interface TrafficMirrorTarget {
+  readonly TrafficMirrorTargetId?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly NetworkLoadBalancerArn?: string;
+  readonly Type?: string;
+  readonly Description?: string;
+  readonly OwnerId?: string;
+  readonly Tags?: [];
+}
+
+export interface TransitGateway {
+  readonly TransitGatewayId?: string;
+  readonly TransitGatewayArn?: string;
+  readonly State?: string;
+  readonly OwnerId?: string;
+  readonly Description?: string;
+  readonly CreationTime?: Date;
+  readonly Options?: TransitGatewayOptions;
+  readonly Tags?: [];
+}
+
+export interface TransitGatewayAssociation {
+  readonly TransitGatewayRouteTableId?: string;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly State?: string;
+}
+
+export interface TransitGatewayAttachment {
+  readonly TransitGatewayAttachmentId?: string;
+  readonly TransitGatewayId?: string;
+  readonly TransitGatewayOwnerId?: string;
+  readonly ResourceOwnerId?: string;
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
+  readonly State?: string;
+  readonly Association?: TransitGatewayAttachmentAssociation;
+  readonly CreationTime?: Date;
+  readonly Tags?: [];
+}
+
+export interface TransitGatewayAttachmentAssociation {
+  readonly TransitGatewayRouteTableId?: string;
+  readonly State?: string;
+}
+
+export interface TransitGatewayAttachmentBgpConfiguration {
+  readonly TransitGatewayAsn?: number;
+  readonly PeerAsn?: number;
+  readonly TransitGatewayAddress?: string;
+  readonly PeerAddress?: string;
+  readonly BgpStatus?: string;
+}
+
+export interface TransitGatewayAttachmentPropagation {
+  readonly TransitGatewayRouteTableId?: string;
+  readonly State?: string;
+}
+
+export interface TransitGatewayConnect {
+  readonly TransitGatewayAttachmentId?: string;
+  readonly TransportTransitGatewayAttachmentId?: string;
+  readonly TransitGatewayId?: string;
+  readonly State?: string;
+  readonly CreationTime?: Date;
+  readonly Options?: TransitGatewayConnectOptions;
+  readonly Tags?: [];
+}
+
+export interface TransitGatewayConnectOptions {
+  readonly Protocol?: string;
+}
+
+export interface TransitGatewayConnectPeer {
+  readonly TransitGatewayAttachmentId?: string;
+  readonly TransitGatewayConnectPeerId?: string;
+  readonly State?: string;
+  readonly CreationTime?: Date;
+  readonly ConnectPeerConfiguration?: TransitGatewayConnectPeerConfiguration;
+  readonly Tags?: [];
+}
+
+export interface TransitGatewayConnectPeerConfiguration {
+  readonly TransitGatewayAddress?: string;
+  readonly PeerAddress?: string;
+  readonly InsideCidrBlocks?: [];
+  readonly Protocol?: string;
+  readonly BgpConfigurations?: [];
+}
+
+export interface TransitGatewayConnectRequestBgpOptions {
+  readonly PeerAsn?: number;
+}
+
+export interface TransitGatewayMulticastDeregisteredGroupMembers {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly DeregisteredNetworkInterfaceIds?: [];
+  readonly GroupIpAddress?: string;
+}
+
+export interface TransitGatewayMulticastDeregisteredGroupSources {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly DeregisteredNetworkInterfaceIds?: [];
+  readonly GroupIpAddress?: string;
+}
+
+export interface TransitGatewayMulticastDomain {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly TransitGatewayId?: string;
+  readonly TransitGatewayMulticastDomainArn?: string;
+  readonly OwnerId?: string;
+  readonly Options?: TransitGatewayMulticastDomainOptions;
+  readonly State?: string;
+  readonly CreationTime?: Date;
+  readonly Tags?: [];
+}
+
+export interface TransitGatewayMulticastDomainAssociation {
+  readonly TransitGatewayAttachmentId?: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly ResourceOwnerId?: string;
+  readonly Subnet?: SubnetAssociation;
+}
+
+export interface TransitGatewayMulticastDomainAssociations {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly ResourceOwnerId?: string;
+  readonly Subnets?: [];
+}
+
+export interface TransitGatewayMulticastDomainOptions {
+  readonly Igmpv2Support?: string;
+  readonly StaticSourcesSupport?: string;
+  readonly AutoAcceptSharedAssociations?: string;
+}
+
+export interface TransitGatewayMulticastGroup {
+  readonly GroupIpAddress?: string;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly SubnetId?: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly ResourceOwnerId?: string;
+  readonly NetworkInterfaceId?: string;
+  readonly GroupMember?: boolean;
+  readonly GroupSource?: boolean;
+  readonly MemberType?: string;
+  readonly SourceType?: string;
+}
+
+export interface TransitGatewayMulticastRegisteredGroupMembers {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly RegisteredNetworkInterfaceIds?: [];
+  readonly GroupIpAddress?: string;
+}
+
+export interface TransitGatewayMulticastRegisteredGroupSources {
+  readonly TransitGatewayMulticastDomainId?: string;
+  readonly RegisteredNetworkInterfaceIds?: [];
+  readonly GroupIpAddress?: string;
+}
+
+export interface TransitGatewayOptions {
+  readonly AmazonSideAsn?: number;
+  readonly TransitGatewayCidrBlocks?: [];
+  readonly AutoAcceptSharedAttachments?: string;
+  readonly DefaultRouteTableAssociation?: string;
+  readonly AssociationDefaultRouteTableId?: string;
+  readonly DefaultRouteTablePropagation?: string;
+  readonly PropagationDefaultRouteTableId?: string;
+  readonly VpnEcmpSupport?: string;
+  readonly DnsSupport?: string;
+  readonly MulticastSupport?: string;
+}
+
+export interface TransitGatewayPeeringAttachment {
+  readonly TransitGatewayAttachmentId?: string;
+  readonly RequesterTgwInfo?: PeeringTgwInfo;
+  readonly AccepterTgwInfo?: PeeringTgwInfo;
+  readonly Status?: PeeringAttachmentStatus;
+  readonly State?: string;
+  readonly CreationTime?: Date;
+  readonly Tags?: [];
+}
+
+export interface TransitGatewayPrefixListAttachment {
+  readonly TransitGatewayAttachmentId?: string;
+  readonly ResourceType?: string;
+  readonly ResourceId?: string;
+}
+
+export interface TransitGatewayPrefixListReference {
+  readonly TransitGatewayRouteTableId?: string;
+  readonly PrefixListId?: string;
+  readonly PrefixListOwnerId?: string;
+  readonly State?: string;
+  readonly Blackhole?: boolean;
+  readonly TransitGatewayAttachment?: TransitGatewayPrefixListAttachment;
+}
+
+export interface TransitGatewayPropagation {
+  readonly TransitGatewayAttachmentId?: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly TransitGatewayRouteTableId?: string;
+  readonly State?: string;
+}
+
+export interface TransitGatewayRequestOptions {
+  readonly AmazonSideAsn?: number;
+  readonly AutoAcceptSharedAttachments?: string;
+  readonly DefaultRouteTableAssociation?: string;
+  readonly DefaultRouteTablePropagation?: string;
+  readonly VpnEcmpSupport?: string;
+  readonly DnsSupport?: string;
+  readonly MulticastSupport?: string;
+  readonly TransitGatewayCidrBlocks?: [];
+}
+
+export interface TransitGatewayRoute {
+  readonly DestinationCidrBlock?: string;
+  readonly PrefixListId?: string;
+  readonly TransitGatewayAttachments?: [];
+  readonly Type?: string;
+  readonly State?: string;
+}
+
+export interface TransitGatewayRouteAttachment {
+  readonly ResourceId?: string;
+  readonly TransitGatewayAttachmentId?: string;
+  readonly ResourceType?: string;
+}
+
+export interface TransitGatewayRouteTable {
+  readonly TransitGatewayRouteTableId?: string;
+  readonly TransitGatewayId?: string;
+  readonly State?: string;
+  readonly DefaultAssociationRouteTable?: boolean;
+  readonly DefaultPropagationRouteTable?: boolean;
+  readonly CreationTime?: Date;
+  readonly Tags?: [];
+}
+
+export interface TransitGatewayRouteTableAssociation {
+  readonly TransitGatewayAttachmentId?: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly State?: string;
+}
+
+export interface TransitGatewayRouteTablePropagation {
+  readonly TransitGatewayAttachmentId?: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly State?: string;
+}
+
+export interface TransitGatewayVpcAttachment {
+  readonly TransitGatewayAttachmentId?: string;
+  readonly TransitGatewayId?: string;
+  readonly VpcId?: string;
+  readonly VpcOwnerId?: string;
+  readonly State?: string;
+  readonly SubnetIds?: [];
+  readonly CreationTime?: Date;
+  readonly Options?: TransitGatewayVpcAttachmentOptions;
+  readonly Tags?: [];
+}
+
+export interface TransitGatewayVpcAttachmentOptions {
+  readonly DnsSupport?: string;
+  readonly Ipv6Support?: string;
+  readonly ApplianceModeSupport?: string;
+}
+
+export interface TrunkInterfaceAssociation {
+  readonly AssociationId?: string;
+  readonly BranchInterfaceId?: string;
+  readonly TrunkInterfaceId?: string;
+  readonly InterfaceProtocol?: string;
+  readonly VlanId?: number;
+  readonly GreKey?: number;
+  readonly Tags?: [];
+}
+
+export interface TunnelOption {
+  readonly OutsideIpAddress?: string;
+  readonly TunnelInsideCidr?: string;
+  readonly TunnelInsideIpv6Cidr?: string;
+  readonly PreSharedKey?: string;
+  readonly Phase1LifetimeSeconds?: number;
+  readonly Phase2LifetimeSeconds?: number;
+  readonly RekeyMarginTimeSeconds?: number;
+  readonly RekeyFuzzPercentage?: number;
+  readonly ReplayWindowSize?: number;
+  readonly DpdTimeoutSeconds?: number;
+  readonly DpdTimeoutAction?: string;
+  readonly Phase1EncryptionAlgorithms?: [];
+  readonly Phase2EncryptionAlgorithms?: [];
+  readonly Phase1IntegrityAlgorithms?: [];
+  readonly Phase2IntegrityAlgorithms?: [];
+  readonly Phase1DHGroupNumbers?: [];
+  readonly Phase2DHGroupNumbers?: [];
+  readonly IkeVersions?: [];
+  readonly StartupAction?: string;
+}
+
+export interface UnassignIpv6AddressesRequest {
+  readonly Ipv6Addresses?: [];
+  readonly Ipv6Prefixes?: [];
   readonly NetworkInterfaceId: string;
-  readonly OwnerId: string;
-  readonly PacketLength: number;
-  readonly SessionNumber: number;
-  readonly VirtualNetworkId: number;
-  readonly Description: string;
-  readonly Tags: [];
 }
 
-interface TrafficMirrorTarget {
-  readonly TrafficMirrorTargetId: string;
+export interface UnassignIpv6AddressesResult {
+  readonly NetworkInterfaceId?: string;
+  readonly UnassignedIpv6Addresses?: [];
+  readonly UnassignedIpv6Prefixes?: [];
+}
+
+export interface UnassignPrivateIpAddressesRequest {
   readonly NetworkInterfaceId: string;
-  readonly NetworkLoadBalancerArn: string;
-  readonly Type: string;
-  readonly Description: string;
-  readonly OwnerId: string;
-  readonly Tags: [];
+  readonly PrivateIpAddresses?: [];
+  readonly Ipv4Prefixes?: [];
 }
 
-interface TransitGateway {
-  readonly TransitGatewayId: string;
-  readonly TransitGatewayArn: string;
-  readonly State: string;
-  readonly OwnerId: string;
-  readonly Description: string;
-  readonly CreationTime: Date;
-  readonly Options: TransitGatewayOptions;
-  readonly Tags: [];
-}
-
-interface TransitGatewayAssociation {
-  readonly TransitGatewayRouteTableId: string;
-  readonly TransitGatewayAttachmentId: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly State: string;
-}
-
-interface TransitGatewayAttachment {
-  readonly TransitGatewayAttachmentId: string;
-  readonly TransitGatewayId: string;
-  readonly TransitGatewayOwnerId: string;
-  readonly ResourceOwnerId: string;
-  readonly ResourceType: string;
-  readonly ResourceId: string;
-  readonly State: string;
-  readonly Association: TransitGatewayAttachmentAssociation;
-  readonly CreationTime: Date;
-  readonly Tags: [];
-}
-
-interface TransitGatewayAttachmentAssociation {
-  readonly TransitGatewayRouteTableId: string;
-  readonly State: string;
-}
-
-interface TransitGatewayAttachmentBgpConfiguration {
-  readonly TransitGatewayAsn: number;
-  readonly PeerAsn: number;
-  readonly TransitGatewayAddress: string;
-  readonly PeerAddress: string;
-  readonly BgpStatus: string;
-}
-
-interface TransitGatewayAttachmentPropagation {
-  readonly TransitGatewayRouteTableId: string;
-  readonly State: string;
-}
-
-interface TransitGatewayConnect {
-  readonly TransitGatewayAttachmentId: string;
-  readonly TransportTransitGatewayAttachmentId: string;
-  readonly TransitGatewayId: string;
-  readonly State: string;
-  readonly CreationTime: Date;
-  readonly Options: TransitGatewayConnectOptions;
-  readonly Tags: [];
-}
-
-interface TransitGatewayConnectOptions {
-  readonly Protocol: string;
-}
-
-interface TransitGatewayConnectPeer {
-  readonly TransitGatewayAttachmentId: string;
-  readonly TransitGatewayConnectPeerId: string;
-  readonly State: string;
-  readonly CreationTime: Date;
-  readonly ConnectPeerConfiguration: TransitGatewayConnectPeerConfiguration;
-  readonly Tags: [];
-}
-
-interface TransitGatewayConnectPeerConfiguration {
-  readonly TransitGatewayAddress: string;
-  readonly PeerAddress: string;
-  readonly InsideCidrBlocks: [];
-  readonly Protocol: string;
-  readonly BgpConfigurations: [];
-}
-
-interface TransitGatewayConnectRequestBgpOptions {
-  readonly PeerAsn: number;
-}
-
-interface TransitGatewayMulticastDeregisteredGroupMembers {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly DeregisteredNetworkInterfaceIds: [];
-  readonly GroupIpAddress: string;
-}
-
-interface TransitGatewayMulticastDeregisteredGroupSources {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly DeregisteredNetworkInterfaceIds: [];
-  readonly GroupIpAddress: string;
-}
-
-interface TransitGatewayMulticastDomain {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly TransitGatewayId: string;
-  readonly TransitGatewayMulticastDomainArn: string;
-  readonly OwnerId: string;
-  readonly Options: TransitGatewayMulticastDomainOptions;
-  readonly State: string;
-  readonly CreationTime: Date;
-  readonly Tags: [];
-}
-
-interface TransitGatewayMulticastDomainAssociation {
-  readonly TransitGatewayAttachmentId: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly ResourceOwnerId: string;
-  readonly Subnet: SubnetAssociation;
-}
-
-interface TransitGatewayMulticastDomainAssociations {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly TransitGatewayAttachmentId: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly ResourceOwnerId: string;
-  readonly Subnets: [];
-}
-
-interface TransitGatewayMulticastDomainOptions {
-  readonly Igmpv2Support: string;
-  readonly StaticSourcesSupport: string;
-  readonly AutoAcceptSharedAssociations: string;
-}
-
-interface TransitGatewayMulticastGroup {
-  readonly GroupIpAddress: string;
-  readonly TransitGatewayAttachmentId: string;
-  readonly SubnetId: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly ResourceOwnerId: string;
-  readonly NetworkInterfaceId: string;
-  readonly GroupMember: boolean;
-  readonly GroupSource: boolean;
-  readonly MemberType: string;
-  readonly SourceType: string;
-}
-
-interface TransitGatewayMulticastRegisteredGroupMembers {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly RegisteredNetworkInterfaceIds: [];
-  readonly GroupIpAddress: string;
-}
-
-interface TransitGatewayMulticastRegisteredGroupSources {
-  readonly TransitGatewayMulticastDomainId: string;
-  readonly RegisteredNetworkInterfaceIds: [];
-  readonly GroupIpAddress: string;
-}
-
-interface TransitGatewayOptions {
-  readonly AmazonSideAsn: number;
-  readonly TransitGatewayCidrBlocks: [];
-  readonly AutoAcceptSharedAttachments: string;
-  readonly DefaultRouteTableAssociation: string;
-  readonly AssociationDefaultRouteTableId: string;
-  readonly DefaultRouteTablePropagation: string;
-  readonly PropagationDefaultRouteTableId: string;
-  readonly VpnEcmpSupport: string;
-  readonly DnsSupport: string;
-  readonly MulticastSupport: string;
-}
-
-interface TransitGatewayPeeringAttachment {
-  readonly TransitGatewayAttachmentId: string;
-  readonly RequesterTgwInfo: PeeringTgwInfo;
-  readonly AccepterTgwInfo: PeeringTgwInfo;
-  readonly Status: PeeringAttachmentStatus;
-  readonly State: string;
-  readonly CreationTime: Date;
-  readonly Tags: [];
-}
-
-interface TransitGatewayPrefixListAttachment {
-  readonly TransitGatewayAttachmentId: string;
-  readonly ResourceType: string;
-  readonly ResourceId: string;
-}
-
-interface TransitGatewayPrefixListReference {
-  readonly TransitGatewayRouteTableId: string;
-  readonly PrefixListId: string;
-  readonly PrefixListOwnerId: string;
-  readonly State: string;
-  readonly Blackhole: boolean;
-  readonly TransitGatewayAttachment: TransitGatewayPrefixListAttachment;
-}
-
-interface TransitGatewayPropagation {
-  readonly TransitGatewayAttachmentId: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly TransitGatewayRouteTableId: string;
-  readonly State: string;
-}
-
-interface TransitGatewayRequestOptions {
-  readonly AmazonSideAsn: number;
-  readonly AutoAcceptSharedAttachments: string;
-  readonly DefaultRouteTableAssociation: string;
-  readonly DefaultRouteTablePropagation: string;
-  readonly VpnEcmpSupport: string;
-  readonly DnsSupport: string;
-  readonly MulticastSupport: string;
-  readonly TransitGatewayCidrBlocks: [];
-}
-
-interface TransitGatewayRoute {
-  readonly DestinationCidrBlock: string;
-  readonly PrefixListId: string;
-  readonly TransitGatewayAttachments: [];
-  readonly Type: string;
-  readonly State: string;
-}
-
-interface TransitGatewayRouteAttachment {
-  readonly ResourceId: string;
-  readonly TransitGatewayAttachmentId: string;
-  readonly ResourceType: string;
-}
-
-interface TransitGatewayRouteTable {
-  readonly TransitGatewayRouteTableId: string;
-  readonly TransitGatewayId: string;
-  readonly State: string;
-  readonly DefaultAssociationRouteTable: boolean;
-  readonly DefaultPropagationRouteTable: boolean;
-  readonly CreationTime: Date;
-  readonly Tags: [];
-}
-
-interface TransitGatewayRouteTableAssociation {
-  readonly TransitGatewayAttachmentId: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly State: string;
-}
-
-interface TransitGatewayRouteTablePropagation {
-  readonly TransitGatewayAttachmentId: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly State: string;
-}
-
-interface TransitGatewayVpcAttachment {
-  readonly TransitGatewayAttachmentId: string;
-  readonly TransitGatewayId: string;
-  readonly VpcId: string;
-  readonly VpcOwnerId: string;
-  readonly State: string;
-  readonly SubnetIds: [];
-  readonly CreationTime: Date;
-  readonly Options: TransitGatewayVpcAttachmentOptions;
-  readonly Tags: [];
-}
-
-interface TransitGatewayVpcAttachmentOptions {
-  readonly DnsSupport: string;
-  readonly Ipv6Support: string;
-  readonly ApplianceModeSupport: string;
-}
-
-interface TrunkInterfaceAssociation {
-  readonly AssociationId: string;
-  readonly BranchInterfaceId: string;
-  readonly TrunkInterfaceId: string;
-  readonly InterfaceProtocol: string;
-  readonly VlanId: number;
-  readonly GreKey: number;
-  readonly Tags: [];
-}
-
-interface TunnelOption {
-  readonly OutsideIpAddress: string;
-  readonly TunnelInsideCidr: string;
-  readonly TunnelInsideIpv6Cidr: string;
-  readonly PreSharedKey: string;
-  readonly Phase1LifetimeSeconds: number;
-  readonly Phase2LifetimeSeconds: number;
-  readonly RekeyMarginTimeSeconds: number;
-  readonly RekeyFuzzPercentage: number;
-  readonly ReplayWindowSize: number;
-  readonly DpdTimeoutSeconds: number;
-  readonly DpdTimeoutAction: string;
-  readonly Phase1EncryptionAlgorithms: [];
-  readonly Phase2EncryptionAlgorithms: [];
-  readonly Phase1IntegrityAlgorithms: [];
-  readonly Phase2IntegrityAlgorithms: [];
-  readonly Phase1DHGroupNumbers: [];
-  readonly Phase2DHGroupNumbers: [];
-  readonly IkeVersions: [];
-  readonly StartupAction: string;
-}
-
-interface UnassignIpv6AddressesRequest {
-  readonly Ipv6Addresses: [];
-  readonly Ipv6Prefixes: [];
-  readonly NetworkInterfaceId: string;
-}
-
-interface UnassignIpv6AddressesResult {
-  readonly NetworkInterfaceId: string;
-  readonly UnassignedIpv6Addresses: [];
-  readonly UnassignedIpv6Prefixes: [];
-}
-
-interface UnassignPrivateIpAddressesRequest {
-  readonly NetworkInterfaceId: string;
-  readonly PrivateIpAddresses: [];
-  readonly Ipv4Prefixes: [];
-}
-
-interface UnmonitorInstancesRequest {
+export interface UnmonitorInstancesRequest {
   readonly InstanceIds: [];
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface UnmonitorInstancesResult {
-  readonly InstanceMonitorings: [];
+export interface UnmonitorInstancesResult {
+  readonly InstanceMonitorings?: [];
 }
 
-interface UnsuccessfulInstanceCreditSpecificationItem {
-  readonly InstanceId: string;
-  readonly Error: UnsuccessfulInstanceCreditSpecificationItemError;
+export interface UnsuccessfulInstanceCreditSpecificationItem {
+  readonly InstanceId?: string;
+  readonly Error?: UnsuccessfulInstanceCreditSpecificationItemError;
 }
 
-interface UnsuccessfulInstanceCreditSpecificationItemError {
-  readonly Code: string;
-  readonly Message: string;
+export interface UnsuccessfulInstanceCreditSpecificationItemError {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface UnsuccessfulItem {
-  readonly Error: UnsuccessfulItemError;
-  readonly ResourceId: string;
+export interface UnsuccessfulItem {
+  readonly Error?: UnsuccessfulItemError;
+  readonly ResourceId?: string;
 }
 
-interface UnsuccessfulItemError {
-  readonly Code: string;
-  readonly Message: string;
+export interface UnsuccessfulItemError {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface UpdateSecurityGroupRuleDescriptionsEgressRequest {
-  readonly DryRun: boolean;
-  readonly GroupId: string;
-  readonly GroupName: string;
-  readonly IpPermissions: [];
-  readonly SecurityGroupRuleDescriptions: [];
+export interface UpdateSecurityGroupRuleDescriptionsEgressRequest {
+  readonly DryRun?: boolean;
+  readonly GroupId?: string;
+  readonly GroupName?: string;
+  readonly IpPermissions?: [];
+  readonly SecurityGroupRuleDescriptions?: [];
 }
 
-interface UpdateSecurityGroupRuleDescriptionsEgressResult {
-  readonly Return: boolean;
+export interface UpdateSecurityGroupRuleDescriptionsEgressResult {
+  readonly Return?: boolean;
 }
 
-interface UpdateSecurityGroupRuleDescriptionsIngressRequest {
-  readonly DryRun: boolean;
-  readonly GroupId: string;
-  readonly GroupName: string;
-  readonly IpPermissions: [];
-  readonly SecurityGroupRuleDescriptions: [];
+export interface UpdateSecurityGroupRuleDescriptionsIngressRequest {
+  readonly DryRun?: boolean;
+  readonly GroupId?: string;
+  readonly GroupName?: string;
+  readonly IpPermissions?: [];
+  readonly SecurityGroupRuleDescriptions?: [];
 }
 
-interface UpdateSecurityGroupRuleDescriptionsIngressResult {
-  readonly Return: boolean;
+export interface UpdateSecurityGroupRuleDescriptionsIngressResult {
+  readonly Return?: boolean;
 }
 
-interface UserBucket {
-  readonly S3Bucket: string;
-  readonly S3Key: string;
+export interface UserBucket {
+  readonly S3Bucket?: string;
+  readonly S3Key?: string;
 }
 
-interface UserBucketDetails {
-  readonly S3Bucket: string;
-  readonly S3Key: string;
+export interface UserBucketDetails {
+  readonly S3Bucket?: string;
+  readonly S3Key?: string;
 }
 
-interface UserData {
-  readonly Data: string;
+export interface UserData {
+  readonly Data?: string;
 }
 
-interface UserIdGroupPair {
-  readonly Description: string;
-  readonly GroupId: string;
-  readonly GroupName: string;
-  readonly PeeringStatus: string;
-  readonly UserId: string;
-  readonly VpcId: string;
-  readonly VpcPeeringConnectionId: string;
+export interface UserIdGroupPair {
+  readonly Description?: string;
+  readonly GroupId?: string;
+  readonly GroupName?: string;
+  readonly PeeringStatus?: string;
+  readonly UserId?: string;
+  readonly VpcId?: string;
+  readonly VpcPeeringConnectionId?: string;
 }
 
-interface VCpuCountRange {
+export interface VCpuCountRange {
+  readonly Min?: number;
+  readonly Max?: number;
+}
+
+export interface VCpuCountRangeRequest {
   readonly Min: number;
-  readonly Max: number;
+  readonly Max?: number;
 }
 
-interface VCpuCountRangeRequest {
-  readonly Min: number;
-  readonly Max: number;
+export interface VCpuInfo {
+  readonly DefaultVCpus?: number;
+  readonly DefaultCores?: number;
+  readonly DefaultThreadsPerCore?: number;
+  readonly ValidCores?: [];
+  readonly ValidThreadsPerCore?: [];
 }
 
-interface VCpuInfo {
-  readonly DefaultVCpus: number;
-  readonly DefaultCores: number;
-  readonly DefaultThreadsPerCore: number;
-  readonly ValidCores: [];
-  readonly ValidThreadsPerCore: [];
+export interface ValidationError {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface ValidationError {
-  readonly Code: string;
-  readonly Message: string;
+export interface ValidationWarning {
+  readonly Errors?: [];
 }
 
-interface ValidationWarning {
-  readonly Errors: [];
+export interface VgwTelemetry {
+  readonly AcceptedRouteCount?: number;
+  readonly LastStatusChange?: Date;
+  readonly OutsideIpAddress?: string;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly CertificateArn?: string;
 }
 
-interface VgwTelemetry {
-  readonly AcceptedRouteCount: number;
-  readonly LastStatusChange: Date;
-  readonly OutsideIpAddress: string;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly CertificateArn: string;
+export interface Volume {
+  readonly Attachments?: [];
+  readonly AvailabilityZone?: string;
+  readonly CreateTime?: Date;
+  readonly Encrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly OutpostArn?: string;
+  readonly Size?: number;
+  readonly SnapshotId?: string;
+  readonly State?: string;
+  readonly VolumeId?: string;
+  readonly Iops?: number;
+  readonly Tags?: [];
+  readonly VolumeType?: string;
+  readonly FastRestored?: boolean;
+  readonly MultiAttachEnabled?: boolean;
+  readonly Throughput?: number;
 }
 
-interface Volume {
-  readonly Attachments: [];
-  readonly AvailabilityZone: string;
-  readonly CreateTime: Date;
-  readonly Encrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly OutpostArn: string;
-  readonly Size: number;
-  readonly SnapshotId: string;
-  readonly State: string;
-  readonly VolumeId: string;
-  readonly Iops: number;
-  readonly Tags: [];
-  readonly VolumeType: string;
-  readonly FastRestored: boolean;
-  readonly MultiAttachEnabled: boolean;
-  readonly Throughput: number;
+export interface VolumeAttachment {
+  readonly AttachTime?: Date;
+  readonly Device?: string;
+  readonly InstanceId?: string;
+  readonly State?: string;
+  readonly VolumeId?: string;
+  readonly DeleteOnTermination?: boolean;
 }
 
-interface VolumeAttachment {
-  readonly AttachTime: Date;
-  readonly Device: string;
-  readonly InstanceId: string;
-  readonly State: string;
-  readonly VolumeId: string;
-  readonly DeleteOnTermination: boolean;
-}
-
-interface VolumeDetail {
+export interface VolumeDetail {
   readonly Size: number;
 }
 
-interface VolumeModification {
-  readonly VolumeId: string;
-  readonly ModificationState: string;
-  readonly StatusMessage: string;
-  readonly TargetSize: number;
-  readonly TargetIops: number;
-  readonly TargetVolumeType: string;
-  readonly TargetThroughput: number;
-  readonly TargetMultiAttachEnabled: boolean;
-  readonly OriginalSize: number;
-  readonly OriginalIops: number;
-  readonly OriginalVolumeType: string;
-  readonly OriginalThroughput: number;
-  readonly OriginalMultiAttachEnabled: boolean;
-  readonly Progress: number;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
+export interface VolumeModification {
+  readonly VolumeId?: string;
+  readonly ModificationState?: string;
+  readonly StatusMessage?: string;
+  readonly TargetSize?: number;
+  readonly TargetIops?: number;
+  readonly TargetVolumeType?: string;
+  readonly TargetThroughput?: number;
+  readonly TargetMultiAttachEnabled?: boolean;
+  readonly OriginalSize?: number;
+  readonly OriginalIops?: number;
+  readonly OriginalVolumeType?: string;
+  readonly OriginalThroughput?: number;
+  readonly OriginalMultiAttachEnabled?: boolean;
+  readonly Progress?: number;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
 }
 
-interface VolumeStatusAction {
-  readonly Code: string;
-  readonly Description: string;
-  readonly EventId: string;
-  readonly EventType: string;
+export interface VolumeStatusAction {
+  readonly Code?: string;
+  readonly Description?: string;
+  readonly EventId?: string;
+  readonly EventType?: string;
 }
 
-interface VolumeStatusAttachmentStatus {
-  readonly IoPerformance: string;
-  readonly InstanceId: string;
+export interface VolumeStatusAttachmentStatus {
+  readonly IoPerformance?: string;
+  readonly InstanceId?: string;
 }
 
-interface VolumeStatusDetails {
-  readonly Name: string;
-  readonly Status: string;
+export interface VolumeStatusDetails {
+  readonly Name?: string;
+  readonly Status?: string;
 }
 
-interface VolumeStatusEvent {
-  readonly Description: string;
-  readonly EventId: string;
-  readonly EventType: string;
-  readonly NotAfter: Date;
-  readonly NotBefore: Date;
-  readonly InstanceId: string;
+export interface VolumeStatusEvent {
+  readonly Description?: string;
+  readonly EventId?: string;
+  readonly EventType?: string;
+  readonly NotAfter?: Date;
+  readonly NotBefore?: Date;
+  readonly InstanceId?: string;
 }
 
-interface VolumeStatusInfo {
-  readonly Details: [];
-  readonly Status: string;
+export interface VolumeStatusInfo {
+  readonly Details?: [];
+  readonly Status?: string;
 }
 
-interface VolumeStatusItem {
-  readonly Actions: [];
-  readonly AvailabilityZone: string;
-  readonly OutpostArn: string;
-  readonly Events: [];
-  readonly VolumeId: string;
-  readonly VolumeStatus: VolumeStatusInfo;
-  readonly AttachmentStatuses: [];
+export interface VolumeStatusItem {
+  readonly Actions?: [];
+  readonly AvailabilityZone?: string;
+  readonly OutpostArn?: string;
+  readonly Events?: [];
+  readonly VolumeId?: string;
+  readonly VolumeStatus?: VolumeStatusInfo;
+  readonly AttachmentStatuses?: [];
 }
 
-interface Vpc {
-  readonly CidrBlock: string;
-  readonly DhcpOptionsId: string;
-  readonly State: string;
-  readonly VpcId: string;
-  readonly OwnerId: string;
-  readonly InstanceTenancy: string;
-  readonly Ipv6CidrBlockAssociationSet: [];
-  readonly CidrBlockAssociationSet: [];
-  readonly IsDefault: boolean;
-  readonly Tags: [];
+export interface Vpc {
+  readonly CidrBlock?: string;
+  readonly DhcpOptionsId?: string;
+  readonly State?: string;
+  readonly VpcId?: string;
+  readonly OwnerId?: string;
+  readonly InstanceTenancy?: string;
+  readonly Ipv6CidrBlockAssociationSet?: [];
+  readonly CidrBlockAssociationSet?: [];
+  readonly IsDefault?: boolean;
+  readonly Tags?: [];
 }
 
-interface VpcAttachment {
-  readonly State: string;
-  readonly VpcId: string;
+export interface VpcAttachment {
+  readonly State?: string;
+  readonly VpcId?: string;
 }
 
-interface VpcCidrBlockAssociation {
-  readonly AssociationId: string;
-  readonly CidrBlock: string;
-  readonly CidrBlockState: VpcCidrBlockState;
+export interface VpcCidrBlockAssociation {
+  readonly AssociationId?: string;
+  readonly CidrBlock?: string;
+  readonly CidrBlockState?: VpcCidrBlockState;
 }
 
-interface VpcCidrBlockState {
-  readonly State: string;
-  readonly StatusMessage: string;
+export interface VpcCidrBlockState {
+  readonly State?: string;
+  readonly StatusMessage?: string;
 }
 
-interface VpcClassicLink {
-  readonly ClassicLinkEnabled: boolean;
-  readonly Tags: [];
-  readonly VpcId: string;
+export interface VpcClassicLink {
+  readonly ClassicLinkEnabled?: boolean;
+  readonly Tags?: [];
+  readonly VpcId?: string;
 }
 
-interface VpcEndpoint {
-  readonly VpcEndpointId: string;
-  readonly VpcEndpointType: string;
-  readonly VpcId: string;
-  readonly ServiceName: string;
-  readonly State: string;
-  readonly PolicyDocument: string;
-  readonly RouteTableIds: [];
-  readonly SubnetIds: [];
-  readonly Groups: [];
-  readonly PrivateDnsEnabled: boolean;
-  readonly RequesterManaged: boolean;
-  readonly NetworkInterfaceIds: [];
-  readonly DnsEntries: [];
-  readonly CreationTimestamp: Date;
-  readonly Tags: [];
-  readonly OwnerId: string;
-  readonly LastError: LastError;
+export interface VpcEndpoint {
+  readonly VpcEndpointId?: string;
+  readonly VpcEndpointType?: string;
+  readonly VpcId?: string;
+  readonly ServiceName?: string;
+  readonly State?: string;
+  readonly PolicyDocument?: string;
+  readonly RouteTableIds?: [];
+  readonly SubnetIds?: [];
+  readonly Groups?: [];
+  readonly PrivateDnsEnabled?: boolean;
+  readonly RequesterManaged?: boolean;
+  readonly NetworkInterfaceIds?: [];
+  readonly DnsEntries?: [];
+  readonly CreationTimestamp?: Date;
+  readonly Tags?: [];
+  readonly OwnerId?: string;
+  readonly LastError?: LastError;
 }
 
-interface VpcEndpointConnection {
-  readonly ServiceId: string;
-  readonly VpcEndpointId: string;
-  readonly VpcEndpointOwner: string;
-  readonly VpcEndpointState: string;
-  readonly CreationTimestamp: Date;
-  readonly DnsEntries: [];
-  readonly NetworkLoadBalancerArns: [];
-  readonly GatewayLoadBalancerArns: [];
+export interface VpcEndpointConnection {
+  readonly ServiceId?: string;
+  readonly VpcEndpointId?: string;
+  readonly VpcEndpointOwner?: string;
+  readonly VpcEndpointState?: string;
+  readonly CreationTimestamp?: Date;
+  readonly DnsEntries?: [];
+  readonly NetworkLoadBalancerArns?: [];
+  readonly GatewayLoadBalancerArns?: [];
 }
 
-interface VpcIpv6CidrBlockAssociation {
-  readonly AssociationId: string;
-  readonly Ipv6CidrBlock: string;
-  readonly Ipv6CidrBlockState: VpcCidrBlockState;
-  readonly NetworkBorderGroup: string;
-  readonly Ipv6Pool: string;
+export interface VpcIpv6CidrBlockAssociation {
+  readonly AssociationId?: string;
+  readonly Ipv6CidrBlock?: string;
+  readonly Ipv6CidrBlockState?: VpcCidrBlockState;
+  readonly NetworkBorderGroup?: string;
+  readonly Ipv6Pool?: string;
 }
 
-interface VpcPeeringConnection {
-  readonly AccepterVpcInfo: VpcPeeringConnectionVpcInfo;
-  readonly ExpirationTime: Date;
-  readonly RequesterVpcInfo: VpcPeeringConnectionVpcInfo;
-  readonly Status: VpcPeeringConnectionStateReason;
-  readonly Tags: [];
-  readonly VpcPeeringConnectionId: string;
+export interface VpcPeeringConnection {
+  readonly AccepterVpcInfo?: VpcPeeringConnectionVpcInfo;
+  readonly ExpirationTime?: Date;
+  readonly RequesterVpcInfo?: VpcPeeringConnectionVpcInfo;
+  readonly Status?: VpcPeeringConnectionStateReason;
+  readonly Tags?: [];
+  readonly VpcPeeringConnectionId?: string;
 }
 
-interface VpcPeeringConnectionOptionsDescription {
-  readonly AllowDnsResolutionFromRemoteVpc: boolean;
-  readonly AllowEgressFromLocalClassicLinkToRemoteVpc: boolean;
-  readonly AllowEgressFromLocalVpcToRemoteClassicLink: boolean;
+export interface VpcPeeringConnectionOptionsDescription {
+  readonly AllowDnsResolutionFromRemoteVpc?: boolean;
+  readonly AllowEgressFromLocalClassicLinkToRemoteVpc?: boolean;
+  readonly AllowEgressFromLocalVpcToRemoteClassicLink?: boolean;
 }
 
-interface VpcPeeringConnectionStateReason {
-  readonly Code: string;
-  readonly Message: string;
+export interface VpcPeeringConnectionStateReason {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface VpcPeeringConnectionVpcInfo {
-  readonly CidrBlock: string;
-  readonly Ipv6CidrBlockSet: [];
-  readonly CidrBlockSet: [];
-  readonly OwnerId: string;
-  readonly PeeringOptions: VpcPeeringConnectionOptionsDescription;
-  readonly VpcId: string;
-  readonly Region: string;
+export interface VpcPeeringConnectionVpcInfo {
+  readonly CidrBlock?: string;
+  readonly Ipv6CidrBlockSet?: [];
+  readonly CidrBlockSet?: [];
+  readonly OwnerId?: string;
+  readonly PeeringOptions?: VpcPeeringConnectionOptionsDescription;
+  readonly VpcId?: string;
+  readonly Region?: string;
 }
 
-interface VpnConnection {
-  readonly CustomerGatewayConfiguration: string;
-  readonly CustomerGatewayId: string;
-  readonly Category: string;
-  readonly State: string;
-  readonly Type: string;
-  readonly VpnConnectionId: string;
-  readonly VpnGatewayId: string;
-  readonly TransitGatewayId: string;
-  readonly CoreNetworkArn: string;
-  readonly CoreNetworkAttachmentArn: string;
-  readonly GatewayAssociationState: string;
-  readonly Options: VpnConnectionOptions;
-  readonly Routes: [];
-  readonly Tags: [];
-  readonly VgwTelemetry: [];
+export interface VpnConnection {
+  readonly CustomerGatewayConfiguration?: string;
+  readonly CustomerGatewayId?: string;
+  readonly Category?: string;
+  readonly State?: string;
+  readonly Type?: string;
+  readonly VpnConnectionId?: string;
+  readonly VpnGatewayId?: string;
+  readonly TransitGatewayId?: string;
+  readonly CoreNetworkArn?: string;
+  readonly CoreNetworkAttachmentArn?: string;
+  readonly GatewayAssociationState?: string;
+  readonly Options?: VpnConnectionOptions;
+  readonly Routes?: [];
+  readonly Tags?: [];
+  readonly VgwTelemetry?: [];
 }
 
-interface VpnConnectionDeviceType {
-  readonly VpnConnectionDeviceTypeId: string;
-  readonly Vendor: string;
-  readonly Platform: string;
-  readonly Software: string;
+export interface VpnConnectionDeviceType {
+  readonly VpnConnectionDeviceTypeId?: string;
+  readonly Vendor?: string;
+  readonly Platform?: string;
+  readonly Software?: string;
 }
 
-interface VpnConnectionOptions {
-  readonly EnableAcceleration: boolean;
-  readonly StaticRoutesOnly: boolean;
-  readonly LocalIpv4NetworkCidr: string;
-  readonly RemoteIpv4NetworkCidr: string;
-  readonly LocalIpv6NetworkCidr: string;
-  readonly RemoteIpv6NetworkCidr: string;
-  readonly TunnelInsideIpVersion: string;
-  readonly TunnelOptions: [];
+export interface VpnConnectionOptions {
+  readonly EnableAcceleration?: boolean;
+  readonly StaticRoutesOnly?: boolean;
+  readonly LocalIpv4NetworkCidr?: string;
+  readonly RemoteIpv4NetworkCidr?: string;
+  readonly LocalIpv6NetworkCidr?: string;
+  readonly RemoteIpv6NetworkCidr?: string;
+  readonly TunnelInsideIpVersion?: string;
+  readonly TunnelOptions?: [];
 }
 
-interface VpnConnectionOptionsSpecification {
-  readonly EnableAcceleration: boolean;
-  readonly StaticRoutesOnly: boolean;
-  readonly TunnelInsideIpVersion: string;
-  readonly TunnelOptions: [];
-  readonly LocalIpv4NetworkCidr: string;
-  readonly RemoteIpv4NetworkCidr: string;
-  readonly LocalIpv6NetworkCidr: string;
-  readonly RemoteIpv6NetworkCidr: string;
+export interface VpnConnectionOptionsSpecification {
+  readonly EnableAcceleration?: boolean;
+  readonly StaticRoutesOnly?: boolean;
+  readonly TunnelInsideIpVersion?: string;
+  readonly TunnelOptions?: [];
+  readonly LocalIpv4NetworkCidr?: string;
+  readonly RemoteIpv4NetworkCidr?: string;
+  readonly LocalIpv6NetworkCidr?: string;
+  readonly RemoteIpv6NetworkCidr?: string;
 }
 
-interface VpnGateway {
-  readonly AvailabilityZone: string;
-  readonly State: string;
-  readonly Type: string;
-  readonly VpcAttachments: [];
-  readonly VpnGatewayId: string;
-  readonly AmazonSideAsn: number;
-  readonly Tags: [];
+export interface VpnGateway {
+  readonly AvailabilityZone?: string;
+  readonly State?: string;
+  readonly Type?: string;
+  readonly VpcAttachments?: [];
+  readonly VpnGatewayId?: string;
+  readonly AmazonSideAsn?: number;
+  readonly Tags?: [];
 }
 
-interface VpnStaticRoute {
-  readonly DestinationCidrBlock: string;
-  readonly Source: string;
-  readonly State: string;
+export interface VpnStaticRoute {
+  readonly DestinationCidrBlock?: string;
+  readonly Source?: string;
+  readonly State?: string;
 }
 
-interface VpnTunnelOptionsSpecification {
-  readonly TunnelInsideCidr: string;
-  readonly TunnelInsideIpv6Cidr: string;
-  readonly PreSharedKey: string;
-  readonly Phase1LifetimeSeconds: number;
-  readonly Phase2LifetimeSeconds: number;
-  readonly RekeyMarginTimeSeconds: number;
-  readonly RekeyFuzzPercentage: number;
-  readonly ReplayWindowSize: number;
-  readonly DPDTimeoutSeconds: number;
-  readonly DPDTimeoutAction: string;
-  readonly Phase1EncryptionAlgorithms: [];
-  readonly Phase2EncryptionAlgorithms: [];
-  readonly Phase1IntegrityAlgorithms: [];
-  readonly Phase2IntegrityAlgorithms: [];
-  readonly Phase1DHGroupNumbers: [];
-  readonly Phase2DHGroupNumbers: [];
-  readonly IKEVersions: [];
-  readonly StartupAction: string;
+export interface VpnTunnelOptionsSpecification {
+  readonly TunnelInsideCidr?: string;
+  readonly TunnelInsideIpv6Cidr?: string;
+  readonly PreSharedKey?: string;
+  readonly Phase1LifetimeSeconds?: number;
+  readonly Phase2LifetimeSeconds?: number;
+  readonly RekeyMarginTimeSeconds?: number;
+  readonly RekeyFuzzPercentage?: number;
+  readonly ReplayWindowSize?: number;
+  readonly DPDTimeoutSeconds?: number;
+  readonly DPDTimeoutAction?: string;
+  readonly Phase1EncryptionAlgorithms?: [];
+  readonly Phase2EncryptionAlgorithms?: [];
+  readonly Phase1IntegrityAlgorithms?: [];
+  readonly Phase2IntegrityAlgorithms?: [];
+  readonly Phase1DHGroupNumbers?: [];
+  readonly Phase2DHGroupNumbers?: [];
+  readonly IKEVersions?: [];
+  readonly StartupAction?: string;
 }
 
-interface WithdrawByoipCidrRequest {
+export interface WithdrawByoipCidrRequest {
   readonly Cidr: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface WithdrawByoipCidrResult {
-  readonly ByoipCidr: ByoipCidr;
+export interface WithdrawByoipCidrResult {
+  readonly ByoipCidr?: ByoipCidr;
 }
+
 

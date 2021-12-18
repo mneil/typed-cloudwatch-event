@@ -7,6 +7,7 @@ export interface AcceptDirectConnectGatewayAssociationProposal {
   readonly associatedGatewayOwnerAccount: string;
   readonly overrideAllowedPrefixesToDirectConnectGateway?: [];
 }
+
 export interface AllocateConnectionOnInterconnect {
   readonly bandwidth: string;
   readonly connectionName: string;
@@ -14,6 +15,7 @@ export interface AllocateConnectionOnInterconnect {
   readonly interconnectId: string;
   readonly vlan: number;
 }
+
 export interface AllocateHostedConnection {
   readonly connectionId: string;
   readonly ownerAccount: string;
@@ -22,61 +24,75 @@ export interface AllocateHostedConnection {
   readonly vlan: number;
   readonly tags?: [];
 }
+
 export interface AllocatePrivateVirtualInterface {
   readonly connectionId: string;
   readonly ownerAccount: string;
   readonly newPrivateVirtualInterfaceAllocation: NewPrivateVirtualInterfaceAllocation;
 }
+
 export interface AllocatePublicVirtualInterface {
   readonly connectionId: string;
   readonly ownerAccount: string;
   readonly newPublicVirtualInterfaceAllocation: NewPublicVirtualInterfaceAllocation;
 }
+
 export interface AllocateTransitVirtualInterface {
   readonly connectionId: string;
   readonly ownerAccount: string;
   readonly newTransitVirtualInterfaceAllocation: NewTransitVirtualInterfaceAllocation;
 }
+
 export interface AssociateConnectionWithLag {
   readonly connectionId: string;
   readonly lagId: string;
 }
+
 export interface AssociateHostedConnection {
   readonly connectionId: string;
   readonly parentConnectionId: string;
 }
+
 export interface AssociateMacSecKey {
   readonly connectionId: string;
   readonly secretARN?: string;
   readonly ckn?: string;
   readonly cak?: string;
 }
+
 export interface AssociateVirtualInterface {
   readonly virtualInterfaceId: string;
   readonly connectionId: string;
 }
+
 export interface ConfirmConnection {
   readonly connectionId: string;
 }
+
 export interface ConfirmCustomerAgreement {
   readonly agreementName?: string;
 }
+
 export interface ConfirmPrivateVirtualInterface {
   readonly virtualInterfaceId: string;
   readonly virtualGatewayId?: string;
   readonly directConnectGatewayId?: string;
 }
+
 export interface ConfirmPublicVirtualInterface {
   readonly virtualInterfaceId: string;
 }
+
 export interface ConfirmTransitVirtualInterface {
   readonly virtualInterfaceId: string;
   readonly directConnectGatewayId: string;
 }
+
 export interface CreateBGPPeer {
   readonly virtualInterfaceId?: string;
   readonly newBGPPeer?: NewBGPPeer;
 }
+
 export interface CreateConnection {
   readonly location: string;
   readonly bandwidth: string;
@@ -86,16 +102,19 @@ export interface CreateConnection {
   readonly providerName?: string;
   readonly requestMACSec?: boolean;
 }
+
 export interface CreateDirectConnectGateway {
   readonly directConnectGatewayName: string;
   readonly amazonSideAsn?: number;
 }
+
 export interface CreateDirectConnectGatewayAssociation {
   readonly directConnectGatewayId: string;
   readonly gatewayId?: string;
   readonly addAllowedPrefixesToDirectConnectGateway?: [];
   readonly virtualGatewayId?: string;
 }
+
 export interface CreateDirectConnectGatewayAssociationProposal {
   readonly directConnectGatewayId: string;
   readonly directConnectGatewayOwnerAccount: string;
@@ -103,6 +122,7 @@ export interface CreateDirectConnectGatewayAssociationProposal {
   readonly addAllowedPrefixesToDirectConnectGateway?: [];
   readonly removeAllowedPrefixesToDirectConnectGateway?: [];
 }
+
 export interface CreateInterconnect {
   readonly interconnectName: string;
   readonly bandwidth: string;
@@ -111,6 +131,7 @@ export interface CreateInterconnect {
   readonly tags?: [];
   readonly providerName?: string;
 }
+
 export interface CreateLag {
   readonly numberOfConnections: number;
   readonly location: string;
@@ -122,58 +143,73 @@ export interface CreateLag {
   readonly providerName?: string;
   readonly requestMACSec?: boolean;
 }
+
 export interface CreatePrivateVirtualInterface {
   readonly connectionId: string;
   readonly newPrivateVirtualInterface: NewPrivateVirtualInterface;
 }
+
 export interface CreatePublicVirtualInterface {
   readonly connectionId: string;
   readonly newPublicVirtualInterface: NewPublicVirtualInterface;
 }
+
 export interface CreateTransitVirtualInterface {
   readonly connectionId: string;
   readonly newTransitVirtualInterface: NewTransitVirtualInterface;
 }
+
 export interface DeleteBGPPeer {
   readonly virtualInterfaceId?: string;
   readonly asn?: number;
   readonly customerAddress?: string;
   readonly bgpPeerId?: string;
 }
+
 export interface DeleteConnection {
   readonly connectionId: string;
 }
+
 export interface DeleteDirectConnectGateway {
   readonly directConnectGatewayId: string;
 }
+
 export interface DeleteDirectConnectGatewayAssociation {
   readonly associationId?: string;
   readonly directConnectGatewayId?: string;
   readonly virtualGatewayId?: string;
 }
+
 export interface DeleteDirectConnectGatewayAssociationProposal {
   readonly proposalId: string;
 }
+
 export interface DeleteInterconnect {
   readonly interconnectId: string;
 }
+
 export interface DeleteLag {
   readonly lagId: string;
 }
+
 export interface DeleteVirtualInterface {
   readonly virtualInterfaceId: string;
 }
+
 export interface DescribeConnectionLoa {
   readonly connectionId: string;
   readonly providerName?: string;
   readonly loaContentType?: string;
 }
+
 export interface DescribeConnections {
   readonly connectionId?: string;
 }
+
 export interface DescribeConnectionsOnInterconnect {
   readonly interconnectId: string;
 }
+
 export interface DescribeDirectConnectGatewayAssociationProposals {
   readonly directConnectGatewayId?: string;
   readonly proposalId?: string;
@@ -181,6 +217,7 @@ export interface DescribeDirectConnectGatewayAssociationProposals {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DescribeDirectConnectGatewayAssociations {
   readonly associationId?: string;
   readonly associatedGatewayId?: string;
@@ -189,55 +226,68 @@ export interface DescribeDirectConnectGatewayAssociations {
   readonly nextToken?: string;
   readonly virtualGatewayId?: string;
 }
+
 export interface DescribeDirectConnectGatewayAttachments {
   readonly directConnectGatewayId?: string;
   readonly virtualInterfaceId?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DescribeDirectConnectGateways {
   readonly directConnectGatewayId?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DescribeHostedConnections {
   readonly connectionId: string;
 }
+
 export interface DescribeInterconnectLoa {
   readonly interconnectId: string;
   readonly providerName?: string;
   readonly loaContentType?: string;
 }
+
 export interface DescribeInterconnects {
   readonly interconnectId?: string;
 }
+
 export interface DescribeLags {
   readonly lagId?: string;
 }
+
 export interface DescribeLoa {
   readonly connectionId: string;
   readonly providerName?: string;
   readonly loaContentType?: string;
 }
+
 export interface DescribeRouterConfiguration {
   readonly virtualInterfaceId: string;
   readonly routerTypeIdentifier?: string;
 }
+
 export interface DescribeTags {
   readonly resourceArns: [];
 }
+
 export interface DescribeVirtualInterfaces {
   readonly connectionId?: string;
   readonly virtualInterfaceId?: string;
 }
+
 export interface DisassociateConnectionFromLag {
   readonly connectionId: string;
   readonly lagId: string;
 }
+
 export interface DisassociateMacSecKey {
   readonly connectionId: string;
   readonly secretARN: string;
 }
+
 export interface ListVirtualInterfaceTestHistory {
   readonly testId?: string;
   readonly virtualInterfaceId?: string;
@@ -246,42 +296,51 @@ export interface ListVirtualInterfaceTestHistory {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface StartBgpFailoverTest {
   readonly virtualInterfaceId: string;
   readonly bgpPeers?: [];
   readonly testDurationInMinutes?: number;
 }
+
 export interface StopBgpFailoverTest {
   readonly virtualInterfaceId: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: [];
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateConnection {
   readonly connectionId: string;
   readonly connectionName?: string;
   readonly encryptionMode?: string;
 }
+
 export interface UpdateDirectConnectGateway {
   readonly directConnectGatewayId: string;
   readonly newDirectConnectGatewayName: string;
 }
+
 export interface UpdateDirectConnectGatewayAssociation {
   readonly associationId?: string;
   readonly addAllowedPrefixesToDirectConnectGateway?: [];
   readonly removeAllowedPrefixesToDirectConnectGateway?: [];
 }
+
 export interface UpdateLag {
   readonly lagId: string;
   readonly lagName?: string;
   readonly minimumLinks?: number;
   readonly encryptionMode?: string;
 }
+
 export interface UpdateVirtualInterfaceAttributes {
   readonly virtualInterfaceId: string;
   readonly mtu?: number;
@@ -289,20 +348,18 @@ export interface UpdateVirtualInterfaceAttributes {
   readonly virtualInterfaceName?: string;
 }
 
-
-
-interface AcceptDirectConnectGatewayAssociationProposalRequest {
+export interface AcceptDirectConnectGatewayAssociationProposalRequest {
   readonly directConnectGatewayId: string;
   readonly proposalId: string;
   readonly associatedGatewayOwnerAccount: string;
-  readonly overrideAllowedPrefixesToDirectConnectGateway: [];
+  readonly overrideAllowedPrefixesToDirectConnectGateway?: [];
 }
 
-interface AcceptDirectConnectGatewayAssociationProposalResult {
-  readonly directConnectGatewayAssociation: DirectConnectGatewayAssociation;
+export interface AcceptDirectConnectGatewayAssociationProposalResult {
+  readonly directConnectGatewayAssociation?: DirectConnectGatewayAssociation;
 }
 
-interface AllocateConnectionOnInterconnectRequest {
+export interface AllocateConnectionOnInterconnectRequest {
   readonly bandwidth: string;
   readonly connectionName: string;
   readonly ownerAccount: string;
@@ -310,830 +367,831 @@ interface AllocateConnectionOnInterconnectRequest {
   readonly vlan: number;
 }
 
-interface AllocateHostedConnectionRequest {
+export interface AllocateHostedConnectionRequest {
   readonly connectionId: string;
   readonly ownerAccount: string;
   readonly bandwidth: string;
   readonly connectionName: string;
   readonly vlan: number;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface AllocatePrivateVirtualInterfaceRequest {
+export interface AllocatePrivateVirtualInterfaceRequest {
   readonly connectionId: string;
   readonly ownerAccount: string;
   readonly newPrivateVirtualInterfaceAllocation: NewPrivateVirtualInterfaceAllocation;
 }
 
-interface AllocatePublicVirtualInterfaceRequest {
+export interface AllocatePublicVirtualInterfaceRequest {
   readonly connectionId: string;
   readonly ownerAccount: string;
   readonly newPublicVirtualInterfaceAllocation: NewPublicVirtualInterfaceAllocation;
 }
 
-interface AllocateTransitVirtualInterfaceRequest {
+export interface AllocateTransitVirtualInterfaceRequest {
   readonly connectionId: string;
   readonly ownerAccount: string;
   readonly newTransitVirtualInterfaceAllocation: NewTransitVirtualInterfaceAllocation;
 }
 
-interface AllocateTransitVirtualInterfaceResult {
-  readonly virtualInterface: VirtualInterface;
+export interface AllocateTransitVirtualInterfaceResult {
+  readonly virtualInterface?: VirtualInterface;
 }
 
-interface AssociateConnectionWithLagRequest {
+export interface AssociateConnectionWithLagRequest {
   readonly connectionId: string;
   readonly lagId: string;
 }
 
-interface AssociateHostedConnectionRequest {
+export interface AssociateHostedConnectionRequest {
   readonly connectionId: string;
   readonly parentConnectionId: string;
 }
 
-interface AssociateMacSecKeyRequest {
+export interface AssociateMacSecKeyRequest {
   readonly connectionId: string;
-  readonly secretARN: string;
-  readonly ckn: string;
-  readonly cak: string;
+  readonly secretARN?: string;
+  readonly ckn?: string;
+  readonly cak?: string;
 }
 
-interface AssociateMacSecKeyResponse {
-  readonly connectionId: string;
-  readonly macSecKeys: [];
+export interface AssociateMacSecKeyResponse {
+  readonly connectionId?: string;
+  readonly macSecKeys?: [];
 }
 
-interface AssociateVirtualInterfaceRequest {
+export interface AssociateVirtualInterfaceRequest {
   readonly virtualInterfaceId: string;
   readonly connectionId: string;
 }
 
-interface AssociatedGateway {
-  readonly id: string;
-  readonly type: string;
-  readonly ownerAccount: string;
-  readonly region: string;
+export interface AssociatedGateway {
+  readonly id?: string;
+  readonly type?: string;
+  readonly ownerAccount?: string;
+  readonly region?: string;
 }
 
-interface BGPPeer {
-  readonly bgpPeerId: string;
-  readonly asn: number;
-  readonly authKey: string;
-  readonly addressFamily: string;
-  readonly amazonAddress: string;
-  readonly customerAddress: string;
-  readonly bgpPeerState: string;
-  readonly bgpStatus: string;
-  readonly awsDeviceV2: string;
-  readonly awsLogicalDeviceId: string;
+export interface BGPPeer {
+  readonly bgpPeerId?: string;
+  readonly asn?: number;
+  readonly authKey?: string;
+  readonly addressFamily?: string;
+  readonly amazonAddress?: string;
+  readonly customerAddress?: string;
+  readonly bgpPeerState?: string;
+  readonly bgpStatus?: string;
+  readonly awsDeviceV2?: string;
+  readonly awsLogicalDeviceId?: string;
 }
 
-interface ConfirmConnectionRequest {
+export interface ConfirmConnectionRequest {
   readonly connectionId: string;
 }
 
-interface ConfirmConnectionResponse {
-  readonly connectionState: string;
+export interface ConfirmConnectionResponse {
+  readonly connectionState?: string;
 }
 
-interface ConfirmCustomerAgreementRequest {
-  readonly agreementName: string;
+export interface ConfirmCustomerAgreementRequest {
+  readonly agreementName?: string;
 }
 
-interface ConfirmCustomerAgreementResponse {
-  readonly status: string;
+export interface ConfirmCustomerAgreementResponse {
+  readonly status?: string;
 }
 
-interface ConfirmPrivateVirtualInterfaceRequest {
+export interface ConfirmPrivateVirtualInterfaceRequest {
   readonly virtualInterfaceId: string;
-  readonly virtualGatewayId: string;
+  readonly virtualGatewayId?: string;
+  readonly directConnectGatewayId?: string;
+}
+
+export interface ConfirmPrivateVirtualInterfaceResponse {
+  readonly virtualInterfaceState?: string;
+}
+
+export interface ConfirmPublicVirtualInterfaceRequest {
+  readonly virtualInterfaceId: string;
+}
+
+export interface ConfirmPublicVirtualInterfaceResponse {
+  readonly virtualInterfaceState?: string;
+}
+
+export interface ConfirmTransitVirtualInterfaceRequest {
+  readonly virtualInterfaceId: string;
   readonly directConnectGatewayId: string;
 }
 
-interface ConfirmPrivateVirtualInterfaceResponse {
-  readonly virtualInterfaceState: string;
+export interface ConfirmTransitVirtualInterfaceResponse {
+  readonly virtualInterfaceState?: string;
 }
 
-interface ConfirmPublicVirtualInterfaceRequest {
-  readonly virtualInterfaceId: string;
+export interface Connection {
+  readonly ownerAccount?: string;
+  readonly connectionId?: string;
+  readonly connectionName?: string;
+  readonly connectionState?: string;
+  readonly region?: string;
+  readonly location?: string;
+  readonly bandwidth?: string;
+  readonly vlan?: number;
+  readonly partnerName?: string;
+  readonly loaIssueTime?: Date;
+  readonly lagId?: string;
+  readonly awsDevice?: string;
+  readonly jumboFrameCapable?: boolean;
+  readonly awsDeviceV2?: string;
+  readonly awsLogicalDeviceId?: string;
+  readonly hasLogicalRedundancy?: string;
+  readonly tags?: [];
+  readonly providerName?: string;
+  readonly macSecCapable?: boolean;
+  readonly portEncryptionStatus?: string;
+  readonly encryptionMode?: string;
+  readonly macSecKeys?: [];
 }
 
-interface ConfirmPublicVirtualInterfaceResponse {
-  readonly virtualInterfaceState: string;
+export interface Connections {
+  readonly connections?: [];
 }
 
-interface ConfirmTransitVirtualInterfaceRequest {
-  readonly virtualInterfaceId: string;
-  readonly directConnectGatewayId: string;
+export interface CreateBGPPeerRequest {
+  readonly virtualInterfaceId?: string;
+  readonly newBGPPeer?: NewBGPPeer;
 }
 
-interface ConfirmTransitVirtualInterfaceResponse {
-  readonly virtualInterfaceState: string;
+export interface CreateBGPPeerResponse {
+  readonly virtualInterface?: VirtualInterface;
 }
 
-interface Connection {
-  readonly ownerAccount: string;
-  readonly connectionId: string;
-  readonly connectionName: string;
-  readonly connectionState: string;
-  readonly region: string;
-  readonly location: string;
-  readonly bandwidth: string;
-  readonly vlan: number;
-  readonly partnerName: string;
-  readonly loaIssueTime: Date;
-  readonly lagId: string;
-  readonly awsDevice: string;
-  readonly jumboFrameCapable: boolean;
-  readonly awsDeviceV2: string;
-  readonly awsLogicalDeviceId: string;
-  readonly hasLogicalRedundancy: string;
-  readonly tags: [];
-  readonly providerName: string;
-  readonly macSecCapable: boolean;
-  readonly portEncryptionStatus: string;
-  readonly encryptionMode: string;
-  readonly macSecKeys: [];
-}
-
-interface Connections {
-  readonly connections: [];
-}
-
-interface CreateBGPPeerRequest {
-  readonly virtualInterfaceId: string;
-  readonly newBGPPeer: NewBGPPeer;
-}
-
-interface CreateBGPPeerResponse {
-  readonly virtualInterface: VirtualInterface;
-}
-
-interface CreateConnectionRequest {
+export interface CreateConnectionRequest {
   readonly location: string;
   readonly bandwidth: string;
   readonly connectionName: string;
-  readonly lagId: string;
-  readonly tags: [];
-  readonly providerName: string;
-  readonly requestMACSec: boolean;
+  readonly lagId?: string;
+  readonly tags?: [];
+  readonly providerName?: string;
+  readonly requestMACSec?: boolean;
 }
 
-interface CreateDirectConnectGatewayAssociationProposalRequest {
+export interface CreateDirectConnectGatewayAssociationProposalRequest {
   readonly directConnectGatewayId: string;
   readonly directConnectGatewayOwnerAccount: string;
   readonly gatewayId: string;
-  readonly addAllowedPrefixesToDirectConnectGateway: [];
-  readonly removeAllowedPrefixesToDirectConnectGateway: [];
+  readonly addAllowedPrefixesToDirectConnectGateway?: [];
+  readonly removeAllowedPrefixesToDirectConnectGateway?: [];
 }
 
-interface CreateDirectConnectGatewayAssociationProposalResult {
-  readonly directConnectGatewayAssociationProposal: DirectConnectGatewayAssociationProposal;
+export interface CreateDirectConnectGatewayAssociationProposalResult {
+  readonly directConnectGatewayAssociationProposal?: DirectConnectGatewayAssociationProposal;
 }
 
-interface CreateDirectConnectGatewayAssociationRequest {
+export interface CreateDirectConnectGatewayAssociationRequest {
   readonly directConnectGatewayId: string;
-  readonly gatewayId: string;
-  readonly addAllowedPrefixesToDirectConnectGateway: [];
-  readonly virtualGatewayId: string;
+  readonly gatewayId?: string;
+  readonly addAllowedPrefixesToDirectConnectGateway?: [];
+  readonly virtualGatewayId?: string;
 }
 
-interface CreateDirectConnectGatewayAssociationResult {
-  readonly directConnectGatewayAssociation: DirectConnectGatewayAssociation;
+export interface CreateDirectConnectGatewayAssociationResult {
+  readonly directConnectGatewayAssociation?: DirectConnectGatewayAssociation;
 }
 
-interface CreateDirectConnectGatewayRequest {
+export interface CreateDirectConnectGatewayRequest {
   readonly directConnectGatewayName: string;
-  readonly amazonSideAsn: number;
+  readonly amazonSideAsn?: number;
 }
 
-interface CreateDirectConnectGatewayResult {
-  readonly directConnectGateway: DirectConnectGateway;
+export interface CreateDirectConnectGatewayResult {
+  readonly directConnectGateway?: DirectConnectGateway;
 }
 
-interface CreateInterconnectRequest {
+export interface CreateInterconnectRequest {
   readonly interconnectName: string;
   readonly bandwidth: string;
   readonly location: string;
-  readonly lagId: string;
-  readonly tags: [];
-  readonly providerName: string;
+  readonly lagId?: string;
+  readonly tags?: [];
+  readonly providerName?: string;
 }
 
-interface CreateLagRequest {
+export interface CreateLagRequest {
   readonly numberOfConnections: number;
   readonly location: string;
   readonly connectionsBandwidth: string;
   readonly lagName: string;
-  readonly connectionId: string;
-  readonly tags: [];
-  readonly childConnectionTags: [];
-  readonly providerName: string;
-  readonly requestMACSec: boolean;
+  readonly connectionId?: string;
+  readonly tags?: [];
+  readonly childConnectionTags?: [];
+  readonly providerName?: string;
+  readonly requestMACSec?: boolean;
 }
 
-interface CreatePrivateVirtualInterfaceRequest {
+export interface CreatePrivateVirtualInterfaceRequest {
   readonly connectionId: string;
   readonly newPrivateVirtualInterface: NewPrivateVirtualInterface;
 }
 
-interface CreatePublicVirtualInterfaceRequest {
+export interface CreatePublicVirtualInterfaceRequest {
   readonly connectionId: string;
   readonly newPublicVirtualInterface: NewPublicVirtualInterface;
 }
 
-interface CreateTransitVirtualInterfaceRequest {
+export interface CreateTransitVirtualInterfaceRequest {
   readonly connectionId: string;
   readonly newTransitVirtualInterface: NewTransitVirtualInterface;
 }
 
-interface CreateTransitVirtualInterfaceResult {
-  readonly virtualInterface: VirtualInterface;
+export interface CreateTransitVirtualInterfaceResult {
+  readonly virtualInterface?: VirtualInterface;
 }
 
-interface CustomerAgreement {
-  readonly agreementName: string;
-  readonly status: string;
+export interface CustomerAgreement {
+  readonly agreementName?: string;
+  readonly status?: string;
 }
 
-interface DeleteBGPPeerRequest {
-  readonly virtualInterfaceId: string;
-  readonly asn: number;
-  readonly customerAddress: string;
-  readonly bgpPeerId: string;
+export interface DeleteBGPPeerRequest {
+  readonly virtualInterfaceId?: string;
+  readonly asn?: number;
+  readonly customerAddress?: string;
+  readonly bgpPeerId?: string;
 }
 
-interface DeleteBGPPeerResponse {
-  readonly virtualInterface: VirtualInterface;
+export interface DeleteBGPPeerResponse {
+  readonly virtualInterface?: VirtualInterface;
 }
 
-interface DeleteConnectionRequest {
+export interface DeleteConnectionRequest {
   readonly connectionId: string;
 }
 
-interface DeleteDirectConnectGatewayAssociationProposalRequest {
+export interface DeleteDirectConnectGatewayAssociationProposalRequest {
   readonly proposalId: string;
 }
 
-interface DeleteDirectConnectGatewayAssociationProposalResult {
-  readonly directConnectGatewayAssociationProposal: DirectConnectGatewayAssociationProposal;
+export interface DeleteDirectConnectGatewayAssociationProposalResult {
+  readonly directConnectGatewayAssociationProposal?: DirectConnectGatewayAssociationProposal;
 }
 
-interface DeleteDirectConnectGatewayAssociationRequest {
-  readonly associationId: string;
+export interface DeleteDirectConnectGatewayAssociationRequest {
+  readonly associationId?: string;
+  readonly directConnectGatewayId?: string;
+  readonly virtualGatewayId?: string;
+}
+
+export interface DeleteDirectConnectGatewayAssociationResult {
+  readonly directConnectGatewayAssociation?: DirectConnectGatewayAssociation;
+}
+
+export interface DeleteDirectConnectGatewayRequest {
   readonly directConnectGatewayId: string;
-  readonly virtualGatewayId: string;
 }
 
-interface DeleteDirectConnectGatewayAssociationResult {
-  readonly directConnectGatewayAssociation: DirectConnectGatewayAssociation;
+export interface DeleteDirectConnectGatewayResult {
+  readonly directConnectGateway?: DirectConnectGateway;
 }
 
-interface DeleteDirectConnectGatewayRequest {
-  readonly directConnectGatewayId: string;
-}
-
-interface DeleteDirectConnectGatewayResult {
-  readonly directConnectGateway: DirectConnectGateway;
-}
-
-interface DeleteInterconnectRequest {
+export interface DeleteInterconnectRequest {
   readonly interconnectId: string;
 }
 
-interface DeleteInterconnectResponse {
-  readonly interconnectState: string;
+export interface DeleteInterconnectResponse {
+  readonly interconnectState?: string;
 }
 
-interface DeleteLagRequest {
+export interface DeleteLagRequest {
   readonly lagId: string;
 }
 
-interface DeleteVirtualInterfaceRequest {
+export interface DeleteVirtualInterfaceRequest {
   readonly virtualInterfaceId: string;
 }
 
-interface DeleteVirtualInterfaceResponse {
-  readonly virtualInterfaceState: string;
+export interface DeleteVirtualInterfaceResponse {
+  readonly virtualInterfaceState?: string;
 }
 
-interface DescribeConnectionLoaRequest {
+export interface DescribeConnectionLoaRequest {
   readonly connectionId: string;
-  readonly providerName: string;
-  readonly loaContentType: string;
+  readonly providerName?: string;
+  readonly loaContentType?: string;
 }
 
-interface DescribeConnectionLoaResponse {
-  readonly loa: Loa;
+export interface DescribeConnectionLoaResponse {
+  readonly loa?: Loa;
 }
 
-interface DescribeConnectionsOnInterconnectRequest {
+export interface DescribeConnectionsOnInterconnectRequest {
   readonly interconnectId: string;
 }
 
-interface DescribeConnectionsRequest {
+export interface DescribeConnectionsRequest {
+  readonly connectionId?: string;
+}
+
+export interface DescribeCustomerMetadataResponse {
+  readonly agreements?: [];
+  readonly nniPartnerType?: string;
+}
+
+export interface DescribeDirectConnectGatewayAssociationProposalsRequest {
+  readonly directConnectGatewayId?: string;
+  readonly proposalId?: string;
+  readonly associatedGatewayId?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+}
+
+export interface DescribeDirectConnectGatewayAssociationProposalsResult {
+  readonly directConnectGatewayAssociationProposals?: [];
+  readonly nextToken?: string;
+}
+
+export interface DescribeDirectConnectGatewayAssociationsRequest {
+  readonly associationId?: string;
+  readonly associatedGatewayId?: string;
+  readonly directConnectGatewayId?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly virtualGatewayId?: string;
+}
+
+export interface DescribeDirectConnectGatewayAssociationsResult {
+  readonly directConnectGatewayAssociations?: [];
+  readonly nextToken?: string;
+}
+
+export interface DescribeDirectConnectGatewayAttachmentsRequest {
+  readonly directConnectGatewayId?: string;
+  readonly virtualInterfaceId?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+}
+
+export interface DescribeDirectConnectGatewayAttachmentsResult {
+  readonly directConnectGatewayAttachments?: [];
+  readonly nextToken?: string;
+}
+
+export interface DescribeDirectConnectGatewaysRequest {
+  readonly directConnectGatewayId?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+}
+
+export interface DescribeDirectConnectGatewaysResult {
+  readonly directConnectGateways?: [];
+  readonly nextToken?: string;
+}
+
+export interface DescribeHostedConnectionsRequest {
   readonly connectionId: string;
 }
 
-interface DescribeCustomerMetadataResponse {
-  readonly agreements: [];
-  readonly nniPartnerType: string;
-}
-
-interface DescribeDirectConnectGatewayAssociationProposalsRequest {
-  readonly directConnectGatewayId: string;
-  readonly proposalId: string;
-  readonly associatedGatewayId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-}
-
-interface DescribeDirectConnectGatewayAssociationProposalsResult {
-  readonly directConnectGatewayAssociationProposals: [];
-  readonly nextToken: string;
-}
-
-interface DescribeDirectConnectGatewayAssociationsRequest {
-  readonly associationId: string;
-  readonly associatedGatewayId: string;
-  readonly directConnectGatewayId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly virtualGatewayId: string;
-}
-
-interface DescribeDirectConnectGatewayAssociationsResult {
-  readonly directConnectGatewayAssociations: [];
-  readonly nextToken: string;
-}
-
-interface DescribeDirectConnectGatewayAttachmentsRequest {
-  readonly directConnectGatewayId: string;
-  readonly virtualInterfaceId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-}
-
-interface DescribeDirectConnectGatewayAttachmentsResult {
-  readonly directConnectGatewayAttachments: [];
-  readonly nextToken: string;
-}
-
-interface DescribeDirectConnectGatewaysRequest {
-  readonly directConnectGatewayId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-}
-
-interface DescribeDirectConnectGatewaysResult {
-  readonly directConnectGateways: [];
-  readonly nextToken: string;
-}
-
-interface DescribeHostedConnectionsRequest {
-  readonly connectionId: string;
-}
-
-interface DescribeInterconnectLoaRequest {
+export interface DescribeInterconnectLoaRequest {
   readonly interconnectId: string;
-  readonly providerName: string;
-  readonly loaContentType: string;
+  readonly providerName?: string;
+  readonly loaContentType?: string;
 }
 
-interface DescribeInterconnectLoaResponse {
-  readonly loa: Loa;
+export interface DescribeInterconnectLoaResponse {
+  readonly loa?: Loa;
 }
 
-interface DescribeInterconnectsRequest {
-  readonly interconnectId: string;
+export interface DescribeInterconnectsRequest {
+  readonly interconnectId?: string;
 }
 
-interface DescribeLagsRequest {
-  readonly lagId: string;
+export interface DescribeLagsRequest {
+  readonly lagId?: string;
 }
 
-interface DescribeLoaRequest {
+export interface DescribeLoaRequest {
   readonly connectionId: string;
-  readonly providerName: string;
-  readonly loaContentType: string;
+  readonly providerName?: string;
+  readonly loaContentType?: string;
 }
 
-interface DescribeRouterConfigurationRequest {
+export interface DescribeRouterConfigurationRequest {
   readonly virtualInterfaceId: string;
-  readonly routerTypeIdentifier: string;
+  readonly routerTypeIdentifier?: string;
 }
 
-interface DescribeRouterConfigurationResponse {
-  readonly customerRouterConfig: string;
-  readonly router: RouterType;
-  readonly virtualInterfaceId: string;
-  readonly virtualInterfaceName: string;
+export interface DescribeRouterConfigurationResponse {
+  readonly customerRouterConfig?: string;
+  readonly router?: RouterType;
+  readonly virtualInterfaceId?: string;
+  readonly virtualInterfaceName?: string;
 }
 
-interface DescribeTagsRequest {
+export interface DescribeTagsRequest {
   readonly resourceArns: [];
 }
 
-interface DescribeTagsResponse {
-  readonly resourceTags: [];
+export interface DescribeTagsResponse {
+  readonly resourceTags?: [];
 }
 
-interface DescribeVirtualInterfacesRequest {
-  readonly connectionId: string;
-  readonly virtualInterfaceId: string;
+export interface DescribeVirtualInterfacesRequest {
+  readonly connectionId?: string;
+  readonly virtualInterfaceId?: string;
 }
 
-interface DirectConnectClientException {
-  readonly message: string;
+export interface DirectConnectClientException {
+  readonly message?: string;
 }
 
-interface DirectConnectGateway {
-  readonly directConnectGatewayId: string;
-  readonly directConnectGatewayName: string;
-  readonly amazonSideAsn: number;
-  readonly ownerAccount: string;
-  readonly directConnectGatewayState: string;
-  readonly stateChangeError: string;
+export interface DirectConnectGateway {
+  readonly directConnectGatewayId?: string;
+  readonly directConnectGatewayName?: string;
+  readonly amazonSideAsn?: number;
+  readonly ownerAccount?: string;
+  readonly directConnectGatewayState?: string;
+  readonly stateChangeError?: string;
 }
 
-interface DirectConnectGatewayAssociation {
-  readonly directConnectGatewayId: string;
-  readonly directConnectGatewayOwnerAccount: string;
-  readonly associationState: string;
-  readonly stateChangeError: string;
-  readonly associatedGateway: AssociatedGateway;
-  readonly associationId: string;
-  readonly allowedPrefixesToDirectConnectGateway: [];
-  readonly virtualGatewayId: string;
-  readonly virtualGatewayRegion: string;
-  readonly virtualGatewayOwnerAccount: string;
+export interface DirectConnectGatewayAssociation {
+  readonly directConnectGatewayId?: string;
+  readonly directConnectGatewayOwnerAccount?: string;
+  readonly associationState?: string;
+  readonly stateChangeError?: string;
+  readonly associatedGateway?: AssociatedGateway;
+  readonly associationId?: string;
+  readonly allowedPrefixesToDirectConnectGateway?: [];
+  readonly virtualGatewayId?: string;
+  readonly virtualGatewayRegion?: string;
+  readonly virtualGatewayOwnerAccount?: string;
 }
 
-interface DirectConnectGatewayAssociationProposal {
-  readonly proposalId: string;
-  readonly directConnectGatewayId: string;
-  readonly directConnectGatewayOwnerAccount: string;
-  readonly proposalState: string;
-  readonly associatedGateway: AssociatedGateway;
-  readonly existingAllowedPrefixesToDirectConnectGateway: [];
-  readonly requestedAllowedPrefixesToDirectConnectGateway: [];
+export interface DirectConnectGatewayAssociationProposal {
+  readonly proposalId?: string;
+  readonly directConnectGatewayId?: string;
+  readonly directConnectGatewayOwnerAccount?: string;
+  readonly proposalState?: string;
+  readonly associatedGateway?: AssociatedGateway;
+  readonly existingAllowedPrefixesToDirectConnectGateway?: [];
+  readonly requestedAllowedPrefixesToDirectConnectGateway?: [];
 }
 
-interface DirectConnectGatewayAttachment {
-  readonly directConnectGatewayId: string;
-  readonly virtualInterfaceId: string;
-  readonly virtualInterfaceRegion: string;
-  readonly virtualInterfaceOwnerAccount: string;
-  readonly attachmentState: string;
-  readonly attachmentType: string;
-  readonly stateChangeError: string;
+export interface DirectConnectGatewayAttachment {
+  readonly directConnectGatewayId?: string;
+  readonly virtualInterfaceId?: string;
+  readonly virtualInterfaceRegion?: string;
+  readonly virtualInterfaceOwnerAccount?: string;
+  readonly attachmentState?: string;
+  readonly attachmentType?: string;
+  readonly stateChangeError?: string;
 }
 
-interface DirectConnectServerException {
-  readonly message: string;
+export interface DirectConnectServerException {
+  readonly message?: string;
 }
 
-interface DisassociateConnectionFromLagRequest {
+export interface DisassociateConnectionFromLagRequest {
   readonly connectionId: string;
   readonly lagId: string;
 }
 
-interface DisassociateMacSecKeyRequest {
+export interface DisassociateMacSecKeyRequest {
   readonly connectionId: string;
   readonly secretARN: string;
 }
 
-interface DisassociateMacSecKeyResponse {
-  readonly connectionId: string;
-  readonly macSecKeys: [];
+export interface DisassociateMacSecKeyResponse {
+  readonly connectionId?: string;
+  readonly macSecKeys?: [];
 }
 
-interface DuplicateTagKeysException {
+export interface DuplicateTagKeysException {
 }
 
-interface Interconnect {
-  readonly interconnectId: string;
-  readonly interconnectName: string;
-  readonly interconnectState: string;
-  readonly region: string;
-  readonly location: string;
-  readonly bandwidth: string;
-  readonly loaIssueTime: Date;
-  readonly lagId: string;
-  readonly awsDevice: string;
-  readonly jumboFrameCapable: boolean;
-  readonly awsDeviceV2: string;
-  readonly awsLogicalDeviceId: string;
-  readonly hasLogicalRedundancy: string;
-  readonly tags: [];
-  readonly providerName: string;
+export interface Interconnect {
+  readonly interconnectId?: string;
+  readonly interconnectName?: string;
+  readonly interconnectState?: string;
+  readonly region?: string;
+  readonly location?: string;
+  readonly bandwidth?: string;
+  readonly loaIssueTime?: Date;
+  readonly lagId?: string;
+  readonly awsDevice?: string;
+  readonly jumboFrameCapable?: boolean;
+  readonly awsDeviceV2?: string;
+  readonly awsLogicalDeviceId?: string;
+  readonly hasLogicalRedundancy?: string;
+  readonly tags?: [];
+  readonly providerName?: string;
 }
 
-interface Interconnects {
-  readonly interconnects: [];
+export interface Interconnects {
+  readonly interconnects?: [];
 }
 
-interface Lag {
-  readonly connectionsBandwidth: string;
-  readonly numberOfConnections: number;
-  readonly lagId: string;
-  readonly ownerAccount: string;
-  readonly lagName: string;
-  readonly lagState: string;
-  readonly location: string;
-  readonly region: string;
-  readonly minimumLinks: number;
-  readonly awsDevice: string;
-  readonly awsDeviceV2: string;
-  readonly awsLogicalDeviceId: string;
-  readonly connections: [];
-  readonly allowsHostedConnections: boolean;
-  readonly jumboFrameCapable: boolean;
-  readonly hasLogicalRedundancy: string;
-  readonly tags: [];
-  readonly providerName: string;
-  readonly macSecCapable: boolean;
-  readonly encryptionMode: string;
-  readonly macSecKeys: [];
+export interface Lag {
+  readonly connectionsBandwidth?: string;
+  readonly numberOfConnections?: number;
+  readonly lagId?: string;
+  readonly ownerAccount?: string;
+  readonly lagName?: string;
+  readonly lagState?: string;
+  readonly location?: string;
+  readonly region?: string;
+  readonly minimumLinks?: number;
+  readonly awsDevice?: string;
+  readonly awsDeviceV2?: string;
+  readonly awsLogicalDeviceId?: string;
+  readonly connections?: [];
+  readonly allowsHostedConnections?: boolean;
+  readonly jumboFrameCapable?: boolean;
+  readonly hasLogicalRedundancy?: string;
+  readonly tags?: [];
+  readonly providerName?: string;
+  readonly macSecCapable?: boolean;
+  readonly encryptionMode?: string;
+  readonly macSecKeys?: [];
 }
 
-interface Lags {
-  readonly lags: [];
+export interface Lags {
+  readonly lags?: [];
 }
 
-interface ListVirtualInterfaceTestHistoryRequest {
-  readonly testId: string;
+export interface ListVirtualInterfaceTestHistoryRequest {
+  readonly testId?: string;
+  readonly virtualInterfaceId?: string;
+  readonly bgpPeers?: [];
+  readonly status?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+}
+
+export interface ListVirtualInterfaceTestHistoryResponse {
+  readonly virtualInterfaceTestHistory?: [];
+  readonly nextToken?: string;
+}
+
+export interface Loa {
+  readonly loaContent?: unknown;
+  readonly loaContentType?: string;
+}
+
+export interface Location {
+  readonly locationCode?: string;
+  readonly locationName?: string;
+  readonly region?: string;
+  readonly availablePortSpeeds?: [];
+  readonly availableProviders?: [];
+  readonly availableMacSecPortSpeeds?: [];
+}
+
+export interface Locations {
+  readonly locations?: [];
+}
+
+export interface MacSecKey {
+  readonly secretARN?: string;
+  readonly ckn?: string;
+  readonly state?: string;
+  readonly startOn?: string;
+}
+
+export interface NewBGPPeer {
+  readonly asn?: number;
+  readonly authKey?: string;
+  readonly addressFamily?: string;
+  readonly amazonAddress?: string;
+  readonly customerAddress?: string;
+}
+
+export interface NewPrivateVirtualInterface {
+  readonly virtualInterfaceName: string;
+  readonly vlan: number;
+  readonly asn: number;
+  readonly mtu?: number;
+  readonly authKey?: string;
+  readonly amazonAddress?: string;
+  readonly customerAddress?: string;
+  readonly addressFamily?: string;
+  readonly virtualGatewayId?: string;
+  readonly directConnectGatewayId?: string;
+  readonly tags?: [];
+  readonly enableSiteLink?: boolean;
+}
+
+export interface NewPrivateVirtualInterfaceAllocation {
+  readonly virtualInterfaceName: string;
+  readonly vlan: number;
+  readonly asn: number;
+  readonly mtu?: number;
+  readonly authKey?: string;
+  readonly amazonAddress?: string;
+  readonly addressFamily?: string;
+  readonly customerAddress?: string;
+  readonly tags?: [];
+}
+
+export interface NewPublicVirtualInterface {
+  readonly virtualInterfaceName: string;
+  readonly vlan: number;
+  readonly asn: number;
+  readonly authKey?: string;
+  readonly amazonAddress?: string;
+  readonly customerAddress?: string;
+  readonly addressFamily?: string;
+  readonly routeFilterPrefixes?: [];
+  readonly tags?: [];
+}
+
+export interface NewPublicVirtualInterfaceAllocation {
+  readonly virtualInterfaceName: string;
+  readonly vlan: number;
+  readonly asn: number;
+  readonly authKey?: string;
+  readonly amazonAddress?: string;
+  readonly customerAddress?: string;
+  readonly addressFamily?: string;
+  readonly routeFilterPrefixes?: [];
+  readonly tags?: [];
+}
+
+export interface NewTransitVirtualInterface {
+  readonly virtualInterfaceName?: string;
+  readonly vlan?: number;
+  readonly asn?: number;
+  readonly mtu?: number;
+  readonly authKey?: string;
+  readonly amazonAddress?: string;
+  readonly customerAddress?: string;
+  readonly addressFamily?: string;
+  readonly directConnectGatewayId?: string;
+  readonly tags?: [];
+  readonly enableSiteLink?: boolean;
+}
+
+export interface NewTransitVirtualInterfaceAllocation {
+  readonly virtualInterfaceName?: string;
+  readonly vlan?: number;
+  readonly asn?: number;
+  readonly mtu?: number;
+  readonly authKey?: string;
+  readonly amazonAddress?: string;
+  readonly customerAddress?: string;
+  readonly addressFamily?: string;
+  readonly tags?: [];
+}
+
+export interface ResourceTag {
+  readonly resourceArn?: string;
+  readonly tags?: [];
+}
+
+export interface RouteFilterPrefix {
+  readonly cidr?: string;
+}
+
+export interface RouterType {
+  readonly vendor?: string;
+  readonly platform?: string;
+  readonly software?: string;
+  readonly xsltTemplateName?: string;
+  readonly xsltTemplateNameForMacSec?: string;
+  readonly routerTypeIdentifier?: string;
+}
+
+export interface StartBgpFailoverTestRequest {
   readonly virtualInterfaceId: string;
-  readonly bgpPeers: [];
-  readonly status: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly bgpPeers?: [];
+  readonly testDurationInMinutes?: number;
 }
 
-interface ListVirtualInterfaceTestHistoryResponse {
-  readonly virtualInterfaceTestHistory: [];
-  readonly nextToken: string;
+export interface StartBgpFailoverTestResponse {
+  readonly virtualInterfaceTest?: VirtualInterfaceTestHistory;
 }
 
-interface Loa {
-  readonly loaContent: unknown;
-  readonly loaContentType: string;
-}
-
-interface Location {
-  readonly locationCode: string;
-  readonly locationName: string;
-  readonly region: string;
-  readonly availablePortSpeeds: [];
-  readonly availableProviders: [];
-  readonly availableMacSecPortSpeeds: [];
-}
-
-interface Locations {
-  readonly locations: [];
-}
-
-interface MacSecKey {
-  readonly secretARN: string;
-  readonly ckn: string;
-  readonly state: string;
-  readonly startOn: string;
-}
-
-interface NewBGPPeer {
-  readonly asn: number;
-  readonly authKey: string;
-  readonly addressFamily: string;
-  readonly amazonAddress: string;
-  readonly customerAddress: string;
-}
-
-interface NewPrivateVirtualInterface {
-  readonly virtualInterfaceName: string;
-  readonly vlan: number;
-  readonly asn: number;
-  readonly mtu: number;
-  readonly authKey: string;
-  readonly amazonAddress: string;
-  readonly customerAddress: string;
-  readonly addressFamily: string;
-  readonly virtualGatewayId: string;
-  readonly directConnectGatewayId: string;
-  readonly tags: [];
-  readonly enableSiteLink: boolean;
-}
-
-interface NewPrivateVirtualInterfaceAllocation {
-  readonly virtualInterfaceName: string;
-  readonly vlan: number;
-  readonly asn: number;
-  readonly mtu: number;
-  readonly authKey: string;
-  readonly amazonAddress: string;
-  readonly addressFamily: string;
-  readonly customerAddress: string;
-  readonly tags: [];
-}
-
-interface NewPublicVirtualInterface {
-  readonly virtualInterfaceName: string;
-  readonly vlan: number;
-  readonly asn: number;
-  readonly authKey: string;
-  readonly amazonAddress: string;
-  readonly customerAddress: string;
-  readonly addressFamily: string;
-  readonly routeFilterPrefixes: [];
-  readonly tags: [];
-}
-
-interface NewPublicVirtualInterfaceAllocation {
-  readonly virtualInterfaceName: string;
-  readonly vlan: number;
-  readonly asn: number;
-  readonly authKey: string;
-  readonly amazonAddress: string;
-  readonly customerAddress: string;
-  readonly addressFamily: string;
-  readonly routeFilterPrefixes: [];
-  readonly tags: [];
-}
-
-interface NewTransitVirtualInterface {
-  readonly virtualInterfaceName: string;
-  readonly vlan: number;
-  readonly asn: number;
-  readonly mtu: number;
-  readonly authKey: string;
-  readonly amazonAddress: string;
-  readonly customerAddress: string;
-  readonly addressFamily: string;
-  readonly directConnectGatewayId: string;
-  readonly tags: [];
-  readonly enableSiteLink: boolean;
-}
-
-interface NewTransitVirtualInterfaceAllocation {
-  readonly virtualInterfaceName: string;
-  readonly vlan: number;
-  readonly asn: number;
-  readonly mtu: number;
-  readonly authKey: string;
-  readonly amazonAddress: string;
-  readonly customerAddress: string;
-  readonly addressFamily: string;
-  readonly tags: [];
-}
-
-interface ResourceTag {
-  readonly resourceArn: string;
-  readonly tags: [];
-}
-
-interface RouteFilterPrefix {
-  readonly cidr: string;
-}
-
-interface RouterType {
-  readonly vendor: string;
-  readonly platform: string;
-  readonly software: string;
-  readonly xsltTemplateName: string;
-  readonly xsltTemplateNameForMacSec: string;
-  readonly routerTypeIdentifier: string;
-}
-
-interface StartBgpFailoverTestRequest {
-  readonly virtualInterfaceId: string;
-  readonly bgpPeers: [];
-  readonly testDurationInMinutes: number;
-}
-
-interface StartBgpFailoverTestResponse {
-  readonly virtualInterfaceTest: VirtualInterfaceTestHistory;
-}
-
-interface StopBgpFailoverTestRequest {
+export interface StopBgpFailoverTestRequest {
   readonly virtualInterfaceId: string;
 }
 
-interface StopBgpFailoverTestResponse {
-  readonly virtualInterfaceTest: VirtualInterfaceTestHistory;
+export interface StopBgpFailoverTestResponse {
+  readonly virtualInterfaceTest?: VirtualInterfaceTestHistory;
 }
 
-interface Tag {
+export interface Tag {
   readonly key: string;
-  readonly value: string;
+  readonly value?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TooManyTagsException {
+export interface TooManyTagsException {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateConnectionRequest {
+export interface UpdateConnectionRequest {
   readonly connectionId: string;
-  readonly connectionName: string;
-  readonly encryptionMode: string;
+  readonly connectionName?: string;
+  readonly encryptionMode?: string;
 }
 
-interface UpdateDirectConnectGatewayAssociationRequest {
-  readonly associationId: string;
-  readonly addAllowedPrefixesToDirectConnectGateway: [];
-  readonly removeAllowedPrefixesToDirectConnectGateway: [];
+export interface UpdateDirectConnectGatewayAssociationRequest {
+  readonly associationId?: string;
+  readonly addAllowedPrefixesToDirectConnectGateway?: [];
+  readonly removeAllowedPrefixesToDirectConnectGateway?: [];
 }
 
-interface UpdateDirectConnectGatewayAssociationResult {
-  readonly directConnectGatewayAssociation: DirectConnectGatewayAssociation;
+export interface UpdateDirectConnectGatewayAssociationResult {
+  readonly directConnectGatewayAssociation?: DirectConnectGatewayAssociation;
 }
 
-interface UpdateDirectConnectGatewayRequest {
+export interface UpdateDirectConnectGatewayRequest {
   readonly directConnectGatewayId: string;
   readonly newDirectConnectGatewayName: string;
 }
 
-interface UpdateDirectConnectGatewayResponse {
-  readonly directConnectGateway: DirectConnectGateway;
+export interface UpdateDirectConnectGatewayResponse {
+  readonly directConnectGateway?: DirectConnectGateway;
 }
 
-interface UpdateLagRequest {
+export interface UpdateLagRequest {
   readonly lagId: string;
-  readonly lagName: string;
-  readonly minimumLinks: number;
-  readonly encryptionMode: string;
+  readonly lagName?: string;
+  readonly minimumLinks?: number;
+  readonly encryptionMode?: string;
 }
 
-interface UpdateVirtualInterfaceAttributesRequest {
+export interface UpdateVirtualInterfaceAttributesRequest {
   readonly virtualInterfaceId: string;
-  readonly mtu: number;
-  readonly enableSiteLink: boolean;
-  readonly virtualInterfaceName: string;
+  readonly mtu?: number;
+  readonly enableSiteLink?: boolean;
+  readonly virtualInterfaceName?: string;
 }
 
-interface VirtualGateway {
-  readonly virtualGatewayId: string;
-  readonly virtualGatewayState: string;
+export interface VirtualGateway {
+  readonly virtualGatewayId?: string;
+  readonly virtualGatewayState?: string;
 }
 
-interface VirtualGateways {
-  readonly virtualGateways: [];
+export interface VirtualGateways {
+  readonly virtualGateways?: [];
 }
 
-interface VirtualInterface {
-  readonly ownerAccount: string;
-  readonly virtualInterfaceId: string;
-  readonly location: string;
-  readonly connectionId: string;
-  readonly virtualInterfaceType: string;
-  readonly virtualInterfaceName: string;
-  readonly vlan: number;
-  readonly asn: number;
-  readonly amazonSideAsn: number;
-  readonly authKey: string;
-  readonly amazonAddress: string;
-  readonly customerAddress: string;
-  readonly addressFamily: string;
-  readonly virtualInterfaceState: string;
-  readonly customerRouterConfig: string;
-  readonly mtu: number;
-  readonly jumboFrameCapable: boolean;
-  readonly virtualGatewayId: string;
-  readonly directConnectGatewayId: string;
-  readonly routeFilterPrefixes: [];
-  readonly bgpPeers: [];
-  readonly region: string;
-  readonly awsDeviceV2: string;
-  readonly awsLogicalDeviceId: string;
-  readonly tags: [];
-  readonly siteLinkEnabled: boolean;
+export interface VirtualInterface {
+  readonly ownerAccount?: string;
+  readonly virtualInterfaceId?: string;
+  readonly location?: string;
+  readonly connectionId?: string;
+  readonly virtualInterfaceType?: string;
+  readonly virtualInterfaceName?: string;
+  readonly vlan?: number;
+  readonly asn?: number;
+  readonly amazonSideAsn?: number;
+  readonly authKey?: string;
+  readonly amazonAddress?: string;
+  readonly customerAddress?: string;
+  readonly addressFamily?: string;
+  readonly virtualInterfaceState?: string;
+  readonly customerRouterConfig?: string;
+  readonly mtu?: number;
+  readonly jumboFrameCapable?: boolean;
+  readonly virtualGatewayId?: string;
+  readonly directConnectGatewayId?: string;
+  readonly routeFilterPrefixes?: [];
+  readonly bgpPeers?: [];
+  readonly region?: string;
+  readonly awsDeviceV2?: string;
+  readonly awsLogicalDeviceId?: string;
+  readonly tags?: [];
+  readonly siteLinkEnabled?: boolean;
 }
 
-interface VirtualInterfaceTestHistory {
-  readonly testId: string;
-  readonly virtualInterfaceId: string;
-  readonly bgpPeers: [];
-  readonly status: string;
-  readonly ownerAccount: string;
-  readonly testDurationInMinutes: number;
-  readonly startTime: Date;
-  readonly endTime: Date;
+export interface VirtualInterfaceTestHistory {
+  readonly testId?: string;
+  readonly virtualInterfaceId?: string;
+  readonly bgpPeers?: [];
+  readonly status?: string;
+  readonly ownerAccount?: string;
+  readonly testDurationInMinutes?: number;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
 }
 
-interface VirtualInterfaces {
-  readonly virtualInterfaces: [];
+export interface VirtualInterfaces {
+  readonly virtualInterfaces?: [];
 }
+
 

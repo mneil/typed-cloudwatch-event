@@ -4,21 +4,26 @@
 export interface CreateConfigurationSet {
   readonly ConfigurationSetName?: string;
 }
+
 export interface CreateConfigurationSetEventDestination {
   readonly ConfigurationSetName: string;
   readonly EventDestination?: EventDestinationDefinition;
   readonly EventDestinationName?: string;
 }
+
 export interface DeleteConfigurationSet {
   readonly ConfigurationSetName: string;
 }
+
 export interface DeleteConfigurationSetEventDestination {
   readonly ConfigurationSetName: string;
   readonly EventDestinationName: string;
 }
+
 export interface GetConfigurationSetEventDestinations {
   readonly ConfigurationSetName: string;
 }
+
 export interface SendVoiceMessage {
   readonly CallerId?: string;
   readonly ConfigurationSetName?: string;
@@ -26,148 +31,148 @@ export interface SendVoiceMessage {
   readonly DestinationPhoneNumber?: string;
   readonly OriginationPhoneNumber?: string;
 }
+
 export interface UpdateConfigurationSetEventDestination {
   readonly ConfigurationSetName: string;
   readonly EventDestination?: EventDestinationDefinition;
   readonly EventDestinationName: string;
 }
 
-
-
-interface AlreadyExistsException {
-  readonly Message: string;
+export interface AlreadyExistsException {
+  readonly Message?: string;
 }
 
-interface BadRequestException {
-  readonly Message: string;
+export interface BadRequestException {
+  readonly Message?: string;
 }
 
-interface CallInstructionsMessageType {
-  readonly Text: string;
+export interface CallInstructionsMessageType {
+  readonly Text?: string;
 }
 
-interface CloudWatchLogsDestination {
-  readonly IamRoleArn: string;
-  readonly LogGroupArn: string;
+export interface CloudWatchLogsDestination {
+  readonly IamRoleArn?: string;
+  readonly LogGroupArn?: string;
 }
 
-interface CreateConfigurationSetEventDestinationRequest {
+export interface CreateConfigurationSetEventDestinationRequest {
   readonly ConfigurationSetName: string;
-  readonly EventDestination: EventDestinationDefinition;
-  readonly EventDestinationName: string;
+  readonly EventDestination?: EventDestinationDefinition;
+  readonly EventDestinationName?: string;
 }
 
-interface CreateConfigurationSetEventDestinationResponse {
+export interface CreateConfigurationSetEventDestinationResponse {
 }
 
-interface CreateConfigurationSetRequest {
-  readonly ConfigurationSetName: string;
+export interface CreateConfigurationSetRequest {
+  readonly ConfigurationSetName?: string;
 }
 
-interface CreateConfigurationSetResponse {
+export interface CreateConfigurationSetResponse {
 }
 
-interface DeleteConfigurationSetEventDestinationRequest {
+export interface DeleteConfigurationSetEventDestinationRequest {
   readonly ConfigurationSetName: string;
   readonly EventDestinationName: string;
 }
 
-interface DeleteConfigurationSetEventDestinationResponse {
+export interface DeleteConfigurationSetEventDestinationResponse {
 }
 
-interface DeleteConfigurationSetRequest {
+export interface DeleteConfigurationSetRequest {
   readonly ConfigurationSetName: string;
 }
 
-interface DeleteConfigurationSetResponse {
+export interface DeleteConfigurationSetResponse {
 }
 
-interface EventDestination {
-  readonly CloudWatchLogsDestination: CloudWatchLogsDestination;
-  readonly Enabled: boolean;
-  readonly KinesisFirehoseDestination: KinesisFirehoseDestination;
-  readonly MatchingEventTypes: [];
-  readonly Name: string;
-  readonly SnsDestination: SnsDestination;
+export interface EventDestination {
+  readonly CloudWatchLogsDestination?: CloudWatchLogsDestination;
+  readonly Enabled?: boolean;
+  readonly KinesisFirehoseDestination?: KinesisFirehoseDestination;
+  readonly MatchingEventTypes?: [];
+  readonly Name?: string;
+  readonly SnsDestination?: SnsDestination;
 }
 
-interface EventDestinationDefinition {
-  readonly CloudWatchLogsDestination: CloudWatchLogsDestination;
-  readonly Enabled: boolean;
-  readonly KinesisFirehoseDestination: KinesisFirehoseDestination;
-  readonly MatchingEventTypes: [];
-  readonly SnsDestination: SnsDestination;
+export interface EventDestinationDefinition {
+  readonly CloudWatchLogsDestination?: CloudWatchLogsDestination;
+  readonly Enabled?: boolean;
+  readonly KinesisFirehoseDestination?: KinesisFirehoseDestination;
+  readonly MatchingEventTypes?: [];
+  readonly SnsDestination?: SnsDestination;
 }
 
-interface GetConfigurationSetEventDestinationsRequest {
+export interface GetConfigurationSetEventDestinationsRequest {
   readonly ConfigurationSetName: string;
 }
 
-interface GetConfigurationSetEventDestinationsResponse {
-  readonly EventDestinations: [];
+export interface GetConfigurationSetEventDestinationsResponse {
+  readonly EventDestinations?: [];
 }
 
-interface InternalServiceErrorException {
-  readonly Message: string;
+export interface InternalServiceErrorException {
+  readonly Message?: string;
 }
 
-interface KinesisFirehoseDestination {
-  readonly DeliveryStreamArn: string;
-  readonly IamRoleArn: string;
+export interface KinesisFirehoseDestination {
+  readonly DeliveryStreamArn?: string;
+  readonly IamRoleArn?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface NotFoundException {
-  readonly Message: string;
+export interface NotFoundException {
+  readonly Message?: string;
 }
 
-interface PlainTextMessageType {
-  readonly LanguageCode: string;
-  readonly Text: string;
-  readonly VoiceId: string;
+export interface PlainTextMessageType {
+  readonly LanguageCode?: string;
+  readonly Text?: string;
+  readonly VoiceId?: string;
 }
 
-interface SSMLMessageType {
-  readonly LanguageCode: string;
-  readonly Text: string;
-  readonly VoiceId: string;
+export interface SSMLMessageType {
+  readonly LanguageCode?: string;
+  readonly Text?: string;
+  readonly VoiceId?: string;
 }
 
-interface SendVoiceMessageRequest {
-  readonly CallerId: string;
+export interface SendVoiceMessageRequest {
+  readonly CallerId?: string;
+  readonly ConfigurationSetName?: string;
+  readonly Content?: VoiceMessageContent;
+  readonly DestinationPhoneNumber?: string;
+  readonly OriginationPhoneNumber?: string;
+}
+
+export interface SendVoiceMessageResponse {
+  readonly MessageId?: string;
+}
+
+export interface SnsDestination {
+  readonly TopicArn?: string;
+}
+
+export interface TooManyRequestsException {
+  readonly Message?: string;
+}
+
+export interface UpdateConfigurationSetEventDestinationRequest {
   readonly ConfigurationSetName: string;
-  readonly Content: VoiceMessageContent;
-  readonly DestinationPhoneNumber: string;
-  readonly OriginationPhoneNumber: string;
-}
-
-interface SendVoiceMessageResponse {
-  readonly MessageId: string;
-}
-
-interface SnsDestination {
-  readonly TopicArn: string;
-}
-
-interface TooManyRequestsException {
-  readonly Message: string;
-}
-
-interface UpdateConfigurationSetEventDestinationRequest {
-  readonly ConfigurationSetName: string;
-  readonly EventDestination: EventDestinationDefinition;
+  readonly EventDestination?: EventDestinationDefinition;
   readonly EventDestinationName: string;
 }
 
-interface UpdateConfigurationSetEventDestinationResponse {
+export interface UpdateConfigurationSetEventDestinationResponse {
 }
 
-interface VoiceMessageContent {
-  readonly CallInstructionsMessage: CallInstructionsMessageType;
-  readonly PlainTextMessage: PlainTextMessageType;
-  readonly SSMLMessage: SSMLMessageType;
+export interface VoiceMessageContent {
+  readonly CallInstructionsMessage?: CallInstructionsMessageType;
+  readonly PlainTextMessage?: PlainTextMessageType;
+  readonly SSMLMessage?: SSMLMessageType;
 }
+
 

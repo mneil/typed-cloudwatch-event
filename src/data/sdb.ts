@@ -5,227 +5,235 @@ export interface BatchDeleteAttributes {
   readonly DomainName: string;
   readonly Items: [];
 }
+
 export interface BatchPutAttributes {
   readonly DomainName: string;
   readonly Items: [];
 }
+
 export interface CreateDomain {
   readonly DomainName: string;
 }
+
 export interface DeleteAttributes {
   readonly DomainName: string;
   readonly ItemName: string;
   readonly Attributes?: [];
   readonly Expected?: UpdateCondition;
 }
+
 export interface DeleteDomain {
   readonly DomainName: string;
 }
+
 export interface DomainMetadata {
   readonly DomainName: string;
 }
+
 export interface GetAttributes {
   readonly DomainName: string;
   readonly ItemName: string;
   readonly AttributeNames?: [];
   readonly ConsistentRead?: boolean;
 }
+
 export interface ListDomains {
   readonly MaxNumberOfDomains?: number;
   readonly NextToken?: string;
 }
+
 export interface PutAttributes {
   readonly DomainName: string;
   readonly ItemName: string;
   readonly Attributes: [];
   readonly Expected?: UpdateCondition;
 }
+
 export interface Select {
   readonly SelectExpression: string;
   readonly NextToken?: string;
   readonly ConsistentRead?: boolean;
 }
 
-
-
-interface Attribute {
+export interface Attribute {
   readonly Name: string;
-  readonly AlternateNameEncoding: string;
+  readonly AlternateNameEncoding?: string;
   readonly Value: string;
-  readonly AlternateValueEncoding: string;
+  readonly AlternateValueEncoding?: string;
 }
 
-interface AttributeDoesNotExist {
-  readonly BoxUsage: unknown;
+export interface AttributeDoesNotExist {
+  readonly BoxUsage?: unknown;
 }
 
-interface BatchDeleteAttributesRequest {
+export interface BatchDeleteAttributesRequest {
   readonly DomainName: string;
   readonly Items: [];
 }
 
-interface BatchPutAttributesRequest {
+export interface BatchPutAttributesRequest {
   readonly DomainName: string;
   readonly Items: [];
 }
 
-interface CreateDomainRequest {
+export interface CreateDomainRequest {
   readonly DomainName: string;
 }
 
-interface DeletableItem {
+export interface DeletableItem {
   readonly Name: string;
-  readonly Attributes: [];
+  readonly Attributes?: [];
 }
 
-interface DeleteAttributesRequest {
+export interface DeleteAttributesRequest {
   readonly DomainName: string;
   readonly ItemName: string;
-  readonly Attributes: [];
-  readonly Expected: UpdateCondition;
+  readonly Attributes?: [];
+  readonly Expected?: UpdateCondition;
 }
 
-interface DeleteDomainRequest {
+export interface DeleteDomainRequest {
   readonly DomainName: string;
 }
 
-interface DomainMetadataRequest {
+export interface DomainMetadataRequest {
   readonly DomainName: string;
 }
 
-interface DomainMetadataResult {
-  readonly ItemCount: number;
-  readonly ItemNamesSizeBytes: number;
-  readonly AttributeNameCount: number;
-  readonly AttributeNamesSizeBytes: number;
-  readonly AttributeValueCount: number;
-  readonly AttributeValuesSizeBytes: number;
-  readonly Timestamp: number;
+export interface DomainMetadataResult {
+  readonly ItemCount?: number;
+  readonly ItemNamesSizeBytes?: number;
+  readonly AttributeNameCount?: number;
+  readonly AttributeNamesSizeBytes?: number;
+  readonly AttributeValueCount?: number;
+  readonly AttributeValuesSizeBytes?: number;
+  readonly Timestamp?: number;
 }
 
-interface DuplicateItemName {
-  readonly BoxUsage: unknown;
+export interface DuplicateItemName {
+  readonly BoxUsage?: unknown;
 }
 
-interface GetAttributesRequest {
+export interface GetAttributesRequest {
   readonly DomainName: string;
   readonly ItemName: string;
-  readonly AttributeNames: [];
-  readonly ConsistentRead: boolean;
+  readonly AttributeNames?: [];
+  readonly ConsistentRead?: boolean;
 }
 
-interface GetAttributesResult {
-  readonly Attributes: [];
+export interface GetAttributesResult {
+  readonly Attributes?: [];
 }
 
-interface InvalidNextToken {
-  readonly BoxUsage: unknown;
+export interface InvalidNextToken {
+  readonly BoxUsage?: unknown;
 }
 
-interface InvalidNumberPredicates {
-  readonly BoxUsage: unknown;
+export interface InvalidNumberPredicates {
+  readonly BoxUsage?: unknown;
 }
 
-interface InvalidNumberValueTests {
-  readonly BoxUsage: unknown;
+export interface InvalidNumberValueTests {
+  readonly BoxUsage?: unknown;
 }
 
-interface InvalidParameterValue {
-  readonly BoxUsage: unknown;
+export interface InvalidParameterValue {
+  readonly BoxUsage?: unknown;
 }
 
-interface InvalidQueryExpression {
-  readonly BoxUsage: unknown;
+export interface InvalidQueryExpression {
+  readonly BoxUsage?: unknown;
 }
 
-interface Item {
+export interface Item {
   readonly Name: string;
-  readonly AlternateNameEncoding: string;
+  readonly AlternateNameEncoding?: string;
   readonly Attributes: [];
 }
 
-interface ListDomainsRequest {
-  readonly MaxNumberOfDomains: number;
-  readonly NextToken: string;
+export interface ListDomainsRequest {
+  readonly MaxNumberOfDomains?: number;
+  readonly NextToken?: string;
 }
 
-interface ListDomainsResult {
-  readonly DomainNames: [];
-  readonly NextToken: string;
+export interface ListDomainsResult {
+  readonly DomainNames?: [];
+  readonly NextToken?: string;
 }
 
-interface MissingParameter {
-  readonly BoxUsage: unknown;
+export interface MissingParameter {
+  readonly BoxUsage?: unknown;
 }
 
-interface NoSuchDomain {
-  readonly BoxUsage: unknown;
+export interface NoSuchDomain {
+  readonly BoxUsage?: unknown;
 }
 
-interface NumberDomainAttributesExceeded {
-  readonly BoxUsage: unknown;
+export interface NumberDomainAttributesExceeded {
+  readonly BoxUsage?: unknown;
 }
 
-interface NumberDomainBytesExceeded {
-  readonly BoxUsage: unknown;
+export interface NumberDomainBytesExceeded {
+  readonly BoxUsage?: unknown;
 }
 
-interface NumberDomainsExceeded {
-  readonly BoxUsage: unknown;
+export interface NumberDomainsExceeded {
+  readonly BoxUsage?: unknown;
 }
 
-interface NumberItemAttributesExceeded {
-  readonly BoxUsage: unknown;
+export interface NumberItemAttributesExceeded {
+  readonly BoxUsage?: unknown;
 }
 
-interface NumberSubmittedAttributesExceeded {
-  readonly BoxUsage: unknown;
+export interface NumberSubmittedAttributesExceeded {
+  readonly BoxUsage?: unknown;
 }
 
-interface NumberSubmittedItemsExceeded {
-  readonly BoxUsage: unknown;
+export interface NumberSubmittedItemsExceeded {
+  readonly BoxUsage?: unknown;
 }
 
-interface PutAttributesRequest {
+export interface PutAttributesRequest {
   readonly DomainName: string;
   readonly ItemName: string;
   readonly Attributes: [];
-  readonly Expected: UpdateCondition;
+  readonly Expected?: UpdateCondition;
 }
 
-interface ReplaceableAttribute {
+export interface ReplaceableAttribute {
   readonly Name: string;
   readonly Value: string;
-  readonly Replace: boolean;
+  readonly Replace?: boolean;
 }
 
-interface ReplaceableItem {
+export interface ReplaceableItem {
   readonly Name: string;
   readonly Attributes: [];
 }
 
-interface RequestTimeout {
-  readonly BoxUsage: unknown;
+export interface RequestTimeout {
+  readonly BoxUsage?: unknown;
 }
 
-interface SelectRequest {
+export interface SelectRequest {
   readonly SelectExpression: string;
-  readonly NextToken: string;
-  readonly ConsistentRead: boolean;
+  readonly NextToken?: string;
+  readonly ConsistentRead?: boolean;
 }
 
-interface SelectResult {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface SelectResult {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface TooManyRequestedAttributes {
-  readonly BoxUsage: unknown;
+export interface TooManyRequestedAttributes {
+  readonly BoxUsage?: unknown;
 }
 
-interface UpdateCondition {
-  readonly Name: string;
-  readonly Value: string;
-  readonly Exists: boolean;
+export interface UpdateCondition {
+  readonly Name?: string;
+  readonly Value?: string;
+  readonly Exists?: boolean;
 }
+
 

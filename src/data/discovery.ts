@@ -5,65 +5,80 @@ export interface AssociateConfigurationItemsToApplication {
   readonly applicationConfigurationId: string;
   readonly configurationIds: [];
 }
+
 export interface BatchDeleteImportData {
   readonly importTaskIds: [];
 }
+
 export interface CreateApplication {
   readonly name: string;
   readonly description?: string;
 }
+
 export interface CreateTags {
   readonly configurationIds: [];
   readonly tags: [];
 }
+
 export interface DeleteApplications {
   readonly configurationIds: [];
 }
+
 export interface DeleteTags {
   readonly configurationIds: [];
   readonly tags?: [];
 }
+
 export interface DescribeAgents {
   readonly agentIds?: [];
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DescribeConfigurations {
   readonly configurationIds: [];
 }
+
 export interface DescribeContinuousExports {
   readonly exportIds?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DescribeExportConfigurations {
   readonly exportIds?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DescribeExportTasks {
   readonly exportIds?: [];
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DescribeImportTasks {
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DescribeTags {
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DisassociateConfigurationItemsFromApplication {
   readonly applicationConfigurationId: string;
   readonly configurationIds: [];
 }
+
 export interface GetDiscoverySummary {
 }
+
 export interface ListConfigurations {
   readonly configurationType: string;
   readonly filters?: [];
@@ -71,6 +86,7 @@ export interface ListConfigurations {
   readonly nextToken?: string;
   readonly orderBy?: [];
 }
+
 export interface ListServerNeighbors {
   readonly configurationId: string;
   readonly portInformationNeeded?: boolean;
@@ -78,127 +94,132 @@ export interface ListServerNeighbors {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface StartContinuousExport {
 }
+
 export interface StartDataCollectionByAgentIds {
   readonly agentIds: [];
 }
+
 export interface StartExportTask {
   readonly exportDataFormat?: [];
   readonly filters?: [];
   readonly startTime?: Date;
   readonly endTime?: Date;
 }
+
 export interface StartImportTask {
   readonly clientRequestToken?: string;
   readonly name: string;
   readonly importUrl: string;
 }
+
 export interface StopContinuousExport {
   readonly exportId: string;
 }
+
 export interface StopDataCollectionByAgentIds {
   readonly agentIds: [];
 }
+
 export interface UpdateApplication {
   readonly configurationId: string;
   readonly name?: string;
   readonly description?: string;
 }
 
-
-
-interface AgentConfigurationStatus {
-  readonly agentId: string;
-  readonly operationSucceeded: boolean;
-  readonly description: string;
+export interface AgentConfigurationStatus {
+  readonly agentId?: string;
+  readonly operationSucceeded?: boolean;
+  readonly description?: string;
 }
 
-interface AgentInfo {
-  readonly agentId: string;
-  readonly hostName: string;
-  readonly agentNetworkInfoList: [];
-  readonly connectorId: string;
-  readonly version: string;
-  readonly health: string;
-  readonly lastHealthPingTime: string;
-  readonly collectionStatus: string;
-  readonly agentType: string;
-  readonly registeredTime: string;
+export interface AgentInfo {
+  readonly agentId?: string;
+  readonly hostName?: string;
+  readonly agentNetworkInfoList?: [];
+  readonly connectorId?: string;
+  readonly version?: string;
+  readonly health?: string;
+  readonly lastHealthPingTime?: string;
+  readonly collectionStatus?: string;
+  readonly agentType?: string;
+  readonly registeredTime?: string;
 }
 
-interface AgentNetworkInfo {
-  readonly ipAddress: string;
-  readonly macAddress: string;
+export interface AgentNetworkInfo {
+  readonly ipAddress?: string;
+  readonly macAddress?: string;
 }
 
-interface AssociateConfigurationItemsToApplicationRequest {
+export interface AssociateConfigurationItemsToApplicationRequest {
   readonly applicationConfigurationId: string;
   readonly configurationIds: [];
 }
 
-interface AssociateConfigurationItemsToApplicationResponse {
+export interface AssociateConfigurationItemsToApplicationResponse {
 }
 
-interface AuthorizationErrorException {
-  readonly message: string;
+export interface AuthorizationErrorException {
+  readonly message?: string;
 }
 
-interface BatchDeleteImportDataError {
-  readonly importTaskId: string;
-  readonly errorCode: string;
-  readonly errorDescription: string;
+export interface BatchDeleteImportDataError {
+  readonly importTaskId?: string;
+  readonly errorCode?: string;
+  readonly errorDescription?: string;
 }
 
-interface BatchDeleteImportDataRequest {
+export interface BatchDeleteImportDataRequest {
   readonly importTaskIds: [];
 }
 
-interface BatchDeleteImportDataResponse {
-  readonly errors: [];
+export interface BatchDeleteImportDataResponse {
+  readonly errors?: [];
 }
 
-interface ConfigurationTag {
-  readonly configurationType: string;
-  readonly configurationId: string;
-  readonly key: string;
-  readonly value: string;
-  readonly timeOfCreation: Date;
+export interface ConfigurationTag {
+  readonly configurationType?: string;
+  readonly configurationId?: string;
+  readonly key?: string;
+  readonly value?: string;
+  readonly timeOfCreation?: Date;
 }
 
-interface ConflictErrorException {
-  readonly message: string;
+export interface ConflictErrorException {
+  readonly message?: string;
 }
 
-interface ContinuousExportDescription {
-  readonly exportId: string;
-  readonly status: string;
-  readonly statusDetail: string;
-  readonly s3Bucket: string;
-  readonly startTime: Date;
-  readonly stopTime: Date;
-  readonly dataSource: string;
-  readonly schemaStorageConfig: {[key: string]: any};
+export interface ContinuousExportDescription {
+  readonly exportId?: string;
+  readonly status?: string;
+  readonly statusDetail?: string;
+  readonly s3Bucket?: string;
+  readonly startTime?: Date;
+  readonly stopTime?: Date;
+  readonly dataSource?: string;
+  readonly schemaStorageConfig?: {[key: string]: any};
 }
 
-interface CreateApplicationRequest {
+export interface CreateApplicationRequest {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
 }
 
-interface CreateApplicationResponse {
-  readonly configurationId: string;
+export interface CreateApplicationResponse {
+  readonly configurationId?: string;
 }
 
-interface CreateTagsRequest {
+export interface CreateTagsRequest {
   readonly configurationIds: [];
   readonly tags: [];
 }
 
-interface CreateTagsResponse {
+export interface CreateTagsResponse {
 }
 
-interface CustomerAgentInfo {
+export interface CustomerAgentInfo {
   readonly activeAgents: number;
   readonly healthyAgents: number;
   readonly blackListedAgents: number;
@@ -208,7 +229,7 @@ interface CustomerAgentInfo {
   readonly unknownAgents: number;
 }
 
-interface CustomerConnectorInfo {
+export interface CustomerConnectorInfo {
   readonly activeConnectors: number;
   readonly healthyConnectors: number;
   readonly blackListedConnectors: number;
@@ -218,306 +239,307 @@ interface CustomerConnectorInfo {
   readonly unknownConnectors: number;
 }
 
-interface DeleteApplicationsRequest {
+export interface DeleteApplicationsRequest {
   readonly configurationIds: [];
 }
 
-interface DeleteApplicationsResponse {
+export interface DeleteApplicationsResponse {
 }
 
-interface DeleteTagsRequest {
+export interface DeleteTagsRequest {
   readonly configurationIds: [];
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface DeleteTagsResponse {
+export interface DeleteTagsResponse {
 }
 
-interface DescribeAgentsRequest {
-  readonly agentIds: [];
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface DescribeAgentsRequest {
+  readonly agentIds?: [];
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface DescribeAgentsResponse {
-  readonly agentsInfo: [];
-  readonly nextToken: string;
+export interface DescribeAgentsResponse {
+  readonly agentsInfo?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeConfigurationsRequest {
+export interface DescribeConfigurationsRequest {
   readonly configurationIds: [];
 }
 
-interface DescribeConfigurationsResponse {
-  readonly configurations: [];
+export interface DescribeConfigurationsResponse {
+  readonly configurations?: [];
 }
 
-interface DescribeContinuousExportsRequest {
-  readonly exportIds: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface DescribeContinuousExportsRequest {
+  readonly exportIds?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface DescribeContinuousExportsResponse {
-  readonly descriptions: [];
-  readonly nextToken: string;
+export interface DescribeContinuousExportsResponse {
+  readonly descriptions?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeExportConfigurationsRequest {
-  readonly exportIds: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface DescribeExportConfigurationsRequest {
+  readonly exportIds?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface DescribeExportConfigurationsResponse {
-  readonly exportsInfo: [];
-  readonly nextToken: string;
+export interface DescribeExportConfigurationsResponse {
+  readonly exportsInfo?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeExportTasksRequest {
-  readonly exportIds: [];
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface DescribeExportTasksRequest {
+  readonly exportIds?: [];
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface DescribeExportTasksResponse {
-  readonly exportsInfo: [];
-  readonly nextToken: string;
+export interface DescribeExportTasksResponse {
+  readonly exportsInfo?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeImportTasksRequest {
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface DescribeImportTasksRequest {
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface DescribeImportTasksResponse {
-  readonly nextToken: string;
-  readonly tasks: [];
+export interface DescribeImportTasksResponse {
+  readonly nextToken?: string;
+  readonly tasks?: [];
 }
 
-interface DescribeTagsRequest {
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface DescribeTagsRequest {
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface DescribeTagsResponse {
-  readonly tags: [];
-  readonly nextToken: string;
+export interface DescribeTagsResponse {
+  readonly tags?: [];
+  readonly nextToken?: string;
 }
 
-interface DisassociateConfigurationItemsFromApplicationRequest {
+export interface DisassociateConfigurationItemsFromApplicationRequest {
   readonly applicationConfigurationId: string;
   readonly configurationIds: [];
 }
 
-interface DisassociateConfigurationItemsFromApplicationResponse {
+export interface DisassociateConfigurationItemsFromApplicationResponse {
 }
 
-interface ExportConfigurationsResponse {
-  readonly exportId: string;
+export interface ExportConfigurationsResponse {
+  readonly exportId?: string;
 }
 
-interface ExportFilter {
+export interface ExportFilter {
   readonly name: string;
   readonly values: [];
   readonly condition: string;
 }
 
-interface ExportInfo {
+export interface ExportInfo {
   readonly exportId: string;
   readonly exportStatus: string;
   readonly statusMessage: string;
-  readonly configurationsDownloadUrl: string;
+  readonly configurationsDownloadUrl?: string;
   readonly exportRequestTime: Date;
-  readonly isTruncated: boolean;
-  readonly requestedStartTime: Date;
-  readonly requestedEndTime: Date;
+  readonly isTruncated?: boolean;
+  readonly requestedStartTime?: Date;
+  readonly requestedEndTime?: Date;
 }
 
-interface Filter {
+export interface Filter {
   readonly name: string;
   readonly values: [];
   readonly condition: string;
 }
 
-interface GetDiscoverySummaryRequest {
+export interface GetDiscoverySummaryRequest {
 }
 
-interface GetDiscoverySummaryResponse {
-  readonly servers: number;
-  readonly applications: number;
-  readonly serversMappedToApplications: number;
-  readonly serversMappedtoTags: number;
-  readonly agentSummary: CustomerAgentInfo;
-  readonly connectorSummary: CustomerConnectorInfo;
+export interface GetDiscoverySummaryResponse {
+  readonly servers?: number;
+  readonly applications?: number;
+  readonly serversMappedToApplications?: number;
+  readonly serversMappedtoTags?: number;
+  readonly agentSummary?: CustomerAgentInfo;
+  readonly connectorSummary?: CustomerConnectorInfo;
 }
 
-interface HomeRegionNotSetException {
-  readonly message: string;
+export interface HomeRegionNotSetException {
+  readonly message?: string;
 }
 
-interface ImportTask {
-  readonly importTaskId: string;
-  readonly clientRequestToken: string;
-  readonly name: string;
-  readonly importUrl: string;
-  readonly status: string;
-  readonly importRequestTime: Date;
-  readonly importCompletionTime: Date;
-  readonly importDeletedTime: Date;
-  readonly serverImportSuccess: number;
-  readonly serverImportFailure: number;
-  readonly applicationImportSuccess: number;
-  readonly applicationImportFailure: number;
-  readonly errorsAndFailedEntriesZip: string;
+export interface ImportTask {
+  readonly importTaskId?: string;
+  readonly clientRequestToken?: string;
+  readonly name?: string;
+  readonly importUrl?: string;
+  readonly status?: string;
+  readonly importRequestTime?: Date;
+  readonly importCompletionTime?: Date;
+  readonly importDeletedTime?: Date;
+  readonly serverImportSuccess?: number;
+  readonly serverImportFailure?: number;
+  readonly applicationImportSuccess?: number;
+  readonly applicationImportFailure?: number;
+  readonly errorsAndFailedEntriesZip?: string;
 }
 
-interface ImportTaskFilter {
-  readonly name: string;
-  readonly values: [];
+export interface ImportTaskFilter {
+  readonly name?: string;
+  readonly values?: [];
 }
 
-interface InvalidParameterException {
-  readonly message: string;
+export interface InvalidParameterException {
+  readonly message?: string;
 }
 
-interface InvalidParameterValueException {
-  readonly message: string;
+export interface InvalidParameterValueException {
+  readonly message?: string;
 }
 
-interface ListConfigurationsRequest {
+export interface ListConfigurationsRequest {
   readonly configurationType: string;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly orderBy: [];
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly orderBy?: [];
 }
 
-interface ListConfigurationsResponse {
-  readonly configurations: [];
-  readonly nextToken: string;
+export interface ListConfigurationsResponse {
+  readonly configurations?: [];
+  readonly nextToken?: string;
 }
 
-interface ListServerNeighborsRequest {
+export interface ListServerNeighborsRequest {
   readonly configurationId: string;
-  readonly portInformationNeeded: boolean;
-  readonly neighborConfigurationIds: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly portInformationNeeded?: boolean;
+  readonly neighborConfigurationIds?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListServerNeighborsResponse {
+export interface ListServerNeighborsResponse {
   readonly neighbors: [];
-  readonly nextToken: string;
-  readonly knownDependencyCount: number;
+  readonly nextToken?: string;
+  readonly knownDependencyCount?: number;
 }
 
-interface NeighborConnectionDetail {
+export interface NeighborConnectionDetail {
   readonly sourceServerId: string;
   readonly destinationServerId: string;
-  readonly destinationPort: number;
-  readonly transportProtocol: string;
+  readonly destinationPort?: number;
+  readonly transportProtocol?: string;
   readonly connectionsCount: number;
 }
 
-interface OperationNotPermittedException {
-  readonly message: string;
+export interface OperationNotPermittedException {
+  readonly message?: string;
 }
 
-interface OrderByElement {
+export interface OrderByElement {
   readonly fieldName: string;
-  readonly sortOrder: string;
+  readonly sortOrder?: string;
 }
 
-interface ResourceInUseException {
-  readonly message: string;
+export interface ResourceInUseException {
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface ServerInternalErrorException {
-  readonly message: string;
+export interface ServerInternalErrorException {
+  readonly message?: string;
 }
 
-interface StartContinuousExportRequest {
+export interface StartContinuousExportRequest {
 }
 
-interface StartContinuousExportResponse {
-  readonly exportId: string;
-  readonly s3Bucket: string;
-  readonly startTime: Date;
-  readonly dataSource: string;
-  readonly schemaStorageConfig: {[key: string]: any};
+export interface StartContinuousExportResponse {
+  readonly exportId?: string;
+  readonly s3Bucket?: string;
+  readonly startTime?: Date;
+  readonly dataSource?: string;
+  readonly schemaStorageConfig?: {[key: string]: any};
 }
 
-interface StartDataCollectionByAgentIdsRequest {
+export interface StartDataCollectionByAgentIdsRequest {
   readonly agentIds: [];
 }
 
-interface StartDataCollectionByAgentIdsResponse {
-  readonly agentsConfigurationStatus: [];
+export interface StartDataCollectionByAgentIdsResponse {
+  readonly agentsConfigurationStatus?: [];
 }
 
-interface StartExportTaskRequest {
-  readonly exportDataFormat: [];
-  readonly filters: [];
-  readonly startTime: Date;
-  readonly endTime: Date;
+export interface StartExportTaskRequest {
+  readonly exportDataFormat?: [];
+  readonly filters?: [];
+  readonly startTime?: Date;
+  readonly endTime?: Date;
 }
 
-interface StartExportTaskResponse {
-  readonly exportId: string;
+export interface StartExportTaskResponse {
+  readonly exportId?: string;
 }
 
-interface StartImportTaskRequest {
-  readonly clientRequestToken: string;
+export interface StartImportTaskRequest {
+  readonly clientRequestToken?: string;
   readonly name: string;
   readonly importUrl: string;
 }
 
-interface StartImportTaskResponse {
-  readonly task: ImportTask;
+export interface StartImportTaskResponse {
+  readonly task?: ImportTask;
 }
 
-interface StopContinuousExportRequest {
+export interface StopContinuousExportRequest {
   readonly exportId: string;
 }
 
-interface StopContinuousExportResponse {
-  readonly startTime: Date;
-  readonly stopTime: Date;
+export interface StopContinuousExportResponse {
+  readonly startTime?: Date;
+  readonly stopTime?: Date;
 }
 
-interface StopDataCollectionByAgentIdsRequest {
+export interface StopDataCollectionByAgentIdsRequest {
   readonly agentIds: [];
 }
 
-interface StopDataCollectionByAgentIdsResponse {
-  readonly agentsConfigurationStatus: [];
+export interface StopDataCollectionByAgentIdsResponse {
+  readonly agentsConfigurationStatus?: [];
 }
 
-interface Tag {
+export interface Tag {
   readonly key: string;
   readonly value: string;
 }
 
-interface TagFilter {
+export interface TagFilter {
   readonly name: string;
   readonly values: [];
 }
 
-interface UpdateApplicationRequest {
+export interface UpdateApplicationRequest {
   readonly configurationId: string;
-  readonly name: string;
-  readonly description: string;
+  readonly name?: string;
+  readonly description?: string;
 }
 
-interface UpdateApplicationResponse {
+export interface UpdateApplicationResponse {
 }
+
 

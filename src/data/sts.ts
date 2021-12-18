@@ -14,6 +14,7 @@ export interface AssumeRole {
   readonly TokenCode?: string;
   readonly SourceIdentity?: string;
 }
+
 export interface AssumeRoleWithSAML {
   readonly RoleArn: string;
   readonly PrincipalArn: string;
@@ -22,6 +23,7 @@ export interface AssumeRoleWithSAML {
   readonly Policy?: string;
   readonly DurationSeconds?: number;
 }
+
 export interface AssumeRoleWithWebIdentity {
   readonly RoleArn: string;
   readonly RoleSessionName: string;
@@ -31,14 +33,18 @@ export interface AssumeRoleWithWebIdentity {
   readonly Policy?: string;
   readonly DurationSeconds?: number;
 }
+
 export interface DecodeAuthorizationMessage {
   readonly EncodedMessage: string;
 }
+
 export interface GetAccessKeyInfo {
   readonly AccessKeyId: string;
 }
+
 export interface GetCallerIdentity {
 }
+
 export interface GetFederationToken {
   readonly Name: string;
   readonly Policy?: string;
@@ -46,180 +52,180 @@ export interface GetFederationToken {
   readonly DurationSeconds?: number;
   readonly Tags?: [];
 }
+
 export interface GetSessionToken {
   readonly DurationSeconds?: number;
   readonly SerialNumber?: string;
   readonly TokenCode?: string;
 }
 
-
-
-interface AssumeRoleRequest {
+export interface AssumeRoleRequest {
   readonly RoleArn: string;
   readonly RoleSessionName: string;
-  readonly PolicyArns: [];
-  readonly Policy: string;
-  readonly DurationSeconds: number;
-  readonly Tags: [];
-  readonly TransitiveTagKeys: [];
-  readonly ExternalId: string;
-  readonly SerialNumber: string;
-  readonly TokenCode: string;
-  readonly SourceIdentity: string;
+  readonly PolicyArns?: [];
+  readonly Policy?: string;
+  readonly DurationSeconds?: number;
+  readonly Tags?: [];
+  readonly TransitiveTagKeys?: [];
+  readonly ExternalId?: string;
+  readonly SerialNumber?: string;
+  readonly TokenCode?: string;
+  readonly SourceIdentity?: string;
 }
 
-interface AssumeRoleResponse {
-  readonly Credentials: Credentials;
-  readonly AssumedRoleUser: AssumedRoleUser;
-  readonly PackedPolicySize: number;
-  readonly SourceIdentity: string;
+export interface AssumeRoleResponse {
+  readonly Credentials?: Credentials;
+  readonly AssumedRoleUser?: AssumedRoleUser;
+  readonly PackedPolicySize?: number;
+  readonly SourceIdentity?: string;
 }
 
-interface AssumeRoleWithSAMLRequest {
+export interface AssumeRoleWithSAMLRequest {
   readonly RoleArn: string;
   readonly PrincipalArn: string;
   readonly SAMLAssertion: string;
-  readonly PolicyArns: [];
-  readonly Policy: string;
-  readonly DurationSeconds: number;
+  readonly PolicyArns?: [];
+  readonly Policy?: string;
+  readonly DurationSeconds?: number;
 }
 
-interface AssumeRoleWithSAMLResponse {
-  readonly Credentials: Credentials;
-  readonly AssumedRoleUser: AssumedRoleUser;
-  readonly PackedPolicySize: number;
-  readonly Subject: string;
-  readonly SubjectType: string;
-  readonly Issuer: string;
-  readonly Audience: string;
-  readonly NameQualifier: string;
-  readonly SourceIdentity: string;
+export interface AssumeRoleWithSAMLResponse {
+  readonly Credentials?: Credentials;
+  readonly AssumedRoleUser?: AssumedRoleUser;
+  readonly PackedPolicySize?: number;
+  readonly Subject?: string;
+  readonly SubjectType?: string;
+  readonly Issuer?: string;
+  readonly Audience?: string;
+  readonly NameQualifier?: string;
+  readonly SourceIdentity?: string;
 }
 
-interface AssumeRoleWithWebIdentityRequest {
+export interface AssumeRoleWithWebIdentityRequest {
   readonly RoleArn: string;
   readonly RoleSessionName: string;
   readonly WebIdentityToken: string;
-  readonly ProviderId: string;
-  readonly PolicyArns: [];
-  readonly Policy: string;
-  readonly DurationSeconds: number;
+  readonly ProviderId?: string;
+  readonly PolicyArns?: [];
+  readonly Policy?: string;
+  readonly DurationSeconds?: number;
 }
 
-interface AssumeRoleWithWebIdentityResponse {
-  readonly Credentials: Credentials;
-  readonly SubjectFromWebIdentityToken: string;
-  readonly AssumedRoleUser: AssumedRoleUser;
-  readonly PackedPolicySize: number;
-  readonly Provider: string;
-  readonly Audience: string;
-  readonly SourceIdentity: string;
+export interface AssumeRoleWithWebIdentityResponse {
+  readonly Credentials?: Credentials;
+  readonly SubjectFromWebIdentityToken?: string;
+  readonly AssumedRoleUser?: AssumedRoleUser;
+  readonly PackedPolicySize?: number;
+  readonly Provider?: string;
+  readonly Audience?: string;
+  readonly SourceIdentity?: string;
 }
 
-interface AssumedRoleUser {
+export interface AssumedRoleUser {
   readonly AssumedRoleId: string;
   readonly Arn: string;
 }
 
-interface Credentials {
+export interface Credentials {
   readonly AccessKeyId: string;
   readonly SecretAccessKey: string;
   readonly SessionToken: string;
   readonly Expiration: Date;
 }
 
-interface DecodeAuthorizationMessageRequest {
+export interface DecodeAuthorizationMessageRequest {
   readonly EncodedMessage: string;
 }
 
-interface DecodeAuthorizationMessageResponse {
-  readonly DecodedMessage: string;
+export interface DecodeAuthorizationMessageResponse {
+  readonly DecodedMessage?: string;
 }
 
-interface ExpiredTokenException {
-  readonly message: string;
+export interface ExpiredTokenException {
+  readonly message?: string;
 }
 
-interface FederatedUser {
+export interface FederatedUser {
   readonly FederatedUserId: string;
   readonly Arn: string;
 }
 
-interface GetAccessKeyInfoRequest {
+export interface GetAccessKeyInfoRequest {
   readonly AccessKeyId: string;
 }
 
-interface GetAccessKeyInfoResponse {
-  readonly Account: string;
+export interface GetAccessKeyInfoResponse {
+  readonly Account?: string;
 }
 
-interface GetCallerIdentityRequest {
+export interface GetCallerIdentityRequest {
 }
 
-interface GetCallerIdentityResponse {
-  readonly UserId: string;
-  readonly Account: string;
-  readonly Arn: string;
+export interface GetCallerIdentityResponse {
+  readonly UserId?: string;
+  readonly Account?: string;
+  readonly Arn?: string;
 }
 
-interface GetFederationTokenRequest {
+export interface GetFederationTokenRequest {
   readonly Name: string;
-  readonly Policy: string;
-  readonly PolicyArns: [];
-  readonly DurationSeconds: number;
-  readonly Tags: [];
+  readonly Policy?: string;
+  readonly PolicyArns?: [];
+  readonly DurationSeconds?: number;
+  readonly Tags?: [];
 }
 
-interface GetFederationTokenResponse {
-  readonly Credentials: Credentials;
-  readonly FederatedUser: FederatedUser;
-  readonly PackedPolicySize: number;
+export interface GetFederationTokenResponse {
+  readonly Credentials?: Credentials;
+  readonly FederatedUser?: FederatedUser;
+  readonly PackedPolicySize?: number;
 }
 
-interface GetSessionTokenRequest {
-  readonly DurationSeconds: number;
-  readonly SerialNumber: string;
-  readonly TokenCode: string;
+export interface GetSessionTokenRequest {
+  readonly DurationSeconds?: number;
+  readonly SerialNumber?: string;
+  readonly TokenCode?: string;
 }
 
-interface GetSessionTokenResponse {
-  readonly Credentials: Credentials;
+export interface GetSessionTokenResponse {
+  readonly Credentials?: Credentials;
 }
 
-interface IDPCommunicationErrorException {
-  readonly message: string;
+export interface IDPCommunicationErrorException {
+  readonly message?: string;
 }
 
-interface IDPRejectedClaimException {
-  readonly message: string;
+export interface IDPRejectedClaimException {
+  readonly message?: string;
 }
 
-interface InvalidAuthorizationMessageException {
-  readonly message: string;
+export interface InvalidAuthorizationMessageException {
+  readonly message?: string;
 }
 
-interface InvalidIdentityTokenException {
-  readonly message: string;
+export interface InvalidIdentityTokenException {
+  readonly message?: string;
 }
 
-interface MalformedPolicyDocumentException {
-  readonly message: string;
+export interface MalformedPolicyDocumentException {
+  readonly message?: string;
 }
 
-interface PackedPolicyTooLargeException {
-  readonly message: string;
+export interface PackedPolicyTooLargeException {
+  readonly message?: string;
 }
 
-interface PolicyDescriptorType {
-  readonly arn: string;
+export interface PolicyDescriptorType {
+  readonly arn?: string;
 }
 
-interface RegionDisabledException {
-  readonly message: string;
+export interface RegionDisabledException {
+  readonly message?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
+
 

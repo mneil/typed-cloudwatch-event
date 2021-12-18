@@ -1,5 +1,15 @@
 import { Arn, CloudwatchEvent, Detail } from './model';
-
+/**
+ * Cloudwatch event from Cloudtrail
+ *
+ * Takes in an event from lambda and formats
+ * it for use within your event driven application.
+ *
+ * Converts ISO strings to date, arn to Arn objects
+ * and the event Detail to a Detail type that can
+ * be cast to any API request when you know the request type
+ * or be cast to any to pull arbitrary values.
+ */
 export class Event {
   readonly version: string;
   readonly id: string;

@@ -5,6 +5,7 @@ export interface CreateActivity {
   readonly name: string;
   readonly tags?: [];
 }
+
 export interface CreateStateMachine {
   readonly name: string;
   readonly definition: string;
@@ -14,28 +15,36 @@ export interface CreateStateMachine {
   readonly tags?: [];
   readonly tracingConfiguration?: TracingConfiguration;
 }
+
 export interface DeleteActivity {
   readonly activityArn: string;
 }
+
 export interface DeleteStateMachine {
   readonly stateMachineArn: string;
 }
+
 export interface DescribeActivity {
   readonly activityArn: string;
 }
+
 export interface DescribeExecution {
   readonly executionArn: string;
 }
+
 export interface DescribeStateMachine {
   readonly stateMachineArn: string;
 }
+
 export interface DescribeStateMachineForExecution {
   readonly executionArn: string;
 }
+
 export interface GetActivityTask {
   readonly activityArn: string;
   readonly workerName?: string;
 }
+
 export interface GetExecutionHistory {
   readonly executionArn: string;
   readonly maxResults?: number;
@@ -43,60 +52,73 @@ export interface GetExecutionHistory {
   readonly nextToken?: string;
   readonly includeExecutionData?: boolean;
 }
+
 export interface ListActivities {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListExecutions {
   readonly stateMachineArn: string;
   readonly statusFilter?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListStateMachines {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface SendTaskFailure {
   readonly taskToken: string;
   readonly error?: string;
   readonly cause?: string;
 }
+
 export interface SendTaskHeartbeat {
   readonly taskToken: string;
 }
+
 export interface SendTaskSuccess {
   readonly taskToken: string;
   readonly output: string;
 }
+
 export interface StartExecution {
   readonly stateMachineArn: string;
   readonly name?: string;
   readonly input?: string;
   readonly traceHeader?: string;
 }
+
 export interface StartSyncExecution {
   readonly stateMachineArn: string;
   readonly name?: string;
   readonly input?: string;
   readonly traceHeader?: string;
 }
+
 export interface StopExecution {
   readonly executionArn: string;
   readonly error?: string;
   readonly cause?: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: [];
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateStateMachine {
   readonly stateMachineArn: string;
   readonly definition?: string;
@@ -105,625 +127,624 @@ export interface UpdateStateMachine {
   readonly tracingConfiguration?: TracingConfiguration;
 }
 
-
-
-interface ActivityDoesNotExist {
-  readonly message: string;
+export interface ActivityDoesNotExist {
+  readonly message?: string;
 }
 
-interface ActivityFailedEventDetails {
-  readonly error: string;
-  readonly cause: string;
+export interface ActivityFailedEventDetails {
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface ActivityLimitExceeded {
-  readonly message: string;
+export interface ActivityLimitExceeded {
+  readonly message?: string;
 }
 
-interface ActivityListItem {
+export interface ActivityListItem {
   readonly activityArn: string;
   readonly name: string;
   readonly creationDate: Date;
 }
 
-interface ActivityScheduleFailedEventDetails {
-  readonly error: string;
-  readonly cause: string;
+export interface ActivityScheduleFailedEventDetails {
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface ActivityScheduledEventDetails {
+export interface ActivityScheduledEventDetails {
   readonly resource: string;
-  readonly input: string;
-  readonly inputDetails: HistoryEventExecutionDataDetails;
-  readonly timeoutInSeconds: number;
-  readonly heartbeatInSeconds: number;
+  readonly input?: string;
+  readonly inputDetails?: HistoryEventExecutionDataDetails;
+  readonly timeoutInSeconds?: number;
+  readonly heartbeatInSeconds?: number;
 }
 
-interface ActivityStartedEventDetails {
-  readonly workerName: string;
+export interface ActivityStartedEventDetails {
+  readonly workerName?: string;
 }
 
-interface ActivitySucceededEventDetails {
-  readonly output: string;
-  readonly outputDetails: HistoryEventExecutionDataDetails;
+export interface ActivitySucceededEventDetails {
+  readonly output?: string;
+  readonly outputDetails?: HistoryEventExecutionDataDetails;
 }
 
-interface ActivityTimedOutEventDetails {
-  readonly error: string;
-  readonly cause: string;
+export interface ActivityTimedOutEventDetails {
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface ActivityWorkerLimitExceeded {
-  readonly message: string;
+export interface ActivityWorkerLimitExceeded {
+  readonly message?: string;
 }
 
-interface BillingDetails {
-  readonly billedMemoryUsedInMB: number;
-  readonly billedDurationInMilliseconds: number;
+export interface BillingDetails {
+  readonly billedMemoryUsedInMB?: number;
+  readonly billedDurationInMilliseconds?: number;
 }
 
-interface CloudWatchEventsExecutionDataDetails {
-  readonly included: boolean;
+export interface CloudWatchEventsExecutionDataDetails {
+  readonly included?: boolean;
 }
 
-interface CloudWatchLogsLogGroup {
-  readonly logGroupArn: string;
+export interface CloudWatchLogsLogGroup {
+  readonly logGroupArn?: string;
 }
 
-interface CreateActivityInput {
+export interface CreateActivityInput {
   readonly name: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreateActivityOutput {
+export interface CreateActivityOutput {
   readonly activityArn: string;
   readonly creationDate: Date;
 }
 
-interface CreateStateMachineInput {
+export interface CreateStateMachineInput {
   readonly name: string;
   readonly definition: string;
   readonly roleArn: string;
-  readonly type: string;
-  readonly loggingConfiguration: LoggingConfiguration;
-  readonly tags: [];
-  readonly tracingConfiguration: TracingConfiguration;
+  readonly type?: string;
+  readonly loggingConfiguration?: LoggingConfiguration;
+  readonly tags?: [];
+  readonly tracingConfiguration?: TracingConfiguration;
 }
 
-interface CreateStateMachineOutput {
+export interface CreateStateMachineOutput {
   readonly stateMachineArn: string;
   readonly creationDate: Date;
 }
 
-interface DeleteActivityInput {
+export interface DeleteActivityInput {
   readonly activityArn: string;
 }
 
-interface DeleteActivityOutput {
+export interface DeleteActivityOutput {
 }
 
-interface DeleteStateMachineInput {
+export interface DeleteStateMachineInput {
   readonly stateMachineArn: string;
 }
 
-interface DeleteStateMachineOutput {
+export interface DeleteStateMachineOutput {
 }
 
-interface DescribeActivityInput {
+export interface DescribeActivityInput {
   readonly activityArn: string;
 }
 
-interface DescribeActivityOutput {
+export interface DescribeActivityOutput {
   readonly activityArn: string;
   readonly name: string;
   readonly creationDate: Date;
 }
 
-interface DescribeExecutionInput {
+export interface DescribeExecutionInput {
   readonly executionArn: string;
 }
 
-interface DescribeExecutionOutput {
+export interface DescribeExecutionOutput {
   readonly executionArn: string;
   readonly stateMachineArn: string;
-  readonly name: string;
+  readonly name?: string;
   readonly status: string;
   readonly startDate: Date;
-  readonly stopDate: Date;
-  readonly input: string;
-  readonly inputDetails: CloudWatchEventsExecutionDataDetails;
-  readonly output: string;
-  readonly outputDetails: CloudWatchEventsExecutionDataDetails;
-  readonly traceHeader: string;
+  readonly stopDate?: Date;
+  readonly input?: string;
+  readonly inputDetails?: CloudWatchEventsExecutionDataDetails;
+  readonly output?: string;
+  readonly outputDetails?: CloudWatchEventsExecutionDataDetails;
+  readonly traceHeader?: string;
 }
 
-interface DescribeStateMachineForExecutionInput {
+export interface DescribeStateMachineForExecutionInput {
   readonly executionArn: string;
 }
 
-interface DescribeStateMachineForExecutionOutput {
+export interface DescribeStateMachineForExecutionOutput {
   readonly stateMachineArn: string;
   readonly name: string;
   readonly definition: string;
   readonly roleArn: string;
   readonly updateDate: Date;
-  readonly loggingConfiguration: LoggingConfiguration;
-  readonly tracingConfiguration: TracingConfiguration;
+  readonly loggingConfiguration?: LoggingConfiguration;
+  readonly tracingConfiguration?: TracingConfiguration;
 }
 
-interface DescribeStateMachineInput {
+export interface DescribeStateMachineInput {
   readonly stateMachineArn: string;
 }
 
-interface DescribeStateMachineOutput {
+export interface DescribeStateMachineOutput {
   readonly stateMachineArn: string;
   readonly name: string;
-  readonly status: string;
+  readonly status?: string;
   readonly definition: string;
   readonly roleArn: string;
   readonly type: string;
   readonly creationDate: Date;
-  readonly loggingConfiguration: LoggingConfiguration;
-  readonly tracingConfiguration: TracingConfiguration;
+  readonly loggingConfiguration?: LoggingConfiguration;
+  readonly tracingConfiguration?: TracingConfiguration;
 }
 
-interface ExecutionAbortedEventDetails {
-  readonly error: string;
-  readonly cause: string;
+export interface ExecutionAbortedEventDetails {
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface ExecutionAlreadyExists {
-  readonly message: string;
+export interface ExecutionAlreadyExists {
+  readonly message?: string;
 }
 
-interface ExecutionDoesNotExist {
-  readonly message: string;
+export interface ExecutionDoesNotExist {
+  readonly message?: string;
 }
 
-interface ExecutionFailedEventDetails {
-  readonly error: string;
-  readonly cause: string;
+export interface ExecutionFailedEventDetails {
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface ExecutionLimitExceeded {
-  readonly message: string;
+export interface ExecutionLimitExceeded {
+  readonly message?: string;
 }
 
-interface ExecutionListItem {
+export interface ExecutionListItem {
   readonly executionArn: string;
   readonly stateMachineArn: string;
   readonly name: string;
   readonly status: string;
   readonly startDate: Date;
-  readonly stopDate: Date;
+  readonly stopDate?: Date;
 }
 
-interface ExecutionStartedEventDetails {
-  readonly input: string;
-  readonly inputDetails: HistoryEventExecutionDataDetails;
-  readonly roleArn: string;
+export interface ExecutionStartedEventDetails {
+  readonly input?: string;
+  readonly inputDetails?: HistoryEventExecutionDataDetails;
+  readonly roleArn?: string;
 }
 
-interface ExecutionSucceededEventDetails {
-  readonly output: string;
-  readonly outputDetails: HistoryEventExecutionDataDetails;
+export interface ExecutionSucceededEventDetails {
+  readonly output?: string;
+  readonly outputDetails?: HistoryEventExecutionDataDetails;
 }
 
-interface ExecutionTimedOutEventDetails {
-  readonly error: string;
-  readonly cause: string;
+export interface ExecutionTimedOutEventDetails {
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface GetActivityTaskInput {
+export interface GetActivityTaskInput {
   readonly activityArn: string;
-  readonly workerName: string;
+  readonly workerName?: string;
 }
 
-interface GetActivityTaskOutput {
-  readonly taskToken: string;
-  readonly input: string;
+export interface GetActivityTaskOutput {
+  readonly taskToken?: string;
+  readonly input?: string;
 }
 
-interface GetExecutionHistoryInput {
+export interface GetExecutionHistoryInput {
   readonly executionArn: string;
-  readonly maxResults: number;
-  readonly reverseOrder: boolean;
-  readonly nextToken: string;
-  readonly includeExecutionData: boolean;
+  readonly maxResults?: number;
+  readonly reverseOrder?: boolean;
+  readonly nextToken?: string;
+  readonly includeExecutionData?: boolean;
 }
 
-interface GetExecutionHistoryOutput {
+export interface GetExecutionHistoryOutput {
   readonly events: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface HistoryEvent {
+export interface HistoryEvent {
   readonly timestamp: Date;
   readonly type: string;
   readonly id: number;
-  readonly previousEventId: number;
-  readonly activityFailedEventDetails: ActivityFailedEventDetails;
-  readonly activityScheduleFailedEventDetails: ActivityScheduleFailedEventDetails;
-  readonly activityScheduledEventDetails: ActivityScheduledEventDetails;
-  readonly activityStartedEventDetails: ActivityStartedEventDetails;
-  readonly activitySucceededEventDetails: ActivitySucceededEventDetails;
-  readonly activityTimedOutEventDetails: ActivityTimedOutEventDetails;
-  readonly taskFailedEventDetails: TaskFailedEventDetails;
-  readonly taskScheduledEventDetails: TaskScheduledEventDetails;
-  readonly taskStartFailedEventDetails: TaskStartFailedEventDetails;
-  readonly taskStartedEventDetails: TaskStartedEventDetails;
-  readonly taskSubmitFailedEventDetails: TaskSubmitFailedEventDetails;
-  readonly taskSubmittedEventDetails: TaskSubmittedEventDetails;
-  readonly taskSucceededEventDetails: TaskSucceededEventDetails;
-  readonly taskTimedOutEventDetails: TaskTimedOutEventDetails;
-  readonly executionFailedEventDetails: ExecutionFailedEventDetails;
-  readonly executionStartedEventDetails: ExecutionStartedEventDetails;
-  readonly executionSucceededEventDetails: ExecutionSucceededEventDetails;
-  readonly executionAbortedEventDetails: ExecutionAbortedEventDetails;
-  readonly executionTimedOutEventDetails: ExecutionTimedOutEventDetails;
-  readonly mapStateStartedEventDetails: MapStateStartedEventDetails;
-  readonly mapIterationStartedEventDetails: MapIterationEventDetails;
-  readonly mapIterationSucceededEventDetails: MapIterationEventDetails;
-  readonly mapIterationFailedEventDetails: MapIterationEventDetails;
-  readonly mapIterationAbortedEventDetails: MapIterationEventDetails;
-  readonly lambdaFunctionFailedEventDetails: LambdaFunctionFailedEventDetails;
-  readonly lambdaFunctionScheduleFailedEventDetails: LambdaFunctionScheduleFailedEventDetails;
-  readonly lambdaFunctionScheduledEventDetails: LambdaFunctionScheduledEventDetails;
-  readonly lambdaFunctionStartFailedEventDetails: LambdaFunctionStartFailedEventDetails;
-  readonly lambdaFunctionSucceededEventDetails: LambdaFunctionSucceededEventDetails;
-  readonly lambdaFunctionTimedOutEventDetails: LambdaFunctionTimedOutEventDetails;
-  readonly stateEnteredEventDetails: StateEnteredEventDetails;
-  readonly stateExitedEventDetails: StateExitedEventDetails;
+  readonly previousEventId?: number;
+  readonly activityFailedEventDetails?: ActivityFailedEventDetails;
+  readonly activityScheduleFailedEventDetails?: ActivityScheduleFailedEventDetails;
+  readonly activityScheduledEventDetails?: ActivityScheduledEventDetails;
+  readonly activityStartedEventDetails?: ActivityStartedEventDetails;
+  readonly activitySucceededEventDetails?: ActivitySucceededEventDetails;
+  readonly activityTimedOutEventDetails?: ActivityTimedOutEventDetails;
+  readonly taskFailedEventDetails?: TaskFailedEventDetails;
+  readonly taskScheduledEventDetails?: TaskScheduledEventDetails;
+  readonly taskStartFailedEventDetails?: TaskStartFailedEventDetails;
+  readonly taskStartedEventDetails?: TaskStartedEventDetails;
+  readonly taskSubmitFailedEventDetails?: TaskSubmitFailedEventDetails;
+  readonly taskSubmittedEventDetails?: TaskSubmittedEventDetails;
+  readonly taskSucceededEventDetails?: TaskSucceededEventDetails;
+  readonly taskTimedOutEventDetails?: TaskTimedOutEventDetails;
+  readonly executionFailedEventDetails?: ExecutionFailedEventDetails;
+  readonly executionStartedEventDetails?: ExecutionStartedEventDetails;
+  readonly executionSucceededEventDetails?: ExecutionSucceededEventDetails;
+  readonly executionAbortedEventDetails?: ExecutionAbortedEventDetails;
+  readonly executionTimedOutEventDetails?: ExecutionTimedOutEventDetails;
+  readonly mapStateStartedEventDetails?: MapStateStartedEventDetails;
+  readonly mapIterationStartedEventDetails?: MapIterationEventDetails;
+  readonly mapIterationSucceededEventDetails?: MapIterationEventDetails;
+  readonly mapIterationFailedEventDetails?: MapIterationEventDetails;
+  readonly mapIterationAbortedEventDetails?: MapIterationEventDetails;
+  readonly lambdaFunctionFailedEventDetails?: LambdaFunctionFailedEventDetails;
+  readonly lambdaFunctionScheduleFailedEventDetails?: LambdaFunctionScheduleFailedEventDetails;
+  readonly lambdaFunctionScheduledEventDetails?: LambdaFunctionScheduledEventDetails;
+  readonly lambdaFunctionStartFailedEventDetails?: LambdaFunctionStartFailedEventDetails;
+  readonly lambdaFunctionSucceededEventDetails?: LambdaFunctionSucceededEventDetails;
+  readonly lambdaFunctionTimedOutEventDetails?: LambdaFunctionTimedOutEventDetails;
+  readonly stateEnteredEventDetails?: StateEnteredEventDetails;
+  readonly stateExitedEventDetails?: StateExitedEventDetails;
 }
 
-interface HistoryEventExecutionDataDetails {
-  readonly truncated: boolean;
+export interface HistoryEventExecutionDataDetails {
+  readonly truncated?: boolean;
 }
 
-interface InvalidArn {
-  readonly message: string;
+export interface InvalidArn {
+  readonly message?: string;
 }
 
-interface InvalidDefinition {
-  readonly message: string;
+export interface InvalidDefinition {
+  readonly message?: string;
 }
 
-interface InvalidExecutionInput {
-  readonly message: string;
+export interface InvalidExecutionInput {
+  readonly message?: string;
 }
 
-interface InvalidLoggingConfiguration {
-  readonly message: string;
+export interface InvalidLoggingConfiguration {
+  readonly message?: string;
 }
 
-interface InvalidName {
-  readonly message: string;
+export interface InvalidName {
+  readonly message?: string;
 }
 
-interface InvalidOutput {
-  readonly message: string;
+export interface InvalidOutput {
+  readonly message?: string;
 }
 
-interface InvalidToken {
-  readonly message: string;
+export interface InvalidToken {
+  readonly message?: string;
 }
 
-interface InvalidTracingConfiguration {
-  readonly message: string;
+export interface InvalidTracingConfiguration {
+  readonly message?: string;
 }
 
-interface LambdaFunctionFailedEventDetails {
-  readonly error: string;
-  readonly cause: string;
+export interface LambdaFunctionFailedEventDetails {
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface LambdaFunctionScheduleFailedEventDetails {
-  readonly error: string;
-  readonly cause: string;
+export interface LambdaFunctionScheduleFailedEventDetails {
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface LambdaFunctionScheduledEventDetails {
+export interface LambdaFunctionScheduledEventDetails {
   readonly resource: string;
-  readonly input: string;
-  readonly inputDetails: HistoryEventExecutionDataDetails;
-  readonly timeoutInSeconds: number;
+  readonly input?: string;
+  readonly inputDetails?: HistoryEventExecutionDataDetails;
+  readonly timeoutInSeconds?: number;
 }
 
-interface LambdaFunctionStartFailedEventDetails {
-  readonly error: string;
-  readonly cause: string;
+export interface LambdaFunctionStartFailedEventDetails {
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface LambdaFunctionSucceededEventDetails {
-  readonly output: string;
-  readonly outputDetails: HistoryEventExecutionDataDetails;
+export interface LambdaFunctionSucceededEventDetails {
+  readonly output?: string;
+  readonly outputDetails?: HistoryEventExecutionDataDetails;
 }
 
-interface LambdaFunctionTimedOutEventDetails {
-  readonly error: string;
-  readonly cause: string;
+export interface LambdaFunctionTimedOutEventDetails {
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface ListActivitiesInput {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListActivitiesInput {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListActivitiesOutput {
+export interface ListActivitiesOutput {
   readonly activities: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListExecutionsInput {
+export interface ListExecutionsInput {
   readonly stateMachineArn: string;
-  readonly statusFilter: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly statusFilter?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListExecutionsOutput {
+export interface ListExecutionsOutput {
   readonly executions: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListStateMachinesInput {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListStateMachinesInput {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListStateMachinesOutput {
+export interface ListStateMachinesOutput {
   readonly stateMachines: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceInput {
+export interface ListTagsForResourceInput {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceOutput {
-  readonly tags: [];
+export interface ListTagsForResourceOutput {
+  readonly tags?: [];
 }
 
-interface LogDestination {
-  readonly cloudWatchLogsLogGroup: CloudWatchLogsLogGroup;
+export interface LogDestination {
+  readonly cloudWatchLogsLogGroup?: CloudWatchLogsLogGroup;
 }
 
-interface LoggingConfiguration {
-  readonly level: string;
-  readonly includeExecutionData: boolean;
-  readonly destinations: [];
+export interface LoggingConfiguration {
+  readonly level?: string;
+  readonly includeExecutionData?: boolean;
+  readonly destinations?: [];
 }
 
-interface MapIterationEventDetails {
-  readonly name: string;
-  readonly index: number;
+export interface MapIterationEventDetails {
+  readonly name?: string;
+  readonly index?: number;
 }
 
-interface MapStateStartedEventDetails {
-  readonly length: number;
+export interface MapStateStartedEventDetails {
+  readonly length?: number;
 }
 
-interface MissingRequiredParameter {
-  readonly message: string;
+export interface MissingRequiredParameter {
+  readonly message?: string;
 }
 
-interface ResourceNotFound {
-  readonly message: string;
-  readonly resourceName: string;
+export interface ResourceNotFound {
+  readonly message?: string;
+  readonly resourceName?: string;
 }
 
-interface SendTaskFailureInput {
+export interface SendTaskFailureInput {
   readonly taskToken: string;
-  readonly error: string;
-  readonly cause: string;
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface SendTaskFailureOutput {
+export interface SendTaskFailureOutput {
 }
 
-interface SendTaskHeartbeatInput {
+export interface SendTaskHeartbeatInput {
   readonly taskToken: string;
 }
 
-interface SendTaskHeartbeatOutput {
+export interface SendTaskHeartbeatOutput {
 }
 
-interface SendTaskSuccessInput {
+export interface SendTaskSuccessInput {
   readonly taskToken: string;
   readonly output: string;
 }
 
-interface SendTaskSuccessOutput {
+export interface SendTaskSuccessOutput {
 }
 
-interface StartExecutionInput {
+export interface StartExecutionInput {
   readonly stateMachineArn: string;
-  readonly name: string;
-  readonly input: string;
-  readonly traceHeader: string;
+  readonly name?: string;
+  readonly input?: string;
+  readonly traceHeader?: string;
 }
 
-interface StartExecutionOutput {
+export interface StartExecutionOutput {
   readonly executionArn: string;
   readonly startDate: Date;
 }
 
-interface StartSyncExecutionInput {
+export interface StartSyncExecutionInput {
   readonly stateMachineArn: string;
-  readonly name: string;
-  readonly input: string;
-  readonly traceHeader: string;
+  readonly name?: string;
+  readonly input?: string;
+  readonly traceHeader?: string;
 }
 
-interface StartSyncExecutionOutput {
+export interface StartSyncExecutionOutput {
   readonly executionArn: string;
-  readonly stateMachineArn: string;
-  readonly name: string;
+  readonly stateMachineArn?: string;
+  readonly name?: string;
   readonly startDate: Date;
   readonly stopDate: Date;
   readonly status: string;
-  readonly error: string;
-  readonly cause: string;
-  readonly input: string;
-  readonly inputDetails: CloudWatchEventsExecutionDataDetails;
-  readonly output: string;
-  readonly outputDetails: CloudWatchEventsExecutionDataDetails;
-  readonly traceHeader: string;
-  readonly billingDetails: BillingDetails;
+  readonly error?: string;
+  readonly cause?: string;
+  readonly input?: string;
+  readonly inputDetails?: CloudWatchEventsExecutionDataDetails;
+  readonly output?: string;
+  readonly outputDetails?: CloudWatchEventsExecutionDataDetails;
+  readonly traceHeader?: string;
+  readonly billingDetails?: BillingDetails;
 }
 
-interface StateEnteredEventDetails {
+export interface StateEnteredEventDetails {
   readonly name: string;
-  readonly input: string;
-  readonly inputDetails: HistoryEventExecutionDataDetails;
+  readonly input?: string;
+  readonly inputDetails?: HistoryEventExecutionDataDetails;
 }
 
-interface StateExitedEventDetails {
+export interface StateExitedEventDetails {
   readonly name: string;
-  readonly output: string;
-  readonly outputDetails: HistoryEventExecutionDataDetails;
+  readonly output?: string;
+  readonly outputDetails?: HistoryEventExecutionDataDetails;
 }
 
-interface StateMachineAlreadyExists {
-  readonly message: string;
+export interface StateMachineAlreadyExists {
+  readonly message?: string;
 }
 
-interface StateMachineDeleting {
-  readonly message: string;
+export interface StateMachineDeleting {
+  readonly message?: string;
 }
 
-interface StateMachineDoesNotExist {
-  readonly message: string;
+export interface StateMachineDoesNotExist {
+  readonly message?: string;
 }
 
-interface StateMachineLimitExceeded {
-  readonly message: string;
+export interface StateMachineLimitExceeded {
+  readonly message?: string;
 }
 
-interface StateMachineListItem {
+export interface StateMachineListItem {
   readonly stateMachineArn: string;
   readonly name: string;
   readonly type: string;
   readonly creationDate: Date;
 }
 
-interface StateMachineTypeNotSupported {
-  readonly message: string;
+export interface StateMachineTypeNotSupported {
+  readonly message?: string;
 }
 
-interface StopExecutionInput {
+export interface StopExecutionInput {
   readonly executionArn: string;
-  readonly error: string;
-  readonly cause: string;
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface StopExecutionOutput {
+export interface StopExecutionOutput {
   readonly stopDate: Date;
 }
 
-interface Tag {
-  readonly key: string;
-  readonly value: string;
+export interface Tag {
+  readonly key?: string;
+  readonly value?: string;
 }
 
-interface TagResourceInput {
+export interface TagResourceInput {
   readonly resourceArn: string;
   readonly tags: [];
 }
 
-interface TagResourceOutput {
+export interface TagResourceOutput {
 }
 
-interface TaskDoesNotExist {
-  readonly message: string;
+export interface TaskDoesNotExist {
+  readonly message?: string;
 }
 
-interface TaskFailedEventDetails {
+export interface TaskFailedEventDetails {
   readonly resourceType: string;
   readonly resource: string;
-  readonly error: string;
-  readonly cause: string;
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface TaskScheduledEventDetails {
+export interface TaskScheduledEventDetails {
   readonly resourceType: string;
   readonly resource: string;
   readonly region: string;
   readonly parameters: string;
-  readonly timeoutInSeconds: number;
-  readonly heartbeatInSeconds: number;
+  readonly timeoutInSeconds?: number;
+  readonly heartbeatInSeconds?: number;
 }
 
-interface TaskStartFailedEventDetails {
+export interface TaskStartFailedEventDetails {
   readonly resourceType: string;
   readonly resource: string;
-  readonly error: string;
-  readonly cause: string;
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface TaskStartedEventDetails {
+export interface TaskStartedEventDetails {
   readonly resourceType: string;
   readonly resource: string;
 }
 
-interface TaskSubmitFailedEventDetails {
+export interface TaskSubmitFailedEventDetails {
   readonly resourceType: string;
   readonly resource: string;
-  readonly error: string;
-  readonly cause: string;
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface TaskSubmittedEventDetails {
+export interface TaskSubmittedEventDetails {
   readonly resourceType: string;
   readonly resource: string;
-  readonly output: string;
-  readonly outputDetails: HistoryEventExecutionDataDetails;
+  readonly output?: string;
+  readonly outputDetails?: HistoryEventExecutionDataDetails;
 }
 
-interface TaskSucceededEventDetails {
+export interface TaskSucceededEventDetails {
   readonly resourceType: string;
   readonly resource: string;
-  readonly output: string;
-  readonly outputDetails: HistoryEventExecutionDataDetails;
+  readonly output?: string;
+  readonly outputDetails?: HistoryEventExecutionDataDetails;
 }
 
-interface TaskTimedOut {
-  readonly message: string;
+export interface TaskTimedOut {
+  readonly message?: string;
 }
 
-interface TaskTimedOutEventDetails {
+export interface TaskTimedOutEventDetails {
   readonly resourceType: string;
   readonly resource: string;
-  readonly error: string;
-  readonly cause: string;
+  readonly error?: string;
+  readonly cause?: string;
 }
 
-interface TooManyTags {
-  readonly message: string;
-  readonly resourceName: string;
+export interface TooManyTags {
+  readonly message?: string;
+  readonly resourceName?: string;
 }
 
-interface TracingConfiguration {
-  readonly enabled: boolean;
+export interface TracingConfiguration {
+  readonly enabled?: boolean;
 }
 
-interface UntagResourceInput {
+export interface UntagResourceInput {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceOutput {
+export interface UntagResourceOutput {
 }
 
-interface UpdateStateMachineInput {
+export interface UpdateStateMachineInput {
   readonly stateMachineArn: string;
-  readonly definition: string;
-  readonly roleArn: string;
-  readonly loggingConfiguration: LoggingConfiguration;
-  readonly tracingConfiguration: TracingConfiguration;
+  readonly definition?: string;
+  readonly roleArn?: string;
+  readonly loggingConfiguration?: LoggingConfiguration;
+  readonly tracingConfiguration?: TracingConfiguration;
 }
 
-interface UpdateStateMachineOutput {
+export interface UpdateStateMachineOutput {
   readonly updateDate: Date;
 }
+
 

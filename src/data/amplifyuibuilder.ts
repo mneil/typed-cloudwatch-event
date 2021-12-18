@@ -7,60 +7,72 @@ export interface CreateComponent {
   readonly componentToCreate: CreateComponentData;
   readonly environmentName: string;
 }
+
 export interface CreateTheme {
   readonly appId: string;
   readonly clientToken?: string;
   readonly environmentName: string;
   readonly themeToCreate: CreateThemeData;
 }
+
 export interface DeleteComponent {
   readonly appId: string;
   readonly environmentName: string;
   readonly id: string;
 }
+
 export interface DeleteTheme {
   readonly appId: string;
   readonly environmentName: string;
   readonly id: string;
 }
+
 export interface ExchangeCodeForToken {
   readonly provider: string;
   readonly request: ExchangeCodeForTokenRequestBody;
 }
+
 export interface ExportComponents {
   readonly appId: string;
   readonly environmentName: string;
 }
+
 export interface ExportThemes {
   readonly appId: string;
   readonly environmentName: string;
 }
+
 export interface GetComponent {
   readonly appId: string;
   readonly environmentName: string;
   readonly id: string;
 }
+
 export interface GetTheme {
   readonly appId: string;
   readonly environmentName: string;
   readonly id: string;
 }
+
 export interface ListComponents {
   readonly appId: string;
   readonly environmentName: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListThemes {
   readonly appId: string;
   readonly environmentName: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface RefreshToken {
   readonly provider: string;
   readonly refreshTokenBody: RefreshTokenRequestBody;
 }
+
 export interface UpdateComponent {
   readonly appId: string;
   readonly clientToken?: string;
@@ -68,6 +80,7 @@ export interface UpdateComponent {
   readonly id: string;
   readonly updatedComponent: UpdateComponentData;
 }
+
 export interface UpdateTheme {
   readonly appId: string;
   readonly clientToken?: string;
@@ -76,87 +89,85 @@ export interface UpdateTheme {
   readonly updatedTheme: UpdateThemeData;
 }
 
-
-
-interface Component {
+export interface Component {
   readonly appId: string;
   readonly bindingProperties: {[key: string]: any};
-  readonly children: [];
-  readonly collectionProperties: {[key: string]: any};
+  readonly children?: [];
+  readonly collectionProperties?: {[key: string]: any};
   readonly componentType: string;
   readonly createdAt: Date;
   readonly environmentName: string;
   readonly id: string;
-  readonly modifiedAt: Date;
+  readonly modifiedAt?: Date;
   readonly name: string;
   readonly overrides: {[key: string]: any};
   readonly properties: {[key: string]: any};
-  readonly sourceId: string;
-  readonly tags: {[key: string]: any};
+  readonly sourceId?: string;
+  readonly tags?: {[key: string]: any};
   readonly variants: [];
 }
 
-interface ComponentBindingPropertiesValue {
-  readonly bindingProperties: ComponentBindingPropertiesValueProperties;
-  readonly defaultValue: string;
-  readonly type: string;
+export interface ComponentBindingPropertiesValue {
+  readonly bindingProperties?: ComponentBindingPropertiesValueProperties;
+  readonly defaultValue?: string;
+  readonly type?: string;
 }
 
-interface ComponentBindingPropertiesValueProperties {
-  readonly bucket: string;
-  readonly defaultValue: string;
-  readonly field: string;
-  readonly key: string;
-  readonly model: string;
-  readonly predicates: [];
-  readonly userAttribute: string;
+export interface ComponentBindingPropertiesValueProperties {
+  readonly bucket?: string;
+  readonly defaultValue?: string;
+  readonly field?: string;
+  readonly key?: string;
+  readonly model?: string;
+  readonly predicates?: [];
+  readonly userAttribute?: string;
 }
 
-interface ComponentChild {
-  readonly children: [];
+export interface ComponentChild {
+  readonly children?: [];
   readonly componentType: string;
   readonly name: string;
   readonly properties: {[key: string]: any};
 }
 
-interface ComponentConditionProperty {
-  readonly else: ComponentProperty;
-  readonly field: string;
-  readonly operand: string;
-  readonly operator: string;
-  readonly property: string;
-  readonly then: ComponentProperty;
+export interface ComponentConditionProperty {
+  readonly else?: ComponentProperty;
+  readonly field?: string;
+  readonly operand?: string;
+  readonly operator?: string;
+  readonly property?: string;
+  readonly then?: ComponentProperty;
 }
 
-interface ComponentDataConfiguration {
-  readonly identifiers: [];
+export interface ComponentDataConfiguration {
+  readonly identifiers?: [];
   readonly model: string;
-  readonly predicate: Predicate;
-  readonly sort: [];
+  readonly predicate?: Predicate;
+  readonly sort?: [];
 }
 
-interface ComponentProperty {
-  readonly bindingProperties: ComponentPropertyBindingProperties;
-  readonly bindings: {[key: string]: any};
-  readonly collectionBindingProperties: ComponentPropertyBindingProperties;
-  readonly concat: [];
-  readonly condition: ComponentConditionProperty;
-  readonly configured: boolean;
-  readonly defaultValue: string;
-  readonly event: string;
-  readonly importedValue: string;
-  readonly model: string;
-  readonly type: string;
-  readonly userAttribute: string;
-  readonly value: string;
+export interface ComponentProperty {
+  readonly bindingProperties?: ComponentPropertyBindingProperties;
+  readonly bindings?: {[key: string]: any};
+  readonly collectionBindingProperties?: ComponentPropertyBindingProperties;
+  readonly concat?: [];
+  readonly condition?: ComponentConditionProperty;
+  readonly configured?: boolean;
+  readonly defaultValue?: string;
+  readonly event?: string;
+  readonly importedValue?: string;
+  readonly model?: string;
+  readonly type?: string;
+  readonly userAttribute?: string;
+  readonly value?: string;
 }
 
-interface ComponentPropertyBindingProperties {
-  readonly field: string;
+export interface ComponentPropertyBindingProperties {
+  readonly field?: string;
   readonly property: string;
 }
 
-interface ComponentSummary {
+export interface ComponentSummary {
   readonly appId: string;
   readonly componentType: string;
   readonly environmentName: string;
@@ -164,265 +175,266 @@ interface ComponentSummary {
   readonly name: string;
 }
 
-interface ComponentVariant {
-  readonly overrides: {[key: string]: any};
-  readonly variantValues: {[key: string]: any};
+export interface ComponentVariant {
+  readonly overrides?: {[key: string]: any};
+  readonly variantValues?: {[key: string]: any};
 }
 
-interface CreateComponentData {
+export interface CreateComponentData {
   readonly bindingProperties: {[key: string]: any};
-  readonly children: [];
-  readonly collectionProperties: {[key: string]: any};
+  readonly children?: [];
+  readonly collectionProperties?: {[key: string]: any};
   readonly componentType: string;
   readonly name: string;
   readonly overrides: {[key: string]: any};
   readonly properties: {[key: string]: any};
-  readonly sourceId: string;
-  readonly tags: {[key: string]: any};
+  readonly sourceId?: string;
+  readonly tags?: {[key: string]: any};
   readonly variants: [];
 }
 
-interface CreateComponentRequest {
+export interface CreateComponentRequest {
   readonly appId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly componentToCreate: CreateComponentData;
   readonly environmentName: string;
 }
 
-interface CreateComponentResponse {
-  readonly entity: Component;
+export interface CreateComponentResponse {
+  readonly entity?: Component;
 }
 
-interface CreateThemeData {
+export interface CreateThemeData {
   readonly name: string;
-  readonly overrides: [];
-  readonly tags: {[key: string]: any};
+  readonly overrides?: [];
+  readonly tags?: {[key: string]: any};
   readonly values: [];
 }
 
-interface CreateThemeRequest {
+export interface CreateThemeRequest {
   readonly appId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly environmentName: string;
   readonly themeToCreate: CreateThemeData;
 }
 
-interface CreateThemeResponse {
-  readonly entity: Theme;
+export interface CreateThemeResponse {
+  readonly entity?: Theme;
 }
 
-interface DeleteComponentRequest {
+export interface DeleteComponentRequest {
   readonly appId: string;
   readonly environmentName: string;
   readonly id: string;
 }
 
-interface DeleteThemeRequest {
+export interface DeleteThemeRequest {
   readonly appId: string;
   readonly environmentName: string;
   readonly id: string;
 }
 
-interface ExchangeCodeForTokenRequest {
+export interface ExchangeCodeForTokenRequest {
   readonly provider: string;
   readonly request: ExchangeCodeForTokenRequestBody;
 }
 
-interface ExchangeCodeForTokenRequestBody {
+export interface ExchangeCodeForTokenRequestBody {
   readonly code: string;
   readonly redirectUri: string;
 }
 
-interface ExchangeCodeForTokenResponse {
+export interface ExchangeCodeForTokenResponse {
   readonly accessToken: string;
   readonly expiresIn: number;
   readonly refreshToken: string;
 }
 
-interface ExportComponentsRequest {
+export interface ExportComponentsRequest {
   readonly appId: string;
   readonly environmentName: string;
 }
 
-interface ExportComponentsResponse {
+export interface ExportComponentsResponse {
   readonly entities: [];
 }
 
-interface ExportThemesRequest {
+export interface ExportThemesRequest {
   readonly appId: string;
   readonly environmentName: string;
 }
 
-interface ExportThemesResponse {
+export interface ExportThemesResponse {
   readonly entities: [];
 }
 
-interface FormBindingElement {
+export interface FormBindingElement {
   readonly element: string;
   readonly property: string;
 }
 
-interface GetComponentRequest {
+export interface GetComponentRequest {
   readonly appId: string;
   readonly environmentName: string;
   readonly id: string;
 }
 
-interface GetComponentResponse {
-  readonly component: Component;
+export interface GetComponentResponse {
+  readonly component?: Component;
 }
 
-interface GetThemeRequest {
+export interface GetThemeRequest {
   readonly appId: string;
   readonly environmentName: string;
   readonly id: string;
 }
 
-interface GetThemeResponse {
-  readonly theme: Theme;
+export interface GetThemeResponse {
+  readonly theme?: Theme;
 }
 
-interface InternalServerException {
-  readonly message: string;
+export interface InternalServerException {
+  readonly message?: string;
 }
 
-interface InvalidParameterException {
-  readonly message: string;
+export interface InvalidParameterException {
+  readonly message?: string;
 }
 
-interface ListComponentsRequest {
+export interface ListComponentsRequest {
   readonly appId: string;
   readonly environmentName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListComponentsResponse {
+export interface ListComponentsResponse {
   readonly entities: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListThemesRequest {
+export interface ListThemesRequest {
   readonly appId: string;
   readonly environmentName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListThemesResponse {
+export interface ListThemesResponse {
   readonly entities: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface Predicate {
-  readonly and: [];
-  readonly field: string;
-  readonly operand: string;
-  readonly operator: string;
-  readonly or: [];
+export interface Predicate {
+  readonly and?: [];
+  readonly field?: string;
+  readonly operand?: string;
+  readonly operator?: string;
+  readonly or?: [];
 }
 
-interface RefreshTokenRequest {
+export interface RefreshTokenRequest {
   readonly provider: string;
   readonly refreshTokenBody: RefreshTokenRequestBody;
 }
 
-interface RefreshTokenRequestBody {
+export interface RefreshTokenRequestBody {
   readonly token: string;
 }
 
-interface RefreshTokenResponse {
+export interface RefreshTokenResponse {
   readonly accessToken: string;
   readonly expiresIn: number;
 }
 
-interface ResourceConflictException {
-  readonly message: string;
+export interface ResourceConflictException {
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly message: string;
+export interface ServiceQuotaExceededException {
+  readonly message?: string;
 }
 
-interface SortProperty {
+export interface SortProperty {
   readonly direction: string;
   readonly field: string;
 }
 
-interface Theme {
+export interface Theme {
   readonly appId: string;
   readonly createdAt: Date;
   readonly environmentName: string;
   readonly id: string;
-  readonly modifiedAt: Date;
+  readonly modifiedAt?: Date;
   readonly name: string;
-  readonly overrides: [];
-  readonly tags: {[key: string]: any};
+  readonly overrides?: [];
+  readonly tags?: {[key: string]: any};
   readonly values: [];
 }
 
-interface ThemeSummary {
+export interface ThemeSummary {
   readonly appId: string;
   readonly environmentName: string;
   readonly id: string;
   readonly name: string;
 }
 
-interface ThemeValue {
-  readonly children: [];
-  readonly value: string;
+export interface ThemeValue {
+  readonly children?: [];
+  readonly value?: string;
 }
 
-interface ThemeValues {
-  readonly key: string;
-  readonly value: ThemeValue;
+export interface ThemeValues {
+  readonly key?: string;
+  readonly value?: ThemeValue;
 }
 
-interface UpdateComponentData {
-  readonly bindingProperties: {[key: string]: any};
-  readonly children: [];
-  readonly collectionProperties: {[key: string]: any};
-  readonly componentType: string;
-  readonly id: string;
-  readonly name: string;
-  readonly overrides: {[key: string]: any};
-  readonly properties: {[key: string]: any};
-  readonly sourceId: string;
-  readonly variants: [];
+export interface UpdateComponentData {
+  readonly bindingProperties?: {[key: string]: any};
+  readonly children?: [];
+  readonly collectionProperties?: {[key: string]: any};
+  readonly componentType?: string;
+  readonly id?: string;
+  readonly name?: string;
+  readonly overrides?: {[key: string]: any};
+  readonly properties?: {[key: string]: any};
+  readonly sourceId?: string;
+  readonly variants?: [];
 }
 
-interface UpdateComponentRequest {
+export interface UpdateComponentRequest {
   readonly appId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly environmentName: string;
   readonly id: string;
   readonly updatedComponent: UpdateComponentData;
 }
 
-interface UpdateComponentResponse {
-  readonly entity: Component;
+export interface UpdateComponentResponse {
+  readonly entity?: Component;
 }
 
-interface UpdateThemeData {
-  readonly id: string;
-  readonly name: string;
-  readonly overrides: [];
+export interface UpdateThemeData {
+  readonly id?: string;
+  readonly name?: string;
+  readonly overrides?: [];
   readonly values: [];
 }
 
-interface UpdateThemeRequest {
+export interface UpdateThemeRequest {
   readonly appId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly environmentName: string;
   readonly id: string;
   readonly updatedTheme: UpdateThemeData;
 }
 
-interface UpdateThemeResponse {
-  readonly entity: Theme;
+export interface UpdateThemeResponse {
+  readonly entity?: Theme;
 }
+
 

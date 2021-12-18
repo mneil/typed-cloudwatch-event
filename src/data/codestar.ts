@@ -8,6 +8,7 @@ export interface AssociateTeamMember {
   readonly projectRole: string;
   readonly remoteAccessAllowed?: boolean;
 }
+
 export interface CreateProject {
   readonly name: string;
   readonly id: string;
@@ -17,72 +18,88 @@ export interface CreateProject {
   readonly toolchain?: Toolchain;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateUserProfile {
   readonly userArn: string;
   readonly displayName: string;
   readonly emailAddress: string;
   readonly sshPublicKey?: string;
 }
+
 export interface DeleteProject {
   readonly id: string;
   readonly clientRequestToken?: string;
   readonly deleteStack?: boolean;
 }
+
 export interface DeleteUserProfile {
   readonly userArn: string;
 }
+
 export interface DescribeProject {
   readonly id: string;
 }
+
 export interface DescribeUserProfile {
   readonly userArn: string;
 }
+
 export interface DisassociateTeamMember {
   readonly projectId: string;
   readonly userArn: string;
 }
+
 export interface ListProjects {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListResources {
   readonly projectId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForProject {
   readonly id: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTeamMembers {
   readonly projectId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListUserProfiles {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface TagProject {
   readonly id: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagProject {
   readonly id: string;
   readonly tags: [];
 }
+
 export interface UpdateProject {
   readonly id: string;
   readonly name?: string;
   readonly description?: string;
 }
+
 export interface UpdateTeamMember {
   readonly projectId: string;
   readonly userArn: string;
   readonly projectRole?: string;
   readonly remoteAccessAllowed?: boolean;
 }
+
 export interface UpdateUserProfile {
   readonly userArn: string;
   readonly displayName?: string;
@@ -90,133 +107,131 @@ export interface UpdateUserProfile {
   readonly sshPublicKey?: string;
 }
 
-
-
-interface AssociateTeamMemberRequest {
+export interface AssociateTeamMemberRequest {
   readonly projectId: string;
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
   readonly userArn: string;
   readonly projectRole: string;
-  readonly remoteAccessAllowed: boolean;
+  readonly remoteAccessAllowed?: boolean;
 }
 
-interface AssociateTeamMemberResult {
-  readonly clientRequestToken: string;
+export interface AssociateTeamMemberResult {
+  readonly clientRequestToken?: string;
 }
 
-interface Code {
+export interface Code {
   readonly source: CodeSource;
   readonly destination: CodeDestination;
 }
 
-interface CodeCommitCodeDestination {
+export interface CodeCommitCodeDestination {
   readonly name: string;
 }
 
-interface CodeDestination {
-  readonly codeCommit: CodeCommitCodeDestination;
-  readonly gitHub: GitHubCodeDestination;
+export interface CodeDestination {
+  readonly codeCommit?: CodeCommitCodeDestination;
+  readonly gitHub?: GitHubCodeDestination;
 }
 
-interface CodeSource {
+export interface CodeSource {
   readonly s3: S3Location;
 }
 
-interface ConcurrentModificationException {
+export interface ConcurrentModificationException {
 }
 
-interface CreateProjectRequest {
+export interface CreateProjectRequest {
   readonly name: string;
   readonly id: string;
-  readonly description: string;
-  readonly clientRequestToken: string;
-  readonly sourceCode: [];
-  readonly toolchain: Toolchain;
-  readonly tags: {[key: string]: any};
+  readonly description?: string;
+  readonly clientRequestToken?: string;
+  readonly sourceCode?: [];
+  readonly toolchain?: Toolchain;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateProjectResult {
+export interface CreateProjectResult {
   readonly id: string;
   readonly arn: string;
-  readonly clientRequestToken: string;
-  readonly projectTemplateId: string;
+  readonly clientRequestToken?: string;
+  readonly projectTemplateId?: string;
 }
 
-interface CreateUserProfileRequest {
+export interface CreateUserProfileRequest {
   readonly userArn: string;
   readonly displayName: string;
   readonly emailAddress: string;
-  readonly sshPublicKey: string;
+  readonly sshPublicKey?: string;
 }
 
-interface CreateUserProfileResult {
+export interface CreateUserProfileResult {
   readonly userArn: string;
-  readonly displayName: string;
-  readonly emailAddress: string;
-  readonly sshPublicKey: string;
+  readonly displayName?: string;
+  readonly emailAddress?: string;
+  readonly sshPublicKey?: string;
+  readonly createdTimestamp?: Date;
+  readonly lastModifiedTimestamp?: Date;
+}
+
+export interface DeleteProjectRequest {
+  readonly id: string;
+  readonly clientRequestToken?: string;
+  readonly deleteStack?: boolean;
+}
+
+export interface DeleteProjectResult {
+  readonly stackId?: string;
+  readonly projectArn?: string;
+}
+
+export interface DeleteUserProfileRequest {
+  readonly userArn: string;
+}
+
+export interface DeleteUserProfileResult {
+  readonly userArn: string;
+}
+
+export interface DescribeProjectRequest {
+  readonly id: string;
+}
+
+export interface DescribeProjectResult {
+  readonly name?: string;
+  readonly id?: string;
+  readonly arn?: string;
+  readonly description?: string;
+  readonly clientRequestToken?: string;
+  readonly createdTimeStamp?: Date;
+  readonly stackId?: string;
+  readonly projectTemplateId?: string;
+  readonly status?: ProjectStatus;
+}
+
+export interface DescribeUserProfileRequest {
+  readonly userArn: string;
+}
+
+export interface DescribeUserProfileResult {
+  readonly userArn: string;
+  readonly displayName?: string;
+  readonly emailAddress?: string;
+  readonly sshPublicKey?: string;
   readonly createdTimestamp: Date;
   readonly lastModifiedTimestamp: Date;
 }
 
-interface DeleteProjectRequest {
-  readonly id: string;
-  readonly clientRequestToken: string;
-  readonly deleteStack: boolean;
-}
-
-interface DeleteProjectResult {
-  readonly stackId: string;
-  readonly projectArn: string;
-}
-
-interface DeleteUserProfileRequest {
-  readonly userArn: string;
-}
-
-interface DeleteUserProfileResult {
-  readonly userArn: string;
-}
-
-interface DescribeProjectRequest {
-  readonly id: string;
-}
-
-interface DescribeProjectResult {
-  readonly name: string;
-  readonly id: string;
-  readonly arn: string;
-  readonly description: string;
-  readonly clientRequestToken: string;
-  readonly createdTimeStamp: Date;
-  readonly stackId: string;
-  readonly projectTemplateId: string;
-  readonly status: ProjectStatus;
-}
-
-interface DescribeUserProfileRequest {
-  readonly userArn: string;
-}
-
-interface DescribeUserProfileResult {
-  readonly userArn: string;
-  readonly displayName: string;
-  readonly emailAddress: string;
-  readonly sshPublicKey: string;
-  readonly createdTimestamp: Date;
-  readonly lastModifiedTimestamp: Date;
-}
-
-interface DisassociateTeamMemberRequest {
+export interface DisassociateTeamMemberRequest {
   readonly projectId: string;
   readonly userArn: string;
 }
 
-interface DisassociateTeamMemberResult {
+export interface DisassociateTeamMemberResult {
 }
 
-interface GitHubCodeDestination {
+export interface GitHubCodeDestination {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly type: string;
   readonly owner: string;
   readonly privateRepository: boolean;
@@ -224,189 +239,190 @@ interface GitHubCodeDestination {
   readonly token: string;
 }
 
-interface InvalidNextTokenException {
+export interface InvalidNextTokenException {
 }
 
-interface InvalidServiceRoleException {
+export interface InvalidServiceRoleException {
 }
 
-interface LimitExceededException {
+export interface LimitExceededException {
 }
 
-interface ListProjectsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListProjectsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListProjectsResult {
+export interface ListProjectsResult {
   readonly projects: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListResourcesRequest {
+export interface ListResourcesRequest {
   readonly projectId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListResourcesResult {
-  readonly resources: [];
-  readonly nextToken: string;
+export interface ListResourcesResult {
+  readonly resources?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForProjectRequest {
+export interface ListTagsForProjectRequest {
   readonly id: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListTagsForProjectResult {
-  readonly tags: {[key: string]: any};
-  readonly nextToken: string;
+export interface ListTagsForProjectResult {
+  readonly tags?: {[key: string]: any};
+  readonly nextToken?: string;
 }
 
-interface ListTeamMembersRequest {
+export interface ListTeamMembersRequest {
   readonly projectId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListTeamMembersResult {
+export interface ListTeamMembersResult {
   readonly teamMembers: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListUserProfilesRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListUserProfilesRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListUserProfilesResult {
+export interface ListUserProfilesResult {
   readonly userProfiles: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ProjectAlreadyExistsException {
+export interface ProjectAlreadyExistsException {
 }
 
-interface ProjectConfigurationException {
+export interface ProjectConfigurationException {
 }
 
-interface ProjectCreationFailedException {
+export interface ProjectCreationFailedException {
 }
 
-interface ProjectNotFoundException {
+export interface ProjectNotFoundException {
 }
 
-interface ProjectStatus {
+export interface ProjectStatus {
   readonly state: string;
-  readonly reason: string;
+  readonly reason?: string;
 }
 
-interface ProjectSummary {
-  readonly projectId: string;
-  readonly projectArn: string;
+export interface ProjectSummary {
+  readonly projectId?: string;
+  readonly projectArn?: string;
 }
 
-interface Resource {
+export interface Resource {
   readonly id: string;
 }
 
-interface S3Location {
-  readonly bucketName: string;
-  readonly bucketKey: string;
+export interface S3Location {
+  readonly bucketName?: string;
+  readonly bucketKey?: string;
 }
 
-interface TagProjectRequest {
+export interface TagProjectRequest {
   readonly id: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagProjectResult {
-  readonly tags: {[key: string]: any};
+export interface TagProjectResult {
+  readonly tags?: {[key: string]: any};
 }
 
-interface TeamMember {
+export interface TeamMember {
   readonly userArn: string;
   readonly projectRole: string;
-  readonly remoteAccessAllowed: boolean;
+  readonly remoteAccessAllowed?: boolean;
 }
 
-interface TeamMemberAlreadyAssociatedException {
+export interface TeamMemberAlreadyAssociatedException {
 }
 
-interface TeamMemberNotFoundException {
+export interface TeamMemberNotFoundException {
 }
 
-interface Toolchain {
+export interface Toolchain {
   readonly source: ToolchainSource;
-  readonly roleArn: string;
-  readonly stackParameters: {[key: string]: any};
+  readonly roleArn?: string;
+  readonly stackParameters?: {[key: string]: any};
 }
 
-interface ToolchainSource {
+export interface ToolchainSource {
   readonly s3: S3Location;
 }
 
-interface UntagProjectRequest {
+export interface UntagProjectRequest {
   readonly id: string;
   readonly tags: [];
 }
 
-interface UntagProjectResult {
+export interface UntagProjectResult {
 }
 
-interface UpdateProjectRequest {
+export interface UpdateProjectRequest {
   readonly id: string;
-  readonly name: string;
-  readonly description: string;
+  readonly name?: string;
+  readonly description?: string;
 }
 
-interface UpdateProjectResult {
+export interface UpdateProjectResult {
 }
 
-interface UpdateTeamMemberRequest {
+export interface UpdateTeamMemberRequest {
   readonly projectId: string;
   readonly userArn: string;
-  readonly projectRole: string;
-  readonly remoteAccessAllowed: boolean;
+  readonly projectRole?: string;
+  readonly remoteAccessAllowed?: boolean;
 }
 
-interface UpdateTeamMemberResult {
+export interface UpdateTeamMemberResult {
+  readonly userArn?: string;
+  readonly projectRole?: string;
+  readonly remoteAccessAllowed?: boolean;
+}
+
+export interface UpdateUserProfileRequest {
   readonly userArn: string;
-  readonly projectRole: string;
-  readonly remoteAccessAllowed: boolean;
+  readonly displayName?: string;
+  readonly emailAddress?: string;
+  readonly sshPublicKey?: string;
 }
 
-interface UpdateUserProfileRequest {
+export interface UpdateUserProfileResult {
   readonly userArn: string;
-  readonly displayName: string;
-  readonly emailAddress: string;
-  readonly sshPublicKey: string;
+  readonly displayName?: string;
+  readonly emailAddress?: string;
+  readonly sshPublicKey?: string;
+  readonly createdTimestamp?: Date;
+  readonly lastModifiedTimestamp?: Date;
 }
 
-interface UpdateUserProfileResult {
-  readonly userArn: string;
-  readonly displayName: string;
-  readonly emailAddress: string;
-  readonly sshPublicKey: string;
-  readonly createdTimestamp: Date;
-  readonly lastModifiedTimestamp: Date;
+export interface UserProfileAlreadyExistsException {
 }
 
-interface UserProfileAlreadyExistsException {
+export interface UserProfileNotFoundException {
 }
 
-interface UserProfileNotFoundException {
+export interface UserProfileSummary {
+  readonly userArn?: string;
+  readonly displayName?: string;
+  readonly emailAddress?: string;
+  readonly sshPublicKey?: string;
 }
 
-interface UserProfileSummary {
-  readonly userArn: string;
-  readonly displayName: string;
-  readonly emailAddress: string;
-  readonly sshPublicKey: string;
+export interface ValidationException {
 }
 
-interface ValidationException {
-}
 

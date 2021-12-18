@@ -6,16 +6,19 @@ export interface AbortDocumentVersionUpload {
   readonly DocumentId: string;
   readonly VersionId: string;
 }
+
 export interface ActivateUser {
   readonly UserId: string;
   readonly AuthenticationToken?: string;
 }
+
 export interface AddResourcePermissions {
   readonly AuthenticationToken?: string;
   readonly ResourceId: string;
   readonly Principals: [];
   readonly NotificationOptions?: NotificationOptions;
 }
+
 export interface CreateComment {
   readonly AuthenticationToken?: string;
   readonly DocumentId: string;
@@ -26,28 +29,33 @@ export interface CreateComment {
   readonly Visibility?: string;
   readonly NotifyCollaborators?: boolean;
 }
+
 export interface CreateCustomMetadata {
   readonly AuthenticationToken?: string;
   readonly ResourceId: string;
   readonly VersionId?: string;
   readonly CustomMetadata: {[key: string]: any};
 }
+
 export interface CreateFolder {
   readonly AuthenticationToken?: string;
   readonly Name?: string;
   readonly ParentFolderId: string;
 }
+
 export interface CreateLabels {
   readonly ResourceId: string;
   readonly Labels: [];
   readonly AuthenticationToken?: string;
 }
+
 export interface CreateNotificationSubscription {
   readonly OrganizationId: string;
   readonly Endpoint: string;
   readonly Protocol: string;
   readonly SubscriptionType: string;
 }
+
 export interface CreateUser {
   readonly OrganizationId?: string;
   readonly Username: string;
@@ -59,16 +67,19 @@ export interface CreateUser {
   readonly StorageRule?: StorageRuleType;
   readonly AuthenticationToken?: string;
 }
+
 export interface DeactivateUser {
   readonly UserId: string;
   readonly AuthenticationToken?: string;
 }
+
 export interface DeleteComment {
   readonly AuthenticationToken?: string;
   readonly DocumentId: string;
   readonly VersionId: string;
   readonly CommentId: string;
 }
+
 export interface DeleteCustomMetadata {
   readonly AuthenticationToken?: string;
   readonly ResourceId: string;
@@ -76,32 +87,39 @@ export interface DeleteCustomMetadata {
   readonly Keys?: [];
   readonly DeleteAll?: boolean;
 }
+
 export interface DeleteDocument {
   readonly AuthenticationToken?: string;
   readonly DocumentId: string;
 }
+
 export interface DeleteFolder {
   readonly AuthenticationToken?: string;
   readonly FolderId: string;
 }
+
 export interface DeleteFolderContents {
   readonly AuthenticationToken?: string;
   readonly FolderId: string;
 }
+
 export interface DeleteLabels {
   readonly ResourceId: string;
   readonly AuthenticationToken?: string;
   readonly Labels?: [];
   readonly DeleteAll?: boolean;
 }
+
 export interface DeleteNotificationSubscription {
   readonly SubscriptionId: string;
   readonly OrganizationId: string;
 }
+
 export interface DeleteUser {
   readonly AuthenticationToken?: string;
   readonly UserId: string;
 }
+
 export interface DescribeActivities {
   readonly AuthenticationToken?: string;
   readonly StartTime?: Date;
@@ -114,6 +132,7 @@ export interface DescribeActivities {
   readonly Limit?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeComments {
   readonly AuthenticationToken?: string;
   readonly DocumentId: string;
@@ -121,6 +140,7 @@ export interface DescribeComments {
   readonly Limit?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeDocumentVersions {
   readonly AuthenticationToken?: string;
   readonly DocumentId: string;
@@ -129,6 +149,7 @@ export interface DescribeDocumentVersions {
   readonly Include?: string;
   readonly Fields?: string;
 }
+
 export interface DescribeFolderContents {
   readonly AuthenticationToken?: string;
   readonly FolderId: string;
@@ -139,6 +160,7 @@ export interface DescribeFolderContents {
   readonly Type?: string;
   readonly Include?: string;
 }
+
 export interface DescribeGroups {
   readonly AuthenticationToken?: string;
   readonly SearchQuery: string;
@@ -146,11 +168,13 @@ export interface DescribeGroups {
   readonly Marker?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeNotificationSubscriptions {
   readonly OrganizationId: string;
   readonly Marker?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeResourcePermissions {
   readonly AuthenticationToken?: string;
   readonly ResourceId: string;
@@ -158,11 +182,13 @@ export interface DescribeResourcePermissions {
   readonly Limit?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeRootFolders {
   readonly AuthenticationToken: string;
   readonly Limit?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeUsers {
   readonly AuthenticationToken?: string;
   readonly OrganizationId?: string;
@@ -175,14 +201,17 @@ export interface DescribeUsers {
   readonly Limit?: number;
   readonly Fields?: string;
 }
+
 export interface GetCurrentUser {
   readonly AuthenticationToken: string;
 }
+
 export interface GetDocument {
   readonly AuthenticationToken?: string;
   readonly DocumentId: string;
   readonly IncludeCustomMetadata?: boolean;
 }
+
 export interface GetDocumentPath {
   readonly AuthenticationToken?: string;
   readonly DocumentId: string;
@@ -190,6 +219,7 @@ export interface GetDocumentPath {
   readonly Fields?: string;
   readonly Marker?: string;
 }
+
 export interface GetDocumentVersion {
   readonly AuthenticationToken?: string;
   readonly DocumentId: string;
@@ -197,11 +227,13 @@ export interface GetDocumentVersion {
   readonly Fields?: string;
   readonly IncludeCustomMetadata?: boolean;
 }
+
 export interface GetFolder {
   readonly AuthenticationToken?: string;
   readonly FolderId: string;
   readonly IncludeCustomMetadata?: boolean;
 }
+
 export interface GetFolderPath {
   readonly AuthenticationToken?: string;
   readonly FolderId: string;
@@ -209,6 +241,7 @@ export interface GetFolderPath {
   readonly Fields?: string;
   readonly Marker?: string;
 }
+
 export interface GetResources {
   readonly AuthenticationToken?: string;
   readonly UserId?: string;
@@ -216,6 +249,7 @@ export interface GetResources {
   readonly Limit?: number;
   readonly Marker?: string;
 }
+
 export interface InitiateDocumentVersionUpload {
   readonly AuthenticationToken?: string;
   readonly Id?: string;
@@ -226,16 +260,19 @@ export interface InitiateDocumentVersionUpload {
   readonly DocumentSizeInBytes?: number;
   readonly ParentFolderId: string;
 }
+
 export interface RemoveAllResourcePermissions {
   readonly AuthenticationToken?: string;
   readonly ResourceId: string;
 }
+
 export interface RemoveResourcePermission {
   readonly AuthenticationToken?: string;
   readonly ResourceId: string;
   readonly PrincipalId: string;
   readonly PrincipalType?: string;
 }
+
 export interface UpdateDocument {
   readonly AuthenticationToken?: string;
   readonly DocumentId: string;
@@ -243,12 +280,14 @@ export interface UpdateDocument {
   readonly ParentFolderId?: string;
   readonly ResourceState?: string;
 }
+
 export interface UpdateDocumentVersion {
   readonly AuthenticationToken?: string;
   readonly DocumentId: string;
   readonly VersionId: string;
   readonly VersionStatus?: string;
 }
+
 export interface UpdateFolder {
   readonly AuthenticationToken?: string;
   readonly FolderId: string;
@@ -256,6 +295,7 @@ export interface UpdateFolder {
   readonly ParentFolderId?: string;
   readonly ResourceState?: string;
 }
+
 export interface UpdateUser {
   readonly AuthenticationToken?: string;
   readonly UserId: string;
@@ -268,716 +308,715 @@ export interface UpdateUser {
   readonly GrantPoweruserPrivileges?: string;
 }
 
-
-
-interface AbortDocumentVersionUploadRequest {
-  readonly AuthenticationToken: string;
+export interface AbortDocumentVersionUploadRequest {
+  readonly AuthenticationToken?: string;
   readonly DocumentId: string;
   readonly VersionId: string;
 }
 
-interface ActivateUserRequest {
+export interface ActivateUserRequest {
   readonly UserId: string;
-  readonly AuthenticationToken: string;
+  readonly AuthenticationToken?: string;
 }
 
-interface ActivateUserResponse {
-  readonly User: User;
+export interface ActivateUserResponse {
+  readonly User?: User;
 }
 
-interface Activity {
-  readonly Type: string;
-  readonly TimeStamp: Date;
-  readonly IsIndirectActivity: boolean;
-  readonly OrganizationId: string;
-  readonly Initiator: UserMetadata;
-  readonly Participants: Participants;
-  readonly ResourceMetadata: ResourceMetadata;
-  readonly OriginalParent: ResourceMetadata;
-  readonly CommentMetadata: CommentMetadata;
+export interface Activity {
+  readonly Type?: string;
+  readonly TimeStamp?: Date;
+  readonly IsIndirectActivity?: boolean;
+  readonly OrganizationId?: string;
+  readonly Initiator?: UserMetadata;
+  readonly Participants?: Participants;
+  readonly ResourceMetadata?: ResourceMetadata;
+  readonly OriginalParent?: ResourceMetadata;
+  readonly CommentMetadata?: CommentMetadata;
 }
 
-interface AddResourcePermissionsRequest {
-  readonly AuthenticationToken: string;
+export interface AddResourcePermissionsRequest {
+  readonly AuthenticationToken?: string;
   readonly ResourceId: string;
   readonly Principals: [];
-  readonly NotificationOptions: NotificationOptions;
+  readonly NotificationOptions?: NotificationOptions;
 }
 
-interface AddResourcePermissionsResponse {
-  readonly ShareResults: [];
+export interface AddResourcePermissionsResponse {
+  readonly ShareResults?: [];
 }
 
-interface Comment {
+export interface Comment {
   readonly CommentId: string;
-  readonly ParentId: string;
-  readonly ThreadId: string;
-  readonly Text: string;
-  readonly Contributor: User;
-  readonly CreatedTimestamp: Date;
-  readonly Status: string;
-  readonly Visibility: string;
-  readonly RecipientId: string;
+  readonly ParentId?: string;
+  readonly ThreadId?: string;
+  readonly Text?: string;
+  readonly Contributor?: User;
+  readonly CreatedTimestamp?: Date;
+  readonly Status?: string;
+  readonly Visibility?: string;
+  readonly RecipientId?: string;
 }
 
-interface CommentMetadata {
-  readonly CommentId: string;
-  readonly Contributor: User;
-  readonly CreatedTimestamp: Date;
-  readonly CommentStatus: string;
-  readonly RecipientId: string;
+export interface CommentMetadata {
+  readonly CommentId?: string;
+  readonly Contributor?: User;
+  readonly CreatedTimestamp?: Date;
+  readonly CommentStatus?: string;
+  readonly RecipientId?: string;
 }
 
-interface ConcurrentModificationException {
-  readonly Message: string;
+export interface ConcurrentModificationException {
+  readonly Message?: string;
 }
 
-interface ConflictingOperationException {
-  readonly Message: string;
+export interface ConflictingOperationException {
+  readonly Message?: string;
 }
 
-interface CreateCommentRequest {
-  readonly AuthenticationToken: string;
+export interface CreateCommentRequest {
+  readonly AuthenticationToken?: string;
   readonly DocumentId: string;
   readonly VersionId: string;
-  readonly ParentId: string;
-  readonly ThreadId: string;
+  readonly ParentId?: string;
+  readonly ThreadId?: string;
   readonly Text: string;
-  readonly Visibility: string;
-  readonly NotifyCollaborators: boolean;
+  readonly Visibility?: string;
+  readonly NotifyCollaborators?: boolean;
 }
 
-interface CreateCommentResponse {
-  readonly Comment: Comment;
+export interface CreateCommentResponse {
+  readonly Comment?: Comment;
 }
 
-interface CreateCustomMetadataRequest {
-  readonly AuthenticationToken: string;
+export interface CreateCustomMetadataRequest {
+  readonly AuthenticationToken?: string;
   readonly ResourceId: string;
-  readonly VersionId: string;
+  readonly VersionId?: string;
   readonly CustomMetadata: {[key: string]: any};
 }
 
-interface CreateCustomMetadataResponse {
+export interface CreateCustomMetadataResponse {
 }
 
-interface CreateFolderRequest {
-  readonly AuthenticationToken: string;
-  readonly Name: string;
+export interface CreateFolderRequest {
+  readonly AuthenticationToken?: string;
+  readonly Name?: string;
   readonly ParentFolderId: string;
 }
 
-interface CreateFolderResponse {
-  readonly Metadata: FolderMetadata;
+export interface CreateFolderResponse {
+  readonly Metadata?: FolderMetadata;
 }
 
-interface CreateLabelsRequest {
+export interface CreateLabelsRequest {
   readonly ResourceId: string;
   readonly Labels: [];
-  readonly AuthenticationToken: string;
+  readonly AuthenticationToken?: string;
 }
 
-interface CreateLabelsResponse {
+export interface CreateLabelsResponse {
 }
 
-interface CreateNotificationSubscriptionRequest {
+export interface CreateNotificationSubscriptionRequest {
   readonly OrganizationId: string;
   readonly Endpoint: string;
   readonly Protocol: string;
   readonly SubscriptionType: string;
 }
 
-interface CreateNotificationSubscriptionResponse {
-  readonly Subscription: Subscription;
+export interface CreateNotificationSubscriptionResponse {
+  readonly Subscription?: Subscription;
 }
 
-interface CreateUserRequest {
-  readonly OrganizationId: string;
+export interface CreateUserRequest {
+  readonly OrganizationId?: string;
   readonly Username: string;
-  readonly EmailAddress: string;
+  readonly EmailAddress?: string;
   readonly GivenName: string;
   readonly Surname: string;
   readonly Password: string;
-  readonly TimeZoneId: string;
-  readonly StorageRule: StorageRuleType;
-  readonly AuthenticationToken: string;
+  readonly TimeZoneId?: string;
+  readonly StorageRule?: StorageRuleType;
+  readonly AuthenticationToken?: string;
 }
 
-interface CreateUserResponse {
-  readonly User: User;
+export interface CreateUserResponse {
+  readonly User?: User;
 }
 
-interface CustomMetadataLimitExceededException {
-  readonly Message: string;
+export interface CustomMetadataLimitExceededException {
+  readonly Message?: string;
 }
 
-interface DeactivateUserRequest {
+export interface DeactivateUserRequest {
   readonly UserId: string;
-  readonly AuthenticationToken: string;
+  readonly AuthenticationToken?: string;
 }
 
-interface DeactivatingLastSystemUserException {
+export interface DeactivatingLastSystemUserException {
 }
 
-interface DeleteCommentRequest {
-  readonly AuthenticationToken: string;
+export interface DeleteCommentRequest {
+  readonly AuthenticationToken?: string;
   readonly DocumentId: string;
   readonly VersionId: string;
   readonly CommentId: string;
 }
 
-interface DeleteCustomMetadataRequest {
-  readonly AuthenticationToken: string;
+export interface DeleteCustomMetadataRequest {
+  readonly AuthenticationToken?: string;
   readonly ResourceId: string;
-  readonly VersionId: string;
-  readonly Keys: [];
-  readonly DeleteAll: boolean;
+  readonly VersionId?: string;
+  readonly Keys?: [];
+  readonly DeleteAll?: boolean;
 }
 
-interface DeleteCustomMetadataResponse {
+export interface DeleteCustomMetadataResponse {
 }
 
-interface DeleteDocumentRequest {
-  readonly AuthenticationToken: string;
+export interface DeleteDocumentRequest {
+  readonly AuthenticationToken?: string;
   readonly DocumentId: string;
 }
 
-interface DeleteFolderContentsRequest {
-  readonly AuthenticationToken: string;
+export interface DeleteFolderContentsRequest {
+  readonly AuthenticationToken?: string;
   readonly FolderId: string;
 }
 
-interface DeleteFolderRequest {
-  readonly AuthenticationToken: string;
+export interface DeleteFolderRequest {
+  readonly AuthenticationToken?: string;
   readonly FolderId: string;
 }
 
-interface DeleteLabelsRequest {
+export interface DeleteLabelsRequest {
   readonly ResourceId: string;
-  readonly AuthenticationToken: string;
-  readonly Labels: [];
-  readonly DeleteAll: boolean;
+  readonly AuthenticationToken?: string;
+  readonly Labels?: [];
+  readonly DeleteAll?: boolean;
 }
 
-interface DeleteLabelsResponse {
+export interface DeleteLabelsResponse {
 }
 
-interface DeleteNotificationSubscriptionRequest {
+export interface DeleteNotificationSubscriptionRequest {
   readonly SubscriptionId: string;
   readonly OrganizationId: string;
 }
 
-interface DeleteUserRequest {
-  readonly AuthenticationToken: string;
+export interface DeleteUserRequest {
+  readonly AuthenticationToken?: string;
   readonly UserId: string;
 }
 
-interface DescribeActivitiesRequest {
-  readonly AuthenticationToken: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly OrganizationId: string;
-  readonly ActivityTypes: string;
-  readonly ResourceId: string;
-  readonly UserId: string;
-  readonly IncludeIndirectActivities: boolean;
-  readonly Limit: number;
-  readonly Marker: string;
+export interface DescribeActivitiesRequest {
+  readonly AuthenticationToken?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly OrganizationId?: string;
+  readonly ActivityTypes?: string;
+  readonly ResourceId?: string;
+  readonly UserId?: string;
+  readonly IncludeIndirectActivities?: boolean;
+  readonly Limit?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeActivitiesResponse {
-  readonly UserActivities: [];
-  readonly Marker: string;
+export interface DescribeActivitiesResponse {
+  readonly UserActivities?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeCommentsRequest {
-  readonly AuthenticationToken: string;
+export interface DescribeCommentsRequest {
+  readonly AuthenticationToken?: string;
   readonly DocumentId: string;
   readonly VersionId: string;
-  readonly Limit: number;
-  readonly Marker: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeCommentsResponse {
-  readonly Comments: [];
-  readonly Marker: string;
+export interface DescribeCommentsResponse {
+  readonly Comments?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeDocumentVersionsRequest {
-  readonly AuthenticationToken: string;
+export interface DescribeDocumentVersionsRequest {
+  readonly AuthenticationToken?: string;
   readonly DocumentId: string;
-  readonly Marker: string;
-  readonly Limit: number;
-  readonly Include: string;
-  readonly Fields: string;
+  readonly Marker?: string;
+  readonly Limit?: number;
+  readonly Include?: string;
+  readonly Fields?: string;
 }
 
-interface DescribeDocumentVersionsResponse {
-  readonly DocumentVersions: [];
-  readonly Marker: string;
+export interface DescribeDocumentVersionsResponse {
+  readonly DocumentVersions?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeFolderContentsRequest {
-  readonly AuthenticationToken: string;
+export interface DescribeFolderContentsRequest {
+  readonly AuthenticationToken?: string;
   readonly FolderId: string;
-  readonly Sort: string;
-  readonly Order: string;
-  readonly Limit: number;
-  readonly Marker: string;
-  readonly Type: string;
-  readonly Include: string;
+  readonly Sort?: string;
+  readonly Order?: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
+  readonly Type?: string;
+  readonly Include?: string;
 }
 
-interface DescribeFolderContentsResponse {
-  readonly Folders: [];
-  readonly Documents: [];
-  readonly Marker: string;
+export interface DescribeFolderContentsResponse {
+  readonly Folders?: [];
+  readonly Documents?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeGroupsRequest {
-  readonly AuthenticationToken: string;
+export interface DescribeGroupsRequest {
+  readonly AuthenticationToken?: string;
   readonly SearchQuery: string;
+  readonly OrganizationId?: string;
+  readonly Marker?: string;
+  readonly Limit?: number;
+}
+
+export interface DescribeGroupsResponse {
+  readonly Groups?: [];
+  readonly Marker?: string;
+}
+
+export interface DescribeNotificationSubscriptionsRequest {
   readonly OrganizationId: string;
-  readonly Marker: string;
-  readonly Limit: number;
+  readonly Marker?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeGroupsResponse {
-  readonly Groups: [];
-  readonly Marker: string;
+export interface DescribeNotificationSubscriptionsResponse {
+  readonly Subscriptions?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeNotificationSubscriptionsRequest {
-  readonly OrganizationId: string;
-  readonly Marker: string;
-  readonly Limit: number;
-}
-
-interface DescribeNotificationSubscriptionsResponse {
-  readonly Subscriptions: [];
-  readonly Marker: string;
-}
-
-interface DescribeResourcePermissionsRequest {
-  readonly AuthenticationToken: string;
+export interface DescribeResourcePermissionsRequest {
+  readonly AuthenticationToken?: string;
   readonly ResourceId: string;
-  readonly PrincipalId: string;
-  readonly Limit: number;
-  readonly Marker: string;
+  readonly PrincipalId?: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeResourcePermissionsResponse {
-  readonly Principals: [];
-  readonly Marker: string;
+export interface DescribeResourcePermissionsResponse {
+  readonly Principals?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeRootFoldersRequest {
+export interface DescribeRootFoldersRequest {
   readonly AuthenticationToken: string;
-  readonly Limit: number;
-  readonly Marker: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeRootFoldersResponse {
-  readonly Folders: [];
-  readonly Marker: string;
+export interface DescribeRootFoldersResponse {
+  readonly Folders?: [];
+  readonly Marker?: string;
 }
 
-interface DescribeUsersRequest {
+export interface DescribeUsersRequest {
+  readonly AuthenticationToken?: string;
+  readonly OrganizationId?: string;
+  readonly UserIds?: string;
+  readonly Query?: string;
+  readonly Include?: string;
+  readonly Order?: string;
+  readonly Sort?: string;
+  readonly Marker?: string;
+  readonly Limit?: number;
+  readonly Fields?: string;
+}
+
+export interface DescribeUsersResponse {
+  readonly Users?: [];
+  readonly TotalNumberOfUsers?: number;
+  readonly Marker?: string;
+}
+
+export interface DocumentLockedForCommentsException {
+  readonly Message?: string;
+}
+
+export interface DocumentMetadata {
+  readonly Id?: string;
+  readonly CreatorId?: string;
+  readonly ParentFolderId?: string;
+  readonly CreatedTimestamp?: Date;
+  readonly ModifiedTimestamp?: Date;
+  readonly LatestVersionMetadata?: DocumentVersionMetadata;
+  readonly ResourceState?: string;
+  readonly Labels?: [];
+}
+
+export interface DocumentVersionMetadata {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly ContentType?: string;
+  readonly Size?: number;
+  readonly Signature?: string;
+  readonly Status?: string;
+  readonly CreatedTimestamp?: Date;
+  readonly ModifiedTimestamp?: Date;
+  readonly ContentCreatedTimestamp?: Date;
+  readonly ContentModifiedTimestamp?: Date;
+  readonly CreatorId?: string;
+  readonly Thumbnail?: {[key: string]: any};
+  readonly Source?: {[key: string]: any};
+}
+
+export interface DraftUploadOutOfSyncException {
+  readonly Message?: string;
+}
+
+export interface EntityAlreadyExistsException {
+  readonly Message?: string;
+}
+
+export interface EntityNotExistsException {
+  readonly Message?: string;
+  readonly EntityIds?: [];
+}
+
+export interface FailedDependencyException {
+  readonly Message?: string;
+}
+
+export interface FolderMetadata {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly CreatorId?: string;
+  readonly ParentFolderId?: string;
+  readonly CreatedTimestamp?: Date;
+  readonly ModifiedTimestamp?: Date;
+  readonly ResourceState?: string;
+  readonly Signature?: string;
+  readonly Labels?: [];
+  readonly Size?: number;
+  readonly LatestVersionSize?: number;
+}
+
+export interface GetCurrentUserRequest {
   readonly AuthenticationToken: string;
-  readonly OrganizationId: string;
-  readonly UserIds: string;
-  readonly Query: string;
-  readonly Include: string;
-  readonly Order: string;
-  readonly Sort: string;
-  readonly Marker: string;
-  readonly Limit: number;
-  readonly Fields: string;
 }
 
-interface DescribeUsersResponse {
-  readonly Users: [];
-  readonly TotalNumberOfUsers: number;
-  readonly Marker: string;
+export interface GetCurrentUserResponse {
+  readonly User?: User;
 }
 
-interface DocumentLockedForCommentsException {
-  readonly Message: string;
-}
-
-interface DocumentMetadata {
-  readonly Id: string;
-  readonly CreatorId: string;
-  readonly ParentFolderId: string;
-  readonly CreatedTimestamp: Date;
-  readonly ModifiedTimestamp: Date;
-  readonly LatestVersionMetadata: DocumentVersionMetadata;
-  readonly ResourceState: string;
-  readonly Labels: [];
-}
-
-interface DocumentVersionMetadata {
-  readonly Id: string;
-  readonly Name: string;
-  readonly ContentType: string;
-  readonly Size: number;
-  readonly Signature: string;
-  readonly Status: string;
-  readonly CreatedTimestamp: Date;
-  readonly ModifiedTimestamp: Date;
-  readonly ContentCreatedTimestamp: Date;
-  readonly ContentModifiedTimestamp: Date;
-  readonly CreatorId: string;
-  readonly Thumbnail: {[key: string]: any};
-  readonly Source: {[key: string]: any};
-}
-
-interface DraftUploadOutOfSyncException {
-  readonly Message: string;
-}
-
-interface EntityAlreadyExistsException {
-  readonly Message: string;
-}
-
-interface EntityNotExistsException {
-  readonly Message: string;
-  readonly EntityIds: [];
-}
-
-interface FailedDependencyException {
-  readonly Message: string;
-}
-
-interface FolderMetadata {
-  readonly Id: string;
-  readonly Name: string;
-  readonly CreatorId: string;
-  readonly ParentFolderId: string;
-  readonly CreatedTimestamp: Date;
-  readonly ModifiedTimestamp: Date;
-  readonly ResourceState: string;
-  readonly Signature: string;
-  readonly Labels: [];
-  readonly Size: number;
-  readonly LatestVersionSize: number;
-}
-
-interface GetCurrentUserRequest {
-  readonly AuthenticationToken: string;
-}
-
-interface GetCurrentUserResponse {
-  readonly User: User;
-}
-
-interface GetDocumentPathRequest {
-  readonly AuthenticationToken: string;
+export interface GetDocumentPathRequest {
+  readonly AuthenticationToken?: string;
   readonly DocumentId: string;
-  readonly Limit: number;
-  readonly Fields: string;
-  readonly Marker: string;
+  readonly Limit?: number;
+  readonly Fields?: string;
+  readonly Marker?: string;
 }
 
-interface GetDocumentPathResponse {
-  readonly Path: ResourcePath;
+export interface GetDocumentPathResponse {
+  readonly Path?: ResourcePath;
 }
 
-interface GetDocumentRequest {
-  readonly AuthenticationToken: string;
+export interface GetDocumentRequest {
+  readonly AuthenticationToken?: string;
   readonly DocumentId: string;
-  readonly IncludeCustomMetadata: boolean;
+  readonly IncludeCustomMetadata?: boolean;
 }
 
-interface GetDocumentResponse {
-  readonly Metadata: DocumentMetadata;
-  readonly CustomMetadata: {[key: string]: any};
+export interface GetDocumentResponse {
+  readonly Metadata?: DocumentMetadata;
+  readonly CustomMetadata?: {[key: string]: any};
 }
 
-interface GetDocumentVersionRequest {
-  readonly AuthenticationToken: string;
+export interface GetDocumentVersionRequest {
+  readonly AuthenticationToken?: string;
   readonly DocumentId: string;
   readonly VersionId: string;
-  readonly Fields: string;
-  readonly IncludeCustomMetadata: boolean;
+  readonly Fields?: string;
+  readonly IncludeCustomMetadata?: boolean;
 }
 
-interface GetDocumentVersionResponse {
-  readonly Metadata: DocumentVersionMetadata;
-  readonly CustomMetadata: {[key: string]: any};
+export interface GetDocumentVersionResponse {
+  readonly Metadata?: DocumentVersionMetadata;
+  readonly CustomMetadata?: {[key: string]: any};
 }
 
-interface GetFolderPathRequest {
-  readonly AuthenticationToken: string;
+export interface GetFolderPathRequest {
+  readonly AuthenticationToken?: string;
   readonly FolderId: string;
-  readonly Limit: number;
-  readonly Fields: string;
-  readonly Marker: string;
+  readonly Limit?: number;
+  readonly Fields?: string;
+  readonly Marker?: string;
 }
 
-interface GetFolderPathResponse {
-  readonly Path: ResourcePath;
+export interface GetFolderPathResponse {
+  readonly Path?: ResourcePath;
 }
 
-interface GetFolderRequest {
-  readonly AuthenticationToken: string;
+export interface GetFolderRequest {
+  readonly AuthenticationToken?: string;
   readonly FolderId: string;
-  readonly IncludeCustomMetadata: boolean;
+  readonly IncludeCustomMetadata?: boolean;
 }
 
-interface GetFolderResponse {
-  readonly Metadata: FolderMetadata;
-  readonly CustomMetadata: {[key: string]: any};
+export interface GetFolderResponse {
+  readonly Metadata?: FolderMetadata;
+  readonly CustomMetadata?: {[key: string]: any};
 }
 
-interface GetResourcesRequest {
-  readonly AuthenticationToken: string;
+export interface GetResourcesRequest {
+  readonly AuthenticationToken?: string;
+  readonly UserId?: string;
+  readonly CollectionType?: string;
+  readonly Limit?: number;
+  readonly Marker?: string;
+}
+
+export interface GetResourcesResponse {
+  readonly Folders?: [];
+  readonly Documents?: [];
+  readonly Marker?: string;
+}
+
+export interface GroupMetadata {
+  readonly Id?: string;
+  readonly Name?: string;
+}
+
+export interface IllegalUserStateException {
+  readonly Message?: string;
+}
+
+export interface InitiateDocumentVersionUploadRequest {
+  readonly AuthenticationToken?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly ContentCreatedTimestamp?: Date;
+  readonly ContentModifiedTimestamp?: Date;
+  readonly ContentType?: string;
+  readonly DocumentSizeInBytes?: number;
+  readonly ParentFolderId: string;
+}
+
+export interface InitiateDocumentVersionUploadResponse {
+  readonly Metadata?: DocumentMetadata;
+  readonly UploadMetadata?: UploadMetadata;
+}
+
+export interface InvalidArgumentException {
+  readonly Message?: string;
+}
+
+export interface InvalidCommentOperationException {
+  readonly Message?: string;
+}
+
+export interface InvalidOperationException {
+  readonly Message?: string;
+}
+
+export interface InvalidPasswordException {
+  readonly Message?: string;
+}
+
+export interface LimitExceededException {
+  readonly Message?: string;
+}
+
+export interface NotificationOptions {
+  readonly SendEmail?: boolean;
+  readonly EmailMessage?: string;
+}
+
+export interface Participants {
+  readonly Users?: [];
+  readonly Groups?: [];
+}
+
+export interface PermissionInfo {
+  readonly Role?: string;
+  readonly Type?: string;
+}
+
+export interface Principal {
+  readonly Id?: string;
+  readonly Type?: string;
+  readonly Roles?: [];
+}
+
+export interface ProhibitedStateException {
+  readonly Message?: string;
+}
+
+export interface RemoveAllResourcePermissionsRequest {
+  readonly AuthenticationToken?: string;
+  readonly ResourceId: string;
+}
+
+export interface RemoveResourcePermissionRequest {
+  readonly AuthenticationToken?: string;
+  readonly ResourceId: string;
+  readonly PrincipalId: string;
+  readonly PrincipalType?: string;
+}
+
+export interface RequestedEntityTooLargeException {
+  readonly Message?: string;
+}
+
+export interface ResourceAlreadyCheckedOutException {
+  readonly Message?: string;
+}
+
+export interface ResourceMetadata {
+  readonly Type?: string;
+  readonly Name?: string;
+  readonly OriginalName?: string;
+  readonly Id?: string;
+  readonly VersionId?: string;
+  readonly Owner?: UserMetadata;
+  readonly ParentId?: string;
+}
+
+export interface ResourcePath {
+  readonly Components?: [];
+}
+
+export interface ResourcePathComponent {
+  readonly Id?: string;
+  readonly Name?: string;
+}
+
+export interface ServiceUnavailableException {
+  readonly Message?: string;
+}
+
+export interface SharePrincipal {
+  readonly Id: string;
+  readonly Type: string;
+  readonly Role: string;
+}
+
+export interface ShareResult {
+  readonly PrincipalId?: string;
+  readonly InviteePrincipalId?: string;
+  readonly Role?: string;
+  readonly Status?: string;
+  readonly ShareId?: string;
+  readonly StatusMessage?: string;
+}
+
+export interface StorageLimitExceededException {
+  readonly Message?: string;
+}
+
+export interface StorageLimitWillExceedException {
+  readonly Message?: string;
+}
+
+export interface StorageRuleType {
+  readonly StorageAllocatedInBytes?: number;
+  readonly StorageType?: string;
+}
+
+export interface Subscription {
+  readonly SubscriptionId?: string;
+  readonly EndPoint?: string;
+  readonly Protocol?: string;
+}
+
+export interface TooManyLabelsException {
+  readonly Message?: string;
+}
+
+export interface TooManySubscriptionsException {
+  readonly Message?: string;
+}
+
+export interface UnauthorizedOperationException {
+}
+
+export interface UnauthorizedResourceAccessException {
+  readonly Message?: string;
+}
+
+export interface UpdateDocumentRequest {
+  readonly AuthenticationToken?: string;
+  readonly DocumentId: string;
+  readonly Name?: string;
+  readonly ParentFolderId?: string;
+  readonly ResourceState?: string;
+}
+
+export interface UpdateDocumentVersionRequest {
+  readonly AuthenticationToken?: string;
+  readonly DocumentId: string;
+  readonly VersionId: string;
+  readonly VersionStatus?: string;
+}
+
+export interface UpdateFolderRequest {
+  readonly AuthenticationToken?: string;
+  readonly FolderId: string;
+  readonly Name?: string;
+  readonly ParentFolderId?: string;
+  readonly ResourceState?: string;
+}
+
+export interface UpdateUserRequest {
+  readonly AuthenticationToken?: string;
   readonly UserId: string;
-  readonly CollectionType: string;
-  readonly Limit: number;
-  readonly Marker: string;
+  readonly GivenName?: string;
+  readonly Surname?: string;
+  readonly Type?: string;
+  readonly StorageRule?: StorageRuleType;
+  readonly TimeZoneId?: string;
+  readonly Locale?: string;
+  readonly GrantPoweruserPrivileges?: string;
 }
 
-interface GetResourcesResponse {
-  readonly Folders: [];
-  readonly Documents: [];
-  readonly Marker: string;
+export interface UpdateUserResponse {
+  readonly User?: User;
 }
 
-interface GroupMetadata {
-  readonly Id: string;
-  readonly Name: string;
+export interface UploadMetadata {
+  readonly UploadUrl?: string;
+  readonly SignedHeaders?: {[key: string]: any};
 }
 
-interface IllegalUserStateException {
-  readonly Message: string;
+export interface User {
+  readonly Id?: string;
+  readonly Username?: string;
+  readonly EmailAddress?: string;
+  readonly GivenName?: string;
+  readonly Surname?: string;
+  readonly OrganizationId?: string;
+  readonly RootFolderId?: string;
+  readonly RecycleBinFolderId?: string;
+  readonly Status?: string;
+  readonly Type?: string;
+  readonly CreatedTimestamp?: Date;
+  readonly ModifiedTimestamp?: Date;
+  readonly TimeZoneId?: string;
+  readonly Locale?: string;
+  readonly Storage?: UserStorageMetadata;
 }
 
-interface InitiateDocumentVersionUploadRequest {
-  readonly AuthenticationToken: string;
-  readonly Id: string;
-  readonly Name: string;
-  readonly ContentCreatedTimestamp: Date;
-  readonly ContentModifiedTimestamp: Date;
-  readonly ContentType: string;
-  readonly DocumentSizeInBytes: number;
-  readonly ParentFolderId: string;
+export interface UserMetadata {
+  readonly Id?: string;
+  readonly Username?: string;
+  readonly GivenName?: string;
+  readonly Surname?: string;
+  readonly EmailAddress?: string;
 }
 
-interface InitiateDocumentVersionUploadResponse {
-  readonly Metadata: DocumentMetadata;
-  readonly UploadMetadata: UploadMetadata;
+export interface UserStorageMetadata {
+  readonly StorageUtilizedInBytes?: number;
+  readonly StorageRule?: StorageRuleType;
 }
 
-interface InvalidArgumentException {
-  readonly Message: string;
-}
-
-interface InvalidCommentOperationException {
-  readonly Message: string;
-}
-
-interface InvalidOperationException {
-  readonly Message: string;
-}
-
-interface InvalidPasswordException {
-  readonly Message: string;
-}
-
-interface LimitExceededException {
-  readonly Message: string;
-}
-
-interface NotificationOptions {
-  readonly SendEmail: boolean;
-  readonly EmailMessage: string;
-}
-
-interface Participants {
-  readonly Users: [];
-  readonly Groups: [];
-}
-
-interface PermissionInfo {
-  readonly Role: string;
-  readonly Type: string;
-}
-
-interface Principal {
-  readonly Id: string;
-  readonly Type: string;
-  readonly Roles: [];
-}
-
-interface ProhibitedStateException {
-  readonly Message: string;
-}
-
-interface RemoveAllResourcePermissionsRequest {
-  readonly AuthenticationToken: string;
-  readonly ResourceId: string;
-}
-
-interface RemoveResourcePermissionRequest {
-  readonly AuthenticationToken: string;
-  readonly ResourceId: string;
-  readonly PrincipalId: string;
-  readonly PrincipalType: string;
-}
-
-interface RequestedEntityTooLargeException {
-  readonly Message: string;
-}
-
-interface ResourceAlreadyCheckedOutException {
-  readonly Message: string;
-}
-
-interface ResourceMetadata {
-  readonly Type: string;
-  readonly Name: string;
-  readonly OriginalName: string;
-  readonly Id: string;
-  readonly VersionId: string;
-  readonly Owner: UserMetadata;
-  readonly ParentId: string;
-}
-
-interface ResourcePath {
-  readonly Components: [];
-}
-
-interface ResourcePathComponent {
-  readonly Id: string;
-  readonly Name: string;
-}
-
-interface ServiceUnavailableException {
-  readonly Message: string;
-}
-
-interface SharePrincipal {
-  readonly Id: string;
-  readonly Type: string;
-  readonly Role: string;
-}
-
-interface ShareResult {
-  readonly PrincipalId: string;
-  readonly InviteePrincipalId: string;
-  readonly Role: string;
-  readonly Status: string;
-  readonly ShareId: string;
-  readonly StatusMessage: string;
-}
-
-interface StorageLimitExceededException {
-  readonly Message: string;
-}
-
-interface StorageLimitWillExceedException {
-  readonly Message: string;
-}
-
-interface StorageRuleType {
-  readonly StorageAllocatedInBytes: number;
-  readonly StorageType: string;
-}
-
-interface Subscription {
-  readonly SubscriptionId: string;
-  readonly EndPoint: string;
-  readonly Protocol: string;
-}
-
-interface TooManyLabelsException {
-  readonly Message: string;
-}
-
-interface TooManySubscriptionsException {
-  readonly Message: string;
-}
-
-interface UnauthorizedOperationException {
-}
-
-interface UnauthorizedResourceAccessException {
-  readonly Message: string;
-}
-
-interface UpdateDocumentRequest {
-  readonly AuthenticationToken: string;
-  readonly DocumentId: string;
-  readonly Name: string;
-  readonly ParentFolderId: string;
-  readonly ResourceState: string;
-}
-
-interface UpdateDocumentVersionRequest {
-  readonly AuthenticationToken: string;
-  readonly DocumentId: string;
-  readonly VersionId: string;
-  readonly VersionStatus: string;
-}
-
-interface UpdateFolderRequest {
-  readonly AuthenticationToken: string;
-  readonly FolderId: string;
-  readonly Name: string;
-  readonly ParentFolderId: string;
-  readonly ResourceState: string;
-}
-
-interface UpdateUserRequest {
-  readonly AuthenticationToken: string;
-  readonly UserId: string;
-  readonly GivenName: string;
-  readonly Surname: string;
-  readonly Type: string;
-  readonly StorageRule: StorageRuleType;
-  readonly TimeZoneId: string;
-  readonly Locale: string;
-  readonly GrantPoweruserPrivileges: string;
-}
-
-interface UpdateUserResponse {
-  readonly User: User;
-}
-
-interface UploadMetadata {
-  readonly UploadUrl: string;
-  readonly SignedHeaders: {[key: string]: any};
-}
-
-interface User {
-  readonly Id: string;
-  readonly Username: string;
-  readonly EmailAddress: string;
-  readonly GivenName: string;
-  readonly Surname: string;
-  readonly OrganizationId: string;
-  readonly RootFolderId: string;
-  readonly RecycleBinFolderId: string;
-  readonly Status: string;
-  readonly Type: string;
-  readonly CreatedTimestamp: Date;
-  readonly ModifiedTimestamp: Date;
-  readonly TimeZoneId: string;
-  readonly Locale: string;
-  readonly Storage: UserStorageMetadata;
-}
-
-interface UserMetadata {
-  readonly Id: string;
-  readonly Username: string;
-  readonly GivenName: string;
-  readonly Surname: string;
-  readonly EmailAddress: string;
-}
-
-interface UserStorageMetadata {
-  readonly StorageUtilizedInBytes: number;
-  readonly StorageRule: StorageRuleType;
-}
 

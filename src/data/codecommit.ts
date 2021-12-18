@@ -5,10 +5,12 @@ export interface AssociateApprovalRuleTemplateWithRepository {
   readonly approvalRuleTemplateName: string;
   readonly repositoryName: string;
 }
+
 export interface BatchAssociateApprovalRuleTemplateWithRepositories {
   readonly approvalRuleTemplateName: string;
   readonly repositoryNames: [];
 }
+
 export interface BatchDescribeMergeConflicts {
   readonly repositoryName: string;
   readonly destinationCommitSpecifier: string;
@@ -21,27 +23,33 @@ export interface BatchDescribeMergeConflicts {
   readonly conflictResolutionStrategy?: string;
   readonly nextToken?: string;
 }
+
 export interface BatchDisassociateApprovalRuleTemplateFromRepositories {
   readonly approvalRuleTemplateName: string;
   readonly repositoryNames: [];
 }
+
 export interface BatchGetCommits {
   readonly commitIds: [];
   readonly repositoryName: string;
 }
+
 export interface BatchGetRepositories {
   readonly repositoryNames: [];
 }
+
 export interface CreateApprovalRuleTemplate {
   readonly approvalRuleTemplateName: string;
   readonly approvalRuleTemplateContent: string;
   readonly approvalRuleTemplateDescription?: string;
 }
+
 export interface CreateBranch {
   readonly repositoryName: string;
   readonly branchName: string;
   readonly commitId: string;
 }
+
 export interface CreateCommit {
   readonly repositoryName: string;
   readonly branchName: string;
@@ -54,22 +62,26 @@ export interface CreateCommit {
   readonly deleteFiles?: [];
   readonly setFileModes?: [];
 }
+
 export interface CreatePullRequest {
   readonly title: string;
   readonly description?: string;
   readonly targets: [];
   readonly clientRequestToken?: string;
 }
+
 export interface CreatePullRequestApprovalRule {
   readonly pullRequestId: string;
   readonly approvalRuleName: string;
   readonly approvalRuleContent: string;
 }
+
 export interface CreateRepository {
   readonly repositoryName: string;
   readonly repositoryDescription?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateUnreferencedMergeCommit {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
@@ -83,16 +95,20 @@ export interface CreateUnreferencedMergeCommit {
   readonly keepEmptyFolders?: boolean;
   readonly conflictResolution?: ConflictResolution;
 }
+
 export interface DeleteApprovalRuleTemplate {
   readonly approvalRuleTemplateName: string;
 }
+
 export interface DeleteBranch {
   readonly repositoryName: string;
   readonly branchName: string;
 }
+
 export interface DeleteCommentContent {
   readonly commentId: string;
 }
+
 export interface DeleteFile {
   readonly repositoryName: string;
   readonly branchName: string;
@@ -103,13 +119,16 @@ export interface DeleteFile {
   readonly name?: string;
   readonly email?: string;
 }
+
 export interface DeletePullRequestApprovalRule {
   readonly pullRequestId: string;
   readonly approvalRuleName: string;
 }
+
 export interface DeleteRepository {
   readonly repositoryName: string;
 }
+
 export interface DescribeMergeConflicts {
   readonly repositoryName: string;
   readonly destinationCommitSpecifier: string;
@@ -121,6 +140,7 @@ export interface DescribeMergeConflicts {
   readonly conflictResolutionStrategy?: string;
   readonly nextToken?: string;
 }
+
 export interface DescribePullRequestEvents {
   readonly pullRequestId: string;
   readonly pullRequestEventType?: string;
@@ -128,34 +148,42 @@ export interface DescribePullRequestEvents {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DisassociateApprovalRuleTemplateFromRepository {
   readonly approvalRuleTemplateName: string;
   readonly repositoryName: string;
 }
+
 export interface EvaluatePullRequestApprovalRules {
   readonly pullRequestId: string;
   readonly revisionId: string;
 }
+
 export interface GetApprovalRuleTemplate {
   readonly approvalRuleTemplateName: string;
 }
+
 export interface GetBlob {
   readonly repositoryName: string;
   readonly blobId: string;
 }
+
 export interface GetBranch {
   readonly repositoryName?: string;
   readonly branchName?: string;
 }
+
 export interface GetComment {
   readonly commentId: string;
 }
+
 export interface GetCommentReactions {
   readonly commentId: string;
   readonly reactionUserArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetCommentsForComparedCommit {
   readonly repositoryName: string;
   readonly beforeCommitId?: string;
@@ -163,6 +191,7 @@ export interface GetCommentsForComparedCommit {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetCommentsForPullRequest {
   readonly pullRequestId: string;
   readonly repositoryName?: string;
@@ -171,10 +200,12 @@ export interface GetCommentsForPullRequest {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetCommit {
   readonly repositoryName: string;
   readonly commitId: string;
 }
+
 export interface GetDifferences {
   readonly repositoryName: string;
   readonly beforeCommitSpecifier?: string;
@@ -184,16 +215,19 @@ export interface GetDifferences {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetFile {
   readonly repositoryName: string;
   readonly commitSpecifier?: string;
   readonly filePath: string;
 }
+
 export interface GetFolder {
   readonly repositoryName: string;
   readonly commitSpecifier?: string;
   readonly folderPath: string;
 }
+
 export interface GetMergeCommit {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
@@ -201,6 +235,7 @@ export interface GetMergeCommit {
   readonly conflictDetailLevel?: string;
   readonly conflictResolutionStrategy?: string;
 }
+
 export interface GetMergeConflicts {
   readonly repositoryName: string;
   readonly destinationCommitSpecifier: string;
@@ -211,6 +246,7 @@ export interface GetMergeConflicts {
   readonly conflictResolutionStrategy?: string;
   readonly nextToken?: string;
 }
+
 export interface GetMergeOptions {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
@@ -218,36 +254,45 @@ export interface GetMergeOptions {
   readonly conflictDetailLevel?: string;
   readonly conflictResolutionStrategy?: string;
 }
+
 export interface GetPullRequest {
   readonly pullRequestId: string;
 }
+
 export interface GetPullRequestApprovalStates {
   readonly pullRequestId: string;
   readonly revisionId: string;
 }
+
 export interface GetPullRequestOverrideState {
   readonly pullRequestId: string;
   readonly revisionId: string;
 }
+
 export interface GetRepository {
   readonly repositoryName: string;
 }
+
 export interface GetRepositoryTriggers {
   readonly repositoryName: string;
 }
+
 export interface ListApprovalRuleTemplates {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssociatedApprovalRuleTemplatesForRepository {
   readonly repositoryName: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListBranches {
   readonly repositoryName: string;
   readonly nextToken?: string;
 }
+
 export interface ListPullRequests {
   readonly repositoryName: string;
   readonly authorArn?: string;
@@ -255,26 +300,31 @@ export interface ListPullRequests {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListRepositories {
   readonly nextToken?: string;
   readonly sortBy?: string;
   readonly order?: string;
 }
+
 export interface ListRepositoriesForApprovalRuleTemplate {
   readonly approvalRuleTemplateName: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
   readonly nextToken?: string;
 }
+
 export interface MergeBranchesByFastForward {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
   readonly targetBranch?: string;
 }
+
 export interface MergeBranchesBySquash {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
@@ -288,6 +338,7 @@ export interface MergeBranchesBySquash {
   readonly keepEmptyFolders?: boolean;
   readonly conflictResolution?: ConflictResolution;
 }
+
 export interface MergeBranchesByThreeWay {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
@@ -301,11 +352,13 @@ export interface MergeBranchesByThreeWay {
   readonly keepEmptyFolders?: boolean;
   readonly conflictResolution?: ConflictResolution;
 }
+
 export interface MergePullRequestByFastForward {
   readonly pullRequestId: string;
   readonly repositoryName: string;
   readonly sourceCommitId?: string;
 }
+
 export interface MergePullRequestBySquash {
   readonly pullRequestId: string;
   readonly repositoryName: string;
@@ -318,6 +371,7 @@ export interface MergePullRequestBySquash {
   readonly keepEmptyFolders?: boolean;
   readonly conflictResolution?: ConflictResolution;
 }
+
 export interface MergePullRequestByThreeWay {
   readonly pullRequestId: string;
   readonly repositoryName: string;
@@ -330,11 +384,13 @@ export interface MergePullRequestByThreeWay {
   readonly keepEmptyFolders?: boolean;
   readonly conflictResolution?: ConflictResolution;
 }
+
 export interface OverridePullRequestApprovalRules {
   readonly pullRequestId: string;
   readonly revisionId: string;
   readonly overrideStatus: string;
 }
+
 export interface PostCommentForComparedCommit {
   readonly repositoryName: string;
   readonly beforeCommitId?: string;
@@ -343,6 +399,7 @@ export interface PostCommentForComparedCommit {
   readonly content: string;
   readonly clientRequestToken?: string;
 }
+
 export interface PostCommentForPullRequest {
   readonly pullRequestId: string;
   readonly repositoryName: string;
@@ -352,15 +409,18 @@ export interface PostCommentForPullRequest {
   readonly content: string;
   readonly clientRequestToken?: string;
 }
+
 export interface PostCommentReply {
   readonly inReplyTo: string;
   readonly clientRequestToken?: string;
   readonly content: string;
 }
+
 export interface PutCommentReaction {
   readonly commentId: string;
   readonly reactionValue: string;
 }
+
 export interface PutFile {
   readonly repositoryName: string;
   readonly branchName: string;
@@ -372,798 +432,812 @@ export interface PutFile {
   readonly name?: string;
   readonly email?: string;
 }
+
 export interface PutRepositoryTriggers {
   readonly repositoryName: string;
   readonly triggers: [];
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface TestRepositoryTriggers {
   readonly repositoryName: string;
   readonly triggers: [];
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateApprovalRuleTemplateContent {
   readonly approvalRuleTemplateName: string;
   readonly newRuleContent: string;
   readonly existingRuleContentSha256?: string;
 }
+
 export interface UpdateApprovalRuleTemplateDescription {
   readonly approvalRuleTemplateName: string;
   readonly approvalRuleTemplateDescription: string;
 }
+
 export interface UpdateApprovalRuleTemplateName {
   readonly oldApprovalRuleTemplateName: string;
   readonly newApprovalRuleTemplateName: string;
 }
+
 export interface UpdateComment {
   readonly commentId: string;
   readonly content: string;
 }
+
 export interface UpdateDefaultBranch {
   readonly repositoryName: string;
   readonly defaultBranchName: string;
 }
+
 export interface UpdatePullRequestApprovalRuleContent {
   readonly pullRequestId: string;
   readonly approvalRuleName: string;
   readonly existingRuleContentSha256?: string;
   readonly newRuleContent: string;
 }
+
 export interface UpdatePullRequestApprovalState {
   readonly pullRequestId: string;
   readonly revisionId: string;
   readonly approvalState: string;
 }
+
 export interface UpdatePullRequestDescription {
   readonly pullRequestId: string;
   readonly description: string;
 }
+
 export interface UpdatePullRequestStatus {
   readonly pullRequestId: string;
   readonly pullRequestStatus: string;
 }
+
 export interface UpdatePullRequestTitle {
   readonly pullRequestId: string;
   readonly title: string;
 }
+
 export interface UpdateRepositoryDescription {
   readonly repositoryName: string;
   readonly repositoryDescription?: string;
 }
+
 export interface UpdateRepositoryName {
   readonly oldName: string;
   readonly newName: string;
 }
 
-
-
-interface ActorDoesNotExistException {
+export interface ActorDoesNotExistException {
 }
 
-interface Approval {
-  readonly userArn: string;
-  readonly approvalState: string;
+export interface Approval {
+  readonly userArn?: string;
+  readonly approvalState?: string;
 }
 
-interface ApprovalRule {
-  readonly approvalRuleId: string;
-  readonly approvalRuleName: string;
-  readonly approvalRuleContent: string;
-  readonly ruleContentSha256: string;
-  readonly lastModifiedDate: Date;
-  readonly creationDate: Date;
-  readonly lastModifiedUser: string;
-  readonly originApprovalRuleTemplate: OriginApprovalRuleTemplate;
+export interface ApprovalRule {
+  readonly approvalRuleId?: string;
+  readonly approvalRuleName?: string;
+  readonly approvalRuleContent?: string;
+  readonly ruleContentSha256?: string;
+  readonly lastModifiedDate?: Date;
+  readonly creationDate?: Date;
+  readonly lastModifiedUser?: string;
+  readonly originApprovalRuleTemplate?: OriginApprovalRuleTemplate;
 }
 
-interface ApprovalRuleContentRequiredException {
+export interface ApprovalRuleContentRequiredException {
 }
 
-interface ApprovalRuleDoesNotExistException {
+export interface ApprovalRuleDoesNotExistException {
 }
 
-interface ApprovalRuleEventMetadata {
-  readonly approvalRuleName: string;
-  readonly approvalRuleId: string;
-  readonly approvalRuleContent: string;
+export interface ApprovalRuleEventMetadata {
+  readonly approvalRuleName?: string;
+  readonly approvalRuleId?: string;
+  readonly approvalRuleContent?: string;
 }
 
-interface ApprovalRuleNameAlreadyExistsException {
+export interface ApprovalRuleNameAlreadyExistsException {
 }
 
-interface ApprovalRuleNameRequiredException {
+export interface ApprovalRuleNameRequiredException {
 }
 
-interface ApprovalRuleOverriddenEventMetadata {
-  readonly revisionId: string;
-  readonly overrideStatus: string;
+export interface ApprovalRuleOverriddenEventMetadata {
+  readonly revisionId?: string;
+  readonly overrideStatus?: string;
 }
 
-interface ApprovalRuleTemplate {
-  readonly approvalRuleTemplateId: string;
-  readonly approvalRuleTemplateName: string;
-  readonly approvalRuleTemplateDescription: string;
-  readonly approvalRuleTemplateContent: string;
-  readonly ruleContentSha256: string;
-  readonly lastModifiedDate: Date;
-  readonly creationDate: Date;
-  readonly lastModifiedUser: string;
+export interface ApprovalRuleTemplate {
+  readonly approvalRuleTemplateId?: string;
+  readonly approvalRuleTemplateName?: string;
+  readonly approvalRuleTemplateDescription?: string;
+  readonly approvalRuleTemplateContent?: string;
+  readonly ruleContentSha256?: string;
+  readonly lastModifiedDate?: Date;
+  readonly creationDate?: Date;
+  readonly lastModifiedUser?: string;
 }
 
-interface ApprovalRuleTemplateContentRequiredException {
+export interface ApprovalRuleTemplateContentRequiredException {
 }
 
-interface ApprovalRuleTemplateDoesNotExistException {
+export interface ApprovalRuleTemplateDoesNotExistException {
 }
 
-interface ApprovalRuleTemplateInUseException {
+export interface ApprovalRuleTemplateInUseException {
 }
 
-interface ApprovalRuleTemplateNameAlreadyExistsException {
+export interface ApprovalRuleTemplateNameAlreadyExistsException {
 }
 
-interface ApprovalRuleTemplateNameRequiredException {
+export interface ApprovalRuleTemplateNameRequiredException {
 }
 
-interface ApprovalStateChangedEventMetadata {
-  readonly revisionId: string;
-  readonly approvalStatus: string;
+export interface ApprovalStateChangedEventMetadata {
+  readonly revisionId?: string;
+  readonly approvalStatus?: string;
 }
 
-interface ApprovalStateRequiredException {
+export interface ApprovalStateRequiredException {
 }
 
-interface AssociateApprovalRuleTemplateWithRepositoryInput {
+export interface AssociateApprovalRuleTemplateWithRepositoryInput {
   readonly approvalRuleTemplateName: string;
   readonly repositoryName: string;
 }
 
-interface AuthorDoesNotExistException {
+export interface AuthorDoesNotExistException {
 }
 
-interface BatchAssociateApprovalRuleTemplateWithRepositoriesError {
-  readonly repositoryName: string;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface BatchAssociateApprovalRuleTemplateWithRepositoriesError {
+  readonly repositoryName?: string;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
+export interface BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
   readonly approvalRuleTemplateName: string;
   readonly repositoryNames: [];
 }
 
-interface BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
+export interface BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
   readonly associatedRepositoryNames: [];
   readonly errors: [];
 }
 
-interface BatchDescribeMergeConflictsError {
+export interface BatchDescribeMergeConflictsError {
   readonly filePath: string;
   readonly exceptionName: string;
   readonly message: string;
 }
 
-interface BatchDescribeMergeConflictsInput {
+export interface BatchDescribeMergeConflictsInput {
   readonly repositoryName: string;
   readonly destinationCommitSpecifier: string;
   readonly sourceCommitSpecifier: string;
   readonly mergeOption: string;
-  readonly maxMergeHunks: number;
-  readonly maxConflictFiles: number;
-  readonly filePaths: [];
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly nextToken: string;
+  readonly maxMergeHunks?: number;
+  readonly maxConflictFiles?: number;
+  readonly filePaths?: [];
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly nextToken?: string;
 }
 
-interface BatchDescribeMergeConflictsOutput {
+export interface BatchDescribeMergeConflictsOutput {
   readonly conflicts: [];
-  readonly nextToken: string;
-  readonly errors: [];
+  readonly nextToken?: string;
+  readonly errors?: [];
   readonly destinationCommitId: string;
   readonly sourceCommitId: string;
-  readonly baseCommitId: string;
+  readonly baseCommitId?: string;
 }
 
-interface BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
-  readonly repositoryName: string;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
+  readonly repositoryName?: string;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
+export interface BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
   readonly approvalRuleTemplateName: string;
   readonly repositoryNames: [];
 }
 
-interface BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
+export interface BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
   readonly disassociatedRepositoryNames: [];
   readonly errors: [];
 }
 
-interface BatchGetCommitsError {
-  readonly commitId: string;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface BatchGetCommitsError {
+  readonly commitId?: string;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface BatchGetCommitsInput {
+export interface BatchGetCommitsInput {
   readonly commitIds: [];
   readonly repositoryName: string;
 }
 
-interface BatchGetCommitsOutput {
-  readonly commits: [];
-  readonly errors: [];
+export interface BatchGetCommitsOutput {
+  readonly commits?: [];
+  readonly errors?: [];
 }
 
-interface BatchGetRepositoriesInput {
+export interface BatchGetRepositoriesInput {
   readonly repositoryNames: [];
 }
 
-interface BatchGetRepositoriesOutput {
-  readonly repositories: [];
-  readonly repositoriesNotFound: [];
+export interface BatchGetRepositoriesOutput {
+  readonly repositories?: [];
+  readonly repositoriesNotFound?: [];
 }
 
-interface BeforeCommitIdAndAfterCommitIdAreSameException {
+export interface BeforeCommitIdAndAfterCommitIdAreSameException {
 }
 
-interface BlobIdDoesNotExistException {
+export interface BlobIdDoesNotExistException {
 }
 
-interface BlobIdRequiredException {
+export interface BlobIdRequiredException {
 }
 
-interface BlobMetadata {
-  readonly blobId: string;
-  readonly path: string;
-  readonly mode: string;
+export interface BlobMetadata {
+  readonly blobId?: string;
+  readonly path?: string;
+  readonly mode?: string;
 }
 
-interface BranchDoesNotExistException {
+export interface BranchDoesNotExistException {
 }
 
-interface BranchInfo {
-  readonly branchName: string;
-  readonly commitId: string;
+export interface BranchInfo {
+  readonly branchName?: string;
+  readonly commitId?: string;
 }
 
-interface BranchNameExistsException {
+export interface BranchNameExistsException {
 }
 
-interface BranchNameIsTagNameException {
+export interface BranchNameIsTagNameException {
 }
 
-interface BranchNameRequiredException {
+export interface BranchNameRequiredException {
 }
 
-interface CannotDeleteApprovalRuleFromTemplateException {
+export interface CannotDeleteApprovalRuleFromTemplateException {
 }
 
-interface CannotModifyApprovalRuleFromTemplateException {
+export interface CannotModifyApprovalRuleFromTemplateException {
 }
 
-interface ClientRequestTokenRequiredException {
+export interface ClientRequestTokenRequiredException {
 }
 
-interface Comment {
-  readonly commentId: string;
-  readonly content: string;
-  readonly inReplyTo: string;
-  readonly creationDate: Date;
-  readonly lastModifiedDate: Date;
-  readonly authorArn: string;
-  readonly deleted: boolean;
-  readonly clientRequestToken: string;
-  readonly callerReactions: [];
-  readonly reactionCounts: {[key: string]: any};
+export interface Comment {
+  readonly commentId?: string;
+  readonly content?: string;
+  readonly inReplyTo?: string;
+  readonly creationDate?: Date;
+  readonly lastModifiedDate?: Date;
+  readonly authorArn?: string;
+  readonly deleted?: boolean;
+  readonly clientRequestToken?: string;
+  readonly callerReactions?: [];
+  readonly reactionCounts?: {[key: string]: any};
 }
 
-interface CommentContentRequiredException {
+export interface CommentContentRequiredException {
 }
 
-interface CommentContentSizeLimitExceededException {
+export interface CommentContentSizeLimitExceededException {
 }
 
-interface CommentDeletedException {
+export interface CommentDeletedException {
 }
 
-interface CommentDoesNotExistException {
+export interface CommentDoesNotExistException {
 }
 
-interface CommentIdRequiredException {
+export interface CommentIdRequiredException {
 }
 
-interface CommentNotCreatedByCallerException {
+export interface CommentNotCreatedByCallerException {
 }
 
-interface CommentsForComparedCommit {
-  readonly repositoryName: string;
-  readonly beforeCommitId: string;
-  readonly afterCommitId: string;
-  readonly beforeBlobId: string;
-  readonly afterBlobId: string;
-  readonly location: Location;
-  readonly comments: [];
+export interface CommentsForComparedCommit {
+  readonly repositoryName?: string;
+  readonly beforeCommitId?: string;
+  readonly afterCommitId?: string;
+  readonly beforeBlobId?: string;
+  readonly afterBlobId?: string;
+  readonly location?: Location;
+  readonly comments?: [];
 }
 
-interface CommentsForPullRequest {
-  readonly pullRequestId: string;
-  readonly repositoryName: string;
-  readonly beforeCommitId: string;
-  readonly afterCommitId: string;
-  readonly beforeBlobId: string;
-  readonly afterBlobId: string;
-  readonly location: Location;
-  readonly comments: [];
+export interface CommentsForPullRequest {
+  readonly pullRequestId?: string;
+  readonly repositoryName?: string;
+  readonly beforeCommitId?: string;
+  readonly afterCommitId?: string;
+  readonly beforeBlobId?: string;
+  readonly afterBlobId?: string;
+  readonly location?: Location;
+  readonly comments?: [];
 }
 
-interface Commit {
-  readonly commitId: string;
-  readonly treeId: string;
-  readonly parents: [];
-  readonly message: string;
-  readonly author: UserInfo;
-  readonly committer: UserInfo;
-  readonly additionalData: string;
+export interface Commit {
+  readonly commitId?: string;
+  readonly treeId?: string;
+  readonly parents?: [];
+  readonly message?: string;
+  readonly author?: UserInfo;
+  readonly committer?: UserInfo;
+  readonly additionalData?: string;
 }
 
-interface CommitDoesNotExistException {
+export interface CommitDoesNotExistException {
 }
 
-interface CommitIdDoesNotExistException {
+export interface CommitIdDoesNotExistException {
 }
 
-interface CommitIdRequiredException {
+export interface CommitIdRequiredException {
 }
 
-interface CommitIdsLimitExceededException {
+export interface CommitIdsLimitExceededException {
 }
 
-interface CommitIdsListRequiredException {
+export interface CommitIdsListRequiredException {
 }
 
-interface CommitMessageLengthExceededException {
+export interface CommitMessageLengthExceededException {
 }
 
-interface CommitRequiredException {
+export interface CommitRequiredException {
 }
 
-interface ConcurrentReferenceUpdateException {
+export interface ConcurrentReferenceUpdateException {
 }
 
-interface Conflict {
-  readonly conflictMetadata: ConflictMetadata;
-  readonly mergeHunks: [];
+export interface Conflict {
+  readonly conflictMetadata?: ConflictMetadata;
+  readonly mergeHunks?: [];
 }
 
-interface ConflictMetadata {
-  readonly filePath: string;
-  readonly fileSizes: FileSizes;
-  readonly fileModes: FileModes;
-  readonly objectTypes: ObjectTypes;
-  readonly numberOfConflicts: number;
-  readonly isBinaryFile: IsBinaryFile;
-  readonly contentConflict: boolean;
-  readonly fileModeConflict: boolean;
-  readonly objectTypeConflict: boolean;
-  readonly mergeOperations: MergeOperations;
+export interface ConflictMetadata {
+  readonly filePath?: string;
+  readonly fileSizes?: FileSizes;
+  readonly fileModes?: FileModes;
+  readonly objectTypes?: ObjectTypes;
+  readonly numberOfConflicts?: number;
+  readonly isBinaryFile?: IsBinaryFile;
+  readonly contentConflict?: boolean;
+  readonly fileModeConflict?: boolean;
+  readonly objectTypeConflict?: boolean;
+  readonly mergeOperations?: MergeOperations;
 }
 
-interface ConflictResolution {
-  readonly replaceContents: [];
-  readonly deleteFiles: [];
-  readonly setFileModes: [];
+export interface ConflictResolution {
+  readonly replaceContents?: [];
+  readonly deleteFiles?: [];
+  readonly setFileModes?: [];
 }
 
-interface CreateApprovalRuleTemplateInput {
+export interface CreateApprovalRuleTemplateInput {
   readonly approvalRuleTemplateName: string;
   readonly approvalRuleTemplateContent: string;
-  readonly approvalRuleTemplateDescription: string;
+  readonly approvalRuleTemplateDescription?: string;
 }
 
-interface CreateApprovalRuleTemplateOutput {
+export interface CreateApprovalRuleTemplateOutput {
   readonly approvalRuleTemplate: ApprovalRuleTemplate;
 }
 
-interface CreateBranchInput {
+export interface CreateBranchInput {
   readonly repositoryName: string;
   readonly branchName: string;
   readonly commitId: string;
 }
 
-interface CreateCommitInput {
+export interface CreateCommitInput {
   readonly repositoryName: string;
   readonly branchName: string;
-  readonly parentCommitId: string;
-  readonly authorName: string;
-  readonly email: string;
-  readonly commitMessage: string;
-  readonly keepEmptyFolders: boolean;
-  readonly putFiles: [];
-  readonly deleteFiles: [];
-  readonly setFileModes: [];
+  readonly parentCommitId?: string;
+  readonly authorName?: string;
+  readonly email?: string;
+  readonly commitMessage?: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly putFiles?: [];
+  readonly deleteFiles?: [];
+  readonly setFileModes?: [];
 }
 
-interface CreateCommitOutput {
-  readonly commitId: string;
-  readonly treeId: string;
-  readonly filesAdded: [];
-  readonly filesUpdated: [];
-  readonly filesDeleted: [];
+export interface CreateCommitOutput {
+  readonly commitId?: string;
+  readonly treeId?: string;
+  readonly filesAdded?: [];
+  readonly filesUpdated?: [];
+  readonly filesDeleted?: [];
 }
 
-interface CreatePullRequestApprovalRuleInput {
+export interface CreatePullRequestApprovalRuleInput {
   readonly pullRequestId: string;
   readonly approvalRuleName: string;
   readonly approvalRuleContent: string;
 }
 
-interface CreatePullRequestApprovalRuleOutput {
+export interface CreatePullRequestApprovalRuleOutput {
   readonly approvalRule: ApprovalRule;
 }
 
-interface CreatePullRequestInput {
+export interface CreatePullRequestInput {
   readonly title: string;
-  readonly description: string;
+  readonly description?: string;
   readonly targets: [];
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 
-interface CreatePullRequestOutput {
+export interface CreatePullRequestOutput {
   readonly pullRequest: PullRequest;
 }
 
-interface CreateRepositoryInput {
+export interface CreateRepositoryInput {
   readonly repositoryName: string;
-  readonly repositoryDescription: string;
-  readonly tags: {[key: string]: any};
+  readonly repositoryDescription?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateRepositoryOutput {
-  readonly repositoryMetadata: RepositoryMetadata;
+export interface CreateRepositoryOutput {
+  readonly repositoryMetadata?: RepositoryMetadata;
 }
 
-interface CreateUnreferencedMergeCommitInput {
+export interface CreateUnreferencedMergeCommitInput {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
   readonly mergeOption: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly authorName: string;
-  readonly email: string;
-  readonly commitMessage: string;
-  readonly keepEmptyFolders: boolean;
-  readonly conflictResolution: ConflictResolution;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly authorName?: string;
+  readonly email?: string;
+  readonly commitMessage?: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly conflictResolution?: ConflictResolution;
 }
 
-interface CreateUnreferencedMergeCommitOutput {
-  readonly commitId: string;
-  readonly treeId: string;
+export interface CreateUnreferencedMergeCommitOutput {
+  readonly commitId?: string;
+  readonly treeId?: string;
 }
 
-interface DefaultBranchCannotBeDeletedException {
+export interface DefaultBranchCannotBeDeletedException {
 }
 
-interface DeleteApprovalRuleTemplateInput {
+export interface DeleteApprovalRuleTemplateInput {
   readonly approvalRuleTemplateName: string;
 }
 
-interface DeleteApprovalRuleTemplateOutput {
+export interface DeleteApprovalRuleTemplateOutput {
   readonly approvalRuleTemplateId: string;
 }
 
-interface DeleteBranchInput {
+export interface DeleteBranchInput {
   readonly repositoryName: string;
   readonly branchName: string;
 }
 
-interface DeleteBranchOutput {
-  readonly deletedBranch: BranchInfo;
+export interface DeleteBranchOutput {
+  readonly deletedBranch?: BranchInfo;
 }
 
-interface DeleteCommentContentInput {
+export interface DeleteCommentContentInput {
   readonly commentId: string;
 }
 
-interface DeleteCommentContentOutput {
-  readonly comment: Comment;
+export interface DeleteCommentContentOutput {
+  readonly comment?: Comment;
 }
 
-interface DeleteFileEntry {
+export interface DeleteFileEntry {
   readonly filePath: string;
 }
 
-interface DeleteFileInput {
+export interface DeleteFileInput {
   readonly repositoryName: string;
   readonly branchName: string;
   readonly filePath: string;
   readonly parentCommitId: string;
-  readonly keepEmptyFolders: boolean;
-  readonly commitMessage: string;
-  readonly name: string;
-  readonly email: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly commitMessage?: string;
+  readonly name?: string;
+  readonly email?: string;
 }
 
-interface DeleteFileOutput {
+export interface DeleteFileOutput {
   readonly commitId: string;
   readonly blobId: string;
   readonly treeId: string;
   readonly filePath: string;
 }
 
-interface DeletePullRequestApprovalRuleInput {
+export interface DeletePullRequestApprovalRuleInput {
   readonly pullRequestId: string;
   readonly approvalRuleName: string;
 }
 
-interface DeletePullRequestApprovalRuleOutput {
+export interface DeletePullRequestApprovalRuleOutput {
   readonly approvalRuleId: string;
 }
 
-interface DeleteRepositoryInput {
+export interface DeleteRepositoryInput {
   readonly repositoryName: string;
 }
 
-interface DeleteRepositoryOutput {
-  readonly repositoryId: string;
+export interface DeleteRepositoryOutput {
+  readonly repositoryId?: string;
 }
 
-interface DescribeMergeConflictsInput {
+export interface DescribeMergeConflictsInput {
   readonly repositoryName: string;
   readonly destinationCommitSpecifier: string;
   readonly sourceCommitSpecifier: string;
   readonly mergeOption: string;
-  readonly maxMergeHunks: number;
+  readonly maxMergeHunks?: number;
   readonly filePath: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly nextToken: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly nextToken?: string;
 }
 
-interface DescribeMergeConflictsOutput {
+export interface DescribeMergeConflictsOutput {
   readonly conflictMetadata: ConflictMetadata;
   readonly mergeHunks: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
   readonly destinationCommitId: string;
   readonly sourceCommitId: string;
-  readonly baseCommitId: string;
+  readonly baseCommitId?: string;
 }
 
-interface DescribePullRequestEventsInput {
+export interface DescribePullRequestEventsInput {
   readonly pullRequestId: string;
-  readonly pullRequestEventType: string;
-  readonly actorArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly pullRequestEventType?: string;
+  readonly actorArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DescribePullRequestEventsOutput {
+export interface DescribePullRequestEventsOutput {
   readonly pullRequestEvents: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface Difference {
-  readonly beforeBlob: BlobMetadata;
-  readonly afterBlob: BlobMetadata;
-  readonly changeType: string;
+export interface Difference {
+  readonly beforeBlob?: BlobMetadata;
+  readonly afterBlob?: BlobMetadata;
+  readonly changeType?: string;
 }
 
-interface DirectoryNameConflictsWithFileNameException {
+export interface DirectoryNameConflictsWithFileNameException {
 }
 
-interface DisassociateApprovalRuleTemplateFromRepositoryInput {
+export interface DisassociateApprovalRuleTemplateFromRepositoryInput {
   readonly approvalRuleTemplateName: string;
   readonly repositoryName: string;
 }
 
-interface EncryptionIntegrityChecksFailedException {
+export interface EncryptionIntegrityChecksFailedException {
 }
 
-interface EncryptionKeyAccessDeniedException {
+export interface EncryptionKeyAccessDeniedException {
 }
 
-interface EncryptionKeyDisabledException {
+export interface EncryptionKeyDisabledException {
 }
 
-interface EncryptionKeyNotFoundException {
+export interface EncryptionKeyNotFoundException {
 }
 
-interface EncryptionKeyUnavailableException {
+export interface EncryptionKeyUnavailableException {
 }
 
-interface EvaluatePullRequestApprovalRulesInput {
+export interface EvaluatePullRequestApprovalRulesInput {
   readonly pullRequestId: string;
   readonly revisionId: string;
 }
 
-interface EvaluatePullRequestApprovalRulesOutput {
+export interface EvaluatePullRequestApprovalRulesOutput {
   readonly evaluation: Evaluation;
 }
 
-interface Evaluation {
-  readonly approved: boolean;
-  readonly overridden: boolean;
-  readonly approvalRulesSatisfied: [];
-  readonly approvalRulesNotSatisfied: [];
+export interface Evaluation {
+  readonly approved?: boolean;
+  readonly overridden?: boolean;
+  readonly approvalRulesSatisfied?: [];
+  readonly approvalRulesNotSatisfied?: [];
 }
 
-interface File {
-  readonly blobId: string;
-  readonly absolutePath: string;
-  readonly relativePath: string;
-  readonly fileMode: string;
+export interface File {
+  readonly blobId?: string;
+  readonly absolutePath?: string;
+  readonly relativePath?: string;
+  readonly fileMode?: string;
 }
 
-interface FileContentAndSourceFileSpecifiedException {
+export interface FileContentAndSourceFileSpecifiedException {
 }
 
-interface FileContentRequiredException {
+export interface FileContentRequiredException {
 }
 
-interface FileContentSizeLimitExceededException {
+export interface FileContentSizeLimitExceededException {
 }
 
-interface FileDoesNotExistException {
+export interface FileDoesNotExistException {
 }
 
-interface FileEntryRequiredException {
+export interface FileEntryRequiredException {
 }
 
-interface FileMetadata {
-  readonly absolutePath: string;
-  readonly blobId: string;
-  readonly fileMode: string;
+export interface FileMetadata {
+  readonly absolutePath?: string;
+  readonly blobId?: string;
+  readonly fileMode?: string;
 }
 
-interface FileModeRequiredException {
+export interface FileModeRequiredException {
 }
 
-interface FileModes {
-  readonly source: string;
-  readonly destination: string;
-  readonly base: string;
+export interface FileModes {
+  readonly source?: string;
+  readonly destination?: string;
+  readonly base?: string;
 }
 
-interface FileNameConflictsWithDirectoryNameException {
+export interface FileNameConflictsWithDirectoryNameException {
 }
 
-interface FilePathConflictsWithSubmodulePathException {
+export interface FilePathConflictsWithSubmodulePathException {
 }
 
-interface FileSizes {
-  readonly source: number;
-  readonly destination: number;
-  readonly base: number;
+export interface FileSizes {
+  readonly source?: number;
+  readonly destination?: number;
+  readonly base?: number;
 }
 
-interface FileTooLargeException {
+export interface FileTooLargeException {
 }
 
-interface Folder {
-  readonly treeId: string;
-  readonly absolutePath: string;
-  readonly relativePath: string;
+export interface Folder {
+  readonly treeId?: string;
+  readonly absolutePath?: string;
+  readonly relativePath?: string;
 }
 
-interface FolderContentSizeLimitExceededException {
+export interface FolderContentSizeLimitExceededException {
 }
 
-interface FolderDoesNotExistException {
+export interface FolderDoesNotExistException {
 }
 
-interface GetApprovalRuleTemplateInput {
+export interface GetApprovalRuleTemplateInput {
   readonly approvalRuleTemplateName: string;
 }
 
-interface GetApprovalRuleTemplateOutput {
+export interface GetApprovalRuleTemplateOutput {
   readonly approvalRuleTemplate: ApprovalRuleTemplate;
 }
 
-interface GetBlobInput {
+export interface GetBlobInput {
   readonly repositoryName: string;
   readonly blobId: string;
 }
 
-interface GetBlobOutput {
+export interface GetBlobOutput {
   readonly content: unknown;
 }
 
-interface GetBranchInput {
-  readonly repositoryName: string;
-  readonly branchName: string;
+export interface GetBranchInput {
+  readonly repositoryName?: string;
+  readonly branchName?: string;
 }
 
-interface GetBranchOutput {
-  readonly branch: BranchInfo;
+export interface GetBranchOutput {
+  readonly branch?: BranchInfo;
 }
 
-interface GetCommentInput {
+export interface GetCommentInput {
   readonly commentId: string;
 }
 
-interface GetCommentOutput {
-  readonly comment: Comment;
+export interface GetCommentOutput {
+  readonly comment?: Comment;
 }
 
-interface GetCommentReactionsInput {
+export interface GetCommentReactionsInput {
   readonly commentId: string;
-  readonly reactionUserArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly reactionUserArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetCommentReactionsOutput {
+export interface GetCommentReactionsOutput {
   readonly reactionsForComment: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface GetCommentsForComparedCommitInput {
+export interface GetCommentsForComparedCommitInput {
   readonly repositoryName: string;
-  readonly beforeCommitId: string;
+  readonly beforeCommitId?: string;
   readonly afterCommitId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetCommentsForComparedCommitOutput {
-  readonly commentsForComparedCommitData: [];
-  readonly nextToken: string;
+export interface GetCommentsForComparedCommitOutput {
+  readonly commentsForComparedCommitData?: [];
+  readonly nextToken?: string;
 }
 
-interface GetCommentsForPullRequestInput {
+export interface GetCommentsForPullRequestInput {
   readonly pullRequestId: string;
-  readonly repositoryName: string;
-  readonly beforeCommitId: string;
-  readonly afterCommitId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly repositoryName?: string;
+  readonly beforeCommitId?: string;
+  readonly afterCommitId?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetCommentsForPullRequestOutput {
-  readonly commentsForPullRequestData: [];
-  readonly nextToken: string;
+export interface GetCommentsForPullRequestOutput {
+  readonly commentsForPullRequestData?: [];
+  readonly nextToken?: string;
 }
 
-interface GetCommitInput {
+export interface GetCommitInput {
   readonly repositoryName: string;
   readonly commitId: string;
 }
 
-interface GetCommitOutput {
+export interface GetCommitOutput {
   readonly commit: Commit;
 }
 
-interface GetDifferencesInput {
+export interface GetDifferencesInput {
   readonly repositoryName: string;
-  readonly beforeCommitSpecifier: string;
+  readonly beforeCommitSpecifier?: string;
   readonly afterCommitSpecifier: string;
-  readonly beforePath: string;
-  readonly afterPath: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly beforePath?: string;
+  readonly afterPath?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetDifferencesOutput {
-  readonly differences: [];
-  readonly NextToken: string;
+export interface GetDifferencesOutput {
+  readonly differences?: [];
+  readonly NextToken?: string;
 }
 
-interface GetFileInput {
+export interface GetFileInput {
   readonly repositoryName: string;
-  readonly commitSpecifier: string;
+  readonly commitSpecifier?: string;
   readonly filePath: string;
 }
 
-interface GetFileOutput {
+export interface GetFileOutput {
   readonly commitId: string;
   readonly blobId: string;
   readonly filePath: string;
@@ -1172,1082 +1246,1083 @@ interface GetFileOutput {
   readonly fileContent: unknown;
 }
 
-interface GetFolderInput {
+export interface GetFolderInput {
   readonly repositoryName: string;
-  readonly commitSpecifier: string;
+  readonly commitSpecifier?: string;
   readonly folderPath: string;
 }
 
-interface GetFolderOutput {
+export interface GetFolderOutput {
   readonly commitId: string;
   readonly folderPath: string;
-  readonly treeId: string;
-  readonly subFolders: [];
-  readonly files: [];
-  readonly symbolicLinks: [];
-  readonly subModules: [];
+  readonly treeId?: string;
+  readonly subFolders?: [];
+  readonly files?: [];
+  readonly symbolicLinks?: [];
+  readonly subModules?: [];
 }
 
-interface GetMergeCommitInput {
+export interface GetMergeCommitInput {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
 }
 
-interface GetMergeCommitOutput {
-  readonly sourceCommitId: string;
-  readonly destinationCommitId: string;
-  readonly baseCommitId: string;
-  readonly mergedCommitId: string;
+export interface GetMergeCommitOutput {
+  readonly sourceCommitId?: string;
+  readonly destinationCommitId?: string;
+  readonly baseCommitId?: string;
+  readonly mergedCommitId?: string;
 }
 
-interface GetMergeConflictsInput {
+export interface GetMergeConflictsInput {
   readonly repositoryName: string;
   readonly destinationCommitSpecifier: string;
   readonly sourceCommitSpecifier: string;
   readonly mergeOption: string;
-  readonly conflictDetailLevel: string;
-  readonly maxConflictFiles: number;
-  readonly conflictResolutionStrategy: string;
-  readonly nextToken: string;
+  readonly conflictDetailLevel?: string;
+  readonly maxConflictFiles?: number;
+  readonly conflictResolutionStrategy?: string;
+  readonly nextToken?: string;
 }
 
-interface GetMergeConflictsOutput {
+export interface GetMergeConflictsOutput {
   readonly mergeable: boolean;
   readonly destinationCommitId: string;
   readonly sourceCommitId: string;
-  readonly baseCommitId: string;
+  readonly baseCommitId?: string;
   readonly conflictMetadataList: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface GetMergeOptionsInput {
+export interface GetMergeOptionsInput {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
 }
 
-interface GetMergeOptionsOutput {
+export interface GetMergeOptionsOutput {
   readonly mergeOptions: [];
   readonly sourceCommitId: string;
   readonly destinationCommitId: string;
   readonly baseCommitId: string;
 }
 
-interface GetPullRequestApprovalStatesInput {
+export interface GetPullRequestApprovalStatesInput {
   readonly pullRequestId: string;
   readonly revisionId: string;
 }
 
-interface GetPullRequestApprovalStatesOutput {
-  readonly approvals: [];
+export interface GetPullRequestApprovalStatesOutput {
+  readonly approvals?: [];
 }
 
-interface GetPullRequestInput {
+export interface GetPullRequestInput {
   readonly pullRequestId: string;
 }
 
-interface GetPullRequestOutput {
+export interface GetPullRequestOutput {
   readonly pullRequest: PullRequest;
 }
 
-interface GetPullRequestOverrideStateInput {
+export interface GetPullRequestOverrideStateInput {
   readonly pullRequestId: string;
   readonly revisionId: string;
 }
 
-interface GetPullRequestOverrideStateOutput {
-  readonly overridden: boolean;
-  readonly overrider: string;
+export interface GetPullRequestOverrideStateOutput {
+  readonly overridden?: boolean;
+  readonly overrider?: string;
 }
 
-interface GetRepositoryInput {
+export interface GetRepositoryInput {
   readonly repositoryName: string;
 }
 
-interface GetRepositoryOutput {
-  readonly repositoryMetadata: RepositoryMetadata;
+export interface GetRepositoryOutput {
+  readonly repositoryMetadata?: RepositoryMetadata;
 }
 
-interface GetRepositoryTriggersInput {
+export interface GetRepositoryTriggersInput {
   readonly repositoryName: string;
 }
 
-interface GetRepositoryTriggersOutput {
-  readonly configurationId: string;
-  readonly triggers: [];
+export interface GetRepositoryTriggersOutput {
+  readonly configurationId?: string;
+  readonly triggers?: [];
 }
 
-interface IdempotencyParameterMismatchException {
+export interface IdempotencyParameterMismatchException {
 }
 
-interface InvalidActorArnException {
+export interface InvalidActorArnException {
 }
 
-interface InvalidApprovalRuleContentException {
+export interface InvalidApprovalRuleContentException {
 }
 
-interface InvalidApprovalRuleNameException {
+export interface InvalidApprovalRuleNameException {
 }
 
-interface InvalidApprovalRuleTemplateContentException {
+export interface InvalidApprovalRuleTemplateContentException {
 }
 
-interface InvalidApprovalRuleTemplateDescriptionException {
+export interface InvalidApprovalRuleTemplateDescriptionException {
 }
 
-interface InvalidApprovalRuleTemplateNameException {
+export interface InvalidApprovalRuleTemplateNameException {
 }
 
-interface InvalidApprovalStateException {
+export interface InvalidApprovalStateException {
 }
 
-interface InvalidAuthorArnException {
+export interface InvalidAuthorArnException {
 }
 
-interface InvalidBlobIdException {
+export interface InvalidBlobIdException {
 }
 
-interface InvalidBranchNameException {
+export interface InvalidBranchNameException {
 }
 
-interface InvalidClientRequestTokenException {
+export interface InvalidClientRequestTokenException {
 }
 
-interface InvalidCommentIdException {
+export interface InvalidCommentIdException {
 }
 
-interface InvalidCommitException {
+export interface InvalidCommitException {
 }
 
-interface InvalidCommitIdException {
+export interface InvalidCommitIdException {
 }
 
-interface InvalidConflictDetailLevelException {
+export interface InvalidConflictDetailLevelException {
 }
 
-interface InvalidConflictResolutionException {
+export interface InvalidConflictResolutionException {
 }
 
-interface InvalidConflictResolutionStrategyException {
+export interface InvalidConflictResolutionStrategyException {
 }
 
-interface InvalidContinuationTokenException {
+export interface InvalidContinuationTokenException {
 }
 
-interface InvalidDeletionParameterException {
+export interface InvalidDeletionParameterException {
 }
 
-interface InvalidDescriptionException {
+export interface InvalidDescriptionException {
 }
 
-interface InvalidDestinationCommitSpecifierException {
+export interface InvalidDestinationCommitSpecifierException {
 }
 
-interface InvalidEmailException {
+export interface InvalidEmailException {
 }
 
-interface InvalidFileLocationException {
+export interface InvalidFileLocationException {
 }
 
-interface InvalidFileModeException {
+export interface InvalidFileModeException {
 }
 
-interface InvalidFilePositionException {
+export interface InvalidFilePositionException {
 }
 
-interface InvalidMaxConflictFilesException {
+export interface InvalidMaxConflictFilesException {
 }
 
-interface InvalidMaxMergeHunksException {
+export interface InvalidMaxMergeHunksException {
 }
 
-interface InvalidMaxResultsException {
+export interface InvalidMaxResultsException {
 }
 
-interface InvalidMergeOptionException {
+export interface InvalidMergeOptionException {
 }
 
-interface InvalidOrderException {
+export interface InvalidOrderException {
 }
 
-interface InvalidOverrideStatusException {
+export interface InvalidOverrideStatusException {
 }
 
-interface InvalidParentCommitIdException {
+export interface InvalidParentCommitIdException {
 }
 
-interface InvalidPathException {
+export interface InvalidPathException {
 }
 
-interface InvalidPullRequestEventTypeException {
+export interface InvalidPullRequestEventTypeException {
 }
 
-interface InvalidPullRequestIdException {
+export interface InvalidPullRequestIdException {
 }
 
-interface InvalidPullRequestStatusException {
+export interface InvalidPullRequestStatusException {
 }
 
-interface InvalidPullRequestStatusUpdateException {
+export interface InvalidPullRequestStatusUpdateException {
 }
 
-interface InvalidReactionUserArnException {
+export interface InvalidReactionUserArnException {
 }
 
-interface InvalidReactionValueException {
+export interface InvalidReactionValueException {
 }
 
-interface InvalidReferenceNameException {
+export interface InvalidReferenceNameException {
 }
 
-interface InvalidRelativeFileVersionEnumException {
+export interface InvalidRelativeFileVersionEnumException {
 }
 
-interface InvalidReplacementContentException {
+export interface InvalidReplacementContentException {
 }
 
-interface InvalidReplacementTypeException {
+export interface InvalidReplacementTypeException {
 }
 
-interface InvalidRepositoryDescriptionException {
+export interface InvalidRepositoryDescriptionException {
 }
 
-interface InvalidRepositoryNameException {
+export interface InvalidRepositoryNameException {
 }
 
-interface InvalidRepositoryTriggerBranchNameException {
+export interface InvalidRepositoryTriggerBranchNameException {
 }
 
-interface InvalidRepositoryTriggerCustomDataException {
+export interface InvalidRepositoryTriggerCustomDataException {
 }
 
-interface InvalidRepositoryTriggerDestinationArnException {
+export interface InvalidRepositoryTriggerDestinationArnException {
 }
 
-interface InvalidRepositoryTriggerEventsException {
+export interface InvalidRepositoryTriggerEventsException {
 }
 
-interface InvalidRepositoryTriggerNameException {
+export interface InvalidRepositoryTriggerNameException {
 }
 
-interface InvalidRepositoryTriggerRegionException {
+export interface InvalidRepositoryTriggerRegionException {
 }
 
-interface InvalidResourceArnException {
+export interface InvalidResourceArnException {
 }
 
-interface InvalidRevisionIdException {
+export interface InvalidRevisionIdException {
 }
 
-interface InvalidRuleContentSha256Exception {
+export interface InvalidRuleContentSha256Exception {
 }
 
-interface InvalidSortByException {
+export interface InvalidSortByException {
 }
 
-interface InvalidSourceCommitSpecifierException {
+export interface InvalidSourceCommitSpecifierException {
 }
 
-interface InvalidSystemTagUsageException {
+export interface InvalidSystemTagUsageException {
 }
 
-interface InvalidTagKeysListException {
+export interface InvalidTagKeysListException {
 }
 
-interface InvalidTagsMapException {
+export interface InvalidTagsMapException {
 }
 
-interface InvalidTargetBranchException {
+export interface InvalidTargetBranchException {
 }
 
-interface InvalidTargetException {
+export interface InvalidTargetException {
 }
 
-interface InvalidTargetsException {
+export interface InvalidTargetsException {
 }
 
-interface InvalidTitleException {
+export interface InvalidTitleException {
 }
 
-interface IsBinaryFile {
-  readonly source: boolean;
-  readonly destination: boolean;
-  readonly base: boolean;
+export interface IsBinaryFile {
+  readonly source?: boolean;
+  readonly destination?: boolean;
+  readonly base?: boolean;
 }
 
-interface ListApprovalRuleTemplatesInput {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListApprovalRuleTemplatesInput {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListApprovalRuleTemplatesOutput {
-  readonly approvalRuleTemplateNames: [];
-  readonly nextToken: string;
+export interface ListApprovalRuleTemplatesOutput {
+  readonly approvalRuleTemplateNames?: [];
+  readonly nextToken?: string;
 }
 
-interface ListAssociatedApprovalRuleTemplatesForRepositoryInput {
+export interface ListAssociatedApprovalRuleTemplatesForRepositoryInput {
   readonly repositoryName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
-  readonly approvalRuleTemplateNames: [];
-  readonly nextToken: string;
+export interface ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
+  readonly approvalRuleTemplateNames?: [];
+  readonly nextToken?: string;
 }
 
-interface ListBranchesInput {
+export interface ListBranchesInput {
   readonly repositoryName: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListBranchesOutput {
-  readonly branches: [];
-  readonly nextToken: string;
+export interface ListBranchesOutput {
+  readonly branches?: [];
+  readonly nextToken?: string;
 }
 
-interface ListPullRequestsInput {
+export interface ListPullRequestsInput {
   readonly repositoryName: string;
-  readonly authorArn: string;
-  readonly pullRequestStatus: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly authorArn?: string;
+  readonly pullRequestStatus?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListPullRequestsOutput {
+export interface ListPullRequestsOutput {
   readonly pullRequestIds: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListRepositoriesForApprovalRuleTemplateInput {
+export interface ListRepositoriesForApprovalRuleTemplateInput {
   readonly approvalRuleTemplateName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListRepositoriesForApprovalRuleTemplateOutput {
-  readonly repositoryNames: [];
-  readonly nextToken: string;
+export interface ListRepositoriesForApprovalRuleTemplateOutput {
+  readonly repositoryNames?: [];
+  readonly nextToken?: string;
 }
 
-interface ListRepositoriesInput {
-  readonly nextToken: string;
-  readonly sortBy: string;
-  readonly order: string;
+export interface ListRepositoriesInput {
+  readonly nextToken?: string;
+  readonly sortBy?: string;
+  readonly order?: string;
 }
 
-interface ListRepositoriesOutput {
-  readonly repositories: [];
-  readonly nextToken: string;
+export interface ListRepositoriesOutput {
+  readonly repositories?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceInput {
+export interface ListTagsForResourceInput {
   readonly resourceArn: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceOutput {
-  readonly tags: {[key: string]: any};
-  readonly nextToken: string;
+export interface ListTagsForResourceOutput {
+  readonly tags?: {[key: string]: any};
+  readonly nextToken?: string;
 }
 
-interface Location {
-  readonly filePath: string;
-  readonly filePosition: number;
-  readonly relativeFileVersion: string;
+export interface Location {
+  readonly filePath?: string;
+  readonly filePosition?: number;
+  readonly relativeFileVersion?: string;
 }
 
-interface ManualMergeRequiredException {
+export interface ManualMergeRequiredException {
 }
 
-interface MaximumBranchesExceededException {
+export interface MaximumBranchesExceededException {
 }
 
-interface MaximumConflictResolutionEntriesExceededException {
+export interface MaximumConflictResolutionEntriesExceededException {
 }
 
-interface MaximumFileContentToLoadExceededException {
+export interface MaximumFileContentToLoadExceededException {
 }
 
-interface MaximumFileEntriesExceededException {
+export interface MaximumFileEntriesExceededException {
 }
 
-interface MaximumItemsToCompareExceededException {
+export interface MaximumItemsToCompareExceededException {
 }
 
-interface MaximumNumberOfApprovalsExceededException {
+export interface MaximumNumberOfApprovalsExceededException {
 }
 
-interface MaximumOpenPullRequestsExceededException {
+export interface MaximumOpenPullRequestsExceededException {
 }
 
-interface MaximumRepositoryNamesExceededException {
+export interface MaximumRepositoryNamesExceededException {
 }
 
-interface MaximumRepositoryTriggersExceededException {
+export interface MaximumRepositoryTriggersExceededException {
 }
 
-interface MaximumRuleTemplatesAssociatedWithRepositoryException {
+export interface MaximumRuleTemplatesAssociatedWithRepositoryException {
 }
 
-interface MergeBranchesByFastForwardInput {
+export interface MergeBranchesByFastForwardInput {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
-  readonly targetBranch: string;
+  readonly targetBranch?: string;
 }
 
-interface MergeBranchesByFastForwardOutput {
-  readonly commitId: string;
-  readonly treeId: string;
+export interface MergeBranchesByFastForwardOutput {
+  readonly commitId?: string;
+  readonly treeId?: string;
 }
 
-interface MergeBranchesBySquashInput {
+export interface MergeBranchesBySquashInput {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
-  readonly targetBranch: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly authorName: string;
-  readonly email: string;
-  readonly commitMessage: string;
-  readonly keepEmptyFolders: boolean;
-  readonly conflictResolution: ConflictResolution;
+  readonly targetBranch?: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly authorName?: string;
+  readonly email?: string;
+  readonly commitMessage?: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly conflictResolution?: ConflictResolution;
 }
 
-interface MergeBranchesBySquashOutput {
-  readonly commitId: string;
-  readonly treeId: string;
+export interface MergeBranchesBySquashOutput {
+  readonly commitId?: string;
+  readonly treeId?: string;
 }
 
-interface MergeBranchesByThreeWayInput {
+export interface MergeBranchesByThreeWayInput {
   readonly repositoryName: string;
   readonly sourceCommitSpecifier: string;
   readonly destinationCommitSpecifier: string;
-  readonly targetBranch: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly authorName: string;
-  readonly email: string;
-  readonly commitMessage: string;
-  readonly keepEmptyFolders: boolean;
-  readonly conflictResolution: ConflictResolution;
+  readonly targetBranch?: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly authorName?: string;
+  readonly email?: string;
+  readonly commitMessage?: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly conflictResolution?: ConflictResolution;
 }
 
-interface MergeBranchesByThreeWayOutput {
-  readonly commitId: string;
-  readonly treeId: string;
+export interface MergeBranchesByThreeWayOutput {
+  readonly commitId?: string;
+  readonly treeId?: string;
 }
 
-interface MergeHunk {
-  readonly isConflict: boolean;
-  readonly source: MergeHunkDetail;
-  readonly destination: MergeHunkDetail;
-  readonly base: MergeHunkDetail;
+export interface MergeHunk {
+  readonly isConflict?: boolean;
+  readonly source?: MergeHunkDetail;
+  readonly destination?: MergeHunkDetail;
+  readonly base?: MergeHunkDetail;
 }
 
-interface MergeHunkDetail {
-  readonly startLine: number;
-  readonly endLine: number;
-  readonly hunkContent: string;
+export interface MergeHunkDetail {
+  readonly startLine?: number;
+  readonly endLine?: number;
+  readonly hunkContent?: string;
 }
 
-interface MergeMetadata {
-  readonly isMerged: boolean;
-  readonly mergedBy: string;
-  readonly mergeCommitId: string;
-  readonly mergeOption: string;
+export interface MergeMetadata {
+  readonly isMerged?: boolean;
+  readonly mergedBy?: string;
+  readonly mergeCommitId?: string;
+  readonly mergeOption?: string;
 }
 
-interface MergeOperations {
-  readonly source: string;
-  readonly destination: string;
+export interface MergeOperations {
+  readonly source?: string;
+  readonly destination?: string;
 }
 
-interface MergeOptionRequiredException {
+export interface MergeOptionRequiredException {
 }
 
-interface MergePullRequestByFastForwardInput {
+export interface MergePullRequestByFastForwardInput {
   readonly pullRequestId: string;
   readonly repositoryName: string;
-  readonly sourceCommitId: string;
+  readonly sourceCommitId?: string;
 }
 
-interface MergePullRequestByFastForwardOutput {
-  readonly pullRequest: PullRequest;
+export interface MergePullRequestByFastForwardOutput {
+  readonly pullRequest?: PullRequest;
 }
 
-interface MergePullRequestBySquashInput {
+export interface MergePullRequestBySquashInput {
   readonly pullRequestId: string;
   readonly repositoryName: string;
-  readonly sourceCommitId: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly commitMessage: string;
-  readonly authorName: string;
-  readonly email: string;
-  readonly keepEmptyFolders: boolean;
-  readonly conflictResolution: ConflictResolution;
+  readonly sourceCommitId?: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly commitMessage?: string;
+  readonly authorName?: string;
+  readonly email?: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly conflictResolution?: ConflictResolution;
 }
 
-interface MergePullRequestBySquashOutput {
-  readonly pullRequest: PullRequest;
+export interface MergePullRequestBySquashOutput {
+  readonly pullRequest?: PullRequest;
 }
 
-interface MergePullRequestByThreeWayInput {
+export interface MergePullRequestByThreeWayInput {
   readonly pullRequestId: string;
   readonly repositoryName: string;
-  readonly sourceCommitId: string;
-  readonly conflictDetailLevel: string;
-  readonly conflictResolutionStrategy: string;
-  readonly commitMessage: string;
-  readonly authorName: string;
-  readonly email: string;
-  readonly keepEmptyFolders: boolean;
-  readonly conflictResolution: ConflictResolution;
+  readonly sourceCommitId?: string;
+  readonly conflictDetailLevel?: string;
+  readonly conflictResolutionStrategy?: string;
+  readonly commitMessage?: string;
+  readonly authorName?: string;
+  readonly email?: string;
+  readonly keepEmptyFolders?: boolean;
+  readonly conflictResolution?: ConflictResolution;
 }
 
-interface MergePullRequestByThreeWayOutput {
-  readonly pullRequest: PullRequest;
+export interface MergePullRequestByThreeWayOutput {
+  readonly pullRequest?: PullRequest;
 }
 
-interface MultipleConflictResolutionEntriesException {
+export interface MultipleConflictResolutionEntriesException {
 }
 
-interface MultipleRepositoriesInPullRequestException {
+export interface MultipleRepositoriesInPullRequestException {
 }
 
-interface NameLengthExceededException {
+export interface NameLengthExceededException {
 }
 
-interface NoChangeException {
+export interface NoChangeException {
 }
 
-interface NumberOfRuleTemplatesExceededException {
+export interface NumberOfRuleTemplatesExceededException {
 }
 
-interface NumberOfRulesExceededException {
+export interface NumberOfRulesExceededException {
 }
 
-interface ObjectTypes {
-  readonly source: string;
-  readonly destination: string;
-  readonly base: string;
+export interface ObjectTypes {
+  readonly source?: string;
+  readonly destination?: string;
+  readonly base?: string;
 }
 
-interface OriginApprovalRuleTemplate {
-  readonly approvalRuleTemplateId: string;
-  readonly approvalRuleTemplateName: string;
+export interface OriginApprovalRuleTemplate {
+  readonly approvalRuleTemplateId?: string;
+  readonly approvalRuleTemplateName?: string;
 }
 
-interface OverrideAlreadySetException {
+export interface OverrideAlreadySetException {
 }
 
-interface OverridePullRequestApprovalRulesInput {
+export interface OverridePullRequestApprovalRulesInput {
   readonly pullRequestId: string;
   readonly revisionId: string;
   readonly overrideStatus: string;
 }
 
-interface OverrideStatusRequiredException {
+export interface OverrideStatusRequiredException {
 }
 
-interface ParentCommitDoesNotExistException {
+export interface ParentCommitDoesNotExistException {
 }
 
-interface ParentCommitIdOutdatedException {
+export interface ParentCommitIdOutdatedException {
 }
 
-interface ParentCommitIdRequiredException {
+export interface ParentCommitIdRequiredException {
 }
 
-interface PathDoesNotExistException {
+export interface PathDoesNotExistException {
 }
 
-interface PathRequiredException {
+export interface PathRequiredException {
 }
 
-interface PostCommentForComparedCommitInput {
+export interface PostCommentForComparedCommitInput {
   readonly repositoryName: string;
-  readonly beforeCommitId: string;
+  readonly beforeCommitId?: string;
   readonly afterCommitId: string;
-  readonly location: Location;
+  readonly location?: Location;
   readonly content: string;
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 
-interface PostCommentForComparedCommitOutput {
-  readonly repositoryName: string;
-  readonly beforeCommitId: string;
-  readonly afterCommitId: string;
-  readonly beforeBlobId: string;
-  readonly afterBlobId: string;
-  readonly location: Location;
-  readonly comment: Comment;
+export interface PostCommentForComparedCommitOutput {
+  readonly repositoryName?: string;
+  readonly beforeCommitId?: string;
+  readonly afterCommitId?: string;
+  readonly beforeBlobId?: string;
+  readonly afterBlobId?: string;
+  readonly location?: Location;
+  readonly comment?: Comment;
 }
 
-interface PostCommentForPullRequestInput {
+export interface PostCommentForPullRequestInput {
   readonly pullRequestId: string;
   readonly repositoryName: string;
   readonly beforeCommitId: string;
   readonly afterCommitId: string;
-  readonly location: Location;
+  readonly location?: Location;
   readonly content: string;
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 
-interface PostCommentForPullRequestOutput {
-  readonly repositoryName: string;
-  readonly pullRequestId: string;
-  readonly beforeCommitId: string;
-  readonly afterCommitId: string;
-  readonly beforeBlobId: string;
-  readonly afterBlobId: string;
-  readonly location: Location;
-  readonly comment: Comment;
+export interface PostCommentForPullRequestOutput {
+  readonly repositoryName?: string;
+  readonly pullRequestId?: string;
+  readonly beforeCommitId?: string;
+  readonly afterCommitId?: string;
+  readonly beforeBlobId?: string;
+  readonly afterBlobId?: string;
+  readonly location?: Location;
+  readonly comment?: Comment;
 }
 
-interface PostCommentReplyInput {
+export interface PostCommentReplyInput {
   readonly inReplyTo: string;
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
   readonly content: string;
 }
 
-interface PostCommentReplyOutput {
-  readonly comment: Comment;
+export interface PostCommentReplyOutput {
+  readonly comment?: Comment;
 }
 
-interface PullRequest {
-  readonly pullRequestId: string;
-  readonly title: string;
-  readonly description: string;
-  readonly lastActivityDate: Date;
-  readonly creationDate: Date;
-  readonly pullRequestStatus: string;
-  readonly authorArn: string;
-  readonly pullRequestTargets: [];
-  readonly clientRequestToken: string;
-  readonly revisionId: string;
-  readonly approvalRules: [];
+export interface PullRequest {
+  readonly pullRequestId?: string;
+  readonly title?: string;
+  readonly description?: string;
+  readonly lastActivityDate?: Date;
+  readonly creationDate?: Date;
+  readonly pullRequestStatus?: string;
+  readonly authorArn?: string;
+  readonly pullRequestTargets?: [];
+  readonly clientRequestToken?: string;
+  readonly revisionId?: string;
+  readonly approvalRules?: [];
 }
 
-interface PullRequestAlreadyClosedException {
+export interface PullRequestAlreadyClosedException {
 }
 
-interface PullRequestApprovalRulesNotSatisfiedException {
+export interface PullRequestApprovalRulesNotSatisfiedException {
 }
 
-interface PullRequestCannotBeApprovedByAuthorException {
+export interface PullRequestCannotBeApprovedByAuthorException {
 }
 
-interface PullRequestCreatedEventMetadata {
-  readonly repositoryName: string;
-  readonly sourceCommitId: string;
-  readonly destinationCommitId: string;
-  readonly mergeBase: string;
+export interface PullRequestCreatedEventMetadata {
+  readonly repositoryName?: string;
+  readonly sourceCommitId?: string;
+  readonly destinationCommitId?: string;
+  readonly mergeBase?: string;
 }
 
-interface PullRequestDoesNotExistException {
+export interface PullRequestDoesNotExistException {
 }
 
-interface PullRequestEvent {
-  readonly pullRequestId: string;
-  readonly eventDate: Date;
-  readonly pullRequestEventType: string;
-  readonly actorArn: string;
-  readonly pullRequestCreatedEventMetadata: PullRequestCreatedEventMetadata;
-  readonly pullRequestStatusChangedEventMetadata: PullRequestStatusChangedEventMetadata;
-  readonly pullRequestSourceReferenceUpdatedEventMetadata: PullRequestSourceReferenceUpdatedEventMetadata;
-  readonly pullRequestMergedStateChangedEventMetadata: PullRequestMergedStateChangedEventMetadata;
-  readonly approvalRuleEventMetadata: ApprovalRuleEventMetadata;
-  readonly approvalStateChangedEventMetadata: ApprovalStateChangedEventMetadata;
-  readonly approvalRuleOverriddenEventMetadata: ApprovalRuleOverriddenEventMetadata;
+export interface PullRequestEvent {
+  readonly pullRequestId?: string;
+  readonly eventDate?: Date;
+  readonly pullRequestEventType?: string;
+  readonly actorArn?: string;
+  readonly pullRequestCreatedEventMetadata?: PullRequestCreatedEventMetadata;
+  readonly pullRequestStatusChangedEventMetadata?: PullRequestStatusChangedEventMetadata;
+  readonly pullRequestSourceReferenceUpdatedEventMetadata?: PullRequestSourceReferenceUpdatedEventMetadata;
+  readonly pullRequestMergedStateChangedEventMetadata?: PullRequestMergedStateChangedEventMetadata;
+  readonly approvalRuleEventMetadata?: ApprovalRuleEventMetadata;
+  readonly approvalStateChangedEventMetadata?: ApprovalStateChangedEventMetadata;
+  readonly approvalRuleOverriddenEventMetadata?: ApprovalRuleOverriddenEventMetadata;
 }
 
-interface PullRequestIdRequiredException {
+export interface PullRequestIdRequiredException {
 }
 
-interface PullRequestMergedStateChangedEventMetadata {
-  readonly repositoryName: string;
-  readonly destinationReference: string;
-  readonly mergeMetadata: MergeMetadata;
+export interface PullRequestMergedStateChangedEventMetadata {
+  readonly repositoryName?: string;
+  readonly destinationReference?: string;
+  readonly mergeMetadata?: MergeMetadata;
 }
 
-interface PullRequestSourceReferenceUpdatedEventMetadata {
-  readonly repositoryName: string;
-  readonly beforeCommitId: string;
-  readonly afterCommitId: string;
-  readonly mergeBase: string;
+export interface PullRequestSourceReferenceUpdatedEventMetadata {
+  readonly repositoryName?: string;
+  readonly beforeCommitId?: string;
+  readonly afterCommitId?: string;
+  readonly mergeBase?: string;
 }
 
-interface PullRequestStatusChangedEventMetadata {
-  readonly pullRequestStatus: string;
+export interface PullRequestStatusChangedEventMetadata {
+  readonly pullRequestStatus?: string;
 }
 
-interface PullRequestStatusRequiredException {
+export interface PullRequestStatusRequiredException {
 }
 
-interface PullRequestTarget {
-  readonly repositoryName: string;
-  readonly sourceReference: string;
-  readonly destinationReference: string;
-  readonly destinationCommit: string;
-  readonly sourceCommit: string;
-  readonly mergeBase: string;
-  readonly mergeMetadata: MergeMetadata;
+export interface PullRequestTarget {
+  readonly repositoryName?: string;
+  readonly sourceReference?: string;
+  readonly destinationReference?: string;
+  readonly destinationCommit?: string;
+  readonly sourceCommit?: string;
+  readonly mergeBase?: string;
+  readonly mergeMetadata?: MergeMetadata;
 }
 
-interface PutCommentReactionInput {
+export interface PutCommentReactionInput {
   readonly commentId: string;
   readonly reactionValue: string;
 }
 
-interface PutFileEntry {
+export interface PutFileEntry {
   readonly filePath: string;
-  readonly fileMode: string;
-  readonly fileContent: unknown;
-  readonly sourceFile: SourceFileSpecifier;
+  readonly fileMode?: string;
+  readonly fileContent?: unknown;
+  readonly sourceFile?: SourceFileSpecifier;
 }
 
-interface PutFileEntryConflictException {
+export interface PutFileEntryConflictException {
 }
 
-interface PutFileInput {
+export interface PutFileInput {
   readonly repositoryName: string;
   readonly branchName: string;
   readonly fileContent: unknown;
   readonly filePath: string;
-  readonly fileMode: string;
-  readonly parentCommitId: string;
-  readonly commitMessage: string;
-  readonly name: string;
-  readonly email: string;
+  readonly fileMode?: string;
+  readonly parentCommitId?: string;
+  readonly commitMessage?: string;
+  readonly name?: string;
+  readonly email?: string;
 }
 
-interface PutFileOutput {
+export interface PutFileOutput {
   readonly commitId: string;
   readonly blobId: string;
   readonly treeId: string;
 }
 
-interface PutRepositoryTriggersInput {
+export interface PutRepositoryTriggersInput {
   readonly repositoryName: string;
   readonly triggers: [];
 }
 
-interface PutRepositoryTriggersOutput {
-  readonly configurationId: string;
+export interface PutRepositoryTriggersOutput {
+  readonly configurationId?: string;
 }
 
-interface ReactionForComment {
-  readonly reaction: ReactionValueFormats;
-  readonly reactionUsers: [];
-  readonly reactionsFromDeletedUsersCount: number;
+export interface ReactionForComment {
+  readonly reaction?: ReactionValueFormats;
+  readonly reactionUsers?: [];
+  readonly reactionsFromDeletedUsersCount?: number;
 }
 
-interface ReactionLimitExceededException {
+export interface ReactionLimitExceededException {
 }
 
-interface ReactionValueFormats {
-  readonly emoji: string;
-  readonly shortCode: string;
-  readonly unicode: string;
+export interface ReactionValueFormats {
+  readonly emoji?: string;
+  readonly shortCode?: string;
+  readonly unicode?: string;
 }
 
-interface ReactionValueRequiredException {
+export interface ReactionValueRequiredException {
 }
 
-interface ReferenceDoesNotExistException {
+export interface ReferenceDoesNotExistException {
 }
 
-interface ReferenceNameRequiredException {
+export interface ReferenceNameRequiredException {
 }
 
-interface ReferenceTypeNotSupportedException {
+export interface ReferenceTypeNotSupportedException {
 }
 
-interface ReplaceContentEntry {
+export interface ReplaceContentEntry {
   readonly filePath: string;
   readonly replacementType: string;
-  readonly content: unknown;
-  readonly fileMode: string;
+  readonly content?: unknown;
+  readonly fileMode?: string;
 }
 
-interface ReplacementContentRequiredException {
+export interface ReplacementContentRequiredException {
 }
 
-interface ReplacementTypeRequiredException {
+export interface ReplacementTypeRequiredException {
 }
 
-interface RepositoryDoesNotExistException {
+export interface RepositoryDoesNotExistException {
 }
 
-interface RepositoryLimitExceededException {
+export interface RepositoryLimitExceededException {
 }
 
-interface RepositoryMetadata {
-  readonly accountId: string;
-  readonly repositoryId: string;
-  readonly repositoryName: string;
-  readonly repositoryDescription: string;
-  readonly defaultBranch: string;
-  readonly lastModifiedDate: Date;
-  readonly creationDate: Date;
-  readonly cloneUrlHttp: string;
-  readonly cloneUrlSsh: string;
-  readonly Arn: string;
+export interface RepositoryMetadata {
+  readonly accountId?: string;
+  readonly repositoryId?: string;
+  readonly repositoryName?: string;
+  readonly repositoryDescription?: string;
+  readonly defaultBranch?: string;
+  readonly lastModifiedDate?: Date;
+  readonly creationDate?: Date;
+  readonly cloneUrlHttp?: string;
+  readonly cloneUrlSsh?: string;
+  readonly Arn?: string;
 }
 
-interface RepositoryNameExistsException {
+export interface RepositoryNameExistsException {
 }
 
-interface RepositoryNameIdPair {
-  readonly repositoryName: string;
-  readonly repositoryId: string;
+export interface RepositoryNameIdPair {
+  readonly repositoryName?: string;
+  readonly repositoryId?: string;
 }
 
-interface RepositoryNameRequiredException {
+export interface RepositoryNameRequiredException {
 }
 
-interface RepositoryNamesRequiredException {
+export interface RepositoryNamesRequiredException {
 }
 
-interface RepositoryNotAssociatedWithPullRequestException {
+export interface RepositoryNotAssociatedWithPullRequestException {
 }
 
-interface RepositoryTrigger {
+export interface RepositoryTrigger {
   readonly name: string;
   readonly destinationArn: string;
-  readonly customData: string;
-  readonly branches: [];
+  readonly customData?: string;
+  readonly branches?: [];
   readonly events: [];
 }
 
-interface RepositoryTriggerBranchNameListRequiredException {
+export interface RepositoryTriggerBranchNameListRequiredException {
 }
 
-interface RepositoryTriggerDestinationArnRequiredException {
+export interface RepositoryTriggerDestinationArnRequiredException {
 }
 
-interface RepositoryTriggerEventsListRequiredException {
+export interface RepositoryTriggerEventsListRequiredException {
 }
 
-interface RepositoryTriggerExecutionFailure {
-  readonly trigger: string;
-  readonly failureMessage: string;
+export interface RepositoryTriggerExecutionFailure {
+  readonly trigger?: string;
+  readonly failureMessage?: string;
 }
 
-interface RepositoryTriggerNameRequiredException {
+export interface RepositoryTriggerNameRequiredException {
 }
 
-interface RepositoryTriggersListRequiredException {
+export interface RepositoryTriggersListRequiredException {
 }
 
-interface ResourceArnRequiredException {
+export interface ResourceArnRequiredException {
 }
 
-interface RestrictedSourceFileException {
+export interface RestrictedSourceFileException {
 }
 
-interface RevisionIdRequiredException {
+export interface RevisionIdRequiredException {
 }
 
-interface RevisionNotCurrentException {
+export interface RevisionNotCurrentException {
 }
 
-interface SameFileContentException {
+export interface SameFileContentException {
 }
 
-interface SamePathRequestException {
+export interface SamePathRequestException {
 }
 
-interface SetFileModeEntry {
+export interface SetFileModeEntry {
   readonly filePath: string;
   readonly fileMode: string;
 }
 
-interface SourceAndDestinationAreSameException {
+export interface SourceAndDestinationAreSameException {
 }
 
-interface SourceFileOrContentRequiredException {
+export interface SourceFileOrContentRequiredException {
 }
 
-interface SourceFileSpecifier {
+export interface SourceFileSpecifier {
   readonly filePath: string;
-  readonly isMove: boolean;
+  readonly isMove?: boolean;
 }
 
-interface SubModule {
-  readonly commitId: string;
-  readonly absolutePath: string;
-  readonly relativePath: string;
+export interface SubModule {
+  readonly commitId?: string;
+  readonly absolutePath?: string;
+  readonly relativePath?: string;
 }
 
-interface SymbolicLink {
-  readonly blobId: string;
-  readonly absolutePath: string;
-  readonly relativePath: string;
-  readonly fileMode: string;
+export interface SymbolicLink {
+  readonly blobId?: string;
+  readonly absolutePath?: string;
+  readonly relativePath?: string;
+  readonly fileMode?: string;
 }
 
-interface TagKeysListRequiredException {
+export interface TagKeysListRequiredException {
 }
 
-interface TagPolicyException {
+export interface TagPolicyException {
 }
 
-interface TagResourceInput {
+export interface TagResourceInput {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagsMapRequiredException {
+export interface TagsMapRequiredException {
 }
 
-interface Target {
+export interface Target {
   readonly repositoryName: string;
   readonly sourceReference: string;
-  readonly destinationReference: string;
+  readonly destinationReference?: string;
 }
 
-interface TargetRequiredException {
+export interface TargetRequiredException {
 }
 
-interface TargetsRequiredException {
+export interface TargetsRequiredException {
 }
 
-interface TestRepositoryTriggersInput {
+export interface TestRepositoryTriggersInput {
   readonly repositoryName: string;
   readonly triggers: [];
 }
 
-interface TestRepositoryTriggersOutput {
-  readonly successfulExecutions: [];
-  readonly failedExecutions: [];
+export interface TestRepositoryTriggersOutput {
+  readonly successfulExecutions?: [];
+  readonly failedExecutions?: [];
 }
 
-interface TipOfSourceReferenceIsDifferentException {
+export interface TipOfSourceReferenceIsDifferentException {
 }
 
-interface TipsDivergenceExceededException {
+export interface TipsDivergenceExceededException {
 }
 
-interface TitleRequiredException {
+export interface TitleRequiredException {
 }
 
-interface TooManyTagsException {
+export interface TooManyTagsException {
 }
 
-interface UntagResourceInput {
+export interface UntagResourceInput {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UpdateApprovalRuleTemplateContentInput {
+export interface UpdateApprovalRuleTemplateContentInput {
   readonly approvalRuleTemplateName: string;
   readonly newRuleContent: string;
-  readonly existingRuleContentSha256: string;
+  readonly existingRuleContentSha256?: string;
 }
 
-interface UpdateApprovalRuleTemplateContentOutput {
+export interface UpdateApprovalRuleTemplateContentOutput {
   readonly approvalRuleTemplate: ApprovalRuleTemplate;
 }
 
-interface UpdateApprovalRuleTemplateDescriptionInput {
+export interface UpdateApprovalRuleTemplateDescriptionInput {
   readonly approvalRuleTemplateName: string;
   readonly approvalRuleTemplateDescription: string;
 }
 
-interface UpdateApprovalRuleTemplateDescriptionOutput {
+export interface UpdateApprovalRuleTemplateDescriptionOutput {
   readonly approvalRuleTemplate: ApprovalRuleTemplate;
 }
 
-interface UpdateApprovalRuleTemplateNameInput {
+export interface UpdateApprovalRuleTemplateNameInput {
   readonly oldApprovalRuleTemplateName: string;
   readonly newApprovalRuleTemplateName: string;
 }
 
-interface UpdateApprovalRuleTemplateNameOutput {
+export interface UpdateApprovalRuleTemplateNameOutput {
   readonly approvalRuleTemplate: ApprovalRuleTemplate;
 }
 
-interface UpdateCommentInput {
+export interface UpdateCommentInput {
   readonly commentId: string;
   readonly content: string;
 }
 
-interface UpdateCommentOutput {
-  readonly comment: Comment;
+export interface UpdateCommentOutput {
+  readonly comment?: Comment;
 }
 
-interface UpdateDefaultBranchInput {
+export interface UpdateDefaultBranchInput {
   readonly repositoryName: string;
   readonly defaultBranchName: string;
 }
 
-interface UpdatePullRequestApprovalRuleContentInput {
+export interface UpdatePullRequestApprovalRuleContentInput {
   readonly pullRequestId: string;
   readonly approvalRuleName: string;
-  readonly existingRuleContentSha256: string;
+  readonly existingRuleContentSha256?: string;
   readonly newRuleContent: string;
 }
 
-interface UpdatePullRequestApprovalRuleContentOutput {
+export interface UpdatePullRequestApprovalRuleContentOutput {
   readonly approvalRule: ApprovalRule;
 }
 
-interface UpdatePullRequestApprovalStateInput {
+export interface UpdatePullRequestApprovalStateInput {
   readonly pullRequestId: string;
   readonly revisionId: string;
   readonly approvalState: string;
 }
 
-interface UpdatePullRequestDescriptionInput {
+export interface UpdatePullRequestDescriptionInput {
   readonly pullRequestId: string;
   readonly description: string;
 }
 
-interface UpdatePullRequestDescriptionOutput {
+export interface UpdatePullRequestDescriptionOutput {
   readonly pullRequest: PullRequest;
 }
 
-interface UpdatePullRequestStatusInput {
+export interface UpdatePullRequestStatusInput {
   readonly pullRequestId: string;
   readonly pullRequestStatus: string;
 }
 
-interface UpdatePullRequestStatusOutput {
+export interface UpdatePullRequestStatusOutput {
   readonly pullRequest: PullRequest;
 }
 
-interface UpdatePullRequestTitleInput {
+export interface UpdatePullRequestTitleInput {
   readonly pullRequestId: string;
   readonly title: string;
 }
 
-interface UpdatePullRequestTitleOutput {
+export interface UpdatePullRequestTitleOutput {
   readonly pullRequest: PullRequest;
 }
 
-interface UpdateRepositoryDescriptionInput {
+export interface UpdateRepositoryDescriptionInput {
   readonly repositoryName: string;
-  readonly repositoryDescription: string;
+  readonly repositoryDescription?: string;
 }
 
-interface UpdateRepositoryNameInput {
+export interface UpdateRepositoryNameInput {
   readonly oldName: string;
   readonly newName: string;
 }
 
-interface UserInfo {
-  readonly name: string;
-  readonly email: string;
-  readonly date: string;
+export interface UserInfo {
+  readonly name?: string;
+  readonly email?: string;
+  readonly date?: string;
 }
+
 

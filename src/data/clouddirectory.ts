@@ -7,26 +7,31 @@ export interface AddFacetToObject {
   readonly ObjectAttributeList?: [];
   readonly ObjectReference: ObjectReference;
 }
+
 export interface ApplySchema {
   readonly PublishedSchemaArn: string;
   readonly DirectoryArn: string;
 }
+
 export interface AttachObject {
   readonly DirectoryArn: string;
   readonly ParentReference: ObjectReference;
   readonly ChildReference: ObjectReference;
   readonly LinkName: string;
 }
+
 export interface AttachPolicy {
   readonly DirectoryArn: string;
   readonly PolicyReference: ObjectReference;
   readonly ObjectReference: ObjectReference;
 }
+
 export interface AttachToIndex {
   readonly DirectoryArn: string;
   readonly IndexReference: ObjectReference;
   readonly TargetReference: ObjectReference;
 }
+
 export interface AttachTypedLink {
   readonly DirectoryArn: string;
   readonly SourceObjectReference: ObjectReference;
@@ -34,19 +39,23 @@ export interface AttachTypedLink {
   readonly TypedLinkFacet: TypedLinkSchemaAndFacetName;
   readonly Attributes: [];
 }
+
 export interface BatchRead {
   readonly DirectoryArn: string;
   readonly Operations: [];
   readonly ConsistencyLevel?: string;
 }
+
 export interface BatchWrite {
   readonly DirectoryArn: string;
   readonly Operations: [];
 }
+
 export interface CreateDirectory {
   readonly Name: string;
   readonly SchemaArn: string;
 }
+
 export interface CreateFacet {
   readonly SchemaArn: string;
   readonly Name: string;
@@ -54,6 +63,7 @@ export interface CreateFacet {
   readonly ObjectType?: string;
   readonly FacetStyle?: string;
 }
+
 export interface CreateIndex {
   readonly DirectoryArn: string;
   readonly OrderedIndexedAttributeList: [];
@@ -61,6 +71,7 @@ export interface CreateIndex {
   readonly ParentReference?: ObjectReference;
   readonly LinkName?: string;
 }
+
 export interface CreateObject {
   readonly DirectoryArn: string;
   readonly SchemaFacets: [];
@@ -68,72 +79,90 @@ export interface CreateObject {
   readonly ParentReference?: ObjectReference;
   readonly LinkName?: string;
 }
+
 export interface CreateSchema {
   readonly Name: string;
 }
+
 export interface CreateTypedLinkFacet {
   readonly SchemaArn: string;
   readonly Facet: TypedLinkFacet;
 }
+
 export interface DeleteDirectory {
   readonly DirectoryArn: string;
 }
+
 export interface DeleteFacet {
   readonly SchemaArn: string;
   readonly Name: string;
 }
+
 export interface DeleteObject {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
 }
+
 export interface DeleteSchema {
   readonly SchemaArn: string;
 }
+
 export interface DeleteTypedLinkFacet {
   readonly SchemaArn: string;
   readonly Name: string;
 }
+
 export interface DetachFromIndex {
   readonly DirectoryArn: string;
   readonly IndexReference: ObjectReference;
   readonly TargetReference: ObjectReference;
 }
+
 export interface DetachObject {
   readonly DirectoryArn: string;
   readonly ParentReference: ObjectReference;
   readonly LinkName: string;
 }
+
 export interface DetachPolicy {
   readonly DirectoryArn: string;
   readonly PolicyReference: ObjectReference;
   readonly ObjectReference: ObjectReference;
 }
+
 export interface DetachTypedLink {
   readonly DirectoryArn: string;
   readonly TypedLinkSpecifier: TypedLinkSpecifier;
 }
+
 export interface DisableDirectory {
   readonly DirectoryArn: string;
 }
+
 export interface EnableDirectory {
   readonly DirectoryArn: string;
 }
+
 export interface GetAppliedSchemaVersion {
   readonly SchemaArn: string;
 }
+
 export interface GetDirectory {
   readonly DirectoryArn: string;
 }
+
 export interface GetFacet {
   readonly SchemaArn: string;
   readonly Name: string;
 }
+
 export interface GetLinkAttributes {
   readonly DirectoryArn: string;
   readonly TypedLinkSpecifier: TypedLinkSpecifier;
   readonly AttributeNames: [];
   readonly ConsistencyLevel?: string;
 }
+
 export interface GetObjectAttributes {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
@@ -141,24 +170,29 @@ export interface GetObjectAttributes {
   readonly SchemaFacet: SchemaFacet;
   readonly AttributeNames: [];
 }
+
 export interface GetObjectInformation {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
   readonly ConsistencyLevel?: string;
 }
+
 export interface GetSchemaAsJson {
   readonly SchemaArn: string;
 }
+
 export interface GetTypedLinkFacetInformation {
   readonly SchemaArn: string;
   readonly Name: string;
 }
+
 export interface ListAppliedSchemaArns {
   readonly DirectoryArn: string;
   readonly SchemaArn?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListAttachedIndices {
   readonly DirectoryArn: string;
   readonly TargetReference: ObjectReference;
@@ -166,26 +200,31 @@ export interface ListAttachedIndices {
   readonly MaxResults?: number;
   readonly ConsistencyLevel?: string;
 }
+
 export interface ListDevelopmentSchemaArns {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDirectories {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly state?: string;
 }
+
 export interface ListFacetAttributes {
   readonly SchemaArn: string;
   readonly Name: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListFacetNames {
   readonly SchemaArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListIncomingTypedLinks {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
@@ -195,6 +234,7 @@ export interface ListIncomingTypedLinks {
   readonly MaxResults?: number;
   readonly ConsistencyLevel?: string;
 }
+
 export interface ListIndex {
   readonly DirectoryArn: string;
   readonly RangesOnIndexedValues?: [];
@@ -203,11 +243,13 @@ export interface ListIndex {
   readonly NextToken?: string;
   readonly ConsistencyLevel?: string;
 }
+
 export interface ListManagedSchemaArns {
   readonly SchemaArn?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListObjectAttributes {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
@@ -216,6 +258,7 @@ export interface ListObjectAttributes {
   readonly ConsistencyLevel?: string;
   readonly FacetFilter?: SchemaFacet;
 }
+
 export interface ListObjectChildren {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
@@ -223,12 +266,14 @@ export interface ListObjectChildren {
   readonly MaxResults?: number;
   readonly ConsistencyLevel?: string;
 }
+
 export interface ListObjectParentPaths {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListObjectParents {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
@@ -237,6 +282,7 @@ export interface ListObjectParents {
   readonly ConsistencyLevel?: string;
   readonly IncludeAllLinksToEachParent?: boolean;
 }
+
 export interface ListObjectPolicies {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
@@ -244,6 +290,7 @@ export interface ListObjectPolicies {
   readonly MaxResults?: number;
   readonly ConsistencyLevel?: string;
 }
+
 export interface ListOutgoingTypedLinks {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
@@ -253,6 +300,7 @@ export interface ListOutgoingTypedLinks {
   readonly MaxResults?: number;
   readonly ConsistencyLevel?: string;
 }
+
 export interface ListPolicyAttachments {
   readonly DirectoryArn: string;
   readonly PolicyReference: ObjectReference;
@@ -260,87 +308,104 @@ export interface ListPolicyAttachments {
   readonly MaxResults?: number;
   readonly ConsistencyLevel?: string;
 }
+
 export interface ListPublishedSchemaArns {
   readonly SchemaArn?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTypedLinkFacetAttributes {
   readonly SchemaArn: string;
   readonly Name: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTypedLinkFacetNames {
   readonly SchemaArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface LookupPolicy {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface PublishSchema {
   readonly DevelopmentSchemaArn: string;
   readonly Version: string;
   readonly MinorVersion?: string;
   readonly Name?: string;
 }
+
 export interface PutSchemaFromJson {
   readonly SchemaArn: string;
   readonly Document: string;
 }
+
 export interface RemoveFacetFromObject {
   readonly DirectoryArn: string;
   readonly SchemaFacet: SchemaFacet;
   readonly ObjectReference: ObjectReference;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateFacet {
   readonly SchemaArn: string;
   readonly Name: string;
   readonly AttributeUpdates?: [];
   readonly ObjectType?: string;
 }
+
 export interface UpdateLinkAttributes {
   readonly DirectoryArn: string;
   readonly TypedLinkSpecifier: TypedLinkSpecifier;
   readonly AttributeUpdates: [];
 }
+
 export interface UpdateObjectAttributes {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
   readonly AttributeUpdates: [];
 }
+
 export interface UpdateSchema {
   readonly SchemaArn: string;
   readonly Name: string;
 }
+
 export interface UpdateTypedLinkFacet {
   readonly SchemaArn: string;
   readonly Name: string;
   readonly AttributeUpdates: [];
   readonly IdentityAttributeOrder: [];
 }
+
 export interface UpgradeAppliedSchema {
   readonly PublishedSchemaArn: string;
   readonly DirectoryArn: string;
   readonly DryRun?: boolean;
 }
+
 export interface UpgradePublishedSchema {
   readonly DevelopmentSchemaArn: string;
   readonly PublishedSchemaArn: string;
@@ -348,63 +413,61 @@ export interface UpgradePublishedSchema {
   readonly DryRun?: boolean;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface AddFacetToObjectRequest {
+export interface AddFacetToObjectRequest {
   readonly DirectoryArn: string;
   readonly SchemaFacet: SchemaFacet;
-  readonly ObjectAttributeList: [];
+  readonly ObjectAttributeList?: [];
   readonly ObjectReference: ObjectReference;
 }
 
-interface AddFacetToObjectResponse {
+export interface AddFacetToObjectResponse {
 }
 
-interface ApplySchemaRequest {
+export interface ApplySchemaRequest {
   readonly PublishedSchemaArn: string;
   readonly DirectoryArn: string;
 }
 
-interface ApplySchemaResponse {
-  readonly AppliedSchemaArn: string;
-  readonly DirectoryArn: string;
+export interface ApplySchemaResponse {
+  readonly AppliedSchemaArn?: string;
+  readonly DirectoryArn?: string;
 }
 
-interface AttachObjectRequest {
+export interface AttachObjectRequest {
   readonly DirectoryArn: string;
   readonly ParentReference: ObjectReference;
   readonly ChildReference: ObjectReference;
   readonly LinkName: string;
 }
 
-interface AttachObjectResponse {
-  readonly AttachedObjectIdentifier: string;
+export interface AttachObjectResponse {
+  readonly AttachedObjectIdentifier?: string;
 }
 
-interface AttachPolicyRequest {
+export interface AttachPolicyRequest {
   readonly DirectoryArn: string;
   readonly PolicyReference: ObjectReference;
   readonly ObjectReference: ObjectReference;
 }
 
-interface AttachPolicyResponse {
+export interface AttachPolicyResponse {
 }
 
-interface AttachToIndexRequest {
+export interface AttachToIndexRequest {
   readonly DirectoryArn: string;
   readonly IndexReference: ObjectReference;
   readonly TargetReference: ObjectReference;
 }
 
-interface AttachToIndexResponse {
-  readonly AttachedObjectIdentifier: string;
+export interface AttachToIndexResponse {
+  readonly AttachedObjectIdentifier?: string;
 }
 
-interface AttachTypedLinkRequest {
+export interface AttachTypedLinkRequest {
   readonly DirectoryArn: string;
   readonly SourceObjectReference: ObjectReference;
   readonly TargetObjectReference: ObjectReference;
@@ -412,1317 +475,1318 @@ interface AttachTypedLinkRequest {
   readonly Attributes: [];
 }
 
-interface AttachTypedLinkResponse {
-  readonly TypedLinkSpecifier: TypedLinkSpecifier;
+export interface AttachTypedLinkResponse {
+  readonly TypedLinkSpecifier?: TypedLinkSpecifier;
 }
 
-interface AttributeKey {
+export interface AttributeKey {
   readonly SchemaArn: string;
   readonly FacetName: string;
   readonly Name: string;
 }
 
-interface AttributeKeyAndValue {
+export interface AttributeKeyAndValue {
   readonly Key: AttributeKey;
   readonly Value: TypedAttributeValue;
 }
 
-interface AttributeNameAndValue {
+export interface AttributeNameAndValue {
   readonly AttributeName: string;
   readonly Value: TypedAttributeValue;
 }
 
-interface BatchAddFacetToObject {
+export interface BatchAddFacetToObject {
   readonly SchemaFacet: SchemaFacet;
   readonly ObjectAttributeList: [];
   readonly ObjectReference: ObjectReference;
 }
 
-interface BatchAddFacetToObjectResponse {
+export interface BatchAddFacetToObjectResponse {
 }
 
-interface BatchAttachObject {
+export interface BatchAttachObject {
   readonly ParentReference: ObjectReference;
   readonly ChildReference: ObjectReference;
   readonly LinkName: string;
 }
 
-interface BatchAttachObjectResponse {
-  readonly attachedObjectIdentifier: string;
+export interface BatchAttachObjectResponse {
+  readonly attachedObjectIdentifier?: string;
 }
 
-interface BatchAttachPolicy {
+export interface BatchAttachPolicy {
   readonly PolicyReference: ObjectReference;
   readonly ObjectReference: ObjectReference;
 }
 
-interface BatchAttachPolicyResponse {
+export interface BatchAttachPolicyResponse {
 }
 
-interface BatchAttachToIndex {
+export interface BatchAttachToIndex {
   readonly IndexReference: ObjectReference;
   readonly TargetReference: ObjectReference;
 }
 
-interface BatchAttachToIndexResponse {
-  readonly AttachedObjectIdentifier: string;
+export interface BatchAttachToIndexResponse {
+  readonly AttachedObjectIdentifier?: string;
 }
 
-interface BatchAttachTypedLink {
+export interface BatchAttachTypedLink {
   readonly SourceObjectReference: ObjectReference;
   readonly TargetObjectReference: ObjectReference;
   readonly TypedLinkFacet: TypedLinkSchemaAndFacetName;
   readonly Attributes: [];
 }
 
-interface BatchAttachTypedLinkResponse {
-  readonly TypedLinkSpecifier: TypedLinkSpecifier;
+export interface BatchAttachTypedLinkResponse {
+  readonly TypedLinkSpecifier?: TypedLinkSpecifier;
 }
 
-interface BatchCreateIndex {
+export interface BatchCreateIndex {
   readonly OrderedIndexedAttributeList: [];
   readonly IsUnique: boolean;
-  readonly ParentReference: ObjectReference;
-  readonly LinkName: string;
-  readonly BatchReferenceName: string;
+  readonly ParentReference?: ObjectReference;
+  readonly LinkName?: string;
+  readonly BatchReferenceName?: string;
 }
 
-interface BatchCreateIndexResponse {
-  readonly ObjectIdentifier: string;
+export interface BatchCreateIndexResponse {
+  readonly ObjectIdentifier?: string;
 }
 
-interface BatchCreateObject {
+export interface BatchCreateObject {
   readonly SchemaFacet: [];
   readonly ObjectAttributeList: [];
-  readonly ParentReference: ObjectReference;
-  readonly LinkName: string;
-  readonly BatchReferenceName: string;
+  readonly ParentReference?: ObjectReference;
+  readonly LinkName?: string;
+  readonly BatchReferenceName?: string;
 }
 
-interface BatchCreateObjectResponse {
-  readonly ObjectIdentifier: string;
+export interface BatchCreateObjectResponse {
+  readonly ObjectIdentifier?: string;
 }
 
-interface BatchDeleteObject {
+export interface BatchDeleteObject {
   readonly ObjectReference: ObjectReference;
 }
 
-interface BatchDeleteObjectResponse {
+export interface BatchDeleteObjectResponse {
 }
 
-interface BatchDetachFromIndex {
+export interface BatchDetachFromIndex {
   readonly IndexReference: ObjectReference;
   readonly TargetReference: ObjectReference;
 }
 
-interface BatchDetachFromIndexResponse {
-  readonly DetachedObjectIdentifier: string;
+export interface BatchDetachFromIndexResponse {
+  readonly DetachedObjectIdentifier?: string;
 }
 
-interface BatchDetachObject {
+export interface BatchDetachObject {
   readonly ParentReference: ObjectReference;
   readonly LinkName: string;
-  readonly BatchReferenceName: string;
+  readonly BatchReferenceName?: string;
 }
 
-interface BatchDetachObjectResponse {
-  readonly detachedObjectIdentifier: string;
+export interface BatchDetachObjectResponse {
+  readonly detachedObjectIdentifier?: string;
 }
 
-interface BatchDetachPolicy {
+export interface BatchDetachPolicy {
   readonly PolicyReference: ObjectReference;
   readonly ObjectReference: ObjectReference;
 }
 
-interface BatchDetachPolicyResponse {
+export interface BatchDetachPolicyResponse {
 }
 
-interface BatchDetachTypedLink {
+export interface BatchDetachTypedLink {
   readonly TypedLinkSpecifier: TypedLinkSpecifier;
 }
 
-interface BatchDetachTypedLinkResponse {
+export interface BatchDetachTypedLinkResponse {
 }
 
-interface BatchGetLinkAttributes {
+export interface BatchGetLinkAttributes {
   readonly TypedLinkSpecifier: TypedLinkSpecifier;
   readonly AttributeNames: [];
 }
 
-interface BatchGetLinkAttributesResponse {
-  readonly Attributes: [];
+export interface BatchGetLinkAttributesResponse {
+  readonly Attributes?: [];
 }
 
-interface BatchGetObjectAttributes {
+export interface BatchGetObjectAttributes {
   readonly ObjectReference: ObjectReference;
   readonly SchemaFacet: SchemaFacet;
   readonly AttributeNames: [];
 }
 
-interface BatchGetObjectAttributesResponse {
-  readonly Attributes: [];
+export interface BatchGetObjectAttributesResponse {
+  readonly Attributes?: [];
 }
 
-interface BatchGetObjectInformation {
+export interface BatchGetObjectInformation {
   readonly ObjectReference: ObjectReference;
 }
 
-interface BatchGetObjectInformationResponse {
-  readonly SchemaFacets: [];
-  readonly ObjectIdentifier: string;
+export interface BatchGetObjectInformationResponse {
+  readonly SchemaFacets?: [];
+  readonly ObjectIdentifier?: string;
 }
 
-interface BatchListAttachedIndices {
+export interface BatchListAttachedIndices {
   readonly TargetReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface BatchListAttachedIndicesResponse {
-  readonly IndexAttachments: [];
-  readonly NextToken: string;
+export interface BatchListAttachedIndicesResponse {
+  readonly IndexAttachments?: [];
+  readonly NextToken?: string;
 }
 
-interface BatchListIncomingTypedLinks {
+export interface BatchListIncomingTypedLinks {
   readonly ObjectReference: ObjectReference;
-  readonly FilterAttributeRanges: [];
-  readonly FilterTypedLink: TypedLinkSchemaAndFacetName;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly FilterAttributeRanges?: [];
+  readonly FilterTypedLink?: TypedLinkSchemaAndFacetName;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface BatchListIncomingTypedLinksResponse {
-  readonly LinkSpecifiers: [];
-  readonly NextToken: string;
+export interface BatchListIncomingTypedLinksResponse {
+  readonly LinkSpecifiers?: [];
+  readonly NextToken?: string;
 }
 
-interface BatchListIndex {
-  readonly RangesOnIndexedValues: [];
+export interface BatchListIndex {
+  readonly RangesOnIndexedValues?: [];
   readonly IndexReference: ObjectReference;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface BatchListIndexResponse {
-  readonly IndexAttachments: [];
-  readonly NextToken: string;
+export interface BatchListIndexResponse {
+  readonly IndexAttachments?: [];
+  readonly NextToken?: string;
 }
 
-interface BatchListObjectAttributes {
+export interface BatchListObjectAttributes {
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly FacetFilter: SchemaFacet;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly FacetFilter?: SchemaFacet;
 }
 
-interface BatchListObjectAttributesResponse {
-  readonly Attributes: [];
-  readonly NextToken: string;
+export interface BatchListObjectAttributesResponse {
+  readonly Attributes?: [];
+  readonly NextToken?: string;
 }
 
-interface BatchListObjectChildren {
+export interface BatchListObjectChildren {
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface BatchListObjectChildrenResponse {
-  readonly Children: {[key: string]: any};
-  readonly NextToken: string;
+export interface BatchListObjectChildrenResponse {
+  readonly Children?: {[key: string]: any};
+  readonly NextToken?: string;
 }
 
-interface BatchListObjectParentPaths {
+export interface BatchListObjectParentPaths {
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface BatchListObjectParentPathsResponse {
-  readonly PathToObjectIdentifiersList: [];
-  readonly NextToken: string;
+export interface BatchListObjectParentPathsResponse {
+  readonly PathToObjectIdentifiersList?: [];
+  readonly NextToken?: string;
 }
 
-interface BatchListObjectParents {
+export interface BatchListObjectParents {
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface BatchListObjectParentsResponse {
-  readonly ParentLinks: [];
-  readonly NextToken: string;
+export interface BatchListObjectParentsResponse {
+  readonly ParentLinks?: [];
+  readonly NextToken?: string;
 }
 
-interface BatchListObjectPolicies {
+export interface BatchListObjectPolicies {
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface BatchListObjectPoliciesResponse {
-  readonly AttachedPolicyIds: [];
-  readonly NextToken: string;
+export interface BatchListObjectPoliciesResponse {
+  readonly AttachedPolicyIds?: [];
+  readonly NextToken?: string;
 }
 
-interface BatchListOutgoingTypedLinks {
+export interface BatchListOutgoingTypedLinks {
   readonly ObjectReference: ObjectReference;
-  readonly FilterAttributeRanges: [];
-  readonly FilterTypedLink: TypedLinkSchemaAndFacetName;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly FilterAttributeRanges?: [];
+  readonly FilterTypedLink?: TypedLinkSchemaAndFacetName;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface BatchListOutgoingTypedLinksResponse {
-  readonly TypedLinkSpecifiers: [];
-  readonly NextToken: string;
+export interface BatchListOutgoingTypedLinksResponse {
+  readonly TypedLinkSpecifiers?: [];
+  readonly NextToken?: string;
 }
 
-interface BatchListPolicyAttachments {
+export interface BatchListPolicyAttachments {
   readonly PolicyReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface BatchListPolicyAttachmentsResponse {
-  readonly ObjectIdentifiers: [];
-  readonly NextToken: string;
+export interface BatchListPolicyAttachmentsResponse {
+  readonly ObjectIdentifiers?: [];
+  readonly NextToken?: string;
 }
 
-interface BatchLookupPolicy {
+export interface BatchLookupPolicy {
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface BatchLookupPolicyResponse {
-  readonly PolicyToPathList: [];
-  readonly NextToken: string;
+export interface BatchLookupPolicyResponse {
+  readonly PolicyToPathList?: [];
+  readonly NextToken?: string;
 }
 
-interface BatchReadException {
-  readonly Type: string;
-  readonly Message: string;
+export interface BatchReadException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface BatchReadOperation {
-  readonly ListObjectAttributes: BatchListObjectAttributes;
-  readonly ListObjectChildren: BatchListObjectChildren;
-  readonly ListAttachedIndices: BatchListAttachedIndices;
-  readonly ListObjectParentPaths: BatchListObjectParentPaths;
-  readonly GetObjectInformation: BatchGetObjectInformation;
-  readonly GetObjectAttributes: BatchGetObjectAttributes;
-  readonly ListObjectParents: BatchListObjectParents;
-  readonly ListObjectPolicies: BatchListObjectPolicies;
-  readonly ListPolicyAttachments: BatchListPolicyAttachments;
-  readonly LookupPolicy: BatchLookupPolicy;
-  readonly ListIndex: BatchListIndex;
-  readonly ListOutgoingTypedLinks: BatchListOutgoingTypedLinks;
-  readonly ListIncomingTypedLinks: BatchListIncomingTypedLinks;
-  readonly GetLinkAttributes: BatchGetLinkAttributes;
+export interface BatchReadOperation {
+  readonly ListObjectAttributes?: BatchListObjectAttributes;
+  readonly ListObjectChildren?: BatchListObjectChildren;
+  readonly ListAttachedIndices?: BatchListAttachedIndices;
+  readonly ListObjectParentPaths?: BatchListObjectParentPaths;
+  readonly GetObjectInformation?: BatchGetObjectInformation;
+  readonly GetObjectAttributes?: BatchGetObjectAttributes;
+  readonly ListObjectParents?: BatchListObjectParents;
+  readonly ListObjectPolicies?: BatchListObjectPolicies;
+  readonly ListPolicyAttachments?: BatchListPolicyAttachments;
+  readonly LookupPolicy?: BatchLookupPolicy;
+  readonly ListIndex?: BatchListIndex;
+  readonly ListOutgoingTypedLinks?: BatchListOutgoingTypedLinks;
+  readonly ListIncomingTypedLinks?: BatchListIncomingTypedLinks;
+  readonly GetLinkAttributes?: BatchGetLinkAttributes;
 }
 
-interface BatchReadOperationResponse {
-  readonly SuccessfulResponse: BatchReadSuccessfulResponse;
-  readonly ExceptionResponse: BatchReadException;
+export interface BatchReadOperationResponse {
+  readonly SuccessfulResponse?: BatchReadSuccessfulResponse;
+  readonly ExceptionResponse?: BatchReadException;
 }
 
-interface BatchReadRequest {
+export interface BatchReadRequest {
   readonly DirectoryArn: string;
   readonly Operations: [];
-  readonly ConsistencyLevel: string;
+  readonly ConsistencyLevel?: string;
 }
 
-interface BatchReadResponse {
-  readonly Responses: [];
+export interface BatchReadResponse {
+  readonly Responses?: [];
 }
 
-interface BatchReadSuccessfulResponse {
-  readonly ListObjectAttributes: BatchListObjectAttributesResponse;
-  readonly ListObjectChildren: BatchListObjectChildrenResponse;
-  readonly GetObjectInformation: BatchGetObjectInformationResponse;
-  readonly GetObjectAttributes: BatchGetObjectAttributesResponse;
-  readonly ListAttachedIndices: BatchListAttachedIndicesResponse;
-  readonly ListObjectParentPaths: BatchListObjectParentPathsResponse;
-  readonly ListObjectPolicies: BatchListObjectPoliciesResponse;
-  readonly ListPolicyAttachments: BatchListPolicyAttachmentsResponse;
-  readonly LookupPolicy: BatchLookupPolicyResponse;
-  readonly ListIndex: BatchListIndexResponse;
-  readonly ListOutgoingTypedLinks: BatchListOutgoingTypedLinksResponse;
-  readonly ListIncomingTypedLinks: BatchListIncomingTypedLinksResponse;
-  readonly GetLinkAttributes: BatchGetLinkAttributesResponse;
-  readonly ListObjectParents: BatchListObjectParentsResponse;
+export interface BatchReadSuccessfulResponse {
+  readonly ListObjectAttributes?: BatchListObjectAttributesResponse;
+  readonly ListObjectChildren?: BatchListObjectChildrenResponse;
+  readonly GetObjectInformation?: BatchGetObjectInformationResponse;
+  readonly GetObjectAttributes?: BatchGetObjectAttributesResponse;
+  readonly ListAttachedIndices?: BatchListAttachedIndicesResponse;
+  readonly ListObjectParentPaths?: BatchListObjectParentPathsResponse;
+  readonly ListObjectPolicies?: BatchListObjectPoliciesResponse;
+  readonly ListPolicyAttachments?: BatchListPolicyAttachmentsResponse;
+  readonly LookupPolicy?: BatchLookupPolicyResponse;
+  readonly ListIndex?: BatchListIndexResponse;
+  readonly ListOutgoingTypedLinks?: BatchListOutgoingTypedLinksResponse;
+  readonly ListIncomingTypedLinks?: BatchListIncomingTypedLinksResponse;
+  readonly GetLinkAttributes?: BatchGetLinkAttributesResponse;
+  readonly ListObjectParents?: BatchListObjectParentsResponse;
 }
 
-interface BatchRemoveFacetFromObject {
+export interface BatchRemoveFacetFromObject {
   readonly SchemaFacet: SchemaFacet;
   readonly ObjectReference: ObjectReference;
 }
 
-interface BatchRemoveFacetFromObjectResponse {
+export interface BatchRemoveFacetFromObjectResponse {
 }
 
-interface BatchUpdateLinkAttributes {
+export interface BatchUpdateLinkAttributes {
   readonly TypedLinkSpecifier: TypedLinkSpecifier;
   readonly AttributeUpdates: [];
 }
 
-interface BatchUpdateLinkAttributesResponse {
+export interface BatchUpdateLinkAttributesResponse {
 }
 
-interface BatchUpdateObjectAttributes {
+export interface BatchUpdateObjectAttributes {
   readonly ObjectReference: ObjectReference;
   readonly AttributeUpdates: [];
 }
 
-interface BatchUpdateObjectAttributesResponse {
-  readonly ObjectIdentifier: string;
+export interface BatchUpdateObjectAttributesResponse {
+  readonly ObjectIdentifier?: string;
 }
 
-interface BatchWriteException {
-  readonly Index: number;
-  readonly Type: string;
-  readonly Message: string;
+export interface BatchWriteException {
+  readonly Index?: number;
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface BatchWriteOperation {
-  readonly CreateObject: BatchCreateObject;
-  readonly AttachObject: BatchAttachObject;
-  readonly DetachObject: BatchDetachObject;
-  readonly UpdateObjectAttributes: BatchUpdateObjectAttributes;
-  readonly DeleteObject: BatchDeleteObject;
-  readonly AddFacetToObject: BatchAddFacetToObject;
-  readonly RemoveFacetFromObject: BatchRemoveFacetFromObject;
-  readonly AttachPolicy: BatchAttachPolicy;
-  readonly DetachPolicy: BatchDetachPolicy;
-  readonly CreateIndex: BatchCreateIndex;
-  readonly AttachToIndex: BatchAttachToIndex;
-  readonly DetachFromIndex: BatchDetachFromIndex;
-  readonly AttachTypedLink: BatchAttachTypedLink;
-  readonly DetachTypedLink: BatchDetachTypedLink;
-  readonly UpdateLinkAttributes: BatchUpdateLinkAttributes;
+export interface BatchWriteOperation {
+  readonly CreateObject?: BatchCreateObject;
+  readonly AttachObject?: BatchAttachObject;
+  readonly DetachObject?: BatchDetachObject;
+  readonly UpdateObjectAttributes?: BatchUpdateObjectAttributes;
+  readonly DeleteObject?: BatchDeleteObject;
+  readonly AddFacetToObject?: BatchAddFacetToObject;
+  readonly RemoveFacetFromObject?: BatchRemoveFacetFromObject;
+  readonly AttachPolicy?: BatchAttachPolicy;
+  readonly DetachPolicy?: BatchDetachPolicy;
+  readonly CreateIndex?: BatchCreateIndex;
+  readonly AttachToIndex?: BatchAttachToIndex;
+  readonly DetachFromIndex?: BatchDetachFromIndex;
+  readonly AttachTypedLink?: BatchAttachTypedLink;
+  readonly DetachTypedLink?: BatchDetachTypedLink;
+  readonly UpdateLinkAttributes?: BatchUpdateLinkAttributes;
 }
 
-interface BatchWriteOperationResponse {
-  readonly CreateObject: BatchCreateObjectResponse;
-  readonly AttachObject: BatchAttachObjectResponse;
-  readonly DetachObject: BatchDetachObjectResponse;
-  readonly UpdateObjectAttributes: BatchUpdateObjectAttributesResponse;
-  readonly DeleteObject: BatchDeleteObjectResponse;
-  readonly AddFacetToObject: BatchAddFacetToObjectResponse;
-  readonly RemoveFacetFromObject: BatchRemoveFacetFromObjectResponse;
-  readonly AttachPolicy: BatchAttachPolicyResponse;
-  readonly DetachPolicy: BatchDetachPolicyResponse;
-  readonly CreateIndex: BatchCreateIndexResponse;
-  readonly AttachToIndex: BatchAttachToIndexResponse;
-  readonly DetachFromIndex: BatchDetachFromIndexResponse;
-  readonly AttachTypedLink: BatchAttachTypedLinkResponse;
-  readonly DetachTypedLink: BatchDetachTypedLinkResponse;
-  readonly UpdateLinkAttributes: BatchUpdateLinkAttributesResponse;
+export interface BatchWriteOperationResponse {
+  readonly CreateObject?: BatchCreateObjectResponse;
+  readonly AttachObject?: BatchAttachObjectResponse;
+  readonly DetachObject?: BatchDetachObjectResponse;
+  readonly UpdateObjectAttributes?: BatchUpdateObjectAttributesResponse;
+  readonly DeleteObject?: BatchDeleteObjectResponse;
+  readonly AddFacetToObject?: BatchAddFacetToObjectResponse;
+  readonly RemoveFacetFromObject?: BatchRemoveFacetFromObjectResponse;
+  readonly AttachPolicy?: BatchAttachPolicyResponse;
+  readonly DetachPolicy?: BatchDetachPolicyResponse;
+  readonly CreateIndex?: BatchCreateIndexResponse;
+  readonly AttachToIndex?: BatchAttachToIndexResponse;
+  readonly DetachFromIndex?: BatchDetachFromIndexResponse;
+  readonly AttachTypedLink?: BatchAttachTypedLinkResponse;
+  readonly DetachTypedLink?: BatchDetachTypedLinkResponse;
+  readonly UpdateLinkAttributes?: BatchUpdateLinkAttributesResponse;
 }
 
-interface BatchWriteRequest {
+export interface BatchWriteRequest {
   readonly DirectoryArn: string;
   readonly Operations: [];
 }
 
-interface BatchWriteResponse {
-  readonly Responses: [];
+export interface BatchWriteResponse {
+  readonly Responses?: [];
 }
 
-interface CannotListParentOfRootException {
-  readonly Message: string;
+export interface CannotListParentOfRootException {
+  readonly Message?: string;
 }
 
-interface CreateDirectoryRequest {
+export interface CreateDirectoryRequest {
   readonly Name: string;
   readonly SchemaArn: string;
 }
 
-interface CreateDirectoryResponse {
+export interface CreateDirectoryResponse {
   readonly DirectoryArn: string;
   readonly Name: string;
   readonly ObjectIdentifier: string;
   readonly AppliedSchemaArn: string;
 }
 
-interface CreateFacetRequest {
+export interface CreateFacetRequest {
   readonly SchemaArn: string;
   readonly Name: string;
-  readonly Attributes: [];
-  readonly ObjectType: string;
-  readonly FacetStyle: string;
+  readonly Attributes?: [];
+  readonly ObjectType?: string;
+  readonly FacetStyle?: string;
 }
 
-interface CreateFacetResponse {
+export interface CreateFacetResponse {
 }
 
-interface CreateIndexRequest {
+export interface CreateIndexRequest {
   readonly DirectoryArn: string;
   readonly OrderedIndexedAttributeList: [];
   readonly IsUnique: boolean;
-  readonly ParentReference: ObjectReference;
-  readonly LinkName: string;
+  readonly ParentReference?: ObjectReference;
+  readonly LinkName?: string;
 }
 
-interface CreateIndexResponse {
-  readonly ObjectIdentifier: string;
+export interface CreateIndexResponse {
+  readonly ObjectIdentifier?: string;
 }
 
-interface CreateObjectRequest {
+export interface CreateObjectRequest {
   readonly DirectoryArn: string;
   readonly SchemaFacets: [];
-  readonly ObjectAttributeList: [];
-  readonly ParentReference: ObjectReference;
-  readonly LinkName: string;
+  readonly ObjectAttributeList?: [];
+  readonly ParentReference?: ObjectReference;
+  readonly LinkName?: string;
 }
 
-interface CreateObjectResponse {
-  readonly ObjectIdentifier: string;
+export interface CreateObjectResponse {
+  readonly ObjectIdentifier?: string;
 }
 
-interface CreateSchemaRequest {
+export interface CreateSchemaRequest {
   readonly Name: string;
 }
 
-interface CreateSchemaResponse {
-  readonly SchemaArn: string;
+export interface CreateSchemaResponse {
+  readonly SchemaArn?: string;
 }
 
-interface CreateTypedLinkFacetRequest {
+export interface CreateTypedLinkFacetRequest {
   readonly SchemaArn: string;
   readonly Facet: TypedLinkFacet;
 }
 
-interface CreateTypedLinkFacetResponse {
+export interface CreateTypedLinkFacetResponse {
 }
 
-interface DeleteDirectoryRequest {
+export interface DeleteDirectoryRequest {
   readonly DirectoryArn: string;
 }
 
-interface DeleteDirectoryResponse {
+export interface DeleteDirectoryResponse {
   readonly DirectoryArn: string;
 }
 
-interface DeleteFacetRequest {
+export interface DeleteFacetRequest {
   readonly SchemaArn: string;
   readonly Name: string;
 }
 
-interface DeleteFacetResponse {
+export interface DeleteFacetResponse {
 }
 
-interface DeleteObjectRequest {
+export interface DeleteObjectRequest {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
 }
 
-interface DeleteObjectResponse {
+export interface DeleteObjectResponse {
 }
 
-interface DeleteSchemaRequest {
+export interface DeleteSchemaRequest {
   readonly SchemaArn: string;
 }
 
-interface DeleteSchemaResponse {
-  readonly SchemaArn: string;
+export interface DeleteSchemaResponse {
+  readonly SchemaArn?: string;
 }
 
-interface DeleteTypedLinkFacetRequest {
+export interface DeleteTypedLinkFacetRequest {
   readonly SchemaArn: string;
   readonly Name: string;
 }
 
-interface DeleteTypedLinkFacetResponse {
+export interface DeleteTypedLinkFacetResponse {
 }
 
-interface DetachFromIndexRequest {
+export interface DetachFromIndexRequest {
   readonly DirectoryArn: string;
   readonly IndexReference: ObjectReference;
   readonly TargetReference: ObjectReference;
 }
 
-interface DetachFromIndexResponse {
-  readonly DetachedObjectIdentifier: string;
+export interface DetachFromIndexResponse {
+  readonly DetachedObjectIdentifier?: string;
 }
 
-interface DetachObjectRequest {
+export interface DetachObjectRequest {
   readonly DirectoryArn: string;
   readonly ParentReference: ObjectReference;
   readonly LinkName: string;
 }
 
-interface DetachObjectResponse {
-  readonly DetachedObjectIdentifier: string;
+export interface DetachObjectResponse {
+  readonly DetachedObjectIdentifier?: string;
 }
 
-interface DetachPolicyRequest {
+export interface DetachPolicyRequest {
   readonly DirectoryArn: string;
   readonly PolicyReference: ObjectReference;
   readonly ObjectReference: ObjectReference;
 }
 
-interface DetachPolicyResponse {
+export interface DetachPolicyResponse {
 }
 
-interface DetachTypedLinkRequest {
+export interface DetachTypedLinkRequest {
   readonly DirectoryArn: string;
   readonly TypedLinkSpecifier: TypedLinkSpecifier;
 }
 
-interface Directory {
+export interface Directory {
+  readonly Name?: string;
+  readonly DirectoryArn?: string;
+  readonly State?: string;
+  readonly CreationDateTime?: Date;
+}
+
+export interface DirectoryAlreadyExistsException {
+  readonly Message?: string;
+}
+
+export interface DirectoryDeletedException {
+  readonly Message?: string;
+}
+
+export interface DirectoryNotDisabledException {
+  readonly Message?: string;
+}
+
+export interface DirectoryNotEnabledException {
+  readonly Message?: string;
+}
+
+export interface DisableDirectoryRequest {
+  readonly DirectoryArn: string;
+}
+
+export interface DisableDirectoryResponse {
+  readonly DirectoryArn: string;
+}
+
+export interface EnableDirectoryRequest {
+  readonly DirectoryArn: string;
+}
+
+export interface EnableDirectoryResponse {
+  readonly DirectoryArn: string;
+}
+
+export interface Facet {
+  readonly Name?: string;
+  readonly ObjectType?: string;
+  readonly FacetStyle?: string;
+}
+
+export interface FacetAlreadyExistsException {
+  readonly Message?: string;
+}
+
+export interface FacetAttribute {
   readonly Name: string;
-  readonly DirectoryArn: string;
-  readonly State: string;
-  readonly CreationDateTime: Date;
+  readonly AttributeDefinition?: FacetAttributeDefinition;
+  readonly AttributeReference?: FacetAttributeReference;
+  readonly RequiredBehavior?: string;
 }
 
-interface DirectoryAlreadyExistsException {
-  readonly Message: string;
-}
-
-interface DirectoryDeletedException {
-  readonly Message: string;
-}
-
-interface DirectoryNotDisabledException {
-  readonly Message: string;
-}
-
-interface DirectoryNotEnabledException {
-  readonly Message: string;
-}
-
-interface DisableDirectoryRequest {
-  readonly DirectoryArn: string;
-}
-
-interface DisableDirectoryResponse {
-  readonly DirectoryArn: string;
-}
-
-interface EnableDirectoryRequest {
-  readonly DirectoryArn: string;
-}
-
-interface EnableDirectoryResponse {
-  readonly DirectoryArn: string;
-}
-
-interface Facet {
-  readonly Name: string;
-  readonly ObjectType: string;
-  readonly FacetStyle: string;
-}
-
-interface FacetAlreadyExistsException {
-  readonly Message: string;
-}
-
-interface FacetAttribute {
-  readonly Name: string;
-  readonly AttributeDefinition: FacetAttributeDefinition;
-  readonly AttributeReference: FacetAttributeReference;
-  readonly RequiredBehavior: string;
-}
-
-interface FacetAttributeDefinition {
+export interface FacetAttributeDefinition {
   readonly Type: string;
-  readonly DefaultValue: TypedAttributeValue;
-  readonly IsImmutable: boolean;
-  readonly Rules: {[key: string]: any};
+  readonly DefaultValue?: TypedAttributeValue;
+  readonly IsImmutable?: boolean;
+  readonly Rules?: {[key: string]: any};
 }
 
-interface FacetAttributeReference {
+export interface FacetAttributeReference {
   readonly TargetFacetName: string;
   readonly TargetAttributeName: string;
 }
 
-interface FacetAttributeUpdate {
-  readonly Attribute: FacetAttribute;
-  readonly Action: string;
+export interface FacetAttributeUpdate {
+  readonly Attribute?: FacetAttribute;
+  readonly Action?: string;
 }
 
-interface FacetInUseException {
-  readonly Message: string;
+export interface FacetInUseException {
+  readonly Message?: string;
 }
 
-interface FacetNotFoundException {
-  readonly Message: string;
+export interface FacetNotFoundException {
+  readonly Message?: string;
 }
 
-interface FacetValidationException {
-  readonly Message: string;
+export interface FacetValidationException {
+  readonly Message?: string;
 }
 
-interface GetAppliedSchemaVersionRequest {
+export interface GetAppliedSchemaVersionRequest {
   readonly SchemaArn: string;
 }
 
-interface GetAppliedSchemaVersionResponse {
-  readonly AppliedSchemaArn: string;
+export interface GetAppliedSchemaVersionResponse {
+  readonly AppliedSchemaArn?: string;
 }
 
-interface GetDirectoryRequest {
+export interface GetDirectoryRequest {
   readonly DirectoryArn: string;
 }
 
-interface GetDirectoryResponse {
+export interface GetDirectoryResponse {
   readonly Directory: Directory;
 }
 
-interface GetFacetRequest {
+export interface GetFacetRequest {
   readonly SchemaArn: string;
   readonly Name: string;
 }
 
-interface GetFacetResponse {
-  readonly Facet: Facet;
+export interface GetFacetResponse {
+  readonly Facet?: Facet;
 }
 
-interface GetLinkAttributesRequest {
+export interface GetLinkAttributesRequest {
   readonly DirectoryArn: string;
   readonly TypedLinkSpecifier: TypedLinkSpecifier;
   readonly AttributeNames: [];
-  readonly ConsistencyLevel: string;
+  readonly ConsistencyLevel?: string;
 }
 
-interface GetLinkAttributesResponse {
-  readonly Attributes: [];
+export interface GetLinkAttributesResponse {
+  readonly Attributes?: [];
 }
 
-interface GetObjectAttributesRequest {
+export interface GetObjectAttributesRequest {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly ConsistencyLevel: string;
+  readonly ConsistencyLevel?: string;
   readonly SchemaFacet: SchemaFacet;
   readonly AttributeNames: [];
 }
 
-interface GetObjectAttributesResponse {
-  readonly Attributes: [];
+export interface GetObjectAttributesResponse {
+  readonly Attributes?: [];
 }
 
-interface GetObjectInformationRequest {
+export interface GetObjectInformationRequest {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly ConsistencyLevel: string;
+  readonly ConsistencyLevel?: string;
 }
 
-interface GetObjectInformationResponse {
-  readonly SchemaFacets: [];
-  readonly ObjectIdentifier: string;
+export interface GetObjectInformationResponse {
+  readonly SchemaFacets?: [];
+  readonly ObjectIdentifier?: string;
 }
 
-interface GetSchemaAsJsonRequest {
+export interface GetSchemaAsJsonRequest {
   readonly SchemaArn: string;
 }
 
-interface GetSchemaAsJsonResponse {
-  readonly Name: string;
-  readonly Document: string;
+export interface GetSchemaAsJsonResponse {
+  readonly Name?: string;
+  readonly Document?: string;
 }
 
-interface GetTypedLinkFacetInformationRequest {
+export interface GetTypedLinkFacetInformationRequest {
   readonly SchemaArn: string;
   readonly Name: string;
 }
 
-interface GetTypedLinkFacetInformationResponse {
-  readonly IdentityAttributeOrder: [];
+export interface GetTypedLinkFacetInformationResponse {
+  readonly IdentityAttributeOrder?: [];
 }
 
-interface IncompatibleSchemaException {
-  readonly Message: string;
+export interface IncompatibleSchemaException {
+  readonly Message?: string;
 }
 
-interface IndexAttachment {
-  readonly IndexedAttributes: [];
-  readonly ObjectIdentifier: string;
+export interface IndexAttachment {
+  readonly IndexedAttributes?: [];
+  readonly ObjectIdentifier?: string;
 }
 
-interface IndexedAttributeMissingException {
-  readonly Message: string;
+export interface IndexedAttributeMissingException {
+  readonly Message?: string;
 }
 
-interface InternalServiceException {
-  readonly Message: string;
+export interface InternalServiceException {
+  readonly Message?: string;
 }
 
-interface InvalidArnException {
-  readonly Message: string;
+export interface InvalidArnException {
+  readonly Message?: string;
 }
 
-interface InvalidAttachmentException {
-  readonly Message: string;
+export interface InvalidAttachmentException {
+  readonly Message?: string;
 }
 
-interface InvalidFacetUpdateException {
-  readonly Message: string;
+export interface InvalidFacetUpdateException {
+  readonly Message?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly Message: string;
+export interface InvalidNextTokenException {
+  readonly Message?: string;
 }
 
-interface InvalidRuleException {
-  readonly Message: string;
+export interface InvalidRuleException {
+  readonly Message?: string;
 }
 
-interface InvalidSchemaDocException {
-  readonly Message: string;
+export interface InvalidSchemaDocException {
+  readonly Message?: string;
 }
 
-interface InvalidTaggingRequestException {
-  readonly Message: string;
+export interface InvalidTaggingRequestException {
+  readonly Message?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface LinkAttributeAction {
-  readonly AttributeActionType: string;
-  readonly AttributeUpdateValue: TypedAttributeValue;
+export interface LinkAttributeAction {
+  readonly AttributeActionType?: string;
+  readonly AttributeUpdateValue?: TypedAttributeValue;
 }
 
-interface LinkAttributeUpdate {
-  readonly AttributeKey: AttributeKey;
-  readonly AttributeAction: LinkAttributeAction;
+export interface LinkAttributeUpdate {
+  readonly AttributeKey?: AttributeKey;
+  readonly AttributeAction?: LinkAttributeAction;
 }
 
-interface LinkNameAlreadyInUseException {
-  readonly Message: string;
+export interface LinkNameAlreadyInUseException {
+  readonly Message?: string;
 }
 
-interface ListAppliedSchemaArnsRequest {
+export interface ListAppliedSchemaArnsRequest {
   readonly DirectoryArn: string;
-  readonly SchemaArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly SchemaArn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListAppliedSchemaArnsResponse {
-  readonly SchemaArns: [];
-  readonly NextToken: string;
+export interface ListAppliedSchemaArnsResponse {
+  readonly SchemaArns?: [];
+  readonly NextToken?: string;
 }
 
-interface ListAttachedIndicesRequest {
+export interface ListAttachedIndicesRequest {
   readonly DirectoryArn: string;
   readonly TargetReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
 }
 
-interface ListAttachedIndicesResponse {
-  readonly IndexAttachments: [];
-  readonly NextToken: string;
+export interface ListAttachedIndicesResponse {
+  readonly IndexAttachments?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDevelopmentSchemaArnsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListDevelopmentSchemaArnsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDevelopmentSchemaArnsResponse {
-  readonly SchemaArns: [];
-  readonly NextToken: string;
+export interface ListDevelopmentSchemaArnsResponse {
+  readonly SchemaArns?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDirectoriesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly state: string;
+export interface ListDirectoriesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly state?: string;
 }
 
-interface ListDirectoriesResponse {
+export interface ListDirectoriesResponse {
   readonly Directories: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListFacetAttributesRequest {
+export interface ListFacetAttributesRequest {
   readonly SchemaArn: string;
   readonly Name: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListFacetAttributesResponse {
-  readonly Attributes: [];
-  readonly NextToken: string;
+export interface ListFacetAttributesResponse {
+  readonly Attributes?: [];
+  readonly NextToken?: string;
 }
 
-interface ListFacetNamesRequest {
+export interface ListFacetNamesRequest {
   readonly SchemaArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListFacetNamesResponse {
-  readonly FacetNames: [];
-  readonly NextToken: string;
+export interface ListFacetNamesResponse {
+  readonly FacetNames?: [];
+  readonly NextToken?: string;
 }
 
-interface ListIncomingTypedLinksRequest {
+export interface ListIncomingTypedLinksRequest {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly FilterAttributeRanges: [];
-  readonly FilterTypedLink: TypedLinkSchemaAndFacetName;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
+  readonly FilterAttributeRanges?: [];
+  readonly FilterTypedLink?: TypedLinkSchemaAndFacetName;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
 }
 
-interface ListIncomingTypedLinksResponse {
-  readonly LinkSpecifiers: [];
-  readonly NextToken: string;
+export interface ListIncomingTypedLinksResponse {
+  readonly LinkSpecifiers?: [];
+  readonly NextToken?: string;
 }
 
-interface ListIndexRequest {
+export interface ListIndexRequest {
   readonly DirectoryArn: string;
-  readonly RangesOnIndexedValues: [];
+  readonly RangesOnIndexedValues?: [];
   readonly IndexReference: ObjectReference;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ConsistencyLevel: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ConsistencyLevel?: string;
 }
 
-interface ListIndexResponse {
-  readonly IndexAttachments: [];
-  readonly NextToken: string;
+export interface ListIndexResponse {
+  readonly IndexAttachments?: [];
+  readonly NextToken?: string;
 }
 
-interface ListManagedSchemaArnsRequest {
-  readonly SchemaArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListManagedSchemaArnsRequest {
+  readonly SchemaArn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListManagedSchemaArnsResponse {
-  readonly SchemaArns: [];
-  readonly NextToken: string;
+export interface ListManagedSchemaArnsResponse {
+  readonly SchemaArns?: [];
+  readonly NextToken?: string;
 }
 
-interface ListObjectAttributesRequest {
+export interface ListObjectAttributesRequest {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
-  readonly FacetFilter: SchemaFacet;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
+  readonly FacetFilter?: SchemaFacet;
 }
 
-interface ListObjectAttributesResponse {
-  readonly Attributes: [];
-  readonly NextToken: string;
+export interface ListObjectAttributesResponse {
+  readonly Attributes?: [];
+  readonly NextToken?: string;
 }
 
-interface ListObjectChildrenRequest {
+export interface ListObjectChildrenRequest {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
 }
 
-interface ListObjectChildrenResponse {
-  readonly Children: {[key: string]: any};
-  readonly NextToken: string;
+export interface ListObjectChildrenResponse {
+  readonly Children?: {[key: string]: any};
+  readonly NextToken?: string;
 }
 
-interface ListObjectParentPathsRequest {
+export interface ListObjectParentPathsRequest {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListObjectParentPathsResponse {
-  readonly PathToObjectIdentifiersList: [];
-  readonly NextToken: string;
+export interface ListObjectParentPathsResponse {
+  readonly PathToObjectIdentifiersList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListObjectParentsRequest {
+export interface ListObjectParentsRequest {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
-  readonly IncludeAllLinksToEachParent: boolean;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
+  readonly IncludeAllLinksToEachParent?: boolean;
 }
 
-interface ListObjectParentsResponse {
-  readonly Parents: {[key: string]: any};
-  readonly NextToken: string;
-  readonly ParentLinks: [];
+export interface ListObjectParentsResponse {
+  readonly Parents?: {[key: string]: any};
+  readonly NextToken?: string;
+  readonly ParentLinks?: [];
 }
 
-interface ListObjectPoliciesRequest {
+export interface ListObjectPoliciesRequest {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
 }
 
-interface ListObjectPoliciesResponse {
-  readonly AttachedPolicyIds: [];
-  readonly NextToken: string;
+export interface ListObjectPoliciesResponse {
+  readonly AttachedPolicyIds?: [];
+  readonly NextToken?: string;
 }
 
-interface ListOutgoingTypedLinksRequest {
+export interface ListOutgoingTypedLinksRequest {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly FilterAttributeRanges: [];
-  readonly FilterTypedLink: TypedLinkSchemaAndFacetName;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
+  readonly FilterAttributeRanges?: [];
+  readonly FilterTypedLink?: TypedLinkSchemaAndFacetName;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
 }
 
-interface ListOutgoingTypedLinksResponse {
-  readonly TypedLinkSpecifiers: [];
-  readonly NextToken: string;
+export interface ListOutgoingTypedLinksResponse {
+  readonly TypedLinkSpecifiers?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPolicyAttachmentsRequest {
+export interface ListPolicyAttachmentsRequest {
   readonly DirectoryArn: string;
   readonly PolicyReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ConsistencyLevel: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ConsistencyLevel?: string;
 }
 
-interface ListPolicyAttachmentsResponse {
-  readonly ObjectIdentifiers: [];
-  readonly NextToken: string;
+export interface ListPolicyAttachmentsResponse {
+  readonly ObjectIdentifiers?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPublishedSchemaArnsRequest {
-  readonly SchemaArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListPublishedSchemaArnsRequest {
+  readonly SchemaArn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListPublishedSchemaArnsResponse {
-  readonly SchemaArns: [];
-  readonly NextToken: string;
+export interface ListPublishedSchemaArnsResponse {
+  readonly SchemaArns?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
-  readonly NextToken: string;
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTypedLinkFacetAttributesRequest {
+export interface ListTypedLinkFacetAttributesRequest {
   readonly SchemaArn: string;
   readonly Name: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTypedLinkFacetAttributesResponse {
-  readonly Attributes: [];
-  readonly NextToken: string;
+export interface ListTypedLinkFacetAttributesResponse {
+  readonly Attributes?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTypedLinkFacetNamesRequest {
+export interface ListTypedLinkFacetNamesRequest {
   readonly SchemaArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTypedLinkFacetNamesResponse {
-  readonly FacetNames: [];
-  readonly NextToken: string;
+export interface ListTypedLinkFacetNamesResponse {
+  readonly FacetNames?: [];
+  readonly NextToken?: string;
 }
 
-interface LookupPolicyRequest {
+export interface LookupPolicyRequest {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface LookupPolicyResponse {
-  readonly PolicyToPathList: [];
-  readonly NextToken: string;
+export interface LookupPolicyResponse {
+  readonly PolicyToPathList?: [];
+  readonly NextToken?: string;
 }
 
-interface NotIndexException {
-  readonly Message: string;
+export interface NotIndexException {
+  readonly Message?: string;
 }
 
-interface NotNodeException {
-  readonly Message: string;
+export interface NotNodeException {
+  readonly Message?: string;
 }
 
-interface NotPolicyException {
-  readonly Message: string;
+export interface NotPolicyException {
+  readonly Message?: string;
 }
 
-interface ObjectAlreadyDetachedException {
-  readonly Message: string;
+export interface ObjectAlreadyDetachedException {
+  readonly Message?: string;
 }
 
-interface ObjectAttributeAction {
-  readonly ObjectAttributeActionType: string;
-  readonly ObjectAttributeUpdateValue: TypedAttributeValue;
+export interface ObjectAttributeAction {
+  readonly ObjectAttributeActionType?: string;
+  readonly ObjectAttributeUpdateValue?: TypedAttributeValue;
 }
 
-interface ObjectAttributeRange {
-  readonly AttributeKey: AttributeKey;
-  readonly Range: TypedAttributeValueRange;
+export interface ObjectAttributeRange {
+  readonly AttributeKey?: AttributeKey;
+  readonly Range?: TypedAttributeValueRange;
 }
 
-interface ObjectAttributeUpdate {
-  readonly ObjectAttributeKey: AttributeKey;
-  readonly ObjectAttributeAction: ObjectAttributeAction;
+export interface ObjectAttributeUpdate {
+  readonly ObjectAttributeKey?: AttributeKey;
+  readonly ObjectAttributeAction?: ObjectAttributeAction;
 }
 
-interface ObjectIdentifierAndLinkNameTuple {
-  readonly ObjectIdentifier: string;
-  readonly LinkName: string;
+export interface ObjectIdentifierAndLinkNameTuple {
+  readonly ObjectIdentifier?: string;
+  readonly LinkName?: string;
 }
 
-interface ObjectNotDetachedException {
-  readonly Message: string;
+export interface ObjectNotDetachedException {
+  readonly Message?: string;
 }
 
-interface ObjectReference {
-  readonly Selector: string;
+export interface ObjectReference {
+  readonly Selector?: string;
 }
 
-interface PathToObjectIdentifiers {
-  readonly Path: string;
-  readonly ObjectIdentifiers: [];
+export interface PathToObjectIdentifiers {
+  readonly Path?: string;
+  readonly ObjectIdentifiers?: [];
 }
 
-interface PolicyAttachment {
-  readonly PolicyId: string;
-  readonly ObjectIdentifier: string;
-  readonly PolicyType: string;
+export interface PolicyAttachment {
+  readonly PolicyId?: string;
+  readonly ObjectIdentifier?: string;
+  readonly PolicyType?: string;
 }
 
-interface PolicyToPath {
-  readonly Path: string;
-  readonly Policies: [];
+export interface PolicyToPath {
+  readonly Path?: string;
+  readonly Policies?: [];
 }
 
-interface PublishSchemaRequest {
+export interface PublishSchemaRequest {
   readonly DevelopmentSchemaArn: string;
   readonly Version: string;
-  readonly MinorVersion: string;
-  readonly Name: string;
+  readonly MinorVersion?: string;
+  readonly Name?: string;
 }
 
-interface PublishSchemaResponse {
-  readonly PublishedSchemaArn: string;
+export interface PublishSchemaResponse {
+  readonly PublishedSchemaArn?: string;
 }
 
-interface PutSchemaFromJsonRequest {
+export interface PutSchemaFromJsonRequest {
   readonly SchemaArn: string;
   readonly Document: string;
 }
 
-interface PutSchemaFromJsonResponse {
-  readonly Arn: string;
+export interface PutSchemaFromJsonResponse {
+  readonly Arn?: string;
 }
 
-interface RemoveFacetFromObjectRequest {
+export interface RemoveFacetFromObjectRequest {
   readonly DirectoryArn: string;
   readonly SchemaFacet: SchemaFacet;
   readonly ObjectReference: ObjectReference;
 }
 
-interface RemoveFacetFromObjectResponse {
+export interface RemoveFacetFromObjectResponse {
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface RetryableConflictException {
-  readonly Message: string;
+export interface RetryableConflictException {
+  readonly Message?: string;
 }
 
-interface Rule {
-  readonly Type: string;
-  readonly Parameters: {[key: string]: any};
+export interface Rule {
+  readonly Type?: string;
+  readonly Parameters?: {[key: string]: any};
 }
 
-interface SchemaAlreadyExistsException {
-  readonly Message: string;
+export interface SchemaAlreadyExistsException {
+  readonly Message?: string;
 }
 
-interface SchemaAlreadyPublishedException {
-  readonly Message: string;
+export interface SchemaAlreadyPublishedException {
+  readonly Message?: string;
 }
 
-interface SchemaFacet {
-  readonly SchemaArn: string;
-  readonly FacetName: string;
+export interface SchemaFacet {
+  readonly SchemaArn?: string;
+  readonly FacetName?: string;
 }
 
-interface StillContainsLinksException {
-  readonly Message: string;
+export interface StillContainsLinksException {
+  readonly Message?: string;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TypedAttributeValue {
-  readonly StringValue: string;
-  readonly BinaryValue: unknown;
-  readonly BooleanValue: boolean;
-  readonly NumberValue: string;
-  readonly DatetimeValue: Date;
+export interface TypedAttributeValue {
+  readonly StringValue?: string;
+  readonly BinaryValue?: unknown;
+  readonly BooleanValue?: boolean;
+  readonly NumberValue?: string;
+  readonly DatetimeValue?: Date;
 }
 
-interface TypedAttributeValueRange {
+export interface TypedAttributeValueRange {
   readonly StartMode: string;
-  readonly StartValue: TypedAttributeValue;
+  readonly StartValue?: TypedAttributeValue;
   readonly EndMode: string;
-  readonly EndValue: TypedAttributeValue;
+  readonly EndValue?: TypedAttributeValue;
 }
 
-interface TypedLinkAttributeDefinition {
+export interface TypedLinkAttributeDefinition {
   readonly Name: string;
   readonly Type: string;
-  readonly DefaultValue: TypedAttributeValue;
-  readonly IsImmutable: boolean;
-  readonly Rules: {[key: string]: any};
+  readonly DefaultValue?: TypedAttributeValue;
+  readonly IsImmutable?: boolean;
+  readonly Rules?: {[key: string]: any};
   readonly RequiredBehavior: string;
 }
 
-interface TypedLinkAttributeRange {
-  readonly AttributeName: string;
+export interface TypedLinkAttributeRange {
+  readonly AttributeName?: string;
   readonly Range: TypedAttributeValueRange;
 }
 
-interface TypedLinkFacet {
+export interface TypedLinkFacet {
   readonly Name: string;
   readonly Attributes: [];
   readonly IdentityAttributeOrder: [];
 }
 
-interface TypedLinkFacetAttributeUpdate {
+export interface TypedLinkFacetAttributeUpdate {
   readonly Attribute: TypedLinkAttributeDefinition;
   readonly Action: string;
 }
 
-interface TypedLinkSchemaAndFacetName {
+export interface TypedLinkSchemaAndFacetName {
   readonly SchemaArn: string;
   readonly TypedLinkName: string;
 }
 
-interface TypedLinkSpecifier {
+export interface TypedLinkSpecifier {
   readonly TypedLinkFacet: TypedLinkSchemaAndFacetName;
   readonly SourceObjectReference: ObjectReference;
   readonly TargetObjectReference: ObjectReference;
   readonly IdentityAttributeValues: [];
 }
 
-interface UnsupportedIndexTypeException {
-  readonly Message: string;
+export interface UnsupportedIndexTypeException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateFacetRequest {
+export interface UpdateFacetRequest {
   readonly SchemaArn: string;
   readonly Name: string;
-  readonly AttributeUpdates: [];
-  readonly ObjectType: string;
+  readonly AttributeUpdates?: [];
+  readonly ObjectType?: string;
 }
 
-interface UpdateFacetResponse {
+export interface UpdateFacetResponse {
 }
 
-interface UpdateLinkAttributesRequest {
+export interface UpdateLinkAttributesRequest {
   readonly DirectoryArn: string;
   readonly TypedLinkSpecifier: TypedLinkSpecifier;
   readonly AttributeUpdates: [];
 }
 
-interface UpdateLinkAttributesResponse {
+export interface UpdateLinkAttributesResponse {
 }
 
-interface UpdateObjectAttributesRequest {
+export interface UpdateObjectAttributesRequest {
   readonly DirectoryArn: string;
   readonly ObjectReference: ObjectReference;
   readonly AttributeUpdates: [];
 }
 
-interface UpdateObjectAttributesResponse {
-  readonly ObjectIdentifier: string;
+export interface UpdateObjectAttributesResponse {
+  readonly ObjectIdentifier?: string;
 }
 
-interface UpdateSchemaRequest {
+export interface UpdateSchemaRequest {
   readonly SchemaArn: string;
   readonly Name: string;
 }
 
-interface UpdateSchemaResponse {
-  readonly SchemaArn: string;
+export interface UpdateSchemaResponse {
+  readonly SchemaArn?: string;
 }
 
-interface UpdateTypedLinkFacetRequest {
+export interface UpdateTypedLinkFacetRequest {
   readonly SchemaArn: string;
   readonly Name: string;
   readonly AttributeUpdates: [];
   readonly IdentityAttributeOrder: [];
 }
 
-interface UpdateTypedLinkFacetResponse {
+export interface UpdateTypedLinkFacetResponse {
 }
 
-interface UpgradeAppliedSchemaRequest {
+export interface UpgradeAppliedSchemaRequest {
   readonly PublishedSchemaArn: string;
   readonly DirectoryArn: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface UpgradeAppliedSchemaResponse {
-  readonly UpgradedSchemaArn: string;
-  readonly DirectoryArn: string;
+export interface UpgradeAppliedSchemaResponse {
+  readonly UpgradedSchemaArn?: string;
+  readonly DirectoryArn?: string;
 }
 
-interface UpgradePublishedSchemaRequest {
+export interface UpgradePublishedSchemaRequest {
   readonly DevelopmentSchemaArn: string;
   readonly PublishedSchemaArn: string;
   readonly MinorVersion: string;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface UpgradePublishedSchemaResponse {
-  readonly UpgradedSchemaArn: string;
+export interface UpgradePublishedSchemaResponse {
+  readonly UpgradedSchemaArn?: string;
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

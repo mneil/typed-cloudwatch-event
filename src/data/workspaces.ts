@@ -5,14 +5,17 @@ export interface AssociateConnectionAlias {
   readonly AliasId: string;
   readonly ResourceId: string;
 }
+
 export interface AssociateIpGroups {
   readonly DirectoryId: string;
   readonly GroupIds: [];
 }
+
 export interface AuthorizeIpRules {
   readonly GroupId: string;
   readonly UserRules: [];
 }
+
 export interface CopyWorkspaceImage {
   readonly Name: string;
   readonly Description?: string;
@@ -20,26 +23,31 @@ export interface CopyWorkspaceImage {
   readonly SourceRegion: string;
   readonly Tags?: [];
 }
+
 export interface CreateConnectionAlias {
   readonly ConnectionString: string;
   readonly Tags?: [];
 }
+
 export interface CreateIpGroup {
   readonly GroupName: string;
   readonly GroupDesc?: string;
   readonly UserRules?: [];
   readonly Tags?: [];
 }
+
 export interface CreateTags {
   readonly ResourceId: string;
   readonly Tags: [];
 }
+
 export interface CreateUpdatedWorkspaceImage {
   readonly Name: string;
   readonly Description: string;
   readonly SourceImageId: string;
   readonly Tags?: [];
 }
+
 export interface CreateWorkspaceBundle {
   readonly BundleName: string;
   readonly BundleDescription: string;
@@ -49,79 +57,99 @@ export interface CreateWorkspaceBundle {
   readonly RootStorage?: RootStorage;
   readonly Tags?: [];
 }
+
 export interface CreateWorkspaces {
   readonly Workspaces: [];
 }
+
 export interface DeleteConnectionAlias {
   readonly AliasId: string;
 }
+
 export interface DeleteIpGroup {
   readonly GroupId: string;
 }
+
 export interface DeleteTags {
   readonly ResourceId: string;
   readonly TagKeys: [];
 }
+
 export interface DeleteWorkspaceBundle {
   readonly BundleId?: string;
 }
+
 export interface DeleteWorkspaceImage {
   readonly ImageId: string;
 }
+
 export interface DeregisterWorkspaceDirectory {
   readonly DirectoryId: string;
 }
+
 export interface DescribeAccount {
 }
+
 export interface DescribeAccountModifications {
   readonly NextToken?: string;
 }
+
 export interface DescribeClientProperties {
   readonly ResourceIds: [];
 }
+
 export interface DescribeConnectionAliasPermissions {
   readonly AliasId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeConnectionAliases {
   readonly AliasIds?: [];
   readonly ResourceId?: string;
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeIpGroups {
   readonly GroupIds?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeTags {
   readonly ResourceId: string;
 }
+
 export interface DescribeWorkspaceBundles {
   readonly BundleIds?: [];
   readonly Owner?: string;
   readonly NextToken?: string;
 }
+
 export interface DescribeWorkspaceDirectories {
   readonly DirectoryIds?: [];
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeWorkspaceImagePermissions {
   readonly ImageId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeWorkspaceImages {
   readonly ImageIds?: [];
   readonly ImageType?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeWorkspaceSnapshots {
   readonly WorkspaceId: string;
 }
+
 export interface DescribeWorkspaces {
   readonly WorkspaceIds?: [];
   readonly DirectoryId?: string;
@@ -130,17 +158,21 @@ export interface DescribeWorkspaces {
   readonly Limit?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeWorkspacesConnectionStatus {
   readonly WorkspaceIds?: [];
   readonly NextToken?: string;
 }
+
 export interface DisassociateConnectionAlias {
   readonly AliasId: string;
 }
+
 export interface DisassociateIpGroups {
   readonly DirectoryId: string;
   readonly GroupIds: [];
 }
+
 export interface ImportWorkspaceImage {
   readonly Ec2ImageId: string;
   readonly IngestionProcess: string;
@@ -149,49 +181,61 @@ export interface ImportWorkspaceImage {
   readonly Tags?: [];
   readonly Applications?: [];
 }
+
 export interface ListAvailableManagementCidrRanges {
   readonly ManagementCidrRangeConstraint: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface MigrateWorkspace {
   readonly SourceWorkspaceId: string;
   readonly BundleId: string;
 }
+
 export interface ModifyAccount {
   readonly DedicatedTenancySupport?: string;
   readonly DedicatedTenancyManagementCidrRange?: string;
 }
+
 export interface ModifyClientProperties {
   readonly ResourceId: string;
   readonly ClientProperties: ClientProperties;
 }
+
 export interface ModifySelfservicePermissions {
   readonly ResourceId: string;
   readonly SelfservicePermissions: SelfservicePermissions;
 }
+
 export interface ModifyWorkspaceAccessProperties {
   readonly ResourceId: string;
   readonly WorkspaceAccessProperties: WorkspaceAccessProperties;
 }
+
 export interface ModifyWorkspaceCreationProperties {
   readonly ResourceId: string;
   readonly WorkspaceCreationProperties: WorkspaceCreationProperties;
 }
+
 export interface ModifyWorkspaceProperties {
   readonly WorkspaceId: string;
   readonly WorkspaceProperties: WorkspaceProperties;
 }
+
 export interface ModifyWorkspaceState {
   readonly WorkspaceId: string;
   readonly WorkspaceState: string;
 }
+
 export interface RebootWorkspaces {
   readonly RebootWorkspaceRequests: [];
 }
+
 export interface RebuildWorkspaces {
   readonly RebuildWorkspaceRequests: [];
 }
+
 export interface RegisterWorkspaceDirectory {
   readonly DirectoryId: string;
   readonly SubnetIds?: [];
@@ -200,839 +244,847 @@ export interface RegisterWorkspaceDirectory {
   readonly Tenancy?: string;
   readonly Tags?: [];
 }
+
 export interface RestoreWorkspace {
   readonly WorkspaceId: string;
 }
+
 export interface RevokeIpRules {
   readonly GroupId: string;
   readonly UserRules: [];
 }
+
 export interface StartWorkspaces {
   readonly StartWorkspaceRequests: [];
 }
+
 export interface StopWorkspaces {
   readonly StopWorkspaceRequests: [];
 }
+
 export interface TerminateWorkspaces {
   readonly TerminateWorkspaceRequests: [];
 }
+
 export interface UpdateConnectionAliasPermission {
   readonly AliasId: string;
   readonly ConnectionAliasPermission: ConnectionAliasPermission;
 }
+
 export interface UpdateRulesOfIpGroup {
   readonly GroupId: string;
   readonly UserRules: [];
 }
+
 export interface UpdateWorkspaceBundle {
   readonly BundleId?: string;
   readonly ImageId?: string;
 }
+
 export interface UpdateWorkspaceImagePermission {
   readonly ImageId: string;
   readonly AllowCopyImage: boolean;
   readonly SharedAccountId: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly message?: string;
 }
 
-interface AccountModification {
-  readonly ModificationState: string;
-  readonly DedicatedTenancySupport: string;
-  readonly DedicatedTenancyManagementCidrRange: string;
-  readonly StartTime: Date;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface AccountModification {
+  readonly ModificationState?: string;
+  readonly DedicatedTenancySupport?: string;
+  readonly DedicatedTenancyManagementCidrRange?: string;
+  readonly StartTime?: Date;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface AssociateConnectionAliasRequest {
+export interface AssociateConnectionAliasRequest {
   readonly AliasId: string;
   readonly ResourceId: string;
 }
 
-interface AssociateConnectionAliasResult {
-  readonly ConnectionIdentifier: string;
+export interface AssociateConnectionAliasResult {
+  readonly ConnectionIdentifier?: string;
 }
 
-interface AssociateIpGroupsRequest {
+export interface AssociateIpGroupsRequest {
   readonly DirectoryId: string;
   readonly GroupIds: [];
 }
 
-interface AssociateIpGroupsResult {
+export interface AssociateIpGroupsResult {
 }
 
-interface AuthorizeIpRulesRequest {
+export interface AuthorizeIpRulesRequest {
   readonly GroupId: string;
   readonly UserRules: [];
 }
 
-interface AuthorizeIpRulesResult {
+export interface AuthorizeIpRulesResult {
 }
 
-interface ClientProperties {
-  readonly ReconnectEnabled: string;
+export interface ClientProperties {
+  readonly ReconnectEnabled?: string;
 }
 
-interface ClientPropertiesResult {
-  readonly ResourceId: string;
-  readonly ClientProperties: ClientProperties;
+export interface ClientPropertiesResult {
+  readonly ResourceId?: string;
+  readonly ClientProperties?: ClientProperties;
 }
 
-interface ComputeType {
-  readonly Name: string;
+export interface ComputeType {
+  readonly Name?: string;
 }
 
-interface ConnectionAlias {
-  readonly ConnectionString: string;
-  readonly AliasId: string;
-  readonly State: string;
-  readonly OwnerAccountId: string;
-  readonly Associations: [];
+export interface ConnectionAlias {
+  readonly ConnectionString?: string;
+  readonly AliasId?: string;
+  readonly State?: string;
+  readonly OwnerAccountId?: string;
+  readonly Associations?: [];
 }
 
-interface ConnectionAliasAssociation {
-  readonly AssociationStatus: string;
-  readonly AssociatedAccountId: string;
-  readonly ResourceId: string;
-  readonly ConnectionIdentifier: string;
+export interface ConnectionAliasAssociation {
+  readonly AssociationStatus?: string;
+  readonly AssociatedAccountId?: string;
+  readonly ResourceId?: string;
+  readonly ConnectionIdentifier?: string;
 }
 
-interface ConnectionAliasPermission {
+export interface ConnectionAliasPermission {
   readonly SharedAccountId: string;
   readonly AllowAssociation: boolean;
 }
 
-interface CopyWorkspaceImageRequest {
+export interface CopyWorkspaceImageRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly SourceImageId: string;
   readonly SourceRegion: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CopyWorkspaceImageResult {
-  readonly ImageId: string;
+export interface CopyWorkspaceImageResult {
+  readonly ImageId?: string;
 }
 
-interface CreateConnectionAliasRequest {
+export interface CreateConnectionAliasRequest {
   readonly ConnectionString: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateConnectionAliasResult {
-  readonly AliasId: string;
+export interface CreateConnectionAliasResult {
+  readonly AliasId?: string;
 }
 
-interface CreateIpGroupRequest {
+export interface CreateIpGroupRequest {
   readonly GroupName: string;
-  readonly GroupDesc: string;
-  readonly UserRules: [];
-  readonly Tags: [];
+  readonly GroupDesc?: string;
+  readonly UserRules?: [];
+  readonly Tags?: [];
 }
 
-interface CreateIpGroupResult {
-  readonly GroupId: string;
+export interface CreateIpGroupResult {
+  readonly GroupId?: string;
 }
 
-interface CreateTagsRequest {
+export interface CreateTagsRequest {
   readonly ResourceId: string;
   readonly Tags: [];
 }
 
-interface CreateTagsResult {
+export interface CreateTagsResult {
 }
 
-interface CreateUpdatedWorkspaceImageRequest {
+export interface CreateUpdatedWorkspaceImageRequest {
   readonly Name: string;
   readonly Description: string;
   readonly SourceImageId: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateUpdatedWorkspaceImageResult {
-  readonly ImageId: string;
+export interface CreateUpdatedWorkspaceImageResult {
+  readonly ImageId?: string;
 }
 
-interface CreateWorkspaceBundleRequest {
+export interface CreateWorkspaceBundleRequest {
   readonly BundleName: string;
   readonly BundleDescription: string;
   readonly ImageId: string;
   readonly ComputeType: ComputeType;
   readonly UserStorage: UserStorage;
-  readonly RootStorage: RootStorage;
-  readonly Tags: [];
+  readonly RootStorage?: RootStorage;
+  readonly Tags?: [];
 }
 
-interface CreateWorkspaceBundleResult {
-  readonly WorkspaceBundle: WorkspaceBundle;
+export interface CreateWorkspaceBundleResult {
+  readonly WorkspaceBundle?: WorkspaceBundle;
 }
 
-interface CreateWorkspacesRequest {
+export interface CreateWorkspacesRequest {
   readonly Workspaces: [];
 }
 
-interface CreateWorkspacesResult {
-  readonly FailedRequests: [];
-  readonly PendingRequests: [];
+export interface CreateWorkspacesResult {
+  readonly FailedRequests?: [];
+  readonly PendingRequests?: [];
 }
 
-interface DefaultWorkspaceCreationProperties {
-  readonly EnableWorkDocs: boolean;
-  readonly EnableInternetAccess: boolean;
-  readonly DefaultOu: string;
-  readonly CustomSecurityGroupId: string;
-  readonly UserEnabledAsLocalAdministrator: boolean;
-  readonly EnableMaintenanceMode: boolean;
+export interface DefaultWorkspaceCreationProperties {
+  readonly EnableWorkDocs?: boolean;
+  readonly EnableInternetAccess?: boolean;
+  readonly DefaultOu?: string;
+  readonly CustomSecurityGroupId?: string;
+  readonly UserEnabledAsLocalAdministrator?: boolean;
+  readonly EnableMaintenanceMode?: boolean;
 }
 
-interface DeleteConnectionAliasRequest {
+export interface DeleteConnectionAliasRequest {
   readonly AliasId: string;
 }
 
-interface DeleteConnectionAliasResult {
+export interface DeleteConnectionAliasResult {
 }
 
-interface DeleteIpGroupRequest {
+export interface DeleteIpGroupRequest {
   readonly GroupId: string;
 }
 
-interface DeleteIpGroupResult {
+export interface DeleteIpGroupResult {
 }
 
-interface DeleteTagsRequest {
+export interface DeleteTagsRequest {
   readonly ResourceId: string;
   readonly TagKeys: [];
 }
 
-interface DeleteTagsResult {
+export interface DeleteTagsResult {
 }
 
-interface DeleteWorkspaceBundleRequest {
-  readonly BundleId: string;
+export interface DeleteWorkspaceBundleRequest {
+  readonly BundleId?: string;
 }
 
-interface DeleteWorkspaceBundleResult {
+export interface DeleteWorkspaceBundleResult {
 }
 
-interface DeleteWorkspaceImageRequest {
+export interface DeleteWorkspaceImageRequest {
   readonly ImageId: string;
 }
 
-interface DeleteWorkspaceImageResult {
+export interface DeleteWorkspaceImageResult {
 }
 
-interface DeregisterWorkspaceDirectoryRequest {
+export interface DeregisterWorkspaceDirectoryRequest {
   readonly DirectoryId: string;
 }
 
-interface DeregisterWorkspaceDirectoryResult {
+export interface DeregisterWorkspaceDirectoryResult {
 }
 
-interface DescribeAccountModificationsRequest {
-  readonly NextToken: string;
+export interface DescribeAccountModificationsRequest {
+  readonly NextToken?: string;
 }
 
-interface DescribeAccountModificationsResult {
-  readonly AccountModifications: [];
-  readonly NextToken: string;
+export interface DescribeAccountModificationsResult {
+  readonly AccountModifications?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeAccountRequest {
+export interface DescribeAccountRequest {
 }
 
-interface DescribeAccountResult {
-  readonly DedicatedTenancySupport: string;
-  readonly DedicatedTenancyManagementCidrRange: string;
+export interface DescribeAccountResult {
+  readonly DedicatedTenancySupport?: string;
+  readonly DedicatedTenancyManagementCidrRange?: string;
 }
 
-interface DescribeClientPropertiesRequest {
+export interface DescribeClientPropertiesRequest {
   readonly ResourceIds: [];
 }
 
-interface DescribeClientPropertiesResult {
-  readonly ClientPropertiesList: [];
+export interface DescribeClientPropertiesResult {
+  readonly ClientPropertiesList?: [];
 }
 
-interface DescribeConnectionAliasPermissionsRequest {
+export interface DescribeConnectionAliasPermissionsRequest {
   readonly AliasId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeConnectionAliasPermissionsResult {
-  readonly AliasId: string;
-  readonly ConnectionAliasPermissions: [];
-  readonly NextToken: string;
+export interface DescribeConnectionAliasPermissionsResult {
+  readonly AliasId?: string;
+  readonly ConnectionAliasPermissions?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeConnectionAliasesRequest {
-  readonly AliasIds: [];
+export interface DescribeConnectionAliasesRequest {
+  readonly AliasIds?: [];
+  readonly ResourceId?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
+}
+
+export interface DescribeConnectionAliasesResult {
+  readonly ConnectionAliases?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeIpGroupsRequest {
+  readonly GroupIds?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface DescribeIpGroupsResult {
+  readonly Result?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeTagsRequest {
   readonly ResourceId: string;
-  readonly Limit: number;
-  readonly NextToken: string;
 }
 
-interface DescribeConnectionAliasesResult {
-  readonly ConnectionAliases: [];
-  readonly NextToken: string;
+export interface DescribeTagsResult {
+  readonly TagList?: [];
 }
 
-interface DescribeIpGroupsRequest {
-  readonly GroupIds: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeWorkspaceBundlesRequest {
+  readonly BundleIds?: [];
+  readonly Owner?: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeIpGroupsResult {
-  readonly Result: [];
-  readonly NextToken: string;
+export interface DescribeWorkspaceBundlesResult {
+  readonly Bundles?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTagsRequest {
-  readonly ResourceId: string;
+export interface DescribeWorkspaceDirectoriesRequest {
+  readonly DirectoryIds?: [];
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeTagsResult {
-  readonly TagList: [];
+export interface DescribeWorkspaceDirectoriesResult {
+  readonly Directories?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeWorkspaceBundlesRequest {
-  readonly BundleIds: [];
-  readonly Owner: string;
-  readonly NextToken: string;
-}
-
-interface DescribeWorkspaceBundlesResult {
-  readonly Bundles: [];
-  readonly NextToken: string;
-}
-
-interface DescribeWorkspaceDirectoriesRequest {
-  readonly DirectoryIds: [];
-  readonly Limit: number;
-  readonly NextToken: string;
-}
-
-interface DescribeWorkspaceDirectoriesResult {
-  readonly Directories: [];
-  readonly NextToken: string;
-}
-
-interface DescribeWorkspaceImagePermissionsRequest {
+export interface DescribeWorkspaceImagePermissionsRequest {
   readonly ImageId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeWorkspaceImagePermissionsResult {
-  readonly ImageId: string;
-  readonly ImagePermissions: [];
-  readonly NextToken: string;
+export interface DescribeWorkspaceImagePermissionsResult {
+  readonly ImageId?: string;
+  readonly ImagePermissions?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeWorkspaceImagesRequest {
-  readonly ImageIds: [];
-  readonly ImageType: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface DescribeWorkspaceImagesRequest {
+  readonly ImageIds?: [];
+  readonly ImageType?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeWorkspaceImagesResult {
-  readonly Images: [];
-  readonly NextToken: string;
+export interface DescribeWorkspaceImagesResult {
+  readonly Images?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeWorkspaceSnapshotsRequest {
+export interface DescribeWorkspaceSnapshotsRequest {
   readonly WorkspaceId: string;
 }
 
-interface DescribeWorkspaceSnapshotsResult {
-  readonly RebuildSnapshots: [];
-  readonly RestoreSnapshots: [];
+export interface DescribeWorkspaceSnapshotsResult {
+  readonly RebuildSnapshots?: [];
+  readonly RestoreSnapshots?: [];
 }
 
-interface DescribeWorkspacesConnectionStatusRequest {
-  readonly WorkspaceIds: [];
-  readonly NextToken: string;
+export interface DescribeWorkspacesConnectionStatusRequest {
+  readonly WorkspaceIds?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeWorkspacesConnectionStatusResult {
-  readonly WorkspacesConnectionStatus: [];
-  readonly NextToken: string;
+export interface DescribeWorkspacesConnectionStatusResult {
+  readonly WorkspacesConnectionStatus?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeWorkspacesRequest {
-  readonly WorkspaceIds: [];
-  readonly DirectoryId: string;
-  readonly UserName: string;
-  readonly BundleId: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+export interface DescribeWorkspacesRequest {
+  readonly WorkspaceIds?: [];
+  readonly DirectoryId?: string;
+  readonly UserName?: string;
+  readonly BundleId?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeWorkspacesResult {
-  readonly Workspaces: [];
-  readonly NextToken: string;
+export interface DescribeWorkspacesResult {
+  readonly Workspaces?: [];
+  readonly NextToken?: string;
 }
 
-interface DisassociateConnectionAliasRequest {
+export interface DisassociateConnectionAliasRequest {
   readonly AliasId: string;
 }
 
-interface DisassociateConnectionAliasResult {
+export interface DisassociateConnectionAliasResult {
 }
 
-interface DisassociateIpGroupsRequest {
+export interface DisassociateIpGroupsRequest {
   readonly DirectoryId: string;
   readonly GroupIds: [];
 }
 
-interface DisassociateIpGroupsResult {
+export interface DisassociateIpGroupsResult {
 }
 
-interface FailedCreateWorkspaceRequest {
-  readonly WorkspaceRequest: WorkspaceRequest;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface FailedCreateWorkspaceRequest {
+  readonly WorkspaceRequest?: WorkspaceRequest;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface FailedWorkspaceChangeRequest {
-  readonly WorkspaceId: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface FailedWorkspaceChangeRequest {
+  readonly WorkspaceId?: string;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface ImagePermission {
-  readonly SharedAccountId: string;
+export interface ImagePermission {
+  readonly SharedAccountId?: string;
 }
 
-interface ImportWorkspaceImageRequest {
+export interface ImportWorkspaceImageRequest {
   readonly Ec2ImageId: string;
   readonly IngestionProcess: string;
   readonly ImageName: string;
   readonly ImageDescription: string;
-  readonly Tags: [];
-  readonly Applications: [];
+  readonly Tags?: [];
+  readonly Applications?: [];
 }
 
-interface ImportWorkspaceImageResult {
-  readonly ImageId: string;
+export interface ImportWorkspaceImageResult {
+  readonly ImageId?: string;
 }
 
-interface InvalidParameterValuesException {
-  readonly message: string;
+export interface InvalidParameterValuesException {
+  readonly message?: string;
 }
 
-interface InvalidResourceStateException {
-  readonly message: string;
+export interface InvalidResourceStateException {
+  readonly message?: string;
 }
 
-interface IpRuleItem {
-  readonly ipRule: string;
-  readonly ruleDesc: string;
+export interface IpRuleItem {
+  readonly ipRule?: string;
+  readonly ruleDesc?: string;
 }
 
-interface ListAvailableManagementCidrRangesRequest {
+export interface ListAvailableManagementCidrRangesRequest {
   readonly ManagementCidrRangeConstraint: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAvailableManagementCidrRangesResult {
-  readonly ManagementCidrRanges: [];
-  readonly NextToken: string;
+export interface ListAvailableManagementCidrRangesResult {
+  readonly ManagementCidrRanges?: [];
+  readonly NextToken?: string;
 }
 
-interface MigrateWorkspaceRequest {
+export interface MigrateWorkspaceRequest {
   readonly SourceWorkspaceId: string;
   readonly BundleId: string;
 }
 
-interface MigrateWorkspaceResult {
-  readonly SourceWorkspaceId: string;
-  readonly TargetWorkspaceId: string;
+export interface MigrateWorkspaceResult {
+  readonly SourceWorkspaceId?: string;
+  readonly TargetWorkspaceId?: string;
 }
 
-interface ModificationState {
-  readonly Resource: string;
-  readonly State: string;
+export interface ModificationState {
+  readonly Resource?: string;
+  readonly State?: string;
 }
 
-interface ModifyAccountRequest {
-  readonly DedicatedTenancySupport: string;
-  readonly DedicatedTenancyManagementCidrRange: string;
+export interface ModifyAccountRequest {
+  readonly DedicatedTenancySupport?: string;
+  readonly DedicatedTenancyManagementCidrRange?: string;
 }
 
-interface ModifyAccountResult {
+export interface ModifyAccountResult {
 }
 
-interface ModifyClientPropertiesRequest {
+export interface ModifyClientPropertiesRequest {
   readonly ResourceId: string;
   readonly ClientProperties: ClientProperties;
 }
 
-interface ModifyClientPropertiesResult {
+export interface ModifyClientPropertiesResult {
 }
 
-interface ModifySelfservicePermissionsRequest {
+export interface ModifySelfservicePermissionsRequest {
   readonly ResourceId: string;
   readonly SelfservicePermissions: SelfservicePermissions;
 }
 
-interface ModifySelfservicePermissionsResult {
+export interface ModifySelfservicePermissionsResult {
 }
 
-interface ModifyWorkspaceAccessPropertiesRequest {
+export interface ModifyWorkspaceAccessPropertiesRequest {
   readonly ResourceId: string;
   readonly WorkspaceAccessProperties: WorkspaceAccessProperties;
 }
 
-interface ModifyWorkspaceAccessPropertiesResult {
+export interface ModifyWorkspaceAccessPropertiesResult {
 }
 
-interface ModifyWorkspaceCreationPropertiesRequest {
+export interface ModifyWorkspaceCreationPropertiesRequest {
   readonly ResourceId: string;
   readonly WorkspaceCreationProperties: WorkspaceCreationProperties;
 }
 
-interface ModifyWorkspaceCreationPropertiesResult {
+export interface ModifyWorkspaceCreationPropertiesResult {
 }
 
-interface ModifyWorkspacePropertiesRequest {
+export interface ModifyWorkspacePropertiesRequest {
   readonly WorkspaceId: string;
   readonly WorkspaceProperties: WorkspaceProperties;
 }
 
-interface ModifyWorkspacePropertiesResult {
+export interface ModifyWorkspacePropertiesResult {
 }
 
-interface ModifyWorkspaceStateRequest {
+export interface ModifyWorkspaceStateRequest {
   readonly WorkspaceId: string;
   readonly WorkspaceState: string;
 }
 
-interface ModifyWorkspaceStateResult {
+export interface ModifyWorkspaceStateResult {
 }
 
-interface OperatingSystem {
-  readonly Type: string;
+export interface OperatingSystem {
+  readonly Type?: string;
 }
 
-interface OperationInProgressException {
-  readonly message: string;
+export interface OperationInProgressException {
+  readonly message?: string;
 }
 
-interface OperationNotSupportedException {
-  readonly message: string;
+export interface OperationNotSupportedException {
+  readonly message?: string;
 }
 
-interface RebootRequest {
+export interface RebootRequest {
   readonly WorkspaceId: string;
 }
 
-interface RebootWorkspacesRequest {
+export interface RebootWorkspacesRequest {
   readonly RebootWorkspaceRequests: [];
 }
 
-interface RebootWorkspacesResult {
-  readonly FailedRequests: [];
+export interface RebootWorkspacesResult {
+  readonly FailedRequests?: [];
 }
 
-interface RebuildRequest {
+export interface RebuildRequest {
   readonly WorkspaceId: string;
 }
 
-interface RebuildWorkspacesRequest {
+export interface RebuildWorkspacesRequest {
   readonly RebuildWorkspaceRequests: [];
 }
 
-interface RebuildWorkspacesResult {
-  readonly FailedRequests: [];
+export interface RebuildWorkspacesResult {
+  readonly FailedRequests?: [];
 }
 
-interface RegisterWorkspaceDirectoryRequest {
+export interface RegisterWorkspaceDirectoryRequest {
   readonly DirectoryId: string;
-  readonly SubnetIds: [];
+  readonly SubnetIds?: [];
   readonly EnableWorkDocs: boolean;
-  readonly EnableSelfService: boolean;
-  readonly Tenancy: string;
-  readonly Tags: [];
+  readonly EnableSelfService?: boolean;
+  readonly Tenancy?: string;
+  readonly Tags?: [];
 }
 
-interface RegisterWorkspaceDirectoryResult {
+export interface RegisterWorkspaceDirectoryResult {
 }
 
-interface ResourceAlreadyExistsException {
-  readonly message: string;
+export interface ResourceAlreadyExistsException {
+  readonly message?: string;
 }
 
-interface ResourceAssociatedException {
-  readonly message: string;
+export interface ResourceAssociatedException {
+  readonly message?: string;
 }
 
-interface ResourceCreationFailedException {
-  readonly message: string;
+export interface ResourceCreationFailedException {
+  readonly message?: string;
 }
 
-interface ResourceLimitExceededException {
-  readonly message: string;
+export interface ResourceLimitExceededException {
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
-  readonly ResourceId: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
+  readonly ResourceId?: string;
 }
 
-interface ResourceUnavailableException {
-  readonly message: string;
-  readonly ResourceId: string;
+export interface ResourceUnavailableException {
+  readonly message?: string;
+  readonly ResourceId?: string;
 }
 
-interface RestoreWorkspaceRequest {
+export interface RestoreWorkspaceRequest {
   readonly WorkspaceId: string;
 }
 
-interface RestoreWorkspaceResult {
+export interface RestoreWorkspaceResult {
 }
 
-interface RevokeIpRulesRequest {
+export interface RevokeIpRulesRequest {
   readonly GroupId: string;
   readonly UserRules: [];
 }
 
-interface RevokeIpRulesResult {
+export interface RevokeIpRulesResult {
 }
 
-interface RootStorage {
-  readonly Capacity: string;
+export interface RootStorage {
+  readonly Capacity?: string;
 }
 
-interface SelfservicePermissions {
-  readonly RestartWorkspace: string;
-  readonly IncreaseVolumeSize: string;
-  readonly ChangeComputeType: string;
-  readonly SwitchRunningMode: string;
-  readonly RebuildWorkspace: string;
+export interface SelfservicePermissions {
+  readonly RestartWorkspace?: string;
+  readonly IncreaseVolumeSize?: string;
+  readonly ChangeComputeType?: string;
+  readonly SwitchRunningMode?: string;
+  readonly RebuildWorkspace?: string;
 }
 
-interface Snapshot {
-  readonly SnapshotTime: Date;
+export interface Snapshot {
+  readonly SnapshotTime?: Date;
 }
 
-interface StartRequest {
-  readonly WorkspaceId: string;
+export interface StartRequest {
+  readonly WorkspaceId?: string;
 }
 
-interface StartWorkspacesRequest {
+export interface StartWorkspacesRequest {
   readonly StartWorkspaceRequests: [];
 }
 
-interface StartWorkspacesResult {
-  readonly FailedRequests: [];
+export interface StartWorkspacesResult {
+  readonly FailedRequests?: [];
 }
 
-interface StopRequest {
-  readonly WorkspaceId: string;
+export interface StopRequest {
+  readonly WorkspaceId?: string;
 }
 
-interface StopWorkspacesRequest {
+export interface StopWorkspacesRequest {
   readonly StopWorkspaceRequests: [];
 }
 
-interface StopWorkspacesResult {
-  readonly FailedRequests: [];
+export interface StopWorkspacesResult {
+  readonly FailedRequests?: [];
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
-  readonly Value: string;
+  readonly Value?: string;
 }
 
-interface TerminateRequest {
+export interface TerminateRequest {
   readonly WorkspaceId: string;
 }
 
-interface TerminateWorkspacesRequest {
+export interface TerminateWorkspacesRequest {
   readonly TerminateWorkspaceRequests: [];
 }
 
-interface TerminateWorkspacesResult {
-  readonly FailedRequests: [];
+export interface TerminateWorkspacesResult {
+  readonly FailedRequests?: [];
 }
 
-interface UnsupportedNetworkConfigurationException {
-  readonly message: string;
+export interface UnsupportedNetworkConfigurationException {
+  readonly message?: string;
 }
 
-interface UnsupportedWorkspaceConfigurationException {
-  readonly message: string;
+export interface UnsupportedWorkspaceConfigurationException {
+  readonly message?: string;
 }
 
-interface UpdateConnectionAliasPermissionRequest {
+export interface UpdateConnectionAliasPermissionRequest {
   readonly AliasId: string;
   readonly ConnectionAliasPermission: ConnectionAliasPermission;
 }
 
-interface UpdateConnectionAliasPermissionResult {
+export interface UpdateConnectionAliasPermissionResult {
 }
 
-interface UpdateResult {
-  readonly UpdateAvailable: boolean;
-  readonly Description: string;
+export interface UpdateResult {
+  readonly UpdateAvailable?: boolean;
+  readonly Description?: string;
 }
 
-interface UpdateRulesOfIpGroupRequest {
+export interface UpdateRulesOfIpGroupRequest {
   readonly GroupId: string;
   readonly UserRules: [];
 }
 
-interface UpdateRulesOfIpGroupResult {
+export interface UpdateRulesOfIpGroupResult {
 }
 
-interface UpdateWorkspaceBundleRequest {
-  readonly BundleId: string;
-  readonly ImageId: string;
+export interface UpdateWorkspaceBundleRequest {
+  readonly BundleId?: string;
+  readonly ImageId?: string;
 }
 
-interface UpdateWorkspaceBundleResult {
+export interface UpdateWorkspaceBundleResult {
 }
 
-interface UpdateWorkspaceImagePermissionRequest {
+export interface UpdateWorkspaceImagePermissionRequest {
   readonly ImageId: string;
   readonly AllowCopyImage: boolean;
   readonly SharedAccountId: string;
 }
 
-interface UpdateWorkspaceImagePermissionResult {
+export interface UpdateWorkspaceImagePermissionResult {
 }
 
-interface UserStorage {
-  readonly Capacity: string;
+export interface UserStorage {
+  readonly Capacity?: string;
 }
 
-interface Workspace {
-  readonly WorkspaceId: string;
+export interface Workspace {
+  readonly WorkspaceId?: string;
+  readonly DirectoryId?: string;
+  readonly UserName?: string;
+  readonly IpAddress?: string;
+  readonly State?: string;
+  readonly BundleId?: string;
+  readonly SubnetId?: string;
+  readonly ErrorMessage?: string;
+  readonly ErrorCode?: string;
+  readonly ComputerName?: string;
+  readonly VolumeEncryptionKey?: string;
+  readonly UserVolumeEncryptionEnabled?: boolean;
+  readonly RootVolumeEncryptionEnabled?: boolean;
+  readonly WorkspaceProperties?: WorkspaceProperties;
+  readonly ModificationStates?: [];
+}
+
+export interface WorkspaceAccessProperties {
+  readonly DeviceTypeWindows?: string;
+  readonly DeviceTypeOsx?: string;
+  readonly DeviceTypeWeb?: string;
+  readonly DeviceTypeIos?: string;
+  readonly DeviceTypeAndroid?: string;
+  readonly DeviceTypeChromeOs?: string;
+  readonly DeviceTypeZeroClient?: string;
+  readonly DeviceTypeLinux?: string;
+}
+
+export interface WorkspaceBundle {
+  readonly BundleId?: string;
+  readonly Name?: string;
+  readonly Owner?: string;
+  readonly Description?: string;
+  readonly ImageId?: string;
+  readonly RootStorage?: RootStorage;
+  readonly UserStorage?: UserStorage;
+  readonly ComputeType?: ComputeType;
+  readonly LastUpdatedTime?: Date;
+  readonly CreationTime?: Date;
+}
+
+export interface WorkspaceConnectionStatus {
+  readonly WorkspaceId?: string;
+  readonly ConnectionState?: string;
+  readonly ConnectionStateCheckTimestamp?: Date;
+  readonly LastKnownUserConnectionTimestamp?: Date;
+}
+
+export interface WorkspaceCreationProperties {
+  readonly EnableWorkDocs?: boolean;
+  readonly EnableInternetAccess?: boolean;
+  readonly DefaultOu?: string;
+  readonly CustomSecurityGroupId?: string;
+  readonly UserEnabledAsLocalAdministrator?: boolean;
+  readonly EnableMaintenanceMode?: boolean;
+}
+
+export interface WorkspaceDirectory {
+  readonly DirectoryId?: string;
+  readonly Alias?: string;
+  readonly DirectoryName?: string;
+  readonly RegistrationCode?: string;
+  readonly SubnetIds?: [];
+  readonly DnsIpAddresses?: [];
+  readonly CustomerUserName?: string;
+  readonly IamRoleId?: string;
+  readonly DirectoryType?: string;
+  readonly WorkspaceSecurityGroupId?: string;
+  readonly State?: string;
+  readonly WorkspaceCreationProperties?: DefaultWorkspaceCreationProperties;
+  readonly ipGroupIds?: [];
+  readonly WorkspaceAccessProperties?: WorkspaceAccessProperties;
+  readonly Tenancy?: string;
+  readonly SelfservicePermissions?: SelfservicePermissions;
+}
+
+export interface WorkspaceImage {
+  readonly ImageId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly OperatingSystem?: OperatingSystem;
+  readonly State?: string;
+  readonly RequiredTenancy?: string;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
+  readonly Created?: Date;
+  readonly OwnerAccountId?: string;
+  readonly Updates?: UpdateResult;
+}
+
+export interface WorkspaceProperties {
+  readonly RunningMode?: string;
+  readonly RunningModeAutoStopTimeoutInMinutes?: number;
+  readonly RootVolumeSizeGib?: number;
+  readonly UserVolumeSizeGib?: number;
+  readonly ComputeTypeName?: string;
+}
+
+export interface WorkspaceRequest {
   readonly DirectoryId: string;
   readonly UserName: string;
-  readonly IpAddress: string;
-  readonly State: string;
   readonly BundleId: string;
-  readonly SubnetId: string;
-  readonly ErrorMessage: string;
-  readonly ErrorCode: string;
-  readonly ComputerName: string;
-  readonly VolumeEncryptionKey: string;
-  readonly UserVolumeEncryptionEnabled: boolean;
-  readonly RootVolumeEncryptionEnabled: boolean;
-  readonly WorkspaceProperties: WorkspaceProperties;
-  readonly ModificationStates: [];
+  readonly VolumeEncryptionKey?: string;
+  readonly UserVolumeEncryptionEnabled?: boolean;
+  readonly RootVolumeEncryptionEnabled?: boolean;
+  readonly WorkspaceProperties?: WorkspaceProperties;
+  readonly Tags?: [];
 }
 
-interface WorkspaceAccessProperties {
-  readonly DeviceTypeWindows: string;
-  readonly DeviceTypeOsx: string;
-  readonly DeviceTypeWeb: string;
-  readonly DeviceTypeIos: string;
-  readonly DeviceTypeAndroid: string;
-  readonly DeviceTypeChromeOs: string;
-  readonly DeviceTypeZeroClient: string;
-  readonly DeviceTypeLinux: string;
+export interface WorkspacesDefaultRoleNotFoundException {
+  readonly message?: string;
 }
 
-interface WorkspaceBundle {
-  readonly BundleId: string;
-  readonly Name: string;
-  readonly Owner: string;
-  readonly Description: string;
-  readonly ImageId: string;
-  readonly RootStorage: RootStorage;
-  readonly UserStorage: UserStorage;
-  readonly ComputeType: ComputeType;
-  readonly LastUpdatedTime: Date;
-  readonly CreationTime: Date;
+export interface WorkspacesIpGroup {
+  readonly groupId?: string;
+  readonly groupName?: string;
+  readonly groupDesc?: string;
+  readonly userRules?: [];
 }
 
-interface WorkspaceConnectionStatus {
-  readonly WorkspaceId: string;
-  readonly ConnectionState: string;
-  readonly ConnectionStateCheckTimestamp: Date;
-  readonly LastKnownUserConnectionTimestamp: Date;
-}
-
-interface WorkspaceCreationProperties {
-  readonly EnableWorkDocs: boolean;
-  readonly EnableInternetAccess: boolean;
-  readonly DefaultOu: string;
-  readonly CustomSecurityGroupId: string;
-  readonly UserEnabledAsLocalAdministrator: boolean;
-  readonly EnableMaintenanceMode: boolean;
-}
-
-interface WorkspaceDirectory {
-  readonly DirectoryId: string;
-  readonly Alias: string;
-  readonly DirectoryName: string;
-  readonly RegistrationCode: string;
-  readonly SubnetIds: [];
-  readonly DnsIpAddresses: [];
-  readonly CustomerUserName: string;
-  readonly IamRoleId: string;
-  readonly DirectoryType: string;
-  readonly WorkspaceSecurityGroupId: string;
-  readonly State: string;
-  readonly WorkspaceCreationProperties: DefaultWorkspaceCreationProperties;
-  readonly ipGroupIds: [];
-  readonly WorkspaceAccessProperties: WorkspaceAccessProperties;
-  readonly Tenancy: string;
-  readonly SelfservicePermissions: SelfservicePermissions;
-}
-
-interface WorkspaceImage {
-  readonly ImageId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly OperatingSystem: OperatingSystem;
-  readonly State: string;
-  readonly RequiredTenancy: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
-  readonly Created: Date;
-  readonly OwnerAccountId: string;
-  readonly Updates: UpdateResult;
-}
-
-interface WorkspaceProperties {
-  readonly RunningMode: string;
-  readonly RunningModeAutoStopTimeoutInMinutes: number;
-  readonly RootVolumeSizeGib: number;
-  readonly UserVolumeSizeGib: number;
-  readonly ComputeTypeName: string;
-}
-
-interface WorkspaceRequest {
-  readonly DirectoryId: string;
-  readonly UserName: string;
-  readonly BundleId: string;
-  readonly VolumeEncryptionKey: string;
-  readonly UserVolumeEncryptionEnabled: boolean;
-  readonly RootVolumeEncryptionEnabled: boolean;
-  readonly WorkspaceProperties: WorkspaceProperties;
-  readonly Tags: [];
-}
-
-interface WorkspacesDefaultRoleNotFoundException {
-  readonly message: string;
-}
-
-interface WorkspacesIpGroup {
-  readonly groupId: string;
-  readonly groupName: string;
-  readonly groupDesc: string;
-  readonly userRules: [];
-}
 

@@ -6,47 +6,56 @@ export interface DescribeAffectedAccountsForOrganization {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DescribeAffectedEntities {
   readonly filter: EntityFilter;
   readonly locale?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DescribeAffectedEntitiesForOrganization {
   readonly organizationEntityFilters: [];
   readonly locale?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DescribeEntityAggregates {
   readonly eventArns?: [];
 }
+
 export interface DescribeEventAggregates {
   readonly filter?: EventFilter;
   readonly aggregateField: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface DescribeEventDetails {
   readonly eventArns: [];
   readonly locale?: string;
 }
+
 export interface DescribeEventDetailsForOrganization {
   readonly organizationEventDetailFilters: [];
   readonly locale?: string;
 }
+
 export interface DescribeEventTypes {
   readonly filter?: EventTypeFilter;
   readonly locale?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DescribeEvents {
   readonly filter?: EventFilter;
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly locale?: string;
 }
+
 export interface DescribeEventsForOrganization {
   readonly filter?: OrganizationEventFilter;
   readonly nextToken?: string;
@@ -54,280 +63,279 @@ export interface DescribeEventsForOrganization {
   readonly locale?: string;
 }
 
+export interface AffectedEntity {
+  readonly entityArn?: string;
+  readonly eventArn?: string;
+  readonly entityValue?: string;
+  readonly entityUrl?: string;
+  readonly awsAccountId?: string;
+  readonly lastUpdatedTime?: Date;
+  readonly statusCode?: string;
+  readonly tags?: {[key: string]: any};
+}
 
+export interface ConcurrentModificationException {
+  readonly message?: string;
+}
 
-interface AffectedEntity {
-  readonly entityArn: string;
+export interface DateTimeRange {
+  readonly from?: Date;
+  readonly to?: Date;
+}
+
+export interface DescribeAffectedAccountsForOrganizationRequest {
   readonly eventArn: string;
-  readonly entityValue: string;
-  readonly entityUrl: string;
-  readonly awsAccountId: string;
-  readonly lastUpdatedTime: Date;
-  readonly statusCode: string;
-  readonly tags: {[key: string]: any};
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ConcurrentModificationException {
-  readonly message: string;
+export interface DescribeAffectedAccountsForOrganizationResponse {
+  readonly affectedAccounts?: [];
+  readonly eventScopeCode?: string;
+  readonly nextToken?: string;
 }
 
-interface DateTimeRange {
-  readonly from: Date;
-  readonly to: Date;
-}
-
-interface DescribeAffectedAccountsForOrganizationRequest {
-  readonly eventArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-}
-
-interface DescribeAffectedAccountsForOrganizationResponse {
-  readonly affectedAccounts: [];
-  readonly eventScopeCode: string;
-  readonly nextToken: string;
-}
-
-interface DescribeAffectedEntitiesForOrganizationRequest {
+export interface DescribeAffectedEntitiesForOrganizationRequest {
   readonly organizationEntityFilters: [];
-  readonly locale: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly locale?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DescribeAffectedEntitiesForOrganizationResponse {
-  readonly entities: [];
-  readonly failedSet: [];
-  readonly nextToken: string;
+export interface DescribeAffectedEntitiesForOrganizationResponse {
+  readonly entities?: [];
+  readonly failedSet?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeAffectedEntitiesRequest {
+export interface DescribeAffectedEntitiesRequest {
   readonly filter: EntityFilter;
-  readonly locale: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly locale?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DescribeAffectedEntitiesResponse {
-  readonly entities: [];
-  readonly nextToken: string;
+export interface DescribeAffectedEntitiesResponse {
+  readonly entities?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeEntityAggregatesRequest {
-  readonly eventArns: [];
+export interface DescribeEntityAggregatesRequest {
+  readonly eventArns?: [];
 }
 
-interface DescribeEntityAggregatesResponse {
-  readonly entityAggregates: [];
+export interface DescribeEntityAggregatesResponse {
+  readonly entityAggregates?: [];
 }
 
-interface DescribeEventAggregatesRequest {
-  readonly filter: EventFilter;
+export interface DescribeEventAggregatesRequest {
+  readonly filter?: EventFilter;
   readonly aggregateField: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface DescribeEventAggregatesResponse {
-  readonly eventAggregates: [];
-  readonly nextToken: string;
+export interface DescribeEventAggregatesResponse {
+  readonly eventAggregates?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeEventDetailsForOrganizationRequest {
+export interface DescribeEventDetailsForOrganizationRequest {
   readonly organizationEventDetailFilters: [];
-  readonly locale: string;
+  readonly locale?: string;
 }
 
-interface DescribeEventDetailsForOrganizationResponse {
-  readonly successfulSet: [];
-  readonly failedSet: [];
+export interface DescribeEventDetailsForOrganizationResponse {
+  readonly successfulSet?: [];
+  readonly failedSet?: [];
 }
 
-interface DescribeEventDetailsRequest {
+export interface DescribeEventDetailsRequest {
   readonly eventArns: [];
-  readonly locale: string;
+  readonly locale?: string;
 }
 
-interface DescribeEventDetailsResponse {
-  readonly successfulSet: [];
-  readonly failedSet: [];
+export interface DescribeEventDetailsResponse {
+  readonly successfulSet?: [];
+  readonly failedSet?: [];
 }
 
-interface DescribeEventTypesRequest {
-  readonly filter: EventTypeFilter;
-  readonly locale: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface DescribeEventTypesRequest {
+  readonly filter?: EventTypeFilter;
+  readonly locale?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DescribeEventTypesResponse {
-  readonly eventTypes: [];
-  readonly nextToken: string;
+export interface DescribeEventTypesResponse {
+  readonly eventTypes?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeEventsForOrganizationRequest {
-  readonly filter: OrganizationEventFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly locale: string;
+export interface DescribeEventsForOrganizationRequest {
+  readonly filter?: OrganizationEventFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly locale?: string;
 }
 
-interface DescribeEventsForOrganizationResponse {
-  readonly events: [];
-  readonly nextToken: string;
+export interface DescribeEventsForOrganizationResponse {
+  readonly events?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeEventsRequest {
-  readonly filter: EventFilter;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly locale: string;
+export interface DescribeEventsRequest {
+  readonly filter?: EventFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly locale?: string;
 }
 
-interface DescribeEventsResponse {
-  readonly events: [];
-  readonly nextToken: string;
+export interface DescribeEventsResponse {
+  readonly events?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeHealthServiceStatusForOrganizationResponse {
-  readonly healthServiceAccessStatusForOrganization: string;
+export interface DescribeHealthServiceStatusForOrganizationResponse {
+  readonly healthServiceAccessStatusForOrganization?: string;
 }
 
-interface EntityAggregate {
-  readonly eventArn: string;
-  readonly count: number;
+export interface EntityAggregate {
+  readonly eventArn?: string;
+  readonly count?: number;
 }
 
-interface EntityFilter {
+export interface EntityFilter {
   readonly eventArns: [];
-  readonly entityArns: [];
-  readonly entityValues: [];
-  readonly lastUpdatedTimes: [];
-  readonly tags: [];
-  readonly statusCodes: [];
+  readonly entityArns?: [];
+  readonly entityValues?: [];
+  readonly lastUpdatedTimes?: [];
+  readonly tags?: [];
+  readonly statusCodes?: [];
 }
 
-interface Event {
-  readonly arn: string;
-  readonly service: string;
-  readonly eventTypeCode: string;
-  readonly eventTypeCategory: string;
-  readonly region: string;
-  readonly availabilityZone: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly lastUpdatedTime: Date;
-  readonly statusCode: string;
-  readonly eventScopeCode: string;
+export interface Event {
+  readonly arn?: string;
+  readonly service?: string;
+  readonly eventTypeCode?: string;
+  readonly eventTypeCategory?: string;
+  readonly region?: string;
+  readonly availabilityZone?: string;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly lastUpdatedTime?: Date;
+  readonly statusCode?: string;
+  readonly eventScopeCode?: string;
 }
 
-interface EventAccountFilter {
+export interface EventAccountFilter {
   readonly eventArn: string;
-  readonly awsAccountId: string;
+  readonly awsAccountId?: string;
 }
 
-interface EventAggregate {
-  readonly aggregateValue: string;
-  readonly count: number;
+export interface EventAggregate {
+  readonly aggregateValue?: string;
+  readonly count?: number;
 }
 
-interface EventDescription {
-  readonly latestDescription: string;
+export interface EventDescription {
+  readonly latestDescription?: string;
 }
 
-interface EventDetails {
-  readonly event: Event;
-  readonly eventDescription: EventDescription;
-  readonly eventMetadata: {[key: string]: any};
+export interface EventDetails {
+  readonly event?: Event;
+  readonly eventDescription?: EventDescription;
+  readonly eventMetadata?: {[key: string]: any};
 }
 
-interface EventDetailsErrorItem {
-  readonly eventArn: string;
-  readonly errorName: string;
-  readonly errorMessage: string;
+export interface EventDetailsErrorItem {
+  readonly eventArn?: string;
+  readonly errorName?: string;
+  readonly errorMessage?: string;
 }
 
-interface EventFilter {
-  readonly eventArns: [];
-  readonly eventTypeCodes: [];
-  readonly services: [];
-  readonly regions: [];
-  readonly availabilityZones: [];
-  readonly startTimes: [];
-  readonly endTimes: [];
-  readonly lastUpdatedTimes: [];
-  readonly entityArns: [];
-  readonly entityValues: [];
-  readonly eventTypeCategories: [];
-  readonly tags: [];
-  readonly eventStatusCodes: [];
+export interface EventFilter {
+  readonly eventArns?: [];
+  readonly eventTypeCodes?: [];
+  readonly services?: [];
+  readonly regions?: [];
+  readonly availabilityZones?: [];
+  readonly startTimes?: [];
+  readonly endTimes?: [];
+  readonly lastUpdatedTimes?: [];
+  readonly entityArns?: [];
+  readonly entityValues?: [];
+  readonly eventTypeCategories?: [];
+  readonly tags?: [];
+  readonly eventStatusCodes?: [];
 }
 
-interface EventType {
-  readonly service: string;
-  readonly code: string;
-  readonly category: string;
+export interface EventType {
+  readonly service?: string;
+  readonly code?: string;
+  readonly category?: string;
 }
 
-interface EventTypeFilter {
-  readonly eventTypeCodes: [];
-  readonly services: [];
-  readonly eventTypeCategories: [];
+export interface EventTypeFilter {
+  readonly eventTypeCodes?: [];
+  readonly services?: [];
+  readonly eventTypeCategories?: [];
 }
 
-interface InvalidPaginationToken {
-  readonly message: string;
+export interface InvalidPaginationToken {
+  readonly message?: string;
 }
 
-interface OrganizationAffectedEntitiesErrorItem {
-  readonly awsAccountId: string;
-  readonly eventArn: string;
-  readonly errorName: string;
-  readonly errorMessage: string;
+export interface OrganizationAffectedEntitiesErrorItem {
+  readonly awsAccountId?: string;
+  readonly eventArn?: string;
+  readonly errorName?: string;
+  readonly errorMessage?: string;
 }
 
-interface OrganizationEvent {
-  readonly arn: string;
-  readonly service: string;
-  readonly eventTypeCode: string;
-  readonly eventTypeCategory: string;
-  readonly eventScopeCode: string;
-  readonly region: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly lastUpdatedTime: Date;
-  readonly statusCode: string;
+export interface OrganizationEvent {
+  readonly arn?: string;
+  readonly service?: string;
+  readonly eventTypeCode?: string;
+  readonly eventTypeCategory?: string;
+  readonly eventScopeCode?: string;
+  readonly region?: string;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly lastUpdatedTime?: Date;
+  readonly statusCode?: string;
 }
 
-interface OrganizationEventDetails {
-  readonly awsAccountId: string;
-  readonly event: Event;
-  readonly eventDescription: EventDescription;
-  readonly eventMetadata: {[key: string]: any};
+export interface OrganizationEventDetails {
+  readonly awsAccountId?: string;
+  readonly event?: Event;
+  readonly eventDescription?: EventDescription;
+  readonly eventMetadata?: {[key: string]: any};
 }
 
-interface OrganizationEventDetailsErrorItem {
-  readonly awsAccountId: string;
-  readonly eventArn: string;
-  readonly errorName: string;
-  readonly errorMessage: string;
+export interface OrganizationEventDetailsErrorItem {
+  readonly awsAccountId?: string;
+  readonly eventArn?: string;
+  readonly errorName?: string;
+  readonly errorMessage?: string;
 }
 
-interface OrganizationEventFilter {
-  readonly eventTypeCodes: [];
-  readonly awsAccountIds: [];
-  readonly services: [];
-  readonly regions: [];
-  readonly startTime: DateTimeRange;
-  readonly endTime: DateTimeRange;
-  readonly lastUpdatedTime: DateTimeRange;
-  readonly entityArns: [];
-  readonly entityValues: [];
-  readonly eventTypeCategories: [];
-  readonly eventStatusCodes: [];
+export interface OrganizationEventFilter {
+  readonly eventTypeCodes?: [];
+  readonly awsAccountIds?: [];
+  readonly services?: [];
+  readonly regions?: [];
+  readonly startTime?: DateTimeRange;
+  readonly endTime?: DateTimeRange;
+  readonly lastUpdatedTime?: DateTimeRange;
+  readonly entityArns?: [];
+  readonly entityValues?: [];
+  readonly eventTypeCategories?: [];
+  readonly eventStatusCodes?: [];
 }
 
-interface UnsupportedLocale {
-  readonly message: string;
+export interface UnsupportedLocale {
+  readonly message?: string;
 }
+
 

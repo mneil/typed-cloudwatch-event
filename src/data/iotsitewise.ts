@@ -7,25 +7,30 @@ export interface AssociateAssets {
   readonly childAssetId: string;
   readonly clientToken?: string;
 }
+
 export interface AssociateTimeSeriesToAssetProperty {
   readonly alias: string;
   readonly assetId: string;
   readonly propertyId: string;
   readonly clientToken?: string;
 }
+
 export interface BatchAssociateProjectAssets {
   readonly projectId: string;
   readonly assetIds: [];
   readonly clientToken?: string;
 }
+
 export interface BatchDisassociateProjectAssets {
   readonly projectId: string;
   readonly assetIds: [];
   readonly clientToken?: string;
 }
+
 export interface BatchPutAssetPropertyValue {
   readonly entries: [];
 }
+
 export interface CreateAccessPolicy {
   readonly accessPolicyIdentity: Identity;
   readonly accessPolicyResource: Resource;
@@ -33,12 +38,14 @@ export interface CreateAccessPolicy {
   readonly clientToken?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateAsset {
   readonly assetName: string;
   readonly assetModelId: string;
   readonly clientToken?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateAssetModel {
   readonly assetModelName: string;
   readonly assetModelDescription?: string;
@@ -48,6 +55,7 @@ export interface CreateAssetModel {
   readonly clientToken?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateDashboard {
   readonly projectId: string;
   readonly dashboardName: string;
@@ -56,11 +64,13 @@ export interface CreateDashboard {
   readonly clientToken?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateGateway {
   readonly gatewayName: string;
   readonly gatewayPlatform: GatewayPlatform;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreatePortal {
   readonly portalName: string;
   readonly portalDescription?: string;
@@ -73,6 +83,7 @@ export interface CreatePortal {
   readonly notificationSenderEmail?: string;
   readonly alarms?: Alarms;
 }
+
 export interface CreateProject {
   readonly portalId: string;
   readonly projectName: string;
@@ -80,91 +91,115 @@ export interface CreateProject {
   readonly clientToken?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface DeleteAccessPolicy {
   readonly accessPolicyId: string;
   readonly clientToken?: string;
 }
+
 export interface DeleteAsset {
   readonly assetId: string;
   readonly clientToken?: string;
 }
+
 export interface DeleteAssetModel {
   readonly assetModelId: string;
   readonly clientToken?: string;
 }
+
 export interface DeleteDashboard {
   readonly dashboardId: string;
   readonly clientToken?: string;
 }
+
 export interface DeleteGateway {
   readonly gatewayId: string;
 }
+
 export interface DeletePortal {
   readonly portalId: string;
   readonly clientToken?: string;
 }
+
 export interface DeleteProject {
   readonly projectId: string;
   readonly clientToken?: string;
 }
+
 export interface DeleteTimeSeries {
   readonly alias?: string;
   readonly assetId?: string;
   readonly propertyId?: string;
   readonly clientToken?: string;
 }
+
 export interface DescribeAccessPolicy {
   readonly accessPolicyId: string;
 }
+
 export interface DescribeAsset {
   readonly assetId: string;
 }
+
 export interface DescribeAssetModel {
   readonly assetModelId: string;
 }
+
 export interface DescribeAssetProperty {
   readonly assetId: string;
   readonly propertyId: string;
 }
+
 export interface DescribeDashboard {
   readonly dashboardId: string;
 }
+
 export interface DescribeDefaultEncryptionConfiguration {
 }
+
 export interface DescribeGateway {
   readonly gatewayId: string;
 }
+
 export interface DescribeGatewayCapabilityConfiguration {
   readonly gatewayId: string;
   readonly capabilityNamespace: string;
 }
+
 export interface DescribeLoggingOptions {
 }
+
 export interface DescribePortal {
   readonly portalId: string;
 }
+
 export interface DescribeProject {
   readonly projectId: string;
 }
+
 export interface DescribeStorageConfiguration {
 }
+
 export interface DescribeTimeSeries {
   readonly alias?: string;
   readonly assetId?: string;
   readonly propertyId?: string;
 }
+
 export interface DisassociateAssets {
   readonly assetId: string;
   readonly hierarchyId: string;
   readonly childAssetId: string;
   readonly clientToken?: string;
 }
+
 export interface DisassociateTimeSeriesFromAssetProperty {
   readonly alias: string;
   readonly assetId: string;
   readonly propertyId: string;
   readonly clientToken?: string;
 }
+
 export interface GetAssetPropertyAggregates {
   readonly assetId?: string;
   readonly propertyId?: string;
@@ -178,11 +213,13 @@ export interface GetAssetPropertyAggregates {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetAssetPropertyValue {
   readonly assetId?: string;
   readonly propertyId?: string;
   readonly propertyAlias?: string;
 }
+
 export interface GetAssetPropertyValueHistory {
   readonly assetId?: string;
   readonly propertyId?: string;
@@ -194,6 +231,7 @@ export interface GetAssetPropertyValueHistory {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetInterpolatedAssetPropertyValues {
   readonly assetId?: string;
   readonly propertyId?: string;
@@ -209,6 +247,7 @@ export interface GetInterpolatedAssetPropertyValues {
   readonly type: string;
   readonly intervalWindowInSeconds?: number;
 }
+
 export interface ListAccessPolicies {
   readonly identityType?: string;
   readonly identityId?: string;
@@ -218,22 +257,26 @@ export interface ListAccessPolicies {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssetModels {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssetRelationships {
   readonly assetId: string;
   readonly traversalType: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssets {
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly assetModelId?: string;
   readonly filter?: string;
 }
+
 export interface ListAssociatedAssets {
   readonly assetId: string;
   readonly hierarchyId?: string;
@@ -241,32 +284,39 @@ export interface ListAssociatedAssets {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListDashboards {
   readonly projectId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListGateways {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListPortals {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListProjectAssets {
   readonly projectId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListProjects {
   readonly portalId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface ListTimeSeries {
   readonly nextToken?: string;
   readonly maxResults?: number;
@@ -274,27 +324,33 @@ export interface ListTimeSeries {
   readonly aliasPrefix?: string;
   readonly timeSeriesType?: string;
 }
+
 export interface PutDefaultEncryptionConfiguration {
   readonly encryptionType: string;
   readonly kmsKeyId?: string;
 }
+
 export interface PutLoggingOptions {
   readonly loggingOptions: LoggingOptions;
 }
+
 export interface PutStorageConfiguration {
   readonly storageType: string;
   readonly multiLayerStorage?: MultiLayerStorage;
   readonly disassociatedDataStorage?: string;
   readonly retentionPeriod?: RetentionPeriod;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateAccessPolicy {
   readonly accessPolicyId: string;
   readonly accessPolicyIdentity: Identity;
@@ -302,11 +358,13 @@ export interface UpdateAccessPolicy {
   readonly accessPolicyPermission: string;
   readonly clientToken?: string;
 }
+
 export interface UpdateAsset {
   readonly assetId: string;
   readonly assetName: string;
   readonly clientToken?: string;
 }
+
 export interface UpdateAssetModel {
   readonly assetModelId: string;
   readonly assetModelName: string;
@@ -316,6 +374,7 @@ export interface UpdateAssetModel {
   readonly assetModelCompositeModels?: [];
   readonly clientToken?: string;
 }
+
 export interface UpdateAssetProperty {
   readonly assetId: string;
   readonly propertyId: string;
@@ -323,6 +382,7 @@ export interface UpdateAssetProperty {
   readonly propertyNotificationState?: string;
   readonly clientToken?: string;
 }
+
 export interface UpdateDashboard {
   readonly dashboardId: string;
   readonly dashboardName: string;
@@ -330,15 +390,18 @@ export interface UpdateDashboard {
   readonly dashboardDefinition: string;
   readonly clientToken?: string;
 }
+
 export interface UpdateGateway {
   readonly gatewayId: string;
   readonly gatewayName: string;
 }
+
 export interface UpdateGatewayCapabilityConfiguration {
   readonly gatewayId: string;
   readonly capabilityNamespace: string;
   readonly capabilityConfiguration: string;
 }
+
 export interface UpdatePortal {
   readonly portalId: string;
   readonly portalName: string;
@@ -350,6 +413,7 @@ export interface UpdatePortal {
   readonly notificationSenderEmail?: string;
   readonly alarms?: Alarms;
 }
+
 export interface UpdateProject {
   readonly projectId: string;
   readonly projectName: string;
@@ -357,108 +421,106 @@ export interface UpdateProject {
   readonly clientToken?: string;
 }
 
-
-
-interface AccessPolicySummary {
+export interface AccessPolicySummary {
   readonly id: string;
   readonly identity: Identity;
   readonly resource: Resource;
   readonly permission: string;
-  readonly creationDate: Date;
-  readonly lastUpdateDate: Date;
+  readonly creationDate?: Date;
+  readonly lastUpdateDate?: Date;
 }
 
-interface AggregatedValue {
+export interface AggregatedValue {
   readonly timestamp: Date;
-  readonly quality: string;
+  readonly quality?: string;
   readonly value: Aggregates;
 }
 
-interface Aggregates {
-  readonly average: unknown;
-  readonly count: unknown;
-  readonly maximum: unknown;
-  readonly minimum: unknown;
-  readonly sum: unknown;
-  readonly standardDeviation: unknown;
+export interface Aggregates {
+  readonly average?: unknown;
+  readonly count?: unknown;
+  readonly maximum?: unknown;
+  readonly minimum?: unknown;
+  readonly sum?: unknown;
+  readonly standardDeviation?: unknown;
 }
 
-interface Alarms {
+export interface Alarms {
   readonly alarmRoleArn: string;
-  readonly notificationLambdaArn: string;
+  readonly notificationLambdaArn?: string;
 }
 
-interface AssetCompositeModel {
+export interface AssetCompositeModel {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly type: string;
   readonly properties: [];
 }
 
-interface AssetErrorDetails {
+export interface AssetErrorDetails {
   readonly assetId: string;
   readonly code: string;
   readonly message: string;
 }
 
-interface AssetHierarchy {
-  readonly id: string;
+export interface AssetHierarchy {
+  readonly id?: string;
   readonly name: string;
 }
 
-interface AssetHierarchyInfo {
-  readonly parentAssetId: string;
-  readonly childAssetId: string;
+export interface AssetHierarchyInfo {
+  readonly parentAssetId?: string;
+  readonly childAssetId?: string;
 }
 
-interface AssetModelCompositeModel {
+export interface AssetModelCompositeModel {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly type: string;
-  readonly properties: [];
+  readonly properties?: [];
 }
 
-interface AssetModelCompositeModelDefinition {
+export interface AssetModelCompositeModelDefinition {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly type: string;
-  readonly properties: [];
+  readonly properties?: [];
 }
 
-interface AssetModelHierarchy {
-  readonly id: string;
+export interface AssetModelHierarchy {
+  readonly id?: string;
   readonly name: string;
   readonly childAssetModelId: string;
 }
 
-interface AssetModelHierarchyDefinition {
+export interface AssetModelHierarchyDefinition {
   readonly name: string;
   readonly childAssetModelId: string;
 }
 
-interface AssetModelProperty {
-  readonly id: string;
+export interface AssetModelProperty {
+  readonly id?: string;
   readonly name: string;
   readonly dataType: string;
-  readonly dataTypeSpec: string;
-  readonly unit: string;
+  readonly dataTypeSpec?: string;
+  readonly unit?: string;
   readonly type: PropertyType;
 }
 
-interface AssetModelPropertyDefinition {
+export interface AssetModelPropertyDefinition {
   readonly name: string;
   readonly dataType: string;
-  readonly dataTypeSpec: string;
-  readonly unit: string;
+  readonly dataTypeSpec?: string;
+  readonly unit?: string;
   readonly type: PropertyType;
 }
 
-interface AssetModelStatus {
+export interface AssetModelStatus {
   readonly state: string;
-  readonly error: ErrorDetails;
+  readonly error?: ErrorDetails;
 }
 
-interface AssetModelSummary {
+export interface AssetModelSummary {
   readonly id: string;
   readonly arn: string;
   readonly name: string;
@@ -468,33 +530,33 @@ interface AssetModelSummary {
   readonly status: AssetModelStatus;
 }
 
-interface AssetProperty {
+export interface AssetProperty {
   readonly id: string;
   readonly name: string;
-  readonly alias: string;
-  readonly notification: PropertyNotification;
+  readonly alias?: string;
+  readonly notification?: PropertyNotification;
   readonly dataType: string;
-  readonly dataTypeSpec: string;
-  readonly unit: string;
+  readonly dataTypeSpec?: string;
+  readonly unit?: string;
 }
 
-interface AssetPropertyValue {
+export interface AssetPropertyValue {
   readonly value: Variant;
   readonly timestamp: TimeInNanos;
-  readonly quality: string;
+  readonly quality?: string;
 }
 
-interface AssetRelationshipSummary {
-  readonly hierarchyInfo: AssetHierarchyInfo;
+export interface AssetRelationshipSummary {
+  readonly hierarchyInfo?: AssetHierarchyInfo;
   readonly relationshipType: string;
 }
 
-interface AssetStatus {
+export interface AssetStatus {
   readonly state: string;
-  readonly error: ErrorDetails;
+  readonly error?: ErrorDetails;
 }
 
-interface AssetSummary {
+export interface AssetSummary {
   readonly id: string;
   readonly arn: string;
   readonly name: string;
@@ -505,21 +567,21 @@ interface AssetSummary {
   readonly hierarchies: [];
 }
 
-interface AssociateAssetsRequest {
+export interface AssociateAssetsRequest {
   readonly assetId: string;
   readonly hierarchyId: string;
   readonly childAssetId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface AssociateTimeSeriesToAssetPropertyRequest {
+export interface AssociateTimeSeriesToAssetPropertyRequest {
   readonly alias: string;
   readonly assetId: string;
   readonly propertyId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface AssociatedAssetsSummary {
+export interface AssociatedAssetsSummary {
   readonly id: string;
   readonly arn: string;
   readonly name: string;
@@ -530,152 +592,152 @@ interface AssociatedAssetsSummary {
   readonly hierarchies: [];
 }
 
-interface Attribute {
-  readonly defaultValue: string;
+export interface Attribute {
+  readonly defaultValue?: string;
 }
 
-interface BatchAssociateProjectAssetsRequest {
+export interface BatchAssociateProjectAssetsRequest {
   readonly projectId: string;
   readonly assetIds: [];
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface BatchAssociateProjectAssetsResponse {
-  readonly errors: [];
+export interface BatchAssociateProjectAssetsResponse {
+  readonly errors?: [];
 }
 
-interface BatchDisassociateProjectAssetsRequest {
+export interface BatchDisassociateProjectAssetsRequest {
   readonly projectId: string;
   readonly assetIds: [];
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface BatchDisassociateProjectAssetsResponse {
-  readonly errors: [];
+export interface BatchDisassociateProjectAssetsResponse {
+  readonly errors?: [];
 }
 
-interface BatchPutAssetPropertyError {
+export interface BatchPutAssetPropertyError {
   readonly errorCode: string;
   readonly errorMessage: string;
   readonly timestamps: [];
 }
 
-interface BatchPutAssetPropertyErrorEntry {
+export interface BatchPutAssetPropertyErrorEntry {
   readonly entryId: string;
   readonly errors: [];
 }
 
-interface BatchPutAssetPropertyValueRequest {
+export interface BatchPutAssetPropertyValueRequest {
   readonly entries: [];
 }
 
-interface BatchPutAssetPropertyValueResponse {
+export interface BatchPutAssetPropertyValueResponse {
   readonly errorEntries: [];
 }
 
-interface CompositeModelProperty {
+export interface CompositeModelProperty {
   readonly name: string;
   readonly type: string;
   readonly assetProperty: Property;
 }
 
-interface ConfigurationErrorDetails {
+export interface ConfigurationErrorDetails {
   readonly code: string;
   readonly message: string;
 }
 
-interface ConfigurationStatus {
+export interface ConfigurationStatus {
   readonly state: string;
-  readonly error: ConfigurationErrorDetails;
+  readonly error?: ConfigurationErrorDetails;
 }
 
-interface ConflictingOperationException {
+export interface ConflictingOperationException {
   readonly message: string;
   readonly resourceId: string;
   readonly resourceArn: string;
 }
 
-interface CreateAccessPolicyRequest {
+export interface CreateAccessPolicyRequest {
   readonly accessPolicyIdentity: Identity;
   readonly accessPolicyResource: Resource;
   readonly accessPolicyPermission: string;
-  readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly clientToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateAccessPolicyResponse {
+export interface CreateAccessPolicyResponse {
   readonly accessPolicyId: string;
   readonly accessPolicyArn: string;
 }
 
-interface CreateAssetModelRequest {
+export interface CreateAssetModelRequest {
   readonly assetModelName: string;
-  readonly assetModelDescription: string;
-  readonly assetModelProperties: [];
-  readonly assetModelHierarchies: [];
-  readonly assetModelCompositeModels: [];
-  readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly assetModelDescription?: string;
+  readonly assetModelProperties?: [];
+  readonly assetModelHierarchies?: [];
+  readonly assetModelCompositeModels?: [];
+  readonly clientToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateAssetModelResponse {
+export interface CreateAssetModelResponse {
   readonly assetModelId: string;
   readonly assetModelArn: string;
   readonly assetModelStatus: AssetModelStatus;
 }
 
-interface CreateAssetRequest {
+export interface CreateAssetRequest {
   readonly assetName: string;
   readonly assetModelId: string;
-  readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly clientToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateAssetResponse {
+export interface CreateAssetResponse {
   readonly assetId: string;
   readonly assetArn: string;
   readonly assetStatus: AssetStatus;
 }
 
-interface CreateDashboardRequest {
+export interface CreateDashboardRequest {
   readonly projectId: string;
   readonly dashboardName: string;
-  readonly dashboardDescription: string;
+  readonly dashboardDescription?: string;
   readonly dashboardDefinition: string;
-  readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly clientToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateDashboardResponse {
+export interface CreateDashboardResponse {
   readonly dashboardId: string;
   readonly dashboardArn: string;
 }
 
-interface CreateGatewayRequest {
+export interface CreateGatewayRequest {
   readonly gatewayName: string;
   readonly gatewayPlatform: GatewayPlatform;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateGatewayResponse {
+export interface CreateGatewayResponse {
   readonly gatewayId: string;
   readonly gatewayArn: string;
 }
 
-interface CreatePortalRequest {
+export interface CreatePortalRequest {
   readonly portalName: string;
-  readonly portalDescription: string;
+  readonly portalDescription?: string;
   readonly portalContactEmail: string;
-  readonly clientToken: string;
-  readonly portalLogoImageFile: ImageFile;
+  readonly clientToken?: string;
+  readonly portalLogoImageFile?: ImageFile;
   readonly roleArn: string;
-  readonly tags: {[key: string]: any};
-  readonly portalAuthMode: string;
-  readonly notificationSenderEmail: string;
-  readonly alarms: Alarms;
+  readonly tags?: {[key: string]: any};
+  readonly portalAuthMode?: string;
+  readonly notificationSenderEmail?: string;
+  readonly alarms?: Alarms;
 }
 
-interface CreatePortalResponse {
+export interface CreatePortalResponse {
   readonly portalId: string;
   readonly portalArn: string;
   readonly portalStartUrl: string;
@@ -683,99 +745,99 @@ interface CreatePortalResponse {
   readonly ssoApplicationId: string;
 }
 
-interface CreateProjectRequest {
+export interface CreateProjectRequest {
   readonly portalId: string;
   readonly projectName: string;
-  readonly projectDescription: string;
-  readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly projectDescription?: string;
+  readonly clientToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateProjectResponse {
+export interface CreateProjectResponse {
   readonly projectId: string;
   readonly projectArn: string;
 }
 
-interface CustomerManagedS3Storage {
+export interface CustomerManagedS3Storage {
   readonly s3ResourceArn: string;
   readonly roleArn: string;
 }
 
-interface DashboardSummary {
+export interface DashboardSummary {
   readonly id: string;
   readonly name: string;
-  readonly description: string;
-  readonly creationDate: Date;
-  readonly lastUpdateDate: Date;
+  readonly description?: string;
+  readonly creationDate?: Date;
+  readonly lastUpdateDate?: Date;
 }
 
-interface DeleteAccessPolicyRequest {
+export interface DeleteAccessPolicyRequest {
   readonly accessPolicyId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface DeleteAccessPolicyResponse {
+export interface DeleteAccessPolicyResponse {
 }
 
-interface DeleteAssetModelRequest {
+export interface DeleteAssetModelRequest {
   readonly assetModelId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface DeleteAssetModelResponse {
+export interface DeleteAssetModelResponse {
   readonly assetModelStatus: AssetModelStatus;
 }
 
-interface DeleteAssetRequest {
+export interface DeleteAssetRequest {
   readonly assetId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface DeleteAssetResponse {
+export interface DeleteAssetResponse {
   readonly assetStatus: AssetStatus;
 }
 
-interface DeleteDashboardRequest {
+export interface DeleteDashboardRequest {
   readonly dashboardId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface DeleteDashboardResponse {
+export interface DeleteDashboardResponse {
 }
 
-interface DeleteGatewayRequest {
+export interface DeleteGatewayRequest {
   readonly gatewayId: string;
 }
 
-interface DeletePortalRequest {
+export interface DeletePortalRequest {
   readonly portalId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface DeletePortalResponse {
+export interface DeletePortalResponse {
   readonly portalStatus: PortalStatus;
 }
 
-interface DeleteProjectRequest {
+export interface DeleteProjectRequest {
   readonly projectId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface DeleteProjectResponse {
+export interface DeleteProjectResponse {
 }
 
-interface DeleteTimeSeriesRequest {
-  readonly alias: string;
-  readonly assetId: string;
-  readonly propertyId: string;
-  readonly clientToken: string;
+export interface DeleteTimeSeriesRequest {
+  readonly alias?: string;
+  readonly assetId?: string;
+  readonly propertyId?: string;
+  readonly clientToken?: string;
 }
 
-interface DescribeAccessPolicyRequest {
+export interface DescribeAccessPolicyRequest {
   readonly accessPolicyId: string;
 }
 
-interface DescribeAccessPolicyResponse {
+export interface DescribeAccessPolicyResponse {
   readonly accessPolicyId: string;
   readonly accessPolicyArn: string;
   readonly accessPolicyIdentity: Identity;
@@ -785,815 +847,816 @@ interface DescribeAccessPolicyResponse {
   readonly accessPolicyLastUpdateDate: Date;
 }
 
-interface DescribeAssetModelRequest {
+export interface DescribeAssetModelRequest {
   readonly assetModelId: string;
 }
 
-interface DescribeAssetModelResponse {
+export interface DescribeAssetModelResponse {
   readonly assetModelId: string;
   readonly assetModelArn: string;
   readonly assetModelName: string;
   readonly assetModelDescription: string;
   readonly assetModelProperties: [];
   readonly assetModelHierarchies: [];
-  readonly assetModelCompositeModels: [];
+  readonly assetModelCompositeModels?: [];
   readonly assetModelCreationDate: Date;
   readonly assetModelLastUpdateDate: Date;
   readonly assetModelStatus: AssetModelStatus;
 }
 
-interface DescribeAssetPropertyRequest {
+export interface DescribeAssetPropertyRequest {
   readonly assetId: string;
   readonly propertyId: string;
 }
 
-interface DescribeAssetPropertyResponse {
+export interface DescribeAssetPropertyResponse {
   readonly assetId: string;
   readonly assetName: string;
   readonly assetModelId: string;
-  readonly assetProperty: Property;
-  readonly compositeModel: CompositeModelProperty;
+  readonly assetProperty?: Property;
+  readonly compositeModel?: CompositeModelProperty;
 }
 
-interface DescribeAssetRequest {
+export interface DescribeAssetRequest {
   readonly assetId: string;
 }
 
-interface DescribeAssetResponse {
+export interface DescribeAssetResponse {
   readonly assetId: string;
   readonly assetArn: string;
   readonly assetName: string;
   readonly assetModelId: string;
   readonly assetProperties: [];
   readonly assetHierarchies: [];
-  readonly assetCompositeModels: [];
+  readonly assetCompositeModels?: [];
   readonly assetCreationDate: Date;
   readonly assetLastUpdateDate: Date;
   readonly assetStatus: AssetStatus;
 }
 
-interface DescribeDashboardRequest {
+export interface DescribeDashboardRequest {
   readonly dashboardId: string;
 }
 
-interface DescribeDashboardResponse {
+export interface DescribeDashboardResponse {
   readonly dashboardId: string;
   readonly dashboardArn: string;
   readonly dashboardName: string;
   readonly projectId: string;
-  readonly dashboardDescription: string;
+  readonly dashboardDescription?: string;
   readonly dashboardDefinition: string;
   readonly dashboardCreationDate: Date;
   readonly dashboardLastUpdateDate: Date;
 }
 
-interface DescribeDefaultEncryptionConfigurationRequest {
+export interface DescribeDefaultEncryptionConfigurationRequest {
 }
 
-interface DescribeDefaultEncryptionConfigurationResponse {
+export interface DescribeDefaultEncryptionConfigurationResponse {
   readonly encryptionType: string;
-  readonly kmsKeyArn: string;
+  readonly kmsKeyArn?: string;
   readonly configurationStatus: ConfigurationStatus;
 }
 
-interface DescribeGatewayCapabilityConfigurationRequest {
+export interface DescribeGatewayCapabilityConfigurationRequest {
   readonly gatewayId: string;
   readonly capabilityNamespace: string;
 }
 
-interface DescribeGatewayCapabilityConfigurationResponse {
+export interface DescribeGatewayCapabilityConfigurationResponse {
   readonly gatewayId: string;
   readonly capabilityNamespace: string;
   readonly capabilityConfiguration: string;
   readonly capabilitySyncStatus: string;
 }
 
-interface DescribeGatewayRequest {
+export interface DescribeGatewayRequest {
   readonly gatewayId: string;
 }
 
-interface DescribeGatewayResponse {
+export interface DescribeGatewayResponse {
   readonly gatewayId: string;
   readonly gatewayName: string;
   readonly gatewayArn: string;
-  readonly gatewayPlatform: GatewayPlatform;
+  readonly gatewayPlatform?: GatewayPlatform;
   readonly gatewayCapabilitySummaries: [];
   readonly creationDate: Date;
   readonly lastUpdateDate: Date;
 }
 
-interface DescribeLoggingOptionsRequest {
+export interface DescribeLoggingOptionsRequest {
 }
 
-interface DescribeLoggingOptionsResponse {
+export interface DescribeLoggingOptionsResponse {
   readonly loggingOptions: LoggingOptions;
 }
 
-interface DescribePortalRequest {
+export interface DescribePortalRequest {
   readonly portalId: string;
 }
 
-interface DescribePortalResponse {
+export interface DescribePortalResponse {
   readonly portalId: string;
   readonly portalArn: string;
   readonly portalName: string;
-  readonly portalDescription: string;
+  readonly portalDescription?: string;
   readonly portalClientId: string;
   readonly portalStartUrl: string;
   readonly portalContactEmail: string;
   readonly portalStatus: PortalStatus;
   readonly portalCreationDate: Date;
   readonly portalLastUpdateDate: Date;
-  readonly portalLogoImageLocation: ImageLocation;
-  readonly roleArn: string;
-  readonly portalAuthMode: string;
-  readonly notificationSenderEmail: string;
-  readonly alarms: Alarms;
+  readonly portalLogoImageLocation?: ImageLocation;
+  readonly roleArn?: string;
+  readonly portalAuthMode?: string;
+  readonly notificationSenderEmail?: string;
+  readonly alarms?: Alarms;
 }
 
-interface DescribeProjectRequest {
+export interface DescribeProjectRequest {
   readonly projectId: string;
 }
 
-interface DescribeProjectResponse {
+export interface DescribeProjectResponse {
   readonly projectId: string;
   readonly projectArn: string;
   readonly projectName: string;
   readonly portalId: string;
-  readonly projectDescription: string;
+  readonly projectDescription?: string;
   readonly projectCreationDate: Date;
   readonly projectLastUpdateDate: Date;
 }
 
-interface DescribeStorageConfigurationRequest {
+export interface DescribeStorageConfigurationRequest {
 }
 
-interface DescribeStorageConfigurationResponse {
+export interface DescribeStorageConfigurationResponse {
   readonly storageType: string;
-  readonly multiLayerStorage: MultiLayerStorage;
-  readonly disassociatedDataStorage: string;
-  readonly retentionPeriod: RetentionPeriod;
+  readonly multiLayerStorage?: MultiLayerStorage;
+  readonly disassociatedDataStorage?: string;
+  readonly retentionPeriod?: RetentionPeriod;
   readonly configurationStatus: ConfigurationStatus;
-  readonly lastUpdateDate: Date;
+  readonly lastUpdateDate?: Date;
 }
 
-interface DescribeTimeSeriesRequest {
-  readonly alias: string;
-  readonly assetId: string;
-  readonly propertyId: string;
+export interface DescribeTimeSeriesRequest {
+  readonly alias?: string;
+  readonly assetId?: string;
+  readonly propertyId?: string;
 }
 
-interface DescribeTimeSeriesResponse {
-  readonly assetId: string;
-  readonly propertyId: string;
-  readonly alias: string;
+export interface DescribeTimeSeriesResponse {
+  readonly assetId?: string;
+  readonly propertyId?: string;
+  readonly alias?: string;
   readonly timeSeriesId: string;
   readonly dataType: string;
-  readonly dataTypeSpec: string;
+  readonly dataTypeSpec?: string;
   readonly timeSeriesCreationDate: Date;
   readonly timeSeriesLastUpdateDate: Date;
 }
 
-interface DetailedError {
+export interface DetailedError {
   readonly code: string;
   readonly message: string;
 }
 
-interface DisassociateAssetsRequest {
+export interface DisassociateAssetsRequest {
   readonly assetId: string;
   readonly hierarchyId: string;
   readonly childAssetId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface DisassociateTimeSeriesFromAssetPropertyRequest {
+export interface DisassociateTimeSeriesFromAssetPropertyRequest {
   readonly alias: string;
   readonly assetId: string;
   readonly propertyId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface ErrorDetails {
+export interface ErrorDetails {
   readonly code: string;
   readonly message: string;
-  readonly details: [];
+  readonly details?: [];
 }
 
-interface ExpressionVariable {
+export interface ExpressionVariable {
   readonly name: string;
   readonly value: VariableValue;
 }
 
-interface ForwardingConfig {
+export interface ForwardingConfig {
   readonly state: string;
 }
 
-interface GatewayCapabilitySummary {
+export interface GatewayCapabilitySummary {
   readonly capabilityNamespace: string;
   readonly capabilitySyncStatus: string;
 }
 
-interface GatewayPlatform {
-  readonly greengrass: Greengrass;
-  readonly greengrassV2: GreengrassV2;
+export interface GatewayPlatform {
+  readonly greengrass?: Greengrass;
+  readonly greengrassV2?: GreengrassV2;
 }
 
-interface GatewaySummary {
+export interface GatewaySummary {
   readonly gatewayId: string;
   readonly gatewayName: string;
-  readonly gatewayPlatform: GatewayPlatform;
-  readonly gatewayCapabilitySummaries: [];
+  readonly gatewayPlatform?: GatewayPlatform;
+  readonly gatewayCapabilitySummaries?: [];
   readonly creationDate: Date;
   readonly lastUpdateDate: Date;
 }
 
-interface GetAssetPropertyAggregatesRequest {
-  readonly assetId: string;
-  readonly propertyId: string;
-  readonly propertyAlias: string;
+export interface GetAssetPropertyAggregatesRequest {
+  readonly assetId?: string;
+  readonly propertyId?: string;
+  readonly propertyAlias?: string;
   readonly aggregateTypes: [];
   readonly resolution: string;
-  readonly qualities: [];
+  readonly qualities?: [];
   readonly startDate: Date;
   readonly endDate: Date;
-  readonly timeOrdering: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly timeOrdering?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetAssetPropertyAggregatesResponse {
+export interface GetAssetPropertyAggregatesResponse {
   readonly aggregatedValues: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface GetAssetPropertyValueHistoryRequest {
-  readonly assetId: string;
-  readonly propertyId: string;
-  readonly propertyAlias: string;
-  readonly startDate: Date;
-  readonly endDate: Date;
-  readonly qualities: [];
-  readonly timeOrdering: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetAssetPropertyValueHistoryRequest {
+  readonly assetId?: string;
+  readonly propertyId?: string;
+  readonly propertyAlias?: string;
+  readonly startDate?: Date;
+  readonly endDate?: Date;
+  readonly qualities?: [];
+  readonly timeOrdering?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetAssetPropertyValueHistoryResponse {
+export interface GetAssetPropertyValueHistoryResponse {
   readonly assetPropertyValueHistory: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface GetAssetPropertyValueRequest {
-  readonly assetId: string;
-  readonly propertyId: string;
-  readonly propertyAlias: string;
+export interface GetAssetPropertyValueRequest {
+  readonly assetId?: string;
+  readonly propertyId?: string;
+  readonly propertyAlias?: string;
 }
 
-interface GetAssetPropertyValueResponse {
-  readonly propertyValue: AssetPropertyValue;
+export interface GetAssetPropertyValueResponse {
+  readonly propertyValue?: AssetPropertyValue;
 }
 
-interface GetInterpolatedAssetPropertyValuesRequest {
-  readonly assetId: string;
-  readonly propertyId: string;
-  readonly propertyAlias: string;
+export interface GetInterpolatedAssetPropertyValuesRequest {
+  readonly assetId?: string;
+  readonly propertyId?: string;
+  readonly propertyAlias?: string;
   readonly startTimeInSeconds: number;
-  readonly startTimeOffsetInNanos: number;
+  readonly startTimeOffsetInNanos?: number;
   readonly endTimeInSeconds: number;
-  readonly endTimeOffsetInNanos: number;
+  readonly endTimeOffsetInNanos?: number;
   readonly quality: string;
   readonly intervalInSeconds: number;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
   readonly type: string;
-  readonly intervalWindowInSeconds: number;
+  readonly intervalWindowInSeconds?: number;
 }
 
-interface GetInterpolatedAssetPropertyValuesResponse {
+export interface GetInterpolatedAssetPropertyValuesResponse {
   readonly interpolatedAssetPropertyValues: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface Greengrass {
+export interface Greengrass {
   readonly groupArn: string;
 }
 
-interface GreengrassV2 {
+export interface GreengrassV2 {
   readonly coreDeviceThingName: string;
 }
 
-interface GroupIdentity {
+export interface GroupIdentity {
   readonly id: string;
 }
 
-interface IAMRoleIdentity {
+export interface IAMRoleIdentity {
   readonly arn: string;
 }
 
-interface IAMUserIdentity {
+export interface IAMUserIdentity {
   readonly arn: string;
 }
 
-interface Identity {
-  readonly user: UserIdentity;
-  readonly group: GroupIdentity;
-  readonly iamUser: IAMUserIdentity;
-  readonly iamRole: IAMRoleIdentity;
+export interface Identity {
+  readonly user?: UserIdentity;
+  readonly group?: GroupIdentity;
+  readonly iamUser?: IAMUserIdentity;
+  readonly iamRole?: IAMRoleIdentity;
 }
 
-interface Image {
-  readonly id: string;
-  readonly file: ImageFile;
+export interface Image {
+  readonly id?: string;
+  readonly file?: ImageFile;
 }
 
-interface ImageFile {
+export interface ImageFile {
   readonly data: unknown;
   readonly type: string;
 }
 
-interface ImageLocation {
+export interface ImageLocation {
   readonly id: string;
   readonly url: string;
 }
 
-interface InternalFailureException {
+export interface InternalFailureException {
   readonly message: string;
 }
 
-interface InterpolatedAssetPropertyValue {
+export interface InterpolatedAssetPropertyValue {
   readonly timestamp: TimeInNanos;
   readonly value: Variant;
 }
 
-interface InvalidRequestException {
+export interface InvalidRequestException {
   readonly message: string;
 }
 
-interface LimitExceededException {
+export interface LimitExceededException {
   readonly message: string;
 }
 
-interface ListAccessPoliciesRequest {
-  readonly identityType: string;
-  readonly identityId: string;
-  readonly resourceType: string;
-  readonly resourceId: string;
-  readonly iamArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListAccessPoliciesRequest {
+  readonly identityType?: string;
+  readonly identityId?: string;
+  readonly resourceType?: string;
+  readonly resourceId?: string;
+  readonly iamArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAccessPoliciesResponse {
+export interface ListAccessPoliciesResponse {
   readonly accessPolicySummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAssetModelsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListAssetModelsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssetModelsResponse {
+export interface ListAssetModelsResponse {
   readonly assetModelSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAssetRelationshipsRequest {
+export interface ListAssetRelationshipsRequest {
   readonly assetId: string;
   readonly traversalType: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssetRelationshipsResponse {
+export interface ListAssetRelationshipsResponse {
   readonly assetRelationshipSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAssetsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly assetModelId: string;
-  readonly filter: string;
+export interface ListAssetsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly assetModelId?: string;
+  readonly filter?: string;
 }
 
-interface ListAssetsResponse {
+export interface ListAssetsResponse {
   readonly assetSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAssociatedAssetsRequest {
+export interface ListAssociatedAssetsRequest {
   readonly assetId: string;
-  readonly hierarchyId: string;
-  readonly traversalDirection: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly hierarchyId?: string;
+  readonly traversalDirection?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssociatedAssetsResponse {
+export interface ListAssociatedAssetsResponse {
   readonly assetSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListDashboardsRequest {
+export interface ListDashboardsRequest {
   readonly projectId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListDashboardsResponse {
+export interface ListDashboardsResponse {
   readonly dashboardSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListGatewaysRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListGatewaysRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListGatewaysResponse {
+export interface ListGatewaysResponse {
   readonly gatewaySummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListPortalsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListPortalsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListPortalsResponse {
-  readonly portalSummaries: [];
-  readonly nextToken: string;
+export interface ListPortalsResponse {
+  readonly portalSummaries?: [];
+  readonly nextToken?: string;
 }
 
-interface ListProjectAssetsRequest {
+export interface ListProjectAssetsRequest {
   readonly projectId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListProjectAssetsResponse {
+export interface ListProjectAssetsResponse {
   readonly assetIds: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListProjectsRequest {
+export interface ListProjectsRequest {
   readonly portalId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListProjectsResponse {
+export interface ListProjectsResponse {
   readonly projectSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ListTimeSeriesRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly assetId: string;
-  readonly aliasPrefix: string;
-  readonly timeSeriesType: string;
+export interface ListTimeSeriesRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly assetId?: string;
+  readonly aliasPrefix?: string;
+  readonly timeSeriesType?: string;
 }
 
-interface ListTimeSeriesResponse {
+export interface ListTimeSeriesResponse {
   readonly TimeSeriesSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface LoggingOptions {
+export interface LoggingOptions {
   readonly level: string;
 }
 
-interface Measurement {
-  readonly processingConfig: MeasurementProcessingConfig;
+export interface Measurement {
+  readonly processingConfig?: MeasurementProcessingConfig;
 }
 
-interface MeasurementProcessingConfig {
+export interface MeasurementProcessingConfig {
   readonly forwardingConfig: ForwardingConfig;
 }
 
-interface Metric {
+export interface Metric {
   readonly expression: string;
   readonly variables: [];
   readonly window: MetricWindow;
-  readonly processingConfig: MetricProcessingConfig;
+  readonly processingConfig?: MetricProcessingConfig;
 }
 
-interface MetricProcessingConfig {
+export interface MetricProcessingConfig {
   readonly computeLocation: string;
 }
 
-interface MetricWindow {
-  readonly tumbling: TumblingWindow;
+export interface MetricWindow {
+  readonly tumbling?: TumblingWindow;
 }
 
-interface MonitorErrorDetails {
-  readonly code: string;
-  readonly message: string;
+export interface MonitorErrorDetails {
+  readonly code?: string;
+  readonly message?: string;
 }
 
-interface MultiLayerStorage {
+export interface MultiLayerStorage {
   readonly customerManagedS3Storage: CustomerManagedS3Storage;
 }
 
-interface PortalResource {
+export interface PortalResource {
   readonly id: string;
 }
 
-interface PortalStatus {
+export interface PortalStatus {
   readonly state: string;
-  readonly error: MonitorErrorDetails;
+  readonly error?: MonitorErrorDetails;
 }
 
-interface PortalSummary {
+export interface PortalSummary {
   readonly id: string;
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly startUrl: string;
-  readonly creationDate: Date;
-  readonly lastUpdateDate: Date;
-  readonly roleArn: string;
+  readonly creationDate?: Date;
+  readonly lastUpdateDate?: Date;
+  readonly roleArn?: string;
   readonly status: PortalStatus;
 }
 
-interface ProjectResource {
+export interface ProjectResource {
   readonly id: string;
 }
 
-interface ProjectSummary {
+export interface ProjectSummary {
   readonly id: string;
   readonly name: string;
-  readonly description: string;
-  readonly creationDate: Date;
-  readonly lastUpdateDate: Date;
+  readonly description?: string;
+  readonly creationDate?: Date;
+  readonly lastUpdateDate?: Date;
 }
 
-interface Property {
+export interface Property {
   readonly id: string;
   readonly name: string;
-  readonly alias: string;
-  readonly notification: PropertyNotification;
+  readonly alias?: string;
+  readonly notification?: PropertyNotification;
   readonly dataType: string;
-  readonly unit: string;
-  readonly type: PropertyType;
+  readonly unit?: string;
+  readonly type?: PropertyType;
 }
 
-interface PropertyNotification {
+export interface PropertyNotification {
   readonly topic: string;
   readonly state: string;
 }
 
-interface PropertyType {
-  readonly attribute: Attribute;
-  readonly measurement: Measurement;
-  readonly transform: Transform;
-  readonly metric: Metric;
+export interface PropertyType {
+  readonly attribute?: Attribute;
+  readonly measurement?: Measurement;
+  readonly transform?: Transform;
+  readonly metric?: Metric;
 }
 
-interface PutAssetPropertyValueEntry {
+export interface PutAssetPropertyValueEntry {
   readonly entryId: string;
-  readonly assetId: string;
-  readonly propertyId: string;
-  readonly propertyAlias: string;
+  readonly assetId?: string;
+  readonly propertyId?: string;
+  readonly propertyAlias?: string;
   readonly propertyValues: [];
 }
 
-interface PutDefaultEncryptionConfigurationRequest {
+export interface PutDefaultEncryptionConfigurationRequest {
   readonly encryptionType: string;
-  readonly kmsKeyId: string;
+  readonly kmsKeyId?: string;
 }
 
-interface PutDefaultEncryptionConfigurationResponse {
+export interface PutDefaultEncryptionConfigurationResponse {
   readonly encryptionType: string;
-  readonly kmsKeyArn: string;
+  readonly kmsKeyArn?: string;
   readonly configurationStatus: ConfigurationStatus;
 }
 
-interface PutLoggingOptionsRequest {
+export interface PutLoggingOptionsRequest {
   readonly loggingOptions: LoggingOptions;
 }
 
-interface PutLoggingOptionsResponse {
+export interface PutLoggingOptionsResponse {
 }
 
-interface PutStorageConfigurationRequest {
+export interface PutStorageConfigurationRequest {
   readonly storageType: string;
-  readonly multiLayerStorage: MultiLayerStorage;
-  readonly disassociatedDataStorage: string;
-  readonly retentionPeriod: RetentionPeriod;
+  readonly multiLayerStorage?: MultiLayerStorage;
+  readonly disassociatedDataStorage?: string;
+  readonly retentionPeriod?: RetentionPeriod;
 }
 
-interface PutStorageConfigurationResponse {
+export interface PutStorageConfigurationResponse {
   readonly storageType: string;
-  readonly multiLayerStorage: MultiLayerStorage;
-  readonly disassociatedDataStorage: string;
-  readonly retentionPeriod: RetentionPeriod;
+  readonly multiLayerStorage?: MultiLayerStorage;
+  readonly disassociatedDataStorage?: string;
+  readonly retentionPeriod?: RetentionPeriod;
   readonly configurationStatus: ConfigurationStatus;
 }
 
-interface Resource {
-  readonly portal: PortalResource;
-  readonly project: ProjectResource;
+export interface Resource {
+  readonly portal?: PortalResource;
+  readonly project?: ProjectResource;
 }
 
-interface ResourceAlreadyExistsException {
+export interface ResourceAlreadyExistsException {
   readonly message: string;
   readonly resourceId: string;
   readonly resourceArn: string;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
 }
 
-interface RetentionPeriod {
-  readonly numberOfDays: number;
-  readonly unlimited: boolean;
+export interface RetentionPeriod {
+  readonly numberOfDays?: number;
+  readonly unlimited?: boolean;
 }
 
-interface ServiceUnavailableException {
+export interface ServiceUnavailableException {
   readonly message: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly message: string;
 }
 
-interface TimeInNanos {
+export interface TimeInNanos {
   readonly timeInSeconds: number;
-  readonly offsetInNanos: number;
+  readonly offsetInNanos?: number;
 }
 
-interface TimeSeriesSummary {
-  readonly assetId: string;
-  readonly propertyId: string;
-  readonly alias: string;
+export interface TimeSeriesSummary {
+  readonly assetId?: string;
+  readonly propertyId?: string;
+  readonly alias?: string;
   readonly timeSeriesId: string;
   readonly dataType: string;
-  readonly dataTypeSpec: string;
+  readonly dataTypeSpec?: string;
   readonly timeSeriesCreationDate: Date;
   readonly timeSeriesLastUpdateDate: Date;
 }
 
-interface TooManyTagsException {
-  readonly message: string;
-  readonly resourceName: string;
+export interface TooManyTagsException {
+  readonly message?: string;
+  readonly resourceName?: string;
 }
 
-interface Transform {
+export interface Transform {
   readonly expression: string;
   readonly variables: [];
-  readonly processingConfig: TransformProcessingConfig;
+  readonly processingConfig?: TransformProcessingConfig;
 }
 
-interface TransformProcessingConfig {
+export interface TransformProcessingConfig {
   readonly computeLocation: string;
-  readonly forwardingConfig: ForwardingConfig;
+  readonly forwardingConfig?: ForwardingConfig;
 }
 
-interface TumblingWindow {
+export interface TumblingWindow {
   readonly interval: string;
-  readonly offset: string;
+  readonly offset?: string;
 }
 
-interface UnauthorizedException {
+export interface UnauthorizedException {
   readonly message: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateAccessPolicyRequest {
+export interface UpdateAccessPolicyRequest {
   readonly accessPolicyId: string;
   readonly accessPolicyIdentity: Identity;
   readonly accessPolicyResource: Resource;
   readonly accessPolicyPermission: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface UpdateAccessPolicyResponse {
+export interface UpdateAccessPolicyResponse {
 }
 
-interface UpdateAssetModelRequest {
+export interface UpdateAssetModelRequest {
   readonly assetModelId: string;
   readonly assetModelName: string;
-  readonly assetModelDescription: string;
-  readonly assetModelProperties: [];
-  readonly assetModelHierarchies: [];
-  readonly assetModelCompositeModels: [];
-  readonly clientToken: string;
+  readonly assetModelDescription?: string;
+  readonly assetModelProperties?: [];
+  readonly assetModelHierarchies?: [];
+  readonly assetModelCompositeModels?: [];
+  readonly clientToken?: string;
 }
 
-interface UpdateAssetModelResponse {
+export interface UpdateAssetModelResponse {
   readonly assetModelStatus: AssetModelStatus;
 }
 
-interface UpdateAssetPropertyRequest {
+export interface UpdateAssetPropertyRequest {
   readonly assetId: string;
   readonly propertyId: string;
-  readonly propertyAlias: string;
-  readonly propertyNotificationState: string;
-  readonly clientToken: string;
+  readonly propertyAlias?: string;
+  readonly propertyNotificationState?: string;
+  readonly clientToken?: string;
 }
 
-interface UpdateAssetRequest {
+export interface UpdateAssetRequest {
   readonly assetId: string;
   readonly assetName: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface UpdateAssetResponse {
+export interface UpdateAssetResponse {
   readonly assetStatus: AssetStatus;
 }
 
-interface UpdateDashboardRequest {
+export interface UpdateDashboardRequest {
   readonly dashboardId: string;
   readonly dashboardName: string;
-  readonly dashboardDescription: string;
+  readonly dashboardDescription?: string;
   readonly dashboardDefinition: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface UpdateDashboardResponse {
+export interface UpdateDashboardResponse {
 }
 
-interface UpdateGatewayCapabilityConfigurationRequest {
+export interface UpdateGatewayCapabilityConfigurationRequest {
   readonly gatewayId: string;
   readonly capabilityNamespace: string;
   readonly capabilityConfiguration: string;
 }
 
-interface UpdateGatewayCapabilityConfigurationResponse {
+export interface UpdateGatewayCapabilityConfigurationResponse {
   readonly capabilityNamespace: string;
   readonly capabilitySyncStatus: string;
 }
 
-interface UpdateGatewayRequest {
+export interface UpdateGatewayRequest {
   readonly gatewayId: string;
   readonly gatewayName: string;
 }
 
-interface UpdatePortalRequest {
+export interface UpdatePortalRequest {
   readonly portalId: string;
   readonly portalName: string;
-  readonly portalDescription: string;
+  readonly portalDescription?: string;
   readonly portalContactEmail: string;
-  readonly portalLogoImage: Image;
+  readonly portalLogoImage?: Image;
   readonly roleArn: string;
-  readonly clientToken: string;
-  readonly notificationSenderEmail: string;
-  readonly alarms: Alarms;
+  readonly clientToken?: string;
+  readonly notificationSenderEmail?: string;
+  readonly alarms?: Alarms;
 }
 
-interface UpdatePortalResponse {
+export interface UpdatePortalResponse {
   readonly portalStatus: PortalStatus;
 }
 
-interface UpdateProjectRequest {
+export interface UpdateProjectRequest {
   readonly projectId: string;
   readonly projectName: string;
-  readonly projectDescription: string;
-  readonly clientToken: string;
+  readonly projectDescription?: string;
+  readonly clientToken?: string;
 }
 
-interface UpdateProjectResponse {
+export interface UpdateProjectResponse {
 }
 
-interface UserIdentity {
+export interface UserIdentity {
   readonly id: string;
 }
 
-interface VariableValue {
+export interface VariableValue {
   readonly propertyId: string;
-  readonly hierarchyId: string;
+  readonly hierarchyId?: string;
 }
 
-interface Variant {
-  readonly stringValue: string;
-  readonly integerValue: number;
-  readonly doubleValue: unknown;
-  readonly booleanValue: boolean;
+export interface Variant {
+  readonly stringValue?: string;
+  readonly integerValue?: number;
+  readonly doubleValue?: unknown;
+  readonly booleanValue?: boolean;
 }
+
 

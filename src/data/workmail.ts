@@ -6,25 +6,30 @@ export interface AssociateDelegateToResource {
   readonly ResourceId: string;
   readonly EntityId: string;
 }
+
 export interface AssociateMemberToGroup {
   readonly OrganizationId: string;
   readonly GroupId: string;
   readonly MemberId: string;
 }
+
 export interface CancelMailboxExportJob {
   readonly ClientToken: string;
   readonly JobId: string;
   readonly OrganizationId: string;
 }
+
 export interface CreateAlias {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly Alias: string;
 }
+
 export interface CreateGroup {
   readonly OrganizationId: string;
   readonly Name: string;
 }
+
 export interface CreateMobileDeviceAccessRule {
   readonly OrganizationId: string;
   readonly ClientToken?: string;
@@ -40,6 +45,7 @@ export interface CreateMobileDeviceAccessRule {
   readonly DeviceUserAgents?: [];
   readonly NotDeviceUserAgents?: [];
 }
+
 export interface CreateOrganization {
   readonly DirectoryId?: string;
   readonly Alias: string;
@@ -48,118 +54,145 @@ export interface CreateOrganization {
   readonly KmsKeyArn?: string;
   readonly EnableInteroperability?: boolean;
 }
+
 export interface CreateResource {
   readonly OrganizationId: string;
   readonly Name: string;
   readonly Type: string;
 }
+
 export interface CreateUser {
   readonly OrganizationId: string;
   readonly Name: string;
   readonly DisplayName: string;
   readonly Password: string;
 }
+
 export interface DeleteAccessControlRule {
   readonly OrganizationId: string;
   readonly Name: string;
 }
+
 export interface DeleteAlias {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly Alias: string;
 }
+
 export interface DeleteGroup {
   readonly OrganizationId: string;
   readonly GroupId: string;
 }
+
 export interface DeleteMailboxPermissions {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly GranteeId: string;
 }
+
 export interface DeleteMobileDeviceAccessOverride {
   readonly OrganizationId: string;
   readonly UserId: string;
   readonly DeviceId: string;
 }
+
 export interface DeleteMobileDeviceAccessRule {
   readonly OrganizationId: string;
   readonly MobileDeviceAccessRuleId: string;
 }
+
 export interface DeleteOrganization {
   readonly ClientToken?: string;
   readonly OrganizationId: string;
   readonly DeleteDirectory: boolean;
 }
+
 export interface DeleteResource {
   readonly OrganizationId: string;
   readonly ResourceId: string;
 }
+
 export interface DeleteRetentionPolicy {
   readonly OrganizationId: string;
   readonly Id: string;
 }
+
 export interface DeleteUser {
   readonly OrganizationId: string;
   readonly UserId: string;
 }
+
 export interface DeregisterFromWorkMail {
   readonly OrganizationId: string;
   readonly EntityId: string;
 }
+
 export interface DeregisterMailDomain {
   readonly OrganizationId: string;
   readonly DomainName: string;
 }
+
 export interface DescribeGroup {
   readonly OrganizationId: string;
   readonly GroupId: string;
 }
+
 export interface DescribeInboundDmarcSettings {
   readonly OrganizationId: string;
 }
+
 export interface DescribeMailboxExportJob {
   readonly JobId: string;
   readonly OrganizationId: string;
 }
+
 export interface DescribeOrganization {
   readonly OrganizationId: string;
 }
+
 export interface DescribeResource {
   readonly OrganizationId: string;
   readonly ResourceId: string;
 }
+
 export interface DescribeUser {
   readonly OrganizationId: string;
   readonly UserId: string;
 }
+
 export interface DisassociateDelegateFromResource {
   readonly OrganizationId: string;
   readonly ResourceId: string;
   readonly EntityId: string;
 }
+
 export interface DisassociateMemberFromGroup {
   readonly OrganizationId: string;
   readonly GroupId: string;
   readonly MemberId: string;
 }
+
 export interface GetAccessControlEffect {
   readonly OrganizationId: string;
   readonly IpAddress: string;
   readonly Action: string;
   readonly UserId: string;
 }
+
 export interface GetDefaultRetentionPolicy {
   readonly OrganizationId: string;
 }
+
 export interface GetMailDomain {
   readonly OrganizationId: string;
   readonly DomainName: string;
 }
+
 export interface GetMailboxDetails {
   readonly OrganizationId: string;
   readonly UserId: string;
 }
+
 export interface GetMobileDeviceAccessEffect {
   readonly OrganizationId: string;
   readonly DeviceType?: string;
@@ -167,47 +200,56 @@ export interface GetMobileDeviceAccessEffect {
   readonly DeviceOperatingSystem?: string;
   readonly DeviceUserAgent?: string;
 }
+
 export interface GetMobileDeviceAccessOverride {
   readonly OrganizationId: string;
   readonly UserId: string;
   readonly DeviceId: string;
 }
+
 export interface ListAccessControlRules {
   readonly OrganizationId: string;
 }
+
 export interface ListAliases {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListGroupMembers {
   readonly OrganizationId: string;
   readonly GroupId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListGroups {
   readonly OrganizationId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListMailDomains {
   readonly OrganizationId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListMailboxExportJobs {
   readonly OrganizationId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListMailboxPermissions {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListMobileDeviceAccessOverrides {
   readonly OrganizationId: string;
   readonly UserId?: string;
@@ -215,32 +257,39 @@ export interface ListMobileDeviceAccessOverrides {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListMobileDeviceAccessRules {
   readonly OrganizationId: string;
 }
+
 export interface ListOrganizations {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListResourceDelegates {
   readonly OrganizationId: string;
   readonly ResourceId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListResources {
   readonly OrganizationId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
+
 export interface ListUsers {
   readonly OrganizationId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface PutAccessControlRule {
   readonly Name: string;
   readonly Effect: string;
@@ -253,16 +302,19 @@ export interface PutAccessControlRule {
   readonly NotUserIds?: [];
   readonly OrganizationId: string;
 }
+
 export interface PutInboundDmarcSettings {
   readonly OrganizationId: string;
   readonly Enforced: boolean;
 }
+
 export interface PutMailboxPermissions {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly GranteeId: string;
   readonly PermissionValues: [];
 }
+
 export interface PutMobileDeviceAccessOverride {
   readonly OrganizationId: string;
   readonly UserId: string;
@@ -270,6 +322,7 @@ export interface PutMobileDeviceAccessOverride {
   readonly Effect: string;
   readonly Description?: string;
 }
+
 export interface PutRetentionPolicy {
   readonly OrganizationId: string;
   readonly Id?: string;
@@ -277,21 +330,25 @@ export interface PutRetentionPolicy {
   readonly Description?: string;
   readonly FolderConfigurations: [];
 }
+
 export interface RegisterMailDomain {
   readonly ClientToken?: string;
   readonly OrganizationId: string;
   readonly DomainName: string;
 }
+
 export interface RegisterToWorkMail {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly Email: string;
 }
+
 export interface ResetPassword {
   readonly OrganizationId: string;
   readonly UserId: string;
   readonly Password: string;
 }
+
 export interface StartMailboxExportJob {
   readonly ClientToken: string;
   readonly OrganizationId: string;
@@ -302,23 +359,28 @@ export interface StartMailboxExportJob {
   readonly S3BucketName: string;
   readonly S3Prefix: string;
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateDefaultMailDomain {
   readonly OrganizationId: string;
   readonly DomainName: string;
 }
+
 export interface UpdateMailboxQuota {
   readonly OrganizationId: string;
   readonly UserId: string;
   readonly MailboxQuota: number;
 }
+
 export interface UpdateMobileDeviceAccessRule {
   readonly OrganizationId: string;
   readonly MobileDeviceAccessRuleId: string;
@@ -334,11 +396,13 @@ export interface UpdateMobileDeviceAccessRule {
   readonly DeviceUserAgents?: [];
   readonly NotDeviceUserAgents?: [];
 }
+
 export interface UpdatePrimaryEmailAddress {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly Email: string;
 }
+
 export interface UpdateResource {
   readonly OrganizationId: string;
   readonly ResourceId: string;
@@ -346,943 +410,942 @@ export interface UpdateResource {
   readonly BookingOptions?: BookingOptions;
 }
 
-
-
-interface AccessControlRule {
-  readonly Name: string;
-  readonly Effect: string;
-  readonly Description: string;
-  readonly IpRanges: [];
-  readonly NotIpRanges: [];
-  readonly Actions: [];
-  readonly NotActions: [];
-  readonly UserIds: [];
-  readonly NotUserIds: [];
-  readonly DateCreated: Date;
-  readonly DateModified: Date;
+export interface AccessControlRule {
+  readonly Name?: string;
+  readonly Effect?: string;
+  readonly Description?: string;
+  readonly IpRanges?: [];
+  readonly NotIpRanges?: [];
+  readonly Actions?: [];
+  readonly NotActions?: [];
+  readonly UserIds?: [];
+  readonly NotUserIds?: [];
+  readonly DateCreated?: Date;
+  readonly DateModified?: Date;
 }
 
-interface AssociateDelegateToResourceRequest {
+export interface AssociateDelegateToResourceRequest {
   readonly OrganizationId: string;
   readonly ResourceId: string;
   readonly EntityId: string;
 }
 
-interface AssociateDelegateToResourceResponse {
+export interface AssociateDelegateToResourceResponse {
 }
 
-interface AssociateMemberToGroupRequest {
+export interface AssociateMemberToGroupRequest {
   readonly OrganizationId: string;
   readonly GroupId: string;
   readonly MemberId: string;
 }
 
-interface AssociateMemberToGroupResponse {
+export interface AssociateMemberToGroupResponse {
 }
 
-interface BookingOptions {
-  readonly AutoAcceptRequests: boolean;
-  readonly AutoDeclineRecurringRequests: boolean;
-  readonly AutoDeclineConflictingRequests: boolean;
+export interface BookingOptions {
+  readonly AutoAcceptRequests?: boolean;
+  readonly AutoDeclineRecurringRequests?: boolean;
+  readonly AutoDeclineConflictingRequests?: boolean;
 }
 
-interface CancelMailboxExportJobRequest {
+export interface CancelMailboxExportJobRequest {
   readonly ClientToken: string;
   readonly JobId: string;
   readonly OrganizationId: string;
 }
 
-interface CancelMailboxExportJobResponse {
+export interface CancelMailboxExportJobResponse {
 }
 
-interface CreateAliasRequest {
+export interface CreateAliasRequest {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly Alias: string;
 }
 
-interface CreateAliasResponse {
+export interface CreateAliasResponse {
 }
 
-interface CreateGroupRequest {
+export interface CreateGroupRequest {
   readonly OrganizationId: string;
   readonly Name: string;
 }
 
-interface CreateGroupResponse {
-  readonly GroupId: string;
+export interface CreateGroupResponse {
+  readonly GroupId?: string;
 }
 
-interface CreateMobileDeviceAccessRuleRequest {
+export interface CreateMobileDeviceAccessRuleRequest {
   readonly OrganizationId: string;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Effect: string;
-  readonly DeviceTypes: [];
-  readonly NotDeviceTypes: [];
-  readonly DeviceModels: [];
-  readonly NotDeviceModels: [];
-  readonly DeviceOperatingSystems: [];
-  readonly NotDeviceOperatingSystems: [];
-  readonly DeviceUserAgents: [];
-  readonly NotDeviceUserAgents: [];
+  readonly DeviceTypes?: [];
+  readonly NotDeviceTypes?: [];
+  readonly DeviceModels?: [];
+  readonly NotDeviceModels?: [];
+  readonly DeviceOperatingSystems?: [];
+  readonly NotDeviceOperatingSystems?: [];
+  readonly DeviceUserAgents?: [];
+  readonly NotDeviceUserAgents?: [];
 }
 
-interface CreateMobileDeviceAccessRuleResponse {
-  readonly MobileDeviceAccessRuleId: string;
+export interface CreateMobileDeviceAccessRuleResponse {
+  readonly MobileDeviceAccessRuleId?: string;
 }
 
-interface CreateOrganizationRequest {
-  readonly DirectoryId: string;
+export interface CreateOrganizationRequest {
+  readonly DirectoryId?: string;
   readonly Alias: string;
-  readonly ClientToken: string;
-  readonly Domains: [];
-  readonly KmsKeyArn: string;
-  readonly EnableInteroperability: boolean;
+  readonly ClientToken?: string;
+  readonly Domains?: [];
+  readonly KmsKeyArn?: string;
+  readonly EnableInteroperability?: boolean;
 }
 
-interface CreateOrganizationResponse {
-  readonly OrganizationId: string;
+export interface CreateOrganizationResponse {
+  readonly OrganizationId?: string;
 }
 
-interface CreateResourceRequest {
+export interface CreateResourceRequest {
   readonly OrganizationId: string;
   readonly Name: string;
   readonly Type: string;
 }
 
-interface CreateResourceResponse {
-  readonly ResourceId: string;
+export interface CreateResourceResponse {
+  readonly ResourceId?: string;
 }
 
-interface CreateUserRequest {
+export interface CreateUserRequest {
   readonly OrganizationId: string;
   readonly Name: string;
   readonly DisplayName: string;
   readonly Password: string;
 }
 
-interface CreateUserResponse {
-  readonly UserId: string;
+export interface CreateUserResponse {
+  readonly UserId?: string;
 }
 
-interface Delegate {
+export interface Delegate {
   readonly Id: string;
   readonly Type: string;
 }
 
-interface DeleteAccessControlRuleRequest {
+export interface DeleteAccessControlRuleRequest {
   readonly OrganizationId: string;
   readonly Name: string;
 }
 
-interface DeleteAccessControlRuleResponse {
+export interface DeleteAccessControlRuleResponse {
 }
 
-interface DeleteAliasRequest {
+export interface DeleteAliasRequest {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly Alias: string;
 }
 
-interface DeleteAliasResponse {
+export interface DeleteAliasResponse {
 }
 
-interface DeleteGroupRequest {
+export interface DeleteGroupRequest {
   readonly OrganizationId: string;
   readonly GroupId: string;
 }
 
-interface DeleteGroupResponse {
+export interface DeleteGroupResponse {
 }
 
-interface DeleteMailboxPermissionsRequest {
+export interface DeleteMailboxPermissionsRequest {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly GranteeId: string;
 }
 
-interface DeleteMailboxPermissionsResponse {
+export interface DeleteMailboxPermissionsResponse {
 }
 
-interface DeleteMobileDeviceAccessOverrideRequest {
+export interface DeleteMobileDeviceAccessOverrideRequest {
   readonly OrganizationId: string;
   readonly UserId: string;
   readonly DeviceId: string;
 }
 
-interface DeleteMobileDeviceAccessOverrideResponse {
+export interface DeleteMobileDeviceAccessOverrideResponse {
 }
 
-interface DeleteMobileDeviceAccessRuleRequest {
+export interface DeleteMobileDeviceAccessRuleRequest {
   readonly OrganizationId: string;
   readonly MobileDeviceAccessRuleId: string;
 }
 
-interface DeleteMobileDeviceAccessRuleResponse {
+export interface DeleteMobileDeviceAccessRuleResponse {
 }
 
-interface DeleteOrganizationRequest {
-  readonly ClientToken: string;
+export interface DeleteOrganizationRequest {
+  readonly ClientToken?: string;
   readonly OrganizationId: string;
   readonly DeleteDirectory: boolean;
 }
 
-interface DeleteOrganizationResponse {
-  readonly OrganizationId: string;
-  readonly State: string;
+export interface DeleteOrganizationResponse {
+  readonly OrganizationId?: string;
+  readonly State?: string;
 }
 
-interface DeleteResourceRequest {
+export interface DeleteResourceRequest {
   readonly OrganizationId: string;
   readonly ResourceId: string;
 }
 
-interface DeleteResourceResponse {
+export interface DeleteResourceResponse {
 }
 
-interface DeleteRetentionPolicyRequest {
+export interface DeleteRetentionPolicyRequest {
   readonly OrganizationId: string;
   readonly Id: string;
 }
 
-interface DeleteRetentionPolicyResponse {
+export interface DeleteRetentionPolicyResponse {
 }
 
-interface DeleteUserRequest {
+export interface DeleteUserRequest {
   readonly OrganizationId: string;
   readonly UserId: string;
 }
 
-interface DeleteUserResponse {
+export interface DeleteUserResponse {
 }
 
-interface DeregisterFromWorkMailRequest {
+export interface DeregisterFromWorkMailRequest {
   readonly OrganizationId: string;
   readonly EntityId: string;
 }
 
-interface DeregisterFromWorkMailResponse {
+export interface DeregisterFromWorkMailResponse {
 }
 
-interface DeregisterMailDomainRequest {
+export interface DeregisterMailDomainRequest {
   readonly OrganizationId: string;
   readonly DomainName: string;
 }
 
-interface DeregisterMailDomainResponse {
+export interface DeregisterMailDomainResponse {
 }
 
-interface DescribeGroupRequest {
+export interface DescribeGroupRequest {
   readonly OrganizationId: string;
   readonly GroupId: string;
 }
 
-interface DescribeGroupResponse {
-  readonly GroupId: string;
-  readonly Name: string;
-  readonly Email: string;
-  readonly State: string;
-  readonly EnabledDate: Date;
-  readonly DisabledDate: Date;
+export interface DescribeGroupResponse {
+  readonly GroupId?: string;
+  readonly Name?: string;
+  readonly Email?: string;
+  readonly State?: string;
+  readonly EnabledDate?: Date;
+  readonly DisabledDate?: Date;
 }
 
-interface DescribeInboundDmarcSettingsRequest {
+export interface DescribeInboundDmarcSettingsRequest {
   readonly OrganizationId: string;
 }
 
-interface DescribeInboundDmarcSettingsResponse {
-  readonly Enforced: boolean;
+export interface DescribeInboundDmarcSettingsResponse {
+  readonly Enforced?: boolean;
 }
 
-interface DescribeMailboxExportJobRequest {
+export interface DescribeMailboxExportJobRequest {
   readonly JobId: string;
   readonly OrganizationId: string;
 }
 
-interface DescribeMailboxExportJobResponse {
-  readonly EntityId: string;
-  readonly Description: string;
-  readonly RoleArn: string;
-  readonly KmsKeyArn: string;
-  readonly S3BucketName: string;
-  readonly S3Prefix: string;
-  readonly S3Path: string;
-  readonly EstimatedProgress: number;
-  readonly State: string;
-  readonly ErrorInfo: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
+export interface DescribeMailboxExportJobResponse {
+  readonly EntityId?: string;
+  readonly Description?: string;
+  readonly RoleArn?: string;
+  readonly KmsKeyArn?: string;
+  readonly S3BucketName?: string;
+  readonly S3Prefix?: string;
+  readonly S3Path?: string;
+  readonly EstimatedProgress?: number;
+  readonly State?: string;
+  readonly ErrorInfo?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
 }
 
-interface DescribeOrganizationRequest {
+export interface DescribeOrganizationRequest {
   readonly OrganizationId: string;
 }
 
-interface DescribeOrganizationResponse {
-  readonly OrganizationId: string;
-  readonly Alias: string;
-  readonly State: string;
-  readonly DirectoryId: string;
-  readonly DirectoryType: string;
-  readonly DefaultMailDomain: string;
-  readonly CompletedDate: Date;
-  readonly ErrorMessage: string;
-  readonly ARN: string;
+export interface DescribeOrganizationResponse {
+  readonly OrganizationId?: string;
+  readonly Alias?: string;
+  readonly State?: string;
+  readonly DirectoryId?: string;
+  readonly DirectoryType?: string;
+  readonly DefaultMailDomain?: string;
+  readonly CompletedDate?: Date;
+  readonly ErrorMessage?: string;
+  readonly ARN?: string;
 }
 
-interface DescribeResourceRequest {
+export interface DescribeResourceRequest {
   readonly OrganizationId: string;
   readonly ResourceId: string;
 }
 
-interface DescribeResourceResponse {
-  readonly ResourceId: string;
-  readonly Email: string;
-  readonly Name: string;
-  readonly Type: string;
-  readonly BookingOptions: BookingOptions;
-  readonly State: string;
-  readonly EnabledDate: Date;
-  readonly DisabledDate: Date;
+export interface DescribeResourceResponse {
+  readonly ResourceId?: string;
+  readonly Email?: string;
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly BookingOptions?: BookingOptions;
+  readonly State?: string;
+  readonly EnabledDate?: Date;
+  readonly DisabledDate?: Date;
 }
 
-interface DescribeUserRequest {
+export interface DescribeUserRequest {
   readonly OrganizationId: string;
   readonly UserId: string;
 }
 
-interface DescribeUserResponse {
-  readonly UserId: string;
-  readonly Name: string;
-  readonly Email: string;
-  readonly DisplayName: string;
-  readonly State: string;
-  readonly UserRole: string;
-  readonly EnabledDate: Date;
-  readonly DisabledDate: Date;
+export interface DescribeUserResponse {
+  readonly UserId?: string;
+  readonly Name?: string;
+  readonly Email?: string;
+  readonly DisplayName?: string;
+  readonly State?: string;
+  readonly UserRole?: string;
+  readonly EnabledDate?: Date;
+  readonly DisabledDate?: Date;
 }
 
-interface DirectoryInUseException {
-  readonly Message: string;
+export interface DirectoryInUseException {
+  readonly Message?: string;
 }
 
-interface DirectoryServiceAuthenticationFailedException {
-  readonly Message: string;
+export interface DirectoryServiceAuthenticationFailedException {
+  readonly Message?: string;
 }
 
-interface DirectoryUnavailableException {
-  readonly Message: string;
+export interface DirectoryUnavailableException {
+  readonly Message?: string;
 }
 
-interface DisassociateDelegateFromResourceRequest {
+export interface DisassociateDelegateFromResourceRequest {
   readonly OrganizationId: string;
   readonly ResourceId: string;
   readonly EntityId: string;
 }
 
-interface DisassociateDelegateFromResourceResponse {
+export interface DisassociateDelegateFromResourceResponse {
 }
 
-interface DisassociateMemberFromGroupRequest {
+export interface DisassociateMemberFromGroupRequest {
   readonly OrganizationId: string;
   readonly GroupId: string;
   readonly MemberId: string;
 }
 
-interface DisassociateMemberFromGroupResponse {
+export interface DisassociateMemberFromGroupResponse {
 }
 
-interface DnsRecord {
-  readonly Type: string;
-  readonly Hostname: string;
-  readonly Value: string;
+export interface DnsRecord {
+  readonly Type?: string;
+  readonly Hostname?: string;
+  readonly Value?: string;
 }
 
-interface Domain {
-  readonly DomainName: string;
-  readonly HostedZoneId: string;
+export interface Domain {
+  readonly DomainName?: string;
+  readonly HostedZoneId?: string;
 }
 
-interface EmailAddressInUseException {
-  readonly Message: string;
+export interface EmailAddressInUseException {
+  readonly Message?: string;
 }
 
-interface EntityAlreadyRegisteredException {
-  readonly Message: string;
+export interface EntityAlreadyRegisteredException {
+  readonly Message?: string;
 }
 
-interface EntityNotFoundException {
-  readonly Message: string;
+export interface EntityNotFoundException {
+  readonly Message?: string;
 }
 
-interface EntityStateException {
-  readonly Message: string;
+export interface EntityStateException {
+  readonly Message?: string;
 }
 
-interface FolderConfiguration {
+export interface FolderConfiguration {
   readonly Name: string;
   readonly Action: string;
-  readonly Period: number;
+  readonly Period?: number;
 }
 
-interface GetAccessControlEffectRequest {
+export interface GetAccessControlEffectRequest {
   readonly OrganizationId: string;
   readonly IpAddress: string;
   readonly Action: string;
   readonly UserId: string;
 }
 
-interface GetAccessControlEffectResponse {
-  readonly Effect: string;
-  readonly MatchedRules: [];
+export interface GetAccessControlEffectResponse {
+  readonly Effect?: string;
+  readonly MatchedRules?: [];
 }
 
-interface GetDefaultRetentionPolicyRequest {
+export interface GetDefaultRetentionPolicyRequest {
   readonly OrganizationId: string;
 }
 
-interface GetDefaultRetentionPolicyResponse {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly FolderConfigurations: [];
+export interface GetDefaultRetentionPolicyResponse {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly FolderConfigurations?: [];
 }
 
-interface GetMailDomainRequest {
+export interface GetMailDomainRequest {
   readonly OrganizationId: string;
   readonly DomainName: string;
 }
 
-interface GetMailDomainResponse {
-  readonly Records: [];
-  readonly IsTestDomain: boolean;
-  readonly IsDefault: boolean;
-  readonly OwnershipVerificationStatus: string;
-  readonly DkimVerificationStatus: string;
+export interface GetMailDomainResponse {
+  readonly Records?: [];
+  readonly IsTestDomain?: boolean;
+  readonly IsDefault?: boolean;
+  readonly OwnershipVerificationStatus?: string;
+  readonly DkimVerificationStatus?: string;
 }
 
-interface GetMailboxDetailsRequest {
+export interface GetMailboxDetailsRequest {
   readonly OrganizationId: string;
   readonly UserId: string;
 }
 
-interface GetMailboxDetailsResponse {
-  readonly MailboxQuota: number;
-  readonly MailboxSize: unknown;
+export interface GetMailboxDetailsResponse {
+  readonly MailboxQuota?: number;
+  readonly MailboxSize?: unknown;
 }
 
-interface GetMobileDeviceAccessEffectRequest {
+export interface GetMobileDeviceAccessEffectRequest {
   readonly OrganizationId: string;
-  readonly DeviceType: string;
-  readonly DeviceModel: string;
-  readonly DeviceOperatingSystem: string;
-  readonly DeviceUserAgent: string;
+  readonly DeviceType?: string;
+  readonly DeviceModel?: string;
+  readonly DeviceOperatingSystem?: string;
+  readonly DeviceUserAgent?: string;
 }
 
-interface GetMobileDeviceAccessEffectResponse {
-  readonly Effect: string;
-  readonly MatchedRules: [];
+export interface GetMobileDeviceAccessEffectResponse {
+  readonly Effect?: string;
+  readonly MatchedRules?: [];
 }
 
-interface GetMobileDeviceAccessOverrideRequest {
+export interface GetMobileDeviceAccessOverrideRequest {
   readonly OrganizationId: string;
-  readonly UserId: string;
-  readonly DeviceId: string;
-}
-
-interface GetMobileDeviceAccessOverrideResponse {
   readonly UserId: string;
   readonly DeviceId: string;
-  readonly Effect: string;
-  readonly Description: string;
-  readonly DateCreated: Date;
-  readonly DateModified: Date;
 }
 
-interface Group {
-  readonly Id: string;
-  readonly Email: string;
-  readonly Name: string;
-  readonly State: string;
-  readonly EnabledDate: Date;
-  readonly DisabledDate: Date;
+export interface GetMobileDeviceAccessOverrideResponse {
+  readonly UserId?: string;
+  readonly DeviceId?: string;
+  readonly Effect?: string;
+  readonly Description?: string;
+  readonly DateCreated?: Date;
+  readonly DateModified?: Date;
 }
 
-interface InvalidConfigurationException {
-  readonly Message: string;
+export interface Group {
+  readonly Id?: string;
+  readonly Email?: string;
+  readonly Name?: string;
+  readonly State?: string;
+  readonly EnabledDate?: Date;
+  readonly DisabledDate?: Date;
 }
 
-interface InvalidCustomSesConfigurationException {
-  readonly Message: string;
+export interface InvalidConfigurationException {
+  readonly Message?: string;
 }
 
-interface InvalidParameterException {
-  readonly Message: string;
+export interface InvalidCustomSesConfigurationException {
+  readonly Message?: string;
 }
 
-interface InvalidPasswordException {
-  readonly Message: string;
+export interface InvalidParameterException {
+  readonly Message?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface InvalidPasswordException {
+  readonly Message?: string;
 }
 
-interface ListAccessControlRulesRequest {
+export interface LimitExceededException {
+  readonly Message?: string;
+}
+
+export interface ListAccessControlRulesRequest {
   readonly OrganizationId: string;
 }
 
-interface ListAccessControlRulesResponse {
-  readonly Rules: [];
+export interface ListAccessControlRulesResponse {
+  readonly Rules?: [];
 }
 
-interface ListAliasesRequest {
+export interface ListAliasesRequest {
   readonly OrganizationId: string;
   readonly EntityId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListAliasesResponse {
-  readonly Aliases: [];
-  readonly NextToken: string;
+export interface ListAliasesResponse {
+  readonly Aliases?: [];
+  readonly NextToken?: string;
 }
 
-interface ListGroupMembersRequest {
+export interface ListGroupMembersRequest {
   readonly OrganizationId: string;
   readonly GroupId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListGroupMembersResponse {
-  readonly Members: [];
-  readonly NextToken: string;
+export interface ListGroupMembersResponse {
+  readonly Members?: [];
+  readonly NextToken?: string;
 }
 
-interface ListGroupsRequest {
+export interface ListGroupsRequest {
   readonly OrganizationId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListGroupsResponse {
-  readonly Groups: [];
-  readonly NextToken: string;
+export interface ListGroupsResponse {
+  readonly Groups?: [];
+  readonly NextToken?: string;
 }
 
-interface ListMailDomainsRequest {
+export interface ListMailDomainsRequest {
   readonly OrganizationId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListMailDomainsResponse {
-  readonly MailDomains: [];
-  readonly NextToken: string;
+export interface ListMailDomainsResponse {
+  readonly MailDomains?: [];
+  readonly NextToken?: string;
 }
 
-interface ListMailboxExportJobsRequest {
+export interface ListMailboxExportJobsRequest {
   readonly OrganizationId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListMailboxExportJobsResponse {
-  readonly Jobs: [];
-  readonly NextToken: string;
+export interface ListMailboxExportJobsResponse {
+  readonly Jobs?: [];
+  readonly NextToken?: string;
 }
 
-interface ListMailboxPermissionsRequest {
+export interface ListMailboxPermissionsRequest {
   readonly OrganizationId: string;
   readonly EntityId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListMailboxPermissionsResponse {
-  readonly Permissions: [];
-  readonly NextToken: string;
+export interface ListMailboxPermissionsResponse {
+  readonly Permissions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListMobileDeviceAccessOverridesRequest {
+export interface ListMobileDeviceAccessOverridesRequest {
   readonly OrganizationId: string;
-  readonly UserId: string;
-  readonly DeviceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly UserId?: string;
+  readonly DeviceId?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListMobileDeviceAccessOverridesResponse {
-  readonly Overrides: [];
-  readonly NextToken: string;
+export interface ListMobileDeviceAccessOverridesResponse {
+  readonly Overrides?: [];
+  readonly NextToken?: string;
 }
 
-interface ListMobileDeviceAccessRulesRequest {
+export interface ListMobileDeviceAccessRulesRequest {
   readonly OrganizationId: string;
 }
 
-interface ListMobileDeviceAccessRulesResponse {
-  readonly Rules: [];
+export interface ListMobileDeviceAccessRulesResponse {
+  readonly Rules?: [];
 }
 
-interface ListOrganizationsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListOrganizationsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListOrganizationsResponse {
-  readonly OrganizationSummaries: [];
-  readonly NextToken: string;
+export interface ListOrganizationsResponse {
+  readonly OrganizationSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListResourceDelegatesRequest {
+export interface ListResourceDelegatesRequest {
   readonly OrganizationId: string;
   readonly ResourceId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListResourceDelegatesResponse {
-  readonly Delegates: [];
-  readonly NextToken: string;
+export interface ListResourceDelegatesResponse {
+  readonly Delegates?: [];
+  readonly NextToken?: string;
 }
 
-interface ListResourcesRequest {
+export interface ListResourcesRequest {
   readonly OrganizationId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListResourcesResponse {
-  readonly Resources: [];
-  readonly NextToken: string;
+export interface ListResourcesResponse {
+  readonly Resources?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface ListUsersRequest {
+export interface ListUsersRequest {
   readonly OrganizationId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListUsersResponse {
-  readonly Users: [];
-  readonly NextToken: string;
+export interface ListUsersResponse {
+  readonly Users?: [];
+  readonly NextToken?: string;
 }
 
-interface MailDomainInUseException {
-  readonly Message: string;
+export interface MailDomainInUseException {
+  readonly Message?: string;
 }
 
-interface MailDomainNotFoundException {
-  readonly Message: string;
+export interface MailDomainNotFoundException {
+  readonly Message?: string;
 }
 
-interface MailDomainStateException {
-  readonly Message: string;
+export interface MailDomainStateException {
+  readonly Message?: string;
 }
 
-interface MailDomainSummary {
-  readonly DomainName: string;
-  readonly DefaultDomain: boolean;
+export interface MailDomainSummary {
+  readonly DomainName?: string;
+  readonly DefaultDomain?: boolean;
 }
 
-interface MailboxExportJob {
-  readonly JobId: string;
-  readonly EntityId: string;
-  readonly Description: string;
-  readonly S3BucketName: string;
-  readonly S3Path: string;
-  readonly EstimatedProgress: number;
-  readonly State: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
+export interface MailboxExportJob {
+  readonly JobId?: string;
+  readonly EntityId?: string;
+  readonly Description?: string;
+  readonly S3BucketName?: string;
+  readonly S3Path?: string;
+  readonly EstimatedProgress?: number;
+  readonly State?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
 }
 
-interface Member {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Type: string;
-  readonly State: string;
-  readonly EnabledDate: Date;
-  readonly DisabledDate: Date;
+export interface Member {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly State?: string;
+  readonly EnabledDate?: Date;
+  readonly DisabledDate?: Date;
 }
 
-interface MobileDeviceAccessMatchedRule {
-  readonly MobileDeviceAccessRuleId: string;
-  readonly Name: string;
+export interface MobileDeviceAccessMatchedRule {
+  readonly MobileDeviceAccessRuleId?: string;
+  readonly Name?: string;
 }
 
-interface MobileDeviceAccessOverride {
-  readonly UserId: string;
-  readonly DeviceId: string;
-  readonly Effect: string;
-  readonly Description: string;
-  readonly DateCreated: Date;
-  readonly DateModified: Date;
+export interface MobileDeviceAccessOverride {
+  readonly UserId?: string;
+  readonly DeviceId?: string;
+  readonly Effect?: string;
+  readonly Description?: string;
+  readonly DateCreated?: Date;
+  readonly DateModified?: Date;
 }
 
-interface MobileDeviceAccessRule {
-  readonly MobileDeviceAccessRuleId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Effect: string;
-  readonly DeviceTypes: [];
-  readonly NotDeviceTypes: [];
-  readonly DeviceModels: [];
-  readonly NotDeviceModels: [];
-  readonly DeviceOperatingSystems: [];
-  readonly NotDeviceOperatingSystems: [];
-  readonly DeviceUserAgents: [];
-  readonly NotDeviceUserAgents: [];
-  readonly DateCreated: Date;
-  readonly DateModified: Date;
+export interface MobileDeviceAccessRule {
+  readonly MobileDeviceAccessRuleId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Effect?: string;
+  readonly DeviceTypes?: [];
+  readonly NotDeviceTypes?: [];
+  readonly DeviceModels?: [];
+  readonly NotDeviceModels?: [];
+  readonly DeviceOperatingSystems?: [];
+  readonly NotDeviceOperatingSystems?: [];
+  readonly DeviceUserAgents?: [];
+  readonly NotDeviceUserAgents?: [];
+  readonly DateCreated?: Date;
+  readonly DateModified?: Date;
 }
 
-interface NameAvailabilityException {
-  readonly Message: string;
+export interface NameAvailabilityException {
+  readonly Message?: string;
 }
 
-interface OrganizationNotFoundException {
-  readonly Message: string;
+export interface OrganizationNotFoundException {
+  readonly Message?: string;
 }
 
-interface OrganizationStateException {
-  readonly Message: string;
+export interface OrganizationStateException {
+  readonly Message?: string;
 }
 
-interface OrganizationSummary {
-  readonly OrganizationId: string;
-  readonly Alias: string;
-  readonly DefaultMailDomain: string;
-  readonly ErrorMessage: string;
-  readonly State: string;
+export interface OrganizationSummary {
+  readonly OrganizationId?: string;
+  readonly Alias?: string;
+  readonly DefaultMailDomain?: string;
+  readonly ErrorMessage?: string;
+  readonly State?: string;
 }
 
-interface Permission {
+export interface Permission {
   readonly GranteeId: string;
   readonly GranteeType: string;
   readonly PermissionValues: [];
 }
 
-interface PutAccessControlRuleRequest {
+export interface PutAccessControlRuleRequest {
   readonly Name: string;
   readonly Effect: string;
   readonly Description: string;
-  readonly IpRanges: [];
-  readonly NotIpRanges: [];
-  readonly Actions: [];
-  readonly NotActions: [];
-  readonly UserIds: [];
-  readonly NotUserIds: [];
+  readonly IpRanges?: [];
+  readonly NotIpRanges?: [];
+  readonly Actions?: [];
+  readonly NotActions?: [];
+  readonly UserIds?: [];
+  readonly NotUserIds?: [];
   readonly OrganizationId: string;
 }
 
-interface PutAccessControlRuleResponse {
+export interface PutAccessControlRuleResponse {
 }
 
-interface PutInboundDmarcSettingsRequest {
+export interface PutInboundDmarcSettingsRequest {
   readonly OrganizationId: string;
   readonly Enforced: boolean;
 }
 
-interface PutInboundDmarcSettingsResponse {
+export interface PutInboundDmarcSettingsResponse {
 }
 
-interface PutMailboxPermissionsRequest {
+export interface PutMailboxPermissionsRequest {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly GranteeId: string;
   readonly PermissionValues: [];
 }
 
-interface PutMailboxPermissionsResponse {
+export interface PutMailboxPermissionsResponse {
 }
 
-interface PutMobileDeviceAccessOverrideRequest {
+export interface PutMobileDeviceAccessOverrideRequest {
   readonly OrganizationId: string;
   readonly UserId: string;
   readonly DeviceId: string;
   readonly Effect: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 
-interface PutMobileDeviceAccessOverrideResponse {
+export interface PutMobileDeviceAccessOverrideResponse {
 }
 
-interface PutRetentionPolicyRequest {
+export interface PutRetentionPolicyRequest {
   readonly OrganizationId: string;
-  readonly Id: string;
+  readonly Id?: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly FolderConfigurations: [];
 }
 
-interface PutRetentionPolicyResponse {
+export interface PutRetentionPolicyResponse {
 }
 
-interface RegisterMailDomainRequest {
-  readonly ClientToken: string;
+export interface RegisterMailDomainRequest {
+  readonly ClientToken?: string;
   readonly OrganizationId: string;
   readonly DomainName: string;
 }
 
-interface RegisterMailDomainResponse {
+export interface RegisterMailDomainResponse {
 }
 
-interface RegisterToWorkMailRequest {
+export interface RegisterToWorkMailRequest {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly Email: string;
 }
 
-interface RegisterToWorkMailResponse {
+export interface RegisterToWorkMailResponse {
 }
 
-interface ReservedNameException {
-  readonly Message: string;
+export interface ReservedNameException {
+  readonly Message?: string;
 }
 
-interface ResetPasswordRequest {
+export interface ResetPasswordRequest {
   readonly OrganizationId: string;
   readonly UserId: string;
   readonly Password: string;
 }
 
-interface ResetPasswordResponse {
+export interface ResetPasswordResponse {
 }
 
-interface Resource {
-  readonly Id: string;
-  readonly Email: string;
-  readonly Name: string;
-  readonly Type: string;
-  readonly State: string;
-  readonly EnabledDate: Date;
-  readonly DisabledDate: Date;
+export interface Resource {
+  readonly Id?: string;
+  readonly Email?: string;
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly State?: string;
+  readonly EnabledDate?: Date;
+  readonly DisabledDate?: Date;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface StartMailboxExportJobRequest {
+export interface StartMailboxExportJobRequest {
   readonly ClientToken: string;
   readonly OrganizationId: string;
   readonly EntityId: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly RoleArn: string;
   readonly KmsKeyArn: string;
   readonly S3BucketName: string;
   readonly S3Prefix: string;
 }
 
-interface StartMailboxExportJobResponse {
-  readonly JobId: string;
+export interface StartMailboxExportJobResponse {
+  readonly JobId?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TooManyTagsException {
-  readonly Message: string;
+export interface TooManyTagsException {
+  readonly Message?: string;
 }
 
-interface UnsupportedOperationException {
-  readonly Message: string;
+export interface UnsupportedOperationException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateDefaultMailDomainRequest {
+export interface UpdateDefaultMailDomainRequest {
   readonly OrganizationId: string;
   readonly DomainName: string;
 }
 
-interface UpdateDefaultMailDomainResponse {
+export interface UpdateDefaultMailDomainResponse {
 }
 
-interface UpdateMailboxQuotaRequest {
+export interface UpdateMailboxQuotaRequest {
   readonly OrganizationId: string;
   readonly UserId: string;
   readonly MailboxQuota: number;
 }
 
-interface UpdateMailboxQuotaResponse {
+export interface UpdateMailboxQuotaResponse {
 }
 
-interface UpdateMobileDeviceAccessRuleRequest {
+export interface UpdateMobileDeviceAccessRuleRequest {
   readonly OrganizationId: string;
   readonly MobileDeviceAccessRuleId: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Effect: string;
-  readonly DeviceTypes: [];
-  readonly NotDeviceTypes: [];
-  readonly DeviceModels: [];
-  readonly NotDeviceModels: [];
-  readonly DeviceOperatingSystems: [];
-  readonly NotDeviceOperatingSystems: [];
-  readonly DeviceUserAgents: [];
-  readonly NotDeviceUserAgents: [];
+  readonly DeviceTypes?: [];
+  readonly NotDeviceTypes?: [];
+  readonly DeviceModels?: [];
+  readonly NotDeviceModels?: [];
+  readonly DeviceOperatingSystems?: [];
+  readonly NotDeviceOperatingSystems?: [];
+  readonly DeviceUserAgents?: [];
+  readonly NotDeviceUserAgents?: [];
 }
 
-interface UpdateMobileDeviceAccessRuleResponse {
+export interface UpdateMobileDeviceAccessRuleResponse {
 }
 
-interface UpdatePrimaryEmailAddressRequest {
+export interface UpdatePrimaryEmailAddressRequest {
   readonly OrganizationId: string;
   readonly EntityId: string;
   readonly Email: string;
 }
 
-interface UpdatePrimaryEmailAddressResponse {
+export interface UpdatePrimaryEmailAddressResponse {
 }
 
-interface UpdateResourceRequest {
+export interface UpdateResourceRequest {
   readonly OrganizationId: string;
   readonly ResourceId: string;
-  readonly Name: string;
-  readonly BookingOptions: BookingOptions;
+  readonly Name?: string;
+  readonly BookingOptions?: BookingOptions;
 }
 
-interface UpdateResourceResponse {
+export interface UpdateResourceResponse {
 }
 
-interface User {
-  readonly Id: string;
-  readonly Email: string;
-  readonly Name: string;
-  readonly DisplayName: string;
-  readonly State: string;
-  readonly UserRole: string;
-  readonly EnabledDate: Date;
-  readonly DisabledDate: Date;
+export interface User {
+  readonly Id?: string;
+  readonly Email?: string;
+  readonly Name?: string;
+  readonly DisplayName?: string;
+  readonly State?: string;
+  readonly UserRole?: string;
+  readonly EnabledDate?: Date;
+  readonly DisabledDate?: Date;
 }
+
 

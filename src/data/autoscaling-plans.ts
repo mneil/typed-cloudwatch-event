@@ -6,16 +6,19 @@ export interface CreateScalingPlan {
   readonly ApplicationSource: ApplicationSource;
   readonly ScalingInstructions: [];
 }
+
 export interface DeleteScalingPlan {
   readonly ScalingPlanName: string;
   readonly ScalingPlanVersion: number;
 }
+
 export interface DescribeScalingPlanResources {
   readonly ScalingPlanName: string;
   readonly ScalingPlanVersion: number;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeScalingPlans {
   readonly ScalingPlanNames?: [];
   readonly ScalingPlanVersion?: number;
@@ -23,6 +26,7 @@ export interface DescribeScalingPlans {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetScalingPlanResourceForecastData {
   readonly ScalingPlanName: string;
   readonly ScalingPlanVersion: number;
@@ -33,6 +37,7 @@ export interface GetScalingPlanResourceForecastData {
   readonly StartTime: Date;
   readonly EndTime: Date;
 }
+
 export interface UpdateScalingPlan {
   readonly ScalingPlanName: string;
   readonly ScalingPlanVersion: number;
@@ -40,82 +45,80 @@ export interface UpdateScalingPlan {
   readonly ScalingInstructions?: [];
 }
 
-
-
-interface ApplicationSource {
-  readonly CloudFormationStackARN: string;
-  readonly TagFilters: [];
+export interface ApplicationSource {
+  readonly CloudFormationStackARN?: string;
+  readonly TagFilters?: [];
 }
 
-interface ConcurrentUpdateException {
-  readonly Message: string;
+export interface ConcurrentUpdateException {
+  readonly Message?: string;
 }
 
-interface CreateScalingPlanRequest {
+export interface CreateScalingPlanRequest {
   readonly ScalingPlanName: string;
   readonly ApplicationSource: ApplicationSource;
   readonly ScalingInstructions: [];
 }
 
-interface CreateScalingPlanResponse {
+export interface CreateScalingPlanResponse {
   readonly ScalingPlanVersion: number;
 }
 
-interface CustomizedLoadMetricSpecification {
+export interface CustomizedLoadMetricSpecification {
   readonly MetricName: string;
   readonly Namespace: string;
-  readonly Dimensions: [];
+  readonly Dimensions?: [];
   readonly Statistic: string;
-  readonly Unit: string;
+  readonly Unit?: string;
 }
 
-interface CustomizedScalingMetricSpecification {
+export interface CustomizedScalingMetricSpecification {
   readonly MetricName: string;
   readonly Namespace: string;
-  readonly Dimensions: [];
+  readonly Dimensions?: [];
   readonly Statistic: string;
-  readonly Unit: string;
+  readonly Unit?: string;
 }
 
-interface Datapoint {
-  readonly Timestamp: Date;
-  readonly Value: unknown;
+export interface Datapoint {
+  readonly Timestamp?: Date;
+  readonly Value?: unknown;
 }
 
-interface DeleteScalingPlanRequest {
+export interface DeleteScalingPlanRequest {
   readonly ScalingPlanName: string;
   readonly ScalingPlanVersion: number;
 }
 
-interface DeleteScalingPlanResponse {
+export interface DeleteScalingPlanResponse {
 }
 
-interface DescribeScalingPlanResourcesRequest {
+export interface DescribeScalingPlanResourcesRequest {
   readonly ScalingPlanName: string;
   readonly ScalingPlanVersion: number;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeScalingPlanResourcesResponse {
-  readonly ScalingPlanResources: [];
-  readonly NextToken: string;
+export interface DescribeScalingPlanResourcesResponse {
+  readonly ScalingPlanResources?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeScalingPlansRequest {
-  readonly ScalingPlanNames: [];
-  readonly ScalingPlanVersion: number;
-  readonly ApplicationSources: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeScalingPlansRequest {
+  readonly ScalingPlanNames?: [];
+  readonly ScalingPlanVersion?: number;
+  readonly ApplicationSources?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeScalingPlansResponse {
-  readonly ScalingPlans: [];
-  readonly NextToken: string;
+export interface DescribeScalingPlansResponse {
+  readonly ScalingPlans?: [];
+  readonly NextToken?: string;
 }
 
-interface GetScalingPlanResourceForecastDataRequest {
+export interface GetScalingPlanResourceForecastDataRequest {
   readonly ScalingPlanName: string;
   readonly ScalingPlanVersion: number;
   readonly ServiceNamespace: string;
@@ -126,112 +129,113 @@ interface GetScalingPlanResourceForecastDataRequest {
   readonly EndTime: Date;
 }
 
-interface GetScalingPlanResourceForecastDataResponse {
+export interface GetScalingPlanResourceForecastDataResponse {
   readonly Datapoints: [];
 }
 
-interface InternalServiceException {
-  readonly Message: string;
+export interface InternalServiceException {
+  readonly Message?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly Message: string;
+export interface InvalidNextTokenException {
+  readonly Message?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface MetricDimension {
+export interface MetricDimension {
   readonly Name: string;
   readonly Value: string;
 }
 
-interface ObjectNotFoundException {
-  readonly Message: string;
+export interface ObjectNotFoundException {
+  readonly Message?: string;
 }
 
-interface PredefinedLoadMetricSpecification {
+export interface PredefinedLoadMetricSpecification {
   readonly PredefinedLoadMetricType: string;
-  readonly ResourceLabel: string;
+  readonly ResourceLabel?: string;
 }
 
-interface PredefinedScalingMetricSpecification {
+export interface PredefinedScalingMetricSpecification {
   readonly PredefinedScalingMetricType: string;
-  readonly ResourceLabel: string;
+  readonly ResourceLabel?: string;
 }
 
-interface ScalingInstruction {
+export interface ScalingInstruction {
   readonly ServiceNamespace: string;
   readonly ResourceId: string;
   readonly ScalableDimension: string;
   readonly MinCapacity: number;
   readonly MaxCapacity: number;
   readonly TargetTrackingConfigurations: [];
-  readonly PredefinedLoadMetricSpecification: PredefinedLoadMetricSpecification;
-  readonly CustomizedLoadMetricSpecification: CustomizedLoadMetricSpecification;
-  readonly ScheduledActionBufferTime: number;
-  readonly PredictiveScalingMaxCapacityBehavior: string;
-  readonly PredictiveScalingMaxCapacityBuffer: number;
-  readonly PredictiveScalingMode: string;
-  readonly ScalingPolicyUpdateBehavior: string;
-  readonly DisableDynamicScaling: boolean;
+  readonly PredefinedLoadMetricSpecification?: PredefinedLoadMetricSpecification;
+  readonly CustomizedLoadMetricSpecification?: CustomizedLoadMetricSpecification;
+  readonly ScheduledActionBufferTime?: number;
+  readonly PredictiveScalingMaxCapacityBehavior?: string;
+  readonly PredictiveScalingMaxCapacityBuffer?: number;
+  readonly PredictiveScalingMode?: string;
+  readonly ScalingPolicyUpdateBehavior?: string;
+  readonly DisableDynamicScaling?: boolean;
 }
 
-interface ScalingPlan {
+export interface ScalingPlan {
   readonly ScalingPlanName: string;
   readonly ScalingPlanVersion: number;
   readonly ApplicationSource: ApplicationSource;
   readonly ScalingInstructions: [];
   readonly StatusCode: string;
-  readonly StatusMessage: string;
-  readonly StatusStartTime: Date;
-  readonly CreationTime: Date;
+  readonly StatusMessage?: string;
+  readonly StatusStartTime?: Date;
+  readonly CreationTime?: Date;
 }
 
-interface ScalingPlanResource {
+export interface ScalingPlanResource {
   readonly ScalingPlanName: string;
   readonly ScalingPlanVersion: number;
   readonly ServiceNamespace: string;
   readonly ResourceId: string;
   readonly ScalableDimension: string;
-  readonly ScalingPolicies: [];
+  readonly ScalingPolicies?: [];
   readonly ScalingStatusCode: string;
-  readonly ScalingStatusMessage: string;
+  readonly ScalingStatusMessage?: string;
 }
 
-interface ScalingPolicy {
+export interface ScalingPolicy {
   readonly PolicyName: string;
   readonly PolicyType: string;
-  readonly TargetTrackingConfiguration: TargetTrackingConfiguration;
+  readonly TargetTrackingConfiguration?: TargetTrackingConfiguration;
 }
 
-interface TagFilter {
-  readonly Key: string;
-  readonly Values: [];
+export interface TagFilter {
+  readonly Key?: string;
+  readonly Values?: [];
 }
 
-interface TargetTrackingConfiguration {
-  readonly PredefinedScalingMetricSpecification: PredefinedScalingMetricSpecification;
-  readonly CustomizedScalingMetricSpecification: CustomizedScalingMetricSpecification;
+export interface TargetTrackingConfiguration {
+  readonly PredefinedScalingMetricSpecification?: PredefinedScalingMetricSpecification;
+  readonly CustomizedScalingMetricSpecification?: CustomizedScalingMetricSpecification;
   readonly TargetValue: unknown;
-  readonly DisableScaleIn: boolean;
-  readonly ScaleOutCooldown: number;
-  readonly ScaleInCooldown: number;
-  readonly EstimatedInstanceWarmup: number;
+  readonly DisableScaleIn?: boolean;
+  readonly ScaleOutCooldown?: number;
+  readonly ScaleInCooldown?: number;
+  readonly EstimatedInstanceWarmup?: number;
 }
 
-interface UpdateScalingPlanRequest {
+export interface UpdateScalingPlanRequest {
   readonly ScalingPlanName: string;
   readonly ScalingPlanVersion: number;
-  readonly ApplicationSource: ApplicationSource;
-  readonly ScalingInstructions: [];
+  readonly ApplicationSource?: ApplicationSource;
+  readonly ScalingInstructions?: [];
 }
 
-interface UpdateScalingPlanResponse {
+export interface UpdateScalingPlanResponse {
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

@@ -4,83 +4,84 @@
 export interface GetRoutingControlState {
   readonly RoutingControlArn: string;
 }
+
 export interface UpdateRoutingControlState {
   readonly RoutingControlArn: string;
   readonly RoutingControlState: string;
 }
+
 export interface UpdateRoutingControlStates {
   readonly UpdateRoutingControlStateEntries: [];
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly message: string;
   readonly resourceId: string;
   readonly resourceType: string;
 }
 
-interface EndpointTemporarilyUnavailableException {
+export interface EndpointTemporarilyUnavailableException {
   readonly message: string;
 }
 
-interface GetRoutingControlStateRequest {
+export interface GetRoutingControlStateRequest {
   readonly RoutingControlArn: string;
 }
 
-interface GetRoutingControlStateResponse {
+export interface GetRoutingControlStateResponse {
   readonly RoutingControlArn: string;
   readonly RoutingControlState: string;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
-  readonly retryAfterSeconds: number;
+  readonly retryAfterSeconds?: number;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
   readonly resourceId: string;
   readonly resourceType: string;
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly message: string;
-  readonly retryAfterSeconds: number;
+  readonly retryAfterSeconds?: number;
 }
 
-interface UpdateRoutingControlStateEntry {
+export interface UpdateRoutingControlStateEntry {
   readonly RoutingControlArn: string;
   readonly RoutingControlState: string;
 }
 
-interface UpdateRoutingControlStateRequest {
+export interface UpdateRoutingControlStateRequest {
   readonly RoutingControlArn: string;
   readonly RoutingControlState: string;
 }
 
-interface UpdateRoutingControlStateResponse {
+export interface UpdateRoutingControlStateResponse {
 }
 
-interface UpdateRoutingControlStatesRequest {
+export interface UpdateRoutingControlStatesRequest {
   readonly UpdateRoutingControlStateEntries: [];
 }
 
-interface UpdateRoutingControlStatesResponse {
+export interface UpdateRoutingControlStatesResponse {
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly message: string;
-  readonly reason: string;
-  readonly fields: [];
+  readonly reason?: string;
+  readonly fields?: [];
 }
 
-interface ValidationExceptionField {
+export interface ValidationExceptionField {
   readonly name: string;
   readonly message: string;
 }
+
 

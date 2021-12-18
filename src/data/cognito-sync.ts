@@ -4,42 +4,52 @@
 export interface BulkPublish {
   readonly IdentityPoolId: string;
 }
+
 export interface DeleteDataset {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly DatasetName: string;
 }
+
 export interface DescribeDataset {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly DatasetName: string;
 }
+
 export interface DescribeIdentityPoolUsage {
   readonly IdentityPoolId: string;
 }
+
 export interface DescribeIdentityUsage {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
 }
+
 export interface GetBulkPublishDetails {
   readonly IdentityPoolId: string;
 }
+
 export interface GetCognitoEvents {
   readonly IdentityPoolId: string;
 }
+
 export interface GetIdentityPoolConfiguration {
   readonly IdentityPoolId: string;
 }
+
 export interface ListDatasets {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListIdentityPoolUsage {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListRecords {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
@@ -49,33 +59,39 @@ export interface ListRecords {
   readonly MaxResults?: number;
   readonly SyncSessionToken?: string;
 }
+
 export interface RegisterDevice {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly Platform: string;
   readonly Token: string;
 }
+
 export interface SetCognitoEvents {
   readonly IdentityPoolId: string;
   readonly Events: {[key: string]: any};
 }
+
 export interface SetIdentityPoolConfiguration {
   readonly IdentityPoolId: string;
   readonly PushSync?: PushSync;
   readonly CognitoStreams?: CognitoStreams;
 }
+
 export interface SubscribeToDataset {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly DatasetName: string;
   readonly DeviceId: string;
 }
+
 export interface UnsubscribeFromDataset {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly DatasetName: string;
   readonly DeviceId: string;
 }
+
 export interface UpdateRecords {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
@@ -86,294 +102,293 @@ export interface UpdateRecords {
   readonly ClientContext?: string;
 }
 
-
-
-interface AlreadyStreamedException {
+export interface AlreadyStreamedException {
   readonly message: string;
 }
 
-interface BulkPublishRequest {
+export interface BulkPublishRequest {
   readonly IdentityPoolId: string;
 }
 
-interface BulkPublishResponse {
-  readonly IdentityPoolId: string;
+export interface BulkPublishResponse {
+  readonly IdentityPoolId?: string;
 }
 
-interface CognitoStreams {
-  readonly StreamName: string;
-  readonly RoleArn: string;
-  readonly StreamingStatus: string;
+export interface CognitoStreams {
+  readonly StreamName?: string;
+  readonly RoleArn?: string;
+  readonly StreamingStatus?: string;
 }
 
-interface ConcurrentModificationException {
+export interface ConcurrentModificationException {
   readonly message: string;
 }
 
-interface Dataset {
-  readonly IdentityId: string;
-  readonly DatasetName: string;
-  readonly CreationDate: Date;
-  readonly LastModifiedDate: Date;
-  readonly LastModifiedBy: string;
-  readonly DataStorage: number;
-  readonly NumRecords: number;
+export interface Dataset {
+  readonly IdentityId?: string;
+  readonly DatasetName?: string;
+  readonly CreationDate?: Date;
+  readonly LastModifiedDate?: Date;
+  readonly LastModifiedBy?: string;
+  readonly DataStorage?: number;
+  readonly NumRecords?: number;
 }
 
-interface DeleteDatasetRequest {
-  readonly IdentityPoolId: string;
-  readonly IdentityId: string;
-  readonly DatasetName: string;
-}
-
-interface DeleteDatasetResponse {
-  readonly Dataset: Dataset;
-}
-
-interface DescribeDatasetRequest {
+export interface DeleteDatasetRequest {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly DatasetName: string;
 }
 
-interface DescribeDatasetResponse {
-  readonly Dataset: Dataset;
+export interface DeleteDatasetResponse {
+  readonly Dataset?: Dataset;
 }
 
-interface DescribeIdentityPoolUsageRequest {
-  readonly IdentityPoolId: string;
-}
-
-interface DescribeIdentityPoolUsageResponse {
-  readonly IdentityPoolUsage: IdentityPoolUsage;
-}
-
-interface DescribeIdentityUsageRequest {
-  readonly IdentityPoolId: string;
-  readonly IdentityId: string;
-}
-
-interface DescribeIdentityUsageResponse {
-  readonly IdentityUsage: IdentityUsage;
-}
-
-interface DuplicateRequestException {
-  readonly message: string;
-}
-
-interface GetBulkPublishDetailsRequest {
-  readonly IdentityPoolId: string;
-}
-
-interface GetBulkPublishDetailsResponse {
-  readonly IdentityPoolId: string;
-  readonly BulkPublishStartTime: Date;
-  readonly BulkPublishCompleteTime: Date;
-  readonly BulkPublishStatus: string;
-  readonly FailureMessage: string;
-}
-
-interface GetCognitoEventsRequest {
-  readonly IdentityPoolId: string;
-}
-
-interface GetCognitoEventsResponse {
-  readonly Events: {[key: string]: any};
-}
-
-interface GetIdentityPoolConfigurationRequest {
-  readonly IdentityPoolId: string;
-}
-
-interface GetIdentityPoolConfigurationResponse {
-  readonly IdentityPoolId: string;
-  readonly PushSync: PushSync;
-  readonly CognitoStreams: CognitoStreams;
-}
-
-interface IdentityPoolUsage {
-  readonly IdentityPoolId: string;
-  readonly SyncSessionsCount: number;
-  readonly DataStorage: number;
-  readonly LastModifiedDate: Date;
-}
-
-interface IdentityUsage {
-  readonly IdentityId: string;
-  readonly IdentityPoolId: string;
-  readonly LastModifiedDate: Date;
-  readonly DatasetCount: number;
-  readonly DataStorage: number;
-}
-
-interface InternalErrorException {
-  readonly message: string;
-}
-
-interface InvalidConfigurationException {
-  readonly message: string;
-}
-
-interface InvalidLambdaFunctionOutputException {
-  readonly message: string;
-}
-
-interface InvalidParameterException {
-  readonly message: string;
-}
-
-interface LambdaThrottledException {
-  readonly message: string;
-}
-
-interface LimitExceededException {
-  readonly message: string;
-}
-
-interface ListDatasetsRequest {
-  readonly IdentityPoolId: string;
-  readonly IdentityId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface ListDatasetsResponse {
-  readonly Datasets: [];
-  readonly Count: number;
-  readonly NextToken: string;
-}
-
-interface ListIdentityPoolUsageRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface ListIdentityPoolUsageResponse {
-  readonly IdentityPoolUsages: [];
-  readonly MaxResults: number;
-  readonly Count: number;
-  readonly NextToken: string;
-}
-
-interface ListRecordsRequest {
+export interface DescribeDatasetRequest {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly DatasetName: string;
-  readonly LastSyncCount: number;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly SyncSessionToken: string;
 }
 
-interface ListRecordsResponse {
-  readonly Records: [];
-  readonly NextToken: string;
-  readonly Count: number;
-  readonly DatasetSyncCount: number;
-  readonly LastModifiedBy: string;
-  readonly MergedDatasetNames: [];
-  readonly DatasetExists: boolean;
-  readonly DatasetDeletedAfterRequestedSyncCount: boolean;
-  readonly SyncSessionToken: string;
+export interface DescribeDatasetResponse {
+  readonly Dataset?: Dataset;
 }
 
-interface NotAuthorizedException {
+export interface DescribeIdentityPoolUsageRequest {
+  readonly IdentityPoolId: string;
+}
+
+export interface DescribeIdentityPoolUsageResponse {
+  readonly IdentityPoolUsage?: IdentityPoolUsage;
+}
+
+export interface DescribeIdentityUsageRequest {
+  readonly IdentityPoolId: string;
+  readonly IdentityId: string;
+}
+
+export interface DescribeIdentityUsageResponse {
+  readonly IdentityUsage?: IdentityUsage;
+}
+
+export interface DuplicateRequestException {
   readonly message: string;
 }
 
-interface PushSync {
-  readonly ApplicationArns: [];
-  readonly RoleArn: string;
+export interface GetBulkPublishDetailsRequest {
+  readonly IdentityPoolId: string;
 }
 
-interface Record {
-  readonly Key: string;
-  readonly Value: string;
-  readonly SyncCount: number;
-  readonly LastModifiedDate: Date;
-  readonly LastModifiedBy: string;
-  readonly DeviceLastModifiedDate: Date;
+export interface GetBulkPublishDetailsResponse {
+  readonly IdentityPoolId?: string;
+  readonly BulkPublishStartTime?: Date;
+  readonly BulkPublishCompleteTime?: Date;
+  readonly BulkPublishStatus?: string;
+  readonly FailureMessage?: string;
 }
 
-interface RecordPatch {
+export interface GetCognitoEventsRequest {
+  readonly IdentityPoolId: string;
+}
+
+export interface GetCognitoEventsResponse {
+  readonly Events?: {[key: string]: any};
+}
+
+export interface GetIdentityPoolConfigurationRequest {
+  readonly IdentityPoolId: string;
+}
+
+export interface GetIdentityPoolConfigurationResponse {
+  readonly IdentityPoolId?: string;
+  readonly PushSync?: PushSync;
+  readonly CognitoStreams?: CognitoStreams;
+}
+
+export interface IdentityPoolUsage {
+  readonly IdentityPoolId?: string;
+  readonly SyncSessionsCount?: number;
+  readonly DataStorage?: number;
+  readonly LastModifiedDate?: Date;
+}
+
+export interface IdentityUsage {
+  readonly IdentityId?: string;
+  readonly IdentityPoolId?: string;
+  readonly LastModifiedDate?: Date;
+  readonly DatasetCount?: number;
+  readonly DataStorage?: number;
+}
+
+export interface InternalErrorException {
+  readonly message: string;
+}
+
+export interface InvalidConfigurationException {
+  readonly message: string;
+}
+
+export interface InvalidLambdaFunctionOutputException {
+  readonly message: string;
+}
+
+export interface InvalidParameterException {
+  readonly message: string;
+}
+
+export interface LambdaThrottledException {
+  readonly message: string;
+}
+
+export interface LimitExceededException {
+  readonly message: string;
+}
+
+export interface ListDatasetsRequest {
+  readonly IdentityPoolId: string;
+  readonly IdentityId: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface ListDatasetsResponse {
+  readonly Datasets?: [];
+  readonly Count?: number;
+  readonly NextToken?: string;
+}
+
+export interface ListIdentityPoolUsageRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface ListIdentityPoolUsageResponse {
+  readonly IdentityPoolUsages?: [];
+  readonly MaxResults?: number;
+  readonly Count?: number;
+  readonly NextToken?: string;
+}
+
+export interface ListRecordsRequest {
+  readonly IdentityPoolId: string;
+  readonly IdentityId: string;
+  readonly DatasetName: string;
+  readonly LastSyncCount?: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly SyncSessionToken?: string;
+}
+
+export interface ListRecordsResponse {
+  readonly Records?: [];
+  readonly NextToken?: string;
+  readonly Count?: number;
+  readonly DatasetSyncCount?: number;
+  readonly LastModifiedBy?: string;
+  readonly MergedDatasetNames?: [];
+  readonly DatasetExists?: boolean;
+  readonly DatasetDeletedAfterRequestedSyncCount?: boolean;
+  readonly SyncSessionToken?: string;
+}
+
+export interface NotAuthorizedException {
+  readonly message: string;
+}
+
+export interface PushSync {
+  readonly ApplicationArns?: [];
+  readonly RoleArn?: string;
+}
+
+export interface Record {
+  readonly Key?: string;
+  readonly Value?: string;
+  readonly SyncCount?: number;
+  readonly LastModifiedDate?: Date;
+  readonly LastModifiedBy?: string;
+  readonly DeviceLastModifiedDate?: Date;
+}
+
+export interface RecordPatch {
   readonly Op: string;
   readonly Key: string;
-  readonly Value: string;
+  readonly Value?: string;
   readonly SyncCount: number;
-  readonly DeviceLastModifiedDate: Date;
+  readonly DeviceLastModifiedDate?: Date;
 }
 
-interface RegisterDeviceRequest {
+export interface RegisterDeviceRequest {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly Platform: string;
   readonly Token: string;
 }
 
-interface RegisterDeviceResponse {
-  readonly DeviceId: string;
+export interface RegisterDeviceResponse {
+  readonly DeviceId?: string;
 }
 
-interface ResourceConflictException {
+export interface ResourceConflictException {
   readonly message: string;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
 }
 
-interface SetCognitoEventsRequest {
+export interface SetCognitoEventsRequest {
   readonly IdentityPoolId: string;
   readonly Events: {[key: string]: any};
 }
 
-interface SetIdentityPoolConfigurationRequest {
+export interface SetIdentityPoolConfigurationRequest {
   readonly IdentityPoolId: string;
-  readonly PushSync: PushSync;
-  readonly CognitoStreams: CognitoStreams;
+  readonly PushSync?: PushSync;
+  readonly CognitoStreams?: CognitoStreams;
 }
 
-interface SetIdentityPoolConfigurationResponse {
-  readonly IdentityPoolId: string;
-  readonly PushSync: PushSync;
-  readonly CognitoStreams: CognitoStreams;
+export interface SetIdentityPoolConfigurationResponse {
+  readonly IdentityPoolId?: string;
+  readonly PushSync?: PushSync;
+  readonly CognitoStreams?: CognitoStreams;
 }
 
-interface SubscribeToDatasetRequest {
+export interface SubscribeToDatasetRequest {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly DatasetName: string;
   readonly DeviceId: string;
 }
 
-interface SubscribeToDatasetResponse {
+export interface SubscribeToDatasetResponse {
 }
 
-interface TooManyRequestsException {
+export interface TooManyRequestsException {
   readonly message: string;
 }
 
-interface UnsubscribeFromDatasetRequest {
+export interface UnsubscribeFromDatasetRequest {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly DatasetName: string;
   readonly DeviceId: string;
 }
 
-interface UnsubscribeFromDatasetResponse {
+export interface UnsubscribeFromDatasetResponse {
 }
 
-interface UpdateRecordsRequest {
+export interface UpdateRecordsRequest {
   readonly IdentityPoolId: string;
   readonly IdentityId: string;
   readonly DatasetName: string;
-  readonly DeviceId: string;
-  readonly RecordPatches: [];
+  readonly DeviceId?: string;
+  readonly RecordPatches?: [];
   readonly SyncSessionToken: string;
-  readonly ClientContext: string;
+  readonly ClientContext?: string;
 }
 
-interface UpdateRecordsResponse {
-  readonly Records: [];
+export interface UpdateRecordsResponse {
+  readonly Records?: [];
 }
+
 

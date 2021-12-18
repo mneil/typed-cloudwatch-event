@@ -8,9 +8,11 @@ export interface CreateLifecyclePolicy {
   readonly PolicyDetails: PolicyDetails;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface DeleteLifecyclePolicy {
   readonly PolicyId: string;
 }
+
 export interface GetLifecyclePolicies {
   readonly PolicyIds?: [];
   readonly State?: string;
@@ -18,20 +20,25 @@ export interface GetLifecyclePolicies {
   readonly TargetTags?: [];
   readonly TagsToAdd?: [];
 }
+
 export interface GetLifecyclePolicy {
   readonly PolicyId: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateLifecyclePolicy {
   readonly PolicyId: string;
   readonly ExecutionRoleArn?: string;
@@ -40,239 +47,238 @@ export interface UpdateLifecyclePolicy {
   readonly PolicyDetails?: PolicyDetails;
 }
 
-
-
-interface Action {
+export interface Action {
   readonly Name: string;
   readonly CrossRegionCopy: [];
 }
 
-interface CreateLifecyclePolicyRequest {
+export interface CreateLifecyclePolicyRequest {
   readonly ExecutionRoleArn: string;
   readonly Description: string;
   readonly State: string;
   readonly PolicyDetails: PolicyDetails;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateLifecyclePolicyResponse {
-  readonly PolicyId: string;
+export interface CreateLifecyclePolicyResponse {
+  readonly PolicyId?: string;
 }
 
-interface CreateRule {
-  readonly Location: string;
-  readonly Interval: number;
-  readonly IntervalUnit: string;
-  readonly Times: [];
-  readonly CronExpression: string;
+export interface CreateRule {
+  readonly Location?: string;
+  readonly Interval?: number;
+  readonly IntervalUnit?: string;
+  readonly Times?: [];
+  readonly CronExpression?: string;
 }
 
-interface CrossRegionCopyAction {
+export interface CrossRegionCopyAction {
   readonly Target: string;
   readonly EncryptionConfiguration: EncryptionConfiguration;
-  readonly RetainRule: CrossRegionCopyRetainRule;
+  readonly RetainRule?: CrossRegionCopyRetainRule;
 }
 
-interface CrossRegionCopyDeprecateRule {
-  readonly Interval: number;
-  readonly IntervalUnit: string;
+export interface CrossRegionCopyDeprecateRule {
+  readonly Interval?: number;
+  readonly IntervalUnit?: string;
 }
 
-interface CrossRegionCopyRetainRule {
-  readonly Interval: number;
-  readonly IntervalUnit: string;
+export interface CrossRegionCopyRetainRule {
+  readonly Interval?: number;
+  readonly IntervalUnit?: string;
 }
 
-interface CrossRegionCopyRule {
-  readonly TargetRegion: string;
-  readonly Target: string;
+export interface CrossRegionCopyRule {
+  readonly TargetRegion?: string;
+  readonly Target?: string;
   readonly Encrypted: boolean;
-  readonly CmkArn: string;
-  readonly CopyTags: boolean;
-  readonly RetainRule: CrossRegionCopyRetainRule;
-  readonly DeprecateRule: CrossRegionCopyDeprecateRule;
+  readonly CmkArn?: string;
+  readonly CopyTags?: boolean;
+  readonly RetainRule?: CrossRegionCopyRetainRule;
+  readonly DeprecateRule?: CrossRegionCopyDeprecateRule;
 }
 
-interface DeleteLifecyclePolicyRequest {
+export interface DeleteLifecyclePolicyRequest {
   readonly PolicyId: string;
 }
 
-interface DeleteLifecyclePolicyResponse {
+export interface DeleteLifecyclePolicyResponse {
 }
 
-interface DeprecateRule {
-  readonly Count: number;
-  readonly Interval: number;
-  readonly IntervalUnit: string;
+export interface DeprecateRule {
+  readonly Count?: number;
+  readonly Interval?: number;
+  readonly IntervalUnit?: string;
 }
 
-interface EncryptionConfiguration {
+export interface EncryptionConfiguration {
   readonly Encrypted: boolean;
-  readonly CmkArn: string;
+  readonly CmkArn?: string;
 }
 
-interface EventParameters {
+export interface EventParameters {
   readonly EventType: string;
   readonly SnapshotOwner: [];
   readonly DescriptionRegex: string;
 }
 
-interface EventSource {
+export interface EventSource {
   readonly Type: string;
-  readonly Parameters: EventParameters;
+  readonly Parameters?: EventParameters;
 }
 
-interface FastRestoreRule {
-  readonly Count: number;
-  readonly Interval: number;
-  readonly IntervalUnit: string;
+export interface FastRestoreRule {
+  readonly Count?: number;
+  readonly Interval?: number;
+  readonly IntervalUnit?: string;
   readonly AvailabilityZones: [];
 }
 
-interface GetLifecyclePoliciesRequest {
-  readonly PolicyIds: [];
-  readonly State: string;
-  readonly ResourceTypes: [];
-  readonly TargetTags: [];
-  readonly TagsToAdd: [];
+export interface GetLifecyclePoliciesRequest {
+  readonly PolicyIds?: [];
+  readonly State?: string;
+  readonly ResourceTypes?: [];
+  readonly TargetTags?: [];
+  readonly TagsToAdd?: [];
 }
 
-interface GetLifecyclePoliciesResponse {
-  readonly Policies: [];
+export interface GetLifecyclePoliciesResponse {
+  readonly Policies?: [];
 }
 
-interface GetLifecyclePolicyRequest {
+export interface GetLifecyclePolicyRequest {
   readonly PolicyId: string;
 }
 
-interface GetLifecyclePolicyResponse {
-  readonly Policy: LifecyclePolicy;
+export interface GetLifecyclePolicyResponse {
+  readonly Policy?: LifecyclePolicy;
 }
 
-interface InternalServerException {
-  readonly Message: string;
-  readonly Code: string;
+export interface InternalServerException {
+  readonly Message?: string;
+  readonly Code?: string;
 }
 
-interface InvalidRequestException {
-  readonly Message: string;
-  readonly Code: string;
-  readonly RequiredParameters: [];
-  readonly MutuallyExclusiveParameters: [];
+export interface InvalidRequestException {
+  readonly Message?: string;
+  readonly Code?: string;
+  readonly RequiredParameters?: [];
+  readonly MutuallyExclusiveParameters?: [];
 }
 
-interface LifecyclePolicy {
-  readonly PolicyId: string;
-  readonly Description: string;
-  readonly State: string;
-  readonly StatusMessage: string;
-  readonly ExecutionRoleArn: string;
-  readonly DateCreated: Date;
-  readonly DateModified: Date;
-  readonly PolicyDetails: PolicyDetails;
-  readonly Tags: {[key: string]: any};
-  readonly PolicyArn: string;
+export interface LifecyclePolicy {
+  readonly PolicyId?: string;
+  readonly Description?: string;
+  readonly State?: string;
+  readonly StatusMessage?: string;
+  readonly ExecutionRoleArn?: string;
+  readonly DateCreated?: Date;
+  readonly DateModified?: Date;
+  readonly PolicyDetails?: PolicyDetails;
+  readonly Tags?: {[key: string]: any};
+  readonly PolicyArn?: string;
 }
 
-interface LifecyclePolicySummary {
-  readonly PolicyId: string;
-  readonly Description: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
-  readonly PolicyType: string;
+export interface LifecyclePolicySummary {
+  readonly PolicyId?: string;
+  readonly Description?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly PolicyType?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
-  readonly Code: string;
-  readonly ResourceType: string;
+export interface LimitExceededException {
+  readonly Message?: string;
+  readonly Code?: string;
+  readonly ResourceType?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface Parameters {
-  readonly ExcludeBootVolume: boolean;
-  readonly NoReboot: boolean;
+export interface Parameters {
+  readonly ExcludeBootVolume?: boolean;
+  readonly NoReboot?: boolean;
 }
 
-interface PolicyDetails {
-  readonly PolicyType: string;
-  readonly ResourceTypes: [];
-  readonly ResourceLocations: [];
-  readonly TargetTags: [];
-  readonly Schedules: [];
-  readonly Parameters: Parameters;
-  readonly EventSource: EventSource;
-  readonly Actions: [];
+export interface PolicyDetails {
+  readonly PolicyType?: string;
+  readonly ResourceTypes?: [];
+  readonly ResourceLocations?: [];
+  readonly TargetTags?: [];
+  readonly Schedules?: [];
+  readonly Parameters?: Parameters;
+  readonly EventSource?: EventSource;
+  readonly Actions?: [];
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
-  readonly Code: string;
-  readonly ResourceType: string;
-  readonly ResourceIds: [];
+export interface ResourceNotFoundException {
+  readonly Message?: string;
+  readonly Code?: string;
+  readonly ResourceType?: string;
+  readonly ResourceIds?: [];
 }
 
-interface RetainRule {
-  readonly Count: number;
-  readonly Interval: number;
-  readonly IntervalUnit: string;
+export interface RetainRule {
+  readonly Count?: number;
+  readonly Interval?: number;
+  readonly IntervalUnit?: string;
 }
 
-interface Schedule {
-  readonly Name: string;
-  readonly CopyTags: boolean;
-  readonly TagsToAdd: [];
-  readonly VariableTags: [];
-  readonly CreateRule: CreateRule;
-  readonly RetainRule: RetainRule;
-  readonly FastRestoreRule: FastRestoreRule;
-  readonly CrossRegionCopyRules: [];
-  readonly ShareRules: [];
-  readonly DeprecateRule: DeprecateRule;
+export interface Schedule {
+  readonly Name?: string;
+  readonly CopyTags?: boolean;
+  readonly TagsToAdd?: [];
+  readonly VariableTags?: [];
+  readonly CreateRule?: CreateRule;
+  readonly RetainRule?: RetainRule;
+  readonly FastRestoreRule?: FastRestoreRule;
+  readonly CrossRegionCopyRules?: [];
+  readonly ShareRules?: [];
+  readonly DeprecateRule?: DeprecateRule;
 }
 
-interface ShareRule {
+export interface ShareRule {
   readonly TargetAccounts: [];
-  readonly UnshareInterval: number;
-  readonly UnshareIntervalUnit: string;
+  readonly UnshareInterval?: number;
+  readonly UnshareIntervalUnit?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateLifecyclePolicyRequest {
+export interface UpdateLifecyclePolicyRequest {
   readonly PolicyId: string;
-  readonly ExecutionRoleArn: string;
-  readonly State: string;
-  readonly Description: string;
-  readonly PolicyDetails: PolicyDetails;
+  readonly ExecutionRoleArn?: string;
+  readonly State?: string;
+  readonly Description?: string;
+  readonly PolicyDetails?: PolicyDetails;
 }
 
-interface UpdateLifecyclePolicyResponse {
+export interface UpdateLifecyclePolicyResponse {
 }
+
 

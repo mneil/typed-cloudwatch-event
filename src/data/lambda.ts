@@ -10,6 +10,7 @@ export interface AddLayerVersionPermission {
   readonly OrganizationId?: string;
   readonly RevisionId?: string;
 }
+
 export interface AddPermission {
   readonly FunctionName: string;
   readonly StatementId: string;
@@ -21,6 +22,7 @@ export interface AddPermission {
   readonly Qualifier?: string;
   readonly RevisionId?: string;
 }
+
 export interface CreateAlias {
   readonly FunctionName: string;
   readonly Name: string;
@@ -28,11 +30,13 @@ export interface CreateAlias {
   readonly Description?: string;
   readonly RoutingConfig?: AliasRoutingConfiguration;
 }
+
 export interface CreateCodeSigningConfig {
   readonly Description?: string;
   readonly AllowedPublishers: AllowedPublishers;
   readonly CodeSigningPolicies?: CodeSigningPolicies;
 }
+
 export interface CreateEventSourceMapping {
   readonly EventSourceArn?: string;
   readonly FunctionName: string;
@@ -54,6 +58,7 @@ export interface CreateEventSourceMapping {
   readonly SelfManagedEventSource?: SelfManagedEventSource;
   readonly FunctionResponseTypes?: [];
 }
+
 export interface CreateFunction {
   readonly FunctionName: string;
   readonly Runtime?: string;
@@ -77,87 +82,111 @@ export interface CreateFunction {
   readonly CodeSigningConfigArn?: string;
   readonly Architectures?: [];
 }
+
 export interface DeleteAlias {
   readonly FunctionName: string;
   readonly Name: string;
 }
+
 export interface DeleteCodeSigningConfig {
   readonly CodeSigningConfigArn: string;
 }
+
 export interface DeleteEventSourceMapping {
   readonly UUID: string;
 }
+
 export interface DeleteFunction {
   readonly FunctionName: string;
   readonly Qualifier?: string;
 }
+
 export interface DeleteFunctionCodeSigningConfig {
   readonly FunctionName: string;
 }
+
 export interface DeleteFunctionConcurrency {
   readonly FunctionName: string;
 }
+
 export interface DeleteFunctionEventInvokeConfig {
   readonly FunctionName: string;
   readonly Qualifier?: string;
 }
+
 export interface DeleteLayerVersion {
   readonly LayerName: string;
   readonly VersionNumber: number;
 }
+
 export interface DeleteProvisionedConcurrencyConfig {
   readonly FunctionName: string;
   readonly Qualifier: string;
 }
+
 export interface GetAccountSettings {
 }
+
 export interface GetAlias {
   readonly FunctionName: string;
   readonly Name: string;
 }
+
 export interface GetCodeSigningConfig {
   readonly CodeSigningConfigArn: string;
 }
+
 export interface GetEventSourceMapping {
   readonly UUID: string;
 }
+
 export interface GetFunction {
   readonly FunctionName: string;
   readonly Qualifier?: string;
 }
+
 export interface GetFunctionCodeSigningConfig {
   readonly FunctionName: string;
 }
+
 export interface GetFunctionConcurrency {
   readonly FunctionName: string;
 }
+
 export interface GetFunctionConfiguration {
   readonly FunctionName: string;
   readonly Qualifier?: string;
 }
+
 export interface GetFunctionEventInvokeConfig {
   readonly FunctionName: string;
   readonly Qualifier?: string;
 }
+
 export interface GetLayerVersion {
   readonly LayerName: string;
   readonly VersionNumber: number;
 }
+
 export interface GetLayerVersionByArn {
   readonly Arn: string;
 }
+
 export interface GetLayerVersionPolicy {
   readonly LayerName: string;
   readonly VersionNumber: number;
 }
+
 export interface GetPolicy {
   readonly FunctionName: string;
   readonly Qualifier?: string;
 }
+
 export interface GetProvisionedConcurrencyConfig {
   readonly FunctionName: string;
   readonly Qualifier: string;
 }
+
 export interface Invoke {
   readonly FunctionName: string;
   readonly InvocationType?: string;
@@ -166,42 +195,50 @@ export interface Invoke {
   readonly Payload?: unknown;
   readonly Qualifier?: string;
 }
+
 export interface InvokeAsync {
   readonly FunctionName: string;
   readonly InvokeArgs: unknown;
 }
+
 export interface ListAliases {
   readonly FunctionName: string;
   readonly FunctionVersion?: string;
   readonly Marker?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListCodeSigningConfigs {
   readonly Marker?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListEventSourceMappings {
   readonly EventSourceArn?: string;
   readonly FunctionName?: string;
   readonly Marker?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListFunctionEventInvokeConfigs {
   readonly FunctionName: string;
   readonly Marker?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListFunctions {
   readonly MasterRegion?: string;
   readonly FunctionVersion?: string;
   readonly Marker?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListFunctionsByCodeSigningConfig {
   readonly CodeSigningConfigArn: string;
   readonly Marker?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListLayerVersions {
   readonly CompatibleRuntime?: string;
   readonly LayerName: string;
@@ -209,25 +246,30 @@ export interface ListLayerVersions {
   readonly MaxItems?: number;
   readonly CompatibleArchitecture?: string;
 }
+
 export interface ListLayers {
   readonly CompatibleRuntime?: string;
   readonly Marker?: string;
   readonly MaxItems?: number;
   readonly CompatibleArchitecture?: string;
 }
+
 export interface ListProvisionedConcurrencyConfigs {
   readonly FunctionName: string;
   readonly Marker?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListTags {
   readonly Resource: string;
 }
+
 export interface ListVersionsByFunction {
   readonly FunctionName: string;
   readonly Marker?: string;
   readonly MaxItems?: number;
 }
+
 export interface PublishLayerVersion {
   readonly LayerName: string;
   readonly Description?: string;
@@ -236,20 +278,24 @@ export interface PublishLayerVersion {
   readonly LicenseInfo?: string;
   readonly CompatibleArchitectures?: [];
 }
+
 export interface PublishVersion {
   readonly FunctionName: string;
   readonly CodeSha256?: string;
   readonly Description?: string;
   readonly RevisionId?: string;
 }
+
 export interface PutFunctionCodeSigningConfig {
   readonly CodeSigningConfigArn: string;
   readonly FunctionName: string;
 }
+
 export interface PutFunctionConcurrency {
   readonly FunctionName: string;
   readonly ReservedConcurrentExecutions: number;
 }
+
 export interface PutFunctionEventInvokeConfig {
   readonly FunctionName: string;
   readonly Qualifier?: string;
@@ -257,31 +303,37 @@ export interface PutFunctionEventInvokeConfig {
   readonly MaximumEventAgeInSeconds?: number;
   readonly DestinationConfig?: DestinationConfig;
 }
+
 export interface PutProvisionedConcurrencyConfig {
   readonly FunctionName: string;
   readonly Qualifier: string;
   readonly ProvisionedConcurrentExecutions: number;
 }
+
 export interface RemoveLayerVersionPermission {
   readonly LayerName: string;
   readonly VersionNumber: number;
   readonly StatementId: string;
   readonly RevisionId?: string;
 }
+
 export interface RemovePermission {
   readonly FunctionName: string;
   readonly StatementId: string;
   readonly Qualifier?: string;
   readonly RevisionId?: string;
 }
+
 export interface TagResource {
   readonly Resource: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly Resource: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateAlias {
   readonly FunctionName: string;
   readonly Name: string;
@@ -290,12 +342,14 @@ export interface UpdateAlias {
   readonly RoutingConfig?: AliasRoutingConfiguration;
   readonly RevisionId?: string;
 }
+
 export interface UpdateCodeSigningConfig {
   readonly CodeSigningConfigArn: string;
   readonly Description?: string;
   readonly AllowedPublishers?: AllowedPublishers;
   readonly CodeSigningPolicies?: CodeSigningPolicies;
 }
+
 export interface UpdateEventSourceMapping {
   readonly UUID: string;
   readonly FunctionName?: string;
@@ -312,6 +366,7 @@ export interface UpdateEventSourceMapping {
   readonly TumblingWindowInSeconds?: number;
   readonly FunctionResponseTypes?: [];
 }
+
 export interface UpdateFunctionCode {
   readonly FunctionName: string;
   readonly ZipFile?: unknown;
@@ -324,6 +379,7 @@ export interface UpdateFunctionCode {
   readonly RevisionId?: string;
   readonly Architectures?: [];
 }
+
 export interface UpdateFunctionConfiguration {
   readonly FunctionName: string;
   readonly Role?: string;
@@ -342,6 +398,7 @@ export interface UpdateFunctionConfiguration {
   readonly FileSystemConfigs?: [];
   readonly ImageConfig?: ImageConfig;
 }
+
 export interface UpdateFunctionEventInvokeConfig {
   readonly FunctionName: string;
   readonly Qualifier?: string;
@@ -350,1019 +407,1018 @@ export interface UpdateFunctionEventInvokeConfig {
   readonly DestinationConfig?: DestinationConfig;
 }
 
-
-
-interface AccountLimit {
-  readonly TotalCodeSize: number;
-  readonly CodeSizeUnzipped: number;
-  readonly CodeSizeZipped: number;
-  readonly ConcurrentExecutions: number;
-  readonly UnreservedConcurrentExecutions: number;
+export interface AccountLimit {
+  readonly TotalCodeSize?: number;
+  readonly CodeSizeUnzipped?: number;
+  readonly CodeSizeZipped?: number;
+  readonly ConcurrentExecutions?: number;
+  readonly UnreservedConcurrentExecutions?: number;
 }
 
-interface AccountUsage {
-  readonly TotalCodeSize: number;
-  readonly FunctionCount: number;
+export interface AccountUsage {
+  readonly TotalCodeSize?: number;
+  readonly FunctionCount?: number;
 }
 
-interface AddLayerVersionPermissionRequest {
+export interface AddLayerVersionPermissionRequest {
   readonly LayerName: string;
   readonly VersionNumber: number;
   readonly StatementId: string;
   readonly Action: string;
   readonly Principal: string;
-  readonly OrganizationId: string;
-  readonly RevisionId: string;
+  readonly OrganizationId?: string;
+  readonly RevisionId?: string;
 }
 
-interface AddLayerVersionPermissionResponse {
-  readonly Statement: string;
-  readonly RevisionId: string;
+export interface AddLayerVersionPermissionResponse {
+  readonly Statement?: string;
+  readonly RevisionId?: string;
 }
 
-interface AddPermissionRequest {
+export interface AddPermissionRequest {
   readonly FunctionName: string;
   readonly StatementId: string;
   readonly Action: string;
   readonly Principal: string;
-  readonly SourceArn: string;
-  readonly SourceAccount: string;
-  readonly EventSourceToken: string;
-  readonly Qualifier: string;
-  readonly RevisionId: string;
+  readonly SourceArn?: string;
+  readonly SourceAccount?: string;
+  readonly EventSourceToken?: string;
+  readonly Qualifier?: string;
+  readonly RevisionId?: string;
 }
 
-interface AddPermissionResponse {
-  readonly Statement: string;
+export interface AddPermissionResponse {
+  readonly Statement?: string;
 }
 
-interface AliasConfiguration {
-  readonly AliasArn: string;
-  readonly Name: string;
-  readonly FunctionVersion: string;
-  readonly Description: string;
-  readonly RoutingConfig: AliasRoutingConfiguration;
-  readonly RevisionId: string;
+export interface AliasConfiguration {
+  readonly AliasArn?: string;
+  readonly Name?: string;
+  readonly FunctionVersion?: string;
+  readonly Description?: string;
+  readonly RoutingConfig?: AliasRoutingConfiguration;
+  readonly RevisionId?: string;
 }
 
-interface AliasRoutingConfiguration {
-  readonly AdditionalVersionWeights: {[key: string]: any};
+export interface AliasRoutingConfiguration {
+  readonly AdditionalVersionWeights?: {[key: string]: any};
 }
 
-interface AllowedPublishers {
+export interface AllowedPublishers {
   readonly SigningProfileVersionArns: [];
 }
 
-interface CodeSigningConfig {
+export interface CodeSigningConfig {
   readonly CodeSigningConfigId: string;
   readonly CodeSigningConfigArn: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly AllowedPublishers: AllowedPublishers;
   readonly CodeSigningPolicies: CodeSigningPolicies;
   readonly LastModified: string;
 }
 
-interface CodeSigningConfigNotFoundException {
-  readonly Type: string;
-  readonly Message: string;
+export interface CodeSigningConfigNotFoundException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface CodeSigningPolicies {
-  readonly UntrustedArtifactOnDeployment: string;
+export interface CodeSigningPolicies {
+  readonly UntrustedArtifactOnDeployment?: string;
 }
 
-interface CodeStorageExceededException {
-  readonly Type: string;
-  readonly message: string;
+export interface CodeStorageExceededException {
+  readonly Type?: string;
+  readonly message?: string;
 }
 
-interface CodeVerificationFailedException {
-  readonly Type: string;
-  readonly Message: string;
+export interface CodeVerificationFailedException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface Concurrency {
-  readonly ReservedConcurrentExecutions: number;
+export interface Concurrency {
+  readonly ReservedConcurrentExecutions?: number;
 }
 
-interface CreateAliasRequest {
+export interface CreateAliasRequest {
   readonly FunctionName: string;
   readonly Name: string;
   readonly FunctionVersion: string;
-  readonly Description: string;
-  readonly RoutingConfig: AliasRoutingConfiguration;
+  readonly Description?: string;
+  readonly RoutingConfig?: AliasRoutingConfiguration;
 }
 
-interface CreateCodeSigningConfigRequest {
-  readonly Description: string;
+export interface CreateCodeSigningConfigRequest {
+  readonly Description?: string;
   readonly AllowedPublishers: AllowedPublishers;
-  readonly CodeSigningPolicies: CodeSigningPolicies;
+  readonly CodeSigningPolicies?: CodeSigningPolicies;
 }
 
-interface CreateCodeSigningConfigResponse {
+export interface CreateCodeSigningConfigResponse {
   readonly CodeSigningConfig: CodeSigningConfig;
 }
 
-interface CreateEventSourceMappingRequest {
-  readonly EventSourceArn: string;
+export interface CreateEventSourceMappingRequest {
+  readonly EventSourceArn?: string;
   readonly FunctionName: string;
-  readonly Enabled: boolean;
-  readonly BatchSize: number;
-  readonly FilterCriteria: FilterCriteria;
-  readonly MaximumBatchingWindowInSeconds: number;
-  readonly ParallelizationFactor: number;
-  readonly StartingPosition: string;
-  readonly StartingPositionTimestamp: Date;
-  readonly DestinationConfig: DestinationConfig;
-  readonly MaximumRecordAgeInSeconds: number;
-  readonly BisectBatchOnFunctionError: boolean;
-  readonly MaximumRetryAttempts: number;
-  readonly TumblingWindowInSeconds: number;
-  readonly Topics: [];
-  readonly Queues: [];
-  readonly SourceAccessConfigurations: [];
-  readonly SelfManagedEventSource: SelfManagedEventSource;
-  readonly FunctionResponseTypes: [];
+  readonly Enabled?: boolean;
+  readonly BatchSize?: number;
+  readonly FilterCriteria?: FilterCriteria;
+  readonly MaximumBatchingWindowInSeconds?: number;
+  readonly ParallelizationFactor?: number;
+  readonly StartingPosition?: string;
+  readonly StartingPositionTimestamp?: Date;
+  readonly DestinationConfig?: DestinationConfig;
+  readonly MaximumRecordAgeInSeconds?: number;
+  readonly BisectBatchOnFunctionError?: boolean;
+  readonly MaximumRetryAttempts?: number;
+  readonly TumblingWindowInSeconds?: number;
+  readonly Topics?: [];
+  readonly Queues?: [];
+  readonly SourceAccessConfigurations?: [];
+  readonly SelfManagedEventSource?: SelfManagedEventSource;
+  readonly FunctionResponseTypes?: [];
 }
 
-interface CreateFunctionRequest {
+export interface CreateFunctionRequest {
   readonly FunctionName: string;
-  readonly Runtime: string;
+  readonly Runtime?: string;
   readonly Role: string;
-  readonly Handler: string;
+  readonly Handler?: string;
   readonly Code: FunctionCode;
-  readonly Description: string;
-  readonly Timeout: number;
-  readonly MemorySize: number;
-  readonly Publish: boolean;
-  readonly VpcConfig: VpcConfig;
-  readonly PackageType: string;
-  readonly DeadLetterConfig: DeadLetterConfig;
-  readonly Environment: Environment;
-  readonly KMSKeyArn: string;
-  readonly TracingConfig: TracingConfig;
-  readonly Tags: {[key: string]: any};
-  readonly Layers: [];
-  readonly FileSystemConfigs: [];
-  readonly ImageConfig: ImageConfig;
-  readonly CodeSigningConfigArn: string;
-  readonly Architectures: [];
+  readonly Description?: string;
+  readonly Timeout?: number;
+  readonly MemorySize?: number;
+  readonly Publish?: boolean;
+  readonly VpcConfig?: VpcConfig;
+  readonly PackageType?: string;
+  readonly DeadLetterConfig?: DeadLetterConfig;
+  readonly Environment?: Environment;
+  readonly KMSKeyArn?: string;
+  readonly TracingConfig?: TracingConfig;
+  readonly Tags?: {[key: string]: any};
+  readonly Layers?: [];
+  readonly FileSystemConfigs?: [];
+  readonly ImageConfig?: ImageConfig;
+  readonly CodeSigningConfigArn?: string;
+  readonly Architectures?: [];
 }
 
-interface DeadLetterConfig {
-  readonly TargetArn: string;
+export interface DeadLetterConfig {
+  readonly TargetArn?: string;
 }
 
-interface DeleteAliasRequest {
+export interface DeleteAliasRequest {
   readonly FunctionName: string;
   readonly Name: string;
 }
 
-interface DeleteCodeSigningConfigRequest {
+export interface DeleteCodeSigningConfigRequest {
   readonly CodeSigningConfigArn: string;
 }
 
-interface DeleteCodeSigningConfigResponse {
+export interface DeleteCodeSigningConfigResponse {
 }
 
-interface DeleteEventSourceMappingRequest {
+export interface DeleteEventSourceMappingRequest {
   readonly UUID: string;
 }
 
-interface DeleteFunctionCodeSigningConfigRequest {
+export interface DeleteFunctionCodeSigningConfigRequest {
   readonly FunctionName: string;
 }
 
-interface DeleteFunctionConcurrencyRequest {
+export interface DeleteFunctionConcurrencyRequest {
   readonly FunctionName: string;
 }
 
-interface DeleteFunctionEventInvokeConfigRequest {
+export interface DeleteFunctionEventInvokeConfigRequest {
   readonly FunctionName: string;
-  readonly Qualifier: string;
+  readonly Qualifier?: string;
 }
 
-interface DeleteFunctionRequest {
+export interface DeleteFunctionRequest {
   readonly FunctionName: string;
-  readonly Qualifier: string;
+  readonly Qualifier?: string;
 }
 
-interface DeleteLayerVersionRequest {
+export interface DeleteLayerVersionRequest {
   readonly LayerName: string;
   readonly VersionNumber: number;
 }
 
-interface DeleteProvisionedConcurrencyConfigRequest {
+export interface DeleteProvisionedConcurrencyConfigRequest {
   readonly FunctionName: string;
   readonly Qualifier: string;
 }
 
-interface DestinationConfig {
-  readonly OnSuccess: OnSuccess;
-  readonly OnFailure: OnFailure;
+export interface DestinationConfig {
+  readonly OnSuccess?: OnSuccess;
+  readonly OnFailure?: OnFailure;
 }
 
-interface EC2AccessDeniedException {
-  readonly Type: string;
-  readonly Message: string;
+export interface EC2AccessDeniedException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface EC2ThrottledException {
-  readonly Type: string;
-  readonly Message: string;
+export interface EC2ThrottledException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface EC2UnexpectedException {
-  readonly Type: string;
-  readonly Message: string;
-  readonly EC2ErrorCode: string;
+export interface EC2UnexpectedException {
+  readonly Type?: string;
+  readonly Message?: string;
+  readonly EC2ErrorCode?: string;
 }
 
-interface EFSIOException {
-  readonly Type: string;
-  readonly Message: string;
+export interface EFSIOException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface EFSMountConnectivityException {
-  readonly Type: string;
-  readonly Message: string;
+export interface EFSMountConnectivityException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface EFSMountFailureException {
-  readonly Type: string;
-  readonly Message: string;
+export interface EFSMountFailureException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface EFSMountTimeoutException {
-  readonly Type: string;
-  readonly Message: string;
+export interface EFSMountTimeoutException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface ENILimitReachedException {
-  readonly Type: string;
-  readonly Message: string;
+export interface ENILimitReachedException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface Environment {
-  readonly Variables: {[key: string]: any};
+export interface Environment {
+  readonly Variables?: {[key: string]: any};
 }
 
-interface EnvironmentError {
-  readonly ErrorCode: string;
-  readonly Message: string;
+export interface EnvironmentError {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
 }
 
-interface EnvironmentResponse {
-  readonly Variables: {[key: string]: any};
-  readonly Error: EnvironmentError;
+export interface EnvironmentResponse {
+  readonly Variables?: {[key: string]: any};
+  readonly Error?: EnvironmentError;
 }
 
-interface EventSourceMappingConfiguration {
-  readonly UUID: string;
-  readonly StartingPosition: string;
-  readonly StartingPositionTimestamp: Date;
-  readonly BatchSize: number;
-  readonly MaximumBatchingWindowInSeconds: number;
-  readonly ParallelizationFactor: number;
-  readonly EventSourceArn: string;
-  readonly FilterCriteria: FilterCriteria;
-  readonly FunctionArn: string;
-  readonly LastModified: Date;
-  readonly LastProcessingResult: string;
-  readonly State: string;
-  readonly StateTransitionReason: string;
-  readonly DestinationConfig: DestinationConfig;
-  readonly Topics: [];
-  readonly Queues: [];
-  readonly SourceAccessConfigurations: [];
-  readonly SelfManagedEventSource: SelfManagedEventSource;
-  readonly MaximumRecordAgeInSeconds: number;
-  readonly BisectBatchOnFunctionError: boolean;
-  readonly MaximumRetryAttempts: number;
-  readonly TumblingWindowInSeconds: number;
-  readonly FunctionResponseTypes: [];
+export interface EventSourceMappingConfiguration {
+  readonly UUID?: string;
+  readonly StartingPosition?: string;
+  readonly StartingPositionTimestamp?: Date;
+  readonly BatchSize?: number;
+  readonly MaximumBatchingWindowInSeconds?: number;
+  readonly ParallelizationFactor?: number;
+  readonly EventSourceArn?: string;
+  readonly FilterCriteria?: FilterCriteria;
+  readonly FunctionArn?: string;
+  readonly LastModified?: Date;
+  readonly LastProcessingResult?: string;
+  readonly State?: string;
+  readonly StateTransitionReason?: string;
+  readonly DestinationConfig?: DestinationConfig;
+  readonly Topics?: [];
+  readonly Queues?: [];
+  readonly SourceAccessConfigurations?: [];
+  readonly SelfManagedEventSource?: SelfManagedEventSource;
+  readonly MaximumRecordAgeInSeconds?: number;
+  readonly BisectBatchOnFunctionError?: boolean;
+  readonly MaximumRetryAttempts?: number;
+  readonly TumblingWindowInSeconds?: number;
+  readonly FunctionResponseTypes?: [];
 }
 
-interface FileSystemConfig {
+export interface FileSystemConfig {
   readonly Arn: string;
   readonly LocalMountPath: string;
 }
 
-interface Filter {
-  readonly Pattern: string;
+export interface Filter {
+  readonly Pattern?: string;
 }
 
-interface FilterCriteria {
-  readonly Filters: [];
+export interface FilterCriteria {
+  readonly Filters?: [];
 }
 
-interface FunctionCode {
-  readonly ZipFile: unknown;
-  readonly S3Bucket: string;
-  readonly S3Key: string;
-  readonly S3ObjectVersion: string;
-  readonly ImageUri: string;
+export interface FunctionCode {
+  readonly ZipFile?: unknown;
+  readonly S3Bucket?: string;
+  readonly S3Key?: string;
+  readonly S3ObjectVersion?: string;
+  readonly ImageUri?: string;
 }
 
-interface FunctionCodeLocation {
-  readonly RepositoryType: string;
-  readonly Location: string;
-  readonly ImageUri: string;
-  readonly ResolvedImageUri: string;
+export interface FunctionCodeLocation {
+  readonly RepositoryType?: string;
+  readonly Location?: string;
+  readonly ImageUri?: string;
+  readonly ResolvedImageUri?: string;
 }
 
-interface FunctionConfiguration {
-  readonly FunctionName: string;
-  readonly FunctionArn: string;
-  readonly Runtime: string;
-  readonly Role: string;
-  readonly Handler: string;
-  readonly CodeSize: number;
-  readonly Description: string;
-  readonly Timeout: number;
-  readonly MemorySize: number;
-  readonly LastModified: string;
-  readonly CodeSha256: string;
-  readonly Version: string;
-  readonly VpcConfig: VpcConfigResponse;
-  readonly DeadLetterConfig: DeadLetterConfig;
-  readonly Environment: EnvironmentResponse;
-  readonly KMSKeyArn: string;
-  readonly TracingConfig: TracingConfigResponse;
-  readonly MasterArn: string;
-  readonly RevisionId: string;
-  readonly Layers: [];
-  readonly State: string;
-  readonly StateReason: string;
-  readonly StateReasonCode: string;
-  readonly LastUpdateStatus: string;
-  readonly LastUpdateStatusReason: string;
-  readonly LastUpdateStatusReasonCode: string;
-  readonly FileSystemConfigs: [];
-  readonly PackageType: string;
-  readonly ImageConfigResponse: ImageConfigResponse;
-  readonly SigningProfileVersionArn: string;
-  readonly SigningJobArn: string;
-  readonly Architectures: [];
+export interface FunctionConfiguration {
+  readonly FunctionName?: string;
+  readonly FunctionArn?: string;
+  readonly Runtime?: string;
+  readonly Role?: string;
+  readonly Handler?: string;
+  readonly CodeSize?: number;
+  readonly Description?: string;
+  readonly Timeout?: number;
+  readonly MemorySize?: number;
+  readonly LastModified?: string;
+  readonly CodeSha256?: string;
+  readonly Version?: string;
+  readonly VpcConfig?: VpcConfigResponse;
+  readonly DeadLetterConfig?: DeadLetterConfig;
+  readonly Environment?: EnvironmentResponse;
+  readonly KMSKeyArn?: string;
+  readonly TracingConfig?: TracingConfigResponse;
+  readonly MasterArn?: string;
+  readonly RevisionId?: string;
+  readonly Layers?: [];
+  readonly State?: string;
+  readonly StateReason?: string;
+  readonly StateReasonCode?: string;
+  readonly LastUpdateStatus?: string;
+  readonly LastUpdateStatusReason?: string;
+  readonly LastUpdateStatusReasonCode?: string;
+  readonly FileSystemConfigs?: [];
+  readonly PackageType?: string;
+  readonly ImageConfigResponse?: ImageConfigResponse;
+  readonly SigningProfileVersionArn?: string;
+  readonly SigningJobArn?: string;
+  readonly Architectures?: [];
 }
 
-interface FunctionEventInvokeConfig {
-  readonly LastModified: Date;
-  readonly FunctionArn: string;
-  readonly MaximumRetryAttempts: number;
-  readonly MaximumEventAgeInSeconds: number;
-  readonly DestinationConfig: DestinationConfig;
+export interface FunctionEventInvokeConfig {
+  readonly LastModified?: Date;
+  readonly FunctionArn?: string;
+  readonly MaximumRetryAttempts?: number;
+  readonly MaximumEventAgeInSeconds?: number;
+  readonly DestinationConfig?: DestinationConfig;
 }
 
-interface GetAccountSettingsRequest {
+export interface GetAccountSettingsRequest {
 }
 
-interface GetAccountSettingsResponse {
-  readonly AccountLimit: AccountLimit;
-  readonly AccountUsage: AccountUsage;
+export interface GetAccountSettingsResponse {
+  readonly AccountLimit?: AccountLimit;
+  readonly AccountUsage?: AccountUsage;
 }
 
-interface GetAliasRequest {
+export interface GetAliasRequest {
   readonly FunctionName: string;
   readonly Name: string;
 }
 
-interface GetCodeSigningConfigRequest {
+export interface GetCodeSigningConfigRequest {
   readonly CodeSigningConfigArn: string;
 }
 
-interface GetCodeSigningConfigResponse {
+export interface GetCodeSigningConfigResponse {
   readonly CodeSigningConfig: CodeSigningConfig;
 }
 
-interface GetEventSourceMappingRequest {
+export interface GetEventSourceMappingRequest {
   readonly UUID: string;
 }
 
-interface GetFunctionCodeSigningConfigRequest {
+export interface GetFunctionCodeSigningConfigRequest {
   readonly FunctionName: string;
 }
 
-interface GetFunctionCodeSigningConfigResponse {
+export interface GetFunctionCodeSigningConfigResponse {
   readonly CodeSigningConfigArn: string;
   readonly FunctionName: string;
 }
 
-interface GetFunctionConcurrencyRequest {
+export interface GetFunctionConcurrencyRequest {
   readonly FunctionName: string;
 }
 
-interface GetFunctionConcurrencyResponse {
-  readonly ReservedConcurrentExecutions: number;
+export interface GetFunctionConcurrencyResponse {
+  readonly ReservedConcurrentExecutions?: number;
 }
 
-interface GetFunctionConfigurationRequest {
+export interface GetFunctionConfigurationRequest {
   readonly FunctionName: string;
-  readonly Qualifier: string;
+  readonly Qualifier?: string;
 }
 
-interface GetFunctionEventInvokeConfigRequest {
+export interface GetFunctionEventInvokeConfigRequest {
   readonly FunctionName: string;
-  readonly Qualifier: string;
+  readonly Qualifier?: string;
 }
 
-interface GetFunctionRequest {
+export interface GetFunctionRequest {
   readonly FunctionName: string;
-  readonly Qualifier: string;
+  readonly Qualifier?: string;
 }
 
-interface GetFunctionResponse {
-  readonly Configuration: FunctionConfiguration;
-  readonly Code: FunctionCodeLocation;
-  readonly Tags: {[key: string]: any};
-  readonly Concurrency: Concurrency;
+export interface GetFunctionResponse {
+  readonly Configuration?: FunctionConfiguration;
+  readonly Code?: FunctionCodeLocation;
+  readonly Tags?: {[key: string]: any};
+  readonly Concurrency?: Concurrency;
 }
 
-interface GetLayerVersionByArnRequest {
+export interface GetLayerVersionByArnRequest {
   readonly Arn: string;
 }
 
-interface GetLayerVersionPolicyRequest {
+export interface GetLayerVersionPolicyRequest {
   readonly LayerName: string;
   readonly VersionNumber: number;
 }
 
-interface GetLayerVersionPolicyResponse {
-  readonly Policy: string;
-  readonly RevisionId: string;
+export interface GetLayerVersionPolicyResponse {
+  readonly Policy?: string;
+  readonly RevisionId?: string;
 }
 
-interface GetLayerVersionRequest {
+export interface GetLayerVersionRequest {
   readonly LayerName: string;
   readonly VersionNumber: number;
 }
 
-interface GetLayerVersionResponse {
-  readonly Content: LayerVersionContentOutput;
-  readonly LayerArn: string;
-  readonly LayerVersionArn: string;
-  readonly Description: string;
-  readonly CreatedDate: string;
-  readonly Version: number;
-  readonly CompatibleRuntimes: [];
-  readonly LicenseInfo: string;
-  readonly CompatibleArchitectures: [];
+export interface GetLayerVersionResponse {
+  readonly Content?: LayerVersionContentOutput;
+  readonly LayerArn?: string;
+  readonly LayerVersionArn?: string;
+  readonly Description?: string;
+  readonly CreatedDate?: string;
+  readonly Version?: number;
+  readonly CompatibleRuntimes?: [];
+  readonly LicenseInfo?: string;
+  readonly CompatibleArchitectures?: [];
 }
 
-interface GetPolicyRequest {
+export interface GetPolicyRequest {
+  readonly FunctionName: string;
+  readonly Qualifier?: string;
+}
+
+export interface GetPolicyResponse {
+  readonly Policy?: string;
+  readonly RevisionId?: string;
+}
+
+export interface GetProvisionedConcurrencyConfigRequest {
   readonly FunctionName: string;
   readonly Qualifier: string;
 }
 
-interface GetPolicyResponse {
-  readonly Policy: string;
-  readonly RevisionId: string;
+export interface GetProvisionedConcurrencyConfigResponse {
+  readonly RequestedProvisionedConcurrentExecutions?: number;
+  readonly AvailableProvisionedConcurrentExecutions?: number;
+  readonly AllocatedProvisionedConcurrentExecutions?: number;
+  readonly Status?: string;
+  readonly StatusReason?: string;
+  readonly LastModified?: string;
 }
 
-interface GetProvisionedConcurrencyConfigRequest {
+export interface ImageConfig {
+  readonly EntryPoint?: [];
+  readonly Command?: [];
+  readonly WorkingDirectory?: string;
+}
+
+export interface ImageConfigError {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
+}
+
+export interface ImageConfigResponse {
+  readonly ImageConfig?: ImageConfig;
+  readonly Error?: ImageConfigError;
+}
+
+export interface InvalidCodeSignatureException {
+  readonly Type?: string;
+  readonly Message?: string;
+}
+
+export interface InvalidParameterValueException {
+  readonly Type?: string;
+  readonly message?: string;
+}
+
+export interface InvalidRequestContentException {
+  readonly Type?: string;
+  readonly message?: string;
+}
+
+export interface InvalidRuntimeException {
+  readonly Type?: string;
+  readonly Message?: string;
+}
+
+export interface InvalidSecurityGroupIDException {
+  readonly Type?: string;
+  readonly Message?: string;
+}
+
+export interface InvalidSubnetIDException {
+  readonly Type?: string;
+  readonly Message?: string;
+}
+
+export interface InvalidZipFileException {
+  readonly Type?: string;
+  readonly Message?: string;
+}
+
+export interface InvocationRequest {
   readonly FunctionName: string;
-  readonly Qualifier: string;
+  readonly InvocationType?: string;
+  readonly LogType?: string;
+  readonly ClientContext?: string;
+  readonly Payload?: unknown;
+  readonly Qualifier?: string;
 }
 
-interface GetProvisionedConcurrencyConfigResponse {
-  readonly RequestedProvisionedConcurrentExecutions: number;
-  readonly AvailableProvisionedConcurrentExecutions: number;
-  readonly AllocatedProvisionedConcurrentExecutions: number;
-  readonly Status: string;
-  readonly StatusReason: string;
-  readonly LastModified: string;
+export interface InvocationResponse {
+  readonly StatusCode?: number;
+  readonly FunctionError?: string;
+  readonly LogResult?: string;
+  readonly Payload?: unknown;
+  readonly ExecutedVersion?: string;
 }
 
-interface ImageConfig {
-  readonly EntryPoint: [];
-  readonly Command: [];
-  readonly WorkingDirectory: string;
-}
-
-interface ImageConfigError {
-  readonly ErrorCode: string;
-  readonly Message: string;
-}
-
-interface ImageConfigResponse {
-  readonly ImageConfig: ImageConfig;
-  readonly Error: ImageConfigError;
-}
-
-interface InvalidCodeSignatureException {
-  readonly Type: string;
-  readonly Message: string;
-}
-
-interface InvalidParameterValueException {
-  readonly Type: string;
-  readonly message: string;
-}
-
-interface InvalidRequestContentException {
-  readonly Type: string;
-  readonly message: string;
-}
-
-interface InvalidRuntimeException {
-  readonly Type: string;
-  readonly Message: string;
-}
-
-interface InvalidSecurityGroupIDException {
-  readonly Type: string;
-  readonly Message: string;
-}
-
-interface InvalidSubnetIDException {
-  readonly Type: string;
-  readonly Message: string;
-}
-
-interface InvalidZipFileException {
-  readonly Type: string;
-  readonly Message: string;
-}
-
-interface InvocationRequest {
-  readonly FunctionName: string;
-  readonly InvocationType: string;
-  readonly LogType: string;
-  readonly ClientContext: string;
-  readonly Payload: unknown;
-  readonly Qualifier: string;
-}
-
-interface InvocationResponse {
-  readonly StatusCode: number;
-  readonly FunctionError: string;
-  readonly LogResult: string;
-  readonly Payload: unknown;
-  readonly ExecutedVersion: string;
-}
-
-interface InvokeAsyncRequest {
+export interface InvokeAsyncRequest {
   readonly FunctionName: string;
   readonly InvokeArgs: unknown;
 }
 
-interface InvokeAsyncResponse {
-  readonly Status: number;
+export interface InvokeAsyncResponse {
+  readonly Status?: number;
 }
 
-interface KMSAccessDeniedException {
-  readonly Type: string;
-  readonly Message: string;
+export interface KMSAccessDeniedException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface KMSDisabledException {
-  readonly Type: string;
-  readonly Message: string;
+export interface KMSDisabledException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface KMSInvalidStateException {
-  readonly Type: string;
-  readonly Message: string;
+export interface KMSInvalidStateException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface KMSNotFoundException {
-  readonly Type: string;
-  readonly Message: string;
+export interface KMSNotFoundException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface Layer {
-  readonly Arn: string;
-  readonly CodeSize: number;
-  readonly SigningProfileVersionArn: string;
-  readonly SigningJobArn: string;
+export interface Layer {
+  readonly Arn?: string;
+  readonly CodeSize?: number;
+  readonly SigningProfileVersionArn?: string;
+  readonly SigningJobArn?: string;
 }
 
-interface LayerVersionContentInput {
-  readonly S3Bucket: string;
-  readonly S3Key: string;
-  readonly S3ObjectVersion: string;
-  readonly ZipFile: unknown;
+export interface LayerVersionContentInput {
+  readonly S3Bucket?: string;
+  readonly S3Key?: string;
+  readonly S3ObjectVersion?: string;
+  readonly ZipFile?: unknown;
 }
 
-interface LayerVersionContentOutput {
-  readonly Location: string;
-  readonly CodeSha256: string;
-  readonly CodeSize: number;
-  readonly SigningProfileVersionArn: string;
-  readonly SigningJobArn: string;
+export interface LayerVersionContentOutput {
+  readonly Location?: string;
+  readonly CodeSha256?: string;
+  readonly CodeSize?: number;
+  readonly SigningProfileVersionArn?: string;
+  readonly SigningJobArn?: string;
 }
 
-interface LayerVersionsListItem {
-  readonly LayerVersionArn: string;
-  readonly Version: number;
-  readonly Description: string;
-  readonly CreatedDate: string;
-  readonly CompatibleRuntimes: [];
-  readonly LicenseInfo: string;
-  readonly CompatibleArchitectures: [];
+export interface LayerVersionsListItem {
+  readonly LayerVersionArn?: string;
+  readonly Version?: number;
+  readonly Description?: string;
+  readonly CreatedDate?: string;
+  readonly CompatibleRuntimes?: [];
+  readonly LicenseInfo?: string;
+  readonly CompatibleArchitectures?: [];
 }
 
-interface LayersListItem {
-  readonly LayerName: string;
-  readonly LayerArn: string;
-  readonly LatestMatchingVersion: LayerVersionsListItem;
+export interface LayersListItem {
+  readonly LayerName?: string;
+  readonly LayerArn?: string;
+  readonly LatestMatchingVersion?: LayerVersionsListItem;
 }
 
-interface ListAliasesRequest {
+export interface ListAliasesRequest {
   readonly FunctionName: string;
-  readonly FunctionVersion: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly FunctionVersion?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListAliasesResponse {
-  readonly NextMarker: string;
-  readonly Aliases: [];
+export interface ListAliasesResponse {
+  readonly NextMarker?: string;
+  readonly Aliases?: [];
 }
 
-interface ListCodeSigningConfigsRequest {
-  readonly Marker: string;
-  readonly MaxItems: number;
+export interface ListCodeSigningConfigsRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListCodeSigningConfigsResponse {
-  readonly NextMarker: string;
-  readonly CodeSigningConfigs: [];
+export interface ListCodeSigningConfigsResponse {
+  readonly NextMarker?: string;
+  readonly CodeSigningConfigs?: [];
 }
 
-interface ListEventSourceMappingsRequest {
-  readonly EventSourceArn: string;
+export interface ListEventSourceMappingsRequest {
+  readonly EventSourceArn?: string;
+  readonly FunctionName?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
+}
+
+export interface ListEventSourceMappingsResponse {
+  readonly NextMarker?: string;
+  readonly EventSourceMappings?: [];
+}
+
+export interface ListFunctionEventInvokeConfigsRequest {
   readonly FunctionName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListEventSourceMappingsResponse {
-  readonly NextMarker: string;
-  readonly EventSourceMappings: [];
+export interface ListFunctionEventInvokeConfigsResponse {
+  readonly FunctionEventInvokeConfigs?: [];
+  readonly NextMarker?: string;
 }
 
-interface ListFunctionEventInvokeConfigsRequest {
-  readonly FunctionName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
-}
-
-interface ListFunctionEventInvokeConfigsResponse {
-  readonly FunctionEventInvokeConfigs: [];
-  readonly NextMarker: string;
-}
-
-interface ListFunctionsByCodeSigningConfigRequest {
+export interface ListFunctionsByCodeSigningConfigRequest {
   readonly CodeSigningConfigArn: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListFunctionsByCodeSigningConfigResponse {
-  readonly NextMarker: string;
-  readonly FunctionArns: [];
+export interface ListFunctionsByCodeSigningConfigResponse {
+  readonly NextMarker?: string;
+  readonly FunctionArns?: [];
 }
 
-interface ListFunctionsRequest {
-  readonly MasterRegion: string;
-  readonly FunctionVersion: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+export interface ListFunctionsRequest {
+  readonly MasterRegion?: string;
+  readonly FunctionVersion?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListFunctionsResponse {
-  readonly NextMarker: string;
-  readonly Functions: [];
+export interface ListFunctionsResponse {
+  readonly NextMarker?: string;
+  readonly Functions?: [];
 }
 
-interface ListLayerVersionsRequest {
-  readonly CompatibleRuntime: string;
+export interface ListLayerVersionsRequest {
+  readonly CompatibleRuntime?: string;
   readonly LayerName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
-  readonly CompatibleArchitecture: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
+  readonly CompatibleArchitecture?: string;
 }
 
-interface ListLayerVersionsResponse {
-  readonly NextMarker: string;
-  readonly LayerVersions: [];
+export interface ListLayerVersionsResponse {
+  readonly NextMarker?: string;
+  readonly LayerVersions?: [];
 }
 
-interface ListLayersRequest {
-  readonly CompatibleRuntime: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
-  readonly CompatibleArchitecture: string;
+export interface ListLayersRequest {
+  readonly CompatibleRuntime?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
+  readonly CompatibleArchitecture?: string;
 }
 
-interface ListLayersResponse {
-  readonly NextMarker: string;
-  readonly Layers: [];
+export interface ListLayersResponse {
+  readonly NextMarker?: string;
+  readonly Layers?: [];
 }
 
-interface ListProvisionedConcurrencyConfigsRequest {
+export interface ListProvisionedConcurrencyConfigsRequest {
   readonly FunctionName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListProvisionedConcurrencyConfigsResponse {
-  readonly ProvisionedConcurrencyConfigs: [];
-  readonly NextMarker: string;
+export interface ListProvisionedConcurrencyConfigsResponse {
+  readonly ProvisionedConcurrencyConfigs?: [];
+  readonly NextMarker?: string;
 }
 
-interface ListTagsRequest {
+export interface ListTagsRequest {
   readonly Resource: string;
 }
 
-interface ListTagsResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListVersionsByFunctionRequest {
+export interface ListVersionsByFunctionRequest {
   readonly FunctionName: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListVersionsByFunctionResponse {
-  readonly NextMarker: string;
-  readonly Versions: [];
+export interface ListVersionsByFunctionResponse {
+  readonly NextMarker?: string;
+  readonly Versions?: [];
 }
 
-interface OnFailure {
-  readonly Destination: string;
+export interface OnFailure {
+  readonly Destination?: string;
 }
 
-interface OnSuccess {
-  readonly Destination: string;
+export interface OnSuccess {
+  readonly Destination?: string;
 }
 
-interface PolicyLengthExceededException {
-  readonly Type: string;
-  readonly message: string;
+export interface PolicyLengthExceededException {
+  readonly Type?: string;
+  readonly message?: string;
 }
 
-interface PreconditionFailedException {
-  readonly Type: string;
-  readonly message: string;
+export interface PreconditionFailedException {
+  readonly Type?: string;
+  readonly message?: string;
 }
 
-interface ProvisionedConcurrencyConfigListItem {
-  readonly FunctionArn: string;
-  readonly RequestedProvisionedConcurrentExecutions: number;
-  readonly AvailableProvisionedConcurrentExecutions: number;
-  readonly AllocatedProvisionedConcurrentExecutions: number;
-  readonly Status: string;
-  readonly StatusReason: string;
-  readonly LastModified: string;
+export interface ProvisionedConcurrencyConfigListItem {
+  readonly FunctionArn?: string;
+  readonly RequestedProvisionedConcurrentExecutions?: number;
+  readonly AvailableProvisionedConcurrentExecutions?: number;
+  readonly AllocatedProvisionedConcurrentExecutions?: number;
+  readonly Status?: string;
+  readonly StatusReason?: string;
+  readonly LastModified?: string;
 }
 
-interface ProvisionedConcurrencyConfigNotFoundException {
-  readonly Type: string;
-  readonly message: string;
+export interface ProvisionedConcurrencyConfigNotFoundException {
+  readonly Type?: string;
+  readonly message?: string;
 }
 
-interface PublishLayerVersionRequest {
+export interface PublishLayerVersionRequest {
   readonly LayerName: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Content: LayerVersionContentInput;
-  readonly CompatibleRuntimes: [];
-  readonly LicenseInfo: string;
-  readonly CompatibleArchitectures: [];
+  readonly CompatibleRuntimes?: [];
+  readonly LicenseInfo?: string;
+  readonly CompatibleArchitectures?: [];
 }
 
-interface PublishLayerVersionResponse {
-  readonly Content: LayerVersionContentOutput;
-  readonly LayerArn: string;
-  readonly LayerVersionArn: string;
-  readonly Description: string;
-  readonly CreatedDate: string;
-  readonly Version: number;
-  readonly CompatibleRuntimes: [];
-  readonly LicenseInfo: string;
-  readonly CompatibleArchitectures: [];
+export interface PublishLayerVersionResponse {
+  readonly Content?: LayerVersionContentOutput;
+  readonly LayerArn?: string;
+  readonly LayerVersionArn?: string;
+  readonly Description?: string;
+  readonly CreatedDate?: string;
+  readonly Version?: number;
+  readonly CompatibleRuntimes?: [];
+  readonly LicenseInfo?: string;
+  readonly CompatibleArchitectures?: [];
 }
 
-interface PublishVersionRequest {
+export interface PublishVersionRequest {
   readonly FunctionName: string;
-  readonly CodeSha256: string;
-  readonly Description: string;
-  readonly RevisionId: string;
+  readonly CodeSha256?: string;
+  readonly Description?: string;
+  readonly RevisionId?: string;
 }
 
-interface PutFunctionCodeSigningConfigRequest {
+export interface PutFunctionCodeSigningConfigRequest {
   readonly CodeSigningConfigArn: string;
   readonly FunctionName: string;
 }
 
-interface PutFunctionCodeSigningConfigResponse {
+export interface PutFunctionCodeSigningConfigResponse {
   readonly CodeSigningConfigArn: string;
   readonly FunctionName: string;
 }
 
-interface PutFunctionConcurrencyRequest {
+export interface PutFunctionConcurrencyRequest {
   readonly FunctionName: string;
   readonly ReservedConcurrentExecutions: number;
 }
 
-interface PutFunctionEventInvokeConfigRequest {
+export interface PutFunctionEventInvokeConfigRequest {
   readonly FunctionName: string;
-  readonly Qualifier: string;
-  readonly MaximumRetryAttempts: number;
-  readonly MaximumEventAgeInSeconds: number;
-  readonly DestinationConfig: DestinationConfig;
+  readonly Qualifier?: string;
+  readonly MaximumRetryAttempts?: number;
+  readonly MaximumEventAgeInSeconds?: number;
+  readonly DestinationConfig?: DestinationConfig;
 }
 
-interface PutProvisionedConcurrencyConfigRequest {
+export interface PutProvisionedConcurrencyConfigRequest {
   readonly FunctionName: string;
   readonly Qualifier: string;
   readonly ProvisionedConcurrentExecutions: number;
 }
 
-interface PutProvisionedConcurrencyConfigResponse {
-  readonly RequestedProvisionedConcurrentExecutions: number;
-  readonly AvailableProvisionedConcurrentExecutions: number;
-  readonly AllocatedProvisionedConcurrentExecutions: number;
-  readonly Status: string;
-  readonly StatusReason: string;
-  readonly LastModified: string;
+export interface PutProvisionedConcurrencyConfigResponse {
+  readonly RequestedProvisionedConcurrentExecutions?: number;
+  readonly AvailableProvisionedConcurrentExecutions?: number;
+  readonly AllocatedProvisionedConcurrentExecutions?: number;
+  readonly Status?: string;
+  readonly StatusReason?: string;
+  readonly LastModified?: string;
 }
 
-interface RemoveLayerVersionPermissionRequest {
+export interface RemoveLayerVersionPermissionRequest {
   readonly LayerName: string;
   readonly VersionNumber: number;
   readonly StatementId: string;
-  readonly RevisionId: string;
+  readonly RevisionId?: string;
 }
 
-interface RemovePermissionRequest {
+export interface RemovePermissionRequest {
   readonly FunctionName: string;
   readonly StatementId: string;
-  readonly Qualifier: string;
-  readonly RevisionId: string;
+  readonly Qualifier?: string;
+  readonly RevisionId?: string;
 }
 
-interface RequestTooLargeException {
-  readonly Type: string;
-  readonly message: string;
+export interface RequestTooLargeException {
+  readonly Type?: string;
+  readonly message?: string;
 }
 
-interface ResourceConflictException {
-  readonly Type: string;
-  readonly message: string;
+export interface ResourceConflictException {
+  readonly Type?: string;
+  readonly message?: string;
 }
 
-interface ResourceInUseException {
-  readonly Type: string;
-  readonly Message: string;
+export interface ResourceInUseException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Type: string;
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface ResourceNotReadyException {
-  readonly Type: string;
-  readonly message: string;
+export interface ResourceNotReadyException {
+  readonly Type?: string;
+  readonly message?: string;
 }
 
-interface SelfManagedEventSource {
-  readonly Endpoints: {[key: string]: any};
+export interface SelfManagedEventSource {
+  readonly Endpoints?: {[key: string]: any};
 }
 
-interface ServiceException {
-  readonly Type: string;
-  readonly Message: string;
+export interface ServiceException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface SourceAccessConfiguration {
-  readonly Type: string;
-  readonly URI: string;
+export interface SourceAccessConfiguration {
+  readonly Type?: string;
+  readonly URI?: string;
 }
 
-interface SubnetIPAddressLimitReachedException {
-  readonly Type: string;
-  readonly Message: string;
+export interface SubnetIPAddressLimitReachedException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly Resource: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TooManyRequestsException {
-  readonly retryAfterSeconds: string;
-  readonly Type: string;
-  readonly message: string;
-  readonly Reason: string;
+export interface TooManyRequestsException {
+  readonly retryAfterSeconds?: string;
+  readonly Type?: string;
+  readonly message?: string;
+  readonly Reason?: string;
 }
 
-interface TracingConfig {
-  readonly Mode: string;
+export interface TracingConfig {
+  readonly Mode?: string;
 }
 
-interface TracingConfigResponse {
-  readonly Mode: string;
+export interface TracingConfigResponse {
+  readonly Mode?: string;
 }
 
-interface UnsupportedMediaTypeException {
-  readonly Type: string;
-  readonly message: string;
+export interface UnsupportedMediaTypeException {
+  readonly Type?: string;
+  readonly message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly Resource: string;
   readonly TagKeys: [];
 }
 
-interface UpdateAliasRequest {
+export interface UpdateAliasRequest {
   readonly FunctionName: string;
   readonly Name: string;
-  readonly FunctionVersion: string;
-  readonly Description: string;
-  readonly RoutingConfig: AliasRoutingConfiguration;
-  readonly RevisionId: string;
+  readonly FunctionVersion?: string;
+  readonly Description?: string;
+  readonly RoutingConfig?: AliasRoutingConfiguration;
+  readonly RevisionId?: string;
 }
 
-interface UpdateCodeSigningConfigRequest {
+export interface UpdateCodeSigningConfigRequest {
   readonly CodeSigningConfigArn: string;
-  readonly Description: string;
-  readonly AllowedPublishers: AllowedPublishers;
-  readonly CodeSigningPolicies: CodeSigningPolicies;
+  readonly Description?: string;
+  readonly AllowedPublishers?: AllowedPublishers;
+  readonly CodeSigningPolicies?: CodeSigningPolicies;
 }
 
-interface UpdateCodeSigningConfigResponse {
+export interface UpdateCodeSigningConfigResponse {
   readonly CodeSigningConfig: CodeSigningConfig;
 }
 
-interface UpdateEventSourceMappingRequest {
+export interface UpdateEventSourceMappingRequest {
   readonly UUID: string;
+  readonly FunctionName?: string;
+  readonly Enabled?: boolean;
+  readonly BatchSize?: number;
+  readonly FilterCriteria?: FilterCriteria;
+  readonly MaximumBatchingWindowInSeconds?: number;
+  readonly DestinationConfig?: DestinationConfig;
+  readonly MaximumRecordAgeInSeconds?: number;
+  readonly BisectBatchOnFunctionError?: boolean;
+  readonly MaximumRetryAttempts?: number;
+  readonly ParallelizationFactor?: number;
+  readonly SourceAccessConfigurations?: [];
+  readonly TumblingWindowInSeconds?: number;
+  readonly FunctionResponseTypes?: [];
+}
+
+export interface UpdateFunctionCodeRequest {
   readonly FunctionName: string;
-  readonly Enabled: boolean;
-  readonly BatchSize: number;
-  readonly FilterCriteria: FilterCriteria;
-  readonly MaximumBatchingWindowInSeconds: number;
-  readonly DestinationConfig: DestinationConfig;
-  readonly MaximumRecordAgeInSeconds: number;
-  readonly BisectBatchOnFunctionError: boolean;
-  readonly MaximumRetryAttempts: number;
-  readonly ParallelizationFactor: number;
-  readonly SourceAccessConfigurations: [];
-  readonly TumblingWindowInSeconds: number;
-  readonly FunctionResponseTypes: [];
+  readonly ZipFile?: unknown;
+  readonly S3Bucket?: string;
+  readonly S3Key?: string;
+  readonly S3ObjectVersion?: string;
+  readonly ImageUri?: string;
+  readonly Publish?: boolean;
+  readonly DryRun?: boolean;
+  readonly RevisionId?: string;
+  readonly Architectures?: [];
 }
 
-interface UpdateFunctionCodeRequest {
+export interface UpdateFunctionConfigurationRequest {
   readonly FunctionName: string;
-  readonly ZipFile: unknown;
-  readonly S3Bucket: string;
-  readonly S3Key: string;
-  readonly S3ObjectVersion: string;
-  readonly ImageUri: string;
-  readonly Publish: boolean;
-  readonly DryRun: boolean;
-  readonly RevisionId: string;
-  readonly Architectures: [];
+  readonly Role?: string;
+  readonly Handler?: string;
+  readonly Description?: string;
+  readonly Timeout?: number;
+  readonly MemorySize?: number;
+  readonly VpcConfig?: VpcConfig;
+  readonly Environment?: Environment;
+  readonly Runtime?: string;
+  readonly DeadLetterConfig?: DeadLetterConfig;
+  readonly KMSKeyArn?: string;
+  readonly TracingConfig?: TracingConfig;
+  readonly RevisionId?: string;
+  readonly Layers?: [];
+  readonly FileSystemConfigs?: [];
+  readonly ImageConfig?: ImageConfig;
 }
 
-interface UpdateFunctionConfigurationRequest {
+export interface UpdateFunctionEventInvokeConfigRequest {
   readonly FunctionName: string;
-  readonly Role: string;
-  readonly Handler: string;
-  readonly Description: string;
-  readonly Timeout: number;
-  readonly MemorySize: number;
-  readonly VpcConfig: VpcConfig;
-  readonly Environment: Environment;
-  readonly Runtime: string;
-  readonly DeadLetterConfig: DeadLetterConfig;
-  readonly KMSKeyArn: string;
-  readonly TracingConfig: TracingConfig;
-  readonly RevisionId: string;
-  readonly Layers: [];
-  readonly FileSystemConfigs: [];
-  readonly ImageConfig: ImageConfig;
+  readonly Qualifier?: string;
+  readonly MaximumRetryAttempts?: number;
+  readonly MaximumEventAgeInSeconds?: number;
+  readonly DestinationConfig?: DestinationConfig;
 }
 
-interface UpdateFunctionEventInvokeConfigRequest {
-  readonly FunctionName: string;
-  readonly Qualifier: string;
-  readonly MaximumRetryAttempts: number;
-  readonly MaximumEventAgeInSeconds: number;
-  readonly DestinationConfig: DestinationConfig;
+export interface VpcConfig {
+  readonly SubnetIds?: [];
+  readonly SecurityGroupIds?: [];
 }
 
-interface VpcConfig {
-  readonly SubnetIds: [];
-  readonly SecurityGroupIds: [];
+export interface VpcConfigResponse {
+  readonly SubnetIds?: [];
+  readonly SecurityGroupIds?: [];
+  readonly VpcId?: string;
 }
 
-interface VpcConfigResponse {
-  readonly SubnetIds: [];
-  readonly SecurityGroupIds: [];
-  readonly VpcId: string;
-}
 

@@ -10,6 +10,7 @@ export interface CountClosedWorkflowExecutions {
   readonly tagFilter?: TagFilter;
   readonly closeStatusFilter?: CloseStatusFilter;
 }
+
 export interface CountOpenWorkflowExecutions {
   readonly domain: string;
   readonly startTimeFilter: ExecutionTimeFilter;
@@ -17,40 +18,50 @@ export interface CountOpenWorkflowExecutions {
   readonly tagFilter?: TagFilter;
   readonly executionFilter?: WorkflowExecutionFilter;
 }
+
 export interface CountPendingActivityTasks {
   readonly domain: string;
   readonly taskList: TaskList;
 }
+
 export interface CountPendingDecisionTasks {
   readonly domain: string;
   readonly taskList: TaskList;
 }
+
 export interface DeprecateActivityType {
   readonly domain: string;
   readonly activityType: ActivityType;
 }
+
 export interface DeprecateDomain {
   readonly name: string;
 }
+
 export interface DeprecateWorkflowType {
   readonly domain: string;
   readonly workflowType: WorkflowType;
 }
+
 export interface DescribeActivityType {
   readonly domain: string;
   readonly activityType: ActivityType;
 }
+
 export interface DescribeDomain {
   readonly name: string;
 }
+
 export interface DescribeWorkflowExecution {
   readonly domain: string;
   readonly execution: WorkflowExecution;
 }
+
 export interface DescribeWorkflowType {
   readonly domain: string;
   readonly workflowType: WorkflowType;
 }
+
 export interface GetWorkflowExecutionHistory {
   readonly domain: string;
   readonly execution: WorkflowExecution;
@@ -58,6 +69,7 @@ export interface GetWorkflowExecutionHistory {
   readonly maximumPageSize?: number;
   readonly reverseOrder?: boolean;
 }
+
 export interface ListActivityTypes {
   readonly domain: string;
   readonly name?: string;
@@ -66,6 +78,7 @@ export interface ListActivityTypes {
   readonly maximumPageSize?: number;
   readonly reverseOrder?: boolean;
 }
+
 export interface ListClosedWorkflowExecutions {
   readonly domain: string;
   readonly startTimeFilter?: ExecutionTimeFilter;
@@ -78,12 +91,14 @@ export interface ListClosedWorkflowExecutions {
   readonly maximumPageSize?: number;
   readonly reverseOrder?: boolean;
 }
+
 export interface ListDomains {
   readonly nextPageToken?: string;
   readonly registrationStatus: string;
   readonly maximumPageSize?: number;
   readonly reverseOrder?: boolean;
 }
+
 export interface ListOpenWorkflowExecutions {
   readonly domain: string;
   readonly startTimeFilter: ExecutionTimeFilter;
@@ -94,9 +109,11 @@ export interface ListOpenWorkflowExecutions {
   readonly reverseOrder?: boolean;
   readonly executionFilter?: WorkflowExecutionFilter;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface ListWorkflowTypes {
   readonly domain: string;
   readonly name?: string;
@@ -105,11 +122,13 @@ export interface ListWorkflowTypes {
   readonly maximumPageSize?: number;
   readonly reverseOrder?: boolean;
 }
+
 export interface PollForActivityTask {
   readonly domain: string;
   readonly taskList: TaskList;
   readonly identity?: string;
 }
+
 export interface PollForDecisionTask {
   readonly domain: string;
   readonly taskList: TaskList;
@@ -118,10 +137,12 @@ export interface PollForDecisionTask {
   readonly maximumPageSize?: number;
   readonly reverseOrder?: boolean;
 }
+
 export interface RecordActivityTaskHeartbeat {
   readonly taskToken: string;
   readonly details?: string;
 }
+
 export interface RegisterActivityType {
   readonly domain: string;
   readonly name: string;
@@ -134,12 +155,14 @@ export interface RegisterActivityType {
   readonly defaultTaskScheduleToStartTimeout?: string;
   readonly defaultTaskScheduleToCloseTimeout?: string;
 }
+
 export interface RegisterDomain {
   readonly name: string;
   readonly description?: string;
   readonly workflowExecutionRetentionPeriodInDays: string;
   readonly tags?: [];
 }
+
 export interface RegisterWorkflowType {
   readonly domain: string;
   readonly name: string;
@@ -152,29 +175,35 @@ export interface RegisterWorkflowType {
   readonly defaultChildPolicy?: string;
   readonly defaultLambdaRole?: string;
 }
+
 export interface RequestCancelWorkflowExecution {
   readonly domain: string;
   readonly workflowId: string;
   readonly runId?: string;
 }
+
 export interface RespondActivityTaskCanceled {
   readonly taskToken: string;
   readonly details?: string;
 }
+
 export interface RespondActivityTaskCompleted {
   readonly taskToken: string;
   readonly result?: string;
 }
+
 export interface RespondActivityTaskFailed {
   readonly taskToken: string;
   readonly reason?: string;
   readonly details?: string;
 }
+
 export interface RespondDecisionTaskCompleted {
   readonly taskToken: string;
   readonly decisions?: [];
   readonly executionContext?: string;
 }
+
 export interface SignalWorkflowExecution {
   readonly domain: string;
   readonly workflowId: string;
@@ -182,6 +211,7 @@ export interface SignalWorkflowExecution {
   readonly signalName: string;
   readonly input?: string;
 }
+
 export interface StartWorkflowExecution {
   readonly domain: string;
   readonly workflowId: string;
@@ -195,10 +225,12 @@ export interface StartWorkflowExecution {
   readonly childPolicy?: string;
   readonly lambdaRole?: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: [];
 }
+
 export interface TerminateWorkflowExecution {
   readonly domain: string;
   readonly workflowId: string;
@@ -207,178 +239,180 @@ export interface TerminateWorkflowExecution {
   readonly details?: string;
   readonly childPolicy?: string;
 }
+
 export interface UndeprecateActivityType {
   readonly domain: string;
   readonly activityType: ActivityType;
 }
+
 export interface UndeprecateDomain {
   readonly name: string;
 }
+
 export interface UndeprecateWorkflowType {
   readonly domain: string;
   readonly workflowType: WorkflowType;
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-
-
-interface ActivityTask {
+export interface ActivityTask {
   readonly taskToken: string;
   readonly activityId: string;
   readonly startedEventId: number;
   readonly workflowExecution: WorkflowExecution;
   readonly activityType: ActivityType;
-  readonly input: string;
+  readonly input?: string;
 }
 
-interface ActivityTaskCancelRequestedEventAttributes {
+export interface ActivityTaskCancelRequestedEventAttributes {
   readonly decisionTaskCompletedEventId: number;
   readonly activityId: string;
 }
 
-interface ActivityTaskCanceledEventAttributes {
-  readonly details: string;
+export interface ActivityTaskCanceledEventAttributes {
+  readonly details?: string;
   readonly scheduledEventId: number;
   readonly startedEventId: number;
-  readonly latestCancelRequestedEventId: number;
+  readonly latestCancelRequestedEventId?: number;
 }
 
-interface ActivityTaskCompletedEventAttributes {
-  readonly result: string;
-  readonly scheduledEventId: number;
-  readonly startedEventId: number;
-}
-
-interface ActivityTaskFailedEventAttributes {
-  readonly reason: string;
-  readonly details: string;
+export interface ActivityTaskCompletedEventAttributes {
+  readonly result?: string;
   readonly scheduledEventId: number;
   readonly startedEventId: number;
 }
 
-interface ActivityTaskScheduledEventAttributes {
+export interface ActivityTaskFailedEventAttributes {
+  readonly reason?: string;
+  readonly details?: string;
+  readonly scheduledEventId: number;
+  readonly startedEventId: number;
+}
+
+export interface ActivityTaskScheduledEventAttributes {
   readonly activityType: ActivityType;
   readonly activityId: string;
-  readonly input: string;
-  readonly control: string;
-  readonly scheduleToStartTimeout: string;
-  readonly scheduleToCloseTimeout: string;
-  readonly startToCloseTimeout: string;
+  readonly input?: string;
+  readonly control?: string;
+  readonly scheduleToStartTimeout?: string;
+  readonly scheduleToCloseTimeout?: string;
+  readonly startToCloseTimeout?: string;
   readonly taskList: TaskList;
-  readonly taskPriority: string;
+  readonly taskPriority?: string;
   readonly decisionTaskCompletedEventId: number;
-  readonly heartbeatTimeout: string;
+  readonly heartbeatTimeout?: string;
 }
 
-interface ActivityTaskStartedEventAttributes {
-  readonly identity: string;
+export interface ActivityTaskStartedEventAttributes {
+  readonly identity?: string;
   readonly scheduledEventId: number;
 }
 
-interface ActivityTaskStatus {
+export interface ActivityTaskStatus {
   readonly cancelRequested: boolean;
 }
 
-interface ActivityTaskTimedOutEventAttributes {
+export interface ActivityTaskTimedOutEventAttributes {
   readonly timeoutType: string;
   readonly scheduledEventId: number;
   readonly startedEventId: number;
-  readonly details: string;
+  readonly details?: string;
 }
 
-interface ActivityType {
+export interface ActivityType {
   readonly name: string;
   readonly version: string;
 }
 
-interface ActivityTypeConfiguration {
-  readonly defaultTaskStartToCloseTimeout: string;
-  readonly defaultTaskHeartbeatTimeout: string;
-  readonly defaultTaskList: TaskList;
-  readonly defaultTaskPriority: string;
-  readonly defaultTaskScheduleToStartTimeout: string;
-  readonly defaultTaskScheduleToCloseTimeout: string;
+export interface ActivityTypeConfiguration {
+  readonly defaultTaskStartToCloseTimeout?: string;
+  readonly defaultTaskHeartbeatTimeout?: string;
+  readonly defaultTaskList?: TaskList;
+  readonly defaultTaskPriority?: string;
+  readonly defaultTaskScheduleToStartTimeout?: string;
+  readonly defaultTaskScheduleToCloseTimeout?: string;
 }
 
-interface ActivityTypeDetail {
+export interface ActivityTypeDetail {
   readonly typeInfo: ActivityTypeInfo;
   readonly configuration: ActivityTypeConfiguration;
 }
 
-interface ActivityTypeInfo {
+export interface ActivityTypeInfo {
   readonly activityType: ActivityType;
   readonly status: string;
-  readonly description: string;
+  readonly description?: string;
   readonly creationDate: Date;
-  readonly deprecationDate: Date;
+  readonly deprecationDate?: Date;
 }
 
-interface ActivityTypeInfos {
+export interface ActivityTypeInfos {
   readonly typeInfos: [];
-  readonly nextPageToken: string;
+  readonly nextPageToken?: string;
 }
 
-interface CancelTimerDecisionAttributes {
+export interface CancelTimerDecisionAttributes {
   readonly timerId: string;
 }
 
-interface CancelTimerFailedEventAttributes {
+export interface CancelTimerFailedEventAttributes {
   readonly timerId: string;
   readonly cause: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface CancelWorkflowExecutionDecisionAttributes {
-  readonly details: string;
+export interface CancelWorkflowExecutionDecisionAttributes {
+  readonly details?: string;
 }
 
-interface CancelWorkflowExecutionFailedEventAttributes {
+export interface CancelWorkflowExecutionFailedEventAttributes {
   readonly cause: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface ChildWorkflowExecutionCanceledEventAttributes {
+export interface ChildWorkflowExecutionCanceledEventAttributes {
   readonly workflowExecution: WorkflowExecution;
   readonly workflowType: WorkflowType;
-  readonly details: string;
+  readonly details?: string;
   readonly initiatedEventId: number;
   readonly startedEventId: number;
 }
 
-interface ChildWorkflowExecutionCompletedEventAttributes {
+export interface ChildWorkflowExecutionCompletedEventAttributes {
   readonly workflowExecution: WorkflowExecution;
   readonly workflowType: WorkflowType;
-  readonly result: string;
+  readonly result?: string;
   readonly initiatedEventId: number;
   readonly startedEventId: number;
 }
 
-interface ChildWorkflowExecutionFailedEventAttributes {
+export interface ChildWorkflowExecutionFailedEventAttributes {
   readonly workflowExecution: WorkflowExecution;
   readonly workflowType: WorkflowType;
-  readonly reason: string;
-  readonly details: string;
+  readonly reason?: string;
+  readonly details?: string;
   readonly initiatedEventId: number;
   readonly startedEventId: number;
 }
 
-interface ChildWorkflowExecutionStartedEventAttributes {
+export interface ChildWorkflowExecutionStartedEventAttributes {
   readonly workflowExecution: WorkflowExecution;
   readonly workflowType: WorkflowType;
   readonly initiatedEventId: number;
 }
 
-interface ChildWorkflowExecutionTerminatedEventAttributes {
+export interface ChildWorkflowExecutionTerminatedEventAttributes {
   readonly workflowExecution: WorkflowExecution;
   readonly workflowType: WorkflowType;
   readonly initiatedEventId: number;
   readonly startedEventId: number;
 }
 
-interface ChildWorkflowExecutionTimedOutEventAttributes {
+export interface ChildWorkflowExecutionTimedOutEventAttributes {
   readonly workflowExecution: WorkflowExecution;
   readonly workflowType: WorkflowType;
   readonly timeoutType: string;
@@ -386,897 +420,898 @@ interface ChildWorkflowExecutionTimedOutEventAttributes {
   readonly startedEventId: number;
 }
 
-interface CloseStatusFilter {
+export interface CloseStatusFilter {
   readonly status: string;
 }
 
-interface CompleteWorkflowExecutionDecisionAttributes {
-  readonly result: string;
+export interface CompleteWorkflowExecutionDecisionAttributes {
+  readonly result?: string;
 }
 
-interface CompleteWorkflowExecutionFailedEventAttributes {
+export interface CompleteWorkflowExecutionFailedEventAttributes {
   readonly cause: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface ContinueAsNewWorkflowExecutionDecisionAttributes {
-  readonly input: string;
-  readonly executionStartToCloseTimeout: string;
-  readonly taskList: TaskList;
-  readonly taskPriority: string;
-  readonly taskStartToCloseTimeout: string;
-  readonly childPolicy: string;
-  readonly tagList: [];
-  readonly workflowTypeVersion: string;
-  readonly lambdaRole: string;
+export interface ContinueAsNewWorkflowExecutionDecisionAttributes {
+  readonly input?: string;
+  readonly executionStartToCloseTimeout?: string;
+  readonly taskList?: TaskList;
+  readonly taskPriority?: string;
+  readonly taskStartToCloseTimeout?: string;
+  readonly childPolicy?: string;
+  readonly tagList?: [];
+  readonly workflowTypeVersion?: string;
+  readonly lambdaRole?: string;
 }
 
-interface ContinueAsNewWorkflowExecutionFailedEventAttributes {
+export interface ContinueAsNewWorkflowExecutionFailedEventAttributes {
   readonly cause: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface CountClosedWorkflowExecutionsInput {
+export interface CountClosedWorkflowExecutionsInput {
   readonly domain: string;
-  readonly startTimeFilter: ExecutionTimeFilter;
-  readonly closeTimeFilter: ExecutionTimeFilter;
-  readonly executionFilter: WorkflowExecutionFilter;
-  readonly typeFilter: WorkflowTypeFilter;
-  readonly tagFilter: TagFilter;
-  readonly closeStatusFilter: CloseStatusFilter;
+  readonly startTimeFilter?: ExecutionTimeFilter;
+  readonly closeTimeFilter?: ExecutionTimeFilter;
+  readonly executionFilter?: WorkflowExecutionFilter;
+  readonly typeFilter?: WorkflowTypeFilter;
+  readonly tagFilter?: TagFilter;
+  readonly closeStatusFilter?: CloseStatusFilter;
 }
 
-interface CountOpenWorkflowExecutionsInput {
+export interface CountOpenWorkflowExecutionsInput {
   readonly domain: string;
   readonly startTimeFilter: ExecutionTimeFilter;
-  readonly typeFilter: WorkflowTypeFilter;
-  readonly tagFilter: TagFilter;
-  readonly executionFilter: WorkflowExecutionFilter;
+  readonly typeFilter?: WorkflowTypeFilter;
+  readonly tagFilter?: TagFilter;
+  readonly executionFilter?: WorkflowExecutionFilter;
 }
 
-interface CountPendingActivityTasksInput {
+export interface CountPendingActivityTasksInput {
   readonly domain: string;
   readonly taskList: TaskList;
 }
 
-interface CountPendingDecisionTasksInput {
+export interface CountPendingDecisionTasksInput {
   readonly domain: string;
   readonly taskList: TaskList;
 }
 
-interface Decision {
+export interface Decision {
   readonly decisionType: string;
-  readonly scheduleActivityTaskDecisionAttributes: ScheduleActivityTaskDecisionAttributes;
-  readonly requestCancelActivityTaskDecisionAttributes: RequestCancelActivityTaskDecisionAttributes;
-  readonly completeWorkflowExecutionDecisionAttributes: CompleteWorkflowExecutionDecisionAttributes;
-  readonly failWorkflowExecutionDecisionAttributes: FailWorkflowExecutionDecisionAttributes;
-  readonly cancelWorkflowExecutionDecisionAttributes: CancelWorkflowExecutionDecisionAttributes;
-  readonly continueAsNewWorkflowExecutionDecisionAttributes: ContinueAsNewWorkflowExecutionDecisionAttributes;
-  readonly recordMarkerDecisionAttributes: RecordMarkerDecisionAttributes;
-  readonly startTimerDecisionAttributes: StartTimerDecisionAttributes;
-  readonly cancelTimerDecisionAttributes: CancelTimerDecisionAttributes;
-  readonly signalExternalWorkflowExecutionDecisionAttributes: SignalExternalWorkflowExecutionDecisionAttributes;
-  readonly requestCancelExternalWorkflowExecutionDecisionAttributes: RequestCancelExternalWorkflowExecutionDecisionAttributes;
-  readonly startChildWorkflowExecutionDecisionAttributes: StartChildWorkflowExecutionDecisionAttributes;
-  readonly scheduleLambdaFunctionDecisionAttributes: ScheduleLambdaFunctionDecisionAttributes;
+  readonly scheduleActivityTaskDecisionAttributes?: ScheduleActivityTaskDecisionAttributes;
+  readonly requestCancelActivityTaskDecisionAttributes?: RequestCancelActivityTaskDecisionAttributes;
+  readonly completeWorkflowExecutionDecisionAttributes?: CompleteWorkflowExecutionDecisionAttributes;
+  readonly failWorkflowExecutionDecisionAttributes?: FailWorkflowExecutionDecisionAttributes;
+  readonly cancelWorkflowExecutionDecisionAttributes?: CancelWorkflowExecutionDecisionAttributes;
+  readonly continueAsNewWorkflowExecutionDecisionAttributes?: ContinueAsNewWorkflowExecutionDecisionAttributes;
+  readonly recordMarkerDecisionAttributes?: RecordMarkerDecisionAttributes;
+  readonly startTimerDecisionAttributes?: StartTimerDecisionAttributes;
+  readonly cancelTimerDecisionAttributes?: CancelTimerDecisionAttributes;
+  readonly signalExternalWorkflowExecutionDecisionAttributes?: SignalExternalWorkflowExecutionDecisionAttributes;
+  readonly requestCancelExternalWorkflowExecutionDecisionAttributes?: RequestCancelExternalWorkflowExecutionDecisionAttributes;
+  readonly startChildWorkflowExecutionDecisionAttributes?: StartChildWorkflowExecutionDecisionAttributes;
+  readonly scheduleLambdaFunctionDecisionAttributes?: ScheduleLambdaFunctionDecisionAttributes;
 }
 
-interface DecisionTask {
+export interface DecisionTask {
   readonly taskToken: string;
   readonly startedEventId: number;
   readonly workflowExecution: WorkflowExecution;
   readonly workflowType: WorkflowType;
   readonly events: [];
-  readonly nextPageToken: string;
-  readonly previousStartedEventId: number;
+  readonly nextPageToken?: string;
+  readonly previousStartedEventId?: number;
 }
 
-interface DecisionTaskCompletedEventAttributes {
-  readonly executionContext: string;
+export interface DecisionTaskCompletedEventAttributes {
+  readonly executionContext?: string;
   readonly scheduledEventId: number;
   readonly startedEventId: number;
 }
 
-interface DecisionTaskScheduledEventAttributes {
+export interface DecisionTaskScheduledEventAttributes {
   readonly taskList: TaskList;
-  readonly taskPriority: string;
-  readonly startToCloseTimeout: string;
+  readonly taskPriority?: string;
+  readonly startToCloseTimeout?: string;
 }
 
-interface DecisionTaskStartedEventAttributes {
-  readonly identity: string;
+export interface DecisionTaskStartedEventAttributes {
+  readonly identity?: string;
   readonly scheduledEventId: number;
 }
 
-interface DecisionTaskTimedOutEventAttributes {
+export interface DecisionTaskTimedOutEventAttributes {
   readonly timeoutType: string;
   readonly scheduledEventId: number;
   readonly startedEventId: number;
 }
 
-interface DefaultUndefinedFault {
-  readonly message: string;
+export interface DefaultUndefinedFault {
+  readonly message?: string;
 }
 
-interface DeprecateActivityTypeInput {
+export interface DeprecateActivityTypeInput {
   readonly domain: string;
   readonly activityType: ActivityType;
 }
 
-interface DeprecateDomainInput {
+export interface DeprecateDomainInput {
   readonly name: string;
 }
 
-interface DeprecateWorkflowTypeInput {
+export interface DeprecateWorkflowTypeInput {
   readonly domain: string;
   readonly workflowType: WorkflowType;
 }
 
-interface DescribeActivityTypeInput {
+export interface DescribeActivityTypeInput {
   readonly domain: string;
   readonly activityType: ActivityType;
 }
 
-interface DescribeDomainInput {
+export interface DescribeDomainInput {
   readonly name: string;
 }
 
-interface DescribeWorkflowExecutionInput {
+export interface DescribeWorkflowExecutionInput {
   readonly domain: string;
   readonly execution: WorkflowExecution;
 }
 
-interface DescribeWorkflowTypeInput {
+export interface DescribeWorkflowTypeInput {
   readonly domain: string;
   readonly workflowType: WorkflowType;
 }
 
-interface DomainAlreadyExistsFault {
-  readonly message: string;
+export interface DomainAlreadyExistsFault {
+  readonly message?: string;
 }
 
-interface DomainConfiguration {
+export interface DomainConfiguration {
   readonly workflowExecutionRetentionPeriodInDays: string;
 }
 
-interface DomainDeprecatedFault {
-  readonly message: string;
+export interface DomainDeprecatedFault {
+  readonly message?: string;
 }
 
-interface DomainDetail {
+export interface DomainDetail {
   readonly domainInfo: DomainInfo;
   readonly configuration: DomainConfiguration;
 }
 
-interface DomainInfo {
+export interface DomainInfo {
   readonly name: string;
   readonly status: string;
-  readonly description: string;
-  readonly arn: string;
+  readonly description?: string;
+  readonly arn?: string;
 }
 
-interface DomainInfos {
+export interface DomainInfos {
   readonly domainInfos: [];
-  readonly nextPageToken: string;
+  readonly nextPageToken?: string;
 }
 
-interface ExecutionTimeFilter {
+export interface ExecutionTimeFilter {
   readonly oldestDate: Date;
-  readonly latestDate: Date;
+  readonly latestDate?: Date;
 }
 
-interface ExternalWorkflowExecutionCancelRequestedEventAttributes {
+export interface ExternalWorkflowExecutionCancelRequestedEventAttributes {
   readonly workflowExecution: WorkflowExecution;
   readonly initiatedEventId: number;
 }
 
-interface ExternalWorkflowExecutionSignaledEventAttributes {
+export interface ExternalWorkflowExecutionSignaledEventAttributes {
   readonly workflowExecution: WorkflowExecution;
   readonly initiatedEventId: number;
 }
 
-interface FailWorkflowExecutionDecisionAttributes {
-  readonly reason: string;
-  readonly details: string;
+export interface FailWorkflowExecutionDecisionAttributes {
+  readonly reason?: string;
+  readonly details?: string;
 }
 
-interface FailWorkflowExecutionFailedEventAttributes {
+export interface FailWorkflowExecutionFailedEventAttributes {
   readonly cause: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface GetWorkflowExecutionHistoryInput {
+export interface GetWorkflowExecutionHistoryInput {
   readonly domain: string;
   readonly execution: WorkflowExecution;
-  readonly nextPageToken: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
+  readonly nextPageToken?: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
 }
 
-interface History {
+export interface History {
   readonly events: [];
-  readonly nextPageToken: string;
+  readonly nextPageToken?: string;
 }
 
-interface HistoryEvent {
+export interface HistoryEvent {
   readonly eventTimestamp: Date;
   readonly eventType: string;
   readonly eventId: number;
-  readonly workflowExecutionStartedEventAttributes: WorkflowExecutionStartedEventAttributes;
-  readonly workflowExecutionCompletedEventAttributes: WorkflowExecutionCompletedEventAttributes;
-  readonly completeWorkflowExecutionFailedEventAttributes: CompleteWorkflowExecutionFailedEventAttributes;
-  readonly workflowExecutionFailedEventAttributes: WorkflowExecutionFailedEventAttributes;
-  readonly failWorkflowExecutionFailedEventAttributes: FailWorkflowExecutionFailedEventAttributes;
-  readonly workflowExecutionTimedOutEventAttributes: WorkflowExecutionTimedOutEventAttributes;
-  readonly workflowExecutionCanceledEventAttributes: WorkflowExecutionCanceledEventAttributes;
-  readonly cancelWorkflowExecutionFailedEventAttributes: CancelWorkflowExecutionFailedEventAttributes;
-  readonly workflowExecutionContinuedAsNewEventAttributes: WorkflowExecutionContinuedAsNewEventAttributes;
-  readonly continueAsNewWorkflowExecutionFailedEventAttributes: ContinueAsNewWorkflowExecutionFailedEventAttributes;
-  readonly workflowExecutionTerminatedEventAttributes: WorkflowExecutionTerminatedEventAttributes;
-  readonly workflowExecutionCancelRequestedEventAttributes: WorkflowExecutionCancelRequestedEventAttributes;
-  readonly decisionTaskScheduledEventAttributes: DecisionTaskScheduledEventAttributes;
-  readonly decisionTaskStartedEventAttributes: DecisionTaskStartedEventAttributes;
-  readonly decisionTaskCompletedEventAttributes: DecisionTaskCompletedEventAttributes;
-  readonly decisionTaskTimedOutEventAttributes: DecisionTaskTimedOutEventAttributes;
-  readonly activityTaskScheduledEventAttributes: ActivityTaskScheduledEventAttributes;
-  readonly activityTaskStartedEventAttributes: ActivityTaskStartedEventAttributes;
-  readonly activityTaskCompletedEventAttributes: ActivityTaskCompletedEventAttributes;
-  readonly activityTaskFailedEventAttributes: ActivityTaskFailedEventAttributes;
-  readonly activityTaskTimedOutEventAttributes: ActivityTaskTimedOutEventAttributes;
-  readonly activityTaskCanceledEventAttributes: ActivityTaskCanceledEventAttributes;
-  readonly activityTaskCancelRequestedEventAttributes: ActivityTaskCancelRequestedEventAttributes;
-  readonly workflowExecutionSignaledEventAttributes: WorkflowExecutionSignaledEventAttributes;
-  readonly markerRecordedEventAttributes: MarkerRecordedEventAttributes;
-  readonly recordMarkerFailedEventAttributes: RecordMarkerFailedEventAttributes;
-  readonly timerStartedEventAttributes: TimerStartedEventAttributes;
-  readonly timerFiredEventAttributes: TimerFiredEventAttributes;
-  readonly timerCanceledEventAttributes: TimerCanceledEventAttributes;
-  readonly startChildWorkflowExecutionInitiatedEventAttributes: StartChildWorkflowExecutionInitiatedEventAttributes;
-  readonly childWorkflowExecutionStartedEventAttributes: ChildWorkflowExecutionStartedEventAttributes;
-  readonly childWorkflowExecutionCompletedEventAttributes: ChildWorkflowExecutionCompletedEventAttributes;
-  readonly childWorkflowExecutionFailedEventAttributes: ChildWorkflowExecutionFailedEventAttributes;
-  readonly childWorkflowExecutionTimedOutEventAttributes: ChildWorkflowExecutionTimedOutEventAttributes;
-  readonly childWorkflowExecutionCanceledEventAttributes: ChildWorkflowExecutionCanceledEventAttributes;
-  readonly childWorkflowExecutionTerminatedEventAttributes: ChildWorkflowExecutionTerminatedEventAttributes;
-  readonly signalExternalWorkflowExecutionInitiatedEventAttributes: SignalExternalWorkflowExecutionInitiatedEventAttributes;
-  readonly externalWorkflowExecutionSignaledEventAttributes: ExternalWorkflowExecutionSignaledEventAttributes;
-  readonly signalExternalWorkflowExecutionFailedEventAttributes: SignalExternalWorkflowExecutionFailedEventAttributes;
-  readonly externalWorkflowExecutionCancelRequestedEventAttributes: ExternalWorkflowExecutionCancelRequestedEventAttributes;
-  readonly requestCancelExternalWorkflowExecutionInitiatedEventAttributes: RequestCancelExternalWorkflowExecutionInitiatedEventAttributes;
-  readonly requestCancelExternalWorkflowExecutionFailedEventAttributes: RequestCancelExternalWorkflowExecutionFailedEventAttributes;
-  readonly scheduleActivityTaskFailedEventAttributes: ScheduleActivityTaskFailedEventAttributes;
-  readonly requestCancelActivityTaskFailedEventAttributes: RequestCancelActivityTaskFailedEventAttributes;
-  readonly startTimerFailedEventAttributes: StartTimerFailedEventAttributes;
-  readonly cancelTimerFailedEventAttributes: CancelTimerFailedEventAttributes;
-  readonly startChildWorkflowExecutionFailedEventAttributes: StartChildWorkflowExecutionFailedEventAttributes;
-  readonly lambdaFunctionScheduledEventAttributes: LambdaFunctionScheduledEventAttributes;
-  readonly lambdaFunctionStartedEventAttributes: LambdaFunctionStartedEventAttributes;
-  readonly lambdaFunctionCompletedEventAttributes: LambdaFunctionCompletedEventAttributes;
-  readonly lambdaFunctionFailedEventAttributes: LambdaFunctionFailedEventAttributes;
-  readonly lambdaFunctionTimedOutEventAttributes: LambdaFunctionTimedOutEventAttributes;
-  readonly scheduleLambdaFunctionFailedEventAttributes: ScheduleLambdaFunctionFailedEventAttributes;
-  readonly startLambdaFunctionFailedEventAttributes: StartLambdaFunctionFailedEventAttributes;
+  readonly workflowExecutionStartedEventAttributes?: WorkflowExecutionStartedEventAttributes;
+  readonly workflowExecutionCompletedEventAttributes?: WorkflowExecutionCompletedEventAttributes;
+  readonly completeWorkflowExecutionFailedEventAttributes?: CompleteWorkflowExecutionFailedEventAttributes;
+  readonly workflowExecutionFailedEventAttributes?: WorkflowExecutionFailedEventAttributes;
+  readonly failWorkflowExecutionFailedEventAttributes?: FailWorkflowExecutionFailedEventAttributes;
+  readonly workflowExecutionTimedOutEventAttributes?: WorkflowExecutionTimedOutEventAttributes;
+  readonly workflowExecutionCanceledEventAttributes?: WorkflowExecutionCanceledEventAttributes;
+  readonly cancelWorkflowExecutionFailedEventAttributes?: CancelWorkflowExecutionFailedEventAttributes;
+  readonly workflowExecutionContinuedAsNewEventAttributes?: WorkflowExecutionContinuedAsNewEventAttributes;
+  readonly continueAsNewWorkflowExecutionFailedEventAttributes?: ContinueAsNewWorkflowExecutionFailedEventAttributes;
+  readonly workflowExecutionTerminatedEventAttributes?: WorkflowExecutionTerminatedEventAttributes;
+  readonly workflowExecutionCancelRequestedEventAttributes?: WorkflowExecutionCancelRequestedEventAttributes;
+  readonly decisionTaskScheduledEventAttributes?: DecisionTaskScheduledEventAttributes;
+  readonly decisionTaskStartedEventAttributes?: DecisionTaskStartedEventAttributes;
+  readonly decisionTaskCompletedEventAttributes?: DecisionTaskCompletedEventAttributes;
+  readonly decisionTaskTimedOutEventAttributes?: DecisionTaskTimedOutEventAttributes;
+  readonly activityTaskScheduledEventAttributes?: ActivityTaskScheduledEventAttributes;
+  readonly activityTaskStartedEventAttributes?: ActivityTaskStartedEventAttributes;
+  readonly activityTaskCompletedEventAttributes?: ActivityTaskCompletedEventAttributes;
+  readonly activityTaskFailedEventAttributes?: ActivityTaskFailedEventAttributes;
+  readonly activityTaskTimedOutEventAttributes?: ActivityTaskTimedOutEventAttributes;
+  readonly activityTaskCanceledEventAttributes?: ActivityTaskCanceledEventAttributes;
+  readonly activityTaskCancelRequestedEventAttributes?: ActivityTaskCancelRequestedEventAttributes;
+  readonly workflowExecutionSignaledEventAttributes?: WorkflowExecutionSignaledEventAttributes;
+  readonly markerRecordedEventAttributes?: MarkerRecordedEventAttributes;
+  readonly recordMarkerFailedEventAttributes?: RecordMarkerFailedEventAttributes;
+  readonly timerStartedEventAttributes?: TimerStartedEventAttributes;
+  readonly timerFiredEventAttributes?: TimerFiredEventAttributes;
+  readonly timerCanceledEventAttributes?: TimerCanceledEventAttributes;
+  readonly startChildWorkflowExecutionInitiatedEventAttributes?: StartChildWorkflowExecutionInitiatedEventAttributes;
+  readonly childWorkflowExecutionStartedEventAttributes?: ChildWorkflowExecutionStartedEventAttributes;
+  readonly childWorkflowExecutionCompletedEventAttributes?: ChildWorkflowExecutionCompletedEventAttributes;
+  readonly childWorkflowExecutionFailedEventAttributes?: ChildWorkflowExecutionFailedEventAttributes;
+  readonly childWorkflowExecutionTimedOutEventAttributes?: ChildWorkflowExecutionTimedOutEventAttributes;
+  readonly childWorkflowExecutionCanceledEventAttributes?: ChildWorkflowExecutionCanceledEventAttributes;
+  readonly childWorkflowExecutionTerminatedEventAttributes?: ChildWorkflowExecutionTerminatedEventAttributes;
+  readonly signalExternalWorkflowExecutionInitiatedEventAttributes?: SignalExternalWorkflowExecutionInitiatedEventAttributes;
+  readonly externalWorkflowExecutionSignaledEventAttributes?: ExternalWorkflowExecutionSignaledEventAttributes;
+  readonly signalExternalWorkflowExecutionFailedEventAttributes?: SignalExternalWorkflowExecutionFailedEventAttributes;
+  readonly externalWorkflowExecutionCancelRequestedEventAttributes?: ExternalWorkflowExecutionCancelRequestedEventAttributes;
+  readonly requestCancelExternalWorkflowExecutionInitiatedEventAttributes?: RequestCancelExternalWorkflowExecutionInitiatedEventAttributes;
+  readonly requestCancelExternalWorkflowExecutionFailedEventAttributes?: RequestCancelExternalWorkflowExecutionFailedEventAttributes;
+  readonly scheduleActivityTaskFailedEventAttributes?: ScheduleActivityTaskFailedEventAttributes;
+  readonly requestCancelActivityTaskFailedEventAttributes?: RequestCancelActivityTaskFailedEventAttributes;
+  readonly startTimerFailedEventAttributes?: StartTimerFailedEventAttributes;
+  readonly cancelTimerFailedEventAttributes?: CancelTimerFailedEventAttributes;
+  readonly startChildWorkflowExecutionFailedEventAttributes?: StartChildWorkflowExecutionFailedEventAttributes;
+  readonly lambdaFunctionScheduledEventAttributes?: LambdaFunctionScheduledEventAttributes;
+  readonly lambdaFunctionStartedEventAttributes?: LambdaFunctionStartedEventAttributes;
+  readonly lambdaFunctionCompletedEventAttributes?: LambdaFunctionCompletedEventAttributes;
+  readonly lambdaFunctionFailedEventAttributes?: LambdaFunctionFailedEventAttributes;
+  readonly lambdaFunctionTimedOutEventAttributes?: LambdaFunctionTimedOutEventAttributes;
+  readonly scheduleLambdaFunctionFailedEventAttributes?: ScheduleLambdaFunctionFailedEventAttributes;
+  readonly startLambdaFunctionFailedEventAttributes?: StartLambdaFunctionFailedEventAttributes;
 }
 
-interface LambdaFunctionCompletedEventAttributes {
+export interface LambdaFunctionCompletedEventAttributes {
   readonly scheduledEventId: number;
   readonly startedEventId: number;
-  readonly result: string;
+  readonly result?: string;
 }
 
-interface LambdaFunctionFailedEventAttributes {
+export interface LambdaFunctionFailedEventAttributes {
   readonly scheduledEventId: number;
   readonly startedEventId: number;
-  readonly reason: string;
-  readonly details: string;
+  readonly reason?: string;
+  readonly details?: string;
 }
 
-interface LambdaFunctionScheduledEventAttributes {
+export interface LambdaFunctionScheduledEventAttributes {
   readonly id: string;
   readonly name: string;
-  readonly control: string;
-  readonly input: string;
-  readonly startToCloseTimeout: string;
+  readonly control?: string;
+  readonly input?: string;
+  readonly startToCloseTimeout?: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface LambdaFunctionStartedEventAttributes {
+export interface LambdaFunctionStartedEventAttributes {
   readonly scheduledEventId: number;
 }
 
-interface LambdaFunctionTimedOutEventAttributes {
+export interface LambdaFunctionTimedOutEventAttributes {
   readonly scheduledEventId: number;
   readonly startedEventId: number;
-  readonly timeoutType: string;
+  readonly timeoutType?: string;
 }
 
-interface LimitExceededFault {
-  readonly message: string;
+export interface LimitExceededFault {
+  readonly message?: string;
 }
 
-interface ListActivityTypesInput {
+export interface ListActivityTypesInput {
   readonly domain: string;
-  readonly name: string;
+  readonly name?: string;
   readonly registrationStatus: string;
-  readonly nextPageToken: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
+  readonly nextPageToken?: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
 }
 
-interface ListClosedWorkflowExecutionsInput {
+export interface ListClosedWorkflowExecutionsInput {
+  readonly domain: string;
+  readonly startTimeFilter?: ExecutionTimeFilter;
+  readonly closeTimeFilter?: ExecutionTimeFilter;
+  readonly executionFilter?: WorkflowExecutionFilter;
+  readonly closeStatusFilter?: CloseStatusFilter;
+  readonly typeFilter?: WorkflowTypeFilter;
+  readonly tagFilter?: TagFilter;
+  readonly nextPageToken?: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
+}
+
+export interface ListDomainsInput {
+  readonly nextPageToken?: string;
+  readonly registrationStatus: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
+}
+
+export interface ListOpenWorkflowExecutionsInput {
   readonly domain: string;
   readonly startTimeFilter: ExecutionTimeFilter;
-  readonly closeTimeFilter: ExecutionTimeFilter;
-  readonly executionFilter: WorkflowExecutionFilter;
-  readonly closeStatusFilter: CloseStatusFilter;
-  readonly typeFilter: WorkflowTypeFilter;
-  readonly tagFilter: TagFilter;
-  readonly nextPageToken: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
+  readonly typeFilter?: WorkflowTypeFilter;
+  readonly tagFilter?: TagFilter;
+  readonly nextPageToken?: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
+  readonly executionFilter?: WorkflowExecutionFilter;
 }
 
-interface ListDomainsInput {
-  readonly nextPageToken: string;
-  readonly registrationStatus: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
-}
-
-interface ListOpenWorkflowExecutionsInput {
-  readonly domain: string;
-  readonly startTimeFilter: ExecutionTimeFilter;
-  readonly typeFilter: WorkflowTypeFilter;
-  readonly tagFilter: TagFilter;
-  readonly nextPageToken: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
-  readonly executionFilter: WorkflowExecutionFilter;
-}
-
-interface ListTagsForResourceInput {
+export interface ListTagsForResourceInput {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceOutput {
-  readonly tags: [];
+export interface ListTagsForResourceOutput {
+  readonly tags?: [];
 }
 
-interface ListWorkflowTypesInput {
+export interface ListWorkflowTypesInput {
   readonly domain: string;
-  readonly name: string;
+  readonly name?: string;
   readonly registrationStatus: string;
-  readonly nextPageToken: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
+  readonly nextPageToken?: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
 }
 
-interface MarkerRecordedEventAttributes {
+export interface MarkerRecordedEventAttributes {
   readonly markerName: string;
-  readonly details: string;
+  readonly details?: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface OperationNotPermittedFault {
-  readonly message: string;
+export interface OperationNotPermittedFault {
+  readonly message?: string;
 }
 
-interface PendingTaskCount {
+export interface PendingTaskCount {
   readonly count: number;
-  readonly truncated: boolean;
+  readonly truncated?: boolean;
 }
 
-interface PollForActivityTaskInput {
+export interface PollForActivityTaskInput {
   readonly domain: string;
   readonly taskList: TaskList;
-  readonly identity: string;
+  readonly identity?: string;
 }
 
-interface PollForDecisionTaskInput {
+export interface PollForDecisionTaskInput {
   readonly domain: string;
   readonly taskList: TaskList;
-  readonly identity: string;
-  readonly nextPageToken: string;
-  readonly maximumPageSize: number;
-  readonly reverseOrder: boolean;
+  readonly identity?: string;
+  readonly nextPageToken?: string;
+  readonly maximumPageSize?: number;
+  readonly reverseOrder?: boolean;
 }
 
-interface RecordActivityTaskHeartbeatInput {
+export interface RecordActivityTaskHeartbeatInput {
   readonly taskToken: string;
-  readonly details: string;
+  readonly details?: string;
 }
 
-interface RecordMarkerDecisionAttributes {
+export interface RecordMarkerDecisionAttributes {
   readonly markerName: string;
-  readonly details: string;
+  readonly details?: string;
 }
 
-interface RecordMarkerFailedEventAttributes {
+export interface RecordMarkerFailedEventAttributes {
   readonly markerName: string;
   readonly cause: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface RegisterActivityTypeInput {
+export interface RegisterActivityTypeInput {
   readonly domain: string;
   readonly name: string;
   readonly version: string;
-  readonly description: string;
-  readonly defaultTaskStartToCloseTimeout: string;
-  readonly defaultTaskHeartbeatTimeout: string;
-  readonly defaultTaskList: TaskList;
-  readonly defaultTaskPriority: string;
-  readonly defaultTaskScheduleToStartTimeout: string;
-  readonly defaultTaskScheduleToCloseTimeout: string;
+  readonly description?: string;
+  readonly defaultTaskStartToCloseTimeout?: string;
+  readonly defaultTaskHeartbeatTimeout?: string;
+  readonly defaultTaskList?: TaskList;
+  readonly defaultTaskPriority?: string;
+  readonly defaultTaskScheduleToStartTimeout?: string;
+  readonly defaultTaskScheduleToCloseTimeout?: string;
 }
 
-interface RegisterDomainInput {
+export interface RegisterDomainInput {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly workflowExecutionRetentionPeriodInDays: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface RegisterWorkflowTypeInput {
+export interface RegisterWorkflowTypeInput {
   readonly domain: string;
   readonly name: string;
   readonly version: string;
-  readonly description: string;
-  readonly defaultTaskStartToCloseTimeout: string;
-  readonly defaultExecutionStartToCloseTimeout: string;
-  readonly defaultTaskList: TaskList;
-  readonly defaultTaskPriority: string;
-  readonly defaultChildPolicy: string;
-  readonly defaultLambdaRole: string;
+  readonly description?: string;
+  readonly defaultTaskStartToCloseTimeout?: string;
+  readonly defaultExecutionStartToCloseTimeout?: string;
+  readonly defaultTaskList?: TaskList;
+  readonly defaultTaskPriority?: string;
+  readonly defaultChildPolicy?: string;
+  readonly defaultLambdaRole?: string;
 }
 
-interface RequestCancelActivityTaskDecisionAttributes {
+export interface RequestCancelActivityTaskDecisionAttributes {
   readonly activityId: string;
 }
 
-interface RequestCancelActivityTaskFailedEventAttributes {
+export interface RequestCancelActivityTaskFailedEventAttributes {
   readonly activityId: string;
   readonly cause: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface RequestCancelExternalWorkflowExecutionDecisionAttributes {
+export interface RequestCancelExternalWorkflowExecutionDecisionAttributes {
   readonly workflowId: string;
-  readonly runId: string;
-  readonly control: string;
+  readonly runId?: string;
+  readonly control?: string;
 }
 
-interface RequestCancelExternalWorkflowExecutionFailedEventAttributes {
+export interface RequestCancelExternalWorkflowExecutionFailedEventAttributes {
   readonly workflowId: string;
-  readonly runId: string;
+  readonly runId?: string;
   readonly cause: string;
   readonly initiatedEventId: number;
   readonly decisionTaskCompletedEventId: number;
-  readonly control: string;
+  readonly control?: string;
 }
 
-interface RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
+export interface RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
   readonly workflowId: string;
-  readonly runId: string;
+  readonly runId?: string;
   readonly decisionTaskCompletedEventId: number;
-  readonly control: string;
+  readonly control?: string;
 }
 
-interface RequestCancelWorkflowExecutionInput {
+export interface RequestCancelWorkflowExecutionInput {
   readonly domain: string;
   readonly workflowId: string;
-  readonly runId: string;
+  readonly runId?: string;
 }
 
-interface ResourceTag {
+export interface ResourceTag {
   readonly key: string;
-  readonly value: string;
+  readonly value?: string;
 }
 
-interface RespondActivityTaskCanceledInput {
+export interface RespondActivityTaskCanceledInput {
   readonly taskToken: string;
-  readonly details: string;
+  readonly details?: string;
 }
 
-interface RespondActivityTaskCompletedInput {
+export interface RespondActivityTaskCompletedInput {
   readonly taskToken: string;
-  readonly result: string;
+  readonly result?: string;
 }
 
-interface RespondActivityTaskFailedInput {
+export interface RespondActivityTaskFailedInput {
   readonly taskToken: string;
-  readonly reason: string;
-  readonly details: string;
+  readonly reason?: string;
+  readonly details?: string;
 }
 
-interface RespondDecisionTaskCompletedInput {
+export interface RespondDecisionTaskCompletedInput {
   readonly taskToken: string;
-  readonly decisions: [];
-  readonly executionContext: string;
+  readonly decisions?: [];
+  readonly executionContext?: string;
 }
 
-interface Run {
-  readonly runId: string;
+export interface Run {
+  readonly runId?: string;
 }
 
-interface ScheduleActivityTaskDecisionAttributes {
+export interface ScheduleActivityTaskDecisionAttributes {
   readonly activityType: ActivityType;
   readonly activityId: string;
-  readonly control: string;
-  readonly input: string;
-  readonly scheduleToCloseTimeout: string;
-  readonly taskList: TaskList;
-  readonly taskPriority: string;
-  readonly scheduleToStartTimeout: string;
-  readonly startToCloseTimeout: string;
-  readonly heartbeatTimeout: string;
+  readonly control?: string;
+  readonly input?: string;
+  readonly scheduleToCloseTimeout?: string;
+  readonly taskList?: TaskList;
+  readonly taskPriority?: string;
+  readonly scheduleToStartTimeout?: string;
+  readonly startToCloseTimeout?: string;
+  readonly heartbeatTimeout?: string;
 }
 
-interface ScheduleActivityTaskFailedEventAttributes {
+export interface ScheduleActivityTaskFailedEventAttributes {
   readonly activityType: ActivityType;
   readonly activityId: string;
   readonly cause: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface ScheduleLambdaFunctionDecisionAttributes {
+export interface ScheduleLambdaFunctionDecisionAttributes {
   readonly id: string;
   readonly name: string;
-  readonly control: string;
-  readonly input: string;
-  readonly startToCloseTimeout: string;
+  readonly control?: string;
+  readonly input?: string;
+  readonly startToCloseTimeout?: string;
 }
 
-interface ScheduleLambdaFunctionFailedEventAttributes {
+export interface ScheduleLambdaFunctionFailedEventAttributes {
   readonly id: string;
   readonly name: string;
   readonly cause: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface SignalExternalWorkflowExecutionDecisionAttributes {
+export interface SignalExternalWorkflowExecutionDecisionAttributes {
   readonly workflowId: string;
-  readonly runId: string;
+  readonly runId?: string;
   readonly signalName: string;
-  readonly input: string;
-  readonly control: string;
+  readonly input?: string;
+  readonly control?: string;
 }
 
-interface SignalExternalWorkflowExecutionFailedEventAttributes {
+export interface SignalExternalWorkflowExecutionFailedEventAttributes {
   readonly workflowId: string;
-  readonly runId: string;
+  readonly runId?: string;
   readonly cause: string;
   readonly initiatedEventId: number;
   readonly decisionTaskCompletedEventId: number;
-  readonly control: string;
+  readonly control?: string;
 }
 
-interface SignalExternalWorkflowExecutionInitiatedEventAttributes {
+export interface SignalExternalWorkflowExecutionInitiatedEventAttributes {
   readonly workflowId: string;
-  readonly runId: string;
+  readonly runId?: string;
   readonly signalName: string;
-  readonly input: string;
+  readonly input?: string;
   readonly decisionTaskCompletedEventId: number;
-  readonly control: string;
+  readonly control?: string;
 }
 
-interface SignalWorkflowExecutionInput {
+export interface SignalWorkflowExecutionInput {
   readonly domain: string;
   readonly workflowId: string;
-  readonly runId: string;
+  readonly runId?: string;
   readonly signalName: string;
-  readonly input: string;
+  readonly input?: string;
 }
 
-interface StartChildWorkflowExecutionDecisionAttributes {
+export interface StartChildWorkflowExecutionDecisionAttributes {
   readonly workflowType: WorkflowType;
   readonly workflowId: string;
-  readonly control: string;
-  readonly input: string;
-  readonly executionStartToCloseTimeout: string;
-  readonly taskList: TaskList;
-  readonly taskPriority: string;
-  readonly taskStartToCloseTimeout: string;
-  readonly childPolicy: string;
-  readonly tagList: [];
-  readonly lambdaRole: string;
+  readonly control?: string;
+  readonly input?: string;
+  readonly executionStartToCloseTimeout?: string;
+  readonly taskList?: TaskList;
+  readonly taskPriority?: string;
+  readonly taskStartToCloseTimeout?: string;
+  readonly childPolicy?: string;
+  readonly tagList?: [];
+  readonly lambdaRole?: string;
 }
 
-interface StartChildWorkflowExecutionFailedEventAttributes {
+export interface StartChildWorkflowExecutionFailedEventAttributes {
   readonly workflowType: WorkflowType;
   readonly cause: string;
   readonly workflowId: string;
   readonly initiatedEventId: number;
   readonly decisionTaskCompletedEventId: number;
-  readonly control: string;
+  readonly control?: string;
 }
 
-interface StartChildWorkflowExecutionInitiatedEventAttributes {
+export interface StartChildWorkflowExecutionInitiatedEventAttributes {
   readonly workflowId: string;
   readonly workflowType: WorkflowType;
-  readonly control: string;
-  readonly input: string;
-  readonly executionStartToCloseTimeout: string;
+  readonly control?: string;
+  readonly input?: string;
+  readonly executionStartToCloseTimeout?: string;
   readonly taskList: TaskList;
-  readonly taskPriority: string;
+  readonly taskPriority?: string;
   readonly decisionTaskCompletedEventId: number;
   readonly childPolicy: string;
-  readonly taskStartToCloseTimeout: string;
-  readonly tagList: [];
-  readonly lambdaRole: string;
+  readonly taskStartToCloseTimeout?: string;
+  readonly tagList?: [];
+  readonly lambdaRole?: string;
 }
 
-interface StartLambdaFunctionFailedEventAttributes {
-  readonly scheduledEventId: number;
-  readonly cause: string;
-  readonly message: string;
+export interface StartLambdaFunctionFailedEventAttributes {
+  readonly scheduledEventId?: number;
+  readonly cause?: string;
+  readonly message?: string;
 }
 
-interface StartTimerDecisionAttributes {
+export interface StartTimerDecisionAttributes {
   readonly timerId: string;
-  readonly control: string;
+  readonly control?: string;
   readonly startToFireTimeout: string;
 }
 
-interface StartTimerFailedEventAttributes {
+export interface StartTimerFailedEventAttributes {
   readonly timerId: string;
   readonly cause: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface StartWorkflowExecutionInput {
+export interface StartWorkflowExecutionInput {
   readonly domain: string;
   readonly workflowId: string;
   readonly workflowType: WorkflowType;
-  readonly taskList: TaskList;
-  readonly taskPriority: string;
-  readonly input: string;
-  readonly executionStartToCloseTimeout: string;
-  readonly tagList: [];
-  readonly taskStartToCloseTimeout: string;
-  readonly childPolicy: string;
-  readonly lambdaRole: string;
+  readonly taskList?: TaskList;
+  readonly taskPriority?: string;
+  readonly input?: string;
+  readonly executionStartToCloseTimeout?: string;
+  readonly tagList?: [];
+  readonly taskStartToCloseTimeout?: string;
+  readonly childPolicy?: string;
+  readonly lambdaRole?: string;
 }
 
-interface TagFilter {
+export interface TagFilter {
   readonly tag: string;
 }
 
-interface TagResourceInput {
+export interface TagResourceInput {
   readonly resourceArn: string;
   readonly tags: [];
 }
 
-interface TaskList {
+export interface TaskList {
   readonly name: string;
 }
 
-interface TerminateWorkflowExecutionInput {
+export interface TerminateWorkflowExecutionInput {
   readonly domain: string;
   readonly workflowId: string;
-  readonly runId: string;
-  readonly reason: string;
-  readonly details: string;
-  readonly childPolicy: string;
+  readonly runId?: string;
+  readonly reason?: string;
+  readonly details?: string;
+  readonly childPolicy?: string;
 }
 
-interface TimerCanceledEventAttributes {
+export interface TimerCanceledEventAttributes {
   readonly timerId: string;
   readonly startedEventId: number;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface TimerFiredEventAttributes {
+export interface TimerFiredEventAttributes {
   readonly timerId: string;
   readonly startedEventId: number;
 }
 
-interface TimerStartedEventAttributes {
+export interface TimerStartedEventAttributes {
   readonly timerId: string;
-  readonly control: string;
+  readonly control?: string;
   readonly startToFireTimeout: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface TooManyTagsFault {
-  readonly message: string;
+export interface TooManyTagsFault {
+  readonly message?: string;
 }
 
-interface TypeAlreadyExistsFault {
-  readonly message: string;
+export interface TypeAlreadyExistsFault {
+  readonly message?: string;
 }
 
-interface TypeDeprecatedFault {
-  readonly message: string;
+export interface TypeDeprecatedFault {
+  readonly message?: string;
 }
 
-interface UndeprecateActivityTypeInput {
+export interface UndeprecateActivityTypeInput {
   readonly domain: string;
   readonly activityType: ActivityType;
 }
 
-interface UndeprecateDomainInput {
+export interface UndeprecateDomainInput {
   readonly name: string;
 }
 
-interface UndeprecateWorkflowTypeInput {
+export interface UndeprecateWorkflowTypeInput {
   readonly domain: string;
   readonly workflowType: WorkflowType;
 }
 
-interface UnknownResourceFault {
-  readonly message: string;
+export interface UnknownResourceFault {
+  readonly message?: string;
 }
 
-interface UntagResourceInput {
+export interface UntagResourceInput {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface WorkflowExecution {
+export interface WorkflowExecution {
   readonly workflowId: string;
   readonly runId: string;
 }
 
-interface WorkflowExecutionAlreadyStartedFault {
-  readonly message: string;
+export interface WorkflowExecutionAlreadyStartedFault {
+  readonly message?: string;
 }
 
-interface WorkflowExecutionCancelRequestedEventAttributes {
-  readonly externalWorkflowExecution: WorkflowExecution;
-  readonly externalInitiatedEventId: number;
-  readonly cause: string;
+export interface WorkflowExecutionCancelRequestedEventAttributes {
+  readonly externalWorkflowExecution?: WorkflowExecution;
+  readonly externalInitiatedEventId?: number;
+  readonly cause?: string;
 }
 
-interface WorkflowExecutionCanceledEventAttributes {
-  readonly details: string;
+export interface WorkflowExecutionCanceledEventAttributes {
+  readonly details?: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface WorkflowExecutionCompletedEventAttributes {
-  readonly result: string;
+export interface WorkflowExecutionCompletedEventAttributes {
+  readonly result?: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface WorkflowExecutionConfiguration {
+export interface WorkflowExecutionConfiguration {
   readonly taskStartToCloseTimeout: string;
   readonly executionStartToCloseTimeout: string;
   readonly taskList: TaskList;
-  readonly taskPriority: string;
+  readonly taskPriority?: string;
   readonly childPolicy: string;
-  readonly lambdaRole: string;
+  readonly lambdaRole?: string;
 }
 
-interface WorkflowExecutionContinuedAsNewEventAttributes {
-  readonly input: string;
+export interface WorkflowExecutionContinuedAsNewEventAttributes {
+  readonly input?: string;
   readonly decisionTaskCompletedEventId: number;
   readonly newExecutionRunId: string;
-  readonly executionStartToCloseTimeout: string;
+  readonly executionStartToCloseTimeout?: string;
   readonly taskList: TaskList;
-  readonly taskPriority: string;
-  readonly taskStartToCloseTimeout: string;
+  readonly taskPriority?: string;
+  readonly taskStartToCloseTimeout?: string;
   readonly childPolicy: string;
-  readonly tagList: [];
+  readonly tagList?: [];
   readonly workflowType: WorkflowType;
-  readonly lambdaRole: string;
+  readonly lambdaRole?: string;
 }
 
-interface WorkflowExecutionCount {
+export interface WorkflowExecutionCount {
   readonly count: number;
-  readonly truncated: boolean;
+  readonly truncated?: boolean;
 }
 
-interface WorkflowExecutionDetail {
+export interface WorkflowExecutionDetail {
   readonly executionInfo: WorkflowExecutionInfo;
   readonly executionConfiguration: WorkflowExecutionConfiguration;
   readonly openCounts: WorkflowExecutionOpenCounts;
-  readonly latestActivityTaskTimestamp: Date;
-  readonly latestExecutionContext: string;
+  readonly latestActivityTaskTimestamp?: Date;
+  readonly latestExecutionContext?: string;
 }
 
-interface WorkflowExecutionFailedEventAttributes {
-  readonly reason: string;
-  readonly details: string;
+export interface WorkflowExecutionFailedEventAttributes {
+  readonly reason?: string;
+  readonly details?: string;
   readonly decisionTaskCompletedEventId: number;
 }
 
-interface WorkflowExecutionFilter {
+export interface WorkflowExecutionFilter {
   readonly workflowId: string;
 }
 
-interface WorkflowExecutionInfo {
+export interface WorkflowExecutionInfo {
   readonly execution: WorkflowExecution;
   readonly workflowType: WorkflowType;
   readonly startTimestamp: Date;
-  readonly closeTimestamp: Date;
+  readonly closeTimestamp?: Date;
   readonly executionStatus: string;
-  readonly closeStatus: string;
-  readonly parent: WorkflowExecution;
-  readonly tagList: [];
-  readonly cancelRequested: boolean;
+  readonly closeStatus?: string;
+  readonly parent?: WorkflowExecution;
+  readonly tagList?: [];
+  readonly cancelRequested?: boolean;
 }
 
-interface WorkflowExecutionInfos {
+export interface WorkflowExecutionInfos {
   readonly executionInfos: [];
-  readonly nextPageToken: string;
+  readonly nextPageToken?: string;
 }
 
-interface WorkflowExecutionOpenCounts {
+export interface WorkflowExecutionOpenCounts {
   readonly openActivityTasks: number;
   readonly openDecisionTasks: number;
   readonly openTimers: number;
   readonly openChildWorkflowExecutions: number;
-  readonly openLambdaFunctions: number;
+  readonly openLambdaFunctions?: number;
 }
 
-interface WorkflowExecutionSignaledEventAttributes {
+export interface WorkflowExecutionSignaledEventAttributes {
   readonly signalName: string;
-  readonly input: string;
-  readonly externalWorkflowExecution: WorkflowExecution;
-  readonly externalInitiatedEventId: number;
+  readonly input?: string;
+  readonly externalWorkflowExecution?: WorkflowExecution;
+  readonly externalInitiatedEventId?: number;
 }
 
-interface WorkflowExecutionStartedEventAttributes {
-  readonly input: string;
-  readonly executionStartToCloseTimeout: string;
-  readonly taskStartToCloseTimeout: string;
+export interface WorkflowExecutionStartedEventAttributes {
+  readonly input?: string;
+  readonly executionStartToCloseTimeout?: string;
+  readonly taskStartToCloseTimeout?: string;
   readonly childPolicy: string;
   readonly taskList: TaskList;
-  readonly taskPriority: string;
+  readonly taskPriority?: string;
   readonly workflowType: WorkflowType;
-  readonly tagList: [];
-  readonly continuedExecutionRunId: string;
-  readonly parentWorkflowExecution: WorkflowExecution;
-  readonly parentInitiatedEventId: number;
-  readonly lambdaRole: string;
+  readonly tagList?: [];
+  readonly continuedExecutionRunId?: string;
+  readonly parentWorkflowExecution?: WorkflowExecution;
+  readonly parentInitiatedEventId?: number;
+  readonly lambdaRole?: string;
 }
 
-interface WorkflowExecutionTerminatedEventAttributes {
-  readonly reason: string;
-  readonly details: string;
+export interface WorkflowExecutionTerminatedEventAttributes {
+  readonly reason?: string;
+  readonly details?: string;
   readonly childPolicy: string;
-  readonly cause: string;
+  readonly cause?: string;
 }
 
-interface WorkflowExecutionTimedOutEventAttributes {
+export interface WorkflowExecutionTimedOutEventAttributes {
   readonly timeoutType: string;
   readonly childPolicy: string;
 }
 
-interface WorkflowType {
+export interface WorkflowType {
   readonly name: string;
   readonly version: string;
 }
 
-interface WorkflowTypeConfiguration {
-  readonly defaultTaskStartToCloseTimeout: string;
-  readonly defaultExecutionStartToCloseTimeout: string;
-  readonly defaultTaskList: TaskList;
-  readonly defaultTaskPriority: string;
-  readonly defaultChildPolicy: string;
-  readonly defaultLambdaRole: string;
+export interface WorkflowTypeConfiguration {
+  readonly defaultTaskStartToCloseTimeout?: string;
+  readonly defaultExecutionStartToCloseTimeout?: string;
+  readonly defaultTaskList?: TaskList;
+  readonly defaultTaskPriority?: string;
+  readonly defaultChildPolicy?: string;
+  readonly defaultLambdaRole?: string;
 }
 
-interface WorkflowTypeDetail {
+export interface WorkflowTypeDetail {
   readonly typeInfo: WorkflowTypeInfo;
   readonly configuration: WorkflowTypeConfiguration;
 }
 
-interface WorkflowTypeFilter {
+export interface WorkflowTypeFilter {
   readonly name: string;
-  readonly version: string;
+  readonly version?: string;
 }
 
-interface WorkflowTypeInfo {
+export interface WorkflowTypeInfo {
   readonly workflowType: WorkflowType;
   readonly status: string;
-  readonly description: string;
+  readonly description?: string;
   readonly creationDate: Date;
-  readonly deprecationDate: Date;
+  readonly deprecationDate?: Date;
 }
 
-interface WorkflowTypeInfos {
+export interface WorkflowTypeInfos {
   readonly typeInfos: [];
-  readonly nextPageToken: string;
+  readonly nextPageToken?: string;
 }
+
 

@@ -4,13 +4,16 @@
 export interface AcceptHandshake {
   readonly HandshakeId: string;
 }
+
 export interface AttachPolicy {
   readonly PolicyId: string;
   readonly TargetId: string;
 }
+
 export interface CancelHandshake {
   readonly HandshakeId: string;
 }
+
 export interface CreateAccount {
   readonly Email: string;
   readonly AccountName: string;
@@ -18,6 +21,7 @@ export interface CreateAccount {
   readonly IamUserAccessToBilling?: string;
   readonly Tags?: [];
 }
+
 export interface CreateGovCloudAccount {
   readonly Email: string;
   readonly AccountName: string;
@@ -25,14 +29,17 @@ export interface CreateGovCloudAccount {
   readonly IamUserAccessToBilling?: string;
   readonly Tags?: [];
 }
+
 export interface CreateOrganization {
   readonly FeatureSet?: string;
 }
+
 export interface CreateOrganizationalUnit {
   readonly ParentId: string;
   readonly Name: string;
   readonly Tags?: [];
 }
+
 export interface CreatePolicy {
   readonly Content: string;
   readonly Description: string;
@@ -40,165 +47,205 @@ export interface CreatePolicy {
   readonly Type: string;
   readonly Tags?: [];
 }
+
 export interface DeclineHandshake {
   readonly HandshakeId: string;
 }
+
 export interface DeleteOrganizationalUnit {
   readonly OrganizationalUnitId: string;
 }
+
 export interface DeletePolicy {
   readonly PolicyId: string;
 }
+
 export interface DeregisterDelegatedAdministrator {
   readonly AccountId: string;
   readonly ServicePrincipal: string;
 }
+
 export interface DescribeAccount {
   readonly AccountId: string;
 }
+
 export interface DescribeCreateAccountStatus {
   readonly CreateAccountRequestId: string;
 }
+
 export interface DescribeEffectivePolicy {
   readonly PolicyType: string;
   readonly TargetId?: string;
 }
+
 export interface DescribeHandshake {
   readonly HandshakeId: string;
 }
+
 export interface DescribeOrganizationalUnit {
   readonly OrganizationalUnitId: string;
 }
+
 export interface DescribePolicy {
   readonly PolicyId: string;
 }
+
 export interface DetachPolicy {
   readonly PolicyId: string;
   readonly TargetId: string;
 }
+
 export interface DisableAWSServiceAccess {
   readonly ServicePrincipal: string;
 }
+
 export interface DisablePolicyType {
   readonly RootId: string;
   readonly PolicyType: string;
 }
+
 export interface EnableAWSServiceAccess {
   readonly ServicePrincipal: string;
 }
+
 export interface EnableAllFeatures {
 }
+
 export interface EnablePolicyType {
   readonly RootId: string;
   readonly PolicyType: string;
 }
+
 export interface InviteAccountToOrganization {
   readonly Target: HandshakeParty;
   readonly Notes?: string;
   readonly Tags?: [];
 }
+
 export interface ListAWSServiceAccessForOrganization {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListAccounts {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListAccountsForParent {
   readonly ParentId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListChildren {
   readonly ParentId: string;
   readonly ChildType: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListCreateAccountStatus {
   readonly States?: [];
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDelegatedAdministrators {
   readonly ServicePrincipal?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListDelegatedServicesForAccount {
   readonly AccountId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListHandshakesForAccount {
   readonly Filter?: HandshakeFilter;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListHandshakesForOrganization {
   readonly Filter?: HandshakeFilter;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListOrganizationalUnitsForParent {
   readonly ParentId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListParents {
   readonly ChildId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListPolicies {
   readonly Filter: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListPoliciesForTarget {
   readonly TargetId: string;
   readonly Filter: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListRoots {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceId: string;
   readonly NextToken?: string;
 }
+
 export interface ListTargetsForPolicy {
   readonly PolicyId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface MoveAccount {
   readonly AccountId: string;
   readonly SourceParentId: string;
   readonly DestinationParentId: string;
 }
+
 export interface RegisterDelegatedAdministrator {
   readonly AccountId: string;
   readonly ServicePrincipal: string;
 }
+
 export interface RemoveAccountFromOrganization {
   readonly AccountId: string;
 }
+
 export interface TagResource {
   readonly ResourceId: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceId: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateOrganizationalUnit {
   readonly OrganizationalUnitId: string;
   readonly Name?: string;
 }
+
 export interface UpdatePolicy {
   readonly PolicyId: string;
   readonly Name?: string;
@@ -206,742 +253,741 @@ export interface UpdatePolicy {
   readonly Content?: string;
 }
 
-
-
-interface AWSOrganizationsNotInUseException {
-  readonly Message: string;
+export interface AWSOrganizationsNotInUseException {
+  readonly Message?: string;
 }
 
-interface AcceptHandshakeRequest {
+export interface AcceptHandshakeRequest {
   readonly HandshakeId: string;
 }
 
-interface AcceptHandshakeResponse {
-  readonly Handshake: Handshake;
+export interface AcceptHandshakeResponse {
+  readonly Handshake?: Handshake;
 }
 
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface AccessDeniedForDependencyException {
-  readonly Message: string;
-  readonly Reason: string;
+export interface AccessDeniedForDependencyException {
+  readonly Message?: string;
+  readonly Reason?: string;
 }
 
-interface Account {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Email: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly JoinedMethod: string;
-  readonly JoinedTimestamp: Date;
+export interface Account {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Email?: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly JoinedMethod?: string;
+  readonly JoinedTimestamp?: Date;
 }
 
-interface AccountAlreadyRegisteredException {
-  readonly Message: string;
+export interface AccountAlreadyRegisteredException {
+  readonly Message?: string;
 }
 
-interface AccountNotFoundException {
-  readonly Message: string;
+export interface AccountNotFoundException {
+  readonly Message?: string;
 }
 
-interface AccountNotRegisteredException {
-  readonly Message: string;
+export interface AccountNotRegisteredException {
+  readonly Message?: string;
 }
 
-interface AccountOwnerNotVerifiedException {
-  readonly Message: string;
+export interface AccountOwnerNotVerifiedException {
+  readonly Message?: string;
 }
 
-interface AlreadyInOrganizationException {
-  readonly Message: string;
+export interface AlreadyInOrganizationException {
+  readonly Message?: string;
 }
 
-interface AttachPolicyRequest {
+export interface AttachPolicyRequest {
   readonly PolicyId: string;
   readonly TargetId: string;
 }
 
-interface CancelHandshakeRequest {
+export interface CancelHandshakeRequest {
   readonly HandshakeId: string;
 }
 
-interface CancelHandshakeResponse {
-  readonly Handshake: Handshake;
+export interface CancelHandshakeResponse {
+  readonly Handshake?: Handshake;
 }
 
-interface Child {
-  readonly Id: string;
-  readonly Type: string;
+export interface Child {
+  readonly Id?: string;
+  readonly Type?: string;
 }
 
-interface ChildNotFoundException {
-  readonly Message: string;
+export interface ChildNotFoundException {
+  readonly Message?: string;
 }
 
-interface ConcurrentModificationException {
-  readonly Message: string;
+export interface ConcurrentModificationException {
+  readonly Message?: string;
 }
 
-interface ConstraintViolationException {
-  readonly Message: string;
-  readonly Reason: string;
+export interface ConstraintViolationException {
+  readonly Message?: string;
+  readonly Reason?: string;
 }
 
-interface CreateAccountRequest {
+export interface CreateAccountRequest {
   readonly Email: string;
   readonly AccountName: string;
-  readonly RoleName: string;
-  readonly IamUserAccessToBilling: string;
-  readonly Tags: [];
+  readonly RoleName?: string;
+  readonly IamUserAccessToBilling?: string;
+  readonly Tags?: [];
 }
 
-interface CreateAccountResponse {
-  readonly CreateAccountStatus: CreateAccountStatus;
+export interface CreateAccountResponse {
+  readonly CreateAccountStatus?: CreateAccountStatus;
 }
 
-interface CreateAccountStatus {
-  readonly Id: string;
-  readonly AccountName: string;
-  readonly State: string;
-  readonly RequestedTimestamp: Date;
-  readonly CompletedTimestamp: Date;
-  readonly AccountId: string;
-  readonly GovCloudAccountId: string;
-  readonly FailureReason: string;
+export interface CreateAccountStatus {
+  readonly Id?: string;
+  readonly AccountName?: string;
+  readonly State?: string;
+  readonly RequestedTimestamp?: Date;
+  readonly CompletedTimestamp?: Date;
+  readonly AccountId?: string;
+  readonly GovCloudAccountId?: string;
+  readonly FailureReason?: string;
 }
 
-interface CreateAccountStatusNotFoundException {
-  readonly Message: string;
+export interface CreateAccountStatusNotFoundException {
+  readonly Message?: string;
 }
 
-interface CreateGovCloudAccountRequest {
+export interface CreateGovCloudAccountRequest {
   readonly Email: string;
   readonly AccountName: string;
-  readonly RoleName: string;
-  readonly IamUserAccessToBilling: string;
-  readonly Tags: [];
+  readonly RoleName?: string;
+  readonly IamUserAccessToBilling?: string;
+  readonly Tags?: [];
 }
 
-interface CreateGovCloudAccountResponse {
-  readonly CreateAccountStatus: CreateAccountStatus;
+export interface CreateGovCloudAccountResponse {
+  readonly CreateAccountStatus?: CreateAccountStatus;
 }
 
-interface CreateOrganizationRequest {
-  readonly FeatureSet: string;
+export interface CreateOrganizationRequest {
+  readonly FeatureSet?: string;
 }
 
-interface CreateOrganizationResponse {
-  readonly Organization: Organization;
+export interface CreateOrganizationResponse {
+  readonly Organization?: Organization;
 }
 
-interface CreateOrganizationalUnitRequest {
+export interface CreateOrganizationalUnitRequest {
   readonly ParentId: string;
   readonly Name: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateOrganizationalUnitResponse {
-  readonly OrganizationalUnit: OrganizationalUnit;
+export interface CreateOrganizationalUnitResponse {
+  readonly OrganizationalUnit?: OrganizationalUnit;
 }
 
-interface CreatePolicyRequest {
+export interface CreatePolicyRequest {
   readonly Content: string;
   readonly Description: string;
   readonly Name: string;
   readonly Type: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreatePolicyResponse {
-  readonly Policy: Policy;
+export interface CreatePolicyResponse {
+  readonly Policy?: Policy;
 }
 
-interface DeclineHandshakeRequest {
+export interface DeclineHandshakeRequest {
   readonly HandshakeId: string;
 }
 
-interface DeclineHandshakeResponse {
-  readonly Handshake: Handshake;
+export interface DeclineHandshakeResponse {
+  readonly Handshake?: Handshake;
 }
 
-interface DelegatedAdministrator {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Email: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly JoinedMethod: string;
-  readonly JoinedTimestamp: Date;
-  readonly DelegationEnabledDate: Date;
+export interface DelegatedAdministrator {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Email?: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly JoinedMethod?: string;
+  readonly JoinedTimestamp?: Date;
+  readonly DelegationEnabledDate?: Date;
 }
 
-interface DelegatedService {
-  readonly ServicePrincipal: string;
-  readonly DelegationEnabledDate: Date;
+export interface DelegatedService {
+  readonly ServicePrincipal?: string;
+  readonly DelegationEnabledDate?: Date;
 }
 
-interface DeleteOrganizationalUnitRequest {
+export interface DeleteOrganizationalUnitRequest {
   readonly OrganizationalUnitId: string;
 }
 
-interface DeletePolicyRequest {
+export interface DeletePolicyRequest {
   readonly PolicyId: string;
 }
 
-interface DeregisterDelegatedAdministratorRequest {
+export interface DeregisterDelegatedAdministratorRequest {
   readonly AccountId: string;
   readonly ServicePrincipal: string;
 }
 
-interface DescribeAccountRequest {
+export interface DescribeAccountRequest {
   readonly AccountId: string;
 }
 
-interface DescribeAccountResponse {
-  readonly Account: Account;
+export interface DescribeAccountResponse {
+  readonly Account?: Account;
 }
 
-interface DescribeCreateAccountStatusRequest {
+export interface DescribeCreateAccountStatusRequest {
   readonly CreateAccountRequestId: string;
 }
 
-interface DescribeCreateAccountStatusResponse {
-  readonly CreateAccountStatus: CreateAccountStatus;
+export interface DescribeCreateAccountStatusResponse {
+  readonly CreateAccountStatus?: CreateAccountStatus;
 }
 
-interface DescribeEffectivePolicyRequest {
+export interface DescribeEffectivePolicyRequest {
   readonly PolicyType: string;
-  readonly TargetId: string;
+  readonly TargetId?: string;
 }
 
-interface DescribeEffectivePolicyResponse {
-  readonly EffectivePolicy: EffectivePolicy;
+export interface DescribeEffectivePolicyResponse {
+  readonly EffectivePolicy?: EffectivePolicy;
 }
 
-interface DescribeHandshakeRequest {
+export interface DescribeHandshakeRequest {
   readonly HandshakeId: string;
 }
 
-interface DescribeHandshakeResponse {
-  readonly Handshake: Handshake;
+export interface DescribeHandshakeResponse {
+  readonly Handshake?: Handshake;
 }
 
-interface DescribeOrganizationResponse {
-  readonly Organization: Organization;
+export interface DescribeOrganizationResponse {
+  readonly Organization?: Organization;
 }
 
-interface DescribeOrganizationalUnitRequest {
+export interface DescribeOrganizationalUnitRequest {
   readonly OrganizationalUnitId: string;
 }
 
-interface DescribeOrganizationalUnitResponse {
-  readonly OrganizationalUnit: OrganizationalUnit;
+export interface DescribeOrganizationalUnitResponse {
+  readonly OrganizationalUnit?: OrganizationalUnit;
 }
 
-interface DescribePolicyRequest {
+export interface DescribePolicyRequest {
   readonly PolicyId: string;
 }
 
-interface DescribePolicyResponse {
-  readonly Policy: Policy;
+export interface DescribePolicyResponse {
+  readonly Policy?: Policy;
 }
 
-interface DestinationParentNotFoundException {
-  readonly Message: string;
+export interface DestinationParentNotFoundException {
+  readonly Message?: string;
 }
 
-interface DetachPolicyRequest {
+export interface DetachPolicyRequest {
   readonly PolicyId: string;
   readonly TargetId: string;
 }
 
-interface DisableAWSServiceAccessRequest {
+export interface DisableAWSServiceAccessRequest {
   readonly ServicePrincipal: string;
 }
 
-interface DisablePolicyTypeRequest {
+export interface DisablePolicyTypeRequest {
   readonly RootId: string;
   readonly PolicyType: string;
 }
 
-interface DisablePolicyTypeResponse {
-  readonly Root: Root;
+export interface DisablePolicyTypeResponse {
+  readonly Root?: Root;
 }
 
-interface DuplicateAccountException {
-  readonly Message: string;
+export interface DuplicateAccountException {
+  readonly Message?: string;
 }
 
-interface DuplicateHandshakeException {
-  readonly Message: string;
+export interface DuplicateHandshakeException {
+  readonly Message?: string;
 }
 
-interface DuplicateOrganizationalUnitException {
-  readonly Message: string;
+export interface DuplicateOrganizationalUnitException {
+  readonly Message?: string;
 }
 
-interface DuplicatePolicyAttachmentException {
-  readonly Message: string;
+export interface DuplicatePolicyAttachmentException {
+  readonly Message?: string;
 }
 
-interface DuplicatePolicyException {
-  readonly Message: string;
+export interface DuplicatePolicyException {
+  readonly Message?: string;
 }
 
-interface EffectivePolicy {
-  readonly PolicyContent: string;
-  readonly LastUpdatedTimestamp: Date;
-  readonly TargetId: string;
-  readonly PolicyType: string;
+export interface EffectivePolicy {
+  readonly PolicyContent?: string;
+  readonly LastUpdatedTimestamp?: Date;
+  readonly TargetId?: string;
+  readonly PolicyType?: string;
 }
 
-interface EffectivePolicyNotFoundException {
-  readonly Message: string;
+export interface EffectivePolicyNotFoundException {
+  readonly Message?: string;
 }
 
-interface EnableAWSServiceAccessRequest {
+export interface EnableAWSServiceAccessRequest {
   readonly ServicePrincipal: string;
 }
 
-interface EnableAllFeaturesRequest {
+export interface EnableAllFeaturesRequest {
 }
 
-interface EnableAllFeaturesResponse {
-  readonly Handshake: Handshake;
+export interface EnableAllFeaturesResponse {
+  readonly Handshake?: Handshake;
 }
 
-interface EnablePolicyTypeRequest {
+export interface EnablePolicyTypeRequest {
   readonly RootId: string;
   readonly PolicyType: string;
 }
 
-interface EnablePolicyTypeResponse {
-  readonly Root: Root;
+export interface EnablePolicyTypeResponse {
+  readonly Root?: Root;
 }
 
-interface EnabledServicePrincipal {
-  readonly ServicePrincipal: string;
-  readonly DateEnabled: Date;
+export interface EnabledServicePrincipal {
+  readonly ServicePrincipal?: string;
+  readonly DateEnabled?: Date;
 }
 
-interface FinalizingOrganizationException {
-  readonly Message: string;
+export interface FinalizingOrganizationException {
+  readonly Message?: string;
 }
 
-interface Handshake {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Parties: [];
-  readonly State: string;
-  readonly RequestedTimestamp: Date;
-  readonly ExpirationTimestamp: Date;
-  readonly Action: string;
-  readonly Resources: [];
+export interface Handshake {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Parties?: [];
+  readonly State?: string;
+  readonly RequestedTimestamp?: Date;
+  readonly ExpirationTimestamp?: Date;
+  readonly Action?: string;
+  readonly Resources?: [];
 }
 
-interface HandshakeAlreadyInStateException {
-  readonly Message: string;
+export interface HandshakeAlreadyInStateException {
+  readonly Message?: string;
 }
 
-interface HandshakeConstraintViolationException {
-  readonly Message: string;
-  readonly Reason: string;
+export interface HandshakeConstraintViolationException {
+  readonly Message?: string;
+  readonly Reason?: string;
 }
 
-interface HandshakeFilter {
-  readonly ActionType: string;
-  readonly ParentHandshakeId: string;
+export interface HandshakeFilter {
+  readonly ActionType?: string;
+  readonly ParentHandshakeId?: string;
 }
 
-interface HandshakeNotFoundException {
-  readonly Message: string;
+export interface HandshakeNotFoundException {
+  readonly Message?: string;
 }
 
-interface HandshakeParty {
+export interface HandshakeParty {
   readonly Id: string;
   readonly Type: string;
 }
 
-interface HandshakeResource {
-  readonly Value: string;
-  readonly Type: string;
-  readonly Resources: [];
+export interface HandshakeResource {
+  readonly Value?: string;
+  readonly Type?: string;
+  readonly Resources?: [];
 }
 
-interface InvalidHandshakeTransitionException {
-  readonly Message: string;
+export interface InvalidHandshakeTransitionException {
+  readonly Message?: string;
 }
 
-interface InvalidInputException {
-  readonly Message: string;
-  readonly Reason: string;
+export interface InvalidInputException {
+  readonly Message?: string;
+  readonly Reason?: string;
 }
 
-interface InviteAccountToOrganizationRequest {
+export interface InviteAccountToOrganizationRequest {
   readonly Target: HandshakeParty;
-  readonly Notes: string;
-  readonly Tags: [];
+  readonly Notes?: string;
+  readonly Tags?: [];
 }
 
-interface InviteAccountToOrganizationResponse {
-  readonly Handshake: Handshake;
+export interface InviteAccountToOrganizationResponse {
+  readonly Handshake?: Handshake;
 }
 
-interface ListAWSServiceAccessForOrganizationRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListAWSServiceAccessForOrganizationRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListAWSServiceAccessForOrganizationResponse {
-  readonly EnabledServicePrincipals: [];
-  readonly NextToken: string;
+export interface ListAWSServiceAccessForOrganizationResponse {
+  readonly EnabledServicePrincipals?: [];
+  readonly NextToken?: string;
 }
 
-interface ListAccountsForParentRequest {
+export interface ListAccountsForParentRequest {
   readonly ParentId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListAccountsForParentResponse {
-  readonly Accounts: [];
-  readonly NextToken: string;
+export interface ListAccountsForParentResponse {
+  readonly Accounts?: [];
+  readonly NextToken?: string;
 }
 
-interface ListAccountsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListAccountsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListAccountsResponse {
-  readonly Accounts: [];
-  readonly NextToken: string;
+export interface ListAccountsResponse {
+  readonly Accounts?: [];
+  readonly NextToken?: string;
 }
 
-interface ListChildrenRequest {
+export interface ListChildrenRequest {
   readonly ParentId: string;
   readonly ChildType: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListChildrenResponse {
-  readonly Children: [];
-  readonly NextToken: string;
+export interface ListChildrenResponse {
+  readonly Children?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCreateAccountStatusRequest {
-  readonly States: [];
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListCreateAccountStatusRequest {
+  readonly States?: [];
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListCreateAccountStatusResponse {
-  readonly CreateAccountStatuses: [];
-  readonly NextToken: string;
+export interface ListCreateAccountStatusResponse {
+  readonly CreateAccountStatuses?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDelegatedAdministratorsRequest {
-  readonly ServicePrincipal: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListDelegatedAdministratorsRequest {
+  readonly ServicePrincipal?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDelegatedAdministratorsResponse {
-  readonly DelegatedAdministrators: [];
-  readonly NextToken: string;
+export interface ListDelegatedAdministratorsResponse {
+  readonly DelegatedAdministrators?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDelegatedServicesForAccountRequest {
+export interface ListDelegatedServicesForAccountRequest {
   readonly AccountId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDelegatedServicesForAccountResponse {
-  readonly DelegatedServices: [];
-  readonly NextToken: string;
+export interface ListDelegatedServicesForAccountResponse {
+  readonly DelegatedServices?: [];
+  readonly NextToken?: string;
 }
 
-interface ListHandshakesForAccountRequest {
-  readonly Filter: HandshakeFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListHandshakesForAccountRequest {
+  readonly Filter?: HandshakeFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListHandshakesForAccountResponse {
-  readonly Handshakes: [];
-  readonly NextToken: string;
+export interface ListHandshakesForAccountResponse {
+  readonly Handshakes?: [];
+  readonly NextToken?: string;
 }
 
-interface ListHandshakesForOrganizationRequest {
-  readonly Filter: HandshakeFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListHandshakesForOrganizationRequest {
+  readonly Filter?: HandshakeFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListHandshakesForOrganizationResponse {
-  readonly Handshakes: [];
-  readonly NextToken: string;
+export interface ListHandshakesForOrganizationResponse {
+  readonly Handshakes?: [];
+  readonly NextToken?: string;
 }
 
-interface ListOrganizationalUnitsForParentRequest {
+export interface ListOrganizationalUnitsForParentRequest {
   readonly ParentId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListOrganizationalUnitsForParentResponse {
-  readonly OrganizationalUnits: [];
-  readonly NextToken: string;
+export interface ListOrganizationalUnitsForParentResponse {
+  readonly OrganizationalUnits?: [];
+  readonly NextToken?: string;
 }
 
-interface ListParentsRequest {
+export interface ListParentsRequest {
   readonly ChildId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListParentsResponse {
-  readonly Parents: [];
-  readonly NextToken: string;
+export interface ListParentsResponse {
+  readonly Parents?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPoliciesForTargetRequest {
+export interface ListPoliciesForTargetRequest {
   readonly TargetId: string;
   readonly Filter: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListPoliciesForTargetResponse {
-  readonly Policies: [];
-  readonly NextToken: string;
+export interface ListPoliciesForTargetResponse {
+  readonly Policies?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPoliciesRequest {
+export interface ListPoliciesRequest {
   readonly Filter: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListPoliciesResponse {
-  readonly Policies: [];
-  readonly NextToken: string;
+export interface ListPoliciesResponse {
+  readonly Policies?: [];
+  readonly NextToken?: string;
 }
 
-interface ListRootsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListRootsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListRootsResponse {
-  readonly Roots: [];
-  readonly NextToken: string;
+export interface ListRootsResponse {
+  readonly Roots?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceId: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
-  readonly NextToken: string;
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTargetsForPolicyRequest {
+export interface ListTargetsForPolicyRequest {
   readonly PolicyId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTargetsForPolicyResponse {
-  readonly Targets: [];
-  readonly NextToken: string;
+export interface ListTargetsForPolicyResponse {
+  readonly Targets?: [];
+  readonly NextToken?: string;
 }
 
-interface MalformedPolicyDocumentException {
-  readonly Message: string;
+export interface MalformedPolicyDocumentException {
+  readonly Message?: string;
 }
 
-interface MasterCannotLeaveOrganizationException {
-  readonly Message: string;
+export interface MasterCannotLeaveOrganizationException {
+  readonly Message?: string;
 }
 
-interface MoveAccountRequest {
+export interface MoveAccountRequest {
   readonly AccountId: string;
   readonly SourceParentId: string;
   readonly DestinationParentId: string;
 }
 
-interface Organization {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly FeatureSet: string;
-  readonly MasterAccountArn: string;
-  readonly MasterAccountId: string;
-  readonly MasterAccountEmail: string;
-  readonly AvailablePolicyTypes: [];
+export interface Organization {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly FeatureSet?: string;
+  readonly MasterAccountArn?: string;
+  readonly MasterAccountId?: string;
+  readonly MasterAccountEmail?: string;
+  readonly AvailablePolicyTypes?: [];
 }
 
-interface OrganizationNotEmptyException {
-  readonly Message: string;
+export interface OrganizationNotEmptyException {
+  readonly Message?: string;
 }
 
-interface OrganizationalUnit {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
+export interface OrganizationalUnit {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
 }
 
-interface OrganizationalUnitNotEmptyException {
-  readonly Message: string;
+export interface OrganizationalUnitNotEmptyException {
+  readonly Message?: string;
 }
 
-interface OrganizationalUnitNotFoundException {
-  readonly Message: string;
+export interface OrganizationalUnitNotFoundException {
+  readonly Message?: string;
 }
 
-interface Parent {
-  readonly Id: string;
-  readonly Type: string;
+export interface Parent {
+  readonly Id?: string;
+  readonly Type?: string;
 }
 
-interface ParentNotFoundException {
-  readonly Message: string;
+export interface ParentNotFoundException {
+  readonly Message?: string;
 }
 
-interface Policy {
-  readonly PolicySummary: PolicySummary;
-  readonly Content: string;
+export interface Policy {
+  readonly PolicySummary?: PolicySummary;
+  readonly Content?: string;
 }
 
-interface PolicyChangesInProgressException {
-  readonly Message: string;
+export interface PolicyChangesInProgressException {
+  readonly Message?: string;
 }
 
-interface PolicyInUseException {
-  readonly Message: string;
+export interface PolicyInUseException {
+  readonly Message?: string;
 }
 
-interface PolicyNotAttachedException {
-  readonly Message: string;
+export interface PolicyNotAttachedException {
+  readonly Message?: string;
 }
 
-interface PolicyNotFoundException {
-  readonly Message: string;
+export interface PolicyNotFoundException {
+  readonly Message?: string;
 }
 
-interface PolicySummary {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Type: string;
-  readonly AwsManaged: boolean;
+export interface PolicySummary {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Type?: string;
+  readonly AwsManaged?: boolean;
 }
 
-interface PolicyTargetSummary {
-  readonly TargetId: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Type: string;
+export interface PolicyTargetSummary {
+  readonly TargetId?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Type?: string;
 }
 
-interface PolicyTypeAlreadyEnabledException {
-  readonly Message: string;
+export interface PolicyTypeAlreadyEnabledException {
+  readonly Message?: string;
 }
 
-interface PolicyTypeNotAvailableForOrganizationException {
-  readonly Message: string;
+export interface PolicyTypeNotAvailableForOrganizationException {
+  readonly Message?: string;
 }
 
-interface PolicyTypeNotEnabledException {
-  readonly Message: string;
+export interface PolicyTypeNotEnabledException {
+  readonly Message?: string;
 }
 
-interface PolicyTypeSummary {
-  readonly Type: string;
-  readonly Status: string;
+export interface PolicyTypeSummary {
+  readonly Type?: string;
+  readonly Status?: string;
 }
 
-interface RegisterDelegatedAdministratorRequest {
+export interface RegisterDelegatedAdministratorRequest {
   readonly AccountId: string;
   readonly ServicePrincipal: string;
 }
 
-interface RemoveAccountFromOrganizationRequest {
+export interface RemoveAccountFromOrganizationRequest {
   readonly AccountId: string;
 }
 
-interface Root {
-  readonly Id: string;
-  readonly Arn: string;
-  readonly Name: string;
-  readonly PolicyTypes: [];
+export interface Root {
+  readonly Id?: string;
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly PolicyTypes?: [];
 }
 
-interface RootNotFoundException {
-  readonly Message: string;
+export interface RootNotFoundException {
+  readonly Message?: string;
 }
 
-interface ServiceException {
-  readonly Message: string;
+export interface ServiceException {
+  readonly Message?: string;
 }
 
-interface SourceParentNotFoundException {
-  readonly Message: string;
+export interface SourceParentNotFoundException {
+  readonly Message?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceId: string;
   readonly Tags: [];
 }
 
-interface TargetNotFoundException {
-  readonly Message: string;
+export interface TargetNotFoundException {
+  readonly Message?: string;
 }
 
-interface TooManyRequestsException {
-  readonly Type: string;
-  readonly Message: string;
+export interface TooManyRequestsException {
+  readonly Type?: string;
+  readonly Message?: string;
 }
 
-interface UnsupportedAPIEndpointException {
-  readonly Message: string;
+export interface UnsupportedAPIEndpointException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceId: string;
   readonly TagKeys: [];
 }
 
-interface UpdateOrganizationalUnitRequest {
+export interface UpdateOrganizationalUnitRequest {
   readonly OrganizationalUnitId: string;
-  readonly Name: string;
+  readonly Name?: string;
 }
 
-interface UpdateOrganizationalUnitResponse {
-  readonly OrganizationalUnit: OrganizationalUnit;
+export interface UpdateOrganizationalUnitResponse {
+  readonly OrganizationalUnit?: OrganizationalUnit;
 }
 
-interface UpdatePolicyRequest {
+export interface UpdatePolicyRequest {
   readonly PolicyId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Content: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Content?: string;
 }
 
-interface UpdatePolicyResponse {
-  readonly Policy: Policy;
+export interface UpdatePolicyResponse {
+  readonly Policy?: Policy;
 }
+
 

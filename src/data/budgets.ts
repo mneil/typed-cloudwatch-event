@@ -6,6 +6,7 @@ export interface CreateBudget {
   readonly Budget: Budget;
   readonly NotificationsWithSubscribers?: [];
 }
+
 export interface CreateBudgetAction {
   readonly AccountId: string;
   readonly BudgetName: string;
@@ -17,47 +18,56 @@ export interface CreateBudgetAction {
   readonly ApprovalModel: string;
   readonly Subscribers: [];
 }
+
 export interface CreateNotification {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Notification: Notification;
   readonly Subscribers: [];
 }
+
 export interface CreateSubscriber {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Notification: Notification;
   readonly Subscriber: Subscriber;
 }
+
 export interface DeleteBudget {
   readonly AccountId: string;
   readonly BudgetName: string;
 }
+
 export interface DeleteBudgetAction {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly ActionId: string;
 }
+
 export interface DeleteNotification {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Notification: Notification;
 }
+
 export interface DeleteSubscriber {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Notification: Notification;
   readonly Subscriber: Subscriber;
 }
+
 export interface DescribeBudget {
   readonly AccountId: string;
   readonly BudgetName: string;
 }
+
 export interface DescribeBudgetAction {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly ActionId: string;
 }
+
 export interface DescribeBudgetActionHistories {
   readonly AccountId: string;
   readonly BudgetName: string;
@@ -66,17 +76,20 @@ export interface DescribeBudgetActionHistories {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeBudgetActionsForAccount {
   readonly AccountId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeBudgetActionsForBudget {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeBudgetPerformanceHistory {
   readonly AccountId: string;
   readonly BudgetName: string;
@@ -84,17 +97,20 @@ export interface DescribeBudgetPerformanceHistory {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeBudgets {
   readonly AccountId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeNotificationsForBudget {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeSubscribersForNotification {
   readonly AccountId: string;
   readonly BudgetName: string;
@@ -102,16 +118,19 @@ export interface DescribeSubscribersForNotification {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ExecuteBudgetAction {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly ActionId: string;
   readonly ExecutionType: string;
 }
+
 export interface UpdateBudget {
   readonly AccountId: string;
   readonly NewBudget: Budget;
 }
+
 export interface UpdateBudgetAction {
   readonly AccountId: string;
   readonly BudgetName: string;
@@ -123,12 +142,14 @@ export interface UpdateBudgetAction {
   readonly ApprovalModel?: string;
   readonly Subscribers?: [];
 }
+
 export interface UpdateNotification {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly OldNotification: Notification;
   readonly NewNotification: Notification;
 }
+
 export interface UpdateSubscriber {
   readonly AccountId: string;
   readonly BudgetName: string;
@@ -137,13 +158,11 @@ export interface UpdateSubscriber {
   readonly NewSubscriber: Subscriber;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface Action {
+export interface Action {
   readonly ActionId: string;
   readonly BudgetName: string;
   readonly NotificationType: string;
@@ -156,71 +175,71 @@ interface Action {
   readonly Subscribers: [];
 }
 
-interface ActionHistory {
+export interface ActionHistory {
   readonly Timestamp: Date;
   readonly Status: string;
   readonly EventType: string;
   readonly ActionHistoryDetails: ActionHistoryDetails;
 }
 
-interface ActionHistoryDetails {
+export interface ActionHistoryDetails {
   readonly Message: string;
   readonly Action: Action;
 }
 
-interface ActionThreshold {
+export interface ActionThreshold {
   readonly ActionThresholdValue: unknown;
   readonly ActionThresholdType: string;
 }
 
-interface Budget {
+export interface Budget {
   readonly BudgetName: string;
-  readonly BudgetLimit: Spend;
-  readonly PlannedBudgetLimits: {[key: string]: any};
-  readonly CostFilters: {[key: string]: any};
-  readonly CostTypes: CostTypes;
+  readonly BudgetLimit?: Spend;
+  readonly PlannedBudgetLimits?: {[key: string]: any};
+  readonly CostFilters?: {[key: string]: any};
+  readonly CostTypes?: CostTypes;
   readonly TimeUnit: string;
-  readonly TimePeriod: TimePeriod;
-  readonly CalculatedSpend: CalculatedSpend;
+  readonly TimePeriod?: TimePeriod;
+  readonly CalculatedSpend?: CalculatedSpend;
   readonly BudgetType: string;
-  readonly LastUpdatedTime: Date;
+  readonly LastUpdatedTime?: Date;
 }
 
-interface BudgetPerformanceHistory {
-  readonly BudgetName: string;
-  readonly BudgetType: string;
-  readonly CostFilters: {[key: string]: any};
-  readonly CostTypes: CostTypes;
-  readonly TimeUnit: string;
-  readonly BudgetedAndActualAmountsList: [];
+export interface BudgetPerformanceHistory {
+  readonly BudgetName?: string;
+  readonly BudgetType?: string;
+  readonly CostFilters?: {[key: string]: any};
+  readonly CostTypes?: CostTypes;
+  readonly TimeUnit?: string;
+  readonly BudgetedAndActualAmountsList?: [];
 }
 
-interface BudgetedAndActualAmounts {
-  readonly BudgetedAmount: Spend;
-  readonly ActualAmount: Spend;
-  readonly TimePeriod: TimePeriod;
+export interface BudgetedAndActualAmounts {
+  readonly BudgetedAmount?: Spend;
+  readonly ActualAmount?: Spend;
+  readonly TimePeriod?: TimePeriod;
 }
 
-interface CalculatedSpend {
+export interface CalculatedSpend {
   readonly ActualSpend: Spend;
-  readonly ForecastedSpend: Spend;
+  readonly ForecastedSpend?: Spend;
 }
 
-interface CostTypes {
-  readonly IncludeTax: boolean;
-  readonly IncludeSubscription: boolean;
-  readonly UseBlended: boolean;
-  readonly IncludeRefund: boolean;
-  readonly IncludeCredit: boolean;
-  readonly IncludeUpfront: boolean;
-  readonly IncludeRecurring: boolean;
-  readonly IncludeOtherSubscription: boolean;
-  readonly IncludeSupport: boolean;
-  readonly IncludeDiscount: boolean;
-  readonly UseAmortized: boolean;
+export interface CostTypes {
+  readonly IncludeTax?: boolean;
+  readonly IncludeSubscription?: boolean;
+  readonly UseBlended?: boolean;
+  readonly IncludeRefund?: boolean;
+  readonly IncludeCredit?: boolean;
+  readonly IncludeUpfront?: boolean;
+  readonly IncludeRecurring?: boolean;
+  readonly IncludeOtherSubscription?: boolean;
+  readonly IncludeSupport?: boolean;
+  readonly IncludeDiscount?: boolean;
+  readonly UseAmortized?: boolean;
 }
 
-interface CreateBudgetActionRequest {
+export interface CreateBudgetActionRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly NotificationType: string;
@@ -232,323 +251,323 @@ interface CreateBudgetActionRequest {
   readonly Subscribers: [];
 }
 
-interface CreateBudgetActionResponse {
+export interface CreateBudgetActionResponse {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly ActionId: string;
 }
 
-interface CreateBudgetRequest {
+export interface CreateBudgetRequest {
   readonly AccountId: string;
   readonly Budget: Budget;
-  readonly NotificationsWithSubscribers: [];
+  readonly NotificationsWithSubscribers?: [];
 }
 
-interface CreateBudgetResponse {
+export interface CreateBudgetResponse {
 }
 
-interface CreateNotificationRequest {
+export interface CreateNotificationRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Notification: Notification;
   readonly Subscribers: [];
 }
 
-interface CreateNotificationResponse {
+export interface CreateNotificationResponse {
 }
 
-interface CreateSubscriberRequest {
+export interface CreateSubscriberRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Notification: Notification;
   readonly Subscriber: Subscriber;
 }
 
-interface CreateSubscriberResponse {
+export interface CreateSubscriberResponse {
 }
 
-interface CreationLimitExceededException {
-  readonly Message: string;
+export interface CreationLimitExceededException {
+  readonly Message?: string;
 }
 
-interface Definition {
-  readonly IamActionDefinition: IamActionDefinition;
-  readonly ScpActionDefinition: ScpActionDefinition;
-  readonly SsmActionDefinition: SsmActionDefinition;
+export interface Definition {
+  readonly IamActionDefinition?: IamActionDefinition;
+  readonly ScpActionDefinition?: ScpActionDefinition;
+  readonly SsmActionDefinition?: SsmActionDefinition;
 }
 
-interface DeleteBudgetActionRequest {
+export interface DeleteBudgetActionRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly ActionId: string;
 }
 
-interface DeleteBudgetActionResponse {
+export interface DeleteBudgetActionResponse {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Action: Action;
 }
 
-interface DeleteBudgetRequest {
+export interface DeleteBudgetRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
 }
 
-interface DeleteBudgetResponse {
+export interface DeleteBudgetResponse {
 }
 
-interface DeleteNotificationRequest {
+export interface DeleteNotificationRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Notification: Notification;
 }
 
-interface DeleteNotificationResponse {
+export interface DeleteNotificationResponse {
 }
 
-interface DeleteSubscriberRequest {
+export interface DeleteSubscriberRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Notification: Notification;
   readonly Subscriber: Subscriber;
 }
 
-interface DeleteSubscriberResponse {
+export interface DeleteSubscriberResponse {
 }
 
-interface DescribeBudgetActionHistoriesRequest {
+export interface DescribeBudgetActionHistoriesRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly ActionId: string;
-  readonly TimePeriod: TimePeriod;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly TimePeriod?: TimePeriod;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeBudgetActionHistoriesResponse {
+export interface DescribeBudgetActionHistoriesResponse {
   readonly ActionHistories: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeBudgetActionRequest {
+export interface DescribeBudgetActionRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly ActionId: string;
 }
 
-interface DescribeBudgetActionResponse {
+export interface DescribeBudgetActionResponse {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Action: Action;
 }
 
-interface DescribeBudgetActionsForAccountRequest {
+export interface DescribeBudgetActionsForAccountRequest {
   readonly AccountId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeBudgetActionsForAccountResponse {
+export interface DescribeBudgetActionsForAccountResponse {
   readonly Actions: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeBudgetActionsForBudgetRequest {
+export interface DescribeBudgetActionsForBudgetRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeBudgetActionsForBudgetResponse {
+export interface DescribeBudgetActionsForBudgetResponse {
   readonly Actions: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeBudgetPerformanceHistoryRequest {
+export interface DescribeBudgetPerformanceHistoryRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
-  readonly TimePeriod: TimePeriod;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly TimePeriod?: TimePeriod;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeBudgetPerformanceHistoryResponse {
-  readonly BudgetPerformanceHistory: BudgetPerformanceHistory;
-  readonly NextToken: string;
+export interface DescribeBudgetPerformanceHistoryResponse {
+  readonly BudgetPerformanceHistory?: BudgetPerformanceHistory;
+  readonly NextToken?: string;
 }
 
-interface DescribeBudgetRequest {
+export interface DescribeBudgetRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
 }
 
-interface DescribeBudgetResponse {
-  readonly Budget: Budget;
+export interface DescribeBudgetResponse {
+  readonly Budget?: Budget;
 }
 
-interface DescribeBudgetsRequest {
+export interface DescribeBudgetsRequest {
   readonly AccountId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeBudgetsResponse {
-  readonly Budgets: [];
-  readonly NextToken: string;
+export interface DescribeBudgetsResponse {
+  readonly Budgets?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeNotificationsForBudgetRequest {
+export interface DescribeNotificationsForBudgetRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeNotificationsForBudgetResponse {
-  readonly Notifications: [];
-  readonly NextToken: string;
+export interface DescribeNotificationsForBudgetResponse {
+  readonly Notifications?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeSubscribersForNotificationRequest {
+export interface DescribeSubscribersForNotificationRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Notification: Notification;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeSubscribersForNotificationResponse {
-  readonly Subscribers: [];
-  readonly NextToken: string;
+export interface DescribeSubscribersForNotificationResponse {
+  readonly Subscribers?: [];
+  readonly NextToken?: string;
 }
 
-interface DuplicateRecordException {
-  readonly Message: string;
+export interface DuplicateRecordException {
+  readonly Message?: string;
 }
 
-interface ExecuteBudgetActionRequest {
+export interface ExecuteBudgetActionRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly ActionId: string;
   readonly ExecutionType: string;
 }
 
-interface ExecuteBudgetActionResponse {
+export interface ExecuteBudgetActionResponse {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly ActionId: string;
   readonly ExecutionType: string;
 }
 
-interface ExpiredNextTokenException {
-  readonly Message: string;
+export interface ExpiredNextTokenException {
+  readonly Message?: string;
 }
 
-interface IamActionDefinition {
+export interface IamActionDefinition {
   readonly PolicyArn: string;
-  readonly Roles: [];
-  readonly Groups: [];
-  readonly Users: [];
+  readonly Roles?: [];
+  readonly Groups?: [];
+  readonly Users?: [];
 }
 
-interface InternalErrorException {
-  readonly Message: string;
+export interface InternalErrorException {
+  readonly Message?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly Message: string;
+export interface InvalidNextTokenException {
+  readonly Message?: string;
 }
 
-interface InvalidParameterException {
-  readonly Message: string;
+export interface InvalidParameterException {
+  readonly Message?: string;
 }
 
-interface NotFoundException {
-  readonly Message: string;
+export interface NotFoundException {
+  readonly Message?: string;
 }
 
-interface Notification {
+export interface Notification {
   readonly NotificationType: string;
   readonly ComparisonOperator: string;
   readonly Threshold: unknown;
-  readonly ThresholdType: string;
-  readonly NotificationState: string;
+  readonly ThresholdType?: string;
+  readonly NotificationState?: string;
 }
 
-interface NotificationWithSubscribers {
+export interface NotificationWithSubscribers {
   readonly Notification: Notification;
   readonly Subscribers: [];
 }
 
-interface ResourceLockedException {
-  readonly Message: string;
+export interface ResourceLockedException {
+  readonly Message?: string;
 }
 
-interface ScpActionDefinition {
+export interface ScpActionDefinition {
   readonly PolicyId: string;
   readonly TargetIds: [];
 }
 
-interface Spend {
+export interface Spend {
   readonly Amount: string;
   readonly Unit: string;
 }
 
-interface SsmActionDefinition {
+export interface SsmActionDefinition {
   readonly ActionSubType: string;
   readonly Region: string;
   readonly InstanceIds: [];
 }
 
-interface Subscriber {
+export interface Subscriber {
   readonly SubscriptionType: string;
   readonly Address: string;
 }
 
-interface TimePeriod {
-  readonly Start: Date;
-  readonly End: Date;
+export interface TimePeriod {
+  readonly Start?: Date;
+  readonly End?: Date;
 }
 
-interface UpdateBudgetActionRequest {
+export interface UpdateBudgetActionRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly ActionId: string;
-  readonly NotificationType: string;
-  readonly ActionThreshold: ActionThreshold;
-  readonly Definition: Definition;
-  readonly ExecutionRoleArn: string;
-  readonly ApprovalModel: string;
-  readonly Subscribers: [];
+  readonly NotificationType?: string;
+  readonly ActionThreshold?: ActionThreshold;
+  readonly Definition?: Definition;
+  readonly ExecutionRoleArn?: string;
+  readonly ApprovalModel?: string;
+  readonly Subscribers?: [];
 }
 
-interface UpdateBudgetActionResponse {
+export interface UpdateBudgetActionResponse {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly OldAction: Action;
   readonly NewAction: Action;
 }
 
-interface UpdateBudgetRequest {
+export interface UpdateBudgetRequest {
   readonly AccountId: string;
   readonly NewBudget: Budget;
 }
 
-interface UpdateBudgetResponse {
+export interface UpdateBudgetResponse {
 }
 
-interface UpdateNotificationRequest {
+export interface UpdateNotificationRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly OldNotification: Notification;
   readonly NewNotification: Notification;
 }
 
-interface UpdateNotificationResponse {
+export interface UpdateNotificationResponse {
 }
 
-interface UpdateSubscriberRequest {
+export interface UpdateSubscriberRequest {
   readonly AccountId: string;
   readonly BudgetName: string;
   readonly Notification: Notification;
@@ -556,6 +575,7 @@ interface UpdateSubscriberRequest {
   readonly NewSubscriber: Subscriber;
 }
 
-interface UpdateSubscriberResponse {
+export interface UpdateSubscriberResponse {
 }
+
 

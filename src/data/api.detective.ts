@@ -4,227 +4,240 @@
 export interface AcceptInvitation {
   readonly GraphArn: string;
 }
+
 export interface CreateGraph {
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateMembers {
   readonly GraphArn: string;
   readonly Message?: string;
   readonly DisableEmailNotification?: boolean;
   readonly Accounts: [];
 }
+
 export interface DeleteGraph {
   readonly GraphArn: string;
 }
+
 export interface DeleteMembers {
   readonly GraphArn: string;
   readonly AccountIds: [];
 }
+
 export interface DisassociateMembership {
   readonly GraphArn: string;
 }
+
 export interface GetMembers {
   readonly GraphArn: string;
   readonly AccountIds: [];
 }
+
 export interface ListGraphs {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListInvitations {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListMembers {
   readonly GraphArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface RejectInvitation {
   readonly GraphArn: string;
 }
+
 export interface StartMonitoringMember {
   readonly GraphArn: string;
   readonly AccountId: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-
-
-interface AcceptInvitationRequest {
+export interface AcceptInvitationRequest {
   readonly GraphArn: string;
 }
 
-interface Account {
+export interface Account {
   readonly AccountId: string;
   readonly EmailAddress: string;
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface CreateGraphRequest {
-  readonly Tags: {[key: string]: any};
+export interface CreateGraphRequest {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateGraphResponse {
+export interface CreateGraphResponse {
+  readonly GraphArn?: string;
+}
+
+export interface CreateMembersRequest {
   readonly GraphArn: string;
-}
-
-interface CreateMembersRequest {
-  readonly GraphArn: string;
-  readonly Message: string;
-  readonly DisableEmailNotification: boolean;
+  readonly Message?: string;
+  readonly DisableEmailNotification?: boolean;
   readonly Accounts: [];
 }
 
-interface CreateMembersResponse {
-  readonly Members: [];
-  readonly UnprocessedAccounts: [];
+export interface CreateMembersResponse {
+  readonly Members?: [];
+  readonly UnprocessedAccounts?: [];
 }
 
-interface DeleteGraphRequest {
+export interface DeleteGraphRequest {
   readonly GraphArn: string;
 }
 
-interface DeleteMembersRequest {
-  readonly GraphArn: string;
-  readonly AccountIds: [];
-}
-
-interface DeleteMembersResponse {
-  readonly AccountIds: [];
-  readonly UnprocessedAccounts: [];
-}
-
-interface DisassociateMembershipRequest {
-  readonly GraphArn: string;
-}
-
-interface GetMembersRequest {
+export interface DeleteMembersRequest {
   readonly GraphArn: string;
   readonly AccountIds: [];
 }
 
-interface GetMembersResponse {
-  readonly MemberDetails: [];
-  readonly UnprocessedAccounts: [];
+export interface DeleteMembersResponse {
+  readonly AccountIds?: [];
+  readonly UnprocessedAccounts?: [];
 }
 
-interface Graph {
-  readonly Arn: string;
-  readonly CreatedTime: Date;
-}
-
-interface InternalServerException {
-  readonly Message: string;
-}
-
-interface ListGraphsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface ListGraphsResponse {
-  readonly GraphList: [];
-  readonly NextToken: string;
-}
-
-interface ListInvitationsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface ListInvitationsResponse {
-  readonly Invitations: [];
-  readonly NextToken: string;
-}
-
-interface ListMembersRequest {
+export interface DisassociateMembershipRequest {
   readonly GraphArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
 }
 
-interface ListMembersResponse {
-  readonly MemberDetails: [];
-  readonly NextToken: string;
+export interface GetMembersRequest {
+  readonly GraphArn: string;
+  readonly AccountIds: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface GetMembersResponse {
+  readonly MemberDetails?: [];
+  readonly UnprocessedAccounts?: [];
+}
+
+export interface Graph {
+  readonly Arn?: string;
+  readonly CreatedTime?: Date;
+}
+
+export interface InternalServerException {
+  readonly Message?: string;
+}
+
+export interface ListGraphsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface ListGraphsResponse {
+  readonly GraphList?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListInvitationsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface ListInvitationsResponse {
+  readonly Invitations?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListMembersRequest {
+  readonly GraphArn: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface ListMembersResponse {
+  readonly MemberDetails?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface MemberDetail {
+export interface MemberDetail {
+  readonly AccountId?: string;
+  readonly EmailAddress?: string;
+  readonly GraphArn?: string;
+  readonly MasterId?: string;
+  readonly AdministratorId?: string;
+  readonly Status?: string;
+  readonly DisabledReason?: string;
+  readonly InvitedTime?: Date;
+  readonly UpdatedTime?: Date;
+  readonly VolumeUsageInBytes?: number;
+  readonly VolumeUsageUpdatedTime?: Date;
+  readonly PercentOfGraphUtilization?: unknown;
+  readonly PercentOfGraphUtilizationUpdatedTime?: Date;
+}
+
+export interface RejectInvitationRequest {
+  readonly GraphArn: string;
+}
+
+export interface ResourceNotFoundException {
+  readonly Message?: string;
+}
+
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
+}
+
+export interface StartMonitoringMemberRequest {
+  readonly GraphArn: string;
   readonly AccountId: string;
-  readonly EmailAddress: string;
-  readonly GraphArn: string;
-  readonly MasterId: string;
-  readonly AdministratorId: string;
-  readonly Status: string;
-  readonly DisabledReason: string;
-  readonly InvitedTime: Date;
-  readonly UpdatedTime: Date;
-  readonly VolumeUsageInBytes: number;
-  readonly VolumeUsageUpdatedTime: Date;
-  readonly PercentOfGraphUtilization: unknown;
-  readonly PercentOfGraphUtilizationUpdatedTime: Date;
 }
 
-interface RejectInvitationRequest {
-  readonly GraphArn: string;
-}
-
-interface ResourceNotFoundException {
-  readonly Message: string;
-}
-
-interface ServiceQuotaExceededException {
-  readonly Message: string;
-}
-
-interface StartMonitoringMemberRequest {
-  readonly GraphArn: string;
-  readonly AccountId: string;
-}
-
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface UnprocessedAccount {
-  readonly AccountId: string;
-  readonly Reason: string;
+export interface UnprocessedAccount {
+  readonly AccountId?: string;
+  readonly Reason?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

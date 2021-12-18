@@ -4,15 +4,19 @@
 export interface AssociateMember {
   readonly accountId: string;
 }
+
 export interface BatchGetAccountStatus {
   readonly accountIds?: [];
 }
+
 export interface BatchGetFreeTrialInfo {
   readonly accountIds: [];
 }
+
 export interface CancelFindingsReport {
   readonly reportId: string;
 }
+
 export interface CreateFilter {
   readonly action: string;
   readonly description?: string;
@@ -20,68 +24,85 @@ export interface CreateFilter {
   readonly name: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateFindingsReport {
   readonly filterCriteria?: FilterCriteria;
   readonly reportFormat: string;
   readonly s3Destination: Destination;
 }
+
 export interface DeleteFilter {
   readonly arn: string;
 }
+
 export interface DescribeOrganizationConfiguration {
 }
+
 export interface Disable {
   readonly accountIds?: [];
   readonly resourceTypes?: [];
 }
+
 export interface DisableDelegatedAdminAccount {
   readonly delegatedAdminAccountId: string;
 }
+
 export interface DisassociateMember {
   readonly accountId: string;
 }
+
 export interface Enable {
   readonly accountIds?: [];
   readonly clientToken?: string;
   readonly resourceTypes: [];
 }
+
 export interface EnableDelegatedAdminAccount {
   readonly clientToken?: string;
   readonly delegatedAdminAccountId: string;
 }
+
 export interface GetDelegatedAdminAccount {
 }
+
 export interface GetFindingsReportStatus {
   readonly reportId?: string;
 }
+
 export interface GetMember {
   readonly accountId: string;
 }
+
 export interface ListAccountPermissions {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly service?: string;
 }
+
 export interface ListCoverage {
   readonly filterCriteria?: CoverageFilterCriteria;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListCoverageStatistics {
   readonly filterCriteria?: CoverageFilterCriteria;
   readonly groupBy?: string;
   readonly nextToken?: string;
 }
+
 export interface ListDelegatedAdminAccounts {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListFilters {
   readonly action?: string;
   readonly arns?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListFindingAggregations {
   readonly accountIds?: [];
   readonly aggregationRequest?: AggregationRequest;
@@ -89,33 +110,40 @@ export interface ListFindingAggregations {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListFindings {
   readonly filterCriteria?: FilterCriteria;
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly sortCriteria?: SortCriteria;
 }
+
 export interface ListMembers {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly onlyAssociated?: boolean;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface ListUsageTotals {
   readonly accountIds?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateFilter {
   readonly action?: string;
   readonly description?: string;
@@ -123,894 +151,894 @@ export interface UpdateFilter {
   readonly filterCriteria?: FilterCriteria;
   readonly name?: string;
 }
+
 export interface UpdateOrganizationConfiguration {
   readonly autoEnable: AutoEnable;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
 }
 
-interface Account {
+export interface Account {
   readonly accountId: string;
   readonly resourceStatus: ResourceStatus;
   readonly status: string;
 }
 
-interface AccountAggregation {
-  readonly findingType: string;
-  readonly resourceType: string;
-  readonly sortBy: string;
-  readonly sortOrder: string;
+export interface AccountAggregation {
+  readonly findingType?: string;
+  readonly resourceType?: string;
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
 }
 
-interface AccountAggregationResponse {
-  readonly accountId: string;
-  readonly severityCounts: SeverityCounts;
+export interface AccountAggregationResponse {
+  readonly accountId?: string;
+  readonly severityCounts?: SeverityCounts;
 }
 
-interface AccountState {
+export interface AccountState {
   readonly accountId: string;
   readonly resourceState: ResourceState;
   readonly state: State;
 }
 
-interface AggregationRequest {
-  readonly accountAggregation: AccountAggregation;
-  readonly amiAggregation: AmiAggregation;
-  readonly awsEcrContainerAggregation: AwsEcrContainerAggregation;
-  readonly ec2InstanceAggregation: Ec2InstanceAggregation;
-  readonly findingTypeAggregation: FindingTypeAggregation;
-  readonly imageLayerAggregation: ImageLayerAggregation;
-  readonly packageAggregation: PackageAggregation;
-  readonly repositoryAggregation: RepositoryAggregation;
-  readonly titleAggregation: TitleAggregation;
+export interface AggregationRequest {
+  readonly accountAggregation?: AccountAggregation;
+  readonly amiAggregation?: AmiAggregation;
+  readonly awsEcrContainerAggregation?: AwsEcrContainerAggregation;
+  readonly ec2InstanceAggregation?: Ec2InstanceAggregation;
+  readonly findingTypeAggregation?: FindingTypeAggregation;
+  readonly imageLayerAggregation?: ImageLayerAggregation;
+  readonly packageAggregation?: PackageAggregation;
+  readonly repositoryAggregation?: RepositoryAggregation;
+  readonly titleAggregation?: TitleAggregation;
 }
 
-interface AggregationResponse {
-  readonly accountAggregation: AccountAggregationResponse;
-  readonly amiAggregation: AmiAggregationResponse;
-  readonly awsEcrContainerAggregation: AwsEcrContainerAggregationResponse;
-  readonly ec2InstanceAggregation: Ec2InstanceAggregationResponse;
-  readonly findingTypeAggregation: FindingTypeAggregationResponse;
-  readonly imageLayerAggregation: ImageLayerAggregationResponse;
-  readonly packageAggregation: PackageAggregationResponse;
-  readonly repositoryAggregation: RepositoryAggregationResponse;
-  readonly titleAggregation: TitleAggregationResponse;
+export interface AggregationResponse {
+  readonly accountAggregation?: AccountAggregationResponse;
+  readonly amiAggregation?: AmiAggregationResponse;
+  readonly awsEcrContainerAggregation?: AwsEcrContainerAggregationResponse;
+  readonly ec2InstanceAggregation?: Ec2InstanceAggregationResponse;
+  readonly findingTypeAggregation?: FindingTypeAggregationResponse;
+  readonly imageLayerAggregation?: ImageLayerAggregationResponse;
+  readonly packageAggregation?: PackageAggregationResponse;
+  readonly repositoryAggregation?: RepositoryAggregationResponse;
+  readonly titleAggregation?: TitleAggregationResponse;
 }
 
-interface AmiAggregation {
-  readonly amis: [];
-  readonly sortBy: string;
-  readonly sortOrder: string;
+export interface AmiAggregation {
+  readonly amis?: [];
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
 }
 
-interface AmiAggregationResponse {
-  readonly accountId: string;
-  readonly affectedInstances: number;
+export interface AmiAggregationResponse {
+  readonly accountId?: string;
+  readonly affectedInstances?: number;
   readonly ami: string;
-  readonly severityCounts: SeverityCounts;
+  readonly severityCounts?: SeverityCounts;
 }
 
-interface AssociateMemberRequest {
+export interface AssociateMemberRequest {
   readonly accountId: string;
 }
 
-interface AssociateMemberResponse {
+export interface AssociateMemberResponse {
   readonly accountId: string;
 }
 
-interface AutoEnable {
+export interface AutoEnable {
   readonly ec2: boolean;
   readonly ecr: boolean;
 }
 
-interface AwsEc2InstanceDetails {
-  readonly iamInstanceProfileArn: string;
-  readonly imageId: string;
-  readonly ipV4Addresses: [];
-  readonly ipV6Addresses: [];
-  readonly keyName: string;
-  readonly launchedAt: Date;
-  readonly platform: string;
-  readonly subnetId: string;
-  readonly type: string;
-  readonly vpcId: string;
+export interface AwsEc2InstanceDetails {
+  readonly iamInstanceProfileArn?: string;
+  readonly imageId?: string;
+  readonly ipV4Addresses?: [];
+  readonly ipV6Addresses?: [];
+  readonly keyName?: string;
+  readonly launchedAt?: Date;
+  readonly platform?: string;
+  readonly subnetId?: string;
+  readonly type?: string;
+  readonly vpcId?: string;
 }
 
-interface AwsEcrContainerAggregation {
-  readonly architectures: [];
-  readonly imageShas: [];
-  readonly imageTags: [];
-  readonly repositories: [];
-  readonly resourceIds: [];
-  readonly sortBy: string;
-  readonly sortOrder: string;
+export interface AwsEcrContainerAggregation {
+  readonly architectures?: [];
+  readonly imageShas?: [];
+  readonly imageTags?: [];
+  readonly repositories?: [];
+  readonly resourceIds?: [];
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
 }
 
-interface AwsEcrContainerAggregationResponse {
-  readonly accountId: string;
-  readonly architecture: string;
-  readonly imageSha: string;
-  readonly imageTags: [];
-  readonly repository: string;
+export interface AwsEcrContainerAggregationResponse {
+  readonly accountId?: string;
+  readonly architecture?: string;
+  readonly imageSha?: string;
+  readonly imageTags?: [];
+  readonly repository?: string;
   readonly resourceId: string;
-  readonly severityCounts: SeverityCounts;
+  readonly severityCounts?: SeverityCounts;
 }
 
-interface AwsEcrContainerImageDetails {
-  readonly architecture: string;
-  readonly author: string;
+export interface AwsEcrContainerImageDetails {
+  readonly architecture?: string;
+  readonly author?: string;
   readonly imageHash: string;
-  readonly imageTags: [];
-  readonly platform: string;
-  readonly pushedAt: Date;
+  readonly imageTags?: [];
+  readonly platform?: string;
+  readonly pushedAt?: Date;
   readonly registry: string;
   readonly repositoryName: string;
 }
 
-interface BadRequestException {
+export interface BadRequestException {
   readonly message: string;
 }
 
-interface BatchGetAccountStatusRequest {
+export interface BatchGetAccountStatusRequest {
+  readonly accountIds?: [];
+}
+
+export interface BatchGetAccountStatusResponse {
+  readonly accounts: [];
+  readonly failedAccounts?: [];
+}
+
+export interface BatchGetFreeTrialInfoRequest {
   readonly accountIds: [];
 }
 
-interface BatchGetAccountStatusResponse {
+export interface BatchGetFreeTrialInfoResponse {
   readonly accounts: [];
   readonly failedAccounts: [];
 }
 
-interface BatchGetFreeTrialInfoRequest {
-  readonly accountIds: [];
-}
-
-interface BatchGetFreeTrialInfoResponse {
-  readonly accounts: [];
-  readonly failedAccounts: [];
-}
-
-interface CancelFindingsReportRequest {
+export interface CancelFindingsReportRequest {
   readonly reportId: string;
 }
 
-interface CancelFindingsReportResponse {
+export interface CancelFindingsReportResponse {
   readonly reportId: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly message: string;
   readonly resourceId: string;
   readonly resourceType: string;
 }
 
-interface Counts {
-  readonly count: number;
-  readonly groupKey: string;
+export interface Counts {
+  readonly count?: number;
+  readonly groupKey?: string;
 }
 
-interface CoverageFilterCriteria {
-  readonly accountId: [];
-  readonly ec2InstanceTags: [];
-  readonly ecrImageTags: [];
-  readonly ecrRepositoryName: [];
-  readonly resourceId: [];
-  readonly resourceType: [];
-  readonly scanStatusCode: [];
-  readonly scanStatusReason: [];
-  readonly scanType: [];
+export interface CoverageFilterCriteria {
+  readonly accountId?: [];
+  readonly ec2InstanceTags?: [];
+  readonly ecrImageTags?: [];
+  readonly ecrRepositoryName?: [];
+  readonly resourceId?: [];
+  readonly resourceType?: [];
+  readonly scanStatusCode?: [];
+  readonly scanStatusReason?: [];
+  readonly scanType?: [];
 }
 
-interface CoverageMapFilter {
+export interface CoverageMapFilter {
   readonly comparison: string;
   readonly key: string;
-  readonly value: string;
+  readonly value?: string;
 }
 
-interface CoverageStringFilter {
+export interface CoverageStringFilter {
   readonly comparison: string;
   readonly value: string;
 }
 
-interface CoveredResource {
+export interface CoveredResource {
   readonly accountId: string;
   readonly resourceId: string;
-  readonly resourceMetadata: ResourceScanMetadata;
+  readonly resourceMetadata?: ResourceScanMetadata;
   readonly resourceType: string;
-  readonly scanStatus: ScanStatus;
+  readonly scanStatus?: ScanStatus;
   readonly scanType: string;
 }
 
-interface CreateFilterRequest {
+export interface CreateFilterRequest {
   readonly action: string;
-  readonly description: string;
+  readonly description?: string;
   readonly filterCriteria: FilterCriteria;
   readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateFilterResponse {
+export interface CreateFilterResponse {
   readonly arn: string;
 }
 
-interface CreateFindingsReportRequest {
-  readonly filterCriteria: FilterCriteria;
+export interface CreateFindingsReportRequest {
+  readonly filterCriteria?: FilterCriteria;
   readonly reportFormat: string;
   readonly s3Destination: Destination;
 }
 
-interface CreateFindingsReportResponse {
-  readonly reportId: string;
+export interface CreateFindingsReportResponse {
+  readonly reportId?: string;
 }
 
-interface CvssScore {
+export interface CvssScore {
   readonly baseScore: unknown;
   readonly scoringVector: string;
   readonly source: string;
   readonly version: string;
 }
 
-interface CvssScoreAdjustment {
+export interface CvssScoreAdjustment {
   readonly metric: string;
   readonly reason: string;
 }
 
-interface CvssScoreDetails {
-  readonly adjustments: [];
-  readonly cvssSource: string;
+export interface CvssScoreDetails {
+  readonly adjustments?: [];
+  readonly cvssSource?: string;
   readonly score: unknown;
   readonly scoreSource: string;
   readonly scoringVector: string;
   readonly version: string;
 }
 
-interface DateFilter {
-  readonly endInclusive: Date;
-  readonly startInclusive: Date;
+export interface DateFilter {
+  readonly endInclusive?: Date;
+  readonly startInclusive?: Date;
 }
 
-interface DelegatedAdmin {
-  readonly accountId: string;
-  readonly relationshipStatus: string;
+export interface DelegatedAdmin {
+  readonly accountId?: string;
+  readonly relationshipStatus?: string;
 }
 
-interface DelegatedAdminAccount {
-  readonly accountId: string;
-  readonly status: string;
+export interface DelegatedAdminAccount {
+  readonly accountId?: string;
+  readonly status?: string;
 }
 
-interface DeleteFilterRequest {
+export interface DeleteFilterRequest {
   readonly arn: string;
 }
 
-interface DeleteFilterResponse {
+export interface DeleteFilterResponse {
   readonly arn: string;
 }
 
-interface DescribeOrganizationConfigurationRequest {
+export interface DescribeOrganizationConfigurationRequest {
 }
 
-interface DescribeOrganizationConfigurationResponse {
-  readonly autoEnable: AutoEnable;
-  readonly maxAccountLimitReached: boolean;
+export interface DescribeOrganizationConfigurationResponse {
+  readonly autoEnable?: AutoEnable;
+  readonly maxAccountLimitReached?: boolean;
 }
 
-interface Destination {
+export interface Destination {
   readonly bucketName: string;
-  readonly keyPrefix: string;
+  readonly keyPrefix?: string;
   readonly kmsKeyArn: string;
 }
 
-interface DisableDelegatedAdminAccountRequest {
+export interface DisableDelegatedAdminAccountRequest {
   readonly delegatedAdminAccountId: string;
 }
 
-interface DisableDelegatedAdminAccountResponse {
+export interface DisableDelegatedAdminAccountResponse {
   readonly delegatedAdminAccountId: string;
 }
 
-interface DisableRequest {
-  readonly accountIds: [];
-  readonly resourceTypes: [];
+export interface DisableRequest {
+  readonly accountIds?: [];
+  readonly resourceTypes?: [];
 }
 
-interface DisableResponse {
+export interface DisableResponse {
   readonly accounts: [];
-  readonly failedAccounts: [];
+  readonly failedAccounts?: [];
 }
 
-interface DisassociateMemberRequest {
+export interface DisassociateMemberRequest {
   readonly accountId: string;
 }
 
-interface DisassociateMemberResponse {
+export interface DisassociateMemberResponse {
   readonly accountId: string;
 }
 
-interface Ec2InstanceAggregation {
-  readonly amis: [];
-  readonly instanceIds: [];
-  readonly instanceTags: [];
-  readonly operatingSystems: [];
-  readonly sortBy: string;
-  readonly sortOrder: string;
+export interface Ec2InstanceAggregation {
+  readonly amis?: [];
+  readonly instanceIds?: [];
+  readonly instanceTags?: [];
+  readonly operatingSystems?: [];
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
 }
 
-interface Ec2InstanceAggregationResponse {
-  readonly accountId: string;
-  readonly ami: string;
+export interface Ec2InstanceAggregationResponse {
+  readonly accountId?: string;
+  readonly ami?: string;
   readonly instanceId: string;
-  readonly instanceTags: {[key: string]: any};
-  readonly networkFindings: number;
-  readonly operatingSystem: string;
-  readonly severityCounts: SeverityCounts;
+  readonly instanceTags?: {[key: string]: any};
+  readonly networkFindings?: number;
+  readonly operatingSystem?: string;
+  readonly severityCounts?: SeverityCounts;
 }
 
-interface Ec2Metadata {
-  readonly amiId: string;
-  readonly platform: string;
-  readonly tags: {[key: string]: any};
+export interface Ec2Metadata {
+  readonly amiId?: string;
+  readonly platform?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface EcrContainerImageMetadata {
-  readonly tags: [];
+export interface EcrContainerImageMetadata {
+  readonly tags?: [];
 }
 
-interface EcrRepositoryMetadata {
-  readonly name: string;
-  readonly scanFrequency: string;
+export interface EcrRepositoryMetadata {
+  readonly name?: string;
+  readonly scanFrequency?: string;
 }
 
-interface EnableDelegatedAdminAccountRequest {
-  readonly clientToken: string;
+export interface EnableDelegatedAdminAccountRequest {
+  readonly clientToken?: string;
   readonly delegatedAdminAccountId: string;
 }
 
-interface EnableDelegatedAdminAccountResponse {
+export interface EnableDelegatedAdminAccountResponse {
   readonly delegatedAdminAccountId: string;
 }
 
-interface EnableRequest {
-  readonly accountIds: [];
-  readonly clientToken: string;
+export interface EnableRequest {
+  readonly accountIds?: [];
+  readonly clientToken?: string;
   readonly resourceTypes: [];
 }
 
-interface EnableResponse {
+export interface EnableResponse {
   readonly accounts: [];
-  readonly failedAccounts: [];
+  readonly failedAccounts?: [];
 }
 
-interface FailedAccount {
+export interface FailedAccount {
   readonly accountId: string;
   readonly errorCode: string;
   readonly errorMessage: string;
-  readonly resourceStatus: ResourceStatus;
-  readonly status: string;
+  readonly resourceStatus?: ResourceStatus;
+  readonly status?: string;
 }
 
-interface Filter {
+export interface Filter {
   readonly action: string;
   readonly arn: string;
   readonly createdAt: Date;
   readonly criteria: FilterCriteria;
-  readonly description: string;
+  readonly description?: string;
   readonly name: string;
   readonly ownerId: string;
-  readonly reason: string;
-  readonly tags: {[key: string]: any};
+  readonly reason?: string;
+  readonly tags?: {[key: string]: any};
   readonly updatedAt: Date;
 }
 
-interface FilterCriteria {
-  readonly awsAccountId: [];
-  readonly componentId: [];
-  readonly componentType: [];
-  readonly ec2InstanceImageId: [];
-  readonly ec2InstanceSubnetId: [];
-  readonly ec2InstanceVpcId: [];
-  readonly ecrImageArchitecture: [];
-  readonly ecrImageHash: [];
-  readonly ecrImagePushedAt: [];
-  readonly ecrImageRegistry: [];
-  readonly ecrImageRepositoryName: [];
-  readonly ecrImageTags: [];
-  readonly findingArn: [];
-  readonly findingStatus: [];
-  readonly findingType: [];
-  readonly firstObservedAt: [];
-  readonly inspectorScore: [];
-  readonly lastObservedAt: [];
-  readonly networkProtocol: [];
-  readonly portRange: [];
-  readonly relatedVulnerabilities: [];
-  readonly resourceId: [];
-  readonly resourceTags: [];
-  readonly resourceType: [];
-  readonly severity: [];
-  readonly title: [];
-  readonly updatedAt: [];
-  readonly vendorSeverity: [];
-  readonly vulnerabilityId: [];
-  readonly vulnerabilitySource: [];
-  readonly vulnerablePackages: [];
+export interface FilterCriteria {
+  readonly awsAccountId?: [];
+  readonly componentId?: [];
+  readonly componentType?: [];
+  readonly ec2InstanceImageId?: [];
+  readonly ec2InstanceSubnetId?: [];
+  readonly ec2InstanceVpcId?: [];
+  readonly ecrImageArchitecture?: [];
+  readonly ecrImageHash?: [];
+  readonly ecrImagePushedAt?: [];
+  readonly ecrImageRegistry?: [];
+  readonly ecrImageRepositoryName?: [];
+  readonly ecrImageTags?: [];
+  readonly findingArn?: [];
+  readonly findingStatus?: [];
+  readonly findingType?: [];
+  readonly firstObservedAt?: [];
+  readonly inspectorScore?: [];
+  readonly lastObservedAt?: [];
+  readonly networkProtocol?: [];
+  readonly portRange?: [];
+  readonly relatedVulnerabilities?: [];
+  readonly resourceId?: [];
+  readonly resourceTags?: [];
+  readonly resourceType?: [];
+  readonly severity?: [];
+  readonly title?: [];
+  readonly updatedAt?: [];
+  readonly vendorSeverity?: [];
+  readonly vulnerabilityId?: [];
+  readonly vulnerabilitySource?: [];
+  readonly vulnerablePackages?: [];
 }
 
-interface Finding {
+export interface Finding {
   readonly awsAccountId: string;
   readonly description: string;
   readonly findingArn: string;
   readonly firstObservedAt: Date;
-  readonly inspectorScore: unknown;
-  readonly inspectorScoreDetails: InspectorScoreDetails;
+  readonly inspectorScore?: unknown;
+  readonly inspectorScoreDetails?: InspectorScoreDetails;
   readonly lastObservedAt: Date;
-  readonly networkReachabilityDetails: NetworkReachabilityDetails;
-  readonly packageVulnerabilityDetails: PackageVulnerabilityDetails;
+  readonly networkReachabilityDetails?: NetworkReachabilityDetails;
+  readonly packageVulnerabilityDetails?: PackageVulnerabilityDetails;
   readonly remediation: Remediation;
   readonly resources: [];
   readonly severity: string;
   readonly status: string;
-  readonly title: string;
+  readonly title?: string;
   readonly type: string;
-  readonly updatedAt: Date;
+  readonly updatedAt?: Date;
 }
 
-interface FindingTypeAggregation {
-  readonly findingType: string;
-  readonly resourceType: string;
-  readonly sortBy: string;
-  readonly sortOrder: string;
+export interface FindingTypeAggregation {
+  readonly findingType?: string;
+  readonly resourceType?: string;
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
 }
 
-interface FindingTypeAggregationResponse {
-  readonly accountId: string;
-  readonly severityCounts: SeverityCounts;
+export interface FindingTypeAggregationResponse {
+  readonly accountId?: string;
+  readonly severityCounts?: SeverityCounts;
 }
 
-interface FreeTrialAccountInfo {
+export interface FreeTrialAccountInfo {
   readonly accountId: string;
   readonly freeTrialInfo: [];
 }
 
-interface FreeTrialInfo {
+export interface FreeTrialInfo {
   readonly end: Date;
   readonly start: Date;
   readonly status: string;
   readonly type: string;
 }
 
-interface FreeTrialInfoError {
+export interface FreeTrialInfoError {
   readonly accountId: string;
   readonly code: string;
   readonly message: string;
 }
 
-interface GetDelegatedAdminAccountRequest {
+export interface GetDelegatedAdminAccountRequest {
 }
 
-interface GetDelegatedAdminAccountResponse {
-  readonly delegatedAdmin: DelegatedAdmin;
+export interface GetDelegatedAdminAccountResponse {
+  readonly delegatedAdmin?: DelegatedAdmin;
 }
 
-interface GetFindingsReportStatusRequest {
-  readonly reportId: string;
+export interface GetFindingsReportStatusRequest {
+  readonly reportId?: string;
 }
 
-interface GetFindingsReportStatusResponse {
-  readonly destination: Destination;
-  readonly errorCode: string;
-  readonly errorMessage: string;
-  readonly filterCriteria: FilterCriteria;
-  readonly reportId: string;
-  readonly status: string;
+export interface GetFindingsReportStatusResponse {
+  readonly destination?: Destination;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
+  readonly filterCriteria?: FilterCriteria;
+  readonly reportId?: string;
+  readonly status?: string;
 }
 
-interface GetMemberRequest {
+export interface GetMemberRequest {
   readonly accountId: string;
 }
 
-interface GetMemberResponse {
-  readonly member: Member;
+export interface GetMemberResponse {
+  readonly member?: Member;
 }
 
-interface ImageLayerAggregation {
-  readonly layerHashes: [];
-  readonly repositories: [];
-  readonly resourceIds: [];
-  readonly sortBy: string;
-  readonly sortOrder: string;
+export interface ImageLayerAggregation {
+  readonly layerHashes?: [];
+  readonly repositories?: [];
+  readonly resourceIds?: [];
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
 }
 
-interface ImageLayerAggregationResponse {
+export interface ImageLayerAggregationResponse {
   readonly accountId: string;
   readonly layerHash: string;
   readonly repository: string;
   readonly resourceId: string;
-  readonly severityCounts: SeverityCounts;
+  readonly severityCounts?: SeverityCounts;
 }
 
-interface InspectorScoreDetails {
-  readonly adjustedCvss: CvssScoreDetails;
+export interface InspectorScoreDetails {
+  readonly adjustedCvss?: CvssScoreDetails;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
-  readonly retryAfterSeconds: number;
+  readonly retryAfterSeconds?: number;
 }
 
-interface ListAccountPermissionsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly service: string;
+export interface ListAccountPermissionsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly service?: string;
 }
 
-interface ListAccountPermissionsResponse {
-  readonly nextToken: string;
+export interface ListAccountPermissionsResponse {
+  readonly nextToken?: string;
   readonly permissions: [];
 }
 
-interface ListCoverageRequest {
-  readonly filterCriteria: CoverageFilterCriteria;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListCoverageRequest {
+  readonly filterCriteria?: CoverageFilterCriteria;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListCoverageResponse {
-  readonly coveredResources: [];
-  readonly nextToken: string;
+export interface ListCoverageResponse {
+  readonly coveredResources?: [];
+  readonly nextToken?: string;
 }
 
-interface ListCoverageStatisticsRequest {
-  readonly filterCriteria: CoverageFilterCriteria;
-  readonly groupBy: string;
-  readonly nextToken: string;
+export interface ListCoverageStatisticsRequest {
+  readonly filterCriteria?: CoverageFilterCriteria;
+  readonly groupBy?: string;
+  readonly nextToken?: string;
 }
 
-interface ListCoverageStatisticsResponse {
-  readonly countsByGroup: [];
-  readonly nextToken: string;
+export interface ListCoverageStatisticsResponse {
+  readonly countsByGroup?: [];
+  readonly nextToken?: string;
   readonly totalCounts: number;
 }
 
-interface ListDelegatedAdminAccountsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListDelegatedAdminAccountsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListDelegatedAdminAccountsResponse {
-  readonly delegatedAdminAccounts: [];
-  readonly nextToken: string;
+export interface ListDelegatedAdminAccountsResponse {
+  readonly delegatedAdminAccounts?: [];
+  readonly nextToken?: string;
 }
 
-interface ListFiltersRequest {
-  readonly action: string;
-  readonly arns: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListFiltersRequest {
+  readonly action?: string;
+  readonly arns?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListFiltersResponse {
+export interface ListFiltersResponse {
   readonly filters: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListFindingAggregationsRequest {
-  readonly accountIds: [];
-  readonly aggregationRequest: AggregationRequest;
+export interface ListFindingAggregationsRequest {
+  readonly accountIds?: [];
+  readonly aggregationRequest?: AggregationRequest;
   readonly aggregationType: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListFindingAggregationsResponse {
+export interface ListFindingAggregationsResponse {
   readonly aggregationType: string;
-  readonly nextToken: string;
-  readonly responses: [];
+  readonly nextToken?: string;
+  readonly responses?: [];
 }
 
-interface ListFindingsRequest {
-  readonly filterCriteria: FilterCriteria;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly sortCriteria: SortCriteria;
+export interface ListFindingsRequest {
+  readonly filterCriteria?: FilterCriteria;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly sortCriteria?: SortCriteria;
 }
 
-interface ListFindingsResponse {
-  readonly findings: [];
-  readonly nextToken: string;
+export interface ListFindingsResponse {
+  readonly findings?: [];
+  readonly nextToken?: string;
 }
 
-interface ListMembersRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly onlyAssociated: boolean;
+export interface ListMembersRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly onlyAssociated?: boolean;
 }
 
-interface ListMembersResponse {
-  readonly members: [];
-  readonly nextToken: string;
+export interface ListMembersResponse {
+  readonly members?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ListUsageTotalsRequest {
-  readonly accountIds: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListUsageTotalsRequest {
+  readonly accountIds?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListUsageTotalsResponse {
-  readonly nextToken: string;
-  readonly totals: [];
+export interface ListUsageTotalsResponse {
+  readonly nextToken?: string;
+  readonly totals?: [];
 }
 
-interface MapFilter {
+export interface MapFilter {
   readonly comparison: string;
   readonly key: string;
-  readonly value: string;
+  readonly value?: string;
 }
 
-interface Member {
-  readonly accountId: string;
-  readonly delegatedAdminAccountId: string;
-  readonly relationshipStatus: string;
-  readonly updatedAt: Date;
+export interface Member {
+  readonly accountId?: string;
+  readonly delegatedAdminAccountId?: string;
+  readonly relationshipStatus?: string;
+  readonly updatedAt?: Date;
 }
 
-interface NetworkPath {
-  readonly steps: [];
+export interface NetworkPath {
+  readonly steps?: [];
 }
 
-interface NetworkReachabilityDetails {
+export interface NetworkReachabilityDetails {
   readonly networkPath: NetworkPath;
   readonly openPortRange: PortRange;
   readonly protocol: string;
 }
 
-interface NumberFilter {
-  readonly lowerInclusive: unknown;
-  readonly upperInclusive: unknown;
+export interface NumberFilter {
+  readonly lowerInclusive?: unknown;
+  readonly upperInclusive?: unknown;
 }
 
-interface PackageAggregation {
-  readonly packageNames: [];
-  readonly sortBy: string;
-  readonly sortOrder: string;
+export interface PackageAggregation {
+  readonly packageNames?: [];
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
 }
 
-interface PackageAggregationResponse {
-  readonly accountId: string;
+export interface PackageAggregationResponse {
+  readonly accountId?: string;
   readonly packageName: string;
-  readonly severityCounts: SeverityCounts;
+  readonly severityCounts?: SeverityCounts;
 }
 
-interface PackageFilter {
-  readonly architecture: StringFilter;
-  readonly epoch: NumberFilter;
-  readonly name: StringFilter;
-  readonly release: StringFilter;
-  readonly sourceLayerHash: StringFilter;
-  readonly version: StringFilter;
+export interface PackageFilter {
+  readonly architecture?: StringFilter;
+  readonly epoch?: NumberFilter;
+  readonly name?: StringFilter;
+  readonly release?: StringFilter;
+  readonly sourceLayerHash?: StringFilter;
+  readonly version?: StringFilter;
 }
 
-interface PackageVulnerabilityDetails {
-  readonly cvss: [];
-  readonly referenceUrls: [];
-  readonly relatedVulnerabilities: [];
+export interface PackageVulnerabilityDetails {
+  readonly cvss?: [];
+  readonly referenceUrls?: [];
+  readonly relatedVulnerabilities?: [];
   readonly source: string;
-  readonly sourceUrl: string;
-  readonly vendorCreatedAt: Date;
-  readonly vendorSeverity: string;
-  readonly vendorUpdatedAt: Date;
+  readonly sourceUrl?: string;
+  readonly vendorCreatedAt?: Date;
+  readonly vendorSeverity?: string;
+  readonly vendorUpdatedAt?: Date;
   readonly vulnerabilityId: string;
   readonly vulnerablePackages: [];
 }
 
-interface Permission {
+export interface Permission {
   readonly operation: string;
   readonly service: string;
 }
 
-interface PortRange {
+export interface PortRange {
   readonly begin: number;
   readonly end: number;
 }
 
-interface PortRangeFilter {
-  readonly beginInclusive: number;
-  readonly endInclusive: number;
+export interface PortRangeFilter {
+  readonly beginInclusive?: number;
+  readonly endInclusive?: number;
 }
 
-interface Recommendation {
-  readonly Url: string;
-  readonly text: string;
+export interface Recommendation {
+  readonly Url?: string;
+  readonly text?: string;
 }
 
-interface Remediation {
-  readonly recommendation: Recommendation;
+export interface Remediation {
+  readonly recommendation?: Recommendation;
 }
 
-interface RepositoryAggregation {
-  readonly repositories: [];
-  readonly sortBy: string;
-  readonly sortOrder: string;
+export interface RepositoryAggregation {
+  readonly repositories?: [];
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
 }
 
-interface RepositoryAggregationResponse {
-  readonly accountId: string;
-  readonly affectedImages: number;
+export interface RepositoryAggregationResponse {
+  readonly accountId?: string;
+  readonly affectedImages?: number;
   readonly repository: string;
-  readonly severityCounts: SeverityCounts;
+  readonly severityCounts?: SeverityCounts;
 }
 
-interface Resource {
-  readonly details: ResourceDetails;
+export interface Resource {
+  readonly details?: ResourceDetails;
   readonly id: string;
-  readonly partition: string;
-  readonly region: string;
-  readonly tags: {[key: string]: any};
+  readonly partition?: string;
+  readonly region?: string;
+  readonly tags?: {[key: string]: any};
   readonly type: string;
 }
 
-interface ResourceDetails {
-  readonly awsEc2Instance: AwsEc2InstanceDetails;
-  readonly awsEcrContainerImage: AwsEcrContainerImageDetails;
+export interface ResourceDetails {
+  readonly awsEc2Instance?: AwsEc2InstanceDetails;
+  readonly awsEcrContainerImage?: AwsEcrContainerImageDetails;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
 }
 
-interface ResourceScanMetadata {
-  readonly ec2: Ec2Metadata;
-  readonly ecrImage: EcrContainerImageMetadata;
-  readonly ecrRepository: EcrRepositoryMetadata;
+export interface ResourceScanMetadata {
+  readonly ec2?: Ec2Metadata;
+  readonly ecrImage?: EcrContainerImageMetadata;
+  readonly ecrRepository?: EcrRepositoryMetadata;
 }
 
-interface ResourceState {
+export interface ResourceState {
   readonly ec2: State;
   readonly ecr: State;
 }
 
-interface ResourceStatus {
+export interface ResourceStatus {
   readonly ec2: string;
   readonly ecr: string;
 }
 
-interface ScanStatus {
+export interface ScanStatus {
   readonly reason: string;
   readonly statusCode: string;
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly message: string;
   readonly resourceId: string;
 }
 
-interface SeverityCounts {
-  readonly all: number;
-  readonly critical: number;
-  readonly high: number;
-  readonly medium: number;
+export interface SeverityCounts {
+  readonly all?: number;
+  readonly critical?: number;
+  readonly high?: number;
+  readonly medium?: number;
 }
 
-interface SortCriteria {
+export interface SortCriteria {
   readonly field: string;
   readonly sortOrder: string;
 }
 
-interface State {
+export interface State {
   readonly errorCode: string;
   readonly errorMessage: string;
   readonly status: string;
 }
 
-interface Step {
+export interface Step {
   readonly componentId: string;
   readonly componentType: string;
 }
 
-interface StringFilter {
+export interface StringFilter {
   readonly comparison: string;
   readonly value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly message: string;
 }
 
-interface TitleAggregation {
-  readonly resourceType: string;
-  readonly sortBy: string;
-  readonly sortOrder: string;
-  readonly titles: [];
-  readonly vulnerabilityIds: [];
+export interface TitleAggregation {
+  readonly resourceType?: string;
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
+  readonly titles?: [];
+  readonly vulnerabilityIds?: [];
 }
 
-interface TitleAggregationResponse {
-  readonly accountId: string;
-  readonly severityCounts: SeverityCounts;
+export interface TitleAggregationResponse {
+  readonly accountId?: string;
+  readonly severityCounts?: SeverityCounts;
   readonly title: string;
-  readonly vulnerabilityId: string;
+  readonly vulnerabilityId?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateFilterRequest {
-  readonly action: string;
-  readonly description: string;
+export interface UpdateFilterRequest {
+  readonly action?: string;
+  readonly description?: string;
   readonly filterArn: string;
-  readonly filterCriteria: FilterCriteria;
-  readonly name: string;
+  readonly filterCriteria?: FilterCriteria;
+  readonly name?: string;
 }
 
-interface UpdateFilterResponse {
+export interface UpdateFilterResponse {
   readonly arn: string;
 }
 
-interface UpdateOrganizationConfigurationRequest {
+export interface UpdateOrganizationConfigurationRequest {
   readonly autoEnable: AutoEnable;
 }
 
-interface UpdateOrganizationConfigurationResponse {
+export interface UpdateOrganizationConfigurationResponse {
   readonly autoEnable: AutoEnable;
 }
 
-interface Usage {
-  readonly currency: string;
-  readonly estimatedMonthlyCost: unknown;
-  readonly total: unknown;
-  readonly type: string;
+export interface Usage {
+  readonly currency?: string;
+  readonly estimatedMonthlyCost?: unknown;
+  readonly total?: unknown;
+  readonly type?: string;
 }
 
-interface UsageTotal {
-  readonly accountId: string;
-  readonly usage: [];
+export interface UsageTotal {
+  readonly accountId?: string;
+  readonly usage?: [];
 }
 
-interface ValidationException {
-  readonly fields: [];
+export interface ValidationException {
+  readonly fields?: [];
   readonly message: string;
   readonly reason: string;
 }
 
-interface ValidationExceptionField {
+export interface ValidationExceptionField {
   readonly message: string;
   readonly name: string;
 }
 
-interface VulnerablePackage {
-  readonly arch: string;
-  readonly epoch: number;
-  readonly filePath: string;
-  readonly fixedInVersion: string;
+export interface VulnerablePackage {
+  readonly arch?: string;
+  readonly epoch?: number;
+  readonly filePath?: string;
+  readonly fixedInVersion?: string;
   readonly name: string;
-  readonly packageManager: string;
-  readonly release: string;
-  readonly sourceLayerHash: string;
+  readonly packageManager?: string;
+  readonly release?: string;
+  readonly sourceLayerHash?: string;
   readonly version: string;
 }
+
 

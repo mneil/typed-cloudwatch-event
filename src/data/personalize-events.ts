@@ -7,64 +7,65 @@ export interface PutEvents {
   readonly sessionId: string;
   readonly eventList: [];
 }
+
 export interface PutItems {
   readonly datasetArn: string;
   readonly items: [];
 }
+
 export interface PutUsers {
   readonly datasetArn: string;
   readonly users: [];
 }
 
-
-
-interface Event {
-  readonly eventId: string;
+export interface Event {
+  readonly eventId?: string;
   readonly eventType: string;
-  readonly eventValue: unknown;
-  readonly itemId: string;
-  readonly properties: string;
+  readonly eventValue?: unknown;
+  readonly itemId?: string;
+  readonly properties?: string;
   readonly sentAt: Date;
-  readonly recommendationId: string;
-  readonly impression: [];
+  readonly recommendationId?: string;
+  readonly impression?: [];
 }
 
-interface InvalidInputException {
-  readonly message: string;
+export interface InvalidInputException {
+  readonly message?: string;
 }
 
-interface Item {
+export interface Item {
   readonly itemId: string;
-  readonly properties: string;
+  readonly properties?: string;
 }
 
-interface PutEventsRequest {
+export interface PutEventsRequest {
   readonly trackingId: string;
-  readonly userId: string;
+  readonly userId?: string;
   readonly sessionId: string;
   readonly eventList: [];
 }
 
-interface PutItemsRequest {
+export interface PutItemsRequest {
   readonly datasetArn: string;
   readonly items: [];
 }
 
-interface PutUsersRequest {
+export interface PutUsersRequest {
   readonly datasetArn: string;
   readonly users: [];
 }
 
-interface ResourceInUseException {
-  readonly message: string;
+export interface ResourceInUseException {
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface User {
+export interface User {
   readonly userId: string;
-  readonly properties: string;
+  readonly properties?: string;
 }
+
 

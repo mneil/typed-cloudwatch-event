@@ -5,10 +5,12 @@ export interface AddListenerCertificates {
   readonly ListenerArn: string;
   readonly Certificates: [];
 }
+
 export interface AddTags {
   readonly ResourceArns: [];
   readonly Tags: [];
 }
+
 export interface CreateListener {
   readonly LoadBalancerArn: string;
   readonly Protocol?: string;
@@ -19,6 +21,7 @@ export interface CreateListener {
   readonly AlpnPolicy?: [];
   readonly Tags?: [];
 }
+
 export interface CreateLoadBalancer {
   readonly Name: string;
   readonly Subnets?: [];
@@ -30,6 +33,7 @@ export interface CreateLoadBalancer {
   readonly IpAddressType?: string;
   readonly CustomerOwnedIpv4Pool?: string;
 }
+
 export interface CreateRule {
   readonly ListenerArn: string;
   readonly Conditions: [];
@@ -37,6 +41,7 @@ export interface CreateRule {
   readonly Actions: [];
   readonly Tags?: [];
 }
+
 export interface CreateTargetGroup {
   readonly Name: string;
   readonly Protocol?: string;
@@ -56,64 +61,79 @@ export interface CreateTargetGroup {
   readonly Tags?: [];
   readonly IpAddressType?: string;
 }
+
 export interface DeleteListener {
   readonly ListenerArn: string;
 }
+
 export interface DeleteLoadBalancer {
   readonly LoadBalancerArn: string;
 }
+
 export interface DeleteRule {
   readonly RuleArn: string;
 }
+
 export interface DeleteTargetGroup {
   readonly TargetGroupArn: string;
 }
+
 export interface DeregisterTargets {
   readonly TargetGroupArn: string;
   readonly Targets: [];
 }
+
 export interface DescribeAccountLimits {
   readonly Marker?: string;
   readonly PageSize?: number;
 }
+
 export interface DescribeListenerCertificates {
   readonly ListenerArn: string;
   readonly Marker?: string;
   readonly PageSize?: number;
 }
+
 export interface DescribeListeners {
   readonly LoadBalancerArn?: string;
   readonly ListenerArns?: [];
   readonly Marker?: string;
   readonly PageSize?: number;
 }
+
 export interface DescribeLoadBalancerAttributes {
   readonly LoadBalancerArn: string;
 }
+
 export interface DescribeLoadBalancers {
   readonly LoadBalancerArns?: [];
   readonly Names?: [];
   readonly Marker?: string;
   readonly PageSize?: number;
 }
+
 export interface DescribeRules {
   readonly ListenerArn?: string;
   readonly RuleArns?: [];
   readonly Marker?: string;
   readonly PageSize?: number;
 }
+
 export interface DescribeSSLPolicies {
   readonly Names?: [];
   readonly Marker?: string;
   readonly PageSize?: number;
   readonly LoadBalancerType?: string;
 }
+
 export interface DescribeTags {
   readonly ResourceArns: [];
 }
+
 export interface DescribeTargetGroupAttributes {
   readonly TargetGroupArn: string;
 }
+
 export interface DescribeTargetGroups {
   readonly LoadBalancerArn?: string;
   readonly TargetGroupArns?: [];
@@ -121,10 +141,12 @@ export interface DescribeTargetGroups {
   readonly Marker?: string;
   readonly PageSize?: number;
 }
+
 export interface DescribeTargetHealth {
   readonly TargetGroupArn: string;
   readonly Targets?: [];
 }
+
 export interface ModifyListener {
   readonly ListenerArn: string;
   readonly Port?: number;
@@ -134,15 +156,18 @@ export interface ModifyListener {
   readonly DefaultActions?: [];
   readonly AlpnPolicy?: [];
 }
+
 export interface ModifyLoadBalancerAttributes {
   readonly LoadBalancerArn: string;
   readonly Attributes: [];
 }
+
 export interface ModifyRule {
   readonly RuleArn: string;
   readonly Conditions?: [];
   readonly Actions?: [];
 }
+
 export interface ModifyTargetGroup {
   readonly TargetGroupArn: string;
   readonly HealthCheckProtocol?: string;
@@ -155,33 +180,41 @@ export interface ModifyTargetGroup {
   readonly UnhealthyThresholdCount?: number;
   readonly Matcher?: Matcher;
 }
+
 export interface ModifyTargetGroupAttributes {
   readonly TargetGroupArn: string;
   readonly Attributes: [];
 }
+
 export interface RegisterTargets {
   readonly TargetGroupArn: string;
   readonly Targets: [];
 }
+
 export interface RemoveListenerCertificates {
   readonly ListenerArn: string;
   readonly Certificates: [];
 }
+
 export interface RemoveTags {
   readonly ResourceArns: [];
   readonly TagKeys: [];
 }
+
 export interface SetIpAddressType {
   readonly LoadBalancerArn: string;
   readonly IpAddressType: string;
 }
+
 export interface SetRulePriorities {
   readonly RulePriorities: [];
 }
+
 export interface SetSecurityGroups {
   readonly LoadBalancerArn: string;
   readonly SecurityGroups: [];
 }
+
 export interface SetSubnets {
   readonly LoadBalancerArn: string;
   readonly Subnets?: [];
@@ -189,732 +222,731 @@ export interface SetSubnets {
   readonly IpAddressType?: string;
 }
 
-
-
-interface ALPNPolicyNotSupportedException {
+export interface ALPNPolicyNotSupportedException {
 }
 
-interface Action {
+export interface Action {
   readonly Type: string;
-  readonly TargetGroupArn: string;
-  readonly AuthenticateOidcConfig: AuthenticateOidcActionConfig;
-  readonly AuthenticateCognitoConfig: AuthenticateCognitoActionConfig;
-  readonly Order: number;
-  readonly RedirectConfig: RedirectActionConfig;
-  readonly FixedResponseConfig: FixedResponseActionConfig;
-  readonly ForwardConfig: ForwardActionConfig;
+  readonly TargetGroupArn?: string;
+  readonly AuthenticateOidcConfig?: AuthenticateOidcActionConfig;
+  readonly AuthenticateCognitoConfig?: AuthenticateCognitoActionConfig;
+  readonly Order?: number;
+  readonly RedirectConfig?: RedirectActionConfig;
+  readonly FixedResponseConfig?: FixedResponseActionConfig;
+  readonly ForwardConfig?: ForwardActionConfig;
 }
 
-interface AddListenerCertificatesInput {
+export interface AddListenerCertificatesInput {
   readonly ListenerArn: string;
   readonly Certificates: [];
 }
 
-interface AddListenerCertificatesOutput {
-  readonly Certificates: [];
+export interface AddListenerCertificatesOutput {
+  readonly Certificates?: [];
 }
 
-interface AddTagsInput {
+export interface AddTagsInput {
   readonly ResourceArns: [];
   readonly Tags: [];
 }
 
-interface AddTagsOutput {
+export interface AddTagsOutput {
 }
 
-interface AllocationIdNotFoundException {
+export interface AllocationIdNotFoundException {
 }
 
-interface AuthenticateCognitoActionConfig {
+export interface AuthenticateCognitoActionConfig {
   readonly UserPoolArn: string;
   readonly UserPoolClientId: string;
   readonly UserPoolDomain: string;
-  readonly SessionCookieName: string;
-  readonly Scope: string;
-  readonly SessionTimeout: number;
-  readonly AuthenticationRequestExtraParams: {[key: string]: any};
-  readonly OnUnauthenticatedRequest: string;
+  readonly SessionCookieName?: string;
+  readonly Scope?: string;
+  readonly SessionTimeout?: number;
+  readonly AuthenticationRequestExtraParams?: {[key: string]: any};
+  readonly OnUnauthenticatedRequest?: string;
 }
 
-interface AuthenticateOidcActionConfig {
+export interface AuthenticateOidcActionConfig {
   readonly Issuer: string;
   readonly AuthorizationEndpoint: string;
   readonly TokenEndpoint: string;
   readonly UserInfoEndpoint: string;
   readonly ClientId: string;
-  readonly ClientSecret: string;
-  readonly SessionCookieName: string;
-  readonly Scope: string;
-  readonly SessionTimeout: number;
-  readonly AuthenticationRequestExtraParams: {[key: string]: any};
-  readonly OnUnauthenticatedRequest: string;
-  readonly UseExistingClientSecret: boolean;
+  readonly ClientSecret?: string;
+  readonly SessionCookieName?: string;
+  readonly Scope?: string;
+  readonly SessionTimeout?: number;
+  readonly AuthenticationRequestExtraParams?: {[key: string]: any};
+  readonly OnUnauthenticatedRequest?: string;
+  readonly UseExistingClientSecret?: boolean;
 }
 
-interface AvailabilityZone {
-  readonly ZoneName: string;
-  readonly SubnetId: string;
-  readonly OutpostId: string;
-  readonly LoadBalancerAddresses: [];
+export interface AvailabilityZone {
+  readonly ZoneName?: string;
+  readonly SubnetId?: string;
+  readonly OutpostId?: string;
+  readonly LoadBalancerAddresses?: [];
 }
 
-interface AvailabilityZoneNotSupportedException {
+export interface AvailabilityZoneNotSupportedException {
 }
 
-interface Certificate {
-  readonly CertificateArn: string;
-  readonly IsDefault: boolean;
+export interface Certificate {
+  readonly CertificateArn?: string;
+  readonly IsDefault?: boolean;
 }
 
-interface CertificateNotFoundException {
+export interface CertificateNotFoundException {
 }
 
-interface Cipher {
-  readonly Name: string;
-  readonly Priority: number;
+export interface Cipher {
+  readonly Name?: string;
+  readonly Priority?: number;
 }
 
-interface CreateListenerInput {
+export interface CreateListenerInput {
   readonly LoadBalancerArn: string;
-  readonly Protocol: string;
-  readonly Port: number;
-  readonly SslPolicy: string;
-  readonly Certificates: [];
+  readonly Protocol?: string;
+  readonly Port?: number;
+  readonly SslPolicy?: string;
+  readonly Certificates?: [];
   readonly DefaultActions: [];
-  readonly AlpnPolicy: [];
-  readonly Tags: [];
+  readonly AlpnPolicy?: [];
+  readonly Tags?: [];
 }
 
-interface CreateListenerOutput {
-  readonly Listeners: [];
+export interface CreateListenerOutput {
+  readonly Listeners?: [];
 }
 
-interface CreateLoadBalancerInput {
+export interface CreateLoadBalancerInput {
   readonly Name: string;
-  readonly Subnets: [];
-  readonly SubnetMappings: [];
-  readonly SecurityGroups: [];
-  readonly Scheme: string;
-  readonly Tags: [];
-  readonly Type: string;
-  readonly IpAddressType: string;
-  readonly CustomerOwnedIpv4Pool: string;
+  readonly Subnets?: [];
+  readonly SubnetMappings?: [];
+  readonly SecurityGroups?: [];
+  readonly Scheme?: string;
+  readonly Tags?: [];
+  readonly Type?: string;
+  readonly IpAddressType?: string;
+  readonly CustomerOwnedIpv4Pool?: string;
 }
 
-interface CreateLoadBalancerOutput {
-  readonly LoadBalancers: [];
+export interface CreateLoadBalancerOutput {
+  readonly LoadBalancers?: [];
 }
 
-interface CreateRuleInput {
+export interface CreateRuleInput {
   readonly ListenerArn: string;
   readonly Conditions: [];
   readonly Priority: number;
   readonly Actions: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateRuleOutput {
-  readonly Rules: [];
+export interface CreateRuleOutput {
+  readonly Rules?: [];
 }
 
-interface CreateTargetGroupInput {
+export interface CreateTargetGroupInput {
   readonly Name: string;
-  readonly Protocol: string;
-  readonly ProtocolVersion: string;
-  readonly Port: number;
-  readonly VpcId: string;
-  readonly HealthCheckProtocol: string;
-  readonly HealthCheckPort: string;
-  readonly HealthCheckEnabled: boolean;
-  readonly HealthCheckPath: string;
-  readonly HealthCheckIntervalSeconds: number;
-  readonly HealthCheckTimeoutSeconds: number;
-  readonly HealthyThresholdCount: number;
-  readonly UnhealthyThresholdCount: number;
-  readonly Matcher: Matcher;
-  readonly TargetType: string;
-  readonly Tags: [];
-  readonly IpAddressType: string;
+  readonly Protocol?: string;
+  readonly ProtocolVersion?: string;
+  readonly Port?: number;
+  readonly VpcId?: string;
+  readonly HealthCheckProtocol?: string;
+  readonly HealthCheckPort?: string;
+  readonly HealthCheckEnabled?: boolean;
+  readonly HealthCheckPath?: string;
+  readonly HealthCheckIntervalSeconds?: number;
+  readonly HealthCheckTimeoutSeconds?: number;
+  readonly HealthyThresholdCount?: number;
+  readonly UnhealthyThresholdCount?: number;
+  readonly Matcher?: Matcher;
+  readonly TargetType?: string;
+  readonly Tags?: [];
+  readonly IpAddressType?: string;
 }
 
-interface CreateTargetGroupOutput {
-  readonly TargetGroups: [];
+export interface CreateTargetGroupOutput {
+  readonly TargetGroups?: [];
 }
 
-interface DeleteListenerInput {
+export interface DeleteListenerInput {
   readonly ListenerArn: string;
 }
 
-interface DeleteListenerOutput {
+export interface DeleteListenerOutput {
 }
 
-interface DeleteLoadBalancerInput {
+export interface DeleteLoadBalancerInput {
   readonly LoadBalancerArn: string;
 }
 
-interface DeleteLoadBalancerOutput {
+export interface DeleteLoadBalancerOutput {
 }
 
-interface DeleteRuleInput {
+export interface DeleteRuleInput {
   readonly RuleArn: string;
 }
 
-interface DeleteRuleOutput {
+export interface DeleteRuleOutput {
 }
 
-interface DeleteTargetGroupInput {
+export interface DeleteTargetGroupInput {
   readonly TargetGroupArn: string;
 }
 
-interface DeleteTargetGroupOutput {
+export interface DeleteTargetGroupOutput {
 }
 
-interface DeregisterTargetsInput {
+export interface DeregisterTargetsInput {
   readonly TargetGroupArn: string;
   readonly Targets: [];
 }
 
-interface DeregisterTargetsOutput {
+export interface DeregisterTargetsOutput {
 }
 
-interface DescribeAccountLimitsInput {
-  readonly Marker: string;
-  readonly PageSize: number;
+export interface DescribeAccountLimitsInput {
+  readonly Marker?: string;
+  readonly PageSize?: number;
 }
 
-interface DescribeAccountLimitsOutput {
-  readonly Limits: [];
-  readonly NextMarker: string;
+export interface DescribeAccountLimitsOutput {
+  readonly Limits?: [];
+  readonly NextMarker?: string;
 }
 
-interface DescribeListenerCertificatesInput {
+export interface DescribeListenerCertificatesInput {
   readonly ListenerArn: string;
-  readonly Marker: string;
-  readonly PageSize: number;
+  readonly Marker?: string;
+  readonly PageSize?: number;
 }
 
-interface DescribeListenerCertificatesOutput {
-  readonly Certificates: [];
-  readonly NextMarker: string;
+export interface DescribeListenerCertificatesOutput {
+  readonly Certificates?: [];
+  readonly NextMarker?: string;
 }
 
-interface DescribeListenersInput {
+export interface DescribeListenersInput {
+  readonly LoadBalancerArn?: string;
+  readonly ListenerArns?: [];
+  readonly Marker?: string;
+  readonly PageSize?: number;
+}
+
+export interface DescribeListenersOutput {
+  readonly Listeners?: [];
+  readonly NextMarker?: string;
+}
+
+export interface DescribeLoadBalancerAttributesInput {
   readonly LoadBalancerArn: string;
-  readonly ListenerArns: [];
-  readonly Marker: string;
-  readonly PageSize: number;
 }
 
-interface DescribeListenersOutput {
-  readonly Listeners: [];
-  readonly NextMarker: string;
+export interface DescribeLoadBalancerAttributesOutput {
+  readonly Attributes?: [];
 }
 
-interface DescribeLoadBalancerAttributesInput {
-  readonly LoadBalancerArn: string;
+export interface DescribeLoadBalancersInput {
+  readonly LoadBalancerArns?: [];
+  readonly Names?: [];
+  readonly Marker?: string;
+  readonly PageSize?: number;
 }
 
-interface DescribeLoadBalancerAttributesOutput {
-  readonly Attributes: [];
+export interface DescribeLoadBalancersOutput {
+  readonly LoadBalancers?: [];
+  readonly NextMarker?: string;
 }
 
-interface DescribeLoadBalancersInput {
-  readonly LoadBalancerArns: [];
-  readonly Names: [];
-  readonly Marker: string;
-  readonly PageSize: number;
+export interface DescribeRulesInput {
+  readonly ListenerArn?: string;
+  readonly RuleArns?: [];
+  readonly Marker?: string;
+  readonly PageSize?: number;
 }
 
-interface DescribeLoadBalancersOutput {
-  readonly LoadBalancers: [];
-  readonly NextMarker: string;
+export interface DescribeRulesOutput {
+  readonly Rules?: [];
+  readonly NextMarker?: string;
 }
 
-interface DescribeRulesInput {
-  readonly ListenerArn: string;
-  readonly RuleArns: [];
-  readonly Marker: string;
-  readonly PageSize: number;
+export interface DescribeSSLPoliciesInput {
+  readonly Names?: [];
+  readonly Marker?: string;
+  readonly PageSize?: number;
+  readonly LoadBalancerType?: string;
 }
 
-interface DescribeRulesOutput {
-  readonly Rules: [];
-  readonly NextMarker: string;
+export interface DescribeSSLPoliciesOutput {
+  readonly SslPolicies?: [];
+  readonly NextMarker?: string;
 }
 
-interface DescribeSSLPoliciesInput {
-  readonly Names: [];
-  readonly Marker: string;
-  readonly PageSize: number;
-  readonly LoadBalancerType: string;
-}
-
-interface DescribeSSLPoliciesOutput {
-  readonly SslPolicies: [];
-  readonly NextMarker: string;
-}
-
-interface DescribeTagsInput {
+export interface DescribeTagsInput {
   readonly ResourceArns: [];
 }
 
-interface DescribeTagsOutput {
-  readonly TagDescriptions: [];
+export interface DescribeTagsOutput {
+  readonly TagDescriptions?: [];
 }
 
-interface DescribeTargetGroupAttributesInput {
+export interface DescribeTargetGroupAttributesInput {
   readonly TargetGroupArn: string;
 }
 
-interface DescribeTargetGroupAttributesOutput {
-  readonly Attributes: [];
+export interface DescribeTargetGroupAttributesOutput {
+  readonly Attributes?: [];
 }
 
-interface DescribeTargetGroupsInput {
-  readonly LoadBalancerArn: string;
-  readonly TargetGroupArns: [];
-  readonly Names: [];
-  readonly Marker: string;
-  readonly PageSize: number;
+export interface DescribeTargetGroupsInput {
+  readonly LoadBalancerArn?: string;
+  readonly TargetGroupArns?: [];
+  readonly Names?: [];
+  readonly Marker?: string;
+  readonly PageSize?: number;
 }
 
-interface DescribeTargetGroupsOutput {
-  readonly TargetGroups: [];
-  readonly NextMarker: string;
+export interface DescribeTargetGroupsOutput {
+  readonly TargetGroups?: [];
+  readonly NextMarker?: string;
 }
 
-interface DescribeTargetHealthInput {
+export interface DescribeTargetHealthInput {
   readonly TargetGroupArn: string;
-  readonly Targets: [];
+  readonly Targets?: [];
 }
 
-interface DescribeTargetHealthOutput {
-  readonly TargetHealthDescriptions: [];
+export interface DescribeTargetHealthOutput {
+  readonly TargetHealthDescriptions?: [];
 }
 
-interface DuplicateListenerException {
+export interface DuplicateListenerException {
 }
 
-interface DuplicateLoadBalancerNameException {
+export interface DuplicateLoadBalancerNameException {
 }
 
-interface DuplicateTagKeysException {
+export interface DuplicateTagKeysException {
 }
 
-interface DuplicateTargetGroupNameException {
+export interface DuplicateTargetGroupNameException {
 }
 
-interface FixedResponseActionConfig {
-  readonly MessageBody: string;
+export interface FixedResponseActionConfig {
+  readonly MessageBody?: string;
   readonly StatusCode: string;
-  readonly ContentType: string;
+  readonly ContentType?: string;
 }
 
-interface ForwardActionConfig {
-  readonly TargetGroups: [];
-  readonly TargetGroupStickinessConfig: TargetGroupStickinessConfig;
+export interface ForwardActionConfig {
+  readonly TargetGroups?: [];
+  readonly TargetGroupStickinessConfig?: TargetGroupStickinessConfig;
 }
 
-interface HealthUnavailableException {
+export interface HealthUnavailableException {
 }
 
-interface HostHeaderConditionConfig {
-  readonly Values: [];
+export interface HostHeaderConditionConfig {
+  readonly Values?: [];
 }
 
-interface HttpHeaderConditionConfig {
-  readonly HttpHeaderName: string;
-  readonly Values: [];
+export interface HttpHeaderConditionConfig {
+  readonly HttpHeaderName?: string;
+  readonly Values?: [];
 }
 
-interface HttpRequestMethodConditionConfig {
-  readonly Values: [];
+export interface HttpRequestMethodConditionConfig {
+  readonly Values?: [];
 }
 
-interface IncompatibleProtocolsException {
+export interface IncompatibleProtocolsException {
 }
 
-interface InvalidConfigurationRequestException {
+export interface InvalidConfigurationRequestException {
 }
 
-interface InvalidLoadBalancerActionException {
+export interface InvalidLoadBalancerActionException {
 }
 
-interface InvalidSchemeException {
+export interface InvalidSchemeException {
 }
 
-interface InvalidSecurityGroupException {
+export interface InvalidSecurityGroupException {
 }
 
-interface InvalidSubnetException {
+export interface InvalidSubnetException {
 }
 
-interface InvalidTargetException {
+export interface InvalidTargetException {
 }
 
-interface Limit {
-  readonly Name: string;
-  readonly Max: string;
+export interface Limit {
+  readonly Name?: string;
+  readonly Max?: string;
 }
 
-interface Listener {
+export interface Listener {
+  readonly ListenerArn?: string;
+  readonly LoadBalancerArn?: string;
+  readonly Port?: number;
+  readonly Protocol?: string;
+  readonly Certificates?: [];
+  readonly SslPolicy?: string;
+  readonly DefaultActions?: [];
+  readonly AlpnPolicy?: [];
+}
+
+export interface ListenerNotFoundException {
+}
+
+export interface LoadBalancer {
+  readonly LoadBalancerArn?: string;
+  readonly DNSName?: string;
+  readonly CanonicalHostedZoneId?: string;
+  readonly CreatedTime?: Date;
+  readonly LoadBalancerName?: string;
+  readonly Scheme?: string;
+  readonly VpcId?: string;
+  readonly State?: LoadBalancerState;
+  readonly Type?: string;
+  readonly AvailabilityZones?: [];
+  readonly SecurityGroups?: [];
+  readonly IpAddressType?: string;
+  readonly CustomerOwnedIpv4Pool?: string;
+}
+
+export interface LoadBalancerAddress {
+  readonly IpAddress?: string;
+  readonly AllocationId?: string;
+  readonly PrivateIPv4Address?: string;
+  readonly IPv6Address?: string;
+}
+
+export interface LoadBalancerAttribute {
+  readonly Key?: string;
+  readonly Value?: string;
+}
+
+export interface LoadBalancerNotFoundException {
+}
+
+export interface LoadBalancerState {
+  readonly Code?: string;
+  readonly Reason?: string;
+}
+
+export interface Matcher {
+  readonly HttpCode?: string;
+  readonly GrpcCode?: string;
+}
+
+export interface ModifyListenerInput {
   readonly ListenerArn: string;
-  readonly LoadBalancerArn: string;
-  readonly Port: number;
-  readonly Protocol: string;
-  readonly Certificates: [];
-  readonly SslPolicy: string;
-  readonly DefaultActions: [];
-  readonly AlpnPolicy: [];
+  readonly Port?: number;
+  readonly Protocol?: string;
+  readonly SslPolicy?: string;
+  readonly Certificates?: [];
+  readonly DefaultActions?: [];
+  readonly AlpnPolicy?: [];
 }
 
-interface ListenerNotFoundException {
+export interface ModifyListenerOutput {
+  readonly Listeners?: [];
 }
 
-interface LoadBalancer {
-  readonly LoadBalancerArn: string;
-  readonly DNSName: string;
-  readonly CanonicalHostedZoneId: string;
-  readonly CreatedTime: Date;
-  readonly LoadBalancerName: string;
-  readonly Scheme: string;
-  readonly VpcId: string;
-  readonly State: LoadBalancerState;
-  readonly Type: string;
-  readonly AvailabilityZones: [];
-  readonly SecurityGroups: [];
-  readonly IpAddressType: string;
-  readonly CustomerOwnedIpv4Pool: string;
-}
-
-interface LoadBalancerAddress {
-  readonly IpAddress: string;
-  readonly AllocationId: string;
-  readonly PrivateIPv4Address: string;
-  readonly IPv6Address: string;
-}
-
-interface LoadBalancerAttribute {
-  readonly Key: string;
-  readonly Value: string;
-}
-
-interface LoadBalancerNotFoundException {
-}
-
-interface LoadBalancerState {
-  readonly Code: string;
-  readonly Reason: string;
-}
-
-interface Matcher {
-  readonly HttpCode: string;
-  readonly GrpcCode: string;
-}
-
-interface ModifyListenerInput {
-  readonly ListenerArn: string;
-  readonly Port: number;
-  readonly Protocol: string;
-  readonly SslPolicy: string;
-  readonly Certificates: [];
-  readonly DefaultActions: [];
-  readonly AlpnPolicy: [];
-}
-
-interface ModifyListenerOutput {
-  readonly Listeners: [];
-}
-
-interface ModifyLoadBalancerAttributesInput {
+export interface ModifyLoadBalancerAttributesInput {
   readonly LoadBalancerArn: string;
   readonly Attributes: [];
 }
 
-interface ModifyLoadBalancerAttributesOutput {
-  readonly Attributes: [];
+export interface ModifyLoadBalancerAttributesOutput {
+  readonly Attributes?: [];
 }
 
-interface ModifyRuleInput {
+export interface ModifyRuleInput {
   readonly RuleArn: string;
-  readonly Conditions: [];
-  readonly Actions: [];
+  readonly Conditions?: [];
+  readonly Actions?: [];
 }
 
-interface ModifyRuleOutput {
-  readonly Rules: [];
+export interface ModifyRuleOutput {
+  readonly Rules?: [];
 }
 
-interface ModifyTargetGroupAttributesInput {
+export interface ModifyTargetGroupAttributesInput {
   readonly TargetGroupArn: string;
   readonly Attributes: [];
 }
 
-interface ModifyTargetGroupAttributesOutput {
-  readonly Attributes: [];
+export interface ModifyTargetGroupAttributesOutput {
+  readonly Attributes?: [];
 }
 
-interface ModifyTargetGroupInput {
+export interface ModifyTargetGroupInput {
   readonly TargetGroupArn: string;
-  readonly HealthCheckProtocol: string;
-  readonly HealthCheckPort: string;
-  readonly HealthCheckPath: string;
-  readonly HealthCheckEnabled: boolean;
-  readonly HealthCheckIntervalSeconds: number;
-  readonly HealthCheckTimeoutSeconds: number;
-  readonly HealthyThresholdCount: number;
-  readonly UnhealthyThresholdCount: number;
-  readonly Matcher: Matcher;
+  readonly HealthCheckProtocol?: string;
+  readonly HealthCheckPort?: string;
+  readonly HealthCheckPath?: string;
+  readonly HealthCheckEnabled?: boolean;
+  readonly HealthCheckIntervalSeconds?: number;
+  readonly HealthCheckTimeoutSeconds?: number;
+  readonly HealthyThresholdCount?: number;
+  readonly UnhealthyThresholdCount?: number;
+  readonly Matcher?: Matcher;
 }
 
-interface ModifyTargetGroupOutput {
-  readonly TargetGroups: [];
+export interface ModifyTargetGroupOutput {
+  readonly TargetGroups?: [];
 }
 
-interface OperationNotPermittedException {
+export interface OperationNotPermittedException {
 }
 
-interface PathPatternConditionConfig {
-  readonly Values: [];
+export interface PathPatternConditionConfig {
+  readonly Values?: [];
 }
 
-interface PriorityInUseException {
+export interface PriorityInUseException {
 }
 
-interface QueryStringConditionConfig {
-  readonly Values: [];
+export interface QueryStringConditionConfig {
+  readonly Values?: [];
 }
 
-interface QueryStringKeyValuePair {
-  readonly Key: string;
-  readonly Value: string;
+export interface QueryStringKeyValuePair {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface RedirectActionConfig {
-  readonly Protocol: string;
-  readonly Port: string;
-  readonly Host: string;
-  readonly Path: string;
-  readonly Query: string;
+export interface RedirectActionConfig {
+  readonly Protocol?: string;
+  readonly Port?: string;
+  readonly Host?: string;
+  readonly Path?: string;
+  readonly Query?: string;
   readonly StatusCode: string;
 }
 
-interface RegisterTargetsInput {
+export interface RegisterTargetsInput {
   readonly TargetGroupArn: string;
   readonly Targets: [];
 }
 
-interface RegisterTargetsOutput {
+export interface RegisterTargetsOutput {
 }
 
-interface RemoveListenerCertificatesInput {
+export interface RemoveListenerCertificatesInput {
   readonly ListenerArn: string;
   readonly Certificates: [];
 }
 
-interface RemoveListenerCertificatesOutput {
+export interface RemoveListenerCertificatesOutput {
 }
 
-interface RemoveTagsInput {
+export interface RemoveTagsInput {
   readonly ResourceArns: [];
   readonly TagKeys: [];
 }
 
-interface RemoveTagsOutput {
+export interface RemoveTagsOutput {
 }
 
-interface ResourceInUseException {
+export interface ResourceInUseException {
 }
 
-interface Rule {
-  readonly RuleArn: string;
-  readonly Priority: string;
-  readonly Conditions: [];
-  readonly Actions: [];
-  readonly IsDefault: boolean;
+export interface Rule {
+  readonly RuleArn?: string;
+  readonly Priority?: string;
+  readonly Conditions?: [];
+  readonly Actions?: [];
+  readonly IsDefault?: boolean;
 }
 
-interface RuleCondition {
-  readonly Field: string;
-  readonly Values: [];
-  readonly HostHeaderConfig: HostHeaderConditionConfig;
-  readonly PathPatternConfig: PathPatternConditionConfig;
-  readonly HttpHeaderConfig: HttpHeaderConditionConfig;
-  readonly QueryStringConfig: QueryStringConditionConfig;
-  readonly HttpRequestMethodConfig: HttpRequestMethodConditionConfig;
-  readonly SourceIpConfig: SourceIpConditionConfig;
+export interface RuleCondition {
+  readonly Field?: string;
+  readonly Values?: [];
+  readonly HostHeaderConfig?: HostHeaderConditionConfig;
+  readonly PathPatternConfig?: PathPatternConditionConfig;
+  readonly HttpHeaderConfig?: HttpHeaderConditionConfig;
+  readonly QueryStringConfig?: QueryStringConditionConfig;
+  readonly HttpRequestMethodConfig?: HttpRequestMethodConditionConfig;
+  readonly SourceIpConfig?: SourceIpConditionConfig;
 }
 
-interface RuleNotFoundException {
+export interface RuleNotFoundException {
 }
 
-interface RulePriorityPair {
-  readonly RuleArn: string;
-  readonly Priority: number;
+export interface RulePriorityPair {
+  readonly RuleArn?: string;
+  readonly Priority?: number;
 }
 
-interface SSLPolicyNotFoundException {
+export interface SSLPolicyNotFoundException {
 }
 
-interface SetIpAddressTypeInput {
+export interface SetIpAddressTypeInput {
   readonly LoadBalancerArn: string;
   readonly IpAddressType: string;
 }
 
-interface SetIpAddressTypeOutput {
-  readonly IpAddressType: string;
+export interface SetIpAddressTypeOutput {
+  readonly IpAddressType?: string;
 }
 
-interface SetRulePrioritiesInput {
+export interface SetRulePrioritiesInput {
   readonly RulePriorities: [];
 }
 
-interface SetRulePrioritiesOutput {
-  readonly Rules: [];
+export interface SetRulePrioritiesOutput {
+  readonly Rules?: [];
 }
 
-interface SetSecurityGroupsInput {
+export interface SetSecurityGroupsInput {
   readonly LoadBalancerArn: string;
   readonly SecurityGroups: [];
 }
 
-interface SetSecurityGroupsOutput {
-  readonly SecurityGroupIds: [];
+export interface SetSecurityGroupsOutput {
+  readonly SecurityGroupIds?: [];
 }
 
-interface SetSubnetsInput {
+export interface SetSubnetsInput {
   readonly LoadBalancerArn: string;
-  readonly Subnets: [];
-  readonly SubnetMappings: [];
-  readonly IpAddressType: string;
+  readonly Subnets?: [];
+  readonly SubnetMappings?: [];
+  readonly IpAddressType?: string;
 }
 
-interface SetSubnetsOutput {
-  readonly AvailabilityZones: [];
-  readonly IpAddressType: string;
+export interface SetSubnetsOutput {
+  readonly AvailabilityZones?: [];
+  readonly IpAddressType?: string;
 }
 
-interface SourceIpConditionConfig {
-  readonly Values: [];
+export interface SourceIpConditionConfig {
+  readonly Values?: [];
 }
 
-interface SslPolicy {
-  readonly SslProtocols: [];
-  readonly Ciphers: [];
-  readonly Name: string;
-  readonly SupportedLoadBalancerTypes: [];
+export interface SslPolicy {
+  readonly SslProtocols?: [];
+  readonly Ciphers?: [];
+  readonly Name?: string;
+  readonly SupportedLoadBalancerTypes?: [];
 }
 
-interface SubnetMapping {
-  readonly SubnetId: string;
-  readonly AllocationId: string;
-  readonly PrivateIPv4Address: string;
-  readonly IPv6Address: string;
+export interface SubnetMapping {
+  readonly SubnetId?: string;
+  readonly AllocationId?: string;
+  readonly PrivateIPv4Address?: string;
+  readonly IPv6Address?: string;
 }
 
-interface SubnetNotFoundException {
+export interface SubnetNotFoundException {
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
-  readonly Value: string;
+  readonly Value?: string;
 }
 
-interface TagDescription {
-  readonly ResourceArn: string;
-  readonly Tags: [];
+export interface TagDescription {
+  readonly ResourceArn?: string;
+  readonly Tags?: [];
 }
 
-interface TargetDescription {
+export interface TargetDescription {
   readonly Id: string;
-  readonly Port: number;
-  readonly AvailabilityZone: string;
+  readonly Port?: number;
+  readonly AvailabilityZone?: string;
 }
 
-interface TargetGroup {
-  readonly TargetGroupArn: string;
-  readonly TargetGroupName: string;
-  readonly Protocol: string;
-  readonly Port: number;
-  readonly VpcId: string;
-  readonly HealthCheckProtocol: string;
-  readonly HealthCheckPort: string;
-  readonly HealthCheckEnabled: boolean;
-  readonly HealthCheckIntervalSeconds: number;
-  readonly HealthCheckTimeoutSeconds: number;
-  readonly HealthyThresholdCount: number;
-  readonly UnhealthyThresholdCount: number;
-  readonly HealthCheckPath: string;
-  readonly Matcher: Matcher;
-  readonly LoadBalancerArns: [];
-  readonly TargetType: string;
-  readonly ProtocolVersion: string;
-  readonly IpAddressType: string;
+export interface TargetGroup {
+  readonly TargetGroupArn?: string;
+  readonly TargetGroupName?: string;
+  readonly Protocol?: string;
+  readonly Port?: number;
+  readonly VpcId?: string;
+  readonly HealthCheckProtocol?: string;
+  readonly HealthCheckPort?: string;
+  readonly HealthCheckEnabled?: boolean;
+  readonly HealthCheckIntervalSeconds?: number;
+  readonly HealthCheckTimeoutSeconds?: number;
+  readonly HealthyThresholdCount?: number;
+  readonly UnhealthyThresholdCount?: number;
+  readonly HealthCheckPath?: string;
+  readonly Matcher?: Matcher;
+  readonly LoadBalancerArns?: [];
+  readonly TargetType?: string;
+  readonly ProtocolVersion?: string;
+  readonly IpAddressType?: string;
 }
 
-interface TargetGroupAssociationLimitException {
+export interface TargetGroupAssociationLimitException {
 }
 
-interface TargetGroupAttribute {
-  readonly Key: string;
-  readonly Value: string;
+export interface TargetGroupAttribute {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TargetGroupNotFoundException {
+export interface TargetGroupNotFoundException {
 }
 
-interface TargetGroupStickinessConfig {
-  readonly Enabled: boolean;
-  readonly DurationSeconds: number;
+export interface TargetGroupStickinessConfig {
+  readonly Enabled?: boolean;
+  readonly DurationSeconds?: number;
 }
 
-interface TargetGroupTuple {
-  readonly TargetGroupArn: string;
-  readonly Weight: number;
+export interface TargetGroupTuple {
+  readonly TargetGroupArn?: string;
+  readonly Weight?: number;
 }
 
-interface TargetHealth {
-  readonly State: string;
-  readonly Reason: string;
-  readonly Description: string;
+export interface TargetHealth {
+  readonly State?: string;
+  readonly Reason?: string;
+  readonly Description?: string;
 }
 
-interface TargetHealthDescription {
-  readonly Target: TargetDescription;
-  readonly HealthCheckPort: string;
-  readonly TargetHealth: TargetHealth;
+export interface TargetHealthDescription {
+  readonly Target?: TargetDescription;
+  readonly HealthCheckPort?: string;
+  readonly TargetHealth?: TargetHealth;
 }
 
-interface TooManyActionsException {
+export interface TooManyActionsException {
 }
 
-interface TooManyCertificatesException {
+export interface TooManyCertificatesException {
 }
 
-interface TooManyListenersException {
+export interface TooManyListenersException {
 }
 
-interface TooManyLoadBalancersException {
+export interface TooManyLoadBalancersException {
 }
 
-interface TooManyRegistrationsForTargetIdException {
+export interface TooManyRegistrationsForTargetIdException {
 }
 
-interface TooManyRulesException {
+export interface TooManyRulesException {
 }
 
-interface TooManyTagsException {
+export interface TooManyTagsException {
 }
 
-interface TooManyTargetGroupsException {
+export interface TooManyTargetGroupsException {
 }
 
-interface TooManyTargetsException {
+export interface TooManyTargetsException {
 }
 
-interface TooManyUniqueTargetGroupsPerLoadBalancerException {
+export interface TooManyUniqueTargetGroupsPerLoadBalancerException {
 }
 
-interface UnsupportedProtocolException {
+export interface UnsupportedProtocolException {
 }
+
 

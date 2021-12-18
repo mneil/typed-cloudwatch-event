@@ -5,69 +5,87 @@ export interface AcceptDomainTransferFromAnotherAwsAccount {
   readonly DomainName: string;
   readonly Password: string;
 }
+
 export interface CancelDomainTransferToAnotherAwsAccount {
   readonly DomainName: string;
 }
+
 export interface CheckDomainAvailability {
   readonly DomainName: string;
   readonly IdnLangCode?: string;
 }
+
 export interface CheckDomainTransferability {
   readonly DomainName: string;
   readonly AuthCode?: string;
 }
+
 export interface DeleteDomain {
   readonly DomainName: string;
 }
+
 export interface DeleteTagsForDomain {
   readonly DomainName: string;
   readonly TagsToDelete: [];
 }
+
 export interface DisableDomainAutoRenew {
   readonly DomainName: string;
 }
+
 export interface DisableDomainTransferLock {
   readonly DomainName: string;
 }
+
 export interface EnableDomainAutoRenew {
   readonly DomainName: string;
 }
+
 export interface EnableDomainTransferLock {
   readonly DomainName: string;
 }
+
 export interface GetContactReachabilityStatus {
   readonly domainName?: string;
 }
+
 export interface GetDomainDetail {
   readonly DomainName: string;
 }
+
 export interface GetDomainSuggestions {
   readonly DomainName: string;
   readonly SuggestionCount: number;
   readonly OnlyAvailable: boolean;
 }
+
 export interface GetOperationDetail {
   readonly OperationId: string;
 }
+
 export interface ListDomains {
   readonly FilterConditions?: [];
   readonly SortCondition?: SortCondition;
   readonly Marker?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListOperations {
   readonly SubmittedSince?: Date;
   readonly Marker?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListPrices {
   readonly Tld?: string;
   readonly Marker?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListTagsForDomain {
   readonly DomainName: string;
 }
+
 export interface RegisterDomain {
   readonly DomainName: string;
   readonly IdnLangCode?: string;
@@ -80,20 +98,25 @@ export interface RegisterDomain {
   readonly PrivacyProtectRegistrantContact?: boolean;
   readonly PrivacyProtectTechContact?: boolean;
 }
+
 export interface RejectDomainTransferFromAnotherAwsAccount {
   readonly DomainName: string;
 }
+
 export interface RenewDomain {
   readonly DomainName: string;
   readonly DurationInYears?: number;
   readonly CurrentExpiryYear: number;
 }
+
 export interface ResendContactReachabilityEmail {
   readonly domainName?: string;
 }
+
 export interface RetrieveDomainAuthCode {
   readonly DomainName: string;
 }
+
 export interface TransferDomain {
   readonly DomainName: string;
   readonly IdnLangCode?: string;
@@ -108,31 +131,37 @@ export interface TransferDomain {
   readonly PrivacyProtectRegistrantContact?: boolean;
   readonly PrivacyProtectTechContact?: boolean;
 }
+
 export interface TransferDomainToAnotherAwsAccount {
   readonly DomainName: string;
   readonly AccountId: string;
 }
+
 export interface UpdateDomainContact {
   readonly DomainName: string;
   readonly AdminContact?: ContactDetail;
   readonly RegistrantContact?: ContactDetail;
   readonly TechContact?: ContactDetail;
 }
+
 export interface UpdateDomainContactPrivacy {
   readonly DomainName: string;
   readonly AdminPrivacy?: boolean;
   readonly RegistrantPrivacy?: boolean;
   readonly TechPrivacy?: boolean;
 }
+
 export interface UpdateDomainNameservers {
   readonly DomainName: string;
   readonly FIAuthKey?: string;
   readonly Nameservers: [];
 }
+
 export interface UpdateTagsForDomain {
   readonly DomainName: string;
   readonly TagsToUpdate?: [];
 }
+
 export interface ViewBilling {
   readonly Start?: Date;
   readonly End?: Date;
@@ -140,434 +169,433 @@ export interface ViewBilling {
   readonly MaxItems?: number;
 }
 
-
-
-interface AcceptDomainTransferFromAnotherAwsAccountRequest {
+export interface AcceptDomainTransferFromAnotherAwsAccountRequest {
   readonly DomainName: string;
   readonly Password: string;
 }
 
-interface AcceptDomainTransferFromAnotherAwsAccountResponse {
-  readonly OperationId: string;
+export interface AcceptDomainTransferFromAnotherAwsAccountResponse {
+  readonly OperationId?: string;
 }
 
-interface BillingRecord {
+export interface BillingRecord {
+  readonly DomainName?: string;
+  readonly Operation?: string;
+  readonly InvoiceId?: string;
+  readonly BillDate?: Date;
+  readonly Price?: unknown;
+}
+
+export interface CancelDomainTransferToAnotherAwsAccountRequest {
   readonly DomainName: string;
-  readonly Operation: string;
-  readonly InvoiceId: string;
-  readonly BillDate: Date;
-  readonly Price: unknown;
 }
 
-interface CancelDomainTransferToAnotherAwsAccountRequest {
+export interface CancelDomainTransferToAnotherAwsAccountResponse {
+  readonly OperationId?: string;
+}
+
+export interface CheckDomainAvailabilityRequest {
   readonly DomainName: string;
+  readonly IdnLangCode?: string;
 }
 
-interface CancelDomainTransferToAnotherAwsAccountResponse {
-  readonly OperationId: string;
-}
-
-interface CheckDomainAvailabilityRequest {
-  readonly DomainName: string;
-  readonly IdnLangCode: string;
-}
-
-interface CheckDomainAvailabilityResponse {
+export interface CheckDomainAvailabilityResponse {
   readonly Availability: string;
 }
 
-interface CheckDomainTransferabilityRequest {
+export interface CheckDomainTransferabilityRequest {
   readonly DomainName: string;
-  readonly AuthCode: string;
+  readonly AuthCode?: string;
 }
 
-interface CheckDomainTransferabilityResponse {
+export interface CheckDomainTransferabilityResponse {
   readonly Transferability: DomainTransferability;
 }
 
-interface ContactDetail {
-  readonly FirstName: string;
-  readonly LastName: string;
-  readonly ContactType: string;
-  readonly OrganizationName: string;
-  readonly AddressLine1: string;
-  readonly AddressLine2: string;
-  readonly City: string;
-  readonly State: string;
-  readonly CountryCode: string;
-  readonly ZipCode: string;
-  readonly PhoneNumber: string;
-  readonly Email: string;
-  readonly Fax: string;
-  readonly ExtraParams: [];
+export interface ContactDetail {
+  readonly FirstName?: string;
+  readonly LastName?: string;
+  readonly ContactType?: string;
+  readonly OrganizationName?: string;
+  readonly AddressLine1?: string;
+  readonly AddressLine2?: string;
+  readonly City?: string;
+  readonly State?: string;
+  readonly CountryCode?: string;
+  readonly ZipCode?: string;
+  readonly PhoneNumber?: string;
+  readonly Email?: string;
+  readonly Fax?: string;
+  readonly ExtraParams?: [];
 }
 
-interface DeleteDomainRequest {
+export interface DeleteDomainRequest {
   readonly DomainName: string;
 }
 
-interface DeleteDomainResponse {
-  readonly OperationId: string;
+export interface DeleteDomainResponse {
+  readonly OperationId?: string;
 }
 
-interface DeleteTagsForDomainRequest {
+export interface DeleteTagsForDomainRequest {
   readonly DomainName: string;
   readonly TagsToDelete: [];
 }
 
-interface DeleteTagsForDomainResponse {
+export interface DeleteTagsForDomainResponse {
 }
 
-interface DisableDomainAutoRenewRequest {
+export interface DisableDomainAutoRenewRequest {
   readonly DomainName: string;
 }
 
-interface DisableDomainAutoRenewResponse {
+export interface DisableDomainAutoRenewResponse {
 }
 
-interface DisableDomainTransferLockRequest {
+export interface DisableDomainTransferLockRequest {
   readonly DomainName: string;
 }
 
-interface DisableDomainTransferLockResponse {
+export interface DisableDomainTransferLockResponse {
   readonly OperationId: string;
 }
 
-interface DomainLimitExceeded {
-  readonly message: string;
+export interface DomainLimitExceeded {
+  readonly message?: string;
 }
 
-interface DomainPrice {
-  readonly Name: string;
-  readonly RegistrationPrice: PriceWithCurrency;
-  readonly TransferPrice: PriceWithCurrency;
-  readonly RenewalPrice: PriceWithCurrency;
-  readonly ChangeOwnershipPrice: PriceWithCurrency;
-  readonly RestorationPrice: PriceWithCurrency;
+export interface DomainPrice {
+  readonly Name?: string;
+  readonly RegistrationPrice?: PriceWithCurrency;
+  readonly TransferPrice?: PriceWithCurrency;
+  readonly RenewalPrice?: PriceWithCurrency;
+  readonly ChangeOwnershipPrice?: PriceWithCurrency;
+  readonly RestorationPrice?: PriceWithCurrency;
 }
 
-interface DomainSuggestion {
+export interface DomainSuggestion {
+  readonly DomainName?: string;
+  readonly Availability?: string;
+}
+
+export interface DomainSummary {
   readonly DomainName: string;
-  readonly Availability: string;
+  readonly AutoRenew?: boolean;
+  readonly TransferLock?: boolean;
+  readonly Expiry?: Date;
 }
 
-interface DomainSummary {
-  readonly DomainName: string;
-  readonly AutoRenew: boolean;
-  readonly TransferLock: boolean;
-  readonly Expiry: Date;
+export interface DomainTransferability {
+  readonly Transferable?: string;
 }
 
-interface DomainTransferability {
-  readonly Transferable: string;
+export interface DuplicateRequest {
+  readonly message?: string;
 }
 
-interface DuplicateRequest {
-  readonly message: string;
-}
-
-interface EnableDomainAutoRenewRequest {
-  readonly DomainName: string;
-}
-
-interface EnableDomainAutoRenewResponse {
-}
-
-interface EnableDomainTransferLockRequest {
+export interface EnableDomainAutoRenewRequest {
   readonly DomainName: string;
 }
 
-interface EnableDomainTransferLockResponse {
+export interface EnableDomainAutoRenewResponse {
+}
+
+export interface EnableDomainTransferLockRequest {
+  readonly DomainName: string;
+}
+
+export interface EnableDomainTransferLockResponse {
   readonly OperationId: string;
 }
 
-interface ExtraParam {
+export interface ExtraParam {
   readonly Name: string;
   readonly Value: string;
 }
 
-interface FilterCondition {
+export interface FilterCondition {
   readonly Name: string;
   readonly Operator: string;
   readonly Values: [];
 }
 
-interface GetContactReachabilityStatusRequest {
-  readonly domainName: string;
+export interface GetContactReachabilityStatusRequest {
+  readonly domainName?: string;
 }
 
-interface GetContactReachabilityStatusResponse {
-  readonly domainName: string;
-  readonly status: string;
+export interface GetContactReachabilityStatusResponse {
+  readonly domainName?: string;
+  readonly status?: string;
 }
 
-interface GetDomainDetailRequest {
+export interface GetDomainDetailRequest {
   readonly DomainName: string;
 }
 
-interface GetDomainDetailResponse {
+export interface GetDomainDetailResponse {
   readonly DomainName: string;
   readonly Nameservers: [];
-  readonly AutoRenew: boolean;
+  readonly AutoRenew?: boolean;
   readonly AdminContact: ContactDetail;
   readonly RegistrantContact: ContactDetail;
   readonly TechContact: ContactDetail;
-  readonly AdminPrivacy: boolean;
-  readonly RegistrantPrivacy: boolean;
-  readonly TechPrivacy: boolean;
-  readonly RegistrarName: string;
-  readonly WhoIsServer: string;
-  readonly RegistrarUrl: string;
-  readonly AbuseContactEmail: string;
-  readonly AbuseContactPhone: string;
-  readonly RegistryDomainId: string;
-  readonly CreationDate: Date;
-  readonly UpdatedDate: Date;
-  readonly ExpirationDate: Date;
-  readonly Reseller: string;
-  readonly DnsSec: string;
-  readonly StatusList: [];
+  readonly AdminPrivacy?: boolean;
+  readonly RegistrantPrivacy?: boolean;
+  readonly TechPrivacy?: boolean;
+  readonly RegistrarName?: string;
+  readonly WhoIsServer?: string;
+  readonly RegistrarUrl?: string;
+  readonly AbuseContactEmail?: string;
+  readonly AbuseContactPhone?: string;
+  readonly RegistryDomainId?: string;
+  readonly CreationDate?: Date;
+  readonly UpdatedDate?: Date;
+  readonly ExpirationDate?: Date;
+  readonly Reseller?: string;
+  readonly DnsSec?: string;
+  readonly StatusList?: [];
 }
 
-interface GetDomainSuggestionsRequest {
+export interface GetDomainSuggestionsRequest {
   readonly DomainName: string;
   readonly SuggestionCount: number;
   readonly OnlyAvailable: boolean;
 }
 
-interface GetDomainSuggestionsResponse {
-  readonly SuggestionsList: [];
+export interface GetDomainSuggestionsResponse {
+  readonly SuggestionsList?: [];
 }
 
-interface GetOperationDetailRequest {
+export interface GetOperationDetailRequest {
   readonly OperationId: string;
 }
 
-interface GetOperationDetailResponse {
-  readonly OperationId: string;
-  readonly Status: string;
-  readonly Message: string;
-  readonly DomainName: string;
-  readonly Type: string;
-  readonly SubmittedDate: Date;
+export interface GetOperationDetailResponse {
+  readonly OperationId?: string;
+  readonly Status?: string;
+  readonly Message?: string;
+  readonly DomainName?: string;
+  readonly Type?: string;
+  readonly SubmittedDate?: Date;
 }
 
-interface InvalidInput {
-  readonly message: string;
+export interface InvalidInput {
+  readonly message?: string;
 }
 
-interface ListDomainsRequest {
-  readonly FilterConditions: [];
-  readonly SortCondition: SortCondition;
-  readonly Marker: string;
-  readonly MaxItems: number;
+export interface ListDomainsRequest {
+  readonly FilterConditions?: [];
+  readonly SortCondition?: SortCondition;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListDomainsResponse {
+export interface ListDomainsResponse {
   readonly Domains: [];
-  readonly NextPageMarker: string;
+  readonly NextPageMarker?: string;
 }
 
-interface ListOperationsRequest {
-  readonly SubmittedSince: Date;
-  readonly Marker: string;
-  readonly MaxItems: number;
+export interface ListOperationsRequest {
+  readonly SubmittedSince?: Date;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListOperationsResponse {
+export interface ListOperationsResponse {
   readonly Operations: [];
-  readonly NextPageMarker: string;
+  readonly NextPageMarker?: string;
 }
 
-interface ListPricesRequest {
-  readonly Tld: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+export interface ListPricesRequest {
+  readonly Tld?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListPricesResponse {
+export interface ListPricesResponse {
   readonly Prices: [];
-  readonly NextPageMarker: string;
+  readonly NextPageMarker?: string;
 }
 
-interface ListTagsForDomainRequest {
+export interface ListTagsForDomainRequest {
   readonly DomainName: string;
 }
 
-interface ListTagsForDomainResponse {
+export interface ListTagsForDomainResponse {
   readonly TagList: [];
 }
 
-interface Nameserver {
+export interface Nameserver {
   readonly Name: string;
-  readonly GlueIps: [];
+  readonly GlueIps?: [];
 }
 
-interface OperationLimitExceeded {
-  readonly message: string;
+export interface OperationLimitExceeded {
+  readonly message?: string;
 }
 
-interface OperationSummary {
+export interface OperationSummary {
   readonly OperationId: string;
   readonly Status: string;
   readonly Type: string;
   readonly SubmittedDate: Date;
 }
 
-interface PriceWithCurrency {
+export interface PriceWithCurrency {
   readonly Price: unknown;
   readonly Currency: string;
 }
 
-interface RegisterDomainRequest {
+export interface RegisterDomainRequest {
   readonly DomainName: string;
-  readonly IdnLangCode: string;
+  readonly IdnLangCode?: string;
   readonly DurationInYears: number;
-  readonly AutoRenew: boolean;
+  readonly AutoRenew?: boolean;
   readonly AdminContact: ContactDetail;
   readonly RegistrantContact: ContactDetail;
   readonly TechContact: ContactDetail;
-  readonly PrivacyProtectAdminContact: boolean;
-  readonly PrivacyProtectRegistrantContact: boolean;
-  readonly PrivacyProtectTechContact: boolean;
+  readonly PrivacyProtectAdminContact?: boolean;
+  readonly PrivacyProtectRegistrantContact?: boolean;
+  readonly PrivacyProtectTechContact?: boolean;
 }
 
-interface RegisterDomainResponse {
+export interface RegisterDomainResponse {
   readonly OperationId: string;
 }
 
-interface RejectDomainTransferFromAnotherAwsAccountRequest {
+export interface RejectDomainTransferFromAnotherAwsAccountRequest {
   readonly DomainName: string;
 }
 
-interface RejectDomainTransferFromAnotherAwsAccountResponse {
-  readonly OperationId: string;
+export interface RejectDomainTransferFromAnotherAwsAccountResponse {
+  readonly OperationId?: string;
 }
 
-interface RenewDomainRequest {
+export interface RenewDomainRequest {
   readonly DomainName: string;
-  readonly DurationInYears: number;
+  readonly DurationInYears?: number;
   readonly CurrentExpiryYear: number;
 }
 
-interface RenewDomainResponse {
+export interface RenewDomainResponse {
   readonly OperationId: string;
 }
 
-interface ResendContactReachabilityEmailRequest {
-  readonly domainName: string;
+export interface ResendContactReachabilityEmailRequest {
+  readonly domainName?: string;
 }
 
-interface ResendContactReachabilityEmailResponse {
-  readonly domainName: string;
-  readonly emailAddress: string;
-  readonly isAlreadyVerified: boolean;
+export interface ResendContactReachabilityEmailResponse {
+  readonly domainName?: string;
+  readonly emailAddress?: string;
+  readonly isAlreadyVerified?: boolean;
 }
 
-interface RetrieveDomainAuthCodeRequest {
+export interface RetrieveDomainAuthCodeRequest {
   readonly DomainName: string;
 }
 
-interface RetrieveDomainAuthCodeResponse {
+export interface RetrieveDomainAuthCodeResponse {
   readonly AuthCode: string;
 }
 
-interface SortCondition {
+export interface SortCondition {
   readonly Name: string;
   readonly SortOrder: string;
 }
 
-interface TLDRulesViolation {
-  readonly message: string;
+export interface TLDRulesViolation {
+  readonly message?: string;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TransferDomainRequest {
+export interface TransferDomainRequest {
   readonly DomainName: string;
-  readonly IdnLangCode: string;
+  readonly IdnLangCode?: string;
   readonly DurationInYears: number;
-  readonly Nameservers: [];
-  readonly AuthCode: string;
-  readonly AutoRenew: boolean;
+  readonly Nameservers?: [];
+  readonly AuthCode?: string;
+  readonly AutoRenew?: boolean;
   readonly AdminContact: ContactDetail;
   readonly RegistrantContact: ContactDetail;
   readonly TechContact: ContactDetail;
-  readonly PrivacyProtectAdminContact: boolean;
-  readonly PrivacyProtectRegistrantContact: boolean;
-  readonly PrivacyProtectTechContact: boolean;
+  readonly PrivacyProtectAdminContact?: boolean;
+  readonly PrivacyProtectRegistrantContact?: boolean;
+  readonly PrivacyProtectTechContact?: boolean;
 }
 
-interface TransferDomainResponse {
+export interface TransferDomainResponse {
   readonly OperationId: string;
 }
 
-interface TransferDomainToAnotherAwsAccountRequest {
+export interface TransferDomainToAnotherAwsAccountRequest {
   readonly DomainName: string;
   readonly AccountId: string;
 }
 
-interface TransferDomainToAnotherAwsAccountResponse {
-  readonly OperationId: string;
-  readonly Password: string;
+export interface TransferDomainToAnotherAwsAccountResponse {
+  readonly OperationId?: string;
+  readonly Password?: string;
 }
 
-interface UnsupportedTLD {
-  readonly message: string;
+export interface UnsupportedTLD {
+  readonly message?: string;
 }
 
-interface UpdateDomainContactPrivacyRequest {
+export interface UpdateDomainContactPrivacyRequest {
   readonly DomainName: string;
-  readonly AdminPrivacy: boolean;
-  readonly RegistrantPrivacy: boolean;
-  readonly TechPrivacy: boolean;
+  readonly AdminPrivacy?: boolean;
+  readonly RegistrantPrivacy?: boolean;
+  readonly TechPrivacy?: boolean;
 }
 
-interface UpdateDomainContactPrivacyResponse {
-  readonly OperationId: string;
-}
-
-interface UpdateDomainContactRequest {
-  readonly DomainName: string;
-  readonly AdminContact: ContactDetail;
-  readonly RegistrantContact: ContactDetail;
-  readonly TechContact: ContactDetail;
-}
-
-interface UpdateDomainContactResponse {
+export interface UpdateDomainContactPrivacyResponse {
   readonly OperationId: string;
 }
 
-interface UpdateDomainNameserversRequest {
+export interface UpdateDomainContactRequest {
   readonly DomainName: string;
-  readonly FIAuthKey: string;
+  readonly AdminContact?: ContactDetail;
+  readonly RegistrantContact?: ContactDetail;
+  readonly TechContact?: ContactDetail;
+}
+
+export interface UpdateDomainContactResponse {
+  readonly OperationId: string;
+}
+
+export interface UpdateDomainNameserversRequest {
+  readonly DomainName: string;
+  readonly FIAuthKey?: string;
   readonly Nameservers: [];
 }
 
-interface UpdateDomainNameserversResponse {
+export interface UpdateDomainNameserversResponse {
   readonly OperationId: string;
 }
 
-interface UpdateTagsForDomainRequest {
+export interface UpdateTagsForDomainRequest {
   readonly DomainName: string;
-  readonly TagsToUpdate: [];
+  readonly TagsToUpdate?: [];
 }
 
-interface UpdateTagsForDomainResponse {
+export interface UpdateTagsForDomainResponse {
 }
 
-interface ViewBillingRequest {
-  readonly Start: Date;
-  readonly End: Date;
-  readonly Marker: string;
-  readonly MaxItems: number;
+export interface ViewBillingRequest {
+  readonly Start?: Date;
+  readonly End?: Date;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 
-interface ViewBillingResponse {
-  readonly NextPageMarker: string;
-  readonly BillingRecords: [];
+export interface ViewBillingResponse {
+  readonly NextPageMarker?: string;
+  readonly BillingRecords?: [];
 }
+
 

@@ -6,11 +6,13 @@ export interface ConfigureLogs {
   readonly Id: string;
   readonly IngressAccessLogs?: IngressAccessLogs;
 }
+
 export interface CreateChannel {
   readonly Description?: string;
   readonly Id: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateHarvestJob {
   readonly EndTime: string;
   readonly Id: string;
@@ -18,6 +20,7 @@ export interface CreateHarvestJob {
   readonly S3Destination: S3Destination;
   readonly StartTime: string;
 }
+
 export interface CreateOriginEndpoint {
   readonly Authorization?: Authorization;
   readonly ChannelId: string;
@@ -34,58 +37,73 @@ export interface CreateOriginEndpoint {
   readonly TimeDelaySeconds?: number;
   readonly Whitelist?: [];
 }
+
 export interface DeleteChannel {
   readonly Id: string;
 }
+
 export interface DeleteOriginEndpoint {
   readonly Id: string;
 }
+
 export interface DescribeChannel {
   readonly Id: string;
 }
+
 export interface DescribeHarvestJob {
   readonly Id: string;
 }
+
 export interface DescribeOriginEndpoint {
   readonly Id: string;
 }
+
 export interface ListChannels {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListHarvestJobs {
   readonly IncludeChannelId?: string;
   readonly IncludeStatus?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListOriginEndpoints {
   readonly ChannelId?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface RotateChannelCredentials {
   readonly Id: string;
 }
+
 export interface RotateIngestEndpointCredentials {
   readonly Id: string;
   readonly IngestEndpointId: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateChannel {
   readonly Description?: string;
   readonly Id: string;
 }
+
 export interface UpdateOriginEndpoint {
   readonly Authorization?: Authorization;
   readonly CmafPackage?: CmafPackageCreateOrUpdateParameters;
@@ -101,98 +119,96 @@ export interface UpdateOriginEndpoint {
   readonly Whitelist?: [];
 }
 
-
-
-interface Authorization {
+export interface Authorization {
   readonly CdnIdentifierSecret: string;
   readonly SecretsRoleArn: string;
 }
 
-interface Channel {
-  readonly Arn: string;
-  readonly Description: string;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly HlsIngest: HlsIngest;
+export interface Channel {
+  readonly Arn?: string;
+  readonly Description?: string;
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly HlsIngest?: HlsIngest;
+  readonly Id?: string;
+  readonly IngressAccessLogs?: IngressAccessLogs;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface ChannelCreateParameters {
+  readonly Description?: string;
   readonly Id: string;
-  readonly IngressAccessLogs: IngressAccessLogs;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ChannelCreateParameters {
-  readonly Description: string;
-  readonly Id: string;
-  readonly Tags: {[key: string]: any};
+export interface ChannelList {
+  readonly Channels?: [];
+  readonly NextToken?: string;
 }
 
-interface ChannelList {
-  readonly Channels: [];
-  readonly NextToken: string;
+export interface ChannelUpdateParameters {
+  readonly Description?: string;
 }
 
-interface ChannelUpdateParameters {
-  readonly Description: string;
-}
-
-interface CmafEncryption {
-  readonly ConstantInitializationVector: string;
-  readonly KeyRotationIntervalSeconds: number;
+export interface CmafEncryption {
+  readonly ConstantInitializationVector?: string;
+  readonly KeyRotationIntervalSeconds?: number;
   readonly SpekeKeyProvider: SpekeKeyProvider;
 }
 
-interface CmafPackage {
-  readonly Encryption: CmafEncryption;
-  readonly HlsManifests: [];
-  readonly SegmentDurationSeconds: number;
-  readonly SegmentPrefix: string;
-  readonly StreamSelection: StreamSelection;
+export interface CmafPackage {
+  readonly Encryption?: CmafEncryption;
+  readonly HlsManifests?: [];
+  readonly SegmentDurationSeconds?: number;
+  readonly SegmentPrefix?: string;
+  readonly StreamSelection?: StreamSelection;
 }
 
-interface CmafPackageCreateOrUpdateParameters {
-  readonly Encryption: CmafEncryption;
-  readonly HlsManifests: [];
-  readonly SegmentDurationSeconds: number;
-  readonly SegmentPrefix: string;
-  readonly StreamSelection: StreamSelection;
+export interface CmafPackageCreateOrUpdateParameters {
+  readonly Encryption?: CmafEncryption;
+  readonly HlsManifests?: [];
+  readonly SegmentDurationSeconds?: number;
+  readonly SegmentPrefix?: string;
+  readonly StreamSelection?: StreamSelection;
 }
 
-interface ConfigureLogsParameters {
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly IngressAccessLogs: IngressAccessLogs;
+export interface ConfigureLogsParameters {
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly IngressAccessLogs?: IngressAccessLogs;
 }
 
-interface ConfigureLogsRequest {
-  readonly EgressAccessLogs: EgressAccessLogs;
+export interface ConfigureLogsRequest {
+  readonly EgressAccessLogs?: EgressAccessLogs;
   readonly Id: string;
-  readonly IngressAccessLogs: IngressAccessLogs;
+  readonly IngressAccessLogs?: IngressAccessLogs;
 }
 
-interface ConfigureLogsResponse {
-  readonly Arn: string;
-  readonly Description: string;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly HlsIngest: HlsIngest;
+export interface ConfigureLogsResponse {
+  readonly Arn?: string;
+  readonly Description?: string;
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly HlsIngest?: HlsIngest;
+  readonly Id?: string;
+  readonly IngressAccessLogs?: IngressAccessLogs;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface CreateChannelRequest {
+  readonly Description?: string;
   readonly Id: string;
-  readonly IngressAccessLogs: IngressAccessLogs;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateChannelRequest {
-  readonly Description: string;
-  readonly Id: string;
-  readonly Tags: {[key: string]: any};
+export interface CreateChannelResponse {
+  readonly Arn?: string;
+  readonly Description?: string;
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly HlsIngest?: HlsIngest;
+  readonly Id?: string;
+  readonly IngressAccessLogs?: IngressAccessLogs;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateChannelResponse {
-  readonly Arn: string;
-  readonly Description: string;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly HlsIngest: HlsIngest;
-  readonly Id: string;
-  readonly IngressAccessLogs: IngressAccessLogs;
-  readonly Tags: {[key: string]: any};
-}
-
-interface CreateHarvestJobRequest {
+export interface CreateHarvestJobRequest {
   readonly EndTime: string;
   readonly Id: string;
   readonly OriginEndpointId: string;
@@ -200,480 +216,481 @@ interface CreateHarvestJobRequest {
   readonly StartTime: string;
 }
 
-interface CreateHarvestJobResponse {
-  readonly Arn: string;
-  readonly ChannelId: string;
-  readonly CreatedAt: string;
-  readonly EndTime: string;
-  readonly Id: string;
-  readonly OriginEndpointId: string;
-  readonly S3Destination: S3Destination;
-  readonly StartTime: string;
-  readonly Status: string;
+export interface CreateHarvestJobResponse {
+  readonly Arn?: string;
+  readonly ChannelId?: string;
+  readonly CreatedAt?: string;
+  readonly EndTime?: string;
+  readonly Id?: string;
+  readonly OriginEndpointId?: string;
+  readonly S3Destination?: S3Destination;
+  readonly StartTime?: string;
+  readonly Status?: string;
 }
 
-interface CreateOriginEndpointRequest {
-  readonly Authorization: Authorization;
+export interface CreateOriginEndpointRequest {
+  readonly Authorization?: Authorization;
   readonly ChannelId: string;
-  readonly CmafPackage: CmafPackageCreateOrUpdateParameters;
-  readonly DashPackage: DashPackage;
-  readonly Description: string;
-  readonly HlsPackage: HlsPackage;
+  readonly CmafPackage?: CmafPackageCreateOrUpdateParameters;
+  readonly DashPackage?: DashPackage;
+  readonly Description?: string;
+  readonly HlsPackage?: HlsPackage;
   readonly Id: string;
-  readonly ManifestName: string;
-  readonly MssPackage: MssPackage;
-  readonly Origination: string;
-  readonly StartoverWindowSeconds: number;
-  readonly Tags: {[key: string]: any};
-  readonly TimeDelaySeconds: number;
-  readonly Whitelist: [];
+  readonly ManifestName?: string;
+  readonly MssPackage?: MssPackage;
+  readonly Origination?: string;
+  readonly StartoverWindowSeconds?: number;
+  readonly Tags?: {[key: string]: any};
+  readonly TimeDelaySeconds?: number;
+  readonly Whitelist?: [];
 }
 
-interface CreateOriginEndpointResponse {
-  readonly Arn: string;
-  readonly Authorization: Authorization;
-  readonly ChannelId: string;
-  readonly CmafPackage: CmafPackage;
-  readonly DashPackage: DashPackage;
-  readonly Description: string;
-  readonly HlsPackage: HlsPackage;
-  readonly Id: string;
-  readonly ManifestName: string;
-  readonly MssPackage: MssPackage;
-  readonly Origination: string;
-  readonly StartoverWindowSeconds: number;
-  readonly Tags: {[key: string]: any};
-  readonly TimeDelaySeconds: number;
-  readonly Url: string;
-  readonly Whitelist: [];
+export interface CreateOriginEndpointResponse {
+  readonly Arn?: string;
+  readonly Authorization?: Authorization;
+  readonly ChannelId?: string;
+  readonly CmafPackage?: CmafPackage;
+  readonly DashPackage?: DashPackage;
+  readonly Description?: string;
+  readonly HlsPackage?: HlsPackage;
+  readonly Id?: string;
+  readonly ManifestName?: string;
+  readonly MssPackage?: MssPackage;
+  readonly Origination?: string;
+  readonly StartoverWindowSeconds?: number;
+  readonly Tags?: {[key: string]: any};
+  readonly TimeDelaySeconds?: number;
+  readonly Url?: string;
+  readonly Whitelist?: [];
 }
 
-interface DashEncryption {
-  readonly KeyRotationIntervalSeconds: number;
+export interface DashEncryption {
+  readonly KeyRotationIntervalSeconds?: number;
   readonly SpekeKeyProvider: SpekeKeyProvider;
 }
 
-interface DashPackage {
-  readonly AdTriggers: [];
-  readonly AdsOnDeliveryRestrictions: string;
-  readonly Encryption: DashEncryption;
-  readonly ManifestLayout: string;
-  readonly ManifestWindowSeconds: number;
-  readonly MinBufferTimeSeconds: number;
-  readonly MinUpdatePeriodSeconds: number;
-  readonly PeriodTriggers: [];
-  readonly Profile: string;
-  readonly SegmentDurationSeconds: number;
-  readonly SegmentTemplateFormat: string;
-  readonly StreamSelection: StreamSelection;
-  readonly SuggestedPresentationDelaySeconds: number;
-  readonly UtcTiming: string;
-  readonly UtcTimingUri: string;
+export interface DashPackage {
+  readonly AdTriggers?: [];
+  readonly AdsOnDeliveryRestrictions?: string;
+  readonly Encryption?: DashEncryption;
+  readonly ManifestLayout?: string;
+  readonly ManifestWindowSeconds?: number;
+  readonly MinBufferTimeSeconds?: number;
+  readonly MinUpdatePeriodSeconds?: number;
+  readonly PeriodTriggers?: [];
+  readonly Profile?: string;
+  readonly SegmentDurationSeconds?: number;
+  readonly SegmentTemplateFormat?: string;
+  readonly StreamSelection?: StreamSelection;
+  readonly SuggestedPresentationDelaySeconds?: number;
+  readonly UtcTiming?: string;
+  readonly UtcTimingUri?: string;
 }
 
-interface DeleteChannelRequest {
+export interface DeleteChannelRequest {
   readonly Id: string;
 }
 
-interface DeleteChannelResponse {
+export interface DeleteChannelResponse {
 }
 
-interface DeleteOriginEndpointRequest {
+export interface DeleteOriginEndpointRequest {
   readonly Id: string;
 }
 
-interface DeleteOriginEndpointResponse {
+export interface DeleteOriginEndpointResponse {
 }
 
-interface DescribeChannelRequest {
+export interface DescribeChannelRequest {
   readonly Id: string;
 }
 
-interface DescribeChannelResponse {
-  readonly Arn: string;
-  readonly Description: string;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly HlsIngest: HlsIngest;
-  readonly Id: string;
-  readonly IngressAccessLogs: IngressAccessLogs;
-  readonly Tags: {[key: string]: any};
+export interface DescribeChannelResponse {
+  readonly Arn?: string;
+  readonly Description?: string;
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly HlsIngest?: HlsIngest;
+  readonly Id?: string;
+  readonly IngressAccessLogs?: IngressAccessLogs;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface DescribeHarvestJobRequest {
-  readonly Id: string;
-}
-
-interface DescribeHarvestJobResponse {
-  readonly Arn: string;
-  readonly ChannelId: string;
-  readonly CreatedAt: string;
-  readonly EndTime: string;
-  readonly Id: string;
-  readonly OriginEndpointId: string;
-  readonly S3Destination: S3Destination;
-  readonly StartTime: string;
-  readonly Status: string;
-}
-
-interface DescribeOriginEndpointRequest {
+export interface DescribeHarvestJobRequest {
   readonly Id: string;
 }
 
-interface DescribeOriginEndpointResponse {
-  readonly Arn: string;
-  readonly Authorization: Authorization;
-  readonly ChannelId: string;
-  readonly CmafPackage: CmafPackage;
-  readonly DashPackage: DashPackage;
-  readonly Description: string;
-  readonly HlsPackage: HlsPackage;
+export interface DescribeHarvestJobResponse {
+  readonly Arn?: string;
+  readonly ChannelId?: string;
+  readonly CreatedAt?: string;
+  readonly EndTime?: string;
+  readonly Id?: string;
+  readonly OriginEndpointId?: string;
+  readonly S3Destination?: S3Destination;
+  readonly StartTime?: string;
+  readonly Status?: string;
+}
+
+export interface DescribeOriginEndpointRequest {
   readonly Id: string;
-  readonly ManifestName: string;
-  readonly MssPackage: MssPackage;
-  readonly Origination: string;
-  readonly StartoverWindowSeconds: number;
-  readonly Tags: {[key: string]: any};
-  readonly TimeDelaySeconds: number;
-  readonly Url: string;
-  readonly Whitelist: [];
 }
 
-interface EgressAccessLogs {
-  readonly LogGroupName: string;
+export interface DescribeOriginEndpointResponse {
+  readonly Arn?: string;
+  readonly Authorization?: Authorization;
+  readonly ChannelId?: string;
+  readonly CmafPackage?: CmafPackage;
+  readonly DashPackage?: DashPackage;
+  readonly Description?: string;
+  readonly HlsPackage?: HlsPackage;
+  readonly Id?: string;
+  readonly ManifestName?: string;
+  readonly MssPackage?: MssPackage;
+  readonly Origination?: string;
+  readonly StartoverWindowSeconds?: number;
+  readonly Tags?: {[key: string]: any};
+  readonly TimeDelaySeconds?: number;
+  readonly Url?: string;
+  readonly Whitelist?: [];
 }
 
-interface EncryptionContractConfiguration {
+export interface EgressAccessLogs {
+  readonly LogGroupName?: string;
+}
+
+export interface EncryptionContractConfiguration {
   readonly PresetSpeke20Audio: string;
   readonly PresetSpeke20Video: string;
 }
 
-interface ForbiddenException {
-  readonly Message: string;
+export interface ForbiddenException {
+  readonly Message?: string;
 }
 
-interface HarvestJob {
-  readonly Arn: string;
-  readonly ChannelId: string;
-  readonly CreatedAt: string;
+export interface HarvestJob {
+  readonly Arn?: string;
+  readonly ChannelId?: string;
+  readonly CreatedAt?: string;
+  readonly EndTime?: string;
+  readonly Id?: string;
+  readonly OriginEndpointId?: string;
+  readonly S3Destination?: S3Destination;
+  readonly StartTime?: string;
+  readonly Status?: string;
+}
+
+export interface HarvestJobCreateParameters {
   readonly EndTime: string;
   readonly Id: string;
   readonly OriginEndpointId: string;
   readonly S3Destination: S3Destination;
   readonly StartTime: string;
-  readonly Status: string;
 }
 
-interface HarvestJobCreateParameters {
-  readonly EndTime: string;
-  readonly Id: string;
-  readonly OriginEndpointId: string;
-  readonly S3Destination: S3Destination;
-  readonly StartTime: string;
+export interface HarvestJobList {
+  readonly HarvestJobs?: [];
+  readonly NextToken?: string;
 }
 
-interface HarvestJobList {
-  readonly HarvestJobs: [];
-  readonly NextToken: string;
-}
-
-interface HlsEncryption {
-  readonly ConstantInitializationVector: string;
-  readonly EncryptionMethod: string;
-  readonly KeyRotationIntervalSeconds: number;
-  readonly RepeatExtXKey: boolean;
+export interface HlsEncryption {
+  readonly ConstantInitializationVector?: string;
+  readonly EncryptionMethod?: string;
+  readonly KeyRotationIntervalSeconds?: number;
+  readonly RepeatExtXKey?: boolean;
   readonly SpekeKeyProvider: SpekeKeyProvider;
 }
 
-interface HlsIngest {
-  readonly IngestEndpoints: [];
+export interface HlsIngest {
+  readonly IngestEndpoints?: [];
 }
 
-interface HlsManifest {
-  readonly AdMarkers: string;
+export interface HlsManifest {
+  readonly AdMarkers?: string;
   readonly Id: string;
-  readonly IncludeIframeOnlyStream: boolean;
-  readonly ManifestName: string;
-  readonly PlaylistType: string;
-  readonly PlaylistWindowSeconds: number;
-  readonly ProgramDateTimeIntervalSeconds: number;
-  readonly Url: string;
+  readonly IncludeIframeOnlyStream?: boolean;
+  readonly ManifestName?: string;
+  readonly PlaylistType?: string;
+  readonly PlaylistWindowSeconds?: number;
+  readonly ProgramDateTimeIntervalSeconds?: number;
+  readonly Url?: string;
 }
 
-interface HlsManifestCreateOrUpdateParameters {
-  readonly AdMarkers: string;
-  readonly AdTriggers: [];
-  readonly AdsOnDeliveryRestrictions: string;
+export interface HlsManifestCreateOrUpdateParameters {
+  readonly AdMarkers?: string;
+  readonly AdTriggers?: [];
+  readonly AdsOnDeliveryRestrictions?: string;
   readonly Id: string;
-  readonly IncludeIframeOnlyStream: boolean;
-  readonly ManifestName: string;
-  readonly PlaylistType: string;
-  readonly PlaylistWindowSeconds: number;
-  readonly ProgramDateTimeIntervalSeconds: number;
+  readonly IncludeIframeOnlyStream?: boolean;
+  readonly ManifestName?: string;
+  readonly PlaylistType?: string;
+  readonly PlaylistWindowSeconds?: number;
+  readonly ProgramDateTimeIntervalSeconds?: number;
 }
 
-interface HlsPackage {
-  readonly AdMarkers: string;
-  readonly AdTriggers: [];
-  readonly AdsOnDeliveryRestrictions: string;
-  readonly Encryption: HlsEncryption;
-  readonly IncludeDvbSubtitles: boolean;
-  readonly IncludeIframeOnlyStream: boolean;
-  readonly PlaylistType: string;
-  readonly PlaylistWindowSeconds: number;
-  readonly ProgramDateTimeIntervalSeconds: number;
-  readonly SegmentDurationSeconds: number;
-  readonly StreamSelection: StreamSelection;
-  readonly UseAudioRenditionGroup: boolean;
+export interface HlsPackage {
+  readonly AdMarkers?: string;
+  readonly AdTriggers?: [];
+  readonly AdsOnDeliveryRestrictions?: string;
+  readonly Encryption?: HlsEncryption;
+  readonly IncludeDvbSubtitles?: boolean;
+  readonly IncludeIframeOnlyStream?: boolean;
+  readonly PlaylistType?: string;
+  readonly PlaylistWindowSeconds?: number;
+  readonly ProgramDateTimeIntervalSeconds?: number;
+  readonly SegmentDurationSeconds?: number;
+  readonly StreamSelection?: StreamSelection;
+  readonly UseAudioRenditionGroup?: boolean;
 }
 
-interface IngestEndpoint {
-  readonly Id: string;
-  readonly Password: string;
-  readonly Url: string;
-  readonly Username: string;
+export interface IngestEndpoint {
+  readonly Id?: string;
+  readonly Password?: string;
+  readonly Url?: string;
+  readonly Username?: string;
 }
 
-interface IngressAccessLogs {
-  readonly LogGroupName: string;
+export interface IngressAccessLogs {
+  readonly LogGroupName?: string;
 }
 
-interface InternalServerErrorException {
-  readonly Message: string;
+export interface InternalServerErrorException {
+  readonly Message?: string;
 }
 
-interface ListChannelsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListChannelsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListChannelsResponse {
-  readonly Channels: [];
-  readonly NextToken: string;
+export interface ListChannelsResponse {
+  readonly Channels?: [];
+  readonly NextToken?: string;
 }
 
-interface ListHarvestJobsRequest {
-  readonly IncludeChannelId: string;
-  readonly IncludeStatus: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListHarvestJobsRequest {
+  readonly IncludeChannelId?: string;
+  readonly IncludeStatus?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListHarvestJobsResponse {
-  readonly HarvestJobs: [];
-  readonly NextToken: string;
+export interface ListHarvestJobsResponse {
+  readonly HarvestJobs?: [];
+  readonly NextToken?: string;
 }
 
-interface ListOriginEndpointsRequest {
-  readonly ChannelId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListOriginEndpointsRequest {
+  readonly ChannelId?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListOriginEndpointsResponse {
-  readonly NextToken: string;
-  readonly OriginEndpoints: [];
+export interface ListOriginEndpointsResponse {
+  readonly NextToken?: string;
+  readonly OriginEndpoints?: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface MssEncryption {
+export interface MssEncryption {
   readonly SpekeKeyProvider: SpekeKeyProvider;
 }
 
-interface MssPackage {
-  readonly Encryption: MssEncryption;
-  readonly ManifestWindowSeconds: number;
-  readonly SegmentDurationSeconds: number;
-  readonly StreamSelection: StreamSelection;
+export interface MssPackage {
+  readonly Encryption?: MssEncryption;
+  readonly ManifestWindowSeconds?: number;
+  readonly SegmentDurationSeconds?: number;
+  readonly StreamSelection?: StreamSelection;
 }
 
-interface NotFoundException {
-  readonly Message: string;
+export interface NotFoundException {
+  readonly Message?: string;
 }
 
-interface OriginEndpoint {
-  readonly Arn: string;
-  readonly Authorization: Authorization;
+export interface OriginEndpoint {
+  readonly Arn?: string;
+  readonly Authorization?: Authorization;
+  readonly ChannelId?: string;
+  readonly CmafPackage?: CmafPackage;
+  readonly DashPackage?: DashPackage;
+  readonly Description?: string;
+  readonly HlsPackage?: HlsPackage;
+  readonly Id?: string;
+  readonly ManifestName?: string;
+  readonly MssPackage?: MssPackage;
+  readonly Origination?: string;
+  readonly StartoverWindowSeconds?: number;
+  readonly Tags?: {[key: string]: any};
+  readonly TimeDelaySeconds?: number;
+  readonly Url?: string;
+  readonly Whitelist?: [];
+}
+
+export interface OriginEndpointCreateParameters {
+  readonly Authorization?: Authorization;
   readonly ChannelId: string;
-  readonly CmafPackage: CmafPackage;
-  readonly DashPackage: DashPackage;
-  readonly Description: string;
-  readonly HlsPackage: HlsPackage;
+  readonly CmafPackage?: CmafPackageCreateOrUpdateParameters;
+  readonly DashPackage?: DashPackage;
+  readonly Description?: string;
+  readonly HlsPackage?: HlsPackage;
   readonly Id: string;
-  readonly ManifestName: string;
-  readonly MssPackage: MssPackage;
-  readonly Origination: string;
-  readonly StartoverWindowSeconds: number;
-  readonly Tags: {[key: string]: any};
-  readonly TimeDelaySeconds: number;
-  readonly Url: string;
-  readonly Whitelist: [];
+  readonly ManifestName?: string;
+  readonly MssPackage?: MssPackage;
+  readonly Origination?: string;
+  readonly StartoverWindowSeconds?: number;
+  readonly Tags?: {[key: string]: any};
+  readonly TimeDelaySeconds?: number;
+  readonly Whitelist?: [];
 }
 
-interface OriginEndpointCreateParameters {
-  readonly Authorization: Authorization;
-  readonly ChannelId: string;
-  readonly CmafPackage: CmafPackageCreateOrUpdateParameters;
-  readonly DashPackage: DashPackage;
-  readonly Description: string;
-  readonly HlsPackage: HlsPackage;
-  readonly Id: string;
-  readonly ManifestName: string;
-  readonly MssPackage: MssPackage;
-  readonly Origination: string;
-  readonly StartoverWindowSeconds: number;
-  readonly Tags: {[key: string]: any};
-  readonly TimeDelaySeconds: number;
-  readonly Whitelist: [];
+export interface OriginEndpointList {
+  readonly NextToken?: string;
+  readonly OriginEndpoints?: [];
 }
 
-interface OriginEndpointList {
-  readonly NextToken: string;
-  readonly OriginEndpoints: [];
+export interface OriginEndpointUpdateParameters {
+  readonly Authorization?: Authorization;
+  readonly CmafPackage?: CmafPackageCreateOrUpdateParameters;
+  readonly DashPackage?: DashPackage;
+  readonly Description?: string;
+  readonly HlsPackage?: HlsPackage;
+  readonly ManifestName?: string;
+  readonly MssPackage?: MssPackage;
+  readonly Origination?: string;
+  readonly StartoverWindowSeconds?: number;
+  readonly TimeDelaySeconds?: number;
+  readonly Whitelist?: [];
 }
 
-interface OriginEndpointUpdateParameters {
-  readonly Authorization: Authorization;
-  readonly CmafPackage: CmafPackageCreateOrUpdateParameters;
-  readonly DashPackage: DashPackage;
-  readonly Description: string;
-  readonly HlsPackage: HlsPackage;
-  readonly ManifestName: string;
-  readonly MssPackage: MssPackage;
-  readonly Origination: string;
-  readonly StartoverWindowSeconds: number;
-  readonly TimeDelaySeconds: number;
-  readonly Whitelist: [];
-}
-
-interface RotateChannelCredentialsRequest {
+export interface RotateChannelCredentialsRequest {
   readonly Id: string;
 }
 
-interface RotateChannelCredentialsResponse {
-  readonly Arn: string;
-  readonly Description: string;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly HlsIngest: HlsIngest;
-  readonly Id: string;
-  readonly IngressAccessLogs: IngressAccessLogs;
-  readonly Tags: {[key: string]: any};
+export interface RotateChannelCredentialsResponse {
+  readonly Arn?: string;
+  readonly Description?: string;
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly HlsIngest?: HlsIngest;
+  readonly Id?: string;
+  readonly IngressAccessLogs?: IngressAccessLogs;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface RotateIngestEndpointCredentialsRequest {
+export interface RotateIngestEndpointCredentialsRequest {
   readonly Id: string;
   readonly IngestEndpointId: string;
 }
 
-interface RotateIngestEndpointCredentialsResponse {
-  readonly Arn: string;
-  readonly Description: string;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly HlsIngest: HlsIngest;
-  readonly Id: string;
-  readonly IngressAccessLogs: IngressAccessLogs;
-  readonly Tags: {[key: string]: any};
+export interface RotateIngestEndpointCredentialsResponse {
+  readonly Arn?: string;
+  readonly Description?: string;
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly HlsIngest?: HlsIngest;
+  readonly Id?: string;
+  readonly IngressAccessLogs?: IngressAccessLogs;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface S3Destination {
+export interface S3Destination {
   readonly BucketName: string;
   readonly ManifestKey: string;
   readonly RoleArn: string;
 }
 
-interface ServiceUnavailableException {
-  readonly Message: string;
+export interface ServiceUnavailableException {
+  readonly Message?: string;
 }
 
-interface SpekeKeyProvider {
-  readonly CertificateArn: string;
-  readonly EncryptionContractConfiguration: EncryptionContractConfiguration;
+export interface SpekeKeyProvider {
+  readonly CertificateArn?: string;
+  readonly EncryptionContractConfiguration?: EncryptionContractConfiguration;
   readonly ResourceId: string;
   readonly RoleArn: string;
   readonly SystemIds: [];
   readonly Url: string;
 }
 
-interface StreamSelection {
-  readonly MaxVideoBitsPerSecond: number;
-  readonly MinVideoBitsPerSecond: number;
-  readonly StreamOrder: string;
+export interface StreamSelection {
+  readonly MaxVideoBitsPerSecond?: number;
+  readonly MinVideoBitsPerSecond?: number;
+  readonly StreamOrder?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagsModel {
+export interface TagsModel {
   readonly Tags: {[key: string]: any};
 }
 
-interface TooManyRequestsException {
-  readonly Message: string;
+export interface TooManyRequestsException {
+  readonly Message?: string;
 }
 
-interface UnprocessableEntityException {
-  readonly Message: string;
+export interface UnprocessableEntityException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UpdateChannelRequest {
-  readonly Description: string;
+export interface UpdateChannelRequest {
+  readonly Description?: string;
   readonly Id: string;
 }
 
-interface UpdateChannelResponse {
-  readonly Arn: string;
-  readonly Description: string;
-  readonly EgressAccessLogs: EgressAccessLogs;
-  readonly HlsIngest: HlsIngest;
-  readonly Id: string;
-  readonly IngressAccessLogs: IngressAccessLogs;
-  readonly Tags: {[key: string]: any};
+export interface UpdateChannelResponse {
+  readonly Arn?: string;
+  readonly Description?: string;
+  readonly EgressAccessLogs?: EgressAccessLogs;
+  readonly HlsIngest?: HlsIngest;
+  readonly Id?: string;
+  readonly IngressAccessLogs?: IngressAccessLogs;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface UpdateOriginEndpointRequest {
-  readonly Authorization: Authorization;
-  readonly CmafPackage: CmafPackageCreateOrUpdateParameters;
-  readonly DashPackage: DashPackage;
-  readonly Description: string;
-  readonly HlsPackage: HlsPackage;
+export interface UpdateOriginEndpointRequest {
+  readonly Authorization?: Authorization;
+  readonly CmafPackage?: CmafPackageCreateOrUpdateParameters;
+  readonly DashPackage?: DashPackage;
+  readonly Description?: string;
+  readonly HlsPackage?: HlsPackage;
   readonly Id: string;
-  readonly ManifestName: string;
-  readonly MssPackage: MssPackage;
-  readonly Origination: string;
-  readonly StartoverWindowSeconds: number;
-  readonly TimeDelaySeconds: number;
-  readonly Whitelist: [];
+  readonly ManifestName?: string;
+  readonly MssPackage?: MssPackage;
+  readonly Origination?: string;
+  readonly StartoverWindowSeconds?: number;
+  readonly TimeDelaySeconds?: number;
+  readonly Whitelist?: [];
 }
 
-interface UpdateOriginEndpointResponse {
-  readonly Arn: string;
-  readonly Authorization: Authorization;
-  readonly ChannelId: string;
-  readonly CmafPackage: CmafPackage;
-  readonly DashPackage: DashPackage;
-  readonly Description: string;
-  readonly HlsPackage: HlsPackage;
-  readonly Id: string;
-  readonly ManifestName: string;
-  readonly MssPackage: MssPackage;
-  readonly Origination: string;
-  readonly StartoverWindowSeconds: number;
-  readonly Tags: {[key: string]: any};
-  readonly TimeDelaySeconds: number;
-  readonly Url: string;
-  readonly Whitelist: [];
+export interface UpdateOriginEndpointResponse {
+  readonly Arn?: string;
+  readonly Authorization?: Authorization;
+  readonly ChannelId?: string;
+  readonly CmafPackage?: CmafPackage;
+  readonly DashPackage?: DashPackage;
+  readonly Description?: string;
+  readonly HlsPackage?: HlsPackage;
+  readonly Id?: string;
+  readonly ManifestName?: string;
+  readonly MssPackage?: MssPackage;
+  readonly Origination?: string;
+  readonly StartoverWindowSeconds?: number;
+  readonly Tags?: {[key: string]: any};
+  readonly TimeDelaySeconds?: number;
+  readonly Url?: string;
+  readonly Whitelist?: [];
 }
+
 

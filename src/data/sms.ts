@@ -9,6 +9,7 @@ export interface CreateApp {
   readonly serverGroups?: [];
   readonly tags?: [];
 }
+
 export interface CreateReplicationJob {
   readonly serverId: string;
   readonly seedReplicationTime: Date;
@@ -21,119 +22,151 @@ export interface CreateReplicationJob {
   readonly encrypted?: boolean;
   readonly kmsKeyId?: string;
 }
+
 export interface DeleteApp {
   readonly appId?: string;
   readonly forceStopAppReplication?: boolean;
   readonly forceTerminateApp?: boolean;
 }
+
 export interface DeleteAppLaunchConfiguration {
   readonly appId?: string;
 }
+
 export interface DeleteAppReplicationConfiguration {
   readonly appId?: string;
 }
+
 export interface DeleteAppValidationConfiguration {
   readonly appId: string;
 }
+
 export interface DeleteReplicationJob {
   readonly replicationJobId: string;
 }
+
 export interface DeleteServerCatalog {
 }
+
 export interface DisassociateConnector {
   readonly connectorId: string;
 }
+
 export interface GenerateChangeSet {
   readonly appId?: string;
   readonly changesetFormat?: string;
 }
+
 export interface GenerateTemplate {
   readonly appId?: string;
   readonly templateFormat?: string;
 }
+
 export interface GetApp {
   readonly appId?: string;
 }
+
 export interface GetAppLaunchConfiguration {
   readonly appId?: string;
 }
+
 export interface GetAppReplicationConfiguration {
   readonly appId?: string;
 }
+
 export interface GetAppValidationConfiguration {
   readonly appId: string;
 }
+
 export interface GetAppValidationOutput {
   readonly appId: string;
 }
+
 export interface GetConnectors {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetReplicationJobs {
   readonly replicationJobId?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetReplicationRuns {
   readonly replicationJobId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetServers {
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly vmServerAddressList?: [];
 }
+
 export interface ImportAppCatalog {
   readonly roleName?: string;
 }
+
 export interface ImportServerCatalog {
 }
+
 export interface LaunchApp {
   readonly appId?: string;
 }
+
 export interface ListApps {
   readonly appIds?: [];
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface NotifyAppValidationOutput {
   readonly appId: string;
   readonly notificationContext?: NotificationContext;
 }
+
 export interface PutAppLaunchConfiguration {
   readonly appId?: string;
   readonly roleName?: string;
   readonly autoLaunch?: boolean;
   readonly serverGroupLaunchConfigurations?: [];
 }
+
 export interface PutAppReplicationConfiguration {
   readonly appId?: string;
   readonly serverGroupReplicationConfigurations?: [];
 }
+
 export interface PutAppValidationConfiguration {
   readonly appId: string;
   readonly appValidationConfigurations?: [];
   readonly serverGroupValidationConfigurations?: [];
 }
+
 export interface StartAppReplication {
   readonly appId?: string;
 }
+
 export interface StartOnDemandAppReplication {
   readonly appId: string;
   readonly description?: string;
 }
+
 export interface StartOnDemandReplicationRun {
   readonly replicationJobId: string;
   readonly description?: string;
 }
+
 export interface StopAppReplication {
   readonly appId?: string;
 }
+
 export interface TerminateApp {
   readonly appId?: string;
 }
+
 export interface UpdateApp {
   readonly appId?: string;
   readonly name?: string;
@@ -142,6 +175,7 @@ export interface UpdateApp {
   readonly serverGroups?: [];
   readonly tags?: [];
 }
+
 export interface UpdateReplicationJob {
   readonly replicationJobId: string;
   readonly frequency?: number;
@@ -154,607 +188,606 @@ export interface UpdateReplicationJob {
   readonly kmsKeyId?: string;
 }
 
-
-
-interface AppSummary {
-  readonly appId: string;
-  readonly importedAppId: string;
-  readonly name: string;
-  readonly description: string;
-  readonly status: string;
-  readonly statusMessage: string;
-  readonly replicationConfigurationStatus: string;
-  readonly replicationStatus: string;
-  readonly replicationStatusMessage: string;
-  readonly latestReplicationTime: Date;
-  readonly launchConfigurationStatus: string;
-  readonly launchStatus: string;
-  readonly launchStatusMessage: string;
-  readonly launchDetails: LaunchDetails;
-  readonly creationTime: Date;
-  readonly lastModified: Date;
-  readonly roleName: string;
-  readonly totalServerGroups: number;
-  readonly totalServers: number;
+export interface AppSummary {
+  readonly appId?: string;
+  readonly importedAppId?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly status?: string;
+  readonly statusMessage?: string;
+  readonly replicationConfigurationStatus?: string;
+  readonly replicationStatus?: string;
+  readonly replicationStatusMessage?: string;
+  readonly latestReplicationTime?: Date;
+  readonly launchConfigurationStatus?: string;
+  readonly launchStatus?: string;
+  readonly launchStatusMessage?: string;
+  readonly launchDetails?: LaunchDetails;
+  readonly creationTime?: Date;
+  readonly lastModified?: Date;
+  readonly roleName?: string;
+  readonly totalServerGroups?: number;
+  readonly totalServers?: number;
 }
 
-interface AppValidationConfiguration {
-  readonly validationId: string;
-  readonly name: string;
-  readonly appValidationStrategy: string;
-  readonly ssmValidationParameters: SSMValidationParameters;
+export interface AppValidationConfiguration {
+  readonly validationId?: string;
+  readonly name?: string;
+  readonly appValidationStrategy?: string;
+  readonly ssmValidationParameters?: SSMValidationParameters;
 }
 
-interface AppValidationOutput {
-  readonly ssmOutput: SSMOutput;
+export interface AppValidationOutput {
+  readonly ssmOutput?: SSMOutput;
 }
 
-interface Connector {
-  readonly connectorId: string;
-  readonly version: string;
-  readonly status: string;
-  readonly capabilityList: [];
-  readonly vmManagerName: string;
-  readonly vmManagerType: string;
-  readonly vmManagerId: string;
-  readonly ipAddress: string;
-  readonly macAddress: string;
-  readonly associatedOn: Date;
+export interface Connector {
+  readonly connectorId?: string;
+  readonly version?: string;
+  readonly status?: string;
+  readonly capabilityList?: [];
+  readonly vmManagerName?: string;
+  readonly vmManagerType?: string;
+  readonly vmManagerId?: string;
+  readonly ipAddress?: string;
+  readonly macAddress?: string;
+  readonly associatedOn?: Date;
 }
 
-interface CreateAppRequest {
-  readonly name: string;
-  readonly description: string;
-  readonly roleName: string;
-  readonly clientToken: string;
-  readonly serverGroups: [];
-  readonly tags: [];
+export interface CreateAppRequest {
+  readonly name?: string;
+  readonly description?: string;
+  readonly roleName?: string;
+  readonly clientToken?: string;
+  readonly serverGroups?: [];
+  readonly tags?: [];
 }
 
-interface CreateAppResponse {
-  readonly appSummary: AppSummary;
-  readonly serverGroups: [];
-  readonly tags: [];
+export interface CreateAppResponse {
+  readonly appSummary?: AppSummary;
+  readonly serverGroups?: [];
+  readonly tags?: [];
 }
 
-interface CreateReplicationJobRequest {
+export interface CreateReplicationJobRequest {
   readonly serverId: string;
   readonly seedReplicationTime: Date;
-  readonly frequency: number;
-  readonly runOnce: boolean;
-  readonly licenseType: string;
-  readonly roleName: string;
-  readonly description: string;
-  readonly numberOfRecentAmisToKeep: number;
-  readonly encrypted: boolean;
-  readonly kmsKeyId: string;
+  readonly frequency?: number;
+  readonly runOnce?: boolean;
+  readonly licenseType?: string;
+  readonly roleName?: string;
+  readonly description?: string;
+  readonly numberOfRecentAmisToKeep?: number;
+  readonly encrypted?: boolean;
+  readonly kmsKeyId?: string;
 }
 
-interface CreateReplicationJobResponse {
+export interface CreateReplicationJobResponse {
+  readonly replicationJobId?: string;
+}
+
+export interface DeleteAppLaunchConfigurationRequest {
+  readonly appId?: string;
+}
+
+export interface DeleteAppLaunchConfigurationResponse {
+}
+
+export interface DeleteAppReplicationConfigurationRequest {
+  readonly appId?: string;
+}
+
+export interface DeleteAppReplicationConfigurationResponse {
+}
+
+export interface DeleteAppRequest {
+  readonly appId?: string;
+  readonly forceStopAppReplication?: boolean;
+  readonly forceTerminateApp?: boolean;
+}
+
+export interface DeleteAppResponse {
+}
+
+export interface DeleteAppValidationConfigurationRequest {
+  readonly appId: string;
+}
+
+export interface DeleteAppValidationConfigurationResponse {
+}
+
+export interface DeleteReplicationJobRequest {
   readonly replicationJobId: string;
 }
 
-interface DeleteAppLaunchConfigurationRequest {
-  readonly appId: string;
+export interface DeleteReplicationJobResponse {
 }
 
-interface DeleteAppLaunchConfigurationResponse {
+export interface DeleteServerCatalogRequest {
 }
 
-interface DeleteAppReplicationConfigurationRequest {
-  readonly appId: string;
+export interface DeleteServerCatalogResponse {
 }
 
-interface DeleteAppReplicationConfigurationResponse {
-}
-
-interface DeleteAppRequest {
-  readonly appId: string;
-  readonly forceStopAppReplication: boolean;
-  readonly forceTerminateApp: boolean;
-}
-
-interface DeleteAppResponse {
-}
-
-interface DeleteAppValidationConfigurationRequest {
-  readonly appId: string;
-}
-
-interface DeleteAppValidationConfigurationResponse {
-}
-
-interface DeleteReplicationJobRequest {
-  readonly replicationJobId: string;
-}
-
-interface DeleteReplicationJobResponse {
-}
-
-interface DeleteServerCatalogRequest {
-}
-
-interface DeleteServerCatalogResponse {
-}
-
-interface DisassociateConnectorRequest {
+export interface DisassociateConnectorRequest {
   readonly connectorId: string;
 }
 
-interface DisassociateConnectorResponse {
+export interface DisassociateConnectorResponse {
 }
 
-interface DryRunOperationException {
-  readonly message: string;
+export interface DryRunOperationException {
+  readonly message?: string;
 }
 
-interface GenerateChangeSetRequest {
-  readonly appId: string;
-  readonly changesetFormat: string;
+export interface GenerateChangeSetRequest {
+  readonly appId?: string;
+  readonly changesetFormat?: string;
 }
 
-interface GenerateChangeSetResponse {
-  readonly s3Location: S3Location;
+export interface GenerateChangeSetResponse {
+  readonly s3Location?: S3Location;
 }
 
-interface GenerateTemplateRequest {
-  readonly appId: string;
-  readonly templateFormat: string;
+export interface GenerateTemplateRequest {
+  readonly appId?: string;
+  readonly templateFormat?: string;
 }
 
-interface GenerateTemplateResponse {
-  readonly s3Location: S3Location;
+export interface GenerateTemplateResponse {
+  readonly s3Location?: S3Location;
 }
 
-interface GetAppLaunchConfigurationRequest {
-  readonly appId: string;
+export interface GetAppLaunchConfigurationRequest {
+  readonly appId?: string;
 }
 
-interface GetAppLaunchConfigurationResponse {
-  readonly appId: string;
-  readonly roleName: string;
-  readonly autoLaunch: boolean;
-  readonly serverGroupLaunchConfigurations: [];
+export interface GetAppLaunchConfigurationResponse {
+  readonly appId?: string;
+  readonly roleName?: string;
+  readonly autoLaunch?: boolean;
+  readonly serverGroupLaunchConfigurations?: [];
 }
 
-interface GetAppReplicationConfigurationRequest {
-  readonly appId: string;
+export interface GetAppReplicationConfigurationRequest {
+  readonly appId?: string;
 }
 
-interface GetAppReplicationConfigurationResponse {
-  readonly serverGroupReplicationConfigurations: [];
+export interface GetAppReplicationConfigurationResponse {
+  readonly serverGroupReplicationConfigurations?: [];
 }
 
-interface GetAppRequest {
-  readonly appId: string;
+export interface GetAppRequest {
+  readonly appId?: string;
 }
 
-interface GetAppResponse {
-  readonly appSummary: AppSummary;
-  readonly serverGroups: [];
-  readonly tags: [];
+export interface GetAppResponse {
+  readonly appSummary?: AppSummary;
+  readonly serverGroups?: [];
+  readonly tags?: [];
 }
 
-interface GetAppValidationConfigurationRequest {
-  readonly appId: string;
-}
-
-interface GetAppValidationConfigurationResponse {
-  readonly appValidationConfigurations: [];
-  readonly serverGroupValidationConfigurations: [];
-}
-
-interface GetAppValidationOutputRequest {
+export interface GetAppValidationConfigurationRequest {
   readonly appId: string;
 }
 
-interface GetAppValidationOutputResponse {
-  readonly validationOutputList: [];
+export interface GetAppValidationConfigurationResponse {
+  readonly appValidationConfigurations?: [];
+  readonly serverGroupValidationConfigurations?: [];
 }
 
-interface GetConnectorsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetAppValidationOutputRequest {
+  readonly appId: string;
 }
 
-interface GetConnectorsResponse {
-  readonly connectorList: [];
-  readonly nextToken: string;
+export interface GetAppValidationOutputResponse {
+  readonly validationOutputList?: [];
 }
 
-interface GetReplicationJobsRequest {
+export interface GetConnectorsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+}
+
+export interface GetConnectorsResponse {
+  readonly connectorList?: [];
+  readonly nextToken?: string;
+}
+
+export interface GetReplicationJobsRequest {
+  readonly replicationJobId?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+}
+
+export interface GetReplicationJobsResponse {
+  readonly replicationJobList?: [];
+  readonly nextToken?: string;
+}
+
+export interface GetReplicationRunsRequest {
   readonly replicationJobId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetReplicationJobsResponse {
-  readonly replicationJobList: [];
-  readonly nextToken: string;
+export interface GetReplicationRunsResponse {
+  readonly replicationJob?: ReplicationJob;
+  readonly replicationRunList?: [];
+  readonly nextToken?: string;
 }
 
-interface GetReplicationRunsRequest {
+export interface GetServersRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly vmServerAddressList?: [];
+}
+
+export interface GetServersResponse {
+  readonly lastModifiedOn?: Date;
+  readonly serverCatalogStatus?: string;
+  readonly serverList?: [];
+  readonly nextToken?: string;
+}
+
+export interface ImportAppCatalogRequest {
+  readonly roleName?: string;
+}
+
+export interface ImportAppCatalogResponse {
+}
+
+export interface ImportServerCatalogRequest {
+}
+
+export interface ImportServerCatalogResponse {
+}
+
+export interface InternalError {
+  readonly message?: string;
+}
+
+export interface InvalidParameterException {
+  readonly message?: string;
+}
+
+export interface LaunchAppRequest {
+  readonly appId?: string;
+}
+
+export interface LaunchAppResponse {
+}
+
+export interface LaunchDetails {
+  readonly latestLaunchTime?: Date;
+  readonly stackName?: string;
+  readonly stackId?: string;
+}
+
+export interface ListAppsRequest {
+  readonly appIds?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+}
+
+export interface ListAppsResponse {
+  readonly apps?: [];
+  readonly nextToken?: string;
+}
+
+export interface MissingRequiredParameterException {
+  readonly message?: string;
+}
+
+export interface NoConnectorsAvailableException {
+  readonly message?: string;
+}
+
+export interface NotificationContext {
+  readonly validationId?: string;
+  readonly status?: string;
+  readonly statusMessage?: string;
+}
+
+export interface NotifyAppValidationOutputRequest {
+  readonly appId: string;
+  readonly notificationContext?: NotificationContext;
+}
+
+export interface NotifyAppValidationOutputResponse {
+}
+
+export interface OperationNotPermittedException {
+  readonly message?: string;
+}
+
+export interface PutAppLaunchConfigurationRequest {
+  readonly appId?: string;
+  readonly roleName?: string;
+  readonly autoLaunch?: boolean;
+  readonly serverGroupLaunchConfigurations?: [];
+}
+
+export interface PutAppLaunchConfigurationResponse {
+}
+
+export interface PutAppReplicationConfigurationRequest {
+  readonly appId?: string;
+  readonly serverGroupReplicationConfigurations?: [];
+}
+
+export interface PutAppReplicationConfigurationResponse {
+}
+
+export interface PutAppValidationConfigurationRequest {
+  readonly appId: string;
+  readonly appValidationConfigurations?: [];
+  readonly serverGroupValidationConfigurations?: [];
+}
+
+export interface PutAppValidationConfigurationResponse {
+}
+
+export interface ReplicationJob {
+  readonly replicationJobId?: string;
+  readonly serverId?: string;
+  readonly serverType?: string;
+  readonly vmServer?: VmServer;
+  readonly seedReplicationTime?: Date;
+  readonly frequency?: number;
+  readonly runOnce?: boolean;
+  readonly nextReplicationRunStartTime?: Date;
+  readonly licenseType?: string;
+  readonly roleName?: string;
+  readonly latestAmiId?: string;
+  readonly state?: string;
+  readonly statusMessage?: string;
+  readonly description?: string;
+  readonly numberOfRecentAmisToKeep?: number;
+  readonly encrypted?: boolean;
+  readonly kmsKeyId?: string;
+  readonly replicationRunList?: [];
+}
+
+export interface ReplicationJobAlreadyExistsException {
+  readonly message?: string;
+}
+
+export interface ReplicationJobNotFoundException {
+  readonly message?: string;
+}
+
+export interface ReplicationRun {
+  readonly replicationRunId?: string;
+  readonly state?: string;
+  readonly type?: string;
+  readonly stageDetails?: ReplicationRunStageDetails;
+  readonly statusMessage?: string;
+  readonly amiId?: string;
+  readonly scheduledStartTime?: Date;
+  readonly completedTime?: Date;
+  readonly description?: string;
+  readonly encrypted?: boolean;
+  readonly kmsKeyId?: string;
+}
+
+export interface ReplicationRunLimitExceededException {
+  readonly message?: string;
+}
+
+export interface ReplicationRunStageDetails {
+  readonly stage?: string;
+  readonly stageProgress?: string;
+}
+
+export interface S3Location {
+  readonly bucket?: string;
+  readonly key?: string;
+}
+
+export interface SSMOutput {
+  readonly s3Location?: S3Location;
+}
+
+export interface SSMValidationParameters {
+  readonly source?: Source;
+  readonly instanceId?: string;
+  readonly scriptType?: string;
+  readonly command?: string;
+  readonly executionTimeoutSeconds?: number;
+  readonly outputS3BucketName?: string;
+}
+
+export interface Server {
+  readonly serverId?: string;
+  readonly serverType?: string;
+  readonly vmServer?: VmServer;
+  readonly replicationJobId?: string;
+  readonly replicationJobTerminated?: boolean;
+}
+
+export interface ServerCannotBeReplicatedException {
+  readonly message?: string;
+}
+
+export interface ServerGroup {
+  readonly serverGroupId?: string;
+  readonly name?: string;
+  readonly serverList?: [];
+}
+
+export interface ServerGroupLaunchConfiguration {
+  readonly serverGroupId?: string;
+  readonly launchOrder?: number;
+  readonly serverLaunchConfigurations?: [];
+}
+
+export interface ServerGroupReplicationConfiguration {
+  readonly serverGroupId?: string;
+  readonly serverReplicationConfigurations?: [];
+}
+
+export interface ServerGroupValidationConfiguration {
+  readonly serverGroupId?: string;
+  readonly serverValidationConfigurations?: [];
+}
+
+export interface ServerLaunchConfiguration {
+  readonly server?: Server;
+  readonly logicalId?: string;
+  readonly vpc?: string;
+  readonly subnet?: string;
+  readonly securityGroup?: string;
+  readonly ec2KeyName?: string;
+  readonly userData?: UserData;
+  readonly instanceType?: string;
+  readonly associatePublicIpAddress?: boolean;
+  readonly iamInstanceProfileName?: string;
+  readonly configureScript?: S3Location;
+  readonly configureScriptType?: string;
+}
+
+export interface ServerReplicationConfiguration {
+  readonly server?: Server;
+  readonly serverReplicationParameters?: ServerReplicationParameters;
+}
+
+export interface ServerReplicationParameters {
+  readonly seedTime?: Date;
+  readonly frequency?: number;
+  readonly runOnce?: boolean;
+  readonly licenseType?: string;
+  readonly numberOfRecentAmisToKeep?: number;
+  readonly encrypted?: boolean;
+  readonly kmsKeyId?: string;
+}
+
+export interface ServerValidationConfiguration {
+  readonly server?: Server;
+  readonly validationId?: string;
+  readonly name?: string;
+  readonly serverValidationStrategy?: string;
+  readonly userDataValidationParameters?: UserDataValidationParameters;
+}
+
+export interface ServerValidationOutput {
+  readonly server?: Server;
+}
+
+export interface Source {
+  readonly s3Location?: S3Location;
+}
+
+export interface StartAppReplicationRequest {
+  readonly appId?: string;
+}
+
+export interface StartAppReplicationResponse {
+}
+
+export interface StartOnDemandAppReplicationRequest {
+  readonly appId: string;
+  readonly description?: string;
+}
+
+export interface StartOnDemandAppReplicationResponse {
+}
+
+export interface StartOnDemandReplicationRunRequest {
   readonly replicationJobId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly description?: string;
 }
 
-interface GetReplicationRunsResponse {
-  readonly replicationJob: ReplicationJob;
-  readonly replicationRunList: [];
-  readonly nextToken: string;
+export interface StartOnDemandReplicationRunResponse {
+  readonly replicationRunId?: string;
 }
 
-interface GetServersRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly vmServerAddressList: [];
+export interface StopAppReplicationRequest {
+  readonly appId?: string;
 }
 
-interface GetServersResponse {
-  readonly lastModifiedOn: Date;
-  readonly serverCatalogStatus: string;
-  readonly serverList: [];
-  readonly nextToken: string;
+export interface StopAppReplicationResponse {
 }
 
-interface ImportAppCatalogRequest {
-  readonly roleName: string;
+export interface Tag {
+  readonly key?: string;
+  readonly value?: string;
 }
 
-interface ImportAppCatalogResponse {
+export interface TemporarilyUnavailableException {
 }
 
-interface ImportServerCatalogRequest {
+export interface TerminateAppRequest {
+  readonly appId?: string;
 }
 
-interface ImportServerCatalogResponse {
+export interface TerminateAppResponse {
 }
 
-interface InternalError {
-  readonly message: string;
+export interface UnauthorizedOperationException {
+  readonly message?: string;
 }
 
-interface InvalidParameterException {
-  readonly message: string;
+export interface UpdateAppRequest {
+  readonly appId?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly roleName?: string;
+  readonly serverGroups?: [];
+  readonly tags?: [];
 }
 
-interface LaunchAppRequest {
-  readonly appId: string;
+export interface UpdateAppResponse {
+  readonly appSummary?: AppSummary;
+  readonly serverGroups?: [];
+  readonly tags?: [];
 }
 
-interface LaunchAppResponse {
-}
-
-interface LaunchDetails {
-  readonly latestLaunchTime: Date;
-  readonly stackName: string;
-  readonly stackId: string;
-}
-
-interface ListAppsRequest {
-  readonly appIds: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
-}
-
-interface ListAppsResponse {
-  readonly apps: [];
-  readonly nextToken: string;
-}
-
-interface MissingRequiredParameterException {
-  readonly message: string;
-}
-
-interface NoConnectorsAvailableException {
-  readonly message: string;
-}
-
-interface NotificationContext {
-  readonly validationId: string;
-  readonly status: string;
-  readonly statusMessage: string;
-}
-
-interface NotifyAppValidationOutputRequest {
-  readonly appId: string;
-  readonly notificationContext: NotificationContext;
-}
-
-interface NotifyAppValidationOutputResponse {
-}
-
-interface OperationNotPermittedException {
-  readonly message: string;
-}
-
-interface PutAppLaunchConfigurationRequest {
-  readonly appId: string;
-  readonly roleName: string;
-  readonly autoLaunch: boolean;
-  readonly serverGroupLaunchConfigurations: [];
-}
-
-interface PutAppLaunchConfigurationResponse {
-}
-
-interface PutAppReplicationConfigurationRequest {
-  readonly appId: string;
-  readonly serverGroupReplicationConfigurations: [];
-}
-
-interface PutAppReplicationConfigurationResponse {
-}
-
-interface PutAppValidationConfigurationRequest {
-  readonly appId: string;
-  readonly appValidationConfigurations: [];
-  readonly serverGroupValidationConfigurations: [];
-}
-
-interface PutAppValidationConfigurationResponse {
-}
-
-interface ReplicationJob {
+export interface UpdateReplicationJobRequest {
   readonly replicationJobId: string;
-  readonly serverId: string;
-  readonly serverType: string;
-  readonly vmServer: VmServer;
-  readonly seedReplicationTime: Date;
-  readonly frequency: number;
-  readonly runOnce: boolean;
-  readonly nextReplicationRunStartTime: Date;
-  readonly licenseType: string;
-  readonly roleName: string;
-  readonly latestAmiId: string;
-  readonly state: string;
-  readonly statusMessage: string;
-  readonly description: string;
-  readonly numberOfRecentAmisToKeep: number;
-  readonly encrypted: boolean;
-  readonly kmsKeyId: string;
-  readonly replicationRunList: [];
+  readonly frequency?: number;
+  readonly nextReplicationRunStartTime?: Date;
+  readonly licenseType?: string;
+  readonly roleName?: string;
+  readonly description?: string;
+  readonly numberOfRecentAmisToKeep?: number;
+  readonly encrypted?: boolean;
+  readonly kmsKeyId?: string;
 }
 
-interface ReplicationJobAlreadyExistsException {
-  readonly message: string;
+export interface UpdateReplicationJobResponse {
 }
 
-interface ReplicationJobNotFoundException {
-  readonly message: string;
+export interface UserData {
+  readonly s3Location?: S3Location;
 }
 
-interface ReplicationRun {
-  readonly replicationRunId: string;
-  readonly state: string;
-  readonly type: string;
-  readonly stageDetails: ReplicationRunStageDetails;
-  readonly statusMessage: string;
-  readonly amiId: string;
-  readonly scheduledStartTime: Date;
-  readonly completedTime: Date;
-  readonly description: string;
-  readonly encrypted: boolean;
-  readonly kmsKeyId: string;
+export interface UserDataValidationParameters {
+  readonly source?: Source;
+  readonly scriptType?: string;
 }
 
-interface ReplicationRunLimitExceededException {
-  readonly message: string;
+export interface ValidationOutput {
+  readonly validationId?: string;
+  readonly name?: string;
+  readonly status?: string;
+  readonly statusMessage?: string;
+  readonly latestValidationTime?: Date;
+  readonly appValidationOutput?: AppValidationOutput;
+  readonly serverValidationOutput?: ServerValidationOutput;
 }
 
-interface ReplicationRunStageDetails {
-  readonly stage: string;
-  readonly stageProgress: string;
+export interface VmServer {
+  readonly vmServerAddress?: VmServerAddress;
+  readonly vmName?: string;
+  readonly vmManagerName?: string;
+  readonly vmManagerType?: string;
+  readonly vmPath?: string;
 }
 
-interface S3Location {
-  readonly bucket: string;
-  readonly key: string;
+export interface VmServerAddress {
+  readonly vmManagerId?: string;
+  readonly vmId?: string;
 }
 
-interface SSMOutput {
-  readonly s3Location: S3Location;
-}
-
-interface SSMValidationParameters {
-  readonly source: Source;
-  readonly instanceId: string;
-  readonly scriptType: string;
-  readonly command: string;
-  readonly executionTimeoutSeconds: number;
-  readonly outputS3BucketName: string;
-}
-
-interface Server {
-  readonly serverId: string;
-  readonly serverType: string;
-  readonly vmServer: VmServer;
-  readonly replicationJobId: string;
-  readonly replicationJobTerminated: boolean;
-}
-
-interface ServerCannotBeReplicatedException {
-  readonly message: string;
-}
-
-interface ServerGroup {
-  readonly serverGroupId: string;
-  readonly name: string;
-  readonly serverList: [];
-}
-
-interface ServerGroupLaunchConfiguration {
-  readonly serverGroupId: string;
-  readonly launchOrder: number;
-  readonly serverLaunchConfigurations: [];
-}
-
-interface ServerGroupReplicationConfiguration {
-  readonly serverGroupId: string;
-  readonly serverReplicationConfigurations: [];
-}
-
-interface ServerGroupValidationConfiguration {
-  readonly serverGroupId: string;
-  readonly serverValidationConfigurations: [];
-}
-
-interface ServerLaunchConfiguration {
-  readonly server: Server;
-  readonly logicalId: string;
-  readonly vpc: string;
-  readonly subnet: string;
-  readonly securityGroup: string;
-  readonly ec2KeyName: string;
-  readonly userData: UserData;
-  readonly instanceType: string;
-  readonly associatePublicIpAddress: boolean;
-  readonly iamInstanceProfileName: string;
-  readonly configureScript: S3Location;
-  readonly configureScriptType: string;
-}
-
-interface ServerReplicationConfiguration {
-  readonly server: Server;
-  readonly serverReplicationParameters: ServerReplicationParameters;
-}
-
-interface ServerReplicationParameters {
-  readonly seedTime: Date;
-  readonly frequency: number;
-  readonly runOnce: boolean;
-  readonly licenseType: string;
-  readonly numberOfRecentAmisToKeep: number;
-  readonly encrypted: boolean;
-  readonly kmsKeyId: string;
-}
-
-interface ServerValidationConfiguration {
-  readonly server: Server;
-  readonly validationId: string;
-  readonly name: string;
-  readonly serverValidationStrategy: string;
-  readonly userDataValidationParameters: UserDataValidationParameters;
-}
-
-interface ServerValidationOutput {
-  readonly server: Server;
-}
-
-interface Source {
-  readonly s3Location: S3Location;
-}
-
-interface StartAppReplicationRequest {
-  readonly appId: string;
-}
-
-interface StartAppReplicationResponse {
-}
-
-interface StartOnDemandAppReplicationRequest {
-  readonly appId: string;
-  readonly description: string;
-}
-
-interface StartOnDemandAppReplicationResponse {
-}
-
-interface StartOnDemandReplicationRunRequest {
-  readonly replicationJobId: string;
-  readonly description: string;
-}
-
-interface StartOnDemandReplicationRunResponse {
-  readonly replicationRunId: string;
-}
-
-interface StopAppReplicationRequest {
-  readonly appId: string;
-}
-
-interface StopAppReplicationResponse {
-}
-
-interface Tag {
-  readonly key: string;
-  readonly value: string;
-}
-
-interface TemporarilyUnavailableException {
-}
-
-interface TerminateAppRequest {
-  readonly appId: string;
-}
-
-interface TerminateAppResponse {
-}
-
-interface UnauthorizedOperationException {
-  readonly message: string;
-}
-
-interface UpdateAppRequest {
-  readonly appId: string;
-  readonly name: string;
-  readonly description: string;
-  readonly roleName: string;
-  readonly serverGroups: [];
-  readonly tags: [];
-}
-
-interface UpdateAppResponse {
-  readonly appSummary: AppSummary;
-  readonly serverGroups: [];
-  readonly tags: [];
-}
-
-interface UpdateReplicationJobRequest {
-  readonly replicationJobId: string;
-  readonly frequency: number;
-  readonly nextReplicationRunStartTime: Date;
-  readonly licenseType: string;
-  readonly roleName: string;
-  readonly description: string;
-  readonly numberOfRecentAmisToKeep: number;
-  readonly encrypted: boolean;
-  readonly kmsKeyId: string;
-}
-
-interface UpdateReplicationJobResponse {
-}
-
-interface UserData {
-  readonly s3Location: S3Location;
-}
-
-interface UserDataValidationParameters {
-  readonly source: Source;
-  readonly scriptType: string;
-}
-
-interface ValidationOutput {
-  readonly validationId: string;
-  readonly name: string;
-  readonly status: string;
-  readonly statusMessage: string;
-  readonly latestValidationTime: Date;
-  readonly appValidationOutput: AppValidationOutput;
-  readonly serverValidationOutput: ServerValidationOutput;
-}
-
-interface VmServer {
-  readonly vmServerAddress: VmServerAddress;
-  readonly vmName: string;
-  readonly vmManagerName: string;
-  readonly vmManagerType: string;
-  readonly vmPath: string;
-}
-
-interface VmServerAddress {
-  readonly vmManagerId: string;
-  readonly vmId: string;
-}
 

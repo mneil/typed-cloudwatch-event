@@ -4,6 +4,7 @@
 export interface CancelQuery {
   readonly QueryId: string;
 }
+
 export interface CreateScheduledQuery {
   readonly Name: string;
   readonly QueryString: string;
@@ -16,388 +17,398 @@ export interface CreateScheduledQuery {
   readonly KmsKeyId?: string;
   readonly ErrorReportConfiguration: ErrorReportConfiguration;
 }
+
 export interface DeleteScheduledQuery {
   readonly ScheduledQueryArn: string;
 }
+
 export interface DescribeEndpoints {
 }
+
 export interface DescribeScheduledQuery {
   readonly ScheduledQueryArn: string;
 }
+
 export interface ExecuteScheduledQuery {
   readonly ScheduledQueryArn: string;
   readonly InvocationTime: Date;
   readonly ClientToken?: string;
 }
+
 export interface ListScheduledQueries {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface PrepareQuery {
   readonly QueryString: string;
   readonly ValidateOnly?: boolean;
 }
+
 export interface Query {
   readonly QueryString: string;
   readonly ClientToken?: string;
   readonly NextToken?: string;
   readonly MaxRows?: number;
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateScheduledQuery {
   readonly ScheduledQueryArn: string;
   readonly State: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface CancelQueryRequest {
+export interface CancelQueryRequest {
   readonly QueryId: string;
 }
 
-interface CancelQueryResponse {
-  readonly CancellationMessage: string;
+export interface CancelQueryResponse {
+  readonly CancellationMessage?: string;
 }
 
-interface ColumnInfo {
-  readonly Name: string;
+export interface ColumnInfo {
+  readonly Name?: string;
   readonly Type: Type;
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface CreateScheduledQueryRequest {
+export interface CreateScheduledQueryRequest {
   readonly Name: string;
   readonly QueryString: string;
   readonly ScheduleConfiguration: ScheduleConfiguration;
   readonly NotificationConfiguration: NotificationConfiguration;
-  readonly TargetConfiguration: TargetConfiguration;
-  readonly ClientToken: string;
+  readonly TargetConfiguration?: TargetConfiguration;
+  readonly ClientToken?: string;
   readonly ScheduledQueryExecutionRoleArn: string;
-  readonly Tags: [];
-  readonly KmsKeyId: string;
+  readonly Tags?: [];
+  readonly KmsKeyId?: string;
   readonly ErrorReportConfiguration: ErrorReportConfiguration;
 }
 
-interface CreateScheduledQueryResponse {
+export interface CreateScheduledQueryResponse {
   readonly Arn: string;
 }
 
-interface Datum {
-  readonly ScalarValue: string;
-  readonly TimeSeriesValue: [];
-  readonly ArrayValue: [];
-  readonly RowValue: Row;
-  readonly NullValue: boolean;
+export interface Datum {
+  readonly ScalarValue?: string;
+  readonly TimeSeriesValue?: [];
+  readonly ArrayValue?: [];
+  readonly RowValue?: Row;
+  readonly NullValue?: boolean;
 }
 
-interface DeleteScheduledQueryRequest {
+export interface DeleteScheduledQueryRequest {
   readonly ScheduledQueryArn: string;
 }
 
-interface DescribeEndpointsRequest {
+export interface DescribeEndpointsRequest {
 }
 
-interface DescribeEndpointsResponse {
+export interface DescribeEndpointsResponse {
   readonly Endpoints: [];
 }
 
-interface DescribeScheduledQueryRequest {
+export interface DescribeScheduledQueryRequest {
   readonly ScheduledQueryArn: string;
 }
 
-interface DescribeScheduledQueryResponse {
+export interface DescribeScheduledQueryResponse {
   readonly ScheduledQuery: ScheduledQueryDescription;
 }
 
-interface DimensionMapping {
+export interface DimensionMapping {
   readonly Name: string;
   readonly DimensionValueType: string;
 }
 
-interface Endpoint {
+export interface Endpoint {
   readonly Address: string;
   readonly CachePeriodInMinutes: number;
 }
 
-interface ErrorReportConfiguration {
+export interface ErrorReportConfiguration {
   readonly S3Configuration: S3Configuration;
 }
 
-interface ErrorReportLocation {
-  readonly S3ReportLocation: S3ReportLocation;
+export interface ErrorReportLocation {
+  readonly S3ReportLocation?: S3ReportLocation;
 }
 
-interface ExecuteScheduledQueryRequest {
+export interface ExecuteScheduledQueryRequest {
   readonly ScheduledQueryArn: string;
   readonly InvocationTime: Date;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 
-interface ExecutionStats {
-  readonly ExecutionTimeInMillis: number;
-  readonly DataWrites: number;
-  readonly BytesMetered: number;
-  readonly RecordsIngested: number;
-  readonly QueryResultRows: number;
+export interface ExecutionStats {
+  readonly ExecutionTimeInMillis?: number;
+  readonly DataWrites?: number;
+  readonly BytesMetered?: number;
+  readonly RecordsIngested?: number;
+  readonly QueryResultRows?: number;
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface InternalServerException {
+  readonly Message?: string;
 }
 
-interface InvalidEndpointException {
-  readonly Message: string;
+export interface InvalidEndpointException {
+  readonly Message?: string;
 }
 
-interface ListScheduledQueriesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListScheduledQueriesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListScheduledQueriesResponse {
+export interface ListScheduledQueriesResponse {
   readonly ScheduledQueries: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceResponse {
+export interface ListTagsForResourceResponse {
   readonly Tags: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface MixedMeasureMapping {
-  readonly MeasureName: string;
-  readonly SourceColumn: string;
-  readonly TargetMeasureName: string;
+export interface MixedMeasureMapping {
+  readonly MeasureName?: string;
+  readonly SourceColumn?: string;
+  readonly TargetMeasureName?: string;
   readonly MeasureValueType: string;
+  readonly MultiMeasureAttributeMappings?: [];
+}
+
+export interface MultiMeasureAttributeMapping {
+  readonly SourceColumn: string;
+  readonly TargetMultiMeasureAttributeName?: string;
+  readonly MeasureValueType: string;
+}
+
+export interface MultiMeasureMappings {
+  readonly TargetMultiMeasureName?: string;
   readonly MultiMeasureAttributeMappings: [];
 }
 
-interface MultiMeasureAttributeMapping {
-  readonly SourceColumn: string;
-  readonly TargetMultiMeasureAttributeName: string;
-  readonly MeasureValueType: string;
-}
-
-interface MultiMeasureMappings {
-  readonly TargetMultiMeasureName: string;
-  readonly MultiMeasureAttributeMappings: [];
-}
-
-interface NotificationConfiguration {
+export interface NotificationConfiguration {
   readonly SnsConfiguration: SnsConfiguration;
 }
 
-interface ParameterMapping {
+export interface ParameterMapping {
   readonly Name: string;
   readonly Type: Type;
 }
 
-interface PrepareQueryRequest {
+export interface PrepareQueryRequest {
   readonly QueryString: string;
-  readonly ValidateOnly: boolean;
+  readonly ValidateOnly?: boolean;
 }
 
-interface PrepareQueryResponse {
+export interface PrepareQueryResponse {
   readonly QueryString: string;
   readonly Columns: [];
   readonly Parameters: [];
 }
 
-interface QueryExecutionException {
-  readonly Message: string;
+export interface QueryExecutionException {
+  readonly Message?: string;
 }
 
-interface QueryRequest {
+export interface QueryRequest {
   readonly QueryString: string;
-  readonly ClientToken: string;
-  readonly NextToken: string;
-  readonly MaxRows: number;
+  readonly ClientToken?: string;
+  readonly NextToken?: string;
+  readonly MaxRows?: number;
 }
 
-interface QueryResponse {
+export interface QueryResponse {
   readonly QueryId: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
   readonly Rows: [];
   readonly ColumnInfo: [];
-  readonly QueryStatus: QueryStatus;
+  readonly QueryStatus?: QueryStatus;
 }
 
-interface QueryStatus {
-  readonly ProgressPercentage: unknown;
-  readonly CumulativeBytesScanned: number;
-  readonly CumulativeBytesMetered: number;
+export interface QueryStatus {
+  readonly ProgressPercentage?: unknown;
+  readonly CumulativeBytesScanned?: number;
+  readonly CumulativeBytesMetered?: number;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
-  readonly ScheduledQueryArn: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
+  readonly ScheduledQueryArn?: string;
 }
 
-interface Row {
+export interface Row {
   readonly Data: [];
 }
 
-interface S3Configuration {
+export interface S3Configuration {
   readonly BucketName: string;
-  readonly ObjectKeyPrefix: string;
-  readonly EncryptionOption: string;
+  readonly ObjectKeyPrefix?: string;
+  readonly EncryptionOption?: string;
 }
 
-interface S3ReportLocation {
-  readonly BucketName: string;
-  readonly ObjectKey: string;
+export interface S3ReportLocation {
+  readonly BucketName?: string;
+  readonly ObjectKey?: string;
 }
 
-interface ScheduleConfiguration {
+export interface ScheduleConfiguration {
   readonly ScheduleExpression: string;
 }
 
-interface ScheduledQuery {
+export interface ScheduledQuery {
   readonly Arn: string;
   readonly Name: string;
-  readonly CreationTime: Date;
+  readonly CreationTime?: Date;
   readonly State: string;
-  readonly PreviousInvocationTime: Date;
-  readonly NextInvocationTime: Date;
-  readonly ErrorReportConfiguration: ErrorReportConfiguration;
-  readonly TargetDestination: TargetDestination;
-  readonly LastRunStatus: string;
+  readonly PreviousInvocationTime?: Date;
+  readonly NextInvocationTime?: Date;
+  readonly ErrorReportConfiguration?: ErrorReportConfiguration;
+  readonly TargetDestination?: TargetDestination;
+  readonly LastRunStatus?: string;
 }
 
-interface ScheduledQueryDescription {
+export interface ScheduledQueryDescription {
   readonly Arn: string;
   readonly Name: string;
   readonly QueryString: string;
-  readonly CreationTime: Date;
+  readonly CreationTime?: Date;
   readonly State: string;
-  readonly PreviousInvocationTime: Date;
-  readonly NextInvocationTime: Date;
+  readonly PreviousInvocationTime?: Date;
+  readonly NextInvocationTime?: Date;
   readonly ScheduleConfiguration: ScheduleConfiguration;
   readonly NotificationConfiguration: NotificationConfiguration;
-  readonly TargetConfiguration: TargetConfiguration;
-  readonly ScheduledQueryExecutionRoleArn: string;
-  readonly KmsKeyId: string;
-  readonly ErrorReportConfiguration: ErrorReportConfiguration;
-  readonly LastRunSummary: ScheduledQueryRunSummary;
-  readonly RecentlyFailedRuns: [];
+  readonly TargetConfiguration?: TargetConfiguration;
+  readonly ScheduledQueryExecutionRoleArn?: string;
+  readonly KmsKeyId?: string;
+  readonly ErrorReportConfiguration?: ErrorReportConfiguration;
+  readonly LastRunSummary?: ScheduledQueryRunSummary;
+  readonly RecentlyFailedRuns?: [];
 }
 
-interface ScheduledQueryRunSummary {
-  readonly InvocationTime: Date;
-  readonly TriggerTime: Date;
-  readonly RunStatus: string;
-  readonly ExecutionStats: ExecutionStats;
-  readonly ErrorReportLocation: ErrorReportLocation;
-  readonly FailureReason: string;
+export interface ScheduledQueryRunSummary {
+  readonly InvocationTime?: Date;
+  readonly TriggerTime?: Date;
+  readonly RunStatus?: string;
+  readonly ExecutionStats?: ExecutionStats;
+  readonly ErrorReportLocation?: ErrorReportLocation;
+  readonly FailureReason?: string;
 }
 
-interface SelectColumn {
-  readonly Name: string;
-  readonly Type: Type;
-  readonly DatabaseName: string;
-  readonly TableName: string;
-  readonly Aliased: boolean;
+export interface SelectColumn {
+  readonly Name?: string;
+  readonly Type?: Type;
+  readonly DatabaseName?: string;
+  readonly TableName?: string;
+  readonly Aliased?: boolean;
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface SnsConfiguration {
+export interface SnsConfiguration {
   readonly TopicArn: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TargetConfiguration {
+export interface TargetConfiguration {
   readonly TimestreamConfiguration: TimestreamConfiguration;
 }
 
-interface TargetDestination {
-  readonly TimestreamDestination: TimestreamDestination;
+export interface TargetDestination {
+  readonly TimestreamDestination?: TimestreamDestination;
 }
 
-interface ThrottlingException {
-  readonly Message: string;
+export interface ThrottlingException {
+  readonly Message?: string;
 }
 
-interface TimeSeriesDataPoint {
+export interface TimeSeriesDataPoint {
   readonly Time: string;
   readonly Value: Datum;
 }
 
-interface TimestreamConfiguration {
+export interface TimestreamConfiguration {
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly TimeColumn: string;
   readonly DimensionMappings: [];
-  readonly MultiMeasureMappings: MultiMeasureMappings;
-  readonly MixedMeasureMappings: [];
-  readonly MeasureNameColumn: string;
+  readonly MultiMeasureMappings?: MultiMeasureMappings;
+  readonly MixedMeasureMappings?: [];
+  readonly MeasureNameColumn?: string;
 }
 
-interface TimestreamDestination {
-  readonly DatabaseName: string;
-  readonly TableName: string;
+export interface TimestreamDestination {
+  readonly DatabaseName?: string;
+  readonly TableName?: string;
 }
 
-interface Type {
-  readonly ScalarType: string;
-  readonly ArrayColumnInfo: ColumnInfo;
-  readonly TimeSeriesMeasureValueColumnInfo: ColumnInfo;
-  readonly RowColumnInfo: [];
+export interface Type {
+  readonly ScalarType?: string;
+  readonly ArrayColumnInfo?: ColumnInfo;
+  readonly TimeSeriesMeasureValueColumnInfo?: ColumnInfo;
+  readonly RowColumnInfo?: [];
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateScheduledQueryRequest {
+export interface UpdateScheduledQueryRequest {
   readonly ScheduledQueryArn: string;
   readonly State: string;
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

@@ -4,16 +4,20 @@
 export interface AcceptEnvironmentAccountConnection {
   readonly id: string;
 }
+
 export interface CancelEnvironmentDeployment {
   readonly environmentName: string;
 }
+
 export interface CancelServiceInstanceDeployment {
   readonly serviceInstanceName: string;
   readonly serviceName: string;
 }
+
 export interface CancelServicePipelineDeployment {
   readonly serviceName: string;
 }
+
 export interface CreateEnvironment {
   readonly description?: string;
   readonly environmentAccountConnectionId?: string;
@@ -26,6 +30,7 @@ export interface CreateEnvironment {
   readonly templateMinorVersion?: string;
   readonly templateName: string;
 }
+
 export interface CreateEnvironmentAccountConnection {
   readonly clientToken?: string;
   readonly environmentName: string;
@@ -33,6 +38,7 @@ export interface CreateEnvironmentAccountConnection {
   readonly roleArn: string;
   readonly tags?: [];
 }
+
 export interface CreateEnvironmentTemplate {
   readonly description?: string;
   readonly displayName?: string;
@@ -41,6 +47,7 @@ export interface CreateEnvironmentTemplate {
   readonly provisioning?: string;
   readonly tags?: [];
 }
+
 export interface CreateEnvironmentTemplateVersion {
   readonly clientToken?: string;
   readonly description?: string;
@@ -49,12 +56,14 @@ export interface CreateEnvironmentTemplateVersion {
   readonly tags?: [];
   readonly templateName: string;
 }
+
 export interface CreateRepository {
   readonly connectionArn: string;
   readonly encryptionKey?: string;
   readonly name: string;
   readonly provider: string;
 }
+
 export interface CreateService {
   readonly branchName?: string;
   readonly description?: string;
@@ -67,6 +76,7 @@ export interface CreateService {
   readonly templateMinorVersion?: string;
   readonly templateName: string;
 }
+
 export interface CreateServiceTemplate {
   readonly description?: string;
   readonly displayName?: string;
@@ -75,6 +85,7 @@ export interface CreateServiceTemplate {
   readonly pipelineProvisioning?: string;
   readonly tags?: [];
 }
+
 export interface CreateServiceTemplateVersion {
   readonly clientToken?: string;
   readonly compatibleEnvironmentTemplates: [];
@@ -84,6 +95,7 @@ export interface CreateServiceTemplateVersion {
   readonly tags?: [];
   readonly templateName: string;
 }
+
 export interface CreateTemplateSyncConfig {
   readonly branch: string;
   readonly repositoryName: string;
@@ -92,89 +104,112 @@ export interface CreateTemplateSyncConfig {
   readonly templateName: string;
   readonly templateType: string;
 }
+
 export interface DeleteEnvironment {
   readonly name: string;
 }
+
 export interface DeleteEnvironmentAccountConnection {
   readonly id: string;
 }
+
 export interface DeleteEnvironmentTemplate {
   readonly name: string;
 }
+
 export interface DeleteEnvironmentTemplateVersion {
   readonly majorVersion: string;
   readonly minorVersion: string;
   readonly templateName: string;
 }
+
 export interface DeleteRepository {
   readonly name: string;
   readonly provider: string;
 }
+
 export interface DeleteService {
   readonly name: string;
 }
+
 export interface DeleteServiceTemplate {
   readonly name: string;
 }
+
 export interface DeleteServiceTemplateVersion {
   readonly majorVersion: string;
   readonly minorVersion: string;
   readonly templateName: string;
 }
+
 export interface DeleteTemplateSyncConfig {
   readonly templateName: string;
   readonly templateType: string;
 }
+
 export interface GetAccountSettings {
 }
+
 export interface GetEnvironment {
   readonly name: string;
 }
+
 export interface GetEnvironmentAccountConnection {
   readonly id: string;
 }
+
 export interface GetEnvironmentTemplate {
   readonly name: string;
 }
+
 export interface GetEnvironmentTemplateVersion {
   readonly majorVersion: string;
   readonly minorVersion: string;
   readonly templateName: string;
 }
+
 export interface GetRepository {
   readonly name: string;
   readonly provider: string;
 }
+
 export interface GetRepositorySyncStatus {
   readonly branch: string;
   readonly repositoryName: string;
   readonly repositoryProvider: string;
   readonly syncType: string;
 }
+
 export interface GetService {
   readonly name: string;
 }
+
 export interface GetServiceInstance {
   readonly name: string;
   readonly serviceName: string;
 }
+
 export interface GetServiceTemplate {
   readonly name: string;
 }
+
 export interface GetServiceTemplateVersion {
   readonly majorVersion: string;
   readonly minorVersion: string;
   readonly templateName: string;
 }
+
 export interface GetTemplateSyncConfig {
   readonly templateName: string;
   readonly templateType: string;
 }
+
 export interface GetTemplateSyncStatus {
   readonly templateName: string;
   readonly templateType: string;
   readonly templateVersion: string;
 }
+
 export interface ListEnvironmentAccountConnections {
   readonly environmentName?: string;
   readonly maxResults?: number;
@@ -182,81 +217,98 @@ export interface ListEnvironmentAccountConnections {
   readonly requestedBy: string;
   readonly statuses?: [];
 }
+
 export interface ListEnvironmentOutputs {
   readonly environmentName: string;
   readonly nextToken?: string;
 }
+
 export interface ListEnvironmentProvisionedResources {
   readonly environmentName: string;
   readonly nextToken?: string;
 }
+
 export interface ListEnvironmentTemplateVersions {
   readonly majorVersion?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly templateName: string;
 }
+
 export interface ListEnvironmentTemplates {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListEnvironments {
   readonly environmentTemplates?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListRepositories {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListRepositorySyncDefinitions {
   readonly nextToken?: string;
   readonly repositoryName: string;
   readonly repositoryProvider: string;
   readonly syncType: string;
 }
+
 export interface ListServiceInstanceOutputs {
   readonly nextToken?: string;
   readonly serviceInstanceName: string;
   readonly serviceName: string;
 }
+
 export interface ListServiceInstanceProvisionedResources {
   readonly nextToken?: string;
   readonly serviceInstanceName: string;
   readonly serviceName: string;
 }
+
 export interface ListServiceInstances {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly serviceName?: string;
 }
+
 export interface ListServicePipelineOutputs {
   readonly nextToken?: string;
   readonly serviceName: string;
 }
+
 export interface ListServicePipelineProvisionedResources {
   readonly nextToken?: string;
   readonly serviceName: string;
 }
+
 export interface ListServiceTemplateVersions {
   readonly majorVersion?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly templateName: string;
 }
+
 export interface ListServiceTemplates {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListServices {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly resourceArn: string;
 }
+
 export interface NotifyResourceDeploymentStatusChange {
   readonly deploymentId?: string;
   readonly outputs?: [];
@@ -264,21 +316,26 @@ export interface NotifyResourceDeploymentStatusChange {
   readonly status: string;
   readonly statusMessage?: string;
 }
+
 export interface RejectEnvironmentAccountConnection {
   readonly id: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: [];
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateAccountSettings {
   readonly pipelineProvisioningRepository?: RepositoryBranchInput;
   readonly pipelineServiceRoleArn?: string;
 }
+
 export interface UpdateEnvironment {
   readonly deploymentType: string;
   readonly description?: string;
@@ -290,15 +347,18 @@ export interface UpdateEnvironment {
   readonly templateMajorVersion?: string;
   readonly templateMinorVersion?: string;
 }
+
 export interface UpdateEnvironmentAccountConnection {
   readonly id: string;
   readonly roleArn: string;
 }
+
 export interface UpdateEnvironmentTemplate {
   readonly description?: string;
   readonly displayName?: string;
   readonly name: string;
 }
+
 export interface UpdateEnvironmentTemplateVersion {
   readonly description?: string;
   readonly majorVersion: string;
@@ -306,11 +366,13 @@ export interface UpdateEnvironmentTemplateVersion {
   readonly status?: string;
   readonly templateName: string;
 }
+
 export interface UpdateService {
   readonly description?: string;
   readonly name: string;
   readonly spec?: string;
 }
+
 export interface UpdateServiceInstance {
   readonly deploymentType: string;
   readonly name: string;
@@ -319,6 +381,7 @@ export interface UpdateServiceInstance {
   readonly templateMajorVersion?: string;
   readonly templateMinorVersion?: string;
 }
+
 export interface UpdateServicePipeline {
   readonly deploymentType: string;
   readonly serviceName: string;
@@ -326,11 +389,13 @@ export interface UpdateServicePipeline {
   readonly templateMajorVersion?: string;
   readonly templateMinorVersion?: string;
 }
+
 export interface UpdateServiceTemplate {
   readonly description?: string;
   readonly displayName?: string;
   readonly name: string;
 }
+
 export interface UpdateServiceTemplateVersion {
   readonly compatibleEnvironmentTemplates?: [];
   readonly description?: string;
@@ -339,6 +404,7 @@ export interface UpdateServiceTemplateVersion {
   readonly status?: string;
   readonly templateName: string;
 }
+
 export interface UpdateTemplateSyncConfig {
   readonly branch: string;
   readonly repositoryName: string;
@@ -348,286 +414,284 @@ export interface UpdateTemplateSyncConfig {
   readonly templateType: string;
 }
 
-
-
-interface AcceptEnvironmentAccountConnectionInput {
+export interface AcceptEnvironmentAccountConnectionInput {
   readonly id: string;
 }
 
-interface AcceptEnvironmentAccountConnectionOutput {
+export interface AcceptEnvironmentAccountConnectionOutput {
   readonly environmentAccountConnection: EnvironmentAccountConnection;
 }
 
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
 }
 
-interface AccountSettings {
-  readonly pipelineProvisioningRepository: RepositoryBranch;
-  readonly pipelineServiceRoleArn: string;
+export interface AccountSettings {
+  readonly pipelineProvisioningRepository?: RepositoryBranch;
+  readonly pipelineServiceRoleArn?: string;
 }
 
-interface CancelEnvironmentDeploymentInput {
+export interface CancelEnvironmentDeploymentInput {
   readonly environmentName: string;
 }
 
-interface CancelEnvironmentDeploymentOutput {
+export interface CancelEnvironmentDeploymentOutput {
   readonly environment: Environment;
 }
 
-interface CancelServiceInstanceDeploymentInput {
+export interface CancelServiceInstanceDeploymentInput {
   readonly serviceInstanceName: string;
   readonly serviceName: string;
 }
 
-interface CancelServiceInstanceDeploymentOutput {
+export interface CancelServiceInstanceDeploymentOutput {
   readonly serviceInstance: ServiceInstance;
 }
 
-interface CancelServicePipelineDeploymentInput {
+export interface CancelServicePipelineDeploymentInput {
   readonly serviceName: string;
 }
 
-interface CancelServicePipelineDeploymentOutput {
+export interface CancelServicePipelineDeploymentOutput {
   readonly pipeline: ServicePipeline;
 }
 
-interface CompatibleEnvironmentTemplate {
+export interface CompatibleEnvironmentTemplate {
   readonly majorVersion: string;
   readonly templateName: string;
 }
 
-interface CompatibleEnvironmentTemplateInput {
+export interface CompatibleEnvironmentTemplateInput {
   readonly majorVersion: string;
   readonly templateName: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly message: string;
 }
 
-interface CreateEnvironmentAccountConnectionInput {
-  readonly clientToken: string;
+export interface CreateEnvironmentAccountConnectionInput {
+  readonly clientToken?: string;
   readonly environmentName: string;
   readonly managementAccountId: string;
   readonly roleArn: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreateEnvironmentAccountConnectionOutput {
+export interface CreateEnvironmentAccountConnectionOutput {
   readonly environmentAccountConnection: EnvironmentAccountConnection;
 }
 
-interface CreateEnvironmentInput {
-  readonly description: string;
-  readonly environmentAccountConnectionId: string;
+export interface CreateEnvironmentInput {
+  readonly description?: string;
+  readonly environmentAccountConnectionId?: string;
   readonly name: string;
-  readonly protonServiceRoleArn: string;
-  readonly provisioningRepository: RepositoryBranchInput;
+  readonly protonServiceRoleArn?: string;
+  readonly provisioningRepository?: RepositoryBranchInput;
   readonly spec: string;
-  readonly tags: [];
+  readonly tags?: [];
   readonly templateMajorVersion: string;
-  readonly templateMinorVersion: string;
+  readonly templateMinorVersion?: string;
   readonly templateName: string;
 }
 
-interface CreateEnvironmentOutput {
+export interface CreateEnvironmentOutput {
   readonly environment: Environment;
 }
 
-interface CreateEnvironmentTemplateInput {
-  readonly description: string;
-  readonly displayName: string;
-  readonly encryptionKey: string;
+export interface CreateEnvironmentTemplateInput {
+  readonly description?: string;
+  readonly displayName?: string;
+  readonly encryptionKey?: string;
   readonly name: string;
-  readonly provisioning: string;
-  readonly tags: [];
+  readonly provisioning?: string;
+  readonly tags?: [];
 }
 
-interface CreateEnvironmentTemplateOutput {
+export interface CreateEnvironmentTemplateOutput {
   readonly environmentTemplate: EnvironmentTemplate;
 }
 
-interface CreateEnvironmentTemplateVersionInput {
-  readonly clientToken: string;
-  readonly description: string;
-  readonly majorVersion: string;
+export interface CreateEnvironmentTemplateVersionInput {
+  readonly clientToken?: string;
+  readonly description?: string;
+  readonly majorVersion?: string;
   readonly source: TemplateVersionSourceInput;
-  readonly tags: [];
+  readonly tags?: [];
   readonly templateName: string;
 }
 
-interface CreateEnvironmentTemplateVersionOutput {
+export interface CreateEnvironmentTemplateVersionOutput {
   readonly environmentTemplateVersion: EnvironmentTemplateVersion;
 }
 
-interface CreateRepositoryInput {
+export interface CreateRepositoryInput {
   readonly connectionArn: string;
-  readonly encryptionKey: string;
+  readonly encryptionKey?: string;
   readonly name: string;
   readonly provider: string;
 }
 
-interface CreateRepositoryOutput {
+export interface CreateRepositoryOutput {
   readonly repository: Repository;
 }
 
-interface CreateServiceInput {
-  readonly branchName: string;
-  readonly description: string;
+export interface CreateServiceInput {
+  readonly branchName?: string;
+  readonly description?: string;
   readonly name: string;
-  readonly repositoryConnectionArn: string;
-  readonly repositoryId: string;
+  readonly repositoryConnectionArn?: string;
+  readonly repositoryId?: string;
   readonly spec: string;
-  readonly tags: [];
+  readonly tags?: [];
   readonly templateMajorVersion: string;
-  readonly templateMinorVersion: string;
+  readonly templateMinorVersion?: string;
   readonly templateName: string;
 }
 
-interface CreateServiceOutput {
+export interface CreateServiceOutput {
   readonly service: Service;
 }
 
-interface CreateServiceTemplateInput {
-  readonly description: string;
-  readonly displayName: string;
-  readonly encryptionKey: string;
+export interface CreateServiceTemplateInput {
+  readonly description?: string;
+  readonly displayName?: string;
+  readonly encryptionKey?: string;
   readonly name: string;
-  readonly pipelineProvisioning: string;
-  readonly tags: [];
+  readonly pipelineProvisioning?: string;
+  readonly tags?: [];
 }
 
-interface CreateServiceTemplateOutput {
+export interface CreateServiceTemplateOutput {
   readonly serviceTemplate: ServiceTemplate;
 }
 
-interface CreateServiceTemplateVersionInput {
-  readonly clientToken: string;
+export interface CreateServiceTemplateVersionInput {
+  readonly clientToken?: string;
   readonly compatibleEnvironmentTemplates: [];
-  readonly description: string;
-  readonly majorVersion: string;
+  readonly description?: string;
+  readonly majorVersion?: string;
   readonly source: TemplateVersionSourceInput;
-  readonly tags: [];
+  readonly tags?: [];
   readonly templateName: string;
 }
 
-interface CreateServiceTemplateVersionOutput {
+export interface CreateServiceTemplateVersionOutput {
   readonly serviceTemplateVersion: ServiceTemplateVersion;
 }
 
-interface CreateTemplateSyncConfigInput {
+export interface CreateTemplateSyncConfigInput {
   readonly branch: string;
   readonly repositoryName: string;
   readonly repositoryProvider: string;
-  readonly subdirectory: string;
+  readonly subdirectory?: string;
   readonly templateName: string;
   readonly templateType: string;
 }
 
-interface CreateTemplateSyncConfigOutput {
-  readonly templateSyncConfig: TemplateSyncConfig;
+export interface CreateTemplateSyncConfigOutput {
+  readonly templateSyncConfig?: TemplateSyncConfig;
 }
 
-interface DeleteEnvironmentAccountConnectionInput {
+export interface DeleteEnvironmentAccountConnectionInput {
   readonly id: string;
 }
 
-interface DeleteEnvironmentAccountConnectionOutput {
-  readonly environmentAccountConnection: EnvironmentAccountConnection;
+export interface DeleteEnvironmentAccountConnectionOutput {
+  readonly environmentAccountConnection?: EnvironmentAccountConnection;
 }
 
-interface DeleteEnvironmentInput {
+export interface DeleteEnvironmentInput {
   readonly name: string;
 }
 
-interface DeleteEnvironmentOutput {
-  readonly environment: Environment;
+export interface DeleteEnvironmentOutput {
+  readonly environment?: Environment;
 }
 
-interface DeleteEnvironmentTemplateInput {
+export interface DeleteEnvironmentTemplateInput {
   readonly name: string;
 }
 
-interface DeleteEnvironmentTemplateOutput {
-  readonly environmentTemplate: EnvironmentTemplate;
+export interface DeleteEnvironmentTemplateOutput {
+  readonly environmentTemplate?: EnvironmentTemplate;
 }
 
-interface DeleteEnvironmentTemplateVersionInput {
+export interface DeleteEnvironmentTemplateVersionInput {
   readonly majorVersion: string;
   readonly minorVersion: string;
   readonly templateName: string;
 }
 
-interface DeleteEnvironmentTemplateVersionOutput {
-  readonly environmentTemplateVersion: EnvironmentTemplateVersion;
+export interface DeleteEnvironmentTemplateVersionOutput {
+  readonly environmentTemplateVersion?: EnvironmentTemplateVersion;
 }
 
-interface DeleteRepositoryInput {
+export interface DeleteRepositoryInput {
   readonly name: string;
   readonly provider: string;
 }
 
-interface DeleteRepositoryOutput {
-  readonly repository: Repository;
+export interface DeleteRepositoryOutput {
+  readonly repository?: Repository;
 }
 
-interface DeleteServiceInput {
+export interface DeleteServiceInput {
   readonly name: string;
 }
 
-interface DeleteServiceOutput {
-  readonly service: Service;
+export interface DeleteServiceOutput {
+  readonly service?: Service;
 }
 
-interface DeleteServiceTemplateInput {
+export interface DeleteServiceTemplateInput {
   readonly name: string;
 }
 
-interface DeleteServiceTemplateOutput {
-  readonly serviceTemplate: ServiceTemplate;
+export interface DeleteServiceTemplateOutput {
+  readonly serviceTemplate?: ServiceTemplate;
 }
 
-interface DeleteServiceTemplateVersionInput {
+export interface DeleteServiceTemplateVersionInput {
   readonly majorVersion: string;
   readonly minorVersion: string;
   readonly templateName: string;
 }
 
-interface DeleteServiceTemplateVersionOutput {
-  readonly serviceTemplateVersion: ServiceTemplateVersion;
+export interface DeleteServiceTemplateVersionOutput {
+  readonly serviceTemplateVersion?: ServiceTemplateVersion;
 }
 
-interface DeleteTemplateSyncConfigInput {
+export interface DeleteTemplateSyncConfigInput {
   readonly templateName: string;
   readonly templateType: string;
 }
 
-interface DeleteTemplateSyncConfigOutput {
-  readonly templateSyncConfig: TemplateSyncConfig;
+export interface DeleteTemplateSyncConfigOutput {
+  readonly templateSyncConfig?: TemplateSyncConfig;
 }
 
-interface Environment {
+export interface Environment {
   readonly arn: string;
   readonly createdAt: Date;
   readonly deploymentStatus: string;
-  readonly deploymentStatusMessage: string;
-  readonly description: string;
-  readonly environmentAccountConnectionId: string;
-  readonly environmentAccountId: string;
+  readonly deploymentStatusMessage?: string;
+  readonly description?: string;
+  readonly environmentAccountConnectionId?: string;
+  readonly environmentAccountId?: string;
   readonly lastDeploymentAttemptedAt: Date;
   readonly lastDeploymentSucceededAt: Date;
   readonly name: string;
-  readonly protonServiceRoleArn: string;
-  readonly provisioning: string;
-  readonly provisioningRepository: RepositoryBranch;
-  readonly spec: string;
+  readonly protonServiceRoleArn?: string;
+  readonly provisioning?: string;
+  readonly provisioningRepository?: RepositoryBranch;
+  readonly spec?: string;
   readonly templateMajorVersion: string;
   readonly templateMinorVersion: string;
   readonly templateName: string;
 }
 
-interface EnvironmentAccountConnection {
+export interface EnvironmentAccountConnection {
   readonly arn: string;
   readonly environmentAccountId: string;
   readonly environmentName: string;
@@ -639,7 +703,7 @@ interface EnvironmentAccountConnection {
   readonly status: string;
 }
 
-interface EnvironmentAccountConnectionSummary {
+export interface EnvironmentAccountConnectionSummary {
   readonly arn: string;
   readonly environmentAccountId: string;
   readonly environmentName: string;
@@ -651,466 +715,466 @@ interface EnvironmentAccountConnectionSummary {
   readonly status: string;
 }
 
-interface EnvironmentSummary {
+export interface EnvironmentSummary {
   readonly arn: string;
   readonly createdAt: Date;
   readonly deploymentStatus: string;
-  readonly deploymentStatusMessage: string;
-  readonly description: string;
-  readonly environmentAccountConnectionId: string;
-  readonly environmentAccountId: string;
+  readonly deploymentStatusMessage?: string;
+  readonly description?: string;
+  readonly environmentAccountConnectionId?: string;
+  readonly environmentAccountId?: string;
   readonly lastDeploymentAttemptedAt: Date;
   readonly lastDeploymentSucceededAt: Date;
   readonly name: string;
-  readonly protonServiceRoleArn: string;
-  readonly provisioning: string;
+  readonly protonServiceRoleArn?: string;
+  readonly provisioning?: string;
   readonly templateMajorVersion: string;
   readonly templateMinorVersion: string;
   readonly templateName: string;
 }
 
-interface EnvironmentTemplate {
+export interface EnvironmentTemplate {
   readonly arn: string;
   readonly createdAt: Date;
-  readonly description: string;
-  readonly displayName: string;
-  readonly encryptionKey: string;
+  readonly description?: string;
+  readonly displayName?: string;
+  readonly encryptionKey?: string;
   readonly lastModifiedAt: Date;
   readonly name: string;
-  readonly provisioning: string;
-  readonly recommendedVersion: string;
+  readonly provisioning?: string;
+  readonly recommendedVersion?: string;
 }
 
-interface EnvironmentTemplateFilter {
+export interface EnvironmentTemplateFilter {
   readonly majorVersion: string;
   readonly templateName: string;
 }
 
-interface EnvironmentTemplateSummary {
+export interface EnvironmentTemplateSummary {
   readonly arn: string;
   readonly createdAt: Date;
-  readonly description: string;
-  readonly displayName: string;
+  readonly description?: string;
+  readonly displayName?: string;
   readonly lastModifiedAt: Date;
   readonly name: string;
-  readonly provisioning: string;
-  readonly recommendedVersion: string;
+  readonly provisioning?: string;
+  readonly recommendedVersion?: string;
 }
 
-interface EnvironmentTemplateVersion {
+export interface EnvironmentTemplateVersion {
   readonly arn: string;
   readonly createdAt: Date;
-  readonly description: string;
+  readonly description?: string;
   readonly lastModifiedAt: Date;
   readonly majorVersion: string;
   readonly minorVersion: string;
-  readonly recommendedMinorVersion: string;
-  readonly schema: string;
+  readonly recommendedMinorVersion?: string;
+  readonly schema?: string;
   readonly status: string;
-  readonly statusMessage: string;
+  readonly statusMessage?: string;
   readonly templateName: string;
 }
 
-interface EnvironmentTemplateVersionSummary {
+export interface EnvironmentTemplateVersionSummary {
   readonly arn: string;
   readonly createdAt: Date;
-  readonly description: string;
+  readonly description?: string;
   readonly lastModifiedAt: Date;
   readonly majorVersion: string;
   readonly minorVersion: string;
-  readonly recommendedMinorVersion: string;
+  readonly recommendedMinorVersion?: string;
   readonly status: string;
-  readonly statusMessage: string;
+  readonly statusMessage?: string;
   readonly templateName: string;
 }
 
-interface GetAccountSettingsInput {
+export interface GetAccountSettingsInput {
 }
 
-interface GetAccountSettingsOutput {
-  readonly accountSettings: AccountSettings;
+export interface GetAccountSettingsOutput {
+  readonly accountSettings?: AccountSettings;
 }
 
-interface GetEnvironmentAccountConnectionInput {
+export interface GetEnvironmentAccountConnectionInput {
   readonly id: string;
 }
 
-interface GetEnvironmentAccountConnectionOutput {
+export interface GetEnvironmentAccountConnectionOutput {
   readonly environmentAccountConnection: EnvironmentAccountConnection;
 }
 
-interface GetEnvironmentInput {
+export interface GetEnvironmentInput {
   readonly name: string;
 }
 
-interface GetEnvironmentOutput {
+export interface GetEnvironmentOutput {
   readonly environment: Environment;
 }
 
-interface GetEnvironmentTemplateInput {
+export interface GetEnvironmentTemplateInput {
   readonly name: string;
 }
 
-interface GetEnvironmentTemplateOutput {
+export interface GetEnvironmentTemplateOutput {
   readonly environmentTemplate: EnvironmentTemplate;
 }
 
-interface GetEnvironmentTemplateVersionInput {
+export interface GetEnvironmentTemplateVersionInput {
   readonly majorVersion: string;
   readonly minorVersion: string;
   readonly templateName: string;
 }
 
-interface GetEnvironmentTemplateVersionOutput {
+export interface GetEnvironmentTemplateVersionOutput {
   readonly environmentTemplateVersion: EnvironmentTemplateVersion;
 }
 
-interface GetRepositoryInput {
+export interface GetRepositoryInput {
   readonly name: string;
   readonly provider: string;
 }
 
-interface GetRepositoryOutput {
+export interface GetRepositoryOutput {
   readonly repository: Repository;
 }
 
-interface GetRepositorySyncStatusInput {
+export interface GetRepositorySyncStatusInput {
   readonly branch: string;
   readonly repositoryName: string;
   readonly repositoryProvider: string;
   readonly syncType: string;
 }
 
-interface GetRepositorySyncStatusOutput {
-  readonly latestSync: RepositorySyncAttempt;
+export interface GetRepositorySyncStatusOutput {
+  readonly latestSync?: RepositorySyncAttempt;
 }
 
-interface GetServiceInput {
+export interface GetServiceInput {
   readonly name: string;
 }
 
-interface GetServiceInstanceInput {
+export interface GetServiceInstanceInput {
   readonly name: string;
   readonly serviceName: string;
 }
 
-interface GetServiceInstanceOutput {
+export interface GetServiceInstanceOutput {
   readonly serviceInstance: ServiceInstance;
 }
 
-interface GetServiceOutput {
-  readonly service: Service;
+export interface GetServiceOutput {
+  readonly service?: Service;
 }
 
-interface GetServiceTemplateInput {
+export interface GetServiceTemplateInput {
   readonly name: string;
 }
 
-interface GetServiceTemplateOutput {
+export interface GetServiceTemplateOutput {
   readonly serviceTemplate: ServiceTemplate;
 }
 
-interface GetServiceTemplateVersionInput {
+export interface GetServiceTemplateVersionInput {
   readonly majorVersion: string;
   readonly minorVersion: string;
   readonly templateName: string;
 }
 
-interface GetServiceTemplateVersionOutput {
+export interface GetServiceTemplateVersionOutput {
   readonly serviceTemplateVersion: ServiceTemplateVersion;
 }
 
-interface GetTemplateSyncConfigInput {
+export interface GetTemplateSyncConfigInput {
   readonly templateName: string;
   readonly templateType: string;
 }
 
-interface GetTemplateSyncConfigOutput {
-  readonly templateSyncConfig: TemplateSyncConfig;
+export interface GetTemplateSyncConfigOutput {
+  readonly templateSyncConfig?: TemplateSyncConfig;
 }
 
-interface GetTemplateSyncStatusInput {
+export interface GetTemplateSyncStatusInput {
   readonly templateName: string;
   readonly templateType: string;
   readonly templateVersion: string;
 }
 
-interface GetTemplateSyncStatusOutput {
-  readonly desiredState: Revision;
-  readonly latestSuccessfulSync: ResourceSyncAttempt;
-  readonly latestSync: ResourceSyncAttempt;
+export interface GetTemplateSyncStatusOutput {
+  readonly desiredState?: Revision;
+  readonly latestSuccessfulSync?: ResourceSyncAttempt;
+  readonly latestSync?: ResourceSyncAttempt;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
 }
 
-interface ListEnvironmentAccountConnectionsInput {
-  readonly environmentName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListEnvironmentAccountConnectionsInput {
+  readonly environmentName?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly requestedBy: string;
-  readonly statuses: [];
+  readonly statuses?: [];
 }
 
-interface ListEnvironmentAccountConnectionsOutput {
+export interface ListEnvironmentAccountConnectionsOutput {
   readonly environmentAccountConnections: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListEnvironmentOutputsInput {
+export interface ListEnvironmentOutputsInput {
   readonly environmentName: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListEnvironmentOutputsOutput {
-  readonly nextToken: string;
+export interface ListEnvironmentOutputsOutput {
+  readonly nextToken?: string;
   readonly outputs: [];
 }
 
-interface ListEnvironmentProvisionedResourcesInput {
+export interface ListEnvironmentProvisionedResourcesInput {
   readonly environmentName: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListEnvironmentProvisionedResourcesOutput {
-  readonly nextToken: string;
+export interface ListEnvironmentProvisionedResourcesOutput {
+  readonly nextToken?: string;
   readonly provisionedResources: [];
 }
 
-interface ListEnvironmentTemplateVersionsInput {
-  readonly majorVersion: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListEnvironmentTemplateVersionsInput {
+  readonly majorVersion?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly templateName: string;
 }
 
-interface ListEnvironmentTemplateVersionsOutput {
-  readonly nextToken: string;
+export interface ListEnvironmentTemplateVersionsOutput {
+  readonly nextToken?: string;
   readonly templateVersions: [];
 }
 
-interface ListEnvironmentTemplatesInput {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListEnvironmentTemplatesInput {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListEnvironmentTemplatesOutput {
-  readonly nextToken: string;
+export interface ListEnvironmentTemplatesOutput {
+  readonly nextToken?: string;
   readonly templates: [];
 }
 
-interface ListEnvironmentsInput {
-  readonly environmentTemplates: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListEnvironmentsInput {
+  readonly environmentTemplates?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListEnvironmentsOutput {
+export interface ListEnvironmentsOutput {
   readonly environments: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListRepositoriesInput {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListRepositoriesInput {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListRepositoriesOutput {
-  readonly nextToken: string;
+export interface ListRepositoriesOutput {
+  readonly nextToken?: string;
   readonly repositories: [];
 }
 
-interface ListRepositorySyncDefinitionsInput {
-  readonly nextToken: string;
+export interface ListRepositorySyncDefinitionsInput {
+  readonly nextToken?: string;
   readonly repositoryName: string;
   readonly repositoryProvider: string;
   readonly syncType: string;
 }
 
-interface ListRepositorySyncDefinitionsOutput {
-  readonly nextToken: string;
+export interface ListRepositorySyncDefinitionsOutput {
+  readonly nextToken?: string;
   readonly syncDefinitions: [];
 }
 
-interface ListServiceInstanceOutputsInput {
-  readonly nextToken: string;
+export interface ListServiceInstanceOutputsInput {
+  readonly nextToken?: string;
   readonly serviceInstanceName: string;
   readonly serviceName: string;
 }
 
-interface ListServiceInstanceOutputsOutput {
-  readonly nextToken: string;
+export interface ListServiceInstanceOutputsOutput {
+  readonly nextToken?: string;
   readonly outputs: [];
 }
 
-interface ListServiceInstanceProvisionedResourcesInput {
-  readonly nextToken: string;
+export interface ListServiceInstanceProvisionedResourcesInput {
+  readonly nextToken?: string;
   readonly serviceInstanceName: string;
   readonly serviceName: string;
 }
 
-interface ListServiceInstanceProvisionedResourcesOutput {
-  readonly nextToken: string;
+export interface ListServiceInstanceProvisionedResourcesOutput {
+  readonly nextToken?: string;
   readonly provisionedResources: [];
 }
 
-interface ListServiceInstancesInput {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly serviceName: string;
+export interface ListServiceInstancesInput {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly serviceName?: string;
 }
 
-interface ListServiceInstancesOutput {
-  readonly nextToken: string;
+export interface ListServiceInstancesOutput {
+  readonly nextToken?: string;
   readonly serviceInstances: [];
 }
 
-interface ListServicePipelineOutputsInput {
-  readonly nextToken: string;
+export interface ListServicePipelineOutputsInput {
+  readonly nextToken?: string;
   readonly serviceName: string;
 }
 
-interface ListServicePipelineOutputsOutput {
-  readonly nextToken: string;
+export interface ListServicePipelineOutputsOutput {
+  readonly nextToken?: string;
   readonly outputs: [];
 }
 
-interface ListServicePipelineProvisionedResourcesInput {
-  readonly nextToken: string;
+export interface ListServicePipelineProvisionedResourcesInput {
+  readonly nextToken?: string;
   readonly serviceName: string;
 }
 
-interface ListServicePipelineProvisionedResourcesOutput {
-  readonly nextToken: string;
+export interface ListServicePipelineProvisionedResourcesOutput {
+  readonly nextToken?: string;
   readonly provisionedResources: [];
 }
 
-interface ListServiceTemplateVersionsInput {
-  readonly majorVersion: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListServiceTemplateVersionsInput {
+  readonly majorVersion?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly templateName: string;
 }
 
-interface ListServiceTemplateVersionsOutput {
-  readonly nextToken: string;
+export interface ListServiceTemplateVersionsOutput {
+  readonly nextToken?: string;
   readonly templateVersions: [];
 }
 
-interface ListServiceTemplatesInput {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListServiceTemplatesInput {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListServiceTemplatesOutput {
-  readonly nextToken: string;
+export interface ListServiceTemplatesOutput {
+  readonly nextToken?: string;
   readonly templates: [];
 }
 
-interface ListServicesInput {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListServicesInput {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListServicesOutput {
-  readonly nextToken: string;
+export interface ListServicesOutput {
+  readonly nextToken?: string;
   readonly services: [];
 }
 
-interface ListTagsForResourceInput {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListTagsForResourceInput {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceOutput {
-  readonly nextToken: string;
+export interface ListTagsForResourceOutput {
+  readonly nextToken?: string;
   readonly tags: [];
 }
 
-interface NotifyResourceDeploymentStatusChangeInput {
-  readonly deploymentId: string;
-  readonly outputs: [];
+export interface NotifyResourceDeploymentStatusChangeInput {
+  readonly deploymentId?: string;
+  readonly outputs?: [];
   readonly resourceArn: string;
   readonly status: string;
-  readonly statusMessage: string;
+  readonly statusMessage?: string;
 }
 
-interface NotifyResourceDeploymentStatusChangeOutput {
+export interface NotifyResourceDeploymentStatusChangeOutput {
 }
 
-interface Output {
-  readonly key: string;
-  readonly valueString: string;
+export interface Output {
+  readonly key?: string;
+  readonly valueString?: string;
 }
 
-interface ProvisionedResource {
-  readonly identifier: string;
-  readonly name: string;
-  readonly provisioningEngine: string;
+export interface ProvisionedResource {
+  readonly identifier?: string;
+  readonly name?: string;
+  readonly provisioningEngine?: string;
 }
 
-interface RejectEnvironmentAccountConnectionInput {
+export interface RejectEnvironmentAccountConnectionInput {
   readonly id: string;
 }
 
-interface RejectEnvironmentAccountConnectionOutput {
+export interface RejectEnvironmentAccountConnectionOutput {
   readonly environmentAccountConnection: EnvironmentAccountConnection;
 }
 
-interface Repository {
+export interface Repository {
   readonly arn: string;
   readonly connectionArn: string;
-  readonly encryptionKey: string;
+  readonly encryptionKey?: string;
   readonly name: string;
   readonly provider: string;
 }
 
-interface RepositoryBranch {
+export interface RepositoryBranch {
   readonly arn: string;
   readonly branch: string;
   readonly name: string;
   readonly provider: string;
 }
 
-interface RepositoryBranchInput {
+export interface RepositoryBranchInput {
   readonly branch: string;
   readonly name: string;
   readonly provider: string;
 }
 
-interface RepositorySummary {
+export interface RepositorySummary {
   readonly arn: string;
   readonly name: string;
   readonly provider: string;
 }
 
-interface RepositorySyncAttempt {
+export interface RepositorySyncAttempt {
   readonly events: [];
   readonly startedAt: Date;
   readonly status: string;
 }
 
-interface RepositorySyncDefinition {
+export interface RepositorySyncDefinition {
   readonly branch: string;
   readonly directory: string;
   readonly parent: string;
   readonly target: string;
 }
 
-interface RepositorySyncEvent {
+export interface RepositorySyncEvent {
   readonly event: string;
-  readonly externalId: string;
+  readonly externalId?: string;
   readonly time: Date;
   readonly type: string;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
 }
 
-interface ResourceSyncAttempt {
+export interface ResourceSyncAttempt {
   readonly events: [];
   readonly initialRevision: Revision;
   readonly startedAt: Date;
@@ -1119,14 +1183,14 @@ interface ResourceSyncAttempt {
   readonly targetRevision: Revision;
 }
 
-interface ResourceSyncEvent {
+export interface ResourceSyncEvent {
   readonly event: string;
-  readonly externalId: string;
+  readonly externalId?: string;
   readonly time: Date;
   readonly type: string;
 }
 
-interface Revision {
+export interface Revision {
   readonly branch: string;
   readonly directory: string;
   readonly repositoryName: string;
@@ -1134,48 +1198,48 @@ interface Revision {
   readonly sha: string;
 }
 
-interface S3ObjectSource {
+export interface S3ObjectSource {
   readonly bucket: string;
   readonly key: string;
 }
 
-interface Service {
+export interface Service {
   readonly arn: string;
-  readonly branchName: string;
+  readonly branchName?: string;
   readonly createdAt: Date;
-  readonly description: string;
+  readonly description?: string;
   readonly lastModifiedAt: Date;
   readonly name: string;
-  readonly pipeline: ServicePipeline;
-  readonly repositoryConnectionArn: string;
-  readonly repositoryId: string;
+  readonly pipeline?: ServicePipeline;
+  readonly repositoryConnectionArn?: string;
+  readonly repositoryId?: string;
   readonly spec: string;
   readonly status: string;
-  readonly statusMessage: string;
+  readonly statusMessage?: string;
   readonly templateName: string;
 }
 
-interface ServiceInstance {
+export interface ServiceInstance {
   readonly arn: string;
   readonly createdAt: Date;
   readonly deploymentStatus: string;
-  readonly deploymentStatusMessage: string;
+  readonly deploymentStatusMessage?: string;
   readonly environmentName: string;
   readonly lastDeploymentAttemptedAt: Date;
   readonly lastDeploymentSucceededAt: Date;
   readonly name: string;
   readonly serviceName: string;
-  readonly spec: string;
+  readonly spec?: string;
   readonly templateMajorVersion: string;
   readonly templateMinorVersion: string;
   readonly templateName: string;
 }
 
-interface ServiceInstanceSummary {
+export interface ServiceInstanceSummary {
   readonly arn: string;
   readonly createdAt: Date;
   readonly deploymentStatus: string;
-  readonly deploymentStatusMessage: string;
+  readonly deploymentStatusMessage?: string;
   readonly environmentName: string;
   readonly lastDeploymentAttemptedAt: Date;
   readonly lastDeploymentSucceededAt: Date;
@@ -1186,251 +1250,252 @@ interface ServiceInstanceSummary {
   readonly templateName: string;
 }
 
-interface ServicePipeline {
+export interface ServicePipeline {
   readonly arn: string;
   readonly createdAt: Date;
   readonly deploymentStatus: string;
-  readonly deploymentStatusMessage: string;
+  readonly deploymentStatusMessage?: string;
   readonly lastDeploymentAttemptedAt: Date;
   readonly lastDeploymentSucceededAt: Date;
-  readonly spec: string;
+  readonly spec?: string;
   readonly templateMajorVersion: string;
   readonly templateMinorVersion: string;
   readonly templateName: string;
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly message: string;
 }
 
-interface ServiceSummary {
+export interface ServiceSummary {
   readonly arn: string;
   readonly createdAt: Date;
-  readonly description: string;
+  readonly description?: string;
   readonly lastModifiedAt: Date;
   readonly name: string;
   readonly status: string;
-  readonly statusMessage: string;
+  readonly statusMessage?: string;
   readonly templateName: string;
 }
 
-interface ServiceTemplate {
+export interface ServiceTemplate {
   readonly arn: string;
   readonly createdAt: Date;
-  readonly description: string;
-  readonly displayName: string;
-  readonly encryptionKey: string;
+  readonly description?: string;
+  readonly displayName?: string;
+  readonly encryptionKey?: string;
   readonly lastModifiedAt: Date;
   readonly name: string;
-  readonly pipelineProvisioning: string;
-  readonly recommendedVersion: string;
+  readonly pipelineProvisioning?: string;
+  readonly recommendedVersion?: string;
 }
 
-interface ServiceTemplateSummary {
+export interface ServiceTemplateSummary {
   readonly arn: string;
   readonly createdAt: Date;
-  readonly description: string;
-  readonly displayName: string;
+  readonly description?: string;
+  readonly displayName?: string;
   readonly lastModifiedAt: Date;
   readonly name: string;
-  readonly pipelineProvisioning: string;
-  readonly recommendedVersion: string;
+  readonly pipelineProvisioning?: string;
+  readonly recommendedVersion?: string;
 }
 
-interface ServiceTemplateVersion {
+export interface ServiceTemplateVersion {
   readonly arn: string;
   readonly compatibleEnvironmentTemplates: [];
   readonly createdAt: Date;
-  readonly description: string;
+  readonly description?: string;
   readonly lastModifiedAt: Date;
   readonly majorVersion: string;
   readonly minorVersion: string;
-  readonly recommendedMinorVersion: string;
-  readonly schema: string;
+  readonly recommendedMinorVersion?: string;
+  readonly schema?: string;
   readonly status: string;
-  readonly statusMessage: string;
+  readonly statusMessage?: string;
   readonly templateName: string;
 }
 
-interface ServiceTemplateVersionSummary {
+export interface ServiceTemplateVersionSummary {
   readonly arn: string;
   readonly createdAt: Date;
-  readonly description: string;
+  readonly description?: string;
   readonly lastModifiedAt: Date;
   readonly majorVersion: string;
   readonly minorVersion: string;
-  readonly recommendedMinorVersion: string;
+  readonly recommendedMinorVersion?: string;
   readonly status: string;
-  readonly statusMessage: string;
+  readonly statusMessage?: string;
   readonly templateName: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly key: string;
   readonly value: string;
 }
 
-interface TagResourceInput {
+export interface TagResourceInput {
   readonly resourceArn: string;
   readonly tags: [];
 }
 
-interface TagResourceOutput {
+export interface TagResourceOutput {
 }
 
-interface TemplateSyncConfig {
+export interface TemplateSyncConfig {
   readonly branch: string;
   readonly repositoryName: string;
   readonly repositoryProvider: string;
-  readonly subdirectory: string;
+  readonly subdirectory?: string;
   readonly templateName: string;
   readonly templateType: string;
 }
 
-interface TemplateVersionSourceInput {
-  readonly s3: S3ObjectSource;
+export interface TemplateVersionSourceInput {
+  readonly s3?: S3ObjectSource;
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly message: string;
 }
 
-interface UntagResourceInput {
+export interface UntagResourceInput {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceOutput {
+export interface UntagResourceOutput {
 }
 
-interface UpdateAccountSettingsInput {
-  readonly pipelineProvisioningRepository: RepositoryBranchInput;
-  readonly pipelineServiceRoleArn: string;
+export interface UpdateAccountSettingsInput {
+  readonly pipelineProvisioningRepository?: RepositoryBranchInput;
+  readonly pipelineServiceRoleArn?: string;
 }
 
-interface UpdateAccountSettingsOutput {
+export interface UpdateAccountSettingsOutput {
   readonly accountSettings: AccountSettings;
 }
 
-interface UpdateEnvironmentAccountConnectionInput {
+export interface UpdateEnvironmentAccountConnectionInput {
   readonly id: string;
   readonly roleArn: string;
 }
 
-interface UpdateEnvironmentAccountConnectionOutput {
+export interface UpdateEnvironmentAccountConnectionOutput {
   readonly environmentAccountConnection: EnvironmentAccountConnection;
 }
 
-interface UpdateEnvironmentInput {
+export interface UpdateEnvironmentInput {
   readonly deploymentType: string;
-  readonly description: string;
-  readonly environmentAccountConnectionId: string;
+  readonly description?: string;
+  readonly environmentAccountConnectionId?: string;
   readonly name: string;
-  readonly protonServiceRoleArn: string;
-  readonly provisioningRepository: RepositoryBranchInput;
-  readonly spec: string;
-  readonly templateMajorVersion: string;
-  readonly templateMinorVersion: string;
+  readonly protonServiceRoleArn?: string;
+  readonly provisioningRepository?: RepositoryBranchInput;
+  readonly spec?: string;
+  readonly templateMajorVersion?: string;
+  readonly templateMinorVersion?: string;
 }
 
-interface UpdateEnvironmentOutput {
+export interface UpdateEnvironmentOutput {
   readonly environment: Environment;
 }
 
-interface UpdateEnvironmentTemplateInput {
-  readonly description: string;
-  readonly displayName: string;
+export interface UpdateEnvironmentTemplateInput {
+  readonly description?: string;
+  readonly displayName?: string;
   readonly name: string;
 }
 
-interface UpdateEnvironmentTemplateOutput {
+export interface UpdateEnvironmentTemplateOutput {
   readonly environmentTemplate: EnvironmentTemplate;
 }
 
-interface UpdateEnvironmentTemplateVersionInput {
-  readonly description: string;
+export interface UpdateEnvironmentTemplateVersionInput {
+  readonly description?: string;
   readonly majorVersion: string;
   readonly minorVersion: string;
-  readonly status: string;
+  readonly status?: string;
   readonly templateName: string;
 }
 
-interface UpdateEnvironmentTemplateVersionOutput {
+export interface UpdateEnvironmentTemplateVersionOutput {
   readonly environmentTemplateVersion: EnvironmentTemplateVersion;
 }
 
-interface UpdateServiceInput {
-  readonly description: string;
+export interface UpdateServiceInput {
+  readonly description?: string;
   readonly name: string;
-  readonly spec: string;
+  readonly spec?: string;
 }
 
-interface UpdateServiceInstanceInput {
+export interface UpdateServiceInstanceInput {
   readonly deploymentType: string;
   readonly name: string;
   readonly serviceName: string;
-  readonly spec: string;
-  readonly templateMajorVersion: string;
-  readonly templateMinorVersion: string;
+  readonly spec?: string;
+  readonly templateMajorVersion?: string;
+  readonly templateMinorVersion?: string;
 }
 
-interface UpdateServiceInstanceOutput {
+export interface UpdateServiceInstanceOutput {
   readonly serviceInstance: ServiceInstance;
 }
 
-interface UpdateServiceOutput {
+export interface UpdateServiceOutput {
   readonly service: Service;
 }
 
-interface UpdateServicePipelineInput {
+export interface UpdateServicePipelineInput {
   readonly deploymentType: string;
   readonly serviceName: string;
   readonly spec: string;
-  readonly templateMajorVersion: string;
-  readonly templateMinorVersion: string;
+  readonly templateMajorVersion?: string;
+  readonly templateMinorVersion?: string;
 }
 
-interface UpdateServicePipelineOutput {
+export interface UpdateServicePipelineOutput {
   readonly pipeline: ServicePipeline;
 }
 
-interface UpdateServiceTemplateInput {
-  readonly description: string;
-  readonly displayName: string;
+export interface UpdateServiceTemplateInput {
+  readonly description?: string;
+  readonly displayName?: string;
   readonly name: string;
 }
 
-interface UpdateServiceTemplateOutput {
+export interface UpdateServiceTemplateOutput {
   readonly serviceTemplate: ServiceTemplate;
 }
 
-interface UpdateServiceTemplateVersionInput {
-  readonly compatibleEnvironmentTemplates: [];
-  readonly description: string;
+export interface UpdateServiceTemplateVersionInput {
+  readonly compatibleEnvironmentTemplates?: [];
+  readonly description?: string;
   readonly majorVersion: string;
   readonly minorVersion: string;
-  readonly status: string;
+  readonly status?: string;
   readonly templateName: string;
 }
 
-interface UpdateServiceTemplateVersionOutput {
+export interface UpdateServiceTemplateVersionOutput {
   readonly serviceTemplateVersion: ServiceTemplateVersion;
 }
 
-interface UpdateTemplateSyncConfigInput {
+export interface UpdateTemplateSyncConfigInput {
   readonly branch: string;
   readonly repositoryName: string;
   readonly repositoryProvider: string;
-  readonly subdirectory: string;
+  readonly subdirectory?: string;
   readonly templateName: string;
   readonly templateType: string;
 }
 
-interface UpdateTemplateSyncConfigOutput {
-  readonly templateSyncConfig: TemplateSyncConfig;
+export interface UpdateTemplateSyncConfigOutput {
+  readonly templateSyncConfig?: TemplateSyncConfig;
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly message: string;
 }
+
 

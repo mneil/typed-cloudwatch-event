@@ -5,16 +5,19 @@ export interface BatchPutMessage {
   readonly channelName: string;
   readonly messages: [];
 }
+
 export interface CancelPipelineReprocessing {
   readonly pipelineName: string;
   readonly reprocessingId: string;
 }
+
 export interface CreateChannel {
   readonly channelName: string;
   readonly channelStorage?: ChannelStorage;
   readonly retentionPeriod?: RetentionPeriod;
   readonly tags?: [];
 }
+
 export interface CreateDataset {
   readonly datasetName: string;
   readonly actions: [];
@@ -25,10 +28,12 @@ export interface CreateDataset {
   readonly tags?: [];
   readonly lateDataRules?: [];
 }
+
 export interface CreateDatasetContent {
   readonly datasetName: string;
   readonly versionId?: string;
 }
+
 export interface CreateDatastore {
   readonly datastoreName: string;
   readonly datastoreStorage?: DatastoreStorage;
@@ -37,51 +42,65 @@ export interface CreateDatastore {
   readonly fileFormatConfiguration?: FileFormatConfiguration;
   readonly datastorePartitions?: DatastorePartitions;
 }
+
 export interface CreatePipeline {
   readonly pipelineName: string;
   readonly pipelineActivities: [];
   readonly tags?: [];
 }
+
 export interface DeleteChannel {
   readonly channelName: string;
 }
+
 export interface DeleteDataset {
   readonly datasetName: string;
 }
+
 export interface DeleteDatasetContent {
   readonly datasetName: string;
   readonly versionId?: string;
 }
+
 export interface DeleteDatastore {
   readonly datastoreName: string;
 }
+
 export interface DeletePipeline {
   readonly pipelineName: string;
 }
+
 export interface DescribeChannel {
   readonly channelName: string;
   readonly includeStatistics?: boolean;
 }
+
 export interface DescribeDataset {
   readonly datasetName: string;
 }
+
 export interface DescribeDatastore {
   readonly datastoreName: string;
   readonly includeStatistics?: boolean;
 }
+
 export interface DescribeLoggingOptions {
 }
+
 export interface DescribePipeline {
   readonly pipelineName: string;
 }
+
 export interface GetDatasetContent {
   readonly datasetName: string;
   readonly versionId?: string;
 }
+
 export interface ListChannels {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListDatasetContents {
   readonly datasetName: string;
   readonly nextToken?: string;
@@ -89,53 +108,65 @@ export interface ListDatasetContents {
   readonly scheduledOnOrAfter?: Date;
   readonly scheduledBefore?: Date;
 }
+
 export interface ListDatasets {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListDatastores {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListPipelines {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface PutLoggingOptions {
   readonly loggingOptions: LoggingOptions;
 }
+
 export interface RunPipelineActivity {
   readonly pipelineActivity: PipelineActivity;
   readonly payloads: [];
 }
+
 export interface SampleChannelData {
   readonly channelName: string;
   readonly maxMessages?: number;
   readonly startTime?: Date;
   readonly endTime?: Date;
 }
+
 export interface StartPipelineReprocessing {
   readonly pipelineName: string;
   readonly startTime?: Date;
   readonly endTime?: Date;
   readonly channelMessages?: ChannelMessages;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: [];
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateChannel {
   readonly channelName: string;
   readonly channelStorage?: ChannelStorage;
   readonly retentionPeriod?: RetentionPeriod;
 }
+
 export interface UpdateDataset {
   readonly datasetName: string;
   readonly actions: [];
@@ -145,799 +176,800 @@ export interface UpdateDataset {
   readonly versioningConfiguration?: VersioningConfiguration;
   readonly lateDataRules?: [];
 }
+
 export interface UpdateDatastore {
   readonly datastoreName: string;
   readonly retentionPeriod?: RetentionPeriod;
   readonly datastoreStorage?: DatastoreStorage;
   readonly fileFormatConfiguration?: FileFormatConfiguration;
 }
+
 export interface UpdatePipeline {
   readonly pipelineName: string;
   readonly pipelineActivities: [];
 }
 
-
-
-interface AddAttributesActivity {
+export interface AddAttributesActivity {
   readonly name: string;
   readonly attributes: {[key: string]: any};
-  readonly next: string;
+  readonly next?: string;
 }
 
-interface BatchPutMessageErrorEntry {
-  readonly messageId: string;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface BatchPutMessageErrorEntry {
+  readonly messageId?: string;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface BatchPutMessageRequest {
+export interface BatchPutMessageRequest {
   readonly channelName: string;
   readonly messages: [];
 }
 
-interface BatchPutMessageResponse {
-  readonly batchPutMessageErrorEntries: [];
+export interface BatchPutMessageResponse {
+  readonly batchPutMessageErrorEntries?: [];
 }
 
-interface CancelPipelineReprocessingRequest {
+export interface CancelPipelineReprocessingRequest {
   readonly pipelineName: string;
   readonly reprocessingId: string;
 }
 
-interface CancelPipelineReprocessingResponse {
+export interface CancelPipelineReprocessingResponse {
 }
 
-interface Channel {
-  readonly name: string;
-  readonly storage: ChannelStorage;
-  readonly arn: string;
-  readonly status: string;
-  readonly retentionPeriod: RetentionPeriod;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
-  readonly lastMessageArrivalTime: Date;
+export interface Channel {
+  readonly name?: string;
+  readonly storage?: ChannelStorage;
+  readonly arn?: string;
+  readonly status?: string;
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
+  readonly lastMessageArrivalTime?: Date;
 }
 
-interface ChannelActivity {
+export interface ChannelActivity {
   readonly name: string;
   readonly channelName: string;
-  readonly next: string;
+  readonly next?: string;
 }
 
-interface ChannelMessages {
-  readonly s3Paths: [];
+export interface ChannelMessages {
+  readonly s3Paths?: [];
 }
 
-interface ChannelStatistics {
-  readonly size: EstimatedResourceSize;
+export interface ChannelStatistics {
+  readonly size?: EstimatedResourceSize;
 }
 
-interface ChannelStorage {
-  readonly serviceManagedS3: ServiceManagedChannelS3Storage;
-  readonly customerManagedS3: CustomerManagedChannelS3Storage;
+export interface ChannelStorage {
+  readonly serviceManagedS3?: ServiceManagedChannelS3Storage;
+  readonly customerManagedS3?: CustomerManagedChannelS3Storage;
 }
 
-interface ChannelStorageSummary {
-  readonly serviceManagedS3: ServiceManagedChannelS3StorageSummary;
-  readonly customerManagedS3: CustomerManagedChannelS3StorageSummary;
+export interface ChannelStorageSummary {
+  readonly serviceManagedS3?: ServiceManagedChannelS3StorageSummary;
+  readonly customerManagedS3?: CustomerManagedChannelS3StorageSummary;
 }
 
-interface ChannelSummary {
-  readonly channelName: string;
-  readonly channelStorage: ChannelStorageSummary;
-  readonly status: string;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
-  readonly lastMessageArrivalTime: Date;
+export interface ChannelSummary {
+  readonly channelName?: string;
+  readonly channelStorage?: ChannelStorageSummary;
+  readonly status?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
+  readonly lastMessageArrivalTime?: Date;
 }
 
-interface Column {
+export interface Column {
   readonly name: string;
   readonly type: string;
 }
 
-interface ContainerDatasetAction {
+export interface ContainerDatasetAction {
   readonly image: string;
   readonly executionRoleArn: string;
   readonly resourceConfiguration: ResourceConfiguration;
-  readonly variables: [];
+  readonly variables?: [];
 }
 
-interface CreateChannelRequest {
+export interface CreateChannelRequest {
   readonly channelName: string;
-  readonly channelStorage: ChannelStorage;
-  readonly retentionPeriod: RetentionPeriod;
-  readonly tags: [];
+  readonly channelStorage?: ChannelStorage;
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly tags?: [];
 }
 
-interface CreateChannelResponse {
-  readonly channelName: string;
-  readonly channelArn: string;
-  readonly retentionPeriod: RetentionPeriod;
+export interface CreateChannelResponse {
+  readonly channelName?: string;
+  readonly channelArn?: string;
+  readonly retentionPeriod?: RetentionPeriod;
 }
 
-interface CreateDatasetContentRequest {
+export interface CreateDatasetContentRequest {
   readonly datasetName: string;
-  readonly versionId: string;
+  readonly versionId?: string;
 }
 
-interface CreateDatasetContentResponse {
-  readonly versionId: string;
+export interface CreateDatasetContentResponse {
+  readonly versionId?: string;
 }
 
-interface CreateDatasetRequest {
+export interface CreateDatasetRequest {
   readonly datasetName: string;
   readonly actions: [];
-  readonly triggers: [];
-  readonly contentDeliveryRules: [];
-  readonly retentionPeriod: RetentionPeriod;
-  readonly versioningConfiguration: VersioningConfiguration;
-  readonly tags: [];
-  readonly lateDataRules: [];
+  readonly triggers?: [];
+  readonly contentDeliveryRules?: [];
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly versioningConfiguration?: VersioningConfiguration;
+  readonly tags?: [];
+  readonly lateDataRules?: [];
 }
 
-interface CreateDatasetResponse {
-  readonly datasetName: string;
-  readonly datasetArn: string;
-  readonly retentionPeriod: RetentionPeriod;
+export interface CreateDatasetResponse {
+  readonly datasetName?: string;
+  readonly datasetArn?: string;
+  readonly retentionPeriod?: RetentionPeriod;
 }
 
-interface CreateDatastoreRequest {
+export interface CreateDatastoreRequest {
   readonly datastoreName: string;
-  readonly datastoreStorage: DatastoreStorage;
-  readonly retentionPeriod: RetentionPeriod;
-  readonly tags: [];
-  readonly fileFormatConfiguration: FileFormatConfiguration;
-  readonly datastorePartitions: DatastorePartitions;
+  readonly datastoreStorage?: DatastoreStorage;
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly tags?: [];
+  readonly fileFormatConfiguration?: FileFormatConfiguration;
+  readonly datastorePartitions?: DatastorePartitions;
 }
 
-interface CreateDatastoreResponse {
-  readonly datastoreName: string;
-  readonly datastoreArn: string;
-  readonly retentionPeriod: RetentionPeriod;
+export interface CreateDatastoreResponse {
+  readonly datastoreName?: string;
+  readonly datastoreArn?: string;
+  readonly retentionPeriod?: RetentionPeriod;
 }
 
-interface CreatePipelineRequest {
+export interface CreatePipelineRequest {
   readonly pipelineName: string;
   readonly pipelineActivities: [];
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreatePipelineResponse {
-  readonly pipelineName: string;
-  readonly pipelineArn: string;
+export interface CreatePipelineResponse {
+  readonly pipelineName?: string;
+  readonly pipelineArn?: string;
 }
 
-interface CustomerManagedChannelS3Storage {
+export interface CustomerManagedChannelS3Storage {
   readonly bucket: string;
-  readonly keyPrefix: string;
+  readonly keyPrefix?: string;
   readonly roleArn: string;
 }
 
-interface CustomerManagedChannelS3StorageSummary {
+export interface CustomerManagedChannelS3StorageSummary {
+  readonly bucket?: string;
+  readonly keyPrefix?: string;
+  readonly roleArn?: string;
+}
+
+export interface CustomerManagedDatastoreS3Storage {
   readonly bucket: string;
-  readonly keyPrefix: string;
+  readonly keyPrefix?: string;
   readonly roleArn: string;
 }
 
-interface CustomerManagedDatastoreS3Storage {
-  readonly bucket: string;
-  readonly keyPrefix: string;
-  readonly roleArn: string;
+export interface CustomerManagedDatastoreS3StorageSummary {
+  readonly bucket?: string;
+  readonly keyPrefix?: string;
+  readonly roleArn?: string;
 }
 
-interface CustomerManagedDatastoreS3StorageSummary {
-  readonly bucket: string;
-  readonly keyPrefix: string;
-  readonly roleArn: string;
+export interface Dataset {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly actions?: [];
+  readonly triggers?: [];
+  readonly contentDeliveryRules?: [];
+  readonly status?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly versioningConfiguration?: VersioningConfiguration;
+  readonly lateDataRules?: [];
 }
 
-interface Dataset {
-  readonly name: string;
-  readonly arn: string;
-  readonly actions: [];
-  readonly triggers: [];
-  readonly contentDeliveryRules: [];
-  readonly status: string;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
-  readonly retentionPeriod: RetentionPeriod;
-  readonly versioningConfiguration: VersioningConfiguration;
-  readonly lateDataRules: [];
+export interface DatasetAction {
+  readonly actionName?: string;
+  readonly queryAction?: SqlQueryDatasetAction;
+  readonly containerAction?: ContainerDatasetAction;
 }
 
-interface DatasetAction {
-  readonly actionName: string;
-  readonly queryAction: SqlQueryDatasetAction;
-  readonly containerAction: ContainerDatasetAction;
+export interface DatasetActionSummary {
+  readonly actionName?: string;
+  readonly actionType?: string;
 }
 
-interface DatasetActionSummary {
-  readonly actionName: string;
-  readonly actionType: string;
+export interface DatasetContentDeliveryDestination {
+  readonly iotEventsDestinationConfiguration?: IotEventsDestinationConfiguration;
+  readonly s3DestinationConfiguration?: S3DestinationConfiguration;
 }
 
-interface DatasetContentDeliveryDestination {
-  readonly iotEventsDestinationConfiguration: IotEventsDestinationConfiguration;
-  readonly s3DestinationConfiguration: S3DestinationConfiguration;
-}
-
-interface DatasetContentDeliveryRule {
-  readonly entryName: string;
+export interface DatasetContentDeliveryRule {
+  readonly entryName?: string;
   readonly destination: DatasetContentDeliveryDestination;
 }
 
-interface DatasetContentStatus {
-  readonly state: string;
-  readonly reason: string;
+export interface DatasetContentStatus {
+  readonly state?: string;
+  readonly reason?: string;
 }
 
-interface DatasetContentSummary {
-  readonly version: string;
-  readonly status: DatasetContentStatus;
-  readonly creationTime: Date;
-  readonly scheduleTime: Date;
-  readonly completionTime: Date;
+export interface DatasetContentSummary {
+  readonly version?: string;
+  readonly status?: DatasetContentStatus;
+  readonly creationTime?: Date;
+  readonly scheduleTime?: Date;
+  readonly completionTime?: Date;
 }
 
-interface DatasetContentVersionValue {
+export interface DatasetContentVersionValue {
   readonly datasetName: string;
 }
 
-interface DatasetEntry {
-  readonly entryName: string;
-  readonly dataURI: string;
+export interface DatasetEntry {
+  readonly entryName?: string;
+  readonly dataURI?: string;
 }
 
-interface DatasetSummary {
-  readonly datasetName: string;
-  readonly status: string;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
-  readonly triggers: [];
-  readonly actions: [];
+export interface DatasetSummary {
+  readonly datasetName?: string;
+  readonly status?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
+  readonly triggers?: [];
+  readonly actions?: [];
 }
 
-interface DatasetTrigger {
-  readonly schedule: Schedule;
-  readonly dataset: TriggeringDataset;
+export interface DatasetTrigger {
+  readonly schedule?: Schedule;
+  readonly dataset?: TriggeringDataset;
 }
 
-interface Datastore {
-  readonly name: string;
-  readonly storage: DatastoreStorage;
-  readonly arn: string;
-  readonly status: string;
-  readonly retentionPeriod: RetentionPeriod;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
-  readonly lastMessageArrivalTime: Date;
-  readonly fileFormatConfiguration: FileFormatConfiguration;
-  readonly datastorePartitions: DatastorePartitions;
+export interface Datastore {
+  readonly name?: string;
+  readonly storage?: DatastoreStorage;
+  readonly arn?: string;
+  readonly status?: string;
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
+  readonly lastMessageArrivalTime?: Date;
+  readonly fileFormatConfiguration?: FileFormatConfiguration;
+  readonly datastorePartitions?: DatastorePartitions;
 }
 
-interface DatastoreActivity {
+export interface DatastoreActivity {
   readonly name: string;
   readonly datastoreName: string;
 }
 
-interface DatastoreIotSiteWiseMultiLayerStorage {
+export interface DatastoreIotSiteWiseMultiLayerStorage {
   readonly customerManagedS3Storage: IotSiteWiseCustomerManagedDatastoreS3Storage;
 }
 
-interface DatastoreIotSiteWiseMultiLayerStorageSummary {
-  readonly customerManagedS3Storage: IotSiteWiseCustomerManagedDatastoreS3StorageSummary;
+export interface DatastoreIotSiteWiseMultiLayerStorageSummary {
+  readonly customerManagedS3Storage?: IotSiteWiseCustomerManagedDatastoreS3StorageSummary;
 }
 
-interface DatastorePartition {
-  readonly attributePartition: Partition;
-  readonly timestampPartition: TimestampPartition;
+export interface DatastorePartition {
+  readonly attributePartition?: Partition;
+  readonly timestampPartition?: TimestampPartition;
 }
 
-interface DatastorePartitions {
-  readonly partitions: [];
+export interface DatastorePartitions {
+  readonly partitions?: [];
 }
 
-interface DatastoreStatistics {
-  readonly size: EstimatedResourceSize;
+export interface DatastoreStatistics {
+  readonly size?: EstimatedResourceSize;
 }
 
-interface DatastoreStorage {
-  readonly serviceManagedS3: ServiceManagedDatastoreS3Storage;
-  readonly customerManagedS3: CustomerManagedDatastoreS3Storage;
-  readonly iotSiteWiseMultiLayerStorage: DatastoreIotSiteWiseMultiLayerStorage;
+export interface DatastoreStorage {
+  readonly serviceManagedS3?: ServiceManagedDatastoreS3Storage;
+  readonly customerManagedS3?: CustomerManagedDatastoreS3Storage;
+  readonly iotSiteWiseMultiLayerStorage?: DatastoreIotSiteWiseMultiLayerStorage;
 }
 
-interface DatastoreStorageSummary {
-  readonly serviceManagedS3: ServiceManagedDatastoreS3StorageSummary;
-  readonly customerManagedS3: CustomerManagedDatastoreS3StorageSummary;
-  readonly iotSiteWiseMultiLayerStorage: DatastoreIotSiteWiseMultiLayerStorageSummary;
+export interface DatastoreStorageSummary {
+  readonly serviceManagedS3?: ServiceManagedDatastoreS3StorageSummary;
+  readonly customerManagedS3?: CustomerManagedDatastoreS3StorageSummary;
+  readonly iotSiteWiseMultiLayerStorage?: DatastoreIotSiteWiseMultiLayerStorageSummary;
 }
 
-interface DatastoreSummary {
-  readonly datastoreName: string;
-  readonly datastoreStorage: DatastoreStorageSummary;
-  readonly status: string;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
-  readonly lastMessageArrivalTime: Date;
-  readonly fileFormatType: string;
-  readonly datastorePartitions: DatastorePartitions;
+export interface DatastoreSummary {
+  readonly datastoreName?: string;
+  readonly datastoreStorage?: DatastoreStorageSummary;
+  readonly status?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
+  readonly lastMessageArrivalTime?: Date;
+  readonly fileFormatType?: string;
+  readonly datastorePartitions?: DatastorePartitions;
 }
 
-interface DeleteChannelRequest {
+export interface DeleteChannelRequest {
   readonly channelName: string;
 }
 
-interface DeleteDatasetContentRequest {
+export interface DeleteDatasetContentRequest {
   readonly datasetName: string;
-  readonly versionId: string;
+  readonly versionId?: string;
 }
 
-interface DeleteDatasetRequest {
+export interface DeleteDatasetRequest {
   readonly datasetName: string;
 }
 
-interface DeleteDatastoreRequest {
+export interface DeleteDatastoreRequest {
   readonly datastoreName: string;
 }
 
-interface DeletePipelineRequest {
+export interface DeletePipelineRequest {
   readonly pipelineName: string;
 }
 
-interface DeltaTime {
+export interface DeltaTime {
   readonly offsetSeconds: number;
   readonly timeExpression: string;
 }
 
-interface DeltaTimeSessionWindowConfiguration {
+export interface DeltaTimeSessionWindowConfiguration {
   readonly timeoutInMinutes: number;
 }
 
-interface DescribeChannelRequest {
+export interface DescribeChannelRequest {
   readonly channelName: string;
-  readonly includeStatistics: boolean;
+  readonly includeStatistics?: boolean;
 }
 
-interface DescribeChannelResponse {
-  readonly channel: Channel;
-  readonly statistics: ChannelStatistics;
+export interface DescribeChannelResponse {
+  readonly channel?: Channel;
+  readonly statistics?: ChannelStatistics;
 }
 
-interface DescribeDatasetRequest {
+export interface DescribeDatasetRequest {
   readonly datasetName: string;
 }
 
-interface DescribeDatasetResponse {
-  readonly dataset: Dataset;
+export interface DescribeDatasetResponse {
+  readonly dataset?: Dataset;
 }
 
-interface DescribeDatastoreRequest {
+export interface DescribeDatastoreRequest {
   readonly datastoreName: string;
-  readonly includeStatistics: boolean;
+  readonly includeStatistics?: boolean;
 }
 
-interface DescribeDatastoreResponse {
-  readonly datastore: Datastore;
-  readonly statistics: DatastoreStatistics;
+export interface DescribeDatastoreResponse {
+  readonly datastore?: Datastore;
+  readonly statistics?: DatastoreStatistics;
 }
 
-interface DescribeLoggingOptionsRequest {
+export interface DescribeLoggingOptionsRequest {
 }
 
-interface DescribeLoggingOptionsResponse {
-  readonly loggingOptions: LoggingOptions;
+export interface DescribeLoggingOptionsResponse {
+  readonly loggingOptions?: LoggingOptions;
 }
 
-interface DescribePipelineRequest {
+export interface DescribePipelineRequest {
   readonly pipelineName: string;
 }
 
-interface DescribePipelineResponse {
-  readonly pipeline: Pipeline;
+export interface DescribePipelineResponse {
+  readonly pipeline?: Pipeline;
 }
 
-interface DeviceRegistryEnrichActivity {
+export interface DeviceRegistryEnrichActivity {
   readonly name: string;
   readonly attribute: string;
   readonly thingName: string;
   readonly roleArn: string;
-  readonly next: string;
+  readonly next?: string;
 }
 
-interface DeviceShadowEnrichActivity {
+export interface DeviceShadowEnrichActivity {
   readonly name: string;
   readonly attribute: string;
   readonly thingName: string;
   readonly roleArn: string;
-  readonly next: string;
+  readonly next?: string;
 }
 
-interface EstimatedResourceSize {
-  readonly estimatedSizeInBytes: unknown;
-  readonly estimatedOn: Date;
+export interface EstimatedResourceSize {
+  readonly estimatedSizeInBytes?: unknown;
+  readonly estimatedOn?: Date;
 }
 
-interface FileFormatConfiguration {
-  readonly jsonConfiguration: JsonConfiguration;
-  readonly parquetConfiguration: ParquetConfiguration;
+export interface FileFormatConfiguration {
+  readonly jsonConfiguration?: JsonConfiguration;
+  readonly parquetConfiguration?: ParquetConfiguration;
 }
 
-interface FilterActivity {
+export interface FilterActivity {
   readonly name: string;
   readonly filter: string;
-  readonly next: string;
+  readonly next?: string;
 }
 
-interface GetDatasetContentRequest {
+export interface GetDatasetContentRequest {
   readonly datasetName: string;
-  readonly versionId: string;
+  readonly versionId?: string;
 }
 
-interface GetDatasetContentResponse {
-  readonly entries: [];
-  readonly timestamp: Date;
-  readonly status: DatasetContentStatus;
+export interface GetDatasetContentResponse {
+  readonly entries?: [];
+  readonly timestamp?: Date;
+  readonly status?: DatasetContentStatus;
 }
 
-interface GlueConfiguration {
+export interface GlueConfiguration {
   readonly tableName: string;
   readonly databaseName: string;
 }
 
-interface InternalFailureException {
-  readonly message: string;
+export interface InternalFailureException {
+  readonly message?: string;
 }
 
-interface InvalidRequestException {
-  readonly message: string;
+export interface InvalidRequestException {
+  readonly message?: string;
 }
 
-interface IotEventsDestinationConfiguration {
+export interface IotEventsDestinationConfiguration {
   readonly inputName: string;
   readonly roleArn: string;
 }
 
-interface IotSiteWiseCustomerManagedDatastoreS3Storage {
+export interface IotSiteWiseCustomerManagedDatastoreS3Storage {
   readonly bucket: string;
-  readonly keyPrefix: string;
+  readonly keyPrefix?: string;
 }
 
-interface IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
-  readonly bucket: string;
-  readonly keyPrefix: string;
+export interface IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
+  readonly bucket?: string;
+  readonly keyPrefix?: string;
 }
 
-interface JsonConfiguration {
+export interface JsonConfiguration {
 }
 
-interface LambdaActivity {
+export interface LambdaActivity {
   readonly name: string;
   readonly lambdaName: string;
   readonly batchSize: number;
-  readonly next: string;
+  readonly next?: string;
 }
 
-interface LateDataRule {
-  readonly ruleName: string;
+export interface LateDataRule {
+  readonly ruleName?: string;
   readonly ruleConfiguration: LateDataRuleConfiguration;
 }
 
-interface LateDataRuleConfiguration {
-  readonly deltaTimeSessionWindowConfiguration: DeltaTimeSessionWindowConfiguration;
+export interface LateDataRuleConfiguration {
+  readonly deltaTimeSessionWindowConfiguration?: DeltaTimeSessionWindowConfiguration;
 }
 
-interface LimitExceededException {
-  readonly message: string;
+export interface LimitExceededException {
+  readonly message?: string;
 }
 
-interface ListChannelsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListChannelsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListChannelsResponse {
-  readonly channelSummaries: [];
-  readonly nextToken: string;
+export interface ListChannelsResponse {
+  readonly channelSummaries?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDatasetContentsRequest {
+export interface ListDatasetContentsRequest {
   readonly datasetName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly scheduledOnOrAfter: Date;
-  readonly scheduledBefore: Date;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly scheduledOnOrAfter?: Date;
+  readonly scheduledBefore?: Date;
 }
 
-interface ListDatasetContentsResponse {
-  readonly datasetContentSummaries: [];
-  readonly nextToken: string;
+export interface ListDatasetContentsResponse {
+  readonly datasetContentSummaries?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDatasetsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListDatasetsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListDatasetsResponse {
-  readonly datasetSummaries: [];
-  readonly nextToken: string;
+export interface ListDatasetsResponse {
+  readonly datasetSummaries?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDatastoresRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListDatastoresRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListDatastoresResponse {
-  readonly datastoreSummaries: [];
-  readonly nextToken: string;
+export interface ListDatastoresResponse {
+  readonly datastoreSummaries?: [];
+  readonly nextToken?: string;
 }
 
-interface ListPipelinesRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListPipelinesRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListPipelinesResponse {
-  readonly pipelineSummaries: [];
-  readonly nextToken: string;
+export interface ListPipelinesResponse {
+  readonly pipelineSummaries?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: [];
+export interface ListTagsForResourceResponse {
+  readonly tags?: [];
 }
 
-interface LoggingOptions {
+export interface LoggingOptions {
   readonly roleArn: string;
   readonly level: string;
   readonly enabled: boolean;
 }
 
-interface MathActivity {
+export interface MathActivity {
   readonly name: string;
   readonly attribute: string;
   readonly math: string;
-  readonly next: string;
+  readonly next?: string;
 }
 
-interface Message {
+export interface Message {
   readonly messageId: string;
   readonly payload: unknown;
 }
 
-interface OutputFileUriValue {
+export interface OutputFileUriValue {
   readonly fileName: string;
 }
 
-interface ParquetConfiguration {
-  readonly schemaDefinition: SchemaDefinition;
+export interface ParquetConfiguration {
+  readonly schemaDefinition?: SchemaDefinition;
 }
 
-interface Partition {
+export interface Partition {
   readonly attributeName: string;
 }
 
-interface Pipeline {
-  readonly name: string;
-  readonly arn: string;
-  readonly activities: [];
-  readonly reprocessingSummaries: [];
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
+export interface Pipeline {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly activities?: [];
+  readonly reprocessingSummaries?: [];
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
 }
 
-interface PipelineActivity {
-  readonly channel: ChannelActivity;
-  readonly lambda: LambdaActivity;
-  readonly datastore: DatastoreActivity;
-  readonly addAttributes: AddAttributesActivity;
-  readonly removeAttributes: RemoveAttributesActivity;
-  readonly selectAttributes: SelectAttributesActivity;
-  readonly filter: FilterActivity;
-  readonly math: MathActivity;
-  readonly deviceRegistryEnrich: DeviceRegistryEnrichActivity;
-  readonly deviceShadowEnrich: DeviceShadowEnrichActivity;
+export interface PipelineActivity {
+  readonly channel?: ChannelActivity;
+  readonly lambda?: LambdaActivity;
+  readonly datastore?: DatastoreActivity;
+  readonly addAttributes?: AddAttributesActivity;
+  readonly removeAttributes?: RemoveAttributesActivity;
+  readonly selectAttributes?: SelectAttributesActivity;
+  readonly filter?: FilterActivity;
+  readonly math?: MathActivity;
+  readonly deviceRegistryEnrich?: DeviceRegistryEnrichActivity;
+  readonly deviceShadowEnrich?: DeviceShadowEnrichActivity;
 }
 
-interface PipelineSummary {
-  readonly pipelineName: string;
-  readonly reprocessingSummaries: [];
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
+export interface PipelineSummary {
+  readonly pipelineName?: string;
+  readonly reprocessingSummaries?: [];
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
 }
 
-interface PutLoggingOptionsRequest {
+export interface PutLoggingOptionsRequest {
   readonly loggingOptions: LoggingOptions;
 }
 
-interface QueryFilter {
-  readonly deltaTime: DeltaTime;
+export interface QueryFilter {
+  readonly deltaTime?: DeltaTime;
 }
 
-interface RemoveAttributesActivity {
+export interface RemoveAttributesActivity {
   readonly name: string;
   readonly attributes: [];
-  readonly next: string;
+  readonly next?: string;
 }
 
-interface ReprocessingSummary {
-  readonly id: string;
-  readonly status: string;
-  readonly creationTime: Date;
+export interface ReprocessingSummary {
+  readonly id?: string;
+  readonly status?: string;
+  readonly creationTime?: Date;
 }
 
-interface ResourceAlreadyExistsException {
-  readonly message: string;
-  readonly resourceId: string;
-  readonly resourceArn: string;
+export interface ResourceAlreadyExistsException {
+  readonly message?: string;
+  readonly resourceId?: string;
+  readonly resourceArn?: string;
 }
 
-interface ResourceConfiguration {
+export interface ResourceConfiguration {
   readonly computeType: string;
   readonly volumeSizeInGB: number;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface RetentionPeriod {
-  readonly unlimited: boolean;
-  readonly numberOfDays: number;
+export interface RetentionPeriod {
+  readonly unlimited?: boolean;
+  readonly numberOfDays?: number;
 }
 
-interface RunPipelineActivityRequest {
+export interface RunPipelineActivityRequest {
   readonly pipelineActivity: PipelineActivity;
   readonly payloads: [];
 }
 
-interface RunPipelineActivityResponse {
-  readonly payloads: [];
-  readonly logResult: string;
+export interface RunPipelineActivityResponse {
+  readonly payloads?: [];
+  readonly logResult?: string;
 }
 
-interface S3DestinationConfiguration {
+export interface S3DestinationConfiguration {
   readonly bucket: string;
   readonly key: string;
-  readonly glueConfiguration: GlueConfiguration;
+  readonly glueConfiguration?: GlueConfiguration;
   readonly roleArn: string;
 }
 
-interface SampleChannelDataRequest {
+export interface SampleChannelDataRequest {
   readonly channelName: string;
-  readonly maxMessages: number;
-  readonly startTime: Date;
-  readonly endTime: Date;
+  readonly maxMessages?: number;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
 }
 
-interface SampleChannelDataResponse {
-  readonly payloads: [];
+export interface SampleChannelDataResponse {
+  readonly payloads?: [];
 }
 
-interface Schedule {
-  readonly expression: string;
+export interface Schedule {
+  readonly expression?: string;
 }
 
-interface SchemaDefinition {
-  readonly columns: [];
+export interface SchemaDefinition {
+  readonly columns?: [];
 }
 
-interface SelectAttributesActivity {
+export interface SelectAttributesActivity {
   readonly name: string;
   readonly attributes: [];
-  readonly next: string;
+  readonly next?: string;
 }
 
-interface ServiceManagedChannelS3Storage {
+export interface ServiceManagedChannelS3Storage {
 }
 
-interface ServiceManagedChannelS3StorageSummary {
+export interface ServiceManagedChannelS3StorageSummary {
 }
 
-interface ServiceManagedDatastoreS3Storage {
+export interface ServiceManagedDatastoreS3Storage {
 }
 
-interface ServiceManagedDatastoreS3StorageSummary {
+export interface ServiceManagedDatastoreS3StorageSummary {
 }
 
-interface ServiceUnavailableException {
-  readonly message: string;
+export interface ServiceUnavailableException {
+  readonly message?: string;
 }
 
-interface SqlQueryDatasetAction {
+export interface SqlQueryDatasetAction {
   readonly sqlQuery: string;
-  readonly filters: [];
+  readonly filters?: [];
 }
 
-interface StartPipelineReprocessingRequest {
+export interface StartPipelineReprocessingRequest {
   readonly pipelineName: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly channelMessages: ChannelMessages;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly channelMessages?: ChannelMessages;
 }
 
-interface StartPipelineReprocessingResponse {
-  readonly reprocessingId: string;
+export interface StartPipelineReprocessingResponse {
+  readonly reprocessingId?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly key: string;
   readonly value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
-  readonly message: string;
+export interface ThrottlingException {
+  readonly message?: string;
 }
 
-interface TimestampPartition {
+export interface TimestampPartition {
   readonly attributeName: string;
-  readonly timestampFormat: string;
+  readonly timestampFormat?: string;
 }
 
-interface TriggeringDataset {
+export interface TriggeringDataset {
   readonly name: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateChannelRequest {
+export interface UpdateChannelRequest {
   readonly channelName: string;
-  readonly channelStorage: ChannelStorage;
-  readonly retentionPeriod: RetentionPeriod;
+  readonly channelStorage?: ChannelStorage;
+  readonly retentionPeriod?: RetentionPeriod;
 }
 
-interface UpdateDatasetRequest {
+export interface UpdateDatasetRequest {
   readonly datasetName: string;
   readonly actions: [];
-  readonly triggers: [];
-  readonly contentDeliveryRules: [];
-  readonly retentionPeriod: RetentionPeriod;
-  readonly versioningConfiguration: VersioningConfiguration;
-  readonly lateDataRules: [];
+  readonly triggers?: [];
+  readonly contentDeliveryRules?: [];
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly versioningConfiguration?: VersioningConfiguration;
+  readonly lateDataRules?: [];
 }
 
-interface UpdateDatastoreRequest {
+export interface UpdateDatastoreRequest {
   readonly datastoreName: string;
-  readonly retentionPeriod: RetentionPeriod;
-  readonly datastoreStorage: DatastoreStorage;
-  readonly fileFormatConfiguration: FileFormatConfiguration;
+  readonly retentionPeriod?: RetentionPeriod;
+  readonly datastoreStorage?: DatastoreStorage;
+  readonly fileFormatConfiguration?: FileFormatConfiguration;
 }
 
-interface UpdatePipelineRequest {
+export interface UpdatePipelineRequest {
   readonly pipelineName: string;
   readonly pipelineActivities: [];
 }
 
-interface Variable {
+export interface Variable {
   readonly name: string;
-  readonly stringValue: string;
-  readonly doubleValue: unknown;
-  readonly datasetContentVersionValue: DatasetContentVersionValue;
-  readonly outputFileUriValue: OutputFileUriValue;
+  readonly stringValue?: string;
+  readonly doubleValue?: unknown;
+  readonly datasetContentVersionValue?: DatasetContentVersionValue;
+  readonly outputFileUriValue?: OutputFileUriValue;
 }
 
-interface VersioningConfiguration {
-  readonly unlimited: boolean;
-  readonly maxVersions: number;
+export interface VersioningConfiguration {
+  readonly unlimited?: boolean;
+  readonly maxVersions?: number;
 }
+
 

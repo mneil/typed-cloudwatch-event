@@ -6,9 +6,11 @@ export interface AcceptInvitation {
   readonly invitationId: string;
   readonly masterAccount?: string;
 }
+
 export interface BatchGetCustomDataIdentifiers {
   readonly ids?: [];
 }
+
 export interface CreateClassificationJob {
   readonly clientToken: string;
   readonly customDataIdentifierIds?: [];
@@ -23,6 +25,7 @@ export interface CreateClassificationJob {
   readonly scheduleFrequency?: JobScheduleFrequency;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateCustomDataIdentifier {
   readonly clientToken?: string;
   readonly description?: string;
@@ -34,6 +37,7 @@ export interface CreateCustomDataIdentifier {
   readonly severityLevels?: [];
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateFindingsFilter {
   readonly action: string;
   readonly clientToken?: string;
@@ -43,99 +47,130 @@ export interface CreateFindingsFilter {
   readonly position?: number;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateInvitations {
   readonly accountIds: [];
   readonly disableEmailNotification?: boolean;
   readonly message?: string;
 }
+
 export interface CreateMember {
   readonly account: AccountDetail;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateSampleFindings {
   readonly findingTypes?: [];
 }
+
 export interface DeclineInvitations {
   readonly accountIds: [];
 }
+
 export interface DeleteCustomDataIdentifier {
   readonly id: string;
 }
+
 export interface DeleteFindingsFilter {
   readonly id: string;
 }
+
 export interface DeleteInvitations {
   readonly accountIds: [];
 }
+
 export interface DeleteMember {
   readonly id: string;
 }
+
 export interface DescribeBuckets {
   readonly criteria?: {[key: string]: any};
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly sortCriteria?: BucketSortCriteria;
 }
+
 export interface DescribeClassificationJob {
   readonly jobId: string;
 }
+
 export interface DescribeOrganizationConfiguration {
 }
+
 export interface DisableMacie {
 }
+
 export interface DisableOrganizationAdminAccount {
   readonly adminAccountId: string;
 }
+
 export interface DisassociateFromAdministratorAccount {
 }
+
 export interface DisassociateFromMasterAccount {
 }
+
 export interface DisassociateMember {
   readonly id: string;
 }
+
 export interface EnableMacie {
   readonly clientToken?: string;
   readonly findingPublishingFrequency?: string;
   readonly status?: string;
 }
+
 export interface EnableOrganizationAdminAccount {
   readonly adminAccountId: string;
   readonly clientToken?: string;
 }
+
 export interface GetAdministratorAccount {
 }
+
 export interface GetBucketStatistics {
   readonly accountId?: string;
 }
+
 export interface GetClassificationExportConfiguration {
 }
+
 export interface GetCustomDataIdentifier {
   readonly id: string;
 }
+
 export interface GetFindingStatistics {
   readonly findingCriteria?: FindingCriteria;
   readonly groupBy: string;
   readonly size?: number;
   readonly sortCriteria?: FindingStatisticsSortCriteria;
 }
+
 export interface GetFindings {
   readonly findingIds: [];
   readonly sortCriteria?: SortCriteria;
 }
+
 export interface GetFindingsFilter {
   readonly id: string;
 }
+
 export interface GetFindingsPublicationConfiguration {
 }
+
 export interface GetInvitationsCount {
 }
+
 export interface GetMacieSession {
 }
+
 export interface GetMasterAccount {
 }
+
 export interface GetMember {
   readonly id: string;
 }
+
 export interface GetUsageStatistics {
   readonly filterBy?: [];
   readonly maxResults?: number;
@@ -143,65 +178,80 @@ export interface GetUsageStatistics {
   readonly sortBy?: UsageStatisticsSortBy;
   readonly timeRange?: string;
 }
+
 export interface GetUsageTotals {
   readonly timeRange?: string;
 }
+
 export interface ListClassificationJobs {
   readonly filterCriteria?: ListJobsFilterCriteria;
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly sortCriteria?: ListJobsSortCriteria;
 }
+
 export interface ListCustomDataIdentifiers {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListFindings {
   readonly findingCriteria?: FindingCriteria;
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly sortCriteria?: SortCriteria;
 }
+
 export interface ListFindingsFilters {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListInvitations {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListManagedDataIdentifiers {
   readonly nextToken?: string;
 }
+
 export interface ListMembers {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly onlyAssociated?: string;
 }
+
 export interface ListOrganizationAdminAccounts {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface PutClassificationExportConfiguration {
   readonly configuration: ClassificationExportConfiguration;
 }
+
 export interface PutFindingsPublicationConfiguration {
   readonly clientToken?: string;
   readonly securityHubConfiguration?: SecurityHubConfiguration;
 }
+
 export interface SearchResources {
   readonly bucketCriteria?: SearchResourcesBucketCriteria;
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly sortCriteria?: SearchResourcesSortCriteria;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface TestCustomDataIdentifier {
   readonly ignoreWords?: [];
   readonly keywords?: [];
@@ -209,14 +259,17 @@ export interface TestCustomDataIdentifier {
   readonly regex: string;
   readonly sampleText: string;
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateClassificationJob {
   readonly jobId: string;
   readonly jobStatus: string;
 }
+
 export interface UpdateFindingsFilter {
   readonly action?: string;
   readonly description?: string;
@@ -226,1376 +279,1378 @@ export interface UpdateFindingsFilter {
   readonly position?: number;
   readonly clientToken?: string;
 }
+
 export interface UpdateMacieSession {
   readonly findingPublishingFrequency?: string;
   readonly status?: string;
 }
+
 export interface UpdateMemberSession {
   readonly id: string;
   readonly status: string;
 }
+
 export interface UpdateOrganizationConfiguration {
   readonly autoEnable: boolean;
 }
 
-
-
-interface AcceptInvitationRequest {
-  readonly administratorAccountId: string;
+export interface AcceptInvitationRequest {
+  readonly administratorAccountId?: string;
   readonly invitationId: string;
-  readonly masterAccount: string;
+  readonly masterAccount?: string;
 }
 
-interface AcceptInvitationResponse {
+export interface AcceptInvitationResponse {
 }
 
-interface AccessControlList {
-  readonly allowsPublicReadAccess: boolean;
-  readonly allowsPublicWriteAccess: boolean;
+export interface AccessControlList {
+  readonly allowsPublicReadAccess?: boolean;
+  readonly allowsPublicWriteAccess?: boolean;
 }
 
-interface AccessDeniedException {
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly message?: string;
 }
 
-interface AccountDetail {
+export interface AccountDetail {
   readonly accountId: string;
   readonly email: string;
 }
 
-interface AccountLevelPermissions {
-  readonly blockPublicAccess: BlockPublicAccess;
+export interface AccountLevelPermissions {
+  readonly blockPublicAccess?: BlockPublicAccess;
 }
 
-interface AdminAccount {
-  readonly accountId: string;
-  readonly status: string;
+export interface AdminAccount {
+  readonly accountId?: string;
+  readonly status?: string;
 }
 
-interface ApiCallDetails {
-  readonly api: string;
-  readonly apiServiceName: string;
-  readonly firstSeen: Date;
-  readonly lastSeen: Date;
+export interface ApiCallDetails {
+  readonly api?: string;
+  readonly apiServiceName?: string;
+  readonly firstSeen?: Date;
+  readonly lastSeen?: Date;
 }
 
-interface AssumedRole {
-  readonly accessKeyId: string;
-  readonly accountId: string;
-  readonly arn: string;
-  readonly principalId: string;
-  readonly sessionContext: SessionContext;
+export interface AssumedRole {
+  readonly accessKeyId?: string;
+  readonly accountId?: string;
+  readonly arn?: string;
+  readonly principalId?: string;
+  readonly sessionContext?: SessionContext;
 }
 
-interface AwsAccount {
-  readonly accountId: string;
-  readonly principalId: string;
+export interface AwsAccount {
+  readonly accountId?: string;
+  readonly principalId?: string;
 }
 
-interface AwsService {
-  readonly invokedBy: string;
+export interface AwsService {
+  readonly invokedBy?: string;
 }
 
-interface BatchGetCustomDataIdentifierSummary {
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly deleted: boolean;
-  readonly description: string;
-  readonly id: string;
-  readonly name: string;
+export interface BatchGetCustomDataIdentifierSummary {
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly deleted?: boolean;
+  readonly description?: string;
+  readonly id?: string;
+  readonly name?: string;
 }
 
-interface BatchGetCustomDataIdentifiersRequest {
-  readonly ids: [];
+export interface BatchGetCustomDataIdentifiersRequest {
+  readonly ids?: [];
 }
 
-interface BatchGetCustomDataIdentifiersResponse {
-  readonly customDataIdentifiers: [];
-  readonly notFoundIdentifierIds: [];
+export interface BatchGetCustomDataIdentifiersResponse {
+  readonly customDataIdentifiers?: [];
+  readonly notFoundIdentifierIds?: [];
 }
 
-interface BlockPublicAccess {
-  readonly blockPublicAcls: boolean;
-  readonly blockPublicPolicy: boolean;
-  readonly ignorePublicAcls: boolean;
-  readonly restrictPublicBuckets: boolean;
+export interface BlockPublicAccess {
+  readonly blockPublicAcls?: boolean;
+  readonly blockPublicPolicy?: boolean;
+  readonly ignorePublicAcls?: boolean;
+  readonly restrictPublicBuckets?: boolean;
 }
 
-interface BucketCountByEffectivePermission {
-  readonly publiclyAccessible: number;
-  readonly publiclyReadable: number;
-  readonly publiclyWritable: number;
-  readonly unknown: number;
+export interface BucketCountByEffectivePermission {
+  readonly publiclyAccessible?: number;
+  readonly publiclyReadable?: number;
+  readonly publiclyWritable?: number;
+  readonly unknown?: number;
 }
 
-interface BucketCountByEncryptionType {
-  readonly kmsManaged: number;
-  readonly s3Managed: number;
-  readonly unencrypted: number;
-  readonly unknown: number;
+export interface BucketCountByEncryptionType {
+  readonly kmsManaged?: number;
+  readonly s3Managed?: number;
+  readonly unencrypted?: number;
+  readonly unknown?: number;
 }
 
-interface BucketCountBySharedAccessType {
-  readonly external: number;
-  readonly internal: number;
-  readonly notShared: number;
-  readonly unknown: number;
+export interface BucketCountBySharedAccessType {
+  readonly external?: number;
+  readonly internal?: number;
+  readonly notShared?: number;
+  readonly unknown?: number;
 }
 
-interface BucketCountPolicyAllowsUnencryptedObjectUploads {
-  readonly allowsUnencryptedObjectUploads: number;
-  readonly deniesUnencryptedObjectUploads: number;
-  readonly unknown: number;
+export interface BucketCountPolicyAllowsUnencryptedObjectUploads {
+  readonly allowsUnencryptedObjectUploads?: number;
+  readonly deniesUnencryptedObjectUploads?: number;
+  readonly unknown?: number;
 }
 
-interface BucketCriteriaAdditionalProperties {
-  readonly eq: [];
-  readonly gt: number;
-  readonly gte: number;
-  readonly lt: number;
-  readonly lte: number;
-  readonly neq: [];
-  readonly prefix: string;
+export interface BucketCriteriaAdditionalProperties {
+  readonly eq?: [];
+  readonly gt?: number;
+  readonly gte?: number;
+  readonly lt?: number;
+  readonly lte?: number;
+  readonly neq?: [];
+  readonly prefix?: string;
 }
 
-interface BucketLevelPermissions {
-  readonly accessControlList: AccessControlList;
-  readonly blockPublicAccess: BlockPublicAccess;
-  readonly bucketPolicy: BucketPolicy;
+export interface BucketLevelPermissions {
+  readonly accessControlList?: AccessControlList;
+  readonly blockPublicAccess?: BlockPublicAccess;
+  readonly bucketPolicy?: BucketPolicy;
 }
 
-interface BucketMetadata {
-  readonly accountId: string;
-  readonly allowsUnencryptedObjectUploads: string;
-  readonly bucketArn: string;
-  readonly bucketCreatedAt: Date;
-  readonly bucketName: string;
-  readonly classifiableObjectCount: number;
-  readonly classifiableSizeInBytes: number;
-  readonly errorCode: string;
-  readonly errorMessage: string;
-  readonly jobDetails: JobDetails;
-  readonly lastUpdated: Date;
-  readonly objectCount: number;
-  readonly objectCountByEncryptionType: ObjectCountByEncryptionType;
-  readonly publicAccess: BucketPublicAccess;
-  readonly region: string;
-  readonly replicationDetails: ReplicationDetails;
-  readonly serverSideEncryption: BucketServerSideEncryption;
-  readonly sharedAccess: string;
-  readonly sizeInBytes: number;
-  readonly sizeInBytesCompressed: number;
-  readonly tags: [];
-  readonly unclassifiableObjectCount: ObjectLevelStatistics;
-  readonly unclassifiableObjectSizeInBytes: ObjectLevelStatistics;
-  readonly versioning: boolean;
+export interface BucketMetadata {
+  readonly accountId?: string;
+  readonly allowsUnencryptedObjectUploads?: string;
+  readonly bucketArn?: string;
+  readonly bucketCreatedAt?: Date;
+  readonly bucketName?: string;
+  readonly classifiableObjectCount?: number;
+  readonly classifiableSizeInBytes?: number;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
+  readonly jobDetails?: JobDetails;
+  readonly lastUpdated?: Date;
+  readonly objectCount?: number;
+  readonly objectCountByEncryptionType?: ObjectCountByEncryptionType;
+  readonly publicAccess?: BucketPublicAccess;
+  readonly region?: string;
+  readonly replicationDetails?: ReplicationDetails;
+  readonly serverSideEncryption?: BucketServerSideEncryption;
+  readonly sharedAccess?: string;
+  readonly sizeInBytes?: number;
+  readonly sizeInBytesCompressed?: number;
+  readonly tags?: [];
+  readonly unclassifiableObjectCount?: ObjectLevelStatistics;
+  readonly unclassifiableObjectSizeInBytes?: ObjectLevelStatistics;
+  readonly versioning?: boolean;
 }
 
-interface BucketPermissionConfiguration {
-  readonly accountLevelPermissions: AccountLevelPermissions;
-  readonly bucketLevelPermissions: BucketLevelPermissions;
+export interface BucketPermissionConfiguration {
+  readonly accountLevelPermissions?: AccountLevelPermissions;
+  readonly bucketLevelPermissions?: BucketLevelPermissions;
 }
 
-interface BucketPolicy {
-  readonly allowsPublicReadAccess: boolean;
-  readonly allowsPublicWriteAccess: boolean;
+export interface BucketPolicy {
+  readonly allowsPublicReadAccess?: boolean;
+  readonly allowsPublicWriteAccess?: boolean;
 }
 
-interface BucketPublicAccess {
-  readonly effectivePermission: string;
-  readonly permissionConfiguration: BucketPermissionConfiguration;
+export interface BucketPublicAccess {
+  readonly effectivePermission?: string;
+  readonly permissionConfiguration?: BucketPermissionConfiguration;
 }
 
-interface BucketServerSideEncryption {
-  readonly kmsMasterKeyId: string;
-  readonly type: string;
+export interface BucketServerSideEncryption {
+  readonly kmsMasterKeyId?: string;
+  readonly type?: string;
 }
 
-interface BucketSortCriteria {
-  readonly attributeName: string;
-  readonly orderBy: string;
+export interface BucketSortCriteria {
+  readonly attributeName?: string;
+  readonly orderBy?: string;
 }
 
-interface Cell {
-  readonly cellReference: string;
-  readonly column: number;
-  readonly columnName: string;
-  readonly row: number;
+export interface Cell {
+  readonly cellReference?: string;
+  readonly column?: number;
+  readonly columnName?: string;
+  readonly row?: number;
 }
 
-interface ClassificationDetails {
-  readonly detailedResultsLocation: string;
-  readonly jobArn: string;
-  readonly jobId: string;
-  readonly result: ClassificationResult;
+export interface ClassificationDetails {
+  readonly detailedResultsLocation?: string;
+  readonly jobArn?: string;
+  readonly jobId?: string;
+  readonly result?: ClassificationResult;
 }
 
-interface ClassificationExportConfiguration {
-  readonly s3Destination: S3Destination;
+export interface ClassificationExportConfiguration {
+  readonly s3Destination?: S3Destination;
 }
 
-interface ClassificationResult {
-  readonly additionalOccurrences: boolean;
-  readonly customDataIdentifiers: CustomDataIdentifiers;
-  readonly mimeType: string;
-  readonly sensitiveData: [];
-  readonly sizeClassified: number;
-  readonly status: ClassificationResultStatus;
+export interface ClassificationResult {
+  readonly additionalOccurrences?: boolean;
+  readonly customDataIdentifiers?: CustomDataIdentifiers;
+  readonly mimeType?: string;
+  readonly sensitiveData?: [];
+  readonly sizeClassified?: number;
+  readonly status?: ClassificationResultStatus;
 }
 
-interface ClassificationResultStatus {
-  readonly code: string;
-  readonly reason: string;
+export interface ClassificationResultStatus {
+  readonly code?: string;
+  readonly reason?: string;
 }
 
-interface ConflictException {
-  readonly message: string;
+export interface ConflictException {
+  readonly message?: string;
 }
 
-interface CreateClassificationJobRequest {
+export interface CreateClassificationJobRequest {
   readonly clientToken: string;
-  readonly customDataIdentifierIds: [];
-  readonly description: string;
-  readonly initialRun: boolean;
+  readonly customDataIdentifierIds?: [];
+  readonly description?: string;
+  readonly initialRun?: boolean;
   readonly jobType: string;
-  readonly managedDataIdentifierIds: [];
-  readonly managedDataIdentifierSelector: string;
+  readonly managedDataIdentifierIds?: [];
+  readonly managedDataIdentifierSelector?: string;
   readonly name: string;
   readonly s3JobDefinition: S3JobDefinition;
-  readonly samplingPercentage: number;
-  readonly scheduleFrequency: JobScheduleFrequency;
-  readonly tags: {[key: string]: any};
+  readonly samplingPercentage?: number;
+  readonly scheduleFrequency?: JobScheduleFrequency;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateClassificationJobResponse {
-  readonly jobArn: string;
-  readonly jobId: string;
+export interface CreateClassificationJobResponse {
+  readonly jobArn?: string;
+  readonly jobId?: string;
 }
 
-interface CreateCustomDataIdentifierRequest {
-  readonly clientToken: string;
-  readonly description: string;
-  readonly ignoreWords: [];
-  readonly keywords: [];
-  readonly maximumMatchDistance: number;
-  readonly name: string;
-  readonly regex: string;
-  readonly severityLevels: [];
-  readonly tags: {[key: string]: any};
+export interface CreateCustomDataIdentifierRequest {
+  readonly clientToken?: string;
+  readonly description?: string;
+  readonly ignoreWords?: [];
+  readonly keywords?: [];
+  readonly maximumMatchDistance?: number;
+  readonly name?: string;
+  readonly regex?: string;
+  readonly severityLevels?: [];
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateCustomDataIdentifierResponse {
-  readonly customDataIdentifierId: string;
+export interface CreateCustomDataIdentifierResponse {
+  readonly customDataIdentifierId?: string;
 }
 
-interface CreateFindingsFilterRequest {
+export interface CreateFindingsFilterRequest {
   readonly action: string;
-  readonly clientToken: string;
-  readonly description: string;
+  readonly clientToken?: string;
+  readonly description?: string;
   readonly findingCriteria: FindingCriteria;
   readonly name: string;
-  readonly position: number;
-  readonly tags: {[key: string]: any};
+  readonly position?: number;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateFindingsFilterResponse {
-  readonly arn: string;
-  readonly id: string;
+export interface CreateFindingsFilterResponse {
+  readonly arn?: string;
+  readonly id?: string;
 }
 
-interface CreateInvitationsRequest {
+export interface CreateInvitationsRequest {
   readonly accountIds: [];
-  readonly disableEmailNotification: boolean;
-  readonly message: string;
+  readonly disableEmailNotification?: boolean;
+  readonly message?: string;
 }
 
-interface CreateInvitationsResponse {
-  readonly unprocessedAccounts: [];
+export interface CreateInvitationsResponse {
+  readonly unprocessedAccounts?: [];
 }
 
-interface CreateMemberRequest {
+export interface CreateMemberRequest {
   readonly account: AccountDetail;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateMemberResponse {
-  readonly arn: string;
+export interface CreateMemberResponse {
+  readonly arn?: string;
 }
 
-interface CreateSampleFindingsRequest {
-  readonly findingTypes: [];
+export interface CreateSampleFindingsRequest {
+  readonly findingTypes?: [];
 }
 
-interface CreateSampleFindingsResponse {
+export interface CreateSampleFindingsResponse {
 }
 
-interface CriteriaBlockForJob {
-  readonly and: [];
+export interface CriteriaBlockForJob {
+  readonly and?: [];
 }
 
-interface CriteriaForJob {
-  readonly simpleCriterion: SimpleCriterionForJob;
-  readonly tagCriterion: TagCriterionForJob;
+export interface CriteriaForJob {
+  readonly simpleCriterion?: SimpleCriterionForJob;
+  readonly tagCriterion?: TagCriterionForJob;
 }
 
-interface CriterionAdditionalProperties {
-  readonly eq: [];
-  readonly eqExactMatch: [];
-  readonly gt: number;
-  readonly gte: number;
-  readonly lt: number;
-  readonly lte: number;
-  readonly neq: [];
+export interface CriterionAdditionalProperties {
+  readonly eq?: [];
+  readonly eqExactMatch?: [];
+  readonly gt?: number;
+  readonly gte?: number;
+  readonly lt?: number;
+  readonly lte?: number;
+  readonly neq?: [];
 }
 
-interface CustomDataIdentifierSummary {
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly description: string;
-  readonly id: string;
-  readonly name: string;
+export interface CustomDataIdentifierSummary {
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly description?: string;
+  readonly id?: string;
+  readonly name?: string;
 }
 
-interface CustomDataIdentifiers {
-  readonly detections: [];
-  readonly totalCount: number;
+export interface CustomDataIdentifiers {
+  readonly detections?: [];
+  readonly totalCount?: number;
 }
 
-interface CustomDetection {
-  readonly arn: string;
-  readonly count: number;
-  readonly name: string;
-  readonly occurrences: Occurrences;
+export interface CustomDetection {
+  readonly arn?: string;
+  readonly count?: number;
+  readonly name?: string;
+  readonly occurrences?: Occurrences;
 }
 
-interface DailySchedule {
+export interface DailySchedule {
 }
 
-interface DeclineInvitationsRequest {
+export interface DeclineInvitationsRequest {
   readonly accountIds: [];
 }
 
-interface DeclineInvitationsResponse {
-  readonly unprocessedAccounts: [];
+export interface DeclineInvitationsResponse {
+  readonly unprocessedAccounts?: [];
 }
 
-interface DefaultDetection {
-  readonly count: number;
-  readonly occurrences: Occurrences;
-  readonly type: string;
+export interface DefaultDetection {
+  readonly count?: number;
+  readonly occurrences?: Occurrences;
+  readonly type?: string;
 }
 
-interface DeleteCustomDataIdentifierRequest {
+export interface DeleteCustomDataIdentifierRequest {
   readonly id: string;
 }
 
-interface DeleteCustomDataIdentifierResponse {
+export interface DeleteCustomDataIdentifierResponse {
 }
 
-interface DeleteFindingsFilterRequest {
+export interface DeleteFindingsFilterRequest {
   readonly id: string;
 }
 
-interface DeleteFindingsFilterResponse {
+export interface DeleteFindingsFilterResponse {
 }
 
-interface DeleteInvitationsRequest {
+export interface DeleteInvitationsRequest {
   readonly accountIds: [];
 }
 
-interface DeleteInvitationsResponse {
-  readonly unprocessedAccounts: [];
+export interface DeleteInvitationsResponse {
+  readonly unprocessedAccounts?: [];
 }
 
-interface DeleteMemberRequest {
+export interface DeleteMemberRequest {
   readonly id: string;
 }
 
-interface DeleteMemberResponse {
+export interface DeleteMemberResponse {
 }
 
-interface DescribeBucketsRequest {
-  readonly criteria: {[key: string]: any};
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly sortCriteria: BucketSortCriteria;
+export interface DescribeBucketsRequest {
+  readonly criteria?: {[key: string]: any};
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly sortCriteria?: BucketSortCriteria;
 }
 
-interface DescribeBucketsResponse {
-  readonly buckets: [];
-  readonly nextToken: string;
+export interface DescribeBucketsResponse {
+  readonly buckets?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeClassificationJobRequest {
+export interface DescribeClassificationJobRequest {
   readonly jobId: string;
 }
 
-interface DescribeClassificationJobResponse {
-  readonly clientToken: string;
-  readonly createdAt: Date;
-  readonly customDataIdentifierIds: [];
-  readonly description: string;
-  readonly initialRun: boolean;
-  readonly jobArn: string;
-  readonly jobId: string;
-  readonly jobStatus: string;
-  readonly jobType: string;
-  readonly lastRunErrorStatus: LastRunErrorStatus;
-  readonly lastRunTime: Date;
-  readonly managedDataIdentifierIds: [];
-  readonly managedDataIdentifierSelector: string;
-  readonly name: string;
-  readonly s3JobDefinition: S3JobDefinition;
-  readonly samplingPercentage: number;
-  readonly scheduleFrequency: JobScheduleFrequency;
-  readonly statistics: Statistics;
-  readonly tags: {[key: string]: any};
-  readonly userPausedDetails: UserPausedDetails;
+export interface DescribeClassificationJobResponse {
+  readonly clientToken?: string;
+  readonly createdAt?: Date;
+  readonly customDataIdentifierIds?: [];
+  readonly description?: string;
+  readonly initialRun?: boolean;
+  readonly jobArn?: string;
+  readonly jobId?: string;
+  readonly jobStatus?: string;
+  readonly jobType?: string;
+  readonly lastRunErrorStatus?: LastRunErrorStatus;
+  readonly lastRunTime?: Date;
+  readonly managedDataIdentifierIds?: [];
+  readonly managedDataIdentifierSelector?: string;
+  readonly name?: string;
+  readonly s3JobDefinition?: S3JobDefinition;
+  readonly samplingPercentage?: number;
+  readonly scheduleFrequency?: JobScheduleFrequency;
+  readonly statistics?: Statistics;
+  readonly tags?: {[key: string]: any};
+  readonly userPausedDetails?: UserPausedDetails;
 }
 
-interface DescribeOrganizationConfigurationRequest {
+export interface DescribeOrganizationConfigurationRequest {
 }
 
-interface DescribeOrganizationConfigurationResponse {
-  readonly autoEnable: boolean;
-  readonly maxAccountLimitReached: boolean;
+export interface DescribeOrganizationConfigurationResponse {
+  readonly autoEnable?: boolean;
+  readonly maxAccountLimitReached?: boolean;
 }
 
-interface DisableMacieRequest {
+export interface DisableMacieRequest {
 }
 
-interface DisableMacieResponse {
+export interface DisableMacieResponse {
 }
 
-interface DisableOrganizationAdminAccountRequest {
+export interface DisableOrganizationAdminAccountRequest {
   readonly adminAccountId: string;
 }
 
-interface DisableOrganizationAdminAccountResponse {
+export interface DisableOrganizationAdminAccountResponse {
 }
 
-interface DisassociateFromAdministratorAccountRequest {
+export interface DisassociateFromAdministratorAccountRequest {
 }
 
-interface DisassociateFromAdministratorAccountResponse {
+export interface DisassociateFromAdministratorAccountResponse {
 }
 
-interface DisassociateFromMasterAccountRequest {
+export interface DisassociateFromMasterAccountRequest {
 }
 
-interface DisassociateFromMasterAccountResponse {
+export interface DisassociateFromMasterAccountResponse {
 }
 
-interface DisassociateMemberRequest {
+export interface DisassociateMemberRequest {
   readonly id: string;
 }
 
-interface DisassociateMemberResponse {
+export interface DisassociateMemberResponse {
 }
 
-interface DomainDetails {
-  readonly domainName: string;
+export interface DomainDetails {
+  readonly domainName?: string;
 }
 
-interface Empty {
+export interface Empty {
 }
 
-interface EnableMacieRequest {
-  readonly clientToken: string;
-  readonly findingPublishingFrequency: string;
-  readonly status: string;
+export interface EnableMacieRequest {
+  readonly clientToken?: string;
+  readonly findingPublishingFrequency?: string;
+  readonly status?: string;
 }
 
-interface EnableMacieResponse {
+export interface EnableMacieResponse {
 }
 
-interface EnableOrganizationAdminAccountRequest {
+export interface EnableOrganizationAdminAccountRequest {
   readonly adminAccountId: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface EnableOrganizationAdminAccountResponse {
+export interface EnableOrganizationAdminAccountResponse {
 }
 
-interface FederatedUser {
-  readonly accessKeyId: string;
-  readonly accountId: string;
-  readonly arn: string;
-  readonly principalId: string;
-  readonly sessionContext: SessionContext;
+export interface FederatedUser {
+  readonly accessKeyId?: string;
+  readonly accountId?: string;
+  readonly arn?: string;
+  readonly principalId?: string;
+  readonly sessionContext?: SessionContext;
 }
 
-interface Finding {
-  readonly accountId: string;
-  readonly archived: boolean;
-  readonly category: string;
-  readonly classificationDetails: ClassificationDetails;
-  readonly count: number;
-  readonly createdAt: Date;
-  readonly description: string;
+export interface Finding {
+  readonly accountId?: string;
+  readonly archived?: boolean;
+  readonly category?: string;
+  readonly classificationDetails?: ClassificationDetails;
+  readonly count?: number;
+  readonly createdAt?: Date;
+  readonly description?: string;
+  readonly id?: string;
+  readonly partition?: string;
+  readonly policyDetails?: PolicyDetails;
+  readonly region?: string;
+  readonly resourcesAffected?: ResourcesAffected;
+  readonly sample?: boolean;
+  readonly schemaVersion?: string;
+  readonly severity?: Severity;
+  readonly title?: string;
+  readonly type?: string;
+  readonly updatedAt?: Date;
+}
+
+export interface FindingAction {
+  readonly actionType?: string;
+  readonly apiCallDetails?: ApiCallDetails;
+}
+
+export interface FindingActor {
+  readonly domainDetails?: DomainDetails;
+  readonly ipAddressDetails?: IpAddressDetails;
+  readonly userIdentity?: UserIdentity;
+}
+
+export interface FindingCriteria {
+  readonly criterion?: {[key: string]: any};
+}
+
+export interface FindingStatisticsSortCriteria {
+  readonly attributeName?: string;
+  readonly orderBy?: string;
+}
+
+export interface FindingsFilterListItem {
+  readonly action?: string;
+  readonly arn?: string;
+  readonly id?: string;
+  readonly name?: string;
+  readonly tags?: {[key: string]: any};
+}
+
+export interface GetAdministratorAccountRequest {
+}
+
+export interface GetAdministratorAccountResponse {
+  readonly administrator?: Invitation;
+}
+
+export interface GetBucketStatisticsRequest {
+  readonly accountId?: string;
+}
+
+export interface GetBucketStatisticsResponse {
+  readonly bucketCount?: number;
+  readonly bucketCountByEffectivePermission?: BucketCountByEffectivePermission;
+  readonly bucketCountByEncryptionType?: BucketCountByEncryptionType;
+  readonly bucketCountByObjectEncryptionRequirement?: BucketCountPolicyAllowsUnencryptedObjectUploads;
+  readonly bucketCountBySharedAccessType?: BucketCountBySharedAccessType;
+  readonly classifiableObjectCount?: number;
+  readonly classifiableSizeInBytes?: number;
+  readonly lastUpdated?: Date;
+  readonly objectCount?: number;
+  readonly sizeInBytes?: number;
+  readonly sizeInBytesCompressed?: number;
+  readonly unclassifiableObjectCount?: ObjectLevelStatistics;
+  readonly unclassifiableObjectSizeInBytes?: ObjectLevelStatistics;
+}
+
+export interface GetClassificationExportConfigurationRequest {
+}
+
+export interface GetClassificationExportConfigurationResponse {
+  readonly configuration?: ClassificationExportConfiguration;
+}
+
+export interface GetCustomDataIdentifierRequest {
   readonly id: string;
-  readonly partition: string;
-  readonly policyDetails: PolicyDetails;
-  readonly region: string;
-  readonly resourcesAffected: ResourcesAffected;
-  readonly sample: boolean;
-  readonly schemaVersion: string;
-  readonly severity: Severity;
-  readonly title: string;
-  readonly type: string;
-  readonly updatedAt: Date;
 }
 
-interface FindingAction {
-  readonly actionType: string;
-  readonly apiCallDetails: ApiCallDetails;
+export interface GetCustomDataIdentifierResponse {
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly deleted?: boolean;
+  readonly description?: string;
+  readonly id?: string;
+  readonly ignoreWords?: [];
+  readonly keywords?: [];
+  readonly maximumMatchDistance?: number;
+  readonly name?: string;
+  readonly regex?: string;
+  readonly severityLevels?: [];
+  readonly tags?: {[key: string]: any};
 }
 
-interface FindingActor {
-  readonly domainDetails: DomainDetails;
-  readonly ipAddressDetails: IpAddressDetails;
-  readonly userIdentity: UserIdentity;
-}
-
-interface FindingCriteria {
-  readonly criterion: {[key: string]: any};
-}
-
-interface FindingStatisticsSortCriteria {
-  readonly attributeName: string;
-  readonly orderBy: string;
-}
-
-interface FindingsFilterListItem {
-  readonly action: string;
-  readonly arn: string;
-  readonly id: string;
-  readonly name: string;
-  readonly tags: {[key: string]: any};
-}
-
-interface GetAdministratorAccountRequest {
-}
-
-interface GetAdministratorAccountResponse {
-  readonly administrator: Invitation;
-}
-
-interface GetBucketStatisticsRequest {
-  readonly accountId: string;
-}
-
-interface GetBucketStatisticsResponse {
-  readonly bucketCount: number;
-  readonly bucketCountByEffectivePermission: BucketCountByEffectivePermission;
-  readonly bucketCountByEncryptionType: BucketCountByEncryptionType;
-  readonly bucketCountByObjectEncryptionRequirement: BucketCountPolicyAllowsUnencryptedObjectUploads;
-  readonly bucketCountBySharedAccessType: BucketCountBySharedAccessType;
-  readonly classifiableObjectCount: number;
-  readonly classifiableSizeInBytes: number;
-  readonly lastUpdated: Date;
-  readonly objectCount: number;
-  readonly sizeInBytes: number;
-  readonly sizeInBytesCompressed: number;
-  readonly unclassifiableObjectCount: ObjectLevelStatistics;
-  readonly unclassifiableObjectSizeInBytes: ObjectLevelStatistics;
-}
-
-interface GetClassificationExportConfigurationRequest {
-}
-
-interface GetClassificationExportConfigurationResponse {
-  readonly configuration: ClassificationExportConfiguration;
-}
-
-interface GetCustomDataIdentifierRequest {
-  readonly id: string;
-}
-
-interface GetCustomDataIdentifierResponse {
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly deleted: boolean;
-  readonly description: string;
-  readonly id: string;
-  readonly ignoreWords: [];
-  readonly keywords: [];
-  readonly maximumMatchDistance: number;
-  readonly name: string;
-  readonly regex: string;
-  readonly severityLevels: [];
-  readonly tags: {[key: string]: any};
-}
-
-interface GetFindingStatisticsRequest {
-  readonly findingCriteria: FindingCriteria;
+export interface GetFindingStatisticsRequest {
+  readonly findingCriteria?: FindingCriteria;
   readonly groupBy: string;
-  readonly size: number;
-  readonly sortCriteria: FindingStatisticsSortCriteria;
+  readonly size?: number;
+  readonly sortCriteria?: FindingStatisticsSortCriteria;
 }
 
-interface GetFindingStatisticsResponse {
-  readonly countsByGroup: [];
+export interface GetFindingStatisticsResponse {
+  readonly countsByGroup?: [];
 }
 
-interface GetFindingsFilterRequest {
+export interface GetFindingsFilterRequest {
   readonly id: string;
 }
 
-interface GetFindingsFilterResponse {
-  readonly action: string;
-  readonly arn: string;
-  readonly description: string;
-  readonly findingCriteria: FindingCriteria;
-  readonly id: string;
-  readonly name: string;
-  readonly position: number;
-  readonly tags: {[key: string]: any};
+export interface GetFindingsFilterResponse {
+  readonly action?: string;
+  readonly arn?: string;
+  readonly description?: string;
+  readonly findingCriteria?: FindingCriteria;
+  readonly id?: string;
+  readonly name?: string;
+  readonly position?: number;
+  readonly tags?: {[key: string]: any};
 }
 
-interface GetFindingsPublicationConfigurationRequest {
+export interface GetFindingsPublicationConfigurationRequest {
 }
 
-interface GetFindingsPublicationConfigurationResponse {
-  readonly securityHubConfiguration: SecurityHubConfiguration;
+export interface GetFindingsPublicationConfigurationResponse {
+  readonly securityHubConfiguration?: SecurityHubConfiguration;
 }
 
-interface GetFindingsRequest {
+export interface GetFindingsRequest {
   readonly findingIds: [];
-  readonly sortCriteria: SortCriteria;
+  readonly sortCriteria?: SortCriteria;
 }
 
-interface GetFindingsResponse {
-  readonly findings: [];
+export interface GetFindingsResponse {
+  readonly findings?: [];
 }
 
-interface GetInvitationsCountRequest {
+export interface GetInvitationsCountRequest {
 }
 
-interface GetInvitationsCountResponse {
-  readonly invitationsCount: number;
+export interface GetInvitationsCountResponse {
+  readonly invitationsCount?: number;
 }
 
-interface GetMacieSessionRequest {
+export interface GetMacieSessionRequest {
 }
 
-interface GetMacieSessionResponse {
-  readonly createdAt: Date;
-  readonly findingPublishingFrequency: string;
-  readonly serviceRole: string;
-  readonly status: string;
-  readonly updatedAt: Date;
+export interface GetMacieSessionResponse {
+  readonly createdAt?: Date;
+  readonly findingPublishingFrequency?: string;
+  readonly serviceRole?: string;
+  readonly status?: string;
+  readonly updatedAt?: Date;
 }
 
-interface GetMasterAccountRequest {
+export interface GetMasterAccountRequest {
 }
 
-interface GetMasterAccountResponse {
-  readonly master: Invitation;
+export interface GetMasterAccountResponse {
+  readonly master?: Invitation;
 }
 
-interface GetMemberRequest {
+export interface GetMemberRequest {
   readonly id: string;
 }
 
-interface GetMemberResponse {
-  readonly accountId: string;
-  readonly administratorAccountId: string;
-  readonly arn: string;
-  readonly email: string;
-  readonly invitedAt: Date;
-  readonly masterAccountId: string;
-  readonly relationshipStatus: string;
-  readonly tags: {[key: string]: any};
-  readonly updatedAt: Date;
+export interface GetMemberResponse {
+  readonly accountId?: string;
+  readonly administratorAccountId?: string;
+  readonly arn?: string;
+  readonly email?: string;
+  readonly invitedAt?: Date;
+  readonly masterAccountId?: string;
+  readonly relationshipStatus?: string;
+  readonly tags?: {[key: string]: any};
+  readonly updatedAt?: Date;
 }
 
-interface GetUsageStatisticsRequest {
-  readonly filterBy: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly sortBy: UsageStatisticsSortBy;
-  readonly timeRange: string;
+export interface GetUsageStatisticsRequest {
+  readonly filterBy?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly sortBy?: UsageStatisticsSortBy;
+  readonly timeRange?: string;
 }
 
-interface GetUsageStatisticsResponse {
-  readonly nextToken: string;
-  readonly records: [];
-  readonly timeRange: string;
+export interface GetUsageStatisticsResponse {
+  readonly nextToken?: string;
+  readonly records?: [];
+  readonly timeRange?: string;
 }
 
-interface GetUsageTotalsRequest {
-  readonly timeRange: string;
+export interface GetUsageTotalsRequest {
+  readonly timeRange?: string;
 }
 
-interface GetUsageTotalsResponse {
-  readonly timeRange: string;
-  readonly usageTotals: [];
+export interface GetUsageTotalsResponse {
+  readonly timeRange?: string;
+  readonly usageTotals?: [];
 }
 
-interface GroupCount {
-  readonly count: number;
-  readonly groupKey: string;
+export interface GroupCount {
+  readonly count?: number;
+  readonly groupKey?: string;
 }
 
-interface IamUser {
-  readonly accountId: string;
-  readonly arn: string;
-  readonly principalId: string;
-  readonly userName: string;
+export interface IamUser {
+  readonly accountId?: string;
+  readonly arn?: string;
+  readonly principalId?: string;
+  readonly userName?: string;
 }
 
-interface InternalServerException {
-  readonly message: string;
+export interface InternalServerException {
+  readonly message?: string;
 }
 
-interface Invitation {
-  readonly accountId: string;
-  readonly invitationId: string;
-  readonly invitedAt: Date;
-  readonly relationshipStatus: string;
+export interface Invitation {
+  readonly accountId?: string;
+  readonly invitationId?: string;
+  readonly invitedAt?: Date;
+  readonly relationshipStatus?: string;
 }
 
-interface IpAddressDetails {
-  readonly ipAddressV4: string;
-  readonly ipCity: IpCity;
-  readonly ipCountry: IpCountry;
-  readonly ipGeoLocation: IpGeoLocation;
-  readonly ipOwner: IpOwner;
+export interface IpAddressDetails {
+  readonly ipAddressV4?: string;
+  readonly ipCity?: IpCity;
+  readonly ipCountry?: IpCountry;
+  readonly ipGeoLocation?: IpGeoLocation;
+  readonly ipOwner?: IpOwner;
 }
 
-interface IpCity {
-  readonly name: string;
+export interface IpCity {
+  readonly name?: string;
 }
 
-interface IpCountry {
-  readonly code: string;
-  readonly name: string;
+export interface IpCountry {
+  readonly code?: string;
+  readonly name?: string;
 }
 
-interface IpGeoLocation {
-  readonly lat: unknown;
-  readonly lon: unknown;
+export interface IpGeoLocation {
+  readonly lat?: unknown;
+  readonly lon?: unknown;
 }
 
-interface IpOwner {
-  readonly asn: string;
-  readonly asnOrg: string;
-  readonly isp: string;
-  readonly org: string;
+export interface IpOwner {
+  readonly asn?: string;
+  readonly asnOrg?: string;
+  readonly isp?: string;
+  readonly org?: string;
 }
 
-interface JobDetails {
-  readonly isDefinedInJob: string;
-  readonly isMonitoredByJob: string;
-  readonly lastJobId: string;
-  readonly lastJobRunTime: Date;
+export interface JobDetails {
+  readonly isDefinedInJob?: string;
+  readonly isMonitoredByJob?: string;
+  readonly lastJobId?: string;
+  readonly lastJobRunTime?: Date;
 }
 
-interface JobScheduleFrequency {
-  readonly dailySchedule: DailySchedule;
-  readonly monthlySchedule: MonthlySchedule;
-  readonly weeklySchedule: WeeklySchedule;
+export interface JobScheduleFrequency {
+  readonly dailySchedule?: DailySchedule;
+  readonly monthlySchedule?: MonthlySchedule;
+  readonly weeklySchedule?: WeeklySchedule;
 }
 
-interface JobScopeTerm {
-  readonly simpleScopeTerm: SimpleScopeTerm;
-  readonly tagScopeTerm: TagScopeTerm;
+export interface JobScopeTerm {
+  readonly simpleScopeTerm?: SimpleScopeTerm;
+  readonly tagScopeTerm?: TagScopeTerm;
 }
 
-interface JobScopingBlock {
-  readonly and: [];
+export interface JobScopingBlock {
+  readonly and?: [];
 }
 
-interface JobSummary {
-  readonly bucketDefinitions: [];
-  readonly createdAt: Date;
-  readonly jobId: string;
-  readonly jobStatus: string;
-  readonly jobType: string;
-  readonly lastRunErrorStatus: LastRunErrorStatus;
-  readonly name: string;
-  readonly userPausedDetails: UserPausedDetails;
-  readonly bucketCriteria: S3BucketCriteriaForJob;
+export interface JobSummary {
+  readonly bucketDefinitions?: [];
+  readonly createdAt?: Date;
+  readonly jobId?: string;
+  readonly jobStatus?: string;
+  readonly jobType?: string;
+  readonly lastRunErrorStatus?: LastRunErrorStatus;
+  readonly name?: string;
+  readonly userPausedDetails?: UserPausedDetails;
+  readonly bucketCriteria?: S3BucketCriteriaForJob;
 }
 
-interface KeyValuePair {
-  readonly key: string;
-  readonly value: string;
+export interface KeyValuePair {
+  readonly key?: string;
+  readonly value?: string;
 }
 
-interface LastRunErrorStatus {
-  readonly code: string;
+export interface LastRunErrorStatus {
+  readonly code?: string;
 }
 
-interface ListClassificationJobsRequest {
-  readonly filterCriteria: ListJobsFilterCriteria;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly sortCriteria: ListJobsSortCriteria;
+export interface ListClassificationJobsRequest {
+  readonly filterCriteria?: ListJobsFilterCriteria;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly sortCriteria?: ListJobsSortCriteria;
 }
 
-interface ListClassificationJobsResponse {
-  readonly items: [];
-  readonly nextToken: string;
+export interface ListClassificationJobsResponse {
+  readonly items?: [];
+  readonly nextToken?: string;
 }
 
-interface ListCustomDataIdentifiersRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListCustomDataIdentifiersRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListCustomDataIdentifiersResponse {
-  readonly items: [];
-  readonly nextToken: string;
+export interface ListCustomDataIdentifiersResponse {
+  readonly items?: [];
+  readonly nextToken?: string;
 }
 
-interface ListFindingsFiltersRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListFindingsFiltersRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListFindingsFiltersResponse {
-  readonly findingsFilterListItems: [];
-  readonly nextToken: string;
+export interface ListFindingsFiltersResponse {
+  readonly findingsFilterListItems?: [];
+  readonly nextToken?: string;
 }
 
-interface ListFindingsRequest {
-  readonly findingCriteria: FindingCriteria;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly sortCriteria: SortCriteria;
+export interface ListFindingsRequest {
+  readonly findingCriteria?: FindingCriteria;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly sortCriteria?: SortCriteria;
 }
 
-interface ListFindingsResponse {
-  readonly findingIds: [];
-  readonly nextToken: string;
+export interface ListFindingsResponse {
+  readonly findingIds?: [];
+  readonly nextToken?: string;
 }
 
-interface ListInvitationsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListInvitationsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListInvitationsResponse {
-  readonly invitations: [];
-  readonly nextToken: string;
+export interface ListInvitationsResponse {
+  readonly invitations?: [];
+  readonly nextToken?: string;
 }
 
-interface ListJobsFilterCriteria {
-  readonly excludes: [];
-  readonly includes: [];
+export interface ListJobsFilterCriteria {
+  readonly excludes?: [];
+  readonly includes?: [];
 }
 
-interface ListJobsFilterTerm {
-  readonly comparator: string;
-  readonly key: string;
-  readonly values: [];
+export interface ListJobsFilterTerm {
+  readonly comparator?: string;
+  readonly key?: string;
+  readonly values?: [];
 }
 
-interface ListJobsSortCriteria {
-  readonly attributeName: string;
-  readonly orderBy: string;
+export interface ListJobsSortCriteria {
+  readonly attributeName?: string;
+  readonly orderBy?: string;
 }
 
-interface ListManagedDataIdentifiersRequest {
-  readonly nextToken: string;
+export interface ListManagedDataIdentifiersRequest {
+  readonly nextToken?: string;
 }
 
-interface ListManagedDataIdentifiersResponse {
-  readonly items: [];
-  readonly nextToken: string;
+export interface ListManagedDataIdentifiersResponse {
+  readonly items?: [];
+  readonly nextToken?: string;
 }
 
-interface ListMembersRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly onlyAssociated: string;
+export interface ListMembersRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly onlyAssociated?: string;
 }
 
-interface ListMembersResponse {
-  readonly members: [];
-  readonly nextToken: string;
+export interface ListMembersResponse {
+  readonly members?: [];
+  readonly nextToken?: string;
 }
 
-interface ListOrganizationAdminAccountsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListOrganizationAdminAccountsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListOrganizationAdminAccountsResponse {
-  readonly adminAccounts: [];
-  readonly nextToken: string;
+export interface ListOrganizationAdminAccountsResponse {
+  readonly adminAccounts?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ManagedDataIdentifierSummary {
-  readonly category: string;
-  readonly id: string;
+export interface ManagedDataIdentifierSummary {
+  readonly category?: string;
+  readonly id?: string;
 }
 
-interface MatchingBucket {
-  readonly accountId: string;
-  readonly bucketName: string;
-  readonly classifiableObjectCount: number;
-  readonly classifiableSizeInBytes: number;
-  readonly errorCode: string;
-  readonly errorMessage: string;
-  readonly jobDetails: JobDetails;
-  readonly objectCount: number;
-  readonly objectCountByEncryptionType: ObjectCountByEncryptionType;
-  readonly sizeInBytes: number;
-  readonly sizeInBytesCompressed: number;
-  readonly unclassifiableObjectCount: ObjectLevelStatistics;
-  readonly unclassifiableObjectSizeInBytes: ObjectLevelStatistics;
+export interface MatchingBucket {
+  readonly accountId?: string;
+  readonly bucketName?: string;
+  readonly classifiableObjectCount?: number;
+  readonly classifiableSizeInBytes?: number;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
+  readonly jobDetails?: JobDetails;
+  readonly objectCount?: number;
+  readonly objectCountByEncryptionType?: ObjectCountByEncryptionType;
+  readonly sizeInBytes?: number;
+  readonly sizeInBytesCompressed?: number;
+  readonly unclassifiableObjectCount?: ObjectLevelStatistics;
+  readonly unclassifiableObjectSizeInBytes?: ObjectLevelStatistics;
 }
 
-interface MatchingResource {
-  readonly matchingBucket: MatchingBucket;
+export interface MatchingResource {
+  readonly matchingBucket?: MatchingBucket;
 }
 
-interface Member {
-  readonly accountId: string;
-  readonly administratorAccountId: string;
-  readonly arn: string;
-  readonly email: string;
-  readonly invitedAt: Date;
-  readonly masterAccountId: string;
-  readonly relationshipStatus: string;
-  readonly tags: {[key: string]: any};
-  readonly updatedAt: Date;
+export interface Member {
+  readonly accountId?: string;
+  readonly administratorAccountId?: string;
+  readonly arn?: string;
+  readonly email?: string;
+  readonly invitedAt?: Date;
+  readonly masterAccountId?: string;
+  readonly relationshipStatus?: string;
+  readonly tags?: {[key: string]: any};
+  readonly updatedAt?: Date;
 }
 
-interface MonthlySchedule {
-  readonly dayOfMonth: number;
+export interface MonthlySchedule {
+  readonly dayOfMonth?: number;
 }
 
-interface ObjectCountByEncryptionType {
-  readonly customerManaged: number;
-  readonly kmsManaged: number;
-  readonly s3Managed: number;
-  readonly unencrypted: number;
-  readonly unknown: number;
+export interface ObjectCountByEncryptionType {
+  readonly customerManaged?: number;
+  readonly kmsManaged?: number;
+  readonly s3Managed?: number;
+  readonly unencrypted?: number;
+  readonly unknown?: number;
 }
 
-interface ObjectLevelStatistics {
-  readonly fileType: number;
-  readonly storageClass: number;
-  readonly total: number;
+export interface ObjectLevelStatistics {
+  readonly fileType?: number;
+  readonly storageClass?: number;
+  readonly total?: number;
 }
 
-interface Occurrences {
-  readonly cells: [];
-  readonly lineRanges: [];
-  readonly offsetRanges: [];
-  readonly pages: [];
-  readonly records: [];
+export interface Occurrences {
+  readonly cells?: [];
+  readonly lineRanges?: [];
+  readonly offsetRanges?: [];
+  readonly pages?: [];
+  readonly records?: [];
 }
 
-interface Page {
-  readonly lineRange: Range;
-  readonly offsetRange: Range;
-  readonly pageNumber: number;
+export interface Page {
+  readonly lineRange?: Range;
+  readonly offsetRange?: Range;
+  readonly pageNumber?: number;
 }
 
-interface PolicyDetails {
-  readonly action: FindingAction;
-  readonly actor: FindingActor;
+export interface PolicyDetails {
+  readonly action?: FindingAction;
+  readonly actor?: FindingActor;
 }
 
-interface PutClassificationExportConfigurationRequest {
+export interface PutClassificationExportConfigurationRequest {
   readonly configuration: ClassificationExportConfiguration;
 }
 
-interface PutClassificationExportConfigurationResponse {
-  readonly configuration: ClassificationExportConfiguration;
+export interface PutClassificationExportConfigurationResponse {
+  readonly configuration?: ClassificationExportConfiguration;
 }
 
-interface PutFindingsPublicationConfigurationRequest {
-  readonly clientToken: string;
-  readonly securityHubConfiguration: SecurityHubConfiguration;
+export interface PutFindingsPublicationConfigurationRequest {
+  readonly clientToken?: string;
+  readonly securityHubConfiguration?: SecurityHubConfiguration;
 }
 
-interface PutFindingsPublicationConfigurationResponse {
+export interface PutFindingsPublicationConfigurationResponse {
 }
 
-interface Range {
-  readonly end: number;
-  readonly start: number;
-  readonly startColumn: number;
+export interface Range {
+  readonly end?: number;
+  readonly start?: number;
+  readonly startColumn?: number;
 }
 
-interface Record {
-  readonly jsonPath: string;
-  readonly recordIndex: number;
+export interface Record {
+  readonly jsonPath?: string;
+  readonly recordIndex?: number;
 }
 
-interface ReplicationDetails {
-  readonly replicated: boolean;
-  readonly replicatedExternally: boolean;
-  readonly replicationAccounts: [];
+export interface ReplicationDetails {
+  readonly replicated?: boolean;
+  readonly replicatedExternally?: boolean;
+  readonly replicationAccounts?: [];
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface ResourcesAffected {
-  readonly s3Bucket: S3Bucket;
-  readonly s3Object: S3Object;
+export interface ResourcesAffected {
+  readonly s3Bucket?: S3Bucket;
+  readonly s3Object?: S3Object;
 }
 
-interface S3Bucket {
-  readonly allowsUnencryptedObjectUploads: string;
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly defaultServerSideEncryption: ServerSideEncryption;
-  readonly name: string;
-  readonly owner: S3BucketOwner;
-  readonly publicAccess: BucketPublicAccess;
-  readonly tags: [];
+export interface S3Bucket {
+  readonly allowsUnencryptedObjectUploads?: string;
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly defaultServerSideEncryption?: ServerSideEncryption;
+  readonly name?: string;
+  readonly owner?: S3BucketOwner;
+  readonly publicAccess?: BucketPublicAccess;
+  readonly tags?: [];
 }
 
-interface S3BucketCriteriaForJob {
-  readonly excludes: CriteriaBlockForJob;
-  readonly includes: CriteriaBlockForJob;
+export interface S3BucketCriteriaForJob {
+  readonly excludes?: CriteriaBlockForJob;
+  readonly includes?: CriteriaBlockForJob;
 }
 
-interface S3BucketDefinitionForJob {
+export interface S3BucketDefinitionForJob {
   readonly accountId: string;
   readonly buckets: [];
 }
 
-interface S3BucketOwner {
-  readonly displayName: string;
-  readonly id: string;
+export interface S3BucketOwner {
+  readonly displayName?: string;
+  readonly id?: string;
 }
 
-interface S3Destination {
+export interface S3Destination {
   readonly bucketName: string;
-  readonly keyPrefix: string;
+  readonly keyPrefix?: string;
   readonly kmsKeyArn: string;
 }
 
-interface S3JobDefinition {
-  readonly bucketDefinitions: [];
-  readonly scoping: Scoping;
-  readonly bucketCriteria: S3BucketCriteriaForJob;
+export interface S3JobDefinition {
+  readonly bucketDefinitions?: [];
+  readonly scoping?: Scoping;
+  readonly bucketCriteria?: S3BucketCriteriaForJob;
 }
 
-interface S3Object {
-  readonly bucketArn: string;
-  readonly eTag: string;
-  readonly extension: string;
-  readonly key: string;
-  readonly lastModified: Date;
-  readonly path: string;
-  readonly publicAccess: boolean;
-  readonly serverSideEncryption: ServerSideEncryption;
-  readonly size: number;
-  readonly storageClass: string;
-  readonly tags: [];
-  readonly versionId: string;
+export interface S3Object {
+  readonly bucketArn?: string;
+  readonly eTag?: string;
+  readonly extension?: string;
+  readonly key?: string;
+  readonly lastModified?: Date;
+  readonly path?: string;
+  readonly publicAccess?: boolean;
+  readonly serverSideEncryption?: ServerSideEncryption;
+  readonly size?: number;
+  readonly storageClass?: string;
+  readonly tags?: [];
+  readonly versionId?: string;
 }
 
-interface Scoping {
-  readonly excludes: JobScopingBlock;
-  readonly includes: JobScopingBlock;
+export interface Scoping {
+  readonly excludes?: JobScopingBlock;
+  readonly includes?: JobScopingBlock;
 }
 
-interface SearchResourcesBucketCriteria {
-  readonly excludes: SearchResourcesCriteriaBlock;
-  readonly includes: SearchResourcesCriteriaBlock;
+export interface SearchResourcesBucketCriteria {
+  readonly excludes?: SearchResourcesCriteriaBlock;
+  readonly includes?: SearchResourcesCriteriaBlock;
 }
 
-interface SearchResourcesCriteria {
-  readonly simpleCriterion: SearchResourcesSimpleCriterion;
-  readonly tagCriterion: SearchResourcesTagCriterion;
+export interface SearchResourcesCriteria {
+  readonly simpleCriterion?: SearchResourcesSimpleCriterion;
+  readonly tagCriterion?: SearchResourcesTagCriterion;
 }
 
-interface SearchResourcesCriteriaBlock {
-  readonly and: [];
+export interface SearchResourcesCriteriaBlock {
+  readonly and?: [];
 }
 
-interface SearchResourcesRequest {
-  readonly bucketCriteria: SearchResourcesBucketCriteria;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly sortCriteria: SearchResourcesSortCriteria;
+export interface SearchResourcesRequest {
+  readonly bucketCriteria?: SearchResourcesBucketCriteria;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly sortCriteria?: SearchResourcesSortCriteria;
 }
 
-interface SearchResourcesResponse {
-  readonly matchingResources: [];
-  readonly nextToken: string;
+export interface SearchResourcesResponse {
+  readonly matchingResources?: [];
+  readonly nextToken?: string;
 }
 
-interface SearchResourcesSimpleCriterion {
-  readonly comparator: string;
-  readonly key: string;
-  readonly values: [];
+export interface SearchResourcesSimpleCriterion {
+  readonly comparator?: string;
+  readonly key?: string;
+  readonly values?: [];
 }
 
-interface SearchResourcesSortCriteria {
-  readonly attributeName: string;
-  readonly orderBy: string;
+export interface SearchResourcesSortCriteria {
+  readonly attributeName?: string;
+  readonly orderBy?: string;
 }
 
-interface SearchResourcesTagCriterion {
-  readonly comparator: string;
-  readonly tagValues: [];
+export interface SearchResourcesTagCriterion {
+  readonly comparator?: string;
+  readonly tagValues?: [];
 }
 
-interface SearchResourcesTagCriterionPair {
-  readonly key: string;
-  readonly value: string;
+export interface SearchResourcesTagCriterionPair {
+  readonly key?: string;
+  readonly value?: string;
 }
 
-interface SecurityHubConfiguration {
+export interface SecurityHubConfiguration {
   readonly publishClassificationFindings: boolean;
   readonly publishPolicyFindings: boolean;
 }
 
-interface SensitiveDataItem {
-  readonly category: string;
-  readonly detections: [];
-  readonly totalCount: number;
+export interface SensitiveDataItem {
+  readonly category?: string;
+  readonly detections?: [];
+  readonly totalCount?: number;
 }
 
-interface ServerSideEncryption {
-  readonly encryptionType: string;
-  readonly kmsMasterKeyId: string;
+export interface ServerSideEncryption {
+  readonly encryptionType?: string;
+  readonly kmsMasterKeyId?: string;
 }
 
-interface ServiceLimit {
-  readonly isServiceLimited: boolean;
-  readonly unit: string;
-  readonly value: number;
+export interface ServiceLimit {
+  readonly isServiceLimited?: boolean;
+  readonly unit?: string;
+  readonly value?: number;
 }
 
-interface ServiceQuotaExceededException {
-  readonly message: string;
+export interface ServiceQuotaExceededException {
+  readonly message?: string;
 }
 
-interface SessionContext {
-  readonly attributes: SessionContextAttributes;
-  readonly sessionIssuer: SessionIssuer;
+export interface SessionContext {
+  readonly attributes?: SessionContextAttributes;
+  readonly sessionIssuer?: SessionIssuer;
 }
 
-interface SessionContextAttributes {
-  readonly creationDate: Date;
-  readonly mfaAuthenticated: boolean;
+export interface SessionContextAttributes {
+  readonly creationDate?: Date;
+  readonly mfaAuthenticated?: boolean;
 }
 
-interface SessionIssuer {
-  readonly accountId: string;
-  readonly arn: string;
-  readonly principalId: string;
-  readonly type: string;
-  readonly userName: string;
+export interface SessionIssuer {
+  readonly accountId?: string;
+  readonly arn?: string;
+  readonly principalId?: string;
+  readonly type?: string;
+  readonly userName?: string;
 }
 
-interface Severity {
-  readonly description: string;
-  readonly score: number;
+export interface Severity {
+  readonly description?: string;
+  readonly score?: number;
 }
 
-interface SeverityLevel {
+export interface SeverityLevel {
   readonly occurrencesThreshold: number;
   readonly severity: string;
 }
 
-interface SimpleCriterionForJob {
-  readonly comparator: string;
-  readonly key: string;
-  readonly values: [];
+export interface SimpleCriterionForJob {
+  readonly comparator?: string;
+  readonly key?: string;
+  readonly values?: [];
 }
 
-interface SimpleScopeTerm {
-  readonly comparator: string;
-  readonly key: string;
-  readonly values: [];
+export interface SimpleScopeTerm {
+  readonly comparator?: string;
+  readonly key?: string;
+  readonly values?: [];
 }
 
-interface SortCriteria {
-  readonly attributeName: string;
-  readonly orderBy: string;
+export interface SortCriteria {
+  readonly attributeName?: string;
+  readonly orderBy?: string;
 }
 
-interface Statistics {
-  readonly approximateNumberOfObjectsToProcess: unknown;
-  readonly numberOfRuns: unknown;
+export interface Statistics {
+  readonly approximateNumberOfObjectsToProcess?: unknown;
+  readonly numberOfRuns?: unknown;
 }
 
-interface TagCriterionForJob {
-  readonly comparator: string;
-  readonly tagValues: [];
+export interface TagCriterionForJob {
+  readonly comparator?: string;
+  readonly tagValues?: [];
 }
 
-interface TagCriterionPairForJob {
-  readonly key: string;
-  readonly value: string;
+export interface TagCriterionPairForJob {
+  readonly key?: string;
+  readonly value?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TagScopeTerm {
-  readonly comparator: string;
-  readonly key: string;
-  readonly tagValues: [];
-  readonly target: string;
+export interface TagScopeTerm {
+  readonly comparator?: string;
+  readonly key?: string;
+  readonly tagValues?: [];
+  readonly target?: string;
 }
 
-interface TagValuePair {
-  readonly key: string;
-  readonly value: string;
+export interface TagValuePair {
+  readonly key?: string;
+  readonly value?: string;
 }
 
-interface TestCustomDataIdentifierRequest {
-  readonly ignoreWords: [];
-  readonly keywords: [];
-  readonly maximumMatchDistance: number;
+export interface TestCustomDataIdentifierRequest {
+  readonly ignoreWords?: [];
+  readonly keywords?: [];
+  readonly maximumMatchDistance?: number;
   readonly regex: string;
   readonly sampleText: string;
 }
 
-interface TestCustomDataIdentifierResponse {
-  readonly matchCount: number;
+export interface TestCustomDataIdentifierResponse {
+  readonly matchCount?: number;
 }
 
-interface ThrottlingException {
-  readonly message: string;
+export interface ThrottlingException {
+  readonly message?: string;
 }
 
-interface UnprocessedAccount {
-  readonly accountId: string;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface UnprocessedAccount {
+  readonly accountId?: string;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateClassificationJobRequest {
+export interface UpdateClassificationJobRequest {
   readonly jobId: string;
   readonly jobStatus: string;
 }
 
-interface UpdateClassificationJobResponse {
+export interface UpdateClassificationJobResponse {
 }
 
-interface UpdateFindingsFilterRequest {
-  readonly action: string;
-  readonly description: string;
-  readonly findingCriteria: FindingCriteria;
+export interface UpdateFindingsFilterRequest {
+  readonly action?: string;
+  readonly description?: string;
+  readonly findingCriteria?: FindingCriteria;
   readonly id: string;
-  readonly name: string;
-  readonly position: number;
-  readonly clientToken: string;
+  readonly name?: string;
+  readonly position?: number;
+  readonly clientToken?: string;
 }
 
-interface UpdateFindingsFilterResponse {
-  readonly arn: string;
+export interface UpdateFindingsFilterResponse {
+  readonly arn?: string;
+  readonly id?: string;
+}
+
+export interface UpdateMacieSessionRequest {
+  readonly findingPublishingFrequency?: string;
+  readonly status?: string;
+}
+
+export interface UpdateMacieSessionResponse {
+}
+
+export interface UpdateMemberSessionRequest {
   readonly id: string;
-}
-
-interface UpdateMacieSessionRequest {
-  readonly findingPublishingFrequency: string;
   readonly status: string;
 }
 
-interface UpdateMacieSessionResponse {
+export interface UpdateMemberSessionResponse {
 }
 
-interface UpdateMemberSessionRequest {
-  readonly id: string;
-  readonly status: string;
-}
-
-interface UpdateMemberSessionResponse {
-}
-
-interface UpdateOrganizationConfigurationRequest {
+export interface UpdateOrganizationConfigurationRequest {
   readonly autoEnable: boolean;
 }
 
-interface UpdateOrganizationConfigurationResponse {
+export interface UpdateOrganizationConfigurationResponse {
 }
 
-interface UsageByAccount {
-  readonly currency: string;
-  readonly estimatedCost: string;
-  readonly serviceLimit: ServiceLimit;
-  readonly type: string;
+export interface UsageByAccount {
+  readonly currency?: string;
+  readonly estimatedCost?: string;
+  readonly serviceLimit?: ServiceLimit;
+  readonly type?: string;
 }
 
-interface UsageRecord {
-  readonly accountId: string;
-  readonly freeTrialStartDate: Date;
-  readonly usage: [];
+export interface UsageRecord {
+  readonly accountId?: string;
+  readonly freeTrialStartDate?: Date;
+  readonly usage?: [];
 }
 
-interface UsageStatisticsFilter {
-  readonly comparator: string;
-  readonly key: string;
-  readonly values: [];
+export interface UsageStatisticsFilter {
+  readonly comparator?: string;
+  readonly key?: string;
+  readonly values?: [];
 }
 
-interface UsageStatisticsSortBy {
-  readonly key: string;
-  readonly orderBy: string;
+export interface UsageStatisticsSortBy {
+  readonly key?: string;
+  readonly orderBy?: string;
 }
 
-interface UsageTotal {
-  readonly currency: string;
-  readonly estimatedCost: string;
-  readonly type: string;
+export interface UsageTotal {
+  readonly currency?: string;
+  readonly estimatedCost?: string;
+  readonly type?: string;
 }
 
-interface UserIdentity {
-  readonly assumedRole: AssumedRole;
-  readonly awsAccount: AwsAccount;
-  readonly awsService: AwsService;
-  readonly federatedUser: FederatedUser;
-  readonly iamUser: IamUser;
-  readonly root: UserIdentityRoot;
-  readonly type: string;
+export interface UserIdentity {
+  readonly assumedRole?: AssumedRole;
+  readonly awsAccount?: AwsAccount;
+  readonly awsService?: AwsService;
+  readonly federatedUser?: FederatedUser;
+  readonly iamUser?: IamUser;
+  readonly root?: UserIdentityRoot;
+  readonly type?: string;
 }
 
-interface UserIdentityRoot {
-  readonly accountId: string;
-  readonly arn: string;
-  readonly principalId: string;
+export interface UserIdentityRoot {
+  readonly accountId?: string;
+  readonly arn?: string;
+  readonly principalId?: string;
 }
 
-interface UserPausedDetails {
-  readonly jobExpiresAt: Date;
-  readonly jobImminentExpirationHealthEventArn: string;
-  readonly jobPausedAt: Date;
+export interface UserPausedDetails {
+  readonly jobExpiresAt?: Date;
+  readonly jobImminentExpirationHealthEventArn?: string;
+  readonly jobPausedAt?: Date;
 }
 
-interface ValidationException {
-  readonly message: string;
+export interface ValidationException {
+  readonly message?: string;
 }
 
-interface WeeklySchedule {
-  readonly dayOfWeek: string;
+export interface WeeklySchedule {
+  readonly dayOfWeek?: string;
 }
+
 

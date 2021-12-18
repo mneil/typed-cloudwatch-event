@@ -6,55 +6,67 @@ export interface ActivatePipeline {
   readonly parameterValues?: [];
   readonly startTimestamp?: Date;
 }
+
 export interface AddTags {
   readonly pipelineId: string;
   readonly tags: [];
 }
+
 export interface CreatePipeline {
   readonly name: string;
   readonly uniqueId: string;
   readonly description?: string;
   readonly tags?: [];
 }
+
 export interface DeactivatePipeline {
   readonly pipelineId: string;
   readonly cancelActive?: boolean;
 }
+
 export interface DeletePipeline {
   readonly pipelineId: string;
 }
+
 export interface DescribeObjects {
   readonly pipelineId: string;
   readonly objectIds: [];
   readonly evaluateExpressions?: boolean;
   readonly marker?: string;
 }
+
 export interface DescribePipelines {
   readonly pipelineIds: [];
 }
+
 export interface EvaluateExpression {
   readonly pipelineId: string;
   readonly objectId: string;
   readonly expression: string;
 }
+
 export interface GetPipelineDefinition {
   readonly pipelineId: string;
   readonly version?: string;
 }
+
 export interface ListPipelines {
   readonly marker?: string;
 }
+
 export interface PollForTask {
   readonly workerGroup: string;
   readonly hostname?: string;
   readonly instanceIdentity?: InstanceIdentity;
 }
+
 export interface PutPipelineDefinition {
   readonly pipelineId: string;
   readonly pipelineObjects: [];
   readonly parameterObjects?: [];
   readonly parameterValues?: [];
 }
+
 export interface QueryObjects {
   readonly pipelineId: string;
   readonly query?: Query;
@@ -62,24 +74,29 @@ export interface QueryObjects {
   readonly marker?: string;
   readonly limit?: number;
 }
+
 export interface RemoveTags {
   readonly pipelineId: string;
   readonly tagKeys: [];
 }
+
 export interface ReportTaskProgress {
   readonly taskId: string;
   readonly fields?: [];
 }
+
 export interface ReportTaskRunnerHeartbeat {
   readonly taskrunnerId: string;
   readonly workerGroup?: string;
   readonly hostname?: string;
 }
+
 export interface SetStatus {
   readonly pipelineId: string;
   readonly objectIds: [];
   readonly status: string;
 }
+
 export interface SetTaskStatus {
   readonly taskId: string;
   readonly taskStatus: string;
@@ -87,6 +104,7 @@ export interface SetTaskStatus {
   readonly errorMessage?: string;
   readonly errorStackTrace?: string;
 }
+
 export interface ValidatePipelineDefinition {
   readonly pipelineId: string;
   readonly pipelineObjects: [];
@@ -94,292 +112,291 @@ export interface ValidatePipelineDefinition {
   readonly parameterValues?: [];
 }
 
-
-
-interface ActivatePipelineInput {
+export interface ActivatePipelineInput {
   readonly pipelineId: string;
-  readonly parameterValues: [];
-  readonly startTimestamp: Date;
+  readonly parameterValues?: [];
+  readonly startTimestamp?: Date;
 }
 
-interface ActivatePipelineOutput {
+export interface ActivatePipelineOutput {
 }
 
-interface AddTagsInput {
+export interface AddTagsInput {
   readonly pipelineId: string;
   readonly tags: [];
 }
 
-interface AddTagsOutput {
+export interface AddTagsOutput {
 }
 
-interface CreatePipelineInput {
+export interface CreatePipelineInput {
   readonly name: string;
   readonly uniqueId: string;
-  readonly description: string;
-  readonly tags: [];
+  readonly description?: string;
+  readonly tags?: [];
 }
 
-interface CreatePipelineOutput {
+export interface CreatePipelineOutput {
   readonly pipelineId: string;
 }
 
-interface DeactivatePipelineInput {
+export interface DeactivatePipelineInput {
   readonly pipelineId: string;
-  readonly cancelActive: boolean;
+  readonly cancelActive?: boolean;
 }
 
-interface DeactivatePipelineOutput {
+export interface DeactivatePipelineOutput {
 }
 
-interface DeletePipelineInput {
+export interface DeletePipelineInput {
   readonly pipelineId: string;
 }
 
-interface DescribeObjectsInput {
+export interface DescribeObjectsInput {
   readonly pipelineId: string;
   readonly objectIds: [];
-  readonly evaluateExpressions: boolean;
-  readonly marker: string;
+  readonly evaluateExpressions?: boolean;
+  readonly marker?: string;
 }
 
-interface DescribeObjectsOutput {
+export interface DescribeObjectsOutput {
   readonly pipelineObjects: [];
-  readonly marker: string;
-  readonly hasMoreResults: boolean;
+  readonly marker?: string;
+  readonly hasMoreResults?: boolean;
 }
 
-interface DescribePipelinesInput {
+export interface DescribePipelinesInput {
   readonly pipelineIds: [];
 }
 
-interface DescribePipelinesOutput {
+export interface DescribePipelinesOutput {
   readonly pipelineDescriptionList: [];
 }
 
-interface EvaluateExpressionInput {
+export interface EvaluateExpressionInput {
   readonly pipelineId: string;
   readonly objectId: string;
   readonly expression: string;
 }
 
-interface EvaluateExpressionOutput {
+export interface EvaluateExpressionOutput {
   readonly evaluatedExpression: string;
 }
 
-interface Field {
+export interface Field {
   readonly key: string;
-  readonly stringValue: string;
-  readonly refValue: string;
+  readonly stringValue?: string;
+  readonly refValue?: string;
 }
 
-interface GetPipelineDefinitionInput {
+export interface GetPipelineDefinitionInput {
   readonly pipelineId: string;
-  readonly version: string;
+  readonly version?: string;
 }
 
-interface GetPipelineDefinitionOutput {
-  readonly pipelineObjects: [];
-  readonly parameterObjects: [];
-  readonly parameterValues: [];
+export interface GetPipelineDefinitionOutput {
+  readonly pipelineObjects?: [];
+  readonly parameterObjects?: [];
+  readonly parameterValues?: [];
 }
 
-interface InstanceIdentity {
-  readonly document: string;
-  readonly signature: string;
+export interface InstanceIdentity {
+  readonly document?: string;
+  readonly signature?: string;
 }
 
-interface InternalServiceError {
-  readonly message: string;
+export interface InternalServiceError {
+  readonly message?: string;
 }
 
-interface InvalidRequestException {
-  readonly message: string;
+export interface InvalidRequestException {
+  readonly message?: string;
 }
 
-interface ListPipelinesInput {
-  readonly marker: string;
+export interface ListPipelinesInput {
+  readonly marker?: string;
 }
 
-interface ListPipelinesOutput {
+export interface ListPipelinesOutput {
   readonly pipelineIdList: [];
-  readonly marker: string;
-  readonly hasMoreResults: boolean;
+  readonly marker?: string;
+  readonly hasMoreResults?: boolean;
 }
 
-interface Operator {
-  readonly type: string;
-  readonly values: [];
+export interface Operator {
+  readonly type?: string;
+  readonly values?: [];
 }
 
-interface ParameterAttribute {
+export interface ParameterAttribute {
   readonly key: string;
   readonly stringValue: string;
 }
 
-interface ParameterObject {
+export interface ParameterObject {
   readonly id: string;
   readonly attributes: [];
 }
 
-interface ParameterValue {
+export interface ParameterValue {
   readonly id: string;
   readonly stringValue: string;
 }
 
-interface PipelineDeletedException {
-  readonly message: string;
+export interface PipelineDeletedException {
+  readonly message?: string;
 }
 
-interface PipelineDescription {
+export interface PipelineDescription {
   readonly pipelineId: string;
   readonly name: string;
   readonly fields: [];
-  readonly description: string;
-  readonly tags: [];
+  readonly description?: string;
+  readonly tags?: [];
 }
 
-interface PipelineIdName {
-  readonly id: string;
-  readonly name: string;
+export interface PipelineIdName {
+  readonly id?: string;
+  readonly name?: string;
 }
 
-interface PipelineNotFoundException {
-  readonly message: string;
+export interface PipelineNotFoundException {
+  readonly message?: string;
 }
 
-interface PipelineObject {
+export interface PipelineObject {
   readonly id: string;
   readonly name: string;
   readonly fields: [];
 }
 
-interface PollForTaskInput {
+export interface PollForTaskInput {
   readonly workerGroup: string;
-  readonly hostname: string;
-  readonly instanceIdentity: InstanceIdentity;
+  readonly hostname?: string;
+  readonly instanceIdentity?: InstanceIdentity;
 }
 
-interface PollForTaskOutput {
-  readonly taskObject: TaskObject;
+export interface PollForTaskOutput {
+  readonly taskObject?: TaskObject;
 }
 
-interface PutPipelineDefinitionInput {
+export interface PutPipelineDefinitionInput {
   readonly pipelineId: string;
   readonly pipelineObjects: [];
-  readonly parameterObjects: [];
-  readonly parameterValues: [];
+  readonly parameterObjects?: [];
+  readonly parameterValues?: [];
 }
 
-interface PutPipelineDefinitionOutput {
-  readonly validationErrors: [];
-  readonly validationWarnings: [];
+export interface PutPipelineDefinitionOutput {
+  readonly validationErrors?: [];
+  readonly validationWarnings?: [];
   readonly errored: boolean;
 }
 
-interface Query {
-  readonly selectors: [];
+export interface Query {
+  readonly selectors?: [];
 }
 
-interface QueryObjectsInput {
+export interface QueryObjectsInput {
   readonly pipelineId: string;
-  readonly query: Query;
+  readonly query?: Query;
   readonly sphere: string;
-  readonly marker: string;
-  readonly limit: number;
+  readonly marker?: string;
+  readonly limit?: number;
 }
 
-interface QueryObjectsOutput {
-  readonly ids: [];
-  readonly marker: string;
-  readonly hasMoreResults: boolean;
+export interface QueryObjectsOutput {
+  readonly ids?: [];
+  readonly marker?: string;
+  readonly hasMoreResults?: boolean;
 }
 
-interface RemoveTagsInput {
+export interface RemoveTagsInput {
   readonly pipelineId: string;
   readonly tagKeys: [];
 }
 
-interface RemoveTagsOutput {
+export interface RemoveTagsOutput {
 }
 
-interface ReportTaskProgressInput {
+export interface ReportTaskProgressInput {
   readonly taskId: string;
-  readonly fields: [];
+  readonly fields?: [];
 }
 
-interface ReportTaskProgressOutput {
+export interface ReportTaskProgressOutput {
   readonly canceled: boolean;
 }
 
-interface ReportTaskRunnerHeartbeatInput {
+export interface ReportTaskRunnerHeartbeatInput {
   readonly taskrunnerId: string;
-  readonly workerGroup: string;
-  readonly hostname: string;
+  readonly workerGroup?: string;
+  readonly hostname?: string;
 }
 
-interface ReportTaskRunnerHeartbeatOutput {
+export interface ReportTaskRunnerHeartbeatOutput {
   readonly terminate: boolean;
 }
 
-interface Selector {
-  readonly fieldName: string;
-  readonly operator: Operator;
+export interface Selector {
+  readonly fieldName?: string;
+  readonly operator?: Operator;
 }
 
-interface SetStatusInput {
+export interface SetStatusInput {
   readonly pipelineId: string;
   readonly objectIds: [];
   readonly status: string;
 }
 
-interface SetTaskStatusInput {
+export interface SetTaskStatusInput {
   readonly taskId: string;
   readonly taskStatus: string;
-  readonly errorId: string;
-  readonly errorMessage: string;
-  readonly errorStackTrace: string;
+  readonly errorId?: string;
+  readonly errorMessage?: string;
+  readonly errorStackTrace?: string;
 }
 
-interface SetTaskStatusOutput {
+export interface SetTaskStatusOutput {
 }
 
-interface Tag {
+export interface Tag {
   readonly key: string;
   readonly value: string;
 }
 
-interface TaskNotFoundException {
-  readonly message: string;
+export interface TaskNotFoundException {
+  readonly message?: string;
 }
 
-interface TaskObject {
-  readonly taskId: string;
-  readonly pipelineId: string;
-  readonly attemptId: string;
-  readonly objects: {[key: string]: any};
+export interface TaskObject {
+  readonly taskId?: string;
+  readonly pipelineId?: string;
+  readonly attemptId?: string;
+  readonly objects?: {[key: string]: any};
 }
 
-interface ValidatePipelineDefinitionInput {
+export interface ValidatePipelineDefinitionInput {
   readonly pipelineId: string;
   readonly pipelineObjects: [];
-  readonly parameterObjects: [];
-  readonly parameterValues: [];
+  readonly parameterObjects?: [];
+  readonly parameterValues?: [];
 }
 
-interface ValidatePipelineDefinitionOutput {
-  readonly validationErrors: [];
-  readonly validationWarnings: [];
+export interface ValidatePipelineDefinitionOutput {
+  readonly validationErrors?: [];
+  readonly validationWarnings?: [];
   readonly errored: boolean;
 }
 
-interface ValidationError {
-  readonly id: string;
-  readonly errors: [];
+export interface ValidationError {
+  readonly id?: string;
+  readonly errors?: [];
 }
 
-interface ValidationWarning {
-  readonly id: string;
-  readonly warnings: [];
+export interface ValidationWarning {
+  readonly id?: string;
+  readonly warnings?: [];
 }
+
 

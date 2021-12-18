@@ -9,6 +9,7 @@ export interface GetPersonalizedRanking {
   readonly filterArn?: string;
   readonly filterValues?: {[key: string]: any};
 }
+
 export interface GetRecommendations {
   readonly campaignArn?: string;
   readonly itemId?: string;
@@ -20,48 +21,47 @@ export interface GetRecommendations {
   readonly recommenderArn?: string;
 }
 
-
-
-interface GetPersonalizedRankingRequest {
+export interface GetPersonalizedRankingRequest {
   readonly campaignArn: string;
   readonly inputList: [];
   readonly userId: string;
-  readonly context: {[key: string]: any};
-  readonly filterArn: string;
-  readonly filterValues: {[key: string]: any};
+  readonly context?: {[key: string]: any};
+  readonly filterArn?: string;
+  readonly filterValues?: {[key: string]: any};
 }
 
-interface GetPersonalizedRankingResponse {
-  readonly personalizedRanking: [];
-  readonly recommendationId: string;
+export interface GetPersonalizedRankingResponse {
+  readonly personalizedRanking?: [];
+  readonly recommendationId?: string;
 }
 
-interface GetRecommendationsRequest {
-  readonly campaignArn: string;
-  readonly itemId: string;
-  readonly userId: string;
-  readonly numResults: number;
-  readonly context: {[key: string]: any};
-  readonly filterArn: string;
-  readonly filterValues: {[key: string]: any};
-  readonly recommenderArn: string;
+export interface GetRecommendationsRequest {
+  readonly campaignArn?: string;
+  readonly itemId?: string;
+  readonly userId?: string;
+  readonly numResults?: number;
+  readonly context?: {[key: string]: any};
+  readonly filterArn?: string;
+  readonly filterValues?: {[key: string]: any};
+  readonly recommenderArn?: string;
 }
 
-interface GetRecommendationsResponse {
-  readonly itemList: [];
-  readonly recommendationId: string;
+export interface GetRecommendationsResponse {
+  readonly itemList?: [];
+  readonly recommendationId?: string;
 }
 
-interface InvalidInputException {
-  readonly message: string;
+export interface InvalidInputException {
+  readonly message?: string;
 }
 
-interface PredictedItem {
-  readonly itemId: string;
-  readonly score: unknown;
+export interface PredictedItem {
+  readonly itemId?: string;
+  readonly score?: unknown;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
+
 

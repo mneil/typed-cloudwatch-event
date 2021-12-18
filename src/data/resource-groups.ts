@@ -8,28 +8,35 @@ export interface CreateGroup {
   readonly Tags?: {[key: string]: any};
   readonly Configuration?: [];
 }
+
 export interface DeleteGroup {
   readonly GroupName?: string;
   readonly Group?: string;
 }
+
 export interface GetGroup {
   readonly GroupName?: string;
   readonly Group?: string;
 }
+
 export interface GetGroupConfiguration {
   readonly Group?: string;
 }
+
 export interface GetGroupQuery {
   readonly GroupName?: string;
   readonly Group?: string;
 }
+
 export interface GetTags {
   readonly Arn: string;
 }
+
 export interface GroupResources {
   readonly Group: string;
   readonly ResourceArns: [];
 }
+
 export interface ListGroupResources {
   readonly GroupName?: string;
   readonly Group?: string;
@@ -37,315 +44,322 @@ export interface ListGroupResources {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListGroups {
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface PutGroupConfiguration {
   readonly Group?: string;
   readonly Configuration?: [];
 }
+
 export interface SearchResources {
   readonly ResourceQuery: ResourceQuery;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface Tag {
   readonly Arn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UngroupResources {
   readonly Group: string;
   readonly ResourceArns: [];
 }
+
 export interface Untag {
   readonly Arn: string;
   readonly Keys: [];
 }
+
 export interface UpdateGroup {
   readonly GroupName?: string;
   readonly Group?: string;
   readonly Description?: string;
 }
+
 export interface UpdateGroupQuery {
   readonly GroupName?: string;
   readonly Group?: string;
   readonly ResourceQuery: ResourceQuery;
 }
 
-
-
-interface BadRequestException {
-  readonly Message: string;
+export interface BadRequestException {
+  readonly Message?: string;
 }
 
-interface CreateGroupInput {
+export interface CreateGroupInput {
   readonly Name: string;
-  readonly Description: string;
-  readonly ResourceQuery: ResourceQuery;
-  readonly Tags: {[key: string]: any};
-  readonly Configuration: [];
+  readonly Description?: string;
+  readonly ResourceQuery?: ResourceQuery;
+  readonly Tags?: {[key: string]: any};
+  readonly Configuration?: [];
 }
 
-interface CreateGroupOutput {
-  readonly Group: Group;
-  readonly ResourceQuery: ResourceQuery;
-  readonly Tags: {[key: string]: any};
-  readonly GroupConfiguration: GroupConfiguration;
+export interface CreateGroupOutput {
+  readonly Group?: Group;
+  readonly ResourceQuery?: ResourceQuery;
+  readonly Tags?: {[key: string]: any};
+  readonly GroupConfiguration?: GroupConfiguration;
 }
 
-interface DeleteGroupInput {
-  readonly GroupName: string;
-  readonly Group: string;
+export interface DeleteGroupInput {
+  readonly GroupName?: string;
+  readonly Group?: string;
 }
 
-interface DeleteGroupOutput {
-  readonly Group: Group;
+export interface DeleteGroupOutput {
+  readonly Group?: Group;
 }
 
-interface FailedResource {
-  readonly ResourceArn: string;
-  readonly ErrorMessage: string;
-  readonly ErrorCode: string;
+export interface FailedResource {
+  readonly ResourceArn?: string;
+  readonly ErrorMessage?: string;
+  readonly ErrorCode?: string;
 }
 
-interface ForbiddenException {
-  readonly Message: string;
+export interface ForbiddenException {
+  readonly Message?: string;
 }
 
-interface GetGroupConfigurationInput {
-  readonly Group: string;
+export interface GetGroupConfigurationInput {
+  readonly Group?: string;
 }
 
-interface GetGroupConfigurationOutput {
-  readonly GroupConfiguration: GroupConfiguration;
+export interface GetGroupConfigurationOutput {
+  readonly GroupConfiguration?: GroupConfiguration;
 }
 
-interface GetGroupInput {
-  readonly GroupName: string;
-  readonly Group: string;
+export interface GetGroupInput {
+  readonly GroupName?: string;
+  readonly Group?: string;
 }
 
-interface GetGroupOutput {
-  readonly Group: Group;
+export interface GetGroupOutput {
+  readonly Group?: Group;
 }
 
-interface GetGroupQueryInput {
-  readonly GroupName: string;
-  readonly Group: string;
+export interface GetGroupQueryInput {
+  readonly GroupName?: string;
+  readonly Group?: string;
 }
 
-interface GetGroupQueryOutput {
-  readonly GroupQuery: GroupQuery;
+export interface GetGroupQueryOutput {
+  readonly GroupQuery?: GroupQuery;
 }
 
-interface GetTagsInput {
+export interface GetTagsInput {
   readonly Arn: string;
 }
 
-interface GetTagsOutput {
-  readonly Arn: string;
-  readonly Tags: {[key: string]: any};
+export interface GetTagsOutput {
+  readonly Arn?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface Group {
+export interface Group {
   readonly GroupArn: string;
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
 }
 
-interface GroupConfiguration {
-  readonly Configuration: [];
-  readonly ProposedConfiguration: [];
-  readonly Status: string;
-  readonly FailureReason: string;
+export interface GroupConfiguration {
+  readonly Configuration?: [];
+  readonly ProposedConfiguration?: [];
+  readonly Status?: string;
+  readonly FailureReason?: string;
 }
 
-interface GroupConfigurationItem {
+export interface GroupConfigurationItem {
   readonly Type: string;
-  readonly Parameters: [];
+  readonly Parameters?: [];
 }
 
-interface GroupConfigurationParameter {
+export interface GroupConfigurationParameter {
+  readonly Name: string;
+  readonly Values?: [];
+}
+
+export interface GroupFilter {
   readonly Name: string;
   readonly Values: [];
 }
 
-interface GroupFilter {
-  readonly Name: string;
-  readonly Values: [];
+export interface GroupIdentifier {
+  readonly GroupName?: string;
+  readonly GroupArn?: string;
 }
 
-interface GroupIdentifier {
-  readonly GroupName: string;
-  readonly GroupArn: string;
-}
-
-interface GroupQuery {
+export interface GroupQuery {
   readonly GroupName: string;
   readonly ResourceQuery: ResourceQuery;
 }
 
-interface GroupResourcesInput {
+export interface GroupResourcesInput {
   readonly Group: string;
   readonly ResourceArns: [];
 }
 
-interface GroupResourcesOutput {
-  readonly Succeeded: [];
-  readonly Failed: [];
-  readonly Pending: [];
+export interface GroupResourcesOutput {
+  readonly Succeeded?: [];
+  readonly Failed?: [];
+  readonly Pending?: [];
 }
 
-interface InternalServerErrorException {
-  readonly Message: string;
+export interface InternalServerErrorException {
+  readonly Message?: string;
 }
 
-interface ListGroupResourcesInput {
-  readonly GroupName: string;
-  readonly Group: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListGroupResourcesInput {
+  readonly GroupName?: string;
+  readonly Group?: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListGroupResourcesItem {
-  readonly Identifier: ResourceIdentifier;
-  readonly Status: ResourceStatus;
+export interface ListGroupResourcesItem {
+  readonly Identifier?: ResourceIdentifier;
+  readonly Status?: ResourceStatus;
 }
 
-interface ListGroupResourcesOutput {
-  readonly Resources: [];
-  readonly ResourceIdentifiers: [];
-  readonly NextToken: string;
-  readonly QueryErrors: [];
+export interface ListGroupResourcesOutput {
+  readonly Resources?: [];
+  readonly ResourceIdentifiers?: [];
+  readonly NextToken?: string;
+  readonly QueryErrors?: [];
 }
 
-interface ListGroupsInput {
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListGroupsInput {
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListGroupsOutput {
-  readonly GroupIdentifiers: [];
-  readonly Groups: [];
-  readonly NextToken: string;
+export interface ListGroupsOutput {
+  readonly GroupIdentifiers?: [];
+  readonly Groups?: [];
+  readonly NextToken?: string;
 }
 
-interface MethodNotAllowedException {
-  readonly Message: string;
+export interface MethodNotAllowedException {
+  readonly Message?: string;
 }
 
-interface NotFoundException {
-  readonly Message: string;
+export interface NotFoundException {
+  readonly Message?: string;
 }
 
-interface PendingResource {
-  readonly ResourceArn: string;
+export interface PendingResource {
+  readonly ResourceArn?: string;
 }
 
-interface PutGroupConfigurationInput {
-  readonly Group: string;
-  readonly Configuration: [];
+export interface PutGroupConfigurationInput {
+  readonly Group?: string;
+  readonly Configuration?: [];
 }
 
-interface PutGroupConfigurationOutput {
+export interface PutGroupConfigurationOutput {
 }
 
-interface QueryError {
-  readonly ErrorCode: string;
-  readonly Message: string;
+export interface QueryError {
+  readonly ErrorCode?: string;
+  readonly Message?: string;
 }
 
-interface ResourceFilter {
+export interface ResourceFilter {
   readonly Name: string;
   readonly Values: [];
 }
 
-interface ResourceIdentifier {
-  readonly ResourceArn: string;
-  readonly ResourceType: string;
+export interface ResourceIdentifier {
+  readonly ResourceArn?: string;
+  readonly ResourceType?: string;
 }
 
-interface ResourceQuery {
+export interface ResourceQuery {
   readonly Type: string;
   readonly Query: string;
 }
 
-interface ResourceStatus {
-  readonly Name: string;
+export interface ResourceStatus {
+  readonly Name?: string;
 }
 
-interface SearchResourcesInput {
+export interface SearchResourcesInput {
   readonly ResourceQuery: ResourceQuery;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface SearchResourcesOutput {
-  readonly ResourceIdentifiers: [];
-  readonly NextToken: string;
-  readonly QueryErrors: [];
+export interface SearchResourcesOutput {
+  readonly ResourceIdentifiers?: [];
+  readonly NextToken?: string;
+  readonly QueryErrors?: [];
 }
 
-interface TagInput {
+export interface TagInput {
   readonly Arn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagOutput {
-  readonly Arn: string;
-  readonly Tags: {[key: string]: any};
+export interface TagOutput {
+  readonly Arn?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface TooManyRequestsException {
-  readonly Message: string;
+export interface TooManyRequestsException {
+  readonly Message?: string;
 }
 
-interface UnauthorizedException {
-  readonly Message: string;
+export interface UnauthorizedException {
+  readonly Message?: string;
 }
 
-interface UngroupResourcesInput {
+export interface UngroupResourcesInput {
   readonly Group: string;
   readonly ResourceArns: [];
 }
 
-interface UngroupResourcesOutput {
-  readonly Succeeded: [];
-  readonly Failed: [];
-  readonly Pending: [];
+export interface UngroupResourcesOutput {
+  readonly Succeeded?: [];
+  readonly Failed?: [];
+  readonly Pending?: [];
 }
 
-interface UntagInput {
+export interface UntagInput {
   readonly Arn: string;
   readonly Keys: [];
 }
 
-interface UntagOutput {
-  readonly Arn: string;
-  readonly Keys: [];
+export interface UntagOutput {
+  readonly Arn?: string;
+  readonly Keys?: [];
 }
 
-interface UpdateGroupInput {
-  readonly GroupName: string;
-  readonly Group: string;
-  readonly Description: string;
+export interface UpdateGroupInput {
+  readonly GroupName?: string;
+  readonly Group?: string;
+  readonly Description?: string;
 }
 
-interface UpdateGroupOutput {
-  readonly Group: Group;
+export interface UpdateGroupOutput {
+  readonly Group?: Group;
 }
 
-interface UpdateGroupQueryInput {
-  readonly GroupName: string;
-  readonly Group: string;
+export interface UpdateGroupQueryInput {
+  readonly GroupName?: string;
+  readonly Group?: string;
   readonly ResourceQuery: ResourceQuery;
 }
 
-interface UpdateGroupQueryOutput {
-  readonly GroupQuery: GroupQuery;
+export interface UpdateGroupQueryOutput {
+  readonly GroupQuery?: GroupQuery;
 }
+
 

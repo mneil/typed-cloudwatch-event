@@ -5,6 +5,7 @@ export interface BatchUpdateCluster {
   readonly ClusterNames: [];
   readonly ServiceUpdate?: ServiceUpdateRequest;
 }
+
 export interface CopySnapshot {
   readonly SourceSnapshotName: string;
   readonly TargetSnapshotName: string;
@@ -12,11 +13,13 @@ export interface CopySnapshot {
   readonly KmsKeyId?: string;
   readonly Tags?: [];
 }
+
 export interface CreateACL {
   readonly ACLName: string;
   readonly UserNames?: [];
   readonly Tags?: [];
 }
+
 export interface CreateCluster {
   readonly ClusterName: string;
   readonly NodeType: string;
@@ -40,60 +43,73 @@ export interface CreateCluster {
   readonly EngineVersion?: string;
   readonly AutoMinorVersionUpgrade?: boolean;
 }
+
 export interface CreateParameterGroup {
   readonly ParameterGroupName: string;
   readonly Family: string;
   readonly Description?: string;
   readonly Tags?: [];
 }
+
 export interface CreateSnapshot {
   readonly ClusterName: string;
   readonly SnapshotName: string;
   readonly KmsKeyId?: string;
   readonly Tags?: [];
 }
+
 export interface CreateSubnetGroup {
   readonly SubnetGroupName: string;
   readonly Description?: string;
   readonly SubnetIds: [];
   readonly Tags?: [];
 }
+
 export interface CreateUser {
   readonly UserName: string;
   readonly AuthenticationMode: AuthenticationMode;
   readonly AccessString: string;
   readonly Tags?: [];
 }
+
 export interface DeleteACL {
   readonly ACLName: string;
 }
+
 export interface DeleteCluster {
   readonly ClusterName: string;
   readonly FinalSnapshotName?: string;
 }
+
 export interface DeleteParameterGroup {
   readonly ParameterGroupName: string;
 }
+
 export interface DeleteSnapshot {
   readonly SnapshotName: string;
 }
+
 export interface DeleteSubnetGroup {
   readonly SubnetGroupName: string;
 }
+
 export interface DeleteUser {
   readonly UserName: string;
 }
+
 export interface DescribeACLs {
   readonly ACLName?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeClusters {
   readonly ClusterName?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly ShowShardDetails?: boolean;
 }
+
 export interface DescribeEngineVersions {
   readonly EngineVersion?: string;
   readonly ParameterGroupFamily?: string;
@@ -101,6 +117,7 @@ export interface DescribeEngineVersions {
   readonly NextToken?: string;
   readonly DefaultOnly?: boolean;
 }
+
 export interface DescribeEvents {
   readonly SourceName?: string;
   readonly SourceType?: string;
@@ -110,16 +127,19 @@ export interface DescribeEvents {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeParameterGroups {
   readonly ParameterGroupName?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeParameters {
   readonly ParameterGroupName: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeServiceUpdates {
   readonly ServiceUpdateName?: string;
   readonly ClusterNames?: [];
@@ -127,6 +147,7 @@ export interface DescribeServiceUpdates {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeSnapshots {
   readonly ClusterName?: string;
   readonly SnapshotName?: string;
@@ -135,45 +156,55 @@ export interface DescribeSnapshots {
   readonly MaxResults?: number;
   readonly ShowDetail?: boolean;
 }
+
 export interface DescribeSubnetGroups {
   readonly SubnetGroupName?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeUsers {
   readonly UserName?: string;
   readonly Filters?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface FailoverShard {
   readonly ClusterName: string;
   readonly ShardName: string;
 }
+
 export interface ListAllowedNodeTypeUpdates {
   readonly ClusterName: string;
 }
+
 export interface ListTags {
   readonly ResourceArn: string;
 }
+
 export interface ResetParameterGroup {
   readonly ParameterGroupName: string;
   readonly AllParameters?: boolean;
   readonly ParameterNames?: [];
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateACL {
   readonly ACLName: string;
   readonly UserNamesToAdd?: [];
   readonly UserNamesToRemove?: [];
 }
+
 export interface UpdateCluster {
   readonly ClusterName: string;
   readonly Description?: string;
@@ -190,799 +221,801 @@ export interface UpdateCluster {
   readonly ShardConfiguration?: ShardConfigurationRequest;
   readonly ACLName?: string;
 }
+
 export interface UpdateParameterGroup {
   readonly ParameterGroupName: string;
   readonly ParameterNameValues: [];
 }
+
 export interface UpdateSubnetGroup {
   readonly SubnetGroupName: string;
   readonly Description?: string;
   readonly SubnetIds?: [];
 }
+
 export interface UpdateUser {
   readonly UserName: string;
   readonly AuthenticationMode?: AuthenticationMode;
   readonly AccessString?: string;
 }
 
-
-
-interface ACL {
-  readonly Name: string;
-  readonly Status: string;
-  readonly UserNames: [];
-  readonly MinimumEngineVersion: string;
-  readonly PendingChanges: ACLPendingChanges;
-  readonly Clusters: [];
-  readonly ARN: string;
+export interface ACL {
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly UserNames?: [];
+  readonly MinimumEngineVersion?: string;
+  readonly PendingChanges?: ACLPendingChanges;
+  readonly Clusters?: [];
+  readonly ARN?: string;
 }
 
-interface ACLAlreadyExistsFault {
+export interface ACLAlreadyExistsFault {
 }
 
-interface ACLNotFoundFault {
+export interface ACLNotFoundFault {
 }
 
-interface ACLPendingChanges {
-  readonly UserNamesToRemove: [];
-  readonly UserNamesToAdd: [];
+export interface ACLPendingChanges {
+  readonly UserNamesToRemove?: [];
+  readonly UserNamesToAdd?: [];
 }
 
-interface ACLQuotaExceededFault {
+export interface ACLQuotaExceededFault {
 }
 
-interface ACLsUpdateStatus {
-  readonly ACLToApply: string;
+export interface ACLsUpdateStatus {
+  readonly ACLToApply?: string;
 }
 
-interface APICallRateForCustomerExceededFault {
+export interface APICallRateForCustomerExceededFault {
 }
 
-interface Authentication {
-  readonly Type: string;
-  readonly PasswordCount: number;
+export interface Authentication {
+  readonly Type?: string;
+  readonly PasswordCount?: number;
 }
 
-interface AuthenticationMode {
-  readonly Type: string;
-  readonly Passwords: [];
+export interface AuthenticationMode {
+  readonly Type?: string;
+  readonly Passwords?: [];
 }
 
-interface AvailabilityZone {
-  readonly Name: string;
+export interface AvailabilityZone {
+  readonly Name?: string;
 }
 
-interface BatchUpdateClusterRequest {
+export interface BatchUpdateClusterRequest {
   readonly ClusterNames: [];
-  readonly ServiceUpdate: ServiceUpdateRequest;
+  readonly ServiceUpdate?: ServiceUpdateRequest;
 }
 
-interface BatchUpdateClusterResponse {
-  readonly ProcessedClusters: [];
-  readonly UnprocessedClusters: [];
+export interface BatchUpdateClusterResponse {
+  readonly ProcessedClusters?: [];
+  readonly UnprocessedClusters?: [];
 }
 
-interface Cluster {
-  readonly Name: string;
-  readonly Description: string;
-  readonly Status: string;
-  readonly PendingUpdates: ClusterPendingUpdates;
-  readonly NumberOfShards: number;
-  readonly Shards: [];
-  readonly AvailabilityMode: string;
-  readonly ClusterEndpoint: Endpoint;
-  readonly NodeType: string;
-  readonly EngineVersion: string;
-  readonly EnginePatchVersion: string;
-  readonly ParameterGroupName: string;
-  readonly ParameterGroupStatus: string;
-  readonly SecurityGroups: [];
-  readonly SubnetGroupName: string;
-  readonly TLSEnabled: boolean;
-  readonly KmsKeyId: string;
-  readonly ARN: string;
-  readonly SnsTopicArn: string;
-  readonly SnsTopicStatus: string;
-  readonly SnapshotRetentionLimit: number;
-  readonly MaintenanceWindow: string;
-  readonly SnapshotWindow: string;
-  readonly ACLName: string;
-  readonly AutoMinorVersionUpgrade: boolean;
+export interface Cluster {
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly PendingUpdates?: ClusterPendingUpdates;
+  readonly NumberOfShards?: number;
+  readonly Shards?: [];
+  readonly AvailabilityMode?: string;
+  readonly ClusterEndpoint?: Endpoint;
+  readonly NodeType?: string;
+  readonly EngineVersion?: string;
+  readonly EnginePatchVersion?: string;
+  readonly ParameterGroupName?: string;
+  readonly ParameterGroupStatus?: string;
+  readonly SecurityGroups?: [];
+  readonly SubnetGroupName?: string;
+  readonly TLSEnabled?: boolean;
+  readonly KmsKeyId?: string;
+  readonly ARN?: string;
+  readonly SnsTopicArn?: string;
+  readonly SnsTopicStatus?: string;
+  readonly SnapshotRetentionLimit?: number;
+  readonly MaintenanceWindow?: string;
+  readonly SnapshotWindow?: string;
+  readonly ACLName?: string;
+  readonly AutoMinorVersionUpgrade?: boolean;
 }
 
-interface ClusterAlreadyExistsFault {
+export interface ClusterAlreadyExistsFault {
 }
 
-interface ClusterConfiguration {
-  readonly Name: string;
-  readonly Description: string;
-  readonly NodeType: string;
-  readonly EngineVersion: string;
-  readonly MaintenanceWindow: string;
-  readonly TopicArn: string;
-  readonly Port: number;
-  readonly ParameterGroupName: string;
-  readonly SubnetGroupName: string;
-  readonly VpcId: string;
-  readonly SnapshotRetentionLimit: number;
-  readonly SnapshotWindow: string;
-  readonly NumShards: number;
-  readonly Shards: [];
+export interface ClusterConfiguration {
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly NodeType?: string;
+  readonly EngineVersion?: string;
+  readonly MaintenanceWindow?: string;
+  readonly TopicArn?: string;
+  readonly Port?: number;
+  readonly ParameterGroupName?: string;
+  readonly SubnetGroupName?: string;
+  readonly VpcId?: string;
+  readonly SnapshotRetentionLimit?: number;
+  readonly SnapshotWindow?: string;
+  readonly NumShards?: number;
+  readonly Shards?: [];
 }
 
-interface ClusterNotFoundFault {
+export interface ClusterNotFoundFault {
 }
 
-interface ClusterPendingUpdates {
-  readonly Resharding: ReshardingStatus;
-  readonly ACLs: ACLsUpdateStatus;
-  readonly ServiceUpdates: [];
+export interface ClusterPendingUpdates {
+  readonly Resharding?: ReshardingStatus;
+  readonly ACLs?: ACLsUpdateStatus;
+  readonly ServiceUpdates?: [];
 }
 
-interface ClusterQuotaForCustomerExceededFault {
+export interface ClusterQuotaForCustomerExceededFault {
 }
 
-interface CopySnapshotRequest {
+export interface CopySnapshotRequest {
   readonly SourceSnapshotName: string;
   readonly TargetSnapshotName: string;
-  readonly TargetBucket: string;
-  readonly KmsKeyId: string;
-  readonly Tags: [];
+  readonly TargetBucket?: string;
+  readonly KmsKeyId?: string;
+  readonly Tags?: [];
 }
 
-interface CopySnapshotResponse {
-  readonly Snapshot: Snapshot;
+export interface CopySnapshotResponse {
+  readonly Snapshot?: Snapshot;
 }
 
-interface CreateACLRequest {
+export interface CreateACLRequest {
   readonly ACLName: string;
-  readonly UserNames: [];
-  readonly Tags: [];
+  readonly UserNames?: [];
+  readonly Tags?: [];
 }
 
-interface CreateACLResponse {
-  readonly ACL: ACL;
+export interface CreateACLResponse {
+  readonly ACL?: ACL;
 }
 
-interface CreateClusterRequest {
+export interface CreateClusterRequest {
   readonly ClusterName: string;
   readonly NodeType: string;
-  readonly ParameterGroupName: string;
-  readonly Description: string;
-  readonly NumShards: number;
-  readonly NumReplicasPerShard: number;
-  readonly SubnetGroupName: string;
-  readonly SecurityGroupIds: [];
-  readonly MaintenanceWindow: string;
-  readonly Port: number;
-  readonly SnsTopicArn: string;
-  readonly TLSEnabled: boolean;
-  readonly KmsKeyId: string;
-  readonly SnapshotArns: [];
-  readonly SnapshotName: string;
-  readonly SnapshotRetentionLimit: number;
-  readonly Tags: [];
-  readonly SnapshotWindow: string;
+  readonly ParameterGroupName?: string;
+  readonly Description?: string;
+  readonly NumShards?: number;
+  readonly NumReplicasPerShard?: number;
+  readonly SubnetGroupName?: string;
+  readonly SecurityGroupIds?: [];
+  readonly MaintenanceWindow?: string;
+  readonly Port?: number;
+  readonly SnsTopicArn?: string;
+  readonly TLSEnabled?: boolean;
+  readonly KmsKeyId?: string;
+  readonly SnapshotArns?: [];
+  readonly SnapshotName?: string;
+  readonly SnapshotRetentionLimit?: number;
+  readonly Tags?: [];
+  readonly SnapshotWindow?: string;
   readonly ACLName: string;
-  readonly EngineVersion: string;
-  readonly AutoMinorVersionUpgrade: boolean;
+  readonly EngineVersion?: string;
+  readonly AutoMinorVersionUpgrade?: boolean;
 }
 
-interface CreateClusterResponse {
-  readonly Cluster: Cluster;
+export interface CreateClusterResponse {
+  readonly Cluster?: Cluster;
 }
 
-interface CreateParameterGroupRequest {
+export interface CreateParameterGroupRequest {
   readonly ParameterGroupName: string;
   readonly Family: string;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 
-interface CreateParameterGroupResponse {
-  readonly ParameterGroup: ParameterGroup;
+export interface CreateParameterGroupResponse {
+  readonly ParameterGroup?: ParameterGroup;
 }
 
-interface CreateSnapshotRequest {
+export interface CreateSnapshotRequest {
   readonly ClusterName: string;
   readonly SnapshotName: string;
-  readonly KmsKeyId: string;
-  readonly Tags: [];
+  readonly KmsKeyId?: string;
+  readonly Tags?: [];
 }
 
-interface CreateSnapshotResponse {
-  readonly Snapshot: Snapshot;
+export interface CreateSnapshotResponse {
+  readonly Snapshot?: Snapshot;
 }
 
-interface CreateSubnetGroupRequest {
+export interface CreateSubnetGroupRequest {
   readonly SubnetGroupName: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly SubnetIds: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateSubnetGroupResponse {
-  readonly SubnetGroup: SubnetGroup;
+export interface CreateSubnetGroupResponse {
+  readonly SubnetGroup?: SubnetGroup;
 }
 
-interface CreateUserRequest {
+export interface CreateUserRequest {
   readonly UserName: string;
   readonly AuthenticationMode: AuthenticationMode;
   readonly AccessString: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateUserResponse {
-  readonly User: User;
+export interface CreateUserResponse {
+  readonly User?: User;
 }
 
-interface DefaultUserRequired {
+export interface DefaultUserRequired {
 }
 
-interface DeleteACLRequest {
+export interface DeleteACLRequest {
   readonly ACLName: string;
 }
 
-interface DeleteACLResponse {
-  readonly ACL: ACL;
+export interface DeleteACLResponse {
+  readonly ACL?: ACL;
 }
 
-interface DeleteClusterRequest {
+export interface DeleteClusterRequest {
   readonly ClusterName: string;
-  readonly FinalSnapshotName: string;
+  readonly FinalSnapshotName?: string;
 }
 
-interface DeleteClusterResponse {
-  readonly Cluster: Cluster;
+export interface DeleteClusterResponse {
+  readonly Cluster?: Cluster;
 }
 
-interface DeleteParameterGroupRequest {
+export interface DeleteParameterGroupRequest {
   readonly ParameterGroupName: string;
 }
 
-interface DeleteParameterGroupResponse {
-  readonly ParameterGroup: ParameterGroup;
+export interface DeleteParameterGroupResponse {
+  readonly ParameterGroup?: ParameterGroup;
 }
 
-interface DeleteSnapshotRequest {
+export interface DeleteSnapshotRequest {
   readonly SnapshotName: string;
 }
 
-interface DeleteSnapshotResponse {
-  readonly Snapshot: Snapshot;
+export interface DeleteSnapshotResponse {
+  readonly Snapshot?: Snapshot;
 }
 
-interface DeleteSubnetGroupRequest {
+export interface DeleteSubnetGroupRequest {
   readonly SubnetGroupName: string;
 }
 
-interface DeleteSubnetGroupResponse {
-  readonly SubnetGroup: SubnetGroup;
+export interface DeleteSubnetGroupResponse {
+  readonly SubnetGroup?: SubnetGroup;
 }
 
-interface DeleteUserRequest {
+export interface DeleteUserRequest {
   readonly UserName: string;
 }
 
-interface DeleteUserResponse {
-  readonly User: User;
+export interface DeleteUserResponse {
+  readonly User?: User;
 }
 
-interface DescribeACLsRequest {
-  readonly ACLName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeACLsRequest {
+  readonly ACLName?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeACLsResponse {
-  readonly ACLs: [];
-  readonly NextToken: string;
+export interface DescribeACLsResponse {
+  readonly ACLs?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeClustersRequest {
-  readonly ClusterName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ShowShardDetails: boolean;
+export interface DescribeClustersRequest {
+  readonly ClusterName?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ShowShardDetails?: boolean;
 }
 
-interface DescribeClustersResponse {
-  readonly NextToken: string;
-  readonly Clusters: [];
+export interface DescribeClustersResponse {
+  readonly NextToken?: string;
+  readonly Clusters?: [];
 }
 
-interface DescribeEngineVersionsRequest {
-  readonly EngineVersion: string;
-  readonly ParameterGroupFamily: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly DefaultOnly: boolean;
+export interface DescribeEngineVersionsRequest {
+  readonly EngineVersion?: string;
+  readonly ParameterGroupFamily?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly DefaultOnly?: boolean;
 }
 
-interface DescribeEngineVersionsResponse {
-  readonly NextToken: string;
-  readonly EngineVersions: [];
+export interface DescribeEngineVersionsResponse {
+  readonly NextToken?: string;
+  readonly EngineVersions?: [];
 }
 
-interface DescribeEventsRequest {
-  readonly SourceName: string;
-  readonly SourceType: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Duration: number;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeEventsRequest {
+  readonly SourceName?: string;
+  readonly SourceType?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Duration?: number;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeEventsResponse {
-  readonly NextToken: string;
-  readonly Events: [];
+export interface DescribeEventsResponse {
+  readonly NextToken?: string;
+  readonly Events?: [];
 }
 
-interface DescribeParameterGroupsRequest {
+export interface DescribeParameterGroupsRequest {
+  readonly ParameterGroupName?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+}
+
+export interface DescribeParameterGroupsResponse {
+  readonly NextToken?: string;
+  readonly ParameterGroups?: [];
+}
+
+export interface DescribeParametersRequest {
   readonly ParameterGroupName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeParameterGroupsResponse {
-  readonly NextToken: string;
-  readonly ParameterGroups: [];
+export interface DescribeParametersResponse {
+  readonly NextToken?: string;
+  readonly Parameters?: [];
 }
 
-interface DescribeParametersRequest {
-  readonly ParameterGroupName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeServiceUpdatesRequest {
+  readonly ServiceUpdateName?: string;
+  readonly ClusterNames?: [];
+  readonly Status?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeParametersResponse {
-  readonly NextToken: string;
-  readonly Parameters: [];
+export interface DescribeServiceUpdatesResponse {
+  readonly NextToken?: string;
+  readonly ServiceUpdates?: [];
 }
 
-interface DescribeServiceUpdatesRequest {
-  readonly ServiceUpdateName: string;
-  readonly ClusterNames: [];
-  readonly Status: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeSnapshotsRequest {
+  readonly ClusterName?: string;
+  readonly SnapshotName?: string;
+  readonly Source?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ShowDetail?: boolean;
 }
 
-interface DescribeServiceUpdatesResponse {
-  readonly NextToken: string;
-  readonly ServiceUpdates: [];
+export interface DescribeSnapshotsResponse {
+  readonly NextToken?: string;
+  readonly Snapshots?: [];
 }
 
-interface DescribeSnapshotsRequest {
-  readonly ClusterName: string;
-  readonly SnapshotName: string;
-  readonly Source: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ShowDetail: boolean;
+export interface DescribeSubnetGroupsRequest {
+  readonly SubnetGroupName?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeSnapshotsResponse {
-  readonly NextToken: string;
-  readonly Snapshots: [];
+export interface DescribeSubnetGroupsResponse {
+  readonly NextToken?: string;
+  readonly SubnetGroups?: [];
 }
 
-interface DescribeSubnetGroupsRequest {
-  readonly SubnetGroupName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeUsersRequest {
+  readonly UserName?: string;
+  readonly Filters?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeSubnetGroupsResponse {
-  readonly NextToken: string;
-  readonly SubnetGroups: [];
+export interface DescribeUsersResponse {
+  readonly Users?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeUsersRequest {
-  readonly UserName: string;
-  readonly Filters: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DuplicateUserNameFault {
 }
 
-interface DescribeUsersResponse {
-  readonly Users: [];
-  readonly NextToken: string;
+export interface Endpoint {
+  readonly Address?: string;
+  readonly Port?: number;
 }
 
-interface DuplicateUserNameFault {
+export interface EngineVersionInfo {
+  readonly EngineVersion?: string;
+  readonly EnginePatchVersion?: string;
+  readonly ParameterGroupFamily?: string;
 }
 
-interface Endpoint {
-  readonly Address: string;
-  readonly Port: number;
+export interface Event {
+  readonly SourceName?: string;
+  readonly SourceType?: string;
+  readonly Message?: string;
+  readonly Date?: Date;
 }
 
-interface EngineVersionInfo {
-  readonly EngineVersion: string;
-  readonly EnginePatchVersion: string;
-  readonly ParameterGroupFamily: string;
-}
-
-interface Event {
-  readonly SourceName: string;
-  readonly SourceType: string;
-  readonly Message: string;
-  readonly Date: Date;
-}
-
-interface FailoverShardRequest {
+export interface FailoverShardRequest {
   readonly ClusterName: string;
   readonly ShardName: string;
 }
 
-interface FailoverShardResponse {
-  readonly Cluster: Cluster;
+export interface FailoverShardResponse {
+  readonly Cluster?: Cluster;
 }
 
-interface Filter {
+export interface Filter {
   readonly Name: string;
   readonly Values: [];
 }
 
-interface InsufficientClusterCapacityFault {
+export interface InsufficientClusterCapacityFault {
 }
 
-interface InvalidACLStateFault {
+export interface InvalidACLStateFault {
 }
 
-interface InvalidARNFault {
+export interface InvalidARNFault {
 }
 
-interface InvalidClusterStateFault {
+export interface InvalidClusterStateFault {
 }
 
-interface InvalidCredentialsException {
+export interface InvalidCredentialsException {
 }
 
-interface InvalidKMSKeyFault {
+export interface InvalidKMSKeyFault {
 }
 
-interface InvalidNodeStateFault {
+export interface InvalidNodeStateFault {
 }
 
-interface InvalidParameterCombinationException {
-  readonly message: string;
+export interface InvalidParameterCombinationException {
+  readonly message?: string;
 }
 
-interface InvalidParameterGroupStateFault {
+export interface InvalidParameterGroupStateFault {
 }
 
-interface InvalidParameterValueException {
-  readonly message: string;
+export interface InvalidParameterValueException {
+  readonly message?: string;
 }
 
-interface InvalidSnapshotStateFault {
+export interface InvalidSnapshotStateFault {
 }
 
-interface InvalidSubnet {
+export interface InvalidSubnet {
 }
 
-interface InvalidUserStateFault {
+export interface InvalidUserStateFault {
 }
 
-interface InvalidVPCNetworkStateFault {
+export interface InvalidVPCNetworkStateFault {
 }
 
-interface ListAllowedNodeTypeUpdatesRequest {
+export interface ListAllowedNodeTypeUpdatesRequest {
   readonly ClusterName: string;
 }
 
-interface ListAllowedNodeTypeUpdatesResponse {
-  readonly ScaleUpNodeTypes: [];
-  readonly ScaleDownNodeTypes: [];
+export interface ListAllowedNodeTypeUpdatesResponse {
+  readonly ScaleUpNodeTypes?: [];
+  readonly ScaleDownNodeTypes?: [];
 }
 
-interface ListTagsRequest {
+export interface ListTagsRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsResponse {
-  readonly TagList: [];
+export interface ListTagsResponse {
+  readonly TagList?: [];
 }
 
-interface NoOperationFault {
+export interface NoOperationFault {
 }
 
-interface Node {
-  readonly Name: string;
-  readonly Status: string;
-  readonly AvailabilityZone: string;
-  readonly CreateTime: Date;
-  readonly Endpoint: Endpoint;
+export interface Node {
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly AvailabilityZone?: string;
+  readonly CreateTime?: Date;
+  readonly Endpoint?: Endpoint;
 }
 
-interface NodeQuotaForClusterExceededFault {
+export interface NodeQuotaForClusterExceededFault {
 }
 
-interface NodeQuotaForCustomerExceededFault {
+export interface NodeQuotaForCustomerExceededFault {
 }
 
-interface Parameter {
-  readonly Name: string;
-  readonly Value: string;
-  readonly Description: string;
-  readonly DataType: string;
-  readonly AllowedValues: string;
-  readonly MinimumEngineVersion: string;
+export interface Parameter {
+  readonly Name?: string;
+  readonly Value?: string;
+  readonly Description?: string;
+  readonly DataType?: string;
+  readonly AllowedValues?: string;
+  readonly MinimumEngineVersion?: string;
 }
 
-interface ParameterGroup {
-  readonly Name: string;
-  readonly Family: string;
-  readonly Description: string;
-  readonly ARN: string;
+export interface ParameterGroup {
+  readonly Name?: string;
+  readonly Family?: string;
+  readonly Description?: string;
+  readonly ARN?: string;
 }
 
-interface ParameterGroupAlreadyExistsFault {
+export interface ParameterGroupAlreadyExistsFault {
 }
 
-interface ParameterGroupNotFoundFault {
+export interface ParameterGroupNotFoundFault {
 }
 
-interface ParameterGroupQuotaExceededFault {
+export interface ParameterGroupQuotaExceededFault {
 }
 
-interface ParameterNameValue {
-  readonly ParameterName: string;
-  readonly ParameterValue: string;
+export interface ParameterNameValue {
+  readonly ParameterName?: string;
+  readonly ParameterValue?: string;
 }
 
-interface PendingModifiedServiceUpdate {
-  readonly ServiceUpdateName: string;
-  readonly Status: string;
+export interface PendingModifiedServiceUpdate {
+  readonly ServiceUpdateName?: string;
+  readonly Status?: string;
 }
 
-interface ReplicaConfigurationRequest {
-  readonly ReplicaCount: number;
+export interface ReplicaConfigurationRequest {
+  readonly ReplicaCount?: number;
 }
 
-interface ResetParameterGroupRequest {
+export interface ResetParameterGroupRequest {
   readonly ParameterGroupName: string;
-  readonly AllParameters: boolean;
-  readonly ParameterNames: [];
+  readonly AllParameters?: boolean;
+  readonly ParameterNames?: [];
 }
 
-interface ResetParameterGroupResponse {
-  readonly ParameterGroup: ParameterGroup;
+export interface ResetParameterGroupResponse {
+  readonly ParameterGroup?: ParameterGroup;
 }
 
-interface ReshardingStatus {
-  readonly SlotMigration: SlotMigration;
+export interface ReshardingStatus {
+  readonly SlotMigration?: SlotMigration;
 }
 
-interface SecurityGroupMembership {
-  readonly SecurityGroupId: string;
-  readonly Status: string;
+export interface SecurityGroupMembership {
+  readonly SecurityGroupId?: string;
+  readonly Status?: string;
 }
 
-interface ServiceLinkedRoleNotFoundFault {
+export interface ServiceLinkedRoleNotFoundFault {
 }
 
-interface ServiceUpdate {
-  readonly ClusterName: string;
-  readonly ServiceUpdateName: string;
-  readonly ReleaseDate: Date;
-  readonly Description: string;
-  readonly Status: string;
-  readonly Type: string;
-  readonly NodesUpdated: string;
-  readonly AutoUpdateStartDate: Date;
+export interface ServiceUpdate {
+  readonly ClusterName?: string;
+  readonly ServiceUpdateName?: string;
+  readonly ReleaseDate?: Date;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly Type?: string;
+  readonly NodesUpdated?: string;
+  readonly AutoUpdateStartDate?: Date;
 }
 
-interface ServiceUpdateNotFoundFault {
+export interface ServiceUpdateNotFoundFault {
 }
 
-interface ServiceUpdateRequest {
-  readonly ServiceUpdateNameToApply: string;
+export interface ServiceUpdateRequest {
+  readonly ServiceUpdateNameToApply?: string;
 }
 
-interface Shard {
-  readonly Name: string;
-  readonly Status: string;
-  readonly Slots: string;
-  readonly Nodes: [];
-  readonly NumberOfNodes: number;
+export interface Shard {
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly Slots?: string;
+  readonly Nodes?: [];
+  readonly NumberOfNodes?: number;
 }
 
-interface ShardConfiguration {
-  readonly Slots: string;
-  readonly ReplicaCount: number;
+export interface ShardConfiguration {
+  readonly Slots?: string;
+  readonly ReplicaCount?: number;
 }
 
-interface ShardConfigurationRequest {
-  readonly ShardCount: number;
+export interface ShardConfigurationRequest {
+  readonly ShardCount?: number;
 }
 
-interface ShardDetail {
-  readonly Name: string;
-  readonly Configuration: ShardConfiguration;
-  readonly Size: string;
-  readonly SnapshotCreationTime: Date;
+export interface ShardDetail {
+  readonly Name?: string;
+  readonly Configuration?: ShardConfiguration;
+  readonly Size?: string;
+  readonly SnapshotCreationTime?: Date;
 }
 
-interface ShardNotFoundFault {
+export interface ShardNotFoundFault {
 }
 
-interface ShardsPerClusterQuotaExceededFault {
+export interface ShardsPerClusterQuotaExceededFault {
 }
 
-interface SlotMigration {
-  readonly ProgressPercentage: unknown;
+export interface SlotMigration {
+  readonly ProgressPercentage?: unknown;
 }
 
-interface Snapshot {
-  readonly Name: string;
-  readonly Status: string;
-  readonly Source: string;
-  readonly KmsKeyId: string;
-  readonly ARN: string;
-  readonly ClusterConfiguration: ClusterConfiguration;
+export interface Snapshot {
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly Source?: string;
+  readonly KmsKeyId?: string;
+  readonly ARN?: string;
+  readonly ClusterConfiguration?: ClusterConfiguration;
 }
 
-interface SnapshotAlreadyExistsFault {
+export interface SnapshotAlreadyExistsFault {
 }
 
-interface SnapshotNotFoundFault {
+export interface SnapshotNotFoundFault {
 }
 
-interface SnapshotQuotaExceededFault {
+export interface SnapshotQuotaExceededFault {
 }
 
-interface Subnet {
-  readonly Identifier: string;
-  readonly AvailabilityZone: AvailabilityZone;
+export interface Subnet {
+  readonly Identifier?: string;
+  readonly AvailabilityZone?: AvailabilityZone;
 }
 
-interface SubnetGroup {
-  readonly Name: string;
-  readonly Description: string;
-  readonly VpcId: string;
-  readonly Subnets: [];
-  readonly ARN: string;
+export interface SubnetGroup {
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly VpcId?: string;
+  readonly Subnets?: [];
+  readonly ARN?: string;
 }
 
-interface SubnetGroupAlreadyExistsFault {
+export interface SubnetGroupAlreadyExistsFault {
 }
 
-interface SubnetGroupInUseFault {
+export interface SubnetGroupInUseFault {
 }
 
-interface SubnetGroupNotFoundFault {
+export interface SubnetGroupNotFoundFault {
 }
 
-interface SubnetGroupQuotaExceededFault {
+export interface SubnetGroupQuotaExceededFault {
 }
 
-interface SubnetInUse {
+export interface SubnetInUse {
 }
 
-interface SubnetNotAllowedFault {
+export interface SubnetNotAllowedFault {
 }
 
-interface SubnetQuotaExceededFault {
+export interface SubnetQuotaExceededFault {
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TagNotFoundFault {
+export interface TagNotFoundFault {
 }
 
-interface TagQuotaPerResourceExceeded {
+export interface TagQuotaPerResourceExceeded {
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
-  readonly TagList: [];
+export interface TagResourceResponse {
+  readonly TagList?: [];
 }
 
-interface TestFailoverNotAvailableFault {
+export interface TestFailoverNotAvailableFault {
 }
 
-interface UnprocessedCluster {
-  readonly ClusterName: string;
-  readonly ErrorType: string;
-  readonly ErrorMessage: string;
+export interface UnprocessedCluster {
+  readonly ClusterName?: string;
+  readonly ErrorType?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
-  readonly TagList: [];
+export interface UntagResourceResponse {
+  readonly TagList?: [];
 }
 
-interface UpdateACLRequest {
+export interface UpdateACLRequest {
   readonly ACLName: string;
-  readonly UserNamesToAdd: [];
-  readonly UserNamesToRemove: [];
+  readonly UserNamesToAdd?: [];
+  readonly UserNamesToRemove?: [];
 }
 
-interface UpdateACLResponse {
-  readonly ACL: ACL;
+export interface UpdateACLResponse {
+  readonly ACL?: ACL;
 }
 
-interface UpdateClusterRequest {
+export interface UpdateClusterRequest {
   readonly ClusterName: string;
-  readonly Description: string;
-  readonly SecurityGroupIds: [];
-  readonly MaintenanceWindow: string;
-  readonly SnsTopicArn: string;
-  readonly SnsTopicStatus: string;
-  readonly ParameterGroupName: string;
-  readonly SnapshotWindow: string;
-  readonly SnapshotRetentionLimit: number;
-  readonly NodeType: string;
-  readonly EngineVersion: string;
-  readonly ReplicaConfiguration: ReplicaConfigurationRequest;
-  readonly ShardConfiguration: ShardConfigurationRequest;
-  readonly ACLName: string;
+  readonly Description?: string;
+  readonly SecurityGroupIds?: [];
+  readonly MaintenanceWindow?: string;
+  readonly SnsTopicArn?: string;
+  readonly SnsTopicStatus?: string;
+  readonly ParameterGroupName?: string;
+  readonly SnapshotWindow?: string;
+  readonly SnapshotRetentionLimit?: number;
+  readonly NodeType?: string;
+  readonly EngineVersion?: string;
+  readonly ReplicaConfiguration?: ReplicaConfigurationRequest;
+  readonly ShardConfiguration?: ShardConfigurationRequest;
+  readonly ACLName?: string;
 }
 
-interface UpdateClusterResponse {
-  readonly Cluster: Cluster;
+export interface UpdateClusterResponse {
+  readonly Cluster?: Cluster;
 }
 
-interface UpdateParameterGroupRequest {
+export interface UpdateParameterGroupRequest {
   readonly ParameterGroupName: string;
   readonly ParameterNameValues: [];
 }
 
-interface UpdateParameterGroupResponse {
-  readonly ParameterGroup: ParameterGroup;
+export interface UpdateParameterGroupResponse {
+  readonly ParameterGroup?: ParameterGroup;
 }
 
-interface UpdateSubnetGroupRequest {
+export interface UpdateSubnetGroupRequest {
   readonly SubnetGroupName: string;
-  readonly Description: string;
-  readonly SubnetIds: [];
+  readonly Description?: string;
+  readonly SubnetIds?: [];
 }
 
-interface UpdateSubnetGroupResponse {
-  readonly SubnetGroup: SubnetGroup;
+export interface UpdateSubnetGroupResponse {
+  readonly SubnetGroup?: SubnetGroup;
 }
 
-interface UpdateUserRequest {
+export interface UpdateUserRequest {
   readonly UserName: string;
-  readonly AuthenticationMode: AuthenticationMode;
-  readonly AccessString: string;
+  readonly AuthenticationMode?: AuthenticationMode;
+  readonly AccessString?: string;
 }
 
-interface UpdateUserResponse {
-  readonly User: User;
+export interface UpdateUserResponse {
+  readonly User?: User;
 }
 
-interface User {
-  readonly Name: string;
-  readonly Status: string;
-  readonly AccessString: string;
-  readonly ACLNames: [];
-  readonly MinimumEngineVersion: string;
-  readonly Authentication: Authentication;
-  readonly ARN: string;
+export interface User {
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly AccessString?: string;
+  readonly ACLNames?: [];
+  readonly MinimumEngineVersion?: string;
+  readonly Authentication?: Authentication;
+  readonly ARN?: string;
 }
 
-interface UserAlreadyExistsFault {
+export interface UserAlreadyExistsFault {
 }
 
-interface UserNotFoundFault {
+export interface UserNotFoundFault {
 }
 
-interface UserQuotaExceededFault {
+export interface UserQuotaExceededFault {
 }
+
 

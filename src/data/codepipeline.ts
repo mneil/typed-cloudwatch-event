@@ -5,11 +5,13 @@ export interface AcknowledgeJob {
   readonly jobId: string;
   readonly nonce: string;
 }
+
 export interface AcknowledgeThirdPartyJob {
   readonly jobId: string;
   readonly nonce: string;
   readonly clientToken: string;
 }
+
 export interface CreateCustomActionType {
   readonly category: string;
   readonly provider: string;
@@ -20,103 +22,126 @@ export interface CreateCustomActionType {
   readonly outputArtifactDetails: ArtifactDetails;
   readonly tags?: [];
 }
+
 export interface CreatePipeline {
   readonly pipeline: PipelineDeclaration;
   readonly tags?: [];
 }
+
 export interface DeleteCustomActionType {
   readonly category: string;
   readonly provider: string;
   readonly version: string;
 }
+
 export interface DeletePipeline {
   readonly name: string;
 }
+
 export interface DeleteWebhook {
   readonly name: string;
 }
+
 export interface DeregisterWebhookWithThirdParty {
   readonly webhookName?: string;
 }
+
 export interface DisableStageTransition {
   readonly pipelineName: string;
   readonly stageName: string;
   readonly transitionType: string;
   readonly reason: string;
 }
+
 export interface EnableStageTransition {
   readonly pipelineName: string;
   readonly stageName: string;
   readonly transitionType: string;
 }
+
 export interface GetActionType {
   readonly category: string;
   readonly owner: string;
   readonly provider: string;
   readonly version: string;
 }
+
 export interface GetJobDetails {
   readonly jobId: string;
 }
+
 export interface GetPipeline {
   readonly name: string;
   readonly version?: number;
 }
+
 export interface GetPipelineExecution {
   readonly pipelineName: string;
   readonly pipelineExecutionId: string;
 }
+
 export interface GetPipelineState {
   readonly name: string;
 }
+
 export interface GetThirdPartyJobDetails {
   readonly jobId: string;
   readonly clientToken: string;
 }
+
 export interface ListActionExecutions {
   readonly pipelineName: string;
   readonly filter?: ActionExecutionFilter;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListActionTypes {
   readonly actionOwnerFilter?: string;
   readonly nextToken?: string;
   readonly regionFilter?: string;
 }
+
 export interface ListPipelineExecutions {
   readonly pipelineName: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListPipelines {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListWebhooks {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface PollForJobs {
   readonly actionTypeId: ActionTypeId;
   readonly maxBatchSize?: number;
   readonly queryParam?: {[key: string]: any};
 }
+
 export interface PollForThirdPartyJobs {
   readonly actionTypeId: ActionTypeId;
   readonly maxBatchSize?: number;
 }
+
 export interface PutActionRevision {
   readonly pipelineName: string;
   readonly stageName: string;
   readonly actionName: string;
   readonly actionRevision: ActionRevision;
 }
+
 export interface PutApprovalResult {
   readonly pipelineName: string;
   readonly stageName: string;
@@ -124,10 +149,12 @@ export interface PutApprovalResult {
   readonly result: ApprovalResult;
   readonly token: string;
 }
+
 export interface PutJobFailureResult {
   readonly jobId: string;
   readonly failureDetails: FailureDetails;
 }
+
 export interface PutJobSuccessResult {
   readonly jobId: string;
   readonly currentRevision?: CurrentRevision;
@@ -135,11 +162,13 @@ export interface PutJobSuccessResult {
   readonly executionDetails?: ExecutionDetails;
   readonly outputVariables?: {[key: string]: any};
 }
+
 export interface PutThirdPartyJobFailureResult {
   readonly jobId: string;
   readonly clientToken: string;
   readonly failureDetails: FailureDetails;
 }
+
 export interface PutThirdPartyJobSuccessResult {
   readonly jobId: string;
   readonly clientToken: string;
@@ -147,741 +176,748 @@ export interface PutThirdPartyJobSuccessResult {
   readonly continuationToken?: string;
   readonly executionDetails?: ExecutionDetails;
 }
+
 export interface PutWebhook {
   readonly webhook: WebhookDefinition;
   readonly tags?: [];
 }
+
 export interface RegisterWebhookWithThirdParty {
   readonly webhookName?: string;
 }
+
 export interface RetryStageExecution {
   readonly pipelineName: string;
   readonly stageName: string;
   readonly pipelineExecutionId: string;
   readonly retryMode: string;
 }
+
 export interface StartPipelineExecution {
   readonly name: string;
   readonly clientRequestToken?: string;
 }
+
 export interface StopPipelineExecution {
   readonly pipelineName: string;
   readonly pipelineExecutionId: string;
   readonly abandon?: boolean;
   readonly reason?: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: [];
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateActionType {
   readonly actionType: ActionTypeDeclaration;
 }
+
 export interface UpdatePipeline {
   readonly pipeline: PipelineDeclaration;
 }
 
-
-
-interface AWSSessionCredentials {
+export interface AWSSessionCredentials {
   readonly accessKeyId: string;
   readonly secretAccessKey: string;
   readonly sessionToken: string;
 }
 
-interface AcknowledgeJobInput {
+export interface AcknowledgeJobInput {
   readonly jobId: string;
   readonly nonce: string;
 }
 
-interface AcknowledgeJobOutput {
-  readonly status: string;
+export interface AcknowledgeJobOutput {
+  readonly status?: string;
 }
 
-interface AcknowledgeThirdPartyJobInput {
+export interface AcknowledgeThirdPartyJobInput {
   readonly jobId: string;
   readonly nonce: string;
   readonly clientToken: string;
 }
 
-interface AcknowledgeThirdPartyJobOutput {
-  readonly status: string;
+export interface AcknowledgeThirdPartyJobOutput {
+  readonly status?: string;
 }
 
-interface ActionConfiguration {
-  readonly configuration: {[key: string]: any};
+export interface ActionConfiguration {
+  readonly configuration?: {[key: string]: any};
 }
 
-interface ActionConfigurationProperty {
+export interface ActionConfigurationProperty {
   readonly name: string;
   readonly required: boolean;
   readonly key: boolean;
   readonly secret: boolean;
-  readonly queryable: boolean;
-  readonly description: string;
-  readonly type: string;
+  readonly queryable?: boolean;
+  readonly description?: string;
+  readonly type?: string;
 }
 
-interface ActionContext {
-  readonly name: string;
-  readonly actionExecutionId: string;
+export interface ActionContext {
+  readonly name?: string;
+  readonly actionExecutionId?: string;
 }
 
-interface ActionDeclaration {
+export interface ActionDeclaration {
   readonly name: string;
   readonly actionTypeId: ActionTypeId;
-  readonly runOrder: number;
-  readonly configuration: {[key: string]: any};
-  readonly outputArtifacts: [];
-  readonly inputArtifacts: [];
-  readonly roleArn: string;
-  readonly region: string;
-  readonly namespace: string;
+  readonly runOrder?: number;
+  readonly configuration?: {[key: string]: any};
+  readonly outputArtifacts?: [];
+  readonly inputArtifacts?: [];
+  readonly roleArn?: string;
+  readonly region?: string;
+  readonly namespace?: string;
 }
 
-interface ActionExecution {
-  readonly actionExecutionId: string;
-  readonly status: string;
-  readonly summary: string;
-  readonly lastStatusChange: Date;
-  readonly token: string;
-  readonly lastUpdatedBy: string;
-  readonly externalExecutionId: string;
-  readonly externalExecutionUrl: string;
-  readonly percentComplete: number;
-  readonly errorDetails: ErrorDetails;
+export interface ActionExecution {
+  readonly actionExecutionId?: string;
+  readonly status?: string;
+  readonly summary?: string;
+  readonly lastStatusChange?: Date;
+  readonly token?: string;
+  readonly lastUpdatedBy?: string;
+  readonly externalExecutionId?: string;
+  readonly externalExecutionUrl?: string;
+  readonly percentComplete?: number;
+  readonly errorDetails?: ErrorDetails;
 }
 
-interface ActionExecutionDetail {
-  readonly pipelineExecutionId: string;
-  readonly actionExecutionId: string;
-  readonly pipelineVersion: number;
-  readonly stageName: string;
-  readonly actionName: string;
-  readonly startTime: Date;
-  readonly lastUpdateTime: Date;
-  readonly status: string;
-  readonly input: ActionExecutionInput;
-  readonly output: ActionExecutionOutput;
+export interface ActionExecutionDetail {
+  readonly pipelineExecutionId?: string;
+  readonly actionExecutionId?: string;
+  readonly pipelineVersion?: number;
+  readonly stageName?: string;
+  readonly actionName?: string;
+  readonly startTime?: Date;
+  readonly lastUpdateTime?: Date;
+  readonly status?: string;
+  readonly input?: ActionExecutionInput;
+  readonly output?: ActionExecutionOutput;
 }
 
-interface ActionExecutionFilter {
-  readonly pipelineExecutionId: string;
+export interface ActionExecutionFilter {
+  readonly pipelineExecutionId?: string;
 }
 
-interface ActionExecutionInput {
-  readonly actionTypeId: ActionTypeId;
-  readonly configuration: {[key: string]: any};
-  readonly resolvedConfiguration: {[key: string]: any};
-  readonly roleArn: string;
-  readonly region: string;
-  readonly inputArtifacts: [];
-  readonly namespace: string;
+export interface ActionExecutionInput {
+  readonly actionTypeId?: ActionTypeId;
+  readonly configuration?: {[key: string]: any};
+  readonly resolvedConfiguration?: {[key: string]: any};
+  readonly roleArn?: string;
+  readonly region?: string;
+  readonly inputArtifacts?: [];
+  readonly namespace?: string;
 }
 
-interface ActionExecutionOutput {
-  readonly outputArtifacts: [];
-  readonly executionResult: ActionExecutionResult;
-  readonly outputVariables: {[key: string]: any};
+export interface ActionExecutionOutput {
+  readonly outputArtifacts?: [];
+  readonly executionResult?: ActionExecutionResult;
+  readonly outputVariables?: {[key: string]: any};
 }
 
-interface ActionExecutionResult {
-  readonly externalExecutionId: string;
-  readonly externalExecutionSummary: string;
-  readonly externalExecutionUrl: string;
+export interface ActionExecutionResult {
+  readonly externalExecutionId?: string;
+  readonly externalExecutionSummary?: string;
+  readonly externalExecutionUrl?: string;
 }
 
-interface ActionNotFoundException {
+export interface ActionNotFoundException {
 }
 
-interface ActionRevision {
+export interface ActionRevision {
   readonly revisionId: string;
   readonly revisionChangeId: string;
   readonly created: Date;
 }
 
-interface ActionState {
-  readonly actionName: string;
-  readonly currentRevision: ActionRevision;
-  readonly latestExecution: ActionExecution;
-  readonly entityUrl: string;
-  readonly revisionUrl: string;
+export interface ActionState {
+  readonly actionName?: string;
+  readonly currentRevision?: ActionRevision;
+  readonly latestExecution?: ActionExecution;
+  readonly entityUrl?: string;
+  readonly revisionUrl?: string;
 }
 
-interface ActionType {
+export interface ActionType {
   readonly id: ActionTypeId;
-  readonly settings: ActionTypeSettings;
-  readonly actionConfigurationProperties: [];
+  readonly settings?: ActionTypeSettings;
+  readonly actionConfigurationProperties?: [];
   readonly inputArtifactDetails: ArtifactDetails;
   readonly outputArtifactDetails: ArtifactDetails;
 }
 
-interface ActionTypeAlreadyExistsException {
+export interface ActionTypeAlreadyExistsException {
 }
 
-interface ActionTypeArtifactDetails {
+export interface ActionTypeArtifactDetails {
   readonly minimumCount: number;
   readonly maximumCount: number;
 }
 
-interface ActionTypeDeclaration {
-  readonly description: string;
+export interface ActionTypeDeclaration {
+  readonly description?: string;
   readonly executor: ActionTypeExecutor;
   readonly id: ActionTypeIdentifier;
   readonly inputArtifactDetails: ActionTypeArtifactDetails;
   readonly outputArtifactDetails: ActionTypeArtifactDetails;
-  readonly permissions: ActionTypePermissions;
-  readonly properties: [];
-  readonly urls: ActionTypeUrls;
+  readonly permissions?: ActionTypePermissions;
+  readonly properties?: [];
+  readonly urls?: ActionTypeUrls;
 }
 
-interface ActionTypeExecutor {
+export interface ActionTypeExecutor {
   readonly configuration: ExecutorConfiguration;
   readonly type: string;
-  readonly policyStatementsTemplate: string;
-  readonly jobTimeout: number;
+  readonly policyStatementsTemplate?: string;
+  readonly jobTimeout?: number;
 }
 
-interface ActionTypeId {
+export interface ActionTypeId {
   readonly category: string;
   readonly owner: string;
   readonly provider: string;
   readonly version: string;
 }
 
-interface ActionTypeIdentifier {
+export interface ActionTypeIdentifier {
   readonly category: string;
   readonly owner: string;
   readonly provider: string;
   readonly version: string;
 }
 
-interface ActionTypeNotFoundException {
+export interface ActionTypeNotFoundException {
 }
 
-interface ActionTypePermissions {
+export interface ActionTypePermissions {
   readonly allowedAccounts: [];
 }
 
-interface ActionTypeProperty {
+export interface ActionTypeProperty {
   readonly name: string;
   readonly optional: boolean;
   readonly key: boolean;
   readonly noEcho: boolean;
-  readonly queryable: boolean;
-  readonly description: string;
+  readonly queryable?: boolean;
+  readonly description?: string;
 }
 
-interface ActionTypeSettings {
-  readonly thirdPartyConfigurationUrl: string;
-  readonly entityUrlTemplate: string;
-  readonly executionUrlTemplate: string;
-  readonly revisionUrlTemplate: string;
+export interface ActionTypeSettings {
+  readonly thirdPartyConfigurationUrl?: string;
+  readonly entityUrlTemplate?: string;
+  readonly executionUrlTemplate?: string;
+  readonly revisionUrlTemplate?: string;
 }
 
-interface ActionTypeUrls {
-  readonly configurationUrl: string;
-  readonly entityUrlTemplate: string;
-  readonly executionUrlTemplate: string;
-  readonly revisionUrlTemplate: string;
+export interface ActionTypeUrls {
+  readonly configurationUrl?: string;
+  readonly entityUrlTemplate?: string;
+  readonly executionUrlTemplate?: string;
+  readonly revisionUrlTemplate?: string;
 }
 
-interface ApprovalAlreadyCompletedException {
+export interface ApprovalAlreadyCompletedException {
 }
 
-interface ApprovalResult {
+export interface ApprovalResult {
   readonly summary: string;
   readonly status: string;
 }
 
-interface Artifact {
-  readonly name: string;
-  readonly revision: string;
-  readonly location: ArtifactLocation;
+export interface Artifact {
+  readonly name?: string;
+  readonly revision?: string;
+  readonly location?: ArtifactLocation;
 }
 
-interface ArtifactDetail {
-  readonly name: string;
-  readonly s3location: S3Location;
+export interface ArtifactDetail {
+  readonly name?: string;
+  readonly s3location?: S3Location;
 }
 
-interface ArtifactDetails {
+export interface ArtifactDetails {
   readonly minimumCount: number;
   readonly maximumCount: number;
 }
 
-interface ArtifactLocation {
-  readonly type: string;
-  readonly s3Location: S3ArtifactLocation;
+export interface ArtifactLocation {
+  readonly type?: string;
+  readonly s3Location?: S3ArtifactLocation;
 }
 
-interface ArtifactRevision {
-  readonly name: string;
-  readonly revisionId: string;
-  readonly revisionChangeIdentifier: string;
-  readonly revisionSummary: string;
-  readonly created: Date;
-  readonly revisionUrl: string;
+export interface ArtifactRevision {
+  readonly name?: string;
+  readonly revisionId?: string;
+  readonly revisionChangeIdentifier?: string;
+  readonly revisionSummary?: string;
+  readonly created?: Date;
+  readonly revisionUrl?: string;
 }
 
-interface ArtifactStore {
+export interface ArtifactStore {
   readonly type: string;
   readonly location: string;
-  readonly encryptionKey: EncryptionKey;
+  readonly encryptionKey?: EncryptionKey;
 }
 
-interface BlockerDeclaration {
+export interface BlockerDeclaration {
   readonly name: string;
   readonly type: string;
 }
 
-interface ConcurrentModificationException {
-  readonly message: string;
+export interface ConcurrentModificationException {
+  readonly message?: string;
 }
 
-interface ConflictException {
-  readonly message: string;
+export interface ConflictException {
+  readonly message?: string;
 }
 
-interface CreateCustomActionTypeInput {
+export interface CreateCustomActionTypeInput {
   readonly category: string;
   readonly provider: string;
   readonly version: string;
-  readonly settings: ActionTypeSettings;
-  readonly configurationProperties: [];
+  readonly settings?: ActionTypeSettings;
+  readonly configurationProperties?: [];
   readonly inputArtifactDetails: ArtifactDetails;
   readonly outputArtifactDetails: ArtifactDetails;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreateCustomActionTypeOutput {
+export interface CreateCustomActionTypeOutput {
   readonly actionType: ActionType;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreatePipelineInput {
+export interface CreatePipelineInput {
   readonly pipeline: PipelineDeclaration;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreatePipelineOutput {
-  readonly pipeline: PipelineDeclaration;
-  readonly tags: [];
+export interface CreatePipelineOutput {
+  readonly pipeline?: PipelineDeclaration;
+  readonly tags?: [];
 }
 
-interface CurrentRevision {
+export interface CurrentRevision {
   readonly revision: string;
   readonly changeIdentifier: string;
-  readonly created: Date;
-  readonly revisionSummary: string;
+  readonly created?: Date;
+  readonly revisionSummary?: string;
 }
 
-interface DeleteCustomActionTypeInput {
+export interface DeleteCustomActionTypeInput {
   readonly category: string;
   readonly provider: string;
   readonly version: string;
 }
 
-interface DeletePipelineInput {
+export interface DeletePipelineInput {
   readonly name: string;
 }
 
-interface DeleteWebhookInput {
+export interface DeleteWebhookInput {
   readonly name: string;
 }
 
-interface DeleteWebhookOutput {
+export interface DeleteWebhookOutput {
 }
 
-interface DeregisterWebhookWithThirdPartyInput {
-  readonly webhookName: string;
+export interface DeregisterWebhookWithThirdPartyInput {
+  readonly webhookName?: string;
 }
 
-interface DeregisterWebhookWithThirdPartyOutput {
+export interface DeregisterWebhookWithThirdPartyOutput {
 }
 
-interface DisableStageTransitionInput {
+export interface DisableStageTransitionInput {
   readonly pipelineName: string;
   readonly stageName: string;
   readonly transitionType: string;
   readonly reason: string;
 }
 
-interface DuplicatedStopRequestException {
-  readonly message: string;
+export interface DuplicatedStopRequestException {
+  readonly message?: string;
 }
 
-interface EnableStageTransitionInput {
+export interface EnableStageTransitionInput {
   readonly pipelineName: string;
   readonly stageName: string;
   readonly transitionType: string;
 }
 
-interface EncryptionKey {
+export interface EncryptionKey {
   readonly id: string;
   readonly type: string;
 }
 
-interface ErrorDetails {
-  readonly code: string;
-  readonly message: string;
+export interface ErrorDetails {
+  readonly code?: string;
+  readonly message?: string;
 }
 
-interface ExecutionDetails {
-  readonly summary: string;
-  readonly externalExecutionId: string;
-  readonly percentComplete: number;
+export interface ExecutionDetails {
+  readonly summary?: string;
+  readonly externalExecutionId?: string;
+  readonly percentComplete?: number;
 }
 
-interface ExecutionTrigger {
-  readonly triggerType: string;
-  readonly triggerDetail: string;
+export interface ExecutionTrigger {
+  readonly triggerType?: string;
+  readonly triggerDetail?: string;
 }
 
-interface ExecutorConfiguration {
-  readonly lambdaExecutorConfiguration: LambdaExecutorConfiguration;
-  readonly jobWorkerExecutorConfiguration: JobWorkerExecutorConfiguration;
+export interface ExecutorConfiguration {
+  readonly lambdaExecutorConfiguration?: LambdaExecutorConfiguration;
+  readonly jobWorkerExecutorConfiguration?: JobWorkerExecutorConfiguration;
 }
 
-interface FailureDetails {
+export interface FailureDetails {
   readonly type: string;
   readonly message: string;
-  readonly externalExecutionId: string;
+  readonly externalExecutionId?: string;
 }
 
-interface GetActionTypeInput {
+export interface GetActionTypeInput {
   readonly category: string;
   readonly owner: string;
   readonly provider: string;
   readonly version: string;
 }
 
-interface GetActionTypeOutput {
-  readonly actionType: ActionTypeDeclaration;
+export interface GetActionTypeOutput {
+  readonly actionType?: ActionTypeDeclaration;
 }
 
-interface GetJobDetailsInput {
+export interface GetJobDetailsInput {
   readonly jobId: string;
 }
 
-interface GetJobDetailsOutput {
-  readonly jobDetails: JobDetails;
+export interface GetJobDetailsOutput {
+  readonly jobDetails?: JobDetails;
 }
 
-interface GetPipelineExecutionInput {
+export interface GetPipelineExecutionInput {
   readonly pipelineName: string;
   readonly pipelineExecutionId: string;
 }
 
-interface GetPipelineExecutionOutput {
-  readonly pipelineExecution: PipelineExecution;
+export interface GetPipelineExecutionOutput {
+  readonly pipelineExecution?: PipelineExecution;
 }
 
-interface GetPipelineInput {
+export interface GetPipelineInput {
   readonly name: string;
-  readonly version: number;
+  readonly version?: number;
 }
 
-interface GetPipelineOutput {
-  readonly pipeline: PipelineDeclaration;
-  readonly metadata: PipelineMetadata;
+export interface GetPipelineOutput {
+  readonly pipeline?: PipelineDeclaration;
+  readonly metadata?: PipelineMetadata;
 }
 
-interface GetPipelineStateInput {
+export interface GetPipelineStateInput {
   readonly name: string;
 }
 
-interface GetPipelineStateOutput {
-  readonly pipelineName: string;
-  readonly pipelineVersion: number;
-  readonly stageStates: [];
-  readonly created: Date;
-  readonly updated: Date;
+export interface GetPipelineStateOutput {
+  readonly pipelineName?: string;
+  readonly pipelineVersion?: number;
+  readonly stageStates?: [];
+  readonly created?: Date;
+  readonly updated?: Date;
 }
 
-interface GetThirdPartyJobDetailsInput {
+export interface GetThirdPartyJobDetailsInput {
   readonly jobId: string;
   readonly clientToken: string;
 }
 
-interface GetThirdPartyJobDetailsOutput {
-  readonly jobDetails: ThirdPartyJobDetails;
+export interface GetThirdPartyJobDetailsOutput {
+  readonly jobDetails?: ThirdPartyJobDetails;
 }
 
-interface InputArtifact {
+export interface InputArtifact {
   readonly name: string;
 }
 
-interface InvalidActionDeclarationException {
+export interface InvalidActionDeclarationException {
 }
 
-interface InvalidApprovalTokenException {
+export interface InvalidApprovalTokenException {
 }
 
-interface InvalidArnException {
-  readonly message: string;
+export interface InvalidArnException {
+  readonly message?: string;
 }
 
-interface InvalidBlockerDeclarationException {
+export interface InvalidBlockerDeclarationException {
 }
 
-interface InvalidClientTokenException {
+export interface InvalidClientTokenException {
 }
 
-interface InvalidJobException {
+export interface InvalidJobException {
 }
 
-interface InvalidJobStateException {
+export interface InvalidJobStateException {
 }
 
-interface InvalidNextTokenException {
+export interface InvalidNextTokenException {
 }
 
-interface InvalidNonceException {
+export interface InvalidNonceException {
 }
 
-interface InvalidStageDeclarationException {
+export interface InvalidStageDeclarationException {
 }
 
-interface InvalidStructureException {
+export interface InvalidStructureException {
 }
 
-interface InvalidTagsException {
-  readonly message: string;
+export interface InvalidTagsException {
+  readonly message?: string;
 }
 
-interface InvalidWebhookAuthenticationParametersException {
+export interface InvalidWebhookAuthenticationParametersException {
 }
 
-interface InvalidWebhookFilterPatternException {
+export interface InvalidWebhookFilterPatternException {
 }
 
-interface Job {
-  readonly id: string;
-  readonly data: JobData;
-  readonly nonce: string;
-  readonly accountId: string;
+export interface Job {
+  readonly id?: string;
+  readonly data?: JobData;
+  readonly nonce?: string;
+  readonly accountId?: string;
 }
 
-interface JobData {
-  readonly actionTypeId: ActionTypeId;
-  readonly actionConfiguration: ActionConfiguration;
-  readonly pipelineContext: PipelineContext;
-  readonly inputArtifacts: [];
-  readonly outputArtifacts: [];
-  readonly artifactCredentials: AWSSessionCredentials;
-  readonly continuationToken: string;
-  readonly encryptionKey: EncryptionKey;
+export interface JobData {
+  readonly actionTypeId?: ActionTypeId;
+  readonly actionConfiguration?: ActionConfiguration;
+  readonly pipelineContext?: PipelineContext;
+  readonly inputArtifacts?: [];
+  readonly outputArtifacts?: [];
+  readonly artifactCredentials?: AWSSessionCredentials;
+  readonly continuationToken?: string;
+  readonly encryptionKey?: EncryptionKey;
 }
 
-interface JobDetails {
-  readonly id: string;
-  readonly data: JobData;
-  readonly accountId: string;
+export interface JobDetails {
+  readonly id?: string;
+  readonly data?: JobData;
+  readonly accountId?: string;
 }
 
-interface JobNotFoundException {
+export interface JobNotFoundException {
 }
 
-interface JobWorkerExecutorConfiguration {
-  readonly pollingAccounts: [];
-  readonly pollingServicePrincipals: [];
+export interface JobWorkerExecutorConfiguration {
+  readonly pollingAccounts?: [];
+  readonly pollingServicePrincipals?: [];
 }
 
-interface LambdaExecutorConfiguration {
+export interface LambdaExecutorConfiguration {
   readonly lambdaFunctionArn: string;
 }
 
-interface LimitExceededException {
+export interface LimitExceededException {
 }
 
-interface ListActionExecutionsInput {
+export interface ListActionExecutionsInput {
   readonly pipelineName: string;
-  readonly filter: ActionExecutionFilter;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly filter?: ActionExecutionFilter;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListActionExecutionsOutput {
-  readonly actionExecutionDetails: [];
-  readonly nextToken: string;
+export interface ListActionExecutionsOutput {
+  readonly actionExecutionDetails?: [];
+  readonly nextToken?: string;
 }
 
-interface ListActionTypesInput {
-  readonly actionOwnerFilter: string;
-  readonly nextToken: string;
-  readonly regionFilter: string;
+export interface ListActionTypesInput {
+  readonly actionOwnerFilter?: string;
+  readonly nextToken?: string;
+  readonly regionFilter?: string;
 }
 
-interface ListActionTypesOutput {
+export interface ListActionTypesOutput {
   readonly actionTypes: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListPipelineExecutionsInput {
+export interface ListPipelineExecutionsInput {
   readonly pipelineName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListPipelineExecutionsOutput {
-  readonly pipelineExecutionSummaries: [];
-  readonly nextToken: string;
+export interface ListPipelineExecutionsOutput {
+  readonly pipelineExecutionSummaries?: [];
+  readonly nextToken?: string;
 }
 
-interface ListPipelinesInput {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListPipelinesInput {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListPipelinesOutput {
-  readonly pipelines: [];
-  readonly nextToken: string;
+export interface ListPipelinesOutput {
+  readonly pipelines?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceInput {
+export interface ListTagsForResourceInput {
   readonly resourceArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListTagsForResourceOutput {
-  readonly tags: [];
-  readonly nextToken: string;
+export interface ListTagsForResourceOutput {
+  readonly tags?: [];
+  readonly nextToken?: string;
 }
 
-interface ListWebhookItem {
+export interface ListWebhookItem {
   readonly definition: WebhookDefinition;
   readonly url: string;
-  readonly errorMessage: string;
-  readonly errorCode: string;
-  readonly lastTriggered: Date;
-  readonly arn: string;
-  readonly tags: [];
+  readonly errorMessage?: string;
+  readonly errorCode?: string;
+  readonly lastTriggered?: Date;
+  readonly arn?: string;
+  readonly tags?: [];
 }
 
-interface ListWebhooksInput {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListWebhooksInput {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListWebhooksOutput {
-  readonly webhooks: [];
-  readonly NextToken: string;
+export interface ListWebhooksOutput {
+  readonly webhooks?: [];
+  readonly NextToken?: string;
 }
 
-interface NotLatestPipelineExecutionException {
+export interface NotLatestPipelineExecutionException {
 }
 
-interface OutputArtifact {
+export interface OutputArtifact {
   readonly name: string;
 }
 
-interface OutputVariablesSizeExceededException {
-  readonly message: string;
+export interface OutputVariablesSizeExceededException {
+  readonly message?: string;
 }
 
-interface PipelineContext {
-  readonly pipelineName: string;
-  readonly stage: StageContext;
-  readonly action: ActionContext;
-  readonly pipelineArn: string;
-  readonly pipelineExecutionId: string;
+export interface PipelineContext {
+  readonly pipelineName?: string;
+  readonly stage?: StageContext;
+  readonly action?: ActionContext;
+  readonly pipelineArn?: string;
+  readonly pipelineExecutionId?: string;
 }
 
-interface PipelineDeclaration {
+export interface PipelineDeclaration {
   readonly name: string;
   readonly roleArn: string;
-  readonly artifactStore: ArtifactStore;
-  readonly artifactStores: {[key: string]: any};
+  readonly artifactStore?: ArtifactStore;
+  readonly artifactStores?: {[key: string]: any};
   readonly stages: [];
-  readonly version: number;
+  readonly version?: number;
 }
 
-interface PipelineExecution {
-  readonly pipelineName: string;
-  readonly pipelineVersion: number;
-  readonly pipelineExecutionId: string;
-  readonly status: string;
-  readonly statusSummary: string;
-  readonly artifactRevisions: [];
+export interface PipelineExecution {
+  readonly pipelineName?: string;
+  readonly pipelineVersion?: number;
+  readonly pipelineExecutionId?: string;
+  readonly status?: string;
+  readonly statusSummary?: string;
+  readonly artifactRevisions?: [];
 }
 
-interface PipelineExecutionNotFoundException {
+export interface PipelineExecutionNotFoundException {
 }
 
-interface PipelineExecutionNotStoppableException {
-  readonly message: string;
+export interface PipelineExecutionNotStoppableException {
+  readonly message?: string;
 }
 
-interface PipelineExecutionSummary {
-  readonly pipelineExecutionId: string;
-  readonly status: string;
-  readonly startTime: Date;
-  readonly lastUpdateTime: Date;
-  readonly sourceRevisions: [];
-  readonly trigger: ExecutionTrigger;
-  readonly stopTrigger: StopExecutionTrigger;
+export interface PipelineExecutionSummary {
+  readonly pipelineExecutionId?: string;
+  readonly status?: string;
+  readonly startTime?: Date;
+  readonly lastUpdateTime?: Date;
+  readonly sourceRevisions?: [];
+  readonly trigger?: ExecutionTrigger;
+  readonly stopTrigger?: StopExecutionTrigger;
 }
 
-interface PipelineMetadata {
-  readonly pipelineArn: string;
-  readonly created: Date;
-  readonly updated: Date;
+export interface PipelineMetadata {
+  readonly pipelineArn?: string;
+  readonly created?: Date;
+  readonly updated?: Date;
 }
 
-interface PipelineNameInUseException {
+export interface PipelineNameInUseException {
 }
 
-interface PipelineNotFoundException {
+export interface PipelineNotFoundException {
 }
 
-interface PipelineSummary {
-  readonly name: string;
-  readonly version: number;
-  readonly created: Date;
-  readonly updated: Date;
+export interface PipelineSummary {
+  readonly name?: string;
+  readonly version?: number;
+  readonly created?: Date;
+  readonly updated?: Date;
 }
 
-interface PipelineVersionNotFoundException {
+export interface PipelineVersionNotFoundException {
 }
 
-interface PollForJobsInput {
+export interface PollForJobsInput {
   readonly actionTypeId: ActionTypeId;
-  readonly maxBatchSize: number;
-  readonly queryParam: {[key: string]: any};
+  readonly maxBatchSize?: number;
+  readonly queryParam?: {[key: string]: any};
 }
 
-interface PollForJobsOutput {
-  readonly jobs: [];
+export interface PollForJobsOutput {
+  readonly jobs?: [];
 }
 
-interface PollForThirdPartyJobsInput {
+export interface PollForThirdPartyJobsInput {
   readonly actionTypeId: ActionTypeId;
-  readonly maxBatchSize: number;
+  readonly maxBatchSize?: number;
 }
 
-interface PollForThirdPartyJobsOutput {
-  readonly jobs: [];
+export interface PollForThirdPartyJobsOutput {
+  readonly jobs?: [];
 }
 
-interface PutActionRevisionInput {
+export interface PutActionRevisionInput {
   readonly pipelineName: string;
   readonly stageName: string;
   readonly actionName: string;
   readonly actionRevision: ActionRevision;
 }
 
-interface PutActionRevisionOutput {
-  readonly newRevision: boolean;
-  readonly pipelineExecutionId: string;
+export interface PutActionRevisionOutput {
+  readonly newRevision?: boolean;
+  readonly pipelineExecutionId?: string;
 }
 
-interface PutApprovalResultInput {
+export interface PutApprovalResultInput {
   readonly pipelineName: string;
   readonly stageName: string;
   readonly actionName: string;
@@ -889,216 +925,216 @@ interface PutApprovalResultInput {
   readonly token: string;
 }
 
-interface PutApprovalResultOutput {
-  readonly approvedAt: Date;
+export interface PutApprovalResultOutput {
+  readonly approvedAt?: Date;
 }
 
-interface PutJobFailureResultInput {
+export interface PutJobFailureResultInput {
   readonly jobId: string;
   readonly failureDetails: FailureDetails;
 }
 
-interface PutJobSuccessResultInput {
+export interface PutJobSuccessResultInput {
   readonly jobId: string;
-  readonly currentRevision: CurrentRevision;
-  readonly continuationToken: string;
-  readonly executionDetails: ExecutionDetails;
-  readonly outputVariables: {[key: string]: any};
+  readonly currentRevision?: CurrentRevision;
+  readonly continuationToken?: string;
+  readonly executionDetails?: ExecutionDetails;
+  readonly outputVariables?: {[key: string]: any};
 }
 
-interface PutThirdPartyJobFailureResultInput {
+export interface PutThirdPartyJobFailureResultInput {
   readonly jobId: string;
   readonly clientToken: string;
   readonly failureDetails: FailureDetails;
 }
 
-interface PutThirdPartyJobSuccessResultInput {
+export interface PutThirdPartyJobSuccessResultInput {
   readonly jobId: string;
   readonly clientToken: string;
-  readonly currentRevision: CurrentRevision;
-  readonly continuationToken: string;
-  readonly executionDetails: ExecutionDetails;
+  readonly currentRevision?: CurrentRevision;
+  readonly continuationToken?: string;
+  readonly executionDetails?: ExecutionDetails;
 }
 
-interface PutWebhookInput {
+export interface PutWebhookInput {
   readonly webhook: WebhookDefinition;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface PutWebhookOutput {
-  readonly webhook: ListWebhookItem;
+export interface PutWebhookOutput {
+  readonly webhook?: ListWebhookItem;
 }
 
-interface RegisterWebhookWithThirdPartyInput {
-  readonly webhookName: string;
+export interface RegisterWebhookWithThirdPartyInput {
+  readonly webhookName?: string;
 }
 
-interface RegisterWebhookWithThirdPartyOutput {
+export interface RegisterWebhookWithThirdPartyOutput {
 }
 
-interface RequestFailedException {
-  readonly message: string;
+export interface RequestFailedException {
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
 }
 
-interface RetryStageExecutionInput {
+export interface RetryStageExecutionInput {
   readonly pipelineName: string;
   readonly stageName: string;
   readonly pipelineExecutionId: string;
   readonly retryMode: string;
 }
 
-interface RetryStageExecutionOutput {
-  readonly pipelineExecutionId: string;
+export interface RetryStageExecutionOutput {
+  readonly pipelineExecutionId?: string;
 }
 
-interface S3ArtifactLocation {
+export interface S3ArtifactLocation {
   readonly bucketName: string;
   readonly objectKey: string;
 }
 
-interface S3Location {
-  readonly bucket: string;
-  readonly key: string;
+export interface S3Location {
+  readonly bucket?: string;
+  readonly key?: string;
 }
 
-interface SourceRevision {
+export interface SourceRevision {
   readonly actionName: string;
-  readonly revisionId: string;
-  readonly revisionSummary: string;
-  readonly revisionUrl: string;
+  readonly revisionId?: string;
+  readonly revisionSummary?: string;
+  readonly revisionUrl?: string;
 }
 
-interface StageContext {
-  readonly name: string;
+export interface StageContext {
+  readonly name?: string;
 }
 
-interface StageDeclaration {
+export interface StageDeclaration {
   readonly name: string;
-  readonly blockers: [];
+  readonly blockers?: [];
   readonly actions: [];
 }
 
-interface StageExecution {
+export interface StageExecution {
   readonly pipelineExecutionId: string;
   readonly status: string;
 }
 
-interface StageNotFoundException {
+export interface StageNotFoundException {
 }
 
-interface StageNotRetryableException {
+export interface StageNotRetryableException {
 }
 
-interface StageState {
-  readonly stageName: string;
-  readonly inboundExecution: StageExecution;
-  readonly inboundTransitionState: TransitionState;
-  readonly actionStates: [];
-  readonly latestExecution: StageExecution;
+export interface StageState {
+  readonly stageName?: string;
+  readonly inboundExecution?: StageExecution;
+  readonly inboundTransitionState?: TransitionState;
+  readonly actionStates?: [];
+  readonly latestExecution?: StageExecution;
 }
 
-interface StartPipelineExecutionInput {
+export interface StartPipelineExecutionInput {
   readonly name: string;
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 
-interface StartPipelineExecutionOutput {
-  readonly pipelineExecutionId: string;
+export interface StartPipelineExecutionOutput {
+  readonly pipelineExecutionId?: string;
 }
 
-interface StopExecutionTrigger {
-  readonly reason: string;
+export interface StopExecutionTrigger {
+  readonly reason?: string;
 }
 
-interface StopPipelineExecutionInput {
+export interface StopPipelineExecutionInput {
   readonly pipelineName: string;
   readonly pipelineExecutionId: string;
-  readonly abandon: boolean;
-  readonly reason: string;
+  readonly abandon?: boolean;
+  readonly reason?: string;
 }
 
-interface StopPipelineExecutionOutput {
-  readonly pipelineExecutionId: string;
+export interface StopPipelineExecutionOutput {
+  readonly pipelineExecutionId?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly key: string;
   readonly value: string;
 }
 
-interface TagResourceInput {
+export interface TagResourceInput {
   readonly resourceArn: string;
   readonly tags: [];
 }
 
-interface TagResourceOutput {
+export interface TagResourceOutput {
 }
 
-interface ThirdPartyJob {
-  readonly clientId: string;
-  readonly jobId: string;
+export interface ThirdPartyJob {
+  readonly clientId?: string;
+  readonly jobId?: string;
 }
 
-interface ThirdPartyJobData {
-  readonly actionTypeId: ActionTypeId;
-  readonly actionConfiguration: ActionConfiguration;
-  readonly pipelineContext: PipelineContext;
-  readonly inputArtifacts: [];
-  readonly outputArtifacts: [];
-  readonly artifactCredentials: AWSSessionCredentials;
-  readonly continuationToken: string;
-  readonly encryptionKey: EncryptionKey;
+export interface ThirdPartyJobData {
+  readonly actionTypeId?: ActionTypeId;
+  readonly actionConfiguration?: ActionConfiguration;
+  readonly pipelineContext?: PipelineContext;
+  readonly inputArtifacts?: [];
+  readonly outputArtifacts?: [];
+  readonly artifactCredentials?: AWSSessionCredentials;
+  readonly continuationToken?: string;
+  readonly encryptionKey?: EncryptionKey;
 }
 
-interface ThirdPartyJobDetails {
-  readonly id: string;
-  readonly data: ThirdPartyJobData;
-  readonly nonce: string;
+export interface ThirdPartyJobDetails {
+  readonly id?: string;
+  readonly data?: ThirdPartyJobData;
+  readonly nonce?: string;
 }
 
-interface TooManyTagsException {
-  readonly message: string;
+export interface TooManyTagsException {
+  readonly message?: string;
 }
 
-interface TransitionState {
-  readonly enabled: boolean;
-  readonly lastChangedBy: string;
-  readonly lastChangedAt: Date;
-  readonly disabledReason: string;
+export interface TransitionState {
+  readonly enabled?: boolean;
+  readonly lastChangedBy?: string;
+  readonly lastChangedAt?: Date;
+  readonly disabledReason?: string;
 }
 
-interface UntagResourceInput {
+export interface UntagResourceInput {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceOutput {
+export interface UntagResourceOutput {
 }
 
-interface UpdateActionTypeInput {
+export interface UpdateActionTypeInput {
   readonly actionType: ActionTypeDeclaration;
 }
 
-interface UpdatePipelineInput {
+export interface UpdatePipelineInput {
   readonly pipeline: PipelineDeclaration;
 }
 
-interface UpdatePipelineOutput {
-  readonly pipeline: PipelineDeclaration;
+export interface UpdatePipelineOutput {
+  readonly pipeline?: PipelineDeclaration;
 }
 
-interface ValidationException {
+export interface ValidationException {
 }
 
-interface WebhookAuthConfiguration {
-  readonly AllowedIPRange: string;
-  readonly SecretToken: string;
+export interface WebhookAuthConfiguration {
+  readonly AllowedIPRange?: string;
+  readonly SecretToken?: string;
 }
 
-interface WebhookDefinition {
+export interface WebhookDefinition {
   readonly name: string;
   readonly targetPipeline: string;
   readonly targetAction: string;
@@ -1107,11 +1143,12 @@ interface WebhookDefinition {
   readonly authenticationConfiguration: WebhookAuthConfiguration;
 }
 
-interface WebhookFilterRule {
+export interface WebhookFilterRule {
   readonly jsonPath: string;
-  readonly matchEquals: string;
+  readonly matchEquals?: string;
 }
 
-interface WebhookNotFoundException {
+export interface WebhookNotFoundException {
 }
+
 

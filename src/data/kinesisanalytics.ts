@@ -6,27 +6,32 @@ export interface AddApplicationCloudWatchLoggingOption {
   readonly CurrentApplicationVersionId: number;
   readonly CloudWatchLoggingOption: CloudWatchLoggingOption;
 }
+
 export interface AddApplicationInput {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly Input: Input;
 }
+
 export interface AddApplicationInputProcessingConfiguration {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly InputId: string;
   readonly InputProcessingConfiguration: InputProcessingConfiguration;
 }
+
 export interface AddApplicationOutput {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly Output: Output;
 }
+
 export interface AddApplicationReferenceDataSource {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly ReferenceDataSource: ReferenceDataSource;
 }
+
 export interface CreateApplication {
   readonly ApplicationName: string;
   readonly ApplicationDescription?: string;
@@ -36,33 +41,40 @@ export interface CreateApplication {
   readonly ApplicationCode?: string;
   readonly Tags?: [];
 }
+
 export interface DeleteApplication {
   readonly ApplicationName: string;
   readonly CreateTimestamp: Date;
 }
+
 export interface DeleteApplicationCloudWatchLoggingOption {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly CloudWatchLoggingOptionId: string;
 }
+
 export interface DeleteApplicationInputProcessingConfiguration {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly InputId: string;
 }
+
 export interface DeleteApplicationOutput {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly OutputId: string;
 }
+
 export interface DeleteApplicationReferenceDataSource {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly ReferenceId: string;
 }
+
 export interface DescribeApplication {
   readonly ApplicationName: string;
 }
+
 export interface DiscoverInputSchema {
   readonly ResourceARN?: string;
   readonly RoleARN?: string;
@@ -70,580 +82,586 @@ export interface DiscoverInputSchema {
   readonly S3Configuration?: S3Configuration;
   readonly InputProcessingConfiguration?: InputProcessingConfiguration;
 }
+
 export interface ListApplications {
   readonly Limit?: number;
   readonly ExclusiveStartApplicationName?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceARN: string;
 }
+
 export interface StartApplication {
   readonly ApplicationName: string;
   readonly InputConfigurations: [];
 }
+
 export interface StopApplication {
   readonly ApplicationName: string;
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateApplication {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly ApplicationUpdate: ApplicationUpdate;
 }
 
-
-
-interface AddApplicationCloudWatchLoggingOptionRequest {
+export interface AddApplicationCloudWatchLoggingOptionRequest {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly CloudWatchLoggingOption: CloudWatchLoggingOption;
 }
 
-interface AddApplicationCloudWatchLoggingOptionResponse {
+export interface AddApplicationCloudWatchLoggingOptionResponse {
 }
 
-interface AddApplicationInputProcessingConfigurationRequest {
+export interface AddApplicationInputProcessingConfigurationRequest {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly InputId: string;
   readonly InputProcessingConfiguration: InputProcessingConfiguration;
 }
 
-interface AddApplicationInputProcessingConfigurationResponse {
+export interface AddApplicationInputProcessingConfigurationResponse {
 }
 
-interface AddApplicationInputRequest {
+export interface AddApplicationInputRequest {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly Input: Input;
 }
 
-interface AddApplicationInputResponse {
+export interface AddApplicationInputResponse {
 }
 
-interface AddApplicationOutputRequest {
+export interface AddApplicationOutputRequest {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly Output: Output;
 }
 
-interface AddApplicationOutputResponse {
+export interface AddApplicationOutputResponse {
 }
 
-interface AddApplicationReferenceDataSourceRequest {
+export interface AddApplicationReferenceDataSourceRequest {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly ReferenceDataSource: ReferenceDataSource;
 }
 
-interface AddApplicationReferenceDataSourceResponse {
+export interface AddApplicationReferenceDataSourceResponse {
 }
 
-interface ApplicationDetail {
+export interface ApplicationDetail {
   readonly ApplicationName: string;
-  readonly ApplicationDescription: string;
+  readonly ApplicationDescription?: string;
   readonly ApplicationARN: string;
   readonly ApplicationStatus: string;
-  readonly CreateTimestamp: Date;
-  readonly LastUpdateTimestamp: Date;
-  readonly InputDescriptions: [];
-  readonly OutputDescriptions: [];
-  readonly ReferenceDataSourceDescriptions: [];
-  readonly CloudWatchLoggingOptionDescriptions: [];
-  readonly ApplicationCode: string;
+  readonly CreateTimestamp?: Date;
+  readonly LastUpdateTimestamp?: Date;
+  readonly InputDescriptions?: [];
+  readonly OutputDescriptions?: [];
+  readonly ReferenceDataSourceDescriptions?: [];
+  readonly CloudWatchLoggingOptionDescriptions?: [];
+  readonly ApplicationCode?: string;
   readonly ApplicationVersionId: number;
 }
 
-interface ApplicationSummary {
+export interface ApplicationSummary {
   readonly ApplicationName: string;
   readonly ApplicationARN: string;
   readonly ApplicationStatus: string;
 }
 
-interface ApplicationUpdate {
-  readonly InputUpdates: [];
-  readonly ApplicationCodeUpdate: string;
-  readonly OutputUpdates: [];
-  readonly ReferenceDataSourceUpdates: [];
-  readonly CloudWatchLoggingOptionUpdates: [];
+export interface ApplicationUpdate {
+  readonly InputUpdates?: [];
+  readonly ApplicationCodeUpdate?: string;
+  readonly OutputUpdates?: [];
+  readonly ReferenceDataSourceUpdates?: [];
+  readonly CloudWatchLoggingOptionUpdates?: [];
 }
 
-interface CSVMappingParameters {
+export interface CSVMappingParameters {
   readonly RecordRowDelimiter: string;
   readonly RecordColumnDelimiter: string;
 }
 
-interface CloudWatchLoggingOption {
+export interface CloudWatchLoggingOption {
   readonly LogStreamARN: string;
   readonly RoleARN: string;
 }
 
-interface CloudWatchLoggingOptionDescription {
-  readonly CloudWatchLoggingOptionId: string;
+export interface CloudWatchLoggingOptionDescription {
+  readonly CloudWatchLoggingOptionId?: string;
   readonly LogStreamARN: string;
   readonly RoleARN: string;
 }
 
-interface CloudWatchLoggingOptionUpdate {
+export interface CloudWatchLoggingOptionUpdate {
   readonly CloudWatchLoggingOptionId: string;
-  readonly LogStreamARNUpdate: string;
-  readonly RoleARNUpdate: string;
+  readonly LogStreamARNUpdate?: string;
+  readonly RoleARNUpdate?: string;
 }
 
-interface CodeValidationException {
-  readonly message: string;
+export interface CodeValidationException {
+  readonly message?: string;
 }
 
-interface ConcurrentModificationException {
-  readonly message: string;
+export interface ConcurrentModificationException {
+  readonly message?: string;
 }
 
-interface CreateApplicationRequest {
+export interface CreateApplicationRequest {
   readonly ApplicationName: string;
-  readonly ApplicationDescription: string;
-  readonly Inputs: [];
-  readonly Outputs: [];
-  readonly CloudWatchLoggingOptions: [];
-  readonly ApplicationCode: string;
-  readonly Tags: [];
+  readonly ApplicationDescription?: string;
+  readonly Inputs?: [];
+  readonly Outputs?: [];
+  readonly CloudWatchLoggingOptions?: [];
+  readonly ApplicationCode?: string;
+  readonly Tags?: [];
 }
 
-interface CreateApplicationResponse {
+export interface CreateApplicationResponse {
   readonly ApplicationSummary: ApplicationSummary;
 }
 
-interface DeleteApplicationCloudWatchLoggingOptionRequest {
+export interface DeleteApplicationCloudWatchLoggingOptionRequest {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly CloudWatchLoggingOptionId: string;
 }
 
-interface DeleteApplicationCloudWatchLoggingOptionResponse {
+export interface DeleteApplicationCloudWatchLoggingOptionResponse {
 }
 
-interface DeleteApplicationInputProcessingConfigurationRequest {
+export interface DeleteApplicationInputProcessingConfigurationRequest {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly InputId: string;
 }
 
-interface DeleteApplicationInputProcessingConfigurationResponse {
+export interface DeleteApplicationInputProcessingConfigurationResponse {
 }
 
-interface DeleteApplicationOutputRequest {
+export interface DeleteApplicationOutputRequest {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly OutputId: string;
 }
 
-interface DeleteApplicationOutputResponse {
+export interface DeleteApplicationOutputResponse {
 }
 
-interface DeleteApplicationReferenceDataSourceRequest {
+export interface DeleteApplicationReferenceDataSourceRequest {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly ReferenceId: string;
 }
 
-interface DeleteApplicationReferenceDataSourceResponse {
+export interface DeleteApplicationReferenceDataSourceResponse {
 }
 
-interface DeleteApplicationRequest {
+export interface DeleteApplicationRequest {
   readonly ApplicationName: string;
   readonly CreateTimestamp: Date;
 }
 
-interface DeleteApplicationResponse {
+export interface DeleteApplicationResponse {
 }
 
-interface DescribeApplicationRequest {
+export interface DescribeApplicationRequest {
   readonly ApplicationName: string;
 }
 
-interface DescribeApplicationResponse {
+export interface DescribeApplicationResponse {
   readonly ApplicationDetail: ApplicationDetail;
 }
 
-interface DestinationSchema {
+export interface DestinationSchema {
   readonly RecordFormatType: string;
 }
 
-interface DiscoverInputSchemaRequest {
-  readonly ResourceARN: string;
-  readonly RoleARN: string;
-  readonly InputStartingPositionConfiguration: InputStartingPositionConfiguration;
-  readonly S3Configuration: S3Configuration;
-  readonly InputProcessingConfiguration: InputProcessingConfiguration;
+export interface DiscoverInputSchemaRequest {
+  readonly ResourceARN?: string;
+  readonly RoleARN?: string;
+  readonly InputStartingPositionConfiguration?: InputStartingPositionConfiguration;
+  readonly S3Configuration?: S3Configuration;
+  readonly InputProcessingConfiguration?: InputProcessingConfiguration;
 }
 
-interface DiscoverInputSchemaResponse {
-  readonly InputSchema: SourceSchema;
-  readonly ParsedInputRecords: [];
-  readonly ProcessedInputRecords: [];
-  readonly RawInputRecords: [];
+export interface DiscoverInputSchemaResponse {
+  readonly InputSchema?: SourceSchema;
+  readonly ParsedInputRecords?: [];
+  readonly ProcessedInputRecords?: [];
+  readonly RawInputRecords?: [];
 }
 
-interface Input {
+export interface Input {
   readonly NamePrefix: string;
-  readonly InputProcessingConfiguration: InputProcessingConfiguration;
-  readonly KinesisStreamsInput: KinesisStreamsInput;
-  readonly KinesisFirehoseInput: KinesisFirehoseInput;
-  readonly InputParallelism: InputParallelism;
+  readonly InputProcessingConfiguration?: InputProcessingConfiguration;
+  readonly KinesisStreamsInput?: KinesisStreamsInput;
+  readonly KinesisFirehoseInput?: KinesisFirehoseInput;
+  readonly InputParallelism?: InputParallelism;
   readonly InputSchema: SourceSchema;
 }
 
-interface InputConfiguration {
+export interface InputConfiguration {
   readonly Id: string;
   readonly InputStartingPositionConfiguration: InputStartingPositionConfiguration;
 }
 
-interface InputDescription {
-  readonly InputId: string;
-  readonly NamePrefix: string;
-  readonly InAppStreamNames: [];
-  readonly InputProcessingConfigurationDescription: InputProcessingConfigurationDescription;
-  readonly KinesisStreamsInputDescription: KinesisStreamsInputDescription;
-  readonly KinesisFirehoseInputDescription: KinesisFirehoseInputDescription;
-  readonly InputSchema: SourceSchema;
-  readonly InputParallelism: InputParallelism;
-  readonly InputStartingPositionConfiguration: InputStartingPositionConfiguration;
+export interface InputDescription {
+  readonly InputId?: string;
+  readonly NamePrefix?: string;
+  readonly InAppStreamNames?: [];
+  readonly InputProcessingConfigurationDescription?: InputProcessingConfigurationDescription;
+  readonly KinesisStreamsInputDescription?: KinesisStreamsInputDescription;
+  readonly KinesisFirehoseInputDescription?: KinesisFirehoseInputDescription;
+  readonly InputSchema?: SourceSchema;
+  readonly InputParallelism?: InputParallelism;
+  readonly InputStartingPositionConfiguration?: InputStartingPositionConfiguration;
 }
 
-interface InputLambdaProcessor {
+export interface InputLambdaProcessor {
   readonly ResourceARN: string;
   readonly RoleARN: string;
 }
 
-interface InputLambdaProcessorDescription {
-  readonly ResourceARN: string;
-  readonly RoleARN: string;
+export interface InputLambdaProcessorDescription {
+  readonly ResourceARN?: string;
+  readonly RoleARN?: string;
 }
 
-interface InputLambdaProcessorUpdate {
-  readonly ResourceARNUpdate: string;
-  readonly RoleARNUpdate: string;
+export interface InputLambdaProcessorUpdate {
+  readonly ResourceARNUpdate?: string;
+  readonly RoleARNUpdate?: string;
 }
 
-interface InputParallelism {
-  readonly Count: number;
+export interface InputParallelism {
+  readonly Count?: number;
 }
 
-interface InputParallelismUpdate {
-  readonly CountUpdate: number;
+export interface InputParallelismUpdate {
+  readonly CountUpdate?: number;
 }
 
-interface InputProcessingConfiguration {
+export interface InputProcessingConfiguration {
   readonly InputLambdaProcessor: InputLambdaProcessor;
 }
 
-interface InputProcessingConfigurationDescription {
-  readonly InputLambdaProcessorDescription: InputLambdaProcessorDescription;
+export interface InputProcessingConfigurationDescription {
+  readonly InputLambdaProcessorDescription?: InputLambdaProcessorDescription;
 }
 
-interface InputProcessingConfigurationUpdate {
+export interface InputProcessingConfigurationUpdate {
   readonly InputLambdaProcessorUpdate: InputLambdaProcessorUpdate;
 }
 
-interface InputSchemaUpdate {
-  readonly RecordFormatUpdate: RecordFormat;
-  readonly RecordEncodingUpdate: string;
-  readonly RecordColumnUpdates: [];
+export interface InputSchemaUpdate {
+  readonly RecordFormatUpdate?: RecordFormat;
+  readonly RecordEncodingUpdate?: string;
+  readonly RecordColumnUpdates?: [];
 }
 
-interface InputStartingPositionConfiguration {
-  readonly InputStartingPosition: string;
+export interface InputStartingPositionConfiguration {
+  readonly InputStartingPosition?: string;
 }
 
-interface InputUpdate {
+export interface InputUpdate {
   readonly InputId: string;
-  readonly NamePrefixUpdate: string;
-  readonly InputProcessingConfigurationUpdate: InputProcessingConfigurationUpdate;
-  readonly KinesisStreamsInputUpdate: KinesisStreamsInputUpdate;
-  readonly KinesisFirehoseInputUpdate: KinesisFirehoseInputUpdate;
-  readonly InputSchemaUpdate: InputSchemaUpdate;
-  readonly InputParallelismUpdate: InputParallelismUpdate;
+  readonly NamePrefixUpdate?: string;
+  readonly InputProcessingConfigurationUpdate?: InputProcessingConfigurationUpdate;
+  readonly KinesisStreamsInputUpdate?: KinesisStreamsInputUpdate;
+  readonly KinesisFirehoseInputUpdate?: KinesisFirehoseInputUpdate;
+  readonly InputSchemaUpdate?: InputSchemaUpdate;
+  readonly InputParallelismUpdate?: InputParallelismUpdate;
 }
 
-interface InvalidApplicationConfigurationException {
-  readonly message: string;
+export interface InvalidApplicationConfigurationException {
+  readonly message?: string;
 }
 
-interface InvalidArgumentException {
-  readonly message: string;
+export interface InvalidArgumentException {
+  readonly message?: string;
 }
 
-interface JSONMappingParameters {
+export interface JSONMappingParameters {
   readonly RecordRowPath: string;
 }
 
-interface KinesisFirehoseInput {
+export interface KinesisFirehoseInput {
   readonly ResourceARN: string;
   readonly RoleARN: string;
 }
 
-interface KinesisFirehoseInputDescription {
+export interface KinesisFirehoseInputDescription {
+  readonly ResourceARN?: string;
+  readonly RoleARN?: string;
+}
+
+export interface KinesisFirehoseInputUpdate {
+  readonly ResourceARNUpdate?: string;
+  readonly RoleARNUpdate?: string;
+}
+
+export interface KinesisFirehoseOutput {
   readonly ResourceARN: string;
   readonly RoleARN: string;
 }
 
-interface KinesisFirehoseInputUpdate {
-  readonly ResourceARNUpdate: string;
-  readonly RoleARNUpdate: string;
+export interface KinesisFirehoseOutputDescription {
+  readonly ResourceARN?: string;
+  readonly RoleARN?: string;
 }
 
-interface KinesisFirehoseOutput {
+export interface KinesisFirehoseOutputUpdate {
+  readonly ResourceARNUpdate?: string;
+  readonly RoleARNUpdate?: string;
+}
+
+export interface KinesisStreamsInput {
   readonly ResourceARN: string;
   readonly RoleARN: string;
 }
 
-interface KinesisFirehoseOutputDescription {
+export interface KinesisStreamsInputDescription {
+  readonly ResourceARN?: string;
+  readonly RoleARN?: string;
+}
+
+export interface KinesisStreamsInputUpdate {
+  readonly ResourceARNUpdate?: string;
+  readonly RoleARNUpdate?: string;
+}
+
+export interface KinesisStreamsOutput {
   readonly ResourceARN: string;
   readonly RoleARN: string;
 }
 
-interface KinesisFirehoseOutputUpdate {
-  readonly ResourceARNUpdate: string;
-  readonly RoleARNUpdate: string;
+export interface KinesisStreamsOutputDescription {
+  readonly ResourceARN?: string;
+  readonly RoleARN?: string;
 }
 
-interface KinesisStreamsInput {
+export interface KinesisStreamsOutputUpdate {
+  readonly ResourceARNUpdate?: string;
+  readonly RoleARNUpdate?: string;
+}
+
+export interface LambdaOutput {
   readonly ResourceARN: string;
   readonly RoleARN: string;
 }
 
-interface KinesisStreamsInputDescription {
-  readonly ResourceARN: string;
-  readonly RoleARN: string;
+export interface LambdaOutputDescription {
+  readonly ResourceARN?: string;
+  readonly RoleARN?: string;
 }
 
-interface KinesisStreamsInputUpdate {
-  readonly ResourceARNUpdate: string;
-  readonly RoleARNUpdate: string;
+export interface LambdaOutputUpdate {
+  readonly ResourceARNUpdate?: string;
+  readonly RoleARNUpdate?: string;
 }
 
-interface KinesisStreamsOutput {
-  readonly ResourceARN: string;
-  readonly RoleARN: string;
+export interface LimitExceededException {
+  readonly message?: string;
 }
 
-interface KinesisStreamsOutputDescription {
-  readonly ResourceARN: string;
-  readonly RoleARN: string;
+export interface ListApplicationsRequest {
+  readonly Limit?: number;
+  readonly ExclusiveStartApplicationName?: string;
 }
 
-interface KinesisStreamsOutputUpdate {
-  readonly ResourceARNUpdate: string;
-  readonly RoleARNUpdate: string;
-}
-
-interface LambdaOutput {
-  readonly ResourceARN: string;
-  readonly RoleARN: string;
-}
-
-interface LambdaOutputDescription {
-  readonly ResourceARN: string;
-  readonly RoleARN: string;
-}
-
-interface LambdaOutputUpdate {
-  readonly ResourceARNUpdate: string;
-  readonly RoleARNUpdate: string;
-}
-
-interface LimitExceededException {
-  readonly message: string;
-}
-
-interface ListApplicationsRequest {
-  readonly Limit: number;
-  readonly ExclusiveStartApplicationName: string;
-}
-
-interface ListApplicationsResponse {
+export interface ListApplicationsResponse {
   readonly ApplicationSummaries: [];
   readonly HasMoreApplications: boolean;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceARN: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface MappingParameters {
-  readonly JSONMappingParameters: JSONMappingParameters;
-  readonly CSVMappingParameters: CSVMappingParameters;
+export interface MappingParameters {
+  readonly JSONMappingParameters?: JSONMappingParameters;
+  readonly CSVMappingParameters?: CSVMappingParameters;
 }
 
-interface Output {
+export interface Output {
   readonly Name: string;
-  readonly KinesisStreamsOutput: KinesisStreamsOutput;
-  readonly KinesisFirehoseOutput: KinesisFirehoseOutput;
-  readonly LambdaOutput: LambdaOutput;
+  readonly KinesisStreamsOutput?: KinesisStreamsOutput;
+  readonly KinesisFirehoseOutput?: KinesisFirehoseOutput;
+  readonly LambdaOutput?: LambdaOutput;
   readonly DestinationSchema: DestinationSchema;
 }
 
-interface OutputDescription {
-  readonly OutputId: string;
-  readonly Name: string;
-  readonly KinesisStreamsOutputDescription: KinesisStreamsOutputDescription;
-  readonly KinesisFirehoseOutputDescription: KinesisFirehoseOutputDescription;
-  readonly LambdaOutputDescription: LambdaOutputDescription;
-  readonly DestinationSchema: DestinationSchema;
+export interface OutputDescription {
+  readonly OutputId?: string;
+  readonly Name?: string;
+  readonly KinesisStreamsOutputDescription?: KinesisStreamsOutputDescription;
+  readonly KinesisFirehoseOutputDescription?: KinesisFirehoseOutputDescription;
+  readonly LambdaOutputDescription?: LambdaOutputDescription;
+  readonly DestinationSchema?: DestinationSchema;
 }
 
-interface OutputUpdate {
+export interface OutputUpdate {
   readonly OutputId: string;
-  readonly NameUpdate: string;
-  readonly KinesisStreamsOutputUpdate: KinesisStreamsOutputUpdate;
-  readonly KinesisFirehoseOutputUpdate: KinesisFirehoseOutputUpdate;
-  readonly LambdaOutputUpdate: LambdaOutputUpdate;
-  readonly DestinationSchemaUpdate: DestinationSchema;
+  readonly NameUpdate?: string;
+  readonly KinesisStreamsOutputUpdate?: KinesisStreamsOutputUpdate;
+  readonly KinesisFirehoseOutputUpdate?: KinesisFirehoseOutputUpdate;
+  readonly LambdaOutputUpdate?: LambdaOutputUpdate;
+  readonly DestinationSchemaUpdate?: DestinationSchema;
 }
 
-interface RecordColumn {
+export interface RecordColumn {
   readonly Name: string;
-  readonly Mapping: string;
+  readonly Mapping?: string;
   readonly SqlType: string;
 }
 
-interface RecordFormat {
+export interface RecordFormat {
   readonly RecordFormatType: string;
-  readonly MappingParameters: MappingParameters;
+  readonly MappingParameters?: MappingParameters;
 }
 
-interface ReferenceDataSource {
+export interface ReferenceDataSource {
   readonly TableName: string;
-  readonly S3ReferenceDataSource: S3ReferenceDataSource;
+  readonly S3ReferenceDataSource?: S3ReferenceDataSource;
   readonly ReferenceSchema: SourceSchema;
 }
 
-interface ReferenceDataSourceDescription {
+export interface ReferenceDataSourceDescription {
   readonly ReferenceId: string;
   readonly TableName: string;
   readonly S3ReferenceDataSourceDescription: S3ReferenceDataSourceDescription;
-  readonly ReferenceSchema: SourceSchema;
+  readonly ReferenceSchema?: SourceSchema;
 }
 
-interface ReferenceDataSourceUpdate {
+export interface ReferenceDataSourceUpdate {
   readonly ReferenceId: string;
-  readonly TableNameUpdate: string;
-  readonly S3ReferenceDataSourceUpdate: S3ReferenceDataSourceUpdate;
-  readonly ReferenceSchemaUpdate: SourceSchema;
+  readonly TableNameUpdate?: string;
+  readonly S3ReferenceDataSourceUpdate?: S3ReferenceDataSourceUpdate;
+  readonly ReferenceSchemaUpdate?: SourceSchema;
 }
 
-interface ResourceInUseException {
-  readonly message: string;
+export interface ResourceInUseException {
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface ResourceProvisionedThroughputExceededException {
-  readonly message: string;
+export interface ResourceProvisionedThroughputExceededException {
+  readonly message?: string;
 }
 
-interface S3Configuration {
+export interface S3Configuration {
   readonly RoleARN: string;
   readonly BucketARN: string;
   readonly FileKey: string;
 }
 
-interface S3ReferenceDataSource {
+export interface S3ReferenceDataSource {
   readonly BucketARN: string;
   readonly FileKey: string;
   readonly ReferenceRoleARN: string;
 }
 
-interface S3ReferenceDataSourceDescription {
+export interface S3ReferenceDataSourceDescription {
   readonly BucketARN: string;
   readonly FileKey: string;
   readonly ReferenceRoleARN: string;
 }
 
-interface S3ReferenceDataSourceUpdate {
-  readonly BucketARNUpdate: string;
-  readonly FileKeyUpdate: string;
-  readonly ReferenceRoleARNUpdate: string;
+export interface S3ReferenceDataSourceUpdate {
+  readonly BucketARNUpdate?: string;
+  readonly FileKeyUpdate?: string;
+  readonly ReferenceRoleARNUpdate?: string;
 }
 
-interface ServiceUnavailableException {
-  readonly message: string;
+export interface ServiceUnavailableException {
+  readonly message?: string;
 }
 
-interface SourceSchema {
+export interface SourceSchema {
   readonly RecordFormat: RecordFormat;
-  readonly RecordEncoding: string;
+  readonly RecordEncoding?: string;
   readonly RecordColumns: [];
 }
 
-interface StartApplicationRequest {
+export interface StartApplicationRequest {
   readonly ApplicationName: string;
   readonly InputConfigurations: [];
 }
 
-interface StartApplicationResponse {
+export interface StartApplicationResponse {
 }
 
-interface StopApplicationRequest {
+export interface StopApplicationRequest {
   readonly ApplicationName: string;
 }
 
-interface StopApplicationResponse {
+export interface StopApplicationResponse {
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
-  readonly Value: string;
+  readonly Value?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TooManyTagsException {
-  readonly message: string;
+export interface TooManyTagsException {
+  readonly message?: string;
 }
 
-interface UnableToDetectSchemaException {
-  readonly message: string;
-  readonly RawInputRecords: [];
-  readonly ProcessedInputRecords: [];
+export interface UnableToDetectSchemaException {
+  readonly message?: string;
+  readonly RawInputRecords?: [];
+  readonly ProcessedInputRecords?: [];
 }
 
-interface UnsupportedOperationException {
-  readonly message: string;
+export interface UnsupportedOperationException {
+  readonly message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateApplicationRequest {
+export interface UpdateApplicationRequest {
   readonly ApplicationName: string;
   readonly CurrentApplicationVersionId: number;
   readonly ApplicationUpdate: ApplicationUpdate;
 }
 
-interface UpdateApplicationResponse {
+export interface UpdateApplicationResponse {
 }
+
 

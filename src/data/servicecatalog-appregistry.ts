@@ -5,17 +5,20 @@ export interface AssociateAttributeGroup {
   readonly application: string;
   readonly attributeGroup: string;
 }
+
 export interface AssociateResource {
   readonly application: string;
   readonly resourceType: string;
   readonly resource: string;
 }
+
 export interface CreateApplication {
   readonly name: string;
   readonly description?: string;
   readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
+
 export interface CreateAttributeGroup {
   readonly name: string;
   readonly description?: string;
@@ -23,70 +26,87 @@ export interface CreateAttributeGroup {
   readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
+
 export interface DeleteApplication {
   readonly application: string;
 }
+
 export interface DeleteAttributeGroup {
   readonly attributeGroup: string;
 }
+
 export interface DisassociateAttributeGroup {
   readonly application: string;
   readonly attributeGroup: string;
 }
+
 export interface DisassociateResource {
   readonly application: string;
   readonly resourceType: string;
   readonly resource: string;
 }
+
 export interface GetApplication {
   readonly application: string;
 }
+
 export interface GetAssociatedResource {
   readonly application: string;
   readonly resourceType: string;
   readonly resource: string;
 }
+
 export interface GetAttributeGroup {
   readonly attributeGroup: string;
 }
+
 export interface ListApplications {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssociatedAttributeGroups {
   readonly application: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAssociatedResources {
   readonly application: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListAttributeGroups {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface SyncResource {
   readonly resourceType: string;
   readonly resource: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateApplication {
   readonly application: string;
   readonly name?: string;
   readonly description?: string;
 }
+
 export interface UpdateAttributeGroup {
   readonly attributeGroup: string;
   readonly name?: string;
@@ -94,309 +114,308 @@ export interface UpdateAttributeGroup {
   readonly attributes?: string;
 }
 
-
-
-interface Application {
-  readonly id: string;
-  readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
-  readonly tags: {[key: string]: any};
+export interface Application {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
+  readonly tags?: {[key: string]: any};
 }
 
-interface ApplicationSummary {
-  readonly id: string;
-  readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
+export interface ApplicationSummary {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
 }
 
-interface AssociateAttributeGroupRequest {
+export interface AssociateAttributeGroupRequest {
   readonly application: string;
   readonly attributeGroup: string;
 }
 
-interface AssociateAttributeGroupResponse {
-  readonly applicationArn: string;
-  readonly attributeGroupArn: string;
+export interface AssociateAttributeGroupResponse {
+  readonly applicationArn?: string;
+  readonly attributeGroupArn?: string;
 }
 
-interface AssociateResourceRequest {
+export interface AssociateResourceRequest {
   readonly application: string;
   readonly resourceType: string;
   readonly resource: string;
 }
 
-interface AssociateResourceResponse {
-  readonly applicationArn: string;
-  readonly resourceArn: string;
+export interface AssociateResourceResponse {
+  readonly applicationArn?: string;
+  readonly resourceArn?: string;
 }
 
-interface AttributeGroup {
-  readonly id: string;
-  readonly arn: string;
+export interface AttributeGroup {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
+  readonly tags?: {[key: string]: any};
+}
+
+export interface AttributeGroupSummary {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
+}
+
+export interface ConflictException {
+  readonly message?: string;
+}
+
+export interface CreateApplicationRequest {
   readonly name: string;
-  readonly description: string;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
-  readonly tags: {[key: string]: any};
-}
-
-interface AttributeGroupSummary {
-  readonly id: string;
-  readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
-}
-
-interface ConflictException {
-  readonly message: string;
-}
-
-interface CreateApplicationRequest {
-  readonly name: string;
-  readonly description: string;
-  readonly tags: {[key: string]: any};
+  readonly description?: string;
+  readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
 
-interface CreateApplicationResponse {
-  readonly application: Application;
+export interface CreateApplicationResponse {
+  readonly application?: Application;
 }
 
-interface CreateAttributeGroupRequest {
+export interface CreateAttributeGroupRequest {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly attributes: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
 
-interface CreateAttributeGroupResponse {
-  readonly attributeGroup: AttributeGroup;
+export interface CreateAttributeGroupResponse {
+  readonly attributeGroup?: AttributeGroup;
 }
 
-interface DeleteApplicationRequest {
+export interface DeleteApplicationRequest {
   readonly application: string;
 }
 
-interface DeleteApplicationResponse {
-  readonly application: ApplicationSummary;
+export interface DeleteApplicationResponse {
+  readonly application?: ApplicationSummary;
 }
 
-interface DeleteAttributeGroupRequest {
+export interface DeleteAttributeGroupRequest {
   readonly attributeGroup: string;
 }
 
-interface DeleteAttributeGroupResponse {
-  readonly attributeGroup: AttributeGroupSummary;
+export interface DeleteAttributeGroupResponse {
+  readonly attributeGroup?: AttributeGroupSummary;
 }
 
-interface DisassociateAttributeGroupRequest {
+export interface DisassociateAttributeGroupRequest {
   readonly application: string;
   readonly attributeGroup: string;
 }
 
-interface DisassociateAttributeGroupResponse {
-  readonly applicationArn: string;
-  readonly attributeGroupArn: string;
+export interface DisassociateAttributeGroupResponse {
+  readonly applicationArn?: string;
+  readonly attributeGroupArn?: string;
 }
 
-interface DisassociateResourceRequest {
+export interface DisassociateResourceRequest {
   readonly application: string;
   readonly resourceType: string;
   readonly resource: string;
 }
 
-interface DisassociateResourceResponse {
-  readonly applicationArn: string;
-  readonly resourceArn: string;
+export interface DisassociateResourceResponse {
+  readonly applicationArn?: string;
+  readonly resourceArn?: string;
 }
 
-interface GetApplicationRequest {
+export interface GetApplicationRequest {
   readonly application: string;
 }
 
-interface GetApplicationResponse {
-  readonly id: string;
-  readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
-  readonly associatedResourceCount: number;
-  readonly tags: {[key: string]: any};
-  readonly integrations: Integrations;
+export interface GetApplicationResponse {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
+  readonly associatedResourceCount?: number;
+  readonly tags?: {[key: string]: any};
+  readonly integrations?: Integrations;
 }
 
-interface GetAssociatedResourceRequest {
+export interface GetAssociatedResourceRequest {
   readonly application: string;
   readonly resourceType: string;
   readonly resource: string;
 }
 
-interface GetAssociatedResourceResponse {
-  readonly resource: Resource;
+export interface GetAssociatedResourceResponse {
+  readonly resource?: Resource;
 }
 
-interface GetAttributeGroupRequest {
+export interface GetAttributeGroupRequest {
   readonly attributeGroup: string;
 }
 
-interface GetAttributeGroupResponse {
-  readonly id: string;
-  readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly attributes: string;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
-  readonly tags: {[key: string]: any};
+export interface GetAttributeGroupResponse {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly attributes?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
+  readonly tags?: {[key: string]: any};
 }
 
-interface Integrations {
-  readonly resourceGroup: ResourceGroup;
+export interface Integrations {
+  readonly resourceGroup?: ResourceGroup;
 }
 
-interface InternalServerException {
-  readonly message: string;
+export interface InternalServerException {
+  readonly message?: string;
 }
 
-interface ListApplicationsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListApplicationsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListApplicationsResponse {
-  readonly applications: [];
-  readonly nextToken: string;
+export interface ListApplicationsResponse {
+  readonly applications?: [];
+  readonly nextToken?: string;
 }
 
-interface ListAssociatedAttributeGroupsRequest {
+export interface ListAssociatedAttributeGroupsRequest {
   readonly application: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssociatedAttributeGroupsResponse {
-  readonly attributeGroups: [];
-  readonly nextToken: string;
+export interface ListAssociatedAttributeGroupsResponse {
+  readonly attributeGroups?: [];
+  readonly nextToken?: string;
 }
 
-interface ListAssociatedResourcesRequest {
+export interface ListAssociatedResourcesRequest {
   readonly application: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAssociatedResourcesResponse {
-  readonly resources: [];
-  readonly nextToken: string;
+export interface ListAssociatedResourcesResponse {
+  readonly resources?: [];
+  readonly nextToken?: string;
 }
 
-interface ListAttributeGroupsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListAttributeGroupsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAttributeGroupsResponse {
-  readonly attributeGroups: [];
-  readonly nextToken: string;
+export interface ListAttributeGroupsResponse {
+  readonly attributeGroups?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface Resource {
-  readonly name: string;
-  readonly arn: string;
-  readonly associationTime: Date;
-  readonly integrations: ResourceIntegrations;
+export interface Resource {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly associationTime?: Date;
+  readonly integrations?: ResourceIntegrations;
 }
 
-interface ResourceGroup {
-  readonly state: string;
-  readonly arn: string;
-  readonly errorMessage: string;
+export interface ResourceGroup {
+  readonly state?: string;
+  readonly arn?: string;
+  readonly errorMessage?: string;
 }
 
-interface ResourceInfo {
-  readonly name: string;
-  readonly arn: string;
+export interface ResourceInfo {
+  readonly name?: string;
+  readonly arn?: string;
 }
 
-interface ResourceIntegrations {
-  readonly resourceGroup: ResourceGroup;
+export interface ResourceIntegrations {
+  readonly resourceGroup?: ResourceGroup;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly message: string;
+export interface ServiceQuotaExceededException {
+  readonly message?: string;
 }
 
-interface SyncResourceRequest {
+export interface SyncResourceRequest {
   readonly resourceType: string;
   readonly resource: string;
 }
 
-interface SyncResourceResponse {
-  readonly applicationArn: string;
-  readonly resourceArn: string;
-  readonly actionTaken: string;
+export interface SyncResourceResponse {
+  readonly applicationArn?: string;
+  readonly resourceArn?: string;
+  readonly actionTaken?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateApplicationRequest {
+export interface UpdateApplicationRequest {
   readonly application: string;
-  readonly name: string;
-  readonly description: string;
+  readonly name?: string;
+  readonly description?: string;
 }
 
-interface UpdateApplicationResponse {
-  readonly application: Application;
+export interface UpdateApplicationResponse {
+  readonly application?: Application;
 }
 
-interface UpdateAttributeGroupRequest {
+export interface UpdateAttributeGroupRequest {
   readonly attributeGroup: string;
-  readonly name: string;
-  readonly description: string;
-  readonly attributes: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly attributes?: string;
 }
 
-interface UpdateAttributeGroupResponse {
-  readonly attributeGroup: AttributeGroup;
+export interface UpdateAttributeGroupResponse {
+  readonly attributeGroup?: AttributeGroup;
 }
 
-interface ValidationException {
-  readonly message: string;
+export interface ValidationException {
+  readonly message?: string;
 }
+
 

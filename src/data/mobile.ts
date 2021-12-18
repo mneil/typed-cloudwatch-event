@@ -7,190 +7,197 @@ export interface CreateProject {
   readonly contents?: unknown;
   readonly snapshotId?: string;
 }
+
 export interface DeleteProject {
   readonly projectId: string;
 }
+
 export interface DescribeBundle {
   readonly bundleId: string;
 }
+
 export interface DescribeProject {
   readonly projectId: string;
   readonly syncFromResources?: boolean;
 }
+
 export interface ExportBundle {
   readonly bundleId: string;
   readonly projectId?: string;
   readonly platform?: string;
 }
+
 export interface ExportProject {
   readonly projectId: string;
 }
+
 export interface ListBundles {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListProjects {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface UpdateProject {
   readonly contents?: unknown;
   readonly projectId: string;
 }
 
-
-
-interface AccountActionRequiredException {
-  readonly message: string;
+export interface AccountActionRequiredException {
+  readonly message?: string;
 }
 
-interface BadRequestException {
-  readonly message: string;
+export interface BadRequestException {
+  readonly message?: string;
 }
 
-interface BundleDetails {
-  readonly bundleId: string;
-  readonly title: string;
-  readonly version: string;
-  readonly description: string;
-  readonly iconUrl: string;
-  readonly availablePlatforms: [];
+export interface BundleDetails {
+  readonly bundleId?: string;
+  readonly title?: string;
+  readonly version?: string;
+  readonly description?: string;
+  readonly iconUrl?: string;
+  readonly availablePlatforms?: [];
 }
 
-interface CreateProjectRequest {
-  readonly name: string;
-  readonly region: string;
-  readonly contents: unknown;
-  readonly snapshotId: string;
+export interface CreateProjectRequest {
+  readonly name?: string;
+  readonly region?: string;
+  readonly contents?: unknown;
+  readonly snapshotId?: string;
 }
 
-interface CreateProjectResult {
-  readonly details: ProjectDetails;
+export interface CreateProjectResult {
+  readonly details?: ProjectDetails;
 }
 
-interface DeleteProjectRequest {
+export interface DeleteProjectRequest {
   readonly projectId: string;
 }
 
-interface DeleteProjectResult {
-  readonly deletedResources: [];
-  readonly orphanedResources: [];
+export interface DeleteProjectResult {
+  readonly deletedResources?: [];
+  readonly orphanedResources?: [];
 }
 
-interface DescribeBundleRequest {
+export interface DescribeBundleRequest {
   readonly bundleId: string;
 }
 
-interface DescribeBundleResult {
-  readonly details: BundleDetails;
+export interface DescribeBundleResult {
+  readonly details?: BundleDetails;
 }
 
-interface DescribeProjectRequest {
+export interface DescribeProjectRequest {
   readonly projectId: string;
-  readonly syncFromResources: boolean;
+  readonly syncFromResources?: boolean;
 }
 
-interface DescribeProjectResult {
-  readonly details: ProjectDetails;
+export interface DescribeProjectResult {
+  readonly details?: ProjectDetails;
 }
 
-interface ExportBundleRequest {
+export interface ExportBundleRequest {
   readonly bundleId: string;
-  readonly projectId: string;
-  readonly platform: string;
+  readonly projectId?: string;
+  readonly platform?: string;
 }
 
-interface ExportBundleResult {
-  readonly downloadUrl: string;
+export interface ExportBundleResult {
+  readonly downloadUrl?: string;
 }
 
-interface ExportProjectRequest {
-  readonly projectId: string;
-}
-
-interface ExportProjectResult {
-  readonly downloadUrl: string;
-  readonly shareUrl: string;
-  readonly snapshotId: string;
-}
-
-interface InternalFailureException {
-  readonly message: string;
-}
-
-interface LimitExceededException {
-  readonly retryAfterSeconds: string;
-  readonly message: string;
-}
-
-interface ListBundlesRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
-}
-
-interface ListBundlesResult {
-  readonly bundleList: [];
-  readonly nextToken: string;
-}
-
-interface ListProjectsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
-}
-
-interface ListProjectsResult {
-  readonly projects: [];
-  readonly nextToken: string;
-}
-
-interface NotFoundException {
-  readonly message: string;
-}
-
-interface ProjectDetails {
-  readonly name: string;
-  readonly projectId: string;
-  readonly region: string;
-  readonly state: string;
-  readonly createdDate: Date;
-  readonly lastUpdatedDate: Date;
-  readonly consoleUrl: string;
-  readonly resources: [];
-}
-
-interface ProjectSummary {
-  readonly name: string;
+export interface ExportProjectRequest {
   readonly projectId: string;
 }
 
-interface Resource {
-  readonly type: string;
-  readonly name: string;
-  readonly arn: string;
-  readonly feature: string;
-  readonly attributes: {[key: string]: any};
+export interface ExportProjectResult {
+  readonly downloadUrl?: string;
+  readonly shareUrl?: string;
+  readonly snapshotId?: string;
 }
 
-interface ServiceUnavailableException {
-  readonly retryAfterSeconds: string;
-  readonly message: string;
+export interface InternalFailureException {
+  readonly message?: string;
 }
 
-interface TooManyRequestsException {
-  readonly retryAfterSeconds: string;
-  readonly message: string;
+export interface LimitExceededException {
+  readonly retryAfterSeconds?: string;
+  readonly message?: string;
 }
 
-interface UnauthorizedException {
-  readonly message: string;
+export interface ListBundlesRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface UpdateProjectRequest {
-  readonly contents: unknown;
+export interface ListBundlesResult {
+  readonly bundleList?: [];
+  readonly nextToken?: string;
+}
+
+export interface ListProjectsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+}
+
+export interface ListProjectsResult {
+  readonly projects?: [];
+  readonly nextToken?: string;
+}
+
+export interface NotFoundException {
+  readonly message?: string;
+}
+
+export interface ProjectDetails {
+  readonly name?: string;
+  readonly projectId?: string;
+  readonly region?: string;
+  readonly state?: string;
+  readonly createdDate?: Date;
+  readonly lastUpdatedDate?: Date;
+  readonly consoleUrl?: string;
+  readonly resources?: [];
+}
+
+export interface ProjectSummary {
+  readonly name?: string;
+  readonly projectId?: string;
+}
+
+export interface Resource {
+  readonly type?: string;
+  readonly name?: string;
+  readonly arn?: string;
+  readonly feature?: string;
+  readonly attributes?: {[key: string]: any};
+}
+
+export interface ServiceUnavailableException {
+  readonly retryAfterSeconds?: string;
+  readonly message?: string;
+}
+
+export interface TooManyRequestsException {
+  readonly retryAfterSeconds?: string;
+  readonly message?: string;
+}
+
+export interface UnauthorizedException {
+  readonly message?: string;
+}
+
+export interface UpdateProjectRequest {
+  readonly contents?: unknown;
   readonly projectId: string;
 }
 
-interface UpdateProjectResult {
-  readonly details: ProjectDetails;
+export interface UpdateProjectResult {
+  readonly details?: ProjectDetails;
 }
+
 

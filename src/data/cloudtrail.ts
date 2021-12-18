@@ -5,6 +5,7 @@ export interface AddTags {
   readonly ResourceId: string;
   readonly TagsList?: [];
 }
+
 export interface CreateTrail {
   readonly Name: string;
   readonly S3BucketName: string;
@@ -19,37 +20,47 @@ export interface CreateTrail {
   readonly IsOrganizationTrail?: boolean;
   readonly TagsList?: [];
 }
+
 export interface DeleteTrail {
   readonly Name: string;
 }
+
 export interface DescribeTrails {
   readonly trailNameList?: [];
   readonly includeShadowTrails?: boolean;
 }
+
 export interface GetEventSelectors {
   readonly TrailName: string;
 }
+
 export interface GetInsightSelectors {
   readonly TrailName: string;
 }
+
 export interface GetTrail {
   readonly Name: string;
 }
+
 export interface GetTrailStatus {
   readonly Name: string;
 }
+
 export interface ListPublicKeys {
   readonly StartTime?: Date;
   readonly EndTime?: Date;
   readonly NextToken?: string;
 }
+
 export interface ListTags {
   readonly ResourceIdList: [];
   readonly NextToken?: string;
 }
+
 export interface ListTrails {
   readonly NextToken?: string;
 }
+
 export interface LookupEvents {
   readonly LookupAttributes?: [];
   readonly StartTime?: Date;
@@ -58,25 +69,31 @@ export interface LookupEvents {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface PutEventSelectors {
   readonly TrailName: string;
   readonly EventSelectors?: [];
   readonly AdvancedEventSelectors?: [];
 }
+
 export interface PutInsightSelectors {
   readonly TrailName: string;
   readonly InsightSelectors: [];
 }
+
 export interface RemoveTags {
   readonly ResourceId: string;
   readonly TagsList?: [];
 }
+
 export interface StartLogging {
   readonly Name: string;
 }
+
 export interface StopLogging {
   readonly Name: string;
 }
+
 export interface UpdateTrail {
   readonly Name: string;
   readonly S3BucketName?: string;
@@ -91,456 +108,455 @@ export interface UpdateTrail {
   readonly IsOrganizationTrail?: boolean;
 }
 
-
-
-interface AddTagsRequest {
+export interface AddTagsRequest {
   readonly ResourceId: string;
-  readonly TagsList: [];
+  readonly TagsList?: [];
 }
 
-interface AddTagsResponse {
+export interface AddTagsResponse {
 }
 
-interface AdvancedEventSelector {
-  readonly Name: string;
+export interface AdvancedEventSelector {
+  readonly Name?: string;
   readonly FieldSelectors: [];
 }
 
-interface AdvancedFieldSelector {
+export interface AdvancedFieldSelector {
   readonly Field: string;
-  readonly Equals: [];
-  readonly StartsWith: [];
-  readonly EndsWith: [];
-  readonly NotEquals: [];
-  readonly NotStartsWith: [];
-  readonly NotEndsWith: [];
+  readonly Equals?: [];
+  readonly StartsWith?: [];
+  readonly EndsWith?: [];
+  readonly NotEquals?: [];
+  readonly NotStartsWith?: [];
+  readonly NotEndsWith?: [];
 }
 
-interface CloudTrailARNInvalidException {
+export interface CloudTrailARNInvalidException {
 }
 
-interface CloudTrailAccessNotEnabledException {
+export interface CloudTrailAccessNotEnabledException {
 }
 
-interface CloudTrailInvalidClientTokenIdException {
+export interface CloudTrailInvalidClientTokenIdException {
 }
 
-interface CloudWatchLogsDeliveryUnavailableException {
+export interface CloudWatchLogsDeliveryUnavailableException {
 }
 
-interface ConflictException {
+export interface ConflictException {
 }
 
-interface CreateTrailRequest {
+export interface CreateTrailRequest {
   readonly Name: string;
   readonly S3BucketName: string;
-  readonly S3KeyPrefix: string;
-  readonly SnsTopicName: string;
-  readonly IncludeGlobalServiceEvents: boolean;
-  readonly IsMultiRegionTrail: boolean;
-  readonly EnableLogFileValidation: boolean;
-  readonly CloudWatchLogsLogGroupArn: string;
-  readonly CloudWatchLogsRoleArn: string;
-  readonly KmsKeyId: string;
-  readonly IsOrganizationTrail: boolean;
-  readonly TagsList: [];
+  readonly S3KeyPrefix?: string;
+  readonly SnsTopicName?: string;
+  readonly IncludeGlobalServiceEvents?: boolean;
+  readonly IsMultiRegionTrail?: boolean;
+  readonly EnableLogFileValidation?: boolean;
+  readonly CloudWatchLogsLogGroupArn?: string;
+  readonly CloudWatchLogsRoleArn?: string;
+  readonly KmsKeyId?: string;
+  readonly IsOrganizationTrail?: boolean;
+  readonly TagsList?: [];
 }
 
-interface CreateTrailResponse {
+export interface CreateTrailResponse {
+  readonly Name?: string;
+  readonly S3BucketName?: string;
+  readonly S3KeyPrefix?: string;
+  readonly SnsTopicName?: string;
+  readonly SnsTopicARN?: string;
+  readonly IncludeGlobalServiceEvents?: boolean;
+  readonly IsMultiRegionTrail?: boolean;
+  readonly TrailARN?: string;
+  readonly LogFileValidationEnabled?: boolean;
+  readonly CloudWatchLogsLogGroupArn?: string;
+  readonly CloudWatchLogsRoleArn?: string;
+  readonly KmsKeyId?: string;
+  readonly IsOrganizationTrail?: boolean;
+}
+
+export interface DataResource {
+  readonly Type?: string;
+  readonly Values?: [];
+}
+
+export interface DeleteTrailRequest {
   readonly Name: string;
-  readonly S3BucketName: string;
-  readonly S3KeyPrefix: string;
-  readonly SnsTopicName: string;
-  readonly SnsTopicARN: string;
-  readonly IncludeGlobalServiceEvents: boolean;
-  readonly IsMultiRegionTrail: boolean;
-  readonly TrailARN: string;
-  readonly LogFileValidationEnabled: boolean;
-  readonly CloudWatchLogsLogGroupArn: string;
-  readonly CloudWatchLogsRoleArn: string;
-  readonly KmsKeyId: string;
-  readonly IsOrganizationTrail: boolean;
 }
 
-interface DataResource {
-  readonly Type: string;
-  readonly Values: [];
+export interface DeleteTrailResponse {
 }
 
-interface DeleteTrailRequest {
-  readonly Name: string;
+export interface DescribeTrailsRequest {
+  readonly trailNameList?: [];
+  readonly includeShadowTrails?: boolean;
 }
 
-interface DeleteTrailResponse {
+export interface DescribeTrailsResponse {
+  readonly trailList?: [];
 }
 
-interface DescribeTrailsRequest {
-  readonly trailNameList: [];
-  readonly includeShadowTrails: boolean;
+export interface Event {
+  readonly EventId?: string;
+  readonly EventName?: string;
+  readonly ReadOnly?: string;
+  readonly AccessKeyId?: string;
+  readonly EventTime?: Date;
+  readonly EventSource?: string;
+  readonly Username?: string;
+  readonly Resources?: [];
+  readonly CloudTrailEvent?: string;
 }
 
-interface DescribeTrailsResponse {
-  readonly trailList: [];
+export interface EventSelector {
+  readonly ReadWriteType?: string;
+  readonly IncludeManagementEvents?: boolean;
+  readonly DataResources?: [];
+  readonly ExcludeManagementEventSources?: [];
 }
 
-interface Event {
-  readonly EventId: string;
-  readonly EventName: string;
-  readonly ReadOnly: string;
-  readonly AccessKeyId: string;
-  readonly EventTime: Date;
-  readonly EventSource: string;
-  readonly Username: string;
-  readonly Resources: [];
-  readonly CloudTrailEvent: string;
-}
-
-interface EventSelector {
-  readonly ReadWriteType: string;
-  readonly IncludeManagementEvents: boolean;
-  readonly DataResources: [];
-  readonly ExcludeManagementEventSources: [];
-}
-
-interface GetEventSelectorsRequest {
+export interface GetEventSelectorsRequest {
   readonly TrailName: string;
 }
 
-interface GetEventSelectorsResponse {
-  readonly TrailARN: string;
-  readonly EventSelectors: [];
-  readonly AdvancedEventSelectors: [];
+export interface GetEventSelectorsResponse {
+  readonly TrailARN?: string;
+  readonly EventSelectors?: [];
+  readonly AdvancedEventSelectors?: [];
 }
 
-interface GetInsightSelectorsRequest {
+export interface GetInsightSelectorsRequest {
   readonly TrailName: string;
 }
 
-interface GetInsightSelectorsResponse {
-  readonly TrailARN: string;
-  readonly InsightSelectors: [];
+export interface GetInsightSelectorsResponse {
+  readonly TrailARN?: string;
+  readonly InsightSelectors?: [];
 }
 
-interface GetTrailRequest {
+export interface GetTrailRequest {
   readonly Name: string;
 }
 
-interface GetTrailResponse {
-  readonly Trail: Trail;
+export interface GetTrailResponse {
+  readonly Trail?: Trail;
 }
 
-interface GetTrailStatusRequest {
+export interface GetTrailStatusRequest {
   readonly Name: string;
 }
 
-interface GetTrailStatusResponse {
-  readonly IsLogging: boolean;
-  readonly LatestDeliveryError: string;
-  readonly LatestNotificationError: string;
-  readonly LatestDeliveryTime: Date;
-  readonly LatestNotificationTime: Date;
-  readonly StartLoggingTime: Date;
-  readonly StopLoggingTime: Date;
-  readonly LatestCloudWatchLogsDeliveryError: string;
-  readonly LatestCloudWatchLogsDeliveryTime: Date;
-  readonly LatestDigestDeliveryTime: Date;
-  readonly LatestDigestDeliveryError: string;
-  readonly LatestDeliveryAttemptTime: string;
-  readonly LatestNotificationAttemptTime: string;
-  readonly LatestNotificationAttemptSucceeded: string;
-  readonly LatestDeliveryAttemptSucceeded: string;
-  readonly TimeLoggingStarted: string;
-  readonly TimeLoggingStopped: string;
+export interface GetTrailStatusResponse {
+  readonly IsLogging?: boolean;
+  readonly LatestDeliveryError?: string;
+  readonly LatestNotificationError?: string;
+  readonly LatestDeliveryTime?: Date;
+  readonly LatestNotificationTime?: Date;
+  readonly StartLoggingTime?: Date;
+  readonly StopLoggingTime?: Date;
+  readonly LatestCloudWatchLogsDeliveryError?: string;
+  readonly LatestCloudWatchLogsDeliveryTime?: Date;
+  readonly LatestDigestDeliveryTime?: Date;
+  readonly LatestDigestDeliveryError?: string;
+  readonly LatestDeliveryAttemptTime?: string;
+  readonly LatestNotificationAttemptTime?: string;
+  readonly LatestNotificationAttemptSucceeded?: string;
+  readonly LatestDeliveryAttemptSucceeded?: string;
+  readonly TimeLoggingStarted?: string;
+  readonly TimeLoggingStopped?: string;
 }
 
-interface InsightNotEnabledException {
+export interface InsightNotEnabledException {
 }
 
-interface InsightSelector {
-  readonly InsightType: string;
+export interface InsightSelector {
+  readonly InsightType?: string;
 }
 
-interface InsufficientDependencyServiceAccessPermissionException {
+export interface InsufficientDependencyServiceAccessPermissionException {
 }
 
-interface InsufficientEncryptionPolicyException {
+export interface InsufficientEncryptionPolicyException {
 }
 
-interface InsufficientS3BucketPolicyException {
+export interface InsufficientS3BucketPolicyException {
 }
 
-interface InsufficientSnsTopicPolicyException {
+export interface InsufficientSnsTopicPolicyException {
 }
 
-interface InvalidCloudWatchLogsLogGroupArnException {
+export interface InvalidCloudWatchLogsLogGroupArnException {
 }
 
-interface InvalidCloudWatchLogsRoleArnException {
+export interface InvalidCloudWatchLogsRoleArnException {
 }
 
-interface InvalidEventCategoryException {
+export interface InvalidEventCategoryException {
 }
 
-interface InvalidEventSelectorsException {
+export interface InvalidEventSelectorsException {
 }
 
-interface InvalidHomeRegionException {
+export interface InvalidHomeRegionException {
 }
 
-interface InvalidInsightSelectorsException {
+export interface InvalidInsightSelectorsException {
 }
 
-interface InvalidKmsKeyIdException {
+export interface InvalidKmsKeyIdException {
 }
 
-interface InvalidLookupAttributesException {
+export interface InvalidLookupAttributesException {
 }
 
-interface InvalidMaxResultsException {
+export interface InvalidMaxResultsException {
 }
 
-interface InvalidNextTokenException {
+export interface InvalidNextTokenException {
 }
 
-interface InvalidParameterCombinationException {
+export interface InvalidParameterCombinationException {
 }
 
-interface InvalidS3BucketNameException {
+export interface InvalidS3BucketNameException {
 }
 
-interface InvalidS3PrefixException {
+export interface InvalidS3PrefixException {
 }
 
-interface InvalidSnsTopicNameException {
+export interface InvalidSnsTopicNameException {
 }
 
-interface InvalidTagParameterException {
+export interface InvalidTagParameterException {
 }
 
-interface InvalidTimeRangeException {
+export interface InvalidTimeRangeException {
 }
 
-interface InvalidTokenException {
+export interface InvalidTokenException {
 }
 
-interface InvalidTrailNameException {
+export interface InvalidTrailNameException {
 }
 
-interface KmsException {
+export interface KmsException {
 }
 
-interface KmsKeyDisabledException {
+export interface KmsKeyDisabledException {
 }
 
-interface KmsKeyNotFoundException {
+export interface KmsKeyNotFoundException {
 }
 
-interface ListPublicKeysRequest {
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly NextToken: string;
+export interface ListPublicKeysRequest {
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly NextToken?: string;
 }
 
-interface ListPublicKeysResponse {
-  readonly PublicKeyList: [];
-  readonly NextToken: string;
+export interface ListPublicKeysResponse {
+  readonly PublicKeyList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsRequest {
+export interface ListTagsRequest {
   readonly ResourceIdList: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsResponse {
-  readonly ResourceTagList: [];
-  readonly NextToken: string;
+export interface ListTagsResponse {
+  readonly ResourceTagList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTrailsRequest {
-  readonly NextToken: string;
+export interface ListTrailsRequest {
+  readonly NextToken?: string;
 }
 
-interface ListTrailsResponse {
-  readonly Trails: [];
-  readonly NextToken: string;
+export interface ListTrailsResponse {
+  readonly Trails?: [];
+  readonly NextToken?: string;
 }
 
-interface LookupAttribute {
+export interface LookupAttribute {
   readonly AttributeKey: string;
   readonly AttributeValue: string;
 }
 
-interface LookupEventsRequest {
-  readonly LookupAttributes: [];
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly EventCategory: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface LookupEventsRequest {
+  readonly LookupAttributes?: [];
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly EventCategory?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface LookupEventsResponse {
-  readonly Events: [];
-  readonly NextToken: string;
+export interface LookupEventsResponse {
+  readonly Events?: [];
+  readonly NextToken?: string;
 }
 
-interface MaximumNumberOfTrailsExceededException {
+export interface MaximumNumberOfTrailsExceededException {
 }
 
-interface NotOrganizationMasterAccountException {
+export interface NotOrganizationMasterAccountException {
 }
 
-interface OperationNotPermittedException {
+export interface OperationNotPermittedException {
 }
 
-interface OrganizationNotInAllFeaturesModeException {
+export interface OrganizationNotInAllFeaturesModeException {
 }
 
-interface OrganizationsNotInUseException {
+export interface OrganizationsNotInUseException {
 }
 
-interface PublicKey {
-  readonly Value: unknown;
-  readonly ValidityStartTime: Date;
-  readonly ValidityEndTime: Date;
-  readonly Fingerprint: string;
+export interface PublicKey {
+  readonly Value?: unknown;
+  readonly ValidityStartTime?: Date;
+  readonly ValidityEndTime?: Date;
+  readonly Fingerprint?: string;
 }
 
-interface PutEventSelectorsRequest {
+export interface PutEventSelectorsRequest {
   readonly TrailName: string;
-  readonly EventSelectors: [];
-  readonly AdvancedEventSelectors: [];
+  readonly EventSelectors?: [];
+  readonly AdvancedEventSelectors?: [];
 }
 
-interface PutEventSelectorsResponse {
-  readonly TrailARN: string;
-  readonly EventSelectors: [];
-  readonly AdvancedEventSelectors: [];
+export interface PutEventSelectorsResponse {
+  readonly TrailARN?: string;
+  readonly EventSelectors?: [];
+  readonly AdvancedEventSelectors?: [];
 }
 
-interface PutInsightSelectorsRequest {
+export interface PutInsightSelectorsRequest {
   readonly TrailName: string;
   readonly InsightSelectors: [];
 }
 
-interface PutInsightSelectorsResponse {
-  readonly TrailARN: string;
-  readonly InsightSelectors: [];
+export interface PutInsightSelectorsResponse {
+  readonly TrailARN?: string;
+  readonly InsightSelectors?: [];
 }
 
-interface RemoveTagsRequest {
+export interface RemoveTagsRequest {
   readonly ResourceId: string;
-  readonly TagsList: [];
+  readonly TagsList?: [];
 }
 
-interface RemoveTagsResponse {
+export interface RemoveTagsResponse {
 }
 
-interface Resource {
-  readonly ResourceType: string;
-  readonly ResourceName: string;
+export interface Resource {
+  readonly ResourceType?: string;
+  readonly ResourceName?: string;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
 }
 
-interface ResourceTag {
-  readonly ResourceId: string;
-  readonly TagsList: [];
+export interface ResourceTag {
+  readonly ResourceId?: string;
+  readonly TagsList?: [];
 }
 
-interface ResourceTypeNotSupportedException {
+export interface ResourceTypeNotSupportedException {
 }
 
-interface S3BucketDoesNotExistException {
+export interface S3BucketDoesNotExistException {
 }
 
-interface StartLoggingRequest {
+export interface StartLoggingRequest {
   readonly Name: string;
 }
 
-interface StartLoggingResponse {
+export interface StartLoggingResponse {
 }
 
-interface StopLoggingRequest {
+export interface StopLoggingRequest {
   readonly Name: string;
 }
 
-interface StopLoggingResponse {
+export interface StopLoggingResponse {
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
-  readonly Value: string;
+  readonly Value?: string;
 }
 
-interface TagsLimitExceededException {
+export interface TagsLimitExceededException {
 }
 
-interface Trail {
+export interface Trail {
+  readonly Name?: string;
+  readonly S3BucketName?: string;
+  readonly S3KeyPrefix?: string;
+  readonly SnsTopicName?: string;
+  readonly SnsTopicARN?: string;
+  readonly IncludeGlobalServiceEvents?: boolean;
+  readonly IsMultiRegionTrail?: boolean;
+  readonly HomeRegion?: string;
+  readonly TrailARN?: string;
+  readonly LogFileValidationEnabled?: boolean;
+  readonly CloudWatchLogsLogGroupArn?: string;
+  readonly CloudWatchLogsRoleArn?: string;
+  readonly KmsKeyId?: string;
+  readonly HasCustomEventSelectors?: boolean;
+  readonly HasInsightSelectors?: boolean;
+  readonly IsOrganizationTrail?: boolean;
+}
+
+export interface TrailAlreadyExistsException {
+}
+
+export interface TrailInfo {
+  readonly TrailARN?: string;
+  readonly Name?: string;
+  readonly HomeRegion?: string;
+}
+
+export interface TrailNotFoundException {
+}
+
+export interface TrailNotProvidedException {
+}
+
+export interface UnsupportedOperationException {
+}
+
+export interface UpdateTrailRequest {
   readonly Name: string;
-  readonly S3BucketName: string;
-  readonly S3KeyPrefix: string;
-  readonly SnsTopicName: string;
-  readonly SnsTopicARN: string;
-  readonly IncludeGlobalServiceEvents: boolean;
-  readonly IsMultiRegionTrail: boolean;
-  readonly HomeRegion: string;
-  readonly TrailARN: string;
-  readonly LogFileValidationEnabled: boolean;
-  readonly CloudWatchLogsLogGroupArn: string;
-  readonly CloudWatchLogsRoleArn: string;
-  readonly KmsKeyId: string;
-  readonly HasCustomEventSelectors: boolean;
-  readonly HasInsightSelectors: boolean;
-  readonly IsOrganizationTrail: boolean;
+  readonly S3BucketName?: string;
+  readonly S3KeyPrefix?: string;
+  readonly SnsTopicName?: string;
+  readonly IncludeGlobalServiceEvents?: boolean;
+  readonly IsMultiRegionTrail?: boolean;
+  readonly EnableLogFileValidation?: boolean;
+  readonly CloudWatchLogsLogGroupArn?: string;
+  readonly CloudWatchLogsRoleArn?: string;
+  readonly KmsKeyId?: string;
+  readonly IsOrganizationTrail?: boolean;
 }
 
-interface TrailAlreadyExistsException {
+export interface UpdateTrailResponse {
+  readonly Name?: string;
+  readonly S3BucketName?: string;
+  readonly S3KeyPrefix?: string;
+  readonly SnsTopicName?: string;
+  readonly SnsTopicARN?: string;
+  readonly IncludeGlobalServiceEvents?: boolean;
+  readonly IsMultiRegionTrail?: boolean;
+  readonly TrailARN?: string;
+  readonly LogFileValidationEnabled?: boolean;
+  readonly CloudWatchLogsLogGroupArn?: string;
+  readonly CloudWatchLogsRoleArn?: string;
+  readonly KmsKeyId?: string;
+  readonly IsOrganizationTrail?: boolean;
 }
 
-interface TrailInfo {
-  readonly TrailARN: string;
-  readonly Name: string;
-  readonly HomeRegion: string;
-}
-
-interface TrailNotFoundException {
-}
-
-interface TrailNotProvidedException {
-}
-
-interface UnsupportedOperationException {
-}
-
-interface UpdateTrailRequest {
-  readonly Name: string;
-  readonly S3BucketName: string;
-  readonly S3KeyPrefix: string;
-  readonly SnsTopicName: string;
-  readonly IncludeGlobalServiceEvents: boolean;
-  readonly IsMultiRegionTrail: boolean;
-  readonly EnableLogFileValidation: boolean;
-  readonly CloudWatchLogsLogGroupArn: string;
-  readonly CloudWatchLogsRoleArn: string;
-  readonly KmsKeyId: string;
-  readonly IsOrganizationTrail: boolean;
-}
-
-interface UpdateTrailResponse {
-  readonly Name: string;
-  readonly S3BucketName: string;
-  readonly S3KeyPrefix: string;
-  readonly SnsTopicName: string;
-  readonly SnsTopicARN: string;
-  readonly IncludeGlobalServiceEvents: boolean;
-  readonly IsMultiRegionTrail: boolean;
-  readonly TrailARN: string;
-  readonly LogFileValidationEnabled: boolean;
-  readonly CloudWatchLogsLogGroupArn: string;
-  readonly CloudWatchLogsRoleArn: string;
-  readonly KmsKeyId: string;
-  readonly IsOrganizationTrail: boolean;
-}
 

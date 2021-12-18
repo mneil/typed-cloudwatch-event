@@ -8,22 +8,28 @@ export interface CreateParallelData {
   readonly EncryptionKey?: EncryptionKey;
   readonly ClientToken: string;
 }
+
 export interface DeleteParallelData {
   readonly Name: string;
 }
+
 export interface DeleteTerminology {
   readonly Name: string;
 }
+
 export interface DescribeTextTranslationJob {
   readonly JobId: string;
 }
+
 export interface GetParallelData {
   readonly Name: string;
 }
+
 export interface GetTerminology {
   readonly Name: string;
   readonly TerminologyDataFormat?: string;
 }
+
 export interface ImportTerminology {
   readonly Name: string;
   readonly MergeStrategy: string;
@@ -31,19 +37,23 @@ export interface ImportTerminology {
   readonly TerminologyData: TerminologyData;
   readonly EncryptionKey?: EncryptionKey;
 }
+
 export interface ListParallelData {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTerminologies {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTextTranslationJobs {
   readonly Filter?: TextTranslationJobFilter;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface StartTextTranslationJob {
   readonly JobName?: string;
   readonly InputDataConfig: InputDataConfig;
@@ -56,9 +66,11 @@ export interface StartTextTranslationJob {
   readonly ClientToken: string;
   readonly Settings?: TranslationSettings;
 }
+
 export interface StopTextTranslationJob {
   readonly JobId: string;
 }
+
 export interface TranslateText {
   readonly Text: string;
   readonly TerminologyNames?: [];
@@ -66,6 +78,7 @@ export interface TranslateText {
   readonly TargetLanguageCode: string;
   readonly Settings?: TranslationSettings;
 }
+
 export interface UpdateParallelData {
   readonly Name: string;
   readonly Description?: string;
@@ -73,335 +86,334 @@ export interface UpdateParallelData {
   readonly ClientToken: string;
 }
 
+export interface AppliedTerminology {
+  readonly Name?: string;
+  readonly Terms?: [];
+}
 
+export interface ConcurrentModificationException {
+  readonly Message?: string;
+}
 
-interface AppliedTerminology {
+export interface ConflictException {
+  readonly Message?: string;
+}
+
+export interface CreateParallelDataRequest {
   readonly Name: string;
-  readonly Terms: [];
-}
-
-interface ConcurrentModificationException {
-  readonly Message: string;
-}
-
-interface ConflictException {
-  readonly Message: string;
-}
-
-interface CreateParallelDataRequest {
-  readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly ParallelDataConfig: ParallelDataConfig;
-  readonly EncryptionKey: EncryptionKey;
+  readonly EncryptionKey?: EncryptionKey;
   readonly ClientToken: string;
 }
 
-interface CreateParallelDataResponse {
-  readonly Name: string;
-  readonly Status: string;
+export interface CreateParallelDataResponse {
+  readonly Name?: string;
+  readonly Status?: string;
 }
 
-interface DeleteParallelDataRequest {
-  readonly Name: string;
-}
-
-interface DeleteParallelDataResponse {
-  readonly Name: string;
-  readonly Status: string;
-}
-
-interface DeleteTerminologyRequest {
+export interface DeleteParallelDataRequest {
   readonly Name: string;
 }
 
-interface DescribeTextTranslationJobRequest {
+export interface DeleteParallelDataResponse {
+  readonly Name?: string;
+  readonly Status?: string;
+}
+
+export interface DeleteTerminologyRequest {
+  readonly Name: string;
+}
+
+export interface DescribeTextTranslationJobRequest {
   readonly JobId: string;
 }
 
-interface DescribeTextTranslationJobResponse {
-  readonly TextTranslationJobProperties: TextTranslationJobProperties;
+export interface DescribeTextTranslationJobResponse {
+  readonly TextTranslationJobProperties?: TextTranslationJobProperties;
 }
 
-interface DetectedLanguageLowConfidenceException {
-  readonly Message: string;
-  readonly DetectedLanguageCode: string;
+export interface DetectedLanguageLowConfidenceException {
+  readonly Message?: string;
+  readonly DetectedLanguageCode?: string;
 }
 
-interface EncryptionKey {
+export interface EncryptionKey {
   readonly Type: string;
   readonly Id: string;
 }
 
-interface GetParallelDataRequest {
+export interface GetParallelDataRequest {
   readonly Name: string;
 }
 
-interface GetParallelDataResponse {
-  readonly ParallelDataProperties: ParallelDataProperties;
-  readonly DataLocation: ParallelDataDataLocation;
-  readonly AuxiliaryDataLocation: ParallelDataDataLocation;
-  readonly LatestUpdateAttemptAuxiliaryDataLocation: ParallelDataDataLocation;
+export interface GetParallelDataResponse {
+  readonly ParallelDataProperties?: ParallelDataProperties;
+  readonly DataLocation?: ParallelDataDataLocation;
+  readonly AuxiliaryDataLocation?: ParallelDataDataLocation;
+  readonly LatestUpdateAttemptAuxiliaryDataLocation?: ParallelDataDataLocation;
 }
 
-interface GetTerminologyRequest {
+export interface GetTerminologyRequest {
   readonly Name: string;
-  readonly TerminologyDataFormat: string;
+  readonly TerminologyDataFormat?: string;
 }
 
-interface GetTerminologyResponse {
-  readonly TerminologyProperties: TerminologyProperties;
-  readonly TerminologyDataLocation: TerminologyDataLocation;
-  readonly AuxiliaryDataLocation: TerminologyDataLocation;
+export interface GetTerminologyResponse {
+  readonly TerminologyProperties?: TerminologyProperties;
+  readonly TerminologyDataLocation?: TerminologyDataLocation;
+  readonly AuxiliaryDataLocation?: TerminologyDataLocation;
 }
 
-interface ImportTerminologyRequest {
+export interface ImportTerminologyRequest {
   readonly Name: string;
   readonly MergeStrategy: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly TerminologyData: TerminologyData;
-  readonly EncryptionKey: EncryptionKey;
+  readonly EncryptionKey?: EncryptionKey;
 }
 
-interface ImportTerminologyResponse {
-  readonly TerminologyProperties: TerminologyProperties;
-  readonly AuxiliaryDataLocation: TerminologyDataLocation;
+export interface ImportTerminologyResponse {
+  readonly TerminologyProperties?: TerminologyProperties;
+  readonly AuxiliaryDataLocation?: TerminologyDataLocation;
 }
 
-interface InputDataConfig {
+export interface InputDataConfig {
   readonly S3Uri: string;
   readonly ContentType: string;
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface InternalServerException {
+  readonly Message?: string;
 }
 
-interface InvalidFilterException {
-  readonly Message: string;
+export interface InvalidFilterException {
+  readonly Message?: string;
 }
 
-interface InvalidParameterValueException {
-  readonly Message: string;
+export interface InvalidParameterValueException {
+  readonly Message?: string;
 }
 
-interface InvalidRequestException {
-  readonly Message: string;
+export interface InvalidRequestException {
+  readonly Message?: string;
 }
 
-interface JobDetails {
-  readonly TranslatedDocumentsCount: number;
-  readonly DocumentsWithErrorsCount: number;
-  readonly InputDocumentsCount: number;
+export interface JobDetails {
+  readonly TranslatedDocumentsCount?: number;
+  readonly DocumentsWithErrorsCount?: number;
+  readonly InputDocumentsCount?: number;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface ListParallelDataRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListParallelDataRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListParallelDataResponse {
-  readonly ParallelDataPropertiesList: [];
-  readonly NextToken: string;
+export interface ListParallelDataResponse {
+  readonly ParallelDataPropertiesList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTerminologiesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListTerminologiesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTerminologiesResponse {
-  readonly TerminologyPropertiesList: [];
-  readonly NextToken: string;
+export interface ListTerminologiesResponse {
+  readonly TerminologyPropertiesList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTextTranslationJobsRequest {
-  readonly Filter: TextTranslationJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListTextTranslationJobsRequest {
+  readonly Filter?: TextTranslationJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTextTranslationJobsResponse {
-  readonly TextTranslationJobPropertiesList: [];
-  readonly NextToken: string;
+export interface ListTextTranslationJobsResponse {
+  readonly TextTranslationJobPropertiesList?: [];
+  readonly NextToken?: string;
 }
 
-interface OutputDataConfig {
+export interface OutputDataConfig {
   readonly S3Uri: string;
-  readonly EncryptionKey: EncryptionKey;
+  readonly EncryptionKey?: EncryptionKey;
 }
 
-interface ParallelDataConfig {
+export interface ParallelDataConfig {
   readonly S3Uri: string;
   readonly Format: string;
 }
 
-interface ParallelDataDataLocation {
+export interface ParallelDataDataLocation {
   readonly RepositoryType: string;
   readonly Location: string;
 }
 
-interface ParallelDataProperties {
-  readonly Name: string;
-  readonly Arn: string;
-  readonly Description: string;
-  readonly Status: string;
-  readonly SourceLanguageCode: string;
-  readonly TargetLanguageCodes: [];
-  readonly ParallelDataConfig: ParallelDataConfig;
-  readonly Message: string;
-  readonly ImportedDataSize: number;
-  readonly ImportedRecordCount: number;
-  readonly FailedRecordCount: number;
-  readonly SkippedRecordCount: number;
-  readonly EncryptionKey: EncryptionKey;
-  readonly CreatedAt: Date;
-  readonly LastUpdatedAt: Date;
-  readonly LatestUpdateAttemptStatus: string;
-  readonly LatestUpdateAttemptAt: Date;
+export interface ParallelDataProperties {
+  readonly Name?: string;
+  readonly Arn?: string;
+  readonly Description?: string;
+  readonly Status?: string;
+  readonly SourceLanguageCode?: string;
+  readonly TargetLanguageCodes?: [];
+  readonly ParallelDataConfig?: ParallelDataConfig;
+  readonly Message?: string;
+  readonly ImportedDataSize?: number;
+  readonly ImportedRecordCount?: number;
+  readonly FailedRecordCount?: number;
+  readonly SkippedRecordCount?: number;
+  readonly EncryptionKey?: EncryptionKey;
+  readonly CreatedAt?: Date;
+  readonly LastUpdatedAt?: Date;
+  readonly LatestUpdateAttemptStatus?: string;
+  readonly LatestUpdateAttemptAt?: Date;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface ServiceUnavailableException {
-  readonly Message: string;
+export interface ServiceUnavailableException {
+  readonly Message?: string;
 }
 
-interface StartTextTranslationJobRequest {
-  readonly JobName: string;
+export interface StartTextTranslationJobRequest {
+  readonly JobName?: string;
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
   readonly SourceLanguageCode: string;
   readonly TargetLanguageCodes: [];
-  readonly TerminologyNames: [];
-  readonly ParallelDataNames: [];
+  readonly TerminologyNames?: [];
+  readonly ParallelDataNames?: [];
   readonly ClientToken: string;
-  readonly Settings: TranslationSettings;
+  readonly Settings?: TranslationSettings;
 }
 
-interface StartTextTranslationJobResponse {
+export interface StartTextTranslationJobResponse {
+  readonly JobId?: string;
+  readonly JobStatus?: string;
+}
+
+export interface StopTextTranslationJobRequest {
   readonly JobId: string;
-  readonly JobStatus: string;
 }
 
-interface StopTextTranslationJobRequest {
-  readonly JobId: string;
+export interface StopTextTranslationJobResponse {
+  readonly JobId?: string;
+  readonly JobStatus?: string;
 }
 
-interface StopTextTranslationJobResponse {
-  readonly JobId: string;
-  readonly JobStatus: string;
+export interface Term {
+  readonly SourceText?: string;
+  readonly TargetText?: string;
 }
 
-interface Term {
-  readonly SourceText: string;
-  readonly TargetText: string;
-}
-
-interface TerminologyData {
+export interface TerminologyData {
   readonly File: unknown;
   readonly Format: string;
-  readonly Directionality: string;
+  readonly Directionality?: string;
 }
 
-interface TerminologyDataLocation {
+export interface TerminologyDataLocation {
   readonly RepositoryType: string;
   readonly Location: string;
 }
 
-interface TerminologyProperties {
-  readonly Name: string;
-  readonly Description: string;
-  readonly Arn: string;
-  readonly SourceLanguageCode: string;
-  readonly TargetLanguageCodes: [];
-  readonly EncryptionKey: EncryptionKey;
-  readonly SizeBytes: number;
-  readonly TermCount: number;
-  readonly CreatedAt: Date;
-  readonly LastUpdatedAt: Date;
-  readonly Directionality: string;
-  readonly Message: string;
-  readonly SkippedTermCount: number;
-  readonly Format: string;
+export interface TerminologyProperties {
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Arn?: string;
+  readonly SourceLanguageCode?: string;
+  readonly TargetLanguageCodes?: [];
+  readonly EncryptionKey?: EncryptionKey;
+  readonly SizeBytes?: number;
+  readonly TermCount?: number;
+  readonly CreatedAt?: Date;
+  readonly LastUpdatedAt?: Date;
+  readonly Directionality?: string;
+  readonly Message?: string;
+  readonly SkippedTermCount?: number;
+  readonly Format?: string;
 }
 
-interface TextSizeLimitExceededException {
-  readonly Message: string;
+export interface TextSizeLimitExceededException {
+  readonly Message?: string;
 }
 
-interface TextTranslationJobFilter {
-  readonly JobName: string;
-  readonly JobStatus: string;
-  readonly SubmittedBeforeTime: Date;
-  readonly SubmittedAfterTime: Date;
+export interface TextTranslationJobFilter {
+  readonly JobName?: string;
+  readonly JobStatus?: string;
+  readonly SubmittedBeforeTime?: Date;
+  readonly SubmittedAfterTime?: Date;
 }
 
-interface TextTranslationJobProperties {
-  readonly JobId: string;
-  readonly JobName: string;
-  readonly JobStatus: string;
-  readonly JobDetails: JobDetails;
-  readonly SourceLanguageCode: string;
-  readonly TargetLanguageCodes: [];
-  readonly TerminologyNames: [];
-  readonly ParallelDataNames: [];
-  readonly Message: string;
-  readonly SubmittedTime: Date;
-  readonly EndTime: Date;
-  readonly InputDataConfig: InputDataConfig;
-  readonly OutputDataConfig: OutputDataConfig;
-  readonly DataAccessRoleArn: string;
-  readonly Settings: TranslationSettings;
+export interface TextTranslationJobProperties {
+  readonly JobId?: string;
+  readonly JobName?: string;
+  readonly JobStatus?: string;
+  readonly JobDetails?: JobDetails;
+  readonly SourceLanguageCode?: string;
+  readonly TargetLanguageCodes?: [];
+  readonly TerminologyNames?: [];
+  readonly ParallelDataNames?: [];
+  readonly Message?: string;
+  readonly SubmittedTime?: Date;
+  readonly EndTime?: Date;
+  readonly InputDataConfig?: InputDataConfig;
+  readonly OutputDataConfig?: OutputDataConfig;
+  readonly DataAccessRoleArn?: string;
+  readonly Settings?: TranslationSettings;
 }
 
-interface TooManyRequestsException {
-  readonly Message: string;
+export interface TooManyRequestsException {
+  readonly Message?: string;
 }
 
-interface TranslateTextRequest {
+export interface TranslateTextRequest {
   readonly Text: string;
-  readonly TerminologyNames: [];
+  readonly TerminologyNames?: [];
   readonly SourceLanguageCode: string;
   readonly TargetLanguageCode: string;
-  readonly Settings: TranslationSettings;
+  readonly Settings?: TranslationSettings;
 }
 
-interface TranslateTextResponse {
+export interface TranslateTextResponse {
   readonly TranslatedText: string;
   readonly SourceLanguageCode: string;
   readonly TargetLanguageCode: string;
-  readonly AppliedTerminologies: [];
-  readonly AppliedSettings: TranslationSettings;
+  readonly AppliedTerminologies?: [];
+  readonly AppliedSettings?: TranslationSettings;
 }
 
-interface TranslationSettings {
-  readonly Profanity: string;
+export interface TranslationSettings {
+  readonly Profanity?: string;
 }
 
-interface UnsupportedLanguagePairException {
-  readonly Message: string;
-  readonly SourceLanguageCode: string;
-  readonly TargetLanguageCode: string;
+export interface UnsupportedLanguagePairException {
+  readonly Message?: string;
+  readonly SourceLanguageCode?: string;
+  readonly TargetLanguageCode?: string;
 }
 
-interface UpdateParallelDataRequest {
+export interface UpdateParallelDataRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly ParallelDataConfig: ParallelDataConfig;
   readonly ClientToken: string;
 }
 
-interface UpdateParallelDataResponse {
-  readonly Name: string;
-  readonly Status: string;
-  readonly LatestUpdateAttemptStatus: string;
-  readonly LatestUpdateAttemptAt: Date;
+export interface UpdateParallelDataResponse {
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly LatestUpdateAttemptStatus?: string;
+  readonly LatestUpdateAttemptAt?: Date;
 }
+
 

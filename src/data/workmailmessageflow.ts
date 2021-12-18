@@ -4,52 +4,52 @@
 export interface GetRawMessageContent {
   readonly messageId: string;
 }
+
 export interface PutRawMessageContent {
   readonly messageId: string;
   readonly content: RawMessageContent;
 }
 
-
-
-interface GetRawMessageContentRequest {
+export interface GetRawMessageContentRequest {
   readonly messageId: string;
 }
 
-interface GetRawMessageContentResponse {
+export interface GetRawMessageContentResponse {
   readonly messageContent: unknown;
 }
 
-interface InvalidContentLocation {
-  readonly message: string;
+export interface InvalidContentLocation {
+  readonly message?: string;
 }
 
-interface MessageFrozen {
-  readonly message: string;
+export interface MessageFrozen {
+  readonly message?: string;
 }
 
-interface MessageRejected {
-  readonly message: string;
+export interface MessageRejected {
+  readonly message?: string;
 }
 
-interface PutRawMessageContentRequest {
+export interface PutRawMessageContentRequest {
   readonly messageId: string;
   readonly content: RawMessageContent;
 }
 
-interface PutRawMessageContentResponse {
+export interface PutRawMessageContentResponse {
 }
 
-interface RawMessageContent {
+export interface RawMessageContent {
   readonly s3Reference: S3Reference;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface S3Reference {
+export interface S3Reference {
   readonly bucket: string;
   readonly key: string;
-  readonly objectVersion: string;
+  readonly objectVersion?: string;
 }
+
 

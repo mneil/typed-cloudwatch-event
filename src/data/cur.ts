@@ -4,62 +4,63 @@
 export interface DeleteReportDefinition {
   readonly ReportName?: string;
 }
+
 export interface DescribeReportDefinitions {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ModifyReportDefinition {
   readonly ReportName: string;
   readonly ReportDefinition: ReportDefinition;
 }
+
 export interface PutReportDefinition {
   readonly ReportDefinition: ReportDefinition;
 }
 
-
-
-interface DeleteReportDefinitionRequest {
-  readonly ReportName: string;
+export interface DeleteReportDefinitionRequest {
+  readonly ReportName?: string;
 }
 
-interface DeleteReportDefinitionResponse {
-  readonly ResponseMessage: string;
+export interface DeleteReportDefinitionResponse {
+  readonly ResponseMessage?: string;
 }
 
-interface DescribeReportDefinitionsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeReportDefinitionsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeReportDefinitionsResponse {
-  readonly ReportDefinitions: [];
-  readonly NextToken: string;
+export interface DescribeReportDefinitionsResponse {
+  readonly ReportDefinitions?: [];
+  readonly NextToken?: string;
 }
 
-interface DuplicateReportNameException {
-  readonly Message: string;
+export interface DuplicateReportNameException {
+  readonly Message?: string;
 }
 
-interface InternalErrorException {
-  readonly Message: string;
+export interface InternalErrorException {
+  readonly Message?: string;
 }
 
-interface ModifyReportDefinitionRequest {
+export interface ModifyReportDefinitionRequest {
   readonly ReportName: string;
   readonly ReportDefinition: ReportDefinition;
 }
 
-interface ModifyReportDefinitionResponse {
+export interface ModifyReportDefinitionResponse {
 }
 
-interface PutReportDefinitionRequest {
+export interface PutReportDefinitionRequest {
   readonly ReportDefinition: ReportDefinition;
 }
 
-interface PutReportDefinitionResponse {
+export interface PutReportDefinitionResponse {
 }
 
-interface ReportDefinition {
+export interface ReportDefinition {
   readonly ReportName: string;
   readonly TimeUnit: string;
   readonly Format: string;
@@ -68,17 +69,18 @@ interface ReportDefinition {
   readonly S3Bucket: string;
   readonly S3Prefix: string;
   readonly S3Region: string;
-  readonly AdditionalArtifacts: [];
-  readonly RefreshClosedReports: boolean;
-  readonly ReportVersioning: string;
-  readonly BillingViewArn: string;
+  readonly AdditionalArtifacts?: [];
+  readonly RefreshClosedReports?: boolean;
+  readonly ReportVersioning?: string;
+  readonly BillingViewArn?: string;
 }
 
-interface ReportLimitReachedException {
-  readonly Message: string;
+export interface ReportLimitReachedException {
+  readonly Message?: string;
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

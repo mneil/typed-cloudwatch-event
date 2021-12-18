@@ -5,6 +5,7 @@ export interface AssociateApi {
   readonly domainName: string;
   readonly apiId: string;
 }
+
 export interface CreateApiCache {
   readonly apiId: string;
   readonly ttl: number;
@@ -13,11 +14,13 @@ export interface CreateApiCache {
   readonly apiCachingBehavior: string;
   readonly type: string;
 }
+
 export interface CreateApiKey {
   readonly apiId: string;
   readonly description?: string;
   readonly expires?: number;
 }
+
 export interface CreateDataSource {
   readonly apiId: string;
   readonly name: string;
@@ -31,11 +34,13 @@ export interface CreateDataSource {
   readonly httpConfig?: HttpDataSourceConfig;
   readonly relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig;
 }
+
 export interface CreateDomainName {
   readonly domainName: string;
   readonly certificateArn: string;
   readonly description?: string;
 }
+
 export interface CreateFunction {
   readonly apiId: string;
   readonly name: string;
@@ -46,6 +51,7 @@ export interface CreateFunction {
   readonly functionVersion: string;
   readonly syncConfig?: SyncConfig;
 }
+
 export interface CreateGraphqlApi {
   readonly name: string;
   readonly logConfig?: LogConfig;
@@ -57,6 +63,7 @@ export interface CreateGraphqlApi {
   readonly xrayEnabled?: boolean;
   readonly lambdaAuthorizerConfig?: LambdaAuthorizerConfig;
 }
+
 export interface CreateResolver {
   readonly apiId: string;
   readonly typeName: string;
@@ -69,153 +76,189 @@ export interface CreateResolver {
   readonly syncConfig?: SyncConfig;
   readonly cachingConfig?: CachingConfig;
 }
+
 export interface CreateType {
   readonly apiId: string;
   readonly definition: string;
   readonly format: string;
 }
+
 export interface DeleteApiCache {
   readonly apiId: string;
 }
+
 export interface DeleteApiKey {
   readonly apiId: string;
   readonly id: string;
 }
+
 export interface DeleteDataSource {
   readonly apiId: string;
   readonly name: string;
 }
+
 export interface DeleteDomainName {
   readonly domainName: string;
 }
+
 export interface DeleteFunction {
   readonly apiId: string;
   readonly functionId: string;
 }
+
 export interface DeleteGraphqlApi {
   readonly apiId: string;
 }
+
 export interface DeleteResolver {
   readonly apiId: string;
   readonly typeName: string;
   readonly fieldName: string;
 }
+
 export interface DeleteType {
   readonly apiId: string;
   readonly typeName: string;
 }
+
 export interface DisassociateApi {
   readonly domainName: string;
 }
+
 export interface FlushApiCache {
   readonly apiId: string;
 }
+
 export interface GetApiAssociation {
   readonly domainName: string;
 }
+
 export interface GetApiCache {
   readonly apiId: string;
 }
+
 export interface GetDataSource {
   readonly apiId: string;
   readonly name: string;
 }
+
 export interface GetDomainName {
   readonly domainName: string;
 }
+
 export interface GetFunction {
   readonly apiId: string;
   readonly functionId: string;
 }
+
 export interface GetGraphqlApi {
   readonly apiId: string;
 }
+
 export interface GetIntrospectionSchema {
   readonly apiId: string;
   readonly format: string;
   readonly includeDirectives?: boolean;
 }
+
 export interface GetResolver {
   readonly apiId: string;
   readonly typeName: string;
   readonly fieldName: string;
 }
+
 export interface GetSchemaCreationStatus {
   readonly apiId: string;
 }
+
 export interface GetType {
   readonly apiId: string;
   readonly typeName: string;
   readonly format: string;
 }
+
 export interface ListApiKeys {
   readonly apiId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListDataSources {
   readonly apiId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListDomainNames {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListFunctions {
   readonly apiId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListGraphqlApis {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListResolvers {
   readonly apiId: string;
   readonly typeName: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListResolversByFunction {
   readonly apiId: string;
   readonly functionId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface ListTypes {
   readonly apiId: string;
   readonly format: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface StartSchemaCreation {
   readonly apiId: string;
   readonly definition: unknown;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateApiCache {
   readonly apiId: string;
   readonly ttl: number;
   readonly apiCachingBehavior: string;
   readonly type: string;
 }
+
 export interface UpdateApiKey {
   readonly apiId: string;
   readonly id: string;
   readonly description?: string;
   readonly expires?: number;
 }
+
 export interface UpdateDataSource {
   readonly apiId: string;
   readonly name: string;
@@ -229,10 +272,12 @@ export interface UpdateDataSource {
   readonly httpConfig?: HttpDataSourceConfig;
   readonly relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig;
 }
+
 export interface UpdateDomainName {
   readonly domainName: string;
   readonly description?: string;
 }
+
 export interface UpdateFunction {
   readonly apiId: string;
   readonly name: string;
@@ -244,6 +289,7 @@ export interface UpdateFunction {
   readonly functionVersion: string;
   readonly syncConfig?: SyncConfig;
 }
+
 export interface UpdateGraphqlApi {
   readonly apiId: string;
   readonly name: string;
@@ -255,6 +301,7 @@ export interface UpdateGraphqlApi {
   readonly xrayEnabled?: boolean;
   readonly lambdaAuthorizerConfig?: LambdaAuthorizerConfig;
 }
+
 export interface UpdateResolver {
   readonly apiId: string;
   readonly typeName: string;
@@ -267,6 +314,7 @@ export interface UpdateResolver {
   readonly syncConfig?: SyncConfig;
   readonly cachingConfig?: CachingConfig;
 }
+
 export interface UpdateType {
   readonly apiId: string;
   readonly typeName: string;
@@ -274,771 +322,770 @@ export interface UpdateType {
   readonly format: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly message?: string;
 }
 
-interface AdditionalAuthenticationProvider {
-  readonly authenticationType: string;
-  readonly openIDConnectConfig: OpenIDConnectConfig;
-  readonly userPoolConfig: CognitoUserPoolConfig;
-  readonly lambdaAuthorizerConfig: LambdaAuthorizerConfig;
+export interface AdditionalAuthenticationProvider {
+  readonly authenticationType?: string;
+  readonly openIDConnectConfig?: OpenIDConnectConfig;
+  readonly userPoolConfig?: CognitoUserPoolConfig;
+  readonly lambdaAuthorizerConfig?: LambdaAuthorizerConfig;
 }
 
-interface ApiAssociation {
+export interface ApiAssociation {
+  readonly domainName?: string;
+  readonly apiId?: string;
+  readonly associationStatus?: string;
+  readonly deploymentDetail?: string;
+}
+
+export interface ApiCache {
+  readonly ttl?: number;
+  readonly apiCachingBehavior?: string;
+  readonly transitEncryptionEnabled?: boolean;
+  readonly atRestEncryptionEnabled?: boolean;
+  readonly type?: string;
+  readonly status?: string;
+}
+
+export interface ApiKey {
+  readonly id?: string;
+  readonly description?: string;
+  readonly expires?: number;
+  readonly deletes?: number;
+}
+
+export interface ApiKeyLimitExceededException {
+  readonly message?: string;
+}
+
+export interface ApiKeyValidityOutOfBoundsException {
+  readonly message?: string;
+}
+
+export interface ApiLimitExceededException {
+  readonly message?: string;
+}
+
+export interface AssociateApiRequest {
   readonly domainName: string;
   readonly apiId: string;
-  readonly associationStatus: string;
-  readonly deploymentDetail: string;
 }
 
-interface ApiCache {
-  readonly ttl: number;
-  readonly apiCachingBehavior: string;
-  readonly transitEncryptionEnabled: boolean;
-  readonly atRestEncryptionEnabled: boolean;
-  readonly type: string;
-  readonly status: string;
+export interface AssociateApiResponse {
+  readonly apiAssociation?: ApiAssociation;
 }
 
-interface ApiKey {
-  readonly id: string;
-  readonly description: string;
-  readonly expires: number;
-  readonly deletes: number;
-}
-
-interface ApiKeyLimitExceededException {
-  readonly message: string;
-}
-
-interface ApiKeyValidityOutOfBoundsException {
-  readonly message: string;
-}
-
-interface ApiLimitExceededException {
-  readonly message: string;
-}
-
-interface AssociateApiRequest {
-  readonly domainName: string;
-  readonly apiId: string;
-}
-
-interface AssociateApiResponse {
-  readonly apiAssociation: ApiAssociation;
-}
-
-interface AuthorizationConfig {
+export interface AuthorizationConfig {
   readonly authorizationType: string;
-  readonly awsIamConfig: AwsIamConfig;
+  readonly awsIamConfig?: AwsIamConfig;
 }
 
-interface AwsIamConfig {
-  readonly signingRegion: string;
-  readonly signingServiceName: string;
+export interface AwsIamConfig {
+  readonly signingRegion?: string;
+  readonly signingServiceName?: string;
 }
 
-interface BadRequestException {
-  readonly message: string;
+export interface BadRequestException {
+  readonly message?: string;
 }
 
-interface CachingConfig {
-  readonly ttl: number;
-  readonly cachingKeys: [];
+export interface CachingConfig {
+  readonly ttl?: number;
+  readonly cachingKeys?: [];
 }
 
-interface CognitoUserPoolConfig {
+export interface CognitoUserPoolConfig {
   readonly userPoolId: string;
   readonly awsRegion: string;
-  readonly appIdClientRegex: string;
+  readonly appIdClientRegex?: string;
 }
 
-interface ConcurrentModificationException {
-  readonly message: string;
+export interface ConcurrentModificationException {
+  readonly message?: string;
 }
 
-interface CreateApiCacheRequest {
+export interface CreateApiCacheRequest {
   readonly apiId: string;
   readonly ttl: number;
-  readonly transitEncryptionEnabled: boolean;
-  readonly atRestEncryptionEnabled: boolean;
+  readonly transitEncryptionEnabled?: boolean;
+  readonly atRestEncryptionEnabled?: boolean;
   readonly apiCachingBehavior: string;
   readonly type: string;
 }
 
-interface CreateApiCacheResponse {
-  readonly apiCache: ApiCache;
+export interface CreateApiCacheResponse {
+  readonly apiCache?: ApiCache;
 }
 
-interface CreateApiKeyRequest {
+export interface CreateApiKeyRequest {
   readonly apiId: string;
-  readonly description: string;
-  readonly expires: number;
+  readonly description?: string;
+  readonly expires?: number;
 }
 
-interface CreateApiKeyResponse {
-  readonly apiKey: ApiKey;
+export interface CreateApiKeyResponse {
+  readonly apiKey?: ApiKey;
 }
 
-interface CreateDataSourceRequest {
+export interface CreateDataSourceRequest {
   readonly apiId: string;
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly type: string;
-  readonly serviceRoleArn: string;
-  readonly dynamodbConfig: DynamodbDataSourceConfig;
-  readonly lambdaConfig: LambdaDataSourceConfig;
-  readonly elasticsearchConfig: ElasticsearchDataSourceConfig;
-  readonly openSearchServiceConfig: OpenSearchServiceDataSourceConfig;
-  readonly httpConfig: HttpDataSourceConfig;
-  readonly relationalDatabaseConfig: RelationalDatabaseDataSourceConfig;
+  readonly serviceRoleArn?: string;
+  readonly dynamodbConfig?: DynamodbDataSourceConfig;
+  readonly lambdaConfig?: LambdaDataSourceConfig;
+  readonly elasticsearchConfig?: ElasticsearchDataSourceConfig;
+  readonly openSearchServiceConfig?: OpenSearchServiceDataSourceConfig;
+  readonly httpConfig?: HttpDataSourceConfig;
+  readonly relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig;
 }
 
-interface CreateDataSourceResponse {
-  readonly dataSource: DataSource;
+export interface CreateDataSourceResponse {
+  readonly dataSource?: DataSource;
 }
 
-interface CreateDomainNameRequest {
+export interface CreateDomainNameRequest {
   readonly domainName: string;
   readonly certificateArn: string;
-  readonly description: string;
+  readonly description?: string;
 }
 
-interface CreateDomainNameResponse {
-  readonly domainNameConfig: DomainNameConfig;
+export interface CreateDomainNameResponse {
+  readonly domainNameConfig?: DomainNameConfig;
 }
 
-interface CreateFunctionRequest {
+export interface CreateFunctionRequest {
   readonly apiId: string;
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly dataSourceName: string;
-  readonly requestMappingTemplate: string;
-  readonly responseMappingTemplate: string;
+  readonly requestMappingTemplate?: string;
+  readonly responseMappingTemplate?: string;
   readonly functionVersion: string;
-  readonly syncConfig: SyncConfig;
+  readonly syncConfig?: SyncConfig;
 }
 
-interface CreateFunctionResponse {
-  readonly functionConfiguration: FunctionConfiguration;
+export interface CreateFunctionResponse {
+  readonly functionConfiguration?: FunctionConfiguration;
 }
 
-interface CreateGraphqlApiRequest {
+export interface CreateGraphqlApiRequest {
   readonly name: string;
-  readonly logConfig: LogConfig;
+  readonly logConfig?: LogConfig;
   readonly authenticationType: string;
-  readonly userPoolConfig: UserPoolConfig;
-  readonly openIDConnectConfig: OpenIDConnectConfig;
-  readonly tags: {[key: string]: any};
-  readonly additionalAuthenticationProviders: [];
-  readonly xrayEnabled: boolean;
-  readonly lambdaAuthorizerConfig: LambdaAuthorizerConfig;
+  readonly userPoolConfig?: UserPoolConfig;
+  readonly openIDConnectConfig?: OpenIDConnectConfig;
+  readonly tags?: {[key: string]: any};
+  readonly additionalAuthenticationProviders?: [];
+  readonly xrayEnabled?: boolean;
+  readonly lambdaAuthorizerConfig?: LambdaAuthorizerConfig;
 }
 
-interface CreateGraphqlApiResponse {
-  readonly graphqlApi: GraphqlApi;
+export interface CreateGraphqlApiResponse {
+  readonly graphqlApi?: GraphqlApi;
 }
 
-interface CreateResolverRequest {
+export interface CreateResolverRequest {
   readonly apiId: string;
   readonly typeName: string;
   readonly fieldName: string;
-  readonly dataSourceName: string;
-  readonly requestMappingTemplate: string;
-  readonly responseMappingTemplate: string;
-  readonly kind: string;
-  readonly pipelineConfig: PipelineConfig;
-  readonly syncConfig: SyncConfig;
-  readonly cachingConfig: CachingConfig;
+  readonly dataSourceName?: string;
+  readonly requestMappingTemplate?: string;
+  readonly responseMappingTemplate?: string;
+  readonly kind?: string;
+  readonly pipelineConfig?: PipelineConfig;
+  readonly syncConfig?: SyncConfig;
+  readonly cachingConfig?: CachingConfig;
 }
 
-interface CreateResolverResponse {
-  readonly resolver: Resolver;
+export interface CreateResolverResponse {
+  readonly resolver?: Resolver;
 }
 
-interface CreateTypeRequest {
+export interface CreateTypeRequest {
   readonly apiId: string;
   readonly definition: string;
   readonly format: string;
 }
 
-interface CreateTypeResponse {
-  readonly type: Type;
+export interface CreateTypeResponse {
+  readonly type?: Type;
 }
 
-interface DataSource {
-  readonly dataSourceArn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly type: string;
-  readonly serviceRoleArn: string;
-  readonly dynamodbConfig: DynamodbDataSourceConfig;
-  readonly lambdaConfig: LambdaDataSourceConfig;
-  readonly elasticsearchConfig: ElasticsearchDataSourceConfig;
-  readonly openSearchServiceConfig: OpenSearchServiceDataSourceConfig;
-  readonly httpConfig: HttpDataSourceConfig;
-  readonly relationalDatabaseConfig: RelationalDatabaseDataSourceConfig;
+export interface DataSource {
+  readonly dataSourceArn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly type?: string;
+  readonly serviceRoleArn?: string;
+  readonly dynamodbConfig?: DynamodbDataSourceConfig;
+  readonly lambdaConfig?: LambdaDataSourceConfig;
+  readonly elasticsearchConfig?: ElasticsearchDataSourceConfig;
+  readonly openSearchServiceConfig?: OpenSearchServiceDataSourceConfig;
+  readonly httpConfig?: HttpDataSourceConfig;
+  readonly relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig;
 }
 
-interface DeleteApiCacheRequest {
+export interface DeleteApiCacheRequest {
   readonly apiId: string;
 }
 
-interface DeleteApiCacheResponse {
+export interface DeleteApiCacheResponse {
 }
 
-interface DeleteApiKeyRequest {
+export interface DeleteApiKeyRequest {
   readonly apiId: string;
   readonly id: string;
 }
 
-interface DeleteApiKeyResponse {
+export interface DeleteApiKeyResponse {
 }
 
-interface DeleteDataSourceRequest {
+export interface DeleteDataSourceRequest {
   readonly apiId: string;
   readonly name: string;
 }
 
-interface DeleteDataSourceResponse {
+export interface DeleteDataSourceResponse {
 }
 
-interface DeleteDomainNameRequest {
+export interface DeleteDomainNameRequest {
   readonly domainName: string;
 }
 
-interface DeleteDomainNameResponse {
+export interface DeleteDomainNameResponse {
 }
 
-interface DeleteFunctionRequest {
+export interface DeleteFunctionRequest {
   readonly apiId: string;
   readonly functionId: string;
 }
 
-interface DeleteFunctionResponse {
+export interface DeleteFunctionResponse {
 }
 
-interface DeleteGraphqlApiRequest {
+export interface DeleteGraphqlApiRequest {
   readonly apiId: string;
 }
 
-interface DeleteGraphqlApiResponse {
+export interface DeleteGraphqlApiResponse {
 }
 
-interface DeleteResolverRequest {
+export interface DeleteResolverRequest {
   readonly apiId: string;
   readonly typeName: string;
   readonly fieldName: string;
 }
 
-interface DeleteResolverResponse {
+export interface DeleteResolverResponse {
 }
 
-interface DeleteTypeRequest {
+export interface DeleteTypeRequest {
   readonly apiId: string;
   readonly typeName: string;
 }
 
-interface DeleteTypeResponse {
+export interface DeleteTypeResponse {
 }
 
-interface DeltaSyncConfig {
-  readonly baseTableTTL: number;
-  readonly deltaSyncTableName: string;
-  readonly deltaSyncTableTTL: number;
+export interface DeltaSyncConfig {
+  readonly baseTableTTL?: number;
+  readonly deltaSyncTableName?: string;
+  readonly deltaSyncTableTTL?: number;
 }
 
-interface DisassociateApiRequest {
+export interface DisassociateApiRequest {
   readonly domainName: string;
 }
 
-interface DisassociateApiResponse {
+export interface DisassociateApiResponse {
 }
 
-interface DomainNameConfig {
-  readonly domainName: string;
-  readonly description: string;
-  readonly certificateArn: string;
-  readonly appsyncDomainName: string;
-  readonly hostedZoneId: string;
+export interface DomainNameConfig {
+  readonly domainName?: string;
+  readonly description?: string;
+  readonly certificateArn?: string;
+  readonly appsyncDomainName?: string;
+  readonly hostedZoneId?: string;
 }
 
-interface DynamodbDataSourceConfig {
+export interface DynamodbDataSourceConfig {
   readonly tableName: string;
   readonly awsRegion: string;
-  readonly useCallerCredentials: boolean;
-  readonly deltaSyncConfig: DeltaSyncConfig;
-  readonly versioned: boolean;
+  readonly useCallerCredentials?: boolean;
+  readonly deltaSyncConfig?: DeltaSyncConfig;
+  readonly versioned?: boolean;
 }
 
-interface ElasticsearchDataSourceConfig {
+export interface ElasticsearchDataSourceConfig {
   readonly endpoint: string;
   readonly awsRegion: string;
 }
 
-interface FlushApiCacheRequest {
+export interface FlushApiCacheRequest {
   readonly apiId: string;
 }
 
-interface FlushApiCacheResponse {
+export interface FlushApiCacheResponse {
 }
 
-interface FunctionConfiguration {
-  readonly functionId: string;
-  readonly functionArn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly dataSourceName: string;
-  readonly requestMappingTemplate: string;
-  readonly responseMappingTemplate: string;
-  readonly functionVersion: string;
-  readonly syncConfig: SyncConfig;
+export interface FunctionConfiguration {
+  readonly functionId?: string;
+  readonly functionArn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly dataSourceName?: string;
+  readonly requestMappingTemplate?: string;
+  readonly responseMappingTemplate?: string;
+  readonly functionVersion?: string;
+  readonly syncConfig?: SyncConfig;
 }
 
-interface GetApiAssociationRequest {
+export interface GetApiAssociationRequest {
   readonly domainName: string;
 }
 
-interface GetApiAssociationResponse {
-  readonly apiAssociation: ApiAssociation;
+export interface GetApiAssociationResponse {
+  readonly apiAssociation?: ApiAssociation;
 }
 
-interface GetApiCacheRequest {
+export interface GetApiCacheRequest {
   readonly apiId: string;
 }
 
-interface GetApiCacheResponse {
-  readonly apiCache: ApiCache;
+export interface GetApiCacheResponse {
+  readonly apiCache?: ApiCache;
 }
 
-interface GetDataSourceRequest {
+export interface GetDataSourceRequest {
   readonly apiId: string;
   readonly name: string;
 }
 
-interface GetDataSourceResponse {
-  readonly dataSource: DataSource;
+export interface GetDataSourceResponse {
+  readonly dataSource?: DataSource;
 }
 
-interface GetDomainNameRequest {
+export interface GetDomainNameRequest {
   readonly domainName: string;
 }
 
-interface GetDomainNameResponse {
-  readonly domainNameConfig: DomainNameConfig;
+export interface GetDomainNameResponse {
+  readonly domainNameConfig?: DomainNameConfig;
 }
 
-interface GetFunctionRequest {
+export interface GetFunctionRequest {
   readonly apiId: string;
   readonly functionId: string;
 }
 
-interface GetFunctionResponse {
-  readonly functionConfiguration: FunctionConfiguration;
+export interface GetFunctionResponse {
+  readonly functionConfiguration?: FunctionConfiguration;
 }
 
-interface GetGraphqlApiRequest {
+export interface GetGraphqlApiRequest {
   readonly apiId: string;
 }
 
-interface GetGraphqlApiResponse {
-  readonly graphqlApi: GraphqlApi;
+export interface GetGraphqlApiResponse {
+  readonly graphqlApi?: GraphqlApi;
 }
 
-interface GetIntrospectionSchemaRequest {
+export interface GetIntrospectionSchemaRequest {
   readonly apiId: string;
   readonly format: string;
-  readonly includeDirectives: boolean;
+  readonly includeDirectives?: boolean;
 }
 
-interface GetIntrospectionSchemaResponse {
-  readonly schema: unknown;
+export interface GetIntrospectionSchemaResponse {
+  readonly schema?: unknown;
 }
 
-interface GetResolverRequest {
+export interface GetResolverRequest {
   readonly apiId: string;
   readonly typeName: string;
   readonly fieldName: string;
 }
 
-interface GetResolverResponse {
-  readonly resolver: Resolver;
+export interface GetResolverResponse {
+  readonly resolver?: Resolver;
 }
 
-interface GetSchemaCreationStatusRequest {
+export interface GetSchemaCreationStatusRequest {
   readonly apiId: string;
 }
 
-interface GetSchemaCreationStatusResponse {
-  readonly status: string;
-  readonly details: string;
+export interface GetSchemaCreationStatusResponse {
+  readonly status?: string;
+  readonly details?: string;
 }
 
-interface GetTypeRequest {
+export interface GetTypeRequest {
   readonly apiId: string;
   readonly typeName: string;
   readonly format: string;
 }
 
-interface GetTypeResponse {
-  readonly type: Type;
+export interface GetTypeResponse {
+  readonly type?: Type;
 }
 
-interface GraphQLSchemaException {
-  readonly message: string;
+export interface GraphQLSchemaException {
+  readonly message?: string;
 }
 
-interface GraphqlApi {
-  readonly name: string;
-  readonly apiId: string;
-  readonly authenticationType: string;
-  readonly logConfig: LogConfig;
-  readonly userPoolConfig: UserPoolConfig;
-  readonly openIDConnectConfig: OpenIDConnectConfig;
-  readonly arn: string;
-  readonly uris: {[key: string]: any};
-  readonly tags: {[key: string]: any};
-  readonly additionalAuthenticationProviders: [];
-  readonly xrayEnabled: boolean;
-  readonly wafWebAclArn: string;
-  readonly lambdaAuthorizerConfig: LambdaAuthorizerConfig;
+export interface GraphqlApi {
+  readonly name?: string;
+  readonly apiId?: string;
+  readonly authenticationType?: string;
+  readonly logConfig?: LogConfig;
+  readonly userPoolConfig?: UserPoolConfig;
+  readonly openIDConnectConfig?: OpenIDConnectConfig;
+  readonly arn?: string;
+  readonly uris?: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
+  readonly additionalAuthenticationProviders?: [];
+  readonly xrayEnabled?: boolean;
+  readonly wafWebAclArn?: string;
+  readonly lambdaAuthorizerConfig?: LambdaAuthorizerConfig;
 }
 
-interface HttpDataSourceConfig {
-  readonly endpoint: string;
-  readonly authorizationConfig: AuthorizationConfig;
+export interface HttpDataSourceConfig {
+  readonly endpoint?: string;
+  readonly authorizationConfig?: AuthorizationConfig;
 }
 
-interface InternalFailureException {
-  readonly message: string;
+export interface InternalFailureException {
+  readonly message?: string;
 }
 
-interface LambdaAuthorizerConfig {
-  readonly authorizerResultTtlInSeconds: number;
+export interface LambdaAuthorizerConfig {
+  readonly authorizerResultTtlInSeconds?: number;
   readonly authorizerUri: string;
-  readonly identityValidationExpression: string;
+  readonly identityValidationExpression?: string;
 }
 
-interface LambdaConflictHandlerConfig {
-  readonly lambdaConflictHandlerArn: string;
+export interface LambdaConflictHandlerConfig {
+  readonly lambdaConflictHandlerArn?: string;
 }
 
-interface LambdaDataSourceConfig {
+export interface LambdaDataSourceConfig {
   readonly lambdaFunctionArn: string;
 }
 
-interface LimitExceededException {
-  readonly message: string;
+export interface LimitExceededException {
+  readonly message?: string;
 }
 
-interface ListApiKeysRequest {
+export interface ListApiKeysRequest {
   readonly apiId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListApiKeysResponse {
-  readonly apiKeys: [];
-  readonly nextToken: string;
+export interface ListApiKeysResponse {
+  readonly apiKeys?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDataSourcesRequest {
+export interface ListDataSourcesRequest {
   readonly apiId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListDataSourcesResponse {
-  readonly dataSources: [];
-  readonly nextToken: string;
+export interface ListDataSourcesResponse {
+  readonly dataSources?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDomainNamesRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListDomainNamesRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListDomainNamesResponse {
-  readonly domainNameConfigs: [];
-  readonly nextToken: string;
+export interface ListDomainNamesResponse {
+  readonly domainNameConfigs?: [];
+  readonly nextToken?: string;
 }
 
-interface ListFunctionsRequest {
+export interface ListFunctionsRequest {
   readonly apiId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListFunctionsResponse {
-  readonly functions: [];
-  readonly nextToken: string;
+export interface ListFunctionsResponse {
+  readonly functions?: [];
+  readonly nextToken?: string;
 }
 
-interface ListGraphqlApisRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListGraphqlApisRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListGraphqlApisResponse {
-  readonly graphqlApis: [];
-  readonly nextToken: string;
+export interface ListGraphqlApisResponse {
+  readonly graphqlApis?: [];
+  readonly nextToken?: string;
 }
 
-interface ListResolversByFunctionRequest {
+export interface ListResolversByFunctionRequest {
   readonly apiId: string;
   readonly functionId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListResolversByFunctionResponse {
-  readonly resolvers: [];
-  readonly nextToken: string;
+export interface ListResolversByFunctionResponse {
+  readonly resolvers?: [];
+  readonly nextToken?: string;
 }
 
-interface ListResolversRequest {
+export interface ListResolversRequest {
   readonly apiId: string;
   readonly typeName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListResolversResponse {
-  readonly resolvers: [];
-  readonly nextToken: string;
+export interface ListResolversResponse {
+  readonly resolvers?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ListTypesRequest {
+export interface ListTypesRequest {
   readonly apiId: string;
   readonly format: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListTypesResponse {
-  readonly types: [];
-  readonly nextToken: string;
+export interface ListTypesResponse {
+  readonly types?: [];
+  readonly nextToken?: string;
 }
 
-interface LogConfig {
+export interface LogConfig {
   readonly fieldLogLevel: string;
   readonly cloudWatchLogsRoleArn: string;
-  readonly excludeVerboseContent: boolean;
+  readonly excludeVerboseContent?: boolean;
 }
 
-interface NotFoundException {
-  readonly message: string;
+export interface NotFoundException {
+  readonly message?: string;
 }
 
-interface OpenIDConnectConfig {
+export interface OpenIDConnectConfig {
   readonly issuer: string;
-  readonly clientId: string;
-  readonly iatTTL: number;
-  readonly authTTL: number;
+  readonly clientId?: string;
+  readonly iatTTL?: number;
+  readonly authTTL?: number;
 }
 
-interface OpenSearchServiceDataSourceConfig {
+export interface OpenSearchServiceDataSourceConfig {
   readonly endpoint: string;
   readonly awsRegion: string;
 }
 
-interface PipelineConfig {
-  readonly functions: [];
+export interface PipelineConfig {
+  readonly functions?: [];
 }
 
-interface RdsHttpEndpointConfig {
-  readonly awsRegion: string;
-  readonly dbClusterIdentifier: string;
-  readonly databaseName: string;
-  readonly schema: string;
-  readonly awsSecretStoreArn: string;
+export interface RdsHttpEndpointConfig {
+  readonly awsRegion?: string;
+  readonly dbClusterIdentifier?: string;
+  readonly databaseName?: string;
+  readonly schema?: string;
+  readonly awsSecretStoreArn?: string;
 }
 
-interface RelationalDatabaseDataSourceConfig {
-  readonly relationalDatabaseSourceType: string;
-  readonly rdsHttpEndpointConfig: RdsHttpEndpointConfig;
+export interface RelationalDatabaseDataSourceConfig {
+  readonly relationalDatabaseSourceType?: string;
+  readonly rdsHttpEndpointConfig?: RdsHttpEndpointConfig;
 }
 
-interface Resolver {
-  readonly typeName: string;
-  readonly fieldName: string;
-  readonly dataSourceName: string;
-  readonly resolverArn: string;
-  readonly requestMappingTemplate: string;
-  readonly responseMappingTemplate: string;
-  readonly kind: string;
-  readonly pipelineConfig: PipelineConfig;
-  readonly syncConfig: SyncConfig;
-  readonly cachingConfig: CachingConfig;
+export interface Resolver {
+  readonly typeName?: string;
+  readonly fieldName?: string;
+  readonly dataSourceName?: string;
+  readonly resolverArn?: string;
+  readonly requestMappingTemplate?: string;
+  readonly responseMappingTemplate?: string;
+  readonly kind?: string;
+  readonly pipelineConfig?: PipelineConfig;
+  readonly syncConfig?: SyncConfig;
+  readonly cachingConfig?: CachingConfig;
 }
 
-interface StartSchemaCreationRequest {
+export interface StartSchemaCreationRequest {
   readonly apiId: string;
   readonly definition: unknown;
 }
 
-interface StartSchemaCreationResponse {
-  readonly status: string;
+export interface StartSchemaCreationResponse {
+  readonly status?: string;
 }
 
-interface SyncConfig {
-  readonly conflictHandler: string;
-  readonly conflictDetection: string;
-  readonly lambdaConflictHandlerConfig: LambdaConflictHandlerConfig;
+export interface SyncConfig {
+  readonly conflictHandler?: string;
+  readonly conflictDetection?: string;
+  readonly lambdaConflictHandlerConfig?: LambdaConflictHandlerConfig;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface Type {
-  readonly name: string;
-  readonly description: string;
-  readonly arn: string;
-  readonly definition: string;
-  readonly format: string;
+export interface Type {
+  readonly name?: string;
+  readonly description?: string;
+  readonly arn?: string;
+  readonly definition?: string;
+  readonly format?: string;
 }
 
-interface UnauthorizedException {
-  readonly message: string;
+export interface UnauthorizedException {
+  readonly message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateApiCacheRequest {
+export interface UpdateApiCacheRequest {
   readonly apiId: string;
   readonly ttl: number;
   readonly apiCachingBehavior: string;
   readonly type: string;
 }
 
-interface UpdateApiCacheResponse {
-  readonly apiCache: ApiCache;
+export interface UpdateApiCacheResponse {
+  readonly apiCache?: ApiCache;
 }
 
-interface UpdateApiKeyRequest {
+export interface UpdateApiKeyRequest {
   readonly apiId: string;
   readonly id: string;
-  readonly description: string;
-  readonly expires: number;
+  readonly description?: string;
+  readonly expires?: number;
 }
 
-interface UpdateApiKeyResponse {
-  readonly apiKey: ApiKey;
+export interface UpdateApiKeyResponse {
+  readonly apiKey?: ApiKey;
 }
 
-interface UpdateDataSourceRequest {
+export interface UpdateDataSourceRequest {
   readonly apiId: string;
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly type: string;
-  readonly serviceRoleArn: string;
-  readonly dynamodbConfig: DynamodbDataSourceConfig;
-  readonly lambdaConfig: LambdaDataSourceConfig;
-  readonly elasticsearchConfig: ElasticsearchDataSourceConfig;
-  readonly openSearchServiceConfig: OpenSearchServiceDataSourceConfig;
-  readonly httpConfig: HttpDataSourceConfig;
-  readonly relationalDatabaseConfig: RelationalDatabaseDataSourceConfig;
+  readonly serviceRoleArn?: string;
+  readonly dynamodbConfig?: DynamodbDataSourceConfig;
+  readonly lambdaConfig?: LambdaDataSourceConfig;
+  readonly elasticsearchConfig?: ElasticsearchDataSourceConfig;
+  readonly openSearchServiceConfig?: OpenSearchServiceDataSourceConfig;
+  readonly httpConfig?: HttpDataSourceConfig;
+  readonly relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig;
 }
 
-interface UpdateDataSourceResponse {
-  readonly dataSource: DataSource;
+export interface UpdateDataSourceResponse {
+  readonly dataSource?: DataSource;
 }
 
-interface UpdateDomainNameRequest {
+export interface UpdateDomainNameRequest {
   readonly domainName: string;
-  readonly description: string;
+  readonly description?: string;
 }
 
-interface UpdateDomainNameResponse {
-  readonly domainNameConfig: DomainNameConfig;
+export interface UpdateDomainNameResponse {
+  readonly domainNameConfig?: DomainNameConfig;
 }
 
-interface UpdateFunctionRequest {
+export interface UpdateFunctionRequest {
   readonly apiId: string;
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly functionId: string;
   readonly dataSourceName: string;
-  readonly requestMappingTemplate: string;
-  readonly responseMappingTemplate: string;
+  readonly requestMappingTemplate?: string;
+  readonly responseMappingTemplate?: string;
   readonly functionVersion: string;
-  readonly syncConfig: SyncConfig;
+  readonly syncConfig?: SyncConfig;
 }
 
-interface UpdateFunctionResponse {
-  readonly functionConfiguration: FunctionConfiguration;
+export interface UpdateFunctionResponse {
+  readonly functionConfiguration?: FunctionConfiguration;
 }
 
-interface UpdateGraphqlApiRequest {
+export interface UpdateGraphqlApiRequest {
   readonly apiId: string;
   readonly name: string;
-  readonly logConfig: LogConfig;
-  readonly authenticationType: string;
-  readonly userPoolConfig: UserPoolConfig;
-  readonly openIDConnectConfig: OpenIDConnectConfig;
-  readonly additionalAuthenticationProviders: [];
-  readonly xrayEnabled: boolean;
-  readonly lambdaAuthorizerConfig: LambdaAuthorizerConfig;
+  readonly logConfig?: LogConfig;
+  readonly authenticationType?: string;
+  readonly userPoolConfig?: UserPoolConfig;
+  readonly openIDConnectConfig?: OpenIDConnectConfig;
+  readonly additionalAuthenticationProviders?: [];
+  readonly xrayEnabled?: boolean;
+  readonly lambdaAuthorizerConfig?: LambdaAuthorizerConfig;
 }
 
-interface UpdateGraphqlApiResponse {
-  readonly graphqlApi: GraphqlApi;
+export interface UpdateGraphqlApiResponse {
+  readonly graphqlApi?: GraphqlApi;
 }
 
-interface UpdateResolverRequest {
+export interface UpdateResolverRequest {
   readonly apiId: string;
   readonly typeName: string;
   readonly fieldName: string;
-  readonly dataSourceName: string;
-  readonly requestMappingTemplate: string;
-  readonly responseMappingTemplate: string;
-  readonly kind: string;
-  readonly pipelineConfig: PipelineConfig;
-  readonly syncConfig: SyncConfig;
-  readonly cachingConfig: CachingConfig;
+  readonly dataSourceName?: string;
+  readonly requestMappingTemplate?: string;
+  readonly responseMappingTemplate?: string;
+  readonly kind?: string;
+  readonly pipelineConfig?: PipelineConfig;
+  readonly syncConfig?: SyncConfig;
+  readonly cachingConfig?: CachingConfig;
 }
 
-interface UpdateResolverResponse {
-  readonly resolver: Resolver;
+export interface UpdateResolverResponse {
+  readonly resolver?: Resolver;
 }
 
-interface UpdateTypeRequest {
+export interface UpdateTypeRequest {
   readonly apiId: string;
   readonly typeName: string;
-  readonly definition: string;
+  readonly definition?: string;
   readonly format: string;
 }
 
-interface UpdateTypeResponse {
-  readonly type: Type;
+export interface UpdateTypeResponse {
+  readonly type?: Type;
 }
 
-interface UserPoolConfig {
+export interface UserPoolConfig {
   readonly userPoolId: string;
   readonly awsRegion: string;
   readonly defaultAction: string;
-  readonly appIdClientRegex: string;
+  readonly appIdClientRegex?: string;
 }
+
 

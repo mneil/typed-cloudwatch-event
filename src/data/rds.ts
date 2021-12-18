@@ -5,21 +5,25 @@ export interface AddSourceIdentifierToSubscription {
   readonly SubscriptionName: string;
   readonly SourceIdentifier: string;
 }
+
 export interface AddTagsToResource {
   readonly ResourceName: string;
   readonly Tags: [];
 }
+
 export interface ApplyPendingMaintenanceAction {
   readonly ResourceIdentifier: string;
   readonly ApplyAction: string;
   readonly OptInType: string;
 }
+
 export interface CopyDBClusterParameterGroup {
   readonly SourceDBClusterParameterGroupIdentifier: string;
   readonly TargetDBClusterParameterGroupIdentifier: string;
   readonly TargetDBClusterParameterGroupDescription: string;
   readonly Tags?: [];
 }
+
 export interface CopyDBClusterSnapshot {
   readonly SourceDBClusterSnapshotIdentifier: string;
   readonly TargetDBClusterSnapshotIdentifier: string;
@@ -28,6 +32,7 @@ export interface CopyDBClusterSnapshot {
   readonly CopyTags?: boolean;
   readonly Tags?: [];
 }
+
 export interface CreateDBCluster {
   readonly AvailabilityZones?: [];
   readonly BackupRetentionPeriod?: number;
@@ -50,17 +55,20 @@ export interface CreateDBCluster {
   readonly DeletionProtection?: boolean;
   readonly GlobalClusterIdentifier?: string;
 }
+
 export interface CreateDBClusterParameterGroup {
   readonly DBClusterParameterGroupName: string;
   readonly DBParameterGroupFamily: string;
   readonly Description: string;
   readonly Tags?: [];
 }
+
 export interface CreateDBClusterSnapshot {
   readonly DBClusterSnapshotIdentifier: string;
   readonly DBClusterIdentifier: string;
   readonly Tags?: [];
 }
+
 export interface CreateDBInstance {
   readonly DBInstanceIdentifier: string;
   readonly DBInstanceClass: string;
@@ -72,12 +80,14 @@ export interface CreateDBInstance {
   readonly DBClusterIdentifier: string;
   readonly PromotionTier?: number;
 }
+
 export interface CreateDBSubnetGroup {
   readonly DBSubnetGroupName: string;
   readonly DBSubnetGroupDescription: string;
   readonly SubnetIds: [];
   readonly Tags?: [];
 }
+
 export interface CreateEventSubscription {
   readonly SubscriptionName: string;
   readonly SnsTopicArn: string;
@@ -87,6 +97,7 @@ export interface CreateEventSubscription {
   readonly Enabled?: boolean;
   readonly Tags?: [];
 }
+
 export interface CreateGlobalCluster {
   readonly GlobalClusterIdentifier: string;
   readonly SourceDBClusterIdentifier?: string;
@@ -96,41 +107,51 @@ export interface CreateGlobalCluster {
   readonly DatabaseName?: string;
   readonly StorageEncrypted?: boolean;
 }
+
 export interface DeleteDBCluster {
   readonly DBClusterIdentifier: string;
   readonly SkipFinalSnapshot?: boolean;
   readonly FinalDBSnapshotIdentifier?: string;
 }
+
 export interface DeleteDBClusterParameterGroup {
   readonly DBClusterParameterGroupName: string;
 }
+
 export interface DeleteDBClusterSnapshot {
   readonly DBClusterSnapshotIdentifier: string;
 }
+
 export interface DeleteDBInstance {
   readonly DBInstanceIdentifier: string;
 }
+
 export interface DeleteDBSubnetGroup {
   readonly DBSubnetGroupName: string;
 }
+
 export interface DeleteEventSubscription {
   readonly SubscriptionName: string;
 }
+
 export interface DeleteGlobalCluster {
   readonly GlobalClusterIdentifier: string;
 }
+
 export interface DescribeCertificates {
   readonly CertificateIdentifier?: string;
   readonly Filters?: [];
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeDBClusterParameterGroups {
   readonly DBClusterParameterGroupName?: string;
   readonly Filters?: [];
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeDBClusterParameters {
   readonly DBClusterParameterGroupName: string;
   readonly Source?: string;
@@ -138,9 +159,11 @@ export interface DescribeDBClusterParameters {
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeDBClusterSnapshotAttributes {
   readonly DBClusterSnapshotIdentifier: string;
 }
+
 export interface DescribeDBClusterSnapshots {
   readonly DBClusterIdentifier?: string;
   readonly DBClusterSnapshotIdentifier?: string;
@@ -151,12 +174,14 @@ export interface DescribeDBClusterSnapshots {
   readonly IncludeShared?: boolean;
   readonly IncludePublic?: boolean;
 }
+
 export interface DescribeDBClusters {
   readonly DBClusterIdentifier?: string;
   readonly Filters?: [];
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeDBEngineVersions {
   readonly Engine?: string;
   readonly EngineVersion?: string;
@@ -168,34 +193,40 @@ export interface DescribeDBEngineVersions {
   readonly ListSupportedCharacterSets?: boolean;
   readonly ListSupportedTimezones?: boolean;
 }
+
 export interface DescribeDBInstances {
   readonly DBInstanceIdentifier?: string;
   readonly Filters?: [];
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeDBSubnetGroups {
   readonly DBSubnetGroupName?: string;
   readonly Filters?: [];
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeEngineDefaultClusterParameters {
   readonly DBParameterGroupFamily: string;
   readonly Filters?: [];
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeEventCategories {
   readonly SourceType?: string;
   readonly Filters?: [];
 }
+
 export interface DescribeEventSubscriptions {
   readonly SubscriptionName?: string;
   readonly Filters?: [];
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeEvents {
   readonly SourceIdentifier?: string;
   readonly SourceType?: string;
@@ -207,12 +238,14 @@ export interface DescribeEvents {
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeGlobalClusters {
   readonly GlobalClusterIdentifier?: string;
   readonly Filters?: [];
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribeOrderableDBInstanceOptions {
   readonly Engine: string;
   readonly EngineVersion?: string;
@@ -223,20 +256,24 @@ export interface DescribeOrderableDBInstanceOptions {
   readonly MaxRecords?: number;
   readonly Marker?: string;
 }
+
 export interface DescribePendingMaintenanceActions {
   readonly ResourceIdentifier?: string;
   readonly Filters?: [];
   readonly Marker?: string;
   readonly MaxRecords?: number;
 }
+
 export interface FailoverDBCluster {
   readonly DBClusterIdentifier?: string;
   readonly TargetDBInstanceIdentifier?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceName: string;
   readonly Filters?: [];
 }
+
 export interface ModifyDBCluster {
   readonly DBClusterIdentifier: string;
   readonly NewDBClusterIdentifier?: string;
@@ -252,16 +289,19 @@ export interface ModifyDBCluster {
   readonly EngineVersion?: string;
   readonly DeletionProtection?: boolean;
 }
+
 export interface ModifyDBClusterParameterGroup {
   readonly DBClusterParameterGroupName: string;
   readonly Parameters: [];
 }
+
 export interface ModifyDBClusterSnapshotAttribute {
   readonly DBClusterSnapshotIdentifier: string;
   readonly AttributeName: string;
   readonly ValuesToAdd?: [];
   readonly ValuesToRemove?: [];
 }
+
 export interface ModifyDBInstance {
   readonly DBInstanceIdentifier: string;
   readonly DBInstanceClass?: string;
@@ -272,11 +312,13 @@ export interface ModifyDBInstance {
   readonly CACertificateIdentifier?: string;
   readonly PromotionTier?: number;
 }
+
 export interface ModifyDBSubnetGroup {
   readonly DBSubnetGroupName: string;
   readonly DBSubnetGroupDescription?: string;
   readonly SubnetIds: [];
 }
+
 export interface ModifyEventSubscription {
   readonly SubscriptionName: string;
   readonly SnsTopicArn?: string;
@@ -284,32 +326,39 @@ export interface ModifyEventSubscription {
   readonly EventCategories?: [];
   readonly Enabled?: boolean;
 }
+
 export interface ModifyGlobalCluster {
   readonly GlobalClusterIdentifier: string;
   readonly NewGlobalClusterIdentifier?: string;
   readonly DeletionProtection?: boolean;
 }
+
 export interface RebootDBInstance {
   readonly DBInstanceIdentifier: string;
   readonly ForceFailover?: boolean;
 }
+
 export interface RemoveFromGlobalCluster {
   readonly GlobalClusterIdentifier: string;
   readonly DbClusterIdentifier: string;
 }
+
 export interface RemoveSourceIdentifierFromSubscription {
   readonly SubscriptionName: string;
   readonly SourceIdentifier: string;
 }
+
 export interface RemoveTagsFromResource {
   readonly ResourceName: string;
   readonly TagKeys: [];
 }
+
 export interface ResetDBClusterParameterGroup {
   readonly DBClusterParameterGroupName: string;
   readonly ResetAllParameters?: boolean;
   readonly Parameters?: [];
 }
+
 export interface RestoreDBClusterFromSnapshot {
   readonly AvailabilityZones?: [];
   readonly DBClusterIdentifier: string;
@@ -324,6 +373,7 @@ export interface RestoreDBClusterFromSnapshot {
   readonly EnableCloudwatchLogsExports?: [];
   readonly DeletionProtection?: boolean;
 }
+
 export interface RestoreDBClusterToPointInTime {
   readonly DBClusterIdentifier: string;
   readonly SourceDBClusterIdentifier: string;
@@ -337,1085 +387,1086 @@ export interface RestoreDBClusterToPointInTime {
   readonly EnableCloudwatchLogsExports?: [];
   readonly DeletionProtection?: boolean;
 }
+
 export interface StartDBCluster {
   readonly DBClusterIdentifier: string;
 }
+
 export interface StopDBCluster {
   readonly DBClusterIdentifier: string;
 }
 
-
-
-interface AddSourceIdentifierToSubscriptionMessage {
+export interface AddSourceIdentifierToSubscriptionMessage {
   readonly SubscriptionName: string;
   readonly SourceIdentifier: string;
 }
 
-interface AddSourceIdentifierToSubscriptionResult {
-  readonly EventSubscription: EventSubscription;
+export interface AddSourceIdentifierToSubscriptionResult {
+  readonly EventSubscription?: EventSubscription;
 }
 
-interface AddTagsToResourceMessage {
+export interface AddTagsToResourceMessage {
   readonly ResourceName: string;
   readonly Tags: [];
 }
 
-interface ApplyPendingMaintenanceActionMessage {
+export interface ApplyPendingMaintenanceActionMessage {
   readonly ResourceIdentifier: string;
   readonly ApplyAction: string;
   readonly OptInType: string;
 }
 
-interface ApplyPendingMaintenanceActionResult {
-  readonly ResourcePendingMaintenanceActions: ResourcePendingMaintenanceActions;
+export interface ApplyPendingMaintenanceActionResult {
+  readonly ResourcePendingMaintenanceActions?: ResourcePendingMaintenanceActions;
 }
 
-interface AuthorizationNotFoundFault {
+export interface AuthorizationNotFoundFault {
 }
 
-interface AvailabilityZone {
-  readonly Name: string;
+export interface AvailabilityZone {
+  readonly Name?: string;
 }
 
-interface Certificate {
-  readonly CertificateIdentifier: string;
-  readonly CertificateType: string;
-  readonly Thumbprint: string;
-  readonly ValidFrom: Date;
-  readonly ValidTill: Date;
-  readonly CertificateArn: string;
+export interface Certificate {
+  readonly CertificateIdentifier?: string;
+  readonly CertificateType?: string;
+  readonly Thumbprint?: string;
+  readonly ValidFrom?: Date;
+  readonly ValidTill?: Date;
+  readonly CertificateArn?: string;
 }
 
-interface CertificateMessage {
-  readonly Certificates: [];
-  readonly Marker: string;
+export interface CertificateMessage {
+  readonly Certificates?: [];
+  readonly Marker?: string;
 }
 
-interface CertificateNotFoundFault {
+export interface CertificateNotFoundFault {
 }
 
-interface CloudwatchLogsExportConfiguration {
-  readonly EnableLogTypes: [];
-  readonly DisableLogTypes: [];
+export interface CloudwatchLogsExportConfiguration {
+  readonly EnableLogTypes?: [];
+  readonly DisableLogTypes?: [];
 }
 
-interface CopyDBClusterParameterGroupMessage {
+export interface CopyDBClusterParameterGroupMessage {
   readonly SourceDBClusterParameterGroupIdentifier: string;
   readonly TargetDBClusterParameterGroupIdentifier: string;
   readonly TargetDBClusterParameterGroupDescription: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CopyDBClusterParameterGroupResult {
-  readonly DBClusterParameterGroup: DBClusterParameterGroup;
+export interface CopyDBClusterParameterGroupResult {
+  readonly DBClusterParameterGroup?: DBClusterParameterGroup;
 }
 
-interface CopyDBClusterSnapshotMessage {
+export interface CopyDBClusterSnapshotMessage {
   readonly SourceDBClusterSnapshotIdentifier: string;
   readonly TargetDBClusterSnapshotIdentifier: string;
-  readonly KmsKeyId: string;
-  readonly PreSignedUrl: string;
-  readonly CopyTags: boolean;
-  readonly Tags: [];
+  readonly KmsKeyId?: string;
+  readonly PreSignedUrl?: string;
+  readonly CopyTags?: boolean;
+  readonly Tags?: [];
 }
 
-interface CopyDBClusterSnapshotResult {
-  readonly DBClusterSnapshot: DBClusterSnapshot;
+export interface CopyDBClusterSnapshotResult {
+  readonly DBClusterSnapshot?: DBClusterSnapshot;
 }
 
-interface CreateDBClusterMessage {
-  readonly AvailabilityZones: [];
-  readonly BackupRetentionPeriod: number;
+export interface CreateDBClusterMessage {
+  readonly AvailabilityZones?: [];
+  readonly BackupRetentionPeriod?: number;
   readonly DBClusterIdentifier: string;
-  readonly DBClusterParameterGroupName: string;
-  readonly VpcSecurityGroupIds: [];
-  readonly DBSubnetGroupName: string;
+  readonly DBClusterParameterGroupName?: string;
+  readonly VpcSecurityGroupIds?: [];
+  readonly DBSubnetGroupName?: string;
   readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly Port: number;
-  readonly MasterUsername: string;
-  readonly MasterUserPassword: string;
-  readonly PreferredBackupWindow: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly Tags: [];
-  readonly StorageEncrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly PreSignedUrl: string;
-  readonly EnableCloudwatchLogsExports: [];
-  readonly DeletionProtection: boolean;
-  readonly GlobalClusterIdentifier: string;
+  readonly EngineVersion?: string;
+  readonly Port?: number;
+  readonly MasterUsername?: string;
+  readonly MasterUserPassword?: string;
+  readonly PreferredBackupWindow?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly Tags?: [];
+  readonly StorageEncrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly PreSignedUrl?: string;
+  readonly EnableCloudwatchLogsExports?: [];
+  readonly DeletionProtection?: boolean;
+  readonly GlobalClusterIdentifier?: string;
 }
 
-interface CreateDBClusterParameterGroupMessage {
+export interface CreateDBClusterParameterGroupMessage {
   readonly DBClusterParameterGroupName: string;
   readonly DBParameterGroupFamily: string;
   readonly Description: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateDBClusterParameterGroupResult {
-  readonly DBClusterParameterGroup: DBClusterParameterGroup;
+export interface CreateDBClusterParameterGroupResult {
+  readonly DBClusterParameterGroup?: DBClusterParameterGroup;
 }
 
-interface CreateDBClusterResult {
-  readonly DBCluster: DBCluster;
+export interface CreateDBClusterResult {
+  readonly DBCluster?: DBCluster;
 }
 
-interface CreateDBClusterSnapshotMessage {
+export interface CreateDBClusterSnapshotMessage {
   readonly DBClusterSnapshotIdentifier: string;
   readonly DBClusterIdentifier: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateDBClusterSnapshotResult {
-  readonly DBClusterSnapshot: DBClusterSnapshot;
+export interface CreateDBClusterSnapshotResult {
+  readonly DBClusterSnapshot?: DBClusterSnapshot;
 }
 
-interface CreateDBInstanceMessage {
+export interface CreateDBInstanceMessage {
   readonly DBInstanceIdentifier: string;
   readonly DBInstanceClass: string;
   readonly Engine: string;
-  readonly AvailabilityZone: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly AutoMinorVersionUpgrade: boolean;
-  readonly Tags: [];
+  readonly AvailabilityZone?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly AutoMinorVersionUpgrade?: boolean;
+  readonly Tags?: [];
   readonly DBClusterIdentifier: string;
-  readonly PromotionTier: number;
+  readonly PromotionTier?: number;
 }
 
-interface CreateDBInstanceResult {
-  readonly DBInstance: DBInstance;
+export interface CreateDBInstanceResult {
+  readonly DBInstance?: DBInstance;
 }
 
-interface CreateDBSubnetGroupMessage {
+export interface CreateDBSubnetGroupMessage {
   readonly DBSubnetGroupName: string;
   readonly DBSubnetGroupDescription: string;
   readonly SubnetIds: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateDBSubnetGroupResult {
-  readonly DBSubnetGroup: DBSubnetGroup;
+export interface CreateDBSubnetGroupResult {
+  readonly DBSubnetGroup?: DBSubnetGroup;
 }
 
-interface CreateEventSubscriptionMessage {
+export interface CreateEventSubscriptionMessage {
   readonly SubscriptionName: string;
   readonly SnsTopicArn: string;
-  readonly SourceType: string;
-  readonly EventCategories: [];
-  readonly SourceIds: [];
-  readonly Enabled: boolean;
-  readonly Tags: [];
+  readonly SourceType?: string;
+  readonly EventCategories?: [];
+  readonly SourceIds?: [];
+  readonly Enabled?: boolean;
+  readonly Tags?: [];
 }
 
-interface CreateEventSubscriptionResult {
-  readonly EventSubscription: EventSubscription;
+export interface CreateEventSubscriptionResult {
+  readonly EventSubscription?: EventSubscription;
 }
 
-interface CreateGlobalClusterMessage {
+export interface CreateGlobalClusterMessage {
   readonly GlobalClusterIdentifier: string;
-  readonly SourceDBClusterIdentifier: string;
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly DeletionProtection: boolean;
-  readonly DatabaseName: string;
-  readonly StorageEncrypted: boolean;
+  readonly SourceDBClusterIdentifier?: string;
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly DeletionProtection?: boolean;
+  readonly DatabaseName?: string;
+  readonly StorageEncrypted?: boolean;
 }
 
-interface CreateGlobalClusterResult {
-  readonly GlobalCluster: GlobalCluster;
+export interface CreateGlobalClusterResult {
+  readonly GlobalCluster?: GlobalCluster;
 }
 
-interface DBCluster {
-  readonly AvailabilityZones: [];
-  readonly BackupRetentionPeriod: number;
+export interface DBCluster {
+  readonly AvailabilityZones?: [];
+  readonly BackupRetentionPeriod?: number;
+  readonly DBClusterIdentifier?: string;
+  readonly DBClusterParameterGroup?: string;
+  readonly DBSubnetGroup?: string;
+  readonly Status?: string;
+  readonly PercentProgress?: string;
+  readonly EarliestRestorableTime?: Date;
+  readonly Endpoint?: string;
+  readonly ReaderEndpoint?: string;
+  readonly MultiAZ?: boolean;
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly LatestRestorableTime?: Date;
+  readonly Port?: number;
+  readonly MasterUsername?: string;
+  readonly PreferredBackupWindow?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly ReplicationSourceIdentifier?: string;
+  readonly ReadReplicaIdentifiers?: [];
+  readonly DBClusterMembers?: [];
+  readonly VpcSecurityGroups?: [];
+  readonly HostedZoneId?: string;
+  readonly StorageEncrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly DbClusterResourceId?: string;
+  readonly DBClusterArn?: string;
+  readonly AssociatedRoles?: [];
+  readonly ClusterCreateTime?: Date;
+  readonly EnabledCloudwatchLogsExports?: [];
+  readonly DeletionProtection?: boolean;
+}
+
+export interface DBClusterAlreadyExistsFault {
+}
+
+export interface DBClusterMember {
+  readonly DBInstanceIdentifier?: string;
+  readonly IsClusterWriter?: boolean;
+  readonly DBClusterParameterGroupStatus?: string;
+  readonly PromotionTier?: number;
+}
+
+export interface DBClusterMessage {
+  readonly Marker?: string;
+  readonly DBClusters?: [];
+}
+
+export interface DBClusterNotFoundFault {
+}
+
+export interface DBClusterParameterGroup {
+  readonly DBClusterParameterGroupName?: string;
+  readonly DBParameterGroupFamily?: string;
+  readonly Description?: string;
+  readonly DBClusterParameterGroupArn?: string;
+}
+
+export interface DBClusterParameterGroupDetails {
+  readonly Parameters?: [];
+  readonly Marker?: string;
+}
+
+export interface DBClusterParameterGroupNameMessage {
+  readonly DBClusterParameterGroupName?: string;
+}
+
+export interface DBClusterParameterGroupNotFoundFault {
+}
+
+export interface DBClusterParameterGroupsMessage {
+  readonly Marker?: string;
+  readonly DBClusterParameterGroups?: [];
+}
+
+export interface DBClusterQuotaExceededFault {
+}
+
+export interface DBClusterRole {
+  readonly RoleArn?: string;
+  readonly Status?: string;
+}
+
+export interface DBClusterSnapshot {
+  readonly AvailabilityZones?: [];
+  readonly DBClusterSnapshotIdentifier?: string;
+  readonly DBClusterIdentifier?: string;
+  readonly SnapshotCreateTime?: Date;
+  readonly Engine?: string;
+  readonly Status?: string;
+  readonly Port?: number;
+  readonly VpcId?: string;
+  readonly ClusterCreateTime?: Date;
+  readonly MasterUsername?: string;
+  readonly EngineVersion?: string;
+  readonly SnapshotType?: string;
+  readonly PercentProgress?: number;
+  readonly StorageEncrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly DBClusterSnapshotArn?: string;
+  readonly SourceDBClusterSnapshotArn?: string;
+}
+
+export interface DBClusterSnapshotAlreadyExistsFault {
+}
+
+export interface DBClusterSnapshotAttribute {
+  readonly AttributeName?: string;
+  readonly AttributeValues?: [];
+}
+
+export interface DBClusterSnapshotAttributesResult {
+  readonly DBClusterSnapshotIdentifier?: string;
+  readonly DBClusterSnapshotAttributes?: [];
+}
+
+export interface DBClusterSnapshotMessage {
+  readonly Marker?: string;
+  readonly DBClusterSnapshots?: [];
+}
+
+export interface DBClusterSnapshotNotFoundFault {
+}
+
+export interface DBEngineVersion {
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly DBParameterGroupFamily?: string;
+  readonly DBEngineDescription?: string;
+  readonly DBEngineVersionDescription?: string;
+  readonly ValidUpgradeTarget?: [];
+  readonly ExportableLogTypes?: [];
+  readonly SupportsLogExportsToCloudwatchLogs?: boolean;
+}
+
+export interface DBEngineVersionMessage {
+  readonly Marker?: string;
+  readonly DBEngineVersions?: [];
+}
+
+export interface DBInstance {
+  readonly DBInstanceIdentifier?: string;
+  readonly DBInstanceClass?: string;
+  readonly Engine?: string;
+  readonly DBInstanceStatus?: string;
+  readonly Endpoint?: Endpoint;
+  readonly InstanceCreateTime?: Date;
+  readonly PreferredBackupWindow?: string;
+  readonly BackupRetentionPeriod?: number;
+  readonly VpcSecurityGroups?: [];
+  readonly AvailabilityZone?: string;
+  readonly DBSubnetGroup?: DBSubnetGroup;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly PendingModifiedValues?: PendingModifiedValues;
+  readonly LatestRestorableTime?: Date;
+  readonly EngineVersion?: string;
+  readonly AutoMinorVersionUpgrade?: boolean;
+  readonly PubliclyAccessible?: boolean;
+  readonly StatusInfos?: [];
+  readonly DBClusterIdentifier?: string;
+  readonly StorageEncrypted?: boolean;
+  readonly KmsKeyId?: string;
+  readonly DbiResourceId?: string;
+  readonly CACertificateIdentifier?: string;
+  readonly PromotionTier?: number;
+  readonly DBInstanceArn?: string;
+  readonly EnabledCloudwatchLogsExports?: [];
+}
+
+export interface DBInstanceAlreadyExistsFault {
+}
+
+export interface DBInstanceMessage {
+  readonly Marker?: string;
+  readonly DBInstances?: [];
+}
+
+export interface DBInstanceNotFoundFault {
+}
+
+export interface DBInstanceStatusInfo {
+  readonly StatusType?: string;
+  readonly Normal?: boolean;
+  readonly Status?: string;
+  readonly Message?: string;
+}
+
+export interface DBParameterGroupAlreadyExistsFault {
+}
+
+export interface DBParameterGroupNotFoundFault {
+}
+
+export interface DBParameterGroupQuotaExceededFault {
+}
+
+export interface DBSecurityGroupNotFoundFault {
+}
+
+export interface DBSnapshotAlreadyExistsFault {
+}
+
+export interface DBSnapshotNotFoundFault {
+}
+
+export interface DBSubnetGroup {
+  readonly DBSubnetGroupName?: string;
+  readonly DBSubnetGroupDescription?: string;
+  readonly VpcId?: string;
+  readonly SubnetGroupStatus?: string;
+  readonly Subnets?: [];
+  readonly DBSubnetGroupArn?: string;
+}
+
+export interface DBSubnetGroupAlreadyExistsFault {
+}
+
+export interface DBSubnetGroupDoesNotCoverEnoughAZs {
+}
+
+export interface DBSubnetGroupMessage {
+  readonly Marker?: string;
+  readonly DBSubnetGroups?: [];
+}
+
+export interface DBSubnetGroupNotFoundFault {
+}
+
+export interface DBSubnetGroupQuotaExceededFault {
+}
+
+export interface DBSubnetQuotaExceededFault {
+}
+
+export interface DBUpgradeDependencyFailureFault {
+}
+
+export interface DeleteDBClusterMessage {
   readonly DBClusterIdentifier: string;
-  readonly DBClusterParameterGroup: string;
-  readonly DBSubnetGroup: string;
-  readonly Status: string;
-  readonly PercentProgress: string;
-  readonly EarliestRestorableTime: Date;
-  readonly Endpoint: string;
-  readonly ReaderEndpoint: string;
-  readonly MultiAZ: boolean;
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly LatestRestorableTime: Date;
-  readonly Port: number;
-  readonly MasterUsername: string;
-  readonly PreferredBackupWindow: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly ReplicationSourceIdentifier: string;
-  readonly ReadReplicaIdentifiers: [];
-  readonly DBClusterMembers: [];
-  readonly VpcSecurityGroups: [];
-  readonly HostedZoneId: string;
-  readonly StorageEncrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly DbClusterResourceId: string;
-  readonly DBClusterArn: string;
-  readonly AssociatedRoles: [];
-  readonly ClusterCreateTime: Date;
-  readonly EnabledCloudwatchLogsExports: [];
-  readonly DeletionProtection: boolean;
+  readonly SkipFinalSnapshot?: boolean;
+  readonly FinalDBSnapshotIdentifier?: string;
 }
 
-interface DBClusterAlreadyExistsFault {
-}
-
-interface DBClusterMember {
-  readonly DBInstanceIdentifier: string;
-  readonly IsClusterWriter: boolean;
-  readonly DBClusterParameterGroupStatus: string;
-  readonly PromotionTier: number;
-}
-
-interface DBClusterMessage {
-  readonly Marker: string;
-  readonly DBClusters: [];
-}
-
-interface DBClusterNotFoundFault {
-}
-
-interface DBClusterParameterGroup {
+export interface DeleteDBClusterParameterGroupMessage {
   readonly DBClusterParameterGroupName: string;
-  readonly DBParameterGroupFamily: string;
-  readonly Description: string;
-  readonly DBClusterParameterGroupArn: string;
 }
 
-interface DBClusterParameterGroupDetails {
-  readonly Parameters: [];
-  readonly Marker: string;
+export interface DeleteDBClusterResult {
+  readonly DBCluster?: DBCluster;
 }
 
-interface DBClusterParameterGroupNameMessage {
-  readonly DBClusterParameterGroupName: string;
-}
-
-interface DBClusterParameterGroupNotFoundFault {
-}
-
-interface DBClusterParameterGroupsMessage {
-  readonly Marker: string;
-  readonly DBClusterParameterGroups: [];
-}
-
-interface DBClusterQuotaExceededFault {
-}
-
-interface DBClusterRole {
-  readonly RoleArn: string;
-  readonly Status: string;
-}
-
-interface DBClusterSnapshot {
-  readonly AvailabilityZones: [];
+export interface DeleteDBClusterSnapshotMessage {
   readonly DBClusterSnapshotIdentifier: string;
-  readonly DBClusterIdentifier: string;
-  readonly SnapshotCreateTime: Date;
-  readonly Engine: string;
-  readonly Status: string;
-  readonly Port: number;
-  readonly VpcId: string;
-  readonly ClusterCreateTime: Date;
-  readonly MasterUsername: string;
-  readonly EngineVersion: string;
-  readonly SnapshotType: string;
-  readonly PercentProgress: number;
-  readonly StorageEncrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly DBClusterSnapshotArn: string;
-  readonly SourceDBClusterSnapshotArn: string;
 }
 
-interface DBClusterSnapshotAlreadyExistsFault {
+export interface DeleteDBClusterSnapshotResult {
+  readonly DBClusterSnapshot?: DBClusterSnapshot;
 }
 
-interface DBClusterSnapshotAttribute {
-  readonly AttributeName: string;
-  readonly AttributeValues: [];
-}
-
-interface DBClusterSnapshotAttributesResult {
-  readonly DBClusterSnapshotIdentifier: string;
-  readonly DBClusterSnapshotAttributes: [];
-}
-
-interface DBClusterSnapshotMessage {
-  readonly Marker: string;
-  readonly DBClusterSnapshots: [];
-}
-
-interface DBClusterSnapshotNotFoundFault {
-}
-
-interface DBEngineVersion {
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly DBParameterGroupFamily: string;
-  readonly DBEngineDescription: string;
-  readonly DBEngineVersionDescription: string;
-  readonly ValidUpgradeTarget: [];
-  readonly ExportableLogTypes: [];
-  readonly SupportsLogExportsToCloudwatchLogs: boolean;
-}
-
-interface DBEngineVersionMessage {
-  readonly Marker: string;
-  readonly DBEngineVersions: [];
-}
-
-interface DBInstance {
+export interface DeleteDBInstanceMessage {
   readonly DBInstanceIdentifier: string;
-  readonly DBInstanceClass: string;
-  readonly Engine: string;
-  readonly DBInstanceStatus: string;
-  readonly Endpoint: Endpoint;
-  readonly InstanceCreateTime: Date;
-  readonly PreferredBackupWindow: string;
-  readonly BackupRetentionPeriod: number;
-  readonly VpcSecurityGroups: [];
-  readonly AvailabilityZone: string;
-  readonly DBSubnetGroup: DBSubnetGroup;
-  readonly PreferredMaintenanceWindow: string;
-  readonly PendingModifiedValues: PendingModifiedValues;
-  readonly LatestRestorableTime: Date;
-  readonly EngineVersion: string;
-  readonly AutoMinorVersionUpgrade: boolean;
-  readonly PubliclyAccessible: boolean;
-  readonly StatusInfos: [];
-  readonly DBClusterIdentifier: string;
-  readonly StorageEncrypted: boolean;
-  readonly KmsKeyId: string;
-  readonly DbiResourceId: string;
-  readonly CACertificateIdentifier: string;
-  readonly PromotionTier: number;
-  readonly DBInstanceArn: string;
-  readonly EnabledCloudwatchLogsExports: [];
 }
 
-interface DBInstanceAlreadyExistsFault {
+export interface DeleteDBInstanceResult {
+  readonly DBInstance?: DBInstance;
 }
 
-interface DBInstanceMessage {
-  readonly Marker: string;
-  readonly DBInstances: [];
-}
-
-interface DBInstanceNotFoundFault {
-}
-
-interface DBInstanceStatusInfo {
-  readonly StatusType: string;
-  readonly Normal: boolean;
-  readonly Status: string;
-  readonly Message: string;
-}
-
-interface DBParameterGroupAlreadyExistsFault {
-}
-
-interface DBParameterGroupNotFoundFault {
-}
-
-interface DBParameterGroupQuotaExceededFault {
-}
-
-interface DBSecurityGroupNotFoundFault {
-}
-
-interface DBSnapshotAlreadyExistsFault {
-}
-
-interface DBSnapshotNotFoundFault {
-}
-
-interface DBSubnetGroup {
+export interface DeleteDBSubnetGroupMessage {
   readonly DBSubnetGroupName: string;
-  readonly DBSubnetGroupDescription: string;
-  readonly VpcId: string;
-  readonly SubnetGroupStatus: string;
-  readonly Subnets: [];
-  readonly DBSubnetGroupArn: string;
 }
 
-interface DBSubnetGroupAlreadyExistsFault {
-}
-
-interface DBSubnetGroupDoesNotCoverEnoughAZs {
-}
-
-interface DBSubnetGroupMessage {
-  readonly Marker: string;
-  readonly DBSubnetGroups: [];
-}
-
-interface DBSubnetGroupNotFoundFault {
-}
-
-interface DBSubnetGroupQuotaExceededFault {
-}
-
-interface DBSubnetQuotaExceededFault {
-}
-
-interface DBUpgradeDependencyFailureFault {
-}
-
-interface DeleteDBClusterMessage {
-  readonly DBClusterIdentifier: string;
-  readonly SkipFinalSnapshot: boolean;
-  readonly FinalDBSnapshotIdentifier: string;
-}
-
-interface DeleteDBClusterParameterGroupMessage {
-  readonly DBClusterParameterGroupName: string;
-}
-
-interface DeleteDBClusterResult {
-  readonly DBCluster: DBCluster;
-}
-
-interface DeleteDBClusterSnapshotMessage {
-  readonly DBClusterSnapshotIdentifier: string;
-}
-
-interface DeleteDBClusterSnapshotResult {
-  readonly DBClusterSnapshot: DBClusterSnapshot;
-}
-
-interface DeleteDBInstanceMessage {
-  readonly DBInstanceIdentifier: string;
-}
-
-interface DeleteDBInstanceResult {
-  readonly DBInstance: DBInstance;
-}
-
-interface DeleteDBSubnetGroupMessage {
-  readonly DBSubnetGroupName: string;
-}
-
-interface DeleteEventSubscriptionMessage {
+export interface DeleteEventSubscriptionMessage {
   readonly SubscriptionName: string;
 }
 
-interface DeleteEventSubscriptionResult {
-  readonly EventSubscription: EventSubscription;
+export interface DeleteEventSubscriptionResult {
+  readonly EventSubscription?: EventSubscription;
 }
 
-interface DeleteGlobalClusterMessage {
+export interface DeleteGlobalClusterMessage {
   readonly GlobalClusterIdentifier: string;
 }
 
-interface DeleteGlobalClusterResult {
-  readonly GlobalCluster: GlobalCluster;
+export interface DeleteGlobalClusterResult {
+  readonly GlobalCluster?: GlobalCluster;
 }
 
-interface DescribeCertificatesMessage {
-  readonly CertificateIdentifier: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeCertificatesMessage {
+  readonly CertificateIdentifier?: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeDBClusterParameterGroupsMessage {
+export interface DescribeDBClusterParameterGroupsMessage {
+  readonly DBClusterParameterGroupName?: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+}
+
+export interface DescribeDBClusterParametersMessage {
   readonly DBClusterParameterGroupName: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+  readonly Source?: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeDBClusterParametersMessage {
-  readonly DBClusterParameterGroupName: string;
-  readonly Source: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
-}
-
-interface DescribeDBClusterSnapshotAttributesMessage {
+export interface DescribeDBClusterSnapshotAttributesMessage {
   readonly DBClusterSnapshotIdentifier: string;
 }
 
-interface DescribeDBClusterSnapshotAttributesResult {
-  readonly DBClusterSnapshotAttributesResult: DBClusterSnapshotAttributesResult;
+export interface DescribeDBClusterSnapshotAttributesResult {
+  readonly DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult;
 }
 
-interface DescribeDBClusterSnapshotsMessage {
-  readonly DBClusterIdentifier: string;
-  readonly DBClusterSnapshotIdentifier: string;
-  readonly SnapshotType: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly IncludeShared: boolean;
-  readonly IncludePublic: boolean;
+export interface DescribeDBClusterSnapshotsMessage {
+  readonly DBClusterIdentifier?: string;
+  readonly DBClusterSnapshotIdentifier?: string;
+  readonly SnapshotType?: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly IncludeShared?: boolean;
+  readonly IncludePublic?: boolean;
 }
 
-interface DescribeDBClustersMessage {
-  readonly DBClusterIdentifier: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribeDBClustersMessage {
+  readonly DBClusterIdentifier?: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeDBEngineVersionsMessage {
+export interface DescribeDBEngineVersionsMessage {
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly DBParameterGroupFamily?: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+  readonly DefaultOnly?: boolean;
+  readonly ListSupportedCharacterSets?: boolean;
+  readonly ListSupportedTimezones?: boolean;
+}
+
+export interface DescribeDBInstancesMessage {
+  readonly DBInstanceIdentifier?: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+}
+
+export interface DescribeDBSubnetGroupsMessage {
+  readonly DBSubnetGroupName?: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+}
+
+export interface DescribeEngineDefaultClusterParametersMessage {
+  readonly DBParameterGroupFamily: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+}
+
+export interface DescribeEngineDefaultClusterParametersResult {
+  readonly EngineDefaults?: EngineDefaults;
+}
+
+export interface DescribeEventCategoriesMessage {
+  readonly SourceType?: string;
+  readonly Filters?: [];
+}
+
+export interface DescribeEventSubscriptionsMessage {
+  readonly SubscriptionName?: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+}
+
+export interface DescribeEventsMessage {
+  readonly SourceIdentifier?: string;
+  readonly SourceType?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Duration?: number;
+  readonly EventCategories?: [];
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+}
+
+export interface DescribeGlobalClustersMessage {
+  readonly GlobalClusterIdentifier?: string;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
+}
+
+export interface DescribeOrderableDBInstanceOptionsMessage {
   readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly DBParameterGroupFamily: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
-  readonly DefaultOnly: boolean;
-  readonly ListSupportedCharacterSets: boolean;
-  readonly ListSupportedTimezones: boolean;
+  readonly EngineVersion?: string;
+  readonly DBInstanceClass?: string;
+  readonly LicenseModel?: string;
+  readonly Vpc?: boolean;
+  readonly Filters?: [];
+  readonly MaxRecords?: number;
+  readonly Marker?: string;
 }
 
-interface DescribeDBInstancesMessage {
-  readonly DBInstanceIdentifier: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface DescribePendingMaintenanceActionsMessage {
+  readonly ResourceIdentifier?: string;
+  readonly Filters?: [];
+  readonly Marker?: string;
+  readonly MaxRecords?: number;
 }
 
-interface DescribeDBSubnetGroupsMessage {
-  readonly DBSubnetGroupName: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface Endpoint {
+  readonly Address?: string;
+  readonly Port?: number;
+  readonly HostedZoneId?: string;
 }
 
-interface DescribeEngineDefaultClusterParametersMessage {
-  readonly DBParameterGroupFamily: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface EngineDefaults {
+  readonly DBParameterGroupFamily?: string;
+  readonly Marker?: string;
+  readonly Parameters?: [];
 }
 
-interface DescribeEngineDefaultClusterParametersResult {
-  readonly EngineDefaults: EngineDefaults;
+export interface Event {
+  readonly SourceIdentifier?: string;
+  readonly SourceType?: string;
+  readonly Message?: string;
+  readonly EventCategories?: [];
+  readonly Date?: Date;
+  readonly SourceArn?: string;
 }
 
-interface DescribeEventCategoriesMessage {
-  readonly SourceType: string;
-  readonly Filters: [];
+export interface EventCategoriesMap {
+  readonly SourceType?: string;
+  readonly EventCategories?: [];
 }
 
-interface DescribeEventSubscriptionsMessage {
-  readonly SubscriptionName: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface EventCategoriesMessage {
+  readonly EventCategoriesMapList?: [];
 }
 
-interface DescribeEventsMessage {
-  readonly SourceIdentifier: string;
-  readonly SourceType: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Duration: number;
-  readonly EventCategories: [];
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface EventSubscription {
+  readonly CustomerAwsId?: string;
+  readonly CustSubscriptionId?: string;
+  readonly SnsTopicArn?: string;
+  readonly Status?: string;
+  readonly SubscriptionCreationTime?: string;
+  readonly SourceType?: string;
+  readonly SourceIdsList?: [];
+  readonly EventCategoriesList?: [];
+  readonly Enabled?: boolean;
+  readonly EventSubscriptionArn?: string;
 }
 
-interface DescribeGlobalClustersMessage {
-  readonly GlobalClusterIdentifier: string;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface EventSubscriptionQuotaExceededFault {
 }
 
-interface DescribeOrderableDBInstanceOptionsMessage {
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly DBInstanceClass: string;
-  readonly LicenseModel: string;
-  readonly Vpc: boolean;
-  readonly Filters: [];
-  readonly MaxRecords: number;
-  readonly Marker: string;
+export interface EventSubscriptionsMessage {
+  readonly Marker?: string;
+  readonly EventSubscriptionsList?: [];
 }
 
-interface DescribePendingMaintenanceActionsMessage {
-  readonly ResourceIdentifier: string;
-  readonly Filters: [];
-  readonly Marker: string;
-  readonly MaxRecords: number;
+export interface EventsMessage {
+  readonly Marker?: string;
+  readonly Events?: [];
 }
 
-interface Endpoint {
-  readonly Address: string;
-  readonly Port: number;
-  readonly HostedZoneId: string;
+export interface FailoverDBClusterMessage {
+  readonly DBClusterIdentifier?: string;
+  readonly TargetDBInstanceIdentifier?: string;
 }
 
-interface EngineDefaults {
-  readonly DBParameterGroupFamily: string;
-  readonly Marker: string;
-  readonly Parameters: [];
+export interface FailoverDBClusterResult {
+  readonly DBCluster?: DBCluster;
 }
 
-interface Event {
-  readonly SourceIdentifier: string;
-  readonly SourceType: string;
-  readonly Message: string;
-  readonly EventCategories: [];
-  readonly Date: Date;
-  readonly SourceArn: string;
-}
-
-interface EventCategoriesMap {
-  readonly SourceType: string;
-  readonly EventCategories: [];
-}
-
-interface EventCategoriesMessage {
-  readonly EventCategoriesMapList: [];
-}
-
-interface EventSubscription {
-  readonly CustomerAwsId: string;
-  readonly CustSubscriptionId: string;
-  readonly SnsTopicArn: string;
-  readonly Status: string;
-  readonly SubscriptionCreationTime: string;
-  readonly SourceType: string;
-  readonly SourceIdsList: [];
-  readonly EventCategoriesList: [];
-  readonly Enabled: boolean;
-  readonly EventSubscriptionArn: string;
-}
-
-interface EventSubscriptionQuotaExceededFault {
-}
-
-interface EventSubscriptionsMessage {
-  readonly Marker: string;
-  readonly EventSubscriptionsList: [];
-}
-
-interface EventsMessage {
-  readonly Marker: string;
-  readonly Events: [];
-}
-
-interface FailoverDBClusterMessage {
-  readonly DBClusterIdentifier: string;
-  readonly TargetDBInstanceIdentifier: string;
-}
-
-interface FailoverDBClusterResult {
-  readonly DBCluster: DBCluster;
-}
-
-interface Filter {
+export interface Filter {
   readonly Name: string;
   readonly Values: [];
 }
 
-interface GlobalCluster {
-  readonly GlobalClusterIdentifier: string;
-  readonly GlobalClusterResourceId: string;
-  readonly GlobalClusterArn: string;
-  readonly Status: string;
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly DatabaseName: string;
-  readonly StorageEncrypted: boolean;
-  readonly DeletionProtection: boolean;
-  readonly GlobalClusterMembers: [];
+export interface GlobalCluster {
+  readonly GlobalClusterIdentifier?: string;
+  readonly GlobalClusterResourceId?: string;
+  readonly GlobalClusterArn?: string;
+  readonly Status?: string;
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly DatabaseName?: string;
+  readonly StorageEncrypted?: boolean;
+  readonly DeletionProtection?: boolean;
+  readonly GlobalClusterMembers?: [];
 }
 
-interface GlobalClusterAlreadyExistsFault {
+export interface GlobalClusterAlreadyExistsFault {
 }
 
-interface GlobalClusterMember {
-  readonly DBClusterArn: string;
-  readonly Readers: [];
-  readonly IsWriter: boolean;
+export interface GlobalClusterMember {
+  readonly DBClusterArn?: string;
+  readonly Readers?: [];
+  readonly IsWriter?: boolean;
 }
 
-interface GlobalClusterNotFoundFault {
+export interface GlobalClusterNotFoundFault {
 }
 
-interface GlobalClusterQuotaExceededFault {
+export interface GlobalClusterQuotaExceededFault {
 }
 
-interface GlobalClustersMessage {
-  readonly Marker: string;
-  readonly GlobalClusters: [];
+export interface GlobalClustersMessage {
+  readonly Marker?: string;
+  readonly GlobalClusters?: [];
 }
 
-interface InstanceQuotaExceededFault {
+export interface InstanceQuotaExceededFault {
 }
 
-interface InsufficientDBClusterCapacityFault {
+export interface InsufficientDBClusterCapacityFault {
 }
 
-interface InsufficientDBInstanceCapacityFault {
+export interface InsufficientDBInstanceCapacityFault {
 }
 
-interface InsufficientStorageClusterCapacityFault {
+export interface InsufficientStorageClusterCapacityFault {
 }
 
-interface InvalidDBClusterSnapshotStateFault {
+export interface InvalidDBClusterSnapshotStateFault {
 }
 
-interface InvalidDBClusterStateFault {
+export interface InvalidDBClusterStateFault {
 }
 
-interface InvalidDBInstanceStateFault {
+export interface InvalidDBInstanceStateFault {
 }
 
-interface InvalidDBParameterGroupStateFault {
+export interface InvalidDBParameterGroupStateFault {
 }
 
-interface InvalidDBSecurityGroupStateFault {
+export interface InvalidDBSecurityGroupStateFault {
 }
 
-interface InvalidDBSnapshotStateFault {
+export interface InvalidDBSnapshotStateFault {
 }
 
-interface InvalidDBSubnetGroupStateFault {
+export interface InvalidDBSubnetGroupStateFault {
 }
 
-interface InvalidDBSubnetStateFault {
+export interface InvalidDBSubnetStateFault {
 }
 
-interface InvalidEventSubscriptionStateFault {
+export interface InvalidEventSubscriptionStateFault {
 }
 
-interface InvalidGlobalClusterStateFault {
+export interface InvalidGlobalClusterStateFault {
 }
 
-interface InvalidRestoreFault {
+export interface InvalidRestoreFault {
 }
 
-interface InvalidSubnet {
+export interface InvalidSubnet {
 }
 
-interface InvalidVPCNetworkStateFault {
+export interface InvalidVPCNetworkStateFault {
 }
 
-interface KMSKeyNotAccessibleFault {
+export interface KMSKeyNotAccessibleFault {
 }
 
-interface ListTagsForResourceMessage {
+export interface ListTagsForResourceMessage {
   readonly ResourceName: string;
-  readonly Filters: [];
+  readonly Filters?: [];
 }
 
-interface ModifyDBClusterMessage {
+export interface ModifyDBClusterMessage {
   readonly DBClusterIdentifier: string;
-  readonly NewDBClusterIdentifier: string;
-  readonly ApplyImmediately: boolean;
-  readonly BackupRetentionPeriod: number;
-  readonly DBClusterParameterGroupName: string;
-  readonly VpcSecurityGroupIds: [];
-  readonly Port: number;
-  readonly MasterUserPassword: string;
-  readonly PreferredBackupWindow: string;
-  readonly PreferredMaintenanceWindow: string;
-  readonly CloudwatchLogsExportConfiguration: CloudwatchLogsExportConfiguration;
-  readonly EngineVersion: string;
-  readonly DeletionProtection: boolean;
+  readonly NewDBClusterIdentifier?: string;
+  readonly ApplyImmediately?: boolean;
+  readonly BackupRetentionPeriod?: number;
+  readonly DBClusterParameterGroupName?: string;
+  readonly VpcSecurityGroupIds?: [];
+  readonly Port?: number;
+  readonly MasterUserPassword?: string;
+  readonly PreferredBackupWindow?: string;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration;
+  readonly EngineVersion?: string;
+  readonly DeletionProtection?: boolean;
 }
 
-interface ModifyDBClusterParameterGroupMessage {
+export interface ModifyDBClusterParameterGroupMessage {
   readonly DBClusterParameterGroupName: string;
   readonly Parameters: [];
 }
 
-interface ModifyDBClusterResult {
-  readonly DBCluster: DBCluster;
+export interface ModifyDBClusterResult {
+  readonly DBCluster?: DBCluster;
 }
 
-interface ModifyDBClusterSnapshotAttributeMessage {
+export interface ModifyDBClusterSnapshotAttributeMessage {
   readonly DBClusterSnapshotIdentifier: string;
   readonly AttributeName: string;
-  readonly ValuesToAdd: [];
-  readonly ValuesToRemove: [];
+  readonly ValuesToAdd?: [];
+  readonly ValuesToRemove?: [];
 }
 
-interface ModifyDBClusterSnapshotAttributeResult {
-  readonly DBClusterSnapshotAttributesResult: DBClusterSnapshotAttributesResult;
+export interface ModifyDBClusterSnapshotAttributeResult {
+  readonly DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult;
 }
 
-interface ModifyDBInstanceMessage {
+export interface ModifyDBInstanceMessage {
   readonly DBInstanceIdentifier: string;
-  readonly DBInstanceClass: string;
-  readonly ApplyImmediately: boolean;
-  readonly PreferredMaintenanceWindow: string;
-  readonly AutoMinorVersionUpgrade: boolean;
-  readonly NewDBInstanceIdentifier: string;
-  readonly CACertificateIdentifier: string;
-  readonly PromotionTier: number;
+  readonly DBInstanceClass?: string;
+  readonly ApplyImmediately?: boolean;
+  readonly PreferredMaintenanceWindow?: string;
+  readonly AutoMinorVersionUpgrade?: boolean;
+  readonly NewDBInstanceIdentifier?: string;
+  readonly CACertificateIdentifier?: string;
+  readonly PromotionTier?: number;
 }
 
-interface ModifyDBInstanceResult {
-  readonly DBInstance: DBInstance;
+export interface ModifyDBInstanceResult {
+  readonly DBInstance?: DBInstance;
 }
 
-interface ModifyDBSubnetGroupMessage {
+export interface ModifyDBSubnetGroupMessage {
   readonly DBSubnetGroupName: string;
-  readonly DBSubnetGroupDescription: string;
+  readonly DBSubnetGroupDescription?: string;
   readonly SubnetIds: [];
 }
 
-interface ModifyDBSubnetGroupResult {
-  readonly DBSubnetGroup: DBSubnetGroup;
+export interface ModifyDBSubnetGroupResult {
+  readonly DBSubnetGroup?: DBSubnetGroup;
 }
 
-interface ModifyEventSubscriptionMessage {
+export interface ModifyEventSubscriptionMessage {
   readonly SubscriptionName: string;
-  readonly SnsTopicArn: string;
-  readonly SourceType: string;
-  readonly EventCategories: [];
-  readonly Enabled: boolean;
+  readonly SnsTopicArn?: string;
+  readonly SourceType?: string;
+  readonly EventCategories?: [];
+  readonly Enabled?: boolean;
 }
 
-interface ModifyEventSubscriptionResult {
-  readonly EventSubscription: EventSubscription;
+export interface ModifyEventSubscriptionResult {
+  readonly EventSubscription?: EventSubscription;
 }
 
-interface ModifyGlobalClusterMessage {
+export interface ModifyGlobalClusterMessage {
   readonly GlobalClusterIdentifier: string;
-  readonly NewGlobalClusterIdentifier: string;
-  readonly DeletionProtection: boolean;
+  readonly NewGlobalClusterIdentifier?: string;
+  readonly DeletionProtection?: boolean;
 }
 
-interface ModifyGlobalClusterResult {
-  readonly GlobalCluster: GlobalCluster;
+export interface ModifyGlobalClusterResult {
+  readonly GlobalCluster?: GlobalCluster;
 }
 
-interface OrderableDBInstanceOption {
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly DBInstanceClass: string;
-  readonly LicenseModel: string;
-  readonly AvailabilityZones: [];
-  readonly Vpc: boolean;
+export interface OrderableDBInstanceOption {
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly DBInstanceClass?: string;
+  readonly LicenseModel?: string;
+  readonly AvailabilityZones?: [];
+  readonly Vpc?: boolean;
 }
 
-interface OrderableDBInstanceOptionsMessage {
-  readonly OrderableDBInstanceOptions: [];
-  readonly Marker: string;
+export interface OrderableDBInstanceOptionsMessage {
+  readonly OrderableDBInstanceOptions?: [];
+  readonly Marker?: string;
 }
 
-interface Parameter {
-  readonly ParameterName: string;
-  readonly ParameterValue: string;
-  readonly Description: string;
-  readonly Source: string;
-  readonly ApplyType: string;
-  readonly DataType: string;
-  readonly AllowedValues: string;
-  readonly IsModifiable: boolean;
-  readonly MinimumEngineVersion: string;
-  readonly ApplyMethod: string;
+export interface Parameter {
+  readonly ParameterName?: string;
+  readonly ParameterValue?: string;
+  readonly Description?: string;
+  readonly Source?: string;
+  readonly ApplyType?: string;
+  readonly DataType?: string;
+  readonly AllowedValues?: string;
+  readonly IsModifiable?: boolean;
+  readonly MinimumEngineVersion?: string;
+  readonly ApplyMethod?: string;
 }
 
-interface PendingCloudwatchLogsExports {
-  readonly LogTypesToEnable: [];
-  readonly LogTypesToDisable: [];
+export interface PendingCloudwatchLogsExports {
+  readonly LogTypesToEnable?: [];
+  readonly LogTypesToDisable?: [];
 }
 
-interface PendingMaintenanceAction {
-  readonly Action: string;
-  readonly AutoAppliedAfterDate: Date;
-  readonly ForcedApplyDate: Date;
-  readonly OptInStatus: string;
-  readonly CurrentApplyDate: Date;
-  readonly Description: string;
+export interface PendingMaintenanceAction {
+  readonly Action?: string;
+  readonly AutoAppliedAfterDate?: Date;
+  readonly ForcedApplyDate?: Date;
+  readonly OptInStatus?: string;
+  readonly CurrentApplyDate?: Date;
+  readonly Description?: string;
 }
 
-interface PendingMaintenanceActionsMessage {
-  readonly PendingMaintenanceActions: [];
-  readonly Marker: string;
+export interface PendingMaintenanceActionsMessage {
+  readonly PendingMaintenanceActions?: [];
+  readonly Marker?: string;
 }
 
-interface PendingModifiedValues {
-  readonly DBInstanceClass: string;
-  readonly AllocatedStorage: number;
-  readonly MasterUserPassword: string;
-  readonly Port: number;
-  readonly BackupRetentionPeriod: number;
-  readonly MultiAZ: boolean;
-  readonly EngineVersion: string;
-  readonly LicenseModel: string;
-  readonly Iops: number;
+export interface PendingModifiedValues {
+  readonly DBInstanceClass?: string;
+  readonly AllocatedStorage?: number;
+  readonly MasterUserPassword?: string;
+  readonly Port?: number;
+  readonly BackupRetentionPeriod?: number;
+  readonly MultiAZ?: boolean;
+  readonly EngineVersion?: string;
+  readonly LicenseModel?: string;
+  readonly Iops?: number;
+  readonly DBInstanceIdentifier?: string;
+  readonly StorageType?: string;
+  readonly CACertificateIdentifier?: string;
+  readonly DBSubnetGroupName?: string;
+  readonly PendingCloudwatchLogsExports?: PendingCloudwatchLogsExports;
+}
+
+export interface RebootDBInstanceMessage {
   readonly DBInstanceIdentifier: string;
-  readonly StorageType: string;
-  readonly CACertificateIdentifier: string;
-  readonly DBSubnetGroupName: string;
-  readonly PendingCloudwatchLogsExports: PendingCloudwatchLogsExports;
+  readonly ForceFailover?: boolean;
 }
 
-interface RebootDBInstanceMessage {
-  readonly DBInstanceIdentifier: string;
-  readonly ForceFailover: boolean;
+export interface RebootDBInstanceResult {
+  readonly DBInstance?: DBInstance;
 }
 
-interface RebootDBInstanceResult {
-  readonly DBInstance: DBInstance;
-}
-
-interface RemoveFromGlobalClusterMessage {
+export interface RemoveFromGlobalClusterMessage {
   readonly GlobalClusterIdentifier: string;
   readonly DbClusterIdentifier: string;
 }
 
-interface RemoveFromGlobalClusterResult {
-  readonly GlobalCluster: GlobalCluster;
+export interface RemoveFromGlobalClusterResult {
+  readonly GlobalCluster?: GlobalCluster;
 }
 
-interface RemoveSourceIdentifierFromSubscriptionMessage {
+export interface RemoveSourceIdentifierFromSubscriptionMessage {
   readonly SubscriptionName: string;
   readonly SourceIdentifier: string;
 }
 
-interface RemoveSourceIdentifierFromSubscriptionResult {
-  readonly EventSubscription: EventSubscription;
+export interface RemoveSourceIdentifierFromSubscriptionResult {
+  readonly EventSubscription?: EventSubscription;
 }
 
-interface RemoveTagsFromResourceMessage {
+export interface RemoveTagsFromResourceMessage {
   readonly ResourceName: string;
   readonly TagKeys: [];
 }
 
-interface ResetDBClusterParameterGroupMessage {
+export interface ResetDBClusterParameterGroupMessage {
   readonly DBClusterParameterGroupName: string;
-  readonly ResetAllParameters: boolean;
-  readonly Parameters: [];
+  readonly ResetAllParameters?: boolean;
+  readonly Parameters?: [];
 }
 
-interface ResourceNotFoundFault {
+export interface ResourceNotFoundFault {
 }
 
-interface ResourcePendingMaintenanceActions {
-  readonly ResourceIdentifier: string;
-  readonly PendingMaintenanceActionDetails: [];
+export interface ResourcePendingMaintenanceActions {
+  readonly ResourceIdentifier?: string;
+  readonly PendingMaintenanceActionDetails?: [];
 }
 
-interface RestoreDBClusterFromSnapshotMessage {
-  readonly AvailabilityZones: [];
+export interface RestoreDBClusterFromSnapshotMessage {
+  readonly AvailabilityZones?: [];
   readonly DBClusterIdentifier: string;
   readonly SnapshotIdentifier: string;
   readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly Port: number;
-  readonly DBSubnetGroupName: string;
-  readonly VpcSecurityGroupIds: [];
-  readonly Tags: [];
-  readonly KmsKeyId: string;
-  readonly EnableCloudwatchLogsExports: [];
-  readonly DeletionProtection: boolean;
+  readonly EngineVersion?: string;
+  readonly Port?: number;
+  readonly DBSubnetGroupName?: string;
+  readonly VpcSecurityGroupIds?: [];
+  readonly Tags?: [];
+  readonly KmsKeyId?: string;
+  readonly EnableCloudwatchLogsExports?: [];
+  readonly DeletionProtection?: boolean;
 }
 
-interface RestoreDBClusterFromSnapshotResult {
-  readonly DBCluster: DBCluster;
+export interface RestoreDBClusterFromSnapshotResult {
+  readonly DBCluster?: DBCluster;
 }
 
-interface RestoreDBClusterToPointInTimeMessage {
+export interface RestoreDBClusterToPointInTimeMessage {
   readonly DBClusterIdentifier: string;
   readonly SourceDBClusterIdentifier: string;
-  readonly RestoreToTime: Date;
-  readonly UseLatestRestorableTime: boolean;
-  readonly Port: number;
-  readonly DBSubnetGroupName: string;
-  readonly VpcSecurityGroupIds: [];
-  readonly Tags: [];
-  readonly KmsKeyId: string;
-  readonly EnableCloudwatchLogsExports: [];
-  readonly DeletionProtection: boolean;
+  readonly RestoreToTime?: Date;
+  readonly UseLatestRestorableTime?: boolean;
+  readonly Port?: number;
+  readonly DBSubnetGroupName?: string;
+  readonly VpcSecurityGroupIds?: [];
+  readonly Tags?: [];
+  readonly KmsKeyId?: string;
+  readonly EnableCloudwatchLogsExports?: [];
+  readonly DeletionProtection?: boolean;
 }
 
-interface RestoreDBClusterToPointInTimeResult {
-  readonly DBCluster: DBCluster;
+export interface RestoreDBClusterToPointInTimeResult {
+  readonly DBCluster?: DBCluster;
 }
 
-interface SNSInvalidTopicFault {
+export interface SNSInvalidTopicFault {
 }
 
-interface SNSNoAuthorizationFault {
+export interface SNSNoAuthorizationFault {
 }
 
-interface SNSTopicArnNotFoundFault {
+export interface SNSTopicArnNotFoundFault {
 }
 
-interface SharedSnapshotQuotaExceededFault {
+export interface SharedSnapshotQuotaExceededFault {
 }
 
-interface SnapshotQuotaExceededFault {
+export interface SnapshotQuotaExceededFault {
 }
 
-interface SourceNotFoundFault {
+export interface SourceNotFoundFault {
 }
 
-interface StartDBClusterMessage {
+export interface StartDBClusterMessage {
   readonly DBClusterIdentifier: string;
 }
 
-interface StartDBClusterResult {
-  readonly DBCluster: DBCluster;
+export interface StartDBClusterResult {
+  readonly DBCluster?: DBCluster;
 }
 
-interface StopDBClusterMessage {
+export interface StopDBClusterMessage {
   readonly DBClusterIdentifier: string;
 }
 
-interface StopDBClusterResult {
-  readonly DBCluster: DBCluster;
+export interface StopDBClusterResult {
+  readonly DBCluster?: DBCluster;
 }
 
-interface StorageQuotaExceededFault {
+export interface StorageQuotaExceededFault {
 }
 
-interface StorageTypeNotSupportedFault {
+export interface StorageTypeNotSupportedFault {
 }
 
-interface Subnet {
-  readonly SubnetIdentifier: string;
-  readonly SubnetAvailabilityZone: AvailabilityZone;
-  readonly SubnetStatus: string;
+export interface Subnet {
+  readonly SubnetIdentifier?: string;
+  readonly SubnetAvailabilityZone?: AvailabilityZone;
+  readonly SubnetStatus?: string;
 }
 
-interface SubnetAlreadyInUse {
+export interface SubnetAlreadyInUse {
 }
 
-interface SubscriptionAlreadyExistFault {
+export interface SubscriptionAlreadyExistFault {
 }
 
-interface SubscriptionCategoryNotFoundFault {
+export interface SubscriptionCategoryNotFoundFault {
 }
 
-interface SubscriptionNotFoundFault {
+export interface SubscriptionNotFoundFault {
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TagListMessage {
-  readonly TagList: [];
+export interface TagListMessage {
+  readonly TagList?: [];
 }
 
-interface UpgradeTarget {
-  readonly Engine: string;
-  readonly EngineVersion: string;
-  readonly Description: string;
-  readonly AutoUpgrade: boolean;
-  readonly IsMajorVersionUpgrade: boolean;
+export interface UpgradeTarget {
+  readonly Engine?: string;
+  readonly EngineVersion?: string;
+  readonly Description?: string;
+  readonly AutoUpgrade?: boolean;
+  readonly IsMajorVersionUpgrade?: boolean;
 }
 
-interface VpcSecurityGroupMembership {
-  readonly VpcSecurityGroupId: string;
-  readonly Status: string;
+export interface VpcSecurityGroupMembership {
+  readonly VpcSecurityGroupId?: string;
+  readonly Status?: string;
 }
+
 

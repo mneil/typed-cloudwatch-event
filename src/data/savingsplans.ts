@@ -9,15 +9,18 @@ export interface CreateSavingsPlan {
   readonly clientToken?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface DeleteQueuedSavingsPlan {
   readonly savingsPlanId: string;
 }
+
 export interface DescribeSavingsPlanRates {
   readonly savingsPlanId: string;
   readonly filters?: [];
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DescribeSavingsPlans {
   readonly savingsPlanArns?: [];
   readonly savingsPlanIds?: [];
@@ -26,6 +29,7 @@ export interface DescribeSavingsPlans {
   readonly states?: [];
   readonly filters?: [];
 }
+
 export interface DescribeSavingsPlansOfferingRates {
   readonly savingsPlanOfferingIds?: [];
   readonly savingsPlanPaymentOptions?: [];
@@ -38,6 +42,7 @@ export interface DescribeSavingsPlansOfferingRates {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DescribeSavingsPlansOfferings {
   readonly offeringIds?: [];
   readonly paymentOptions?: [];
@@ -53,244 +58,246 @@ export interface DescribeSavingsPlansOfferings {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-
-
-interface CreateSavingsPlanRequest {
+export interface CreateSavingsPlanRequest {
   readonly savingsPlanOfferingId: string;
   readonly commitment: string;
-  readonly upfrontPaymentAmount: string;
-  readonly purchaseTime: Date;
-  readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly upfrontPaymentAmount?: string;
+  readonly purchaseTime?: Date;
+  readonly clientToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateSavingsPlanResponse {
+export interface CreateSavingsPlanResponse {
+  readonly savingsPlanId?: string;
+}
+
+export interface DeleteQueuedSavingsPlanRequest {
   readonly savingsPlanId: string;
 }
 
-interface DeleteQueuedSavingsPlanRequest {
+export interface DeleteQueuedSavingsPlanResponse {
+}
+
+export interface DescribeSavingsPlanRatesRequest {
   readonly savingsPlanId: string;
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DeleteQueuedSavingsPlanResponse {
+export interface DescribeSavingsPlanRatesResponse {
+  readonly savingsPlanId?: string;
+  readonly searchResults?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeSavingsPlanRatesRequest {
-  readonly savingsPlanId: string;
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface DescribeSavingsPlansOfferingRatesRequest {
+  readonly savingsPlanOfferingIds?: [];
+  readonly savingsPlanPaymentOptions?: [];
+  readonly savingsPlanTypes?: [];
+  readonly products?: [];
+  readonly serviceCodes?: [];
+  readonly usageTypes?: [];
+  readonly operations?: [];
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DescribeSavingsPlanRatesResponse {
-  readonly savingsPlanId: string;
-  readonly searchResults: [];
-  readonly nextToken: string;
+export interface DescribeSavingsPlansOfferingRatesResponse {
+  readonly searchResults?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeSavingsPlansOfferingRatesRequest {
-  readonly savingsPlanOfferingIds: [];
-  readonly savingsPlanPaymentOptions: [];
-  readonly savingsPlanTypes: [];
-  readonly products: [];
-  readonly serviceCodes: [];
-  readonly usageTypes: [];
-  readonly operations: [];
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface DescribeSavingsPlansOfferingsRequest {
+  readonly offeringIds?: [];
+  readonly paymentOptions?: [];
+  readonly productType?: string;
+  readonly planTypes?: [];
+  readonly durations?: [];
+  readonly currencies?: [];
+  readonly descriptions?: [];
+  readonly serviceCodes?: [];
+  readonly usageTypes?: [];
+  readonly operations?: [];
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DescribeSavingsPlansOfferingRatesResponse {
-  readonly searchResults: [];
-  readonly nextToken: string;
+export interface DescribeSavingsPlansOfferingsResponse {
+  readonly searchResults?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeSavingsPlansOfferingsRequest {
-  readonly offeringIds: [];
-  readonly paymentOptions: [];
-  readonly productType: string;
-  readonly planTypes: [];
-  readonly durations: [];
-  readonly currencies: [];
-  readonly descriptions: [];
-  readonly serviceCodes: [];
-  readonly usageTypes: [];
-  readonly operations: [];
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface DescribeSavingsPlansRequest {
+  readonly savingsPlanArns?: [];
+  readonly savingsPlanIds?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly states?: [];
+  readonly filters?: [];
 }
 
-interface DescribeSavingsPlansOfferingsResponse {
-  readonly searchResults: [];
-  readonly nextToken: string;
+export interface DescribeSavingsPlansResponse {
+  readonly savingsPlans?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeSavingsPlansRequest {
-  readonly savingsPlanArns: [];
-  readonly savingsPlanIds: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly states: [];
-  readonly filters: [];
-}
-
-interface DescribeSavingsPlansResponse {
-  readonly savingsPlans: [];
-  readonly nextToken: string;
-}
-
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ParentSavingsPlanOffering {
-  readonly offeringId: string;
-  readonly paymentOption: string;
-  readonly planType: string;
-  readonly durationSeconds: number;
-  readonly currency: string;
-  readonly planDescription: string;
+export interface ParentSavingsPlanOffering {
+  readonly offeringId?: string;
+  readonly paymentOption?: string;
+  readonly planType?: string;
+  readonly durationSeconds?: number;
+  readonly currency?: string;
+  readonly planDescription?: string;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
 }
 
-interface SavingsPlan {
-  readonly offeringId: string;
-  readonly savingsPlanId: string;
-  readonly savingsPlanArn: string;
-  readonly description: string;
-  readonly start: string;
-  readonly end: string;
-  readonly state: string;
-  readonly region: string;
-  readonly ec2InstanceFamily: string;
-  readonly savingsPlanType: string;
-  readonly paymentOption: string;
-  readonly productTypes: [];
-  readonly currency: string;
-  readonly commitment: string;
-  readonly upfrontPaymentAmount: string;
-  readonly recurringPaymentAmount: string;
-  readonly termDurationInSeconds: number;
-  readonly tags: {[key: string]: any};
+export interface SavingsPlan {
+  readonly offeringId?: string;
+  readonly savingsPlanId?: string;
+  readonly savingsPlanArn?: string;
+  readonly description?: string;
+  readonly start?: string;
+  readonly end?: string;
+  readonly state?: string;
+  readonly region?: string;
+  readonly ec2InstanceFamily?: string;
+  readonly savingsPlanType?: string;
+  readonly paymentOption?: string;
+  readonly productTypes?: [];
+  readonly currency?: string;
+  readonly commitment?: string;
+  readonly upfrontPaymentAmount?: string;
+  readonly recurringPaymentAmount?: string;
+  readonly termDurationInSeconds?: number;
+  readonly tags?: {[key: string]: any};
 }
 
-interface SavingsPlanFilter {
-  readonly name: string;
-  readonly values: [];
+export interface SavingsPlanFilter {
+  readonly name?: string;
+  readonly values?: [];
 }
 
-interface SavingsPlanOffering {
-  readonly offeringId: string;
-  readonly productTypes: [];
-  readonly planType: string;
-  readonly description: string;
-  readonly paymentOption: string;
-  readonly durationSeconds: number;
-  readonly currency: string;
-  readonly serviceCode: string;
-  readonly usageType: string;
-  readonly operation: string;
-  readonly properties: [];
+export interface SavingsPlanOffering {
+  readonly offeringId?: string;
+  readonly productTypes?: [];
+  readonly planType?: string;
+  readonly description?: string;
+  readonly paymentOption?: string;
+  readonly durationSeconds?: number;
+  readonly currency?: string;
+  readonly serviceCode?: string;
+  readonly usageType?: string;
+  readonly operation?: string;
+  readonly properties?: [];
 }
 
-interface SavingsPlanOfferingFilterElement {
-  readonly name: string;
-  readonly values: [];
+export interface SavingsPlanOfferingFilterElement {
+  readonly name?: string;
+  readonly values?: [];
 }
 
-interface SavingsPlanOfferingProperty {
-  readonly name: string;
-  readonly value: string;
+export interface SavingsPlanOfferingProperty {
+  readonly name?: string;
+  readonly value?: string;
 }
 
-interface SavingsPlanOfferingRate {
-  readonly savingsPlanOffering: ParentSavingsPlanOffering;
-  readonly rate: string;
-  readonly unit: string;
-  readonly productType: string;
-  readonly serviceCode: string;
-  readonly usageType: string;
-  readonly operation: string;
-  readonly properties: [];
+export interface SavingsPlanOfferingRate {
+  readonly savingsPlanOffering?: ParentSavingsPlanOffering;
+  readonly rate?: string;
+  readonly unit?: string;
+  readonly productType?: string;
+  readonly serviceCode?: string;
+  readonly usageType?: string;
+  readonly operation?: string;
+  readonly properties?: [];
 }
 
-interface SavingsPlanOfferingRateFilterElement {
-  readonly name: string;
-  readonly values: [];
+export interface SavingsPlanOfferingRateFilterElement {
+  readonly name?: string;
+  readonly values?: [];
 }
 
-interface SavingsPlanOfferingRateProperty {
-  readonly name: string;
-  readonly value: string;
+export interface SavingsPlanOfferingRateProperty {
+  readonly name?: string;
+  readonly value?: string;
 }
 
-interface SavingsPlanRate {
-  readonly rate: string;
-  readonly currency: string;
-  readonly unit: string;
-  readonly productType: string;
-  readonly serviceCode: string;
-  readonly usageType: string;
-  readonly operation: string;
-  readonly properties: [];
+export interface SavingsPlanRate {
+  readonly rate?: string;
+  readonly currency?: string;
+  readonly unit?: string;
+  readonly productType?: string;
+  readonly serviceCode?: string;
+  readonly usageType?: string;
+  readonly operation?: string;
+  readonly properties?: [];
 }
 
-interface SavingsPlanRateFilter {
-  readonly name: string;
-  readonly values: [];
+export interface SavingsPlanRateFilter {
+  readonly name?: string;
+  readonly values?: [];
 }
 
-interface SavingsPlanRateProperty {
-  readonly name: string;
-  readonly value: string;
+export interface SavingsPlanRateProperty {
+  readonly name?: string;
+  readonly value?: string;
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly message: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly message: string;
 }
+
 

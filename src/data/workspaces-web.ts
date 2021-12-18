@@ -5,18 +5,22 @@ export interface AssociateBrowserSettings {
   readonly browserSettingsArn: string;
   readonly portalArn: string;
 }
+
 export interface AssociateNetworkSettings {
   readonly networkSettingsArn: string;
   readonly portalArn: string;
 }
+
 export interface AssociateTrustStore {
   readonly portalArn: string;
   readonly trustStoreArn: string;
 }
+
 export interface AssociateUserSettings {
   readonly portalArn: string;
   readonly userSettingsArn: string;
 }
+
 export interface CreateBrowserSettings {
   readonly additionalEncryptionContext?: {[key: string]: any};
   readonly browserPolicy: string;
@@ -24,6 +28,7 @@ export interface CreateBrowserSettings {
   readonly customerManagedKey?: string;
   readonly tags?: [];
 }
+
 export interface CreateIdentityProvider {
   readonly clientToken?: string;
   readonly identityProviderDetails: {[key: string]: any};
@@ -31,6 +36,7 @@ export interface CreateIdentityProvider {
   readonly identityProviderType: string;
   readonly portalArn: string;
 }
+
 export interface CreateNetworkSettings {
   readonly clientToken?: string;
   readonly securityGroupIds: [];
@@ -38,6 +44,7 @@ export interface CreateNetworkSettings {
   readonly tags?: [];
   readonly vpcId: string;
 }
+
 export interface CreatePortal {
   readonly additionalEncryptionContext?: {[key: string]: any};
   readonly clientToken?: string;
@@ -45,11 +52,13 @@ export interface CreatePortal {
   readonly displayName?: string;
   readonly tags?: [];
 }
+
 export interface CreateTrustStore {
   readonly certificateList: [];
   readonly clientToken?: string;
   readonly tags?: [];
 }
+
 export interface CreateUserSettings {
   readonly clientToken?: string;
   readonly copyAllowed: string;
@@ -59,108 +68,138 @@ export interface CreateUserSettings {
   readonly tags?: [];
   readonly uploadAllowed: string;
 }
+
 export interface DeleteBrowserSettings {
   readonly browserSettingsArn: string;
 }
+
 export interface DeleteIdentityProvider {
   readonly identityProviderArn: string;
 }
+
 export interface DeleteNetworkSettings {
   readonly networkSettingsArn: string;
 }
+
 export interface DeletePortal {
   readonly portalArn: string;
 }
+
 export interface DeleteTrustStore {
   readonly trustStoreArn: string;
 }
+
 export interface DeleteUserSettings {
   readonly userSettingsArn: string;
 }
+
 export interface DisassociateBrowserSettings {
   readonly portalArn: string;
 }
+
 export interface DisassociateNetworkSettings {
   readonly portalArn: string;
 }
+
 export interface DisassociateTrustStore {
   readonly portalArn: string;
 }
+
 export interface DisassociateUserSettings {
   readonly portalArn: string;
 }
+
 export interface GetBrowserSettings {
   readonly browserSettingsArn: string;
 }
+
 export interface GetIdentityProvider {
   readonly identityProviderArn: string;
 }
+
 export interface GetNetworkSettings {
   readonly networkSettingsArn: string;
 }
+
 export interface GetPortal {
   readonly portalArn: string;
 }
+
 export interface GetPortalServiceProviderMetadata {
   readonly portalArn: string;
 }
+
 export interface GetTrustStore {
   readonly trustStoreArn: string;
 }
+
 export interface GetTrustStoreCertificate {
   readonly thumbprint: string;
   readonly trustStoreArn: string;
 }
+
 export interface GetUserSettings {
   readonly userSettingsArn: string;
 }
+
 export interface ListBrowserSettings {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListIdentityProviders {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly portalArn: string;
 }
+
 export interface ListNetworkSettings {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListPortals {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface ListTrustStoreCertificates {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly trustStoreArn: string;
 }
+
 export interface ListTrustStores {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListUserSettings {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface TagResource {
   readonly clientToken?: string;
   readonly resourceArn: string;
   readonly tags: [];
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateBrowserSettings {
   readonly browserPolicy?: string;
   readonly browserSettingsArn: string;
   readonly clientToken?: string;
 }
+
 export interface UpdateIdentityProvider {
   readonly clientToken?: string;
   readonly identityProviderArn: string;
@@ -168,6 +207,7 @@ export interface UpdateIdentityProvider {
   readonly identityProviderName?: string;
   readonly identityProviderType?: string;
 }
+
 export interface UpdateNetworkSettings {
   readonly clientToken?: string;
   readonly networkSettingsArn: string;
@@ -175,16 +215,19 @@ export interface UpdateNetworkSettings {
   readonly subnetIds?: [];
   readonly vpcId?: string;
 }
+
 export interface UpdatePortal {
   readonly displayName?: string;
   readonly portalArn: string;
 }
+
 export interface UpdateTrustStore {
   readonly certificatesToAdd?: [];
   readonly certificatesToDelete?: [];
   readonly clientToken?: string;
   readonly trustStoreArn: string;
 }
+
 export interface UpdateUserSettings {
   readonly clientToken?: string;
   readonly copyAllowed?: string;
@@ -195,588 +238,587 @@ export interface UpdateUserSettings {
   readonly userSettingsArn: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly message?: string;
 }
 
-interface AssociateBrowserSettingsRequest {
+export interface AssociateBrowserSettingsRequest {
   readonly browserSettingsArn: string;
   readonly portalArn: string;
 }
 
-interface AssociateBrowserSettingsResponse {
+export interface AssociateBrowserSettingsResponse {
   readonly browserSettingsArn: string;
   readonly portalArn: string;
 }
 
-interface AssociateNetworkSettingsRequest {
+export interface AssociateNetworkSettingsRequest {
   readonly networkSettingsArn: string;
   readonly portalArn: string;
 }
 
-interface AssociateNetworkSettingsResponse {
+export interface AssociateNetworkSettingsResponse {
   readonly networkSettingsArn: string;
   readonly portalArn: string;
 }
 
-interface AssociateTrustStoreRequest {
+export interface AssociateTrustStoreRequest {
   readonly portalArn: string;
   readonly trustStoreArn: string;
 }
 
-interface AssociateTrustStoreResponse {
+export interface AssociateTrustStoreResponse {
   readonly portalArn: string;
   readonly trustStoreArn: string;
 }
 
-interface AssociateUserSettingsRequest {
+export interface AssociateUserSettingsRequest {
   readonly portalArn: string;
   readonly userSettingsArn: string;
 }
 
-interface AssociateUserSettingsResponse {
+export interface AssociateUserSettingsResponse {
   readonly portalArn: string;
   readonly userSettingsArn: string;
 }
 
-interface BrowserSettings {
-  readonly associatedPortalArns: [];
+export interface BrowserSettings {
+  readonly associatedPortalArns?: [];
+  readonly browserPolicy?: string;
+  readonly browserSettingsArn: string;
+}
+
+export interface BrowserSettingsSummary {
+  readonly browserSettingsArn?: string;
+}
+
+export interface Certificate {
+  readonly body?: unknown;
+  readonly issuer?: string;
+  readonly notValidAfter?: Date;
+  readonly notValidBefore?: Date;
+  readonly subject?: string;
+  readonly thumbprint?: string;
+}
+
+export interface CertificateSummary {
+  readonly issuer?: string;
+  readonly notValidAfter?: Date;
+  readonly notValidBefore?: Date;
+  readonly subject?: string;
+  readonly thumbprint?: string;
+}
+
+export interface ConflictException {
+  readonly message?: string;
+  readonly resourceId?: string;
+  readonly resourceType?: string;
+}
+
+export interface CreateBrowserSettingsRequest {
+  readonly additionalEncryptionContext?: {[key: string]: any};
   readonly browserPolicy: string;
+  readonly clientToken?: string;
+  readonly customerManagedKey?: string;
+  readonly tags?: [];
+}
+
+export interface CreateBrowserSettingsResponse {
   readonly browserSettingsArn: string;
 }
 
-interface BrowserSettingsSummary {
-  readonly browserSettingsArn: string;
-}
-
-interface Certificate {
-  readonly body: unknown;
-  readonly issuer: string;
-  readonly notValidAfter: Date;
-  readonly notValidBefore: Date;
-  readonly subject: string;
-  readonly thumbprint: string;
-}
-
-interface CertificateSummary {
-  readonly issuer: string;
-  readonly notValidAfter: Date;
-  readonly notValidBefore: Date;
-  readonly subject: string;
-  readonly thumbprint: string;
-}
-
-interface ConflictException {
-  readonly message: string;
-  readonly resourceId: string;
-  readonly resourceType: string;
-}
-
-interface CreateBrowserSettingsRequest {
-  readonly additionalEncryptionContext: {[key: string]: any};
-  readonly browserPolicy: string;
-  readonly clientToken: string;
-  readonly customerManagedKey: string;
-  readonly tags: [];
-}
-
-interface CreateBrowserSettingsResponse {
-  readonly browserSettingsArn: string;
-}
-
-interface CreateIdentityProviderRequest {
-  readonly clientToken: string;
+export interface CreateIdentityProviderRequest {
+  readonly clientToken?: string;
   readonly identityProviderDetails: {[key: string]: any};
   readonly identityProviderName: string;
   readonly identityProviderType: string;
   readonly portalArn: string;
 }
 
-interface CreateIdentityProviderResponse {
+export interface CreateIdentityProviderResponse {
   readonly identityProviderArn: string;
 }
 
-interface CreateNetworkSettingsRequest {
-  readonly clientToken: string;
+export interface CreateNetworkSettingsRequest {
+  readonly clientToken?: string;
   readonly securityGroupIds: [];
   readonly subnetIds: [];
-  readonly tags: [];
+  readonly tags?: [];
   readonly vpcId: string;
 }
 
-interface CreateNetworkSettingsResponse {
+export interface CreateNetworkSettingsResponse {
   readonly networkSettingsArn: string;
 }
 
-interface CreatePortalRequest {
-  readonly additionalEncryptionContext: {[key: string]: any};
-  readonly clientToken: string;
-  readonly customerManagedKey: string;
-  readonly displayName: string;
-  readonly tags: [];
+export interface CreatePortalRequest {
+  readonly additionalEncryptionContext?: {[key: string]: any};
+  readonly clientToken?: string;
+  readonly customerManagedKey?: string;
+  readonly displayName?: string;
+  readonly tags?: [];
 }
 
-interface CreatePortalResponse {
+export interface CreatePortalResponse {
   readonly portalArn: string;
   readonly portalEndpoint: string;
 }
 
-interface CreateTrustStoreRequest {
+export interface CreateTrustStoreRequest {
   readonly certificateList: [];
-  readonly clientToken: string;
-  readonly tags: [];
+  readonly clientToken?: string;
+  readonly tags?: [];
 }
 
-interface CreateTrustStoreResponse {
+export interface CreateTrustStoreResponse {
   readonly trustStoreArn: string;
 }
 
-interface CreateUserSettingsRequest {
-  readonly clientToken: string;
+export interface CreateUserSettingsRequest {
+  readonly clientToken?: string;
   readonly copyAllowed: string;
   readonly downloadAllowed: string;
   readonly pasteAllowed: string;
   readonly printAllowed: string;
-  readonly tags: [];
+  readonly tags?: [];
   readonly uploadAllowed: string;
 }
 
-interface CreateUserSettingsResponse {
+export interface CreateUserSettingsResponse {
   readonly userSettingsArn: string;
 }
 
-interface DeleteBrowserSettingsRequest {
+export interface DeleteBrowserSettingsRequest {
   readonly browserSettingsArn: string;
 }
 
-interface DeleteBrowserSettingsResponse {
+export interface DeleteBrowserSettingsResponse {
 }
 
-interface DeleteIdentityProviderRequest {
+export interface DeleteIdentityProviderRequest {
   readonly identityProviderArn: string;
 }
 
-interface DeleteIdentityProviderResponse {
+export interface DeleteIdentityProviderResponse {
 }
 
-interface DeleteNetworkSettingsRequest {
+export interface DeleteNetworkSettingsRequest {
   readonly networkSettingsArn: string;
 }
 
-interface DeleteNetworkSettingsResponse {
+export interface DeleteNetworkSettingsResponse {
 }
 
-interface DeletePortalRequest {
+export interface DeletePortalRequest {
   readonly portalArn: string;
 }
 
-interface DeletePortalResponse {
+export interface DeletePortalResponse {
 }
 
-interface DeleteTrustStoreRequest {
+export interface DeleteTrustStoreRequest {
   readonly trustStoreArn: string;
 }
 
-interface DeleteTrustStoreResponse {
+export interface DeleteTrustStoreResponse {
 }
 
-interface DeleteUserSettingsRequest {
+export interface DeleteUserSettingsRequest {
   readonly userSettingsArn: string;
 }
 
-interface DeleteUserSettingsResponse {
+export interface DeleteUserSettingsResponse {
 }
 
-interface DisassociateBrowserSettingsRequest {
+export interface DisassociateBrowserSettingsRequest {
   readonly portalArn: string;
 }
 
-interface DisassociateBrowserSettingsResponse {
+export interface DisassociateBrowserSettingsResponse {
 }
 
-interface DisassociateNetworkSettingsRequest {
+export interface DisassociateNetworkSettingsRequest {
   readonly portalArn: string;
 }
 
-interface DisassociateNetworkSettingsResponse {
+export interface DisassociateNetworkSettingsResponse {
 }
 
-interface DisassociateTrustStoreRequest {
+export interface DisassociateTrustStoreRequest {
   readonly portalArn: string;
 }
 
-interface DisassociateTrustStoreResponse {
+export interface DisassociateTrustStoreResponse {
 }
 
-interface DisassociateUserSettingsRequest {
+export interface DisassociateUserSettingsRequest {
   readonly portalArn: string;
 }
 
-interface DisassociateUserSettingsResponse {
+export interface DisassociateUserSettingsResponse {
 }
 
-interface GetBrowserSettingsRequest {
+export interface GetBrowserSettingsRequest {
   readonly browserSettingsArn: string;
 }
 
-interface GetBrowserSettingsResponse {
-  readonly browserSettings: BrowserSettings;
+export interface GetBrowserSettingsResponse {
+  readonly browserSettings?: BrowserSettings;
 }
 
-interface GetIdentityProviderRequest {
+export interface GetIdentityProviderRequest {
   readonly identityProviderArn: string;
 }
 
-interface GetIdentityProviderResponse {
-  readonly identityProvider: IdentityProvider;
+export interface GetIdentityProviderResponse {
+  readonly identityProvider?: IdentityProvider;
 }
 
-interface GetNetworkSettingsRequest {
+export interface GetNetworkSettingsRequest {
   readonly networkSettingsArn: string;
 }
 
-interface GetNetworkSettingsResponse {
-  readonly networkSettings: NetworkSettings;
+export interface GetNetworkSettingsResponse {
+  readonly networkSettings?: NetworkSettings;
 }
 
-interface GetPortalRequest {
+export interface GetPortalRequest {
   readonly portalArn: string;
 }
 
-interface GetPortalResponse {
-  readonly portal: Portal;
+export interface GetPortalResponse {
+  readonly portal?: Portal;
 }
 
-interface GetPortalServiceProviderMetadataRequest {
+export interface GetPortalServiceProviderMetadataRequest {
   readonly portalArn: string;
 }
 
-interface GetPortalServiceProviderMetadataResponse {
+export interface GetPortalServiceProviderMetadataResponse {
   readonly portalArn: string;
-  readonly serviceProviderSamlMetadata: string;
+  readonly serviceProviderSamlMetadata?: string;
 }
 
-interface GetTrustStoreCertificateRequest {
+export interface GetTrustStoreCertificateRequest {
   readonly thumbprint: string;
   readonly trustStoreArn: string;
 }
 
-interface GetTrustStoreCertificateResponse {
-  readonly certificate: Certificate;
+export interface GetTrustStoreCertificateResponse {
+  readonly certificate?: Certificate;
+  readonly trustStoreArn?: string;
+}
+
+export interface GetTrustStoreRequest {
   readonly trustStoreArn: string;
 }
 
-interface GetTrustStoreRequest {
-  readonly trustStoreArn: string;
+export interface GetTrustStoreResponse {
+  readonly trustStore?: TrustStore;
 }
 
-interface GetTrustStoreResponse {
-  readonly trustStore: TrustStore;
-}
-
-interface GetUserSettingsRequest {
+export interface GetUserSettingsRequest {
   readonly userSettingsArn: string;
 }
 
-interface GetUserSettingsResponse {
-  readonly userSettings: UserSettings;
+export interface GetUserSettingsResponse {
+  readonly userSettings?: UserSettings;
 }
 
-interface IdentityProvider {
+export interface IdentityProvider {
   readonly identityProviderArn: string;
-  readonly identityProviderDetails: {[key: string]: any};
-  readonly identityProviderName: string;
-  readonly identityProviderType: string;
+  readonly identityProviderDetails?: {[key: string]: any};
+  readonly identityProviderName?: string;
+  readonly identityProviderType?: string;
 }
 
-interface IdentityProviderSummary {
-  readonly identityProviderArn: string;
-  readonly identityProviderName: string;
-  readonly identityProviderType: string;
+export interface IdentityProviderSummary {
+  readonly identityProviderArn?: string;
+  readonly identityProviderName?: string;
+  readonly identityProviderType?: string;
 }
 
-interface InternalServerException {
-  readonly message: string;
-  readonly retryAfterSeconds: number;
+export interface InternalServerException {
+  readonly message?: string;
+  readonly retryAfterSeconds?: number;
 }
 
-interface ListBrowserSettingsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListBrowserSettingsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListBrowserSettingsResponse {
-  readonly browserSettings: [];
-  readonly nextToken: string;
+export interface ListBrowserSettingsResponse {
+  readonly browserSettings?: [];
+  readonly nextToken?: string;
 }
 
-interface ListIdentityProvidersRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListIdentityProvidersRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly portalArn: string;
 }
 
-interface ListIdentityProvidersResponse {
-  readonly identityProviders: [];
-  readonly nextToken: string;
+export interface ListIdentityProvidersResponse {
+  readonly identityProviders?: [];
+  readonly nextToken?: string;
 }
 
-interface ListNetworkSettingsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListNetworkSettingsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListNetworkSettingsResponse {
-  readonly networkSettings: [];
-  readonly nextToken: string;
+export interface ListNetworkSettingsResponse {
+  readonly networkSettings?: [];
+  readonly nextToken?: string;
 }
 
-interface ListPortalsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListPortalsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListPortalsResponse {
-  readonly nextToken: string;
-  readonly portals: [];
+export interface ListPortalsResponse {
+  readonly nextToken?: string;
+  readonly portals?: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: [];
+export interface ListTagsForResourceResponse {
+  readonly tags?: [];
 }
 
-interface ListTrustStoreCertificatesRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListTrustStoreCertificatesRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly trustStoreArn: string;
 }
 
-interface ListTrustStoreCertificatesResponse {
-  readonly certificateList: [];
-  readonly nextToken: string;
-  readonly trustStoreArn: string;
+export interface ListTrustStoreCertificatesResponse {
+  readonly certificateList?: [];
+  readonly nextToken?: string;
+  readonly trustStoreArn?: string;
 }
 
-interface ListTrustStoresRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListTrustStoresRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListTrustStoresResponse {
-  readonly nextToken: string;
-  readonly trustStores: [];
+export interface ListTrustStoresResponse {
+  readonly nextToken?: string;
+  readonly trustStores?: [];
 }
 
-interface ListUserSettingsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListUserSettingsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListUserSettingsResponse {
-  readonly nextToken: string;
-  readonly userSettings: [];
+export interface ListUserSettingsResponse {
+  readonly nextToken?: string;
+  readonly userSettings?: [];
 }
 
-interface NetworkSettings {
-  readonly associatedPortalArns: [];
+export interface NetworkSettings {
+  readonly associatedPortalArns?: [];
   readonly networkSettingsArn: string;
-  readonly securityGroupIds: [];
-  readonly subnetIds: [];
-  readonly vpcId: string;
+  readonly securityGroupIds?: [];
+  readonly subnetIds?: [];
+  readonly vpcId?: string;
 }
 
-interface NetworkSettingsSummary {
-  readonly networkSettingsArn: string;
-  readonly vpcId: string;
+export interface NetworkSettingsSummary {
+  readonly networkSettingsArn?: string;
+  readonly vpcId?: string;
 }
 
-interface Portal {
-  readonly browserSettingsArn: string;
-  readonly browserType: string;
-  readonly creationDate: Date;
-  readonly displayName: string;
-  readonly networkSettingsArn: string;
-  readonly portalArn: string;
-  readonly portalEndpoint: string;
-  readonly portalStatus: string;
-  readonly rendererType: string;
-  readonly statusReason: string;
-  readonly trustStoreArn: string;
-  readonly userSettingsArn: string;
+export interface Portal {
+  readonly browserSettingsArn?: string;
+  readonly browserType?: string;
+  readonly creationDate?: Date;
+  readonly displayName?: string;
+  readonly networkSettingsArn?: string;
+  readonly portalArn?: string;
+  readonly portalEndpoint?: string;
+  readonly portalStatus?: string;
+  readonly rendererType?: string;
+  readonly statusReason?: string;
+  readonly trustStoreArn?: string;
+  readonly userSettingsArn?: string;
 }
 
-interface PortalSummary {
-  readonly browserSettingsArn: string;
-  readonly browserType: string;
-  readonly creationDate: Date;
-  readonly displayName: string;
-  readonly networkSettingsArn: string;
-  readonly portalArn: string;
-  readonly portalEndpoint: string;
-  readonly portalStatus: string;
-  readonly rendererType: string;
-  readonly trustStoreArn: string;
-  readonly userSettingsArn: string;
+export interface PortalSummary {
+  readonly browserSettingsArn?: string;
+  readonly browserType?: string;
+  readonly creationDate?: Date;
+  readonly displayName?: string;
+  readonly networkSettingsArn?: string;
+  readonly portalArn?: string;
+  readonly portalEndpoint?: string;
+  readonly portalStatus?: string;
+  readonly rendererType?: string;
+  readonly trustStoreArn?: string;
+  readonly userSettingsArn?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
-  readonly resourceId: string;
-  readonly resourceType: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
+  readonly resourceId?: string;
+  readonly resourceType?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly message: string;
-  readonly quotaCode: string;
-  readonly resourceId: string;
-  readonly resourceType: string;
-  readonly serviceCode: string;
+export interface ServiceQuotaExceededException {
+  readonly message?: string;
+  readonly quotaCode?: string;
+  readonly resourceId?: string;
+  readonly resourceType?: string;
+  readonly serviceCode?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
-  readonly clientToken: string;
+export interface TagResourceRequest {
+  readonly clientToken?: string;
   readonly resourceArn: string;
   readonly tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
-  readonly message: string;
-  readonly quotaCode: string;
-  readonly retryAfterSeconds: number;
-  readonly serviceCode: string;
+export interface ThrottlingException {
+  readonly message?: string;
+  readonly quotaCode?: string;
+  readonly retryAfterSeconds?: number;
+  readonly serviceCode?: string;
 }
 
-interface TooManyTagsException {
-  readonly message: string;
-  readonly resourceName: string;
+export interface TooManyTagsException {
+  readonly message?: string;
+  readonly resourceName?: string;
 }
 
-interface TrustStore {
-  readonly associatedPortalArns: [];
-  readonly trustStoreArn: string;
+export interface TrustStore {
+  readonly associatedPortalArns?: [];
+  readonly trustStoreArn?: string;
 }
 
-interface TrustStoreSummary {
-  readonly trustStoreArn: string;
+export interface TrustStoreSummary {
+  readonly trustStoreArn?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateBrowserSettingsRequest {
-  readonly browserPolicy: string;
+export interface UpdateBrowserSettingsRequest {
+  readonly browserPolicy?: string;
   readonly browserSettingsArn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface UpdateBrowserSettingsResponse {
+export interface UpdateBrowserSettingsResponse {
   readonly browserSettings: BrowserSettings;
 }
 
-interface UpdateIdentityProviderRequest {
-  readonly clientToken: string;
+export interface UpdateIdentityProviderRequest {
+  readonly clientToken?: string;
   readonly identityProviderArn: string;
-  readonly identityProviderDetails: {[key: string]: any};
-  readonly identityProviderName: string;
-  readonly identityProviderType: string;
+  readonly identityProviderDetails?: {[key: string]: any};
+  readonly identityProviderName?: string;
+  readonly identityProviderType?: string;
 }
 
-interface UpdateIdentityProviderResponse {
+export interface UpdateIdentityProviderResponse {
   readonly identityProvider: IdentityProvider;
 }
 
-interface UpdateNetworkSettingsRequest {
-  readonly clientToken: string;
+export interface UpdateNetworkSettingsRequest {
+  readonly clientToken?: string;
   readonly networkSettingsArn: string;
-  readonly securityGroupIds: [];
-  readonly subnetIds: [];
-  readonly vpcId: string;
+  readonly securityGroupIds?: [];
+  readonly subnetIds?: [];
+  readonly vpcId?: string;
 }
 
-interface UpdateNetworkSettingsResponse {
+export interface UpdateNetworkSettingsResponse {
   readonly networkSettings: NetworkSettings;
 }
 
-interface UpdatePortalRequest {
-  readonly displayName: string;
+export interface UpdatePortalRequest {
+  readonly displayName?: string;
   readonly portalArn: string;
 }
 
-interface UpdatePortalResponse {
-  readonly portal: Portal;
+export interface UpdatePortalResponse {
+  readonly portal?: Portal;
 }
 
-interface UpdateTrustStoreRequest {
-  readonly certificatesToAdd: [];
-  readonly certificatesToDelete: [];
-  readonly clientToken: string;
+export interface UpdateTrustStoreRequest {
+  readonly certificatesToAdd?: [];
+  readonly certificatesToDelete?: [];
+  readonly clientToken?: string;
   readonly trustStoreArn: string;
 }
 
-interface UpdateTrustStoreResponse {
+export interface UpdateTrustStoreResponse {
   readonly trustStoreArn: string;
 }
 
-interface UpdateUserSettingsRequest {
-  readonly clientToken: string;
-  readonly copyAllowed: string;
-  readonly downloadAllowed: string;
-  readonly pasteAllowed: string;
-  readonly printAllowed: string;
-  readonly uploadAllowed: string;
+export interface UpdateUserSettingsRequest {
+  readonly clientToken?: string;
+  readonly copyAllowed?: string;
+  readonly downloadAllowed?: string;
+  readonly pasteAllowed?: string;
+  readonly printAllowed?: string;
+  readonly uploadAllowed?: string;
   readonly userSettingsArn: string;
 }
 
-interface UpdateUserSettingsResponse {
+export interface UpdateUserSettingsResponse {
   readonly userSettings: UserSettings;
 }
 
-interface UserSettings {
-  readonly associatedPortalArns: [];
-  readonly copyAllowed: string;
-  readonly downloadAllowed: string;
-  readonly pasteAllowed: string;
-  readonly printAllowed: string;
-  readonly uploadAllowed: string;
+export interface UserSettings {
+  readonly associatedPortalArns?: [];
+  readonly copyAllowed?: string;
+  readonly downloadAllowed?: string;
+  readonly pasteAllowed?: string;
+  readonly printAllowed?: string;
+  readonly uploadAllowed?: string;
   readonly userSettingsArn: string;
 }
 
-interface UserSettingsSummary {
-  readonly copyAllowed: string;
-  readonly downloadAllowed: string;
-  readonly pasteAllowed: string;
-  readonly printAllowed: string;
-  readonly uploadAllowed: string;
-  readonly userSettingsArn: string;
+export interface UserSettingsSummary {
+  readonly copyAllowed?: string;
+  readonly downloadAllowed?: string;
+  readonly pasteAllowed?: string;
+  readonly printAllowed?: string;
+  readonly uploadAllowed?: string;
+  readonly userSettingsArn?: string;
 }
 
-interface ValidationException {
-  readonly fieldList: [];
-  readonly message: string;
-  readonly reason: string;
+export interface ValidationException {
+  readonly fieldList?: [];
+  readonly message?: string;
+  readonly reason?: string;
 }
 
-interface ValidationExceptionField {
+export interface ValidationExceptionField {
   readonly message: string;
   readonly name: string;
 }
+
 

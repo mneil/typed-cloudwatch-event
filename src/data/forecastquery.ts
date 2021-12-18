@@ -9,46 +9,45 @@ export interface QueryForecast {
   readonly NextToken?: string;
 }
 
-
-
-interface DataPoint {
-  readonly Timestamp: string;
-  readonly Value: unknown;
+export interface DataPoint {
+  readonly Timestamp?: string;
+  readonly Value?: unknown;
 }
 
-interface Forecast {
-  readonly Predictions: {[key: string]: any};
+export interface Forecast {
+  readonly Predictions?: {[key: string]: any};
 }
 
-interface InvalidInputException {
-  readonly Message: string;
+export interface InvalidInputException {
+  readonly Message?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly Message: string;
+export interface InvalidNextTokenException {
+  readonly Message?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface QueryForecastRequest {
+export interface QueryForecastRequest {
   readonly ForecastArn: string;
-  readonly StartDate: string;
-  readonly EndDate: string;
+  readonly StartDate?: string;
+  readonly EndDate?: string;
   readonly Filters: {[key: string]: any};
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface QueryForecastResponse {
-  readonly Forecast: Forecast;
+export interface QueryForecastResponse {
+  readonly Forecast?: Forecast;
 }
 
-interface ResourceInUseException {
-  readonly Message: string;
+export interface ResourceInUseException {
+  readonly Message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
+
 

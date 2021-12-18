@@ -4,50 +4,51 @@
 export interface DeleteConnection {
   readonly ConnectionId: string;
 }
+
 export interface GetConnection {
   readonly ConnectionId: string;
 }
+
 export interface PostToConnection {
   readonly Data: unknown;
   readonly ConnectionId: string;
 }
 
-
-
-interface DeleteConnectionRequest {
+export interface DeleteConnectionRequest {
   readonly ConnectionId: string;
 }
 
-interface ForbiddenException {
+export interface ForbiddenException {
 }
 
-interface GetConnectionRequest {
+export interface GetConnectionRequest {
   readonly ConnectionId: string;
 }
 
-interface GetConnectionResponse {
-  readonly ConnectedAt: Date;
-  readonly Identity: Identity;
-  readonly LastActiveAt: Date;
+export interface GetConnectionResponse {
+  readonly ConnectedAt?: Date;
+  readonly Identity?: Identity;
+  readonly LastActiveAt?: Date;
 }
 
-interface GoneException {
+export interface GoneException {
 }
 
-interface Identity {
+export interface Identity {
   readonly SourceIp: string;
   readonly UserAgent: string;
 }
 
-interface PayloadTooLargeException {
-  readonly Message: string;
+export interface PayloadTooLargeException {
+  readonly Message?: string;
 }
 
-interface PostToConnectionRequest {
+export interface PostToConnectionRequest {
   readonly Data: unknown;
   readonly ConnectionId: string;
 }
 
-interface LimitExceededException {
+export interface LimitExceededException {
 }
+
 

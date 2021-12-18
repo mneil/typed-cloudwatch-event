@@ -7,11 +7,13 @@ export interface CreateDiscoverer {
   readonly CrossAccount?: boolean;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateRegistry {
   readonly Description?: string;
   readonly RegistryName: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateSchema {
   readonly Content: string;
   readonly Description?: string;
@@ -20,127 +22,155 @@ export interface CreateSchema {
   readonly Tags?: {[key: string]: any};
   readonly Type: string;
 }
+
 export interface DeleteDiscoverer {
   readonly DiscovererId: string;
 }
+
 export interface DeleteRegistry {
   readonly RegistryName: string;
 }
+
 export interface DeleteResourcePolicy {
   readonly RegistryName?: string;
 }
+
 export interface DeleteSchema {
   readonly RegistryName: string;
   readonly SchemaName: string;
 }
+
 export interface DeleteSchemaVersion {
   readonly RegistryName: string;
   readonly SchemaName: string;
   readonly SchemaVersion: string;
 }
+
 export interface DescribeCodeBinding {
   readonly Language: string;
   readonly RegistryName: string;
   readonly SchemaName: string;
   readonly SchemaVersion?: string;
 }
+
 export interface DescribeDiscoverer {
   readonly DiscovererId: string;
 }
+
 export interface DescribeRegistry {
   readonly RegistryName: string;
 }
+
 export interface DescribeSchema {
   readonly RegistryName: string;
   readonly SchemaName: string;
   readonly SchemaVersion?: string;
 }
+
 export interface ExportSchema {
   readonly RegistryName: string;
   readonly SchemaName: string;
   readonly SchemaVersion?: string;
   readonly Type: string;
 }
+
 export interface GetCodeBindingSource {
   readonly Language: string;
   readonly RegistryName: string;
   readonly SchemaName: string;
   readonly SchemaVersion?: string;
 }
+
 export interface GetDiscoveredSchema {
   readonly Events: [];
   readonly Type: string;
 }
+
 export interface GetResourcePolicy {
   readonly RegistryName?: string;
 }
+
 export interface ListDiscoverers {
   readonly DiscovererIdPrefix?: string;
   readonly Limit?: number;
   readonly NextToken?: string;
   readonly SourceArnPrefix?: string;
 }
+
 export interface ListRegistries {
   readonly Limit?: number;
   readonly NextToken?: string;
   readonly RegistryNamePrefix?: string;
   readonly Scope?: string;
 }
+
 export interface ListSchemaVersions {
   readonly Limit?: number;
   readonly NextToken?: string;
   readonly RegistryName: string;
   readonly SchemaName: string;
 }
+
 export interface ListSchemas {
   readonly Limit?: number;
   readonly NextToken?: string;
   readonly RegistryName: string;
   readonly SchemaNamePrefix?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface PutCodeBinding {
   readonly Language: string;
   readonly RegistryName: string;
   readonly SchemaName: string;
   readonly SchemaVersion?: string;
 }
+
 export interface PutResourcePolicy {
   readonly Policy: string;
   readonly RegistryName?: string;
   readonly RevisionId?: string;
 }
+
 export interface SearchSchemas {
   readonly Keywords: string;
   readonly Limit?: number;
   readonly NextToken?: string;
   readonly RegistryName: string;
 }
+
 export interface StartDiscoverer {
   readonly DiscovererId: string;
 }
+
 export interface StopDiscoverer {
   readonly DiscovererId: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateDiscoverer {
   readonly Description?: string;
   readonly DiscovererId: string;
   readonly CrossAccount?: boolean;
 }
+
 export interface UpdateRegistry {
   readonly Description?: string;
   readonly RegistryName: string;
 }
+
 export interface UpdateSchema {
   readonly ClientTokenId?: string;
   readonly Content?: string;
@@ -150,598 +180,597 @@ export interface UpdateSchema {
   readonly Type?: string;
 }
 
-
-
-interface BadRequestException {
+export interface BadRequestException {
   readonly Code: string;
   readonly Message: string;
 }
 
-interface CodeBindingOutput {
-  readonly CreationDate: Date;
-  readonly LastModified: Date;
-  readonly SchemaVersion: string;
-  readonly Status: string;
+export interface CodeBindingOutput {
+  readonly CreationDate?: Date;
+  readonly LastModified?: Date;
+  readonly SchemaVersion?: string;
+  readonly Status?: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly Code: string;
   readonly Message: string;
 }
 
-interface CreateDiscovererInput {
-  readonly Description: string;
+export interface CreateDiscovererInput {
+  readonly Description?: string;
   readonly SourceArn: string;
-  readonly CrossAccount: boolean;
-  readonly Tags: {[key: string]: any};
+  readonly CrossAccount?: boolean;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateDiscovererRequest {
-  readonly Description: string;
+export interface CreateDiscovererRequest {
+  readonly Description?: string;
   readonly SourceArn: string;
-  readonly CrossAccount: boolean;
-  readonly Tags: {[key: string]: any};
+  readonly CrossAccount?: boolean;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateDiscovererResponse {
-  readonly Description: string;
-  readonly DiscovererArn: string;
-  readonly DiscovererId: string;
-  readonly SourceArn: string;
-  readonly State: string;
-  readonly CrossAccount: boolean;
-  readonly Tags: {[key: string]: any};
+export interface CreateDiscovererResponse {
+  readonly Description?: string;
+  readonly DiscovererArn?: string;
+  readonly DiscovererId?: string;
+  readonly SourceArn?: string;
+  readonly State?: string;
+  readonly CrossAccount?: boolean;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateRegistryInput {
-  readonly Description: string;
-  readonly Tags: {[key: string]: any};
+export interface CreateRegistryInput {
+  readonly Description?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateRegistryRequest {
-  readonly Description: string;
+export interface CreateRegistryRequest {
+  readonly Description?: string;
   readonly RegistryName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateRegistryResponse {
-  readonly Description: string;
-  readonly RegistryArn: string;
-  readonly RegistryName: string;
-  readonly Tags: {[key: string]: any};
+export interface CreateRegistryResponse {
+  readonly Description?: string;
+  readonly RegistryArn?: string;
+  readonly RegistryName?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateSchemaInput {
+export interface CreateSchemaInput {
   readonly Content: string;
-  readonly Description: string;
-  readonly Tags: {[key: string]: any};
+  readonly Description?: string;
+  readonly Tags?: {[key: string]: any};
   readonly Type: string;
 }
 
-interface CreateSchemaRequest {
+export interface CreateSchemaRequest {
   readonly Content: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly RegistryName: string;
   readonly SchemaName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
   readonly Type: string;
 }
 
-interface CreateSchemaResponse {
-  readonly Description: string;
-  readonly LastModified: Date;
-  readonly SchemaArn: string;
+export interface CreateSchemaResponse {
+  readonly Description?: string;
+  readonly LastModified?: Date;
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly SchemaVersion?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Type?: string;
+  readonly VersionCreatedDate?: Date;
+}
+
+export interface DeleteDiscovererRequest {
+  readonly DiscovererId: string;
+}
+
+export interface DeleteRegistryRequest {
+  readonly RegistryName: string;
+}
+
+export interface DeleteResourcePolicyRequest {
+  readonly RegistryName?: string;
+}
+
+export interface DeleteSchemaRequest {
+  readonly RegistryName: string;
+  readonly SchemaName: string;
+}
+
+export interface DeleteSchemaVersionRequest {
+  readonly RegistryName: string;
   readonly SchemaName: string;
   readonly SchemaVersion: string;
-  readonly Tags: {[key: string]: any};
-  readonly Type: string;
-  readonly VersionCreatedDate: Date;
 }
 
-interface DeleteDiscovererRequest {
-  readonly DiscovererId: string;
-}
-
-interface DeleteRegistryRequest {
-  readonly RegistryName: string;
-}
-
-interface DeleteResourcePolicyRequest {
-  readonly RegistryName: string;
-}
-
-interface DeleteSchemaRequest {
-  readonly RegistryName: string;
-  readonly SchemaName: string;
-}
-
-interface DeleteSchemaVersionRequest {
-  readonly RegistryName: string;
-  readonly SchemaName: string;
-  readonly SchemaVersion: string;
-}
-
-interface DescribeCodeBindingRequest {
+export interface DescribeCodeBindingRequest {
   readonly Language: string;
   readonly RegistryName: string;
   readonly SchemaName: string;
-  readonly SchemaVersion: string;
+  readonly SchemaVersion?: string;
 }
 
-interface DescribeCodeBindingResponse {
-  readonly CreationDate: Date;
-  readonly LastModified: Date;
-  readonly SchemaVersion: string;
-  readonly Status: string;
+export interface DescribeCodeBindingResponse {
+  readonly CreationDate?: Date;
+  readonly LastModified?: Date;
+  readonly SchemaVersion?: string;
+  readonly Status?: string;
 }
 
-interface DescribeDiscovererRequest {
+export interface DescribeDiscovererRequest {
   readonly DiscovererId: string;
 }
 
-interface DescribeDiscovererResponse {
-  readonly Description: string;
-  readonly DiscovererArn: string;
-  readonly DiscovererId: string;
-  readonly SourceArn: string;
-  readonly State: string;
-  readonly CrossAccount: boolean;
-  readonly Tags: {[key: string]: any};
+export interface DescribeDiscovererResponse {
+  readonly Description?: string;
+  readonly DiscovererArn?: string;
+  readonly DiscovererId?: string;
+  readonly SourceArn?: string;
+  readonly State?: string;
+  readonly CrossAccount?: boolean;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface DescribeRegistryRequest {
+export interface DescribeRegistryRequest {
   readonly RegistryName: string;
 }
 
-interface DescribeRegistryResponse {
-  readonly Description: string;
-  readonly RegistryArn: string;
+export interface DescribeRegistryResponse {
+  readonly Description?: string;
+  readonly RegistryArn?: string;
+  readonly RegistryName?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface DescribeSchemaOutput {
+  readonly Content?: string;
+  readonly Description?: string;
+  readonly LastModified?: Date;
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly SchemaVersion?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Type?: string;
+  readonly VersionCreatedDate?: Date;
+}
+
+export interface DescribeSchemaRequest {
   readonly RegistryName: string;
-  readonly Tags: {[key: string]: any};
-}
-
-interface DescribeSchemaOutput {
-  readonly Content: string;
-  readonly Description: string;
-  readonly LastModified: Date;
-  readonly SchemaArn: string;
   readonly SchemaName: string;
-  readonly SchemaVersion: string;
-  readonly Tags: {[key: string]: any};
-  readonly Type: string;
-  readonly VersionCreatedDate: Date;
+  readonly SchemaVersion?: string;
 }
 
-interface DescribeSchemaRequest {
-  readonly RegistryName: string;
-  readonly SchemaName: string;
-  readonly SchemaVersion: string;
+export interface DescribeSchemaResponse {
+  readonly Content?: string;
+  readonly Description?: string;
+  readonly LastModified?: Date;
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly SchemaVersion?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Type?: string;
+  readonly VersionCreatedDate?: Date;
 }
 
-interface DescribeSchemaResponse {
-  readonly Content: string;
-  readonly Description: string;
-  readonly LastModified: Date;
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly SchemaVersion: string;
-  readonly Tags: {[key: string]: any};
-  readonly Type: string;
-  readonly VersionCreatedDate: Date;
+export interface DiscovererOutput {
+  readonly Description?: string;
+  readonly DiscovererArn?: string;
+  readonly DiscovererId?: string;
+  readonly SourceArn?: string;
+  readonly State?: string;
+  readonly CrossAccount?: boolean;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface DiscovererOutput {
-  readonly Description: string;
-  readonly DiscovererArn: string;
-  readonly DiscovererId: string;
-  readonly SourceArn: string;
-  readonly State: string;
-  readonly CrossAccount: boolean;
-  readonly Tags: {[key: string]: any};
+export interface DiscovererStateOutput {
+  readonly DiscovererId?: string;
+  readonly State?: string;
 }
 
-interface DiscovererStateOutput {
-  readonly DiscovererId: string;
-  readonly State: string;
+export interface DiscovererSummary {
+  readonly DiscovererArn?: string;
+  readonly DiscovererId?: string;
+  readonly SourceArn?: string;
+  readonly State?: string;
+  readonly CrossAccount?: boolean;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface DiscovererSummary {
-  readonly DiscovererArn: string;
-  readonly DiscovererId: string;
-  readonly SourceArn: string;
-  readonly State: string;
-  readonly CrossAccount: boolean;
-  readonly Tags: {[key: string]: any};
-}
-
-interface ErrorOutput {
+export interface ErrorOutput {
   readonly Code: string;
   readonly Message: string;
 }
 
-interface ExportSchemaOutput {
-  readonly Content: string;
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly SchemaVersion: string;
-  readonly Type: string;
+export interface ExportSchemaOutput {
+  readonly Content?: string;
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly SchemaVersion?: string;
+  readonly Type?: string;
 }
 
-interface ExportSchemaRequest {
+export interface ExportSchemaRequest {
   readonly RegistryName: string;
   readonly SchemaName: string;
-  readonly SchemaVersion: string;
+  readonly SchemaVersion?: string;
   readonly Type: string;
 }
 
-interface ExportSchemaResponse {
-  readonly Content: string;
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly SchemaVersion: string;
-  readonly Type: string;
+export interface ExportSchemaResponse {
+  readonly Content?: string;
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly SchemaVersion?: string;
+  readonly Type?: string;
 }
 
-interface ForbiddenException {
+export interface ForbiddenException {
   readonly Code: string;
   readonly Message: string;
 }
 
-interface GetCodeBindingSourceRequest {
+export interface GetCodeBindingSourceRequest {
   readonly Language: string;
   readonly RegistryName: string;
   readonly SchemaName: string;
-  readonly SchemaVersion: string;
+  readonly SchemaVersion?: string;
 }
 
-interface GetCodeBindingSourceResponse {
-  readonly Body: unknown;
+export interface GetCodeBindingSourceResponse {
+  readonly Body?: unknown;
 }
 
-interface GetDiscoveredSchemaInput {
+export interface GetDiscoveredSchemaInput {
   readonly Events: [];
   readonly Type: string;
 }
 
-interface GetDiscoveredSchemaOutput {
-  readonly Content: string;
+export interface GetDiscoveredSchemaOutput {
+  readonly Content?: string;
 }
 
-interface GetDiscoveredSchemaRequest {
+export interface GetDiscoveredSchemaRequest {
   readonly Events: [];
   readonly Type: string;
 }
 
-interface GetDiscoveredSchemaResponse {
-  readonly Content: string;
+export interface GetDiscoveredSchemaResponse {
+  readonly Content?: string;
 }
 
-interface GetResourcePolicyOutput {
-  readonly Policy: string;
-  readonly RevisionId: string;
+export interface GetResourcePolicyOutput {
+  readonly Policy?: string;
+  readonly RevisionId?: string;
 }
 
-interface GetResourcePolicyRequest {
-  readonly RegistryName: string;
+export interface GetResourcePolicyRequest {
+  readonly RegistryName?: string;
 }
 
-interface GetResourcePolicyResponse {
-  readonly Policy: string;
-  readonly RevisionId: string;
+export interface GetResourcePolicyResponse {
+  readonly Policy?: string;
+  readonly RevisionId?: string;
 }
 
-interface GoneException {
+export interface GoneException {
   readonly Code: string;
   readonly Message: string;
 }
 
-interface InternalServerErrorException {
+export interface InternalServerErrorException {
   readonly Code: string;
   readonly Message: string;
 }
 
-interface ListDiscoverersOutput {
-  readonly Discoverers: [];
-  readonly NextToken: string;
+export interface ListDiscoverersOutput {
+  readonly Discoverers?: [];
+  readonly NextToken?: string;
 }
 
-interface ListDiscoverersRequest {
-  readonly DiscovererIdPrefix: string;
-  readonly Limit: number;
-  readonly NextToken: string;
-  readonly SourceArnPrefix: string;
+export interface ListDiscoverersRequest {
+  readonly DiscovererIdPrefix?: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
+  readonly SourceArnPrefix?: string;
 }
 
-interface ListDiscoverersResponse {
-  readonly Discoverers: [];
-  readonly NextToken: string;
+export interface ListDiscoverersResponse {
+  readonly Discoverers?: [];
+  readonly NextToken?: string;
 }
 
-interface ListRegistriesOutput {
-  readonly NextToken: string;
-  readonly Registries: [];
+export interface ListRegistriesOutput {
+  readonly NextToken?: string;
+  readonly Registries?: [];
 }
 
-interface ListRegistriesRequest {
-  readonly Limit: number;
-  readonly NextToken: string;
-  readonly RegistryNamePrefix: string;
-  readonly Scope: string;
+export interface ListRegistriesRequest {
+  readonly Limit?: number;
+  readonly NextToken?: string;
+  readonly RegistryNamePrefix?: string;
+  readonly Scope?: string;
 }
 
-interface ListRegistriesResponse {
-  readonly NextToken: string;
-  readonly Registries: [];
+export interface ListRegistriesResponse {
+  readonly NextToken?: string;
+  readonly Registries?: [];
 }
 
-interface ListSchemaVersionsOutput {
-  readonly NextToken: string;
-  readonly SchemaVersions: [];
+export interface ListSchemaVersionsOutput {
+  readonly NextToken?: string;
+  readonly SchemaVersions?: [];
 }
 
-interface ListSchemaVersionsRequest {
-  readonly Limit: number;
-  readonly NextToken: string;
+export interface ListSchemaVersionsRequest {
+  readonly Limit?: number;
+  readonly NextToken?: string;
   readonly RegistryName: string;
   readonly SchemaName: string;
 }
 
-interface ListSchemaVersionsResponse {
-  readonly NextToken: string;
-  readonly SchemaVersions: [];
+export interface ListSchemaVersionsResponse {
+  readonly NextToken?: string;
+  readonly SchemaVersions?: [];
 }
 
-interface ListSchemasOutput {
-  readonly NextToken: string;
-  readonly Schemas: [];
+export interface ListSchemasOutput {
+  readonly NextToken?: string;
+  readonly Schemas?: [];
 }
 
-interface ListSchemasRequest {
-  readonly Limit: number;
-  readonly NextToken: string;
+export interface ListSchemasRequest {
+  readonly Limit?: number;
+  readonly NextToken?: string;
   readonly RegistryName: string;
-  readonly SchemaNamePrefix: string;
+  readonly SchemaNamePrefix?: string;
 }
 
-interface ListSchemasResponse {
-  readonly NextToken: string;
-  readonly Schemas: [];
+export interface ListSchemasResponse {
+  readonly NextToken?: string;
+  readonly Schemas?: [];
 }
 
-interface ListTagsForResourceOutput {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceOutput {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface NotFoundException {
+export interface NotFoundException {
   readonly Code: string;
   readonly Message: string;
 }
 
-interface PreconditionFailedException {
+export interface PreconditionFailedException {
   readonly Code: string;
   readonly Message: string;
 }
 
-interface PutCodeBindingRequest {
+export interface PutCodeBindingRequest {
   readonly Language: string;
   readonly RegistryName: string;
   readonly SchemaName: string;
-  readonly SchemaVersion: string;
+  readonly SchemaVersion?: string;
 }
 
-interface PutCodeBindingResponse {
-  readonly CreationDate: Date;
-  readonly LastModified: Date;
-  readonly SchemaVersion: string;
-  readonly Status: string;
+export interface PutCodeBindingResponse {
+  readonly CreationDate?: Date;
+  readonly LastModified?: Date;
+  readonly SchemaVersion?: string;
+  readonly Status?: string;
 }
 
-interface PutResourcePolicyInput {
+export interface PutResourcePolicyInput {
   readonly Policy: string;
-  readonly RevisionId: string;
+  readonly RevisionId?: string;
 }
 
-interface PutResourcePolicyOutput {
+export interface PutResourcePolicyOutput {
+  readonly Policy?: string;
+  readonly RevisionId?: string;
+}
+
+export interface PutResourcePolicyRequest {
   readonly Policy: string;
-  readonly RevisionId: string;
+  readonly RegistryName?: string;
+  readonly RevisionId?: string;
 }
 
-interface PutResourcePolicyRequest {
-  readonly Policy: string;
-  readonly RegistryName: string;
-  readonly RevisionId: string;
+export interface PutResourcePolicyResponse {
+  readonly Policy?: string;
+  readonly RevisionId?: string;
 }
 
-interface PutResourcePolicyResponse {
-  readonly Policy: string;
-  readonly RevisionId: string;
+export interface RegistryOutput {
+  readonly Description?: string;
+  readonly RegistryArn?: string;
+  readonly RegistryName?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface RegistryOutput {
-  readonly Description: string;
-  readonly RegistryArn: string;
-  readonly RegistryName: string;
-  readonly Tags: {[key: string]: any};
+export interface RegistrySummary {
+  readonly RegistryArn?: string;
+  readonly RegistryName?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface RegistrySummary {
-  readonly RegistryArn: string;
-  readonly RegistryName: string;
-  readonly Tags: {[key: string]: any};
+export interface SchemaOutput {
+  readonly Description?: string;
+  readonly LastModified?: Date;
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly SchemaVersion?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Type?: string;
+  readonly VersionCreatedDate?: Date;
 }
 
-interface SchemaOutput {
-  readonly Description: string;
-  readonly LastModified: Date;
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly SchemaVersion: string;
-  readonly Tags: {[key: string]: any};
-  readonly Type: string;
-  readonly VersionCreatedDate: Date;
+export interface SchemaSummary {
+  readonly LastModified?: Date;
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly VersionCount?: number;
 }
 
-interface SchemaSummary {
-  readonly LastModified: Date;
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly Tags: {[key: string]: any};
-  readonly VersionCount: number;
+export interface SchemaVersionSummary {
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly SchemaVersion?: string;
+  readonly Type?: string;
 }
 
-interface SchemaVersionSummary {
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly SchemaVersion: string;
-  readonly Type: string;
+export interface SearchSchemaSummary {
+  readonly RegistryName?: string;
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly SchemaVersions?: [];
 }
 
-interface SearchSchemaSummary {
-  readonly RegistryName: string;
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly SchemaVersions: [];
+export interface SearchSchemaVersionSummary {
+  readonly CreatedDate?: Date;
+  readonly SchemaVersion?: string;
+  readonly Type?: string;
 }
 
-interface SearchSchemaVersionSummary {
-  readonly CreatedDate: Date;
-  readonly SchemaVersion: string;
-  readonly Type: string;
+export interface SearchSchemasOutput {
+  readonly NextToken?: string;
+  readonly Schemas?: [];
 }
 
-interface SearchSchemasOutput {
-  readonly NextToken: string;
-  readonly Schemas: [];
-}
-
-interface SearchSchemasRequest {
+export interface SearchSchemasRequest {
   readonly Keywords: string;
-  readonly Limit: number;
-  readonly NextToken: string;
+  readonly Limit?: number;
+  readonly NextToken?: string;
   readonly RegistryName: string;
 }
 
-interface SearchSchemasResponse {
-  readonly NextToken: string;
-  readonly Schemas: [];
+export interface SearchSchemasResponse {
+  readonly NextToken?: string;
+  readonly Schemas?: [];
 }
 
-interface ServiceUnavailableException {
+export interface ServiceUnavailableException {
   readonly Code: string;
   readonly Message: string;
 }
 
-interface StartDiscovererRequest {
+export interface StartDiscovererRequest {
   readonly DiscovererId: string;
 }
 
-interface StartDiscovererResponse {
-  readonly DiscovererId: string;
-  readonly State: string;
+export interface StartDiscovererResponse {
+  readonly DiscovererId?: string;
+  readonly State?: string;
 }
 
-interface StopDiscovererRequest {
+export interface StopDiscovererRequest {
   readonly DiscovererId: string;
 }
 
-interface StopDiscovererResponse {
-  readonly DiscovererId: string;
-  readonly State: string;
+export interface StopDiscovererResponse {
+  readonly DiscovererId?: string;
+  readonly State?: string;
 }
 
-interface TagResourceInput {
+export interface TagResourceInput {
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TooManyRequestsException {
+export interface TooManyRequestsException {
   readonly Code: string;
   readonly Message: string;
 }
 
-interface UnauthorizedException {
+export interface UnauthorizedException {
   readonly Code: string;
   readonly Message: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UpdateDiscovererInput {
-  readonly Description: string;
-  readonly CrossAccount: boolean;
+export interface UpdateDiscovererInput {
+  readonly Description?: string;
+  readonly CrossAccount?: boolean;
 }
 
-interface UpdateDiscovererRequest {
-  readonly Description: string;
+export interface UpdateDiscovererRequest {
+  readonly Description?: string;
   readonly DiscovererId: string;
-  readonly CrossAccount: boolean;
+  readonly CrossAccount?: boolean;
 }
 
-interface UpdateDiscovererResponse {
-  readonly Description: string;
-  readonly DiscovererArn: string;
-  readonly DiscovererId: string;
-  readonly SourceArn: string;
-  readonly State: string;
-  readonly CrossAccount: boolean;
-  readonly Tags: {[key: string]: any};
+export interface UpdateDiscovererResponse {
+  readonly Description?: string;
+  readonly DiscovererArn?: string;
+  readonly DiscovererId?: string;
+  readonly SourceArn?: string;
+  readonly State?: string;
+  readonly CrossAccount?: boolean;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface UpdateRegistryInput {
-  readonly Description: string;
+export interface UpdateRegistryInput {
+  readonly Description?: string;
 }
 
-interface UpdateRegistryRequest {
-  readonly Description: string;
+export interface UpdateRegistryRequest {
+  readonly Description?: string;
   readonly RegistryName: string;
 }
 
-interface UpdateRegistryResponse {
-  readonly Description: string;
-  readonly RegistryArn: string;
-  readonly RegistryName: string;
-  readonly Tags: {[key: string]: any};
+export interface UpdateRegistryResponse {
+  readonly Description?: string;
+  readonly RegistryArn?: string;
+  readonly RegistryName?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface UpdateSchemaInput {
-  readonly ClientTokenId: string;
-  readonly Content: string;
-  readonly Description: string;
-  readonly Type: string;
+export interface UpdateSchemaInput {
+  readonly ClientTokenId?: string;
+  readonly Content?: string;
+  readonly Description?: string;
+  readonly Type?: string;
 }
 
-interface UpdateSchemaRequest {
-  readonly ClientTokenId: string;
-  readonly Content: string;
-  readonly Description: string;
+export interface UpdateSchemaRequest {
+  readonly ClientTokenId?: string;
+  readonly Content?: string;
+  readonly Description?: string;
   readonly RegistryName: string;
   readonly SchemaName: string;
-  readonly Type: string;
+  readonly Type?: string;
 }
 
-interface UpdateSchemaResponse {
-  readonly Description: string;
-  readonly LastModified: Date;
-  readonly SchemaArn: string;
-  readonly SchemaName: string;
-  readonly SchemaVersion: string;
-  readonly Tags: {[key: string]: any};
-  readonly Type: string;
-  readonly VersionCreatedDate: Date;
+export interface UpdateSchemaResponse {
+  readonly Description?: string;
+  readonly LastModified?: Date;
+  readonly SchemaArn?: string;
+  readonly SchemaName?: string;
+  readonly SchemaVersion?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Type?: string;
+  readonly VersionCreatedDate?: Date;
 }
+
 

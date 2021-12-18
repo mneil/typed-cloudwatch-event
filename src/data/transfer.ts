@@ -11,6 +11,7 @@ export interface CreateAccess {
   readonly ServerId: string;
   readonly ExternalId: string;
 }
+
 export interface CreateServer {
   readonly Certificate?: string;
   readonly Domain?: string;
@@ -25,6 +26,7 @@ export interface CreateServer {
   readonly Tags?: [];
   readonly WorkflowDetails?: WorkflowDetails;
 }
+
 export interface CreateUser {
   readonly HomeDirectory?: string;
   readonly HomeDirectoryType?: string;
@@ -37,105 +39,130 @@ export interface CreateUser {
   readonly Tags?: [];
   readonly UserName: string;
 }
+
 export interface CreateWorkflow {
   readonly Description?: string;
   readonly Steps: [];
   readonly OnExceptionSteps?: [];
   readonly Tags?: [];
 }
+
 export interface DeleteAccess {
   readonly ServerId: string;
   readonly ExternalId: string;
 }
+
 export interface DeleteServer {
   readonly ServerId: string;
 }
+
 export interface DeleteSshPublicKey {
   readonly ServerId: string;
   readonly SshPublicKeyId: string;
   readonly UserName: string;
 }
+
 export interface DeleteUser {
   readonly ServerId: string;
   readonly UserName: string;
 }
+
 export interface DeleteWorkflow {
   readonly WorkflowId: string;
 }
+
 export interface DescribeAccess {
   readonly ServerId: string;
   readonly ExternalId: string;
 }
+
 export interface DescribeExecution {
   readonly ExecutionId: string;
   readonly WorkflowId: string;
 }
+
 export interface DescribeSecurityPolicy {
   readonly SecurityPolicyName: string;
 }
+
 export interface DescribeServer {
   readonly ServerId: string;
 }
+
 export interface DescribeUser {
   readonly ServerId: string;
   readonly UserName: string;
 }
+
 export interface DescribeWorkflow {
   readonly WorkflowId: string;
 }
+
 export interface ImportSshPublicKey {
   readonly ServerId: string;
   readonly SshPublicKeyBody: string;
   readonly UserName: string;
 }
+
 export interface ListAccesses {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly ServerId: string;
 }
+
 export interface ListExecutions {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly WorkflowId: string;
 }
+
 export interface ListSecurityPolicies {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListServers {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly Arn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListUsers {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly ServerId: string;
 }
+
 export interface ListWorkflows {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface SendWorkflowStepState {
   readonly WorkflowId: string;
   readonly ExecutionId: string;
   readonly Token: string;
   readonly Status: string;
 }
+
 export interface StartServer {
   readonly ServerId: string;
 }
+
 export interface StopServer {
   readonly ServerId: string;
 }
+
 export interface TagResource {
   readonly Arn: string;
   readonly Tags: [];
 }
+
 export interface TestIdentityProvider {
   readonly ServerId: string;
   readonly ServerProtocol?: string;
@@ -143,10 +170,12 @@ export interface TestIdentityProvider {
   readonly UserName: string;
   readonly UserPassword?: string;
 }
+
 export interface UntagResource {
   readonly Arn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateAccess {
   readonly HomeDirectory?: string;
   readonly HomeDirectoryType?: string;
@@ -157,6 +186,7 @@ export interface UpdateAccess {
   readonly ServerId: string;
   readonly ExternalId: string;
 }
+
 export interface UpdateServer {
   readonly Certificate?: string;
   readonly ProtocolDetails?: ProtocolDetails;
@@ -170,6 +200,7 @@ export interface UpdateServer {
   readonly ServerId: string;
   readonly WorkflowDetails?: WorkflowDetails;
 }
+
 export interface UpdateUser {
   readonly HomeDirectory?: string;
   readonly HomeDirectoryType?: string;
@@ -181,624 +212,623 @@ export interface UpdateUser {
   readonly UserName: string;
 }
 
+export interface AccessDeniedException {
+  readonly Message?: string;
+}
 
-
-interface AccessDeniedException {
+export interface ConflictException {
   readonly Message: string;
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface CopyStepDetails {
+  readonly Name?: string;
+  readonly DestinationFileLocation?: InputFileLocation;
+  readonly OverwriteExisting?: string;
 }
 
-interface CopyStepDetails {
-  readonly Name: string;
-  readonly DestinationFileLocation: InputFileLocation;
-  readonly OverwriteExisting: string;
-}
-
-interface CreateAccessRequest {
-  readonly HomeDirectory: string;
-  readonly HomeDirectoryType: string;
-  readonly HomeDirectoryMappings: [];
-  readonly Policy: string;
-  readonly PosixProfile: PosixProfile;
+export interface CreateAccessRequest {
+  readonly HomeDirectory?: string;
+  readonly HomeDirectoryType?: string;
+  readonly HomeDirectoryMappings?: [];
+  readonly Policy?: string;
+  readonly PosixProfile?: PosixProfile;
   readonly Role: string;
   readonly ServerId: string;
   readonly ExternalId: string;
 }
 
-interface CreateAccessResponse {
+export interface CreateAccessResponse {
   readonly ServerId: string;
   readonly ExternalId: string;
 }
 
-interface CreateServerRequest {
-  readonly Certificate: string;
-  readonly Domain: string;
-  readonly EndpointDetails: EndpointDetails;
-  readonly EndpointType: string;
-  readonly HostKey: string;
-  readonly IdentityProviderDetails: IdentityProviderDetails;
-  readonly IdentityProviderType: string;
-  readonly LoggingRole: string;
-  readonly Protocols: [];
-  readonly SecurityPolicyName: string;
-  readonly Tags: [];
-  readonly WorkflowDetails: WorkflowDetails;
+export interface CreateServerRequest {
+  readonly Certificate?: string;
+  readonly Domain?: string;
+  readonly EndpointDetails?: EndpointDetails;
+  readonly EndpointType?: string;
+  readonly HostKey?: string;
+  readonly IdentityProviderDetails?: IdentityProviderDetails;
+  readonly IdentityProviderType?: string;
+  readonly LoggingRole?: string;
+  readonly Protocols?: [];
+  readonly SecurityPolicyName?: string;
+  readonly Tags?: [];
+  readonly WorkflowDetails?: WorkflowDetails;
 }
 
-interface CreateServerResponse {
+export interface CreateServerResponse {
   readonly ServerId: string;
 }
 
-interface CreateUserRequest {
-  readonly HomeDirectory: string;
-  readonly HomeDirectoryType: string;
-  readonly HomeDirectoryMappings: [];
-  readonly Policy: string;
-  readonly PosixProfile: PosixProfile;
+export interface CreateUserRequest {
+  readonly HomeDirectory?: string;
+  readonly HomeDirectoryType?: string;
+  readonly HomeDirectoryMappings?: [];
+  readonly Policy?: string;
+  readonly PosixProfile?: PosixProfile;
   readonly Role: string;
   readonly ServerId: string;
-  readonly SshPublicKeyBody: string;
-  readonly Tags: [];
+  readonly SshPublicKeyBody?: string;
+  readonly Tags?: [];
   readonly UserName: string;
 }
 
-interface CreateUserResponse {
+export interface CreateUserResponse {
   readonly ServerId: string;
   readonly UserName: string;
 }
 
-interface CreateWorkflowRequest {
-  readonly Description: string;
+export interface CreateWorkflowRequest {
+  readonly Description?: string;
   readonly Steps: [];
-  readonly OnExceptionSteps: [];
-  readonly Tags: [];
+  readonly OnExceptionSteps?: [];
+  readonly Tags?: [];
 }
 
-interface CreateWorkflowResponse {
+export interface CreateWorkflowResponse {
   readonly WorkflowId: string;
 }
 
-interface CustomStepDetails {
-  readonly Name: string;
-  readonly Target: string;
-  readonly TimeoutSeconds: number;
+export interface CustomStepDetails {
+  readonly Name?: string;
+  readonly Target?: string;
+  readonly TimeoutSeconds?: number;
 }
 
-interface DeleteAccessRequest {
+export interface DeleteAccessRequest {
   readonly ServerId: string;
   readonly ExternalId: string;
 }
 
-interface DeleteServerRequest {
+export interface DeleteServerRequest {
   readonly ServerId: string;
 }
 
-interface DeleteSshPublicKeyRequest {
+export interface DeleteSshPublicKeyRequest {
   readonly ServerId: string;
   readonly SshPublicKeyId: string;
   readonly UserName: string;
 }
 
-interface DeleteStepDetails {
-  readonly Name: string;
+export interface DeleteStepDetails {
+  readonly Name?: string;
 }
 
-interface DeleteUserRequest {
+export interface DeleteUserRequest {
   readonly ServerId: string;
   readonly UserName: string;
 }
 
-interface DeleteWorkflowRequest {
+export interface DeleteWorkflowRequest {
   readonly WorkflowId: string;
 }
 
-interface DescribeAccessRequest {
+export interface DescribeAccessRequest {
   readonly ServerId: string;
   readonly ExternalId: string;
 }
 
-interface DescribeAccessResponse {
+export interface DescribeAccessResponse {
   readonly ServerId: string;
   readonly Access: DescribedAccess;
 }
 
-interface DescribeExecutionRequest {
+export interface DescribeExecutionRequest {
   readonly ExecutionId: string;
   readonly WorkflowId: string;
 }
 
-interface DescribeExecutionResponse {
+export interface DescribeExecutionResponse {
   readonly WorkflowId: string;
   readonly Execution: DescribedExecution;
 }
 
-interface DescribeSecurityPolicyRequest {
+export interface DescribeSecurityPolicyRequest {
   readonly SecurityPolicyName: string;
 }
 
-interface DescribeSecurityPolicyResponse {
+export interface DescribeSecurityPolicyResponse {
   readonly SecurityPolicy: DescribedSecurityPolicy;
 }
 
-interface DescribeServerRequest {
+export interface DescribeServerRequest {
   readonly ServerId: string;
 }
 
-interface DescribeServerResponse {
+export interface DescribeServerResponse {
   readonly Server: DescribedServer;
 }
 
-interface DescribeUserRequest {
+export interface DescribeUserRequest {
   readonly ServerId: string;
   readonly UserName: string;
 }
 
-interface DescribeUserResponse {
+export interface DescribeUserResponse {
   readonly ServerId: string;
   readonly User: DescribedUser;
 }
 
-interface DescribeWorkflowRequest {
+export interface DescribeWorkflowRequest {
   readonly WorkflowId: string;
 }
 
-interface DescribeWorkflowResponse {
+export interface DescribeWorkflowResponse {
   readonly Workflow: DescribedWorkflow;
 }
 
-interface DescribedAccess {
-  readonly HomeDirectory: string;
-  readonly HomeDirectoryMappings: [];
-  readonly HomeDirectoryType: string;
-  readonly Policy: string;
-  readonly PosixProfile: PosixProfile;
-  readonly Role: string;
-  readonly ExternalId: string;
+export interface DescribedAccess {
+  readonly HomeDirectory?: string;
+  readonly HomeDirectoryMappings?: [];
+  readonly HomeDirectoryType?: string;
+  readonly Policy?: string;
+  readonly PosixProfile?: PosixProfile;
+  readonly Role?: string;
+  readonly ExternalId?: string;
 }
 
-interface DescribedExecution {
-  readonly ExecutionId: string;
-  readonly InitialFileLocation: FileLocation;
-  readonly ServiceMetadata: ServiceMetadata;
-  readonly ExecutionRole: string;
-  readonly LoggingConfiguration: LoggingConfiguration;
-  readonly PosixProfile: PosixProfile;
-  readonly Status: string;
-  readonly Results: ExecutionResults;
+export interface DescribedExecution {
+  readonly ExecutionId?: string;
+  readonly InitialFileLocation?: FileLocation;
+  readonly ServiceMetadata?: ServiceMetadata;
+  readonly ExecutionRole?: string;
+  readonly LoggingConfiguration?: LoggingConfiguration;
+  readonly PosixProfile?: PosixProfile;
+  readonly Status?: string;
+  readonly Results?: ExecutionResults;
 }
 
-interface DescribedSecurityPolicy {
-  readonly Fips: boolean;
+export interface DescribedSecurityPolicy {
+  readonly Fips?: boolean;
   readonly SecurityPolicyName: string;
-  readonly SshCiphers: [];
-  readonly SshKexs: [];
-  readonly SshMacs: [];
-  readonly TlsCiphers: [];
+  readonly SshCiphers?: [];
+  readonly SshKexs?: [];
+  readonly SshMacs?: [];
+  readonly TlsCiphers?: [];
 }
 
-interface DescribedServer {
+export interface DescribedServer {
   readonly Arn: string;
-  readonly Certificate: string;
-  readonly ProtocolDetails: ProtocolDetails;
-  readonly Domain: string;
-  readonly EndpointDetails: EndpointDetails;
-  readonly EndpointType: string;
-  readonly HostKeyFingerprint: string;
-  readonly IdentityProviderDetails: IdentityProviderDetails;
-  readonly IdentityProviderType: string;
-  readonly LoggingRole: string;
-  readonly Protocols: [];
-  readonly SecurityPolicyName: string;
-  readonly ServerId: string;
-  readonly State: string;
-  readonly Tags: [];
-  readonly UserCount: number;
-  readonly WorkflowDetails: WorkflowDetails;
+  readonly Certificate?: string;
+  readonly ProtocolDetails?: ProtocolDetails;
+  readonly Domain?: string;
+  readonly EndpointDetails?: EndpointDetails;
+  readonly EndpointType?: string;
+  readonly HostKeyFingerprint?: string;
+  readonly IdentityProviderDetails?: IdentityProviderDetails;
+  readonly IdentityProviderType?: string;
+  readonly LoggingRole?: string;
+  readonly Protocols?: [];
+  readonly SecurityPolicyName?: string;
+  readonly ServerId?: string;
+  readonly State?: string;
+  readonly Tags?: [];
+  readonly UserCount?: number;
+  readonly WorkflowDetails?: WorkflowDetails;
 }
 
-interface DescribedUser {
+export interface DescribedUser {
   readonly Arn: string;
-  readonly HomeDirectory: string;
-  readonly HomeDirectoryMappings: [];
-  readonly HomeDirectoryType: string;
-  readonly Policy: string;
-  readonly PosixProfile: PosixProfile;
-  readonly Role: string;
-  readonly SshPublicKeys: [];
-  readonly Tags: [];
-  readonly UserName: string;
+  readonly HomeDirectory?: string;
+  readonly HomeDirectoryMappings?: [];
+  readonly HomeDirectoryType?: string;
+  readonly Policy?: string;
+  readonly PosixProfile?: PosixProfile;
+  readonly Role?: string;
+  readonly SshPublicKeys?: [];
+  readonly Tags?: [];
+  readonly UserName?: string;
 }
 
-interface DescribedWorkflow {
+export interface DescribedWorkflow {
   readonly Arn: string;
-  readonly Description: string;
-  readonly Steps: [];
-  readonly OnExceptionSteps: [];
-  readonly WorkflowId: string;
-  readonly Tags: [];
+  readonly Description?: string;
+  readonly Steps?: [];
+  readonly OnExceptionSteps?: [];
+  readonly WorkflowId?: string;
+  readonly Tags?: [];
 }
 
-interface EfsFileLocation {
-  readonly FileSystemId: string;
-  readonly Path: string;
+export interface EfsFileLocation {
+  readonly FileSystemId?: string;
+  readonly Path?: string;
 }
 
-interface EndpointDetails {
-  readonly AddressAllocationIds: [];
-  readonly SubnetIds: [];
-  readonly VpcEndpointId: string;
-  readonly VpcId: string;
-  readonly SecurityGroupIds: [];
+export interface EndpointDetails {
+  readonly AddressAllocationIds?: [];
+  readonly SubnetIds?: [];
+  readonly VpcEndpointId?: string;
+  readonly VpcId?: string;
+  readonly SecurityGroupIds?: [];
 }
 
-interface ExecutionError {
+export interface ExecutionError {
   readonly Type: string;
   readonly Message: string;
 }
 
-interface ExecutionResults {
-  readonly Steps: [];
-  readonly OnExceptionSteps: [];
+export interface ExecutionResults {
+  readonly Steps?: [];
+  readonly OnExceptionSteps?: [];
 }
 
-interface ExecutionStepResult {
-  readonly StepType: string;
-  readonly Outputs: string;
-  readonly Error: ExecutionError;
+export interface ExecutionStepResult {
+  readonly StepType?: string;
+  readonly Outputs?: string;
+  readonly Error?: ExecutionError;
 }
 
-interface FileLocation {
-  readonly S3FileLocation: S3FileLocation;
-  readonly EfsFileLocation: EfsFileLocation;
+export interface FileLocation {
+  readonly S3FileLocation?: S3FileLocation;
+  readonly EfsFileLocation?: EfsFileLocation;
 }
 
-interface HomeDirectoryMapEntry {
+export interface HomeDirectoryMapEntry {
   readonly Entry: string;
   readonly Target: string;
 }
 
-interface IdentityProviderDetails {
-  readonly Url: string;
-  readonly InvocationRole: string;
-  readonly DirectoryId: string;
-  readonly Function: string;
+export interface IdentityProviderDetails {
+  readonly Url?: string;
+  readonly InvocationRole?: string;
+  readonly DirectoryId?: string;
+  readonly Function?: string;
 }
 
-interface ImportSshPublicKeyRequest {
+export interface ImportSshPublicKeyRequest {
   readonly ServerId: string;
   readonly SshPublicKeyBody: string;
   readonly UserName: string;
 }
 
-interface ImportSshPublicKeyResponse {
+export interface ImportSshPublicKeyResponse {
   readonly ServerId: string;
   readonly SshPublicKeyId: string;
   readonly UserName: string;
 }
 
-interface InputFileLocation {
-  readonly S3FileLocation: S3InputFileLocation;
-  readonly EfsFileLocation: EfsFileLocation;
+export interface InputFileLocation {
+  readonly S3FileLocation?: S3InputFileLocation;
+  readonly EfsFileLocation?: EfsFileLocation;
 }
 
-interface InternalServiceError {
+export interface InternalServiceError {
   readonly Message: string;
 }
 
-interface InvalidNextTokenException {
+export interface InvalidNextTokenException {
   readonly Message: string;
 }
 
-interface InvalidRequestException {
+export interface InvalidRequestException {
   readonly Message: string;
 }
 
-interface ListAccessesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListAccessesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ServerId: string;
 }
 
-interface ListAccessesResponse {
-  readonly NextToken: string;
+export interface ListAccessesResponse {
+  readonly NextToken?: string;
   readonly ServerId: string;
   readonly Accesses: [];
 }
 
-interface ListExecutionsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListExecutionsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly WorkflowId: string;
 }
 
-interface ListExecutionsResponse {
-  readonly NextToken: string;
+export interface ListExecutionsResponse {
+  readonly NextToken?: string;
   readonly WorkflowId: string;
   readonly Executions: [];
 }
 
-interface ListSecurityPoliciesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListSecurityPoliciesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListSecurityPoliciesResponse {
-  readonly NextToken: string;
+export interface ListSecurityPoliciesResponse {
+  readonly NextToken?: string;
   readonly SecurityPolicyNames: [];
 }
 
-interface ListServersRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListServersRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListServersResponse {
-  readonly NextToken: string;
+export interface ListServersResponse {
+  readonly NextToken?: string;
   readonly Servers: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly Arn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Arn: string;
-  readonly NextToken: string;
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Arn?: string;
+  readonly NextToken?: string;
+  readonly Tags?: [];
 }
 
-interface ListUsersRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListUsersRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ServerId: string;
 }
 
-interface ListUsersResponse {
-  readonly NextToken: string;
+export interface ListUsersResponse {
+  readonly NextToken?: string;
   readonly ServerId: string;
   readonly Users: [];
 }
 
-interface ListWorkflowsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListWorkflowsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListWorkflowsResponse {
-  readonly NextToken: string;
+export interface ListWorkflowsResponse {
+  readonly NextToken?: string;
   readonly Workflows: [];
 }
 
-interface ListedAccess {
-  readonly HomeDirectory: string;
-  readonly HomeDirectoryType: string;
-  readonly Role: string;
-  readonly ExternalId: string;
+export interface ListedAccess {
+  readonly HomeDirectory?: string;
+  readonly HomeDirectoryType?: string;
+  readonly Role?: string;
+  readonly ExternalId?: string;
 }
 
-interface ListedExecution {
-  readonly ExecutionId: string;
-  readonly InitialFileLocation: FileLocation;
-  readonly ServiceMetadata: ServiceMetadata;
-  readonly Status: string;
+export interface ListedExecution {
+  readonly ExecutionId?: string;
+  readonly InitialFileLocation?: FileLocation;
+  readonly ServiceMetadata?: ServiceMetadata;
+  readonly Status?: string;
 }
 
-interface ListedServer {
+export interface ListedServer {
   readonly Arn: string;
-  readonly Domain: string;
-  readonly IdentityProviderType: string;
-  readonly EndpointType: string;
-  readonly LoggingRole: string;
-  readonly ServerId: string;
-  readonly State: string;
-  readonly UserCount: number;
+  readonly Domain?: string;
+  readonly IdentityProviderType?: string;
+  readonly EndpointType?: string;
+  readonly LoggingRole?: string;
+  readonly ServerId?: string;
+  readonly State?: string;
+  readonly UserCount?: number;
 }
 
-interface ListedUser {
+export interface ListedUser {
   readonly Arn: string;
-  readonly HomeDirectory: string;
-  readonly HomeDirectoryType: string;
-  readonly Role: string;
-  readonly SshPublicKeyCount: number;
-  readonly UserName: string;
+  readonly HomeDirectory?: string;
+  readonly HomeDirectoryType?: string;
+  readonly Role?: string;
+  readonly SshPublicKeyCount?: number;
+  readonly UserName?: string;
 }
 
-interface ListedWorkflow {
-  readonly WorkflowId: string;
-  readonly Description: string;
-  readonly Arn: string;
+export interface ListedWorkflow {
+  readonly WorkflowId?: string;
+  readonly Description?: string;
+  readonly Arn?: string;
 }
 
-interface LoggingConfiguration {
-  readonly LoggingRole: string;
-  readonly LogGroupName: string;
+export interface LoggingConfiguration {
+  readonly LoggingRole?: string;
+  readonly LogGroupName?: string;
 }
 
-interface PosixProfile {
+export interface PosixProfile {
   readonly Uid: number;
   readonly Gid: number;
-  readonly SecondaryGids: [];
+  readonly SecondaryGids?: [];
 }
 
-interface ProtocolDetails {
-  readonly PassiveIp: string;
+export interface ProtocolDetails {
+  readonly PassiveIp?: string;
 }
 
-interface ResourceExistsException {
+export interface ResourceExistsException {
   readonly Message: string;
   readonly Resource: string;
   readonly ResourceType: string;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly Message: string;
   readonly Resource: string;
   readonly ResourceType: string;
 }
 
-interface S3FileLocation {
-  readonly Bucket: string;
-  readonly Key: string;
-  readonly VersionId: string;
-  readonly Etag: string;
+export interface S3FileLocation {
+  readonly Bucket?: string;
+  readonly Key?: string;
+  readonly VersionId?: string;
+  readonly Etag?: string;
 }
 
-interface S3InputFileLocation {
-  readonly Bucket: string;
-  readonly Key: string;
+export interface S3InputFileLocation {
+  readonly Bucket?: string;
+  readonly Key?: string;
 }
 
-interface S3Tag {
+export interface S3Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface SendWorkflowStepStateRequest {
+export interface SendWorkflowStepStateRequest {
   readonly WorkflowId: string;
   readonly ExecutionId: string;
   readonly Token: string;
   readonly Status: string;
 }
 
-interface SendWorkflowStepStateResponse {
+export interface SendWorkflowStepStateResponse {
 }
 
-interface ServiceMetadata {
+export interface ServiceMetadata {
   readonly UserDetails: UserDetails;
 }
 
-interface ServiceUnavailableException {
-  readonly Message: string;
+export interface ServiceUnavailableException {
+  readonly Message?: string;
 }
 
-interface SshPublicKey {
+export interface SshPublicKey {
   readonly DateImported: Date;
   readonly SshPublicKeyBody: string;
   readonly SshPublicKeyId: string;
 }
 
-interface StartServerRequest {
+export interface StartServerRequest {
   readonly ServerId: string;
 }
 
-interface StopServerRequest {
+export interface StopServerRequest {
   readonly ServerId: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly Arn: string;
   readonly Tags: [];
 }
 
-interface TagStepDetails {
-  readonly Name: string;
-  readonly Tags: [];
+export interface TagStepDetails {
+  readonly Name?: string;
+  readonly Tags?: [];
 }
 
-interface TestIdentityProviderRequest {
+export interface TestIdentityProviderRequest {
   readonly ServerId: string;
-  readonly ServerProtocol: string;
-  readonly SourceIp: string;
+  readonly ServerProtocol?: string;
+  readonly SourceIp?: string;
   readonly UserName: string;
-  readonly UserPassword: string;
+  readonly UserPassword?: string;
 }
 
-interface TestIdentityProviderResponse {
-  readonly Response: string;
+export interface TestIdentityProviderResponse {
+  readonly Response?: string;
   readonly StatusCode: number;
-  readonly Message: string;
+  readonly Message?: string;
   readonly Url: string;
 }
 
-interface ThrottlingException {
-  readonly RetryAfterSeconds: string;
+export interface ThrottlingException {
+  readonly RetryAfterSeconds?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly Arn: string;
   readonly TagKeys: [];
 }
 
-interface UpdateAccessRequest {
-  readonly HomeDirectory: string;
-  readonly HomeDirectoryType: string;
-  readonly HomeDirectoryMappings: [];
-  readonly Policy: string;
-  readonly PosixProfile: PosixProfile;
-  readonly Role: string;
+export interface UpdateAccessRequest {
+  readonly HomeDirectory?: string;
+  readonly HomeDirectoryType?: string;
+  readonly HomeDirectoryMappings?: [];
+  readonly Policy?: string;
+  readonly PosixProfile?: PosixProfile;
+  readonly Role?: string;
   readonly ServerId: string;
   readonly ExternalId: string;
 }
 
-interface UpdateAccessResponse {
+export interface UpdateAccessResponse {
   readonly ServerId: string;
   readonly ExternalId: string;
 }
 
-interface UpdateServerRequest {
-  readonly Certificate: string;
-  readonly ProtocolDetails: ProtocolDetails;
-  readonly EndpointDetails: EndpointDetails;
-  readonly EndpointType: string;
-  readonly HostKey: string;
-  readonly IdentityProviderDetails: IdentityProviderDetails;
-  readonly LoggingRole: string;
-  readonly Protocols: [];
-  readonly SecurityPolicyName: string;
+export interface UpdateServerRequest {
+  readonly Certificate?: string;
+  readonly ProtocolDetails?: ProtocolDetails;
+  readonly EndpointDetails?: EndpointDetails;
+  readonly EndpointType?: string;
+  readonly HostKey?: string;
+  readonly IdentityProviderDetails?: IdentityProviderDetails;
+  readonly LoggingRole?: string;
+  readonly Protocols?: [];
+  readonly SecurityPolicyName?: string;
   readonly ServerId: string;
-  readonly WorkflowDetails: WorkflowDetails;
+  readonly WorkflowDetails?: WorkflowDetails;
 }
 
-interface UpdateServerResponse {
+export interface UpdateServerResponse {
   readonly ServerId: string;
 }
 
-interface UpdateUserRequest {
-  readonly HomeDirectory: string;
-  readonly HomeDirectoryType: string;
-  readonly HomeDirectoryMappings: [];
-  readonly Policy: string;
-  readonly PosixProfile: PosixProfile;
-  readonly Role: string;
-  readonly ServerId: string;
-  readonly UserName: string;
-}
-
-interface UpdateUserResponse {
+export interface UpdateUserRequest {
+  readonly HomeDirectory?: string;
+  readonly HomeDirectoryType?: string;
+  readonly HomeDirectoryMappings?: [];
+  readonly Policy?: string;
+  readonly PosixProfile?: PosixProfile;
+  readonly Role?: string;
   readonly ServerId: string;
   readonly UserName: string;
 }
 
-interface UserDetails {
-  readonly UserName: string;
+export interface UpdateUserResponse {
   readonly ServerId: string;
-  readonly SessionId: string;
+  readonly UserName: string;
 }
 
-interface WorkflowDetail {
+export interface UserDetails {
+  readonly UserName: string;
+  readonly ServerId: string;
+  readonly SessionId?: string;
+}
+
+export interface WorkflowDetail {
   readonly WorkflowId: string;
   readonly ExecutionRole: string;
 }
 
-interface WorkflowDetails {
+export interface WorkflowDetails {
   readonly OnUpload: [];
 }
 
-interface WorkflowStep {
-  readonly Type: string;
-  readonly CopyStepDetails: CopyStepDetails;
-  readonly CustomStepDetails: CustomStepDetails;
-  readonly DeleteStepDetails: DeleteStepDetails;
-  readonly TagStepDetails: TagStepDetails;
+export interface WorkflowStep {
+  readonly Type?: string;
+  readonly CopyStepDetails?: CopyStepDetails;
+  readonly CustomStepDetails?: CustomStepDetails;
+  readonly DeleteStepDetails?: DeleteStepDetails;
+  readonly TagStepDetails?: TagStepDetails;
 }
+
 

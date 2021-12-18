@@ -5,6 +5,7 @@ export interface BatchMeterUsage {
   readonly UsageRecords: [];
   readonly ProductCode: string;
 }
+
 export interface MeterUsage {
   readonly ProductCode: string;
   readonly Timestamp: Date;
@@ -13,149 +14,150 @@ export interface MeterUsage {
   readonly DryRun?: boolean;
   readonly UsageAllocations?: [];
 }
+
 export interface RegisterUsage {
   readonly ProductCode: string;
   readonly PublicKeyVersion: number;
   readonly Nonce?: string;
 }
+
 export interface ResolveCustomer {
   readonly RegistrationToken: string;
 }
 
-
-
-interface BatchMeterUsageRequest {
+export interface BatchMeterUsageRequest {
   readonly UsageRecords: [];
   readonly ProductCode: string;
 }
 
-interface BatchMeterUsageResult {
-  readonly Results: [];
-  readonly UnprocessedRecords: [];
+export interface BatchMeterUsageResult {
+  readonly Results?: [];
+  readonly UnprocessedRecords?: [];
 }
 
-interface CustomerNotEntitledException {
-  readonly message: string;
+export interface CustomerNotEntitledException {
+  readonly message?: string;
 }
 
-interface DisabledApiException {
-  readonly message: string;
+export interface DisabledApiException {
+  readonly message?: string;
 }
 
-interface DuplicateRequestException {
-  readonly message: string;
+export interface DuplicateRequestException {
+  readonly message?: string;
 }
 
-interface ExpiredTokenException {
-  readonly message: string;
+export interface ExpiredTokenException {
+  readonly message?: string;
 }
 
-interface InternalServiceErrorException {
-  readonly message: string;
+export interface InternalServiceErrorException {
+  readonly message?: string;
 }
 
-interface InvalidCustomerIdentifierException {
-  readonly message: string;
+export interface InvalidCustomerIdentifierException {
+  readonly message?: string;
 }
 
-interface InvalidEndpointRegionException {
-  readonly message: string;
+export interface InvalidEndpointRegionException {
+  readonly message?: string;
 }
 
-interface InvalidProductCodeException {
-  readonly message: string;
+export interface InvalidProductCodeException {
+  readonly message?: string;
 }
 
-interface InvalidPublicKeyVersionException {
-  readonly message: string;
+export interface InvalidPublicKeyVersionException {
+  readonly message?: string;
 }
 
-interface InvalidRegionException {
-  readonly message: string;
+export interface InvalidRegionException {
+  readonly message?: string;
 }
 
-interface InvalidTagException {
-  readonly message: string;
+export interface InvalidTagException {
+  readonly message?: string;
 }
 
-interface InvalidTokenException {
-  readonly message: string;
+export interface InvalidTokenException {
+  readonly message?: string;
 }
 
-interface InvalidUsageAllocationsException {
-  readonly message: string;
+export interface InvalidUsageAllocationsException {
+  readonly message?: string;
 }
 
-interface InvalidUsageDimensionException {
-  readonly message: string;
+export interface InvalidUsageDimensionException {
+  readonly message?: string;
 }
 
-interface MeterUsageRequest {
+export interface MeterUsageRequest {
   readonly ProductCode: string;
   readonly Timestamp: Date;
   readonly UsageDimension: string;
-  readonly UsageQuantity: number;
-  readonly DryRun: boolean;
-  readonly UsageAllocations: [];
+  readonly UsageQuantity?: number;
+  readonly DryRun?: boolean;
+  readonly UsageAllocations?: [];
 }
 
-interface MeterUsageResult {
-  readonly MeteringRecordId: string;
+export interface MeterUsageResult {
+  readonly MeteringRecordId?: string;
 }
 
-interface PlatformNotSupportedException {
-  readonly message: string;
+export interface PlatformNotSupportedException {
+  readonly message?: string;
 }
 
-interface RegisterUsageRequest {
+export interface RegisterUsageRequest {
   readonly ProductCode: string;
   readonly PublicKeyVersion: number;
-  readonly Nonce: string;
+  readonly Nonce?: string;
 }
 
-interface RegisterUsageResult {
-  readonly PublicKeyRotationTimestamp: Date;
-  readonly Signature: string;
+export interface RegisterUsageResult {
+  readonly PublicKeyRotationTimestamp?: Date;
+  readonly Signature?: string;
 }
 
-interface ResolveCustomerRequest {
+export interface ResolveCustomerRequest {
   readonly RegistrationToken: string;
 }
 
-interface ResolveCustomerResult {
-  readonly CustomerIdentifier: string;
-  readonly ProductCode: string;
+export interface ResolveCustomerResult {
+  readonly CustomerIdentifier?: string;
+  readonly ProductCode?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface ThrottlingException {
-  readonly message: string;
+export interface ThrottlingException {
+  readonly message?: string;
 }
 
-interface TimestampOutOfBoundsException {
-  readonly message: string;
+export interface TimestampOutOfBoundsException {
+  readonly message?: string;
 }
 
-interface UsageAllocation {
+export interface UsageAllocation {
   readonly AllocatedUsageQuantity: number;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface UsageRecord {
+export interface UsageRecord {
   readonly Timestamp: Date;
   readonly CustomerIdentifier: string;
   readonly Dimension: string;
-  readonly Quantity: number;
-  readonly UsageAllocations: [];
+  readonly Quantity?: number;
+  readonly UsageAllocations?: [];
 }
 
-interface UsageRecordResult {
-  readonly UsageRecord: UsageRecord;
-  readonly MeteringRecordId: string;
-  readonly Status: string;
+export interface UsageRecordResult {
+  readonly UsageRecord?: UsageRecord;
+  readonly MeteringRecordId?: string;
+  readonly Status?: string;
 }
+
 

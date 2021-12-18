@@ -5,10 +5,12 @@ export interface AssociateWebACL {
   readonly WebACLArn: string;
   readonly ResourceArn: string;
 }
+
 export interface CheckCapacity {
   readonly Scope: string;
   readonly Rules: [];
 }
+
 export interface CreateIPSet {
   readonly Name: string;
   readonly Scope: string;
@@ -17,6 +19,7 @@ export interface CreateIPSet {
   readonly Addresses: [];
   readonly Tags?: [];
 }
+
 export interface CreateRegexPatternSet {
   readonly Name: string;
   readonly Scope: string;
@@ -24,6 +27,7 @@ export interface CreateRegexPatternSet {
   readonly RegularExpressionList: [];
   readonly Tags?: [];
 }
+
 export interface CreateRuleGroup {
   readonly Name: string;
   readonly Scope: string;
@@ -34,6 +38,7 @@ export interface CreateRuleGroup {
   readonly Tags?: [];
   readonly CustomResponseBodies?: {[key: string]: any};
 }
+
 export interface CreateWebACL {
   readonly Name: string;
   readonly Scope: string;
@@ -45,65 +50,79 @@ export interface CreateWebACL {
   readonly CustomResponseBodies?: {[key: string]: any};
   readonly CaptchaConfig?: CaptchaConfig;
 }
+
 export interface DeleteFirewallManagerRuleGroups {
   readonly WebACLArn: string;
   readonly WebACLLockToken: string;
 }
+
 export interface DeleteIPSet {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
   readonly LockToken: string;
 }
+
 export interface DeleteLoggingConfiguration {
   readonly ResourceArn: string;
 }
+
 export interface DeletePermissionPolicy {
   readonly ResourceArn: string;
 }
+
 export interface DeleteRegexPatternSet {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
   readonly LockToken: string;
 }
+
 export interface DeleteRuleGroup {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
   readonly LockToken: string;
 }
+
 export interface DeleteWebACL {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
   readonly LockToken: string;
 }
+
 export interface DescribeManagedRuleGroup {
   readonly VendorName: string;
   readonly Name: string;
   readonly Scope: string;
   readonly VersionName?: string;
 }
+
 export interface DisassociateWebACL {
   readonly ResourceArn: string;
 }
+
 export interface GetIPSet {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
 }
+
 export interface GetLoggingConfiguration {
   readonly ResourceArn: string;
 }
+
 export interface GetManagedRuleSet {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
 }
+
 export interface GetPermissionPolicy {
   readonly ResourceArn: string;
 }
+
 export interface GetRateBasedStatementManagedKeys {
   readonly Scope: string;
   readonly WebACLName: string;
@@ -111,17 +130,20 @@ export interface GetRateBasedStatementManagedKeys {
   readonly RuleGroupRuleName?: string;
   readonly RuleName: string;
 }
+
 export interface GetRegexPatternSet {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
 }
+
 export interface GetRuleGroup {
   readonly Name?: string;
   readonly Scope?: string;
   readonly Id?: string;
   readonly ARN?: string;
 }
+
 export interface GetSampledRequests {
   readonly WebAclArn: string;
   readonly RuleMetricName: string;
@@ -129,14 +151,17 @@ export interface GetSampledRequests {
   readonly TimeWindow: TimeWindow;
   readonly MaxItems: number;
 }
+
 export interface GetWebACL {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
 }
+
 export interface GetWebACLForResource {
   readonly ResourceArn: string;
 }
+
 export interface ListAvailableManagedRuleGroupVersions {
   readonly VendorName: string;
   readonly Name: string;
@@ -144,53 +169,64 @@ export interface ListAvailableManagedRuleGroupVersions {
   readonly NextMarker?: string;
   readonly Limit?: number;
 }
+
 export interface ListAvailableManagedRuleGroups {
   readonly Scope: string;
   readonly NextMarker?: string;
   readonly Limit?: number;
 }
+
 export interface ListIPSets {
   readonly Scope: string;
   readonly NextMarker?: string;
   readonly Limit?: number;
 }
+
 export interface ListLoggingConfigurations {
   readonly Scope: string;
   readonly NextMarker?: string;
   readonly Limit?: number;
 }
+
 export interface ListManagedRuleSets {
   readonly Scope: string;
   readonly NextMarker?: string;
   readonly Limit?: number;
 }
+
 export interface ListRegexPatternSets {
   readonly Scope: string;
   readonly NextMarker?: string;
   readonly Limit?: number;
 }
+
 export interface ListResourcesForWebACL {
   readonly WebACLArn: string;
   readonly ResourceType?: string;
 }
+
 export interface ListRuleGroups {
   readonly Scope: string;
   readonly NextMarker?: string;
   readonly Limit?: number;
 }
+
 export interface ListTagsForResource {
   readonly NextMarker?: string;
   readonly Limit?: number;
   readonly ResourceARN: string;
 }
+
 export interface ListWebACLs {
   readonly Scope: string;
   readonly NextMarker?: string;
   readonly Limit?: number;
 }
+
 export interface PutLoggingConfiguration {
   readonly LoggingConfiguration: LoggingConfiguration;
 }
+
 export interface PutManagedRuleSetVersions {
   readonly Name: string;
   readonly Scope: string;
@@ -199,18 +235,22 @@ export interface PutManagedRuleSetVersions {
   readonly RecommendedVersion?: string;
   readonly VersionsToPublish?: {[key: string]: any};
 }
+
 export interface PutPermissionPolicy {
   readonly ResourceArn: string;
   readonly Policy: string;
 }
+
 export interface TagResource {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateIPSet {
   readonly Name: string;
   readonly Scope: string;
@@ -219,6 +259,7 @@ export interface UpdateIPSet {
   readonly Addresses: [];
   readonly LockToken: string;
 }
+
 export interface UpdateManagedRuleSetVersionExpiryDate {
   readonly Name: string;
   readonly Scope: string;
@@ -227,6 +268,7 @@ export interface UpdateManagedRuleSetVersionExpiryDate {
   readonly VersionToExpire: string;
   readonly ExpiryTimestamp: Date;
 }
+
 export interface UpdateRegexPatternSet {
   readonly Name: string;
   readonly Scope: string;
@@ -235,6 +277,7 @@ export interface UpdateRegexPatternSet {
   readonly RegularExpressionList: [];
   readonly LockToken: string;
 }
+
 export interface UpdateRuleGroup {
   readonly Name: string;
   readonly Scope: string;
@@ -245,6 +288,7 @@ export interface UpdateRuleGroup {
   readonly LockToken: string;
   readonly CustomResponseBodies?: {[key: string]: any};
 }
+
 export interface UpdateWebACL {
   readonly Name: string;
   readonly Scope: string;
@@ -258,270 +302,268 @@ export interface UpdateWebACL {
   readonly CaptchaConfig?: CaptchaConfig;
 }
 
-
-
-interface ActionCondition {
+export interface ActionCondition {
   readonly Action: string;
 }
 
-interface All {
+export interface All {
 }
 
-interface AllQueryArguments {
+export interface AllQueryArguments {
 }
 
-interface AllowAction {
-  readonly CustomRequestHandling: CustomRequestHandling;
+export interface AllowAction {
+  readonly CustomRequestHandling?: CustomRequestHandling;
 }
 
-interface AndStatement {
+export interface AndStatement {
   readonly Statements: [];
 }
 
-interface AssociateWebACLRequest {
+export interface AssociateWebACLRequest {
   readonly WebACLArn: string;
   readonly ResourceArn: string;
 }
 
-interface AssociateWebACLResponse {
+export interface AssociateWebACLResponse {
 }
 
-interface BlockAction {
-  readonly CustomResponse: CustomResponse;
+export interface BlockAction {
+  readonly CustomResponse?: CustomResponse;
 }
 
-interface Body {
+export interface Body {
 }
 
-interface ByteMatchStatement {
+export interface ByteMatchStatement {
   readonly SearchString: unknown;
   readonly FieldToMatch: FieldToMatch;
   readonly TextTransformations: [];
   readonly PositionalConstraint: string;
 }
 
-interface CaptchaAction {
-  readonly CustomRequestHandling: CustomRequestHandling;
+export interface CaptchaAction {
+  readonly CustomRequestHandling?: CustomRequestHandling;
 }
 
-interface CaptchaConfig {
-  readonly ImmunityTimeProperty: ImmunityTimeProperty;
+export interface CaptchaConfig {
+  readonly ImmunityTimeProperty?: ImmunityTimeProperty;
 }
 
-interface CaptchaResponse {
-  readonly ResponseCode: number;
-  readonly SolveTimestamp: number;
-  readonly FailureReason: string;
+export interface CaptchaResponse {
+  readonly ResponseCode?: number;
+  readonly SolveTimestamp?: number;
+  readonly FailureReason?: string;
 }
 
-interface CheckCapacityRequest {
+export interface CheckCapacityRequest {
   readonly Scope: string;
   readonly Rules: [];
 }
 
-interface CheckCapacityResponse {
-  readonly Capacity: number;
+export interface CheckCapacityResponse {
+  readonly Capacity?: number;
 }
 
-interface Condition {
-  readonly ActionCondition: ActionCondition;
-  readonly LabelNameCondition: LabelNameCondition;
+export interface Condition {
+  readonly ActionCondition?: ActionCondition;
+  readonly LabelNameCondition?: LabelNameCondition;
 }
 
-interface CountAction {
-  readonly CustomRequestHandling: CustomRequestHandling;
+export interface CountAction {
+  readonly CustomRequestHandling?: CustomRequestHandling;
 }
 
-interface CreateIPSetRequest {
+export interface CreateIPSetRequest {
   readonly Name: string;
   readonly Scope: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly IPAddressVersion: string;
   readonly Addresses: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateIPSetResponse {
-  readonly Summary: IPSetSummary;
+export interface CreateIPSetResponse {
+  readonly Summary?: IPSetSummary;
 }
 
-interface CreateRegexPatternSetRequest {
+export interface CreateRegexPatternSetRequest {
   readonly Name: string;
   readonly Scope: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly RegularExpressionList: [];
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateRegexPatternSetResponse {
-  readonly Summary: RegexPatternSetSummary;
+export interface CreateRegexPatternSetResponse {
+  readonly Summary?: RegexPatternSetSummary;
 }
 
-interface CreateRuleGroupRequest {
+export interface CreateRuleGroupRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Capacity: number;
-  readonly Description: string;
-  readonly Rules: [];
+  readonly Description?: string;
+  readonly Rules?: [];
   readonly VisibilityConfig: VisibilityConfig;
-  readonly Tags: [];
-  readonly CustomResponseBodies: {[key: string]: any};
+  readonly Tags?: [];
+  readonly CustomResponseBodies?: {[key: string]: any};
 }
 
-interface CreateRuleGroupResponse {
-  readonly Summary: RuleGroupSummary;
+export interface CreateRuleGroupResponse {
+  readonly Summary?: RuleGroupSummary;
 }
 
-interface CreateWebACLRequest {
+export interface CreateWebACLRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly DefaultAction: DefaultAction;
-  readonly Description: string;
-  readonly Rules: [];
+  readonly Description?: string;
+  readonly Rules?: [];
   readonly VisibilityConfig: VisibilityConfig;
-  readonly Tags: [];
-  readonly CustomResponseBodies: {[key: string]: any};
-  readonly CaptchaConfig: CaptchaConfig;
+  readonly Tags?: [];
+  readonly CustomResponseBodies?: {[key: string]: any};
+  readonly CaptchaConfig?: CaptchaConfig;
 }
 
-interface CreateWebACLResponse {
-  readonly Summary: WebACLSummary;
+export interface CreateWebACLResponse {
+  readonly Summary?: WebACLSummary;
 }
 
-interface CustomHTTPHeader {
+export interface CustomHTTPHeader {
   readonly Name: string;
   readonly Value: string;
 }
 
-interface CustomRequestHandling {
+export interface CustomRequestHandling {
   readonly InsertHeaders: [];
 }
 
-interface CustomResponse {
+export interface CustomResponse {
   readonly ResponseCode: number;
-  readonly CustomResponseBodyKey: string;
-  readonly ResponseHeaders: [];
+  readonly CustomResponseBodyKey?: string;
+  readonly ResponseHeaders?: [];
 }
 
-interface CustomResponseBody {
+export interface CustomResponseBody {
   readonly ContentType: string;
   readonly Content: string;
 }
 
-interface DefaultAction {
-  readonly Block: BlockAction;
-  readonly Allow: AllowAction;
+export interface DefaultAction {
+  readonly Block?: BlockAction;
+  readonly Allow?: AllowAction;
 }
 
-interface DeleteFirewallManagerRuleGroupsRequest {
+export interface DeleteFirewallManagerRuleGroupsRequest {
   readonly WebACLArn: string;
   readonly WebACLLockToken: string;
 }
 
-interface DeleteFirewallManagerRuleGroupsResponse {
-  readonly NextWebACLLockToken: string;
+export interface DeleteFirewallManagerRuleGroupsResponse {
+  readonly NextWebACLLockToken?: string;
 }
 
-interface DeleteIPSetRequest {
+export interface DeleteIPSetRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
   readonly LockToken: string;
 }
 
-interface DeleteIPSetResponse {
+export interface DeleteIPSetResponse {
 }
 
-interface DeleteLoggingConfigurationRequest {
+export interface DeleteLoggingConfigurationRequest {
   readonly ResourceArn: string;
 }
 
-interface DeleteLoggingConfigurationResponse {
+export interface DeleteLoggingConfigurationResponse {
 }
 
-interface DeletePermissionPolicyRequest {
+export interface DeletePermissionPolicyRequest {
   readonly ResourceArn: string;
 }
 
-interface DeletePermissionPolicyResponse {
+export interface DeletePermissionPolicyResponse {
 }
 
-interface DeleteRegexPatternSetRequest {
+export interface DeleteRegexPatternSetRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
   readonly LockToken: string;
 }
 
-interface DeleteRegexPatternSetResponse {
+export interface DeleteRegexPatternSetResponse {
 }
 
-interface DeleteRuleGroupRequest {
+export interface DeleteRuleGroupRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
   readonly LockToken: string;
 }
 
-interface DeleteRuleGroupResponse {
+export interface DeleteRuleGroupResponse {
 }
 
-interface DeleteWebACLRequest {
+export interface DeleteWebACLRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
   readonly LockToken: string;
 }
 
-interface DeleteWebACLResponse {
+export interface DeleteWebACLResponse {
 }
 
-interface DescribeManagedRuleGroupRequest {
+export interface DescribeManagedRuleGroupRequest {
   readonly VendorName: string;
   readonly Name: string;
   readonly Scope: string;
-  readonly VersionName: string;
+  readonly VersionName?: string;
 }
 
-interface DescribeManagedRuleGroupResponse {
-  readonly VersionName: string;
-  readonly SnsTopicArn: string;
-  readonly Capacity: number;
-  readonly Rules: [];
-  readonly LabelNamespace: string;
-  readonly AvailableLabels: [];
-  readonly ConsumedLabels: [];
+export interface DescribeManagedRuleGroupResponse {
+  readonly VersionName?: string;
+  readonly SnsTopicArn?: string;
+  readonly Capacity?: number;
+  readonly Rules?: [];
+  readonly LabelNamespace?: string;
+  readonly AvailableLabels?: [];
+  readonly ConsumedLabels?: [];
 }
 
-interface DisassociateWebACLRequest {
+export interface DisassociateWebACLRequest {
   readonly ResourceArn: string;
 }
 
-interface DisassociateWebACLResponse {
+export interface DisassociateWebACLResponse {
 }
 
-interface ExcludedRule {
+export interface ExcludedRule {
   readonly Name: string;
 }
 
-interface FieldToMatch {
-  readonly SingleHeader: SingleHeader;
-  readonly SingleQueryArgument: SingleQueryArgument;
-  readonly AllQueryArguments: AllQueryArguments;
-  readonly UriPath: UriPath;
-  readonly QueryString: QueryString;
-  readonly Body: Body;
-  readonly Method: Method;
-  readonly JsonBody: JsonBody;
+export interface FieldToMatch {
+  readonly SingleHeader?: SingleHeader;
+  readonly SingleQueryArgument?: SingleQueryArgument;
+  readonly AllQueryArguments?: AllQueryArguments;
+  readonly UriPath?: UriPath;
+  readonly QueryString?: QueryString;
+  readonly Body?: Body;
+  readonly Method?: Method;
+  readonly JsonBody?: JsonBody;
 }
 
-interface Filter {
+export interface Filter {
   readonly Behavior: string;
   readonly Requirement: string;
   readonly Conditions: [];
 }
 
-interface FirewallManagerRuleGroup {
+export interface FirewallManagerRuleGroup {
   readonly Name: string;
   readonly Priority: number;
   readonly FirewallManagerStatement: FirewallManagerStatement;
@@ -529,96 +571,96 @@ interface FirewallManagerRuleGroup {
   readonly VisibilityConfig: VisibilityConfig;
 }
 
-interface FirewallManagerStatement {
-  readonly ManagedRuleGroupStatement: ManagedRuleGroupStatement;
-  readonly RuleGroupReferenceStatement: RuleGroupReferenceStatement;
+export interface FirewallManagerStatement {
+  readonly ManagedRuleGroupStatement?: ManagedRuleGroupStatement;
+  readonly RuleGroupReferenceStatement?: RuleGroupReferenceStatement;
 }
 
-interface ForwardedIPConfig {
+export interface ForwardedIPConfig {
   readonly HeaderName: string;
   readonly FallbackBehavior: string;
 }
 
-interface GeoMatchStatement {
-  readonly CountryCodes: [];
-  readonly ForwardedIPConfig: ForwardedIPConfig;
+export interface GeoMatchStatement {
+  readonly CountryCodes?: [];
+  readonly ForwardedIPConfig?: ForwardedIPConfig;
 }
 
-interface GetIPSetRequest {
+export interface GetIPSetRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
 }
 
-interface GetIPSetResponse {
-  readonly IPSet: IPSet;
-  readonly LockToken: string;
+export interface GetIPSetResponse {
+  readonly IPSet?: IPSet;
+  readonly LockToken?: string;
 }
 
-interface GetLoggingConfigurationRequest {
+export interface GetLoggingConfigurationRequest {
   readonly ResourceArn: string;
 }
 
-interface GetLoggingConfigurationResponse {
-  readonly LoggingConfiguration: LoggingConfiguration;
+export interface GetLoggingConfigurationResponse {
+  readonly LoggingConfiguration?: LoggingConfiguration;
 }
 
-interface GetManagedRuleSetRequest {
+export interface GetManagedRuleSetRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
 }
 
-interface GetManagedRuleSetResponse {
-  readonly ManagedRuleSet: ManagedRuleSet;
-  readonly LockToken: string;
+export interface GetManagedRuleSetResponse {
+  readonly ManagedRuleSet?: ManagedRuleSet;
+  readonly LockToken?: string;
 }
 
-interface GetPermissionPolicyRequest {
+export interface GetPermissionPolicyRequest {
   readonly ResourceArn: string;
 }
 
-interface GetPermissionPolicyResponse {
-  readonly Policy: string;
+export interface GetPermissionPolicyResponse {
+  readonly Policy?: string;
 }
 
-interface GetRateBasedStatementManagedKeysRequest {
+export interface GetRateBasedStatementManagedKeysRequest {
   readonly Scope: string;
   readonly WebACLName: string;
   readonly WebACLId: string;
-  readonly RuleGroupRuleName: string;
+  readonly RuleGroupRuleName?: string;
   readonly RuleName: string;
 }
 
-interface GetRateBasedStatementManagedKeysResponse {
-  readonly ManagedKeysIPV4: RateBasedStatementManagedKeysIPSet;
-  readonly ManagedKeysIPV6: RateBasedStatementManagedKeysIPSet;
+export interface GetRateBasedStatementManagedKeysResponse {
+  readonly ManagedKeysIPV4?: RateBasedStatementManagedKeysIPSet;
+  readonly ManagedKeysIPV6?: RateBasedStatementManagedKeysIPSet;
 }
 
-interface GetRegexPatternSetRequest {
+export interface GetRegexPatternSetRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
 }
 
-interface GetRegexPatternSetResponse {
-  readonly RegexPatternSet: RegexPatternSet;
-  readonly LockToken: string;
+export interface GetRegexPatternSetResponse {
+  readonly RegexPatternSet?: RegexPatternSet;
+  readonly LockToken?: string;
 }
 
-interface GetRuleGroupRequest {
-  readonly Name: string;
-  readonly Scope: string;
-  readonly Id: string;
-  readonly ARN: string;
+export interface GetRuleGroupRequest {
+  readonly Name?: string;
+  readonly Scope?: string;
+  readonly Id?: string;
+  readonly ARN?: string;
 }
 
-interface GetRuleGroupResponse {
-  readonly RuleGroup: RuleGroup;
-  readonly LockToken: string;
+export interface GetRuleGroupResponse {
+  readonly RuleGroup?: RuleGroup;
+  readonly LockToken?: string;
 }
 
-interface GetSampledRequestsRequest {
+export interface GetSampledRequestsRequest {
   readonly WebAclArn: string;
   readonly RuleMetricName: string;
   readonly Scope: string;
@@ -626,520 +668,520 @@ interface GetSampledRequestsRequest {
   readonly MaxItems: number;
 }
 
-interface GetSampledRequestsResponse {
-  readonly SampledRequests: [];
-  readonly PopulationSize: number;
-  readonly TimeWindow: TimeWindow;
+export interface GetSampledRequestsResponse {
+  readonly SampledRequests?: [];
+  readonly PopulationSize?: number;
+  readonly TimeWindow?: TimeWindow;
 }
 
-interface GetWebACLForResourceRequest {
+export interface GetWebACLForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface GetWebACLForResourceResponse {
-  readonly WebACL: WebACL;
+export interface GetWebACLForResourceResponse {
+  readonly WebACL?: WebACL;
 }
 
-interface GetWebACLRequest {
+export interface GetWebACLRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
 }
 
-interface GetWebACLResponse {
-  readonly WebACL: WebACL;
-  readonly LockToken: string;
+export interface GetWebACLResponse {
+  readonly WebACL?: WebACL;
+  readonly LockToken?: string;
 }
 
-interface HTTPHeader {
-  readonly Name: string;
-  readonly Value: string;
+export interface HTTPHeader {
+  readonly Name?: string;
+  readonly Value?: string;
 }
 
-interface HTTPRequest {
-  readonly ClientIP: string;
-  readonly Country: string;
-  readonly URI: string;
-  readonly Method: string;
-  readonly HTTPVersion: string;
-  readonly Headers: [];
+export interface HTTPRequest {
+  readonly ClientIP?: string;
+  readonly Country?: string;
+  readonly URI?: string;
+  readonly Method?: string;
+  readonly HTTPVersion?: string;
+  readonly Headers?: [];
 }
 
-interface IPSet {
+export interface IPSet {
   readonly Name: string;
   readonly Id: string;
   readonly ARN: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly IPAddressVersion: string;
   readonly Addresses: [];
 }
 
-interface IPSetForwardedIPConfig {
+export interface IPSetForwardedIPConfig {
   readonly HeaderName: string;
   readonly FallbackBehavior: string;
   readonly Position: string;
 }
 
-interface IPSetReferenceStatement {
+export interface IPSetReferenceStatement {
   readonly ARN: string;
-  readonly IPSetForwardedIPConfig: IPSetForwardedIPConfig;
+  readonly IPSetForwardedIPConfig?: IPSetForwardedIPConfig;
 }
 
-interface IPSetSummary {
-  readonly Name: string;
-  readonly Id: string;
-  readonly Description: string;
-  readonly LockToken: string;
-  readonly ARN: string;
+export interface IPSetSummary {
+  readonly Name?: string;
+  readonly Id?: string;
+  readonly Description?: string;
+  readonly LockToken?: string;
+  readonly ARN?: string;
 }
 
-interface ImmunityTimeProperty {
+export interface ImmunityTimeProperty {
   readonly ImmunityTime: number;
 }
 
-interface JsonBody {
+export interface JsonBody {
   readonly MatchPattern: JsonMatchPattern;
   readonly MatchScope: string;
-  readonly InvalidFallbackBehavior: string;
+  readonly InvalidFallbackBehavior?: string;
 }
 
-interface JsonMatchPattern {
-  readonly All: All;
-  readonly IncludedPaths: [];
+export interface JsonMatchPattern {
+  readonly All?: All;
+  readonly IncludedPaths?: [];
 }
 
-interface Label {
+export interface Label {
   readonly Name: string;
 }
 
-interface LabelMatchStatement {
+export interface LabelMatchStatement {
   readonly Scope: string;
   readonly Key: string;
 }
 
-interface LabelNameCondition {
+export interface LabelNameCondition {
   readonly LabelName: string;
 }
 
-interface LabelSummary {
-  readonly Name: string;
+export interface LabelSummary {
+  readonly Name?: string;
 }
 
-interface ListAvailableManagedRuleGroupVersionsRequest {
+export interface ListAvailableManagedRuleGroupVersionsRequest {
   readonly VendorName: string;
   readonly Name: string;
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 
-interface ListAvailableManagedRuleGroupVersionsResponse {
-  readonly NextMarker: string;
-  readonly Versions: [];
+export interface ListAvailableManagedRuleGroupVersionsResponse {
+  readonly NextMarker?: string;
+  readonly Versions?: [];
 }
 
-interface ListAvailableManagedRuleGroupsRequest {
+export interface ListAvailableManagedRuleGroupsRequest {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 
-interface ListAvailableManagedRuleGroupsResponse {
-  readonly NextMarker: string;
-  readonly ManagedRuleGroups: [];
+export interface ListAvailableManagedRuleGroupsResponse {
+  readonly NextMarker?: string;
+  readonly ManagedRuleGroups?: [];
 }
 
-interface ListIPSetsRequest {
+export interface ListIPSetsRequest {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 
-interface ListIPSetsResponse {
-  readonly NextMarker: string;
-  readonly IPSets: [];
+export interface ListIPSetsResponse {
+  readonly NextMarker?: string;
+  readonly IPSets?: [];
 }
 
-interface ListLoggingConfigurationsRequest {
+export interface ListLoggingConfigurationsRequest {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 
-interface ListLoggingConfigurationsResponse {
-  readonly LoggingConfigurations: [];
-  readonly NextMarker: string;
+export interface ListLoggingConfigurationsResponse {
+  readonly LoggingConfigurations?: [];
+  readonly NextMarker?: string;
 }
 
-interface ListManagedRuleSetsRequest {
+export interface ListManagedRuleSetsRequest {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 
-interface ListManagedRuleSetsResponse {
-  readonly NextMarker: string;
-  readonly ManagedRuleSets: [];
+export interface ListManagedRuleSetsResponse {
+  readonly NextMarker?: string;
+  readonly ManagedRuleSets?: [];
 }
 
-interface ListRegexPatternSetsRequest {
+export interface ListRegexPatternSetsRequest {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 
-interface ListRegexPatternSetsResponse {
-  readonly NextMarker: string;
-  readonly RegexPatternSets: [];
+export interface ListRegexPatternSetsResponse {
+  readonly NextMarker?: string;
+  readonly RegexPatternSets?: [];
 }
 
-interface ListResourcesForWebACLRequest {
+export interface ListResourcesForWebACLRequest {
   readonly WebACLArn: string;
-  readonly ResourceType: string;
+  readonly ResourceType?: string;
 }
 
-interface ListResourcesForWebACLResponse {
-  readonly ResourceArns: [];
+export interface ListResourcesForWebACLResponse {
+  readonly ResourceArns?: [];
 }
 
-interface ListRuleGroupsRequest {
+export interface ListRuleGroupsRequest {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 
-interface ListRuleGroupsResponse {
-  readonly NextMarker: string;
-  readonly RuleGroups: [];
+export interface ListRuleGroupsResponse {
+  readonly NextMarker?: string;
+  readonly RuleGroups?: [];
 }
 
-interface ListTagsForResourceRequest {
-  readonly NextMarker: string;
-  readonly Limit: number;
+export interface ListTagsForResourceRequest {
+  readonly NextMarker?: string;
+  readonly Limit?: number;
   readonly ResourceARN: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly NextMarker: string;
-  readonly TagInfoForResource: TagInfoForResource;
+export interface ListTagsForResourceResponse {
+  readonly NextMarker?: string;
+  readonly TagInfoForResource?: TagInfoForResource;
 }
 
-interface ListWebACLsRequest {
+export interface ListWebACLsRequest {
   readonly Scope: string;
-  readonly NextMarker: string;
-  readonly Limit: number;
+  readonly NextMarker?: string;
+  readonly Limit?: number;
 }
 
-interface ListWebACLsResponse {
-  readonly NextMarker: string;
-  readonly WebACLs: [];
+export interface ListWebACLsResponse {
+  readonly NextMarker?: string;
+  readonly WebACLs?: [];
 }
 
-interface LoggingConfiguration {
+export interface LoggingConfiguration {
   readonly ResourceArn: string;
   readonly LogDestinationConfigs: [];
-  readonly RedactedFields: [];
-  readonly ManagedByFirewallManager: boolean;
-  readonly LoggingFilter: LoggingFilter;
+  readonly RedactedFields?: [];
+  readonly ManagedByFirewallManager?: boolean;
+  readonly LoggingFilter?: LoggingFilter;
 }
 
-interface LoggingFilter {
+export interface LoggingFilter {
   readonly Filters: [];
   readonly DefaultBehavior: string;
 }
 
-interface ManagedRuleGroupStatement {
+export interface ManagedRuleGroupStatement {
   readonly VendorName: string;
   readonly Name: string;
-  readonly Version: string;
-  readonly ExcludedRules: [];
-  readonly ScopeDownStatement: Statement;
+  readonly Version?: string;
+  readonly ExcludedRules?: [];
+  readonly ScopeDownStatement?: Statement;
 }
 
-interface ManagedRuleGroupSummary {
-  readonly VendorName: string;
-  readonly Name: string;
-  readonly Description: string;
+export interface ManagedRuleGroupSummary {
+  readonly VendorName?: string;
+  readonly Name?: string;
+  readonly Description?: string;
 }
 
-interface ManagedRuleGroupVersion {
-  readonly Name: string;
-  readonly LastUpdateTimestamp: Date;
+export interface ManagedRuleGroupVersion {
+  readonly Name?: string;
+  readonly LastUpdateTimestamp?: Date;
 }
 
-interface ManagedRuleSet {
+export interface ManagedRuleSet {
   readonly Name: string;
   readonly Id: string;
   readonly ARN: string;
-  readonly Description: string;
-  readonly PublishedVersions: {[key: string]: any};
-  readonly RecommendedVersion: string;
-  readonly LabelNamespace: string;
+  readonly Description?: string;
+  readonly PublishedVersions?: {[key: string]: any};
+  readonly RecommendedVersion?: string;
+  readonly LabelNamespace?: string;
 }
 
-interface ManagedRuleSetSummary {
-  readonly Name: string;
-  readonly Id: string;
-  readonly Description: string;
-  readonly LockToken: string;
-  readonly ARN: string;
-  readonly LabelNamespace: string;
+export interface ManagedRuleSetSummary {
+  readonly Name?: string;
+  readonly Id?: string;
+  readonly Description?: string;
+  readonly LockToken?: string;
+  readonly ARN?: string;
+  readonly LabelNamespace?: string;
 }
 
-interface ManagedRuleSetVersion {
-  readonly AssociatedRuleGroupArn: string;
-  readonly Capacity: number;
-  readonly ForecastedLifetime: number;
-  readonly PublishTimestamp: Date;
-  readonly LastUpdateTimestamp: Date;
-  readonly ExpiryTimestamp: Date;
+export interface ManagedRuleSetVersion {
+  readonly AssociatedRuleGroupArn?: string;
+  readonly Capacity?: number;
+  readonly ForecastedLifetime?: number;
+  readonly PublishTimestamp?: Date;
+  readonly LastUpdateTimestamp?: Date;
+  readonly ExpiryTimestamp?: Date;
 }
 
-interface Method {
+export interface Method {
 }
 
-interface NoneAction {
+export interface NoneAction {
 }
 
-interface NotStatement {
+export interface NotStatement {
   readonly Statement: Statement;
 }
 
-interface OrStatement {
+export interface OrStatement {
   readonly Statements: [];
 }
 
-interface OverrideAction {
-  readonly Count: CountAction;
-  readonly None: NoneAction;
+export interface OverrideAction {
+  readonly Count?: CountAction;
+  readonly None?: NoneAction;
 }
 
-interface PutLoggingConfigurationRequest {
+export interface PutLoggingConfigurationRequest {
   readonly LoggingConfiguration: LoggingConfiguration;
 }
 
-interface PutLoggingConfigurationResponse {
-  readonly LoggingConfiguration: LoggingConfiguration;
+export interface PutLoggingConfigurationResponse {
+  readonly LoggingConfiguration?: LoggingConfiguration;
 }
 
-interface PutManagedRuleSetVersionsRequest {
+export interface PutManagedRuleSetVersionsRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
   readonly LockToken: string;
-  readonly RecommendedVersion: string;
-  readonly VersionsToPublish: {[key: string]: any};
+  readonly RecommendedVersion?: string;
+  readonly VersionsToPublish?: {[key: string]: any};
 }
 
-interface PutManagedRuleSetVersionsResponse {
-  readonly NextLockToken: string;
+export interface PutManagedRuleSetVersionsResponse {
+  readonly NextLockToken?: string;
 }
 
-interface PutPermissionPolicyRequest {
+export interface PutPermissionPolicyRequest {
   readonly ResourceArn: string;
   readonly Policy: string;
 }
 
-interface PutPermissionPolicyResponse {
+export interface PutPermissionPolicyResponse {
 }
 
-interface QueryString {
+export interface QueryString {
 }
 
-interface RateBasedStatement {
+export interface RateBasedStatement {
   readonly Limit: number;
   readonly AggregateKeyType: string;
-  readonly ScopeDownStatement: Statement;
-  readonly ForwardedIPConfig: ForwardedIPConfig;
+  readonly ScopeDownStatement?: Statement;
+  readonly ForwardedIPConfig?: ForwardedIPConfig;
 }
 
-interface RateBasedStatementManagedKeysIPSet {
-  readonly IPAddressVersion: string;
-  readonly Addresses: [];
+export interface RateBasedStatementManagedKeysIPSet {
+  readonly IPAddressVersion?: string;
+  readonly Addresses?: [];
 }
 
-interface Regex {
-  readonly RegexString: string;
+export interface Regex {
+  readonly RegexString?: string;
 }
 
-interface RegexMatchStatement {
+export interface RegexMatchStatement {
   readonly RegexString: string;
   readonly FieldToMatch: FieldToMatch;
   readonly TextTransformations: [];
 }
 
-interface RegexPatternSet {
-  readonly Name: string;
-  readonly Id: string;
-  readonly ARN: string;
-  readonly Description: string;
-  readonly RegularExpressionList: [];
+export interface RegexPatternSet {
+  readonly Name?: string;
+  readonly Id?: string;
+  readonly ARN?: string;
+  readonly Description?: string;
+  readonly RegularExpressionList?: [];
 }
 
-interface RegexPatternSetReferenceStatement {
+export interface RegexPatternSetReferenceStatement {
   readonly ARN: string;
   readonly FieldToMatch: FieldToMatch;
   readonly TextTransformations: [];
 }
 
-interface RegexPatternSetSummary {
-  readonly Name: string;
-  readonly Id: string;
-  readonly Description: string;
-  readonly LockToken: string;
-  readonly ARN: string;
+export interface RegexPatternSetSummary {
+  readonly Name?: string;
+  readonly Id?: string;
+  readonly Description?: string;
+  readonly LockToken?: string;
+  readonly ARN?: string;
 }
 
-interface Rule {
+export interface Rule {
   readonly Name: string;
   readonly Priority: number;
   readonly Statement: Statement;
-  readonly Action: RuleAction;
-  readonly OverrideAction: OverrideAction;
-  readonly RuleLabels: [];
+  readonly Action?: RuleAction;
+  readonly OverrideAction?: OverrideAction;
+  readonly RuleLabels?: [];
   readonly VisibilityConfig: VisibilityConfig;
-  readonly CaptchaConfig: CaptchaConfig;
+  readonly CaptchaConfig?: CaptchaConfig;
 }
 
-interface RuleAction {
-  readonly Block: BlockAction;
-  readonly Allow: AllowAction;
-  readonly Count: CountAction;
-  readonly Captcha: CaptchaAction;
+export interface RuleAction {
+  readonly Block?: BlockAction;
+  readonly Allow?: AllowAction;
+  readonly Count?: CountAction;
+  readonly Captcha?: CaptchaAction;
 }
 
-interface RuleGroup {
+export interface RuleGroup {
   readonly Name: string;
   readonly Id: string;
   readonly Capacity: number;
   readonly ARN: string;
-  readonly Description: string;
-  readonly Rules: [];
+  readonly Description?: string;
+  readonly Rules?: [];
   readonly VisibilityConfig: VisibilityConfig;
-  readonly LabelNamespace: string;
-  readonly CustomResponseBodies: {[key: string]: any};
-  readonly AvailableLabels: [];
-  readonly ConsumedLabels: [];
+  readonly LabelNamespace?: string;
+  readonly CustomResponseBodies?: {[key: string]: any};
+  readonly AvailableLabels?: [];
+  readonly ConsumedLabels?: [];
 }
 
-interface RuleGroupReferenceStatement {
+export interface RuleGroupReferenceStatement {
   readonly ARN: string;
-  readonly ExcludedRules: [];
+  readonly ExcludedRules?: [];
 }
 
-interface RuleGroupSummary {
-  readonly Name: string;
-  readonly Id: string;
-  readonly Description: string;
-  readonly LockToken: string;
-  readonly ARN: string;
+export interface RuleGroupSummary {
+  readonly Name?: string;
+  readonly Id?: string;
+  readonly Description?: string;
+  readonly LockToken?: string;
+  readonly ARN?: string;
 }
 
-interface RuleSummary {
-  readonly Name: string;
-  readonly Action: RuleAction;
+export interface RuleSummary {
+  readonly Name?: string;
+  readonly Action?: RuleAction;
 }
 
-interface SampledHTTPRequest {
+export interface SampledHTTPRequest {
   readonly Request: HTTPRequest;
   readonly Weight: number;
-  readonly Timestamp: Date;
-  readonly Action: string;
-  readonly RuleNameWithinRuleGroup: string;
-  readonly RequestHeadersInserted: [];
-  readonly ResponseCodeSent: number;
-  readonly Labels: [];
-  readonly CaptchaResponse: CaptchaResponse;
+  readonly Timestamp?: Date;
+  readonly Action?: string;
+  readonly RuleNameWithinRuleGroup?: string;
+  readonly RequestHeadersInserted?: [];
+  readonly ResponseCodeSent?: number;
+  readonly Labels?: [];
+  readonly CaptchaResponse?: CaptchaResponse;
 }
 
-interface SingleHeader {
+export interface SingleHeader {
   readonly Name: string;
 }
 
-interface SingleQueryArgument {
+export interface SingleQueryArgument {
   readonly Name: string;
 }
 
-interface SizeConstraintStatement {
+export interface SizeConstraintStatement {
   readonly FieldToMatch: FieldToMatch;
   readonly ComparisonOperator: string;
   readonly Size: number;
   readonly TextTransformations: [];
 }
 
-interface SqliMatchStatement {
+export interface SqliMatchStatement {
   readonly FieldToMatch: FieldToMatch;
   readonly TextTransformations: [];
 }
 
-interface Statement {
-  readonly ByteMatchStatement: ByteMatchStatement;
-  readonly SqliMatchStatement: SqliMatchStatement;
-  readonly XssMatchStatement: XssMatchStatement;
-  readonly SizeConstraintStatement: SizeConstraintStatement;
-  readonly GeoMatchStatement: GeoMatchStatement;
-  readonly RuleGroupReferenceStatement: RuleGroupReferenceStatement;
-  readonly IPSetReferenceStatement: IPSetReferenceStatement;
-  readonly RegexPatternSetReferenceStatement: RegexPatternSetReferenceStatement;
-  readonly RateBasedStatement: RateBasedStatement;
-  readonly AndStatement: AndStatement;
-  readonly OrStatement: OrStatement;
-  readonly NotStatement: NotStatement;
-  readonly ManagedRuleGroupStatement: ManagedRuleGroupStatement;
-  readonly LabelMatchStatement: LabelMatchStatement;
-  readonly RegexMatchStatement: RegexMatchStatement;
+export interface Statement {
+  readonly ByteMatchStatement?: ByteMatchStatement;
+  readonly SqliMatchStatement?: SqliMatchStatement;
+  readonly XssMatchStatement?: XssMatchStatement;
+  readonly SizeConstraintStatement?: SizeConstraintStatement;
+  readonly GeoMatchStatement?: GeoMatchStatement;
+  readonly RuleGroupReferenceStatement?: RuleGroupReferenceStatement;
+  readonly IPSetReferenceStatement?: IPSetReferenceStatement;
+  readonly RegexPatternSetReferenceStatement?: RegexPatternSetReferenceStatement;
+  readonly RateBasedStatement?: RateBasedStatement;
+  readonly AndStatement?: AndStatement;
+  readonly OrStatement?: OrStatement;
+  readonly NotStatement?: NotStatement;
+  readonly ManagedRuleGroupStatement?: ManagedRuleGroupStatement;
+  readonly LabelMatchStatement?: LabelMatchStatement;
+  readonly RegexMatchStatement?: RegexMatchStatement;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagInfoForResource {
-  readonly ResourceARN: string;
-  readonly TagList: [];
+export interface TagInfoForResource {
+  readonly ResourceARN?: string;
+  readonly TagList?: [];
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceARN: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TextTransformation {
+export interface TextTransformation {
   readonly Priority: number;
   readonly Type: string;
 }
 
-interface TimeWindow {
+export interface TimeWindow {
   readonly StartTime: Date;
   readonly EndTime: Date;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceARN: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateIPSetRequest {
+export interface UpdateIPSetRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Addresses: [];
   readonly LockToken: string;
 }
 
-interface UpdateIPSetResponse {
-  readonly NextLockToken: string;
+export interface UpdateIPSetResponse {
+  readonly NextLockToken?: string;
 }
 
-interface UpdateManagedRuleSetVersionExpiryDateRequest {
+export interface UpdateManagedRuleSetVersionExpiryDateRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
@@ -1148,169 +1190,170 @@ interface UpdateManagedRuleSetVersionExpiryDateRequest {
   readonly ExpiryTimestamp: Date;
 }
 
-interface UpdateManagedRuleSetVersionExpiryDateResponse {
-  readonly ExpiringVersion: string;
-  readonly ExpiryTimestamp: Date;
-  readonly NextLockToken: string;
+export interface UpdateManagedRuleSetVersionExpiryDateResponse {
+  readonly ExpiringVersion?: string;
+  readonly ExpiryTimestamp?: Date;
+  readonly NextLockToken?: string;
 }
 
-interface UpdateRegexPatternSetRequest {
+export interface UpdateRegexPatternSetRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly RegularExpressionList: [];
   readonly LockToken: string;
 }
 
-interface UpdateRegexPatternSetResponse {
-  readonly NextLockToken: string;
+export interface UpdateRegexPatternSetResponse {
+  readonly NextLockToken?: string;
 }
 
-interface UpdateRuleGroupRequest {
+export interface UpdateRuleGroupRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
-  readonly Description: string;
-  readonly Rules: [];
+  readonly Description?: string;
+  readonly Rules?: [];
   readonly VisibilityConfig: VisibilityConfig;
   readonly LockToken: string;
-  readonly CustomResponseBodies: {[key: string]: any};
+  readonly CustomResponseBodies?: {[key: string]: any};
 }
 
-interface UpdateRuleGroupResponse {
-  readonly NextLockToken: string;
+export interface UpdateRuleGroupResponse {
+  readonly NextLockToken?: string;
 }
 
-interface UpdateWebACLRequest {
+export interface UpdateWebACLRequest {
   readonly Name: string;
   readonly Scope: string;
   readonly Id: string;
   readonly DefaultAction: DefaultAction;
-  readonly Description: string;
-  readonly Rules: [];
+  readonly Description?: string;
+  readonly Rules?: [];
   readonly VisibilityConfig: VisibilityConfig;
   readonly LockToken: string;
-  readonly CustomResponseBodies: {[key: string]: any};
-  readonly CaptchaConfig: CaptchaConfig;
+  readonly CustomResponseBodies?: {[key: string]: any};
+  readonly CaptchaConfig?: CaptchaConfig;
 }
 
-interface UpdateWebACLResponse {
-  readonly NextLockToken: string;
+export interface UpdateWebACLResponse {
+  readonly NextLockToken?: string;
 }
 
-interface UriPath {
+export interface UriPath {
 }
 
-interface VersionToPublish {
-  readonly AssociatedRuleGroupArn: string;
-  readonly ForecastedLifetime: number;
+export interface VersionToPublish {
+  readonly AssociatedRuleGroupArn?: string;
+  readonly ForecastedLifetime?: number;
 }
 
-interface VisibilityConfig {
+export interface VisibilityConfig {
   readonly SampledRequestsEnabled: boolean;
   readonly CloudWatchMetricsEnabled: boolean;
   readonly MetricName: string;
 }
 
-interface WAFAssociatedItemException {
-  readonly Message: string;
+export interface WAFAssociatedItemException {
+  readonly Message?: string;
 }
 
-interface WAFDuplicateItemException {
-  readonly Message: string;
+export interface WAFDuplicateItemException {
+  readonly Message?: string;
 }
 
-interface WAFExpiredManagedRuleGroupVersionException {
-  readonly Message: string;
+export interface WAFExpiredManagedRuleGroupVersionException {
+  readonly Message?: string;
 }
 
-interface WAFInternalErrorException {
-  readonly Message: string;
+export interface WAFInternalErrorException {
+  readonly Message?: string;
 }
 
-interface WAFInvalidOperationException {
-  readonly Message: string;
+export interface WAFInvalidOperationException {
+  readonly Message?: string;
 }
 
-interface WAFInvalidParameterException {
-  readonly message: string;
-  readonly Field: string;
-  readonly Parameter: string;
-  readonly Reason: string;
+export interface WAFInvalidParameterException {
+  readonly message?: string;
+  readonly Field?: string;
+  readonly Parameter?: string;
+  readonly Reason?: string;
 }
 
-interface WAFInvalidPermissionPolicyException {
-  readonly Message: string;
+export interface WAFInvalidPermissionPolicyException {
+  readonly Message?: string;
 }
 
-interface WAFInvalidResourceException {
-  readonly Message: string;
+export interface WAFInvalidResourceException {
+  readonly Message?: string;
 }
 
-interface WAFLimitsExceededException {
-  readonly Message: string;
+export interface WAFLimitsExceededException {
+  readonly Message?: string;
 }
 
-interface WAFLogDestinationPermissionIssueException {
-  readonly Message: string;
+export interface WAFLogDestinationPermissionIssueException {
+  readonly Message?: string;
 }
 
-interface WAFNonexistentItemException {
-  readonly Message: string;
+export interface WAFNonexistentItemException {
+  readonly Message?: string;
 }
 
-interface WAFOptimisticLockException {
-  readonly Message: string;
+export interface WAFOptimisticLockException {
+  readonly Message?: string;
 }
 
-interface WAFServiceLinkedRoleErrorException {
-  readonly message: string;
+export interface WAFServiceLinkedRoleErrorException {
+  readonly message?: string;
 }
 
-interface WAFSubscriptionNotFoundException {
-  readonly Message: string;
+export interface WAFSubscriptionNotFoundException {
+  readonly Message?: string;
 }
 
-interface WAFTagOperationException {
-  readonly Message: string;
+export interface WAFTagOperationException {
+  readonly Message?: string;
 }
 
-interface WAFTagOperationInternalErrorException {
-  readonly Message: string;
+export interface WAFTagOperationInternalErrorException {
+  readonly Message?: string;
 }
 
-interface WAFUnavailableEntityException {
-  readonly Message: string;
+export interface WAFUnavailableEntityException {
+  readonly Message?: string;
 }
 
-interface WebACL {
+export interface WebACL {
   readonly Name: string;
   readonly Id: string;
   readonly ARN: string;
   readonly DefaultAction: DefaultAction;
-  readonly Description: string;
-  readonly Rules: [];
+  readonly Description?: string;
+  readonly Rules?: [];
   readonly VisibilityConfig: VisibilityConfig;
-  readonly Capacity: number;
-  readonly PreProcessFirewallManagerRuleGroups: [];
-  readonly PostProcessFirewallManagerRuleGroups: [];
-  readonly ManagedByFirewallManager: boolean;
-  readonly LabelNamespace: string;
-  readonly CustomResponseBodies: {[key: string]: any};
-  readonly CaptchaConfig: CaptchaConfig;
+  readonly Capacity?: number;
+  readonly PreProcessFirewallManagerRuleGroups?: [];
+  readonly PostProcessFirewallManagerRuleGroups?: [];
+  readonly ManagedByFirewallManager?: boolean;
+  readonly LabelNamespace?: string;
+  readonly CustomResponseBodies?: {[key: string]: any};
+  readonly CaptchaConfig?: CaptchaConfig;
 }
 
-interface WebACLSummary {
-  readonly Name: string;
-  readonly Id: string;
-  readonly Description: string;
-  readonly LockToken: string;
-  readonly ARN: string;
+export interface WebACLSummary {
+  readonly Name?: string;
+  readonly Id?: string;
+  readonly Description?: string;
+  readonly LockToken?: string;
+  readonly ARN?: string;
 }
 
-interface XssMatchStatement {
+export interface XssMatchStatement {
   readonly FieldToMatch: FieldToMatch;
   readonly TextTransformations: [];
 }
+
 

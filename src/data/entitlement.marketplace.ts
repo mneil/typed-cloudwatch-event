@@ -8,44 +8,43 @@ export interface GetEntitlements {
   readonly MaxResults?: number;
 }
 
+export interface Entitlement {
+  readonly ProductCode?: string;
+  readonly Dimension?: string;
+  readonly CustomerIdentifier?: string;
+  readonly Value?: EntitlementValue;
+  readonly ExpirationDate?: Date;
+}
 
+export interface EntitlementValue {
+  readonly IntegerValue?: number;
+  readonly DoubleValue?: unknown;
+  readonly BooleanValue?: boolean;
+  readonly StringValue?: string;
+}
 
-interface Entitlement {
+export interface GetEntitlementsRequest {
   readonly ProductCode: string;
-  readonly Dimension: string;
-  readonly CustomerIdentifier: string;
-  readonly Value: EntitlementValue;
-  readonly ExpirationDate: Date;
+  readonly Filter?: {[key: string]: any};
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface EntitlementValue {
-  readonly IntegerValue: number;
-  readonly DoubleValue: unknown;
-  readonly BooleanValue: boolean;
-  readonly StringValue: string;
+export interface GetEntitlementsResult {
+  readonly Entitlements?: [];
+  readonly NextToken?: string;
 }
 
-interface GetEntitlementsRequest {
-  readonly ProductCode: string;
-  readonly Filter: {[key: string]: any};
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface InternalServiceErrorException {
+  readonly message?: string;
 }
 
-interface GetEntitlementsResult {
-  readonly Entitlements: [];
-  readonly NextToken: string;
+export interface InvalidParameterException {
+  readonly message?: string;
 }
 
-interface InternalServiceErrorException {
-  readonly message: string;
+export interface ThrottlingException {
+  readonly message?: string;
 }
 
-interface InvalidParameterException {
-  readonly message: string;
-}
-
-interface ThrottlingException {
-  readonly message: string;
-}
 

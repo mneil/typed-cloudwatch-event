@@ -10,12 +10,14 @@ export interface CreateGatewayRoute {
   readonly tags?: [];
   readonly virtualGatewayName: string;
 }
+
 export interface CreateMesh {
   readonly clientToken?: string;
   readonly meshName: string;
   readonly spec?: MeshSpec;
   readonly tags?: [];
 }
+
 export interface CreateRoute {
   readonly clientToken?: string;
   readonly meshName: string;
@@ -25,6 +27,7 @@ export interface CreateRoute {
   readonly tags?: [];
   readonly virtualRouterName: string;
 }
+
 export interface CreateVirtualGateway {
   readonly clientToken?: string;
   readonly meshName: string;
@@ -33,6 +36,7 @@ export interface CreateVirtualGateway {
   readonly tags?: [];
   readonly virtualGatewayName: string;
 }
+
 export interface CreateVirtualNode {
   readonly clientToken?: string;
   readonly meshName: string;
@@ -41,6 +45,7 @@ export interface CreateVirtualNode {
   readonly tags?: [];
   readonly virtualNodeName: string;
 }
+
 export interface CreateVirtualRouter {
   readonly clientToken?: string;
   readonly meshName: string;
@@ -49,6 +54,7 @@ export interface CreateVirtualRouter {
   readonly tags?: [];
   readonly virtualRouterName: string;
 }
+
 export interface CreateVirtualService {
   readonly clientToken?: string;
   readonly meshName: string;
@@ -57,77 +63,92 @@ export interface CreateVirtualService {
   readonly tags?: [];
   readonly virtualServiceName: string;
 }
+
 export interface DeleteGatewayRoute {
   readonly gatewayRouteName: string;
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly virtualGatewayName: string;
 }
+
 export interface DeleteMesh {
   readonly meshName: string;
 }
+
 export interface DeleteRoute {
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly routeName: string;
   readonly virtualRouterName: string;
 }
+
 export interface DeleteVirtualGateway {
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly virtualGatewayName: string;
 }
+
 export interface DeleteVirtualNode {
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly virtualNodeName: string;
 }
+
 export interface DeleteVirtualRouter {
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly virtualRouterName: string;
 }
+
 export interface DeleteVirtualService {
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly virtualServiceName: string;
 }
+
 export interface DescribeGatewayRoute {
   readonly gatewayRouteName: string;
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly virtualGatewayName: string;
 }
+
 export interface DescribeMesh {
   readonly meshName: string;
   readonly meshOwner?: string;
 }
+
 export interface DescribeRoute {
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly routeName: string;
   readonly virtualRouterName: string;
 }
+
 export interface DescribeVirtualGateway {
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly virtualGatewayName: string;
 }
+
 export interface DescribeVirtualNode {
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly virtualNodeName: string;
 }
+
 export interface DescribeVirtualRouter {
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly virtualRouterName: string;
 }
+
 export interface DescribeVirtualService {
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly virtualServiceName: string;
 }
+
 export interface ListGatewayRoutes {
   readonly limit?: number;
   readonly meshName: string;
@@ -135,10 +156,12 @@ export interface ListGatewayRoutes {
   readonly nextToken?: string;
   readonly virtualGatewayName: string;
 }
+
 export interface ListMeshes {
   readonly limit?: number;
   readonly nextToken?: string;
 }
+
 export interface ListRoutes {
   readonly limit?: number;
   readonly meshName: string;
@@ -146,43 +169,51 @@ export interface ListRoutes {
   readonly nextToken?: string;
   readonly virtualRouterName: string;
 }
+
 export interface ListTagsForResource {
   readonly limit?: number;
   readonly nextToken?: string;
   readonly resourceArn: string;
 }
+
 export interface ListVirtualGateways {
   readonly limit?: number;
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly nextToken?: string;
 }
+
 export interface ListVirtualNodes {
   readonly limit?: number;
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly nextToken?: string;
 }
+
 export interface ListVirtualRouters {
   readonly limit?: number;
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly nextToken?: string;
 }
+
 export interface ListVirtualServices {
   readonly limit?: number;
   readonly meshName: string;
   readonly meshOwner?: string;
   readonly nextToken?: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: [];
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateGatewayRoute {
   readonly clientToken?: string;
   readonly gatewayRouteName: string;
@@ -191,11 +222,13 @@ export interface UpdateGatewayRoute {
   readonly spec: GatewayRouteSpec;
   readonly virtualGatewayName: string;
 }
+
 export interface UpdateMesh {
   readonly clientToken?: string;
   readonly meshName: string;
   readonly spec?: MeshSpec;
 }
+
 export interface UpdateRoute {
   readonly clientToken?: string;
   readonly meshName: string;
@@ -204,6 +237,7 @@ export interface UpdateRoute {
   readonly spec: RouteSpec;
   readonly virtualRouterName: string;
 }
+
 export interface UpdateVirtualGateway {
   readonly clientToken?: string;
   readonly meshName: string;
@@ -211,6 +245,7 @@ export interface UpdateVirtualGateway {
   readonly spec: VirtualGatewaySpec;
   readonly virtualGatewayName: string;
 }
+
 export interface UpdateVirtualNode {
   readonly clientToken?: string;
   readonly meshName: string;
@@ -218,6 +253,7 @@ export interface UpdateVirtualNode {
   readonly spec: VirtualNodeSpec;
   readonly virtualNodeName: string;
 }
+
 export interface UpdateVirtualRouter {
   readonly clientToken?: string;
   readonly meshName: string;
@@ -225,6 +261,7 @@ export interface UpdateVirtualRouter {
   readonly spec: VirtualRouterSpec;
   readonly virtualRouterName: string;
 }
+
 export interface UpdateVirtualService {
   readonly clientToken?: string;
   readonly meshName: string;
@@ -233,310 +270,308 @@ export interface UpdateVirtualService {
   readonly virtualServiceName: string;
 }
 
-
-
-interface AccessLog {
-  readonly file: FileAccessLog;
+export interface AccessLog {
+  readonly file?: FileAccessLog;
 }
 
-interface AwsCloudMapInstanceAttribute {
+export interface AwsCloudMapInstanceAttribute {
   readonly key: string;
   readonly value: string;
 }
 
-interface AwsCloudMapServiceDiscovery {
-  readonly attributes: [];
+export interface AwsCloudMapServiceDiscovery {
+  readonly attributes?: [];
   readonly namespaceName: string;
   readonly serviceName: string;
 }
 
-interface Backend {
-  readonly virtualService: VirtualServiceBackend;
+export interface Backend {
+  readonly virtualService?: VirtualServiceBackend;
 }
 
-interface BackendDefaults {
-  readonly clientPolicy: ClientPolicy;
+export interface BackendDefaults {
+  readonly clientPolicy?: ClientPolicy;
 }
 
-interface BadRequestException {
-  readonly message: string;
+export interface BadRequestException {
+  readonly message?: string;
 }
 
-interface ClientPolicy {
-  readonly tls: ClientPolicyTls;
+export interface ClientPolicy {
+  readonly tls?: ClientPolicyTls;
 }
 
-interface ClientPolicyTls {
-  readonly certificate: ClientTlsCertificate;
-  readonly enforce: boolean;
-  readonly ports: [];
+export interface ClientPolicyTls {
+  readonly certificate?: ClientTlsCertificate;
+  readonly enforce?: boolean;
+  readonly ports?: [];
   readonly validation: TlsValidationContext;
 }
 
-interface ClientTlsCertificate {
-  readonly file: ListenerTlsFileCertificate;
-  readonly sds: ListenerTlsSdsCertificate;
+export interface ClientTlsCertificate {
+  readonly file?: ListenerTlsFileCertificate;
+  readonly sds?: ListenerTlsSdsCertificate;
 }
 
-interface ConflictException {
-  readonly message: string;
+export interface ConflictException {
+  readonly message?: string;
 }
 
-interface CreateGatewayRouteInput {
-  readonly clientToken: string;
+export interface CreateGatewayRouteInput {
+  readonly clientToken?: string;
   readonly gatewayRouteName: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly spec: GatewayRouteSpec;
-  readonly tags: [];
+  readonly tags?: [];
   readonly virtualGatewayName: string;
 }
 
-interface CreateGatewayRouteOutput {
+export interface CreateGatewayRouteOutput {
   readonly gatewayRoute: GatewayRouteData;
 }
 
-interface CreateMeshInput {
-  readonly clientToken: string;
+export interface CreateMeshInput {
+  readonly clientToken?: string;
   readonly meshName: string;
-  readonly spec: MeshSpec;
-  readonly tags: [];
+  readonly spec?: MeshSpec;
+  readonly tags?: [];
 }
 
-interface CreateMeshOutput {
+export interface CreateMeshOutput {
   readonly mesh: MeshData;
 }
 
-interface CreateRouteInput {
-  readonly clientToken: string;
+export interface CreateRouteInput {
+  readonly clientToken?: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly routeName: string;
   readonly spec: RouteSpec;
-  readonly tags: [];
+  readonly tags?: [];
   readonly virtualRouterName: string;
 }
 
-interface CreateRouteOutput {
+export interface CreateRouteOutput {
   readonly route: RouteData;
 }
 
-interface CreateVirtualGatewayInput {
-  readonly clientToken: string;
+export interface CreateVirtualGatewayInput {
+  readonly clientToken?: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly spec: VirtualGatewaySpec;
-  readonly tags: [];
+  readonly tags?: [];
   readonly virtualGatewayName: string;
 }
 
-interface CreateVirtualGatewayOutput {
+export interface CreateVirtualGatewayOutput {
   readonly virtualGateway: VirtualGatewayData;
 }
 
-interface CreateVirtualNodeInput {
-  readonly clientToken: string;
+export interface CreateVirtualNodeInput {
+  readonly clientToken?: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly spec: VirtualNodeSpec;
-  readonly tags: [];
+  readonly tags?: [];
   readonly virtualNodeName: string;
 }
 
-interface CreateVirtualNodeOutput {
+export interface CreateVirtualNodeOutput {
   readonly virtualNode: VirtualNodeData;
 }
 
-interface CreateVirtualRouterInput {
-  readonly clientToken: string;
+export interface CreateVirtualRouterInput {
+  readonly clientToken?: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly spec: VirtualRouterSpec;
-  readonly tags: [];
+  readonly tags?: [];
   readonly virtualRouterName: string;
 }
 
-interface CreateVirtualRouterOutput {
+export interface CreateVirtualRouterOutput {
   readonly virtualRouter: VirtualRouterData;
 }
 
-interface CreateVirtualServiceInput {
-  readonly clientToken: string;
+export interface CreateVirtualServiceInput {
+  readonly clientToken?: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly spec: VirtualServiceSpec;
-  readonly tags: [];
+  readonly tags?: [];
   readonly virtualServiceName: string;
 }
 
-interface CreateVirtualServiceOutput {
+export interface CreateVirtualServiceOutput {
   readonly virtualService: VirtualServiceData;
 }
 
-interface DeleteGatewayRouteInput {
+export interface DeleteGatewayRouteInput {
   readonly gatewayRouteName: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly virtualGatewayName: string;
 }
 
-interface DeleteGatewayRouteOutput {
+export interface DeleteGatewayRouteOutput {
   readonly gatewayRoute: GatewayRouteData;
 }
 
-interface DeleteMeshInput {
+export interface DeleteMeshInput {
   readonly meshName: string;
 }
 
-interface DeleteMeshOutput {
+export interface DeleteMeshOutput {
   readonly mesh: MeshData;
 }
 
-interface DeleteRouteInput {
+export interface DeleteRouteInput {
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly routeName: string;
   readonly virtualRouterName: string;
 }
 
-interface DeleteRouteOutput {
+export interface DeleteRouteOutput {
   readonly route: RouteData;
 }
 
-interface DeleteVirtualGatewayInput {
+export interface DeleteVirtualGatewayInput {
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly virtualGatewayName: string;
 }
 
-interface DeleteVirtualGatewayOutput {
+export interface DeleteVirtualGatewayOutput {
   readonly virtualGateway: VirtualGatewayData;
 }
 
-interface DeleteVirtualNodeInput {
+export interface DeleteVirtualNodeInput {
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly virtualNodeName: string;
 }
 
-interface DeleteVirtualNodeOutput {
+export interface DeleteVirtualNodeOutput {
   readonly virtualNode: VirtualNodeData;
 }
 
-interface DeleteVirtualRouterInput {
+export interface DeleteVirtualRouterInput {
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly virtualRouterName: string;
 }
 
-interface DeleteVirtualRouterOutput {
+export interface DeleteVirtualRouterOutput {
   readonly virtualRouter: VirtualRouterData;
 }
 
-interface DeleteVirtualServiceInput {
+export interface DeleteVirtualServiceInput {
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly virtualServiceName: string;
 }
 
-interface DeleteVirtualServiceOutput {
+export interface DeleteVirtualServiceOutput {
   readonly virtualService: VirtualServiceData;
 }
 
-interface DescribeGatewayRouteInput {
+export interface DescribeGatewayRouteInput {
   readonly gatewayRouteName: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly virtualGatewayName: string;
 }
 
-interface DescribeGatewayRouteOutput {
+export interface DescribeGatewayRouteOutput {
   readonly gatewayRoute: GatewayRouteData;
 }
 
-interface DescribeMeshInput {
+export interface DescribeMeshInput {
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
 }
 
-interface DescribeMeshOutput {
+export interface DescribeMeshOutput {
   readonly mesh: MeshData;
 }
 
-interface DescribeRouteInput {
+export interface DescribeRouteInput {
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly routeName: string;
   readonly virtualRouterName: string;
 }
 
-interface DescribeRouteOutput {
+export interface DescribeRouteOutput {
   readonly route: RouteData;
 }
 
-interface DescribeVirtualGatewayInput {
+export interface DescribeVirtualGatewayInput {
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly virtualGatewayName: string;
 }
 
-interface DescribeVirtualGatewayOutput {
+export interface DescribeVirtualGatewayOutput {
   readonly virtualGateway: VirtualGatewayData;
 }
 
-interface DescribeVirtualNodeInput {
+export interface DescribeVirtualNodeInput {
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly virtualNodeName: string;
 }
 
-interface DescribeVirtualNodeOutput {
+export interface DescribeVirtualNodeOutput {
   readonly virtualNode: VirtualNodeData;
 }
 
-interface DescribeVirtualRouterInput {
+export interface DescribeVirtualRouterInput {
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly virtualRouterName: string;
 }
 
-interface DescribeVirtualRouterOutput {
+export interface DescribeVirtualRouterOutput {
   readonly virtualRouter: VirtualRouterData;
 }
 
-interface DescribeVirtualServiceInput {
+export interface DescribeVirtualServiceInput {
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly virtualServiceName: string;
 }
 
-interface DescribeVirtualServiceOutput {
+export interface DescribeVirtualServiceOutput {
   readonly virtualService: VirtualServiceData;
 }
 
-interface DnsServiceDiscovery {
+export interface DnsServiceDiscovery {
   readonly hostname: string;
-  readonly responseType: string;
+  readonly responseType?: string;
 }
 
-interface Duration {
-  readonly unit: string;
-  readonly value: number;
+export interface Duration {
+  readonly unit?: string;
+  readonly value?: number;
 }
 
-interface EgressFilter {
+export interface EgressFilter {
   readonly type: string;
 }
 
-interface FileAccessLog {
+export interface FileAccessLog {
   readonly path: string;
 }
 
-interface ForbiddenException {
-  readonly message: string;
+export interface ForbiddenException {
+  readonly message?: string;
 }
 
-interface GatewayRouteData {
+export interface GatewayRouteData {
   readonly gatewayRouteName: string;
   readonly meshName: string;
   readonly metadata: ResourceMetadata;
@@ -545,16 +580,16 @@ interface GatewayRouteData {
   readonly virtualGatewayName: string;
 }
 
-interface GatewayRouteHostnameMatch {
-  readonly exact: string;
-  readonly suffix: string;
+export interface GatewayRouteHostnameMatch {
+  readonly exact?: string;
+  readonly suffix?: string;
 }
 
-interface GatewayRouteHostnameRewrite {
-  readonly defaultTargetHostname: string;
+export interface GatewayRouteHostnameRewrite {
+  readonly defaultTargetHostname?: string;
 }
 
-interface GatewayRouteRef {
+export interface GatewayRouteRef {
   readonly arn: string;
   readonly createdAt: Date;
   readonly gatewayRouteName: string;
@@ -566,380 +601,380 @@ interface GatewayRouteRef {
   readonly virtualGatewayName: string;
 }
 
-interface GatewayRouteSpec {
-  readonly grpcRoute: GrpcGatewayRoute;
-  readonly http2Route: HttpGatewayRoute;
-  readonly httpRoute: HttpGatewayRoute;
-  readonly priority: number;
+export interface GatewayRouteSpec {
+  readonly grpcRoute?: GrpcGatewayRoute;
+  readonly http2Route?: HttpGatewayRoute;
+  readonly httpRoute?: HttpGatewayRoute;
+  readonly priority?: number;
 }
 
-interface GatewayRouteStatus {
+export interface GatewayRouteStatus {
   readonly status: string;
 }
 
-interface GatewayRouteTarget {
+export interface GatewayRouteTarget {
   readonly virtualService: GatewayRouteVirtualService;
 }
 
-interface GatewayRouteVirtualService {
+export interface GatewayRouteVirtualService {
   readonly virtualServiceName: string;
 }
 
-interface GrpcGatewayRoute {
+export interface GrpcGatewayRoute {
   readonly action: GrpcGatewayRouteAction;
   readonly match: GrpcGatewayRouteMatch;
 }
 
-interface GrpcGatewayRouteAction {
-  readonly rewrite: GrpcGatewayRouteRewrite;
+export interface GrpcGatewayRouteAction {
+  readonly rewrite?: GrpcGatewayRouteRewrite;
   readonly target: GatewayRouteTarget;
 }
 
-interface GrpcGatewayRouteMatch {
-  readonly hostname: GatewayRouteHostnameMatch;
-  readonly metadata: [];
-  readonly serviceName: string;
+export interface GrpcGatewayRouteMatch {
+  readonly hostname?: GatewayRouteHostnameMatch;
+  readonly metadata?: [];
+  readonly serviceName?: string;
 }
 
-interface GrpcGatewayRouteMetadata {
-  readonly invert: boolean;
-  readonly match: GrpcMetadataMatchMethod;
+export interface GrpcGatewayRouteMetadata {
+  readonly invert?: boolean;
+  readonly match?: GrpcMetadataMatchMethod;
   readonly name: string;
 }
 
-interface GrpcGatewayRouteRewrite {
-  readonly hostname: GatewayRouteHostnameRewrite;
+export interface GrpcGatewayRouteRewrite {
+  readonly hostname?: GatewayRouteHostnameRewrite;
 }
 
-interface GrpcMetadataMatchMethod {
-  readonly exact: string;
-  readonly prefix: string;
-  readonly range: MatchRange;
-  readonly regex: string;
-  readonly suffix: string;
+export interface GrpcMetadataMatchMethod {
+  readonly exact?: string;
+  readonly prefix?: string;
+  readonly range?: MatchRange;
+  readonly regex?: string;
+  readonly suffix?: string;
 }
 
-interface GrpcRetryPolicy {
-  readonly grpcRetryEvents: [];
-  readonly httpRetryEvents: [];
+export interface GrpcRetryPolicy {
+  readonly grpcRetryEvents?: [];
+  readonly httpRetryEvents?: [];
   readonly maxRetries: number;
   readonly perRetryTimeout: Duration;
-  readonly tcpRetryEvents: [];
+  readonly tcpRetryEvents?: [];
 }
 
-interface GrpcRoute {
+export interface GrpcRoute {
   readonly action: GrpcRouteAction;
   readonly match: GrpcRouteMatch;
-  readonly retryPolicy: GrpcRetryPolicy;
-  readonly timeout: GrpcTimeout;
+  readonly retryPolicy?: GrpcRetryPolicy;
+  readonly timeout?: GrpcTimeout;
 }
 
-interface GrpcRouteAction {
+export interface GrpcRouteAction {
   readonly weightedTargets: [];
 }
 
-interface GrpcRouteMatch {
-  readonly metadata: [];
-  readonly methodName: string;
-  readonly serviceName: string;
+export interface GrpcRouteMatch {
+  readonly metadata?: [];
+  readonly methodName?: string;
+  readonly serviceName?: string;
 }
 
-interface GrpcRouteMetadata {
-  readonly invert: boolean;
-  readonly match: GrpcRouteMetadataMatchMethod;
+export interface GrpcRouteMetadata {
+  readonly invert?: boolean;
+  readonly match?: GrpcRouteMetadataMatchMethod;
   readonly name: string;
 }
 
-interface GrpcRouteMetadataMatchMethod {
-  readonly exact: string;
-  readonly prefix: string;
-  readonly range: MatchRange;
-  readonly regex: string;
-  readonly suffix: string;
+export interface GrpcRouteMetadataMatchMethod {
+  readonly exact?: string;
+  readonly prefix?: string;
+  readonly range?: MatchRange;
+  readonly regex?: string;
+  readonly suffix?: string;
 }
 
-interface GrpcTimeout {
-  readonly idle: Duration;
-  readonly perRequest: Duration;
+export interface GrpcTimeout {
+  readonly idle?: Duration;
+  readonly perRequest?: Duration;
 }
 
-interface HeaderMatchMethod {
-  readonly exact: string;
-  readonly prefix: string;
-  readonly range: MatchRange;
-  readonly regex: string;
-  readonly suffix: string;
+export interface HeaderMatchMethod {
+  readonly exact?: string;
+  readonly prefix?: string;
+  readonly range?: MatchRange;
+  readonly regex?: string;
+  readonly suffix?: string;
 }
 
-interface HealthCheckPolicy {
+export interface HealthCheckPolicy {
   readonly healthyThreshold: number;
   readonly intervalMillis: number;
-  readonly path: string;
-  readonly port: number;
+  readonly path?: string;
+  readonly port?: number;
   readonly protocol: string;
   readonly timeoutMillis: number;
   readonly unhealthyThreshold: number;
 }
 
-interface HttpGatewayRoute {
+export interface HttpGatewayRoute {
   readonly action: HttpGatewayRouteAction;
   readonly match: HttpGatewayRouteMatch;
 }
 
-interface HttpGatewayRouteAction {
-  readonly rewrite: HttpGatewayRouteRewrite;
+export interface HttpGatewayRouteAction {
+  readonly rewrite?: HttpGatewayRouteRewrite;
   readonly target: GatewayRouteTarget;
 }
 
-interface HttpGatewayRouteHeader {
-  readonly invert: boolean;
-  readonly match: HeaderMatchMethod;
+export interface HttpGatewayRouteHeader {
+  readonly invert?: boolean;
+  readonly match?: HeaderMatchMethod;
   readonly name: string;
 }
 
-interface HttpGatewayRouteMatch {
-  readonly headers: [];
-  readonly hostname: GatewayRouteHostnameMatch;
-  readonly method: string;
-  readonly path: HttpPathMatch;
-  readonly prefix: string;
-  readonly queryParameters: [];
+export interface HttpGatewayRouteMatch {
+  readonly headers?: [];
+  readonly hostname?: GatewayRouteHostnameMatch;
+  readonly method?: string;
+  readonly path?: HttpPathMatch;
+  readonly prefix?: string;
+  readonly queryParameters?: [];
 }
 
-interface HttpGatewayRoutePathRewrite {
-  readonly exact: string;
+export interface HttpGatewayRoutePathRewrite {
+  readonly exact?: string;
 }
 
-interface HttpGatewayRoutePrefixRewrite {
-  readonly defaultPrefix: string;
-  readonly value: string;
+export interface HttpGatewayRoutePrefixRewrite {
+  readonly defaultPrefix?: string;
+  readonly value?: string;
 }
 
-interface HttpGatewayRouteRewrite {
-  readonly hostname: GatewayRouteHostnameRewrite;
-  readonly path: HttpGatewayRoutePathRewrite;
-  readonly prefix: HttpGatewayRoutePrefixRewrite;
+export interface HttpGatewayRouteRewrite {
+  readonly hostname?: GatewayRouteHostnameRewrite;
+  readonly path?: HttpGatewayRoutePathRewrite;
+  readonly prefix?: HttpGatewayRoutePrefixRewrite;
 }
 
-interface HttpPathMatch {
-  readonly exact: string;
-  readonly regex: string;
+export interface HttpPathMatch {
+  readonly exact?: string;
+  readonly regex?: string;
 }
 
-interface HttpQueryParameter {
-  readonly match: QueryParameterMatch;
+export interface HttpQueryParameter {
+  readonly match?: QueryParameterMatch;
   readonly name: string;
 }
 
-interface HttpRetryPolicy {
-  readonly httpRetryEvents: [];
+export interface HttpRetryPolicy {
+  readonly httpRetryEvents?: [];
   readonly maxRetries: number;
   readonly perRetryTimeout: Duration;
-  readonly tcpRetryEvents: [];
+  readonly tcpRetryEvents?: [];
 }
 
-interface HttpRoute {
+export interface HttpRoute {
   readonly action: HttpRouteAction;
   readonly match: HttpRouteMatch;
-  readonly retryPolicy: HttpRetryPolicy;
-  readonly timeout: HttpTimeout;
+  readonly retryPolicy?: HttpRetryPolicy;
+  readonly timeout?: HttpTimeout;
 }
 
-interface HttpRouteAction {
+export interface HttpRouteAction {
   readonly weightedTargets: [];
 }
 
-interface HttpRouteHeader {
-  readonly invert: boolean;
-  readonly match: HeaderMatchMethod;
+export interface HttpRouteHeader {
+  readonly invert?: boolean;
+  readonly match?: HeaderMatchMethod;
   readonly name: string;
 }
 
-interface HttpRouteMatch {
-  readonly headers: [];
-  readonly method: string;
-  readonly path: HttpPathMatch;
-  readonly prefix: string;
-  readonly queryParameters: [];
-  readonly scheme: string;
+export interface HttpRouteMatch {
+  readonly headers?: [];
+  readonly method?: string;
+  readonly path?: HttpPathMatch;
+  readonly prefix?: string;
+  readonly queryParameters?: [];
+  readonly scheme?: string;
 }
 
-interface HttpTimeout {
-  readonly idle: Duration;
-  readonly perRequest: Duration;
+export interface HttpTimeout {
+  readonly idle?: Duration;
+  readonly perRequest?: Duration;
 }
 
-interface InternalServerErrorException {
-  readonly message: string;
+export interface InternalServerErrorException {
+  readonly message?: string;
 }
 
-interface LimitExceededException {
-  readonly message: string;
+export interface LimitExceededException {
+  readonly message?: string;
 }
 
-interface ListGatewayRoutesInput {
-  readonly limit: number;
+export interface ListGatewayRoutesInput {
+  readonly limit?: number;
   readonly meshName: string;
-  readonly meshOwner: string;
-  readonly nextToken: string;
+  readonly meshOwner?: string;
+  readonly nextToken?: string;
   readonly virtualGatewayName: string;
 }
 
-interface ListGatewayRoutesOutput {
+export interface ListGatewayRoutesOutput {
   readonly gatewayRoutes: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListMeshesInput {
-  readonly limit: number;
-  readonly nextToken: string;
+export interface ListMeshesInput {
+  readonly limit?: number;
+  readonly nextToken?: string;
 }
 
-interface ListMeshesOutput {
+export interface ListMeshesOutput {
   readonly meshes: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListRoutesInput {
-  readonly limit: number;
+export interface ListRoutesInput {
+  readonly limit?: number;
   readonly meshName: string;
-  readonly meshOwner: string;
-  readonly nextToken: string;
+  readonly meshOwner?: string;
+  readonly nextToken?: string;
   readonly virtualRouterName: string;
 }
 
-interface ListRoutesOutput {
-  readonly nextToken: string;
+export interface ListRoutesOutput {
+  readonly nextToken?: string;
   readonly routes: [];
 }
 
-interface ListTagsForResourceInput {
-  readonly limit: number;
-  readonly nextToken: string;
+export interface ListTagsForResourceInput {
+  readonly limit?: number;
+  readonly nextToken?: string;
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceOutput {
-  readonly nextToken: string;
+export interface ListTagsForResourceOutput {
+  readonly nextToken?: string;
   readonly tags: [];
 }
 
-interface ListVirtualGatewaysInput {
-  readonly limit: number;
+export interface ListVirtualGatewaysInput {
+  readonly limit?: number;
   readonly meshName: string;
-  readonly meshOwner: string;
-  readonly nextToken: string;
+  readonly meshOwner?: string;
+  readonly nextToken?: string;
 }
 
-interface ListVirtualGatewaysOutput {
-  readonly nextToken: string;
+export interface ListVirtualGatewaysOutput {
+  readonly nextToken?: string;
   readonly virtualGateways: [];
 }
 
-interface ListVirtualNodesInput {
-  readonly limit: number;
+export interface ListVirtualNodesInput {
+  readonly limit?: number;
   readonly meshName: string;
-  readonly meshOwner: string;
-  readonly nextToken: string;
+  readonly meshOwner?: string;
+  readonly nextToken?: string;
 }
 
-interface ListVirtualNodesOutput {
-  readonly nextToken: string;
+export interface ListVirtualNodesOutput {
+  readonly nextToken?: string;
   readonly virtualNodes: [];
 }
 
-interface ListVirtualRoutersInput {
-  readonly limit: number;
+export interface ListVirtualRoutersInput {
+  readonly limit?: number;
   readonly meshName: string;
-  readonly meshOwner: string;
-  readonly nextToken: string;
+  readonly meshOwner?: string;
+  readonly nextToken?: string;
 }
 
-interface ListVirtualRoutersOutput {
-  readonly nextToken: string;
+export interface ListVirtualRoutersOutput {
+  readonly nextToken?: string;
   readonly virtualRouters: [];
 }
 
-interface ListVirtualServicesInput {
-  readonly limit: number;
+export interface ListVirtualServicesInput {
+  readonly limit?: number;
   readonly meshName: string;
-  readonly meshOwner: string;
-  readonly nextToken: string;
+  readonly meshOwner?: string;
+  readonly nextToken?: string;
 }
 
-interface ListVirtualServicesOutput {
-  readonly nextToken: string;
+export interface ListVirtualServicesOutput {
+  readonly nextToken?: string;
   readonly virtualServices: [];
 }
 
-interface Listener {
-  readonly connectionPool: VirtualNodeConnectionPool;
-  readonly healthCheck: HealthCheckPolicy;
-  readonly outlierDetection: OutlierDetection;
+export interface Listener {
+  readonly connectionPool?: VirtualNodeConnectionPool;
+  readonly healthCheck?: HealthCheckPolicy;
+  readonly outlierDetection?: OutlierDetection;
   readonly portMapping: PortMapping;
-  readonly timeout: ListenerTimeout;
-  readonly tls: ListenerTls;
+  readonly timeout?: ListenerTimeout;
+  readonly tls?: ListenerTls;
 }
 
-interface ListenerTimeout {
-  readonly grpc: GrpcTimeout;
-  readonly http: HttpTimeout;
-  readonly http2: HttpTimeout;
-  readonly tcp: TcpTimeout;
+export interface ListenerTimeout {
+  readonly grpc?: GrpcTimeout;
+  readonly http?: HttpTimeout;
+  readonly http2?: HttpTimeout;
+  readonly tcp?: TcpTimeout;
 }
 
-interface ListenerTls {
+export interface ListenerTls {
   readonly certificate: ListenerTlsCertificate;
   readonly mode: string;
-  readonly validation: ListenerTlsValidationContext;
+  readonly validation?: ListenerTlsValidationContext;
 }
 
-interface ListenerTlsAcmCertificate {
+export interface ListenerTlsAcmCertificate {
   readonly certificateArn: string;
 }
 
-interface ListenerTlsCertificate {
-  readonly acm: ListenerTlsAcmCertificate;
-  readonly file: ListenerTlsFileCertificate;
-  readonly sds: ListenerTlsSdsCertificate;
+export interface ListenerTlsCertificate {
+  readonly acm?: ListenerTlsAcmCertificate;
+  readonly file?: ListenerTlsFileCertificate;
+  readonly sds?: ListenerTlsSdsCertificate;
 }
 
-interface ListenerTlsFileCertificate {
+export interface ListenerTlsFileCertificate {
   readonly certificateChain: string;
   readonly privateKey: string;
 }
 
-interface ListenerTlsSdsCertificate {
+export interface ListenerTlsSdsCertificate {
   readonly secretName: string;
 }
 
-interface ListenerTlsValidationContext {
-  readonly subjectAlternativeNames: SubjectAlternativeNames;
+export interface ListenerTlsValidationContext {
+  readonly subjectAlternativeNames?: SubjectAlternativeNames;
   readonly trust: ListenerTlsValidationContextTrust;
 }
 
-interface ListenerTlsValidationContextTrust {
-  readonly file: TlsValidationContextFileTrust;
-  readonly sds: TlsValidationContextSdsTrust;
+export interface ListenerTlsValidationContextTrust {
+  readonly file?: TlsValidationContextFileTrust;
+  readonly sds?: TlsValidationContextSdsTrust;
 }
 
-interface Logging {
-  readonly accessLog: AccessLog;
+export interface Logging {
+  readonly accessLog?: AccessLog;
 }
 
-interface MatchRange {
+export interface MatchRange {
   readonly end: number;
   readonly start: number;
 }
 
-interface MeshData {
+export interface MeshData {
   readonly meshName: string;
   readonly metadata: ResourceMetadata;
   readonly spec: MeshSpec;
   readonly status: MeshStatus;
 }
 
-interface MeshRef {
+export interface MeshRef {
   readonly arn: string;
   readonly createdAt: Date;
   readonly lastUpdatedAt: Date;
@@ -949,39 +984,39 @@ interface MeshRef {
   readonly version: number;
 }
 
-interface MeshSpec {
-  readonly egressFilter: EgressFilter;
+export interface MeshSpec {
+  readonly egressFilter?: EgressFilter;
 }
 
-interface MeshStatus {
-  readonly status: string;
+export interface MeshStatus {
+  readonly status?: string;
 }
 
-interface NotFoundException {
-  readonly message: string;
+export interface NotFoundException {
+  readonly message?: string;
 }
 
-interface OutlierDetection {
+export interface OutlierDetection {
   readonly baseEjectionDuration: Duration;
   readonly interval: Duration;
   readonly maxEjectionPercent: number;
   readonly maxServerErrors: number;
 }
 
-interface PortMapping {
+export interface PortMapping {
   readonly port: number;
   readonly protocol: string;
 }
 
-interface QueryParameterMatch {
-  readonly exact: string;
+export interface QueryParameterMatch {
+  readonly exact?: string;
 }
 
-interface ResourceInUseException {
-  readonly message: string;
+export interface ResourceInUseException {
+  readonly message?: string;
 }
 
-interface ResourceMetadata {
+export interface ResourceMetadata {
   readonly arn: string;
   readonly createdAt: Date;
   readonly lastUpdatedAt: Date;
@@ -991,7 +1026,7 @@ interface ResourceMetadata {
   readonly version: number;
 }
 
-interface RouteData {
+export interface RouteData {
   readonly meshName: string;
   readonly metadata: ResourceMetadata;
   readonly routeName: string;
@@ -1000,7 +1035,7 @@ interface RouteData {
   readonly virtualRouterName: string;
 }
 
-interface RouteRef {
+export interface RouteRef {
   readonly arn: string;
   readonly createdAt: Date;
   readonly lastUpdatedAt: Date;
@@ -1012,215 +1047,215 @@ interface RouteRef {
   readonly virtualRouterName: string;
 }
 
-interface RouteSpec {
-  readonly grpcRoute: GrpcRoute;
-  readonly http2Route: HttpRoute;
-  readonly httpRoute: HttpRoute;
-  readonly priority: number;
-  readonly tcpRoute: TcpRoute;
+export interface RouteSpec {
+  readonly grpcRoute?: GrpcRoute;
+  readonly http2Route?: HttpRoute;
+  readonly httpRoute?: HttpRoute;
+  readonly priority?: number;
+  readonly tcpRoute?: TcpRoute;
 }
 
-interface RouteStatus {
+export interface RouteStatus {
   readonly status: string;
 }
 
-interface ServiceDiscovery {
-  readonly awsCloudMap: AwsCloudMapServiceDiscovery;
-  readonly dns: DnsServiceDiscovery;
+export interface ServiceDiscovery {
+  readonly awsCloudMap?: AwsCloudMapServiceDiscovery;
+  readonly dns?: DnsServiceDiscovery;
 }
 
-interface ServiceUnavailableException {
-  readonly message: string;
+export interface ServiceUnavailableException {
+  readonly message?: string;
 }
 
-interface SubjectAlternativeNameMatchers {
+export interface SubjectAlternativeNameMatchers {
   readonly exact: [];
 }
 
-interface SubjectAlternativeNames {
+export interface SubjectAlternativeNames {
   readonly match: SubjectAlternativeNameMatchers;
 }
 
-interface TagRef {
+export interface TagRef {
   readonly key: string;
   readonly value: string;
 }
 
-interface TagResourceInput {
+export interface TagResourceInput {
   readonly resourceArn: string;
   readonly tags: [];
 }
 
-interface TagResourceOutput {
+export interface TagResourceOutput {
 }
 
-interface TcpRoute {
+export interface TcpRoute {
   readonly action: TcpRouteAction;
-  readonly timeout: TcpTimeout;
+  readonly timeout?: TcpTimeout;
 }
 
-interface TcpRouteAction {
+export interface TcpRouteAction {
   readonly weightedTargets: [];
 }
 
-interface TcpTimeout {
-  readonly idle: Duration;
+export interface TcpTimeout {
+  readonly idle?: Duration;
 }
 
-interface TlsValidationContext {
-  readonly subjectAlternativeNames: SubjectAlternativeNames;
+export interface TlsValidationContext {
+  readonly subjectAlternativeNames?: SubjectAlternativeNames;
   readonly trust: TlsValidationContextTrust;
 }
 
-interface TlsValidationContextAcmTrust {
+export interface TlsValidationContextAcmTrust {
   readonly certificateAuthorityArns: [];
 }
 
-interface TlsValidationContextFileTrust {
+export interface TlsValidationContextFileTrust {
   readonly certificateChain: string;
 }
 
-interface TlsValidationContextSdsTrust {
+export interface TlsValidationContextSdsTrust {
   readonly secretName: string;
 }
 
-interface TlsValidationContextTrust {
-  readonly acm: TlsValidationContextAcmTrust;
-  readonly file: TlsValidationContextFileTrust;
-  readonly sds: TlsValidationContextSdsTrust;
+export interface TlsValidationContextTrust {
+  readonly acm?: TlsValidationContextAcmTrust;
+  readonly file?: TlsValidationContextFileTrust;
+  readonly sds?: TlsValidationContextSdsTrust;
 }
 
-interface TooManyRequestsException {
-  readonly message: string;
+export interface TooManyRequestsException {
+  readonly message?: string;
 }
 
-interface TooManyTagsException {
-  readonly message: string;
+export interface TooManyTagsException {
+  readonly message?: string;
 }
 
-interface UntagResourceInput {
+export interface UntagResourceInput {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceOutput {
+export interface UntagResourceOutput {
 }
 
-interface UpdateGatewayRouteInput {
-  readonly clientToken: string;
+export interface UpdateGatewayRouteInput {
+  readonly clientToken?: string;
   readonly gatewayRouteName: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly spec: GatewayRouteSpec;
   readonly virtualGatewayName: string;
 }
 
-interface UpdateGatewayRouteOutput {
+export interface UpdateGatewayRouteOutput {
   readonly gatewayRoute: GatewayRouteData;
 }
 
-interface UpdateMeshInput {
-  readonly clientToken: string;
+export interface UpdateMeshInput {
+  readonly clientToken?: string;
   readonly meshName: string;
-  readonly spec: MeshSpec;
+  readonly spec?: MeshSpec;
 }
 
-interface UpdateMeshOutput {
+export interface UpdateMeshOutput {
   readonly mesh: MeshData;
 }
 
-interface UpdateRouteInput {
-  readonly clientToken: string;
+export interface UpdateRouteInput {
+  readonly clientToken?: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly routeName: string;
   readonly spec: RouteSpec;
   readonly virtualRouterName: string;
 }
 
-interface UpdateRouteOutput {
+export interface UpdateRouteOutput {
   readonly route: RouteData;
 }
 
-interface UpdateVirtualGatewayInput {
-  readonly clientToken: string;
+export interface UpdateVirtualGatewayInput {
+  readonly clientToken?: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly spec: VirtualGatewaySpec;
   readonly virtualGatewayName: string;
 }
 
-interface UpdateVirtualGatewayOutput {
+export interface UpdateVirtualGatewayOutput {
   readonly virtualGateway: VirtualGatewayData;
 }
 
-interface UpdateVirtualNodeInput {
-  readonly clientToken: string;
+export interface UpdateVirtualNodeInput {
+  readonly clientToken?: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly spec: VirtualNodeSpec;
   readonly virtualNodeName: string;
 }
 
-interface UpdateVirtualNodeOutput {
+export interface UpdateVirtualNodeOutput {
   readonly virtualNode: VirtualNodeData;
 }
 
-interface UpdateVirtualRouterInput {
-  readonly clientToken: string;
+export interface UpdateVirtualRouterInput {
+  readonly clientToken?: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly spec: VirtualRouterSpec;
   readonly virtualRouterName: string;
 }
 
-interface UpdateVirtualRouterOutput {
+export interface UpdateVirtualRouterOutput {
   readonly virtualRouter: VirtualRouterData;
 }
 
-interface UpdateVirtualServiceInput {
-  readonly clientToken: string;
+export interface UpdateVirtualServiceInput {
+  readonly clientToken?: string;
   readonly meshName: string;
-  readonly meshOwner: string;
+  readonly meshOwner?: string;
   readonly spec: VirtualServiceSpec;
   readonly virtualServiceName: string;
 }
 
-interface UpdateVirtualServiceOutput {
+export interface UpdateVirtualServiceOutput {
   readonly virtualService: VirtualServiceData;
 }
 
-interface VirtualGatewayAccessLog {
-  readonly file: VirtualGatewayFileAccessLog;
+export interface VirtualGatewayAccessLog {
+  readonly file?: VirtualGatewayFileAccessLog;
 }
 
-interface VirtualGatewayBackendDefaults {
-  readonly clientPolicy: VirtualGatewayClientPolicy;
+export interface VirtualGatewayBackendDefaults {
+  readonly clientPolicy?: VirtualGatewayClientPolicy;
 }
 
-interface VirtualGatewayClientPolicy {
-  readonly tls: VirtualGatewayClientPolicyTls;
+export interface VirtualGatewayClientPolicy {
+  readonly tls?: VirtualGatewayClientPolicyTls;
 }
 
-interface VirtualGatewayClientPolicyTls {
-  readonly certificate: VirtualGatewayClientTlsCertificate;
-  readonly enforce: boolean;
-  readonly ports: [];
+export interface VirtualGatewayClientPolicyTls {
+  readonly certificate?: VirtualGatewayClientTlsCertificate;
+  readonly enforce?: boolean;
+  readonly ports?: [];
   readonly validation: VirtualGatewayTlsValidationContext;
 }
 
-interface VirtualGatewayClientTlsCertificate {
-  readonly file: VirtualGatewayListenerTlsFileCertificate;
-  readonly sds: VirtualGatewayListenerTlsSdsCertificate;
+export interface VirtualGatewayClientTlsCertificate {
+  readonly file?: VirtualGatewayListenerTlsFileCertificate;
+  readonly sds?: VirtualGatewayListenerTlsSdsCertificate;
 }
 
-interface VirtualGatewayConnectionPool {
-  readonly grpc: VirtualGatewayGrpcConnectionPool;
-  readonly http: VirtualGatewayHttpConnectionPool;
-  readonly http2: VirtualGatewayHttp2ConnectionPool;
+export interface VirtualGatewayConnectionPool {
+  readonly grpc?: VirtualGatewayGrpcConnectionPool;
+  readonly http?: VirtualGatewayHttpConnectionPool;
+  readonly http2?: VirtualGatewayHttp2ConnectionPool;
 }
 
-interface VirtualGatewayData {
+export interface VirtualGatewayData {
   readonly meshName: string;
   readonly metadata: ResourceMetadata;
   readonly spec: VirtualGatewaySpec;
@@ -1228,85 +1263,85 @@ interface VirtualGatewayData {
   readonly virtualGatewayName: string;
 }
 
-interface VirtualGatewayFileAccessLog {
+export interface VirtualGatewayFileAccessLog {
   readonly path: string;
 }
 
-interface VirtualGatewayGrpcConnectionPool {
+export interface VirtualGatewayGrpcConnectionPool {
   readonly maxRequests: number;
 }
 
-interface VirtualGatewayHealthCheckPolicy {
+export interface VirtualGatewayHealthCheckPolicy {
   readonly healthyThreshold: number;
   readonly intervalMillis: number;
-  readonly path: string;
-  readonly port: number;
+  readonly path?: string;
+  readonly port?: number;
   readonly protocol: string;
   readonly timeoutMillis: number;
   readonly unhealthyThreshold: number;
 }
 
-interface VirtualGatewayHttp2ConnectionPool {
+export interface VirtualGatewayHttp2ConnectionPool {
   readonly maxRequests: number;
 }
 
-interface VirtualGatewayHttpConnectionPool {
+export interface VirtualGatewayHttpConnectionPool {
   readonly maxConnections: number;
-  readonly maxPendingRequests: number;
+  readonly maxPendingRequests?: number;
 }
 
-interface VirtualGatewayListener {
-  readonly connectionPool: VirtualGatewayConnectionPool;
-  readonly healthCheck: VirtualGatewayHealthCheckPolicy;
+export interface VirtualGatewayListener {
+  readonly connectionPool?: VirtualGatewayConnectionPool;
+  readonly healthCheck?: VirtualGatewayHealthCheckPolicy;
   readonly portMapping: VirtualGatewayPortMapping;
-  readonly tls: VirtualGatewayListenerTls;
+  readonly tls?: VirtualGatewayListenerTls;
 }
 
-interface VirtualGatewayListenerTls {
+export interface VirtualGatewayListenerTls {
   readonly certificate: VirtualGatewayListenerTlsCertificate;
   readonly mode: string;
-  readonly validation: VirtualGatewayListenerTlsValidationContext;
+  readonly validation?: VirtualGatewayListenerTlsValidationContext;
 }
 
-interface VirtualGatewayListenerTlsAcmCertificate {
+export interface VirtualGatewayListenerTlsAcmCertificate {
   readonly certificateArn: string;
 }
 
-interface VirtualGatewayListenerTlsCertificate {
-  readonly acm: VirtualGatewayListenerTlsAcmCertificate;
-  readonly file: VirtualGatewayListenerTlsFileCertificate;
-  readonly sds: VirtualGatewayListenerTlsSdsCertificate;
+export interface VirtualGatewayListenerTlsCertificate {
+  readonly acm?: VirtualGatewayListenerTlsAcmCertificate;
+  readonly file?: VirtualGatewayListenerTlsFileCertificate;
+  readonly sds?: VirtualGatewayListenerTlsSdsCertificate;
 }
 
-interface VirtualGatewayListenerTlsFileCertificate {
+export interface VirtualGatewayListenerTlsFileCertificate {
   readonly certificateChain: string;
   readonly privateKey: string;
 }
 
-interface VirtualGatewayListenerTlsSdsCertificate {
+export interface VirtualGatewayListenerTlsSdsCertificate {
   readonly secretName: string;
 }
 
-interface VirtualGatewayListenerTlsValidationContext {
-  readonly subjectAlternativeNames: SubjectAlternativeNames;
+export interface VirtualGatewayListenerTlsValidationContext {
+  readonly subjectAlternativeNames?: SubjectAlternativeNames;
   readonly trust: VirtualGatewayListenerTlsValidationContextTrust;
 }
 
-interface VirtualGatewayListenerTlsValidationContextTrust {
-  readonly file: VirtualGatewayTlsValidationContextFileTrust;
-  readonly sds: VirtualGatewayTlsValidationContextSdsTrust;
+export interface VirtualGatewayListenerTlsValidationContextTrust {
+  readonly file?: VirtualGatewayTlsValidationContextFileTrust;
+  readonly sds?: VirtualGatewayTlsValidationContextSdsTrust;
 }
 
-interface VirtualGatewayLogging {
-  readonly accessLog: VirtualGatewayAccessLog;
+export interface VirtualGatewayLogging {
+  readonly accessLog?: VirtualGatewayAccessLog;
 }
 
-interface VirtualGatewayPortMapping {
+export interface VirtualGatewayPortMapping {
   readonly port: number;
   readonly protocol: string;
 }
 
-interface VirtualGatewayRef {
+export interface VirtualGatewayRef {
   readonly arn: string;
   readonly createdAt: Date;
   readonly lastUpdatedAt: Date;
@@ -1317,47 +1352,47 @@ interface VirtualGatewayRef {
   readonly virtualGatewayName: string;
 }
 
-interface VirtualGatewaySpec {
-  readonly backendDefaults: VirtualGatewayBackendDefaults;
+export interface VirtualGatewaySpec {
+  readonly backendDefaults?: VirtualGatewayBackendDefaults;
   readonly listeners: [];
-  readonly logging: VirtualGatewayLogging;
+  readonly logging?: VirtualGatewayLogging;
 }
 
-interface VirtualGatewayStatus {
+export interface VirtualGatewayStatus {
   readonly status: string;
 }
 
-interface VirtualGatewayTlsValidationContext {
-  readonly subjectAlternativeNames: SubjectAlternativeNames;
+export interface VirtualGatewayTlsValidationContext {
+  readonly subjectAlternativeNames?: SubjectAlternativeNames;
   readonly trust: VirtualGatewayTlsValidationContextTrust;
 }
 
-interface VirtualGatewayTlsValidationContextAcmTrust {
+export interface VirtualGatewayTlsValidationContextAcmTrust {
   readonly certificateAuthorityArns: [];
 }
 
-interface VirtualGatewayTlsValidationContextFileTrust {
+export interface VirtualGatewayTlsValidationContextFileTrust {
   readonly certificateChain: string;
 }
 
-interface VirtualGatewayTlsValidationContextSdsTrust {
+export interface VirtualGatewayTlsValidationContextSdsTrust {
   readonly secretName: string;
 }
 
-interface VirtualGatewayTlsValidationContextTrust {
-  readonly acm: VirtualGatewayTlsValidationContextAcmTrust;
-  readonly file: VirtualGatewayTlsValidationContextFileTrust;
-  readonly sds: VirtualGatewayTlsValidationContextSdsTrust;
+export interface VirtualGatewayTlsValidationContextTrust {
+  readonly acm?: VirtualGatewayTlsValidationContextAcmTrust;
+  readonly file?: VirtualGatewayTlsValidationContextFileTrust;
+  readonly sds?: VirtualGatewayTlsValidationContextSdsTrust;
 }
 
-interface VirtualNodeConnectionPool {
-  readonly grpc: VirtualNodeGrpcConnectionPool;
-  readonly http: VirtualNodeHttpConnectionPool;
-  readonly http2: VirtualNodeHttp2ConnectionPool;
-  readonly tcp: VirtualNodeTcpConnectionPool;
+export interface VirtualNodeConnectionPool {
+  readonly grpc?: VirtualNodeGrpcConnectionPool;
+  readonly http?: VirtualNodeHttpConnectionPool;
+  readonly http2?: VirtualNodeHttp2ConnectionPool;
+  readonly tcp?: VirtualNodeTcpConnectionPool;
 }
 
-interface VirtualNodeData {
+export interface VirtualNodeData {
   readonly meshName: string;
   readonly metadata: ResourceMetadata;
   readonly spec: VirtualNodeSpec;
@@ -1365,20 +1400,20 @@ interface VirtualNodeData {
   readonly virtualNodeName: string;
 }
 
-interface VirtualNodeGrpcConnectionPool {
+export interface VirtualNodeGrpcConnectionPool {
   readonly maxRequests: number;
 }
 
-interface VirtualNodeHttp2ConnectionPool {
+export interface VirtualNodeHttp2ConnectionPool {
   readonly maxRequests: number;
 }
 
-interface VirtualNodeHttpConnectionPool {
+export interface VirtualNodeHttpConnectionPool {
   readonly maxConnections: number;
-  readonly maxPendingRequests: number;
+  readonly maxPendingRequests?: number;
 }
 
-interface VirtualNodeRef {
+export interface VirtualNodeRef {
   readonly arn: string;
   readonly createdAt: Date;
   readonly lastUpdatedAt: Date;
@@ -1389,27 +1424,27 @@ interface VirtualNodeRef {
   readonly virtualNodeName: string;
 }
 
-interface VirtualNodeServiceProvider {
+export interface VirtualNodeServiceProvider {
   readonly virtualNodeName: string;
 }
 
-interface VirtualNodeSpec {
-  readonly backendDefaults: BackendDefaults;
-  readonly backends: [];
-  readonly listeners: [];
-  readonly logging: Logging;
-  readonly serviceDiscovery: ServiceDiscovery;
+export interface VirtualNodeSpec {
+  readonly backendDefaults?: BackendDefaults;
+  readonly backends?: [];
+  readonly listeners?: [];
+  readonly logging?: Logging;
+  readonly serviceDiscovery?: ServiceDiscovery;
 }
 
-interface VirtualNodeStatus {
+export interface VirtualNodeStatus {
   readonly status: string;
 }
 
-interface VirtualNodeTcpConnectionPool {
+export interface VirtualNodeTcpConnectionPool {
   readonly maxConnections: number;
 }
 
-interface VirtualRouterData {
+export interface VirtualRouterData {
   readonly meshName: string;
   readonly metadata: ResourceMetadata;
   readonly spec: VirtualRouterSpec;
@@ -1417,11 +1452,11 @@ interface VirtualRouterData {
   readonly virtualRouterName: string;
 }
 
-interface VirtualRouterListener {
+export interface VirtualRouterListener {
   readonly portMapping: PortMapping;
 }
 
-interface VirtualRouterRef {
+export interface VirtualRouterRef {
   readonly arn: string;
   readonly createdAt: Date;
   readonly lastUpdatedAt: Date;
@@ -1432,24 +1467,24 @@ interface VirtualRouterRef {
   readonly virtualRouterName: string;
 }
 
-interface VirtualRouterServiceProvider {
+export interface VirtualRouterServiceProvider {
   readonly virtualRouterName: string;
 }
 
-interface VirtualRouterSpec {
-  readonly listeners: [];
+export interface VirtualRouterSpec {
+  readonly listeners?: [];
 }
 
-interface VirtualRouterStatus {
+export interface VirtualRouterStatus {
   readonly status: string;
 }
 
-interface VirtualServiceBackend {
-  readonly clientPolicy: ClientPolicy;
+export interface VirtualServiceBackend {
+  readonly clientPolicy?: ClientPolicy;
   readonly virtualServiceName: string;
 }
 
-interface VirtualServiceData {
+export interface VirtualServiceData {
   readonly meshName: string;
   readonly metadata: ResourceMetadata;
   readonly spec: VirtualServiceSpec;
@@ -1457,12 +1492,12 @@ interface VirtualServiceData {
   readonly virtualServiceName: string;
 }
 
-interface VirtualServiceProvider {
-  readonly virtualNode: VirtualNodeServiceProvider;
-  readonly virtualRouter: VirtualRouterServiceProvider;
+export interface VirtualServiceProvider {
+  readonly virtualNode?: VirtualNodeServiceProvider;
+  readonly virtualRouter?: VirtualRouterServiceProvider;
 }
 
-interface VirtualServiceRef {
+export interface VirtualServiceRef {
   readonly arn: string;
   readonly createdAt: Date;
   readonly lastUpdatedAt: Date;
@@ -1473,16 +1508,17 @@ interface VirtualServiceRef {
   readonly virtualServiceName: string;
 }
 
-interface VirtualServiceSpec {
-  readonly provider: VirtualServiceProvider;
+export interface VirtualServiceSpec {
+  readonly provider?: VirtualServiceProvider;
 }
 
-interface VirtualServiceStatus {
+export interface VirtualServiceStatus {
   readonly status: string;
 }
 
-interface WeightedTarget {
+export interface WeightedTarget {
   readonly virtualNode: string;
   readonly weight: number;
 }
+
 

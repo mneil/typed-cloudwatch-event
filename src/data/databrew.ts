@@ -5,6 +5,7 @@ export interface BatchDeleteRecipeVersion {
   readonly Name: string;
   readonly RecipeVersions: [];
 }
+
 export interface CreateDataset {
   readonly Name: string;
   readonly Format?: string;
@@ -13,6 +14,7 @@ export interface CreateDataset {
   readonly PathOptions?: PathOptions;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateProfileJob {
   readonly DatasetName: string;
   readonly EncryptionKeyArn?: string;
@@ -29,6 +31,7 @@ export interface CreateProfileJob {
   readonly Timeout?: number;
   readonly JobSample?: JobSample;
 }
+
 export interface CreateProject {
   readonly DatasetName: string;
   readonly Name: string;
@@ -37,12 +40,14 @@ export interface CreateProject {
   readonly RoleArn: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateRecipe {
   readonly Description?: string;
   readonly Name: string;
   readonly Steps: [];
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateRecipeJob {
   readonly DatasetName?: string;
   readonly EncryptionKeyArn?: string;
@@ -60,6 +65,7 @@ export interface CreateRecipeJob {
   readonly Tags?: {[key: string]: any};
   readonly Timeout?: number;
 }
+
 export interface CreateRuleset {
   readonly Name: string;
   readonly Description?: string;
@@ -67,100 +73,125 @@ export interface CreateRuleset {
   readonly Rules: [];
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateSchedule {
   readonly JobNames?: [];
   readonly CronExpression: string;
   readonly Tags?: {[key: string]: any};
   readonly Name: string;
 }
+
 export interface DeleteDataset {
   readonly Name: string;
 }
+
 export interface DeleteJob {
   readonly Name: string;
 }
+
 export interface DeleteProject {
   readonly Name: string;
 }
+
 export interface DeleteRecipeVersion {
   readonly Name: string;
   readonly RecipeVersion: string;
 }
+
 export interface DeleteRuleset {
   readonly Name: string;
 }
+
 export interface DeleteSchedule {
   readonly Name: string;
 }
+
 export interface DescribeDataset {
   readonly Name: string;
 }
+
 export interface DescribeJob {
   readonly Name: string;
 }
+
 export interface DescribeJobRun {
   readonly Name: string;
   readonly RunId: string;
 }
+
 export interface DescribeProject {
   readonly Name: string;
 }
+
 export interface DescribeRecipe {
   readonly Name: string;
   readonly RecipeVersion?: string;
 }
+
 export interface DescribeRuleset {
   readonly Name: string;
 }
+
 export interface DescribeSchedule {
   readonly Name: string;
 }
+
 export interface ListDatasets {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListJobRuns {
   readonly Name: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListJobs {
   readonly DatasetName?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly ProjectName?: string;
 }
+
 export interface ListProjects {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListRecipeVersions {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly Name: string;
 }
+
 export interface ListRecipes {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly RecipeVersion?: string;
 }
+
 export interface ListRulesets {
   readonly TargetArn?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListSchedules {
   readonly JobName?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface PublishRecipe {
   readonly Description?: string;
   readonly Name: string;
 }
+
 export interface SendProjectSessionAction {
   readonly Preview?: boolean;
   readonly Name: string;
@@ -169,25 +200,31 @@ export interface SendProjectSessionAction {
   readonly ClientSessionId?: string;
   readonly ViewFrame?: ViewFrame;
 }
+
 export interface StartJobRun {
   readonly Name: string;
 }
+
 export interface StartProjectSession {
   readonly Name: string;
   readonly AssumeControl?: boolean;
 }
+
 export interface StopJobRun {
   readonly Name: string;
   readonly RunId: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateDataset {
   readonly Name: string;
   readonly Format?: string;
@@ -195,6 +232,7 @@ export interface UpdateDataset {
   readonly Input: Input;
   readonly PathOptions?: PathOptions;
 }
+
 export interface UpdateProfileJob {
   readonly Configuration?: ProfileConfiguration;
   readonly EncryptionKeyArn?: string;
@@ -209,16 +247,19 @@ export interface UpdateProfileJob {
   readonly Timeout?: number;
   readonly JobSample?: JobSample;
 }
+
 export interface UpdateProject {
   readonly Sample?: Sample;
   readonly RoleArn: string;
   readonly Name: string;
 }
+
 export interface UpdateRecipe {
   readonly Description?: string;
   readonly Name: string;
   readonly Steps?: [];
 }
+
 export interface UpdateRecipeJob {
   readonly EncryptionKeyArn?: string;
   readonly EncryptionMode?: string;
@@ -232,956 +273,957 @@ export interface UpdateRecipeJob {
   readonly RoleArn: string;
   readonly Timeout?: number;
 }
+
 export interface UpdateRuleset {
   readonly Name: string;
   readonly Description?: string;
   readonly Rules: [];
 }
+
 export interface UpdateSchedule {
   readonly JobNames?: [];
   readonly CronExpression: string;
   readonly Name: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface AllowedStatistics {
+export interface AllowedStatistics {
   readonly Statistics: [];
 }
 
-interface BatchDeleteRecipeVersionRequest {
+export interface BatchDeleteRecipeVersionRequest {
   readonly Name: string;
   readonly RecipeVersions: [];
 }
 
-interface BatchDeleteRecipeVersionResponse {
+export interface BatchDeleteRecipeVersionResponse {
   readonly Name: string;
-  readonly Errors: [];
+  readonly Errors?: [];
 }
 
-interface ColumnSelector {
-  readonly Regex: string;
-  readonly Name: string;
+export interface ColumnSelector {
+  readonly Regex?: string;
+  readonly Name?: string;
 }
 
-interface ColumnStatisticsConfiguration {
-  readonly Selectors: [];
+export interface ColumnStatisticsConfiguration {
+  readonly Selectors?: [];
   readonly Statistics: StatisticsConfiguration;
 }
 
-interface ConditionExpression {
+export interface ConditionExpression {
   readonly Condition: string;
-  readonly Value: string;
+  readonly Value?: string;
   readonly TargetColumn: string;
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface CreateDatasetRequest {
+export interface CreateDatasetRequest {
   readonly Name: string;
-  readonly Format: string;
-  readonly FormatOptions: FormatOptions;
+  readonly Format?: string;
+  readonly FormatOptions?: FormatOptions;
   readonly Input: Input;
-  readonly PathOptions: PathOptions;
-  readonly Tags: {[key: string]: any};
+  readonly PathOptions?: PathOptions;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateDatasetResponse {
+export interface CreateDatasetResponse {
   readonly Name: string;
 }
 
-interface CreateProfileJobRequest {
+export interface CreateProfileJobRequest {
   readonly DatasetName: string;
-  readonly EncryptionKeyArn: string;
-  readonly EncryptionMode: string;
+  readonly EncryptionKeyArn?: string;
+  readonly EncryptionMode?: string;
   readonly Name: string;
-  readonly LogSubscription: string;
-  readonly MaxCapacity: number;
-  readonly MaxRetries: number;
+  readonly LogSubscription?: string;
+  readonly MaxCapacity?: number;
+  readonly MaxRetries?: number;
   readonly OutputLocation: S3Location;
-  readonly Configuration: ProfileConfiguration;
-  readonly ValidationConfigurations: [];
+  readonly Configuration?: ProfileConfiguration;
+  readonly ValidationConfigurations?: [];
   readonly RoleArn: string;
-  readonly Tags: {[key: string]: any};
-  readonly Timeout: number;
-  readonly JobSample: JobSample;
+  readonly Tags?: {[key: string]: any};
+  readonly Timeout?: number;
+  readonly JobSample?: JobSample;
 }
 
-interface CreateProfileJobResponse {
+export interface CreateProfileJobResponse {
   readonly Name: string;
 }
 
-interface CreateProjectRequest {
+export interface CreateProjectRequest {
   readonly DatasetName: string;
   readonly Name: string;
   readonly RecipeName: string;
-  readonly Sample: Sample;
+  readonly Sample?: Sample;
   readonly RoleArn: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateProjectResponse {
+export interface CreateProjectResponse {
   readonly Name: string;
 }
 
-interface CreateRecipeJobRequest {
-  readonly DatasetName: string;
-  readonly EncryptionKeyArn: string;
-  readonly EncryptionMode: string;
+export interface CreateRecipeJobRequest {
+  readonly DatasetName?: string;
+  readonly EncryptionKeyArn?: string;
+  readonly EncryptionMode?: string;
   readonly Name: string;
-  readonly LogSubscription: string;
-  readonly MaxCapacity: number;
-  readonly MaxRetries: number;
-  readonly Outputs: [];
-  readonly DataCatalogOutputs: [];
-  readonly DatabaseOutputs: [];
-  readonly ProjectName: string;
-  readonly RecipeReference: RecipeReference;
+  readonly LogSubscription?: string;
+  readonly MaxCapacity?: number;
+  readonly MaxRetries?: number;
+  readonly Outputs?: [];
+  readonly DataCatalogOutputs?: [];
+  readonly DatabaseOutputs?: [];
+  readonly ProjectName?: string;
+  readonly RecipeReference?: RecipeReference;
   readonly RoleArn: string;
-  readonly Tags: {[key: string]: any};
-  readonly Timeout: number;
+  readonly Tags?: {[key: string]: any};
+  readonly Timeout?: number;
 }
 
-interface CreateRecipeJobResponse {
+export interface CreateRecipeJobResponse {
   readonly Name: string;
 }
 
-interface CreateRecipeRequest {
-  readonly Description: string;
+export interface CreateRecipeRequest {
+  readonly Description?: string;
   readonly Name: string;
   readonly Steps: [];
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateRecipeResponse {
+export interface CreateRecipeResponse {
   readonly Name: string;
 }
 
-interface CreateRulesetRequest {
+export interface CreateRulesetRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly TargetArn: string;
   readonly Rules: [];
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateRulesetResponse {
+export interface CreateRulesetResponse {
   readonly Name: string;
 }
 
-interface CreateScheduleRequest {
-  readonly JobNames: [];
+export interface CreateScheduleRequest {
+  readonly JobNames?: [];
   readonly CronExpression: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
   readonly Name: string;
 }
 
-interface CreateScheduleResponse {
+export interface CreateScheduleResponse {
   readonly Name: string;
 }
 
-interface CsvOptions {
-  readonly Delimiter: string;
-  readonly HeaderRow: boolean;
+export interface CsvOptions {
+  readonly Delimiter?: string;
+  readonly HeaderRow?: boolean;
 }
 
-interface CsvOutputOptions {
-  readonly Delimiter: string;
+export interface CsvOutputOptions {
+  readonly Delimiter?: string;
 }
 
-interface DataCatalogInputDefinition {
-  readonly CatalogId: string;
+export interface DataCatalogInputDefinition {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly TempDirectory: S3Location;
+  readonly TempDirectory?: S3Location;
 }
 
-interface DataCatalogOutput {
-  readonly CatalogId: string;
+export interface DataCatalogOutput {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly S3Options: S3TableOutputOptions;
-  readonly DatabaseOptions: DatabaseTableOutputOptions;
-  readonly Overwrite: boolean;
+  readonly S3Options?: S3TableOutputOptions;
+  readonly DatabaseOptions?: DatabaseTableOutputOptions;
+  readonly Overwrite?: boolean;
 }
 
-interface DatabaseInputDefinition {
+export interface DatabaseInputDefinition {
   readonly GlueConnectionName: string;
-  readonly DatabaseTableName: string;
-  readonly TempDirectory: S3Location;
-  readonly QueryString: string;
+  readonly DatabaseTableName?: string;
+  readonly TempDirectory?: S3Location;
+  readonly QueryString?: string;
 }
 
-interface DatabaseOutput {
+export interface DatabaseOutput {
   readonly GlueConnectionName: string;
   readonly DatabaseOptions: DatabaseTableOutputOptions;
-  readonly DatabaseOutputMode: string;
+  readonly DatabaseOutputMode?: string;
 }
 
-interface DatabaseTableOutputOptions {
-  readonly TempDirectory: S3Location;
+export interface DatabaseTableOutputOptions {
+  readonly TempDirectory?: S3Location;
   readonly TableName: string;
 }
 
-interface Dataset {
-  readonly AccountId: string;
-  readonly CreatedBy: string;
-  readonly CreateDate: Date;
+export interface Dataset {
+  readonly AccountId?: string;
+  readonly CreatedBy?: string;
+  readonly CreateDate?: Date;
   readonly Name: string;
-  readonly Format: string;
-  readonly FormatOptions: FormatOptions;
+  readonly Format?: string;
+  readonly FormatOptions?: FormatOptions;
   readonly Input: Input;
-  readonly LastModifiedDate: Date;
-  readonly LastModifiedBy: string;
-  readonly Source: string;
-  readonly PathOptions: PathOptions;
-  readonly Tags: {[key: string]: any};
-  readonly ResourceArn: string;
+  readonly LastModifiedDate?: Date;
+  readonly LastModifiedBy?: string;
+  readonly Source?: string;
+  readonly PathOptions?: PathOptions;
+  readonly Tags?: {[key: string]: any};
+  readonly ResourceArn?: string;
 }
 
-interface DatasetParameter {
+export interface DatasetParameter {
   readonly Name: string;
   readonly Type: string;
-  readonly DatetimeOptions: DatetimeOptions;
-  readonly CreateColumn: boolean;
-  readonly Filter: FilterExpression;
+  readonly DatetimeOptions?: DatetimeOptions;
+  readonly CreateColumn?: boolean;
+  readonly Filter?: FilterExpression;
 }
 
-interface DatetimeOptions {
+export interface DatetimeOptions {
   readonly Format: string;
-  readonly TimezoneOffset: string;
-  readonly LocaleCode: string;
+  readonly TimezoneOffset?: string;
+  readonly LocaleCode?: string;
 }
 
-interface DeleteDatasetRequest {
+export interface DeleteDatasetRequest {
   readonly Name: string;
 }
 
-interface DeleteDatasetResponse {
+export interface DeleteDatasetResponse {
   readonly Name: string;
 }
 
-interface DeleteJobRequest {
+export interface DeleteJobRequest {
   readonly Name: string;
 }
 
-interface DeleteJobResponse {
+export interface DeleteJobResponse {
   readonly Name: string;
 }
 
-interface DeleteProjectRequest {
+export interface DeleteProjectRequest {
   readonly Name: string;
 }
 
-interface DeleteProjectResponse {
+export interface DeleteProjectResponse {
   readonly Name: string;
 }
 
-interface DeleteRecipeVersionRequest {
+export interface DeleteRecipeVersionRequest {
   readonly Name: string;
   readonly RecipeVersion: string;
 }
 
-interface DeleteRecipeVersionResponse {
+export interface DeleteRecipeVersionResponse {
   readonly Name: string;
   readonly RecipeVersion: string;
 }
 
-interface DeleteRulesetRequest {
+export interface DeleteRulesetRequest {
   readonly Name: string;
 }
 
-interface DeleteRulesetResponse {
+export interface DeleteRulesetResponse {
   readonly Name: string;
 }
 
-interface DeleteScheduleRequest {
+export interface DeleteScheduleRequest {
   readonly Name: string;
 }
 
-interface DeleteScheduleResponse {
+export interface DeleteScheduleResponse {
   readonly Name: string;
 }
 
-interface DescribeDatasetRequest {
+export interface DescribeDatasetRequest {
   readonly Name: string;
 }
 
-interface DescribeDatasetResponse {
-  readonly CreatedBy: string;
-  readonly CreateDate: Date;
+export interface DescribeDatasetResponse {
+  readonly CreatedBy?: string;
+  readonly CreateDate?: Date;
   readonly Name: string;
-  readonly Format: string;
-  readonly FormatOptions: FormatOptions;
+  readonly Format?: string;
+  readonly FormatOptions?: FormatOptions;
   readonly Input: Input;
-  readonly LastModifiedDate: Date;
-  readonly LastModifiedBy: string;
-  readonly Source: string;
-  readonly PathOptions: PathOptions;
-  readonly Tags: {[key: string]: any};
-  readonly ResourceArn: string;
+  readonly LastModifiedDate?: Date;
+  readonly LastModifiedBy?: string;
+  readonly Source?: string;
+  readonly PathOptions?: PathOptions;
+  readonly Tags?: {[key: string]: any};
+  readonly ResourceArn?: string;
 }
 
-interface DescribeJobRequest {
+export interface DescribeJobRequest {
   readonly Name: string;
 }
 
-interface DescribeJobResponse {
-  readonly CreateDate: Date;
-  readonly CreatedBy: string;
-  readonly DatasetName: string;
-  readonly EncryptionKeyArn: string;
-  readonly EncryptionMode: string;
+export interface DescribeJobResponse {
+  readonly CreateDate?: Date;
+  readonly CreatedBy?: string;
+  readonly DatasetName?: string;
+  readonly EncryptionKeyArn?: string;
+  readonly EncryptionMode?: string;
   readonly Name: string;
-  readonly Type: string;
-  readonly LastModifiedBy: string;
-  readonly LastModifiedDate: Date;
-  readonly LogSubscription: string;
-  readonly MaxCapacity: number;
-  readonly MaxRetries: number;
-  readonly Outputs: [];
-  readonly DataCatalogOutputs: [];
-  readonly DatabaseOutputs: [];
-  readonly ProjectName: string;
-  readonly ProfileConfiguration: ProfileConfiguration;
-  readonly ValidationConfigurations: [];
-  readonly RecipeReference: RecipeReference;
-  readonly ResourceArn: string;
-  readonly RoleArn: string;
-  readonly Tags: {[key: string]: any};
-  readonly Timeout: number;
-  readonly JobSample: JobSample;
+  readonly Type?: string;
+  readonly LastModifiedBy?: string;
+  readonly LastModifiedDate?: Date;
+  readonly LogSubscription?: string;
+  readonly MaxCapacity?: number;
+  readonly MaxRetries?: number;
+  readonly Outputs?: [];
+  readonly DataCatalogOutputs?: [];
+  readonly DatabaseOutputs?: [];
+  readonly ProjectName?: string;
+  readonly ProfileConfiguration?: ProfileConfiguration;
+  readonly ValidationConfigurations?: [];
+  readonly RecipeReference?: RecipeReference;
+  readonly ResourceArn?: string;
+  readonly RoleArn?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Timeout?: number;
+  readonly JobSample?: JobSample;
 }
 
-interface DescribeJobRunRequest {
+export interface DescribeJobRunRequest {
   readonly Name: string;
   readonly RunId: string;
 }
 
-interface DescribeJobRunResponse {
-  readonly Attempt: number;
-  readonly CompletedOn: Date;
-  readonly DatasetName: string;
-  readonly ErrorMessage: string;
-  readonly ExecutionTime: number;
+export interface DescribeJobRunResponse {
+  readonly Attempt?: number;
+  readonly CompletedOn?: Date;
+  readonly DatasetName?: string;
+  readonly ErrorMessage?: string;
+  readonly ExecutionTime?: number;
   readonly JobName: string;
-  readonly ProfileConfiguration: ProfileConfiguration;
-  readonly ValidationConfigurations: [];
-  readonly RunId: string;
-  readonly State: string;
-  readonly LogSubscription: string;
-  readonly LogGroupName: string;
-  readonly Outputs: [];
-  readonly DataCatalogOutputs: [];
-  readonly DatabaseOutputs: [];
-  readonly RecipeReference: RecipeReference;
-  readonly StartedBy: string;
-  readonly StartedOn: Date;
-  readonly JobSample: JobSample;
+  readonly ProfileConfiguration?: ProfileConfiguration;
+  readonly ValidationConfigurations?: [];
+  readonly RunId?: string;
+  readonly State?: string;
+  readonly LogSubscription?: string;
+  readonly LogGroupName?: string;
+  readonly Outputs?: [];
+  readonly DataCatalogOutputs?: [];
+  readonly DatabaseOutputs?: [];
+  readonly RecipeReference?: RecipeReference;
+  readonly StartedBy?: string;
+  readonly StartedOn?: Date;
+  readonly JobSample?: JobSample;
 }
 
-interface DescribeProjectRequest {
+export interface DescribeProjectRequest {
   readonly Name: string;
 }
 
-interface DescribeProjectResponse {
-  readonly CreateDate: Date;
-  readonly CreatedBy: string;
-  readonly DatasetName: string;
-  readonly LastModifiedDate: Date;
-  readonly LastModifiedBy: string;
+export interface DescribeProjectResponse {
+  readonly CreateDate?: Date;
+  readonly CreatedBy?: string;
+  readonly DatasetName?: string;
+  readonly LastModifiedDate?: Date;
+  readonly LastModifiedBy?: string;
   readonly Name: string;
-  readonly RecipeName: string;
-  readonly ResourceArn: string;
-  readonly Sample: Sample;
-  readonly RoleArn: string;
-  readonly Tags: {[key: string]: any};
-  readonly SessionStatus: string;
-  readonly OpenedBy: string;
-  readonly OpenDate: Date;
+  readonly RecipeName?: string;
+  readonly ResourceArn?: string;
+  readonly Sample?: Sample;
+  readonly RoleArn?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly SessionStatus?: string;
+  readonly OpenedBy?: string;
+  readonly OpenDate?: Date;
 }
 
-interface DescribeRecipeRequest {
+export interface DescribeRecipeRequest {
   readonly Name: string;
-  readonly RecipeVersion: string;
+  readonly RecipeVersion?: string;
 }
 
-interface DescribeRecipeResponse {
-  readonly CreatedBy: string;
-  readonly CreateDate: Date;
-  readonly LastModifiedBy: string;
-  readonly LastModifiedDate: Date;
-  readonly ProjectName: string;
-  readonly PublishedBy: string;
-  readonly PublishedDate: Date;
-  readonly Description: string;
+export interface DescribeRecipeResponse {
+  readonly CreatedBy?: string;
+  readonly CreateDate?: Date;
+  readonly LastModifiedBy?: string;
+  readonly LastModifiedDate?: Date;
+  readonly ProjectName?: string;
+  readonly PublishedBy?: string;
+  readonly PublishedDate?: Date;
+  readonly Description?: string;
   readonly Name: string;
-  readonly Steps: [];
-  readonly Tags: {[key: string]: any};
-  readonly ResourceArn: string;
-  readonly RecipeVersion: string;
+  readonly Steps?: [];
+  readonly Tags?: {[key: string]: any};
+  readonly ResourceArn?: string;
+  readonly RecipeVersion?: string;
 }
 
-interface DescribeRulesetRequest {
-  readonly Name: string;
-}
-
-interface DescribeRulesetResponse {
-  readonly Name: string;
-  readonly Description: string;
-  readonly TargetArn: string;
-  readonly Rules: [];
-  readonly CreateDate: Date;
-  readonly CreatedBy: string;
-  readonly LastModifiedBy: string;
-  readonly LastModifiedDate: Date;
-  readonly ResourceArn: string;
-  readonly Tags: {[key: string]: any};
-}
-
-interface DescribeScheduleRequest {
+export interface DescribeRulesetRequest {
   readonly Name: string;
 }
 
-interface DescribeScheduleResponse {
-  readonly CreateDate: Date;
-  readonly CreatedBy: string;
-  readonly JobNames: [];
-  readonly LastModifiedBy: string;
-  readonly LastModifiedDate: Date;
-  readonly ResourceArn: string;
-  readonly CronExpression: string;
-  readonly Tags: {[key: string]: any};
+export interface DescribeRulesetResponse {
+  readonly Name: string;
+  readonly Description?: string;
+  readonly TargetArn?: string;
+  readonly Rules?: [];
+  readonly CreateDate?: Date;
+  readonly CreatedBy?: string;
+  readonly LastModifiedBy?: string;
+  readonly LastModifiedDate?: Date;
+  readonly ResourceArn?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface DescribeScheduleRequest {
   readonly Name: string;
 }
 
-interface EntityDetectorConfiguration {
+export interface DescribeScheduleResponse {
+  readonly CreateDate?: Date;
+  readonly CreatedBy?: string;
+  readonly JobNames?: [];
+  readonly LastModifiedBy?: string;
+  readonly LastModifiedDate?: Date;
+  readonly ResourceArn?: string;
+  readonly CronExpression?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly Name: string;
+}
+
+export interface EntityDetectorConfiguration {
   readonly EntityTypes: [];
-  readonly AllowedStatistics: [];
+  readonly AllowedStatistics?: [];
 }
 
-interface ExcelOptions {
-  readonly SheetNames: [];
-  readonly SheetIndexes: [];
-  readonly HeaderRow: boolean;
+export interface ExcelOptions {
+  readonly SheetNames?: [];
+  readonly SheetIndexes?: [];
+  readonly HeaderRow?: boolean;
 }
 
-interface FilesLimit {
+export interface FilesLimit {
   readonly MaxFiles: number;
-  readonly OrderedBy: string;
-  readonly Order: string;
+  readonly OrderedBy?: string;
+  readonly Order?: string;
 }
 
-interface FilterExpression {
+export interface FilterExpression {
   readonly Expression: string;
   readonly ValuesMap: {[key: string]: any};
 }
 
-interface FormatOptions {
-  readonly Json: JsonOptions;
-  readonly Excel: ExcelOptions;
-  readonly Csv: CsvOptions;
+export interface FormatOptions {
+  readonly Json?: JsonOptions;
+  readonly Excel?: ExcelOptions;
+  readonly Csv?: CsvOptions;
 }
 
-interface Input {
-  readonly S3InputDefinition: S3Location;
-  readonly DataCatalogInputDefinition: DataCatalogInputDefinition;
-  readonly DatabaseInputDefinition: DatabaseInputDefinition;
-  readonly Metadata: Metadata;
+export interface Input {
+  readonly S3InputDefinition?: S3Location;
+  readonly DataCatalogInputDefinition?: DataCatalogInputDefinition;
+  readonly DatabaseInputDefinition?: DatabaseInputDefinition;
+  readonly Metadata?: Metadata;
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface InternalServerException {
+  readonly Message?: string;
 }
 
-interface Job {
-  readonly AccountId: string;
-  readonly CreatedBy: string;
-  readonly CreateDate: Date;
-  readonly DatasetName: string;
-  readonly EncryptionKeyArn: string;
-  readonly EncryptionMode: string;
+export interface Job {
+  readonly AccountId?: string;
+  readonly CreatedBy?: string;
+  readonly CreateDate?: Date;
+  readonly DatasetName?: string;
+  readonly EncryptionKeyArn?: string;
+  readonly EncryptionMode?: string;
   readonly Name: string;
-  readonly Type: string;
-  readonly LastModifiedBy: string;
-  readonly LastModifiedDate: Date;
-  readonly LogSubscription: string;
-  readonly MaxCapacity: number;
-  readonly MaxRetries: number;
-  readonly Outputs: [];
-  readonly DataCatalogOutputs: [];
-  readonly DatabaseOutputs: [];
-  readonly ProjectName: string;
-  readonly RecipeReference: RecipeReference;
-  readonly ResourceArn: string;
-  readonly RoleArn: string;
-  readonly Timeout: number;
-  readonly Tags: {[key: string]: any};
-  readonly JobSample: JobSample;
-  readonly ValidationConfigurations: [];
+  readonly Type?: string;
+  readonly LastModifiedBy?: string;
+  readonly LastModifiedDate?: Date;
+  readonly LogSubscription?: string;
+  readonly MaxCapacity?: number;
+  readonly MaxRetries?: number;
+  readonly Outputs?: [];
+  readonly DataCatalogOutputs?: [];
+  readonly DatabaseOutputs?: [];
+  readonly ProjectName?: string;
+  readonly RecipeReference?: RecipeReference;
+  readonly ResourceArn?: string;
+  readonly RoleArn?: string;
+  readonly Timeout?: number;
+  readonly Tags?: {[key: string]: any};
+  readonly JobSample?: JobSample;
+  readonly ValidationConfigurations?: [];
 }
 
-interface JobRun {
-  readonly Attempt: number;
-  readonly CompletedOn: Date;
-  readonly DatasetName: string;
-  readonly ErrorMessage: string;
-  readonly ExecutionTime: number;
-  readonly JobName: string;
-  readonly RunId: string;
-  readonly State: string;
-  readonly LogSubscription: string;
-  readonly LogGroupName: string;
-  readonly Outputs: [];
-  readonly DataCatalogOutputs: [];
-  readonly DatabaseOutputs: [];
-  readonly RecipeReference: RecipeReference;
-  readonly StartedBy: string;
-  readonly StartedOn: Date;
-  readonly JobSample: JobSample;
-  readonly ValidationConfigurations: [];
+export interface JobRun {
+  readonly Attempt?: number;
+  readonly CompletedOn?: Date;
+  readonly DatasetName?: string;
+  readonly ErrorMessage?: string;
+  readonly ExecutionTime?: number;
+  readonly JobName?: string;
+  readonly RunId?: string;
+  readonly State?: string;
+  readonly LogSubscription?: string;
+  readonly LogGroupName?: string;
+  readonly Outputs?: [];
+  readonly DataCatalogOutputs?: [];
+  readonly DatabaseOutputs?: [];
+  readonly RecipeReference?: RecipeReference;
+  readonly StartedBy?: string;
+  readonly StartedOn?: Date;
+  readonly JobSample?: JobSample;
+  readonly ValidationConfigurations?: [];
 }
 
-interface JobSample {
-  readonly Mode: string;
-  readonly Size: number;
+export interface JobSample {
+  readonly Mode?: string;
+  readonly Size?: number;
 }
 
-interface JsonOptions {
-  readonly MultiLine: boolean;
+export interface JsonOptions {
+  readonly MultiLine?: boolean;
 }
 
-interface ListDatasetsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListDatasetsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListDatasetsResponse {
+export interface ListDatasetsResponse {
   readonly Datasets: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListJobRunsRequest {
+export interface ListJobRunsRequest {
   readonly Name: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListJobRunsResponse {
+export interface ListJobRunsResponse {
   readonly JobRuns: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListJobsRequest {
-  readonly DatasetName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ProjectName: string;
+export interface ListJobsRequest {
+  readonly DatasetName?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ProjectName?: string;
 }
 
-interface ListJobsResponse {
+export interface ListJobsResponse {
   readonly Jobs: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListProjectsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListProjectsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListProjectsResponse {
+export interface ListProjectsResponse {
   readonly Projects: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListRecipeVersionsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListRecipeVersionsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly Name: string;
 }
 
-interface ListRecipeVersionsResponse {
-  readonly NextToken: string;
+export interface ListRecipeVersionsResponse {
+  readonly NextToken?: string;
   readonly Recipes: [];
 }
 
-interface ListRecipesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly RecipeVersion: string;
+export interface ListRecipesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly RecipeVersion?: string;
 }
 
-interface ListRecipesResponse {
+export interface ListRecipesResponse {
   readonly Recipes: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListRulesetsRequest {
-  readonly TargetArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListRulesetsRequest {
+  readonly TargetArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListRulesetsResponse {
+export interface ListRulesetsResponse {
   readonly Rulesets: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListSchedulesRequest {
-  readonly JobName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListSchedulesRequest {
+  readonly JobName?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListSchedulesResponse {
+export interface ListSchedulesResponse {
   readonly Schedules: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface Metadata {
-  readonly SourceArn: string;
+export interface Metadata {
+  readonly SourceArn?: string;
 }
 
-interface Output {
-  readonly CompressionFormat: string;
-  readonly Format: string;
-  readonly PartitionColumns: [];
+export interface Output {
+  readonly CompressionFormat?: string;
+  readonly Format?: string;
+  readonly PartitionColumns?: [];
   readonly Location: S3Location;
-  readonly Overwrite: boolean;
-  readonly FormatOptions: OutputFormatOptions;
+  readonly Overwrite?: boolean;
+  readonly FormatOptions?: OutputFormatOptions;
 }
 
-interface OutputFormatOptions {
-  readonly Csv: CsvOutputOptions;
+export interface OutputFormatOptions {
+  readonly Csv?: CsvOutputOptions;
 }
 
-interface PathOptions {
-  readonly LastModifiedDateCondition: FilterExpression;
-  readonly FilesLimit: FilesLimit;
-  readonly Parameters: {[key: string]: any};
+export interface PathOptions {
+  readonly LastModifiedDateCondition?: FilterExpression;
+  readonly FilesLimit?: FilesLimit;
+  readonly Parameters?: {[key: string]: any};
 }
 
-interface ProfileConfiguration {
-  readonly DatasetStatisticsConfiguration: StatisticsConfiguration;
-  readonly ProfileColumns: [];
-  readonly ColumnStatisticsConfigurations: [];
-  readonly EntityDetectorConfiguration: EntityDetectorConfiguration;
+export interface ProfileConfiguration {
+  readonly DatasetStatisticsConfiguration?: StatisticsConfiguration;
+  readonly ProfileColumns?: [];
+  readonly ColumnStatisticsConfigurations?: [];
+  readonly EntityDetectorConfiguration?: EntityDetectorConfiguration;
 }
 
-interface Project {
-  readonly AccountId: string;
-  readonly CreateDate: Date;
-  readonly CreatedBy: string;
-  readonly DatasetName: string;
-  readonly LastModifiedDate: Date;
-  readonly LastModifiedBy: string;
+export interface Project {
+  readonly AccountId?: string;
+  readonly CreateDate?: Date;
+  readonly CreatedBy?: string;
+  readonly DatasetName?: string;
+  readonly LastModifiedDate?: Date;
+  readonly LastModifiedBy?: string;
   readonly Name: string;
   readonly RecipeName: string;
-  readonly ResourceArn: string;
-  readonly Sample: Sample;
-  readonly Tags: {[key: string]: any};
-  readonly RoleArn: string;
-  readonly OpenedBy: string;
-  readonly OpenDate: Date;
+  readonly ResourceArn?: string;
+  readonly Sample?: Sample;
+  readonly Tags?: {[key: string]: any};
+  readonly RoleArn?: string;
+  readonly OpenedBy?: string;
+  readonly OpenDate?: Date;
 }
 
-interface PublishRecipeRequest {
-  readonly Description: string;
+export interface PublishRecipeRequest {
+  readonly Description?: string;
   readonly Name: string;
 }
 
-interface PublishRecipeResponse {
+export interface PublishRecipeResponse {
   readonly Name: string;
 }
 
-interface Recipe {
-  readonly CreatedBy: string;
-  readonly CreateDate: Date;
-  readonly LastModifiedBy: string;
-  readonly LastModifiedDate: Date;
-  readonly ProjectName: string;
-  readonly PublishedBy: string;
-  readonly PublishedDate: Date;
-  readonly Description: string;
+export interface Recipe {
+  readonly CreatedBy?: string;
+  readonly CreateDate?: Date;
+  readonly LastModifiedBy?: string;
+  readonly LastModifiedDate?: Date;
+  readonly ProjectName?: string;
+  readonly PublishedBy?: string;
+  readonly PublishedDate?: Date;
+  readonly Description?: string;
   readonly Name: string;
-  readonly ResourceArn: string;
-  readonly Steps: [];
-  readonly Tags: {[key: string]: any};
-  readonly RecipeVersion: string;
+  readonly ResourceArn?: string;
+  readonly Steps?: [];
+  readonly Tags?: {[key: string]: any};
+  readonly RecipeVersion?: string;
 }
 
-interface RecipeAction {
+export interface RecipeAction {
   readonly Operation: string;
-  readonly Parameters: {[key: string]: any};
+  readonly Parameters?: {[key: string]: any};
 }
 
-interface RecipeReference {
+export interface RecipeReference {
   readonly Name: string;
-  readonly RecipeVersion: string;
+  readonly RecipeVersion?: string;
 }
 
-interface RecipeStep {
+export interface RecipeStep {
   readonly Action: RecipeAction;
-  readonly ConditionExpressions: [];
+  readonly ConditionExpressions?: [];
 }
 
-interface RecipeVersionErrorDetail {
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
-  readonly RecipeVersion: string;
+export interface RecipeVersionErrorDetail {
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
+  readonly RecipeVersion?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface Rule {
+export interface Rule {
   readonly Name: string;
-  readonly Disabled: boolean;
+  readonly Disabled?: boolean;
   readonly CheckExpression: string;
-  readonly SubstitutionMap: {[key: string]: any};
-  readonly Threshold: Threshold;
-  readonly ColumnSelectors: [];
+  readonly SubstitutionMap?: {[key: string]: any};
+  readonly Threshold?: Threshold;
+  readonly ColumnSelectors?: [];
 }
 
-interface RulesetItem {
-  readonly AccountId: string;
-  readonly CreatedBy: string;
-  readonly CreateDate: Date;
-  readonly Description: string;
-  readonly LastModifiedBy: string;
-  readonly LastModifiedDate: Date;
+export interface RulesetItem {
+  readonly AccountId?: string;
+  readonly CreatedBy?: string;
+  readonly CreateDate?: Date;
+  readonly Description?: string;
+  readonly LastModifiedBy?: string;
+  readonly LastModifiedDate?: Date;
   readonly Name: string;
-  readonly ResourceArn: string;
-  readonly RuleCount: number;
-  readonly Tags: {[key: string]: any};
+  readonly ResourceArn?: string;
+  readonly RuleCount?: number;
+  readonly Tags?: {[key: string]: any};
   readonly TargetArn: string;
 }
 
-interface S3Location {
+export interface S3Location {
   readonly Bucket: string;
-  readonly Key: string;
+  readonly Key?: string;
 }
 
-interface S3TableOutputOptions {
+export interface S3TableOutputOptions {
   readonly Location: S3Location;
 }
 
-interface Sample {
-  readonly Size: number;
+export interface Sample {
+  readonly Size?: number;
   readonly Type: string;
 }
 
-interface Schedule {
-  readonly AccountId: string;
-  readonly CreatedBy: string;
-  readonly CreateDate: Date;
-  readonly JobNames: [];
-  readonly LastModifiedBy: string;
-  readonly LastModifiedDate: Date;
-  readonly ResourceArn: string;
-  readonly CronExpression: string;
-  readonly Tags: {[key: string]: any};
+export interface Schedule {
+  readonly AccountId?: string;
+  readonly CreatedBy?: string;
+  readonly CreateDate?: Date;
+  readonly JobNames?: [];
+  readonly LastModifiedBy?: string;
+  readonly LastModifiedDate?: Date;
+  readonly ResourceArn?: string;
+  readonly CronExpression?: string;
+  readonly Tags?: {[key: string]: any};
   readonly Name: string;
 }
 
-interface SendProjectSessionActionRequest {
-  readonly Preview: boolean;
+export interface SendProjectSessionActionRequest {
+  readonly Preview?: boolean;
   readonly Name: string;
-  readonly RecipeStep: RecipeStep;
-  readonly StepIndex: number;
-  readonly ClientSessionId: string;
-  readonly ViewFrame: ViewFrame;
+  readonly RecipeStep?: RecipeStep;
+  readonly StepIndex?: number;
+  readonly ClientSessionId?: string;
+  readonly ViewFrame?: ViewFrame;
 }
 
-interface SendProjectSessionActionResponse {
-  readonly Result: string;
+export interface SendProjectSessionActionResponse {
+  readonly Result?: string;
   readonly Name: string;
-  readonly ActionId: number;
+  readonly ActionId?: number;
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface StartJobRunRequest {
+export interface StartJobRunRequest {
   readonly Name: string;
 }
 
-interface StartJobRunResponse {
+export interface StartJobRunResponse {
   readonly RunId: string;
 }
 
-interface StartProjectSessionRequest {
+export interface StartProjectSessionRequest {
   readonly Name: string;
-  readonly AssumeControl: boolean;
+  readonly AssumeControl?: boolean;
 }
 
-interface StartProjectSessionResponse {
+export interface StartProjectSessionResponse {
   readonly Name: string;
-  readonly ClientSessionId: string;
+  readonly ClientSessionId?: string;
 }
 
-interface StatisticOverride {
+export interface StatisticOverride {
   readonly Statistic: string;
   readonly Parameters: {[key: string]: any};
 }
 
-interface StatisticsConfiguration {
-  readonly IncludedStatistics: [];
-  readonly Overrides: [];
+export interface StatisticsConfiguration {
+  readonly IncludedStatistics?: [];
+  readonly Overrides?: [];
 }
 
-interface StopJobRunRequest {
+export interface StopJobRunRequest {
   readonly Name: string;
   readonly RunId: string;
 }
 
-interface StopJobRunResponse {
+export interface StopJobRunResponse {
   readonly RunId: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface Threshold {
+export interface Threshold {
   readonly Value: unknown;
-  readonly Type: string;
-  readonly Unit: string;
+  readonly Type?: string;
+  readonly Unit?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateDatasetRequest {
+export interface UpdateDatasetRequest {
   readonly Name: string;
-  readonly Format: string;
-  readonly FormatOptions: FormatOptions;
+  readonly Format?: string;
+  readonly FormatOptions?: FormatOptions;
   readonly Input: Input;
-  readonly PathOptions: PathOptions;
+  readonly PathOptions?: PathOptions;
 }
 
-interface UpdateDatasetResponse {
+export interface UpdateDatasetResponse {
   readonly Name: string;
 }
 
-interface UpdateProfileJobRequest {
-  readonly Configuration: ProfileConfiguration;
-  readonly EncryptionKeyArn: string;
-  readonly EncryptionMode: string;
+export interface UpdateProfileJobRequest {
+  readonly Configuration?: ProfileConfiguration;
+  readonly EncryptionKeyArn?: string;
+  readonly EncryptionMode?: string;
   readonly Name: string;
-  readonly LogSubscription: string;
-  readonly MaxCapacity: number;
-  readonly MaxRetries: number;
+  readonly LogSubscription?: string;
+  readonly MaxCapacity?: number;
+  readonly MaxRetries?: number;
   readonly OutputLocation: S3Location;
-  readonly ValidationConfigurations: [];
+  readonly ValidationConfigurations?: [];
   readonly RoleArn: string;
-  readonly Timeout: number;
-  readonly JobSample: JobSample;
+  readonly Timeout?: number;
+  readonly JobSample?: JobSample;
 }
 
-interface UpdateProfileJobResponse {
+export interface UpdateProfileJobResponse {
   readonly Name: string;
 }
 
-interface UpdateProjectRequest {
-  readonly Sample: Sample;
+export interface UpdateProjectRequest {
+  readonly Sample?: Sample;
   readonly RoleArn: string;
   readonly Name: string;
 }
 
-interface UpdateProjectResponse {
-  readonly LastModifiedDate: Date;
+export interface UpdateProjectResponse {
+  readonly LastModifiedDate?: Date;
   readonly Name: string;
 }
 
-interface UpdateRecipeJobRequest {
-  readonly EncryptionKeyArn: string;
-  readonly EncryptionMode: string;
+export interface UpdateRecipeJobRequest {
+  readonly EncryptionKeyArn?: string;
+  readonly EncryptionMode?: string;
   readonly Name: string;
-  readonly LogSubscription: string;
-  readonly MaxCapacity: number;
-  readonly MaxRetries: number;
-  readonly Outputs: [];
-  readonly DataCatalogOutputs: [];
-  readonly DatabaseOutputs: [];
+  readonly LogSubscription?: string;
+  readonly MaxCapacity?: number;
+  readonly MaxRetries?: number;
+  readonly Outputs?: [];
+  readonly DataCatalogOutputs?: [];
+  readonly DatabaseOutputs?: [];
   readonly RoleArn: string;
-  readonly Timeout: number;
+  readonly Timeout?: number;
 }
 
-interface UpdateRecipeJobResponse {
+export interface UpdateRecipeJobResponse {
   readonly Name: string;
 }
 
-interface UpdateRecipeRequest {
-  readonly Description: string;
+export interface UpdateRecipeRequest {
+  readonly Description?: string;
   readonly Name: string;
-  readonly Steps: [];
+  readonly Steps?: [];
 }
 
-interface UpdateRecipeResponse {
+export interface UpdateRecipeResponse {
   readonly Name: string;
 }
 
-interface UpdateRulesetRequest {
+export interface UpdateRulesetRequest {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Rules: [];
 }
 
-interface UpdateRulesetResponse {
+export interface UpdateRulesetResponse {
   readonly Name: string;
 }
 
-interface UpdateScheduleRequest {
-  readonly JobNames: [];
+export interface UpdateScheduleRequest {
+  readonly JobNames?: [];
   readonly CronExpression: string;
   readonly Name: string;
 }
 
-interface UpdateScheduleResponse {
+export interface UpdateScheduleResponse {
   readonly Name: string;
 }
 
-interface ValidationConfiguration {
+export interface ValidationConfiguration {
   readonly RulesetArn: string;
-  readonly ValidationMode: string;
+  readonly ValidationMode?: string;
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
 
-interface ViewFrame {
+export interface ViewFrame {
   readonly StartColumnIndex: number;
-  readonly ColumnRange: number;
-  readonly HiddenColumns: [];
-  readonly StartRowIndex: number;
-  readonly RowRange: number;
-  readonly Analytics: string;
+  readonly ColumnRange?: number;
+  readonly HiddenColumns?: [];
+  readonly StartRowIndex?: number;
+  readonly RowRange?: number;
+  readonly Analytics?: string;
 }
+
 

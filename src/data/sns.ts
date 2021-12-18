@@ -7,97 +7,124 @@ export interface AddPermission {
   readonly AWSAccountId: [];
   readonly ActionName: [];
 }
+
 export interface CheckIfPhoneNumberIsOptedOut {
   readonly phoneNumber: string;
 }
+
 export interface ConfirmSubscription {
   readonly TopicArn: string;
   readonly Token: string;
   readonly AuthenticateOnUnsubscribe?: string;
 }
+
 export interface CreatePlatformApplication {
   readonly Name: string;
   readonly Platform: string;
   readonly Attributes: {[key: string]: any};
 }
+
 export interface CreatePlatformEndpoint {
   readonly PlatformApplicationArn: string;
   readonly Token: string;
   readonly CustomUserData?: string;
   readonly Attributes?: {[key: string]: any};
 }
+
 export interface CreateSMSSandboxPhoneNumber {
   readonly PhoneNumber: string;
   readonly LanguageCode?: string;
 }
+
 export interface CreateTopic {
   readonly Name: string;
   readonly Attributes?: {[key: string]: any};
   readonly Tags?: [];
 }
+
 export interface DeleteEndpoint {
   readonly EndpointArn: string;
 }
+
 export interface DeletePlatformApplication {
   readonly PlatformApplicationArn: string;
 }
+
 export interface DeleteSMSSandboxPhoneNumber {
   readonly PhoneNumber: string;
 }
+
 export interface DeleteTopic {
   readonly TopicArn: string;
 }
+
 export interface GetEndpointAttributes {
   readonly EndpointArn: string;
 }
+
 export interface GetPlatformApplicationAttributes {
   readonly PlatformApplicationArn: string;
 }
+
 export interface GetSMSAttributes {
   readonly attributes?: [];
 }
+
 export interface GetSMSSandboxAccountStatus {
 }
+
 export interface GetSubscriptionAttributes {
   readonly SubscriptionArn: string;
 }
+
 export interface GetTopicAttributes {
   readonly TopicArn: string;
 }
+
 export interface ListEndpointsByPlatformApplication {
   readonly PlatformApplicationArn: string;
   readonly NextToken?: string;
 }
+
 export interface ListOriginationNumbers {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListPhoneNumbersOptedOut {
   readonly nextToken?: string;
 }
+
 export interface ListPlatformApplications {
   readonly NextToken?: string;
 }
+
 export interface ListSMSSandboxPhoneNumbers {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListSubscriptions {
   readonly NextToken?: string;
 }
+
 export interface ListSubscriptionsByTopic {
   readonly TopicArn: string;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface ListTopics {
   readonly NextToken?: string;
 }
+
 export interface OptInPhoneNumber {
   readonly phoneNumber: string;
 }
+
 export interface Publish {
   readonly TopicArn?: string;
   readonly TargetArn?: string;
@@ -109,35 +136,43 @@ export interface Publish {
   readonly MessageDeduplicationId?: string;
   readonly MessageGroupId?: string;
 }
+
 export interface PublishBatch {
   readonly TopicArn: string;
   readonly PublishBatchRequestEntries: [];
 }
+
 export interface RemovePermission {
   readonly TopicArn: string;
   readonly Label: string;
 }
+
 export interface SetEndpointAttributes {
   readonly EndpointArn: string;
   readonly Attributes: {[key: string]: any};
 }
+
 export interface SetPlatformApplicationAttributes {
   readonly PlatformApplicationArn: string;
   readonly Attributes: {[key: string]: any};
 }
+
 export interface SetSMSAttributes {
   readonly attributes: {[key: string]: any};
 }
+
 export interface SetSubscriptionAttributes {
   readonly SubscriptionArn: string;
   readonly AttributeName: string;
   readonly AttributeValue?: string;
 }
+
 export interface SetTopicAttributes {
   readonly TopicArn: string;
   readonly AttributeName: string;
   readonly AttributeValue?: string;
 }
+
 export interface Subscribe {
   readonly TopicArn: string;
   readonly Protocol: string;
@@ -145,542 +180,545 @@ export interface Subscribe {
   readonly Attributes?: {[key: string]: any};
   readonly ReturnSubscriptionArn?: boolean;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface Unsubscribe {
   readonly SubscriptionArn: string;
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface VerifySMSSandboxPhoneNumber {
   readonly PhoneNumber: string;
   readonly OneTimePassword: string;
 }
 
-
-
-interface AddPermissionInput {
+export interface AddPermissionInput {
   readonly TopicArn: string;
   readonly Label: string;
   readonly AWSAccountId: [];
   readonly ActionName: [];
 }
 
-interface AuthorizationErrorException {
-  readonly message: string;
+export interface AuthorizationErrorException {
+  readonly message?: string;
 }
 
-interface BatchEntryIdsNotDistinctException {
-  readonly message: string;
+export interface BatchEntryIdsNotDistinctException {
+  readonly message?: string;
 }
 
-interface BatchRequestTooLongException {
-  readonly message: string;
+export interface BatchRequestTooLongException {
+  readonly message?: string;
 }
 
-interface BatchResultErrorEntry {
+export interface BatchResultErrorEntry {
   readonly Id: string;
   readonly Code: string;
-  readonly Message: string;
+  readonly Message?: string;
   readonly SenderFault: boolean;
 }
 
-interface CheckIfPhoneNumberIsOptedOutInput {
+export interface CheckIfPhoneNumberIsOptedOutInput {
   readonly phoneNumber: string;
 }
 
-interface CheckIfPhoneNumberIsOptedOutResponse {
-  readonly isOptedOut: boolean;
+export interface CheckIfPhoneNumberIsOptedOutResponse {
+  readonly isOptedOut?: boolean;
 }
 
-interface ConcurrentAccessException {
-  readonly message: string;
+export interface ConcurrentAccessException {
+  readonly message?: string;
 }
 
-interface ConfirmSubscriptionInput {
+export interface ConfirmSubscriptionInput {
   readonly TopicArn: string;
   readonly Token: string;
-  readonly AuthenticateOnUnsubscribe: string;
+  readonly AuthenticateOnUnsubscribe?: string;
 }
 
-interface ConfirmSubscriptionResponse {
-  readonly SubscriptionArn: string;
+export interface ConfirmSubscriptionResponse {
+  readonly SubscriptionArn?: string;
 }
 
-interface CreateEndpointResponse {
-  readonly EndpointArn: string;
+export interface CreateEndpointResponse {
+  readonly EndpointArn?: string;
 }
 
-interface CreatePlatformApplicationInput {
+export interface CreatePlatformApplicationInput {
   readonly Name: string;
   readonly Platform: string;
   readonly Attributes: {[key: string]: any};
 }
 
-interface CreatePlatformApplicationResponse {
-  readonly PlatformApplicationArn: string;
+export interface CreatePlatformApplicationResponse {
+  readonly PlatformApplicationArn?: string;
 }
 
-interface CreatePlatformEndpointInput {
+export interface CreatePlatformEndpointInput {
   readonly PlatformApplicationArn: string;
   readonly Token: string;
-  readonly CustomUserData: string;
-  readonly Attributes: {[key: string]: any};
+  readonly CustomUserData?: string;
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface CreateSMSSandboxPhoneNumberInput {
+export interface CreateSMSSandboxPhoneNumberInput {
   readonly PhoneNumber: string;
-  readonly LanguageCode: string;
+  readonly LanguageCode?: string;
 }
 
-interface CreateSMSSandboxPhoneNumberResult {
+export interface CreateSMSSandboxPhoneNumberResult {
 }
 
-interface CreateTopicInput {
+export interface CreateTopicInput {
   readonly Name: string;
-  readonly Attributes: {[key: string]: any};
-  readonly Tags: [];
+  readonly Attributes?: {[key: string]: any};
+  readonly Tags?: [];
 }
 
-interface CreateTopicResponse {
-  readonly TopicArn: string;
+export interface CreateTopicResponse {
+  readonly TopicArn?: string;
 }
 
-interface DeleteEndpointInput {
+export interface DeleteEndpointInput {
   readonly EndpointArn: string;
 }
 
-interface DeletePlatformApplicationInput {
+export interface DeletePlatformApplicationInput {
   readonly PlatformApplicationArn: string;
 }
 
-interface DeleteSMSSandboxPhoneNumberInput {
+export interface DeleteSMSSandboxPhoneNumberInput {
   readonly PhoneNumber: string;
 }
 
-interface DeleteSMSSandboxPhoneNumberResult {
+export interface DeleteSMSSandboxPhoneNumberResult {
 }
 
-interface DeleteTopicInput {
+export interface DeleteTopicInput {
   readonly TopicArn: string;
 }
 
-interface EmptyBatchRequestException {
-  readonly message: string;
+export interface EmptyBatchRequestException {
+  readonly message?: string;
 }
 
-interface Endpoint {
+export interface Endpoint {
+  readonly EndpointArn?: string;
+  readonly Attributes?: {[key: string]: any};
+}
+
+export interface EndpointDisabledException {
+  readonly message?: string;
+}
+
+export interface FilterPolicyLimitExceededException {
+  readonly message?: string;
+}
+
+export interface GetEndpointAttributesInput {
   readonly EndpointArn: string;
-  readonly Attributes: {[key: string]: any};
 }
 
-interface EndpointDisabledException {
-  readonly message: string;
+export interface GetEndpointAttributesResponse {
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface FilterPolicyLimitExceededException {
-  readonly message: string;
-}
-
-interface GetEndpointAttributesInput {
-  readonly EndpointArn: string;
-}
-
-interface GetEndpointAttributesResponse {
-  readonly Attributes: {[key: string]: any};
-}
-
-interface GetPlatformApplicationAttributesInput {
+export interface GetPlatformApplicationAttributesInput {
   readonly PlatformApplicationArn: string;
 }
 
-interface GetPlatformApplicationAttributesResponse {
-  readonly Attributes: {[key: string]: any};
+export interface GetPlatformApplicationAttributesResponse {
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface GetSMSAttributesInput {
-  readonly attributes: [];
+export interface GetSMSAttributesInput {
+  readonly attributes?: [];
 }
 
-interface GetSMSAttributesResponse {
-  readonly attributes: {[key: string]: any};
+export interface GetSMSAttributesResponse {
+  readonly attributes?: {[key: string]: any};
 }
 
-interface GetSMSSandboxAccountStatusInput {
+export interface GetSMSSandboxAccountStatusInput {
 }
 
-interface GetSMSSandboxAccountStatusResult {
+export interface GetSMSSandboxAccountStatusResult {
   readonly IsInSandbox: boolean;
 }
 
-interface GetSubscriptionAttributesInput {
+export interface GetSubscriptionAttributesInput {
   readonly SubscriptionArn: string;
 }
 
-interface GetSubscriptionAttributesResponse {
-  readonly Attributes: {[key: string]: any};
+export interface GetSubscriptionAttributesResponse {
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface GetTopicAttributesInput {
+export interface GetTopicAttributesInput {
   readonly TopicArn: string;
 }
 
-interface GetTopicAttributesResponse {
-  readonly Attributes: {[key: string]: any};
+export interface GetTopicAttributesResponse {
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface InternalErrorException {
-  readonly message: string;
+export interface InternalErrorException {
+  readonly message?: string;
 }
 
-interface InvalidBatchEntryIdException {
-  readonly message: string;
+export interface InvalidBatchEntryIdException {
+  readonly message?: string;
 }
 
-interface InvalidParameterException {
-  readonly message: string;
+export interface InvalidParameterException {
+  readonly message?: string;
 }
 
-interface InvalidParameterValueException {
-  readonly message: string;
+export interface InvalidParameterValueException {
+  readonly message?: string;
 }
 
-interface InvalidSecurityException {
-  readonly message: string;
+export interface InvalidSecurityException {
+  readonly message?: string;
 }
 
-interface KMSAccessDeniedException {
-  readonly message: string;
+export interface KMSAccessDeniedException {
+  readonly message?: string;
 }
 
-interface KMSDisabledException {
-  readonly message: string;
+export interface KMSDisabledException {
+  readonly message?: string;
 }
 
-interface KMSInvalidStateException {
-  readonly message: string;
+export interface KMSInvalidStateException {
+  readonly message?: string;
 }
 
-interface KMSNotFoundException {
-  readonly message: string;
+export interface KMSNotFoundException {
+  readonly message?: string;
 }
 
-interface KMSOptInRequired {
-  readonly message: string;
+export interface KMSOptInRequired {
+  readonly message?: string;
 }
 
-interface KMSThrottlingException {
-  readonly message: string;
+export interface KMSThrottlingException {
+  readonly message?: string;
 }
 
-interface ListEndpointsByPlatformApplicationInput {
+export interface ListEndpointsByPlatformApplicationInput {
   readonly PlatformApplicationArn: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListEndpointsByPlatformApplicationResponse {
-  readonly Endpoints: [];
-  readonly NextToken: string;
+export interface ListEndpointsByPlatformApplicationResponse {
+  readonly Endpoints?: [];
+  readonly NextToken?: string;
 }
 
-interface ListOriginationNumbersRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListOriginationNumbersRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListOriginationNumbersResult {
-  readonly NextToken: string;
+export interface ListOriginationNumbersResult {
+  readonly NextToken?: string;
+  readonly PhoneNumbers?: [];
+}
+
+export interface ListPhoneNumbersOptedOutInput {
+  readonly nextToken?: string;
+}
+
+export interface ListPhoneNumbersOptedOutResponse {
+  readonly phoneNumbers?: [];
+  readonly nextToken?: string;
+}
+
+export interface ListPlatformApplicationsInput {
+  readonly NextToken?: string;
+}
+
+export interface ListPlatformApplicationsResponse {
+  readonly PlatformApplications?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListSMSSandboxPhoneNumbersInput {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface ListSMSSandboxPhoneNumbersResult {
   readonly PhoneNumbers: [];
+  readonly NextToken?: string;
 }
 
-interface ListPhoneNumbersOptedOutInput {
-  readonly nextToken: string;
-}
-
-interface ListPhoneNumbersOptedOutResponse {
-  readonly phoneNumbers: [];
-  readonly nextToken: string;
-}
-
-interface ListPlatformApplicationsInput {
-  readonly NextToken: string;
-}
-
-interface ListPlatformApplicationsResponse {
-  readonly PlatformApplications: [];
-  readonly NextToken: string;
-}
-
-interface ListSMSSandboxPhoneNumbersInput {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface ListSMSSandboxPhoneNumbersResult {
-  readonly PhoneNumbers: [];
-  readonly NextToken: string;
-}
-
-interface ListSubscriptionsByTopicInput {
+export interface ListSubscriptionsByTopicInput {
   readonly TopicArn: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListSubscriptionsByTopicResponse {
-  readonly Subscriptions: [];
-  readonly NextToken: string;
+export interface ListSubscriptionsByTopicResponse {
+  readonly Subscriptions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListSubscriptionsInput {
-  readonly NextToken: string;
+export interface ListSubscriptionsInput {
+  readonly NextToken?: string;
 }
 
-interface ListSubscriptionsResponse {
-  readonly Subscriptions: [];
-  readonly NextToken: string;
+export interface ListSubscriptionsResponse {
+  readonly Subscriptions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface ListTopicsInput {
-  readonly NextToken: string;
+export interface ListTopicsInput {
+  readonly NextToken?: string;
 }
 
-interface ListTopicsResponse {
-  readonly Topics: [];
-  readonly NextToken: string;
+export interface ListTopicsResponse {
+  readonly Topics?: [];
+  readonly NextToken?: string;
 }
 
-interface MessageAttributeValue {
+export interface MessageAttributeValue {
   readonly DataType: string;
-  readonly StringValue: string;
-  readonly BinaryValue: unknown;
+  readonly StringValue?: string;
+  readonly BinaryValue?: unknown;
 }
 
-interface NotFoundException {
-  readonly message: string;
+export interface NotFoundException {
+  readonly message?: string;
 }
 
-interface OptInPhoneNumberInput {
+export interface OptInPhoneNumberInput {
   readonly phoneNumber: string;
 }
 
-interface OptInPhoneNumberResponse {
+export interface OptInPhoneNumberResponse {
 }
 
-interface OptedOutException {
-  readonly message: string;
+export interface OptedOutException {
+  readonly message?: string;
 }
 
-interface PhoneNumberInformation {
-  readonly CreatedAt: Date;
-  readonly PhoneNumber: string;
-  readonly Status: string;
-  readonly Iso2CountryCode: string;
-  readonly RouteType: string;
-  readonly NumberCapabilities: [];
+export interface PhoneNumberInformation {
+  readonly CreatedAt?: Date;
+  readonly PhoneNumber?: string;
+  readonly Status?: string;
+  readonly Iso2CountryCode?: string;
+  readonly RouteType?: string;
+  readonly NumberCapabilities?: [];
 }
 
-interface PlatformApplication {
-  readonly PlatformApplicationArn: string;
-  readonly Attributes: {[key: string]: any};
+export interface PlatformApplication {
+  readonly PlatformApplicationArn?: string;
+  readonly Attributes?: {[key: string]: any};
 }
 
-interface PlatformApplicationDisabledException {
-  readonly message: string;
+export interface PlatformApplicationDisabledException {
+  readonly message?: string;
 }
 
-interface PublishBatchInput {
+export interface PublishBatchInput {
   readonly TopicArn: string;
   readonly PublishBatchRequestEntries: [];
 }
 
-interface PublishBatchRequestEntry {
+export interface PublishBatchRequestEntry {
   readonly Id: string;
   readonly Message: string;
-  readonly Subject: string;
-  readonly MessageStructure: string;
-  readonly MessageAttributes: {[key: string]: any};
-  readonly MessageDeduplicationId: string;
-  readonly MessageGroupId: string;
+  readonly Subject?: string;
+  readonly MessageStructure?: string;
+  readonly MessageAttributes?: {[key: string]: any};
+  readonly MessageDeduplicationId?: string;
+  readonly MessageGroupId?: string;
 }
 
-interface PublishBatchResponse {
-  readonly Successful: [];
-  readonly Failed: [];
+export interface PublishBatchResponse {
+  readonly Successful?: [];
+  readonly Failed?: [];
 }
 
-interface PublishBatchResultEntry {
-  readonly Id: string;
-  readonly MessageId: string;
-  readonly SequenceNumber: string;
+export interface PublishBatchResultEntry {
+  readonly Id?: string;
+  readonly MessageId?: string;
+  readonly SequenceNumber?: string;
 }
 
-interface PublishInput {
-  readonly TopicArn: string;
-  readonly TargetArn: string;
-  readonly PhoneNumber: string;
+export interface PublishInput {
+  readonly TopicArn?: string;
+  readonly TargetArn?: string;
+  readonly PhoneNumber?: string;
   readonly Message: string;
-  readonly Subject: string;
-  readonly MessageStructure: string;
-  readonly MessageAttributes: {[key: string]: any};
-  readonly MessageDeduplicationId: string;
-  readonly MessageGroupId: string;
+  readonly Subject?: string;
+  readonly MessageStructure?: string;
+  readonly MessageAttributes?: {[key: string]: any};
+  readonly MessageDeduplicationId?: string;
+  readonly MessageGroupId?: string;
 }
 
-interface PublishResponse {
-  readonly MessageId: string;
-  readonly SequenceNumber: string;
+export interface PublishResponse {
+  readonly MessageId?: string;
+  readonly SequenceNumber?: string;
 }
 
-interface RemovePermissionInput {
+export interface RemovePermissionInput {
   readonly TopicArn: string;
   readonly Label: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface SMSSandboxPhoneNumber {
-  readonly PhoneNumber: string;
-  readonly Status: string;
+export interface SMSSandboxPhoneNumber {
+  readonly PhoneNumber?: string;
+  readonly Status?: string;
 }
 
-interface SetEndpointAttributesInput {
+export interface SetEndpointAttributesInput {
   readonly EndpointArn: string;
   readonly Attributes: {[key: string]: any};
 }
 
-interface SetPlatformApplicationAttributesInput {
+export interface SetPlatformApplicationAttributesInput {
   readonly PlatformApplicationArn: string;
   readonly Attributes: {[key: string]: any};
 }
 
-interface SetSMSAttributesInput {
+export interface SetSMSAttributesInput {
   readonly attributes: {[key: string]: any};
 }
 
-interface SetSMSAttributesResponse {
+export interface SetSMSAttributesResponse {
 }
 
-interface SetSubscriptionAttributesInput {
+export interface SetSubscriptionAttributesInput {
   readonly SubscriptionArn: string;
   readonly AttributeName: string;
-  readonly AttributeValue: string;
+  readonly AttributeValue?: string;
 }
 
-interface SetTopicAttributesInput {
+export interface SetTopicAttributesInput {
   readonly TopicArn: string;
   readonly AttributeName: string;
-  readonly AttributeValue: string;
+  readonly AttributeValue?: string;
 }
 
-interface StaleTagException {
-  readonly message: string;
+export interface StaleTagException {
+  readonly message?: string;
 }
 
-interface SubscribeInput {
+export interface SubscribeInput {
   readonly TopicArn: string;
   readonly Protocol: string;
-  readonly Endpoint: string;
-  readonly Attributes: {[key: string]: any};
-  readonly ReturnSubscriptionArn: boolean;
+  readonly Endpoint?: string;
+  readonly Attributes?: {[key: string]: any};
+  readonly ReturnSubscriptionArn?: boolean;
 }
 
-interface SubscribeResponse {
-  readonly SubscriptionArn: string;
+export interface SubscribeResponse {
+  readonly SubscriptionArn?: string;
 }
 
-interface Subscription {
-  readonly SubscriptionArn: string;
-  readonly Owner: string;
-  readonly Protocol: string;
-  readonly Endpoint: string;
-  readonly TopicArn: string;
+export interface Subscription {
+  readonly SubscriptionArn?: string;
+  readonly Owner?: string;
+  readonly Protocol?: string;
+  readonly Endpoint?: string;
+  readonly TopicArn?: string;
 }
 
-interface SubscriptionLimitExceededException {
-  readonly message: string;
+export interface SubscriptionLimitExceededException {
+  readonly message?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagLimitExceededException {
-  readonly message: string;
+export interface TagLimitExceededException {
+  readonly message?: string;
 }
 
-interface TagPolicyException {
-  readonly message: string;
+export interface TagPolicyException {
+  readonly message?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottledException {
-  readonly message: string;
+export interface ThrottledException {
+  readonly message?: string;
 }
 
-interface TooManyEntriesInBatchRequestException {
-  readonly message: string;
+export interface TooManyEntriesInBatchRequestException {
+  readonly message?: string;
 }
 
-interface Topic {
-  readonly TopicArn: string;
+export interface Topic {
+  readonly TopicArn?: string;
 }
 
-interface TopicLimitExceededException {
-  readonly message: string;
+export interface TopicLimitExceededException {
+  readonly message?: string;
 }
 
-interface UnsubscribeInput {
+export interface UnsubscribeInput {
   readonly SubscriptionArn: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UserErrorException {
-  readonly message: string;
+export interface UserErrorException {
+  readonly message?: string;
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly Message: string;
 }
 
-interface VerificationException {
+export interface VerificationException {
   readonly Message: string;
   readonly Status: string;
 }
 
-interface VerifySMSSandboxPhoneNumberInput {
+export interface VerifySMSSandboxPhoneNumberInput {
   readonly PhoneNumber: string;
   readonly OneTimePassword: string;
 }
 
-interface VerifySMSSandboxPhoneNumberResult {
+export interface VerifySMSSandboxPhoneNumberResult {
 }
+
 

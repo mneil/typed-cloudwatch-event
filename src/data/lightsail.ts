@@ -4,31 +4,38 @@
 export interface AllocateStaticIp {
   readonly staticIpName: string;
 }
+
 export interface AttachCertificateToDistribution {
   readonly distributionName: string;
   readonly certificateName: string;
 }
+
 export interface AttachDisk {
   readonly diskName: string;
   readonly instanceName: string;
   readonly diskPath: string;
 }
+
 export interface AttachInstancesToLoadBalancer {
   readonly loadBalancerName: string;
   readonly instanceNames: [];
 }
+
 export interface AttachLoadBalancerTlsCertificate {
   readonly loadBalancerName: string;
   readonly certificateName: string;
 }
+
 export interface AttachStaticIp {
   readonly staticIpName: string;
   readonly instanceName: string;
 }
+
 export interface CloseInstancePublicPorts {
   readonly portInfo: PortInfo;
   readonly instanceName: string;
 }
+
 export interface CopySnapshot {
   readonly sourceSnapshotName?: string;
   readonly sourceResourceName?: string;
@@ -37,28 +44,34 @@ export interface CopySnapshot {
   readonly targetSnapshotName: string;
   readonly sourceRegion: string;
 }
+
 export interface CreateBucket {
   readonly bucketName: string;
   readonly bundleId: string;
   readonly tags?: [];
   readonly enableObjectVersioning?: boolean;
 }
+
 export interface CreateBucketAccessKey {
   readonly bucketName: string;
 }
+
 export interface CreateCertificate {
   readonly certificateName: string;
   readonly domainName: string;
   readonly subjectAlternativeNames?: [];
   readonly tags?: [];
 }
+
 export interface CreateCloudFormationStack {
   readonly instances: [];
 }
+
 export interface CreateContactMethod {
   readonly protocol: string;
   readonly contactEndpoint: string;
 }
+
 export interface CreateContainerService {
   readonly serviceName: string;
   readonly power: string;
@@ -67,13 +80,16 @@ export interface CreateContainerService {
   readonly publicDomainNames?: {[key: string]: any};
   readonly deployment?: ContainerServiceDeploymentRequest;
 }
+
 export interface CreateContainerServiceDeployment {
   readonly serviceName: string;
   readonly containers?: {[key: string]: any};
   readonly publicEndpoint?: EndpointRequest;
 }
+
 export interface CreateContainerServiceRegistryLogin {
 }
+
 export interface CreateDisk {
   readonly diskName: string;
   readonly availabilityZone: string;
@@ -81,6 +97,7 @@ export interface CreateDisk {
   readonly tags?: [];
   readonly addOns?: [];
 }
+
 export interface CreateDiskFromSnapshot {
   readonly diskName: string;
   readonly diskSnapshotName?: string;
@@ -92,12 +109,14 @@ export interface CreateDiskFromSnapshot {
   readonly restoreDate?: string;
   readonly useLatestRestorableAutoSnapshot?: boolean;
 }
+
 export interface CreateDiskSnapshot {
   readonly diskName?: string;
   readonly diskSnapshotName: string;
   readonly instanceName?: string;
   readonly tags?: [];
 }
+
 export interface CreateDistribution {
   readonly distributionName: string;
   readonly origin: InputOrigin;
@@ -108,19 +127,23 @@ export interface CreateDistribution {
   readonly ipAddressType?: string;
   readonly tags?: [];
 }
+
 export interface CreateDomain {
   readonly domainName: string;
   readonly tags?: [];
 }
+
 export interface CreateDomainEntry {
   readonly domainName: string;
   readonly domainEntry: DomainEntry;
 }
+
 export interface CreateInstanceSnapshot {
   readonly instanceSnapshotName: string;
   readonly instanceName: string;
   readonly tags?: [];
 }
+
 export interface CreateInstances {
   readonly instanceNames: [];
   readonly availabilityZone: string;
@@ -133,6 +156,7 @@ export interface CreateInstances {
   readonly addOns?: [];
   readonly ipAddressType?: string;
 }
+
 export interface CreateInstancesFromSnapshot {
   readonly instanceNames: [];
   readonly attachedDiskMapping?: {[key: string]: any};
@@ -148,10 +172,12 @@ export interface CreateInstancesFromSnapshot {
   readonly restoreDate?: string;
   readonly useLatestRestorableAutoSnapshot?: boolean;
 }
+
 export interface CreateKeyPair {
   readonly keyPairName: string;
   readonly tags?: [];
 }
+
 export interface CreateLoadBalancer {
   readonly loadBalancerName: string;
   readonly instancePort: number;
@@ -162,6 +188,7 @@ export interface CreateLoadBalancer {
   readonly tags?: [];
   readonly ipAddressType?: string;
 }
+
 export interface CreateLoadBalancerTlsCertificate {
   readonly loadBalancerName: string;
   readonly certificateName: string;
@@ -169,6 +196,7 @@ export interface CreateLoadBalancerTlsCertificate {
   readonly certificateAlternativeNames?: [];
   readonly tags?: [];
 }
+
 export interface CreateRelationalDatabase {
   readonly relationalDatabaseName: string;
   readonly availabilityZone?: string;
@@ -182,6 +210,7 @@ export interface CreateRelationalDatabase {
   readonly publiclyAccessible?: boolean;
   readonly tags?: [];
 }
+
 export interface CreateRelationalDatabaseFromSnapshot {
   readonly relationalDatabaseName: string;
   readonly availabilityZone?: string;
@@ -193,132 +222,169 @@ export interface CreateRelationalDatabaseFromSnapshot {
   readonly useLatestRestorableTime?: boolean;
   readonly tags?: [];
 }
+
 export interface CreateRelationalDatabaseSnapshot {
   readonly relationalDatabaseName: string;
   readonly relationalDatabaseSnapshotName: string;
   readonly tags?: [];
 }
+
 export interface DeleteAlarm {
   readonly alarmName: string;
 }
+
 export interface DeleteAutoSnapshot {
   readonly resourceName: string;
   readonly date: string;
 }
+
 export interface DeleteBucket {
   readonly bucketName: string;
   readonly forceDelete?: boolean;
 }
+
 export interface DeleteBucketAccessKey {
   readonly bucketName: string;
   readonly accessKeyId: string;
 }
+
 export interface DeleteCertificate {
   readonly certificateName: string;
 }
+
 export interface DeleteContactMethod {
   readonly protocol: string;
 }
+
 export interface DeleteContainerImage {
   readonly serviceName: string;
   readonly image: string;
 }
+
 export interface DeleteContainerService {
   readonly serviceName: string;
 }
+
 export interface DeleteDisk {
   readonly diskName: string;
   readonly forceDeleteAddOns?: boolean;
 }
+
 export interface DeleteDiskSnapshot {
   readonly diskSnapshotName: string;
 }
+
 export interface DeleteDistribution {
   readonly distributionName?: string;
 }
+
 export interface DeleteDomain {
   readonly domainName: string;
 }
+
 export interface DeleteDomainEntry {
   readonly domainName: string;
   readonly domainEntry: DomainEntry;
 }
+
 export interface DeleteInstance {
   readonly instanceName: string;
   readonly forceDeleteAddOns?: boolean;
 }
+
 export interface DeleteInstanceSnapshot {
   readonly instanceSnapshotName: string;
 }
+
 export interface DeleteKeyPair {
   readonly keyPairName: string;
 }
+
 export interface DeleteKnownHostKeys {
   readonly instanceName: string;
 }
+
 export interface DeleteLoadBalancer {
   readonly loadBalancerName: string;
 }
+
 export interface DeleteLoadBalancerTlsCertificate {
   readonly loadBalancerName: string;
   readonly certificateName: string;
   readonly force?: boolean;
 }
+
 export interface DeleteRelationalDatabase {
   readonly relationalDatabaseName: string;
   readonly skipFinalSnapshot?: boolean;
   readonly finalRelationalDatabaseSnapshotName?: string;
 }
+
 export interface DeleteRelationalDatabaseSnapshot {
   readonly relationalDatabaseSnapshotName: string;
 }
+
 export interface DetachCertificateFromDistribution {
   readonly distributionName: string;
 }
+
 export interface DetachDisk {
   readonly diskName: string;
 }
+
 export interface DetachInstancesFromLoadBalancer {
   readonly loadBalancerName: string;
   readonly instanceNames: [];
 }
+
 export interface DetachStaticIp {
   readonly staticIpName: string;
 }
+
 export interface DisableAddOn {
   readonly addOnType: string;
   readonly resourceName: string;
 }
+
 export interface DownloadDefaultKeyPair {
 }
+
 export interface EnableAddOn {
   readonly resourceName: string;
   readonly addOnRequest: AddOnRequest;
 }
+
 export interface ExportSnapshot {
   readonly sourceSnapshotName: string;
 }
+
 export interface GetActiveNames {
   readonly pageToken?: string;
 }
+
 export interface GetAlarms {
   readonly alarmName?: string;
   readonly pageToken?: string;
   readonly monitoredResourceName?: string;
 }
+
 export interface GetAutoSnapshots {
   readonly resourceName: string;
 }
+
 export interface GetBlueprints {
   readonly includeInactive?: boolean;
   readonly pageToken?: string;
 }
+
 export interface GetBucketAccessKeys {
   readonly bucketName: string;
 }
+
 export interface GetBucketBundles {
   readonly includeInactive?: boolean;
 }
+
 export interface GetBucketMetricData {
   readonly bucketName: string;
   readonly metricName: string;
@@ -328,31 +394,39 @@ export interface GetBucketMetricData {
   readonly statistics: [];
   readonly unit: string;
 }
+
 export interface GetBuckets {
   readonly bucketName?: string;
   readonly pageToken?: string;
   readonly includeConnectedResources?: boolean;
 }
+
 export interface GetBundles {
   readonly includeInactive?: boolean;
   readonly pageToken?: string;
 }
+
 export interface GetCertificates {
   readonly certificateStatuses?: [];
   readonly includeCertificateDetails?: boolean;
   readonly certificateName?: string;
 }
+
 export interface GetCloudFormationStackRecords {
   readonly pageToken?: string;
 }
+
 export interface GetContactMethods {
   readonly protocols?: [];
 }
+
 export interface GetContainerAPIMetadata {
 }
+
 export interface GetContainerImages {
   readonly serviceName: string;
 }
+
 export interface GetContainerLog {
   readonly serviceName: string;
   readonly containerName: string;
@@ -361,9 +435,11 @@ export interface GetContainerLog {
   readonly filterPattern?: string;
   readonly pageToken?: string;
 }
+
 export interface GetContainerServiceDeployments {
   readonly serviceName: string;
 }
+
 export interface GetContainerServiceMetricData {
   readonly serviceName: string;
   readonly metricName: string;
@@ -372,28 +448,37 @@ export interface GetContainerServiceMetricData {
   readonly period: number;
   readonly statistics: [];
 }
+
 export interface GetContainerServicePowers {
 }
+
 export interface GetContainerServices {
   readonly serviceName?: string;
 }
+
 export interface GetDisk {
   readonly diskName: string;
 }
+
 export interface GetDiskSnapshot {
   readonly diskSnapshotName: string;
 }
+
 export interface GetDiskSnapshots {
   readonly pageToken?: string;
 }
+
 export interface GetDisks {
   readonly pageToken?: string;
 }
+
 export interface GetDistributionBundles {
 }
+
 export interface GetDistributionLatestCacheReset {
   readonly distributionName?: string;
 }
+
 export interface GetDistributionMetricData {
   readonly distributionName: string;
   readonly metricName: string;
@@ -403,26 +488,33 @@ export interface GetDistributionMetricData {
   readonly unit: string;
   readonly statistics: [];
 }
+
 export interface GetDistributions {
   readonly distributionName?: string;
   readonly pageToken?: string;
 }
+
 export interface GetDomain {
   readonly domainName: string;
 }
+
 export interface GetDomains {
   readonly pageToken?: string;
 }
+
 export interface GetExportSnapshotRecords {
   readonly pageToken?: string;
 }
+
 export interface GetInstance {
   readonly instanceName: string;
 }
+
 export interface GetInstanceAccessDetails {
   readonly instanceName: string;
   readonly protocol?: string;
 }
+
 export interface GetInstanceMetricData {
   readonly instanceName: string;
   readonly metricName: string;
@@ -432,30 +524,39 @@ export interface GetInstanceMetricData {
   readonly unit: string;
   readonly statistics: [];
 }
+
 export interface GetInstancePortStates {
   readonly instanceName: string;
 }
+
 export interface GetInstanceSnapshot {
   readonly instanceSnapshotName: string;
 }
+
 export interface GetInstanceSnapshots {
   readonly pageToken?: string;
 }
+
 export interface GetInstanceState {
   readonly instanceName: string;
 }
+
 export interface GetInstances {
   readonly pageToken?: string;
 }
+
 export interface GetKeyPair {
   readonly keyPairName: string;
 }
+
 export interface GetKeyPairs {
   readonly pageToken?: string;
 }
+
 export interface GetLoadBalancer {
   readonly loadBalancerName: string;
 }
+
 export interface GetLoadBalancerMetricData {
   readonly loadBalancerName: string;
   readonly metricName: string;
@@ -465,40 +566,51 @@ export interface GetLoadBalancerMetricData {
   readonly unit: string;
   readonly statistics: [];
 }
+
 export interface GetLoadBalancerTlsCertificates {
   readonly loadBalancerName: string;
 }
+
 export interface GetLoadBalancers {
   readonly pageToken?: string;
 }
+
 export interface GetOperation {
   readonly operationId: string;
 }
+
 export interface GetOperations {
   readonly pageToken?: string;
 }
+
 export interface GetOperationsForResource {
   readonly resourceName: string;
   readonly pageToken?: string;
 }
+
 export interface GetRegions {
   readonly includeAvailabilityZones?: boolean;
   readonly includeRelationalDatabaseAvailabilityZones?: boolean;
 }
+
 export interface GetRelationalDatabase {
   readonly relationalDatabaseName: string;
 }
+
 export interface GetRelationalDatabaseBlueprints {
   readonly pageToken?: string;
 }
+
 export interface GetRelationalDatabaseBundles {
   readonly pageToken?: string;
 }
+
 export interface GetRelationalDatabaseEvents {
   readonly relationalDatabaseName: string;
   readonly durationInMinutes?: number;
   readonly pageToken?: string;
 }
+
 export interface GetRelationalDatabaseLogEvents {
   readonly relationalDatabaseName: string;
   readonly logStreamName: string;
@@ -507,13 +619,16 @@ export interface GetRelationalDatabaseLogEvents {
   readonly startFromHead?: boolean;
   readonly pageToken?: string;
 }
+
 export interface GetRelationalDatabaseLogStreams {
   readonly relationalDatabaseName: string;
 }
+
 export interface GetRelationalDatabaseMasterUserPassword {
   readonly relationalDatabaseName: string;
   readonly passwordVersion?: string;
 }
+
 export interface GetRelationalDatabaseMetricData {
   readonly relationalDatabaseName: string;
   readonly metricName: string;
@@ -523,37 +638,48 @@ export interface GetRelationalDatabaseMetricData {
   readonly unit: string;
   readonly statistics: [];
 }
+
 export interface GetRelationalDatabaseParameters {
   readonly relationalDatabaseName: string;
   readonly pageToken?: string;
 }
+
 export interface GetRelationalDatabaseSnapshot {
   readonly relationalDatabaseSnapshotName: string;
 }
+
 export interface GetRelationalDatabaseSnapshots {
   readonly pageToken?: string;
 }
+
 export interface GetRelationalDatabases {
   readonly pageToken?: string;
 }
+
 export interface GetStaticIp {
   readonly staticIpName: string;
 }
+
 export interface GetStaticIps {
   readonly pageToken?: string;
 }
+
 export interface ImportKeyPair {
   readonly keyPairName: string;
   readonly publicKeyBase64: string;
 }
+
 export interface IsVpcPeered {
 }
+
 export interface OpenInstancePublicPorts {
   readonly portInfo: PortInfo;
   readonly instanceName: string;
 }
+
 export interface PeerVpc {
 }
+
 export interface PutAlarm {
   readonly alarmName: string;
   readonly metricName: string;
@@ -567,70 +693,88 @@ export interface PutAlarm {
   readonly notificationTriggers?: [];
   readonly notificationEnabled?: boolean;
 }
+
 export interface PutInstancePublicPorts {
   readonly portInfos: [];
   readonly instanceName: string;
 }
+
 export interface RebootInstance {
   readonly instanceName: string;
 }
+
 export interface RebootRelationalDatabase {
   readonly relationalDatabaseName: string;
 }
+
 export interface RegisterContainerImage {
   readonly serviceName: string;
   readonly label: string;
   readonly digest: string;
 }
+
 export interface ReleaseStaticIp {
   readonly staticIpName: string;
 }
+
 export interface ResetDistributionCache {
   readonly distributionName?: string;
 }
+
 export interface SendContactMethodVerification {
   readonly protocol: string;
 }
+
 export interface SetIpAddressType {
   readonly resourceType: string;
   readonly resourceName: string;
   readonly ipAddressType: string;
 }
+
 export interface SetResourceAccessForBucket {
   readonly resourceName: string;
   readonly bucketName: string;
   readonly access: string;
 }
+
 export interface StartInstance {
   readonly instanceName: string;
 }
+
 export interface StartRelationalDatabase {
   readonly relationalDatabaseName: string;
 }
+
 export interface StopInstance {
   readonly instanceName: string;
   readonly force?: boolean;
 }
+
 export interface StopRelationalDatabase {
   readonly relationalDatabaseName: string;
   readonly relationalDatabaseSnapshotName?: string;
 }
+
 export interface TagResource {
   readonly resourceName: string;
   readonly resourceArn?: string;
   readonly tags: [];
 }
+
 export interface TestAlarm {
   readonly alarmName: string;
   readonly state: string;
 }
+
 export interface UnpeerVpc {
 }
+
 export interface UntagResource {
   readonly resourceName: string;
   readonly resourceArn?: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateBucket {
   readonly bucketName: string;
   readonly accessRules?: AccessRules;
@@ -638,10 +782,12 @@ export interface UpdateBucket {
   readonly readonlyAccessAccounts?: [];
   readonly accessLogConfig?: BucketAccessLogConfig;
 }
+
 export interface UpdateBucketBundle {
   readonly bucketName: string;
   readonly bundleId: string;
 }
+
 export interface UpdateContainerService {
   readonly serviceName: string;
   readonly power?: string;
@@ -649,6 +795,7 @@ export interface UpdateContainerService {
   readonly isDisabled?: boolean;
   readonly publicDomainNames?: {[key: string]: any};
 }
+
 export interface UpdateDistribution {
   readonly distributionName: string;
   readonly origin?: InputOrigin;
@@ -657,19 +804,23 @@ export interface UpdateDistribution {
   readonly cacheBehaviors?: [];
   readonly isEnabled?: boolean;
 }
+
 export interface UpdateDistributionBundle {
   readonly distributionName?: string;
   readonly bundleId?: string;
 }
+
 export interface UpdateDomainEntry {
   readonly domainName: string;
   readonly domainEntry: DomainEntry;
 }
+
 export interface UpdateLoadBalancerAttribute {
   readonly loadBalancerName: string;
   readonly attributeName: string;
   readonly attributeValue: string;
 }
+
 export interface UpdateRelationalDatabase {
   readonly relationalDatabaseName: string;
   readonly masterUserPassword?: string;
@@ -682,1128 +833,1127 @@ export interface UpdateRelationalDatabase {
   readonly applyImmediately?: boolean;
   readonly caCertificateIdentifier?: string;
 }
+
 export interface UpdateRelationalDatabaseParameters {
   readonly relationalDatabaseName: string;
   readonly parameters: [];
 }
 
-
-
-interface AccessDeniedException {
-  readonly code: string;
-  readonly docs: string;
-  readonly message: string;
-  readonly tip: string;
+export interface AccessDeniedException {
+  readonly code?: string;
+  readonly docs?: string;
+  readonly message?: string;
+  readonly tip?: string;
 }
 
-interface AccessKey {
-  readonly accessKeyId: string;
-  readonly secretAccessKey: string;
-  readonly status: string;
-  readonly createdAt: Date;
-  readonly lastUsed: AccessKeyLastUsed;
+export interface AccessKey {
+  readonly accessKeyId?: string;
+  readonly secretAccessKey?: string;
+  readonly status?: string;
+  readonly createdAt?: Date;
+  readonly lastUsed?: AccessKeyLastUsed;
 }
 
-interface AccessKeyLastUsed {
-  readonly lastUsedDate: Date;
-  readonly region: string;
-  readonly serviceName: string;
+export interface AccessKeyLastUsed {
+  readonly lastUsedDate?: Date;
+  readonly region?: string;
+  readonly serviceName?: string;
 }
 
-interface AccessRules {
-  readonly getObject: string;
-  readonly allowPublicOverrides: boolean;
+export interface AccessRules {
+  readonly getObject?: string;
+  readonly allowPublicOverrides?: boolean;
 }
 
-interface AccountSetupInProgressException {
-  readonly code: string;
-  readonly docs: string;
-  readonly message: string;
-  readonly tip: string;
+export interface AccountSetupInProgressException {
+  readonly code?: string;
+  readonly docs?: string;
+  readonly message?: string;
+  readonly tip?: string;
 }
 
-interface AddOn {
-  readonly name: string;
-  readonly status: string;
-  readonly snapshotTimeOfDay: string;
-  readonly nextSnapshotTimeOfDay: string;
+export interface AddOn {
+  readonly name?: string;
+  readonly status?: string;
+  readonly snapshotTimeOfDay?: string;
+  readonly nextSnapshotTimeOfDay?: string;
 }
 
-interface AddOnRequest {
+export interface AddOnRequest {
   readonly addOnType: string;
-  readonly autoSnapshotAddOnRequest: AutoSnapshotAddOnRequest;
+  readonly autoSnapshotAddOnRequest?: AutoSnapshotAddOnRequest;
 }
 
-interface Alarm {
-  readonly name: string;
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly supportCode: string;
-  readonly monitoredResourceInfo: MonitoredResourceInfo;
-  readonly comparisonOperator: string;
-  readonly evaluationPeriods: number;
-  readonly period: number;
-  readonly threshold: unknown;
-  readonly datapointsToAlarm: number;
-  readonly treatMissingData: string;
-  readonly statistic: string;
-  readonly metricName: string;
-  readonly state: string;
-  readonly unit: string;
-  readonly contactProtocols: [];
-  readonly notificationTriggers: [];
-  readonly notificationEnabled: boolean;
+export interface Alarm {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly supportCode?: string;
+  readonly monitoredResourceInfo?: MonitoredResourceInfo;
+  readonly comparisonOperator?: string;
+  readonly evaluationPeriods?: number;
+  readonly period?: number;
+  readonly threshold?: unknown;
+  readonly datapointsToAlarm?: number;
+  readonly treatMissingData?: string;
+  readonly statistic?: string;
+  readonly metricName?: string;
+  readonly state?: string;
+  readonly unit?: string;
+  readonly contactProtocols?: [];
+  readonly notificationTriggers?: [];
+  readonly notificationEnabled?: boolean;
 }
 
-interface AllocateStaticIpRequest {
+export interface AllocateStaticIpRequest {
   readonly staticIpName: string;
 }
 
-interface AllocateStaticIpResult {
-  readonly operations: [];
+export interface AllocateStaticIpResult {
+  readonly operations?: [];
 }
 
-interface AttachCertificateToDistributionRequest {
+export interface AttachCertificateToDistributionRequest {
   readonly distributionName: string;
   readonly certificateName: string;
 }
 
-interface AttachCertificateToDistributionResult {
-  readonly operation: Operation;
+export interface AttachCertificateToDistributionResult {
+  readonly operation?: Operation;
 }
 
-interface AttachDiskRequest {
+export interface AttachDiskRequest {
   readonly diskName: string;
   readonly instanceName: string;
   readonly diskPath: string;
 }
 
-interface AttachDiskResult {
-  readonly operations: [];
+export interface AttachDiskResult {
+  readonly operations?: [];
 }
 
-interface AttachInstancesToLoadBalancerRequest {
+export interface AttachInstancesToLoadBalancerRequest {
   readonly loadBalancerName: string;
   readonly instanceNames: [];
 }
 
-interface AttachInstancesToLoadBalancerResult {
-  readonly operations: [];
+export interface AttachInstancesToLoadBalancerResult {
+  readonly operations?: [];
 }
 
-interface AttachLoadBalancerTlsCertificateRequest {
+export interface AttachLoadBalancerTlsCertificateRequest {
   readonly loadBalancerName: string;
   readonly certificateName: string;
 }
 
-interface AttachLoadBalancerTlsCertificateResult {
-  readonly operations: [];
+export interface AttachLoadBalancerTlsCertificateResult {
+  readonly operations?: [];
 }
 
-interface AttachStaticIpRequest {
+export interface AttachStaticIpRequest {
   readonly staticIpName: string;
   readonly instanceName: string;
 }
 
-interface AttachStaticIpResult {
-  readonly operations: [];
+export interface AttachStaticIpResult {
+  readonly operations?: [];
 }
 
-interface AttachedDisk {
-  readonly path: string;
-  readonly sizeInGb: number;
+export interface AttachedDisk {
+  readonly path?: string;
+  readonly sizeInGb?: number;
 }
 
-interface AutoSnapshotAddOnRequest {
-  readonly snapshotTimeOfDay: string;
+export interface AutoSnapshotAddOnRequest {
+  readonly snapshotTimeOfDay?: string;
 }
 
-interface AutoSnapshotDetails {
-  readonly date: string;
-  readonly createdAt: Date;
-  readonly status: string;
-  readonly fromAttachedDisks: [];
+export interface AutoSnapshotDetails {
+  readonly date?: string;
+  readonly createdAt?: Date;
+  readonly status?: string;
+  readonly fromAttachedDisks?: [];
 }
 
-interface AvailabilityZone {
-  readonly zoneName: string;
-  readonly state: string;
+export interface AvailabilityZone {
+  readonly zoneName?: string;
+  readonly state?: string;
 }
 
-interface Blueprint {
-  readonly blueprintId: string;
-  readonly name: string;
-  readonly group: string;
-  readonly type: string;
-  readonly description: string;
-  readonly isActive: boolean;
-  readonly minPower: number;
-  readonly version: string;
-  readonly versionCode: string;
-  readonly productUrl: string;
-  readonly licenseUrl: string;
-  readonly platform: string;
+export interface Blueprint {
+  readonly blueprintId?: string;
+  readonly name?: string;
+  readonly group?: string;
+  readonly type?: string;
+  readonly description?: string;
+  readonly isActive?: boolean;
+  readonly minPower?: number;
+  readonly version?: string;
+  readonly versionCode?: string;
+  readonly productUrl?: string;
+  readonly licenseUrl?: string;
+  readonly platform?: string;
 }
 
-interface Bucket {
-  readonly resourceType: string;
-  readonly accessRules: AccessRules;
-  readonly arn: string;
-  readonly bundleId: string;
-  readonly createdAt: Date;
-  readonly url: string;
-  readonly location: ResourceLocation;
-  readonly name: string;
-  readonly supportCode: string;
-  readonly tags: [];
-  readonly objectVersioning: string;
-  readonly ableToUpdateBundle: boolean;
-  readonly readonlyAccessAccounts: [];
-  readonly resourcesReceivingAccess: [];
-  readonly state: BucketState;
-  readonly accessLogConfig: BucketAccessLogConfig;
+export interface Bucket {
+  readonly resourceType?: string;
+  readonly accessRules?: AccessRules;
+  readonly arn?: string;
+  readonly bundleId?: string;
+  readonly createdAt?: Date;
+  readonly url?: string;
+  readonly location?: ResourceLocation;
+  readonly name?: string;
+  readonly supportCode?: string;
+  readonly tags?: [];
+  readonly objectVersioning?: string;
+  readonly ableToUpdateBundle?: boolean;
+  readonly readonlyAccessAccounts?: [];
+  readonly resourcesReceivingAccess?: [];
+  readonly state?: BucketState;
+  readonly accessLogConfig?: BucketAccessLogConfig;
 }
 
-interface BucketAccessLogConfig {
+export interface BucketAccessLogConfig {
   readonly enabled: boolean;
-  readonly destination: string;
-  readonly prefix: string;
+  readonly destination?: string;
+  readonly prefix?: string;
 }
 
-interface BucketBundle {
-  readonly bundleId: string;
-  readonly name: string;
-  readonly price: unknown;
-  readonly storagePerMonthInGb: number;
-  readonly transferPerMonthInGb: number;
-  readonly isActive: boolean;
+export interface BucketBundle {
+  readonly bundleId?: string;
+  readonly name?: string;
+  readonly price?: unknown;
+  readonly storagePerMonthInGb?: number;
+  readonly transferPerMonthInGb?: number;
+  readonly isActive?: boolean;
 }
 
-interface BucketState {
-  readonly code: string;
-  readonly message: string;
+export interface BucketState {
+  readonly code?: string;
+  readonly message?: string;
 }
 
-interface Bundle {
-  readonly price: unknown;
-  readonly cpuCount: number;
-  readonly diskSizeInGb: number;
-  readonly bundleId: string;
-  readonly instanceType: string;
-  readonly isActive: boolean;
-  readonly name: string;
-  readonly power: number;
-  readonly ramSizeInGb: unknown;
-  readonly transferPerMonthInGb: number;
-  readonly supportedPlatforms: [];
+export interface Bundle {
+  readonly price?: unknown;
+  readonly cpuCount?: number;
+  readonly diskSizeInGb?: number;
+  readonly bundleId?: string;
+  readonly instanceType?: string;
+  readonly isActive?: boolean;
+  readonly name?: string;
+  readonly power?: number;
+  readonly ramSizeInGb?: unknown;
+  readonly transferPerMonthInGb?: number;
+  readonly supportedPlatforms?: [];
 }
 
-interface CacheBehavior {
-  readonly behavior: string;
+export interface CacheBehavior {
+  readonly behavior?: string;
 }
 
-interface CacheBehaviorPerPath {
-  readonly path: string;
-  readonly behavior: string;
+export interface CacheBehaviorPerPath {
+  readonly path?: string;
+  readonly behavior?: string;
 }
 
-interface CacheSettings {
-  readonly defaultTTL: number;
-  readonly minimumTTL: number;
-  readonly maximumTTL: number;
-  readonly allowedHTTPMethods: string;
-  readonly cachedHTTPMethods: string;
-  readonly forwardedCookies: CookieObject;
-  readonly forwardedHeaders: HeaderObject;
-  readonly forwardedQueryStrings: QueryStringObject;
+export interface CacheSettings {
+  readonly defaultTTL?: number;
+  readonly minimumTTL?: number;
+  readonly maximumTTL?: number;
+  readonly allowedHTTPMethods?: string;
+  readonly cachedHTTPMethods?: string;
+  readonly forwardedCookies?: CookieObject;
+  readonly forwardedHeaders?: HeaderObject;
+  readonly forwardedQueryStrings?: QueryStringObject;
 }
 
-interface Certificate {
-  readonly arn: string;
-  readonly name: string;
-  readonly domainName: string;
-  readonly status: string;
-  readonly serialNumber: string;
-  readonly subjectAlternativeNames: [];
-  readonly domainValidationRecords: [];
-  readonly requestFailureReason: string;
-  readonly inUseResourceCount: number;
-  readonly keyAlgorithm: string;
-  readonly createdAt: Date;
-  readonly issuedAt: Date;
-  readonly issuerCA: string;
-  readonly notBefore: Date;
-  readonly notAfter: Date;
-  readonly eligibleToRenew: string;
-  readonly renewalSummary: RenewalSummary;
-  readonly revokedAt: Date;
-  readonly revocationReason: string;
-  readonly tags: [];
-  readonly supportCode: string;
+export interface Certificate {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly domainName?: string;
+  readonly status?: string;
+  readonly serialNumber?: string;
+  readonly subjectAlternativeNames?: [];
+  readonly domainValidationRecords?: [];
+  readonly requestFailureReason?: string;
+  readonly inUseResourceCount?: number;
+  readonly keyAlgorithm?: string;
+  readonly createdAt?: Date;
+  readonly issuedAt?: Date;
+  readonly issuerCA?: string;
+  readonly notBefore?: Date;
+  readonly notAfter?: Date;
+  readonly eligibleToRenew?: string;
+  readonly renewalSummary?: RenewalSummary;
+  readonly revokedAt?: Date;
+  readonly revocationReason?: string;
+  readonly tags?: [];
+  readonly supportCode?: string;
 }
 
-interface CertificateSummary {
-  readonly certificateArn: string;
-  readonly certificateName: string;
-  readonly domainName: string;
-  readonly certificateDetail: Certificate;
-  readonly tags: [];
+export interface CertificateSummary {
+  readonly certificateArn?: string;
+  readonly certificateName?: string;
+  readonly domainName?: string;
+  readonly certificateDetail?: Certificate;
+  readonly tags?: [];
 }
 
-interface CloseInstancePublicPortsRequest {
+export interface CloseInstancePublicPortsRequest {
   readonly portInfo: PortInfo;
   readonly instanceName: string;
 }
 
-interface CloseInstancePublicPortsResult {
-  readonly operation: Operation;
+export interface CloseInstancePublicPortsResult {
+  readonly operation?: Operation;
 }
 
-interface CloudFormationStackRecord {
-  readonly name: string;
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly state: string;
-  readonly sourceInfo: [];
-  readonly destinationInfo: DestinationInfo;
+export interface CloudFormationStackRecord {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly state?: string;
+  readonly sourceInfo?: [];
+  readonly destinationInfo?: DestinationInfo;
 }
 
-interface CloudFormationStackRecordSourceInfo {
-  readonly resourceType: string;
-  readonly name: string;
-  readonly arn: string;
+export interface CloudFormationStackRecordSourceInfo {
+  readonly resourceType?: string;
+  readonly name?: string;
+  readonly arn?: string;
 }
 
-interface ContactMethod {
-  readonly contactEndpoint: string;
-  readonly status: string;
-  readonly protocol: string;
-  readonly name: string;
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly supportCode: string;
+export interface ContactMethod {
+  readonly contactEndpoint?: string;
+  readonly status?: string;
+  readonly protocol?: string;
+  readonly name?: string;
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly supportCode?: string;
 }
 
-interface Container {
-  readonly image: string;
-  readonly command: [];
-  readonly environment: {[key: string]: any};
-  readonly ports: {[key: string]: any};
+export interface Container {
+  readonly image?: string;
+  readonly command?: [];
+  readonly environment?: {[key: string]: any};
+  readonly ports?: {[key: string]: any};
 }
 
-interface ContainerImage {
-  readonly image: string;
-  readonly digest: string;
-  readonly createdAt: Date;
+export interface ContainerImage {
+  readonly image?: string;
+  readonly digest?: string;
+  readonly createdAt?: Date;
 }
 
-interface ContainerService {
-  readonly containerServiceName: string;
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly tags: [];
-  readonly power: string;
-  readonly powerId: string;
-  readonly state: string;
-  readonly stateDetail: ContainerServiceStateDetail;
-  readonly scale: number;
-  readonly currentDeployment: ContainerServiceDeployment;
-  readonly nextDeployment: ContainerServiceDeployment;
-  readonly isDisabled: boolean;
-  readonly principalArn: string;
-  readonly privateDomainName: string;
-  readonly publicDomainNames: {[key: string]: any};
-  readonly url: string;
+export interface ContainerService {
+  readonly containerServiceName?: string;
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly tags?: [];
+  readonly power?: string;
+  readonly powerId?: string;
+  readonly state?: string;
+  readonly stateDetail?: ContainerServiceStateDetail;
+  readonly scale?: number;
+  readonly currentDeployment?: ContainerServiceDeployment;
+  readonly nextDeployment?: ContainerServiceDeployment;
+  readonly isDisabled?: boolean;
+  readonly principalArn?: string;
+  readonly privateDomainName?: string;
+  readonly publicDomainNames?: {[key: string]: any};
+  readonly url?: string;
 }
 
-interface ContainerServiceDeployment {
-  readonly version: number;
-  readonly state: string;
-  readonly containers: {[key: string]: any};
-  readonly publicEndpoint: ContainerServiceEndpoint;
-  readonly createdAt: Date;
+export interface ContainerServiceDeployment {
+  readonly version?: number;
+  readonly state?: string;
+  readonly containers?: {[key: string]: any};
+  readonly publicEndpoint?: ContainerServiceEndpoint;
+  readonly createdAt?: Date;
 }
 
-interface ContainerServiceDeploymentRequest {
-  readonly containers: {[key: string]: any};
-  readonly publicEndpoint: EndpointRequest;
+export interface ContainerServiceDeploymentRequest {
+  readonly containers?: {[key: string]: any};
+  readonly publicEndpoint?: EndpointRequest;
 }
 
-interface ContainerServiceEndpoint {
-  readonly containerName: string;
-  readonly containerPort: number;
-  readonly healthCheck: ContainerServiceHealthCheckConfig;
+export interface ContainerServiceEndpoint {
+  readonly containerName?: string;
+  readonly containerPort?: number;
+  readonly healthCheck?: ContainerServiceHealthCheckConfig;
 }
 
-interface ContainerServiceHealthCheckConfig {
-  readonly healthyThreshold: number;
-  readonly unhealthyThreshold: number;
-  readonly timeoutSeconds: number;
-  readonly intervalSeconds: number;
-  readonly path: string;
-  readonly successCodes: string;
+export interface ContainerServiceHealthCheckConfig {
+  readonly healthyThreshold?: number;
+  readonly unhealthyThreshold?: number;
+  readonly timeoutSeconds?: number;
+  readonly intervalSeconds?: number;
+  readonly path?: string;
+  readonly successCodes?: string;
 }
 
-interface ContainerServiceLogEvent {
-  readonly createdAt: Date;
-  readonly message: string;
+export interface ContainerServiceLogEvent {
+  readonly createdAt?: Date;
+  readonly message?: string;
 }
 
-interface ContainerServicePower {
-  readonly powerId: string;
-  readonly price: unknown;
-  readonly cpuCount: unknown;
-  readonly ramSizeInGb: unknown;
-  readonly name: string;
-  readonly isActive: boolean;
+export interface ContainerServicePower {
+  readonly powerId?: string;
+  readonly price?: unknown;
+  readonly cpuCount?: unknown;
+  readonly ramSizeInGb?: unknown;
+  readonly name?: string;
+  readonly isActive?: boolean;
 }
 
-interface ContainerServiceRegistryLogin {
-  readonly username: string;
-  readonly password: string;
-  readonly expiresAt: Date;
-  readonly registry: string;
+export interface ContainerServiceRegistryLogin {
+  readonly username?: string;
+  readonly password?: string;
+  readonly expiresAt?: Date;
+  readonly registry?: string;
 }
 
-interface ContainerServiceStateDetail {
-  readonly code: string;
-  readonly message: string;
+export interface ContainerServiceStateDetail {
+  readonly code?: string;
+  readonly message?: string;
 }
 
-interface ContainerServicesListResult {
-  readonly containerServices: [];
+export interface ContainerServicesListResult {
+  readonly containerServices?: [];
 }
 
-interface CookieObject {
-  readonly option: string;
-  readonly cookiesAllowList: [];
+export interface CookieObject {
+  readonly option?: string;
+  readonly cookiesAllowList?: [];
 }
 
-interface CopySnapshotRequest {
-  readonly sourceSnapshotName: string;
-  readonly sourceResourceName: string;
-  readonly restoreDate: string;
-  readonly useLatestRestorableAutoSnapshot: boolean;
+export interface CopySnapshotRequest {
+  readonly sourceSnapshotName?: string;
+  readonly sourceResourceName?: string;
+  readonly restoreDate?: string;
+  readonly useLatestRestorableAutoSnapshot?: boolean;
   readonly targetSnapshotName: string;
   readonly sourceRegion: string;
 }
 
-interface CopySnapshotResult {
-  readonly operations: [];
+export interface CopySnapshotResult {
+  readonly operations?: [];
 }
 
-interface CreateBucketAccessKeyRequest {
+export interface CreateBucketAccessKeyRequest {
   readonly bucketName: string;
 }
 
-interface CreateBucketAccessKeyResult {
-  readonly accessKey: AccessKey;
-  readonly operations: [];
+export interface CreateBucketAccessKeyResult {
+  readonly accessKey?: AccessKey;
+  readonly operations?: [];
 }
 
-interface CreateBucketRequest {
+export interface CreateBucketRequest {
   readonly bucketName: string;
   readonly bundleId: string;
-  readonly tags: [];
-  readonly enableObjectVersioning: boolean;
+  readonly tags?: [];
+  readonly enableObjectVersioning?: boolean;
 }
 
-interface CreateBucketResult {
-  readonly bucket: Bucket;
-  readonly operations: [];
+export interface CreateBucketResult {
+  readonly bucket?: Bucket;
+  readonly operations?: [];
 }
 
-interface CreateCertificateRequest {
+export interface CreateCertificateRequest {
   readonly certificateName: string;
   readonly domainName: string;
-  readonly subjectAlternativeNames: [];
-  readonly tags: [];
+  readonly subjectAlternativeNames?: [];
+  readonly tags?: [];
 }
 
-interface CreateCertificateResult {
-  readonly certificate: CertificateSummary;
-  readonly operations: [];
+export interface CreateCertificateResult {
+  readonly certificate?: CertificateSummary;
+  readonly operations?: [];
 }
 
-interface CreateCloudFormationStackRequest {
+export interface CreateCloudFormationStackRequest {
   readonly instances: [];
 }
 
-interface CreateCloudFormationStackResult {
-  readonly operations: [];
+export interface CreateCloudFormationStackResult {
+  readonly operations?: [];
 }
 
-interface CreateContactMethodRequest {
+export interface CreateContactMethodRequest {
   readonly protocol: string;
   readonly contactEndpoint: string;
 }
 
-interface CreateContactMethodResult {
-  readonly operations: [];
+export interface CreateContactMethodResult {
+  readonly operations?: [];
 }
 
-interface CreateContainerServiceDeploymentRequest {
+export interface CreateContainerServiceDeploymentRequest {
   readonly serviceName: string;
-  readonly containers: {[key: string]: any};
-  readonly publicEndpoint: EndpointRequest;
+  readonly containers?: {[key: string]: any};
+  readonly publicEndpoint?: EndpointRequest;
 }
 
-interface CreateContainerServiceDeploymentResult {
-  readonly containerService: ContainerService;
+export interface CreateContainerServiceDeploymentResult {
+  readonly containerService?: ContainerService;
 }
 
-interface CreateContainerServiceRegistryLoginRequest {
+export interface CreateContainerServiceRegistryLoginRequest {
 }
 
-interface CreateContainerServiceRegistryLoginResult {
-  readonly registryLogin: ContainerServiceRegistryLogin;
+export interface CreateContainerServiceRegistryLoginResult {
+  readonly registryLogin?: ContainerServiceRegistryLogin;
 }
 
-interface CreateContainerServiceRequest {
+export interface CreateContainerServiceRequest {
   readonly serviceName: string;
   readonly power: string;
   readonly scale: number;
-  readonly tags: [];
-  readonly publicDomainNames: {[key: string]: any};
-  readonly deployment: ContainerServiceDeploymentRequest;
+  readonly tags?: [];
+  readonly publicDomainNames?: {[key: string]: any};
+  readonly deployment?: ContainerServiceDeploymentRequest;
 }
 
-interface CreateContainerServiceResult {
-  readonly containerService: ContainerService;
+export interface CreateContainerServiceResult {
+  readonly containerService?: ContainerService;
 }
 
-interface CreateDiskFromSnapshotRequest {
+export interface CreateDiskFromSnapshotRequest {
   readonly diskName: string;
-  readonly diskSnapshotName: string;
+  readonly diskSnapshotName?: string;
   readonly availabilityZone: string;
   readonly sizeInGb: number;
-  readonly tags: [];
-  readonly addOns: [];
-  readonly sourceDiskName: string;
-  readonly restoreDate: string;
-  readonly useLatestRestorableAutoSnapshot: boolean;
+  readonly tags?: [];
+  readonly addOns?: [];
+  readonly sourceDiskName?: string;
+  readonly restoreDate?: string;
+  readonly useLatestRestorableAutoSnapshot?: boolean;
 }
 
-interface CreateDiskFromSnapshotResult {
-  readonly operations: [];
+export interface CreateDiskFromSnapshotResult {
+  readonly operations?: [];
 }
 
-interface CreateDiskRequest {
+export interface CreateDiskRequest {
   readonly diskName: string;
   readonly availabilityZone: string;
   readonly sizeInGb: number;
-  readonly tags: [];
-  readonly addOns: [];
+  readonly tags?: [];
+  readonly addOns?: [];
 }
 
-interface CreateDiskResult {
-  readonly operations: [];
+export interface CreateDiskResult {
+  readonly operations?: [];
 }
 
-interface CreateDiskSnapshotRequest {
-  readonly diskName: string;
+export interface CreateDiskSnapshotRequest {
+  readonly diskName?: string;
   readonly diskSnapshotName: string;
-  readonly instanceName: string;
-  readonly tags: [];
+  readonly instanceName?: string;
+  readonly tags?: [];
 }
 
-interface CreateDiskSnapshotResult {
-  readonly operations: [];
+export interface CreateDiskSnapshotResult {
+  readonly operations?: [];
 }
 
-interface CreateDistributionRequest {
+export interface CreateDistributionRequest {
   readonly distributionName: string;
   readonly origin: InputOrigin;
   readonly defaultCacheBehavior: CacheBehavior;
-  readonly cacheBehaviorSettings: CacheSettings;
-  readonly cacheBehaviors: [];
+  readonly cacheBehaviorSettings?: CacheSettings;
+  readonly cacheBehaviors?: [];
   readonly bundleId: string;
-  readonly ipAddressType: string;
-  readonly tags: [];
+  readonly ipAddressType?: string;
+  readonly tags?: [];
 }
 
-interface CreateDistributionResult {
-  readonly distribution: LightsailDistribution;
-  readonly operation: Operation;
+export interface CreateDistributionResult {
+  readonly distribution?: LightsailDistribution;
+  readonly operation?: Operation;
 }
 
-interface CreateDomainEntryRequest {
+export interface CreateDomainEntryRequest {
   readonly domainName: string;
   readonly domainEntry: DomainEntry;
 }
 
-interface CreateDomainEntryResult {
-  readonly operation: Operation;
+export interface CreateDomainEntryResult {
+  readonly operation?: Operation;
 }
 
-interface CreateDomainRequest {
+export interface CreateDomainRequest {
   readonly domainName: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreateDomainResult {
-  readonly operation: Operation;
+export interface CreateDomainResult {
+  readonly operation?: Operation;
 }
 
-interface CreateInstanceSnapshotRequest {
+export interface CreateInstanceSnapshotRequest {
   readonly instanceSnapshotName: string;
   readonly instanceName: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreateInstanceSnapshotResult {
-  readonly operations: [];
+export interface CreateInstanceSnapshotResult {
+  readonly operations?: [];
 }
 
-interface CreateInstancesFromSnapshotRequest {
+export interface CreateInstancesFromSnapshotRequest {
   readonly instanceNames: [];
-  readonly attachedDiskMapping: {[key: string]: any};
+  readonly attachedDiskMapping?: {[key: string]: any};
   readonly availabilityZone: string;
-  readonly instanceSnapshotName: string;
+  readonly instanceSnapshotName?: string;
   readonly bundleId: string;
-  readonly userData: string;
-  readonly keyPairName: string;
-  readonly tags: [];
-  readonly addOns: [];
-  readonly ipAddressType: string;
-  readonly sourceInstanceName: string;
-  readonly restoreDate: string;
-  readonly useLatestRestorableAutoSnapshot: boolean;
+  readonly userData?: string;
+  readonly keyPairName?: string;
+  readonly tags?: [];
+  readonly addOns?: [];
+  readonly ipAddressType?: string;
+  readonly sourceInstanceName?: string;
+  readonly restoreDate?: string;
+  readonly useLatestRestorableAutoSnapshot?: boolean;
 }
 
-interface CreateInstancesFromSnapshotResult {
-  readonly operations: [];
+export interface CreateInstancesFromSnapshotResult {
+  readonly operations?: [];
 }
 
-interface CreateInstancesRequest {
+export interface CreateInstancesRequest {
   readonly instanceNames: [];
   readonly availabilityZone: string;
-  readonly customImageName: string;
+  readonly customImageName?: string;
   readonly blueprintId: string;
   readonly bundleId: string;
-  readonly userData: string;
+  readonly userData?: string;
+  readonly keyPairName?: string;
+  readonly tags?: [];
+  readonly addOns?: [];
+  readonly ipAddressType?: string;
+}
+
+export interface CreateInstancesResult {
+  readonly operations?: [];
+}
+
+export interface CreateKeyPairRequest {
   readonly keyPairName: string;
-  readonly tags: [];
-  readonly addOns: [];
-  readonly ipAddressType: string;
+  readonly tags?: [];
 }
 
-interface CreateInstancesResult {
-  readonly operations: [];
+export interface CreateKeyPairResult {
+  readonly keyPair?: KeyPair;
+  readonly publicKeyBase64?: string;
+  readonly privateKeyBase64?: string;
+  readonly operation?: Operation;
 }
 
-interface CreateKeyPairRequest {
-  readonly keyPairName: string;
-  readonly tags: [];
-}
-
-interface CreateKeyPairResult {
-  readonly keyPair: KeyPair;
-  readonly publicKeyBase64: string;
-  readonly privateKeyBase64: string;
-  readonly operation: Operation;
-}
-
-interface CreateLoadBalancerRequest {
+export interface CreateLoadBalancerRequest {
   readonly loadBalancerName: string;
   readonly instancePort: number;
-  readonly healthCheckPath: string;
-  readonly certificateName: string;
-  readonly certificateDomainName: string;
-  readonly certificateAlternativeNames: [];
-  readonly tags: [];
-  readonly ipAddressType: string;
+  readonly healthCheckPath?: string;
+  readonly certificateName?: string;
+  readonly certificateDomainName?: string;
+  readonly certificateAlternativeNames?: [];
+  readonly tags?: [];
+  readonly ipAddressType?: string;
 }
 
-interface CreateLoadBalancerResult {
-  readonly operations: [];
+export interface CreateLoadBalancerResult {
+  readonly operations?: [];
 }
 
-interface CreateLoadBalancerTlsCertificateRequest {
+export interface CreateLoadBalancerTlsCertificateRequest {
   readonly loadBalancerName: string;
   readonly certificateName: string;
   readonly certificateDomainName: string;
-  readonly certificateAlternativeNames: [];
-  readonly tags: [];
+  readonly certificateAlternativeNames?: [];
+  readonly tags?: [];
 }
 
-interface CreateLoadBalancerTlsCertificateResult {
-  readonly operations: [];
+export interface CreateLoadBalancerTlsCertificateResult {
+  readonly operations?: [];
 }
 
-interface CreateRelationalDatabaseFromSnapshotRequest {
+export interface CreateRelationalDatabaseFromSnapshotRequest {
   readonly relationalDatabaseName: string;
-  readonly availabilityZone: string;
-  readonly publiclyAccessible: boolean;
-  readonly relationalDatabaseSnapshotName: string;
-  readonly relationalDatabaseBundleId: string;
-  readonly sourceRelationalDatabaseName: string;
-  readonly restoreTime: Date;
-  readonly useLatestRestorableTime: boolean;
-  readonly tags: [];
+  readonly availabilityZone?: string;
+  readonly publiclyAccessible?: boolean;
+  readonly relationalDatabaseSnapshotName?: string;
+  readonly relationalDatabaseBundleId?: string;
+  readonly sourceRelationalDatabaseName?: string;
+  readonly restoreTime?: Date;
+  readonly useLatestRestorableTime?: boolean;
+  readonly tags?: [];
 }
 
-interface CreateRelationalDatabaseFromSnapshotResult {
-  readonly operations: [];
+export interface CreateRelationalDatabaseFromSnapshotResult {
+  readonly operations?: [];
 }
 
-interface CreateRelationalDatabaseRequest {
+export interface CreateRelationalDatabaseRequest {
   readonly relationalDatabaseName: string;
-  readonly availabilityZone: string;
+  readonly availabilityZone?: string;
   readonly relationalDatabaseBlueprintId: string;
   readonly relationalDatabaseBundleId: string;
   readonly masterDatabaseName: string;
   readonly masterUsername: string;
-  readonly masterUserPassword: string;
-  readonly preferredBackupWindow: string;
-  readonly preferredMaintenanceWindow: string;
-  readonly publiclyAccessible: boolean;
-  readonly tags: [];
+  readonly masterUserPassword?: string;
+  readonly preferredBackupWindow?: string;
+  readonly preferredMaintenanceWindow?: string;
+  readonly publiclyAccessible?: boolean;
+  readonly tags?: [];
 }
 
-interface CreateRelationalDatabaseResult {
-  readonly operations: [];
+export interface CreateRelationalDatabaseResult {
+  readonly operations?: [];
 }
 
-interface CreateRelationalDatabaseSnapshotRequest {
+export interface CreateRelationalDatabaseSnapshotRequest {
   readonly relationalDatabaseName: string;
   readonly relationalDatabaseSnapshotName: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreateRelationalDatabaseSnapshotResult {
-  readonly operations: [];
+export interface CreateRelationalDatabaseSnapshotResult {
+  readonly operations?: [];
 }
 
-interface DeleteAlarmRequest {
+export interface DeleteAlarmRequest {
   readonly alarmName: string;
 }
 
-interface DeleteAlarmResult {
-  readonly operations: [];
+export interface DeleteAlarmResult {
+  readonly operations?: [];
 }
 
-interface DeleteAutoSnapshotRequest {
+export interface DeleteAutoSnapshotRequest {
   readonly resourceName: string;
   readonly date: string;
 }
 
-interface DeleteAutoSnapshotResult {
-  readonly operations: [];
+export interface DeleteAutoSnapshotResult {
+  readonly operations?: [];
 }
 
-interface DeleteBucketAccessKeyRequest {
+export interface DeleteBucketAccessKeyRequest {
   readonly bucketName: string;
   readonly accessKeyId: string;
 }
 
-interface DeleteBucketAccessKeyResult {
-  readonly operations: [];
+export interface DeleteBucketAccessKeyResult {
+  readonly operations?: [];
 }
 
-interface DeleteBucketRequest {
+export interface DeleteBucketRequest {
   readonly bucketName: string;
-  readonly forceDelete: boolean;
+  readonly forceDelete?: boolean;
 }
 
-interface DeleteBucketResult {
-  readonly operations: [];
+export interface DeleteBucketResult {
+  readonly operations?: [];
 }
 
-interface DeleteCertificateRequest {
+export interface DeleteCertificateRequest {
   readonly certificateName: string;
 }
 
-interface DeleteCertificateResult {
-  readonly operations: [];
+export interface DeleteCertificateResult {
+  readonly operations?: [];
 }
 
-interface DeleteContactMethodRequest {
+export interface DeleteContactMethodRequest {
   readonly protocol: string;
 }
 
-interface DeleteContactMethodResult {
-  readonly operations: [];
+export interface DeleteContactMethodResult {
+  readonly operations?: [];
 }
 
-interface DeleteContainerImageRequest {
+export interface DeleteContainerImageRequest {
   readonly serviceName: string;
   readonly image: string;
 }
 
-interface DeleteContainerImageResult {
+export interface DeleteContainerImageResult {
 }
 
-interface DeleteContainerServiceRequest {
+export interface DeleteContainerServiceRequest {
   readonly serviceName: string;
 }
 
-interface DeleteContainerServiceResult {
+export interface DeleteContainerServiceResult {
 }
 
-interface DeleteDiskRequest {
+export interface DeleteDiskRequest {
   readonly diskName: string;
-  readonly forceDeleteAddOns: boolean;
+  readonly forceDeleteAddOns?: boolean;
 }
 
-interface DeleteDiskResult {
-  readonly operations: [];
+export interface DeleteDiskResult {
+  readonly operations?: [];
 }
 
-interface DeleteDiskSnapshotRequest {
+export interface DeleteDiskSnapshotRequest {
   readonly diskSnapshotName: string;
 }
 
-interface DeleteDiskSnapshotResult {
-  readonly operations: [];
+export interface DeleteDiskSnapshotResult {
+  readonly operations?: [];
 }
 
-interface DeleteDistributionRequest {
-  readonly distributionName: string;
+export interface DeleteDistributionRequest {
+  readonly distributionName?: string;
 }
 
-interface DeleteDistributionResult {
-  readonly operation: Operation;
+export interface DeleteDistributionResult {
+  readonly operation?: Operation;
 }
 
-interface DeleteDomainEntryRequest {
+export interface DeleteDomainEntryRequest {
   readonly domainName: string;
   readonly domainEntry: DomainEntry;
 }
 
-interface DeleteDomainEntryResult {
-  readonly operation: Operation;
+export interface DeleteDomainEntryResult {
+  readonly operation?: Operation;
 }
 
-interface DeleteDomainRequest {
+export interface DeleteDomainRequest {
   readonly domainName: string;
 }
 
-interface DeleteDomainResult {
-  readonly operation: Operation;
+export interface DeleteDomainResult {
+  readonly operation?: Operation;
 }
 
-interface DeleteInstanceRequest {
+export interface DeleteInstanceRequest {
   readonly instanceName: string;
-  readonly forceDeleteAddOns: boolean;
+  readonly forceDeleteAddOns?: boolean;
 }
 
-interface DeleteInstanceResult {
-  readonly operations: [];
+export interface DeleteInstanceResult {
+  readonly operations?: [];
 }
 
-interface DeleteInstanceSnapshotRequest {
+export interface DeleteInstanceSnapshotRequest {
   readonly instanceSnapshotName: string;
 }
 
-interface DeleteInstanceSnapshotResult {
-  readonly operations: [];
+export interface DeleteInstanceSnapshotResult {
+  readonly operations?: [];
 }
 
-interface DeleteKeyPairRequest {
+export interface DeleteKeyPairRequest {
   readonly keyPairName: string;
 }
 
-interface DeleteKeyPairResult {
-  readonly operation: Operation;
+export interface DeleteKeyPairResult {
+  readonly operation?: Operation;
 }
 
-interface DeleteKnownHostKeysRequest {
+export interface DeleteKnownHostKeysRequest {
   readonly instanceName: string;
 }
 
-interface DeleteKnownHostKeysResult {
-  readonly operations: [];
+export interface DeleteKnownHostKeysResult {
+  readonly operations?: [];
 }
 
-interface DeleteLoadBalancerRequest {
+export interface DeleteLoadBalancerRequest {
   readonly loadBalancerName: string;
 }
 
-interface DeleteLoadBalancerResult {
-  readonly operations: [];
+export interface DeleteLoadBalancerResult {
+  readonly operations?: [];
 }
 
-interface DeleteLoadBalancerTlsCertificateRequest {
+export interface DeleteLoadBalancerTlsCertificateRequest {
   readonly loadBalancerName: string;
   readonly certificateName: string;
-  readonly force: boolean;
+  readonly force?: boolean;
 }
 
-interface DeleteLoadBalancerTlsCertificateResult {
-  readonly operations: [];
+export interface DeleteLoadBalancerTlsCertificateResult {
+  readonly operations?: [];
 }
 
-interface DeleteRelationalDatabaseRequest {
+export interface DeleteRelationalDatabaseRequest {
   readonly relationalDatabaseName: string;
-  readonly skipFinalSnapshot: boolean;
-  readonly finalRelationalDatabaseSnapshotName: string;
+  readonly skipFinalSnapshot?: boolean;
+  readonly finalRelationalDatabaseSnapshotName?: string;
 }
 
-interface DeleteRelationalDatabaseResult {
-  readonly operations: [];
+export interface DeleteRelationalDatabaseResult {
+  readonly operations?: [];
 }
 
-interface DeleteRelationalDatabaseSnapshotRequest {
+export interface DeleteRelationalDatabaseSnapshotRequest {
   readonly relationalDatabaseSnapshotName: string;
 }
 
-interface DeleteRelationalDatabaseSnapshotResult {
-  readonly operations: [];
+export interface DeleteRelationalDatabaseSnapshotResult {
+  readonly operations?: [];
 }
 
-interface DestinationInfo {
-  readonly id: string;
-  readonly service: string;
+export interface DestinationInfo {
+  readonly id?: string;
+  readonly service?: string;
 }
 
-interface DetachCertificateFromDistributionRequest {
+export interface DetachCertificateFromDistributionRequest {
   readonly distributionName: string;
 }
 
-interface DetachCertificateFromDistributionResult {
-  readonly operation: Operation;
+export interface DetachCertificateFromDistributionResult {
+  readonly operation?: Operation;
 }
 
-interface DetachDiskRequest {
+export interface DetachDiskRequest {
   readonly diskName: string;
 }
 
-interface DetachDiskResult {
-  readonly operations: [];
+export interface DetachDiskResult {
+  readonly operations?: [];
 }
 
-interface DetachInstancesFromLoadBalancerRequest {
+export interface DetachInstancesFromLoadBalancerRequest {
   readonly loadBalancerName: string;
   readonly instanceNames: [];
 }
 
-interface DetachInstancesFromLoadBalancerResult {
-  readonly operations: [];
+export interface DetachInstancesFromLoadBalancerResult {
+  readonly operations?: [];
 }
 
-interface DetachStaticIpRequest {
+export interface DetachStaticIpRequest {
   readonly staticIpName: string;
 }
 
-interface DetachStaticIpResult {
-  readonly operations: [];
+export interface DetachStaticIpResult {
+  readonly operations?: [];
 }
 
-interface DisableAddOnRequest {
+export interface DisableAddOnRequest {
   readonly addOnType: string;
   readonly resourceName: string;
 }
 
-interface DisableAddOnResult {
-  readonly operations: [];
+export interface DisableAddOnResult {
+  readonly operations?: [];
 }
 
-interface Disk {
-  readonly name: string;
-  readonly arn: string;
-  readonly supportCode: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly tags: [];
-  readonly addOns: [];
-  readonly sizeInGb: number;
-  readonly isSystemDisk: boolean;
-  readonly iops: number;
-  readonly path: string;
-  readonly state: string;
-  readonly attachedTo: string;
-  readonly isAttached: boolean;
-  readonly attachmentState: string;
-  readonly gbInUse: number;
+export interface Disk {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly supportCode?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly tags?: [];
+  readonly addOns?: [];
+  readonly sizeInGb?: number;
+  readonly isSystemDisk?: boolean;
+  readonly iops?: number;
+  readonly path?: string;
+  readonly state?: string;
+  readonly attachedTo?: string;
+  readonly isAttached?: boolean;
+  readonly attachmentState?: string;
+  readonly gbInUse?: number;
 }
 
-interface DiskInfo {
-  readonly name: string;
-  readonly path: string;
-  readonly sizeInGb: number;
-  readonly isSystemDisk: boolean;
+export interface DiskInfo {
+  readonly name?: string;
+  readonly path?: string;
+  readonly sizeInGb?: number;
+  readonly isSystemDisk?: boolean;
 }
 
-interface DiskMap {
-  readonly originalDiskPath: string;
-  readonly newDiskName: string;
+export interface DiskMap {
+  readonly originalDiskPath?: string;
+  readonly newDiskName?: string;
 }
 
-interface DiskSnapshot {
-  readonly name: string;
-  readonly arn: string;
-  readonly supportCode: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly tags: [];
-  readonly sizeInGb: number;
-  readonly state: string;
-  readonly progress: string;
-  readonly fromDiskName: string;
-  readonly fromDiskArn: string;
-  readonly fromInstanceName: string;
-  readonly fromInstanceArn: string;
-  readonly isFromAutoSnapshot: boolean;
+export interface DiskSnapshot {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly supportCode?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly tags?: [];
+  readonly sizeInGb?: number;
+  readonly state?: string;
+  readonly progress?: string;
+  readonly fromDiskName?: string;
+  readonly fromDiskArn?: string;
+  readonly fromInstanceName?: string;
+  readonly fromInstanceArn?: string;
+  readonly isFromAutoSnapshot?: boolean;
 }
 
-interface DiskSnapshotInfo {
-  readonly sizeInGb: number;
+export interface DiskSnapshotInfo {
+  readonly sizeInGb?: number;
 }
 
-interface DistributionBundle {
-  readonly bundleId: string;
-  readonly name: string;
-  readonly price: unknown;
-  readonly transferPerMonthInGb: number;
-  readonly isActive: boolean;
+export interface DistributionBundle {
+  readonly bundleId?: string;
+  readonly name?: string;
+  readonly price?: unknown;
+  readonly transferPerMonthInGb?: number;
+  readonly isActive?: boolean;
 }
 
-interface Domain {
-  readonly name: string;
-  readonly arn: string;
-  readonly supportCode: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly tags: [];
-  readonly domainEntries: [];
+export interface Domain {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly supportCode?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly tags?: [];
+  readonly domainEntries?: [];
 }
 
-interface DomainEntry {
-  readonly id: string;
-  readonly name: string;
-  readonly target: string;
-  readonly isAlias: boolean;
-  readonly type: string;
-  readonly options: {[key: string]: any};
+export interface DomainEntry {
+  readonly id?: string;
+  readonly name?: string;
+  readonly target?: string;
+  readonly isAlias?: boolean;
+  readonly type?: string;
+  readonly options?: {[key: string]: any};
 }
 
-interface DomainValidationRecord {
-  readonly domainName: string;
-  readonly resourceRecord: ResourceRecord;
+export interface DomainValidationRecord {
+  readonly domainName?: string;
+  readonly resourceRecord?: ResourceRecord;
 }
 
-interface DownloadDefaultKeyPairRequest {
+export interface DownloadDefaultKeyPairRequest {
 }
 
-interface DownloadDefaultKeyPairResult {
-  readonly publicKeyBase64: string;
-  readonly privateKeyBase64: string;
+export interface DownloadDefaultKeyPairResult {
+  readonly publicKeyBase64?: string;
+  readonly privateKeyBase64?: string;
 }
 
-interface EnableAddOnRequest {
+export interface EnableAddOnRequest {
   readonly resourceName: string;
   readonly addOnRequest: AddOnRequest;
 }
 
-interface EnableAddOnResult {
-  readonly operations: [];
+export interface EnableAddOnResult {
+  readonly operations?: [];
 }
 
-interface EndpointRequest {
+export interface EndpointRequest {
   readonly containerName: string;
   readonly containerPort: number;
-  readonly healthCheck: ContainerServiceHealthCheckConfig;
+  readonly healthCheck?: ContainerServiceHealthCheckConfig;
 }
 
-interface ExportSnapshotRecord {
-  readonly name: string;
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly state: string;
-  readonly sourceInfo: ExportSnapshotRecordSourceInfo;
-  readonly destinationInfo: DestinationInfo;
+export interface ExportSnapshotRecord {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly state?: string;
+  readonly sourceInfo?: ExportSnapshotRecordSourceInfo;
+  readonly destinationInfo?: DestinationInfo;
 }
 
-interface ExportSnapshotRecordSourceInfo {
-  readonly resourceType: string;
-  readonly createdAt: Date;
-  readonly name: string;
-  readonly arn: string;
-  readonly fromResourceName: string;
-  readonly fromResourceArn: string;
-  readonly instanceSnapshotInfo: InstanceSnapshotInfo;
-  readonly diskSnapshotInfo: DiskSnapshotInfo;
+export interface ExportSnapshotRecordSourceInfo {
+  readonly resourceType?: string;
+  readonly createdAt?: Date;
+  readonly name?: string;
+  readonly arn?: string;
+  readonly fromResourceName?: string;
+  readonly fromResourceArn?: string;
+  readonly instanceSnapshotInfo?: InstanceSnapshotInfo;
+  readonly diskSnapshotInfo?: DiskSnapshotInfo;
 }
 
-interface ExportSnapshotRequest {
+export interface ExportSnapshotRequest {
   readonly sourceSnapshotName: string;
 }
 
-interface ExportSnapshotResult {
-  readonly operations: [];
+export interface ExportSnapshotResult {
+  readonly operations?: [];
 }
 
-interface GetActiveNamesRequest {
-  readonly pageToken: string;
+export interface GetActiveNamesRequest {
+  readonly pageToken?: string;
 }
 
-interface GetActiveNamesResult {
-  readonly activeNames: [];
-  readonly nextPageToken: string;
+export interface GetActiveNamesResult {
+  readonly activeNames?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetAlarmsRequest {
-  readonly alarmName: string;
-  readonly pageToken: string;
-  readonly monitoredResourceName: string;
+export interface GetAlarmsRequest {
+  readonly alarmName?: string;
+  readonly pageToken?: string;
+  readonly monitoredResourceName?: string;
 }
 
-interface GetAlarmsResult {
-  readonly alarms: [];
-  readonly nextPageToken: string;
+export interface GetAlarmsResult {
+  readonly alarms?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetAutoSnapshotsRequest {
+export interface GetAutoSnapshotsRequest {
   readonly resourceName: string;
 }
 
-interface GetAutoSnapshotsResult {
-  readonly resourceName: string;
-  readonly resourceType: string;
-  readonly autoSnapshots: [];
+export interface GetAutoSnapshotsResult {
+  readonly resourceName?: string;
+  readonly resourceType?: string;
+  readonly autoSnapshots?: [];
 }
 
-interface GetBlueprintsRequest {
-  readonly includeInactive: boolean;
-  readonly pageToken: string;
+export interface GetBlueprintsRequest {
+  readonly includeInactive?: boolean;
+  readonly pageToken?: string;
 }
 
-interface GetBlueprintsResult {
-  readonly blueprints: [];
-  readonly nextPageToken: string;
+export interface GetBlueprintsResult {
+  readonly blueprints?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetBucketAccessKeysRequest {
+export interface GetBucketAccessKeysRequest {
   readonly bucketName: string;
 }
 
-interface GetBucketAccessKeysResult {
-  readonly accessKeys: [];
+export interface GetBucketAccessKeysResult {
+  readonly accessKeys?: [];
 }
 
-interface GetBucketBundlesRequest {
-  readonly includeInactive: boolean;
+export interface GetBucketBundlesRequest {
+  readonly includeInactive?: boolean;
 }
 
-interface GetBucketBundlesResult {
-  readonly bundles: [];
+export interface GetBucketBundlesResult {
+  readonly bundles?: [];
 }
 
-interface GetBucketMetricDataRequest {
+export interface GetBucketMetricDataRequest {
   readonly bucketName: string;
   readonly metricName: string;
   readonly startTime: Date;
@@ -1813,97 +1963,97 @@ interface GetBucketMetricDataRequest {
   readonly unit: string;
 }
 
-interface GetBucketMetricDataResult {
-  readonly metricName: string;
-  readonly metricData: [];
+export interface GetBucketMetricDataResult {
+  readonly metricName?: string;
+  readonly metricData?: [];
 }
 
-interface GetBucketsRequest {
-  readonly bucketName: string;
-  readonly pageToken: string;
-  readonly includeConnectedResources: boolean;
+export interface GetBucketsRequest {
+  readonly bucketName?: string;
+  readonly pageToken?: string;
+  readonly includeConnectedResources?: boolean;
 }
 
-interface GetBucketsResult {
-  readonly buckets: [];
-  readonly nextPageToken: string;
+export interface GetBucketsResult {
+  readonly buckets?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetBundlesRequest {
-  readonly includeInactive: boolean;
-  readonly pageToken: string;
+export interface GetBundlesRequest {
+  readonly includeInactive?: boolean;
+  readonly pageToken?: string;
 }
 
-interface GetBundlesResult {
-  readonly bundles: [];
-  readonly nextPageToken: string;
+export interface GetBundlesResult {
+  readonly bundles?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetCertificatesRequest {
-  readonly certificateStatuses: [];
-  readonly includeCertificateDetails: boolean;
-  readonly certificateName: string;
+export interface GetCertificatesRequest {
+  readonly certificateStatuses?: [];
+  readonly includeCertificateDetails?: boolean;
+  readonly certificateName?: string;
 }
 
-interface GetCertificatesResult {
-  readonly certificates: [];
+export interface GetCertificatesResult {
+  readonly certificates?: [];
 }
 
-interface GetCloudFormationStackRecordsRequest {
-  readonly pageToken: string;
+export interface GetCloudFormationStackRecordsRequest {
+  readonly pageToken?: string;
 }
 
-interface GetCloudFormationStackRecordsResult {
-  readonly cloudFormationStackRecords: [];
-  readonly nextPageToken: string;
+export interface GetCloudFormationStackRecordsResult {
+  readonly cloudFormationStackRecords?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetContactMethodsRequest {
-  readonly protocols: [];
+export interface GetContactMethodsRequest {
+  readonly protocols?: [];
 }
 
-interface GetContactMethodsResult {
-  readonly contactMethods: [];
+export interface GetContactMethodsResult {
+  readonly contactMethods?: [];
 }
 
-interface GetContainerAPIMetadataRequest {
+export interface GetContainerAPIMetadataRequest {
 }
 
-interface GetContainerAPIMetadataResult {
-  readonly metadata: [];
+export interface GetContainerAPIMetadataResult {
+  readonly metadata?: [];
 }
 
-interface GetContainerImagesRequest {
+export interface GetContainerImagesRequest {
   readonly serviceName: string;
 }
 
-interface GetContainerImagesResult {
-  readonly containerImages: [];
+export interface GetContainerImagesResult {
+  readonly containerImages?: [];
 }
 
-interface GetContainerLogRequest {
+export interface GetContainerLogRequest {
   readonly serviceName: string;
   readonly containerName: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly filterPattern: string;
-  readonly pageToken: string;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly filterPattern?: string;
+  readonly pageToken?: string;
 }
 
-interface GetContainerLogResult {
-  readonly logEvents: [];
-  readonly nextPageToken: string;
+export interface GetContainerLogResult {
+  readonly logEvents?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetContainerServiceDeploymentsRequest {
+export interface GetContainerServiceDeploymentsRequest {
   readonly serviceName: string;
 }
 
-interface GetContainerServiceDeploymentsResult {
-  readonly deployments: [];
+export interface GetContainerServiceDeploymentsResult {
+  readonly deployments?: [];
 }
 
-interface GetContainerServiceMetricDataRequest {
+export interface GetContainerServiceMetricDataRequest {
   readonly serviceName: string;
   readonly metricName: string;
   readonly startTime: Date;
@@ -1912,73 +2062,73 @@ interface GetContainerServiceMetricDataRequest {
   readonly statistics: [];
 }
 
-interface GetContainerServiceMetricDataResult {
-  readonly metricName: string;
-  readonly metricData: [];
+export interface GetContainerServiceMetricDataResult {
+  readonly metricName?: string;
+  readonly metricData?: [];
 }
 
-interface GetContainerServicePowersRequest {
+export interface GetContainerServicePowersRequest {
 }
 
-interface GetContainerServicePowersResult {
-  readonly powers: [];
+export interface GetContainerServicePowersResult {
+  readonly powers?: [];
 }
 
-interface GetContainerServicesRequest {
-  readonly serviceName: string;
+export interface GetContainerServicesRequest {
+  readonly serviceName?: string;
 }
 
-interface GetDiskRequest {
+export interface GetDiskRequest {
   readonly diskName: string;
 }
 
-interface GetDiskResult {
-  readonly disk: Disk;
+export interface GetDiskResult {
+  readonly disk?: Disk;
 }
 
-interface GetDiskSnapshotRequest {
+export interface GetDiskSnapshotRequest {
   readonly diskSnapshotName: string;
 }
 
-interface GetDiskSnapshotResult {
-  readonly diskSnapshot: DiskSnapshot;
+export interface GetDiskSnapshotResult {
+  readonly diskSnapshot?: DiskSnapshot;
 }
 
-interface GetDiskSnapshotsRequest {
-  readonly pageToken: string;
+export interface GetDiskSnapshotsRequest {
+  readonly pageToken?: string;
 }
 
-interface GetDiskSnapshotsResult {
-  readonly diskSnapshots: [];
-  readonly nextPageToken: string;
+export interface GetDiskSnapshotsResult {
+  readonly diskSnapshots?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetDisksRequest {
-  readonly pageToken: string;
+export interface GetDisksRequest {
+  readonly pageToken?: string;
 }
 
-interface GetDisksResult {
-  readonly disks: [];
-  readonly nextPageToken: string;
+export interface GetDisksResult {
+  readonly disks?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetDistributionBundlesRequest {
+export interface GetDistributionBundlesRequest {
 }
 
-interface GetDistributionBundlesResult {
-  readonly bundles: [];
+export interface GetDistributionBundlesResult {
+  readonly bundles?: [];
 }
 
-interface GetDistributionLatestCacheResetRequest {
-  readonly distributionName: string;
+export interface GetDistributionLatestCacheResetRequest {
+  readonly distributionName?: string;
 }
 
-interface GetDistributionLatestCacheResetResult {
-  readonly status: string;
-  readonly createTime: Date;
+export interface GetDistributionLatestCacheResetResult {
+  readonly status?: string;
+  readonly createTime?: Date;
 }
 
-interface GetDistributionMetricDataRequest {
+export interface GetDistributionMetricDataRequest {
   readonly distributionName: string;
   readonly metricName: string;
   readonly startTime: Date;
@@ -1988,57 +2138,57 @@ interface GetDistributionMetricDataRequest {
   readonly statistics: [];
 }
 
-interface GetDistributionMetricDataResult {
-  readonly metricName: string;
-  readonly metricData: [];
+export interface GetDistributionMetricDataResult {
+  readonly metricName?: string;
+  readonly metricData?: [];
 }
 
-interface GetDistributionsRequest {
-  readonly distributionName: string;
-  readonly pageToken: string;
+export interface GetDistributionsRequest {
+  readonly distributionName?: string;
+  readonly pageToken?: string;
 }
 
-interface GetDistributionsResult {
-  readonly distributions: [];
-  readonly nextPageToken: string;
+export interface GetDistributionsResult {
+  readonly distributions?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetDomainRequest {
+export interface GetDomainRequest {
   readonly domainName: string;
 }
 
-interface GetDomainResult {
-  readonly domain: Domain;
+export interface GetDomainResult {
+  readonly domain?: Domain;
 }
 
-interface GetDomainsRequest {
-  readonly pageToken: string;
+export interface GetDomainsRequest {
+  readonly pageToken?: string;
 }
 
-interface GetDomainsResult {
-  readonly domains: [];
-  readonly nextPageToken: string;
+export interface GetDomainsResult {
+  readonly domains?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetExportSnapshotRecordsRequest {
-  readonly pageToken: string;
+export interface GetExportSnapshotRecordsRequest {
+  readonly pageToken?: string;
 }
 
-interface GetExportSnapshotRecordsResult {
-  readonly exportSnapshotRecords: [];
-  readonly nextPageToken: string;
+export interface GetExportSnapshotRecordsResult {
+  readonly exportSnapshotRecords?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetInstanceAccessDetailsRequest {
+export interface GetInstanceAccessDetailsRequest {
   readonly instanceName: string;
-  readonly protocol: string;
+  readonly protocol?: string;
 }
 
-interface GetInstanceAccessDetailsResult {
-  readonly accessDetails: InstanceAccessDetails;
+export interface GetInstanceAccessDetailsResult {
+  readonly accessDetails?: InstanceAccessDetails;
 }
 
-interface GetInstanceMetricDataRequest {
+export interface GetInstanceMetricDataRequest {
   readonly instanceName: string;
   readonly metricName: string;
   readonly period: number;
@@ -2048,79 +2198,79 @@ interface GetInstanceMetricDataRequest {
   readonly statistics: [];
 }
 
-interface GetInstanceMetricDataResult {
-  readonly metricName: string;
-  readonly metricData: [];
+export interface GetInstanceMetricDataResult {
+  readonly metricName?: string;
+  readonly metricData?: [];
 }
 
-interface GetInstancePortStatesRequest {
+export interface GetInstancePortStatesRequest {
   readonly instanceName: string;
 }
 
-interface GetInstancePortStatesResult {
-  readonly portStates: [];
+export interface GetInstancePortStatesResult {
+  readonly portStates?: [];
 }
 
-interface GetInstanceRequest {
+export interface GetInstanceRequest {
   readonly instanceName: string;
 }
 
-interface GetInstanceResult {
-  readonly instance: Instance;
+export interface GetInstanceResult {
+  readonly instance?: Instance;
 }
 
-interface GetInstanceSnapshotRequest {
+export interface GetInstanceSnapshotRequest {
   readonly instanceSnapshotName: string;
 }
 
-interface GetInstanceSnapshotResult {
-  readonly instanceSnapshot: InstanceSnapshot;
+export interface GetInstanceSnapshotResult {
+  readonly instanceSnapshot?: InstanceSnapshot;
 }
 
-interface GetInstanceSnapshotsRequest {
-  readonly pageToken: string;
+export interface GetInstanceSnapshotsRequest {
+  readonly pageToken?: string;
 }
 
-interface GetInstanceSnapshotsResult {
-  readonly instanceSnapshots: [];
-  readonly nextPageToken: string;
+export interface GetInstanceSnapshotsResult {
+  readonly instanceSnapshots?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetInstanceStateRequest {
+export interface GetInstanceStateRequest {
   readonly instanceName: string;
 }
 
-interface GetInstanceStateResult {
-  readonly state: InstanceState;
+export interface GetInstanceStateResult {
+  readonly state?: InstanceState;
 }
 
-interface GetInstancesRequest {
-  readonly pageToken: string;
+export interface GetInstancesRequest {
+  readonly pageToken?: string;
 }
 
-interface GetInstancesResult {
-  readonly instances: [];
-  readonly nextPageToken: string;
+export interface GetInstancesResult {
+  readonly instances?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetKeyPairRequest {
+export interface GetKeyPairRequest {
   readonly keyPairName: string;
 }
 
-interface GetKeyPairResult {
-  readonly keyPair: KeyPair;
+export interface GetKeyPairResult {
+  readonly keyPair?: KeyPair;
 }
 
-interface GetKeyPairsRequest {
-  readonly pageToken: string;
+export interface GetKeyPairsRequest {
+  readonly pageToken?: string;
 }
 
-interface GetKeyPairsResult {
-  readonly keyPairs: [];
-  readonly nextPageToken: string;
+export interface GetKeyPairsResult {
+  readonly keyPairs?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetLoadBalancerMetricDataRequest {
+export interface GetLoadBalancerMetricDataRequest {
   readonly loadBalancerName: string;
   readonly metricName: string;
   readonly period: number;
@@ -2130,136 +2280,136 @@ interface GetLoadBalancerMetricDataRequest {
   readonly statistics: [];
 }
 
-interface GetLoadBalancerMetricDataResult {
-  readonly metricName: string;
-  readonly metricData: [];
+export interface GetLoadBalancerMetricDataResult {
+  readonly metricName?: string;
+  readonly metricData?: [];
 }
 
-interface GetLoadBalancerRequest {
+export interface GetLoadBalancerRequest {
   readonly loadBalancerName: string;
 }
 
-interface GetLoadBalancerResult {
-  readonly loadBalancer: LoadBalancer;
+export interface GetLoadBalancerResult {
+  readonly loadBalancer?: LoadBalancer;
 }
 
-interface GetLoadBalancerTlsCertificatesRequest {
+export interface GetLoadBalancerTlsCertificatesRequest {
   readonly loadBalancerName: string;
 }
 
-interface GetLoadBalancerTlsCertificatesResult {
-  readonly tlsCertificates: [];
+export interface GetLoadBalancerTlsCertificatesResult {
+  readonly tlsCertificates?: [];
 }
 
-interface GetLoadBalancersRequest {
-  readonly pageToken: string;
+export interface GetLoadBalancersRequest {
+  readonly pageToken?: string;
 }
 
-interface GetLoadBalancersResult {
-  readonly loadBalancers: [];
-  readonly nextPageToken: string;
+export interface GetLoadBalancersResult {
+  readonly loadBalancers?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetOperationRequest {
+export interface GetOperationRequest {
   readonly operationId: string;
 }
 
-interface GetOperationResult {
-  readonly operation: Operation;
+export interface GetOperationResult {
+  readonly operation?: Operation;
 }
 
-interface GetOperationsForResourceRequest {
+export interface GetOperationsForResourceRequest {
   readonly resourceName: string;
-  readonly pageToken: string;
+  readonly pageToken?: string;
 }
 
-interface GetOperationsForResourceResult {
-  readonly operations: [];
-  readonly nextPageCount: string;
-  readonly nextPageToken: string;
+export interface GetOperationsForResourceResult {
+  readonly operations?: [];
+  readonly nextPageCount?: string;
+  readonly nextPageToken?: string;
 }
 
-interface GetOperationsRequest {
-  readonly pageToken: string;
+export interface GetOperationsRequest {
+  readonly pageToken?: string;
 }
 
-interface GetOperationsResult {
-  readonly operations: [];
-  readonly nextPageToken: string;
+export interface GetOperationsResult {
+  readonly operations?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetRegionsRequest {
-  readonly includeAvailabilityZones: boolean;
-  readonly includeRelationalDatabaseAvailabilityZones: boolean;
+export interface GetRegionsRequest {
+  readonly includeAvailabilityZones?: boolean;
+  readonly includeRelationalDatabaseAvailabilityZones?: boolean;
 }
 
-interface GetRegionsResult {
-  readonly regions: [];
+export interface GetRegionsResult {
+  readonly regions?: [];
 }
 
-interface GetRelationalDatabaseBlueprintsRequest {
-  readonly pageToken: string;
+export interface GetRelationalDatabaseBlueprintsRequest {
+  readonly pageToken?: string;
 }
 
-interface GetRelationalDatabaseBlueprintsResult {
-  readonly blueprints: [];
-  readonly nextPageToken: string;
+export interface GetRelationalDatabaseBlueprintsResult {
+  readonly blueprints?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetRelationalDatabaseBundlesRequest {
-  readonly pageToken: string;
+export interface GetRelationalDatabaseBundlesRequest {
+  readonly pageToken?: string;
 }
 
-interface GetRelationalDatabaseBundlesResult {
-  readonly bundles: [];
-  readonly nextPageToken: string;
+export interface GetRelationalDatabaseBundlesResult {
+  readonly bundles?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetRelationalDatabaseEventsRequest {
+export interface GetRelationalDatabaseEventsRequest {
   readonly relationalDatabaseName: string;
-  readonly durationInMinutes: number;
-  readonly pageToken: string;
+  readonly durationInMinutes?: number;
+  readonly pageToken?: string;
 }
 
-interface GetRelationalDatabaseEventsResult {
-  readonly relationalDatabaseEvents: [];
-  readonly nextPageToken: string;
+export interface GetRelationalDatabaseEventsResult {
+  readonly relationalDatabaseEvents?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetRelationalDatabaseLogEventsRequest {
+export interface GetRelationalDatabaseLogEventsRequest {
   readonly relationalDatabaseName: string;
   readonly logStreamName: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly startFromHead: boolean;
-  readonly pageToken: string;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly startFromHead?: boolean;
+  readonly pageToken?: string;
 }
 
-interface GetRelationalDatabaseLogEventsResult {
-  readonly resourceLogEvents: [];
-  readonly nextBackwardToken: string;
-  readonly nextForwardToken: string;
+export interface GetRelationalDatabaseLogEventsResult {
+  readonly resourceLogEvents?: [];
+  readonly nextBackwardToken?: string;
+  readonly nextForwardToken?: string;
 }
 
-interface GetRelationalDatabaseLogStreamsRequest {
+export interface GetRelationalDatabaseLogStreamsRequest {
   readonly relationalDatabaseName: string;
 }
 
-interface GetRelationalDatabaseLogStreamsResult {
-  readonly logStreams: [];
+export interface GetRelationalDatabaseLogStreamsResult {
+  readonly logStreams?: [];
 }
 
-interface GetRelationalDatabaseMasterUserPasswordRequest {
+export interface GetRelationalDatabaseMasterUserPasswordRequest {
   readonly relationalDatabaseName: string;
-  readonly passwordVersion: string;
+  readonly passwordVersion?: string;
 }
 
-interface GetRelationalDatabaseMasterUserPasswordResult {
-  readonly masterUserPassword: string;
-  readonly createdAt: Date;
+export interface GetRelationalDatabaseMasterUserPasswordResult {
+  readonly masterUserPassword?: string;
+  readonly createdAt?: Date;
 }
 
-interface GetRelationalDatabaseMetricDataRequest {
+export interface GetRelationalDatabaseMetricDataRequest {
   readonly relationalDatabaseName: string;
   readonly metricName: string;
   readonly period: number;
@@ -2269,871 +2419,872 @@ interface GetRelationalDatabaseMetricDataRequest {
   readonly statistics: [];
 }
 
-interface GetRelationalDatabaseMetricDataResult {
-  readonly metricName: string;
-  readonly metricData: [];
+export interface GetRelationalDatabaseMetricDataResult {
+  readonly metricName?: string;
+  readonly metricData?: [];
 }
 
-interface GetRelationalDatabaseParametersRequest {
+export interface GetRelationalDatabaseParametersRequest {
   readonly relationalDatabaseName: string;
-  readonly pageToken: string;
+  readonly pageToken?: string;
 }
 
-interface GetRelationalDatabaseParametersResult {
-  readonly parameters: [];
-  readonly nextPageToken: string;
+export interface GetRelationalDatabaseParametersResult {
+  readonly parameters?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetRelationalDatabaseRequest {
+export interface GetRelationalDatabaseRequest {
   readonly relationalDatabaseName: string;
 }
 
-interface GetRelationalDatabaseResult {
-  readonly relationalDatabase: RelationalDatabase;
+export interface GetRelationalDatabaseResult {
+  readonly relationalDatabase?: RelationalDatabase;
 }
 
-interface GetRelationalDatabaseSnapshotRequest {
+export interface GetRelationalDatabaseSnapshotRequest {
   readonly relationalDatabaseSnapshotName: string;
 }
 
-interface GetRelationalDatabaseSnapshotResult {
-  readonly relationalDatabaseSnapshot: RelationalDatabaseSnapshot;
+export interface GetRelationalDatabaseSnapshotResult {
+  readonly relationalDatabaseSnapshot?: RelationalDatabaseSnapshot;
 }
 
-interface GetRelationalDatabaseSnapshotsRequest {
-  readonly pageToken: string;
+export interface GetRelationalDatabaseSnapshotsRequest {
+  readonly pageToken?: string;
 }
 
-interface GetRelationalDatabaseSnapshotsResult {
-  readonly relationalDatabaseSnapshots: [];
-  readonly nextPageToken: string;
+export interface GetRelationalDatabaseSnapshotsResult {
+  readonly relationalDatabaseSnapshots?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetRelationalDatabasesRequest {
-  readonly pageToken: string;
+export interface GetRelationalDatabasesRequest {
+  readonly pageToken?: string;
 }
 
-interface GetRelationalDatabasesResult {
-  readonly relationalDatabases: [];
-  readonly nextPageToken: string;
+export interface GetRelationalDatabasesResult {
+  readonly relationalDatabases?: [];
+  readonly nextPageToken?: string;
 }
 
-interface GetStaticIpRequest {
+export interface GetStaticIpRequest {
   readonly staticIpName: string;
 }
 
-interface GetStaticIpResult {
-  readonly staticIp: StaticIp;
+export interface GetStaticIpResult {
+  readonly staticIp?: StaticIp;
 }
 
-interface GetStaticIpsRequest {
-  readonly pageToken: string;
+export interface GetStaticIpsRequest {
+  readonly pageToken?: string;
 }
 
-interface GetStaticIpsResult {
-  readonly staticIps: [];
-  readonly nextPageToken: string;
+export interface GetStaticIpsResult {
+  readonly staticIps?: [];
+  readonly nextPageToken?: string;
 }
 
-interface HeaderObject {
-  readonly option: string;
-  readonly headersAllowList: [];
+export interface HeaderObject {
+  readonly option?: string;
+  readonly headersAllowList?: [];
 }
 
-interface HostKeyAttributes {
-  readonly algorithm: string;
-  readonly publicKey: string;
-  readonly witnessedAt: Date;
-  readonly fingerprintSHA1: string;
-  readonly fingerprintSHA256: string;
-  readonly notValidBefore: Date;
-  readonly notValidAfter: Date;
+export interface HostKeyAttributes {
+  readonly algorithm?: string;
+  readonly publicKey?: string;
+  readonly witnessedAt?: Date;
+  readonly fingerprintSHA1?: string;
+  readonly fingerprintSHA256?: string;
+  readonly notValidBefore?: Date;
+  readonly notValidAfter?: Date;
 }
 
-interface ImportKeyPairRequest {
+export interface ImportKeyPairRequest {
   readonly keyPairName: string;
   readonly publicKeyBase64: string;
 }
 
-interface ImportKeyPairResult {
-  readonly operation: Operation;
+export interface ImportKeyPairResult {
+  readonly operation?: Operation;
 }
 
-interface InputOrigin {
-  readonly name: string;
-  readonly regionName: string;
-  readonly protocolPolicy: string;
+export interface InputOrigin {
+  readonly name?: string;
+  readonly regionName?: string;
+  readonly protocolPolicy?: string;
 }
 
-interface Instance {
-  readonly name: string;
-  readonly arn: string;
-  readonly supportCode: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly tags: [];
-  readonly blueprintId: string;
-  readonly blueprintName: string;
-  readonly bundleId: string;
-  readonly addOns: [];
-  readonly isStaticIp: boolean;
-  readonly privateIpAddress: string;
-  readonly publicIpAddress: string;
-  readonly ipv6Addresses: [];
-  readonly ipAddressType: string;
-  readonly hardware: InstanceHardware;
-  readonly networking: InstanceNetworking;
-  readonly state: InstanceState;
-  readonly username: string;
-  readonly sshKeyName: string;
+export interface Instance {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly supportCode?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly tags?: [];
+  readonly blueprintId?: string;
+  readonly blueprintName?: string;
+  readonly bundleId?: string;
+  readonly addOns?: [];
+  readonly isStaticIp?: boolean;
+  readonly privateIpAddress?: string;
+  readonly publicIpAddress?: string;
+  readonly ipv6Addresses?: [];
+  readonly ipAddressType?: string;
+  readonly hardware?: InstanceHardware;
+  readonly networking?: InstanceNetworking;
+  readonly state?: InstanceState;
+  readonly username?: string;
+  readonly sshKeyName?: string;
 }
 
-interface InstanceAccessDetails {
-  readonly certKey: string;
-  readonly expiresAt: Date;
-  readonly ipAddress: string;
-  readonly password: string;
-  readonly passwordData: PasswordData;
-  readonly privateKey: string;
-  readonly protocol: string;
-  readonly instanceName: string;
-  readonly username: string;
-  readonly hostKeys: [];
+export interface InstanceAccessDetails {
+  readonly certKey?: string;
+  readonly expiresAt?: Date;
+  readonly ipAddress?: string;
+  readonly password?: string;
+  readonly passwordData?: PasswordData;
+  readonly privateKey?: string;
+  readonly protocol?: string;
+  readonly instanceName?: string;
+  readonly username?: string;
+  readonly hostKeys?: [];
 }
 
-interface InstanceEntry {
+export interface InstanceEntry {
   readonly sourceName: string;
   readonly instanceType: string;
   readonly portInfoSource: string;
-  readonly userData: string;
+  readonly userData?: string;
   readonly availabilityZone: string;
 }
 
-interface InstanceHardware {
-  readonly cpuCount: number;
-  readonly disks: [];
-  readonly ramSizeInGb: unknown;
+export interface InstanceHardware {
+  readonly cpuCount?: number;
+  readonly disks?: [];
+  readonly ramSizeInGb?: unknown;
 }
 
-interface InstanceHealthSummary {
-  readonly instanceName: string;
-  readonly instanceHealth: string;
-  readonly instanceHealthReason: string;
+export interface InstanceHealthSummary {
+  readonly instanceName?: string;
+  readonly instanceHealth?: string;
+  readonly instanceHealthReason?: string;
 }
 
-interface InstanceNetworking {
-  readonly monthlyTransfer: MonthlyTransfer;
-  readonly ports: [];
+export interface InstanceNetworking {
+  readonly monthlyTransfer?: MonthlyTransfer;
+  readonly ports?: [];
 }
 
-interface InstancePortInfo {
-  readonly fromPort: number;
-  readonly toPort: number;
-  readonly protocol: string;
-  readonly accessFrom: string;
-  readonly accessType: string;
-  readonly commonName: string;
-  readonly accessDirection: string;
-  readonly cidrs: [];
-  readonly ipv6Cidrs: [];
-  readonly cidrListAliases: [];
+export interface InstancePortInfo {
+  readonly fromPort?: number;
+  readonly toPort?: number;
+  readonly protocol?: string;
+  readonly accessFrom?: string;
+  readonly accessType?: string;
+  readonly commonName?: string;
+  readonly accessDirection?: string;
+  readonly cidrs?: [];
+  readonly ipv6Cidrs?: [];
+  readonly cidrListAliases?: [];
 }
 
-interface InstancePortState {
-  readonly fromPort: number;
-  readonly toPort: number;
-  readonly protocol: string;
-  readonly state: string;
-  readonly cidrs: [];
-  readonly ipv6Cidrs: [];
-  readonly cidrListAliases: [];
+export interface InstancePortState {
+  readonly fromPort?: number;
+  readonly toPort?: number;
+  readonly protocol?: string;
+  readonly state?: string;
+  readonly cidrs?: [];
+  readonly ipv6Cidrs?: [];
+  readonly cidrListAliases?: [];
 }
 
-interface InstanceSnapshot {
-  readonly name: string;
-  readonly arn: string;
-  readonly supportCode: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly tags: [];
-  readonly state: string;
-  readonly progress: string;
-  readonly fromAttachedDisks: [];
-  readonly fromInstanceName: string;
-  readonly fromInstanceArn: string;
-  readonly fromBlueprintId: string;
-  readonly fromBundleId: string;
-  readonly isFromAutoSnapshot: boolean;
-  readonly sizeInGb: number;
+export interface InstanceSnapshot {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly supportCode?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly tags?: [];
+  readonly state?: string;
+  readonly progress?: string;
+  readonly fromAttachedDisks?: [];
+  readonly fromInstanceName?: string;
+  readonly fromInstanceArn?: string;
+  readonly fromBlueprintId?: string;
+  readonly fromBundleId?: string;
+  readonly isFromAutoSnapshot?: boolean;
+  readonly sizeInGb?: number;
 }
 
-interface InstanceSnapshotInfo {
-  readonly fromBundleId: string;
-  readonly fromBlueprintId: string;
-  readonly fromDiskInfo: [];
+export interface InstanceSnapshotInfo {
+  readonly fromBundleId?: string;
+  readonly fromBlueprintId?: string;
+  readonly fromDiskInfo?: [];
 }
 
-interface InstanceState {
-  readonly code: number;
-  readonly name: string;
+export interface InstanceState {
+  readonly code?: number;
+  readonly name?: string;
 }
 
-interface InvalidInputException {
-  readonly code: string;
-  readonly docs: string;
-  readonly message: string;
-  readonly tip: string;
+export interface InvalidInputException {
+  readonly code?: string;
+  readonly docs?: string;
+  readonly message?: string;
+  readonly tip?: string;
 }
 
-interface IsVpcPeeredRequest {
+export interface IsVpcPeeredRequest {
 }
 
-interface IsVpcPeeredResult {
-  readonly isPeered: boolean;
+export interface IsVpcPeeredResult {
+  readonly isPeered?: boolean;
 }
 
-interface KeyPair {
-  readonly name: string;
-  readonly arn: string;
-  readonly supportCode: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly tags: [];
-  readonly fingerprint: string;
+export interface KeyPair {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly supportCode?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly tags?: [];
+  readonly fingerprint?: string;
 }
 
-interface LightsailDistribution {
-  readonly name: string;
-  readonly arn: string;
-  readonly supportCode: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly alternativeDomainNames: [];
-  readonly status: string;
-  readonly isEnabled: boolean;
-  readonly domainName: string;
-  readonly bundleId: string;
-  readonly certificateName: string;
-  readonly origin: Origin;
-  readonly originPublicDNS: string;
-  readonly defaultCacheBehavior: CacheBehavior;
-  readonly cacheBehaviorSettings: CacheSettings;
-  readonly cacheBehaviors: [];
-  readonly ableToUpdateBundle: boolean;
-  readonly ipAddressType: string;
-  readonly tags: [];
+export interface LightsailDistribution {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly supportCode?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly alternativeDomainNames?: [];
+  readonly status?: string;
+  readonly isEnabled?: boolean;
+  readonly domainName?: string;
+  readonly bundleId?: string;
+  readonly certificateName?: string;
+  readonly origin?: Origin;
+  readonly originPublicDNS?: string;
+  readonly defaultCacheBehavior?: CacheBehavior;
+  readonly cacheBehaviorSettings?: CacheSettings;
+  readonly cacheBehaviors?: [];
+  readonly ableToUpdateBundle?: boolean;
+  readonly ipAddressType?: string;
+  readonly tags?: [];
 }
 
-interface LoadBalancer {
-  readonly name: string;
-  readonly arn: string;
-  readonly supportCode: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly tags: [];
-  readonly dnsName: string;
-  readonly state: string;
-  readonly protocol: string;
-  readonly publicPorts: [];
-  readonly healthCheckPath: string;
-  readonly instancePort: number;
-  readonly instanceHealthSummary: [];
-  readonly tlsCertificateSummaries: [];
-  readonly configurationOptions: {[key: string]: any};
-  readonly ipAddressType: string;
+export interface LoadBalancer {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly supportCode?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly tags?: [];
+  readonly dnsName?: string;
+  readonly state?: string;
+  readonly protocol?: string;
+  readonly publicPorts?: [];
+  readonly healthCheckPath?: string;
+  readonly instancePort?: number;
+  readonly instanceHealthSummary?: [];
+  readonly tlsCertificateSummaries?: [];
+  readonly configurationOptions?: {[key: string]: any};
+  readonly ipAddressType?: string;
 }
 
-interface LoadBalancerTlsCertificate {
-  readonly name: string;
-  readonly arn: string;
-  readonly supportCode: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly tags: [];
-  readonly loadBalancerName: string;
-  readonly isAttached: boolean;
-  readonly status: string;
-  readonly domainName: string;
-  readonly domainValidationRecords: [];
-  readonly failureReason: string;
-  readonly issuedAt: Date;
-  readonly issuer: string;
-  readonly keyAlgorithm: string;
-  readonly notAfter: Date;
-  readonly notBefore: Date;
-  readonly renewalSummary: LoadBalancerTlsCertificateRenewalSummary;
-  readonly revocationReason: string;
-  readonly revokedAt: Date;
-  readonly serial: string;
-  readonly signatureAlgorithm: string;
-  readonly subject: string;
-  readonly subjectAlternativeNames: [];
+export interface LoadBalancerTlsCertificate {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly supportCode?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly tags?: [];
+  readonly loadBalancerName?: string;
+  readonly isAttached?: boolean;
+  readonly status?: string;
+  readonly domainName?: string;
+  readonly domainValidationRecords?: [];
+  readonly failureReason?: string;
+  readonly issuedAt?: Date;
+  readonly issuer?: string;
+  readonly keyAlgorithm?: string;
+  readonly notAfter?: Date;
+  readonly notBefore?: Date;
+  readonly renewalSummary?: LoadBalancerTlsCertificateRenewalSummary;
+  readonly revocationReason?: string;
+  readonly revokedAt?: Date;
+  readonly serial?: string;
+  readonly signatureAlgorithm?: string;
+  readonly subject?: string;
+  readonly subjectAlternativeNames?: [];
 }
 
-interface LoadBalancerTlsCertificateDomainValidationOption {
-  readonly domainName: string;
-  readonly validationStatus: string;
+export interface LoadBalancerTlsCertificateDomainValidationOption {
+  readonly domainName?: string;
+  readonly validationStatus?: string;
 }
 
-interface LoadBalancerTlsCertificateDomainValidationRecord {
-  readonly name: string;
-  readonly type: string;
-  readonly value: string;
-  readonly validationStatus: string;
-  readonly domainName: string;
+export interface LoadBalancerTlsCertificateDomainValidationRecord {
+  readonly name?: string;
+  readonly type?: string;
+  readonly value?: string;
+  readonly validationStatus?: string;
+  readonly domainName?: string;
 }
 
-interface LoadBalancerTlsCertificateRenewalSummary {
-  readonly renewalStatus: string;
-  readonly domainValidationOptions: [];
+export interface LoadBalancerTlsCertificateRenewalSummary {
+  readonly renewalStatus?: string;
+  readonly domainValidationOptions?: [];
 }
 
-interface LoadBalancerTlsCertificateSummary {
-  readonly name: string;
-  readonly isAttached: boolean;
+export interface LoadBalancerTlsCertificateSummary {
+  readonly name?: string;
+  readonly isAttached?: boolean;
 }
 
-interface LogEvent {
-  readonly createdAt: Date;
-  readonly message: string;
+export interface LogEvent {
+  readonly createdAt?: Date;
+  readonly message?: string;
 }
 
-interface MetricDatapoint {
-  readonly average: unknown;
-  readonly maximum: unknown;
-  readonly minimum: unknown;
-  readonly sampleCount: unknown;
-  readonly sum: unknown;
-  readonly timestamp: Date;
-  readonly unit: string;
+export interface MetricDatapoint {
+  readonly average?: unknown;
+  readonly maximum?: unknown;
+  readonly minimum?: unknown;
+  readonly sampleCount?: unknown;
+  readonly sum?: unknown;
+  readonly timestamp?: Date;
+  readonly unit?: string;
 }
 
-interface MonitoredResourceInfo {
-  readonly arn: string;
-  readonly name: string;
-  readonly resourceType: string;
+export interface MonitoredResourceInfo {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly resourceType?: string;
 }
 
-interface MonthlyTransfer {
-  readonly gbPerMonthAllocated: number;
+export interface MonthlyTransfer {
+  readonly gbPerMonthAllocated?: number;
 }
 
-interface NotFoundException {
-  readonly code: string;
-  readonly docs: string;
-  readonly message: string;
-  readonly tip: string;
+export interface NotFoundException {
+  readonly code?: string;
+  readonly docs?: string;
+  readonly message?: string;
+  readonly tip?: string;
 }
 
-interface OpenInstancePublicPortsRequest {
+export interface OpenInstancePublicPortsRequest {
   readonly portInfo: PortInfo;
   readonly instanceName: string;
 }
 
-interface OpenInstancePublicPortsResult {
-  readonly operation: Operation;
+export interface OpenInstancePublicPortsResult {
+  readonly operation?: Operation;
 }
 
-interface Operation {
-  readonly id: string;
-  readonly resourceName: string;
-  readonly resourceType: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly isTerminal: boolean;
-  readonly operationDetails: string;
-  readonly operationType: string;
-  readonly status: string;
-  readonly statusChangedAt: Date;
-  readonly errorCode: string;
-  readonly errorDetails: string;
+export interface Operation {
+  readonly id?: string;
+  readonly resourceName?: string;
+  readonly resourceType?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly isTerminal?: boolean;
+  readonly operationDetails?: string;
+  readonly operationType?: string;
+  readonly status?: string;
+  readonly statusChangedAt?: Date;
+  readonly errorCode?: string;
+  readonly errorDetails?: string;
 }
 
-interface OperationFailureException {
-  readonly code: string;
-  readonly docs: string;
-  readonly message: string;
-  readonly tip: string;
+export interface OperationFailureException {
+  readonly code?: string;
+  readonly docs?: string;
+  readonly message?: string;
+  readonly tip?: string;
 }
 
-interface Origin {
-  readonly name: string;
-  readonly resourceType: string;
-  readonly regionName: string;
-  readonly protocolPolicy: string;
+export interface Origin {
+  readonly name?: string;
+  readonly resourceType?: string;
+  readonly regionName?: string;
+  readonly protocolPolicy?: string;
 }
 
-interface PasswordData {
-  readonly ciphertext: string;
-  readonly keyPairName: string;
+export interface PasswordData {
+  readonly ciphertext?: string;
+  readonly keyPairName?: string;
 }
 
-interface PeerVpcRequest {
+export interface PeerVpcRequest {
 }
 
-interface PeerVpcResult {
-  readonly operation: Operation;
+export interface PeerVpcResult {
+  readonly operation?: Operation;
 }
 
-interface PendingMaintenanceAction {
-  readonly action: string;
-  readonly description: string;
-  readonly currentApplyDate: Date;
+export interface PendingMaintenanceAction {
+  readonly action?: string;
+  readonly description?: string;
+  readonly currentApplyDate?: Date;
 }
 
-interface PendingModifiedRelationalDatabaseValues {
-  readonly masterUserPassword: string;
-  readonly engineVersion: string;
-  readonly backupRetentionEnabled: boolean;
+export interface PendingModifiedRelationalDatabaseValues {
+  readonly masterUserPassword?: string;
+  readonly engineVersion?: string;
+  readonly backupRetentionEnabled?: boolean;
 }
 
-interface PortInfo {
-  readonly fromPort: number;
-  readonly toPort: number;
-  readonly protocol: string;
-  readonly cidrs: [];
-  readonly ipv6Cidrs: [];
-  readonly cidrListAliases: [];
+export interface PortInfo {
+  readonly fromPort?: number;
+  readonly toPort?: number;
+  readonly protocol?: string;
+  readonly cidrs?: [];
+  readonly ipv6Cidrs?: [];
+  readonly cidrListAliases?: [];
 }
 
-interface PutAlarmRequest {
+export interface PutAlarmRequest {
   readonly alarmName: string;
   readonly metricName: string;
   readonly monitoredResourceName: string;
   readonly comparisonOperator: string;
   readonly threshold: unknown;
   readonly evaluationPeriods: number;
-  readonly datapointsToAlarm: number;
-  readonly treatMissingData: string;
-  readonly contactProtocols: [];
-  readonly notificationTriggers: [];
-  readonly notificationEnabled: boolean;
+  readonly datapointsToAlarm?: number;
+  readonly treatMissingData?: string;
+  readonly contactProtocols?: [];
+  readonly notificationTriggers?: [];
+  readonly notificationEnabled?: boolean;
 }
 
-interface PutAlarmResult {
-  readonly operations: [];
+export interface PutAlarmResult {
+  readonly operations?: [];
 }
 
-interface PutInstancePublicPortsRequest {
+export interface PutInstancePublicPortsRequest {
   readonly portInfos: [];
   readonly instanceName: string;
 }
 
-interface PutInstancePublicPortsResult {
-  readonly operation: Operation;
+export interface PutInstancePublicPortsResult {
+  readonly operation?: Operation;
 }
 
-interface QueryStringObject {
-  readonly option: boolean;
-  readonly queryStringsAllowList: [];
+export interface QueryStringObject {
+  readonly option?: boolean;
+  readonly queryStringsAllowList?: [];
 }
 
-interface RebootInstanceRequest {
+export interface RebootInstanceRequest {
   readonly instanceName: string;
 }
 
-interface RebootInstanceResult {
-  readonly operations: [];
+export interface RebootInstanceResult {
+  readonly operations?: [];
 }
 
-interface RebootRelationalDatabaseRequest {
+export interface RebootRelationalDatabaseRequest {
   readonly relationalDatabaseName: string;
 }
 
-interface RebootRelationalDatabaseResult {
-  readonly operations: [];
+export interface RebootRelationalDatabaseResult {
+  readonly operations?: [];
 }
 
-interface Region {
-  readonly continentCode: string;
-  readonly description: string;
-  readonly displayName: string;
-  readonly name: string;
-  readonly availabilityZones: [];
-  readonly relationalDatabaseAvailabilityZones: [];
+export interface Region {
+  readonly continentCode?: string;
+  readonly description?: string;
+  readonly displayName?: string;
+  readonly name?: string;
+  readonly availabilityZones?: [];
+  readonly relationalDatabaseAvailabilityZones?: [];
 }
 
-interface RegisterContainerImageRequest {
+export interface RegisterContainerImageRequest {
   readonly serviceName: string;
   readonly label: string;
   readonly digest: string;
 }
 
-interface RegisterContainerImageResult {
-  readonly containerImage: ContainerImage;
+export interface RegisterContainerImageResult {
+  readonly containerImage?: ContainerImage;
 }
 
-interface RelationalDatabase {
-  readonly name: string;
-  readonly arn: string;
-  readonly supportCode: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly tags: [];
-  readonly relationalDatabaseBlueprintId: string;
-  readonly relationalDatabaseBundleId: string;
-  readonly masterDatabaseName: string;
-  readonly hardware: RelationalDatabaseHardware;
-  readonly state: string;
-  readonly secondaryAvailabilityZone: string;
-  readonly backupRetentionEnabled: boolean;
-  readonly pendingModifiedValues: PendingModifiedRelationalDatabaseValues;
-  readonly engine: string;
-  readonly engineVersion: string;
-  readonly latestRestorableTime: Date;
-  readonly masterUsername: string;
-  readonly parameterApplyStatus: string;
-  readonly preferredBackupWindow: string;
-  readonly preferredMaintenanceWindow: string;
-  readonly publiclyAccessible: boolean;
-  readonly masterEndpoint: RelationalDatabaseEndpoint;
-  readonly pendingMaintenanceActions: [];
-  readonly caCertificateIdentifier: string;
+export interface RelationalDatabase {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly supportCode?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly tags?: [];
+  readonly relationalDatabaseBlueprintId?: string;
+  readonly relationalDatabaseBundleId?: string;
+  readonly masterDatabaseName?: string;
+  readonly hardware?: RelationalDatabaseHardware;
+  readonly state?: string;
+  readonly secondaryAvailabilityZone?: string;
+  readonly backupRetentionEnabled?: boolean;
+  readonly pendingModifiedValues?: PendingModifiedRelationalDatabaseValues;
+  readonly engine?: string;
+  readonly engineVersion?: string;
+  readonly latestRestorableTime?: Date;
+  readonly masterUsername?: string;
+  readonly parameterApplyStatus?: string;
+  readonly preferredBackupWindow?: string;
+  readonly preferredMaintenanceWindow?: string;
+  readonly publiclyAccessible?: boolean;
+  readonly masterEndpoint?: RelationalDatabaseEndpoint;
+  readonly pendingMaintenanceActions?: [];
+  readonly caCertificateIdentifier?: string;
 }
 
-interface RelationalDatabaseBlueprint {
-  readonly blueprintId: string;
-  readonly engine: string;
-  readonly engineVersion: string;
-  readonly engineDescription: string;
-  readonly engineVersionDescription: string;
-  readonly isEngineDefault: boolean;
+export interface RelationalDatabaseBlueprint {
+  readonly blueprintId?: string;
+  readonly engine?: string;
+  readonly engineVersion?: string;
+  readonly engineDescription?: string;
+  readonly engineVersionDescription?: string;
+  readonly isEngineDefault?: boolean;
 }
 
-interface RelationalDatabaseBundle {
-  readonly bundleId: string;
-  readonly name: string;
-  readonly price: unknown;
-  readonly ramSizeInGb: unknown;
-  readonly diskSizeInGb: number;
-  readonly transferPerMonthInGb: number;
-  readonly cpuCount: number;
-  readonly isEncrypted: boolean;
-  readonly isActive: boolean;
+export interface RelationalDatabaseBundle {
+  readonly bundleId?: string;
+  readonly name?: string;
+  readonly price?: unknown;
+  readonly ramSizeInGb?: unknown;
+  readonly diskSizeInGb?: number;
+  readonly transferPerMonthInGb?: number;
+  readonly cpuCount?: number;
+  readonly isEncrypted?: boolean;
+  readonly isActive?: boolean;
 }
 
-interface RelationalDatabaseEndpoint {
-  readonly port: number;
-  readonly address: string;
+export interface RelationalDatabaseEndpoint {
+  readonly port?: number;
+  readonly address?: string;
 }
 
-interface RelationalDatabaseEvent {
-  readonly resource: string;
-  readonly createdAt: Date;
-  readonly message: string;
-  readonly eventCategories: [];
+export interface RelationalDatabaseEvent {
+  readonly resource?: string;
+  readonly createdAt?: Date;
+  readonly message?: string;
+  readonly eventCategories?: [];
 }
 
-interface RelationalDatabaseHardware {
-  readonly cpuCount: number;
-  readonly diskSizeInGb: number;
-  readonly ramSizeInGb: unknown;
+export interface RelationalDatabaseHardware {
+  readonly cpuCount?: number;
+  readonly diskSizeInGb?: number;
+  readonly ramSizeInGb?: unknown;
 }
 
-interface RelationalDatabaseParameter {
-  readonly allowedValues: string;
-  readonly applyMethod: string;
-  readonly applyType: string;
-  readonly dataType: string;
-  readonly description: string;
-  readonly isModifiable: boolean;
-  readonly parameterName: string;
-  readonly parameterValue: string;
+export interface RelationalDatabaseParameter {
+  readonly allowedValues?: string;
+  readonly applyMethod?: string;
+  readonly applyType?: string;
+  readonly dataType?: string;
+  readonly description?: string;
+  readonly isModifiable?: boolean;
+  readonly parameterName?: string;
+  readonly parameterValue?: string;
 }
 
-interface RelationalDatabaseSnapshot {
-  readonly name: string;
-  readonly arn: string;
-  readonly supportCode: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly tags: [];
-  readonly engine: string;
-  readonly engineVersion: string;
-  readonly sizeInGb: number;
-  readonly state: string;
-  readonly fromRelationalDatabaseName: string;
-  readonly fromRelationalDatabaseArn: string;
-  readonly fromRelationalDatabaseBundleId: string;
-  readonly fromRelationalDatabaseBlueprintId: string;
+export interface RelationalDatabaseSnapshot {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly supportCode?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly tags?: [];
+  readonly engine?: string;
+  readonly engineVersion?: string;
+  readonly sizeInGb?: number;
+  readonly state?: string;
+  readonly fromRelationalDatabaseName?: string;
+  readonly fromRelationalDatabaseArn?: string;
+  readonly fromRelationalDatabaseBundleId?: string;
+  readonly fromRelationalDatabaseBlueprintId?: string;
 }
 
-interface ReleaseStaticIpRequest {
+export interface ReleaseStaticIpRequest {
   readonly staticIpName: string;
 }
 
-interface ReleaseStaticIpResult {
-  readonly operations: [];
+export interface ReleaseStaticIpResult {
+  readonly operations?: [];
 }
 
-interface RenewalSummary {
-  readonly domainValidationRecords: [];
-  readonly renewalStatus: string;
-  readonly renewalStatusReason: string;
-  readonly updatedAt: Date;
+export interface RenewalSummary {
+  readonly domainValidationRecords?: [];
+  readonly renewalStatus?: string;
+  readonly renewalStatusReason?: string;
+  readonly updatedAt?: Date;
 }
 
-interface ResetDistributionCacheRequest {
-  readonly distributionName: string;
+export interface ResetDistributionCacheRequest {
+  readonly distributionName?: string;
 }
 
-interface ResetDistributionCacheResult {
-  readonly status: string;
-  readonly createTime: Date;
-  readonly operation: Operation;
+export interface ResetDistributionCacheResult {
+  readonly status?: string;
+  readonly createTime?: Date;
+  readonly operation?: Operation;
 }
 
-interface ResourceLocation {
-  readonly availabilityZone: string;
-  readonly regionName: string;
+export interface ResourceLocation {
+  readonly availabilityZone?: string;
+  readonly regionName?: string;
 }
 
-interface ResourceReceivingAccess {
-  readonly name: string;
-  readonly resourceType: string;
+export interface ResourceReceivingAccess {
+  readonly name?: string;
+  readonly resourceType?: string;
 }
 
-interface ResourceRecord {
-  readonly name: string;
-  readonly type: string;
-  readonly value: string;
+export interface ResourceRecord {
+  readonly name?: string;
+  readonly type?: string;
+  readonly value?: string;
 }
 
-interface SendContactMethodVerificationRequest {
+export interface SendContactMethodVerificationRequest {
   readonly protocol: string;
 }
 
-interface SendContactMethodVerificationResult {
-  readonly operations: [];
+export interface SendContactMethodVerificationResult {
+  readonly operations?: [];
 }
 
-interface ServiceException {
-  readonly code: string;
-  readonly docs: string;
-  readonly message: string;
-  readonly tip: string;
+export interface ServiceException {
+  readonly code?: string;
+  readonly docs?: string;
+  readonly message?: string;
+  readonly tip?: string;
 }
 
-interface SetIpAddressTypeRequest {
+export interface SetIpAddressTypeRequest {
   readonly resourceType: string;
   readonly resourceName: string;
   readonly ipAddressType: string;
 }
 
-interface SetIpAddressTypeResult {
-  readonly operations: [];
+export interface SetIpAddressTypeResult {
+  readonly operations?: [];
 }
 
-interface SetResourceAccessForBucketRequest {
+export interface SetResourceAccessForBucketRequest {
   readonly resourceName: string;
   readonly bucketName: string;
   readonly access: string;
 }
 
-interface SetResourceAccessForBucketResult {
-  readonly operations: [];
+export interface SetResourceAccessForBucketResult {
+  readonly operations?: [];
 }
 
-interface StartInstanceRequest {
+export interface StartInstanceRequest {
   readonly instanceName: string;
 }
 
-interface StartInstanceResult {
-  readonly operations: [];
+export interface StartInstanceResult {
+  readonly operations?: [];
 }
 
-interface StartRelationalDatabaseRequest {
+export interface StartRelationalDatabaseRequest {
   readonly relationalDatabaseName: string;
 }
 
-interface StartRelationalDatabaseResult {
-  readonly operations: [];
+export interface StartRelationalDatabaseResult {
+  readonly operations?: [];
 }
 
-interface StaticIp {
-  readonly name: string;
-  readonly arn: string;
-  readonly supportCode: string;
-  readonly createdAt: Date;
-  readonly location: ResourceLocation;
-  readonly resourceType: string;
-  readonly ipAddress: string;
-  readonly attachedTo: string;
-  readonly isAttached: boolean;
+export interface StaticIp {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly supportCode?: string;
+  readonly createdAt?: Date;
+  readonly location?: ResourceLocation;
+  readonly resourceType?: string;
+  readonly ipAddress?: string;
+  readonly attachedTo?: string;
+  readonly isAttached?: boolean;
 }
 
-interface StopInstanceRequest {
+export interface StopInstanceRequest {
   readonly instanceName: string;
-  readonly force: boolean;
+  readonly force?: boolean;
 }
 
-interface StopInstanceResult {
-  readonly operations: [];
+export interface StopInstanceResult {
+  readonly operations?: [];
 }
 
-interface StopRelationalDatabaseRequest {
+export interface StopRelationalDatabaseRequest {
   readonly relationalDatabaseName: string;
-  readonly relationalDatabaseSnapshotName: string;
+  readonly relationalDatabaseSnapshotName?: string;
 }
 
-interface StopRelationalDatabaseResult {
-  readonly operations: [];
+export interface StopRelationalDatabaseResult {
+  readonly operations?: [];
 }
 
-interface Tag {
-  readonly key: string;
-  readonly value: string;
+export interface Tag {
+  readonly key?: string;
+  readonly value?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceName: string;
-  readonly resourceArn: string;
+  readonly resourceArn?: string;
   readonly tags: [];
 }
 
-interface TagResourceResult {
-  readonly operations: [];
+export interface TagResourceResult {
+  readonly operations?: [];
 }
 
-interface TestAlarmRequest {
+export interface TestAlarmRequest {
   readonly alarmName: string;
   readonly state: string;
 }
 
-interface TestAlarmResult {
-  readonly operations: [];
+export interface TestAlarmResult {
+  readonly operations?: [];
 }
 
-interface UnauthenticatedException {
-  readonly code: string;
-  readonly docs: string;
-  readonly message: string;
-  readonly tip: string;
+export interface UnauthenticatedException {
+  readonly code?: string;
+  readonly docs?: string;
+  readonly message?: string;
+  readonly tip?: string;
 }
 
-interface UnpeerVpcRequest {
+export interface UnpeerVpcRequest {
 }
 
-interface UnpeerVpcResult {
-  readonly operation: Operation;
+export interface UnpeerVpcResult {
+  readonly operation?: Operation;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceName: string;
-  readonly resourceArn: string;
+  readonly resourceArn?: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResult {
-  readonly operations: [];
+export interface UntagResourceResult {
+  readonly operations?: [];
 }
 
-interface UpdateBucketBundleRequest {
+export interface UpdateBucketBundleRequest {
   readonly bucketName: string;
   readonly bundleId: string;
 }
 
-interface UpdateBucketBundleResult {
-  readonly operations: [];
+export interface UpdateBucketBundleResult {
+  readonly operations?: [];
 }
 
-interface UpdateBucketRequest {
+export interface UpdateBucketRequest {
   readonly bucketName: string;
-  readonly accessRules: AccessRules;
-  readonly versioning: string;
-  readonly readonlyAccessAccounts: [];
-  readonly accessLogConfig: BucketAccessLogConfig;
+  readonly accessRules?: AccessRules;
+  readonly versioning?: string;
+  readonly readonlyAccessAccounts?: [];
+  readonly accessLogConfig?: BucketAccessLogConfig;
 }
 
-interface UpdateBucketResult {
-  readonly bucket: Bucket;
-  readonly operations: [];
+export interface UpdateBucketResult {
+  readonly bucket?: Bucket;
+  readonly operations?: [];
 }
 
-interface UpdateContainerServiceRequest {
+export interface UpdateContainerServiceRequest {
   readonly serviceName: string;
-  readonly power: string;
-  readonly scale: number;
-  readonly isDisabled: boolean;
-  readonly publicDomainNames: {[key: string]: any};
+  readonly power?: string;
+  readonly scale?: number;
+  readonly isDisabled?: boolean;
+  readonly publicDomainNames?: {[key: string]: any};
 }
 
-interface UpdateContainerServiceResult {
-  readonly containerService: ContainerService;
+export interface UpdateContainerServiceResult {
+  readonly containerService?: ContainerService;
 }
 
-interface UpdateDistributionBundleRequest {
+export interface UpdateDistributionBundleRequest {
+  readonly distributionName?: string;
+  readonly bundleId?: string;
+}
+
+export interface UpdateDistributionBundleResult {
+  readonly operation?: Operation;
+}
+
+export interface UpdateDistributionRequest {
   readonly distributionName: string;
-  readonly bundleId: string;
+  readonly origin?: InputOrigin;
+  readonly defaultCacheBehavior?: CacheBehavior;
+  readonly cacheBehaviorSettings?: CacheSettings;
+  readonly cacheBehaviors?: [];
+  readonly isEnabled?: boolean;
 }
 
-interface UpdateDistributionBundleResult {
-  readonly operation: Operation;
+export interface UpdateDistributionResult {
+  readonly operation?: Operation;
 }
 
-interface UpdateDistributionRequest {
-  readonly distributionName: string;
-  readonly origin: InputOrigin;
-  readonly defaultCacheBehavior: CacheBehavior;
-  readonly cacheBehaviorSettings: CacheSettings;
-  readonly cacheBehaviors: [];
-  readonly isEnabled: boolean;
-}
-
-interface UpdateDistributionResult {
-  readonly operation: Operation;
-}
-
-interface UpdateDomainEntryRequest {
+export interface UpdateDomainEntryRequest {
   readonly domainName: string;
   readonly domainEntry: DomainEntry;
 }
 
-interface UpdateDomainEntryResult {
-  readonly operations: [];
+export interface UpdateDomainEntryResult {
+  readonly operations?: [];
 }
 
-interface UpdateLoadBalancerAttributeRequest {
+export interface UpdateLoadBalancerAttributeRequest {
   readonly loadBalancerName: string;
   readonly attributeName: string;
   readonly attributeValue: string;
 }
 
-interface UpdateLoadBalancerAttributeResult {
-  readonly operations: [];
+export interface UpdateLoadBalancerAttributeResult {
+  readonly operations?: [];
 }
 
-interface UpdateRelationalDatabaseParametersRequest {
+export interface UpdateRelationalDatabaseParametersRequest {
   readonly relationalDatabaseName: string;
   readonly parameters: [];
 }
 
-interface UpdateRelationalDatabaseParametersResult {
-  readonly operations: [];
+export interface UpdateRelationalDatabaseParametersResult {
+  readonly operations?: [];
 }
 
-interface UpdateRelationalDatabaseRequest {
+export interface UpdateRelationalDatabaseRequest {
   readonly relationalDatabaseName: string;
-  readonly masterUserPassword: string;
-  readonly rotateMasterUserPassword: boolean;
-  readonly preferredBackupWindow: string;
-  readonly preferredMaintenanceWindow: string;
-  readonly enableBackupRetention: boolean;
-  readonly disableBackupRetention: boolean;
-  readonly publiclyAccessible: boolean;
-  readonly applyImmediately: boolean;
-  readonly caCertificateIdentifier: string;
+  readonly masterUserPassword?: string;
+  readonly rotateMasterUserPassword?: boolean;
+  readonly preferredBackupWindow?: string;
+  readonly preferredMaintenanceWindow?: string;
+  readonly enableBackupRetention?: boolean;
+  readonly disableBackupRetention?: boolean;
+  readonly publiclyAccessible?: boolean;
+  readonly applyImmediately?: boolean;
+  readonly caCertificateIdentifier?: string;
 }
 
-interface UpdateRelationalDatabaseResult {
-  readonly operations: [];
+export interface UpdateRelationalDatabaseResult {
+  readonly operations?: [];
 }
+
 

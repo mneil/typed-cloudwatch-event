@@ -5,30 +5,37 @@ export interface AssociateTrackerConsumer {
   readonly ConsumerArn: string;
   readonly TrackerName: string;
 }
+
 export interface BatchDeleteDevicePositionHistory {
   readonly DeviceIds: [];
   readonly TrackerName: string;
 }
+
 export interface BatchDeleteGeofence {
   readonly CollectionName: string;
   readonly GeofenceIds: [];
 }
+
 export interface BatchEvaluateGeofences {
   readonly CollectionName: string;
   readonly DevicePositionUpdates: [];
 }
+
 export interface BatchGetDevicePosition {
   readonly DeviceIds: [];
   readonly TrackerName: string;
 }
+
 export interface BatchPutGeofence {
   readonly CollectionName: string;
   readonly Entries: [];
 }
+
 export interface BatchUpdateDevicePosition {
   readonly TrackerName: string;
   readonly Updates: [];
 }
+
 export interface CalculateRoute {
   readonly CalculatorName: string;
   readonly CarModeOptions?: CalculateRouteCarModeOptions;
@@ -42,6 +49,7 @@ export interface CalculateRoute {
   readonly TruckModeOptions?: CalculateRouteTruckModeOptions;
   readonly WaypointPositions?: [];
 }
+
 export interface CreateGeofenceCollection {
   readonly CollectionName: string;
   readonly Description?: string;
@@ -50,6 +58,7 @@ export interface CreateGeofenceCollection {
   readonly PricingPlanDataSource?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateMap {
   readonly Configuration: MapConfiguration;
   readonly Description?: string;
@@ -57,6 +66,7 @@ export interface CreateMap {
   readonly PricingPlan: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreatePlaceIndex {
   readonly DataSource: string;
   readonly DataSourceConfiguration?: DataSourceConfiguration;
@@ -65,6 +75,7 @@ export interface CreatePlaceIndex {
   readonly PricingPlan: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateRouteCalculator {
   readonly CalculatorName: string;
   readonly DataSource: string;
@@ -72,6 +83,7 @@ export interface CreateRouteCalculator {
   readonly PricingPlan: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateTracker {
   readonly Description?: string;
   readonly KmsKeyId?: string;
@@ -81,44 +93,57 @@ export interface CreateTracker {
   readonly Tags?: {[key: string]: any};
   readonly TrackerName: string;
 }
+
 export interface DeleteGeofenceCollection {
   readonly CollectionName: string;
 }
+
 export interface DeleteMap {
   readonly MapName: string;
 }
+
 export interface DeletePlaceIndex {
   readonly IndexName: string;
 }
+
 export interface DeleteRouteCalculator {
   readonly CalculatorName: string;
 }
+
 export interface DeleteTracker {
   readonly TrackerName: string;
 }
+
 export interface DescribeGeofenceCollection {
   readonly CollectionName: string;
 }
+
 export interface DescribeMap {
   readonly MapName: string;
 }
+
 export interface DescribePlaceIndex {
   readonly IndexName: string;
 }
+
 export interface DescribeRouteCalculator {
   readonly CalculatorName: string;
 }
+
 export interface DescribeTracker {
   readonly TrackerName: string;
 }
+
 export interface DisassociateTrackerConsumer {
   readonly ConsumerArn: string;
   readonly TrackerName: string;
 }
+
 export interface GetDevicePosition {
   readonly DeviceId: string;
   readonly TrackerName: string;
 }
+
 export interface GetDevicePositionHistory {
   readonly DeviceId: string;
   readonly EndTimeExclusive?: Date;
@@ -126,76 +151,93 @@ export interface GetDevicePositionHistory {
   readonly StartTimeInclusive?: Date;
   readonly TrackerName: string;
 }
+
 export interface GetGeofence {
   readonly CollectionName: string;
   readonly GeofenceId: string;
 }
+
 export interface GetMapGlyphs {
   readonly FontStack: string;
   readonly FontUnicodeRange: string;
   readonly MapName: string;
 }
+
 export interface GetMapSprites {
   readonly FileName: string;
   readonly MapName: string;
 }
+
 export interface GetMapStyleDescriptor {
   readonly MapName: string;
 }
+
 export interface GetMapTile {
   readonly MapName: string;
   readonly X: string;
   readonly Y: string;
   readonly Z: string;
 }
+
 export interface ListDevicePositions {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly TrackerName: string;
 }
+
 export interface ListGeofenceCollections {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListGeofences {
   readonly CollectionName: string;
   readonly NextToken?: string;
 }
+
 export interface ListMaps {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListPlaceIndexes {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListRouteCalculators {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface ListTrackerConsumers {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly TrackerName: string;
 }
+
 export interface ListTrackers {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface PutGeofence {
   readonly CollectionName: string;
   readonly GeofenceId: string;
   readonly Geometry: GeofenceGeometry;
 }
+
 export interface SearchPlaceIndexForPosition {
   readonly IndexName: string;
   readonly Language?: string;
   readonly MaxResults?: number;
   readonly Position: [];
 }
+
 export interface SearchPlaceIndexForSuggestions {
   readonly BiasPosition?: [];
   readonly FilterBBox?: [];
@@ -205,6 +247,7 @@ export interface SearchPlaceIndexForSuggestions {
   readonly MaxResults?: number;
   readonly Text: string;
 }
+
 export interface SearchPlaceIndexForText {
   readonly BiasPosition?: [];
   readonly FilterBBox?: [];
@@ -214,36 +257,43 @@ export interface SearchPlaceIndexForText {
   readonly MaxResults?: number;
   readonly Text: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateGeofenceCollection {
   readonly CollectionName: string;
   readonly Description?: string;
   readonly PricingPlan?: string;
   readonly PricingPlanDataSource?: string;
 }
+
 export interface UpdateMap {
   readonly Description?: string;
   readonly MapName: string;
   readonly PricingPlan?: string;
 }
+
 export interface UpdatePlaceIndex {
   readonly DataSourceConfiguration?: DataSourceConfiguration;
   readonly Description?: string;
   readonly IndexName: string;
   readonly PricingPlan?: string;
 }
+
 export interface UpdateRouteCalculator {
   readonly CalculatorName: string;
   readonly Description?: string;
   readonly PricingPlan?: string;
 }
+
 export interface UpdateTracker {
   readonly Description?: string;
   readonly PositionFiltering?: string;
@@ -252,149 +302,147 @@ export interface UpdateTracker {
   readonly TrackerName: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly Message: string;
 }
 
-interface AssociateTrackerConsumerRequest {
+export interface AssociateTrackerConsumerRequest {
   readonly ConsumerArn: string;
   readonly TrackerName: string;
 }
 
-interface AssociateTrackerConsumerResponse {
+export interface AssociateTrackerConsumerResponse {
 }
 
-interface BatchDeleteDevicePositionHistoryError {
+export interface BatchDeleteDevicePositionHistoryError {
   readonly DeviceId: string;
   readonly Error: BatchItemError;
 }
 
-interface BatchDeleteDevicePositionHistoryRequest {
+export interface BatchDeleteDevicePositionHistoryRequest {
   readonly DeviceIds: [];
   readonly TrackerName: string;
 }
 
-interface BatchDeleteDevicePositionHistoryResponse {
+export interface BatchDeleteDevicePositionHistoryResponse {
   readonly Errors: [];
 }
 
-interface BatchDeleteGeofenceError {
+export interface BatchDeleteGeofenceError {
   readonly Error: BatchItemError;
   readonly GeofenceId: string;
 }
 
-interface BatchDeleteGeofenceRequest {
+export interface BatchDeleteGeofenceRequest {
   readonly CollectionName: string;
   readonly GeofenceIds: [];
 }
 
-interface BatchDeleteGeofenceResponse {
+export interface BatchDeleteGeofenceResponse {
   readonly Errors: [];
 }
 
-interface BatchEvaluateGeofencesError {
+export interface BatchEvaluateGeofencesError {
   readonly DeviceId: string;
   readonly Error: BatchItemError;
   readonly SampleTime: Date;
 }
 
-interface BatchEvaluateGeofencesRequest {
+export interface BatchEvaluateGeofencesRequest {
   readonly CollectionName: string;
   readonly DevicePositionUpdates: [];
 }
 
-interface BatchEvaluateGeofencesResponse {
+export interface BatchEvaluateGeofencesResponse {
   readonly Errors: [];
 }
 
-interface BatchGetDevicePositionError {
+export interface BatchGetDevicePositionError {
   readonly DeviceId: string;
   readonly Error: BatchItemError;
 }
 
-interface BatchGetDevicePositionRequest {
+export interface BatchGetDevicePositionRequest {
   readonly DeviceIds: [];
   readonly TrackerName: string;
 }
 
-interface BatchGetDevicePositionResponse {
+export interface BatchGetDevicePositionResponse {
   readonly DevicePositions: [];
   readonly Errors: [];
 }
 
-interface BatchItemError {
-  readonly Code: string;
-  readonly Message: string;
+export interface BatchItemError {
+  readonly Code?: string;
+  readonly Message?: string;
 }
 
-interface BatchPutGeofenceError {
+export interface BatchPutGeofenceError {
   readonly Error: BatchItemError;
   readonly GeofenceId: string;
 }
 
-interface BatchPutGeofenceRequest {
+export interface BatchPutGeofenceRequest {
   readonly CollectionName: string;
   readonly Entries: [];
 }
 
-interface BatchPutGeofenceRequestEntry {
+export interface BatchPutGeofenceRequestEntry {
   readonly GeofenceId: string;
   readonly Geometry: GeofenceGeometry;
 }
 
-interface BatchPutGeofenceResponse {
+export interface BatchPutGeofenceResponse {
   readonly Errors: [];
   readonly Successes: [];
 }
 
-interface BatchPutGeofenceSuccess {
+export interface BatchPutGeofenceSuccess {
   readonly CreateTime: Date;
   readonly GeofenceId: string;
   readonly UpdateTime: Date;
 }
 
-interface BatchUpdateDevicePositionError {
+export interface BatchUpdateDevicePositionError {
   readonly DeviceId: string;
   readonly Error: BatchItemError;
   readonly SampleTime: Date;
 }
 
-interface BatchUpdateDevicePositionRequest {
+export interface BatchUpdateDevicePositionRequest {
   readonly TrackerName: string;
   readonly Updates: [];
 }
 
-interface BatchUpdateDevicePositionResponse {
+export interface BatchUpdateDevicePositionResponse {
   readonly Errors: [];
 }
 
-interface CalculateRouteCarModeOptions {
-  readonly AvoidFerries: boolean;
-  readonly AvoidTolls: boolean;
+export interface CalculateRouteCarModeOptions {
+  readonly AvoidFerries?: boolean;
+  readonly AvoidTolls?: boolean;
 }
 
-interface CalculateRouteRequest {
+export interface CalculateRouteRequest {
   readonly CalculatorName: string;
-  readonly CarModeOptions: CalculateRouteCarModeOptions;
-  readonly DepartNow: boolean;
+  readonly CarModeOptions?: CalculateRouteCarModeOptions;
+  readonly DepartNow?: boolean;
   readonly DeparturePosition: [];
-  readonly DepartureTime: Date;
+  readonly DepartureTime?: Date;
   readonly DestinationPosition: [];
-  readonly DistanceUnit: string;
-  readonly IncludeLegGeometry: boolean;
-  readonly TravelMode: string;
-  readonly TruckModeOptions: CalculateRouteTruckModeOptions;
-  readonly WaypointPositions: [];
+  readonly DistanceUnit?: string;
+  readonly IncludeLegGeometry?: boolean;
+  readonly TravelMode?: string;
+  readonly TruckModeOptions?: CalculateRouteTruckModeOptions;
+  readonly WaypointPositions?: [];
 }
 
-interface CalculateRouteResponse {
+export interface CalculateRouteResponse {
   readonly Legs: [];
   readonly Summary: CalculateRouteSummary;
 }
 
-interface CalculateRouteSummary {
+export interface CalculateRouteSummary {
   readonly DataSource: string;
   readonly Distance: unknown;
   readonly DistanceUnit: string;
@@ -402,151 +450,151 @@ interface CalculateRouteSummary {
   readonly RouteBBox: [];
 }
 
-interface CalculateRouteTruckModeOptions {
-  readonly AvoidFerries: boolean;
-  readonly AvoidTolls: boolean;
-  readonly Dimensions: TruckDimensions;
-  readonly Weight: TruckWeight;
+export interface CalculateRouteTruckModeOptions {
+  readonly AvoidFerries?: boolean;
+  readonly AvoidTolls?: boolean;
+  readonly Dimensions?: TruckDimensions;
+  readonly Weight?: TruckWeight;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly Message: string;
 }
 
-interface CreateGeofenceCollectionRequest {
+export interface CreateGeofenceCollectionRequest {
   readonly CollectionName: string;
-  readonly Description: string;
-  readonly KmsKeyId: string;
+  readonly Description?: string;
+  readonly KmsKeyId?: string;
   readonly PricingPlan: string;
-  readonly PricingPlanDataSource: string;
-  readonly Tags: {[key: string]: any};
+  readonly PricingPlanDataSource?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateGeofenceCollectionResponse {
+export interface CreateGeofenceCollectionResponse {
   readonly CollectionArn: string;
   readonly CollectionName: string;
   readonly CreateTime: Date;
 }
 
-interface CreateMapRequest {
+export interface CreateMapRequest {
   readonly Configuration: MapConfiguration;
-  readonly Description: string;
+  readonly Description?: string;
   readonly MapName: string;
   readonly PricingPlan: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateMapResponse {
+export interface CreateMapResponse {
   readonly CreateTime: Date;
   readonly MapArn: string;
   readonly MapName: string;
 }
 
-interface CreatePlaceIndexRequest {
+export interface CreatePlaceIndexRequest {
   readonly DataSource: string;
-  readonly DataSourceConfiguration: DataSourceConfiguration;
-  readonly Description: string;
+  readonly DataSourceConfiguration?: DataSourceConfiguration;
+  readonly Description?: string;
   readonly IndexName: string;
   readonly PricingPlan: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreatePlaceIndexResponse {
+export interface CreatePlaceIndexResponse {
   readonly CreateTime: Date;
   readonly IndexArn: string;
   readonly IndexName: string;
 }
 
-interface CreateRouteCalculatorRequest {
+export interface CreateRouteCalculatorRequest {
   readonly CalculatorName: string;
   readonly DataSource: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly PricingPlan: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateRouteCalculatorResponse {
+export interface CreateRouteCalculatorResponse {
   readonly CalculatorArn: string;
   readonly CalculatorName: string;
   readonly CreateTime: Date;
 }
 
-interface CreateTrackerRequest {
-  readonly Description: string;
-  readonly KmsKeyId: string;
-  readonly PositionFiltering: string;
+export interface CreateTrackerRequest {
+  readonly Description?: string;
+  readonly KmsKeyId?: string;
+  readonly PositionFiltering?: string;
   readonly PricingPlan: string;
-  readonly PricingPlanDataSource: string;
-  readonly Tags: {[key: string]: any};
+  readonly PricingPlanDataSource?: string;
+  readonly Tags?: {[key: string]: any};
   readonly TrackerName: string;
 }
 
-interface CreateTrackerResponse {
+export interface CreateTrackerResponse {
   readonly CreateTime: Date;
   readonly TrackerArn: string;
   readonly TrackerName: string;
 }
 
-interface DataSourceConfiguration {
-  readonly IntendedUse: string;
+export interface DataSourceConfiguration {
+  readonly IntendedUse?: string;
 }
 
-interface DeleteGeofenceCollectionRequest {
+export interface DeleteGeofenceCollectionRequest {
   readonly CollectionName: string;
 }
 
-interface DeleteGeofenceCollectionResponse {
+export interface DeleteGeofenceCollectionResponse {
 }
 
-interface DeleteMapRequest {
+export interface DeleteMapRequest {
   readonly MapName: string;
 }
 
-interface DeleteMapResponse {
+export interface DeleteMapResponse {
 }
 
-interface DeletePlaceIndexRequest {
+export interface DeletePlaceIndexRequest {
   readonly IndexName: string;
 }
 
-interface DeletePlaceIndexResponse {
+export interface DeletePlaceIndexResponse {
 }
 
-interface DeleteRouteCalculatorRequest {
+export interface DeleteRouteCalculatorRequest {
   readonly CalculatorName: string;
 }
 
-interface DeleteRouteCalculatorResponse {
+export interface DeleteRouteCalculatorResponse {
 }
 
-interface DeleteTrackerRequest {
+export interface DeleteTrackerRequest {
   readonly TrackerName: string;
 }
 
-interface DeleteTrackerResponse {
+export interface DeleteTrackerResponse {
 }
 
-interface DescribeGeofenceCollectionRequest {
+export interface DescribeGeofenceCollectionRequest {
   readonly CollectionName: string;
 }
 
-interface DescribeGeofenceCollectionResponse {
+export interface DescribeGeofenceCollectionResponse {
   readonly CollectionArn: string;
   readonly CollectionName: string;
   readonly CreateTime: Date;
   readonly Description: string;
-  readonly KmsKeyId: string;
+  readonly KmsKeyId?: string;
   readonly PricingPlan: string;
-  readonly PricingPlanDataSource: string;
-  readonly Tags: {[key: string]: any};
+  readonly PricingPlanDataSource?: string;
+  readonly Tags?: {[key: string]: any};
   readonly UpdateTime: Date;
 }
 
-interface DescribeMapRequest {
+export interface DescribeMapRequest {
   readonly MapName: string;
 }
 
-interface DescribeMapResponse {
+export interface DescribeMapResponse {
   readonly Configuration: MapConfiguration;
   readonly CreateTime: Date;
   readonly DataSource: string;
@@ -554,15 +602,15 @@ interface DescribeMapResponse {
   readonly MapArn: string;
   readonly MapName: string;
   readonly PricingPlan: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
   readonly UpdateTime: Date;
 }
 
-interface DescribePlaceIndexRequest {
+export interface DescribePlaceIndexRequest {
   readonly IndexName: string;
 }
 
-interface DescribePlaceIndexResponse {
+export interface DescribePlaceIndexResponse {
   readonly CreateTime: Date;
   readonly DataSource: string;
   readonly DataSourceConfiguration: DataSourceConfiguration;
@@ -570,104 +618,104 @@ interface DescribePlaceIndexResponse {
   readonly IndexArn: string;
   readonly IndexName: string;
   readonly PricingPlan: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
   readonly UpdateTime: Date;
 }
 
-interface DescribeRouteCalculatorRequest {
+export interface DescribeRouteCalculatorRequest {
   readonly CalculatorName: string;
 }
 
-interface DescribeRouteCalculatorResponse {
+export interface DescribeRouteCalculatorResponse {
   readonly CalculatorArn: string;
   readonly CalculatorName: string;
   readonly CreateTime: Date;
   readonly DataSource: string;
   readonly Description: string;
   readonly PricingPlan: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
   readonly UpdateTime: Date;
 }
 
-interface DescribeTrackerRequest {
+export interface DescribeTrackerRequest {
   readonly TrackerName: string;
 }
 
-interface DescribeTrackerResponse {
+export interface DescribeTrackerResponse {
   readonly CreateTime: Date;
   readonly Description: string;
-  readonly KmsKeyId: string;
-  readonly PositionFiltering: string;
+  readonly KmsKeyId?: string;
+  readonly PositionFiltering?: string;
   readonly PricingPlan: string;
-  readonly PricingPlanDataSource: string;
-  readonly Tags: {[key: string]: any};
+  readonly PricingPlanDataSource?: string;
+  readonly Tags?: {[key: string]: any};
   readonly TrackerArn: string;
   readonly TrackerName: string;
   readonly UpdateTime: Date;
 }
 
-interface DevicePosition {
-  readonly Accuracy: PositionalAccuracy;
-  readonly DeviceId: string;
+export interface DevicePosition {
+  readonly Accuracy?: PositionalAccuracy;
+  readonly DeviceId?: string;
   readonly Position: [];
-  readonly PositionProperties: {[key: string]: any};
+  readonly PositionProperties?: {[key: string]: any};
   readonly ReceivedTime: Date;
   readonly SampleTime: Date;
 }
 
-interface DevicePositionUpdate {
-  readonly Accuracy: PositionalAccuracy;
+export interface DevicePositionUpdate {
+  readonly Accuracy?: PositionalAccuracy;
   readonly DeviceId: string;
   readonly Position: [];
-  readonly PositionProperties: {[key: string]: any};
+  readonly PositionProperties?: {[key: string]: any};
   readonly SampleTime: Date;
 }
 
-interface DisassociateTrackerConsumerRequest {
+export interface DisassociateTrackerConsumerRequest {
   readonly ConsumerArn: string;
   readonly TrackerName: string;
 }
 
-interface DisassociateTrackerConsumerResponse {
+export interface DisassociateTrackerConsumerResponse {
 }
 
-interface GeofenceGeometry {
-  readonly Polygon: [];
+export interface GeofenceGeometry {
+  readonly Polygon?: [];
 }
 
-interface GetDevicePositionHistoryRequest {
+export interface GetDevicePositionHistoryRequest {
   readonly DeviceId: string;
-  readonly EndTimeExclusive: Date;
-  readonly NextToken: string;
-  readonly StartTimeInclusive: Date;
+  readonly EndTimeExclusive?: Date;
+  readonly NextToken?: string;
+  readonly StartTimeInclusive?: Date;
   readonly TrackerName: string;
 }
 
-interface GetDevicePositionHistoryResponse {
+export interface GetDevicePositionHistoryResponse {
   readonly DevicePositions: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface GetDevicePositionRequest {
+export interface GetDevicePositionRequest {
   readonly DeviceId: string;
   readonly TrackerName: string;
 }
 
-interface GetDevicePositionResponse {
-  readonly Accuracy: PositionalAccuracy;
-  readonly DeviceId: string;
+export interface GetDevicePositionResponse {
+  readonly Accuracy?: PositionalAccuracy;
+  readonly DeviceId?: string;
   readonly Position: [];
-  readonly PositionProperties: {[key: string]: any};
+  readonly PositionProperties?: {[key: string]: any};
   readonly ReceivedTime: Date;
   readonly SampleTime: Date;
 }
 
-interface GetGeofenceRequest {
+export interface GetGeofenceRequest {
   readonly CollectionName: string;
   readonly GeofenceId: string;
 }
 
-interface GetGeofenceResponse {
+export interface GetGeofenceResponse {
   readonly CreateTime: Date;
   readonly GeofenceId: string;
   readonly Geometry: GeofenceGeometry;
@@ -675,104 +723,104 @@ interface GetGeofenceResponse {
   readonly UpdateTime: Date;
 }
 
-interface GetMapGlyphsRequest {
+export interface GetMapGlyphsRequest {
   readonly FontStack: string;
   readonly FontUnicodeRange: string;
   readonly MapName: string;
 }
 
-interface GetMapGlyphsResponse {
-  readonly Blob: unknown;
-  readonly ContentType: string;
+export interface GetMapGlyphsResponse {
+  readonly Blob?: unknown;
+  readonly ContentType?: string;
 }
 
-interface GetMapSpritesRequest {
+export interface GetMapSpritesRequest {
   readonly FileName: string;
   readonly MapName: string;
 }
 
-interface GetMapSpritesResponse {
-  readonly Blob: unknown;
-  readonly ContentType: string;
+export interface GetMapSpritesResponse {
+  readonly Blob?: unknown;
+  readonly ContentType?: string;
 }
 
-interface GetMapStyleDescriptorRequest {
+export interface GetMapStyleDescriptorRequest {
   readonly MapName: string;
 }
 
-interface GetMapStyleDescriptorResponse {
-  readonly Blob: unknown;
-  readonly ContentType: string;
+export interface GetMapStyleDescriptorResponse {
+  readonly Blob?: unknown;
+  readonly ContentType?: string;
 }
 
-interface GetMapTileRequest {
+export interface GetMapTileRequest {
   readonly MapName: string;
   readonly X: string;
   readonly Y: string;
   readonly Z: string;
 }
 
-interface GetMapTileResponse {
-  readonly Blob: unknown;
-  readonly ContentType: string;
+export interface GetMapTileResponse {
+  readonly Blob?: unknown;
+  readonly ContentType?: string;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly Message: string;
 }
 
-interface Leg {
+export interface Leg {
   readonly Distance: unknown;
   readonly DurationSeconds: unknown;
   readonly EndPosition: [];
-  readonly Geometry: LegGeometry;
+  readonly Geometry?: LegGeometry;
   readonly StartPosition: [];
   readonly Steps: [];
 }
 
-interface LegGeometry {
-  readonly LineString: [];
+export interface LegGeometry {
+  readonly LineString?: [];
 }
 
-interface ListDevicePositionsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListDevicePositionsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly TrackerName: string;
 }
 
-interface ListDevicePositionsResponse {
+export interface ListDevicePositionsResponse {
   readonly Entries: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListDevicePositionsResponseEntry {
-  readonly Accuracy: PositionalAccuracy;
+export interface ListDevicePositionsResponseEntry {
+  readonly Accuracy?: PositionalAccuracy;
   readonly DeviceId: string;
   readonly Position: [];
-  readonly PositionProperties: {[key: string]: any};
+  readonly PositionProperties?: {[key: string]: any};
   readonly SampleTime: Date;
 }
 
-interface ListGeofenceCollectionsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListGeofenceCollectionsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListGeofenceCollectionsResponse {
+export interface ListGeofenceCollectionsResponse {
   readonly Entries: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListGeofenceCollectionsResponseEntry {
+export interface ListGeofenceCollectionsResponseEntry {
   readonly CollectionName: string;
   readonly CreateTime: Date;
   readonly Description: string;
   readonly PricingPlan: string;
-  readonly PricingPlanDataSource: string;
+  readonly PricingPlanDataSource?: string;
   readonly UpdateTime: Date;
 }
 
-interface ListGeofenceResponseEntry {
+export interface ListGeofenceResponseEntry {
   readonly CreateTime: Date;
   readonly GeofenceId: string;
   readonly Geometry: GeofenceGeometry;
@@ -780,27 +828,27 @@ interface ListGeofenceResponseEntry {
   readonly UpdateTime: Date;
 }
 
-interface ListGeofencesRequest {
+export interface ListGeofencesRequest {
   readonly CollectionName: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListGeofencesResponse {
+export interface ListGeofencesResponse {
   readonly Entries: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListMapsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListMapsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListMapsResponse {
+export interface ListMapsResponse {
   readonly Entries: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListMapsResponseEntry {
+export interface ListMapsResponseEntry {
   readonly CreateTime: Date;
   readonly DataSource: string;
   readonly Description: string;
@@ -809,17 +857,17 @@ interface ListMapsResponseEntry {
   readonly UpdateTime: Date;
 }
 
-interface ListPlaceIndexesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListPlaceIndexesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListPlaceIndexesResponse {
+export interface ListPlaceIndexesResponse {
   readonly Entries: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListPlaceIndexesResponseEntry {
+export interface ListPlaceIndexesResponseEntry {
   readonly CreateTime: Date;
   readonly DataSource: string;
   readonly Description: string;
@@ -828,17 +876,17 @@ interface ListPlaceIndexesResponseEntry {
   readonly UpdateTime: Date;
 }
 
-interface ListRouteCalculatorsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListRouteCalculatorsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListRouteCalculatorsResponse {
+export interface ListRouteCalculatorsResponse {
   readonly Entries: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListRouteCalculatorsResponseEntry {
+export interface ListRouteCalculatorsResponseEntry {
   readonly CalculatorName: string;
   readonly CreateTime: Date;
   readonly DataSource: string;
@@ -847,293 +895,294 @@ interface ListRouteCalculatorsResponseEntry {
   readonly UpdateTime: Date;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListTrackerConsumersRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListTrackerConsumersRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly TrackerName: string;
 }
 
-interface ListTrackerConsumersResponse {
+export interface ListTrackerConsumersResponse {
   readonly ConsumerArns: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTrackersRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListTrackersRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListTrackersResponse {
+export interface ListTrackersResponse {
   readonly Entries: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTrackersResponseEntry {
+export interface ListTrackersResponseEntry {
   readonly CreateTime: Date;
   readonly Description: string;
   readonly PricingPlan: string;
-  readonly PricingPlanDataSource: string;
+  readonly PricingPlanDataSource?: string;
   readonly TrackerName: string;
   readonly UpdateTime: Date;
 }
 
-interface MapConfiguration {
+export interface MapConfiguration {
   readonly Style: string;
 }
 
-interface Place {
-  readonly AddressNumber: string;
-  readonly Country: string;
+export interface Place {
+  readonly AddressNumber?: string;
+  readonly Country?: string;
   readonly Geometry: PlaceGeometry;
-  readonly Interpolated: boolean;
-  readonly Label: string;
-  readonly Municipality: string;
-  readonly Neighborhood: string;
-  readonly PostalCode: string;
-  readonly Region: string;
-  readonly Street: string;
-  readonly SubRegion: string;
-  readonly TimeZone: TimeZone;
+  readonly Interpolated?: boolean;
+  readonly Label?: string;
+  readonly Municipality?: string;
+  readonly Neighborhood?: string;
+  readonly PostalCode?: string;
+  readonly Region?: string;
+  readonly Street?: string;
+  readonly SubRegion?: string;
+  readonly TimeZone?: TimeZone;
 }
 
-interface PlaceGeometry {
-  readonly Point: [];
+export interface PlaceGeometry {
+  readonly Point?: [];
 }
 
-interface PositionalAccuracy {
+export interface PositionalAccuracy {
   readonly Horizontal: unknown;
 }
 
-interface PutGeofenceRequest {
+export interface PutGeofenceRequest {
   readonly CollectionName: string;
   readonly GeofenceId: string;
   readonly Geometry: GeofenceGeometry;
 }
 
-interface PutGeofenceResponse {
+export interface PutGeofenceResponse {
   readonly CreateTime: Date;
   readonly GeofenceId: string;
   readonly UpdateTime: Date;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly Message: string;
 }
 
-interface SearchForPositionResult {
+export interface SearchForPositionResult {
   readonly Distance: unknown;
   readonly Place: Place;
 }
 
-interface SearchForSuggestionsResult {
+export interface SearchForSuggestionsResult {
   readonly Text: string;
 }
 
-interface SearchForTextResult {
-  readonly Distance: unknown;
+export interface SearchForTextResult {
+  readonly Distance?: unknown;
   readonly Place: Place;
-  readonly Relevance: unknown;
+  readonly Relevance?: unknown;
 }
 
-interface SearchPlaceIndexForPositionRequest {
+export interface SearchPlaceIndexForPositionRequest {
   readonly IndexName: string;
-  readonly Language: string;
-  readonly MaxResults: number;
+  readonly Language?: string;
+  readonly MaxResults?: number;
   readonly Position: [];
 }
 
-interface SearchPlaceIndexForPositionResponse {
+export interface SearchPlaceIndexForPositionResponse {
   readonly Results: [];
   readonly Summary: SearchPlaceIndexForPositionSummary;
 }
 
-interface SearchPlaceIndexForPositionSummary {
+export interface SearchPlaceIndexForPositionSummary {
   readonly DataSource: string;
-  readonly Language: string;
-  readonly MaxResults: number;
+  readonly Language?: string;
+  readonly MaxResults?: number;
   readonly Position: [];
 }
 
-interface SearchPlaceIndexForSuggestionsRequest {
-  readonly BiasPosition: [];
-  readonly FilterBBox: [];
-  readonly FilterCountries: [];
+export interface SearchPlaceIndexForSuggestionsRequest {
+  readonly BiasPosition?: [];
+  readonly FilterBBox?: [];
+  readonly FilterCountries?: [];
   readonly IndexName: string;
-  readonly Language: string;
-  readonly MaxResults: number;
+  readonly Language?: string;
+  readonly MaxResults?: number;
   readonly Text: string;
 }
 
-interface SearchPlaceIndexForSuggestionsResponse {
+export interface SearchPlaceIndexForSuggestionsResponse {
   readonly Results: [];
   readonly Summary: SearchPlaceIndexForSuggestionsSummary;
 }
 
-interface SearchPlaceIndexForSuggestionsSummary {
-  readonly BiasPosition: [];
+export interface SearchPlaceIndexForSuggestionsSummary {
+  readonly BiasPosition?: [];
   readonly DataSource: string;
-  readonly FilterBBox: [];
-  readonly FilterCountries: [];
-  readonly Language: string;
-  readonly MaxResults: number;
+  readonly FilterBBox?: [];
+  readonly FilterCountries?: [];
+  readonly Language?: string;
+  readonly MaxResults?: number;
   readonly Text: string;
 }
 
-interface SearchPlaceIndexForTextRequest {
-  readonly BiasPosition: [];
-  readonly FilterBBox: [];
-  readonly FilterCountries: [];
+export interface SearchPlaceIndexForTextRequest {
+  readonly BiasPosition?: [];
+  readonly FilterBBox?: [];
+  readonly FilterCountries?: [];
   readonly IndexName: string;
-  readonly Language: string;
-  readonly MaxResults: number;
+  readonly Language?: string;
+  readonly MaxResults?: number;
   readonly Text: string;
 }
 
-interface SearchPlaceIndexForTextResponse {
+export interface SearchPlaceIndexForTextResponse {
   readonly Results: [];
   readonly Summary: SearchPlaceIndexForTextSummary;
 }
 
-interface SearchPlaceIndexForTextSummary {
-  readonly BiasPosition: [];
+export interface SearchPlaceIndexForTextSummary {
+  readonly BiasPosition?: [];
   readonly DataSource: string;
-  readonly FilterBBox: [];
-  readonly FilterCountries: [];
-  readonly Language: string;
-  readonly MaxResults: number;
-  readonly ResultBBox: [];
+  readonly FilterBBox?: [];
+  readonly FilterCountries?: [];
+  readonly Language?: string;
+  readonly MaxResults?: number;
+  readonly ResultBBox?: [];
   readonly Text: string;
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly Message: string;
 }
 
-interface Step {
+export interface Step {
   readonly Distance: unknown;
   readonly DurationSeconds: unknown;
   readonly EndPosition: [];
-  readonly GeometryOffset: number;
+  readonly GeometryOffset?: number;
   readonly StartPosition: [];
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly Message: string;
 }
 
-interface TimeZone {
+export interface TimeZone {
   readonly Name: string;
-  readonly Offset: number;
+  readonly Offset?: number;
 }
 
-interface TruckDimensions {
-  readonly Height: unknown;
-  readonly Length: unknown;
-  readonly Unit: string;
-  readonly Width: unknown;
+export interface TruckDimensions {
+  readonly Height?: unknown;
+  readonly Length?: unknown;
+  readonly Unit?: string;
+  readonly Width?: unknown;
 }
 
-interface TruckWeight {
-  readonly Total: unknown;
-  readonly Unit: string;
+export interface TruckWeight {
+  readonly Total?: unknown;
+  readonly Unit?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateGeofenceCollectionRequest {
+export interface UpdateGeofenceCollectionRequest {
   readonly CollectionName: string;
-  readonly Description: string;
-  readonly PricingPlan: string;
-  readonly PricingPlanDataSource: string;
+  readonly Description?: string;
+  readonly PricingPlan?: string;
+  readonly PricingPlanDataSource?: string;
 }
 
-interface UpdateGeofenceCollectionResponse {
+export interface UpdateGeofenceCollectionResponse {
   readonly CollectionArn: string;
   readonly CollectionName: string;
   readonly UpdateTime: Date;
 }
 
-interface UpdateMapRequest {
-  readonly Description: string;
+export interface UpdateMapRequest {
+  readonly Description?: string;
   readonly MapName: string;
-  readonly PricingPlan: string;
+  readonly PricingPlan?: string;
 }
 
-interface UpdateMapResponse {
+export interface UpdateMapResponse {
   readonly MapArn: string;
   readonly MapName: string;
   readonly UpdateTime: Date;
 }
 
-interface UpdatePlaceIndexRequest {
-  readonly DataSourceConfiguration: DataSourceConfiguration;
-  readonly Description: string;
+export interface UpdatePlaceIndexRequest {
+  readonly DataSourceConfiguration?: DataSourceConfiguration;
+  readonly Description?: string;
   readonly IndexName: string;
-  readonly PricingPlan: string;
+  readonly PricingPlan?: string;
 }
 
-interface UpdatePlaceIndexResponse {
+export interface UpdatePlaceIndexResponse {
   readonly IndexArn: string;
   readonly IndexName: string;
   readonly UpdateTime: Date;
 }
 
-interface UpdateRouteCalculatorRequest {
+export interface UpdateRouteCalculatorRequest {
   readonly CalculatorName: string;
-  readonly Description: string;
-  readonly PricingPlan: string;
+  readonly Description?: string;
+  readonly PricingPlan?: string;
 }
 
-interface UpdateRouteCalculatorResponse {
+export interface UpdateRouteCalculatorResponse {
   readonly CalculatorArn: string;
   readonly CalculatorName: string;
   readonly UpdateTime: Date;
 }
 
-interface UpdateTrackerRequest {
-  readonly Description: string;
-  readonly PositionFiltering: string;
-  readonly PricingPlan: string;
-  readonly PricingPlanDataSource: string;
+export interface UpdateTrackerRequest {
+  readonly Description?: string;
+  readonly PositionFiltering?: string;
+  readonly PricingPlan?: string;
+  readonly PricingPlanDataSource?: string;
   readonly TrackerName: string;
 }
 
-interface UpdateTrackerResponse {
+export interface UpdateTrackerResponse {
   readonly TrackerArn: string;
   readonly TrackerName: string;
   readonly UpdateTime: Date;
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly FieldList: [];
   readonly Message: string;
   readonly Reason: string;
 }
 
-interface ValidationExceptionField {
+export interface ValidationExceptionField {
   readonly Message: string;
   readonly Name: string;
 }
+
 

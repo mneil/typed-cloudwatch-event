@@ -4,24 +4,29 @@
 export interface AcceptSharedDirectory {
   readonly SharedDirectoryId: string;
 }
+
 export interface AddIpRoutes {
   readonly DirectoryId: string;
   readonly IpRoutes: [];
   readonly UpdateSecurityGroupForDirectoryControllers?: boolean;
 }
+
 export interface AddRegion {
   readonly DirectoryId: string;
   readonly RegionName: string;
   readonly VPCSettings: DirectoryVpcSettings;
 }
+
 export interface AddTagsToResource {
   readonly ResourceId: string;
   readonly Tags: [];
 }
+
 export interface CancelSchemaExtension {
   readonly DirectoryId: string;
   readonly SchemaExtensionId: string;
 }
+
 export interface ConnectDirectory {
   readonly Name: string;
   readonly ShortName?: string;
@@ -31,10 +36,12 @@ export interface ConnectDirectory {
   readonly ConnectSettings: DirectoryConnectSettings;
   readonly Tags?: [];
 }
+
 export interface CreateAlias {
   readonly DirectoryId: string;
   readonly Alias: string;
 }
+
 export interface CreateComputer {
   readonly DirectoryId: string;
   readonly ComputerName: string;
@@ -42,11 +49,13 @@ export interface CreateComputer {
   readonly OrganizationalUnitDistinguishedName?: string;
   readonly ComputerAttributes?: [];
 }
+
 export interface CreateConditionalForwarder {
   readonly DirectoryId: string;
   readonly RemoteDomainName: string;
   readonly DnsIpAddrs: [];
 }
+
 export interface CreateDirectory {
   readonly Name: string;
   readonly ShortName?: string;
@@ -56,10 +65,12 @@ export interface CreateDirectory {
   readonly VpcSettings?: DirectoryVpcSettings;
   readonly Tags?: [];
 }
+
 export interface CreateLogSubscription {
   readonly DirectoryId: string;
   readonly LogGroupName: string;
 }
+
 export interface CreateMicrosoftAD {
   readonly Name: string;
   readonly ShortName?: string;
@@ -69,10 +80,12 @@ export interface CreateMicrosoftAD {
   readonly Edition?: string;
   readonly Tags?: [];
 }
+
 export interface CreateSnapshot {
   readonly DirectoryId: string;
   readonly Name?: string;
 }
+
 export interface CreateTrust {
   readonly DirectoryId: string;
   readonly RemoteDomainName: string;
@@ -82,1252 +95,1300 @@ export interface CreateTrust {
   readonly ConditionalForwarderIpAddrs?: [];
   readonly SelectiveAuth?: string;
 }
+
 export interface DeleteConditionalForwarder {
   readonly DirectoryId: string;
   readonly RemoteDomainName: string;
 }
+
 export interface DeleteDirectory {
   readonly DirectoryId: string;
 }
+
 export interface DeleteLogSubscription {
   readonly DirectoryId: string;
 }
+
 export interface DeleteSnapshot {
   readonly SnapshotId: string;
 }
+
 export interface DeleteTrust {
   readonly TrustId: string;
   readonly DeleteAssociatedConditionalForwarder?: boolean;
 }
+
 export interface DeregisterCertificate {
   readonly DirectoryId: string;
   readonly CertificateId: string;
 }
+
 export interface DeregisterEventTopic {
   readonly DirectoryId: string;
   readonly TopicName: string;
 }
+
 export interface DescribeCertificate {
   readonly DirectoryId: string;
   readonly CertificateId: string;
 }
+
 export interface DescribeClientAuthenticationSettings {
   readonly DirectoryId: string;
   readonly Type?: string;
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeConditionalForwarders {
   readonly DirectoryId: string;
   readonly RemoteDomainNames?: [];
 }
+
 export interface DescribeDirectories {
   readonly DirectoryIds?: [];
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeDomainControllers {
   readonly DirectoryId: string;
   readonly DomainControllerIds?: [];
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeEventTopics {
   readonly DirectoryId?: string;
   readonly TopicNames?: [];
 }
+
 export interface DescribeLDAPSSettings {
   readonly DirectoryId: string;
   readonly Type?: string;
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeRegions {
   readonly DirectoryId: string;
   readonly RegionName?: string;
   readonly NextToken?: string;
 }
+
 export interface DescribeSharedDirectories {
   readonly OwnerDirectoryId: string;
   readonly SharedDirectoryIds?: [];
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeSnapshots {
   readonly DirectoryId?: string;
   readonly SnapshotIds?: [];
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DescribeTrusts {
   readonly DirectoryId?: string;
   readonly TrustIds?: [];
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface DisableClientAuthentication {
   readonly DirectoryId: string;
   readonly Type: string;
 }
+
 export interface DisableLDAPS {
   readonly DirectoryId: string;
   readonly Type: string;
 }
+
 export interface DisableRadius {
   readonly DirectoryId: string;
 }
+
 export interface DisableSso {
   readonly DirectoryId: string;
   readonly UserName?: string;
   readonly Password?: string;
 }
+
 export interface EnableClientAuthentication {
   readonly DirectoryId: string;
   readonly Type: string;
 }
+
 export interface EnableLDAPS {
   readonly DirectoryId: string;
   readonly Type: string;
 }
+
 export interface EnableRadius {
   readonly DirectoryId: string;
   readonly RadiusSettings: RadiusSettings;
 }
+
 export interface EnableSso {
   readonly DirectoryId: string;
   readonly UserName?: string;
   readonly Password?: string;
 }
+
 export interface GetDirectoryLimits {
 }
+
 export interface GetSnapshotLimits {
   readonly DirectoryId: string;
 }
+
 export interface ListCertificates {
   readonly DirectoryId: string;
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface ListIpRoutes {
   readonly DirectoryId: string;
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface ListLogSubscriptions {
   readonly DirectoryId?: string;
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface ListSchemaExtensions {
   readonly DirectoryId: string;
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceId: string;
   readonly NextToken?: string;
   readonly Limit?: number;
 }
+
 export interface RegisterCertificate {
   readonly DirectoryId: string;
   readonly CertificateData: string;
   readonly Type?: string;
   readonly ClientCertAuthSettings?: ClientCertAuthSettings;
 }
+
 export interface RegisterEventTopic {
   readonly DirectoryId: string;
   readonly TopicName: string;
 }
+
 export interface RejectSharedDirectory {
   readonly SharedDirectoryId: string;
 }
+
 export interface RemoveIpRoutes {
   readonly DirectoryId: string;
   readonly CidrIps: [];
 }
+
 export interface RemoveRegion {
   readonly DirectoryId: string;
 }
+
 export interface RemoveTagsFromResource {
   readonly ResourceId: string;
   readonly TagKeys: [];
 }
+
 export interface ResetUserPassword {
   readonly DirectoryId: string;
   readonly UserName: string;
   readonly NewPassword: string;
 }
+
 export interface RestoreFromSnapshot {
   readonly SnapshotId: string;
 }
+
 export interface ShareDirectory {
   readonly DirectoryId: string;
   readonly ShareNotes?: string;
   readonly ShareTarget: ShareTarget;
   readonly ShareMethod: string;
 }
+
 export interface StartSchemaExtension {
   readonly DirectoryId: string;
   readonly CreateSnapshotBeforeSchemaExtension: boolean;
   readonly LdifContent: string;
   readonly Description: string;
 }
+
 export interface UnshareDirectory {
   readonly DirectoryId: string;
   readonly UnshareTarget: UnshareTarget;
 }
+
 export interface UpdateConditionalForwarder {
   readonly DirectoryId: string;
   readonly RemoteDomainName: string;
   readonly DnsIpAddrs: [];
 }
+
 export interface UpdateNumberOfDomainControllers {
   readonly DirectoryId: string;
   readonly DesiredNumber: number;
 }
+
 export interface UpdateRadius {
   readonly DirectoryId: string;
   readonly RadiusSettings: RadiusSettings;
 }
+
 export interface UpdateTrust {
   readonly TrustId: string;
   readonly SelectiveAuth?: string;
 }
+
 export interface VerifyTrust {
   readonly TrustId: string;
 }
 
-
-
-interface AcceptSharedDirectoryRequest {
+export interface AcceptSharedDirectoryRequest {
   readonly SharedDirectoryId: string;
 }
 
-interface AcceptSharedDirectoryResult {
-  readonly SharedDirectory: SharedDirectory;
+export interface AcceptSharedDirectoryResult {
+  readonly SharedDirectory?: SharedDirectory;
 }
 
-interface AccessDeniedException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface AddIpRoutesRequest {
+export interface AddIpRoutesRequest {
   readonly DirectoryId: string;
   readonly IpRoutes: [];
-  readonly UpdateSecurityGroupForDirectoryControllers: boolean;
+  readonly UpdateSecurityGroupForDirectoryControllers?: boolean;
 }
 
-interface AddIpRoutesResult {
+export interface AddIpRoutesResult {
 }
 
-interface AddRegionRequest {
+export interface AddRegionRequest {
   readonly DirectoryId: string;
   readonly RegionName: string;
   readonly VPCSettings: DirectoryVpcSettings;
 }
 
-interface AddRegionResult {
+export interface AddRegionResult {
 }
 
-interface AddTagsToResourceRequest {
+export interface AddTagsToResourceRequest {
   readonly ResourceId: string;
   readonly Tags: [];
 }
 
-interface AddTagsToResourceResult {
+export interface AddTagsToResourceResult {
 }
 
-interface Attribute {
-  readonly Name: string;
-  readonly Value: string;
+export interface Attribute {
+  readonly Name?: string;
+  readonly Value?: string;
 }
 
-interface AuthenticationFailedException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface AuthenticationFailedException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface CancelSchemaExtensionRequest {
+export interface CancelSchemaExtensionRequest {
   readonly DirectoryId: string;
   readonly SchemaExtensionId: string;
 }
 
-interface CancelSchemaExtensionResult {
+export interface CancelSchemaExtensionResult {
 }
 
-interface Certificate {
-  readonly CertificateId: string;
-  readonly State: string;
-  readonly StateReason: string;
-  readonly CommonName: string;
-  readonly RegisteredDateTime: Date;
-  readonly ExpiryDateTime: Date;
-  readonly Type: string;
-  readonly ClientCertAuthSettings: ClientCertAuthSettings;
+export interface Certificate {
+  readonly CertificateId?: string;
+  readonly State?: string;
+  readonly StateReason?: string;
+  readonly CommonName?: string;
+  readonly RegisteredDateTime?: Date;
+  readonly ExpiryDateTime?: Date;
+  readonly Type?: string;
+  readonly ClientCertAuthSettings?: ClientCertAuthSettings;
 }
 
-interface CertificateAlreadyExistsException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface CertificateAlreadyExistsException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface CertificateDoesNotExistException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface CertificateDoesNotExistException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface CertificateInUseException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface CertificateInUseException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface CertificateInfo {
-  readonly CertificateId: string;
-  readonly CommonName: string;
-  readonly State: string;
-  readonly ExpiryDateTime: Date;
-  readonly Type: string;
+export interface CertificateInfo {
+  readonly CertificateId?: string;
+  readonly CommonName?: string;
+  readonly State?: string;
+  readonly ExpiryDateTime?: Date;
+  readonly Type?: string;
 }
 
-interface CertificateLimitExceededException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface CertificateLimitExceededException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface ClientAuthenticationSettingInfo {
-  readonly Type: string;
-  readonly Status: string;
-  readonly LastUpdatedDateTime: Date;
+export interface ClientAuthenticationSettingInfo {
+  readonly Type?: string;
+  readonly Status?: string;
+  readonly LastUpdatedDateTime?: Date;
 }
 
-interface ClientCertAuthSettings {
-  readonly OCSPUrl: string;
+export interface ClientCertAuthSettings {
+  readonly OCSPUrl?: string;
 }
 
-interface ClientException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface ClientException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface Computer {
-  readonly ComputerId: string;
-  readonly ComputerName: string;
-  readonly ComputerAttributes: [];
+export interface Computer {
+  readonly ComputerId?: string;
+  readonly ComputerName?: string;
+  readonly ComputerAttributes?: [];
 }
 
-interface ConditionalForwarder {
-  readonly RemoteDomainName: string;
-  readonly DnsIpAddrs: [];
-  readonly ReplicationScope: string;
+export interface ConditionalForwarder {
+  readonly RemoteDomainName?: string;
+  readonly DnsIpAddrs?: [];
+  readonly ReplicationScope?: string;
 }
 
-interface ConnectDirectoryRequest {
+export interface ConnectDirectoryRequest {
   readonly Name: string;
-  readonly ShortName: string;
+  readonly ShortName?: string;
   readonly Password: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Size: string;
   readonly ConnectSettings: DirectoryConnectSettings;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface ConnectDirectoryResult {
-  readonly DirectoryId: string;
+export interface ConnectDirectoryResult {
+  readonly DirectoryId?: string;
 }
 
-interface CreateAliasRequest {
-  readonly DirectoryId: string;
-  readonly Alias: string;
-}
-
-interface CreateAliasResult {
+export interface CreateAliasRequest {
   readonly DirectoryId: string;
   readonly Alias: string;
 }
 
-interface CreateComputerRequest {
+export interface CreateAliasResult {
+  readonly DirectoryId?: string;
+  readonly Alias?: string;
+}
+
+export interface CreateComputerRequest {
   readonly DirectoryId: string;
   readonly ComputerName: string;
   readonly Password: string;
-  readonly OrganizationalUnitDistinguishedName: string;
-  readonly ComputerAttributes: [];
+  readonly OrganizationalUnitDistinguishedName?: string;
+  readonly ComputerAttributes?: [];
 }
 
-interface CreateComputerResult {
-  readonly Computer: Computer;
+export interface CreateComputerResult {
+  readonly Computer?: Computer;
 }
 
-interface CreateConditionalForwarderRequest {
+export interface CreateConditionalForwarderRequest {
   readonly DirectoryId: string;
   readonly RemoteDomainName: string;
   readonly DnsIpAddrs: [];
 }
 
-interface CreateConditionalForwarderResult {
+export interface CreateConditionalForwarderResult {
 }
 
-interface CreateDirectoryRequest {
+export interface CreateDirectoryRequest {
   readonly Name: string;
-  readonly ShortName: string;
+  readonly ShortName?: string;
   readonly Password: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Size: string;
-  readonly VpcSettings: DirectoryVpcSettings;
-  readonly Tags: [];
+  readonly VpcSettings?: DirectoryVpcSettings;
+  readonly Tags?: [];
 }
 
-interface CreateDirectoryResult {
-  readonly DirectoryId: string;
+export interface CreateDirectoryResult {
+  readonly DirectoryId?: string;
 }
 
-interface CreateLogSubscriptionRequest {
+export interface CreateLogSubscriptionRequest {
   readonly DirectoryId: string;
   readonly LogGroupName: string;
 }
 
-interface CreateLogSubscriptionResult {
+export interface CreateLogSubscriptionResult {
 }
 
-interface CreateMicrosoftADRequest {
+export interface CreateMicrosoftADRequest {
   readonly Name: string;
-  readonly ShortName: string;
+  readonly ShortName?: string;
   readonly Password: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly VpcSettings: DirectoryVpcSettings;
-  readonly Edition: string;
-  readonly Tags: [];
+  readonly Edition?: string;
+  readonly Tags?: [];
 }
 
-interface CreateMicrosoftADResult {
+export interface CreateMicrosoftADResult {
+  readonly DirectoryId?: string;
+}
+
+export interface CreateSnapshotRequest {
   readonly DirectoryId: string;
+  readonly Name?: string;
 }
 
-interface CreateSnapshotRequest {
-  readonly DirectoryId: string;
-  readonly Name: string;
+export interface CreateSnapshotResult {
+  readonly SnapshotId?: string;
 }
 
-interface CreateSnapshotResult {
-  readonly SnapshotId: string;
-}
-
-interface CreateTrustRequest {
+export interface CreateTrustRequest {
   readonly DirectoryId: string;
   readonly RemoteDomainName: string;
   readonly TrustPassword: string;
   readonly TrustDirection: string;
-  readonly TrustType: string;
-  readonly ConditionalForwarderIpAddrs: [];
-  readonly SelectiveAuth: string;
+  readonly TrustType?: string;
+  readonly ConditionalForwarderIpAddrs?: [];
+  readonly SelectiveAuth?: string;
 }
 
-interface CreateTrustResult {
-  readonly TrustId: string;
+export interface CreateTrustResult {
+  readonly TrustId?: string;
 }
 
-interface DeleteConditionalForwarderRequest {
+export interface DeleteConditionalForwarderRequest {
   readonly DirectoryId: string;
   readonly RemoteDomainName: string;
 }
 
-interface DeleteConditionalForwarderResult {
+export interface DeleteConditionalForwarderResult {
 }
 
-interface DeleteDirectoryRequest {
+export interface DeleteDirectoryRequest {
   readonly DirectoryId: string;
 }
 
-interface DeleteDirectoryResult {
+export interface DeleteDirectoryResult {
+  readonly DirectoryId?: string;
+}
+
+export interface DeleteLogSubscriptionRequest {
   readonly DirectoryId: string;
 }
 
-interface DeleteLogSubscriptionRequest {
-  readonly DirectoryId: string;
+export interface DeleteLogSubscriptionResult {
 }
 
-interface DeleteLogSubscriptionResult {
-}
-
-interface DeleteSnapshotRequest {
+export interface DeleteSnapshotRequest {
   readonly SnapshotId: string;
 }
 
-interface DeleteSnapshotResult {
-  readonly SnapshotId: string;
+export interface DeleteSnapshotResult {
+  readonly SnapshotId?: string;
 }
 
-interface DeleteTrustRequest {
+export interface DeleteTrustRequest {
   readonly TrustId: string;
-  readonly DeleteAssociatedConditionalForwarder: boolean;
+  readonly DeleteAssociatedConditionalForwarder?: boolean;
 }
 
-interface DeleteTrustResult {
-  readonly TrustId: string;
+export interface DeleteTrustResult {
+  readonly TrustId?: string;
 }
 
-interface DeregisterCertificateRequest {
+export interface DeregisterCertificateRequest {
   readonly DirectoryId: string;
   readonly CertificateId: string;
 }
 
-interface DeregisterCertificateResult {
+export interface DeregisterCertificateResult {
 }
 
-interface DeregisterEventTopicRequest {
+export interface DeregisterEventTopicRequest {
   readonly DirectoryId: string;
   readonly TopicName: string;
 }
 
-interface DeregisterEventTopicResult {
+export interface DeregisterEventTopicResult {
 }
 
-interface DescribeCertificateRequest {
+export interface DescribeCertificateRequest {
   readonly DirectoryId: string;
   readonly CertificateId: string;
 }
 
-interface DescribeCertificateResult {
-  readonly Certificate: Certificate;
+export interface DescribeCertificateResult {
+  readonly Certificate?: Certificate;
 }
 
-interface DescribeClientAuthenticationSettingsRequest {
+export interface DescribeClientAuthenticationSettingsRequest {
   readonly DirectoryId: string;
-  readonly Type: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly Type?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeClientAuthenticationSettingsResult {
-  readonly ClientAuthenticationSettingsInfo: [];
-  readonly NextToken: string;
+export interface DescribeClientAuthenticationSettingsResult {
+  readonly ClientAuthenticationSettingsInfo?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeConditionalForwardersRequest {
+export interface DescribeConditionalForwardersRequest {
   readonly DirectoryId: string;
-  readonly RemoteDomainNames: [];
+  readonly RemoteDomainNames?: [];
 }
 
-interface DescribeConditionalForwardersResult {
-  readonly ConditionalForwarders: [];
+export interface DescribeConditionalForwardersResult {
+  readonly ConditionalForwarders?: [];
 }
 
-interface DescribeDirectoriesRequest {
-  readonly DirectoryIds: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+export interface DescribeDirectoriesRequest {
+  readonly DirectoryIds?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeDirectoriesResult {
-  readonly DirectoryDescriptions: [];
-  readonly NextToken: string;
+export interface DescribeDirectoriesResult {
+  readonly DirectoryDescriptions?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeDomainControllersRequest {
+export interface DescribeDomainControllersRequest {
   readonly DirectoryId: string;
-  readonly DomainControllerIds: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly DomainControllerIds?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeDomainControllersResult {
-  readonly DomainControllers: [];
-  readonly NextToken: string;
+export interface DescribeDomainControllersResult {
+  readonly DomainControllers?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeEventTopicsRequest {
+export interface DescribeEventTopicsRequest {
+  readonly DirectoryId?: string;
+  readonly TopicNames?: [];
+}
+
+export interface DescribeEventTopicsResult {
+  readonly EventTopics?: [];
+}
+
+export interface DescribeLDAPSSettingsRequest {
   readonly DirectoryId: string;
-  readonly TopicNames: [];
+  readonly Type?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeEventTopicsResult {
-  readonly EventTopics: [];
+export interface DescribeLDAPSSettingsResult {
+  readonly LDAPSSettingsInfo?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeLDAPSSettingsRequest {
+export interface DescribeRegionsRequest {
   readonly DirectoryId: string;
-  readonly Type: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly RegionName?: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeLDAPSSettingsResult {
-  readonly LDAPSSettingsInfo: [];
-  readonly NextToken: string;
+export interface DescribeRegionsResult {
+  readonly RegionsDescription?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeRegionsRequest {
-  readonly DirectoryId: string;
-  readonly RegionName: string;
-  readonly NextToken: string;
-}
-
-interface DescribeRegionsResult {
-  readonly RegionsDescription: [];
-  readonly NextToken: string;
-}
-
-interface DescribeSharedDirectoriesRequest {
+export interface DescribeSharedDirectoriesRequest {
   readonly OwnerDirectoryId: string;
-  readonly SharedDirectoryIds: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly SharedDirectoryIds?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeSharedDirectoriesResult {
-  readonly SharedDirectories: [];
-  readonly NextToken: string;
+export interface DescribeSharedDirectoriesResult {
+  readonly SharedDirectories?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeSnapshotsRequest {
-  readonly DirectoryId: string;
-  readonly SnapshotIds: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+export interface DescribeSnapshotsRequest {
+  readonly DirectoryId?: string;
+  readonly SnapshotIds?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeSnapshotsResult {
-  readonly Snapshots: [];
-  readonly NextToken: string;
+export interface DescribeSnapshotsResult {
+  readonly Snapshots?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeTrustsRequest {
-  readonly DirectoryId: string;
-  readonly TrustIds: [];
-  readonly NextToken: string;
-  readonly Limit: number;
+export interface DescribeTrustsRequest {
+  readonly DirectoryId?: string;
+  readonly TrustIds?: [];
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface DescribeTrustsResult {
-  readonly Trusts: [];
-  readonly NextToken: string;
+export interface DescribeTrustsResult {
+  readonly Trusts?: [];
+  readonly NextToken?: string;
 }
 
-interface DirectoryAlreadyInRegionException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface DirectoryAlreadyInRegionException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface DirectoryAlreadySharedException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface DirectoryAlreadySharedException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface DirectoryConnectSettings {
+export interface DirectoryConnectSettings {
   readonly VpcId: string;
   readonly SubnetIds: [];
   readonly CustomerDnsIps: [];
   readonly CustomerUserName: string;
 }
 
-interface DirectoryConnectSettingsDescription {
-  readonly VpcId: string;
-  readonly SubnetIds: [];
-  readonly CustomerUserName: string;
-  readonly SecurityGroupId: string;
-  readonly AvailabilityZones: [];
-  readonly ConnectIps: [];
+export interface DirectoryConnectSettingsDescription {
+  readonly VpcId?: string;
+  readonly SubnetIds?: [];
+  readonly CustomerUserName?: string;
+  readonly SecurityGroupId?: string;
+  readonly AvailabilityZones?: [];
+  readonly ConnectIps?: [];
 }
 
-interface DirectoryDescription {
+export interface DirectoryDescription {
+  readonly DirectoryId?: string;
+  readonly Name?: string;
+  readonly ShortName?: string;
+  readonly Size?: string;
+  readonly Edition?: string;
+  readonly Alias?: string;
+  readonly AccessUrl?: string;
+  readonly Description?: string;
+  readonly DnsIpAddrs?: [];
+  readonly Stage?: string;
+  readonly ShareStatus?: string;
+  readonly ShareMethod?: string;
+  readonly ShareNotes?: string;
+  readonly LaunchTime?: Date;
+  readonly StageLastUpdatedDateTime?: Date;
+  readonly Type?: string;
+  readonly VpcSettings?: DirectoryVpcSettingsDescription;
+  readonly ConnectSettings?: DirectoryConnectSettingsDescription;
+  readonly RadiusSettings?: RadiusSettings;
+  readonly RadiusStatus?: string;
+  readonly StageReason?: string;
+  readonly SsoEnabled?: boolean;
+  readonly DesiredNumberOfDomainControllers?: number;
+  readonly OwnerDirectoryDescription?: OwnerDirectoryDescription;
+  readonly RegionsInfo?: RegionsInfo;
+}
+
+export interface DirectoryDoesNotExistException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface DirectoryLimitExceededException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface DirectoryLimits {
+  readonly CloudOnlyDirectoriesLimit?: number;
+  readonly CloudOnlyDirectoriesCurrentCount?: number;
+  readonly CloudOnlyDirectoriesLimitReached?: boolean;
+  readonly CloudOnlyMicrosoftADLimit?: number;
+  readonly CloudOnlyMicrosoftADCurrentCount?: number;
+  readonly CloudOnlyMicrosoftADLimitReached?: boolean;
+  readonly ConnectedDirectoriesLimit?: number;
+  readonly ConnectedDirectoriesCurrentCount?: number;
+  readonly ConnectedDirectoriesLimitReached?: boolean;
+}
+
+export interface DirectoryNotSharedException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface DirectoryUnavailableException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface DirectoryVpcSettings {
+  readonly VpcId: string;
+  readonly SubnetIds: [];
+}
+
+export interface DirectoryVpcSettingsDescription {
+  readonly VpcId?: string;
+  readonly SubnetIds?: [];
+  readonly SecurityGroupId?: string;
+  readonly AvailabilityZones?: [];
+}
+
+export interface DisableClientAuthenticationRequest {
   readonly DirectoryId: string;
-  readonly Name: string;
-  readonly ShortName: string;
-  readonly Size: string;
-  readonly Edition: string;
-  readonly Alias: string;
-  readonly AccessUrl: string;
-  readonly Description: string;
-  readonly DnsIpAddrs: [];
-  readonly Stage: string;
-  readonly ShareStatus: string;
-  readonly ShareMethod: string;
-  readonly ShareNotes: string;
-  readonly LaunchTime: Date;
-  readonly StageLastUpdatedDateTime: Date;
   readonly Type: string;
-  readonly VpcSettings: DirectoryVpcSettingsDescription;
-  readonly ConnectSettings: DirectoryConnectSettingsDescription;
+}
+
+export interface DisableClientAuthenticationResult {
+}
+
+export interface DisableLDAPSRequest {
+  readonly DirectoryId: string;
+  readonly Type: string;
+}
+
+export interface DisableLDAPSResult {
+}
+
+export interface DisableRadiusRequest {
+  readonly DirectoryId: string;
+}
+
+export interface DisableRadiusResult {
+}
+
+export interface DisableSsoRequest {
+  readonly DirectoryId: string;
+  readonly UserName?: string;
+  readonly Password?: string;
+}
+
+export interface DisableSsoResult {
+}
+
+export interface DomainController {
+  readonly DirectoryId?: string;
+  readonly DomainControllerId?: string;
+  readonly DnsIpAddr?: string;
+  readonly VpcId?: string;
+  readonly SubnetId?: string;
+  readonly AvailabilityZone?: string;
+  readonly Status?: string;
+  readonly StatusReason?: string;
+  readonly LaunchTime?: Date;
+  readonly StatusLastUpdatedDateTime?: Date;
+}
+
+export interface DomainControllerLimitExceededException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface EnableClientAuthenticationRequest {
+  readonly DirectoryId: string;
+  readonly Type: string;
+}
+
+export interface EnableClientAuthenticationResult {
+}
+
+export interface EnableLDAPSRequest {
+  readonly DirectoryId: string;
+  readonly Type: string;
+}
+
+export interface EnableLDAPSResult {
+}
+
+export interface EnableRadiusRequest {
+  readonly DirectoryId: string;
   readonly RadiusSettings: RadiusSettings;
-  readonly RadiusStatus: string;
-  readonly StageReason: string;
-  readonly SsoEnabled: boolean;
-  readonly DesiredNumberOfDomainControllers: number;
-  readonly OwnerDirectoryDescription: OwnerDirectoryDescription;
-  readonly RegionsInfo: RegionsInfo;
 }
 
-interface DirectoryDoesNotExistException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface EnableRadiusResult {
 }
 
-interface DirectoryLimitExceededException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface DirectoryLimits {
-  readonly CloudOnlyDirectoriesLimit: number;
-  readonly CloudOnlyDirectoriesCurrentCount: number;
-  readonly CloudOnlyDirectoriesLimitReached: boolean;
-  readonly CloudOnlyMicrosoftADLimit: number;
-  readonly CloudOnlyMicrosoftADCurrentCount: number;
-  readonly CloudOnlyMicrosoftADLimitReached: boolean;
-  readonly ConnectedDirectoriesLimit: number;
-  readonly ConnectedDirectoriesCurrentCount: number;
-  readonly ConnectedDirectoriesLimitReached: boolean;
-}
-
-interface DirectoryNotSharedException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface DirectoryUnavailableException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface DirectoryVpcSettings {
-  readonly VpcId: string;
-  readonly SubnetIds: [];
-}
-
-interface DirectoryVpcSettingsDescription {
-  readonly VpcId: string;
-  readonly SubnetIds: [];
-  readonly SecurityGroupId: string;
-  readonly AvailabilityZones: [];
-}
-
-interface DisableClientAuthenticationRequest {
+export interface EnableSsoRequest {
   readonly DirectoryId: string;
-  readonly Type: string;
+  readonly UserName?: string;
+  readonly Password?: string;
 }
 
-interface DisableClientAuthenticationResult {
+export interface EnableSsoResult {
 }
 
-interface DisableLDAPSRequest {
-  readonly DirectoryId: string;
-  readonly Type: string;
+export interface EntityAlreadyExistsException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface DisableLDAPSResult {
+export interface EntityDoesNotExistException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface DisableRadiusRequest {
+export interface EventTopic {
+  readonly DirectoryId?: string;
+  readonly TopicName?: string;
+  readonly TopicArn?: string;
+  readonly CreatedDateTime?: Date;
+  readonly Status?: string;
+}
+
+export interface GetDirectoryLimitsRequest {
+}
+
+export interface GetDirectoryLimitsResult {
+  readonly DirectoryLimits?: DirectoryLimits;
+}
+
+export interface GetSnapshotLimitsRequest {
   readonly DirectoryId: string;
 }
 
-interface DisableRadiusResult {
+export interface GetSnapshotLimitsResult {
+  readonly SnapshotLimits?: SnapshotLimits;
 }
 
-interface DisableSsoRequest {
+export interface InsufficientPermissionsException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface InvalidCertificateException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface InvalidClientAuthStatusException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface InvalidLDAPSStatusException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface InvalidNextTokenException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface InvalidParameterException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface InvalidPasswordException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface InvalidTargetException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface IpRoute {
+  readonly CidrIp?: string;
+  readonly Description?: string;
+}
+
+export interface IpRouteInfo {
+  readonly DirectoryId?: string;
+  readonly CidrIp?: string;
+  readonly IpRouteStatusMsg?: string;
+  readonly AddedDateTime?: Date;
+  readonly IpRouteStatusReason?: string;
+  readonly Description?: string;
+}
+
+export interface IpRouteLimitExceededException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface LDAPSSettingInfo {
+  readonly LDAPSStatus?: string;
+  readonly LDAPSStatusReason?: string;
+  readonly LastUpdatedDateTime?: Date;
+}
+
+export interface ListCertificatesRequest {
   readonly DirectoryId: string;
-  readonly UserName: string;
-  readonly Password: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface DisableSsoResult {
+export interface ListCertificatesResult {
+  readonly NextToken?: string;
+  readonly CertificatesInfo?: [];
 }
 
-interface DomainController {
+export interface ListIpRoutesRequest {
   readonly DirectoryId: string;
-  readonly DomainControllerId: string;
-  readonly DnsIpAddr: string;
-  readonly VpcId: string;
-  readonly SubnetId: string;
-  readonly AvailabilityZone: string;
-  readonly Status: string;
-  readonly StatusReason: string;
-  readonly LaunchTime: Date;
-  readonly StatusLastUpdatedDateTime: Date;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface DomainControllerLimitExceededException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface ListIpRoutesResult {
+  readonly IpRoutesInfo?: [];
+  readonly NextToken?: string;
 }
 
-interface EnableClientAuthenticationRequest {
+export interface ListLogSubscriptionsRequest {
+  readonly DirectoryId?: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
+}
+
+export interface ListLogSubscriptionsResult {
+  readonly LogSubscriptions?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListSchemaExtensionsRequest {
   readonly DirectoryId: string;
-  readonly Type: string;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface EnableClientAuthenticationResult {
+export interface ListSchemaExtensionsResult {
+  readonly SchemaExtensionsInfo?: [];
+  readonly NextToken?: string;
 }
 
-interface EnableLDAPSRequest {
-  readonly DirectoryId: string;
-  readonly Type: string;
-}
-
-interface EnableLDAPSResult {
-}
-
-interface EnableRadiusRequest {
-  readonly DirectoryId: string;
-  readonly RadiusSettings: RadiusSettings;
-}
-
-interface EnableRadiusResult {
-}
-
-interface EnableSsoRequest {
-  readonly DirectoryId: string;
-  readonly UserName: string;
-  readonly Password: string;
-}
-
-interface EnableSsoResult {
-}
-
-interface EntityAlreadyExistsException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface EntityDoesNotExistException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface EventTopic {
-  readonly DirectoryId: string;
-  readonly TopicName: string;
-  readonly TopicArn: string;
-  readonly CreatedDateTime: Date;
-  readonly Status: string;
-}
-
-interface GetDirectoryLimitsRequest {
-}
-
-interface GetDirectoryLimitsResult {
-  readonly DirectoryLimits: DirectoryLimits;
-}
-
-interface GetSnapshotLimitsRequest {
-  readonly DirectoryId: string;
-}
-
-interface GetSnapshotLimitsResult {
-  readonly SnapshotLimits: SnapshotLimits;
-}
-
-interface InsufficientPermissionsException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface InvalidCertificateException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface InvalidClientAuthStatusException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface InvalidLDAPSStatusException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface InvalidNextTokenException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface InvalidParameterException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface InvalidPasswordException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface InvalidTargetException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface IpRoute {
-  readonly CidrIp: string;
-  readonly Description: string;
-}
-
-interface IpRouteInfo {
-  readonly DirectoryId: string;
-  readonly CidrIp: string;
-  readonly IpRouteStatusMsg: string;
-  readonly AddedDateTime: Date;
-  readonly IpRouteStatusReason: string;
-  readonly Description: string;
-}
-
-interface IpRouteLimitExceededException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface LDAPSSettingInfo {
-  readonly LDAPSStatus: string;
-  readonly LDAPSStatusReason: string;
-  readonly LastUpdatedDateTime: Date;
-}
-
-interface ListCertificatesRequest {
-  readonly DirectoryId: string;
-  readonly NextToken: string;
-  readonly Limit: number;
-}
-
-interface ListCertificatesResult {
-  readonly NextToken: string;
-  readonly CertificatesInfo: [];
-}
-
-interface ListIpRoutesRequest {
-  readonly DirectoryId: string;
-  readonly NextToken: string;
-  readonly Limit: number;
-}
-
-interface ListIpRoutesResult {
-  readonly IpRoutesInfo: [];
-  readonly NextToken: string;
-}
-
-interface ListLogSubscriptionsRequest {
-  readonly DirectoryId: string;
-  readonly NextToken: string;
-  readonly Limit: number;
-}
-
-interface ListLogSubscriptionsResult {
-  readonly LogSubscriptions: [];
-  readonly NextToken: string;
-}
-
-interface ListSchemaExtensionsRequest {
-  readonly DirectoryId: string;
-  readonly NextToken: string;
-  readonly Limit: number;
-}
-
-interface ListSchemaExtensionsResult {
-  readonly SchemaExtensionsInfo: [];
-  readonly NextToken: string;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceId: string;
-  readonly NextToken: string;
-  readonly Limit: number;
+  readonly NextToken?: string;
+  readonly Limit?: number;
 }
 
-interface ListTagsForResourceResult {
-  readonly Tags: [];
-  readonly NextToken: string;
+export interface ListTagsForResourceResult {
+  readonly Tags?: [];
+  readonly NextToken?: string;
 }
 
-interface LogSubscription {
-  readonly DirectoryId: string;
-  readonly LogGroupName: string;
-  readonly SubscriptionCreatedDateTime: Date;
+export interface LogSubscription {
+  readonly DirectoryId?: string;
+  readonly LogGroupName?: string;
+  readonly SubscriptionCreatedDateTime?: Date;
 }
 
-interface NoAvailableCertificateException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface NoAvailableCertificateException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface OrganizationsException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface OrganizationsException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface OwnerDirectoryDescription {
-  readonly DirectoryId: string;
-  readonly AccountId: string;
-  readonly DnsIpAddrs: [];
-  readonly VpcSettings: DirectoryVpcSettingsDescription;
-  readonly RadiusSettings: RadiusSettings;
-  readonly RadiusStatus: string;
+export interface OwnerDirectoryDescription {
+  readonly DirectoryId?: string;
+  readonly AccountId?: string;
+  readonly DnsIpAddrs?: [];
+  readonly VpcSettings?: DirectoryVpcSettingsDescription;
+  readonly RadiusSettings?: RadiusSettings;
+  readonly RadiusStatus?: string;
 }
 
-interface RadiusSettings {
-  readonly RadiusServers: [];
-  readonly RadiusPort: number;
-  readonly RadiusTimeout: number;
-  readonly RadiusRetries: number;
-  readonly SharedSecret: string;
-  readonly AuthenticationProtocol: string;
-  readonly DisplayLabel: string;
-  readonly UseSameUsername: boolean;
+export interface RadiusSettings {
+  readonly RadiusServers?: [];
+  readonly RadiusPort?: number;
+  readonly RadiusTimeout?: number;
+  readonly RadiusRetries?: number;
+  readonly SharedSecret?: string;
+  readonly AuthenticationProtocol?: string;
+  readonly DisplayLabel?: string;
+  readonly UseSameUsername?: boolean;
 }
 
-interface RegionDescription {
-  readonly DirectoryId: string;
-  readonly RegionName: string;
-  readonly RegionType: string;
-  readonly Status: string;
-  readonly VpcSettings: DirectoryVpcSettings;
-  readonly DesiredNumberOfDomainControllers: number;
-  readonly LaunchTime: Date;
-  readonly StatusLastUpdatedDateTime: Date;
-  readonly LastUpdatedDateTime: Date;
+export interface RegionDescription {
+  readonly DirectoryId?: string;
+  readonly RegionName?: string;
+  readonly RegionType?: string;
+  readonly Status?: string;
+  readonly VpcSettings?: DirectoryVpcSettings;
+  readonly DesiredNumberOfDomainControllers?: number;
+  readonly LaunchTime?: Date;
+  readonly StatusLastUpdatedDateTime?: Date;
+  readonly LastUpdatedDateTime?: Date;
 }
 
-interface RegionLimitExceededException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface RegionLimitExceededException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface RegionsInfo {
-  readonly PrimaryRegion: string;
-  readonly AdditionalRegions: [];
+export interface RegionsInfo {
+  readonly PrimaryRegion?: string;
+  readonly AdditionalRegions?: [];
 }
 
-interface RegisterCertificateRequest {
+export interface RegisterCertificateRequest {
   readonly DirectoryId: string;
   readonly CertificateData: string;
-  readonly Type: string;
-  readonly ClientCertAuthSettings: ClientCertAuthSettings;
+  readonly Type?: string;
+  readonly ClientCertAuthSettings?: ClientCertAuthSettings;
 }
 
-interface RegisterCertificateResult {
-  readonly CertificateId: string;
+export interface RegisterCertificateResult {
+  readonly CertificateId?: string;
 }
 
-interface RegisterEventTopicRequest {
+export interface RegisterEventTopicRequest {
   readonly DirectoryId: string;
   readonly TopicName: string;
 }
 
-interface RegisterEventTopicResult {
+export interface RegisterEventTopicResult {
 }
 
-interface RejectSharedDirectoryRequest {
+export interface RejectSharedDirectoryRequest {
   readonly SharedDirectoryId: string;
 }
 
-interface RejectSharedDirectoryResult {
-  readonly SharedDirectoryId: string;
+export interface RejectSharedDirectoryResult {
+  readonly SharedDirectoryId?: string;
 }
 
-interface RemoveIpRoutesRequest {
+export interface RemoveIpRoutesRequest {
   readonly DirectoryId: string;
   readonly CidrIps: [];
 }
 
-interface RemoveIpRoutesResult {
+export interface RemoveIpRoutesResult {
 }
 
-interface RemoveRegionRequest {
+export interface RemoveRegionRequest {
   readonly DirectoryId: string;
 }
 
-interface RemoveRegionResult {
+export interface RemoveRegionResult {
 }
 
-interface RemoveTagsFromResourceRequest {
+export interface RemoveTagsFromResourceRequest {
   readonly ResourceId: string;
   readonly TagKeys: [];
 }
 
-interface RemoveTagsFromResourceResult {
+export interface RemoveTagsFromResourceResult {
 }
 
-interface ResetUserPasswordRequest {
+export interface ResetUserPasswordRequest {
   readonly DirectoryId: string;
   readonly UserName: string;
   readonly NewPassword: string;
 }
 
-interface ResetUserPasswordResult {
+export interface ResetUserPasswordResult {
 }
 
-interface RestoreFromSnapshotRequest {
+export interface RestoreFromSnapshotRequest {
   readonly SnapshotId: string;
 }
 
-interface RestoreFromSnapshotResult {
+export interface RestoreFromSnapshotResult {
 }
 
-interface SchemaExtensionInfo {
+export interface SchemaExtensionInfo {
+  readonly DirectoryId?: string;
+  readonly SchemaExtensionId?: string;
+  readonly Description?: string;
+  readonly SchemaExtensionStatus?: string;
+  readonly SchemaExtensionStatusReason?: string;
+  readonly StartDateTime?: Date;
+  readonly EndDateTime?: Date;
+}
+
+export interface ServiceException {
+  readonly Message?: string;
+  readonly RequestId?: string;
+}
+
+export interface ShareDirectoryRequest {
   readonly DirectoryId: string;
-  readonly SchemaExtensionId: string;
-  readonly Description: string;
-  readonly SchemaExtensionStatus: string;
-  readonly SchemaExtensionStatusReason: string;
-  readonly StartDateTime: Date;
-  readonly EndDateTime: Date;
-}
-
-interface ServiceException {
-  readonly Message: string;
-  readonly RequestId: string;
-}
-
-interface ShareDirectoryRequest {
-  readonly DirectoryId: string;
-  readonly ShareNotes: string;
+  readonly ShareNotes?: string;
   readonly ShareTarget: ShareTarget;
   readonly ShareMethod: string;
 }
 
-interface ShareDirectoryResult {
-  readonly SharedDirectoryId: string;
+export interface ShareDirectoryResult {
+  readonly SharedDirectoryId?: string;
 }
 
-interface ShareLimitExceededException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface ShareLimitExceededException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface ShareTarget {
+export interface ShareTarget {
   readonly Id: string;
   readonly Type: string;
 }
 
-interface SharedDirectory {
-  readonly OwnerAccountId: string;
-  readonly OwnerDirectoryId: string;
-  readonly ShareMethod: string;
-  readonly SharedAccountId: string;
-  readonly SharedDirectoryId: string;
-  readonly ShareStatus: string;
-  readonly ShareNotes: string;
-  readonly CreatedDateTime: Date;
-  readonly LastUpdatedDateTime: Date;
+export interface SharedDirectory {
+  readonly OwnerAccountId?: string;
+  readonly OwnerDirectoryId?: string;
+  readonly ShareMethod?: string;
+  readonly SharedAccountId?: string;
+  readonly SharedDirectoryId?: string;
+  readonly ShareStatus?: string;
+  readonly ShareNotes?: string;
+  readonly CreatedDateTime?: Date;
+  readonly LastUpdatedDateTime?: Date;
 }
 
-interface Snapshot {
-  readonly DirectoryId: string;
-  readonly SnapshotId: string;
-  readonly Type: string;
-  readonly Name: string;
-  readonly Status: string;
-  readonly StartTime: Date;
+export interface Snapshot {
+  readonly DirectoryId?: string;
+  readonly SnapshotId?: string;
+  readonly Type?: string;
+  readonly Name?: string;
+  readonly Status?: string;
+  readonly StartTime?: Date;
 }
 
-interface SnapshotLimitExceededException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface SnapshotLimitExceededException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface SnapshotLimits {
-  readonly ManualSnapshotsLimit: number;
-  readonly ManualSnapshotsCurrentCount: number;
-  readonly ManualSnapshotsLimitReached: boolean;
+export interface SnapshotLimits {
+  readonly ManualSnapshotsLimit?: number;
+  readonly ManualSnapshotsCurrentCount?: number;
+  readonly ManualSnapshotsLimitReached?: boolean;
 }
 
-interface StartSchemaExtensionRequest {
+export interface StartSchemaExtensionRequest {
   readonly DirectoryId: string;
   readonly CreateSnapshotBeforeSchemaExtension: boolean;
   readonly LdifContent: string;
   readonly Description: string;
 }
 
-interface StartSchemaExtensionResult {
-  readonly SchemaExtensionId: string;
+export interface StartSchemaExtensionResult {
+  readonly SchemaExtensionId?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagLimitExceededException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface TagLimitExceededException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface Trust {
-  readonly DirectoryId: string;
-  readonly TrustId: string;
-  readonly RemoteDomainName: string;
-  readonly TrustType: string;
-  readonly TrustDirection: string;
-  readonly TrustState: string;
-  readonly CreatedDateTime: Date;
-  readonly LastUpdatedDateTime: Date;
-  readonly StateLastUpdatedDateTime: Date;
-  readonly TrustStateReason: string;
-  readonly SelectiveAuth: string;
+export interface Trust {
+  readonly DirectoryId?: string;
+  readonly TrustId?: string;
+  readonly RemoteDomainName?: string;
+  readonly TrustType?: string;
+  readonly TrustDirection?: string;
+  readonly TrustState?: string;
+  readonly CreatedDateTime?: Date;
+  readonly LastUpdatedDateTime?: Date;
+  readonly StateLastUpdatedDateTime?: Date;
+  readonly TrustStateReason?: string;
+  readonly SelectiveAuth?: string;
 }
 
-interface UnshareDirectoryRequest {
+export interface UnshareDirectoryRequest {
   readonly DirectoryId: string;
   readonly UnshareTarget: UnshareTarget;
 }
 
-interface UnshareDirectoryResult {
-  readonly SharedDirectoryId: string;
+export interface UnshareDirectoryResult {
+  readonly SharedDirectoryId?: string;
 }
 
-interface UnshareTarget {
+export interface UnshareTarget {
   readonly Id: string;
   readonly Type: string;
 }
 
-interface UnsupportedOperationException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface UnsupportedOperationException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface UpdateConditionalForwarderRequest {
+export interface UpdateConditionalForwarderRequest {
   readonly DirectoryId: string;
   readonly RemoteDomainName: string;
   readonly DnsIpAddrs: [];
 }
 
-interface UpdateConditionalForwarderResult {
+export interface UpdateConditionalForwarderResult {
 }
 
-interface UpdateNumberOfDomainControllersRequest {
+export interface UpdateNumberOfDomainControllersRequest {
   readonly DirectoryId: string;
   readonly DesiredNumber: number;
 }
 
-interface UpdateNumberOfDomainControllersResult {
+export interface UpdateNumberOfDomainControllersResult {
 }
 
-interface UpdateRadiusRequest {
+export interface UpdateRadiusRequest {
   readonly DirectoryId: string;
   readonly RadiusSettings: RadiusSettings;
 }
 
-interface UpdateRadiusResult {
+export interface UpdateRadiusResult {
 }
 
-interface UpdateTrustRequest {
+export interface UpdateTrustRequest {
   readonly TrustId: string;
-  readonly SelectiveAuth: string;
+  readonly SelectiveAuth?: string;
 }
 
-interface UpdateTrustResult {
-  readonly RequestId: string;
-  readonly TrustId: string;
+export interface UpdateTrustResult {
+  readonly RequestId?: string;
+  readonly TrustId?: string;
 }
 
-interface UserDoesNotExistException {
-  readonly Message: string;
-  readonly RequestId: string;
+export interface UserDoesNotExistException {
+  readonly Message?: string;
+  readonly RequestId?: string;
 }
 
-interface VerifyTrustRequest {
-  readonly TrustId: string;
-}
-
-interface VerifyTrustResult {
+export interface VerifyTrustRequest {
   readonly TrustId: string;
 }
+
+export interface VerifyTrustResult {
+  readonly TrustId?: string;
+}
+
 

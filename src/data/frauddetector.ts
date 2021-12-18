@@ -5,15 +5,19 @@ export interface BatchCreateVariable {
   readonly variableEntries: [];
   readonly tags?: [];
 }
+
 export interface BatchGetVariable {
   readonly names: [];
 }
+
 export interface CancelBatchImportJob {
   readonly jobId: string;
 }
+
 export interface CancelBatchPredictionJob {
   readonly jobId: string;
 }
+
 export interface CreateBatchImportJob {
   readonly jobId: string;
   readonly inputPath: string;
@@ -22,6 +26,7 @@ export interface CreateBatchImportJob {
   readonly iamRoleArn: string;
   readonly tags?: [];
 }
+
 export interface CreateBatchPredictionJob {
   readonly jobId: string;
   readonly inputPath: string;
@@ -32,6 +37,7 @@ export interface CreateBatchPredictionJob {
   readonly iamRoleArn: string;
   readonly tags?: [];
 }
+
 export interface CreateDetectorVersion {
   readonly detectorId: string;
   readonly description?: string;
@@ -41,6 +47,7 @@ export interface CreateDetectorVersion {
   readonly ruleExecutionMode?: string;
   readonly tags?: [];
 }
+
 export interface CreateModel {
   readonly modelId: string;
   readonly modelType: string;
@@ -48,6 +55,7 @@ export interface CreateModel {
   readonly eventTypeName: string;
   readonly tags?: [];
 }
+
 export interface CreateModelVersion {
   readonly modelId: string;
   readonly modelType: string;
@@ -57,6 +65,7 @@ export interface CreateModelVersion {
   readonly ingestedEventsDetail?: IngestedEventsDetail;
   readonly tags?: [];
 }
+
 export interface CreateRule {
   readonly ruleId: string;
   readonly detectorId: string;
@@ -66,6 +75,7 @@ export interface CreateRule {
   readonly outcomes: [];
   readonly tags?: [];
 }
+
 export interface CreateVariable {
   readonly name: string;
   readonly dataType: string;
@@ -75,62 +85,79 @@ export interface CreateVariable {
   readonly variableType?: string;
   readonly tags?: [];
 }
+
 export interface DeleteBatchImportJob {
   readonly jobId: string;
 }
+
 export interface DeleteBatchPredictionJob {
   readonly jobId: string;
 }
+
 export interface DeleteDetector {
   readonly detectorId: string;
 }
+
 export interface DeleteDetectorVersion {
   readonly detectorId: string;
   readonly detectorVersionId: string;
 }
+
 export interface DeleteEntityType {
   readonly name: string;
 }
+
 export interface DeleteEvent {
   readonly eventId: string;
   readonly eventTypeName: string;
   readonly deleteAuditHistory?: boolean;
 }
+
 export interface DeleteEventType {
   readonly name: string;
 }
+
 export interface DeleteEventsByEventType {
   readonly eventTypeName: string;
 }
+
 export interface DeleteExternalModel {
   readonly modelEndpoint: string;
 }
+
 export interface DeleteLabel {
   readonly name: string;
 }
+
 export interface DeleteModel {
   readonly modelId: string;
   readonly modelType: string;
 }
+
 export interface DeleteModelVersion {
   readonly modelId: string;
   readonly modelType: string;
   readonly modelVersionNumber: string;
 }
+
 export interface DeleteOutcome {
   readonly name: string;
 }
+
 export interface DeleteRule {
   readonly rule: Rule;
 }
+
 export interface DeleteVariable {
   readonly name: string;
 }
+
 export interface DescribeDetector {
   readonly detectorId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DescribeModelVersions {
   readonly modelId?: string;
   readonly modelVersionNumber?: string;
@@ -138,37 +165,45 @@ export interface DescribeModelVersions {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetBatchImportJobs {
   readonly jobId?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface GetBatchPredictionJobs {
   readonly jobId?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface GetDeleteEventsByEventTypeStatus {
   readonly eventTypeName: string;
 }
+
 export interface GetDetectorVersion {
   readonly detectorId: string;
   readonly detectorVersionId: string;
 }
+
 export interface GetDetectors {
   readonly detectorId?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetEntityTypes {
   readonly name?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetEvent {
   readonly eventId: string;
   readonly eventTypeName: string;
 }
+
 export interface GetEventPrediction {
   readonly detectorId: string;
   readonly detectorVersionId?: string;
@@ -179,37 +214,44 @@ export interface GetEventPrediction {
   readonly eventVariables: {[key: string]: any};
   readonly externalModelEndpointDataBlobs?: {[key: string]: any};
 }
+
 export interface GetEventTypes {
   readonly name?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetExternalModels {
   readonly modelEndpoint?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetLabels {
   readonly name?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetModelVersion {
   readonly modelId: string;
   readonly modelType: string;
   readonly modelVersionNumber: string;
 }
+
 export interface GetModels {
   readonly modelId?: string;
   readonly modelType?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetOutcomes {
   readonly name?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetRules {
   readonly ruleId?: string;
   readonly detectorId: string;
@@ -217,27 +259,32 @@ export interface GetRules {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetVariables {
   readonly name?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly resourceARN: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface PutDetector {
   readonly detectorId: string;
   readonly description?: string;
   readonly eventTypeName: string;
   readonly tags?: [];
 }
+
 export interface PutEntityType {
   readonly name: string;
   readonly description?: string;
   readonly tags?: [];
 }
+
 export interface PutEventType {
   readonly name: string;
   readonly description?: string;
@@ -247,6 +294,7 @@ export interface PutEventType {
   readonly eventIngestion?: string;
   readonly tags?: [];
 }
+
 export interface PutExternalModel {
   readonly modelEndpoint: string;
   readonly modelSource: string;
@@ -256,19 +304,23 @@ export interface PutExternalModel {
   readonly modelEndpointStatus: string;
   readonly tags?: [];
 }
+
 export interface PutKMSEncryptionKey {
   readonly kmsEncryptionKeyArn: string;
 }
+
 export interface PutLabel {
   readonly name: string;
   readonly description?: string;
   readonly tags?: [];
 }
+
 export interface PutOutcome {
   readonly name: string;
   readonly description?: string;
   readonly tags?: [];
 }
+
 export interface SendEvent {
   readonly eventId: string;
   readonly eventTypeName: string;
@@ -278,14 +330,17 @@ export interface SendEvent {
   readonly labelTimestamp?: string;
   readonly entities: [];
 }
+
 export interface TagResource {
   readonly resourceARN: string;
   readonly tags: [];
 }
+
 export interface UntagResource {
   readonly resourceARN: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateDetectorVersion {
   readonly detectorId: string;
   readonly detectorVersionId: string;
@@ -295,27 +350,32 @@ export interface UpdateDetectorVersion {
   readonly modelVersions?: [];
   readonly ruleExecutionMode?: string;
 }
+
 export interface UpdateDetectorVersionMetadata {
   readonly detectorId: string;
   readonly detectorVersionId: string;
   readonly description: string;
 }
+
 export interface UpdateDetectorVersionStatus {
   readonly detectorId: string;
   readonly detectorVersionId: string;
   readonly status: string;
 }
+
 export interface UpdateEventLabel {
   readonly eventId: string;
   readonly eventTypeName: string;
   readonly assignedLabel: string;
   readonly labelTimestamp: string;
 }
+
 export interface UpdateModel {
   readonly modelId: string;
   readonly modelType: string;
   readonly description?: string;
 }
+
 export interface UpdateModelVersion {
   readonly modelId: string;
   readonly modelType: string;
@@ -324,16 +384,19 @@ export interface UpdateModelVersion {
   readonly ingestedEventsDetail?: IngestedEventsDetail;
   readonly tags?: [];
 }
+
 export interface UpdateModelVersionStatus {
   readonly modelId: string;
   readonly modelType: string;
   readonly modelVersionNumber: string;
   readonly status: string;
 }
+
 export interface UpdateRuleMetadata {
   readonly rule: Rule;
   readonly description: string;
 }
+
 export interface UpdateRuleVersion {
   readonly rule: Rule;
   readonly description?: string;
@@ -342,6 +405,7 @@ export interface UpdateRuleVersion {
   readonly outcomes: [];
   readonly tags?: [];
 }
+
 export interface UpdateVariable {
   readonly name: string;
   readonly defaultValue?: string;
@@ -349,1043 +413,1042 @@ export interface UpdateVariable {
   readonly variableType?: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
 }
 
-interface BatchCreateVariableError {
-  readonly name: string;
-  readonly code: number;
-  readonly message: string;
+export interface BatchCreateVariableError {
+  readonly name?: string;
+  readonly code?: number;
+  readonly message?: string;
 }
 
-interface BatchCreateVariableRequest {
+export interface BatchCreateVariableRequest {
   readonly variableEntries: [];
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface BatchCreateVariableResult {
-  readonly errors: [];
+export interface BatchCreateVariableResult {
+  readonly errors?: [];
 }
 
-interface BatchGetVariableError {
-  readonly name: string;
-  readonly code: number;
-  readonly message: string;
+export interface BatchGetVariableError {
+  readonly name?: string;
+  readonly code?: number;
+  readonly message?: string;
 }
 
-interface BatchGetVariableRequest {
+export interface BatchGetVariableRequest {
   readonly names: [];
 }
 
-interface BatchGetVariableResult {
-  readonly variables: [];
-  readonly errors: [];
+export interface BatchGetVariableResult {
+  readonly variables?: [];
+  readonly errors?: [];
 }
 
-interface BatchImport {
-  readonly jobId: string;
-  readonly status: string;
-  readonly failureReason: string;
-  readonly startTime: string;
-  readonly completionTime: string;
-  readonly inputPath: string;
-  readonly outputPath: string;
-  readonly eventTypeName: string;
-  readonly iamRoleArn: string;
-  readonly arn: string;
-  readonly processedRecordsCount: number;
-  readonly failedRecordsCount: number;
-  readonly totalRecordsCount: number;
+export interface BatchImport {
+  readonly jobId?: string;
+  readonly status?: string;
+  readonly failureReason?: string;
+  readonly startTime?: string;
+  readonly completionTime?: string;
+  readonly inputPath?: string;
+  readonly outputPath?: string;
+  readonly eventTypeName?: string;
+  readonly iamRoleArn?: string;
+  readonly arn?: string;
+  readonly processedRecordsCount?: number;
+  readonly failedRecordsCount?: number;
+  readonly totalRecordsCount?: number;
 }
 
-interface BatchPrediction {
-  readonly jobId: string;
-  readonly status: string;
-  readonly failureReason: string;
-  readonly startTime: string;
-  readonly completionTime: string;
-  readonly lastHeartbeatTime: string;
-  readonly inputPath: string;
-  readonly outputPath: string;
-  readonly eventTypeName: string;
-  readonly detectorName: string;
-  readonly detectorVersion: string;
-  readonly iamRoleArn: string;
-  readonly arn: string;
-  readonly processedRecordsCount: number;
-  readonly totalRecordsCount: number;
+export interface BatchPrediction {
+  readonly jobId?: string;
+  readonly status?: string;
+  readonly failureReason?: string;
+  readonly startTime?: string;
+  readonly completionTime?: string;
+  readonly lastHeartbeatTime?: string;
+  readonly inputPath?: string;
+  readonly outputPath?: string;
+  readonly eventTypeName?: string;
+  readonly detectorName?: string;
+  readonly detectorVersion?: string;
+  readonly iamRoleArn?: string;
+  readonly arn?: string;
+  readonly processedRecordsCount?: number;
+  readonly totalRecordsCount?: number;
 }
 
-interface CancelBatchImportJobRequest {
-  readonly jobId: string;
-}
-
-interface CancelBatchImportJobResult {
-}
-
-interface CancelBatchPredictionJobRequest {
+export interface CancelBatchImportJobRequest {
   readonly jobId: string;
 }
 
-interface CancelBatchPredictionJobResult {
+export interface CancelBatchImportJobResult {
 }
 
-interface ConflictException {
+export interface CancelBatchPredictionJobRequest {
+  readonly jobId: string;
+}
+
+export interface CancelBatchPredictionJobResult {
+}
+
+export interface ConflictException {
   readonly message: string;
 }
 
-interface CreateBatchImportJobRequest {
+export interface CreateBatchImportJobRequest {
   readonly jobId: string;
   readonly inputPath: string;
   readonly outputPath: string;
   readonly eventTypeName: string;
   readonly iamRoleArn: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreateBatchImportJobResult {
+export interface CreateBatchImportJobResult {
 }
 
-interface CreateBatchPredictionJobRequest {
+export interface CreateBatchPredictionJobRequest {
   readonly jobId: string;
   readonly inputPath: string;
   readonly outputPath: string;
   readonly eventTypeName: string;
   readonly detectorName: string;
-  readonly detectorVersion: string;
+  readonly detectorVersion?: string;
   readonly iamRoleArn: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreateBatchPredictionJobResult {
+export interface CreateBatchPredictionJobResult {
 }
 
-interface CreateDetectorVersionRequest {
+export interface CreateDetectorVersionRequest {
   readonly detectorId: string;
-  readonly description: string;
-  readonly externalModelEndpoints: [];
+  readonly description?: string;
+  readonly externalModelEndpoints?: [];
   readonly rules: [];
-  readonly modelVersions: [];
-  readonly ruleExecutionMode: string;
-  readonly tags: [];
+  readonly modelVersions?: [];
+  readonly ruleExecutionMode?: string;
+  readonly tags?: [];
 }
 
-interface CreateDetectorVersionResult {
-  readonly detectorId: string;
-  readonly detectorVersionId: string;
-  readonly status: string;
+export interface CreateDetectorVersionResult {
+  readonly detectorId?: string;
+  readonly detectorVersionId?: string;
+  readonly status?: string;
 }
 
-interface CreateModelRequest {
+export interface CreateModelRequest {
   readonly modelId: string;
   readonly modelType: string;
-  readonly description: string;
+  readonly description?: string;
   readonly eventTypeName: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreateModelResult {
+export interface CreateModelResult {
 }
 
-interface CreateModelVersionRequest {
+export interface CreateModelVersionRequest {
   readonly modelId: string;
   readonly modelType: string;
   readonly trainingDataSource: string;
   readonly trainingDataSchema: TrainingDataSchema;
-  readonly externalEventsDetail: ExternalEventsDetail;
-  readonly ingestedEventsDetail: IngestedEventsDetail;
-  readonly tags: [];
+  readonly externalEventsDetail?: ExternalEventsDetail;
+  readonly ingestedEventsDetail?: IngestedEventsDetail;
+  readonly tags?: [];
 }
 
-interface CreateModelVersionResult {
-  readonly modelId: string;
-  readonly modelType: string;
-  readonly modelVersionNumber: string;
-  readonly status: string;
+export interface CreateModelVersionResult {
+  readonly modelId?: string;
+  readonly modelType?: string;
+  readonly modelVersionNumber?: string;
+  readonly status?: string;
 }
 
-interface CreateRuleRequest {
+export interface CreateRuleRequest {
   readonly ruleId: string;
   readonly detectorId: string;
-  readonly description: string;
+  readonly description?: string;
   readonly expression: string;
   readonly language: string;
   readonly outcomes: [];
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreateRuleResult {
-  readonly rule: Rule;
+export interface CreateRuleResult {
+  readonly rule?: Rule;
 }
 
-interface CreateVariableRequest {
+export interface CreateVariableRequest {
   readonly name: string;
   readonly dataType: string;
   readonly dataSource: string;
   readonly defaultValue: string;
-  readonly description: string;
-  readonly variableType: string;
-  readonly tags: [];
+  readonly description?: string;
+  readonly variableType?: string;
+  readonly tags?: [];
 }
 
-interface CreateVariableResult {
+export interface CreateVariableResult {
 }
 
-interface DataValidationMetrics {
-  readonly fileLevelMessages: [];
-  readonly fieldLevelMessages: [];
+export interface DataValidationMetrics {
+  readonly fileLevelMessages?: [];
+  readonly fieldLevelMessages?: [];
 }
 
-interface DeleteBatchImportJobRequest {
+export interface DeleteBatchImportJobRequest {
   readonly jobId: string;
 }
 
-interface DeleteBatchImportJobResult {
+export interface DeleteBatchImportJobResult {
 }
 
-interface DeleteBatchPredictionJobRequest {
+export interface DeleteBatchPredictionJobRequest {
   readonly jobId: string;
 }
 
-interface DeleteBatchPredictionJobResult {
+export interface DeleteBatchPredictionJobResult {
 }
 
-interface DeleteDetectorRequest {
+export interface DeleteDetectorRequest {
   readonly detectorId: string;
 }
 
-interface DeleteDetectorResult {
+export interface DeleteDetectorResult {
 }
 
-interface DeleteDetectorVersionRequest {
+export interface DeleteDetectorVersionRequest {
   readonly detectorId: string;
   readonly detectorVersionId: string;
 }
 
-interface DeleteDetectorVersionResult {
+export interface DeleteDetectorVersionResult {
 }
 
-interface DeleteEntityTypeRequest {
+export interface DeleteEntityTypeRequest {
   readonly name: string;
 }
 
-interface DeleteEntityTypeResult {
+export interface DeleteEntityTypeResult {
 }
 
-interface DeleteEventRequest {
+export interface DeleteEventRequest {
   readonly eventId: string;
   readonly eventTypeName: string;
-  readonly deleteAuditHistory: boolean;
+  readonly deleteAuditHistory?: boolean;
 }
 
-interface DeleteEventResult {
+export interface DeleteEventResult {
 }
 
-interface DeleteEventTypeRequest {
+export interface DeleteEventTypeRequest {
   readonly name: string;
 }
 
-interface DeleteEventTypeResult {
+export interface DeleteEventTypeResult {
 }
 
-interface DeleteEventsByEventTypeRequest {
+export interface DeleteEventsByEventTypeRequest {
   readonly eventTypeName: string;
 }
 
-interface DeleteEventsByEventTypeResult {
-  readonly eventTypeName: string;
-  readonly eventsDeletionStatus: string;
+export interface DeleteEventsByEventTypeResult {
+  readonly eventTypeName?: string;
+  readonly eventsDeletionStatus?: string;
 }
 
-interface DeleteExternalModelRequest {
+export interface DeleteExternalModelRequest {
   readonly modelEndpoint: string;
 }
 
-interface DeleteExternalModelResult {
+export interface DeleteExternalModelResult {
 }
 
-interface DeleteLabelRequest {
+export interface DeleteLabelRequest {
   readonly name: string;
 }
 
-interface DeleteLabelResult {
+export interface DeleteLabelResult {
 }
 
-interface DeleteModelRequest {
+export interface DeleteModelRequest {
   readonly modelId: string;
   readonly modelType: string;
 }
 
-interface DeleteModelResult {
+export interface DeleteModelResult {
 }
 
-interface DeleteModelVersionRequest {
+export interface DeleteModelVersionRequest {
   readonly modelId: string;
   readonly modelType: string;
   readonly modelVersionNumber: string;
 }
 
-interface DeleteModelVersionResult {
+export interface DeleteModelVersionResult {
 }
 
-interface DeleteOutcomeRequest {
+export interface DeleteOutcomeRequest {
   readonly name: string;
 }
 
-interface DeleteOutcomeResult {
+export interface DeleteOutcomeResult {
 }
 
-interface DeleteRuleRequest {
+export interface DeleteRuleRequest {
   readonly rule: Rule;
 }
 
-interface DeleteRuleResult {
+export interface DeleteRuleResult {
 }
 
-interface DeleteVariableRequest {
+export interface DeleteVariableRequest {
   readonly name: string;
 }
 
-interface DeleteVariableResult {
+export interface DeleteVariableResult {
 }
 
-interface DescribeDetectorRequest {
+export interface DescribeDetectorRequest {
   readonly detectorId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DescribeDetectorResult {
-  readonly detectorId: string;
-  readonly detectorVersionSummaries: [];
-  readonly nextToken: string;
-  readonly arn: string;
+export interface DescribeDetectorResult {
+  readonly detectorId?: string;
+  readonly detectorVersionSummaries?: [];
+  readonly nextToken?: string;
+  readonly arn?: string;
 }
 
-interface DescribeModelVersionsRequest {
-  readonly modelId: string;
-  readonly modelVersionNumber: string;
-  readonly modelType: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface DescribeModelVersionsRequest {
+  readonly modelId?: string;
+  readonly modelVersionNumber?: string;
+  readonly modelType?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DescribeModelVersionsResult {
-  readonly modelVersionDetails: [];
-  readonly nextToken: string;
+export interface DescribeModelVersionsResult {
+  readonly modelVersionDetails?: [];
+  readonly nextToken?: string;
 }
 
-interface Detector {
-  readonly detectorId: string;
-  readonly description: string;
-  readonly eventTypeName: string;
-  readonly lastUpdatedTime: string;
-  readonly createdTime: string;
-  readonly arn: string;
+export interface Detector {
+  readonly detectorId?: string;
+  readonly description?: string;
+  readonly eventTypeName?: string;
+  readonly lastUpdatedTime?: string;
+  readonly createdTime?: string;
+  readonly arn?: string;
 }
 
-interface DetectorVersionSummary {
-  readonly detectorVersionId: string;
-  readonly status: string;
-  readonly description: string;
-  readonly lastUpdatedTime: string;
+export interface DetectorVersionSummary {
+  readonly detectorVersionId?: string;
+  readonly status?: string;
+  readonly description?: string;
+  readonly lastUpdatedTime?: string;
 }
 
-interface Entity {
+export interface Entity {
   readonly entityType: string;
   readonly entityId: string;
 }
 
-interface EntityType {
-  readonly name: string;
-  readonly description: string;
-  readonly lastUpdatedTime: string;
-  readonly createdTime: string;
-  readonly arn: string;
+export interface EntityType {
+  readonly name?: string;
+  readonly description?: string;
+  readonly lastUpdatedTime?: string;
+  readonly createdTime?: string;
+  readonly arn?: string;
 }
 
-interface Event {
-  readonly eventId: string;
-  readonly eventTypeName: string;
-  readonly eventTimestamp: string;
-  readonly eventVariables: {[key: string]: any};
-  readonly currentLabel: string;
-  readonly labelTimestamp: string;
-  readonly entities: [];
+export interface Event {
+  readonly eventId?: string;
+  readonly eventTypeName?: string;
+  readonly eventTimestamp?: string;
+  readonly eventVariables?: {[key: string]: any};
+  readonly currentLabel?: string;
+  readonly labelTimestamp?: string;
+  readonly entities?: [];
 }
 
-interface EventType {
-  readonly name: string;
-  readonly description: string;
-  readonly eventVariables: [];
-  readonly labels: [];
-  readonly entityTypes: [];
-  readonly eventIngestion: string;
-  readonly ingestedEventStatistics: IngestedEventStatistics;
-  readonly lastUpdatedTime: string;
-  readonly createdTime: string;
-  readonly arn: string;
+export interface EventType {
+  readonly name?: string;
+  readonly description?: string;
+  readonly eventVariables?: [];
+  readonly labels?: [];
+  readonly entityTypes?: [];
+  readonly eventIngestion?: string;
+  readonly ingestedEventStatistics?: IngestedEventStatistics;
+  readonly lastUpdatedTime?: string;
+  readonly createdTime?: string;
+  readonly arn?: string;
 }
 
-interface ExternalEventsDetail {
+export interface ExternalEventsDetail {
   readonly dataLocation: string;
   readonly dataAccessRoleArn: string;
 }
 
-interface ExternalModel {
-  readonly modelEndpoint: string;
-  readonly modelSource: string;
-  readonly invokeModelEndpointRoleArn: string;
-  readonly inputConfiguration: ModelInputConfiguration;
-  readonly outputConfiguration: ModelOutputConfiguration;
-  readonly modelEndpointStatus: string;
-  readonly lastUpdatedTime: string;
-  readonly createdTime: string;
-  readonly arn: string;
+export interface ExternalModel {
+  readonly modelEndpoint?: string;
+  readonly modelSource?: string;
+  readonly invokeModelEndpointRoleArn?: string;
+  readonly inputConfiguration?: ModelInputConfiguration;
+  readonly outputConfiguration?: ModelOutputConfiguration;
+  readonly modelEndpointStatus?: string;
+  readonly lastUpdatedTime?: string;
+  readonly createdTime?: string;
+  readonly arn?: string;
 }
 
-interface ExternalModelOutputs {
-  readonly externalModel: ExternalModelSummary;
-  readonly outputs: {[key: string]: any};
+export interface ExternalModelOutputs {
+  readonly externalModel?: ExternalModelSummary;
+  readonly outputs?: {[key: string]: any};
 }
 
-interface ExternalModelSummary {
-  readonly modelEndpoint: string;
-  readonly modelSource: string;
+export interface ExternalModelSummary {
+  readonly modelEndpoint?: string;
+  readonly modelSource?: string;
 }
 
-interface FieldValidationMessage {
-  readonly fieldName: string;
-  readonly identifier: string;
-  readonly title: string;
-  readonly content: string;
-  readonly type: string;
+export interface FieldValidationMessage {
+  readonly fieldName?: string;
+  readonly identifier?: string;
+  readonly title?: string;
+  readonly content?: string;
+  readonly type?: string;
 }
 
-interface FileValidationMessage {
-  readonly title: string;
-  readonly content: string;
-  readonly type: string;
+export interface FileValidationMessage {
+  readonly title?: string;
+  readonly content?: string;
+  readonly type?: string;
 }
 
-interface GetBatchImportJobsRequest {
-  readonly jobId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface GetBatchImportJobsRequest {
+  readonly jobId?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface GetBatchImportJobsResult {
-  readonly batchImports: [];
-  readonly nextToken: string;
+export interface GetBatchImportJobsResult {
+  readonly batchImports?: [];
+  readonly nextToken?: string;
 }
 
-interface GetBatchPredictionJobsRequest {
-  readonly jobId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface GetBatchPredictionJobsRequest {
+  readonly jobId?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface GetBatchPredictionJobsResult {
-  readonly batchPredictions: [];
-  readonly nextToken: string;
+export interface GetBatchPredictionJobsResult {
+  readonly batchPredictions?: [];
+  readonly nextToken?: string;
 }
 
-interface GetDeleteEventsByEventTypeStatusRequest {
+export interface GetDeleteEventsByEventTypeStatusRequest {
   readonly eventTypeName: string;
 }
 
-interface GetDeleteEventsByEventTypeStatusResult {
-  readonly eventTypeName: string;
-  readonly eventsDeletionStatus: string;
+export interface GetDeleteEventsByEventTypeStatusResult {
+  readonly eventTypeName?: string;
+  readonly eventsDeletionStatus?: string;
 }
 
-interface GetDetectorVersionRequest {
+export interface GetDetectorVersionRequest {
   readonly detectorId: string;
   readonly detectorVersionId: string;
 }
 
-interface GetDetectorVersionResult {
+export interface GetDetectorVersionResult {
+  readonly detectorId?: string;
+  readonly detectorVersionId?: string;
+  readonly description?: string;
+  readonly externalModelEndpoints?: [];
+  readonly modelVersions?: [];
+  readonly rules?: [];
+  readonly status?: string;
+  readonly lastUpdatedTime?: string;
+  readonly createdTime?: string;
+  readonly ruleExecutionMode?: string;
+  readonly arn?: string;
+}
+
+export interface GetDetectorsRequest {
+  readonly detectorId?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+}
+
+export interface GetDetectorsResult {
+  readonly detectors?: [];
+  readonly nextToken?: string;
+}
+
+export interface GetEntityTypesRequest {
+  readonly name?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+}
+
+export interface GetEntityTypesResult {
+  readonly entityTypes?: [];
+  readonly nextToken?: string;
+}
+
+export interface GetEventPredictionRequest {
   readonly detectorId: string;
-  readonly detectorVersionId: string;
-  readonly description: string;
-  readonly externalModelEndpoints: [];
-  readonly modelVersions: [];
-  readonly rules: [];
-  readonly status: string;
-  readonly lastUpdatedTime: string;
-  readonly createdTime: string;
-  readonly ruleExecutionMode: string;
-  readonly arn: string;
-}
-
-interface GetDetectorsRequest {
-  readonly detectorId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-}
-
-interface GetDetectorsResult {
-  readonly detectors: [];
-  readonly nextToken: string;
-}
-
-interface GetEntityTypesRequest {
-  readonly name: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-}
-
-interface GetEntityTypesResult {
-  readonly entityTypes: [];
-  readonly nextToken: string;
-}
-
-interface GetEventPredictionRequest {
-  readonly detectorId: string;
-  readonly detectorVersionId: string;
+  readonly detectorVersionId?: string;
   readonly eventId: string;
   readonly eventTypeName: string;
   readonly entities: [];
   readonly eventTimestamp: string;
   readonly eventVariables: {[key: string]: any};
-  readonly externalModelEndpointDataBlobs: {[key: string]: any};
+  readonly externalModelEndpointDataBlobs?: {[key: string]: any};
 }
 
-interface GetEventPredictionResult {
-  readonly modelScores: [];
-  readonly ruleResults: [];
-  readonly externalModelOutputs: [];
+export interface GetEventPredictionResult {
+  readonly modelScores?: [];
+  readonly ruleResults?: [];
+  readonly externalModelOutputs?: [];
 }
 
-interface GetEventRequest {
+export interface GetEventRequest {
   readonly eventId: string;
   readonly eventTypeName: string;
 }
 
-interface GetEventResult {
-  readonly event: Event;
+export interface GetEventResult {
+  readonly event?: Event;
 }
 
-interface GetEventTypesRequest {
-  readonly name: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetEventTypesRequest {
+  readonly name?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetEventTypesResult {
-  readonly eventTypes: [];
-  readonly nextToken: string;
+export interface GetEventTypesResult {
+  readonly eventTypes?: [];
+  readonly nextToken?: string;
 }
 
-interface GetExternalModelsRequest {
-  readonly modelEndpoint: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetExternalModelsRequest {
+  readonly modelEndpoint?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetExternalModelsResult {
-  readonly externalModels: [];
-  readonly nextToken: string;
+export interface GetExternalModelsResult {
+  readonly externalModels?: [];
+  readonly nextToken?: string;
 }
 
-interface GetKMSEncryptionKeyResult {
-  readonly kmsKey: KMSKey;
+export interface GetKMSEncryptionKeyResult {
+  readonly kmsKey?: KMSKey;
 }
 
-interface GetLabelsRequest {
-  readonly name: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetLabelsRequest {
+  readonly name?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetLabelsResult {
-  readonly labels: [];
-  readonly nextToken: string;
+export interface GetLabelsResult {
+  readonly labels?: [];
+  readonly nextToken?: string;
 }
 
-interface GetModelVersionRequest {
+export interface GetModelVersionRequest {
   readonly modelId: string;
   readonly modelType: string;
   readonly modelVersionNumber: string;
 }
 
-interface GetModelVersionResult {
-  readonly modelId: string;
-  readonly modelType: string;
-  readonly modelVersionNumber: string;
-  readonly trainingDataSource: string;
-  readonly trainingDataSchema: TrainingDataSchema;
-  readonly externalEventsDetail: ExternalEventsDetail;
-  readonly ingestedEventsDetail: IngestedEventsDetail;
-  readonly status: string;
-  readonly arn: string;
+export interface GetModelVersionResult {
+  readonly modelId?: string;
+  readonly modelType?: string;
+  readonly modelVersionNumber?: string;
+  readonly trainingDataSource?: string;
+  readonly trainingDataSchema?: TrainingDataSchema;
+  readonly externalEventsDetail?: ExternalEventsDetail;
+  readonly ingestedEventsDetail?: IngestedEventsDetail;
+  readonly status?: string;
+  readonly arn?: string;
 }
 
-interface GetModelsRequest {
-  readonly modelId: string;
-  readonly modelType: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetModelsRequest {
+  readonly modelId?: string;
+  readonly modelType?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetModelsResult {
-  readonly nextToken: string;
-  readonly models: [];
+export interface GetModelsResult {
+  readonly nextToken?: string;
+  readonly models?: [];
 }
 
-interface GetOutcomesRequest {
-  readonly name: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetOutcomesRequest {
+  readonly name?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetOutcomesResult {
-  readonly outcomes: [];
-  readonly nextToken: string;
+export interface GetOutcomesResult {
+  readonly outcomes?: [];
+  readonly nextToken?: string;
 }
 
-interface GetRulesRequest {
-  readonly ruleId: string;
+export interface GetRulesRequest {
+  readonly ruleId?: string;
   readonly detectorId: string;
-  readonly ruleVersion: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly ruleVersion?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetRulesResult {
-  readonly ruleDetails: [];
-  readonly nextToken: string;
+export interface GetRulesResult {
+  readonly ruleDetails?: [];
+  readonly nextToken?: string;
 }
 
-interface GetVariablesRequest {
-  readonly name: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface GetVariablesRequest {
+  readonly name?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetVariablesResult {
-  readonly variables: [];
-  readonly nextToken: string;
+export interface GetVariablesResult {
+  readonly variables?: [];
+  readonly nextToken?: string;
 }
 
-interface IngestedEventStatistics {
-  readonly numberOfEvents: number;
-  readonly eventDataSizeInBytes: number;
-  readonly leastRecentEvent: string;
-  readonly mostRecentEvent: string;
-  readonly lastUpdatedTime: string;
+export interface IngestedEventStatistics {
+  readonly numberOfEvents?: number;
+  readonly eventDataSizeInBytes?: number;
+  readonly leastRecentEvent?: string;
+  readonly mostRecentEvent?: string;
+  readonly lastUpdatedTime?: string;
 }
 
-interface IngestedEventsDetail {
+export interface IngestedEventsDetail {
   readonly ingestedEventsTimeWindow: IngestedEventsTimeWindow;
 }
 
-interface IngestedEventsTimeWindow {
+export interface IngestedEventsTimeWindow {
   readonly startTime: string;
   readonly endTime: string;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
 }
 
-interface KMSKey {
-  readonly kmsEncryptionKeyArn: string;
+export interface KMSKey {
+  readonly kmsEncryptionKeyArn?: string;
 }
 
-interface Label {
-  readonly name: string;
-  readonly description: string;
-  readonly lastUpdatedTime: string;
-  readonly createdTime: string;
-  readonly arn: string;
+export interface Label {
+  readonly name?: string;
+  readonly description?: string;
+  readonly lastUpdatedTime?: string;
+  readonly createdTime?: string;
+  readonly arn?: string;
 }
 
-interface LabelSchema {
+export interface LabelSchema {
   readonly labelMapper: {[key: string]: any};
-  readonly unlabeledEventsTreatment: string;
+  readonly unlabeledEventsTreatment?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceARN: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListTagsForResourceResult {
-  readonly tags: [];
-  readonly nextToken: string;
+export interface ListTagsForResourceResult {
+  readonly tags?: [];
+  readonly nextToken?: string;
 }
 
-interface LogOddsMetric {
+export interface LogOddsMetric {
   readonly variableName: string;
   readonly variableType: string;
   readonly variableImportance: unknown;
 }
 
-interface MetricDataPoint {
-  readonly fpr: unknown;
-  readonly precision: unknown;
-  readonly tpr: unknown;
-  readonly threshold: unknown;
+export interface MetricDataPoint {
+  readonly fpr?: unknown;
+  readonly precision?: unknown;
+  readonly tpr?: unknown;
+  readonly threshold?: unknown;
 }
 
-interface Model {
-  readonly modelId: string;
-  readonly modelType: string;
-  readonly description: string;
-  readonly eventTypeName: string;
-  readonly createdTime: string;
-  readonly lastUpdatedTime: string;
-  readonly arn: string;
+export interface Model {
+  readonly modelId?: string;
+  readonly modelType?: string;
+  readonly description?: string;
+  readonly eventTypeName?: string;
+  readonly createdTime?: string;
+  readonly lastUpdatedTime?: string;
+  readonly arn?: string;
 }
 
-interface ModelEndpointDataBlob {
-  readonly byteBuffer: unknown;
-  readonly contentType: string;
+export interface ModelEndpointDataBlob {
+  readonly byteBuffer?: unknown;
+  readonly contentType?: string;
 }
 
-interface ModelInputConfiguration {
-  readonly eventTypeName: string;
-  readonly format: string;
+export interface ModelInputConfiguration {
+  readonly eventTypeName?: string;
+  readonly format?: string;
   readonly useEventVariables: boolean;
-  readonly jsonInputTemplate: string;
-  readonly csvInputTemplate: string;
+  readonly jsonInputTemplate?: string;
+  readonly csvInputTemplate?: string;
 }
 
-interface ModelOutputConfiguration {
+export interface ModelOutputConfiguration {
   readonly format: string;
-  readonly jsonKeyToVariableMap: {[key: string]: any};
-  readonly csvIndexToVariableMap: {[key: string]: any};
+  readonly jsonKeyToVariableMap?: {[key: string]: any};
+  readonly csvIndexToVariableMap?: {[key: string]: any};
 }
 
-interface ModelScores {
-  readonly modelVersion: ModelVersion;
-  readonly scores: {[key: string]: any};
+export interface ModelScores {
+  readonly modelVersion?: ModelVersion;
+  readonly scores?: {[key: string]: any};
 }
 
-interface ModelVersion {
+export interface ModelVersion {
   readonly modelId: string;
   readonly modelType: string;
   readonly modelVersionNumber: string;
-  readonly arn: string;
+  readonly arn?: string;
 }
 
-interface ModelVersionDetail {
-  readonly modelId: string;
-  readonly modelType: string;
-  readonly modelVersionNumber: string;
-  readonly status: string;
-  readonly trainingDataSource: string;
-  readonly trainingDataSchema: TrainingDataSchema;
-  readonly externalEventsDetail: ExternalEventsDetail;
-  readonly ingestedEventsDetail: IngestedEventsDetail;
-  readonly trainingResult: TrainingResult;
-  readonly lastUpdatedTime: string;
-  readonly createdTime: string;
-  readonly arn: string;
+export interface ModelVersionDetail {
+  readonly modelId?: string;
+  readonly modelType?: string;
+  readonly modelVersionNumber?: string;
+  readonly status?: string;
+  readonly trainingDataSource?: string;
+  readonly trainingDataSchema?: TrainingDataSchema;
+  readonly externalEventsDetail?: ExternalEventsDetail;
+  readonly ingestedEventsDetail?: IngestedEventsDetail;
+  readonly trainingResult?: TrainingResult;
+  readonly lastUpdatedTime?: string;
+  readonly createdTime?: string;
+  readonly arn?: string;
 }
 
-interface Outcome {
-  readonly name: string;
-  readonly description: string;
-  readonly lastUpdatedTime: string;
-  readonly createdTime: string;
-  readonly arn: string;
+export interface Outcome {
+  readonly name?: string;
+  readonly description?: string;
+  readonly lastUpdatedTime?: string;
+  readonly createdTime?: string;
+  readonly arn?: string;
 }
 
-interface PutDetectorRequest {
+export interface PutDetectorRequest {
   readonly detectorId: string;
-  readonly description: string;
+  readonly description?: string;
   readonly eventTypeName: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface PutDetectorResult {
+export interface PutDetectorResult {
 }
 
-interface PutEntityTypeRequest {
+export interface PutEntityTypeRequest {
   readonly name: string;
-  readonly description: string;
-  readonly tags: [];
+  readonly description?: string;
+  readonly tags?: [];
 }
 
-interface PutEntityTypeResult {
+export interface PutEntityTypeResult {
 }
 
-interface PutEventTypeRequest {
+export interface PutEventTypeRequest {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly eventVariables: [];
-  readonly labels: [];
+  readonly labels?: [];
   readonly entityTypes: [];
-  readonly eventIngestion: string;
-  readonly tags: [];
+  readonly eventIngestion?: string;
+  readonly tags?: [];
 }
 
-interface PutEventTypeResult {
+export interface PutEventTypeResult {
 }
 
-interface PutExternalModelRequest {
+export interface PutExternalModelRequest {
   readonly modelEndpoint: string;
   readonly modelSource: string;
   readonly invokeModelEndpointRoleArn: string;
   readonly inputConfiguration: ModelInputConfiguration;
   readonly outputConfiguration: ModelOutputConfiguration;
   readonly modelEndpointStatus: string;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface PutExternalModelResult {
+export interface PutExternalModelResult {
 }
 
-interface PutKMSEncryptionKeyRequest {
+export interface PutKMSEncryptionKeyRequest {
   readonly kmsEncryptionKeyArn: string;
 }
 
-interface PutKMSEncryptionKeyResult {
+export interface PutKMSEncryptionKeyResult {
 }
 
-interface PutLabelRequest {
+export interface PutLabelRequest {
   readonly name: string;
-  readonly description: string;
-  readonly tags: [];
+  readonly description?: string;
+  readonly tags?: [];
 }
 
-interface PutLabelResult {
+export interface PutLabelResult {
 }
 
-interface PutOutcomeRequest {
+export interface PutOutcomeRequest {
   readonly name: string;
-  readonly description: string;
-  readonly tags: [];
+  readonly description?: string;
+  readonly tags?: [];
 }
 
-interface PutOutcomeResult {
+export interface PutOutcomeResult {
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
 }
 
-interface ResourceUnavailableException {
-  readonly message: string;
+export interface ResourceUnavailableException {
+  readonly message?: string;
 }
 
-interface Rule {
+export interface Rule {
   readonly detectorId: string;
   readonly ruleId: string;
   readonly ruleVersion: string;
 }
 
-interface RuleDetail {
-  readonly ruleId: string;
-  readonly description: string;
-  readonly detectorId: string;
-  readonly ruleVersion: string;
-  readonly expression: string;
-  readonly language: string;
-  readonly outcomes: [];
-  readonly lastUpdatedTime: string;
-  readonly createdTime: string;
-  readonly arn: string;
+export interface RuleDetail {
+  readonly ruleId?: string;
+  readonly description?: string;
+  readonly detectorId?: string;
+  readonly ruleVersion?: string;
+  readonly expression?: string;
+  readonly language?: string;
+  readonly outcomes?: [];
+  readonly lastUpdatedTime?: string;
+  readonly createdTime?: string;
+  readonly arn?: string;
 }
 
-interface RuleResult {
-  readonly ruleId: string;
-  readonly outcomes: [];
+export interface RuleResult {
+  readonly ruleId?: string;
+  readonly outcomes?: [];
 }
 
-interface SendEventRequest {
+export interface SendEventRequest {
   readonly eventId: string;
   readonly eventTypeName: string;
   readonly eventTimestamp: string;
   readonly eventVariables: {[key: string]: any};
-  readonly assignedLabel: string;
-  readonly labelTimestamp: string;
+  readonly assignedLabel?: string;
+  readonly labelTimestamp?: string;
   readonly entities: [];
 }
 
-interface SendEventResult {
+export interface SendEventResult {
 }
 
-interface Tag {
+export interface Tag {
   readonly key: string;
   readonly value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceARN: string;
   readonly tags: [];
 }
 
-interface TagResourceResult {
+export interface TagResourceResult {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly message: string;
 }
 
-interface TrainingDataSchema {
+export interface TrainingDataSchema {
   readonly modelVariables: [];
   readonly labelSchema: LabelSchema;
 }
 
-interface TrainingMetrics {
-  readonly auc: unknown;
-  readonly metricDataPoints: [];
+export interface TrainingMetrics {
+  readonly auc?: unknown;
+  readonly metricDataPoints?: [];
 }
 
-interface TrainingResult {
-  readonly dataValidationMetrics: DataValidationMetrics;
-  readonly trainingMetrics: TrainingMetrics;
-  readonly variableImportanceMetrics: VariableImportanceMetrics;
+export interface TrainingResult {
+  readonly dataValidationMetrics?: DataValidationMetrics;
+  readonly trainingMetrics?: TrainingMetrics;
+  readonly variableImportanceMetrics?: VariableImportanceMetrics;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceARN: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResult {
+export interface UntagResourceResult {
 }
 
-interface UpdateDetectorVersionMetadataRequest {
+export interface UpdateDetectorVersionMetadataRequest {
   readonly detectorId: string;
   readonly detectorVersionId: string;
   readonly description: string;
 }
 
-interface UpdateDetectorVersionMetadataResult {
+export interface UpdateDetectorVersionMetadataResult {
 }
 
-interface UpdateDetectorVersionRequest {
+export interface UpdateDetectorVersionRequest {
   readonly detectorId: string;
   readonly detectorVersionId: string;
   readonly externalModelEndpoints: [];
   readonly rules: [];
-  readonly description: string;
-  readonly modelVersions: [];
-  readonly ruleExecutionMode: string;
+  readonly description?: string;
+  readonly modelVersions?: [];
+  readonly ruleExecutionMode?: string;
 }
 
-interface UpdateDetectorVersionResult {
+export interface UpdateDetectorVersionResult {
 }
 
-interface UpdateDetectorVersionStatusRequest {
+export interface UpdateDetectorVersionStatusRequest {
   readonly detectorId: string;
   readonly detectorVersionId: string;
   readonly status: string;
 }
 
-interface UpdateDetectorVersionStatusResult {
+export interface UpdateDetectorVersionStatusResult {
 }
 
-interface UpdateEventLabelRequest {
+export interface UpdateEventLabelRequest {
   readonly eventId: string;
   readonly eventTypeName: string;
   readonly assignedLabel: string;
   readonly labelTimestamp: string;
 }
 
-interface UpdateEventLabelResult {
+export interface UpdateEventLabelResult {
 }
 
-interface UpdateModelRequest {
+export interface UpdateModelRequest {
   readonly modelId: string;
   readonly modelType: string;
-  readonly description: string;
+  readonly description?: string;
 }
 
-interface UpdateModelResult {
+export interface UpdateModelResult {
 }
 
-interface UpdateModelVersionRequest {
+export interface UpdateModelVersionRequest {
   readonly modelId: string;
   readonly modelType: string;
   readonly majorVersionNumber: string;
-  readonly externalEventsDetail: ExternalEventsDetail;
-  readonly ingestedEventsDetail: IngestedEventsDetail;
-  readonly tags: [];
+  readonly externalEventsDetail?: ExternalEventsDetail;
+  readonly ingestedEventsDetail?: IngestedEventsDetail;
+  readonly tags?: [];
 }
 
-interface UpdateModelVersionResult {
+export interface UpdateModelVersionResult {
+  readonly modelId?: string;
+  readonly modelType?: string;
+  readonly modelVersionNumber?: string;
+  readonly status?: string;
+}
+
+export interface UpdateModelVersionStatusRequest {
   readonly modelId: string;
   readonly modelType: string;
   readonly modelVersionNumber: string;
   readonly status: string;
 }
 
-interface UpdateModelVersionStatusRequest {
-  readonly modelId: string;
-  readonly modelType: string;
-  readonly modelVersionNumber: string;
-  readonly status: string;
+export interface UpdateModelVersionStatusResult {
 }
 
-interface UpdateModelVersionStatusResult {
-}
-
-interface UpdateRuleMetadataRequest {
+export interface UpdateRuleMetadataRequest {
   readonly rule: Rule;
   readonly description: string;
 }
 
-interface UpdateRuleMetadataResult {
+export interface UpdateRuleMetadataResult {
 }
 
-interface UpdateRuleVersionRequest {
+export interface UpdateRuleVersionRequest {
   readonly rule: Rule;
-  readonly description: string;
+  readonly description?: string;
   readonly expression: string;
   readonly language: string;
   readonly outcomes: [];
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface UpdateRuleVersionResult {
-  readonly rule: Rule;
+export interface UpdateRuleVersionResult {
+  readonly rule?: Rule;
 }
 
-interface UpdateVariableRequest {
+export interface UpdateVariableRequest {
   readonly name: string;
-  readonly defaultValue: string;
-  readonly description: string;
-  readonly variableType: string;
+  readonly defaultValue?: string;
+  readonly description?: string;
+  readonly variableType?: string;
 }
 
-interface UpdateVariableResult {
+export interface UpdateVariableResult {
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly message: string;
 }
 
-interface Variable {
-  readonly name: string;
-  readonly dataType: string;
-  readonly dataSource: string;
-  readonly defaultValue: string;
-  readonly description: string;
-  readonly variableType: string;
-  readonly lastUpdatedTime: string;
-  readonly createdTime: string;
-  readonly arn: string;
+export interface Variable {
+  readonly name?: string;
+  readonly dataType?: string;
+  readonly dataSource?: string;
+  readonly defaultValue?: string;
+  readonly description?: string;
+  readonly variableType?: string;
+  readonly lastUpdatedTime?: string;
+  readonly createdTime?: string;
+  readonly arn?: string;
 }
 
-interface VariableEntry {
-  readonly name: string;
-  readonly dataType: string;
-  readonly dataSource: string;
-  readonly defaultValue: string;
-  readonly description: string;
-  readonly variableType: string;
+export interface VariableEntry {
+  readonly name?: string;
+  readonly dataType?: string;
+  readonly dataSource?: string;
+  readonly defaultValue?: string;
+  readonly description?: string;
+  readonly variableType?: string;
 }
 
-interface VariableImportanceMetrics {
-  readonly logOddsMetrics: [];
+export interface VariableImportanceMetrics {
+  readonly logOddsMetrics?: [];
 }
+
 

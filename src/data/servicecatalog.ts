@@ -6,40 +6,48 @@ export interface AcceptPortfolioShare {
   readonly PortfolioId: string;
   readonly PortfolioShareType?: string;
 }
+
 export interface AssociateBudgetWithResource {
   readonly BudgetName: string;
   readonly ResourceId: string;
 }
+
 export interface AssociatePrincipalWithPortfolio {
   readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
   readonly PrincipalARN: string;
   readonly PrincipalType: string;
 }
+
 export interface AssociateProductWithPortfolio {
   readonly AcceptLanguage?: string;
   readonly ProductId: string;
   readonly PortfolioId: string;
   readonly SourcePortfolioId?: string;
 }
+
 export interface AssociateServiceActionWithProvisioningArtifact {
   readonly ProductId: string;
   readonly ProvisioningArtifactId: string;
   readonly ServiceActionId: string;
   readonly AcceptLanguage?: string;
 }
+
 export interface AssociateTagOptionWithResource {
   readonly ResourceId: string;
   readonly TagOptionId: string;
 }
+
 export interface BatchAssociateServiceActionWithProvisioningArtifact {
   readonly ServiceActionAssociations: [];
   readonly AcceptLanguage?: string;
 }
+
 export interface BatchDisassociateServiceActionFromProvisioningArtifact {
   readonly ServiceActionAssociations: [];
   readonly AcceptLanguage?: string;
 }
+
 export interface CopyProduct {
   readonly AcceptLanguage?: string;
   readonly SourceProductArn: string;
@@ -49,6 +57,7 @@ export interface CopyProduct {
   readonly CopyOptions?: [];
   readonly IdempotencyToken: string;
 }
+
 export interface CreateConstraint {
   readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
@@ -58,6 +67,7 @@ export interface CreateConstraint {
   readonly Description?: string;
   readonly IdempotencyToken: string;
 }
+
 export interface CreatePortfolio {
   readonly AcceptLanguage?: string;
   readonly DisplayName: string;
@@ -66,6 +76,7 @@ export interface CreatePortfolio {
   readonly Tags?: [];
   readonly IdempotencyToken: string;
 }
+
 export interface CreatePortfolioShare {
   readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
@@ -73,6 +84,7 @@ export interface CreatePortfolioShare {
   readonly OrganizationNode?: OrganizationNode;
   readonly ShareTagOptions?: boolean;
 }
+
 export interface CreateProduct {
   readonly AcceptLanguage?: string;
   readonly Name: string;
@@ -87,6 +99,7 @@ export interface CreateProduct {
   readonly ProvisioningArtifactParameters: ProvisioningArtifactProperties;
   readonly IdempotencyToken: string;
 }
+
 export interface CreateProvisionedProductPlan {
   readonly AcceptLanguage?: string;
   readonly PlanName: string;
@@ -100,12 +113,14 @@ export interface CreateProvisionedProductPlan {
   readonly IdempotencyToken: string;
   readonly Tags?: [];
 }
+
 export interface CreateProvisioningArtifact {
   readonly AcceptLanguage?: string;
   readonly ProductId: string;
   readonly Parameters: ProvisioningArtifactProperties;
   readonly IdempotencyToken: string;
 }
+
 export interface CreateServiceAction {
   readonly Name: string;
   readonly DefinitionType: string;
@@ -114,92 +129,112 @@ export interface CreateServiceAction {
   readonly AcceptLanguage?: string;
   readonly IdempotencyToken: string;
 }
+
 export interface CreateTagOption {
   readonly Key: string;
   readonly Value: string;
 }
+
 export interface DeleteConstraint {
   readonly AcceptLanguage?: string;
   readonly Id: string;
 }
+
 export interface DeletePortfolio {
   readonly AcceptLanguage?: string;
   readonly Id: string;
 }
+
 export interface DeletePortfolioShare {
   readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
   readonly AccountId?: string;
   readonly OrganizationNode?: OrganizationNode;
 }
+
 export interface DeleteProduct {
   readonly AcceptLanguage?: string;
   readonly Id: string;
 }
+
 export interface DeleteProvisionedProductPlan {
   readonly AcceptLanguage?: string;
   readonly PlanId: string;
   readonly IgnoreErrors?: boolean;
 }
+
 export interface DeleteProvisioningArtifact {
   readonly AcceptLanguage?: string;
   readonly ProductId: string;
   readonly ProvisioningArtifactId: string;
 }
+
 export interface DeleteServiceAction {
   readonly Id: string;
   readonly AcceptLanguage?: string;
 }
+
 export interface DeleteTagOption {
   readonly Id: string;
 }
+
 export interface DescribeConstraint {
   readonly AcceptLanguage?: string;
   readonly Id: string;
 }
+
 export interface DescribeCopyProductStatus {
   readonly AcceptLanguage?: string;
   readonly CopyProductToken: string;
 }
+
 export interface DescribePortfolio {
   readonly AcceptLanguage?: string;
   readonly Id: string;
 }
+
 export interface DescribePortfolioShareStatus {
   readonly PortfolioShareToken: string;
 }
+
 export interface DescribePortfolioShares {
   readonly PortfolioId: string;
   readonly Type: string;
   readonly PageToken?: string;
   readonly PageSize?: number;
 }
+
 export interface DescribeProduct {
   readonly AcceptLanguage?: string;
   readonly Id?: string;
   readonly Name?: string;
 }
+
 export interface DescribeProductAsAdmin {
   readonly AcceptLanguage?: string;
   readonly Id?: string;
   readonly Name?: string;
   readonly SourcePortfolioId?: string;
 }
+
 export interface DescribeProductView {
   readonly AcceptLanguage?: string;
   readonly Id: string;
 }
+
 export interface DescribeProvisionedProduct {
   readonly AcceptLanguage?: string;
   readonly Id?: string;
   readonly Name?: string;
 }
+
 export interface DescribeProvisionedProductPlan {
   readonly AcceptLanguage?: string;
   readonly PlanId: string;
   readonly PageSize?: number;
   readonly PageToken?: string;
 }
+
 export interface DescribeProvisioningArtifact {
   readonly AcceptLanguage?: string;
   readonly ProvisioningArtifactId?: string;
@@ -208,6 +243,7 @@ export interface DescribeProvisioningArtifact {
   readonly ProductName?: string;
   readonly Verbose?: boolean;
 }
+
 export interface DescribeProvisioningParameters {
   readonly AcceptLanguage?: string;
   readonly ProductId?: string;
@@ -217,57 +253,70 @@ export interface DescribeProvisioningParameters {
   readonly PathId?: string;
   readonly PathName?: string;
 }
+
 export interface DescribeRecord {
   readonly AcceptLanguage?: string;
   readonly Id: string;
   readonly PageToken?: string;
   readonly PageSize?: number;
 }
+
 export interface DescribeServiceAction {
   readonly Id: string;
   readonly AcceptLanguage?: string;
 }
+
 export interface DescribeServiceActionExecutionParameters {
   readonly ProvisionedProductId: string;
   readonly ServiceActionId: string;
   readonly AcceptLanguage?: string;
 }
+
 export interface DescribeTagOption {
   readonly Id: string;
 }
+
 export interface DisableAWSOrganizationsAccess {
 }
+
 export interface DisassociateBudgetFromResource {
   readonly BudgetName: string;
   readonly ResourceId: string;
 }
+
 export interface DisassociatePrincipalFromPortfolio {
   readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
   readonly PrincipalARN: string;
 }
+
 export interface DisassociateProductFromPortfolio {
   readonly AcceptLanguage?: string;
   readonly ProductId: string;
   readonly PortfolioId: string;
 }
+
 export interface DisassociateServiceActionFromProvisioningArtifact {
   readonly ProductId: string;
   readonly ProvisioningArtifactId: string;
   readonly ServiceActionId: string;
   readonly AcceptLanguage?: string;
 }
+
 export interface DisassociateTagOptionFromResource {
   readonly ResourceId: string;
   readonly TagOptionId: string;
 }
+
 export interface EnableAWSOrganizationsAccess {
 }
+
 export interface ExecuteProvisionedProductPlan {
   readonly AcceptLanguage?: string;
   readonly PlanId: string;
   readonly IdempotencyToken: string;
 }
+
 export interface ExecuteProvisionedProductServiceAction {
   readonly ProvisionedProductId: string;
   readonly ServiceActionId: string;
@@ -275,8 +324,10 @@ export interface ExecuteProvisionedProductServiceAction {
   readonly AcceptLanguage?: string;
   readonly Parameters?: {[key: string]: any};
 }
+
 export interface GetAWSOrganizationsAccessStatus {
 }
+
 export interface GetProvisionedProductOutputs {
   readonly AcceptLanguage?: string;
   readonly ProvisionedProductId?: string;
@@ -285,6 +336,7 @@ export interface GetProvisionedProductOutputs {
   readonly PageSize?: number;
   readonly PageToken?: string;
 }
+
 export interface ImportAsProvisionedProduct {
   readonly AcceptLanguage?: string;
   readonly ProductId: string;
@@ -293,18 +345,21 @@ export interface ImportAsProvisionedProduct {
   readonly PhysicalId: string;
   readonly IdempotencyToken: string;
 }
+
 export interface ListAcceptedPortfolioShares {
   readonly AcceptLanguage?: string;
   readonly PageToken?: string;
   readonly PageSize?: number;
   readonly PortfolioShareType?: string;
 }
+
 export interface ListBudgetsForResource {
   readonly AcceptLanguage?: string;
   readonly ResourceId: string;
   readonly PageSize?: number;
   readonly PageToken?: string;
 }
+
 export interface ListConstraintsForPortfolio {
   readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
@@ -312,12 +367,14 @@ export interface ListConstraintsForPortfolio {
   readonly PageSize?: number;
   readonly PageToken?: string;
 }
+
 export interface ListLaunchPaths {
   readonly AcceptLanguage?: string;
   readonly ProductId: string;
   readonly PageSize?: number;
   readonly PageToken?: string;
 }
+
 export interface ListOrganizationPortfolioAccess {
   readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
@@ -325,6 +382,7 @@ export interface ListOrganizationPortfolioAccess {
   readonly PageToken?: string;
   readonly PageSize?: number;
 }
+
 export interface ListPortfolioAccess {
   readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
@@ -332,23 +390,27 @@ export interface ListPortfolioAccess {
   readonly PageToken?: string;
   readonly PageSize?: number;
 }
+
 export interface ListPortfolios {
   readonly AcceptLanguage?: string;
   readonly PageToken?: string;
   readonly PageSize?: number;
 }
+
 export interface ListPortfoliosForProduct {
   readonly AcceptLanguage?: string;
   readonly ProductId: string;
   readonly PageToken?: string;
   readonly PageSize?: number;
 }
+
 export interface ListPrincipalsForPortfolio {
   readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
   readonly PageSize?: number;
   readonly PageToken?: string;
 }
+
 export interface ListProvisionedProductPlans {
   readonly AcceptLanguage?: string;
   readonly ProvisionProductId?: string;
@@ -356,16 +418,19 @@ export interface ListProvisionedProductPlans {
   readonly PageToken?: string;
   readonly AccessLevelFilter?: AccessLevelFilter;
 }
+
 export interface ListProvisioningArtifacts {
   readonly AcceptLanguage?: string;
   readonly ProductId: string;
 }
+
 export interface ListProvisioningArtifactsForServiceAction {
   readonly ServiceActionId: string;
   readonly PageSize?: number;
   readonly PageToken?: string;
   readonly AcceptLanguage?: string;
 }
+
 export interface ListRecordHistory {
   readonly AcceptLanguage?: string;
   readonly AccessLevelFilter?: AccessLevelFilter;
@@ -373,17 +438,20 @@ export interface ListRecordHistory {
   readonly PageSize?: number;
   readonly PageToken?: string;
 }
+
 export interface ListResourcesForTagOption {
   readonly TagOptionId: string;
   readonly ResourceType?: string;
   readonly PageSize?: number;
   readonly PageToken?: string;
 }
+
 export interface ListServiceActions {
   readonly AcceptLanguage?: string;
   readonly PageSize?: number;
   readonly PageToken?: string;
 }
+
 export interface ListServiceActionsForProvisioningArtifact {
   readonly ProductId: string;
   readonly ProvisioningArtifactId: string;
@@ -391,17 +459,20 @@ export interface ListServiceActionsForProvisioningArtifact {
   readonly PageToken?: string;
   readonly AcceptLanguage?: string;
 }
+
 export interface ListStackInstancesForProvisionedProduct {
   readonly AcceptLanguage?: string;
   readonly ProvisionedProductId: string;
   readonly PageToken?: string;
   readonly PageSize?: number;
 }
+
 export interface ListTagOptions {
   readonly Filters?: ListTagOptionsFilters;
   readonly PageSize?: number;
   readonly PageToken?: string;
 }
+
 export interface ProvisionProduct {
   readonly AcceptLanguage?: string;
   readonly ProductId?: string;
@@ -417,17 +488,20 @@ export interface ProvisionProduct {
   readonly NotificationArns?: [];
   readonly ProvisionToken: string;
 }
+
 export interface RejectPortfolioShare {
   readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
   readonly PortfolioShareType?: string;
 }
+
 export interface ScanProvisionedProducts {
   readonly AcceptLanguage?: string;
   readonly AccessLevelFilter?: AccessLevelFilter;
   readonly PageSize?: number;
   readonly PageToken?: string;
 }
+
 export interface SearchProducts {
   readonly AcceptLanguage?: string;
   readonly Filters?: {[key: string]: any};
@@ -436,6 +510,7 @@ export interface SearchProducts {
   readonly SortOrder?: string;
   readonly PageToken?: string;
 }
+
 export interface SearchProductsAsAdmin {
   readonly AcceptLanguage?: string;
   readonly PortfolioId?: string;
@@ -446,6 +521,7 @@ export interface SearchProductsAsAdmin {
   readonly PageSize?: number;
   readonly ProductSource?: string;
 }
+
 export interface SearchProvisionedProducts {
   readonly AcceptLanguage?: string;
   readonly AccessLevelFilter?: AccessLevelFilter;
@@ -455,6 +531,7 @@ export interface SearchProvisionedProducts {
   readonly PageSize?: number;
   readonly PageToken?: string;
 }
+
 export interface TerminateProvisionedProduct {
   readonly ProvisionedProductName?: string;
   readonly ProvisionedProductId?: string;
@@ -463,12 +540,14 @@ export interface TerminateProvisionedProduct {
   readonly AcceptLanguage?: string;
   readonly RetainPhysicalResources?: boolean;
 }
+
 export interface UpdateConstraint {
   readonly AcceptLanguage?: string;
   readonly Id: string;
   readonly Description?: string;
   readonly Parameters?: string;
 }
+
 export interface UpdatePortfolio {
   readonly AcceptLanguage?: string;
   readonly Id: string;
@@ -478,6 +557,7 @@ export interface UpdatePortfolio {
   readonly AddTags?: [];
   readonly RemoveTags?: [];
 }
+
 export interface UpdatePortfolioShare {
   readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
@@ -485,6 +565,7 @@ export interface UpdatePortfolioShare {
   readonly OrganizationNode?: OrganizationNode;
   readonly ShareTagOptions?: boolean;
 }
+
 export interface UpdateProduct {
   readonly AcceptLanguage?: string;
   readonly Id: string;
@@ -498,6 +579,7 @@ export interface UpdateProduct {
   readonly AddTags?: [];
   readonly RemoveTags?: [];
 }
+
 export interface UpdateProvisionedProduct {
   readonly AcceptLanguage?: string;
   readonly ProvisionedProductName?: string;
@@ -513,12 +595,14 @@ export interface UpdateProvisionedProduct {
   readonly Tags?: [];
   readonly UpdateToken: string;
 }
+
 export interface UpdateProvisionedProductProperties {
   readonly AcceptLanguage?: string;
   readonly ProvisionedProductId: string;
   readonly ProvisionedProductProperties: {[key: string]: any};
   readonly IdempotencyToken: string;
 }
+
 export interface UpdateProvisioningArtifact {
   readonly AcceptLanguage?: string;
   readonly ProductId: string;
@@ -528,6 +612,7 @@ export interface UpdateProvisioningArtifact {
   readonly Active?: boolean;
   readonly Guidance?: string;
 }
+
 export interface UpdateServiceAction {
   readonly Id: string;
   readonly Name?: string;
@@ -535,628 +620,627 @@ export interface UpdateServiceAction {
   readonly Description?: string;
   readonly AcceptLanguage?: string;
 }
+
 export interface UpdateTagOption {
   readonly Id: string;
   readonly Value?: string;
   readonly Active?: boolean;
 }
 
-
-
-interface AcceptPortfolioShareInput {
-  readonly AcceptLanguage: string;
+export interface AcceptPortfolioShareInput {
+  readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
-  readonly PortfolioShareType: string;
+  readonly PortfolioShareType?: string;
 }
 
-interface AcceptPortfolioShareOutput {
+export interface AcceptPortfolioShareOutput {
 }
 
-interface AccessLevelFilter {
-  readonly Key: string;
-  readonly Value: string;
+export interface AccessLevelFilter {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface AssociateBudgetWithResourceInput {
+export interface AssociateBudgetWithResourceInput {
   readonly BudgetName: string;
   readonly ResourceId: string;
 }
 
-interface AssociateBudgetWithResourceOutput {
+export interface AssociateBudgetWithResourceOutput {
 }
 
-interface AssociatePrincipalWithPortfolioInput {
-  readonly AcceptLanguage: string;
+export interface AssociatePrincipalWithPortfolioInput {
+  readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
   readonly PrincipalARN: string;
   readonly PrincipalType: string;
 }
 
-interface AssociatePrincipalWithPortfolioOutput {
+export interface AssociatePrincipalWithPortfolioOutput {
 }
 
-interface AssociateProductWithPortfolioInput {
-  readonly AcceptLanguage: string;
+export interface AssociateProductWithPortfolioInput {
+  readonly AcceptLanguage?: string;
   readonly ProductId: string;
   readonly PortfolioId: string;
-  readonly SourcePortfolioId: string;
+  readonly SourcePortfolioId?: string;
 }
 
-interface AssociateProductWithPortfolioOutput {
+export interface AssociateProductWithPortfolioOutput {
 }
 
-interface AssociateServiceActionWithProvisioningArtifactInput {
+export interface AssociateServiceActionWithProvisioningArtifactInput {
   readonly ProductId: string;
   readonly ProvisioningArtifactId: string;
   readonly ServiceActionId: string;
-  readonly AcceptLanguage: string;
+  readonly AcceptLanguage?: string;
 }
 
-interface AssociateServiceActionWithProvisioningArtifactOutput {
+export interface AssociateServiceActionWithProvisioningArtifactOutput {
 }
 
-interface AssociateTagOptionWithResourceInput {
+export interface AssociateTagOptionWithResourceInput {
   readonly ResourceId: string;
   readonly TagOptionId: string;
 }
 
-interface AssociateTagOptionWithResourceOutput {
+export interface AssociateTagOptionWithResourceOutput {
 }
 
-interface BatchAssociateServiceActionWithProvisioningArtifactInput {
+export interface BatchAssociateServiceActionWithProvisioningArtifactInput {
   readonly ServiceActionAssociations: [];
-  readonly AcceptLanguage: string;
+  readonly AcceptLanguage?: string;
 }
 
-interface BatchAssociateServiceActionWithProvisioningArtifactOutput {
-  readonly FailedServiceActionAssociations: [];
+export interface BatchAssociateServiceActionWithProvisioningArtifactOutput {
+  readonly FailedServiceActionAssociations?: [];
 }
 
-interface BatchDisassociateServiceActionFromProvisioningArtifactInput {
+export interface BatchDisassociateServiceActionFromProvisioningArtifactInput {
   readonly ServiceActionAssociations: [];
-  readonly AcceptLanguage: string;
+  readonly AcceptLanguage?: string;
 }
 
-interface BatchDisassociateServiceActionFromProvisioningArtifactOutput {
-  readonly FailedServiceActionAssociations: [];
+export interface BatchDisassociateServiceActionFromProvisioningArtifactOutput {
+  readonly FailedServiceActionAssociations?: [];
 }
 
-interface BudgetDetail {
-  readonly BudgetName: string;
+export interface BudgetDetail {
+  readonly BudgetName?: string;
 }
 
-interface CloudWatchDashboard {
-  readonly Name: string;
+export interface CloudWatchDashboard {
+  readonly Name?: string;
 }
 
-interface ConstraintDetail {
-  readonly ConstraintId: string;
-  readonly Type: string;
-  readonly Description: string;
-  readonly Owner: string;
-  readonly ProductId: string;
-  readonly PortfolioId: string;
+export interface ConstraintDetail {
+  readonly ConstraintId?: string;
+  readonly Type?: string;
+  readonly Description?: string;
+  readonly Owner?: string;
+  readonly ProductId?: string;
+  readonly PortfolioId?: string;
 }
 
-interface ConstraintSummary {
-  readonly Type: string;
-  readonly Description: string;
+export interface ConstraintSummary {
+  readonly Type?: string;
+  readonly Description?: string;
 }
 
-interface CopyProductInput {
-  readonly AcceptLanguage: string;
+export interface CopyProductInput {
+  readonly AcceptLanguage?: string;
   readonly SourceProductArn: string;
-  readonly TargetProductId: string;
-  readonly TargetProductName: string;
-  readonly SourceProvisioningArtifactIdentifiers: [];
-  readonly CopyOptions: [];
+  readonly TargetProductId?: string;
+  readonly TargetProductName?: string;
+  readonly SourceProvisioningArtifactIdentifiers?: [];
+  readonly CopyOptions?: [];
   readonly IdempotencyToken: string;
 }
 
-interface CopyProductOutput {
-  readonly CopyProductToken: string;
+export interface CopyProductOutput {
+  readonly CopyProductToken?: string;
 }
 
-interface CreateConstraintInput {
-  readonly AcceptLanguage: string;
+export interface CreateConstraintInput {
+  readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
   readonly ProductId: string;
   readonly Parameters: string;
   readonly Type: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly IdempotencyToken: string;
 }
 
-interface CreateConstraintOutput {
-  readonly ConstraintDetail: ConstraintDetail;
-  readonly ConstraintParameters: string;
-  readonly Status: string;
+export interface CreateConstraintOutput {
+  readonly ConstraintDetail?: ConstraintDetail;
+  readonly ConstraintParameters?: string;
+  readonly Status?: string;
 }
 
-interface CreatePortfolioInput {
-  readonly AcceptLanguage: string;
+export interface CreatePortfolioInput {
+  readonly AcceptLanguage?: string;
   readonly DisplayName: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly ProviderName: string;
-  readonly Tags: [];
+  readonly Tags?: [];
   readonly IdempotencyToken: string;
 }
 
-interface CreatePortfolioOutput {
-  readonly PortfolioDetail: PortfolioDetail;
-  readonly Tags: [];
+export interface CreatePortfolioOutput {
+  readonly PortfolioDetail?: PortfolioDetail;
+  readonly Tags?: [];
 }
 
-interface CreatePortfolioShareInput {
-  readonly AcceptLanguage: string;
+export interface CreatePortfolioShareInput {
+  readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
-  readonly AccountId: string;
-  readonly OrganizationNode: OrganizationNode;
-  readonly ShareTagOptions: boolean;
+  readonly AccountId?: string;
+  readonly OrganizationNode?: OrganizationNode;
+  readonly ShareTagOptions?: boolean;
 }
 
-interface CreatePortfolioShareOutput {
-  readonly PortfolioShareToken: string;
+export interface CreatePortfolioShareOutput {
+  readonly PortfolioShareToken?: string;
 }
 
-interface CreateProductInput {
-  readonly AcceptLanguage: string;
+export interface CreateProductInput {
+  readonly AcceptLanguage?: string;
   readonly Name: string;
   readonly Owner: string;
-  readonly Description: string;
-  readonly Distributor: string;
-  readonly SupportDescription: string;
-  readonly SupportEmail: string;
-  readonly SupportUrl: string;
+  readonly Description?: string;
+  readonly Distributor?: string;
+  readonly SupportDescription?: string;
+  readonly SupportEmail?: string;
+  readonly SupportUrl?: string;
   readonly ProductType: string;
-  readonly Tags: [];
+  readonly Tags?: [];
   readonly ProvisioningArtifactParameters: ProvisioningArtifactProperties;
   readonly IdempotencyToken: string;
 }
 
-interface CreateProductOutput {
-  readonly ProductViewDetail: ProductViewDetail;
-  readonly ProvisioningArtifactDetail: ProvisioningArtifactDetail;
-  readonly Tags: [];
+export interface CreateProductOutput {
+  readonly ProductViewDetail?: ProductViewDetail;
+  readonly ProvisioningArtifactDetail?: ProvisioningArtifactDetail;
+  readonly Tags?: [];
 }
 
-interface CreateProvisionedProductPlanInput {
-  readonly AcceptLanguage: string;
+export interface CreateProvisionedProductPlanInput {
+  readonly AcceptLanguage?: string;
   readonly PlanName: string;
   readonly PlanType: string;
-  readonly NotificationArns: [];
-  readonly PathId: string;
+  readonly NotificationArns?: [];
+  readonly PathId?: string;
   readonly ProductId: string;
   readonly ProvisionedProductName: string;
   readonly ProvisioningArtifactId: string;
-  readonly ProvisioningParameters: [];
+  readonly ProvisioningParameters?: [];
   readonly IdempotencyToken: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateProvisionedProductPlanOutput {
-  readonly PlanName: string;
-  readonly PlanId: string;
-  readonly ProvisionProductId: string;
-  readonly ProvisionedProductName: string;
-  readonly ProvisioningArtifactId: string;
+export interface CreateProvisionedProductPlanOutput {
+  readonly PlanName?: string;
+  readonly PlanId?: string;
+  readonly ProvisionProductId?: string;
+  readonly ProvisionedProductName?: string;
+  readonly ProvisioningArtifactId?: string;
 }
 
-interface CreateProvisioningArtifactInput {
-  readonly AcceptLanguage: string;
+export interface CreateProvisioningArtifactInput {
+  readonly AcceptLanguage?: string;
   readonly ProductId: string;
   readonly Parameters: ProvisioningArtifactProperties;
   readonly IdempotencyToken: string;
 }
 
-interface CreateProvisioningArtifactOutput {
-  readonly ProvisioningArtifactDetail: ProvisioningArtifactDetail;
-  readonly Info: {[key: string]: any};
-  readonly Status: string;
+export interface CreateProvisioningArtifactOutput {
+  readonly ProvisioningArtifactDetail?: ProvisioningArtifactDetail;
+  readonly Info?: {[key: string]: any};
+  readonly Status?: string;
 }
 
-interface CreateServiceActionInput {
+export interface CreateServiceActionInput {
   readonly Name: string;
   readonly DefinitionType: string;
   readonly Definition: {[key: string]: any};
-  readonly Description: string;
-  readonly AcceptLanguage: string;
+  readonly Description?: string;
+  readonly AcceptLanguage?: string;
   readonly IdempotencyToken: string;
 }
 
-interface CreateServiceActionOutput {
-  readonly ServiceActionDetail: ServiceActionDetail;
+export interface CreateServiceActionOutput {
+  readonly ServiceActionDetail?: ServiceActionDetail;
 }
 
-interface CreateTagOptionInput {
+export interface CreateTagOptionInput {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface CreateTagOptionOutput {
-  readonly TagOptionDetail: TagOptionDetail;
+export interface CreateTagOptionOutput {
+  readonly TagOptionDetail?: TagOptionDetail;
 }
 
-interface DeleteConstraintInput {
-  readonly AcceptLanguage: string;
+export interface DeleteConstraintInput {
+  readonly AcceptLanguage?: string;
   readonly Id: string;
 }
 
-interface DeleteConstraintOutput {
+export interface DeleteConstraintOutput {
 }
 
-interface DeletePortfolioInput {
-  readonly AcceptLanguage: string;
+export interface DeletePortfolioInput {
+  readonly AcceptLanguage?: string;
   readonly Id: string;
 }
 
-interface DeletePortfolioOutput {
+export interface DeletePortfolioOutput {
 }
 
-interface DeletePortfolioShareInput {
-  readonly AcceptLanguage: string;
+export interface DeletePortfolioShareInput {
+  readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
-  readonly AccountId: string;
-  readonly OrganizationNode: OrganizationNode;
+  readonly AccountId?: string;
+  readonly OrganizationNode?: OrganizationNode;
 }
 
-interface DeletePortfolioShareOutput {
-  readonly PortfolioShareToken: string;
+export interface DeletePortfolioShareOutput {
+  readonly PortfolioShareToken?: string;
 }
 
-interface DeleteProductInput {
-  readonly AcceptLanguage: string;
+export interface DeleteProductInput {
+  readonly AcceptLanguage?: string;
   readonly Id: string;
 }
 
-interface DeleteProductOutput {
+export interface DeleteProductOutput {
 }
 
-interface DeleteProvisionedProductPlanInput {
-  readonly AcceptLanguage: string;
+export interface DeleteProvisionedProductPlanInput {
+  readonly AcceptLanguage?: string;
   readonly PlanId: string;
-  readonly IgnoreErrors: boolean;
+  readonly IgnoreErrors?: boolean;
 }
 
-interface DeleteProvisionedProductPlanOutput {
+export interface DeleteProvisionedProductPlanOutput {
 }
 
-interface DeleteProvisioningArtifactInput {
-  readonly AcceptLanguage: string;
+export interface DeleteProvisioningArtifactInput {
+  readonly AcceptLanguage?: string;
   readonly ProductId: string;
   readonly ProvisioningArtifactId: string;
 }
 
-interface DeleteProvisioningArtifactOutput {
+export interface DeleteProvisioningArtifactOutput {
 }
 
-interface DeleteServiceActionInput {
+export interface DeleteServiceActionInput {
   readonly Id: string;
-  readonly AcceptLanguage: string;
+  readonly AcceptLanguage?: string;
 }
 
-interface DeleteServiceActionOutput {
+export interface DeleteServiceActionOutput {
 }
 
-interface DeleteTagOptionInput {
-  readonly Id: string;
-}
-
-interface DeleteTagOptionOutput {
-}
-
-interface DescribeConstraintInput {
-  readonly AcceptLanguage: string;
+export interface DeleteTagOptionInput {
   readonly Id: string;
 }
 
-interface DescribeConstraintOutput {
-  readonly ConstraintDetail: ConstraintDetail;
-  readonly ConstraintParameters: string;
-  readonly Status: string;
+export interface DeleteTagOptionOutput {
 }
 
-interface DescribeCopyProductStatusInput {
-  readonly AcceptLanguage: string;
+export interface DescribeConstraintInput {
+  readonly AcceptLanguage?: string;
+  readonly Id: string;
+}
+
+export interface DescribeConstraintOutput {
+  readonly ConstraintDetail?: ConstraintDetail;
+  readonly ConstraintParameters?: string;
+  readonly Status?: string;
+}
+
+export interface DescribeCopyProductStatusInput {
+  readonly AcceptLanguage?: string;
   readonly CopyProductToken: string;
 }
 
-interface DescribeCopyProductStatusOutput {
-  readonly CopyProductStatus: string;
-  readonly TargetProductId: string;
-  readonly StatusDetail: string;
+export interface DescribeCopyProductStatusOutput {
+  readonly CopyProductStatus?: string;
+  readonly TargetProductId?: string;
+  readonly StatusDetail?: string;
 }
 
-interface DescribePortfolioInput {
-  readonly AcceptLanguage: string;
+export interface DescribePortfolioInput {
+  readonly AcceptLanguage?: string;
   readonly Id: string;
 }
 
-interface DescribePortfolioOutput {
-  readonly PortfolioDetail: PortfolioDetail;
-  readonly Tags: [];
-  readonly TagOptions: [];
-  readonly Budgets: [];
+export interface DescribePortfolioOutput {
+  readonly PortfolioDetail?: PortfolioDetail;
+  readonly Tags?: [];
+  readonly TagOptions?: [];
+  readonly Budgets?: [];
 }
 
-interface DescribePortfolioShareStatusInput {
+export interface DescribePortfolioShareStatusInput {
   readonly PortfolioShareToken: string;
 }
 
-interface DescribePortfolioShareStatusOutput {
-  readonly PortfolioShareToken: string;
-  readonly PortfolioId: string;
-  readonly OrganizationNodeValue: string;
-  readonly Status: string;
-  readonly ShareDetails: ShareDetails;
+export interface DescribePortfolioShareStatusOutput {
+  readonly PortfolioShareToken?: string;
+  readonly PortfolioId?: string;
+  readonly OrganizationNodeValue?: string;
+  readonly Status?: string;
+  readonly ShareDetails?: ShareDetails;
 }
 
-interface DescribePortfolioSharesInput {
+export interface DescribePortfolioSharesInput {
   readonly PortfolioId: string;
   readonly Type: string;
-  readonly PageToken: string;
-  readonly PageSize: number;
+  readonly PageToken?: string;
+  readonly PageSize?: number;
 }
 
-interface DescribePortfolioSharesOutput {
-  readonly NextPageToken: string;
-  readonly PortfolioShareDetails: [];
+export interface DescribePortfolioSharesOutput {
+  readonly NextPageToken?: string;
+  readonly PortfolioShareDetails?: [];
 }
 
-interface DescribeProductAsAdminInput {
-  readonly AcceptLanguage: string;
+export interface DescribeProductAsAdminInput {
+  readonly AcceptLanguage?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly SourcePortfolioId?: string;
+}
+
+export interface DescribeProductAsAdminOutput {
+  readonly ProductViewDetail?: ProductViewDetail;
+  readonly ProvisioningArtifactSummaries?: [];
+  readonly Tags?: [];
+  readonly TagOptions?: [];
+  readonly Budgets?: [];
+}
+
+export interface DescribeProductInput {
+  readonly AcceptLanguage?: string;
+  readonly Id?: string;
+  readonly Name?: string;
+}
+
+export interface DescribeProductOutput {
+  readonly ProductViewSummary?: ProductViewSummary;
+  readonly ProvisioningArtifacts?: [];
+  readonly Budgets?: [];
+  readonly LaunchPaths?: [];
+}
+
+export interface DescribeProductViewInput {
+  readonly AcceptLanguage?: string;
   readonly Id: string;
-  readonly Name: string;
-  readonly SourcePortfolioId: string;
 }
 
-interface DescribeProductAsAdminOutput {
-  readonly ProductViewDetail: ProductViewDetail;
-  readonly ProvisioningArtifactSummaries: [];
-  readonly Tags: [];
-  readonly TagOptions: [];
-  readonly Budgets: [];
+export interface DescribeProductViewOutput {
+  readonly ProductViewSummary?: ProductViewSummary;
+  readonly ProvisioningArtifacts?: [];
 }
 
-interface DescribeProductInput {
-  readonly AcceptLanguage: string;
-  readonly Id: string;
-  readonly Name: string;
+export interface DescribeProvisionedProductInput {
+  readonly AcceptLanguage?: string;
+  readonly Id?: string;
+  readonly Name?: string;
 }
 
-interface DescribeProductOutput {
-  readonly ProductViewSummary: ProductViewSummary;
-  readonly ProvisioningArtifacts: [];
-  readonly Budgets: [];
-  readonly LaunchPaths: [];
+export interface DescribeProvisionedProductOutput {
+  readonly ProvisionedProductDetail?: ProvisionedProductDetail;
+  readonly CloudWatchDashboards?: [];
 }
 
-interface DescribeProductViewInput {
-  readonly AcceptLanguage: string;
-  readonly Id: string;
-}
-
-interface DescribeProductViewOutput {
-  readonly ProductViewSummary: ProductViewSummary;
-  readonly ProvisioningArtifacts: [];
-}
-
-interface DescribeProvisionedProductInput {
-  readonly AcceptLanguage: string;
-  readonly Id: string;
-  readonly Name: string;
-}
-
-interface DescribeProvisionedProductOutput {
-  readonly ProvisionedProductDetail: ProvisionedProductDetail;
-  readonly CloudWatchDashboards: [];
-}
-
-interface DescribeProvisionedProductPlanInput {
-  readonly AcceptLanguage: string;
+export interface DescribeProvisionedProductPlanInput {
+  readonly AcceptLanguage?: string;
   readonly PlanId: string;
-  readonly PageSize: number;
-  readonly PageToken: string;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
 }
 
-interface DescribeProvisionedProductPlanOutput {
-  readonly ProvisionedProductPlanDetails: ProvisionedProductPlanDetails;
-  readonly ResourceChanges: [];
-  readonly NextPageToken: string;
+export interface DescribeProvisionedProductPlanOutput {
+  readonly ProvisionedProductPlanDetails?: ProvisionedProductPlanDetails;
+  readonly ResourceChanges?: [];
+  readonly NextPageToken?: string;
 }
 
-interface DescribeProvisioningArtifactInput {
-  readonly AcceptLanguage: string;
-  readonly ProvisioningArtifactId: string;
-  readonly ProductId: string;
-  readonly ProvisioningArtifactName: string;
-  readonly ProductName: string;
-  readonly Verbose: boolean;
+export interface DescribeProvisioningArtifactInput {
+  readonly AcceptLanguage?: string;
+  readonly ProvisioningArtifactId?: string;
+  readonly ProductId?: string;
+  readonly ProvisioningArtifactName?: string;
+  readonly ProductName?: string;
+  readonly Verbose?: boolean;
 }
 
-interface DescribeProvisioningArtifactOutput {
-  readonly ProvisioningArtifactDetail: ProvisioningArtifactDetail;
-  readonly Info: {[key: string]: any};
-  readonly Status: string;
+export interface DescribeProvisioningArtifactOutput {
+  readonly ProvisioningArtifactDetail?: ProvisioningArtifactDetail;
+  readonly Info?: {[key: string]: any};
+  readonly Status?: string;
 }
 
-interface DescribeProvisioningParametersInput {
-  readonly AcceptLanguage: string;
-  readonly ProductId: string;
-  readonly ProductName: string;
-  readonly ProvisioningArtifactId: string;
-  readonly ProvisioningArtifactName: string;
-  readonly PathId: string;
-  readonly PathName: string;
+export interface DescribeProvisioningParametersInput {
+  readonly AcceptLanguage?: string;
+  readonly ProductId?: string;
+  readonly ProductName?: string;
+  readonly ProvisioningArtifactId?: string;
+  readonly ProvisioningArtifactName?: string;
+  readonly PathId?: string;
+  readonly PathName?: string;
 }
 
-interface DescribeProvisioningParametersOutput {
-  readonly ProvisioningArtifactParameters: [];
-  readonly ConstraintSummaries: [];
-  readonly UsageInstructions: [];
-  readonly TagOptions: [];
-  readonly ProvisioningArtifactPreferences: ProvisioningArtifactPreferences;
-  readonly ProvisioningArtifactOutputs: [];
+export interface DescribeProvisioningParametersOutput {
+  readonly ProvisioningArtifactParameters?: [];
+  readonly ConstraintSummaries?: [];
+  readonly UsageInstructions?: [];
+  readonly TagOptions?: [];
+  readonly ProvisioningArtifactPreferences?: ProvisioningArtifactPreferences;
+  readonly ProvisioningArtifactOutputs?: [];
 }
 
-interface DescribeRecordInput {
-  readonly AcceptLanguage: string;
+export interface DescribeRecordInput {
+  readonly AcceptLanguage?: string;
   readonly Id: string;
-  readonly PageToken: string;
-  readonly PageSize: number;
+  readonly PageToken?: string;
+  readonly PageSize?: number;
 }
 
-interface DescribeRecordOutput {
-  readonly RecordDetail: RecordDetail;
-  readonly RecordOutputs: [];
-  readonly NextPageToken: string;
+export interface DescribeRecordOutput {
+  readonly RecordDetail?: RecordDetail;
+  readonly RecordOutputs?: [];
+  readonly NextPageToken?: string;
 }
 
-interface DescribeServiceActionExecutionParametersInput {
+export interface DescribeServiceActionExecutionParametersInput {
   readonly ProvisionedProductId: string;
   readonly ServiceActionId: string;
-  readonly AcceptLanguage: string;
+  readonly AcceptLanguage?: string;
 }
 
-interface DescribeServiceActionExecutionParametersOutput {
-  readonly ServiceActionParameters: [];
+export interface DescribeServiceActionExecutionParametersOutput {
+  readonly ServiceActionParameters?: [];
 }
 
-interface DescribeServiceActionInput {
+export interface DescribeServiceActionInput {
   readonly Id: string;
-  readonly AcceptLanguage: string;
+  readonly AcceptLanguage?: string;
 }
 
-interface DescribeServiceActionOutput {
-  readonly ServiceActionDetail: ServiceActionDetail;
+export interface DescribeServiceActionOutput {
+  readonly ServiceActionDetail?: ServiceActionDetail;
 }
 
-interface DescribeTagOptionInput {
+export interface DescribeTagOptionInput {
   readonly Id: string;
 }
 
-interface DescribeTagOptionOutput {
-  readonly TagOptionDetail: TagOptionDetail;
+export interface DescribeTagOptionOutput {
+  readonly TagOptionDetail?: TagOptionDetail;
 }
 
-interface DisableAWSOrganizationsAccessInput {
+export interface DisableAWSOrganizationsAccessInput {
 }
 
-interface DisableAWSOrganizationsAccessOutput {
+export interface DisableAWSOrganizationsAccessOutput {
 }
 
-interface DisassociateBudgetFromResourceInput {
+export interface DisassociateBudgetFromResourceInput {
   readonly BudgetName: string;
   readonly ResourceId: string;
 }
 
-interface DisassociateBudgetFromResourceOutput {
+export interface DisassociateBudgetFromResourceOutput {
 }
 
-interface DisassociatePrincipalFromPortfolioInput {
-  readonly AcceptLanguage: string;
+export interface DisassociatePrincipalFromPortfolioInput {
+  readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
   readonly PrincipalARN: string;
 }
 
-interface DisassociatePrincipalFromPortfolioOutput {
+export interface DisassociatePrincipalFromPortfolioOutput {
 }
 
-interface DisassociateProductFromPortfolioInput {
-  readonly AcceptLanguage: string;
+export interface DisassociateProductFromPortfolioInput {
+  readonly AcceptLanguage?: string;
   readonly ProductId: string;
   readonly PortfolioId: string;
 }
 
-interface DisassociateProductFromPortfolioOutput {
+export interface DisassociateProductFromPortfolioOutput {
 }
 
-interface DisassociateServiceActionFromProvisioningArtifactInput {
+export interface DisassociateServiceActionFromProvisioningArtifactInput {
   readonly ProductId: string;
   readonly ProvisioningArtifactId: string;
   readonly ServiceActionId: string;
-  readonly AcceptLanguage: string;
+  readonly AcceptLanguage?: string;
 }
 
-interface DisassociateServiceActionFromProvisioningArtifactOutput {
+export interface DisassociateServiceActionFromProvisioningArtifactOutput {
 }
 
-interface DisassociateTagOptionFromResourceInput {
+export interface DisassociateTagOptionFromResourceInput {
   readonly ResourceId: string;
   readonly TagOptionId: string;
 }
 
-interface DisassociateTagOptionFromResourceOutput {
+export interface DisassociateTagOptionFromResourceOutput {
 }
 
-interface DuplicateResourceException {
+export interface DuplicateResourceException {
 }
 
-interface EnableAWSOrganizationsAccessInput {
+export interface EnableAWSOrganizationsAccessInput {
 }
 
-interface EnableAWSOrganizationsAccessOutput {
+export interface EnableAWSOrganizationsAccessOutput {
 }
 
-interface ExecuteProvisionedProductPlanInput {
-  readonly AcceptLanguage: string;
+export interface ExecuteProvisionedProductPlanInput {
+  readonly AcceptLanguage?: string;
   readonly PlanId: string;
   readonly IdempotencyToken: string;
 }
 
-interface ExecuteProvisionedProductPlanOutput {
-  readonly RecordDetail: RecordDetail;
+export interface ExecuteProvisionedProductPlanOutput {
+  readonly RecordDetail?: RecordDetail;
 }
 
-interface ExecuteProvisionedProductServiceActionInput {
+export interface ExecuteProvisionedProductServiceActionInput {
   readonly ProvisionedProductId: string;
   readonly ServiceActionId: string;
   readonly ExecuteToken: string;
-  readonly AcceptLanguage: string;
-  readonly Parameters: {[key: string]: any};
+  readonly AcceptLanguage?: string;
+  readonly Parameters?: {[key: string]: any};
 }
 
-interface ExecuteProvisionedProductServiceActionOutput {
-  readonly RecordDetail: RecordDetail;
+export interface ExecuteProvisionedProductServiceActionOutput {
+  readonly RecordDetail?: RecordDetail;
 }
 
-interface ExecutionParameter {
-  readonly Name: string;
-  readonly Type: string;
-  readonly DefaultValues: [];
+export interface ExecutionParameter {
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly DefaultValues?: [];
 }
 
-interface FailedServiceActionAssociation {
-  readonly ServiceActionId: string;
-  readonly ProductId: string;
-  readonly ProvisioningArtifactId: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface FailedServiceActionAssociation {
+  readonly ServiceActionId?: string;
+  readonly ProductId?: string;
+  readonly ProvisioningArtifactId?: string;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface GetAWSOrganizationsAccessStatusInput {
+export interface GetAWSOrganizationsAccessStatusInput {
 }
 
-interface GetAWSOrganizationsAccessStatusOutput {
-  readonly AccessStatus: string;
+export interface GetAWSOrganizationsAccessStatusOutput {
+  readonly AccessStatus?: string;
 }
 
-interface GetProvisionedProductOutputsInput {
-  readonly AcceptLanguage: string;
-  readonly ProvisionedProductId: string;
-  readonly ProvisionedProductName: string;
-  readonly OutputKeys: [];
-  readonly PageSize: number;
-  readonly PageToken: string;
+export interface GetProvisionedProductOutputsInput {
+  readonly AcceptLanguage?: string;
+  readonly ProvisionedProductId?: string;
+  readonly ProvisionedProductName?: string;
+  readonly OutputKeys?: [];
+  readonly PageSize?: number;
+  readonly PageToken?: string;
 }
 
-interface GetProvisionedProductOutputsOutput {
-  readonly Outputs: [];
-  readonly NextPageToken: string;
+export interface GetProvisionedProductOutputsOutput {
+  readonly Outputs?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ImportAsProvisionedProductInput {
-  readonly AcceptLanguage: string;
+export interface ImportAsProvisionedProductInput {
+  readonly AcceptLanguage?: string;
   readonly ProductId: string;
   readonly ProvisioningArtifactId: string;
   readonly ProvisionedProductName: string;
@@ -1164,838 +1248,839 @@ interface ImportAsProvisionedProductInput {
   readonly IdempotencyToken: string;
 }
 
-interface ImportAsProvisionedProductOutput {
-  readonly RecordDetail: RecordDetail;
+export interface ImportAsProvisionedProductOutput {
+  readonly RecordDetail?: RecordDetail;
 }
 
-interface InvalidParametersException {
+export interface InvalidParametersException {
 }
 
-interface InvalidStateException {
+export interface InvalidStateException {
 }
 
-interface LaunchPath {
-  readonly Id: string;
-  readonly Name: string;
+export interface LaunchPath {
+  readonly Id?: string;
+  readonly Name?: string;
 }
 
-interface LaunchPathSummary {
-  readonly Id: string;
-  readonly ConstraintSummaries: [];
-  readonly Tags: [];
-  readonly Name: string;
+export interface LaunchPathSummary {
+  readonly Id?: string;
+  readonly ConstraintSummaries?: [];
+  readonly Tags?: [];
+  readonly Name?: string;
 }
 
-interface LimitExceededException {
+export interface LimitExceededException {
 }
 
-interface ListAcceptedPortfolioSharesInput {
-  readonly AcceptLanguage: string;
-  readonly PageToken: string;
-  readonly PageSize: number;
-  readonly PortfolioShareType: string;
+export interface ListAcceptedPortfolioSharesInput {
+  readonly AcceptLanguage?: string;
+  readonly PageToken?: string;
+  readonly PageSize?: number;
+  readonly PortfolioShareType?: string;
 }
 
-interface ListAcceptedPortfolioSharesOutput {
-  readonly PortfolioDetails: [];
-  readonly NextPageToken: string;
+export interface ListAcceptedPortfolioSharesOutput {
+  readonly PortfolioDetails?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListBudgetsForResourceInput {
-  readonly AcceptLanguage: string;
+export interface ListBudgetsForResourceInput {
+  readonly AcceptLanguage?: string;
   readonly ResourceId: string;
-  readonly PageSize: number;
-  readonly PageToken: string;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
 }
 
-interface ListBudgetsForResourceOutput {
-  readonly Budgets: [];
-  readonly NextPageToken: string;
+export interface ListBudgetsForResourceOutput {
+  readonly Budgets?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListConstraintsForPortfolioInput {
-  readonly AcceptLanguage: string;
+export interface ListConstraintsForPortfolioInput {
+  readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
+  readonly ProductId?: string;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
+}
+
+export interface ListConstraintsForPortfolioOutput {
+  readonly ConstraintDetails?: [];
+  readonly NextPageToken?: string;
+}
+
+export interface ListLaunchPathsInput {
+  readonly AcceptLanguage?: string;
   readonly ProductId: string;
-  readonly PageSize: number;
-  readonly PageToken: string;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
 }
 
-interface ListConstraintsForPortfolioOutput {
-  readonly ConstraintDetails: [];
-  readonly NextPageToken: string;
+export interface ListLaunchPathsOutput {
+  readonly LaunchPathSummaries?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListLaunchPathsInput {
-  readonly AcceptLanguage: string;
-  readonly ProductId: string;
-  readonly PageSize: number;
-  readonly PageToken: string;
-}
-
-interface ListLaunchPathsOutput {
-  readonly LaunchPathSummaries: [];
-  readonly NextPageToken: string;
-}
-
-interface ListOrganizationPortfolioAccessInput {
-  readonly AcceptLanguage: string;
+export interface ListOrganizationPortfolioAccessInput {
+  readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
   readonly OrganizationNodeType: string;
-  readonly PageToken: string;
-  readonly PageSize: number;
+  readonly PageToken?: string;
+  readonly PageSize?: number;
 }
 
-interface ListOrganizationPortfolioAccessOutput {
-  readonly OrganizationNodes: [];
-  readonly NextPageToken: string;
+export interface ListOrganizationPortfolioAccessOutput {
+  readonly OrganizationNodes?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListPortfolioAccessInput {
-  readonly AcceptLanguage: string;
+export interface ListPortfolioAccessInput {
+  readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
-  readonly OrganizationParentId: string;
-  readonly PageToken: string;
-  readonly PageSize: number;
+  readonly OrganizationParentId?: string;
+  readonly PageToken?: string;
+  readonly PageSize?: number;
 }
 
-interface ListPortfolioAccessOutput {
-  readonly AccountIds: [];
-  readonly NextPageToken: string;
+export interface ListPortfolioAccessOutput {
+  readonly AccountIds?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListPortfoliosForProductInput {
-  readonly AcceptLanguage: string;
+export interface ListPortfoliosForProductInput {
+  readonly AcceptLanguage?: string;
   readonly ProductId: string;
-  readonly PageToken: string;
-  readonly PageSize: number;
+  readonly PageToken?: string;
+  readonly PageSize?: number;
 }
 
-interface ListPortfoliosForProductOutput {
-  readonly PortfolioDetails: [];
-  readonly NextPageToken: string;
+export interface ListPortfoliosForProductOutput {
+  readonly PortfolioDetails?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListPortfoliosInput {
-  readonly AcceptLanguage: string;
-  readonly PageToken: string;
-  readonly PageSize: number;
+export interface ListPortfoliosInput {
+  readonly AcceptLanguage?: string;
+  readonly PageToken?: string;
+  readonly PageSize?: number;
 }
 
-interface ListPortfoliosOutput {
-  readonly PortfolioDetails: [];
-  readonly NextPageToken: string;
+export interface ListPortfoliosOutput {
+  readonly PortfolioDetails?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListPrincipalsForPortfolioInput {
-  readonly AcceptLanguage: string;
+export interface ListPrincipalsForPortfolioInput {
+  readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
-  readonly PageSize: number;
-  readonly PageToken: string;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
 }
 
-interface ListPrincipalsForPortfolioOutput {
-  readonly Principals: [];
-  readonly NextPageToken: string;
+export interface ListPrincipalsForPortfolioOutput {
+  readonly Principals?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListProvisionedProductPlansInput {
-  readonly AcceptLanguage: string;
-  readonly ProvisionProductId: string;
-  readonly PageSize: number;
-  readonly PageToken: string;
-  readonly AccessLevelFilter: AccessLevelFilter;
+export interface ListProvisionedProductPlansInput {
+  readonly AcceptLanguage?: string;
+  readonly ProvisionProductId?: string;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
+  readonly AccessLevelFilter?: AccessLevelFilter;
 }
 
-interface ListProvisionedProductPlansOutput {
-  readonly ProvisionedProductPlans: [];
-  readonly NextPageToken: string;
+export interface ListProvisionedProductPlansOutput {
+  readonly ProvisionedProductPlans?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListProvisioningArtifactsForServiceActionInput {
+export interface ListProvisioningArtifactsForServiceActionInput {
   readonly ServiceActionId: string;
-  readonly PageSize: number;
-  readonly PageToken: string;
-  readonly AcceptLanguage: string;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
+  readonly AcceptLanguage?: string;
 }
 
-interface ListProvisioningArtifactsForServiceActionOutput {
-  readonly ProvisioningArtifactViews: [];
-  readonly NextPageToken: string;
+export interface ListProvisioningArtifactsForServiceActionOutput {
+  readonly ProvisioningArtifactViews?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListProvisioningArtifactsInput {
-  readonly AcceptLanguage: string;
+export interface ListProvisioningArtifactsInput {
+  readonly AcceptLanguage?: string;
   readonly ProductId: string;
 }
 
-interface ListProvisioningArtifactsOutput {
-  readonly ProvisioningArtifactDetails: [];
-  readonly NextPageToken: string;
+export interface ListProvisioningArtifactsOutput {
+  readonly ProvisioningArtifactDetails?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListRecordHistoryInput {
-  readonly AcceptLanguage: string;
-  readonly AccessLevelFilter: AccessLevelFilter;
-  readonly SearchFilter: ListRecordHistorySearchFilter;
-  readonly PageSize: number;
-  readonly PageToken: string;
+export interface ListRecordHistoryInput {
+  readonly AcceptLanguage?: string;
+  readonly AccessLevelFilter?: AccessLevelFilter;
+  readonly SearchFilter?: ListRecordHistorySearchFilter;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
 }
 
-interface ListRecordHistoryOutput {
-  readonly RecordDetails: [];
-  readonly NextPageToken: string;
+export interface ListRecordHistoryOutput {
+  readonly RecordDetails?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListRecordHistorySearchFilter {
-  readonly Key: string;
-  readonly Value: string;
+export interface ListRecordHistorySearchFilter {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface ListResourcesForTagOptionInput {
+export interface ListResourcesForTagOptionInput {
   readonly TagOptionId: string;
-  readonly ResourceType: string;
-  readonly PageSize: number;
-  readonly PageToken: string;
+  readonly ResourceType?: string;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
 }
 
-interface ListResourcesForTagOptionOutput {
-  readonly ResourceDetails: [];
-  readonly PageToken: string;
+export interface ListResourcesForTagOptionOutput {
+  readonly ResourceDetails?: [];
+  readonly PageToken?: string;
 }
 
-interface ListServiceActionsForProvisioningArtifactInput {
+export interface ListServiceActionsForProvisioningArtifactInput {
   readonly ProductId: string;
   readonly ProvisioningArtifactId: string;
-  readonly PageSize: number;
-  readonly PageToken: string;
-  readonly AcceptLanguage: string;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
+  readonly AcceptLanguage?: string;
 }
 
-interface ListServiceActionsForProvisioningArtifactOutput {
-  readonly ServiceActionSummaries: [];
-  readonly NextPageToken: string;
+export interface ListServiceActionsForProvisioningArtifactOutput {
+  readonly ServiceActionSummaries?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListServiceActionsInput {
-  readonly AcceptLanguage: string;
-  readonly PageSize: number;
-  readonly PageToken: string;
+export interface ListServiceActionsInput {
+  readonly AcceptLanguage?: string;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
 }
 
-interface ListServiceActionsOutput {
-  readonly ServiceActionSummaries: [];
-  readonly NextPageToken: string;
+export interface ListServiceActionsOutput {
+  readonly ServiceActionSummaries?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListStackInstancesForProvisionedProductInput {
-  readonly AcceptLanguage: string;
+export interface ListStackInstancesForProvisionedProductInput {
+  readonly AcceptLanguage?: string;
   readonly ProvisionedProductId: string;
-  readonly PageToken: string;
-  readonly PageSize: number;
+  readonly PageToken?: string;
+  readonly PageSize?: number;
 }
 
-interface ListStackInstancesForProvisionedProductOutput {
-  readonly StackInstances: [];
-  readonly NextPageToken: string;
+export interface ListStackInstancesForProvisionedProductOutput {
+  readonly StackInstances?: [];
+  readonly NextPageToken?: string;
 }
 
-interface ListTagOptionsFilters {
-  readonly Key: string;
-  readonly Value: string;
-  readonly Active: boolean;
+export interface ListTagOptionsFilters {
+  readonly Key?: string;
+  readonly Value?: string;
+  readonly Active?: boolean;
 }
 
-interface ListTagOptionsInput {
-  readonly Filters: ListTagOptionsFilters;
-  readonly PageSize: number;
-  readonly PageToken: string;
+export interface ListTagOptionsInput {
+  readonly Filters?: ListTagOptionsFilters;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
 }
 
-interface ListTagOptionsOutput {
-  readonly TagOptionDetails: [];
-  readonly PageToken: string;
+export interface ListTagOptionsOutput {
+  readonly TagOptionDetails?: [];
+  readonly PageToken?: string;
 }
 
-interface OperationNotSupportedException {
+export interface OperationNotSupportedException {
 }
 
-interface OrganizationNode {
-  readonly Type: string;
-  readonly Value: string;
+export interface OrganizationNode {
+  readonly Type?: string;
+  readonly Value?: string;
 }
 
-interface ParameterConstraints {
-  readonly AllowedValues: [];
-  readonly AllowedPattern: string;
-  readonly ConstraintDescription: string;
-  readonly MaxLength: string;
-  readonly MinLength: string;
-  readonly MaxValue: string;
-  readonly MinValue: string;
+export interface ParameterConstraints {
+  readonly AllowedValues?: [];
+  readonly AllowedPattern?: string;
+  readonly ConstraintDescription?: string;
+  readonly MaxLength?: string;
+  readonly MinLength?: string;
+  readonly MaxValue?: string;
+  readonly MinValue?: string;
 }
 
-interface PortfolioDetail {
-  readonly Id: string;
-  readonly ARN: string;
-  readonly DisplayName: string;
-  readonly Description: string;
-  readonly CreatedTime: Date;
-  readonly ProviderName: string;
+export interface PortfolioDetail {
+  readonly Id?: string;
+  readonly ARN?: string;
+  readonly DisplayName?: string;
+  readonly Description?: string;
+  readonly CreatedTime?: Date;
+  readonly ProviderName?: string;
 }
 
-interface PortfolioShareDetail {
-  readonly PrincipalId: string;
-  readonly Type: string;
-  readonly Accepted: boolean;
-  readonly ShareTagOptions: boolean;
+export interface PortfolioShareDetail {
+  readonly PrincipalId?: string;
+  readonly Type?: string;
+  readonly Accepted?: boolean;
+  readonly ShareTagOptions?: boolean;
 }
 
-interface Principal {
-  readonly PrincipalARN: string;
-  readonly PrincipalType: string;
+export interface Principal {
+  readonly PrincipalARN?: string;
+  readonly PrincipalType?: string;
 }
 
-interface ProductViewAggregationValue {
-  readonly Value: string;
-  readonly ApproximateCount: number;
+export interface ProductViewAggregationValue {
+  readonly Value?: string;
+  readonly ApproximateCount?: number;
 }
 
-interface ProductViewDetail {
-  readonly ProductViewSummary: ProductViewSummary;
-  readonly Status: string;
-  readonly ProductARN: string;
-  readonly CreatedTime: Date;
+export interface ProductViewDetail {
+  readonly ProductViewSummary?: ProductViewSummary;
+  readonly Status?: string;
+  readonly ProductARN?: string;
+  readonly CreatedTime?: Date;
 }
 
-interface ProductViewSummary {
-  readonly Id: string;
-  readonly ProductId: string;
-  readonly Name: string;
-  readonly Owner: string;
-  readonly ShortDescription: string;
-  readonly Type: string;
-  readonly Distributor: string;
-  readonly HasDefaultPath: boolean;
-  readonly SupportEmail: string;
-  readonly SupportDescription: string;
-  readonly SupportUrl: string;
+export interface ProductViewSummary {
+  readonly Id?: string;
+  readonly ProductId?: string;
+  readonly Name?: string;
+  readonly Owner?: string;
+  readonly ShortDescription?: string;
+  readonly Type?: string;
+  readonly Distributor?: string;
+  readonly HasDefaultPath?: boolean;
+  readonly SupportEmail?: string;
+  readonly SupportDescription?: string;
+  readonly SupportUrl?: string;
 }
 
-interface ProvisionProductInput {
-  readonly AcceptLanguage: string;
-  readonly ProductId: string;
-  readonly ProductName: string;
-  readonly ProvisioningArtifactId: string;
-  readonly ProvisioningArtifactName: string;
-  readonly PathId: string;
-  readonly PathName: string;
+export interface ProvisionProductInput {
+  readonly AcceptLanguage?: string;
+  readonly ProductId?: string;
+  readonly ProductName?: string;
+  readonly ProvisioningArtifactId?: string;
+  readonly ProvisioningArtifactName?: string;
+  readonly PathId?: string;
+  readonly PathName?: string;
   readonly ProvisionedProductName: string;
-  readonly ProvisioningParameters: [];
-  readonly ProvisioningPreferences: ProvisioningPreferences;
-  readonly Tags: [];
-  readonly NotificationArns: [];
+  readonly ProvisioningParameters?: [];
+  readonly ProvisioningPreferences?: ProvisioningPreferences;
+  readonly Tags?: [];
+  readonly NotificationArns?: [];
   readonly ProvisionToken: string;
 }
 
-interface ProvisionProductOutput {
-  readonly RecordDetail: RecordDetail;
+export interface ProvisionProductOutput {
+  readonly RecordDetail?: RecordDetail;
 }
 
-interface ProvisionedProductAttribute {
-  readonly Name: string;
-  readonly Arn: string;
-  readonly Type: string;
-  readonly Id: string;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly CreatedTime: Date;
-  readonly IdempotencyToken: string;
-  readonly LastRecordId: string;
-  readonly LastProvisioningRecordId: string;
-  readonly LastSuccessfulProvisioningRecordId: string;
-  readonly Tags: [];
-  readonly PhysicalId: string;
-  readonly ProductId: string;
-  readonly ProductName: string;
-  readonly ProvisioningArtifactId: string;
-  readonly ProvisioningArtifactName: string;
-  readonly UserArn: string;
-  readonly UserArnSession: string;
+export interface ProvisionedProductAttribute {
+  readonly Name?: string;
+  readonly Arn?: string;
+  readonly Type?: string;
+  readonly Id?: string;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly CreatedTime?: Date;
+  readonly IdempotencyToken?: string;
+  readonly LastRecordId?: string;
+  readonly LastProvisioningRecordId?: string;
+  readonly LastSuccessfulProvisioningRecordId?: string;
+  readonly Tags?: [];
+  readonly PhysicalId?: string;
+  readonly ProductId?: string;
+  readonly ProductName?: string;
+  readonly ProvisioningArtifactId?: string;
+  readonly ProvisioningArtifactName?: string;
+  readonly UserArn?: string;
+  readonly UserArnSession?: string;
 }
 
-interface ProvisionedProductDetail {
-  readonly Name: string;
-  readonly Arn: string;
-  readonly Type: string;
-  readonly Id: string;
-  readonly Status: string;
-  readonly StatusMessage: string;
-  readonly CreatedTime: Date;
-  readonly IdempotencyToken: string;
-  readonly LastRecordId: string;
-  readonly LastProvisioningRecordId: string;
-  readonly LastSuccessfulProvisioningRecordId: string;
-  readonly ProductId: string;
-  readonly ProvisioningArtifactId: string;
-  readonly LaunchRoleArn: string;
+export interface ProvisionedProductDetail {
+  readonly Name?: string;
+  readonly Arn?: string;
+  readonly Type?: string;
+  readonly Id?: string;
+  readonly Status?: string;
+  readonly StatusMessage?: string;
+  readonly CreatedTime?: Date;
+  readonly IdempotencyToken?: string;
+  readonly LastRecordId?: string;
+  readonly LastProvisioningRecordId?: string;
+  readonly LastSuccessfulProvisioningRecordId?: string;
+  readonly ProductId?: string;
+  readonly ProvisioningArtifactId?: string;
+  readonly LaunchRoleArn?: string;
 }
 
-interface ProvisionedProductPlanDetails {
-  readonly CreatedTime: Date;
-  readonly PathId: string;
-  readonly ProductId: string;
-  readonly PlanName: string;
-  readonly PlanId: string;
-  readonly ProvisionProductId: string;
-  readonly ProvisionProductName: string;
-  readonly PlanType: string;
-  readonly ProvisioningArtifactId: string;
-  readonly Status: string;
-  readonly UpdatedTime: Date;
-  readonly NotificationArns: [];
-  readonly ProvisioningParameters: [];
-  readonly Tags: [];
-  readonly StatusMessage: string;
+export interface ProvisionedProductPlanDetails {
+  readonly CreatedTime?: Date;
+  readonly PathId?: string;
+  readonly ProductId?: string;
+  readonly PlanName?: string;
+  readonly PlanId?: string;
+  readonly ProvisionProductId?: string;
+  readonly ProvisionProductName?: string;
+  readonly PlanType?: string;
+  readonly ProvisioningArtifactId?: string;
+  readonly Status?: string;
+  readonly UpdatedTime?: Date;
+  readonly NotificationArns?: [];
+  readonly ProvisioningParameters?: [];
+  readonly Tags?: [];
+  readonly StatusMessage?: string;
 }
 
-interface ProvisionedProductPlanSummary {
-  readonly PlanName: string;
-  readonly PlanId: string;
-  readonly ProvisionProductId: string;
-  readonly ProvisionProductName: string;
-  readonly PlanType: string;
-  readonly ProvisioningArtifactId: string;
+export interface ProvisionedProductPlanSummary {
+  readonly PlanName?: string;
+  readonly PlanId?: string;
+  readonly ProvisionProductId?: string;
+  readonly ProvisionProductName?: string;
+  readonly PlanType?: string;
+  readonly ProvisioningArtifactId?: string;
 }
 
-interface ProvisioningArtifact {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly CreatedTime: Date;
-  readonly Guidance: string;
+export interface ProvisioningArtifact {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly CreatedTime?: Date;
+  readonly Guidance?: string;
 }
 
-interface ProvisioningArtifactDetail {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Type: string;
-  readonly CreatedTime: Date;
-  readonly Active: boolean;
-  readonly Guidance: string;
+export interface ProvisioningArtifactDetail {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Type?: string;
+  readonly CreatedTime?: Date;
+  readonly Active?: boolean;
+  readonly Guidance?: string;
 }
 
-interface ProvisioningArtifactOutput {
-  readonly Key: string;
-  readonly Description: string;
+export interface ProvisioningArtifactOutput {
+  readonly Key?: string;
+  readonly Description?: string;
 }
 
-interface ProvisioningArtifactParameter {
-  readonly ParameterKey: string;
-  readonly DefaultValue: string;
-  readonly ParameterType: string;
-  readonly IsNoEcho: boolean;
-  readonly Description: string;
-  readonly ParameterConstraints: ParameterConstraints;
+export interface ProvisioningArtifactParameter {
+  readonly ParameterKey?: string;
+  readonly DefaultValue?: string;
+  readonly ParameterType?: string;
+  readonly IsNoEcho?: boolean;
+  readonly Description?: string;
+  readonly ParameterConstraints?: ParameterConstraints;
 }
 
-interface ProvisioningArtifactPreferences {
-  readonly StackSetAccounts: [];
-  readonly StackSetRegions: [];
+export interface ProvisioningArtifactPreferences {
+  readonly StackSetAccounts?: [];
+  readonly StackSetRegions?: [];
 }
 
-interface ProvisioningArtifactProperties {
-  readonly Name: string;
-  readonly Description: string;
+export interface ProvisioningArtifactProperties {
+  readonly Name?: string;
+  readonly Description?: string;
   readonly Info: {[key: string]: any};
-  readonly Type: string;
-  readonly DisableTemplateValidation: boolean;
+  readonly Type?: string;
+  readonly DisableTemplateValidation?: boolean;
 }
 
-interface ProvisioningArtifactSummary {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly CreatedTime: Date;
-  readonly ProvisioningArtifactMetadata: {[key: string]: any};
+export interface ProvisioningArtifactSummary {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly CreatedTime?: Date;
+  readonly ProvisioningArtifactMetadata?: {[key: string]: any};
 }
 
-interface ProvisioningArtifactView {
-  readonly ProductViewSummary: ProductViewSummary;
-  readonly ProvisioningArtifact: ProvisioningArtifact;
+export interface ProvisioningArtifactView {
+  readonly ProductViewSummary?: ProductViewSummary;
+  readonly ProvisioningArtifact?: ProvisioningArtifact;
 }
 
-interface ProvisioningParameter {
-  readonly Key: string;
-  readonly Value: string;
+export interface ProvisioningParameter {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface ProvisioningPreferences {
-  readonly StackSetAccounts: [];
-  readonly StackSetRegions: [];
-  readonly StackSetFailureToleranceCount: number;
-  readonly StackSetFailureTolerancePercentage: number;
-  readonly StackSetMaxConcurrencyCount: number;
-  readonly StackSetMaxConcurrencyPercentage: number;
+export interface ProvisioningPreferences {
+  readonly StackSetAccounts?: [];
+  readonly StackSetRegions?: [];
+  readonly StackSetFailureToleranceCount?: number;
+  readonly StackSetFailureTolerancePercentage?: number;
+  readonly StackSetMaxConcurrencyCount?: number;
+  readonly StackSetMaxConcurrencyPercentage?: number;
 }
 
-interface RecordDetail {
-  readonly RecordId: string;
-  readonly ProvisionedProductName: string;
-  readonly Status: string;
-  readonly CreatedTime: Date;
-  readonly UpdatedTime: Date;
-  readonly ProvisionedProductType: string;
-  readonly RecordType: string;
-  readonly ProvisionedProductId: string;
-  readonly ProductId: string;
-  readonly ProvisioningArtifactId: string;
-  readonly PathId: string;
-  readonly RecordErrors: [];
-  readonly RecordTags: [];
-  readonly LaunchRoleArn: string;
+export interface RecordDetail {
+  readonly RecordId?: string;
+  readonly ProvisionedProductName?: string;
+  readonly Status?: string;
+  readonly CreatedTime?: Date;
+  readonly UpdatedTime?: Date;
+  readonly ProvisionedProductType?: string;
+  readonly RecordType?: string;
+  readonly ProvisionedProductId?: string;
+  readonly ProductId?: string;
+  readonly ProvisioningArtifactId?: string;
+  readonly PathId?: string;
+  readonly RecordErrors?: [];
+  readonly RecordTags?: [];
+  readonly LaunchRoleArn?: string;
 }
 
-interface RecordError {
-  readonly Code: string;
-  readonly Description: string;
+export interface RecordError {
+  readonly Code?: string;
+  readonly Description?: string;
 }
 
-interface RecordOutput {
-  readonly OutputKey: string;
-  readonly OutputValue: string;
-  readonly Description: string;
+export interface RecordOutput {
+  readonly OutputKey?: string;
+  readonly OutputValue?: string;
+  readonly Description?: string;
 }
 
-interface RecordTag {
-  readonly Key: string;
-  readonly Value: string;
+export interface RecordTag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface RejectPortfolioShareInput {
-  readonly AcceptLanguage: string;
+export interface RejectPortfolioShareInput {
+  readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
-  readonly PortfolioShareType: string;
+  readonly PortfolioShareType?: string;
 }
 
-interface RejectPortfolioShareOutput {
+export interface RejectPortfolioShareOutput {
 }
 
-interface ResourceChange {
-  readonly Action: string;
-  readonly LogicalResourceId: string;
-  readonly PhysicalResourceId: string;
-  readonly ResourceType: string;
-  readonly Replacement: string;
-  readonly Scope: [];
-  readonly Details: [];
+export interface ResourceChange {
+  readonly Action?: string;
+  readonly LogicalResourceId?: string;
+  readonly PhysicalResourceId?: string;
+  readonly ResourceType?: string;
+  readonly Replacement?: string;
+  readonly Scope?: [];
+  readonly Details?: [];
 }
 
-interface ResourceChangeDetail {
-  readonly Target: ResourceTargetDefinition;
-  readonly Evaluation: string;
-  readonly CausingEntity: string;
+export interface ResourceChangeDetail {
+  readonly Target?: ResourceTargetDefinition;
+  readonly Evaluation?: string;
+  readonly CausingEntity?: string;
 }
 
-interface ResourceDetail {
-  readonly Id: string;
-  readonly ARN: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly CreatedTime: Date;
+export interface ResourceDetail {
+  readonly Id?: string;
+  readonly ARN?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly CreatedTime?: Date;
 }
 
-interface ResourceInUseException {
+export interface ResourceInUseException {
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
 }
 
-interface ResourceTargetDefinition {
-  readonly Attribute: string;
-  readonly Name: string;
-  readonly RequiresRecreation: string;
+export interface ResourceTargetDefinition {
+  readonly Attribute?: string;
+  readonly Name?: string;
+  readonly RequiresRecreation?: string;
 }
 
-interface ScanProvisionedProductsInput {
-  readonly AcceptLanguage: string;
-  readonly AccessLevelFilter: AccessLevelFilter;
-  readonly PageSize: number;
-  readonly PageToken: string;
+export interface ScanProvisionedProductsInput {
+  readonly AcceptLanguage?: string;
+  readonly AccessLevelFilter?: AccessLevelFilter;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
 }
 
-interface ScanProvisionedProductsOutput {
-  readonly ProvisionedProducts: [];
-  readonly NextPageToken: string;
+export interface ScanProvisionedProductsOutput {
+  readonly ProvisionedProducts?: [];
+  readonly NextPageToken?: string;
 }
 
-interface SearchProductsAsAdminInput {
-  readonly AcceptLanguage: string;
-  readonly PortfolioId: string;
-  readonly Filters: {[key: string]: any};
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly PageToken: string;
-  readonly PageSize: number;
-  readonly ProductSource: string;
+export interface SearchProductsAsAdminInput {
+  readonly AcceptLanguage?: string;
+  readonly PortfolioId?: string;
+  readonly Filters?: {[key: string]: any};
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly PageToken?: string;
+  readonly PageSize?: number;
+  readonly ProductSource?: string;
 }
 
-interface SearchProductsAsAdminOutput {
-  readonly ProductViewDetails: [];
-  readonly NextPageToken: string;
+export interface SearchProductsAsAdminOutput {
+  readonly ProductViewDetails?: [];
+  readonly NextPageToken?: string;
 }
 
-interface SearchProductsInput {
-  readonly AcceptLanguage: string;
-  readonly Filters: {[key: string]: any};
-  readonly PageSize: number;
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly PageToken: string;
+export interface SearchProductsInput {
+  readonly AcceptLanguage?: string;
+  readonly Filters?: {[key: string]: any};
+  readonly PageSize?: number;
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly PageToken?: string;
 }
 
-interface SearchProductsOutput {
-  readonly ProductViewSummaries: [];
-  readonly ProductViewAggregations: {[key: string]: any};
-  readonly NextPageToken: string;
+export interface SearchProductsOutput {
+  readonly ProductViewSummaries?: [];
+  readonly ProductViewAggregations?: {[key: string]: any};
+  readonly NextPageToken?: string;
 }
 
-interface SearchProvisionedProductsInput {
-  readonly AcceptLanguage: string;
-  readonly AccessLevelFilter: AccessLevelFilter;
-  readonly Filters: {[key: string]: any};
-  readonly SortBy: string;
-  readonly SortOrder: string;
-  readonly PageSize: number;
-  readonly PageToken: string;
+export interface SearchProvisionedProductsInput {
+  readonly AcceptLanguage?: string;
+  readonly AccessLevelFilter?: AccessLevelFilter;
+  readonly Filters?: {[key: string]: any};
+  readonly SortBy?: string;
+  readonly SortOrder?: string;
+  readonly PageSize?: number;
+  readonly PageToken?: string;
 }
 
-interface SearchProvisionedProductsOutput {
-  readonly ProvisionedProducts: [];
-  readonly TotalResultsCount: number;
-  readonly NextPageToken: string;
+export interface SearchProvisionedProductsOutput {
+  readonly ProvisionedProducts?: [];
+  readonly TotalResultsCount?: number;
+  readonly NextPageToken?: string;
 }
 
-interface ServiceActionAssociation {
+export interface ServiceActionAssociation {
   readonly ServiceActionId: string;
   readonly ProductId: string;
   readonly ProvisioningArtifactId: string;
 }
 
-interface ServiceActionDetail {
-  readonly ServiceActionSummary: ServiceActionSummary;
-  readonly Definition: {[key: string]: any};
+export interface ServiceActionDetail {
+  readonly ServiceActionSummary?: ServiceActionSummary;
+  readonly Definition?: {[key: string]: any};
 }
 
-interface ServiceActionSummary {
-  readonly Id: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly DefinitionType: string;
+export interface ServiceActionSummary {
+  readonly Id?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly DefinitionType?: string;
 }
 
-interface ShareDetails {
-  readonly SuccessfulShares: [];
-  readonly ShareErrors: [];
+export interface ShareDetails {
+  readonly SuccessfulShares?: [];
+  readonly ShareErrors?: [];
 }
 
-interface ShareError {
-  readonly Accounts: [];
-  readonly Message: string;
-  readonly Error: string;
+export interface ShareError {
+  readonly Accounts?: [];
+  readonly Message?: string;
+  readonly Error?: string;
 }
 
-interface StackInstance {
-  readonly Account: string;
-  readonly Region: string;
-  readonly StackInstanceStatus: string;
+export interface StackInstance {
+  readonly Account?: string;
+  readonly Region?: string;
+  readonly StackInstanceStatus?: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagOptionDetail {
-  readonly Key: string;
-  readonly Value: string;
-  readonly Active: boolean;
-  readonly Id: string;
-  readonly Owner: string;
+export interface TagOptionDetail {
+  readonly Key?: string;
+  readonly Value?: string;
+  readonly Active?: boolean;
+  readonly Id?: string;
+  readonly Owner?: string;
 }
 
-interface TagOptionNotMigratedException {
+export interface TagOptionNotMigratedException {
 }
 
-interface TagOptionSummary {
-  readonly Key: string;
-  readonly Values: [];
+export interface TagOptionSummary {
+  readonly Key?: string;
+  readonly Values?: [];
 }
 
-interface TerminateProvisionedProductInput {
-  readonly ProvisionedProductName: string;
-  readonly ProvisionedProductId: string;
+export interface TerminateProvisionedProductInput {
+  readonly ProvisionedProductName?: string;
+  readonly ProvisionedProductId?: string;
   readonly TerminateToken: string;
-  readonly IgnoreErrors: boolean;
-  readonly AcceptLanguage: string;
-  readonly RetainPhysicalResources: boolean;
+  readonly IgnoreErrors?: boolean;
+  readonly AcceptLanguage?: string;
+  readonly RetainPhysicalResources?: boolean;
 }
 
-interface TerminateProvisionedProductOutput {
-  readonly RecordDetail: RecordDetail;
+export interface TerminateProvisionedProductOutput {
+  readonly RecordDetail?: RecordDetail;
 }
 
-interface UpdateConstraintInput {
-  readonly AcceptLanguage: string;
+export interface UpdateConstraintInput {
+  readonly AcceptLanguage?: string;
   readonly Id: string;
-  readonly Description: string;
-  readonly Parameters: string;
+  readonly Description?: string;
+  readonly Parameters?: string;
 }
 
-interface UpdateConstraintOutput {
-  readonly ConstraintDetail: ConstraintDetail;
-  readonly ConstraintParameters: string;
-  readonly Status: string;
+export interface UpdateConstraintOutput {
+  readonly ConstraintDetail?: ConstraintDetail;
+  readonly ConstraintParameters?: string;
+  readonly Status?: string;
 }
 
-interface UpdatePortfolioInput {
-  readonly AcceptLanguage: string;
+export interface UpdatePortfolioInput {
+  readonly AcceptLanguage?: string;
   readonly Id: string;
-  readonly DisplayName: string;
-  readonly Description: string;
-  readonly ProviderName: string;
-  readonly AddTags: [];
-  readonly RemoveTags: [];
+  readonly DisplayName?: string;
+  readonly Description?: string;
+  readonly ProviderName?: string;
+  readonly AddTags?: [];
+  readonly RemoveTags?: [];
 }
 
-interface UpdatePortfolioOutput {
-  readonly PortfolioDetail: PortfolioDetail;
-  readonly Tags: [];
+export interface UpdatePortfolioOutput {
+  readonly PortfolioDetail?: PortfolioDetail;
+  readonly Tags?: [];
 }
 
-interface UpdatePortfolioShareInput {
-  readonly AcceptLanguage: string;
+export interface UpdatePortfolioShareInput {
+  readonly AcceptLanguage?: string;
   readonly PortfolioId: string;
-  readonly AccountId: string;
-  readonly OrganizationNode: OrganizationNode;
-  readonly ShareTagOptions: boolean;
+  readonly AccountId?: string;
+  readonly OrganizationNode?: OrganizationNode;
+  readonly ShareTagOptions?: boolean;
 }
 
-interface UpdatePortfolioShareOutput {
-  readonly PortfolioShareToken: string;
-  readonly Status: string;
+export interface UpdatePortfolioShareOutput {
+  readonly PortfolioShareToken?: string;
+  readonly Status?: string;
 }
 
-interface UpdateProductInput {
-  readonly AcceptLanguage: string;
+export interface UpdateProductInput {
+  readonly AcceptLanguage?: string;
   readonly Id: string;
-  readonly Name: string;
-  readonly Owner: string;
-  readonly Description: string;
-  readonly Distributor: string;
-  readonly SupportDescription: string;
-  readonly SupportEmail: string;
-  readonly SupportUrl: string;
-  readonly AddTags: [];
-  readonly RemoveTags: [];
+  readonly Name?: string;
+  readonly Owner?: string;
+  readonly Description?: string;
+  readonly Distributor?: string;
+  readonly SupportDescription?: string;
+  readonly SupportEmail?: string;
+  readonly SupportUrl?: string;
+  readonly AddTags?: [];
+  readonly RemoveTags?: [];
 }
 
-interface UpdateProductOutput {
-  readonly ProductViewDetail: ProductViewDetail;
-  readonly Tags: [];
+export interface UpdateProductOutput {
+  readonly ProductViewDetail?: ProductViewDetail;
+  readonly Tags?: [];
 }
 
-interface UpdateProvisionedProductInput {
-  readonly AcceptLanguage: string;
-  readonly ProvisionedProductName: string;
-  readonly ProvisionedProductId: string;
-  readonly ProductId: string;
-  readonly ProductName: string;
-  readonly ProvisioningArtifactId: string;
-  readonly ProvisioningArtifactName: string;
-  readonly PathId: string;
-  readonly PathName: string;
-  readonly ProvisioningParameters: [];
-  readonly ProvisioningPreferences: UpdateProvisioningPreferences;
-  readonly Tags: [];
+export interface UpdateProvisionedProductInput {
+  readonly AcceptLanguage?: string;
+  readonly ProvisionedProductName?: string;
+  readonly ProvisionedProductId?: string;
+  readonly ProductId?: string;
+  readonly ProductName?: string;
+  readonly ProvisioningArtifactId?: string;
+  readonly ProvisioningArtifactName?: string;
+  readonly PathId?: string;
+  readonly PathName?: string;
+  readonly ProvisioningParameters?: [];
+  readonly ProvisioningPreferences?: UpdateProvisioningPreferences;
+  readonly Tags?: [];
   readonly UpdateToken: string;
 }
 
-interface UpdateProvisionedProductOutput {
-  readonly RecordDetail: RecordDetail;
+export interface UpdateProvisionedProductOutput {
+  readonly RecordDetail?: RecordDetail;
 }
 
-interface UpdateProvisionedProductPropertiesInput {
-  readonly AcceptLanguage: string;
+export interface UpdateProvisionedProductPropertiesInput {
+  readonly AcceptLanguage?: string;
   readonly ProvisionedProductId: string;
   readonly ProvisionedProductProperties: {[key: string]: any};
   readonly IdempotencyToken: string;
 }
 
-interface UpdateProvisionedProductPropertiesOutput {
-  readonly ProvisionedProductId: string;
-  readonly ProvisionedProductProperties: {[key: string]: any};
-  readonly RecordId: string;
-  readonly Status: string;
+export interface UpdateProvisionedProductPropertiesOutput {
+  readonly ProvisionedProductId?: string;
+  readonly ProvisionedProductProperties?: {[key: string]: any};
+  readonly RecordId?: string;
+  readonly Status?: string;
 }
 
-interface UpdateProvisioningArtifactInput {
-  readonly AcceptLanguage: string;
+export interface UpdateProvisioningArtifactInput {
+  readonly AcceptLanguage?: string;
   readonly ProductId: string;
   readonly ProvisioningArtifactId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Active: boolean;
-  readonly Guidance: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Active?: boolean;
+  readonly Guidance?: string;
 }
 
-interface UpdateProvisioningArtifactOutput {
-  readonly ProvisioningArtifactDetail: ProvisioningArtifactDetail;
-  readonly Info: {[key: string]: any};
-  readonly Status: string;
+export interface UpdateProvisioningArtifactOutput {
+  readonly ProvisioningArtifactDetail?: ProvisioningArtifactDetail;
+  readonly Info?: {[key: string]: any};
+  readonly Status?: string;
 }
 
-interface UpdateProvisioningParameter {
-  readonly Key: string;
-  readonly Value: string;
-  readonly UsePreviousValue: boolean;
+export interface UpdateProvisioningParameter {
+  readonly Key?: string;
+  readonly Value?: string;
+  readonly UsePreviousValue?: boolean;
 }
 
-interface UpdateProvisioningPreferences {
-  readonly StackSetAccounts: [];
-  readonly StackSetRegions: [];
-  readonly StackSetFailureToleranceCount: number;
-  readonly StackSetFailureTolerancePercentage: number;
-  readonly StackSetMaxConcurrencyCount: number;
-  readonly StackSetMaxConcurrencyPercentage: number;
-  readonly StackSetOperationType: string;
+export interface UpdateProvisioningPreferences {
+  readonly StackSetAccounts?: [];
+  readonly StackSetRegions?: [];
+  readonly StackSetFailureToleranceCount?: number;
+  readonly StackSetFailureTolerancePercentage?: number;
+  readonly StackSetMaxConcurrencyCount?: number;
+  readonly StackSetMaxConcurrencyPercentage?: number;
+  readonly StackSetOperationType?: string;
 }
 
-interface UpdateServiceActionInput {
+export interface UpdateServiceActionInput {
   readonly Id: string;
-  readonly Name: string;
-  readonly Definition: {[key: string]: any};
-  readonly Description: string;
-  readonly AcceptLanguage: string;
+  readonly Name?: string;
+  readonly Definition?: {[key: string]: any};
+  readonly Description?: string;
+  readonly AcceptLanguage?: string;
 }
 
-interface UpdateServiceActionOutput {
-  readonly ServiceActionDetail: ServiceActionDetail;
+export interface UpdateServiceActionOutput {
+  readonly ServiceActionDetail?: ServiceActionDetail;
 }
 
-interface UpdateTagOptionInput {
+export interface UpdateTagOptionInput {
   readonly Id: string;
-  readonly Value: string;
-  readonly Active: boolean;
+  readonly Value?: string;
+  readonly Active?: boolean;
 }
 
-interface UpdateTagOptionOutput {
-  readonly TagOptionDetail: TagOptionDetail;
+export interface UpdateTagOptionOutput {
+  readonly TagOptionDetail?: TagOptionDetail;
 }
 
-interface UsageInstruction {
-  readonly Type: string;
-  readonly Value: string;
+export interface UsageInstruction {
+  readonly Type?: string;
+  readonly Value?: string;
 }
+
 

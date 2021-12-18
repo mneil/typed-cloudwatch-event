@@ -6,10 +6,12 @@ export interface AssociateEntityToThing {
   readonly entityId: string;
   readonly namespaceVersion?: number;
 }
+
 export interface CreateFlowTemplate {
   readonly definition: DefinitionDocument;
   readonly compatibleNamespaceVersion?: number;
 }
+
 export interface CreateSystemInstance {
   readonly tags?: [];
   readonly definition: DefinitionDocument;
@@ -19,77 +21,98 @@ export interface CreateSystemInstance {
   readonly metricsConfiguration?: MetricsConfiguration;
   readonly flowActionsRoleArn?: string;
 }
+
 export interface CreateSystemTemplate {
   readonly definition: DefinitionDocument;
   readonly compatibleNamespaceVersion?: number;
 }
+
 export interface DeleteFlowTemplate {
   readonly id: string;
 }
+
 export interface DeleteNamespace {
 }
+
 export interface DeleteSystemInstance {
   readonly id?: string;
 }
+
 export interface DeleteSystemTemplate {
   readonly id: string;
 }
+
 export interface DeploySystemInstance {
   readonly id?: string;
 }
+
 export interface DeprecateFlowTemplate {
   readonly id: string;
 }
+
 export interface DeprecateSystemTemplate {
   readonly id: string;
 }
+
 export interface DescribeNamespace {
   readonly namespaceName?: string;
 }
+
 export interface DissociateEntityFromThing {
   readonly thingName: string;
   readonly entityType: string;
 }
+
 export interface GetEntities {
   readonly ids: [];
   readonly namespaceVersion?: number;
 }
+
 export interface GetFlowTemplate {
   readonly id: string;
   readonly revisionNumber?: number;
 }
+
 export interface GetFlowTemplateRevisions {
   readonly id: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetNamespaceDeletionStatus {
 }
+
 export interface GetSystemInstance {
   readonly id: string;
 }
+
 export interface GetSystemTemplate {
   readonly id: string;
   readonly revisionNumber?: number;
 }
+
 export interface GetSystemTemplateRevisions {
   readonly id: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetUploadStatus {
   readonly uploadId: string;
 }
+
 export interface ListFlowExecutionMessages {
   readonly flowExecutionId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly maxResults?: number;
   readonly resourceArn: string;
   readonly nextToken?: string;
 }
+
 export interface SearchEntities {
   readonly entityTypes: [];
   readonly filters?: [];
@@ -97,6 +120,7 @@ export interface SearchEntities {
   readonly maxResults?: number;
   readonly namespaceVersion?: number;
 }
+
 export interface SearchFlowExecutions {
   readonly systemInstanceId: string;
   readonly flowExecutionId?: string;
@@ -105,541 +129,550 @@ export interface SearchFlowExecutions {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface SearchFlowTemplates {
   readonly filters?: [];
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface SearchSystemInstances {
   readonly filters?: [];
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface SearchSystemTemplates {
   readonly filters?: [];
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface SearchThings {
   readonly entityId: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly namespaceVersion?: number;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: [];
 }
+
 export interface UndeploySystemInstance {
   readonly id?: string;
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateFlowTemplate {
   readonly id: string;
   readonly definition: DefinitionDocument;
   readonly compatibleNamespaceVersion?: number;
 }
+
 export interface UpdateSystemTemplate {
   readonly id: string;
   readonly definition: DefinitionDocument;
   readonly compatibleNamespaceVersion?: number;
 }
+
 export interface UploadEntityDefinitions {
   readonly document?: DefinitionDocument;
   readonly syncWithPublicNamespace?: boolean;
   readonly deprecateExistingEntities?: boolean;
 }
 
-
-
-interface AssociateEntityToThingRequest {
+export interface AssociateEntityToThingRequest {
   readonly thingName: string;
   readonly entityId: string;
-  readonly namespaceVersion: number;
+  readonly namespaceVersion?: number;
 }
 
-interface AssociateEntityToThingResponse {
+export interface AssociateEntityToThingResponse {
 }
 
-interface CreateFlowTemplateRequest {
+export interface CreateFlowTemplateRequest {
   readonly definition: DefinitionDocument;
-  readonly compatibleNamespaceVersion: number;
+  readonly compatibleNamespaceVersion?: number;
 }
 
-interface CreateFlowTemplateResponse {
-  readonly summary: FlowTemplateSummary;
+export interface CreateFlowTemplateResponse {
+  readonly summary?: FlowTemplateSummary;
 }
 
-interface CreateSystemInstanceRequest {
-  readonly tags: [];
+export interface CreateSystemInstanceRequest {
+  readonly tags?: [];
   readonly definition: DefinitionDocument;
   readonly target: string;
-  readonly greengrassGroupName: string;
-  readonly s3BucketName: string;
-  readonly metricsConfiguration: MetricsConfiguration;
-  readonly flowActionsRoleArn: string;
+  readonly greengrassGroupName?: string;
+  readonly s3BucketName?: string;
+  readonly metricsConfiguration?: MetricsConfiguration;
+  readonly flowActionsRoleArn?: string;
 }
 
-interface CreateSystemInstanceResponse {
-  readonly summary: SystemInstanceSummary;
+export interface CreateSystemInstanceResponse {
+  readonly summary?: SystemInstanceSummary;
 }
 
-interface CreateSystemTemplateRequest {
+export interface CreateSystemTemplateRequest {
   readonly definition: DefinitionDocument;
-  readonly compatibleNamespaceVersion: number;
+  readonly compatibleNamespaceVersion?: number;
 }
 
-interface CreateSystemTemplateResponse {
-  readonly summary: SystemTemplateSummary;
+export interface CreateSystemTemplateResponse {
+  readonly summary?: SystemTemplateSummary;
 }
 
-interface DefinitionDocument {
+export interface DefinitionDocument {
   readonly language: string;
   readonly text: string;
 }
 
-interface DeleteFlowTemplateRequest {
+export interface DeleteFlowTemplateRequest {
   readonly id: string;
 }
 
-interface DeleteFlowTemplateResponse {
+export interface DeleteFlowTemplateResponse {
 }
 
-interface DeleteNamespaceRequest {
+export interface DeleteNamespaceRequest {
 }
 
-interface DeleteNamespaceResponse {
-  readonly namespaceArn: string;
-  readonly namespaceName: string;
+export interface DeleteNamespaceResponse {
+  readonly namespaceArn?: string;
+  readonly namespaceName?: string;
 }
 
-interface DeleteSystemInstanceRequest {
+export interface DeleteSystemInstanceRequest {
+  readonly id?: string;
+}
+
+export interface DeleteSystemInstanceResponse {
+}
+
+export interface DeleteSystemTemplateRequest {
   readonly id: string;
 }
 
-interface DeleteSystemInstanceResponse {
+export interface DeleteSystemTemplateResponse {
 }
 
-interface DeleteSystemTemplateRequest {
-  readonly id: string;
+export interface DependencyRevision {
+  readonly id?: string;
+  readonly revisionNumber?: number;
 }
 
-interface DeleteSystemTemplateResponse {
+export interface DeploySystemInstanceRequest {
+  readonly id?: string;
 }
 
-interface DependencyRevision {
-  readonly id: string;
-  readonly revisionNumber: number;
-}
-
-interface DeploySystemInstanceRequest {
-  readonly id: string;
-}
-
-interface DeploySystemInstanceResponse {
+export interface DeploySystemInstanceResponse {
   readonly summary: SystemInstanceSummary;
-  readonly greengrassDeploymentId: string;
+  readonly greengrassDeploymentId?: string;
 }
 
-interface DeprecateFlowTemplateRequest {
+export interface DeprecateFlowTemplateRequest {
   readonly id: string;
 }
 
-interface DeprecateFlowTemplateResponse {
+export interface DeprecateFlowTemplateResponse {
 }
 
-interface DeprecateSystemTemplateRequest {
+export interface DeprecateSystemTemplateRequest {
   readonly id: string;
 }
 
-interface DeprecateSystemTemplateResponse {
+export interface DeprecateSystemTemplateResponse {
 }
 
-interface DescribeNamespaceRequest {
-  readonly namespaceName: string;
+export interface DescribeNamespaceRequest {
+  readonly namespaceName?: string;
 }
 
-interface DescribeNamespaceResponse {
-  readonly namespaceArn: string;
-  readonly namespaceName: string;
-  readonly trackingNamespaceName: string;
-  readonly trackingNamespaceVersion: number;
-  readonly namespaceVersion: number;
+export interface DescribeNamespaceResponse {
+  readonly namespaceArn?: string;
+  readonly namespaceName?: string;
+  readonly trackingNamespaceName?: string;
+  readonly trackingNamespaceVersion?: number;
+  readonly namespaceVersion?: number;
 }
 
-interface DissociateEntityFromThingRequest {
+export interface DissociateEntityFromThingRequest {
   readonly thingName: string;
   readonly entityType: string;
 }
 
-interface DissociateEntityFromThingResponse {
+export interface DissociateEntityFromThingResponse {
 }
 
-interface EntityDescription {
-  readonly id: string;
-  readonly arn: string;
-  readonly type: string;
-  readonly createdAt: Date;
-  readonly definition: DefinitionDocument;
+export interface EntityDescription {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly type?: string;
+  readonly createdAt?: Date;
+  readonly definition?: DefinitionDocument;
 }
 
-interface EntityFilter {
+export interface EntityFilter {
+  readonly name?: string;
+  readonly value?: [];
+}
+
+export interface FlowExecutionMessage {
+  readonly messageId?: string;
+  readonly eventType?: string;
+  readonly timestamp?: Date;
+  readonly payload?: string;
+}
+
+export interface FlowExecutionSummary {
+  readonly flowExecutionId?: string;
+  readonly status?: string;
+  readonly systemInstanceId?: string;
+  readonly flowTemplateId?: string;
+  readonly createdAt?: Date;
+  readonly updatedAt?: Date;
+}
+
+export interface FlowTemplateDescription {
+  readonly summary?: FlowTemplateSummary;
+  readonly definition?: DefinitionDocument;
+  readonly validatedNamespaceVersion?: number;
+}
+
+export interface FlowTemplateFilter {
   readonly name: string;
   readonly value: [];
 }
 
-interface FlowExecutionMessage {
-  readonly messageId: string;
-  readonly eventType: string;
-  readonly timestamp: Date;
-  readonly payload: string;
+export interface FlowTemplateSummary {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly revisionNumber?: number;
+  readonly createdAt?: Date;
 }
 
-interface FlowExecutionSummary {
-  readonly flowExecutionId: string;
-  readonly status: string;
-  readonly systemInstanceId: string;
-  readonly flowTemplateId: string;
-  readonly createdAt: Date;
-  readonly updatedAt: Date;
-}
-
-interface FlowTemplateDescription {
-  readonly summary: FlowTemplateSummary;
-  readonly definition: DefinitionDocument;
-  readonly validatedNamespaceVersion: number;
-}
-
-interface FlowTemplateFilter {
-  readonly name: string;
-  readonly value: [];
-}
-
-interface FlowTemplateSummary {
-  readonly id: string;
-  readonly arn: string;
-  readonly revisionNumber: number;
-  readonly createdAt: Date;
-}
-
-interface GetEntitiesRequest {
+export interface GetEntitiesRequest {
   readonly ids: [];
-  readonly namespaceVersion: number;
+  readonly namespaceVersion?: number;
 }
 
-interface GetEntitiesResponse {
-  readonly descriptions: [];
+export interface GetEntitiesResponse {
+  readonly descriptions?: [];
 }
 
-interface GetFlowTemplateRequest {
+export interface GetFlowTemplateRequest {
   readonly id: string;
-  readonly revisionNumber: number;
+  readonly revisionNumber?: number;
 }
 
-interface GetFlowTemplateResponse {
-  readonly description: FlowTemplateDescription;
+export interface GetFlowTemplateResponse {
+  readonly description?: FlowTemplateDescription;
 }
 
-interface GetFlowTemplateRevisionsRequest {
+export interface GetFlowTemplateRevisionsRequest {
   readonly id: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetFlowTemplateRevisionsResponse {
-  readonly summaries: [];
-  readonly nextToken: string;
+export interface GetFlowTemplateRevisionsResponse {
+  readonly summaries?: [];
+  readonly nextToken?: string;
 }
 
-interface GetNamespaceDeletionStatusRequest {
+export interface GetNamespaceDeletionStatusRequest {
 }
 
-interface GetNamespaceDeletionStatusResponse {
-  readonly namespaceArn: string;
-  readonly namespaceName: string;
-  readonly status: string;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface GetNamespaceDeletionStatusResponse {
+  readonly namespaceArn?: string;
+  readonly namespaceName?: string;
+  readonly status?: string;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface GetSystemInstanceRequest {
+export interface GetSystemInstanceRequest {
   readonly id: string;
 }
 
-interface GetSystemInstanceResponse {
-  readonly description: SystemInstanceDescription;
+export interface GetSystemInstanceResponse {
+  readonly description?: SystemInstanceDescription;
 }
 
-interface GetSystemTemplateRequest {
+export interface GetSystemTemplateRequest {
   readonly id: string;
-  readonly revisionNumber: number;
+  readonly revisionNumber?: number;
 }
 
-interface GetSystemTemplateResponse {
-  readonly description: SystemTemplateDescription;
+export interface GetSystemTemplateResponse {
+  readonly description?: SystemTemplateDescription;
 }
 
-interface GetSystemTemplateRevisionsRequest {
+export interface GetSystemTemplateRevisionsRequest {
   readonly id: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface GetSystemTemplateRevisionsResponse {
-  readonly summaries: [];
-  readonly nextToken: string;
+export interface GetSystemTemplateRevisionsResponse {
+  readonly summaries?: [];
+  readonly nextToken?: string;
 }
 
-interface GetUploadStatusRequest {
+export interface GetUploadStatusRequest {
   readonly uploadId: string;
 }
 
-interface GetUploadStatusResponse {
+export interface GetUploadStatusResponse {
   readonly uploadId: string;
   readonly uploadStatus: string;
-  readonly namespaceArn: string;
-  readonly namespaceName: string;
-  readonly namespaceVersion: number;
-  readonly failureReason: [];
+  readonly namespaceArn?: string;
+  readonly namespaceName?: string;
+  readonly namespaceVersion?: number;
+  readonly failureReason?: [];
   readonly createdDate: Date;
 }
 
-interface InternalFailureException {
-  readonly message: string;
+export interface InternalFailureException {
+  readonly message?: string;
 }
 
-interface InvalidRequestException {
-  readonly message: string;
+export interface InvalidRequestException {
+  readonly message?: string;
 }
 
-interface LimitExceededException {
-  readonly message: string;
+export interface LimitExceededException {
+  readonly message?: string;
 }
 
-interface ListFlowExecutionMessagesRequest {
+export interface ListFlowExecutionMessagesRequest {
   readonly flowExecutionId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListFlowExecutionMessagesResponse {
-  readonly messages: [];
-  readonly nextToken: string;
+export interface ListFlowExecutionMessagesResponse {
+  readonly messages?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
-  readonly maxResults: number;
+export interface ListTagsForResourceRequest {
+  readonly maxResults?: number;
   readonly resourceArn: string;
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: [];
-  readonly nextToken: string;
+export interface ListTagsForResourceResponse {
+  readonly tags?: [];
+  readonly nextToken?: string;
 }
 
-interface MetricsConfiguration {
-  readonly cloudMetricEnabled: boolean;
-  readonly metricRuleRoleArn: string;
+export interface MetricsConfiguration {
+  readonly cloudMetricEnabled?: boolean;
+  readonly metricRuleRoleArn?: string;
 }
 
-interface ResourceAlreadyExistsException {
-  readonly message: string;
+export interface ResourceAlreadyExistsException {
+  readonly message?: string;
 }
 
-interface ResourceInUseException {
-  readonly message: string;
+export interface ResourceInUseException {
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface SearchEntitiesRequest {
+export interface SearchEntitiesRequest {
   readonly entityTypes: [];
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly namespaceVersion: number;
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly namespaceVersion?: number;
 }
 
-interface SearchEntitiesResponse {
-  readonly descriptions: [];
-  readonly nextToken: string;
+export interface SearchEntitiesResponse {
+  readonly descriptions?: [];
+  readonly nextToken?: string;
 }
 
-interface SearchFlowExecutionsRequest {
+export interface SearchFlowExecutionsRequest {
   readonly systemInstanceId: string;
-  readonly flowExecutionId: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly flowExecutionId?: string;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface SearchFlowExecutionsResponse {
-  readonly summaries: [];
-  readonly nextToken: string;
+export interface SearchFlowExecutionsResponse {
+  readonly summaries?: [];
+  readonly nextToken?: string;
 }
 
-interface SearchFlowTemplatesRequest {
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface SearchFlowTemplatesRequest {
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface SearchFlowTemplatesResponse {
-  readonly summaries: [];
-  readonly nextToken: string;
+export interface SearchFlowTemplatesResponse {
+  readonly summaries?: [];
+  readonly nextToken?: string;
 }
 
-interface SearchSystemInstancesRequest {
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface SearchSystemInstancesRequest {
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface SearchSystemInstancesResponse {
-  readonly summaries: [];
-  readonly nextToken: string;
+export interface SearchSystemInstancesResponse {
+  readonly summaries?: [];
+  readonly nextToken?: string;
 }
 
-interface SearchSystemTemplatesRequest {
-  readonly filters: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface SearchSystemTemplatesRequest {
+  readonly filters?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface SearchSystemTemplatesResponse {
-  readonly summaries: [];
-  readonly nextToken: string;
+export interface SearchSystemTemplatesResponse {
+  readonly summaries?: [];
+  readonly nextToken?: string;
 }
 
-interface SearchThingsRequest {
+export interface SearchThingsRequest {
   readonly entityId: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly namespaceVersion: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly namespaceVersion?: number;
 }
 
-interface SearchThingsResponse {
-  readonly things: [];
-  readonly nextToken: string;
+export interface SearchThingsResponse {
+  readonly things?: [];
+  readonly nextToken?: string;
 }
 
-interface SystemInstanceDescription {
-  readonly summary: SystemInstanceSummary;
-  readonly definition: DefinitionDocument;
-  readonly s3BucketName: string;
-  readonly metricsConfiguration: MetricsConfiguration;
-  readonly validatedNamespaceVersion: number;
-  readonly validatedDependencyRevisions: [];
-  readonly flowActionsRoleArn: string;
+export interface SystemInstanceDescription {
+  readonly summary?: SystemInstanceSummary;
+  readonly definition?: DefinitionDocument;
+  readonly s3BucketName?: string;
+  readonly metricsConfiguration?: MetricsConfiguration;
+  readonly validatedNamespaceVersion?: number;
+  readonly validatedDependencyRevisions?: [];
+  readonly flowActionsRoleArn?: string;
 }
 
-interface SystemInstanceFilter {
+export interface SystemInstanceFilter {
+  readonly name?: string;
+  readonly value?: [];
+}
+
+export interface SystemInstanceSummary {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly status?: string;
+  readonly target?: string;
+  readonly greengrassGroupName?: string;
+  readonly createdAt?: Date;
+  readonly updatedAt?: Date;
+  readonly greengrassGroupId?: string;
+  readonly greengrassGroupVersionId?: string;
+}
+
+export interface SystemTemplateDescription {
+  readonly summary?: SystemTemplateSummary;
+  readonly definition?: DefinitionDocument;
+  readonly validatedNamespaceVersion?: number;
+}
+
+export interface SystemTemplateFilter {
   readonly name: string;
   readonly value: [];
 }
 
-interface SystemInstanceSummary {
-  readonly id: string;
-  readonly arn: string;
-  readonly status: string;
-  readonly target: string;
-  readonly greengrassGroupName: string;
-  readonly createdAt: Date;
-  readonly updatedAt: Date;
-  readonly greengrassGroupId: string;
-  readonly greengrassGroupVersionId: string;
+export interface SystemTemplateSummary {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly revisionNumber?: number;
+  readonly createdAt?: Date;
 }
 
-interface SystemTemplateDescription {
-  readonly summary: SystemTemplateSummary;
-  readonly definition: DefinitionDocument;
-  readonly validatedNamespaceVersion: number;
-}
-
-interface SystemTemplateFilter {
-  readonly name: string;
-  readonly value: [];
-}
-
-interface SystemTemplateSummary {
-  readonly id: string;
-  readonly arn: string;
-  readonly revisionNumber: number;
-  readonly createdAt: Date;
-}
-
-interface Tag {
+export interface Tag {
   readonly key: string;
   readonly value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface Thing {
-  readonly thingArn: string;
-  readonly thingName: string;
+export interface Thing {
+  readonly thingArn?: string;
+  readonly thingName?: string;
 }
 
-interface ThrottlingException {
-  readonly message: string;
+export interface ThrottlingException {
+  readonly message?: string;
 }
 
-interface UndeploySystemInstanceRequest {
-  readonly id: string;
+export interface UndeploySystemInstanceRequest {
+  readonly id?: string;
 }
 
-interface UndeploySystemInstanceResponse {
-  readonly summary: SystemInstanceSummary;
+export interface UndeploySystemInstanceResponse {
+  readonly summary?: SystemInstanceSummary;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateFlowTemplateRequest {
+export interface UpdateFlowTemplateRequest {
   readonly id: string;
   readonly definition: DefinitionDocument;
-  readonly compatibleNamespaceVersion: number;
+  readonly compatibleNamespaceVersion?: number;
 }
 
-interface UpdateFlowTemplateResponse {
-  readonly summary: FlowTemplateSummary;
+export interface UpdateFlowTemplateResponse {
+  readonly summary?: FlowTemplateSummary;
 }
 
-interface UpdateSystemTemplateRequest {
+export interface UpdateSystemTemplateRequest {
   readonly id: string;
   readonly definition: DefinitionDocument;
-  readonly compatibleNamespaceVersion: number;
+  readonly compatibleNamespaceVersion?: number;
 }
 
-interface UpdateSystemTemplateResponse {
-  readonly summary: SystemTemplateSummary;
+export interface UpdateSystemTemplateResponse {
+  readonly summary?: SystemTemplateSummary;
 }
 
-interface UploadEntityDefinitionsRequest {
-  readonly document: DefinitionDocument;
-  readonly syncWithPublicNamespace: boolean;
-  readonly deprecateExistingEntities: boolean;
+export interface UploadEntityDefinitionsRequest {
+  readonly document?: DefinitionDocument;
+  readonly syncWithPublicNamespace?: boolean;
+  readonly deprecateExistingEntities?: boolean;
 }
 
-interface UploadEntityDefinitionsResponse {
+export interface UploadEntityDefinitionsResponse {
   readonly uploadId: string;
 }
+
 

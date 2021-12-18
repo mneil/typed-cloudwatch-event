@@ -6,6 +6,7 @@ export interface CreateAlertManagerDefinition {
   readonly data: unknown;
   readonly workspaceId: string;
 }
+
 export interface CreateRuleGroupsNamespace {
   readonly clientToken?: string;
   readonly data: unknown;
@@ -13,267 +14,280 @@ export interface CreateRuleGroupsNamespace {
   readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
+
 export interface CreateWorkspace {
   readonly alias?: string;
   readonly clientToken?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface DeleteAlertManagerDefinition {
   readonly clientToken?: string;
   readonly workspaceId: string;
 }
+
 export interface DeleteRuleGroupsNamespace {
   readonly clientToken?: string;
   readonly name: string;
   readonly workspaceId: string;
 }
+
 export interface DeleteWorkspace {
   readonly clientToken?: string;
   readonly workspaceId: string;
 }
+
 export interface DescribeAlertManagerDefinition {
   readonly workspaceId: string;
 }
+
 export interface DescribeRuleGroupsNamespace {
   readonly name: string;
   readonly workspaceId: string;
 }
+
 export interface DescribeWorkspace {
   readonly workspaceId: string;
 }
+
 export interface ListRuleGroupsNamespaces {
   readonly maxResults?: number;
   readonly name?: string;
   readonly nextToken?: string;
   readonly workspaceId: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface ListWorkspaces {
   readonly alias?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface PutAlertManagerDefinition {
   readonly clientToken?: string;
   readonly data: unknown;
   readonly workspaceId: string;
 }
+
 export interface PutRuleGroupsNamespace {
   readonly clientToken?: string;
   readonly data: unknown;
   readonly name: string;
   readonly workspaceId: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateWorkspaceAlias {
   readonly alias?: string;
   readonly clientToken?: string;
   readonly workspaceId: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
 }
 
-interface AlertManagerDefinitionDescription {
+export interface AlertManagerDefinitionDescription {
   readonly createdAt: Date;
   readonly data: unknown;
   readonly modifiedAt: Date;
   readonly status: AlertManagerDefinitionStatus;
 }
 
-interface AlertManagerDefinitionStatus {
+export interface AlertManagerDefinitionStatus {
   readonly statusCode: string;
-  readonly statusReason: string;
+  readonly statusReason?: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly message: string;
   readonly resourceId: string;
   readonly resourceType: string;
 }
 
-interface CreateAlertManagerDefinitionRequest {
-  readonly clientToken: string;
+export interface CreateAlertManagerDefinitionRequest {
+  readonly clientToken?: string;
   readonly data: unknown;
   readonly workspaceId: string;
 }
 
-interface CreateAlertManagerDefinitionResponse {
+export interface CreateAlertManagerDefinitionResponse {
   readonly status: AlertManagerDefinitionStatus;
 }
 
-interface CreateRuleGroupsNamespaceRequest {
-  readonly clientToken: string;
+export interface CreateRuleGroupsNamespaceRequest {
+  readonly clientToken?: string;
   readonly data: unknown;
   readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
 
-interface CreateRuleGroupsNamespaceResponse {
+export interface CreateRuleGroupsNamespaceResponse {
   readonly arn: string;
   readonly name: string;
   readonly status: RuleGroupsNamespaceStatus;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateWorkspaceRequest {
-  readonly alias: string;
-  readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+export interface CreateWorkspaceRequest {
+  readonly alias?: string;
+  readonly clientToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateWorkspaceResponse {
+export interface CreateWorkspaceResponse {
   readonly arn: string;
   readonly status: WorkspaceStatus;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
 
-interface DeleteAlertManagerDefinitionRequest {
-  readonly clientToken: string;
+export interface DeleteAlertManagerDefinitionRequest {
+  readonly clientToken?: string;
   readonly workspaceId: string;
 }
 
-interface DeleteRuleGroupsNamespaceRequest {
-  readonly clientToken: string;
+export interface DeleteRuleGroupsNamespaceRequest {
+  readonly clientToken?: string;
   readonly name: string;
   readonly workspaceId: string;
 }
 
-interface DeleteWorkspaceRequest {
-  readonly clientToken: string;
+export interface DeleteWorkspaceRequest {
+  readonly clientToken?: string;
   readonly workspaceId: string;
 }
 
-interface DescribeAlertManagerDefinitionRequest {
+export interface DescribeAlertManagerDefinitionRequest {
   readonly workspaceId: string;
 }
 
-interface DescribeAlertManagerDefinitionResponse {
+export interface DescribeAlertManagerDefinitionResponse {
   readonly alertManagerDefinition: AlertManagerDefinitionDescription;
 }
 
-interface DescribeRuleGroupsNamespaceRequest {
+export interface DescribeRuleGroupsNamespaceRequest {
   readonly name: string;
   readonly workspaceId: string;
 }
 
-interface DescribeRuleGroupsNamespaceResponse {
+export interface DescribeRuleGroupsNamespaceResponse {
   readonly ruleGroupsNamespace: RuleGroupsNamespaceDescription;
 }
 
-interface DescribeWorkspaceRequest {
+export interface DescribeWorkspaceRequest {
   readonly workspaceId: string;
 }
 
-interface DescribeWorkspaceResponse {
+export interface DescribeWorkspaceResponse {
   readonly workspace: WorkspaceDescription;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
-  readonly retryAfterSeconds: number;
+  readonly retryAfterSeconds?: number;
 }
 
-interface ListRuleGroupsNamespacesRequest {
-  readonly maxResults: number;
-  readonly name: string;
-  readonly nextToken: string;
+export interface ListRuleGroupsNamespacesRequest {
+  readonly maxResults?: number;
+  readonly name?: string;
+  readonly nextToken?: string;
   readonly workspaceId: string;
 }
 
-interface ListRuleGroupsNamespacesResponse {
-  readonly nextToken: string;
+export interface ListRuleGroupsNamespacesResponse {
+  readonly nextToken?: string;
   readonly ruleGroupsNamespaces: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ListWorkspacesRequest {
-  readonly alias: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListWorkspacesRequest {
+  readonly alias?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListWorkspacesResponse {
-  readonly nextToken: string;
+export interface ListWorkspacesResponse {
+  readonly nextToken?: string;
   readonly workspaces: [];
 }
 
-interface PutAlertManagerDefinitionRequest {
-  readonly clientToken: string;
+export interface PutAlertManagerDefinitionRequest {
+  readonly clientToken?: string;
   readonly data: unknown;
   readonly workspaceId: string;
 }
 
-interface PutAlertManagerDefinitionResponse {
+export interface PutAlertManagerDefinitionResponse {
   readonly status: AlertManagerDefinitionStatus;
 }
 
-interface PutRuleGroupsNamespaceRequest {
-  readonly clientToken: string;
+export interface PutRuleGroupsNamespaceRequest {
+  readonly clientToken?: string;
   readonly data: unknown;
   readonly name: string;
   readonly workspaceId: string;
 }
 
-interface PutRuleGroupsNamespaceResponse {
+export interface PutRuleGroupsNamespaceResponse {
   readonly arn: string;
   readonly name: string;
   readonly status: RuleGroupsNamespaceStatus;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
   readonly resourceId: string;
   readonly resourceType: string;
 }
 
-interface RuleGroupsNamespaceDescription {
+export interface RuleGroupsNamespaceDescription {
   readonly arn: string;
   readonly createdAt: Date;
   readonly data: unknown;
   readonly modifiedAt: Date;
   readonly name: string;
   readonly status: RuleGroupsNamespaceStatus;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface RuleGroupsNamespaceStatus {
+export interface RuleGroupsNamespaceStatus {
   readonly statusCode: string;
-  readonly statusReason: string;
+  readonly statusReason?: string;
 }
 
-interface RuleGroupsNamespaceSummary {
+export interface RuleGroupsNamespaceSummary {
   readonly arn: string;
   readonly createdAt: Date;
   readonly modifiedAt: Date;
   readonly name: string;
   readonly status: RuleGroupsNamespaceStatus;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly message: string;
   readonly quotaCode: string;
   readonly resourceId: string;
@@ -281,66 +295,67 @@ interface ServiceQuotaExceededException {
   readonly serviceCode: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly message: string;
-  readonly quotaCode: string;
-  readonly retryAfterSeconds: number;
-  readonly serviceCode: string;
+  readonly quotaCode?: string;
+  readonly retryAfterSeconds?: number;
+  readonly serviceCode?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateWorkspaceAliasRequest {
-  readonly alias: string;
-  readonly clientToken: string;
+export interface UpdateWorkspaceAliasRequest {
+  readonly alias?: string;
+  readonly clientToken?: string;
   readonly workspaceId: string;
 }
 
-interface ValidationException {
-  readonly fieldList: [];
+export interface ValidationException {
+  readonly fieldList?: [];
   readonly message: string;
   readonly reason: string;
 }
 
-interface ValidationExceptionField {
+export interface ValidationExceptionField {
   readonly message: string;
   readonly name: string;
 }
 
-interface WorkspaceDescription {
-  readonly alias: string;
+export interface WorkspaceDescription {
+  readonly alias?: string;
   readonly arn: string;
   readonly createdAt: Date;
-  readonly prometheusEndpoint: string;
+  readonly prometheusEndpoint?: string;
   readonly status: WorkspaceStatus;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
 
-interface WorkspaceStatus {
+export interface WorkspaceStatus {
   readonly statusCode: string;
 }
 
-interface WorkspaceSummary {
-  readonly alias: string;
+export interface WorkspaceSummary {
+  readonly alias?: string;
   readonly arn: string;
   readonly createdAt: Date;
   readonly status: WorkspaceStatus;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly workspaceId: string;
 }
+
 

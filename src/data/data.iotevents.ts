@@ -4,37 +4,47 @@
 export interface BatchAcknowledgeAlarm {
   readonly acknowledgeActionRequests: [];
 }
+
 export interface BatchDisableAlarm {
   readonly disableActionRequests: [];
 }
+
 export interface BatchEnableAlarm {
   readonly enableActionRequests: [];
 }
+
 export interface BatchPutMessage {
   readonly messages: [];
 }
+
 export interface BatchResetAlarm {
   readonly resetActionRequests: [];
 }
+
 export interface BatchSnoozeAlarm {
   readonly snoozeActionRequests: [];
 }
+
 export interface BatchUpdateDetector {
   readonly detectors: [];
 }
+
 export interface DescribeAlarm {
   readonly alarmModelName: string;
   readonly keyValue?: string;
 }
+
 export interface DescribeDetector {
   readonly detectorModelName: string;
   readonly keyValue?: string;
 }
+
 export interface ListAlarms {
   readonly alarmModelName: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListDetectors {
   readonly detectorModelName: string;
   readonly stateName?: string;
@@ -42,323 +52,322 @@ export interface ListDetectors {
   readonly maxResults?: number;
 }
 
-
-
-interface AcknowledgeActionConfiguration {
-  readonly note: string;
+export interface AcknowledgeActionConfiguration {
+  readonly note?: string;
 }
 
-interface AcknowledgeAlarmActionRequest {
+export interface AcknowledgeAlarmActionRequest {
   readonly requestId: string;
   readonly alarmModelName: string;
-  readonly keyValue: string;
-  readonly note: string;
+  readonly keyValue?: string;
+  readonly note?: string;
 }
 
-interface Alarm {
-  readonly alarmModelName: string;
-  readonly alarmModelVersion: string;
-  readonly keyValue: string;
-  readonly alarmState: AlarmState;
-  readonly severity: number;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
+export interface Alarm {
+  readonly alarmModelName?: string;
+  readonly alarmModelVersion?: string;
+  readonly keyValue?: string;
+  readonly alarmState?: AlarmState;
+  readonly severity?: number;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
 }
 
-interface AlarmState {
-  readonly stateName: string;
-  readonly ruleEvaluation: RuleEvaluation;
-  readonly customerAction: CustomerAction;
-  readonly systemEvent: SystemEvent;
+export interface AlarmState {
+  readonly stateName?: string;
+  readonly ruleEvaluation?: RuleEvaluation;
+  readonly customerAction?: CustomerAction;
+  readonly systemEvent?: SystemEvent;
 }
 
-interface AlarmSummary {
-  readonly alarmModelName: string;
-  readonly alarmModelVersion: string;
-  readonly keyValue: string;
-  readonly stateName: string;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
+export interface AlarmSummary {
+  readonly alarmModelName?: string;
+  readonly alarmModelVersion?: string;
+  readonly keyValue?: string;
+  readonly stateName?: string;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
 }
 
-interface BatchAcknowledgeAlarmRequest {
+export interface BatchAcknowledgeAlarmRequest {
   readonly acknowledgeActionRequests: [];
 }
 
-interface BatchAcknowledgeAlarmResponse {
-  readonly errorEntries: [];
+export interface BatchAcknowledgeAlarmResponse {
+  readonly errorEntries?: [];
 }
 
-interface BatchAlarmActionErrorEntry {
-  readonly requestId: string;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface BatchAlarmActionErrorEntry {
+  readonly requestId?: string;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface BatchDisableAlarmRequest {
+export interface BatchDisableAlarmRequest {
   readonly disableActionRequests: [];
 }
 
-interface BatchDisableAlarmResponse {
-  readonly errorEntries: [];
+export interface BatchDisableAlarmResponse {
+  readonly errorEntries?: [];
 }
 
-interface BatchEnableAlarmRequest {
+export interface BatchEnableAlarmRequest {
   readonly enableActionRequests: [];
 }
 
-interface BatchEnableAlarmResponse {
-  readonly errorEntries: [];
+export interface BatchEnableAlarmResponse {
+  readonly errorEntries?: [];
 }
 
-interface BatchPutMessageErrorEntry {
-  readonly messageId: string;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface BatchPutMessageErrorEntry {
+  readonly messageId?: string;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface BatchPutMessageRequest {
+export interface BatchPutMessageRequest {
   readonly messages: [];
 }
 
-interface BatchPutMessageResponse {
-  readonly BatchPutMessageErrorEntries: [];
+export interface BatchPutMessageResponse {
+  readonly BatchPutMessageErrorEntries?: [];
 }
 
-interface BatchResetAlarmRequest {
+export interface BatchResetAlarmRequest {
   readonly resetActionRequests: [];
 }
 
-interface BatchResetAlarmResponse {
-  readonly errorEntries: [];
+export interface BatchResetAlarmResponse {
+  readonly errorEntries?: [];
 }
 
-interface BatchSnoozeAlarmRequest {
+export interface BatchSnoozeAlarmRequest {
   readonly snoozeActionRequests: [];
 }
 
-interface BatchSnoozeAlarmResponse {
-  readonly errorEntries: [];
+export interface BatchSnoozeAlarmResponse {
+  readonly errorEntries?: [];
 }
 
-interface BatchUpdateDetectorErrorEntry {
-  readonly messageId: string;
-  readonly errorCode: string;
-  readonly errorMessage: string;
+export interface BatchUpdateDetectorErrorEntry {
+  readonly messageId?: string;
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
 }
 
-interface BatchUpdateDetectorRequest {
+export interface BatchUpdateDetectorRequest {
   readonly detectors: [];
 }
 
-interface BatchUpdateDetectorResponse {
-  readonly batchUpdateDetectorErrorEntries: [];
+export interface BatchUpdateDetectorResponse {
+  readonly batchUpdateDetectorErrorEntries?: [];
 }
 
-interface CustomerAction {
-  readonly actionName: string;
-  readonly snoozeActionConfiguration: SnoozeActionConfiguration;
-  readonly enableActionConfiguration: EnableActionConfiguration;
-  readonly disableActionConfiguration: DisableActionConfiguration;
-  readonly acknowledgeActionConfiguration: AcknowledgeActionConfiguration;
-  readonly resetActionConfiguration: ResetActionConfiguration;
+export interface CustomerAction {
+  readonly actionName?: string;
+  readonly snoozeActionConfiguration?: SnoozeActionConfiguration;
+  readonly enableActionConfiguration?: EnableActionConfiguration;
+  readonly disableActionConfiguration?: DisableActionConfiguration;
+  readonly acknowledgeActionConfiguration?: AcknowledgeActionConfiguration;
+  readonly resetActionConfiguration?: ResetActionConfiguration;
 }
 
-interface DescribeAlarmRequest {
+export interface DescribeAlarmRequest {
   readonly alarmModelName: string;
-  readonly keyValue: string;
+  readonly keyValue?: string;
 }
 
-interface DescribeAlarmResponse {
-  readonly alarm: Alarm;
+export interface DescribeAlarmResponse {
+  readonly alarm?: Alarm;
 }
 
-interface DescribeDetectorRequest {
+export interface DescribeDetectorRequest {
   readonly detectorModelName: string;
-  readonly keyValue: string;
+  readonly keyValue?: string;
 }
 
-interface DescribeDetectorResponse {
-  readonly detector: Detector;
+export interface DescribeDetectorResponse {
+  readonly detector?: Detector;
 }
 
-interface Detector {
-  readonly detectorModelName: string;
-  readonly keyValue: string;
-  readonly detectorModelVersion: string;
-  readonly state: DetectorState;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
+export interface Detector {
+  readonly detectorModelName?: string;
+  readonly keyValue?: string;
+  readonly detectorModelVersion?: string;
+  readonly state?: DetectorState;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
 }
 
-interface DetectorState {
+export interface DetectorState {
   readonly stateName: string;
   readonly variables: [];
   readonly timers: [];
 }
 
-interface DetectorStateDefinition {
+export interface DetectorStateDefinition {
   readonly stateName: string;
   readonly variables: [];
   readonly timers: [];
 }
 
-interface DetectorStateSummary {
-  readonly stateName: string;
+export interface DetectorStateSummary {
+  readonly stateName?: string;
 }
 
-interface DetectorSummary {
-  readonly detectorModelName: string;
-  readonly keyValue: string;
-  readonly detectorModelVersion: string;
-  readonly state: DetectorStateSummary;
-  readonly creationTime: Date;
-  readonly lastUpdateTime: Date;
+export interface DetectorSummary {
+  readonly detectorModelName?: string;
+  readonly keyValue?: string;
+  readonly detectorModelVersion?: string;
+  readonly state?: DetectorStateSummary;
+  readonly creationTime?: Date;
+  readonly lastUpdateTime?: Date;
 }
 
-interface DisableActionConfiguration {
-  readonly note: string;
+export interface DisableActionConfiguration {
+  readonly note?: string;
 }
 
-interface DisableAlarmActionRequest {
+export interface DisableAlarmActionRequest {
   readonly requestId: string;
   readonly alarmModelName: string;
-  readonly keyValue: string;
-  readonly note: string;
+  readonly keyValue?: string;
+  readonly note?: string;
 }
 
-interface EnableActionConfiguration {
-  readonly note: string;
+export interface EnableActionConfiguration {
+  readonly note?: string;
 }
 
-interface EnableAlarmActionRequest {
+export interface EnableAlarmActionRequest {
   readonly requestId: string;
   readonly alarmModelName: string;
-  readonly keyValue: string;
-  readonly note: string;
+  readonly keyValue?: string;
+  readonly note?: string;
 }
 
-interface InternalFailureException {
-  readonly message: string;
+export interface InternalFailureException {
+  readonly message?: string;
 }
 
-interface InvalidRequestException {
-  readonly message: string;
+export interface InvalidRequestException {
+  readonly message?: string;
 }
 
-interface ListAlarmsRequest {
+export interface ListAlarmsRequest {
   readonly alarmModelName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListAlarmsResponse {
-  readonly alarmSummaries: [];
-  readonly nextToken: string;
+export interface ListAlarmsResponse {
+  readonly alarmSummaries?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDetectorsRequest {
+export interface ListDetectorsRequest {
   readonly detectorModelName: string;
-  readonly stateName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly stateName?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListDetectorsResponse {
-  readonly detectorSummaries: [];
-  readonly nextToken: string;
+export interface ListDetectorsResponse {
+  readonly detectorSummaries?: [];
+  readonly nextToken?: string;
 }
 
-interface Message {
+export interface Message {
   readonly messageId: string;
   readonly inputName: string;
   readonly payload: unknown;
-  readonly timestamp: TimestampValue;
+  readonly timestamp?: TimestampValue;
 }
 
-interface ResetActionConfiguration {
-  readonly note: string;
+export interface ResetActionConfiguration {
+  readonly note?: string;
 }
 
-interface ResetAlarmActionRequest {
+export interface ResetAlarmActionRequest {
   readonly requestId: string;
   readonly alarmModelName: string;
-  readonly keyValue: string;
-  readonly note: string;
+  readonly keyValue?: string;
+  readonly note?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface RuleEvaluation {
-  readonly simpleRuleEvaluation: SimpleRuleEvaluation;
+export interface RuleEvaluation {
+  readonly simpleRuleEvaluation?: SimpleRuleEvaluation;
 }
 
-interface ServiceUnavailableException {
-  readonly message: string;
+export interface ServiceUnavailableException {
+  readonly message?: string;
 }
 
-interface SimpleRuleEvaluation {
-  readonly inputPropertyValue: string;
-  readonly operator: string;
-  readonly thresholdValue: string;
+export interface SimpleRuleEvaluation {
+  readonly inputPropertyValue?: string;
+  readonly operator?: string;
+  readonly thresholdValue?: string;
 }
 
-interface SnoozeActionConfiguration {
-  readonly snoozeDuration: number;
-  readonly note: string;
+export interface SnoozeActionConfiguration {
+  readonly snoozeDuration?: number;
+  readonly note?: string;
 }
 
-interface SnoozeAlarmActionRequest {
+export interface SnoozeAlarmActionRequest {
   readonly requestId: string;
   readonly alarmModelName: string;
-  readonly keyValue: string;
-  readonly note: string;
+  readonly keyValue?: string;
+  readonly note?: string;
   readonly snoozeDuration: number;
 }
 
-interface StateChangeConfiguration {
-  readonly triggerType: string;
+export interface StateChangeConfiguration {
+  readonly triggerType?: string;
 }
 
-interface SystemEvent {
-  readonly eventType: string;
-  readonly stateChangeConfiguration: StateChangeConfiguration;
+export interface SystemEvent {
+  readonly eventType?: string;
+  readonly stateChangeConfiguration?: StateChangeConfiguration;
 }
 
-interface ThrottlingException {
-  readonly message: string;
+export interface ThrottlingException {
+  readonly message?: string;
 }
 
-interface Timer {
+export interface Timer {
   readonly name: string;
   readonly timestamp: Date;
 }
 
-interface TimerDefinition {
+export interface TimerDefinition {
   readonly name: string;
   readonly seconds: number;
 }
 
-interface TimestampValue {
-  readonly timeInMillis: number;
+export interface TimestampValue {
+  readonly timeInMillis?: number;
 }
 
-interface UpdateDetectorRequest {
+export interface UpdateDetectorRequest {
   readonly messageId: string;
   readonly detectorModelName: string;
-  readonly keyValue: string;
+  readonly keyValue?: string;
   readonly state: DetectorStateDefinition;
 }
 
-interface Variable {
+export interface Variable {
   readonly name: string;
   readonly value: string;
 }
 
-interface VariableDefinition {
+export interface VariableDefinition {
   readonly name: string;
   readonly value: string;
 }
+
 

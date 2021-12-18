@@ -6,12 +6,14 @@ export interface AssociateEncryptionConfig {
   readonly encryptionConfig: [];
   readonly clientRequestToken?: string;
 }
+
 export interface AssociateIdentityProviderConfig {
   readonly clusterName: string;
   readonly oidc: OidcIdentityProviderConfigRequest;
   readonly tags?: {[key: string]: any};
   readonly clientRequestToken?: string;
 }
+
 export interface CreateAddon {
   readonly clusterName: string;
   readonly addonName: string;
@@ -21,6 +23,7 @@ export interface CreateAddon {
   readonly clientRequestToken?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateCluster {
   readonly name: string;
   readonly version?: string;
@@ -32,6 +35,7 @@ export interface CreateCluster {
   readonly tags?: {[key: string]: any};
   readonly encryptionConfig?: [];
 }
+
 export interface CreateFargateProfile {
   readonly fargateProfileName: string;
   readonly clusterName: string;
@@ -41,6 +45,7 @@ export interface CreateFargateProfile {
   readonly clientRequestToken?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateNodegroup {
   readonly clusterName: string;
   readonly nodegroupName: string;
@@ -61,89 +66,109 @@ export interface CreateNodegroup {
   readonly version?: string;
   readonly releaseVersion?: string;
 }
+
 export interface DeleteAddon {
   readonly clusterName: string;
   readonly addonName: string;
   readonly preserve?: boolean;
 }
+
 export interface DeleteCluster {
   readonly name: string;
 }
+
 export interface DeleteFargateProfile {
   readonly clusterName: string;
   readonly fargateProfileName: string;
 }
+
 export interface DeleteNodegroup {
   readonly clusterName: string;
   readonly nodegroupName: string;
 }
+
 export interface DeregisterCluster {
   readonly name: string;
 }
+
 export interface DescribeAddon {
   readonly clusterName: string;
   readonly addonName: string;
 }
+
 export interface DescribeAddonVersions {
   readonly kubernetesVersion?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly addonName?: string;
 }
+
 export interface DescribeCluster {
   readonly name: string;
 }
+
 export interface DescribeFargateProfile {
   readonly clusterName: string;
   readonly fargateProfileName: string;
 }
+
 export interface DescribeIdentityProviderConfig {
   readonly clusterName: string;
   readonly identityProviderConfig: IdentityProviderConfig;
 }
+
 export interface DescribeNodegroup {
   readonly clusterName: string;
   readonly nodegroupName: string;
 }
+
 export interface DescribeUpdate {
   readonly name: string;
   readonly updateId: string;
   readonly nodegroupName?: string;
   readonly addonName?: string;
 }
+
 export interface DisassociateIdentityProviderConfig {
   readonly clusterName: string;
   readonly identityProviderConfig: IdentityProviderConfig;
   readonly clientRequestToken?: string;
 }
+
 export interface ListAddons {
   readonly clusterName: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListClusters {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly include?: [];
 }
+
 export interface ListFargateProfiles {
   readonly clusterName: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListIdentityProviderConfigs {
   readonly clusterName: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListNodegroups {
   readonly clusterName: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface ListUpdates {
   readonly name: string;
   readonly nodegroupName?: string;
@@ -151,20 +176,24 @@ export interface ListUpdates {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface RegisterCluster {
   readonly name: string;
   readonly connectorConfig: ConnectorConfigRequest;
   readonly clientRequestToken?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateAddon {
   readonly clusterName: string;
   readonly addonName: string;
@@ -173,17 +202,20 @@ export interface UpdateAddon {
   readonly resolveConflicts?: string;
   readonly clientRequestToken?: string;
 }
+
 export interface UpdateClusterConfig {
   readonly name: string;
   readonly resourcesVpcConfig?: VpcConfigRequest;
   readonly logging?: Logging;
   readonly clientRequestToken?: string;
 }
+
 export interface UpdateClusterVersion {
   readonly name: string;
   readonly version: string;
   readonly clientRequestToken?: string;
 }
+
 export interface UpdateNodegroupConfig {
   readonly clusterName: string;
   readonly nodegroupName: string;
@@ -193,6 +225,7 @@ export interface UpdateNodegroupConfig {
   readonly updateConfig?: NodegroupUpdateConfig;
   readonly clientRequestToken?: string;
 }
+
 export interface UpdateNodegroupVersion {
   readonly clusterName: string;
   readonly nodegroupName: string;
@@ -203,744 +236,743 @@ export interface UpdateNodegroupVersion {
   readonly clientRequestToken?: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly message?: string;
 }
 
-interface Addon {
-  readonly addonName: string;
-  readonly clusterName: string;
-  readonly status: string;
-  readonly addonVersion: string;
-  readonly health: AddonHealth;
-  readonly addonArn: string;
-  readonly createdAt: Date;
-  readonly modifiedAt: Date;
-  readonly serviceAccountRoleArn: string;
-  readonly tags: {[key: string]: any};
+export interface Addon {
+  readonly addonName?: string;
+  readonly clusterName?: string;
+  readonly status?: string;
+  readonly addonVersion?: string;
+  readonly health?: AddonHealth;
+  readonly addonArn?: string;
+  readonly createdAt?: Date;
+  readonly modifiedAt?: Date;
+  readonly serviceAccountRoleArn?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface AddonHealth {
-  readonly issues: [];
+export interface AddonHealth {
+  readonly issues?: [];
 }
 
-interface AddonInfo {
-  readonly addonName: string;
-  readonly type: string;
-  readonly addonVersions: [];
+export interface AddonInfo {
+  readonly addonName?: string;
+  readonly type?: string;
+  readonly addonVersions?: [];
 }
 
-interface AddonIssue {
-  readonly code: string;
-  readonly message: string;
-  readonly resourceIds: [];
+export interface AddonIssue {
+  readonly code?: string;
+  readonly message?: string;
+  readonly resourceIds?: [];
 }
 
-interface AddonVersionInfo {
-  readonly addonVersion: string;
-  readonly architecture: [];
-  readonly compatibilities: [];
+export interface AddonVersionInfo {
+  readonly addonVersion?: string;
+  readonly architecture?: [];
+  readonly compatibilities?: [];
 }
 
-interface AssociateEncryptionConfigRequest {
+export interface AssociateEncryptionConfigRequest {
   readonly clusterName: string;
   readonly encryptionConfig: [];
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 
-interface AssociateEncryptionConfigResponse {
-  readonly update: Update;
+export interface AssociateEncryptionConfigResponse {
+  readonly update?: Update;
 }
 
-interface AssociateIdentityProviderConfigRequest {
+export interface AssociateIdentityProviderConfigRequest {
   readonly clusterName: string;
   readonly oidc: OidcIdentityProviderConfigRequest;
-  readonly tags: {[key: string]: any};
-  readonly clientRequestToken: string;
+  readonly tags?: {[key: string]: any};
+  readonly clientRequestToken?: string;
 }
 
-interface AssociateIdentityProviderConfigResponse {
-  readonly update: Update;
-  readonly tags: {[key: string]: any};
+export interface AssociateIdentityProviderConfigResponse {
+  readonly update?: Update;
+  readonly tags?: {[key: string]: any};
 }
 
-interface AutoScalingGroup {
-  readonly name: string;
+export interface AutoScalingGroup {
+  readonly name?: string;
 }
 
-interface BadRequestException {
-  readonly message: string;
+export interface BadRequestException {
+  readonly message?: string;
 }
 
-interface Certificate {
-  readonly data: string;
+export interface Certificate {
+  readonly data?: string;
 }
 
-interface ClientException {
-  readonly clusterName: string;
-  readonly nodegroupName: string;
-  readonly addonName: string;
-  readonly message: string;
+export interface ClientException {
+  readonly clusterName?: string;
+  readonly nodegroupName?: string;
+  readonly addonName?: string;
+  readonly message?: string;
 }
 
-interface Cluster {
-  readonly name: string;
-  readonly arn: string;
-  readonly createdAt: Date;
-  readonly version: string;
-  readonly endpoint: string;
-  readonly roleArn: string;
-  readonly resourcesVpcConfig: VpcConfigResponse;
-  readonly kubernetesNetworkConfig: KubernetesNetworkConfigResponse;
-  readonly logging: Logging;
-  readonly identity: Identity;
-  readonly status: string;
-  readonly certificateAuthority: Certificate;
-  readonly clientRequestToken: string;
-  readonly platformVersion: string;
-  readonly tags: {[key: string]: any};
-  readonly encryptionConfig: [];
-  readonly connectorConfig: ConnectorConfigResponse;
+export interface Cluster {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly createdAt?: Date;
+  readonly version?: string;
+  readonly endpoint?: string;
+  readonly roleArn?: string;
+  readonly resourcesVpcConfig?: VpcConfigResponse;
+  readonly kubernetesNetworkConfig?: KubernetesNetworkConfigResponse;
+  readonly logging?: Logging;
+  readonly identity?: Identity;
+  readonly status?: string;
+  readonly certificateAuthority?: Certificate;
+  readonly clientRequestToken?: string;
+  readonly platformVersion?: string;
+  readonly tags?: {[key: string]: any};
+  readonly encryptionConfig?: [];
+  readonly connectorConfig?: ConnectorConfigResponse;
 }
 
-interface Compatibility {
-  readonly clusterVersion: string;
-  readonly platformVersions: [];
-  readonly defaultVersion: boolean;
+export interface Compatibility {
+  readonly clusterVersion?: string;
+  readonly platformVersions?: [];
+  readonly defaultVersion?: boolean;
 }
 
-interface ConnectorConfigRequest {
+export interface ConnectorConfigRequest {
   readonly roleArn: string;
   readonly provider: string;
 }
 
-interface ConnectorConfigResponse {
-  readonly activationId: string;
-  readonly activationCode: string;
-  readonly activationExpiry: Date;
-  readonly provider: string;
-  readonly roleArn: string;
+export interface ConnectorConfigResponse {
+  readonly activationId?: string;
+  readonly activationCode?: string;
+  readonly activationExpiry?: Date;
+  readonly provider?: string;
+  readonly roleArn?: string;
 }
 
-interface CreateAddonRequest {
+export interface CreateAddonRequest {
   readonly clusterName: string;
   readonly addonName: string;
-  readonly addonVersion: string;
-  readonly serviceAccountRoleArn: string;
-  readonly resolveConflicts: string;
-  readonly clientRequestToken: string;
-  readonly tags: {[key: string]: any};
+  readonly addonVersion?: string;
+  readonly serviceAccountRoleArn?: string;
+  readonly resolveConflicts?: string;
+  readonly clientRequestToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateAddonResponse {
-  readonly addon: Addon;
+export interface CreateAddonResponse {
+  readonly addon?: Addon;
 }
 
-interface CreateClusterRequest {
+export interface CreateClusterRequest {
   readonly name: string;
-  readonly version: string;
+  readonly version?: string;
   readonly roleArn: string;
   readonly resourcesVpcConfig: VpcConfigRequest;
-  readonly kubernetesNetworkConfig: KubernetesNetworkConfigRequest;
-  readonly logging: Logging;
-  readonly clientRequestToken: string;
-  readonly tags: {[key: string]: any};
-  readonly encryptionConfig: [];
+  readonly kubernetesNetworkConfig?: KubernetesNetworkConfigRequest;
+  readonly logging?: Logging;
+  readonly clientRequestToken?: string;
+  readonly tags?: {[key: string]: any};
+  readonly encryptionConfig?: [];
 }
 
-interface CreateClusterResponse {
-  readonly cluster: Cluster;
+export interface CreateClusterResponse {
+  readonly cluster?: Cluster;
 }
 
-interface CreateFargateProfileRequest {
+export interface CreateFargateProfileRequest {
   readonly fargateProfileName: string;
   readonly clusterName: string;
   readonly podExecutionRoleArn: string;
-  readonly subnets: [];
-  readonly selectors: [];
-  readonly clientRequestToken: string;
-  readonly tags: {[key: string]: any};
+  readonly subnets?: [];
+  readonly selectors?: [];
+  readonly clientRequestToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateFargateProfileResponse {
-  readonly fargateProfile: FargateProfile;
+export interface CreateFargateProfileResponse {
+  readonly fargateProfile?: FargateProfile;
 }
 
-interface CreateNodegroupRequest {
+export interface CreateNodegroupRequest {
   readonly clusterName: string;
   readonly nodegroupName: string;
-  readonly scalingConfig: NodegroupScalingConfig;
-  readonly diskSize: number;
+  readonly scalingConfig?: NodegroupScalingConfig;
+  readonly diskSize?: number;
   readonly subnets: [];
-  readonly instanceTypes: [];
-  readonly amiType: string;
-  readonly remoteAccess: RemoteAccessConfig;
+  readonly instanceTypes?: [];
+  readonly amiType?: string;
+  readonly remoteAccess?: RemoteAccessConfig;
   readonly nodeRole: string;
-  readonly labels: {[key: string]: any};
-  readonly taints: [];
-  readonly tags: {[key: string]: any};
-  readonly clientRequestToken: string;
-  readonly launchTemplate: LaunchTemplateSpecification;
-  readonly updateConfig: NodegroupUpdateConfig;
-  readonly capacityType: string;
-  readonly version: string;
-  readonly releaseVersion: string;
+  readonly labels?: {[key: string]: any};
+  readonly taints?: [];
+  readonly tags?: {[key: string]: any};
+  readonly clientRequestToken?: string;
+  readonly launchTemplate?: LaunchTemplateSpecification;
+  readonly updateConfig?: NodegroupUpdateConfig;
+  readonly capacityType?: string;
+  readonly version?: string;
+  readonly releaseVersion?: string;
 }
 
-interface CreateNodegroupResponse {
-  readonly nodegroup: Nodegroup;
+export interface CreateNodegroupResponse {
+  readonly nodegroup?: Nodegroup;
 }
 
-interface DeleteAddonRequest {
+export interface DeleteAddonRequest {
   readonly clusterName: string;
   readonly addonName: string;
-  readonly preserve: boolean;
+  readonly preserve?: boolean;
 }
 
-interface DeleteAddonResponse {
-  readonly addon: Addon;
+export interface DeleteAddonResponse {
+  readonly addon?: Addon;
 }
 
-interface DeleteClusterRequest {
+export interface DeleteClusterRequest {
   readonly name: string;
 }
 
-interface DeleteClusterResponse {
-  readonly cluster: Cluster;
+export interface DeleteClusterResponse {
+  readonly cluster?: Cluster;
 }
 
-interface DeleteFargateProfileRequest {
+export interface DeleteFargateProfileRequest {
   readonly clusterName: string;
   readonly fargateProfileName: string;
 }
 
-interface DeleteFargateProfileResponse {
-  readonly fargateProfile: FargateProfile;
+export interface DeleteFargateProfileResponse {
+  readonly fargateProfile?: FargateProfile;
 }
 
-interface DeleteNodegroupRequest {
+export interface DeleteNodegroupRequest {
   readonly clusterName: string;
   readonly nodegroupName: string;
 }
 
-interface DeleteNodegroupResponse {
-  readonly nodegroup: Nodegroup;
+export interface DeleteNodegroupResponse {
+  readonly nodegroup?: Nodegroup;
 }
 
-interface DeregisterClusterRequest {
+export interface DeregisterClusterRequest {
   readonly name: string;
 }
 
-interface DeregisterClusterResponse {
-  readonly cluster: Cluster;
+export interface DeregisterClusterResponse {
+  readonly cluster?: Cluster;
 }
 
-interface DescribeAddonRequest {
+export interface DescribeAddonRequest {
   readonly clusterName: string;
   readonly addonName: string;
 }
 
-interface DescribeAddonResponse {
-  readonly addon: Addon;
+export interface DescribeAddonResponse {
+  readonly addon?: Addon;
 }
 
-interface DescribeAddonVersionsRequest {
-  readonly kubernetesVersion: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly addonName: string;
+export interface DescribeAddonVersionsRequest {
+  readonly kubernetesVersion?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly addonName?: string;
 }
 
-interface DescribeAddonVersionsResponse {
-  readonly addons: [];
-  readonly nextToken: string;
+export interface DescribeAddonVersionsResponse {
+  readonly addons?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeClusterRequest {
+export interface DescribeClusterRequest {
   readonly name: string;
 }
 
-interface DescribeClusterResponse {
-  readonly cluster: Cluster;
+export interface DescribeClusterResponse {
+  readonly cluster?: Cluster;
 }
 
-interface DescribeFargateProfileRequest {
+export interface DescribeFargateProfileRequest {
   readonly clusterName: string;
   readonly fargateProfileName: string;
 }
 
-interface DescribeFargateProfileResponse {
-  readonly fargateProfile: FargateProfile;
+export interface DescribeFargateProfileResponse {
+  readonly fargateProfile?: FargateProfile;
 }
 
-interface DescribeIdentityProviderConfigRequest {
+export interface DescribeIdentityProviderConfigRequest {
   readonly clusterName: string;
   readonly identityProviderConfig: IdentityProviderConfig;
 }
 
-interface DescribeIdentityProviderConfigResponse {
-  readonly identityProviderConfig: IdentityProviderConfigResponse;
+export interface DescribeIdentityProviderConfigResponse {
+  readonly identityProviderConfig?: IdentityProviderConfigResponse;
 }
 
-interface DescribeNodegroupRequest {
+export interface DescribeNodegroupRequest {
   readonly clusterName: string;
   readonly nodegroupName: string;
 }
 
-interface DescribeNodegroupResponse {
-  readonly nodegroup: Nodegroup;
+export interface DescribeNodegroupResponse {
+  readonly nodegroup?: Nodegroup;
 }
 
-interface DescribeUpdateRequest {
+export interface DescribeUpdateRequest {
   readonly name: string;
   readonly updateId: string;
-  readonly nodegroupName: string;
-  readonly addonName: string;
+  readonly nodegroupName?: string;
+  readonly addonName?: string;
 }
 
-interface DescribeUpdateResponse {
-  readonly update: Update;
+export interface DescribeUpdateResponse {
+  readonly update?: Update;
 }
 
-interface DisassociateIdentityProviderConfigRequest {
+export interface DisassociateIdentityProviderConfigRequest {
   readonly clusterName: string;
   readonly identityProviderConfig: IdentityProviderConfig;
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 
-interface DisassociateIdentityProviderConfigResponse {
-  readonly update: Update;
+export interface DisassociateIdentityProviderConfigResponse {
+  readonly update?: Update;
 }
 
-interface EncryptionConfig {
-  readonly resources: [];
-  readonly provider: Provider;
+export interface EncryptionConfig {
+  readonly resources?: [];
+  readonly provider?: Provider;
 }
 
-interface ErrorDetail {
-  readonly errorCode: string;
-  readonly errorMessage: string;
-  readonly resourceIds: [];
+export interface ErrorDetail {
+  readonly errorCode?: string;
+  readonly errorMessage?: string;
+  readonly resourceIds?: [];
 }
 
-interface FargateProfile {
-  readonly fargateProfileName: string;
-  readonly fargateProfileArn: string;
-  readonly clusterName: string;
-  readonly createdAt: Date;
-  readonly podExecutionRoleArn: string;
-  readonly subnets: [];
-  readonly selectors: [];
-  readonly status: string;
-  readonly tags: {[key: string]: any};
+export interface FargateProfile {
+  readonly fargateProfileName?: string;
+  readonly fargateProfileArn?: string;
+  readonly clusterName?: string;
+  readonly createdAt?: Date;
+  readonly podExecutionRoleArn?: string;
+  readonly subnets?: [];
+  readonly selectors?: [];
+  readonly status?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface FargateProfileSelector {
-  readonly namespace: string;
-  readonly labels: {[key: string]: any};
+export interface FargateProfileSelector {
+  readonly namespace?: string;
+  readonly labels?: {[key: string]: any};
 }
 
-interface Identity {
-  readonly oidc: OIDC;
+export interface Identity {
+  readonly oidc?: OIDC;
 }
 
-interface IdentityProviderConfig {
+export interface IdentityProviderConfig {
   readonly type: string;
   readonly name: string;
 }
 
-interface IdentityProviderConfigResponse {
-  readonly oidc: OidcIdentityProviderConfig;
+export interface IdentityProviderConfigResponse {
+  readonly oidc?: OidcIdentityProviderConfig;
 }
 
-interface InvalidParameterException {
+export interface InvalidParameterException {
+  readonly clusterName?: string;
+  readonly nodegroupName?: string;
+  readonly fargateProfileName?: string;
+  readonly addonName?: string;
+  readonly message?: string;
+}
+
+export interface InvalidRequestException {
+  readonly clusterName?: string;
+  readonly nodegroupName?: string;
+  readonly addonName?: string;
+  readonly message?: string;
+}
+
+export interface Issue {
+  readonly code?: string;
+  readonly message?: string;
+  readonly resourceIds?: [];
+}
+
+export interface KubernetesNetworkConfigRequest {
+  readonly serviceIpv4Cidr?: string;
+}
+
+export interface KubernetesNetworkConfigResponse {
+  readonly serviceIpv4Cidr?: string;
+}
+
+export interface LaunchTemplateSpecification {
+  readonly name?: string;
+  readonly version?: string;
+  readonly id?: string;
+}
+
+export interface ListAddonsRequest {
   readonly clusterName: string;
-  readonly nodegroupName: string;
-  readonly fargateProfileName: string;
-  readonly addonName: string;
-  readonly message: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface InvalidRequestException {
+export interface ListAddonsResponse {
+  readonly addons?: [];
+  readonly nextToken?: string;
+}
+
+export interface ListClustersRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly include?: [];
+}
+
+export interface ListClustersResponse {
+  readonly clusters?: [];
+  readonly nextToken?: string;
+}
+
+export interface ListFargateProfilesRequest {
   readonly clusterName: string;
-  readonly nodegroupName: string;
-  readonly addonName: string;
-  readonly message: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface Issue {
-  readonly code: string;
-  readonly message: string;
-  readonly resourceIds: [];
+export interface ListFargateProfilesResponse {
+  readonly fargateProfileNames?: [];
+  readonly nextToken?: string;
 }
 
-interface KubernetesNetworkConfigRequest {
-  readonly serviceIpv4Cidr: string;
-}
-
-interface KubernetesNetworkConfigResponse {
-  readonly serviceIpv4Cidr: string;
-}
-
-interface LaunchTemplateSpecification {
-  readonly name: string;
-  readonly version: string;
-  readonly id: string;
-}
-
-interface ListAddonsRequest {
+export interface ListIdentityProviderConfigsRequest {
   readonly clusterName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListAddonsResponse {
-  readonly addons: [];
-  readonly nextToken: string;
+export interface ListIdentityProviderConfigsResponse {
+  readonly identityProviderConfigs?: [];
+  readonly nextToken?: string;
 }
 
-interface ListClustersRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly include: [];
-}
-
-interface ListClustersResponse {
-  readonly clusters: [];
-  readonly nextToken: string;
-}
-
-interface ListFargateProfilesRequest {
+export interface ListNodegroupsRequest {
   readonly clusterName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListFargateProfilesResponse {
-  readonly fargateProfileNames: [];
-  readonly nextToken: string;
+export interface ListNodegroupsResponse {
+  readonly nodegroups?: [];
+  readonly nextToken?: string;
 }
 
-interface ListIdentityProviderConfigsRequest {
-  readonly clusterName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-}
-
-interface ListIdentityProviderConfigsResponse {
-  readonly identityProviderConfigs: [];
-  readonly nextToken: string;
-}
-
-interface ListNodegroupsRequest {
-  readonly clusterName: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-}
-
-interface ListNodegroupsResponse {
-  readonly nodegroups: [];
-  readonly nextToken: string;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface ListUpdatesRequest {
+export interface ListUpdatesRequest {
   readonly name: string;
-  readonly nodegroupName: string;
-  readonly addonName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly nodegroupName?: string;
+  readonly addonName?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListUpdatesResponse {
-  readonly updateIds: [];
-  readonly nextToken: string;
+export interface ListUpdatesResponse {
+  readonly updateIds?: [];
+  readonly nextToken?: string;
 }
 
-interface LogSetup {
-  readonly types: [];
-  readonly enabled: boolean;
+export interface LogSetup {
+  readonly types?: [];
+  readonly enabled?: boolean;
 }
 
-interface Logging {
-  readonly clusterLogging: [];
+export interface Logging {
+  readonly clusterLogging?: [];
 }
 
-interface Nodegroup {
-  readonly nodegroupName: string;
-  readonly nodegroupArn: string;
-  readonly clusterName: string;
-  readonly version: string;
-  readonly releaseVersion: string;
-  readonly createdAt: Date;
-  readonly modifiedAt: Date;
-  readonly status: string;
-  readonly capacityType: string;
-  readonly scalingConfig: NodegroupScalingConfig;
-  readonly instanceTypes: [];
-  readonly subnets: [];
-  readonly remoteAccess: RemoteAccessConfig;
-  readonly amiType: string;
-  readonly nodeRole: string;
-  readonly labels: {[key: string]: any};
-  readonly taints: [];
-  readonly resources: NodegroupResources;
-  readonly diskSize: number;
-  readonly health: NodegroupHealth;
-  readonly updateConfig: NodegroupUpdateConfig;
-  readonly launchTemplate: LaunchTemplateSpecification;
-  readonly tags: {[key: string]: any};
+export interface Nodegroup {
+  readonly nodegroupName?: string;
+  readonly nodegroupArn?: string;
+  readonly clusterName?: string;
+  readonly version?: string;
+  readonly releaseVersion?: string;
+  readonly createdAt?: Date;
+  readonly modifiedAt?: Date;
+  readonly status?: string;
+  readonly capacityType?: string;
+  readonly scalingConfig?: NodegroupScalingConfig;
+  readonly instanceTypes?: [];
+  readonly subnets?: [];
+  readonly remoteAccess?: RemoteAccessConfig;
+  readonly amiType?: string;
+  readonly nodeRole?: string;
+  readonly labels?: {[key: string]: any};
+  readonly taints?: [];
+  readonly resources?: NodegroupResources;
+  readonly diskSize?: number;
+  readonly health?: NodegroupHealth;
+  readonly updateConfig?: NodegroupUpdateConfig;
+  readonly launchTemplate?: LaunchTemplateSpecification;
+  readonly tags?: {[key: string]: any};
 }
 
-interface NodegroupHealth {
-  readonly issues: [];
+export interface NodegroupHealth {
+  readonly issues?: [];
 }
 
-interface NodegroupResources {
-  readonly autoScalingGroups: [];
-  readonly remoteAccessSecurityGroup: string;
+export interface NodegroupResources {
+  readonly autoScalingGroups?: [];
+  readonly remoteAccessSecurityGroup?: string;
 }
 
-interface NodegroupScalingConfig {
-  readonly minSize: number;
-  readonly maxSize: number;
-  readonly desiredSize: number;
+export interface NodegroupScalingConfig {
+  readonly minSize?: number;
+  readonly maxSize?: number;
+  readonly desiredSize?: number;
 }
 
-interface NodegroupUpdateConfig {
-  readonly maxUnavailable: number;
-  readonly maxUnavailablePercentage: number;
+export interface NodegroupUpdateConfig {
+  readonly maxUnavailable?: number;
+  readonly maxUnavailablePercentage?: number;
 }
 
-interface NotFoundException {
-  readonly message: string;
+export interface NotFoundException {
+  readonly message?: string;
 }
 
-interface OIDC {
-  readonly issuer: string;
+export interface OIDC {
+  readonly issuer?: string;
 }
 
-interface OidcIdentityProviderConfig {
+export interface OidcIdentityProviderConfig {
+  readonly identityProviderConfigName?: string;
+  readonly identityProviderConfigArn?: string;
+  readonly clusterName?: string;
+  readonly issuerUrl?: string;
+  readonly clientId?: string;
+  readonly usernameClaim?: string;
+  readonly usernamePrefix?: string;
+  readonly groupsClaim?: string;
+  readonly groupsPrefix?: string;
+  readonly requiredClaims?: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
+  readonly status?: string;
+}
+
+export interface OidcIdentityProviderConfigRequest {
   readonly identityProviderConfigName: string;
-  readonly identityProviderConfigArn: string;
-  readonly clusterName: string;
   readonly issuerUrl: string;
   readonly clientId: string;
-  readonly usernameClaim: string;
-  readonly usernamePrefix: string;
-  readonly groupsClaim: string;
-  readonly groupsPrefix: string;
-  readonly requiredClaims: {[key: string]: any};
-  readonly tags: {[key: string]: any};
-  readonly status: string;
+  readonly usernameClaim?: string;
+  readonly usernamePrefix?: string;
+  readonly groupsClaim?: string;
+  readonly groupsPrefix?: string;
+  readonly requiredClaims?: {[key: string]: any};
 }
 
-interface OidcIdentityProviderConfigRequest {
-  readonly identityProviderConfigName: string;
-  readonly issuerUrl: string;
-  readonly clientId: string;
-  readonly usernameClaim: string;
-  readonly usernamePrefix: string;
-  readonly groupsClaim: string;
-  readonly groupsPrefix: string;
-  readonly requiredClaims: {[key: string]: any};
+export interface Provider {
+  readonly keyArn?: string;
 }
 
-interface Provider {
-  readonly keyArn: string;
-}
-
-interface RegisterClusterRequest {
+export interface RegisterClusterRequest {
   readonly name: string;
   readonly connectorConfig: ConnectorConfigRequest;
-  readonly clientRequestToken: string;
-  readonly tags: {[key: string]: any};
+  readonly clientRequestToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface RegisterClusterResponse {
-  readonly cluster: Cluster;
+export interface RegisterClusterResponse {
+  readonly cluster?: Cluster;
 }
 
-interface RemoteAccessConfig {
-  readonly ec2SshKey: string;
-  readonly sourceSecurityGroups: [];
+export interface RemoteAccessConfig {
+  readonly ec2SshKey?: string;
+  readonly sourceSecurityGroups?: [];
 }
 
-interface ResourceInUseException {
-  readonly clusterName: string;
-  readonly nodegroupName: string;
-  readonly addonName: string;
-  readonly message: string;
+export interface ResourceInUseException {
+  readonly clusterName?: string;
+  readonly nodegroupName?: string;
+  readonly addonName?: string;
+  readonly message?: string;
 }
 
-interface ResourceLimitExceededException {
-  readonly clusterName: string;
-  readonly nodegroupName: string;
-  readonly message: string;
+export interface ResourceLimitExceededException {
+  readonly clusterName?: string;
+  readonly nodegroupName?: string;
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly clusterName: string;
-  readonly nodegroupName: string;
-  readonly fargateProfileName: string;
-  readonly addonName: string;
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly clusterName?: string;
+  readonly nodegroupName?: string;
+  readonly fargateProfileName?: string;
+  readonly addonName?: string;
+  readonly message?: string;
 }
 
-interface ResourcePropagationDelayException {
-  readonly message: string;
+export interface ResourcePropagationDelayException {
+  readonly message?: string;
 }
 
-interface ServerException {
-  readonly clusterName: string;
-  readonly nodegroupName: string;
-  readonly addonName: string;
-  readonly message: string;
+export interface ServerException {
+  readonly clusterName?: string;
+  readonly nodegroupName?: string;
+  readonly addonName?: string;
+  readonly message?: string;
 }
 
-interface ServiceUnavailableException {
-  readonly message: string;
+export interface ServiceUnavailableException {
+  readonly message?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface Taint {
-  readonly key: string;
-  readonly value: string;
-  readonly effect: string;
+export interface Taint {
+  readonly key?: string;
+  readonly value?: string;
+  readonly effect?: string;
 }
 
-interface UnsupportedAvailabilityZoneException {
-  readonly message: string;
-  readonly clusterName: string;
-  readonly nodegroupName: string;
-  readonly validZones: [];
+export interface UnsupportedAvailabilityZoneException {
+  readonly message?: string;
+  readonly clusterName?: string;
+  readonly nodegroupName?: string;
+  readonly validZones?: [];
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface Update {
-  readonly id: string;
-  readonly status: string;
-  readonly type: string;
-  readonly params: [];
-  readonly createdAt: Date;
-  readonly errors: [];
+export interface Update {
+  readonly id?: string;
+  readonly status?: string;
+  readonly type?: string;
+  readonly params?: [];
+  readonly createdAt?: Date;
+  readonly errors?: [];
 }
 
-interface UpdateAddonRequest {
+export interface UpdateAddonRequest {
   readonly clusterName: string;
   readonly addonName: string;
-  readonly addonVersion: string;
-  readonly serviceAccountRoleArn: string;
-  readonly resolveConflicts: string;
-  readonly clientRequestToken: string;
+  readonly addonVersion?: string;
+  readonly serviceAccountRoleArn?: string;
+  readonly resolveConflicts?: string;
+  readonly clientRequestToken?: string;
 }
 
-interface UpdateAddonResponse {
-  readonly update: Update;
+export interface UpdateAddonResponse {
+  readonly update?: Update;
 }
 
-interface UpdateClusterConfigRequest {
+export interface UpdateClusterConfigRequest {
   readonly name: string;
-  readonly resourcesVpcConfig: VpcConfigRequest;
-  readonly logging: Logging;
-  readonly clientRequestToken: string;
+  readonly resourcesVpcConfig?: VpcConfigRequest;
+  readonly logging?: Logging;
+  readonly clientRequestToken?: string;
 }
 
-interface UpdateClusterConfigResponse {
-  readonly update: Update;
+export interface UpdateClusterConfigResponse {
+  readonly update?: Update;
 }
 
-interface UpdateClusterVersionRequest {
+export interface UpdateClusterVersionRequest {
   readonly name: string;
   readonly version: string;
-  readonly clientRequestToken: string;
+  readonly clientRequestToken?: string;
 }
 
-interface UpdateClusterVersionResponse {
-  readonly update: Update;
+export interface UpdateClusterVersionResponse {
+  readonly update?: Update;
 }
 
-interface UpdateLabelsPayload {
-  readonly addOrUpdateLabels: {[key: string]: any};
-  readonly removeLabels: [];
+export interface UpdateLabelsPayload {
+  readonly addOrUpdateLabels?: {[key: string]: any};
+  readonly removeLabels?: [];
 }
 
-interface UpdateNodegroupConfigRequest {
+export interface UpdateNodegroupConfigRequest {
   readonly clusterName: string;
   readonly nodegroupName: string;
-  readonly labels: UpdateLabelsPayload;
-  readonly taints: UpdateTaintsPayload;
-  readonly scalingConfig: NodegroupScalingConfig;
-  readonly updateConfig: NodegroupUpdateConfig;
-  readonly clientRequestToken: string;
+  readonly labels?: UpdateLabelsPayload;
+  readonly taints?: UpdateTaintsPayload;
+  readonly scalingConfig?: NodegroupScalingConfig;
+  readonly updateConfig?: NodegroupUpdateConfig;
+  readonly clientRequestToken?: string;
 }
 
-interface UpdateNodegroupConfigResponse {
-  readonly update: Update;
+export interface UpdateNodegroupConfigResponse {
+  readonly update?: Update;
 }
 
-interface UpdateNodegroupVersionRequest {
+export interface UpdateNodegroupVersionRequest {
   readonly clusterName: string;
   readonly nodegroupName: string;
-  readonly version: string;
-  readonly releaseVersion: string;
-  readonly launchTemplate: LaunchTemplateSpecification;
-  readonly force: boolean;
-  readonly clientRequestToken: string;
+  readonly version?: string;
+  readonly releaseVersion?: string;
+  readonly launchTemplate?: LaunchTemplateSpecification;
+  readonly force?: boolean;
+  readonly clientRequestToken?: string;
 }
 
-interface UpdateNodegroupVersionResponse {
-  readonly update: Update;
+export interface UpdateNodegroupVersionResponse {
+  readonly update?: Update;
 }
 
-interface UpdateParam {
-  readonly type: string;
-  readonly value: string;
+export interface UpdateParam {
+  readonly type?: string;
+  readonly value?: string;
 }
 
-interface UpdateTaintsPayload {
-  readonly addOrUpdateTaints: [];
-  readonly removeTaints: [];
+export interface UpdateTaintsPayload {
+  readonly addOrUpdateTaints?: [];
+  readonly removeTaints?: [];
 }
 
-interface VpcConfigRequest {
-  readonly subnetIds: [];
-  readonly securityGroupIds: [];
-  readonly endpointPublicAccess: boolean;
-  readonly endpointPrivateAccess: boolean;
-  readonly publicAccessCidrs: [];
+export interface VpcConfigRequest {
+  readonly subnetIds?: [];
+  readonly securityGroupIds?: [];
+  readonly endpointPublicAccess?: boolean;
+  readonly endpointPrivateAccess?: boolean;
+  readonly publicAccessCidrs?: [];
 }
 
-interface VpcConfigResponse {
-  readonly subnetIds: [];
-  readonly securityGroupIds: [];
-  readonly clusterSecurityGroupId: string;
-  readonly vpcId: string;
-  readonly endpointPublicAccess: boolean;
-  readonly endpointPrivateAccess: boolean;
-  readonly publicAccessCidrs: [];
+export interface VpcConfigResponse {
+  readonly subnetIds?: [];
+  readonly securityGroupIds?: [];
+  readonly clusterSecurityGroupId?: string;
+  readonly vpcId?: string;
+  readonly endpointPublicAccess?: boolean;
+  readonly endpointPrivateAccess?: boolean;
+  readonly publicAccessCidrs?: [];
 }
+
 

@@ -4,12 +4,14 @@
 export interface CancelOrder {
   readonly OrderId: string;
 }
+
 export interface CreateOrder {
   readonly OutpostIdentifier: string;
   readonly LineItems: [];
   readonly PaymentOption: string;
   readonly PaymentTerm?: string;
 }
+
 export interface CreateOutpost {
   readonly Name: string;
   readonly Description?: string;
@@ -19,6 +21,7 @@ export interface CreateOutpost {
   readonly Tags?: {[key: string]: any};
   readonly SupportedHardwareType?: string;
 }
+
 export interface CreateSite {
   readonly Name: string;
   readonly Description?: string;
@@ -28,33 +31,42 @@ export interface CreateSite {
   readonly ShippingAddress?: Address;
   readonly RackPhysicalProperties?: RackPhysicalProperties;
 }
+
 export interface DeleteOutpost {
   readonly OutpostId: string;
 }
+
 export interface DeleteSite {
   readonly SiteId: string;
 }
+
 export interface GetCatalogItem {
   readonly CatalogItemId: string;
 }
+
 export interface GetOrder {
   readonly OrderId: string;
 }
+
 export interface GetOutpost {
   readonly OutpostId: string;
 }
+
 export interface GetOutpostInstanceTypes {
   readonly OutpostId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetSite {
   readonly SiteId: string;
 }
+
 export interface GetSiteAddress {
   readonly SiteId: string;
   readonly AddressType: string;
 }
+
 export interface ListCatalogItems {
   readonly NextToken?: string;
   readonly MaxResults?: number;
@@ -62,11 +74,13 @@ export interface ListCatalogItems {
   readonly SupportedStorageFilter?: [];
   readonly EC2FamilyFilter?: [];
 }
+
 export interface ListOrders {
   readonly OutpostIdentifierFilter?: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListOutposts {
   readonly NextToken?: string;
   readonly MaxResults?: number;
@@ -74,38 +88,46 @@ export interface ListOutposts {
   readonly AvailabilityZoneFilter?: [];
   readonly AvailabilityZoneIdFilter?: [];
 }
+
 export interface ListSites {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateOutpost {
   readonly OutpostId: string;
   readonly Name?: string;
   readonly Description?: string;
   readonly SupportedHardwareType?: string;
 }
+
 export interface UpdateSite {
   readonly SiteId: string;
   readonly Name?: string;
   readonly Description?: string;
   readonly Notes?: string;
 }
+
 export interface UpdateSiteAddress {
   readonly SiteId: string;
   readonly AddressType: string;
   readonly Address: Address;
 }
+
 export interface UpdateSiteRackPhysicalProperties {
   readonly SiteId: string;
   readonly PowerDrawKva?: string;
@@ -119,375 +141,374 @@ export interface UpdateSiteRackPhysicalProperties {
   readonly MaximumSupportedWeightLbs?: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface Address {
-  readonly ContactName: string;
-  readonly ContactPhoneNumber: string;
+export interface Address {
+  readonly ContactName?: string;
+  readonly ContactPhoneNumber?: string;
   readonly AddressLine1: string;
-  readonly AddressLine2: string;
-  readonly AddressLine3: string;
+  readonly AddressLine2?: string;
+  readonly AddressLine3?: string;
   readonly City: string;
   readonly StateOrRegion: string;
-  readonly DistrictOrCounty: string;
+  readonly DistrictOrCounty?: string;
   readonly PostalCode: string;
   readonly CountryCode: string;
-  readonly Municipality: string;
+  readonly Municipality?: string;
 }
 
-interface CancelOrderInput {
+export interface CancelOrderInput {
   readonly OrderId: string;
 }
 
-interface CancelOrderOutput {
+export interface CancelOrderOutput {
 }
 
-interface CatalogItem {
-  readonly CatalogItemId: string;
-  readonly ItemStatus: string;
-  readonly EC2Capacities: [];
-  readonly PowerKva: unknown;
-  readonly WeightLbs: number;
-  readonly SupportedUplinkGbps: [];
-  readonly SupportedStorage: [];
+export interface CatalogItem {
+  readonly CatalogItemId?: string;
+  readonly ItemStatus?: string;
+  readonly EC2Capacities?: [];
+  readonly PowerKva?: unknown;
+  readonly WeightLbs?: number;
+  readonly SupportedUplinkGbps?: [];
+  readonly SupportedStorage?: [];
 }
 
-interface ConflictException {
-  readonly Message: string;
-  readonly ResourceId: string;
-  readonly ResourceType: string;
+export interface ConflictException {
+  readonly Message?: string;
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
 }
 
-interface CreateOrderInput {
+export interface CreateOrderInput {
   readonly OutpostIdentifier: string;
   readonly LineItems: [];
   readonly PaymentOption: string;
-  readonly PaymentTerm: string;
+  readonly PaymentTerm?: string;
 }
 
-interface CreateOrderOutput {
-  readonly Order: Order;
+export interface CreateOrderOutput {
+  readonly Order?: Order;
 }
 
-interface CreateOutpostInput {
+export interface CreateOutpostInput {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly SiteId: string;
-  readonly AvailabilityZone: string;
-  readonly AvailabilityZoneId: string;
-  readonly Tags: {[key: string]: any};
-  readonly SupportedHardwareType: string;
+  readonly AvailabilityZone?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly SupportedHardwareType?: string;
 }
 
-interface CreateOutpostOutput {
-  readonly Outpost: Outpost;
+export interface CreateOutpostOutput {
+  readonly Outpost?: Outpost;
 }
 
-interface CreateSiteInput {
+export interface CreateSiteInput {
   readonly Name: string;
-  readonly Description: string;
-  readonly Notes: string;
-  readonly Tags: {[key: string]: any};
-  readonly OperatingAddress: Address;
-  readonly ShippingAddress: Address;
-  readonly RackPhysicalProperties: RackPhysicalProperties;
+  readonly Description?: string;
+  readonly Notes?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly OperatingAddress?: Address;
+  readonly ShippingAddress?: Address;
+  readonly RackPhysicalProperties?: RackPhysicalProperties;
 }
 
-interface CreateSiteOutput {
-  readonly Site: Site;
+export interface CreateSiteOutput {
+  readonly Site?: Site;
 }
 
-interface DeleteOutpostInput {
+export interface DeleteOutpostInput {
   readonly OutpostId: string;
 }
 
-interface DeleteOutpostOutput {
+export interface DeleteOutpostOutput {
 }
 
-interface DeleteSiteInput {
+export interface DeleteSiteInput {
   readonly SiteId: string;
 }
 
-interface DeleteSiteOutput {
+export interface DeleteSiteOutput {
 }
 
-interface EC2Capacity {
-  readonly Family: string;
-  readonly MaxSize: string;
-  readonly Quantity: string;
+export interface EC2Capacity {
+  readonly Family?: string;
+  readonly MaxSize?: string;
+  readonly Quantity?: string;
 }
 
-interface GetCatalogItemInput {
+export interface GetCatalogItemInput {
   readonly CatalogItemId: string;
 }
 
-interface GetCatalogItemOutput {
-  readonly CatalogItem: CatalogItem;
+export interface GetCatalogItemOutput {
+  readonly CatalogItem?: CatalogItem;
 }
 
-interface GetOrderInput {
+export interface GetOrderInput {
   readonly OrderId: string;
 }
 
-interface GetOrderOutput {
-  readonly Order: Order;
+export interface GetOrderOutput {
+  readonly Order?: Order;
 }
 
-interface GetOutpostInput {
+export interface GetOutpostInput {
   readonly OutpostId: string;
 }
 
-interface GetOutpostInstanceTypesInput {
+export interface GetOutpostInstanceTypesInput {
   readonly OutpostId: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetOutpostInstanceTypesOutput {
-  readonly InstanceTypes: [];
-  readonly NextToken: string;
-  readonly OutpostId: string;
-  readonly OutpostArn: string;
+export interface GetOutpostInstanceTypesOutput {
+  readonly InstanceTypes?: [];
+  readonly NextToken?: string;
+  readonly OutpostId?: string;
+  readonly OutpostArn?: string;
 }
 
-interface GetOutpostOutput {
-  readonly Outpost: Outpost;
+export interface GetOutpostOutput {
+  readonly Outpost?: Outpost;
 }
 
-interface GetSiteAddressInput {
+export interface GetSiteAddressInput {
   readonly SiteId: string;
   readonly AddressType: string;
 }
 
-interface GetSiteAddressOutput {
+export interface GetSiteAddressOutput {
+  readonly SiteId?: string;
+  readonly AddressType?: string;
+  readonly Address?: Address;
+}
+
+export interface GetSiteInput {
   readonly SiteId: string;
-  readonly AddressType: string;
-  readonly Address: Address;
 }
 
-interface GetSiteInput {
-  readonly SiteId: string;
+export interface GetSiteOutput {
+  readonly Site?: Site;
 }
 
-interface GetSiteOutput {
-  readonly Site: Site;
+export interface InstanceTypeItem {
+  readonly InstanceType?: string;
 }
 
-interface InstanceTypeItem {
-  readonly InstanceType: string;
+export interface InternalServerException {
+  readonly Message?: string;
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface LineItem {
+  readonly CatalogItemId?: string;
+  readonly LineItemId?: string;
+  readonly Quantity?: number;
+  readonly Status?: string;
 }
 
-interface LineItem {
-  readonly CatalogItemId: string;
-  readonly LineItemId: string;
-  readonly Quantity: number;
-  readonly Status: string;
+export interface LineItemRequest {
+  readonly CatalogItemId?: string;
+  readonly Quantity?: number;
 }
 
-interface LineItemRequest {
-  readonly CatalogItemId: string;
-  readonly Quantity: number;
+export interface ListCatalogItemsInput {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ItemClassFilter?: [];
+  readonly SupportedStorageFilter?: [];
+  readonly EC2FamilyFilter?: [];
 }
 
-interface ListCatalogItemsInput {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ItemClassFilter: [];
-  readonly SupportedStorageFilter: [];
-  readonly EC2FamilyFilter: [];
+export interface ListCatalogItemsOutput {
+  readonly CatalogItems?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCatalogItemsOutput {
-  readonly CatalogItems: [];
-  readonly NextToken: string;
+export interface ListOrdersInput {
+  readonly OutpostIdentifierFilter?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListOrdersInput {
-  readonly OutpostIdentifierFilter: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListOrdersOutput {
+  readonly Orders?: [];
+  readonly NextToken?: string;
 }
 
-interface ListOrdersOutput {
-  readonly Orders: [];
-  readonly NextToken: string;
+export interface ListOutpostsInput {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly LifeCycleStatusFilter?: [];
+  readonly AvailabilityZoneFilter?: [];
+  readonly AvailabilityZoneIdFilter?: [];
 }
 
-interface ListOutpostsInput {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly LifeCycleStatusFilter: [];
-  readonly AvailabilityZoneFilter: [];
-  readonly AvailabilityZoneIdFilter: [];
+export interface ListOutpostsOutput {
+  readonly Outposts?: [];
+  readonly NextToken?: string;
 }
 
-interface ListOutpostsOutput {
-  readonly Outposts: [];
-  readonly NextToken: string;
+export interface ListSitesInput {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListSitesInput {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListSitesOutput {
+  readonly Sites?: [];
+  readonly NextToken?: string;
 }
 
-interface ListSitesOutput {
-  readonly Sites: [];
-  readonly NextToken: string;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface NotFoundException {
-  readonly Message: string;
+export interface NotFoundException {
+  readonly Message?: string;
 }
 
-interface Order {
-  readonly OutpostId: string;
-  readonly OrderId: string;
-  readonly Status: string;
-  readonly LineItems: [];
-  readonly PaymentOption: string;
-  readonly OrderSubmissionDate: Date;
-  readonly OrderFulfilledDate: Date;
+export interface Order {
+  readonly OutpostId?: string;
+  readonly OrderId?: string;
+  readonly Status?: string;
+  readonly LineItems?: [];
+  readonly PaymentOption?: string;
+  readonly OrderSubmissionDate?: Date;
+  readonly OrderFulfilledDate?: Date;
 }
 
-interface OrderSummary {
-  readonly OutpostId: string;
-  readonly OrderId: string;
-  readonly OrderType: string;
-  readonly Status: string;
-  readonly LineItemCountsByStatus: {[key: string]: any};
-  readonly OrderSubmissionDate: Date;
-  readonly OrderFulfilledDate: Date;
+export interface OrderSummary {
+  readonly OutpostId?: string;
+  readonly OrderId?: string;
+  readonly OrderType?: string;
+  readonly Status?: string;
+  readonly LineItemCountsByStatus?: {[key: string]: any};
+  readonly OrderSubmissionDate?: Date;
+  readonly OrderFulfilledDate?: Date;
 }
 
-interface Outpost {
-  readonly OutpostId: string;
-  readonly OwnerId: string;
-  readonly OutpostArn: string;
-  readonly SiteId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly LifeCycleStatus: string;
-  readonly AvailabilityZone: string;
-  readonly AvailabilityZoneId: string;
-  readonly Tags: {[key: string]: any};
-  readonly SiteArn: string;
-  readonly SupportedHardwareType: string;
+export interface Outpost {
+  readonly OutpostId?: string;
+  readonly OwnerId?: string;
+  readonly OutpostArn?: string;
+  readonly SiteId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly LifeCycleStatus?: string;
+  readonly AvailabilityZone?: string;
+  readonly AvailabilityZoneId?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly SiteArn?: string;
+  readonly SupportedHardwareType?: string;
 }
 
-interface RackPhysicalProperties {
-  readonly PowerDrawKva: string;
-  readonly PowerPhase: string;
-  readonly PowerConnector: string;
-  readonly PowerFeedDrop: string;
-  readonly UplinkGbps: string;
-  readonly UplinkCount: string;
-  readonly FiberOpticCableType: string;
-  readonly OpticalStandard: string;
-  readonly MaximumSupportedWeightLbs: string;
+export interface RackPhysicalProperties {
+  readonly PowerDrawKva?: string;
+  readonly PowerPhase?: string;
+  readonly PowerConnector?: string;
+  readonly PowerFeedDrop?: string;
+  readonly UplinkGbps?: string;
+  readonly UplinkCount?: string;
+  readonly FiberOpticCableType?: string;
+  readonly OpticalStandard?: string;
+  readonly MaximumSupportedWeightLbs?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface Site {
-  readonly SiteId: string;
-  readonly AccountId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Tags: {[key: string]: any};
-  readonly SiteArn: string;
-  readonly Notes: string;
-  readonly OperatingAddressCountryCode: string;
-  readonly OperatingAddressStateOrRegion: string;
-  readonly OperatingAddressCity: string;
-  readonly RackPhysicalProperties: RackPhysicalProperties;
+export interface Site {
+  readonly SiteId?: string;
+  readonly AccountId?: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly SiteArn?: string;
+  readonly Notes?: string;
+  readonly OperatingAddressCountryCode?: string;
+  readonly OperatingAddressStateOrRegion?: string;
+  readonly OperatingAddressCity?: string;
+  readonly RackPhysicalProperties?: RackPhysicalProperties;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateOutpostInput {
+export interface UpdateOutpostInput {
   readonly OutpostId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly SupportedHardwareType: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly SupportedHardwareType?: string;
 }
 
-interface UpdateOutpostOutput {
-  readonly Outpost: Outpost;
+export interface UpdateOutpostOutput {
+  readonly Outpost?: Outpost;
 }
 
-interface UpdateSiteAddressInput {
+export interface UpdateSiteAddressInput {
   readonly SiteId: string;
   readonly AddressType: string;
   readonly Address: Address;
 }
 
-interface UpdateSiteAddressOutput {
-  readonly AddressType: string;
-  readonly Address: Address;
+export interface UpdateSiteAddressOutput {
+  readonly AddressType?: string;
+  readonly Address?: Address;
 }
 
-interface UpdateSiteInput {
+export interface UpdateSiteInput {
   readonly SiteId: string;
-  readonly Name: string;
-  readonly Description: string;
-  readonly Notes: string;
+  readonly Name?: string;
+  readonly Description?: string;
+  readonly Notes?: string;
 }
 
-interface UpdateSiteOutput {
-  readonly Site: Site;
+export interface UpdateSiteOutput {
+  readonly Site?: Site;
 }
 
-interface UpdateSiteRackPhysicalPropertiesInput {
+export interface UpdateSiteRackPhysicalPropertiesInput {
   readonly SiteId: string;
-  readonly PowerDrawKva: string;
-  readonly PowerPhase: string;
-  readonly PowerConnector: string;
-  readonly PowerFeedDrop: string;
-  readonly UplinkGbps: string;
-  readonly UplinkCount: string;
-  readonly FiberOpticCableType: string;
-  readonly OpticalStandard: string;
-  readonly MaximumSupportedWeightLbs: string;
+  readonly PowerDrawKva?: string;
+  readonly PowerPhase?: string;
+  readonly PowerConnector?: string;
+  readonly PowerFeedDrop?: string;
+  readonly UplinkGbps?: string;
+  readonly UplinkCount?: string;
+  readonly FiberOpticCableType?: string;
+  readonly OpticalStandard?: string;
+  readonly MaximumSupportedWeightLbs?: string;
 }
 
-interface UpdateSiteRackPhysicalPropertiesOutput {
-  readonly Site: Site;
+export interface UpdateSiteRackPhysicalPropertiesOutput {
+  readonly Site?: Site;
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

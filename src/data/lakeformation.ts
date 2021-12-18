@@ -6,38 +6,47 @@ export interface AddLFTagsToResource {
   readonly Resource: Resource;
   readonly LFTags: [];
 }
+
 export interface BatchGrantPermissions {
   readonly CatalogId?: string;
   readonly Entries: [];
 }
+
 export interface BatchRevokePermissions {
   readonly CatalogId?: string;
   readonly Entries: [];
 }
+
 export interface CancelTransaction {
   readonly TransactionId: string;
 }
+
 export interface CommitTransaction {
   readonly TransactionId: string;
 }
+
 export interface CreateDataCellsFilter {
   readonly TableData: DataCellsFilter;
 }
+
 export interface CreateLFTag {
   readonly CatalogId?: string;
   readonly TagKey: string;
   readonly TagValues: [];
 }
+
 export interface DeleteDataCellsFilter {
   readonly TableCatalogId?: string;
   readonly DatabaseName?: string;
   readonly TableName?: string;
   readonly Name?: string;
 }
+
 export interface DeleteLFTag {
   readonly CatalogId?: string;
   readonly TagKey: string;
 }
+
 export interface DeleteObjectsOnCancel {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -45,42 +54,53 @@ export interface DeleteObjectsOnCancel {
   readonly TransactionId: string;
   readonly Objects: [];
 }
+
 export interface DeregisterResource {
   readonly ResourceArn: string;
 }
+
 export interface DescribeResource {
   readonly ResourceArn: string;
 }
+
 export interface DescribeTransaction {
   readonly TransactionId: string;
 }
+
 export interface ExtendTransaction {
   readonly TransactionId?: string;
 }
+
 export interface GetDataLakeSettings {
   readonly CatalogId?: string;
 }
+
 export interface GetEffectivePermissionsForPath {
   readonly CatalogId?: string;
   readonly ResourceArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetLFTag {
   readonly CatalogId?: string;
   readonly TagKey: string;
 }
+
 export interface GetQueryState {
   readonly QueryId: string;
 }
+
 export interface GetQueryStatistics {
   readonly QueryId: string;
 }
+
 export interface GetResourceLFTags {
   readonly CatalogId?: string;
   readonly Resource: Resource;
   readonly ShowAssignedLFTags?: boolean;
 }
+
 export interface GetTableObjects {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -91,16 +111,19 @@ export interface GetTableObjects {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetWorkUnitResults {
   readonly QueryId: string;
   readonly WorkUnitId: number;
   readonly WorkUnitToken: string;
 }
+
 export interface GetWorkUnits {
   readonly NextToken?: string;
   readonly PageSize?: number;
   readonly QueryId: string;
 }
+
 export interface GrantPermissions {
   readonly CatalogId?: string;
   readonly Principal: DataLakePrincipal;
@@ -108,17 +131,20 @@ export interface GrantPermissions {
   readonly Permissions: [];
   readonly PermissionsWithGrantOption?: [];
 }
+
 export interface ListDataCellsFilter {
   readonly Table?: TableResource;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListLFTags {
   readonly CatalogId?: string;
   readonly ResourceShareType?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListPermissions {
   readonly CatalogId?: string;
   readonly Principal?: DataLakePrincipal;
@@ -128,11 +154,13 @@ export interface ListPermissions {
   readonly MaxResults?: number;
   readonly IncludeRelated?: string;
 }
+
 export interface ListResources {
   readonly FilterConditionList?: [];
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTableStorageOptimizers {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -141,26 +169,31 @@ export interface ListTableStorageOptimizers {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTransactions {
   readonly CatalogId?: string;
   readonly StatusFilter?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface PutDataLakeSettings {
   readonly CatalogId?: string;
   readonly DataLakeSettings: DataLakeSettings;
 }
+
 export interface RegisterResource {
   readonly ResourceArn: string;
   readonly UseServiceLinkedRole?: boolean;
   readonly RoleArn?: string;
 }
+
 export interface RemoveLFTagsFromResource {
   readonly CatalogId?: string;
   readonly Resource: Resource;
   readonly LFTags: [];
 }
+
 export interface RevokePermissions {
   readonly CatalogId?: string;
   readonly Principal: DataLakePrincipal;
@@ -168,35 +201,42 @@ export interface RevokePermissions {
   readonly Permissions: [];
   readonly PermissionsWithGrantOption?: [];
 }
+
 export interface SearchDatabasesByLFTags {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly CatalogId?: string;
   readonly Expression: [];
 }
+
 export interface SearchTablesByLFTags {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly CatalogId?: string;
   readonly Expression: [];
 }
+
 export interface StartQueryPlanning {
   readonly QueryPlanningContext: QueryPlanningContext;
   readonly QueryString: string;
 }
+
 export interface StartTransaction {
   readonly TransactionType?: string;
 }
+
 export interface UpdateLFTag {
   readonly CatalogId?: string;
   readonly TagKey: string;
   readonly TagValuesToDelete?: [];
   readonly TagValuesToAdd?: [];
 }
+
 export interface UpdateResource {
   readonly RoleArn: string;
   readonly ResourceArn: string;
 }
+
 export interface UpdateTableObjects {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -204,6 +244,7 @@ export interface UpdateTableObjects {
   readonly TransactionId: string;
   readonly WriteOperations: [];
 }
+
 export interface UpdateTableStorageOptimizer {
   readonly CatalogId?: string;
   readonly DatabaseName: string;
@@ -211,746 +252,745 @@ export interface UpdateTableStorageOptimizer {
   readonly StorageOptimizerConfig: {[key: string]: any};
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface AddLFTagsToResourceRequest {
-  readonly CatalogId: string;
+export interface AddLFTagsToResourceRequest {
+  readonly CatalogId?: string;
   readonly Resource: Resource;
   readonly LFTags: [];
 }
 
-interface AddLFTagsToResourceResponse {
-  readonly Failures: [];
+export interface AddLFTagsToResourceResponse {
+  readonly Failures?: [];
 }
 
-interface AddObjectInput {
+export interface AddObjectInput {
   readonly Uri: string;
   readonly ETag: string;
   readonly Size: number;
-  readonly PartitionValues: [];
+  readonly PartitionValues?: [];
 }
 
-interface AllRowsWildcard {
+export interface AllRowsWildcard {
 }
 
-interface AlreadyExistsException {
-  readonly Message: string;
+export interface AlreadyExistsException {
+  readonly Message?: string;
 }
 
-interface BatchGrantPermissionsRequest {
-  readonly CatalogId: string;
+export interface BatchGrantPermissionsRequest {
+  readonly CatalogId?: string;
   readonly Entries: [];
 }
 
-interface BatchGrantPermissionsResponse {
-  readonly Failures: [];
+export interface BatchGrantPermissionsResponse {
+  readonly Failures?: [];
 }
 
-interface BatchPermissionsFailureEntry {
-  readonly RequestEntry: BatchPermissionsRequestEntry;
-  readonly Error: ErrorDetail;
+export interface BatchPermissionsFailureEntry {
+  readonly RequestEntry?: BatchPermissionsRequestEntry;
+  readonly Error?: ErrorDetail;
 }
 
-interface BatchPermissionsRequestEntry {
+export interface BatchPermissionsRequestEntry {
   readonly Id: string;
-  readonly Principal: DataLakePrincipal;
-  readonly Resource: Resource;
-  readonly Permissions: [];
-  readonly PermissionsWithGrantOption: [];
+  readonly Principal?: DataLakePrincipal;
+  readonly Resource?: Resource;
+  readonly Permissions?: [];
+  readonly PermissionsWithGrantOption?: [];
 }
 
-interface BatchRevokePermissionsRequest {
-  readonly CatalogId: string;
+export interface BatchRevokePermissionsRequest {
+  readonly CatalogId?: string;
   readonly Entries: [];
 }
 
-interface BatchRevokePermissionsResponse {
-  readonly Failures: [];
+export interface BatchRevokePermissionsResponse {
+  readonly Failures?: [];
 }
 
-interface CancelTransactionRequest {
+export interface CancelTransactionRequest {
   readonly TransactionId: string;
 }
 
-interface CancelTransactionResponse {
+export interface CancelTransactionResponse {
 }
 
-interface CatalogResource {
+export interface CatalogResource {
 }
 
-interface ColumnLFTag {
-  readonly Name: string;
-  readonly LFTags: [];
+export interface ColumnLFTag {
+  readonly Name?: string;
+  readonly LFTags?: [];
 }
 
-interface ColumnWildcard {
-  readonly ExcludedColumnNames: [];
+export interface ColumnWildcard {
+  readonly ExcludedColumnNames?: [];
 }
 
-interface CommitTransactionRequest {
+export interface CommitTransactionRequest {
   readonly TransactionId: string;
 }
 
-interface CommitTransactionResponse {
-  readonly TransactionStatus: string;
+export interface CommitTransactionResponse {
+  readonly TransactionStatus?: string;
 }
 
-interface ConcurrentModificationException {
-  readonly Message: string;
+export interface ConcurrentModificationException {
+  readonly Message?: string;
 }
 
-interface CreateDataCellsFilterRequest {
+export interface CreateDataCellsFilterRequest {
   readonly TableData: DataCellsFilter;
 }
 
-interface CreateDataCellsFilterResponse {
+export interface CreateDataCellsFilterResponse {
 }
 
-interface CreateLFTagRequest {
-  readonly CatalogId: string;
+export interface CreateLFTagRequest {
+  readonly CatalogId?: string;
   readonly TagKey: string;
   readonly TagValues: [];
 }
 
-interface CreateLFTagResponse {
+export interface CreateLFTagResponse {
 }
 
-interface DataCellsFilter {
+export interface DataCellsFilter {
   readonly TableCatalogId: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly Name: string;
-  readonly RowFilter: RowFilter;
-  readonly ColumnNames: [];
-  readonly ColumnWildcard: ColumnWildcard;
+  readonly RowFilter?: RowFilter;
+  readonly ColumnNames?: [];
+  readonly ColumnWildcard?: ColumnWildcard;
 }
 
-interface DataCellsFilterResource {
-  readonly TableCatalogId: string;
-  readonly DatabaseName: string;
-  readonly TableName: string;
-  readonly Name: string;
+export interface DataCellsFilterResource {
+  readonly TableCatalogId?: string;
+  readonly DatabaseName?: string;
+  readonly TableName?: string;
+  readonly Name?: string;
 }
 
-interface DataLakePrincipal {
-  readonly DataLakePrincipalIdentifier: string;
+export interface DataLakePrincipal {
+  readonly DataLakePrincipalIdentifier?: string;
 }
 
-interface DataLakeSettings {
-  readonly DataLakeAdmins: [];
-  readonly CreateDatabaseDefaultPermissions: [];
-  readonly CreateTableDefaultPermissions: [];
-  readonly TrustedResourceOwners: [];
+export interface DataLakeSettings {
+  readonly DataLakeAdmins?: [];
+  readonly CreateDatabaseDefaultPermissions?: [];
+  readonly CreateTableDefaultPermissions?: [];
+  readonly TrustedResourceOwners?: [];
 }
 
-interface DataLocationResource {
-  readonly CatalogId: string;
+export interface DataLocationResource {
+  readonly CatalogId?: string;
   readonly ResourceArn: string;
 }
 
-interface DatabaseResource {
-  readonly CatalogId: string;
+export interface DatabaseResource {
+  readonly CatalogId?: string;
   readonly Name: string;
 }
 
-interface DeleteDataCellsFilterRequest {
-  readonly TableCatalogId: string;
-  readonly DatabaseName: string;
-  readonly TableName: string;
-  readonly Name: string;
+export interface DeleteDataCellsFilterRequest {
+  readonly TableCatalogId?: string;
+  readonly DatabaseName?: string;
+  readonly TableName?: string;
+  readonly Name?: string;
 }
 
-interface DeleteDataCellsFilterResponse {
+export interface DeleteDataCellsFilterResponse {
 }
 
-interface DeleteLFTagRequest {
-  readonly CatalogId: string;
+export interface DeleteLFTagRequest {
+  readonly CatalogId?: string;
   readonly TagKey: string;
 }
 
-interface DeleteLFTagResponse {
+export interface DeleteLFTagResponse {
 }
 
-interface DeleteObjectInput {
+export interface DeleteObjectInput {
   readonly Uri: string;
-  readonly ETag: string;
-  readonly PartitionValues: [];
+  readonly ETag?: string;
+  readonly PartitionValues?: [];
 }
 
-interface DeleteObjectsOnCancelRequest {
-  readonly CatalogId: string;
+export interface DeleteObjectsOnCancelRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly TransactionId: string;
   readonly Objects: [];
 }
 
-interface DeleteObjectsOnCancelResponse {
+export interface DeleteObjectsOnCancelResponse {
 }
 
-interface DeregisterResourceRequest {
+export interface DeregisterResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface DeregisterResourceResponse {
+export interface DeregisterResourceResponse {
 }
 
-interface DescribeResourceRequest {
+export interface DescribeResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface DescribeResourceResponse {
-  readonly ResourceInfo: ResourceInfo;
+export interface DescribeResourceResponse {
+  readonly ResourceInfo?: ResourceInfo;
 }
 
-interface DescribeTransactionRequest {
+export interface DescribeTransactionRequest {
   readonly TransactionId: string;
 }
 
-interface DescribeTransactionResponse {
-  readonly TransactionDescription: TransactionDescription;
+export interface DescribeTransactionResponse {
+  readonly TransactionDescription?: TransactionDescription;
 }
 
-interface DetailsMap {
-  readonly ResourceShare: [];
+export interface DetailsMap {
+  readonly ResourceShare?: [];
 }
 
-interface EntityNotFoundException {
-  readonly Message: string;
+export interface EntityNotFoundException {
+  readonly Message?: string;
 }
 
-interface ErrorDetail {
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface ErrorDetail {
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface ExecutionStatistics {
-  readonly AverageExecutionTimeMillis: number;
-  readonly DataScannedBytes: number;
-  readonly WorkUnitsExecutedCount: number;
+export interface ExecutionStatistics {
+  readonly AverageExecutionTimeMillis?: number;
+  readonly DataScannedBytes?: number;
+  readonly WorkUnitsExecutedCount?: number;
 }
 
-interface ExpiredException {
-  readonly Message: string;
+export interface ExpiredException {
+  readonly Message?: string;
 }
 
-interface ExtendTransactionRequest {
-  readonly TransactionId: string;
+export interface ExtendTransactionRequest {
+  readonly TransactionId?: string;
 }
 
-interface ExtendTransactionResponse {
+export interface ExtendTransactionResponse {
 }
 
-interface FilterCondition {
-  readonly Field: string;
-  readonly ComparisonOperator: string;
-  readonly StringValueList: [];
+export interface FilterCondition {
+  readonly Field?: string;
+  readonly ComparisonOperator?: string;
+  readonly StringValueList?: [];
 }
 
-interface GetDataLakeSettingsRequest {
-  readonly CatalogId: string;
+export interface GetDataLakeSettingsRequest {
+  readonly CatalogId?: string;
 }
 
-interface GetDataLakeSettingsResponse {
-  readonly DataLakeSettings: DataLakeSettings;
+export interface GetDataLakeSettingsResponse {
+  readonly DataLakeSettings?: DataLakeSettings;
 }
 
-interface GetEffectivePermissionsForPathRequest {
-  readonly CatalogId: string;
+export interface GetEffectivePermissionsForPathRequest {
+  readonly CatalogId?: string;
   readonly ResourceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetEffectivePermissionsForPathResponse {
-  readonly Permissions: [];
-  readonly NextToken: string;
+export interface GetEffectivePermissionsForPathResponse {
+  readonly Permissions?: [];
+  readonly NextToken?: string;
 }
 
-interface GetLFTagRequest {
-  readonly CatalogId: string;
+export interface GetLFTagRequest {
+  readonly CatalogId?: string;
   readonly TagKey: string;
 }
 
-interface GetLFTagResponse {
-  readonly CatalogId: string;
-  readonly TagKey: string;
-  readonly TagValues: [];
+export interface GetLFTagResponse {
+  readonly CatalogId?: string;
+  readonly TagKey?: string;
+  readonly TagValues?: [];
 }
 
-interface GetQueryStateRequest {
+export interface GetQueryStateRequest {
   readonly QueryId: string;
 }
 
-interface GetQueryStateResponse {
-  readonly Error: string;
+export interface GetQueryStateResponse {
+  readonly Error?: string;
   readonly State: string;
 }
 
-interface GetQueryStatisticsRequest {
+export interface GetQueryStatisticsRequest {
   readonly QueryId: string;
 }
 
-interface GetQueryStatisticsResponse {
-  readonly ExecutionStatistics: ExecutionStatistics;
-  readonly PlanningStatistics: PlanningStatistics;
-  readonly QuerySubmissionTime: Date;
+export interface GetQueryStatisticsResponse {
+  readonly ExecutionStatistics?: ExecutionStatistics;
+  readonly PlanningStatistics?: PlanningStatistics;
+  readonly QuerySubmissionTime?: Date;
 }
 
-interface GetResourceLFTagsRequest {
-  readonly CatalogId: string;
+export interface GetResourceLFTagsRequest {
+  readonly CatalogId?: string;
   readonly Resource: Resource;
-  readonly ShowAssignedLFTags: boolean;
+  readonly ShowAssignedLFTags?: boolean;
 }
 
-interface GetResourceLFTagsResponse {
-  readonly LFTagOnDatabase: [];
-  readonly LFTagsOnTable: [];
-  readonly LFTagsOnColumns: [];
+export interface GetResourceLFTagsResponse {
+  readonly LFTagOnDatabase?: [];
+  readonly LFTagsOnTable?: [];
+  readonly LFTagsOnColumns?: [];
 }
 
-interface GetTableObjectsRequest {
-  readonly CatalogId: string;
+export interface GetTableObjectsRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly TransactionId: string;
-  readonly QueryAsOfTime: Date;
-  readonly PartitionPredicate: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly TransactionId?: string;
+  readonly QueryAsOfTime?: Date;
+  readonly PartitionPredicate?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetTableObjectsResponse {
-  readonly Objects: [];
-  readonly NextToken: string;
+export interface GetTableObjectsResponse {
+  readonly Objects?: [];
+  readonly NextToken?: string;
 }
 
-interface GetWorkUnitResultsRequest {
+export interface GetWorkUnitResultsRequest {
   readonly QueryId: string;
   readonly WorkUnitId: number;
   readonly WorkUnitToken: string;
 }
 
-interface GetWorkUnitResultsResponse {
-  readonly ResultStream: unknown;
+export interface GetWorkUnitResultsResponse {
+  readonly ResultStream?: unknown;
 }
 
-interface GetWorkUnitsRequest {
-  readonly NextToken: string;
-  readonly PageSize: number;
+export interface GetWorkUnitsRequest {
+  readonly NextToken?: string;
+  readonly PageSize?: number;
   readonly QueryId: string;
 }
 
-interface GetWorkUnitsResponse {
-  readonly NextToken: string;
+export interface GetWorkUnitsResponse {
+  readonly NextToken?: string;
   readonly QueryId: string;
   readonly WorkUnitRanges: [];
 }
 
-interface GlueEncryptionException {
-  readonly Message: string;
+export interface GlueEncryptionException {
+  readonly Message?: string;
 }
 
-interface GrantPermissionsRequest {
-  readonly CatalogId: string;
+export interface GrantPermissionsRequest {
+  readonly CatalogId?: string;
   readonly Principal: DataLakePrincipal;
   readonly Resource: Resource;
   readonly Permissions: [];
-  readonly PermissionsWithGrantOption: [];
+  readonly PermissionsWithGrantOption?: [];
 }
 
-interface GrantPermissionsResponse {
+export interface GrantPermissionsResponse {
 }
 
-interface InternalServiceException {
-  readonly Message: string;
+export interface InternalServiceException {
+  readonly Message?: string;
 }
 
-interface InvalidInputException {
-  readonly Message: string;
+export interface InvalidInputException {
+  readonly Message?: string;
 }
 
-interface LFTag {
+export interface LFTag {
   readonly TagKey: string;
   readonly TagValues: [];
 }
 
-interface LFTagError {
-  readonly LFTag: LFTagPair;
-  readonly Error: ErrorDetail;
+export interface LFTagError {
+  readonly LFTag?: LFTagPair;
+  readonly Error?: ErrorDetail;
 }
 
-interface LFTagKeyResource {
-  readonly CatalogId: string;
+export interface LFTagKeyResource {
+  readonly CatalogId?: string;
   readonly TagKey: string;
   readonly TagValues: [];
 }
 
-interface LFTagPair {
-  readonly CatalogId: string;
+export interface LFTagPair {
+  readonly CatalogId?: string;
   readonly TagKey: string;
   readonly TagValues: [];
 }
 
-interface LFTagPolicyResource {
-  readonly CatalogId: string;
+export interface LFTagPolicyResource {
+  readonly CatalogId?: string;
   readonly ResourceType: string;
   readonly Expression: [];
 }
 
-interface ListDataCellsFilterRequest {
-  readonly Table: TableResource;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListDataCellsFilterRequest {
+  readonly Table?: TableResource;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListDataCellsFilterResponse {
-  readonly DataCellsFilters: [];
-  readonly NextToken: string;
+export interface ListDataCellsFilterResponse {
+  readonly DataCellsFilters?: [];
+  readonly NextToken?: string;
 }
 
-interface ListLFTagsRequest {
-  readonly CatalogId: string;
-  readonly ResourceShareType: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListLFTagsRequest {
+  readonly CatalogId?: string;
+  readonly ResourceShareType?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListLFTagsResponse {
-  readonly LFTags: [];
-  readonly NextToken: string;
+export interface ListLFTagsResponse {
+  readonly LFTags?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPermissionsRequest {
-  readonly CatalogId: string;
-  readonly Principal: DataLakePrincipal;
-  readonly ResourceType: string;
-  readonly Resource: Resource;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly IncludeRelated: string;
+export interface ListPermissionsRequest {
+  readonly CatalogId?: string;
+  readonly Principal?: DataLakePrincipal;
+  readonly ResourceType?: string;
+  readonly Resource?: Resource;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly IncludeRelated?: string;
 }
 
-interface ListPermissionsResponse {
-  readonly PrincipalResourcePermissions: [];
-  readonly NextToken: string;
+export interface ListPermissionsResponse {
+  readonly PrincipalResourcePermissions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListResourcesRequest {
-  readonly FilterConditionList: [];
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListResourcesRequest {
+  readonly FilterConditionList?: [];
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListResourcesResponse {
-  readonly ResourceInfoList: [];
-  readonly NextToken: string;
+export interface ListResourcesResponse {
+  readonly ResourceInfoList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTableStorageOptimizersRequest {
-  readonly CatalogId: string;
+export interface ListTableStorageOptimizersRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
-  readonly StorageOptimizerType: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly StorageOptimizerType?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListTableStorageOptimizersResponse {
-  readonly StorageOptimizerList: [];
-  readonly NextToken: string;
+export interface ListTableStorageOptimizersResponse {
+  readonly StorageOptimizerList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTransactionsRequest {
-  readonly CatalogId: string;
-  readonly StatusFilter: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListTransactionsRequest {
+  readonly CatalogId?: string;
+  readonly StatusFilter?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListTransactionsResponse {
-  readonly Transactions: [];
-  readonly NextToken: string;
+export interface ListTransactionsResponse {
+  readonly Transactions?: [];
+  readonly NextToken?: string;
 }
 
-interface OperationTimeoutException {
-  readonly Message: string;
+export interface OperationTimeoutException {
+  readonly Message?: string;
 }
 
-interface PartitionObjects {
-  readonly PartitionValues: [];
-  readonly Objects: [];
+export interface PartitionObjects {
+  readonly PartitionValues?: [];
+  readonly Objects?: [];
 }
 
-interface PlanningStatistics {
-  readonly EstimatedDataToScanBytes: number;
-  readonly PlanningTimeMillis: number;
-  readonly QueueTimeMillis: number;
-  readonly WorkUnitsGeneratedCount: number;
+export interface PlanningStatistics {
+  readonly EstimatedDataToScanBytes?: number;
+  readonly PlanningTimeMillis?: number;
+  readonly QueueTimeMillis?: number;
+  readonly WorkUnitsGeneratedCount?: number;
 }
 
-interface PrincipalPermissions {
-  readonly Principal: DataLakePrincipal;
-  readonly Permissions: [];
+export interface PrincipalPermissions {
+  readonly Principal?: DataLakePrincipal;
+  readonly Permissions?: [];
 }
 
-interface PrincipalResourcePermissions {
-  readonly Principal: DataLakePrincipal;
-  readonly Resource: Resource;
-  readonly Permissions: [];
-  readonly PermissionsWithGrantOption: [];
-  readonly AdditionalDetails: DetailsMap;
+export interface PrincipalResourcePermissions {
+  readonly Principal?: DataLakePrincipal;
+  readonly Resource?: Resource;
+  readonly Permissions?: [];
+  readonly PermissionsWithGrantOption?: [];
+  readonly AdditionalDetails?: DetailsMap;
 }
 
-interface PutDataLakeSettingsRequest {
-  readonly CatalogId: string;
+export interface PutDataLakeSettingsRequest {
+  readonly CatalogId?: string;
   readonly DataLakeSettings: DataLakeSettings;
 }
 
-interface PutDataLakeSettingsResponse {
+export interface PutDataLakeSettingsResponse {
 }
 
-interface QueryPlanningContext {
-  readonly CatalogId: string;
+export interface QueryPlanningContext {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
-  readonly QueryAsOfTime: Date;
-  readonly QueryParameters: {[key: string]: any};
-  readonly TransactionId: string;
+  readonly QueryAsOfTime?: Date;
+  readonly QueryParameters?: {[key: string]: any};
+  readonly TransactionId?: string;
 }
 
-interface RegisterResourceRequest {
+export interface RegisterResourceRequest {
   readonly ResourceArn: string;
-  readonly UseServiceLinkedRole: boolean;
-  readonly RoleArn: string;
+  readonly UseServiceLinkedRole?: boolean;
+  readonly RoleArn?: string;
 }
 
-interface RegisterResourceResponse {
+export interface RegisterResourceResponse {
 }
 
-interface RemoveLFTagsFromResourceRequest {
-  readonly CatalogId: string;
+export interface RemoveLFTagsFromResourceRequest {
+  readonly CatalogId?: string;
   readonly Resource: Resource;
   readonly LFTags: [];
 }
 
-interface RemoveLFTagsFromResourceResponse {
-  readonly Failures: [];
+export interface RemoveLFTagsFromResourceResponse {
+  readonly Failures?: [];
 }
 
-interface Resource {
-  readonly Catalog: CatalogResource;
-  readonly Database: DatabaseResource;
-  readonly Table: TableResource;
-  readonly TableWithColumns: TableWithColumnsResource;
-  readonly DataLocation: DataLocationResource;
-  readonly DataCellsFilter: DataCellsFilterResource;
-  readonly LFTag: LFTagKeyResource;
-  readonly LFTagPolicy: LFTagPolicyResource;
+export interface Resource {
+  readonly Catalog?: CatalogResource;
+  readonly Database?: DatabaseResource;
+  readonly Table?: TableResource;
+  readonly TableWithColumns?: TableWithColumnsResource;
+  readonly DataLocation?: DataLocationResource;
+  readonly DataCellsFilter?: DataCellsFilterResource;
+  readonly LFTag?: LFTagKeyResource;
+  readonly LFTagPolicy?: LFTagPolicyResource;
 }
 
-interface ResourceInfo {
-  readonly ResourceArn: string;
-  readonly RoleArn: string;
-  readonly LastModified: Date;
+export interface ResourceInfo {
+  readonly ResourceArn?: string;
+  readonly RoleArn?: string;
+  readonly LastModified?: Date;
 }
 
-interface ResourceNotReadyException {
-  readonly Message: string;
+export interface ResourceNotReadyException {
+  readonly Message?: string;
 }
 
-interface ResourceNumberLimitExceededException {
-  readonly Message: string;
+export interface ResourceNumberLimitExceededException {
+  readonly Message?: string;
 }
 
-interface RevokePermissionsRequest {
-  readonly CatalogId: string;
+export interface RevokePermissionsRequest {
+  readonly CatalogId?: string;
   readonly Principal: DataLakePrincipal;
   readonly Resource: Resource;
   readonly Permissions: [];
-  readonly PermissionsWithGrantOption: [];
+  readonly PermissionsWithGrantOption?: [];
 }
 
-interface RevokePermissionsResponse {
+export interface RevokePermissionsResponse {
 }
 
-interface RowFilter {
-  readonly FilterExpression: string;
-  readonly AllRowsWildcard: AllRowsWildcard;
+export interface RowFilter {
+  readonly FilterExpression?: string;
+  readonly AllRowsWildcard?: AllRowsWildcard;
 }
 
-interface SearchDatabasesByLFTagsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly CatalogId: string;
+export interface SearchDatabasesByLFTagsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly CatalogId?: string;
   readonly Expression: [];
 }
 
-interface SearchDatabasesByLFTagsResponse {
-  readonly NextToken: string;
-  readonly DatabaseList: [];
+export interface SearchDatabasesByLFTagsResponse {
+  readonly NextToken?: string;
+  readonly DatabaseList?: [];
 }
 
-interface SearchTablesByLFTagsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly CatalogId: string;
+export interface SearchTablesByLFTagsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly CatalogId?: string;
   readonly Expression: [];
 }
 
-interface SearchTablesByLFTagsResponse {
-  readonly NextToken: string;
-  readonly TableList: [];
+export interface SearchTablesByLFTagsResponse {
+  readonly NextToken?: string;
+  readonly TableList?: [];
 }
 
-interface StartQueryPlanningRequest {
+export interface StartQueryPlanningRequest {
   readonly QueryPlanningContext: QueryPlanningContext;
   readonly QueryString: string;
 }
 
-interface StartQueryPlanningResponse {
+export interface StartQueryPlanningResponse {
   readonly QueryId: string;
 }
 
-interface StartTransactionRequest {
-  readonly TransactionType: string;
+export interface StartTransactionRequest {
+  readonly TransactionType?: string;
 }
 
-interface StartTransactionResponse {
-  readonly TransactionId: string;
+export interface StartTransactionResponse {
+  readonly TransactionId?: string;
 }
 
-interface StatisticsNotReadyYetException {
-  readonly Message: string;
+export interface StatisticsNotReadyYetException {
+  readonly Message?: string;
 }
 
-interface StorageOptimizer {
-  readonly StorageOptimizerType: string;
-  readonly Config: {[key: string]: any};
-  readonly ErrorMessage: string;
-  readonly Warnings: string;
-  readonly LastRunDetails: string;
+export interface StorageOptimizer {
+  readonly StorageOptimizerType?: string;
+  readonly Config?: {[key: string]: any};
+  readonly ErrorMessage?: string;
+  readonly Warnings?: string;
+  readonly LastRunDetails?: string;
 }
 
-interface TableObject {
-  readonly Uri: string;
-  readonly ETag: string;
-  readonly Size: number;
+export interface TableObject {
+  readonly Uri?: string;
+  readonly ETag?: string;
+  readonly Size?: number;
 }
 
-interface TableResource {
-  readonly CatalogId: string;
+export interface TableResource {
+  readonly CatalogId?: string;
+  readonly DatabaseName: string;
+  readonly Name?: string;
+  readonly TableWildcard?: TableWildcard;
+}
+
+export interface TableWildcard {
+}
+
+export interface TableWithColumnsResource {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly Name: string;
-  readonly TableWildcard: TableWildcard;
+  readonly ColumnNames?: [];
+  readonly ColumnWildcard?: ColumnWildcard;
 }
 
-interface TableWildcard {
+export interface TaggedDatabase {
+  readonly Database?: DatabaseResource;
+  readonly LFTags?: [];
 }
 
-interface TableWithColumnsResource {
-  readonly CatalogId: string;
-  readonly DatabaseName: string;
-  readonly Name: string;
-  readonly ColumnNames: [];
-  readonly ColumnWildcard: ColumnWildcard;
+export interface TaggedTable {
+  readonly Table?: TableResource;
+  readonly LFTagOnDatabase?: [];
+  readonly LFTagsOnTable?: [];
+  readonly LFTagsOnColumns?: [];
 }
 
-interface TaggedDatabase {
-  readonly Database: DatabaseResource;
-  readonly LFTags: [];
+export interface ThrottledException {
+  readonly Message?: string;
 }
 
-interface TaggedTable {
-  readonly Table: TableResource;
-  readonly LFTagOnDatabase: [];
-  readonly LFTagsOnTable: [];
-  readonly LFTagsOnColumns: [];
+export interface TransactionCanceledException {
+  readonly Message?: string;
 }
 
-interface ThrottledException {
-  readonly Message: string;
+export interface TransactionCommitInProgressException {
+  readonly Message?: string;
 }
 
-interface TransactionCanceledException {
-  readonly Message: string;
+export interface TransactionCommittedException {
+  readonly Message?: string;
 }
 
-interface TransactionCommitInProgressException {
-  readonly Message: string;
+export interface TransactionDescription {
+  readonly TransactionId?: string;
+  readonly TransactionStatus?: string;
+  readonly TransactionStartTime?: Date;
+  readonly TransactionEndTime?: Date;
 }
 
-interface TransactionCommittedException {
-  readonly Message: string;
-}
-
-interface TransactionDescription {
-  readonly TransactionId: string;
-  readonly TransactionStatus: string;
-  readonly TransactionStartTime: Date;
-  readonly TransactionEndTime: Date;
-}
-
-interface UpdateLFTagRequest {
-  readonly CatalogId: string;
+export interface UpdateLFTagRequest {
+  readonly CatalogId?: string;
   readonly TagKey: string;
-  readonly TagValuesToDelete: [];
-  readonly TagValuesToAdd: [];
+  readonly TagValuesToDelete?: [];
+  readonly TagValuesToAdd?: [];
 }
 
-interface UpdateLFTagResponse {
+export interface UpdateLFTagResponse {
 }
 
-interface UpdateResourceRequest {
+export interface UpdateResourceRequest {
   readonly RoleArn: string;
   readonly ResourceArn: string;
 }
 
-interface UpdateResourceResponse {
+export interface UpdateResourceResponse {
 }
 
-interface UpdateTableObjectsRequest {
-  readonly CatalogId: string;
+export interface UpdateTableObjectsRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly TransactionId: string;
   readonly WriteOperations: [];
 }
 
-interface UpdateTableObjectsResponse {
+export interface UpdateTableObjectsResponse {
 }
 
-interface UpdateTableStorageOptimizerRequest {
-  readonly CatalogId: string;
+export interface UpdateTableStorageOptimizerRequest {
+  readonly CatalogId?: string;
   readonly DatabaseName: string;
   readonly TableName: string;
   readonly StorageOptimizerConfig: {[key: string]: any};
 }
 
-interface UpdateTableStorageOptimizerResponse {
-  readonly Result: string;
+export interface UpdateTableStorageOptimizerResponse {
+  readonly Result?: string;
 }
 
-interface VirtualObject {
+export interface VirtualObject {
   readonly Uri: string;
-  readonly ETag: string;
+  readonly ETag?: string;
 }
 
-interface WorkUnitRange {
+export interface WorkUnitRange {
   readonly WorkUnitIdMax: number;
   readonly WorkUnitIdMin: number;
   readonly WorkUnitToken: string;
 }
 
-interface WorkUnitsNotReadyYetException {
-  readonly Message: string;
+export interface WorkUnitsNotReadyYetException {
+  readonly Message?: string;
 }
 
-interface WriteOperation {
-  readonly AddObject: AddObjectInput;
-  readonly DeleteObject: DeleteObjectInput;
+export interface WriteOperation {
+  readonly AddObject?: AddObjectInput;
+  readonly DeleteObject?: DeleteObjectInput;
 }
+
 

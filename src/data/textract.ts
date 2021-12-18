@@ -6,30 +6,37 @@ export interface AnalyzeDocument {
   readonly FeatureTypes: [];
   readonly HumanLoopConfig?: HumanLoopConfig;
 }
+
 export interface AnalyzeExpense {
   readonly Document: Document;
 }
+
 export interface AnalyzeID {
   readonly DocumentPages: [];
 }
+
 export interface DetectDocumentText {
   readonly Document: Document;
 }
+
 export interface GetDocumentAnalysis {
   readonly JobId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetDocumentTextDetection {
   readonly JobId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetExpenseAnalysis {
   readonly JobId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface StartDocumentAnalysis {
   readonly DocumentLocation: DocumentLocation;
   readonly FeatureTypes: [];
@@ -39,6 +46,7 @@ export interface StartDocumentAnalysis {
   readonly OutputConfig?: OutputConfig;
   readonly KMSKeyId?: string;
 }
+
 export interface StartDocumentTextDetection {
   readonly DocumentLocation: DocumentLocation;
   readonly ClientRequestToken?: string;
@@ -47,6 +55,7 @@ export interface StartDocumentTextDetection {
   readonly OutputConfig?: OutputConfig;
   readonly KMSKeyId?: string;
 }
+
 export interface StartExpenseAnalysis {
   readonly DocumentLocation: DocumentLocation;
   readonly ClientRequestToken?: string;
@@ -56,323 +65,322 @@ export interface StartExpenseAnalysis {
   readonly KMSKeyId?: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
 }
 
-interface AnalyzeDocumentRequest {
+export interface AnalyzeDocumentRequest {
   readonly Document: Document;
   readonly FeatureTypes: [];
-  readonly HumanLoopConfig: HumanLoopConfig;
+  readonly HumanLoopConfig?: HumanLoopConfig;
 }
 
-interface AnalyzeDocumentResponse {
-  readonly DocumentMetadata: DocumentMetadata;
-  readonly Blocks: [];
-  readonly HumanLoopActivationOutput: HumanLoopActivationOutput;
-  readonly AnalyzeDocumentModelVersion: string;
+export interface AnalyzeDocumentResponse {
+  readonly DocumentMetadata?: DocumentMetadata;
+  readonly Blocks?: [];
+  readonly HumanLoopActivationOutput?: HumanLoopActivationOutput;
+  readonly AnalyzeDocumentModelVersion?: string;
 }
 
-interface AnalyzeExpenseRequest {
+export interface AnalyzeExpenseRequest {
   readonly Document: Document;
 }
 
-interface AnalyzeExpenseResponse {
-  readonly DocumentMetadata: DocumentMetadata;
-  readonly ExpenseDocuments: [];
+export interface AnalyzeExpenseResponse {
+  readonly DocumentMetadata?: DocumentMetadata;
+  readonly ExpenseDocuments?: [];
 }
 
-interface AnalyzeIDDetections {
+export interface AnalyzeIDDetections {
   readonly Text: string;
-  readonly NormalizedValue: NormalizedValue;
-  readonly Confidence: unknown;
+  readonly NormalizedValue?: NormalizedValue;
+  readonly Confidence?: unknown;
 }
 
-interface AnalyzeIDRequest {
+export interface AnalyzeIDRequest {
   readonly DocumentPages: [];
 }
 
-interface AnalyzeIDResponse {
-  readonly IdentityDocuments: [];
-  readonly DocumentMetadata: DocumentMetadata;
-  readonly AnalyzeIDModelVersion: string;
+export interface AnalyzeIDResponse {
+  readonly IdentityDocuments?: [];
+  readonly DocumentMetadata?: DocumentMetadata;
+  readonly AnalyzeIDModelVersion?: string;
 }
 
-interface BadDocumentException {
+export interface BadDocumentException {
 }
 
-interface Block {
-  readonly BlockType: string;
-  readonly Confidence: unknown;
-  readonly Text: string;
-  readonly TextType: string;
-  readonly RowIndex: number;
-  readonly ColumnIndex: number;
-  readonly RowSpan: number;
-  readonly ColumnSpan: number;
-  readonly Geometry: Geometry;
-  readonly Id: string;
-  readonly Relationships: [];
-  readonly EntityTypes: [];
-  readonly SelectionStatus: string;
-  readonly Page: number;
+export interface Block {
+  readonly BlockType?: string;
+  readonly Confidence?: unknown;
+  readonly Text?: string;
+  readonly TextType?: string;
+  readonly RowIndex?: number;
+  readonly ColumnIndex?: number;
+  readonly RowSpan?: number;
+  readonly ColumnSpan?: number;
+  readonly Geometry?: Geometry;
+  readonly Id?: string;
+  readonly Relationships?: [];
+  readonly EntityTypes?: [];
+  readonly SelectionStatus?: string;
+  readonly Page?: number;
 }
 
-interface BoundingBox {
-  readonly Width: unknown;
-  readonly Height: unknown;
-  readonly Left: unknown;
-  readonly Top: unknown;
+export interface BoundingBox {
+  readonly Width?: unknown;
+  readonly Height?: unknown;
+  readonly Left?: unknown;
+  readonly Top?: unknown;
 }
 
-interface DetectDocumentTextRequest {
+export interface DetectDocumentTextRequest {
   readonly Document: Document;
 }
 
-interface DetectDocumentTextResponse {
-  readonly DocumentMetadata: DocumentMetadata;
-  readonly Blocks: [];
-  readonly DetectDocumentTextModelVersion: string;
+export interface DetectDocumentTextResponse {
+  readonly DocumentMetadata?: DocumentMetadata;
+  readonly Blocks?: [];
+  readonly DetectDocumentTextModelVersion?: string;
 }
 
-interface Document {
-  readonly Bytes: unknown;
-  readonly S3Object: S3Object;
+export interface Document {
+  readonly Bytes?: unknown;
+  readonly S3Object?: S3Object;
 }
 
-interface DocumentLocation {
-  readonly S3Object: S3Object;
+export interface DocumentLocation {
+  readonly S3Object?: S3Object;
 }
 
-interface DocumentMetadata {
-  readonly Pages: number;
+export interface DocumentMetadata {
+  readonly Pages?: number;
 }
 
-interface DocumentTooLargeException {
+export interface DocumentTooLargeException {
 }
 
-interface ExpenseDetection {
-  readonly Text: string;
-  readonly Geometry: Geometry;
-  readonly Confidence: unknown;
+export interface ExpenseDetection {
+  readonly Text?: string;
+  readonly Geometry?: Geometry;
+  readonly Confidence?: unknown;
 }
 
-interface ExpenseDocument {
-  readonly ExpenseIndex: number;
-  readonly SummaryFields: [];
-  readonly LineItemGroups: [];
+export interface ExpenseDocument {
+  readonly ExpenseIndex?: number;
+  readonly SummaryFields?: [];
+  readonly LineItemGroups?: [];
 }
 
-interface ExpenseField {
-  readonly Type: ExpenseType;
-  readonly LabelDetection: ExpenseDetection;
-  readonly ValueDetection: ExpenseDetection;
-  readonly PageNumber: number;
+export interface ExpenseField {
+  readonly Type?: ExpenseType;
+  readonly LabelDetection?: ExpenseDetection;
+  readonly ValueDetection?: ExpenseDetection;
+  readonly PageNumber?: number;
 }
 
-interface ExpenseType {
-  readonly Text: string;
-  readonly Confidence: unknown;
+export interface ExpenseType {
+  readonly Text?: string;
+  readonly Confidence?: unknown;
 }
 
-interface Geometry {
-  readonly BoundingBox: BoundingBox;
-  readonly Polygon: [];
+export interface Geometry {
+  readonly BoundingBox?: BoundingBox;
+  readonly Polygon?: [];
 }
 
-interface GetDocumentAnalysisRequest {
+export interface GetDocumentAnalysisRequest {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetDocumentAnalysisResponse {
-  readonly DocumentMetadata: DocumentMetadata;
-  readonly JobStatus: string;
-  readonly NextToken: string;
-  readonly Blocks: [];
-  readonly Warnings: [];
-  readonly StatusMessage: string;
-  readonly AnalyzeDocumentModelVersion: string;
+export interface GetDocumentAnalysisResponse {
+  readonly DocumentMetadata?: DocumentMetadata;
+  readonly JobStatus?: string;
+  readonly NextToken?: string;
+  readonly Blocks?: [];
+  readonly Warnings?: [];
+  readonly StatusMessage?: string;
+  readonly AnalyzeDocumentModelVersion?: string;
 }
 
-interface GetDocumentTextDetectionRequest {
+export interface GetDocumentTextDetectionRequest {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetDocumentTextDetectionResponse {
-  readonly DocumentMetadata: DocumentMetadata;
-  readonly JobStatus: string;
-  readonly NextToken: string;
-  readonly Blocks: [];
-  readonly Warnings: [];
-  readonly StatusMessage: string;
-  readonly DetectDocumentTextModelVersion: string;
+export interface GetDocumentTextDetectionResponse {
+  readonly DocumentMetadata?: DocumentMetadata;
+  readonly JobStatus?: string;
+  readonly NextToken?: string;
+  readonly Blocks?: [];
+  readonly Warnings?: [];
+  readonly StatusMessage?: string;
+  readonly DetectDocumentTextModelVersion?: string;
 }
 
-interface GetExpenseAnalysisRequest {
+export interface GetExpenseAnalysisRequest {
   readonly JobId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetExpenseAnalysisResponse {
-  readonly DocumentMetadata: DocumentMetadata;
-  readonly JobStatus: string;
-  readonly NextToken: string;
-  readonly ExpenseDocuments: [];
-  readonly Warnings: [];
-  readonly StatusMessage: string;
-  readonly AnalyzeExpenseModelVersion: string;
+export interface GetExpenseAnalysisResponse {
+  readonly DocumentMetadata?: DocumentMetadata;
+  readonly JobStatus?: string;
+  readonly NextToken?: string;
+  readonly ExpenseDocuments?: [];
+  readonly Warnings?: [];
+  readonly StatusMessage?: string;
+  readonly AnalyzeExpenseModelVersion?: string;
 }
 
-interface HumanLoopActivationOutput {
-  readonly HumanLoopArn: string;
-  readonly HumanLoopActivationReasons: [];
-  readonly HumanLoopActivationConditionsEvaluationResults: string;
+export interface HumanLoopActivationOutput {
+  readonly HumanLoopArn?: string;
+  readonly HumanLoopActivationReasons?: [];
+  readonly HumanLoopActivationConditionsEvaluationResults?: string;
 }
 
-interface HumanLoopConfig {
+export interface HumanLoopConfig {
   readonly HumanLoopName: string;
   readonly FlowDefinitionArn: string;
-  readonly DataAttributes: HumanLoopDataAttributes;
+  readonly DataAttributes?: HumanLoopDataAttributes;
 }
 
-interface HumanLoopDataAttributes {
-  readonly ContentClassifiers: [];
+export interface HumanLoopDataAttributes {
+  readonly ContentClassifiers?: [];
 }
 
-interface HumanLoopQuotaExceededException {
-  readonly ResourceType: string;
-  readonly QuotaCode: string;
-  readonly ServiceCode: string;
+export interface HumanLoopQuotaExceededException {
+  readonly ResourceType?: string;
+  readonly QuotaCode?: string;
+  readonly ServiceCode?: string;
 }
 
-interface IdempotentParameterMismatchException {
+export interface IdempotentParameterMismatchException {
 }
 
-interface IdentityDocument {
-  readonly DocumentIndex: number;
-  readonly IdentityDocumentFields: [];
+export interface IdentityDocument {
+  readonly DocumentIndex?: number;
+  readonly IdentityDocumentFields?: [];
 }
 
-interface IdentityDocumentField {
-  readonly Type: AnalyzeIDDetections;
-  readonly ValueDetection: AnalyzeIDDetections;
+export interface IdentityDocumentField {
+  readonly Type?: AnalyzeIDDetections;
+  readonly ValueDetection?: AnalyzeIDDetections;
 }
 
-interface InternalServerError {
+export interface InternalServerError {
 }
 
-interface InvalidJobIdException {
+export interface InvalidJobIdException {
 }
 
-interface InvalidKMSKeyException {
+export interface InvalidKMSKeyException {
 }
 
-interface InvalidParameterException {
+export interface InvalidParameterException {
 }
 
-interface InvalidS3ObjectException {
+export interface InvalidS3ObjectException {
 }
 
-interface LimitExceededException {
+export interface LimitExceededException {
 }
 
-interface LineItemFields {
-  readonly LineItemExpenseFields: [];
+export interface LineItemFields {
+  readonly LineItemExpenseFields?: [];
 }
 
-interface LineItemGroup {
-  readonly LineItemGroupIndex: number;
-  readonly LineItems: [];
+export interface LineItemGroup {
+  readonly LineItemGroupIndex?: number;
+  readonly LineItems?: [];
 }
 
-interface NormalizedValue {
-  readonly Value: string;
-  readonly ValueType: string;
+export interface NormalizedValue {
+  readonly Value?: string;
+  readonly ValueType?: string;
 }
 
-interface NotificationChannel {
+export interface NotificationChannel {
   readonly SNSTopicArn: string;
   readonly RoleArn: string;
 }
 
-interface OutputConfig {
+export interface OutputConfig {
   readonly S3Bucket: string;
-  readonly S3Prefix: string;
+  readonly S3Prefix?: string;
 }
 
-interface Point {
-  readonly X: unknown;
-  readonly Y: unknown;
+export interface Point {
+  readonly X?: unknown;
+  readonly Y?: unknown;
 }
 
-interface ProvisionedThroughputExceededException {
+export interface ProvisionedThroughputExceededException {
 }
 
-interface Relationship {
-  readonly Type: string;
-  readonly Ids: [];
+export interface Relationship {
+  readonly Type?: string;
+  readonly Ids?: [];
 }
 
-interface S3Object {
-  readonly Bucket: string;
-  readonly Name: string;
-  readonly Version: string;
+export interface S3Object {
+  readonly Bucket?: string;
+  readonly Name?: string;
+  readonly Version?: string;
 }
 
-interface StartDocumentAnalysisRequest {
+export interface StartDocumentAnalysisRequest {
   readonly DocumentLocation: DocumentLocation;
   readonly FeatureTypes: [];
-  readonly ClientRequestToken: string;
-  readonly JobTag: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly OutputConfig: OutputConfig;
-  readonly KMSKeyId: string;
+  readonly ClientRequestToken?: string;
+  readonly JobTag?: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly OutputConfig?: OutputConfig;
+  readonly KMSKeyId?: string;
 }
 
-interface StartDocumentAnalysisResponse {
-  readonly JobId: string;
+export interface StartDocumentAnalysisResponse {
+  readonly JobId?: string;
 }
 
-interface StartDocumentTextDetectionRequest {
+export interface StartDocumentTextDetectionRequest {
   readonly DocumentLocation: DocumentLocation;
-  readonly ClientRequestToken: string;
-  readonly JobTag: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly OutputConfig: OutputConfig;
-  readonly KMSKeyId: string;
+  readonly ClientRequestToken?: string;
+  readonly JobTag?: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly OutputConfig?: OutputConfig;
+  readonly KMSKeyId?: string;
 }
 
-interface StartDocumentTextDetectionResponse {
-  readonly JobId: string;
+export interface StartDocumentTextDetectionResponse {
+  readonly JobId?: string;
 }
 
-interface StartExpenseAnalysisRequest {
+export interface StartExpenseAnalysisRequest {
   readonly DocumentLocation: DocumentLocation;
-  readonly ClientRequestToken: string;
-  readonly JobTag: string;
-  readonly NotificationChannel: NotificationChannel;
-  readonly OutputConfig: OutputConfig;
-  readonly KMSKeyId: string;
+  readonly ClientRequestToken?: string;
+  readonly JobTag?: string;
+  readonly NotificationChannel?: NotificationChannel;
+  readonly OutputConfig?: OutputConfig;
+  readonly KMSKeyId?: string;
 }
 
-interface StartExpenseAnalysisResponse {
-  readonly JobId: string;
+export interface StartExpenseAnalysisResponse {
+  readonly JobId?: string;
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
 }
 
-interface UnsupportedDocumentException {
+export interface UnsupportedDocumentException {
 }
 
-interface Warning {
-  readonly ErrorCode: string;
-  readonly Pages: [];
+export interface Warning {
+  readonly ErrorCode?: string;
+  readonly Pages?: [];
 }
+
 

@@ -5,6 +5,7 @@ export interface ConfigureLogsForPlaybackConfiguration {
   readonly PercentEnabled: number;
   readonly PlaybackConfigurationName: string;
 }
+
 export interface CreateChannel {
   readonly ChannelName: string;
   readonly FillerSlate?: SlateSource;
@@ -12,6 +13,7 @@ export interface CreateChannel {
   readonly PlaybackMode: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreatePrefetchSchedule {
   readonly Consumption: PrefetchConsumption;
   readonly Name: string;
@@ -19,6 +21,7 @@ export interface CreatePrefetchSchedule {
   readonly Retrieval: PrefetchRetrieval;
   readonly StreamId?: string;
 }
+
 export interface CreateProgram {
   readonly AdBreaks?: [];
   readonly ChannelName: string;
@@ -27,6 +30,7 @@ export interface CreateProgram {
   readonly SourceLocationName: string;
   readonly VodSourceName: string;
 }
+
 export interface CreateSourceLocation {
   readonly AccessConfiguration?: AccessConfiguration;
   readonly DefaultSegmentDeliveryConfiguration?: DefaultSegmentDeliveryConfiguration;
@@ -34,101 +38,126 @@ export interface CreateSourceLocation {
   readonly SourceLocationName: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateVodSource {
   readonly HttpPackageConfigurations: [];
   readonly SourceLocationName: string;
   readonly Tags?: {[key: string]: any};
   readonly VodSourceName: string;
 }
+
 export interface DeleteChannel {
   readonly ChannelName: string;
 }
+
 export interface DeleteChannelPolicy {
   readonly ChannelName: string;
 }
+
 export interface DeletePlaybackConfiguration {
   readonly Name: string;
 }
+
 export interface DeletePrefetchSchedule {
   readonly Name: string;
   readonly PlaybackConfigurationName: string;
 }
+
 export interface DeleteProgram {
   readonly ChannelName: string;
   readonly ProgramName: string;
 }
+
 export interface DeleteSourceLocation {
   readonly SourceLocationName: string;
 }
+
 export interface DeleteVodSource {
   readonly SourceLocationName: string;
   readonly VodSourceName: string;
 }
+
 export interface DescribeChannel {
   readonly ChannelName: string;
 }
+
 export interface DescribeProgram {
   readonly ChannelName: string;
   readonly ProgramName: string;
 }
+
 export interface DescribeSourceLocation {
   readonly SourceLocationName: string;
 }
+
 export interface DescribeVodSource {
   readonly SourceLocationName: string;
   readonly VodSourceName: string;
 }
+
 export interface GetChannelPolicy {
   readonly ChannelName: string;
 }
+
 export interface GetChannelSchedule {
   readonly ChannelName: string;
   readonly DurationMinutes?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetPlaybackConfiguration {
   readonly Name: string;
 }
+
 export interface GetPrefetchSchedule {
   readonly Name: string;
   readonly PlaybackConfigurationName: string;
 }
+
 export interface ListAlerts {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly ResourceArn: string;
 }
+
 export interface ListChannels {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListPlaybackConfigurations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListPrefetchSchedules {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly PlaybackConfigurationName: string;
   readonly StreamId?: string;
 }
+
 export interface ListSourceLocations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface ListVodSources {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly SourceLocationName: string;
 }
+
 export interface PutChannelPolicy {
   readonly ChannelName: string;
   readonly Policy: string;
 }
+
 export interface PutPlaybackConfiguration {
   readonly AdDecisionServerUrl?: string;
   readonly AvailSuppression?: AvailSuppression;
@@ -145,55 +174,60 @@ export interface PutPlaybackConfiguration {
   readonly TranscodeProfileName?: string;
   readonly VideoContentSourceUrl?: string;
 }
+
 export interface StartChannel {
   readonly ChannelName: string;
 }
+
 export interface StopChannel {
   readonly ChannelName: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateChannel {
   readonly ChannelName: string;
   readonly Outputs: [];
 }
+
 export interface UpdateSourceLocation {
   readonly AccessConfiguration?: AccessConfiguration;
   readonly DefaultSegmentDeliveryConfiguration?: DefaultSegmentDeliveryConfiguration;
   readonly HttpConfiguration: HttpConfiguration;
   readonly SourceLocationName: string;
 }
+
 export interface UpdateVodSource {
   readonly HttpPackageConfigurations: [];
   readonly SourceLocationName: string;
   readonly VodSourceName: string;
 }
 
-
-
-interface AccessConfiguration {
-  readonly AccessType: string;
-  readonly SecretsManagerAccessTokenConfiguration: SecretsManagerAccessTokenConfiguration;
+export interface AccessConfiguration {
+  readonly AccessType?: string;
+  readonly SecretsManagerAccessTokenConfiguration?: SecretsManagerAccessTokenConfiguration;
 }
 
-interface AdBreak {
-  readonly MessageType: string;
-  readonly OffsetMillis: number;
-  readonly Slate: SlateSource;
-  readonly SpliceInsertMessage: SpliceInsertMessage;
+export interface AdBreak {
+  readonly MessageType?: string;
+  readonly OffsetMillis?: number;
+  readonly Slate?: SlateSource;
+  readonly SpliceInsertMessage?: SpliceInsertMessage;
 }
 
-interface AdMarkerPassthrough {
-  readonly Enabled: boolean;
+export interface AdMarkerPassthrough {
+  readonly Enabled?: boolean;
 }
 
-interface Alert {
+export interface Alert {
   readonly AlertCode: string;
   readonly AlertMessage: string;
   readonly LastModifiedTime: Date;
@@ -201,91 +235,91 @@ interface Alert {
   readonly ResourceArn: string;
 }
 
-interface AvailMatchingCriteria {
+export interface AvailMatchingCriteria {
   readonly DynamicVariable: string;
   readonly Operator: string;
 }
 
-interface AvailSuppression {
-  readonly Mode: string;
-  readonly Value: string;
+export interface AvailSuppression {
+  readonly Mode?: string;
+  readonly Value?: string;
 }
 
-interface BadRequestException {
-  readonly Message: string;
+export interface BadRequestException {
+  readonly Message?: string;
 }
 
-interface Bumper {
-  readonly EndUrl: string;
-  readonly StartUrl: string;
+export interface Bumper {
+  readonly EndUrl?: string;
+  readonly StartUrl?: string;
 }
 
-interface CdnConfiguration {
-  readonly AdSegmentUrlPrefix: string;
-  readonly ContentSegmentUrlPrefix: string;
+export interface CdnConfiguration {
+  readonly AdSegmentUrlPrefix?: string;
+  readonly ContentSegmentUrlPrefix?: string;
 }
 
-interface Channel {
+export interface Channel {
   readonly Arn: string;
   readonly ChannelName: string;
   readonly ChannelState: string;
-  readonly CreationTime: Date;
-  readonly FillerSlate: SlateSource;
-  readonly LastModifiedTime: Date;
+  readonly CreationTime?: Date;
+  readonly FillerSlate?: SlateSource;
+  readonly LastModifiedTime?: Date;
   readonly Outputs: [];
   readonly PlaybackMode: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ConfigureLogsForPlaybackConfigurationRequest {
+export interface ConfigureLogsForPlaybackConfigurationRequest {
   readonly PercentEnabled: number;
   readonly PlaybackConfigurationName: string;
 }
 
-interface ConfigureLogsForPlaybackConfigurationResponse {
-  readonly PercentEnabled: number;
-  readonly PlaybackConfigurationName: string;
+export interface ConfigureLogsForPlaybackConfigurationResponse {
+  readonly PercentEnabled?: number;
+  readonly PlaybackConfigurationName?: string;
 }
 
-interface CreateChannelRequest {
+export interface CreateChannelRequest {
   readonly ChannelName: string;
-  readonly FillerSlate: SlateSource;
+  readonly FillerSlate?: SlateSource;
   readonly Outputs: [];
   readonly PlaybackMode: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateChannelResponse {
-  readonly Arn: string;
-  readonly ChannelName: string;
-  readonly ChannelState: string;
-  readonly CreationTime: Date;
-  readonly FillerSlate: SlateSource;
-  readonly LastModifiedTime: Date;
-  readonly Outputs: [];
-  readonly PlaybackMode: string;
-  readonly Tags: {[key: string]: any};
+export interface CreateChannelResponse {
+  readonly Arn?: string;
+  readonly ChannelName?: string;
+  readonly ChannelState?: string;
+  readonly CreationTime?: Date;
+  readonly FillerSlate?: SlateSource;
+  readonly LastModifiedTime?: Date;
+  readonly Outputs?: [];
+  readonly PlaybackMode?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreatePrefetchScheduleRequest {
+export interface CreatePrefetchScheduleRequest {
   readonly Consumption: PrefetchConsumption;
   readonly Name: string;
   readonly PlaybackConfigurationName: string;
   readonly Retrieval: PrefetchRetrieval;
-  readonly StreamId: string;
+  readonly StreamId?: string;
 }
 
-interface CreatePrefetchScheduleResponse {
-  readonly Arn: string;
-  readonly Consumption: PrefetchConsumption;
-  readonly Name: string;
-  readonly PlaybackConfigurationName: string;
-  readonly Retrieval: PrefetchRetrieval;
-  readonly StreamId: string;
+export interface CreatePrefetchScheduleResponse {
+  readonly Arn?: string;
+  readonly Consumption?: PrefetchConsumption;
+  readonly Name?: string;
+  readonly PlaybackConfigurationName?: string;
+  readonly Retrieval?: PrefetchRetrieval;
+  readonly StreamId?: string;
 }
 
-interface CreateProgramRequest {
-  readonly AdBreaks: [];
+export interface CreateProgramRequest {
+  readonly AdBreaks?: [];
   readonly ChannelName: string;
   readonly ProgramName: string;
   readonly ScheduleConfiguration: ScheduleConfiguration;
@@ -293,598 +327,599 @@ interface CreateProgramRequest {
   readonly VodSourceName: string;
 }
 
-interface CreateProgramResponse {
-  readonly AdBreaks: [];
-  readonly Arn: string;
+export interface CreateProgramResponse {
+  readonly AdBreaks?: [];
+  readonly Arn?: string;
+  readonly ChannelName?: string;
+  readonly CreationTime?: Date;
+  readonly ProgramName?: string;
+  readonly ScheduledStartTime?: Date;
+  readonly SourceLocationName?: string;
+  readonly VodSourceName?: string;
+}
+
+export interface CreateSourceLocationRequest {
+  readonly AccessConfiguration?: AccessConfiguration;
+  readonly DefaultSegmentDeliveryConfiguration?: DefaultSegmentDeliveryConfiguration;
+  readonly HttpConfiguration: HttpConfiguration;
+  readonly SourceLocationName: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface CreateSourceLocationResponse {
+  readonly AccessConfiguration?: AccessConfiguration;
+  readonly Arn?: string;
+  readonly CreationTime?: Date;
+  readonly DefaultSegmentDeliveryConfiguration?: DefaultSegmentDeliveryConfiguration;
+  readonly HttpConfiguration?: HttpConfiguration;
+  readonly LastModifiedTime?: Date;
+  readonly SourceLocationName?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface CreateVodSourceRequest {
+  readonly HttpPackageConfigurations: [];
+  readonly SourceLocationName: string;
+  readonly Tags?: {[key: string]: any};
+  readonly VodSourceName: string;
+}
+
+export interface CreateVodSourceResponse {
+  readonly Arn?: string;
+  readonly CreationTime?: Date;
+  readonly HttpPackageConfigurations?: [];
+  readonly LastModifiedTime?: Date;
+  readonly SourceLocationName?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly VodSourceName?: string;
+}
+
+export interface DashConfiguration {
+  readonly ManifestEndpointPrefix?: string;
+  readonly MpdLocation?: string;
+  readonly OriginManifestType?: string;
+}
+
+export interface DashConfigurationForPut {
+  readonly MpdLocation?: string;
+  readonly OriginManifestType?: string;
+}
+
+export interface DashPlaylistSettings {
+  readonly ManifestWindowSeconds?: number;
+  readonly MinBufferTimeSeconds?: number;
+  readonly MinUpdatePeriodSeconds?: number;
+  readonly SuggestedPresentationDelaySeconds?: number;
+}
+
+export interface DefaultSegmentDeliveryConfiguration {
+  readonly BaseUrl?: string;
+}
+
+export interface DeleteChannelPolicyRequest {
   readonly ChannelName: string;
-  readonly CreationTime: Date;
+}
+
+export interface DeleteChannelPolicyResponse {
+}
+
+export interface DeleteChannelRequest {
+  readonly ChannelName: string;
+}
+
+export interface DeleteChannelResponse {
+}
+
+export interface DeletePlaybackConfigurationRequest {
+  readonly Name: string;
+}
+
+export interface DeletePlaybackConfigurationResponse {
+}
+
+export interface DeletePrefetchScheduleRequest {
+  readonly Name: string;
+  readonly PlaybackConfigurationName: string;
+}
+
+export interface DeletePrefetchScheduleResponse {
+}
+
+export interface DeleteProgramRequest {
+  readonly ChannelName: string;
   readonly ProgramName: string;
-  readonly ScheduledStartTime: Date;
+}
+
+export interface DeleteProgramResponse {
+}
+
+export interface DeleteSourceLocationRequest {
+  readonly SourceLocationName: string;
+}
+
+export interface DeleteSourceLocationResponse {
+}
+
+export interface DeleteVodSourceRequest {
   readonly SourceLocationName: string;
   readonly VodSourceName: string;
 }
 
-interface CreateSourceLocationRequest {
-  readonly AccessConfiguration: AccessConfiguration;
-  readonly DefaultSegmentDeliveryConfiguration: DefaultSegmentDeliveryConfiguration;
-  readonly HttpConfiguration: HttpConfiguration;
-  readonly SourceLocationName: string;
-  readonly Tags: {[key: string]: any};
+export interface DeleteVodSourceResponse {
 }
 
-interface CreateSourceLocationResponse {
-  readonly AccessConfiguration: AccessConfiguration;
-  readonly Arn: string;
-  readonly CreationTime: Date;
-  readonly DefaultSegmentDeliveryConfiguration: DefaultSegmentDeliveryConfiguration;
-  readonly HttpConfiguration: HttpConfiguration;
-  readonly LastModifiedTime: Date;
-  readonly SourceLocationName: string;
-  readonly Tags: {[key: string]: any};
+export interface DescribeChannelRequest {
+  readonly ChannelName: string;
 }
 
-interface CreateVodSourceRequest {
-  readonly HttpPackageConfigurations: [];
+export interface DescribeChannelResponse {
+  readonly Arn?: string;
+  readonly ChannelName?: string;
+  readonly ChannelState?: string;
+  readonly CreationTime?: Date;
+  readonly FillerSlate?: SlateSource;
+  readonly LastModifiedTime?: Date;
+  readonly Outputs?: [];
+  readonly PlaybackMode?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface DescribeProgramRequest {
+  readonly ChannelName: string;
+  readonly ProgramName: string;
+}
+
+export interface DescribeProgramResponse {
+  readonly AdBreaks?: [];
+  readonly Arn?: string;
+  readonly ChannelName?: string;
+  readonly CreationTime?: Date;
+  readonly ProgramName?: string;
+  readonly ScheduledStartTime?: Date;
+  readonly SourceLocationName?: string;
+  readonly VodSourceName?: string;
+}
+
+export interface DescribeSourceLocationRequest {
   readonly SourceLocationName: string;
-  readonly Tags: {[key: string]: any};
+}
+
+export interface DescribeSourceLocationResponse {
+  readonly AccessConfiguration?: AccessConfiguration;
+  readonly Arn?: string;
+  readonly CreationTime?: Date;
+  readonly DefaultSegmentDeliveryConfiguration?: DefaultSegmentDeliveryConfiguration;
+  readonly HttpConfiguration?: HttpConfiguration;
+  readonly LastModifiedTime?: Date;
+  readonly SourceLocationName?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface DescribeVodSourceRequest {
+  readonly SourceLocationName: string;
   readonly VodSourceName: string;
 }
 
-interface CreateVodSourceResponse {
-  readonly Arn: string;
-  readonly CreationTime: Date;
-  readonly HttpPackageConfigurations: [];
-  readonly LastModifiedTime: Date;
-  readonly SourceLocationName: string;
-  readonly Tags: {[key: string]: any};
-  readonly VodSourceName: string;
+export interface DescribeVodSourceResponse {
+  readonly Arn?: string;
+  readonly CreationTime?: Date;
+  readonly HttpPackageConfigurations?: [];
+  readonly LastModifiedTime?: Date;
+  readonly SourceLocationName?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly VodSourceName?: string;
 }
 
-interface DashConfiguration {
-  readonly ManifestEndpointPrefix: string;
-  readonly MpdLocation: string;
-  readonly OriginManifestType: string;
+export interface GetChannelPolicyRequest {
+  readonly ChannelName: string;
 }
 
-interface DashConfigurationForPut {
-  readonly MpdLocation: string;
-  readonly OriginManifestType: string;
+export interface GetChannelPolicyResponse {
+  readonly Policy?: string;
 }
 
-interface DashPlaylistSettings {
-  readonly ManifestWindowSeconds: number;
-  readonly MinBufferTimeSeconds: number;
-  readonly MinUpdatePeriodSeconds: number;
-  readonly SuggestedPresentationDelaySeconds: number;
+export interface GetChannelScheduleRequest {
+  readonly ChannelName: string;
+  readonly DurationMinutes?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DefaultSegmentDeliveryConfiguration {
+export interface GetChannelScheduleResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
+}
+
+export interface GetPlaybackConfigurationRequest {
+  readonly Name: string;
+}
+
+export interface GetPlaybackConfigurationResponse {
+  readonly AdDecisionServerUrl?: string;
+  readonly AvailSuppression?: AvailSuppression;
+  readonly Bumper?: Bumper;
+  readonly CdnConfiguration?: CdnConfiguration;
+  readonly ConfigurationAliases?: {[key: string]: any};
+  readonly DashConfiguration?: DashConfiguration;
+  readonly HlsConfiguration?: HlsConfiguration;
+  readonly LivePreRollConfiguration?: LivePreRollConfiguration;
+  readonly LogConfiguration?: LogConfiguration;
+  readonly ManifestProcessingRules?: ManifestProcessingRules;
+  readonly Name?: string;
+  readonly PersonalizationThresholdSeconds?: number;
+  readonly PlaybackConfigurationArn?: string;
+  readonly PlaybackEndpointPrefix?: string;
+  readonly SessionInitializationEndpointPrefix?: string;
+  readonly SlateAdUrl?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly TranscodeProfileName?: string;
+  readonly VideoContentSourceUrl?: string;
+}
+
+export interface GetPrefetchScheduleRequest {
+  readonly Name: string;
+  readonly PlaybackConfigurationName: string;
+}
+
+export interface GetPrefetchScheduleResponse {
+  readonly Arn?: string;
+  readonly Consumption?: PrefetchConsumption;
+  readonly Name?: string;
+  readonly PlaybackConfigurationName?: string;
+  readonly Retrieval?: PrefetchRetrieval;
+  readonly StreamId?: string;
+}
+
+export interface HlsConfiguration {
+  readonly ManifestEndpointPrefix?: string;
+}
+
+export interface HlsPlaylistSettings {
+  readonly ManifestWindowSeconds?: number;
+}
+
+export interface HttpConfiguration {
   readonly BaseUrl: string;
 }
 
-interface DeleteChannelPolicyRequest {
-  readonly ChannelName: string;
-}
-
-interface DeleteChannelPolicyResponse {
-}
-
-interface DeleteChannelRequest {
-  readonly ChannelName: string;
-}
-
-interface DeleteChannelResponse {
-}
-
-interface DeletePlaybackConfigurationRequest {
-  readonly Name: string;
-}
-
-interface DeletePlaybackConfigurationResponse {
-}
-
-interface DeletePrefetchScheduleRequest {
-  readonly Name: string;
-  readonly PlaybackConfigurationName: string;
-}
-
-interface DeletePrefetchScheduleResponse {
-}
-
-interface DeleteProgramRequest {
-  readonly ChannelName: string;
-  readonly ProgramName: string;
-}
-
-interface DeleteProgramResponse {
-}
-
-interface DeleteSourceLocationRequest {
-  readonly SourceLocationName: string;
-}
-
-interface DeleteSourceLocationResponse {
-}
-
-interface DeleteVodSourceRequest {
-  readonly SourceLocationName: string;
-  readonly VodSourceName: string;
-}
-
-interface DeleteVodSourceResponse {
-}
-
-interface DescribeChannelRequest {
-  readonly ChannelName: string;
-}
-
-interface DescribeChannelResponse {
-  readonly Arn: string;
-  readonly ChannelName: string;
-  readonly ChannelState: string;
-  readonly CreationTime: Date;
-  readonly FillerSlate: SlateSource;
-  readonly LastModifiedTime: Date;
-  readonly Outputs: [];
-  readonly PlaybackMode: string;
-  readonly Tags: {[key: string]: any};
-}
-
-interface DescribeProgramRequest {
-  readonly ChannelName: string;
-  readonly ProgramName: string;
-}
-
-interface DescribeProgramResponse {
-  readonly AdBreaks: [];
-  readonly Arn: string;
-  readonly ChannelName: string;
-  readonly CreationTime: Date;
-  readonly ProgramName: string;
-  readonly ScheduledStartTime: Date;
-  readonly SourceLocationName: string;
-  readonly VodSourceName: string;
-}
-
-interface DescribeSourceLocationRequest {
-  readonly SourceLocationName: string;
-}
-
-interface DescribeSourceLocationResponse {
-  readonly AccessConfiguration: AccessConfiguration;
-  readonly Arn: string;
-  readonly CreationTime: Date;
-  readonly DefaultSegmentDeliveryConfiguration: DefaultSegmentDeliveryConfiguration;
-  readonly HttpConfiguration: HttpConfiguration;
-  readonly LastModifiedTime: Date;
-  readonly SourceLocationName: string;
-  readonly Tags: {[key: string]: any};
-}
-
-interface DescribeVodSourceRequest {
-  readonly SourceLocationName: string;
-  readonly VodSourceName: string;
-}
-
-interface DescribeVodSourceResponse {
-  readonly Arn: string;
-  readonly CreationTime: Date;
-  readonly HttpPackageConfigurations: [];
-  readonly LastModifiedTime: Date;
-  readonly SourceLocationName: string;
-  readonly Tags: {[key: string]: any};
-  readonly VodSourceName: string;
-}
-
-interface GetChannelPolicyRequest {
-  readonly ChannelName: string;
-}
-
-interface GetChannelPolicyResponse {
-  readonly Policy: string;
-}
-
-interface GetChannelScheduleRequest {
-  readonly ChannelName: string;
-  readonly DurationMinutes: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-}
-
-interface GetChannelScheduleResponse {
-  readonly Items: [];
-  readonly NextToken: string;
-}
-
-interface GetPlaybackConfigurationRequest {
-  readonly Name: string;
-}
-
-interface GetPlaybackConfigurationResponse {
-  readonly AdDecisionServerUrl: string;
-  readonly AvailSuppression: AvailSuppression;
-  readonly Bumper: Bumper;
-  readonly CdnConfiguration: CdnConfiguration;
-  readonly ConfigurationAliases: {[key: string]: any};
-  readonly DashConfiguration: DashConfiguration;
-  readonly HlsConfiguration: HlsConfiguration;
-  readonly LivePreRollConfiguration: LivePreRollConfiguration;
-  readonly LogConfiguration: LogConfiguration;
-  readonly ManifestProcessingRules: ManifestProcessingRules;
-  readonly Name: string;
-  readonly PersonalizationThresholdSeconds: number;
-  readonly PlaybackConfigurationArn: string;
-  readonly PlaybackEndpointPrefix: string;
-  readonly SessionInitializationEndpointPrefix: string;
-  readonly SlateAdUrl: string;
-  readonly Tags: {[key: string]: any};
-  readonly TranscodeProfileName: string;
-  readonly VideoContentSourceUrl: string;
-}
-
-interface GetPrefetchScheduleRequest {
-  readonly Name: string;
-  readonly PlaybackConfigurationName: string;
-}
-
-interface GetPrefetchScheduleResponse {
-  readonly Arn: string;
-  readonly Consumption: PrefetchConsumption;
-  readonly Name: string;
-  readonly PlaybackConfigurationName: string;
-  readonly Retrieval: PrefetchRetrieval;
-  readonly StreamId: string;
-}
-
-interface HlsConfiguration {
-  readonly ManifestEndpointPrefix: string;
-}
-
-interface HlsPlaylistSettings {
-  readonly ManifestWindowSeconds: number;
-}
-
-interface HttpConfiguration {
-  readonly BaseUrl: string;
-}
-
-interface HttpPackageConfiguration {
+export interface HttpPackageConfiguration {
   readonly Path: string;
   readonly SourceGroup: string;
   readonly Type: string;
 }
 
-interface ListAlertsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListAlertsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ResourceArn: string;
 }
 
-interface ListAlertsResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface ListAlertsResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface ListChannelsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListChannelsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListChannelsResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface ListChannelsResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPlaybackConfigurationsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListPlaybackConfigurationsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListPlaybackConfigurationsResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface ListPlaybackConfigurationsResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPrefetchSchedulesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListPrefetchSchedulesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly PlaybackConfigurationName: string;
-  readonly StreamId: string;
+  readonly StreamId?: string;
 }
 
-interface ListPrefetchSchedulesResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface ListPrefetchSchedulesResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface ListSourceLocationsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListSourceLocationsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListSourceLocationsResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface ListSourceLocationsResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListVodSourcesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListVodSourcesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly SourceLocationName: string;
 }
 
-interface ListVodSourcesResponse {
-  readonly Items: [];
-  readonly NextToken: string;
+export interface ListVodSourcesResponse {
+  readonly Items?: [];
+  readonly NextToken?: string;
 }
 
-interface LivePreRollConfiguration {
-  readonly AdDecisionServerUrl: string;
-  readonly MaxDurationSeconds: number;
+export interface LivePreRollConfiguration {
+  readonly AdDecisionServerUrl?: string;
+  readonly MaxDurationSeconds?: number;
 }
 
-interface LogConfiguration {
+export interface LogConfiguration {
   readonly PercentEnabled: number;
 }
 
-interface ManifestProcessingRules {
-  readonly AdMarkerPassthrough: AdMarkerPassthrough;
+export interface ManifestProcessingRules {
+  readonly AdMarkerPassthrough?: AdMarkerPassthrough;
 }
 
-interface PlaybackConfiguration {
-  readonly AdDecisionServerUrl: string;
-  readonly AvailSuppression: AvailSuppression;
-  readonly Bumper: Bumper;
-  readonly CdnConfiguration: CdnConfiguration;
-  readonly ConfigurationAliases: {[key: string]: any};
-  readonly DashConfiguration: DashConfiguration;
-  readonly HlsConfiguration: HlsConfiguration;
-  readonly LivePreRollConfiguration: LivePreRollConfiguration;
-  readonly LogConfiguration: LogConfiguration;
-  readonly ManifestProcessingRules: ManifestProcessingRules;
-  readonly Name: string;
-  readonly PersonalizationThresholdSeconds: number;
-  readonly PlaybackConfigurationArn: string;
-  readonly PlaybackEndpointPrefix: string;
-  readonly SessionInitializationEndpointPrefix: string;
-  readonly SlateAdUrl: string;
-  readonly Tags: {[key: string]: any};
-  readonly TranscodeProfileName: string;
-  readonly VideoContentSourceUrl: string;
+export interface PlaybackConfiguration {
+  readonly AdDecisionServerUrl?: string;
+  readonly AvailSuppression?: AvailSuppression;
+  readonly Bumper?: Bumper;
+  readonly CdnConfiguration?: CdnConfiguration;
+  readonly ConfigurationAliases?: {[key: string]: any};
+  readonly DashConfiguration?: DashConfiguration;
+  readonly HlsConfiguration?: HlsConfiguration;
+  readonly LivePreRollConfiguration?: LivePreRollConfiguration;
+  readonly LogConfiguration?: LogConfiguration;
+  readonly ManifestProcessingRules?: ManifestProcessingRules;
+  readonly Name?: string;
+  readonly PersonalizationThresholdSeconds?: number;
+  readonly PlaybackConfigurationArn?: string;
+  readonly PlaybackEndpointPrefix?: string;
+  readonly SessionInitializationEndpointPrefix?: string;
+  readonly SlateAdUrl?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly TranscodeProfileName?: string;
+  readonly VideoContentSourceUrl?: string;
 }
 
-interface PrefetchConsumption {
-  readonly AvailMatchingCriteria: [];
+export interface PrefetchConsumption {
+  readonly AvailMatchingCriteria?: [];
   readonly EndTime: Date;
-  readonly StartTime: Date;
+  readonly StartTime?: Date;
 }
 
-interface PrefetchRetrieval {
-  readonly DynamicVariables: {[key: string]: any};
+export interface PrefetchRetrieval {
+  readonly DynamicVariables?: {[key: string]: any};
   readonly EndTime: Date;
-  readonly StartTime: Date;
+  readonly StartTime?: Date;
 }
 
-interface PrefetchSchedule {
+export interface PrefetchSchedule {
   readonly Arn: string;
   readonly Consumption: PrefetchConsumption;
   readonly Name: string;
   readonly PlaybackConfigurationName: string;
   readonly Retrieval: PrefetchRetrieval;
-  readonly StreamId: string;
+  readonly StreamId?: string;
 }
 
-interface PutChannelPolicyRequest {
+export interface PutChannelPolicyRequest {
   readonly ChannelName: string;
   readonly Policy: string;
 }
 
-interface PutChannelPolicyResponse {
+export interface PutChannelPolicyResponse {
 }
 
-interface PutPlaybackConfigurationRequest {
-  readonly AdDecisionServerUrl: string;
-  readonly AvailSuppression: AvailSuppression;
-  readonly Bumper: Bumper;
-  readonly CdnConfiguration: CdnConfiguration;
-  readonly ConfigurationAliases: {[key: string]: any};
-  readonly DashConfiguration: DashConfigurationForPut;
-  readonly LivePreRollConfiguration: LivePreRollConfiguration;
-  readonly ManifestProcessingRules: ManifestProcessingRules;
-  readonly Name: string;
-  readonly PersonalizationThresholdSeconds: number;
-  readonly SlateAdUrl: string;
-  readonly Tags: {[key: string]: any};
-  readonly TranscodeProfileName: string;
-  readonly VideoContentSourceUrl: string;
+export interface PutPlaybackConfigurationRequest {
+  readonly AdDecisionServerUrl?: string;
+  readonly AvailSuppression?: AvailSuppression;
+  readonly Bumper?: Bumper;
+  readonly CdnConfiguration?: CdnConfiguration;
+  readonly ConfigurationAliases?: {[key: string]: any};
+  readonly DashConfiguration?: DashConfigurationForPut;
+  readonly LivePreRollConfiguration?: LivePreRollConfiguration;
+  readonly ManifestProcessingRules?: ManifestProcessingRules;
+  readonly Name?: string;
+  readonly PersonalizationThresholdSeconds?: number;
+  readonly SlateAdUrl?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly TranscodeProfileName?: string;
+  readonly VideoContentSourceUrl?: string;
 }
 
-interface PutPlaybackConfigurationResponse {
-  readonly AdDecisionServerUrl: string;
-  readonly AvailSuppression: AvailSuppression;
-  readonly Bumper: Bumper;
-  readonly CdnConfiguration: CdnConfiguration;
-  readonly ConfigurationAliases: {[key: string]: any};
-  readonly DashConfiguration: DashConfiguration;
-  readonly HlsConfiguration: HlsConfiguration;
-  readonly LivePreRollConfiguration: LivePreRollConfiguration;
-  readonly LogConfiguration: LogConfiguration;
-  readonly ManifestProcessingRules: ManifestProcessingRules;
-  readonly Name: string;
-  readonly PersonalizationThresholdSeconds: number;
-  readonly PlaybackConfigurationArn: string;
-  readonly PlaybackEndpointPrefix: string;
-  readonly SessionInitializationEndpointPrefix: string;
-  readonly SlateAdUrl: string;
-  readonly Tags: {[key: string]: any};
-  readonly TranscodeProfileName: string;
-  readonly VideoContentSourceUrl: string;
+export interface PutPlaybackConfigurationResponse {
+  readonly AdDecisionServerUrl?: string;
+  readonly AvailSuppression?: AvailSuppression;
+  readonly Bumper?: Bumper;
+  readonly CdnConfiguration?: CdnConfiguration;
+  readonly ConfigurationAliases?: {[key: string]: any};
+  readonly DashConfiguration?: DashConfiguration;
+  readonly HlsConfiguration?: HlsConfiguration;
+  readonly LivePreRollConfiguration?: LivePreRollConfiguration;
+  readonly LogConfiguration?: LogConfiguration;
+  readonly ManifestProcessingRules?: ManifestProcessingRules;
+  readonly Name?: string;
+  readonly PersonalizationThresholdSeconds?: number;
+  readonly PlaybackConfigurationArn?: string;
+  readonly PlaybackEndpointPrefix?: string;
+  readonly SessionInitializationEndpointPrefix?: string;
+  readonly SlateAdUrl?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly TranscodeProfileName?: string;
+  readonly VideoContentSourceUrl?: string;
 }
 
-interface RequestOutputItem {
-  readonly DashPlaylistSettings: DashPlaylistSettings;
-  readonly HlsPlaylistSettings: HlsPlaylistSettings;
+export interface RequestOutputItem {
+  readonly DashPlaylistSettings?: DashPlaylistSettings;
+  readonly HlsPlaylistSettings?: HlsPlaylistSettings;
   readonly ManifestName: string;
   readonly SourceGroup: string;
 }
 
-interface ResponseOutputItem {
-  readonly DashPlaylistSettings: DashPlaylistSettings;
-  readonly HlsPlaylistSettings: HlsPlaylistSettings;
+export interface ResponseOutputItem {
+  readonly DashPlaylistSettings?: DashPlaylistSettings;
+  readonly HlsPlaylistSettings?: HlsPlaylistSettings;
   readonly ManifestName: string;
   readonly PlaybackUrl: string;
   readonly SourceGroup: string;
 }
 
-interface ScheduleAdBreak {
-  readonly ApproximateDurationSeconds: number;
-  readonly ApproximateStartTime: Date;
-  readonly SourceLocationName: string;
-  readonly VodSourceName: string;
+export interface ScheduleAdBreak {
+  readonly ApproximateDurationSeconds?: number;
+  readonly ApproximateStartTime?: Date;
+  readonly SourceLocationName?: string;
+  readonly VodSourceName?: string;
 }
 
-interface ScheduleConfiguration {
+export interface ScheduleConfiguration {
   readonly Transition: Transition;
 }
 
-interface ScheduleEntry {
-  readonly ApproximateDurationSeconds: number;
-  readonly ApproximateStartTime: Date;
+export interface ScheduleEntry {
+  readonly ApproximateDurationSeconds?: number;
+  readonly ApproximateStartTime?: Date;
   readonly Arn: string;
   readonly ChannelName: string;
   readonly ProgramName: string;
-  readonly ScheduleAdBreaks: [];
-  readonly ScheduleEntryType: string;
+  readonly ScheduleAdBreaks?: [];
+  readonly ScheduleEntryType?: string;
   readonly SourceLocationName: string;
   readonly VodSourceName: string;
 }
 
-interface SecretsManagerAccessTokenConfiguration {
-  readonly HeaderName: string;
-  readonly SecretArn: string;
-  readonly SecretStringKey: string;
+export interface SecretsManagerAccessTokenConfiguration {
+  readonly HeaderName?: string;
+  readonly SecretArn?: string;
+  readonly SecretStringKey?: string;
 }
 
-interface SlateSource {
-  readonly SourceLocationName: string;
-  readonly VodSourceName: string;
+export interface SlateSource {
+  readonly SourceLocationName?: string;
+  readonly VodSourceName?: string;
 }
 
-interface SourceLocation {
-  readonly AccessConfiguration: AccessConfiguration;
+export interface SourceLocation {
+  readonly AccessConfiguration?: AccessConfiguration;
   readonly Arn: string;
-  readonly CreationTime: Date;
-  readonly DefaultSegmentDeliveryConfiguration: DefaultSegmentDeliveryConfiguration;
+  readonly CreationTime?: Date;
+  readonly DefaultSegmentDeliveryConfiguration?: DefaultSegmentDeliveryConfiguration;
   readonly HttpConfiguration: HttpConfiguration;
-  readonly LastModifiedTime: Date;
+  readonly LastModifiedTime?: Date;
   readonly SourceLocationName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface SpliceInsertMessage {
-  readonly AvailNum: number;
-  readonly AvailsExpected: number;
-  readonly SpliceEventId: number;
-  readonly UniqueProgramId: number;
+export interface SpliceInsertMessage {
+  readonly AvailNum?: number;
+  readonly AvailsExpected?: number;
+  readonly SpliceEventId?: number;
+  readonly UniqueProgramId?: number;
 }
 
-interface StartChannelRequest {
+export interface StartChannelRequest {
   readonly ChannelName: string;
 }
 
-interface StartChannelResponse {
+export interface StartChannelResponse {
 }
 
-interface StopChannelRequest {
+export interface StopChannelRequest {
   readonly ChannelName: string;
 }
 
-interface StopChannelResponse {
+export interface StopChannelResponse {
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface Transition {
+export interface Transition {
   readonly RelativePosition: string;
-  readonly RelativeProgram: string;
-  readonly ScheduledStartTimeMillis: number;
+  readonly RelativeProgram?: string;
+  readonly ScheduledStartTimeMillis?: number;
   readonly Type: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UpdateChannelRequest {
+export interface UpdateChannelRequest {
   readonly ChannelName: string;
   readonly Outputs: [];
 }
 
-interface UpdateChannelResponse {
-  readonly Arn: string;
-  readonly ChannelName: string;
-  readonly ChannelState: string;
-  readonly CreationTime: Date;
-  readonly FillerSlate: SlateSource;
-  readonly LastModifiedTime: Date;
-  readonly Outputs: [];
-  readonly PlaybackMode: string;
-  readonly Tags: {[key: string]: any};
+export interface UpdateChannelResponse {
+  readonly Arn?: string;
+  readonly ChannelName?: string;
+  readonly ChannelState?: string;
+  readonly CreationTime?: Date;
+  readonly FillerSlate?: SlateSource;
+  readonly LastModifiedTime?: Date;
+  readonly Outputs?: [];
+  readonly PlaybackMode?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface UpdateSourceLocationRequest {
-  readonly AccessConfiguration: AccessConfiguration;
-  readonly DefaultSegmentDeliveryConfiguration: DefaultSegmentDeliveryConfiguration;
+export interface UpdateSourceLocationRequest {
+  readonly AccessConfiguration?: AccessConfiguration;
+  readonly DefaultSegmentDeliveryConfiguration?: DefaultSegmentDeliveryConfiguration;
   readonly HttpConfiguration: HttpConfiguration;
   readonly SourceLocationName: string;
 }
 
-interface UpdateSourceLocationResponse {
-  readonly AccessConfiguration: AccessConfiguration;
-  readonly Arn: string;
-  readonly CreationTime: Date;
-  readonly DefaultSegmentDeliveryConfiguration: DefaultSegmentDeliveryConfiguration;
-  readonly HttpConfiguration: HttpConfiguration;
-  readonly LastModifiedTime: Date;
-  readonly SourceLocationName: string;
-  readonly Tags: {[key: string]: any};
+export interface UpdateSourceLocationResponse {
+  readonly AccessConfiguration?: AccessConfiguration;
+  readonly Arn?: string;
+  readonly CreationTime?: Date;
+  readonly DefaultSegmentDeliveryConfiguration?: DefaultSegmentDeliveryConfiguration;
+  readonly HttpConfiguration?: HttpConfiguration;
+  readonly LastModifiedTime?: Date;
+  readonly SourceLocationName?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface UpdateVodSourceRequest {
+export interface UpdateVodSourceRequest {
   readonly HttpPackageConfigurations: [];
   readonly SourceLocationName: string;
   readonly VodSourceName: string;
 }
 
-interface UpdateVodSourceResponse {
+export interface UpdateVodSourceResponse {
+  readonly Arn?: string;
+  readonly CreationTime?: Date;
+  readonly HttpPackageConfigurations?: [];
+  readonly LastModifiedTime?: Date;
+  readonly SourceLocationName?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly VodSourceName?: string;
+}
+
+export interface VodSource {
   readonly Arn: string;
-  readonly CreationTime: Date;
+  readonly CreationTime?: Date;
   readonly HttpPackageConfigurations: [];
-  readonly LastModifiedTime: Date;
+  readonly LastModifiedTime?: Date;
   readonly SourceLocationName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
   readonly VodSourceName: string;
 }
 
-interface VodSource {
-  readonly Arn: string;
-  readonly CreationTime: Date;
-  readonly HttpPackageConfigurations: [];
-  readonly LastModifiedTime: Date;
-  readonly SourceLocationName: string;
-  readonly Tags: {[key: string]: any};
-  readonly VodSourceName: string;
-}
 

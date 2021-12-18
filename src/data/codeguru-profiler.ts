@@ -5,6 +5,7 @@ export interface AddNotificationChannels {
   readonly channels: [];
   readonly profilingGroupName: string;
 }
+
 export interface BatchGetFrameMetricData {
   readonly endTime?: Date;
   readonly frameMetrics?: [];
@@ -13,11 +14,13 @@ export interface BatchGetFrameMetricData {
   readonly startTime?: Date;
   readonly targetResolution?: string;
 }
+
 export interface ConfigureAgent {
   readonly fleetInstanceId?: string;
   readonly metadata?: {[key: string]: any};
   readonly profilingGroupName: string;
 }
+
 export interface CreateProfilingGroup {
   readonly agentOrchestrationConfig?: AgentOrchestrationConfig;
   readonly clientToken: string;
@@ -25,23 +28,29 @@ export interface CreateProfilingGroup {
   readonly profilingGroupName: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface DeleteProfilingGroup {
   readonly profilingGroupName: string;
 }
+
 export interface DescribeProfilingGroup {
   readonly profilingGroupName: string;
 }
+
 export interface GetFindingsReportAccountSummary {
   readonly dailyReportsOnly?: boolean;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface GetNotificationConfiguration {
   readonly profilingGroupName: string;
 }
+
 export interface GetPolicy {
   readonly profilingGroupName: string;
 }
+
 export interface GetProfile {
   readonly accept?: string;
   readonly endTime?: Date;
@@ -50,12 +59,14 @@ export interface GetProfile {
   readonly profilingGroupName: string;
   readonly startTime?: Date;
 }
+
 export interface GetRecommendations {
   readonly endTime: Date;
   readonly locale?: string;
   readonly profilingGroupName: string;
   readonly startTime: Date;
 }
+
 export interface ListFindingsReports {
   readonly dailyReportsOnly?: boolean;
   readonly endTime: Date;
@@ -64,6 +75,7 @@ export interface ListFindingsReports {
   readonly profilingGroupName: string;
   readonly startTime: Date;
 }
+
 export interface ListProfileTimes {
   readonly endTime: Date;
   readonly maxResults?: number;
@@ -73,103 +85,111 @@ export interface ListProfileTimes {
   readonly profilingGroupName: string;
   readonly startTime: Date;
 }
+
 export interface ListProfilingGroups {
   readonly includeDescription?: boolean;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface PostAgentProfile {
   readonly agentProfile: unknown;
   readonly contentType: string;
   readonly profileToken?: string;
   readonly profilingGroupName: string;
 }
+
 export interface PutPermission {
   readonly actionGroup: string;
   readonly principals: [];
   readonly profilingGroupName: string;
   readonly revisionId?: string;
 }
+
 export interface RemoveNotificationChannel {
   readonly channelId: string;
   readonly profilingGroupName: string;
 }
+
 export interface RemovePermission {
   readonly actionGroup: string;
   readonly profilingGroupName: string;
   readonly revisionId: string;
 }
+
 export interface SubmitFeedback {
   readonly anomalyInstanceId: string;
   readonly comment?: string;
   readonly profilingGroupName: string;
   readonly type: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateProfilingGroup {
   readonly agentOrchestrationConfig: AgentOrchestrationConfig;
   readonly profilingGroupName: string;
 }
 
-
-
-interface AddNotificationChannelsRequest {
+export interface AddNotificationChannelsRequest {
   readonly channels: [];
   readonly profilingGroupName: string;
 }
 
-interface AddNotificationChannelsResponse {
-  readonly notificationConfiguration: NotificationConfiguration;
+export interface AddNotificationChannelsResponse {
+  readonly notificationConfiguration?: NotificationConfiguration;
 }
 
-interface AgentConfiguration {
-  readonly agentParameters: {[key: string]: any};
+export interface AgentConfiguration {
+  readonly agentParameters?: {[key: string]: any};
   readonly periodInSeconds: number;
   readonly shouldProfile: boolean;
 }
 
-interface AgentOrchestrationConfig {
+export interface AgentOrchestrationConfig {
   readonly profilingEnabled: boolean;
 }
 
-interface AggregatedProfileTime {
-  readonly period: string;
-  readonly start: Date;
+export interface AggregatedProfileTime {
+  readonly period?: string;
+  readonly start?: Date;
 }
 
-interface Anomaly {
+export interface Anomaly {
   readonly instances: [];
   readonly metric: Metric;
   readonly reason: string;
 }
 
-interface AnomalyInstance {
-  readonly endTime: Date;
+export interface AnomalyInstance {
+  readonly endTime?: Date;
   readonly id: string;
   readonly startTime: Date;
-  readonly userFeedback: UserFeedback;
+  readonly userFeedback?: UserFeedback;
 }
 
-interface BatchGetFrameMetricDataRequest {
-  readonly endTime: Date;
-  readonly frameMetrics: [];
-  readonly period: string;
+export interface BatchGetFrameMetricDataRequest {
+  readonly endTime?: Date;
+  readonly frameMetrics?: [];
+  readonly period?: string;
   readonly profilingGroupName: string;
-  readonly startTime: Date;
-  readonly targetResolution: string;
+  readonly startTime?: Date;
+  readonly targetResolution?: string;
 }
 
-interface BatchGetFrameMetricDataResponse {
+export interface BatchGetFrameMetricDataResponse {
   readonly endTime: Date;
   readonly endTimes: [];
   readonly frameMetricData: [];
@@ -178,123 +198,123 @@ interface BatchGetFrameMetricDataResponse {
   readonly unprocessedEndTimes: {[key: string]: any};
 }
 
-interface Channel {
+export interface Channel {
   readonly eventPublishers: [];
-  readonly id: string;
+  readonly id?: string;
   readonly uri: string;
 }
 
-interface ConfigureAgentRequest {
-  readonly fleetInstanceId: string;
-  readonly metadata: {[key: string]: any};
+export interface ConfigureAgentRequest {
+  readonly fleetInstanceId?: string;
+  readonly metadata?: {[key: string]: any};
   readonly profilingGroupName: string;
 }
 
-interface ConfigureAgentResponse {
+export interface ConfigureAgentResponse {
   readonly configuration: AgentConfiguration;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly message: string;
 }
 
-interface CreateProfilingGroupRequest {
-  readonly agentOrchestrationConfig: AgentOrchestrationConfig;
+export interface CreateProfilingGroupRequest {
+  readonly agentOrchestrationConfig?: AgentOrchestrationConfig;
   readonly clientToken: string;
-  readonly computePlatform: string;
+  readonly computePlatform?: string;
   readonly profilingGroupName: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateProfilingGroupResponse {
+export interface CreateProfilingGroupResponse {
   readonly profilingGroup: ProfilingGroupDescription;
 }
 
-interface DeleteProfilingGroupRequest {
+export interface DeleteProfilingGroupRequest {
   readonly profilingGroupName: string;
 }
 
-interface DeleteProfilingGroupResponse {
+export interface DeleteProfilingGroupResponse {
 }
 
-interface DescribeProfilingGroupRequest {
+export interface DescribeProfilingGroupRequest {
   readonly profilingGroupName: string;
 }
 
-interface DescribeProfilingGroupResponse {
+export interface DescribeProfilingGroupResponse {
   readonly profilingGroup: ProfilingGroupDescription;
 }
 
-interface FindingsReportSummary {
-  readonly id: string;
-  readonly profileEndTime: Date;
-  readonly profileStartTime: Date;
-  readonly profilingGroupName: string;
-  readonly totalNumberOfFindings: number;
+export interface FindingsReportSummary {
+  readonly id?: string;
+  readonly profileEndTime?: Date;
+  readonly profileStartTime?: Date;
+  readonly profilingGroupName?: string;
+  readonly totalNumberOfFindings?: number;
 }
 
-interface FrameMetric {
+export interface FrameMetric {
   readonly frameName: string;
   readonly threadStates: [];
   readonly type: string;
 }
 
-interface FrameMetricDatum {
+export interface FrameMetricDatum {
   readonly frameMetric: FrameMetric;
   readonly values: [];
 }
 
-interface GetFindingsReportAccountSummaryRequest {
-  readonly dailyReportsOnly: boolean;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface GetFindingsReportAccountSummaryRequest {
+  readonly dailyReportsOnly?: boolean;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface GetFindingsReportAccountSummaryResponse {
-  readonly nextToken: string;
+export interface GetFindingsReportAccountSummaryResponse {
+  readonly nextToken?: string;
   readonly reportSummaries: [];
 }
 
-interface GetNotificationConfigurationRequest {
+export interface GetNotificationConfigurationRequest {
   readonly profilingGroupName: string;
 }
 
-interface GetNotificationConfigurationResponse {
+export interface GetNotificationConfigurationResponse {
   readonly notificationConfiguration: NotificationConfiguration;
 }
 
-interface GetPolicyRequest {
+export interface GetPolicyRequest {
   readonly profilingGroupName: string;
 }
 
-interface GetPolicyResponse {
+export interface GetPolicyResponse {
   readonly policy: string;
   readonly revisionId: string;
 }
 
-interface GetProfileRequest {
-  readonly accept: string;
-  readonly endTime: Date;
-  readonly maxDepth: number;
-  readonly period: string;
+export interface GetProfileRequest {
+  readonly accept?: string;
+  readonly endTime?: Date;
+  readonly maxDepth?: number;
+  readonly period?: string;
   readonly profilingGroupName: string;
-  readonly startTime: Date;
+  readonly startTime?: Date;
 }
 
-interface GetProfileResponse {
-  readonly contentEncoding: string;
+export interface GetProfileResponse {
+  readonly contentEncoding?: string;
   readonly contentType: string;
   readonly profile: unknown;
 }
 
-interface GetRecommendationsRequest {
+export interface GetRecommendationsRequest {
   readonly endTime: Date;
-  readonly locale: string;
+  readonly locale?: string;
   readonly profilingGroupName: string;
   readonly startTime: Date;
 }
 
-interface GetRecommendationsResponse {
+export interface GetRecommendationsResponse {
   readonly anomalies: [];
   readonly profileEndTime: Date;
   readonly profileStartTime: Date;
@@ -302,129 +322,129 @@ interface GetRecommendationsResponse {
   readonly recommendations: [];
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
 }
 
-interface ListFindingsReportsRequest {
-  readonly dailyReportsOnly: boolean;
+export interface ListFindingsReportsRequest {
+  readonly dailyReportsOnly?: boolean;
   readonly endTime: Date;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly profilingGroupName: string;
   readonly startTime: Date;
 }
 
-interface ListFindingsReportsResponse {
+export interface ListFindingsReportsResponse {
   readonly findingsReportSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListProfileTimesRequest {
+export interface ListProfileTimesRequest {
   readonly endTime: Date;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly orderBy: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly orderBy?: string;
   readonly period: string;
   readonly profilingGroupName: string;
   readonly startTime: Date;
 }
 
-interface ListProfileTimesResponse {
-  readonly nextToken: string;
+export interface ListProfileTimesResponse {
+  readonly nextToken?: string;
   readonly profileTimes: [];
 }
 
-interface ListProfilingGroupsRequest {
-  readonly includeDescription: boolean;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListProfilingGroupsRequest {
+  readonly includeDescription?: boolean;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListProfilingGroupsResponse {
-  readonly nextToken: string;
+export interface ListProfilingGroupsResponse {
+  readonly nextToken?: string;
   readonly profilingGroupNames: [];
-  readonly profilingGroups: [];
+  readonly profilingGroups?: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface Match {
-  readonly frameAddress: string;
-  readonly targetFramesIndex: number;
-  readonly thresholdBreachValue: unknown;
+export interface Match {
+  readonly frameAddress?: string;
+  readonly targetFramesIndex?: number;
+  readonly thresholdBreachValue?: unknown;
 }
 
-interface Metric {
+export interface Metric {
   readonly frameName: string;
   readonly threadStates: [];
   readonly type: string;
 }
 
-interface NotificationConfiguration {
-  readonly channels: [];
+export interface NotificationConfiguration {
+  readonly channels?: [];
 }
 
-interface Pattern {
-  readonly countersToAggregate: [];
-  readonly description: string;
-  readonly id: string;
-  readonly name: string;
-  readonly resolutionSteps: string;
-  readonly targetFrames: [];
-  readonly thresholdPercent: unknown;
+export interface Pattern {
+  readonly countersToAggregate?: [];
+  readonly description?: string;
+  readonly id?: string;
+  readonly name?: string;
+  readonly resolutionSteps?: string;
+  readonly targetFrames?: [];
+  readonly thresholdPercent?: unknown;
 }
 
-interface PostAgentProfileRequest {
+export interface PostAgentProfileRequest {
   readonly agentProfile: unknown;
   readonly contentType: string;
-  readonly profileToken: string;
+  readonly profileToken?: string;
   readonly profilingGroupName: string;
 }
 
-interface PostAgentProfileResponse {
+export interface PostAgentProfileResponse {
 }
 
-interface ProfileTime {
-  readonly start: Date;
+export interface ProfileTime {
+  readonly start?: Date;
 }
 
-interface ProfilingGroupDescription {
-  readonly agentOrchestrationConfig: AgentOrchestrationConfig;
-  readonly arn: string;
-  readonly computePlatform: string;
-  readonly createdAt: Date;
-  readonly name: string;
-  readonly profilingStatus: ProfilingStatus;
-  readonly tags: {[key: string]: any};
-  readonly updatedAt: Date;
+export interface ProfilingGroupDescription {
+  readonly agentOrchestrationConfig?: AgentOrchestrationConfig;
+  readonly arn?: string;
+  readonly computePlatform?: string;
+  readonly createdAt?: Date;
+  readonly name?: string;
+  readonly profilingStatus?: ProfilingStatus;
+  readonly tags?: {[key: string]: any};
+  readonly updatedAt?: Date;
 }
 
-interface ProfilingStatus {
-  readonly latestAgentOrchestratedAt: Date;
-  readonly latestAgentProfileReportedAt: Date;
-  readonly latestAggregatedProfile: AggregatedProfileTime;
+export interface ProfilingStatus {
+  readonly latestAgentOrchestratedAt?: Date;
+  readonly latestAgentProfileReportedAt?: Date;
+  readonly latestAggregatedProfile?: AggregatedProfileTime;
 }
 
-interface PutPermissionRequest {
+export interface PutPermissionRequest {
   readonly actionGroup: string;
   readonly principals: [];
   readonly profilingGroupName: string;
-  readonly revisionId: string;
+  readonly revisionId?: string;
 }
 
-interface PutPermissionResponse {
+export interface PutPermissionResponse {
   readonly policy: string;
   readonly revisionId: string;
 }
 
-interface Recommendation {
+export interface Recommendation {
   readonly allMatchesCount: number;
   readonly allMatchesSum: unknown;
   readonly endTime: Date;
@@ -433,82 +453,83 @@ interface Recommendation {
   readonly topMatches: [];
 }
 
-interface RemoveNotificationChannelRequest {
+export interface RemoveNotificationChannelRequest {
   readonly channelId: string;
   readonly profilingGroupName: string;
 }
 
-interface RemoveNotificationChannelResponse {
-  readonly notificationConfiguration: NotificationConfiguration;
+export interface RemoveNotificationChannelResponse {
+  readonly notificationConfiguration?: NotificationConfiguration;
 }
 
-interface RemovePermissionRequest {
+export interface RemovePermissionRequest {
   readonly actionGroup: string;
   readonly profilingGroupName: string;
   readonly revisionId: string;
 }
 
-interface RemovePermissionResponse {
+export interface RemovePermissionResponse {
   readonly policy: string;
   readonly revisionId: string;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly message: string;
 }
 
-interface SubmitFeedbackRequest {
+export interface SubmitFeedbackRequest {
   readonly anomalyInstanceId: string;
-  readonly comment: string;
+  readonly comment?: string;
   readonly profilingGroupName: string;
   readonly type: string;
 }
 
-interface SubmitFeedbackResponse {
+export interface SubmitFeedbackResponse {
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly message: string;
 }
 
-interface TimestampStructure {
+export interface TimestampStructure {
   readonly value: Date;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateProfilingGroupRequest {
+export interface UpdateProfilingGroupRequest {
   readonly agentOrchestrationConfig: AgentOrchestrationConfig;
   readonly profilingGroupName: string;
 }
 
-interface UpdateProfilingGroupResponse {
+export interface UpdateProfilingGroupResponse {
   readonly profilingGroup: ProfilingGroupDescription;
 }
 
-interface UserFeedback {
+export interface UserFeedback {
   readonly type: string;
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly message: string;
 }
+
 

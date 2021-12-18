@@ -9,54 +9,67 @@ export interface CreateCertificateAuthority {
   readonly KeyStorageSecurityStandard?: string;
   readonly Tags?: [];
 }
+
 export interface CreateCertificateAuthorityAuditReport {
   readonly CertificateAuthorityArn: string;
   readonly S3BucketName: string;
   readonly AuditReportResponseFormat: string;
 }
+
 export interface CreatePermission {
   readonly CertificateAuthorityArn: string;
   readonly Principal: string;
   readonly SourceAccount?: string;
   readonly Actions: [];
 }
+
 export interface DeleteCertificateAuthority {
   readonly CertificateAuthorityArn: string;
   readonly PermanentDeletionTimeInDays?: number;
 }
+
 export interface DeletePermission {
   readonly CertificateAuthorityArn: string;
   readonly Principal: string;
   readonly SourceAccount?: string;
 }
+
 export interface DeletePolicy {
   readonly ResourceArn: string;
 }
+
 export interface DescribeCertificateAuthority {
   readonly CertificateAuthorityArn: string;
 }
+
 export interface DescribeCertificateAuthorityAuditReport {
   readonly CertificateAuthorityArn: string;
   readonly AuditReportId: string;
 }
+
 export interface GetCertificate {
   readonly CertificateAuthorityArn: string;
   readonly CertificateArn: string;
 }
+
 export interface GetCertificateAuthorityCertificate {
   readonly CertificateAuthorityArn: string;
 }
+
 export interface GetCertificateAuthorityCsr {
   readonly CertificateAuthorityArn: string;
 }
+
 export interface GetPolicy {
   readonly ResourceArn: string;
 }
+
 export interface ImportCertificateAuthorityCertificate {
   readonly CertificateAuthorityArn: string;
   readonly Certificate: unknown;
   readonly CertificateChain?: unknown;
 }
+
 export interface IssueCertificate {
   readonly ApiPassthrough?: ApiPassthrough;
   readonly CertificateAuthorityArn: string;
@@ -67,465 +80,473 @@ export interface IssueCertificate {
   readonly ValidityNotBefore?: Validity;
   readonly IdempotencyToken?: string;
 }
+
 export interface ListCertificateAuthorities {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly ResourceOwner?: string;
 }
+
 export interface ListPermissions {
   readonly CertificateAuthorityArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTags {
   readonly CertificateAuthorityArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface PutPolicy {
   readonly ResourceArn: string;
   readonly Policy: string;
 }
+
 export interface RestoreCertificateAuthority {
   readonly CertificateAuthorityArn: string;
 }
+
 export interface RevokeCertificate {
   readonly CertificateAuthorityArn: string;
   readonly CertificateSerial: string;
   readonly RevocationReason: string;
 }
+
 export interface TagCertificateAuthority {
   readonly CertificateAuthorityArn: string;
   readonly Tags: [];
 }
+
 export interface UntagCertificateAuthority {
   readonly CertificateAuthorityArn: string;
   readonly Tags: [];
 }
+
 export interface UpdateCertificateAuthority {
   readonly CertificateAuthorityArn: string;
   readonly RevocationConfiguration?: RevocationConfiguration;
   readonly Status?: string;
 }
 
-
-
-interface ASN1Subject {
-  readonly Country: string;
-  readonly Organization: string;
-  readonly OrganizationalUnit: string;
-  readonly DistinguishedNameQualifier: string;
-  readonly State: string;
-  readonly CommonName: string;
-  readonly SerialNumber: string;
-  readonly Locality: string;
-  readonly Title: string;
-  readonly Surname: string;
-  readonly GivenName: string;
-  readonly Initials: string;
-  readonly Pseudonym: string;
-  readonly GenerationQualifier: string;
+export interface ASN1Subject {
+  readonly Country?: string;
+  readonly Organization?: string;
+  readonly OrganizationalUnit?: string;
+  readonly DistinguishedNameQualifier?: string;
+  readonly State?: string;
+  readonly CommonName?: string;
+  readonly SerialNumber?: string;
+  readonly Locality?: string;
+  readonly Title?: string;
+  readonly Surname?: string;
+  readonly GivenName?: string;
+  readonly Initials?: string;
+  readonly Pseudonym?: string;
+  readonly GenerationQualifier?: string;
 }
 
-interface AccessDescription {
+export interface AccessDescription {
   readonly AccessMethod: AccessMethod;
   readonly AccessLocation: GeneralName;
 }
 
-interface AccessMethod {
-  readonly CustomObjectIdentifier: string;
-  readonly AccessMethodType: string;
+export interface AccessMethod {
+  readonly CustomObjectIdentifier?: string;
+  readonly AccessMethodType?: string;
 }
 
-interface ApiPassthrough {
-  readonly Extensions: Extensions;
-  readonly Subject: ASN1Subject;
+export interface ApiPassthrough {
+  readonly Extensions?: Extensions;
+  readonly Subject?: ASN1Subject;
 }
 
-interface CertificateAuthority {
-  readonly Arn: string;
-  readonly OwnerAccount: string;
-  readonly CreatedAt: Date;
-  readonly LastStateChangeAt: Date;
-  readonly Type: string;
-  readonly Serial: string;
-  readonly Status: string;
-  readonly NotBefore: Date;
-  readonly NotAfter: Date;
-  readonly FailureReason: string;
-  readonly CertificateAuthorityConfiguration: CertificateAuthorityConfiguration;
-  readonly RevocationConfiguration: RevocationConfiguration;
-  readonly RestorableUntil: Date;
-  readonly KeyStorageSecurityStandard: string;
+export interface CertificateAuthority {
+  readonly Arn?: string;
+  readonly OwnerAccount?: string;
+  readonly CreatedAt?: Date;
+  readonly LastStateChangeAt?: Date;
+  readonly Type?: string;
+  readonly Serial?: string;
+  readonly Status?: string;
+  readonly NotBefore?: Date;
+  readonly NotAfter?: Date;
+  readonly FailureReason?: string;
+  readonly CertificateAuthorityConfiguration?: CertificateAuthorityConfiguration;
+  readonly RevocationConfiguration?: RevocationConfiguration;
+  readonly RestorableUntil?: Date;
+  readonly KeyStorageSecurityStandard?: string;
 }
 
-interface CertificateAuthorityConfiguration {
+export interface CertificateAuthorityConfiguration {
   readonly KeyAlgorithm: string;
   readonly SigningAlgorithm: string;
   readonly Subject: ASN1Subject;
-  readonly CsrExtensions: CsrExtensions;
+  readonly CsrExtensions?: CsrExtensions;
 }
 
-interface CertificateMismatchException {
-  readonly message: string;
+export interface CertificateMismatchException {
+  readonly message?: string;
 }
 
-interface ConcurrentModificationException {
-  readonly message: string;
+export interface ConcurrentModificationException {
+  readonly message?: string;
 }
 
-interface CreateCertificateAuthorityAuditReportRequest {
+export interface CreateCertificateAuthorityAuditReportRequest {
   readonly CertificateAuthorityArn: string;
   readonly S3BucketName: string;
   readonly AuditReportResponseFormat: string;
 }
 
-interface CreateCertificateAuthorityAuditReportResponse {
-  readonly AuditReportId: string;
-  readonly S3Key: string;
+export interface CreateCertificateAuthorityAuditReportResponse {
+  readonly AuditReportId?: string;
+  readonly S3Key?: string;
 }
 
-interface CreateCertificateAuthorityRequest {
+export interface CreateCertificateAuthorityRequest {
   readonly CertificateAuthorityConfiguration: CertificateAuthorityConfiguration;
-  readonly RevocationConfiguration: RevocationConfiguration;
+  readonly RevocationConfiguration?: RevocationConfiguration;
   readonly CertificateAuthorityType: string;
-  readonly IdempotencyToken: string;
-  readonly KeyStorageSecurityStandard: string;
-  readonly Tags: [];
+  readonly IdempotencyToken?: string;
+  readonly KeyStorageSecurityStandard?: string;
+  readonly Tags?: [];
 }
 
-interface CreateCertificateAuthorityResponse {
-  readonly CertificateAuthorityArn: string;
+export interface CreateCertificateAuthorityResponse {
+  readonly CertificateAuthorityArn?: string;
 }
 
-interface CreatePermissionRequest {
+export interface CreatePermissionRequest {
   readonly CertificateAuthorityArn: string;
   readonly Principal: string;
-  readonly SourceAccount: string;
+  readonly SourceAccount?: string;
   readonly Actions: [];
 }
 
-interface CrlConfiguration {
+export interface CrlConfiguration {
   readonly Enabled: boolean;
-  readonly ExpirationInDays: number;
-  readonly CustomCname: string;
-  readonly S3BucketName: string;
-  readonly S3ObjectAcl: string;
+  readonly ExpirationInDays?: number;
+  readonly CustomCname?: string;
+  readonly S3BucketName?: string;
+  readonly S3ObjectAcl?: string;
 }
 
-interface CsrExtensions {
-  readonly KeyUsage: KeyUsage;
-  readonly SubjectInformationAccess: [];
+export interface CsrExtensions {
+  readonly KeyUsage?: KeyUsage;
+  readonly SubjectInformationAccess?: [];
 }
 
-interface DeleteCertificateAuthorityRequest {
+export interface DeleteCertificateAuthorityRequest {
   readonly CertificateAuthorityArn: string;
-  readonly PermanentDeletionTimeInDays: number;
+  readonly PermanentDeletionTimeInDays?: number;
 }
 
-interface DeletePermissionRequest {
+export interface DeletePermissionRequest {
   readonly CertificateAuthorityArn: string;
   readonly Principal: string;
-  readonly SourceAccount: string;
+  readonly SourceAccount?: string;
 }
 
-interface DeletePolicyRequest {
+export interface DeletePolicyRequest {
   readonly ResourceArn: string;
 }
 
-interface DescribeCertificateAuthorityAuditReportRequest {
+export interface DescribeCertificateAuthorityAuditReportRequest {
   readonly CertificateAuthorityArn: string;
   readonly AuditReportId: string;
 }
 
-interface DescribeCertificateAuthorityAuditReportResponse {
-  readonly AuditReportStatus: string;
-  readonly S3BucketName: string;
-  readonly S3Key: string;
-  readonly CreatedAt: Date;
+export interface DescribeCertificateAuthorityAuditReportResponse {
+  readonly AuditReportStatus?: string;
+  readonly S3BucketName?: string;
+  readonly S3Key?: string;
+  readonly CreatedAt?: Date;
 }
 
-interface DescribeCertificateAuthorityRequest {
+export interface DescribeCertificateAuthorityRequest {
   readonly CertificateAuthorityArn: string;
 }
 
-interface DescribeCertificateAuthorityResponse {
-  readonly CertificateAuthority: CertificateAuthority;
+export interface DescribeCertificateAuthorityResponse {
+  readonly CertificateAuthority?: CertificateAuthority;
 }
 
-interface EdiPartyName {
+export interface EdiPartyName {
   readonly PartyName: string;
-  readonly NameAssigner: string;
+  readonly NameAssigner?: string;
 }
 
-interface ExtendedKeyUsage {
-  readonly ExtendedKeyUsageType: string;
-  readonly ExtendedKeyUsageObjectIdentifier: string;
+export interface ExtendedKeyUsage {
+  readonly ExtendedKeyUsageType?: string;
+  readonly ExtendedKeyUsageObjectIdentifier?: string;
 }
 
-interface Extensions {
-  readonly CertificatePolicies: [];
-  readonly ExtendedKeyUsage: [];
-  readonly KeyUsage: KeyUsage;
-  readonly SubjectAlternativeNames: [];
+export interface Extensions {
+  readonly CertificatePolicies?: [];
+  readonly ExtendedKeyUsage?: [];
+  readonly KeyUsage?: KeyUsage;
+  readonly SubjectAlternativeNames?: [];
 }
 
-interface GeneralName {
-  readonly OtherName: OtherName;
-  readonly Rfc822Name: string;
-  readonly DnsName: string;
-  readonly DirectoryName: ASN1Subject;
-  readonly EdiPartyName: EdiPartyName;
-  readonly UniformResourceIdentifier: string;
-  readonly IpAddress: string;
-  readonly RegisteredId: string;
+export interface GeneralName {
+  readonly OtherName?: OtherName;
+  readonly Rfc822Name?: string;
+  readonly DnsName?: string;
+  readonly DirectoryName?: ASN1Subject;
+  readonly EdiPartyName?: EdiPartyName;
+  readonly UniformResourceIdentifier?: string;
+  readonly IpAddress?: string;
+  readonly RegisteredId?: string;
 }
 
-interface GetCertificateAuthorityCertificateRequest {
+export interface GetCertificateAuthorityCertificateRequest {
   readonly CertificateAuthorityArn: string;
 }
 
-interface GetCertificateAuthorityCertificateResponse {
-  readonly Certificate: string;
-  readonly CertificateChain: string;
+export interface GetCertificateAuthorityCertificateResponse {
+  readonly Certificate?: string;
+  readonly CertificateChain?: string;
 }
 
-interface GetCertificateAuthorityCsrRequest {
+export interface GetCertificateAuthorityCsrRequest {
   readonly CertificateAuthorityArn: string;
 }
 
-interface GetCertificateAuthorityCsrResponse {
-  readonly Csr: string;
+export interface GetCertificateAuthorityCsrResponse {
+  readonly Csr?: string;
 }
 
-interface GetCertificateRequest {
+export interface GetCertificateRequest {
   readonly CertificateAuthorityArn: string;
   readonly CertificateArn: string;
 }
 
-interface GetCertificateResponse {
-  readonly Certificate: string;
-  readonly CertificateChain: string;
+export interface GetCertificateResponse {
+  readonly Certificate?: string;
+  readonly CertificateChain?: string;
 }
 
-interface GetPolicyRequest {
+export interface GetPolicyRequest {
   readonly ResourceArn: string;
 }
 
-interface GetPolicyResponse {
-  readonly Policy: string;
+export interface GetPolicyResponse {
+  readonly Policy?: string;
 }
 
-interface ImportCertificateAuthorityCertificateRequest {
+export interface ImportCertificateAuthorityCertificateRequest {
   readonly CertificateAuthorityArn: string;
   readonly Certificate: unknown;
-  readonly CertificateChain: unknown;
+  readonly CertificateChain?: unknown;
 }
 
-interface InvalidArgsException {
-  readonly message: string;
+export interface InvalidArgsException {
+  readonly message?: string;
 }
 
-interface InvalidArnException {
-  readonly message: string;
+export interface InvalidArnException {
+  readonly message?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly message: string;
+export interface InvalidNextTokenException {
+  readonly message?: string;
 }
 
-interface InvalidPolicyException {
-  readonly message: string;
+export interface InvalidPolicyException {
+  readonly message?: string;
 }
 
-interface InvalidRequestException {
-  readonly message: string;
+export interface InvalidRequestException {
+  readonly message?: string;
 }
 
-interface InvalidStateException {
-  readonly message: string;
+export interface InvalidStateException {
+  readonly message?: string;
 }
 
-interface InvalidTagException {
-  readonly message: string;
+export interface InvalidTagException {
+  readonly message?: string;
 }
 
-interface IssueCertificateRequest {
-  readonly ApiPassthrough: ApiPassthrough;
+export interface IssueCertificateRequest {
+  readonly ApiPassthrough?: ApiPassthrough;
   readonly CertificateAuthorityArn: string;
   readonly Csr: unknown;
   readonly SigningAlgorithm: string;
-  readonly TemplateArn: string;
+  readonly TemplateArn?: string;
   readonly Validity: Validity;
-  readonly ValidityNotBefore: Validity;
-  readonly IdempotencyToken: string;
+  readonly ValidityNotBefore?: Validity;
+  readonly IdempotencyToken?: string;
 }
 
-interface IssueCertificateResponse {
-  readonly CertificateArn: string;
+export interface IssueCertificateResponse {
+  readonly CertificateArn?: string;
 }
 
-interface KeyUsage {
-  readonly DigitalSignature: boolean;
-  readonly NonRepudiation: boolean;
-  readonly KeyEncipherment: boolean;
-  readonly DataEncipherment: boolean;
-  readonly KeyAgreement: boolean;
-  readonly KeyCertSign: boolean;
-  readonly CRLSign: boolean;
-  readonly EncipherOnly: boolean;
-  readonly DecipherOnly: boolean;
+export interface KeyUsage {
+  readonly DigitalSignature?: boolean;
+  readonly NonRepudiation?: boolean;
+  readonly KeyEncipherment?: boolean;
+  readonly DataEncipherment?: boolean;
+  readonly KeyAgreement?: boolean;
+  readonly KeyCertSign?: boolean;
+  readonly CRLSign?: boolean;
+  readonly EncipherOnly?: boolean;
+  readonly DecipherOnly?: boolean;
 }
 
-interface LimitExceededException {
-  readonly message: string;
+export interface LimitExceededException {
+  readonly message?: string;
 }
 
-interface ListCertificateAuthoritiesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ResourceOwner: string;
+export interface ListCertificateAuthoritiesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ResourceOwner?: string;
 }
 
-interface ListCertificateAuthoritiesResponse {
-  readonly CertificateAuthorities: [];
-  readonly NextToken: string;
+export interface ListCertificateAuthoritiesResponse {
+  readonly CertificateAuthorities?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPermissionsRequest {
+export interface ListPermissionsRequest {
   readonly CertificateAuthorityArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListPermissionsResponse {
-  readonly Permissions: [];
-  readonly NextToken: string;
+export interface ListPermissionsResponse {
+  readonly Permissions?: [];
+  readonly NextToken?: string;
 }
 
-interface ListTagsRequest {
+export interface ListTagsRequest {
   readonly CertificateAuthorityArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListTagsResponse {
-  readonly Tags: [];
-  readonly NextToken: string;
+export interface ListTagsResponse {
+  readonly Tags?: [];
+  readonly NextToken?: string;
 }
 
-interface LockoutPreventedException {
-  readonly message: string;
+export interface LockoutPreventedException {
+  readonly message?: string;
 }
 
-interface MalformedCSRException {
-  readonly message: string;
+export interface MalformedCSRException {
+  readonly message?: string;
 }
 
-interface MalformedCertificateException {
-  readonly message: string;
+export interface MalformedCertificateException {
+  readonly message?: string;
 }
 
-interface OcspConfiguration {
+export interface OcspConfiguration {
   readonly Enabled: boolean;
-  readonly OcspCustomCname: string;
+  readonly OcspCustomCname?: string;
 }
 
-interface OtherName {
+export interface OtherName {
   readonly TypeId: string;
   readonly Value: string;
 }
 
-interface Permission {
-  readonly CertificateAuthorityArn: string;
-  readonly CreatedAt: Date;
-  readonly Principal: string;
-  readonly SourceAccount: string;
-  readonly Actions: [];
-  readonly Policy: string;
+export interface Permission {
+  readonly CertificateAuthorityArn?: string;
+  readonly CreatedAt?: Date;
+  readonly Principal?: string;
+  readonly SourceAccount?: string;
+  readonly Actions?: [];
+  readonly Policy?: string;
 }
 
-interface PermissionAlreadyExistsException {
-  readonly message: string;
+export interface PermissionAlreadyExistsException {
+  readonly message?: string;
 }
 
-interface PolicyInformation {
+export interface PolicyInformation {
   readonly CertPolicyId: string;
-  readonly PolicyQualifiers: [];
+  readonly PolicyQualifiers?: [];
 }
 
-interface PolicyQualifierInfo {
+export interface PolicyQualifierInfo {
   readonly PolicyQualifierId: string;
   readonly Qualifier: Qualifier;
 }
 
-interface PutPolicyRequest {
+export interface PutPolicyRequest {
   readonly ResourceArn: string;
   readonly Policy: string;
 }
 
-interface Qualifier {
+export interface Qualifier {
   readonly CpsUri: string;
 }
 
-interface RequestAlreadyProcessedException {
-  readonly message: string;
+export interface RequestAlreadyProcessedException {
+  readonly message?: string;
 }
 
-interface RequestFailedException {
-  readonly message: string;
+export interface RequestFailedException {
+  readonly message?: string;
 }
 
-interface RequestInProgressException {
-  readonly message: string;
+export interface RequestInProgressException {
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface RestoreCertificateAuthorityRequest {
+export interface RestoreCertificateAuthorityRequest {
   readonly CertificateAuthorityArn: string;
 }
 
-interface RevocationConfiguration {
-  readonly CrlConfiguration: CrlConfiguration;
-  readonly OcspConfiguration: OcspConfiguration;
+export interface RevocationConfiguration {
+  readonly CrlConfiguration?: CrlConfiguration;
+  readonly OcspConfiguration?: OcspConfiguration;
 }
 
-interface RevokeCertificateRequest {
+export interface RevokeCertificateRequest {
   readonly CertificateAuthorityArn: string;
   readonly CertificateSerial: string;
   readonly RevocationReason: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
-  readonly Value: string;
+  readonly Value?: string;
 }
 
-interface TagCertificateAuthorityRequest {
+export interface TagCertificateAuthorityRequest {
   readonly CertificateAuthorityArn: string;
   readonly Tags: [];
 }
 
-interface TooManyTagsException {
-  readonly message: string;
+export interface TooManyTagsException {
+  readonly message?: string;
 }
 
-interface UntagCertificateAuthorityRequest {
+export interface UntagCertificateAuthorityRequest {
   readonly CertificateAuthorityArn: string;
   readonly Tags: [];
 }
 
-interface UpdateCertificateAuthorityRequest {
+export interface UpdateCertificateAuthorityRequest {
   readonly CertificateAuthorityArn: string;
-  readonly RevocationConfiguration: RevocationConfiguration;
-  readonly Status: string;
+  readonly RevocationConfiguration?: RevocationConfiguration;
+  readonly Status?: string;
 }
 
-interface Validity {
+export interface Validity {
   readonly Value: number;
   readonly Type: string;
 }
+
 

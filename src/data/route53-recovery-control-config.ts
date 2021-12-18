@@ -6,103 +6,123 @@ export interface CreateCluster {
   readonly ClusterName: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateControlPanel {
   readonly ClientToken?: string;
   readonly ClusterArn: string;
   readonly ControlPanelName: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateRoutingControl {
   readonly ClientToken?: string;
   readonly ClusterArn: string;
   readonly ControlPanelArn?: string;
   readonly RoutingControlName: string;
 }
+
 export interface CreateSafetyRule {
   readonly AssertionRule?: NewAssertionRule;
   readonly ClientToken?: string;
   readonly GatingRule?: NewGatingRule;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface DeleteCluster {
   readonly ClusterArn: string;
 }
+
 export interface DeleteControlPanel {
   readonly ControlPanelArn: string;
 }
+
 export interface DeleteRoutingControl {
   readonly RoutingControlArn: string;
 }
+
 export interface DeleteSafetyRule {
   readonly SafetyRuleArn: string;
 }
+
 export interface DescribeCluster {
   readonly ClusterArn: string;
 }
+
 export interface DescribeControlPanel {
   readonly ControlPanelArn: string;
 }
+
 export interface DescribeRoutingControl {
   readonly RoutingControlArn: string;
 }
+
 export interface DescribeSafetyRule {
   readonly SafetyRuleArn: string;
 }
+
 export interface ListAssociatedRoute53HealthChecks {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly RoutingControlArn: string;
 }
+
 export interface ListClusters {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListControlPanels {
   readonly ClusterArn?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListRoutingControls {
   readonly ControlPanelArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListSafetyRules {
   readonly ControlPanelArn: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateControlPanel {
   readonly ControlPanelArn: string;
   readonly ControlPanelName: string;
 }
+
 export interface UpdateRoutingControl {
   readonly RoutingControlArn: string;
   readonly RoutingControlName: string;
 }
+
 export interface UpdateSafetyRule {
   readonly AssertionRuleUpdate?: AssertionRuleUpdate;
   readonly GatingRuleUpdate?: GatingRuleUpdate;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly Message: string;
 }
 
-interface AssertionRule {
+export interface AssertionRule {
   readonly AssertedControls: [];
   readonly ControlPanelArn: string;
   readonly Name: string;
@@ -112,143 +132,143 @@ interface AssertionRule {
   readonly WaitPeriodMs: number;
 }
 
-interface AssertionRuleUpdate {
+export interface AssertionRuleUpdate {
   readonly Name: string;
   readonly SafetyRuleArn: string;
   readonly WaitPeriodMs: number;
 }
 
-interface Cluster {
-  readonly ClusterArn: string;
-  readonly ClusterEndpoints: [];
-  readonly Name: string;
-  readonly Status: string;
+export interface Cluster {
+  readonly ClusterArn?: string;
+  readonly ClusterEndpoints?: [];
+  readonly Name?: string;
+  readonly Status?: string;
 }
 
-interface ClusterEndpoint {
-  readonly Endpoint: string;
-  readonly Region: string;
+export interface ClusterEndpoint {
+  readonly Endpoint?: string;
+  readonly Region?: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly Message: string;
 }
 
-interface ControlPanel {
-  readonly ClusterArn: string;
-  readonly ControlPanelArn: string;
-  readonly DefaultControlPanel: boolean;
-  readonly Name: string;
-  readonly RoutingControlCount: number;
-  readonly Status: string;
+export interface ControlPanel {
+  readonly ClusterArn?: string;
+  readonly ControlPanelArn?: string;
+  readonly DefaultControlPanel?: boolean;
+  readonly Name?: string;
+  readonly RoutingControlCount?: number;
+  readonly Status?: string;
 }
 
-interface CreateClusterRequest {
-  readonly ClientToken: string;
+export interface CreateClusterRequest {
+  readonly ClientToken?: string;
   readonly ClusterName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateClusterResponse {
-  readonly Cluster: Cluster;
+export interface CreateClusterResponse {
+  readonly Cluster?: Cluster;
 }
 
-interface CreateControlPanelRequest {
-  readonly ClientToken: string;
+export interface CreateControlPanelRequest {
+  readonly ClientToken?: string;
   readonly ClusterArn: string;
   readonly ControlPanelName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateControlPanelResponse {
-  readonly ControlPanel: ControlPanel;
+export interface CreateControlPanelResponse {
+  readonly ControlPanel?: ControlPanel;
 }
 
-interface CreateRoutingControlRequest {
-  readonly ClientToken: string;
+export interface CreateRoutingControlRequest {
+  readonly ClientToken?: string;
   readonly ClusterArn: string;
-  readonly ControlPanelArn: string;
+  readonly ControlPanelArn?: string;
   readonly RoutingControlName: string;
 }
 
-interface CreateRoutingControlResponse {
-  readonly RoutingControl: RoutingControl;
+export interface CreateRoutingControlResponse {
+  readonly RoutingControl?: RoutingControl;
 }
 
-interface CreateSafetyRuleRequest {
-  readonly AssertionRule: NewAssertionRule;
-  readonly ClientToken: string;
-  readonly GatingRule: NewGatingRule;
-  readonly Tags: {[key: string]: any};
+export interface CreateSafetyRuleRequest {
+  readonly AssertionRule?: NewAssertionRule;
+  readonly ClientToken?: string;
+  readonly GatingRule?: NewGatingRule;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateSafetyRuleResponse {
-  readonly AssertionRule: AssertionRule;
-  readonly GatingRule: GatingRule;
+export interface CreateSafetyRuleResponse {
+  readonly AssertionRule?: AssertionRule;
+  readonly GatingRule?: GatingRule;
 }
 
-interface DeleteClusterRequest {
+export interface DeleteClusterRequest {
   readonly ClusterArn: string;
 }
 
-interface DeleteClusterResponse {
+export interface DeleteClusterResponse {
 }
 
-interface DeleteControlPanelRequest {
+export interface DeleteControlPanelRequest {
   readonly ControlPanelArn: string;
 }
 
-interface DeleteControlPanelResponse {
+export interface DeleteControlPanelResponse {
 }
 
-interface DeleteRoutingControlRequest {
+export interface DeleteRoutingControlRequest {
   readonly RoutingControlArn: string;
 }
 
-interface DeleteRoutingControlResponse {
+export interface DeleteRoutingControlResponse {
 }
 
-interface DeleteSafetyRuleRequest {
+export interface DeleteSafetyRuleRequest {
   readonly SafetyRuleArn: string;
 }
 
-interface DeleteSafetyRuleResponse {
+export interface DeleteSafetyRuleResponse {
 }
 
-interface DescribeClusterRequest {
+export interface DescribeClusterRequest {
   readonly ClusterArn: string;
 }
 
-interface DescribeClusterResponse {
-  readonly Cluster: Cluster;
+export interface DescribeClusterResponse {
+  readonly Cluster?: Cluster;
 }
 
-interface DescribeControlPanelRequest {
+export interface DescribeControlPanelRequest {
   readonly ControlPanelArn: string;
 }
 
-interface DescribeControlPanelResponse {
-  readonly ControlPanel: ControlPanel;
+export interface DescribeControlPanelResponse {
+  readonly ControlPanel?: ControlPanel;
 }
 
-interface DescribeRoutingControlRequest {
+export interface DescribeRoutingControlRequest {
   readonly RoutingControlArn: string;
 }
 
-interface DescribeRoutingControlResponse {
-  readonly RoutingControl: RoutingControl;
+export interface DescribeRoutingControlResponse {
+  readonly RoutingControl?: RoutingControl;
 }
 
-interface DescribeSafetyRuleRequest {
+export interface DescribeSafetyRuleRequest {
   readonly SafetyRuleArn: string;
 }
 
-interface DescribeSafetyRuleResponse {
-  readonly AssertionRule: AssertionRule;
-  readonly GatingRule: GatingRule;
+export interface DescribeSafetyRuleResponse {
+  readonly AssertionRule?: AssertionRule;
+  readonly GatingRule?: GatingRule;
 }
 
-interface GatingRule {
+export interface GatingRule {
   readonly ControlPanelArn: string;
   readonly GatingControls: [];
   readonly Name: string;
@@ -259,79 +279,79 @@ interface GatingRule {
   readonly WaitPeriodMs: number;
 }
 
-interface GatingRuleUpdate {
+export interface GatingRuleUpdate {
   readonly Name: string;
   readonly SafetyRuleArn: string;
   readonly WaitPeriodMs: number;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly Message: string;
 }
 
-interface ListAssociatedRoute53HealthChecksRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListAssociatedRoute53HealthChecksRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly RoutingControlArn: string;
 }
 
-interface ListAssociatedRoute53HealthChecksResponse {
-  readonly HealthCheckIds: [];
-  readonly NextToken: string;
+export interface ListAssociatedRoute53HealthChecksResponse {
+  readonly HealthCheckIds?: [];
+  readonly NextToken?: string;
 }
 
-interface ListClustersRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListClustersRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListClustersResponse {
-  readonly Clusters: [];
-  readonly NextToken: string;
+export interface ListClustersResponse {
+  readonly Clusters?: [];
+  readonly NextToken?: string;
 }
 
-interface ListControlPanelsRequest {
-  readonly ClusterArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListControlPanelsRequest {
+  readonly ClusterArn?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListControlPanelsResponse {
-  readonly ControlPanels: [];
-  readonly NextToken: string;
+export interface ListControlPanelsResponse {
+  readonly ControlPanels?: [];
+  readonly NextToken?: string;
 }
 
-interface ListRoutingControlsRequest {
+export interface ListRoutingControlsRequest {
   readonly ControlPanelArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListRoutingControlsResponse {
-  readonly NextToken: string;
-  readonly RoutingControls: [];
+export interface ListRoutingControlsResponse {
+  readonly NextToken?: string;
+  readonly RoutingControls?: [];
 }
 
-interface ListSafetyRulesRequest {
+export interface ListSafetyRulesRequest {
   readonly ControlPanelArn: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListSafetyRulesResponse {
-  readonly NextToken: string;
-  readonly SafetyRules: [];
+export interface ListSafetyRulesResponse {
+  readonly NextToken?: string;
+  readonly SafetyRules?: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface NewAssertionRule {
+export interface NewAssertionRule {
   readonly AssertedControls: [];
   readonly ControlPanelArn: string;
   readonly Name: string;
@@ -339,7 +359,7 @@ interface NewAssertionRule {
   readonly WaitPeriodMs: number;
 }
 
-interface NewGatingRule {
+export interface NewGatingRule {
   readonly ControlPanelArn: string;
   readonly GatingControls: [];
   readonly Name: string;
@@ -348,81 +368,82 @@ interface NewGatingRule {
   readonly WaitPeriodMs: number;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly Message: string;
 }
 
-interface RoutingControl {
-  readonly ControlPanelArn: string;
-  readonly Name: string;
-  readonly RoutingControlArn: string;
-  readonly Status: string;
+export interface RoutingControl {
+  readonly ControlPanelArn?: string;
+  readonly Name?: string;
+  readonly RoutingControlArn?: string;
+  readonly Status?: string;
 }
 
-interface Rule {
-  readonly ASSERTION: AssertionRule;
-  readonly GATING: GatingRule;
+export interface Rule {
+  readonly ASSERTION?: AssertionRule;
+  readonly GATING?: GatingRule;
 }
 
-interface RuleConfig {
+export interface RuleConfig {
   readonly Inverted: boolean;
   readonly Threshold: number;
   readonly Type: string;
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly Message: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly Message: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateControlPanelRequest {
+export interface UpdateControlPanelRequest {
   readonly ControlPanelArn: string;
   readonly ControlPanelName: string;
 }
 
-interface UpdateControlPanelResponse {
-  readonly ControlPanel: ControlPanel;
+export interface UpdateControlPanelResponse {
+  readonly ControlPanel?: ControlPanel;
 }
 
-interface UpdateRoutingControlRequest {
+export interface UpdateRoutingControlRequest {
   readonly RoutingControlArn: string;
   readonly RoutingControlName: string;
 }
 
-interface UpdateRoutingControlResponse {
-  readonly RoutingControl: RoutingControl;
+export interface UpdateRoutingControlResponse {
+  readonly RoutingControl?: RoutingControl;
 }
 
-interface UpdateSafetyRuleRequest {
-  readonly AssertionRuleUpdate: AssertionRuleUpdate;
-  readonly GatingRuleUpdate: GatingRuleUpdate;
+export interface UpdateSafetyRuleRequest {
+  readonly AssertionRuleUpdate?: AssertionRuleUpdate;
+  readonly GatingRuleUpdate?: GatingRuleUpdate;
 }
 
-interface UpdateSafetyRuleResponse {
-  readonly AssertionRule: AssertionRule;
-  readonly GatingRule: GatingRule;
+export interface UpdateSafetyRuleResponse {
+  readonly AssertionRule?: AssertionRule;
+  readonly GatingRule?: GatingRule;
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly Message: string;
 }
+
 

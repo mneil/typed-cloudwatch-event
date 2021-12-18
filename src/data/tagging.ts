@@ -3,6 +3,7 @@
  */
 export interface DescribeReportCreation {
 }
+
 export interface GetComplianceSummary {
   readonly TargetIdFilters?: [];
   readonly RegionFilters?: [];
@@ -12,6 +13,7 @@ export interface GetComplianceSummary {
   readonly MaxResults?: number;
   readonly PaginationToken?: string;
 }
+
 export interface GetResources {
   readonly PaginationToken?: string;
   readonly TagFilters?: [];
@@ -22,169 +24,173 @@ export interface GetResources {
   readonly ExcludeCompliantResources?: boolean;
   readonly ResourceARNList?: [];
 }
+
 export interface GetTagKeys {
   readonly PaginationToken?: string;
 }
+
 export interface GetTagValues {
   readonly PaginationToken?: string;
   readonly Key: string;
 }
+
 export interface StartReportCreation {
   readonly S3Bucket: string;
 }
+
 export interface TagResources {
   readonly ResourceARNList: [];
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResources {
   readonly ResourceARNList: [];
   readonly TagKeys: [];
 }
 
-
-
-interface ComplianceDetails {
-  readonly NoncompliantKeys: [];
-  readonly KeysWithNoncompliantValues: [];
-  readonly ComplianceStatus: boolean;
+export interface ComplianceDetails {
+  readonly NoncompliantKeys?: [];
+  readonly KeysWithNoncompliantValues?: [];
+  readonly ComplianceStatus?: boolean;
 }
 
-interface ConcurrentModificationException {
-  readonly Message: string;
+export interface ConcurrentModificationException {
+  readonly Message?: string;
 }
 
-interface ConstraintViolationException {
-  readonly Message: string;
+export interface ConstraintViolationException {
+  readonly Message?: string;
 }
 
-interface DescribeReportCreationInput {
+export interface DescribeReportCreationInput {
 }
 
-interface DescribeReportCreationOutput {
-  readonly Status: string;
-  readonly S3Location: string;
-  readonly ErrorMessage: string;
+export interface DescribeReportCreationOutput {
+  readonly Status?: string;
+  readonly S3Location?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface FailureInfo {
-  readonly StatusCode: number;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+export interface FailureInfo {
+  readonly StatusCode?: number;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface GetComplianceSummaryInput {
-  readonly TargetIdFilters: [];
-  readonly RegionFilters: [];
-  readonly ResourceTypeFilters: [];
-  readonly TagKeyFilters: [];
-  readonly GroupBy: [];
-  readonly MaxResults: number;
-  readonly PaginationToken: string;
+export interface GetComplianceSummaryInput {
+  readonly TargetIdFilters?: [];
+  readonly RegionFilters?: [];
+  readonly ResourceTypeFilters?: [];
+  readonly TagKeyFilters?: [];
+  readonly GroupBy?: [];
+  readonly MaxResults?: number;
+  readonly PaginationToken?: string;
 }
 
-interface GetComplianceSummaryOutput {
-  readonly SummaryList: [];
-  readonly PaginationToken: string;
+export interface GetComplianceSummaryOutput {
+  readonly SummaryList?: [];
+  readonly PaginationToken?: string;
 }
 
-interface GetResourcesInput {
-  readonly PaginationToken: string;
-  readonly TagFilters: [];
-  readonly ResourcesPerPage: number;
-  readonly TagsPerPage: number;
-  readonly ResourceTypeFilters: [];
-  readonly IncludeComplianceDetails: boolean;
-  readonly ExcludeCompliantResources: boolean;
-  readonly ResourceARNList: [];
+export interface GetResourcesInput {
+  readonly PaginationToken?: string;
+  readonly TagFilters?: [];
+  readonly ResourcesPerPage?: number;
+  readonly TagsPerPage?: number;
+  readonly ResourceTypeFilters?: [];
+  readonly IncludeComplianceDetails?: boolean;
+  readonly ExcludeCompliantResources?: boolean;
+  readonly ResourceARNList?: [];
 }
 
-interface GetResourcesOutput {
-  readonly PaginationToken: string;
-  readonly ResourceTagMappingList: [];
+export interface GetResourcesOutput {
+  readonly PaginationToken?: string;
+  readonly ResourceTagMappingList?: [];
 }
 
-interface GetTagKeysInput {
-  readonly PaginationToken: string;
+export interface GetTagKeysInput {
+  readonly PaginationToken?: string;
 }
 
-interface GetTagKeysOutput {
-  readonly PaginationToken: string;
-  readonly TagKeys: [];
+export interface GetTagKeysOutput {
+  readonly PaginationToken?: string;
+  readonly TagKeys?: [];
 }
 
-interface GetTagValuesInput {
-  readonly PaginationToken: string;
+export interface GetTagValuesInput {
+  readonly PaginationToken?: string;
   readonly Key: string;
 }
 
-interface GetTagValuesOutput {
-  readonly PaginationToken: string;
-  readonly TagValues: [];
+export interface GetTagValuesOutput {
+  readonly PaginationToken?: string;
+  readonly TagValues?: [];
 }
 
-interface InternalServiceException {
-  readonly Message: string;
+export interface InternalServiceException {
+  readonly Message?: string;
 }
 
-interface InvalidParameterException {
-  readonly Message: string;
+export interface InvalidParameterException {
+  readonly Message?: string;
 }
 
-interface PaginationTokenExpiredException {
-  readonly Message: string;
+export interface PaginationTokenExpiredException {
+  readonly Message?: string;
 }
 
-interface ResourceTagMapping {
-  readonly ResourceARN: string;
-  readonly Tags: [];
-  readonly ComplianceDetails: ComplianceDetails;
+export interface ResourceTagMapping {
+  readonly ResourceARN?: string;
+  readonly Tags?: [];
+  readonly ComplianceDetails?: ComplianceDetails;
 }
 
-interface StartReportCreationInput {
+export interface StartReportCreationInput {
   readonly S3Bucket: string;
 }
 
-interface StartReportCreationOutput {
+export interface StartReportCreationOutput {
 }
 
-interface Summary {
-  readonly LastUpdated: string;
-  readonly TargetId: string;
-  readonly TargetIdType: string;
-  readonly Region: string;
-  readonly ResourceType: string;
-  readonly NonCompliantResources: number;
+export interface Summary {
+  readonly LastUpdated?: string;
+  readonly TargetId?: string;
+  readonly TargetIdType?: string;
+  readonly Region?: string;
+  readonly ResourceType?: string;
+  readonly NonCompliantResources?: number;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagFilter {
-  readonly Key: string;
-  readonly Values: [];
+export interface TagFilter {
+  readonly Key?: string;
+  readonly Values?: [];
 }
 
-interface TagResourcesInput {
+export interface TagResourcesInput {
   readonly ResourceARNList: [];
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourcesOutput {
-  readonly FailedResourcesMap: {[key: string]: any};
+export interface TagResourcesOutput {
+  readonly FailedResourcesMap?: {[key: string]: any};
 }
 
-interface ThrottledException {
-  readonly Message: string;
+export interface ThrottledException {
+  readonly Message?: string;
 }
 
-interface UntagResourcesInput {
+export interface UntagResourcesInput {
   readonly ResourceARNList: [];
   readonly TagKeys: [];
 }
 
-interface UntagResourcesOutput {
-  readonly FailedResourcesMap: {[key: string]: any};
+export interface UntagResourcesOutput {
+  readonly FailedResourcesMap?: {[key: string]: any};
 }
+
 

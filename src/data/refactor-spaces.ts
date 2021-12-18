@@ -10,6 +10,7 @@ export interface CreateApplication {
   readonly Tags?: {[key: string]: any};
   readonly VpcId: string;
 }
+
 export interface CreateEnvironment {
   readonly ClientToken?: string;
   readonly Description?: string;
@@ -17,6 +18,7 @@ export interface CreateEnvironment {
   readonly NetworkFabricType: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateRoute {
   readonly ApplicationIdentifier: string;
   readonly ClientToken?: string;
@@ -26,6 +28,7 @@ export interface CreateRoute {
   readonly Tags?: {[key: string]: any};
   readonly UriPathRoute?: UriPathRouteInput;
 }
+
 export interface CreateService {
   readonly ApplicationIdentifier: string;
   readonly ClientToken?: string;
@@ -38,637 +41,655 @@ export interface CreateService {
   readonly UrlEndpoint?: UrlEndpointInput;
   readonly VpcId?: string;
 }
+
 export interface DeleteApplication {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
 }
+
 export interface DeleteEnvironment {
   readonly EnvironmentIdentifier: string;
 }
+
 export interface DeleteResourcePolicy {
   readonly Identifier: string;
 }
+
 export interface DeleteRoute {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
   readonly RouteIdentifier: string;
 }
+
 export interface DeleteService {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
   readonly ServiceIdentifier: string;
 }
+
 export interface GetApplication {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
 }
+
 export interface GetEnvironment {
   readonly EnvironmentIdentifier: string;
 }
+
 export interface GetResourcePolicy {
   readonly Identifier: string;
 }
+
 export interface GetRoute {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
   readonly RouteIdentifier: string;
 }
+
 export interface GetService {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
   readonly ServiceIdentifier: string;
 }
+
 export interface ListApplications {
   readonly EnvironmentIdentifier: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListEnvironmentVpcs {
   readonly EnvironmentIdentifier: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListEnvironments {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListRoutes {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListServices {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface PutResourcePolicy {
   readonly Policy: string;
   readonly ResourceArn: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly Message: string;
 }
 
-interface ApiGatewayProxyConfig {
-  readonly ApiGatewayId: string;
-  readonly EndpointType: string;
-  readonly NlbArn: string;
-  readonly NlbName: string;
-  readonly ProxyUrl: string;
-  readonly StageName: string;
-  readonly VpcLinkId: string;
+export interface ApiGatewayProxyConfig {
+  readonly ApiGatewayId?: string;
+  readonly EndpointType?: string;
+  readonly NlbArn?: string;
+  readonly NlbName?: string;
+  readonly ProxyUrl?: string;
+  readonly StageName?: string;
+  readonly VpcLinkId?: string;
 }
 
-interface ApiGatewayProxyInput {
-  readonly EndpointType: string;
-  readonly StageName: string;
+export interface ApiGatewayProxyInput {
+  readonly EndpointType?: string;
+  readonly StageName?: string;
 }
 
-interface ApiGatewayProxySummary {
-  readonly ApiGatewayId: string;
-  readonly EndpointType: string;
-  readonly NlbArn: string;
-  readonly NlbName: string;
-  readonly ProxyUrl: string;
-  readonly StageName: string;
-  readonly VpcLinkId: string;
+export interface ApiGatewayProxySummary {
+  readonly ApiGatewayId?: string;
+  readonly EndpointType?: string;
+  readonly NlbArn?: string;
+  readonly NlbName?: string;
+  readonly ProxyUrl?: string;
+  readonly StageName?: string;
+  readonly VpcLinkId?: string;
 }
 
-interface ApplicationSummary {
-  readonly ApiGatewayProxy: ApiGatewayProxySummary;
-  readonly ApplicationId: string;
-  readonly Arn: string;
-  readonly CreatedByAccountId: string;
-  readonly CreatedTime: Date;
-  readonly EnvironmentId: string;
-  readonly Error: ErrorResponse;
-  readonly LastUpdatedTime: Date;
-  readonly Name: string;
-  readonly OwnerAccountId: string;
-  readonly ProxyType: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
-  readonly VpcId: string;
+export interface ApplicationSummary {
+  readonly ApiGatewayProxy?: ApiGatewayProxySummary;
+  readonly ApplicationId?: string;
+  readonly Arn?: string;
+  readonly CreatedByAccountId?: string;
+  readonly CreatedTime?: Date;
+  readonly EnvironmentId?: string;
+  readonly Error?: ErrorResponse;
+  readonly LastUpdatedTime?: Date;
+  readonly Name?: string;
+  readonly OwnerAccountId?: string;
+  readonly ProxyType?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly VpcId?: string;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly Message: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
 
-interface CreateApplicationRequest {
-  readonly ApiGatewayProxy: ApiGatewayProxyInput;
-  readonly ClientToken: string;
+export interface CreateApplicationRequest {
+  readonly ApiGatewayProxy?: ApiGatewayProxyInput;
+  readonly ClientToken?: string;
   readonly EnvironmentIdentifier: string;
   readonly Name: string;
   readonly ProxyType: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
   readonly VpcId: string;
 }
 
-interface CreateApplicationResponse {
-  readonly ApiGatewayProxy: ApiGatewayProxyInput;
-  readonly ApplicationId: string;
-  readonly Arn: string;
-  readonly CreatedByAccountId: string;
-  readonly CreatedTime: Date;
-  readonly EnvironmentId: string;
-  readonly LastUpdatedTime: Date;
-  readonly Name: string;
-  readonly OwnerAccountId: string;
-  readonly ProxyType: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
-  readonly VpcId: string;
+export interface CreateApplicationResponse {
+  readonly ApiGatewayProxy?: ApiGatewayProxyInput;
+  readonly ApplicationId?: string;
+  readonly Arn?: string;
+  readonly CreatedByAccountId?: string;
+  readonly CreatedTime?: Date;
+  readonly EnvironmentId?: string;
+  readonly LastUpdatedTime?: Date;
+  readonly Name?: string;
+  readonly OwnerAccountId?: string;
+  readonly ProxyType?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly VpcId?: string;
 }
 
-interface CreateEnvironmentRequest {
-  readonly ClientToken: string;
-  readonly Description: string;
-  readonly Name: string;
-  readonly NetworkFabricType: string;
-  readonly Tags: {[key: string]: any};
-}
-
-interface CreateEnvironmentResponse {
-  readonly Arn: string;
-  readonly CreatedTime: Date;
-  readonly Description: string;
-  readonly EnvironmentId: string;
-  readonly LastUpdatedTime: Date;
+export interface CreateEnvironmentRequest {
+  readonly ClientToken?: string;
+  readonly Description?: string;
   readonly Name: string;
   readonly NetworkFabricType: string;
-  readonly OwnerAccountId: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateRouteRequest {
+export interface CreateEnvironmentResponse {
+  readonly Arn?: string;
+  readonly CreatedTime?: Date;
+  readonly Description?: string;
+  readonly EnvironmentId?: string;
+  readonly LastUpdatedTime?: Date;
+  readonly Name?: string;
+  readonly NetworkFabricType?: string;
+  readonly OwnerAccountId?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface CreateRouteRequest {
   readonly ApplicationIdentifier: string;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
   readonly EnvironmentIdentifier: string;
   readonly RouteType: string;
   readonly ServiceIdentifier: string;
-  readonly Tags: {[key: string]: any};
-  readonly UriPathRoute: UriPathRouteInput;
+  readonly Tags?: {[key: string]: any};
+  readonly UriPathRoute?: UriPathRouteInput;
 }
 
-interface CreateRouteResponse {
-  readonly ApplicationId: string;
-  readonly Arn: string;
-  readonly CreatedByAccountId: string;
-  readonly CreatedTime: Date;
-  readonly LastUpdatedTime: Date;
-  readonly OwnerAccountId: string;
-  readonly RouteId: string;
-  readonly RouteType: string;
-  readonly ServiceId: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
-  readonly UriPathRoute: UriPathRouteInput;
+export interface CreateRouteResponse {
+  readonly ApplicationId?: string;
+  readonly Arn?: string;
+  readonly CreatedByAccountId?: string;
+  readonly CreatedTime?: Date;
+  readonly LastUpdatedTime?: Date;
+  readonly OwnerAccountId?: string;
+  readonly RouteId?: string;
+  readonly RouteType?: string;
+  readonly ServiceId?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly UriPathRoute?: UriPathRouteInput;
 }
 
-interface CreateServiceRequest {
+export interface CreateServiceRequest {
   readonly ApplicationIdentifier: string;
-  readonly ClientToken: string;
-  readonly Description: string;
+  readonly ClientToken?: string;
+  readonly Description?: string;
   readonly EndpointType: string;
   readonly EnvironmentIdentifier: string;
-  readonly LambdaEndpoint: LambdaEndpointInput;
+  readonly LambdaEndpoint?: LambdaEndpointInput;
   readonly Name: string;
-  readonly Tags: {[key: string]: any};
-  readonly UrlEndpoint: UrlEndpointInput;
-  readonly VpcId: string;
+  readonly Tags?: {[key: string]: any};
+  readonly UrlEndpoint?: UrlEndpointInput;
+  readonly VpcId?: string;
 }
 
-interface CreateServiceResponse {
-  readonly ApplicationId: string;
-  readonly Arn: string;
-  readonly CreatedByAccountId: string;
-  readonly CreatedTime: Date;
-  readonly Description: string;
-  readonly EndpointType: string;
-  readonly EnvironmentId: string;
-  readonly LambdaEndpoint: LambdaEndpointInput;
-  readonly LastUpdatedTime: Date;
-  readonly Name: string;
-  readonly OwnerAccountId: string;
-  readonly ServiceId: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
-  readonly UrlEndpoint: UrlEndpointInput;
-  readonly VpcId: string;
+export interface CreateServiceResponse {
+  readonly ApplicationId?: string;
+  readonly Arn?: string;
+  readonly CreatedByAccountId?: string;
+  readonly CreatedTime?: Date;
+  readonly Description?: string;
+  readonly EndpointType?: string;
+  readonly EnvironmentId?: string;
+  readonly LambdaEndpoint?: LambdaEndpointInput;
+  readonly LastUpdatedTime?: Date;
+  readonly Name?: string;
+  readonly OwnerAccountId?: string;
+  readonly ServiceId?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly UrlEndpoint?: UrlEndpointInput;
+  readonly VpcId?: string;
 }
 
-interface DeleteApplicationRequest {
+export interface DeleteApplicationRequest {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
 }
 
-interface DeleteApplicationResponse {
-  readonly ApplicationId: string;
-  readonly Arn: string;
-  readonly EnvironmentId: string;
-  readonly LastUpdatedTime: Date;
-  readonly Name: string;
-  readonly State: string;
+export interface DeleteApplicationResponse {
+  readonly ApplicationId?: string;
+  readonly Arn?: string;
+  readonly EnvironmentId?: string;
+  readonly LastUpdatedTime?: Date;
+  readonly Name?: string;
+  readonly State?: string;
 }
 
-interface DeleteEnvironmentRequest {
+export interface DeleteEnvironmentRequest {
   readonly EnvironmentIdentifier: string;
 }
 
-interface DeleteEnvironmentResponse {
-  readonly Arn: string;
-  readonly EnvironmentId: string;
-  readonly LastUpdatedTime: Date;
-  readonly Name: string;
-  readonly State: string;
+export interface DeleteEnvironmentResponse {
+  readonly Arn?: string;
+  readonly EnvironmentId?: string;
+  readonly LastUpdatedTime?: Date;
+  readonly Name?: string;
+  readonly State?: string;
 }
 
-interface DeleteResourcePolicyRequest {
+export interface DeleteResourcePolicyRequest {
   readonly Identifier: string;
 }
 
-interface DeleteResourcePolicyResponse {
+export interface DeleteResourcePolicyResponse {
 }
 
-interface DeleteRouteRequest {
+export interface DeleteRouteRequest {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
   readonly RouteIdentifier: string;
 }
 
-interface DeleteRouteResponse {
-  readonly ApplicationId: string;
-  readonly Arn: string;
-  readonly LastUpdatedTime: Date;
-  readonly RouteId: string;
-  readonly ServiceId: string;
-  readonly State: string;
+export interface DeleteRouteResponse {
+  readonly ApplicationId?: string;
+  readonly Arn?: string;
+  readonly LastUpdatedTime?: Date;
+  readonly RouteId?: string;
+  readonly ServiceId?: string;
+  readonly State?: string;
 }
 
-interface DeleteServiceRequest {
+export interface DeleteServiceRequest {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
   readonly ServiceIdentifier: string;
 }
 
-interface DeleteServiceResponse {
-  readonly ApplicationId: string;
-  readonly Arn: string;
-  readonly EnvironmentId: string;
-  readonly LastUpdatedTime: Date;
-  readonly Name: string;
-  readonly ServiceId: string;
-  readonly State: string;
+export interface DeleteServiceResponse {
+  readonly ApplicationId?: string;
+  readonly Arn?: string;
+  readonly EnvironmentId?: string;
+  readonly LastUpdatedTime?: Date;
+  readonly Name?: string;
+  readonly ServiceId?: string;
+  readonly State?: string;
 }
 
-interface EnvironmentSummary {
-  readonly Arn: string;
-  readonly CreatedTime: Date;
-  readonly Description: string;
-  readonly EnvironmentId: string;
-  readonly Error: ErrorResponse;
-  readonly LastUpdatedTime: Date;
-  readonly Name: string;
-  readonly NetworkFabricType: string;
-  readonly OwnerAccountId: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
-  readonly TransitGatewayId: string;
+export interface EnvironmentSummary {
+  readonly Arn?: string;
+  readonly CreatedTime?: Date;
+  readonly Description?: string;
+  readonly EnvironmentId?: string;
+  readonly Error?: ErrorResponse;
+  readonly LastUpdatedTime?: Date;
+  readonly Name?: string;
+  readonly NetworkFabricType?: string;
+  readonly OwnerAccountId?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly TransitGatewayId?: string;
 }
 
-interface EnvironmentVpc {
-  readonly AccountId: string;
-  readonly CidrBlocks: [];
-  readonly CreatedTime: Date;
-  readonly EnvironmentId: string;
-  readonly LastUpdatedTime: Date;
-  readonly VpcId: string;
-  readonly VpcName: string;
+export interface EnvironmentVpc {
+  readonly AccountId?: string;
+  readonly CidrBlocks?: [];
+  readonly CreatedTime?: Date;
+  readonly EnvironmentId?: string;
+  readonly LastUpdatedTime?: Date;
+  readonly VpcId?: string;
+  readonly VpcName?: string;
 }
 
-interface ErrorResponse {
-  readonly AccountId: string;
-  readonly AdditionalDetails: {[key: string]: any};
-  readonly Code: string;
-  readonly Message: string;
-  readonly ResourceIdentifier: string;
-  readonly ResourceType: string;
+export interface ErrorResponse {
+  readonly AccountId?: string;
+  readonly AdditionalDetails?: {[key: string]: any};
+  readonly Code?: string;
+  readonly Message?: string;
+  readonly ResourceIdentifier?: string;
+  readonly ResourceType?: string;
 }
 
-interface GetApplicationRequest {
+export interface GetApplicationRequest {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
 }
 
-interface GetApplicationResponse {
-  readonly ApiGatewayProxy: ApiGatewayProxyConfig;
-  readonly ApplicationId: string;
-  readonly Arn: string;
-  readonly CreatedByAccountId: string;
-  readonly CreatedTime: Date;
-  readonly EnvironmentId: string;
-  readonly Error: ErrorResponse;
-  readonly LastUpdatedTime: Date;
-  readonly Name: string;
-  readonly OwnerAccountId: string;
-  readonly ProxyType: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
-  readonly VpcId: string;
+export interface GetApplicationResponse {
+  readonly ApiGatewayProxy?: ApiGatewayProxyConfig;
+  readonly ApplicationId?: string;
+  readonly Arn?: string;
+  readonly CreatedByAccountId?: string;
+  readonly CreatedTime?: Date;
+  readonly EnvironmentId?: string;
+  readonly Error?: ErrorResponse;
+  readonly LastUpdatedTime?: Date;
+  readonly Name?: string;
+  readonly OwnerAccountId?: string;
+  readonly ProxyType?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly VpcId?: string;
 }
 
-interface GetEnvironmentRequest {
+export interface GetEnvironmentRequest {
   readonly EnvironmentIdentifier: string;
 }
 
-interface GetEnvironmentResponse {
-  readonly Arn: string;
-  readonly CreatedTime: Date;
-  readonly Description: string;
-  readonly EnvironmentId: string;
-  readonly Error: ErrorResponse;
-  readonly LastUpdatedTime: Date;
-  readonly Name: string;
-  readonly NetworkFabricType: string;
-  readonly OwnerAccountId: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
-  readonly TransitGatewayId: string;
+export interface GetEnvironmentResponse {
+  readonly Arn?: string;
+  readonly CreatedTime?: Date;
+  readonly Description?: string;
+  readonly EnvironmentId?: string;
+  readonly Error?: ErrorResponse;
+  readonly LastUpdatedTime?: Date;
+  readonly Name?: string;
+  readonly NetworkFabricType?: string;
+  readonly OwnerAccountId?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly TransitGatewayId?: string;
 }
 
-interface GetResourcePolicyRequest {
+export interface GetResourcePolicyRequest {
   readonly Identifier: string;
 }
 
-interface GetResourcePolicyResponse {
-  readonly Policy: string;
+export interface GetResourcePolicyResponse {
+  readonly Policy?: string;
 }
 
-interface GetRouteRequest {
+export interface GetRouteRequest {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
   readonly RouteIdentifier: string;
 }
 
-interface GetRouteResponse {
-  readonly ApplicationId: string;
-  readonly Arn: string;
-  readonly CreatedByAccountId: string;
-  readonly CreatedTime: Date;
-  readonly EnvironmentId: string;
-  readonly Error: ErrorResponse;
-  readonly IncludeChildPaths: boolean;
-  readonly LastUpdatedTime: Date;
-  readonly Methods: [];
-  readonly OwnerAccountId: string;
-  readonly PathResourceToId: {[key: string]: any};
-  readonly RouteId: string;
-  readonly RouteType: string;
-  readonly ServiceId: string;
-  readonly SourcePath: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
+export interface GetRouteResponse {
+  readonly ApplicationId?: string;
+  readonly Arn?: string;
+  readonly CreatedByAccountId?: string;
+  readonly CreatedTime?: Date;
+  readonly EnvironmentId?: string;
+  readonly Error?: ErrorResponse;
+  readonly IncludeChildPaths?: boolean;
+  readonly LastUpdatedTime?: Date;
+  readonly Methods?: [];
+  readonly OwnerAccountId?: string;
+  readonly PathResourceToId?: {[key: string]: any};
+  readonly RouteId?: string;
+  readonly RouteType?: string;
+  readonly ServiceId?: string;
+  readonly SourcePath?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface GetServiceRequest {
+export interface GetServiceRequest {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
   readonly ServiceIdentifier: string;
 }
 
-interface GetServiceResponse {
-  readonly ApplicationId: string;
-  readonly Arn: string;
-  readonly CreatedByAccountId: string;
-  readonly CreatedTime: Date;
-  readonly Description: string;
-  readonly EndpointType: string;
-  readonly EnvironmentId: string;
-  readonly Error: ErrorResponse;
-  readonly LambdaEndpoint: LambdaEndpointConfig;
-  readonly LastUpdatedTime: Date;
-  readonly Name: string;
-  readonly OwnerAccountId: string;
-  readonly ServiceId: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
-  readonly UrlEndpoint: UrlEndpointConfig;
-  readonly VpcId: string;
+export interface GetServiceResponse {
+  readonly ApplicationId?: string;
+  readonly Arn?: string;
+  readonly CreatedByAccountId?: string;
+  readonly CreatedTime?: Date;
+  readonly Description?: string;
+  readonly EndpointType?: string;
+  readonly EnvironmentId?: string;
+  readonly Error?: ErrorResponse;
+  readonly LambdaEndpoint?: LambdaEndpointConfig;
+  readonly LastUpdatedTime?: Date;
+  readonly Name?: string;
+  readonly OwnerAccountId?: string;
+  readonly ServiceId?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly UrlEndpoint?: UrlEndpointConfig;
+  readonly VpcId?: string;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly Message: string;
 }
 
-interface InvalidResourcePolicyException {
+export interface InvalidResourcePolicyException {
   readonly Message: string;
 }
 
-interface LambdaEndpointConfig {
+export interface LambdaEndpointConfig {
+  readonly Arn?: string;
+}
+
+export interface LambdaEndpointInput {
   readonly Arn: string;
 }
 
-interface LambdaEndpointInput {
-  readonly Arn: string;
+export interface LambdaEndpointSummary {
+  readonly Arn?: string;
 }
 
-interface LambdaEndpointSummary {
-  readonly Arn: string;
-}
-
-interface ListApplicationsRequest {
+export interface ListApplicationsRequest {
   readonly EnvironmentIdentifier: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListApplicationsResponse {
-  readonly ApplicationSummaryList: [];
-  readonly NextToken: string;
+export interface ListApplicationsResponse {
+  readonly ApplicationSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListEnvironmentVpcsRequest {
+export interface ListEnvironmentVpcsRequest {
   readonly EnvironmentIdentifier: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListEnvironmentVpcsResponse {
-  readonly EnvironmentVpcList: [];
-  readonly NextToken: string;
+export interface ListEnvironmentVpcsResponse {
+  readonly EnvironmentVpcList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListEnvironmentsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListEnvironmentsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListEnvironmentsResponse {
-  readonly EnvironmentSummaryList: [];
-  readonly NextToken: string;
+export interface ListEnvironmentsResponse {
+  readonly EnvironmentSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListRoutesRequest {
+export interface ListRoutesRequest {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListRoutesResponse {
-  readonly NextToken: string;
-  readonly RouteSummaryList: [];
+export interface ListRoutesResponse {
+  readonly NextToken?: string;
+  readonly RouteSummaryList?: [];
 }
 
-interface ListServicesRequest {
+export interface ListServicesRequest {
   readonly ApplicationIdentifier: string;
   readonly EnvironmentIdentifier: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListServicesResponse {
-  readonly NextToken: string;
-  readonly ServiceSummaryList: [];
+export interface ListServicesResponse {
+  readonly NextToken?: string;
+  readonly ServiceSummaryList?: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface PutResourcePolicyRequest {
+export interface PutResourcePolicyRequest {
   readonly Policy: string;
   readonly ResourceArn: string;
 }
 
-interface PutResourcePolicyResponse {
+export interface PutResourcePolicyResponse {
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly Message: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
 
-interface RouteSummary {
-  readonly ApplicationId: string;
-  readonly Arn: string;
-  readonly CreatedByAccountId: string;
-  readonly CreatedTime: Date;
-  readonly EnvironmentId: string;
-  readonly Error: ErrorResponse;
-  readonly IncludeChildPaths: boolean;
-  readonly LastUpdatedTime: Date;
-  readonly Methods: [];
-  readonly OwnerAccountId: string;
-  readonly PathResourceToId: {[key: string]: any};
-  readonly RouteId: string;
-  readonly RouteType: string;
-  readonly ServiceId: string;
-  readonly SourcePath: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
+export interface RouteSummary {
+  readonly ApplicationId?: string;
+  readonly Arn?: string;
+  readonly CreatedByAccountId?: string;
+  readonly CreatedTime?: Date;
+  readonly EnvironmentId?: string;
+  readonly Error?: ErrorResponse;
+  readonly IncludeChildPaths?: boolean;
+  readonly LastUpdatedTime?: Date;
+  readonly Methods?: [];
+  readonly OwnerAccountId?: string;
+  readonly PathResourceToId?: {[key: string]: any};
+  readonly RouteId?: string;
+  readonly RouteType?: string;
+  readonly ServiceId?: string;
+  readonly SourcePath?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly Message: string;
-  readonly QuotaCode: string;
+  readonly QuotaCode?: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
   readonly ServiceCode: string;
 }
 
-interface ServiceSummary {
-  readonly ApplicationId: string;
-  readonly Arn: string;
-  readonly CreatedByAccountId: string;
-  readonly CreatedTime: Date;
-  readonly Description: string;
-  readonly EndpointType: string;
-  readonly EnvironmentId: string;
-  readonly Error: ErrorResponse;
-  readonly LambdaEndpoint: LambdaEndpointSummary;
-  readonly LastUpdatedTime: Date;
-  readonly Name: string;
-  readonly OwnerAccountId: string;
-  readonly ServiceId: string;
-  readonly State: string;
-  readonly Tags: {[key: string]: any};
-  readonly UrlEndpoint: UrlEndpointSummary;
-  readonly VpcId: string;
+export interface ServiceSummary {
+  readonly ApplicationId?: string;
+  readonly Arn?: string;
+  readonly CreatedByAccountId?: string;
+  readonly CreatedTime?: Date;
+  readonly Description?: string;
+  readonly EndpointType?: string;
+  readonly EnvironmentId?: string;
+  readonly Error?: ErrorResponse;
+  readonly LambdaEndpoint?: LambdaEndpointSummary;
+  readonly LastUpdatedTime?: Date;
+  readonly Name?: string;
+  readonly OwnerAccountId?: string;
+  readonly ServiceId?: string;
+  readonly State?: string;
+  readonly Tags?: {[key: string]: any};
+  readonly UrlEndpoint?: UrlEndpointSummary;
+  readonly VpcId?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly Message: string;
-  readonly QuotaCode: string;
-  readonly RetryAfterSeconds: number;
-  readonly ServiceCode: string;
+  readonly QuotaCode?: string;
+  readonly RetryAfterSeconds?: number;
+  readonly ServiceCode?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UriPathRouteInput {
+export interface UriPathRouteInput {
   readonly ActivationState: string;
-  readonly IncludeChildPaths: boolean;
-  readonly Methods: [];
+  readonly IncludeChildPaths?: boolean;
+  readonly Methods?: [];
   readonly SourcePath: string;
 }
 
-interface UrlEndpointConfig {
-  readonly HealthUrl: string;
+export interface UrlEndpointConfig {
+  readonly HealthUrl?: string;
+  readonly Url?: string;
+}
+
+export interface UrlEndpointInput {
+  readonly HealthUrl?: string;
   readonly Url: string;
 }
 
-interface UrlEndpointInput {
-  readonly HealthUrl: string;
-  readonly Url: string;
+export interface UrlEndpointSummary {
+  readonly HealthUrl?: string;
+  readonly Url?: string;
 }
 
-interface UrlEndpointSummary {
-  readonly HealthUrl: string;
-  readonly Url: string;
-}
-
-interface ValidationException {
+export interface ValidationException {
   readonly Message: string;
 }
+
 

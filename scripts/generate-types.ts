@@ -5,7 +5,21 @@ interface ISpecFile {
   dirent: fs.Dirent;
   path: string;
 }
-
+interface IMember {
+  name: string;
+  required: boolean;
+  type: string;
+}
+interface IShape {
+  name: string;
+  members: IMember[];
+}
+/**
+ * Given a service file directory it will check
+ * the parent directory to make sure this service
+ * file is in the latest version folder or not.
+ * @param dir
+ */
 async function isLatest(dir: string) {
   const parts = dir.split('/');
   const current = parts.pop();
@@ -14,7 +28,11 @@ async function isLatest(dir: string) {
   const latestDir = dirs.sort().pop(); // latest bubbles to end since date is sortable
   return latestDir === current;
 }
-
+/**
+ * Get service files.
+ * @param dir
+ * @param files
+ */
 async function getFiles(
   dir: string,
   files?: ISpecFile[]
@@ -24,7 +42,6 @@ async function getFiles(
   }
   try {
     const arrayOfFiles = await fs.promises.opendir(dir);
-    // console.log(arrayOfFiles);
     for await (const dirent of arrayOfFiles) {
       if (dirent.isDirectory()) {
         await getFiles(`${dir}/${dirent.name}`, files);
@@ -44,80 +61,98 @@ async function getFiles(
   }
   return files;
 }
-
-interface IMember {
-  required: boolean;
-  type: string;
-}
-
-interface IOperation {
-  name: string;
-  shape: any;
-  members: IMember[];
-}
-
-function formatTemplateData(spec: any) {
-  const out = {
-    operations: new Array<IOperation>(),
-  };
-
-  const typeMap: { [key: string]: string } = {
-    string: 'string',
-    boolean: 'boolean',
-    list: '[]',
-    long: 'number',
-    integer: 'number',
-    exponential: 'number',
-    timestamp: 'Date',
-    map: '{[key: string]: any}',
-  };
-  function toMemberType(shape: any, member: any) {
-    const theType = typeMap[shape.type];
-    if (theType) {
-      return theType;
-    }
-    if (shape.type == 'structure') {
-      return member;
-    }
-    return 'unknown';
+/**
+ * A map of types from boto / Python to Typescript
+ */
+const typeMap: { [key: string]: string } = {
+  string: 'string',
+  boolean: 'boolean',
+  list: '[]',
+  long: 'number',
+  integer: 'number',
+  exponential: 'number',
+  timestamp: 'Date',
+  map: '{[key: string]: any}',
+};
+/**
+ * Given a member and it's shape will try and map
+ * that member to the correct type
+ *
+ * @param shape
+ * @param member
+ */
+function toMemberType(shape: any, member: any) {
+  const theType = typeMap[shape.type];
+  if (theType) {
+    return theType;
   }
-  // // we're only interested in operations with inputs
-  // const operations = Object.values(spec.operations).filter(
-  //   (value: any) => value.input
-  // );
-  Object.keys(spec.operations).forEach((operationName) => {
-    const operation: any = spec.operations[operationName];
-    const shape: any = spec.shapes[operation.input.shape];
-    const members: IMember[] = [];
-    for (const [member, details] of Object.entries<{ [key: string]: any }>(
-      shape.members
-    )) {
-      members.push({
-        required: shape.required?.includes(member),
-        type: toMemberType(spec.shapes[details.shape], details.shape),
-      });
+  if (shape.type == 'structure') {
+    return member;
+  }
+  return 'unknown';
+}
+/**
+ * Given the spec and a specific shape it will format
+ * a list of all it's members
+ * @param spec
+ * @param shape
+ */
+function formatMembers(spec: any, shape: any) {
+  const members: IMember[] = [];
+  for (const [member, details] of Object.entries<{ [key: string]: any }>(
+    shape.members
+  )) {
+    members.push({
+      name: member,
+      required: shape.required?.includes(member),
+      type: toMemberType(spec.shapes[details.shape], details.shape),
+    });
+  }
+  return members;
+}
+/**
+ * Given the spec it will create a Set of all API methods in
+ * the service spec
+ * @param spec
+ */
+function formatTemplateData(spec: any) {
+  const out = new Set<IShape>();
+  // we're only interested in operations with inputs
+  const operations = Object.entries<{ [key: string]: any }>(spec.operations);
+  for (const [key, operation] of operations) {
+    // Object.keys(spec.operations).forEach((operationName) => {
+    if (!operation.input) {
+      continue;
     }
-    out.operations.push({
-      name: operationName,
-      shape,
+    const shape: any = spec.shapes[operation.input.shape];
+    const members: IMember[] = formatMembers(spec, shape);
+    out.add({
+      name: key,
       members,
     });
-  });
-  // <% for (const [key, shape] of Object.entries(shapes)) {
-  //   if(shape.type !== 'structure') {
-  //     continue;
-  //   }
-  // %>
-  // interface <%= key %> {
-  //   <%_
-  //   for (const [member, details] of Object.entries(shape.members)) {
-  //   -%>
-  //   readonly <%- member %>: <%- toMemberType(shapes[details.shape], details.shape) %>;
-  //   <%_ }; -%>
-  // }
-  // <% }; %>
+  }
+  const shapes = Object.entries<{ [key: string]: any }>(spec.shapes);
+  for (const [key, shape] of shapes) {
+    if (shape.type !== 'structure') {
+      continue;
+    }
+    const members: IMember[] = formatMembers(spec, shape);
+    out.add({
+      name: key,
+      members,
+    });
+  }
+  if (!out.size) {
+    throw new Error('Nothing out');
+  }
+  return out;
 }
-
+/**
+ * Creates the actual typescript files for services
+ * when given a list of service files to create from
+ *
+ * @param serviceFiles
+ */
 async function generateTemplate(serviceFiles: ISpecFile[]) {
   const templateFile = await fs.promises.readFile(
     './scripts/template/service.ejs',
@@ -133,7 +168,11 @@ async function generateTemplate(serviceFiles: ISpecFile[]) {
       encoding: 'utf8',
     });
     const spec = JSON.parse(specContent);
-    const contents = template(formatTemplateData(spec));
+    const data = formatTemplateData(spec);
+    const contents = template({
+      metadata: spec.metadata,
+      data: data,
+    });
     indexed.push(spec.metadata.endpointPrefix);
     renderer.push(
       fs.promises.writeFile(
@@ -145,7 +184,11 @@ async function generateTemplate(serviceFiles: ISpecFile[]) {
   await Promise.all(renderer);
   await generateIndexTemplate(indexed);
 }
-
+/**
+ * Writes the exports index.ts in the data so that
+ * we can access all the generated types
+ * @param serviceFiles
+ */
 async function generateIndexTemplate(serviceFiles: string[]) {
   const templateFile = await fs.promises.readFile(
     './scripts/template/service.index.ejs',
@@ -157,7 +200,9 @@ async function generateIndexTemplate(serviceFiles: string[]) {
   const contents = template({ fileNames: new Set(serviceFiles.sort()) });
   fs.promises.writeFile('src/data/index.ts', contents);
 }
-
+/**
+ * Application entrypoint
+ */
 async function main() {
   const serviceFiles = await getFiles('./data/botocore/data');
   try {

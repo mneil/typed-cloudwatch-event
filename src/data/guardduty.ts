@@ -6,10 +6,12 @@ export interface AcceptInvitation {
   readonly MasterId: string;
   readonly InvitationId: string;
 }
+
 export interface ArchiveFindings {
   readonly DetectorId: string;
   readonly FindingIds: [];
 }
+
 export interface CreateDetector {
   readonly Enable: boolean;
   readonly ClientToken?: string;
@@ -17,6 +19,7 @@ export interface CreateDetector {
   readonly DataSources?: DataSourceConfigurations;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateFilter {
   readonly DetectorId: string;
   readonly Name: string;
@@ -27,6 +30,7 @@ export interface CreateFilter {
   readonly ClientToken?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateIPSet {
   readonly DetectorId: string;
   readonly Name: string;
@@ -36,20 +40,24 @@ export interface CreateIPSet {
   readonly ClientToken?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateMembers {
   readonly DetectorId: string;
   readonly AccountDetails: [];
 }
+
 export interface CreatePublishingDestination {
   readonly DetectorId: string;
   readonly DestinationType: string;
   readonly DestinationProperties: DestinationProperties;
   readonly ClientToken?: string;
 }
+
 export interface CreateSampleFindings {
   readonly DetectorId: string;
   readonly FindingTypes?: [];
 }
+
 export interface CreateThreatIntelSet {
   readonly DetectorId: string;
   readonly Name: string;
@@ -59,93 +67,118 @@ export interface CreateThreatIntelSet {
   readonly ClientToken?: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface DeclineInvitations {
   readonly AccountIds: [];
 }
+
 export interface DeleteDetector {
   readonly DetectorId: string;
 }
+
 export interface DeleteFilter {
   readonly DetectorId: string;
   readonly FilterName: string;
 }
+
 export interface DeleteIPSet {
   readonly DetectorId: string;
   readonly IpSetId: string;
 }
+
 export interface DeleteInvitations {
   readonly AccountIds: [];
 }
+
 export interface DeleteMembers {
   readonly DetectorId: string;
   readonly AccountIds: [];
 }
+
 export interface DeletePublishingDestination {
   readonly DetectorId: string;
   readonly DestinationId: string;
 }
+
 export interface DeleteThreatIntelSet {
   readonly DetectorId: string;
   readonly ThreatIntelSetId: string;
 }
+
 export interface DescribeOrganizationConfiguration {
   readonly DetectorId: string;
 }
+
 export interface DescribePublishingDestination {
   readonly DetectorId: string;
   readonly DestinationId: string;
 }
+
 export interface DisableOrganizationAdminAccount {
   readonly AdminAccountId: string;
 }
+
 export interface DisassociateFromMasterAccount {
   readonly DetectorId: string;
 }
+
 export interface DisassociateMembers {
   readonly DetectorId: string;
   readonly AccountIds: [];
 }
+
 export interface EnableOrganizationAdminAccount {
   readonly AdminAccountId: string;
 }
+
 export interface GetDetector {
   readonly DetectorId: string;
 }
+
 export interface GetFilter {
   readonly DetectorId: string;
   readonly FilterName: string;
 }
+
 export interface GetFindings {
   readonly DetectorId: string;
   readonly FindingIds: [];
   readonly SortCriteria?: SortCriteria;
 }
+
 export interface GetFindingsStatistics {
   readonly DetectorId: string;
   readonly FindingStatisticTypes: [];
   readonly FindingCriteria?: FindingCriteria;
 }
+
 export interface GetIPSet {
   readonly DetectorId: string;
   readonly IpSetId: string;
 }
+
 export interface GetInvitationsCount {
 }
+
 export interface GetMasterAccount {
   readonly DetectorId: string;
 }
+
 export interface GetMemberDetectors {
   readonly DetectorId: string;
   readonly AccountIds: [];
 }
+
 export interface GetMembers {
   readonly DetectorId: string;
   readonly AccountIds: [];
 }
+
 export interface GetThreatIntelSet {
   readonly DetectorId: string;
   readonly ThreatIntelSetId: string;
 }
+
 export interface GetUsageStatistics {
   readonly DetectorId: string;
   readonly UsageStatisticType: string;
@@ -154,21 +187,25 @@ export interface GetUsageStatistics {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface InviteMembers {
   readonly DetectorId: string;
   readonly AccountIds: [];
   readonly DisableEmailNotification?: boolean;
   readonly Message?: string;
 }
+
 export interface ListDetectors {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListFilters {
   readonly DetectorId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListFindings {
   readonly DetectorId: string;
   readonly FindingCriteria?: FindingCriteria;
@@ -176,64 +213,78 @@ export interface ListFindings {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListIPSets {
   readonly DetectorId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListInvitations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListMembers {
   readonly DetectorId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly OnlyAssociated?: string;
 }
+
 export interface ListOrganizationAdminAccounts {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListPublishingDestinations {
   readonly DetectorId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface ListThreatIntelSets {
   readonly DetectorId: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface StartMonitoringMembers {
   readonly DetectorId: string;
   readonly AccountIds: [];
 }
+
 export interface StopMonitoringMembers {
   readonly DetectorId: string;
   readonly AccountIds: [];
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UnarchiveFindings {
   readonly DetectorId: string;
   readonly FindingIds: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateDetector {
   readonly DetectorId: string;
   readonly Enable?: boolean;
   readonly FindingPublishingFrequency?: string;
   readonly DataSources?: DataSourceConfigurations;
 }
+
 export interface UpdateFilter {
   readonly DetectorId: string;
   readonly FilterName: string;
@@ -242,12 +293,14 @@ export interface UpdateFilter {
   readonly Rank?: number;
   readonly FindingCriteria?: FindingCriteria;
 }
+
 export interface UpdateFindingsFeedback {
   readonly DetectorId: string;
   readonly FindingIds: [];
   readonly Feedback: string;
   readonly Comments?: string;
 }
+
 export interface UpdateIPSet {
   readonly DetectorId: string;
   readonly IpSetId: string;
@@ -255,21 +308,25 @@ export interface UpdateIPSet {
   readonly Location?: string;
   readonly Activate?: boolean;
 }
+
 export interface UpdateMemberDetectors {
   readonly DetectorId: string;
   readonly AccountIds: [];
   readonly DataSources?: DataSourceConfigurations;
 }
+
 export interface UpdateOrganizationConfiguration {
   readonly DetectorId: string;
   readonly AutoEnable: boolean;
   readonly DataSources?: OrganizationDataSourceConfigurations;
 }
+
 export interface UpdatePublishingDestination {
   readonly DetectorId: string;
   readonly DestinationId: string;
   readonly DestinationProperties?: DestinationProperties;
 }
+
 export interface UpdateThreatIntelSet {
   readonly DetectorId: string;
   readonly ThreatIntelSetId: string;
@@ -278,302 +335,300 @@ export interface UpdateThreatIntelSet {
   readonly Activate?: boolean;
 }
 
-
-
-interface AcceptInvitationRequest {
+export interface AcceptInvitationRequest {
   readonly DetectorId: string;
   readonly MasterId: string;
   readonly InvitationId: string;
 }
 
-interface AcceptInvitationResponse {
+export interface AcceptInvitationResponse {
 }
 
-interface AccessControlList {
-  readonly AllowsPublicReadAccess: boolean;
-  readonly AllowsPublicWriteAccess: boolean;
+export interface AccessControlList {
+  readonly AllowsPublicReadAccess?: boolean;
+  readonly AllowsPublicWriteAccess?: boolean;
 }
 
-interface AccessKeyDetails {
-  readonly AccessKeyId: string;
-  readonly PrincipalId: string;
-  readonly UserName: string;
-  readonly UserType: string;
+export interface AccessKeyDetails {
+  readonly AccessKeyId?: string;
+  readonly PrincipalId?: string;
+  readonly UserName?: string;
+  readonly UserType?: string;
 }
 
-interface AccountDetail {
+export interface AccountDetail {
   readonly AccountId: string;
   readonly Email: string;
 }
 
-interface AccountLevelPermissions {
-  readonly BlockPublicAccess: BlockPublicAccess;
+export interface AccountLevelPermissions {
+  readonly BlockPublicAccess?: BlockPublicAccess;
 }
 
-interface Action {
-  readonly ActionType: string;
-  readonly AwsApiCallAction: AwsApiCallAction;
-  readonly DnsRequestAction: DnsRequestAction;
-  readonly NetworkConnectionAction: NetworkConnectionAction;
-  readonly PortProbeAction: PortProbeAction;
+export interface Action {
+  readonly ActionType?: string;
+  readonly AwsApiCallAction?: AwsApiCallAction;
+  readonly DnsRequestAction?: DnsRequestAction;
+  readonly NetworkConnectionAction?: NetworkConnectionAction;
+  readonly PortProbeAction?: PortProbeAction;
 }
 
-interface AdminAccount {
-  readonly AdminAccountId: string;
-  readonly AdminStatus: string;
+export interface AdminAccount {
+  readonly AdminAccountId?: string;
+  readonly AdminStatus?: string;
 }
 
-interface ArchiveFindingsRequest {
+export interface ArchiveFindingsRequest {
   readonly DetectorId: string;
   readonly FindingIds: [];
 }
 
-interface ArchiveFindingsResponse {
+export interface ArchiveFindingsResponse {
 }
 
-interface AwsApiCallAction {
-  readonly Api: string;
-  readonly CallerType: string;
-  readonly DomainDetails: DomainDetails;
-  readonly ErrorCode: string;
-  readonly RemoteIpDetails: RemoteIpDetails;
-  readonly ServiceName: string;
+export interface AwsApiCallAction {
+  readonly Api?: string;
+  readonly CallerType?: string;
+  readonly DomainDetails?: DomainDetails;
+  readonly ErrorCode?: string;
+  readonly RemoteIpDetails?: RemoteIpDetails;
+  readonly ServiceName?: string;
 }
 
-interface BadRequestException {
-  readonly Message: string;
-  readonly Type: string;
+export interface BadRequestException {
+  readonly Message?: string;
+  readonly Type?: string;
 }
 
-interface BlockPublicAccess {
-  readonly IgnorePublicAcls: boolean;
-  readonly RestrictPublicBuckets: boolean;
-  readonly BlockPublicAcls: boolean;
-  readonly BlockPublicPolicy: boolean;
+export interface BlockPublicAccess {
+  readonly IgnorePublicAcls?: boolean;
+  readonly RestrictPublicBuckets?: boolean;
+  readonly BlockPublicAcls?: boolean;
+  readonly BlockPublicPolicy?: boolean;
 }
 
-interface BucketLevelPermissions {
-  readonly AccessControlList: AccessControlList;
-  readonly BucketPolicy: BucketPolicy;
-  readonly BlockPublicAccess: BlockPublicAccess;
+export interface BucketLevelPermissions {
+  readonly AccessControlList?: AccessControlList;
+  readonly BucketPolicy?: BucketPolicy;
+  readonly BlockPublicAccess?: BlockPublicAccess;
 }
 
-interface BucketPolicy {
-  readonly AllowsPublicReadAccess: boolean;
-  readonly AllowsPublicWriteAccess: boolean;
+export interface BucketPolicy {
+  readonly AllowsPublicReadAccess?: boolean;
+  readonly AllowsPublicWriteAccess?: boolean;
 }
 
-interface City {
-  readonly CityName: string;
+export interface City {
+  readonly CityName?: string;
 }
 
-interface CloudTrailConfigurationResult {
+export interface CloudTrailConfigurationResult {
   readonly Status: string;
 }
 
-interface Condition {
-  readonly Eq: [];
-  readonly Neq: [];
-  readonly Gt: number;
-  readonly Gte: number;
-  readonly Lt: number;
-  readonly Lte: number;
-  readonly Equals: [];
-  readonly NotEquals: [];
-  readonly GreaterThan: number;
-  readonly GreaterThanOrEqual: number;
-  readonly LessThan: number;
-  readonly LessThanOrEqual: number;
+export interface Condition {
+  readonly Eq?: [];
+  readonly Neq?: [];
+  readonly Gt?: number;
+  readonly Gte?: number;
+  readonly Lt?: number;
+  readonly Lte?: number;
+  readonly Equals?: [];
+  readonly NotEquals?: [];
+  readonly GreaterThan?: number;
+  readonly GreaterThanOrEqual?: number;
+  readonly LessThan?: number;
+  readonly LessThanOrEqual?: number;
 }
 
-interface Country {
-  readonly CountryCode: string;
-  readonly CountryName: string;
+export interface Country {
+  readonly CountryCode?: string;
+  readonly CountryName?: string;
 }
 
-interface CreateDetectorRequest {
+export interface CreateDetectorRequest {
   readonly Enable: boolean;
-  readonly ClientToken: string;
-  readonly FindingPublishingFrequency: string;
-  readonly DataSources: DataSourceConfigurations;
-  readonly Tags: {[key: string]: any};
+  readonly ClientToken?: string;
+  readonly FindingPublishingFrequency?: string;
+  readonly DataSources?: DataSourceConfigurations;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateDetectorResponse {
-  readonly DetectorId: string;
+export interface CreateDetectorResponse {
+  readonly DetectorId?: string;
 }
 
-interface CreateFilterRequest {
+export interface CreateFilterRequest {
   readonly DetectorId: string;
   readonly Name: string;
-  readonly Description: string;
-  readonly Action: string;
-  readonly Rank: number;
+  readonly Description?: string;
+  readonly Action?: string;
+  readonly Rank?: number;
   readonly FindingCriteria: FindingCriteria;
-  readonly ClientToken: string;
-  readonly Tags: {[key: string]: any};
+  readonly ClientToken?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateFilterResponse {
+export interface CreateFilterResponse {
   readonly Name: string;
 }
 
-interface CreateIPSetRequest {
+export interface CreateIPSetRequest {
   readonly DetectorId: string;
   readonly Name: string;
   readonly Format: string;
   readonly Location: string;
   readonly Activate: boolean;
-  readonly ClientToken: string;
-  readonly Tags: {[key: string]: any};
+  readonly ClientToken?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateIPSetResponse {
+export interface CreateIPSetResponse {
   readonly IpSetId: string;
 }
 
-interface CreateMembersRequest {
+export interface CreateMembersRequest {
   readonly DetectorId: string;
   readonly AccountDetails: [];
 }
 
-interface CreateMembersResponse {
+export interface CreateMembersResponse {
   readonly UnprocessedAccounts: [];
 }
 
-interface CreatePublishingDestinationRequest {
+export interface CreatePublishingDestinationRequest {
   readonly DetectorId: string;
   readonly DestinationType: string;
   readonly DestinationProperties: DestinationProperties;
-  readonly ClientToken: string;
+  readonly ClientToken?: string;
 }
 
-interface CreatePublishingDestinationResponse {
+export interface CreatePublishingDestinationResponse {
   readonly DestinationId: string;
 }
 
-interface CreateSampleFindingsRequest {
+export interface CreateSampleFindingsRequest {
   readonly DetectorId: string;
-  readonly FindingTypes: [];
+  readonly FindingTypes?: [];
 }
 
-interface CreateSampleFindingsResponse {
+export interface CreateSampleFindingsResponse {
 }
 
-interface CreateThreatIntelSetRequest {
+export interface CreateThreatIntelSetRequest {
   readonly DetectorId: string;
   readonly Name: string;
   readonly Format: string;
   readonly Location: string;
   readonly Activate: boolean;
-  readonly ClientToken: string;
-  readonly Tags: {[key: string]: any};
+  readonly ClientToken?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateThreatIntelSetResponse {
+export interface CreateThreatIntelSetResponse {
   readonly ThreatIntelSetId: string;
 }
 
-interface DNSLogsConfigurationResult {
+export interface DNSLogsConfigurationResult {
   readonly Status: string;
 }
 
-interface DataSourceConfigurations {
-  readonly S3Logs: S3LogsConfiguration;
+export interface DataSourceConfigurations {
+  readonly S3Logs?: S3LogsConfiguration;
 }
 
-interface DataSourceConfigurationsResult {
+export interface DataSourceConfigurationsResult {
   readonly CloudTrail: CloudTrailConfigurationResult;
   readonly DNSLogs: DNSLogsConfigurationResult;
   readonly FlowLogs: FlowLogsConfigurationResult;
   readonly S3Logs: S3LogsConfigurationResult;
 }
 
-interface DeclineInvitationsRequest {
+export interface DeclineInvitationsRequest {
   readonly AccountIds: [];
 }
 
-interface DeclineInvitationsResponse {
+export interface DeclineInvitationsResponse {
   readonly UnprocessedAccounts: [];
 }
 
-interface DefaultServerSideEncryption {
-  readonly EncryptionType: string;
-  readonly KmsMasterKeyArn: string;
+export interface DefaultServerSideEncryption {
+  readonly EncryptionType?: string;
+  readonly KmsMasterKeyArn?: string;
 }
 
-interface DeleteDetectorRequest {
+export interface DeleteDetectorRequest {
   readonly DetectorId: string;
 }
 
-interface DeleteDetectorResponse {
+export interface DeleteDetectorResponse {
 }
 
-interface DeleteFilterRequest {
+export interface DeleteFilterRequest {
   readonly DetectorId: string;
   readonly FilterName: string;
 }
 
-interface DeleteFilterResponse {
+export interface DeleteFilterResponse {
 }
 
-interface DeleteIPSetRequest {
+export interface DeleteIPSetRequest {
   readonly DetectorId: string;
   readonly IpSetId: string;
 }
 
-interface DeleteIPSetResponse {
+export interface DeleteIPSetResponse {
 }
 
-interface DeleteInvitationsRequest {
+export interface DeleteInvitationsRequest {
   readonly AccountIds: [];
 }
 
-interface DeleteInvitationsResponse {
+export interface DeleteInvitationsResponse {
   readonly UnprocessedAccounts: [];
 }
 
-interface DeleteMembersRequest {
+export interface DeleteMembersRequest {
   readonly DetectorId: string;
   readonly AccountIds: [];
 }
 
-interface DeleteMembersResponse {
+export interface DeleteMembersResponse {
   readonly UnprocessedAccounts: [];
 }
 
-interface DeletePublishingDestinationRequest {
+export interface DeletePublishingDestinationRequest {
   readonly DetectorId: string;
   readonly DestinationId: string;
 }
 
-interface DeletePublishingDestinationResponse {
+export interface DeletePublishingDestinationResponse {
 }
 
-interface DeleteThreatIntelSetRequest {
+export interface DeleteThreatIntelSetRequest {
   readonly DetectorId: string;
   readonly ThreatIntelSetId: string;
 }
 
-interface DeleteThreatIntelSetResponse {
+export interface DeleteThreatIntelSetResponse {
 }
 
-interface DescribeOrganizationConfigurationRequest {
+export interface DescribeOrganizationConfigurationRequest {
   readonly DetectorId: string;
 }
 
-interface DescribeOrganizationConfigurationResponse {
+export interface DescribeOrganizationConfigurationResponse {
   readonly AutoEnable: boolean;
   readonly MemberAccountLimitReached: boolean;
-  readonly DataSources: OrganizationDataSourceConfigurationsResult;
+  readonly DataSources?: OrganizationDataSourceConfigurationsResult;
 }
 
-interface DescribePublishingDestinationRequest {
+export interface DescribePublishingDestinationRequest {
   readonly DetectorId: string;
   readonly DestinationId: string;
 }
 
-interface DescribePublishingDestinationResponse {
+export interface DescribePublishingDestinationResponse {
   readonly DestinationId: string;
   readonly DestinationType: string;
   readonly Status: string;
@@ -581,712 +636,713 @@ interface DescribePublishingDestinationResponse {
   readonly DestinationProperties: DestinationProperties;
 }
 
-interface Destination {
+export interface Destination {
   readonly DestinationId: string;
   readonly DestinationType: string;
   readonly Status: string;
 }
 
-interface DestinationProperties {
-  readonly DestinationArn: string;
-  readonly KmsKeyArn: string;
+export interface DestinationProperties {
+  readonly DestinationArn?: string;
+  readonly KmsKeyArn?: string;
 }
 
-interface DisableOrganizationAdminAccountRequest {
+export interface DisableOrganizationAdminAccountRequest {
   readonly AdminAccountId: string;
 }
 
-interface DisableOrganizationAdminAccountResponse {
+export interface DisableOrganizationAdminAccountResponse {
 }
 
-interface DisassociateFromMasterAccountRequest {
+export interface DisassociateFromMasterAccountRequest {
   readonly DetectorId: string;
 }
 
-interface DisassociateFromMasterAccountResponse {
+export interface DisassociateFromMasterAccountResponse {
 }
 
-interface DisassociateMembersRequest {
+export interface DisassociateMembersRequest {
   readonly DetectorId: string;
   readonly AccountIds: [];
 }
 
-interface DisassociateMembersResponse {
+export interface DisassociateMembersResponse {
   readonly UnprocessedAccounts: [];
 }
 
-interface DnsRequestAction {
-  readonly Domain: string;
+export interface DnsRequestAction {
+  readonly Domain?: string;
 }
 
-interface DomainDetails {
-  readonly Domain: string;
+export interface DomainDetails {
+  readonly Domain?: string;
 }
 
-interface EnableOrganizationAdminAccountRequest {
+export interface EnableOrganizationAdminAccountRequest {
   readonly AdminAccountId: string;
 }
 
-interface EnableOrganizationAdminAccountResponse {
+export interface EnableOrganizationAdminAccountResponse {
 }
 
-interface Evidence {
-  readonly ThreatIntelligenceDetails: [];
+export interface Evidence {
+  readonly ThreatIntelligenceDetails?: [];
 }
 
-interface Finding {
+export interface Finding {
   readonly AccountId: string;
   readonly Arn: string;
-  readonly Confidence: unknown;
+  readonly Confidence?: unknown;
   readonly CreatedAt: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Id: string;
-  readonly Partition: string;
+  readonly Partition?: string;
   readonly Region: string;
   readonly Resource: Resource;
   readonly SchemaVersion: string;
-  readonly Service: Service;
+  readonly Service?: Service;
   readonly Severity: unknown;
-  readonly Title: string;
+  readonly Title?: string;
   readonly Type: string;
   readonly UpdatedAt: string;
 }
 
-interface FindingCriteria {
-  readonly Criterion: {[key: string]: any};
+export interface FindingCriteria {
+  readonly Criterion?: {[key: string]: any};
 }
 
-interface FindingStatistics {
-  readonly CountBySeverity: {[key: string]: any};
+export interface FindingStatistics {
+  readonly CountBySeverity?: {[key: string]: any};
 }
 
-interface FlowLogsConfigurationResult {
+export interface FlowLogsConfigurationResult {
   readonly Status: string;
 }
 
-interface GeoLocation {
-  readonly Lat: unknown;
-  readonly Lon: unknown;
+export interface GeoLocation {
+  readonly Lat?: unknown;
+  readonly Lon?: unknown;
 }
 
-interface GetDetectorRequest {
+export interface GetDetectorRequest {
   readonly DetectorId: string;
 }
 
-interface GetDetectorResponse {
-  readonly CreatedAt: string;
-  readonly FindingPublishingFrequency: string;
+export interface GetDetectorResponse {
+  readonly CreatedAt?: string;
+  readonly FindingPublishingFrequency?: string;
   readonly ServiceRole: string;
   readonly Status: string;
-  readonly UpdatedAt: string;
-  readonly DataSources: DataSourceConfigurationsResult;
-  readonly Tags: {[key: string]: any};
+  readonly UpdatedAt?: string;
+  readonly DataSources?: DataSourceConfigurationsResult;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface GetFilterRequest {
+export interface GetFilterRequest {
   readonly DetectorId: string;
   readonly FilterName: string;
 }
 
-interface GetFilterResponse {
+export interface GetFilterResponse {
   readonly Name: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Action: string;
-  readonly Rank: number;
+  readonly Rank?: number;
   readonly FindingCriteria: FindingCriteria;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface GetFindingsRequest {
+export interface GetFindingsRequest {
   readonly DetectorId: string;
   readonly FindingIds: [];
-  readonly SortCriteria: SortCriteria;
+  readonly SortCriteria?: SortCriteria;
 }
 
-interface GetFindingsResponse {
+export interface GetFindingsResponse {
   readonly Findings: [];
 }
 
-interface GetFindingsStatisticsRequest {
+export interface GetFindingsStatisticsRequest {
   readonly DetectorId: string;
   readonly FindingStatisticTypes: [];
-  readonly FindingCriteria: FindingCriteria;
+  readonly FindingCriteria?: FindingCriteria;
 }
 
-interface GetFindingsStatisticsResponse {
+export interface GetFindingsStatisticsResponse {
   readonly FindingStatistics: FindingStatistics;
 }
 
-interface GetIPSetRequest {
+export interface GetIPSetRequest {
   readonly DetectorId: string;
   readonly IpSetId: string;
 }
 
-interface GetIPSetResponse {
+export interface GetIPSetResponse {
   readonly Name: string;
   readonly Format: string;
   readonly Location: string;
   readonly Status: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface GetInvitationsCountRequest {
+export interface GetInvitationsCountRequest {
 }
 
-interface GetInvitationsCountResponse {
-  readonly InvitationsCount: number;
+export interface GetInvitationsCountResponse {
+  readonly InvitationsCount?: number;
 }
 
-interface GetMasterAccountRequest {
+export interface GetMasterAccountRequest {
   readonly DetectorId: string;
 }
 
-interface GetMasterAccountResponse {
+export interface GetMasterAccountResponse {
   readonly Master: Master;
 }
 
-interface GetMemberDetectorsRequest {
+export interface GetMemberDetectorsRequest {
   readonly DetectorId: string;
   readonly AccountIds: [];
 }
 
-interface GetMemberDetectorsResponse {
+export interface GetMemberDetectorsResponse {
   readonly MemberDataSourceConfigurations: [];
   readonly UnprocessedAccounts: [];
 }
 
-interface GetMembersRequest {
+export interface GetMembersRequest {
   readonly DetectorId: string;
   readonly AccountIds: [];
 }
 
-interface GetMembersResponse {
+export interface GetMembersResponse {
   readonly Members: [];
   readonly UnprocessedAccounts: [];
 }
 
-interface GetThreatIntelSetRequest {
+export interface GetThreatIntelSetRequest {
   readonly DetectorId: string;
   readonly ThreatIntelSetId: string;
 }
 
-interface GetThreatIntelSetResponse {
+export interface GetThreatIntelSetResponse {
   readonly Name: string;
   readonly Format: string;
   readonly Location: string;
   readonly Status: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface GetUsageStatisticsRequest {
+export interface GetUsageStatisticsRequest {
   readonly DetectorId: string;
   readonly UsageStatisticType: string;
   readonly UsageCriteria: UsageCriteria;
-  readonly Unit: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly Unit?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetUsageStatisticsResponse {
-  readonly UsageStatistics: UsageStatistics;
-  readonly NextToken: string;
+export interface GetUsageStatisticsResponse {
+  readonly UsageStatistics?: UsageStatistics;
+  readonly NextToken?: string;
 }
 
-interface IamInstanceProfile {
-  readonly Arn: string;
-  readonly Id: string;
+export interface IamInstanceProfile {
+  readonly Arn?: string;
+  readonly Id?: string;
 }
 
-interface InstanceDetails {
-  readonly AvailabilityZone: string;
-  readonly IamInstanceProfile: IamInstanceProfile;
-  readonly ImageDescription: string;
-  readonly ImageId: string;
-  readonly InstanceId: string;
-  readonly InstanceState: string;
-  readonly InstanceType: string;
-  readonly OutpostArn: string;
-  readonly LaunchTime: string;
-  readonly NetworkInterfaces: [];
-  readonly Platform: string;
-  readonly ProductCodes: [];
-  readonly Tags: [];
+export interface InstanceDetails {
+  readonly AvailabilityZone?: string;
+  readonly IamInstanceProfile?: IamInstanceProfile;
+  readonly ImageDescription?: string;
+  readonly ImageId?: string;
+  readonly InstanceId?: string;
+  readonly InstanceState?: string;
+  readonly InstanceType?: string;
+  readonly OutpostArn?: string;
+  readonly LaunchTime?: string;
+  readonly NetworkInterfaces?: [];
+  readonly Platform?: string;
+  readonly ProductCodes?: [];
+  readonly Tags?: [];
 }
 
-interface InternalServerErrorException {
-  readonly Message: string;
-  readonly Type: string;
+export interface InternalServerErrorException {
+  readonly Message?: string;
+  readonly Type?: string;
 }
 
-interface Invitation {
-  readonly AccountId: string;
-  readonly InvitationId: string;
-  readonly RelationshipStatus: string;
-  readonly InvitedAt: string;
+export interface Invitation {
+  readonly AccountId?: string;
+  readonly InvitationId?: string;
+  readonly RelationshipStatus?: string;
+  readonly InvitedAt?: string;
 }
 
-interface InviteMembersRequest {
+export interface InviteMembersRequest {
   readonly DetectorId: string;
   readonly AccountIds: [];
-  readonly DisableEmailNotification: boolean;
-  readonly Message: string;
+  readonly DisableEmailNotification?: boolean;
+  readonly Message?: string;
 }
 
-interface InviteMembersResponse {
+export interface InviteMembersResponse {
   readonly UnprocessedAccounts: [];
 }
 
-interface ListDetectorsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListDetectorsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListDetectorsResponse {
+export interface ListDetectorsResponse {
   readonly DetectorIds: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListFiltersRequest {
+export interface ListFiltersRequest {
   readonly DetectorId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListFiltersResponse {
+export interface ListFiltersResponse {
   readonly FilterNames: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListFindingsRequest {
+export interface ListFindingsRequest {
   readonly DetectorId: string;
-  readonly FindingCriteria: FindingCriteria;
-  readonly SortCriteria: SortCriteria;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly FindingCriteria?: FindingCriteria;
+  readonly SortCriteria?: SortCriteria;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListFindingsResponse {
+export interface ListFindingsResponse {
   readonly FindingIds: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListIPSetsRequest {
+export interface ListIPSetsRequest {
   readonly DetectorId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListIPSetsResponse {
+export interface ListIPSetsResponse {
   readonly IpSetIds: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListInvitationsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListInvitationsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListInvitationsResponse {
-  readonly Invitations: [];
-  readonly NextToken: string;
+export interface ListInvitationsResponse {
+  readonly Invitations?: [];
+  readonly NextToken?: string;
 }
 
-interface ListMembersRequest {
+export interface ListMembersRequest {
   readonly DetectorId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly OnlyAssociated: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly OnlyAssociated?: string;
 }
 
-interface ListMembersResponse {
-  readonly Members: [];
-  readonly NextToken: string;
+export interface ListMembersResponse {
+  readonly Members?: [];
+  readonly NextToken?: string;
 }
 
-interface ListOrganizationAdminAccountsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListOrganizationAdminAccountsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListOrganizationAdminAccountsResponse {
-  readonly AdminAccounts: [];
-  readonly NextToken: string;
+export interface ListOrganizationAdminAccountsResponse {
+  readonly AdminAccounts?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPublishingDestinationsRequest {
+export interface ListPublishingDestinationsRequest {
   readonly DetectorId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListPublishingDestinationsResponse {
+export interface ListPublishingDestinationsResponse {
   readonly Destinations: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ListThreatIntelSetsRequest {
+export interface ListThreatIntelSetsRequest {
   readonly DetectorId: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListThreatIntelSetsResponse {
+export interface ListThreatIntelSetsResponse {
   readonly ThreatIntelSetIds: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface LocalIpDetails {
-  readonly IpAddressV4: string;
+export interface LocalIpDetails {
+  readonly IpAddressV4?: string;
 }
 
-interface LocalPortDetails {
-  readonly Port: number;
-  readonly PortName: string;
+export interface LocalPortDetails {
+  readonly Port?: number;
+  readonly PortName?: string;
 }
 
-interface Master {
+export interface Master {
+  readonly AccountId?: string;
+  readonly InvitationId?: string;
+  readonly RelationshipStatus?: string;
+  readonly InvitedAt?: string;
+}
+
+export interface Member {
   readonly AccountId: string;
-  readonly InvitationId: string;
-  readonly RelationshipStatus: string;
-  readonly InvitedAt: string;
-}
-
-interface Member {
-  readonly AccountId: string;
-  readonly DetectorId: string;
+  readonly DetectorId?: string;
   readonly MasterId: string;
   readonly Email: string;
   readonly RelationshipStatus: string;
-  readonly InvitedAt: string;
+  readonly InvitedAt?: string;
   readonly UpdatedAt: string;
 }
 
-interface MemberDataSourceConfiguration {
+export interface MemberDataSourceConfiguration {
   readonly AccountId: string;
   readonly DataSources: DataSourceConfigurationsResult;
 }
 
-interface NetworkConnectionAction {
-  readonly Blocked: boolean;
-  readonly ConnectionDirection: string;
-  readonly LocalPortDetails: LocalPortDetails;
-  readonly Protocol: string;
-  readonly LocalIpDetails: LocalIpDetails;
-  readonly RemoteIpDetails: RemoteIpDetails;
-  readonly RemotePortDetails: RemotePortDetails;
+export interface NetworkConnectionAction {
+  readonly Blocked?: boolean;
+  readonly ConnectionDirection?: string;
+  readonly LocalPortDetails?: LocalPortDetails;
+  readonly Protocol?: string;
+  readonly LocalIpDetails?: LocalIpDetails;
+  readonly RemoteIpDetails?: RemoteIpDetails;
+  readonly RemotePortDetails?: RemotePortDetails;
 }
 
-interface NetworkInterface {
-  readonly Ipv6Addresses: [];
-  readonly NetworkInterfaceId: string;
-  readonly PrivateDnsName: string;
-  readonly PrivateIpAddress: string;
-  readonly PrivateIpAddresses: [];
-  readonly PublicDnsName: string;
-  readonly PublicIp: string;
-  readonly SecurityGroups: [];
-  readonly SubnetId: string;
-  readonly VpcId: string;
+export interface NetworkInterface {
+  readonly Ipv6Addresses?: [];
+  readonly NetworkInterfaceId?: string;
+  readonly PrivateDnsName?: string;
+  readonly PrivateIpAddress?: string;
+  readonly PrivateIpAddresses?: [];
+  readonly PublicDnsName?: string;
+  readonly PublicIp?: string;
+  readonly SecurityGroups?: [];
+  readonly SubnetId?: string;
+  readonly VpcId?: string;
 }
 
-interface Organization {
-  readonly Asn: string;
-  readonly AsnOrg: string;
-  readonly Isp: string;
-  readonly Org: string;
+export interface Organization {
+  readonly Asn?: string;
+  readonly AsnOrg?: string;
+  readonly Isp?: string;
+  readonly Org?: string;
 }
 
-interface OrganizationDataSourceConfigurations {
-  readonly S3Logs: OrganizationS3LogsConfiguration;
+export interface OrganizationDataSourceConfigurations {
+  readonly S3Logs?: OrganizationS3LogsConfiguration;
 }
 
-interface OrganizationDataSourceConfigurationsResult {
+export interface OrganizationDataSourceConfigurationsResult {
   readonly S3Logs: OrganizationS3LogsConfigurationResult;
 }
 
-interface OrganizationS3LogsConfiguration {
+export interface OrganizationS3LogsConfiguration {
   readonly AutoEnable: boolean;
 }
 
-interface OrganizationS3LogsConfigurationResult {
+export interface OrganizationS3LogsConfigurationResult {
   readonly AutoEnable: boolean;
 }
 
-interface Owner {
-  readonly Id: string;
+export interface Owner {
+  readonly Id?: string;
 }
 
-interface PermissionConfiguration {
-  readonly BucketLevelPermissions: BucketLevelPermissions;
-  readonly AccountLevelPermissions: AccountLevelPermissions;
+export interface PermissionConfiguration {
+  readonly BucketLevelPermissions?: BucketLevelPermissions;
+  readonly AccountLevelPermissions?: AccountLevelPermissions;
 }
 
-interface PortProbeAction {
-  readonly Blocked: boolean;
-  readonly PortProbeDetails: [];
+export interface PortProbeAction {
+  readonly Blocked?: boolean;
+  readonly PortProbeDetails?: [];
 }
 
-interface PortProbeDetail {
-  readonly LocalPortDetails: LocalPortDetails;
-  readonly LocalIpDetails: LocalIpDetails;
-  readonly RemoteIpDetails: RemoteIpDetails;
+export interface PortProbeDetail {
+  readonly LocalPortDetails?: LocalPortDetails;
+  readonly LocalIpDetails?: LocalIpDetails;
+  readonly RemoteIpDetails?: RemoteIpDetails;
 }
 
-interface PrivateIpAddressDetails {
-  readonly PrivateDnsName: string;
-  readonly PrivateIpAddress: string;
+export interface PrivateIpAddressDetails {
+  readonly PrivateDnsName?: string;
+  readonly PrivateIpAddress?: string;
 }
 
-interface ProductCode {
-  readonly Code: string;
-  readonly ProductType: string;
+export interface ProductCode {
+  readonly Code?: string;
+  readonly ProductType?: string;
 }
 
-interface PublicAccess {
-  readonly PermissionConfiguration: PermissionConfiguration;
-  readonly EffectivePermission: string;
+export interface PublicAccess {
+  readonly PermissionConfiguration?: PermissionConfiguration;
+  readonly EffectivePermission?: string;
 }
 
-interface RemoteIpDetails {
-  readonly City: City;
-  readonly Country: Country;
-  readonly GeoLocation: GeoLocation;
-  readonly IpAddressV4: string;
-  readonly Organization: Organization;
+export interface RemoteIpDetails {
+  readonly City?: City;
+  readonly Country?: Country;
+  readonly GeoLocation?: GeoLocation;
+  readonly IpAddressV4?: string;
+  readonly Organization?: Organization;
 }
 
-interface RemotePortDetails {
-  readonly Port: number;
-  readonly PortName: string;
+export interface RemotePortDetails {
+  readonly Port?: number;
+  readonly PortName?: string;
 }
 
-interface Resource {
-  readonly AccessKeyDetails: AccessKeyDetails;
-  readonly S3BucketDetails: [];
-  readonly InstanceDetails: InstanceDetails;
-  readonly ResourceType: string;
+export interface Resource {
+  readonly AccessKeyDetails?: AccessKeyDetails;
+  readonly S3BucketDetails?: [];
+  readonly InstanceDetails?: InstanceDetails;
+  readonly ResourceType?: string;
 }
 
-interface S3BucketDetail {
-  readonly Arn: string;
-  readonly Name: string;
-  readonly Type: string;
-  readonly CreatedAt: Date;
-  readonly Owner: Owner;
-  readonly Tags: [];
-  readonly DefaultServerSideEncryption: DefaultServerSideEncryption;
-  readonly PublicAccess: PublicAccess;
+export interface S3BucketDetail {
+  readonly Arn?: string;
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly CreatedAt?: Date;
+  readonly Owner?: Owner;
+  readonly Tags?: [];
+  readonly DefaultServerSideEncryption?: DefaultServerSideEncryption;
+  readonly PublicAccess?: PublicAccess;
 }
 
-interface S3LogsConfiguration {
+export interface S3LogsConfiguration {
   readonly Enable: boolean;
 }
 
-interface S3LogsConfigurationResult {
+export interface S3LogsConfigurationResult {
   readonly Status: string;
 }
 
-interface SecurityGroup {
-  readonly GroupId: string;
-  readonly GroupName: string;
+export interface SecurityGroup {
+  readonly GroupId?: string;
+  readonly GroupName?: string;
 }
 
-interface Service {
-  readonly Action: Action;
-  readonly Evidence: Evidence;
-  readonly Archived: boolean;
-  readonly Count: number;
-  readonly DetectorId: string;
-  readonly EventFirstSeen: string;
-  readonly EventLastSeen: string;
-  readonly ResourceRole: string;
-  readonly ServiceName: string;
-  readonly UserFeedback: string;
+export interface Service {
+  readonly Action?: Action;
+  readonly Evidence?: Evidence;
+  readonly Archived?: boolean;
+  readonly Count?: number;
+  readonly DetectorId?: string;
+  readonly EventFirstSeen?: string;
+  readonly EventLastSeen?: string;
+  readonly ResourceRole?: string;
+  readonly ServiceName?: string;
+  readonly UserFeedback?: string;
 }
 
-interface SortCriteria {
-  readonly AttributeName: string;
-  readonly OrderBy: string;
+export interface SortCriteria {
+  readonly AttributeName?: string;
+  readonly OrderBy?: string;
 }
 
-interface StartMonitoringMembersRequest {
-  readonly DetectorId: string;
-  readonly AccountIds: [];
-}
-
-interface StartMonitoringMembersResponse {
-  readonly UnprocessedAccounts: [];
-}
-
-interface StopMonitoringMembersRequest {
+export interface StartMonitoringMembersRequest {
   readonly DetectorId: string;
   readonly AccountIds: [];
 }
 
-interface StopMonitoringMembersResponse {
+export interface StartMonitoringMembersResponse {
   readonly UnprocessedAccounts: [];
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface StopMonitoringMembersRequest {
+  readonly DetectorId: string;
+  readonly AccountIds: [];
 }
 
-interface TagResourceRequest {
+export interface StopMonitoringMembersResponse {
+  readonly UnprocessedAccounts: [];
+}
+
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
+}
+
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThreatIntelligenceDetail {
-  readonly ThreatListName: string;
-  readonly ThreatNames: [];
+export interface ThreatIntelligenceDetail {
+  readonly ThreatListName?: string;
+  readonly ThreatNames?: [];
 }
 
-interface Total {
-  readonly Amount: string;
-  readonly Unit: string;
+export interface Total {
+  readonly Amount?: string;
+  readonly Unit?: string;
 }
 
-interface UnarchiveFindingsRequest {
+export interface UnarchiveFindingsRequest {
   readonly DetectorId: string;
   readonly FindingIds: [];
 }
 
-interface UnarchiveFindingsResponse {
+export interface UnarchiveFindingsResponse {
 }
 
-interface UnprocessedAccount {
+export interface UnprocessedAccount {
   readonly AccountId: string;
   readonly Result: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateDetectorRequest {
+export interface UpdateDetectorRequest {
   readonly DetectorId: string;
-  readonly Enable: boolean;
-  readonly FindingPublishingFrequency: string;
-  readonly DataSources: DataSourceConfigurations;
+  readonly Enable?: boolean;
+  readonly FindingPublishingFrequency?: string;
+  readonly DataSources?: DataSourceConfigurations;
 }
 
-interface UpdateDetectorResponse {
+export interface UpdateDetectorResponse {
 }
 
-interface UpdateFilterRequest {
+export interface UpdateFilterRequest {
   readonly DetectorId: string;
   readonly FilterName: string;
-  readonly Description: string;
-  readonly Action: string;
-  readonly Rank: number;
-  readonly FindingCriteria: FindingCriteria;
+  readonly Description?: string;
+  readonly Action?: string;
+  readonly Rank?: number;
+  readonly FindingCriteria?: FindingCriteria;
 }
 
-interface UpdateFilterResponse {
+export interface UpdateFilterResponse {
   readonly Name: string;
 }
 
-interface UpdateFindingsFeedbackRequest {
+export interface UpdateFindingsFeedbackRequest {
   readonly DetectorId: string;
   readonly FindingIds: [];
   readonly Feedback: string;
-  readonly Comments: string;
+  readonly Comments?: string;
 }
 
-interface UpdateFindingsFeedbackResponse {
+export interface UpdateFindingsFeedbackResponse {
 }
 
-interface UpdateIPSetRequest {
+export interface UpdateIPSetRequest {
   readonly DetectorId: string;
   readonly IpSetId: string;
-  readonly Name: string;
-  readonly Location: string;
-  readonly Activate: boolean;
+  readonly Name?: string;
+  readonly Location?: string;
+  readonly Activate?: boolean;
 }
 
-interface UpdateIPSetResponse {
+export interface UpdateIPSetResponse {
 }
 
-interface UpdateMemberDetectorsRequest {
+export interface UpdateMemberDetectorsRequest {
   readonly DetectorId: string;
   readonly AccountIds: [];
-  readonly DataSources: DataSourceConfigurations;
+  readonly DataSources?: DataSourceConfigurations;
 }
 
-interface UpdateMemberDetectorsResponse {
+export interface UpdateMemberDetectorsResponse {
   readonly UnprocessedAccounts: [];
 }
 
-interface UpdateOrganizationConfigurationRequest {
+export interface UpdateOrganizationConfigurationRequest {
   readonly DetectorId: string;
   readonly AutoEnable: boolean;
-  readonly DataSources: OrganizationDataSourceConfigurations;
+  readonly DataSources?: OrganizationDataSourceConfigurations;
 }
 
-interface UpdateOrganizationConfigurationResponse {
+export interface UpdateOrganizationConfigurationResponse {
 }
 
-interface UpdatePublishingDestinationRequest {
+export interface UpdatePublishingDestinationRequest {
   readonly DetectorId: string;
   readonly DestinationId: string;
-  readonly DestinationProperties: DestinationProperties;
+  readonly DestinationProperties?: DestinationProperties;
 }
 
-interface UpdatePublishingDestinationResponse {
+export interface UpdatePublishingDestinationResponse {
 }
 
-interface UpdateThreatIntelSetRequest {
+export interface UpdateThreatIntelSetRequest {
   readonly DetectorId: string;
   readonly ThreatIntelSetId: string;
-  readonly Name: string;
-  readonly Location: string;
-  readonly Activate: boolean;
+  readonly Name?: string;
+  readonly Location?: string;
+  readonly Activate?: boolean;
 }
 
-interface UpdateThreatIntelSetResponse {
+export interface UpdateThreatIntelSetResponse {
 }
 
-interface UsageAccountResult {
-  readonly AccountId: string;
-  readonly Total: Total;
+export interface UsageAccountResult {
+  readonly AccountId?: string;
+  readonly Total?: Total;
 }
 
-interface UsageCriteria {
-  readonly AccountIds: [];
+export interface UsageCriteria {
+  readonly AccountIds?: [];
   readonly DataSources: [];
-  readonly Resources: [];
+  readonly Resources?: [];
 }
 
-interface UsageDataSourceResult {
-  readonly DataSource: string;
-  readonly Total: Total;
+export interface UsageDataSourceResult {
+  readonly DataSource?: string;
+  readonly Total?: Total;
 }
 
-interface UsageResourceResult {
-  readonly Resource: string;
-  readonly Total: Total;
+export interface UsageResourceResult {
+  readonly Resource?: string;
+  readonly Total?: Total;
 }
 
-interface UsageStatistics {
-  readonly SumByAccount: [];
-  readonly SumByDataSource: [];
-  readonly SumByResource: [];
-  readonly TopResources: [];
+export interface UsageStatistics {
+  readonly SumByAccount?: [];
+  readonly SumByDataSource?: [];
+  readonly SumByResource?: [];
+  readonly TopResources?: [];
 }
+
 

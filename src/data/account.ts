@@ -5,10 +5,12 @@ export interface DeleteAlternateContact {
   readonly AccountId?: string;
   readonly AlternateContactType: string;
 }
+
 export interface GetAlternateContact {
   readonly AccountId?: string;
   readonly AlternateContactType: string;
 }
+
 export interface PutAlternateContact {
   readonly AccountId?: string;
   readonly AlternateContactType: string;
@@ -18,13 +20,38 @@ export interface PutAlternateContact {
   readonly Title: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
 }
 
-interface AlternateContact {
+export interface AlternateContact {
+  readonly AlternateContactType?: string;
+  readonly EmailAddress?: string;
+  readonly Name?: string;
+  readonly PhoneNumber?: string;
+  readonly Title?: string;
+}
+
+export interface DeleteAlternateContactRequest {
+  readonly AccountId?: string;
+  readonly AlternateContactType: string;
+}
+
+export interface GetAlternateContactRequest {
+  readonly AccountId?: string;
+  readonly AlternateContactType: string;
+}
+
+export interface GetAlternateContactResponse {
+  readonly AlternateContact?: AlternateContact;
+}
+
+export interface InternalServerException {
+  readonly message: string;
+}
+
+export interface PutAlternateContactRequest {
+  readonly AccountId?: string;
   readonly AlternateContactType: string;
   readonly EmailAddress: string;
   readonly Name: string;
@@ -32,42 +59,16 @@ interface AlternateContact {
   readonly Title: string;
 }
 
-interface DeleteAlternateContactRequest {
-  readonly AccountId: string;
-  readonly AlternateContactType: string;
-}
-
-interface GetAlternateContactRequest {
-  readonly AccountId: string;
-  readonly AlternateContactType: string;
-}
-
-interface GetAlternateContactResponse {
-  readonly AlternateContact: AlternateContact;
-}
-
-interface InternalServerException {
+export interface ResourceNotFoundException {
   readonly message: string;
 }
 
-interface PutAlternateContactRequest {
-  readonly AccountId: string;
-  readonly AlternateContactType: string;
-  readonly EmailAddress: string;
-  readonly Name: string;
-  readonly PhoneNumber: string;
-  readonly Title: string;
-}
-
-interface ResourceNotFoundException {
+export interface TooManyRequestsException {
   readonly message: string;
 }
 
-interface TooManyRequestsException {
+export interface ValidationException {
   readonly message: string;
 }
 
-interface ValidationException {
-  readonly message: string;
-}
 

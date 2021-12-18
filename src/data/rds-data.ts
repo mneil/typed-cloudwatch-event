@@ -10,17 +10,20 @@ export interface BatchExecuteStatement {
   readonly sql: string;
   readonly transactionId?: string;
 }
+
 export interface BeginTransaction {
   readonly database?: string;
   readonly resourceArn: string;
   readonly schema?: string;
   readonly secretArn: string;
 }
+
 export interface CommitTransaction {
   readonly resourceArn: string;
   readonly secretArn: string;
   readonly transactionId: string;
 }
+
 export interface ExecuteSql {
   readonly awsSecretStoreArn: string;
   readonly database?: string;
@@ -28,6 +31,7 @@ export interface ExecuteSql {
   readonly schema?: string;
   readonly sqlStatements: string;
 }
+
 export interface ExecuteStatement {
   readonly continueAfterTimeout?: boolean;
   readonly database?: string;
@@ -40,196 +44,196 @@ export interface ExecuteStatement {
   readonly sql: string;
   readonly transactionId?: string;
 }
+
 export interface RollbackTransaction {
   readonly resourceArn: string;
   readonly secretArn: string;
   readonly transactionId: string;
 }
 
-
-
-interface ArrayValue {
-  readonly arrayValues: [];
-  readonly booleanValues: [];
-  readonly doubleValues: [];
-  readonly longValues: [];
-  readonly stringValues: [];
+export interface ArrayValue {
+  readonly arrayValues?: [];
+  readonly booleanValues?: [];
+  readonly doubleValues?: [];
+  readonly longValues?: [];
+  readonly stringValues?: [];
 }
 
-interface BadRequestException {
-  readonly message: string;
+export interface BadRequestException {
+  readonly message?: string;
 }
 
-interface BatchExecuteStatementRequest {
-  readonly database: string;
-  readonly parameterSets: [];
+export interface BatchExecuteStatementRequest {
+  readonly database?: string;
+  readonly parameterSets?: [];
   readonly resourceArn: string;
-  readonly schema: string;
+  readonly schema?: string;
   readonly secretArn: string;
   readonly sql: string;
-  readonly transactionId: string;
+  readonly transactionId?: string;
 }
 
-interface BatchExecuteStatementResponse {
-  readonly updateResults: [];
+export interface BatchExecuteStatementResponse {
+  readonly updateResults?: [];
 }
 
-interface BeginTransactionRequest {
-  readonly database: string;
+export interface BeginTransactionRequest {
+  readonly database?: string;
   readonly resourceArn: string;
-  readonly schema: string;
+  readonly schema?: string;
   readonly secretArn: string;
 }
 
-interface BeginTransactionResponse {
-  readonly transactionId: string;
+export interface BeginTransactionResponse {
+  readonly transactionId?: string;
 }
 
-interface ColumnMetadata {
-  readonly arrayBaseColumnType: number;
-  readonly isAutoIncrement: boolean;
-  readonly isCaseSensitive: boolean;
-  readonly isCurrency: boolean;
-  readonly isSigned: boolean;
-  readonly label: string;
-  readonly name: string;
-  readonly nullable: number;
-  readonly precision: number;
-  readonly scale: number;
-  readonly schemaName: string;
-  readonly tableName: string;
-  readonly type: number;
-  readonly typeName: string;
+export interface ColumnMetadata {
+  readonly arrayBaseColumnType?: number;
+  readonly isAutoIncrement?: boolean;
+  readonly isCaseSensitive?: boolean;
+  readonly isCurrency?: boolean;
+  readonly isSigned?: boolean;
+  readonly label?: string;
+  readonly name?: string;
+  readonly nullable?: number;
+  readonly precision?: number;
+  readonly scale?: number;
+  readonly schemaName?: string;
+  readonly tableName?: string;
+  readonly type?: number;
+  readonly typeName?: string;
 }
 
-interface CommitTransactionRequest {
+export interface CommitTransactionRequest {
   readonly resourceArn: string;
   readonly secretArn: string;
   readonly transactionId: string;
 }
 
-interface CommitTransactionResponse {
-  readonly transactionStatus: string;
+export interface CommitTransactionResponse {
+  readonly transactionStatus?: string;
 }
 
-interface ExecuteSqlRequest {
+export interface ExecuteSqlRequest {
   readonly awsSecretStoreArn: string;
-  readonly database: string;
+  readonly database?: string;
   readonly dbClusterOrInstanceArn: string;
-  readonly schema: string;
+  readonly schema?: string;
   readonly sqlStatements: string;
 }
 
-interface ExecuteSqlResponse {
-  readonly sqlStatementResults: [];
+export interface ExecuteSqlResponse {
+  readonly sqlStatementResults?: [];
 }
 
-interface ExecuteStatementRequest {
-  readonly continueAfterTimeout: boolean;
-  readonly database: string;
-  readonly includeResultMetadata: boolean;
-  readonly parameters: [];
+export interface ExecuteStatementRequest {
+  readonly continueAfterTimeout?: boolean;
+  readonly database?: string;
+  readonly includeResultMetadata?: boolean;
+  readonly parameters?: [];
   readonly resourceArn: string;
-  readonly resultSetOptions: ResultSetOptions;
-  readonly schema: string;
+  readonly resultSetOptions?: ResultSetOptions;
+  readonly schema?: string;
   readonly secretArn: string;
   readonly sql: string;
-  readonly transactionId: string;
+  readonly transactionId?: string;
 }
 
-interface ExecuteStatementResponse {
-  readonly columnMetadata: [];
-  readonly generatedFields: [];
-  readonly numberOfRecordsUpdated: number;
-  readonly records: [];
+export interface ExecuteStatementResponse {
+  readonly columnMetadata?: [];
+  readonly generatedFields?: [];
+  readonly numberOfRecordsUpdated?: number;
+  readonly records?: [];
 }
 
-interface Field {
-  readonly arrayValue: ArrayValue;
-  readonly blobValue: unknown;
-  readonly booleanValue: boolean;
-  readonly doubleValue: unknown;
-  readonly isNull: boolean;
-  readonly longValue: number;
-  readonly stringValue: string;
+export interface Field {
+  readonly arrayValue?: ArrayValue;
+  readonly blobValue?: unknown;
+  readonly booleanValue?: boolean;
+  readonly doubleValue?: unknown;
+  readonly isNull?: boolean;
+  readonly longValue?: number;
+  readonly stringValue?: string;
 }
 
-interface ForbiddenException {
-  readonly message: string;
+export interface ForbiddenException {
+  readonly message?: string;
 }
 
-interface InternalServerErrorException {
+export interface InternalServerErrorException {
 }
 
-interface NotFoundException {
-  readonly message: string;
+export interface NotFoundException {
+  readonly message?: string;
 }
 
-interface Record {
-  readonly values: [];
+export interface Record {
+  readonly values?: [];
 }
 
-interface ResultFrame {
-  readonly records: [];
-  readonly resultSetMetadata: ResultSetMetadata;
+export interface ResultFrame {
+  readonly records?: [];
+  readonly resultSetMetadata?: ResultSetMetadata;
 }
 
-interface ResultSetMetadata {
-  readonly columnCount: number;
-  readonly columnMetadata: [];
+export interface ResultSetMetadata {
+  readonly columnCount?: number;
+  readonly columnMetadata?: [];
 }
 
-interface ResultSetOptions {
-  readonly decimalReturnType: string;
+export interface ResultSetOptions {
+  readonly decimalReturnType?: string;
 }
 
-interface RollbackTransactionRequest {
+export interface RollbackTransactionRequest {
   readonly resourceArn: string;
   readonly secretArn: string;
   readonly transactionId: string;
 }
 
-interface RollbackTransactionResponse {
-  readonly transactionStatus: string;
+export interface RollbackTransactionResponse {
+  readonly transactionStatus?: string;
 }
 
-interface ServiceUnavailableError {
+export interface ServiceUnavailableError {
 }
 
-interface SqlParameter {
-  readonly name: string;
-  readonly typeHint: string;
-  readonly value: Field;
+export interface SqlParameter {
+  readonly name?: string;
+  readonly typeHint?: string;
+  readonly value?: Field;
 }
 
-interface SqlStatementResult {
-  readonly numberOfRecordsUpdated: number;
-  readonly resultFrame: ResultFrame;
+export interface SqlStatementResult {
+  readonly numberOfRecordsUpdated?: number;
+  readonly resultFrame?: ResultFrame;
 }
 
-interface StatementTimeoutException {
-  readonly dbConnectionId: number;
-  readonly message: string;
+export interface StatementTimeoutException {
+  readonly dbConnectionId?: number;
+  readonly message?: string;
 }
 
-interface StructValue {
-  readonly attributes: [];
+export interface StructValue {
+  readonly attributes?: [];
 }
 
-interface UpdateResult {
-  readonly generatedFields: [];
+export interface UpdateResult {
+  readonly generatedFields?: [];
 }
 
-interface Value {
-  readonly arrayValues: [];
-  readonly bigIntValue: number;
-  readonly bitValue: boolean;
-  readonly blobValue: unknown;
-  readonly doubleValue: unknown;
-  readonly intValue: number;
-  readonly isNull: boolean;
-  readonly realValue: unknown;
-  readonly stringValue: string;
-  readonly structValue: StructValue;
+export interface Value {
+  readonly arrayValues?: [];
+  readonly bigIntValue?: number;
+  readonly bitValue?: boolean;
+  readonly blobValue?: unknown;
+  readonly doubleValue?: unknown;
+  readonly intValue?: number;
+  readonly isNull?: boolean;
+  readonly realValue?: unknown;
+  readonly stringValue?: string;
+  readonly structValue?: StructValue;
 }
+
 

@@ -4,61 +4,77 @@
 export interface DescribeEntitiesDetectionV2Job {
   readonly JobId: string;
 }
+
 export interface DescribeICD10CMInferenceJob {
   readonly JobId: string;
 }
+
 export interface DescribePHIDetectionJob {
   readonly JobId: string;
 }
+
 export interface DescribeRxNormInferenceJob {
   readonly JobId: string;
 }
+
 export interface DescribeSNOMEDCTInferenceJob {
   readonly JobId: string;
 }
+
 export interface DetectEntities {
   readonly Text: string;
 }
+
 export interface DetectEntitiesV2 {
   readonly Text: string;
 }
+
 export interface DetectPHI {
   readonly Text: string;
 }
+
 export interface InferICD10CM {
   readonly Text: string;
 }
+
 export interface InferRxNorm {
   readonly Text: string;
 }
+
 export interface InferSNOMEDCT {
   readonly Text: string;
 }
+
 export interface ListEntitiesDetectionV2Jobs {
   readonly Filter?: ComprehendMedicalAsyncJobFilter;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListICD10CMInferenceJobs {
   readonly Filter?: ComprehendMedicalAsyncJobFilter;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListPHIDetectionJobs {
   readonly Filter?: ComprehendMedicalAsyncJobFilter;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListRxNormInferenceJobs {
   readonly Filter?: ComprehendMedicalAsyncJobFilter;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListSNOMEDCTInferenceJobs {
   readonly Filter?: ComprehendMedicalAsyncJobFilter;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface StartEntitiesDetectionV2Job {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
@@ -68,6 +84,7 @@ export interface StartEntitiesDetectionV2Job {
   readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
+
 export interface StartICD10CMInferenceJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
@@ -77,6 +94,7 @@ export interface StartICD10CMInferenceJob {
   readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
+
 export interface StartPHIDetectionJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
@@ -86,6 +104,7 @@ export interface StartPHIDetectionJob {
   readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
+
 export interface StartRxNormInferenceJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
@@ -95,6 +114,7 @@ export interface StartRxNormInferenceJob {
   readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
+
 export interface StartSNOMEDCTInferenceJob {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
@@ -104,511 +124,515 @@ export interface StartSNOMEDCTInferenceJob {
   readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
+
 export interface StopEntitiesDetectionV2Job {
   readonly JobId: string;
 }
+
 export interface StopICD10CMInferenceJob {
   readonly JobId: string;
 }
+
 export interface StopPHIDetectionJob {
   readonly JobId: string;
 }
+
 export interface StopRxNormInferenceJob {
   readonly JobId: string;
 }
+
 export interface StopSNOMEDCTInferenceJob {
   readonly JobId: string;
 }
 
-
-
-interface Attribute {
-  readonly Type: string;
-  readonly Score: unknown;
-  readonly RelationshipScore: unknown;
-  readonly RelationshipType: string;
-  readonly Id: number;
-  readonly BeginOffset: number;
-  readonly EndOffset: number;
-  readonly Text: string;
-  readonly Category: string;
-  readonly Traits: [];
+export interface Attribute {
+  readonly Type?: string;
+  readonly Score?: unknown;
+  readonly RelationshipScore?: unknown;
+  readonly RelationshipType?: string;
+  readonly Id?: number;
+  readonly BeginOffset?: number;
+  readonly EndOffset?: number;
+  readonly Text?: string;
+  readonly Category?: string;
+  readonly Traits?: [];
 }
 
-interface Characters {
-  readonly OriginalTextCharacters: number;
+export interface Characters {
+  readonly OriginalTextCharacters?: number;
 }
 
-interface ComprehendMedicalAsyncJobFilter {
-  readonly JobName: string;
-  readonly JobStatus: string;
-  readonly SubmitTimeBefore: Date;
-  readonly SubmitTimeAfter: Date;
+export interface ComprehendMedicalAsyncJobFilter {
+  readonly JobName?: string;
+  readonly JobStatus?: string;
+  readonly SubmitTimeBefore?: Date;
+  readonly SubmitTimeAfter?: Date;
 }
 
-interface ComprehendMedicalAsyncJobProperties {
-  readonly JobId: string;
-  readonly JobName: string;
-  readonly JobStatus: string;
-  readonly Message: string;
-  readonly SubmitTime: Date;
-  readonly EndTime: Date;
-  readonly ExpirationTime: Date;
-  readonly InputDataConfig: InputDataConfig;
-  readonly OutputDataConfig: OutputDataConfig;
-  readonly LanguageCode: string;
-  readonly DataAccessRoleArn: string;
-  readonly ManifestFilePath: string;
-  readonly KMSKey: string;
-  readonly ModelVersion: string;
+export interface ComprehendMedicalAsyncJobProperties {
+  readonly JobId?: string;
+  readonly JobName?: string;
+  readonly JobStatus?: string;
+  readonly Message?: string;
+  readonly SubmitTime?: Date;
+  readonly EndTime?: Date;
+  readonly ExpirationTime?: Date;
+  readonly InputDataConfig?: InputDataConfig;
+  readonly OutputDataConfig?: OutputDataConfig;
+  readonly LanguageCode?: string;
+  readonly DataAccessRoleArn?: string;
+  readonly ManifestFilePath?: string;
+  readonly KMSKey?: string;
+  readonly ModelVersion?: string;
 }
 
-interface DescribeEntitiesDetectionV2JobRequest {
+export interface DescribeEntitiesDetectionV2JobRequest {
   readonly JobId: string;
 }
 
-interface DescribeEntitiesDetectionV2JobResponse {
-  readonly ComprehendMedicalAsyncJobProperties: ComprehendMedicalAsyncJobProperties;
+export interface DescribeEntitiesDetectionV2JobResponse {
+  readonly ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties;
 }
 
-interface DescribeICD10CMInferenceJobRequest {
+export interface DescribeICD10CMInferenceJobRequest {
   readonly JobId: string;
 }
 
-interface DescribeICD10CMInferenceJobResponse {
-  readonly ComprehendMedicalAsyncJobProperties: ComprehendMedicalAsyncJobProperties;
+export interface DescribeICD10CMInferenceJobResponse {
+  readonly ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties;
 }
 
-interface DescribePHIDetectionJobRequest {
+export interface DescribePHIDetectionJobRequest {
   readonly JobId: string;
 }
 
-interface DescribePHIDetectionJobResponse {
-  readonly ComprehendMedicalAsyncJobProperties: ComprehendMedicalAsyncJobProperties;
+export interface DescribePHIDetectionJobResponse {
+  readonly ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties;
 }
 
-interface DescribeRxNormInferenceJobRequest {
+export interface DescribeRxNormInferenceJobRequest {
   readonly JobId: string;
 }
 
-interface DescribeRxNormInferenceJobResponse {
-  readonly ComprehendMedicalAsyncJobProperties: ComprehendMedicalAsyncJobProperties;
+export interface DescribeRxNormInferenceJobResponse {
+  readonly ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties;
 }
 
-interface DescribeSNOMEDCTInferenceJobRequest {
+export interface DescribeSNOMEDCTInferenceJobRequest {
   readonly JobId: string;
 }
 
-interface DescribeSNOMEDCTInferenceJobResponse {
-  readonly ComprehendMedicalAsyncJobProperties: ComprehendMedicalAsyncJobProperties;
+export interface DescribeSNOMEDCTInferenceJobResponse {
+  readonly ComprehendMedicalAsyncJobProperties?: ComprehendMedicalAsyncJobProperties;
 }
 
-interface DetectEntitiesRequest {
+export interface DetectEntitiesRequest {
   readonly Text: string;
 }
 
-interface DetectEntitiesResponse {
+export interface DetectEntitiesResponse {
   readonly Entities: [];
-  readonly UnmappedAttributes: [];
-  readonly PaginationToken: string;
+  readonly UnmappedAttributes?: [];
+  readonly PaginationToken?: string;
   readonly ModelVersion: string;
 }
 
-interface DetectEntitiesV2Request {
+export interface DetectEntitiesV2Request {
   readonly Text: string;
 }
 
-interface DetectEntitiesV2Response {
+export interface DetectEntitiesV2Response {
   readonly Entities: [];
-  readonly UnmappedAttributes: [];
-  readonly PaginationToken: string;
+  readonly UnmappedAttributes?: [];
+  readonly PaginationToken?: string;
   readonly ModelVersion: string;
 }
 
-interface DetectPHIRequest {
+export interface DetectPHIRequest {
   readonly Text: string;
 }
 
-interface DetectPHIResponse {
+export interface DetectPHIResponse {
   readonly Entities: [];
-  readonly PaginationToken: string;
+  readonly PaginationToken?: string;
   readonly ModelVersion: string;
 }
 
-interface Entity {
-  readonly Id: number;
-  readonly BeginOffset: number;
-  readonly EndOffset: number;
-  readonly Score: unknown;
+export interface Entity {
+  readonly Id?: number;
+  readonly BeginOffset?: number;
+  readonly EndOffset?: number;
+  readonly Score?: unknown;
+  readonly Text?: string;
+  readonly Category?: string;
+  readonly Type?: string;
+  readonly Traits?: [];
+  readonly Attributes?: [];
+}
+
+export interface ICD10CMAttribute {
+  readonly Type?: string;
+  readonly Score?: unknown;
+  readonly RelationshipScore?: unknown;
+  readonly Id?: number;
+  readonly BeginOffset?: number;
+  readonly EndOffset?: number;
+  readonly Text?: string;
+  readonly Traits?: [];
+  readonly Category?: string;
+  readonly RelationshipType?: string;
+}
+
+export interface ICD10CMConcept {
+  readonly Description?: string;
+  readonly Code?: string;
+  readonly Score?: unknown;
+}
+
+export interface ICD10CMEntity {
+  readonly Id?: number;
+  readonly Text?: string;
+  readonly Category?: string;
+  readonly Type?: string;
+  readonly Score?: unknown;
+  readonly BeginOffset?: number;
+  readonly EndOffset?: number;
+  readonly Attributes?: [];
+  readonly Traits?: [];
+  readonly ICD10CMConcepts?: [];
+}
+
+export interface ICD10CMTrait {
+  readonly Name?: string;
+  readonly Score?: unknown;
+}
+
+export interface InferICD10CMRequest {
   readonly Text: string;
-  readonly Category: string;
-  readonly Type: string;
-  readonly Traits: [];
-  readonly Attributes: [];
 }
 
-interface ICD10CMAttribute {
-  readonly Type: string;
-  readonly Score: unknown;
-  readonly RelationshipScore: unknown;
-  readonly Id: number;
-  readonly BeginOffset: number;
-  readonly EndOffset: number;
-  readonly Text: string;
-  readonly Traits: [];
-  readonly Category: string;
-  readonly RelationshipType: string;
-}
-
-interface ICD10CMConcept {
-  readonly Description: string;
-  readonly Code: string;
-  readonly Score: unknown;
-}
-
-interface ICD10CMEntity {
-  readonly Id: number;
-  readonly Text: string;
-  readonly Category: string;
-  readonly Type: string;
-  readonly Score: unknown;
-  readonly BeginOffset: number;
-  readonly EndOffset: number;
-  readonly Attributes: [];
-  readonly Traits: [];
-  readonly ICD10CMConcepts: [];
-}
-
-interface ICD10CMTrait {
-  readonly Name: string;
-  readonly Score: unknown;
-}
-
-interface InferICD10CMRequest {
-  readonly Text: string;
-}
-
-interface InferICD10CMResponse {
+export interface InferICD10CMResponse {
   readonly Entities: [];
-  readonly PaginationToken: string;
-  readonly ModelVersion: string;
+  readonly PaginationToken?: string;
+  readonly ModelVersion?: string;
 }
 
-interface InferRxNormRequest {
+export interface InferRxNormRequest {
   readonly Text: string;
 }
 
-interface InferRxNormResponse {
+export interface InferRxNormResponse {
   readonly Entities: [];
-  readonly PaginationToken: string;
-  readonly ModelVersion: string;
+  readonly PaginationToken?: string;
+  readonly ModelVersion?: string;
 }
 
-interface InferSNOMEDCTRequest {
+export interface InferSNOMEDCTRequest {
   readonly Text: string;
 }
 
-interface InferSNOMEDCTResponse {
+export interface InferSNOMEDCTResponse {
   readonly Entities: [];
-  readonly PaginationToken: string;
-  readonly ModelVersion: string;
-  readonly SNOMEDCTDetails: SNOMEDCTDetails;
-  readonly Characters: Characters;
+  readonly PaginationToken?: string;
+  readonly ModelVersion?: string;
+  readonly SNOMEDCTDetails?: SNOMEDCTDetails;
+  readonly Characters?: Characters;
 }
 
-interface InputDataConfig {
+export interface InputDataConfig {
   readonly S3Bucket: string;
-  readonly S3Key: string;
+  readonly S3Key?: string;
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface InternalServerException {
+  readonly Message?: string;
 }
 
-interface InvalidEncodingException {
-  readonly Message: string;
+export interface InvalidEncodingException {
+  readonly Message?: string;
 }
 
-interface InvalidRequestException {
-  readonly Message: string;
+export interface InvalidRequestException {
+  readonly Message?: string;
 }
 
-interface ListEntitiesDetectionV2JobsRequest {
-  readonly Filter: ComprehendMedicalAsyncJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListEntitiesDetectionV2JobsRequest {
+  readonly Filter?: ComprehendMedicalAsyncJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListEntitiesDetectionV2JobsResponse {
-  readonly ComprehendMedicalAsyncJobPropertiesList: [];
-  readonly NextToken: string;
+export interface ListEntitiesDetectionV2JobsResponse {
+  readonly ComprehendMedicalAsyncJobPropertiesList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListICD10CMInferenceJobsRequest {
-  readonly Filter: ComprehendMedicalAsyncJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListICD10CMInferenceJobsRequest {
+  readonly Filter?: ComprehendMedicalAsyncJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListICD10CMInferenceJobsResponse {
-  readonly ComprehendMedicalAsyncJobPropertiesList: [];
-  readonly NextToken: string;
+export interface ListICD10CMInferenceJobsResponse {
+  readonly ComprehendMedicalAsyncJobPropertiesList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListPHIDetectionJobsRequest {
-  readonly Filter: ComprehendMedicalAsyncJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListPHIDetectionJobsRequest {
+  readonly Filter?: ComprehendMedicalAsyncJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListPHIDetectionJobsResponse {
-  readonly ComprehendMedicalAsyncJobPropertiesList: [];
-  readonly NextToken: string;
+export interface ListPHIDetectionJobsResponse {
+  readonly ComprehendMedicalAsyncJobPropertiesList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListRxNormInferenceJobsRequest {
-  readonly Filter: ComprehendMedicalAsyncJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListRxNormInferenceJobsRequest {
+  readonly Filter?: ComprehendMedicalAsyncJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListRxNormInferenceJobsResponse {
-  readonly ComprehendMedicalAsyncJobPropertiesList: [];
-  readonly NextToken: string;
+export interface ListRxNormInferenceJobsResponse {
+  readonly ComprehendMedicalAsyncJobPropertiesList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListSNOMEDCTInferenceJobsRequest {
-  readonly Filter: ComprehendMedicalAsyncJobFilter;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListSNOMEDCTInferenceJobsRequest {
+  readonly Filter?: ComprehendMedicalAsyncJobFilter;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListSNOMEDCTInferenceJobsResponse {
-  readonly ComprehendMedicalAsyncJobPropertiesList: [];
-  readonly NextToken: string;
+export interface ListSNOMEDCTInferenceJobsResponse {
+  readonly ComprehendMedicalAsyncJobPropertiesList?: [];
+  readonly NextToken?: string;
 }
 
-interface OutputDataConfig {
+export interface OutputDataConfig {
   readonly S3Bucket: string;
-  readonly S3Key: string;
+  readonly S3Key?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface RxNormAttribute {
-  readonly Type: string;
-  readonly Score: unknown;
-  readonly RelationshipScore: unknown;
-  readonly Id: number;
-  readonly BeginOffset: number;
-  readonly EndOffset: number;
-  readonly Text: string;
-  readonly Traits: [];
+export interface RxNormAttribute {
+  readonly Type?: string;
+  readonly Score?: unknown;
+  readonly RelationshipScore?: unknown;
+  readonly Id?: number;
+  readonly BeginOffset?: number;
+  readonly EndOffset?: number;
+  readonly Text?: string;
+  readonly Traits?: [];
 }
 
-interface RxNormConcept {
-  readonly Description: string;
-  readonly Code: string;
-  readonly Score: unknown;
+export interface RxNormConcept {
+  readonly Description?: string;
+  readonly Code?: string;
+  readonly Score?: unknown;
 }
 
-interface RxNormEntity {
-  readonly Id: number;
-  readonly Text: string;
-  readonly Category: string;
-  readonly Type: string;
-  readonly Score: unknown;
-  readonly BeginOffset: number;
-  readonly EndOffset: number;
-  readonly Attributes: [];
-  readonly Traits: [];
-  readonly RxNormConcepts: [];
+export interface RxNormEntity {
+  readonly Id?: number;
+  readonly Text?: string;
+  readonly Category?: string;
+  readonly Type?: string;
+  readonly Score?: unknown;
+  readonly BeginOffset?: number;
+  readonly EndOffset?: number;
+  readonly Attributes?: [];
+  readonly Traits?: [];
+  readonly RxNormConcepts?: [];
 }
 
-interface RxNormTrait {
-  readonly Name: string;
-  readonly Score: unknown;
+export interface RxNormTrait {
+  readonly Name?: string;
+  readonly Score?: unknown;
 }
 
-interface SNOMEDCTAttribute {
-  readonly Category: string;
-  readonly Type: string;
-  readonly Score: unknown;
-  readonly RelationshipScore: unknown;
-  readonly RelationshipType: string;
-  readonly Id: number;
-  readonly BeginOffset: number;
-  readonly EndOffset: number;
-  readonly Text: string;
-  readonly Traits: [];
-  readonly SNOMEDCTConcepts: [];
+export interface SNOMEDCTAttribute {
+  readonly Category?: string;
+  readonly Type?: string;
+  readonly Score?: unknown;
+  readonly RelationshipScore?: unknown;
+  readonly RelationshipType?: string;
+  readonly Id?: number;
+  readonly BeginOffset?: number;
+  readonly EndOffset?: number;
+  readonly Text?: string;
+  readonly Traits?: [];
+  readonly SNOMEDCTConcepts?: [];
 }
 
-interface SNOMEDCTConcept {
-  readonly Description: string;
-  readonly Code: string;
-  readonly Score: unknown;
+export interface SNOMEDCTConcept {
+  readonly Description?: string;
+  readonly Code?: string;
+  readonly Score?: unknown;
 }
 
-interface SNOMEDCTDetails {
-  readonly Edition: string;
-  readonly Language: string;
-  readonly VersionDate: string;
+export interface SNOMEDCTDetails {
+  readonly Edition?: string;
+  readonly Language?: string;
+  readonly VersionDate?: string;
 }
 
-interface SNOMEDCTEntity {
-  readonly Id: number;
-  readonly Text: string;
-  readonly Category: string;
-  readonly Type: string;
-  readonly Score: unknown;
-  readonly BeginOffset: number;
-  readonly EndOffset: number;
-  readonly Attributes: [];
-  readonly Traits: [];
-  readonly SNOMEDCTConcepts: [];
+export interface SNOMEDCTEntity {
+  readonly Id?: number;
+  readonly Text?: string;
+  readonly Category?: string;
+  readonly Type?: string;
+  readonly Score?: unknown;
+  readonly BeginOffset?: number;
+  readonly EndOffset?: number;
+  readonly Attributes?: [];
+  readonly Traits?: [];
+  readonly SNOMEDCTConcepts?: [];
 }
 
-interface SNOMEDCTTrait {
-  readonly Name: string;
-  readonly Score: unknown;
+export interface SNOMEDCTTrait {
+  readonly Name?: string;
+  readonly Score?: unknown;
 }
 
-interface ServiceUnavailableException {
-  readonly Message: string;
+export interface ServiceUnavailableException {
+  readonly Message?: string;
 }
 
-interface StartEntitiesDetectionV2JobRequest {
+export interface StartEntitiesDetectionV2JobRequest {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly ClientRequestToken: string;
-  readonly KMSKey: string;
+  readonly JobName?: string;
+  readonly ClientRequestToken?: string;
+  readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
 
-interface StartEntitiesDetectionV2JobResponse {
-  readonly JobId: string;
+export interface StartEntitiesDetectionV2JobResponse {
+  readonly JobId?: string;
 }
 
-interface StartICD10CMInferenceJobRequest {
+export interface StartICD10CMInferenceJobRequest {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly ClientRequestToken: string;
-  readonly KMSKey: string;
+  readonly JobName?: string;
+  readonly ClientRequestToken?: string;
+  readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
 
-interface StartICD10CMInferenceJobResponse {
-  readonly JobId: string;
+export interface StartICD10CMInferenceJobResponse {
+  readonly JobId?: string;
 }
 
-interface StartPHIDetectionJobRequest {
+export interface StartPHIDetectionJobRequest {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly ClientRequestToken: string;
-  readonly KMSKey: string;
+  readonly JobName?: string;
+  readonly ClientRequestToken?: string;
+  readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
 
-interface StartPHIDetectionJobResponse {
-  readonly JobId: string;
+export interface StartPHIDetectionJobResponse {
+  readonly JobId?: string;
 }
 
-interface StartRxNormInferenceJobRequest {
+export interface StartRxNormInferenceJobRequest {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly ClientRequestToken: string;
-  readonly KMSKey: string;
+  readonly JobName?: string;
+  readonly ClientRequestToken?: string;
+  readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
 
-interface StartRxNormInferenceJobResponse {
-  readonly JobId: string;
+export interface StartRxNormInferenceJobResponse {
+  readonly JobId?: string;
 }
 
-interface StartSNOMEDCTInferenceJobRequest {
+export interface StartSNOMEDCTInferenceJobRequest {
   readonly InputDataConfig: InputDataConfig;
   readonly OutputDataConfig: OutputDataConfig;
   readonly DataAccessRoleArn: string;
-  readonly JobName: string;
-  readonly ClientRequestToken: string;
-  readonly KMSKey: string;
+  readonly JobName?: string;
+  readonly ClientRequestToken?: string;
+  readonly KMSKey?: string;
   readonly LanguageCode: string;
 }
 
-interface StartSNOMEDCTInferenceJobResponse {
+export interface StartSNOMEDCTInferenceJobResponse {
+  readonly JobId?: string;
+}
+
+export interface StopEntitiesDetectionV2JobRequest {
   readonly JobId: string;
 }
 
-interface StopEntitiesDetectionV2JobRequest {
+export interface StopEntitiesDetectionV2JobResponse {
+  readonly JobId?: string;
+}
+
+export interface StopICD10CMInferenceJobRequest {
   readonly JobId: string;
 }
 
-interface StopEntitiesDetectionV2JobResponse {
+export interface StopICD10CMInferenceJobResponse {
+  readonly JobId?: string;
+}
+
+export interface StopPHIDetectionJobRequest {
   readonly JobId: string;
 }
 
-interface StopICD10CMInferenceJobRequest {
+export interface StopPHIDetectionJobResponse {
+  readonly JobId?: string;
+}
+
+export interface StopRxNormInferenceJobRequest {
   readonly JobId: string;
 }
 
-interface StopICD10CMInferenceJobResponse {
+export interface StopRxNormInferenceJobResponse {
+  readonly JobId?: string;
+}
+
+export interface StopSNOMEDCTInferenceJobRequest {
   readonly JobId: string;
 }
 
-interface StopPHIDetectionJobRequest {
-  readonly JobId: string;
+export interface StopSNOMEDCTInferenceJobResponse {
+  readonly JobId?: string;
 }
 
-interface StopPHIDetectionJobResponse {
-  readonly JobId: string;
+export interface TextSizeLimitExceededException {
+  readonly Message?: string;
 }
 
-interface StopRxNormInferenceJobRequest {
-  readonly JobId: string;
+export interface TooManyRequestsException {
+  readonly Message?: string;
 }
 
-interface StopRxNormInferenceJobResponse {
-  readonly JobId: string;
+export interface Trait {
+  readonly Name?: string;
+  readonly Score?: unknown;
 }
 
-interface StopSNOMEDCTInferenceJobRequest {
-  readonly JobId: string;
+export interface UnmappedAttribute {
+  readonly Type?: string;
+  readonly Attribute?: Attribute;
 }
 
-interface StopSNOMEDCTInferenceJobResponse {
-  readonly JobId: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
 
-interface TextSizeLimitExceededException {
-  readonly Message: string;
-}
-
-interface TooManyRequestsException {
-  readonly Message: string;
-}
-
-interface Trait {
-  readonly Name: string;
-  readonly Score: unknown;
-}
-
-interface UnmappedAttribute {
-  readonly Type: string;
-  readonly Attribute: Attribute;
-}
-
-interface ValidationException {
-  readonly Message: string;
-}
 

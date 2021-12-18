@@ -6,6 +6,7 @@ export interface AssociateCustomDomain {
   readonly DomainName: string;
   readonly EnableWWWSubdomain?: boolean;
 }
+
 export interface CreateAutoScalingConfiguration {
   readonly AutoScalingConfigurationName: string;
   readonly MaxConcurrency?: number;
@@ -13,11 +14,13 @@ export interface CreateAutoScalingConfiguration {
   readonly MaxSize?: number;
   readonly Tags?: [];
 }
+
 export interface CreateConnection {
   readonly ConnectionName: string;
   readonly ProviderType: string;
   readonly Tags?: [];
 }
+
 export interface CreateService {
   readonly ServiceName: string;
   readonly SourceConfiguration: SourceConfiguration;
@@ -27,70 +30,88 @@ export interface CreateService {
   readonly HealthCheckConfiguration?: HealthCheckConfiguration;
   readonly AutoScalingConfigurationArn?: string;
 }
+
 export interface DeleteAutoScalingConfiguration {
   readonly AutoScalingConfigurationArn: string;
 }
+
 export interface DeleteConnection {
   readonly ConnectionArn: string;
 }
+
 export interface DeleteService {
   readonly ServiceArn: string;
 }
+
 export interface DescribeAutoScalingConfiguration {
   readonly AutoScalingConfigurationArn: string;
 }
+
 export interface DescribeCustomDomains {
   readonly ServiceArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface DescribeService {
   readonly ServiceArn: string;
 }
+
 export interface DisassociateCustomDomain {
   readonly ServiceArn: string;
   readonly DomainName: string;
 }
+
 export interface ListAutoScalingConfigurations {
   readonly AutoScalingConfigurationName?: string;
   readonly LatestOnly?: boolean;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListConnections {
   readonly ConnectionName?: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListOperations {
   readonly ServiceArn: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListServices {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface PauseService {
   readonly ServiceArn: string;
 }
+
 export interface ResumeService {
   readonly ServiceArn: string;
 }
+
 export interface StartDeployment {
   readonly ServiceArn: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateService {
   readonly ServiceArn: string;
   readonly SourceConfiguration?: SourceConfiguration;
@@ -99,403 +120,402 @@ export interface UpdateService {
   readonly HealthCheckConfiguration?: HealthCheckConfiguration;
 }
 
-
-
-interface AssociateCustomDomainRequest {
+export interface AssociateCustomDomainRequest {
   readonly ServiceArn: string;
   readonly DomainName: string;
-  readonly EnableWWWSubdomain: boolean;
+  readonly EnableWWWSubdomain?: boolean;
 }
 
-interface AssociateCustomDomainResponse {
+export interface AssociateCustomDomainResponse {
   readonly DNSTarget: string;
   readonly ServiceArn: string;
   readonly CustomDomain: CustomDomain;
 }
 
-interface AuthenticationConfiguration {
-  readonly ConnectionArn: string;
-  readonly AccessRoleArn: string;
+export interface AuthenticationConfiguration {
+  readonly ConnectionArn?: string;
+  readonly AccessRoleArn?: string;
 }
 
-interface AutoScalingConfiguration {
-  readonly AutoScalingConfigurationArn: string;
-  readonly AutoScalingConfigurationName: string;
-  readonly AutoScalingConfigurationRevision: number;
-  readonly Latest: boolean;
-  readonly Status: string;
-  readonly MaxConcurrency: number;
-  readonly MinSize: number;
-  readonly MaxSize: number;
-  readonly CreatedAt: Date;
-  readonly DeletedAt: Date;
+export interface AutoScalingConfiguration {
+  readonly AutoScalingConfigurationArn?: string;
+  readonly AutoScalingConfigurationName?: string;
+  readonly AutoScalingConfigurationRevision?: number;
+  readonly Latest?: boolean;
+  readonly Status?: string;
+  readonly MaxConcurrency?: number;
+  readonly MinSize?: number;
+  readonly MaxSize?: number;
+  readonly CreatedAt?: Date;
+  readonly DeletedAt?: Date;
 }
 
-interface AutoScalingConfigurationSummary {
-  readonly AutoScalingConfigurationArn: string;
-  readonly AutoScalingConfigurationName: string;
-  readonly AutoScalingConfigurationRevision: number;
+export interface AutoScalingConfigurationSummary {
+  readonly AutoScalingConfigurationArn?: string;
+  readonly AutoScalingConfigurationName?: string;
+  readonly AutoScalingConfigurationRevision?: number;
 }
 
-interface CertificateValidationRecord {
-  readonly Name: string;
-  readonly Type: string;
-  readonly Value: string;
-  readonly Status: string;
+export interface CertificateValidationRecord {
+  readonly Name?: string;
+  readonly Type?: string;
+  readonly Value?: string;
+  readonly Status?: string;
 }
 
-interface CodeConfiguration {
+export interface CodeConfiguration {
   readonly ConfigurationSource: string;
-  readonly CodeConfigurationValues: CodeConfigurationValues;
+  readonly CodeConfigurationValues?: CodeConfigurationValues;
 }
 
-interface CodeConfigurationValues {
+export interface CodeConfigurationValues {
   readonly Runtime: string;
-  readonly BuildCommand: string;
-  readonly StartCommand: string;
-  readonly Port: string;
-  readonly RuntimeEnvironmentVariables: {[key: string]: any};
+  readonly BuildCommand?: string;
+  readonly StartCommand?: string;
+  readonly Port?: string;
+  readonly RuntimeEnvironmentVariables?: {[key: string]: any};
 }
 
-interface CodeRepository {
+export interface CodeRepository {
   readonly RepositoryUrl: string;
   readonly SourceCodeVersion: SourceCodeVersion;
-  readonly CodeConfiguration: CodeConfiguration;
+  readonly CodeConfiguration?: CodeConfiguration;
 }
 
-interface Connection {
-  readonly ConnectionName: string;
-  readonly ConnectionArn: string;
-  readonly ProviderType: string;
-  readonly Status: string;
-  readonly CreatedAt: Date;
+export interface Connection {
+  readonly ConnectionName?: string;
+  readonly ConnectionArn?: string;
+  readonly ProviderType?: string;
+  readonly Status?: string;
+  readonly CreatedAt?: Date;
 }
 
-interface ConnectionSummary {
-  readonly ConnectionName: string;
-  readonly ConnectionArn: string;
-  readonly ProviderType: string;
-  readonly Status: string;
-  readonly CreatedAt: Date;
+export interface ConnectionSummary {
+  readonly ConnectionName?: string;
+  readonly ConnectionArn?: string;
+  readonly ProviderType?: string;
+  readonly Status?: string;
+  readonly CreatedAt?: Date;
 }
 
-interface CreateAutoScalingConfigurationRequest {
+export interface CreateAutoScalingConfigurationRequest {
   readonly AutoScalingConfigurationName: string;
-  readonly MaxConcurrency: number;
-  readonly MinSize: number;
-  readonly MaxSize: number;
-  readonly Tags: [];
+  readonly MaxConcurrency?: number;
+  readonly MinSize?: number;
+  readonly MaxSize?: number;
+  readonly Tags?: [];
 }
 
-interface CreateAutoScalingConfigurationResponse {
+export interface CreateAutoScalingConfigurationResponse {
   readonly AutoScalingConfiguration: AutoScalingConfiguration;
 }
 
-interface CreateConnectionRequest {
+export interface CreateConnectionRequest {
   readonly ConnectionName: string;
   readonly ProviderType: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface CreateConnectionResponse {
+export interface CreateConnectionResponse {
   readonly Connection: Connection;
 }
 
-interface CreateServiceRequest {
+export interface CreateServiceRequest {
   readonly ServiceName: string;
   readonly SourceConfiguration: SourceConfiguration;
-  readonly InstanceConfiguration: InstanceConfiguration;
-  readonly Tags: [];
-  readonly EncryptionConfiguration: EncryptionConfiguration;
-  readonly HealthCheckConfiguration: HealthCheckConfiguration;
-  readonly AutoScalingConfigurationArn: string;
+  readonly InstanceConfiguration?: InstanceConfiguration;
+  readonly Tags?: [];
+  readonly EncryptionConfiguration?: EncryptionConfiguration;
+  readonly HealthCheckConfiguration?: HealthCheckConfiguration;
+  readonly AutoScalingConfigurationArn?: string;
 }
 
-interface CreateServiceResponse {
+export interface CreateServiceResponse {
   readonly Service: Service;
   readonly OperationId: string;
 }
 
-interface CustomDomain {
+export interface CustomDomain {
   readonly DomainName: string;
   readonly EnableWWWSubdomain: boolean;
-  readonly CertificateValidationRecords: [];
+  readonly CertificateValidationRecords?: [];
   readonly Status: string;
 }
 
-interface DeleteAutoScalingConfigurationRequest {
+export interface DeleteAutoScalingConfigurationRequest {
   readonly AutoScalingConfigurationArn: string;
 }
 
-interface DeleteAutoScalingConfigurationResponse {
+export interface DeleteAutoScalingConfigurationResponse {
   readonly AutoScalingConfiguration: AutoScalingConfiguration;
 }
 
-interface DeleteConnectionRequest {
+export interface DeleteConnectionRequest {
   readonly ConnectionArn: string;
 }
 
-interface DeleteConnectionResponse {
-  readonly Connection: Connection;
+export interface DeleteConnectionResponse {
+  readonly Connection?: Connection;
 }
 
-interface DeleteServiceRequest {
+export interface DeleteServiceRequest {
   readonly ServiceArn: string;
 }
 
-interface DeleteServiceResponse {
+export interface DeleteServiceResponse {
   readonly Service: Service;
   readonly OperationId: string;
 }
 
-interface DescribeAutoScalingConfigurationRequest {
+export interface DescribeAutoScalingConfigurationRequest {
   readonly AutoScalingConfigurationArn: string;
 }
 
-interface DescribeAutoScalingConfigurationResponse {
+export interface DescribeAutoScalingConfigurationResponse {
   readonly AutoScalingConfiguration: AutoScalingConfiguration;
 }
 
-interface DescribeCustomDomainsRequest {
+export interface DescribeCustomDomainsRequest {
   readonly ServiceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface DescribeCustomDomainsResponse {
+export interface DescribeCustomDomainsResponse {
   readonly DNSTarget: string;
   readonly ServiceArn: string;
   readonly CustomDomains: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeServiceRequest {
+export interface DescribeServiceRequest {
   readonly ServiceArn: string;
 }
 
-interface DescribeServiceResponse {
+export interface DescribeServiceResponse {
   readonly Service: Service;
 }
 
-interface DisassociateCustomDomainRequest {
+export interface DisassociateCustomDomainRequest {
   readonly ServiceArn: string;
   readonly DomainName: string;
 }
 
-interface DisassociateCustomDomainResponse {
+export interface DisassociateCustomDomainResponse {
   readonly DNSTarget: string;
   readonly ServiceArn: string;
   readonly CustomDomain: CustomDomain;
 }
 
-interface EncryptionConfiguration {
+export interface EncryptionConfiguration {
   readonly KmsKey: string;
 }
 
-interface HealthCheckConfiguration {
-  readonly Protocol: string;
-  readonly Path: string;
-  readonly Interval: number;
-  readonly Timeout: number;
-  readonly HealthyThreshold: number;
-  readonly UnhealthyThreshold: number;
+export interface HealthCheckConfiguration {
+  readonly Protocol?: string;
+  readonly Path?: string;
+  readonly Interval?: number;
+  readonly Timeout?: number;
+  readonly HealthyThreshold?: number;
+  readonly UnhealthyThreshold?: number;
 }
 
-interface ImageConfiguration {
-  readonly RuntimeEnvironmentVariables: {[key: string]: any};
-  readonly StartCommand: string;
-  readonly Port: string;
+export interface ImageConfiguration {
+  readonly RuntimeEnvironmentVariables?: {[key: string]: any};
+  readonly StartCommand?: string;
+  readonly Port?: string;
 }
 
-interface ImageRepository {
+export interface ImageRepository {
   readonly ImageIdentifier: string;
-  readonly ImageConfiguration: ImageConfiguration;
+  readonly ImageConfiguration?: ImageConfiguration;
   readonly ImageRepositoryType: string;
 }
 
-interface InstanceConfiguration {
-  readonly Cpu: string;
-  readonly Memory: string;
-  readonly InstanceRoleArn: string;
+export interface InstanceConfiguration {
+  readonly Cpu?: string;
+  readonly Memory?: string;
+  readonly InstanceRoleArn?: string;
 }
 
-interface InternalServiceErrorException {
-  readonly Message: string;
+export interface InternalServiceErrorException {
+  readonly Message?: string;
 }
 
-interface InvalidRequestException {
-  readonly Message: string;
+export interface InvalidRequestException {
+  readonly Message?: string;
 }
 
-interface InvalidStateException {
-  readonly Message: string;
+export interface InvalidStateException {
+  readonly Message?: string;
 }
 
-interface ListAutoScalingConfigurationsRequest {
-  readonly AutoScalingConfigurationName: string;
-  readonly LatestOnly: boolean;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListAutoScalingConfigurationsRequest {
+  readonly AutoScalingConfigurationName?: string;
+  readonly LatestOnly?: boolean;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListAutoScalingConfigurationsResponse {
+export interface ListAutoScalingConfigurationsResponse {
   readonly AutoScalingConfigurationSummaryList: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListConnectionsRequest {
-  readonly ConnectionName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListConnectionsRequest {
+  readonly ConnectionName?: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListConnectionsResponse {
+export interface ListConnectionsResponse {
   readonly ConnectionSummaryList: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListOperationsRequest {
+export interface ListOperationsRequest {
   readonly ServiceArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListOperationsResponse {
-  readonly OperationSummaryList: [];
-  readonly NextToken: string;
+export interface ListOperationsResponse {
+  readonly OperationSummaryList?: [];
+  readonly NextToken?: string;
 }
 
-interface ListServicesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListServicesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListServicesResponse {
+export interface ListServicesResponse {
   readonly ServiceSummaryList: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly Tags?: [];
 }
 
-interface OperationSummary {
-  readonly Id: string;
-  readonly Type: string;
-  readonly Status: string;
-  readonly TargetArn: string;
-  readonly StartedAt: Date;
-  readonly EndedAt: Date;
-  readonly UpdatedAt: Date;
+export interface OperationSummary {
+  readonly Id?: string;
+  readonly Type?: string;
+  readonly Status?: string;
+  readonly TargetArn?: string;
+  readonly StartedAt?: Date;
+  readonly EndedAt?: Date;
+  readonly UpdatedAt?: Date;
 }
 
-interface PauseServiceRequest {
+export interface PauseServiceRequest {
   readonly ServiceArn: string;
 }
 
-interface PauseServiceResponse {
+export interface PauseServiceResponse {
   readonly Service: Service;
-  readonly OperationId: string;
+  readonly OperationId?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface ResumeServiceRequest {
+export interface ResumeServiceRequest {
   readonly ServiceArn: string;
 }
 
-interface ResumeServiceResponse {
+export interface ResumeServiceResponse {
   readonly Service: Service;
-  readonly OperationId: string;
+  readonly OperationId?: string;
 }
 
-interface Service {
+export interface Service {
   readonly ServiceName: string;
   readonly ServiceId: string;
   readonly ServiceArn: string;
   readonly ServiceUrl: string;
   readonly CreatedAt: Date;
   readonly UpdatedAt: Date;
-  readonly DeletedAt: Date;
+  readonly DeletedAt?: Date;
   readonly Status: string;
   readonly SourceConfiguration: SourceConfiguration;
   readonly InstanceConfiguration: InstanceConfiguration;
-  readonly EncryptionConfiguration: EncryptionConfiguration;
-  readonly HealthCheckConfiguration: HealthCheckConfiguration;
+  readonly EncryptionConfiguration?: EncryptionConfiguration;
+  readonly HealthCheckConfiguration?: HealthCheckConfiguration;
   readonly AutoScalingConfigurationSummary: AutoScalingConfigurationSummary;
 }
 
-interface ServiceQuotaExceededException {
-  readonly Message: string;
+export interface ServiceQuotaExceededException {
+  readonly Message?: string;
 }
 
-interface ServiceSummary {
-  readonly ServiceName: string;
-  readonly ServiceId: string;
-  readonly ServiceArn: string;
-  readonly ServiceUrl: string;
-  readonly CreatedAt: Date;
-  readonly UpdatedAt: Date;
-  readonly Status: string;
+export interface ServiceSummary {
+  readonly ServiceName?: string;
+  readonly ServiceId?: string;
+  readonly ServiceArn?: string;
+  readonly ServiceUrl?: string;
+  readonly CreatedAt?: Date;
+  readonly UpdatedAt?: Date;
+  readonly Status?: string;
 }
 
-interface SourceCodeVersion {
+export interface SourceCodeVersion {
   readonly Type: string;
   readonly Value: string;
 }
 
-interface SourceConfiguration {
-  readonly CodeRepository: CodeRepository;
-  readonly ImageRepository: ImageRepository;
-  readonly AutoDeploymentsEnabled: boolean;
-  readonly AuthenticationConfiguration: AuthenticationConfiguration;
+export interface SourceConfiguration {
+  readonly CodeRepository?: CodeRepository;
+  readonly ImageRepository?: ImageRepository;
+  readonly AutoDeploymentsEnabled?: boolean;
+  readonly AuthenticationConfiguration?: AuthenticationConfiguration;
 }
 
-interface StartDeploymentRequest {
+export interface StartDeploymentRequest {
   readonly ServiceArn: string;
 }
 
-interface StartDeploymentResponse {
+export interface StartDeploymentResponse {
   readonly OperationId: string;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateServiceRequest {
+export interface UpdateServiceRequest {
   readonly ServiceArn: string;
-  readonly SourceConfiguration: SourceConfiguration;
-  readonly InstanceConfiguration: InstanceConfiguration;
-  readonly AutoScalingConfigurationArn: string;
-  readonly HealthCheckConfiguration: HealthCheckConfiguration;
+  readonly SourceConfiguration?: SourceConfiguration;
+  readonly InstanceConfiguration?: InstanceConfiguration;
+  readonly AutoScalingConfigurationArn?: string;
+  readonly HealthCheckConfiguration?: HealthCheckConfiguration;
 }
 
-interface UpdateServiceResponse {
+export interface UpdateServiceResponse {
   readonly Service: Service;
   readonly OperationId: string;
 }
+
 

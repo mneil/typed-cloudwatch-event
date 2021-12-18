@@ -4,35 +4,46 @@
 export interface AssociateAdminAccount {
   readonly AdminAccount: string;
 }
+
 export interface DeleteAppsList {
   readonly ListId: string;
 }
+
 export interface DeleteNotificationChannel {
 }
+
 export interface DeletePolicy {
   readonly PolicyId: string;
   readonly DeleteAllPolicyResources?: boolean;
 }
+
 export interface DeleteProtocolsList {
   readonly ListId: string;
 }
+
 export interface DisassociateAdminAccount {
 }
+
 export interface GetAdminAccount {
 }
+
 export interface GetAppsList {
   readonly ListId: string;
   readonly DefaultList?: boolean;
 }
+
 export interface GetComplianceDetail {
   readonly PolicyId: string;
   readonly MemberAccount: string;
 }
+
 export interface GetNotificationChannel {
 }
+
 export interface GetPolicy {
   readonly PolicyId: string;
 }
+
 export interface GetProtectionStatus {
   readonly PolicyId: string;
   readonly MemberAccountId?: string;
@@ -41,716 +52,729 @@ export interface GetProtectionStatus {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface GetProtocolsList {
   readonly ListId: string;
   readonly DefaultList?: boolean;
 }
+
 export interface GetViolationDetails {
   readonly PolicyId: string;
   readonly MemberAccount: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
+
 export interface ListAppsLists {
   readonly DefaultLists?: boolean;
   readonly NextToken?: string;
   readonly MaxResults: number;
 }
+
 export interface ListComplianceStatus {
   readonly PolicyId: string;
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListMemberAccounts {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListPolicies {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListProtocolsLists {
   readonly DefaultLists?: boolean;
   readonly NextToken?: string;
   readonly MaxResults: number;
 }
+
 export interface ListTagsForResource {
   readonly ResourceArn: string;
 }
+
 export interface PutAppsList {
   readonly AppsList: AppsListData;
   readonly TagList?: [];
 }
+
 export interface PutNotificationChannel {
   readonly SnsTopicArn: string;
   readonly SnsRoleName: string;
 }
+
 export interface PutPolicy {
   readonly Policy: Policy;
   readonly TagList?: [];
 }
+
 export interface PutProtocolsList {
   readonly ProtocolsList: ProtocolsListData;
   readonly TagList?: [];
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly TagList: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-
-
-interface ActionTarget {
-  readonly ResourceId: string;
-  readonly Description: string;
+export interface ActionTarget {
+  readonly ResourceId?: string;
+  readonly Description?: string;
 }
 
-interface App {
+export interface App {
   readonly AppName: string;
   readonly Protocol: string;
   readonly Port: number;
 }
 
-interface AppsListData {
-  readonly ListId: string;
+export interface AppsListData {
+  readonly ListId?: string;
   readonly ListName: string;
-  readonly ListUpdateToken: string;
-  readonly CreateTime: Date;
-  readonly LastUpdateTime: Date;
+  readonly ListUpdateToken?: string;
+  readonly CreateTime?: Date;
+  readonly LastUpdateTime?: Date;
   readonly AppsList: [];
-  readonly PreviousAppsList: {[key: string]: any};
+  readonly PreviousAppsList?: {[key: string]: any};
 }
 
-interface AppsListDataSummary {
-  readonly ListArn: string;
-  readonly ListId: string;
-  readonly ListName: string;
-  readonly AppsList: [];
+export interface AppsListDataSummary {
+  readonly ListArn?: string;
+  readonly ListId?: string;
+  readonly ListName?: string;
+  readonly AppsList?: [];
 }
 
-interface AssociateAdminAccountRequest {
+export interface AssociateAdminAccountRequest {
   readonly AdminAccount: string;
 }
 
-interface AwsEc2InstanceViolation {
-  readonly ViolationTarget: string;
-  readonly AwsEc2NetworkInterfaceViolations: [];
+export interface AwsEc2InstanceViolation {
+  readonly ViolationTarget?: string;
+  readonly AwsEc2NetworkInterfaceViolations?: [];
 }
 
-interface AwsEc2NetworkInterfaceViolation {
-  readonly ViolationTarget: string;
-  readonly ViolatingSecurityGroups: [];
+export interface AwsEc2NetworkInterfaceViolation {
+  readonly ViolationTarget?: string;
+  readonly ViolatingSecurityGroups?: [];
 }
 
-interface AwsVPCSecurityGroupViolation {
-  readonly ViolationTarget: string;
-  readonly ViolationTargetDescription: string;
-  readonly PartialMatches: [];
-  readonly PossibleSecurityGroupRemediationActions: [];
+export interface AwsVPCSecurityGroupViolation {
+  readonly ViolationTarget?: string;
+  readonly ViolationTargetDescription?: string;
+  readonly PartialMatches?: [];
+  readonly PossibleSecurityGroupRemediationActions?: [];
 }
 
-interface ComplianceViolator {
-  readonly ResourceId: string;
-  readonly ViolationReason: string;
-  readonly ResourceType: string;
+export interface ComplianceViolator {
+  readonly ResourceId?: string;
+  readonly ViolationReason?: string;
+  readonly ResourceType?: string;
 }
 
-interface DeleteAppsListRequest {
+export interface DeleteAppsListRequest {
   readonly ListId: string;
 }
 
-interface DeleteNotificationChannelRequest {
+export interface DeleteNotificationChannelRequest {
 }
 
-interface DeletePolicyRequest {
+export interface DeletePolicyRequest {
   readonly PolicyId: string;
-  readonly DeleteAllPolicyResources: boolean;
+  readonly DeleteAllPolicyResources?: boolean;
 }
 
-interface DeleteProtocolsListRequest {
+export interface DeleteProtocolsListRequest {
   readonly ListId: string;
 }
 
-interface DisassociateAdminAccountRequest {
+export interface DisassociateAdminAccountRequest {
 }
 
-interface DnsDuplicateRuleGroupViolation {
-  readonly ViolationTarget: string;
-  readonly ViolationTargetDescription: string;
+export interface DnsDuplicateRuleGroupViolation {
+  readonly ViolationTarget?: string;
+  readonly ViolationTargetDescription?: string;
 }
 
-interface DnsRuleGroupLimitExceededViolation {
-  readonly ViolationTarget: string;
-  readonly ViolationTargetDescription: string;
-  readonly NumberOfRuleGroupsAlreadyAssociated: number;
+export interface DnsRuleGroupLimitExceededViolation {
+  readonly ViolationTarget?: string;
+  readonly ViolationTargetDescription?: string;
+  readonly NumberOfRuleGroupsAlreadyAssociated?: number;
 }
 
-interface DnsRuleGroupPriorityConflictViolation {
-  readonly ViolationTarget: string;
-  readonly ViolationTargetDescription: string;
-  readonly ConflictingPriority: number;
-  readonly ConflictingPolicyId: string;
-  readonly UnavailablePriorities: [];
+export interface DnsRuleGroupPriorityConflictViolation {
+  readonly ViolationTarget?: string;
+  readonly ViolationTargetDescription?: string;
+  readonly ConflictingPriority?: number;
+  readonly ConflictingPolicyId?: string;
+  readonly UnavailablePriorities?: [];
 }
 
-interface EC2AssociateRouteTableAction {
-  readonly Description: string;
+export interface EC2AssociateRouteTableAction {
+  readonly Description?: string;
   readonly RouteTableId: ActionTarget;
-  readonly SubnetId: ActionTarget;
-  readonly GatewayId: ActionTarget;
+  readonly SubnetId?: ActionTarget;
+  readonly GatewayId?: ActionTarget;
 }
 
-interface EC2CopyRouteTableAction {
-  readonly Description: string;
+export interface EC2CopyRouteTableAction {
+  readonly Description?: string;
   readonly VpcId: ActionTarget;
   readonly RouteTableId: ActionTarget;
 }
 
-interface EC2CreateRouteAction {
-  readonly Description: string;
-  readonly DestinationCidrBlock: string;
-  readonly DestinationPrefixListId: string;
-  readonly DestinationIpv6CidrBlock: string;
-  readonly VpcEndpointId: ActionTarget;
-  readonly GatewayId: ActionTarget;
+export interface EC2CreateRouteAction {
+  readonly Description?: string;
+  readonly DestinationCidrBlock?: string;
+  readonly DestinationPrefixListId?: string;
+  readonly DestinationIpv6CidrBlock?: string;
+  readonly VpcEndpointId?: ActionTarget;
+  readonly GatewayId?: ActionTarget;
   readonly RouteTableId: ActionTarget;
 }
 
-interface EC2CreateRouteTableAction {
-  readonly Description: string;
+export interface EC2CreateRouteTableAction {
+  readonly Description?: string;
   readonly VpcId: ActionTarget;
 }
 
-interface EC2DeleteRouteAction {
-  readonly Description: string;
-  readonly DestinationCidrBlock: string;
-  readonly DestinationPrefixListId: string;
-  readonly DestinationIpv6CidrBlock: string;
+export interface EC2DeleteRouteAction {
+  readonly Description?: string;
+  readonly DestinationCidrBlock?: string;
+  readonly DestinationPrefixListId?: string;
+  readonly DestinationIpv6CidrBlock?: string;
   readonly RouteTableId: ActionTarget;
 }
 
-interface EC2ReplaceRouteAction {
-  readonly Description: string;
-  readonly DestinationCidrBlock: string;
-  readonly DestinationPrefixListId: string;
-  readonly DestinationIpv6CidrBlock: string;
-  readonly GatewayId: ActionTarget;
+export interface EC2ReplaceRouteAction {
+  readonly Description?: string;
+  readonly DestinationCidrBlock?: string;
+  readonly DestinationPrefixListId?: string;
+  readonly DestinationIpv6CidrBlock?: string;
+  readonly GatewayId?: ActionTarget;
   readonly RouteTableId: ActionTarget;
 }
 
-interface EC2ReplaceRouteTableAssociationAction {
-  readonly Description: string;
+export interface EC2ReplaceRouteTableAssociationAction {
+  readonly Description?: string;
   readonly AssociationId: ActionTarget;
   readonly RouteTableId: ActionTarget;
 }
 
-interface EvaluationResult {
-  readonly ComplianceStatus: string;
-  readonly ViolatorCount: number;
-  readonly EvaluationLimitExceeded: boolean;
+export interface EvaluationResult {
+  readonly ComplianceStatus?: string;
+  readonly ViolatorCount?: number;
+  readonly EvaluationLimitExceeded?: boolean;
 }
 
-interface ExpectedRoute {
-  readonly IpV4Cidr: string;
-  readonly PrefixListId: string;
-  readonly IpV6Cidr: string;
-  readonly ContributingSubnets: [];
-  readonly AllowedTargets: [];
-  readonly RouteTableId: string;
+export interface ExpectedRoute {
+  readonly IpV4Cidr?: string;
+  readonly PrefixListId?: string;
+  readonly IpV6Cidr?: string;
+  readonly ContributingSubnets?: [];
+  readonly AllowedTargets?: [];
+  readonly RouteTableId?: string;
 }
 
-interface GetAdminAccountRequest {
+export interface GetAdminAccountRequest {
 }
 
-interface GetAdminAccountResponse {
-  readonly AdminAccount: string;
-  readonly RoleStatus: string;
+export interface GetAdminAccountResponse {
+  readonly AdminAccount?: string;
+  readonly RoleStatus?: string;
 }
 
-interface GetAppsListRequest {
+export interface GetAppsListRequest {
   readonly ListId: string;
-  readonly DefaultList: boolean;
+  readonly DefaultList?: boolean;
 }
 
-interface GetAppsListResponse {
-  readonly AppsList: AppsListData;
-  readonly AppsListArn: string;
+export interface GetAppsListResponse {
+  readonly AppsList?: AppsListData;
+  readonly AppsListArn?: string;
 }
 
-interface GetComplianceDetailRequest {
+export interface GetComplianceDetailRequest {
   readonly PolicyId: string;
   readonly MemberAccount: string;
 }
 
-interface GetComplianceDetailResponse {
-  readonly PolicyComplianceDetail: PolicyComplianceDetail;
+export interface GetComplianceDetailResponse {
+  readonly PolicyComplianceDetail?: PolicyComplianceDetail;
 }
 
-interface GetNotificationChannelRequest {
+export interface GetNotificationChannelRequest {
 }
 
-interface GetNotificationChannelResponse {
-  readonly SnsTopicArn: string;
-  readonly SnsRoleName: string;
+export interface GetNotificationChannelResponse {
+  readonly SnsTopicArn?: string;
+  readonly SnsRoleName?: string;
 }
 
-interface GetPolicyRequest {
+export interface GetPolicyRequest {
   readonly PolicyId: string;
 }
 
-interface GetPolicyResponse {
-  readonly Policy: Policy;
-  readonly PolicyArn: string;
+export interface GetPolicyResponse {
+  readonly Policy?: Policy;
+  readonly PolicyArn?: string;
 }
 
-interface GetProtectionStatusRequest {
+export interface GetProtectionStatusRequest {
   readonly PolicyId: string;
-  readonly MemberAccountId: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly NextToken: string;
-  readonly MaxResults: number;
+  readonly MemberAccountId?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface GetProtectionStatusResponse {
-  readonly AdminAccountId: string;
-  readonly ServiceType: string;
-  readonly Data: string;
-  readonly NextToken: string;
+export interface GetProtectionStatusResponse {
+  readonly AdminAccountId?: string;
+  readonly ServiceType?: string;
+  readonly Data?: string;
+  readonly NextToken?: string;
 }
 
-interface GetProtocolsListRequest {
+export interface GetProtocolsListRequest {
   readonly ListId: string;
-  readonly DefaultList: boolean;
+  readonly DefaultList?: boolean;
 }
 
-interface GetProtocolsListResponse {
-  readonly ProtocolsList: ProtocolsListData;
-  readonly ProtocolsListArn: string;
+export interface GetProtocolsListResponse {
+  readonly ProtocolsList?: ProtocolsListData;
+  readonly ProtocolsListArn?: string;
 }
 
-interface GetViolationDetailsRequest {
+export interface GetViolationDetailsRequest {
   readonly PolicyId: string;
   readonly MemberAccount: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
 }
 
-interface GetViolationDetailsResponse {
-  readonly ViolationDetail: ViolationDetail;
+export interface GetViolationDetailsResponse {
+  readonly ViolationDetail?: ViolationDetail;
 }
 
-interface InternalErrorException {
-  readonly Message: string;
+export interface InternalErrorException {
+  readonly Message?: string;
 }
 
-interface InvalidInputException {
-  readonly Message: string;
+export interface InvalidInputException {
+  readonly Message?: string;
 }
 
-interface InvalidOperationException {
-  readonly Message: string;
+export interface InvalidOperationException {
+  readonly Message?: string;
 }
 
-interface InvalidTypeException {
-  readonly Message: string;
+export interface InvalidTypeException {
+  readonly Message?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface ListAppsListsRequest {
-  readonly DefaultLists: boolean;
-  readonly NextToken: string;
+export interface ListAppsListsRequest {
+  readonly DefaultLists?: boolean;
+  readonly NextToken?: string;
   readonly MaxResults: number;
 }
 
-interface ListAppsListsResponse {
-  readonly AppsLists: [];
-  readonly NextToken: string;
+export interface ListAppsListsResponse {
+  readonly AppsLists?: [];
+  readonly NextToken?: string;
 }
 
-interface ListComplianceStatusRequest {
+export interface ListComplianceStatusRequest {
   readonly PolicyId: string;
-  readonly NextToken: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface ListComplianceStatusResponse {
+  readonly PolicyComplianceStatusList?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListMemberAccountsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface ListMemberAccountsResponse {
+  readonly MemberAccounts?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListPoliciesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+}
+
+export interface ListPoliciesResponse {
+  readonly PolicyList?: [];
+  readonly NextToken?: string;
+}
+
+export interface ListProtocolsListsRequest {
+  readonly DefaultLists?: boolean;
+  readonly NextToken?: string;
   readonly MaxResults: number;
 }
 
-interface ListComplianceStatusResponse {
-  readonly PolicyComplianceStatusList: [];
-  readonly NextToken: string;
+export interface ListProtocolsListsResponse {
+  readonly ProtocolsLists?: [];
+  readonly NextToken?: string;
 }
 
-interface ListMemberAccountsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface ListMemberAccountsResponse {
-  readonly MemberAccounts: [];
-  readonly NextToken: string;
-}
-
-interface ListPoliciesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface ListPoliciesResponse {
-  readonly PolicyList: [];
-  readonly NextToken: string;
-}
-
-interface ListProtocolsListsRequest {
-  readonly DefaultLists: boolean;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-}
-
-interface ListProtocolsListsResponse {
-  readonly ProtocolsLists: [];
-  readonly NextToken: string;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly TagList: [];
+export interface ListTagsForResourceResponse {
+  readonly TagList?: [];
 }
 
-interface NetworkFirewallBlackHoleRouteDetectedViolation {
-  readonly ViolationTarget: string;
-  readonly RouteTableId: string;
-  readonly VpcId: string;
-  readonly ViolatingRoutes: [];
+export interface NetworkFirewallBlackHoleRouteDetectedViolation {
+  readonly ViolationTarget?: string;
+  readonly RouteTableId?: string;
+  readonly VpcId?: string;
+  readonly ViolatingRoutes?: [];
 }
 
-interface NetworkFirewallInternetTrafficNotInspectedViolation {
-  readonly SubnetId: string;
-  readonly SubnetAvailabilityZone: string;
-  readonly RouteTableId: string;
-  readonly ViolatingRoutes: [];
-  readonly IsRouteTableUsedInDifferentAZ: boolean;
-  readonly CurrentFirewallSubnetRouteTable: string;
-  readonly ExpectedFirewallEndpoint: string;
-  readonly FirewallSubnetId: string;
-  readonly ExpectedFirewallSubnetRoutes: [];
-  readonly ActualFirewallSubnetRoutes: [];
-  readonly InternetGatewayId: string;
-  readonly CurrentInternetGatewayRouteTable: string;
-  readonly ExpectedInternetGatewayRoutes: [];
-  readonly ActualInternetGatewayRoutes: [];
-  readonly VpcId: string;
+export interface NetworkFirewallInternetTrafficNotInspectedViolation {
+  readonly SubnetId?: string;
+  readonly SubnetAvailabilityZone?: string;
+  readonly RouteTableId?: string;
+  readonly ViolatingRoutes?: [];
+  readonly IsRouteTableUsedInDifferentAZ?: boolean;
+  readonly CurrentFirewallSubnetRouteTable?: string;
+  readonly ExpectedFirewallEndpoint?: string;
+  readonly FirewallSubnetId?: string;
+  readonly ExpectedFirewallSubnetRoutes?: [];
+  readonly ActualFirewallSubnetRoutes?: [];
+  readonly InternetGatewayId?: string;
+  readonly CurrentInternetGatewayRouteTable?: string;
+  readonly ExpectedInternetGatewayRoutes?: [];
+  readonly ActualInternetGatewayRoutes?: [];
+  readonly VpcId?: string;
 }
 
-interface NetworkFirewallInvalidRouteConfigurationViolation {
-  readonly AffectedSubnets: [];
-  readonly RouteTableId: string;
-  readonly IsRouteTableUsedInDifferentAZ: boolean;
-  readonly ViolatingRoute: Route;
-  readonly CurrentFirewallSubnetRouteTable: string;
-  readonly ExpectedFirewallEndpoint: string;
-  readonly ActualFirewallEndpoint: string;
-  readonly ExpectedFirewallSubnetId: string;
-  readonly ActualFirewallSubnetId: string;
-  readonly ExpectedFirewallSubnetRoutes: [];
-  readonly ActualFirewallSubnetRoutes: [];
-  readonly InternetGatewayId: string;
-  readonly CurrentInternetGatewayRouteTable: string;
-  readonly ExpectedInternetGatewayRoutes: [];
-  readonly ActualInternetGatewayRoutes: [];
-  readonly VpcId: string;
+export interface NetworkFirewallInvalidRouteConfigurationViolation {
+  readonly AffectedSubnets?: [];
+  readonly RouteTableId?: string;
+  readonly IsRouteTableUsedInDifferentAZ?: boolean;
+  readonly ViolatingRoute?: Route;
+  readonly CurrentFirewallSubnetRouteTable?: string;
+  readonly ExpectedFirewallEndpoint?: string;
+  readonly ActualFirewallEndpoint?: string;
+  readonly ExpectedFirewallSubnetId?: string;
+  readonly ActualFirewallSubnetId?: string;
+  readonly ExpectedFirewallSubnetRoutes?: [];
+  readonly ActualFirewallSubnetRoutes?: [];
+  readonly InternetGatewayId?: string;
+  readonly CurrentInternetGatewayRouteTable?: string;
+  readonly ExpectedInternetGatewayRoutes?: [];
+  readonly ActualInternetGatewayRoutes?: [];
+  readonly VpcId?: string;
 }
 
-interface NetworkFirewallMissingExpectedRTViolation {
-  readonly ViolationTarget: string;
-  readonly VPC: string;
-  readonly AvailabilityZone: string;
-  readonly CurrentRouteTable: string;
-  readonly ExpectedRouteTable: string;
+export interface NetworkFirewallMissingExpectedRTViolation {
+  readonly ViolationTarget?: string;
+  readonly VPC?: string;
+  readonly AvailabilityZone?: string;
+  readonly CurrentRouteTable?: string;
+  readonly ExpectedRouteTable?: string;
 }
 
-interface NetworkFirewallMissingExpectedRoutesViolation {
-  readonly ViolationTarget: string;
-  readonly ExpectedRoutes: [];
-  readonly VpcId: string;
+export interface NetworkFirewallMissingExpectedRoutesViolation {
+  readonly ViolationTarget?: string;
+  readonly ExpectedRoutes?: [];
+  readonly VpcId?: string;
 }
 
-interface NetworkFirewallMissingFirewallViolation {
-  readonly ViolationTarget: string;
-  readonly VPC: string;
-  readonly AvailabilityZone: string;
-  readonly TargetViolationReason: string;
+export interface NetworkFirewallMissingFirewallViolation {
+  readonly ViolationTarget?: string;
+  readonly VPC?: string;
+  readonly AvailabilityZone?: string;
+  readonly TargetViolationReason?: string;
 }
 
-interface NetworkFirewallMissingSubnetViolation {
-  readonly ViolationTarget: string;
-  readonly VPC: string;
-  readonly AvailabilityZone: string;
-  readonly TargetViolationReason: string;
+export interface NetworkFirewallMissingSubnetViolation {
+  readonly ViolationTarget?: string;
+  readonly VPC?: string;
+  readonly AvailabilityZone?: string;
+  readonly TargetViolationReason?: string;
 }
 
-interface NetworkFirewallPolicyDescription {
-  readonly StatelessRuleGroups: [];
-  readonly StatelessDefaultActions: [];
-  readonly StatelessFragmentDefaultActions: [];
-  readonly StatelessCustomActions: [];
-  readonly StatefulRuleGroups: [];
+export interface NetworkFirewallPolicyDescription {
+  readonly StatelessRuleGroups?: [];
+  readonly StatelessDefaultActions?: [];
+  readonly StatelessFragmentDefaultActions?: [];
+  readonly StatelessCustomActions?: [];
+  readonly StatefulRuleGroups?: [];
 }
 
-interface NetworkFirewallPolicyModifiedViolation {
-  readonly ViolationTarget: string;
-  readonly CurrentPolicyDescription: NetworkFirewallPolicyDescription;
-  readonly ExpectedPolicyDescription: NetworkFirewallPolicyDescription;
+export interface NetworkFirewallPolicyModifiedViolation {
+  readonly ViolationTarget?: string;
+  readonly CurrentPolicyDescription?: NetworkFirewallPolicyDescription;
+  readonly ExpectedPolicyDescription?: NetworkFirewallPolicyDescription;
 }
 
-interface NetworkFirewallUnexpectedFirewallRoutesViolation {
-  readonly FirewallSubnetId: string;
-  readonly ViolatingRoutes: [];
-  readonly RouteTableId: string;
-  readonly FirewallEndpoint: string;
-  readonly VpcId: string;
+export interface NetworkFirewallUnexpectedFirewallRoutesViolation {
+  readonly FirewallSubnetId?: string;
+  readonly ViolatingRoutes?: [];
+  readonly RouteTableId?: string;
+  readonly FirewallEndpoint?: string;
+  readonly VpcId?: string;
 }
 
-interface NetworkFirewallUnexpectedGatewayRoutesViolation {
-  readonly GatewayId: string;
-  readonly ViolatingRoutes: [];
-  readonly RouteTableId: string;
-  readonly VpcId: string;
+export interface NetworkFirewallUnexpectedGatewayRoutesViolation {
+  readonly GatewayId?: string;
+  readonly ViolatingRoutes?: [];
+  readonly RouteTableId?: string;
+  readonly VpcId?: string;
 }
 
-interface PartialMatch {
-  readonly Reference: string;
-  readonly TargetViolationReasons: [];
+export interface PartialMatch {
+  readonly Reference?: string;
+  readonly TargetViolationReasons?: [];
 }
 
-interface Policy {
-  readonly PolicyId: string;
+export interface Policy {
+  readonly PolicyId?: string;
   readonly PolicyName: string;
-  readonly PolicyUpdateToken: string;
+  readonly PolicyUpdateToken?: string;
   readonly SecurityServicePolicyData: SecurityServicePolicyData;
   readonly ResourceType: string;
-  readonly ResourceTypeList: [];
-  readonly ResourceTags: [];
+  readonly ResourceTypeList?: [];
+  readonly ResourceTags?: [];
   readonly ExcludeResourceTags: boolean;
   readonly RemediationEnabled: boolean;
-  readonly DeleteUnusedFMManagedResources: boolean;
-  readonly IncludeMap: {[key: string]: any};
-  readonly ExcludeMap: {[key: string]: any};
+  readonly DeleteUnusedFMManagedResources?: boolean;
+  readonly IncludeMap?: {[key: string]: any};
+  readonly ExcludeMap?: {[key: string]: any};
 }
 
-interface PolicyComplianceDetail {
-  readonly PolicyOwner: string;
-  readonly PolicyId: string;
-  readonly MemberAccount: string;
-  readonly Violators: [];
-  readonly EvaluationLimitExceeded: boolean;
-  readonly ExpiredAt: Date;
-  readonly IssueInfoMap: {[key: string]: any};
+export interface PolicyComplianceDetail {
+  readonly PolicyOwner?: string;
+  readonly PolicyId?: string;
+  readonly MemberAccount?: string;
+  readonly Violators?: [];
+  readonly EvaluationLimitExceeded?: boolean;
+  readonly ExpiredAt?: Date;
+  readonly IssueInfoMap?: {[key: string]: any};
 }
 
-interface PolicyComplianceStatus {
-  readonly PolicyOwner: string;
-  readonly PolicyId: string;
-  readonly PolicyName: string;
-  readonly MemberAccount: string;
-  readonly EvaluationResults: [];
-  readonly LastUpdated: Date;
-  readonly IssueInfoMap: {[key: string]: any};
+export interface PolicyComplianceStatus {
+  readonly PolicyOwner?: string;
+  readonly PolicyId?: string;
+  readonly PolicyName?: string;
+  readonly MemberAccount?: string;
+  readonly EvaluationResults?: [];
+  readonly LastUpdated?: Date;
+  readonly IssueInfoMap?: {[key: string]: any};
 }
 
-interface PolicySummary {
-  readonly PolicyArn: string;
-  readonly PolicyId: string;
-  readonly PolicyName: string;
-  readonly ResourceType: string;
-  readonly SecurityServiceType: string;
-  readonly RemediationEnabled: boolean;
-  readonly DeleteUnusedFMManagedResources: boolean;
+export interface PolicySummary {
+  readonly PolicyArn?: string;
+  readonly PolicyId?: string;
+  readonly PolicyName?: string;
+  readonly ResourceType?: string;
+  readonly SecurityServiceType?: string;
+  readonly RemediationEnabled?: boolean;
+  readonly DeleteUnusedFMManagedResources?: boolean;
 }
 
-interface PossibleRemediationAction {
-  readonly Description: string;
+export interface PossibleRemediationAction {
+  readonly Description?: string;
   readonly OrderedRemediationActions: [];
-  readonly IsDefaultAction: boolean;
+  readonly IsDefaultAction?: boolean;
 }
 
-interface PossibleRemediationActions {
-  readonly Description: string;
-  readonly Actions: [];
+export interface PossibleRemediationActions {
+  readonly Description?: string;
+  readonly Actions?: [];
 }
 
-interface ProtocolsListData {
-  readonly ListId: string;
+export interface ProtocolsListData {
+  readonly ListId?: string;
   readonly ListName: string;
-  readonly ListUpdateToken: string;
-  readonly CreateTime: Date;
-  readonly LastUpdateTime: Date;
+  readonly ListUpdateToken?: string;
+  readonly CreateTime?: Date;
+  readonly LastUpdateTime?: Date;
   readonly ProtocolsList: [];
-  readonly PreviousProtocolsList: {[key: string]: any};
+  readonly PreviousProtocolsList?: {[key: string]: any};
 }
 
-interface ProtocolsListDataSummary {
-  readonly ListArn: string;
-  readonly ListId: string;
-  readonly ListName: string;
-  readonly ProtocolsList: [];
+export interface ProtocolsListDataSummary {
+  readonly ListArn?: string;
+  readonly ListId?: string;
+  readonly ListName?: string;
+  readonly ProtocolsList?: [];
 }
 
-interface PutAppsListRequest {
+export interface PutAppsListRequest {
   readonly AppsList: AppsListData;
-  readonly TagList: [];
+  readonly TagList?: [];
 }
 
-interface PutAppsListResponse {
-  readonly AppsList: AppsListData;
-  readonly AppsListArn: string;
+export interface PutAppsListResponse {
+  readonly AppsList?: AppsListData;
+  readonly AppsListArn?: string;
 }
 
-interface PutNotificationChannelRequest {
+export interface PutNotificationChannelRequest {
   readonly SnsTopicArn: string;
   readonly SnsRoleName: string;
 }
 
-interface PutPolicyRequest {
+export interface PutPolicyRequest {
   readonly Policy: Policy;
-  readonly TagList: [];
+  readonly TagList?: [];
 }
 
-interface PutPolicyResponse {
-  readonly Policy: Policy;
-  readonly PolicyArn: string;
+export interface PutPolicyResponse {
+  readonly Policy?: Policy;
+  readonly PolicyArn?: string;
 }
 
-interface PutProtocolsListRequest {
+export interface PutProtocolsListRequest {
   readonly ProtocolsList: ProtocolsListData;
-  readonly TagList: [];
+  readonly TagList?: [];
 }
 
-interface PutProtocolsListResponse {
-  readonly ProtocolsList: ProtocolsListData;
-  readonly ProtocolsListArn: string;
+export interface PutProtocolsListResponse {
+  readonly ProtocolsList?: ProtocolsListData;
+  readonly ProtocolsListArn?: string;
 }
 
-interface RemediationAction {
-  readonly Description: string;
-  readonly EC2CreateRouteAction: EC2CreateRouteAction;
-  readonly EC2ReplaceRouteAction: EC2ReplaceRouteAction;
-  readonly EC2DeleteRouteAction: EC2DeleteRouteAction;
-  readonly EC2CopyRouteTableAction: EC2CopyRouteTableAction;
-  readonly EC2ReplaceRouteTableAssociationAction: EC2ReplaceRouteTableAssociationAction;
-  readonly EC2AssociateRouteTableAction: EC2AssociateRouteTableAction;
-  readonly EC2CreateRouteTableAction: EC2CreateRouteTableAction;
+export interface RemediationAction {
+  readonly Description?: string;
+  readonly EC2CreateRouteAction?: EC2CreateRouteAction;
+  readonly EC2ReplaceRouteAction?: EC2ReplaceRouteAction;
+  readonly EC2DeleteRouteAction?: EC2DeleteRouteAction;
+  readonly EC2CopyRouteTableAction?: EC2CopyRouteTableAction;
+  readonly EC2ReplaceRouteTableAssociationAction?: EC2ReplaceRouteTableAssociationAction;
+  readonly EC2AssociateRouteTableAction?: EC2AssociateRouteTableAction;
+  readonly EC2CreateRouteTableAction?: EC2CreateRouteTableAction;
 }
 
-interface RemediationActionWithOrder {
-  readonly RemediationAction: RemediationAction;
-  readonly Order: number;
+export interface RemediationActionWithOrder {
+  readonly RemediationAction?: RemediationAction;
+  readonly Order?: number;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface ResourceTag {
+export interface ResourceTag {
   readonly Key: string;
-  readonly Value: string;
+  readonly Value?: string;
 }
 
-interface ResourceViolation {
-  readonly AwsVPCSecurityGroupViolation: AwsVPCSecurityGroupViolation;
-  readonly AwsEc2NetworkInterfaceViolation: AwsEc2NetworkInterfaceViolation;
-  readonly AwsEc2InstanceViolation: AwsEc2InstanceViolation;
-  readonly NetworkFirewallMissingFirewallViolation: NetworkFirewallMissingFirewallViolation;
-  readonly NetworkFirewallMissingSubnetViolation: NetworkFirewallMissingSubnetViolation;
-  readonly NetworkFirewallMissingExpectedRTViolation: NetworkFirewallMissingExpectedRTViolation;
-  readonly NetworkFirewallPolicyModifiedViolation: NetworkFirewallPolicyModifiedViolation;
-  readonly NetworkFirewallInternetTrafficNotInspectedViolation: NetworkFirewallInternetTrafficNotInspectedViolation;
-  readonly NetworkFirewallInvalidRouteConfigurationViolation: NetworkFirewallInvalidRouteConfigurationViolation;
-  readonly NetworkFirewallBlackHoleRouteDetectedViolation: NetworkFirewallBlackHoleRouteDetectedViolation;
-  readonly NetworkFirewallUnexpectedFirewallRoutesViolation: NetworkFirewallUnexpectedFirewallRoutesViolation;
-  readonly NetworkFirewallUnexpectedGatewayRoutesViolation: NetworkFirewallUnexpectedGatewayRoutesViolation;
-  readonly NetworkFirewallMissingExpectedRoutesViolation: NetworkFirewallMissingExpectedRoutesViolation;
-  readonly DnsRuleGroupPriorityConflictViolation: DnsRuleGroupPriorityConflictViolation;
-  readonly DnsDuplicateRuleGroupViolation: DnsDuplicateRuleGroupViolation;
-  readonly DnsRuleGroupLimitExceededViolation: DnsRuleGroupLimitExceededViolation;
-  readonly PossibleRemediationActions: PossibleRemediationActions;
+export interface ResourceViolation {
+  readonly AwsVPCSecurityGroupViolation?: AwsVPCSecurityGroupViolation;
+  readonly AwsEc2NetworkInterfaceViolation?: AwsEc2NetworkInterfaceViolation;
+  readonly AwsEc2InstanceViolation?: AwsEc2InstanceViolation;
+  readonly NetworkFirewallMissingFirewallViolation?: NetworkFirewallMissingFirewallViolation;
+  readonly NetworkFirewallMissingSubnetViolation?: NetworkFirewallMissingSubnetViolation;
+  readonly NetworkFirewallMissingExpectedRTViolation?: NetworkFirewallMissingExpectedRTViolation;
+  readonly NetworkFirewallPolicyModifiedViolation?: NetworkFirewallPolicyModifiedViolation;
+  readonly NetworkFirewallInternetTrafficNotInspectedViolation?: NetworkFirewallInternetTrafficNotInspectedViolation;
+  readonly NetworkFirewallInvalidRouteConfigurationViolation?: NetworkFirewallInvalidRouteConfigurationViolation;
+  readonly NetworkFirewallBlackHoleRouteDetectedViolation?: NetworkFirewallBlackHoleRouteDetectedViolation;
+  readonly NetworkFirewallUnexpectedFirewallRoutesViolation?: NetworkFirewallUnexpectedFirewallRoutesViolation;
+  readonly NetworkFirewallUnexpectedGatewayRoutesViolation?: NetworkFirewallUnexpectedGatewayRoutesViolation;
+  readonly NetworkFirewallMissingExpectedRoutesViolation?: NetworkFirewallMissingExpectedRoutesViolation;
+  readonly DnsRuleGroupPriorityConflictViolation?: DnsRuleGroupPriorityConflictViolation;
+  readonly DnsDuplicateRuleGroupViolation?: DnsDuplicateRuleGroupViolation;
+  readonly DnsRuleGroupLimitExceededViolation?: DnsRuleGroupLimitExceededViolation;
+  readonly PossibleRemediationActions?: PossibleRemediationActions;
 }
 
-interface Route {
-  readonly DestinationType: string;
-  readonly TargetType: string;
-  readonly Destination: string;
-  readonly Target: string;
+export interface Route {
+  readonly DestinationType?: string;
+  readonly TargetType?: string;
+  readonly Destination?: string;
+  readonly Target?: string;
 }
 
-interface SecurityGroupRemediationAction {
-  readonly RemediationActionType: string;
-  readonly Description: string;
-  readonly RemediationResult: SecurityGroupRuleDescription;
-  readonly IsDefaultAction: boolean;
+export interface SecurityGroupRemediationAction {
+  readonly RemediationActionType?: string;
+  readonly Description?: string;
+  readonly RemediationResult?: SecurityGroupRuleDescription;
+  readonly IsDefaultAction?: boolean;
 }
 
-interface SecurityGroupRuleDescription {
-  readonly IPV4Range: string;
-  readonly IPV6Range: string;
-  readonly PrefixListId: string;
-  readonly Protocol: string;
-  readonly FromPort: number;
-  readonly ToPort: number;
+export interface SecurityGroupRuleDescription {
+  readonly IPV4Range?: string;
+  readonly IPV6Range?: string;
+  readonly PrefixListId?: string;
+  readonly Protocol?: string;
+  readonly FromPort?: number;
+  readonly ToPort?: number;
 }
 
-interface SecurityServicePolicyData {
+export interface SecurityServicePolicyData {
   readonly Type: string;
-  readonly ManagedServiceData: string;
+  readonly ManagedServiceData?: string;
 }
 
-interface StatefulRuleGroup {
-  readonly RuleGroupName: string;
-  readonly ResourceId: string;
+export interface StatefulRuleGroup {
+  readonly RuleGroupName?: string;
+  readonly ResourceId?: string;
 }
 
-interface StatelessRuleGroup {
-  readonly RuleGroupName: string;
-  readonly ResourceId: string;
-  readonly Priority: number;
+export interface StatelessRuleGroup {
+  readonly RuleGroupName?: string;
+  readonly ResourceId?: string;
+  readonly Priority?: number;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly TagList: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface ViolationDetail {
+export interface ViolationDetail {
   readonly PolicyId: string;
   readonly MemberAccount: string;
   readonly ResourceId: string;
   readonly ResourceType: string;
   readonly ResourceViolations: [];
-  readonly ResourceTags: [];
-  readonly ResourceDescription: string;
+  readonly ResourceTags?: [];
+  readonly ResourceDescription?: string;
 }
+
 

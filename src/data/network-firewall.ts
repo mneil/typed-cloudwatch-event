@@ -7,12 +7,14 @@ export interface AssociateFirewallPolicy {
   readonly FirewallName?: string;
   readonly FirewallPolicyArn: string;
 }
+
 export interface AssociateSubnets {
   readonly UpdateToken?: string;
   readonly FirewallArn?: string;
   readonly FirewallName?: string;
   readonly SubnetMappings: [];
 }
+
 export interface CreateFirewall {
   readonly FirewallName: string;
   readonly FirewallPolicyArn: string;
@@ -24,6 +26,7 @@ export interface CreateFirewall {
   readonly Description?: string;
   readonly Tags?: [];
 }
+
 export interface CreateFirewallPolicy {
   readonly FirewallPolicyName: string;
   readonly FirewallPolicy: FirewallPolicy;
@@ -31,6 +34,7 @@ export interface CreateFirewallPolicy {
   readonly Tags?: [];
   readonly DryRun?: boolean;
 }
+
 export interface CreateRuleGroup {
   readonly RuleGroupName: string;
   readonly RuleGroup?: RuleGroup;
@@ -41,96 +45,117 @@ export interface CreateRuleGroup {
   readonly Tags?: [];
   readonly DryRun?: boolean;
 }
+
 export interface DeleteFirewall {
   readonly FirewallName?: string;
   readonly FirewallArn?: string;
 }
+
 export interface DeleteFirewallPolicy {
   readonly FirewallPolicyName?: string;
   readonly FirewallPolicyArn?: string;
 }
+
 export interface DeleteResourcePolicy {
   readonly ResourceArn: string;
 }
+
 export interface DeleteRuleGroup {
   readonly RuleGroupName?: string;
   readonly RuleGroupArn?: string;
   readonly Type?: string;
 }
+
 export interface DescribeFirewall {
   readonly FirewallName?: string;
   readonly FirewallArn?: string;
 }
+
 export interface DescribeFirewallPolicy {
   readonly FirewallPolicyName?: string;
   readonly FirewallPolicyArn?: string;
 }
+
 export interface DescribeLoggingConfiguration {
   readonly FirewallArn?: string;
   readonly FirewallName?: string;
 }
+
 export interface DescribeResourcePolicy {
   readonly ResourceArn: string;
 }
+
 export interface DescribeRuleGroup {
   readonly RuleGroupName?: string;
   readonly RuleGroupArn?: string;
   readonly Type?: string;
 }
+
 export interface DescribeRuleGroupMetadata {
   readonly RuleGroupName?: string;
   readonly RuleGroupArn?: string;
   readonly Type?: string;
 }
+
 export interface DisassociateSubnets {
   readonly UpdateToken?: string;
   readonly FirewallArn?: string;
   readonly FirewallName?: string;
   readonly SubnetIds: [];
 }
+
 export interface ListFirewallPolicies {
   readonly NextToken?: string;
   readonly MaxResults?: number;
 }
+
 export interface ListFirewalls {
   readonly NextToken?: string;
   readonly VpcIds?: [];
   readonly MaxResults?: number;
 }
+
 export interface ListRuleGroups {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly Scope?: string;
 }
+
 export interface ListTagsForResource {
   readonly NextToken?: string;
   readonly MaxResults?: number;
   readonly ResourceArn: string;
 }
+
 export interface PutResourcePolicy {
   readonly ResourceArn: string;
   readonly Policy: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateFirewallDeleteProtection {
   readonly UpdateToken?: string;
   readonly FirewallArn?: string;
   readonly FirewallName?: string;
   readonly DeleteProtection: boolean;
 }
+
 export interface UpdateFirewallDescription {
   readonly UpdateToken?: string;
   readonly FirewallArn?: string;
   readonly FirewallName?: string;
   readonly Description?: string;
 }
+
 export interface UpdateFirewallPolicy {
   readonly UpdateToken: string;
   readonly FirewallPolicyArn?: string;
@@ -139,17 +164,20 @@ export interface UpdateFirewallPolicy {
   readonly Description?: string;
   readonly DryRun?: boolean;
 }
+
 export interface UpdateFirewallPolicyChangeProtection {
   readonly UpdateToken?: string;
   readonly FirewallArn?: string;
   readonly FirewallName?: string;
   readonly FirewallPolicyChangeProtection: boolean;
 }
+
 export interface UpdateLoggingConfiguration {
   readonly FirewallArn?: string;
   readonly FirewallName?: string;
   readonly LoggingConfiguration?: LoggingConfiguration;
 }
+
 export interface UpdateRuleGroup {
   readonly UpdateToken: string;
   readonly RuleGroupArn?: string;
@@ -160,6 +188,7 @@ export interface UpdateRuleGroup {
   readonly Description?: string;
   readonly DryRun?: boolean;
 }
+
 export interface UpdateSubnetChangeProtection {
   readonly UpdateToken?: string;
   readonly FirewallArn?: string;
@@ -167,275 +196,273 @@ export interface UpdateSubnetChangeProtection {
   readonly SubnetChangeProtection: boolean;
 }
 
-
-
-interface ActionDefinition {
-  readonly PublishMetricAction: PublishMetricAction;
+export interface ActionDefinition {
+  readonly PublishMetricAction?: PublishMetricAction;
 }
 
-interface Address {
+export interface Address {
   readonly AddressDefinition: string;
 }
 
-interface AssociateFirewallPolicyRequest {
-  readonly UpdateToken: string;
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
+export interface AssociateFirewallPolicyRequest {
+  readonly UpdateToken?: string;
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
   readonly FirewallPolicyArn: string;
 }
 
-interface AssociateFirewallPolicyResponse {
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
-  readonly FirewallPolicyArn: string;
-  readonly UpdateToken: string;
+export interface AssociateFirewallPolicyResponse {
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
+  readonly FirewallPolicyArn?: string;
+  readonly UpdateToken?: string;
 }
 
-interface AssociateSubnetsRequest {
-  readonly UpdateToken: string;
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
+export interface AssociateSubnetsRequest {
+  readonly UpdateToken?: string;
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
   readonly SubnetMappings: [];
 }
 
-interface AssociateSubnetsResponse {
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
-  readonly SubnetMappings: [];
-  readonly UpdateToken: string;
+export interface AssociateSubnetsResponse {
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
+  readonly SubnetMappings?: [];
+  readonly UpdateToken?: string;
 }
 
-interface Attachment {
-  readonly SubnetId: string;
-  readonly EndpointId: string;
-  readonly Status: string;
+export interface Attachment {
+  readonly SubnetId?: string;
+  readonly EndpointId?: string;
+  readonly Status?: string;
 }
 
-interface CreateFirewallPolicyRequest {
+export interface CreateFirewallPolicyRequest {
   readonly FirewallPolicyName: string;
   readonly FirewallPolicy: FirewallPolicy;
-  readonly Description: string;
-  readonly Tags: [];
-  readonly DryRun: boolean;
+  readonly Description?: string;
+  readonly Tags?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateFirewallPolicyResponse {
+export interface CreateFirewallPolicyResponse {
   readonly UpdateToken: string;
   readonly FirewallPolicyResponse: FirewallPolicyResponse;
 }
 
-interface CreateFirewallRequest {
+export interface CreateFirewallRequest {
   readonly FirewallName: string;
   readonly FirewallPolicyArn: string;
   readonly VpcId: string;
   readonly SubnetMappings: [];
-  readonly DeleteProtection: boolean;
-  readonly SubnetChangeProtection: boolean;
-  readonly FirewallPolicyChangeProtection: boolean;
-  readonly Description: string;
-  readonly Tags: [];
+  readonly DeleteProtection?: boolean;
+  readonly SubnetChangeProtection?: boolean;
+  readonly FirewallPolicyChangeProtection?: boolean;
+  readonly Description?: string;
+  readonly Tags?: [];
 }
 
-interface CreateFirewallResponse {
-  readonly Firewall: Firewall;
-  readonly FirewallStatus: FirewallStatus;
+export interface CreateFirewallResponse {
+  readonly Firewall?: Firewall;
+  readonly FirewallStatus?: FirewallStatus;
 }
 
-interface CreateRuleGroupRequest {
+export interface CreateRuleGroupRequest {
   readonly RuleGroupName: string;
-  readonly RuleGroup: RuleGroup;
-  readonly Rules: string;
+  readonly RuleGroup?: RuleGroup;
+  readonly Rules?: string;
   readonly Type: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Capacity: number;
-  readonly Tags: [];
-  readonly DryRun: boolean;
+  readonly Tags?: [];
+  readonly DryRun?: boolean;
 }
 
-interface CreateRuleGroupResponse {
+export interface CreateRuleGroupResponse {
   readonly UpdateToken: string;
   readonly RuleGroupResponse: RuleGroupResponse;
 }
 
-interface CustomAction {
+export interface CustomAction {
   readonly ActionName: string;
   readonly ActionDefinition: ActionDefinition;
 }
 
-interface DeleteFirewallPolicyRequest {
-  readonly FirewallPolicyName: string;
-  readonly FirewallPolicyArn: string;
+export interface DeleteFirewallPolicyRequest {
+  readonly FirewallPolicyName?: string;
+  readonly FirewallPolicyArn?: string;
 }
 
-interface DeleteFirewallPolicyResponse {
+export interface DeleteFirewallPolicyResponse {
   readonly FirewallPolicyResponse: FirewallPolicyResponse;
 }
 
-interface DeleteFirewallRequest {
-  readonly FirewallName: string;
-  readonly FirewallArn: string;
+export interface DeleteFirewallRequest {
+  readonly FirewallName?: string;
+  readonly FirewallArn?: string;
 }
 
-interface DeleteFirewallResponse {
-  readonly Firewall: Firewall;
-  readonly FirewallStatus: FirewallStatus;
+export interface DeleteFirewallResponse {
+  readonly Firewall?: Firewall;
+  readonly FirewallStatus?: FirewallStatus;
 }
 
-interface DeleteResourcePolicyRequest {
+export interface DeleteResourcePolicyRequest {
   readonly ResourceArn: string;
 }
 
-interface DeleteResourcePolicyResponse {
+export interface DeleteResourcePolicyResponse {
 }
 
-interface DeleteRuleGroupRequest {
-  readonly RuleGroupName: string;
-  readonly RuleGroupArn: string;
-  readonly Type: string;
+export interface DeleteRuleGroupRequest {
+  readonly RuleGroupName?: string;
+  readonly RuleGroupArn?: string;
+  readonly Type?: string;
 }
 
-interface DeleteRuleGroupResponse {
+export interface DeleteRuleGroupResponse {
   readonly RuleGroupResponse: RuleGroupResponse;
 }
 
-interface DescribeFirewallPolicyRequest {
-  readonly FirewallPolicyName: string;
-  readonly FirewallPolicyArn: string;
+export interface DescribeFirewallPolicyRequest {
+  readonly FirewallPolicyName?: string;
+  readonly FirewallPolicyArn?: string;
 }
 
-interface DescribeFirewallPolicyResponse {
+export interface DescribeFirewallPolicyResponse {
   readonly UpdateToken: string;
   readonly FirewallPolicyResponse: FirewallPolicyResponse;
-  readonly FirewallPolicy: FirewallPolicy;
+  readonly FirewallPolicy?: FirewallPolicy;
 }
 
-interface DescribeFirewallRequest {
-  readonly FirewallName: string;
-  readonly FirewallArn: string;
+export interface DescribeFirewallRequest {
+  readonly FirewallName?: string;
+  readonly FirewallArn?: string;
 }
 
-interface DescribeFirewallResponse {
-  readonly UpdateToken: string;
-  readonly Firewall: Firewall;
-  readonly FirewallStatus: FirewallStatus;
+export interface DescribeFirewallResponse {
+  readonly UpdateToken?: string;
+  readonly Firewall?: Firewall;
+  readonly FirewallStatus?: FirewallStatus;
 }
 
-interface DescribeLoggingConfigurationRequest {
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
+export interface DescribeLoggingConfigurationRequest {
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
 }
 
-interface DescribeLoggingConfigurationResponse {
-  readonly FirewallArn: string;
-  readonly LoggingConfiguration: LoggingConfiguration;
+export interface DescribeLoggingConfigurationResponse {
+  readonly FirewallArn?: string;
+  readonly LoggingConfiguration?: LoggingConfiguration;
 }
 
-interface DescribeResourcePolicyRequest {
+export interface DescribeResourcePolicyRequest {
   readonly ResourceArn: string;
 }
 
-interface DescribeResourcePolicyResponse {
-  readonly Policy: string;
+export interface DescribeResourcePolicyResponse {
+  readonly Policy?: string;
 }
 
-interface DescribeRuleGroupMetadataRequest {
-  readonly RuleGroupName: string;
+export interface DescribeRuleGroupMetadataRequest {
+  readonly RuleGroupName?: string;
+  readonly RuleGroupArn?: string;
+  readonly Type?: string;
+}
+
+export interface DescribeRuleGroupMetadataResponse {
   readonly RuleGroupArn: string;
-  readonly Type: string;
-}
-
-interface DescribeRuleGroupMetadataResponse {
-  readonly RuleGroupArn: string;
   readonly RuleGroupName: string;
-  readonly Description: string;
-  readonly Type: string;
-  readonly Capacity: number;
-  readonly StatefulRuleOptions: StatefulRuleOptions;
+  readonly Description?: string;
+  readonly Type?: string;
+  readonly Capacity?: number;
+  readonly StatefulRuleOptions?: StatefulRuleOptions;
 }
 
-interface DescribeRuleGroupRequest {
-  readonly RuleGroupName: string;
-  readonly RuleGroupArn: string;
-  readonly Type: string;
+export interface DescribeRuleGroupRequest {
+  readonly RuleGroupName?: string;
+  readonly RuleGroupArn?: string;
+  readonly Type?: string;
 }
 
-interface DescribeRuleGroupResponse {
+export interface DescribeRuleGroupResponse {
   readonly UpdateToken: string;
-  readonly RuleGroup: RuleGroup;
+  readonly RuleGroup?: RuleGroup;
   readonly RuleGroupResponse: RuleGroupResponse;
 }
 
-interface Dimension {
+export interface Dimension {
   readonly Value: string;
 }
 
-interface DisassociateSubnetsRequest {
-  readonly UpdateToken: string;
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
+export interface DisassociateSubnetsRequest {
+  readonly UpdateToken?: string;
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
   readonly SubnetIds: [];
 }
 
-interface DisassociateSubnetsResponse {
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
-  readonly SubnetMappings: [];
-  readonly UpdateToken: string;
+export interface DisassociateSubnetsResponse {
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
+  readonly SubnetMappings?: [];
+  readonly UpdateToken?: string;
 }
 
-interface Firewall {
-  readonly FirewallName: string;
-  readonly FirewallArn: string;
+export interface Firewall {
+  readonly FirewallName?: string;
+  readonly FirewallArn?: string;
   readonly FirewallPolicyArn: string;
   readonly VpcId: string;
   readonly SubnetMappings: [];
-  readonly DeleteProtection: boolean;
-  readonly SubnetChangeProtection: boolean;
-  readonly FirewallPolicyChangeProtection: boolean;
-  readonly Description: string;
+  readonly DeleteProtection?: boolean;
+  readonly SubnetChangeProtection?: boolean;
+  readonly FirewallPolicyChangeProtection?: boolean;
+  readonly Description?: string;
   readonly FirewallId: string;
-  readonly Tags: [];
+  readonly Tags?: [];
 }
 
-interface FirewallMetadata {
-  readonly FirewallName: string;
-  readonly FirewallArn: string;
+export interface FirewallMetadata {
+  readonly FirewallName?: string;
+  readonly FirewallArn?: string;
 }
 
-interface FirewallPolicy {
-  readonly StatelessRuleGroupReferences: [];
+export interface FirewallPolicy {
+  readonly StatelessRuleGroupReferences?: [];
   readonly StatelessDefaultActions: [];
   readonly StatelessFragmentDefaultActions: [];
-  readonly StatelessCustomActions: [];
-  readonly StatefulRuleGroupReferences: [];
-  readonly StatefulDefaultActions: [];
-  readonly StatefulEngineOptions: StatefulEngineOptions;
+  readonly StatelessCustomActions?: [];
+  readonly StatefulRuleGroupReferences?: [];
+  readonly StatefulDefaultActions?: [];
+  readonly StatefulEngineOptions?: StatefulEngineOptions;
 }
 
-interface FirewallPolicyMetadata {
-  readonly Name: string;
-  readonly Arn: string;
+export interface FirewallPolicyMetadata {
+  readonly Name?: string;
+  readonly Arn?: string;
 }
 
-interface FirewallPolicyResponse {
+export interface FirewallPolicyResponse {
   readonly FirewallPolicyName: string;
   readonly FirewallPolicyArn: string;
   readonly FirewallPolicyId: string;
-  readonly Description: string;
-  readonly FirewallPolicyStatus: string;
-  readonly Tags: [];
-  readonly ConsumedStatelessRuleCapacity: number;
-  readonly ConsumedStatefulRuleCapacity: number;
-  readonly NumberOfAssociations: number;
+  readonly Description?: string;
+  readonly FirewallPolicyStatus?: string;
+  readonly Tags?: [];
+  readonly ConsumedStatelessRuleCapacity?: number;
+  readonly ConsumedStatefulRuleCapacity?: number;
+  readonly NumberOfAssociations?: number;
 }
 
-interface FirewallStatus {
+export interface FirewallStatus {
   readonly Status: string;
   readonly ConfigurationSyncStateSummary: string;
-  readonly SyncStates: {[key: string]: any};
+  readonly SyncStates?: {[key: string]: any};
 }
 
-interface Header {
+export interface Header {
   readonly Protocol: string;
   readonly Source: string;
   readonly SourcePort: string;
@@ -444,367 +471,368 @@ interface Header {
   readonly DestinationPort: string;
 }
 
-interface IPSet {
+export interface IPSet {
   readonly Definition: [];
 }
 
-interface InsufficientCapacityException {
-  readonly Message: string;
+export interface InsufficientCapacityException {
+  readonly Message?: string;
 }
 
-interface InternalServerError {
-  readonly Message: string;
+export interface InternalServerError {
+  readonly Message?: string;
 }
 
-interface InvalidOperationException {
-  readonly Message: string;
+export interface InvalidOperationException {
+  readonly Message?: string;
 }
 
-interface InvalidRequestException {
-  readonly Message: string;
+export interface InvalidRequestException {
+  readonly Message?: string;
 }
 
-interface InvalidResourcePolicyException {
-  readonly Message: string;
+export interface InvalidResourcePolicyException {
+  readonly Message?: string;
 }
 
-interface InvalidTokenException {
-  readonly Message: string;
+export interface InvalidTokenException {
+  readonly Message?: string;
 }
 
-interface LimitExceededException {
-  readonly Message: string;
+export interface LimitExceededException {
+  readonly Message?: string;
 }
 
-interface ListFirewallPoliciesRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListFirewallPoliciesRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
 }
 
-interface ListFirewallPoliciesResponse {
-  readonly NextToken: string;
-  readonly FirewallPolicies: [];
+export interface ListFirewallPoliciesResponse {
+  readonly NextToken?: string;
+  readonly FirewallPolicies?: [];
 }
 
-interface ListFirewallsRequest {
-  readonly NextToken: string;
-  readonly VpcIds: [];
-  readonly MaxResults: number;
+export interface ListFirewallsRequest {
+  readonly NextToken?: string;
+  readonly VpcIds?: [];
+  readonly MaxResults?: number;
 }
 
-interface ListFirewallsResponse {
-  readonly NextToken: string;
-  readonly Firewalls: [];
+export interface ListFirewallsResponse {
+  readonly NextToken?: string;
+  readonly Firewalls?: [];
 }
 
-interface ListRuleGroupsRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly Scope: string;
+export interface ListRuleGroupsRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly Scope?: string;
 }
 
-interface ListRuleGroupsResponse {
-  readonly NextToken: string;
-  readonly RuleGroups: [];
+export interface ListRuleGroupsResponse {
+  readonly NextToken?: string;
+  readonly RuleGroups?: [];
 }
 
-interface ListTagsForResourceRequest {
-  readonly NextToken: string;
-  readonly MaxResults: number;
+export interface ListTagsForResourceRequest {
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly NextToken: string;
-  readonly Tags: [];
+export interface ListTagsForResourceResponse {
+  readonly NextToken?: string;
+  readonly Tags?: [];
 }
 
-interface LogDestinationConfig {
+export interface LogDestinationConfig {
   readonly LogType: string;
   readonly LogDestinationType: string;
   readonly LogDestination: {[key: string]: any};
 }
 
-interface LogDestinationPermissionException {
-  readonly Message: string;
+export interface LogDestinationPermissionException {
+  readonly Message?: string;
 }
 
-interface LoggingConfiguration {
+export interface LoggingConfiguration {
   readonly LogDestinationConfigs: [];
 }
 
-interface MatchAttributes {
-  readonly Sources: [];
-  readonly Destinations: [];
-  readonly SourcePorts: [];
-  readonly DestinationPorts: [];
-  readonly Protocols: [];
-  readonly TCPFlags: [];
+export interface MatchAttributes {
+  readonly Sources?: [];
+  readonly Destinations?: [];
+  readonly SourcePorts?: [];
+  readonly DestinationPorts?: [];
+  readonly Protocols?: [];
+  readonly TCPFlags?: [];
 }
 
-interface PerObjectStatus {
-  readonly SyncStatus: string;
-  readonly UpdateToken: string;
+export interface PerObjectStatus {
+  readonly SyncStatus?: string;
+  readonly UpdateToken?: string;
 }
 
-interface PortRange {
+export interface PortRange {
   readonly FromPort: number;
   readonly ToPort: number;
 }
 
-interface PortSet {
-  readonly Definition: [];
+export interface PortSet {
+  readonly Definition?: [];
 }
 
-interface PublishMetricAction {
+export interface PublishMetricAction {
   readonly Dimensions: [];
 }
 
-interface PutResourcePolicyRequest {
+export interface PutResourcePolicyRequest {
   readonly ResourceArn: string;
   readonly Policy: string;
 }
 
-interface PutResourcePolicyResponse {
+export interface PutResourcePolicyResponse {
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface ResourceOwnerCheckException {
-  readonly Message: string;
+export interface ResourceOwnerCheckException {
+  readonly Message?: string;
 }
 
-interface RuleDefinition {
+export interface RuleDefinition {
   readonly MatchAttributes: MatchAttributes;
   readonly Actions: [];
 }
 
-interface RuleGroup {
-  readonly RuleVariables: RuleVariables;
+export interface RuleGroup {
+  readonly RuleVariables?: RuleVariables;
   readonly RulesSource: RulesSource;
-  readonly StatefulRuleOptions: StatefulRuleOptions;
+  readonly StatefulRuleOptions?: StatefulRuleOptions;
 }
 
-interface RuleGroupMetadata {
-  readonly Name: string;
-  readonly Arn: string;
+export interface RuleGroupMetadata {
+  readonly Name?: string;
+  readonly Arn?: string;
 }
 
-interface RuleGroupResponse {
+export interface RuleGroupResponse {
   readonly RuleGroupArn: string;
   readonly RuleGroupName: string;
   readonly RuleGroupId: string;
-  readonly Description: string;
-  readonly Type: string;
-  readonly Capacity: number;
-  readonly RuleGroupStatus: string;
-  readonly Tags: [];
-  readonly ConsumedCapacity: number;
-  readonly NumberOfAssociations: number;
+  readonly Description?: string;
+  readonly Type?: string;
+  readonly Capacity?: number;
+  readonly RuleGroupStatus?: string;
+  readonly Tags?: [];
+  readonly ConsumedCapacity?: number;
+  readonly NumberOfAssociations?: number;
 }
 
-interface RuleOption {
+export interface RuleOption {
   readonly Keyword: string;
-  readonly Settings: [];
+  readonly Settings?: [];
 }
 
-interface RuleVariables {
-  readonly IPSets: {[key: string]: any};
-  readonly PortSets: {[key: string]: any};
+export interface RuleVariables {
+  readonly IPSets?: {[key: string]: any};
+  readonly PortSets?: {[key: string]: any};
 }
 
-interface RulesSource {
-  readonly RulesString: string;
-  readonly RulesSourceList: RulesSourceList;
-  readonly StatefulRules: [];
-  readonly StatelessRulesAndCustomActions: StatelessRulesAndCustomActions;
+export interface RulesSource {
+  readonly RulesString?: string;
+  readonly RulesSourceList?: RulesSourceList;
+  readonly StatefulRules?: [];
+  readonly StatelessRulesAndCustomActions?: StatelessRulesAndCustomActions;
 }
 
-interface RulesSourceList {
+export interface RulesSourceList {
   readonly Targets: [];
   readonly TargetTypes: [];
   readonly GeneratedRulesType: string;
 }
 
-interface StatefulEngineOptions {
-  readonly RuleOrder: string;
+export interface StatefulEngineOptions {
+  readonly RuleOrder?: string;
 }
 
-interface StatefulRule {
+export interface StatefulRule {
   readonly Action: string;
   readonly Header: Header;
   readonly RuleOptions: [];
 }
 
-interface StatefulRuleGroupOverride {
-  readonly Action: string;
+export interface StatefulRuleGroupOverride {
+  readonly Action?: string;
 }
 
-interface StatefulRuleGroupReference {
+export interface StatefulRuleGroupReference {
   readonly ResourceArn: string;
-  readonly Priority: number;
-  readonly Override: StatefulRuleGroupOverride;
+  readonly Priority?: number;
+  readonly Override?: StatefulRuleGroupOverride;
 }
 
-interface StatefulRuleOptions {
-  readonly RuleOrder: string;
+export interface StatefulRuleOptions {
+  readonly RuleOrder?: string;
 }
 
-interface StatelessRule {
+export interface StatelessRule {
   readonly RuleDefinition: RuleDefinition;
   readonly Priority: number;
 }
 
-interface StatelessRuleGroupReference {
+export interface StatelessRuleGroupReference {
   readonly ResourceArn: string;
   readonly Priority: number;
 }
 
-interface StatelessRulesAndCustomActions {
+export interface StatelessRulesAndCustomActions {
   readonly StatelessRules: [];
-  readonly CustomActions: [];
+  readonly CustomActions?: [];
 }
 
-interface SubnetMapping {
+export interface SubnetMapping {
   readonly SubnetId: string;
 }
 
-interface SyncState {
-  readonly Attachment: Attachment;
-  readonly Config: {[key: string]: any};
+export interface SyncState {
+  readonly Attachment?: Attachment;
+  readonly Config?: {[key: string]: any};
 }
 
-interface TCPFlagField {
+export interface TCPFlagField {
   readonly Flags: [];
-  readonly Masks: [];
+  readonly Masks?: [];
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
   readonly Value: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
-  readonly Message: string;
+export interface ThrottlingException {
+  readonly Message?: string;
 }
 
-interface UnsupportedOperationException {
-  readonly Message: string;
+export interface UnsupportedOperationException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateFirewallDeleteProtectionRequest {
-  readonly UpdateToken: string;
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
+export interface UpdateFirewallDeleteProtectionRequest {
+  readonly UpdateToken?: string;
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
   readonly DeleteProtection: boolean;
 }
 
-interface UpdateFirewallDeleteProtectionResponse {
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
-  readonly DeleteProtection: boolean;
-  readonly UpdateToken: string;
+export interface UpdateFirewallDeleteProtectionResponse {
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
+  readonly DeleteProtection?: boolean;
+  readonly UpdateToken?: string;
 }
 
-interface UpdateFirewallDescriptionRequest {
-  readonly UpdateToken: string;
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
-  readonly Description: string;
+export interface UpdateFirewallDescriptionRequest {
+  readonly UpdateToken?: string;
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
+  readonly Description?: string;
 }
 
-interface UpdateFirewallDescriptionResponse {
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
-  readonly Description: string;
-  readonly UpdateToken: string;
+export interface UpdateFirewallDescriptionResponse {
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
+  readonly Description?: string;
+  readonly UpdateToken?: string;
 }
 
-interface UpdateFirewallPolicyChangeProtectionRequest {
-  readonly UpdateToken: string;
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
+export interface UpdateFirewallPolicyChangeProtectionRequest {
+  readonly UpdateToken?: string;
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
   readonly FirewallPolicyChangeProtection: boolean;
 }
 
-interface UpdateFirewallPolicyChangeProtectionResponse {
-  readonly UpdateToken: string;
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
-  readonly FirewallPolicyChangeProtection: boolean;
+export interface UpdateFirewallPolicyChangeProtectionResponse {
+  readonly UpdateToken?: string;
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
+  readonly FirewallPolicyChangeProtection?: boolean;
 }
 
-interface UpdateFirewallPolicyRequest {
+export interface UpdateFirewallPolicyRequest {
   readonly UpdateToken: string;
-  readonly FirewallPolicyArn: string;
-  readonly FirewallPolicyName: string;
+  readonly FirewallPolicyArn?: string;
+  readonly FirewallPolicyName?: string;
   readonly FirewallPolicy: FirewallPolicy;
-  readonly Description: string;
-  readonly DryRun: boolean;
+  readonly Description?: string;
+  readonly DryRun?: boolean;
 }
 
-interface UpdateFirewallPolicyResponse {
+export interface UpdateFirewallPolicyResponse {
   readonly UpdateToken: string;
   readonly FirewallPolicyResponse: FirewallPolicyResponse;
 }
 
-interface UpdateLoggingConfigurationRequest {
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
-  readonly LoggingConfiguration: LoggingConfiguration;
+export interface UpdateLoggingConfigurationRequest {
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
+  readonly LoggingConfiguration?: LoggingConfiguration;
 }
 
-interface UpdateLoggingConfigurationResponse {
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
-  readonly LoggingConfiguration: LoggingConfiguration;
+export interface UpdateLoggingConfigurationResponse {
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
+  readonly LoggingConfiguration?: LoggingConfiguration;
 }
 
-interface UpdateRuleGroupRequest {
+export interface UpdateRuleGroupRequest {
   readonly UpdateToken: string;
-  readonly RuleGroupArn: string;
-  readonly RuleGroupName: string;
-  readonly RuleGroup: RuleGroup;
-  readonly Rules: string;
-  readonly Type: string;
-  readonly Description: string;
-  readonly DryRun: boolean;
+  readonly RuleGroupArn?: string;
+  readonly RuleGroupName?: string;
+  readonly RuleGroup?: RuleGroup;
+  readonly Rules?: string;
+  readonly Type?: string;
+  readonly Description?: string;
+  readonly DryRun?: boolean;
 }
 
-interface UpdateRuleGroupResponse {
+export interface UpdateRuleGroupResponse {
   readonly UpdateToken: string;
   readonly RuleGroupResponse: RuleGroupResponse;
 }
 
-interface UpdateSubnetChangeProtectionRequest {
-  readonly UpdateToken: string;
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
+export interface UpdateSubnetChangeProtectionRequest {
+  readonly UpdateToken?: string;
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
   readonly SubnetChangeProtection: boolean;
 }
 
-interface UpdateSubnetChangeProtectionResponse {
-  readonly UpdateToken: string;
-  readonly FirewallArn: string;
-  readonly FirewallName: string;
-  readonly SubnetChangeProtection: boolean;
+export interface UpdateSubnetChangeProtectionResponse {
+  readonly UpdateToken?: string;
+  readonly FirewallArn?: string;
+  readonly FirewallName?: string;
+  readonly SubnetChangeProtection?: boolean;
 }
+
 

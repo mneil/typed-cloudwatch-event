@@ -5,25 +5,31 @@ export interface AttachInstances {
   readonly InstanceIds?: [];
   readonly AutoScalingGroupName: string;
 }
+
 export interface AttachLoadBalancerTargetGroups {
   readonly AutoScalingGroupName: string;
   readonly TargetGroupARNs: [];
 }
+
 export interface AttachLoadBalancers {
   readonly AutoScalingGroupName: string;
   readonly LoadBalancerNames: [];
 }
+
 export interface BatchDeleteScheduledAction {
   readonly AutoScalingGroupName: string;
   readonly ScheduledActionNames: [];
 }
+
 export interface BatchPutScheduledUpdateGroupAction {
   readonly AutoScalingGroupName: string;
   readonly ScheduledUpdateGroupActions: [];
 }
+
 export interface CancelInstanceRefresh {
   readonly AutoScalingGroupName: string;
 }
+
 export interface CompleteLifecycleAction {
   readonly LifecycleHookName: string;
   readonly AutoScalingGroupName: string;
@@ -31,6 +37,7 @@ export interface CompleteLifecycleAction {
   readonly LifecycleActionResult: string;
   readonly InstanceId?: string;
 }
+
 export interface CreateAutoScalingGroup {
   readonly AutoScalingGroupName: string;
   readonly LaunchConfigurationName?: string;
@@ -58,6 +65,7 @@ export interface CreateAutoScalingGroup {
   readonly Context?: string;
   readonly DesiredCapacityType?: string;
 }
+
 export interface CreateLaunchConfiguration {
   readonly LaunchConfigurationName: string;
   readonly ImageId?: string;
@@ -79,80 +87,98 @@ export interface CreateLaunchConfiguration {
   readonly PlacementTenancy?: string;
   readonly MetadataOptions?: InstanceMetadataOptions;
 }
+
 export interface CreateOrUpdateTags {
   readonly Tags: [];
 }
+
 export interface DeleteAutoScalingGroup {
   readonly AutoScalingGroupName: string;
   readonly ForceDelete?: boolean;
 }
+
 export interface DeleteLaunchConfiguration {
   readonly LaunchConfigurationName: string;
 }
+
 export interface DeleteLifecycleHook {
   readonly LifecycleHookName: string;
   readonly AutoScalingGroupName: string;
 }
+
 export interface DeleteNotificationConfiguration {
   readonly AutoScalingGroupName: string;
   readonly TopicARN: string;
 }
+
 export interface DeletePolicy {
   readonly AutoScalingGroupName?: string;
   readonly PolicyName: string;
 }
+
 export interface DeleteScheduledAction {
   readonly AutoScalingGroupName: string;
   readonly ScheduledActionName: string;
 }
+
 export interface DeleteTags {
   readonly Tags: [];
 }
+
 export interface DeleteWarmPool {
   readonly AutoScalingGroupName: string;
   readonly ForceDelete?: boolean;
 }
+
 export interface DescribeAutoScalingGroups {
   readonly AutoScalingGroupNames?: [];
   readonly NextToken?: string;
   readonly MaxRecords?: number;
   readonly Filters?: [];
 }
+
 export interface DescribeAutoScalingInstances {
   readonly InstanceIds?: [];
   readonly MaxRecords?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeInstanceRefreshes {
   readonly AutoScalingGroupName: string;
   readonly InstanceRefreshIds?: [];
   readonly NextToken?: string;
   readonly MaxRecords?: number;
 }
+
 export interface DescribeLaunchConfigurations {
   readonly LaunchConfigurationNames?: [];
   readonly NextToken?: string;
   readonly MaxRecords?: number;
 }
+
 export interface DescribeLifecycleHooks {
   readonly AutoScalingGroupName: string;
   readonly LifecycleHookNames?: [];
 }
+
 export interface DescribeLoadBalancerTargetGroups {
   readonly AutoScalingGroupName: string;
   readonly NextToken?: string;
   readonly MaxRecords?: number;
 }
+
 export interface DescribeLoadBalancers {
   readonly AutoScalingGroupName: string;
   readonly NextToken?: string;
   readonly MaxRecords?: number;
 }
+
 export interface DescribeNotificationConfigurations {
   readonly AutoScalingGroupNames?: [];
   readonly NextToken?: string;
   readonly MaxRecords?: number;
 }
+
 export interface DescribePolicies {
   readonly AutoScalingGroupName?: string;
   readonly PolicyNames?: [];
@@ -160,6 +186,7 @@ export interface DescribePolicies {
   readonly NextToken?: string;
   readonly MaxRecords?: number;
 }
+
 export interface DescribeScalingActivities {
   readonly ActivityIds?: [];
   readonly AutoScalingGroupName?: string;
@@ -167,6 +194,7 @@ export interface DescribeScalingActivities {
   readonly MaxRecords?: number;
   readonly NextToken?: string;
 }
+
 export interface DescribeScheduledActions {
   readonly AutoScalingGroupName?: string;
   readonly ScheduledActionNames?: [];
@@ -175,43 +203,52 @@ export interface DescribeScheduledActions {
   readonly NextToken?: string;
   readonly MaxRecords?: number;
 }
+
 export interface DescribeTags {
   readonly Filters?: [];
   readonly NextToken?: string;
   readonly MaxRecords?: number;
 }
+
 export interface DescribeWarmPool {
   readonly AutoScalingGroupName: string;
   readonly MaxRecords?: number;
   readonly NextToken?: string;
 }
+
 export interface DetachInstances {
   readonly InstanceIds?: [];
   readonly AutoScalingGroupName: string;
   readonly ShouldDecrementDesiredCapacity: boolean;
 }
+
 export interface DetachLoadBalancerTargetGroups {
   readonly AutoScalingGroupName: string;
   readonly TargetGroupARNs: [];
 }
+
 export interface DetachLoadBalancers {
   readonly AutoScalingGroupName: string;
   readonly LoadBalancerNames: [];
 }
+
 export interface DisableMetricsCollection {
   readonly AutoScalingGroupName: string;
   readonly Metrics?: [];
 }
+
 export interface EnableMetricsCollection {
   readonly AutoScalingGroupName: string;
   readonly Metrics?: [];
   readonly Granularity: string;
 }
+
 export interface EnterStandby {
   readonly InstanceIds?: [];
   readonly AutoScalingGroupName: string;
   readonly ShouldDecrementDesiredCapacity: boolean;
 }
+
 export interface ExecutePolicy {
   readonly AutoScalingGroupName?: string;
   readonly PolicyName: string;
@@ -219,16 +256,19 @@ export interface ExecutePolicy {
   readonly MetricValue?: unknown;
   readonly BreachThreshold?: unknown;
 }
+
 export interface ExitStandby {
   readonly InstanceIds?: [];
   readonly AutoScalingGroupName: string;
 }
+
 export interface GetPredictiveScalingForecast {
   readonly AutoScalingGroupName: string;
   readonly PolicyName: string;
   readonly StartTime: Date;
   readonly EndTime: Date;
 }
+
 export interface PutLifecycleHook {
   readonly LifecycleHookName: string;
   readonly AutoScalingGroupName: string;
@@ -239,11 +279,13 @@ export interface PutLifecycleHook {
   readonly HeartbeatTimeout?: number;
   readonly DefaultResult?: string;
 }
+
 export interface PutNotificationConfiguration {
   readonly AutoScalingGroupName: string;
   readonly TopicARN: string;
   readonly NotificationTypes: [];
 }
+
 export interface PutScalingPolicy {
   readonly AutoScalingGroupName: string;
   readonly PolicyName: string;
@@ -260,6 +302,7 @@ export interface PutScalingPolicy {
   readonly Enabled?: boolean;
   readonly PredictiveScalingConfiguration?: PredictiveScalingConfiguration;
 }
+
 export interface PutScheduledUpdateGroupAction {
   readonly AutoScalingGroupName: string;
   readonly ScheduledActionName: string;
@@ -272,51 +315,61 @@ export interface PutScheduledUpdateGroupAction {
   readonly DesiredCapacity?: number;
   readonly TimeZone?: string;
 }
+
 export interface PutWarmPool {
   readonly AutoScalingGroupName: string;
   readonly MaxGroupPreparedCapacity?: number;
   readonly MinSize?: number;
   readonly PoolState?: string;
 }
+
 export interface RecordLifecycleActionHeartbeat {
   readonly LifecycleHookName: string;
   readonly AutoScalingGroupName: string;
   readonly LifecycleActionToken?: string;
   readonly InstanceId?: string;
 }
+
 export interface ResumeProcesses {
   readonly AutoScalingGroupName: string;
   readonly ScalingProcesses?: [];
 }
+
 export interface SetDesiredCapacity {
   readonly AutoScalingGroupName: string;
   readonly DesiredCapacity: number;
   readonly HonorCooldown?: boolean;
 }
+
 export interface SetInstanceHealth {
   readonly InstanceId: string;
   readonly HealthStatus: string;
   readonly ShouldRespectGracePeriod?: boolean;
 }
+
 export interface SetInstanceProtection {
   readonly InstanceIds: [];
   readonly AutoScalingGroupName: string;
   readonly ProtectedFromScaleIn: boolean;
 }
+
 export interface StartInstanceRefresh {
   readonly AutoScalingGroupName: string;
   readonly Strategy?: string;
   readonly DesiredConfiguration?: DesiredConfiguration;
   readonly Preferences?: RefreshPreferences;
 }
+
 export interface SuspendProcesses {
   readonly AutoScalingGroupName: string;
   readonly ScalingProcesses?: [];
 }
+
 export interface TerminateInstanceInAutoScalingGroup {
   readonly InstanceId: string;
   readonly ShouldDecrementDesiredCapacity: boolean;
 }
+
 export interface UpdateAutoScalingGroup {
   readonly AutoScalingGroupName: string;
   readonly LaunchConfigurationName?: string;
@@ -340,1118 +393,1117 @@ export interface UpdateAutoScalingGroup {
   readonly DesiredCapacityType?: string;
 }
 
-
-
-interface AcceleratorCountRequest {
-  readonly Min: number;
-  readonly Max: number;
+export interface AcceleratorCountRequest {
+  readonly Min?: number;
+  readonly Max?: number;
 }
 
-interface AcceleratorTotalMemoryMiBRequest {
-  readonly Min: number;
-  readonly Max: number;
+export interface AcceleratorTotalMemoryMiBRequest {
+  readonly Min?: number;
+  readonly Max?: number;
 }
 
-interface ActiveInstanceRefreshNotFoundFault {
-  readonly message: string;
+export interface ActiveInstanceRefreshNotFoundFault {
+  readonly message?: string;
 }
 
-interface ActivitiesType {
+export interface ActivitiesType {
   readonly Activities: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface Activity {
+export interface Activity {
   readonly ActivityId: string;
   readonly AutoScalingGroupName: string;
-  readonly Description: string;
+  readonly Description?: string;
   readonly Cause: string;
   readonly StartTime: Date;
-  readonly EndTime: Date;
+  readonly EndTime?: Date;
   readonly StatusCode: string;
-  readonly StatusMessage: string;
-  readonly Progress: number;
-  readonly Details: string;
-  readonly AutoScalingGroupState: string;
-  readonly AutoScalingGroupARN: string;
+  readonly StatusMessage?: string;
+  readonly Progress?: number;
+  readonly Details?: string;
+  readonly AutoScalingGroupState?: string;
+  readonly AutoScalingGroupARN?: string;
 }
 
-interface ActivityType {
-  readonly Activity: Activity;
+export interface ActivityType {
+  readonly Activity?: Activity;
 }
 
-interface AdjustmentType {
-  readonly AdjustmentType: string;
+export interface AdjustmentType {
+  readonly AdjustmentType?: string;
 }
 
-interface Alarm {
-  readonly AlarmName: string;
-  readonly AlarmARN: string;
+export interface Alarm {
+  readonly AlarmName?: string;
+  readonly AlarmARN?: string;
 }
 
-interface AlreadyExistsFault {
-  readonly message: string;
+export interface AlreadyExistsFault {
+  readonly message?: string;
 }
 
-interface AttachInstancesQuery {
-  readonly InstanceIds: [];
+export interface AttachInstancesQuery {
+  readonly InstanceIds?: [];
   readonly AutoScalingGroupName: string;
 }
 
-interface AttachLoadBalancerTargetGroupsResultType {
+export interface AttachLoadBalancerTargetGroupsResultType {
 }
 
-interface AttachLoadBalancerTargetGroupsType {
+export interface AttachLoadBalancerTargetGroupsType {
   readonly AutoScalingGroupName: string;
   readonly TargetGroupARNs: [];
 }
 
-interface AttachLoadBalancersResultType {
+export interface AttachLoadBalancersResultType {
 }
 
-interface AttachLoadBalancersType {
+export interface AttachLoadBalancersType {
   readonly AutoScalingGroupName: string;
   readonly LoadBalancerNames: [];
 }
 
-interface AutoScalingGroup {
+export interface AutoScalingGroup {
   readonly AutoScalingGroupName: string;
-  readonly AutoScalingGroupARN: string;
-  readonly LaunchConfigurationName: string;
-  readonly LaunchTemplate: LaunchTemplateSpecification;
-  readonly MixedInstancesPolicy: MixedInstancesPolicy;
+  readonly AutoScalingGroupARN?: string;
+  readonly LaunchConfigurationName?: string;
+  readonly LaunchTemplate?: LaunchTemplateSpecification;
+  readonly MixedInstancesPolicy?: MixedInstancesPolicy;
   readonly MinSize: number;
   readonly MaxSize: number;
   readonly DesiredCapacity: number;
-  readonly PredictedCapacity: number;
+  readonly PredictedCapacity?: number;
   readonly DefaultCooldown: number;
   readonly AvailabilityZones: [];
-  readonly LoadBalancerNames: [];
-  readonly TargetGroupARNs: [];
+  readonly LoadBalancerNames?: [];
+  readonly TargetGroupARNs?: [];
   readonly HealthCheckType: string;
-  readonly HealthCheckGracePeriod: number;
-  readonly Instances: [];
+  readonly HealthCheckGracePeriod?: number;
+  readonly Instances?: [];
   readonly CreatedTime: Date;
-  readonly SuspendedProcesses: [];
-  readonly PlacementGroup: string;
-  readonly VPCZoneIdentifier: string;
-  readonly EnabledMetrics: [];
-  readonly Status: string;
-  readonly Tags: [];
-  readonly TerminationPolicies: [];
-  readonly NewInstancesProtectedFromScaleIn: boolean;
-  readonly ServiceLinkedRoleARN: string;
-  readonly MaxInstanceLifetime: number;
-  readonly CapacityRebalance: boolean;
-  readonly WarmPoolConfiguration: WarmPoolConfiguration;
-  readonly WarmPoolSize: number;
-  readonly Context: string;
-  readonly DesiredCapacityType: string;
+  readonly SuspendedProcesses?: [];
+  readonly PlacementGroup?: string;
+  readonly VPCZoneIdentifier?: string;
+  readonly EnabledMetrics?: [];
+  readonly Status?: string;
+  readonly Tags?: [];
+  readonly TerminationPolicies?: [];
+  readonly NewInstancesProtectedFromScaleIn?: boolean;
+  readonly ServiceLinkedRoleARN?: string;
+  readonly MaxInstanceLifetime?: number;
+  readonly CapacityRebalance?: boolean;
+  readonly WarmPoolConfiguration?: WarmPoolConfiguration;
+  readonly WarmPoolSize?: number;
+  readonly Context?: string;
+  readonly DesiredCapacityType?: string;
 }
 
-interface AutoScalingGroupNamesType {
-  readonly AutoScalingGroupNames: [];
-  readonly NextToken: string;
-  readonly MaxRecords: number;
-  readonly Filters: [];
+export interface AutoScalingGroupNamesType {
+  readonly AutoScalingGroupNames?: [];
+  readonly NextToken?: string;
+  readonly MaxRecords?: number;
+  readonly Filters?: [];
 }
 
-interface AutoScalingGroupsType {
+export interface AutoScalingGroupsType {
   readonly AutoScalingGroups: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface AutoScalingInstanceDetails {
+export interface AutoScalingInstanceDetails {
   readonly InstanceId: string;
-  readonly InstanceType: string;
+  readonly InstanceType?: string;
   readonly AutoScalingGroupName: string;
   readonly AvailabilityZone: string;
   readonly LifecycleState: string;
   readonly HealthStatus: string;
-  readonly LaunchConfigurationName: string;
-  readonly LaunchTemplate: LaunchTemplateSpecification;
+  readonly LaunchConfigurationName?: string;
+  readonly LaunchTemplate?: LaunchTemplateSpecification;
   readonly ProtectedFromScaleIn: boolean;
-  readonly WeightedCapacity: string;
+  readonly WeightedCapacity?: string;
 }
 
-interface AutoScalingInstancesType {
-  readonly AutoScalingInstances: [];
-  readonly NextToken: string;
+export interface AutoScalingInstancesType {
+  readonly AutoScalingInstances?: [];
+  readonly NextToken?: string;
 }
 
-interface BaselineEbsBandwidthMbpsRequest {
-  readonly Min: number;
-  readonly Max: number;
+export interface BaselineEbsBandwidthMbpsRequest {
+  readonly Min?: number;
+  readonly Max?: number;
 }
 
-interface BatchDeleteScheduledActionAnswer {
-  readonly FailedScheduledActions: [];
+export interface BatchDeleteScheduledActionAnswer {
+  readonly FailedScheduledActions?: [];
 }
 
-interface BatchDeleteScheduledActionType {
+export interface BatchDeleteScheduledActionType {
   readonly AutoScalingGroupName: string;
   readonly ScheduledActionNames: [];
 }
 
-interface BatchPutScheduledUpdateGroupActionAnswer {
-  readonly FailedScheduledUpdateGroupActions: [];
+export interface BatchPutScheduledUpdateGroupActionAnswer {
+  readonly FailedScheduledUpdateGroupActions?: [];
 }
 
-interface BatchPutScheduledUpdateGroupActionType {
+export interface BatchPutScheduledUpdateGroupActionType {
   readonly AutoScalingGroupName: string;
   readonly ScheduledUpdateGroupActions: [];
 }
 
-interface BlockDeviceMapping {
-  readonly VirtualName: string;
+export interface BlockDeviceMapping {
+  readonly VirtualName?: string;
   readonly DeviceName: string;
-  readonly Ebs: Ebs;
-  readonly NoDevice: boolean;
+  readonly Ebs?: Ebs;
+  readonly NoDevice?: boolean;
 }
 
-interface CancelInstanceRefreshAnswer {
-  readonly InstanceRefreshId: string;
+export interface CancelInstanceRefreshAnswer {
+  readonly InstanceRefreshId?: string;
 }
 
-interface CancelInstanceRefreshType {
+export interface CancelInstanceRefreshType {
   readonly AutoScalingGroupName: string;
 }
 
-interface CapacityForecast {
+export interface CapacityForecast {
   readonly Timestamps: [];
   readonly Values: [];
 }
 
-interface CompleteLifecycleActionAnswer {
+export interface CompleteLifecycleActionAnswer {
 }
 
-interface CompleteLifecycleActionType {
+export interface CompleteLifecycleActionType {
   readonly LifecycleHookName: string;
   readonly AutoScalingGroupName: string;
-  readonly LifecycleActionToken: string;
+  readonly LifecycleActionToken?: string;
   readonly LifecycleActionResult: string;
-  readonly InstanceId: string;
+  readonly InstanceId?: string;
 }
 
-interface CreateAutoScalingGroupType {
+export interface CreateAutoScalingGroupType {
   readonly AutoScalingGroupName: string;
-  readonly LaunchConfigurationName: string;
-  readonly LaunchTemplate: LaunchTemplateSpecification;
-  readonly MixedInstancesPolicy: MixedInstancesPolicy;
-  readonly InstanceId: string;
+  readonly LaunchConfigurationName?: string;
+  readonly LaunchTemplate?: LaunchTemplateSpecification;
+  readonly MixedInstancesPolicy?: MixedInstancesPolicy;
+  readonly InstanceId?: string;
   readonly MinSize: number;
   readonly MaxSize: number;
-  readonly DesiredCapacity: number;
-  readonly DefaultCooldown: number;
-  readonly AvailabilityZones: [];
-  readonly LoadBalancerNames: [];
-  readonly TargetGroupARNs: [];
-  readonly HealthCheckType: string;
-  readonly HealthCheckGracePeriod: number;
-  readonly PlacementGroup: string;
-  readonly VPCZoneIdentifier: string;
-  readonly TerminationPolicies: [];
-  readonly NewInstancesProtectedFromScaleIn: boolean;
-  readonly CapacityRebalance: boolean;
-  readonly LifecycleHookSpecificationList: [];
-  readonly Tags: [];
-  readonly ServiceLinkedRoleARN: string;
-  readonly MaxInstanceLifetime: number;
-  readonly Context: string;
-  readonly DesiredCapacityType: string;
+  readonly DesiredCapacity?: number;
+  readonly DefaultCooldown?: number;
+  readonly AvailabilityZones?: [];
+  readonly LoadBalancerNames?: [];
+  readonly TargetGroupARNs?: [];
+  readonly HealthCheckType?: string;
+  readonly HealthCheckGracePeriod?: number;
+  readonly PlacementGroup?: string;
+  readonly VPCZoneIdentifier?: string;
+  readonly TerminationPolicies?: [];
+  readonly NewInstancesProtectedFromScaleIn?: boolean;
+  readonly CapacityRebalance?: boolean;
+  readonly LifecycleHookSpecificationList?: [];
+  readonly Tags?: [];
+  readonly ServiceLinkedRoleARN?: string;
+  readonly MaxInstanceLifetime?: number;
+  readonly Context?: string;
+  readonly DesiredCapacityType?: string;
 }
 
-interface CreateLaunchConfigurationType {
+export interface CreateLaunchConfigurationType {
   readonly LaunchConfigurationName: string;
-  readonly ImageId: string;
-  readonly KeyName: string;
-  readonly SecurityGroups: [];
-  readonly ClassicLinkVPCId: string;
-  readonly ClassicLinkVPCSecurityGroups: [];
-  readonly UserData: string;
-  readonly InstanceId: string;
-  readonly InstanceType: string;
-  readonly KernelId: string;
-  readonly RamdiskId: string;
-  readonly BlockDeviceMappings: [];
-  readonly InstanceMonitoring: InstanceMonitoring;
-  readonly SpotPrice: string;
-  readonly IamInstanceProfile: string;
-  readonly EbsOptimized: boolean;
-  readonly AssociatePublicIpAddress: boolean;
-  readonly PlacementTenancy: string;
-  readonly MetadataOptions: InstanceMetadataOptions;
+  readonly ImageId?: string;
+  readonly KeyName?: string;
+  readonly SecurityGroups?: [];
+  readonly ClassicLinkVPCId?: string;
+  readonly ClassicLinkVPCSecurityGroups?: [];
+  readonly UserData?: string;
+  readonly InstanceId?: string;
+  readonly InstanceType?: string;
+  readonly KernelId?: string;
+  readonly RamdiskId?: string;
+  readonly BlockDeviceMappings?: [];
+  readonly InstanceMonitoring?: InstanceMonitoring;
+  readonly SpotPrice?: string;
+  readonly IamInstanceProfile?: string;
+  readonly EbsOptimized?: boolean;
+  readonly AssociatePublicIpAddress?: boolean;
+  readonly PlacementTenancy?: string;
+  readonly MetadataOptions?: InstanceMetadataOptions;
 }
 
-interface CreateOrUpdateTagsType {
+export interface CreateOrUpdateTagsType {
   readonly Tags: [];
 }
 
-interface CustomizedMetricSpecification {
+export interface CustomizedMetricSpecification {
   readonly MetricName: string;
   readonly Namespace: string;
-  readonly Dimensions: [];
+  readonly Dimensions?: [];
   readonly Statistic: string;
-  readonly Unit: string;
+  readonly Unit?: string;
 }
 
-interface DeleteAutoScalingGroupType {
+export interface DeleteAutoScalingGroupType {
   readonly AutoScalingGroupName: string;
-  readonly ForceDelete: boolean;
+  readonly ForceDelete?: boolean;
 }
 
-interface DeleteLifecycleHookAnswer {
+export interface DeleteLifecycleHookAnswer {
 }
 
-interface DeleteLifecycleHookType {
+export interface DeleteLifecycleHookType {
   readonly LifecycleHookName: string;
   readonly AutoScalingGroupName: string;
 }
 
-interface DeleteNotificationConfigurationType {
+export interface DeleteNotificationConfigurationType {
   readonly AutoScalingGroupName: string;
   readonly TopicARN: string;
 }
 
-interface DeletePolicyType {
-  readonly AutoScalingGroupName: string;
+export interface DeletePolicyType {
+  readonly AutoScalingGroupName?: string;
   readonly PolicyName: string;
 }
 
-interface DeleteScheduledActionType {
+export interface DeleteScheduledActionType {
   readonly AutoScalingGroupName: string;
   readonly ScheduledActionName: string;
 }
 
-interface DeleteTagsType {
+export interface DeleteTagsType {
   readonly Tags: [];
 }
 
-interface DeleteWarmPoolAnswer {
+export interface DeleteWarmPoolAnswer {
 }
 
-interface DeleteWarmPoolType {
+export interface DeleteWarmPoolType {
   readonly AutoScalingGroupName: string;
-  readonly ForceDelete: boolean;
+  readonly ForceDelete?: boolean;
 }
 
-interface DescribeAccountLimitsAnswer {
-  readonly MaxNumberOfAutoScalingGroups: number;
-  readonly MaxNumberOfLaunchConfigurations: number;
-  readonly NumberOfAutoScalingGroups: number;
-  readonly NumberOfLaunchConfigurations: number;
+export interface DescribeAccountLimitsAnswer {
+  readonly MaxNumberOfAutoScalingGroups?: number;
+  readonly MaxNumberOfLaunchConfigurations?: number;
+  readonly NumberOfAutoScalingGroups?: number;
+  readonly NumberOfLaunchConfigurations?: number;
 }
 
-interface DescribeAdjustmentTypesAnswer {
-  readonly AdjustmentTypes: [];
+export interface DescribeAdjustmentTypesAnswer {
+  readonly AdjustmentTypes?: [];
 }
 
-interface DescribeAutoScalingInstancesType {
-  readonly InstanceIds: [];
-  readonly MaxRecords: number;
-  readonly NextToken: string;
+export interface DescribeAutoScalingInstancesType {
+  readonly InstanceIds?: [];
+  readonly MaxRecords?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeAutoScalingNotificationTypesAnswer {
-  readonly AutoScalingNotificationTypes: [];
+export interface DescribeAutoScalingNotificationTypesAnswer {
+  readonly AutoScalingNotificationTypes?: [];
 }
 
-interface DescribeInstanceRefreshesAnswer {
-  readonly InstanceRefreshes: [];
-  readonly NextToken: string;
+export interface DescribeInstanceRefreshesAnswer {
+  readonly InstanceRefreshes?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeInstanceRefreshesType {
+export interface DescribeInstanceRefreshesType {
   readonly AutoScalingGroupName: string;
-  readonly InstanceRefreshIds: [];
-  readonly NextToken: string;
-  readonly MaxRecords: number;
+  readonly InstanceRefreshIds?: [];
+  readonly NextToken?: string;
+  readonly MaxRecords?: number;
 }
 
-interface DescribeLifecycleHookTypesAnswer {
-  readonly LifecycleHookTypes: [];
+export interface DescribeLifecycleHookTypesAnswer {
+  readonly LifecycleHookTypes?: [];
 }
 
-interface DescribeLifecycleHooksAnswer {
-  readonly LifecycleHooks: [];
+export interface DescribeLifecycleHooksAnswer {
+  readonly LifecycleHooks?: [];
 }
 
-interface DescribeLifecycleHooksType {
+export interface DescribeLifecycleHooksType {
   readonly AutoScalingGroupName: string;
-  readonly LifecycleHookNames: [];
+  readonly LifecycleHookNames?: [];
 }
 
-interface DescribeLoadBalancerTargetGroupsRequest {
+export interface DescribeLoadBalancerTargetGroupsRequest {
   readonly AutoScalingGroupName: string;
-  readonly NextToken: string;
-  readonly MaxRecords: number;
+  readonly NextToken?: string;
+  readonly MaxRecords?: number;
 }
 
-interface DescribeLoadBalancerTargetGroupsResponse {
-  readonly LoadBalancerTargetGroups: [];
-  readonly NextToken: string;
+export interface DescribeLoadBalancerTargetGroupsResponse {
+  readonly LoadBalancerTargetGroups?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeLoadBalancersRequest {
+export interface DescribeLoadBalancersRequest {
   readonly AutoScalingGroupName: string;
-  readonly NextToken: string;
-  readonly MaxRecords: number;
+  readonly NextToken?: string;
+  readonly MaxRecords?: number;
 }
 
-interface DescribeLoadBalancersResponse {
-  readonly LoadBalancers: [];
-  readonly NextToken: string;
+export interface DescribeLoadBalancersResponse {
+  readonly LoadBalancers?: [];
+  readonly NextToken?: string;
 }
 
-interface DescribeMetricCollectionTypesAnswer {
-  readonly Metrics: [];
-  readonly Granularities: [];
+export interface DescribeMetricCollectionTypesAnswer {
+  readonly Metrics?: [];
+  readonly Granularities?: [];
 }
 
-interface DescribeNotificationConfigurationsAnswer {
+export interface DescribeNotificationConfigurationsAnswer {
   readonly NotificationConfigurations: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface DescribeNotificationConfigurationsType {
-  readonly AutoScalingGroupNames: [];
-  readonly NextToken: string;
-  readonly MaxRecords: number;
+export interface DescribeNotificationConfigurationsType {
+  readonly AutoScalingGroupNames?: [];
+  readonly NextToken?: string;
+  readonly MaxRecords?: number;
 }
 
-interface DescribePoliciesType {
+export interface DescribePoliciesType {
+  readonly AutoScalingGroupName?: string;
+  readonly PolicyNames?: [];
+  readonly PolicyTypes?: [];
+  readonly NextToken?: string;
+  readonly MaxRecords?: number;
+}
+
+export interface DescribeScalingActivitiesType {
+  readonly ActivityIds?: [];
+  readonly AutoScalingGroupName?: string;
+  readonly IncludeDeletedGroups?: boolean;
+  readonly MaxRecords?: number;
+  readonly NextToken?: string;
+}
+
+export interface DescribeScheduledActionsType {
+  readonly AutoScalingGroupName?: string;
+  readonly ScheduledActionNames?: [];
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly NextToken?: string;
+  readonly MaxRecords?: number;
+}
+
+export interface DescribeTagsType {
+  readonly Filters?: [];
+  readonly NextToken?: string;
+  readonly MaxRecords?: number;
+}
+
+export interface DescribeTerminationPolicyTypesAnswer {
+  readonly TerminationPolicyTypes?: [];
+}
+
+export interface DescribeWarmPoolAnswer {
+  readonly WarmPoolConfiguration?: WarmPoolConfiguration;
+  readonly Instances?: [];
+  readonly NextToken?: string;
+}
+
+export interface DescribeWarmPoolType {
   readonly AutoScalingGroupName: string;
-  readonly PolicyNames: [];
-  readonly PolicyTypes: [];
-  readonly NextToken: string;
-  readonly MaxRecords: number;
+  readonly MaxRecords?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeScalingActivitiesType {
-  readonly ActivityIds: [];
-  readonly AutoScalingGroupName: string;
-  readonly IncludeDeletedGroups: boolean;
-  readonly MaxRecords: number;
-  readonly NextToken: string;
+export interface DesiredConfiguration {
+  readonly LaunchTemplate?: LaunchTemplateSpecification;
+  readonly MixedInstancesPolicy?: MixedInstancesPolicy;
 }
 
-interface DescribeScheduledActionsType {
-  readonly AutoScalingGroupName: string;
-  readonly ScheduledActionNames: [];
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly NextToken: string;
-  readonly MaxRecords: number;
+export interface DetachInstancesAnswer {
+  readonly Activities?: [];
 }
 
-interface DescribeTagsType {
-  readonly Filters: [];
-  readonly NextToken: string;
-  readonly MaxRecords: number;
-}
-
-interface DescribeTerminationPolicyTypesAnswer {
-  readonly TerminationPolicyTypes: [];
-}
-
-interface DescribeWarmPoolAnswer {
-  readonly WarmPoolConfiguration: WarmPoolConfiguration;
-  readonly Instances: [];
-  readonly NextToken: string;
-}
-
-interface DescribeWarmPoolType {
-  readonly AutoScalingGroupName: string;
-  readonly MaxRecords: number;
-  readonly NextToken: string;
-}
-
-interface DesiredConfiguration {
-  readonly LaunchTemplate: LaunchTemplateSpecification;
-  readonly MixedInstancesPolicy: MixedInstancesPolicy;
-}
-
-interface DetachInstancesAnswer {
-  readonly Activities: [];
-}
-
-interface DetachInstancesQuery {
-  readonly InstanceIds: [];
+export interface DetachInstancesQuery {
+  readonly InstanceIds?: [];
   readonly AutoScalingGroupName: string;
   readonly ShouldDecrementDesiredCapacity: boolean;
 }
 
-interface DetachLoadBalancerTargetGroupsResultType {
+export interface DetachLoadBalancerTargetGroupsResultType {
 }
 
-interface DetachLoadBalancerTargetGroupsType {
+export interface DetachLoadBalancerTargetGroupsType {
   readonly AutoScalingGroupName: string;
   readonly TargetGroupARNs: [];
 }
 
-interface DetachLoadBalancersResultType {
+export interface DetachLoadBalancersResultType {
 }
 
-interface DetachLoadBalancersType {
+export interface DetachLoadBalancersType {
   readonly AutoScalingGroupName: string;
   readonly LoadBalancerNames: [];
 }
 
-interface DisableMetricsCollectionQuery {
+export interface DisableMetricsCollectionQuery {
   readonly AutoScalingGroupName: string;
-  readonly Metrics: [];
+  readonly Metrics?: [];
 }
 
-interface Ebs {
-  readonly SnapshotId: string;
-  readonly VolumeSize: number;
-  readonly VolumeType: string;
-  readonly DeleteOnTermination: boolean;
-  readonly Iops: number;
-  readonly Encrypted: boolean;
-  readonly Throughput: number;
+export interface Ebs {
+  readonly SnapshotId?: string;
+  readonly VolumeSize?: number;
+  readonly VolumeType?: string;
+  readonly DeleteOnTermination?: boolean;
+  readonly Iops?: number;
+  readonly Encrypted?: boolean;
+  readonly Throughput?: number;
 }
 
-interface EnableMetricsCollectionQuery {
+export interface EnableMetricsCollectionQuery {
   readonly AutoScalingGroupName: string;
-  readonly Metrics: [];
+  readonly Metrics?: [];
   readonly Granularity: string;
 }
 
-interface EnabledMetric {
-  readonly Metric: string;
-  readonly Granularity: string;
+export interface EnabledMetric {
+  readonly Metric?: string;
+  readonly Granularity?: string;
 }
 
-interface EnterStandbyAnswer {
-  readonly Activities: [];
+export interface EnterStandbyAnswer {
+  readonly Activities?: [];
 }
 
-interface EnterStandbyQuery {
-  readonly InstanceIds: [];
+export interface EnterStandbyQuery {
+  readonly InstanceIds?: [];
   readonly AutoScalingGroupName: string;
   readonly ShouldDecrementDesiredCapacity: boolean;
 }
 
-interface ExecutePolicyType {
-  readonly AutoScalingGroupName: string;
+export interface ExecutePolicyType {
+  readonly AutoScalingGroupName?: string;
   readonly PolicyName: string;
-  readonly HonorCooldown: boolean;
-  readonly MetricValue: unknown;
-  readonly BreachThreshold: unknown;
+  readonly HonorCooldown?: boolean;
+  readonly MetricValue?: unknown;
+  readonly BreachThreshold?: unknown;
 }
 
-interface ExitStandbyAnswer {
-  readonly Activities: [];
+export interface ExitStandbyAnswer {
+  readonly Activities?: [];
 }
 
-interface ExitStandbyQuery {
-  readonly InstanceIds: [];
+export interface ExitStandbyQuery {
+  readonly InstanceIds?: [];
   readonly AutoScalingGroupName: string;
 }
 
-interface FailedScheduledUpdateGroupActionRequest {
+export interface FailedScheduledUpdateGroupActionRequest {
   readonly ScheduledActionName: string;
-  readonly ErrorCode: string;
-  readonly ErrorMessage: string;
+  readonly ErrorCode?: string;
+  readonly ErrorMessage?: string;
 }
 
-interface Filter {
-  readonly Name: string;
-  readonly Values: [];
+export interface Filter {
+  readonly Name?: string;
+  readonly Values?: [];
 }
 
-interface GetPredictiveScalingForecastAnswer {
+export interface GetPredictiveScalingForecastAnswer {
   readonly LoadForecast: [];
   readonly CapacityForecast: CapacityForecast;
   readonly UpdateTime: Date;
 }
 
-interface GetPredictiveScalingForecastType {
+export interface GetPredictiveScalingForecastType {
   readonly AutoScalingGroupName: string;
   readonly PolicyName: string;
   readonly StartTime: Date;
   readonly EndTime: Date;
 }
 
-interface Instance {
+export interface Instance {
   readonly InstanceId: string;
-  readonly InstanceType: string;
+  readonly InstanceType?: string;
   readonly AvailabilityZone: string;
   readonly LifecycleState: string;
   readonly HealthStatus: string;
-  readonly LaunchConfigurationName: string;
-  readonly LaunchTemplate: LaunchTemplateSpecification;
+  readonly LaunchConfigurationName?: string;
+  readonly LaunchTemplate?: LaunchTemplateSpecification;
   readonly ProtectedFromScaleIn: boolean;
-  readonly WeightedCapacity: string;
+  readonly WeightedCapacity?: string;
 }
 
-interface InstanceMetadataOptions {
-  readonly HttpTokens: string;
-  readonly HttpPutResponseHopLimit: number;
-  readonly HttpEndpoint: string;
+export interface InstanceMetadataOptions {
+  readonly HttpTokens?: string;
+  readonly HttpPutResponseHopLimit?: number;
+  readonly HttpEndpoint?: string;
 }
 
-interface InstanceMonitoring {
-  readonly Enabled: boolean;
+export interface InstanceMonitoring {
+  readonly Enabled?: boolean;
 }
 
-interface InstanceRefresh {
-  readonly InstanceRefreshId: string;
-  readonly AutoScalingGroupName: string;
-  readonly Status: string;
-  readonly StatusReason: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly PercentageComplete: number;
-  readonly InstancesToUpdate: number;
-  readonly ProgressDetails: InstanceRefreshProgressDetails;
-  readonly Preferences: RefreshPreferences;
-  readonly DesiredConfiguration: DesiredConfiguration;
+export interface InstanceRefresh {
+  readonly InstanceRefreshId?: string;
+  readonly AutoScalingGroupName?: string;
+  readonly Status?: string;
+  readonly StatusReason?: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly PercentageComplete?: number;
+  readonly InstancesToUpdate?: number;
+  readonly ProgressDetails?: InstanceRefreshProgressDetails;
+  readonly Preferences?: RefreshPreferences;
+  readonly DesiredConfiguration?: DesiredConfiguration;
 }
 
-interface InstanceRefreshInProgressFault {
-  readonly message: string;
+export interface InstanceRefreshInProgressFault {
+  readonly message?: string;
 }
 
-interface InstanceRefreshLivePoolProgress {
-  readonly PercentageComplete: number;
-  readonly InstancesToUpdate: number;
+export interface InstanceRefreshLivePoolProgress {
+  readonly PercentageComplete?: number;
+  readonly InstancesToUpdate?: number;
 }
 
-interface InstanceRefreshProgressDetails {
-  readonly LivePoolProgress: InstanceRefreshLivePoolProgress;
-  readonly WarmPoolProgress: InstanceRefreshWarmPoolProgress;
+export interface InstanceRefreshProgressDetails {
+  readonly LivePoolProgress?: InstanceRefreshLivePoolProgress;
+  readonly WarmPoolProgress?: InstanceRefreshWarmPoolProgress;
 }
 
-interface InstanceRefreshWarmPoolProgress {
-  readonly PercentageComplete: number;
-  readonly InstancesToUpdate: number;
+export interface InstanceRefreshWarmPoolProgress {
+  readonly PercentageComplete?: number;
+  readonly InstancesToUpdate?: number;
 }
 
-interface InstanceRequirements {
+export interface InstanceRequirements {
   readonly VCpuCount: VCpuCountRequest;
   readonly MemoryMiB: MemoryMiBRequest;
-  readonly CpuManufacturers: [];
-  readonly MemoryGiBPerVCpu: MemoryGiBPerVCpuRequest;
-  readonly ExcludedInstanceTypes: [];
-  readonly InstanceGenerations: [];
-  readonly SpotMaxPricePercentageOverLowestPrice: number;
-  readonly OnDemandMaxPricePercentageOverLowestPrice: number;
-  readonly BareMetal: string;
-  readonly BurstablePerformance: string;
-  readonly RequireHibernateSupport: boolean;
-  readonly NetworkInterfaceCount: NetworkInterfaceCountRequest;
-  readonly LocalStorage: string;
-  readonly LocalStorageTypes: [];
-  readonly TotalLocalStorageGB: TotalLocalStorageGBRequest;
-  readonly BaselineEbsBandwidthMbps: BaselineEbsBandwidthMbpsRequest;
-  readonly AcceleratorTypes: [];
-  readonly AcceleratorCount: AcceleratorCountRequest;
-  readonly AcceleratorManufacturers: [];
-  readonly AcceleratorNames: [];
-  readonly AcceleratorTotalMemoryMiB: AcceleratorTotalMemoryMiBRequest;
+  readonly CpuManufacturers?: [];
+  readonly MemoryGiBPerVCpu?: MemoryGiBPerVCpuRequest;
+  readonly ExcludedInstanceTypes?: [];
+  readonly InstanceGenerations?: [];
+  readonly SpotMaxPricePercentageOverLowestPrice?: number;
+  readonly OnDemandMaxPricePercentageOverLowestPrice?: number;
+  readonly BareMetal?: string;
+  readonly BurstablePerformance?: string;
+  readonly RequireHibernateSupport?: boolean;
+  readonly NetworkInterfaceCount?: NetworkInterfaceCountRequest;
+  readonly LocalStorage?: string;
+  readonly LocalStorageTypes?: [];
+  readonly TotalLocalStorageGB?: TotalLocalStorageGBRequest;
+  readonly BaselineEbsBandwidthMbps?: BaselineEbsBandwidthMbpsRequest;
+  readonly AcceleratorTypes?: [];
+  readonly AcceleratorCount?: AcceleratorCountRequest;
+  readonly AcceleratorManufacturers?: [];
+  readonly AcceleratorNames?: [];
+  readonly AcceleratorTotalMemoryMiB?: AcceleratorTotalMemoryMiBRequest;
 }
 
-interface InstancesDistribution {
-  readonly OnDemandAllocationStrategy: string;
-  readonly OnDemandBaseCapacity: number;
-  readonly OnDemandPercentageAboveBaseCapacity: number;
-  readonly SpotAllocationStrategy: string;
-  readonly SpotInstancePools: number;
-  readonly SpotMaxPrice: string;
+export interface InstancesDistribution {
+  readonly OnDemandAllocationStrategy?: string;
+  readonly OnDemandBaseCapacity?: number;
+  readonly OnDemandPercentageAboveBaseCapacity?: number;
+  readonly SpotAllocationStrategy?: string;
+  readonly SpotInstancePools?: number;
+  readonly SpotMaxPrice?: string;
 }
 
-interface InvalidNextToken {
-  readonly message: string;
+export interface InvalidNextToken {
+  readonly message?: string;
 }
 
-interface LaunchConfiguration {
+export interface LaunchConfiguration {
   readonly LaunchConfigurationName: string;
-  readonly LaunchConfigurationARN: string;
+  readonly LaunchConfigurationARN?: string;
   readonly ImageId: string;
-  readonly KeyName: string;
-  readonly SecurityGroups: [];
-  readonly ClassicLinkVPCId: string;
-  readonly ClassicLinkVPCSecurityGroups: [];
-  readonly UserData: string;
+  readonly KeyName?: string;
+  readonly SecurityGroups?: [];
+  readonly ClassicLinkVPCId?: string;
+  readonly ClassicLinkVPCSecurityGroups?: [];
+  readonly UserData?: string;
   readonly InstanceType: string;
-  readonly KernelId: string;
-  readonly RamdiskId: string;
-  readonly BlockDeviceMappings: [];
-  readonly InstanceMonitoring: InstanceMonitoring;
-  readonly SpotPrice: string;
-  readonly IamInstanceProfile: string;
+  readonly KernelId?: string;
+  readonly RamdiskId?: string;
+  readonly BlockDeviceMappings?: [];
+  readonly InstanceMonitoring?: InstanceMonitoring;
+  readonly SpotPrice?: string;
+  readonly IamInstanceProfile?: string;
   readonly CreatedTime: Date;
-  readonly EbsOptimized: boolean;
-  readonly AssociatePublicIpAddress: boolean;
-  readonly PlacementTenancy: string;
-  readonly MetadataOptions: InstanceMetadataOptions;
+  readonly EbsOptimized?: boolean;
+  readonly AssociatePublicIpAddress?: boolean;
+  readonly PlacementTenancy?: string;
+  readonly MetadataOptions?: InstanceMetadataOptions;
 }
 
-interface LaunchConfigurationNameType {
+export interface LaunchConfigurationNameType {
   readonly LaunchConfigurationName: string;
 }
 
-interface LaunchConfigurationNamesType {
-  readonly LaunchConfigurationNames: [];
-  readonly NextToken: string;
-  readonly MaxRecords: number;
+export interface LaunchConfigurationNamesType {
+  readonly LaunchConfigurationNames?: [];
+  readonly NextToken?: string;
+  readonly MaxRecords?: number;
 }
 
-interface LaunchConfigurationsType {
+export interface LaunchConfigurationsType {
   readonly LaunchConfigurations: [];
-  readonly NextToken: string;
+  readonly NextToken?: string;
 }
 
-interface LaunchTemplate {
-  readonly LaunchTemplateSpecification: LaunchTemplateSpecification;
-  readonly Overrides: [];
+export interface LaunchTemplate {
+  readonly LaunchTemplateSpecification?: LaunchTemplateSpecification;
+  readonly Overrides?: [];
 }
 
-interface LaunchTemplateOverrides {
-  readonly InstanceType: string;
-  readonly WeightedCapacity: string;
-  readonly LaunchTemplateSpecification: LaunchTemplateSpecification;
-  readonly InstanceRequirements: InstanceRequirements;
+export interface LaunchTemplateOverrides {
+  readonly InstanceType?: string;
+  readonly WeightedCapacity?: string;
+  readonly LaunchTemplateSpecification?: LaunchTemplateSpecification;
+  readonly InstanceRequirements?: InstanceRequirements;
 }
 
-interface LaunchTemplateSpecification {
-  readonly LaunchTemplateId: string;
-  readonly LaunchTemplateName: string;
-  readonly Version: string;
+export interface LaunchTemplateSpecification {
+  readonly LaunchTemplateId?: string;
+  readonly LaunchTemplateName?: string;
+  readonly Version?: string;
 }
 
-interface LifecycleHook {
+export interface LifecycleHook {
+  readonly LifecycleHookName?: string;
+  readonly AutoScalingGroupName?: string;
+  readonly LifecycleTransition?: string;
+  readonly NotificationTargetARN?: string;
+  readonly RoleARN?: string;
+  readonly NotificationMetadata?: string;
+  readonly HeartbeatTimeout?: number;
+  readonly GlobalTimeout?: number;
+  readonly DefaultResult?: string;
+}
+
+export interface LifecycleHookSpecification {
   readonly LifecycleHookName: string;
-  readonly AutoScalingGroupName: string;
   readonly LifecycleTransition: string;
-  readonly NotificationTargetARN: string;
-  readonly RoleARN: string;
-  readonly NotificationMetadata: string;
-  readonly HeartbeatTimeout: number;
-  readonly GlobalTimeout: number;
-  readonly DefaultResult: string;
+  readonly NotificationMetadata?: string;
+  readonly HeartbeatTimeout?: number;
+  readonly DefaultResult?: string;
+  readonly NotificationTargetARN?: string;
+  readonly RoleARN?: string;
 }
 
-interface LifecycleHookSpecification {
-  readonly LifecycleHookName: string;
-  readonly LifecycleTransition: string;
-  readonly NotificationMetadata: string;
-  readonly HeartbeatTimeout: number;
-  readonly DefaultResult: string;
-  readonly NotificationTargetARN: string;
-  readonly RoleARN: string;
+export interface LimitExceededFault {
+  readonly message?: string;
 }
 
-interface LimitExceededFault {
-  readonly message: string;
+export interface LoadBalancerState {
+  readonly LoadBalancerName?: string;
+  readonly State?: string;
 }
 
-interface LoadBalancerState {
-  readonly LoadBalancerName: string;
-  readonly State: string;
+export interface LoadBalancerTargetGroupState {
+  readonly LoadBalancerTargetGroupARN?: string;
+  readonly State?: string;
 }
 
-interface LoadBalancerTargetGroupState {
-  readonly LoadBalancerTargetGroupARN: string;
-  readonly State: string;
-}
-
-interface LoadForecast {
+export interface LoadForecast {
   readonly Timestamps: [];
   readonly Values: [];
   readonly MetricSpecification: PredictiveScalingMetricSpecification;
 }
 
-interface MemoryGiBPerVCpuRequest {
-  readonly Min: unknown;
-  readonly Max: unknown;
+export interface MemoryGiBPerVCpuRequest {
+  readonly Min?: unknown;
+  readonly Max?: unknown;
 }
 
-interface MemoryMiBRequest {
+export interface MemoryMiBRequest {
   readonly Min: number;
-  readonly Max: number;
+  readonly Max?: number;
 }
 
-interface Metric {
+export interface Metric {
   readonly Namespace: string;
   readonly MetricName: string;
-  readonly Dimensions: [];
+  readonly Dimensions?: [];
 }
 
-interface MetricCollectionType {
-  readonly Metric: string;
+export interface MetricCollectionType {
+  readonly Metric?: string;
 }
 
-interface MetricDataQuery {
+export interface MetricDataQuery {
   readonly Id: string;
-  readonly Expression: string;
-  readonly MetricStat: MetricStat;
-  readonly Label: string;
-  readonly ReturnData: boolean;
+  readonly Expression?: string;
+  readonly MetricStat?: MetricStat;
+  readonly Label?: string;
+  readonly ReturnData?: boolean;
 }
 
-interface MetricDimension {
+export interface MetricDimension {
   readonly Name: string;
   readonly Value: string;
 }
 
-interface MetricGranularityType {
-  readonly Granularity: string;
+export interface MetricGranularityType {
+  readonly Granularity?: string;
 }
 
-interface MetricStat {
+export interface MetricStat {
   readonly Metric: Metric;
   readonly Stat: string;
-  readonly Unit: string;
+  readonly Unit?: string;
 }
 
-interface MixedInstancesPolicy {
-  readonly LaunchTemplate: LaunchTemplate;
-  readonly InstancesDistribution: InstancesDistribution;
+export interface MixedInstancesPolicy {
+  readonly LaunchTemplate?: LaunchTemplate;
+  readonly InstancesDistribution?: InstancesDistribution;
 }
 
-interface NetworkInterfaceCountRequest {
-  readonly Min: number;
-  readonly Max: number;
+export interface NetworkInterfaceCountRequest {
+  readonly Min?: number;
+  readonly Max?: number;
 }
 
-interface NotificationConfiguration {
-  readonly AutoScalingGroupName: string;
-  readonly TopicARN: string;
-  readonly NotificationType: string;
+export interface NotificationConfiguration {
+  readonly AutoScalingGroupName?: string;
+  readonly TopicARN?: string;
+  readonly NotificationType?: string;
 }
 
-interface PoliciesType {
-  readonly ScalingPolicies: [];
-  readonly NextToken: string;
+export interface PoliciesType {
+  readonly ScalingPolicies?: [];
+  readonly NextToken?: string;
 }
 
-interface PolicyARNType {
-  readonly PolicyARN: string;
-  readonly Alarms: [];
+export interface PolicyARNType {
+  readonly PolicyARN?: string;
+  readonly Alarms?: [];
 }
 
-interface PredefinedMetricSpecification {
+export interface PredefinedMetricSpecification {
   readonly PredefinedMetricType: string;
-  readonly ResourceLabel: string;
+  readonly ResourceLabel?: string;
 }
 
-interface PredictiveScalingConfiguration {
+export interface PredictiveScalingConfiguration {
   readonly MetricSpecifications: [];
-  readonly Mode: string;
-  readonly SchedulingBufferTime: number;
-  readonly MaxCapacityBreachBehavior: string;
-  readonly MaxCapacityBuffer: number;
+  readonly Mode?: string;
+  readonly SchedulingBufferTime?: number;
+  readonly MaxCapacityBreachBehavior?: string;
+  readonly MaxCapacityBuffer?: number;
 }
 
-interface PredictiveScalingCustomizedCapacityMetric {
+export interface PredictiveScalingCustomizedCapacityMetric {
   readonly MetricDataQueries: [];
 }
 
-interface PredictiveScalingCustomizedLoadMetric {
+export interface PredictiveScalingCustomizedLoadMetric {
   readonly MetricDataQueries: [];
 }
 
-interface PredictiveScalingCustomizedScalingMetric {
+export interface PredictiveScalingCustomizedScalingMetric {
   readonly MetricDataQueries: [];
 }
 
-interface PredictiveScalingMetricSpecification {
+export interface PredictiveScalingMetricSpecification {
   readonly TargetValue: unknown;
-  readonly PredefinedMetricPairSpecification: PredictiveScalingPredefinedMetricPair;
-  readonly PredefinedScalingMetricSpecification: PredictiveScalingPredefinedScalingMetric;
-  readonly PredefinedLoadMetricSpecification: PredictiveScalingPredefinedLoadMetric;
-  readonly CustomizedScalingMetricSpecification: PredictiveScalingCustomizedScalingMetric;
-  readonly CustomizedLoadMetricSpecification: PredictiveScalingCustomizedLoadMetric;
-  readonly CustomizedCapacityMetricSpecification: PredictiveScalingCustomizedCapacityMetric;
+  readonly PredefinedMetricPairSpecification?: PredictiveScalingPredefinedMetricPair;
+  readonly PredefinedScalingMetricSpecification?: PredictiveScalingPredefinedScalingMetric;
+  readonly PredefinedLoadMetricSpecification?: PredictiveScalingPredefinedLoadMetric;
+  readonly CustomizedScalingMetricSpecification?: PredictiveScalingCustomizedScalingMetric;
+  readonly CustomizedLoadMetricSpecification?: PredictiveScalingCustomizedLoadMetric;
+  readonly CustomizedCapacityMetricSpecification?: PredictiveScalingCustomizedCapacityMetric;
 }
 
-interface PredictiveScalingPredefinedLoadMetric {
+export interface PredictiveScalingPredefinedLoadMetric {
   readonly PredefinedMetricType: string;
-  readonly ResourceLabel: string;
+  readonly ResourceLabel?: string;
 }
 
-interface PredictiveScalingPredefinedMetricPair {
+export interface PredictiveScalingPredefinedMetricPair {
   readonly PredefinedMetricType: string;
-  readonly ResourceLabel: string;
+  readonly ResourceLabel?: string;
 }
 
-interface PredictiveScalingPredefinedScalingMetric {
+export interface PredictiveScalingPredefinedScalingMetric {
   readonly PredefinedMetricType: string;
-  readonly ResourceLabel: string;
+  readonly ResourceLabel?: string;
 }
 
-interface ProcessType {
+export interface ProcessType {
   readonly ProcessName: string;
 }
 
-interface ProcessesType {
-  readonly Processes: [];
+export interface ProcessesType {
+  readonly Processes?: [];
 }
 
-interface PutLifecycleHookAnswer {
+export interface PutLifecycleHookAnswer {
 }
 
-interface PutLifecycleHookType {
+export interface PutLifecycleHookType {
   readonly LifecycleHookName: string;
   readonly AutoScalingGroupName: string;
-  readonly LifecycleTransition: string;
-  readonly RoleARN: string;
-  readonly NotificationTargetARN: string;
-  readonly NotificationMetadata: string;
-  readonly HeartbeatTimeout: number;
-  readonly DefaultResult: string;
+  readonly LifecycleTransition?: string;
+  readonly RoleARN?: string;
+  readonly NotificationTargetARN?: string;
+  readonly NotificationMetadata?: string;
+  readonly HeartbeatTimeout?: number;
+  readonly DefaultResult?: string;
 }
 
-interface PutNotificationConfigurationType {
+export interface PutNotificationConfigurationType {
   readonly AutoScalingGroupName: string;
   readonly TopicARN: string;
   readonly NotificationTypes: [];
 }
 
-interface PutScalingPolicyType {
+export interface PutScalingPolicyType {
   readonly AutoScalingGroupName: string;
   readonly PolicyName: string;
-  readonly PolicyType: string;
-  readonly AdjustmentType: string;
-  readonly MinAdjustmentStep: number;
-  readonly MinAdjustmentMagnitude: number;
-  readonly ScalingAdjustment: number;
-  readonly Cooldown: number;
-  readonly MetricAggregationType: string;
-  readonly StepAdjustments: [];
-  readonly EstimatedInstanceWarmup: number;
-  readonly TargetTrackingConfiguration: TargetTrackingConfiguration;
-  readonly Enabled: boolean;
-  readonly PredictiveScalingConfiguration: PredictiveScalingConfiguration;
+  readonly PolicyType?: string;
+  readonly AdjustmentType?: string;
+  readonly MinAdjustmentStep?: number;
+  readonly MinAdjustmentMagnitude?: number;
+  readonly ScalingAdjustment?: number;
+  readonly Cooldown?: number;
+  readonly MetricAggregationType?: string;
+  readonly StepAdjustments?: [];
+  readonly EstimatedInstanceWarmup?: number;
+  readonly TargetTrackingConfiguration?: TargetTrackingConfiguration;
+  readonly Enabled?: boolean;
+  readonly PredictiveScalingConfiguration?: PredictiveScalingConfiguration;
 }
 
-interface PutScheduledUpdateGroupActionType {
+export interface PutScheduledUpdateGroupActionType {
   readonly AutoScalingGroupName: string;
   readonly ScheduledActionName: string;
-  readonly Time: Date;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Recurrence: string;
-  readonly MinSize: number;
-  readonly MaxSize: number;
-  readonly DesiredCapacity: number;
-  readonly TimeZone: string;
+  readonly Time?: Date;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Recurrence?: string;
+  readonly MinSize?: number;
+  readonly MaxSize?: number;
+  readonly DesiredCapacity?: number;
+  readonly TimeZone?: string;
 }
 
-interface PutWarmPoolAnswer {
+export interface PutWarmPoolAnswer {
 }
 
-interface PutWarmPoolType {
+export interface PutWarmPoolType {
   readonly AutoScalingGroupName: string;
-  readonly MaxGroupPreparedCapacity: number;
-  readonly MinSize: number;
-  readonly PoolState: string;
+  readonly MaxGroupPreparedCapacity?: number;
+  readonly MinSize?: number;
+  readonly PoolState?: string;
 }
 
-interface RecordLifecycleActionHeartbeatAnswer {
+export interface RecordLifecycleActionHeartbeatAnswer {
 }
 
-interface RecordLifecycleActionHeartbeatType {
+export interface RecordLifecycleActionHeartbeatType {
   readonly LifecycleHookName: string;
   readonly AutoScalingGroupName: string;
-  readonly LifecycleActionToken: string;
-  readonly InstanceId: string;
+  readonly LifecycleActionToken?: string;
+  readonly InstanceId?: string;
 }
 
-interface RefreshPreferences {
-  readonly MinHealthyPercentage: number;
-  readonly InstanceWarmup: number;
-  readonly CheckpointPercentages: [];
-  readonly CheckpointDelay: number;
-  readonly SkipMatching: boolean;
+export interface RefreshPreferences {
+  readonly MinHealthyPercentage?: number;
+  readonly InstanceWarmup?: number;
+  readonly CheckpointPercentages?: [];
+  readonly CheckpointDelay?: number;
+  readonly SkipMatching?: boolean;
 }
 
-interface ResourceContentionFault {
-  readonly message: string;
+export interface ResourceContentionFault {
+  readonly message?: string;
 }
 
-interface ResourceInUseFault {
-  readonly message: string;
+export interface ResourceInUseFault {
+  readonly message?: string;
 }
 
-interface ScalingActivityInProgressFault {
-  readonly message: string;
+export interface ScalingActivityInProgressFault {
+  readonly message?: string;
 }
 
-interface ScalingPolicy {
+export interface ScalingPolicy {
+  readonly AutoScalingGroupName?: string;
+  readonly PolicyName?: string;
+  readonly PolicyARN?: string;
+  readonly PolicyType?: string;
+  readonly AdjustmentType?: string;
+  readonly MinAdjustmentStep?: number;
+  readonly MinAdjustmentMagnitude?: number;
+  readonly ScalingAdjustment?: number;
+  readonly Cooldown?: number;
+  readonly StepAdjustments?: [];
+  readonly MetricAggregationType?: string;
+  readonly EstimatedInstanceWarmup?: number;
+  readonly Alarms?: [];
+  readonly TargetTrackingConfiguration?: TargetTrackingConfiguration;
+  readonly Enabled?: boolean;
+  readonly PredictiveScalingConfiguration?: PredictiveScalingConfiguration;
+}
+
+export interface ScalingProcessQuery {
   readonly AutoScalingGroupName: string;
-  readonly PolicyName: string;
-  readonly PolicyARN: string;
-  readonly PolicyType: string;
-  readonly AdjustmentType: string;
-  readonly MinAdjustmentStep: number;
-  readonly MinAdjustmentMagnitude: number;
-  readonly ScalingAdjustment: number;
-  readonly Cooldown: number;
-  readonly StepAdjustments: [];
-  readonly MetricAggregationType: string;
-  readonly EstimatedInstanceWarmup: number;
-  readonly Alarms: [];
-  readonly TargetTrackingConfiguration: TargetTrackingConfiguration;
-  readonly Enabled: boolean;
-  readonly PredictiveScalingConfiguration: PredictiveScalingConfiguration;
+  readonly ScalingProcesses?: [];
 }
 
-interface ScalingProcessQuery {
-  readonly AutoScalingGroupName: string;
-  readonly ScalingProcesses: [];
+export interface ScheduledActionsType {
+  readonly ScheduledUpdateGroupActions?: [];
+  readonly NextToken?: string;
 }
 
-interface ScheduledActionsType {
-  readonly ScheduledUpdateGroupActions: [];
-  readonly NextToken: string;
+export interface ScheduledUpdateGroupAction {
+  readonly AutoScalingGroupName?: string;
+  readonly ScheduledActionName?: string;
+  readonly ScheduledActionARN?: string;
+  readonly Time?: Date;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Recurrence?: string;
+  readonly MinSize?: number;
+  readonly MaxSize?: number;
+  readonly DesiredCapacity?: number;
+  readonly TimeZone?: string;
 }
 
-interface ScheduledUpdateGroupAction {
-  readonly AutoScalingGroupName: string;
+export interface ScheduledUpdateGroupActionRequest {
   readonly ScheduledActionName: string;
-  readonly ScheduledActionARN: string;
-  readonly Time: Date;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Recurrence: string;
-  readonly MinSize: number;
-  readonly MaxSize: number;
-  readonly DesiredCapacity: number;
-  readonly TimeZone: string;
+  readonly StartTime?: Date;
+  readonly EndTime?: Date;
+  readonly Recurrence?: string;
+  readonly MinSize?: number;
+  readonly MaxSize?: number;
+  readonly DesiredCapacity?: number;
+  readonly TimeZone?: string;
 }
 
-interface ScheduledUpdateGroupActionRequest {
-  readonly ScheduledActionName: string;
-  readonly StartTime: Date;
-  readonly EndTime: Date;
-  readonly Recurrence: string;
-  readonly MinSize: number;
-  readonly MaxSize: number;
-  readonly DesiredCapacity: number;
-  readonly TimeZone: string;
+export interface ServiceLinkedRoleFailure {
+  readonly message?: string;
 }
 
-interface ServiceLinkedRoleFailure {
-  readonly message: string;
-}
-
-interface SetDesiredCapacityType {
+export interface SetDesiredCapacityType {
   readonly AutoScalingGroupName: string;
   readonly DesiredCapacity: number;
-  readonly HonorCooldown: boolean;
+  readonly HonorCooldown?: boolean;
 }
 
-interface SetInstanceHealthQuery {
+export interface SetInstanceHealthQuery {
   readonly InstanceId: string;
   readonly HealthStatus: string;
-  readonly ShouldRespectGracePeriod: boolean;
+  readonly ShouldRespectGracePeriod?: boolean;
 }
 
-interface SetInstanceProtectionAnswer {
+export interface SetInstanceProtectionAnswer {
 }
 
-interface SetInstanceProtectionQuery {
+export interface SetInstanceProtectionQuery {
   readonly InstanceIds: [];
   readonly AutoScalingGroupName: string;
   readonly ProtectedFromScaleIn: boolean;
 }
 
-interface StartInstanceRefreshAnswer {
-  readonly InstanceRefreshId: string;
+export interface StartInstanceRefreshAnswer {
+  readonly InstanceRefreshId?: string;
 }
 
-interface StartInstanceRefreshType {
+export interface StartInstanceRefreshType {
   readonly AutoScalingGroupName: string;
-  readonly Strategy: string;
-  readonly DesiredConfiguration: DesiredConfiguration;
-  readonly Preferences: RefreshPreferences;
+  readonly Strategy?: string;
+  readonly DesiredConfiguration?: DesiredConfiguration;
+  readonly Preferences?: RefreshPreferences;
 }
 
-interface StepAdjustment {
-  readonly MetricIntervalLowerBound: unknown;
-  readonly MetricIntervalUpperBound: unknown;
+export interface StepAdjustment {
+  readonly MetricIntervalLowerBound?: unknown;
+  readonly MetricIntervalUpperBound?: unknown;
   readonly ScalingAdjustment: number;
 }
 
-interface SuspendedProcess {
-  readonly ProcessName: string;
-  readonly SuspensionReason: string;
+export interface SuspendedProcess {
+  readonly ProcessName?: string;
+  readonly SuspensionReason?: string;
 }
 
-interface Tag {
-  readonly ResourceId: string;
-  readonly ResourceType: string;
+export interface Tag {
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
   readonly Key: string;
-  readonly Value: string;
-  readonly PropagateAtLaunch: boolean;
+  readonly Value?: string;
+  readonly PropagateAtLaunch?: boolean;
 }
 
-interface TagDescription {
-  readonly ResourceId: string;
-  readonly ResourceType: string;
-  readonly Key: string;
-  readonly Value: string;
-  readonly PropagateAtLaunch: boolean;
+export interface TagDescription {
+  readonly ResourceId?: string;
+  readonly ResourceType?: string;
+  readonly Key?: string;
+  readonly Value?: string;
+  readonly PropagateAtLaunch?: boolean;
 }
 
-interface TagsType {
-  readonly Tags: [];
-  readonly NextToken: string;
+export interface TagsType {
+  readonly Tags?: [];
+  readonly NextToken?: string;
 }
 
-interface TargetTrackingConfiguration {
-  readonly PredefinedMetricSpecification: PredefinedMetricSpecification;
-  readonly CustomizedMetricSpecification: CustomizedMetricSpecification;
+export interface TargetTrackingConfiguration {
+  readonly PredefinedMetricSpecification?: PredefinedMetricSpecification;
+  readonly CustomizedMetricSpecification?: CustomizedMetricSpecification;
   readonly TargetValue: unknown;
-  readonly DisableScaleIn: boolean;
+  readonly DisableScaleIn?: boolean;
 }
 
-interface TerminateInstanceInAutoScalingGroupType {
+export interface TerminateInstanceInAutoScalingGroupType {
   readonly InstanceId: string;
   readonly ShouldDecrementDesiredCapacity: boolean;
 }
 
-interface TotalLocalStorageGBRequest {
-  readonly Min: unknown;
-  readonly Max: unknown;
+export interface TotalLocalStorageGBRequest {
+  readonly Min?: unknown;
+  readonly Max?: unknown;
 }
 
-interface UpdateAutoScalingGroupType {
+export interface UpdateAutoScalingGroupType {
   readonly AutoScalingGroupName: string;
-  readonly LaunchConfigurationName: string;
-  readonly LaunchTemplate: LaunchTemplateSpecification;
-  readonly MixedInstancesPolicy: MixedInstancesPolicy;
-  readonly MinSize: number;
-  readonly MaxSize: number;
-  readonly DesiredCapacity: number;
-  readonly DefaultCooldown: number;
-  readonly AvailabilityZones: [];
-  readonly HealthCheckType: string;
-  readonly HealthCheckGracePeriod: number;
-  readonly PlacementGroup: string;
-  readonly VPCZoneIdentifier: string;
-  readonly TerminationPolicies: [];
-  readonly NewInstancesProtectedFromScaleIn: boolean;
-  readonly ServiceLinkedRoleARN: string;
-  readonly MaxInstanceLifetime: number;
-  readonly CapacityRebalance: boolean;
-  readonly Context: string;
-  readonly DesiredCapacityType: string;
+  readonly LaunchConfigurationName?: string;
+  readonly LaunchTemplate?: LaunchTemplateSpecification;
+  readonly MixedInstancesPolicy?: MixedInstancesPolicy;
+  readonly MinSize?: number;
+  readonly MaxSize?: number;
+  readonly DesiredCapacity?: number;
+  readonly DefaultCooldown?: number;
+  readonly AvailabilityZones?: [];
+  readonly HealthCheckType?: string;
+  readonly HealthCheckGracePeriod?: number;
+  readonly PlacementGroup?: string;
+  readonly VPCZoneIdentifier?: string;
+  readonly TerminationPolicies?: [];
+  readonly NewInstancesProtectedFromScaleIn?: boolean;
+  readonly ServiceLinkedRoleARN?: string;
+  readonly MaxInstanceLifetime?: number;
+  readonly CapacityRebalance?: boolean;
+  readonly Context?: string;
+  readonly DesiredCapacityType?: string;
 }
 
-interface VCpuCountRequest {
+export interface VCpuCountRequest {
   readonly Min: number;
-  readonly Max: number;
+  readonly Max?: number;
 }
 
-interface WarmPoolConfiguration {
-  readonly MaxGroupPreparedCapacity: number;
-  readonly MinSize: number;
-  readonly PoolState: string;
-  readonly Status: string;
+export interface WarmPoolConfiguration {
+  readonly MaxGroupPreparedCapacity?: number;
+  readonly MinSize?: number;
+  readonly PoolState?: string;
+  readonly Status?: string;
 }
+
 

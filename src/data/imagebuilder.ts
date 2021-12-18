@@ -5,6 +5,7 @@ export interface CancelImageCreation {
   readonly imageBuildVersionArn: string;
   readonly clientToken: string;
 }
+
 export interface CreateComponent {
   readonly name: string;
   readonly semanticVersion: string;
@@ -18,6 +19,7 @@ export interface CreateComponent {
   readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
+
 export interface CreateContainerRecipe {
   readonly containerType: string;
   readonly name: string;
@@ -36,6 +38,7 @@ export interface CreateContainerRecipe {
   readonly kmsKeyId?: string;
   readonly clientToken: string;
 }
+
 export interface CreateDistributionConfiguration {
   readonly name: string;
   readonly description?: string;
@@ -43,6 +46,7 @@ export interface CreateDistributionConfiguration {
   readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
+
 export interface CreateImage {
   readonly imageRecipeArn?: string;
   readonly containerRecipeArn?: string;
@@ -53,6 +57,7 @@ export interface CreateImage {
   readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
+
 export interface CreateImagePipeline {
   readonly name: string;
   readonly description?: string;
@@ -67,6 +72,7 @@ export interface CreateImagePipeline {
   readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
+
 export interface CreateImageRecipe {
   readonly name: string;
   readonly description?: string;
@@ -79,6 +85,7 @@ export interface CreateImageRecipe {
   readonly additionalInstanceConfiguration?: AdditionalInstanceConfiguration;
   readonly clientToken: string;
 }
+
 export interface CreateInfrastructureConfiguration {
   readonly name: string;
   readonly description?: string;
@@ -95,60 +102,79 @@ export interface CreateInfrastructureConfiguration {
   readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
+
 export interface DeleteComponent {
   readonly componentBuildVersionArn: string;
 }
+
 export interface DeleteContainerRecipe {
   readonly containerRecipeArn: string;
 }
+
 export interface DeleteDistributionConfiguration {
   readonly distributionConfigurationArn: string;
 }
+
 export interface DeleteImage {
   readonly imageBuildVersionArn: string;
 }
+
 export interface DeleteImagePipeline {
   readonly imagePipelineArn: string;
 }
+
 export interface DeleteImageRecipe {
   readonly imageRecipeArn: string;
 }
+
 export interface DeleteInfrastructureConfiguration {
   readonly infrastructureConfigurationArn: string;
 }
+
 export interface GetComponent {
   readonly componentBuildVersionArn: string;
 }
+
 export interface GetComponentPolicy {
   readonly componentArn: string;
 }
+
 export interface GetContainerRecipe {
   readonly containerRecipeArn: string;
 }
+
 export interface GetContainerRecipePolicy {
   readonly containerRecipeArn: string;
 }
+
 export interface GetDistributionConfiguration {
   readonly distributionConfigurationArn: string;
 }
+
 export interface GetImage {
   readonly imageBuildVersionArn: string;
 }
+
 export interface GetImagePipeline {
   readonly imagePipelineArn: string;
 }
+
 export interface GetImagePolicy {
   readonly imageArn: string;
 }
+
 export interface GetImageRecipe {
   readonly imageRecipeArn: string;
 }
+
 export interface GetImageRecipePolicy {
   readonly imageRecipeArn: string;
 }
+
 export interface GetInfrastructureConfiguration {
   readonly infrastructureConfigurationArn: string;
 }
+
 export interface ImportComponent {
   readonly name: string;
   readonly semanticVersion: string;
@@ -163,11 +189,13 @@ export interface ImportComponent {
   readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
+
 export interface ListComponentBuildVersions {
   readonly componentVersionArn: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListComponents {
   readonly owner?: string;
   readonly filters?: [];
@@ -175,45 +203,53 @@ export interface ListComponents {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListContainerRecipes {
   readonly owner?: string;
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListDistributionConfigurations {
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListImageBuildVersions {
   readonly imageVersionArn: string;
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListImagePackages {
   readonly imageBuildVersionArn: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListImagePipelineImages {
   readonly imagePipelineArn: string;
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListImagePipelines {
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListImageRecipes {
   readonly owner?: string;
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListImages {
   readonly owner?: string;
   readonly filters?: [];
@@ -222,48 +258,59 @@ export interface ListImages {
   readonly nextToken?: string;
   readonly includeDeprecated?: boolean;
 }
+
 export interface ListInfrastructureConfigurations {
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface PutComponentPolicy {
   readonly componentArn: string;
   readonly policy: string;
 }
+
 export interface PutContainerRecipePolicy {
   readonly containerRecipeArn: string;
   readonly policy: string;
 }
+
 export interface PutImagePolicy {
   readonly imageArn: string;
   readonly policy: string;
 }
+
 export interface PutImageRecipePolicy {
   readonly imageRecipeArn: string;
   readonly policy: string;
 }
+
 export interface StartImagePipelineExecution {
   readonly imagePipelineArn: string;
   readonly clientToken: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateDistributionConfiguration {
   readonly distributionConfigurationArn: string;
   readonly description?: string;
   readonly distributions: [];
   readonly clientToken: string;
 }
+
 export interface UpdateImagePipeline {
   readonly imagePipelineArn: string;
   readonly description?: string;
@@ -277,6 +324,7 @@ export interface UpdateImagePipeline {
   readonly status?: string;
   readonly clientToken: string;
 }
+
 export interface UpdateInfrastructureConfiguration {
   readonly infrastructureConfigurationArn: string;
   readonly description?: string;
@@ -293,1053 +341,1052 @@ export interface UpdateInfrastructureConfiguration {
   readonly instanceMetadataOptions?: InstanceMetadataOptions;
 }
 
-
-
-interface AdditionalInstanceConfiguration {
-  readonly systemsManagerAgent: SystemsManagerAgent;
-  readonly userDataOverride: string;
+export interface AdditionalInstanceConfiguration {
+  readonly systemsManagerAgent?: SystemsManagerAgent;
+  readonly userDataOverride?: string;
 }
 
-interface Ami {
-  readonly region: string;
-  readonly image: string;
-  readonly name: string;
-  readonly description: string;
-  readonly state: ImageState;
-  readonly accountId: string;
+export interface Ami {
+  readonly region?: string;
+  readonly image?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly state?: ImageState;
+  readonly accountId?: string;
 }
 
-interface AmiDistributionConfiguration {
-  readonly name: string;
-  readonly description: string;
-  readonly targetAccountIds: [];
-  readonly amiTags: {[key: string]: any};
-  readonly kmsKeyId: string;
-  readonly launchPermission: LaunchPermissionConfiguration;
+export interface AmiDistributionConfiguration {
+  readonly name?: string;
+  readonly description?: string;
+  readonly targetAccountIds?: [];
+  readonly amiTags?: {[key: string]: any};
+  readonly kmsKeyId?: string;
+  readonly launchPermission?: LaunchPermissionConfiguration;
 }
 
-interface CallRateLimitExceededException {
-  readonly message: string;
+export interface CallRateLimitExceededException {
+  readonly message?: string;
 }
 
-interface CancelImageCreationRequest {
+export interface CancelImageCreationRequest {
   readonly imageBuildVersionArn: string;
   readonly clientToken: string;
 }
 
-interface CancelImageCreationResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly imageBuildVersionArn: string;
+export interface CancelImageCreationResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly imageBuildVersionArn?: string;
 }
 
-interface ClientException {
-  readonly message: string;
+export interface ClientException {
+  readonly message?: string;
 }
 
-interface Component {
-  readonly arn: string;
-  readonly name: string;
-  readonly version: string;
-  readonly description: string;
-  readonly changeDescription: string;
-  readonly type: string;
-  readonly platform: string;
-  readonly supportedOsVersions: [];
-  readonly state: ComponentState;
-  readonly parameters: [];
-  readonly owner: string;
-  readonly data: string;
-  readonly kmsKeyId: string;
-  readonly encrypted: boolean;
-  readonly dateCreated: string;
-  readonly tags: {[key: string]: any};
+export interface Component {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly version?: string;
+  readonly description?: string;
+  readonly changeDescription?: string;
+  readonly type?: string;
+  readonly platform?: string;
+  readonly supportedOsVersions?: [];
+  readonly state?: ComponentState;
+  readonly parameters?: [];
+  readonly owner?: string;
+  readonly data?: string;
+  readonly kmsKeyId?: string;
+  readonly encrypted?: boolean;
+  readonly dateCreated?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface ComponentConfiguration {
+export interface ComponentConfiguration {
   readonly componentArn: string;
-  readonly parameters: [];
+  readonly parameters?: [];
 }
 
-interface ComponentParameter {
+export interface ComponentParameter {
   readonly name: string;
   readonly value: [];
 }
 
-interface ComponentParameterDetail {
+export interface ComponentParameterDetail {
   readonly name: string;
   readonly type: string;
-  readonly defaultValue: [];
-  readonly description: string;
+  readonly defaultValue?: [];
+  readonly description?: string;
 }
 
-interface ComponentState {
-  readonly status: string;
-  readonly reason: string;
+export interface ComponentState {
+  readonly status?: string;
+  readonly reason?: string;
 }
 
-interface ComponentSummary {
-  readonly arn: string;
-  readonly name: string;
-  readonly version: string;
-  readonly platform: string;
-  readonly supportedOsVersions: [];
-  readonly state: ComponentState;
-  readonly type: string;
-  readonly owner: string;
-  readonly description: string;
-  readonly changeDescription: string;
-  readonly dateCreated: string;
-  readonly tags: {[key: string]: any};
+export interface ComponentSummary {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly version?: string;
+  readonly platform?: string;
+  readonly supportedOsVersions?: [];
+  readonly state?: ComponentState;
+  readonly type?: string;
+  readonly owner?: string;
+  readonly description?: string;
+  readonly changeDescription?: string;
+  readonly dateCreated?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface ComponentVersion {
-  readonly arn: string;
-  readonly name: string;
-  readonly version: string;
-  readonly description: string;
-  readonly platform: string;
-  readonly supportedOsVersions: [];
-  readonly type: string;
-  readonly owner: string;
-  readonly dateCreated: string;
+export interface ComponentVersion {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly version?: string;
+  readonly description?: string;
+  readonly platform?: string;
+  readonly supportedOsVersions?: [];
+  readonly type?: string;
+  readonly owner?: string;
+  readonly dateCreated?: string;
 }
 
-interface Container {
-  readonly region: string;
-  readonly imageUris: [];
+export interface Container {
+  readonly region?: string;
+  readonly imageUris?: [];
 }
 
-interface ContainerDistributionConfiguration {
-  readonly description: string;
-  readonly containerTags: [];
+export interface ContainerDistributionConfiguration {
+  readonly description?: string;
+  readonly containerTags?: [];
   readonly targetRepository: TargetContainerRepository;
 }
 
-interface ContainerRecipe {
-  readonly arn: string;
-  readonly containerType: string;
-  readonly name: string;
-  readonly description: string;
-  readonly platform: string;
-  readonly owner: string;
-  readonly version: string;
-  readonly components: [];
-  readonly instanceConfiguration: InstanceConfiguration;
-  readonly dockerfileTemplateData: string;
-  readonly kmsKeyId: string;
-  readonly encrypted: boolean;
-  readonly parentImage: string;
-  readonly dateCreated: string;
-  readonly tags: {[key: string]: any};
-  readonly workingDirectory: string;
-  readonly targetRepository: TargetContainerRepository;
+export interface ContainerRecipe {
+  readonly arn?: string;
+  readonly containerType?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly platform?: string;
+  readonly owner?: string;
+  readonly version?: string;
+  readonly components?: [];
+  readonly instanceConfiguration?: InstanceConfiguration;
+  readonly dockerfileTemplateData?: string;
+  readonly kmsKeyId?: string;
+  readonly encrypted?: boolean;
+  readonly parentImage?: string;
+  readonly dateCreated?: string;
+  readonly tags?: {[key: string]: any};
+  readonly workingDirectory?: string;
+  readonly targetRepository?: TargetContainerRepository;
 }
 
-interface ContainerRecipeSummary {
-  readonly arn: string;
-  readonly containerType: string;
-  readonly name: string;
-  readonly platform: string;
-  readonly owner: string;
-  readonly parentImage: string;
-  readonly dateCreated: string;
-  readonly tags: {[key: string]: any};
+export interface ContainerRecipeSummary {
+  readonly arn?: string;
+  readonly containerType?: string;
+  readonly name?: string;
+  readonly platform?: string;
+  readonly owner?: string;
+  readonly parentImage?: string;
+  readonly dateCreated?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateComponentRequest {
+export interface CreateComponentRequest {
   readonly name: string;
   readonly semanticVersion: string;
-  readonly description: string;
-  readonly changeDescription: string;
+  readonly description?: string;
+  readonly changeDescription?: string;
   readonly platform: string;
-  readonly supportedOsVersions: [];
-  readonly data: string;
-  readonly uri: string;
-  readonly kmsKeyId: string;
-  readonly tags: {[key: string]: any};
+  readonly supportedOsVersions?: [];
+  readonly data?: string;
+  readonly uri?: string;
+  readonly kmsKeyId?: string;
+  readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
 
-interface CreateComponentResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly componentBuildVersionArn: string;
+export interface CreateComponentResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly componentBuildVersionArn?: string;
 }
 
-interface CreateContainerRecipeRequest {
+export interface CreateContainerRecipeRequest {
   readonly containerType: string;
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly semanticVersion: string;
   readonly components: [];
-  readonly instanceConfiguration: InstanceConfiguration;
-  readonly dockerfileTemplateData: string;
-  readonly dockerfileTemplateUri: string;
-  readonly platformOverride: string;
-  readonly imageOsVersionOverride: string;
+  readonly instanceConfiguration?: InstanceConfiguration;
+  readonly dockerfileTemplateData?: string;
+  readonly dockerfileTemplateUri?: string;
+  readonly platformOverride?: string;
+  readonly imageOsVersionOverride?: string;
   readonly parentImage: string;
-  readonly tags: {[key: string]: any};
-  readonly workingDirectory: string;
+  readonly tags?: {[key: string]: any};
+  readonly workingDirectory?: string;
   readonly targetRepository: TargetContainerRepository;
-  readonly kmsKeyId: string;
+  readonly kmsKeyId?: string;
   readonly clientToken: string;
 }
 
-interface CreateContainerRecipeResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly containerRecipeArn: string;
+export interface CreateContainerRecipeResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly containerRecipeArn?: string;
 }
 
-interface CreateDistributionConfigurationRequest {
+export interface CreateDistributionConfigurationRequest {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly distributions: [];
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
 
-interface CreateDistributionConfigurationResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly distributionConfigurationArn: string;
+export interface CreateDistributionConfigurationResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly distributionConfigurationArn?: string;
 }
 
-interface CreateImagePipelineRequest {
+export interface CreateImagePipelineRequest {
   readonly name: string;
-  readonly description: string;
-  readonly imageRecipeArn: string;
-  readonly containerRecipeArn: string;
+  readonly description?: string;
+  readonly imageRecipeArn?: string;
+  readonly containerRecipeArn?: string;
   readonly infrastructureConfigurationArn: string;
-  readonly distributionConfigurationArn: string;
-  readonly imageTestsConfiguration: ImageTestsConfiguration;
-  readonly enhancedImageMetadataEnabled: boolean;
-  readonly schedule: Schedule;
-  readonly status: string;
-  readonly tags: {[key: string]: any};
+  readonly distributionConfigurationArn?: string;
+  readonly imageTestsConfiguration?: ImageTestsConfiguration;
+  readonly enhancedImageMetadataEnabled?: boolean;
+  readonly schedule?: Schedule;
+  readonly status?: string;
+  readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
 
-interface CreateImagePipelineResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly imagePipelineArn: string;
+export interface CreateImagePipelineResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly imagePipelineArn?: string;
 }
 
-interface CreateImageRecipeRequest {
+export interface CreateImageRecipeRequest {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly semanticVersion: string;
   readonly components: [];
   readonly parentImage: string;
-  readonly blockDeviceMappings: [];
-  readonly tags: {[key: string]: any};
-  readonly workingDirectory: string;
-  readonly additionalInstanceConfiguration: AdditionalInstanceConfiguration;
+  readonly blockDeviceMappings?: [];
+  readonly tags?: {[key: string]: any};
+  readonly workingDirectory?: string;
+  readonly additionalInstanceConfiguration?: AdditionalInstanceConfiguration;
   readonly clientToken: string;
 }
 
-interface CreateImageRecipeResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly imageRecipeArn: string;
+export interface CreateImageRecipeResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly imageRecipeArn?: string;
 }
 
-interface CreateImageRequest {
-  readonly imageRecipeArn: string;
-  readonly containerRecipeArn: string;
-  readonly distributionConfigurationArn: string;
+export interface CreateImageRequest {
+  readonly imageRecipeArn?: string;
+  readonly containerRecipeArn?: string;
+  readonly distributionConfigurationArn?: string;
   readonly infrastructureConfigurationArn: string;
-  readonly imageTestsConfiguration: ImageTestsConfiguration;
-  readonly enhancedImageMetadataEnabled: boolean;
-  readonly tags: {[key: string]: any};
+  readonly imageTestsConfiguration?: ImageTestsConfiguration;
+  readonly enhancedImageMetadataEnabled?: boolean;
+  readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
 
-interface CreateImageResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly imageBuildVersionArn: string;
+export interface CreateImageResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly imageBuildVersionArn?: string;
 }
 
-interface CreateInfrastructureConfigurationRequest {
+export interface CreateInfrastructureConfigurationRequest {
   readonly name: string;
-  readonly description: string;
-  readonly instanceTypes: [];
+  readonly description?: string;
+  readonly instanceTypes?: [];
   readonly instanceProfileName: string;
-  readonly securityGroupIds: [];
-  readonly subnetId: string;
-  readonly logging: Logging;
-  readonly keyPair: string;
-  readonly terminateInstanceOnFailure: boolean;
-  readonly snsTopicArn: string;
-  readonly resourceTags: {[key: string]: any};
-  readonly instanceMetadataOptions: InstanceMetadataOptions;
-  readonly tags: {[key: string]: any};
+  readonly securityGroupIds?: [];
+  readonly subnetId?: string;
+  readonly logging?: Logging;
+  readonly keyPair?: string;
+  readonly terminateInstanceOnFailure?: boolean;
+  readonly snsTopicArn?: string;
+  readonly resourceTags?: {[key: string]: any};
+  readonly instanceMetadataOptions?: InstanceMetadataOptions;
+  readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
 
-interface CreateInfrastructureConfigurationResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly infrastructureConfigurationArn: string;
+export interface CreateInfrastructureConfigurationResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly infrastructureConfigurationArn?: string;
 }
 
-interface DeleteComponentRequest {
+export interface DeleteComponentRequest {
   readonly componentBuildVersionArn: string;
 }
 
-interface DeleteComponentResponse {
-  readonly requestId: string;
-  readonly componentBuildVersionArn: string;
+export interface DeleteComponentResponse {
+  readonly requestId?: string;
+  readonly componentBuildVersionArn?: string;
 }
 
-interface DeleteContainerRecipeRequest {
+export interface DeleteContainerRecipeRequest {
   readonly containerRecipeArn: string;
 }
 
-interface DeleteContainerRecipeResponse {
-  readonly requestId: string;
-  readonly containerRecipeArn: string;
+export interface DeleteContainerRecipeResponse {
+  readonly requestId?: string;
+  readonly containerRecipeArn?: string;
 }
 
-interface DeleteDistributionConfigurationRequest {
+export interface DeleteDistributionConfigurationRequest {
   readonly distributionConfigurationArn: string;
 }
 
-interface DeleteDistributionConfigurationResponse {
-  readonly requestId: string;
-  readonly distributionConfigurationArn: string;
+export interface DeleteDistributionConfigurationResponse {
+  readonly requestId?: string;
+  readonly distributionConfigurationArn?: string;
 }
 
-interface DeleteImagePipelineRequest {
+export interface DeleteImagePipelineRequest {
   readonly imagePipelineArn: string;
 }
 
-interface DeleteImagePipelineResponse {
-  readonly requestId: string;
-  readonly imagePipelineArn: string;
+export interface DeleteImagePipelineResponse {
+  readonly requestId?: string;
+  readonly imagePipelineArn?: string;
 }
 
-interface DeleteImageRecipeRequest {
+export interface DeleteImageRecipeRequest {
   readonly imageRecipeArn: string;
 }
 
-interface DeleteImageRecipeResponse {
-  readonly requestId: string;
-  readonly imageRecipeArn: string;
+export interface DeleteImageRecipeResponse {
+  readonly requestId?: string;
+  readonly imageRecipeArn?: string;
 }
 
-interface DeleteImageRequest {
+export interface DeleteImageRequest {
   readonly imageBuildVersionArn: string;
 }
 
-interface DeleteImageResponse {
-  readonly requestId: string;
-  readonly imageBuildVersionArn: string;
+export interface DeleteImageResponse {
+  readonly requestId?: string;
+  readonly imageBuildVersionArn?: string;
 }
 
-interface DeleteInfrastructureConfigurationRequest {
+export interface DeleteInfrastructureConfigurationRequest {
   readonly infrastructureConfigurationArn: string;
 }
 
-interface DeleteInfrastructureConfigurationResponse {
-  readonly requestId: string;
-  readonly infrastructureConfigurationArn: string;
+export interface DeleteInfrastructureConfigurationResponse {
+  readonly requestId?: string;
+  readonly infrastructureConfigurationArn?: string;
 }
 
-interface Distribution {
+export interface Distribution {
   readonly region: string;
-  readonly amiDistributionConfiguration: AmiDistributionConfiguration;
-  readonly containerDistributionConfiguration: ContainerDistributionConfiguration;
-  readonly licenseConfigurationArns: [];
-  readonly launchTemplateConfigurations: [];
+  readonly amiDistributionConfiguration?: AmiDistributionConfiguration;
+  readonly containerDistributionConfiguration?: ContainerDistributionConfiguration;
+  readonly licenseConfigurationArns?: [];
+  readonly launchTemplateConfigurations?: [];
 }
 
-interface DistributionConfiguration {
-  readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly distributions: [];
+export interface DistributionConfiguration {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly distributions?: [];
   readonly timeoutMinutes: number;
-  readonly dateCreated: string;
-  readonly dateUpdated: string;
-  readonly tags: {[key: string]: any};
+  readonly dateCreated?: string;
+  readonly dateUpdated?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface DistributionConfigurationSummary {
-  readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly dateCreated: string;
-  readonly dateUpdated: string;
-  readonly tags: {[key: string]: any};
-  readonly regions: [];
+export interface DistributionConfigurationSummary {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly dateCreated?: string;
+  readonly dateUpdated?: string;
+  readonly tags?: {[key: string]: any};
+  readonly regions?: [];
 }
 
-interface EbsInstanceBlockDeviceSpecification {
-  readonly encrypted: boolean;
-  readonly deleteOnTermination: boolean;
-  readonly iops: number;
-  readonly kmsKeyId: string;
-  readonly snapshotId: string;
-  readonly volumeSize: number;
-  readonly volumeType: string;
-  readonly throughput: number;
+export interface EbsInstanceBlockDeviceSpecification {
+  readonly encrypted?: boolean;
+  readonly deleteOnTermination?: boolean;
+  readonly iops?: number;
+  readonly kmsKeyId?: string;
+  readonly snapshotId?: string;
+  readonly volumeSize?: number;
+  readonly volumeType?: string;
+  readonly throughput?: number;
 }
 
-interface Filter {
-  readonly name: string;
-  readonly values: [];
+export interface Filter {
+  readonly name?: string;
+  readonly values?: [];
 }
 
-interface ForbiddenException {
-  readonly message: string;
+export interface ForbiddenException {
+  readonly message?: string;
 }
 
-interface GetComponentPolicyRequest {
+export interface GetComponentPolicyRequest {
   readonly componentArn: string;
 }
 
-interface GetComponentPolicyResponse {
-  readonly requestId: string;
-  readonly policy: string;
+export interface GetComponentPolicyResponse {
+  readonly requestId?: string;
+  readonly policy?: string;
 }
 
-interface GetComponentRequest {
+export interface GetComponentRequest {
   readonly componentBuildVersionArn: string;
 }
 
-interface GetComponentResponse {
-  readonly requestId: string;
-  readonly component: Component;
+export interface GetComponentResponse {
+  readonly requestId?: string;
+  readonly component?: Component;
 }
 
-interface GetContainerRecipePolicyRequest {
+export interface GetContainerRecipePolicyRequest {
   readonly containerRecipeArn: string;
 }
 
-interface GetContainerRecipePolicyResponse {
-  readonly requestId: string;
-  readonly policy: string;
+export interface GetContainerRecipePolicyResponse {
+  readonly requestId?: string;
+  readonly policy?: string;
 }
 
-interface GetContainerRecipeRequest {
+export interface GetContainerRecipeRequest {
   readonly containerRecipeArn: string;
 }
 
-interface GetContainerRecipeResponse {
-  readonly requestId: string;
-  readonly containerRecipe: ContainerRecipe;
+export interface GetContainerRecipeResponse {
+  readonly requestId?: string;
+  readonly containerRecipe?: ContainerRecipe;
 }
 
-interface GetDistributionConfigurationRequest {
+export interface GetDistributionConfigurationRequest {
   readonly distributionConfigurationArn: string;
 }
 
-interface GetDistributionConfigurationResponse {
-  readonly requestId: string;
-  readonly distributionConfiguration: DistributionConfiguration;
+export interface GetDistributionConfigurationResponse {
+  readonly requestId?: string;
+  readonly distributionConfiguration?: DistributionConfiguration;
 }
 
-interface GetImagePipelineRequest {
+export interface GetImagePipelineRequest {
   readonly imagePipelineArn: string;
 }
 
-interface GetImagePipelineResponse {
-  readonly requestId: string;
-  readonly imagePipeline: ImagePipeline;
+export interface GetImagePipelineResponse {
+  readonly requestId?: string;
+  readonly imagePipeline?: ImagePipeline;
 }
 
-interface GetImagePolicyRequest {
+export interface GetImagePolicyRequest {
   readonly imageArn: string;
 }
 
-interface GetImagePolicyResponse {
-  readonly requestId: string;
-  readonly policy: string;
+export interface GetImagePolicyResponse {
+  readonly requestId?: string;
+  readonly policy?: string;
 }
 
-interface GetImageRecipePolicyRequest {
+export interface GetImageRecipePolicyRequest {
   readonly imageRecipeArn: string;
 }
 
-interface GetImageRecipePolicyResponse {
-  readonly requestId: string;
-  readonly policy: string;
+export interface GetImageRecipePolicyResponse {
+  readonly requestId?: string;
+  readonly policy?: string;
 }
 
-interface GetImageRecipeRequest {
+export interface GetImageRecipeRequest {
   readonly imageRecipeArn: string;
 }
 
-interface GetImageRecipeResponse {
-  readonly requestId: string;
-  readonly imageRecipe: ImageRecipe;
+export interface GetImageRecipeResponse {
+  readonly requestId?: string;
+  readonly imageRecipe?: ImageRecipe;
 }
 
-interface GetImageRequest {
+export interface GetImageRequest {
   readonly imageBuildVersionArn: string;
 }
 
-interface GetImageResponse {
-  readonly requestId: string;
-  readonly image: Image;
+export interface GetImageResponse {
+  readonly requestId?: string;
+  readonly image?: Image;
 }
 
-interface GetInfrastructureConfigurationRequest {
+export interface GetInfrastructureConfigurationRequest {
   readonly infrastructureConfigurationArn: string;
 }
 
-interface GetInfrastructureConfigurationResponse {
-  readonly requestId: string;
-  readonly infrastructureConfiguration: InfrastructureConfiguration;
+export interface GetInfrastructureConfigurationResponse {
+  readonly requestId?: string;
+  readonly infrastructureConfiguration?: InfrastructureConfiguration;
 }
 
-interface IdempotentParameterMismatchException {
-  readonly message: string;
+export interface IdempotentParameterMismatchException {
+  readonly message?: string;
 }
 
-interface Image {
-  readonly arn: string;
-  readonly type: string;
-  readonly name: string;
-  readonly version: string;
-  readonly platform: string;
-  readonly enhancedImageMetadataEnabled: boolean;
-  readonly osVersion: string;
-  readonly state: ImageState;
-  readonly imageRecipe: ImageRecipe;
-  readonly containerRecipe: ContainerRecipe;
-  readonly sourcePipelineName: string;
-  readonly sourcePipelineArn: string;
-  readonly infrastructureConfiguration: InfrastructureConfiguration;
-  readonly distributionConfiguration: DistributionConfiguration;
-  readonly imageTestsConfiguration: ImageTestsConfiguration;
-  readonly dateCreated: string;
-  readonly outputResources: OutputResources;
-  readonly tags: {[key: string]: any};
+export interface Image {
+  readonly arn?: string;
+  readonly type?: string;
+  readonly name?: string;
+  readonly version?: string;
+  readonly platform?: string;
+  readonly enhancedImageMetadataEnabled?: boolean;
+  readonly osVersion?: string;
+  readonly state?: ImageState;
+  readonly imageRecipe?: ImageRecipe;
+  readonly containerRecipe?: ContainerRecipe;
+  readonly sourcePipelineName?: string;
+  readonly sourcePipelineArn?: string;
+  readonly infrastructureConfiguration?: InfrastructureConfiguration;
+  readonly distributionConfiguration?: DistributionConfiguration;
+  readonly imageTestsConfiguration?: ImageTestsConfiguration;
+  readonly dateCreated?: string;
+  readonly outputResources?: OutputResources;
+  readonly tags?: {[key: string]: any};
 }
 
-interface ImagePackage {
-  readonly packageName: string;
-  readonly packageVersion: string;
+export interface ImagePackage {
+  readonly packageName?: string;
+  readonly packageVersion?: string;
 }
 
-interface ImagePipeline {
-  readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly platform: string;
-  readonly enhancedImageMetadataEnabled: boolean;
-  readonly imageRecipeArn: string;
-  readonly containerRecipeArn: string;
-  readonly infrastructureConfigurationArn: string;
-  readonly distributionConfigurationArn: string;
-  readonly imageTestsConfiguration: ImageTestsConfiguration;
-  readonly schedule: Schedule;
-  readonly status: string;
-  readonly dateCreated: string;
-  readonly dateUpdated: string;
-  readonly dateLastRun: string;
-  readonly dateNextRun: string;
-  readonly tags: {[key: string]: any};
+export interface ImagePipeline {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly platform?: string;
+  readonly enhancedImageMetadataEnabled?: boolean;
+  readonly imageRecipeArn?: string;
+  readonly containerRecipeArn?: string;
+  readonly infrastructureConfigurationArn?: string;
+  readonly distributionConfigurationArn?: string;
+  readonly imageTestsConfiguration?: ImageTestsConfiguration;
+  readonly schedule?: Schedule;
+  readonly status?: string;
+  readonly dateCreated?: string;
+  readonly dateUpdated?: string;
+  readonly dateLastRun?: string;
+  readonly dateNextRun?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface ImageRecipe {
-  readonly arn: string;
-  readonly type: string;
-  readonly name: string;
-  readonly description: string;
-  readonly platform: string;
-  readonly owner: string;
-  readonly version: string;
-  readonly components: [];
-  readonly parentImage: string;
-  readonly blockDeviceMappings: [];
-  readonly dateCreated: string;
-  readonly tags: {[key: string]: any};
-  readonly workingDirectory: string;
-  readonly additionalInstanceConfiguration: AdditionalInstanceConfiguration;
+export interface ImageRecipe {
+  readonly arn?: string;
+  readonly type?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly platform?: string;
+  readonly owner?: string;
+  readonly version?: string;
+  readonly components?: [];
+  readonly parentImage?: string;
+  readonly blockDeviceMappings?: [];
+  readonly dateCreated?: string;
+  readonly tags?: {[key: string]: any};
+  readonly workingDirectory?: string;
+  readonly additionalInstanceConfiguration?: AdditionalInstanceConfiguration;
 }
 
-interface ImageRecipeSummary {
-  readonly arn: string;
-  readonly name: string;
-  readonly platform: string;
-  readonly owner: string;
-  readonly parentImage: string;
-  readonly dateCreated: string;
-  readonly tags: {[key: string]: any};
+export interface ImageRecipeSummary {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly platform?: string;
+  readonly owner?: string;
+  readonly parentImage?: string;
+  readonly dateCreated?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface ImageState {
-  readonly status: string;
-  readonly reason: string;
+export interface ImageState {
+  readonly status?: string;
+  readonly reason?: string;
 }
 
-interface ImageSummary {
-  readonly arn: string;
-  readonly name: string;
-  readonly type: string;
-  readonly version: string;
-  readonly platform: string;
-  readonly osVersion: string;
-  readonly state: ImageState;
-  readonly owner: string;
-  readonly dateCreated: string;
-  readonly outputResources: OutputResources;
-  readonly tags: {[key: string]: any};
+export interface ImageSummary {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly type?: string;
+  readonly version?: string;
+  readonly platform?: string;
+  readonly osVersion?: string;
+  readonly state?: ImageState;
+  readonly owner?: string;
+  readonly dateCreated?: string;
+  readonly outputResources?: OutputResources;
+  readonly tags?: {[key: string]: any};
 }
 
-interface ImageTestsConfiguration {
-  readonly imageTestsEnabled: boolean;
-  readonly timeoutMinutes: number;
+export interface ImageTestsConfiguration {
+  readonly imageTestsEnabled?: boolean;
+  readonly timeoutMinutes?: number;
 }
 
-interface ImageVersion {
-  readonly arn: string;
-  readonly name: string;
-  readonly type: string;
-  readonly version: string;
-  readonly platform: string;
-  readonly osVersion: string;
-  readonly owner: string;
-  readonly dateCreated: string;
+export interface ImageVersion {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly type?: string;
+  readonly version?: string;
+  readonly platform?: string;
+  readonly osVersion?: string;
+  readonly owner?: string;
+  readonly dateCreated?: string;
 }
 
-interface ImportComponentRequest {
+export interface ImportComponentRequest {
   readonly name: string;
   readonly semanticVersion: string;
-  readonly description: string;
-  readonly changeDescription: string;
+  readonly description?: string;
+  readonly changeDescription?: string;
   readonly type: string;
   readonly format: string;
   readonly platform: string;
-  readonly data: string;
-  readonly uri: string;
-  readonly kmsKeyId: string;
-  readonly tags: {[key: string]: any};
+  readonly data?: string;
+  readonly uri?: string;
+  readonly kmsKeyId?: string;
+  readonly tags?: {[key: string]: any};
   readonly clientToken: string;
 }
 
-interface ImportComponentResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly componentBuildVersionArn: string;
+export interface ImportComponentResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly componentBuildVersionArn?: string;
 }
 
-interface InfrastructureConfiguration {
-  readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly instanceTypes: [];
-  readonly instanceProfileName: string;
-  readonly securityGroupIds: [];
-  readonly subnetId: string;
-  readonly logging: Logging;
-  readonly keyPair: string;
-  readonly terminateInstanceOnFailure: boolean;
-  readonly snsTopicArn: string;
-  readonly dateCreated: string;
-  readonly dateUpdated: string;
-  readonly resourceTags: {[key: string]: any};
-  readonly instanceMetadataOptions: InstanceMetadataOptions;
-  readonly tags: {[key: string]: any};
+export interface InfrastructureConfiguration {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly instanceTypes?: [];
+  readonly instanceProfileName?: string;
+  readonly securityGroupIds?: [];
+  readonly subnetId?: string;
+  readonly logging?: Logging;
+  readonly keyPair?: string;
+  readonly terminateInstanceOnFailure?: boolean;
+  readonly snsTopicArn?: string;
+  readonly dateCreated?: string;
+  readonly dateUpdated?: string;
+  readonly resourceTags?: {[key: string]: any};
+  readonly instanceMetadataOptions?: InstanceMetadataOptions;
+  readonly tags?: {[key: string]: any};
 }
 
-interface InfrastructureConfigurationSummary {
-  readonly arn: string;
-  readonly name: string;
-  readonly description: string;
-  readonly dateCreated: string;
-  readonly dateUpdated: string;
-  readonly resourceTags: {[key: string]: any};
-  readonly tags: {[key: string]: any};
-  readonly instanceTypes: [];
-  readonly instanceProfileName: string;
+export interface InfrastructureConfigurationSummary {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly description?: string;
+  readonly dateCreated?: string;
+  readonly dateUpdated?: string;
+  readonly resourceTags?: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
+  readonly instanceTypes?: [];
+  readonly instanceProfileName?: string;
 }
 
-interface InstanceBlockDeviceMapping {
-  readonly deviceName: string;
-  readonly ebs: EbsInstanceBlockDeviceSpecification;
-  readonly virtualName: string;
-  readonly noDevice: string;
+export interface InstanceBlockDeviceMapping {
+  readonly deviceName?: string;
+  readonly ebs?: EbsInstanceBlockDeviceSpecification;
+  readonly virtualName?: string;
+  readonly noDevice?: string;
 }
 
-interface InstanceConfiguration {
-  readonly image: string;
-  readonly blockDeviceMappings: [];
+export interface InstanceConfiguration {
+  readonly image?: string;
+  readonly blockDeviceMappings?: [];
 }
 
-interface InstanceMetadataOptions {
-  readonly httpTokens: string;
-  readonly httpPutResponseHopLimit: number;
+export interface InstanceMetadataOptions {
+  readonly httpTokens?: string;
+  readonly httpPutResponseHopLimit?: number;
 }
 
-interface InvalidPaginationTokenException {
-  readonly message: string;
+export interface InvalidPaginationTokenException {
+  readonly message?: string;
 }
 
-interface InvalidParameterCombinationException {
-  readonly message: string;
+export interface InvalidParameterCombinationException {
+  readonly message?: string;
 }
 
-interface InvalidParameterException {
-  readonly message: string;
+export interface InvalidParameterException {
+  readonly message?: string;
 }
 
-interface InvalidParameterValueException {
-  readonly message: string;
+export interface InvalidParameterValueException {
+  readonly message?: string;
 }
 
-interface InvalidRequestException {
-  readonly message: string;
+export interface InvalidRequestException {
+  readonly message?: string;
 }
 
-interface InvalidVersionNumberException {
-  readonly message: string;
+export interface InvalidVersionNumberException {
+  readonly message?: string;
 }
 
-interface LaunchPermissionConfiguration {
-  readonly userIds: [];
-  readonly userGroups: [];
-  readonly organizationArns: [];
-  readonly organizationalUnitArns: [];
+export interface LaunchPermissionConfiguration {
+  readonly userIds?: [];
+  readonly userGroups?: [];
+  readonly organizationArns?: [];
+  readonly organizationalUnitArns?: [];
 }
 
-interface LaunchTemplateConfiguration {
+export interface LaunchTemplateConfiguration {
   readonly launchTemplateId: string;
-  readonly accountId: string;
-  readonly setDefaultVersion: boolean;
+  readonly accountId?: string;
+  readonly setDefaultVersion?: boolean;
 }
 
-interface ListComponentBuildVersionsRequest {
+export interface ListComponentBuildVersionsRequest {
   readonly componentVersionArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListComponentBuildVersionsResponse {
-  readonly requestId: string;
-  readonly componentSummaryList: [];
-  readonly nextToken: string;
+export interface ListComponentBuildVersionsResponse {
+  readonly requestId?: string;
+  readonly componentSummaryList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListComponentsRequest {
-  readonly owner: string;
-  readonly filters: [];
-  readonly byName: boolean;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListComponentsRequest {
+  readonly owner?: string;
+  readonly filters?: [];
+  readonly byName?: boolean;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListComponentsResponse {
-  readonly requestId: string;
-  readonly componentVersionList: [];
-  readonly nextToken: string;
+export interface ListComponentsResponse {
+  readonly requestId?: string;
+  readonly componentVersionList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListContainerRecipesRequest {
-  readonly owner: string;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListContainerRecipesRequest {
+  readonly owner?: string;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListContainerRecipesResponse {
-  readonly requestId: string;
-  readonly containerRecipeSummaryList: [];
-  readonly nextToken: string;
+export interface ListContainerRecipesResponse {
+  readonly requestId?: string;
+  readonly containerRecipeSummaryList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDistributionConfigurationsRequest {
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListDistributionConfigurationsRequest {
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListDistributionConfigurationsResponse {
-  readonly requestId: string;
-  readonly distributionConfigurationSummaryList: [];
-  readonly nextToken: string;
+export interface ListDistributionConfigurationsResponse {
+  readonly requestId?: string;
+  readonly distributionConfigurationSummaryList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListImageBuildVersionsRequest {
+export interface ListImageBuildVersionsRequest {
   readonly imageVersionArn: string;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListImageBuildVersionsResponse {
-  readonly requestId: string;
-  readonly imageSummaryList: [];
-  readonly nextToken: string;
+export interface ListImageBuildVersionsResponse {
+  readonly requestId?: string;
+  readonly imageSummaryList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListImagePackagesRequest {
+export interface ListImagePackagesRequest {
   readonly imageBuildVersionArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListImagePackagesResponse {
-  readonly requestId: string;
-  readonly imagePackageList: [];
-  readonly nextToken: string;
+export interface ListImagePackagesResponse {
+  readonly requestId?: string;
+  readonly imagePackageList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListImagePipelineImagesRequest {
+export interface ListImagePipelineImagesRequest {
   readonly imagePipelineArn: string;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListImagePipelineImagesResponse {
-  readonly requestId: string;
-  readonly imageSummaryList: [];
-  readonly nextToken: string;
+export interface ListImagePipelineImagesResponse {
+  readonly requestId?: string;
+  readonly imageSummaryList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListImagePipelinesRequest {
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListImagePipelinesRequest {
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListImagePipelinesResponse {
-  readonly requestId: string;
-  readonly imagePipelineList: [];
-  readonly nextToken: string;
+export interface ListImagePipelinesResponse {
+  readonly requestId?: string;
+  readonly imagePipelineList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListImageRecipesRequest {
-  readonly owner: string;
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListImageRecipesRequest {
+  readonly owner?: string;
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListImageRecipesResponse {
-  readonly requestId: string;
-  readonly imageRecipeSummaryList: [];
-  readonly nextToken: string;
+export interface ListImageRecipesResponse {
+  readonly requestId?: string;
+  readonly imageRecipeSummaryList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListImagesRequest {
-  readonly owner: string;
-  readonly filters: [];
-  readonly byName: boolean;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly includeDeprecated: boolean;
+export interface ListImagesRequest {
+  readonly owner?: string;
+  readonly filters?: [];
+  readonly byName?: boolean;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly includeDeprecated?: boolean;
 }
 
-interface ListImagesResponse {
-  readonly requestId: string;
-  readonly imageVersionList: [];
-  readonly nextToken: string;
+export interface ListImagesResponse {
+  readonly requestId?: string;
+  readonly imageVersionList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListInfrastructureConfigurationsRequest {
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListInfrastructureConfigurationsRequest {
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListInfrastructureConfigurationsResponse {
-  readonly requestId: string;
-  readonly infrastructureConfigurationSummaryList: [];
-  readonly nextToken: string;
+export interface ListInfrastructureConfigurationsResponse {
+  readonly requestId?: string;
+  readonly infrastructureConfigurationSummaryList?: [];
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface Logging {
-  readonly s3Logs: S3Logs;
+export interface Logging {
+  readonly s3Logs?: S3Logs;
 }
 
-interface OutputResources {
-  readonly amis: [];
-  readonly containers: [];
+export interface OutputResources {
+  readonly amis?: [];
+  readonly containers?: [];
 }
 
-interface PutComponentPolicyRequest {
+export interface PutComponentPolicyRequest {
   readonly componentArn: string;
   readonly policy: string;
 }
 
-interface PutComponentPolicyResponse {
-  readonly requestId: string;
-  readonly componentArn: string;
+export interface PutComponentPolicyResponse {
+  readonly requestId?: string;
+  readonly componentArn?: string;
 }
 
-interface PutContainerRecipePolicyRequest {
+export interface PutContainerRecipePolicyRequest {
   readonly containerRecipeArn: string;
   readonly policy: string;
 }
 
-interface PutContainerRecipePolicyResponse {
-  readonly requestId: string;
-  readonly containerRecipeArn: string;
+export interface PutContainerRecipePolicyResponse {
+  readonly requestId?: string;
+  readonly containerRecipeArn?: string;
 }
 
-interface PutImagePolicyRequest {
+export interface PutImagePolicyRequest {
   readonly imageArn: string;
   readonly policy: string;
 }
 
-interface PutImagePolicyResponse {
-  readonly requestId: string;
-  readonly imageArn: string;
+export interface PutImagePolicyResponse {
+  readonly requestId?: string;
+  readonly imageArn?: string;
 }
 
-interface PutImageRecipePolicyRequest {
+export interface PutImageRecipePolicyRequest {
   readonly imageRecipeArn: string;
   readonly policy: string;
 }
 
-interface PutImageRecipePolicyResponse {
-  readonly requestId: string;
-  readonly imageRecipeArn: string;
+export interface PutImageRecipePolicyResponse {
+  readonly requestId?: string;
+  readonly imageRecipeArn?: string;
 }
 
-interface ResourceAlreadyExistsException {
-  readonly message: string;
+export interface ResourceAlreadyExistsException {
+  readonly message?: string;
 }
 
-interface ResourceDependencyException {
-  readonly message: string;
+export interface ResourceDependencyException {
+  readonly message?: string;
 }
 
-interface ResourceInUseException {
-  readonly message: string;
+export interface ResourceInUseException {
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface S3Logs {
-  readonly s3BucketName: string;
-  readonly s3KeyPrefix: string;
+export interface S3Logs {
+  readonly s3BucketName?: string;
+  readonly s3KeyPrefix?: string;
 }
 
-interface Schedule {
-  readonly scheduleExpression: string;
-  readonly timezone: string;
-  readonly pipelineExecutionStartCondition: string;
+export interface Schedule {
+  readonly scheduleExpression?: string;
+  readonly timezone?: string;
+  readonly pipelineExecutionStartCondition?: string;
 }
 
-interface ServiceException {
-  readonly message: string;
+export interface ServiceException {
+  readonly message?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly message: string;
+export interface ServiceQuotaExceededException {
+  readonly message?: string;
 }
 
-interface ServiceUnavailableException {
-  readonly message: string;
+export interface ServiceUnavailableException {
+  readonly message?: string;
 }
 
-interface StartImagePipelineExecutionRequest {
+export interface StartImagePipelineExecutionRequest {
   readonly imagePipelineArn: string;
   readonly clientToken: string;
 }
 
-interface StartImagePipelineExecutionResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly imageBuildVersionArn: string;
+export interface StartImagePipelineExecutionResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly imageBuildVersionArn?: string;
 }
 
-interface SystemsManagerAgent {
-  readonly uninstallAfterBuild: boolean;
+export interface SystemsManagerAgent {
+  readonly uninstallAfterBuild?: boolean;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TargetContainerRepository {
+export interface TargetContainerRepository {
   readonly service: string;
   readonly repositoryName: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateDistributionConfigurationRequest {
+export interface UpdateDistributionConfigurationRequest {
   readonly distributionConfigurationArn: string;
-  readonly description: string;
+  readonly description?: string;
   readonly distributions: [];
   readonly clientToken: string;
 }
 
-interface UpdateDistributionConfigurationResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly distributionConfigurationArn: string;
+export interface UpdateDistributionConfigurationResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly distributionConfigurationArn?: string;
 }
 
-interface UpdateImagePipelineRequest {
+export interface UpdateImagePipelineRequest {
   readonly imagePipelineArn: string;
-  readonly description: string;
-  readonly imageRecipeArn: string;
-  readonly containerRecipeArn: string;
+  readonly description?: string;
+  readonly imageRecipeArn?: string;
+  readonly containerRecipeArn?: string;
   readonly infrastructureConfigurationArn: string;
-  readonly distributionConfigurationArn: string;
-  readonly imageTestsConfiguration: ImageTestsConfiguration;
-  readonly enhancedImageMetadataEnabled: boolean;
-  readonly schedule: Schedule;
-  readonly status: string;
+  readonly distributionConfigurationArn?: string;
+  readonly imageTestsConfiguration?: ImageTestsConfiguration;
+  readonly enhancedImageMetadataEnabled?: boolean;
+  readonly schedule?: Schedule;
+  readonly status?: string;
   readonly clientToken: string;
 }
 
-interface UpdateImagePipelineResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly imagePipelineArn: string;
+export interface UpdateImagePipelineResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly imagePipelineArn?: string;
 }
 
-interface UpdateInfrastructureConfigurationRequest {
+export interface UpdateInfrastructureConfigurationRequest {
   readonly infrastructureConfigurationArn: string;
-  readonly description: string;
-  readonly instanceTypes: [];
+  readonly description?: string;
+  readonly instanceTypes?: [];
   readonly instanceProfileName: string;
-  readonly securityGroupIds: [];
-  readonly subnetId: string;
-  readonly logging: Logging;
-  readonly keyPair: string;
-  readonly terminateInstanceOnFailure: boolean;
-  readonly snsTopicArn: string;
+  readonly securityGroupIds?: [];
+  readonly subnetId?: string;
+  readonly logging?: Logging;
+  readonly keyPair?: string;
+  readonly terminateInstanceOnFailure?: boolean;
+  readonly snsTopicArn?: string;
   readonly clientToken: string;
-  readonly resourceTags: {[key: string]: any};
-  readonly instanceMetadataOptions: InstanceMetadataOptions;
+  readonly resourceTags?: {[key: string]: any};
+  readonly instanceMetadataOptions?: InstanceMetadataOptions;
 }
 
-interface UpdateInfrastructureConfigurationResponse {
-  readonly requestId: string;
-  readonly clientToken: string;
-  readonly infrastructureConfigurationArn: string;
+export interface UpdateInfrastructureConfigurationResponse {
+  readonly requestId?: string;
+  readonly clientToken?: string;
+  readonly infrastructureConfigurationArn?: string;
 }
+
 

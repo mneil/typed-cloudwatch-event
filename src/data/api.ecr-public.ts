@@ -6,37 +6,44 @@ export interface BatchCheckLayerAvailability {
   readonly repositoryName: string;
   readonly layerDigests: [];
 }
+
 export interface BatchDeleteImage {
   readonly registryId?: string;
   readonly repositoryName: string;
   readonly imageIds: [];
 }
+
 export interface CompleteLayerUpload {
   readonly registryId?: string;
   readonly repositoryName: string;
   readonly uploadId: string;
   readonly layerDigests: [];
 }
+
 export interface CreateRepository {
   readonly repositoryName: string;
   readonly catalogData?: RepositoryCatalogDataInput;
   readonly tags?: [];
 }
+
 export interface DeleteRepository {
   readonly registryId?: string;
   readonly repositoryName: string;
   readonly force?: boolean;
 }
+
 export interface DeleteRepositoryPolicy {
   readonly registryId?: string;
   readonly repositoryName: string;
 }
+
 export interface DescribeImageTags {
   readonly registryId?: string;
   readonly repositoryName: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DescribeImages {
   readonly registryId?: string;
   readonly repositoryName: string;
@@ -44,35 +51,44 @@ export interface DescribeImages {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DescribeRegistries {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface DescribeRepositories {
   readonly registryId?: string;
   readonly repositoryNames?: [];
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface GetAuthorizationToken {
 }
+
 export interface GetRegistryCatalogData {
 }
+
 export interface GetRepositoryCatalogData {
   readonly registryId?: string;
   readonly repositoryName: string;
 }
+
 export interface GetRepositoryPolicy {
   readonly registryId?: string;
   readonly repositoryName: string;
 }
+
 export interface InitiateLayerUpload {
   readonly registryId?: string;
   readonly repositoryName: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface PutImage {
   readonly registryId?: string;
   readonly repositoryName: string;
@@ -81,28 +97,34 @@ export interface PutImage {
   readonly imageTag?: string;
   readonly imageDigest?: string;
 }
+
 export interface PutRegistryCatalogData {
   readonly displayName?: string;
 }
+
 export interface PutRepositoryCatalogData {
   readonly registryId?: string;
   readonly repositoryName: string;
   readonly catalogData: RepositoryCatalogDataInput;
 }
+
 export interface SetRepositoryPolicy {
   readonly registryId?: string;
   readonly repositoryName: string;
   readonly policyText: string;
   readonly force?: boolean;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: [];
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UploadLayerPart {
   readonly registryId?: string;
   readonly repositoryName: string;
@@ -112,329 +134,327 @@ export interface UploadLayerPart {
   readonly layerPartBlob: unknown;
 }
 
-
-
-interface AuthorizationData {
-  readonly authorizationToken: string;
-  readonly expiresAt: Date;
+export interface AuthorizationData {
+  readonly authorizationToken?: string;
+  readonly expiresAt?: Date;
 }
 
-interface BatchCheckLayerAvailabilityRequest {
-  readonly registryId: string;
+export interface BatchCheckLayerAvailabilityRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
   readonly layerDigests: [];
 }
 
-interface BatchCheckLayerAvailabilityResponse {
-  readonly layers: [];
-  readonly failures: [];
+export interface BatchCheckLayerAvailabilityResponse {
+  readonly layers?: [];
+  readonly failures?: [];
 }
 
-interface BatchDeleteImageRequest {
-  readonly registryId: string;
+export interface BatchDeleteImageRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
   readonly imageIds: [];
 }
 
-interface BatchDeleteImageResponse {
-  readonly imageIds: [];
-  readonly failures: [];
+export interface BatchDeleteImageResponse {
+  readonly imageIds?: [];
+  readonly failures?: [];
 }
 
-interface CompleteLayerUploadRequest {
-  readonly registryId: string;
+export interface CompleteLayerUploadRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
   readonly uploadId: string;
   readonly layerDigests: [];
 }
 
-interface CompleteLayerUploadResponse {
-  readonly registryId: string;
+export interface CompleteLayerUploadResponse {
+  readonly registryId?: string;
+  readonly repositoryName?: string;
+  readonly uploadId?: string;
+  readonly layerDigest?: string;
+}
+
+export interface CreateRepositoryRequest {
   readonly repositoryName: string;
-  readonly uploadId: string;
-  readonly layerDigest: string;
+  readonly catalogData?: RepositoryCatalogDataInput;
+  readonly tags?: [];
 }
 
-interface CreateRepositoryRequest {
-  readonly repositoryName: string;
-  readonly catalogData: RepositoryCatalogDataInput;
-  readonly tags: [];
+export interface CreateRepositoryResponse {
+  readonly repository?: Repository;
+  readonly catalogData?: RepositoryCatalogData;
 }
 
-interface CreateRepositoryResponse {
-  readonly repository: Repository;
-  readonly catalogData: RepositoryCatalogData;
-}
-
-interface DeleteRepositoryPolicyRequest {
-  readonly registryId: string;
+export interface DeleteRepositoryPolicyRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
 }
 
-interface DeleteRepositoryPolicyResponse {
-  readonly registryId: string;
+export interface DeleteRepositoryPolicyResponse {
+  readonly registryId?: string;
+  readonly repositoryName?: string;
+  readonly policyText?: string;
+}
+
+export interface DeleteRepositoryRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
-  readonly policyText: string;
+  readonly force?: boolean;
 }
 
-interface DeleteRepositoryRequest {
-  readonly registryId: string;
+export interface DeleteRepositoryResponse {
+  readonly repository?: Repository;
+}
+
+export interface DescribeImageTagsRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
-  readonly force: boolean;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DeleteRepositoryResponse {
-  readonly repository: Repository;
+export interface DescribeImageTagsResponse {
+  readonly imageTagDetails?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeImageTagsRequest {
-  readonly registryId: string;
+export interface DescribeImagesRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+  readonly imageIds?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DescribeImageTagsResponse {
-  readonly imageTagDetails: [];
-  readonly nextToken: string;
+export interface DescribeImagesResponse {
+  readonly imageDetails?: [];
+  readonly nextToken?: string;
 }
 
-interface DescribeImagesRequest {
-  readonly registryId: string;
-  readonly repositoryName: string;
-  readonly imageIds: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface DescribeRegistriesRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DescribeImagesResponse {
-  readonly imageDetails: [];
-  readonly nextToken: string;
-}
-
-interface DescribeRegistriesRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
-}
-
-interface DescribeRegistriesResponse {
+export interface DescribeRegistriesResponse {
   readonly registries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface DescribeRepositoriesRequest {
-  readonly registryId: string;
-  readonly repositoryNames: [];
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface DescribeRepositoriesRequest {
+  readonly registryId?: string;
+  readonly repositoryNames?: [];
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface DescribeRepositoriesResponse {
-  readonly repositories: [];
-  readonly nextToken: string;
+export interface DescribeRepositoriesResponse {
+  readonly repositories?: [];
+  readonly nextToken?: string;
 }
 
-interface EmptyUploadException {
-  readonly message: string;
+export interface EmptyUploadException {
+  readonly message?: string;
 }
 
-interface GetAuthorizationTokenRequest {
+export interface GetAuthorizationTokenRequest {
 }
 
-interface GetAuthorizationTokenResponse {
-  readonly authorizationData: AuthorizationData;
+export interface GetAuthorizationTokenResponse {
+  readonly authorizationData?: AuthorizationData;
 }
 
-interface GetRegistryCatalogDataRequest {
+export interface GetRegistryCatalogDataRequest {
 }
 
-interface GetRegistryCatalogDataResponse {
+export interface GetRegistryCatalogDataResponse {
   readonly registryCatalogData: RegistryCatalogData;
 }
 
-interface GetRepositoryCatalogDataRequest {
-  readonly registryId: string;
+export interface GetRepositoryCatalogDataRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
 }
 
-interface GetRepositoryCatalogDataResponse {
-  readonly catalogData: RepositoryCatalogData;
+export interface GetRepositoryCatalogDataResponse {
+  readonly catalogData?: RepositoryCatalogData;
 }
 
-interface GetRepositoryPolicyRequest {
-  readonly registryId: string;
+export interface GetRepositoryPolicyRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
 }
 
-interface GetRepositoryPolicyResponse {
-  readonly registryId: string;
+export interface GetRepositoryPolicyResponse {
+  readonly registryId?: string;
+  readonly repositoryName?: string;
+  readonly policyText?: string;
+}
+
+export interface Image {
+  readonly registryId?: string;
+  readonly repositoryName?: string;
+  readonly imageId?: ImageIdentifier;
+  readonly imageManifest?: string;
+  readonly imageManifestMediaType?: string;
+}
+
+export interface ImageAlreadyExistsException {
+  readonly message?: string;
+}
+
+export interface ImageDetail {
+  readonly registryId?: string;
+  readonly repositoryName?: string;
+  readonly imageDigest?: string;
+  readonly imageTags?: [];
+  readonly imageSizeInBytes?: number;
+  readonly imagePushedAt?: Date;
+  readonly imageManifestMediaType?: string;
+  readonly artifactMediaType?: string;
+}
+
+export interface ImageDigestDoesNotMatchException {
+  readonly message?: string;
+}
+
+export interface ImageFailure {
+  readonly imageId?: ImageIdentifier;
+  readonly failureCode?: string;
+  readonly failureReason?: string;
+}
+
+export interface ImageIdentifier {
+  readonly imageDigest?: string;
+  readonly imageTag?: string;
+}
+
+export interface ImageNotFoundException {
+  readonly message?: string;
+}
+
+export interface ImageTagAlreadyExistsException {
+  readonly message?: string;
+}
+
+export interface ImageTagDetail {
+  readonly imageTag?: string;
+  readonly createdAt?: Date;
+  readonly imageDetail?: ReferencedImageDetail;
+}
+
+export interface InitiateLayerUploadRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
-  readonly policyText: string;
 }
 
-interface Image {
-  readonly registryId: string;
-  readonly repositoryName: string;
-  readonly imageId: ImageIdentifier;
-  readonly imageManifest: string;
-  readonly imageManifestMediaType: string;
+export interface InitiateLayerUploadResponse {
+  readonly uploadId?: string;
+  readonly partSize?: number;
 }
 
-interface ImageAlreadyExistsException {
-  readonly message: string;
+export interface InvalidLayerException {
+  readonly message?: string;
 }
 
-interface ImageDetail {
-  readonly registryId: string;
-  readonly repositoryName: string;
-  readonly imageDigest: string;
-  readonly imageTags: [];
-  readonly imageSizeInBytes: number;
-  readonly imagePushedAt: Date;
-  readonly imageManifestMediaType: string;
-  readonly artifactMediaType: string;
+export interface InvalidLayerPartException {
+  readonly registryId?: string;
+  readonly repositoryName?: string;
+  readonly uploadId?: string;
+  readonly lastValidByteReceived?: number;
+  readonly message?: string;
 }
 
-interface ImageDigestDoesNotMatchException {
-  readonly message: string;
+export interface InvalidParameterException {
+  readonly message?: string;
 }
 
-interface ImageFailure {
-  readonly imageId: ImageIdentifier;
-  readonly failureCode: string;
-  readonly failureReason: string;
+export interface InvalidTagParameterException {
+  readonly message?: string;
 }
 
-interface ImageIdentifier {
-  readonly imageDigest: string;
-  readonly imageTag: string;
+export interface Layer {
+  readonly layerDigest?: string;
+  readonly layerAvailability?: string;
+  readonly layerSize?: number;
+  readonly mediaType?: string;
 }
 
-interface ImageNotFoundException {
-  readonly message: string;
+export interface LayerAlreadyExistsException {
+  readonly message?: string;
 }
 
-interface ImageTagAlreadyExistsException {
-  readonly message: string;
+export interface LayerFailure {
+  readonly layerDigest?: string;
+  readonly failureCode?: string;
+  readonly failureReason?: string;
 }
 
-interface ImageTagDetail {
-  readonly imageTag: string;
-  readonly createdAt: Date;
-  readonly imageDetail: ReferencedImageDetail;
+export interface LayerPartTooSmallException {
+  readonly message?: string;
 }
 
-interface InitiateLayerUploadRequest {
-  readonly registryId: string;
-  readonly repositoryName: string;
+export interface LayersNotFoundException {
+  readonly message?: string;
 }
 
-interface InitiateLayerUploadResponse {
-  readonly uploadId: string;
-  readonly partSize: number;
+export interface LimitExceededException {
+  readonly message?: string;
 }
 
-interface InvalidLayerException {
-  readonly message: string;
-}
-
-interface InvalidLayerPartException {
-  readonly registryId: string;
-  readonly repositoryName: string;
-  readonly uploadId: string;
-  readonly lastValidByteReceived: number;
-  readonly message: string;
-}
-
-interface InvalidParameterException {
-  readonly message: string;
-}
-
-interface InvalidTagParameterException {
-  readonly message: string;
-}
-
-interface Layer {
-  readonly layerDigest: string;
-  readonly layerAvailability: string;
-  readonly layerSize: number;
-  readonly mediaType: string;
-}
-
-interface LayerAlreadyExistsException {
-  readonly message: string;
-}
-
-interface LayerFailure {
-  readonly layerDigest: string;
-  readonly failureCode: string;
-  readonly failureReason: string;
-}
-
-interface LayerPartTooSmallException {
-  readonly message: string;
-}
-
-interface LayersNotFoundException {
-  readonly message: string;
-}
-
-interface LimitExceededException {
-  readonly message: string;
-}
-
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: [];
+export interface ListTagsForResourceResponse {
+  readonly tags?: [];
 }
 
-interface PutImageRequest {
-  readonly registryId: string;
+export interface PutImageRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
   readonly imageManifest: string;
-  readonly imageManifestMediaType: string;
-  readonly imageTag: string;
-  readonly imageDigest: string;
+  readonly imageManifestMediaType?: string;
+  readonly imageTag?: string;
+  readonly imageDigest?: string;
 }
 
-interface PutImageResponse {
-  readonly image: Image;
+export interface PutImageResponse {
+  readonly image?: Image;
 }
 
-interface PutRegistryCatalogDataRequest {
-  readonly displayName: string;
+export interface PutRegistryCatalogDataRequest {
+  readonly displayName?: string;
 }
 
-interface PutRegistryCatalogDataResponse {
+export interface PutRegistryCatalogDataResponse {
   readonly registryCatalogData: RegistryCatalogData;
 }
 
-interface PutRepositoryCatalogDataRequest {
-  readonly registryId: string;
+export interface PutRepositoryCatalogDataRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
   readonly catalogData: RepositoryCatalogDataInput;
 }
 
-interface PutRepositoryCatalogDataResponse {
-  readonly catalogData: RepositoryCatalogData;
+export interface PutRepositoryCatalogDataResponse {
+  readonly catalogData?: RepositoryCatalogData;
 }
 
-interface ReferencedImageDetail {
-  readonly imageDigest: string;
-  readonly imageSizeInBytes: number;
-  readonly imagePushedAt: Date;
-  readonly imageManifestMediaType: string;
-  readonly artifactMediaType: string;
+export interface ReferencedImageDetail {
+  readonly imageDigest?: string;
+  readonly imageSizeInBytes?: number;
+  readonly imagePushedAt?: Date;
+  readonly imageManifestMediaType?: string;
+  readonly artifactMediaType?: string;
 }
 
-interface ReferencedImagesNotFoundException {
-  readonly message: string;
+export interface ReferencedImagesNotFoundException {
+  readonly message?: string;
 }
 
-interface Registry {
+export interface Registry {
   readonly registryId: string;
   readonly registryArn: string;
   readonly registryUri: string;
@@ -442,112 +462,112 @@ interface Registry {
   readonly aliases: [];
 }
 
-interface RegistryAlias {
+export interface RegistryAlias {
   readonly name: string;
   readonly status: string;
   readonly primaryRegistryAlias: boolean;
   readonly defaultRegistryAlias: boolean;
 }
 
-interface RegistryCatalogData {
-  readonly displayName: string;
+export interface RegistryCatalogData {
+  readonly displayName?: string;
 }
 
-interface RegistryNotFoundException {
-  readonly message: string;
+export interface RegistryNotFoundException {
+  readonly message?: string;
 }
 
-interface Repository {
-  readonly repositoryArn: string;
-  readonly registryId: string;
-  readonly repositoryName: string;
-  readonly repositoryUri: string;
-  readonly createdAt: Date;
+export interface Repository {
+  readonly repositoryArn?: string;
+  readonly registryId?: string;
+  readonly repositoryName?: string;
+  readonly repositoryUri?: string;
+  readonly createdAt?: Date;
 }
 
-interface RepositoryAlreadyExistsException {
-  readonly message: string;
+export interface RepositoryAlreadyExistsException {
+  readonly message?: string;
 }
 
-interface RepositoryCatalogData {
-  readonly description: string;
-  readonly architectures: [];
-  readonly operatingSystems: [];
-  readonly logoUrl: string;
-  readonly aboutText: string;
-  readonly usageText: string;
-  readonly marketplaceCertified: boolean;
+export interface RepositoryCatalogData {
+  readonly description?: string;
+  readonly architectures?: [];
+  readonly operatingSystems?: [];
+  readonly logoUrl?: string;
+  readonly aboutText?: string;
+  readonly usageText?: string;
+  readonly marketplaceCertified?: boolean;
 }
 
-interface RepositoryCatalogDataInput {
-  readonly description: string;
-  readonly architectures: [];
-  readonly operatingSystems: [];
-  readonly logoImageBlob: unknown;
-  readonly aboutText: string;
-  readonly usageText: string;
+export interface RepositoryCatalogDataInput {
+  readonly description?: string;
+  readonly architectures?: [];
+  readonly operatingSystems?: [];
+  readonly logoImageBlob?: unknown;
+  readonly aboutText?: string;
+  readonly usageText?: string;
 }
 
-interface RepositoryNotEmptyException {
-  readonly message: string;
+export interface RepositoryNotEmptyException {
+  readonly message?: string;
 }
 
-interface RepositoryNotFoundException {
-  readonly message: string;
+export interface RepositoryNotFoundException {
+  readonly message?: string;
 }
 
-interface RepositoryPolicyNotFoundException {
-  readonly message: string;
+export interface RepositoryPolicyNotFoundException {
+  readonly message?: string;
 }
 
-interface ServerException {
-  readonly message: string;
+export interface ServerException {
+  readonly message?: string;
 }
 
-interface SetRepositoryPolicyRequest {
-  readonly registryId: string;
-  readonly repositoryName: string;
-  readonly policyText: string;
-  readonly force: boolean;
-}
-
-interface SetRepositoryPolicyResponse {
-  readonly registryId: string;
+export interface SetRepositoryPolicyRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
   readonly policyText: string;
+  readonly force?: boolean;
 }
 
-interface Tag {
-  readonly Key: string;
-  readonly Value: string;
+export interface SetRepositoryPolicyResponse {
+  readonly registryId?: string;
+  readonly repositoryName?: string;
+  readonly policyText?: string;
 }
 
-interface TagResourceRequest {
+export interface Tag {
+  readonly Key?: string;
+  readonly Value?: string;
+}
+
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: [];
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TooManyTagsException {
-  readonly message: string;
+export interface TooManyTagsException {
+  readonly message?: string;
 }
 
-interface UnsupportedCommandException {
-  readonly message: string;
+export interface UnsupportedCommandException {
+  readonly message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UploadLayerPartRequest {
-  readonly registryId: string;
+export interface UploadLayerPartRequest {
+  readonly registryId?: string;
   readonly repositoryName: string;
   readonly uploadId: string;
   readonly partFirstByte: number;
@@ -555,14 +575,15 @@ interface UploadLayerPartRequest {
   readonly layerPartBlob: unknown;
 }
 
-interface UploadLayerPartResponse {
-  readonly registryId: string;
-  readonly repositoryName: string;
-  readonly uploadId: string;
-  readonly lastByteReceived: number;
+export interface UploadLayerPartResponse {
+  readonly registryId?: string;
+  readonly repositoryName?: string;
+  readonly uploadId?: string;
+  readonly lastByteReceived?: number;
 }
 
-interface UploadNotFoundException {
-  readonly message: string;
+export interface UploadNotFoundException {
+  readonly message?: string;
 }
+
 

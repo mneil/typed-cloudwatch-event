@@ -4,21 +4,27 @@
 export interface BatchDeleteBuilds {
   readonly ids: [];
 }
+
 export interface BatchGetBuildBatches {
   readonly ids: [];
 }
+
 export interface BatchGetBuilds {
   readonly ids: [];
 }
+
 export interface BatchGetProjects {
   readonly names: [];
 }
+
 export interface BatchGetReportGroups {
   readonly reportGroupArns: [];
 }
+
 export interface BatchGetReports {
   readonly reportArns: [];
 }
+
 export interface CreateProject {
   readonly name: string;
   readonly description?: string;
@@ -42,40 +48,50 @@ export interface CreateProject {
   readonly buildBatchConfig?: ProjectBuildBatchConfig;
   readonly concurrentBuildLimit?: number;
 }
+
 export interface CreateReportGroup {
   readonly name: string;
   readonly type: string;
   readonly exportConfig: ReportExportConfig;
   readonly tags?: [];
 }
+
 export interface CreateWebhook {
   readonly projectName: string;
   readonly branchFilter?: string;
   readonly filterGroups?: [];
   readonly buildType?: string;
 }
+
 export interface DeleteBuildBatch {
   readonly id: string;
 }
+
 export interface DeleteProject {
   readonly name: string;
 }
+
 export interface DeleteReport {
   readonly arn: string;
 }
+
 export interface DeleteReportGroup {
   readonly arn: string;
   readonly deleteReports?: boolean;
 }
+
 export interface DeleteResourcePolicy {
   readonly resourceArn: string;
 }
+
 export interface DeleteSourceCredentials {
   readonly arn: string;
 }
+
 export interface DeleteWebhook {
   readonly projectName: string;
 }
+
 export interface DescribeCodeCoverages {
   readonly reportArn: string;
   readonly nextToken?: string;
@@ -85,20 +101,24 @@ export interface DescribeCodeCoverages {
   readonly minLineCoveragePercentage?: unknown;
   readonly maxLineCoveragePercentage?: unknown;
 }
+
 export interface DescribeTestCases {
   readonly reportArn: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly filter?: TestCaseFilter;
 }
+
 export interface GetReportGroupTrend {
   readonly reportGroupArn: string;
   readonly numOfReports?: number;
   readonly trendField: string;
 }
+
 export interface GetResourcePolicy {
   readonly resourceArn: string;
 }
+
 export interface ImportSourceCredentials {
   readonly username?: string;
   readonly token: string;
@@ -106,15 +126,18 @@ export interface ImportSourceCredentials {
   readonly authType: string;
   readonly shouldOverwrite?: boolean;
 }
+
 export interface InvalidateProjectCache {
   readonly projectName: string;
 }
+
 export interface ListBuildBatches {
   readonly filter?: BuildBatchFilter;
   readonly maxResults?: number;
   readonly sortOrder?: string;
   readonly nextToken?: string;
 }
+
 export interface ListBuildBatchesForProject {
   readonly projectName?: string;
   readonly filter?: BuildBatchFilter;
@@ -122,34 +145,41 @@ export interface ListBuildBatchesForProject {
   readonly sortOrder?: string;
   readonly nextToken?: string;
 }
+
 export interface ListBuilds {
   readonly sortOrder?: string;
   readonly nextToken?: string;
 }
+
 export interface ListBuildsForProject {
   readonly projectName: string;
   readonly sortOrder?: string;
   readonly nextToken?: string;
 }
+
 export interface ListCuratedEnvironmentImages {
 }
+
 export interface ListProjects {
   readonly sortBy?: string;
   readonly sortOrder?: string;
   readonly nextToken?: string;
 }
+
 export interface ListReportGroups {
   readonly sortOrder?: string;
   readonly sortBy?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListReports {
   readonly sortOrder?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly filter?: ReportFilter;
 }
+
 export interface ListReportsForReportGroup {
   readonly reportGroupArn: string;
   readonly nextToken?: string;
@@ -157,33 +187,40 @@ export interface ListReportsForReportGroup {
   readonly maxResults?: number;
   readonly filter?: ReportFilter;
 }
+
 export interface ListSharedProjects {
   readonly sortBy?: string;
   readonly sortOrder?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListSharedReportGroups {
   readonly sortOrder?: string;
   readonly sortBy?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListSourceCredentials {
 }
+
 export interface PutResourcePolicy {
   readonly policy: string;
   readonly resourceArn: string;
 }
+
 export interface RetryBuild {
   readonly id?: string;
   readonly idempotencyToken?: string;
 }
+
 export interface RetryBuildBatch {
   readonly id?: string;
   readonly idempotencyToken?: string;
   readonly retryType?: string;
 }
+
 export interface StartBuild {
   readonly projectName: string;
   readonly secondarySourcesOverride?: [];
@@ -217,6 +254,7 @@ export interface StartBuild {
   readonly imagePullCredentialsTypeOverride?: string;
   readonly debugSessionEnabled?: boolean;
 }
+
 export interface StartBuildBatch {
   readonly projectName: string;
   readonly secondarySourcesOverride?: [];
@@ -250,12 +288,15 @@ export interface StartBuildBatch {
   readonly buildBatchConfigOverride?: ProjectBuildBatchConfig;
   readonly debugSessionEnabled?: boolean;
 }
+
 export interface StopBuild {
   readonly id: string;
 }
+
 export interface StopBuildBatch {
   readonly id: string;
 }
+
 export interface UpdateProject {
   readonly name: string;
   readonly description?: string;
@@ -279,16 +320,19 @@ export interface UpdateProject {
   readonly buildBatchConfig?: ProjectBuildBatchConfig;
   readonly concurrentBuildLimit?: number;
 }
+
 export interface UpdateProjectVisibility {
   readonly projectArn: string;
   readonly projectVisibility: string;
   readonly resourceAccessRole?: string;
 }
+
 export interface UpdateReportGroup {
   readonly arn: string;
   readonly exportConfig?: ReportExportConfig;
   readonly tags?: [];
 }
+
 export interface UpdateWebhook {
   readonly projectName: string;
   readonly branchFilter?: string;
@@ -297,1011 +341,1010 @@ export interface UpdateWebhook {
   readonly buildType?: string;
 }
 
-
-
-interface AccountLimitExceededException {
+export interface AccountLimitExceededException {
 }
 
-interface BatchDeleteBuildsInput {
+export interface BatchDeleteBuildsInput {
   readonly ids: [];
 }
 
-interface BatchDeleteBuildsOutput {
-  readonly buildsDeleted: [];
-  readonly buildsNotDeleted: [];
+export interface BatchDeleteBuildsOutput {
+  readonly buildsDeleted?: [];
+  readonly buildsNotDeleted?: [];
 }
 
-interface BatchGetBuildBatchesInput {
+export interface BatchGetBuildBatchesInput {
   readonly ids: [];
 }
 
-interface BatchGetBuildBatchesOutput {
-  readonly buildBatches: [];
-  readonly buildBatchesNotFound: [];
+export interface BatchGetBuildBatchesOutput {
+  readonly buildBatches?: [];
+  readonly buildBatchesNotFound?: [];
 }
 
-interface BatchGetBuildsInput {
+export interface BatchGetBuildsInput {
   readonly ids: [];
 }
 
-interface BatchGetBuildsOutput {
-  readonly builds: [];
-  readonly buildsNotFound: [];
+export interface BatchGetBuildsOutput {
+  readonly builds?: [];
+  readonly buildsNotFound?: [];
 }
 
-interface BatchGetProjectsInput {
+export interface BatchGetProjectsInput {
   readonly names: [];
 }
 
-interface BatchGetProjectsOutput {
-  readonly projects: [];
-  readonly projectsNotFound: [];
+export interface BatchGetProjectsOutput {
+  readonly projects?: [];
+  readonly projectsNotFound?: [];
 }
 
-interface BatchGetReportGroupsInput {
+export interface BatchGetReportGroupsInput {
   readonly reportGroupArns: [];
 }
 
-interface BatchGetReportGroupsOutput {
-  readonly reportGroups: [];
-  readonly reportGroupsNotFound: [];
+export interface BatchGetReportGroupsOutput {
+  readonly reportGroups?: [];
+  readonly reportGroupsNotFound?: [];
 }
 
-interface BatchGetReportsInput {
+export interface BatchGetReportsInput {
   readonly reportArns: [];
 }
 
-interface BatchGetReportsOutput {
-  readonly reports: [];
-  readonly reportsNotFound: [];
+export interface BatchGetReportsOutput {
+  readonly reports?: [];
+  readonly reportsNotFound?: [];
 }
 
-interface BatchRestrictions {
-  readonly maximumBuildsAllowed: number;
-  readonly computeTypesAllowed: [];
+export interface BatchRestrictions {
+  readonly maximumBuildsAllowed?: number;
+  readonly computeTypesAllowed?: [];
 }
 
-interface Build {
-  readonly id: string;
-  readonly arn: string;
-  readonly buildNumber: number;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly currentPhase: string;
-  readonly buildStatus: string;
-  readonly sourceVersion: string;
-  readonly resolvedSourceVersion: string;
-  readonly projectName: string;
-  readonly phases: [];
-  readonly source: ProjectSource;
-  readonly secondarySources: [];
-  readonly secondarySourceVersions: [];
-  readonly artifacts: BuildArtifacts;
-  readonly secondaryArtifacts: [];
-  readonly cache: ProjectCache;
-  readonly environment: ProjectEnvironment;
-  readonly serviceRole: string;
-  readonly logs: LogsLocation;
-  readonly timeoutInMinutes: number;
-  readonly queuedTimeoutInMinutes: number;
-  readonly buildComplete: boolean;
-  readonly initiator: string;
-  readonly vpcConfig: VpcConfig;
-  readonly networkInterface: NetworkInterface;
-  readonly encryptionKey: string;
-  readonly exportedEnvironmentVariables: [];
-  readonly reportArns: [];
-  readonly fileSystemLocations: [];
-  readonly debugSession: DebugSession;
-  readonly buildBatchArn: string;
+export interface Build {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly buildNumber?: number;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly currentPhase?: string;
+  readonly buildStatus?: string;
+  readonly sourceVersion?: string;
+  readonly resolvedSourceVersion?: string;
+  readonly projectName?: string;
+  readonly phases?: [];
+  readonly source?: ProjectSource;
+  readonly secondarySources?: [];
+  readonly secondarySourceVersions?: [];
+  readonly artifacts?: BuildArtifacts;
+  readonly secondaryArtifacts?: [];
+  readonly cache?: ProjectCache;
+  readonly environment?: ProjectEnvironment;
+  readonly serviceRole?: string;
+  readonly logs?: LogsLocation;
+  readonly timeoutInMinutes?: number;
+  readonly queuedTimeoutInMinutes?: number;
+  readonly buildComplete?: boolean;
+  readonly initiator?: string;
+  readonly vpcConfig?: VpcConfig;
+  readonly networkInterface?: NetworkInterface;
+  readonly encryptionKey?: string;
+  readonly exportedEnvironmentVariables?: [];
+  readonly reportArns?: [];
+  readonly fileSystemLocations?: [];
+  readonly debugSession?: DebugSession;
+  readonly buildBatchArn?: string;
 }
 
-interface BuildArtifacts {
-  readonly location: string;
-  readonly sha256sum: string;
-  readonly md5sum: string;
-  readonly overrideArtifactName: boolean;
-  readonly encryptionDisabled: boolean;
-  readonly artifactIdentifier: string;
-  readonly bucketOwnerAccess: string;
+export interface BuildArtifacts {
+  readonly location?: string;
+  readonly sha256sum?: string;
+  readonly md5sum?: string;
+  readonly overrideArtifactName?: boolean;
+  readonly encryptionDisabled?: boolean;
+  readonly artifactIdentifier?: string;
+  readonly bucketOwnerAccess?: string;
 }
 
-interface BuildBatch {
-  readonly id: string;
-  readonly arn: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly currentPhase: string;
-  readonly buildBatchStatus: string;
-  readonly sourceVersion: string;
-  readonly resolvedSourceVersion: string;
-  readonly projectName: string;
-  readonly phases: [];
-  readonly source: ProjectSource;
-  readonly secondarySources: [];
-  readonly secondarySourceVersions: [];
-  readonly artifacts: BuildArtifacts;
-  readonly secondaryArtifacts: [];
-  readonly cache: ProjectCache;
-  readonly environment: ProjectEnvironment;
-  readonly serviceRole: string;
-  readonly logConfig: LogsConfig;
-  readonly buildTimeoutInMinutes: number;
-  readonly queuedTimeoutInMinutes: number;
-  readonly complete: boolean;
-  readonly initiator: string;
-  readonly vpcConfig: VpcConfig;
-  readonly encryptionKey: string;
-  readonly buildBatchNumber: number;
-  readonly fileSystemLocations: [];
-  readonly buildBatchConfig: ProjectBuildBatchConfig;
-  readonly buildGroups: [];
-  readonly debugSessionEnabled: boolean;
+export interface BuildBatch {
+  readonly id?: string;
+  readonly arn?: string;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly currentPhase?: string;
+  readonly buildBatchStatus?: string;
+  readonly sourceVersion?: string;
+  readonly resolvedSourceVersion?: string;
+  readonly projectName?: string;
+  readonly phases?: [];
+  readonly source?: ProjectSource;
+  readonly secondarySources?: [];
+  readonly secondarySourceVersions?: [];
+  readonly artifacts?: BuildArtifacts;
+  readonly secondaryArtifacts?: [];
+  readonly cache?: ProjectCache;
+  readonly environment?: ProjectEnvironment;
+  readonly serviceRole?: string;
+  readonly logConfig?: LogsConfig;
+  readonly buildTimeoutInMinutes?: number;
+  readonly queuedTimeoutInMinutes?: number;
+  readonly complete?: boolean;
+  readonly initiator?: string;
+  readonly vpcConfig?: VpcConfig;
+  readonly encryptionKey?: string;
+  readonly buildBatchNumber?: number;
+  readonly fileSystemLocations?: [];
+  readonly buildBatchConfig?: ProjectBuildBatchConfig;
+  readonly buildGroups?: [];
+  readonly debugSessionEnabled?: boolean;
 }
 
-interface BuildBatchFilter {
+export interface BuildBatchFilter {
+  readonly status?: string;
+}
+
+export interface BuildBatchPhase {
+  readonly phaseType?: string;
+  readonly phaseStatus?: string;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly durationInSeconds?: number;
+  readonly contexts?: [];
+}
+
+export interface BuildGroup {
+  readonly identifier?: string;
+  readonly dependsOn?: [];
+  readonly ignoreFailure?: boolean;
+  readonly currentBuildSummary?: BuildSummary;
+  readonly priorBuildSummaryList?: [];
+}
+
+export interface BuildNotDeleted {
+  readonly id?: string;
+  readonly statusCode?: string;
+}
+
+export interface BuildPhase {
+  readonly phaseType?: string;
+  readonly phaseStatus?: string;
+  readonly startTime?: Date;
+  readonly endTime?: Date;
+  readonly durationInSeconds?: number;
+  readonly contexts?: [];
+}
+
+export interface BuildStatusConfig {
+  readonly context?: string;
+  readonly targetUrl?: string;
+}
+
+export interface BuildSummary {
+  readonly arn?: string;
+  readonly requestedOn?: Date;
+  readonly buildStatus?: string;
+  readonly primaryArtifact?: ResolvedArtifact;
+  readonly secondaryArtifacts?: [];
+}
+
+export interface CloudWatchLogsConfig {
   readonly status: string;
+  readonly groupName?: string;
+  readonly streamName?: string;
 }
 
-interface BuildBatchPhase {
-  readonly phaseType: string;
-  readonly phaseStatus: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly durationInSeconds: number;
-  readonly contexts: [];
+export interface CodeCoverage {
+  readonly id?: string;
+  readonly reportARN?: string;
+  readonly filePath?: string;
+  readonly lineCoveragePercentage?: unknown;
+  readonly linesCovered?: number;
+  readonly linesMissed?: number;
+  readonly branchCoveragePercentage?: unknown;
+  readonly branchesCovered?: number;
+  readonly branchesMissed?: number;
+  readonly expired?: Date;
 }
 
-interface BuildGroup {
-  readonly identifier: string;
-  readonly dependsOn: [];
-  readonly ignoreFailure: boolean;
-  readonly currentBuildSummary: BuildSummary;
-  readonly priorBuildSummaryList: [];
+export interface CodeCoverageReportSummary {
+  readonly lineCoveragePercentage?: unknown;
+  readonly linesCovered?: number;
+  readonly linesMissed?: number;
+  readonly branchCoveragePercentage?: unknown;
+  readonly branchesCovered?: number;
+  readonly branchesMissed?: number;
 }
 
-interface BuildNotDeleted {
-  readonly id: string;
-  readonly statusCode: string;
-}
-
-interface BuildPhase {
-  readonly phaseType: string;
-  readonly phaseStatus: string;
-  readonly startTime: Date;
-  readonly endTime: Date;
-  readonly durationInSeconds: number;
-  readonly contexts: [];
-}
-
-interface BuildStatusConfig {
-  readonly context: string;
-  readonly targetUrl: string;
-}
-
-interface BuildSummary {
-  readonly arn: string;
-  readonly requestedOn: Date;
-  readonly buildStatus: string;
-  readonly primaryArtifact: ResolvedArtifact;
-  readonly secondaryArtifacts: [];
-}
-
-interface CloudWatchLogsConfig {
-  readonly status: string;
-  readonly groupName: string;
-  readonly streamName: string;
-}
-
-interface CodeCoverage {
-  readonly id: string;
-  readonly reportARN: string;
-  readonly filePath: string;
-  readonly lineCoveragePercentage: unknown;
-  readonly linesCovered: number;
-  readonly linesMissed: number;
-  readonly branchCoveragePercentage: unknown;
-  readonly branchesCovered: number;
-  readonly branchesMissed: number;
-  readonly expired: Date;
-}
-
-interface CodeCoverageReportSummary {
-  readonly lineCoveragePercentage: unknown;
-  readonly linesCovered: number;
-  readonly linesMissed: number;
-  readonly branchCoveragePercentage: unknown;
-  readonly branchesCovered: number;
-  readonly branchesMissed: number;
-}
-
-interface CreateProjectInput {
+export interface CreateProjectInput {
   readonly name: string;
-  readonly description: string;
+  readonly description?: string;
   readonly source: ProjectSource;
-  readonly secondarySources: [];
-  readonly sourceVersion: string;
-  readonly secondarySourceVersions: [];
+  readonly secondarySources?: [];
+  readonly sourceVersion?: string;
+  readonly secondarySourceVersions?: [];
   readonly artifacts: ProjectArtifacts;
-  readonly secondaryArtifacts: [];
-  readonly cache: ProjectCache;
+  readonly secondaryArtifacts?: [];
+  readonly cache?: ProjectCache;
   readonly environment: ProjectEnvironment;
   readonly serviceRole: string;
-  readonly timeoutInMinutes: number;
-  readonly queuedTimeoutInMinutes: number;
-  readonly encryptionKey: string;
-  readonly tags: [];
-  readonly vpcConfig: VpcConfig;
-  readonly badgeEnabled: boolean;
-  readonly logsConfig: LogsConfig;
-  readonly fileSystemLocations: [];
-  readonly buildBatchConfig: ProjectBuildBatchConfig;
-  readonly concurrentBuildLimit: number;
+  readonly timeoutInMinutes?: number;
+  readonly queuedTimeoutInMinutes?: number;
+  readonly encryptionKey?: string;
+  readonly tags?: [];
+  readonly vpcConfig?: VpcConfig;
+  readonly badgeEnabled?: boolean;
+  readonly logsConfig?: LogsConfig;
+  readonly fileSystemLocations?: [];
+  readonly buildBatchConfig?: ProjectBuildBatchConfig;
+  readonly concurrentBuildLimit?: number;
 }
 
-interface CreateProjectOutput {
-  readonly project: Project;
+export interface CreateProjectOutput {
+  readonly project?: Project;
 }
 
-interface CreateReportGroupInput {
+export interface CreateReportGroupInput {
   readonly name: string;
   readonly type: string;
   readonly exportConfig: ReportExportConfig;
-  readonly tags: [];
+  readonly tags?: [];
 }
 
-interface CreateReportGroupOutput {
-  readonly reportGroup: ReportGroup;
+export interface CreateReportGroupOutput {
+  readonly reportGroup?: ReportGroup;
 }
 
-interface CreateWebhookInput {
+export interface CreateWebhookInput {
   readonly projectName: string;
-  readonly branchFilter: string;
-  readonly filterGroups: [];
-  readonly buildType: string;
+  readonly branchFilter?: string;
+  readonly filterGroups?: [];
+  readonly buildType?: string;
 }
 
-interface CreateWebhookOutput {
-  readonly webhook: Webhook;
+export interface CreateWebhookOutput {
+  readonly webhook?: Webhook;
 }
 
-interface DebugSession {
-  readonly sessionEnabled: boolean;
-  readonly sessionTarget: string;
+export interface DebugSession {
+  readonly sessionEnabled?: boolean;
+  readonly sessionTarget?: string;
 }
 
-interface DeleteBuildBatchInput {
+export interface DeleteBuildBatchInput {
   readonly id: string;
 }
 
-interface DeleteBuildBatchOutput {
-  readonly statusCode: string;
-  readonly buildsDeleted: [];
-  readonly buildsNotDeleted: [];
+export interface DeleteBuildBatchOutput {
+  readonly statusCode?: string;
+  readonly buildsDeleted?: [];
+  readonly buildsNotDeleted?: [];
 }
 
-interface DeleteProjectInput {
+export interface DeleteProjectInput {
   readonly name: string;
 }
 
-interface DeleteProjectOutput {
+export interface DeleteProjectOutput {
 }
 
-interface DeleteReportGroupInput {
+export interface DeleteReportGroupInput {
   readonly arn: string;
-  readonly deleteReports: boolean;
+  readonly deleteReports?: boolean;
 }
 
-interface DeleteReportGroupOutput {
+export interface DeleteReportGroupOutput {
 }
 
-interface DeleteReportInput {
+export interface DeleteReportInput {
   readonly arn: string;
 }
 
-interface DeleteReportOutput {
+export interface DeleteReportOutput {
 }
 
-interface DeleteResourcePolicyInput {
+export interface DeleteResourcePolicyInput {
   readonly resourceArn: string;
 }
 
-interface DeleteResourcePolicyOutput {
+export interface DeleteResourcePolicyOutput {
 }
 
-interface DeleteSourceCredentialsInput {
+export interface DeleteSourceCredentialsInput {
   readonly arn: string;
 }
 
-interface DeleteSourceCredentialsOutput {
-  readonly arn: string;
+export interface DeleteSourceCredentialsOutput {
+  readonly arn?: string;
 }
 
-interface DeleteWebhookInput {
+export interface DeleteWebhookInput {
   readonly projectName: string;
 }
 
-interface DeleteWebhookOutput {
+export interface DeleteWebhookOutput {
 }
 
-interface DescribeCodeCoveragesInput {
+export interface DescribeCodeCoveragesInput {
   readonly reportArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly sortOrder: string;
-  readonly sortBy: string;
-  readonly minLineCoveragePercentage: unknown;
-  readonly maxLineCoveragePercentage: unknown;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly sortOrder?: string;
+  readonly sortBy?: string;
+  readonly minLineCoveragePercentage?: unknown;
+  readonly maxLineCoveragePercentage?: unknown;
 }
 
-interface DescribeCodeCoveragesOutput {
-  readonly nextToken: string;
-  readonly codeCoverages: [];
+export interface DescribeCodeCoveragesOutput {
+  readonly nextToken?: string;
+  readonly codeCoverages?: [];
 }
 
-interface DescribeTestCasesInput {
+export interface DescribeTestCasesInput {
   readonly reportArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filter: TestCaseFilter;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filter?: TestCaseFilter;
 }
 
-interface DescribeTestCasesOutput {
-  readonly nextToken: string;
-  readonly testCases: [];
+export interface DescribeTestCasesOutput {
+  readonly nextToken?: string;
+  readonly testCases?: [];
 }
 
-interface EnvironmentImage {
-  readonly name: string;
-  readonly description: string;
-  readonly versions: [];
+export interface EnvironmentImage {
+  readonly name?: string;
+  readonly description?: string;
+  readonly versions?: [];
 }
 
-interface EnvironmentLanguage {
-  readonly language: string;
-  readonly images: [];
+export interface EnvironmentLanguage {
+  readonly language?: string;
+  readonly images?: [];
 }
 
-interface EnvironmentPlatform {
-  readonly platform: string;
-  readonly languages: [];
+export interface EnvironmentPlatform {
+  readonly platform?: string;
+  readonly languages?: [];
 }
 
-interface EnvironmentVariable {
+export interface EnvironmentVariable {
   readonly name: string;
   readonly value: string;
-  readonly type: string;
+  readonly type?: string;
 }
 
-interface ExportedEnvironmentVariable {
-  readonly name: string;
-  readonly value: string;
+export interface ExportedEnvironmentVariable {
+  readonly name?: string;
+  readonly value?: string;
 }
 
-interface GetReportGroupTrendInput {
+export interface GetReportGroupTrendInput {
   readonly reportGroupArn: string;
-  readonly numOfReports: number;
+  readonly numOfReports?: number;
   readonly trendField: string;
 }
 
-interface GetReportGroupTrendOutput {
-  readonly stats: ReportGroupTrendStats;
-  readonly rawData: [];
+export interface GetReportGroupTrendOutput {
+  readonly stats?: ReportGroupTrendStats;
+  readonly rawData?: [];
 }
 
-interface GetResourcePolicyInput {
+export interface GetResourcePolicyInput {
   readonly resourceArn: string;
 }
 
-interface GetResourcePolicyOutput {
-  readonly policy: string;
+export interface GetResourcePolicyOutput {
+  readonly policy?: string;
 }
 
-interface GitSubmodulesConfig {
+export interface GitSubmodulesConfig {
   readonly fetchSubmodules: boolean;
 }
 
-interface ImportSourceCredentialsInput {
-  readonly username: string;
+export interface ImportSourceCredentialsInput {
+  readonly username?: string;
   readonly token: string;
   readonly serverType: string;
   readonly authType: string;
-  readonly shouldOverwrite: boolean;
+  readonly shouldOverwrite?: boolean;
 }
 
-interface ImportSourceCredentialsOutput {
-  readonly arn: string;
+export interface ImportSourceCredentialsOutput {
+  readonly arn?: string;
 }
 
-interface InvalidInputException {
+export interface InvalidInputException {
 }
 
-interface InvalidateProjectCacheInput {
+export interface InvalidateProjectCacheInput {
   readonly projectName: string;
 }
 
-interface InvalidateProjectCacheOutput {
+export interface InvalidateProjectCacheOutput {
 }
 
-interface ListBuildBatchesForProjectInput {
+export interface ListBuildBatchesForProjectInput {
+  readonly projectName?: string;
+  readonly filter?: BuildBatchFilter;
+  readonly maxResults?: number;
+  readonly sortOrder?: string;
+  readonly nextToken?: string;
+}
+
+export interface ListBuildBatchesForProjectOutput {
+  readonly ids?: [];
+  readonly nextToken?: string;
+}
+
+export interface ListBuildBatchesInput {
+  readonly filter?: BuildBatchFilter;
+  readonly maxResults?: number;
+  readonly sortOrder?: string;
+  readonly nextToken?: string;
+}
+
+export interface ListBuildBatchesOutput {
+  readonly ids?: [];
+  readonly nextToken?: string;
+}
+
+export interface ListBuildsForProjectInput {
   readonly projectName: string;
-  readonly filter: BuildBatchFilter;
-  readonly maxResults: number;
-  readonly sortOrder: string;
-  readonly nextToken: string;
+  readonly sortOrder?: string;
+  readonly nextToken?: string;
 }
 
-interface ListBuildBatchesForProjectOutput {
-  readonly ids: [];
-  readonly nextToken: string;
+export interface ListBuildsForProjectOutput {
+  readonly ids?: [];
+  readonly nextToken?: string;
 }
 
-interface ListBuildBatchesInput {
-  readonly filter: BuildBatchFilter;
-  readonly maxResults: number;
-  readonly sortOrder: string;
-  readonly nextToken: string;
+export interface ListBuildsInput {
+  readonly sortOrder?: string;
+  readonly nextToken?: string;
 }
 
-interface ListBuildBatchesOutput {
-  readonly ids: [];
-  readonly nextToken: string;
+export interface ListBuildsOutput {
+  readonly ids?: [];
+  readonly nextToken?: string;
 }
 
-interface ListBuildsForProjectInput {
-  readonly projectName: string;
-  readonly sortOrder: string;
-  readonly nextToken: string;
+export interface ListCuratedEnvironmentImagesInput {
 }
 
-interface ListBuildsForProjectOutput {
-  readonly ids: [];
-  readonly nextToken: string;
+export interface ListCuratedEnvironmentImagesOutput {
+  readonly platforms?: [];
 }
 
-interface ListBuildsInput {
-  readonly sortOrder: string;
-  readonly nextToken: string;
+export interface ListProjectsInput {
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
+  readonly nextToken?: string;
 }
 
-interface ListBuildsOutput {
-  readonly ids: [];
-  readonly nextToken: string;
+export interface ListProjectsOutput {
+  readonly nextToken?: string;
+  readonly projects?: [];
 }
 
-interface ListCuratedEnvironmentImagesInput {
+export interface ListReportGroupsInput {
+  readonly sortOrder?: string;
+  readonly sortBy?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListCuratedEnvironmentImagesOutput {
-  readonly platforms: [];
+export interface ListReportGroupsOutput {
+  readonly nextToken?: string;
+  readonly reportGroups?: [];
 }
 
-interface ListProjectsInput {
-  readonly sortBy: string;
-  readonly sortOrder: string;
-  readonly nextToken: string;
-}
-
-interface ListProjectsOutput {
-  readonly nextToken: string;
-  readonly projects: [];
-}
-
-interface ListReportGroupsInput {
-  readonly sortOrder: string;
-  readonly sortBy: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-}
-
-interface ListReportGroupsOutput {
-  readonly nextToken: string;
-  readonly reportGroups: [];
-}
-
-interface ListReportsForReportGroupInput {
+export interface ListReportsForReportGroupInput {
   readonly reportGroupArn: string;
-  readonly nextToken: string;
-  readonly sortOrder: string;
-  readonly maxResults: number;
-  readonly filter: ReportFilter;
+  readonly nextToken?: string;
+  readonly sortOrder?: string;
+  readonly maxResults?: number;
+  readonly filter?: ReportFilter;
 }
 
-interface ListReportsForReportGroupOutput {
-  readonly nextToken: string;
-  readonly reports: [];
+export interface ListReportsForReportGroupOutput {
+  readonly nextToken?: string;
+  readonly reports?: [];
 }
 
-interface ListReportsInput {
-  readonly sortOrder: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly filter: ReportFilter;
+export interface ListReportsInput {
+  readonly sortOrder?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly filter?: ReportFilter;
 }
 
-interface ListReportsOutput {
-  readonly nextToken: string;
-  readonly reports: [];
+export interface ListReportsOutput {
+  readonly nextToken?: string;
+  readonly reports?: [];
 }
 
-interface ListSharedProjectsInput {
-  readonly sortBy: string;
-  readonly sortOrder: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListSharedProjectsInput {
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListSharedProjectsOutput {
-  readonly nextToken: string;
-  readonly projects: [];
+export interface ListSharedProjectsOutput {
+  readonly nextToken?: string;
+  readonly projects?: [];
 }
 
-interface ListSharedReportGroupsInput {
-  readonly sortOrder: string;
-  readonly sortBy: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListSharedReportGroupsInput {
+  readonly sortOrder?: string;
+  readonly sortBy?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListSharedReportGroupsOutput {
-  readonly nextToken: string;
-  readonly reportGroups: [];
+export interface ListSharedReportGroupsOutput {
+  readonly nextToken?: string;
+  readonly reportGroups?: [];
 }
 
-interface ListSourceCredentialsInput {
+export interface ListSourceCredentialsInput {
 }
 
-interface ListSourceCredentialsOutput {
-  readonly sourceCredentialsInfos: [];
+export interface ListSourceCredentialsOutput {
+  readonly sourceCredentialsInfos?: [];
 }
 
-interface LogsConfig {
-  readonly cloudWatchLogs: CloudWatchLogsConfig;
-  readonly s3Logs: S3LogsConfig;
+export interface LogsConfig {
+  readonly cloudWatchLogs?: CloudWatchLogsConfig;
+  readonly s3Logs?: S3LogsConfig;
 }
 
-interface LogsLocation {
-  readonly groupName: string;
-  readonly streamName: string;
-  readonly deepLink: string;
-  readonly s3DeepLink: string;
-  readonly cloudWatchLogsArn: string;
-  readonly s3LogsArn: string;
-  readonly cloudWatchLogs: CloudWatchLogsConfig;
-  readonly s3Logs: S3LogsConfig;
+export interface LogsLocation {
+  readonly groupName?: string;
+  readonly streamName?: string;
+  readonly deepLink?: string;
+  readonly s3DeepLink?: string;
+  readonly cloudWatchLogsArn?: string;
+  readonly s3LogsArn?: string;
+  readonly cloudWatchLogs?: CloudWatchLogsConfig;
+  readonly s3Logs?: S3LogsConfig;
 }
 
-interface NetworkInterface {
-  readonly subnetId: string;
-  readonly networkInterfaceId: string;
+export interface NetworkInterface {
+  readonly subnetId?: string;
+  readonly networkInterfaceId?: string;
 }
 
-interface OAuthProviderException {
+export interface OAuthProviderException {
 }
 
-interface PhaseContext {
-  readonly statusCode: string;
-  readonly message: string;
+export interface PhaseContext {
+  readonly statusCode?: string;
+  readonly message?: string;
 }
 
-interface Project {
-  readonly name: string;
-  readonly arn: string;
-  readonly description: string;
-  readonly source: ProjectSource;
-  readonly secondarySources: [];
-  readonly sourceVersion: string;
-  readonly secondarySourceVersions: [];
-  readonly artifacts: ProjectArtifacts;
-  readonly secondaryArtifacts: [];
-  readonly cache: ProjectCache;
-  readonly environment: ProjectEnvironment;
-  readonly serviceRole: string;
-  readonly timeoutInMinutes: number;
-  readonly queuedTimeoutInMinutes: number;
-  readonly encryptionKey: string;
-  readonly tags: [];
-  readonly created: Date;
-  readonly lastModified: Date;
-  readonly webhook: Webhook;
-  readonly vpcConfig: VpcConfig;
-  readonly badge: ProjectBadge;
-  readonly logsConfig: LogsConfig;
-  readonly fileSystemLocations: [];
-  readonly buildBatchConfig: ProjectBuildBatchConfig;
-  readonly concurrentBuildLimit: number;
-  readonly projectVisibility: string;
-  readonly publicProjectAlias: string;
-  readonly resourceAccessRole: string;
+export interface Project {
+  readonly name?: string;
+  readonly arn?: string;
+  readonly description?: string;
+  readonly source?: ProjectSource;
+  readonly secondarySources?: [];
+  readonly sourceVersion?: string;
+  readonly secondarySourceVersions?: [];
+  readonly artifacts?: ProjectArtifacts;
+  readonly secondaryArtifacts?: [];
+  readonly cache?: ProjectCache;
+  readonly environment?: ProjectEnvironment;
+  readonly serviceRole?: string;
+  readonly timeoutInMinutes?: number;
+  readonly queuedTimeoutInMinutes?: number;
+  readonly encryptionKey?: string;
+  readonly tags?: [];
+  readonly created?: Date;
+  readonly lastModified?: Date;
+  readonly webhook?: Webhook;
+  readonly vpcConfig?: VpcConfig;
+  readonly badge?: ProjectBadge;
+  readonly logsConfig?: LogsConfig;
+  readonly fileSystemLocations?: [];
+  readonly buildBatchConfig?: ProjectBuildBatchConfig;
+  readonly concurrentBuildLimit?: number;
+  readonly projectVisibility?: string;
+  readonly publicProjectAlias?: string;
+  readonly resourceAccessRole?: string;
 }
 
-interface ProjectArtifacts {
+export interface ProjectArtifacts {
   readonly type: string;
-  readonly location: string;
-  readonly path: string;
-  readonly namespaceType: string;
-  readonly name: string;
-  readonly packaging: string;
-  readonly overrideArtifactName: boolean;
-  readonly encryptionDisabled: boolean;
-  readonly artifactIdentifier: string;
-  readonly bucketOwnerAccess: string;
+  readonly location?: string;
+  readonly path?: string;
+  readonly namespaceType?: string;
+  readonly name?: string;
+  readonly packaging?: string;
+  readonly overrideArtifactName?: boolean;
+  readonly encryptionDisabled?: boolean;
+  readonly artifactIdentifier?: string;
+  readonly bucketOwnerAccess?: string;
 }
 
-interface ProjectBadge {
-  readonly badgeEnabled: boolean;
-  readonly badgeRequestUrl: string;
+export interface ProjectBadge {
+  readonly badgeEnabled?: boolean;
+  readonly badgeRequestUrl?: string;
 }
 
-interface ProjectBuildBatchConfig {
-  readonly serviceRole: string;
-  readonly combineArtifacts: boolean;
-  readonly restrictions: BatchRestrictions;
-  readonly timeoutInMins: number;
-  readonly batchReportMode: string;
+export interface ProjectBuildBatchConfig {
+  readonly serviceRole?: string;
+  readonly combineArtifacts?: boolean;
+  readonly restrictions?: BatchRestrictions;
+  readonly timeoutInMins?: number;
+  readonly batchReportMode?: string;
 }
 
-interface ProjectCache {
+export interface ProjectCache {
   readonly type: string;
-  readonly location: string;
-  readonly modes: [];
+  readonly location?: string;
+  readonly modes?: [];
 }
 
-interface ProjectEnvironment {
+export interface ProjectEnvironment {
   readonly type: string;
   readonly image: string;
   readonly computeType: string;
-  readonly environmentVariables: [];
-  readonly privilegedMode: boolean;
-  readonly certificate: string;
-  readonly registryCredential: RegistryCredential;
-  readonly imagePullCredentialsType: string;
+  readonly environmentVariables?: [];
+  readonly privilegedMode?: boolean;
+  readonly certificate?: string;
+  readonly registryCredential?: RegistryCredential;
+  readonly imagePullCredentialsType?: string;
 }
 
-interface ProjectFileSystemLocation {
+export interface ProjectFileSystemLocation {
+  readonly type?: string;
+  readonly location?: string;
+  readonly mountPoint?: string;
+  readonly identifier?: string;
+  readonly mountOptions?: string;
+}
+
+export interface ProjectSource {
   readonly type: string;
-  readonly location: string;
-  readonly mountPoint: string;
-  readonly identifier: string;
-  readonly mountOptions: string;
+  readonly location?: string;
+  readonly gitCloneDepth?: number;
+  readonly gitSubmodulesConfig?: GitSubmodulesConfig;
+  readonly buildspec?: string;
+  readonly auth?: SourceAuth;
+  readonly reportBuildStatus?: boolean;
+  readonly buildStatusConfig?: BuildStatusConfig;
+  readonly insecureSsl?: boolean;
+  readonly sourceIdentifier?: string;
 }
 
-interface ProjectSource {
-  readonly type: string;
-  readonly location: string;
-  readonly gitCloneDepth: number;
-  readonly gitSubmodulesConfig: GitSubmodulesConfig;
-  readonly buildspec: string;
-  readonly auth: SourceAuth;
-  readonly reportBuildStatus: boolean;
-  readonly buildStatusConfig: BuildStatusConfig;
-  readonly insecureSsl: boolean;
-  readonly sourceIdentifier: string;
-}
-
-interface ProjectSourceVersion {
+export interface ProjectSourceVersion {
   readonly sourceIdentifier: string;
   readonly sourceVersion: string;
 }
 
-interface PutResourcePolicyInput {
+export interface PutResourcePolicyInput {
   readonly policy: string;
   readonly resourceArn: string;
 }
 
-interface PutResourcePolicyOutput {
-  readonly resourceArn: string;
+export interface PutResourcePolicyOutput {
+  readonly resourceArn?: string;
 }
 
-interface RegistryCredential {
+export interface RegistryCredential {
   readonly credential: string;
   readonly credentialProvider: string;
 }
 
-interface Report {
-  readonly arn: string;
-  readonly type: string;
-  readonly name: string;
-  readonly reportGroupArn: string;
-  readonly executionId: string;
+export interface Report {
+  readonly arn?: string;
+  readonly type?: string;
+  readonly name?: string;
+  readonly reportGroupArn?: string;
+  readonly executionId?: string;
+  readonly status?: string;
+  readonly created?: Date;
+  readonly expired?: Date;
+  readonly exportConfig?: ReportExportConfig;
+  readonly truncated?: boolean;
+  readonly testSummary?: TestReportSummary;
+  readonly codeCoverageSummary?: CodeCoverageReportSummary;
+}
+
+export interface ReportExportConfig {
+  readonly exportConfigType?: string;
+  readonly s3Destination?: S3ReportExportConfig;
+}
+
+export interface ReportFilter {
+  readonly status?: string;
+}
+
+export interface ReportGroup {
+  readonly arn?: string;
+  readonly name?: string;
+  readonly type?: string;
+  readonly exportConfig?: ReportExportConfig;
+  readonly created?: Date;
+  readonly lastModified?: Date;
+  readonly tags?: [];
+  readonly status?: string;
+}
+
+export interface ReportGroupTrendStats {
+  readonly average?: string;
+  readonly max?: string;
+  readonly min?: string;
+}
+
+export interface ReportWithRawData {
+  readonly reportArn?: string;
+  readonly data?: string;
+}
+
+export interface ResolvedArtifact {
+  readonly type?: string;
+  readonly location?: string;
+  readonly identifier?: string;
+}
+
+export interface ResourceAlreadyExistsException {
+}
+
+export interface ResourceNotFoundException {
+}
+
+export interface RetryBuildBatchInput {
+  readonly id?: string;
+  readonly idempotencyToken?: string;
+  readonly retryType?: string;
+}
+
+export interface RetryBuildBatchOutput {
+  readonly buildBatch?: BuildBatch;
+}
+
+export interface RetryBuildInput {
+  readonly id?: string;
+  readonly idempotencyToken?: string;
+}
+
+export interface RetryBuildOutput {
+  readonly build?: Build;
+}
+
+export interface S3LogsConfig {
   readonly status: string;
-  readonly created: Date;
-  readonly expired: Date;
-  readonly exportConfig: ReportExportConfig;
-  readonly truncated: boolean;
-  readonly testSummary: TestReportSummary;
-  readonly codeCoverageSummary: CodeCoverageReportSummary;
+  readonly location?: string;
+  readonly encryptionDisabled?: boolean;
+  readonly bucketOwnerAccess?: string;
 }
 
-interface ReportExportConfig {
-  readonly exportConfigType: string;
-  readonly s3Destination: S3ReportExportConfig;
+export interface S3ReportExportConfig {
+  readonly bucket?: string;
+  readonly bucketOwner?: string;
+  readonly path?: string;
+  readonly packaging?: string;
+  readonly encryptionKey?: string;
+  readonly encryptionDisabled?: boolean;
 }
 
-interface ReportFilter {
-  readonly status: string;
-}
-
-interface ReportGroup {
-  readonly arn: string;
-  readonly name: string;
+export interface SourceAuth {
   readonly type: string;
-  readonly exportConfig: ReportExportConfig;
-  readonly created: Date;
-  readonly lastModified: Date;
-  readonly tags: [];
-  readonly status: string;
+  readonly resource?: string;
 }
 
-interface ReportGroupTrendStats {
-  readonly average: string;
-  readonly max: string;
-  readonly min: string;
+export interface SourceCredentialsInfo {
+  readonly arn?: string;
+  readonly serverType?: string;
+  readonly authType?: string;
 }
 
-interface ReportWithRawData {
-  readonly reportArn: string;
-  readonly data: string;
-}
-
-interface ResolvedArtifact {
-  readonly type: string;
-  readonly location: string;
-  readonly identifier: string;
-}
-
-interface ResourceAlreadyExistsException {
-}
-
-interface ResourceNotFoundException {
-}
-
-interface RetryBuildBatchInput {
-  readonly id: string;
-  readonly idempotencyToken: string;
-  readonly retryType: string;
-}
-
-interface RetryBuildBatchOutput {
-  readonly buildBatch: BuildBatch;
-}
-
-interface RetryBuildInput {
-  readonly id: string;
-  readonly idempotencyToken: string;
-}
-
-interface RetryBuildOutput {
-  readonly build: Build;
-}
-
-interface S3LogsConfig {
-  readonly status: string;
-  readonly location: string;
-  readonly encryptionDisabled: boolean;
-  readonly bucketOwnerAccess: string;
-}
-
-interface S3ReportExportConfig {
-  readonly bucket: string;
-  readonly bucketOwner: string;
-  readonly path: string;
-  readonly packaging: string;
-  readonly encryptionKey: string;
-  readonly encryptionDisabled: boolean;
-}
-
-interface SourceAuth {
-  readonly type: string;
-  readonly resource: string;
-}
-
-interface SourceCredentialsInfo {
-  readonly arn: string;
-  readonly serverType: string;
-  readonly authType: string;
-}
-
-interface StartBuildBatchInput {
+export interface StartBuildBatchInput {
   readonly projectName: string;
-  readonly secondarySourcesOverride: [];
-  readonly secondarySourcesVersionOverride: [];
-  readonly sourceVersion: string;
-  readonly artifactsOverride: ProjectArtifacts;
-  readonly secondaryArtifactsOverride: [];
-  readonly environmentVariablesOverride: [];
-  readonly sourceTypeOverride: string;
-  readonly sourceLocationOverride: string;
-  readonly sourceAuthOverride: SourceAuth;
-  readonly gitCloneDepthOverride: number;
-  readonly gitSubmodulesConfigOverride: GitSubmodulesConfig;
-  readonly buildspecOverride: string;
-  readonly insecureSslOverride: boolean;
-  readonly reportBuildBatchStatusOverride: boolean;
-  readonly environmentTypeOverride: string;
-  readonly imageOverride: string;
-  readonly computeTypeOverride: string;
-  readonly certificateOverride: string;
-  readonly cacheOverride: ProjectCache;
-  readonly serviceRoleOverride: string;
-  readonly privilegedModeOverride: boolean;
-  readonly buildTimeoutInMinutesOverride: number;
-  readonly queuedTimeoutInMinutesOverride: number;
-  readonly encryptionKeyOverride: string;
-  readonly idempotencyToken: string;
-  readonly logsConfigOverride: LogsConfig;
-  readonly registryCredentialOverride: RegistryCredential;
-  readonly imagePullCredentialsTypeOverride: string;
-  readonly buildBatchConfigOverride: ProjectBuildBatchConfig;
-  readonly debugSessionEnabled: boolean;
+  readonly secondarySourcesOverride?: [];
+  readonly secondarySourcesVersionOverride?: [];
+  readonly sourceVersion?: string;
+  readonly artifactsOverride?: ProjectArtifacts;
+  readonly secondaryArtifactsOverride?: [];
+  readonly environmentVariablesOverride?: [];
+  readonly sourceTypeOverride?: string;
+  readonly sourceLocationOverride?: string;
+  readonly sourceAuthOverride?: SourceAuth;
+  readonly gitCloneDepthOverride?: number;
+  readonly gitSubmodulesConfigOverride?: GitSubmodulesConfig;
+  readonly buildspecOverride?: string;
+  readonly insecureSslOverride?: boolean;
+  readonly reportBuildBatchStatusOverride?: boolean;
+  readonly environmentTypeOverride?: string;
+  readonly imageOverride?: string;
+  readonly computeTypeOverride?: string;
+  readonly certificateOverride?: string;
+  readonly cacheOverride?: ProjectCache;
+  readonly serviceRoleOverride?: string;
+  readonly privilegedModeOverride?: boolean;
+  readonly buildTimeoutInMinutesOverride?: number;
+  readonly queuedTimeoutInMinutesOverride?: number;
+  readonly encryptionKeyOverride?: string;
+  readonly idempotencyToken?: string;
+  readonly logsConfigOverride?: LogsConfig;
+  readonly registryCredentialOverride?: RegistryCredential;
+  readonly imagePullCredentialsTypeOverride?: string;
+  readonly buildBatchConfigOverride?: ProjectBuildBatchConfig;
+  readonly debugSessionEnabled?: boolean;
 }
 
-interface StartBuildBatchOutput {
-  readonly buildBatch: BuildBatch;
+export interface StartBuildBatchOutput {
+  readonly buildBatch?: BuildBatch;
 }
 
-interface StartBuildInput {
+export interface StartBuildInput {
   readonly projectName: string;
-  readonly secondarySourcesOverride: [];
-  readonly secondarySourcesVersionOverride: [];
-  readonly sourceVersion: string;
-  readonly artifactsOverride: ProjectArtifacts;
-  readonly secondaryArtifactsOverride: [];
-  readonly environmentVariablesOverride: [];
-  readonly sourceTypeOverride: string;
-  readonly sourceLocationOverride: string;
-  readonly sourceAuthOverride: SourceAuth;
-  readonly gitCloneDepthOverride: number;
-  readonly gitSubmodulesConfigOverride: GitSubmodulesConfig;
-  readonly buildspecOverride: string;
-  readonly insecureSslOverride: boolean;
-  readonly reportBuildStatusOverride: boolean;
-  readonly buildStatusConfigOverride: BuildStatusConfig;
-  readonly environmentTypeOverride: string;
-  readonly imageOverride: string;
-  readonly computeTypeOverride: string;
-  readonly certificateOverride: string;
-  readonly cacheOverride: ProjectCache;
-  readonly serviceRoleOverride: string;
-  readonly privilegedModeOverride: boolean;
-  readonly timeoutInMinutesOverride: number;
-  readonly queuedTimeoutInMinutesOverride: number;
-  readonly encryptionKeyOverride: string;
-  readonly idempotencyToken: string;
-  readonly logsConfigOverride: LogsConfig;
-  readonly registryCredentialOverride: RegistryCredential;
-  readonly imagePullCredentialsTypeOverride: string;
-  readonly debugSessionEnabled: boolean;
+  readonly secondarySourcesOverride?: [];
+  readonly secondarySourcesVersionOverride?: [];
+  readonly sourceVersion?: string;
+  readonly artifactsOverride?: ProjectArtifacts;
+  readonly secondaryArtifactsOverride?: [];
+  readonly environmentVariablesOverride?: [];
+  readonly sourceTypeOverride?: string;
+  readonly sourceLocationOverride?: string;
+  readonly sourceAuthOverride?: SourceAuth;
+  readonly gitCloneDepthOverride?: number;
+  readonly gitSubmodulesConfigOverride?: GitSubmodulesConfig;
+  readonly buildspecOverride?: string;
+  readonly insecureSslOverride?: boolean;
+  readonly reportBuildStatusOverride?: boolean;
+  readonly buildStatusConfigOverride?: BuildStatusConfig;
+  readonly environmentTypeOverride?: string;
+  readonly imageOverride?: string;
+  readonly computeTypeOverride?: string;
+  readonly certificateOverride?: string;
+  readonly cacheOverride?: ProjectCache;
+  readonly serviceRoleOverride?: string;
+  readonly privilegedModeOverride?: boolean;
+  readonly timeoutInMinutesOverride?: number;
+  readonly queuedTimeoutInMinutesOverride?: number;
+  readonly encryptionKeyOverride?: string;
+  readonly idempotencyToken?: string;
+  readonly logsConfigOverride?: LogsConfig;
+  readonly registryCredentialOverride?: RegistryCredential;
+  readonly imagePullCredentialsTypeOverride?: string;
+  readonly debugSessionEnabled?: boolean;
 }
 
-interface StartBuildOutput {
-  readonly build: Build;
+export interface StartBuildOutput {
+  readonly build?: Build;
 }
 
-interface StopBuildBatchInput {
+export interface StopBuildBatchInput {
   readonly id: string;
 }
 
-interface StopBuildBatchOutput {
-  readonly buildBatch: BuildBatch;
+export interface StopBuildBatchOutput {
+  readonly buildBatch?: BuildBatch;
 }
 
-interface StopBuildInput {
+export interface StopBuildInput {
   readonly id: string;
 }
 
-interface StopBuildOutput {
-  readonly build: Build;
+export interface StopBuildOutput {
+  readonly build?: Build;
 }
 
-interface Tag {
-  readonly key: string;
-  readonly value: string;
+export interface Tag {
+  readonly key?: string;
+  readonly value?: string;
 }
 
-interface TestCase {
-  readonly reportArn: string;
-  readonly testRawDataPath: string;
-  readonly prefix: string;
-  readonly name: string;
-  readonly status: string;
-  readonly durationInNanoSeconds: number;
-  readonly message: string;
-  readonly expired: Date;
+export interface TestCase {
+  readonly reportArn?: string;
+  readonly testRawDataPath?: string;
+  readonly prefix?: string;
+  readonly name?: string;
+  readonly status?: string;
+  readonly durationInNanoSeconds?: number;
+  readonly message?: string;
+  readonly expired?: Date;
 }
 
-interface TestCaseFilter {
-  readonly status: string;
-  readonly keyword: string;
+export interface TestCaseFilter {
+  readonly status?: string;
+  readonly keyword?: string;
 }
 
-interface TestReportSummary {
+export interface TestReportSummary {
   readonly total: number;
   readonly statusCounts: {[key: string]: any};
   readonly durationInNanoSeconds: number;
 }
 
-interface UpdateProjectInput {
+export interface UpdateProjectInput {
   readonly name: string;
-  readonly description: string;
-  readonly source: ProjectSource;
-  readonly secondarySources: [];
-  readonly sourceVersion: string;
-  readonly secondarySourceVersions: [];
-  readonly artifacts: ProjectArtifacts;
-  readonly secondaryArtifacts: [];
-  readonly cache: ProjectCache;
-  readonly environment: ProjectEnvironment;
-  readonly serviceRole: string;
-  readonly timeoutInMinutes: number;
-  readonly queuedTimeoutInMinutes: number;
-  readonly encryptionKey: string;
-  readonly tags: [];
-  readonly vpcConfig: VpcConfig;
-  readonly badgeEnabled: boolean;
-  readonly logsConfig: LogsConfig;
-  readonly fileSystemLocations: [];
-  readonly buildBatchConfig: ProjectBuildBatchConfig;
-  readonly concurrentBuildLimit: number;
+  readonly description?: string;
+  readonly source?: ProjectSource;
+  readonly secondarySources?: [];
+  readonly sourceVersion?: string;
+  readonly secondarySourceVersions?: [];
+  readonly artifacts?: ProjectArtifacts;
+  readonly secondaryArtifacts?: [];
+  readonly cache?: ProjectCache;
+  readonly environment?: ProjectEnvironment;
+  readonly serviceRole?: string;
+  readonly timeoutInMinutes?: number;
+  readonly queuedTimeoutInMinutes?: number;
+  readonly encryptionKey?: string;
+  readonly tags?: [];
+  readonly vpcConfig?: VpcConfig;
+  readonly badgeEnabled?: boolean;
+  readonly logsConfig?: LogsConfig;
+  readonly fileSystemLocations?: [];
+  readonly buildBatchConfig?: ProjectBuildBatchConfig;
+  readonly concurrentBuildLimit?: number;
 }
 
-interface UpdateProjectOutput {
-  readonly project: Project;
+export interface UpdateProjectOutput {
+  readonly project?: Project;
 }
 
-interface UpdateProjectVisibilityInput {
+export interface UpdateProjectVisibilityInput {
   readonly projectArn: string;
   readonly projectVisibility: string;
-  readonly resourceAccessRole: string;
+  readonly resourceAccessRole?: string;
 }
 
-interface UpdateProjectVisibilityOutput {
-  readonly projectArn: string;
-  readonly publicProjectAlias: string;
-  readonly projectVisibility: string;
+export interface UpdateProjectVisibilityOutput {
+  readonly projectArn?: string;
+  readonly publicProjectAlias?: string;
+  readonly projectVisibility?: string;
 }
 
-interface UpdateReportGroupInput {
+export interface UpdateReportGroupInput {
   readonly arn: string;
-  readonly exportConfig: ReportExportConfig;
-  readonly tags: [];
+  readonly exportConfig?: ReportExportConfig;
+  readonly tags?: [];
 }
 
-interface UpdateReportGroupOutput {
-  readonly reportGroup: ReportGroup;
+export interface UpdateReportGroupOutput {
+  readonly reportGroup?: ReportGroup;
 }
 
-interface UpdateWebhookInput {
+export interface UpdateWebhookInput {
   readonly projectName: string;
-  readonly branchFilter: string;
-  readonly rotateSecret: boolean;
-  readonly filterGroups: [];
-  readonly buildType: string;
+  readonly branchFilter?: string;
+  readonly rotateSecret?: boolean;
+  readonly filterGroups?: [];
+  readonly buildType?: string;
 }
 
-interface UpdateWebhookOutput {
-  readonly webhook: Webhook;
+export interface UpdateWebhookOutput {
+  readonly webhook?: Webhook;
 }
 
-interface VpcConfig {
-  readonly vpcId: string;
-  readonly subnets: [];
-  readonly securityGroupIds: [];
+export interface VpcConfig {
+  readonly vpcId?: string;
+  readonly subnets?: [];
+  readonly securityGroupIds?: [];
 }
 
-interface Webhook {
-  readonly url: string;
-  readonly payloadUrl: string;
-  readonly secret: string;
-  readonly branchFilter: string;
-  readonly filterGroups: [];
-  readonly buildType: string;
-  readonly lastModifiedSecret: Date;
+export interface Webhook {
+  readonly url?: string;
+  readonly payloadUrl?: string;
+  readonly secret?: string;
+  readonly branchFilter?: string;
+  readonly filterGroups?: [];
+  readonly buildType?: string;
+  readonly lastModifiedSecret?: Date;
 }
 
-interface WebhookFilter {
+export interface WebhookFilter {
   readonly type: string;
   readonly pattern: string;
-  readonly excludeMatchedPattern: boolean;
+  readonly excludeMatchedPattern?: boolean;
 }
+
 

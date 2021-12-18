@@ -6,6 +6,7 @@ export interface CreateHomeRegionControl {
   readonly Target: Target;
   readonly DryRun?: boolean;
 }
+
 export interface DescribeHomeRegionControls {
   readonly ControlId?: string;
   readonly HomeRegion?: string;
@@ -13,75 +14,75 @@ export interface DescribeHomeRegionControls {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetHomeRegion {
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface CreateHomeRegionControlRequest {
+export interface CreateHomeRegionControlRequest {
   readonly HomeRegion: string;
   readonly Target: Target;
-  readonly DryRun: boolean;
+  readonly DryRun?: boolean;
 }
 
-interface CreateHomeRegionControlResult {
-  readonly HomeRegionControl: HomeRegionControl;
+export interface CreateHomeRegionControlResult {
+  readonly HomeRegionControl?: HomeRegionControl;
 }
 
-interface DescribeHomeRegionControlsRequest {
-  readonly ControlId: string;
-  readonly HomeRegion: string;
-  readonly Target: Target;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface DescribeHomeRegionControlsRequest {
+  readonly ControlId?: string;
+  readonly HomeRegion?: string;
+  readonly Target?: Target;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeHomeRegionControlsResult {
-  readonly HomeRegionControls: [];
-  readonly NextToken: string;
+export interface DescribeHomeRegionControlsResult {
+  readonly HomeRegionControls?: [];
+  readonly NextToken?: string;
 }
 
-interface DryRunOperation {
-  readonly Message: string;
+export interface DryRunOperation {
+  readonly Message?: string;
 }
 
-interface GetHomeRegionRequest {
+export interface GetHomeRegionRequest {
 }
 
-interface GetHomeRegionResult {
-  readonly HomeRegion: string;
+export interface GetHomeRegionResult {
+  readonly HomeRegion?: string;
 }
 
-interface HomeRegionControl {
-  readonly ControlId: string;
-  readonly HomeRegion: string;
-  readonly Target: Target;
-  readonly RequestedTime: Date;
+export interface HomeRegionControl {
+  readonly ControlId?: string;
+  readonly HomeRegion?: string;
+  readonly Target?: Target;
+  readonly RequestedTime?: Date;
 }
 
-interface InternalServerError {
-  readonly Message: string;
+export interface InternalServerError {
+  readonly Message?: string;
 }
 
-interface InvalidInputException {
-  readonly Message: string;
+export interface InvalidInputException {
+  readonly Message?: string;
 }
 
-interface ServiceUnavailableException {
-  readonly Message: string;
+export interface ServiceUnavailableException {
+  readonly Message?: string;
 }
 
-interface Target {
+export interface Target {
   readonly Type: string;
-  readonly Id: string;
+  readonly Id?: string;
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly Message: string;
-  readonly RetryAfterSeconds: number;
+  readonly RetryAfterSeconds?: number;
 }
+
 

@@ -4,6 +4,7 @@
 export interface CancelResourceRequest {
   readonly RequestToken: string;
 }
+
 export interface CreateResource {
   readonly TypeName: string;
   readonly TypeVersionId?: string;
@@ -11,6 +12,7 @@ export interface CreateResource {
   readonly ClientToken?: string;
   readonly DesiredState: string;
 }
+
 export interface DeleteResource {
   readonly TypeName: string;
   readonly TypeVersionId?: string;
@@ -18,20 +20,24 @@ export interface DeleteResource {
   readonly ClientToken?: string;
   readonly Identifier: string;
 }
+
 export interface GetResource {
   readonly TypeName: string;
   readonly TypeVersionId?: string;
   readonly RoleArn?: string;
   readonly Identifier: string;
 }
+
 export interface GetResourceRequestStatus {
   readonly RequestToken: string;
 }
+
 export interface ListResourceRequests {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly ResourceRequestStatusFilter?: ResourceRequestStatusFilter;
 }
+
 export interface ListResources {
   readonly TypeName: string;
   readonly TypeVersionId?: string;
@@ -40,6 +46,7 @@ export interface ListResources {
   readonly MaxResults?: number;
   readonly ResourceModel?: string;
 }
+
 export interface UpdateResource {
   readonly TypeName: string;
   readonly TypeVersionId?: string;
@@ -49,203 +56,202 @@ export interface UpdateResource {
   readonly PatchDocument: string;
 }
 
-
-
-interface AlreadyExistsException {
-  readonly Message: string;
+export interface AlreadyExistsException {
+  readonly Message?: string;
 }
 
-interface CancelResourceRequestInput {
+export interface CancelResourceRequestInput {
   readonly RequestToken: string;
 }
 
-interface CancelResourceRequestOutput {
-  readonly ProgressEvent: ProgressEvent;
+export interface CancelResourceRequestOutput {
+  readonly ProgressEvent?: ProgressEvent;
 }
 
-interface ClientTokenConflictException {
-  readonly Message: string;
+export interface ClientTokenConflictException {
+  readonly Message?: string;
 }
 
-interface ConcurrentModificationException {
-  readonly Message: string;
+export interface ConcurrentModificationException {
+  readonly Message?: string;
 }
 
-interface ConcurrentOperationException {
-  readonly Message: string;
+export interface ConcurrentOperationException {
+  readonly Message?: string;
 }
 
-interface CreateResourceInput {
+export interface CreateResourceInput {
   readonly TypeName: string;
-  readonly TypeVersionId: string;
-  readonly RoleArn: string;
-  readonly ClientToken: string;
+  readonly TypeVersionId?: string;
+  readonly RoleArn?: string;
+  readonly ClientToken?: string;
   readonly DesiredState: string;
 }
 
-interface CreateResourceOutput {
-  readonly ProgressEvent: ProgressEvent;
+export interface CreateResourceOutput {
+  readonly ProgressEvent?: ProgressEvent;
 }
 
-interface DeleteResourceInput {
+export interface DeleteResourceInput {
   readonly TypeName: string;
-  readonly TypeVersionId: string;
-  readonly RoleArn: string;
-  readonly ClientToken: string;
+  readonly TypeVersionId?: string;
+  readonly RoleArn?: string;
+  readonly ClientToken?: string;
   readonly Identifier: string;
 }
 
-interface DeleteResourceOutput {
-  readonly ProgressEvent: ProgressEvent;
+export interface DeleteResourceOutput {
+  readonly ProgressEvent?: ProgressEvent;
 }
 
-interface GeneralServiceException {
-  readonly Message: string;
+export interface GeneralServiceException {
+  readonly Message?: string;
 }
 
-interface GetResourceInput {
+export interface GetResourceInput {
   readonly TypeName: string;
-  readonly TypeVersionId: string;
-  readonly RoleArn: string;
+  readonly TypeVersionId?: string;
+  readonly RoleArn?: string;
   readonly Identifier: string;
 }
 
-interface GetResourceOutput {
-  readonly TypeName: string;
-  readonly ResourceDescription: ResourceDescription;
+export interface GetResourceOutput {
+  readonly TypeName?: string;
+  readonly ResourceDescription?: ResourceDescription;
 }
 
-interface GetResourceRequestStatusInput {
+export interface GetResourceRequestStatusInput {
   readonly RequestToken: string;
 }
 
-interface GetResourceRequestStatusOutput {
-  readonly ProgressEvent: ProgressEvent;
+export interface GetResourceRequestStatusOutput {
+  readonly ProgressEvent?: ProgressEvent;
 }
 
-interface HandlerFailureException {
-  readonly Message: string;
+export interface HandlerFailureException {
+  readonly Message?: string;
 }
 
-interface HandlerInternalFailureException {
-  readonly Message: string;
+export interface HandlerInternalFailureException {
+  readonly Message?: string;
 }
 
-interface InvalidCredentialsException {
-  readonly Message: string;
+export interface InvalidCredentialsException {
+  readonly Message?: string;
 }
 
-interface InvalidRequestException {
-  readonly Message: string;
+export interface InvalidRequestException {
+  readonly Message?: string;
 }
 
-interface ListResourceRequestsInput {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ResourceRequestStatusFilter: ResourceRequestStatusFilter;
+export interface ListResourceRequestsInput {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ResourceRequestStatusFilter?: ResourceRequestStatusFilter;
 }
 
-interface ListResourceRequestsOutput {
-  readonly ResourceRequestStatusSummaries: [];
-  readonly NextToken: string;
+export interface ListResourceRequestsOutput {
+  readonly ResourceRequestStatusSummaries?: [];
+  readonly NextToken?: string;
 }
 
-interface ListResourcesInput {
+export interface ListResourcesInput {
   readonly TypeName: string;
-  readonly TypeVersionId: string;
-  readonly RoleArn: string;
-  readonly NextToken: string;
-  readonly MaxResults: number;
-  readonly ResourceModel: string;
+  readonly TypeVersionId?: string;
+  readonly RoleArn?: string;
+  readonly NextToken?: string;
+  readonly MaxResults?: number;
+  readonly ResourceModel?: string;
 }
 
-interface ListResourcesOutput {
+export interface ListResourcesOutput {
+  readonly TypeName?: string;
+  readonly ResourceDescriptions?: [];
+  readonly NextToken?: string;
+}
+
+export interface NetworkFailureException {
+  readonly Message?: string;
+}
+
+export interface NotStabilizedException {
+  readonly Message?: string;
+}
+
+export interface NotUpdatableException {
+  readonly Message?: string;
+}
+
+export interface PrivateTypeException {
+  readonly Message?: string;
+}
+
+export interface ProgressEvent {
+  readonly TypeName?: string;
+  readonly Identifier?: string;
+  readonly RequestToken?: string;
+  readonly Operation?: string;
+  readonly OperationStatus?: string;
+  readonly EventTime?: Date;
+  readonly ResourceModel?: string;
+  readonly StatusMessage?: string;
+  readonly ErrorCode?: string;
+  readonly RetryAfter?: Date;
+}
+
+export interface RequestTokenNotFoundException {
+  readonly Message?: string;
+}
+
+export interface ResourceConflictException {
+  readonly Message?: string;
+}
+
+export interface ResourceDescription {
+  readonly Identifier?: string;
+  readonly Properties?: string;
+}
+
+export interface ResourceNotFoundException {
+  readonly Message?: string;
+}
+
+export interface ResourceRequestStatusFilter {
+  readonly Operations?: [];
+  readonly OperationStatuses?: [];
+}
+
+export interface ServiceInternalErrorException {
+  readonly Message?: string;
+}
+
+export interface ServiceLimitExceededException {
+  readonly Message?: string;
+}
+
+export interface ThrottlingException {
+  readonly Message?: string;
+}
+
+export interface TypeNotFoundException {
+  readonly Message?: string;
+}
+
+export interface UnsupportedActionException {
+  readonly Message?: string;
+}
+
+export interface UpdateResourceInput {
   readonly TypeName: string;
-  readonly ResourceDescriptions: [];
-  readonly NextToken: string;
-}
-
-interface NetworkFailureException {
-  readonly Message: string;
-}
-
-interface NotStabilizedException {
-  readonly Message: string;
-}
-
-interface NotUpdatableException {
-  readonly Message: string;
-}
-
-interface PrivateTypeException {
-  readonly Message: string;
-}
-
-interface ProgressEvent {
-  readonly TypeName: string;
-  readonly Identifier: string;
-  readonly RequestToken: string;
-  readonly Operation: string;
-  readonly OperationStatus: string;
-  readonly EventTime: Date;
-  readonly ResourceModel: string;
-  readonly StatusMessage: string;
-  readonly ErrorCode: string;
-  readonly RetryAfter: Date;
-}
-
-interface RequestTokenNotFoundException {
-  readonly Message: string;
-}
-
-interface ResourceConflictException {
-  readonly Message: string;
-}
-
-interface ResourceDescription {
-  readonly Identifier: string;
-  readonly Properties: string;
-}
-
-interface ResourceNotFoundException {
-  readonly Message: string;
-}
-
-interface ResourceRequestStatusFilter {
-  readonly Operations: [];
-  readonly OperationStatuses: [];
-}
-
-interface ServiceInternalErrorException {
-  readonly Message: string;
-}
-
-interface ServiceLimitExceededException {
-  readonly Message: string;
-}
-
-interface ThrottlingException {
-  readonly Message: string;
-}
-
-interface TypeNotFoundException {
-  readonly Message: string;
-}
-
-interface UnsupportedActionException {
-  readonly Message: string;
-}
-
-interface UpdateResourceInput {
-  readonly TypeName: string;
-  readonly TypeVersionId: string;
-  readonly RoleArn: string;
-  readonly ClientToken: string;
+  readonly TypeVersionId?: string;
+  readonly RoleArn?: string;
+  readonly ClientToken?: string;
   readonly Identifier: string;
   readonly PatchDocument: string;
 }
 
-interface UpdateResourceOutput {
-  readonly ProgressEvent: ProgressEvent;
+export interface UpdateResourceOutput {
+  readonly ProgressEvent?: ProgressEvent;
 }
+
 

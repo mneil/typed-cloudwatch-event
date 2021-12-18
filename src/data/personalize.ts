@@ -11,6 +11,7 @@ export interface CreateBatchInferenceJob {
   readonly roleArn: string;
   readonly batchInferenceJobConfig?: BatchInferenceJobConfig;
 }
+
 export interface CreateBatchSegmentJob {
   readonly jobName: string;
   readonly solutionVersionArn: string;
@@ -20,18 +21,21 @@ export interface CreateBatchSegmentJob {
   readonly jobOutput: BatchSegmentJobOutput;
   readonly roleArn: string;
 }
+
 export interface CreateCampaign {
   readonly name: string;
   readonly solutionVersionArn: string;
   readonly minProvisionedTPS?: number;
   readonly campaignConfig?: CampaignConfig;
 }
+
 export interface CreateDataset {
   readonly name: string;
   readonly schemaArn: string;
   readonly datasetGroupArn: string;
   readonly datasetType: string;
 }
+
 export interface CreateDatasetExportJob {
   readonly jobName: string;
   readonly datasetArn: string;
@@ -39,38 +43,45 @@ export interface CreateDatasetExportJob {
   readonly roleArn: string;
   readonly jobOutput: DatasetExportJobOutput;
 }
+
 export interface CreateDatasetGroup {
   readonly name: string;
   readonly roleArn?: string;
   readonly kmsKeyArn?: string;
   readonly domain?: string;
 }
+
 export interface CreateDatasetImportJob {
   readonly jobName: string;
   readonly datasetArn: string;
   readonly dataSource: DataSource;
   readonly roleArn: string;
 }
+
 export interface CreateEventTracker {
   readonly name: string;
   readonly datasetGroupArn: string;
 }
+
 export interface CreateFilter {
   readonly name: string;
   readonly datasetGroupArn: string;
   readonly filterExpression: string;
 }
+
 export interface CreateRecommender {
   readonly name: string;
   readonly datasetGroupArn: string;
   readonly recipeArn: string;
   readonly recommenderConfig?: RecommenderConfig;
 }
+
 export interface CreateSchema {
   readonly name: string;
   readonly schema: string;
   readonly domain?: string;
 }
+
 export interface CreateSolution {
   readonly name: string;
   readonly performHPO?: boolean;
@@ -80,1176 +91,1218 @@ export interface CreateSolution {
   readonly eventType?: string;
   readonly solutionConfig?: SolutionConfig;
 }
+
 export interface CreateSolutionVersion {
   readonly solutionArn: string;
   readonly trainingMode?: string;
 }
+
 export interface DeleteCampaign {
   readonly campaignArn: string;
 }
+
 export interface DeleteDataset {
   readonly datasetArn: string;
 }
+
 export interface DeleteDatasetGroup {
   readonly datasetGroupArn: string;
 }
+
 export interface DeleteEventTracker {
   readonly eventTrackerArn: string;
 }
+
 export interface DeleteFilter {
   readonly filterArn: string;
 }
+
 export interface DeleteRecommender {
   readonly recommenderArn: string;
 }
+
 export interface DeleteSchema {
   readonly schemaArn: string;
 }
+
 export interface DeleteSolution {
   readonly solutionArn: string;
 }
+
 export interface DescribeAlgorithm {
   readonly algorithmArn: string;
 }
+
 export interface DescribeBatchInferenceJob {
   readonly batchInferenceJobArn: string;
 }
+
 export interface DescribeBatchSegmentJob {
   readonly batchSegmentJobArn: string;
 }
+
 export interface DescribeCampaign {
   readonly campaignArn: string;
 }
+
 export interface DescribeDataset {
   readonly datasetArn: string;
 }
+
 export interface DescribeDatasetExportJob {
   readonly datasetExportJobArn: string;
 }
+
 export interface DescribeDatasetGroup {
   readonly datasetGroupArn: string;
 }
+
 export interface DescribeDatasetImportJob {
   readonly datasetImportJobArn: string;
 }
+
 export interface DescribeEventTracker {
   readonly eventTrackerArn: string;
 }
+
 export interface DescribeFeatureTransformation {
   readonly featureTransformationArn: string;
 }
+
 export interface DescribeFilter {
   readonly filterArn: string;
 }
+
 export interface DescribeRecipe {
   readonly recipeArn: string;
 }
+
 export interface DescribeRecommender {
   readonly recommenderArn: string;
 }
+
 export interface DescribeSchema {
   readonly schemaArn: string;
 }
+
 export interface DescribeSolution {
   readonly solutionArn: string;
 }
+
 export interface DescribeSolutionVersion {
   readonly solutionVersionArn: string;
 }
+
 export interface GetSolutionMetrics {
   readonly solutionVersionArn: string;
 }
+
 export interface ListBatchInferenceJobs {
   readonly solutionVersionArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListBatchSegmentJobs {
   readonly solutionVersionArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListCampaigns {
   readonly solutionArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListDatasetExportJobs {
   readonly datasetArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListDatasetGroups {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListDatasetImportJobs {
   readonly datasetArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListDatasets {
   readonly datasetGroupArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListEventTrackers {
   readonly datasetGroupArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListFilters {
   readonly datasetGroupArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListRecipes {
   readonly recipeProvider?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
   readonly domain?: string;
 }
+
 export interface ListRecommenders {
   readonly datasetGroupArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListSchemas {
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListSolutionVersions {
   readonly solutionArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface ListSolutions {
   readonly datasetGroupArn?: string;
   readonly nextToken?: string;
   readonly maxResults?: number;
 }
+
 export interface StopSolutionVersionCreation {
   readonly solutionVersionArn: string;
 }
+
 export interface UpdateCampaign {
   readonly campaignArn: string;
   readonly solutionVersionArn?: string;
   readonly minProvisionedTPS?: number;
   readonly campaignConfig?: CampaignConfig;
 }
+
 export interface UpdateRecommender {
   readonly recommenderArn: string;
   readonly recommenderConfig: RecommenderConfig;
 }
 
-
-
-interface Algorithm {
-  readonly name: string;
-  readonly algorithmArn: string;
-  readonly algorithmImage: AlgorithmImage;
-  readonly defaultHyperParameters: {[key: string]: any};
-  readonly defaultHyperParameterRanges: DefaultHyperParameterRanges;
-  readonly defaultResourceConfig: {[key: string]: any};
-  readonly trainingInputMode: string;
-  readonly roleArn: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
+export interface Algorithm {
+  readonly name?: string;
+  readonly algorithmArn?: string;
+  readonly algorithmImage?: AlgorithmImage;
+  readonly defaultHyperParameters?: {[key: string]: any};
+  readonly defaultHyperParameterRanges?: DefaultHyperParameterRanges;
+  readonly defaultResourceConfig?: {[key: string]: any};
+  readonly trainingInputMode?: string;
+  readonly roleArn?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
 }
 
-interface AlgorithmImage {
-  readonly name: string;
+export interface AlgorithmImage {
+  readonly name?: string;
   readonly dockerURI: string;
 }
 
-interface AutoMLConfig {
-  readonly metricName: string;
-  readonly recipeList: [];
+export interface AutoMLConfig {
+  readonly metricName?: string;
+  readonly recipeList?: [];
 }
 
-interface AutoMLResult {
-  readonly bestRecipeArn: string;
+export interface AutoMLResult {
+  readonly bestRecipeArn?: string;
 }
 
-interface BatchInferenceJob {
-  readonly jobName: string;
-  readonly batchInferenceJobArn: string;
-  readonly filterArn: string;
-  readonly failureReason: string;
-  readonly solutionVersionArn: string;
-  readonly numResults: number;
-  readonly jobInput: BatchInferenceJobInput;
-  readonly jobOutput: BatchInferenceJobOutput;
-  readonly batchInferenceJobConfig: BatchInferenceJobConfig;
-  readonly roleArn: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
+export interface BatchInferenceJob {
+  readonly jobName?: string;
+  readonly batchInferenceJobArn?: string;
+  readonly filterArn?: string;
+  readonly failureReason?: string;
+  readonly solutionVersionArn?: string;
+  readonly numResults?: number;
+  readonly jobInput?: BatchInferenceJobInput;
+  readonly jobOutput?: BatchInferenceJobOutput;
+  readonly batchInferenceJobConfig?: BatchInferenceJobConfig;
+  readonly roleArn?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
 }
 
-interface BatchInferenceJobConfig {
-  readonly itemExplorationConfig: {[key: string]: any};
+export interface BatchInferenceJobConfig {
+  readonly itemExplorationConfig?: {[key: string]: any};
 }
 
-interface BatchInferenceJobInput {
+export interface BatchInferenceJobInput {
   readonly s3DataSource: S3DataConfig;
 }
 
-interface BatchInferenceJobOutput {
+export interface BatchInferenceJobOutput {
   readonly s3DataDestination: S3DataConfig;
 }
 
-interface BatchInferenceJobSummary {
-  readonly batchInferenceJobArn: string;
-  readonly jobName: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly failureReason: string;
-  readonly solutionVersionArn: string;
+export interface BatchInferenceJobSummary {
+  readonly batchInferenceJobArn?: string;
+  readonly jobName?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly failureReason?: string;
+  readonly solutionVersionArn?: string;
 }
 
-interface BatchSegmentJob {
-  readonly jobName: string;
-  readonly batchSegmentJobArn: string;
-  readonly filterArn: string;
-  readonly failureReason: string;
-  readonly solutionVersionArn: string;
-  readonly numResults: number;
-  readonly jobInput: BatchSegmentJobInput;
-  readonly jobOutput: BatchSegmentJobOutput;
-  readonly roleArn: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
+export interface BatchSegmentJob {
+  readonly jobName?: string;
+  readonly batchSegmentJobArn?: string;
+  readonly filterArn?: string;
+  readonly failureReason?: string;
+  readonly solutionVersionArn?: string;
+  readonly numResults?: number;
+  readonly jobInput?: BatchSegmentJobInput;
+  readonly jobOutput?: BatchSegmentJobOutput;
+  readonly roleArn?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
 }
 
-interface BatchSegmentJobInput {
+export interface BatchSegmentJobInput {
   readonly s3DataSource: S3DataConfig;
 }
 
-interface BatchSegmentJobOutput {
+export interface BatchSegmentJobOutput {
   readonly s3DataDestination: S3DataConfig;
 }
 
-interface BatchSegmentJobSummary {
-  readonly batchSegmentJobArn: string;
+export interface BatchSegmentJobSummary {
+  readonly batchSegmentJobArn?: string;
+  readonly jobName?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly failureReason?: string;
+  readonly solutionVersionArn?: string;
+}
+
+export interface Campaign {
+  readonly name?: string;
+  readonly campaignArn?: string;
+  readonly solutionVersionArn?: string;
+  readonly minProvisionedTPS?: number;
+  readonly campaignConfig?: CampaignConfig;
+  readonly status?: string;
+  readonly failureReason?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly latestCampaignUpdate?: CampaignUpdateSummary;
+}
+
+export interface CampaignConfig {
+  readonly itemExplorationConfig?: {[key: string]: any};
+}
+
+export interface CampaignSummary {
+  readonly name?: string;
+  readonly campaignArn?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly failureReason?: string;
+}
+
+export interface CampaignUpdateSummary {
+  readonly solutionVersionArn?: string;
+  readonly minProvisionedTPS?: number;
+  readonly campaignConfig?: CampaignConfig;
+  readonly status?: string;
+  readonly failureReason?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+}
+
+export interface CategoricalHyperParameterRange {
+  readonly name?: string;
+  readonly values?: [];
+}
+
+export interface ContinuousHyperParameterRange {
+  readonly name?: string;
+  readonly minValue?: unknown;
+  readonly maxValue?: unknown;
+}
+
+export interface CreateBatchInferenceJobRequest {
   readonly jobName: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly failureReason: string;
   readonly solutionVersionArn: string;
-}
-
-interface Campaign {
-  readonly name: string;
-  readonly campaignArn: string;
-  readonly solutionVersionArn: string;
-  readonly minProvisionedTPS: number;
-  readonly campaignConfig: CampaignConfig;
-  readonly status: string;
-  readonly failureReason: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly latestCampaignUpdate: CampaignUpdateSummary;
-}
-
-interface CampaignConfig {
-  readonly itemExplorationConfig: {[key: string]: any};
-}
-
-interface CampaignSummary {
-  readonly name: string;
-  readonly campaignArn: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly failureReason: string;
-}
-
-interface CampaignUpdateSummary {
-  readonly solutionVersionArn: string;
-  readonly minProvisionedTPS: number;
-  readonly campaignConfig: CampaignConfig;
-  readonly status: string;
-  readonly failureReason: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-}
-
-interface CategoricalHyperParameterRange {
-  readonly name: string;
-  readonly values: [];
-}
-
-interface ContinuousHyperParameterRange {
-  readonly name: string;
-  readonly minValue: unknown;
-  readonly maxValue: unknown;
-}
-
-interface CreateBatchInferenceJobRequest {
-  readonly jobName: string;
-  readonly solutionVersionArn: string;
-  readonly filterArn: string;
-  readonly numResults: number;
+  readonly filterArn?: string;
+  readonly numResults?: number;
   readonly jobInput: BatchInferenceJobInput;
   readonly jobOutput: BatchInferenceJobOutput;
   readonly roleArn: string;
-  readonly batchInferenceJobConfig: BatchInferenceJobConfig;
+  readonly batchInferenceJobConfig?: BatchInferenceJobConfig;
 }
 
-interface CreateBatchInferenceJobResponse {
-  readonly batchInferenceJobArn: string;
+export interface CreateBatchInferenceJobResponse {
+  readonly batchInferenceJobArn?: string;
 }
 
-interface CreateBatchSegmentJobRequest {
+export interface CreateBatchSegmentJobRequest {
   readonly jobName: string;
   readonly solutionVersionArn: string;
-  readonly filterArn: string;
-  readonly numResults: number;
+  readonly filterArn?: string;
+  readonly numResults?: number;
   readonly jobInput: BatchSegmentJobInput;
   readonly jobOutput: BatchSegmentJobOutput;
   readonly roleArn: string;
 }
 
-interface CreateBatchSegmentJobResponse {
-  readonly batchSegmentJobArn: string;
+export interface CreateBatchSegmentJobResponse {
+  readonly batchSegmentJobArn?: string;
 }
 
-interface CreateCampaignRequest {
+export interface CreateCampaignRequest {
   readonly name: string;
   readonly solutionVersionArn: string;
-  readonly minProvisionedTPS: number;
-  readonly campaignConfig: CampaignConfig;
+  readonly minProvisionedTPS?: number;
+  readonly campaignConfig?: CampaignConfig;
 }
 
-interface CreateCampaignResponse {
-  readonly campaignArn: string;
+export interface CreateCampaignResponse {
+  readonly campaignArn?: string;
 }
 
-interface CreateDatasetExportJobRequest {
+export interface CreateDatasetExportJobRequest {
   readonly jobName: string;
   readonly datasetArn: string;
-  readonly ingestionMode: string;
+  readonly ingestionMode?: string;
   readonly roleArn: string;
   readonly jobOutput: DatasetExportJobOutput;
 }
 
-interface CreateDatasetExportJobResponse {
-  readonly datasetExportJobArn: string;
+export interface CreateDatasetExportJobResponse {
+  readonly datasetExportJobArn?: string;
 }
 
-interface CreateDatasetGroupRequest {
+export interface CreateDatasetGroupRequest {
   readonly name: string;
-  readonly roleArn: string;
-  readonly kmsKeyArn: string;
-  readonly domain: string;
+  readonly roleArn?: string;
+  readonly kmsKeyArn?: string;
+  readonly domain?: string;
 }
 
-interface CreateDatasetGroupResponse {
-  readonly datasetGroupArn: string;
-  readonly domain: string;
+export interface CreateDatasetGroupResponse {
+  readonly datasetGroupArn?: string;
+  readonly domain?: string;
 }
 
-interface CreateDatasetImportJobRequest {
+export interface CreateDatasetImportJobRequest {
   readonly jobName: string;
   readonly datasetArn: string;
   readonly dataSource: DataSource;
   readonly roleArn: string;
 }
 
-interface CreateDatasetImportJobResponse {
-  readonly datasetImportJobArn: string;
+export interface CreateDatasetImportJobResponse {
+  readonly datasetImportJobArn?: string;
 }
 
-interface CreateDatasetRequest {
+export interface CreateDatasetRequest {
   readonly name: string;
   readonly schemaArn: string;
   readonly datasetGroupArn: string;
   readonly datasetType: string;
 }
 
-interface CreateDatasetResponse {
-  readonly datasetArn: string;
+export interface CreateDatasetResponse {
+  readonly datasetArn?: string;
 }
 
-interface CreateEventTrackerRequest {
+export interface CreateEventTrackerRequest {
   readonly name: string;
   readonly datasetGroupArn: string;
 }
 
-interface CreateEventTrackerResponse {
-  readonly eventTrackerArn: string;
-  readonly trackingId: string;
+export interface CreateEventTrackerResponse {
+  readonly eventTrackerArn?: string;
+  readonly trackingId?: string;
 }
 
-interface CreateFilterRequest {
+export interface CreateFilterRequest {
   readonly name: string;
   readonly datasetGroupArn: string;
   readonly filterExpression: string;
 }
 
-interface CreateFilterResponse {
-  readonly filterArn: string;
+export interface CreateFilterResponse {
+  readonly filterArn?: string;
 }
 
-interface CreateRecommenderRequest {
+export interface CreateRecommenderRequest {
   readonly name: string;
   readonly datasetGroupArn: string;
   readonly recipeArn: string;
-  readonly recommenderConfig: RecommenderConfig;
+  readonly recommenderConfig?: RecommenderConfig;
 }
 
-interface CreateRecommenderResponse {
-  readonly recommenderArn: string;
+export interface CreateRecommenderResponse {
+  readonly recommenderArn?: string;
 }
 
-interface CreateSchemaRequest {
+export interface CreateSchemaRequest {
   readonly name: string;
   readonly schema: string;
-  readonly domain: string;
+  readonly domain?: string;
 }
 
-interface CreateSchemaResponse {
-  readonly schemaArn: string;
+export interface CreateSchemaResponse {
+  readonly schemaArn?: string;
 }
 
-interface CreateSolutionRequest {
+export interface CreateSolutionRequest {
   readonly name: string;
-  readonly performHPO: boolean;
-  readonly performAutoML: boolean;
-  readonly recipeArn: string;
+  readonly performHPO?: boolean;
+  readonly performAutoML?: boolean;
+  readonly recipeArn?: string;
   readonly datasetGroupArn: string;
-  readonly eventType: string;
-  readonly solutionConfig: SolutionConfig;
+  readonly eventType?: string;
+  readonly solutionConfig?: SolutionConfig;
 }
 
-interface CreateSolutionResponse {
+export interface CreateSolutionResponse {
+  readonly solutionArn?: string;
+}
+
+export interface CreateSolutionVersionRequest {
   readonly solutionArn: string;
+  readonly trainingMode?: string;
 }
 
-interface CreateSolutionVersionRequest {
-  readonly solutionArn: string;
-  readonly trainingMode: string;
+export interface CreateSolutionVersionResponse {
+  readonly solutionVersionArn?: string;
 }
 
-interface CreateSolutionVersionResponse {
-  readonly solutionVersionArn: string;
+export interface DataSource {
+  readonly dataLocation?: string;
 }
 
-interface DataSource {
-  readonly dataLocation: string;
+export interface Dataset {
+  readonly name?: string;
+  readonly datasetArn?: string;
+  readonly datasetGroupArn?: string;
+  readonly datasetType?: string;
+  readonly schemaArn?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
 }
 
-interface Dataset {
-  readonly name: string;
-  readonly datasetArn: string;
-  readonly datasetGroupArn: string;
-  readonly datasetType: string;
-  readonly schemaArn: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
+export interface DatasetExportJob {
+  readonly jobName?: string;
+  readonly datasetExportJobArn?: string;
+  readonly datasetArn?: string;
+  readonly ingestionMode?: string;
+  readonly roleArn?: string;
+  readonly status?: string;
+  readonly jobOutput?: DatasetExportJobOutput;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly failureReason?: string;
 }
 
-interface DatasetExportJob {
-  readonly jobName: string;
-  readonly datasetExportJobArn: string;
-  readonly datasetArn: string;
-  readonly ingestionMode: string;
-  readonly roleArn: string;
-  readonly status: string;
-  readonly jobOutput: DatasetExportJobOutput;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly failureReason: string;
-}
-
-interface DatasetExportJobOutput {
+export interface DatasetExportJobOutput {
   readonly s3DataDestination: S3DataConfig;
 }
 
-interface DatasetExportJobSummary {
-  readonly datasetExportJobArn: string;
-  readonly jobName: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly failureReason: string;
+export interface DatasetExportJobSummary {
+  readonly datasetExportJobArn?: string;
+  readonly jobName?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly failureReason?: string;
 }
 
-interface DatasetGroup {
-  readonly name: string;
-  readonly datasetGroupArn: string;
-  readonly status: string;
-  readonly roleArn: string;
-  readonly kmsKeyArn: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly failureReason: string;
-  readonly domain: string;
+export interface DatasetGroup {
+  readonly name?: string;
+  readonly datasetGroupArn?: string;
+  readonly status?: string;
+  readonly roleArn?: string;
+  readonly kmsKeyArn?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly failureReason?: string;
+  readonly domain?: string;
 }
 
-interface DatasetGroupSummary {
-  readonly name: string;
-  readonly datasetGroupArn: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly failureReason: string;
-  readonly domain: string;
+export interface DatasetGroupSummary {
+  readonly name?: string;
+  readonly datasetGroupArn?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly failureReason?: string;
+  readonly domain?: string;
 }
 
-interface DatasetImportJob {
-  readonly jobName: string;
-  readonly datasetImportJobArn: string;
-  readonly datasetArn: string;
-  readonly dataSource: DataSource;
-  readonly roleArn: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly failureReason: string;
+export interface DatasetImportJob {
+  readonly jobName?: string;
+  readonly datasetImportJobArn?: string;
+  readonly datasetArn?: string;
+  readonly dataSource?: DataSource;
+  readonly roleArn?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly failureReason?: string;
 }
 
-interface DatasetImportJobSummary {
-  readonly datasetImportJobArn: string;
-  readonly jobName: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly failureReason: string;
+export interface DatasetImportJobSummary {
+  readonly datasetImportJobArn?: string;
+  readonly jobName?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly failureReason?: string;
 }
 
-interface DatasetSchema {
-  readonly name: string;
-  readonly schemaArn: string;
-  readonly schema: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly domain: string;
+export interface DatasetSchema {
+  readonly name?: string;
+  readonly schemaArn?: string;
+  readonly schema?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly domain?: string;
 }
 
-interface DatasetSchemaSummary {
-  readonly name: string;
-  readonly schemaArn: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly domain: string;
+export interface DatasetSchemaSummary {
+  readonly name?: string;
+  readonly schemaArn?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly domain?: string;
 }
 
-interface DatasetSummary {
-  readonly name: string;
-  readonly datasetArn: string;
-  readonly datasetType: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
+export interface DatasetSummary {
+  readonly name?: string;
+  readonly datasetArn?: string;
+  readonly datasetType?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
 }
 
-interface DefaultCategoricalHyperParameterRange {
-  readonly name: string;
-  readonly values: [];
-  readonly isTunable: boolean;
+export interface DefaultCategoricalHyperParameterRange {
+  readonly name?: string;
+  readonly values?: [];
+  readonly isTunable?: boolean;
 }
 
-interface DefaultContinuousHyperParameterRange {
-  readonly name: string;
-  readonly minValue: unknown;
-  readonly maxValue: unknown;
-  readonly isTunable: boolean;
+export interface DefaultContinuousHyperParameterRange {
+  readonly name?: string;
+  readonly minValue?: unknown;
+  readonly maxValue?: unknown;
+  readonly isTunable?: boolean;
 }
 
-interface DefaultHyperParameterRanges {
-  readonly integerHyperParameterRanges: [];
-  readonly continuousHyperParameterRanges: [];
-  readonly categoricalHyperParameterRanges: [];
+export interface DefaultHyperParameterRanges {
+  readonly integerHyperParameterRanges?: [];
+  readonly continuousHyperParameterRanges?: [];
+  readonly categoricalHyperParameterRanges?: [];
 }
 
-interface DefaultIntegerHyperParameterRange {
-  readonly name: string;
-  readonly minValue: number;
-  readonly maxValue: number;
-  readonly isTunable: boolean;
+export interface DefaultIntegerHyperParameterRange {
+  readonly name?: string;
+  readonly minValue?: number;
+  readonly maxValue?: number;
+  readonly isTunable?: boolean;
 }
 
-interface DeleteCampaignRequest {
+export interface DeleteCampaignRequest {
   readonly campaignArn: string;
 }
 
-interface DeleteDatasetGroupRequest {
+export interface DeleteDatasetGroupRequest {
   readonly datasetGroupArn: string;
 }
 
-interface DeleteDatasetRequest {
+export interface DeleteDatasetRequest {
   readonly datasetArn: string;
 }
 
-interface DeleteEventTrackerRequest {
+export interface DeleteEventTrackerRequest {
   readonly eventTrackerArn: string;
 }
 
-interface DeleteFilterRequest {
+export interface DeleteFilterRequest {
   readonly filterArn: string;
 }
 
-interface DeleteRecommenderRequest {
+export interface DeleteRecommenderRequest {
   readonly recommenderArn: string;
 }
 
-interface DeleteSchemaRequest {
+export interface DeleteSchemaRequest {
   readonly schemaArn: string;
 }
 
-interface DeleteSolutionRequest {
+export interface DeleteSolutionRequest {
   readonly solutionArn: string;
 }
 
-interface DescribeAlgorithmRequest {
+export interface DescribeAlgorithmRequest {
   readonly algorithmArn: string;
 }
 
-interface DescribeAlgorithmResponse {
-  readonly algorithm: Algorithm;
+export interface DescribeAlgorithmResponse {
+  readonly algorithm?: Algorithm;
 }
 
-interface DescribeBatchInferenceJobRequest {
+export interface DescribeBatchInferenceJobRequest {
   readonly batchInferenceJobArn: string;
 }
 
-interface DescribeBatchInferenceJobResponse {
-  readonly batchInferenceJob: BatchInferenceJob;
+export interface DescribeBatchInferenceJobResponse {
+  readonly batchInferenceJob?: BatchInferenceJob;
 }
 
-interface DescribeBatchSegmentJobRequest {
+export interface DescribeBatchSegmentJobRequest {
   readonly batchSegmentJobArn: string;
 }
 
-interface DescribeBatchSegmentJobResponse {
-  readonly batchSegmentJob: BatchSegmentJob;
+export interface DescribeBatchSegmentJobResponse {
+  readonly batchSegmentJob?: BatchSegmentJob;
 }
 
-interface DescribeCampaignRequest {
+export interface DescribeCampaignRequest {
   readonly campaignArn: string;
 }
 
-interface DescribeCampaignResponse {
-  readonly campaign: Campaign;
+export interface DescribeCampaignResponse {
+  readonly campaign?: Campaign;
 }
 
-interface DescribeDatasetExportJobRequest {
+export interface DescribeDatasetExportJobRequest {
   readonly datasetExportJobArn: string;
 }
 
-interface DescribeDatasetExportJobResponse {
-  readonly datasetExportJob: DatasetExportJob;
+export interface DescribeDatasetExportJobResponse {
+  readonly datasetExportJob?: DatasetExportJob;
 }
 
-interface DescribeDatasetGroupRequest {
+export interface DescribeDatasetGroupRequest {
   readonly datasetGroupArn: string;
 }
 
-interface DescribeDatasetGroupResponse {
-  readonly datasetGroup: DatasetGroup;
+export interface DescribeDatasetGroupResponse {
+  readonly datasetGroup?: DatasetGroup;
 }
 
-interface DescribeDatasetImportJobRequest {
+export interface DescribeDatasetImportJobRequest {
   readonly datasetImportJobArn: string;
 }
 
-interface DescribeDatasetImportJobResponse {
-  readonly datasetImportJob: DatasetImportJob;
+export interface DescribeDatasetImportJobResponse {
+  readonly datasetImportJob?: DatasetImportJob;
 }
 
-interface DescribeDatasetRequest {
+export interface DescribeDatasetRequest {
   readonly datasetArn: string;
 }
 
-interface DescribeDatasetResponse {
-  readonly dataset: Dataset;
+export interface DescribeDatasetResponse {
+  readonly dataset?: Dataset;
 }
 
-interface DescribeEventTrackerRequest {
+export interface DescribeEventTrackerRequest {
   readonly eventTrackerArn: string;
 }
 
-interface DescribeEventTrackerResponse {
-  readonly eventTracker: EventTracker;
+export interface DescribeEventTrackerResponse {
+  readonly eventTracker?: EventTracker;
 }
 
-interface DescribeFeatureTransformationRequest {
+export interface DescribeFeatureTransformationRequest {
   readonly featureTransformationArn: string;
 }
 
-interface DescribeFeatureTransformationResponse {
-  readonly featureTransformation: FeatureTransformation;
+export interface DescribeFeatureTransformationResponse {
+  readonly featureTransformation?: FeatureTransformation;
 }
 
-interface DescribeFilterRequest {
+export interface DescribeFilterRequest {
   readonly filterArn: string;
 }
 
-interface DescribeFilterResponse {
-  readonly filter: Filter;
+export interface DescribeFilterResponse {
+  readonly filter?: Filter;
 }
 
-interface DescribeRecipeRequest {
+export interface DescribeRecipeRequest {
   readonly recipeArn: string;
 }
 
-interface DescribeRecipeResponse {
-  readonly recipe: Recipe;
+export interface DescribeRecipeResponse {
+  readonly recipe?: Recipe;
 }
 
-interface DescribeRecommenderRequest {
+export interface DescribeRecommenderRequest {
   readonly recommenderArn: string;
 }
 
-interface DescribeRecommenderResponse {
-  readonly recommender: Recommender;
+export interface DescribeRecommenderResponse {
+  readonly recommender?: Recommender;
 }
 
-interface DescribeSchemaRequest {
+export interface DescribeSchemaRequest {
   readonly schemaArn: string;
 }
 
-interface DescribeSchemaResponse {
-  readonly schema: DatasetSchema;
+export interface DescribeSchemaResponse {
+  readonly schema?: DatasetSchema;
 }
 
-interface DescribeSolutionRequest {
+export interface DescribeSolutionRequest {
   readonly solutionArn: string;
 }
 
-interface DescribeSolutionResponse {
-  readonly solution: Solution;
+export interface DescribeSolutionResponse {
+  readonly solution?: Solution;
 }
 
-interface DescribeSolutionVersionRequest {
+export interface DescribeSolutionVersionRequest {
   readonly solutionVersionArn: string;
 }
 
-interface DescribeSolutionVersionResponse {
-  readonly solutionVersion: SolutionVersion;
+export interface DescribeSolutionVersionResponse {
+  readonly solutionVersion?: SolutionVersion;
 }
 
-interface EventTracker {
-  readonly name: string;
-  readonly eventTrackerArn: string;
-  readonly accountId: string;
-  readonly trackingId: string;
-  readonly datasetGroupArn: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
+export interface EventTracker {
+  readonly name?: string;
+  readonly eventTrackerArn?: string;
+  readonly accountId?: string;
+  readonly trackingId?: string;
+  readonly datasetGroupArn?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
 }
 
-interface EventTrackerSummary {
-  readonly name: string;
-  readonly eventTrackerArn: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
+export interface EventTrackerSummary {
+  readonly name?: string;
+  readonly eventTrackerArn?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
 }
 
-interface FeatureTransformation {
-  readonly name: string;
-  readonly featureTransformationArn: string;
-  readonly defaultParameters: {[key: string]: any};
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly status: string;
+export interface FeatureTransformation {
+  readonly name?: string;
+  readonly featureTransformationArn?: string;
+  readonly defaultParameters?: {[key: string]: any};
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly status?: string;
 }
 
-interface Filter {
-  readonly name: string;
-  readonly filterArn: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly datasetGroupArn: string;
-  readonly failureReason: string;
-  readonly filterExpression: string;
-  readonly status: string;
+export interface Filter {
+  readonly name?: string;
+  readonly filterArn?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly datasetGroupArn?: string;
+  readonly failureReason?: string;
+  readonly filterExpression?: string;
+  readonly status?: string;
 }
 
-interface FilterSummary {
-  readonly name: string;
-  readonly filterArn: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly datasetGroupArn: string;
-  readonly failureReason: string;
-  readonly status: string;
+export interface FilterSummary {
+  readonly name?: string;
+  readonly filterArn?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly datasetGroupArn?: string;
+  readonly failureReason?: string;
+  readonly status?: string;
 }
 
-interface GetSolutionMetricsRequest {
+export interface GetSolutionMetricsRequest {
   readonly solutionVersionArn: string;
 }
 
-interface GetSolutionMetricsResponse {
-  readonly solutionVersionArn: string;
-  readonly metrics: {[key: string]: any};
+export interface GetSolutionMetricsResponse {
+  readonly solutionVersionArn?: string;
+  readonly metrics?: {[key: string]: any};
 }
 
-interface HPOConfig {
-  readonly hpoObjective: HPOObjective;
-  readonly hpoResourceConfig: HPOResourceConfig;
-  readonly algorithmHyperParameterRanges: HyperParameterRanges;
+export interface HPOConfig {
+  readonly hpoObjective?: HPOObjective;
+  readonly hpoResourceConfig?: HPOResourceConfig;
+  readonly algorithmHyperParameterRanges?: HyperParameterRanges;
 }
 
-interface HPOObjective {
-  readonly type: string;
-  readonly metricName: string;
-  readonly metricRegex: string;
+export interface HPOObjective {
+  readonly type?: string;
+  readonly metricName?: string;
+  readonly metricRegex?: string;
 }
 
-interface HPOResourceConfig {
-  readonly maxNumberOfTrainingJobs: string;
-  readonly maxParallelTrainingJobs: string;
+export interface HPOResourceConfig {
+  readonly maxNumberOfTrainingJobs?: string;
+  readonly maxParallelTrainingJobs?: string;
 }
 
-interface HyperParameterRanges {
-  readonly integerHyperParameterRanges: [];
-  readonly continuousHyperParameterRanges: [];
-  readonly categoricalHyperParameterRanges: [];
+export interface HyperParameterRanges {
+  readonly integerHyperParameterRanges?: [];
+  readonly continuousHyperParameterRanges?: [];
+  readonly categoricalHyperParameterRanges?: [];
 }
 
-interface IntegerHyperParameterRange {
-  readonly name: string;
-  readonly minValue: number;
-  readonly maxValue: number;
+export interface IntegerHyperParameterRange {
+  readonly name?: string;
+  readonly minValue?: number;
+  readonly maxValue?: number;
 }
 
-interface InvalidInputException {
-  readonly message: string;
+export interface InvalidInputException {
+  readonly message?: string;
 }
 
-interface InvalidNextTokenException {
-  readonly message: string;
+export interface InvalidNextTokenException {
+  readonly message?: string;
 }
 
-interface LimitExceededException {
-  readonly message: string;
+export interface LimitExceededException {
+  readonly message?: string;
 }
 
-interface ListBatchInferenceJobsRequest {
-  readonly solutionVersionArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListBatchInferenceJobsRequest {
+  readonly solutionVersionArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListBatchInferenceJobsResponse {
-  readonly batchInferenceJobs: [];
-  readonly nextToken: string;
+export interface ListBatchInferenceJobsResponse {
+  readonly batchInferenceJobs?: [];
+  readonly nextToken?: string;
 }
 
-interface ListBatchSegmentJobsRequest {
-  readonly solutionVersionArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListBatchSegmentJobsRequest {
+  readonly solutionVersionArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListBatchSegmentJobsResponse {
-  readonly batchSegmentJobs: [];
-  readonly nextToken: string;
+export interface ListBatchSegmentJobsResponse {
+  readonly batchSegmentJobs?: [];
+  readonly nextToken?: string;
 }
 
-interface ListCampaignsRequest {
-  readonly solutionArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListCampaignsRequest {
+  readonly solutionArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListCampaignsResponse {
-  readonly campaigns: [];
-  readonly nextToken: string;
+export interface ListCampaignsResponse {
+  readonly campaigns?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDatasetExportJobsRequest {
-  readonly datasetArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListDatasetExportJobsRequest {
+  readonly datasetArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListDatasetExportJobsResponse {
-  readonly datasetExportJobs: [];
-  readonly nextToken: string;
+export interface ListDatasetExportJobsResponse {
+  readonly datasetExportJobs?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDatasetGroupsRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListDatasetGroupsRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListDatasetGroupsResponse {
-  readonly datasetGroups: [];
-  readonly nextToken: string;
+export interface ListDatasetGroupsResponse {
+  readonly datasetGroups?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDatasetImportJobsRequest {
-  readonly datasetArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListDatasetImportJobsRequest {
+  readonly datasetArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListDatasetImportJobsResponse {
-  readonly datasetImportJobs: [];
-  readonly nextToken: string;
+export interface ListDatasetImportJobsResponse {
+  readonly datasetImportJobs?: [];
+  readonly nextToken?: string;
 }
 
-interface ListDatasetsRequest {
-  readonly datasetGroupArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListDatasetsRequest {
+  readonly datasetGroupArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListDatasetsResponse {
-  readonly datasets: [];
-  readonly nextToken: string;
+export interface ListDatasetsResponse {
+  readonly datasets?: [];
+  readonly nextToken?: string;
 }
 
-interface ListEventTrackersRequest {
-  readonly datasetGroupArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListEventTrackersRequest {
+  readonly datasetGroupArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListEventTrackersResponse {
-  readonly eventTrackers: [];
-  readonly nextToken: string;
+export interface ListEventTrackersResponse {
+  readonly eventTrackers?: [];
+  readonly nextToken?: string;
 }
 
-interface ListFiltersRequest {
-  readonly datasetGroupArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListFiltersRequest {
+  readonly datasetGroupArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListFiltersResponse {
-  readonly Filters: [];
-  readonly nextToken: string;
+export interface ListFiltersResponse {
+  readonly Filters?: [];
+  readonly nextToken?: string;
 }
 
-interface ListRecipesRequest {
-  readonly recipeProvider: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
-  readonly domain: string;
+export interface ListRecipesRequest {
+  readonly recipeProvider?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
+  readonly domain?: string;
 }
 
-interface ListRecipesResponse {
-  readonly recipes: [];
-  readonly nextToken: string;
+export interface ListRecipesResponse {
+  readonly recipes?: [];
+  readonly nextToken?: string;
 }
 
-interface ListRecommendersRequest {
-  readonly datasetGroupArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListRecommendersRequest {
+  readonly datasetGroupArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListRecommendersResponse {
-  readonly recommenders: [];
-  readonly nextToken: string;
+export interface ListRecommendersResponse {
+  readonly recommenders?: [];
+  readonly nextToken?: string;
 }
 
-interface ListSchemasRequest {
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListSchemasRequest {
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListSchemasResponse {
-  readonly schemas: [];
-  readonly nextToken: string;
+export interface ListSchemasResponse {
+  readonly schemas?: [];
+  readonly nextToken?: string;
 }
 
-interface ListSolutionVersionsRequest {
-  readonly solutionArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListSolutionVersionsRequest {
+  readonly solutionArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListSolutionVersionsResponse {
-  readonly solutionVersions: [];
-  readonly nextToken: string;
+export interface ListSolutionVersionsResponse {
+  readonly solutionVersions?: [];
+  readonly nextToken?: string;
 }
 
-interface ListSolutionsRequest {
-  readonly datasetGroupArn: string;
-  readonly nextToken: string;
-  readonly maxResults: number;
+export interface ListSolutionsRequest {
+  readonly datasetGroupArn?: string;
+  readonly nextToken?: string;
+  readonly maxResults?: number;
 }
 
-interface ListSolutionsResponse {
-  readonly solutions: [];
-  readonly nextToken: string;
+export interface ListSolutionsResponse {
+  readonly solutions?: [];
+  readonly nextToken?: string;
 }
 
-interface OptimizationObjective {
-  readonly itemAttribute: string;
-  readonly objectiveSensitivity: string;
+export interface OptimizationObjective {
+  readonly itemAttribute?: string;
+  readonly objectiveSensitivity?: string;
 }
 
-interface Recipe {
-  readonly name: string;
-  readonly recipeArn: string;
-  readonly algorithmArn: string;
-  readonly featureTransformationArn: string;
-  readonly status: string;
-  readonly description: string;
-  readonly creationDateTime: Date;
-  readonly recipeType: string;
-  readonly lastUpdatedDateTime: Date;
+export interface Recipe {
+  readonly name?: string;
+  readonly recipeArn?: string;
+  readonly algorithmArn?: string;
+  readonly featureTransformationArn?: string;
+  readonly status?: string;
+  readonly description?: string;
+  readonly creationDateTime?: Date;
+  readonly recipeType?: string;
+  readonly lastUpdatedDateTime?: Date;
 }
 
-interface RecipeSummary {
-  readonly name: string;
-  readonly recipeArn: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly domain: string;
+export interface RecipeSummary {
+  readonly name?: string;
+  readonly recipeArn?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly domain?: string;
 }
 
-interface Recommender {
-  readonly recommenderArn: string;
-  readonly datasetGroupArn: string;
-  readonly name: string;
-  readonly recipeArn: string;
-  readonly recommenderConfig: RecommenderConfig;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly status: string;
-  readonly failureReason: string;
-  readonly latestRecommenderUpdate: RecommenderUpdateSummary;
+export interface Recommender {
+  readonly recommenderArn?: string;
+  readonly datasetGroupArn?: string;
+  readonly name?: string;
+  readonly recipeArn?: string;
+  readonly recommenderConfig?: RecommenderConfig;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly status?: string;
+  readonly failureReason?: string;
+  readonly latestRecommenderUpdate?: RecommenderUpdateSummary;
 }
 
-interface RecommenderConfig {
-  readonly itemExplorationConfig: {[key: string]: any};
+export interface RecommenderConfig {
+  readonly itemExplorationConfig?: {[key: string]: any};
 }
 
-interface RecommenderSummary {
-  readonly name: string;
-  readonly recommenderArn: string;
-  readonly datasetGroupArn: string;
-  readonly recipeArn: string;
-  readonly recommenderConfig: RecommenderConfig;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
+export interface RecommenderSummary {
+  readonly name?: string;
+  readonly recommenderArn?: string;
+  readonly datasetGroupArn?: string;
+  readonly recipeArn?: string;
+  readonly recommenderConfig?: RecommenderConfig;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
 }
 
-interface RecommenderUpdateSummary {
-  readonly recommenderConfig: RecommenderConfig;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly status: string;
-  readonly failureReason: string;
+export interface RecommenderUpdateSummary {
+  readonly recommenderConfig?: RecommenderConfig;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly status?: string;
+  readonly failureReason?: string;
 }
 
-interface ResourceAlreadyExistsException {
-  readonly message: string;
+export interface ResourceAlreadyExistsException {
+  readonly message?: string;
 }
 
-interface ResourceInUseException {
-  readonly message: string;
+export interface ResourceInUseException {
+  readonly message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
 }
 
-interface S3DataConfig {
+export interface S3DataConfig {
   readonly path: string;
-  readonly kmsKeyArn: string;
+  readonly kmsKeyArn?: string;
 }
 
-interface Solution {
-  readonly name: string;
-  readonly solutionArn: string;
-  readonly performHPO: boolean;
-  readonly performAutoML: boolean;
-  readonly recipeArn: string;
-  readonly datasetGroupArn: string;
-  readonly eventType: string;
-  readonly solutionConfig: SolutionConfig;
-  readonly autoMLResult: AutoMLResult;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly latestSolutionVersion: SolutionVersionSummary;
+export interface Solution {
+  readonly name?: string;
+  readonly solutionArn?: string;
+  readonly performHPO?: boolean;
+  readonly performAutoML?: boolean;
+  readonly recipeArn?: string;
+  readonly datasetGroupArn?: string;
+  readonly eventType?: string;
+  readonly solutionConfig?: SolutionConfig;
+  readonly autoMLResult?: AutoMLResult;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly latestSolutionVersion?: SolutionVersionSummary;
 }
 
-interface SolutionConfig {
-  readonly eventValueThreshold: string;
-  readonly hpoConfig: HPOConfig;
-  readonly algorithmHyperParameters: {[key: string]: any};
-  readonly featureTransformationParameters: {[key: string]: any};
-  readonly autoMLConfig: AutoMLConfig;
-  readonly optimizationObjective: OptimizationObjective;
+export interface SolutionConfig {
+  readonly eventValueThreshold?: string;
+  readonly hpoConfig?: HPOConfig;
+  readonly algorithmHyperParameters?: {[key: string]: any};
+  readonly featureTransformationParameters?: {[key: string]: any};
+  readonly autoMLConfig?: AutoMLConfig;
+  readonly optimizationObjective?: OptimizationObjective;
 }
 
-interface SolutionSummary {
-  readonly name: string;
-  readonly solutionArn: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
+export interface SolutionSummary {
+  readonly name?: string;
+  readonly solutionArn?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
 }
 
-interface SolutionVersion {
+export interface SolutionVersion {
+  readonly solutionVersionArn?: string;
+  readonly solutionArn?: string;
+  readonly performHPO?: boolean;
+  readonly performAutoML?: boolean;
+  readonly recipeArn?: string;
+  readonly eventType?: string;
+  readonly datasetGroupArn?: string;
+  readonly solutionConfig?: SolutionConfig;
+  readonly trainingHours?: unknown;
+  readonly trainingMode?: string;
+  readonly tunedHPOParams?: TunedHPOParams;
+  readonly status?: string;
+  readonly failureReason?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+}
+
+export interface SolutionVersionSummary {
+  readonly solutionVersionArn?: string;
+  readonly status?: string;
+  readonly creationDateTime?: Date;
+  readonly lastUpdatedDateTime?: Date;
+  readonly failureReason?: string;
+}
+
+export interface StopSolutionVersionCreationRequest {
   readonly solutionVersionArn: string;
-  readonly solutionArn: string;
-  readonly performHPO: boolean;
-  readonly performAutoML: boolean;
-  readonly recipeArn: string;
-  readonly eventType: string;
-  readonly datasetGroupArn: string;
-  readonly solutionConfig: SolutionConfig;
-  readonly trainingHours: unknown;
-  readonly trainingMode: string;
-  readonly tunedHPOParams: TunedHPOParams;
-  readonly status: string;
-  readonly failureReason: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
 }
 
-interface SolutionVersionSummary {
-  readonly solutionVersionArn: string;
-  readonly status: string;
-  readonly creationDateTime: Date;
-  readonly lastUpdatedDateTime: Date;
-  readonly failureReason: string;
+export interface TunedHPOParams {
+  readonly algorithmHyperParameters?: {[key: string]: any};
 }
 
-interface StopSolutionVersionCreationRequest {
-  readonly solutionVersionArn: string;
-}
-
-interface TunedHPOParams {
-  readonly algorithmHyperParameters: {[key: string]: any};
-}
-
-interface UpdateCampaignRequest {
+export interface UpdateCampaignRequest {
   readonly campaignArn: string;
-  readonly solutionVersionArn: string;
-  readonly minProvisionedTPS: number;
-  readonly campaignConfig: CampaignConfig;
+  readonly solutionVersionArn?: string;
+  readonly minProvisionedTPS?: number;
+  readonly campaignConfig?: CampaignConfig;
 }
 
-interface UpdateCampaignResponse {
-  readonly campaignArn: string;
+export interface UpdateCampaignResponse {
+  readonly campaignArn?: string;
 }
 
-interface UpdateRecommenderRequest {
+export interface UpdateRecommenderRequest {
   readonly recommenderArn: string;
   readonly recommenderConfig: RecommenderConfig;
 }
 
-interface UpdateRecommenderResponse {
-  readonly recommenderArn: string;
+export interface UpdateRecommenderResponse {
+  readonly recommenderArn?: string;
 }
+
 

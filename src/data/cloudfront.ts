@@ -5,352 +5,441 @@ export interface AssociateAlias {
   readonly TargetDistributionId: string;
   readonly Alias: string;
 }
+
 export interface CreateCachePolicy {
   readonly CachePolicyConfig: CachePolicyConfig;
 }
+
 export interface CreateCloudFrontOriginAccessIdentity {
   readonly CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig;
 }
+
 export interface CreateDistribution {
   readonly DistributionConfig: DistributionConfig;
 }
+
 export interface CreateDistributionWithTags {
   readonly DistributionConfigWithTags: DistributionConfigWithTags;
 }
+
 export interface CreateFieldLevelEncryptionConfig {
   readonly FieldLevelEncryptionConfig: FieldLevelEncryptionConfig;
 }
+
 export interface CreateFieldLevelEncryptionProfile {
   readonly FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig;
 }
+
 export interface CreateFunction {
   readonly Name: string;
   readonly FunctionConfig: FunctionConfig;
   readonly FunctionCode: unknown;
 }
+
 export interface CreateInvalidation {
   readonly DistributionId: string;
   readonly InvalidationBatch: InvalidationBatch;
 }
+
 export interface CreateKeyGroup {
   readonly KeyGroupConfig: KeyGroupConfig;
 }
+
 export interface CreateMonitoringSubscription {
   readonly DistributionId: string;
   readonly MonitoringSubscription: MonitoringSubscription;
 }
+
 export interface CreateOriginRequestPolicy {
   readonly OriginRequestPolicyConfig: OriginRequestPolicyConfig;
 }
+
 export interface CreatePublicKey {
   readonly PublicKeyConfig: PublicKeyConfig;
 }
+
 export interface CreateRealtimeLogConfig {
   readonly EndPoints: [];
   readonly Fields: [];
   readonly Name: string;
   readonly SamplingRate: number;
 }
+
 export interface CreateResponseHeadersPolicy {
   readonly ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig;
 }
+
 export interface CreateStreamingDistribution {
   readonly StreamingDistributionConfig: StreamingDistributionConfig;
 }
+
 export interface CreateStreamingDistributionWithTags {
   readonly StreamingDistributionConfigWithTags: StreamingDistributionConfigWithTags;
 }
+
 export interface DeleteCachePolicy {
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface DeleteCloudFrontOriginAccessIdentity {
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface DeleteDistribution {
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface DeleteFieldLevelEncryptionConfig {
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface DeleteFieldLevelEncryptionProfile {
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface DeleteFunction {
   readonly Name: string;
   readonly IfMatch: string;
 }
+
 export interface DeleteKeyGroup {
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface DeleteMonitoringSubscription {
   readonly DistributionId: string;
 }
+
 export interface DeleteOriginRequestPolicy {
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface DeletePublicKey {
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface DeleteRealtimeLogConfig {
   readonly Name?: string;
   readonly ARN?: string;
 }
+
 export interface DeleteResponseHeadersPolicy {
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface DeleteStreamingDistribution {
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface DescribeFunction {
   readonly Name: string;
   readonly Stage?: string;
 }
+
 export interface GetCachePolicy {
   readonly Id: string;
 }
+
 export interface GetCachePolicyConfig {
   readonly Id: string;
 }
+
 export interface GetCloudFrontOriginAccessIdentity {
   readonly Id: string;
 }
+
 export interface GetCloudFrontOriginAccessIdentityConfig {
   readonly Id: string;
 }
+
 export interface GetDistribution {
   readonly Id: string;
 }
+
 export interface GetDistributionConfig {
   readonly Id: string;
 }
+
 export interface GetFieldLevelEncryption {
   readonly Id: string;
 }
+
 export interface GetFieldLevelEncryptionConfig {
   readonly Id: string;
 }
+
 export interface GetFieldLevelEncryptionProfile {
   readonly Id: string;
 }
+
 export interface GetFieldLevelEncryptionProfileConfig {
   readonly Id: string;
 }
+
 export interface GetFunction {
   readonly Name: string;
   readonly Stage?: string;
 }
+
 export interface GetInvalidation {
   readonly DistributionId: string;
   readonly Id: string;
 }
+
 export interface GetKeyGroup {
   readonly Id: string;
 }
+
 export interface GetKeyGroupConfig {
   readonly Id: string;
 }
+
 export interface GetMonitoringSubscription {
   readonly DistributionId: string;
 }
+
 export interface GetOriginRequestPolicy {
   readonly Id: string;
 }
+
 export interface GetOriginRequestPolicyConfig {
   readonly Id: string;
 }
+
 export interface GetPublicKey {
   readonly Id: string;
 }
+
 export interface GetPublicKeyConfig {
   readonly Id: string;
 }
+
 export interface GetRealtimeLogConfig {
   readonly Name?: string;
   readonly ARN?: string;
 }
+
 export interface GetResponseHeadersPolicy {
   readonly Id: string;
 }
+
 export interface GetResponseHeadersPolicyConfig {
   readonly Id: string;
 }
+
 export interface GetStreamingDistribution {
   readonly Id: string;
 }
+
 export interface GetStreamingDistributionConfig {
   readonly Id: string;
 }
+
 export interface ListCachePolicies {
   readonly Type?: string;
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListCloudFrontOriginAccessIdentities {
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListConflictingAliases {
   readonly DistributionId: string;
   readonly Alias: string;
   readonly Marker?: string;
   readonly MaxItems?: number;
 }
+
 export interface ListDistributions {
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListDistributionsByCachePolicyId {
   readonly Marker?: string;
   readonly MaxItems?: string;
   readonly CachePolicyId: string;
 }
+
 export interface ListDistributionsByKeyGroup {
   readonly Marker?: string;
   readonly MaxItems?: string;
   readonly KeyGroupId: string;
 }
+
 export interface ListDistributionsByOriginRequestPolicyId {
   readonly Marker?: string;
   readonly MaxItems?: string;
   readonly OriginRequestPolicyId: string;
 }
+
 export interface ListDistributionsByRealtimeLogConfig {
   readonly Marker?: string;
   readonly MaxItems?: string;
   readonly RealtimeLogConfigName?: string;
   readonly RealtimeLogConfigArn?: string;
 }
+
 export interface ListDistributionsByResponseHeadersPolicyId {
   readonly Marker?: string;
   readonly MaxItems?: string;
   readonly ResponseHeadersPolicyId: string;
 }
+
 export interface ListDistributionsByWebACLId {
   readonly Marker?: string;
   readonly MaxItems?: string;
   readonly WebACLId: string;
 }
+
 export interface ListFieldLevelEncryptionConfigs {
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListFieldLevelEncryptionProfiles {
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListFunctions {
   readonly Marker?: string;
   readonly MaxItems?: string;
   readonly Stage?: string;
 }
+
 export interface ListInvalidations {
   readonly DistributionId: string;
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListKeyGroups {
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListOriginRequestPolicies {
   readonly Type?: string;
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListPublicKeys {
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListRealtimeLogConfigs {
   readonly MaxItems?: string;
   readonly Marker?: string;
 }
+
 export interface ListResponseHeadersPolicies {
   readonly Type?: string;
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListStreamingDistributions {
   readonly Marker?: string;
   readonly MaxItems?: string;
 }
+
 export interface ListTagsForResource {
   readonly Resource: string;
 }
+
 export interface PublishFunction {
   readonly Name: string;
   readonly IfMatch: string;
 }
+
 export interface TagResource {
   readonly Resource: string;
   readonly Tags: Tags;
 }
+
 export interface TestFunction {
   readonly Name: string;
   readonly IfMatch: string;
   readonly Stage?: string;
   readonly EventObject: unknown;
 }
+
 export interface UntagResource {
   readonly Resource: string;
   readonly TagKeys: TagKeys;
 }
+
 export interface UpdateCachePolicy {
   readonly CachePolicyConfig: CachePolicyConfig;
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface UpdateCloudFrontOriginAccessIdentity {
   readonly CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig;
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface UpdateDistribution {
   readonly DistributionConfig: DistributionConfig;
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface UpdateFieldLevelEncryptionConfig {
   readonly FieldLevelEncryptionConfig: FieldLevelEncryptionConfig;
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface UpdateFieldLevelEncryptionProfile {
   readonly FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig;
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface UpdateFunction {
   readonly Name: string;
   readonly IfMatch: string;
   readonly FunctionConfig: FunctionConfig;
   readonly FunctionCode: unknown;
 }
+
 export interface UpdateKeyGroup {
   readonly KeyGroupConfig: KeyGroupConfig;
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface UpdateOriginRequestPolicy {
   readonly OriginRequestPolicyConfig: OriginRequestPolicyConfig;
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface UpdatePublicKey {
   readonly PublicKeyConfig: PublicKeyConfig;
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface UpdateRealtimeLogConfig {
   readonly EndPoints?: [];
   readonly Fields?: [];
@@ -358,574 +447,574 @@ export interface UpdateRealtimeLogConfig {
   readonly ARN?: string;
   readonly SamplingRate?: number;
 }
+
 export interface UpdateResponseHeadersPolicy {
   readonly ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig;
   readonly Id: string;
   readonly IfMatch?: string;
 }
+
 export interface UpdateStreamingDistribution {
   readonly StreamingDistributionConfig: StreamingDistributionConfig;
   readonly Id: string;
   readonly IfMatch?: string;
 }
 
-
-
-interface AccessDenied {
-  readonly Message: string;
+export interface AccessDenied {
+  readonly Message?: string;
 }
 
-interface ActiveTrustedKeyGroups {
+export interface ActiveTrustedKeyGroups {
   readonly Enabled: boolean;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface ActiveTrustedSigners {
+export interface ActiveTrustedSigners {
   readonly Enabled: boolean;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface AliasICPRecordal {
-  readonly CNAME: string;
-  readonly ICPRecordalStatus: string;
+export interface AliasICPRecordal {
+  readonly CNAME?: string;
+  readonly ICPRecordalStatus?: string;
 }
 
-interface Aliases {
+export interface Aliases {
+  readonly Quantity: number;
+  readonly Items?: [];
+}
+
+export interface AllowedMethods {
   readonly Quantity: number;
   readonly Items: [];
+  readonly CachedMethods?: CachedMethods;
 }
 
-interface AllowedMethods {
-  readonly Quantity: number;
-  readonly Items: [];
-  readonly CachedMethods: CachedMethods;
-}
-
-interface AssociateAliasRequest {
+export interface AssociateAliasRequest {
   readonly TargetDistributionId: string;
   readonly Alias: string;
 }
 
-interface BatchTooLarge {
-  readonly Message: string;
+export interface BatchTooLarge {
+  readonly Message?: string;
 }
 
-interface CNAMEAlreadyExists {
-  readonly Message: string;
+export interface CNAMEAlreadyExists {
+  readonly Message?: string;
 }
 
-interface CacheBehavior {
+export interface CacheBehavior {
   readonly PathPattern: string;
   readonly TargetOriginId: string;
-  readonly TrustedSigners: TrustedSigners;
-  readonly TrustedKeyGroups: TrustedKeyGroups;
+  readonly TrustedSigners?: TrustedSigners;
+  readonly TrustedKeyGroups?: TrustedKeyGroups;
   readonly ViewerProtocolPolicy: string;
-  readonly AllowedMethods: AllowedMethods;
-  readonly SmoothStreaming: boolean;
-  readonly Compress: boolean;
-  readonly LambdaFunctionAssociations: LambdaFunctionAssociations;
-  readonly FunctionAssociations: FunctionAssociations;
-  readonly FieldLevelEncryptionId: string;
-  readonly RealtimeLogConfigArn: string;
-  readonly CachePolicyId: string;
-  readonly OriginRequestPolicyId: string;
-  readonly ResponseHeadersPolicyId: string;
-  readonly ForwardedValues: ForwardedValues;
-  readonly MinTTL: number;
-  readonly DefaultTTL: number;
-  readonly MaxTTL: number;
+  readonly AllowedMethods?: AllowedMethods;
+  readonly SmoothStreaming?: boolean;
+  readonly Compress?: boolean;
+  readonly LambdaFunctionAssociations?: LambdaFunctionAssociations;
+  readonly FunctionAssociations?: FunctionAssociations;
+  readonly FieldLevelEncryptionId?: string;
+  readonly RealtimeLogConfigArn?: string;
+  readonly CachePolicyId?: string;
+  readonly OriginRequestPolicyId?: string;
+  readonly ResponseHeadersPolicyId?: string;
+  readonly ForwardedValues?: ForwardedValues;
+  readonly MinTTL?: number;
+  readonly DefaultTTL?: number;
+  readonly MaxTTL?: number;
 }
 
-interface CacheBehaviors {
+export interface CacheBehaviors {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface CachePolicy {
+export interface CachePolicy {
   readonly Id: string;
   readonly LastModifiedTime: Date;
   readonly CachePolicyConfig: CachePolicyConfig;
 }
 
-interface CachePolicyAlreadyExists {
-  readonly Message: string;
+export interface CachePolicyAlreadyExists {
+  readonly Message?: string;
 }
 
-interface CachePolicyConfig {
-  readonly Comment: string;
+export interface CachePolicyConfig {
+  readonly Comment?: string;
   readonly Name: string;
-  readonly DefaultTTL: number;
-  readonly MaxTTL: number;
+  readonly DefaultTTL?: number;
+  readonly MaxTTL?: number;
   readonly MinTTL: number;
-  readonly ParametersInCacheKeyAndForwardedToOrigin: ParametersInCacheKeyAndForwardedToOrigin;
+  readonly ParametersInCacheKeyAndForwardedToOrigin?: ParametersInCacheKeyAndForwardedToOrigin;
 }
 
-interface CachePolicyCookiesConfig {
+export interface CachePolicyCookiesConfig {
   readonly CookieBehavior: string;
-  readonly Cookies: CookieNames;
+  readonly Cookies?: CookieNames;
 }
 
-interface CachePolicyHeadersConfig {
+export interface CachePolicyHeadersConfig {
   readonly HeaderBehavior: string;
-  readonly Headers: Headers;
+  readonly Headers?: Headers;
 }
 
-interface CachePolicyInUse {
-  readonly Message: string;
+export interface CachePolicyInUse {
+  readonly Message?: string;
 }
 
-interface CachePolicyList {
-  readonly NextMarker: string;
+export interface CachePolicyList {
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface CachePolicyQueryStringsConfig {
+export interface CachePolicyQueryStringsConfig {
   readonly QueryStringBehavior: string;
-  readonly QueryStrings: QueryStringNames;
+  readonly QueryStrings?: QueryStringNames;
 }
 
-interface CachePolicySummary {
+export interface CachePolicySummary {
   readonly Type: string;
   readonly CachePolicy: CachePolicy;
 }
 
-interface CachedMethods {
+export interface CachedMethods {
   readonly Quantity: number;
   readonly Items: [];
 }
 
-interface CannotChangeImmutablePublicKeyFields {
-  readonly Message: string;
+export interface CannotChangeImmutablePublicKeyFields {
+  readonly Message?: string;
 }
 
-interface CloudFrontOriginAccessIdentity {
+export interface CloudFrontOriginAccessIdentity {
   readonly Id: string;
   readonly S3CanonicalUserId: string;
-  readonly CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig;
+  readonly CloudFrontOriginAccessIdentityConfig?: CloudFrontOriginAccessIdentityConfig;
 }
 
-interface CloudFrontOriginAccessIdentityAlreadyExists {
-  readonly Message: string;
+export interface CloudFrontOriginAccessIdentityAlreadyExists {
+  readonly Message?: string;
 }
 
-interface CloudFrontOriginAccessIdentityConfig {
+export interface CloudFrontOriginAccessIdentityConfig {
   readonly CallerReference: string;
   readonly Comment: string;
 }
 
-interface CloudFrontOriginAccessIdentityInUse {
-  readonly Message: string;
+export interface CloudFrontOriginAccessIdentityInUse {
+  readonly Message?: string;
 }
 
-interface CloudFrontOriginAccessIdentityList {
+export interface CloudFrontOriginAccessIdentityList {
   readonly Marker: string;
-  readonly NextMarker: string;
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly IsTruncated: boolean;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface CloudFrontOriginAccessIdentitySummary {
+export interface CloudFrontOriginAccessIdentitySummary {
   readonly Id: string;
   readonly S3CanonicalUserId: string;
   readonly Comment: string;
 }
 
-interface ConflictingAlias {
-  readonly Alias: string;
-  readonly DistributionId: string;
-  readonly AccountId: string;
+export interface ConflictingAlias {
+  readonly Alias?: string;
+  readonly DistributionId?: string;
+  readonly AccountId?: string;
 }
 
-interface ConflictingAliasesList {
-  readonly NextMarker: string;
-  readonly MaxItems: number;
-  readonly Quantity: number;
-  readonly Items: [];
+export interface ConflictingAliasesList {
+  readonly NextMarker?: string;
+  readonly MaxItems?: number;
+  readonly Quantity?: number;
+  readonly Items?: [];
 }
 
-interface ContentTypeProfile {
+export interface ContentTypeProfile {
   readonly Format: string;
-  readonly ProfileId: string;
+  readonly ProfileId?: string;
   readonly ContentType: string;
 }
 
-interface ContentTypeProfileConfig {
+export interface ContentTypeProfileConfig {
   readonly ForwardWhenContentTypeIsUnknown: boolean;
-  readonly ContentTypeProfiles: ContentTypeProfiles;
+  readonly ContentTypeProfiles?: ContentTypeProfiles;
 }
 
-interface ContentTypeProfiles {
+export interface ContentTypeProfiles {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface CookieNames {
+export interface CookieNames {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface CookiePreference {
+export interface CookiePreference {
   readonly Forward: string;
-  readonly WhitelistedNames: CookieNames;
+  readonly WhitelistedNames?: CookieNames;
 }
 
-interface CreateCachePolicyRequest {
+export interface CreateCachePolicyRequest {
   readonly CachePolicyConfig: CachePolicyConfig;
 }
 
-interface CreateCachePolicyResult {
-  readonly CachePolicy: CachePolicy;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreateCachePolicyResult {
+  readonly CachePolicy?: CachePolicy;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CreateCloudFrontOriginAccessIdentityRequest {
+export interface CreateCloudFrontOriginAccessIdentityRequest {
   readonly CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig;
 }
 
-interface CreateCloudFrontOriginAccessIdentityResult {
-  readonly CloudFrontOriginAccessIdentity: CloudFrontOriginAccessIdentity;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreateCloudFrontOriginAccessIdentityResult {
+  readonly CloudFrontOriginAccessIdentity?: CloudFrontOriginAccessIdentity;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CreateDistributionRequest {
+export interface CreateDistributionRequest {
   readonly DistributionConfig: DistributionConfig;
 }
 
-interface CreateDistributionResult {
-  readonly Distribution: Distribution;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreateDistributionResult {
+  readonly Distribution?: Distribution;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CreateDistributionWithTagsRequest {
+export interface CreateDistributionWithTagsRequest {
   readonly DistributionConfigWithTags: DistributionConfigWithTags;
 }
 
-interface CreateDistributionWithTagsResult {
-  readonly Distribution: Distribution;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreateDistributionWithTagsResult {
+  readonly Distribution?: Distribution;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CreateFieldLevelEncryptionConfigRequest {
+export interface CreateFieldLevelEncryptionConfigRequest {
   readonly FieldLevelEncryptionConfig: FieldLevelEncryptionConfig;
 }
 
-interface CreateFieldLevelEncryptionConfigResult {
-  readonly FieldLevelEncryption: FieldLevelEncryption;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreateFieldLevelEncryptionConfigResult {
+  readonly FieldLevelEncryption?: FieldLevelEncryption;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CreateFieldLevelEncryptionProfileRequest {
+export interface CreateFieldLevelEncryptionProfileRequest {
   readonly FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig;
 }
 
-interface CreateFieldLevelEncryptionProfileResult {
-  readonly FieldLevelEncryptionProfile: FieldLevelEncryptionProfile;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreateFieldLevelEncryptionProfileResult {
+  readonly FieldLevelEncryptionProfile?: FieldLevelEncryptionProfile;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CreateFunctionRequest {
+export interface CreateFunctionRequest {
   readonly Name: string;
   readonly FunctionConfig: FunctionConfig;
   readonly FunctionCode: unknown;
 }
 
-interface CreateFunctionResult {
-  readonly FunctionSummary: FunctionSummary;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreateFunctionResult {
+  readonly FunctionSummary?: FunctionSummary;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CreateInvalidationRequest {
+export interface CreateInvalidationRequest {
   readonly DistributionId: string;
   readonly InvalidationBatch: InvalidationBatch;
 }
 
-interface CreateInvalidationResult {
-  readonly Location: string;
-  readonly Invalidation: Invalidation;
+export interface CreateInvalidationResult {
+  readonly Location?: string;
+  readonly Invalidation?: Invalidation;
 }
 
-interface CreateKeyGroupRequest {
+export interface CreateKeyGroupRequest {
   readonly KeyGroupConfig: KeyGroupConfig;
 }
 
-interface CreateKeyGroupResult {
-  readonly KeyGroup: KeyGroup;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreateKeyGroupResult {
+  readonly KeyGroup?: KeyGroup;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CreateMonitoringSubscriptionRequest {
+export interface CreateMonitoringSubscriptionRequest {
   readonly DistributionId: string;
   readonly MonitoringSubscription: MonitoringSubscription;
 }
 
-interface CreateMonitoringSubscriptionResult {
-  readonly MonitoringSubscription: MonitoringSubscription;
+export interface CreateMonitoringSubscriptionResult {
+  readonly MonitoringSubscription?: MonitoringSubscription;
 }
 
-interface CreateOriginRequestPolicyRequest {
+export interface CreateOriginRequestPolicyRequest {
   readonly OriginRequestPolicyConfig: OriginRequestPolicyConfig;
 }
 
-interface CreateOriginRequestPolicyResult {
-  readonly OriginRequestPolicy: OriginRequestPolicy;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreateOriginRequestPolicyResult {
+  readonly OriginRequestPolicy?: OriginRequestPolicy;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CreatePublicKeyRequest {
+export interface CreatePublicKeyRequest {
   readonly PublicKeyConfig: PublicKeyConfig;
 }
 
-interface CreatePublicKeyResult {
-  readonly PublicKey: PublicKey;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreatePublicKeyResult {
+  readonly PublicKey?: PublicKey;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CreateRealtimeLogConfigRequest {
+export interface CreateRealtimeLogConfigRequest {
   readonly EndPoints: [];
   readonly Fields: [];
   readonly Name: string;
   readonly SamplingRate: number;
 }
 
-interface CreateRealtimeLogConfigResult {
-  readonly RealtimeLogConfig: RealtimeLogConfig;
+export interface CreateRealtimeLogConfigResult {
+  readonly RealtimeLogConfig?: RealtimeLogConfig;
 }
 
-interface CreateResponseHeadersPolicyRequest {
+export interface CreateResponseHeadersPolicyRequest {
   readonly ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig;
 }
 
-interface CreateResponseHeadersPolicyResult {
-  readonly ResponseHeadersPolicy: ResponseHeadersPolicy;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreateResponseHeadersPolicyResult {
+  readonly ResponseHeadersPolicy?: ResponseHeadersPolicy;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CreateStreamingDistributionRequest {
+export interface CreateStreamingDistributionRequest {
   readonly StreamingDistributionConfig: StreamingDistributionConfig;
 }
 
-interface CreateStreamingDistributionResult {
-  readonly StreamingDistribution: StreamingDistribution;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreateStreamingDistributionResult {
+  readonly StreamingDistribution?: StreamingDistribution;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CreateStreamingDistributionWithTagsRequest {
+export interface CreateStreamingDistributionWithTagsRequest {
   readonly StreamingDistributionConfigWithTags: StreamingDistributionConfigWithTags;
 }
 
-interface CreateStreamingDistributionWithTagsResult {
-  readonly StreamingDistribution: StreamingDistribution;
-  readonly Location: string;
-  readonly ETag: string;
+export interface CreateStreamingDistributionWithTagsResult {
+  readonly StreamingDistribution?: StreamingDistribution;
+  readonly Location?: string;
+  readonly ETag?: string;
 }
 
-interface CustomErrorResponse {
+export interface CustomErrorResponse {
   readonly ErrorCode: number;
-  readonly ResponsePagePath: string;
-  readonly ResponseCode: string;
-  readonly ErrorCachingMinTTL: number;
+  readonly ResponsePagePath?: string;
+  readonly ResponseCode?: string;
+  readonly ErrorCachingMinTTL?: number;
 }
 
-interface CustomErrorResponses {
+export interface CustomErrorResponses {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface CustomHeaders {
+export interface CustomHeaders {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface CustomOriginConfig {
+export interface CustomOriginConfig {
   readonly HTTPPort: number;
   readonly HTTPSPort: number;
   readonly OriginProtocolPolicy: string;
-  readonly OriginSslProtocols: OriginSslProtocols;
-  readonly OriginReadTimeout: number;
-  readonly OriginKeepaliveTimeout: number;
+  readonly OriginSslProtocols?: OriginSslProtocols;
+  readonly OriginReadTimeout?: number;
+  readonly OriginKeepaliveTimeout?: number;
 }
 
-interface DefaultCacheBehavior {
+export interface DefaultCacheBehavior {
   readonly TargetOriginId: string;
-  readonly TrustedSigners: TrustedSigners;
-  readonly TrustedKeyGroups: TrustedKeyGroups;
+  readonly TrustedSigners?: TrustedSigners;
+  readonly TrustedKeyGroups?: TrustedKeyGroups;
   readonly ViewerProtocolPolicy: string;
-  readonly AllowedMethods: AllowedMethods;
-  readonly SmoothStreaming: boolean;
-  readonly Compress: boolean;
-  readonly LambdaFunctionAssociations: LambdaFunctionAssociations;
-  readonly FunctionAssociations: FunctionAssociations;
-  readonly FieldLevelEncryptionId: string;
-  readonly RealtimeLogConfigArn: string;
-  readonly CachePolicyId: string;
-  readonly OriginRequestPolicyId: string;
-  readonly ResponseHeadersPolicyId: string;
-  readonly ForwardedValues: ForwardedValues;
-  readonly MinTTL: number;
-  readonly DefaultTTL: number;
-  readonly MaxTTL: number;
+  readonly AllowedMethods?: AllowedMethods;
+  readonly SmoothStreaming?: boolean;
+  readonly Compress?: boolean;
+  readonly LambdaFunctionAssociations?: LambdaFunctionAssociations;
+  readonly FunctionAssociations?: FunctionAssociations;
+  readonly FieldLevelEncryptionId?: string;
+  readonly RealtimeLogConfigArn?: string;
+  readonly CachePolicyId?: string;
+  readonly OriginRequestPolicyId?: string;
+  readonly ResponseHeadersPolicyId?: string;
+  readonly ForwardedValues?: ForwardedValues;
+  readonly MinTTL?: number;
+  readonly DefaultTTL?: number;
+  readonly MaxTTL?: number;
 }
 
-interface DeleteCachePolicyRequest {
+export interface DeleteCachePolicyRequest {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface DeleteCloudFrontOriginAccessIdentityRequest {
+export interface DeleteCloudFrontOriginAccessIdentityRequest {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface DeleteDistributionRequest {
+export interface DeleteDistributionRequest {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface DeleteFieldLevelEncryptionConfigRequest {
+export interface DeleteFieldLevelEncryptionConfigRequest {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface DeleteFieldLevelEncryptionProfileRequest {
+export interface DeleteFieldLevelEncryptionProfileRequest {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface DeleteFunctionRequest {
+export interface DeleteFunctionRequest {
   readonly Name: string;
   readonly IfMatch: string;
 }
 
-interface DeleteKeyGroupRequest {
+export interface DeleteKeyGroupRequest {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface DeleteMonitoringSubscriptionRequest {
+export interface DeleteMonitoringSubscriptionRequest {
   readonly DistributionId: string;
 }
 
-interface DeleteMonitoringSubscriptionResult {
+export interface DeleteMonitoringSubscriptionResult {
 }
 
-interface DeleteOriginRequestPolicyRequest {
+export interface DeleteOriginRequestPolicyRequest {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface DeletePublicKeyRequest {
+export interface DeletePublicKeyRequest {
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface DeleteRealtimeLogConfigRequest {
+export interface DeleteRealtimeLogConfigRequest {
+  readonly Name?: string;
+  readonly ARN?: string;
+}
+
+export interface DeleteResponseHeadersPolicyRequest {
+  readonly Id: string;
+  readonly IfMatch?: string;
+}
+
+export interface DeleteStreamingDistributionRequest {
+  readonly Id: string;
+  readonly IfMatch?: string;
+}
+
+export interface DescribeFunctionRequest {
   readonly Name: string;
-  readonly ARN: string;
+  readonly Stage?: string;
 }
 
-interface DeleteResponseHeadersPolicyRequest {
-  readonly Id: string;
-  readonly IfMatch: string;
+export interface DescribeFunctionResult {
+  readonly FunctionSummary?: FunctionSummary;
+  readonly ETag?: string;
 }
 
-interface DeleteStreamingDistributionRequest {
-  readonly Id: string;
-  readonly IfMatch: string;
-}
-
-interface DescribeFunctionRequest {
-  readonly Name: string;
-  readonly Stage: string;
-}
-
-interface DescribeFunctionResult {
-  readonly FunctionSummary: FunctionSummary;
-  readonly ETag: string;
-}
-
-interface Distribution {
+export interface Distribution {
   readonly Id: string;
   readonly ARN: string;
   readonly Status: string;
   readonly LastModifiedTime: Date;
   readonly InProgressInvalidationBatches: number;
   readonly DomainName: string;
-  readonly ActiveTrustedSigners: ActiveTrustedSigners;
-  readonly ActiveTrustedKeyGroups: ActiveTrustedKeyGroups;
+  readonly ActiveTrustedSigners?: ActiveTrustedSigners;
+  readonly ActiveTrustedKeyGroups?: ActiveTrustedKeyGroups;
   readonly DistributionConfig: DistributionConfig;
-  readonly AliasICPRecordals: [];
+  readonly AliasICPRecordals?: [];
 }
 
-interface DistributionAlreadyExists {
-  readonly Message: string;
+export interface DistributionAlreadyExists {
+  readonly Message?: string;
 }
 
-interface DistributionConfig {
+export interface DistributionConfig {
   readonly CallerReference: string;
-  readonly Aliases: Aliases;
-  readonly DefaultRootObject: string;
+  readonly Aliases?: Aliases;
+  readonly DefaultRootObject?: string;
   readonly Origins: Origins;
-  readonly OriginGroups: OriginGroups;
+  readonly OriginGroups?: OriginGroups;
   readonly DefaultCacheBehavior: DefaultCacheBehavior;
-  readonly CacheBehaviors: CacheBehaviors;
-  readonly CustomErrorResponses: CustomErrorResponses;
+  readonly CacheBehaviors?: CacheBehaviors;
+  readonly CustomErrorResponses?: CustomErrorResponses;
   readonly Comment: string;
-  readonly Logging: LoggingConfig;
-  readonly PriceClass: string;
+  readonly Logging?: LoggingConfig;
+  readonly PriceClass?: string;
   readonly Enabled: boolean;
-  readonly ViewerCertificate: ViewerCertificate;
-  readonly Restrictions: Restrictions;
-  readonly WebACLId: string;
-  readonly HttpVersion: string;
-  readonly IsIPV6Enabled: boolean;
+  readonly ViewerCertificate?: ViewerCertificate;
+  readonly Restrictions?: Restrictions;
+  readonly WebACLId?: string;
+  readonly HttpVersion?: string;
+  readonly IsIPV6Enabled?: boolean;
 }
 
-interface DistributionConfigWithTags {
+export interface DistributionConfigWithTags {
   readonly DistributionConfig: DistributionConfig;
   readonly Tags: Tags;
 }
 
-interface DistributionIdList {
+export interface DistributionIdList {
   readonly Marker: string;
-  readonly NextMarker: string;
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly IsTruncated: boolean;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface DistributionList {
+export interface DistributionList {
   readonly Marker: string;
-  readonly NextMarker: string;
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly IsTruncated: boolean;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface DistributionNotDisabled {
-  readonly Message: string;
+export interface DistributionNotDisabled {
+  readonly Message?: string;
 }
 
-interface DistributionSummary {
+export interface DistributionSummary {
   readonly Id: string;
   readonly ARN: string;
   readonly Status: string;
@@ -933,7 +1022,7 @@ interface DistributionSummary {
   readonly DomainName: string;
   readonly Aliases: Aliases;
   readonly Origins: Origins;
-  readonly OriginGroups: OriginGroups;
+  readonly OriginGroups?: OriginGroups;
   readonly DefaultCacheBehavior: DefaultCacheBehavior;
   readonly CacheBehaviors: CacheBehaviors;
   readonly CustomErrorResponses: CustomErrorResponses;
@@ -945,1051 +1034,1051 @@ interface DistributionSummary {
   readonly WebACLId: string;
   readonly HttpVersion: string;
   readonly IsIPV6Enabled: boolean;
-  readonly AliasICPRecordals: [];
+  readonly AliasICPRecordals?: [];
 }
 
-interface EncryptionEntities {
+export interface EncryptionEntities {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface EncryptionEntity {
+export interface EncryptionEntity {
   readonly PublicKeyId: string;
   readonly ProviderId: string;
   readonly FieldPatterns: FieldPatterns;
 }
 
-interface EndPoint {
+export interface EndPoint {
   readonly StreamType: string;
-  readonly KinesisStreamConfig: KinesisStreamConfig;
+  readonly KinesisStreamConfig?: KinesisStreamConfig;
 }
 
-interface FieldLevelEncryption {
+export interface FieldLevelEncryption {
   readonly Id: string;
   readonly LastModifiedTime: Date;
   readonly FieldLevelEncryptionConfig: FieldLevelEncryptionConfig;
 }
 
-interface FieldLevelEncryptionConfig {
+export interface FieldLevelEncryptionConfig {
   readonly CallerReference: string;
-  readonly Comment: string;
-  readonly QueryArgProfileConfig: QueryArgProfileConfig;
-  readonly ContentTypeProfileConfig: ContentTypeProfileConfig;
+  readonly Comment?: string;
+  readonly QueryArgProfileConfig?: QueryArgProfileConfig;
+  readonly ContentTypeProfileConfig?: ContentTypeProfileConfig;
 }
 
-interface FieldLevelEncryptionConfigAlreadyExists {
-  readonly Message: string;
+export interface FieldLevelEncryptionConfigAlreadyExists {
+  readonly Message?: string;
 }
 
-interface FieldLevelEncryptionConfigInUse {
-  readonly Message: string;
+export interface FieldLevelEncryptionConfigInUse {
+  readonly Message?: string;
 }
 
-interface FieldLevelEncryptionList {
-  readonly NextMarker: string;
+export interface FieldLevelEncryptionList {
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface FieldLevelEncryptionProfile {
+export interface FieldLevelEncryptionProfile {
   readonly Id: string;
   readonly LastModifiedTime: Date;
   readonly FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig;
 }
 
-interface FieldLevelEncryptionProfileAlreadyExists {
-  readonly Message: string;
+export interface FieldLevelEncryptionProfileAlreadyExists {
+  readonly Message?: string;
 }
 
-interface FieldLevelEncryptionProfileConfig {
+export interface FieldLevelEncryptionProfileConfig {
   readonly Name: string;
   readonly CallerReference: string;
-  readonly Comment: string;
+  readonly Comment?: string;
   readonly EncryptionEntities: EncryptionEntities;
 }
 
-interface FieldLevelEncryptionProfileInUse {
-  readonly Message: string;
+export interface FieldLevelEncryptionProfileInUse {
+  readonly Message?: string;
 }
 
-interface FieldLevelEncryptionProfileList {
-  readonly NextMarker: string;
+export interface FieldLevelEncryptionProfileList {
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface FieldLevelEncryptionProfileSizeExceeded {
-  readonly Message: string;
+export interface FieldLevelEncryptionProfileSizeExceeded {
+  readonly Message?: string;
 }
 
-interface FieldLevelEncryptionProfileSummary {
+export interface FieldLevelEncryptionProfileSummary {
   readonly Id: string;
   readonly LastModifiedTime: Date;
   readonly Name: string;
   readonly EncryptionEntities: EncryptionEntities;
-  readonly Comment: string;
+  readonly Comment?: string;
 }
 
-interface FieldLevelEncryptionSummary {
+export interface FieldLevelEncryptionSummary {
   readonly Id: string;
   readonly LastModifiedTime: Date;
-  readonly Comment: string;
-  readonly QueryArgProfileConfig: QueryArgProfileConfig;
-  readonly ContentTypeProfileConfig: ContentTypeProfileConfig;
+  readonly Comment?: string;
+  readonly QueryArgProfileConfig?: QueryArgProfileConfig;
+  readonly ContentTypeProfileConfig?: ContentTypeProfileConfig;
 }
 
-interface FieldPatterns {
+export interface FieldPatterns {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface ForwardedValues {
+export interface ForwardedValues {
   readonly QueryString: boolean;
   readonly Cookies: CookiePreference;
-  readonly Headers: Headers;
-  readonly QueryStringCacheKeys: QueryStringCacheKeys;
+  readonly Headers?: Headers;
+  readonly QueryStringCacheKeys?: QueryStringCacheKeys;
 }
 
-interface FunctionAlreadyExists {
-  readonly Message: string;
+export interface FunctionAlreadyExists {
+  readonly Message?: string;
 }
 
-interface FunctionAssociation {
+export interface FunctionAssociation {
   readonly FunctionARN: string;
   readonly EventType: string;
 }
 
-interface FunctionAssociations {
+export interface FunctionAssociations {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface FunctionConfig {
+export interface FunctionConfig {
   readonly Comment: string;
   readonly Runtime: string;
 }
 
-interface FunctionInUse {
-  readonly Message: string;
+export interface FunctionInUse {
+  readonly Message?: string;
 }
 
-interface FunctionList {
-  readonly NextMarker: string;
+export interface FunctionList {
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface FunctionMetadata {
+export interface FunctionMetadata {
   readonly FunctionARN: string;
-  readonly Stage: string;
-  readonly CreatedTime: Date;
+  readonly Stage?: string;
+  readonly CreatedTime?: Date;
   readonly LastModifiedTime: Date;
 }
 
-interface FunctionSizeLimitExceeded {
-  readonly Message: string;
+export interface FunctionSizeLimitExceeded {
+  readonly Message?: string;
 }
 
-interface FunctionSummary {
+export interface FunctionSummary {
   readonly Name: string;
-  readonly Status: string;
+  readonly Status?: string;
   readonly FunctionConfig: FunctionConfig;
   readonly FunctionMetadata: FunctionMetadata;
 }
 
-interface GeoRestriction {
+export interface GeoRestriction {
   readonly RestrictionType: string;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface GetCachePolicyConfigRequest {
+export interface GetCachePolicyConfigRequest {
   readonly Id: string;
 }
 
-interface GetCachePolicyConfigResult {
-  readonly CachePolicyConfig: CachePolicyConfig;
-  readonly ETag: string;
+export interface GetCachePolicyConfigResult {
+  readonly CachePolicyConfig?: CachePolicyConfig;
+  readonly ETag?: string;
 }
 
-interface GetCachePolicyRequest {
+export interface GetCachePolicyRequest {
   readonly Id: string;
 }
 
-interface GetCachePolicyResult {
-  readonly CachePolicy: CachePolicy;
-  readonly ETag: string;
+export interface GetCachePolicyResult {
+  readonly CachePolicy?: CachePolicy;
+  readonly ETag?: string;
 }
 
-interface GetCloudFrontOriginAccessIdentityConfigRequest {
+export interface GetCloudFrontOriginAccessIdentityConfigRequest {
   readonly Id: string;
 }
 
-interface GetCloudFrontOriginAccessIdentityConfigResult {
-  readonly CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig;
-  readonly ETag: string;
+export interface GetCloudFrontOriginAccessIdentityConfigResult {
+  readonly CloudFrontOriginAccessIdentityConfig?: CloudFrontOriginAccessIdentityConfig;
+  readonly ETag?: string;
 }
 
-interface GetCloudFrontOriginAccessIdentityRequest {
+export interface GetCloudFrontOriginAccessIdentityRequest {
   readonly Id: string;
 }
 
-interface GetCloudFrontOriginAccessIdentityResult {
-  readonly CloudFrontOriginAccessIdentity: CloudFrontOriginAccessIdentity;
-  readonly ETag: string;
+export interface GetCloudFrontOriginAccessIdentityResult {
+  readonly CloudFrontOriginAccessIdentity?: CloudFrontOriginAccessIdentity;
+  readonly ETag?: string;
 }
 
-interface GetDistributionConfigRequest {
+export interface GetDistributionConfigRequest {
   readonly Id: string;
 }
 
-interface GetDistributionConfigResult {
-  readonly DistributionConfig: DistributionConfig;
-  readonly ETag: string;
+export interface GetDistributionConfigResult {
+  readonly DistributionConfig?: DistributionConfig;
+  readonly ETag?: string;
 }
 
-interface GetDistributionRequest {
+export interface GetDistributionRequest {
   readonly Id: string;
 }
 
-interface GetDistributionResult {
-  readonly Distribution: Distribution;
-  readonly ETag: string;
+export interface GetDistributionResult {
+  readonly Distribution?: Distribution;
+  readonly ETag?: string;
 }
 
-interface GetFieldLevelEncryptionConfigRequest {
+export interface GetFieldLevelEncryptionConfigRequest {
   readonly Id: string;
 }
 
-interface GetFieldLevelEncryptionConfigResult {
-  readonly FieldLevelEncryptionConfig: FieldLevelEncryptionConfig;
-  readonly ETag: string;
+export interface GetFieldLevelEncryptionConfigResult {
+  readonly FieldLevelEncryptionConfig?: FieldLevelEncryptionConfig;
+  readonly ETag?: string;
 }
 
-interface GetFieldLevelEncryptionProfileConfigRequest {
+export interface GetFieldLevelEncryptionProfileConfigRequest {
   readonly Id: string;
 }
 
-interface GetFieldLevelEncryptionProfileConfigResult {
-  readonly FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig;
-  readonly ETag: string;
+export interface GetFieldLevelEncryptionProfileConfigResult {
+  readonly FieldLevelEncryptionProfileConfig?: FieldLevelEncryptionProfileConfig;
+  readonly ETag?: string;
 }
 
-interface GetFieldLevelEncryptionProfileRequest {
+export interface GetFieldLevelEncryptionProfileRequest {
   readonly Id: string;
 }
 
-interface GetFieldLevelEncryptionProfileResult {
-  readonly FieldLevelEncryptionProfile: FieldLevelEncryptionProfile;
-  readonly ETag: string;
+export interface GetFieldLevelEncryptionProfileResult {
+  readonly FieldLevelEncryptionProfile?: FieldLevelEncryptionProfile;
+  readonly ETag?: string;
 }
 
-interface GetFieldLevelEncryptionRequest {
+export interface GetFieldLevelEncryptionRequest {
   readonly Id: string;
 }
 
-interface GetFieldLevelEncryptionResult {
-  readonly FieldLevelEncryption: FieldLevelEncryption;
-  readonly ETag: string;
+export interface GetFieldLevelEncryptionResult {
+  readonly FieldLevelEncryption?: FieldLevelEncryption;
+  readonly ETag?: string;
 }
 
-interface GetFunctionRequest {
+export interface GetFunctionRequest {
   readonly Name: string;
-  readonly Stage: string;
+  readonly Stage?: string;
 }
 
-interface GetFunctionResult {
-  readonly FunctionCode: unknown;
-  readonly ETag: string;
-  readonly ContentType: string;
+export interface GetFunctionResult {
+  readonly FunctionCode?: unknown;
+  readonly ETag?: string;
+  readonly ContentType?: string;
 }
 
-interface GetInvalidationRequest {
+export interface GetInvalidationRequest {
   readonly DistributionId: string;
   readonly Id: string;
 }
 
-interface GetInvalidationResult {
-  readonly Invalidation: Invalidation;
+export interface GetInvalidationResult {
+  readonly Invalidation?: Invalidation;
 }
 
-interface GetKeyGroupConfigRequest {
+export interface GetKeyGroupConfigRequest {
   readonly Id: string;
 }
 
-interface GetKeyGroupConfigResult {
-  readonly KeyGroupConfig: KeyGroupConfig;
-  readonly ETag: string;
+export interface GetKeyGroupConfigResult {
+  readonly KeyGroupConfig?: KeyGroupConfig;
+  readonly ETag?: string;
 }
 
-interface GetKeyGroupRequest {
+export interface GetKeyGroupRequest {
   readonly Id: string;
 }
 
-interface GetKeyGroupResult {
-  readonly KeyGroup: KeyGroup;
-  readonly ETag: string;
+export interface GetKeyGroupResult {
+  readonly KeyGroup?: KeyGroup;
+  readonly ETag?: string;
 }
 
-interface GetMonitoringSubscriptionRequest {
+export interface GetMonitoringSubscriptionRequest {
   readonly DistributionId: string;
 }
 
-interface GetMonitoringSubscriptionResult {
-  readonly MonitoringSubscription: MonitoringSubscription;
+export interface GetMonitoringSubscriptionResult {
+  readonly MonitoringSubscription?: MonitoringSubscription;
 }
 
-interface GetOriginRequestPolicyConfigRequest {
+export interface GetOriginRequestPolicyConfigRequest {
   readonly Id: string;
 }
 
-interface GetOriginRequestPolicyConfigResult {
-  readonly OriginRequestPolicyConfig: OriginRequestPolicyConfig;
-  readonly ETag: string;
+export interface GetOriginRequestPolicyConfigResult {
+  readonly OriginRequestPolicyConfig?: OriginRequestPolicyConfig;
+  readonly ETag?: string;
 }
 
-interface GetOriginRequestPolicyRequest {
+export interface GetOriginRequestPolicyRequest {
   readonly Id: string;
 }
 
-interface GetOriginRequestPolicyResult {
-  readonly OriginRequestPolicy: OriginRequestPolicy;
-  readonly ETag: string;
+export interface GetOriginRequestPolicyResult {
+  readonly OriginRequestPolicy?: OriginRequestPolicy;
+  readonly ETag?: string;
 }
 
-interface GetPublicKeyConfigRequest {
+export interface GetPublicKeyConfigRequest {
   readonly Id: string;
 }
 
-interface GetPublicKeyConfigResult {
-  readonly PublicKeyConfig: PublicKeyConfig;
-  readonly ETag: string;
+export interface GetPublicKeyConfigResult {
+  readonly PublicKeyConfig?: PublicKeyConfig;
+  readonly ETag?: string;
 }
 
-interface GetPublicKeyRequest {
+export interface GetPublicKeyRequest {
   readonly Id: string;
 }
 
-interface GetPublicKeyResult {
-  readonly PublicKey: PublicKey;
-  readonly ETag: string;
+export interface GetPublicKeyResult {
+  readonly PublicKey?: PublicKey;
+  readonly ETag?: string;
 }
 
-interface GetRealtimeLogConfigRequest {
-  readonly Name: string;
-  readonly ARN: string;
+export interface GetRealtimeLogConfigRequest {
+  readonly Name?: string;
+  readonly ARN?: string;
 }
 
-interface GetRealtimeLogConfigResult {
-  readonly RealtimeLogConfig: RealtimeLogConfig;
+export interface GetRealtimeLogConfigResult {
+  readonly RealtimeLogConfig?: RealtimeLogConfig;
 }
 
-interface GetResponseHeadersPolicyConfigRequest {
+export interface GetResponseHeadersPolicyConfigRequest {
   readonly Id: string;
 }
 
-interface GetResponseHeadersPolicyConfigResult {
-  readonly ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig;
-  readonly ETag: string;
+export interface GetResponseHeadersPolicyConfigResult {
+  readonly ResponseHeadersPolicyConfig?: ResponseHeadersPolicyConfig;
+  readonly ETag?: string;
 }
 
-interface GetResponseHeadersPolicyRequest {
+export interface GetResponseHeadersPolicyRequest {
   readonly Id: string;
 }
 
-interface GetResponseHeadersPolicyResult {
-  readonly ResponseHeadersPolicy: ResponseHeadersPolicy;
-  readonly ETag: string;
+export interface GetResponseHeadersPolicyResult {
+  readonly ResponseHeadersPolicy?: ResponseHeadersPolicy;
+  readonly ETag?: string;
 }
 
-interface GetStreamingDistributionConfigRequest {
+export interface GetStreamingDistributionConfigRequest {
   readonly Id: string;
 }
 
-interface GetStreamingDistributionConfigResult {
-  readonly StreamingDistributionConfig: StreamingDistributionConfig;
-  readonly ETag: string;
+export interface GetStreamingDistributionConfigResult {
+  readonly StreamingDistributionConfig?: StreamingDistributionConfig;
+  readonly ETag?: string;
 }
 
-interface GetStreamingDistributionRequest {
+export interface GetStreamingDistributionRequest {
   readonly Id: string;
 }
 
-interface GetStreamingDistributionResult {
-  readonly StreamingDistribution: StreamingDistribution;
-  readonly ETag: string;
+export interface GetStreamingDistributionResult {
+  readonly StreamingDistribution?: StreamingDistribution;
+  readonly ETag?: string;
 }
 
-interface Headers {
+export interface Headers {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface IllegalDelete {
-  readonly Message: string;
+export interface IllegalDelete {
+  readonly Message?: string;
 }
 
-interface IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
-  readonly Message: string;
+export interface IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
+  readonly Message?: string;
 }
 
-interface IllegalUpdate {
-  readonly Message: string;
+export interface IllegalUpdate {
+  readonly Message?: string;
 }
 
-interface InconsistentQuantities {
-  readonly Message: string;
+export interface InconsistentQuantities {
+  readonly Message?: string;
 }
 
-interface InvalidArgument {
-  readonly Message: string;
+export interface InvalidArgument {
+  readonly Message?: string;
 }
 
-interface InvalidDefaultRootObject {
-  readonly Message: string;
+export interface InvalidDefaultRootObject {
+  readonly Message?: string;
 }
 
-interface InvalidErrorCode {
-  readonly Message: string;
+export interface InvalidErrorCode {
+  readonly Message?: string;
 }
 
-interface InvalidForwardCookies {
-  readonly Message: string;
+export interface InvalidForwardCookies {
+  readonly Message?: string;
 }
 
-interface InvalidFunctionAssociation {
-  readonly Message: string;
+export interface InvalidFunctionAssociation {
+  readonly Message?: string;
 }
 
-interface InvalidGeoRestrictionParameter {
-  readonly Message: string;
+export interface InvalidGeoRestrictionParameter {
+  readonly Message?: string;
 }
 
-interface InvalidHeadersForS3Origin {
-  readonly Message: string;
+export interface InvalidHeadersForS3Origin {
+  readonly Message?: string;
 }
 
-interface InvalidIfMatchVersion {
-  readonly Message: string;
+export interface InvalidIfMatchVersion {
+  readonly Message?: string;
 }
 
-interface InvalidLambdaFunctionAssociation {
-  readonly Message: string;
+export interface InvalidLambdaFunctionAssociation {
+  readonly Message?: string;
 }
 
-interface InvalidLocationCode {
-  readonly Message: string;
+export interface InvalidLocationCode {
+  readonly Message?: string;
 }
 
-interface InvalidMinimumProtocolVersion {
-  readonly Message: string;
+export interface InvalidMinimumProtocolVersion {
+  readonly Message?: string;
 }
 
-interface InvalidOrigin {
-  readonly Message: string;
+export interface InvalidOrigin {
+  readonly Message?: string;
 }
 
-interface InvalidOriginAccessIdentity {
-  readonly Message: string;
+export interface InvalidOriginAccessIdentity {
+  readonly Message?: string;
 }
 
-interface InvalidOriginKeepaliveTimeout {
-  readonly Message: string;
+export interface InvalidOriginKeepaliveTimeout {
+  readonly Message?: string;
 }
 
-interface InvalidOriginReadTimeout {
-  readonly Message: string;
+export interface InvalidOriginReadTimeout {
+  readonly Message?: string;
 }
 
-interface InvalidProtocolSettings {
-  readonly Message: string;
+export interface InvalidProtocolSettings {
+  readonly Message?: string;
 }
 
-interface InvalidQueryStringParameters {
-  readonly Message: string;
+export interface InvalidQueryStringParameters {
+  readonly Message?: string;
 }
 
-interface InvalidRelativePath {
-  readonly Message: string;
+export interface InvalidRelativePath {
+  readonly Message?: string;
 }
 
-interface InvalidRequiredProtocol {
-  readonly Message: string;
+export interface InvalidRequiredProtocol {
+  readonly Message?: string;
 }
 
-interface InvalidResponseCode {
-  readonly Message: string;
+export interface InvalidResponseCode {
+  readonly Message?: string;
 }
 
-interface InvalidTTLOrder {
-  readonly Message: string;
+export interface InvalidTTLOrder {
+  readonly Message?: string;
 }
 
-interface InvalidTagging {
-  readonly Message: string;
+export interface InvalidTagging {
+  readonly Message?: string;
 }
 
-interface InvalidViewerCertificate {
-  readonly Message: string;
+export interface InvalidViewerCertificate {
+  readonly Message?: string;
 }
 
-interface InvalidWebACLId {
-  readonly Message: string;
+export interface InvalidWebACLId {
+  readonly Message?: string;
 }
 
-interface Invalidation {
+export interface Invalidation {
   readonly Id: string;
   readonly Status: string;
   readonly CreateTime: Date;
   readonly InvalidationBatch: InvalidationBatch;
 }
 
-interface InvalidationBatch {
+export interface InvalidationBatch {
   readonly Paths: Paths;
   readonly CallerReference: string;
 }
 
-interface InvalidationList {
+export interface InvalidationList {
   readonly Marker: string;
-  readonly NextMarker: string;
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly IsTruncated: boolean;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface InvalidationSummary {
+export interface InvalidationSummary {
   readonly Id: string;
   readonly CreateTime: Date;
   readonly Status: string;
 }
 
-interface KGKeyPairIds {
-  readonly KeyGroupId: string;
-  readonly KeyPairIds: KeyPairIds;
+export interface KGKeyPairIds {
+  readonly KeyGroupId?: string;
+  readonly KeyPairIds?: KeyPairIds;
 }
 
-interface KeyGroup {
+export interface KeyGroup {
   readonly Id: string;
   readonly LastModifiedTime: Date;
   readonly KeyGroupConfig: KeyGroupConfig;
 }
 
-interface KeyGroupAlreadyExists {
-  readonly Message: string;
+export interface KeyGroupAlreadyExists {
+  readonly Message?: string;
 }
 
-interface KeyGroupConfig {
+export interface KeyGroupConfig {
   readonly Name: string;
   readonly Items: [];
-  readonly Comment: string;
+  readonly Comment?: string;
 }
 
-interface KeyGroupList {
-  readonly NextMarker: string;
+export interface KeyGroupList {
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface KeyGroupSummary {
+export interface KeyGroupSummary {
   readonly KeyGroup: KeyGroup;
 }
 
-interface KeyPairIds {
+export interface KeyPairIds {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface KinesisStreamConfig {
+export interface KinesisStreamConfig {
   readonly RoleARN: string;
   readonly StreamARN: string;
 }
 
-interface LambdaFunctionAssociation {
+export interface LambdaFunctionAssociation {
   readonly LambdaFunctionARN: string;
   readonly EventType: string;
-  readonly IncludeBody: boolean;
+  readonly IncludeBody?: boolean;
 }
 
-interface LambdaFunctionAssociations {
+export interface LambdaFunctionAssociations {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface ListCachePoliciesRequest {
-  readonly Type: string;
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListCachePoliciesRequest {
+  readonly Type?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListCachePoliciesResult {
-  readonly CachePolicyList: CachePolicyList;
+export interface ListCachePoliciesResult {
+  readonly CachePolicyList?: CachePolicyList;
 }
 
-interface ListCloudFrontOriginAccessIdentitiesRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListCloudFrontOriginAccessIdentitiesRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListCloudFrontOriginAccessIdentitiesResult {
-  readonly CloudFrontOriginAccessIdentityList: CloudFrontOriginAccessIdentityList;
+export interface ListCloudFrontOriginAccessIdentitiesResult {
+  readonly CloudFrontOriginAccessIdentityList?: CloudFrontOriginAccessIdentityList;
 }
 
-interface ListConflictingAliasesRequest {
+export interface ListConflictingAliasesRequest {
   readonly DistributionId: string;
   readonly Alias: string;
-  readonly Marker: string;
-  readonly MaxItems: number;
+  readonly Marker?: string;
+  readonly MaxItems?: number;
 }
 
-interface ListConflictingAliasesResult {
-  readonly ConflictingAliasesList: ConflictingAliasesList;
+export interface ListConflictingAliasesResult {
+  readonly ConflictingAliasesList?: ConflictingAliasesList;
 }
 
-interface ListDistributionsByCachePolicyIdRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListDistributionsByCachePolicyIdRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
   readonly CachePolicyId: string;
 }
 
-interface ListDistributionsByCachePolicyIdResult {
-  readonly DistributionIdList: DistributionIdList;
+export interface ListDistributionsByCachePolicyIdResult {
+  readonly DistributionIdList?: DistributionIdList;
 }
 
-interface ListDistributionsByKeyGroupRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListDistributionsByKeyGroupRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
   readonly KeyGroupId: string;
 }
 
-interface ListDistributionsByKeyGroupResult {
-  readonly DistributionIdList: DistributionIdList;
+export interface ListDistributionsByKeyGroupResult {
+  readonly DistributionIdList?: DistributionIdList;
 }
 
-interface ListDistributionsByOriginRequestPolicyIdRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListDistributionsByOriginRequestPolicyIdRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
   readonly OriginRequestPolicyId: string;
 }
 
-interface ListDistributionsByOriginRequestPolicyIdResult {
-  readonly DistributionIdList: DistributionIdList;
+export interface ListDistributionsByOriginRequestPolicyIdResult {
+  readonly DistributionIdList?: DistributionIdList;
 }
 
-interface ListDistributionsByRealtimeLogConfigRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
-  readonly RealtimeLogConfigName: string;
-  readonly RealtimeLogConfigArn: string;
+export interface ListDistributionsByRealtimeLogConfigRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
+  readonly RealtimeLogConfigName?: string;
+  readonly RealtimeLogConfigArn?: string;
 }
 
-interface ListDistributionsByRealtimeLogConfigResult {
-  readonly DistributionList: DistributionList;
+export interface ListDistributionsByRealtimeLogConfigResult {
+  readonly DistributionList?: DistributionList;
 }
 
-interface ListDistributionsByResponseHeadersPolicyIdRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListDistributionsByResponseHeadersPolicyIdRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
   readonly ResponseHeadersPolicyId: string;
 }
 
-interface ListDistributionsByResponseHeadersPolicyIdResult {
-  readonly DistributionIdList: DistributionIdList;
+export interface ListDistributionsByResponseHeadersPolicyIdResult {
+  readonly DistributionIdList?: DistributionIdList;
 }
 
-interface ListDistributionsByWebACLIdRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListDistributionsByWebACLIdRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
   readonly WebACLId: string;
 }
 
-interface ListDistributionsByWebACLIdResult {
-  readonly DistributionList: DistributionList;
+export interface ListDistributionsByWebACLIdResult {
+  readonly DistributionList?: DistributionList;
 }
 
-interface ListDistributionsRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListDistributionsRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListDistributionsResult {
-  readonly DistributionList: DistributionList;
+export interface ListDistributionsResult {
+  readonly DistributionList?: DistributionList;
 }
 
-interface ListFieldLevelEncryptionConfigsRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListFieldLevelEncryptionConfigsRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListFieldLevelEncryptionConfigsResult {
-  readonly FieldLevelEncryptionList: FieldLevelEncryptionList;
+export interface ListFieldLevelEncryptionConfigsResult {
+  readonly FieldLevelEncryptionList?: FieldLevelEncryptionList;
 }
 
-interface ListFieldLevelEncryptionProfilesRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListFieldLevelEncryptionProfilesRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListFieldLevelEncryptionProfilesResult {
-  readonly FieldLevelEncryptionProfileList: FieldLevelEncryptionProfileList;
+export interface ListFieldLevelEncryptionProfilesResult {
+  readonly FieldLevelEncryptionProfileList?: FieldLevelEncryptionProfileList;
 }
 
-interface ListFunctionsRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
-  readonly Stage: string;
+export interface ListFunctionsRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
+  readonly Stage?: string;
 }
 
-interface ListFunctionsResult {
-  readonly FunctionList: FunctionList;
+export interface ListFunctionsResult {
+  readonly FunctionList?: FunctionList;
 }
 
-interface ListInvalidationsRequest {
+export interface ListInvalidationsRequest {
   readonly DistributionId: string;
-  readonly Marker: string;
-  readonly MaxItems: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListInvalidationsResult {
-  readonly InvalidationList: InvalidationList;
+export interface ListInvalidationsResult {
+  readonly InvalidationList?: InvalidationList;
 }
 
-interface ListKeyGroupsRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListKeyGroupsRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListKeyGroupsResult {
-  readonly KeyGroupList: KeyGroupList;
+export interface ListKeyGroupsResult {
+  readonly KeyGroupList?: KeyGroupList;
 }
 
-interface ListOriginRequestPoliciesRequest {
-  readonly Type: string;
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListOriginRequestPoliciesRequest {
+  readonly Type?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListOriginRequestPoliciesResult {
-  readonly OriginRequestPolicyList: OriginRequestPolicyList;
+export interface ListOriginRequestPoliciesResult {
+  readonly OriginRequestPolicyList?: OriginRequestPolicyList;
 }
 
-interface ListPublicKeysRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListPublicKeysRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListPublicKeysResult {
-  readonly PublicKeyList: PublicKeyList;
+export interface ListPublicKeysResult {
+  readonly PublicKeyList?: PublicKeyList;
 }
 
-interface ListRealtimeLogConfigsRequest {
-  readonly MaxItems: string;
-  readonly Marker: string;
+export interface ListRealtimeLogConfigsRequest {
+  readonly MaxItems?: string;
+  readonly Marker?: string;
 }
 
-interface ListRealtimeLogConfigsResult {
-  readonly RealtimeLogConfigs: RealtimeLogConfigs;
+export interface ListRealtimeLogConfigsResult {
+  readonly RealtimeLogConfigs?: RealtimeLogConfigs;
 }
 
-interface ListResponseHeadersPoliciesRequest {
-  readonly Type: string;
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListResponseHeadersPoliciesRequest {
+  readonly Type?: string;
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListResponseHeadersPoliciesResult {
-  readonly ResponseHeadersPolicyList: ResponseHeadersPolicyList;
+export interface ListResponseHeadersPoliciesResult {
+  readonly ResponseHeadersPolicyList?: ResponseHeadersPolicyList;
 }
 
-interface ListStreamingDistributionsRequest {
-  readonly Marker: string;
-  readonly MaxItems: string;
+export interface ListStreamingDistributionsRequest {
+  readonly Marker?: string;
+  readonly MaxItems?: string;
 }
 
-interface ListStreamingDistributionsResult {
-  readonly StreamingDistributionList: StreamingDistributionList;
+export interface ListStreamingDistributionsResult {
+  readonly StreamingDistributionList?: StreamingDistributionList;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly Resource: string;
 }
 
-interface ListTagsForResourceResult {
+export interface ListTagsForResourceResult {
   readonly Tags: Tags;
 }
 
-interface LoggingConfig {
+export interface LoggingConfig {
   readonly Enabled: boolean;
   readonly IncludeCookies: boolean;
   readonly Bucket: string;
   readonly Prefix: string;
 }
 
-interface MissingBody {
-  readonly Message: string;
+export interface MissingBody {
+  readonly Message?: string;
 }
 
-interface MonitoringSubscription {
-  readonly RealtimeMetricsSubscriptionConfig: RealtimeMetricsSubscriptionConfig;
+export interface MonitoringSubscription {
+  readonly RealtimeMetricsSubscriptionConfig?: RealtimeMetricsSubscriptionConfig;
 }
 
-interface NoSuchCachePolicy {
-  readonly Message: string;
+export interface NoSuchCachePolicy {
+  readonly Message?: string;
 }
 
-interface NoSuchCloudFrontOriginAccessIdentity {
-  readonly Message: string;
+export interface NoSuchCloudFrontOriginAccessIdentity {
+  readonly Message?: string;
 }
 
-interface NoSuchDistribution {
-  readonly Message: string;
+export interface NoSuchDistribution {
+  readonly Message?: string;
 }
 
-interface NoSuchFieldLevelEncryptionConfig {
-  readonly Message: string;
+export interface NoSuchFieldLevelEncryptionConfig {
+  readonly Message?: string;
 }
 
-interface NoSuchFieldLevelEncryptionProfile {
-  readonly Message: string;
+export interface NoSuchFieldLevelEncryptionProfile {
+  readonly Message?: string;
 }
 
-interface NoSuchFunctionExists {
-  readonly Message: string;
+export interface NoSuchFunctionExists {
+  readonly Message?: string;
 }
 
-interface NoSuchInvalidation {
-  readonly Message: string;
+export interface NoSuchInvalidation {
+  readonly Message?: string;
 }
 
-interface NoSuchOrigin {
-  readonly Message: string;
+export interface NoSuchOrigin {
+  readonly Message?: string;
 }
 
-interface NoSuchOriginRequestPolicy {
-  readonly Message: string;
+export interface NoSuchOriginRequestPolicy {
+  readonly Message?: string;
 }
 
-interface NoSuchPublicKey {
-  readonly Message: string;
+export interface NoSuchPublicKey {
+  readonly Message?: string;
 }
 
-interface NoSuchRealtimeLogConfig {
-  readonly Message: string;
+export interface NoSuchRealtimeLogConfig {
+  readonly Message?: string;
 }
 
-interface NoSuchResource {
-  readonly Message: string;
+export interface NoSuchResource {
+  readonly Message?: string;
 }
 
-interface NoSuchResponseHeadersPolicy {
-  readonly Message: string;
+export interface NoSuchResponseHeadersPolicy {
+  readonly Message?: string;
 }
 
-interface NoSuchStreamingDistribution {
-  readonly Message: string;
+export interface NoSuchStreamingDistribution {
+  readonly Message?: string;
 }
 
-interface Origin {
+export interface Origin {
   readonly Id: string;
   readonly DomainName: string;
-  readonly OriginPath: string;
-  readonly CustomHeaders: CustomHeaders;
-  readonly S3OriginConfig: S3OriginConfig;
-  readonly CustomOriginConfig: CustomOriginConfig;
-  readonly ConnectionAttempts: number;
-  readonly ConnectionTimeout: number;
-  readonly OriginShield: OriginShield;
+  readonly OriginPath?: string;
+  readonly CustomHeaders?: CustomHeaders;
+  readonly S3OriginConfig?: S3OriginConfig;
+  readonly CustomOriginConfig?: CustomOriginConfig;
+  readonly ConnectionAttempts?: number;
+  readonly ConnectionTimeout?: number;
+  readonly OriginShield?: OriginShield;
 }
 
-interface OriginCustomHeader {
+export interface OriginCustomHeader {
   readonly HeaderName: string;
   readonly HeaderValue: string;
 }
 
-interface OriginGroup {
+export interface OriginGroup {
   readonly Id: string;
   readonly FailoverCriteria: OriginGroupFailoverCriteria;
   readonly Members: OriginGroupMembers;
 }
 
-interface OriginGroupFailoverCriteria {
+export interface OriginGroupFailoverCriteria {
   readonly StatusCodes: StatusCodes;
 }
 
-interface OriginGroupMember {
+export interface OriginGroupMember {
   readonly OriginId: string;
 }
 
-interface OriginGroupMembers {
+export interface OriginGroupMembers {
   readonly Quantity: number;
   readonly Items: [];
 }
 
-interface OriginGroups {
+export interface OriginGroups {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface OriginRequestPolicy {
+export interface OriginRequestPolicy {
   readonly Id: string;
   readonly LastModifiedTime: Date;
   readonly OriginRequestPolicyConfig: OriginRequestPolicyConfig;
 }
 
-interface OriginRequestPolicyAlreadyExists {
-  readonly Message: string;
+export interface OriginRequestPolicyAlreadyExists {
+  readonly Message?: string;
 }
 
-interface OriginRequestPolicyConfig {
-  readonly Comment: string;
+export interface OriginRequestPolicyConfig {
+  readonly Comment?: string;
   readonly Name: string;
   readonly HeadersConfig: OriginRequestPolicyHeadersConfig;
   readonly CookiesConfig: OriginRequestPolicyCookiesConfig;
   readonly QueryStringsConfig: OriginRequestPolicyQueryStringsConfig;
 }
 
-interface OriginRequestPolicyCookiesConfig {
+export interface OriginRequestPolicyCookiesConfig {
   readonly CookieBehavior: string;
-  readonly Cookies: CookieNames;
+  readonly Cookies?: CookieNames;
 }
 
-interface OriginRequestPolicyHeadersConfig {
+export interface OriginRequestPolicyHeadersConfig {
   readonly HeaderBehavior: string;
-  readonly Headers: Headers;
+  readonly Headers?: Headers;
 }
 
-interface OriginRequestPolicyInUse {
-  readonly Message: string;
+export interface OriginRequestPolicyInUse {
+  readonly Message?: string;
 }
 
-interface OriginRequestPolicyList {
-  readonly NextMarker: string;
+export interface OriginRequestPolicyList {
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface OriginRequestPolicyQueryStringsConfig {
+export interface OriginRequestPolicyQueryStringsConfig {
   readonly QueryStringBehavior: string;
-  readonly QueryStrings: QueryStringNames;
+  readonly QueryStrings?: QueryStringNames;
 }
 
-interface OriginRequestPolicySummary {
+export interface OriginRequestPolicySummary {
   readonly Type: string;
   readonly OriginRequestPolicy: OriginRequestPolicy;
 }
 
-interface OriginShield {
+export interface OriginShield {
   readonly Enabled: boolean;
-  readonly OriginShieldRegion: string;
+  readonly OriginShieldRegion?: string;
 }
 
-interface OriginSslProtocols {
+export interface OriginSslProtocols {
   readonly Quantity: number;
   readonly Items: [];
 }
 
-interface Origins {
+export interface Origins {
   readonly Quantity: number;
   readonly Items: [];
 }
 
-interface ParametersInCacheKeyAndForwardedToOrigin {
+export interface ParametersInCacheKeyAndForwardedToOrigin {
   readonly EnableAcceptEncodingGzip: boolean;
-  readonly EnableAcceptEncodingBrotli: boolean;
+  readonly EnableAcceptEncodingBrotli?: boolean;
   readonly HeadersConfig: CachePolicyHeadersConfig;
   readonly CookiesConfig: CachePolicyCookiesConfig;
   readonly QueryStringsConfig: CachePolicyQueryStringsConfig;
 }
 
-interface Paths {
+export interface Paths {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface PreconditionFailed {
-  readonly Message: string;
+export interface PreconditionFailed {
+  readonly Message?: string;
 }
 
-interface PublicKey {
+export interface PublicKey {
   readonly Id: string;
   readonly CreatedTime: Date;
   readonly PublicKeyConfig: PublicKeyConfig;
 }
 
-interface PublicKeyAlreadyExists {
-  readonly Message: string;
+export interface PublicKeyAlreadyExists {
+  readonly Message?: string;
 }
 
-interface PublicKeyConfig {
+export interface PublicKeyConfig {
   readonly CallerReference: string;
   readonly Name: string;
   readonly EncodedKey: string;
-  readonly Comment: string;
+  readonly Comment?: string;
 }
 
-interface PublicKeyInUse {
-  readonly Message: string;
+export interface PublicKeyInUse {
+  readonly Message?: string;
 }
 
-interface PublicKeyList {
-  readonly NextMarker: string;
+export interface PublicKeyList {
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface PublicKeySummary {
+export interface PublicKeySummary {
   readonly Id: string;
   readonly Name: string;
   readonly CreatedTime: Date;
   readonly EncodedKey: string;
-  readonly Comment: string;
+  readonly Comment?: string;
 }
 
-interface PublishFunctionRequest {
+export interface PublishFunctionRequest {
   readonly Name: string;
   readonly IfMatch: string;
 }
 
-interface PublishFunctionResult {
-  readonly FunctionSummary: FunctionSummary;
+export interface PublishFunctionResult {
+  readonly FunctionSummary?: FunctionSummary;
 }
 
-interface QueryArgProfile {
+export interface QueryArgProfile {
   readonly QueryArg: string;
   readonly ProfileId: string;
 }
 
-interface QueryArgProfileConfig {
+export interface QueryArgProfileConfig {
   readonly ForwardWhenQueryArgProfileIsUnknown: boolean;
-  readonly QueryArgProfiles: QueryArgProfiles;
+  readonly QueryArgProfiles?: QueryArgProfiles;
 }
 
-interface QueryArgProfileEmpty {
-  readonly Message: string;
+export interface QueryArgProfileEmpty {
+  readonly Message?: string;
 }
 
-interface QueryArgProfiles {
+export interface QueryArgProfiles {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface QueryStringCacheKeys {
+export interface QueryStringCacheKeys {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface QueryStringNames {
+export interface QueryStringNames {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface RealtimeLogConfig {
+export interface RealtimeLogConfig {
   readonly ARN: string;
   readonly Name: string;
   readonly SamplingRate: number;
@@ -1997,218 +2086,218 @@ interface RealtimeLogConfig {
   readonly Fields: [];
 }
 
-interface RealtimeLogConfigAlreadyExists {
-  readonly Message: string;
+export interface RealtimeLogConfigAlreadyExists {
+  readonly Message?: string;
 }
 
-interface RealtimeLogConfigInUse {
-  readonly Message: string;
+export interface RealtimeLogConfigInUse {
+  readonly Message?: string;
 }
 
-interface RealtimeLogConfigOwnerMismatch {
-  readonly Message: string;
+export interface RealtimeLogConfigOwnerMismatch {
+  readonly Message?: string;
 }
 
-interface RealtimeLogConfigs {
+export interface RealtimeLogConfigs {
   readonly MaxItems: number;
-  readonly Items: [];
+  readonly Items?: [];
   readonly IsTruncated: boolean;
   readonly Marker: string;
-  readonly NextMarker: string;
+  readonly NextMarker?: string;
 }
 
-interface RealtimeMetricsSubscriptionConfig {
+export interface RealtimeMetricsSubscriptionConfig {
   readonly RealtimeMetricsSubscriptionStatus: string;
 }
 
-interface ResourceInUse {
-  readonly Message: string;
+export interface ResourceInUse {
+  readonly Message?: string;
 }
 
-interface ResponseHeadersPolicy {
+export interface ResponseHeadersPolicy {
   readonly Id: string;
   readonly LastModifiedTime: Date;
   readonly ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig;
 }
 
-interface ResponseHeadersPolicyAccessControlAllowHeaders {
+export interface ResponseHeadersPolicyAccessControlAllowHeaders {
   readonly Quantity: number;
   readonly Items: [];
 }
 
-interface ResponseHeadersPolicyAccessControlAllowMethods {
+export interface ResponseHeadersPolicyAccessControlAllowMethods {
   readonly Quantity: number;
   readonly Items: [];
 }
 
-interface ResponseHeadersPolicyAccessControlAllowOrigins {
+export interface ResponseHeadersPolicyAccessControlAllowOrigins {
   readonly Quantity: number;
   readonly Items: [];
 }
 
-interface ResponseHeadersPolicyAccessControlExposeHeaders {
+export interface ResponseHeadersPolicyAccessControlExposeHeaders {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface ResponseHeadersPolicyAlreadyExists {
-  readonly Message: string;
+export interface ResponseHeadersPolicyAlreadyExists {
+  readonly Message?: string;
 }
 
-interface ResponseHeadersPolicyConfig {
-  readonly Comment: string;
+export interface ResponseHeadersPolicyConfig {
+  readonly Comment?: string;
   readonly Name: string;
-  readonly CorsConfig: ResponseHeadersPolicyCorsConfig;
-  readonly SecurityHeadersConfig: ResponseHeadersPolicySecurityHeadersConfig;
-  readonly CustomHeadersConfig: ResponseHeadersPolicyCustomHeadersConfig;
+  readonly CorsConfig?: ResponseHeadersPolicyCorsConfig;
+  readonly SecurityHeadersConfig?: ResponseHeadersPolicySecurityHeadersConfig;
+  readonly CustomHeadersConfig?: ResponseHeadersPolicyCustomHeadersConfig;
 }
 
-interface ResponseHeadersPolicyContentSecurityPolicy {
+export interface ResponseHeadersPolicyContentSecurityPolicy {
   readonly Override: boolean;
   readonly ContentSecurityPolicy: string;
 }
 
-interface ResponseHeadersPolicyContentTypeOptions {
+export interface ResponseHeadersPolicyContentTypeOptions {
   readonly Override: boolean;
 }
 
-interface ResponseHeadersPolicyCorsConfig {
+export interface ResponseHeadersPolicyCorsConfig {
   readonly AccessControlAllowOrigins: ResponseHeadersPolicyAccessControlAllowOrigins;
   readonly AccessControlAllowHeaders: ResponseHeadersPolicyAccessControlAllowHeaders;
   readonly AccessControlAllowMethods: ResponseHeadersPolicyAccessControlAllowMethods;
   readonly AccessControlAllowCredentials: boolean;
-  readonly AccessControlExposeHeaders: ResponseHeadersPolicyAccessControlExposeHeaders;
-  readonly AccessControlMaxAgeSec: number;
+  readonly AccessControlExposeHeaders?: ResponseHeadersPolicyAccessControlExposeHeaders;
+  readonly AccessControlMaxAgeSec?: number;
   readonly OriginOverride: boolean;
 }
 
-interface ResponseHeadersPolicyCustomHeader {
+export interface ResponseHeadersPolicyCustomHeader {
   readonly Header: string;
   readonly Value: string;
   readonly Override: boolean;
 }
 
-interface ResponseHeadersPolicyCustomHeadersConfig {
+export interface ResponseHeadersPolicyCustomHeadersConfig {
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface ResponseHeadersPolicyFrameOptions {
+export interface ResponseHeadersPolicyFrameOptions {
   readonly Override: boolean;
   readonly FrameOption: string;
 }
 
-interface ResponseHeadersPolicyInUse {
-  readonly Message: string;
+export interface ResponseHeadersPolicyInUse {
+  readonly Message?: string;
 }
 
-interface ResponseHeadersPolicyList {
-  readonly NextMarker: string;
+export interface ResponseHeadersPolicyList {
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface ResponseHeadersPolicyReferrerPolicy {
+export interface ResponseHeadersPolicyReferrerPolicy {
   readonly Override: boolean;
   readonly ReferrerPolicy: string;
 }
 
-interface ResponseHeadersPolicySecurityHeadersConfig {
-  readonly XSSProtection: ResponseHeadersPolicyXSSProtection;
-  readonly FrameOptions: ResponseHeadersPolicyFrameOptions;
-  readonly ReferrerPolicy: ResponseHeadersPolicyReferrerPolicy;
-  readonly ContentSecurityPolicy: ResponseHeadersPolicyContentSecurityPolicy;
-  readonly ContentTypeOptions: ResponseHeadersPolicyContentTypeOptions;
-  readonly StrictTransportSecurity: ResponseHeadersPolicyStrictTransportSecurity;
+export interface ResponseHeadersPolicySecurityHeadersConfig {
+  readonly XSSProtection?: ResponseHeadersPolicyXSSProtection;
+  readonly FrameOptions?: ResponseHeadersPolicyFrameOptions;
+  readonly ReferrerPolicy?: ResponseHeadersPolicyReferrerPolicy;
+  readonly ContentSecurityPolicy?: ResponseHeadersPolicyContentSecurityPolicy;
+  readonly ContentTypeOptions?: ResponseHeadersPolicyContentTypeOptions;
+  readonly StrictTransportSecurity?: ResponseHeadersPolicyStrictTransportSecurity;
 }
 
-interface ResponseHeadersPolicyStrictTransportSecurity {
+export interface ResponseHeadersPolicyStrictTransportSecurity {
   readonly Override: boolean;
-  readonly IncludeSubdomains: boolean;
-  readonly Preload: boolean;
+  readonly IncludeSubdomains?: boolean;
+  readonly Preload?: boolean;
   readonly AccessControlMaxAgeSec: number;
 }
 
-interface ResponseHeadersPolicySummary {
+export interface ResponseHeadersPolicySummary {
   readonly Type: string;
   readonly ResponseHeadersPolicy: ResponseHeadersPolicy;
 }
 
-interface ResponseHeadersPolicyXSSProtection {
+export interface ResponseHeadersPolicyXSSProtection {
   readonly Override: boolean;
   readonly Protection: boolean;
-  readonly ModeBlock: boolean;
-  readonly ReportUri: string;
+  readonly ModeBlock?: boolean;
+  readonly ReportUri?: string;
 }
 
-interface Restrictions {
+export interface Restrictions {
   readonly GeoRestriction: GeoRestriction;
 }
 
-interface S3Origin {
+export interface S3Origin {
   readonly DomainName: string;
   readonly OriginAccessIdentity: string;
 }
 
-interface S3OriginConfig {
+export interface S3OriginConfig {
   readonly OriginAccessIdentity: string;
 }
 
-interface Signer {
-  readonly AwsAccountNumber: string;
-  readonly KeyPairIds: KeyPairIds;
+export interface Signer {
+  readonly AwsAccountNumber?: string;
+  readonly KeyPairIds?: KeyPairIds;
 }
 
-interface StatusCodes {
+export interface StatusCodes {
   readonly Quantity: number;
   readonly Items: [];
 }
 
-interface StreamingDistribution {
+export interface StreamingDistribution {
   readonly Id: string;
   readonly ARN: string;
   readonly Status: string;
-  readonly LastModifiedTime: Date;
+  readonly LastModifiedTime?: Date;
   readonly DomainName: string;
   readonly ActiveTrustedSigners: ActiveTrustedSigners;
   readonly StreamingDistributionConfig: StreamingDistributionConfig;
 }
 
-interface StreamingDistributionAlreadyExists {
-  readonly Message: string;
+export interface StreamingDistributionAlreadyExists {
+  readonly Message?: string;
 }
 
-interface StreamingDistributionConfig {
+export interface StreamingDistributionConfig {
   readonly CallerReference: string;
   readonly S3Origin: S3Origin;
-  readonly Aliases: Aliases;
+  readonly Aliases?: Aliases;
   readonly Comment: string;
-  readonly Logging: StreamingLoggingConfig;
+  readonly Logging?: StreamingLoggingConfig;
   readonly TrustedSigners: TrustedSigners;
-  readonly PriceClass: string;
+  readonly PriceClass?: string;
   readonly Enabled: boolean;
 }
 
-interface StreamingDistributionConfigWithTags {
+export interface StreamingDistributionConfigWithTags {
   readonly StreamingDistributionConfig: StreamingDistributionConfig;
   readonly Tags: Tags;
 }
 
-interface StreamingDistributionList {
+export interface StreamingDistributionList {
   readonly Marker: string;
-  readonly NextMarker: string;
+  readonly NextMarker?: string;
   readonly MaxItems: number;
   readonly IsTruncated: boolean;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface StreamingDistributionNotDisabled {
-  readonly Message: string;
+export interface StreamingDistributionNotDisabled {
+  readonly Message?: string;
 }
 
-interface StreamingDistributionSummary {
+export interface StreamingDistributionSummary {
   readonly Id: string;
   readonly ARN: string;
   readonly Status: string;
@@ -2222,411 +2311,412 @@ interface StreamingDistributionSummary {
   readonly Enabled: boolean;
 }
 
-interface StreamingLoggingConfig {
+export interface StreamingLoggingConfig {
   readonly Enabled: boolean;
   readonly Bucket: string;
   readonly Prefix: string;
 }
 
-interface Tag {
+export interface Tag {
   readonly Key: string;
-  readonly Value: string;
+  readonly Value?: string;
 }
 
-interface TagKeys {
-  readonly Items: [];
+export interface TagKeys {
+  readonly Items?: [];
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly Resource: string;
   readonly Tags: Tags;
 }
 
-interface Tags {
-  readonly Items: [];
+export interface Tags {
+  readonly Items?: [];
 }
 
-interface TestFunctionFailed {
-  readonly Message: string;
+export interface TestFunctionFailed {
+  readonly Message?: string;
 }
 
-interface TestFunctionRequest {
+export interface TestFunctionRequest {
   readonly Name: string;
   readonly IfMatch: string;
-  readonly Stage: string;
+  readonly Stage?: string;
   readonly EventObject: unknown;
 }
 
-interface TestFunctionResult {
-  readonly TestResult: TestResult;
+export interface TestFunctionResult {
+  readonly TestResult?: TestResult;
 }
 
-interface TestResult {
-  readonly FunctionSummary: FunctionSummary;
-  readonly ComputeUtilization: string;
-  readonly FunctionExecutionLogs: [];
-  readonly FunctionErrorMessage: string;
-  readonly FunctionOutput: string;
+export interface TestResult {
+  readonly FunctionSummary?: FunctionSummary;
+  readonly ComputeUtilization?: string;
+  readonly FunctionExecutionLogs?: [];
+  readonly FunctionErrorMessage?: string;
+  readonly FunctionOutput?: string;
 }
 
-interface TooManyCacheBehaviors {
-  readonly Message: string;
+export interface TooManyCacheBehaviors {
+  readonly Message?: string;
 }
 
-interface TooManyCachePolicies {
-  readonly Message: string;
+export interface TooManyCachePolicies {
+  readonly Message?: string;
 }
 
-interface TooManyCertificates {
-  readonly Message: string;
+export interface TooManyCertificates {
+  readonly Message?: string;
 }
 
-interface TooManyCloudFrontOriginAccessIdentities {
-  readonly Message: string;
+export interface TooManyCloudFrontOriginAccessIdentities {
+  readonly Message?: string;
 }
 
-interface TooManyCookieNamesInWhiteList {
-  readonly Message: string;
+export interface TooManyCookieNamesInWhiteList {
+  readonly Message?: string;
 }
 
-interface TooManyCookiesInCachePolicy {
-  readonly Message: string;
+export interface TooManyCookiesInCachePolicy {
+  readonly Message?: string;
 }
 
-interface TooManyCookiesInOriginRequestPolicy {
-  readonly Message: string;
+export interface TooManyCookiesInOriginRequestPolicy {
+  readonly Message?: string;
 }
 
-interface TooManyCustomHeadersInResponseHeadersPolicy {
-  readonly Message: string;
+export interface TooManyCustomHeadersInResponseHeadersPolicy {
+  readonly Message?: string;
 }
 
-interface TooManyDistributionCNAMEs {
-  readonly Message: string;
+export interface TooManyDistributionCNAMEs {
+  readonly Message?: string;
 }
 
-interface TooManyDistributions {
-  readonly Message: string;
+export interface TooManyDistributions {
+  readonly Message?: string;
 }
 
-interface TooManyDistributionsAssociatedToCachePolicy {
-  readonly Message: string;
+export interface TooManyDistributionsAssociatedToCachePolicy {
+  readonly Message?: string;
 }
 
-interface TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
-  readonly Message: string;
+export interface TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
+  readonly Message?: string;
 }
 
-interface TooManyDistributionsAssociatedToKeyGroup {
-  readonly Message: string;
+export interface TooManyDistributionsAssociatedToKeyGroup {
+  readonly Message?: string;
 }
 
-interface TooManyDistributionsAssociatedToOriginRequestPolicy {
-  readonly Message: string;
+export interface TooManyDistributionsAssociatedToOriginRequestPolicy {
+  readonly Message?: string;
 }
 
-interface TooManyDistributionsAssociatedToResponseHeadersPolicy {
-  readonly Message: string;
+export interface TooManyDistributionsAssociatedToResponseHeadersPolicy {
+  readonly Message?: string;
 }
 
-interface TooManyDistributionsWithFunctionAssociations {
-  readonly Message: string;
+export interface TooManyDistributionsWithFunctionAssociations {
+  readonly Message?: string;
 }
 
-interface TooManyDistributionsWithLambdaAssociations {
-  readonly Message: string;
+export interface TooManyDistributionsWithLambdaAssociations {
+  readonly Message?: string;
 }
 
-interface TooManyDistributionsWithSingleFunctionARN {
-  readonly Message: string;
+export interface TooManyDistributionsWithSingleFunctionARN {
+  readonly Message?: string;
 }
 
-interface TooManyFieldLevelEncryptionConfigs {
-  readonly Message: string;
+export interface TooManyFieldLevelEncryptionConfigs {
+  readonly Message?: string;
 }
 
-interface TooManyFieldLevelEncryptionContentTypeProfiles {
-  readonly Message: string;
+export interface TooManyFieldLevelEncryptionContentTypeProfiles {
+  readonly Message?: string;
 }
 
-interface TooManyFieldLevelEncryptionEncryptionEntities {
-  readonly Message: string;
+export interface TooManyFieldLevelEncryptionEncryptionEntities {
+  readonly Message?: string;
 }
 
-interface TooManyFieldLevelEncryptionFieldPatterns {
-  readonly Message: string;
+export interface TooManyFieldLevelEncryptionFieldPatterns {
+  readonly Message?: string;
 }
 
-interface TooManyFieldLevelEncryptionProfiles {
-  readonly Message: string;
+export interface TooManyFieldLevelEncryptionProfiles {
+  readonly Message?: string;
 }
 
-interface TooManyFieldLevelEncryptionQueryArgProfiles {
-  readonly Message: string;
+export interface TooManyFieldLevelEncryptionQueryArgProfiles {
+  readonly Message?: string;
 }
 
-interface TooManyFunctionAssociations {
-  readonly Message: string;
+export interface TooManyFunctionAssociations {
+  readonly Message?: string;
 }
 
-interface TooManyFunctions {
-  readonly Message: string;
+export interface TooManyFunctions {
+  readonly Message?: string;
 }
 
-interface TooManyHeadersInCachePolicy {
-  readonly Message: string;
+export interface TooManyHeadersInCachePolicy {
+  readonly Message?: string;
 }
 
-interface TooManyHeadersInForwardedValues {
-  readonly Message: string;
+export interface TooManyHeadersInForwardedValues {
+  readonly Message?: string;
 }
 
-interface TooManyHeadersInOriginRequestPolicy {
-  readonly Message: string;
+export interface TooManyHeadersInOriginRequestPolicy {
+  readonly Message?: string;
 }
 
-interface TooManyInvalidationsInProgress {
-  readonly Message: string;
+export interface TooManyInvalidationsInProgress {
+  readonly Message?: string;
 }
 
-interface TooManyKeyGroups {
-  readonly Message: string;
+export interface TooManyKeyGroups {
+  readonly Message?: string;
 }
 
-interface TooManyKeyGroupsAssociatedToDistribution {
-  readonly Message: string;
+export interface TooManyKeyGroupsAssociatedToDistribution {
+  readonly Message?: string;
 }
 
-interface TooManyLambdaFunctionAssociations {
-  readonly Message: string;
+export interface TooManyLambdaFunctionAssociations {
+  readonly Message?: string;
 }
 
-interface TooManyOriginCustomHeaders {
-  readonly Message: string;
+export interface TooManyOriginCustomHeaders {
+  readonly Message?: string;
 }
 
-interface TooManyOriginGroupsPerDistribution {
-  readonly Message: string;
+export interface TooManyOriginGroupsPerDistribution {
+  readonly Message?: string;
 }
 
-interface TooManyOriginRequestPolicies {
-  readonly Message: string;
+export interface TooManyOriginRequestPolicies {
+  readonly Message?: string;
 }
 
-interface TooManyOrigins {
-  readonly Message: string;
+export interface TooManyOrigins {
+  readonly Message?: string;
 }
 
-interface TooManyPublicKeys {
-  readonly Message: string;
+export interface TooManyPublicKeys {
+  readonly Message?: string;
 }
 
-interface TooManyPublicKeysInKeyGroup {
-  readonly Message: string;
+export interface TooManyPublicKeysInKeyGroup {
+  readonly Message?: string;
 }
 
-interface TooManyQueryStringParameters {
-  readonly Message: string;
+export interface TooManyQueryStringParameters {
+  readonly Message?: string;
 }
 
-interface TooManyQueryStringsInCachePolicy {
-  readonly Message: string;
+export interface TooManyQueryStringsInCachePolicy {
+  readonly Message?: string;
 }
 
-interface TooManyQueryStringsInOriginRequestPolicy {
-  readonly Message: string;
+export interface TooManyQueryStringsInOriginRequestPolicy {
+  readonly Message?: string;
 }
 
-interface TooManyRealtimeLogConfigs {
-  readonly Message: string;
+export interface TooManyRealtimeLogConfigs {
+  readonly Message?: string;
 }
 
-interface TooManyResponseHeadersPolicies {
-  readonly Message: string;
+export interface TooManyResponseHeadersPolicies {
+  readonly Message?: string;
 }
 
-interface TooManyStreamingDistributionCNAMEs {
-  readonly Message: string;
+export interface TooManyStreamingDistributionCNAMEs {
+  readonly Message?: string;
 }
 
-interface TooManyStreamingDistributions {
-  readonly Message: string;
+export interface TooManyStreamingDistributions {
+  readonly Message?: string;
 }
 
-interface TooManyTrustedSigners {
-  readonly Message: string;
+export interface TooManyTrustedSigners {
+  readonly Message?: string;
 }
 
-interface TrustedKeyGroupDoesNotExist {
-  readonly Message: string;
+export interface TrustedKeyGroupDoesNotExist {
+  readonly Message?: string;
 }
 
-interface TrustedKeyGroups {
+export interface TrustedKeyGroups {
   readonly Enabled: boolean;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface TrustedSignerDoesNotExist {
-  readonly Message: string;
+export interface TrustedSignerDoesNotExist {
+  readonly Message?: string;
 }
 
-interface TrustedSigners {
+export interface TrustedSigners {
   readonly Enabled: boolean;
   readonly Quantity: number;
-  readonly Items: [];
+  readonly Items?: [];
 }
 
-interface UnsupportedOperation {
-  readonly Message: string;
+export interface UnsupportedOperation {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly Resource: string;
   readonly TagKeys: TagKeys;
 }
 
-interface UpdateCachePolicyRequest {
+export interface UpdateCachePolicyRequest {
   readonly CachePolicyConfig: CachePolicyConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface UpdateCachePolicyResult {
-  readonly CachePolicy: CachePolicy;
-  readonly ETag: string;
+export interface UpdateCachePolicyResult {
+  readonly CachePolicy?: CachePolicy;
+  readonly ETag?: string;
 }
 
-interface UpdateCloudFrontOriginAccessIdentityRequest {
+export interface UpdateCloudFrontOriginAccessIdentityRequest {
   readonly CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface UpdateCloudFrontOriginAccessIdentityResult {
-  readonly CloudFrontOriginAccessIdentity: CloudFrontOriginAccessIdentity;
-  readonly ETag: string;
+export interface UpdateCloudFrontOriginAccessIdentityResult {
+  readonly CloudFrontOriginAccessIdentity?: CloudFrontOriginAccessIdentity;
+  readonly ETag?: string;
 }
 
-interface UpdateDistributionRequest {
+export interface UpdateDistributionRequest {
   readonly DistributionConfig: DistributionConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface UpdateDistributionResult {
-  readonly Distribution: Distribution;
-  readonly ETag: string;
+export interface UpdateDistributionResult {
+  readonly Distribution?: Distribution;
+  readonly ETag?: string;
 }
 
-interface UpdateFieldLevelEncryptionConfigRequest {
+export interface UpdateFieldLevelEncryptionConfigRequest {
   readonly FieldLevelEncryptionConfig: FieldLevelEncryptionConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface UpdateFieldLevelEncryptionConfigResult {
-  readonly FieldLevelEncryption: FieldLevelEncryption;
-  readonly ETag: string;
+export interface UpdateFieldLevelEncryptionConfigResult {
+  readonly FieldLevelEncryption?: FieldLevelEncryption;
+  readonly ETag?: string;
 }
 
-interface UpdateFieldLevelEncryptionProfileRequest {
+export interface UpdateFieldLevelEncryptionProfileRequest {
   readonly FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface UpdateFieldLevelEncryptionProfileResult {
-  readonly FieldLevelEncryptionProfile: FieldLevelEncryptionProfile;
-  readonly ETag: string;
+export interface UpdateFieldLevelEncryptionProfileResult {
+  readonly FieldLevelEncryptionProfile?: FieldLevelEncryptionProfile;
+  readonly ETag?: string;
 }
 
-interface UpdateFunctionRequest {
+export interface UpdateFunctionRequest {
   readonly Name: string;
   readonly IfMatch: string;
   readonly FunctionConfig: FunctionConfig;
   readonly FunctionCode: unknown;
 }
 
-interface UpdateFunctionResult {
-  readonly FunctionSummary: FunctionSummary;
-  readonly ETag: string;
+export interface UpdateFunctionResult {
+  readonly FunctionSummary?: FunctionSummary;
+  readonly ETag?: string;
 }
 
-interface UpdateKeyGroupRequest {
+export interface UpdateKeyGroupRequest {
   readonly KeyGroupConfig: KeyGroupConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface UpdateKeyGroupResult {
-  readonly KeyGroup: KeyGroup;
-  readonly ETag: string;
+export interface UpdateKeyGroupResult {
+  readonly KeyGroup?: KeyGroup;
+  readonly ETag?: string;
 }
 
-interface UpdateOriginRequestPolicyRequest {
+export interface UpdateOriginRequestPolicyRequest {
   readonly OriginRequestPolicyConfig: OriginRequestPolicyConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface UpdateOriginRequestPolicyResult {
-  readonly OriginRequestPolicy: OriginRequestPolicy;
-  readonly ETag: string;
+export interface UpdateOriginRequestPolicyResult {
+  readonly OriginRequestPolicy?: OriginRequestPolicy;
+  readonly ETag?: string;
 }
 
-interface UpdatePublicKeyRequest {
+export interface UpdatePublicKeyRequest {
   readonly PublicKeyConfig: PublicKeyConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface UpdatePublicKeyResult {
-  readonly PublicKey: PublicKey;
-  readonly ETag: string;
+export interface UpdatePublicKeyResult {
+  readonly PublicKey?: PublicKey;
+  readonly ETag?: string;
 }
 
-interface UpdateRealtimeLogConfigRequest {
-  readonly EndPoints: [];
-  readonly Fields: [];
-  readonly Name: string;
-  readonly ARN: string;
-  readonly SamplingRate: number;
+export interface UpdateRealtimeLogConfigRequest {
+  readonly EndPoints?: [];
+  readonly Fields?: [];
+  readonly Name?: string;
+  readonly ARN?: string;
+  readonly SamplingRate?: number;
 }
 
-interface UpdateRealtimeLogConfigResult {
-  readonly RealtimeLogConfig: RealtimeLogConfig;
+export interface UpdateRealtimeLogConfigResult {
+  readonly RealtimeLogConfig?: RealtimeLogConfig;
 }
 
-interface UpdateResponseHeadersPolicyRequest {
+export interface UpdateResponseHeadersPolicyRequest {
   readonly ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface UpdateResponseHeadersPolicyResult {
-  readonly ResponseHeadersPolicy: ResponseHeadersPolicy;
-  readonly ETag: string;
+export interface UpdateResponseHeadersPolicyResult {
+  readonly ResponseHeadersPolicy?: ResponseHeadersPolicy;
+  readonly ETag?: string;
 }
 
-interface UpdateStreamingDistributionRequest {
+export interface UpdateStreamingDistributionRequest {
   readonly StreamingDistributionConfig: StreamingDistributionConfig;
   readonly Id: string;
-  readonly IfMatch: string;
+  readonly IfMatch?: string;
 }
 
-interface UpdateStreamingDistributionResult {
-  readonly StreamingDistribution: StreamingDistribution;
-  readonly ETag: string;
+export interface UpdateStreamingDistributionResult {
+  readonly StreamingDistribution?: StreamingDistribution;
+  readonly ETag?: string;
 }
 
-interface ViewerCertificate {
-  readonly CloudFrontDefaultCertificate: boolean;
-  readonly IAMCertificateId: string;
-  readonly ACMCertificateArn: string;
-  readonly SSLSupportMethod: string;
-  readonly MinimumProtocolVersion: string;
-  readonly Certificate: string;
-  readonly CertificateSource: string;
+export interface ViewerCertificate {
+  readonly CloudFrontDefaultCertificate?: boolean;
+  readonly IAMCertificateId?: string;
+  readonly ACMCertificateArn?: string;
+  readonly SSLSupportMethod?: string;
+  readonly MinimumProtocolVersion?: string;
+  readonly Certificate?: string;
+  readonly CertificateSource?: string;
 }
+
 

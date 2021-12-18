@@ -6,574 +6,604 @@ export interface CreateCell {
   readonly Cells?: [];
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateCrossAccountAuthorization {
   readonly CrossAccountAuthorization: string;
 }
+
 export interface CreateReadinessCheck {
   readonly ReadinessCheckName: string;
   readonly ResourceSetName: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateRecoveryGroup {
   readonly Cells?: [];
   readonly RecoveryGroupName: string;
   readonly Tags?: {[key: string]: any};
 }
+
 export interface CreateResourceSet {
   readonly ResourceSetName: string;
   readonly ResourceSetType: string;
   readonly Resources: [];
   readonly Tags?: {[key: string]: any};
 }
+
 export interface DeleteCell {
   readonly CellName: string;
 }
+
 export interface DeleteCrossAccountAuthorization {
   readonly CrossAccountAuthorization: string;
 }
+
 export interface DeleteReadinessCheck {
   readonly ReadinessCheckName: string;
 }
+
 export interface DeleteRecoveryGroup {
   readonly RecoveryGroupName: string;
 }
+
 export interface DeleteResourceSet {
   readonly ResourceSetName: string;
 }
+
 export interface GetArchitectureRecommendations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly RecoveryGroupName: string;
 }
+
 export interface GetCell {
   readonly CellName: string;
 }
+
 export interface GetCellReadinessSummary {
   readonly CellName: string;
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetReadinessCheck {
   readonly ReadinessCheckName: string;
 }
+
 export interface GetReadinessCheckResourceStatus {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly ReadinessCheckName: string;
   readonly ResourceIdentifier: string;
 }
+
 export interface GetReadinessCheckStatus {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly ReadinessCheckName: string;
 }
+
 export interface GetRecoveryGroup {
   readonly RecoveryGroupName: string;
 }
+
 export interface GetRecoveryGroupReadinessSummary {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly RecoveryGroupName: string;
 }
+
 export interface GetResourceSet {
   readonly ResourceSetName: string;
 }
+
 export interface ListCells {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListCrossAccountAuthorizations {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListReadinessChecks {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListRecoveryGroups {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListResourceSets {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface ListRules {
   readonly MaxResults?: number;
   readonly NextToken?: string;
   readonly ResourceType?: string;
 }
+
 export interface ListTagsForResources {
   readonly ResourceArn: string;
 }
+
 export interface TagResource {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
+
 export interface UpdateCell {
   readonly CellName: string;
   readonly Cells: [];
 }
+
 export interface UpdateReadinessCheck {
   readonly ReadinessCheckName: string;
   readonly ResourceSetName: string;
 }
+
 export interface UpdateRecoveryGroup {
   readonly Cells: [];
   readonly RecoveryGroupName: string;
 }
+
 export interface UpdateResourceSet {
   readonly ResourceSetName: string;
   readonly ResourceSetType: string;
   readonly Resources: [];
 }
 
-
-
-interface AccessDeniedException {
-  readonly Message: string;
+export interface AccessDeniedException {
+  readonly Message?: string;
 }
 
-interface CellOutput {
+export interface CellOutput {
   readonly CellArn: string;
   readonly CellName: string;
   readonly Cells: [];
   readonly ParentReadinessScopes: [];
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ConflictException {
-  readonly Message: string;
+export interface ConflictException {
+  readonly Message?: string;
 }
 
-interface CreateCellRequest {
+export interface CreateCellRequest {
   readonly CellName: string;
-  readonly Cells: [];
-  readonly Tags: {[key: string]: any};
+  readonly Cells?: [];
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateCellResponse {
-  readonly CellArn: string;
-  readonly CellName: string;
-  readonly Cells: [];
-  readonly ParentReadinessScopes: [];
-  readonly Tags: {[key: string]: any};
+export interface CreateCellResponse {
+  readonly CellArn?: string;
+  readonly CellName?: string;
+  readonly Cells?: [];
+  readonly ParentReadinessScopes?: [];
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateCrossAccountAuthorizationRequest {
+export interface CreateCrossAccountAuthorizationRequest {
   readonly CrossAccountAuthorization: string;
 }
 
-interface CreateCrossAccountAuthorizationResponse {
-  readonly CrossAccountAuthorization: string;
+export interface CreateCrossAccountAuthorizationResponse {
+  readonly CrossAccountAuthorization?: string;
 }
 
-interface CreateReadinessCheckRequest {
+export interface CreateReadinessCheckRequest {
   readonly ReadinessCheckName: string;
   readonly ResourceSetName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateReadinessCheckResponse {
-  readonly ReadinessCheckArn: string;
-  readonly ReadinessCheckName: string;
-  readonly ResourceSet: string;
-  readonly Tags: {[key: string]: any};
+export interface CreateReadinessCheckResponse {
+  readonly ReadinessCheckArn?: string;
+  readonly ReadinessCheckName?: string;
+  readonly ResourceSet?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateRecoveryGroupRequest {
-  readonly Cells: [];
+export interface CreateRecoveryGroupRequest {
+  readonly Cells?: [];
   readonly RecoveryGroupName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateRecoveryGroupResponse {
-  readonly Cells: [];
-  readonly RecoveryGroupArn: string;
-  readonly RecoveryGroupName: string;
-  readonly Tags: {[key: string]: any};
+export interface CreateRecoveryGroupResponse {
+  readonly Cells?: [];
+  readonly RecoveryGroupArn?: string;
+  readonly RecoveryGroupName?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateResourceSetRequest {
+export interface CreateResourceSetRequest {
   readonly ResourceSetName: string;
   readonly ResourceSetType: string;
   readonly Resources: [];
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface CreateResourceSetResponse {
-  readonly ResourceSetArn: string;
-  readonly ResourceSetName: string;
-  readonly ResourceSetType: string;
-  readonly Resources: [];
-  readonly Tags: {[key: string]: any};
+export interface CreateResourceSetResponse {
+  readonly ResourceSetArn?: string;
+  readonly ResourceSetName?: string;
+  readonly ResourceSetType?: string;
+  readonly Resources?: [];
+  readonly Tags?: {[key: string]: any};
 }
 
-interface DNSTargetResource {
-  readonly DomainName: string;
-  readonly HostedZoneArn: string;
-  readonly RecordSetId: string;
-  readonly RecordType: string;
-  readonly TargetResource: TargetResource;
+export interface DNSTargetResource {
+  readonly DomainName?: string;
+  readonly HostedZoneArn?: string;
+  readonly RecordSetId?: string;
+  readonly RecordType?: string;
+  readonly TargetResource?: TargetResource;
 }
 
-interface DeleteCellRequest {
+export interface DeleteCellRequest {
   readonly CellName: string;
 }
 
-interface DeleteCrossAccountAuthorizationRequest {
+export interface DeleteCrossAccountAuthorizationRequest {
   readonly CrossAccountAuthorization: string;
 }
 
-interface DeleteCrossAccountAuthorizationResponse {
+export interface DeleteCrossAccountAuthorizationResponse {
 }
 
-interface DeleteReadinessCheckRequest {
+export interface DeleteReadinessCheckRequest {
   readonly ReadinessCheckName: string;
 }
 
-interface DeleteRecoveryGroupRequest {
+export interface DeleteRecoveryGroupRequest {
   readonly RecoveryGroupName: string;
 }
 
-interface DeleteResourceSetRequest {
+export interface DeleteResourceSetRequest {
   readonly ResourceSetName: string;
 }
 
-interface GetArchitectureRecommendationsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface GetArchitectureRecommendationsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly RecoveryGroupName: string;
 }
 
-interface GetArchitectureRecommendationsResponse {
-  readonly LastAuditTimestamp: Date;
-  readonly NextToken: string;
-  readonly Recommendations: [];
+export interface GetArchitectureRecommendationsResponse {
+  readonly LastAuditTimestamp?: Date;
+  readonly NextToken?: string;
+  readonly Recommendations?: [];
 }
 
-interface GetCellReadinessSummaryRequest {
+export interface GetCellReadinessSummaryRequest {
   readonly CellName: string;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetCellReadinessSummaryResponse {
-  readonly NextToken: string;
-  readonly Readiness: string;
-  readonly ReadinessChecks: [];
+export interface GetCellReadinessSummaryResponse {
+  readonly NextToken?: string;
+  readonly Readiness?: string;
+  readonly ReadinessChecks?: [];
 }
 
-interface GetCellRequest {
+export interface GetCellRequest {
   readonly CellName: string;
 }
 
-interface GetCellResponse {
-  readonly CellArn: string;
-  readonly CellName: string;
-  readonly Cells: [];
-  readonly ParentReadinessScopes: [];
-  readonly Tags: {[key: string]: any};
+export interface GetCellResponse {
+  readonly CellArn?: string;
+  readonly CellName?: string;
+  readonly Cells?: [];
+  readonly ParentReadinessScopes?: [];
+  readonly Tags?: {[key: string]: any};
 }
 
-interface GetReadinessCheckRequest {
+export interface GetReadinessCheckRequest {
   readonly ReadinessCheckName: string;
 }
 
-interface GetReadinessCheckResourceStatusRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface GetReadinessCheckResourceStatusRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ReadinessCheckName: string;
   readonly ResourceIdentifier: string;
 }
 
-interface GetReadinessCheckResourceStatusResponse {
-  readonly NextToken: string;
-  readonly Readiness: string;
-  readonly Rules: [];
+export interface GetReadinessCheckResourceStatusResponse {
+  readonly NextToken?: string;
+  readonly Readiness?: string;
+  readonly Rules?: [];
 }
 
-interface GetReadinessCheckResponse {
-  readonly ReadinessCheckArn: string;
+export interface GetReadinessCheckResponse {
+  readonly ReadinessCheckArn?: string;
+  readonly ReadinessCheckName?: string;
+  readonly ResourceSet?: string;
+  readonly Tags?: {[key: string]: any};
+}
+
+export interface GetReadinessCheckStatusRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly ReadinessCheckName: string;
-  readonly ResourceSet: string;
-  readonly Tags: {[key: string]: any};
 }
 
-interface GetReadinessCheckStatusRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ReadinessCheckName: string;
+export interface GetReadinessCheckStatusResponse {
+  readonly Messages?: [];
+  readonly NextToken?: string;
+  readonly Readiness?: string;
+  readonly Resources?: [];
 }
 
-interface GetReadinessCheckStatusResponse {
-  readonly Messages: [];
-  readonly NextToken: string;
-  readonly Readiness: string;
-  readonly Resources: [];
-}
-
-interface GetRecoveryGroupReadinessSummaryRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface GetRecoveryGroupReadinessSummaryRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
   readonly RecoveryGroupName: string;
 }
 
-interface GetRecoveryGroupReadinessSummaryResponse {
-  readonly NextToken: string;
-  readonly Readiness: string;
-  readonly ReadinessChecks: [];
+export interface GetRecoveryGroupReadinessSummaryResponse {
+  readonly NextToken?: string;
+  readonly Readiness?: string;
+  readonly ReadinessChecks?: [];
 }
 
-interface GetRecoveryGroupRequest {
+export interface GetRecoveryGroupRequest {
   readonly RecoveryGroupName: string;
 }
 
-interface GetRecoveryGroupResponse {
-  readonly Cells: [];
-  readonly RecoveryGroupArn: string;
-  readonly RecoveryGroupName: string;
-  readonly Tags: {[key: string]: any};
+export interface GetRecoveryGroupResponse {
+  readonly Cells?: [];
+  readonly RecoveryGroupArn?: string;
+  readonly RecoveryGroupName?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface GetResourceSetRequest {
+export interface GetResourceSetRequest {
   readonly ResourceSetName: string;
 }
 
-interface GetResourceSetResponse {
-  readonly ResourceSetArn: string;
-  readonly ResourceSetName: string;
-  readonly ResourceSetType: string;
-  readonly Resources: [];
-  readonly Tags: {[key: string]: any};
+export interface GetResourceSetResponse {
+  readonly ResourceSetArn?: string;
+  readonly ResourceSetName?: string;
+  readonly ResourceSetType?: string;
+  readonly Resources?: [];
+  readonly Tags?: {[key: string]: any};
 }
 
-interface InternalServerException {
-  readonly Message: string;
+export interface InternalServerException {
+  readonly Message?: string;
 }
 
-interface ListCellsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListCellsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListCellsResponse {
-  readonly Cells: [];
-  readonly NextToken: string;
+export interface ListCellsResponse {
+  readonly Cells?: [];
+  readonly NextToken?: string;
 }
 
-interface ListCrossAccountAuthorizationsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListCrossAccountAuthorizationsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListCrossAccountAuthorizationsResponse {
-  readonly CrossAccountAuthorizations: [];
-  readonly NextToken: string;
+export interface ListCrossAccountAuthorizationsResponse {
+  readonly CrossAccountAuthorizations?: [];
+  readonly NextToken?: string;
 }
 
-interface ListReadinessChecksRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListReadinessChecksRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListReadinessChecksResponse {
-  readonly NextToken: string;
-  readonly ReadinessChecks: [];
+export interface ListReadinessChecksResponse {
+  readonly NextToken?: string;
+  readonly ReadinessChecks?: [];
 }
 
-interface ListRecoveryGroupsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListRecoveryGroupsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListRecoveryGroupsResponse {
-  readonly NextToken: string;
-  readonly RecoveryGroups: [];
+export interface ListRecoveryGroupsResponse {
+  readonly NextToken?: string;
+  readonly RecoveryGroups?: [];
 }
 
-interface ListResourceSetsRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
+export interface ListResourceSetsRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface ListResourceSetsResponse {
-  readonly NextToken: string;
-  readonly ResourceSets: [];
+export interface ListResourceSetsResponse {
+  readonly NextToken?: string;
+  readonly ResourceSets?: [];
 }
 
-interface ListRulesOutput {
+export interface ListRulesOutput {
   readonly ResourceType: string;
   readonly RuleDescription: string;
   readonly RuleId: string;
 }
 
-interface ListRulesRequest {
-  readonly MaxResults: number;
-  readonly NextToken: string;
-  readonly ResourceType: string;
+export interface ListRulesRequest {
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
+  readonly ResourceType?: string;
 }
 
-interface ListRulesResponse {
-  readonly NextToken: string;
-  readonly Rules: [];
+export interface ListRulesResponse {
+  readonly NextToken?: string;
+  readonly Rules?: [];
 }
 
-interface ListTagsForResourcesRequest {
+export interface ListTagsForResourcesRequest {
   readonly ResourceArn: string;
 }
 
-interface ListTagsForResourcesResponse {
-  readonly Tags: {[key: string]: any};
+export interface ListTagsForResourcesResponse {
+  readonly Tags?: {[key: string]: any};
 }
 
-interface Message {
-  readonly MessageText: string;
+export interface Message {
+  readonly MessageText?: string;
 }
 
-interface NLBResource {
-  readonly Arn: string;
+export interface NLBResource {
+  readonly Arn?: string;
 }
 
-interface R53ResourceRecord {
-  readonly DomainName: string;
-  readonly RecordSetId: string;
+export interface R53ResourceRecord {
+  readonly DomainName?: string;
+  readonly RecordSetId?: string;
 }
 
-interface ReadinessCheckOutput {
+export interface ReadinessCheckOutput {
   readonly ReadinessCheckArn: string;
-  readonly ReadinessCheckName: string;
+  readonly ReadinessCheckName?: string;
   readonly ResourceSet: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ReadinessCheckSummary {
-  readonly Readiness: string;
-  readonly ReadinessCheckName: string;
+export interface ReadinessCheckSummary {
+  readonly Readiness?: string;
+  readonly ReadinessCheckName?: string;
 }
 
-interface Recommendation {
+export interface Recommendation {
   readonly RecommendationText: string;
 }
 
-interface RecoveryGroupOutput {
+export interface RecoveryGroupOutput {
   readonly Cells: [];
   readonly RecoveryGroupArn: string;
   readonly RecoveryGroupName: string;
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface Resource {
-  readonly ComponentId: string;
-  readonly DnsTargetResource: DNSTargetResource;
-  readonly ReadinessScopes: [];
-  readonly ResourceArn: string;
+export interface Resource {
+  readonly ComponentId?: string;
+  readonly DnsTargetResource?: DNSTargetResource;
+  readonly ReadinessScopes?: [];
+  readonly ResourceArn?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface ResourceResult {
-  readonly ComponentId: string;
+export interface ResourceResult {
+  readonly ComponentId?: string;
   readonly LastCheckedTimestamp: Date;
   readonly Readiness: string;
-  readonly ResourceArn: string;
+  readonly ResourceArn?: string;
 }
 
-interface ResourceSetOutput {
+export interface ResourceSetOutput {
   readonly ResourceSetArn: string;
   readonly ResourceSetName: string;
   readonly ResourceSetType: string;
   readonly Resources: [];
-  readonly Tags: {[key: string]: any};
+  readonly Tags?: {[key: string]: any};
 }
 
-interface RuleResult {
+export interface RuleResult {
   readonly LastCheckedTimestamp: Date;
   readonly Messages: [];
   readonly Readiness: string;
   readonly RuleId: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly ResourceArn: string;
   readonly Tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TargetResource {
-  readonly NLBResource: NLBResource;
-  readonly R53Resource: R53ResourceRecord;
+export interface TargetResource {
+  readonly NLBResource?: NLBResource;
+  readonly R53Resource?: R53ResourceRecord;
 }
 
-interface ThrottlingException {
-  readonly Message: string;
+export interface ThrottlingException {
+  readonly Message?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly ResourceArn: string;
   readonly TagKeys: [];
 }
 
-interface UpdateCellRequest {
+export interface UpdateCellRequest {
   readonly CellName: string;
   readonly Cells: [];
 }
 
-interface UpdateCellResponse {
-  readonly CellArn: string;
-  readonly CellName: string;
-  readonly Cells: [];
-  readonly ParentReadinessScopes: [];
-  readonly Tags: {[key: string]: any};
+export interface UpdateCellResponse {
+  readonly CellArn?: string;
+  readonly CellName?: string;
+  readonly Cells?: [];
+  readonly ParentReadinessScopes?: [];
+  readonly Tags?: {[key: string]: any};
 }
 
-interface UpdateReadinessCheckRequest {
+export interface UpdateReadinessCheckRequest {
   readonly ReadinessCheckName: string;
   readonly ResourceSetName: string;
 }
 
-interface UpdateReadinessCheckResponse {
-  readonly ReadinessCheckArn: string;
-  readonly ReadinessCheckName: string;
-  readonly ResourceSet: string;
-  readonly Tags: {[key: string]: any};
+export interface UpdateReadinessCheckResponse {
+  readonly ReadinessCheckArn?: string;
+  readonly ReadinessCheckName?: string;
+  readonly ResourceSet?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface UpdateRecoveryGroupRequest {
+export interface UpdateRecoveryGroupRequest {
   readonly Cells: [];
   readonly RecoveryGroupName: string;
 }
 
-interface UpdateRecoveryGroupResponse {
-  readonly Cells: [];
-  readonly RecoveryGroupArn: string;
-  readonly RecoveryGroupName: string;
-  readonly Tags: {[key: string]: any};
+export interface UpdateRecoveryGroupResponse {
+  readonly Cells?: [];
+  readonly RecoveryGroupArn?: string;
+  readonly RecoveryGroupName?: string;
+  readonly Tags?: {[key: string]: any};
 }
 
-interface UpdateResourceSetRequest {
+export interface UpdateResourceSetRequest {
   readonly ResourceSetName: string;
   readonly ResourceSetType: string;
   readonly Resources: [];
 }
 
-interface UpdateResourceSetResponse {
-  readonly ResourceSetArn: string;
-  readonly ResourceSetName: string;
-  readonly ResourceSetType: string;
-  readonly Resources: [];
-  readonly Tags: {[key: string]: any};
+export interface UpdateResourceSetResponse {
+  readonly ResourceSetArn?: string;
+  readonly ResourceSetName?: string;
+  readonly ResourceSetType?: string;
+  readonly Resources?: [];
+  readonly Tags?: {[key: string]: any};
 }
 
-interface ValidationException {
-  readonly Message: string;
+export interface ValidationException {
+  readonly Message?: string;
 }
+
 

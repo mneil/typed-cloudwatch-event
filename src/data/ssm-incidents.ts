@@ -5,6 +5,7 @@ export interface CreateReplicationSet {
   readonly clientToken?: string;
   readonly regions: {[key: string]: any};
 }
+
 export interface CreateResponsePlan {
   readonly actions?: [];
   readonly chatChannel?: ChatChannel;
@@ -15,6 +16,7 @@ export interface CreateResponsePlan {
   readonly name: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateTimelineEvent {
   readonly clientToken?: string;
   readonly eventData: string;
@@ -22,62 +24,78 @@ export interface CreateTimelineEvent {
   readonly eventType: string;
   readonly incidentRecordArn: string;
 }
+
 export interface DeleteIncidentRecord {
   readonly arn: string;
 }
+
 export interface DeleteReplicationSet {
   readonly arn: string;
 }
+
 export interface DeleteResourcePolicy {
   readonly policyId: string;
   readonly resourceArn: string;
 }
+
 export interface DeleteResponsePlan {
   readonly arn: string;
 }
+
 export interface DeleteTimelineEvent {
   readonly eventId: string;
   readonly incidentRecordArn: string;
 }
+
 export interface GetIncidentRecord {
   readonly arn: string;
 }
+
 export interface GetReplicationSet {
   readonly arn: string;
 }
+
 export interface GetResourcePolicies {
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly resourceArn: string;
 }
+
 export interface GetResponsePlan {
   readonly arn: string;
 }
+
 export interface GetTimelineEvent {
   readonly eventId: string;
   readonly incidentRecordArn: string;
 }
+
 export interface ListIncidentRecords {
   readonly filters?: [];
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListRelatedItems {
   readonly incidentRecordArn: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListReplicationSets {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListResponsePlans {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface ListTimelineEvents {
   readonly filters?: [];
   readonly incidentRecordArn: string;
@@ -86,10 +104,12 @@ export interface ListTimelineEvents {
   readonly sortBy?: string;
   readonly sortOrder?: string;
 }
+
 export interface PutResourcePolicy {
   readonly policy: string;
   readonly resourceArn: string;
 }
+
 export interface StartIncident {
   readonly clientToken?: string;
   readonly impact?: number;
@@ -98,19 +118,23 @@ export interface StartIncident {
   readonly title?: string;
   readonly triggerDetails?: TriggerDetails;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateDeletionProtection {
   readonly arn: string;
   readonly clientToken?: string;
   readonly deletionProtected: boolean;
 }
+
 export interface UpdateIncidentRecord {
   readonly arn: string;
   readonly chatChannel?: ChatChannel;
@@ -121,16 +145,19 @@ export interface UpdateIncidentRecord {
   readonly summary?: string;
   readonly title?: string;
 }
+
 export interface UpdateRelatedItems {
   readonly clientToken?: string;
   readonly incidentRecordArn: string;
   readonly relatedItemsUpdate: RelatedItemsUpdate;
 }
+
 export interface UpdateReplicationSet {
   readonly actions: [];
   readonly arn: string;
   readonly clientToken?: string;
 }
+
 export interface UpdateResponsePlan {
   readonly actions?: [];
   readonly arn: string;
@@ -144,6 +171,7 @@ export interface UpdateResponsePlan {
   readonly incidentTemplateSummary?: string;
   readonly incidentTemplateTitle?: string;
 }
+
 export interface UpdateTimelineEvent {
   readonly clientToken?: string;
   readonly eventData?: string;
@@ -153,130 +181,128 @@ export interface UpdateTimelineEvent {
   readonly incidentRecordArn: string;
 }
 
-
-
-interface AccessDeniedException {
+export interface AccessDeniedException {
   readonly message: string;
 }
 
-interface Action {
-  readonly ssmAutomation: SsmAutomation;
+export interface Action {
+  readonly ssmAutomation?: SsmAutomation;
 }
 
-interface AddRegionAction {
+export interface AddRegionAction {
   readonly regionName: string;
-  readonly sseKmsKeyId: string;
+  readonly sseKmsKeyId?: string;
 }
 
-interface AttributeValueList {
-  readonly integerValues: [];
-  readonly stringValues: [];
+export interface AttributeValueList {
+  readonly integerValues?: [];
+  readonly stringValues?: [];
 }
 
-interface AutomationExecution {
-  readonly ssmExecutionArn: string;
+export interface AutomationExecution {
+  readonly ssmExecutionArn?: string;
 }
 
-interface ChatChannel {
-  readonly chatbotSns: [];
-  readonly empty: EmptyChatChannel;
+export interface ChatChannel {
+  readonly chatbotSns?: [];
+  readonly empty?: EmptyChatChannel;
 }
 
-interface Condition {
-  readonly after: Date;
-  readonly before: Date;
-  readonly equals: AttributeValueList;
+export interface Condition {
+  readonly after?: Date;
+  readonly before?: Date;
+  readonly equals?: AttributeValueList;
 }
 
-interface ConflictException {
+export interface ConflictException {
   readonly message: string;
-  readonly resourceIdentifier: string;
-  readonly resourceType: string;
-  readonly retryAfter: Date;
+  readonly resourceIdentifier?: string;
+  readonly resourceType?: string;
+  readonly retryAfter?: Date;
 }
 
-interface CreateReplicationSetInput {
-  readonly clientToken: string;
+export interface CreateReplicationSetInput {
+  readonly clientToken?: string;
   readonly regions: {[key: string]: any};
 }
 
-interface CreateReplicationSetOutput {
+export interface CreateReplicationSetOutput {
   readonly arn: string;
 }
 
-interface CreateResponsePlanInput {
-  readonly actions: [];
-  readonly chatChannel: ChatChannel;
-  readonly clientToken: string;
-  readonly displayName: string;
-  readonly engagements: [];
+export interface CreateResponsePlanInput {
+  readonly actions?: [];
+  readonly chatChannel?: ChatChannel;
+  readonly clientToken?: string;
+  readonly displayName?: string;
+  readonly engagements?: [];
   readonly incidentTemplate: IncidentTemplate;
   readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateResponsePlanOutput {
+export interface CreateResponsePlanOutput {
   readonly arn: string;
 }
 
-interface CreateTimelineEventInput {
-  readonly clientToken: string;
+export interface CreateTimelineEventInput {
+  readonly clientToken?: string;
   readonly eventData: string;
   readonly eventTime: Date;
   readonly eventType: string;
   readonly incidentRecordArn: string;
 }
 
-interface CreateTimelineEventOutput {
+export interface CreateTimelineEventOutput {
   readonly eventId: string;
   readonly incidentRecordArn: string;
 }
 
-interface DeleteIncidentRecordInput {
+export interface DeleteIncidentRecordInput {
   readonly arn: string;
 }
 
-interface DeleteIncidentRecordOutput {
+export interface DeleteIncidentRecordOutput {
 }
 
-interface DeleteRegionAction {
+export interface DeleteRegionAction {
   readonly regionName: string;
 }
 
-interface DeleteReplicationSetInput {
+export interface DeleteReplicationSetInput {
   readonly arn: string;
 }
 
-interface DeleteReplicationSetOutput {
+export interface DeleteReplicationSetOutput {
 }
 
-interface DeleteResourcePolicyInput {
+export interface DeleteResourcePolicyInput {
   readonly policyId: string;
   readonly resourceArn: string;
 }
 
-interface DeleteResourcePolicyOutput {
+export interface DeleteResourcePolicyOutput {
 }
 
-interface DeleteResponsePlanInput {
+export interface DeleteResponsePlanInput {
   readonly arn: string;
 }
 
-interface DeleteResponsePlanOutput {
+export interface DeleteResponsePlanOutput {
 }
 
-interface DeleteTimelineEventInput {
+export interface DeleteTimelineEventInput {
   readonly eventId: string;
   readonly incidentRecordArn: string;
 }
 
-interface DeleteTimelineEventOutput {
+export interface DeleteTimelineEventOutput {
 }
 
-interface EmptyChatChannel {
+export interface EmptyChatChannel {
 }
 
-interface EventSummary {
+export interface EventSummary {
   readonly eventId: string;
   readonly eventTime: Date;
   readonly eventType: string;
@@ -284,218 +310,218 @@ interface EventSummary {
   readonly incidentRecordArn: string;
 }
 
-interface Filter {
+export interface Filter {
   readonly condition: Condition;
   readonly key: string;
 }
 
-interface GetIncidentRecordInput {
+export interface GetIncidentRecordInput {
   readonly arn: string;
 }
 
-interface GetIncidentRecordOutput {
+export interface GetIncidentRecordOutput {
   readonly incidentRecord: IncidentRecord;
 }
 
-interface GetReplicationSetInput {
+export interface GetReplicationSetInput {
   readonly arn: string;
 }
 
-interface GetReplicationSetOutput {
+export interface GetReplicationSetOutput {
   readonly replicationSet: ReplicationSet;
 }
 
-interface GetResourcePoliciesInput {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface GetResourcePoliciesInput {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly resourceArn: string;
 }
 
-interface GetResourcePoliciesOutput {
-  readonly nextToken: string;
+export interface GetResourcePoliciesOutput {
+  readonly nextToken?: string;
   readonly resourcePolicies: [];
 }
 
-interface GetResponsePlanInput {
+export interface GetResponsePlanInput {
   readonly arn: string;
 }
 
-interface GetResponsePlanOutput {
-  readonly actions: [];
+export interface GetResponsePlanOutput {
+  readonly actions?: [];
   readonly arn: string;
-  readonly chatChannel: ChatChannel;
-  readonly displayName: string;
-  readonly engagements: [];
+  readonly chatChannel?: ChatChannel;
+  readonly displayName?: string;
+  readonly engagements?: [];
   readonly incidentTemplate: IncidentTemplate;
   readonly name: string;
 }
 
-interface GetTimelineEventInput {
+export interface GetTimelineEventInput {
   readonly eventId: string;
   readonly incidentRecordArn: string;
 }
 
-interface GetTimelineEventOutput {
+export interface GetTimelineEventOutput {
   readonly event: TimelineEvent;
 }
 
-interface IncidentRecord {
+export interface IncidentRecord {
   readonly arn: string;
-  readonly automationExecutions: [];
-  readonly chatChannel: ChatChannel;
+  readonly automationExecutions?: [];
+  readonly chatChannel?: ChatChannel;
   readonly creationTime: Date;
   readonly dedupeString: string;
   readonly impact: number;
   readonly incidentRecordSource: IncidentRecordSource;
   readonly lastModifiedBy: string;
   readonly lastModifiedTime: Date;
-  readonly notificationTargets: [];
-  readonly resolvedTime: Date;
+  readonly notificationTargets?: [];
+  readonly resolvedTime?: Date;
   readonly status: string;
-  readonly summary: string;
+  readonly summary?: string;
   readonly title: string;
 }
 
-interface IncidentRecordSource {
+export interface IncidentRecordSource {
   readonly createdBy: string;
-  readonly invokedBy: string;
-  readonly resourceArn: string;
+  readonly invokedBy?: string;
+  readonly resourceArn?: string;
   readonly source: string;
 }
 
-interface IncidentRecordSummary {
+export interface IncidentRecordSummary {
   readonly arn: string;
   readonly creationTime: Date;
   readonly impact: number;
   readonly incidentRecordSource: IncidentRecordSource;
-  readonly resolvedTime: Date;
+  readonly resolvedTime?: Date;
   readonly status: string;
   readonly title: string;
 }
 
-interface IncidentTemplate {
-  readonly dedupeString: string;
+export interface IncidentTemplate {
+  readonly dedupeString?: string;
   readonly impact: number;
-  readonly notificationTargets: [];
-  readonly summary: string;
+  readonly notificationTargets?: [];
+  readonly summary?: string;
   readonly title: string;
 }
 
-interface InternalServerException {
+export interface InternalServerException {
   readonly message: string;
 }
 
-interface ItemIdentifier {
+export interface ItemIdentifier {
   readonly type: string;
   readonly value: ItemValue;
 }
 
-interface ItemValue {
-  readonly arn: string;
-  readonly metricDefinition: string;
-  readonly url: string;
+export interface ItemValue {
+  readonly arn?: string;
+  readonly metricDefinition?: string;
+  readonly url?: string;
 }
 
-interface ListIncidentRecordsInput {
-  readonly filters: [];
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListIncidentRecordsInput {
+  readonly filters?: [];
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListIncidentRecordsOutput {
+export interface ListIncidentRecordsOutput {
   readonly incidentRecordSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListRelatedItemsInput {
+export interface ListRelatedItemsInput {
   readonly incidentRecordArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListRelatedItemsOutput {
-  readonly nextToken: string;
+export interface ListRelatedItemsOutput {
+  readonly nextToken?: string;
   readonly relatedItems: [];
 }
 
-interface ListReplicationSetsInput {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListReplicationSetsInput {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListReplicationSetsOutput {
-  readonly nextToken: string;
+export interface ListReplicationSetsOutput {
+  readonly nextToken?: string;
   readonly replicationSetArns: [];
 }
 
-interface ListResponsePlansInput {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListResponsePlansInput {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListResponsePlansOutput {
-  readonly nextToken: string;
+export interface ListResponsePlansOutput {
+  readonly nextToken?: string;
   readonly responsePlanSummaries: [];
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
+export interface ListTagsForResourceResponse {
   readonly tags: {[key: string]: any};
 }
 
-interface ListTimelineEventsInput {
-  readonly filters: [];
+export interface ListTimelineEventsInput {
+  readonly filters?: [];
   readonly incidentRecordArn: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
-  readonly sortBy: string;
-  readonly sortOrder: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
+  readonly sortBy?: string;
+  readonly sortOrder?: string;
 }
 
-interface ListTimelineEventsOutput {
+export interface ListTimelineEventsOutput {
   readonly eventSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface NotificationTargetItem {
-  readonly snsTopicArn: string;
+export interface NotificationTargetItem {
+  readonly snsTopicArn?: string;
 }
 
-interface PutResourcePolicyInput {
+export interface PutResourcePolicyInput {
   readonly policy: string;
   readonly resourceArn: string;
 }
 
-interface PutResourcePolicyOutput {
+export interface PutResourcePolicyOutput {
   readonly policyId: string;
 }
 
-interface RegionInfo {
-  readonly sseKmsKeyId: string;
+export interface RegionInfo {
+  readonly sseKmsKeyId?: string;
   readonly status: string;
-  readonly statusMessage: string;
+  readonly statusMessage?: string;
   readonly statusUpdateDateTime: Date;
 }
 
-interface RegionMapInputValue {
-  readonly sseKmsKeyId: string;
+export interface RegionMapInputValue {
+  readonly sseKmsKeyId?: string;
 }
 
-interface RelatedItem {
+export interface RelatedItem {
   readonly identifier: ItemIdentifier;
-  readonly title: string;
+  readonly title?: string;
 }
 
-interface RelatedItemsUpdate {
-  readonly itemToAdd: RelatedItem;
-  readonly itemToRemove: ItemIdentifier;
+export interface RelatedItemsUpdate {
+  readonly itemToAdd?: RelatedItem;
+  readonly itemToRemove?: ItemIdentifier;
 }
 
-interface ReplicationSet {
-  readonly arn: string;
+export interface ReplicationSet {
+  readonly arn?: string;
   readonly createdBy: string;
   readonly createdTime: Date;
   readonly deletionProtected: boolean;
@@ -505,68 +531,68 @@ interface ReplicationSet {
   readonly status: string;
 }
 
-interface ResourceNotFoundException {
+export interface ResourceNotFoundException {
   readonly message: string;
-  readonly resourceIdentifier: string;
-  readonly resourceType: string;
+  readonly resourceIdentifier?: string;
+  readonly resourceType?: string;
 }
 
-interface ResourcePolicy {
+export interface ResourcePolicy {
   readonly policyDocument: string;
   readonly policyId: string;
   readonly ramResourceShareRegion: string;
 }
 
-interface ResponsePlanSummary {
+export interface ResponsePlanSummary {
   readonly arn: string;
-  readonly displayName: string;
+  readonly displayName?: string;
   readonly name: string;
 }
 
-interface ServiceQuotaExceededException {
+export interface ServiceQuotaExceededException {
   readonly message: string;
   readonly quotaCode: string;
-  readonly resourceIdentifier: string;
-  readonly resourceType: string;
+  readonly resourceIdentifier?: string;
+  readonly resourceType?: string;
   readonly serviceCode: string;
 }
 
-interface SsmAutomation {
+export interface SsmAutomation {
   readonly documentName: string;
-  readonly documentVersion: string;
-  readonly parameters: {[key: string]: any};
+  readonly documentVersion?: string;
+  readonly parameters?: {[key: string]: any};
   readonly roleArn: string;
-  readonly targetAccount: string;
+  readonly targetAccount?: string;
 }
 
-interface StartIncidentInput {
-  readonly clientToken: string;
-  readonly impact: number;
-  readonly relatedItems: [];
+export interface StartIncidentInput {
+  readonly clientToken?: string;
+  readonly impact?: number;
+  readonly relatedItems?: [];
   readonly responsePlanArn: string;
-  readonly title: string;
-  readonly triggerDetails: TriggerDetails;
+  readonly title?: string;
+  readonly triggerDetails?: TriggerDetails;
 }
 
-interface StartIncidentOutput {
+export interface StartIncidentOutput {
   readonly incidentRecordArn: string;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface ThrottlingException {
+export interface ThrottlingException {
   readonly message: string;
   readonly quotaCode: string;
   readonly serviceCode: string;
 }
 
-interface TimelineEvent {
+export interface TimelineEvent {
   readonly eventData: string;
   readonly eventId: string;
   readonly eventTime: Date;
@@ -575,97 +601,98 @@ interface TimelineEvent {
   readonly incidentRecordArn: string;
 }
 
-interface TriggerDetails {
-  readonly rawData: string;
+export interface TriggerDetails {
+  readonly rawData?: string;
   readonly source: string;
   readonly timestamp: Date;
-  readonly triggerArn: string;
+  readonly triggerArn?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateDeletionProtectionInput {
+export interface UpdateDeletionProtectionInput {
   readonly arn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
   readonly deletionProtected: boolean;
 }
 
-interface UpdateDeletionProtectionOutput {
+export interface UpdateDeletionProtectionOutput {
 }
 
-interface UpdateIncidentRecordInput {
+export interface UpdateIncidentRecordInput {
   readonly arn: string;
-  readonly chatChannel: ChatChannel;
-  readonly clientToken: string;
-  readonly impact: number;
-  readonly notificationTargets: [];
-  readonly status: string;
-  readonly summary: string;
-  readonly title: string;
+  readonly chatChannel?: ChatChannel;
+  readonly clientToken?: string;
+  readonly impact?: number;
+  readonly notificationTargets?: [];
+  readonly status?: string;
+  readonly summary?: string;
+  readonly title?: string;
 }
 
-interface UpdateIncidentRecordOutput {
+export interface UpdateIncidentRecordOutput {
 }
 
-interface UpdateRelatedItemsInput {
-  readonly clientToken: string;
+export interface UpdateRelatedItemsInput {
+  readonly clientToken?: string;
   readonly incidentRecordArn: string;
   readonly relatedItemsUpdate: RelatedItemsUpdate;
 }
 
-interface UpdateRelatedItemsOutput {
+export interface UpdateRelatedItemsOutput {
 }
 
-interface UpdateReplicationSetAction {
-  readonly addRegionAction: AddRegionAction;
-  readonly deleteRegionAction: DeleteRegionAction;
+export interface UpdateReplicationSetAction {
+  readonly addRegionAction?: AddRegionAction;
+  readonly deleteRegionAction?: DeleteRegionAction;
 }
 
-interface UpdateReplicationSetInput {
+export interface UpdateReplicationSetInput {
   readonly actions: [];
   readonly arn: string;
-  readonly clientToken: string;
+  readonly clientToken?: string;
 }
 
-interface UpdateReplicationSetOutput {
+export interface UpdateReplicationSetOutput {
 }
 
-interface UpdateResponsePlanInput {
-  readonly actions: [];
+export interface UpdateResponsePlanInput {
+  readonly actions?: [];
   readonly arn: string;
-  readonly chatChannel: ChatChannel;
-  readonly clientToken: string;
-  readonly displayName: string;
-  readonly engagements: [];
-  readonly incidentTemplateDedupeString: string;
-  readonly incidentTemplateImpact: number;
-  readonly incidentTemplateNotificationTargets: [];
-  readonly incidentTemplateSummary: string;
-  readonly incidentTemplateTitle: string;
+  readonly chatChannel?: ChatChannel;
+  readonly clientToken?: string;
+  readonly displayName?: string;
+  readonly engagements?: [];
+  readonly incidentTemplateDedupeString?: string;
+  readonly incidentTemplateImpact?: number;
+  readonly incidentTemplateNotificationTargets?: [];
+  readonly incidentTemplateSummary?: string;
+  readonly incidentTemplateTitle?: string;
 }
 
-interface UpdateResponsePlanOutput {
+export interface UpdateResponsePlanOutput {
 }
 
-interface UpdateTimelineEventInput {
-  readonly clientToken: string;
-  readonly eventData: string;
+export interface UpdateTimelineEventInput {
+  readonly clientToken?: string;
+  readonly eventData?: string;
   readonly eventId: string;
-  readonly eventTime: Date;
-  readonly eventType: string;
+  readonly eventTime?: Date;
+  readonly eventType?: string;
   readonly incidentRecordArn: string;
 }
 
-interface UpdateTimelineEventOutput {
+export interface UpdateTimelineEventOutput {
 }
 
-interface ValidationException {
+export interface ValidationException {
   readonly message: string;
 }
+
 

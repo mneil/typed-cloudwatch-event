@@ -7,63 +7,63 @@ export interface GetIceServerConfig {
   readonly Service?: string;
   readonly Username?: string;
 }
+
 export interface SendAlexaOfferToMaster {
   readonly ChannelARN: string;
   readonly SenderClientId: string;
   readonly MessagePayload: string;
 }
 
-
-
-interface ClientLimitExceededException {
-  readonly Message: string;
+export interface ClientLimitExceededException {
+  readonly Message?: string;
 }
 
-interface GetIceServerConfigRequest {
+export interface GetIceServerConfigRequest {
   readonly ChannelARN: string;
-  readonly ClientId: string;
-  readonly Service: string;
-  readonly Username: string;
+  readonly ClientId?: string;
+  readonly Service?: string;
+  readonly Username?: string;
 }
 
-interface GetIceServerConfigResponse {
-  readonly IceServerList: [];
+export interface GetIceServerConfigResponse {
+  readonly IceServerList?: [];
 }
 
-interface IceServer {
-  readonly Uris: [];
-  readonly Username: string;
-  readonly Password: string;
-  readonly Ttl: number;
+export interface IceServer {
+  readonly Uris?: [];
+  readonly Username?: string;
+  readonly Password?: string;
+  readonly Ttl?: number;
 }
 
-interface InvalidArgumentException {
-  readonly Message: string;
+export interface InvalidArgumentException {
+  readonly Message?: string;
 }
 
-interface InvalidClientException {
-  readonly message: string;
+export interface InvalidClientException {
+  readonly message?: string;
 }
 
-interface NotAuthorizedException {
-  readonly Message: string;
+export interface NotAuthorizedException {
+  readonly Message?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly Message: string;
+export interface ResourceNotFoundException {
+  readonly Message?: string;
 }
 
-interface SendAlexaOfferToMasterRequest {
+export interface SendAlexaOfferToMasterRequest {
   readonly ChannelARN: string;
   readonly SenderClientId: string;
   readonly MessagePayload: string;
 }
 
-interface SendAlexaOfferToMasterResponse {
-  readonly Answer: string;
+export interface SendAlexaOfferToMasterResponse {
+  readonly Answer?: string;
 }
 
-interface SessionExpiredException {
-  readonly message: string;
+export interface SessionExpiredException {
+  readonly message?: string;
 }
+
 

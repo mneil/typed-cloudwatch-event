@@ -14,6 +14,7 @@ export interface DescribeDimensionKeys {
   readonly MaxResults?: number;
   readonly NextToken?: string;
 }
+
 export interface GetDimensionKeyDetails {
   readonly ServiceType: string;
   readonly Identifier: string;
@@ -21,6 +22,7 @@ export interface GetDimensionKeyDetails {
   readonly GroupIdentifier: string;
   readonly RequestedDimensions?: [];
 }
+
 export interface GetResourceMetrics {
   readonly ServiceType: string;
   readonly Identifier: string;
@@ -32,113 +34,112 @@ export interface GetResourceMetrics {
   readonly NextToken?: string;
 }
 
-
-
-interface DataPoint {
+export interface DataPoint {
   readonly Timestamp: Date;
   readonly Value: unknown;
 }
 
-interface DescribeDimensionKeysRequest {
+export interface DescribeDimensionKeysRequest {
   readonly ServiceType: string;
   readonly Identifier: string;
   readonly StartTime: Date;
   readonly EndTime: Date;
   readonly Metric: string;
-  readonly PeriodInSeconds: number;
+  readonly PeriodInSeconds?: number;
   readonly GroupBy: DimensionGroup;
-  readonly PartitionBy: DimensionGroup;
-  readonly Filter: {[key: string]: any};
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly PartitionBy?: DimensionGroup;
+  readonly Filter?: {[key: string]: any};
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface DescribeDimensionKeysResponse {
-  readonly AlignedStartTime: Date;
-  readonly AlignedEndTime: Date;
-  readonly PartitionKeys: [];
-  readonly Keys: [];
-  readonly NextToken: string;
+export interface DescribeDimensionKeysResponse {
+  readonly AlignedStartTime?: Date;
+  readonly AlignedEndTime?: Date;
+  readonly PartitionKeys?: [];
+  readonly Keys?: [];
+  readonly NextToken?: string;
 }
 
-interface DimensionGroup {
+export interface DimensionGroup {
   readonly Group: string;
-  readonly Dimensions: [];
-  readonly Limit: number;
+  readonly Dimensions?: [];
+  readonly Limit?: number;
 }
 
-interface DimensionKeyDescription {
-  readonly Dimensions: {[key: string]: any};
-  readonly Total: unknown;
-  readonly Partitions: [];
+export interface DimensionKeyDescription {
+  readonly Dimensions?: {[key: string]: any};
+  readonly Total?: unknown;
+  readonly Partitions?: [];
 }
 
-interface DimensionKeyDetail {
-  readonly Value: string;
-  readonly Dimension: string;
-  readonly Status: string;
+export interface DimensionKeyDetail {
+  readonly Value?: string;
+  readonly Dimension?: string;
+  readonly Status?: string;
 }
 
-interface GetDimensionKeyDetailsRequest {
+export interface GetDimensionKeyDetailsRequest {
   readonly ServiceType: string;
   readonly Identifier: string;
   readonly Group: string;
   readonly GroupIdentifier: string;
-  readonly RequestedDimensions: [];
+  readonly RequestedDimensions?: [];
 }
 
-interface GetDimensionKeyDetailsResponse {
-  readonly Dimensions: [];
+export interface GetDimensionKeyDetailsResponse {
+  readonly Dimensions?: [];
 }
 
-interface GetResourceMetricsRequest {
+export interface GetResourceMetricsRequest {
   readonly ServiceType: string;
   readonly Identifier: string;
   readonly MetricQueries: [];
   readonly StartTime: Date;
   readonly EndTime: Date;
-  readonly PeriodInSeconds: number;
-  readonly MaxResults: number;
-  readonly NextToken: string;
+  readonly PeriodInSeconds?: number;
+  readonly MaxResults?: number;
+  readonly NextToken?: string;
 }
 
-interface GetResourceMetricsResponse {
-  readonly AlignedStartTime: Date;
-  readonly AlignedEndTime: Date;
-  readonly Identifier: string;
-  readonly MetricList: [];
-  readonly NextToken: string;
+export interface GetResourceMetricsResponse {
+  readonly AlignedStartTime?: Date;
+  readonly AlignedEndTime?: Date;
+  readonly Identifier?: string;
+  readonly MetricList?: [];
+  readonly NextToken?: string;
 }
 
-interface InternalServiceError {
-  readonly Message: string;
+export interface InternalServiceError {
+  readonly Message?: string;
 }
 
-interface InvalidArgumentException {
-  readonly Message: string;
+export interface InvalidArgumentException {
+  readonly Message?: string;
 }
 
-interface MetricKeyDataPoints {
-  readonly Key: ResponseResourceMetricKey;
-  readonly DataPoints: [];
+export interface MetricKeyDataPoints {
+  readonly Key?: ResponseResourceMetricKey;
+  readonly DataPoints?: [];
 }
 
-interface MetricQuery {
+export interface MetricQuery {
   readonly Metric: string;
-  readonly GroupBy: DimensionGroup;
-  readonly Filter: {[key: string]: any};
+  readonly GroupBy?: DimensionGroup;
+  readonly Filter?: {[key: string]: any};
 }
 
-interface NotAuthorizedException {
-  readonly Message: string;
+export interface NotAuthorizedException {
+  readonly Message?: string;
 }
 
-interface ResponsePartitionKey {
+export interface ResponsePartitionKey {
   readonly Dimensions: {[key: string]: any};
 }
 
-interface ResponseResourceMetricKey {
+export interface ResponseResourceMetricKey {
   readonly Metric: string;
-  readonly Dimensions: {[key: string]: any};
+  readonly Dimensions?: {[key: string]: any};
 }
+
 

@@ -15,78 +15,86 @@ export interface CreateConnector {
   readonly serviceExecutionRoleArn: string;
   readonly workerConfiguration?: WorkerConfiguration;
 }
+
 export interface CreateCustomPlugin {
   readonly contentType: string;
   readonly description?: string;
   readonly location: CustomPluginLocation;
   readonly name: string;
 }
+
 export interface CreateWorkerConfiguration {
   readonly description?: string;
   readonly name: string;
   readonly propertiesFileContent: string;
 }
+
 export interface DeleteConnector {
   readonly connectorArn: string;
   readonly currentVersion?: string;
 }
+
 export interface DescribeConnector {
   readonly connectorArn: string;
 }
+
 export interface DescribeCustomPlugin {
   readonly customPluginArn: string;
 }
+
 export interface DescribeWorkerConfiguration {
   readonly workerConfigurationArn: string;
 }
+
 export interface ListConnectors {
   readonly connectorNamePrefix?: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListCustomPlugins {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListWorkerConfigurations {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface UpdateConnector {
   readonly capacity: CapacityUpdate;
   readonly connectorArn: string;
   readonly currentVersion: string;
 }
 
-
-
-interface ApacheKafkaCluster {
+export interface ApacheKafkaCluster {
   readonly bootstrapServers: string;
   readonly vpc: Vpc;
 }
 
-interface ApacheKafkaClusterDescription {
-  readonly bootstrapServers: string;
-  readonly vpc: VpcDescription;
+export interface ApacheKafkaClusterDescription {
+  readonly bootstrapServers?: string;
+  readonly vpc?: VpcDescription;
 }
 
-interface AutoScaling {
+export interface AutoScaling {
   readonly maxWorkerCount: number;
   readonly mcuCount: number;
   readonly minWorkerCount: number;
-  readonly scaleInPolicy: ScaleInPolicy;
-  readonly scaleOutPolicy: ScaleOutPolicy;
+  readonly scaleInPolicy?: ScaleInPolicy;
+  readonly scaleOutPolicy?: ScaleOutPolicy;
 }
 
-interface AutoScalingDescription {
-  readonly maxWorkerCount: number;
-  readonly mcuCount: number;
-  readonly minWorkerCount: number;
-  readonly scaleInPolicy: ScaleInPolicyDescription;
-  readonly scaleOutPolicy: ScaleOutPolicyDescription;
+export interface AutoScalingDescription {
+  readonly maxWorkerCount?: number;
+  readonly mcuCount?: number;
+  readonly minWorkerCount?: number;
+  readonly scaleInPolicy?: ScaleInPolicyDescription;
+  readonly scaleOutPolicy?: ScaleOutPolicyDescription;
 }
 
-interface AutoScalingUpdate {
+export interface AutoScalingUpdate {
   readonly maxWorkerCount: number;
   readonly mcuCount: number;
   readonly minWorkerCount: number;
@@ -94,433 +102,434 @@ interface AutoScalingUpdate {
   readonly scaleOutPolicy: ScaleOutPolicyUpdate;
 }
 
-interface BadRequestException {
-  readonly message: string;
+export interface BadRequestException {
+  readonly message?: string;
 }
 
-interface Capacity {
-  readonly autoScaling: AutoScaling;
-  readonly provisionedCapacity: ProvisionedCapacity;
+export interface Capacity {
+  readonly autoScaling?: AutoScaling;
+  readonly provisionedCapacity?: ProvisionedCapacity;
 }
 
-interface CapacityDescription {
-  readonly autoScaling: AutoScalingDescription;
-  readonly provisionedCapacity: ProvisionedCapacityDescription;
+export interface CapacityDescription {
+  readonly autoScaling?: AutoScalingDescription;
+  readonly provisionedCapacity?: ProvisionedCapacityDescription;
 }
 
-interface CapacityUpdate {
-  readonly autoScaling: AutoScalingUpdate;
-  readonly provisionedCapacity: ProvisionedCapacityUpdate;
+export interface CapacityUpdate {
+  readonly autoScaling?: AutoScalingUpdate;
+  readonly provisionedCapacity?: ProvisionedCapacityUpdate;
 }
 
-interface CloudWatchLogsLogDelivery {
+export interface CloudWatchLogsLogDelivery {
   readonly enabled: boolean;
-  readonly logGroup: string;
+  readonly logGroup?: string;
 }
 
-interface CloudWatchLogsLogDeliveryDescription {
-  readonly enabled: boolean;
-  readonly logGroup: string;
+export interface CloudWatchLogsLogDeliveryDescription {
+  readonly enabled?: boolean;
+  readonly logGroup?: string;
 }
 
-interface ConflictException {
-  readonly message: string;
+export interface ConflictException {
+  readonly message?: string;
 }
 
-interface ConnectorSummary {
-  readonly capacity: CapacityDescription;
-  readonly connectorArn: string;
-  readonly connectorDescription: string;
-  readonly connectorName: string;
-  readonly connectorState: string;
-  readonly creationTime: Date;
-  readonly currentVersion: string;
-  readonly kafkaCluster: KafkaClusterDescription;
-  readonly kafkaClusterClientAuthentication: KafkaClusterClientAuthenticationDescription;
-  readonly kafkaClusterEncryptionInTransit: KafkaClusterEncryptionInTransitDescription;
-  readonly kafkaConnectVersion: string;
-  readonly logDelivery: LogDeliveryDescription;
-  readonly plugins: [];
-  readonly serviceExecutionRoleArn: string;
-  readonly workerConfiguration: WorkerConfigurationDescription;
+export interface ConnectorSummary {
+  readonly capacity?: CapacityDescription;
+  readonly connectorArn?: string;
+  readonly connectorDescription?: string;
+  readonly connectorName?: string;
+  readonly connectorState?: string;
+  readonly creationTime?: Date;
+  readonly currentVersion?: string;
+  readonly kafkaCluster?: KafkaClusterDescription;
+  readonly kafkaClusterClientAuthentication?: KafkaClusterClientAuthenticationDescription;
+  readonly kafkaClusterEncryptionInTransit?: KafkaClusterEncryptionInTransitDescription;
+  readonly kafkaConnectVersion?: string;
+  readonly logDelivery?: LogDeliveryDescription;
+  readonly plugins?: [];
+  readonly serviceExecutionRoleArn?: string;
+  readonly workerConfiguration?: WorkerConfigurationDescription;
 }
 
-interface CreateConnectorRequest {
+export interface CreateConnectorRequest {
   readonly capacity: Capacity;
   readonly connectorConfiguration: {[key: string]: any};
-  readonly connectorDescription: string;
+  readonly connectorDescription?: string;
   readonly connectorName: string;
   readonly kafkaCluster: KafkaCluster;
   readonly kafkaClusterClientAuthentication: KafkaClusterClientAuthentication;
   readonly kafkaClusterEncryptionInTransit: KafkaClusterEncryptionInTransit;
   readonly kafkaConnectVersion: string;
-  readonly logDelivery: LogDelivery;
+  readonly logDelivery?: LogDelivery;
   readonly plugins: [];
   readonly serviceExecutionRoleArn: string;
-  readonly workerConfiguration: WorkerConfiguration;
+  readonly workerConfiguration?: WorkerConfiguration;
 }
 
-interface CreateConnectorResponse {
-  readonly connectorArn: string;
-  readonly connectorName: string;
-  readonly connectorState: string;
+export interface CreateConnectorResponse {
+  readonly connectorArn?: string;
+  readonly connectorName?: string;
+  readonly connectorState?: string;
 }
 
-interface CreateCustomPluginRequest {
+export interface CreateCustomPluginRequest {
   readonly contentType: string;
-  readonly description: string;
+  readonly description?: string;
   readonly location: CustomPluginLocation;
   readonly name: string;
 }
 
-interface CreateCustomPluginResponse {
-  readonly customPluginArn: string;
-  readonly customPluginState: string;
-  readonly name: string;
-  readonly revision: number;
+export interface CreateCustomPluginResponse {
+  readonly customPluginArn?: string;
+  readonly customPluginState?: string;
+  readonly name?: string;
+  readonly revision?: number;
 }
 
-interface CreateWorkerConfigurationRequest {
-  readonly description: string;
+export interface CreateWorkerConfigurationRequest {
+  readonly description?: string;
   readonly name: string;
   readonly propertiesFileContent: string;
 }
 
-interface CreateWorkerConfigurationResponse {
-  readonly creationTime: Date;
-  readonly latestRevision: WorkerConfigurationRevisionSummary;
-  readonly name: string;
-  readonly workerConfigurationArn: string;
+export interface CreateWorkerConfigurationResponse {
+  readonly creationTime?: Date;
+  readonly latestRevision?: WorkerConfigurationRevisionSummary;
+  readonly name?: string;
+  readonly workerConfigurationArn?: string;
 }
 
-interface CustomPlugin {
+export interface CustomPlugin {
   readonly customPluginArn: string;
   readonly revision: number;
 }
 
-interface CustomPluginDescription {
-  readonly customPluginArn: string;
-  readonly revision: number;
+export interface CustomPluginDescription {
+  readonly customPluginArn?: string;
+  readonly revision?: number;
 }
 
-interface CustomPluginFileDescription {
-  readonly fileMd5: string;
-  readonly fileSize: number;
+export interface CustomPluginFileDescription {
+  readonly fileMd5?: string;
+  readonly fileSize?: number;
 }
 
-interface CustomPluginLocation {
+export interface CustomPluginLocation {
   readonly s3Location: S3Location;
 }
 
-interface CustomPluginLocationDescription {
-  readonly s3Location: S3LocationDescription;
+export interface CustomPluginLocationDescription {
+  readonly s3Location?: S3LocationDescription;
 }
 
-interface CustomPluginRevisionSummary {
-  readonly contentType: string;
-  readonly creationTime: Date;
-  readonly description: string;
-  readonly fileDescription: CustomPluginFileDescription;
-  readonly location: CustomPluginLocationDescription;
-  readonly revision: number;
+export interface CustomPluginRevisionSummary {
+  readonly contentType?: string;
+  readonly creationTime?: Date;
+  readonly description?: string;
+  readonly fileDescription?: CustomPluginFileDescription;
+  readonly location?: CustomPluginLocationDescription;
+  readonly revision?: number;
 }
 
-interface CustomPluginSummary {
-  readonly creationTime: Date;
+export interface CustomPluginSummary {
+  readonly creationTime?: Date;
+  readonly customPluginArn?: string;
+  readonly customPluginState?: string;
+  readonly description?: string;
+  readonly latestRevision?: CustomPluginRevisionSummary;
+  readonly name?: string;
+}
+
+export interface DeleteConnectorRequest {
+  readonly connectorArn: string;
+  readonly currentVersion?: string;
+}
+
+export interface DeleteConnectorResponse {
+  readonly connectorArn?: string;
+  readonly connectorState?: string;
+}
+
+export interface DescribeConnectorRequest {
+  readonly connectorArn: string;
+}
+
+export interface DescribeConnectorResponse {
+  readonly capacity?: CapacityDescription;
+  readonly connectorArn?: string;
+  readonly connectorConfiguration?: {[key: string]: any};
+  readonly connectorDescription?: string;
+  readonly connectorName?: string;
+  readonly connectorState?: string;
+  readonly creationTime?: Date;
+  readonly currentVersion?: string;
+  readonly kafkaCluster?: KafkaClusterDescription;
+  readonly kafkaClusterClientAuthentication?: KafkaClusterClientAuthenticationDescription;
+  readonly kafkaClusterEncryptionInTransit?: KafkaClusterEncryptionInTransitDescription;
+  readonly kafkaConnectVersion?: string;
+  readonly logDelivery?: LogDeliveryDescription;
+  readonly plugins?: [];
+  readonly serviceExecutionRoleArn?: string;
+  readonly workerConfiguration?: WorkerConfigurationDescription;
+}
+
+export interface DescribeCustomPluginRequest {
   readonly customPluginArn: string;
-  readonly customPluginState: string;
-  readonly description: string;
-  readonly latestRevision: CustomPluginRevisionSummary;
-  readonly name: string;
 }
 
-interface DeleteConnectorRequest {
-  readonly connectorArn: string;
-  readonly currentVersion: string;
+export interface DescribeCustomPluginResponse {
+  readonly creationTime?: Date;
+  readonly customPluginArn?: string;
+  readonly customPluginState?: string;
+  readonly description?: string;
+  readonly latestRevision?: CustomPluginRevisionSummary;
+  readonly name?: string;
 }
 
-interface DeleteConnectorResponse {
-  readonly connectorArn: string;
-  readonly connectorState: string;
-}
-
-interface DescribeConnectorRequest {
-  readonly connectorArn: string;
-}
-
-interface DescribeConnectorResponse {
-  readonly capacity: CapacityDescription;
-  readonly connectorArn: string;
-  readonly connectorConfiguration: {[key: string]: any};
-  readonly connectorDescription: string;
-  readonly connectorName: string;
-  readonly connectorState: string;
-  readonly creationTime: Date;
-  readonly currentVersion: string;
-  readonly kafkaCluster: KafkaClusterDescription;
-  readonly kafkaClusterClientAuthentication: KafkaClusterClientAuthenticationDescription;
-  readonly kafkaClusterEncryptionInTransit: KafkaClusterEncryptionInTransitDescription;
-  readonly kafkaConnectVersion: string;
-  readonly logDelivery: LogDeliveryDescription;
-  readonly plugins: [];
-  readonly serviceExecutionRoleArn: string;
-  readonly workerConfiguration: WorkerConfigurationDescription;
-}
-
-interface DescribeCustomPluginRequest {
-  readonly customPluginArn: string;
-}
-
-interface DescribeCustomPluginResponse {
-  readonly creationTime: Date;
-  readonly customPluginArn: string;
-  readonly customPluginState: string;
-  readonly description: string;
-  readonly latestRevision: CustomPluginRevisionSummary;
-  readonly name: string;
-}
-
-interface DescribeWorkerConfigurationRequest {
+export interface DescribeWorkerConfigurationRequest {
   readonly workerConfigurationArn: string;
 }
 
-interface DescribeWorkerConfigurationResponse {
-  readonly creationTime: Date;
-  readonly description: string;
-  readonly latestRevision: WorkerConfigurationRevisionDescription;
-  readonly name: string;
-  readonly workerConfigurationArn: string;
+export interface DescribeWorkerConfigurationResponse {
+  readonly creationTime?: Date;
+  readonly description?: string;
+  readonly latestRevision?: WorkerConfigurationRevisionDescription;
+  readonly name?: string;
+  readonly workerConfigurationArn?: string;
 }
 
-interface FirehoseLogDelivery {
-  readonly deliveryStream: string;
+export interface FirehoseLogDelivery {
+  readonly deliveryStream?: string;
   readonly enabled: boolean;
 }
 
-interface FirehoseLogDeliveryDescription {
-  readonly deliveryStream: string;
-  readonly enabled: boolean;
+export interface FirehoseLogDeliveryDescription {
+  readonly deliveryStream?: string;
+  readonly enabled?: boolean;
 }
 
-interface ForbiddenException {
-  readonly message: string;
+export interface ForbiddenException {
+  readonly message?: string;
 }
 
-interface InternalServerErrorException {
-  readonly message: string;
+export interface InternalServerErrorException {
+  readonly message?: string;
 }
 
-interface KafkaCluster {
+export interface KafkaCluster {
   readonly apacheKafkaCluster: ApacheKafkaCluster;
 }
 
-interface KafkaClusterClientAuthentication {
+export interface KafkaClusterClientAuthentication {
   readonly authenticationType: string;
 }
 
-interface KafkaClusterClientAuthenticationDescription {
-  readonly authenticationType: string;
+export interface KafkaClusterClientAuthenticationDescription {
+  readonly authenticationType?: string;
 }
 
-interface KafkaClusterDescription {
-  readonly apacheKafkaCluster: ApacheKafkaClusterDescription;
+export interface KafkaClusterDescription {
+  readonly apacheKafkaCluster?: ApacheKafkaClusterDescription;
 }
 
-interface KafkaClusterEncryptionInTransit {
+export interface KafkaClusterEncryptionInTransit {
   readonly encryptionType: string;
 }
 
-interface KafkaClusterEncryptionInTransitDescription {
-  readonly encryptionType: string;
+export interface KafkaClusterEncryptionInTransitDescription {
+  readonly encryptionType?: string;
 }
 
-interface ListConnectorsRequest {
-  readonly connectorNamePrefix: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListConnectorsRequest {
+  readonly connectorNamePrefix?: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListConnectorsResponse {
-  readonly connectors: [];
-  readonly nextToken: string;
+export interface ListConnectorsResponse {
+  readonly connectors?: [];
+  readonly nextToken?: string;
 }
 
-interface ListCustomPluginsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListCustomPluginsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListCustomPluginsResponse {
-  readonly customPlugins: [];
-  readonly nextToken: string;
+export interface ListCustomPluginsResponse {
+  readonly customPlugins?: [];
+  readonly nextToken?: string;
 }
 
-interface ListWorkerConfigurationsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListWorkerConfigurationsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListWorkerConfigurationsResponse {
-  readonly nextToken: string;
-  readonly workerConfigurations: [];
+export interface ListWorkerConfigurationsResponse {
+  readonly nextToken?: string;
+  readonly workerConfigurations?: [];
 }
 
-interface LogDelivery {
+export interface LogDelivery {
   readonly workerLogDelivery: WorkerLogDelivery;
 }
 
-interface LogDeliveryDescription {
-  readonly workerLogDelivery: WorkerLogDeliveryDescription;
+export interface LogDeliveryDescription {
+  readonly workerLogDelivery?: WorkerLogDeliveryDescription;
 }
 
-interface NotFoundException {
-  readonly message: string;
+export interface NotFoundException {
+  readonly message?: string;
 }
 
-interface Plugin {
+export interface Plugin {
   readonly customPlugin: CustomPlugin;
 }
 
-interface PluginDescription {
-  readonly customPlugin: CustomPluginDescription;
+export interface PluginDescription {
+  readonly customPlugin?: CustomPluginDescription;
 }
 
-interface ProvisionedCapacity {
+export interface ProvisionedCapacity {
   readonly mcuCount: number;
   readonly workerCount: number;
 }
 
-interface ProvisionedCapacityDescription {
+export interface ProvisionedCapacityDescription {
+  readonly mcuCount?: number;
+  readonly workerCount?: number;
+}
+
+export interface ProvisionedCapacityUpdate {
   readonly mcuCount: number;
   readonly workerCount: number;
 }
 
-interface ProvisionedCapacityUpdate {
-  readonly mcuCount: number;
-  readonly workerCount: number;
-}
-
-interface S3Location {
+export interface S3Location {
   readonly bucketArn: string;
   readonly fileKey: string;
-  readonly objectVersion: string;
+  readonly objectVersion?: string;
 }
 
-interface S3LocationDescription {
-  readonly bucketArn: string;
-  readonly fileKey: string;
-  readonly objectVersion: string;
+export interface S3LocationDescription {
+  readonly bucketArn?: string;
+  readonly fileKey?: string;
+  readonly objectVersion?: string;
 }
 
-interface S3LogDelivery {
-  readonly bucket: string;
+export interface S3LogDelivery {
+  readonly bucket?: string;
   readonly enabled: boolean;
-  readonly prefix: string;
+  readonly prefix?: string;
 }
 
-interface S3LogDeliveryDescription {
-  readonly bucket: string;
-  readonly enabled: boolean;
-  readonly prefix: string;
+export interface S3LogDeliveryDescription {
+  readonly bucket?: string;
+  readonly enabled?: boolean;
+  readonly prefix?: string;
 }
 
-interface ScaleInPolicy {
+export interface ScaleInPolicy {
   readonly cpuUtilizationPercentage: number;
 }
 
-interface ScaleInPolicyDescription {
+export interface ScaleInPolicyDescription {
+  readonly cpuUtilizationPercentage?: number;
+}
+
+export interface ScaleInPolicyUpdate {
   readonly cpuUtilizationPercentage: number;
 }
 
-interface ScaleInPolicyUpdate {
+export interface ScaleOutPolicy {
   readonly cpuUtilizationPercentage: number;
 }
 
-interface ScaleOutPolicy {
+export interface ScaleOutPolicyDescription {
+  readonly cpuUtilizationPercentage?: number;
+}
+
+export interface ScaleOutPolicyUpdate {
   readonly cpuUtilizationPercentage: number;
 }
 
-interface ScaleOutPolicyDescription {
-  readonly cpuUtilizationPercentage: number;
+export interface ServiceUnavailableException {
+  readonly message?: string;
 }
 
-interface ScaleOutPolicyUpdate {
-  readonly cpuUtilizationPercentage: number;
+export interface TooManyRequestsException {
+  readonly message?: string;
 }
 
-interface ServiceUnavailableException {
-  readonly message: string;
+export interface UnauthorizedException {
+  readonly message?: string;
 }
 
-interface TooManyRequestsException {
-  readonly message: string;
-}
-
-interface UnauthorizedException {
-  readonly message: string;
-}
-
-interface UpdateConnectorRequest {
+export interface UpdateConnectorRequest {
   readonly capacity: CapacityUpdate;
   readonly connectorArn: string;
   readonly currentVersion: string;
 }
 
-interface UpdateConnectorResponse {
-  readonly connectorArn: string;
-  readonly connectorState: string;
+export interface UpdateConnectorResponse {
+  readonly connectorArn?: string;
+  readonly connectorState?: string;
 }
 
-interface Vpc {
-  readonly securityGroups: [];
+export interface Vpc {
+  readonly securityGroups?: [];
   readonly subnets: [];
 }
 
-interface VpcDescription {
-  readonly securityGroups: [];
-  readonly subnets: [];
+export interface VpcDescription {
+  readonly securityGroups?: [];
+  readonly subnets?: [];
 }
 
-interface WorkerConfiguration {
+export interface WorkerConfiguration {
   readonly revision: number;
   readonly workerConfigurationArn: string;
 }
 
-interface WorkerConfigurationDescription {
-  readonly revision: number;
-  readonly workerConfigurationArn: string;
+export interface WorkerConfigurationDescription {
+  readonly revision?: number;
+  readonly workerConfigurationArn?: string;
 }
 
-interface WorkerConfigurationRevisionDescription {
-  readonly creationTime: Date;
-  readonly description: string;
-  readonly propertiesFileContent: string;
-  readonly revision: number;
+export interface WorkerConfigurationRevisionDescription {
+  readonly creationTime?: Date;
+  readonly description?: string;
+  readonly propertiesFileContent?: string;
+  readonly revision?: number;
 }
 
-interface WorkerConfigurationRevisionSummary {
-  readonly creationTime: Date;
-  readonly description: string;
-  readonly revision: number;
+export interface WorkerConfigurationRevisionSummary {
+  readonly creationTime?: Date;
+  readonly description?: string;
+  readonly revision?: number;
 }
 
-interface WorkerConfigurationSummary {
-  readonly creationTime: Date;
-  readonly description: string;
-  readonly latestRevision: WorkerConfigurationRevisionSummary;
-  readonly name: string;
-  readonly workerConfigurationArn: string;
+export interface WorkerConfigurationSummary {
+  readonly creationTime?: Date;
+  readonly description?: string;
+  readonly latestRevision?: WorkerConfigurationRevisionSummary;
+  readonly name?: string;
+  readonly workerConfigurationArn?: string;
 }
 
-interface WorkerLogDelivery {
-  readonly cloudWatchLogs: CloudWatchLogsLogDelivery;
-  readonly firehose: FirehoseLogDelivery;
-  readonly s3: S3LogDelivery;
+export interface WorkerLogDelivery {
+  readonly cloudWatchLogs?: CloudWatchLogsLogDelivery;
+  readonly firehose?: FirehoseLogDelivery;
+  readonly s3?: S3LogDelivery;
 }
 
-interface WorkerLogDeliveryDescription {
-  readonly cloudWatchLogs: CloudWatchLogsLogDeliveryDescription;
-  readonly firehose: FirehoseLogDeliveryDescription;
-  readonly s3: S3LogDeliveryDescription;
+export interface WorkerLogDeliveryDescription {
+  readonly cloudWatchLogs?: CloudWatchLogsLogDeliveryDescription;
+  readonly firehose?: FirehoseLogDeliveryDescription;
+  readonly s3?: S3LogDeliveryDescription;
 }
+
 

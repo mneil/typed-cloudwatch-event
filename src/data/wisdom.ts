@@ -9,6 +9,7 @@ export interface CreateAssistant {
   readonly tags?: {[key: string]: any};
   readonly type: string;
 }
+
 export interface CreateAssistantAssociation {
   readonly assistantId: string;
   readonly association: AssistantAssociationInputData;
@@ -16,6 +17,7 @@ export interface CreateAssistantAssociation {
   readonly clientToken?: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateContent {
   readonly clientToken?: string;
   readonly knowledgeBaseId: string;
@@ -26,6 +28,7 @@ export interface CreateContent {
   readonly title?: string;
   readonly uploadId: string;
 }
+
 export interface CreateKnowledgeBase {
   readonly clientToken?: string;
   readonly description?: string;
@@ -36,6 +39,7 @@ export interface CreateKnowledgeBase {
   readonly sourceConfiguration?: SourceConfiguration;
   readonly tags?: {[key: string]: any};
 }
+
 export interface CreateSession {
   readonly assistantId: string;
   readonly clientToken?: string;
@@ -43,107 +47,132 @@ export interface CreateSession {
   readonly name: string;
   readonly tags?: {[key: string]: any};
 }
+
 export interface DeleteAssistant {
   readonly assistantId: string;
 }
+
 export interface DeleteAssistantAssociation {
   readonly assistantAssociationId: string;
   readonly assistantId: string;
 }
+
 export interface DeleteContent {
   readonly contentId: string;
   readonly knowledgeBaseId: string;
 }
+
 export interface DeleteKnowledgeBase {
   readonly knowledgeBaseId: string;
 }
+
 export interface GetAssistant {
   readonly assistantId: string;
 }
+
 export interface GetAssistantAssociation {
   readonly assistantAssociationId: string;
   readonly assistantId: string;
 }
+
 export interface GetContent {
   readonly contentId: string;
   readonly knowledgeBaseId: string;
 }
+
 export interface GetContentSummary {
   readonly contentId: string;
   readonly knowledgeBaseId: string;
 }
+
 export interface GetKnowledgeBase {
   readonly knowledgeBaseId: string;
 }
+
 export interface GetRecommendations {
   readonly assistantId: string;
   readonly maxResults?: number;
   readonly sessionId: string;
   readonly waitTimeSeconds?: number;
 }
+
 export interface GetSession {
   readonly assistantId: string;
   readonly sessionId: string;
 }
+
 export interface ListAssistantAssociations {
   readonly assistantId: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListAssistants {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListContents {
   readonly knowledgeBaseId: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListKnowledgeBases {
   readonly maxResults?: number;
   readonly nextToken?: string;
 }
+
 export interface ListTagsForResource {
   readonly resourceArn: string;
 }
+
 export interface NotifyRecommendationsReceived {
   readonly assistantId: string;
   readonly recommendationIds: [];
   readonly sessionId: string;
 }
+
 export interface QueryAssistant {
   readonly assistantId: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly queryText: string;
 }
+
 export interface RemoveKnowledgeBaseTemplateUri {
   readonly knowledgeBaseId: string;
 }
+
 export interface SearchContent {
   readonly knowledgeBaseId: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly searchExpression: SearchExpression;
 }
+
 export interface SearchSessions {
   readonly assistantId: string;
   readonly maxResults?: number;
   readonly nextToken?: string;
   readonly searchExpression: SearchExpression;
 }
+
 export interface StartContentUpload {
   readonly contentType: string;
   readonly knowledgeBaseId: string;
 }
+
 export interface TagResource {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
+
 export interface UntagResource {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
+
 export interface UpdateContent {
   readonly contentId: string;
   readonly knowledgeBaseId: string;
@@ -154,101 +183,100 @@ export interface UpdateContent {
   readonly title?: string;
   readonly uploadId?: string;
 }
+
 export interface UpdateKnowledgeBaseTemplateUri {
   readonly knowledgeBaseId: string;
   readonly templateUri: string;
 }
 
-
-
-interface AccessDeniedException {
-  readonly message: string;
+export interface AccessDeniedException {
+  readonly message?: string;
 }
 
-interface AppIntegrationsConfiguration {
+export interface AppIntegrationsConfiguration {
   readonly appIntegrationArn: string;
   readonly objectFields: [];
 }
 
-interface AssistantAssociationData {
+export interface AssistantAssociationData {
   readonly assistantArn: string;
   readonly assistantAssociationArn: string;
   readonly assistantAssociationId: string;
   readonly assistantId: string;
   readonly associationData: AssistantAssociationOutputData;
   readonly associationType: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface AssistantAssociationInputData {
-  readonly knowledgeBaseId: string;
+export interface AssistantAssociationInputData {
+  readonly knowledgeBaseId?: string;
 }
 
-interface AssistantAssociationOutputData {
-  readonly knowledgeBaseAssociation: KnowledgeBaseAssociationData;
+export interface AssistantAssociationOutputData {
+  readonly knowledgeBaseAssociation?: KnowledgeBaseAssociationData;
 }
 
-interface AssistantAssociationSummary {
+export interface AssistantAssociationSummary {
   readonly assistantArn: string;
   readonly assistantAssociationArn: string;
   readonly assistantAssociationId: string;
   readonly assistantId: string;
   readonly associationData: AssistantAssociationOutputData;
   readonly associationType: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface AssistantData {
+export interface AssistantData {
   readonly assistantArn: string;
   readonly assistantId: string;
-  readonly description: string;
+  readonly description?: string;
   readonly name: string;
-  readonly serverSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
+  readonly serverSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
   readonly status: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly type: string;
 }
 
-interface AssistantSummary {
+export interface AssistantSummary {
   readonly assistantArn: string;
   readonly assistantId: string;
-  readonly description: string;
+  readonly description?: string;
   readonly name: string;
-  readonly serverSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
+  readonly serverSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
   readonly status: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly type: string;
 }
 
-interface ConflictException {
-  readonly message: string;
+export interface ConflictException {
+  readonly message?: string;
 }
 
-interface ContentData {
+export interface ContentData {
   readonly contentArn: string;
   readonly contentId: string;
   readonly contentType: string;
   readonly knowledgeBaseArn: string;
   readonly knowledgeBaseId: string;
-  readonly linkOutUri: string;
+  readonly linkOutUri?: string;
   readonly metadata: {[key: string]: any};
   readonly name: string;
   readonly revisionId: string;
   readonly status: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly title: string;
   readonly url: string;
   readonly urlExpiry: Date;
 }
 
-interface ContentReference {
-  readonly contentArn: string;
-  readonly contentId: string;
-  readonly knowledgeBaseArn: string;
-  readonly knowledgeBaseId: string;
+export interface ContentReference {
+  readonly contentArn?: string;
+  readonly contentId?: string;
+  readonly knowledgeBaseArn?: string;
+  readonly knowledgeBaseId?: string;
 }
 
-interface ContentSummary {
+export interface ContentSummary {
   readonly contentArn: string;
   readonly contentId: string;
   readonly contentType: string;
@@ -258,448 +286,449 @@ interface ContentSummary {
   readonly name: string;
   readonly revisionId: string;
   readonly status: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
   readonly title: string;
 }
 
-interface CreateAssistantAssociationRequest {
+export interface CreateAssistantAssociationRequest {
   readonly assistantId: string;
   readonly association: AssistantAssociationInputData;
   readonly associationType: string;
-  readonly clientToken: string;
-  readonly tags: {[key: string]: any};
+  readonly clientToken?: string;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateAssistantAssociationResponse {
-  readonly assistantAssociation: AssistantAssociationData;
+export interface CreateAssistantAssociationResponse {
+  readonly assistantAssociation?: AssistantAssociationData;
 }
 
-interface CreateAssistantRequest {
-  readonly clientToken: string;
-  readonly description: string;
+export interface CreateAssistantRequest {
+  readonly clientToken?: string;
+  readonly description?: string;
   readonly name: string;
-  readonly serverSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
-  readonly tags: {[key: string]: any};
+  readonly serverSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
+  readonly tags?: {[key: string]: any};
   readonly type: string;
 }
 
-interface CreateAssistantResponse {
-  readonly assistant: AssistantData;
+export interface CreateAssistantResponse {
+  readonly assistant?: AssistantData;
 }
 
-interface CreateContentRequest {
-  readonly clientToken: string;
+export interface CreateContentRequest {
+  readonly clientToken?: string;
   readonly knowledgeBaseId: string;
-  readonly metadata: {[key: string]: any};
+  readonly metadata?: {[key: string]: any};
   readonly name: string;
-  readonly overrideLinkOutUri: string;
-  readonly tags: {[key: string]: any};
-  readonly title: string;
+  readonly overrideLinkOutUri?: string;
+  readonly tags?: {[key: string]: any};
+  readonly title?: string;
   readonly uploadId: string;
 }
 
-interface CreateContentResponse {
-  readonly content: ContentData;
+export interface CreateContentResponse {
+  readonly content?: ContentData;
 }
 
-interface CreateKnowledgeBaseRequest {
-  readonly clientToken: string;
-  readonly description: string;
+export interface CreateKnowledgeBaseRequest {
+  readonly clientToken?: string;
+  readonly description?: string;
   readonly knowledgeBaseType: string;
   readonly name: string;
-  readonly renderingConfiguration: RenderingConfiguration;
-  readonly serverSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
-  readonly sourceConfiguration: SourceConfiguration;
-  readonly tags: {[key: string]: any};
+  readonly renderingConfiguration?: RenderingConfiguration;
+  readonly serverSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
+  readonly sourceConfiguration?: SourceConfiguration;
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateKnowledgeBaseResponse {
-  readonly knowledgeBase: KnowledgeBaseData;
+export interface CreateKnowledgeBaseResponse {
+  readonly knowledgeBase?: KnowledgeBaseData;
 }
 
-interface CreateSessionRequest {
+export interface CreateSessionRequest {
   readonly assistantId: string;
-  readonly clientToken: string;
-  readonly description: string;
+  readonly clientToken?: string;
+  readonly description?: string;
   readonly name: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface CreateSessionResponse {
-  readonly session: SessionData;
+export interface CreateSessionResponse {
+  readonly session?: SessionData;
 }
 
-interface DeleteAssistantAssociationRequest {
+export interface DeleteAssistantAssociationRequest {
   readonly assistantAssociationId: string;
   readonly assistantId: string;
 }
 
-interface DeleteAssistantAssociationResponse {
+export interface DeleteAssistantAssociationResponse {
 }
 
-interface DeleteAssistantRequest {
+export interface DeleteAssistantRequest {
   readonly assistantId: string;
 }
 
-interface DeleteAssistantResponse {
+export interface DeleteAssistantResponse {
 }
 
-interface DeleteContentRequest {
+export interface DeleteContentRequest {
   readonly contentId: string;
   readonly knowledgeBaseId: string;
 }
 
-interface DeleteContentResponse {
+export interface DeleteContentResponse {
 }
 
-interface DeleteKnowledgeBaseRequest {
+export interface DeleteKnowledgeBaseRequest {
   readonly knowledgeBaseId: string;
 }
 
-interface DeleteKnowledgeBaseResponse {
+export interface DeleteKnowledgeBaseResponse {
 }
 
-interface Document {
+export interface Document {
   readonly contentReference: ContentReference;
-  readonly excerpt: DocumentText;
-  readonly title: DocumentText;
+  readonly excerpt?: DocumentText;
+  readonly title?: DocumentText;
 }
 
-interface DocumentText {
-  readonly highlights: [];
-  readonly text: string;
+export interface DocumentText {
+  readonly highlights?: [];
+  readonly text?: string;
 }
 
-interface Filter {
+export interface Filter {
   readonly field: string;
   readonly operator: string;
   readonly value: string;
 }
 
-interface GetAssistantAssociationRequest {
+export interface GetAssistantAssociationRequest {
   readonly assistantAssociationId: string;
   readonly assistantId: string;
 }
 
-interface GetAssistantAssociationResponse {
-  readonly assistantAssociation: AssistantAssociationData;
+export interface GetAssistantAssociationResponse {
+  readonly assistantAssociation?: AssistantAssociationData;
 }
 
-interface GetAssistantRequest {
+export interface GetAssistantRequest {
   readonly assistantId: string;
 }
 
-interface GetAssistantResponse {
-  readonly assistant: AssistantData;
+export interface GetAssistantResponse {
+  readonly assistant?: AssistantData;
 }
 
-interface GetContentRequest {
+export interface GetContentRequest {
   readonly contentId: string;
   readonly knowledgeBaseId: string;
 }
 
-interface GetContentResponse {
-  readonly content: ContentData;
+export interface GetContentResponse {
+  readonly content?: ContentData;
 }
 
-interface GetContentSummaryRequest {
+export interface GetContentSummaryRequest {
   readonly contentId: string;
   readonly knowledgeBaseId: string;
 }
 
-interface GetContentSummaryResponse {
-  readonly contentSummary: ContentSummary;
+export interface GetContentSummaryResponse {
+  readonly contentSummary?: ContentSummary;
 }
 
-interface GetKnowledgeBaseRequest {
+export interface GetKnowledgeBaseRequest {
   readonly knowledgeBaseId: string;
 }
 
-interface GetKnowledgeBaseResponse {
-  readonly knowledgeBase: KnowledgeBaseData;
+export interface GetKnowledgeBaseResponse {
+  readonly knowledgeBase?: KnowledgeBaseData;
 }
 
-interface GetRecommendationsRequest {
+export interface GetRecommendationsRequest {
   readonly assistantId: string;
-  readonly maxResults: number;
+  readonly maxResults?: number;
   readonly sessionId: string;
-  readonly waitTimeSeconds: number;
+  readonly waitTimeSeconds?: number;
 }
 
-interface GetRecommendationsResponse {
+export interface GetRecommendationsResponse {
   readonly recommendations: [];
 }
 
-interface GetSessionRequest {
+export interface GetSessionRequest {
   readonly assistantId: string;
   readonly sessionId: string;
 }
 
-interface GetSessionResponse {
-  readonly session: SessionData;
+export interface GetSessionResponse {
+  readonly session?: SessionData;
 }
 
-interface Highlight {
-  readonly beginOffsetInclusive: number;
-  readonly endOffsetExclusive: number;
+export interface Highlight {
+  readonly beginOffsetInclusive?: number;
+  readonly endOffsetExclusive?: number;
 }
 
-interface KnowledgeBaseAssociationData {
-  readonly knowledgeBaseArn: string;
-  readonly knowledgeBaseId: string;
+export interface KnowledgeBaseAssociationData {
+  readonly knowledgeBaseArn?: string;
+  readonly knowledgeBaseId?: string;
 }
 
-interface KnowledgeBaseData {
-  readonly description: string;
-  readonly knowledgeBaseArn: string;
-  readonly knowledgeBaseId: string;
-  readonly knowledgeBaseType: string;
-  readonly lastContentModificationTime: Date;
-  readonly name: string;
-  readonly renderingConfiguration: RenderingConfiguration;
-  readonly serverSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
-  readonly sourceConfiguration: SourceConfiguration;
-  readonly status: string;
-  readonly tags: {[key: string]: any};
-}
-
-interface KnowledgeBaseSummary {
-  readonly description: string;
+export interface KnowledgeBaseData {
+  readonly description?: string;
   readonly knowledgeBaseArn: string;
   readonly knowledgeBaseId: string;
   readonly knowledgeBaseType: string;
+  readonly lastContentModificationTime?: Date;
   readonly name: string;
-  readonly renderingConfiguration: RenderingConfiguration;
-  readonly serverSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
-  readonly sourceConfiguration: SourceConfiguration;
+  readonly renderingConfiguration?: RenderingConfiguration;
+  readonly serverSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
+  readonly sourceConfiguration?: SourceConfiguration;
   readonly status: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface ListAssistantAssociationsRequest {
+export interface KnowledgeBaseSummary {
+  readonly description?: string;
+  readonly knowledgeBaseArn: string;
+  readonly knowledgeBaseId: string;
+  readonly knowledgeBaseType: string;
+  readonly name: string;
+  readonly renderingConfiguration?: RenderingConfiguration;
+  readonly serverSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
+  readonly sourceConfiguration?: SourceConfiguration;
+  readonly status: string;
+  readonly tags?: {[key: string]: any};
+}
+
+export interface ListAssistantAssociationsRequest {
   readonly assistantId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListAssistantAssociationsResponse {
+export interface ListAssistantAssociationsResponse {
   readonly assistantAssociationSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListAssistantsRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListAssistantsRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListAssistantsResponse {
+export interface ListAssistantsResponse {
   readonly assistantSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListContentsRequest {
+export interface ListContentsRequest {
   readonly knowledgeBaseId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListContentsResponse {
+export interface ListContentsResponse {
   readonly contentSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListKnowledgeBasesRequest {
-  readonly maxResults: number;
-  readonly nextToken: string;
+export interface ListKnowledgeBasesRequest {
+  readonly maxResults?: number;
+  readonly nextToken?: string;
 }
 
-interface ListKnowledgeBasesResponse {
+export interface ListKnowledgeBasesResponse {
   readonly knowledgeBaseSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface ListTagsForResourceRequest {
+export interface ListTagsForResourceRequest {
   readonly resourceArn: string;
 }
 
-interface ListTagsForResourceResponse {
-  readonly tags: {[key: string]: any};
+export interface ListTagsForResourceResponse {
+  readonly tags?: {[key: string]: any};
 }
 
-interface NotifyRecommendationsReceivedError {
-  readonly message: string;
-  readonly recommendationId: string;
+export interface NotifyRecommendationsReceivedError {
+  readonly message?: string;
+  readonly recommendationId?: string;
 }
 
-interface NotifyRecommendationsReceivedRequest {
+export interface NotifyRecommendationsReceivedRequest {
   readonly assistantId: string;
   readonly recommendationIds: [];
   readonly sessionId: string;
 }
 
-interface NotifyRecommendationsReceivedResponse {
-  readonly errors: [];
-  readonly recommendationIds: [];
+export interface NotifyRecommendationsReceivedResponse {
+  readonly errors?: [];
+  readonly recommendationIds?: [];
 }
 
-interface PreconditionFailedException {
-  readonly message: string;
+export interface PreconditionFailedException {
+  readonly message?: string;
 }
 
-interface QueryAssistantRequest {
+export interface QueryAssistantRequest {
   readonly assistantId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly queryText: string;
 }
 
-interface QueryAssistantResponse {
-  readonly nextToken: string;
+export interface QueryAssistantResponse {
+  readonly nextToken?: string;
   readonly results: [];
 }
 
-interface RecommendationData {
+export interface RecommendationData {
   readonly document: Document;
   readonly recommendationId: string;
-  readonly relevanceLevel: string;
-  readonly relevanceScore: unknown;
+  readonly relevanceLevel?: string;
+  readonly relevanceScore?: unknown;
 }
 
-interface RemoveKnowledgeBaseTemplateUriRequest {
+export interface RemoveKnowledgeBaseTemplateUriRequest {
   readonly knowledgeBaseId: string;
 }
 
-interface RemoveKnowledgeBaseTemplateUriResponse {
+export interface RemoveKnowledgeBaseTemplateUriResponse {
 }
 
-interface RenderingConfiguration {
-  readonly templateUri: string;
+export interface RenderingConfiguration {
+  readonly templateUri?: string;
 }
 
-interface ResourceNotFoundException {
-  readonly message: string;
-  readonly resourceName: string;
+export interface ResourceNotFoundException {
+  readonly message?: string;
+  readonly resourceName?: string;
 }
 
-interface ResultData {
+export interface ResultData {
   readonly document: Document;
-  readonly relevanceScore: unknown;
+  readonly relevanceScore?: unknown;
   readonly resultId: string;
 }
 
-interface SearchContentRequest {
+export interface SearchContentRequest {
   readonly knowledgeBaseId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly searchExpression: SearchExpression;
 }
 
-interface SearchContentResponse {
+export interface SearchContentResponse {
   readonly contentSummaries: [];
-  readonly nextToken: string;
+  readonly nextToken?: string;
 }
 
-interface SearchExpression {
+export interface SearchExpression {
   readonly filters: [];
 }
 
-interface SearchSessionsRequest {
+export interface SearchSessionsRequest {
   readonly assistantId: string;
-  readonly maxResults: number;
-  readonly nextToken: string;
+  readonly maxResults?: number;
+  readonly nextToken?: string;
   readonly searchExpression: SearchExpression;
 }
 
-interface SearchSessionsResponse {
-  readonly nextToken: string;
+export interface SearchSessionsResponse {
+  readonly nextToken?: string;
   readonly sessionSummaries: [];
 }
 
-interface ServerSideEncryptionConfiguration {
-  readonly kmsKeyId: string;
+export interface ServerSideEncryptionConfiguration {
+  readonly kmsKeyId?: string;
 }
 
-interface ServiceQuotaExceededException {
-  readonly message: string;
+export interface ServiceQuotaExceededException {
+  readonly message?: string;
 }
 
-interface SessionData {
-  readonly description: string;
+export interface SessionData {
+  readonly description?: string;
   readonly name: string;
   readonly sessionArn: string;
   readonly sessionId: string;
-  readonly tags: {[key: string]: any};
+  readonly tags?: {[key: string]: any};
 }
 
-interface SessionSummary {
+export interface SessionSummary {
   readonly assistantArn: string;
   readonly assistantId: string;
   readonly sessionArn: string;
   readonly sessionId: string;
 }
 
-interface SourceConfiguration {
-  readonly appIntegrations: AppIntegrationsConfiguration;
+export interface SourceConfiguration {
+  readonly appIntegrations?: AppIntegrationsConfiguration;
 }
 
-interface StartContentUploadRequest {
+export interface StartContentUploadRequest {
   readonly contentType: string;
   readonly knowledgeBaseId: string;
 }
 
-interface StartContentUploadResponse {
+export interface StartContentUploadResponse {
   readonly headersToInclude: {[key: string]: any};
   readonly uploadId: string;
   readonly url: string;
   readonly urlExpiry: Date;
 }
 
-interface TagResourceRequest {
+export interface TagResourceRequest {
   readonly resourceArn: string;
   readonly tags: {[key: string]: any};
 }
 
-interface TagResourceResponse {
+export interface TagResourceResponse {
 }
 
-interface TooManyTagsException {
-  readonly message: string;
-  readonly resourceName: string;
+export interface TooManyTagsException {
+  readonly message?: string;
+  readonly resourceName?: string;
 }
 
-interface UntagResourceRequest {
+export interface UntagResourceRequest {
   readonly resourceArn: string;
   readonly tagKeys: [];
 }
 
-interface UntagResourceResponse {
+export interface UntagResourceResponse {
 }
 
-interface UpdateContentRequest {
+export interface UpdateContentRequest {
   readonly contentId: string;
   readonly knowledgeBaseId: string;
-  readonly metadata: {[key: string]: any};
-  readonly overrideLinkOutUri: string;
-  readonly removeOverrideLinkOutUri: boolean;
-  readonly revisionId: string;
-  readonly title: string;
-  readonly uploadId: string;
+  readonly metadata?: {[key: string]: any};
+  readonly overrideLinkOutUri?: string;
+  readonly removeOverrideLinkOutUri?: boolean;
+  readonly revisionId?: string;
+  readonly title?: string;
+  readonly uploadId?: string;
 }
 
-interface UpdateContentResponse {
-  readonly content: ContentData;
+export interface UpdateContentResponse {
+  readonly content?: ContentData;
 }
 
-interface UpdateKnowledgeBaseTemplateUriRequest {
+export interface UpdateKnowledgeBaseTemplateUriRequest {
   readonly knowledgeBaseId: string;
   readonly templateUri: string;
 }
 
-interface UpdateKnowledgeBaseTemplateUriResponse {
-  readonly knowledgeBase: KnowledgeBaseData;
+export interface UpdateKnowledgeBaseTemplateUriResponse {
+  readonly knowledgeBase?: KnowledgeBaseData;
 }
 
-interface ValidationException {
-  readonly message: string;
+export interface ValidationException {
+  readonly message?: string;
 }
+
 
