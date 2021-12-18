@@ -2,15 +2,18 @@
  * Parameters represents request or response parameters for API calls
  * as key value pairs. Parameters can be cast easily to to a type based
  * on what API call you expect.
- *
- *
  */
-export class Parameters extends Object {
+interface ParameterType {
+  [key: string]: any;
+}
+export class Parameters implements ParameterType {
+  private readonly _props: any;
   constructor(props: any) {
-    super(props);
+    this._props = props;
     Object.assign(this, props);
   }
   public as<T>() {
-    return this as unknown as T;
+    const cast = this as unknown as T;
+    return cast;
   }
 }

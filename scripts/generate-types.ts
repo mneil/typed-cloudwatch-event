@@ -45,6 +45,79 @@ async function getFiles(
   return files;
 }
 
+interface IMember {
+  required: boolean;
+  type: string;
+}
+
+interface IOperation {
+  name: string;
+  shape: any;
+  members: IMember[];
+}
+
+function formatTemplateData(spec: any) {
+  const out = {
+    operations: new Array<IOperation>(),
+  };
+
+  const typeMap: { [key: string]: string } = {
+    string: 'string',
+    boolean: 'boolean',
+    list: '[]',
+    long: 'number',
+    integer: 'number',
+    exponential: 'number',
+    timestamp: 'Date',
+    map: '{[key: string]: any}',
+  };
+  function toMemberType(shape: any, member: any) {
+    const theType = typeMap[shape.type];
+    if (theType) {
+      return theType;
+    }
+    if (shape.type == 'structure') {
+      return member;
+    }
+    return 'unknown';
+  }
+  // // we're only interested in operations with inputs
+  // const operations = Object.values(spec.operations).filter(
+  //   (value: any) => value.input
+  // );
+  Object.keys(spec.operations).forEach((operationName) => {
+    const operation: any = spec.operations[operationName];
+    const shape: any = spec.shapes[operation.input.shape];
+    const members: IMember[] = [];
+    for (const [member, details] of Object.entries<{ [key: string]: any }>(
+      shape.members
+    )) {
+      members.push({
+        required: shape.required?.includes(member),
+        type: toMemberType(spec.shapes[details.shape], details.shape),
+      });
+    }
+    out.operations.push({
+      name: operationName,
+      shape,
+      members,
+    });
+  });
+  // <% for (const [key, shape] of Object.entries(shapes)) {
+  //   if(shape.type !== 'structure') {
+  //     continue;
+  //   }
+  // %>
+  // interface <%= key %> {
+  //   <%_
+  //   for (const [member, details] of Object.entries(shape.members)) {
+  //   -%>
+  //   readonly <%- member %>: <%- toMemberType(shapes[details.shape], details.shape) %>;
+  //   <%_ }; -%>
+  // }
+  // <% }; %>
+}
+
 async function generateTemplate(serviceFiles: ISpecFile[]) {
   const templateFile = await fs.promises.readFile(
     './scripts/template/service.ejs',
@@ -60,7 +133,7 @@ async function generateTemplate(serviceFiles: ISpecFile[]) {
       encoding: 'utf8',
     });
     const spec = JSON.parse(specContent);
-    const contents = template(spec);
+    const contents = template(formatTemplateData(spec));
     indexed.push(spec.metadata.endpointPrefix);
     renderer.push(
       fs.promises.writeFile(

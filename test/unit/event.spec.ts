@@ -48,6 +48,11 @@ describe('model', function () {
         receivedEvent.detail.requestParameters.as<aws.s3.CreateBucket>();
       bucketParameters.Bucket;
       bucketParameters.GrantFullControl;
+      expect(bucketParameters.Bucket).toBe('bucket-test-iad');
+      // escape and get original values
+      expect(receivedEvent.detail.requestParameters.as<any>().bucketName).toBe(
+        'bucket-test-iad'
+      );
       expect(receivedEvent.time.toISOString()).toBe('2016-02-20T01:09:13.000Z');
       expect(receivedEvent.resources[0].account).toBe('123456789012');
     });

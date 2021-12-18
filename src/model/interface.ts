@@ -1,6 +1,5 @@
 import { KebabKeys } from '../format';
 import { Arn } from './arn';
-import { Parameters } from './parameters';
 
 export interface ISessionContext {
   attributes: {
@@ -26,7 +25,7 @@ export interface IDetail {
   awsRegion: string;
   sourceIPAddress: string;
   userAgent: string;
-  requestParameters: Parameters;
+  requestParameters: { [key: string]: any };
   responseElements: null;
   requestID: string;
   eventID: string;
